@@ -51,7 +51,29 @@ from hoefsmit_numpy import chi_numpy  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 
-Q0 = 1.1099785955573347
+# READ the pin; do not transcribe it. This was
+#     Q0 = 1.1099785955573347
+# -- a bare float64 literal of the RETIRED muon pin A (superseded by CODATA 2022
+# in fca08de7d29, 2026-08-28). The witness recorded it as `q0` while
+# `stamp_staleness_metadata(..., q0_anchor=None)` below resolved to the default
+# PROTON anchor and wrote `q0Value` = 1.10997858275138..., so the witness
+# declared an anchor it had not computed at, with its own two fields ~11.5 ppb
+# apart -- the mu-p substrate tension itself. `q0_anchor_consistency_audit`
+# compares q0Anchor against q0Value, and those agreed, so the straddle passed
+# every gate (bean `qou-tekx`).
+#
+# Proton is the correct target here, not a choice: AGENTS.md's 2026-08-07 owner
+# directive makes the experimental (proton) pin the default for all touched
+# compute, and this stem is absent from `q0_anchor_manifest.json` entirely, so
+# the stamper already resolves it to proton. Reading `q_parameter.Q` makes the
+# computation agree with the stamp instead of contradicting it.
+#
+# float64 is forced at this boundary, not chosen: scipy/numpy below
+# (`linprog`, `np.linalg`) cannot accept mpf. `q_parameter.Q` is already the
+# float64 view of the proton pin, so nothing is downgraded here that was not
+# float64 for the whole probe. The verdict is combinatorial (support sizes /
+# PSD counts), not a precision measurement.
+from q_parameter import Q as Q0  # noqa: E402
 RAIL = 1e5
 
 
@@ -88,16 +110,50 @@ def saturate(Z, N, q):
     chi = {p: float(chi_numpy(p, cr, q)) for p in P}
     t = np.array([y[p] * chi[p] for p in P])
     frob = np.array([y[p] * _hd(p) for p in P])
-    n_neg = int((frob < 0).sum())
+    # `frob = y_lambda * hook-dim` and the hook-length dimension is a positive
+    # integer, so this count is entirely `sign(y_lambda)`. Eight of the eleven
+    # n=6 y_lambda are MATHEMATICALLY ZERO, and a bare `< 0` was reading the
+    # sign of their arithmetic RESIDUE:
+    #
+    #   partition        y at the old A pin      y at the proton pin
+    #   (4,1,1)          0.00000000e+00           3.22927672e-52
+    #   (3,1,1,1)        0.00000000e+00          -6.18583095e-53   <- counted
+    #   (2,2,1,1)        0.00000000e+00          -2.74307468e-53   <- counted
+    #   (1,1,1,1,1,1)    0.00000000e+00          -2.83696452e-54   <- counted
+    #
+    # The nonzero blocks are O(1e-2 .. 1e-1), so the two populations are ~50
+    # orders of magnitude apart and no real value is anywhere near the cut.
+    # The committed `neg_norm_blocks: 0` was never "no negative-norm blocks" --
+    # it was "at that pin the residues came out as exact 0.0". Changing q0 by
+    # 11.5 ppb (the mu-p tension) moved them off exact zero and the count jumped
+    # 0 -> 3 for D and 0 -> 10 for 3He and T, with nothing about the Gram having
+    # changed. Verified by a control run: the OLD pin under CURRENT code
+    # reproduces the committed 0/0/0 byte-identically, so this is the pin and
+    # not code drift (bean `qou-tekx`).
+    #
+    # AGENTS.md: a float64/residue-level agreement is the floor of the
+    # arithmetic, not evidence about the mathematics. Threshold it, and record
+    # BOTH numbers so a reader can see the separation rather than trust a cut.
+    # Carried as TEXT and parsed for the comparison, not the other way round.
+    # The threshold is a chosen literal, not a computed quantity, so serializing
+    # `float(1e-30)` into the witness put a raw float64 in six places for a
+    # number that has an exact decimal spelling. Comparing against float64
+    # residues is the one thing it legitimately has to be a float for.
+    _ZERO_TOL_STR = "1e-30"      # ~28 orders below the smallest real |y|,
+    _ZERO_TOL = float(_ZERO_TOL_STR)   # ~22 orders above the largest residue
+    n_neg = int((frob < -_ZERO_TOL).sum())
+    n_zero = int((np.abs(frob) <= _ZERO_TOL).sum())
     nt = float(t.sum())
     res = linprog(c=t, A_ub=-np.diag(frob), b_ub=np.zeros(len(P)),
                   A_eq=[np.ones(len(P))], b_eq=[nt],
                   bounds=[(-1e6, 1e6)] * len(P), method="highs")
     if not res.success:
-        return {"n": n, "neg_norm_blocks": n_neg, "feasible": False, "bounded_support": []}
+        return {"n": n, "neg_norm_blocks": n_neg, "blocks_indistinguishable_from_zero": n_zero,
+                "zero_tolerance": _ZERO_TOL_STR, "feasible": False, "bounded_support": []}
     bs = [(list(P[i]), float(res.x[i])) for i in range(len(P))
           if 1e-6 < abs(res.x[i]) < RAIL]
-    return {"n": n, "neg_norm_blocks": n_neg, "feasible": True, "bounded_support": bs}
+    return {"n": n, "neg_norm_blocks": n_neg, "blocks_indistinguishable_from_zero": n_zero,
+            "zero_tolerance": _ZERO_TOL_STR, "feasible": True, "bounded_support": bs}
 
 
 def main() -> int:
@@ -117,6 +173,9 @@ def main() -> int:
                   f"{[tuple(p) for p,_ in r['bounded_support']][:3]}")
             out[label][nm] = {"bounded_support_size": sz, "nu_canonical": nu_conf[nm],
                               "neg_norm_blocks": r["neg_norm_blocks"],
+                              "blocks_indistinguishable_from_zero":
+                                  r["blocks_indistinguishable_from_zero"],
+                              "zero_tolerance": r["zero_tolerance"],
                               "support": r["bounded_support"]}
 
     q1 = {k: v["bounded_support_size"] for k, v in out["q→1⁺ (well-posed)"].items()}
@@ -151,6 +210,15 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }
     o = HERE.parent / "he-nu-sdp-saturation-obstruction.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     o.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
     print(f"  witness: {o}")
     return 0

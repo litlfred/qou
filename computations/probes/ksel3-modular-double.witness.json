@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:51:30.935152+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-29T07:55:36.529436+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
   "assertions": [
     {
       "name": "gaussian_identification_exact",
@@ -25,7 +25,7 @@
       "computed": "4.2169e-81",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "L = 1 (q̃ = e), 80 dps: the direct lattice sum Z(u) = Σ_j g(ln u + jL) equals the Poisson dual frame √(2π/L)·Σ_m e^(−2π²m²/L)·e^(2πi m φ_u) at u = 1, u = 1.3, u = e^(−1/2) (rel < 1e−40; first dual correction ~ 5e−9, so the check is two-sided nontrivial); and the family lands on the classical theta frame (Gaussian-sampled sums, u-constant absorbed): Z(1) = θ₂(0, e^(−L/2)), Z(q̃^(−1/2)) = θ₃(0, e^(−L/2)) via mpmath.jtheta (rel < 1e−45). The dual nome is Q_d = e^(−4π²/L): the modular pairing L·ln(1/Q_d) = 4π²"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "3.0572e-80",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "L = 1, 80 dps: (a) the members u = 1 and u = 1.3 share ALL normalized moments k = 0..8 with the continuum ladder q^(k(k−1)/4) (rel < 1e−40) yet have DISJOINT supports (grid offset 0.26236 of a step) — total-variation distance 1: the difference measure lives entirely in the moment-blind dual-mode sector (M2); (b) the circle (Haar) average over ln u ∈ [0, L) of the unnormalized atomic family equals the continuum Gaussian object moment-by-moment (k = 0..4) AND against a non-moment test function (rel < 1e−35, tanh-sinh quadrature): the log-normal a.c. B-factor is EXACTLY the zero dual mode / circle average of the atomic family. DUAL-PAIR VERDICT: exact — one object, two frames"
     },
     {
@@ -41,32 +41,32 @@
       "computed": "1.0542e-81",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "sympy exact + 80 dps at L = 1: dual coefficients c_m(u) ∝ e^(−2π²m²/L)·e^(2πimφ_u), φ_u = (ln u − μ̂)/L. (i) u ≡ 1: φ = 1/2, c_m ∝ (−1)^m (θ₂-characteristic); u ≡ q̃^(∓1/2): φ = 0, c_m ∝ +1 (θ₃-characteristic) — exact. (ii) REALITY of all c_m ⟺ 2φ ∈ ℤ ⟺ 2·ln u ∈ Lℤ — EXACTLY the R4 bar-reflection σ-invariance condition (fixed pair u ≡ 1, u ≡ q̃^(1/2)); necessity witnessed at u = 1.3 (|sin 2πφ| = 0.997); the σ-symmetrized continuum has cos-real duals for EVERY u, so reality does NOT cut the continuum. (iii) POSITIVITY of all c_m ⟺ φ ∈ ℤ — the UNIQUE point u ≡ q̃^(±1/2); φ = 1/2 fails at m = 1 (cos π = −1, exact), generic u = 1.3 fails at m = 2. (iv) Jacobi imaginary transform (mpmath jtheta, rel < 1e−45, x = 1.7 and x = L/2π): θ₃(e^(−πx)) = x^(−1/2)·θ₃(e^(−π/x)) — θ₃ is shape-SELF-dual; θ₂(e^(−πx)) = x^(−1/2)·θ₄(e^(−π/x)) — θ₂ maps to θ₄, NOT shape-fixed. So the unique shape-self-dual / dual-positive atomic member is u ≡ q̃^(±1/2) — NOT the Attack-B presentation u = 1 (which is σ-fixed but θ₂-type, alternating duals)"
     },
     {
       "name": "regime_map_and_scales_muon",
-      "computed": "1.3494e-79",
+      "computed": "1.3283e-79",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-45,
-      "source": "q₀ = muon pin (1.10997859556…), 80 dps: b-map b² = ±i·t/2π (t = ln q₀) gives e^(2πib²) = 1/q₀ (b₊, |q| < 1, convergent modular double) and q₀ (b₋) — the corpus b-map (phi_b_substrate_regime.py) reproduced, rel < 1e−45; the modular-double pairing ln q · ln q̃ = 4π² verified on both branches. EXACT resonance identities: q̃_F := e^(−4π²/t) satisfies q̃_F = (q̃_W8b)⁵ (the W8b level-5 cusp variable e^(−4π²/(5t)), tau-dictionary audit), and the kernel's first Poisson dual amplitude at base q̃ = √q₀ (L = t/2) is e^(−2π²/L) = q̃_F with dual nome Q_d = e^(−4π²/L) = q̃_F². Scales: log10 q̃_F ≈ -164.32, log10 q̃_W8b ≈ -32.864. NO measure-level fixed point: L′/L = 4π²/L² ≈ 14504.8 ≫ 1 (self-dual locus q₀ = e^(4π) ≈ 286751.0); substrate flatness |Z(u)·√(L/2π) − 1| < 1e−55 at u ∈ {1, 1.3} (J = 260) — the analytic dual correction 2·q̃_F·|cos 2πφ| ~ 10^(-164.32) is below ANY corpus precision floor: atomic and a.c. realizations are numerically indistinguishable at the substrate; the u-continuum is doubly-exponentially degenerate there"
+      "tolerance": "1e-45",
+      "source": "q₀ = muon pin (1.10997859564…), 80 dps: b-map b² = ±i·t/2π (t = ln q₀) gives e^(2πib²) = 1/q₀ (b₊, |q| < 1, convergent modular double) and q₀ (b₋) — the corpus b-map (phi_b_substrate_regime.py) reproduced, rel < 1e−45; the modular-double pairing ln q · ln q̃ = 4π² verified on both branches. EXACT resonance identities: q̃_F := e^(−4π²/t) satisfies q̃_F = (q̃_W8b)⁵ (the W8b level-5 cusp variable e^(−4π²/(5t)), tau-dictionary audit), and the kernel's first Poisson dual amplitude at base q̃ = √q₀ (L = t/2) is e^(−2π²/L) = q̃_F with dual nome Q_d = e^(−4π²/L) = q̃_F². Scales: log10 q̃_F ≈ -164.32, log10 q̃_W8b ≈ -32.864. NO measure-level fixed point: L′/L = 4π²/L² ≈ 14504.8 ≫ 1 (self-dual locus q₀ = e^(4π) ≈ 286751.0); substrate flatness |Z(u)·√(L/2π) − 1| < 1e−55 at u ∈ {1, 1.3} (J = 260) — the analytic dual correction 2·q̃_F·|cos 2πφ| ~ 10^(-164.32) is below ANY corpus precision floor: atomic and a.c. realizations are numerically indistinguishable at the substrate; the u-continuum is doubly-exponentially degenerate there"
     },
     {
       "name": "regime_map_and_scales_proton",
       "computed": "2.6988e-79",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "q₀ = proton pin (1.10997858275…), 80 dps: b-map b² = ±i·t/2π (t = ln q₀) gives e^(2πib²) = 1/q₀ (b₊, |q| < 1, convergent modular double) and q₀ (b₋) — the corpus b-map (phi_b_substrate_regime.py) reproduced, rel < 1e−45; the modular-double pairing ln q · ln q̃ = 4π² verified on both branches. EXACT resonance identities: q̃_F := e^(−4π²/t) satisfies q̃_F = (q̃_W8b)⁵ (the W8b level-5 cusp variable e^(−4π²/(5t)), tau-dictionary audit), and the kernel's first Poisson dual amplitude at base q̃ = √q₀ (L = t/2) is e^(−2π²/L) = q̃_F with dual nome Q_d = e^(−4π²/L) = q̃_F². Scales: log10 q̃_F ≈ -164.32, log10 q̃_W8b ≈ -32.864. NO measure-level fixed point: L′/L = 4π²/L² ≈ 14504.8 ≫ 1 (self-dual locus q₀ = e^(4π) ≈ 286751.0); substrate flatness |Z(u)·√(L/2π) − 1| < 1e−55 at u ∈ {1, 1.3} (J = 260) — the analytic dual correction 2·q̃_F·|cos 2πφ| ~ 10^(-164.32) is below ANY corpus precision floor: atomic and a.c. realizations are numerically indistinguishable at the substrate; the u-continuum is doubly-exponentially degenerate there"
     }
   ],
   "allPassed": true,
-  "durationMs": 12295,
+  "durationMs": 14490,
   "computation": "ksel3-modular-double",
   "scriptFile": "ksel3_modular_double_probe.py",
   "scriptHash": "c4ff260d0fbf",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "0aaae20308e9cca7"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -94,7 +94,7 @@
   "data": {
     "tv_distance_u1_vs_generic": "1.0",
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
       "proton": "1.1099785827513808075916690956107688798744991218736",
       "source": "computations/q-pinning-50-digit.witness.json (muon, canonical 3-CAL layer); qou_substrate.constants.Q_50_DIGIT_STR (proton, precision layer)"
     },
@@ -114,11 +114,11 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   }

@@ -164,6 +164,12 @@ def main():
         V[i, 1] = hi**5
         rhs_vec[i] = ri
 
+    # c4/c5 were bound ONLY inside the try, but are read unconditionally by the
+    # `tests` table below — a failed solve raised NameError there instead of
+    # reporting the failure.  Pre-bound, and the failure recorded, so the
+    # witness says so rather than the script aborting (bean qou-26f2).
+    c4 = c5 = None
+    solve_error = None
     try:
         coeffs = mp.lu_solve(V, rhs_vec)
         c4, c5 = coeffs[0], coeffs[1]
@@ -174,6 +180,7 @@ def main():
         refined_ppm = (X_refined - X_tgt) / X_tgt * 1e6
         print(f"  Refined residual: {mp.nstr(refined_ppm, 8)} ppm")
     except Exception as e:
+        solve_error = f"{type(e).__name__}: {e}"
         print(f"  Two-term solve failed: {e}")
 
     # ── 4. Summary ──────────────────────────────────────────────
@@ -183,17 +190,47 @@ def main():
     print("=" * 70)
     print()
 
-    tests = [
-        ("X_leading only", X_lead),
-        ("× (1 + ℏ³)", X_lead * (1 + hbar_q**3)),
-        ("× (1 + ℏ³ + c₄ℏ⁴)", X_lead * (1 + hbar_q**3 + c4 * hbar_q**4)),
-        ("× (1 + ℏ³ + c₄ℏ⁴ + c₅ℏ⁵)", X_lead * (1 + hbar_q**3 + c4 * hbar_q**4 + c5 * hbar_q**5)),
-    ]
+    tests = [("X_leading only", X_lead),
+             ("× (1 + ℏ³)", X_lead * (1 + hbar_q**3))]
+    if c4 is not None:
+        tests.append(("× (1 + ℏ³ + c₄ℏ⁴)",
+                      X_lead * (1 + hbar_q**3 + c4 * hbar_q**4)))
+        tests.append(("× (1 + ℏ³ + c₄ℏ⁴ + c₅ℏ⁵)",
+                      X_lead * (1 + hbar_q**3 + c4 * hbar_q**4 + c5 * hbar_q**5)))
 
     print(f"  {'Formula':>35s}  {'X value':>20s}  {'err vs target (ppm)':>20s}")
+    truncation_err_ppm = {}
     for name, X_val in tests:
         err_ppm = (X_val - X_tgt) / X_tgt * 1e6
+        truncation_err_ppm[name] = err_ppm
         print(f"  {name:>35s}  {mp.nstr(X_val, 15):>20s}  {mp.nstr(err_ppm, 10):>20s}")
+
+    # ── 4b. Does the tower actually CONVERGE at q₀? ─────────────
+    # The assertion below used to be computed=1/expected=1 with the source
+    # "ℏ_q tower should converge at substrate q₀" — a wish, not a measurement,
+    # and green no matter what the numbers did (bean qou-26f2).  Measure it.
+    #
+    # The criterion is the standard one for a power series evaluated at a point:
+    # the successive TERM magnitudes must decrease.  It is independent of this
+    # script's own fit residual, which is worthless as evidence here — the ℏ⁴/ℏ⁵
+    # coefficients come from a 2×2 solve at exactly 2 sample points, so the final
+    # residual at q₀ is ~0 BY CONSTRUCTION (an exact interpolation), not because
+    # the tower converged.
+    tower_terms = [("ℏ³", hbar_q**3)]
+    if c4 is not None:
+        tower_terms.append(("c₄ℏ⁴", c4 * hbar_q**4))
+        tower_terms.append(("c₅ℏ⁵", c5 * hbar_q**5))
+    term_ratios = [abs(tower_terms[i + 1][1] / tower_terms[i][1])
+                   for i in range(len(tower_terms) - 1)]
+    n_decreasing = sum(1 for r in term_ratios if r < 1)
+    print()
+    print("  Convergence test — successive term magnitudes at q₀ "
+          "(must DECREASE for a convergent tower):")
+    for i, (nm, t) in enumerate(tower_terms):
+        extra = ("" if i == 0
+                 else f"   ratio to previous = {mp.nstr(term_ratios[i - 1], 6)}")
+        print(f"    |{nm}| = {mp.nstr(abs(t), 8)}{extra}")
+    print(f"    → {n_decreasing} of {len(term_ratios)} successive ratios are < 1")
 
     elapsed = time.time() - t0
     print(f"\n  Wall time: {elapsed:.1f}s")
@@ -206,11 +243,62 @@ def main():
         "the coefficient c₄ and checks for rational structure."
     )
     w.set_content_block("prop:flavor-split-substrate")
+    # Everything below is recorded as a decimal STRING: this witness carries no
+    # raw float64 today and is absent from raw-float64-baseline.json, so adding
+    # a bare float here would fail the audit as a NEW dirty witness.
+    w.add_data("hbar_q", mp.nstr(hbar_q, 25))
+    w.add_data("two_term_fit", {
+        "c4": (mp.nstr(c4, 20) if c4 is not None else None),
+        "c5": (mp.nstr(c5, 20) if c5 is not None else None),
+        "solve_error": solve_error,
+        "sample_q_points": [mp.nstr(qi, 20) for qi in q_pts],
+        "rhs_at_sample_points": [mp.nstr(ri, 20) for _, ri in eqs],
+        "caveat": "2 equations, 2 unknowns — the fit INTERPOLATES the two "
+                  "sample points exactly, so its residual at q₀ is ~0 by "
+                  "construction and is not evidence of convergence. The rhs "
+                  "moves from 4.6e-4 to 14.66 across a 9% change in ℏ_q, so "
+                  "the residual being fitted is not a smooth low-order "
+                  "polynomial in ℏ_q over that span.",
+    })
+    w.add_data("truncation_err_ppm",
+               {k: mp.nstr(v, 12) for k, v in truncation_err_ppm.items()})
+    w.add_data("tower_term_magnitudes",
+               {nm: mp.nstr(abs(t), 12) for nm, t in tower_terms})
+    w.add_data("tower_term_ratios", [mp.nstr(r, 12) for r in term_ratios])
+    w.add_data("tower_term_ratios_examined", len(term_ratios))
+    # Sentinel: with no ℏ⁴/ℏ⁵ terms (the 2×2 solve raised) there are ZERO ratios,
+    # and "0 of 0 decreasing" would satisfy expected=0 vacuously — the same
+    # defect this drain exists to remove. -1 makes an unmeasurable tower RED.
+    tower_verdict = n_decreasing if term_ratios else -1
     w.add_assertion(
-        name="correction_tower_converges",
-        computed=1,
-        expected=1, tolerance=0,
-        source="ℏ_q tower should converge at substrate q₀"
+        name="correction_tower_convergent_term_ratios",
+        computed=tower_verdict,
+        expected=0, tolerance=0,
+        unit="ratios",
+        source=(
+            "MEASURED convergence of the ℏ_q tower at q₀, replacing "
+            "`correction_tower_converges` (computed=1/expected=1, green "
+            "regardless of the numbers — bean qou-26f2). A convergent series "
+            "evaluated at a point needs its successive TERM magnitudes to "
+            "decrease; here 0 of the 2 successive ratios are < 1. Terms: "
+            f"|ℏ³| = {mp.nstr(abs(tower_terms[0][1]), 6)}, then "
+            + (f"|c₄ℏ⁴| = {mp.nstr(abs(tower_terms[1][1]), 6)} "
+               f"(×{mp.nstr(term_ratios[0], 6)}) and "
+               f"|c₅ℏ⁵| = {mp.nstr(abs(tower_terms[2][1]), 6)} "
+               f"(×{mp.nstr(term_ratios[1], 6)}). " if c4 is not None else "")
+            + "So the tower DIVERGES at q₀ beyond the ℏ³ term and expected=0 "
+            "records that honest negative — it goes red the moment a "
+            "reconstruction actually produces decreasing terms, which is the "
+            "alarm worth having. The ℏ³ term itself is genuine and is the "
+            "module's one real result: it improves the residual from "
+            f"{mp.nstr(truncation_err_ppm['X_leading only'], 8)} ppm to "
+            f"{mp.nstr(truncation_err_ppm['× (1 + ℏ³)'], 8)} ppm. The 2×2 "
+            "ℏ⁴/ℏ⁵ solve is well conditioned (cond ≈ 300), so the ~1e6 "
+            "coefficients are real, not numerical noise; see "
+            "`two_term_fit.caveat`. computed = -1 means the 2×2 solve raised "
+            "and the tower could not be measured at all — red, not a vacuous "
+            "0-of-0 pass; `two_term_fit.solve_error` then carries the reason."
+        ),
     )
     out = w.save()
     print(f"\n  Witness: {out}")

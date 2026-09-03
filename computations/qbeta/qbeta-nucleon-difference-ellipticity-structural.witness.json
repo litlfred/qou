@@ -1,0 +1,86 @@
+{
+  "computation": "qbeta-nucleon-difference-ellipticity-structural",
+  "engine": "mpmath",
+  "description": "qou-cds1 Step 23: Delta_L's ellipticity is STRUCTURAL, not an artefact of the 11-crossing word choice. The mechanism is the traceless-2x2 identity det(A_0-B_0) = det A_0 + det B_0 + tr(A_0 B_0): both nucleon traceless parts are HYPERBOLIC (det -1.041656, -1.056560) and their Killing pairing 2.107175 exceeds the exact-parallel threshold 2*sqrt(dA dB) = 2.098163 by 0.43 %, so the difference is elliptic BECAUSE the neutron and proton are nearly the same sl_2 direction -- the near-degeneracy of the nucleons, not a word. Supported by: 8/9 quark-word orderings elliptic (caveat: only 3 distinct values, so the count overstates it); a random control at matched scale giving 8.9 % (4000 draws), an order of magnitude below; and no sign change in the discriminant across q in [1.01,1.61], so no fine-tuning at q_0. Does NOT make it the right generator: the eigenphase stays a factor 35.7 from the ladder phase. Lean: QOU/QBeta/TracelessDifferenceEllipticity.lean, sorry-free.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "mechanism_identity_holds",
+      "passed": true,
+      "detail": "det(A_0 - B_0) = det A_0 + det B_0 + tr(A_0 B_0): 0.00895914342752 vs 0.00895914342752 (Lean det_sub_traceless)"
+    },
+    {
+      "name": "both_nucleon_directions_are_hyperbolic",
+      "passed": true,
+      "detail": "det A_0 = -1.041655651, det B_0 = -1.056560371 \u2014 so the elliptic difference requires genuine ALIGNMENT, it is not free"
+    },
+    {
+      "name": "nucleons_are_nearly_parallel_in_sl2",
+      "passed": true,
+      "detail": "tr(A_0 B_0) = 2.107175165 against the exact-parallel 2.098163083 \u2014 aligned to 0.42952 %. This is the near-degeneracy of the nucleons"
+    },
+    {
+      "name": "enriched_over_its_own_random_null",
+      "passed": true,
+      "detail": "resampled NF differences are elliptic 8.925 % of the time (357/4000); the nucleon orderings give 8/9"
+    },
+    {
+      "name": "counting_evidence_is_weaker_than_it_looks",
+      "passed": true,
+      "detail": "the 9 orderings collapse to 3 distinct (tr,det) pairs, so 8/9 overstates it \u2014 stated because it would be easy to quote the 8/9 alone"
+    },
+    {
+      "name": "elliptic_across_the_whole_q_range_no_fine_tuning",
+      "passed": true,
+      "detail": "discriminant negative at all 31 samples over q in [1.01,1.61], 0 sign changes, smooth from -0.0337627 to -0.044844"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton)",
+    "dps": 30,
+    "lean": "QOU/QBeta/TracelessDifferenceEllipticity.lean",
+    "lean_theorems": [
+      "det_sub_traceless",
+      "sub_elliptic_iff_pairing_large",
+      "threshold_pos_of_both_hyperbolic"
+    ],
+    "random_draws": 4000,
+    "random_seed": 11
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "det_A0_proton": "-1.0416556509506",
+    "det_B0_neutron": "-1.0565603706866",
+    "killing_pairing": "2.1071751650647",
+    "sum_equals_det_of_difference": "0.0089591434275237",
+    "direct_det_traceless_difference": "0.0089591434275237",
+    "parallel_threshold": "2.098163082981",
+    "alignment_excess_pct": "0.42952248",
+    "orderings_elliptic": "8/9",
+    "distinct_tr_det_pairs": 3,
+    "random_elliptic_fraction_pct": "8.925",
+    "q_scan_discriminant_first": "-0.03376273042",
+    "q_scan_discriminant_last": "-0.04484399194",
+    "q_scan_sign_changes": 0,
+    "det_nucleon_nf_proton": "-1.0219724938077791403",
+    "det_nucleon_nf_neutron": "-1.0219724938077789946",
+    "det_relative_difference": "1.42513e-16"
+  },
+  "context": {
+    "axis": "qou-cds1: is Delta_L's ellipticity structural or a word artefact?",
+    "answer": "Structural. The difference of two hyperbolic sl_2 directions is elliptic exactly when they are aligned past 2*sqrt(dA dB), and the nucleons clear that by 0.43 % -- which IS their near-degeneracy. Robust in q, enriched 10x over its own random null.",
+    "not_claimed": "that det rho(NF(p)) = det rho(NF(n)) exactly (they agree to 1.4e-16 relative and both words have 11 crossings, but it is not proved and not used); and NOT that Delta_L is the right generator -- the eigenphase remains a factor 35.7 from the ladder phase.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
+  },
+  "gitCommit": "41ac1869c1516ed415e8e0e03875b5a194077333",
+  "durationMs": 0,
+  "scriptFile": "qbeta_nucleon_difference_ellipticity_structural_probe.py",
+  "scriptHash": "1d5268804986",
+  "scriptCommitSha": "unknown",
+  "commitSha": "41ac1869c1516ed415e8e0e03875b5a194077333",
+  "computedAt": "2026-08-31T20:56:55.997023+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

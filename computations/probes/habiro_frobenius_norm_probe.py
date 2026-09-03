@@ -34,8 +34,15 @@ import sympy as sp
 HERE = Path(__file__).parent
 REPO = HERE.parent.parent  # computations/probes/.. -> computations/.. -> repo root
 
-# Habiro coefficient witnesses — try fast-path first, then symbolic.
-WITNESS_FAST = REPO / "computations" / "_deprecated" / "habiro-coefficients-atomic-fast.witness.json"
+# Habiro coefficient witness — CANONICAL ONLY.
+#
+# 🛑 This read `WITNESS_FAST if WITNESS_FAST.exists() else WITNESS_SYMBOLIC`,
+# preferring `_deprecated/habiro-coefficients-atomic-fast.witness.json`. That
+# file EXISTS, so the preference was live, and the two datasets DISAGREE at
+# `a_0` itself — neutron 8 vs 2, deuteron 96 vs 192. The canonical values are
+# 8 / 2 / 192 (bean `qou-lrnd`, 2026-08-23), so the fast path fed superseded
+# coefficients to a producer whose output is read as evidence about the
+# Frobenius. Corrected 2026-08-25: canonical only, no deprecated fallback.
 WITNESS_SYMBOLIC = REPO / "computations" / "habiro" / "habiro-coefficients-atomic.witness.json"
 WITNESS_OUT = HERE / "habiro-frobenius-norm-probe.witness.json"
 
@@ -155,7 +162,7 @@ def evaluate_habiro_at_root(habiro_coeffs: list[dict], p: int,
 
 def main() -> int:
     # Load Habiro coefficients
-    witness_path = WITNESS_FAST if WITNESS_FAST.exists() else WITNESS_SYMBOLIC
+    witness_path = WITNESS_SYMBOLIC
     if not witness_path.exists():
         print(f"ERROR: no Habiro coefficient witness at {witness_path}")
         return 1
@@ -245,6 +252,7 @@ def main() -> int:
             "If Frob_p is a unit in Z[ζ_{2p}], N(Frob_p) = ±1. "
             "Any |N| > 1 proves non-unitality at that prime."
         ),
+        "coefficients_source": str(witness_path.relative_to(REPO)),
         "primes": PRIMES,
         "atoms": all_atoms,
         "summary": {
@@ -254,7 +262,18 @@ def main() -> int:
             "route_a_supported": not any_unit_found,
         },
     }
-    WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    # P30: this wrote the payload with a raw `write_text(json.dumps(...))`, so
+    # the emitted witness carried NO engine / scriptFile / commitSha / scriptHash.
+    # That is why the previously committed copy could not be traced to an input:
+    # it recorded neither its coefficient source nor its own script hash, and it
+    # reproduces from neither dataset on `main`. `wrap_legacy` preserves every
+    # original top-level key verbatim and adds the provenance block.
+    sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
+    from qou_substrate.witness import WitnessBuilder
+    WitnessBuilder.wrap_legacy(
+        "habiro-frobenius-norm-probe", out, script_path=Path(__file__),
+        output_dir=HERE,
+    ).save()
     print(f"\nWrote: {WITNESS_OUT.name}")
     return 0
 

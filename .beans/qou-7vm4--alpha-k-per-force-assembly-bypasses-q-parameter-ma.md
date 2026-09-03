@@ -1,11 +1,11 @@
 ---
 # qou-7vm4
 title: 'alpha_k_per_force_assembly bypasses q_parameter: manifest says ideal_muon, code imports q_at directly (proton), and the except-fallback silently picks muon if the import fails'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T10:31:47Z
-updated_at: 2026-08-15T22:32:50Z
+updated_at: 2026-08-28T00:00:00Z
 ---
 
 
@@ -130,3 +130,42 @@ physical_proton and the direct import yields the same pin. If this producer is e
 ideal_muon, the tag will silently fail to fire and the code will keep using proton — the original
 defect re-armed. Any such re-tag MUST also switch the import to q_parameter. Recorded in the
 producer's own comment. Bean stays OPEN for (b).
+
+---
+
+## VERIFIED RESOLVED 2026-08-28 — both defects fixed on main; this bean was just never closed
+
+Re-measured against `main` rather than taken from the file's own comment.
+
+**Defect 1 — the manifest tag not honoured.** Resolved by re-tagging, not by
+guessing. `alpha_k_per_force_assembly` is now listed under **`physical_proton`**
+and is absent from `ideal_muon`. All four sources that disagreed now agree:
+
+| source | says |
+|---|---|
+| `q0_anchor_manifest.json` | `physical_proton` |
+| the module (`q_at()` import) | proton |
+| committed witness `q0_anchor` / `q0Anchor` | `proton` |
+| committed witness `q0` | `1.10997858275138…` — the proton pin |
+
+**Defect 2 — the silent `except Exception` anchor swap.** Fixed as this bean
+asked, and in the better of the two ways it offered: the fallback is *retained*
+(the producer must still run without `qou_substrate`) but taking it now **warns
+on stderr** and is **recorded in the witness**. Verified in the source at
+:160–162 (the stderr warning, recording `q0_anchor='muon'`) and :307–311
+(`add_data("q0_anchor", …)`, `add_data("q0_source", …)`, plus a caveat field).
+The committed witness carries `q0_source: qou_substrate.constants.q_at()`, so a
+reader can tell which path produced it — which was the whole ask.
+
+The related `q0_manifest_tag` defect is also closed: that field is read from the
+manifest at runtime rather than hardcoded (PR #5473, earlier in this arc), which
+is why it reads `physical_proton` above instead of the false `ideal_muon` it
+used to ship in every emission.
+
+**Nothing left here.** The "not a straddle" note at the end of this bean still
+stands and is still worth reading — `rosso_jones_three_strand_delta_q` remains
+unlisted and therefore falls through to the proton default, so the two producers
+compute the same six δ_q carriers at anchors that now happen to agree. That is
+no longer a 114–148 ppb discrepancy, but it is still undocumented coincidence
+rather than stated intent; if someone re-tags either producer it silently
+becomes a discrepancy again.

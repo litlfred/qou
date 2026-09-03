@@ -51,6 +51,7 @@ from codata_constants import (
     M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -80,13 +81,13 @@ def alpha_k(k: int) -> mp.mpf:
 def phi_k_from_list(by_partition: list, n_strands: int, k: int) -> mp.mpf:
     """Φ_k = Σ_{depth(λ)=k} ~w_λ · log|χ^λ · dim_q λ|."""
     total = mp.mpf(0)
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     for p in by_partition:
         shape = tuple(p["partition"])
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -196,7 +197,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) MeV",

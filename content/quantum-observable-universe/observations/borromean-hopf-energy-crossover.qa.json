@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/borromean_hopf_energy_crossover.lean"
   },
   "source_hashes": {
-    "md": "325e55970cce",
+    "md": "e5c2bc499354",
     "ts": "b75e5538dc61",
     "lean": "90aa64bcf5a9",
     "lean_statement": "bbaef17b5c67"
@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -321,7 +321,7 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "325e55970cce",
+          "md": "e5c2bc499354",
           "ts": "b75e5538dc61",
           "lean": "90aa64bcf5a9",
           "lean_statement": "bbaef17b5c67"
@@ -334,8 +334,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-31T03:02:16.954Z",
+        "reviewed_sha": "8676812b4fbb93ab325b6c8f427cf8a642781714"
       }
     ],
     "q-usage-regime-detected": [
@@ -1145,7 +1145,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1158,7 +1158,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-narrative-lean-equiv. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-narrative-lean-equiv. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1173,7 +1173,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1186,7 +1186,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-statement-integrity. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-statement-integrity. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1201,7 +1201,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1214,7 +1214,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-no-self-assuming-projection. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-no-self-assuming-projection. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1229,7 +1229,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1242,7 +1242,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-no-trivial-true. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-no-trivial-true. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1257,7 +1257,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1270,7 +1270,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-no-false-premise. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-no-false-premise. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1285,7 +1285,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1298,7 +1298,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-no-decide-masking. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-no-decide-masking. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1313,7 +1313,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1326,7 +1326,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-no-unused-hypotheses. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-no-unused-hypotheses. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1341,7 +1341,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1357,7 +1357,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-rater-strategy-clarity. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-rater-strategy-clarity. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1372,7 +1372,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1388,7 +1388,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-rater-goal-plausibility. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-rater-goal-plausibility. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1403,7 +1403,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1419,7 +1419,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block satisfies proof-rater-novelty. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies proof-rater-novelty. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1434,7 +1434,7 @@
     "voice-statement-no-interpretation": [
       {
         "result": "pass",
-        "notes": "Block satisfies voice-statement-no-interpretation. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies voice-statement-no-interpretation. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1449,7 +1449,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Block satisfies fit-section-chapter. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies fit-section-chapter. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1462,7 +1462,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1476,7 +1476,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -1489,7 +1489,7 @@
     "wall-side-statement": [
       {
         "result": "pass",
-        "notes": "Block satisfies wall-side-statement. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies wall-side-statement. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1504,7 +1504,7 @@
     "wall-side-proof": [
       {
         "result": "pass",
-        "notes": "Block satisfies wall-side-proof. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies wall-side-proof. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1519,7 +1519,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-false-claim. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-false-claim. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1532,7 +1532,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1547,7 +1547,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-vacuous. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-vacuous. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1560,7 +1560,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1575,7 +1575,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-circular. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-circular. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1588,7 +1588,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1603,7 +1603,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-overclaim. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-overclaim. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1616,7 +1616,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1631,7 +1631,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-hidden-dof. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-hidden-dof. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1644,7 +1644,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1659,7 +1659,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-non-sequitur. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-non-sequitur. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1672,7 +1672,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1687,7 +1687,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-lean-narrative-divergence. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-lean-narrative-divergence. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1700,7 +1700,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1715,7 +1715,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-citation-misuse. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-citation-misuse. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1728,7 +1728,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1743,7 +1743,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-definitional-ambiguity. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-definitional-ambiguity. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1756,7 +1756,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1771,7 +1771,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-empirical-fragility. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-empirical-fragility. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1784,7 +1784,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1799,7 +1799,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-physical-implausibility. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-physical-implausibility. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1812,7 +1812,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1827,7 +1827,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-reproducibility. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-reproducibility. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1840,7 +1840,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1855,7 +1855,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Block satisfies da-referee-verdict. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-referee-verdict. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1868,7 +1868,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -1883,7 +1883,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1898,7 +1898,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Block satisfies milnor-brevity. No issues found.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies milnor-brevity. No issues found.",
         "reviewed_at": "2026-07-07T23:33:51Z",
         "reviewed_sha": "e0a1a0856b44bd159431b7dbb9dbf1dfbee936c6",
         "reviewer": {
@@ -1911,7 +1911,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T19:45:36.000Z",
         "reviewed_sha": "51d787706c616c601527b743658190b94d4ab233",
         "reviewer": {
@@ -2485,5 +2485,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-31T03:02:16.954Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

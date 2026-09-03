@@ -30,7 +30,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "numerical at substrate q0"
     },
     {
@@ -38,7 +38,7 @@
       "computed": "10.092679",
       "expected": "10.092678",
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "1/hbar_q at full-precision q0"
     },
     {
@@ -46,7 +46,7 @@
       "computed": "10.11577",
       "expected": "10.116",
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "1/hbar_q at the rounded Lean literal q=1.1097"
     },
     {

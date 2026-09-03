@@ -250,6 +250,39 @@ theorem mass_side_kernel_implies_q_one_shadow
     w 1 = a :=
   hK.shadow_holds a rfl
 
+
+/-- **The bundle IS the conjunction of its gates** — the `.md`'s
+    *"instantiating `MassSideKernel` requires clearing all four mass-side
+    gates simultaneously"*, stated as an equivalence.
+
+    Added 2026-08-31 (bean `qou-z9ws`). The three lifting lemmas above are the
+    **forward** half and nothing more: each returns the inherited field its
+    type restates, which is the accessor idiom (`Group.mul_assoc`), not a
+    derivation. The converse — that holding the three gate instances suffices
+    to build the bundle — was never stated, so the block's actual claim, an
+    equivalence, had no Lean. It does now.
+
+    §4(b), the bar-even invariant, is deliberately not a parent class here (it
+    is the Q_β `CommRing R` structural identity and holds for any kernel), so
+    "all four gates" is these three plus that external one. -/
+-- Ref: [manuscript] prop:mass-side-kernel-formalize-first-gates
+theorem massSideKernel_iff
+    (w : ℝ → ℝ) (swing : ℝ) (anchor : Option ℝ) (magnitude : ℝ) :
+    MassSideKernel w swing anchor magnitude ↔
+      (MassAnchorStableGateClass swing ∧
+        MassQOneShadowGateClass w anchor ∧
+        MassDirectionSanityGateClass magnitude) :=
+  by
+    constructor
+    · intro h
+      exact ⟨h.toMassAnchorStableGateClass, h.toMassQOneShadowGateClass,
+             h.toMassDirectionSanityGateClass⟩
+    · rintro ⟨hA, hB, hC⟩
+      letI := hA
+      letI := hB
+      letI := hC
+      exact {}
+
 /-- **Rejection: failing the §4(a) gate prevents bundle instantiation.**
 
     Concrete rejection lemma for the most common failure mode

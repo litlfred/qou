@@ -81,7 +81,25 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0 = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
+q0 = mp.mpf(_Q50_PROTON)
 h = q0 - 1 / q0
 h2 = h ** 2
 h4 = h ** 4
@@ -89,7 +107,9 @@ h4 = h ** 4
 # Constants (canonical, from knot_volumes.py + experimental_constants.py)
 M_E_MEV = mp.mpf("0.51099895")  # noqa: P31 — CAL-1 m_e; exploratory sweep, value preserved
 VOL_BORROMEAN = 8 * mp.catalan  # = 8G, Thurston 1979
-VOL_7_SQ_1 = mp.mpf("4.7494999818964") # Vol(7^2_1) from SnapPy
+# EXCISED (bean qou-ckbv): was mp.mpf("4.7494999818964"), 14 printed / 11
+# correct, while the line above it already used a computed closed form.
+VOL_7_SQ_1 = vol_at("7^2_1", mp.mp.dps)  # Vol(7^2_1), canonical registry
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1  # = m_e · Vol(7^2_1)
 
 # KLR-violating atoms with production formula (magic/α-cluster).
@@ -230,7 +250,7 @@ def main() -> int:
     w.add_data("closed_form_candidates_for_c_4He", closed_form_data)
     w.add_assertion(
         "single_coefficient_hypothesis",
-        computed=float(max_dev),
+        computed=max_dev,
         expected=0.0,
         tolerance=0.05,  # 5% tolerance — if all c values within 5%, single c
         unit="dimensionless",

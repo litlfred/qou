@@ -3,7 +3,7 @@
   "producer": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
   "computation": "mu4-rhoF-cluster-derivation",
   "description": "\u0394_\u03bb residual simplex moments \u03bc\u2083=+0.4708, \u03bc\u2084=\u22124.591 tested against the DERIVED (0-fit, q\u2080-only) \u03c1_F cluster integrals. Decomposition \u03bc_k = s_k \u2212 g_k with g_k the DERIVED graded (q-factorial) simplex coeffs (g\u2082=1,g\u2083=0.342,g\u2084=8.371) and s_k the AME strong-binding simplex (targets). Derived \u03c1_F connected 3-body cluster c\u2083<0 (T \u22121.769, \u00b3He \u22121.405 MeV, H_9 joint trace); derived 4-body product-model beyond-pairwise content c\u2084<0. SIGN GATE: \u03bc\u2083>0 \u2260 c\u2083<0 (WALL, Lean-proved by productModel_3body_nonpos + markovParam_le_half: no pairwise interface product gives a positive 3-body cluster for any q>0); \u03bc\u2084<0 sign-consistent with c\u2084<0 but its magnitude is dominated by the DERIVED graded g\u2084=+8.37 subtraction, not an \u03c1_F cluster. FREE PARAMS: a single N>0 cannot map same-sign (c\u2083,c\u2084) to opposite-sign (\u03bc\u2083,\u03bc\u2084); no 0\u20131-param derivation lands both moments. VERDICT: WALL (split) \u2014 scope-(b) proved sign exclusion of the pairwise-product route for \u03bc\u2083; scope-(a) sign-consistent-but-not-derived for \u03bc\u2084. NOT infra-gated. Nothing wired.",
-  "timestamp": "2026-08-23T09:05:24.220449+00:00",
+  "timestamp": "2026-08-25T23:01:32.382756+00:00",
   "parameters": {
     "free_parameters": 0,
     "q0": "1.10997858275138080759166909561076887987449912187357763605672",
@@ -68,5 +68,5 @@
   "scriptCommitSha": "uncommitted",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0AnchorReason": "experimental/Physical-Observations pin per the AGENTS.md owner directive of 2026-08-07 (all production compute defaults to the proton anchor). Emitted by the producer so a re-run preserves it."
 }

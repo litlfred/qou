@@ -1,0 +1,58 @@
+{
+  "engine": "python-mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T10:30:36.076411+00:00",
+  "commitSha": "57db5438dc29d4a281ce50696401bea7200eb293",
+  "assertions": [
+    {
+      "name": "covariance_epic_A3_transfer_bound_extension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "A3 remainder-domination bound r=g(1)/g'(0) in (0,2) (|R|<|g'(0)|), plus kernel cov(n)<=0 and g'(0)<0, all verified to n=40 at 50dps via exact closed forms. Extends the prior n<=14 window past the n=29 point where the sibling A2 pointwise route failed. Not a proof (needs Kerov-CLT cumulant control). No fit; no c_k."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "wlambda-covariance-epic-A3-transfer-bound-extension",
+  "scriptFile": "wlambda_covariance_epic_A3_transfer_bound_extension.py",
+  "scriptHash": "ac5bc2479a71",
+  "scriptCommitSha": "e1c77eb76506d539dcae44cd853baad74595b396",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/wlambda_covariance_epic_A3_transfer_bound_extension.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/wlambda_covariance_epic_A3_transfer_bound_extension.py"
+  },
+  "description": "A3 leg-2 (qou-4wl1/qou-x631): EXTENSION of the Phase-7 remainder-domination bound |R|=|g(1)-g'(0)|<|g'(0)| (transfer ratio r=g(1)/g'(0) in (0,2)) from its prior n<=14 window to n<=40, using EXACT closed forms g(1)=(sum f^3 omega3)/(sum f^3) and g'(0)=(1/n!)sum f^2 ln f omega3 (E_2[omega3]=0). Motivated by the sibling A2 pointwise route which was verified only n<=13/15 then FALSIFIED at n=29. RESULT: the bound HOLDS robustly (r stays in (0.5410,0.8743), max|r-1|=0.4590<1); kernel cov(n)<=0 and g'(0)<0 all n. So the A2xA3 sufficient-legs decomposition is NOT a small-n artifact through n=40 (unlike the pointwise route). Still NOT a proof: A3 needs rigorous Plancherel-cumulant control of the mixed cumulants g^(m)(0) (Kerov CLT / Sniady genus). scope-(a); no fit; no c_k; nothing wired; L2 2/7.",
+  "data": {
+    "nmax": 40,
+    "kernel_nonpositive_all_n": true,
+    "main_term_negative_all_n": true,
+    "transfer_ratio_in_0_2_all_n": true,
+    "transfer_ratio_range": [
+      "0.54101064033336127776",
+      "0.87434812470942600878"
+    ],
+    "remainder_over_main_max": "0.45898935966663872224",
+    "prior_window_n_le_14": true,
+    "a2_pointwise_route_failed_at_n_29": true
+  }
+}

@@ -58,6 +58,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt  # noqa: E402
 
 # dps 70 aligns the actual compute precision with the witness precisionMetadata
 # (compute_dps=70) so reruns reproduce the recorded values (Copilot review).
@@ -219,7 +220,7 @@ def main() -> int:
                      computed=1.0 if unit_circle else 0.0, expected=1.0, tolerance=0.5,
                      source="det M_{4₁}=1 and |tr M_{4₁}|<2 at q₀ (seminormal V_{(2,1)} block)")
     wb.add_assertion("theta_classical_2pi_over_3",
-                     computed=float(mp.degrees(th1)), expected=120.0, tolerance=1e-6,
+                     computed=fmt(mp.degrees(th1)), expected=120.0, tolerance=1e-6,
                      source="θ(q=1)=120°: (σ₀σ₁)² is an S₃ 3-cycle, eigenvalue e^{2πi/3}")
     wb.add_data("degeneration_loci", {
         "theta_0_at_golden": {"q": mp.nstr(phi, 12), "tr": mp.nstr(tr_phi, 12), "ok": bool(golden_ok)},

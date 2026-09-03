@@ -1,39 +1,39 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-24T17:43:52.907031+00:00",
-  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+  "computedAt": "2026-08-29T10:40:58.277875+00:00",
+  "commitSha": "84d00e5f87f8bf1a146c887d047e4a54aa64df20",
   "assertions": [
     {
       "name": "D_decomposition_matches_witness_exponent",
-      "computed": 15.631903433236339,
+      "computed": "15.63190343323494532478887580996074771563428058532227874805262055214071",
       "expected": 15.632,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
       "name": "T_decomposition_matches_witness_exponent",
-      "computed": 23.97507398959163,
+      "computed": "23.97507398959023574065120866950188311171872637174422292402950970089935",
       "expected": 23.975,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
       "name": "3He_decomposition_matches_witness_exponent",
-      "computed": 23.02366675898327,
+      "computed": "23.02366675898187871553570671408369727643371021062527184618881578566768",
       "expected": 23.024,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
       "name": "4He_decomposition_matches_witness_exponent",
-      "computed": 33.304587551001326,
+      "computed": "33.30458755099993276111054585012770791316513786751867052425675884829558",
       "expected": 33.305,
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "ord(Δ_λ) = ord(B_AME) − ord(B_pred); algebraic consistency with the source witness"
     },
     {
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "h1-exponent-location",
   "scriptFile": "h1_exponent_location_probe.py",
-  "scriptHash": "4d5d8edeaf4b",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "90d6baa92a15",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -101,13 +101,13 @@
   "contentBlock": "conj:canonical-knot-id-sdp",
   "data": {
     "D_ord_B_AME": "7.6629903250542605582",
-    "D_ord_B_pred": "-7.9689131081820776692",
+    "D_ord_B_pred": "-7.9689131081806847666",
     "T_ord_B_AME": "20.489816793144630221",
-    "T_ord_B_pred": "-3.4852571964469980367",
+    "T_ord_B_pred": "-3.4852571964456055195",
     "3He_ord_B_AME": "19.585456287456522707",
-    "3He_ord_B_pred": "-3.4382104715267499386",
+    "3He_ord_B_pred": "-3.4382104715253560085",
     "4He_ord_B_AME": "32.036471576779826357",
-    "4He_ord_B_pred": "-1.2681159742214979494",
+    "4He_ord_B_pred": "-1.2681159742201064037",
     "slope_ord_B_AME_DT": "12.8268264681",
     "slope_ord_B_AME_T4He": "11.5466547836",
     "slope_ord_B_pred_DT": "4.48365591174",
@@ -116,11 +116,11 @@
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-canonical-residual.witness.json",
-        "sha256": "8bb9303bcd948b84d5ca1cdd66b73ea19570af1c787b8aa5f2e353a78361e423",
-        "size_bytes": 7187,
-        "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
-        "scriptCommitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
-        "computedAt": "2026-08-24T17:43:52.248912+00:00"
+        "sha256": "4de962d11bc35ca017b889a216399ccdeef3f6cca0d4cc20a42cea1fba6c867b",
+        "size_bytes": 4512,
+        "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-21T14:45:21.917290+00:00"
       }
     ]
   }

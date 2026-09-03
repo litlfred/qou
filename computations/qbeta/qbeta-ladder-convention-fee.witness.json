@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T20:03:59.572610+00:00",
+  "commitSha": "c9b7b45cacda23cabc6170636760d356094a2b0e",
+  "assertions": [
+    {
+      "name": "canonical_colour_weighting_degrades",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "ladder_is_z_C_locked_substitution_is_not_a_D_measurement",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "published_residual_is_quoted_at_the_NON_canonical_muon_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "colour_shift_dwarfs_the_residual",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-ladder-convention-fee",
+  "scriptFile": "qbeta_ladder_convention_fee_probe.py",
+  "scriptHash": "38ccc6c0dd00",
+  "scriptCommitSha": "c9b7b45cacda23cabc6170636760d356094a2b0e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_ladder_convention_fee_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_ladder_convention_fee_probe.py"
+  },
+  "description": "Prices the three non-canonical choices the Q_beta ladder's published agreement rests on -- colour-blind mixed crossing, convention C, and the muon pin -- against the residual they are quoted alongside. Each is larger than that residual. No fit, nothing widened; every number is the published formula at a stated choice.",
+  "data": {
+    "canonical_COLOUR-WEIGHTED_crossing_(R3)": "80332.5725333260796948313011502700156836828987199731054504719",
+    "z_D_SUBSTITUTED_into_the_C-frame_ladder_(INVALID_move;_not_a": "601191.531630612538134805679254905825850416810971723496621375",
+    "MUON_pin_(the_block's_own_-0.0066_ppm_frame)": "7.33648424231675010808601383982818420474274411068452102579784",
+    "colour-weighted_AND_z_D-substituted_(same_caveat_on_z_D)": "681534.666237442492596949315779946619656283624599938939250634",
+    "published_frame_err_ppb": "37.7074898557493246572264919369599095480546476060268930180124",
+    "delta_flavor_split": "0.00137571080702709600855110927410655062222547601193777493132134"
+  }
+}

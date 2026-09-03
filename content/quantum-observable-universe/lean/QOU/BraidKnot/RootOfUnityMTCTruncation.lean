@@ -99,15 +99,41 @@ theorem columnCount_nodeOf_lt_k
     M.columnCount (C.nodeOf T) < k :=
   (M.inTruncation_iff (C.nodeOf T)).mp (M.truncation_holds T)
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R)
+/-- **The trivial model — a `def`, not an `instance`, and not "faithful".**
+
+    Its docstring said *"Faithful instance. Carries the explicit research-grade
+    conjecture as a sorry."* Neither half was true. There is no `sorry`: it sets
+    `columnCount _ := 0` and `inTruncation _ := (0 < 2)`, a constantly-true
+    predicate that does not mention its argument, so `inTruncation_iff` is
+    `(0 < 2) ↔ (0 < 2)` by `decide` and `truncation_holds` is `0 < 2`. Every
+    node is in the truncation because the truncation is everything and every
+    partition was declared to have zero columns. A `sorry` would at least be
+    visible to `#print axioms`; this was not.
+
+    As an unconditional `instance` it made `columnCount_nodeOf_lt_k` — the
+    bound the MTC truncation pipeline is supposed to consume — an unconditional
+    theorem reading `0 < 2`.
+
+    Note it only ever covered `k = 2`; general `k` has no model at all, so the
+    rank of the truncated MTC is not exhibited anywhere in this corpus.
+
+    Demoted the same way as `ConfinementGradingCorrespondence.canonical`
+    (bean `qou-fngs`). Nothing consumed it: the class has no users outside this
+    file.
+
+    **Still open:** `conj:root-of-unity-mtc-truncation` — that at
+    `q = e^{2πi/k}` the KLR algebra truncates to `MTC_k` with simple objects
+    labelled by partitions of at most `k − 1` columns. -/
+def canonical (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] :
     RootOfUnityMTCTruncation R q 2 where
   k_ge_two := le_refl 2
   inTruncation v := 0 < 2
   columnCount _ := 0
   inTruncation_iff _ := by decide
-  -- Ref: [manuscript] conj:root-of-unity-mtc-truncation (§3b-cond conjectural-class instance; sorry = the conjecture)
+  -- Ref: [manuscript] conj:root-of-unity-mtc-truncation (§3b-cond conjectural class;
+  --      discharged here by `columnCount := 0` and a constantly-true `inTruncation`,
+  --      not by a `sorry` and not by the conjecture)
   truncation_holds _ := Nat.zero_lt_succ 1
 
 end RootOfUnityMTCTruncation

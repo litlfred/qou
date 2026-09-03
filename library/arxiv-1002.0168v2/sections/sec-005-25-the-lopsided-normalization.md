@@ -1,0 +1,330 @@
+---
+doc_id: arxiv-1002.0168v2
+doc_title: "Non-cyclotomic fusion categories Scott Morrison Noah Snyder"
+section_id: sec-005-25-the-lopsided-normalization
+section_title: "The lopsided normalization"
+section_number: 2.5
+pages: 9-14
+source_pdf: 1002.0168v2.pdf
+source_sha256: c95d5d193d57b097
+doc_brief: "Non-cyclotomic fusion categories Scott Morrison Noah Snyder — Etingof, Nikshych and Ostrik ask in [ 7,§2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld."
+---
+In an irreducible shaded planar algebra P over a ﬁeld k, the shaded inside and
+shaded outside circles each evaluate to a scalar multiple of the empty diagram. These
+multiples are called the shaded and unshaded moduli. The product of the two moduli
+is called the index of P .
+If the two moduli are equal, we say the planar algebra is spherical. (In particular,
+because in this section we are assuming irreducibility, this condition implies the usual
+notion of a planar algebra being spherical.) If the shaded modulus is equal to one,
+we say the planar algebra is lopsided, and the unshaded modulus is the index.
+Any irreducible shaded planar algebra P over C is part of a family {Px}x∈C of
+planar algebras with P1 =P , andPx given by changing the action of the planar
+operad by a factor of xk, where k is the signed count of critical points in the strands
+which are shaded above and unshaded below (minima counting positively, maxima
+counting negatively). The index is constant across this family, but the shaded and
+unshaded moduli scale by x and x−1.
+It may be that the planar algebra Px has a rational form over a ﬁeld k for certain
+x, but not all x. In particular, given a planar algebra C over k with unshaded
+modulus x∈k, thenCx−1 is a lopsided planar algebra over k(x) =k. On the other
+hand, given a lopsided planar algebra C over k with index D∈k the corresponding
+spherical planar algebra C√
+D is in general only deﬁned over k(
+√
+D). The fact that
+the ﬁeld of deﬁnition may need to increase to ensure being spherical but does not need
+to increase to ensure being lopsided should encourage you to prefer lopsided planar
+algebras over spherical planar algebras. (It’s also natural from a subfactor perspective:
+B as an A−B bimodule has left-dimension the index and right-dimension 1.)
+9
+Any element v∈P n,± has a left trace and a right trace, satisfying
+trL (v) =
+{
+trR (v) if n is even
+d∓
+d±
+trR (v) if n is odd
+where d+ is the unshaded modulus and d− is the shaded modulus. When P is
+spherical, the left and right traces coincide. We will sometimes refer to the trace of
+an idempotent as its dimension, and if a side is not speciﬁed we always intend the
+right trace.
+Example 4 The two strand Jones-Wenzl idempotents in lopsided Temperley-Lieb
+are
+f (2) = −
+and
+f (2) = − 1
+[2]2
+Example 5 Consider an irreducible shaded planar algebraP with indexD. Choose
+q so q +q−1 =
+√
+D. If P is spherical then the dimensions of the Jones-Wenzl
+idempotents are given by
+trR
+(
+f (n)∈P n,±
+)
+= [n + 1]q∈ Q(
+√
+D)
+while whenP is lopsided they are
+trR
+(
+f (n)∈P n,+
+)
+=
+{ [n+1]q
+[2]q
+if n is odd
+[n + 1]q if n is even
+∈ Q(D)
+trR
+(
+f (n)∈P n,−
+)
+=
+{
+[2]q[n + 1]q if n is odd
+[n + 1]q if n is even
+∈ Q(D)
+3 The shaded planar algebras H0 andH1
+The goal of this section is to prove Theorem 1.2 part 1 and the “if” direction of
+parts 2 and 3. Thus we explicitly construct certain rational forms and determine
+when they are complete. These constructions all follow quickly from the generators
+and relations presentation of the ‘Haagerup subfactor planar algebra’ H0 (from [22])
+and of the ‘extended Haagerup subfactor planar algebra’ H1 (from [2]). We modify
+these previous constructions slightly by using the lopsided normalization for cups
+and caps instead of the spherical one. Furthermore, we have rescaled the generator:
+10
+our S is λ𝓁 times the S of [2, 22]. (Both of these modiﬁcations were made in order
+to simplify the numbers that appear in the deﬁnition so that they lie in a smaller
+ﬁeld.)
+Let 𝓁 = 0 or 1, and let n = 4𝓁 + 4. Choose q so q +q−1 =√D𝓁, and deﬁne the
+quantum integers as usual by [m] = qm−q−m
+q−q−1 ∈ Z[√D𝓁] (so in particular, [2] = √D𝓁).
+If m is odd then [m]∈ Q(D𝓁). If m is even, then [2][m] = [m+ 1] + [m−1]∈ Q(D𝓁),
+and also any ratio of two even quantum integers lies in Q(D𝓁). We will write
+ˇr = [n+2]
+[n] ∈ Q(D𝓁) throughout. (This number is the ratio of Perron-Frobenius
+dimensions of the two vertices past the branch point on the dual principal graph.
+The corresponding ratio on the principal graph is just 1.)
+Deﬁne λ𝓁 = [2]−1√−ˇr (these are the same as the explicit numbers given in the
+introduction) and note that λ2
+𝓁 =− [n+2]
+[2]2[n]∈ Q(D𝓁). Since λ2
+𝓁 is not rational, and
+the degrees [ Q(D𝓁) : Q] are prime, it follows that Q(D𝓁) = Q(λ2
+𝓁), and in particular
+Q(D𝓁)⊂ Q(λ𝓁)⊂ C.
+Deﬁnition 3.1 Let k be any ﬁeld Q(D𝓁)⊂ k⊂ C. Let Q𝓁(k) be the shaded
+planar algebra over k generated by a single n-box S∈Q 𝓁(k)n,+ subject to relations
+(1)-(6) below.
+(1) The lopsided moduli are 1 and D𝓁. That is, the shaded circle is 1 and the
+unshaded circle is D𝓁.
+(2) ρ(S) =−S,
+(3) S is uncappable,
+(4) S2 =λ2
+𝓁f (n),
+(5)
+2n − 1
+S
+⋆
+2n + 2
+f (2n+2) = [2][n]
+n + 1 n + 1
+n − 1
+S
+⋆
+S
+⋆
+2n + 2
+f (2n+2) ,
+(6) and
+2n
+S⋆
+2n + 4
+f (2n+4) = 1
+λ2
+𝓁
+1
+[n + 1]
+[2n + 4]
+[n + 2]
+n + 1 2 n + 1
+n − 1 n − 1
+S
+⋆
+S
+⋆
+S
+⋆
+2n + 4
+f (2n+4) .
+The planar algebra Q𝓁(k) isn’t nondegenerate, and hence doesn’t yield semisimple
+tensor categories. We apply the usual semisimpliﬁcation procedure.
+Deﬁnition 3.2 LetH𝓁(k) beQ𝓁(k)/N𝓁(k), whereN𝓁(k) is the ideal of negligible
+morphisms inQ𝓁(k).
+11
+Theorem 3.3 H𝓁(C) is a unitary irreducible planar algebra with principal graph
+pairH𝓁. Hence, the tensor categories Hp
+𝓁(k) andHd
+𝓁(k) are fusion categories.
+Proof The ﬁrst statement follows immediately from [ 22, Theorem 5.5] (for 𝓁 = 0)
+and from [2, Theorem 3.10] (for 𝓁 = 1). Unitarity implies that Hp
+𝓁(C) andHd
+𝓁(C) are
+semisimple, and henceHp
+𝓁(k) andHd
+𝓁(k) are semisimple also (since nonsemisimplicity
+is preserved under base extension). These categories are fusion because the principal
+graphs are ﬁnite.
+Theorem 3.4 All the minimal idempotents inH𝓁(C) (corresponding to the vertices
+of the principal graph) in fact lie inside H𝓁(Q(λ𝓁)). All of the minimal idempotents
+in the even part of the dual principal graph lie inside H𝓁(Q(D𝓁)).
+Proof We give explicit formulas for all the idempotents, in Lemmas 3.6, 3.7 and 3.8,
+which occupy the rest of this section. Our naming conventions for the idempotents
+are shown in Figure 2.
+1 X f (2)f (3)f (4)f (5)f (6)f (7)
+P P′ P′′
+Q Q′ Q′′
+1 X∗ f (2)f (3)f (4)f (5)f (6)f (7)
+B
+A
+C
+D
+Figure 2: The names for the minimal idempotents in H1(C). Even vertices are
+shown as ﬁlled circles, and odd vertices are shown as hollow circles. The convention
+forH0(C) is the same but with fewer f (i).
+Lemma 3.5 The ‘one-click’ rotation ρ1/2(S), which is an element of H𝓁(k)n,−,
+satisﬁes
+ρ1/2(S)2 =−i[2]λ𝓁(ˇr1/2− ˇr−1/2)ρ1/2(S)− [2]2λ2
+𝓁f (n)
+= (ˇr− 1)ρ1/2(S) + ˇrf (n). (3.1)
+Proof Take the formula for ρ1/2(S)2 appearing in [2, Theorem 3.9], and recall that
+the S there is λ−1
+𝓁 times our generator S, and that since we are working in the
+lopsided planar algebra, there is an additional factor of [2]−1 with each occurrence of
+ρ1/2. This factor arises because in the notation of §2.5, if the planar algebras from
+[22, 2] are denoted P , we’re looking at P√D𝓁 , and ρ1/2 has a single critical point
+shaded above, which is a maximum. Thus we obtain
+[2]−2λ−2
+𝓁 ρ1/2(S)2 =−[2]−1λ−1
+𝓁 ω1/2r1/2(ˇr1/2− ˇr−1/2)ρ1/2(S) +ω−1rf (n)
+and after setting r = 1, ω =−1, using the formula for λ𝓁 and rearranging, this
+becomes the desired formula.
+12
+Lemma 3.6 The idempotents P , Q, A and B inHp
+𝓁 andHd
+𝓁 are given by
+P = 1
+2
+(
+f (n) + 1
+λ𝓁
+S
+)
+(3.2)
+Q = 1
+2
+(
+f (n)− 1
+λ𝓁
+S
+)
+(3.3)
+A = 1
+ˇr + 1
+(
+f (n) +ρ1/2(S)
+)
+(3.4)
+B = 1
+ˇr + 1
+(
+ˇrf (n)−ρ1/2(S)
+)
+(3.5)
+Proof The formulas certainly deﬁne idempotents, according to the formulas in
+Lemma 3.5 and in Deﬁnition 3.1. Since 1
+2
+(
+f (n) + 1
+λ𝓁
+S
+)
++ 1
+2
+(
+f (n)− 1
+λ𝓁
+S
+)
+=f (n), we
+know these formulas for P and Q actually deﬁne the corresponding idempotents.
+Note the symmetry between P and Q: rescaling S by−1 interchanges the formulas
+for the idempotents. Since 1
+ˇr+1
+(
+f (n) +ρ1/2(S)
+)
++ 1
+ˇr+1
+(
+ˇrf (n)−ρ1/2(S)
+)
+=f (n), these
+formulas are indeed the idempotents A and B; you can check which is which by
+taking the trace.
+Lemma 3.7 The remaining idempotents on the principal graph are given by
+P′ =P⊗X− 2[n]
+[2][n + 1] ((P⊗X)◦en◦ (P⊗X)) (3.6)
+Q′ =Q⊗X− 2[n]
+[2][n + 1] ((Q⊗X)◦en◦ (Q⊗X)) (3.7)
+P′′ =P′⊗X∗− [2][n + 1]
+[n + 2]− [n]
+(
+(P′⊗X∗)◦en+1◦ (P′⊗X∗)
+)
+(3.8)
+and
+Q′′ =Q′⊗X∗− [2][n + 1]
+[n + 2]− [n]
+(
+(Q′⊗X∗)◦en+1◦ (Q′⊗X∗)
+)
+. (3.9)
+Proof We know from the principal graph that P⊗X∼= f (n−1)⊕P′ We claim
+that the second term in the right hand side of Equation (3.6) is the projection onto
+f (n−1), and so the diﬀerence is exactly P′. In fact, if the second term is a projection
+at all it must be equivalent to f (n−1) as it factors through n− 1 strands. The partial
+trace of P is
+tr1 (P ) = [2][n + 1]
+2[n] f (n−1)
+and an easy calculation gives the result. An identical argument for Q instead of P
+gives Equation (3.7).
+Equations (3.8) and (3.9) follow similarly. We use that fact that P′⊗X∗∼=P⊕P′′,
+and calculate
+tr1
+(
+P′)
+=
+(
+1− 2[n]
+[2][n + 1]
+)
+P = [n + 2]− [n]
+[2][n + 1] P
+from Equation (3.6). Computing the square of the second term in Equation (3.8)
+conﬁrms that it is a projection, and gives the result. The analogous considerations
+for Q′ instead of P′ give Equation (3.9).
+13
+Lemma 3.8 The idempotents C and D on the dual principal graph are given by
+C =ρn/2(P′) (3.10)
+and
+D =ρn/2(Q′). (3.11)
+Proof The idempotents C and P′ are dual, as are D and Q′.
+The coeﬃcients appearing in Equations (3.2) and (3.3) lie in Q(λ𝓁) while the coeﬃ-
+cients in Equations (3.4) through (3.11) all lie in Q(D𝓁).
+This planar algebra gives a possibly incomplete rational form for both even parts
+over Q(D𝓁). Since all of the projections in the dual even part lie in Q(D𝓁) we have
+constructed a complete rational form for the dual even part in Q(D𝓁). Finally, since
+all of the projections in the principal even part lie in Q(λ𝓁) we have a complete
+rational form for the principal even part over Q(λ𝓁).

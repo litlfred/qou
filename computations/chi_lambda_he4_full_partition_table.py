@@ -54,13 +54,14 @@ from pathlib import Path
 
 import mpmath as mp
 import pyhecke_native as pn
+from hecke_characters import chi_lambda_braid as _chi_braid  # noqa: E402
 from sympy.utilities.iterables import partitions
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 
 def _as_dim(x) -> int:
@@ -81,7 +82,24 @@ _UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+q0_mpf = mp.mpf(_Q50_PROTON)
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
 h_sq_f64 = h_f64 * h_f64
@@ -139,8 +157,17 @@ def main() -> int:
     rows = []
     t_start = time.time()
     for shape in shapes_12:
-        chi = pn.chi_lambda_braid(shape, BETA_HE4, q0_f64)
-        dim = pn.chi_lambda_braid(shape, [], q0_f64)  # χ_λ(id) = dim
+        # `chi_lambda_braid_mpf`, not `pn.chi_lambda_braid(..., q0_f64)`:
+        # the latter enters the f64 Rust kernel, so every χ_λ in this table
+        # was float64 end to end. AGENTS.md §"PROBES ARE NOT EXEMPT": a
+        # float64 input poisons the whole result. `f64_into_mpmath_audit`'s
+        # own test cases name this exact fix. Bean `qou-k6b3`.
+        # the mpfr path returns a decimal STRING so no precision is lost
+        # crossing the boundary; re-enter mpmath from it.
+        chi = mp.mpf(str(_chi_braid(shape, BETA_HE4, q0_mpf,
+                                    precision="mpfr_50dps")))
+        dim = mp.mpf(str(_chi_braid(shape, [], q0_mpf,
+                                    precision="mpfr_50dps")))
         shape_str = "(" + ",".join(map(str, shape)) + ")"
         rows.append({
             "partition": shape,
@@ -157,33 +184,40 @@ def main() -> int:
             # it away: a fractional dimension would be a real finding here, and
             # silently truncating it is how it would stay hidden.
             "dim_S_lambda": _as_dim(dim),
-            "chi_lambda_he4": float(chi),
-            "abs_chi": abs(float(chi)),
+            "chi_lambda_he4": fmt(chi),
+            "abs_chi": fmt(abs(chi)),
+            # Not serialized — `_abs_mp` carries the mpf for the sort, the
+            # ratio arithmetic and the cumulative sums below, so those stay
+            # exact while the witness fields are strings. Popped before save.
+            "_abs_mp": abs(chi),
+            "_chi_mp": chi,
         })
     elapsed = time.time() - t_start
     print(f"All χ_λ computed in {elapsed:.3f}s ({elapsed/len(shapes_12)*1000:.1f}ms per partition)")
     print()
 
     # Sort by |χ_λ| descending
-    rows_sorted = sorted(rows, key=lambda r: -r["abs_chi"])
+    rows_sorted = sorted(rows, key=lambda r: -r["_abs_mp"])
 
     # Print top-20 by |χ_λ|
     print(f"  {'rank':>4}  {'partition':>30}  {'dim S_λ':>9}  {'χ_λ(β_⁴He)':>18}  {'|χ_λ|':>14}  ratio_to_max")
     print("  " + "-" * 108)
-    max_abs = rows_sorted[0]["abs_chi"] if rows_sorted else 1
+    max_abs = rows_sorted[0]["_abs_mp"] if rows_sorted else mp.mpf(1)
     for i, r in enumerate(rows_sorted[:20]):
-        ratio = r["abs_chi"] / max_abs * 100 if max_abs > 0 else 0
+        ratio = r["_abs_mp"] / max_abs * 100 if max_abs > 0 else mp.mpf(0)
         print(f"  {i+1:>4}  {r['partition_str']:>30}  {r['dim_S_lambda']:>9.1f}  "
-              f"{r['chi_lambda_he4']:>+18.6f}  {r['abs_chi']:>14.6f}  {ratio:>5.1f}%")
+              f"{mp.nstr(r['_chi_mp'], 8):>18}  "
+              f"{mp.nstr(r['_abs_mp'], 8):>14}  {mp.nstr(ratio, 3):>5}%")
 
     # Also show the very last 5 (smallest |χ_λ|)
     print()
     print("  Tail (smallest |χ_λ|):")
     for i, r in enumerate(rows_sorted[-5:]):
         rank = len(rows_sorted) - 5 + i + 1
-        ratio = r["abs_chi"] / max_abs * 100 if max_abs > 0 else 0
+        ratio = r["_abs_mp"] / max_abs * 100 if max_abs > 0 else mp.mpf(0)
         print(f"  {rank:>4}  {r['partition_str']:>30}  {r['dim_S_lambda']:>9.1f}  "
-              f"{r['chi_lambda_he4']:>+18.6f}  {r['abs_chi']:>14.6f}  {ratio:>5.1f}%")
+              f"{mp.nstr(r['_chi_mp'], 8):>18}  "
+              f"{mp.nstr(r['_abs_mp'], 8):>14}  {mp.nstr(ratio, 3):>5}%")
 
     # Bar-symmetry / partition-conjugation check
     print()
@@ -205,7 +239,8 @@ def main() -> int:
             r_T = next((x for x in rows if x["partition"] == shape_T), None)
             if r_T is not None:
                 paired_count += 1
-                rel_diff = abs(r["chi_lambda_he4"] - r_T["chi_lambda_he4"]) / max(abs(r["chi_lambda_he4"]), 1e-12)
+                rel_diff = (abs(r["_chi_mp"] - r_T["_chi_mp"])
+                            / max(abs(r["_chi_mp"]), mp.mpf("1e-12")))
                 if rel_diff < 1e-6:
                     matched_pair_count += 1
             seen.add(key)
@@ -215,11 +250,11 @@ def main() -> int:
     print(f"  Conjugate pairs with equal χ: {matched_pair_count} / {paired_count}")
 
     # Weight summary: sum of |χ_λ|
-    total_abs = sum(r["abs_chi"] for r in rows)
+    total_abs = sum((r["_abs_mp"] for r in rows), mp.mpf(0))
     cumulative = 0
     threshold_blocks = None
     for i, r in enumerate(rows_sorted):
-        cumulative += r["abs_chi"]
+        cumulative += r["_abs_mp"]
         if cumulative / total_abs >= 0.95 and threshold_blocks is None:
             threshold_blocks = i + 1
     print()
@@ -245,11 +280,16 @@ def main() -> int:
     w.add_parameter("beta_construction", "4 disjoint Borromean copies (strands 1-3, 4-6, 7-9, 10-12)")
     w.add_parameter("elapsed_seconds", float(elapsed))
     w.add_data("per_partition_chi_lambda", rows)
+    # The mpf helper keys are for arithmetic only and are not JSON types;
+    # drop them before any row reaches the witness.
+    for _r in rows:
+        _r.pop("_abs_mp", None)
+        _r.pop("_chi_mp", None)
     w.add_data("top_20_by_abs_chi", rows_sorted[:20])
     w.add_data("self_conjugate_count", self_conj_count)
     w.add_data("conjugate_pair_count", paired_count)
     w.add_data("matched_conjugate_pair_count", matched_pair_count)
-    w.add_data("sum_abs_chi", total_abs)
+    w.add_data("sum_abs_chi", fmt(total_abs))
     w.add_data("blocks_for_95pct_cover", threshold_blocks)
     w.add_assertion(
         "all_77_partitions_evaluated",

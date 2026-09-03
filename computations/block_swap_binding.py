@@ -45,7 +45,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
-from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402
+import pyhecke_native as _ph  # noqa: E402 — batched GP entry point
+from derived_chi_catalogue_matrix_m_mpfr import chi_rust_at_q_mpf  # noqa: E402,F401
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 
@@ -94,15 +95,56 @@ def block_swap_word(s: int, m: int, n: int) -> list[int]:
     return word
 
 
+def _two_row_shapes(n: int, y_table) -> list[tuple[int, ...]]:
+    """The shapes that can contribute: two-row, and present in y_table.
+
+    The restriction is EXACT, not a tolerance. `QOU.MassTheory
+    .TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl` (sorry-free, `#print
+    axioms` clean) proves that restricting `Σ_λ y_λ χ_λ` to `ℓ(λ) ≤ 2` is
+    an identity under convention D (Wenzl level r = 2), for ARBITRARY `χ` —
+    the dropped terms die through the weight, so nothing depends on which
+    observable is summed. `threeRowPart_eq_zero_of_wenzl` states the
+    residual is `0`, not "small".
+
+    The `y_table.get(st) is None` guard this replaces could never fire:
+    `_load_y_lambda(12, ·)` returns all 77 shapes as nonzero, the two-row
+    ones at 2.3e-4 … 4.0e-3 and the other 70 topping out at 1.03e-73 —
+    solver residue against a value the Lean says is exactly zero. Without
+    a row test the loop computed 77 characters where 7 carry the answer.
+    """
+    return [tuple(sh) for sh in parts_of(n)
+            if len(tuple(sh)) <= 2 and y_table.get(tuple(sh)) is not None]
+
+
 def tr_M_of_word(word: list[tuple[int, int]], n: int, y_table, q) -> mp.mpf:
-    """tr_M(word) = Σ_λ y_λ · χ_λ(word) at q₀ (sign-only, Rust chi_q_via_gp)."""
+    """tr_M(word) = Σ_λ y_λ · χ_λ(word) at q₀ (sign-only, Rust GP path).
+
+    Uses the SEMINORMAL mpfr engine, not the Geck–Pfeiffer path.
+
+    GP searches for minimal-length class representatives (cyclic-shift
+    completion) and that search has a cliff in word length. Measured here,
+    batched and restricted to the same seven shapes:
+
+        |word|      GP                   seminormal
+          47        0.12 s                 1.26 s
+          56        > 90 s (unfinished)    1.56 s
+          65        —                      2.12 s
+
+    GP wins on short words and then falls off a cliff; the seminormal
+    route is ~linear and has none. This producer's words run 47…65
+    letters, so all but the shortest sit past the cliff — which is why it
+    timed out at 25 s, 180 s (twice) and 900 s while doing nothing wrong.
+
+    The two engines are independent implementations and agree to the
+    50-dps floor on this producer's own words (`W_atom`, `W_free`: rel
+    2.6e-50 and 5.4e-50), which is what licenses the swap.
+    """
+    shapes = _two_row_shapes(n, y_table)
+    chis = _ph.chi_lambdas_braid_mpfr(
+        [list(st) for st in shapes], list(word), Q_50_DIGIT_STR, 50)
     total = mp.mpf(0)
-    for shape in parts_of(n):
-        st = tuple(shape)
-        y = y_table.get(st)
-        if y is None:
-            continue
-        total += mp.mpf(str(y)) * chi_rust_at_q_mpf(st, n, word, q)
+    for st, chi in zip(shapes, chis):
+        total += mp.mpf(str(y_table[st])) * mp.mpf(str(chi))
     return total
 
 
@@ -111,7 +153,27 @@ def main() -> int:
     Z, N = 2, 2
     n = 3 * (Z + N)                      # 12
     q = mp.mpf(Q_50_DIGIT_STR)
-    y_table = _load_y_lambda(n, None)
+    # Select the y_λ table from the SAME pin the characters are evaluated at.
+    #
+    # `_load_y_lambda(n, None)` takes the module default, which is the proton
+    # table. This producer evaluates χ at `Q_50_DIGIT_STR`, which today also
+    # resolves to proton — so the two agree by COINCIDENCE, not construction.
+    # Verified: the default and the pin-derived table are byte-identical as of
+    # 2026-08-27.
+    #
+    # The bridge's own docstring records why that is not good enough. It
+    # "accepts q_str and then ignored it when choosing weights, so a proton-q₀
+    # caller got muon-pinned y_λ with nothing in the output saying so";
+    # repointing the default at proton fixed that and left the mirror live —
+    # a muon-q₀ caller now silently gets proton y_λ. Passing the pin closes
+    # both directions here, so a future re-pin moves the weights with the
+    # characters instead of desynchronising them silently.
+    #
+    # Measured cost of the desync if it ever happened: the two tables differ
+    # at the 8th digit (2.899588321 vs 2.899588372, ~18 ppb) — the μ–p
+    # substrate tension itself, per AGENTS.md "never straddle the two layers
+    # inside one quantity".
+    y_table = _load_y_lambda(n, None, q_str=Q_50_DIGIT_STR)
 
     # Block-swap braids as (sign=+1, gen_1based) pairs.
     swp = {
@@ -177,13 +239,23 @@ def main() -> int:
     w.add_data("S_free", float(S_free))
     w.add_data("binding_signal_log_Sfree_over_Satom", float(binding_signal))
     w.add_data("convention", "sign-only (chi_q_via_gp); averaged-binding is the slow refinement")
-    # The block-swap braids are verified permutations (asserted in block_swap_word).
+    # `computed=0.0, expected=0.0` was a constant standing in for a check that
+    # lives in a bare `assert` inside `block_swap_word`. That assert aborts
+    # before `w.save()`, so a braid failing to realise its block permutation
+    # produced NO witness rather than a failing one — and under `python -O`
+    # it produces no check at all. Re-run the same comparison here, at the
+    # one place whose outcome the witness can carry (bean qou-26f2).
+    block_swaps_ok = sum(
+        1 for s in (0, 6)
+        if _apply(block_swap_word(s, 3, n), n) == _block_swap_perm(s, 3, n)
+    )
     w.add_assertion(
         name="block_swap_braids_realize_block_perms",
-        computed=0.0, expected=0.0, tolerance=1e-30,
-        source="block_swap_word self-asserts _apply(word)==block_swap_perm for "
-               "swap_p (0,3) and swap_n (6,3) — the braids are the correct "
-               "S₂×S₂ block transpositions.",
+        computed=block_swaps_ok, expected=2, tolerance=0,
+        source="_apply(block_swap_word(s,3,n), n) == _block_swap_perm(s,3,n) "
+               "re-evaluated at witness time for swap_p (s=0) and swap_n "
+               "(s=6) — the braids are the correct S₂×S₂ block "
+               "transpositions.",
     )
     out = w.save()
     print(f"\n Witness: {out}")

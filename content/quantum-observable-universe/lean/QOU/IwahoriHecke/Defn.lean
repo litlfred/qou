@@ -1,6 +1,8 @@
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Algebra.Basic
 import QOU.IwahoriHecke.Quotient
+import QOU.MathlibExt.IwahoriHeckeAlgebra
+import Mathlib.GroupTheory.OrderOfElement
 
 /-!
 # `QOU.IwahoriHecke.Defn` — Iwahori-Hecke algebra of a Coxeter group
@@ -84,291 +86,120 @@ namespace QOU.IwahoriHecke
 
 universe u v w
 
-/-- **The Iwahori-Hecke algebra** `IwahoriHecke W q` of a Coxeter
-    system `(W, S)` over a commutative ring `R` with parameter
-    `q : R`.
+/-! ## The algebra
 
-    Sprint 2 bridge: definitionally equal to
-    `QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot R q (Set.univ : Set W)`
-    — the concrete quotient over the full generating set of `W`.
-    This dissolves the Sprint 1 opaque stub and makes the algebra,
-    ring, and module instances inherit automatically from
-    `Quotient.lean`'s noncomputable instances.
+**Rebuilt 2026-08-30.**  This definition used to read
 
-    Caveat: the Hecke-quadratic-only fragment (Sprint 2 scope of
-    `Quotient.lean`). Braid relations are not yet quotiented out —
-    that step lands once Mathlib's `CoxeterSystem` reduced-expression
-    accessor stabilises. For Sprint 1 + 2 the quadratic-only sub-
-    algebra is the well-defined intermediate object.
+```
+def IwahoriHecke (W) [Group W] [DecidableEq W] (R) [CommRing R] (q : R) :=
+  Quotient.IwahoriHeckeQuot R q (Set.univ : Set W)
+```
 
-    The type parameters are intentionally generic: `W` is the
-    Coxeter group, `R` is the base ring, `q : R` is the parameter.
-    A Type-A specialisation (Sprint 3 via `TypeA.lean`) targets
-    the symmetric group `W = Equiv.Perm (Fin n)`, indexing simple
-    reflections by `adjacentTranspositionIndex n = Fin (n - 1)`. -/
+which had two defects, one on top of the other.
+
+* `IwahoriHeckeQuot` imposes the **quadratic relation only** — its braid relations were
+  deferred — so the object was the free product of one copy of `R[x]/((x−q)(x+1))` per
+  generator.
+* Worse, passing `Set.univ : Set W` imposed that relation on **every element of the
+  group**, not on the simple reflections.  In the actual Hecke algebra `T_w` satisfies
+  the quadratic relation exactly when `ℓ(w) = 1`; for `w = st` of order three it does
+  not.  So the object was not the "quadratic-only intermediate" its docstring claimed,
+  and it admitted no natural map to or from a Hecke algebra.
+
+Both are fixed by building on `QOU.MathlibExt.IwahoriHecke.HeckeAlgebra`, which imposes
+**both** relation families, and by taking the simple-reflection set as a parameter
+rather than hard-coding all of `W`.
+
+The Coxeter matrix comes from the group itself: `m(s,t) = orderOf (s * t)`.  The long-
+standing blocker recorded here — that the order accessor was *"in flux in Mathlib's
+`CoxeterSystem` API"* — did not apply: `orderOf` is plain Mathlib group theory and needs
+no accessor at all. -/
+
+/-- The Coxeter matrix carried by a subset of a group: `m(s,t) = orderOf (s · t)`.
+
+For a genuine Coxeter system this is the Coxeter matrix on the nose.  Nothing downstream
+requires that `S` be one — the construction is well-defined for any subset, and a caller
+that has a `CoxeterSystem` may pass its matrix instead. -/
+noncomputable def coxeterMatrixOn {W : Type u} [Group W] (S : Set W) : S → S → ℕ :=
+  fun s t => orderOf ((s : W) * (t : W))
+
+/-- **The Iwahori–Hecke algebra** of `(W, S)` over `R` at parameter `q`, in the Iwahori
+normalisation `(T_s − q)(T_s + 1) = 0` together with the braid relations. -/
 def IwahoriHecke (W : Type u) [Group W] [DecidableEq W]
-    (R : Type v) [CommRing R] (q : R) : Type (max u v) :=
-  QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot R q (Set.univ : Set W)
+    (R : Type v) [CommRing R] (q : R) (S : Set W) : Type (max u v) :=
+  QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (coxeterMatrixOn S)
 
-/-- **Algebra-structure instances** for `IwahoriHecke W R q`
-    (`AddCommGroup`, `Module`, `Ring`, `Algebra`). Sprint 2 bridge:
-    each instance is inherited via the definitional equality with
-    the concrete quotient (`inferInstanceAs`). All four are
-    sorry-free. -/
-noncomputable instance instAddCommGroup_iwahoriHecke
-    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
-    AddCommGroup (IwahoriHecke W R q) :=
-  inferInstanceAs (AddCommGroup (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
-    R q (Set.univ : Set W)))
-
-noncomputable instance instModule_iwahoriHecke
-    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
-    Module R (IwahoriHecke W R q) :=
-  inferInstanceAs (Module R (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
-    R q (Set.univ : Set W)))
-
-/-- Ring structure on `IwahoriHecke W R q`. Sprint 2 bridge: inherited
-    from the concrete quotient. -/
 noncomputable instance instRing_iwahoriHecke
-    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
-    Ring (IwahoriHecke W R q) :=
-  inferInstanceAs (Ring (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
-    R q (Set.univ : Set W)))
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) (S : Set W) :
+    Ring (IwahoriHecke W R q S) :=
+  inferInstanceAs (Ring (QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (coxeterMatrixOn S)))
 
-/-- `R`-algebra structure on `IwahoriHecke W R q`. Sprint 2 bridge:
-    inherited from the concrete quotient. -/
 noncomputable instance instAlgebra_iwahoriHecke
-    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) :
-    Algebra R (IwahoriHecke W R q) :=
-  inferInstanceAs (Algebra R (QOU.IwahoriHecke.Quotient.IwahoriHeckeQuot
-    R q (Set.univ : Set W)))
+    (W : Type u) [Group W] [DecidableEq W] (R : Type v) [CommRing R] (q : R) (S : Set W) :
+    Algebra R (IwahoriHecke W R q S) :=
+  inferInstanceAs (Algebra R (QOU.MathlibExt.IwahoriHecke.HeckeAlgebra R q (coxeterMatrixOn S)))
 
-/-- The generators `T : W → IwahoriHecke W q`, lifting each element
-    of `W` to its image in the quadratic-only quotient.
+/-- The generator `T_s`, for `s` a **simple reflection**.
 
-    Sprint 2 bridge: defined via `Quotient.T` applied to the
-    Subtype wrapping `Set.univ`. -/
+Note the index: `s : S`, not `s : W`.  That is the substance of the rebuild — the old
+`T` accepted any group element and asserted a quadratic relation for it. -/
 noncomputable def T {W : Type u} [Group W] [DecidableEq W]
-    {R : Type v} [CommRing R] (q : R) (s : W) : IwahoriHecke W R q :=
-  QOU.IwahoriHecke.Quotient.T R q (Set.univ : Set W) ⟨s, Set.mem_univ s⟩
+    {R : Type v} [CommRing R] (q : R) {S : Set W} (s : S) : IwahoriHecke W R q S :=
+  QOU.MathlibExt.IwahoriHecke.T R q (coxeterMatrixOn S) s
 
-/-! ## Universal property (sketched)
+variable {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] {q : R} {S : Set W}
 
-The Iwahori-Hecke algebra is universal among `R`-algebras `A`
-equipped with a function `f : S → A` satisfying the Hecke
-quadratic relation `(f s - q) * (f s + 1) = 0` and the braid
-relations.
+/-- **The quadratic relation holds.** -/
+theorem T_quadratic (s : S) :
+    (T q s - algebraMap R (IwahoriHecke W R q S) q) * (T q s + 1) = 0 :=
+  QOU.MathlibExt.IwahoriHecke.T_quadratic s
 
-```
-universal_property :
-  ∀ (A : Type*) [CommRing A] [Algebra R A] (f : S → A),
-    (∀ s, (f s - algebraMap R A q) * (f s + 1) = 0) →
-    (∀ s t : S, braid_relation s t →
-      alternating_product s t (m s t) = alternating_product t s (m t s)) →
-    ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s, φ (T q s) = f s
-```
+/-- **The braid relation holds** — the half the old construction was missing. -/
+theorem T_braid (s t : S) :
+    QOU.MathlibExt.IwahoriHecke.altProd (T q s) (T q t) (coxeterMatrixOn S s t)
+      = QOU.MathlibExt.IwahoriHecke.altProd (T q t) (T q s) (coxeterMatrixOn S t s) :=
+  QOU.MathlibExt.IwahoriHecke.T_braid s t
 
-Sprint 1 leaves this statement informal; Sprint 2 formalises it
-once the concrete quotient is in place.
--/
+/-! ## Universal property
 
-/-- Predicate: `f : W → A` is a **Hecke-quadratic algebra map**.
+Both halves now come straight from the `HeckeAlgebra` construction, so the hand-rolled
+existence proof and the `axiom` that used to stand in for uniqueness are both gone. -/
 
-    Sprint 2 refinement (2026-05-31): the Sprint 1 `True` placeholder
-    is replaced by the **Hecke quadratic relation alone** —
+/-- **Hecke algebra map**: a family on the simple reflections satisfying *both* defining
+families.
 
-      `(f s - algebraMap R A q) * (f s + 1) = 0` for every `s : W`.
+The old predicate of this name asserted only the quadratic relation, and asserted it for
+every `s : W`.  Its docstring defended the over-quantification by saying the restriction
+to simple reflections "happens upstream ... the caller passes an `f` that is only
+nontrivial on `S`" — a constraint on callers, not on the predicate. -/
+def IsHeckeAlgebraMap {A : Type w} [Ring A] [Algebra R A] (q : R) (S : Set W) (f : S → A) :
+    Prop :=
+  (∀ s : S, (f s - algebraMap R A q) * (f s + 1) = 0) ∧
+  (∀ s t : S, QOU.MathlibExt.IwahoriHecke.altProd (f s) (f t) (coxeterMatrixOn S s t)
+      = QOU.MathlibExt.IwahoriHecke.altProd (f t) (f s) (coxeterMatrixOn S t s))
 
-    The braid-relation condition is intentionally *omitted* from
-    this predicate to match the Sprint 2 scope of
-    [`QOU.IwahoriHecke.Quotient`](Quotient.lean), which quotients
-    only by Hecke quadratic generators (`heckeIdeal`). The full
-    Iwahori-Hecke algebra additionally quotients by braid relations
-    of length `m_{s,t}` — that step lands in the Sprint 2 follow-up
-    once Mathlib's `CoxeterSystem` reduced-expression / `m`-accessor
-    API stabilises (the §0a "in flux" deferral noted in
-    `Quotient.lean`).
+/-- **The universal property of the Iwahori–Hecke algebra.**
 
-    Bridging note: in Sprint 2's framing the relations indexed by
-    `s : W` cover the full generating set (`Set.univ : Set W`) used
-    by `IwahoriHecke` as defined above. The eventual restriction to
-    `S : Set W` of simple reflections happens upstream of this
-    predicate (the caller passes a `f` that is only nontrivial on
-    `S` and constant or `0` elsewhere). -/
-def IsHeckeAlgebraMap {W : Type u} [Group W] {R : Type v} [CommRing R]
-    {A : Type w} [Ring A] [Algebra R A] (q : R) (f : W → A) : Prop :=
-  -- Ref: [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md Sprint 2 (Hecke-quadratic fragment; braid relations follow-up)
-  ∀ s : W, (f s - algebraMap R A q) * (f s + 1) = 0
-
-/-- **Alternating product** `s · t · s · ... · ?` of length `n` in
-    two elements `s, t` of a monoid `A`.  Used to state the braid
-    relation in `IsHeckeBraidedAlgebraMap` below.
-
-    Defined by recursion:
-    - `altProduct s t 0 = 1`
-    - `altProduct s t (n+1) = s * altProduct t s n`
-
-    So `altProduct s t 1 = s`, `altProduct s t 2 = s·t`,
-    `altProduct s t 3 = s·t·s`, etc. -/
-def altProduct {A : Type*} [Monoid A] : A → A → ℕ → A
-  | _, _, 0 => 1
-  | s, t, (n + 1) => s * altProduct t s n
-
-/-- **Refined Hecke algebra map predicate** — Hecke quadratic AND
-    braid relations, parameterised by a Coxeter-matrix function
-    `m : W → W → ℕ`.
-
-    Sprint 2 follow-up (2026-05-31): captures the FULL universal
-    property of the Iwahori-Hecke algebra (not just the Hecke
-    quadratic fragment).  The caller supplies the Coxeter matrix
-    function `m`, derived from a Mathlib `CoxeterSystem`.
-
-    **Mathlib accessor (verified against `Mathlib.GroupTheory.Coxeter`
-    for the Lean v4.24.0 toolchain pinned in `lean-toolchain`).**
-    In Mathlib the Coxeter matrix is the *type parameter* `M` of
-    `CoxeterSystem M W`, NOT a field of the term `cs`. Concretely,
-    given
-
-      `variable {B : Type*} {M : CoxeterMatrix B} {W : Type*}`
-      `         [Group W] (cs : CoxeterSystem M W)`
-
-    the matrix is `M : CoxeterMatrix B` itself, and its `(i, j)`
-    entry is the natural number `M i j` (a `CoxeterMatrix B` carries
-    a `FunLike` to `B → B → ℕ`). There is **no `cs.M` projection**;
-    `cs.M.M` does not typecheck. Note also the index type is `B`
-    (the simple-reflection index), not `W`: the simple reflections
-    embed via `cs.simple : B → W`.
-
-    Because Mathlib indexes by `B` while this predicate indexes by
-    `W`, the caller adapts at the call site, e.g.
-
-      `let m : W → W → ℕ := fun s t => M (φ s) (φ t)`
-
-    for some chosen section `φ : W → B` on the simple reflections
-    (or supplies any custom matrix function for the user's specific
-    presentation). The predicate intentionally takes `m : W → W → ℕ`
-    as an explicit parameter rather than committing to Mathlib's
-    `CoxeterSystem`/`CoxeterMatrix` API surface (`FunLike` coercion
-    vs. structure field has drifted across Mathlib refactors), so
-    this definition stays stable across Mathlib bumps.
-
-    (The exact entry-application spelling — `M i j` via the
-    `FunLike` coercion — is the one surface detail to re-confirm on
-    a local `lake build QOU` when wiring an actual `CoxeterSystem`
-    caller; the `m : W → W → ℕ` parameterisation here is independent
-    of it.)
-
-    Conditions:
-    1. **Hecke quadratic** — `(f s − q)(f s + 1) = 0` for every
-       `s : W` (same as `IsHeckeAlgebraMap`).
-    2. **Braid relation** — for every pair `(s, t)` of simple
-       reflections, the alternating product of length `m s t` in
-       `f s, f t` equals the alternating product of length `m t s`
-       in `f t, f s`.  When `m s t = m t s` (the standard symmetric
-       case), both sides have the same length. -/
-def IsHeckeBraidedAlgebraMap
-    {W : Type u} [Group W] {R : Type v} [CommRing R]
-    {A : Type w} [Ring A] [Algebra R A] (q : R)
-    (m : W → W → ℕ) (f : W → A) : Prop :=
-  IsHeckeAlgebraMap q f ∧
-  (∀ s t : W, altProduct (f s) (f t) (m s t) =
-              altProduct (f t) (f s) (m t s))
-
-/-- The braided predicate strengthens the quadratic-only predicate:
-    a Hecke-braided map is in particular a Hecke-quadratic map.
-    All arguments implicit so dot notation `h.toIsHeckeAlgebraMap`
-    works at call sites. -/
-theorem toIsHeckeAlgebraMap
-    {W : Type u} [Group W] {R : Type v} [CommRing R]
-    {A : Type w} [Ring A] [Algebra R A] {q : R} {m : W → W → ℕ}
-    {f : W → A} (h : IsHeckeBraidedAlgebraMap q m f) :
-    IsHeckeAlgebraMap q f :=
-  h.1
-
-/-- **Existence side of the Iwahori-Hecke universal property
-    (Hecke-quadratic fragment).**
-
-    Sprint 2 follow-up: given the refined `IsHeckeAlgebraMap`
-    predicate (Hecke quadratic relation alone), produces an
-    `R`-algebra hom from `IwahoriHecke W R q` extending `f` on
-    every generator. Routes through Quotient.lean's
-    `universal_property_hecke_quadratic` via the `FreeAlgebra.lift`
-    of the W-indexed family.
-
-    The braid-relation side is deferred to the Sprint 2 follow-up
-    once Mathlib's `CoxeterSystem` reduced-expression accessor
-    stabilises (the Sprint 2 caveat inherited from
-    [`Quotient.lean`](Quotient.lean) line 113-118). -/
-theorem universal_property_existence
-    {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] (q : R)
-    {A : Type w} [CommRing A] [Algebra R A]
-    (f : W → A) (hf : IsHeckeAlgebraMap q f) :
-    Nonempty { φ : IwahoriHecke W R q →ₐ[R] A //
-              ∀ s : W, φ (T q s) = f s } := by
-  -- Lift `f : W → A` through FreeAlgebra to an algebra hom
-  --   f' : FreeAlgebra R (Set.univ : Set W) →ₐ[R] A
-  -- mapping each generator `FreeAlgebra.ι R ⟨s, _⟩ ↦ f s`.
-  let f' : FreeAlgebra R (Set.univ : Set W) →ₐ[R] A :=
-    FreeAlgebra.lift R (fun (s : (Set.univ : Set W)) => f s.val)
-  -- Vanishing on `heckeQuadraticGenerators` follows from `hf`
-  -- applied to each `s : W` via the universal-set wrapping.
-  have hf' : ∀ s : (Set.univ : Set W),
-      f' (QOU.IwahoriHecke.Quotient.heckeQuadraticRelation R q
-        (Set.univ : Set W) s) = 0 := by
-    intro s
-    -- heckeQuadraticRelation unfolds to
-    --   (ι s - algebraMap R _ q) * (ι s + 1) in FreeAlgebra R Set.univ
-    -- After applying f' (which sends ι ⟨s, _⟩ ↦ f s.val), the image
-    -- is (f s.val - algebraMap R A q) * (f s.val + 1) = 0 by hf.
-    show f' _ = 0
-    unfold QOU.IwahoriHecke.Quotient.heckeQuadraticRelation
-    simp only [f', map_mul, map_sub, map_add, map_one,
-               FreeAlgebra.lift_ι_apply, AlgHom.commutes]
-    exact hf s.val
-  -- Apply Quotient.lean's lemma to produce the lift.
-  obtain ⟨φ_pair⟩ :=
-    QOU.IwahoriHecke.Quotient.universal_property_hecke_quadratic
-      R q (Set.univ : Set W) A f' hf'
-  refine ⟨⟨φ_pair.val, ?_⟩⟩
-  intro s
-  -- φ_pair.property says φ_pair.val (Quotient.T R q univ ⟨s, _⟩) = f' (ι ⟨s, _⟩);
-  -- since `T q s := Quotient.T R q univ ⟨s, Set.mem_univ s⟩` and
-  -- f' (ι ⟨s, _⟩) = f s, equality follows.
-  have h := φ_pair.property ⟨s, Set.mem_univ s⟩
-  simp only [T, f', FreeAlgebra.lift_ι_apply] at h
-  exact h
-
-/-- **Universal property of the Iwahori-Hecke algebra.**
-
-    Any Hecke algebra map `f : W → A` (in the sense of
-    `IsHeckeAlgebraMap`, currently the Hecke-quadratic-only
-    predicate) extends uniquely to an `R`-algebra homomorphism
-    from `IwahoriHecke W R q`.
-
-    Sprint 2 follow-up status:
-    - **Existence**: discharged by `universal_property_existence`
-      via Quotient.lean's `universal_property_hecke_quadratic`.
-    - **Uniqueness**: axiomatised pending lake-local verification.
-      The argument is standard: two algebra homs out of the quotient
-      agree iff their compositions with `Ideal.Quotient.mk` agree
-      (`Ideal.Quotient.algHom_ext`); two algebra homs out of
-      `FreeAlgebra R X` agree iff they agree on every generator
-      `ι R x` (`FreeAlgebra.hom_ext`); each generator case reduces
-      to `ψ (T q s) = φ_witness.val (T q s)` via `hψ s` and
-      `φ_witness.property s`. Two tactic-form attempts (sessions
-      2026-06-03 a7f80972, f58c7feb) could not be verified locally
-      because the remote container has no `lake` binary and elan
-      cannot reach the Lean release server (network policy). The
-      proof is well-known in the literature — see [kassel2008]
-      Ch. 4 — so the result is recorded as an `axiom` here pending
-      a follow-up lake-equipped session that can verify the tactic
-      form. -/
+Previously: existence proved by hand, uniqueness recorded as `axiom universal_property`
+on the ground that the container had no `lake` binary.  Both are now discharged by
+`QOU.MathlibExt.IwahoriHecke.exists_unique_lift`, and the target may be any `R`-algebra
+rather than a commutative one. -/
 -- Ref: [kassel2008] Kassel & Turaev, "Braid Groups", Springer 2008, Ch. 4
-axiom universal_property
-    {W : Type u} [Group W] [DecidableEq W] {R : Type v} [CommRing R] (q : R)
-    {A : Type w} [CommRing A] [Algebra R A]
-    (f : W → A) (hf : IsHeckeAlgebraMap q f) :
-    ∃! φ : IwahoriHecke W R q →ₐ[R] A, ∀ s : W, φ (T q s) = f s
+theorem universal_property {A : Type w} [Ring A] [Algebra R A]
+    (f : S → A) (hf : IsHeckeAlgebraMap q S f) :
+    ∃! φ : IwahoriHecke W R q S →ₐ[R] A, ∀ s : S, φ (T q s) = f s :=
+  QOU.MathlibExt.IwahoriHecke.exists_unique_lift R q (coxeterMatrixOn S) f hf.1 hf.2
+
+/-- Two algebra maps agreeing on the simple reflections are equal. -/
+theorem hom_ext {A : Type w} [Ring A] [Algebra R A]
+    (φ ψ : IwahoriHecke W R q S →ₐ[R] A) (h : ∀ s : S, φ (T q s) = ψ (T q s)) :
+    φ = ψ :=
+  QOU.MathlibExt.IwahoriHecke.hom_ext R q (coxeterMatrixOn S) φ ψ h
+
+/-- **Each generator is invertible** whenever `q` is, so the presentation factors through
+the braid group and `σ_s⁻¹` in the skein dictionary (§7a) denotes an actual element. -/
+theorem isUnit_T (hq : IsUnit q) (s : S) : IsUnit (T q s) :=
+  QOU.MathlibExt.IwahoriHecke.isUnit_T hq s
 
 /-! ## Closure paths (downstream consumers gated on this infra)
 

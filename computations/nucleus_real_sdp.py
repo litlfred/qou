@@ -321,6 +321,24 @@ def main() -> int:
         },
     }
     out = HERE / f"nucleus-real-sdp-{atom}.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. The q0 anchor is INHERITED:
+    # this producer runs no q0 arithmetic itself, but every chi input it
+    # consumes is a q0-evaluated witness and all of them declare
+    # q0Anchor: "proton" -- stamping "independent" here misled the pin
+    # audits (Copilot review, PR #6129).
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    witness.setdefault(
+        "q0AnchorReason",
+        "inherited: no q0 arithmetic in this producer; all chi inputs "
+        "(NUCLEI[*]['chi']) are q0-evaluated witnesses declaring "
+        "q0Anchor='proton'")
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor="proton")
     out.write_text(json.dumps(sanitize_nan(witness), indent=2) + "\n")
 
     print(f"{atom}: {n_blocks} blocks @ H_{meta['n_strands']}  "

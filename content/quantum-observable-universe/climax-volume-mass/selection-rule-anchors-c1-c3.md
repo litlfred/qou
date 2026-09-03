@@ -18,7 +18,9 @@ $$
 
 ## Significance
 
-The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (muon, a knot, framework `linking_weight = 1`). The c=3 case must equal the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton). This proposition Lean-formalises both identities. It grants the selection rule's two anchors derivation-tight status (they are not a fit; both follow from the q-deformed hook-length formula).
+The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (muon, a knot, framework `linking_weight = 1`). The c=3 case must equal the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton). This proposition Lean-formalises both identities *from the hook-length formula itself*: [`QOU.Mass.selection_rule_c1_real`](../lean/QOU/Mass/QHookDimension.lean) and `QOU.Mass.selection_rule_c3_real` state the sums over `dimQ` of the actual partitions, where `dimQ` is built as shape → conjugate → hook lengths → `[n]_q!` over the hooks' q-integers, and the hook multiset of each shape is settled by `decide`. So the anchors are derivation-tight in the sense claimed: not a fit, and not a hand-substituted value either.
+
+> **What the earlier formalisation did and did not do.** Until 2026-08-29 the Lean here proved `((1 : R) + 1) / 2 = 1` for c=1 and the corresponding Laurent identity for c=3 — true statements, but arithmetic over q-dimension values typed in by hand, with no partition, hook length or `dim_q` occurring in any *statement*. The hook-length step lived in a docstring. Those theorems remain in `selection-rule-anchors-c1-c3.lean` and are still true; what was missing, and is now supplied, is the derivation of their left-hand sides (bean `qou-lx7k`).
 
 ## Lean proof structure
 

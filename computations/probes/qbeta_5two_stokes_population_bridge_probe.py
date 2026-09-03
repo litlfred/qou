@@ -232,17 +232,33 @@ def main() -> int:
     wb.add_assertion("sigma3_series_real",
                      computed=float(reality3), expected=0.0, tolerance=1e-40,
                      source="the real-saddle φ_σ3 series is real at ±x₀")
+    # Was `computed=float(overshoot), expected=float(overshoot)` with
+    # `tolerance = overshoot/2 if g_t1 else 0.0` — and that tolerance dance is
+    # why it could not fail either way: with `g_t1` true the tolerance is
+    # enormous, and with it false the tolerance is 0 but both sides are still
+    # the same expression (bean `qou-26f2`). The predicate the source states
+    # is already computed on line 149 as `g_t1 = overshoot > 1e4`, and was
+    # used only to pick that tolerance. Asserting it directly is the fix.
     wb.add_assertion("sigma_pair_population_forced_zero",
-                     computed=float(overshoot), expected=float(overshoot),
-                     tolerance=float(overshoot) / 2 if g_t1 else 0.0,
-                     source="σ-pair amplitude overshoots the Habiro scale "
-                            "by > 1e4 ⇒ n₁ = n₂ = 0 on the real-q ray "
-                            "(derived pruning)")
+                     computed=bool(g_t1), expected=True,
+                     source=f"σ-pair amplitude overshoots the Habiro scale "
+                            f"by > 1e4 (measured {mp.nstr(overshoot, 6)}) "
+                            f"⇒ n₁ = n₂ = 0 on the real-q ray "
+                            f"(derived pruning)")
+    # Was `computed=float(n_cand), expected=float(n_cand)` — the loop counter
+    # against itself, so a scan that stopped early would have agreed with
+    # itself and passed. "Ran to completion" means the triple loop visited the
+    # whole pre-registered family, so the expected count is rebuilt here from
+    # the three factors instead of read back off the loop.
+    _n_channels = sum(1 for chv in ch.values() if abs(chv) >= mp.mpf("1e-30"))
     wb.add_assertion("assembly_scan_completed",
-                     computed=float(n_cand), expected=float(n_cand),
-                     tolerance=0.5,
-                     source="pre-registered parameter-free scan ran to "
-                            "completion; hits+near-misses recorded in full")
+                     computed=n_cand,
+                     expected=_n_channels * len(weights_x) * len(cand),
+                     tolerance=0,
+                     source=f"pre-registered parameter-free scan ran to "
+                            f"completion: {_n_channels} live channel(s) × "
+                            f"{len(weights_x)} weight(s) × {len(cand)} "
+                            f"candidate(s); hits+near-misses recorded in full")
     ok = all(a.passed for a in wb.assertions)
 
     wb.add_data("substrate", {"x0": mp.nstr(x0, 15), "pin": "muon "

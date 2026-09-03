@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "TL engine reproduces corpus V(4₁), V(5₂) at 3 q-points"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "4₁ 2-cable J'_3 (framing-free) = trusted Masbaum p=−1 tower at 3 q-points"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "trefoil 2-cable framing factor is a consistent integer power of q across test points"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B₃(4₁;q*) = 0 to 1e-25 via the validated cable — amphichiral control"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B₃(5₂;q) via the validated definitional cable: 0 sign changes on q*±2e-8, B₃(q*) ≠ 0 — capstone constraint (2) fails on the CERTIFIED N=3 categorical face"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the cable agrees with exactly one of {Masbaum-p=2, GZ-(7.9)}"
     }
   ],

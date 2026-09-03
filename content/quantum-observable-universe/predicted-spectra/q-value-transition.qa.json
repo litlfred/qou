@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -965,7 +965,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1011,7 +1011,8 @@
         "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type"
       }
     ],
     "da-false-claim": [
@@ -1037,7 +1038,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1072,7 +1073,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1107,7 +1108,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1141,7 +1142,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1176,7 +1177,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1211,7 +1212,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1241,11 +1242,12 @@
         "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1280,7 +1282,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1315,7 +1317,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1350,7 +1352,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1385,7 +1387,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1420,7 +1422,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1452,11 +1454,12 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1471,7 +1474,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1505,7 +1508,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1520,7 +1523,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1535,7 +1538,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1550,7 +1553,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1565,7 +1568,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1580,7 +1583,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1595,7 +1598,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1613,7 +1616,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1631,7 +1634,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1709,7 +1712,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1724,7 +1727,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -2224,5 +2227,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:01:22.104Z"
+  "updated_at": "2026-08-22T05:01:22.104Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

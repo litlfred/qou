@@ -1,0 +1,55 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9711057v2",
+ "source_sha256": "acf5cdd7fe848f43",
+ "brief": "The microscopic spectrum of the QCD Dirac operator with finite quark masses — 7 sections: INTRODUCTION; RANDOM-MATRIX THEORY FOR FINITE QU; CALCULATION OF OBSERVABLES",
+ "extended": "**The microscopic spectrum of the QCD Dirac operator with finite quark masses**\n\n*T. Wilke1, T. Guhr1, and T. Wettig2*\n\n12 pp, 7 sections.\n\n**Outline.** I INTRODUCTION; II RANDOM-MATRIX THEORY FOR FINITE QUARK MASSE; III CALCULATION OF OBSERVABLES; 1 INf (−m1) · · · mNf; 1 (z); IV DISCUSSION; Acknowledgments",
+ "tokens": {
+  "brief": 41,
+  "extended": 77
+ },
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "title": "INTRODUCTION",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-ii-random-matrix-theory-for-finite-quark-masses",
+   "title": "RANDOM-MATRIX THEORY FOR FINITE QUARK MASSES",
+   "pages": "2-6"
+  },
+  {
+   "id": "sec-002-iii-calculation-of-observables",
+   "title": "CALCULATION OF OBSERVABLES",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-003-1-inf-m1-mnf",
+   "title": "INf (−m1) · · · mNf",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-1-z",
+   "title": "(z)",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-iv-discussion",
+   "title": "DISCUSSION",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-006-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "10-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

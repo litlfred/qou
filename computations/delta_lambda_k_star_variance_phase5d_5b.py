@@ -75,6 +75,7 @@ from q_parameter import Q as Q0_FLOAT
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_mpmath import set_q, qint, qfac
 from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 set_q(Q0_FLOAT)
 
 
@@ -121,11 +122,19 @@ def depth_k(partition: tuple) -> int:
 def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
     """χ^λ(e_K): evaluate the knot's character on partition λ at q_0."""
     if not K_word:
-        return float(dim_q(lam))  # unknot = identity
+        return float(dim_q(lam, Q0_PROTON))  # unknot = identity
     word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
     try:
         return float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
-    except Exception:
+    except ImportError:
+        # An absent dependency is an ENVIRONMENT failure, never a vanishing
+        # character. Swallowing it here silently zeroes every weight, which
+        # drives Z_norm -> 0, B_pred -> 0 and the variance -> inf while the
+        # run still reports "all assertions passed". Fail loudly instead.
+        raise
+    except Exception as exc:  # genuine numerical failure at this (λ, word)
+        print(f"  WARN: chi_lambda_braid failed at lam={lam}: "
+              f"{type(exc).__name__}: {exc} -> treating as 0")
         return 0.0
 
 
@@ -133,7 +142,7 @@ def fr_weight(lam: tuple, K_word: list, n: int, k: int) -> mp.mpf:
     """w̃_λ^(K) = dim_q²(λ) · χ^λ(e_K) / Z_norm, restricted to depth-k partitions of n."""
     if depth_k(lam) != k:
         return mp.mpf(0)
-    dq2 = mp.mpf(str(dim_q(lam))) ** 2
+    dq2 = mp.mpf(str(dim_q(lam, Q0_PROTON))) ** 2
     chi = mp.mpf(str(chi_K_at_lambda(K_word, lam)))
     return dq2 * chi
 
@@ -204,7 +213,10 @@ def main() -> int:
         chi_dict = {}
         for entry in d.get("atom", {}).get("by_partition", []):
             lam = tuple(entry["partition"])
-            chi_dict[str(list(lam))] = entry["chi_lambda"]
+            # `chi_lambda` is serialised as a 50-dps decimal STRING (the repo's
+            # serialization discipline); parse it with mpf, not float, so the
+            # full precision survives the read.
+            chi_dict[str(list(lam))] = mp.mpf(str(entry["chi_lambda"]))
         chi_data[atom] = {"Z": Z, "N": N, "n": n, "B_AME": B_AME, "chi": chi_dict,
                           "n_partitions": len(chi_dict)}
         print(f"  {atom}: H_{n}, {len(chi_dict)} partitions loaded")
@@ -317,19 +329,52 @@ def main() -> int:
                   f"B_AME = {float(d['B_AME']):.4f} MeV, "
                   f"ratio = {float(d['ratio']):.4f}")
         builder.add_data("lepton_generation_assignment", lepton_assignment)
+        # Rank the hypothesis under test against the sweep it sits in. The
+        # docstring's hypothesis is that the lepton-generation assignment
+        # CLOSES the 1.82× residual, which would make it the minimiser; it
+        # is not, so record where it actually lands.
+        builder.add_data(
+            "lepton_generation_assignment_rank_by_variance",
+            results.index(lepton_assignment) + 1)
+        builder.add_data("pairs_beating_lepton_generation_assignment",
+                         results.index(lepton_assignment))
 
+    # COVERAGE, not a constant. `variance_test_completed` used to be
+    # computed=1.0/expected=1.0 — true by construction, and blind to the two
+    # ways this sweep silently under-runs:
+    #   * a missing `atom-chi-rust-<atom>.witness.json` is WARN + `continue`,
+    #     so the variance can be taken over 3 atoms instead of 4;
+    #   * a pair whose ratios degenerate yields variance = inf.
+    # Both left the old assertion green. The expected value is independent of
+    # the sweep: |K_candidates|², read off the declared candidate list.
+    n_atoms_expected = len(ATOMS)
+    fully_covered = sum(
+        1 for r in results
+        if r["variance_max_min"] != float("inf")
+        and len(r["per_atom"]) == n_atoms_expected
+    )
+    builder.add_data("pairs_fully_covered", fully_covered)
+    builder.add_data("atoms_loaded", sorted(chi_data))
     builder.add_assertion(
         "variance_test_completed",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        unit="boolean",
+        computed=fully_covered,
+        expected=len(K_candidates) ** 2,
+        tolerance=0,
+        unit="pairs",
         source=(
-            f"Variance test for {len(K_candidates)}² = {len(K_candidates)**2} "
-            f"(K_1*, K_2*) candidate pairs (K_3* = 6_1 fixed). "
-            f"Best variance: {results[0]['variance_max_min']:.4f} achieved by "
+            f"COVERAGE: every one of the {len(K_candidates)}² = "
+            f"{len(K_candidates)**2} (K_1*, K_2*) candidate pairs (K_3* = 6_1 "
+            f"fixed) produced a finite max/min variance over all "
+            f"{n_atoms_expected} atoms {[a[0] for a in ATOMS]}. Expected value "
+            f"is |K_candidates|² from the declared candidate list, independent "
+            f"of the sweep's own output. Goes red if an atom χ-witness is "
+            f"missing (WARN + continue above) or a pair degenerates to inf. "
+            f"Best variance: {results[0]['variance_max_min']:.4f} at "
             f"K_1* = {results[0]['K_1_star']}, K_2* = {results[0]['K_2_star']}. "
-            f"Baseline (uniform Plancherel): 1.82."
+            f"Baseline (uniform Plancherel): 1.82. NOTE the hypothesis under "
+            f"test is NOT confirmed — the lepton-generation assignment "
+            f"(3_1, 5_1) does not minimise the variance; see "
+            f"`lepton_generation_assignment_rank_by_variance` in data."
         ),
     )
 

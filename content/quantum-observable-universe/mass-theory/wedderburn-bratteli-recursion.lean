@@ -37,8 +37,8 @@
   q-*rational* statement, not a q-Laurent one, and both of its divisions
   are by elements that genuinely vanish somewhere.
 
-  * `markovZ' v = 1/(v + v⁻¹)` divides by `v + v⁻¹`, which is `0` at
-    `v² = −1`; so `v + v⁻¹` is not a unit and the quotient is not a
+  * `markovZD q = q³/(q² + 1)` divides by `q² + 1`, which is `0` at
+    `q² = −1`; so `q² + 1` is not a unit and the quotient is not a
     Laurent polynomial.
   * `bratteliFactor = [c+1]_q / [c+h]_q` divides by a q-integer, which
     vanishes at roots of unity — exactly the locus this file excludes by
@@ -51,7 +51,7 @@
 
   A division-free restatement is possible in principle by moving to the
   relational R[h] form (`z·(v²+1) = v`, `F·[c+h]_q = [c+1]_q`), but that
-  converts `markovZ'`/`bratteliFactor` from functions into relations and
+  converts `markovZD`/`bratteliFactor` from functions into relations and
   so changes the shape of `SatisfiesWedderburnBratteliRecursion` and every
   consumer; it would have to start at `QOU.MathlibExt.QIntegerCanonical`,
   not here.  Nothing in this file is archimedean, so it is already on the
@@ -81,11 +81,29 @@ universe u
 noncomputable abbrev qIntZ {R : Type u} [Field R] (q : R) (k : ℤ) : R :=
   QOU.QInteger.qIntBalZ q k
 
-/-- Markov parameter `z = 1/(v + v⁻¹)` in terms of the formal
-    square root `v` of `q` (so `v² = q`).  No `Real.sqrt` is
-    used — `v` is supplied externally. -/
-noncomputable def markovZ' {R : Type u} [Field R] (v : R) : R :=
-  1 / (v + v⁻¹)
+/-- **Convention-D Markov parameter** `z_D = q³/(q² + 1)`.
+
+    **MIGRATED FROM CONVENTION C (2026-08-24).**  This read
+    `markovZ' v = 1/(v + v⁻¹)` with `v² = q`, which evaluates to
+    `√q/(q + 1)` — convention C, excised by the 2026-08-15 ruling in
+    favour of D.  The formal square root `v` was needed only to express
+    C; under D it is not needed at all and is gone from every signature
+    in this file.
+
+    Equivalently `z_D = q²/(q + q⁻¹)`, the form closest to the old
+    `1/(v + v⁻¹)`: the convention change is that extra factor `q²`
+    together with `v ↦ q`.
+
+    **Why this is a migration and not a `z`-swap.**  Bean `qou-cds1`
+    forbids substituting `z_D` into a result *derived* under C.  Here `z`
+    enters only through this definition and through the *definition* of
+    the recursion relation below; the one theorem that consumes it,
+    `y_base_case_singleton`, closes by `rw … mul_one` and never uses `z`'s
+    value.  So nothing in this file was derived from C's value, and
+    changing the definition changes the convention rather than
+    laundering a C-frame conclusion. -/
+noncomputable def markovZD {R : Type u} [Field R] (q : R) : R :=
+  q ^ 3 / (q ^ 2 + 1)
 
 /-- A partition (skeleton). The recursion statement below does not
     depend on internal partition structure; it carries the q-content
@@ -116,19 +134,18 @@ noncomputable def bratteliFactor {R : Type u} [Field R]
   qIntZ q (c + 1) / qIntZ q (c + h)
 
 /-- A weight function `y : Partition → R` satisfies the Wedderburn–
-    Bratteli recursion at parameter `(q, v)` (with `v² = q`) if for
+    Bratteli recursion at parameter `q` (convention D) if for
     every Bratteli edge `e : BratteliEdge`, the next-level weight
     `y e.lam` equals `z · F_q(c, height(λ)) · y e.mu`. -/
 def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
-    (q v : R) (y : Partition → R) : Prop :=
+    (q : R) (y : Partition → R) : Prop :=
   ∀ e : BratteliEdge,
-    y e.lam = (markovZ' v) *
+    y e.lam = (markovZD q) *
               bratteliFactor q e.content (e.lam.height : ℤ) *
               y e.mu
 
 /-- Existence: a function `y : Partition → R` satisfying the
-    Wedderburn–Bratteli recursion exists at any generic `q` (with
-    formal `v` such that `v² = q`).
+    Wedderburn–Bratteli recursion exists at any generic `q`.
 
     Closed with the trivial witness `y ≡ 0`: the recursion
     `y e.lam = z · F · y e.mu` is satisfied vacuously since both
@@ -146,8 +163,8 @@ def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
 -- Ref: prop:wedderburn-bratteli-recursion proof, [hoefsmit1974];
 -- Hoefsmit seminormal eigenvalue on per-cell idempotent + Markov property.
 theorem wedderburn_bratteli_recursion_holds
-    {R : Type u} [Field R] (q v : R) :
-    ∃ y : Partition → R, SatisfiesWedderburnBratteliRecursion q v y :=
+    {R : Type u} [Field R] (q : R) :
+    ∃ y : Partition → R, SatisfiesWedderburnBratteliRecursion q y :=
   ⟨fun _ => 0, by
     intro e
     show (0 : R) = _ * _ * 0
@@ -156,10 +173,10 @@ theorem wedderburn_bratteli_recursion_holds
 /-- Application: given any `y` known to satisfy the recursion, the
     edge equation follows. -/
 theorem wedderburn_bratteli_apply
-    {R : Type u} [Field R] (q v : R) (y : Partition → R)
-    (hrec : SatisfiesWedderburnBratteliRecursion q v y)
+    {R : Type u} [Field R] (q : R) (y : Partition → R)
+    (hrec : SatisfiesWedderburnBratteliRecursion q y)
     (e : BratteliEdge) :
-    y e.lam = (markovZ' v) *
+    y e.lam = (markovZD q) *
               bratteliFactor q e.content (e.lam.height : ℤ) *
               y e.mu :=
   hrec e
@@ -181,13 +198,13 @@ theorem wedderburn_bratteli_apply
     field. -/
 -- Ref: [manuscript] thm:jones-markov-trace base case;
 -- H_1(R, q) = R, tr_M = identity character on V_(1).
-theorem y_base_case_singleton {R : Type u} [Field R] (q v : R)
+theorem y_base_case_singleton {R : Type u} [Field R] (q : R)
     (y : Partition → R)
-    (hrec : SatisfiesWedderburnBratteliRecursion q v y)
+    (hrec : SatisfiesWedderburnBratteliRecursion q y)
     (hbase : y ⟨[1]⟩ = (1 : R))
     (e : BratteliEdge) (he : e.mu = ⟨[1]⟩) :
-    y e.lam = (markovZ' v) * bratteliFactor q e.content (e.lam.height : ℤ) := by
-  rw [wedderburn_bratteli_apply q v y hrec e, he, hbase, mul_one]
+    y e.lam = (markovZD q) * bratteliFactor q e.content (e.lam.height : ℤ) := by
+  rw [wedderburn_bratteli_apply q y hrec e, he, hbase, mul_one]
 
 -- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
 -- `d_λ = dim V_λ` (hook-length formula), summed over all partitions
@@ -205,22 +222,22 @@ theorem y_base_case_singleton {R : Type u} [Field R] (q v : R)
 
     See the theorem docstring below for the cited reference. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Plancherel completeness Σ_λ y_λ·d_λ = 1 from Markov-trace normalisation)
-axiom plancherel_completeness_axiom {R : Type u} [Field R] (q v : R) (n : ℕ)
+axiom plancherel_completeness_axiom {R : Type u} [Field R] (q : R) (n : ℕ)
     (parts : List Partition)
     (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
     (_parts_nodup : parts.Nodup)
     (y : Partition → R) (d : Partition → ℕ)
-    (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
+    (_hrec : SatisfiesWedderburnBratteliRecursion q y) :
     (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R)
 
 theorem plancherel_completeness
-    {R : Type u} [Field R] (q v : R) (n : ℕ)
+    {R : Type u} [Field R] (q : R) (n : ℕ)
     (parts : List Partition)
     (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
     (_parts_nodup : parts.Nodup)
     (y : Partition → R) (d : Partition → ℕ)
-    (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
+    (_hrec : SatisfiesWedderburnBratteliRecursion q y) :
     (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R) :=
-  plancherel_completeness_axiom q v n parts _parts_complete _parts_nodup y d _hrec
+  plancherel_completeness_axiom q n parts _parts_complete _parts_nodup y d _hrec
 
 end QOU.BraidsAndKnots

@@ -88,6 +88,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from _li_2_q_util import load_q_50dps, li_2_q  # noqa: E402
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
     classical_dim,
@@ -201,7 +202,11 @@ def chi21_seminormal_direct(q, qi):
 
 def make_tower(q, qi):
     h = q - qi
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # convention D (owner ruling 2026-08-15). Was z_C = 1/(sqrt q + sqrt(1/q)).
+    # This is a LOCAL z beside this file's own load_q_50dps() call at the
+    # bottom, so converting only the helper would have left z_D and z_C in
+    # one file — the straddle this excision exists to remove.
+    z = _markov_z(q)
     z2 = z * z
     f_pp = z
     f_pn = z
@@ -455,24 +460,24 @@ def main() -> int:
 
     wb.add_assertion(
         "pipeline_tau_is_jones_tl_decomposition",
-        computed=float(dev_jones), expected=0.0, tolerance=1e-40,
+        computed=dev_jones, expected=0.0, tolerance=1e-40,
         source="τ closed form = [4]/[2]³·1 + 1/[2]²·(2−3h⁴−h⁶) exactly "
                "(SU(2)/TL weights, (1³) killed)",
     )
     wb.add_assertion(
         "chi21_closed_form_vs_seminormal",
-        computed=float(dev_chi21), expected=0.0, tolerance=1e-40,
+        computed=dev_chi21, expected=0.0, tolerance=1e-40,
         source="χ^{(2,1)}((σ1σ2⁻¹)³) = 2−3h⁴−h⁶ vs direct Hoefsmit "
                "seminormal matrix product at 50 dps",
     )
     wb.add_assertion(
         "markov_m3_both_conventions",
-        computed=float(dev_m3_J + dev_m3_W), expected=0.0, tolerance=1e-40,
+        computed=dev_m3_J + dev_m3_W, expected=0.0, tolerance=1e-40,
         source="Σ y_λ d_λ = 1 under both Jones/TL and Wenzl weights",
     )
     wb.add_assertion(
         "trace_convention_gap_recorded",
-        computed=float(convention_gap), expected=1.9554e-4, tolerance=1e-6,
+        computed=convention_gap, expected=1.9554e-4, tolerance=1e-6,
         source="|τ_pipeline − τ_Wenzl| ≈ 1.96e-4: the pipeline is the "
                "Jones/TL trace, NOT the corpus-canonical Wenzl z-trace",
     )
@@ -498,14 +503,14 @@ def main() -> int:
     )
     wb.add_assertion(
         "scalar_baseline_matches_committed_witness",
-        computed=float(max_base_dev), expected=0.0, tolerance=1e-6,
+        computed=max_base_dev, expected=0.0, tolerance=1e-6,
         source="scalar Jones tower vs borromean-binding-recompute."
                "witness.json per-isotope B_tower (q-string precision "
                "difference only)",
     )
     wb.add_assertion(
         "perlambda_does_not_close_16O",
-        computed=float(max(max_shift, max_shift_w, max_shift_6)),
+        computed=max(max_shift, max_shift_w, max_shift_6),
         expected=0.0, tolerance=0.01,
         source="max per-λ tower shift vs scalar < 1% across all isotopes "
                "and all three collapse-last variants — the ¹⁶O 2.3× "

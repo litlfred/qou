@@ -543,7 +543,12 @@ def main():
             "fit_performed": False,
         }
     w.add_data("task4_h4_falsification", task4)
-    w.add_assertion("no_h4_fit_performed", 0, 0)
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    w.add_parameter("no_h4_fit_performed", "0 (declared; see task4_h4_falsification.fit_performed)")
 
     # --- VERDICT -------------------------------------------------------------
     if crystal_selects_a_line:

@@ -213,7 +213,7 @@ def main() -> int:
                "swing S'(q*) ~ 3.84e6; scale gap = 1/u^3 up to O(1); q0 not near a u^2->1 locus")
     wb.add_assertion(
         "swing_is_ladder_1_over_u3_smooth_prefactor",
-        computed=float(prefactor), expected=2.37, tolerance=0.5,
+        computed=prefactor, expected=2.37, tolerance=0.5,
         source="S'(q*) = 2.37 x (1/u^3), smooth O(1) prefactor -- the merged 1/u^3 capstone "
                "(#3636) stands; the swing is a representation artifact, not a self-dual pole")
     wb.add_assertion(

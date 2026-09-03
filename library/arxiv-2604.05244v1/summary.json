@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2604.05244v1",
+ "source_sha256": "a5097e763dd89d06",
+ "brief": "Edge universality in Floquet sideband spectra Miguel Tierz — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a",
+ "extended": "**Edge universality in Floquet sideband spectra Miguel Tierz**\n\n*Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)*\n\n31 pp, 10 sections.\n\n**Abstract.** We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi edge are governed by the discrete Bessel kernel—an exact result at any drive amplitude A. In the large-amplitude regime the edge of this kernel converges, on the A1/3 scale, to the Airy kernel of random matrix theory. This universality has a direct transport consequence: the deficit of the photo-assisted shot-noise slope from its high-bias plateau collapses onto the Airy-kernel diagonal. The deriva- tion rests on a bridge between the linear detection chain and the Floquet scattering matrix: commensurate gating isolates a single coherence-order block of the one-body correlator.\n\n**Outline.** Abstract; Introduction; 2 Monochromatic, spatially uniform phase drive; 3 Wide-band static scatterer. The energy-indep; 5 Zero temperature. More precisely, kBTel ≪ℏΩκ; 6 Large drive amplitude A ≫1. The Airy limit i; 0 (ω0; t0)⟩=; 0 Ai(s+u) Ai(t+u) du. Figure 7(b); 0 Ai(s +; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 302
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-monochromatic-spatially-uniform-phase-drive-ti",
+   "title": "Monochromatic, spatially uniform phase drive (Tien–Gordon regime [7]). The drive enters",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-3-wide-band-static-scatterer-the-energy-independ",
+   "title": "Wide-band static scatterer. The energy-independent factorization Snm(E) = U(E)Jn−m(A)",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-5-zero-temperature-more-precisely-kbtel-ℏωκa-ℏωa",
+   "title": "Zero temperature. More precisely, kBTel ≪ℏΩκA = ℏΩ(A/2)1/3. The crossover parameter is",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-005-6-large-drive-amplitude-a-1-the-airy-limit-is-an",
+   "title": "Large drive amplitude A ≫1. The Airy limit is an asymptotic statement as A →∞; the edge",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-006-0-ω0-t0",
+   "title": "(ω0; t0)⟩=",
+   "pages": "7-24"
+  },
+  {
+   "id": "sec-007-0-aisu-aitu-du-figure-7b",
+   "title": "Ai(s+u) Ai(t+u) du. Figure 7(b)",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-008-0-ais",
+   "title": "Ai(s +",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "28-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

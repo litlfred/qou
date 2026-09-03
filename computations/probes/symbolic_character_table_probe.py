@@ -169,7 +169,7 @@ def main() -> int:
         .add_data("pair_character_identities_lambda_311", pair_results)
         .add_assertion(
             name="self_conjugate_chi_over_h_are_integers",
-            computed=float(max_self_conj_residue),
+            computed=max_self_conj_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

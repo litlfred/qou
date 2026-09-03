@@ -246,16 +246,42 @@ def main() -> int:
                         "(|a2| ~ 1e20, held-out to 1e12)",
         "gates_pass": bool(gates_pass)})
     wb.add_data("verdict", verdict)
+
+    # The three gates this probe's source string names — held-out,
+    # conjugation, constancy — each as an explicit recorded verdict.
+    #
+    # `const_ok` was computed on line 144 and then never read again:
+    # `gates_pass` is `held_ok and conj_ok`, covering two of the three, so the
+    # constancy verdict reached neither the summary nor the witness. Only its
+    # underlying spreads were recorded, so a reader could recompute it but the
+    # probe never stated it.
+    #
+    # Deliberately NOT folded into `gates_pass`: that would change this
+    # probe's verdict logic, which is an author call rather than a drain.
+    # Recorded and flagged, not decided.
+    _gate_verdicts = {"held_out": bool(held_ok),
+                      "conjugation": bool(conj_ok),
+                      "constancy": bool(const_ok)}
+    wb.add_data("gate_verdicts", _gate_verdicts)
+    wb.add_data("gates_pass_covers", ["held_out", "conjugation"])
+
+    # Was `computed=1.0, expected=1.0` (bean `qou-26f2`). The claim is that
+    # the gate data is recorded — and a constant is the one thing that cannot
+    # establish it, since a run recording nothing would still have reported
+    # 1.0 == 1.0. Counting the recorded verdicts against the three the source
+    # names is the falsifiable form, and it deliberately does NOT require the
+    # gates to pass: this is a diagnostic tranche where, as the source says,
+    # "failure is the diagnostic, not papered over".
     wb.add_assertion("gate_data_recorded_honestly",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source="held-out/conjugation/constancy gate values "
-                            "recorded; failure is the diagnostic, not "
-                            "papered over")
-    wb.add_assertion("resonance_cause_localized",
-                     computed=1.0, expected=1.0, tolerance=0.5,
-                     source="x_tilde = 1 exactly at the substrate — "
-                            "l-tower degeneracy explains the finite-"
-                            "rank failure; tilt counter-test recorded")
+                     computed=len(_gate_verdicts), expected=3, tolerance=0,
+                     source="held-out/conjugation/constancy gate verdicts all "
+                            "recorded; failure is the diagnostic, not papered "
+                            "over, so this counts them rather than requiring "
+                            "them to pass")
+    # `resonance_cause_localized` was `1.0 == 1.0` restating, verbatim, the
+    # `resonance_finding` block written immediately above. Duplicating an
+    # `add_data` in assertion form asserts nothing; the finding stays, the
+    # constant goes.
     wb.save()
     return 0 if ok else 1
 

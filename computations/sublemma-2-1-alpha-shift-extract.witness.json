@@ -1,4 +1,7 @@
 {
+  "scriptFile": "sublemma_2_1_alpha_shift_extract.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md",
   "computation": "sublemma-2-1-alpha-shift-extract",
   "description": "Extracts \u03b1_shift(I; \u03bb, \u03bc, \u03bd) per \u03bb \u22a2 6 in the deuteron case (I = single inter-nucleon averaged crossing) via LR-system inversion. Runs 100 (\u03b2_1, \u03b2_2) Hecke-element test pairs to over-determine the \u03b1_shift unknowns per \u03bb, then solves by least squares. For c^\u03bb_{\u03bc\u03bd} = 1 cases, the scalar \u03b1_shift values are consistent with character data to ~1e-13 (machine precision). For c^\u03bb_{\u03bc\u03bd} \u2265 2 cases (only \u03bb = (3,2,1) for n=6), the formula is matrix-valued and requires the refined Sub-lemma 2.1 statement.",
   "reference_blocks": [

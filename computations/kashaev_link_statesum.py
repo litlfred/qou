@@ -289,24 +289,67 @@ def _trace_faces(pd: list[tuple[int, int, int, int]]):
 
 
 def _solve_mod(A, b, N, tolerant=False):
-    """One solution x of A x ≡ b (mod N), N prime.
+    """One solution x of A x ≡ b (mod N), for any N ≥ 2.
 
     tolerant=False: return None if any equation is inconsistent.
     tolerant=True : IGNORE inconsistent leftover rows (0 = nonzero) and return
       the solution of the maximal consistent subsystem.  Used for the
       (3.3)-(3.4) face system, which is rank-deficient by exactly one (the
       global row/col angle-deficit): the lone dependent-inconsistent equation
-      is auto-dropped rather than guessing which column to omit."""
+      is auto-dropped rather than guessing which column to omit.
+
+    COMPOSITE N (fixed 2026-08-30, bean qou-b5h9).  This inverted the pivot as
+    `pow(a, N-2, N)` — Fermat's little theorem, valid only for PRIME N — while
+    the docstring above it advertised agreement at N = 3, 5, 7, **9**, 11.  At
+    N = 9 that formula does not merely lose accuracy, it returns the wrong
+    element: phi(9) = 6, so a^7 = a^(6+1) = a for every unit, i.e. the "inverse"
+    is the pivot itself.  Worse, the pivot test accepted any entry nonzero mod
+    N, so a zero divisor (3 or 6 mod 9) could be chosen and `pow` returns 0,
+    silently annihilating the row.  Measured on 2x2 systems: composite N = 9
+    and N = 15 returned vectors that do NOT satisfy their own system, and
+    returned them without complaint.
+
+    It never actually bit.  Instrumenting the pivots this module really
+    encounters, across N = 3..15 on the Whitehead face system, every pivot is
+    1 or N-1 — self-inverse, so Fermat's wrong formula coincides with the right
+    answer.  That is structural, not luck: the (3.3)-(3.4) matrix is a 0/1
+    face-incidence matrix, and elimination on it keeps pivots at +/-1.  The
+    published values at N = 9 and 11 are therefore NOT corrupted; recomputing
+    them with the corrected solver reproduces them exactly.
+
+    So this is a latent trap rather than a live defect, and the fix is written
+    to keep it that way: invert by extended Euclid (correct for any modulus),
+    pivot only on UNITS, and raise rather than continue if a column offers only
+    non-unit pivots — the case that would need Howell/Smith normal form.  A
+    future diagram whose incidence structure produces a non-unit pivot now
+    fails loudly instead of returning a plausible wrong answer."""
+    def _inv_mod(a, n):
+        """Modular inverse by extended Euclid, or None if a is not a unit."""
+        a %= n
+        g, x, r0, r1 = n, 0, n, a
+        x0, x1 = 0, 1
+        while r1:
+            q = r0 // r1
+            r0, r1 = r1, r0 - q * r1
+            x0, x1 = x1, x0 - q * x1
+        return None if r0 != 1 else x0 % n
+
     A = [row[:] + [b[i] % N] for i, row in enumerate(A)]
     rows, cols = len(A), len(A[0]) - 1
     piv = []
     r = 0
     for c in range(cols):
-        pr = next((i for i in range(r, rows) if A[i][c] % N), None)
+        pr = next((i for i in range(r, rows)
+                   if _inv_mod(A[i][c], N) is not None), None)
         if pr is None:
+            if any(A[i][c] % N for i in range(r, rows)):
+                raise ArithmeticError(
+                    f"column {c} has only non-unit pivots mod {N}; solving "
+                    f"this needs Howell/Smith normal form. Refusing rather "
+                    f"than returning a wrong solution (bean qou-b5h9).")
             continue
         A[r], A[pr] = A[pr], A[r]
-        inv = pow(A[r][c], N - 2, N)
+        inv = _inv_mod(A[r][c], N)
         A[r] = [(v * inv) % N for v in A[r]]
         for i in range(rows):
             if i != r and A[i][c]:
@@ -583,5 +626,14 @@ if __name__ == "__main__":
     from _kashaev_prov import add_provenance
     add_provenance(wit, __file__, engine="python")
     out = Path(__file__).resolve().parent / "kashaev-link-statesum.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(wit, indent=2))
     print(f"  Witness: {out}")

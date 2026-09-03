@@ -39,6 +39,10 @@ from sublemma_2_1_A_operator_extract import (  # noqa: E402
     make_test_words, partitions_of, H,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 def central_C_word(g_lo: int) -> list:
     """C = σ_{g_lo} + σ_{g_lo+1} + σ_{g_lo}σ_{g_lo+1}σ_{g_lo} as a SUM of three
@@ -128,7 +132,7 @@ def main() -> int:
         Pmu = lagrange_projectors(C1, eigs)
         Pnu = lagrange_projectors(C2, eigs)
 
-        rho_I = evaluate_word_matrix(lam, [(1.0, -H / 2, 2)])  # I = σ_2 - h/2
+        rho_I = evaluate_word_matrix(lam, [(1.0, _pn_d(H), 2)])  # I = σ_2 + d_pn
 
         worst = 0.0
         for wp in test_words:

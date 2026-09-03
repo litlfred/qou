@@ -1,0 +1,431 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-9306237v1",
+ "source": {
+  "file": "9306237v1.pdf",
+  "sha256": "6fea847208a60505bf14d48dcf27d4c8db984176da9ba577c3f8240846150051",
+  "bytes": 147905,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/9306237",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "7 Jun 1993"
+  },
+  "doi": null,
+  "title": "KEK preprint 92-169",
+  "authors_raw": "April, 1993",
+  "abstract": "We formulate the chiral perturbation theory at the one loop l evel in the ef- fective lagrangian including the \u03c1 meson as a dynamical gauge boson of a hidden local symmetry(HLS). The size of radiative correction to th e phenomenological parameter a of HLS is estimated to be about 10%. The complete list of O(E4) terms is given and the one loop counter terms are determined e xplicitly in the N \ufb02avor model. We also obtain matching conditions to the conve ntional chiral per- turbation of Gasser and Leutwyler in the chiral limit in a ren ormalization scale independent manner. We \ufb01nd that Gasser\u2013Leutwyler\u2019s estima tes for L9, 10 are saturated by \u03c1 and its one loop contributions without introducing non-min imal couplings of \u03c0 -\u03c1 system, suggesting the absence of the tree level a1 meson con- tributions. Chiral perturbation theory (ChPT)[1, 2] is a framework to describ e low energy na- ture of the spontaneous chiral symmetry breaking in QCD. It gives a systematic low energy expansion of QCD amplitudes in terms of the number of deriva tives appearing in the e\ufb00ective lagrangian. Based on the well-known isomorphism betw een the elec- troweak symmetry breaking and the spontaneous chiral symmetr y breaking in QCD, ChPT becomes very popular also in the physics of the Higgs sector. A ctually, the method of chiral lagrangian o\ufb00ers a perspective view in the analysis o f precision tests of the Higgs sector[3]. The e\ufb00ective lagrangian (chiral lagrangian) written in terms of the N ambu-Goldstone (NG) boson \ufb01eld with the lowest order of derivatives is O(E2) (\u2261 O (\u22022)), which repro- duces results of the low energy theorems. Taking account of the O(E4) terms and the \u2217 E-mail address: tanabash@theory.kek.jp 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181018192414-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-ph/9306237v1  7 Jun 1993"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "( \u00afDab\u00b5 vb",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "B2(1, 0; \u2212p2",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "B4(1, 1; \u2212p2",
+   "page": 7,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(p2) = H r",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(p2) = \u2212 1",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(p2) = z\u2217",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(2 \u2212 a)2 + 1",
+   "page": 8,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(z\u2217",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2z\u2217",
+   "page": 10,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(5 \u2212 4a + a2) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 2a \u2212 a2) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(2 + 3a \u2212 3a2) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 2a2 \u2212 a3) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(2 \u2212 a)(5 \u2212 3a) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 4a \u2212 4a2 + a3) \u2212 N",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(7 \u2212 11a + 5a2) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(10 \u2212 14a + 5a2) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u2212 2a2 + 2a3 + a4) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 4a2 \u2212 4a3 + a4) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 4a \u2212 5a2 + 2a3) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(\u22121 + 10a \u2212 13a2 + 6a3) N",
+   "page": 14,
+   "source": "inferred",
+   "number": "6"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 11355,
+   "n_words": 2344
+  },
+  {
+   "id": "sec-001-2-dab\u00b5-vb",
+   "number": "2",
+   "title": "( \u00afDab\u00b5 vb",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2747,
+   "n_words": 544
+  },
+  {
+   "id": "sec-002-4-b21-0-p2",
+   "number": "4",
+   "title": "B2(1, 0; \u2212p2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 211,
+   "n_words": 69
+  },
+  {
+   "id": "sec-003-8-b41-1-p2",
+   "number": "8",
+   "title": "B4(1, 1; \u2212p2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1453,
+   "n_words": 346
+  },
+  {
+   "id": "sec-004-1-p2-h-r",
+   "number": "1",
+   "title": "(p2) = H r",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 557,
+   "n_words": 150
+  },
+  {
+   "id": "sec-005-1-p2-1",
+   "number": "1",
+   "title": "(p2) = \u2212 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 73,
+   "n_words": 22
+  },
+  {
+   "id": "sec-006-1-p2-z",
+   "number": "1",
+   "title": "(p2) = z\u2217",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 178,
+   "n_words": 49
+  },
+  {
+   "id": "sec-007-9-2-a2-1",
+   "number": "9",
+   "title": "(2 \u2212 a)2 + 1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1933,
+   "n_words": 470
+  },
+  {
+   "id": "sec-008-2-z",
+   "number": "2",
+   "title": "(z\u2217",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 61,
+   "n_words": 19
+  },
+  {
+   "id": "sec-009-8-2z",
+   "number": "8",
+   "title": "(2z\u2217",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1981,
+   "n_words": 373
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2249,
+   "n_words": 473
+  },
+  {
+   "id": "sec-011-12-5-4a-a2-n",
+   "number": "12",
+   "title": "(5 \u2212 4a + a2) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 38,
+   "n_words": 18
+  },
+  {
+   "id": "sec-012-6-1-2a-a2-n",
+   "number": "6",
+   "title": "(1 + 2a \u2212 a2) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 14,
+   "n_words": 7
+  },
+  {
+   "id": "sec-013-6-2-3a-3a2-n",
+   "number": "6",
+   "title": "(2 + 3a \u2212 3a2) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 13,
+   "n_words": 6
+  },
+  {
+   "id": "sec-014-6-1-2a2-a3-n",
+   "number": "6",
+   "title": "(1 + 2a2 \u2212 a3) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 14,
+   "n_words": 7
+  },
+  {
+   "id": "sec-015-6-2-a5-3a-n",
+   "number": "6",
+   "title": "(2 \u2212 a)(5 \u2212 3a) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 10,
+   "n_words": 5
+  },
+  {
+   "id": "sec-016-6-1-4a-4a2-a3-n",
+   "number": "6",
+   "title": "(1 + 4a \u2212 4a2 + a3) \u2212 N",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 54,
+   "n_words": 24
+  },
+  {
+   "id": "sec-017-6-7-11a-5a2-n",
+   "number": "6",
+   "title": "(7 \u2212 11a + 5a2) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 11,
+   "n_words": 5
+  },
+  {
+   "id": "sec-018-12-10-14a-5a2-n",
+   "number": "12",
+   "title": "(10 \u2212 14a + 5a2) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 11,
+   "n_words": 5
+  },
+  {
+   "id": "sec-019-12-1-2a2-2a3-a4-n",
+   "number": "12",
+   "title": "(1 \u2212 2a2 + 2a3 + a4) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 13,
+   "n_words": 5
+  },
+  {
+   "id": "sec-020-24-1-4a2-4a3-a4-n",
+   "number": "24",
+   "title": "(1 + 4a2 \u2212 4a3 + a4) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 46,
+   "n_words": 18
+  },
+  {
+   "id": "sec-021-6-1-4a-5a2-2a3-n",
+   "number": "6",
+   "title": "(1 + 4a \u2212 5a2 + 2a3) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 11,
+   "n_words": 5
+  },
+  {
+   "id": "sec-022-6-1-10a-13a2-6a3-n",
+   "number": "6",
+   "title": "(\u22121 + 10a \u2212 13a2 + 6a3) N",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 355,
+   "n_words": 124
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 23,
+  "chars_total": 23388
+ }
+}

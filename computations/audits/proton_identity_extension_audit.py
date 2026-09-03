@@ -133,14 +133,14 @@ def main():
 
     w.add_assertion(
         name="N_proton_near_integer_12",
-        computed=float(abs(N_proton - 12)),
+        computed=abs(N_proton - 12),
         expected=0.0,
         tolerance=1e-3,
         source="N_proton solving the identity should be near integer 12 (0.24 ppm match).",
     )
     w.add_assertion(
         name="N_neutron_NOT_clean_integer",
-        computed=float(abs(round(N_neutron) - N_neutron) > mpf("0.4")),
+        computed=abs(round(N_neutron) - N_neutron) > mpf("0.4"),
         expected=1.0,
         tolerance=1e-12,
         source="N_neutron should NOT be close to any integer (off by ~0.47), confirming the identity is proton-specific.",

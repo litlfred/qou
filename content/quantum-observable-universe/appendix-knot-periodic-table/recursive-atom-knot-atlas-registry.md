@@ -54,7 +54,7 @@ Word: $(\sigma_1 \sigma_2^{-1})^3$. Closure: three pairwise-unlinked circles tha
 
 ### $\widehat{(\sigma_1 \sigma_2^{-1})^2}$ in $B_3$ — **figure-eight $4_1$**
 
-Word: $(\sigma_1 \sigma_2^{-1})^2$. Closure: the amphichiral **figure-eight knot**. Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \cdot \pi$ (smallest hyperbolic volume). Used for: the **Higgs field** (mass mechanism).
+Word: $(\sigma_1 \sigma_2^{-1})^2$. Closure: the amphichiral **figure-eight knot**. Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6}$ (smallest hyperbolic volume). Used for: the **Higgs field** (mass mechanism).
 
 ### $\widehat{\sigma_1^2}$ in $B_2$ — **Hopf link $L_H$**
 
@@ -222,9 +222,20 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 |---|---|---|
 | `pp` | $\sigma$ (positive crossing) | `sigma` |
 | `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` (underscore, matches `canonical_braid_crossings.atom_canonical_crossings`) |
-| `pn` | $\sigma + (-h/2)\cdot\mathbf{1}$ (averaged half-shift) | `averaged` |
+| `pn` | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) | `averaged_weighted` |
 
-where $h = q_0 - q_0^{-1}$.
+where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate).
+
+The `pn` row previously read $\sigma + (-h/2)\cdot\mathbf{1}$ with wire-format
+`averaged`. That is the $\delta = 0$ form, and it is **not** what
+`atom_canonical_crossings` emits at generator $3k+2$. Both `ctype`s are real and
+the producer emits both, but at different places: `averaged` is the intra-nucleon
+quark crossing, and it never appears at $3k+2$. Verified against the producer for
+$\mathrm{D}$, ${}^{3}\mathrm{He}$ and ${}^{4}\mathrm{He}$ — every generator
+$3k+2$ returns `sigma` (p-p), `sigma_inv` (n-n) or `averaged_weighted` (p-n), and
+never `averaged`. The two forms differ by $h\delta/4 \approx 7.190 \times
+10^{-5}$ at the substrate anchor.
 
 **Closure topology operators** (Markov closure $\widehat{\beta}$):
 

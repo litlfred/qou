@@ -1,0 +1,80 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "roth-lemma",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c2f2b49f25f359198ca2d549af9a94117bc0de4f8398c85b2352004c5d967c4b",
+  "file": "roth_lemma.pdf"
+ },
+ "provenance": {
+  "title": "Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 2,
+   "definition": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Let fi,..., fn be n polynomials in m variables that have real",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "Let A, U, V, W, and n be as in Lemma 2, and let",
+   "section_file": "sections/sec-001-1-for-a-detailed-study-of-the-generalised-wronsk.md",
+   "section_title": "For a detailed study of the generalised Wronskian see, in particular, A. Ostrow-",
+   "pages": "5-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": null,
+   "name": null,
+   "statement": "Let a^l, and let ri,...,rm, Hi,...,Hm be 2m positive integers.",
+   "section_file": "sections/sec-003-9-the-upper-bound-a-ma-hi-hm-rim-rm.md",
+   "section_title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let 0<t^l. Let a^l be a real number, and let ri,...,rm,",
+   "section_file": "sections/sec-003-9-the-upper-bound-a-ma-hi-hm-rim-rm.md",
+   "section_title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
+   "pages": "13-21",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

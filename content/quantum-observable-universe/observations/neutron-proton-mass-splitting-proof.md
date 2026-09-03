@@ -32,4 +32,44 @@ $$
 This prediction compares to the CODATA value $\Delta m = 1.2934$ MeV,
 an error of $0.63\%$. $\square$
 
-**Witness**: `atom-mass-complete-wedderburn.witness.json`.
+> **Provenance and scope (2026-08-25).** This proof cites no live witness
+> and its stated agreement is not currently reproducible.
+>
+> The witness named here until now,
+> `atom-mass-complete-wedderburn.witness.json`, is absent from
+> `computations/`. It was **not**, however, never produced: it was added on
+> 2026-04-10 in commit `1359fe23ac` under `folio-assistant/computations/` and
+> left the tree with the platform code in the miga migration
+> ([recovery and analysis](https://github.com/litlfred/qou/blob/main/docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md)).
+> It is nonetheless the **wrong artifact** for this block: it is an
+> *atomic*-mass witness of 20 atom rows, cited by a *quark*-level
+> computation, and the recovered file contains no quark $\Phi$ values at
+> all. So this block has no usable witness either way.
+>
+> Re-deriving the two $\Phi$ values from the crossing rules stated above
+> ([`computations/pn_splitting_proof_provenance_probe.py`](https://github.com/litlfred/qou/blob/main/computations/pn_splitting_proof_provenance_probe.py))
+> pins the reading and then fails to confirm the result. Convention C with
+> the suffix-inclusive $\Phi_1$ reproduces
+> $\Phi_{\mathfrak{p}} = -0.8785233$ against the $-0.8785$ quoted above —
+> exact at the quoted precision, and the only one of eight readings that
+> lands. The same reading gives $\Phi_{\mathfrak{n}} = -1.2677888$, not the
+> $-1.2261$ quoted. Because the reading is pinned by the proton, this is not
+> reading ambiguity.
+>
+> Consequently:
+>
+> | source | $\lvert\Delta\Phi\rvert$ | $\Delta m$ (MeV) | vs CODATA |
+> |:---|:---|:---|:---|
+> | as stated above | $0.3476$ | $1.3016$ | $+0.63\%$ |
+> | re-derived, convention C | $0.3892655$ | $1.4576$ | $+12.7\%$ |
+> | re-derived, convention D | $0.3354835$ | $1.2562$ | $-2.87\%$ |
+>
+> The derivation is also **convention C** throughout, which the owner ruling
+> of 2026-08-15 excised in favour of convention D
+> ($z = q^3/(q^2 + 1)$); under D the block's own construction gives
+> $-2.87\%$, not $+0.63\%$.
+>
+> Scope (a): eight readings were tried, which is not an exhaustive
+> exclusion, and no replacement value is proposed here. What is established
+> is that the $+0.63\%$ figure **cannot currently be checked** and should
+> not be cited as a confirmed prediction.

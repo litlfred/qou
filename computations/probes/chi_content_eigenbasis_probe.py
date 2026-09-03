@@ -8,10 +8,20 @@ converge). This probe answers the dual question — *is there an eigenfunction b
 in which the PROVED relations become evident?* — and the answer is the
 **content / twist eigenbasis**.
 
-The organizing eigenvalue is the **ribbon / full-twist eigenvalue**, already
-Lean-proved sorry-free (`QOU/BraidKnot/ChiralityWritheRibbon.lean`,
-`RibbonTwistEigenvalue`): the full twist Δ² ∈ Z(H_n(q)) acts on the Wedderburn
-block V_λ as the scalar
+The organizing eigenvalue is the **full-twist eigenvalue**: the full twist
+Δ² ∈ Z(H_n(q)) acts on the Wedderburn block V_λ as the scalar
+
+    θ_λ = q^{2·c(λ)}.
+
+That statement is **AXIOMATIZED, not proved**. `QOU/BraidKnot/ChiralityWritheRibbon.lean`
+exposes it as the class `RibbonTwistEigenvalue` — whose own docstring says "we
+expose this as an axiom class" — and that class has **ZERO instances**; every
+consumer takes it as a hypothesis. It is sorry-free, but that is not evidence of
+provenness: a class declaration has no `sorry` precisely because it asserts
+rather than proves. Cited to [kassel1995] Ch. XIV and [mathas1999] §3.
+
+Note also that this is the **square** of the Lean ribbon twist
+`QOU.BraidKnot.Keystone.theta = q^{c(λ)}`, since Δ² = θ². Explicitly,
 
     θ_λ = q^{2·c(λ)},   c(λ) = Σ_{cells} content   (Jucys–Murphy content sum).
 
@@ -19,7 +29,11 @@ For H₃ the three blocks carry content c ∈ {+3, 0, −3} ⇒ θ_λ ∈ {q⁶,
 
 Established evident forms (all verified here against the proved H₃ closed forms):
 
-  1. θ_λ = χ_λ(Δ²)/dim_λ = q^{2c(λ)}  (matches the Lean ribbon eigenvalue), and
+  1. θ^{Δ²}_λ = χ_λ(Δ²)/dim_λ = q^{2c(λ)}  — the FULL-TWIST scalar.  NOTE it is
+     the SQUARE of the Lean ribbon twist `QOU.BraidKnot.Keystone.theta = q^{c(λ)}`,
+     not equal to it: Δ² = θ², so q^{2c} = (q^{c})².  Earlier wording here read
+     "matches the Lean ribbon eigenvalue", which asserts an equality that does not
+     hold and invites a false "the corpus disagrees with itself" report.  And
      χ_λ(β·Δ^{2m}) = θ_λ^m · χ_λ(β)  (centrality ⇒ multiplicativity).
 
   2. FRAMING GENERATING FUNCTION — the framing-summed tower is a 3-POLE rational
@@ -45,9 +59,18 @@ Established evident forms (all verified here against the proved H₃ closed form
 
 Nothing wired; this is an exact-symbolic re-expression of already-proved relations.
 
-Run:  PYTHONPATH=computations:computations/hecke:computations/qbeta:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
-        python3 -u computations/probes/chi_content_eigenbasis_probe.py
+Run:  python3 -u computations/probes/chi_content_eigenbasis_probe.py
+
+      (No PYTHONPATH needed as of 2026-08-30. It used to be required, and
+      that is precisely what masked the defect: the deferred
+      `from hoefsmit_symbolic import ...` inside `main()` resolved only
+      because the documented invocation pre-set the path. A bare
+      `python3 <file>` raised ModuleNotFoundError at call time.)
 """
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
 import sys
 import time
 
@@ -78,7 +101,7 @@ def main():
 
     assertions = []
 
-    # 1 — twist eigenvalue θ_λ = q^{2c(λ)} (vs Lean-proved ribbon eigenvalue)
+    # 1 — FULL-TWIST scalar q^{2c(λ)} = (Lean ribbon twist q^{c(λ)})²
     log("=== 1. twist eigenvalue θ_λ = χ_λ(Δ²)/dim = q^{2c(λ)} ===")
     theta_ok = True
     thetas = {}
@@ -162,8 +185,10 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
         "name": "chi-content-eigenbasis",
         "description": "Rewrites the Lean-proved χ_λ(𝓑_n−𝓑_p) H₃ relations in the "
                        "content/twist eigenbasis so the structure is evident. The "
-                       "full twist Δ² acts on V_λ as the proved ribbon eigenvalue "
-                       "θ_λ=q^{2c(λ)} (c=content sum ∈ {3,0,−3}); the framing-summed "
+                       "full twist Δ² acts on V_λ by the scalar "
+                       "q^{2c(λ)} (c=content sum ∈ {3,0,−3}) — the SQUARE of the Lean "
+                       "ribbon twist QOU.BraidKnot.Keystone.theta = q^{c(λ)}, "
+                       "since Δ² = θ²; the framing-summed "
                        "tower is a 3-pole rational χ_λ/(1−t·q^{2c}) with poles at the "
                        "twist eigenvalues; the bar-odd q-integer shape depends only on "
                        "|c(λ)| (conjugate blocks (3),(1,1,1) share −¼([3]_q+[5]_q); "
@@ -172,6 +197,12 @@ def _emit_witness(thetas, gf, baro, abs_contents, assertions):
                        "symbolic re-expression of proved relations; nothing wired.",
         "auditOnly": True,
         "probe": True,
+        # Anchor-INDEPENDENT: every quantity here is a sympy expression in the
+        # SYMBOL q (`Q` imported from hoefsmit_symbolic is a Symbol, not the
+        # numeric pin), so nothing is evaluated at any q0.  Without this the
+        # builder stamps the default `proton` pin plus a q0Value, which claims
+        # a numeric anchor the computation never used.
+        "q0Anchor": "independent",
         "eigenbasis": "content / twist (Jucys–Murphy content c(λ); full-twist "
                       "ribbon eigenvalue θ_λ=q^{2c}, Lean-proved in "
                       "QOU/BraidKnot/ChiralityWritheRibbon.lean)",

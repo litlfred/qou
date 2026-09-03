@@ -1,0 +1,102 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:05:22.190783+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "the_H3_Gram_matrix_is_ENTRYWISE_NONNEGATIVE",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "G = diag(y_lambda) with y = ['0.0', '0.247297886748', '0.505404226504']. All entries >= 0 (1 exactly zero -- the convention-D row cap y_lambda = 0 for l(lambda) > 2). Off-diagonal entries vanish by orthogonality of the central primitive idempotents"
+    },
+    {
+      "name": "therefore_COORDINATE_POSITIVITY_IMPLIES_FROBENIUS_POSITIVITY_here",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "QOU.ParticleInteractions.frobPos_of_entriesNonneg (sorry-free) proves: G entrywise nonnegative implies CoordPos x -> FrobPos G x. With G = diag(y) and every y_lambda >= 0 the hypothesis holds, so in the PRIMITIVE basis every nonnegative selection vector is feasible. Frobenius positivity excludes nothing from the nonnegative orthant at k = 3"
+    },
+    {
+      "name": "so_feasibility_is_LOOSE_matching_the_corpus_84_and_refuting_my_2_of_8",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "ilp-solution-count-unwrap.md reports the proton's 9-crossing element admits N_l = 84 FEASIBLE ILP solutions -- a large number, because the constraint is weak, exactly as the diagonal-nonnegative G predicts. qbeta_nucleon_selection_rule_probe found 0/8 feasible at k=1 and 2/8 at k=2 and therefore contradicted categorical-proton-properties.md. That tightness came from testing positivity of the NORMAL-FORM coefficients instead of G x in the primitive basis. The corpus was right; the basis was wrong"
+    },
+    {
+      "name": "the_BINDING_constraint_is_integrality_and_decomposition_not_Gx_geq_0",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "with G entrywise nonnegative the positivity constraint is vacuous on the nonnegative orthant, so all the content of def:stable-atom sits in what a relaxation drops: that x be the primitive-basis decomposition of the GIVEN T_w with nonnegative INTEGER coordinates. QOU.ParticleInteractions.stableAt_trivial proves the relaxed predicate holds for EVERY G, which is the same statement in Lean. So a formalisation or probe that omits the decomposition constraint decides nothing about stability"
+    },
+    {
+      "name": "the_looseness_SURVIVES_the_filtration_despite_OFF_DIAGONAL_entries",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "over the k <= 2 basis the Gram matrix is NOT diagonal -- 4 nonzero off-diagonal entries, since an H_2 idempotent is not orthogonal to the H_1 identity -- and yet it is still entrywise nonnegative (0 negative entries). So the k=3 result above is not an artifact of diagonality: the hypothesis of frobPos_of_entriesNonneg survives genuine off-diagonal structure, and Frobenius positivity stays loose across the filtration to k <= 2. This closes the scope caveat the k=3 computation left open"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 747,
+  "computation": "qbeta-frobenius-gram-h3",
+  "scriptFile": "qbeta_frobenius_gram_h3_probe.py",
+  "scriptHash": "74a25893bea3",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_frobenius_gram_h3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_frobenius_gram_h3_probe.py"
+  },
+  "description": "The H_3 Frobenius Gram matrix of the primitive Wedderburn-block operators is diagonal with nonnegative entries under convention D, so Frobenius positivity is a LOOSE constraint -- matching the corpus's own count of 84 feasible ILP solutions, and refuting the tightness a sibling probe found by using the wrong basis.",
+  "data": {
+    "markov_convention": "D",
+    "basis": "primitive Wedderburn-block idempotents e_lambda, H_3",
+    "y_lambda_1_1_1": "0.0",
+    "y_lambda_2_1": "0.247297886748034598406220648379763862169800000000000099442177",
+    "y_lambda_3": "0.505404226503930803187558703240472275660400000000000469306823",
+    "all_y_lambda_nonneg": true,
+    "count_y_lambda_zero": 1,
+    "the_H3_Gram_matrix_is_ENTRYWISE_NONNEGATIVE": true,
+    "therefore_COORDINATE_POSITIVITY_IMPLIES_FROBENIUS_POSITIVITY_here": true,
+    "so_feasibility_is_LOOSE_matching_the_corpus_84_and_refuting_my_2_of_8": true,
+    "the_BINDING_constraint_is_integrality_and_decomposition_not_Gx_geq_0": true,
+    "filtration_idempotents_verified": true,
+    "G_filtration_1_1": "1.00000000000000000000000000000000000000000000000000000000000",
+    "G_filtration_1_Ep": "0.752702113251965401593779351620236137830200000000000234653411",
+    "G_filtration_1_Em": "0.247297886748034598406220648379763862169800000000000099442177",
+    "G_filtration_Ep_1": "0.752702113251965401593779351620236137830200000000000234653411",
+    "G_filtration_Ep_Ep": "0.752702113251965401593779351620236137830200000000000234653411",
+    "G_filtration_Ep_Em": "0.0",
+    "G_filtration_Em_1": "0.247297886748034598406220648379763862169800000000000099442177",
+    "G_filtration_Em_Ep": "0.0",
+    "G_filtration_Em_Em": "0.247297886748034598406220648379763862169800000000000099442177",
+    "filtration_negative_entries": 0,
+    "filtration_nonzero_offdiagonal": 4,
+    "the_looseness_SURVIVES_the_filtration_despite_OFF_DIAGONAL_entries": true,
+    "structural_argument_proved": false,
+    "scope": "(a) measured at k=3 and k<=2 filtration; general k not proved"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

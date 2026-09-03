@@ -28,7 +28,18 @@ Conclusion (a), `dim HH²(U_q,Ad) = 1`, is **derived** below by composing
 the two inputs (`HH² ≅ HH_{3-2} = HH_1 = 1`); it is NOT a class field.
 The `χ(A)`-identification of the generator (conclusions (b),(c)) rests on
 the single honest domain gap `obstruction_trace_gap` (the explicit
-Euler/trace pairing), left as `sorry`.
+Euler/trace pairing).
+
+**That gap is carried as class hypotheses, NOT as a `sorry`** (corrected
+2026-08-25). This paragraph read "left as `sorry`" and was contradicted by
+the file it describes: there is no `sorry` token anywhere here, and
+`obstruction_trace_gap` is *proved* from the `hattori_stallings`,
+`trace_pairing_cast` and `chern_character` fields — as the docstring on
+`kappa_vanishes_iff_chi` below has said all along. The domain gap is real;
+what was wrong is where it lives. Recorded rather than silently deleted
+because the stale wording is the kind a `sorry` audit reads as a hit and a
+human reader reads as an open item, so it manufactures a false gap in both
+directions at once.
 -/
 
 namespace QOU.AlgebraicSubstrate

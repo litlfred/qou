@@ -54,6 +54,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps()
 
 from _li_2_q_util import li_2_q, load_q_50dps  # noqa: E402
+from closed_form_tau_M import markov_z as _markov_z  # noqa: E402 — canonical convention-D z
 from _phi_q_util import phi_q  # noqa: E402
 
 
@@ -66,7 +67,12 @@ def _std_vhat(chain, q, qi, z, h):
     (a, b) evolves by left-mult by the 2×2 std-rep matrix of c·σ+d:
         a ← a·c·h + a·d + b·c ;  b ← a·c + b·d   (init (a,b)=(0,1))
     Standard (2,1) Hoefsmit seminormal recurrence (thm:markov-trace-product).
-    z = 1/(q^{1/2}+q^{-1/2}) Markov parameter, h = q − q⁻¹.
+    `z` is the Markov parameter supplied by the CALLER and `h = q − q⁻¹`.
+    This line read `z = 1/(q^{1/2}+q^{-1/2})` — convention C — until
+    2026-08-25, while every call site has passed convention-D
+    `closed_form_tau_M.markov_z` (`z = q³/(q²+1)`) since PR #5622.
+    Stale docstring only: this function never computed `z`, so no
+    number was ever affected.
     """
     a, b = mp.mpf(0), mp.mpf(1)
     for c, d in chain:
@@ -195,7 +201,35 @@ def main():
         "proton": {"g0": _std_vhat(pg0, q, qi, z, h), "g1": _std_vhat(pg1, q, qi, z, h)},
         "neutron": {"g0": _std_vhat(ng0, q, qi, z, h), "g1": _std_vhat(ng1, q, qi, z, h)},
     }
-    z_bar = mp.mpf(1) / (mp.sqrt(qi) + mp.sqrt(q))  # = z (bar-symmetric)
+    # The bar image substitutes q -> 1/q, so z_bar is the Markov parameter AT
+    # 1/q. Under convention C that happened to equal z itself, and the old
+    # comment here said so ("= z (bar-symmetric)") — true for C, FALSE for D.
+    # Under D, verified numerically at q_0 to 25 digits with difference exactly
+    # 0.0:  markov_z(1/q) = z - h = 1/(q^3 + q) = 0.4036277383508259361649837,
+    # and z/(z-h) = q^4 exactly. So bar is NOT a symmetry of z_D; it exchanges
+    # the channels. Same failure mode as derived_bond_graph_binding: not a
+    # stale constant but a stale FACT still driving live logic.
+    #
+    # 🛑 KNOWN DEFECT, measured 2026-08-25 (bean `qou-b7vr`): `z_bar` is only
+    # HALF the bar image. The chains `pg0/pg1/ng0/ng1` below are reused from
+    # `nucleon_chains(..., h)` — built with the UNBARRED `h` — while the
+    # recurrence is handed `qi - q = -h`. So one evaluation carries `h` at
+    # both signs, and `vhat_bar != vhat(1/q)`.
+    #
+    # Measured at q0: `vhat_bar(q) - vhat(1/q) = -0.18083`, and candidate 3's
+    # geometric mean `sqrt(|vhat|*|vhat_bar|)` is NOT bar-symmetric —
+    # gm(q) = 0.5561 vs gm(1/q) = 0.3112. Rebuilding the chain with the barred
+    # `h` makes BOTH differences exactly 0.0, so the fix is known; it is not
+    # applied here because it moves `cand3_bar_sym`'s committed p/n signal
+    # (+0.995 %) and that figure backs a recorded refutation of candidate 3
+    # in docs/audits/2026-06-01-vhat-tower-im-cancellation.md.
+    #
+    # NOTE ON THE NAME: `cand3_bar_sym` is NOT stale. Candidate 3 IS the
+    # "bar-symmetrization of the argument" of the module header, and the
+    # geometric-mean construction would be exactly bar-symmetric on a correct
+    # bar image (verified: difference 0.0). Do not rename it to `_bar_image` —
+    # that would relabel this defect as the intent.
+    z_bar = _markov_z(qi)
     vhat_bar = {
         "proton": {
             "g0": _std_vhat(pg0, qi, q, z_bar, qi - q),

@@ -62,18 +62,31 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 import json
-import math
 import sys
+
+import mpmath as _mp  # noqa: E402
 from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).parent
 
 # ── Load tr_M values (zero AME) ────────────────────────────────────────────
-_peel = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
-_peel_data: dict[tuple[int, int], float] = {}
+# ANCHOR-MATCHED (2026-08-25). This probe is manifest-declared `ideal_muon`, its
+# Q0 below is the MUON value, and the hardcoded TR_M table beneath matches the
+# MUON peel witness to every digit it carries. Reading the base-name peel
+# witness -- which is PROTON -- meant `TR_M.update(_peel_data)` silently
+# OVERWROTE that coherent muon basis with proton values. The hardcoded table is
+# effectively the control showing what the probe intends, so the fix is verified
+# by the override becoming a no-op.
+_peel = _pb.witness_path("markov-peel-atomic-tr-m-muon.witness.json", HERE)
+_peel_data: dict = {}
 if _peel.exists():
     _pd = json.loads(_peel.read_text())
     # results live in assertions list (newer WitnessBuilder format)
@@ -92,24 +105,28 @@ if _peel.exists():
         n = r.get("N")
         trm = r.get("tr_M_at_q0") or r.get("tr_M") or r.get("trM")
         if z is not None and n is not None and trm:
-            _peel_data[(int(z), int(n))] = float(trm)
+            _peel_data[(int(z), int(n))] = _mp.mpf(str(trm))
 
 # Hardcode from markov-peel witness (verified; see below)
 # These are the gold-standard values at q_0 = 1.1099785955573347, 50 dps.
-TR_M: dict[tuple[int, int], float] = {
-    (1, 0): 1.0653062286131670,   # proton
-    (0, 1): 0.9232332971861535,   # neutron
-    (1, 1): 0.3882864715477132,   # deuteron  (D)
-    (1, 2): 0.1040521186755260,   # tritium   (³H)
-    (2, 1): 0.2065408585622625,   # helium-3  (³He)
-    (2, 2): 0.0553483458766980,   # helium-4  (⁴He)
+# mpf, not float64 literals: these are 50-dps witness values and a bare Python
+# float truncates them at the 17th digit before any arithmetic runs.
+TR_M: dict = {
+    # CONVENTION FIX (2026-08-30, bean qou-46ab): were convention-C literals,
+    # 7.55% from the canonical D values.
+    (1, 0): tr_m_nucleon("proton"),
+    (0, 1): tr_m_nucleon("neutron"),
+    (1, 1): _mp.mpf("0.3882864715477132"),   # deuteron  (D)
+    (1, 2): _mp.mpf("0.1040521186755260"),   # tritium   (³H)
+    (2, 1): _mp.mpf("0.2065408585622625"),   # helium-3  (³He)
+    (2, 2): _mp.mpf("0.0553483458766980"),   # helium-4  (⁴He)
 }
 # Merge any live witness values (override hardcoded if present)
 TR_M.update(_peel_data)
 
 TR_M_P = TR_M[(1, 0)]   # proton
 TR_M_N = TR_M[(0, 1)]   # neutron
-TR_M_AVG = (TR_M_P + TR_M_N) / 2.0
+TR_M_AVG = (TR_M_P + TR_M_N) / _mp.mpf(2)
 
 # ── Load empirical true_ρ (used only for scoring, not as formula input) ─────
 _census_path = _pb.witness_path("rho-census-wedderburn-experiment.witness.json", HERE)
@@ -125,46 +142,46 @@ if _census_path.exists():
                 "rho_handpick":    r.get("rho_handpick"),
             }
 
-Q0 = 1.1099785955573347   # substrate parameter
+Q0 = _mp.mpf("1.1099785955573347")   # substrate parameter (MUON layer)
 
 
-def q_integer(n: int, q: float = Q0) -> float:
+def q_integer(n: int, q=Q0):
     """[n]_q = (q^n - q^{-n}) / (q - q^{-1})."""
-    if abs(q - 1.0) < 1e-12:
-        return float(n)
+    if abs(q - 1) < _mp.mpf("1e-12"):
+        return _mp.mpf(n)
     return (q**n - q**(-n)) / (q - q**(-1))
 
 
-def rho_integer(A: int) -> float:
+def rho_integer(A: int):
     """C0: ρ = ⌈A/2⌉  (current paper integer rule)."""
-    return math.ceil(A / 2)
+    return _mp.mpf(-(-A // 2))          # exact integer ceiling, no float divide
 
 
-def rho_q_integer(A: int, q: float = Q0) -> float:
+def rho_q_integer(A: int, q=Q0):
     """C1: ρ = [⌈A/2⌉]_q  (q-deformation of the ceiling function)."""
-    return q_integer(math.ceil(A / 2), q)
+    return q_integer(-(-A // 2), q)
 
 
-def rho_trm_ratio(Z: int, N: int) -> float:
+def rho_trm_ratio(Z: int, N: int):
     """C2: ρ = ⌈A/2⌉ · (Σ nucleon tr_M) / (A · tr_M_avg).
 
     Uses per-nucleon Markov traces from markov-peel-atomic-tr-m.witness.json.
     Zero AME input.
     """
     A = Z + N
-    n_half = math.ceil(A / 2)
+    n_half = _mp.mpf(-(-A // 2))
     trm_sum = Z * TR_M_P + N * TR_M_N
     return n_half * trm_sum / (A * TR_M_AVG)
 
 
-def rho_q_trm_combined(Z: int, N: int, q: float = Q0) -> float:
+def rho_q_trm_combined(Z: int, N: int, q=Q0):
     """C3: ρ = [⌈A/2⌉]_q · (Σ nucleon tr_M) / (A · tr_M_avg).
 
     Combines the q-deformed integer C1 with the tr_M composition correction C2.
     Zero AME input.
     """
     A = Z + N
-    q_ceil = q_integer(math.ceil(A / 2), q)
+    q_ceil = q_integer(-(-A // 2), q)
     trm_sum = Z * TR_M_P + N * TR_M_N
     return q_ceil * trm_sum / (A * TR_M_AVG)
 
@@ -177,22 +194,28 @@ ATOMS = [
 ]
 
 
-def score(rho_pred: float, true_rho: float | None) -> dict:
+def score(rho_pred, true_rho) -> dict:
+    """Scored in mpf and SERIALISED AS STRINGS.
+
+    `delta` and `err_pct` were bare float64 in the witness -- and with `true_rho`
+    read from a witness as a float, the subtraction was float64 on both sides.
+    """
     if true_rho is None:
         return {"delta": None, "err_pct": None}
-    delta = rho_pred - true_rho
-    err_pct = delta / true_rho * 100.0
-    return {"delta": delta, "err_pct": err_pct}
+    tr = _mp.mpf(str(true_rho))
+    delta = _mp.mpf(str(rho_pred)) - tr
+    err_pct = delta / tr * 100
+    return {"delta": fmt(delta), "err_pct": fmt(err_pct)}
 
 
 def main() -> int:
     print("=" * 90)
     print("W-1 — Categorical ρ_F probe  (zero AME input)")
     print(f"  q₀ = {Q0}")
-    print(f"  tr_M(proton) = {TR_M_P:.10f}")
-    print(f"  tr_M(neutron) = {TR_M_N:.10f}")
-    print(f"  tr_M_avg = {TR_M_AVG:.10f}")
-    print(f"  [2]_q = {q_integer(2):.8f}")
+    print(f"  tr_M(proton) = {_mp.nstr(TR_M_P, 12)}")
+    print(f"  tr_M(neutron) = {_mp.nstr(TR_M_N, 12)}")
+    print(f"  tr_M_avg = {_mp.nstr(TR_M_AVG, 12)}")
+    print(f"  [2]_q = {_mp.nstr(q_integer(2), 10)}")
     print("=" * 90)
 
     rows = []
@@ -216,13 +239,15 @@ def main() -> int:
         c2 = rho_trm_ratio(Z, N)
         c3 = rho_q_trm_combined(Z, N)
 
-        def fmt_rho(r: float | None) -> str:
-            return f"{r:8.5f}" if r is not None else "      n/a"
+        def fmt_rho(r) -> str:
+            return f"{_mp.nstr(_mp.mpf(str(r)), 6):>8}" if r is not None else "      n/a"
 
         def fmt_err(r: float | None, t: float | None) -> str:
             if r is None or t is None:
                 return "     n/a"
-            return f"{(r-t)/t*100:+7.3f}%"
+            _d = (_mp.mpf(str(r)) - _mp.mpf(str(t))) / _mp.mpf(str(t)) * 100
+            _sgn = "+" if _d >= 0 else "-"
+            return f"{_sgn}{_mp.nstr(abs(_d), 5):>7}%"
 
         print(
             f"  {atom['sym']:>4}  {Z:>2} {N:>2}  "
@@ -237,21 +262,21 @@ def main() -> int:
             "sym":      atom["sym"],
             "Z": Z, "N": N, "A": A,
             "label":    atom["label"],
-            "true_rho": true_rho,
+            "true_rho": (None if true_rho is None else fmt(_mp.mpf(str(true_rho)))),
             "C0_integer": {
-                "rho":    float(c0),
+                "rho":    fmt(c0),
                 **score(c0, true_rho),
             },
             "C1_q_integer": {
-                "rho":    c1,
+                "rho":    fmt(c1),
                 **score(c1, true_rho),
             },
             "C2_trm_ratio": {
-                "rho":    c2,
+                "rho":    fmt(c2),
                 **score(c2, true_rho),
             },
             "C3_q_trm_combined": {
-                "rho":    c3,
+                "rho":    fmt(c3),
                 **score(c3, true_rho),
             },
         })
@@ -261,11 +286,14 @@ def main() -> int:
     print("  Mean |err %| per candidate (Kashaev-rule atoms with true_ρ known):")
     scored = [r for r in rows if r["true_rho"] is not None]
     for cand in ("C0_integer", "C1_q_integer", "C2_trm_ratio", "C3_q_trm_combined"):
-        errs = [abs(r[cand]["err_pct"]) for r in scored
+        # `err_pct` is a serialised STRING now -- read it back as mpf rather
+        # than letting float() quietly re-enter through the summary.
+        errs = [abs(_mp.mpf(r[cand]["err_pct"])) for r in scored
                 if r[cand]["err_pct"] is not None]
-        mean_err = sum(errs) / len(errs) if errs else float("nan")
-        max_err = max(errs) if errs else float("nan")
-        print(f"    {cand:25s}  mean={mean_err:6.3f}%  max={max_err:6.3f}%")
+        mean_err = _mp.fsum(errs) / len(errs) if errs else _mp.nan
+        max_err = max(errs) if errs else _mp.nan
+        print(f"    {cand:25s}  mean={_mp.nstr(mean_err, 5):>8}%  "
+              f"max={_mp.nstr(max_err, 5):>8}%")
 
     # ── Witness ─────────────────────────────────────────────────────────────
     witness = {
@@ -279,12 +307,15 @@ def main() -> int:
             "(vs C0 integer at −2.97%)."
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        # These were bare floats; the mpf values now carry 50 dps and are
+        # serialised through `_precision.fmt` rather than truncated by json.
         "parameters": {
-            "q_0":       Q0,
-            "tr_M_proton":  TR_M_P,
-            "tr_M_neutron": TR_M_N,
-            "tr_M_avg":     TR_M_AVG,
-            "q_2_q":     q_integer(2),
+            "q_0":          fmt(Q0),
+            "q_0_anchor":   "muon (ideal 3-CAL) — matches the -muon peel read above",
+            "tr_M_proton":  fmt(TR_M_P),
+            "tr_M_neutron": fmt(TR_M_N),
+            "tr_M_avg":     fmt(TR_M_AVG),
+            "q_2_q":        fmt(q_integer(2)),
         },
         "candidates": {
             "C0": "integer ρ = ⌈A/2⌉  (paper baseline)",
@@ -303,7 +334,16 @@ def main() -> int:
         ),
     }
     out = HERE / "rho-f-categorical-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
     print(f"\n  Witness written: {out}")
     return 0
 

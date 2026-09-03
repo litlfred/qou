@@ -39,6 +39,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -64,11 +65,27 @@ def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
     `chi_at_q0_via_hoefsmit_mpfr.py`, if present. Returns None when
     the numerical cache is absent (callers fall back to the symbolic
     path).
+
+    Pin-specific (qou-wgaw / qou-3zby, 2026-08-30): the numerical cache is
+    computed at ONE fixed q_0, so a single un-suffixed file cannot serve both
+    the proton and muon pins without a straddle. Prefer the runtime-anchor file
+    `chi-{atom}-h{n}-at-q0-50dps-{anchor}.witness.json`, falling back to the
+    legacy un-suffixed (proton) file. Proton runs resolve to the legacy file and
+    are unaffected; the muon L1 cross-check now loads a MUON-pinned cache.
     """
-    path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
-    if not path.exists():
-        return None
-    return json.loads(path.read_text())
+    # Runtime anchor: the QOU_Q0_ANCHOR env is the reliable signal (default
+    # proton). anchor_of_q0() is NOT usable here — it returns None for the
+    # muon Q_50_DIGIT_STR (the 2022-CODATA value ...56427390..., which differs
+    # from the frozen canonical muon ...5573347... at the 13th digit).
+    _anchor = os.environ.get("QOU_Q0_ANCHOR", "proton")
+    candidates = []
+    if _anchor and _anchor != "proton":
+        candidates.append(HERE / f"chi-{atom_name}-h{n}-at-q0-50dps-{_anchor}.witness.json")
+    candidates.append(HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json")
+    for path in candidates:
+        if path.exists():
+            return json.loads(path.read_text())
+    return None
 
 
 def _load_chi_cache(atom_name: str, n: int) -> tuple[dict[tuple, str], bool, int]:
@@ -116,6 +133,29 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     # path below (the cached χ are already numeric — no sympify/subst) while
     # producing the identical return schema.
     numerical = _load_numerical_chi_cache(atom_name, n)
+    if numerical is not None:
+        # Pin-straddle guard (qou-wgaw / L1, 2026-08-30). The numerical χ cache
+        # is precomputed at ONE fixed q_0 (recorded in `q0Value`). Combining its
+        # χ with runtime-pinned y_λ when the two pins differ is a layer straddle:
+        # the muon L1 cross-check read the PROTON-pinned cache (built 2026-08-10)
+        # while y_λ resolved to the muon pin, giving |tr_M| that missed the
+        # markov_peel/Hoefsmit value by 7.84e-8 on the proton (2.9e-7 at ⁴He) —
+        # the sole reason L1 (1 ppQ) read red. On a pin mismatch, drop to the
+        # symbolic path (evaluates χ at the runtime q_0, verified to reproduce
+        # markov_peel to 3e-50) — but ONLY when the symbolic cache is COMPLETE:
+        # a partial symbolic cache (T / ³He / ⁴He) would be a larger error than
+        # the straddle, so for those the complete numerical cache is kept (their
+        # real fix is to regenerate the numerical χ cache at the runtime pin).
+        _cache_q0 = numerical.get("q0Value") or numerical.get("q_0")
+        if _cache_q0 is not None and abs(
+            mp.mpf(str(_cache_q0)) - mp.mpf(Q_50_DIGIT_STR)
+        ) > mp.mpf("1e-40"):
+            try:
+                _, _sym_partial, _ = _load_chi_cache(atom_name, n)
+                if not _sym_partial:
+                    numerical = None
+            except FileNotFoundError:
+                pass
     if numerical is not None:
         q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
         n_total = numerical.get("n_partitions_total", len(numerical["by_partition"]))
@@ -304,14 +344,30 @@ def main() -> int:
     # environment variable that set it -- a value cannot disagree with itself,
     # whereas an env read can be out of step with what `q_parameter` bound at
     # import.
+    # The two pins were recognised by HARDCODED PREFIXES, and the muon one was
+    # "1.10997859555" -- the SUPERSEDED value A. When fca08de7d2 moved the muon
+    # anchor to the live CODATA-2022 derivation C ("1.10997859564"), this guard
+    # stopped recognising its own muon layer and the producer refused to run AT
+    # ALL under QOU_Q0_ANCHOR=ideal:
+    #     "q_0 = 1.1099785956427390466817… is neither the muon nor the proton
+    #      pin; refusing to guess which cache name this run belongs under."
+    # The guard's INTENT is right (never guess which cache a run belongs to);
+    # only its references were frozen. Resolve them from the anchors instead,
+    # so this follows the next CODATA revision the way the anchor does.
+    # Bean qou-3f7a.
+    from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
     _q = str(Q_50_DIGIT_STR)
-    if _q.startswith("1.10997859555"):
+    _muon_ref = str(_q0_value_for_anchor("muon") or "")
+    _proton_ref = str(_q0_value_for_anchor("proton") or "")
+    _N = 14  # shortest prefix that separates the two pins
+    if _muon_ref and _q[:_N] == _muon_ref[:_N]:
         _witness_name = "canonical-tr-m-via-chi-cache-muon"
-    elif _q.startswith("1.10997858275"):
+    elif _proton_ref and _q[:_N] == _proton_ref[:_N]:
         _witness_name = "canonical-tr-m-via-chi-cache"
     else:
         raise SystemExit(
-            f"q_0 = {_q[:24]}… is neither the muon nor the proton pin; "
+            f"q_0 = {_q[:24]}… matches neither the muon anchor "
+            f"({_muon_ref[:24]}…) nor the proton anchor ({_proton_ref[:24]}…); "
             "refusing to guess which cache name this run belongs under.")
 
     builder = WitnessBuilder.wrap_legacy(

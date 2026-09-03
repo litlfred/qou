@@ -1,0 +1,137 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2403.00360v2",
+ "source_sha256": "b0764ca18a83a84f",
+ "brief": "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular",
+ "extended": "**CAUSAL FERMION SYSTEMS AND OCTONIONS**\n\n*FELIX FINSTER, NIELS G. GRESNIGT, JOS É M. ISIDRO, ANTONINO MARCIANÒ*\n\n36 pp, 23 sections.\n\n**Abstract.** We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.\n\n**Outline.** 1 Introduction; 2 Division Algebras and the Standard Model; 2.1 Motivation; 2.2 Historical Overview; 2.3 The Normed Division Algebras; 2.4 The Associative Multiplication Algebras of; 2.5 Connection to the Standard Model; 3 Causal Fermion Systems; 3.1 Causal Fermion Systems and the Reduced Cau; 3.2 Spacetime Structures; 3.3 Dynamical Equations in Spacetime; 3.4 Connection to the Standard Model; 3.5 Connection to Quantum Field Theory; 3.6 Connection to Quantum Geometry and Quantum; 4 Comparison; 4.1 Foundations of the Approaches; 4.2 Connection to the Gauge Group of the Stand; 4.3 Describing the Three Generations in the St\n\n**Extracted claims (proposals, not verified).**\n- Definition 3.1: (causal fermion systems) Given a separable complex Hilbert space H\n- Definition 3.2: (causal structure) For any x,y ∈ F, we again denote the non-",
+ "tokens": {
+  "brief": 49,
+  "extended": 439
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-division-algebras-and-the-standard-model",
+   "title": "Division Algebras and the Standard Model",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-motivation",
+   "title": "Motivation",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-historical-overview",
+   "title": "Historical Overview",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-23-the-normed-division-algebras",
+   "title": "The Normed Division Algebras",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-24-the-associative-multiplication-algebras-of-o",
+   "title": "The Associative Multiplication Algebras of O",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-25-connection-to-the-standard-model",
+   "title": "Connection to the Standard Model",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-3-causal-fermion-systems",
+   "title": "Causal Fermion Systems",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
+   "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-32-spacetime-structures",
+   "title": "Spacetime Structures",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-33-dynamical-equations-in-spacetime",
+   "title": "Dynamical Equations in Spacetime",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-011-34-connection-to-the-standard-model",
+   "title": "Connection to the Standard Model",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-012-35-connection-to-quantum-field-theory",
+   "title": "Connection to Quantum Field Theory",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
+   "title": "Connection to Quantum Geometry and Quantum Gravity",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-014-4-comparison",
+   "title": "Comparison",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-015-41-foundations-of-the-approaches",
+   "title": "Foundations of the Approaches",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
+   "title": "Connection to the Gauge Group of the Standard Model",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-017-43-describing-the-three-generations-in-the-stand",
+   "title": "Describing the Three Generations in the Standard Model",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-018-5-outlook-and-directions-of-future-research",
+   "title": "Outlook and Directions of Future Research",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
+   "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-020-52-chiral-symmetry-breaking",
+   "title": "Chiral Symmetry Breaking",
+   "pages": "22-30"
+  },
+  {
+   "id": "sec-021-appendix-a-description-of-majorana-spinors-in-ca",
+   "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-022-references",
+   "title": "References",
+   "pages": "31-36"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

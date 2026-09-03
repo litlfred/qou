@@ -305,9 +305,13 @@ truncation gives a sum of `r` terms of which only the first `N` are positive, an
   rational arithmetic, turns a bound on that truncated sum into `(θ−t)² · rr ≤ 2S`.
 
 ⚠ **Provenance caveat.**  The constants in `RothRecursionArith` were reconstructed from a
-partly illegible scan of Mahler §13.  The *shape* — truncated sum, square-root conclusion —
-is what the source shows and what is proved here; the numeric bookkeeping should be re-derived
-against a clean copy before any downstream constant (`ω(m, ε)`, `c_m = 2^m − 3`) is trusted.
+partly illegible scan of Mahler §13, and the numeric bookkeeping should still be re-derived
+against a clean copy.  The *shape* — truncated sum, square-root conclusion — is what the
+source shows and what is proved here.
+
+The two downstream constants this used to defer are no longer open: §11 gives `ω = 1/t` and
+§14 gives `c_m = 2^{m+1} − 3` with conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}`, both read from the
+page scans.  ⚠ The value recorded here, `2^m − 3`, was wrong.
 
 ⚠ This does **not** yet make the recursion run.  It replaces a shape that was known to be too
 weak with one that is the right shape; whether the resulting constants close the induction is
@@ -439,6 +443,17 @@ source's first branch is not `J(W)` but **`J(W)/n`** — the combined display re
 
     J(A) < t + 2 max( J(W)/n , √(J(W)/r_m) ).
 
+⚠⚠ **Correction 14 corrects that line.**  §13's body has since been read, and the second
+branch is `√(J(W)/n)` — **both** branches over the *same* quantity `(1/n)J(W)`, not `r_m` in
+the radicand:
+
+    J(A) ≤ t + 2 max( (1/n)·J(W) , √( (1/n)·J(W) ) ).
+
+Everything correction 9 says about the `1/n` stands; only the subscript in the radicand was
+wrong.  But that one subscript is what put `rr = r_m` into `index_le_two_mul_max_of_det_bound`
+and so created its side condition `S ≤ q²·rr` — which at the source's `rr = n` is automatic.
+See `RothLemmaStatement`'s correction-14 section for what collapses as a result.
+
 Correction 8 concluded from the vacuous form that "Mahler's `max` is an artefact of his case
 split" and that the strong branch should be extracted alone.  **That was wrong.**  With the
 `1/n` restored:
@@ -563,6 +578,37 @@ theorem index_le_two_mul_max_of_det_bound {R : Type*} [CommRing R] [DecidableEq 
   have h := RothArith.le_two_mul_max_of_sum_le hrr (by linarith) hq0 hq hr hsum
   linarith
 
+/-- **§13's two branches, unrounded** — the shape display (2) actually has.
+
+`index_le_two_mul_max_of_det_bound` packages the two cases into `t + 2·max(S/r, q)`, and in
+doing so takes a square root of the second one, losing a factor `√2`
+(`RothArith.sq_le_two_mul_max_of_sum_le`'s docstring).  This keeps them apart and keeps the
+second squared, which is what display (2) does:
+
+    J(A) ≤ t + √((2/r_m)·J(W))  ≤  t + 2·√(J(W)/n).
+
+A caller converts the squared branch with `RothLemmaStatement.radicand_weaken` — the source's
+own step, `2/r_m ≤ 4/n` from `n ≤ r_m + 1` — instead of rounding here.
+
+⚠ No `q` and no side condition: the two branches are complementary by construction, so this
+form needs neither. -/
+theorem index_le_or_sq_of_det_bound {R : Type*} [CommRing R] [DecidableEq σ] {r : ℕ}
+    (d : σ → ℕ) (α : σ → R)
+    (D : Fin r → Fin r → List σ) (P : MvPolynomial σ R) (θ t rr S : ℚ)
+    (hr : 0 < r) (hrr : 0 < rr) (hθt : t ≤ θ)
+    (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P)
+    (hc : ∀ i j : Fin r,
+      ((D i j).map (fun k => (1 : ℚ) / (d k : ℚ))).sum ≤ t + (j : ℚ) / rr)
+    (hS : index d α (Matrix.of fun i j => pderivList (D i j) P).det
+      ≤ ((S : ℚ) : WithTop ℚ)) :
+    θ - t ≤ 2 * S / (r : ℚ) ∨ (θ - t) ^ 2 * rr ≤ 2 * S := by
+  have hbridge := sum_max_le_index_det d α D P θ t rr hθ hc
+  have hsum : (∑ j : Fin r, max 0 (θ - t - (j : ℚ) / rr) : ℚ) ≤ S := by
+    have h := le_trans hbridge hS
+    exact_mod_cast h
+  rw [Fin.sum_univ_eq_sum_range (fun ν => max 0 (θ - t - (ν : ℚ) / rr)) r] at hsum
+  exact RothArith.sq_le_two_mul_max_of_sum_le hrr (by linarith) hr hsum
+
 /-- **Satisfiability of the `max` form**, on the same `1 × 1` instance: `θ = 1`, `t = 0`,
 `rr = 1`, `S = 1`, `q = 1`, conclusion `1 ≤ 0 + 2·max 1 1 = 2`.
 
@@ -604,12 +650,24 @@ What that leaves is **not** more inequalities.  It is two constructions and one 
    the generalized Wronskian's non-vanishing — `BoundedOrderWronskian`'s business — is a real
    precondition, not bookkeeping.
 3. **`S·rr ≤ r` in the recursion's regime.**  With `S = n·Φ_m`, `rr = r_m`, `r = n` this is
-   `Φ_m · r_m ≤ 1`.  Whether the parameter conditions of Roth's lemma deliver it is unchecked.
+   `Φ_m · r_m ≤ 1`.  ⚠⚠ Correction 14: `rr = r_m` is itself the error — the source's radicand
+   is `(1/n)J(W)`, so `rr = n`, and the condition reads `Φ_m ≤ Ψ_m`, i.e. `Θ₁ ≤ t`, which §13
+   proves from `Γ_m` (`RothLemmaStatement.theta_one_le_of_gamma`).  Not unchecked, and not a
+   parameter question.
 
-⚠ Provenance, still standing for `RothRecursionArith`'s constants: reconstructed from a
-partly illegible scan.  §13's *structure* has since been read directly and matches — the
-matrix shape, the uniform-in-row cost, and the weakening of `√2` to `2` are all confirmed —
-but the surrounding parameter bookkeeping (`ω(m, ε)`, `c_m = 2^m − 3`) is not, and should be
-re-derived against a clean copy before being asserted. -/
+⚠ Provenance, still standing for `RothRecursionArith`'s numeric constants: reconstructed from
+a partly illegible scan, and worth re-deriving against a clean copy.  §13's *structure* has
+since been read directly and matches — the matrix shape and the uniform-in-row cost are
+confirmed.
+
+⚠ **The `√2 → 2` weakening is *not* confirmed; it is this arc's own.**  Display (2) of §13
+reads `J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2·√(J(W)/n)`, and the `2` on the right is `√4`,
+arriving through `2/r_m ≤ 4/n` — never through `√2 ≤ 2`.  `RothArith.sq_le_two_mul_max_of_sum_le`
+keeps the square and avoids the loss; `sq_branch_strictly_sharper` shows the two differ.
+
+The surrounding parameter bookkeeping has now been read too: §11 gives `ω = 1/t`, §14 gives
+`c_m = 2^{m+1} − 3` and the conclusion `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.  ⚠ The `2^m − 3` this
+paragraph recorded was wrong; `RothLemmaStatement.rothConstant` carries the right value with
+its recurrence and base case checked against each other. -/
 
 end MvPolynomial

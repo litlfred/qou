@@ -1,0 +1,187 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-lat-9806003v2",
+ "source": {
+  "file": "9806003v2.pdf",
+  "sha256": "e34739e703aae6db3d32504857979dd7c1ebf459e63f9f644369ea32822db5fb",
+  "bytes": 693535,
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-lat/9806003",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "2 Dec 1998"
+  },
+  "doi": null,
+  "title": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
+  "authors_raw": "T. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1",
+  "title_lines": [
+   "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac",
+   "spectra"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220601052517-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "COMPLETE DIRAC SPECTRA IN SU(2) GAUGE THEORY",
+   "page": 2,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "DATA ANALYSIS",
+   "page": 2,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "Ensemble unfolding",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Con\ufb01guration unfolding",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Windowing",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Two\u2013Point Spectral Correlations",
+   "page": 6,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "SUMMARY AND DISCUSSION",
+   "page": 10,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5366,
+   "n_words": 865
+  },
+  {
+   "id": "sec-001-ii-complete-dirac-spectra-in-su2-gauge-theory",
+   "number": "II",
+   "title": "COMPLETE DIRAC SPECTRA IN SU(2) GAUGE THEORY",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2341,
+   "n_words": 386
+  },
+  {
+   "id": "sec-002-iii-data-analysis",
+   "number": "III",
+   "title": "DATA ANALYSIS",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2100,
+   "n_words": 361
+  },
+  {
+   "id": "sec-003-1-ensemble-unfolding",
+   "number": "1",
+   "title": "Ensemble unfolding",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 8264,
+   "n_words": 1397
+  },
+  {
+   "id": "sec-004-3-windowing",
+   "number": "3",
+   "title": "Windowing",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2721,
+   "n_words": 476
+  },
+  {
+   "id": "sec-005-c-twopoint-spectral-correlations",
+   "number": "C",
+   "title": "Two\u2013Point Spectral Correlations",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 18013,
+   "n_words": 3154
+  },
+  {
+   "id": "sec-006-iv-summary-and-discussion",
+   "number": "IV",
+   "title": "SUMMARY AND DISCUSSION",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 9317,
+   "n_words": 1563
+  },
+  {
+   "id": "sec-007-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 26,
+   "n_chars": 14178,
+   "n_words": 2108
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 8,
+  "chars_total": 62300
+ }
+}

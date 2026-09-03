@@ -8,7 +8,7 @@
     "lean": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean"
   },
   "source_hashes": {
-    "md": "1143d1e7af7c",
+    "md": "5798ab4f19fe",
     "ts": "fb9cbebfb22c",
     "lean": "286799263f71",
     "lean_statement": "3c151e54988e"
@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -301,7 +301,7 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "1143d1e7af7c",
+          "md": "5798ab4f19fe",
           "ts": "fb9cbebfb22c",
           "lean": "286799263f71",
           "lean_statement": "3c151e54988e"
@@ -314,8 +314,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-31T03:02:16.954Z",
+        "reviewed_sha": "8676812b4fbb93ab325b6c8f427cf8a642781714"
       }
     ],
     "q-usage-regime-detected": [
@@ -744,7 +744,7 @@
           "in_degree": 1,
           "cone_size": 100,
           "depth": 27,
-          "pagerank": 9.5e-05,
+          "pagerank": 0.000095,
           "edge_span_max": 7,
           "edge_span_mean": 5,
           "worst_target": ""
@@ -998,7 +998,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1096,7 +1096,8 @@
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1271,7 +1272,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/color-superconductivity-borromean.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 \u2014 content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 — content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
       },
       {
         "field_hash": {
@@ -1309,7 +1310,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],
     "bib-cite-resolves": [
@@ -1355,7 +1357,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1370,7 +1372,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1385,7 +1387,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1400,7 +1402,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1415,7 +1417,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1430,7 +1432,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1445,7 +1447,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1460,7 +1462,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1478,7 +1480,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1556,7 +1558,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1565,13 +1567,14 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-08T20:02:14.000Z",
         "reviewed_sha": "b0f9a01c829b9593474b8ca1cfa370eb0b82b0ea",
         "reviewer": {
@@ -2019,5 +2022,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-31T03:02:16.954Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

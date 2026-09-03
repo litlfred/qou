@@ -62,6 +62,14 @@ from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 Q_VAL = float(Q0)
 H = Q_VAL - 1.0 / Q_VAL  # h = q − q⁻¹ at q_0
@@ -184,7 +192,8 @@ def disjoint_word(word_p: tuple, word_n: tuple, n1: int) -> tuple:
 
 
 def with_interface(word_p: tuple, word_n: tuple, n1: int,
-                    int_c: float = 1.0, int_d: float = -H/2) -> tuple:
+                    int_c: float = 1.0,
+                    int_d: float = _pn_d(H)) -> tuple:
     """β_1 · I · β_2 in H_(n1+n2) with I = c·σ_(n1-1) + d·1 on the
     interface generator."""
     return (tuple(word_p)

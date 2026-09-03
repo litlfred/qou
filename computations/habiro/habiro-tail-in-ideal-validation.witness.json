@@ -1,15 +1,93 @@
 {
   "engine": "sympy.div over ZZ[u]",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:15:50.103408+00:00",
-  "commitSha": "f8ba41365749e121076867e479b7de313607a304",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:19:02.554611+00:00",
+  "commitSha": "15182d8d017975033c0f2ef3f131e075728f6828",
+  "assertions": [
+    {
+      "name": "exact_divisibility_p (proton, A=1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every truncation order N: the residual p(u) - sum_{m<N} a_m(u)*(u;u)_m is EXACTLY divisible by (u;u)_N in ZZ[u] (9 orders checked)"
+    },
+    {
+      "name": "exact_reconstruction_p (proton, A=1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the full residual is identically zero in ZZ[u]"
+    },
+    {
+      "name": "exact_divisibility_n (neutron, A=1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every truncation order N: the residual p(u) - sum_{m<N} a_m(u)*(u;u)_m is EXACTLY divisible by (u;u)_N in ZZ[u] (9 orders checked)"
+    },
+    {
+      "name": "exact_reconstruction_n (neutron, A=1)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the full residual is identically zero in ZZ[u]"
+    },
+    {
+      "name": "exact_divisibility_D (deuteron, A=2)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every truncation order N: the residual p(u) - sum_{m<N} a_m(u)*(u;u)_m is EXACTLY divisible by (u;u)_N in ZZ[u] (14 orders checked)"
+    },
+    {
+      "name": "exact_reconstruction_D (deuteron, A=2)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the full residual is identically zero in ZZ[u]"
+    },
+    {
+      "name": "exact_divisibility_T (tritium, A=3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every truncation order N: the residual p(u) - sum_{m<N} a_m(u)*(u;u)_m is EXACTLY divisible by (u;u)_N in ZZ[u] (17 orders checked)"
+    },
+    {
+      "name": "exact_reconstruction_T (tritium, A=3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the full residual is identically zero in ZZ[u]"
+    },
+    {
+      "name": "exact_divisibility_3He (helium-3, A=3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every truncation order N: the residual p(u) - sum_{m<N} a_m(u)*(u;u)_m is EXACTLY divisible by (u;u)_N in ZZ[u] (17 orders checked)"
+    },
+    {
+      "name": "exact_reconstruction_3He (helium-3, A=3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the full residual is identically zero in ZZ[u]"
+    },
+    {
+      "name": "overall_pass",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every atom passes every divisibility and reconstruction check. This is the quantity the exit code already uses: `return 0 if overall_pass else 2`"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-tail-in-ideal-validation",
   "scriptFile": "habiro_witness_validator.py",
-  "scriptHash": "1806168ee926",
-  "scriptCommitSha": "398fa59d1a8e1cf408dbb1368a57cdcaee1a32e0",
+  "scriptHash": "c7a485050da9",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +99,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_witness_validator.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_witness_validator.py"
   },
   "description": "Certifies the Lean axiom HabiroCompletion.tail_in_ideal on the witnesses produced by habiro_coefficients_atomic.py: for every atom and every truncation order N, the residual p(u) − Σ_{m<N} a_m(u) · (u;u)_m is exactly divisible by (u;u)_N in ℤ[u].",
   "reference_blocks": [
@@ -35,7 +121,7 @@
   "results": [
     {
       "atom": "p (proton, A=1)",
-      "deg_p_u": 40,
+      "deg_p_u": 44,
       "n_coefficients": 9,
       "all_pass": true,
       "exact_reconstruction": true,
@@ -43,66 +129,66 @@
         {
           "N": 1,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 1,
-          "quotient_deg": 39,
-          "quotient_norm": 6
+          "quotient_deg": 43,
+          "quotient_norm": 12
         },
         {
           "N": 2,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 3,
-          "quotient_deg": 37,
-          "quotient_norm": 71
+          "quotient_deg": 41,
+          "quotient_norm": 163
         },
         {
           "N": 3,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 6,
-          "quotient_deg": 34,
-          "quotient_norm": 318
+          "quotient_deg": 38,
+          "quotient_norm": 814
         },
         {
           "N": 4,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 10,
-          "quotient_deg": 30,
-          "quotient_norm": 641
+          "quotient_deg": 34,
+          "quotient_norm": 1752
         },
         {
           "N": 5,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 15,
-          "quotient_deg": 25,
-          "quotient_norm": 687
+          "quotient_deg": 29,
+          "quotient_norm": 1883
         },
         {
           "N": 6,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 21,
-          "quotient_deg": 19,
-          "quotient_norm": 391
+          "quotient_deg": 23,
+          "quotient_norm": 1045
         },
         {
           "N": 7,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 28,
-          "quotient_deg": 12,
-          "quotient_norm": 103
+          "quotient_deg": 16,
+          "quotient_norm": 284
         },
         {
           "N": 8,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 44,
           "divisor_deg": 36,
-          "quotient_deg": 4,
-          "quotient_norm": 7
+          "quotient_deg": 8,
+          "quotient_norm": 29
         },
         {
           "N": 9,
@@ -116,7 +202,7 @@
     },
     {
       "atom": "n (neutron, A=1)",
-      "deg_p_u": 40,
+      "deg_p_u": 36,
       "n_coefficients": 9,
       "all_pass": true,
       "exact_reconstruction": true,
@@ -124,66 +210,66 @@
         {
           "N": 1,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 1,
-          "quotient_deg": 39,
-          "quotient_norm": 6
+          "quotient_deg": 35,
+          "quotient_norm": 4
         },
         {
           "N": 2,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 3,
-          "quotient_deg": 37,
-          "quotient_norm": 61
+          "quotient_deg": 33,
+          "quotient_norm": 31
         },
         {
           "N": 3,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 6,
-          "quotient_deg": 34,
-          "quotient_norm": 255
+          "quotient_deg": 30,
+          "quotient_norm": 122
         },
         {
           "N": 4,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 10,
-          "quotient_deg": 30,
-          "quotient_norm": 527
+          "quotient_deg": 26,
+          "quotient_norm": 215
         },
         {
           "N": 5,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 15,
-          "quotient_deg": 25,
-          "quotient_norm": 612
+          "quotient_deg": 21,
+          "quotient_norm": 195
         },
         {
           "N": 6,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 21,
-          "quotient_deg": 19,
-          "quotient_norm": 376
+          "quotient_deg": 15,
+          "quotient_norm": 88
         },
         {
           "N": 7,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 28,
-          "quotient_deg": 12,
-          "quotient_norm": 103
+          "quotient_deg": 8,
+          "quotient_norm": 18
         },
         {
           "N": 8,
           "divisible": true,
-          "residual_deg": 40,
+          "residual_deg": 36,
           "divisor_deg": 36,
-          "quotient_deg": 4,
-          "quotient_norm": 7
+          "quotient_deg": 0,
+          "quotient_norm": 1
         },
         {
           "N": 9,
@@ -197,112 +283,410 @@
     },
     {
       "atom": "D (deuteron, A=2)",
-      "deg_p_u": 86,
-      "n_coefficients": 13,
+      "deg_p_u": 100,
+      "n_coefficients": 14,
       "all_pass": true,
       "exact_reconstruction": true,
       "checks": [
         {
           "N": 1,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 1,
-          "quotient_deg": 85,
-          "quotient_norm": 71
+          "quotient_deg": 99,
+          "quotient_norm": 362
         },
         {
           "N": 2,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 3,
-          "quotient_deg": 83,
-          "quotient_norm": 1073
+          "quotient_deg": 97,
+          "quotient_norm": 8353
         },
         {
           "N": 3,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 6,
-          "quotient_deg": 80,
-          "quotient_norm": 10483
+          "quotient_deg": 94,
+          "quotient_norm": 108727
         },
         {
           "N": 4,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 10,
-          "quotient_deg": 76,
-          "quotient_norm": 46669
+          "quotient_deg": 90,
+          "quotient_norm": 630720
         },
         {
           "N": 5,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 15,
-          "quotient_deg": 71,
-          "quotient_norm": 112997
+          "quotient_deg": 85,
+          "quotient_norm": 1972809
         },
         {
           "N": 6,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 21,
-          "quotient_deg": 65,
-          "quotient_norm": 163548
+          "quotient_deg": 79,
+          "quotient_norm": 3664663
         },
         {
           "N": 7,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 28,
-          "quotient_deg": 58,
-          "quotient_norm": 145991
+          "quotient_deg": 72,
+          "quotient_norm": 4235410
         },
         {
           "N": 8,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 36,
-          "quotient_deg": 50,
-          "quotient_norm": 79179
+          "quotient_deg": 64,
+          "quotient_norm": 3086593
         },
         {
           "N": 9,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 45,
-          "quotient_deg": 41,
-          "quotient_norm": 24191
+          "quotient_deg": 55,
+          "quotient_norm": 1398314
         },
         {
           "N": 10,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 55,
-          "quotient_deg": 31,
-          "quotient_norm": 3242
+          "quotient_deg": 45,
+          "quotient_norm": 376364
         },
         {
           "N": 11,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 66,
-          "quotient_deg": 20,
-          "quotient_norm": 91
+          "quotient_deg": 34,
+          "quotient_norm": 54679
         },
         {
           "N": 12,
           "divisible": true,
-          "residual_deg": 86,
+          "residual_deg": 100,
           "divisor_deg": 78,
-          "quotient_deg": 8,
-          "quotient_norm": 30
+          "quotient_deg": 22,
+          "quotient_norm": 3458
         },
         {
           "N": 13,
           "divisible": true,
-          "residual_deg": -1,
+          "residual_deg": 100,
           "divisor_deg": 91,
+          "quotient_deg": 9,
+          "quotient_norm": 50
+        },
+        {
+          "N": 14,
+          "divisible": true,
+          "residual_deg": -1,
+          "divisor_deg": 105,
+          "quotient_deg": -1,
+          "quotient_norm": 0
+        }
+      ]
+    },
+    {
+      "atom": "T (tritium, A=3)",
+      "deg_p_u": 136,
+      "n_coefficients": 17,
+      "all_pass": true,
+      "exact_reconstruction": true,
+      "checks": [
+        {
+          "N": 1,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 1,
+          "quotient_deg": 135,
+          "quotient_norm": 1435
+        },
+        {
+          "N": 2,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 3,
+          "quotient_deg": 133,
+          "quotient_norm": 23231
+        },
+        {
+          "N": 3,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 6,
+          "quotient_deg": 130,
+          "quotient_norm": 434030
+        },
+        {
+          "N": 4,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 10,
+          "quotient_deg": 126,
+          "quotient_norm": 3707272
+        },
+        {
+          "N": 5,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 15,
+          "quotient_deg": 121,
+          "quotient_norm": 17389476
+        },
+        {
+          "N": 6,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 21,
+          "quotient_deg": 115,
+          "quotient_norm": 49501193
+        },
+        {
+          "N": 7,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 28,
+          "quotient_deg": 108,
+          "quotient_norm": 90528904
+        },
+        {
+          "N": 8,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 36,
+          "quotient_deg": 100,
+          "quotient_norm": 109675159
+        },
+        {
+          "N": 9,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 45,
+          "quotient_deg": 91,
+          "quotient_norm": 89047240
+        },
+        {
+          "N": 10,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 55,
+          "quotient_deg": 81,
+          "quotient_norm": 48215332
+        },
+        {
+          "N": 11,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 66,
+          "quotient_deg": 70,
+          "quotient_norm": 17007551
+        },
+        {
+          "N": 12,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 78,
+          "quotient_deg": 58,
+          "quotient_norm": 3722085
+        },
+        {
+          "N": 13,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 91,
+          "quotient_deg": 45,
+          "quotient_norm": 461471
+        },
+        {
+          "N": 14,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 105,
+          "quotient_deg": 31,
+          "quotient_norm": 27372
+        },
+        {
+          "N": 15,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 120,
+          "quotient_deg": 16,
+          "quotient_norm": 513
+        },
+        {
+          "N": 16,
+          "divisible": true,
+          "residual_deg": 136,
+          "divisor_deg": 136,
+          "quotient_deg": 0,
+          "quotient_norm": 1
+        },
+        {
+          "N": 17,
+          "divisible": true,
+          "residual_deg": -1,
+          "divisor_deg": 153,
+          "quotient_deg": -1,
+          "quotient_norm": 0
+        }
+      ]
+    },
+    {
+      "atom": "3He (helium-3, A=3)",
+      "deg_p_u": 144,
+      "n_coefficients": 17,
+      "all_pass": true,
+      "exact_reconstruction": true,
+      "checks": [
+        {
+          "N": 1,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 1,
+          "quotient_deg": 143,
+          "quotient_norm": 3252
+        },
+        {
+          "N": 2,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 3,
+          "quotient_deg": 141,
+          "quotient_norm": 99839
+        },
+        {
+          "N": 3,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 6,
+          "quotient_deg": 138,
+          "quotient_norm": 2004398
+        },
+        {
+          "N": 4,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 10,
+          "quotient_deg": 134,
+          "quotient_norm": 18412264
+        },
+        {
+          "N": 5,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 15,
+          "quotient_deg": 129,
+          "quotient_norm": 92913298
+        },
+        {
+          "N": 6,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 21,
+          "quotient_deg": 123,
+          "quotient_norm": 284610629
+        },
+        {
+          "N": 7,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 28,
+          "quotient_deg": 116,
+          "quotient_norm": 560478965
+        },
+        {
+          "N": 8,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 36,
+          "quotient_deg": 108,
+          "quotient_norm": 732305264
+        },
+        {
+          "N": 9,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 45,
+          "quotient_deg": 99,
+          "quotient_norm": 643099526
+        },
+        {
+          "N": 10,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 55,
+          "quotient_deg": 89,
+          "quotient_norm": 378433084
+        },
+        {
+          "N": 11,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 66,
+          "quotient_deg": 78,
+          "quotient_norm": 146236116
+        },
+        {
+          "N": 12,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 78,
+          "quotient_deg": 66,
+          "quotient_norm": 35555769
+        },
+        {
+          "N": 13,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 91,
+          "quotient_deg": 53,
+          "quotient_norm": 5032020
+        },
+        {
+          "N": 14,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 105,
+          "quotient_deg": 39,
+          "quotient_norm": 359920
+        },
+        {
+          "N": 15,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 120,
+          "quotient_deg": 24,
+          "quotient_norm": 9855
+        },
+        {
+          "N": 16,
+          "divisible": true,
+          "residual_deg": 144,
+          "divisor_deg": 136,
+          "quotient_deg": 8,
+          "quotient_norm": 46
+        },
+        {
+          "N": 17,
+          "divisible": true,
+          "residual_deg": -1,
+          "divisor_deg": 153,
           "quotient_deg": -1,
           "quotient_norm": 0
         }

@@ -66,6 +66,13 @@ Output:
 
 from __future__ import annotations
 
+# This module READS q0 in order to AUDIT it: it compares literals and anchor
+# values, and does not compute at the substrate pin. The q0-independence checker
+# cannot separate the two statically -- this file imports `_q0_value_for_anchor`,
+# a signal as strong as any, for exactly the opposite purpose -- so the role is
+# DECLARED here rather than guessed by a pattern in the checker.
+Q0_ROLE = "auditor"
+
 import argparse
 import re
 import sys
@@ -107,6 +114,47 @@ _T0 = time.monotonic()
 #: migrate a class-(b) site -- the code names a superseded value in order to
 #: detect it, so re-pinning one disables the check it powers.
 BASELINE_DIVERGENT = 61
+
+# 🛑 TWO MEASURED BLIND SPOTS — this audit's divergent list is NOT the population
+# (added 2026-08-30, bean `qou-tekx`). Both live in `_LITERAL` below, and both
+# were found by starting from a witness rather than from this audit.
+#
+# Read this with the count in front of you, not instead of it: a fresh run on
+# `main` reports ~219 divergent A-literals and BOTH assertions failing
+# (`1_divergent_set_has_not_grown` and `2_more_than_one_family_exists`, the
+# latter having moved 1 -> 0 as `canon` became C). So the audit is loud, not
+# quiet. The defect is that its loudness is about one spelling of the problem
+# while two others pass through it silently:
+#
+#   _LITERAL = re.compile(r'["\'](1\.10997859555[0-9]{1,})["\']')
+#                          ^^^^^^                    ^^^^^^^^^^^^^
+#                          quotes REQUIRED           prefix PINNED to the A/B family
+#
+# 1. BARE FLOAT LITERALS ARE INVISIBLE. The pattern only matches a value inside
+#    quotes, i.e. a STRING transcription. A bare `Q0 = 1.1099785955573347` is a
+#    float64 literal and never matches. Measured over non-deprecated
+#    `computations/**/*.py`: 201 files carry a quoted A/B literal (visible), 130
+#    carry a bare one, and **104 carry ONLY a bare one** — invisible to this
+#    audit in its entirety. Worked case: `probes/he_nu_sdp_{barfold_h9_test,
+#    psd_count_test,saturation_obstruction}.py` each set `Q0 = 1.1099785955573347`
+#    at module level (the RETIRED A pin, as a float), write it to the witness as
+#    `"q0"`, then call the stamper with `q0_anchor=None` — which resolves to
+#    proton and writes `q0Value` = the proton pin. The witness therefore declares
+#    an anchor it did not compute at, and this audit lists none of the three.
+#
+# 2. THE CANONICAL PIN'S OWN LITERALS ARE INVISIBLE. The prefix `1.10997859555`
+#    is the A/B family. Since `fca08de7d29` (2026-08-28) the canonical muon value
+#    is C, `1.10997859564273...`, which this pattern cannot match in ANY form.
+#    28 non-deprecated files carry a C literal and none is examined — verified
+#    against a FRESH witness, not the committed one. So the migration moved the
+#    target and left the detector aimed at where it used to be, while making
+#    every A-literal divergent at once, which is what the ~219 is.
+#
+# NOT every hit is a defect, and widening the pattern without triage would be
+# worse than the blind spot: an audit that DELIBERATELY names a superseded value
+# in order to detect it (class (b) in `q0-literal-classification.json`) must
+# carry the literal, and so must a witness recording history. The certain finding
+# here is about the DETECTOR; the per-file verdict is not settled.
 
 
 def ratchet_fires(count: int, baseline: int) -> bool:

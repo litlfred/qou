@@ -77,6 +77,7 @@ from mpmath import mp, mpf, mpc  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q0_stamp import pin_value_for_anchor  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 set_compute_dps()
 PVEC = (2, 3, 5)
@@ -499,7 +500,28 @@ def main(argv=None):
                "roots + q=1, NOT a uniqueness proof (Habiro injectivity is the open class "
                "hypothesis). No fit; mu-p tension NOT resolved.",
     )
-    out = w.save()
+    # q0Anchor: "comparison" -- DECLARED, and it must be the producer that
+    # declares it. This probe evaluates F_lambda at BOTH documented pins and
+    # reports the cross-pin swing (the Q0_MUON / Q0_PROTON loop above), so no
+    # single pin is the one it "computed at".
+    #
+    # `resolve_q0_anchor` structurally CANNOT return "comparison": that word
+    # states an INTENT no manifest lookup can establish, which is why the
+    # module reserves it for producer declaration. A manifest `ambiguous`
+    # entry is also wrong here -- ambiguous means UNDETERMINED, and this is
+    # the opposite: two pins, deliberately, with the difference as the result.
+    #
+    # And nothing else would have worked. This builder is constructed without
+    # a script path, so the manifest stem lookup never runs for this producer
+    # at all -- it stamped `muon` through two full re-runs while the manifest
+    # said `ambiguous` and `resolve_q0_anchor` agreed. Bean `qou-cds3`.
+    out = w.save(q0_comparison(
+        muon=pin_value_for_anchor("muon"),
+        proton=pin_value_for_anchor("proton"),
+        reason=("evaluates F_lambda at both documented q0 pins and reports "
+                "the cross-pin swing; the difference IS the measurement, so "
+                "neither pin alone describes this witness"),
+    ))
     print(f"\nwitness -> {out.name}")
     return 0
 

@@ -48,6 +48,12 @@ mp.mp.dps = 60
 REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 
+sys.path.insert(0, str(COMP))
+import _path_bridge as _bridge  # noqa: E402, F401 — puts the cluster dirs on sys.path
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
+from witness_base import WitnessBuilder  # noqa: E402
+
 # ---- electron mass (CODATA, MeV) -- the single dimensional input of the
 #      whole framework (CAL-1).  NOT a Delta_lambda parameter.
 M_E = mp.mpf("0.51099895069")
@@ -296,9 +302,23 @@ def main():
 
     # ---- deuteron 0.572 pn-weight cross-check -------------------------------
     # E0 = m_e / (q0 (q0-1)); pn-weight = (B_D/E0)/L_pn, L_pn = -log(f_pn).
-    q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+    # Proton pin via q_parameter, per the standing 2026-08-07 directive.  This
+    # was a hardcoded 60-dps literal — the same value (they agree to 1.1e-60),
+    # but a hand-copy of the anchor rather than a read of it, which is how the
+    # z below drifted.
+    q0 = Q_MP
     E0 = M_E / (q0 * (q0 - 1))
-    z = mp.sqrt(q0) / (q0 + 1)
+    # Convention D via the canonical helper.  This block reconstructs
+    # `signed_crossing_feasibility_probe.py`'s f_pn object in order to
+    # cross-check against it, and it was a STALE HAND-COPY: that probe moved
+    # to D (`z = markov_z(Q0)`, and its witness `kernel` records
+    # `z=q^3/(q^2+1)`) while this copy stayed on C's `mp.sqrt(q0)/(q0+1)`.
+    # The two differ by 22.7%, so the "cross-check" was comparing against an
+    # object the source no longer computes.  Call the helper rather than
+    # re-spelling z inline, for the reason the source file gives: every
+    # convention detector keys on how z is WRITTEN, and an inline spelling is
+    # how a site goes blind -- and how this copy drifted in the first place.
+    z = markov_z(q0)
     h = q0 - 1 / q0
     delta_cf = mp.mpf("0.00137705")
     f_pn = z - h * (mp.mpf("0.5") - delta_cf / 4)
@@ -324,30 +344,42 @@ def main():
     print("Parameter count: 0 (Delta_lambda are integer plethysm multiplicities; "
           "y_lambda, chi^lambda, m_e all canonical/cached).")
 
-    witness = {
-        "computation": "pauli-young-spin-isospin-delta-lambda",
-        "description": (
-            "Parameter-free Pauli-Young/Wigner-SU(4) spin-isospin Delta_lambda test: "
-            "Delta_lambda(A)=<s_lambda,e_A[h_3]> plethysm multiplicities fed into the "
-            "canonical Path-D binding B=m_e|sum y_lambda chi^lambda Delta_lambda|."
-        ),
-        "scriptFile": "computations/probes/pauli_young_spin_isospin_delta_lambda_probe.py",
-        "parameters": {"q_0": str(q0), "m_e_MeV": str(M_E), "free_parameters": 0},
-        "data": {
-            "atoms": results,
-            "deuteron_pn_weight": {
-                "E0_MeV": mp.nstr(E0, 30),
-                "pn_weight_from_AME": mp.nstr(pn_weight_ame, 30),
-                "pn_weight_from_pred": mp.nstr(pn_weight_pred, 30),
-                "target": "0.572",
-            },
-            "verdict_deuteron": verdict,
-        },
-    }
-    outp = COMP / "pauli-young-spin-isospin-delta-lambda.witness.json"
-    with open(outp, "w") as f:
-        json.dump(witness, f, indent=1)
-    print(f"\nwitness -> {outp.relative_to(REPO)}")
+    # Emitted through WitnessBuilder rather than a hand-rolled json.dump.  The
+    # hand-rolled version wrote only 5 keys, so the 9 provenance fields the
+    # committed witness carried (commitSha, scriptHash, engine, q0Anchor,
+    # q0Value, …) had been added downstream and were DELETED by any re-run —
+    # the "bare producer" hazard in AGENTS.md, which says to fix the producer
+    # before spending a refresh on it.  q0Anchor/q0Value in particular are what
+    # let a later reader tell which pin this witness belongs to.
+    # output_dir is explicit: WitnessBuilder defaults to the CALLER's directory,
+    # which for a probe under computations/probes/ would mint a second witness
+    # beside the script instead of refreshing the canonical one in computations/.
+    w = WitnessBuilder("pauli-young-spin-isospin-delta-lambda", engine="mpmath",
+                       output_dir=COMP)
+    w.set_description(
+        "Parameter-free Pauli-Young/Wigner-SU(4) spin-isospin Delta_lambda test: "
+        "Delta_lambda(A)=<s_lambda,e_A[h_3]> plethysm multiplicities fed into the "
+        "canonical Path-D binding B=m_e|sum y_lambda chi^lambda Delta_lambda|."
+    )
+    w.add_parameter("q_0", str(q0))
+    w.add_parameter("m_e_MeV", str(M_E))
+    w.add_parameter("free_parameters", 0)
+    w.add_parameter("markov_z_convention", "D: z = q^3/(q^2+1)")
+    w.add_data("atoms", results)
+    w.add_data("deuteron_pn_weight", {
+        "E0_MeV": mp.nstr(E0, 30),
+        "pn_weight_from_AME": mp.nstr(pn_weight_ame, 30),
+        "pn_weight_from_pred": mp.nstr(pn_weight_pred, 30),
+        # The 0.572 reference is a convention-C number: it is what
+        # (B_AME/E0)/L_pn evaluated to when f_pn was built from
+        # z_C = sqrt(q)/(q+1).  Under the canonical convention D the same
+        # expression gives ~0.7852, matching signed-crossing-feasibility's own
+        # committed (already-D) 0.78518842.  Kept, relabelled, because deleting
+        # it would erase the comparison the block exists to make.
+        "reference_convention_C": "0.572",
+    })
+    w.add_data("verdict_deuteron", verdict)
+    w.save()
     return 0
 
 

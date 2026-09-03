@@ -68,6 +68,7 @@ from hecke_characters import (  # noqa: E402
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -274,7 +275,7 @@ def analyze_atom(atom: dict, wenzl: dict) -> dict:
         y = wenzl.get(lam, 0.0)
         prod = abs(y * chi)
         d_lam = syt_count(lam)
-        dq = float(dim_q(lam))      # q-dim at module-level Q
+        dq = float(dim_q(lam, Q0_PROTON))      # q-dim at module-level Q
         per_lambda.append({
             "lambda": list(lam),
             "is_hook": is_hook_partition(lam),
@@ -553,6 +554,41 @@ def main():
             "conj:rho-prefactor-structural (per-particle instances).",
         ],
     }
+
+    # ── Assertion (bean qou-srvu) ────────────────────────────────
+    # This witness reported `allPassed: true` while asserting nothing,
+    # which reads as a pass to every consumer of that field. The
+    # description advertises an "operator-selection LP / shadow-price /
+    # primal-dual / lp-duality" evaluation and AGENTS.md §"LP/SDP duals
+    # — first-class infra" requires the dual to be emitted, but nothing
+    # checked the LP actually SOLVED. Feasibility is the right thing to
+    # assert here: it is a boolean the solver returns, so there is no
+    # threshold to choose (and therefore none to fit), and it is
+    # genuinely falsifiable — an infeasible or unbounded LP leaves
+    # `y0_star`, `y_star` and `active_set` undefined, so every
+    # shadow-price claim in this witness would be meaningless.
+    #
+    # Deliberately NOT asserted: (1) a bound on `duality_gap` — strong
+    # duality makes the true gap exactly 0, so any tolerance would have
+    # to be reverse-engineered from the observed ~1e-41, which is a fit;
+    # (2) `rules_consistent_with_all_observations` being non-empty —
+    # that set is EMPTY and asserting it would encode the open
+    # conj:rho-prefactor-structural and fail on correct behaviour, the
+    # casimir_q_factorial_probe trap.
+    n_lp_feasible = sum(
+        1 for a in per_atom if a.get("lp_dual", {}).get("feasible") is True
+    )
+    w.add_assertion(
+        "lp_feasible_all_atoms",
+        computed=n_lp_feasible,
+        expected=len(per_atom),
+        tolerance=0,
+        source=(
+            "Every per-atom operator-selection LP must be feasible and "
+            "bounded for its emitted duals (y0_star, y_star, active_set) "
+            "to mean anything; strong duality presupposes it."
+        ),
+    )
 
     (
         w.add_data("registry_b3", REGISTRY_B3)

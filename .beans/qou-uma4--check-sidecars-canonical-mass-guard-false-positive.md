@@ -1,11 +1,11 @@
 ---
 # qou-uma4
 title: 'check-sidecars canonical-mass guard: false positive on binding_hbarq_rung_forward_test.py'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T01:27:28Z
-updated_at: 2026-08-23T01:28:07Z
+updated_at: 2026-08-23T07:43:11Z
 ---
 
 Surfaced by running `scripts/check-sidecars.sh` (the mandatory pre-commit

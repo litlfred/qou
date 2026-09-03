@@ -45,6 +45,7 @@ for _p in (_COMP, os.path.join(_COMP, "hecke"), os.path.join(_COMP, "substrate")
     sys.path.insert(0, _p)
 
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 KMAX = 10
 
@@ -83,11 +84,11 @@ def count_syt_skew(lam, mu):
 
 
 def w_std_of_k(k):
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     s = 0.0
     for lam in partitions_of(k):
         if contains(lam, (2, 1)):
-            s += (dim_q(lam) ** 2 / nfac) * count_syt_skew(lam, (2, 1))
+            s += (dim_q(lam, Q0_PROTON) ** 2 / nfac) * count_syt_skew(lam, (2, 1))
     return s
 
 

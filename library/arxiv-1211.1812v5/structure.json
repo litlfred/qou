@@ -1,0 +1,269 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1211.1812v5",
+ "source": {
+  "file": "1211.1812v5.pdf",
+  "sha256": "211667ea1312d47f6df85b5e096aa3ae57afbe714805d5d5c38c4d02cb56c988",
+  "bytes": 521305,
+  "pages": 37,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1211.1812",
+   "version": "5",
+   "primary_class": "math-ph",
+   "stamp_date": "11 Aug 2014"
+  },
+  "doi": null,
+  "title": "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com",
+  "authors_raw": "October 17, 2018",
+  "title_lines": [
+   "Presheaves of superselection structures in curved spaceti mes",
+   "Ezio Vasselli",
+   "ezio.vasselli@gmail.com"
+  ],
+  "abstract": "We show that superselection structures on curved spacetime s, that are expected to describe quantum charges a\ufb00ected by the underlying geometry, are cat egories of sections of presheaves of symmetric tensor categories. When an embedding functor is g iven, the superselection structure is a Tannaka-type dual of a locally constant group bundle, wh ich hence becomes a natural candidate for the role of gauge group. Indeed, we show that an y locally constant group bundle (with suitable structure group) acts on a net of C*-algebras ful\ufb01lling normal commutation relations on an arbitrary spacetime. We also give examples o f gerbes of C*-algebras, de\ufb01ned by Wightman \ufb01elds and constructed using projective represent ations of the fundamental group of the spacetime, that we propose as solutions for the problem t hat existence and uniqueness of the embedding functor are not guaranteed.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220311022239-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Mathematical background.",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Geometry of posets.",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Nets of C*-algebras.",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Nets and presheaves of tensor categories.",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Presheaves in quantum field theory.",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Charge structure.",
+   "page": 14,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetry.",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The main result.",
+   "page": 17,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Group bundles as global gauge symmetries.",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Twisted field nets.",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Twisted nets and background potentials.",
+   "page": 23,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Current algebras on S1.",
+   "page": 25,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Existence of field nets with a given gauge symmetry.",
+   "page": 26,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions and the gerbe perspective.",
+   "page": 28,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 12893,
+   "n_words": 2456
+  },
+  {
+   "id": "sec-001-2-mathematical-background",
+   "number": "2",
+   "title": "Mathematical background.",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 790,
+   "n_words": 151
+  },
+  {
+   "id": "sec-002-21-geometry-of-posets",
+   "number": "2.1",
+   "title": "Geometry of posets.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4344,
+   "n_words": 916
+  },
+  {
+   "id": "sec-003-22-nets-of-c-algebras",
+   "number": "2.2",
+   "title": "Nets of C*-algebras.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 6213,
+   "n_words": 1351
+  },
+  {
+   "id": "sec-004-23-nets-and-presheaves-of-tensor-categories",
+   "number": "2.3",
+   "title": "Nets and presheaves of tensor categories.",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 13550,
+   "n_words": 2748
+  },
+  {
+   "id": "sec-005-31-charge-structure",
+   "number": "3.1",
+   "title": "Charge structure.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3486,
+   "n_words": 718
+  },
+  {
+   "id": "sec-006-32-symmetry",
+   "number": "3.2",
+   "title": "Symmetry.",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2355,
+   "n_words": 477
+  },
+  {
+   "id": "sec-007-33-the-main-result",
+   "number": "3.3",
+   "title": "The main result.",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 9354,
+   "n_words": 2080
+  },
+  {
+   "id": "sec-008-4-group-bundles-as-global-gauge-symmetries",
+   "number": "4",
+   "title": "Group bundles as global gauge symmetries.",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 7853,
+   "n_words": 1688
+  },
+  {
+   "id": "sec-009-42-twisted-nets-and-background-potentials",
+   "number": "4.2",
+   "title": "Twisted nets and background potentials.",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 28,
+   "n_chars": 13755,
+   "n_words": 2953
+  },
+  {
+   "id": "sec-010-5-conclusions-and-the-gerbe-perspective",
+   "number": "5",
+   "title": "Conclusions and the gerbe perspective.",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 37,
+   "n_chars": 23217,
+   "n_words": 4404
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 11,
+  "chars_total": 97810
+ }
+}

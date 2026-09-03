@@ -16,14 +16,17 @@ collapses the defect coefficient to
     24·C(n) = 2·M(n) − S_n − 2n,
 
 where `S_n = Σ_{k=1}^n (k²−1)` and `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} h_c²`
-is the **Plancherel-expected squared-hook sum**. The single compute-verified
+is the **Plancherel-expected squared-hook sum**. The representation-theoretic
 input is
 
-> **Identity I** (verified in exact integer arithmetic for `n = 2..14`):
-> `M(n) = n(3n−1)/2`.
+> **Identity I**: `M(n) = n(3n−1)/2`.
 
-Given Identity I and the elementary `S_n` formula, the defect coefficient is the
-cubic
+Identity I is now a **sorry-free, general-`n`, unconditional Lean theorem**
+(`QOU.BraidKnot.PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general`, closed
+2026-08-25 — `docs/audits/2026-08-25-ov-general-n-chain-is-closed.md`); the `twoM`
+def below is its cleared-denominator `ℤ` shadow, consumed by the algebraic
+collapse. Given Identity I and the elementary `S_n` formula, the defect
+coefficient is the cubic
 
 > `144·C(n) = −n(n−1)(2n−13)`,
 
@@ -32,18 +35,19 @@ whose only sign-determining factor `(2n−13)` gives the exact **n = 7 sign chan
 
 Everything below is a pure `ℤ` statement (base ring stays `ℤ`; no archimedean
 input — `q₀` and the 210 ppb target are never used, matching the audit's "no
-fit" discipline). Identity I — the only representation-theoretic input — is
-carried in cleared-denominator form `2·M(n) = n(3n−1)` as a definition; the
-algebraic collapse and the sign change are proved outright.
+fit" discipline). The `twoM` def is the cleared-denominator `ℤ` form of the
+now-proved Identity I (general-`n` theorem, see above); the algebraic collapse
+and the sign change are proved outright here.
 -/
 
 namespace QOU.BraidKnot.WLambdaDefect
 
 /-- `2·M(n)`, where `M(n) = n(3n−1)/2` is the Plancherel-expected squared-hook sum
-(**Identity I**, compute-verified for `n = 2..14`; content-decomposed and
-exhaustively verified for `n ≤ 22` in
-`docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md`). Stated
-cleared of the `½` to stay in `ℤ`. -/
+(**Identity I**). Identity I is a sorry-free general-`n` theorem
+(`PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general`,
+`twoM_eq_plancherel_hook_sum_general`); this `twoM` is its cleared-`½` `ℤ` shadow.
+Content-decomposed in
+`docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md`. -/
 def twoM (n : ℤ) : ℤ := n * (3 * n - 1)
 
 /-- **Identity I, content decomposition.** `2·M(n)` splits into the two carried
@@ -57,10 +61,11 @@ each attributed and *neither using the Frame–Robinson–Thrall hook-length for
   `Σ_c h_c² = Σ_c c(c)² + n²` (a single-Young-diagram fact, no dimensions) summed
   under the Plancherel measure (`E_Planch[n²] = n²`).
 
-This makes the carried Identity I transparent: the hard hook-length **formula** is
-OFF the Lean critical path; the residual fill is (A) `YoungDiagram` defs + a
-combinatorial identity and (B) the standard `ℂ[S_n]` Wedderburn/JM machinery.
-Pure `ℤ` ring identity (`n(n−1)+2n² = 3n²−n = n(3n−1)`). -/
+This makes Identity I transparent, and both pieces are now proved sorry-free:
+(A) `QOU.BraidKnot.PieceA.pieceA` (`PieceAGeneral.lean`, general-`n`, HLF-free
+cell-pair double-counting) and (B) `identityB_via_wedderburn_unconditional`
+(`IdentityBWedderburn.lean`, the `ℂ[S_n]` JM/Wedderburn content-square mean). Pure
+`ℤ` ring identity (`n(n−1)+2n² = 3n²−n = n(3n−1)`). -/
 theorem twoM_content_decomposition (n : ℤ) :
     twoM n = n * (n - 1) + 2 * n ^ 2 := by
   simp only [twoM]; ring
@@ -101,12 +106,16 @@ theorem n144C_neg {n : ℤ} (h7 : 7 ≤ n) : n144C n < 0 := by
 
 /-! ## Identity I — computable verification (formalize-first, n = 1..8)
 
-`twoM` above carries **Identity I** (`2·M(n) = n(3n−1)`, with
+`twoM` above is the `ℤ` shadow of **Identity I** (`2·M(n) = n(3n−1)`, with
 `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} h_c²`, the Plancherel-expected
-squared-hook sum) as a *definition*. A general Lean proof needs the hook-length
-formula / standard-Young-tableau count, which Mathlib does **not** yet provide
-(`Mathlib.Combinatorics.Young` has `YoungDiagram` + `SemistandardTableau`, but no
-hook length, no SYT count, no RSK) — the deferred Mathlib contribution.
+squared-hook sum). Identity I is now a **sorry-free general-`n` unconditional
+theorem** (`two_sum_dim_sq_hooks_general`), built on the in-tree general
+hook-length formula `QOU.Mathlib.SYTEnum.numSYTenum_eq_dimHLF` (Greene–Nijenhuis–
+Wilf corner recursion, `Mathlib/SYTHookGNW.lean`) and RSK `rskBurnsideHolds`
+(`Mathlib/SchenstedRSKBurnside.lean`) — these fill exactly the gap the pinned
+`Mathlib.Combinatorics.Young` left open (`YoungDiagram` + `SemistandardTableau`,
+but no HLF / SYT count / RSK). The section below is a self-contained *computable
+anchor* (n=1..8), independent of that infra.
 
 This section **computes** the squared-hook numerator from the partition
 *structure* (not hand-tabulated results): `hookLengths` derives each cell's hook
@@ -118,12 +127,12 @@ form
 
     2 · numerComputed n  =  n(3n−1) · n!     (⟺ M(n) = n(3n−1)/2)
 
-for n = 1..8, anchoring the carried `twoM` def to the genuine quantity
-(previously Python-only; audit n = 2..14). General n: Piece A is proved
-sorry-free in Lean (`QOU.BraidKnot.PieceA.pieceA` in `PieceAGeneral.lean`;
-`docs/audits/2026-08-01-keystone-identity-I-piece-A-general-proof.md`,
-bean `qou-o5xj` closed); Piece B (Plancherel/JM) tracked
-separately. Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md
+for n = 1..8, an independent computable cross-check of the general theorem.
+General `n` is fully proved sorry-free: Identity I unconditional
+(`two_sum_dim_sq_hooks_general`), Piece A (`QOU.BraidKnot.PieceA.pieceA`,
+`PieceAGeneral.lean`), Piece B (`identityB_via_wedderburn_unconditional`,
+`IdentityBWedderburn.lean`).
+Ref: [manuscript] docs/audits/2026-08-25-ov-general-n-chain-is-closed.md
 -/
 
 /-- Multiset of hook lengths of a partition `l` (descending row lengths). Cell
@@ -203,15 +212,11 @@ theorem twoM_eq_numer_base :
 piece of Identity I's content decomposition (`twoM_content_decomposition`),
 summed under the Plancherel measure via `E_Planch[n²] = n²`.
 
-**Why this matters for the deferred Identity I.** Unlike the full Identity I,
-Piece A uses **no** hook-length formula, no `dim`, no SYT count, no RSK — it is a
-single-Young-diagram combinatorial fact (`sumHookSq` vs `sumContentSq`, no
-`dimOf`). So it is *not* blocked on the missing Mathlib infra: a general proof
-needs only a Young-diagram induction. Verified here for every partition of
-`n = 1..6` (and `n = 0`, vacuously). This isolates the HLF-free half of
-Identity I in Lean. Verified here for every partition of `n = 1..8` (and `n = 0`,
-vacuously) — extended 2026-08-01 to cover the physically-critical `n = 7` defect
-sign-flip. General `n`: **proved sorry-free** in
+**Why this matters for Identity I.** Piece A uses **no** hook-length formula, no
+`dim`, no SYT count, no RSK — it is a single-Young-diagram combinatorial fact
+(`sumHookSq` vs `sumContentSq`, no `dimOf`). Verified here for every partition of
+`n = 1..8` (and `n = 0`, vacuously) — extended 2026-08-01 to cover the
+physically-critical `n = 7` defect sign-flip. General `n`: **proved sorry-free** in
 [`QOU.BraidKnot.PieceA.pieceA`](PieceAGeneral.lean) over Mathlib's `YoungDiagram`
 (bean `qou-o5xj` closed) — an explicit elementary, HLF-free, dimension-free
 double-counting proof (Piece A reduces to `Σ_c arm·leg + Σ_c above·left = D`, the
@@ -236,10 +241,36 @@ decomposition (`twoM_content_decomposition`) is a complete proof route:
   `Σ_{k=1}^n (k−1) = C(n,2)` (only the `(i,k)²=e` terms hit the identity). **No
   HLF, no dimensions.** Brute-verified in `ℂ[S_n]`, `n = 2..6`.
 
-Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. The remaining work is **Lean
-formalization** of A (Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)`
-+ regular-character bridge) — **neither the HLF**. Full proof:
+Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. Full proof:
 `docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md`.
+
+**Both halves are now formalized, and Identity I is unconditional at every `n`.**
+This paragraph used to end "the remaining work is **Lean formalization** of A
+(Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)` + regular-character
+bridge)". Neither remains:
+
+* **A** — `QOU.BraidKnot.PieceA.pieceA`, over Mathlib's `YoungDiagram`,
+  sorry-free and unconditional (bean `qou-o5xj`). The route is arm–leg /
+  β-set: expand `h = arm + leg + 1` and reduce to the off-diagonal pair count
+  (`pairCount_holds`), so it is HLF-free and dimension-free as claimed above.
+* **B and the assembly** —
+  `QOU.BraidKnot.PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general (n : ℕ)`
+  discharges `IdentityI.two_sum_dim_sq_hooks`'s class hypothesis with
+  `plancherelSnDataGeneral n`, giving
+  `2 · Σ_λ (dim λ)² · Σ_□ h(□)² = n(3n−1) · n!` with **no hypothesis**, where
+  the bridge previously held only for `n ≤ 12`. Axiom-clean
+  (`propext, Classical.choice, Quot.sound`) per
+  `docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md`.
+
+The `decide` checks in this file (`n ≤ 8`) are now a concrete cross-check of a
+general theorem rather than the only evidence for it.
+
+**What this does NOT close.** Identity I is a **first-moment** statement — the
+Plancherel mean of `Σ_□ h(□)²`. The open `M₁` problem is a second-order object,
+`Cov_Planch(Σ_□ h(□), Σ_□ c(□)²)`, and the general-`n` substrate here supplies
+no covariance. See `docs/workplans/2026-08-28-M1-arc-revised-workplan.md`; the
+same caveat applies to `secondMomentKernel_eq_zero`, which is a first-moment
+identity despite its name.
 Ref: [manuscript] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
 end QOU.BraidKnot.WLambdaDefect

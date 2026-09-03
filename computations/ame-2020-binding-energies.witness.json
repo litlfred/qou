@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T17:36:26.225964+00:00",
-  "commitSha": "bc787ae9a14e34547a52806b232217dc50dc779b",
+  "computedAt": "2026-08-29T04:13:17.972845+00:00",
+  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
   "assertions": [
     {
       "name": "binding_routes_agree",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "ame-2020-binding-energies",
   "scriptFile": "ame_2020_binding_energies.py",
   "scriptHash": "0ca5d6dc31b7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/ame_2020_binding_energies.py"
+    ],
+    "reproduce": "python3 -u computations/ame_2020_binding_energies.py"
   },
   "description": "AME 2020 total nuclear binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li, 8Be, 9Be) plus the two alpha-conjugate cluster / shell-closure points 12C (3-alpha) and 16O (doubly-magic). Read from the VENDORED AME2020 table via codata_constants.ame_binding_mev, not hand-entered. COMPARISON-ONLY validation values, NOT prediction inputs: used to form `err = pred - B_AME`. Per the AGENTS.md three-calibration discipline (CAL-1 m_e, CAL-2 D_beta, CAL-3 D_pi), importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
   "parameters": {
@@ -71,6 +82,6 @@
     "B_o16_MeV": "127.6193152",
     "B_o16_MeV_mass_excess_route": "127.619315162"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

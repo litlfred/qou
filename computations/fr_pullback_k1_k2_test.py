@@ -42,6 +42,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from mass_at_3A_proper import dim_q, qfac  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -127,7 +128,7 @@ def fr_pullback_weights_per_depth(
 
     Returns (weights_by_partition_shape, errors_by_shape).
     """
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     eps = vanishing_threshold()
 
     weights: dict = {}
@@ -141,7 +142,7 @@ def fr_pullback_weights_per_depth(
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if depth not in K_per_depth:
             weights[shape] = mp.mpf(str(dq * dq)) / qfact
             continue
@@ -172,12 +173,12 @@ def fr_pullback_weights_per_depth(
         s = s_uniform_per_depth[k]
         if z < eps:
             for shape in chi_per_depth[k]:
-                dq = dim_q(shape)
+                dq = dim_q(shape, Q0_PROTON)
                 weights[shape] = mp.mpf(str(dq * dq)) / qfact
         else:
             scale = s / z
             for shape, chi_K in chi_per_depth[k].items():
-                dq = dim_q(shape)
+                dq = dim_q(shape, Q0_PROTON)
                 weights[shape] = (mp.mpf(str(dq * dq)) * mp.fabs(chi_K)
                                    * scale)
     return weights, errors
@@ -192,7 +193,7 @@ def phi_k_with_weights(by_partition: list, k: int, weights: dict) -> mp.mpf:
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue

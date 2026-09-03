@@ -9,7 +9,7 @@
       "computed": 0.893,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.2,
+      "tolerance": "0.2",
       "source": "r(D) = Δ_λ(D)·Q_β/E_0 ≈ 1 ⇒ the 1-bond deuteron gap is the energy-scale mismatch (Q_β vs E_0), not the structural Δ_λ."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.06301080027088722,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.3,
+      "tolerance": "0.3",
       "source": "log-growth of Δtr per nucleon ≈ 0 (saturates →1) while B_AME grows — the single trace difference cannot be extensive."
     }
   ],

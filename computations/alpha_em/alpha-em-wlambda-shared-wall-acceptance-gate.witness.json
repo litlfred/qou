@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Z(q₀)<1 (merged keystone gate) ⇒ non-unitary vacuum row = the object α_EM's count-reciprocal needs; unitary S₀₀=1/D is 1/Area-category (excluded)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 8.0,
       "expected": 8.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "photon 1/(π b₁)=1/(8π), b₁=8 ⇒ shared-wall test is D∈{8,8π}: a single falsifiable number for Front-2's D(ζ), no fit"
     }
   ],

@@ -1,0 +1,98 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T07:17:15.994243+00:00",
+  "commitSha": "ae835e0863ad0325eccfb59d6308d111381eeb3c",
+  "assertions": [
+    {
+      "name": "m_e_cancels_exactly",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "counit_1_over_h_dominates_tier0",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "tier0_normalization_is_over_85pct_of_C_knot",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "dressing_is_small_frame_projection",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "verdict_is_ARTIFACT",
+      "computed": "ARTIFACT",
+      "expected": "ARTIFACT",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "c-knot-tau-transfer-artifact",
+  "scriptFile": "c_knot_tau_transfer_artifact_probe.py",
+  "scriptHash": "16c83a2c7989",
+  "scriptCommitSha": "6dee82ece14bbc4bbbfdbf1049d3dda0ceba931c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/c_knot_tau_transfer_artifact_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/c_knot_tau_transfer_artifact_probe.py"
+  },
+  "description": "τ-transfer of the parameter-free fibre rotational tier tower (μ₀ counit-derived) onto the m_e-scaled categorical master formula: the deuteron C_knot=5.853 is a pure q₀-geometry NORMALIZATION ARTIFACT (m_e cancels; counit 1/h dominates; dressing is a frame projection), NOT a missing many-body magnitude. Scope: deuteron only; A≥3 extensivity term is separate/open.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "question": "deuteron C_knot=5.853: REAL missing many-body magnitude, or master-formula NORMALIZATION ARTIFACT?",
+  "verdict": "ARTIFACT",
+  "verdict_scope": "DEUTERON C_knot only. The A≥3 chain EXTENSIVITY term (12.72× A-growth; intensive-vs-extensive + pairwise-cap proofs) is a SEPARATE proved-real open object, NOT dissolved by this verdict.",
+  "route_A_master_first_order_MeV": "0.38008102",
+  "route_B_tiers_MeV": {
+    "tier0_E_rot": "2.0195829",
+    "tier1_Eplus": "2.1306384",
+    "tier2_E2": "2.2237605",
+    "closes_B_AME_to_pct": "-0.0362"
+  },
+  "mu0_MeV_DERIVED": "1.6295104",
+  "C_knot": "5.85287",
+  "tau_transfer_decomposition": {
+    "tier0_ratio_numeric_E_rot_over_B_A": "5.3135591",
+    "tier0_ratio_pure_geometry_m_e_cancelled": "5.3135591",
+    "m_e_cancellation_residual": "0.0",
+    "counit_per_crossing_1_over_h": "4.78331",
+    "dressing_multiplier_E2_over_E_rot": "1.1011",
+    "tier0_normalization_share_of_C_knot_pct": "90.79",
+    "meaning": "C_knot = (2/(3h))·ℏ_q·[3]_q[4]_q·(dressing) / |S| — a pure q₀-geometry ratio of two normalizations (counit-scaled rotational band vs m_e-scaled character sum). m_e cancels; the counit 1/h≈4.78 supplies the bulk; the ×1.10 dressing is a frame projection (Ω_{k≥2}=0 exact for σ₁³), NOT a many-body term. No 5.853× many-body magnitude exists anywhere in the decomposition."
+  },
+  "why_not_H6_handle_commutator": "deuteron word σ₁³ is single-generator ⇒ Ω_{k≥2}=0 EXACT (#4158); H₂(q) commutative ⇒ commutator_zero (TrefoilSurfaceStateSum.lean). No commutator charge lives on the deuteron. Any H₆-charge tuned to reproduce 5.853 would double-count the counit normalization Route B already supplies parameter-free ⇒ fit to B_AME/(m_e|S|).",
+  "anti_fit_ledger": {
+    "target_locked_before_compute": true,
+    "B_AME_used_only_as_diagnostic_ratio_never_inverted": true,
+    "free_parameters": 0,
+    "nothing_wired": true,
+    "m_e_cancellation_is_algebraic_not_tuned": true
+  },
+  "audit_only": true,
+  "tier": "fibre→archimedean τ-transfer decomposition; derive-then-check; scope-(a); artifact-vs-real verdict; nothing wired; no fit.",
+  "auditOnly": true
+}

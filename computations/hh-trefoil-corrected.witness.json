@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:54:06.618754+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T09:19:49.339407+00:00",
+  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 10,
   "computation": "hh-trefoil-corrected",
   "scriptFile": "hh-trefoil-corrected.py",
-  "scriptHash": "5465667a4159",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "63e23684d96b",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -38,48 +39,48 @@
     "w_sym": 0.1654613850336069,
     "w_std": 0.6690772299327862,
     "w_alt": 0.1654613850336069,
-    "E_mol_eV": 6.729338426152079
+    "E_mol_eV": 6.72932460783094
   },
   "data": {
     "Inverse trefoil s0i.s1i.s0i (w": {
       "writhe": -3,
-      "binding": 0.8776264544384091,
-      "E_eV": 5.9058454236599935
+      "binding": -0.3396941870005843,
+      "E_eV": -2.285912451720157
     },
     "Inverse trefoil s1i.s0i.s1i (w": {
       "writhe": -3,
-      "binding": 0.8776264544384091,
-      "E_eV": 5.9058454236599935
+      "binding": -0.3396941870005843,
+      "E_eV": -2.285912451720157
     },
     "Positive trefoil s0.s1.s0 (w=+": {
       "writhe": 3,
-      "binding": -0.5511522107110668,
-      "E_eV": -3.7088897501966493
+      "binding": -0.9335298659972661,
+      "E_eV": -6.282025499400523
     },
     "(s1i)^2 Hopf link (w=-2)": {
       "writhe": -2,
-      "binding": 0.6375816339850648,
-      "E_eV": 4.290502589384527
+      "binding": 0.4754752533232631,
+      "E_eV": 3.199627322602885
     },
     "(s1i)^3 (w=-3, NOT trefoil)": {
       "writhe": -3,
-      "binding": -0.7629048241352249,
-      "E_eV": -5.133844748549963
+      "binding": -0.5188558627415225,
+      "E_eV": -3.4915495250638804
     },
     "Figure-8: s0.s1i.s0.s1i (w=0)": {
       "writhe": 0,
-      "binding": -1.2127286690547758,
-      "E_eV": -8.16086163316657
+      "binding": -1.06587350995576,
+      "E_eV": -7.172608839380432
     },
     "T(2,5) = s0.s1.s0.s1.s0 (w=+5)": {
       "writhe": 5,
-      "binding": -1.3458559145358275,
-      "E_eV": -9.056719921749993
+      "binding": -1.167299811387184,
+      "E_eV": -7.855139345484193
     },
     "T(2,5)^-1 (w=-5)": {
       "writhe": -5,
-      "binding": -0.30298821785345775,
-      "E_eV": -2.0389102570726108
+      "binding": -0.09046064849904978,
+      "E_eV": -0.6087390679850007
     }
   },
   "q0Anchor": "proton",

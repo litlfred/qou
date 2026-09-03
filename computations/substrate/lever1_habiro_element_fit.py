@@ -132,8 +132,28 @@ witness = {
     "verdict": verdict
 }
 
-out_path = os.path.join("computations", "substrate", "lever1-habiro-element-fit.witness.json")
+# Write beside THIS FILE, not into the caller's cwd. As a bare
+# `os.path.join("computations", "substrate", ...)` this resolved against
+# whatever directory the producer was invoked from -- correct only from the
+# repo root, and from anywhere else it orphans an untracked witness while
+# leaving the tracked one untouched, which makes a re-run read as a
+# reproduction (bean qou-nxxw).
+#
+# The landed cwd_relative_witness_write_audit could NOT see this: its target
+# here is an os.path.join CALL, not a string literal, which is the blind spot
+# that audit documents.
+out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "lever1-habiro-element-fit.witness.json")
 with open(out_path, "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=2)
 
 print(f"D(m) fit: {fit_Dm}")

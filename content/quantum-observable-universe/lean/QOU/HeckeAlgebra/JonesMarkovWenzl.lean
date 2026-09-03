@@ -2,7 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.MathlibExt.QIntegerCanonical
 
@@ -93,7 +92,7 @@ type-level interface; concrete computation is deferred.
 
 namespace QOU.HeckeAlgebra.JonesMarkovWenzl
 
-open QOU.HeckeAlgebra QOU.HeckeAlgebra.MarkovTrace QOU.HeckeAlgebra.QSubstrate
+open QOU.HeckeAlgebra QOU.HeckeAlgebra.QSubstrate
 
 /-- The q-integer `[k]_q := (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})`.
     Equivalent to the standard `[k]_q = 1 + q + q² + ... + q^{k-1}`
@@ -257,17 +256,28 @@ noncomputable def wenzlClosedForm {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : 
   have : partsList lam = [] := by simp [partsList]
   simp [wenzlClosedForm, this]
 
-/-- **Identification** (Wenzl 1988 Lemma 3.2): the abstract
-    `JonesMarkovCoefficient` from `QOU.HeckeAlgebra.MarkovTrace` is given by
-    the closed form above.
+/-! ## Identification with the abstract Jones-Markov coefficient
 
-    This is a genuine external input — Wenzl's lemma, which Mathlib does not
-    have. It was previously *vacuous*: both sides were opaque axioms, so the
-    equation constrained nothing. With `wenzlClosedForm` now defined, it says
-    something that could be false. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (identification y_λ = wenzlClosedForm)
-axiom JonesMarkovCoefficient_eq_wenzl :
-    ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
-    JonesMarkovCoefficient lam q = wenzlClosedForm lam q
+`QOU.HeckeAlgebra.MarkovTrace.JonesMarkovCoefficient` is now **defined** to be
+`wenzlClosedForm`, so the Wenzl 1988 Lemma 3.2 identification is definitional
+rather than an axiom. It is recorded as a `rfl` theorem at the definition site
+(`MarkovTrace.jonesMarkovCoefficient_eq_wenzlClosedForm`) rather than here,
+because `MarkovTrace` imports this module and not the other way round.
+
+History, because the shape is worth recognising: this used to be
+`axiom JonesMarkovCoefficient_eq_wenzl`, and before `wenzlClosedForm` was
+defined it was *vacuous* — both sides were opaque, so the equation constrained
+nothing. Commit `fa0aa1c5c8` correctly deleted the axiom, but left this comment
+attached to nothing, which is a PARSE ERROR: a `/-- -/` doc comment must be
+followed by a declaration. The module has not compiled from source since.
+
+It went unnoticed for the reason documented in
+`docs/audits/2026-08-26-live-axiom-surface-recheck.md` §4 — a stale `.olean`
+(this one dated 2026-07-02) kept satisfying every `import`, so nothing that
+merely *used* the module ever noticed it could not be *built*. That is the
+same class of defect one step worse: not a wrong axiom verdict, an unbuildable
+module hidden behind a cache.
+-/
+
 
 end QOU.HeckeAlgebra.JonesMarkovWenzl

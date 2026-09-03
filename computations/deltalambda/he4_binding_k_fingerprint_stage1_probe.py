@@ -197,6 +197,15 @@ def main() -> int:
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "he4-binding-k-fingerprint-stage1.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])
     return 0 if wit["allPassed"] else 1

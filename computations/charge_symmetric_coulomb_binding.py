@@ -40,6 +40,10 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
 from coulomb_energy import coulomb_energy_mev  # noqa: E402 — canonical Z(Z−1), r₀=1.2
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -65,7 +69,7 @@ def f_bonds():
     h = q - 1 / q
     f_pp = z
     f_nn = z - h
-    f_pn = z - h / 2
+    f_pn = z + _pn_d(h)
     return f_pp, f_pn, f_nn
 
 

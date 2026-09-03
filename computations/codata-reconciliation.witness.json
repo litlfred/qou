@@ -9,7 +9,7 @@
       "computed": 0.51099895069,
       "expected": 0.51099895069,
       "passed": true,
-      "tolerance": 3e-10,
+      "tolerance": "3e-10",
       "unit": "MeV",
       "source": "anchor scale (by definition)"
     },
@@ -18,7 +18,7 @@
       "computed": 938.27208816,
       "expected": 938.27208816,
       "passed": true,
-      "tolerance": 5.8e-07,
+      "tolerance": "5.8e-07",
       "unit": "MeV",
       "source": "anchor scale (atom_mass_derived.py)"
     },
@@ -27,7 +27,7 @@
       "computed": 2.7755575615628914e-17,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 2e-13,
+      "tolerance": "2e-13",
       "unit": "dimensionless",
       "source": "alpha-k-jones-markov-h3.witness.json"
     },
@@ -45,7 +45,7 @@
       "computed": 2.029883212819307,
       "expected": 2.029883212819307,
       "passed": true,
-      "tolerance": 2e-12,
+      "tolerance": "2e-12",
       "unit": "dimensionless",
       "source": "SnapPy 3.3.2 (anchor)"
     },
@@ -54,7 +54,7 @@
       "computed": 2.828122088330783,
       "expected": 2.828122088330783,
       "passed": true,
-      "tolerance": 2e-12,
+      "tolerance": "2e-12",
       "unit": "dimensionless",
       "source": "SnapPy 3.3.2 (anchor)"
     },
@@ -63,7 +63,7 @@
       "computed": 7.327724753417752,
       "expected": 7.327724753417752,
       "passed": true,
-      "tolerance": 2e-15,
+      "tolerance": "2e-15",
       "unit": "dimensionless",
       "source": "SnapPy 3.3.2 (anchor)"
     }

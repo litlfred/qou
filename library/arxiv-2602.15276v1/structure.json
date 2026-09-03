@@ -1,0 +1,315 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2602.15276v1",
+ "source": {
+  "file": "2602.15276v1.pdf",
+  "sha256": "18d77d6aa140fc50acbd58b10496818adad25bcb9174f1911b6a50dfcc24bed8",
+  "bytes": 4441451,
+  "pages": 44,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2602.15276",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "17 Feb 2026"
+  },
+  "doi": null,
+  "title": "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model",
+  "authors_raw": "E. L. Cola\u00b8 co,1,\u2217 P. Klimas,1,\u2020 L. R. Livramento, 2, 3,\u2021 N. Sawado,4,\u00a7 and S. Yanai5,\u00b6",
+  "title_lines": [
+   "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "E. L. Cola\u00e7o; P. Klimas; L. R. Livramento; N. Sawado; S. Yanai",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Compact Q-balls and Q-shells within a $CP^N$ Skyrme-Faddeev type model"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Compact Q-balls and Q-shells within a CPN Skyrme-Faddeev type model",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The extended Skyrme-Faddeev model with potential",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The Lagrangian and Euler-Lagrange equations",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Radial reduction",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Energy density",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Noether currents",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Compactons",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Expansion at the compacton boundary",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Expansion at the center",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Q-ball case: N=1, (l=0)",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Q-ball case: N=3, (l=1)",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Q-shell case: N=5,7,9,\u2026, (l=2,3,4,\u2026)",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Numerical solutions",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Shooting method",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "CP1 Q-balls",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "CP3 Q-balls",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Q-shells",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Summary and remarks",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgmets",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 10288,
+   "n_words": 1453
+  },
+  {
+   "id": "sec-001-the-lagrangian-and-euler-lagrange-equations",
+   "number": null,
+   "title": "The Lagrangian and Euler-Lagrange equations",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 8241,
+   "n_words": 1321
+  },
+  {
+   "id": "sec-002-radial-reduction",
+   "number": null,
+   "title": "Radial reduction",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2227,
+   "n_words": 411
+  },
+  {
+   "id": "sec-003-energy-density",
+   "number": null,
+   "title": "Energy density",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 5534,
+   "n_words": 957
+  },
+  {
+   "id": "sec-004-noether-currents",
+   "number": null,
+   "title": "Noether currents",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 6458,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-005-expansion-at-the-compacton-boundary",
+   "number": null,
+   "title": "Expansion at the compacton boundary",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1244,
+   "n_words": 210
+  },
+  {
+   "id": "sec-006-expansion-at-the-center",
+   "number": null,
+   "title": "Expansion at the center",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 5035,
+   "n_words": 856
+  },
+  {
+   "id": "sec-007-numerical-solutions",
+   "number": null,
+   "title": "Numerical solutions",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 583,
+   "n_words": 88
+  },
+  {
+   "id": "sec-008-shooting-method",
+   "number": null,
+   "title": "Shooting method",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 24,
+   "n_chars": 15152,
+   "n_words": 2494
+  },
+  {
+   "id": "sec-009-q-shells",
+   "number": null,
+   "title": "Q-shells",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 40,
+   "n_chars": 27468,
+   "n_words": 5065
+  },
+  {
+   "id": "sec-010-acknowledgmets",
+   "number": null,
+   "title": "Acknowledgmets",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 44,
+   "n_chars": 8302,
+   "n_words": 1341
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 11,
+  "chars_total": 90532
+ }
+}

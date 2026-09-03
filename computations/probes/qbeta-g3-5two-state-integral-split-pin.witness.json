@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "solved split reproduces the certified exact Z_52 at held-out tau to < 1e-30 relative"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "a+ = 1/6, b+ = -4 to < 1e-28 — c+ = (1/6)E2 and c- = (1/12)E2 derived"
     }
   ],

@@ -41,73 +41,79 @@ Exit: 0 always (advisory); use --strict to exit 1 when any CRITICAL is found.
 from __future__ import annotations
 import os, re, sys, json
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+from lean_decl_scan import (            # noqa: E402  (path set above)
+    blank_comments, split_statement, decl_spans, docstring_before,
+    assumption_binders, local_def_names, discharges_via_binder_field,
+    comment_cone,
+)
+
 DEFAULT_ROOTS = [
     "content/quantum-observable-universe/lean/QOU",
     "content/unital-groebner-bases/lean",
     "content/fred2005-formal-groups/lean",
 ]
 
-# `def foo`, but NOT `opaque foo` / `axiom foo` — those are honest primitives.
-PLAIN_DEF = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+)*"
-    r"(?:def|abbrev)\s+([A-Za-z_][A-Za-z0-9_'.]*)")
-THM = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+)*"
-    r"(theorem|lemma|example)\s+([A-Za-z_][A-Za-z0-9_'.]*)")
+# PLAIN_DEF / THM now come from scripts/lib/lean_decl_scan (bean qou-rfq9).
+PROVABLE = {"theorem", "lemma", "example"}
+# Phrases in which an author admits, in their own prose, that the declaration
+# below is NOT the proof of what it is named after.
+#
+# The second group was added 2026-08-30 (bean `qou-rfq9`) and is the half that
+# actually matters.  The bean diagnosed the `b3_nf_wedderburn_uniqueness` miss
+# as `--`-comment blindness; reading the whole comment cone was implemented and
+# measured as a **no-op** -- 2255 -> 2255 findings, 2 -> 2 CRITICAL.  The reason
+# that declaration was invisible is that it says "Full proof requires
+# Wedderburn-Artin over R_q" and "The formal proof needs: Wedderburn for
+# finite-dim algebras", and neither the old `needs the` nor `unproved` matches
+# either phrasing.  Cone blindness was real but was never what was hiding it.
+#
+# These are deliberately narrow: they require the words `proof`/`proved`/
+# `formalis(z)ed` near the admission, so ordinary mathematical prose about what
+# a THEOREM requires as a hypothesis does not match.
 DOC_OPEN = re.compile(
     r"open input|open analytic|body is\s*`?sorry|not in mathlib|"
     r"needs the|needs yekutieli|is the conjecture|open conjecture|"
-    r"unproved|not yet proved", re.I)
+    r"unproved|not yet proved|"
+    # "(full|formal|complete|rigorous|real) proof requires/needs/would ..."
+    r"(?:full|formal|complete|rigorous|actual|real)\s+proof\s+"
+    r"(?:requires|needs|is|would|remains)|"
+    # "proof sketch", "sketch of proof", "we do not prove", "not formalised"
+    r"proof\s+sketch|sketch\s+of\s+(?:the\s+)?proof|"
+    r"(?:we|this)\s+do(?:es)?\s+not\s+prove|"
+    r"not\s+(?:formali[sz]ed|formally\s+prove)", re.I)
 SIMP_ARGS = re.compile(r"\b(?:simp|simp only|unfold|rw|delta)\s*\[?([^\]\n]*)\]?")
 TRIVIAL_TAIL = re.compile(r"^\s*(?::=\s*rfl|:=\s*by\s+rfl|:=\s*by\s*$)")
 
 
 def parse_file(path: str):
-    src = open(path, encoding="utf-8", errors="replace").read()
-    lines = src.split("\n")
+    """Findings for one file.  Scanning primitives are shared with the
+    borrowed-name detector via `scripts/lib/lean_decl_scan` (bean `qou-rfq9`);
+    signals A and B below are this detector's own."""
+    raw = open(path, encoding="utf-8", errors="replace").read()
+    # Comments are blanked BEFORE parsing -- this detector previously scanned
+    # raw lines, so a `rfl` or a def name inside a `--` comment was read as
+    # code.  Line numbers survive blanking, so docstring lookup still indexes
+    # into `lines` below.
+    src = blank_comments(raw)
+    lines = raw.split("\n")
 
-    local_defs: set[str] = set()
-    for ln in lines:
-        m = PLAIN_DEF.match(ln)
-        if m:
-            local_defs.add(m.group(1).split(".")[-1])
+    local_defs = local_def_names(src)
 
     findings = []
-    i = 0
-    while i < len(lines):
-        m = THM.match(lines[i])
-        if not m:
-            i += 1
+    for kind, name, line_no, chunk in decl_spans(src):
+        if kind not in PROVABLE:
             continue
-        kind, name = m.group(1), m.group(2)
+        stmt, after = split_statement(chunk)
+        docstring = docstring_before(lines, line_no)
+        # Signal B reads the whole COMMENT CONE, not the docstring alone --
+        # see the `cone_only` note below and `comment_cone`'s docstring.
+        cone = comment_cone(lines, line_no, chunk.count("\n") + 1)
 
-        # docstring: contiguous /-- ... -/ immediately above (skip -- Ref: lines)
-        doc, j = [], i - 1
-        while j >= 0 and (lines[j].lstrip().startswith("--") or not lines[j].strip()):
-            j -= 1
-        if j >= 0 and lines[j].rstrip().endswith("-/"):
-            k = j
-            while k >= 0:
-                doc.append(lines[k])
-                if lines[k].lstrip().startswith("/--"):
-                    break
-                k -= 1
-        docstring = "\n".join(reversed(doc))
-
-        # body: from the theorem line to the next top-level declaration
-        body, k = [], i
-        while k < len(lines):
-            if k > i and re.match(r"^\S", lines[k]) and not lines[k].startswith(")"):
-                break
-            body.append(lines[k])
-            k += 1
-        body_txt = "\n".join(body)
-        after = body_txt.split(":=", 1)[1] if ":=" in body_txt else ""
-
-        # --- signal A ---------------------------------------------------
+        # --- signal A: COLLAPSED -----------------------------------------
         collapsed, why = False, ""
         stripped = after.strip()
-        if stripped in ("rfl", "by rfl") or re.fullmatch(r"by\s+intro[^\n]*\n\s*rfl", stripped):
+        if stripped in ("rfl", "by rfl"):
             collapsed, why = True, "proof is `rfl`"
         elif re.fullmatch(r"(?s)by\s+intro[^\n]*\s*rfl\s*", stripped):
             collapsed, why = True, "proof is `intro; rfl`"
@@ -119,38 +125,41 @@ def parse_file(path: str):
                     if tok:
                         used.add(tok)
             hits = sorted(used & local_defs)
-            # only if the proof is *just* that tactic (short body)
             if hits and len(stripped.split("\n")) <= 3:
                 collapsed = True
                 why = "proof is `simp`/`unfold` over local def(s): " + ", ".join(hits[:4])
 
         if not collapsed:
-            i = k
             continue
 
         # --- exclusion: genuine conditional derivation --------------------
-        # If the proof discharges the goal using a *hypothesis field* of an
-        # instance/structure binder (`C.ruleLinear`, `h.foo`), it is deriving
-        # from a stated assumption, not collapsing on a local definition.
-        # Real example: BraneTowerLevelAmplitude.fullCoordAmplitude_eq, whose
-        # docstring correctly disclaims ("not a proof of the rule; the rule
-        # `ruleLinear` is the open input") — the disclaimer used to trip
-        # signal B and report a false CRITICAL.
-        binders = set(re.findall(r"[\[(]\s*([A-Za-z_][A-Za-z0-9_']*)\s*:", body_txt))
-        if any(re.search(rf"\b{re.escape(b)}\.[A-Za-z_]", after) for b in binders):
-            i = k
+        # The goal is discharged from a STATED assumption (a field of an
+        # instance/structure binder), not by unfolding a local definition.
+        if discharges_via_binder_field(after, assumption_binders(stmt)):
             continue
 
-        # --- signal B ---------------------------------------------------
-        open_claim = bool(DOC_OPEN.search(docstring))
+        # --- signal B: OPEN-CLAIM -----------------------------------------
+        # Read the docstring AND the `--` comments above and inside the decl.
+        # Prose in `--` comments was invisible here until 2026-08-30; the
+        # worked case is `b3_nf_wedderburn_uniqueness`, whose docstring ends
+        # "PROVED CORRECT" while an inline comment in its own statement says
+        # "Full proof requires Wedderburn-Artin over R_q".  Both halves are
+        # authored prose about the same declaration and only one was read.
+        doc_claim = bool(DOC_OPEN.search(docstring))
+        open_claim = bool(DOC_OPEN.search(cone))
+        excerpt = docstring if doc_claim else cone
         findings.append({
-            "file": path, "line": i + 1, "kind": kind, "name": name,
+            "file": path, "line": line_no, "kind": kind, "name": name,
             "severity": "CRITICAL" if open_claim else "ADVISORY",
             "why": why,
             "doc_claims_open": open_claim,
-            "doc_excerpt": " ".join(docstring.split())[:160],
+            # True when ONLY the `--` comments carry the admission, i.e. this
+            # finding is new as of the comment-cone change.  Kept as its own
+            # field so the delta stays auditable rather than being folded into
+            # a count someone has already quoted.
+            "cone_only": open_claim and not doc_claim,
+            "doc_excerpt": " ".join(excerpt.split())[:160],
         })
-        i = k
     return findings
 
 

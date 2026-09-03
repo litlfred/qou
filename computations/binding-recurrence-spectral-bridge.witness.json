@@ -1,23 +1,24 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:39.557880+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T20:32:29.465000+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "ratio_convergence",
       "computed": "-2.95159936137e-5",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "ITERATED seq ratio tail − λ₊ (tautological; seq built by iterating x²−τx+1)"
     },
     {
       "name": "det_one",
-      "computed": "1.0",
-      "expected": "1",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-30
+      "tolerance": "1e-11",
+      "source": "lam_+ * lam_- = det = 1 for the recurrence matrix"
     },
     {
       "name": "dominant_root_extensive",
@@ -32,7 +33,7 @@
       "computed": "2.896e-50",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "q-hook lw(1,2,3) vs closed-form anchors a₂,a₃,a₄ (seed agreement)"
     },
     {
@@ -56,16 +57,16 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "lw(c,q→1) = (1,4/3,5/2,26/5) = #2764 Lever1Depth2Exclusion classical weights"
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 26,
   "computation": "binding-recurrence-spectral-bridge",
   "scriptFile": "binding_recurrence_spectral_bridge_probe.py",
-  "scriptHash": "781c5ef2670a",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "509c57fb8c0d",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -172,5 +173,7 @@
   },
   "caveats": [
     "τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it; the |χ| saturation sits at the degenerate τ=2 (λ=1) boundary. SCOPE (PR #2752): `aD_sequence`/`growth_ratios` are the ITERATED fixed-τ recurrence, which → λ₊ tautologically; the PHYSICAL coefficients a_D^(n)=lw(n−1) grow super-geometrically (#2708) and diverge from it by up to 32% (n=7). λ₊>1 is an (a)-scope witness that the SEED kernel is extensive, NOT the binding growth rate. The magic-A ⁴He +5.87% is a SEPARATE doubly-magic-formula gap (over-claim retracted 2026-06-24), not a truncation residual of this series."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

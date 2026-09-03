@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9910019v1",
+ "source_sha256": "07dd7ab7068b1482",
+ "brief": "Symmetrized random permutations — 4 sections: Introduction; (−x)3/2+; (−x)3/2−",
+ "extended": "**Symmetrized random permutations**\n\n*Jinho Baik∗and*\n\n17 pp, 4 sections.\n\n**Outline.** Introduction; 3 (−x)3/2+; 3 (−x)3/2−; References",
+ "tokens": {
+  "brief": 19,
+  "extended": 34
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-001-3-x32",
+   "title": "(−x)3/2+",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-3-x32",
+   "title": "(−x)3/2−",
+   "pages": "6-15"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "15-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

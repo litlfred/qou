@@ -70,6 +70,7 @@ import time
 from pathlib import Path
 
 import mpmath as mp
+from decimal import Decimal as _Decimal, ROUND_HALF_EVEN as _ROUND_HALF_EVEN
 
 _ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_ROOT / "tools" / "pyhecke" / "python"))
@@ -78,6 +79,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent / "substrate"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from convolution_provenance import CONVOLUTION  # noqa: E402
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
 DPS = 40
 mp.mp.dps = DPS + 10  # guard digits
@@ -145,7 +151,7 @@ ALT_F = {"pos": -QI, "inv": -Q0, "mix": -(Q0 + QI) / 2}
 
 # std eigen-branch factors (lambda in {q, -1/q}); used by the fast path.
 EIG = {"+": Q0, "-": -QI}
-STD_F = {k: {"pos": EIG[k], "inv": EIG[k] - H, "mix": EIG[k] - H / 2}
+STD_F = {k: {"pos": EIG[k], "inv": EIG[k] - H, "mix": EIG[k] + _pn_d(H)}
          for k in ("+", "-")}
 # checks: (q)-h = 1/q (inv on + branch); (-1/q)-h = -q (inv on - branch)
 
@@ -260,10 +266,71 @@ def blocks_fast(Z: int, N: int, *, P_intra, N_intra):
     return sym, alt, std, T
 
 
-def sgn_log10(x) -> tuple[int, float]:
+def sgn_log10(x) -> tuple[int, "mp.mpf | None"]:
+    """`(sign, log10|x|)` with the magnitude kept as `mpf`.
+
+    It was `float(mp.log10(abs(x)))`, discarding a 40-dps computation at the
+    moment it was produced. The three `*_log10` columns are this function's
+    output over 3,558 nuclides and were the bulk of this witness's raw
+    float64; the caller now serializes them at a declared width (`_dp`)
+    instead of rounding a double.
+
+    The zero branch returns `None`, not `float("-inf")`. JSON has no
+    infinity — Python's encoder emits a bare `-Infinity`, which is not valid
+    JSON and which only its own decoder accepts by extension — and the
+    companion `*_sign` field already carries 0 for that case, so nothing is
+    lost. Measured on the committed witness: 0 of 3,558 rows have a zero
+    sign or an infinite log, so this branch is dead in the data and no
+    committed value changes.
+    """
     if x == 0:
-        return 0, float("-inf")
-    return (1 if x > 0 else -1), float(mp.log10(abs(x)))
+        return 0, None
+    return (1 if x > 0 else -1), mp.log10(abs(x))
+
+
+def _dp(x, places: int = 4):
+    """Serialize one row cell at its declared decimal width, as a STRING.
+
+    Replaces `round(x, <places>)`, which emitted a JSON float. Like the mass
+    table's helper, this is a TYPE fix rather than a precision gain: four
+    decimals on a log10 is ~1e-4 absolute, twelve orders above binary64's
+    floor, so the mpf that now reaches it cannot change a printed digit.
+    That is a checkable prediction and it is checked in the PR.
+
+    MEASURED 2026-08-30, and the prediction needs one qualifier. The mpf and
+    float paths agree on ordinary values but diverge on an EXACT DECIMAL TIE:
+    `1.00005` prints `1.0000` from the mpf path and `1.0001` from the float
+    one. Neither is a bug -- the mpf path rounds half-even on the true decimal
+    value, the float path rounds on that value's binary64 approximation, which
+    is not exactly 1.00005. The mpf answer is the more faithful of the two.
+    Ties on a log10 are vanishingly rare, so this does not move any row here;
+    it is recorded because "cannot change a printed digit" is not literally
+    true and the next reader should not have to rediscover why.
+    """
+    if x is None:
+        return None
+    if isinstance(x, float):
+        return f"{x:.{places}f}"
+    # mpf: `f"{mpf:.4f}"` raises TypeError (mpf has no __format__ for the
+    # float presentation types), so the mpf this helper was written to accept
+    # crashed it instead of being served. Quantize through Decimal from a
+    # 40-significant-digit mpmath string -- never through float(), which would
+    # reintroduce the binary64 hop the helper exists to avoid.
+    d = _Decimal(mp.nstr(x, 40, strip_zeros=False))
+    return str(d.quantize(_Decimal(1).scaleb(-places),
+                          rounding=_ROUND_HALF_EVEN))
+
+
+def _sig(x) -> str:
+    """Full-precision decimal string at THIS producer's own working dps.
+
+    Deliberately not `_precision.fmt`, which serializes at the corpus-wide
+    `OUTPUT_DPS` (60). This module computes at `DPS = 40`, so 60 digits
+    would claim twenty this producer never had. Used for the assertion
+    residuals and thresholds, which are scalars — the row columns keep
+    their four-decimal display width via `_dp`.
+    """
+    return mp.nstr(x, DPS, strip_zeros=False)
 
 
 def main() -> int:
@@ -273,6 +340,7 @@ def main() -> int:
     w = WitnessBuilder("all-nuclides-wedderburn-spectral-v2",
                        engine="mpmath", start_time=t0)
     w.add_data("q0_source", _Q0_SOURCE)
+    w.add_data("convolution", CONVOLUTION)
 
     # ── validation battery ─────────────────────────────────────────
     tol = mp.mpf(10) ** (-(DPS - 5))
@@ -284,15 +352,20 @@ def main() -> int:
                for i in (0, 1)]
         hek.append(max(abs(sq[i][j] - ref[i][j])
                        for i in (0, 1) for j in (0, 1)))
+    # `computed` is a residual of a 40-dps computation and `tol` a declared
+    # threshold; both were cast to `float` on the way out. `add_assertion`
+    # documents strings as the drained convention (`passed` coerces with
+    # `float()` either way), so the residual keeps its digits and the
+    # threshold is written as the literal it is.
     w.add_assertion(name="hecke_relation_both_gens",
-                    computed=float(max(hek)), expected=0.0,
-                    tolerance=float(tol), source="rho^2 = h rho + 1 at mpf")
+                    computed=_sig(max(hek)), expected="0",
+                    tolerance=_sig(tol), source="rho^2 = h rho + 1 at mpf")
     # 2. braid relation
     b1 = m2(m2(RHO0, RHO1), RHO0)
     b2 = m2(m2(RHO1, RHO0), RHO1)
     bdev = max(abs(b1[i][j] - b2[i][j]) for i in (0, 1) for j in (0, 1))
-    w.add_assertion(name="braid_relation", computed=float(bdev),
-                    expected=0.0, tolerance=float(tol),
+    w.add_assertion(name="braid_relation", computed=_sig(bdev),
+                    expected="0", tolerance=_sig(tol),
                     source="rho(s0)rho(s1)rho(s0) = rho(s1)rho(s0)rho(s1)")
     # 3. chi_std vs native Hoefsmit (f64)
     native_dev = None
@@ -389,8 +462,8 @@ def main() -> int:
             denom = max(abs(tr_f64), 1e-12)
             f64_dev = max(f64_dev, abs(tr_blocks - tr_f64) / denom)
     w.add_assertion(name="brute_vs_fast_blocks_light",
-                    computed=float(bf_dev), expected=0.0,
-                    tolerance=float(mp.mpf(10) ** (-(DPS - 12))),
+                    computed=_sig(bf_dev), expected="0",
+                    tolerance=_sig(mp.mpf(10) ** (-(DPS - 12))),
                     source=f"A<=16 sample {light}")
     if have_f64:
         w.add_assertion(name="trM_blocks_vs_f64_nf_light",
@@ -449,17 +522,21 @@ def main() -> int:
         s_trm = sgn_log10(trm)
         rows.append({
             "Z": Z, "N": N, "A": A, "T_crossings": T,
-            "sym_sign": s_sym[0], "sym_log10": round(s_sym[1], 4),
-            "alt_sign": s_alt[0], "alt_log10": round(s_alt[1], 4),
+            "sym_sign": s_sym[0], "sym_log10": _dp(s_sym[1]),
+            "alt_sign": s_alt[0], "alt_log10": _dp(s_alt[1]),
             "std_tr_sign": 1 if tr_std >= 0 else -1,
             "std_det_sign": 1 if det_std >= 0 else -1,
             "std_disc_sign": 1 if disc >= 0 else -1,
             "std_positive": std_pos,
             "spectral_positive": spectral_pos,
             "frobenius_member": frob_pos,
-            "trM_sign": s_trm[0], "trM_log10": round(s_trm[1], 4),
-            "B_AME_MeV": round(
-                float(e.get("binding_energy_per_A_keV") or 0.0) * A / 1000.0,
+            "trM_sign": s_trm[0], "trM_log10": _dp(s_trm[1]),
+            # keV -> MeV in exact arithmetic. `float(...) * A / 1000.0` did
+            # the conversion in binary64, where neither 1/1000 nor most of
+            # the AME table's keV values are representable; `mpf(str(...))`
+            # reads the tabulated decimal AS that decimal.
+            "B_AME_MeV": _dp(
+                mp.mpf(str(e.get("binding_energy_per_A_keV") or 0)) * A / 1000,
                 6),
         })
         if (idx + 1) % 400 == 0:
@@ -517,6 +594,19 @@ def main() -> int:
         "no production wiring; the criterion's physical meaning (if any) "
         "is the open question this probe feeds to the Delta_lambda work.",
     ])
+    # GUARD: refuse a vacuous pass. BOTH assertions below compare quantities
+    # that are 0 exactly when nothing was swept -- len(rows) == n_total and
+    # n_parity_ok == n_total are each trivially true at 0 == 0. n_total counts
+    # AME entries with A >= 1, so zero means the nuclide table did not load,
+    # not that the chart was swept and found empty.
+    if n_total == 0:
+        raise SystemExit(
+            f"REFUSING to emit a witness: 0 of {len(entries)} AME entries were "
+            f"swept (n_total == 0), so both chart_fully_swept_no_overflow and "
+            f"alt_parity_closed_form would pass vacuously at 0 == 0. The "
+            f"nuclide table is empty or failed to load."
+        )
+
     w.add_data("permitted_ZN_spectral", permitted_P)
     w.add_data("rows", rows)
     w.add_assertion(name="chart_fully_swept_no_overflow",

@@ -43,6 +43,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from mass_at_3A_proper import dim_q, qfac  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -177,7 +178,7 @@ def chi_lambda_braid_via_rust(shape, braid_word_signed, q_f64):
 
 
 def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     eps = vanishing_threshold()
     weights = {}
     chi_at_3 = {}
@@ -186,7 +187,7 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         dq_sq = mp.mpf(str(dq * dq))
         if depth != 3:
             weights[shape] = dq_sq / qfact
@@ -201,12 +202,12 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
         z_norm += dq_sq * mp.fabs(chi_K)
     if z_norm < eps:
         for shape in chi_at_3:
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weights[shape] = mp.mpf(str(dq * dq)) / qfact
     else:
         scale = s_uniform / z_norm
         for shape, chi_K in chi_at_3.items():
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weights[shape] = mp.mpf(str(dq * dq)) * mp.fabs(chi_K) * scale
     return weights
 
@@ -219,7 +220,7 @@ def phi_k_with_weights(by_partition, k, weights):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue
@@ -359,17 +360,30 @@ def main() -> int:
           f"(baseline {i_result['baseline_variance']:.4f}×, "
           f"Δ = {delta_i:+.2f}%)")
 
-    # Assertion: at minimum, the script completed both probes
+    # `computed=1.0, expected=1.0` said "the script completed", which is what
+    # reaching this line means anyway — and the two findings it narrated in
+    # its source string are measurements with no independent target, so it
+    # could never have been anything else. Those move to data. What IS
+    # checkable, and matters, is the 5i sweep's COVERAGE: `compute_B` can
+    # return a "deferred" result, in which case that atom silently drops out
+    # of `ratios` and the max/min variance every conclusion here rests on is
+    # taken over a smaller set with nothing saying so (bean qou-26f2).
+    scored_cells = sum(len(r["per_atom"]) for r in i_result["results"].values())
+    expected_cells = len(i_result["results"]) * 4  # 5 schemes × 4 atoms
     builder.add_assertion(
-        "phase_5g_5i_completed",
-        computed=1.0, expected=1.0, tolerance=0.0, unit="boolean",
-        source=(
-            f"5g best categorical match for 1.220358: {best_5g[0]} "
-            f"({best_5g[2]*100:.3f}% rel.err). "
-            f"5i best Vol_hyp normaliser: {i_result['best_normaliser']} "
-            f"({delta_i:+.2f}% vs baseline)."
-        ),
+        "volhyp_sweep_scored_every_atom_in_every_scheme",
+        computed=scored_cells, expected=expected_cells, tolerance=0,
+        source="Every (normaliser, atom) cell of the Phase 5i sweep produced "
+               "a ratio — no atom was deferred out of the max/min variance "
+               "the sweep's verdict is read from.",
     )
+    builder.add_data("phase_5g_5i_findings", {
+        "phase_5g_best_categorical_match_for_1_220358":
+            f"{best_5g[0]} ({best_5g[2] * 100:.3f}% rel.err)",
+        "phase_5i_best_volhyp_normaliser":
+            f"{i_result['best_normaliser']} ({delta_i:+.2f}% vs baseline)",
+        "has_independent_expected_value": False,
+    })
 
     builder.save()
     return 0

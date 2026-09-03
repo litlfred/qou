@@ -1,24 +1,64 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:20.691300+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-30T13:49:53.034582+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "c_2_remains_only_structural_ck",
-      "computed": 1,
-      "expected": 1,
+      "name": "qbeta_literal_matches_codata_registry_to_five_decimals",
+      "computed": "0.78233",
+      "expected": "0.78233341",
       "passed": true,
-      "tolerance": 0,
-      "source": "Invariant respected by this scoping probe: c_2 = -1 is the only c_k with a sorry-free Lean STRUCTURAL proof (prop:q-beta-c-2-eq-neg-one-structural, PR #1786). c_3 closes via empirical [3]_q/25 Habiro near-match (commit 305c08a91 on main, tagged NEAR-MATCH not derived). c_4 is empirical extraction only. This probe scopes the c_4 base hypothesis without claiming a structural derivation."
+      "tolerance": "5e-6",
+      "source": "Route A: the hand-typed 5-decimal Q_β used throughout this probe. Route B: codata_constants.Q_BETA_MEV (CAL-1+CAL-2). Tolerance 5e-6 = half-ulp of a 5-decimal rounding."
+    },
+    {
+      "name": "local_electron_mass_literal_matches_codata_registry",
+      "computed": "0.51099895069",
+      "expected": "0.51099895069",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "Route A: the m_e literal in this module, which sets the scale of Q_A and hence of every Q_N. Route B: codata_constants.M_E_MEV."
+    },
+    {
+      "name": "q_n2_ladder_matches_operator_valued_n3_witness",
+      "computed": "0.7828047135826016080473667",
+      "expected": "0.7828047135826016080473666995942314565150482003564000372995219809042883",
+      "passed": true,
+      "tolerance": "1e-22",
+      "source": "Route A: Q_A·cos(α_eff)·(1−u²) from q₀, b and ℏ_q at 65 dps in this probe. Route B: the Q_N2 recorded by q_beta_operator_valued_N3 in its own witness."
+    },
+    {
+      "name": "b_squared_hoefsmit_and_skein_routes_agree",
+      "computed": "0.75270211325196540159377935162",
+      "expected": "0.75270211325196540159377935162",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "Route A: 1 + d₁d₂ with d₁ = q³/(q²+1), d₂ = -1/(q(q²+1)) — the Hoefsmit seminormal block. Route B: (h²+3)/(h²+4) with h = q − 1/q — the skein form the c_3 closure is written in. The comment beside `b` above asserts this identity."
+    },
+    {
+      "name": "qint3_polynomial_matches_bracket_quotient",
+      "computed": "3.04370620853252198940201933568",
+      "expected": "3.04370620853252198940201933568",
+      "passed": true,
+      "tolerance": "1e-55",
+      "source": "Route A: the polynomial q² + 1 + q⁻² written out in this probe and fed to the [3]_q/25 closure. Route B: the bracket quotient (q³ − q⁻³)/(q − q⁻¹)."
+    },
+    {
+      "name": "c4_extraction_vanishes_under_single_codata_value",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "Route A: |c_4| = |Q_β/Q_N3 − 1|/u⁴ at 65 dps. Route B: 0, from the construction — c_3 is extracted so that Q_N3 = Q_β exactly at u³ order, using ONE CODATA value. qbeta_1ppq_achieved reports c_4 ≈ -0.972 by mixing a rounded Q_β into the c_3 fit and a full-precision one into the comparison; that difference is the whole coefficient."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "qbeta-ck-k-gt-3-habiro-extension-scoping",
   "scriptFile": "qbeta_ck_k_gt_3_habiro_extension_scoping.py",
-  "scriptHash": "aaf4f4150c1e",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "2a24db1bf006",
+  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "9916510690677ea8"
   },
   "invocation": {
     "argv": [
@@ -45,16 +85,16 @@
   "contentBlock": "prop:q-beta-c-2-eq-neg-one-structural",
   "data": {
     "substrate": {
-      "q_0": "1.1099785955573347198997632204832250266562084087802",
-      "b": "0.8675840673071423874917978",
-      "u": "0.008517236340484921439933113",
-      "qint_2": "2.010896869119075760817664",
-      "qint_3": "3.043706218232901310218245",
-      "J_Hopf_q": "-2.043706218232901310218245"
+      "q_0": "1.1099785827513808075916690956107688798744991218736",
+      "b": "0.8675840669652511556511629",
+      "u": "0.008517234550156142189255574",
+      "qint_2": "2.010896866707122299752492",
+      "qint_3": "3.043706208532521989402019",
+      "J_Hopf_q": "-2.043706208532521989402019"
     },
     "c_3_closure_at_q_0": {
       "formula": "-(q^2 + q^-2) * (1 + hbar_q * [3]_q / 25 + hbar_q^3 / [2]_q)",
-      "value": "-2.069348075269290713323227",
+      "value": "-2.069348062472493332671029",
       "source": "commit 305c08a91 on origin/main"
     },
     "c_4_empirical_at_q_0": {
@@ -82,19 +122,19 @@
       },
       {
         "base_name": "-(q²+q⁻²) = J_Hopf(q_0) (same as c_3 base)",
-        "base_value_at_q0": "-2.0437062182329013102",
+        "base_value_at_q0": "-2.0437062085325219894",
         "correction_factor": "0.0",
         "dist_from_one": 1.0
       },
       {
         "base_name": "J_trefoil(q_0) (3_1 right-handed)",
-        "base_value_at_q0": "0.97337016922792964036",
+        "base_value_at_q0": "0.97337017452914484819",
         "correction_factor": "0.0",
         "dist_from_one": 1.0
       },
       {
         "base_name": "J_figure_eight(q_0) (4_1)",
-        "base_value_at_q0": "1.0328093491138255494",
+        "base_value_at_q0": "1.0328093418253996896",
         "correction_factor": "0.0",
         "dist_from_one": 1.0
       }
@@ -104,8 +144,45 @@
       "base_value_at_q0": "-1.0",
       "correction_factor": "0.0",
       "dist_from_one": 1.0
-    }
+    },
+    "codata_q_beta_three_routes": {
+      "literal_in_this_module": "0.78233",
+      "registry_Q_BETA_MEV": "0.78233341",
+      "registry_m_n_minus_m_p_minus_m_e": "0.78233355931",
+      "literal_vs_registry_ppm": "-4.358755431",
+      "note": "The rounded/full-precision mismatch this probe's verdict attributes to qbeta_1ppq_achieved is present in this probe's own input constant."
+    },
+    "b_squared_two_routes": {
+      "hoefsmit_one_plus_d1_d2": "0.7527021132519654015937794",
+      "skein_h2_plus_3_over_h2_plus_4": "0.7527021132519654015937794",
+      "difference": "0.0"
+    },
+    "q_bracket_two_routes_gap": {
+      "[2]_q": "9.4955677e-66",
+      "[3]_q": "4.7477839e-66"
+    },
+    "c_3_two_routes": {
+      "empirical_at_u3_this_probe": "-981.4821476214440476081189",
+      "closure_formula_main": "-2.069348062472493332671029",
+      "relative_gap_ppm": "997891.6091",
+      "docstring_claims_ppm": "2.65"
+    },
+    "base_ranking_degenerate": true,
+    "upstream_witness_hashes": [
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "ccc915ce5b98f6c6f827c319097234d025a79efa521e9fdb18206bc8a847001d",
+        "size_bytes": 5678,
+        "commitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "scriptCommitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "computedAt": "2026-08-21T16:24:01.734853+00:00"
+      }
+    ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "caveats": [
+    "This module's docstring says the c_3 closure lands 2.65 ppm from target and 'closes the 10 ppm gate'. Measured here, the closure (-2.069348062) and this probe's u³-order empirical extraction (-981.4821476) differ by 997892.0 ppm — they are not the same c_3. The empirical one absorbs the entire +606.8 ppm N=2 residual at u³, so it is ~981, of the same order as the -974 recorded in q-beta-operator-valued-N3.witness.json, while the closure formula is O(1). No assertion above compares them, because reconciling the two normalisations is a content question, not a tautology drain. Assertion (6)'s c_4 = 0 result is unaffected: it depends only on c_3 being extracted from the same single Q_β, not on its magnitude.",
+    "With c_4 = 0 exactly, correction = c_4/base = 0 for every base, so all 6 base hypotheses tie at |correction - 1| = 1. 'MOST PROMISING base' and 'best_non_trivial_base' in this witness are dict insertion order, not a ranking — the c_4 base question cannot be scoped at all until c_4 is defined against a second observable, which is the probe's own open item B."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

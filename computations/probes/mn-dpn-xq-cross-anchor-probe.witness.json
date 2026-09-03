@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:11:57.444922+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-08-30T07:11:54.800932+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "cross_anchor_candidates_evaluated",
-      "computed": 14,
-      "expected": 14,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0.0,
       "source": "Cross-anchor enumeration"
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "mn-dpn-xq-cross-anchor-probe",
   "scriptFile": "mn_dpn_xq_cross_anchor_probe.py",
-  "scriptHash": "c52f131436ee",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "981294440ee0",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -52,112 +52,112 @@
         "name": "(a) bare",
         "factor_at_q_proton": "1.00000000000000000000000000000000000000000000000000000000000",
         "factor_at_q_muon": "1.00000000000000000000000000000000000000000000000000000000000",
-        "ppb_at_q_proton": -1277073.889034101,
-        "ppb_at_q_muon": -1276750.176999836,
+        "ppb_at_q_proton": -1277073.8891046706,
+        "ppb_at_q_muon": -1276750.1770704058,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b1) 1 + α_em/π",
         "factor_at_q_proton": "1.00232281946550051220473618984068127777140364054514280472375",
         "factor_at_q_muon": "1.00232281946550051220473618984068127777140364054514280472375",
-        "ppb_at_q_proton": 1042779.1643780804,
-        "ppb_at_q_muon": 1043103.6283369598,
+        "ppb_at_q_proton": 1042779.1643073468,
+        "ppb_at_q_muon": 1043103.628266226,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b2) 1 - α_em·G/(4π)",
         "factor_at_q_proton": "0.999468094322029103263314726224248773111502665444525085251374",
         "factor_at_q_muon": "0.999468094322029103263314726224248773111502665444525085251374",
-        "ppb_at_q_proton": -1808300.284152232,
-        "ppb_at_q_muon": -1807976.7443022362,
+        "ppb_at_q_proton": -1808300.2842227642,
+        "ppb_at_q_muon": -1807976.7443727683,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(b3) 1 - h²·α_em",
         "factor_at_q_proton": "0.999681060386908785711899703764210463513392124706933989077357",
         "factor_at_q_muon": "0.999681060315649610796847540480388854612071304741248808483945",
-        "ppb_at_q_proton": -1595606.1926732578,
-        "ppb_at_q_muon": -1595282.6550517785,
+        "ppb_at_q_proton": -1595606.192743805,
+        "ppb_at_q_muon": -1595282.6551223258,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(c1) 1 + h²/6",
         "factor_at_q_proton": "1.00728436808875366490033655594623138496136899345225101817266",
         "factor_at_q_muon": "1.00728436971626570315464169331536989195502763905706709128633",
-        "ppb_at_q_proton": 5997991.523435303,
-        "ppb_at_q_muon": 5998319.218941293,
+        "ppb_at_q_proton": 5997991.52336422,
+        "ppb_at_q_muon": 5998319.218870209,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(c2) 1 - h²/[2]_q²",
         "factor_at_q_proton": "0.989191546992138393624882593519055448679297604500381274695887",
         "factor_at_q_muon": "0.989191544603357808748145333219443380732359316094385897593627",
-        "ppb_at_q_proton": -12071723.703778515,
-        "ppb_at_q_muon": -12071405.87630127,
+        "ppb_at_q_proton": -12071723.703848323,
+        "ppb_at_q_muon": -12071405.876371076,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(d1) 1 + h²·G/(4π)",
         "factor_at_q_proton": "1.00318575541787539916534433872104733330698071957118012795223",
         "factor_at_q_muon": "1.00318575612965372095704292385513271484396412549783740364537",
-        "ppb_at_q_proton": 1904613.0837802805,
-        "ppb_at_q_muon": 1904938.5379514713,
+        "ppb_at_q_proton": 1904613.083709486,
+        "ppb_at_q_muon": 1904938.5378806766,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(d2) 1 - ℏ_q²/24",
         "factor_at_q_proton": "0.999590950564405205257892955950851489462956279809358418909566",
         "factor_at_q_muon": "0.999590950478011565606760408231978430555997741641892908255662",
-        "ppb_at_q_proton": -1685600.9382753735,
-        "ppb_at_q_muon": -1685277.44493867,
+        "ppb_at_q_proton": -1685600.9383459142,
+        "ppb_at_q_muon": -1685277.4450092108,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(e1) (3q²-1)/(2q²)",
         "factor_at_q_proton": "1.09417312281712097093389258892912393754073373110174684622367",
         "factor_at_q_muon": "1.09417313224371648723013003090565929995204450789958245579764",
-        "ppb_at_q_proton": 92775782.89188832,
-        "ppb_at_q_muon": 92776146.50345586,
+        "ppb_at_q_proton": 92775782.8918111,
+        "ppb_at_q_muon": 92776146.50337864,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(f1) 1 + m_e/m_p",
-        "factor_at_q_proton": "1.00054461702148726570588680885984307712926913765886759827371",
-        "factor_at_q_muon": "1.00054461702148726570588680885984307712926913765886759827371",
-        "ppb_at_q_proton": -733152.3837245002,
-        "ppb_at_q_muon": -732828.4953911513,
+        "factor_at_q_proton": "1.00054461702148726570588680885984307712926913765886759919024",
+        "factor_at_q_muon": "1.00054461702148726570588680885984307712926913765886759919024",
+        "ppb_at_q_proton": -733152.3837951083,
+        "ppb_at_q_muon": -732828.4954617595,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(f2) 1 - α_em·ℏ_q",
         "factor_at_q_proton": "0.999276965784939801939684788144702145905066354397167701466345",
         "factor_at_q_muon": "0.999276965708585272758820604445668480310440764990220240918215",
-        "ppb_at_q_proton": -1999184.7359773673,
-        "ppb_at_q_muon": -1998861.3342550227,
+        "ppb_at_q_proton": -1999184.736047886,
+        "ppb_at_q_muon": -1998861.3343255413,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g1) 1 + ℏ_q²·[2]_q/2",
         "factor_at_q_proton": "1.00987067474039067484511899869227946441545355441557835320739",
         "factor_at_q_muon": "1.00987067683705332471819724768326436116976069679554676239745",
-        "ppb_at_q_proton": 8580995.270378472,
-        "ppb_at_q_muon": 8581324.271654673,
+        "ppb_at_q_proton": 8580995.270307206,
+        "ppb_at_q_muon": 8581324.271583406,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g2) bar-symmetric: (1+q⁻¹/2)/(1+q/2)",
         "factor_at_q_proton": "0.932777576040190981537873707940969765596340732253357299753565",
         "factor_at_q_muon": "0.932777568809244404046574655100250185952399837846132639634888",
-        "ppb_at_q_proton": -68413649.84644647,
-        "ppb_at_q_muon": -68413355.11683428,
+        "ppb_at_q_proton": -68413649.84651229,
+        "ppb_at_q_muon": -68413355.1169001,
         "tier": "TIER 3 (refuted)"
       },
       {
         "name": "(g3) [3]_q / 3",
         "factor_at_q_proton": "1.01456873617750732980067311189246276992273798690450203634532",
         "factor_at_q_muon": "1.01456873943253140630928338663073978391005527811413418257266",
-        "ppb_at_q_proton": 13273056.935904708,
-        "ppb_at_q_muon": 13273388.61488242,
+        "ppb_at_q_proton": 13273056.93583311,
+        "ppb_at_q_muon": 13273388.614810823,
         "tier": "TIER 3 (refuted)"
       }
     ],

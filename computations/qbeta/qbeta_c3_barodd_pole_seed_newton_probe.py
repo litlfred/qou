@@ -43,7 +43,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)
@@ -155,7 +155,7 @@ def main() -> int:
         "S_proton": mp.nstr(S_PROTON, 12),
         "ratio_S_over_CS": mp.nstr(mp.fabs(S_PROTON) / max_cs, 8),
         "note": "naive 4_1 CS deformation ~1000x too small (confirms 1a4894b8)"})
-    wb.add_assertion("complete_convention_vol_cs", computed=float(mp.fabs(cs1)),
+    wb.add_assertion("complete_convention_vol_cs", computed=fmt(mp.fabs(cs1)),
                      expected=0.0, tolerance=1e-25,
                      source="Σ rogers at m=1: Im=Vol(4₁), Re−π²/6=CS=0 (amphichiral)")
     # Boolean encoding (Copilot review): the claim is "at least one real pole seed
@@ -165,7 +165,7 @@ def main() -> int:
     wb.add_assertion("real_pole_hits_golden_branch", computed=float(gold_hits >= 1),
                      expected=1.0, tolerance=0.5,
                      source="≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp")
-    wb.add_assertion("branch_bar_parity_swap", computed=float(mp.fabs(cusp_bo2 + 3) + mp.fabs(gold_be2 - 5)),
+    wb.add_assertion("branch_bar_parity_swap", computed=fmt(mp.fabs(cusp_bo2 + 3) + mp.fabs(gold_be2 - 5)),
                      expected=0.0, tolerance=1e-20,
                      source="cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS); Lean-proved")
     wb.save()

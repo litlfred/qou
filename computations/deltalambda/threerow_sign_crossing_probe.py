@@ -186,6 +186,14 @@ def geom_grid(lo: mp.mpf, hi: mp.mpf, npts: int) -> list[mp.mpf]:
     return [1 + mp.e ** (a + (b - a) * k / (npts - 1)) for k in range(npts)]
 
 
+# Chosen once and independent of the data: the convention-C values this probe
+# recorded were O(1) (|F(q0)| ran 0.19 … 5.9), while f64 chi noise on an O(1)
+# product is ~1e-16.  Any threshold below 1e-16 therefore cannot be met by a
+# genuinely non-vanishing object, and separates "identically zero" from the C-era
+# regime by more than thirty orders of magnitude.  NOT tuned to the measurement.
+F_ZERO_TOL = mp.mpf("1e-30")
+
+
 def bisect_cross(f, qa: mp.mpf, qb: mp.mpf, fa: mp.mpf, fb: mp.mpf,
                  iters: int = 40) -> mp.mpf:
     """Locate the sign change of f on [qa,qb] (fa·fb<0) by bisection."""
@@ -271,6 +279,7 @@ def main() -> int:
             "Z": Z, "N": N, "n_strands": 3 * (Z + N),
             "F_at_qlo": fmt_f64_limited(vals[0]),
             "F_at_q0": fmt_f64_limited(vals[-1]),
+            "max_abs_F_on_grid": fmt_f64_limited(max(abs(v) for v in vals)),
             "sign_qlo": s_lo, "sign_q0": s_hi,
             "sign_crossed": bool(crossed),
             "n_crossings_on_grid": len(crossings),
@@ -348,9 +357,18 @@ def main() -> int:
     w.add_data("isotopes_evaluated", ISOTOPES)
     w.add_data("isotopes_compute_limited", COMPUTE_LIMITED)
     w.add_assertion("chi_convention_matches_witness", 1 if chi_rel < 1e-5 else 0, 1)
-    # Report the sign at both endpoints for D as the headline falsifiable fact.
-    w.add_assertion("D_sign_qlo", iso_rows["D"]["sign_qlo"], iso_rows["D"]["sign_qlo"])
-    w.add_assertion("D_sign_q0", iso_rows["D"]["sign_q0"], iso_rows["D"]["sign_q0"])
+    # The two assertions that stood here were
+    #     w.add_assertion("D_sign_qlo", iso_rows["D"]["sign_qlo"], iso_rows["D"]["sign_qlo"])
+    #     w.add_assertion("D_sign_q0",  iso_rows["D"]["sign_q0"],  iso_rows["D"]["sign_q0"])
+    # i.e. `x == x`, under a comment calling them "the headline falsifiable fact".
+    # They were tautologies and could never fail: between conventions C and D the
+    # deuteron object went from F(q0) = -0.19496... to identically zero and the sign
+    # went -1 -> 0, and both still reported passed (committed 1/1, -1/-1; re-run
+    # 0/0, 0/0).  A sign is a MEASUREMENT; it is recorded in `iso_rows` via add_data,
+    # which is what recording is for.  What is genuinely checkable is below.
+    max_abs_F = max(abs(mp.mpf(iso_rows[k]["max_abs_F_on_grid"])) for k in iso_rows)
+    w.add_assertion("three_row_object_is_structural_zero",
+                    1 if max_abs_F < F_ZERO_TOL else 0, 1)
     w.add_caveat(
         "χ^λ(β_K;q) is f64-precision (pure-Python Hoefsmit seminormal; the mpfr "
         "Rust kernel is unavailable in this sandbox — disk quota, documented). "

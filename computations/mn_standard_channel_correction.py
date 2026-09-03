@@ -45,7 +45,7 @@ def main() -> int:
     print("=" * 78)
     print(f"\nq_0 = {q_str(60)} (display)\n")
 
-    M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
+    M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(_ec.Q_NEUTRON_MEV)
     M_N_avg = (M_P_MEV + M_N_MEV) / 2
     target = (M_N_MEV - M_P_MEV) / M_N_avg
 
@@ -187,8 +187,8 @@ def main() -> int:
 
     w.add_assertion(
         name="standard_channel_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )

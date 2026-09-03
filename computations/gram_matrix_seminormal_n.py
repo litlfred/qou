@@ -42,6 +42,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from _precision import fmt  # noqa: E402
 from hoefsmit_symbolic import build_seminormal_matrices_symbolic  # noqa: E402
 
 
@@ -59,6 +60,60 @@ def _hoefsmit_with_module_q(lam: Union[list, tuple]):
     """
     matrices, dim = build_seminormal_matrices_symbolic(tuple(lam))
     return matrices, dim
+
+
+def _eval_matrix_mp(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val,
+                    dps: int = 60) -> "mp.matrix":
+    """`_eval_matrix`'s mpmath twin — same substitution, no float64 round.
+
+    `_eval_matrix` returns float64 because its output feeds numpy (condition
+    numbers, downstream consumers). A DETERMINANT must not go that way: rho_lam
+    is a representation of an invertible braid generator, so these determinants
+    are algebraic numbers that are frequently exactly +-1, and float64 delivers
+    them as 0.9999999999999998. That error is invisible to
+    `witness_raw_float64_audit` precisely when the true value is whole — the
+    integral-valued carve-out does not count an exact 1.0 — so it hid here
+    until an anchor change pushed the results off the integers. Bean qou-k6b3.
+    """
+    with mp.workdps(dps):
+        rows, cols = M_sym.shape
+        out = mp.matrix(rows, cols)
+        for i in range(rows):
+            for j in range(cols):
+                v = sp.N(M_sym[i, j].subs(q_sym, sp.nsimplify(str(q_val))), dps)
+                out[i, j] = mp.mpf(str(sp.re(v)))
+        return out
+
+
+def _exact_det(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val, dps: int = 60):
+    """det(rho_lam(.)) at `dps` digits, as an `mpmath.mpf`."""
+    if M_sym.shape[0] == 0:
+        return mp.mpf(1)
+    with mp.workdps(dps):
+        return mp.det(_eval_matrix_mp(M_sym, q_sym, q_val, dps))
+
+
+def _exact_cond(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val, dps: int = 60):
+    """cond_2(rho_lam(.)) at `dps` digits, as an `mpmath.mpf`.
+
+    The twin of `_exact_det`, and it exists for the same reason. This was
+    `float(np.linalg.cond(...))`, a binary64 SVD, so it delivered condition
+    numbers to ~1e-16 on matrices that are known exactly: on a worked 3x3
+    whose true cond is 4, numpy returns 3.999999999999999. `mp.svd_r` runs
+    the SVD at working precision on the matrix `_eval_matrix_mp` already
+    builds without a float64 round. Bean qou-k6b3.
+    """
+    if M_sym.shape[0] <= 1:
+        return mp.mpf(1)
+    with mp.workdps(dps):
+        S = mp.svd_r(_eval_matrix_mp(M_sym, q_sym, q_val, dps),
+                     compute_uv=False)
+        s_min, s_max = min(S), max(S)
+        if s_min == 0:
+            raise ValueError(
+                "matrix is singular; rho_lam(sigma_k) is a representation of "
+                "an invertible braid generator and cannot be")
+        return s_max / s_min
 
 
 def _eval_matrix(M_sym: sp.Matrix, q_sym: sp.Symbol, q_val: float,
@@ -114,11 +169,17 @@ def gram_matrix_seminormal_block(
                        (each ρ_λ(σ_k), shape dim_lambda × dim_lambda)
       - "w0_at_q": np.ndarray (ρ_λ(w_0) for longest word w_0 ∈ S_n)
       - "chi_lambda_w0": float (= trace of w0_at_q)
-      - "sigma_k_dets": list of float — det(ρ_λ(σ_k)) per generator
-                        (invertibility check + downstream telemetry)
-      - "sigma_k_conds": list of float — cond(ρ_λ(σ_k)) per generator
-      - "w0_det": float — det(ρ_λ(w_0))
-      - "w0_cond": float — cond(ρ_λ(w_0))
+      - "sigma_k_dets": list of str — det(ρ_λ(σ_k)) per generator, serialized
+                        at full precision (invertibility check + telemetry)
+      - "sigma_k_conds": list of str — cond₂(ρ_λ(σ_k)) per generator, likewise
+      - "w0_det": str — det(ρ_λ(w_0))
+      - "w0_cond": str — cond₂(ρ_λ(w_0))
+
+    The four telemetry fields are serialized decimal STRINGS, not floats:
+    they are computed exactly (`_exact_det` / `_exact_cond`) and a float
+    return would throw that away at the boundary. Consumers doing arithmetic
+    on them need `mp.mpf(str(x))` — note `str`, not `repr`, which would add
+    quotes.
 
     Notes
     -----
@@ -187,13 +248,11 @@ def gram_matrix_seminormal_block(
     # as per-block diagnostic for downstream consumers; this is the
     # "11 invertible matrices with det + cond" line item from the
     # Phase-1 scope doc.
-    sigma_k_dets = [float(np.linalg.det(M)) for M in sigma_k_at_q]
-    sigma_k_conds = [
-        float(np.linalg.cond(M)) if dim > 1 else 1.0
-        for M in sigma_k_at_q
-    ]
-    w0_det = float(np.linalg.det(w0_at_q))
-    w0_cond = float(np.linalg.cond(w0_at_q)) if dim > 1 else 1.0
+    # EXACT (60 dps), not `float(np.linalg.det(...))` — see `_exact_det`.
+    sigma_k_dets = [fmt(_exact_det(M, q_sym, q_val)) for M in matrices_sym]
+    sigma_k_conds = [fmt(_exact_cond(M, q_sym, q_val)) for M in matrices_sym]
+    w0_det = fmt(_exact_det(w0_sym, q_sym, q_val))
+    w0_cond = fmt(_exact_cond(w0_sym, q_sym, q_val))
 
     return {
         "lam": tuple(lam),

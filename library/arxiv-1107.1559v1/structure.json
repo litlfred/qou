@@ -1,0 +1,117 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1107.1559v1",
+ "source": {
+  "file": "1107.1559v1.pdf",
+  "sha256": "b9f867ae7120eda6f5b1f6aa6e5765371171f65fe5aa40ebe61f23ff5709f07b",
+  "bytes": 145704,
+  "pages": 12,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1107.1559",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "8 Jul 2011"
+  },
+  "doi": null,
+  "title": "Quaternion-Octonion SU (3) Flavor Symmetry",
+  "authors_raw": "Pushpa(1), P. S. Bisht (1,2), Tianjun Li (2) and O. P. S. Negi (1)",
+  "title_lines": [
+   "Quaternion-Octonion SU (3) Flavor Symmetry"
+  ],
+  "abstract": "Starting with the quaternionic formulation of isospin SU (2) group, we have derived the relations for di\ufb00erent components of isospin with quark sta tes. Extending this formalism to the case of SU (3) group we have considered the theory of octonion variables. A ccordingly, the octonion splitting of SU (3) group have been reconsidered and various commutation relat ions for SU (3) group and its shift operators are also derived and veri\ufb01ed fo r di\ufb00erent iso-spin multiplets i.e. I, U and V - spins.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022124531-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quaternionic representation of isospin SU(2) group",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Octonions and Gelmann  Matrices",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Octonion Formulation of SU(3) Flavor Group",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Commutation relations for Octonion Valued Shift Operators",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Discussion and Conclusion",
+   "page": 11,
+   "source": "outline",
+   "number": "6"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 9,
+   "n_chars": 9526,
+   "n_words": 1934
+  },
+  {
+   "id": "sec-001-5-commutation-relations-for-octonion-valued-shif",
+   "number": "5",
+   "title": "Commutation relations for Octonion Valued Shift Operators",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 1758,
+   "n_words": 488
+  },
+  {
+   "id": "sec-002-6-discussion-and-conclusion",
+   "number": "6",
+   "title": "Discussion and Conclusion",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 4017,
+   "n_words": 672
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 3,
+  "chars_total": 15301
+ }
+}

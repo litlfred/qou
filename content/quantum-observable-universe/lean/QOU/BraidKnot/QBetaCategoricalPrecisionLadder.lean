@@ -39,8 +39,20 @@ namespace QOU.BraidKnot
 /-- Quantum Planck constant `ℏ_q = (q − 1) / q`. -/
 noncomputable def hbarQ' (q : ℝ) : ℝ := (q - 1) / q
 
-/-- Markov-Jones parameter `z = 1 / (√q + 1/√q)`. -/
-noncomputable def markovZ' (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+/-- Markov-Jones parameter in **convention D**, `z = q³/(q² + 1)`.
+
+    **Migrated from convention C 2026-08-26 (bean `qou-cxjq`).** This read
+    `1/(√q + 1/√q)` = `√q/(q+1)`, convention C.
+
+    AGENTS.md flags this ladder as convention-C-frame throughout, so the
+    expectation going in was that its results would not survive. The `q = 1`
+    results DO survive, and for a reason worth stating: `q = 1` is the single
+    point where the two conventions agree, both equal to `1/2`
+    (`QOU.BraidKnot.markovZD_one` / `markovZC_one`). So a theorem evaluated only
+    at the classical point is convention-agnostic by accident of sitting exactly
+    on the coincidence — not because the ladder is convention-free. Anything
+    evaluated away from `q = 1` still needs re-deriving under D. -/
+noncomputable def markovZ' (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- Quantum-integer differential `h = q − q⁻¹`. -/
 noncomputable def heckeH' (q : ℝ) : ℝ := q - q⁻¹
@@ -694,10 +706,11 @@ theorem hbarQ_one : hbarQ' 1 = 0 := by
 theorem heckeH_one : heckeH' 1 = 0 := by
   unfold heckeH'; norm_num
 
-/-- Markov–Jones parameter `z = 1/(√q + 1/√q)` equals `1/2` at `q = 1`. -/
+/-- Markov–Jones parameter equals `1/2` at `q = 1` — true in **both**
+    conventions, since `q = 1` is their only point of contact. -/
 theorem markovZ_one : markovZ' 1 = 1 / 2 := by
   unfold markovZ'
-  rw [Real.sqrt_one]; norm_num
+  norm_num
 
 /-- The eigenphase `α = (z−1)·h/2` vanishes at `q = 1` (since `h(1)=0`). -/
 theorem alpha_one : alpha 1 = 0 := by

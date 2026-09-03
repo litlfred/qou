@@ -31,15 +31,42 @@ LaTeX label: `prop:q-beta-cos-resummation`
 namespace QOU.Interactions
 
 /-- Markov-Jones parameter `z(q) = 1 / (√q + 1/√q)`. (Defined locally to
-    avoid a circular import with `QBetaSpectralBridge`; the two `markovZ`
-    definitions agree by `rfl`.) -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+    avoid a circular import with `QBetaSpectralBridge`.)
+
+    **Convention C, deliberately, and this file cannot be migrated to D by
+    swapping the body** (bean `qou-cxjq`, 2026-08-26).
+
+    `markovZC` here is `1/(√q + 1/√q) = √q/(q+1)` — convention C. The
+    migration was attempted and **Lean rejected it**, which turned out to be
+    the right answer rather than a proof-engineering problem: the file's
+    bar-antisymmetry result needs `z` to be **bar-even**, and
+
+      z_C(1/q) = z_C(q)   identically,
+      z_D(1/q) = 1/(q³+q) ≠ q³/(q²+1) = z_D(q)   except at q = 1.
+
+    `z_D` is neither bar-even nor bar-odd. So `F(1/q) = -F(q)` is **true for
+    C and false for D** — a theorem that does not survive the convention
+    change, not a proof that needs repairing. Migrating this file means
+    re-deriving what replaces bar-antisymmetry under D, under a distinct
+    name; the C statement stays correct **for C** and keeps its name.
+
+    Converges independently with `qou-1oxx` ("the canonical p-n convention
+    is not bar-invariant") and `QOU.QBeta.ZBarParity`, reached from the p-n
+    side rather than the Markov parameter.
+
+    **The `rfl` agreement with `QBetaSpectralBridge.markovZ` is GONE**, and that
+    is the point: that sibling migrated to D in this same tranche, so the two
+    `markovZC` definitions now differ. The original docstring's claim that they
+    "agree by `rfl`" has been removed rather than left to rot — it was true and
+    is no longer, which is exactly the kind of stale cross-reference the
+    five-way `markovZC` overload was built out of. -/
+noncomputable def markovZC (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Hecke-Skein quantum-integer differential `h(q) = q - q⁻¹`. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
 /-- Single-wrap transfer-matrix eigenphase on the 2-d irrep `V_{(2,1)}`. -/
-noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ q - 1) * heckeH q / 2
+noncomputable def eigenphase (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
 
 /-! ## Markov-cyclicity ⇒ even resummation
 
@@ -63,14 +90,14 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
   -- by unfolding both sides and using:
   --   √(q⁻¹) = 1/√q                            (Real.sqrt_inv)
   --   (q⁻¹)⁻¹ = q                              (inv_inv)
-  -- which makes markovZ(q⁻¹) syntactically equal to markovZ(q),
+  -- which makes markovZC(q⁻¹) syntactically equal to markovZC(q),
   -- and heckeH(q⁻¹) = q⁻¹ - q = -(q - q⁻¹) = -heckeH(q).
   have hq_ne : q ≠ 0 := ne_of_gt hq
   have hsq_ne : Real.sqrt q ≠ 0 := by
     rw [ne_eq, Real.sqrt_eq_zero (le_of_lt hq)]; exact hq_ne
-  unfold eigenphase markovZ heckeH
+  unfold eigenphase markovZC heckeH
   rw [Real.sqrt_inv]
-  -- markovZ(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZ(q)
+  -- markovZC(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZC(q)
   -- heckeH(q⁻¹) factor: q⁻¹ - (q⁻¹)⁻¹ = q⁻¹ - q
   have h_sqrt_inv_inv : (Real.sqrt q)⁻¹⁻¹ = Real.sqrt q := inv_inv _
   have h_q_inv_inv : q⁻¹⁻¹ = q := inv_inv _

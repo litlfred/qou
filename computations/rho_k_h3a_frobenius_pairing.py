@@ -400,7 +400,7 @@ def main() -> int:
         )
         .add_assertion(
             name="frobenius_pairing_closure_at_50dps",
-            computed=float(abs(residual)),
+            computed=abs(residual),
             expected=0.0,
             tolerance=1e-40,
         )
@@ -413,15 +413,15 @@ def main() -> int:
         # loose proximity check that didn't enforce the inequality.
         .add_assertion(
             name="min_norm_vs_occam_singleton",
-            computed=float(norm_G_sq),
-            expected=float(min(norm_G_sq, norm_A_sq)),
+            computed=norm_G_sq,
+            expected=min(norm_G_sq, norm_A_sq),
             tolerance=1e-12,
             source="‖δ^G‖² should be ≤ ‖δ^A‖² (min-norm property)",
         )
         .add_assertion(
             name="min_norm_vs_wenzl_bridge_constant",
-            computed=float(norm_G_sq),
-            expected=float(min(norm_G_sq, norm_F_sq)),
+            computed=norm_G_sq,
+            expected=min(norm_G_sq, norm_F_sq),
             tolerance=1e-12,
             source="‖δ^G‖² should be ≤ ‖δ^F‖² (min-norm property)",
         )

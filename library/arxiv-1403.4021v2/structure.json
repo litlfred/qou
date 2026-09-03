@@ -1,0 +1,404 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1403.4021v2",
+ "source": {
+  "file": "1403.4021v2.pdf",
+  "sha256": "046d02411e0dc0866f8355713ab3ba0038d5652e8724a0331e3cad45322761a4",
+  "bytes": 1079915,
+  "pages": 46,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1403.4021",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "20 Jul 2014"
+  },
+  "doi": null,
+  "title": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS",
+  "authors_raw": "Ivan Marin & Emmanuel Wagner",
+  "title_lines": [
+   "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS"
+  ],
+  "abstract": "We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras. For this purpose, we de\ufb01ne a common \u2018cover\u2019 for the two variations of the BMW-algebra originating from the quantum orthogonal/symplectic duality, which are responsible for the so-called \u2018Dubrovnik\u2019 variation of the Kau\ufb00man polynomial. For generic values of the de\ufb01ning parameters of the BMW algebra, this cover is isomorphic to the BMW algebra itself, and this fact provides a shorter de\ufb01ning relation for it, in the generic case. For a certain 1-dimensional family of special values however, it is a non-trivial central extension of the BMW-algebra which induces a central extension of the Temperley-Lieb algebra. Inside this 1-dimensional family, exactly two values provide possibly additional Q -valued Markov traces. We describe both of these potential traces on the (extended) Temperley-Lieb subalgebra. While we only conjecture the existence of one of them, we prove the existence of the other by introducing a central extension of the Iwahori-Hecke algebra at q = \u22121 for an arbitrary Coxeter system, and by proving that this extension indeed admits an exotic Markov trace. These constructions provide several natural non-vanishing Hochschild cohomology classes on these classical algebras.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220322083422Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Context",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Presentation",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Organisation of the paper",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Two BMW algebras as quotients of the braid groups",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Traces on BMW\"0365BMWn",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "General inductive properties",
+   "page": 19,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Restrictions to 3 strands, and the Ocneanu trace",
+   "page": 21,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The Kauffman trace",
+   "page": 22,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "An additional trace when y=a2= 1",
+   "page": 23,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "A central extension of BMW",
+   "page": 24,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Definition",
+   "page": 24,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "A genuine extension of BMWn",
+   "page": 26,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The algebra Fn as a specialization of BMW\"0365BMWn",
+   "page": 27,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Computations inside Fn",
+   "page": 32,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "A central extension of the Temperley-Lieb algebra",
+   "page": 32,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Splittings",
+   "page": 35,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 2,
+   "title": "A central extension of the (-1)-Hecke algebras",
+   "page": 36,
+   "source": "outline",
+   "number": "6.7"
+  },
+  {
+   "level": 2,
+   "title": "The case x = -2a",
+   "page": 41,
+   "source": "outline",
+   "number": "6.8"
+  },
+  {
+   "level": 1,
+   "title": "Knot invariants",
+   "page": 42,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Number of connected components, special trace and change of variables",
+   "page": 42,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "The special case a = 1, b = j, c = j2",
+   "page": 43,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "The special case a =b=c= 1",
+   "page": 43,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Tables",
+   "page": 44,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-context",
+   "number": "1.1",
+   "title": "Context",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4639,
+   "n_words": 794
+  },
+  {
+   "id": "sec-002-12-presentation",
+   "number": "1.2",
+   "title": "Presentation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5743,
+   "n_words": 1011
+  },
+  {
+   "id": "sec-003-13-organisation-of-the-paper",
+   "number": "1.3",
+   "title": "Organisation of the paper",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1839,
+   "n_words": 323
+  },
+  {
+   "id": "sec-004-2-preliminaries-on-the-cubic-hecke-algebras-on-3",
+   "number": "2",
+   "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 8690,
+   "n_words": 1648
+  },
+  {
+   "id": "sec-005-3-two-bmw-algebras-as-quotients-of-the-braid-gro",
+   "number": "3",
+   "title": "Two BMW algebras as quotients of the braid groups",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 9245,
+   "n_words": 1703
+  },
+  {
+   "id": "sec-006-4-a-universal-cover-for-the-two-bmw-algebras-and",
+   "number": "4",
+   "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 14271,
+   "n_words": 2761
+  },
+  {
+   "id": "sec-007-51-general-inductive-properties",
+   "number": "5.1",
+   "title": "General inductive properties",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3324,
+   "n_words": 654
+  },
+  {
+   "id": "sec-008-52-restrictions-to-3-strands-and-the-ocneanu-tra",
+   "number": "5.2",
+   "title": "Restrictions to 3 strands, and the Ocneanu trace",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 9126,
+   "n_words": 1896
+  },
+  {
+   "id": "sec-009-6-a-central-extension-of-bmw",
+   "number": "6",
+   "title": "A central extension of BMW",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 32,
+   "n_chars": 21600,
+   "n_words": 4522
+  },
+  {
+   "id": "sec-010-64-computations-inside-fn",
+   "number": "6.4",
+   "title": "Computations inside Fn",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 955,
+   "n_words": 207
+  },
+  {
+   "id": "sec-011-65-a-central-extension-of-the-temperley-lieb-alg",
+   "number": "6.5",
+   "title": "A central extension of the Temperley-Lieb algebra",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 5321,
+   "n_words": 997
+  },
+  {
+   "id": "sec-012-66-splittings",
+   "number": "6.6",
+   "title": "Splittings",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 42,
+   "n_chars": 24931,
+   "n_words": 4533
+  },
+  {
+   "id": "sec-013-7-knot-invariants",
+   "number": "7",
+   "title": "Knot invariants",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-71-number-of-connected-components-special-trace",
+   "number": "7.1",
+   "title": "Number of connected components, special trace and change of variables",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 6290,
+   "n_words": 1232
+  },
+  {
+   "id": "sec-015-74-tables",
+   "number": "7.4",
+   "title": "Tables",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 3092,
+   "n_words": 688
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 2548,
+   "n_words": 411
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 17,
+  "chars_total": 121614
+ }
+}

@@ -11,8 +11,8 @@ weight set, `s(x) = x + 1 + x⁻¹`. The stated way to break it was a **rank-6 k
 whose grading is *not* multiplicity-free.
 
 Garoufalidis–Zagier, *Knots and Their Related q-Series* (SIGMA 19 (2023) 082,
-`uploads/2304.09377v2.pdf`) — the sequel `[44]` that
-`uploads/2111.06645v3.pdf` announces — supplies exactly such a knot: the
+`library/arxiv-2111.06645/2304.09377v2.pdf`) — the sequel `[44]` that
+`library/arxiv-2111.06645v3/2111.06645v3.pdf` announces — supplies exactly such a knot: the
 `(−2,3,7)` pretzel, where §3.5 reports **"a new phenomenon… the weight spaces
 have higher multiplicity."**
 
@@ -21,8 +21,8 @@ says why. Recording the near-miss is the point: the two gradings agree on `4₁`
 *total* only by coincidence, and conflating them would have retired a hypothesis
 on the strength of a different object.
 
--- Ref: [manuscript] uploads/2304.09377v2.pdf §3.4, §3.5 (Garoufalidis–Zagier)
--- Ref: [manuscript] uploads/2111.06645v3.pdf §2.1 (Garoufalidis–Zagier)
+-- Ref: [manuscript] library/arxiv-2111.06645/2304.09377v2.pdf §3.4, §3.5 (Garoufalidis–Zagier)
+-- Ref: [manuscript] library/arxiv-2111.06645v3/2111.06645v3.pdf §2.1 (Garoufalidis–Zagier)
 -- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §6
 -/
 
@@ -320,7 +320,7 @@ theorem sign_question_only_arises_at_level_two :
 
 /-! ## Part F — Dimofte–Garoufalidis §6: the signature inputs confirmed, the hypothesis named, and two conditional predictions
 
-`uploads/1511.05628v1.pdf` (Dimofte–Garoufalidis, *Quantum Modularity and Complex
+`library/arxiv-1511.05628v1/1511.05628v1.pdf` (Dimofte–Garoufalidis, *Quantum Modularity and Complex
 Chern–Simons Theory*) §6 states trace fields in the **signature notation
 `[r₁, r₂]`** — exactly the input Part 4's rule consumes — for five knots,
 glyph-verified:
@@ -533,7 +533,7 @@ Parts F–G got `r(6₁) = 4` twice: from Dimofte–Garoufalidis's **trace field
 This part adds a third, and it is the one closest to the resurgence side.
 
 Ohtsuki–Yokota, *On the asymptotic expansions of the Kashaev invariant of the
-knots with 6 crossings* (`uploads/ki6c.pdf`; extracted by a sibling, bean
+knots with 6 crossings* (`library/ki6c/ki6c.pdf`; extracted by a sibling, bean
 `qou-6ort`) give the `6₁` **saddle-point data** of the Kashaev integral
 explicitly, including the gluing-equation quartic
 
@@ -571,7 +571,7 @@ representations, `6₁`'s reduced Stokes matrix is **4×4**, against `5₂`'s 3�
 Arithmetic below is exact in `ℤ[α]/(α⁴ − 2α³ + α² + 3α + 1)`, elements carried as
 integer 4-tuples, so the certificate is machine-checked rather than asserted.
 
--- Ref: [manuscript] uploads/ki6c.pdf (Ohtsuki–Yokota), saddle data via bean qou-6ort
+-- Ref: [manuscript] library/ki6c/ki6c.pdf (Ohtsuki–Yokota), saddle data via bean qou-6ort
 -/
 
 /-- An element of `ℤ[α]/(dg)` as `(c₀, c₁, c₂, c₃)` ↦ `c₀ + c₁α + c₂α² + c₃α³`. -/
@@ -709,7 +709,7 @@ remains **unconfirmed**. Census identification needs SnapPy (absent in this
 sandbox) and no saddle data for it is in the corpus, so neither the Part-G nor
 the Part-H route is available. Recording 9₁₂ here does not substitute for it.
 
--- Ref: [manuscript] uploads/1511.05628v1.pdf §6.3, §6.5 (Dimofte–Garoufalidis)
+-- Ref: [manuscript] library/arxiv-1511.05628v1/1511.05628v1.pdf §6.3, §6.5 (Dimofte–Garoufalidis)
 -/
 
 /-- Ideal-tetrahedron counts, DG §6. -/

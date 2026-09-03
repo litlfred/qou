@@ -119,12 +119,52 @@ class GBFiltrationCollapsesAtE2 (R : Type u) where
   /-- It collapses at `E_2`. -/
   collapses : CollapsesAtE2 ss
 
-/-- Canonical instance: the trivial spectral sequence vacuously
-    discharges the §3b-cond hypothesis.  Genuine instances (when
-    the `R`-module GB filtration is formalised) override this. -/
-instance canonical (R : Type u) : GBFiltrationCollapsesAtE2 R where
+/-- The trivial spectral sequence discharges the §3b-cond hypothesis —
+    **and that is exactly why this is a `def` and not an `instance`.**
+
+    It was an `instance` until 2026-08-24 (bean `qou-fngs`), which meant
+    typeclass resolution supplied it for *every* `R`. Any downstream theorem
+    taking `[GBFiltrationCollapsesAtE2 R]` was therefore unconditional, and the
+    substrate axiom `S-GB-spectral-collapse` asserted nothing. Same
+    self-assuming shape that `hasDqSquaredNonvanishing_of_fact` and
+    `hasCategoricalIrreducibility_of_subsingleton` were deleted for.
+
+    As a `def` it remains available — `canonicalTrivial R` is still the model to
+    reach for when only the *shape* is wanted — but it must now be supplied by
+    hand, so a reader of a downstream theorem can see whether the hypothesis was
+    discharged by a real filtration or by `PUnit`. -/
+def canonicalTrivial (R : Type u) : GBFiltrationCollapsesAtE2 R where
   ss := trivial R
   collapses := trivial_collapses_at_E2 R
+
+/-! ### What inhabiting these classes does and does not show
+
+    In the manner of
+    `QOU/Archimedean/TauFunctorTargetSpec.lean`'s
+    `interface_alone_is_trivially_inhabitable`: the classes above are
+    inhabitable, cheaply, and a reader should be able to check how cheaply.
+
+    **Every spectral sequence constructed in this file has
+    `differential _ _ := default` — the constant map.** So `CollapsesAt` holds
+    of them by `rfl`, definitionally, for every page. Collapse is built into
+    the models rather than proved of anything.
+
+    That is not a defect of the models — an abstract API needs witnesses — but
+    it does bound what they establish. `collapse_is_definitional` below records
+    it so no downstream reader mistakes "the API has a collapsing instance" for
+    "the GB filtration collapses".
+
+    The open obligation is unchanged and is the whole content of
+    `S-GB-spectral-collapse`: exhibit the spectral sequence of the *actual*
+    Gröbner filtration on `H_n(q)`, with differentials that are what the
+    filtration makes them, and show `d_r = 0` for `r ≥ 2`. Nothing here does
+    that, and nothing here is evidence about it. -/
+
+/-- **The trivial model collapses definitionally, not substantively.**
+    Its differential is the constant map, so `d_r = 0` is `rfl` at every page —
+    there is no filtration behind it and no computation performed. -/
+theorem collapse_is_definitional (R : Type u) (r₀ : ℕ) :
+    CollapsesAt (trivial R) r₀ := fun _ _ _ => rfl
 
 /-! ### Convergence + E_∞ page
 
@@ -140,6 +180,58 @@ instance canonical (R : Type u) : GBFiltrationCollapsesAtE2 R where
 def EInfinityCell {R : Type u} (S : SpectralSequence R) (r₀ : ℕ)
     (_h : CollapsesAt S r₀) (p q : ℤ) : Type u :=
   S.cell { r := r₀, p := p, q := q }
+
+/-! ### Two further defects in the API itself, demonstrated
+
+    Beyond the vacuity of the *instances* (`qou-fngs`), the **predicate** is
+    weaker than its name. Both facts below are exhibited rather than asserted.
+
+    **(i) `zero` is a marked element, not an additive zero.** `SpectralSequence`
+    carries `zero : ∀ c, cell c` with no additive structure on `cell` and no law
+    relating `zero` to anything. So `CollapsesAt` says "the differential equals
+    whatever the model nominated", which *any* constant differential satisfies —
+    see `constTrue_collapses` together with `constTrue_differential_is_true`.
+
+    **(ii) There is no page-turning, so collapse relates no two pages.** A real
+    spectral sequence requires `E_{r+1} ≅ ker d_r ⧸ im d_r`; this structure has
+    no such field, so `cell {r := 2, …}` and `cell {r := 3, …}` are unrelated
+    types. `EInfinityCell` then *defines* `E_∞` to be the `r₀` page, and
+    `eInfinity_eq_page_is_rfl` shows that equation is `rfl` — a definition, not
+    a consequence of collapsing. The docstring claim that collapse "immediately
+    implies `E_{r₀} = E_{r₀+1} = … = E_∞`" holds only in that circular sense.
+
+    **How to resolve.** Value the cells in `ModuleCat R` (Mathlib has it), make
+    `differential` `R`-linear, and add the two missing laws — `d ∘ d = 0` and
+    the page-turning isomorphism. Then `CollapsesAt r₀ → E_{r₀} ≅ E_∞` becomes a
+    theorem instead of a definition. Everything that needs is already in
+    Mathlib (`LinearMap.ker`, `LinearMap.range`, quotients): it is the *general*
+    spectral-sequence theory that is missing (`qou-pan0`), not this. -/
+
+/-- Counter-model for (i): every differential is the constant `true`. -/
+def constTrue (R : Type u) : SpectralSequence R where
+  cell _ := ULift Bool
+  cell_inhab _ := ⟨⟨true⟩⟩
+  differential _ _ := ⟨true⟩
+  zero _ := ⟨true⟩
+
+/-- It "collapses" at every page — because `zero` was nominated to match. -/
+theorem constTrue_collapses (R : Type u) (r₀ : ℕ) : CollapsesAt (constTrue R) r₀ :=
+  fun _ _ _ => rfl
+
+/-- Yet its differential is the constant `true`, which is not the additive zero
+    of `Bool` under any reading. `CollapsesAt` therefore does not say
+    "the differential vanishes"; it says "the differential is constant at the
+    element the model chose". -/
+theorem constTrue_differential_is_true (R : Type u) (c : CellIndex)
+    (x : (constTrue R).cell c) :
+    ((constTrue R).differential c x).down = true := rfl
+
+/-- Demonstration of (ii): `E_∞ = E_{r₀}` holds by `rfl`, for **any** spectral
+    sequence and **any** collapse proof, because `EInfinityCell` is defined to
+    be the `r₀` page. It is not evidence that the pages stabilise. -/
+theorem eInfinity_eq_page_is_rfl {R : Type u} (S : SpectralSequence R) (r₀ : ℕ)
+    (h : CollapsesAt S r₀) (p q : ℤ) :
+    EInfinityCell S r₀ h p q = S.cell { r := r₀, p := p, q := q } := rfl
 
 /-- The trivial spectral sequence's `E_∞` cell is `PUnit`. -/
 example (R : Type u) (p q : ℤ) :
@@ -168,7 +260,7 @@ def trivialTarget : ℤ → ℤ → Type u := fun _ _ => PUnit
 
 /-- The trivial spectral sequence converges to `trivialTarget`
     at any `r₀`, with the `Equiv.refl` isomorphism on each cell. -/
-instance trivial_converges (R : Type u) :
+def trivial_converges (R : Type u) :
     SpectralSequenceConvergesTo R (trivial R) 2
       (trivial_collapses_at_E2 R) trivialTarget where
   cell_iso _ _ := Equiv.refl PUnit
@@ -233,7 +325,7 @@ class GBSpectralConvergesToWedderburn (R : Type u) (n : ℕ) where
     structurally an instance over the trivial Wedderburn target.
     Genuine instances arrive at small `n` (n = 2, 3, 4) once the
     explicit cohort data is wired. -/
-instance gb_trivial_converges (R : Type u) (n : ℕ) :
+def gb_trivial_converges (R : Type u) (n : ℕ) :
     GBSpectralConvergesToWedderburn R n where
   ss := trivial R
   collapses := trivial_collapses_at_E2 R
@@ -339,14 +431,14 @@ theorem wedderburnSS_n2_collapses_at_E2 (R : Type u) [Inhabited R] :
     spectral sequence converges to `wedderburnTarget_n2`, with the
     `Equiv.refl` cell-by-cell isomorphism (since both sides are
     literally `Fin (blockDim_n2 p q) → R`). -/
-instance wedderburnSS_n2_converges (R : Type u) [Inhabited R] :
+def wedderburnSS_n2_converges (R : Type u) [Inhabited R] :
     SpectralSequenceConvergesTo R (wedderburnSS_n2 R) 2
       (wedderburnSS_n2_collapses_at_E2 R) (wedderburnTarget_n2 R) where
   cell_iso _ _ := Equiv.refl _
 
 /-- **Full Wedderburn-convergence class instance** at `n=2`: bundles
     the spectral sequence, collapse, blockDim, and convergence. -/
-instance gb_wedderburn_n2_converges (R : Type u) [Inhabited R] :
+def gb_wedderburn_n2_converges (R : Type u) [Inhabited R] :
     GBSpectralConvergesToWedderburn R 2 where
   ss := wedderburnSS_n2 R
   collapses := wedderburnSS_n2_collapses_at_E2 R
@@ -383,7 +475,7 @@ theorem wedderburnSS_generic_collapses_at_E2 (R : Type u) [Inhabited R]
   wedderburnSS_generic_collapses R blockDim 2
 
 /-- The generic-n Wedderburn SS converges to its target. -/
-instance wedderburnSS_generic_converges (R : Type u) [Inhabited R]
+def wedderburnSS_generic_converges (R : Type u) [Inhabited R]
     (blockDim : ℤ → ℤ → ℕ) :
     SpectralSequenceConvergesTo R (wedderburnSS_generic R blockDim) 2
       (wedderburnSS_generic_collapses_at_E2 R blockDim)
@@ -391,7 +483,7 @@ instance wedderburnSS_generic_converges (R : Type u) [Inhabited R]
   cell_iso _ _ := Equiv.refl _
 
 /-- **GB Wedderburn convergence at any `n`** via the generic SS. -/
-instance gb_wedderburn_generic_converges (R : Type u) [Inhabited R] (n : ℕ)
+def gb_wedderburn_generic_converges (R : Type u) [Inhabited R] (n : ℕ)
     (blockDim : ℤ → ℤ → ℕ) :
     GBSpectralConvergesToWedderburn R n where
   ss := wedderburnSS_generic R blockDim

@@ -61,41 +61,27 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 from mpmath import mp, mpf  # noqa: E402
 
-# Precision must be raised BEFORE the module-scope constants below: at
-# import time mp.dps is still mpmath's default 15 (~binary64), and a
-# literal rounded there cannot be recovered by raising dps afterwards.
-# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
-set_compute_dps()
-
-M_E = mpf("0.51099895000")
-M_MU = mpf("105.6583755")
-M_TAU = mpf("1776.86")
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import (  # noqa: E402
+    BEND_TOL as TOL,
+    M_E, M_MU, M_TAU,
+    observed_lepton_bend,
+    two_mode,
+    two_mode_bend,
+)
 
 W = 3   # lepton windings 3, 5, 7
 
-# Rounding headroom: the Lagrange identity is exact, but forming the bend as
-# a quotient rounds, so the degenerate single-mode cases land at 1 +/- eps.
-TOL = mpf("1e-40")
-
-
-def two_mode(c, d, g, h, w):
-    return c * g**w + d * h**w
-
 
 def bend_of(c, d, g, h, w=W):
-    x0 = two_mode(c, d, g, h, w)
-    x2 = two_mode(c, d, g, h, w + 2)
-    x4 = two_mode(c, d, g, h, w + 4)
-    if x0 == 0 or x4 == 0:
-        return None
-    return x2**2 / (x0 * x4)
+    return two_mode_bend(c, d, g, h, w)
 
 
 def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
 
-    obs_bend = M_MU**2 / (M_E * M_TAU)
+    obs_bend = observed_lepton_bend()
 
     # --- (1) the Lagrange identity, verified against direct evaluation ----
     # x(w) x(w+4) - x(w+2)^2 = c d g^w h^w (g^2 - h^2)^2
@@ -259,6 +245,32 @@ def main() -> None:
     for k, v in results.items():
         w.add_data(k, v)
     w.add_data("all_checks_passed", all_ok)
+    # `all_ok` was already computed as the conjunction of six checks and
+    # already stored, but only as data — so the witness claimed
+    # `allPassed: true` over an empty assertion list (bean `qou-srvu`).
+    # Asserting it makes the exclusion this script exists to establish
+    # testable. The Lagrange residual is asserted separately against
+    # `1e-40`, the bound the file itself declares at the `verified` flag,
+    # so a regression in the identity is distinguishable from a regression
+    # in the bend inequalities.
+    w.add_assertion(
+        "lagrange_identity_matches_direct_evaluation",
+        str(identity_err), "0", tolerance="1e-40",
+        source=(
+            "max |x(w)x(w+4) - x(w+2)^2 - c d g^w h^w (g^2-h^2)^2| over the "
+            f"{len(cases)} declared cases"
+        ),
+    )
+    w.add_assertion(
+        "additive_two_mode_exclusion_all_checks",
+        all_ok, True,
+        source=(
+            "lagrange_identity.verified AND sweep_respects_bound AND "
+            "never_above_one AND has_interior_minimum AND "
+            "sign_indefinite_escape.can_exceed_observed_bend AND "
+            "observed lepton bend > 1"
+        ),
+    )
     w.add_caveat(
         "Scope-(b) covers POSITIVE two-mode sums only. More than two modes "
         "is not formalised (the Lagrange identity generalises by "

@@ -66,6 +66,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402 (bean yfvb: muon under idea
 from qou_substrate import WitnessBuilder
 from qou_substrate.constants import VOL_FIGURE_EIGHT
 from qou_substrate.precision import COMPUTE_DPS, OUTPUT_DPS
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
 
 mp.mp.dps = COMPUTE_DPS + 15
 TOL = mp.mpf("1e-25")
@@ -79,11 +80,13 @@ def main() -> int:
     # Sample hyperbolic-knot volumes (input-agnostic test values; the
     # identity holds for any Vol). 4₁ from the substrate constants; the
     # others are standard SnapPy reference volumes used purely as inputs.
+    # EXCISED (bean qou-ckbv): "5_2" printed 18 digits and was good to 15;
+    # the other two were f64-width. All three now come from the registry.
     vols = {
         "4_1 (figure-eight, substrate)": mp.mpf(str(VOL_FIGURE_EIGHT)),
-        "5_2": mp.mpf("2.82812208833078468"),
-        "6_1": mp.mpf("3.16396322888"),
-        "Borromean 6^3_2": mp.mpf("7.32772475342"),
+        "5_2": vol_at("5_2", mp.mp.dps),
+        "6_1": vol_at("6_1", mp.mp.dps),
+        "Borromean 6^3_2": vol_at("L6a4", mp.mp.dps),
     }
 
     w = WitnessBuilder("probe-topological-mass-formula", engine="mpmath")

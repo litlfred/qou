@@ -1,11 +1,11 @@
 ---
 # qou-a5p6
 title: 'setup-folio-assistant: platform clone silently sat 65 commits off-pin; qa-sweep dirties it and freezes the checkout'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-23T13:50:54Z
-updated_at: 2026-08-23T13:51:33Z
+updated_at: 2026-08-29T20:04:43Z
 ---
 
 ## The defect
@@ -63,3 +63,9 @@ Verified both directions: silent at the pin; at `HEAD~7` + dirty it reports
 Bumping `.folio-assistant-pin` to pick up `b48cff7` (and 235 other commits) is an
 owner call with its own blast radius — the pin exists precisely so the pipeline
 does not move under the corpus. Flagged, not done.
+
+
+## Closed 2026-08-29
+
+The pin bump this bean deferred was done: #5561, merged. Main carries `428ca5c98c` and
+`report_off_ref` is silent against it. Re-verified in [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md).

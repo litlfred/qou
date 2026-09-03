@@ -1,15 +1,31 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T00:56:55.574575+00:00",
-  "commitSha": "c867ef1230ce09678fc7961d289bc2c16e0c5270",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:06:53.051444+00:00",
+  "commitSha": "c1595d67b641e9e4890a27516e361dc582e043d6",
+  "assertions": [
+    {
+      "name": "lagrange_identity_matches_direct_evaluation",
+      "computed": "8.635441113598717391846552242572656762894917502932663777556454915848384e-49",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "max |x(w)x(w+4) - x(w+2)^2 - c d g^w h^w (g^2-h^2)^2| over the 6 declared cases"
+    },
+    {
+      "name": "additive_two_mode_exclusion_all_checks",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "lagrange_identity.verified AND sweep_respects_bound AND never_above_one AND has_interior_minimum AND sign_indefinite_escape.can_exceed_observed_bend AND observed lepton bend > 1"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lepton-tower-additive-screening",
   "scriptFile": "lepton_tower_additive_screening.py",
-  "scriptHash": "a08ad2c1570a",
-  "scriptCommitSha": "0cda7fdc1a2f980f3f099730fe4cbf1bb7593f15",
+  "scriptHash": "624f8aca7f5a",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,7 +34,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lepton_tower_additive_screening.py"
+    ],
+    "reproduce": "python3 -u computations/lepton_tower_additive_screening.py"
   },
   "description": "Bean qou-htk4. Closes the additive-interface direction the multiplicative bend screen left open: every positive sum of two geometric modes is log-convex (bend <= 1) by the Lagrange form of Cauchy-Schwarz, while the lepton tower is log-concave at 12.295.",
   "contentBlock": "prop:lepton-continuant-recurrence",
@@ -29,7 +57,7 @@
   "data": {
     "observed_lepton_bend": {
       "definition": "m_mu^2 / (m_e * m_tau)",
-      "value": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "value": "12.29517288103791915377193008030334499590073600336165878299935156643905",
       "log_concave": true
     },
     "lagrange_identity": {
@@ -105,7 +133,7 @@
       ],
       "bound_respected": true,
       "excess_over_one": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
-      "tolerance": "9.9999999999999992929287939988014500233064511906197367398133222223193e-41",
+      "tolerance": "1.0e-40",
       "reading": "every positive two-mode tower has bend <= 1; the observed 12.295 is out of reach by a factor of 12, not by a margin"
     },
     "equality_cases_and_shape": {
@@ -173,6 +201,6 @@
     "Scope-(b) covers POSITIVE two-mode sums only. More than two modes is not formalised (the Lagrange identity generalises by symmetrising over pairs, but that is not done here). Sign-indefinite combinations are NOT excluded and are demonstrated above to escape -- they remain the one open shape in this direction."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.cases.Vol(4_1)-like base.h, data.cases.equal rates g=h.g, data.cases.equal rates g=h.h). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

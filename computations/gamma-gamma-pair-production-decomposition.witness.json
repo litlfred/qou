@@ -9,7 +9,7 @@
       "computed": "-0.75",
       "expected": "-0.75",
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "With the CORRECT Kauffman-Jones normalisation [2]_q² = q² + 2 + q⁻² (matching `BorromeanMarkovTrace.lean § h2_coefficient_cancellation`), the h² coefficient of tr_M(β_Bor) is exactly ZERO.  Family A's +3/4 h² coefficient is a SEPARATE Wedderburn sum on H_4, not derivable from the H_3 Markov trace via the simple bridge linking_weight = 5/2 + 4·(tr_M − 1). The two are different mathematical objects."
     },
     {
@@ -17,7 +17,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Family A linking_weight = (1/4)·Σ_{λ⊢4} dim_q V_λ = 5/2 + (3/4) h² terminates exactly at h² (Lean-proved in lambda-scale-substrate-form.lean)."
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Jones polynomial V(𝓑₃, q²) is degree-3 in q²; its expansion in h necessarily has terms beyond h².  Max |c_{2k>2}| ≈ 3.03 (the h⁴ coefficient).  Pass iff |c_{h⁴}| > 1."
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Lean-correct Jones gives |residual| = 0.0342964, Family A gives |residual| = 0.0728274.  Jones closes 52.91% of Family A's residual at q₀.  This re-opens the question of which linking_weight is categorically correct."
     }
   ],

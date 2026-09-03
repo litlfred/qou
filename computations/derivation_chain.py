@@ -76,11 +76,14 @@ from q_parameter import Q as Q_0  # noqa: E402
 # Jones-Markov tr_M of the 11-crossing canonical braid at the
 # proton-pinned q₀:
 #
-#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132
+#   p = 1.1457596924573009  n = 0.9877436881158096  D = 0.5751722439177719
 #
 # Four independent production methods (`atomic_tr_m_mpfr_50dps`
 # Hoefsmit, `markov_peel`, chi-cache combiner, Habiro `a_m` integer
-# coefficients) derive these to ≤ 2e-15 at 50 dps; the Lean theorem
+# coefficients) were reported to derive these to ≤ 2e-15 at 50 dps. That
+# agreement was established for the CONVENTION-C values these entries used to
+# hold and has NOT been re-established for the convention-D values now here
+# (2026-08-30, bean qou-46ab) — do not cite it as current cross-validation. The Lean theorem
 # `qou_markov_trace_is_jones_markov`
 # (`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean`,
 # sorry-free, axiomatising Wenzl / Jones Markov-trace uniqueness via a
@@ -93,10 +96,22 @@ from q_parameter import Q as Q_0  # noqa: E402
 #
 # Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
 # §"Resolution 2026-05-29".
+# CONVENTION FIX (2026-08-30, bean qou-46ab). These were CONVENTION C.
+# `p` matched the C-frame value to 3.3e-20 — i.e. exactly, proved by
+# `audits/he4_witness_convention_attribution_probe.py` — while convention D
+# has been canonical since the owner ruling of 2026-08-15.
+#
+# `D` (deuteron) was ALSO WRONG IN A SECOND, SEPARATE WAY and that is worth
+# keeping: it matched neither convention. It sat 1.82e-4 from the C-frame
+# deuteron (0.3883571887237810073, computed from `chi-deuteron-h6.witness.json`)
+# and 0.325 from the D-frame one. So it was not simply a C-era value; it had an
+# additional ~2e-4 discrepancy of unestablished origin on top of the convention.
+# Replacing it with the D value fixes the convention and removes that anomaly
+# in the same stroke — but the anomaly is NOT explained, only superseded.
 TR_M_AT_Q0: dict[str, float] = {
-    "p": 1.0653062286131670,
-    "n": 0.9232332971861535,
-    "D": 0.3882864715477132,
+    "p": 1.1457596924573009,
+    "n": 0.9877436881158096,
+    "D": 0.5751722439177719,
 }
 
 # ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
@@ -108,10 +123,14 @@ TR_M_AT_Q0: dict[str, float] = {
 # `mp.mpf(TR_M_AT_Q0_50DPS["p"])`.  Source: atomic-tr-m-mpfr-50dps.witness.json
 # (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
 # production canonical Markov trace).
+# Convention D, at the PROTON pin, read from
+# `atomic-tr-m-mpfr-50dps-proton.witness.json`. Prefer
+# `canonical_trm_reference.tr_m_nucleon()` in new code — it selects the witness
+# by its own recorded q0 and so cannot silently serve the other layer.
 TR_M_AT_Q0_50DPS: dict[str, str] = {
-    "p":  "1.0653062286131670593652845464313725576506616741351",
-    "n":  "0.92323329718615355710525339599068604013866212190134",
-    "D":  "0.3882864715477132785110659223165687998713135876719",
+    "p":  "1.14575969245730086968908159577411930594372806194352738498820",
+    "n":  "0.987743688115809571634020165501294982055048759062827475627723",
+    "D":  "0.575172243917771870826535343986180889152494352892855072730158",
 }
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
@@ -143,8 +162,19 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   1.0653062286131670,  # 11-crossing typed B_3 (uud)
-    "n":   0.9232332971861535,  # 11-crossing typed B_3 (udd)
+    # CONVENTION FIX (2026-08-30, bean qou-46ab). `p` and `n` were the
+    # convention-C values, and this dict's OWN comment above is why they had to
+    # move with the Model A ones: it states that at A = 1 the two models
+    # converge and that the source is "the same as TR_M_AT_Q0 above". They are
+    # the same quantity, so leaving these at C while fixing that one would have
+    # split a documented identity.
+    #
+    # D / T / 3He are NOT touched here. They are SDP-canonical low-strand knots
+    # (6_2, 8_11, L6a4) — different quantities, not this trace under another
+    # convention — and they already carry their own "#1422-recompute pending"
+    # marker. Changing them would need those recomputes, not a substitution.
+    "p":   1.1457596924573009,  # 11-crossing typed B_3 (uud)
+    "n":   0.9877436881158096,  # 11-crossing typed B_3 (udd)
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)
@@ -152,6 +182,29 @@ TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
 
 # Per-isotope Model B canonical-braid metadata (knot, strand count,
 # topological prefactor ρ).
+#
+# 🛑 THE DEUTERON ROW CARRIES A RETIRED ASSIGNMENT (flagged 2026-08-30, bean
+# `qou-imkb`). `"D": {"knot": "6_2", ...}` below is the option the owner
+# REJECTED on 2026-08-29: the ruling
+# (docs/audits/2026-08-29-deuteron-knot-owner-decision.md, bean `qou-e5jf`) is
+# that the deuteron knot is the CANONICAL BRAID CLOSURE (trefoil / Hopf,
+# Vol = 0), and that "the 6_2 census assignment is retired as a bare lookup".
+# Option B put to the owner was literally "the deuteron knot is 6_2
+# (Vol = 4.40)" — so this is a ruling about the KNOT IDENTITY, not only about
+# whether the binding is a volume term.
+#
+# This is the SECOND live site for that retired assignment; the first is
+# `build_six_term_substrate_model_b.py::MODEL_B_BRAID_REGISTRY[(1,1)]`, and the
+# `TR_M_CANONICAL_B_AT_Q0["D"] = 0.288326` entry above is a THIRD (a value
+# derived from the retired knot, already marked "#1422-recompute pending").
+#
+# Flagged rather than changed, for the same reason as the other two: choosing
+# the replacement is a modelling decision. At A=2 the canonical braid closure is
+# the object Model A already uses, so adopting it may collapse Model B's
+# deuteron entry into Model A's — and whether that is correct, or whether Model
+# B keeps a distinct A=2 object, is not something a comment can settle. Nothing
+# recomputes from these rows today: the Model B T1 witness has no producer
+# (`qou-imkb`), so the whole Model B path raises before reaching them.
 MODEL_B_BRAID_META: dict[str, dict] = {
     "p":   {"knot": "11-crossing typed B_3 (uud)", "n_canon": 3, "rho": 1},
     "n":   {"knot": "11-crossing typed B_3 (udd)", "n_canon": 3, "rho": 1},
@@ -357,6 +410,28 @@ E_0_CONVENTIONS: dict[str, dict] = {
             "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - "
             "|tr_M(W_atom)|) at H_{3A}. The trace-difference operator "
             "carries the ℏ_q^2 scaling; E_0 is the unit-action scale."
+            "\n\n"
+            "⚠ CORRECTED 2026-08-31 (bean `qou-zrx2`). MEASURED, the "
+            "trace-difference operator carries NEITHER an ℏ_q^2 leading "
+            "term NOR a vanishing classical limit. Swept along q = exp(η) "
+            "over four decades it is\n"
+            "    tr_M(W_free) − tr_M(W_atom) = c₀(A) + c₁·ℏ_q + O(ℏ_q²)\n"
+            "with c₀(A) = 2^{-A} − 2^{1-2A}, DERIVED (Schur–Weyl at q = 1 "
+            "gives tr_M = 2^{c(σ)−n}, and the braid words have c_free = 2A, "
+            "c_atom = A+1 for A = 2..20). So the operator is ℏ_q^0 + ℏ_q^1, "
+            "not ℏ_q^2. At q₀ the ℏ_q^0 floor is 22.46 % of the deuteron "
+            "value and 4.88 % of ⁴He's. See "
+            "computations/probes/classical_floor_derivation_probe.py and "
+            "QOU/MassTheory/ClassicalTraceFloor.lean (sorry-free).\n\n"
+            "CONSEQUENCE, and it points the other way from `validity` below: "
+            "subtract the floor and Δtr − c₀(A) is a pure ℏ_q^1 observable, "
+            "which pairs with convention **A** (ℏ_q^1) to total ℏ_q^2 — the "
+            "same bookkeeping as Δ(net) × A, which predicts Q_β to 0.168 %. "
+            "So on ℏ_q grounds the corrected atom-level observable takes A, "
+            "not B. Before the subtraction NO convention paired consistently, "
+            "because the operator's two parts sat at different orders. "
+            "Recorded as a measured fact; re-designating the canonical "
+            "convention is an owner decision and is NOT taken here."
         ),
         "canonical_for": [
             "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
@@ -370,6 +445,19 @@ E_0_CONVENTIONS: dict[str, dict] = {
             "convention. Naively using convention A with a Δ(net)-"
             "style operator difference would miss the 1/ℏ_q^2 factor "
             "(≈ 102× error)."
+            "\n\n"
+            "⚠ THE ≈102× WARNING CANNOT BE RECOMPUTED AS STATED (2026-08-31, "
+            "bean `qou-zrx2`). 1/ℏ_q² = 101.862 is arithmetically right, but "
+            "its premise — that this operator class is ℏ_q^2 — is measured "
+            "false (see `operator_class`). The mismatch between using A and "
+            "using B on the SAME trace difference is the scale ratio "
+            "E_0^A/E_0^B = 5.35, not 102, and two live producers currently "
+            "differ by exactly that: binding_canonical uses B (deuteron "
+            "0.4354 MeV) while derive_binding_chain_cooperative uses A "
+            "(2.3297 MeV). The 'MUST use B' rule above therefore rests on a "
+            "wrong index and cannot adjudicate them. Not resolved here — "
+            "picking the convention that lands closer to AME is the fit this "
+            "lane has withdrawn three times."
         ),
     },
     "C_proton_back_fit": {

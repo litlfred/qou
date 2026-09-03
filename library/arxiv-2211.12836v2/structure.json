@@ -1,0 +1,489 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2211.12836v2",
+ "source": {
+  "file": "2211.12836v2.pdf",
+  "sha256": "4ffbb8b21f8b175d26656de27bd686c6c544330f5a9daf63e6ad631e57e5f362",
+  "bytes": 855805,
+  "pages": 68,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2211.12836",
+   "version": "2",
+   "primary_class": "math.PR",
+   "stamp_date": "12 May 2023"
+  },
+  "doi": null,
+  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION",
+  "authors_raw": "J\u00c9R\u00c9MIE GUILHOT, C \u00c9DRIC LECOUVEY, AND PIERRE TARRAGO",
+  "title_lines": [
+   "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+   "DYSON BROWNIAN MOTION"
+  ],
+  "abstract": "We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete circle of size n conditioned to not intersect each other. Such Markov kernels are related to the quantum cohomology ring of the Grassmannian, which is an algebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional vector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry- Esseen theorem and a local limit theorem for an arbitrary product of approximately n2 Markov kernels belonging to the above class, when k is \ufb01xed. As a byproduct of those results, we derive asymptotic formulas for the quantum cohomology ring of the Grassmannian in terms of the heat kernel on SU (k). To Philippe Biane, for his 60th birthday.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20230515011009Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Presentation of the model and main results",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "k-configuration on a circle and continuous counterpart",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A complete family of commuting Markov kernels associated to Bk,n",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Relation between Bk,n and the unitary group",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Main probabilistic theorems",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "A geometric corollary on quantum cohomology of the Grassmannian",
+   "page": 11,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Related results and perspectives",
+   "page": 13,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Positively multiplicative graphs, random walks and Fourier transform",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Family of random walks and h-transform",
+   "page": 15,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Convolution product on L2h(V)",
+   "page": 17,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The graph Bk,n as an integrable PM-graph",
+   "page": 22,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "h-transform, convolution and Fourier transform on Bk,n",
+   "page": 25,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Fourier transform on  Tk",
+   "page": 28,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
+   "page": 30,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "The Fourier transform of a large sequence of convolution",
+   "page": 32,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Berry-Esseen theorem on Bk,n",
+   "page": 46,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Wasserstein distance on Tk",
+   "page": 47,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 6.1",
+   "page": 50,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Local limit theorem and its geometric consequences",
+   "page": 56,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendices",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Small quantum cohomology of the Grassmannian",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1. Partitions and symmetric functions",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2. the Grassmannian, Schubert variety and intersection",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3. Quantum cohomology ring of the Grassmannian",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 64,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Nomenclature",
+   "page": 67,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8720,
+   "n_words": 1405
+  },
+  {
+   "id": "sec-001-2-presentation-of-the-model-and-main-results",
+   "number": "2",
+   "title": "Presentation of the model and main results",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2461,
+   "n_words": 451
+  },
+  {
+   "id": "sec-002-22-a-complete-family-of-commuting-markov-kernels",
+   "number": "2.2",
+   "title": "A complete family of commuting Markov kernels associated to Bk,n",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4080,
+   "n_words": 705
+  },
+  {
+   "id": "sec-003-23-relation-between-bkn-and-the-unitary-group",
+   "number": "2.3",
+   "title": "Relation between Bk,n and the unitary group",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3530,
+   "n_words": 620
+  },
+  {
+   "id": "sec-004-24-main-probabilistic-theorems",
+   "number": "2.4",
+   "title": "Main probabilistic theorems",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 11,
+   "n_chars": 11863,
+   "n_words": 2121
+  },
+  {
+   "id": "sec-005-25-a-geometric-corollary-on-quantum-cohomology-o",
+   "number": "2.5",
+   "title": "A geometric corollary on quantum cohomology of the Grassmannian",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4593,
+   "n_words": 830
+  },
+  {
+   "id": "sec-006-26-related-results-and-perspectives",
+   "number": "2.6",
+   "title": "Related results and perspectives",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 6624,
+   "n_words": 1106
+  },
+  {
+   "id": "sec-007-3-positively-multiplicative-graphs-random-walks",
+   "number": "3",
+   "title": "Positively multiplicative graphs, random walks and Fourier transform",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1783,
+   "n_words": 330
+  },
+  {
+   "id": "sec-008-31-family-of-random-walks-and-h-transform",
+   "number": "3.1",
+   "title": "Family of random walks and h-transform",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5329,
+   "n_words": 1025
+  },
+  {
+   "id": "sec-009-33-integrable-pm-graph-fourier-transform-and-ver",
+   "number": "3.3",
+   "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 5104,
+   "n_words": 932
+  },
+  {
+   "id": "sec-010-4-noncolliding-particles-on-a-circle-and-eigenva",
+   "number": "4",
+   "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1835,
+   "n_words": 364
+  },
+  {
+   "id": "sec-011-41-the-graph-bkn-as-an-integrable-pm-graph",
+   "number": "4.1",
+   "title": "The graph Bk,n as an integrable PM-graph",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 5987,
+   "n_words": 1022
+  },
+  {
+   "id": "sec-012-42-h-transform-convolution-and-fourier-transform",
+   "number": "4.2",
+   "title": "h-transform, convolution and Fourier transform on Bk,n",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 30,
+   "n_chars": 10404,
+   "n_words": 1825
+  },
+  {
+   "id": "sec-013-44-invariant-brownian-motion-on-uk-and-unitary-d",
+   "number": "4.4",
+   "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5272,
+   "n_words": 1002
+  },
+  {
+   "id": "sec-014-5-the-fourier-transform-of-a-large-sequence-of-c",
+   "number": "5",
+   "title": "The Fourier transform of a large sequence of convolution",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 46,
+   "n_chars": 25119,
+   "n_words": 4978
+  },
+  {
+   "id": "sec-015-6-berry-esseen-theorem-on-bkn",
+   "number": "6",
+   "title": "Berry-Esseen theorem on Bk,n",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 50,
+   "n_chars": 8359,
+   "n_words": 1485
+  },
+  {
+   "id": "sec-016-62-proof-of-theorem-61",
+   "number": "6.2",
+   "title": "Proof of Theorem 6.1",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 56,
+   "n_chars": 7937,
+   "n_words": 1578
+  },
+  {
+   "id": "sec-017-7-local-limit-theorem-and-its-geometric-conseque",
+   "number": "7",
+   "title": "Local limit theorem and its geometric consequences",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 60,
+   "n_chars": 6935,
+   "n_words": 1257
+  },
+  {
+   "id": "sec-018-appendix-a-small-quantum-cohomology-of-the-grass",
+   "number": null,
+   "title": "Appendix A. Small quantum cohomology of the Grassmannian",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 87,
+   "n_words": 14
+  },
+  {
+   "id": "sec-019-a1-partitions-and-symmetric-functions",
+   "number": null,
+   "title": "A.1. Partitions and symmetric functions",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 61,
+   "n_chars": 1764,
+   "n_words": 323
+  },
+  {
+   "id": "sec-020-a2-the-grassmannian-schubert-variety-and-interse",
+   "number": null,
+   "title": "A.2. the Grassmannian, Schubert variety and intersection",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 3292,
+   "n_words": 619
+  },
+  {
+   "id": "sec-021-a3-quantum-cohomology-ring-of-the-grassmannian",
+   "number": null,
+   "title": "A.3. Quantum cohomology ring of the Grassmannian",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 5368,
+   "n_words": 952
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 67,
+   "n_chars": 6956,
+   "n_words": 1033
+  },
+  {
+   "id": "sec-023-nomenclature",
+   "number": null,
+   "title": "Nomenclature",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 2439,
+   "n_words": 419
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 24,
+  "chars_total": 145841
+ }
+}

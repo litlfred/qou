@@ -1,0 +1,112 @@
+{
+  "engine": "python+mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T03:40:10.824322+00:00",
+  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "assertions": [
+    {
+      "name": "d_preserving_reproduces_habiro_p",
+      "computed": "1.3996467467065141903752180865958505868816912085984e-50",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "Same Sum y_l chi_l over the same nucleon chain; only whether the crossing `d` survives differs. Reproducing the habiro atomic value to this precision is what shows the divergence is the marshalling, not a convention."
+    },
+    {
+      "name": "d_preserving_reproduces_habiro_n",
+      "computed": "5.4118588501247362434214272494935381119495113474323e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "Same Sum y_l chi_l over the same nucleon chain; only whether the crossing `d` survives differs. Reproducing the habiro atomic value to this precision is what shows the divergence is the marshalling, not a convention."
+    },
+    {
+      "name": "he4_ratio_matches_the_observed_2p157",
+      "computed": "2.1566309125836720426438664278185582513922521216054",
+      "expected": "2.157",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "(tau_p*tau_n)^2 ratio between the two paths. Matching the independently-observed 0.34716 / 0.16097 = 2.157 closes the chain from root cause to the reported symptom."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 58,
+  "computation": "nucleon-h3-marshalling-divergence",
+  "scriptFile": "nucleon_h3_marshalling_divergence_probe.py",
+  "scriptHash": "a7e565995e2b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nucleon_h3_marshalling_divergence_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nucleon_h3_marshalling_divergence_probe.py"
+  },
+  "description": "Root-causes the 2.157x disagreement between the two canonical tr_M(4He) producers (bean qou-qu2w). NOT a convention difference: both are convention D and A=1 has no p-n interface. compute_tau_M_nucleon_H3 marshals through marshal_to_chi_lambda_braid, which drops each nucleon's TWO intra-nucleon `averaged` crossings to plain sigma (z - h/2 -> z). Preserving `d` over the same chains reproduces the habiro atomic values to ~1e-50.",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50
+  },
+  "data": {
+    "rows": [
+      {
+        "nucleon": "p",
+        "census": {
+          "sigma": 6,
+          "averaged": 2,
+          "sigma_inv": 3
+        },
+        "n_averaged_intra_nucleon": 2,
+        "d_preserving": "1.1457596924573008696890815957741193059437280619435",
+        "habiro_atomic_target": "1.1457596924573008696890815957741193059437280619435",
+        "marshalled_current": "1.321592984237344535484100338492756505170133273442",
+        "rel_d_preserving_vs_target": "1.3996467467065141903752180865958505868816912085984e-50",
+        "rel_marshalled_vs_target": "0.15346437209964641954568044452270830960286517367563"
+      },
+      {
+        "nucleon": "n",
+        "census": {
+          "sigma": 5,
+          "averaged": 2,
+          "sigma_inv": 4
+        },
+        "n_averaged_intra_nucleon": 2,
+        "d_preserving": "0.98774368811580957163402016550129498205504875906278",
+        "habiro_atomic_target": "0.98774368811580957163402016550129498205504875906279",
+        "marshalled_current": "1.2575579046963118128438700052596363151245672304443",
+        "rel_d_preserving_vs_target": "5.4118588501247362434214272494935381119495113474323e-51",
+        "rel_marshalled_vs_target": "0.27316217742195022405042953753600521257762815902643"
+      }
+    ],
+    "he4_implied_ratio": "2.1566309125836720426438664278185582513922521216054",
+    "root_cause": {
+      "site": "closed_form_tau_M.compute_tau_M_nucleon_H3",
+      "mechanism": "routes the nucleon chain through canonical_braid_marshalling.marshal_to_chi_lambda_braid, which emits (sign, gen) and drops `d`; `averaged` maps to sign=+1, replacing that crossing's Markov factor z - h/2 by z at two sites per nucleon",
+      "not_a_convention_issue": "both producers are convention D (the habiro tr_M_in_q is rational in q, proton denominator 4q^9(q^2+1)^2); A=1 has no p-n interface so no pn_convention argument reaches this site",
+      "why_it_hid": "every audit keyed on `pn_convention` is structurally blind here, and the ratio differs between p (1.15346) and n (1.27316) so it does not look like a normalisation factor either",
+      "available_fix": "chi_monotone_transfer.chi_all_lambda preserves `d` and is validated against char_fast at n=6 and four cached oracles to n=12, all at 1e-50",
+      "blast_radius": "13 direct importers of compute_tau_M_nucleon_H3; 46 modules in the closed_form_tau_M cone, including mass_table_comprehensive and nucleus_sdp_assembly — the canonical mass and binding path",
+      "bean": "qou-qu2w"
+    }
+  },
+  "caveats": [
+    "This probe MEASURES the divergence and does not resolve it. Deciding which path is canonical moves every closed-form nucleon and atom trace in the corpus and is an owner decision."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

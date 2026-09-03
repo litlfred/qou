@@ -36,7 +36,7 @@ aggregate result.
 | `HeckeAlgebra.lean` | Generic `IwahoriHeckeAlgebra n q` + `MarkovTrace` + `WedderburnDecomposition` + concrete H_2/H_3 carriers + multiplication + Markov trace + Wedderburn projectors + concrete `MarkovTraceRecursionWithMul` H_1→H_2, H_2→H_3 instances + canonical_lift hook + HnCarrier ↔ H{2,3}Carrier conversions |
 | `WenzlBridgeConcrete.lean` | Cohorts n=2..8 with Σd² = n! proved + dim_q closed forms + 7 hook-formula derivations + 4 substrate-q corollaries + recursive `cohortDimqValues` + `BurnsideIdentity` over `Nat.Partition` + 7 `CohortRSKWitness` instances + n=9/10 hook tables + n=9 expected SYT counts |
 | `RSKBridge.lean` | `RSKBijection` class + `BurnsideFromRSK` derivation + `CohortRSKWitness` |
-| `ArchimedeanRealization.lean` | `q_zero ≈ 1.10998` + positivity + `evalAtQZero` ring-hom + `ratPolyEvalAtQZero` + `ArchimedeanRealizationFunctor` class |
+| `ArchimedeanRealization.lean` | `q_zero ≈ 1.10998` + positivity + `evalAtQZero` ring-hom + `ratPolyEvalAtQZero` + `ArchimedeanEvaluationPoint` class (the pinned evaluation point — **not** a functor; renamed 2026-08-24, bean `qou-7nbx`) |
 | `NonAbelianStokes.lean` | `NonAbelianStokes` class + `piecewiseAffineLineIntegral` + concatenation rule + `braidSurfaceMultTrace` + concrete `YekutieliFiniteSliceMultTrace` + `LieAlgebraStructure` with bilinearity + `bracket_antisym` proved + `LieAlgebraOneForm/TwoForm` + `gaugeCovariantDerivative` + `LieValuedStokes` |
 | `PermutationEnumeration.lean` | `Fin n.factorial ≃ Equiv.Perm (Fin n)` + sanity at n=0..6 + `simpleTransposition` + concrete `sigma_i_in_S{3,4}` + `simpleTransposition_sq` + `coxeterLength` + `lengthFn` + 11 concrete length theorems |
 | `UpstreamSubstrateBridge.lean` | 7 substrate-axiom bridges + `complete_upstream_discharge` aggregate |
@@ -87,17 +87,41 @@ theorem master_upstream_complete (R : Type u) [CommRing R]
 /-- **Sanity inventory** — confirms the 8 upstream files
     contribute interlocking content.  This theorem is a
     documentation handle: every named class / instance below
-    is in scope and consumable. -/
-theorem inventory_check (R : Type u) [CommRing R] (q : R) :
+    is in scope and consumable.
+
+    Conditional on `[IwahoriHeckeAlgebra R 2 q]` (§3b-cond): the trivial
+    global `IwahoriHeckeAlgebra` instance was deliberately removed on
+    2026-08-23 (anti-laundering — a content-free `carrier = PUnit` instance
+    must not be fabricated to close it), so `Nonempty (IwahoriHeckeAlgebra
+    R 2 q)` is honestly available only *given* the class. `WedderburnIsomorphism
+    R 2 q` carries a real instance (`wedderburn_n2`) and stays unconditional.
+
+    **`GBFiltrationCollapsesAtE2 R` does not, and this line used to say it
+    did.** Its `canonical` is `ss := trivial R` with
+    `collapses := trivial_collapses_at_E2 R` — the TRIVIAL spectral sequence,
+    as its own docstring at `QOU/Mathlib/SpectralSequence.lean` states:
+    *"the trivial spectral sequence vacuously discharges the §3b-cond
+    hypothesis"*. It is an unconditional `instance`, so
+    `[GBFiltrationCollapsesAtE2 R]` is free for every `R` and every downstream
+    result taking it as a hypothesis is unconditional on a collapse nobody
+    proved.
+
+    That is the same shape as the `IwahoriHeckeAlgebra` instance removed above
+    on 2026-08-23 for exactly this reason, and it is what
+    `lean-no-vacuous-instance-data` exists to catch. Recorded rather than fixed
+    here: demoting it changes every consumer, so it is a scoped change and not
+    a merge-time edit. -/
+theorem inventory_check (R : Type u) [CommRing R] (q : R)
+    [IwahoriHeckeAlgebra R 2 q] :
     -- Spectral sequence
     Nonempty (GBFiltrationCollapsesAtE2 R) ∧
-    -- Hecke algebra
+    -- Hecke algebra — inhabited by the trivial model only
     Nonempty (IwahoriHeckeAlgebra R 2 q) ∧
     Nonempty (WedderburnIsomorphism R 2 q) ∧
     -- Permutation enumeration (concrete sigma)
     coxeterLength sigma1_in_S3 = 1 ∧
     coxeterLength sigma2_in_S4 = 1 :=
-  ⟨⟨inferInstance⟩, ⟨inferInstance⟩, ⟨inferInstance⟩,
+  ⟨⟨canonicalTrivial R⟩, ⟨triv_hecke R 2 q⟩, ⟨inferInstance⟩,
    coxeterLength_sigma1_in_S3, coxeterLength_sigma2_in_S4⟩
 
 end QOU.Mathlib.Summary

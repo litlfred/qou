@@ -1,0 +1,60 @@
+{
+  "computation": "qbeta-counit-trace-transport-overshoot",
+  "description": "qou-avt1 formalize-first: under KC19 the counit->trace transport is an affine move of the loop weight, and the anchor wants <0.5% of that move -- the transport overshoots by ~300x.",
+  "engine": "mpmath",
+  "markov_convention": "both (C and D compared)",
+  "assertions": [
+    {
+      "name": "G1_eps_minus_trM_eq_2alpha_C",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "G1_eps_minus_trM_eq_2alpha_D",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "G2_ladder_factor_is_affine_in_w_not_a_cosine",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "G3_w_star_solves_L_eq_F_required",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "G4_transport_overshoots_frac_below_1pct",
+      "passed": true,
+      "note": "(frac_C=0.00299532, frac_D=0.00387206)"
+    },
+    {
+      "name": "G5_w_star_not_bar_even",
+      "passed": true,
+      "note": "(w*(h->-h) = 0.9981501789)"
+    }
+  ],
+  "data": {
+    "F_required": "0.9983252416732465888841337093667449049909",
+    "w_star_measurement_not_value": "0.9985003044113473654186385657292815339608",
+    "counit_loop_weight": "1",
+    "z_C": "0.4993203341836944524134426802576663037519",
+    "z_D": "0.6126880371464652515958298639458992480263",
+    "frac_of_counit_to_trace_distance": {
+      "C": "0.0029953195446983823883",
+      "D": "0.0038720611096119357046"
+    },
+    "overshoot_factor": {
+      "C": "333.85419654806689595",
+      "D": "258.26038683057397176"
+    }
+  },
+  "verdict": "OVERSHOOT (scope-(a)). Under KC19 the counit->trace transport IS just moving the loop weight w from 1 to z along an affine line. Solving the one linear equation L(w*) = F_required puts w* within ~0.15% of the COUNIT (w = 1), i.e. the data wants only ~0.3% of the counit->trace distance under C and ~0.4% under D -- the completed transport overshoots by ~300x and ~270x respectively. So 'the ladder transports the evaluation from the counit to the Markov trace' is NOT supported as stated: whatever the ladder does, it moves the evaluation a tiny fraction of the way. Separately (G2) the ladder factor is AFFINE in w while the ladder asserts a COSINE -- two different functional forms, agreeing only at isolated points. w* is a MEASUREMENT of what the current parameterisation demands, not a value; it is resolved no better than ce (1.45%), so no closed form may be quoted for it. Nothing wired.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py",
+    "scriptHash": "c2706ae90ab8",
+    "commitSha": "f7d995e0db40d6f033e3162607cc5c7df853aa51",
+    "generatedAt": "2026-08-26T04:21:38.810723+00:00"
+  }
+}

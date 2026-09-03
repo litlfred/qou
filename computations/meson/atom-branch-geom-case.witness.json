@@ -1,0 +1,129 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-26T03:51:45.539769+00:00",
+  "commitSha": "c64833a979963bde591370a0609f1ce205a0043c",
+  "assertions": [
+    {
+      "name": "composite_control_splits",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "summands",
+      "source": "Granny knot = trefoil # trefoil; without this a table of 1s is an artefact."
+    },
+    {
+      "name": "prime_control_does_not_split",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "summands",
+      "source": "Trefoil is prime; without this a table of >1s is an artefact."
+    },
+    {
+      "name": "every_branch_resolved",
+      "computed": 40,
+      "expected": 40,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "An unresolved branch makes the classification incomplete."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "atom-branch-geom-case",
+  "scriptFile": "atom_branch_geom_case_probe.py",
+  "scriptHash": "d1a136d6fbe3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/atom_branch_geom_case_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/atom_branch_geom_case_probe.py"
+  },
+  "description": "Classifies every atom-element branch closure by number of prime summands, to decide WHICH case of the Stage-3 Geom(K) split applies. The branches are already measured non-hyperbolic; non-hyperbolic is torus OR reducible, and a connected sum is in neither -- Stage 3 has no case for a composite. Carries a composite control (granny knot must split) and a prime control (trefoil must not).",
+  "auditOnly": "docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md",
+  "data": {
+    "the_rule_the_framework_states": {
+      "stage_3": "Geom(K) = Vol(K)/hbar_q^2 for HYPERBOLIC K (mass/energy); CS(K)*hbar_q^2 for TORUS K (coupling phase); 0 for the UNKNOT (vacuum)",
+      "applied_in_alpha_EM": "predicted-spectra/em-coupling-chern-simons.md: 'The torus knots T_{2,9} and T_{3,5} are non-hyperbolic. Their tau-image geometric invariant is the Chern-Simons functional, not the hyperbolic volume.'",
+      "not_applied_in_mass": "the mass path applies Vol(K)/hbar_q^2 unconditionally, with Vol(B_3) substituted, to carriers measured non-hyperbolic"
+    },
+    "calibration": {
+      "composite_control": {
+        "braid": "granny = trefoil # trefoil",
+        "summands": 2,
+        "expected": "> 1"
+      },
+      "prime_control": {
+        "braid": "trefoil s1^3",
+        "summands": 1,
+        "expected": "1"
+      }
+    },
+    "per_isotope": [
+      {
+        "isotope": "proton",
+        "A": 1,
+        "branches": 4,
+        "resolved": 4,
+        "failed": 0,
+        "prime_branches": 0,
+        "composite_branches": 4,
+        "max_summands": 2,
+        "summand_histogram": {
+          "2": 4
+        }
+      },
+      {
+        "isotope": "neutron",
+        "A": 1,
+        "branches": 4,
+        "resolved": 4,
+        "failed": 0,
+        "prime_branches": 0,
+        "composite_branches": 4,
+        "max_summands": 2,
+        "summand_histogram": {
+          "2": 4
+        }
+      },
+      {
+        "isotope": "deuteron",
+        "A": 2,
+        "branches": 32,
+        "resolved": 32,
+        "failed": 0,
+        "prime_branches": 0,
+        "composite_branches": 32,
+        "max_summands": 5,
+        "summand_histogram": {
+          "5": 32
+        }
+      }
+    ],
+    "totals": {
+      "prime": 0,
+      "composite": 40
+    }
+  }
+}

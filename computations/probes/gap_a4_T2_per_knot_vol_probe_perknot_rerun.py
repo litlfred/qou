@@ -280,7 +280,7 @@ def main() -> int:
     tr_n, _ = load_chi_cache_tr_M("n")
     w.add_assertion(
         "proton_chi_cache_tr_M_matches_documented",
-        computed=float(tr_p),
+        computed=tr_p,
         expected=1.0653062380758782,
         tolerance=1e-12,
         source="chi-proton-h3-at-q0-50dps.witness.json tr_M_at_q0 "
@@ -288,7 +288,7 @@ def main() -> int:
     )
     w.add_assertion(
         "neutron_chi_cache_tr_M_matches_documented",
-        computed=float(tr_n),
+        computed=tr_n,
         expected=0.9232333051498377,
         tolerance=1e-12,
         source="chi-neutron-h3-at-q0-50dps.witness.json tr_M_at_q0 "

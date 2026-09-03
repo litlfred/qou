@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "generalized-JW path = A5.2 colored3_raw at 1e-25"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "4₁ 3-cable J'_4 (framing-free) = trusted p=−1 tower"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "trefoil N=4 framing factor a consistent power across q"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B₄(5₂): 0 sign changes on q*±2e-8, B₄(q*) ≠ 0"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "B₄(4₁;q*) = 0 to 1e-20 — mirror/bar control at N=4"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|d ln B₄/dq| ≪ 3.84e6 — anchor-smooth, not the swing"
     }
   ],

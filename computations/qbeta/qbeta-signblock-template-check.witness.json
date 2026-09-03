@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:42.453483+00:00",
-  "commitSha": "971e1e83c30cd9d6d4a146fb573633973a74ce61",
+  "computedAt": "2026-08-30T07:11:59.503239+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "qbeta_template_scan_completed",
-      "computed": 10,
-      "expected": 10,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "source": "Scanned 10 candidates at 80 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "qbeta-signblock-template-check",
   "scriptFile": "qbeta_signblock_template_check.py",
-  "scriptHash": "6a2140062c21",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "7f138aa2de31",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -43,13 +43,13 @@
   },
   "description": "Item 3 of PR #1650: test whether PR #1645's sign-block/Plancherel template transfers to Q_β c_3 = -2 = J_Hopf(q=1). Complement to sibling Q_β Habiro work; non-competing categorical-template check.",
   "parameters": {
-    "q_80dps": "1.1099785955573347198997632204832250266562084087801536866079811461449300000000000"
+    "q_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830"
   },
   "data": {
     "exact_matches": "['(g) 2·σ_1(sign)|_{q=1} = -2', '(j) -(q²+q⁻²) at q=1 (Jones-Hopf)']",
     "plancherel_exact_matches": "[]",
     "verdict": "NON-PLANCHEREL EXACT MATCHES: ['(g) 2·σ_1(sign)|_{q=1} = -2', '(j) -(q²+q⁻²) at q=1 (Jones-Hopf)']. c_3 = -2 is reproducible as -[2]_q at q=1, but NOT directly as a Plancherel-weighted sum at H_2. The sign-block template does NOT directly transfer; c_3 is the Hopf-link Jones evaluation, NOT a Plancherel-channel projection. Complements sibling Q_β Habiro work (independent categorical mechanism)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -3,28 +3,28 @@
   "auditOnly": true,
   "scriptFile": "computations/audits/q0_consistency_audit.py",
   "description": "Scans compute scripts for stale pre-habiro q\u2080 literals (10997858275 / 858275) and stale-A tr_M leaf values (tr_M evaluated at A) that the 2026-06-22 cluster-A migration replaced with the canonical C values. production-hardcode entries are real bugs (a live constant kept at the stale value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-08-24T06:54:38.483229+00:00",
+  "timestamp": "2026-08-29T07:02:42.091143+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
   "stale_pre_habiro_q0": "1.10997858275138080759\u2026",
   "canonical_proton_q0": "1.10997859555733471989\u2026",
   "counts_by_classification": {
-    "stale-docstring": 63,
-    "production-hardcode": 187,
-    "legit-muon-xcheck": 3
+    "stale-docstring": 107,
+    "production-hardcode": 203,
+    "legit-muon-xcheck": 7
   },
-  "total_hits": 253,
-  "production_hardcode_count": 187,
+  "total_hits": 317,
+  "production_hardcode_count": 203,
   "hits": [
     {
       "file": "computations/_habiro_coefficient_extract.py",
-      "line": 498,
+      "line": 529,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "#     1.1099785827513799496557567181298509240150451660156   (was)"
     },
     {
       "file": "computations/_habiro_coefficient_extract.py",
-      "line": 499,
+      "line": 530,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "#     1.1099785827513808075916690956107688798744991218736   (is)"
@@ -121,25 +121,102 @@
       "text": "if not q.startswith(\"1.10997858275\"):"
     },
     {
+      "file": "computations/audits/inherited_q0_pin_audit.py",
+      "line": 90,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "PROTON = \"1.1099785827513808075916690956107688798744991218736\""
+    },
+    {
       "file": "computations/audits/q0_anchor_consistency_audit.py",
-      "line": 97,
+      "line": 101,
       "kind": "old-q0",
       "classification": "legit-muon-xcheck",
-      "text": "_EXPECTED_PREFIX = {\"muon\": \"1.109978595557\", \"proton\": \"1.109978582751\"}"
+      "text": "_EXPECTED_PREFIX = {\"muon\": \"1.109978595642\", \"proton\": \"1.109978582751\"}"
+    },
+    {
+      "file": "computations/audits/q0_anchor_payload_recovery.py",
+      "line": 87,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "PROTON_PREFIX = \"1.109978582751\""
+    },
+    {
+      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
+      "line": 62,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "_PIN_PREFIXES = MUON_PREFIXES + (\"1.109978582751\", \"1.1099785827\")"
+    },
+    {
+      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
+      "line": 69,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_PROTON_EXACT = Decimal(\"1.10997858275138080759166909561076887987449912187365\")"
     },
     {
       "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 66,
+      "line": 68,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"proton\": \"1.1099785827513808\","
     },
     {
+      "file": "computations/audits/q0_hardcoded_pin_audit.py",
+      "line": 93,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_PROTON_EXACT = Decimal(\"1.10997858275138080759166909561076887987449912187365\")"
+    },
+    {
       "file": "computations/audits/q0_muon_population_partition.py",
-      "line": 40,
+      "line": 54,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# Loose prefix: matches BOTH, and nothing proton (proton is 1.10997858275...)."
+      "text": "# (1.10997858275...), which diverges one digit earlier."
+    },
+    {
+      "file": "computations/audits/q0_old_muon_b_witness_triage.py",
+      "line": 119,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# whole line 'q0_proton = 1.10997858275138...  q0_muon = 1.10997859555418...'."
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 134,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "has_pr = \"1.109978582751\" in raw"
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 152,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "PROTON_LITERAL = \"1.109978582751\""
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 164,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "the proton value as `1.10997858275` in 12 places, which is a prefix OF the"
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 392,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# pin \u2014 `mp.mpf(\"1.109978582751380808\")` \u2014 reached the `none`"
+    },
+    {
+      "file": "computations/audits/q0_witness_read_dataflow_audit.py",
+      "line": 122,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "PROTON_PREFIX = \"1.109978582751\""
     },
     {
       "file": "computations/audits/qbeta_multiblock_order_audit.py",
@@ -157,38 +234,80 @@
     },
     {
       "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
-      "line": 395,
+      "line": 402,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"1.10997859555733 -> 1.10997858275138 on re-run, with \""
     },
     {
-      "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 2,
+      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
+      "line": 203,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "PINS = {\"proton\": \"1.1099785827513808\", \"muon\": \"1.10997859555733471\"}"
+    },
+    {
+      "file": "computations/audits/weight_factor_audit.py",
+      "line": 192,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "proton pin q_0 \u2248 1.1099785827513808, z = 0.6126880371464652516\u2026"
+    },
+    {
+      "file": "computations/audits/ylambda_threerow_frame_audit.py",
+      "line": 181,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# for different spellings of the same q: mpf(\"1.1099785827513808\") gives"
     },
     {
       "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 19,
+      "line": 7,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#   1.10997858275\u2026 is the RETIRED proton anchor | it IS the CURRENT proton pin:"
+    },
+    {
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 8,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#                                               | q_at() = 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 18,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is actually true: the `1.10997858275\u2026` occurrences below ARE the current"
+    },
+    {
+      "file": "computations/c_3_categorical_derivation_attempt.py",
+      "line": 36,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "\u2022 m_p-pin  q\u2080 (= 1.1099785827513808):  c_3 \u2248 \u22122.062..\u22122.069 (sign"
     },
     {
       "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 81,
+      "line": 98,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"1.1099785827513808075916690956107688798744991218735787360728142402\""
     },
     {
-      "file": "computations/canonical_tr_m_via_chi_cache.py",
-      "line": 310,
+      "file": "computations/canonical_tr_m_via_branching.py",
+      "line": 110,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "elif _q.startswith(\"1.10997858275\"):"
+      "classification": "stale-docstring",
+      "text": "commit message. It is not; it carries `data.q_0 = 1.1099785827513808`"
+    },
+    {
+      "file": "computations/canonical_tr_m_via_branching.py",
+      "line": 644,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# `data.q_0 = 1.1099785827513808` next to `h = 0.20906029879563937`; the"
     },
     {
       "file": "computations/charm_frobenius_block_projection_probe.py",
@@ -240,6 +359,13 @@
       "text": "q0_rat = sp.Rational(110997858275, 100000000000)"
     },
     {
+      "file": "computations/deltalambda/a4_interface_operator_driver_search_probe.py",
+      "line": 74,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "return mp.mpf(\"1.1099785827513808\")"
+    },
+    {
       "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
       "line": 68,
       "kind": "old-q0",
@@ -269,7 +395,7 @@
     },
     {
       "file": "computations/deltalambda/deltalambda_binding_cross_isotope_probe.py",
-      "line": 95,
+      "line": 96,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "q0 = mp.mpf(\"1.1099785827513808076\")"
@@ -318,7 +444,7 @@
     },
     {
       "file": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
-      "line": 75,
+      "line": 88,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0 = mp.mpf(\"1.10997858275138080759166909561076887987449912187357763605672\")"
@@ -336,6 +462,13 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0=mp.mpf('1.1099785827513808076')"
+    },
+    {
+      "file": "computations/derived_masses.py",
+      "line": 174,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "q_parameter : 1.1099785827513808075916690956..."
     },
     {
       "file": "computations/e_hartree_round24_molecular_reuse.py",
@@ -395,14 +528,28 @@
     },
     {
       "file": "computations/h4_form_AB_cross_anchor_stability.py",
-      "line": 1,
+      "line": 3,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/h4_form_AB_cross_anchor_stability.py",
-      "line": 17,
+      "line": 4,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/h4_form_AB_cross_anchor_stability.py",
+      "line": 12,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/h4_form_AB_cross_anchor_stability.py",
+      "line": 26,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "- q_proton = 1.10997858275\u2026 (CAL-2 / m_p anchor since PR #1422)"
@@ -443,22 +590,43 @@
       "text": "\"proton\": mp.mpf(\"1.1099785827513808075916690956\"),"
     },
     {
+      "file": "computations/mass_at_3A_proper.py",
+      "line": 76,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# 1.1099785827513808. Use THIS for anything that must not track its caller."
+    },
+    {
       "file": "computations/mass_binding_dashboard.py",
-      "line": 816,
+      "line": 875,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "q\u2080 = 1.1099785827513808\u2026 \u2014 per the 2026-08-07 owner directive that all compute"
     },
     {
       "file": "computations/mass_theory_formalize_first_invariants_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/mass_theory_formalize_first_invariants_probe.py",
-      "line": 59,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/mass_theory_formalize_first_invariants_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/mass_theory_formalize_first_invariants_probe.py",
+      "line": 68,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = \"1.1099785827513808075916690956107688798744991218736\""
@@ -493,10 +661,10 @@
     },
     {
       "file": "computations/murakami_deformed_vc_q0.py",
-      "line": 49,
+      "line": 52,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "Q0_PROTON = mp.mpf(\"1.10997858275\")"
+      "classification": "stale-docstring",
+      "text": "#   * the proton literal was TRUNCATED to 12 digits (\"1.10997858275\") inside a"
     },
     {
       "file": "computations/ocneanu_param_from_fibre_dimension.py",
@@ -548,6 +716,13 @@
       "text": "Q0 = mp.mpf(\"1.1099785827513808\")"
     },
     {
+      "file": "computations/probes/awzero_asymptotics_probe.py",
+      "line": 88,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_PROTON = \"1.10997858275138081\"    # proton pin (package layer), 17 dp like Q_MUON"
+    },
+    {
       "file": "computations/probes/b4_antisym_hecke_exchange_derivation.py",
       "line": 66,
       "kind": "old-q0",
@@ -563,10 +738,17 @@
     },
     {
       "file": "computations/probes/b4_exchange_perron_frobenius_constraint.py",
-      "line": 69,
+      "line": 73,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "q = mp.mpf(\"1.10997858275138080759166909561076887987449912187357763605672\")"
+    },
+    {
+      "file": "computations/probes/baldfn_theta_limit_probe.py",
+      "line": 678,
+      "kind": "old-q0",
+      "classification": "legit-muon-xcheck",
+      "text": "Q_PROTON = \"1.10997858275138081\"    # proton pin (package layer), 17 dp like Q_MUON"
     },
     {
       "file": "computations/probes/binding_additive_linked_cluster_probe.py",
@@ -584,7 +766,7 @@
     },
     {
       "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
-      "line": 58,
+      "line": 65,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0 = mp.mpf(\"1.10997858275138080759166909561076887987449912187357763605672\")"
@@ -618,6 +800,13 @@
       "text": "# 1.109978582751380807591669 \u2014 wrong from the 17th digit. That is what"
     },
     {
+      "file": "computations/probes/ground_state_ordering_convention_independence_probe.py",
+      "line": 45,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR = \"1.1099785827513808075916690\""
+    },
+    {
       "file": "computations/probes/he4_gate_vs_magic_a_identity_probe.py",
       "line": 32,
       "kind": "old-q0",
@@ -626,17 +815,38 @@
     },
     {
       "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 208,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 220,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# 1.10997859564274\u2026), and called 1.10997858275\u2026 \"the retired pre-re-pin"
+    },
+    {
+      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
+      "line": 228,
       "kind": "old-q0",
       "classification": "production-hardcode",
-      "text": "\"pre-re-pin proton anchor was 1.10997858275\u2026 (\u0394q \u2248 1.28e-8 from current). \""
+      "text": "\"pin q_at()\u22481.10997858275138\u2026 (\u0394q \u2248 1.28e-8 from the cache anchor). For \""
     },
     {
       "file": "computations/probes/interface_4body_assembly_probe.py",
@@ -710,24 +920,38 @@
     },
     {
       "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
-      "line": 27,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+      "line": 36,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "pre-2026-05-28 anchor) AND q_proton = 1.10997858275, and tiers:"
     },
     {
-      "file": "computations/probes/pauli_young_spin_isospin_delta_lambda_probe.py",
-      "line": 299,
+      "file": "computations/probes/pentagon_rt_torus_knot_higgs_probe.py",
+      "line": 314,
       "kind": "old-q0",
-      "classification": "production-hardcode",
-      "text": "q0 = mp.mpf(\"1.10997858275138080759166909561076887987449912187357763605672\")"
+      "classification": "stale-docstring",
+      "text": "# Q_50_DIGIT_STR is 1.1099785827513808... = the PROTON (experimental /"
     },
     {
       "file": "computations/probes/phi_q_regularization_probe.py",
@@ -898,6 +1122,27 @@
       "text": "Q0_PROTON_STR = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
+      "file": "computations/probes/su4_1111_markov_trace_probe.py",
+      "line": 345,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "_PROTON_Q0 = \"1.1099785827513808\"    # experimental / Physical-Observations pin"
+    },
+    {
+      "file": "computations/probes/su4_1111_markov_trace_probe.py",
+      "line": 450,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# 1.1099785827513808..., which is the PROTON pin; the muon pin is"
+    },
+    {
+      "file": "computations/probes/su4_1111_markov_trace_probe.py",
+      "line": 583,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# site.\" Q_50_DIGIT_STR is the PROTON pin (1.1099785827513808...), the"
+    },
+    {
       "file": "computations/probes/tau_dictionary_hauptmodul_validator.py",
       "line": 99,
       "kind": "old-q0",
@@ -926,6 +1171,13 @@
       "text": "* PROTON pin throughout -- q0 = 1.1099785827513808 via"
     },
     {
+      "file": "computations/q0_manifest_finalize.py",
+      "line": 57,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "PR_PREFIX = \"1.109978582751\""
+    },
+    {
       "file": "computations/q0_muon_reproduction_sweep.py",
       "line": 38,
       "kind": "old-q0",
@@ -941,7 +1193,7 @@
     },
     {
       "file": "computations/q0_repin_sweep.py",
-      "line": 115,
+      "line": 118,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "# computations/q-pinning-50-digit.witness.json to 1.10997858275\u2026 . Three"
@@ -959,6 +1211,13 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "q0 = sp.Rational(\"1.1099785827513808\")  # proton pin (AGENTS.md default)"
+    },
+    {
+      "file": "computations/qbeta/a3_branching_asymmetry_vs_required_probe.py",
+      "line": 44,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# 1.1099785827513808. Recorded explicitly because this literal carried no pin"
     },
     {
       "file": "computations/qbeta/c1_chi_magnitude_vs_r_star.py",
@@ -1116,21 +1375,35 @@
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 57,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
+      "line": 66,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "# from_scratch/ scripts is sp.Rational(11099785827513808, 10**16); switching to"
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 59,
+      "line": 68,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0 = sp.Rational(110997858275, 100000000000)            # \u2248 1.10997858275  (= #2240 heat_fmap q_0)"
@@ -1158,35 +1431,63 @@
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 12,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
+      "line": 21,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "proton anchor q_p = 1.10997858275:  empirical c_3 = -2.0693"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 81,
+      "line": 90,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "_Q_PROTON_VALIDATION = mp.mpf(\"1.10997858275\")"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
-      "line": 1,
+      "line": 3,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
-      "line": 56,
+      "line": 4,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+      "line": 12,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+      "line": 65,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = mp.mpf(\"1.10997858275138080759166909561\")"
@@ -1207,14 +1508,28 @@
     },
     {
       "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 94,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
+      "line": 103,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0_PROTON = \"1.10997858275\"     # RETIRED pre-re-pin proton anchor (see top note); kept for this cross-anchor c_3 profile"
@@ -1249,7 +1564,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_c3_reeb_rotation_phase_probe.py",
-      "line": 66,
+      "line": 67,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"proton\": mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")}"
@@ -1263,7 +1578,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
-      "line": 58,
+      "line": 59,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
@@ -1298,7 +1613,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
-      "line": 70,
+      "line": 71,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
@@ -1309,6 +1624,13 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"proton\": mp.mpf(\"1.10997858275138080759166909561076887987449912187357873607281\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_counit_trace_transport_overshoot_probe.py",
+      "line": 45,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
       "file": "computations/qbeta/qbeta_counit_vs_trace_fork_probe.py",
@@ -1330,6 +1652,13 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"proton\": mp.mpf(\"1.10997858275138080759166909561076887987449912187357873607281\"),"
+    },
+    {
+      "file": "computations/qbeta/qbeta_delta_vs_deltaTbeta_discrepancy_probe.py",
+      "line": 83,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0 = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
       "file": "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
@@ -1374,36 +1703,78 @@
       "text": "q0 = sp.Rational(110997858275, 100000000000)  # q_0 \u2248 1.10997859556"
     },
     {
-      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-      "line": 2,
+      "file": "computations/qbeta/qbeta_hecke_symbolic_seminormal_probe.py",
+      "line": 199,
       "kind": "old-q0",
-      "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "classification": "production-hardcode",
+      "text": "qv = _mp.mpf(\"1.1099785827513808\")           # proton pin, per AGENTS.md"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hecke_symbolic_seminormal_probe.py",
+      "line": 294,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "\"uses the proton pin 1.1099785827513808 at 50 dps\")"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-      "line": 130,
+      "line": 4,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
+      "line": 139,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON_STR = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 22,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
+      "line": 31,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "| (3,)     | +1.109978582751  | +1.109978595550  | 1.153e-8  |"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 71,
+      "line": 80,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = 1.1099785827513808075916690956107688798744991218736"
@@ -1430,6 +1801,13 @@
       "text": "Q_PROTON = D(\"1.1099785827513808075916690956107688798744991218736\")"
     },
     {
+      "file": "computations/qbeta/qbeta_ladder_phase_from_wedderburn_weights.py",
+      "line": 88,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "Pin: PROTON / experimental (`q\u2080 \u2248 1.1099785827513808`), 2026-08-07 owner"
+    },
+    {
       "file": "computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py",
       "line": 88,
       "kind": "old-q0",
@@ -1438,21 +1816,35 @@
     },
     {
       "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-      "line": 22,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+      "line": 31,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "q\u2080_proton = 1.10997858275138\u2026      q\u2080_muon = 1.10997859555418\u2026"
     },
     {
       "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
-      "line": 95,
+      "line": 104,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0_PROTON = mpf(\"1.10997858275138080759166909561\")"
@@ -1473,7 +1865,7 @@
     },
     {
       "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
-      "line": 45,
+      "line": 46,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON_50 = mp.mpf(\"1.10997858275138080759166909561\")"
@@ -1487,14 +1879,28 @@
     },
     {
       "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
-      "line": 2,
+      "line": 4,
       "kind": "old-q0",
       "classification": "stale-docstring",
-      "text": "# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275\u2026 occurrences below are the"
+      "text": "#   \u2022 1.10997858275\u2026 is NOT \"the RETIRED pre-2026-05-28 proton anchor\" \u2014 it is"
     },
     {
       "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
-      "line": 97,
+      "line": 5,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "#     the CURRENT proton pin. q_at() returns 1.10997858275138\u2026"
+    },
+    {
+      "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+      "line": 13,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# What is true: the 1.10997858275\u2026 occurrences below ARE the current proton"
+    },
+    {
+      "file": "computations/qbeta/qbeta_symbolic_tbeta_ck4_8_probe.py",
+      "line": 106,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
@@ -1507,11 +1913,39 @@
       "text": "# 1.0e-5 relative \u2014 whereas the canonical q\u2080 = 1.1099785827513808 differs from"
     },
     {
+      "file": "computations/qbeta/qstar_anchor_interval_convention_probe.py",
+      "line": 88,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q_PROTON = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
+    },
+    {
       "file": "computations/qbeta/xi_classical_limit_probe.py",
       "line": 103,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = mpf(\"1.1099785827513808\")"
+    },
+    {
+      "file": "computations/rho_k_h3a_refinement.py",
+      "line": 331,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "if q0 and not q0.startswith(\"1.10997858275\"):"
+    },
+    {
+      "file": "computations/rho_w_crystal_vertex_trace.py",
+      "line": 72,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# q0Value 1.10997858275138080\u2026. Since `q` is hardcoded it also bypassed both"
+    },
+    {
+      "file": "computations/rho_w_crystal_vertex_trace.py",
+      "line": 81,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "Q0_STR_FALLBACK = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
       "file": "computations/sigma_all_evaluator.py",
@@ -1536,7 +1970,14 @@
     },
     {
       "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 351,
+      "line": 222,
+      "kind": "old-q0",
+      "classification": "stale-docstring",
+      "text": "# params.q0 1.10997859555733 -> 1.10997858275138), and AGENTS.md requires the"
+    },
+    {
+      "file": "computations/substrate/witness_constant_staleness.py",
+      "line": 418,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "(\"live q0 ROUNDED up at 11 decimals\", \"1.10997858275\", True),"
@@ -1753,10 +2194,10 @@
     },
     {
       "file": "tools/qou-substrate/python/qou_substrate/witness.py",
-      "line": 248,
+      "line": 278,
       "kind": "old-q0",
       "classification": "legit-muon-xcheck",
-      "text": "_Q0_PREFIXES = ((\"proton\", \"1.10997858275\"), (\"muon\", \"1.10997859555\"))"
+      "text": "_Q0_PREFIXES = ((\"proton\", \"1.10997858275\"), (\"muon\", \"1.10997859564\"))"
     },
     {
       "file": "tools/qou-substrate/tests/test_codata_table.py",
@@ -1767,14 +2208,21 @@
     },
     {
       "file": "tools/qou-substrate/tests/test_q0_anchor.py",
-      "line": 248,
+      "line": 251,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "b.add_data(\"q0\", \"1.1099785827513808075916690956107688798744991218736\")"
     },
     {
       "file": "tools/qou-substrate/tests/test_q0_anchor.py",
-      "line": 318,
+      "line": 265,
+      "kind": "old-q0",
+      "classification": "production-hardcode",
+      "text": "assert got[\"q0Value\"].startswith(\"1.10997858275\")"
+    },
+    {
+      "file": "tools/qou-substrate/tests/test_q0_anchor.py",
+      "line": 329,
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "b.add_data(\"q0\", \"1.1099785827513808075916690956107688798744991218736\")"
@@ -1786,5 +2234,12 @@
       "classification": "production-hardcode",
       "text": "assert C.Q == 1.1099785827513808"
     }
-  ]
+  ],
+  "scriptHash": "bf91c57afb00",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "engine": "python",
+  "computedAt": "2026-08-29T07:02:42.291696+00:00",
+  "durationMs": 0,
+  "q0Anchor": "ambiguous"
 }

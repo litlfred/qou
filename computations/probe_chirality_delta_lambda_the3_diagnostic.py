@@ -43,6 +43,7 @@ import _path_bridge  # noqa: F401,E402 — substrate/ (witness_base) on path
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -119,7 +120,7 @@ def main() -> int:
         ("1(raw)",   lambda lam: mp.mpf(1)),
         ("sgn",      lambda lam: mp.mpf(delta_sign(lam))),
         ("sgn·dim",  lambda lam: mp.mpf(delta_sign(lam) * hook_dim(lam))),
-        ("sgn·dimq", lambda lam: mp.mpf(delta_sign(lam)) * dim_q(lam)),
+        ("sgn·dimq", lambda lam: mp.mpf(delta_sign(lam)) * dim_q(lam, Q0_PROTON)),
     ]
 
     print(f"target  B_T − B_³He = {mp.nstr(target_mev, 6)} MeV "

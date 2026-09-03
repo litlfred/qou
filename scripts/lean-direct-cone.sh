@@ -14,6 +14,13 @@
 #
 # Options are forwarded to scripts/lean_cone_build.py:
 #   --all           build every QOU module (whole-corpus survey)
+#   -B/--force      recompile even modules whose olean looks fresh. A manual
+#                   override, not a workaround: freshness here is
+#                   scripts/lean_freshness.py, the SAME rule lean-axiom-guard.py
+#                   gates on, so the two can no longer disagree. Until 2026-08-26
+#                   this script compared MTIME and the guard COMMIT time, which
+#                   deadlocked the documented compose whenever you built before
+#                   committing. Bean qou-5v24.
 #   -k/--keep-going continue past a red module; its dependents are recorded
 #                   `blocked` (NOT compiled), which separates genuine errors
 #                   from missing-olean cascades

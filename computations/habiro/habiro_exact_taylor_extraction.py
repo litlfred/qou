@@ -32,6 +32,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from canonical_trm_reference import tr_m_proton  # noqa: E402
 
 
 def main():
@@ -156,8 +157,17 @@ def main():
 
     # Habiro sum (numerical)
     hab = mp.mpf("136.0712063634817616514048508169837773395")
-    tr_M_val = mp.mpf("1.065306228613167059365284546431372557650")
-
+    # CONVENTION FIX (2026-08-30, bean qou-46ab). This read
+    #     tr_M_val = mp.mpf("1.0653062286131670593652845…")
+    # which is CONVENTION C — proved to 50 digits by
+    # audits/he4_witness_convention_attribution_probe.py — while D has
+    # been canonical since 2026-08-15. It is 7.55%% off, and it is
+    # MULTIPLIED IN below rather than compared against, so the error
+    # propagated into the result rather than showing up as a mismatch.
+    # Read at the running pin instead of re-hardcoding a D literal:
+    # a literal is stale the moment the anchor moves again, and the
+    # previous regeneration sweep provably could not fix one.
+    tr_M_val = tr_m_proton()
     def q_factorial_mp(n, q):
         result = mp.mpf(1)
         for k in range(1, n+1):

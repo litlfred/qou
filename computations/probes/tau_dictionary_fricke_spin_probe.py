@@ -364,27 +364,44 @@ def main():
         [0, 0, 0, 0, 0, -1, 0, 0],
         [0, 0, 0, 0, 0, 0, -1, 0],
     ])
-    assert M ** 5 == sp.eye(8), "printed M is not order 5"
+    # These twelve checks used to be bare `assert`s.  A bare assert ABORTS, so a
+    # drift in the printed BN12/BDH22 data left NOTHING in the witness — while
+    # the `kq_exactly_5_torsion` assertion that reached the witness was a
+    # hardcoded string compared against itself and passed regardless.  Recorded
+    # instead, and counted by that assertion (bean qou-26f2).
+    spin_checks: list[tuple[str, bool]] = []
+
+    def _spin_check(name: str, ok) -> bool:
+        ok = bool(ok)
+        spin_checks.append((name, ok))
+        if not ok:
+            print(f"  ✗ spin-data check FAILED: {name}")
+        return ok
+
+    _spin_check("M_is_order_5", M ** 5 == sp.eye(8))
     J = sp.zeros(8, 8)
     for i in range(4):
         J[i, i + 4] = 1
         J[i + 4, i] = -1
-    assert M * J * M.T == J and M.T * J * M == J, "printed M is not symplectic"
+    _spin_check("M_is_symplectic", M * J * M.T == J and M.T * J * M == J)
     from sympy.matrices.normalforms import smith_normal_form
     snf = smith_normal_form(M - sp.eye(8), domain=sp.ZZ)
     snf_diag = [snf[i, i] for i in range(8)]
-    assert snf_diag == [1, 1, 1, 1, 1, 1, 5, 5], f"SNF drifted: {snf_diag}"
+    _spin_check("snf_M_minus_Id_is_diag_1x6_5_5",
+                snf_diag == [1, 1, 1, 1, 1, 1, 5, 5])
     print(f"  M⁵ = Id, M ∈ Sp(8,ℤ), SNF(M − Id) = Diag{tuple(snf_diag)}  ✓ (BN12 §5.3)")
 
     # (3b) RR92 Gram (BN12 (1.1) / BDH22): det 125, spectrum {5,5,5,1},
     # 5·M_RR⁻¹ integral, and v = (1,−2,−2,1) a 5-eigenvector.
     MRR = sp.Matrix([[4, 1, -1, 1], [1, 4, 1, -1], [-1, 1, 4, 1], [1, -1, 1, 4]])
-    assert MRR.det() == 125
-    assert MRR.eigenvals() == {sp.Integer(5): 3, sp.Integer(1): 1}
+    _spin_check("MRR_det_is_125", MRR.det() == 125)
+    _spin_check("MRR_spectrum_is_5_5_5_1",
+                MRR.eigenvals() == {sp.Integer(5): 3, sp.Integer(1): 1})
     Mprime = 5 * MRR.inv()
-    assert all(x.is_Integer for x in Mprime), "5·M_RR⁻¹ not integral"
+    _spin_check("five_MRR_inverse_is_integral",
+                all(x.is_Integer for x in Mprime))
     v = sp.Matrix([1, -2, -2, 1])
-    assert MRR * v == 5 * v, "(1,−2,−2,1) is not a 5-eigenvector of M_RR"
+    _spin_check("v_1m2m21_is_5_eigenvector_of_MRR", MRR * v == 5 * v)
     print("  M_RR: det 125, spec {5,5,5,1}, 5·M_RR⁻¹ ∈ M₄(ℤ), M_RR·(1,−2,−2,1) = 5·(1,−2,−2,1)  ✓")
 
     # (3c) K_Q = (1/10)(3,2,−2,−3) + Im(τ0)(1,−2,−2,1)i (BN12 Thm 3 = BDH22
@@ -394,10 +411,13 @@ def main():
     tau0_sym = sp.Rational(-1, 2) + sp.I * y0
     K = sp.Rational(1, 10) * sp.Matrix([3, 2, -2, -3]) + sp.I * y0 * v
     n_vec = sp.expand(5 * K - tau0_sym * (MRR * v))
-    assert list(n_vec) == [4, -4, -6, 1], f"5K_Q lattice part drifted: {list(n_vec)}"
+    _spin_check("5K_lattice_part_is_4_m4_m6_1", list(n_vec) == [4, -4, -6, 1])
+    # THE sharpening: k·K_Q ∉ Λ for k = 1..4, so the order is exactly 5 and not
+    # a proper divisor of BN12 Lemma 1's 2N = 10 bound.
     for k in range(1, 5):
         mk = k * MRR.inv() * v  # unique solution of M_RR m = k·v
-        assert not all(sp.Rational(x).q == 1 for x in mk), f"K_Q order divides {k}?"
+        _spin_check(f"kK_not_in_lattice_k{k}",
+                    not all(sp.Rational(x).q == 1 for x in mk))
     print("  5·K_Q = (4,−4,−6,1) + τ_B·(1,−2,−2,1) exactly (symbolic in Im τ0) ⇒ K_Q is EXACTLY 5-torsion  ✓")
 
     # (3d) BN12's intermediate 2K_Q (p.19) ≡ 2×Thm 3 mod the lattice, with
@@ -405,10 +425,12 @@ def main():
     twoK_int = sp.Rational(1, 5) * sp.Matrix([-12, -3, 3, -3]) + tau0_sym * sp.Matrix([-6, -6, 3, 0])
     diff = sp.expand(twoK_int - 2 * K)
     m_c = MRR.solve(sp.Matrix([-8, -2, 7, -2]))
-    assert all(sp.Rational(x).q == 1 for x in m_c), "consistency m not integral"
+    _spin_check("consistency_m_is_integral",
+                all(sp.Rational(x).q == 1 for x in m_c))
     n_c = sp.expand(diff - tau0_sym * (MRR * m_c))
-    assert all(x.is_Integer for x in n_c), f"consistency n not integral: {list(n_c)}"
-    assert list(m_c) == [-1, -1, 2, -1] and list(n_c) == [-4, 1, 3, -1]
+    _spin_check("consistency_n_is_integral", all(x.is_Integer for x in n_c))
+    _spin_check("consistency_m_and_n_values",
+                list(m_c) == [-1, -1, 2, -1] and list(n_c) == [-4, 1, 3, -1])
     print("  intermediate 2K_Q ≡ 2·K_Q(Thm 3) mod Λ with n = (−4,1,3,−1), m = (−1,−1,2,−1)  ✓")
 
     # (3e) the two published τ0 prints: BDH22's corrected value passes the
@@ -524,7 +546,7 @@ def main():
     )
     wb.add_assertion(
         "cusp_form_matches_eta_product_both_pins",
-        computed=float(max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results)),
+        computed=max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results),
         expected=0.0,
         tolerance=1e-60,
         source="t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at "
@@ -533,14 +555,14 @@ def main():
     )
     wb.add_assertion(
         "fricke_fixed_point_exact_value",
-        computed=float(fix_dev),
+        computed=fix_dev,
         expected=0.0,
         tolerance=1e-40,
         source="|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125).",
     )
     wb.add_assertion(
         "w5_circle_family_excluded",
-        computed=float(circle_dev),
+        computed=circle_dev,
         expected=0.0,
         tolerance=1e-40,
         source="||t5|^2 - 125| on the bar<->Fricke-equivariant circle family "
@@ -556,17 +578,35 @@ def main():
         source="10 structure-enumerated candidates x 2 pins: every verdict FAIL "
                "(honest outcome; no PASS found; nothing proposed).",
     )
+    wb.add_data("spin_data_checks",
+                {name: ok for name, ok in spin_checks})
+    wb.add_data("spin_data_checks_failed",
+                [name for name, ok in spin_checks if not ok])
     wb.add_assertion(
         "kq_exactly_5_torsion",
-        computed="5K = (4,-4,-6,1) + tau_B*(1,-2,-2,1); k=1..4 non-lattice",
-        expected="5K = (4,-4,-6,1) + tau_B*(1,-2,-2,1); k=1..4 non-lattice",
-        tolerance=None,
-        source="Exact sympy, symbolic in Im(tau0): K_Q (BN12 Thm 3) is exactly "
-               "5-torsion, sharpening Lemma 1's 2N = 10 bound; SNF(M-Id) = "
-               "Diag(1,...,1,5,5) re-derived from printed M (order 5, Sp(8,Z)).",
+        computed=sum(1 for _, ok in spin_checks if ok),
+        expected=len(spin_checks),
+        tolerance=0,
+        unit="checks",
+        source=(
+            f"All {len(spin_checks)} exact-sympy checks on the printed "
+            "BN12/BDH22 spin data hold: M order 5 and symplectic, "
+            "SNF(M-Id) = Diag(1,...,1,5,5), M_RR det 125 with spectrum "
+            "{5,5,5,1} and 5*M_RR^-1 integral, v = (1,-2,-2,1) a 5-eigenvector, "
+            "5K_Q = (4,-4,-6,1) + tau_B*v, and k*K_Q NOT in the lattice for "
+            "k = 1,2,3,4 -- which is the sharpening of BN12 Lemma 1's 2N = 10 "
+            "bound to EXACTLY 5-torsion. Each check's outcome is in "
+            "`spin_data_checks`. These were 12 bare `assert` statements (one "
+            "looped over k = 1..4, hence 15 checks), which ABORT and leave "
+            "nothing in the witness; the assertion here was a hardcoded string "
+            "compared against itself and passed regardless (bean qou-26f2)."
+        ),
     )
     wb.save()
-    print("\nwitness saved; all assertions passed.")
+    n_failed = sum(1 for a in wb.assertions if not a.passed)
+    print("\nwitness saved; "
+          + ("all assertions passed." if n_failed == 0
+             else f"{n_failed} ASSERTION(S) FAILED."))
 
 
 if __name__ == "__main__":

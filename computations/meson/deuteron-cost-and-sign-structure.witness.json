@@ -1,0 +1,132 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T14:04:58.039038+00:00",
+  "commitSha": "0488397295e20f7ddd7979a53512f3fbcff8a40d",
+  "assertions": [
+    {
+      "name": "n_target_equals_sum_of_cost",
+      "computed": "8.0e-17",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-15",
+      "unit": "dimensionless",
+      "source": "tr_M(beta_D) = sum_l y_l chi^l = sum_l t_l"
+    },
+    {
+      "name": "control_committed_optimum_is_min_t_times_n_target",
+      "computed": "3.180817865205758e-18",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "unit": "dimensionless",
+      "source": "deuteron-real-sdp.witness.json support_restricted.lp"
+    },
+    {
+      "name": "uniform_rescale_factor_is_sqrt_of_shortfall",
+      "computed": "3.9026538415606595848",
+      "expected": "3.9026538",
+      "passed": true,
+      "tolerance": "1e-5",
+      "unit": "ratio",
+      "source": "ceiling = max(t)*sum(t) is quadratic under t -> c*t"
+    },
+    {
+      "name": "concentrated_cost_still_short",
+      "computed": "6.7243369258821408703",
+      "expected": "6.7243369",
+      "passed": true,
+      "tolerance": "1e-5",
+      "unit": "ratio",
+      "source": "ceiling <= (sum t)^2, attained by concentrating on one block"
+    },
+    {
+      "name": "required_trace_growth_factor",
+      "computed": "2.5931326471821951515",
+      "expected": "2.5931326",
+      "passed": true,
+      "tolerance": "1e-5",
+      "unit": "ratio",
+      "source": "sum(t) >= sqrt(AME) even for a concentrated cost"
+    },
+    {
+      "name": "no_negative_character_in_support",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "chi^lambda(beta_D) over the convention-D supported blocks"
+    },
+    {
+      "name": "control_negative_characters_exist_in_kernel",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "chi^lambda(beta_D) over the zero-weight blocks"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "deuteron-cost-and-sign-structure",
+  "scriptFile": "deuteron_cost_and_sign_structure_probe.py",
+  "scriptHash": "c358987c7b56",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/deuteron_cost_and_sign_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/deuteron_cost_and_sign_structure_probe.py"
+  },
+  "description": "Quantifies the two escapes left after the level sweep. Corrects the cost figure: n_target = sum(t), so the ceiling is max(t)*sum(t), quadratic in the cost -- a uniform rescale needs 3.903x, not 15.23x. Even a perfectly concentrated cost at the current trace falls 6.72x short, so the constraint is on tr_M(beta_D) itself (2.59x larger). And every negative character sits in the convention-D kernel: the row cap zeroes exactly the blocks carrying the sign structure.",
+  "data": {
+    "n_target": "0.5751722457697739",
+    "sum_t": "0.57517224576977382",
+    "reachable_interval": [
+      "0.0369646802828062268191821347942",
+      "0.146057964936923681323745648145"
+    ],
+    "concentrated_ceiling": "0.330823112303845097975803533957",
+    "uniform_rescale_factor": "3.90265384156065958479590394108",
+    "required_trace_growth": "2.59313264718219515145019859802",
+    "chi_by_sector": {
+      "support": {
+        "(6,)": "1.5598701995641606",
+        "(5, 1)": "3.216317342235895",
+        "(4, 2)": "1.674395262034259",
+        "(3, 3)": "4.2494020229176686"
+      },
+      "kernel": {
+        "(4, 1, 1)": "-0.4698058863776971",
+        "(3, 2, 1)": "-1.9722724461515564",
+        "(3, 1, 1, 1)": "-0.4901256523230281",
+        "(2, 2, 2)": "-3.497294406512962",
+        "(2, 2, 1, 1)": "-0.8196549485044775",
+        "(2, 1, 1, 1, 1)": "2.155255337448731",
+        "(1, 1, 1, 1, 1, 1)": "-0.6768766834329429"
+      }
+    }
+  },
+  "caveats": [
+    "Scope (a). The sign observation locates WHERE the negative characters sit; it is not an argument that a program should occupy them, and it does not justify signed occupations. Nothing here claims a cost with a larger trace exists or is derivable, and nothing computes a binding contribution.",
+    "Supersedes the '15.23x on max(t)' figure reported earlier for the cost escape. That held n_target fixed, which is impossible since n_target = sum(t). The correct uniform-rescale factor is 3.903x, and reshaping at fixed total cannot close the gap at all."
+  ]
+}

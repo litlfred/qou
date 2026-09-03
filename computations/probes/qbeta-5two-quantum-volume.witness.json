@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:31:19.950066+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:27:50.623258+00:00",
+  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
   "assertions": [
     {
       "name": "vol_5_2_validates",
-      "computed": 4.947704352032726e-50,
+      "computed": "4.947704352032725880255725006372517052445014682389514313366308978014736e-50",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 (Hikami eq 4.12 / SnapPy) — validates the NZ saddle"
     },
     {
@@ -17,15 +17,15 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Re 𝔙(5₂) ≠ 0 (chiral, CS≠0) — the bar-odd/CS home 4₁ (amphichiral, CS=0) structurally lacks"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "qbeta-5two-quantum-volume",
   "scriptFile": "qbeta_5two_quantum_volume_probe.py",
-  "scriptHash": "b55d2fe9e347",
+  "scriptHash": "2182fad80eae",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

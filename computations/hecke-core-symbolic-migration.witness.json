@@ -158,7 +158,7 @@
       "computed": 2.7755575615628914e-17,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "test_summary.max_nf_basis_abs_delta"
     },
     {
@@ -166,7 +166,7 @@
       "computed": 2.220446049250313e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "test_summary.markov_trace_abs_delta"
     },
     {
@@ -174,7 +174,7 @@
       "computed": 2.842170943040401e-14,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-13,
+      "tolerance": "1e-13",
       "source": "test_summary.alpha_em_inv_abs_delta"
     },
     {
@@ -182,7 +182,7 @@
       "computed": 137.0359444240373,
       "expected": 137.035999084,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "CODATA 2018 inverse fine-structure constant"
     }
   ],

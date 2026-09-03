@@ -86,10 +86,17 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_core import h as H_BAKED_F64  # noqa: E402 — template classifier only
 from q_parameter import Q_50_DIGIT_STR as Q_RUNTIME_STR  # noqa: E402 — drift measurement only
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -102,6 +109,19 @@ B_AME = {
     "T": AME_B_TRITIUM_MEV_VALIDATION,
     "3He": mp.mpf("7.7180428"),
     "4He": mp.mpf("28.295674"),
+}
+
+# Second route to the same four binding energies. `codata_constants`
+# rebuilds each from the AME atomic-mass-excess table as
+# Z·m(¹H) + N·m_n − m(atom); the literals above are 8-9 significant figures
+# typed into this file from an earlier reading of the same table. Neither
+# consults the other, so a typo or a stale edition in the table above shows
+# up as a disagreement rather than as a slightly wrong binding ratio.
+B_AME_FROM_CODATA = {
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
+    "T": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 ATOMS = ("D", "T", "3He", "4He")
@@ -231,7 +251,7 @@ def vanishing_threshold() -> mp.mpf:
 
 
 def uniform_weights(shapes, dim_q, qfact_n) -> dict:
-    return {s: dim_q(s) ** 2 / qfact_n for s in shapes}
+    return {s: dim_q(s, Q0_PROTON) ** 2 / qfact_n for s in shapes}
 
 
 def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
@@ -249,12 +269,12 @@ def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
         if k not in depths_to_redistribute:
             continue
         s_uniform = sum(w[s] for s in stratum)
-        z_norm = sum(dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
+        z_norm = sum(dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
                      for s in stratum)
         if z_norm < eps:
             continue  # uniform fallback
         for s in stratum:
-            w[s] = (dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
+            w[s] = (dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
                     * s_uniform / z_norm)
     return w
 
@@ -265,7 +285,7 @@ def phi_k(chi_map: dict, k: int, weights: dict, dim_q) -> mp.mpf:
     for s, chi in chi_map.items():
         if len(s) - 1 != k:
             continue
-        magnitude = mp.fabs(chi) * dim_q(s)
+        magnitude = mp.fabs(chi) * dim_q(s, Q0_PROTON)
         if magnitude < eps:
             continue
         total += weights[s] * mp.log(magnitude)
@@ -554,19 +574,68 @@ def main() -> int:
         source="FR redistribution preserves each depth stratum's "
                "uniform-Plancherel total (all atoms, all variants)",
     )
-    wb.add_assertion(
-        "data_loaded",
-        computed=float(B_AME["D"]), expected=2.22456607,
-        tolerance=1e-10, unit="B(D) MeV",
-        source="AME 2020 deuteron binding",
+    # `data_loaded` was computed=float(B_AME["D"]), expected=2.22456607 —
+    # the module literal against a second copy of itself typed 470 lines
+    # away, i.e. x == x with a cast. It is replaced by the same four
+    # bindings rebuilt from the AME mass-excess table in codata_constants.
+    b_ame_rel_dev = max(
+        mp.fabs(B_AME[a] - B_AME_FROM_CODATA[a]) / B_AME_FROM_CODATA[a]
+        for a in ATOMS
     )
+    wb.add_data("b_ame_cross_check", {
+        a: {
+            "table_literal_MeV": mp.nstr(B_AME[a], 12),
+            "from_codata_mass_excess_MeV": mp.nstr(B_AME_FROM_CODATA[a], 12),
+            "rel_dev": mp.nstr(
+                mp.fabs(B_AME[a] - B_AME_FROM_CODATA[a]) / B_AME_FROM_CODATA[a], 6),
+        }
+        for a in ATOMS
+    })
     wb.add_assertion(
-        "fr_borromean_variance_recorded",
-        computed=float(best_bor), expected=float(best_bor),
-        tolerance=1e-12,
-        source=f"tier={tier}: best Borromean-FR max/min variance vs "
-               f"uniform {base_mom:.4f}× and 4_1-FR(k3) {k41_k3:.4f}× "
-               f"at witness q₀ (self-consistent run)",
+        "b_ame_table_matches_codata_mass_excess_bindings",
+        computed=mp.nstr(b_ame_rel_dev, 12), expected="0",
+        tolerance="1e-6", unit="relative",
+        source="The B_AME literals in this module vs the same four "
+               "bindings rebuilt by codata_constants from the AME "
+               "atomic-mass-excess table (Z·m(¹H) + N·m_n − m(atom)). "
+               "Every ratio_pred_over_AME, and therefore the max/min "
+               "variance the verdict is read off, divides by these.",
+    )
+    # `fr_borromean_variance_recorded` was computed=float(best_bor),
+    # expected=float(best_bor): a measurement compared with itself, passing
+    # by construction at any tier. There is no second route to a max/min
+    # variance measured from this run's own per-atom ratios, so it is
+    # recorded rather than asserted — which is what it always was.
+    wb.add_data("fr_borromean_variance_recorded", {
+        "best_borromean_max_over_min": float(best_bor),
+        "uniform_baseline_max_over_min": float(base_mom),
+        "fr_4_1_k3_max_over_min": float(k41_k3),
+        "tier": tier,
+        "recorded_not_gated": True,
+        "has_independent_expected_value": False,
+    })
+    wb.add_caveat(
+        "SUBJECT HAS VANISHED (recorded, not repaired): "
+        "`committed_atomchi_is_proton_q` requires BOTH dev_at_runtime < 1e-45 "
+        "AND dev_at_witness_q0 > 1e-10 — it asserts that the committed "
+        "atom-chi inputs sit at the runtime proton q and visibly DRIFT from "
+        "the witness q₀. Since q₀ was repinned the two anchors agree to "
+        f"{mp.nstr(q_drift, 4)} relative, so dev_at_witness_q0 is "
+        f"{mp.nstr(dev_at_witness, 4)} and the second clause can no longer "
+        "be satisfied by any input. The assertion now reports 0 vs 1 — a "
+        "genuine FAIL, not a tautology: the Prereq-1 finding it encodes is "
+        "obsolete rather than violated, and retiring it is a content "
+        "decision, not a drain."
+    )
+    wb.add_caveat(
+        "STALE REFERENCE LITERAL (recorded, not repaired): "
+        "K3_TEST_BEST_4_1_VARIANCE = 1.55 does not match the witness it "
+        "names — fr-pullback-k3-test.witness.json records "
+        "best_max_over_min = 1.5014667307010572 for 4_1 (3.2% apart). "
+        "K3_TEST_BASELINE_VARIANCE = 1.82 does match that witness's "
+        "baseline_variance_no_fr. Both are declared 'context only, not "
+        "assertions' and are printed in the verdict string, so the wrong "
+        "one is quoted to a reader without ever being compared."
     )
     wb.save()
     _log("witness saved.")

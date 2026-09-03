@@ -1,0 +1,215 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9212088v1",
+ "source": {
+  "file": "9212088v1.pdf",
+  "sha256": "ecb2c02ec6fe11bdd92808d4ddfdd5122f5e33e3e328cdb15ddd1ddbdc83129c",
+  "bytes": 148346,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9212088",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "14 Dec 1992"
+  },
+  "doi": null,
+  "title": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1",
+  "authors_raw": "E.V. Shuryak and J.J.M. Verbaarschot",
+  "title_lines": [
+   "Random matrix theory and spectral sum rules for the Dirac operator in QCD1"
+  ],
+  "abstract": "We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga. This equivalence holds for an arbitrary number of \ufb02avors and any value of the QCD vacuum angle. In this model, moments of the inverse squares of the eigenvalues of the Dirac operator obey sum rules, which we conjecture to be universal. In other words, the validity of the sum rules depends only on the symmetries of the theory but not on its details. To illustrate this point we show that the sum rules hold for an interacting liquid of instantons. The physical interpretation is that the way the thermodynamic limit of the spectral density near zero is approached is universal. However, its value, i.e. the chiral condensate, is not. SUNY-NTG-92/45 December 1992 1Dedicated to Hans Weidenm\u00a8uller\u2019s 60th birthday.",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9212088v1  14 Dec 1992",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20180716111330-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Random matrix model",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Calculation of the partition function",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Sum rules for one and two \ufb02avors",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Sum rules in the instanton liquid",
+   "page": 12,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Discussion and conclusions",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 14,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(\u03c3 \u2212i\u00af\u03c3 \u2212m)",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 16,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 875,
+   "n_words": 147
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2567,
+   "n_words": 424
+  },
+  {
+   "id": "sec-002-2-random-matrix-model",
+   "number": "2",
+   "title": "Random matrix model",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 5439,
+   "n_words": 1016
+  },
+  {
+   "id": "sec-003-3-calculation-of-the-partition-function",
+   "number": "3",
+   "title": "Calculation of the partition function",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5940,
+   "n_words": 1163
+  },
+  {
+   "id": "sec-004-4-sum-rules-for-one-and-two-\ufb02avors",
+   "number": "4",
+   "title": "Sum rules for one and two \ufb02avors",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 5449,
+   "n_words": 1053
+  },
+  {
+   "id": "sec-005-5-sum-rules-in-the-instanton-liquid",
+   "number": "5",
+   "title": "Sum rules in the instanton liquid",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1893,
+   "n_words": 336
+  },
+  {
+   "id": "sec-006-6-discussion-and-conclusions",
+   "number": "6",
+   "title": "Discussion and conclusions",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2238,
+   "n_words": 365
+  },
+  {
+   "id": "sec-007-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 501,
+   "n_words": 90
+  },
+  {
+   "id": "sec-008-2-\u03c3-i\u03c3-m",
+   "number": "2",
+   "title": "(\u03c3 \u2212i\u00af\u03c3 \u2212m)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 1226,
+   "n_words": 250
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2195,
+   "n_words": 388
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 28323
+ }
+}

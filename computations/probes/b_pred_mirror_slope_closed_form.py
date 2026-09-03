@@ -69,6 +69,14 @@ from hecke_core import (  # noqa: E402
     _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 # Mirror pairs (Z, N) with Z < N, matching the IMME triplet (T₃=±1
 # members) and quartet (inner ±1/2 members) witnesses.
 MIRROR_PAIRS = [(2, 4), (3, 5), (4, 5), (4, 6), (5, 7)]
@@ -94,7 +102,7 @@ def main() -> int:
     interface_only = mp.log(z / (z - h)) / lnq / 4
 
     def eps(Z, N):
-        return z**(Z - 1) * (z - h / 2) * (z - h)**(N - 1)
+        return z**(Z - 1) * (z + _pn_d(h)) * (z - h)**(N - 1)
 
     print(f"tau_p = {mp.nstr(tau_p, 15)}")
     print(f"tau_n = {mp.nstr(tau_n, 15)}")
@@ -148,13 +156,13 @@ def main() -> int:
                "vanishing eps correction, not the plateau")
     b.add_assertion(
         "closed_form_matches_measured_slopes",
-        computed=float(max_dev), expected=0.0, tolerance=1e-3,
+        computed=max_dev, expected=0.0, tolerance=1e-3,
         unit="max |closed − measured| over A=6..12",
         source="kappa-writhe-side-decomposition-probe.witness.json "
                "(measured values rounded to 3-4 dp)")
     b.add_assertion(
         "plateau_equals_pn_trace_ratio",
-        computed=float(plateau), expected=1.37181, tolerance=1e-4,
+        computed=plateau, expected=1.37181, tolerance=1e-4,
         unit="log_q0(tau_p/tau_n)",
         source="tr_M_via_wenzl_bridge_mpfr on canonical H_3 words at 50 dps")
     b.save()

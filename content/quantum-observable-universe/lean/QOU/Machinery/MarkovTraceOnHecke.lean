@@ -241,22 +241,38 @@ The `H3` realization above is `n = 3`-specific (the `Fin 6` NF basis
 general `n` — the `fun n r => ℏ_rⁿ` family — which requires two ingredients
 this file does not yet carry:
 
-1. **The H₄(q) NF basis + `mulNF` table.** The `Fin 6` basis and the σ₀/σ₁
-   action tables (`mulσ₀`, `mulσ₁`, `mulNF`) here were pinned by the symbolic
-   preflight in `computations/.../gram.py` (`hm`, `TR_M`). The H₄ analogue
-   (a larger NF basis, order fixed by the Gröbner normal forms) must come from
-   the *same* verified source — do **not** hand-write the table; generate it
-   from `gram.py`/`pyhecke` and cross-check `tr_M(u·v) = tr_M(v·u)` over
-   `ℚ(z,h)` before formalizing, exactly as the H₃ table was verified.
-   **Reducer caveat (verified 2026-07-13).** `gram.py`'s `_reduce_nf` is
-   H₃-specific: it applies only the Hecke-square and *adjacent* braid moves,
-   which suffice for H₃ (whose two generators σ₀,σ₁ are adjacent). H₄ also
-   needs the non-adjacent commuting relation `σ₀σ₂ = σ₂σ₀`, and even
-   Hecke + commute + adjacent-braid is **not confluent** — a BFS over that
-   rule set yields 60+ irreducible words, not the 24 = 4! GB normal forms.
-   Generate the H₄ table with the proper confluent reducer (hecke-engine's
-   `gb_nf_reducer.rs`, Rust), not a naive local-rewriting Python
-   reimplementation.
+1. **The H₄(q) NF basis + `mulNF` table — DONE (verified 2026-08-22).** This
+   item is **no longer open**, and the paragraph that followed it described the
+   work as still to do for roughly a month after it landed. What exists now:
+
+   - `computations/markov/hecke-regular-nf-h4.witness.json` — "H_n(q)
+     regular-rep **GB-NF** generator actions + Ocneanu/Markov trace; H3
+     validation + **H4 emission for the Lean H4 Markov-trace formalization**"
+     (bean `qou-1jrr`). Generated from the confluent Gröbner normal forms, as
+     this block required — not hand-written, not a local-rewriting Python
+     reimplementation.
+   - `QOU.Machinery.H4Cyclicity` — the `Fin 24` subscript basis (24 = 4! GB
+     normal forms, exactly the count this block predicts) with the
+     `e₄_eq_mul_*` factorizations. **Sorry-free**, as are
+     `H4GeneratorAction`, `HeckeH4RepDecomp`, `BilinearTraceRepBasis` and
+     `BilinearTraceCyclicity`: zero real `sorry` across the whole cluster.
+   - `QOU.Machinery.MarkovTraceH4` — `trM_cyclic` for `n = 4`, off
+     `gram_symm`'s 576 computed entries, reduced through
+     `BilinearTraceCyclicity.cyclic_of_gram_symm`.
+
+   The reducer caveat this block recorded was correct and was respected: the
+   H₄ table does come from the GB route, not from Hecke + commute +
+   adjacent-braid local rewriting (which is non-confluent and yields 60+
+   irreducibles rather than 24).
+   **Reducer caveat, retained for anyone extending to H₅ (verified
+   2026-07-13).** `gram.py`'s `_reduce_nf` is H₃-specific: it applies only the
+   Hecke-square and *adjacent* braid moves, which suffice for H₃ (whose two
+   generators σ₀,σ₁ are adjacent). H₄ also needs the non-adjacent commuting
+   relation `σ₀σ₂ = σ₂σ₀`, and even Hecke + commute + adjacent-braid is **not
+   confluent** — a BFS over that rule set yields 60+ irreducible words, not the
+   24 = 4! GB normal forms. Use the confluent reducer (hecke-engine's
+   `gb_nf_reducer.rs`, Rust, permutation/Coxeter-canonical and general-`n`),
+   not a naive local-rewriting Python reimplementation.
 
 2. **The `Ind_{H₃}^{H₄}` Markov stabilization.** The general-`n` trace is built
    from the H₃ trace by the Markov induction/stabilization the (M3) law
@@ -266,7 +282,29 @@ this file does not yet carry:
    constraints (over-determination test, float64) by
    `computations/probes/markov_reduction_h3_to_h4_verify.py`, via the same
    seminormal machinery as `alpha_k_jones_markov_h4.py`. That is evidence for
-   ingredient (2); the Lean-grade proof still awaits ingredient (1).
+   ingredient (2); the Lean-grade proof still awaits a symbolic-exact
+   cyclicity argument over `ℚ(z,h)` (ingredient (1)'s table is now in hand —
+   see item 1 above).
+
+   **Read that citation with three caveats (measured 2026-08-22, bean
+   `qou-ze9n`).** The cited probe (a) is written in convention **C**,
+   `z = 1/(√q + 1/√q) = 0.4993…`, which the 2026-08-15 ruling excised in
+   favour of D's `q³/(q²+1) = 0.6127…`, a 23 % difference; (b) computes in
+   float64 throughout, which was never necessary — the seminormal machinery
+   accepts and returns `mpf`; and (c) **did not run as committed**, its
+   bootstrap omitting `qou-substrate` and pointing at the `pyhecke` package
+   directory rather than its parent. (c) is fixed; (a) and (b) are left in
+   place as the historical record of what this docstring cites.
+
+   **The conclusion survives all three**, which is why item 2 still stands.
+   `computations/probes/markov_reduction_h3_to_h4_conventions.py` re-runs the
+   same over-determination test at 50 dps under **both** conventions and finds
+   the reduction holds either way, worst residuals ~1e-51 against a 1e-30
+   tolerance — agreement to the limit of the arithmetic used, not an
+   exactness claim. The reason is structural: `z` is an *input* to the weight
+   solve, not an output, so the Ocneanu trace is a one-parameter family and
+   the Markov law is insensitive to which member is chosen. Prefer the
+   companion probe for new work.
 
 Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
 Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a

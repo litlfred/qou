@@ -74,6 +74,14 @@ import a_operator_categorical as aoa  # noqa: E402
 from young_seminormal import standard_tableaux, _boxes, _content_by_index  # noqa: E402
 from lr_coefficients import partitions_of  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 partition_dim = aoa.partition_dim
 
 
@@ -332,8 +340,8 @@ def _self_test() -> int:
            for nu in partitions_of(3)}
     worst = mp.mpf(0)
     for lam in [(10, 2), (11, 1), (7, 5)]:
-        blocks = interface_blocks(lam, 9, 3, q_str, -h / 2, 50)
-        full = (fac(inner) + [(mp.mpf(1), -h / 2, 8)]
+        blocks = interface_blocks(lam, 9, 3, q_str, _pn_d(h), 50)
+        full = (fac(inner) + [(mp.mpf(1), _pn_d(h), 8)]
                 + [(c, d, g + 9) for (c, d, g) in fac(block)])
         lhs = chi_young(lam, full, q)
         rhs = sum((aoa._trace(info["A"] * ga_kron(

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T14:54:13Z
-updated_at: 2026-08-23T21:30:35Z
+updated_at: 2026-08-28T15:39:20Z
 ---
 
 
@@ -314,3 +314,92 @@ is unchanged and still real; only the name and line number were wrong.
 3. `computations/confinement-operator-selection.py:195` — `_pg_safe_inverse`.
 4. Open: the symbolic `det G_TL(n)` for n ≥ 4, which is what would upgrade
    those to the n=3 scope-(b) statement.
+
+
+## PR #5894, 2026-08-28: det G_TL(n) at n=4,5 — the scope upgrade this bean listed as open
+
+Branch `claude/tl-quotient-gram-2026-08-28`. Additive; migrates nothing.
+
+### Closes the residual named at the end of the #5592 entry
+
+    "Open: the symbolic det G_TL(n) for n >= 4, which is what would
+     upgrade those to the n=3 scope-(b) statement."
+
+#5592 could only claim non-singular OVER Q(q) at n >= 4 — it evaluated
+rank at one rational point, which shows the determinant is not
+identically zero and nothing more. Nothing there excluded a real q > 0
+at which the n=4 or n=5 form degenerates.
+
+**The abandoned symbolic route was an ARITHMETIC-DOMAIN problem, not a
+hard one.** This bean records the attempt as killed at > 10 min on
+sympy's unsimplified rational-function sums. Measured: the entries'
+common denominator is exactly `(q^2+1)^(n-1)` (per n, leg 1 — measured,
+not assumed), so clearing it gives a matrix over **Z[q]**, where
+fraction-free Bareiss runs in **0.9 s at n=4 and 74 s at n=5**.
+
+    n=3   -(q^4+1)(q^2-q+1)^4(q^2+q+1)^4 / (q^2+1)^10
+    n=4   +(q^4+1)^6 (q^2-q+1)^13 (q^2+q+1)^13 Phi_10 Phi_5 / (q^2+1)^42
+    n=5   +(q^4+1)^26 (q^2-q+1)^41 (q^2+q+1)^41 Phi_12 Phi_10^8 Phi_5^8
+                                                        / (q^2+1)^168
+
+Every irreducible factor is root-free on (0,oo) by **exact Sturm
+counting** => non-singular for EVERY real q > 0 at n = 3, 4, 5.
+Root counting rather than coefficient signs is deliberate: `q^2-q+1`
+and `Phi_10` both carry negative coefficients and are positive anyway.
+
+### The sign leg is the one that would have caught an error
+
+`det G_TL(n) / prod_lambda y_lambda^(dim^2)` is a perfect square TIMES a
+sign, and the sign is predicted: on a block M_d with weight y the trace
+pairing is y times the transpose permutation, det `(-1)^(d(d-1)/2)`.
+
+    n=3  dims (1,2)    -> -1   n=4  (1,3,2) -> +1   n=5  (1,4,5) -> +1
+
+All three agree. At n=3 this reproduces #5572's `-J^2`,
+`J = (q^4+q^2+1)^2/q^4`, exactly. n=3 also reproduces #5572's whole
+closed form from general-n code through a different arithmetic domain —
+a cross-implementation check on the METHOD.
+
+Probe: `computations/qbeta/tl_quotient_gram_determinant_general_n_probe.py`,
+9/9. Exact sympy over Q(q); no float64, no q_0, no anchor => pin-independent.
+`TL_DET_MAX_N=4` skips the 74 s n=5 leg.
+
+**Scope:** n = 3, 4, 5 ONLY. n >= 6 not attempted. The sign claims are
+about the BILINEAR determinant and say nothing about the Hecke *-form
+signature (GramSignature, post-retraction 748ba9b1: D is (5,0,1) PSD).
+
+### FOUR stale facts in this bean / its briefs, corrected on main today
+
+1. **`G_INV` does not exist** — deleted, not renamed; `test_gram_values.py`
+   asserts `not hasattr(gram, "G_INV")`. The #5592 entry above already
+   says this; repeating because the task brief still carried the old form.
+2. **`G_PINV` is at line 432**, not 429 (this bean) and not 407 (brief).
+   Cite the rule, re-measure the line.
+3. **`||G G_INV - I|| = 1.64` belongs to the DELETED `np.linalg.inv`.**
+   `G_PINV`'s residual is `sqrt(corank) = 1` — the rank-5 projector
+   defect, which is CORRECT pseudoinverse behaviour, not a failure.
+   Conflating them makes `G_PINV` look broken when it is not.
+4. **`qou-yof3` is completed** (fixed 2026-08-23). The unguarded
+   `np.linalg.solve` at `qbeta_crossing_weight_hecke_probe.py:128` is
+   gone; the leg now asserts the obstruction
+   `<v,1> = (q-1)(q^2-q+1)/q^3 != 0` exactly.
+
+### The blast radius is SMALLER than "13 re-exporters + 13 consumers"
+
+Measured: 91 files import `pyhecke.gram` (21 `_deprecated`), but most take
+only the scalars `gram.h` / `gram.z`. Touching `G_PINV` / `RADICAL`:
+
+  - `gram-matrix-dual.py:195-198` -- the ONE real consumer (`G_inv = _G_PINV`)
+  - `substrate/hecke_core.py:69`, `hecke_core_legacy.py:83` -- re-export hubs
+  - `qou-mass/.../_internal/hecke_core.py` -- GENERATED mirror, never hand-edit
+  - `confinement-operator-selection.py:207` -- COMMENT only; its
+    `_pg_safe_inverse` is an independent SVD guard
+  - `meson/alpha_shift_by_colour_probe.py`,
+    `qbeta/qbeta_which_algebra_..._probe.py` -- the word RADICAL in output
+    strings. NOT consumers.
+
+So: one direct consumer, two hubs, one generated mirror, one independent
+guard. Suggested order in the PR body. Caution recorded there:
+`gram-matrix-dual.py:169-170`'s `eigvals` is a SEPARATE question from the
+inverse — the zero eigenvalue of the singular form IS the finding, so do
+not repoint it along with the `pinv`.

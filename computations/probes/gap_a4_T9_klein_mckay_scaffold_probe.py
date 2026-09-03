@@ -256,9 +256,9 @@ def main():
     # Sanity assertions
     w.add_assertion(
         "two_I_burnside_check",
-        computed=float(mckay["two_i_dim_sum_sq"]),
-        expected=120.0,
-        tolerance=1e-30,
+        computed=mckay["two_i_dim_sum_sq"],
+        expected=120,
+        tolerance=0,
         source=(
             "Σ dim² over 2I irreps = |2I| = 120 (Burnside); "
             "verifies the affine Ê_8 Coxeter mark list "
@@ -267,9 +267,9 @@ def main():
     )
     w.add_assertion(
         "a5_burnside_check",
-        computed=float(mckay["a5_dim_sum_sq"]),
-        expected=60.0,
-        tolerance=1e-30,
+        computed=mckay["a5_dim_sum_sq"],
+        expected=60,
+        tolerance=0,
         source=(
             "Σ dim² over A_5 irreps = |A_5| = 60 (Burnside); "
             "matches the irrep dim list (1,3,3,4,5) used in T4."

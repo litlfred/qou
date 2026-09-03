@@ -1,0 +1,130 @@
+{
+  "computation": "chi-deuteron-h6-at-qinv-50dps-colour-weighted",
+  "description": "Numerical chi^lambda_q(beta_atomic(1, 1)) = deuteron per partition lambda |- 6, evaluated at q = q_0^-1 ~ 0.900918 at 50 dps via the pyhecke-native MPFR kernel (PR #1748).  p-n convention: colour-weighted-averaged-crossing.  Bar-image cache for the mirror pairing chi(q_0)*chi(q_0^-1).  Same partition order as the sibling chi-deuteron-h6-at-q0-50dps.witness.json.",
+  "convention": "colour-weighted-averaged-crossing",
+  "convention_derived_from": "the classified braid word, by counting crossings whose d matches -h_0*(1/2 - delta/4); NOT inferred from the filename",
+  "n_colour_weighted_crossings": 1,
+  "q_inv_50dps_str": "0.90091828395574149216082288248109393601474162661054",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "dps": 50,
+  "n_strands": 6,
+  "atom": "deuteron",
+  "Z": 1,
+  "N": 1,
+  "n_partitions": 11,
+  "n_partitions_total": 11,
+  "producer": "chi_at_q_inv_via_native_mpfr.py",
+  "compute_time_sec": "0.00",
+  "by_partition": [
+    {
+      "partition": [
+        6
+      ],
+      "chi_lambda": "6.7698473322403949377382314472871985348347717692804e-1"
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "chi_lambda": "-2.1556133012069008904002618904424742556529338292275"
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "chi_lambda": "8.1979043807944810307581072316755275771692745627744e-1"
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "chi_lambda": "4.8981789459048602883741016625479156429036364854682e-1"
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "chi_lambda": "3.4978959096371991572096244688598710336923094098808"
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "chi_lambda": "1.9734962623652523728554833775374216311249875519342"
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "chi_lambda": "4.7066706529112706174091235894021663658652490552139e-1"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "chi_lambda": "-4.2486596031933364080078932173502658316143602375200"
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "chi_lambda": "-1.6729499192132397170716433935859256025580090341550"
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "chi_lambda": "-3.2153654527480101399593053462679724246258060512869"
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "chi_lambda": "-1.5596212331729758241113186961371221636515309072916"
+    }
+  ],
+  "_provenance": {
+    "engine": "pyhecke_native",
+    "rust_fn": "chi_lambda_all_partitions_mpfr",
+    "avg_shifts_passed": true,
+    "pr_landing_kernel": 1748,
+    "pr_consumer": 1742,
+    "bean": "qou-1oxx",
+    "avg_shift_values": [
+      "-0.104530149397819657715423106564837471929878747631528103714054",
+      "-0.104618735975170678558580017101781309962976027623228458983965"
+    ]
+  },
+  "scriptHash": "d5781ea2cf6b",
+  "scriptCommitSha": "80b1f75f8c3be884bd63e9f5b55e7a7a6c70c7b2",
+  "commitSha": "7a1099cd63a20d9a804fdb02c82832bfb18e87da",
+  "engine": "pyhecke_native",
+  "computedAt": "2026-08-26T14:38:59.140079+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

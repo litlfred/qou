@@ -134,10 +134,38 @@ instance-free because it *is* the counting→decision transfer, which is:
 | Target | Needs the transfer? | Status |
 |---|---|---|
 | non-vanishing `χ(A)=−6≠0` | no | **proved** (axiom consequence) |
-| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | **n=2 fully discharged as a theorem** (`h2_isSemisimpleRing_of_generic`, no cited class, no sorry); general `n` needs the `T_w` basis (Mathlib wall) |
+| `H_n(q)` semisimple ⟺ `[n]_q!≠0` | no | **n=2, n=3, n=4 discharged as theorems** (`h2_isSemisimpleRing_of_generic`, `HeckeH3Semisimple`, `HeckeH4Semisimple` — the last det-free); general `n` is reachable via the **Schur route**, not the `T_w` basis — see the 🛑 note below |
 | soundness `P≠NP ⟹ Jones∉FP` | no | **proved** (JVW+Toda) |
 | **abstract P≠NP** | **yes** (the wall) | open; provably not-by-fiat |
 | physical intractability | **no** | **derived** (mod exp-domination) |
+
+> **🛑 CORRECTED 2026-08-29 — the row above and §5 item 1 were stale, and in a
+> way that sends an agent to build the wrong thing.** Re-measured on `main` at
+> `df81b22be4`:
+>
+> - **The rank ladder went past n=2.** `QOU/Machinery/HeckeH3Semisimple.lean` and
+>   `QOU/Machinery/HeckeH4Semisimple.lean` both prove `IsSemisimpleRing` at their
+>   rank by transport along an explicit Wedderburn isomorphism. H₄ is explicitly
+>   **det-free** — the 24×24 Gram determinant is sympy-verified but
+>   Lean-out-of-reach — so that rung was reached *without* the determinant §5
+>   item 1 says to go and get.
+> - **The general-`n` gap is no longer the `T_w` basis.**
+>   `QOU/MathlibExt/WenzlSchurElement.lean` `semisimple_of_substrate` gives
+>   semisimplicity **at every rank** for `Q > 1`, `X ≤ 0`, and its Schur-element
+>   leg is *computed*: `schurElement_ne_zero` is a sorry-free theorem whose only
+>   hypotheses are `1 < Q` and `X ≤ 0` — no class, no `sorry`.
+> - **This is NOT a discharge.** `semisimple_of_substrate` carries
+>   `[SchurElementCriterion Q X ss]`, itself instance-free, and per the 2026-08-21
+>   audit that class and `WenzlCriterion` *"state the same literature theorem from
+>   two equivalent angles"*. The citation **count** did not improve. What improved
+>   is that one feeding leg is proved for all `n`, so the residual is a single
+>   named theorem (Geck–Pfeiffer Thm 7.2.6, bean `qou-0y6h`) rather than a missing
+>   basis theory.
+>
+> The `T_w` basis remains the honest Mathlib gap for the *determinant* route and
+> is worth doing on its own merits — it is simply **not** on the critical path to
+> all-`n` semisimplicity. Full re-measurement:
+> [2026-08-29 gap inventory refresh](2026-08-29-pneqnp-gap-inventory-refresh.md).
 
 ## 5. Next steps (prioritized)
 
@@ -163,6 +191,34 @@ foreground the derived result (was #6).
    proved anchor; the interface a future contribution plugs into is
    `HeckeGramFactorial.isSemisimpleRing_of_gram_det_eq_qFactorial`. Assess
    closeable-vs-wall per bean `qou-5hul` before a large build.
+
+   > **🛑 The `T_w` half of item 1 is CLOSED over a field (2026-08-30, PR
+   > #6053).** `QOU.Hecke.TwBasis.basisTwOfField` is a
+   > `Module.Basis (Equiv.Perm (Fin (n+1))) K (IwahoriHecke K q n)` with
+   > `coe = Tw`, and `finrank_eq_factorial` gives `dim_K H_n(q) = (n+1)!` —
+   > sorry-free at general `n`, `#print axioms` clean.
+   >
+   > **Exactly ONE of the three "honest Mathlib gap" claims above is now
+   > false.** `Equiv.Perm` *does* now have length and inversions
+   > (`QOU.Hecke.PermLength.length_eq_invCount`), because `permCoxeterSystem`
+   > makes `Sₙ₊₁` a Coxeter system of type `Aₙ` — which Mathlib does not have
+   > for **any** concrete group. The other two stand as written: there is
+   > still **no Mahonian / Gaussian-binomial generating function**, and the
+   > **symmetrizing-trace / Hecke-radical theory is still absent**. Neither was
+   > needed for the basis, and neither has been built.
+   >
+   > Two further corrections to the framing, not to the gap list.
+   > **Bott–Samelson** is named in the bean but is not the route taken and is
+   > not needed. **Matsumoto's theorem** — still an open Mathlib TODO at
+   > `Coxeter/Basic.lean:78` — is **never used**: `T_w` is built from *some*
+   > reduced word and well-definedness is never invoked, because along any
+   > reduced word the operators merely walk the basis.
+   >
+   > What remains of item 1 is the **symmetrizing-trace Gram side** (bean
+   > `qou-0y6h`, Geck–Pfeiffer `det = ∏ Schur`), which is now unblocked rather
+   > than gated. And the basis itself is a *field* statement: everything
+   > upstream of `QOU/Hecke/TwBasisField.lean` holds over an arbitrary
+   > commutative ring, so a `ℤ[q,q⁻¹]` version needs that one file redone.
 2. **[medium] NP→Jones encoding** — **already on main** as
    `QOU/Information/SkeinNPEncoding.lean` (`NPSkeinReduction`,
    `decisionBudget`, `accepts_of_observed`). Not open; do not re-derive.

@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:08:20.043048+00:00",
-  "commitSha": "98d4f7b30998ed8bde8f3e404a9117025e78e67c",
+  "computedAt": "2026-08-25T21:49:01.589988+00:00",
+  "commitSha": "880263606a6a3ceff335b07dacb46deefafbb0e8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-tritium",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "1cf43d2b762b",
-  "scriptCommitSha": "23dd97f9a497891220811c909126d9fcf3a2b9f3",
+  "scriptHash": "8d0d14588e54",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -31,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/_habiro_coefficient_extract.py"
   },
-  "description": "Habiro / cyclotomic expansion tr_M(A=3, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=1, N=2 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
+  "description": "Habiro / cyclotomic expansion tr_M(A=3, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=1, N=2 under the canonical bring_color_weighted pn-convention (owner ruling R3, 2026-08-15). Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
   "data": {
     "lean_uniqueness_ref": {
       "nucleus": "tritium",
@@ -49,113 +50,127 @@
   ],
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "pn_convention": "chi_lambda_braid (legacy production marshalling)",
+    "pn_convention": "bring_color_weighted (canonical, owner ruling R3)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
   },
   "habiro_coefficients": [
     {
       "m": 0,
-      "a_m": "32",
+      "a_m": "384",
       "deg_a_m": 0,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 1,
-      "a_m": "-1776*u - 1776",
+      "a_m": "-23616*u - 23616",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "29401*u**2 + 29993*u + 30574",
+      "a_m": "441643*u**2 + 449512*u + 457261",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-220847*u**3 - 228200*u**2 - 235257*u - 242895",
+      "a_m": "-3810102*u**3 - 3920545*u**2 - 4027049*u - 4141302",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "900480*u**4 + 941766*u**3 + 984642*u**2 + 1028698*u + 1074388",
+      "a_m": "18090499*u**4 + 18809141*u**3 + 19551441*u**2 + 20311900*u + 21096748",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-2201661*u**5 - 2334351*u**4 - 2474983*u**3 - 2620538*u**2 - 2774551*u - 2933853",
+      "a_m": "-52129774*u**5 - 54842555*u**4 - 57691395*u**3 - 60630142*u**2 - 63712525*u - 66890669",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "3414944*u**6 + 3676134*u**5 + 3953056*u**4 + 4248026*u**3 + 4560346*u**2 + 4892471*u + 5243698",
+      "a_m": "96535352*u**6 + 102882218*u**5 + 109560981*u**4 + 116609284*u**3 + 124018570*u**2 + 131828357*u + 140030097",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-3456512*u**7 - 3780916*u**6 - 4129010*u**5 - 4506992*u**4 - 4912175*u**3 - 5351128*u**2 - 5820853*u - 6328836",
+      "a_m": "-118550885*u**7 - 128084365*u**6 - 138228752*u**5 - 149103238*u**4 - 160662916*u**3 - 173034044*u**2 - 186167901*u - 200204063",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "2297293*u**8 + 2555760*u**7 + 2840791*u**6 + 3152676*u**5 + 3495642*u**4 + 3870297*u**3 + 4281361*u**2 + 4729473*u + 5220087",
+      "a_m": "97730341*u**8 + 107135001*u**7 + 117351157*u**6 + 128400391*u**5 + 140379317*u**4 + 153315815*u**3 + 167316323*u**2 + 182412025*u + 198722399",
       "deg_a_m": 8,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 9,
-      "a_m": "-987289*u**9 - 1119979*u**8 - 1270044*u**7 - 1436529*u**6 - 1624092*u**5 - 1831811*u**4 - 2064922*u**3 - 2322717*u**2 - 2611103*u - 2929435",
+      "a_m": "-53815222*u**9 - 59965408*u**8 - 66775299*u**7 - 74239806*u**6 - 82484020*u**5 - 91505742*u**4 - 101444781*u**3 - 112304541*u**2 - 124241124*u - 137262572",
       "deg_a_m": 9,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 10,
-      "a_m": "263486*u**10 + 306403*u**9 + 355252*u**8 + 411610*u**7 + 475475*u**6 + 548990*u**5 + 632051*u**4 + 727130*u**3 + 834471*u**2 + 956700*u + 1094395",
+      "a_m": "19343205*u**10 + 21978121*u**9 + 24926356*u**8 + 28244191*u**7 + 31946744*u**6 + 36103214*u**5 + 40731841*u**4 + 45911374*u**3 + 51669705*u**2 + 58094660*u + 65222883",
       "deg_a_m": 10,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 11,
-      "a_m": "-40291*u**11 - 48441*u**10 - 57769*u**9 - 69026*u**8 - 81988*u**7 - 97441*u**6 - 115200*u**5 - 136288*u**4 - 160447*u**3 - 189041*u**2 - 221671*u - 260003",
+      "a_m": "-4330316*u**11 - 5038240*u**10 - 5841730*u**9 - 6771770*u**8 - 7826754*u**7 - 9041735*u**6 - 10416715*u**5 - 11995010*u**4 - 13776959*u**3 - 15815771*u**2 - 18112372*u - 20729636",
       "deg_a_m": 11,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 12,
-      "a_m": "3038*u**12 + 3790*u**11 + 4736*u**10 + 5872*u**9 + 7291*u**8 + 8960*u**7 + 11101*u**6 + 13547*u**5 + 16620*u**4 + 20211*u**3 + 24597*u**2 + 29764*u + 36020",
+      "a_m": "555004*u**12 + 663666*u**11 + 793650*u**10 + 945102*u**9 + 1125025*u**8 + 1333585*u**7 + 1581575*u**6 + 1866957*u**5 + 2204136*u**4 + 2592634*u**3 + 3047867*u**2 + 3572241*u + 4183556",
       "deg_a_m": 12,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 13,
-      "a_m": "-75*u**13 - 101*u**12 - 138*u**11 - 179*u**10 - 254*u**9 - 324*u**8 - 432*u**7 - 559*u**6 - 723*u**5 - 927*u**4 - 1199*u**3 - 1512*u**2 - 1962*u - 2453",
+      "a_m": "-34378*u**13 - 42812*u**12 - 53572*u**11 - 66082*u**10 - 82506*u**9 - 101149*u**8 - 124834*u**7 - 152613*u**6 - 186849*u**5 - 227248*u**4 - 276972*u**3 - 334793*u**2 - 406332*u - 488843",
       "deg_a_m": 13,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 14,
-      "a_m": "u**11 + u**10 + 2*u**9 + 3*u**8 + 4*u**7 + 6*u**6 + 9*u**5 + 12*u**4 + 22*u**3 + 28*u**2 + 41*u + 56",
-      "deg_a_m": 11,
+      "a_m": "690*u**14 + 933*u**13 + 1220*u**12 + 1747*u**11 + 2227*u**10 + 2989*u**9 + 3874*u**8 + 5021*u**7 + 6460*u**6 + 8374*u**5 + 10626*u**4 + 13884*u**3 + 17416*u**2 + 22221*u + 27885",
+      "deg_a_m": 14,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 15,
+      "a_m": "-u**15 - u**13 - 7*u**12 - 7*u**11 - 15*u**10 - 21*u**9 - 30*u**8 - 44*u**7 - 60*u**6 - 82*u**5 - 151*u**4 - 189*u**3 - 281*u**2 - 382*u - 514",
+      "deg_a_m": 15,
+      "integral": true,
+      "remainder_nonzero": false
+    },
+    {
+      "m": 16,
+      "a_m": "1",
+      "deg_a_m": 0,
       "integral": true,
       "remainder_nonzero": false
     }
@@ -164,21 +179,21 @@
   "N": 2,
   "A": 3,
   "interface_kinds": [
-    "positive",
+    "averaged_weighted",
     "negative"
   ],
   "include_inter": true,
-  "tr_M_in_q": "(q**4 - q**2*(q**2 + 1) + q**2 + 1)*(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)**2*(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(64*q**25*(q**2 + 1)**2*(q**4 + 2*q**2 + 1))",
+  "tr_M_in_q": "(12*q**8 - (q**2 - 1)*(q**2 + 1)*(6*q**4 - (q - 1)**2*(q**4 - 1)))*(q**4 - q**2*(q**2 + 1) + q**2 + 1)*(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)**2*(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(768*q**33*(q**2 + 1)**2*(q**4 + 2*q**2 + 1))",
   "shift": 0,
-  "denom_in_u": "64*u**66 + 256*u**62 + 384*u**58 + 256*u**54 + 64*u**50",
-  "p_in_u": "u**116 - u**112 + 5*u**108 - 5*u**104 + 17*u**100 - 16*u**96 + 38*u**92 - 35*u**88 + 67*u**84 - 62*u**80 + 92*u**76 - 91*u**72 + 110*u**68 - 118*u**64 + 115*u**60 - 132*u**56 + 113*u**52 - 126*u**48 + 100*u**44 - 95*u**40 + 78*u**36 - 58*u**32 + 49*u**28 - 28*u**24 + 23*u**20 - 12*u**16 + 7*u**12 - 4*u**8 + u**4 - 1",
-  "deg_p_u": 116,
-  "n_nonzero": 15,
+  "denom_in_u": "768*u**82 + 3072*u**78 + 4608*u**74 + 3072*u**70 + 768*u**66",
+  "p_in_u": "u**136 - 2*u**134 + 6*u**132 + 2*u**130 - 4*u**128 - 6*u**126 + 36*u**124 + 6*u**122 - 31*u**120 - 16*u**118 + 133*u**116 + 14*u**114 - 124*u**112 - 18*u**110 + 331*u**108 + 16*u**106 - 306*u**104 - 16*u**102 + 630*u**100 + 16*u**98 - 594*u**96 + 8*u**94 + 948*u**92 + 4*u**90 - 927*u**88 + 14*u**86 + 1207*u**84 - 4*u**82 - 1265*u**80 + 26*u**78 + 1350*u**76 - 26*u**74 - 1494*u**72 + 14*u**70 + 1381*u**68 - 40*u**66 - 1539*u**64 + 22*u**62 + 1292*u**60 - 50*u**58 - 1310*u**56 + 18*u**54 + 1065*u**52 - 12*u**50 - 919*u**48 + 14*u**46 + 748*u**44 + 14*u**42 - 520*u**40 - 6*u**38 + 421*u**36 + 28*u**34 - 244*u**32 - 20*u**30 + 182*u**28 + 16*u**26 - 94*u**24 - 20*u**22 + 53*u**20 + 10*u**18 - 30*u**16 - 10*u**14 + 9*u**12 + 4*u**10 - 7*u**8 - 2*u**6 + 2*u**2 - 1",
+  "deg_p_u": 136,
+  "n_nonzero": 17,
   "all_integral": true,
   "reconstruction_matches": true,
-  "tr_M_at_q0": 0.27644101013557504,
-  "tr_M_at_q0_via_u_poly": 0.27644101013557504,
-  "tr_M_at_q0_rel_err": 3.77843877006629e-31,
+  "tr_M_at_q0": 0.22931010210455652,
+  "tr_M_at_q0_via_u_poly": 0.22931010210455652,
+  "tr_M_at_q0_rel_err": 3.244042696814866e-30,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

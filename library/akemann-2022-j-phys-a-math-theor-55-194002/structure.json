@@ -1,0 +1,420 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
+ "source": {
+  "file": "Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf",
+  "sha256": "3753499c4b23f18946ced7e3f79366f0e62f9d9d106abea5eb58386cbaa368fc",
+  "bytes": 1953824,
+  "pages": 35,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1088/1751-8121/ac5f16",
+  "title": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+  "authors_raw": null,
+  "title_lines": [
+   "Mathematical and",
+   "Theoretical",
+   "PAPER \u2022 OPEN ACCESS",
+   "Consecutive level spacings in the chiral Gaussian",
+   "unitary ensemble: from the hard and soft edge to",
+   "the bulk",
+   "To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "",
+   "Author": "",
+   "Producer": "Acrobat Distiller 10.0.0 (Windows); modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
+   "Creator": "LaTeX with hyperref package + hypdvips",
+   "CreationDate": "D:20220409194511+05'30'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 2,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Transition from Bessel- and Airy- to the sine-kernel",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(2\u03bd + 1)",
+   "page": 6,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b6\u03b7)\u22121",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b6 \u2212\u03b7)",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Gap probabilities and level spacing distributions",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Analysis at finite matrix dimension",
+   "page": 14,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Orthogonal polynomials and partition function",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Partition function of shifted masses",
+   "page": 16,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Hard edge kth spacing distribution at finite-n",
+   "page": 20,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic analysis at the hard edge",
+   "page": 21,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The large-n limit at fixed k, Nf and \u03bd",
+   "page": 21,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Comparison to the bulk spacing distribution",
+   "page": 24,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Left: comparison between hard edge level spacings for increasing",
+   "page": 27,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotics to the Airy statistics (\u03bd \u226b1)",
+   "page": 27,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Comparison to data from lattice QCD",
+   "page": 30,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 32,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 33,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 34,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-faculty-of-physics-bielefeld-university-postfa",
+   "number": "1",
+   "title": "Faculty of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld,",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 7,
+   "n_words": 1
+  },
+  {
+   "id": "sec-001-2-school-of-mathematics-and-statistics-universit",
+   "number": "2",
+   "title": "School of Mathematics and Statistics, University of Melbourne, 813 Swanston",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 200,
+   "n_words": 26
+  },
+  {
+   "id": "sec-002-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1915,
+   "n_words": 311
+  },
+  {
+   "id": "sec-003-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 8214,
+   "n_words": 1341
+  },
+  {
+   "id": "sec-004-2-transition-from-bessel--and-airy--to-the-sine",
+   "number": "2",
+   "title": "Transition from Bessel- and Airy- to the sine-kernel",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 5175,
+   "n_words": 882
+  },
+  {
+   "id": "sec-005-4-2\u03bd-1",
+   "number": "4",
+   "title": "(2\u03bd + 1)",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4836,
+   "n_words": 940
+  },
+  {
+   "id": "sec-006-3-\u03b6-\u03b7",
+   "number": "3",
+   "title": "(\u03b6 \u2212\u03b7)",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 248,
+   "n_words": 61
+  },
+  {
+   "id": "sec-007-3-\u03b6\u03b71",
+   "number": "3",
+   "title": "(\u03b6\u03b7)\u22121",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5553,
+   "n_words": 1086
+  },
+  {
+   "id": "sec-008-3-gap-probabilities-and-level-spacing-distributi",
+   "number": "3",
+   "title": "Gap probabilities and level spacing distributions",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 8469,
+   "n_words": 1678
+  },
+  {
+   "id": "sec-009-4-analysis-at-finite-matrix-dimension",
+   "number": "4",
+   "title": "Analysis at finite matrix dimension",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-41-orthogonal-polynomials-and-partition-function",
+   "number": "4.1",
+   "title": "Orthogonal polynomials and partition function",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4354,
+   "n_words": 834
+  },
+  {
+   "id": "sec-011-42-partition-function-of-shifted-masses",
+   "number": "4.2",
+   "title": "Partition function of shifted masses",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 6317,
+   "n_words": 1206
+  },
+  {
+   "id": "sec-012-43-hard-edge-kth-spacing-distribution-at-finite",
+   "number": "4.3",
+   "title": "Hard edge kth spacing distribution at finite-n",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3607,
+   "n_words": 697
+  },
+  {
+   "id": "sec-013-5-asymptotic-analysis-at-the-hard-edge",
+   "number": "5",
+   "title": "Asymptotic analysis at the hard edge",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-51-the-large-n-limit-at-fixed-k-nf-and-\u03bd",
+   "number": "5.1",
+   "title": "The large-n limit at fixed k, Nf and \u03bd",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 5362,
+   "n_words": 1108
+  },
+  {
+   "id": "sec-015-52-comparison-to-the-bulk-spacing-distribution",
+   "number": "5.2",
+   "title": "Comparison to the bulk spacing distribution",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 5204,
+   "n_words": 925
+  },
+  {
+   "id": "sec-016-4-left-comparison-between-hard-edge-level-spacin",
+   "number": "4",
+   "title": "Left: comparison between hard edge level spacings for increasing",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 887,
+   "n_words": 174
+  },
+  {
+   "id": "sec-017-53-asymptotics-to-the-airy-statistics-\u03bd-1",
+   "number": "5.3",
+   "title": "Asymptotics to the Airy statistics (\u03bd \u226b1)",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 7474,
+   "n_words": 1336
+  },
+  {
+   "id": "sec-018-6-comparison-to-data-from-lattice-qcd",
+   "number": "6",
+   "title": "Comparison to data from lattice QCD",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 4684,
+   "n_words": 811
+  },
+  {
+   "id": "sec-019-7-conclusion",
+   "number": "7",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2274,
+   "n_words": 370
+  },
+  {
+   "id": "sec-020-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 3121,
+   "n_words": 568
+  },
+  {
+   "id": "sec-021-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 3798,
+   "n_words": 758
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 22,
+  "chars_total": 81699
+ }
+}

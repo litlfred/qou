@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "det S+ = 1 at every test point (SL(3) control on the assembled matrix)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(S01+S10)/S00 spread 2.522 > 1e-8 across q in [0.10, 0.40] — not constant"
     }
   ],

@@ -370,7 +370,7 @@
    "local_pdf": "uploads/baez2004.pdf",
    "relevance": {
     "verdict": "tangential",
-    "rationale": "Join CORRECT (arXiv:math/0307200v3, matching the registered entry). Not in the working tree on this branch; recovered from intake commit 4009ba4f91, sha matches. The paper is a detailed treatment of weak/coherent 2-groups and their classification by Postnikov data. MISCITED at its principal site: content/quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.lean:36,63 cites [baez2004] for a structure whose docstring asserts 'The quantum flatness condition F_A = B is equivalent to the instanton equation F_A^- = 0 under the simplicity constraint. The 2-group INN(G_q) is the unique strict 2-group for which this equivalence holds.' Searching the full text of this document for 'INN(', 'inner automorphism 2-group', 'fake curvature', 'fake flat', 'instanton', 'simplicity constraint', 'BF theory', 'F_A' returns exactly one hit, and it is about Aut_s(H), the strict automorphism 2-group, in a purely algebraic classification context. The document contains no connections, no curvature, no BF/spin-foam content, and no INN(G) construction. The other two sites (appendix-standard-model/sm-gauge-truncation.lean:30 and gauge-action-groupoid.lean:33) list it in a References block with no claim attached; sm-gauge-truncation is about an SU(3)xSU(2)xU(1) embedding, which this document does not address. The right source is already registered and sitting uncited: baez-schreiber2007 (uploads/0511710v2.pdf) is the paper that defines 2-connections on principal 2-bundles and states the vanishing-fake-curvature condition (its abstract line 27; body lines 473, 1559, 1566, 1568). Scope-(a): this document, as read, does not support the F=B / instanton / INN(G_q) uniqueness claim it is cited for.",
+    "rationale": "Join CORRECT (arXiv:math/0307200v3, matching the registered entry). Not in the working tree on this branch; recovered from intake commit 4009ba4f91, sha matches. The paper is a detailed treatment of weak/coherent 2-groups and their classification by Postnikov data. MISCITED at its principal site: content/quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.lean:36,63 cites [baez2004] for a structure whose docstring asserts 'The quantum flatness condition F_A = B is equivalent to the instanton equation F_A^- = 0 under the simplicity constraint. The 2-group INN(G_q) is the unique strict 2-group for which this equivalence holds.' Searching the full text of this document for 'INN(', 'inner automorphism 2-group', 'fake curvature', 'fake flat', 'instanton', 'simplicity constraint', 'BF theory', 'F_A' returns exactly one hit, and it is about Aut_s(H), the strict automorphism 2-group, in a purely algebraic classification context. The document contains no connections, no curvature, no BF/spin-foam content, and no INN(G) construction. The other two sites (appendix-standard-model/sm-gauge-truncation.lean:30 and gauge-action-groupoid.lean:33) list it in a References block with no claim attached; sm-gauge-truncation is about an SU(3)xSU(2)xU(1) embedding, which this document does not address. The right source is already registered and sitting uncited: baez-schreiber2007 (library/arxiv-math-0511710v2/0511710v2.pdf) is the paper that defines 2-connections on principal 2-bundles and states the vanishing-fake-curvature condition (its abstract line 27; body lines 473, 1559, 1566, 1568). Scope-(a): this document, as read, does not support the F=B / instanton / INN(G_q) uniqueness claim it is cited for.",
     "keyResults": [],
     "proposedActions": [
      {
@@ -4737,7 +4737,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-math-0401068v1/0401068v1 (1).pdf"
+    "file": "library/arxiv-math-0401068v1/0401068v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -4963,7 +4963,7 @@
     "kind": "upload",
     "file": "library/arxiv-math-0405126v1/0405126v1.pdf"
    },
-   "id": null,
+   "id": "murakami2004a",
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
@@ -5178,12 +5178,12 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
-    "rationale": "Already examined in the corpus and recorded as an APPLICABILITY NEGATIVE, correctly. computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py and its witness name this exact file (uploads/0410233v4.pdf) and state: Purcell's Thm 1.2 requires a cone deformation along a singular locus DISJOINT from the cusp torus T, cone angle running 0 -> 2*pi, with T remaining a cusp throughout -- whereas the QOU setup deforms the 4_1 cusp ITSELF (Neumann-Zagier, u = 2 ln q_0 != 0). I read the hypotheses and agree they do not transfer. So the paper is the right subject area (cusp shape bounds, prop:cusp-shape-bar-parity) but supplies no result the folio can consume. This is a scope-(a) negative -- this document, as read, does not close the cusp-shape-drift objection; it is not a claim that no cone-deformation bound could.",
+    "rationale": "Already examined in the corpus and recorded as an APPLICABILITY NEGATIVE, correctly. computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py and its witness name this exact file (library/arxiv-math-0410233v4/0410233v4.pdf) and state: Purcell's Thm 1.2 requires a cone deformation along a singular locus DISJOINT from the cusp torus T, cone angle running 0 -> 2*pi, with T remaining a cusp throughout -- whereas the QOU setup deforms the 4_1 cusp ITSELF (Neumann-Zagier, u = 2 ln q_0 != 0). I read the hypotheses and agree they do not transfer. So the paper is the right subject area (cusp shape bounds, prop:cusp-shape-bar-parity) but supplies no result the folio can consume. This is a scope-(a) negative -- this document, as read, does not close the cusp-shape-drift objection; it is not a claim that no cone-deformation bound could.",
     "keyResults": [],
     "proposedActions": [
      {
       "action": "add-reference",
-      "rationale": "The recorded negative currently cites the paper by upload path ('Purcell's Cusp shapes under cone deformation (uploads/0410233v4.pdf)') with no bib key -- a citation-hygiene gap. Registering it lets the witness and probe cite [purcell2008] so the negative survives any uploads/ reorganisation.",
+      "rationale": "The recorded negative currently cites the paper by upload path ('Purcell's Cusp shapes under cone deformation (library/arxiv-math-0410233v4/0410233v4.pdf)') with no bib key -- a citation-hygiene gap. Registering it lets the witness and probe cite [purcell2008] so the negative survives any uploads/ reorganisation.",
       "target": "content/schema/references.ts (new id, e.g. purcell2008cusp), consumed by computations/qbeta/qbeta_cusp_shape_drift_robustness_probe.py",
       "bean": "qou-e1pj"
      }
@@ -6314,7 +6314,7 @@
      {
       "locator": "§II.B, Fig. 14, p.18",
       "statement": "Enumeration of the diagram topologies contributing to the four-nucleon force at N3LO.",
-      "useForFolio": "Fixes what 'the N3LO four-nucleon force' means, so the numeric bound quoted from Jurgenson-Navratil-Furnstahl (uploads/0905.1873v2.pdf) in mu4_target_exceeds_n3lo_bound is attached to a defined object rather than a loose phrase.",
+      "useForFolio": "Fixes what 'the N3LO four-nucleon force' means, so the numeric bound quoted from Jurgenson-Navratil-Furnstahl (library/arxiv-0905.1873v2/0905.1873v2.pdf) in mu4_target_exceeds_n3lo_bound is attached to a defined object rather than a loose phrase.",
       "targets": [
        "content/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean"
       ]
@@ -9360,7 +9360,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-1810.11563v1/1810.11563v1 (1).pdf"
+    "file": "library/arxiv-1810.11563v1/1810.11563v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -9403,7 +9403,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
-    "rationale": "Written-up lecture series on quantum complexity and black hole interiors: the complexity/entropy analogy and a second law of complexity, the relation between non-increasing complexity and firewalls, and the thermodynamics of complexity with 'uncomplexity' as a computational resource. Same programme as the complexity-equals-action upload in this slice, in pedagogical form. Same judgement: the corpus's information-theory chapter shares the subject matter (horizons, computation, information loss) but has none of the machinery — no holographic dual, no complexity measure on states, no relative-complexity metric — and grep finds no corpus mention of complexity growth, uncomplexity, or firewalls. Note also that this file is byte-identical (md5 d6b2d238...) to uploads/1810.11563v1 (1).pdf, so the upload directory carries it twice. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim the complexity programme is irrelevant to the folio's horizon blocks.",
+    "rationale": "Written-up lecture series on quantum complexity and black hole interiors: the complexity/entropy analogy and a second law of complexity, the relation between non-increasing complexity and firewalls, and the thermodynamics of complexity with 'uncomplexity' as a computational resource. Same programme as the complexity-equals-action upload in this slice, in pedagogical form. Same judgement: the corpus's information-theory chapter shares the subject matter (horizons, computation, information loss) but has none of the machinery — no holographic dual, no complexity measure on states, no relative-complexity metric — and grep finds no corpus mention of complexity growth, uncomplexity, or firewalls. Note also that this file is byte-identical (md5 d6b2d238...) to library/arxiv-1810.11563v1/1810.11563v1.pdf, so the upload directory carries it twice. Scope-(a): this document, as read, supplies nothing usable here; that is not a claim the complexity programme is irrelevant to the folio's horizon blocks.",
     "keyResults": [],
     "proposedActions": [
      {
@@ -10683,7 +10683,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2304.12545v1/2304.12545v1 (1).pdf"
+    "file": "library/arxiv-2304.12545v1/2304.12545v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -10895,7 +10895,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2402.04839v2/2402.04839v2 (1).pdf"
+    "file": "library/arxiv-2402.04839v2/2402.04839v2.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -11145,7 +11145,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "WRONG JOIN — LOUD, AND THE SECOND ONE ON THIS SAME KEY. The seeded id names a two-author monograph on basic hypergeometric series published by a university press. This PDF's front matter shows a three-author arXiv preprint from two decades later on the explicit evaluation of q-Stokes matrices for confluent hypergeometric q-difference equations. Different author count, different decade, different document type. Two distinct documents in this slice (this one and uploads/1404.2541v1.pdf) are both joined to the same id, which is the signature of a machine guess keyed on the words 'basic hypergeometric' appearing in an abstract. I set `id: null`; no `ref()` entry exists for these authors or this arXiv id. GENUINELY RELEVANT AND UNREGISTERED. Corpus-grep per AGENTS.md §'Before declaring open' over docs/, content/, computations/ and docs/coordination/ finds no entry. The corpus's active W2 Stokes attack (`docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`, `QOU/MathlibExt/QBorelKernel*.lean`, `QOU/QBeta/C1*.lean`, bean qou-qbp5) needs explicit q-Stokes matrices, and the registry itself records at references.ts:7652 that the registered RSZ frame covers only integral slopes and gives dimension 0 for a single-slope module. This document computes q-Stokes matrices explicitly, in block form, by q-Borel resummation, and shows they degenerate to the classical confluent-hypergeometric Stokes matrices as q → 1 — a classical-limit consistency check the corpus has no other source for.",
+    "rationale": "WRONG JOIN — LOUD, AND THE SECOND ONE ON THIS SAME KEY. The seeded id names a two-author monograph on basic hypergeometric series published by a university press. This PDF's front matter shows a three-author arXiv preprint from two decades later on the explicit evaluation of q-Stokes matrices for confluent hypergeometric q-difference equations. Different author count, different decade, different document type. Two distinct documents in this slice (this one and library/arxiv-1404.2541v1/1404.2541v1.pdf) are both joined to the same id, which is the signature of a machine guess keyed on the words 'basic hypergeometric' appearing in an abstract. I set `id: null`; no `ref()` entry exists for these authors or this arXiv id. GENUINELY RELEVANT AND UNREGISTERED. Corpus-grep per AGENTS.md §'Before declaring open' over docs/, content/, computations/ and docs/coordination/ finds no entry. The corpus's active W2 Stokes attack (`docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`, `QOU/MathlibExt/QBorelKernel*.lean`, `QOU/QBeta/C1*.lean`, bean qou-qbp5) needs explicit q-Stokes matrices, and the registry itself records at references.ts:7652 that the registered RSZ frame covers only integral slopes and gives dimension 0 for a single-slope module. This document computes q-Stokes matrices explicitly, in block form, by q-Borel resummation, and shows they degenerate to the classical confluent-hypergeometric Stokes matrices as q → 1 — a classical-limit consistency check the corpus has no other source for.",
     "keyResults": [
      {
       "locator": "Thm 1.1",
@@ -11292,7 +11292,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf"
+    "file": "library/arxiv-2506.10206v2/2506.10206v2.pdf"
    },
    "id": "hakimoglu-brown2025",
    "status": "unreviewed",
@@ -11342,7 +11342,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, MSC codes and subject match the registered entry). This PDF is byte-identical (sha256 prefix d0631a9abd9b) to library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities-hakimoglu-brown.pdf, which the registered entry's note names — a duplicate upload of one document under two filenames. MISCITED CLAIM, two parts. (1) content/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean:124-127 describes the three classical dilogarithm functional equations (Euler reflection, duplication, Landen) as 'analytically proved in' this source. The document does NOT prove them: it states them as known background in §1 as its equations (5), (6) and (7), introduced as fundamental functional equations 'that are to arise in our work', and then USES them to derive its new results. The attribution inverts the dependency. (2) The registered entry's note credits the source with supplying the analytic backing for the golden-ratio value Li2(phi^-2) = pi^2/15 - ln^2 phi, on which the 4_1 real-q Habiro-tail action A_0 = pi^2/5 rests. I searched the full text: the expression pi^2/15 does not occur anywhere, and the document's actual golden-ratio result (its Example 4, from Theorem 3) is pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0. The Li2(phi^-2) evaluation is a classical Landen/Euler result, not a result of this document. So the reference is credited with the specific evaluation a downstream action value depends on and does not contain it. The reference is still legitimately supporting (it is a genuine source of dilogarithm ladder machinery over several quadratic fields), and one site is accurate: QOU/MassTheory/RogersDilogInflection.lean:38 cites it for the Rogers L-function at its eq. (4), which is indeed there.",
+    "rationale": "JOIN CONFIRMED from front matter (arXiv identifier, MSC codes and subject match the registered entry). This PDF is byte-identical (sha256 prefix d0631a9abd9b) to library/arxiv-2506.10206v2/2506.10206v2.pdf, which the registered entry's note names — a duplicate upload of one document under two filenames. MISCITED CLAIM, two parts. (1) content/quantum-observable-universe/lean/QOU/QBeta/HabiroTailAction.lean:124-127 describes the three classical dilogarithm functional equations (Euler reflection, duplication, Landen) as 'analytically proved in' this source. The document does NOT prove them: it states them as known background in §1 as its equations (5), (6) and (7), introduced as fundamental functional equations 'that are to arise in our work', and then USES them to derive its new results. The attribution inverts the dependency. (2) The registered entry's note credits the source with supplying the analytic backing for the golden-ratio value Li2(phi^-2) = pi^2/15 - ln^2 phi, on which the 4_1 real-q Habiro-tail action A_0 = pi^2/5 rests. I searched the full text: the expression pi^2/15 does not occur anywhere, and the document's actual golden-ratio result (its Example 4, from Theorem 3) is pi^2/100 = Re Li2(r_0) with r_0 a root of r^4 - 3r^3 + 4r^2 - 2r + 1 = 0. The Li2(phi^-2) evaluation is a classical Landen/Euler result, not a result of this document. So the reference is credited with the specific evaluation a downstream action value depends on and does not contain it. The reference is still legitimately supporting (it is a genuine source of dilogarithm ladder machinery over several quadratic fields), and one site is accurate: QOU/MassTheory/RogersDilogInflection.lean:38 cites it for the Rogers L-function at its eq. (4), which is indeed there.",
     "keyResults": [
      {
       "locator": "eq. (4), §1",
@@ -11434,7 +11434,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "supporting",
-    "rationale": "WRONG JOIN — REPORT LOUDLY, and note this is the SECOND file in this slice mis-joined to 'faddeev_kashaev1994' (the other is uploads/1102.3530v1.pdf). The registered entry under that id is a mid-1990s physics-letters article; the attached file is a two-author math.QA arXiv preprint, id 2509.02354v2, on the holonomy braiding for quantum sl2 at a root of unity. No matching id exists in content/schema/references.ts — the nearest same-surname entry (mcphail-snyder2026, references.ts:5249) is a different preprint on diagrammatic state integrals — so id is set to null. RELEVANCE: substantial and close to live QOU work. The document derives an explicit holonomy R-matrix for quantum sl2 at a root of unity, shows it factorizes into a product of FOUR quantum dilogarithms, and proves it satisfies a holonomy Yang-Baxter equation. QOU carries a dilogarithm-pentagon-associator line (prop:dilog-pentagon-is-associator, lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean, lean/QOU/QBeta/CyclicDilogPentagon.lean, braids-and-knots/pentagon-uv-commutation-woronowicz.lean) whose entire content is the relation between quantum dilogarithms and braiding/associativity data — this is a current, explicit realisation of that relation. Held at supporting: QOU's pentagon blocks are about the associator, not about a holonomy R-matrix at a root of unity, so nothing here is a drop-in; it is the strongest available modern context, not a needed lemma.",
+    "rationale": "WRONG JOIN — REPORT LOUDLY, and note this is the SECOND file in this slice mis-joined to 'faddeev_kashaev1994' (the other is library/arxiv-1102.3530v1/1102.3530v1.pdf). The registered entry under that id is a mid-1990s physics-letters article; the attached file is a two-author math.QA arXiv preprint, id 2509.02354v2, on the holonomy braiding for quantum sl2 at a root of unity. No matching id exists in content/schema/references.ts — the nearest same-surname entry (mcphail-snyder2026, references.ts:5249) is a different preprint on diagrammatic state integrals — so id is set to null. RELEVANCE: substantial and close to live QOU work. The document derives an explicit holonomy R-matrix for quantum sl2 at a root of unity, shows it factorizes into a product of FOUR quantum dilogarithms, and proves it satisfies a holonomy Yang-Baxter equation. QOU carries a dilogarithm-pentagon-associator line (prop:dilog-pentagon-is-associator, lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean, lean/QOU/QBeta/CyclicDilogPentagon.lean, braids-and-knots/pentagon-uv-commutation-woronowicz.lean) whose entire content is the relation between quantum dilogarithms and braiding/associativity data — this is a current, explicit realisation of that relation. Held at supporting: QOU's pentagon blocks are about the associator, not about a holonomy R-matrix at a root of unity, so nothing here is a drop-in; it is the strongest available modern context, not a needed lemma.",
     "keyResults": [
      {
       "locator": "§4.3 (factorization of the R-matrix) and §4.4",
@@ -11946,7 +11946,7 @@
    "status": "unreviewed",
    "relevance": {
     "verdict": "tangential",
-    "rationale": "WRONG JOIN — REPORT LOUDLY, and note this is the SECOND file in this slice mis-joined to 'wald1984' (the other is uploads/1910.09966v1.pdf). The registered entry under that id is a general-relativity textbook that is not on arXiv. The attached file is a three-author hep-th arXiv preprint, id 9306069v2, on the stretched horizon and black-hole complementarity. No matching id exists in content/schema/references.ts, so id is set to null. RELEVANCE: it introduces three postulates on black-hole evolution, develops a stretched-horizon/membrane description worked out in 1+1 dilaton gravity, and advocates black-hole complementarity. QOU's nearest content is conj:lqg-entropy-qdim-partition-pole in gravity-spacetime and the information-theory quantum-entropy blocks, but those turn on the LQG area spectrum and on categorical entropy, not on horizon complementarity or membrane dissipation; I found no QOU claim this document would support. Scope-(a): this document, as read, supplies nothing this folio can consume — not a claim that horizon thermodynamics is irrelevant to the framework. NOTE ON THE 'wald1984' ID ITSELF: with both of its seeded source files now shown to be other works, that id has no source anywhere in uploads/, and its two Lean citations are unverifiable as written — lean/QOU/MathlibExt/MonoidalCalcVar.lean:41 cites it at 'Theorem 4.3.1', a locator I could not confirm corresponds to a numbered theorem in the cited section of that book, and lean/QOU/QuantumObservableUniverse/GaugeTheory.lean:197 cites it bare.",
+    "rationale": "WRONG JOIN — REPORT LOUDLY, and note this is the SECOND file in this slice mis-joined to 'wald1984' (the other is library/arxiv-1910.09966v1/1910.09966v1.pdf). The registered entry under that id is a general-relativity textbook that is not on arXiv. The attached file is a three-author hep-th arXiv preprint, id 9306069v2, on the stretched horizon and black-hole complementarity. No matching id exists in content/schema/references.ts, so id is set to null. RELEVANCE: it introduces three postulates on black-hole evolution, develops a stretched-horizon/membrane description worked out in 1+1 dilaton gravity, and advocates black-hole complementarity. QOU's nearest content is conj:lqg-entropy-qdim-partition-pole in gravity-spacetime and the information-theory quantum-entropy blocks, but those turn on the LQG area spectrum and on categorical entropy, not on horizon complementarity or membrane dissipation; I found no QOU claim this document would support. Scope-(a): this document, as read, supplies nothing this folio can consume — not a claim that horizon thermodynamics is irrelevant to the framework. NOTE ON THE 'wald1984' ID ITSELF: with both of its seeded source files now shown to be other works, that id has no source anywhere in uploads/, and its two Lean citations are unverifiable as written — lean/QOU/MathlibExt/MonoidalCalcVar.lean:41 cites it at 'Theorem 4.3.1', a locator I could not confirm corresponds to a numbered theorem in the cited section of that book, and lean/QOU/QuantumObservableUniverse/GaugeTheory.lean:197 cites it bare.",
     "keyResults": [],
     "proposedActions": [
      {
@@ -11966,7 +11966,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-hep-th-9308100v1/9308100v1 (1).pdf"
+    "file": "library/arxiv-hep-th-9308100v1/9308100v1.pdf"
    },
    "id": null,
    "status": "unreviewed",
@@ -13299,7 +13299,7 @@
   {
    "source": {
     "kind": "upload",
-    "file": "library/arxiv-2209.06973v1/On_the_geometry_of_two_state_models_for_the_colore.pdf"
+    "file": "library/arxiv-2209.06973v1/2209.06973v1.pdf"
    },
    "id": null,
    "status": "unreviewed",

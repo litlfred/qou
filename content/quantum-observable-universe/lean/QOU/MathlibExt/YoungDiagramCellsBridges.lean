@@ -6,6 +6,10 @@ import QOU.BraidKnot.PieceAGeneral
 import QOU.MathlibExt.QPartitionCombinatorics
 import QOU.MathlibExt.WenzlSchurElement
 import QOU.BraidKnot.TwoFiltrationBridge
+import QOU.SchurWeyl.HoefsmitRep
+import QOU.QBeta.WenzlWeightVanishing
+import QOU.Hecke.Hoefsmit
+import QOU.HeckeAlgebra.JonesMarkovWenzl
 
 /-!
 # Bridges from the scattered cell statistics onto the single home
@@ -54,6 +58,12 @@ was wrong in both directions:
 
 So the honest count for the migration is: six free, one conditional, two
 requiring the sibling to be promoted to a library module first.
+
+**Superseded — read the 2026-08-24 section below before trusting the table
+above.** Re-measured from the tree rather than from this record, there are
+**ten** reachable `content` copies, not eight; four were never listed anywhere,
+including one this record explicitly claimed does not exist. `axialDistance` is
+duplicated three times, and that is where the duplication stops being cosmetic.
 -/
 
 namespace QOU.MathlibExt.YoungDiagramCells
@@ -114,5 +124,122 @@ theorem hook_eq_hookLength {μ : YoungDiagram} {c : ℕ × ℕ} (hc : c ∈ μ) 
   have hi : c.1 < μ.colLen c.2 := (YoungDiagram.mem_iff_lt_colLen).mp hc
   simp only [hook, arm, leg, QOU.BraidKnot.TwoFiltrationBridge.hookLength]
   omega
+
+/-! ## 2026-08-24 — four more `content` copies, and the `axialDistance` pair
+
+Re-measured from scratch rather than from the record above, and the record was
+wrong again — in the direction that matters, *under*-counting.
+
+**There are ten `content` copies in the library tree, not six.** Four were never
+listed anywhere:
+
+| declaration | file | why it was missed |
+|---|---|---|
+| `QOU.SchurWeyl.cellContent` | `SchurWeyl/HoefsmitRep.lean:115` | a `cdup` note claimed this one "does not exist" |
+| `QOU.QBeta.WenzlWeight.content` | `QBeta/WenzlWeightVanishing.lean:91` | never listed |
+| `QOU.Hecke.content` | `Hecke/Hoefsmit.lean:80` | never listed |
+| `QOU.HeckeAlgebra.JonesMarkovWenzl.cellContent` | `HeckeAlgebra/JonesMarkovWenzl.lean:195` | never listed; carries an unused `Partition` argument, so a signature-shaped search misses it |
+
+All four are `rfl`. The last takes a partition it ignores (`_lam`), which is why
+it looks like a different function and is not.
+
+**Importing all of them together is safe.** These six modules had never been
+co-imported; doing so here is itself the test that no two of the ten share a
+fully-qualified name. They do not — this file compiles.
+
+### The `axialDistance` pair — the reason this stopped being cosmetic
+
+`content` being duplicated costs duplicated effort. `axialDistance` being
+duplicated costs a **silent `rw` failure**, which is a different kind of bug:
+
+`QOU.SchurWeyl.axialDistance` and `QOU.BraidKnot.TableauContent.axialDistance`
+are `rfl`-equal but are *different constants*. Inside `namespace QOU.SchurWeyl`
+a bare `axialDistance` resolves to the first **even under `open
+QOU.BraidKnot.TableauContent`** — the enclosing namespace wins over the `open`.
+So a `rw` with a lemma stated in the other does not fire, and the error prints
+the two sides *identically* (`axialDistance c (a, ν.rowLen a)` both times),
+differing only in a fully-qualified name buried in the pattern line.
+
+Live instances already on opposite sides of that line:
+`MarkovAssembly.markov_of_corner_identity` uses the first,
+`SeminormalNodeForm.axialDistance_corner_addable` the second;
+`QOU.SchurWeyl.axialDistance_eq_tableauContent` in `SchurWeyl/WenzlMarkovCorner.lean`
+is the ad-hoc bridge written to compose them. That lemma stays where it is —
+callers depend on it — but it is now an instance of a general pattern rather
+than a one-off.
+
+### The third `axialDistance` is in scope after all
+
+`QOU.Hecke.axialDistance` was set aside as "tableau-indexed, a different
+signature, probably not part of this drain". Checked rather than assumed, and
+that is **wrong on the part that matters**: it is a different signature, but it
+is *built on a fourth undocumented copy of `content`* (`QOU.Hecke.content`,
+above), and it bridges — conditionally, one lemma per branch of its `dite`.
+Being differently-shaped kept it out of the duplication count while leaving it
+squarely inside the duplication. -/
+
+/-! ### The four `content` copies the record missed — all `rfl` -/
+
+theorem content_eq_schurWeyl (c : ℕ × ℕ) :
+    content c = QOU.SchurWeyl.cellContent c := rfl
+
+theorem content_eq_qBetaWenzlWeight (c : ℕ × ℕ) :
+    content c = QOU.QBeta.WenzlWeight.content c := rfl
+
+theorem content_eq_hecke (i j : ℕ) :
+    content (i, j) = QOU.Hecke.content i j := rfl
+
+/-- `JonesMarkovWenzl.cellContent` takes a partition it never uses (`_lam`,
+kept for call-site symmetry with `cellHookLength`). The bridge holds for every
+partition, which is the precise sense in which the argument is inert. -/
+theorem content_eq_jonesMarkovWenzl {n : ℕ} (lam : Nat.Partition n) (i j : ℕ) :
+    content (i, j) = QOU.HeckeAlgebra.JonesMarkovWenzl.cellContent lam i j := rfl
+
+/-! ### `axialDistance` -/
+
+theorem axialDistance_eq_schurWeyl (c d : ℕ × ℕ) :
+    axialDistance c d = QOU.SchurWeyl.axialDistance c d := rfl
+
+theorem axialDistance_eq_tableauContent (c d : ℕ × ℕ) :
+    axialDistance c d = QOU.BraidKnot.TableauContent.axialDistance c d := rfl
+
+/-- The two duplicates are therefore equal to each other. This is the composite
+that `QOU.SchurWeyl.axialDistance_eq_tableauContent` states directly; deriving it
+here shows it is not special — it is what any two copies give. -/
+theorem schurWeyl_axialDistance_eq_tableauContent (c d : ℕ × ℕ) :
+    QOU.SchurWeyl.axialDistance c d = QOU.BraidKnot.TableauContent.axialDistance c d :=
+  (axialDistance_eq_schurWeyl c d).symm.trans (axialDistance_eq_tableauContent c d)
+
+/-! ### The tableau-indexed third copy
+
+`QOU.Hecke.axialDistance` reads two cells out of a standard tableau and takes
+their content difference, with a `dite` guarding `k+1 < n` and a `+1` index
+shift (its tableau coordinates are 0-based, its contents 1-based). It is not
+pointwise-equal to anything, so it gets one lemma per branch. -/
+
+theorem hecke_axialDistance_eq_of_lt {n : ℕ} {lam : QOU.Hecke.Partition n}
+    (T : QOU.Hecke.StandardYoungTableau lam) (k : Fin n) (h : k.val + 1 < n) :
+    QOU.Hecke.axialDistance T k
+      = axialDistance ((T.cells k).1 + 1, (T.cells k).2 + 1)
+          ((T.cells ⟨k.val + 1, h⟩).1 + 1, (T.cells ⟨k.val + 1, h⟩).2 + 1) := by
+  simp only [QOU.Hecke.axialDistance, dif_pos h, axialDistance, content, QOU.Hecke.content]
+
+theorem hecke_axialDistance_eq_zero {n : ℕ} {lam : QOU.Hecke.Partition n}
+    (T : QOU.Hecke.StandardYoungTableau lam) (k : Fin n) (h : ¬ (k.val + 1 < n)) :
+    QOU.Hecke.axialDistance T k = 0 := by
+  simp only [QOU.Hecke.axialDistance, dif_neg h]
+
+/-- The `+1` shift is a translation of both cells, so it cancels: the Hecke
+axial distance is the canonical one on the *unshifted* tableau coordinates.
+This is what makes the shift a bookkeeping convention rather than a difference
+in the quantity being computed. -/
+theorem hecke_axialDistance_eq_unshifted {n : ℕ} {lam : QOU.Hecke.Partition n}
+    (T : QOU.Hecke.StandardYoungTableau lam) (k : Fin n) (h : k.val + 1 < n) :
+    QOU.Hecke.axialDistance T k
+      = axialDistance (T.cells k) (T.cells ⟨k.val + 1, h⟩) := by
+  rw [hecke_axialDistance_eq_of_lt T k h]
+  simp only [axialDistance, content]
+  push_cast
+  ring
 
 end QOU.MathlibExt.YoungDiagramCells

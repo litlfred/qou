@@ -11,7 +11,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. \"The same Mac Lane coherence already appears in the corpus in two formalized guises\" is now \"has already appeared above in two formalized guises\". Both guises, their Lean names and the sorry-free status are unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"The same Mac Lane coherence already appears in the corpus in two formalized guises\" is now \"has already appeared above in two formalized guises\". Both guises, their Lean names and the sorry-free status are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -179,7 +179,7 @@
         "reviewed_at": "2026-08-09T13:01:47.990Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.md:24: What is proved is the *structural* equivalence at the level of the scalar pentagon potential. Two things remain genuinely open and are **not** discharged here: the *categorical → scalar* descent (that"
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.md:24: What is proved is the *structural* equivalence at the level of the scalar pentagon potential. Two things remain genuinely open and are **not** discharged here: the *categorical \u2192 scalar* descent (that"
       }
     ],
     "voice-editorializing": [
@@ -943,7 +943,7 @@
           "in_degree": 0,
           "cone_size": 41,
           "depth": 22,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 12,
           "edge_span_mean": 8,
           "worst_target": ""
@@ -1311,7 +1311,7 @@
         "reviewed_at": "2026-08-15T10:30:59.923Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not a self-assuming projection.\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not a self-assuming projection.\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1667,5 +1667,6 @@
     "lean": "191f29154baa",
     "lean_statement": "7eea4804eb89"
   },
-  "updated_at": "2026-08-22T00:54:35.385Z"
+  "updated_at": "2026-08-22T00:54:35.385Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

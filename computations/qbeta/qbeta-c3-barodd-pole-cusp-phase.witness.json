@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:44:54.854031+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T15:28:25.994750+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "cusp_barEven_eq_one",
-      "computed": 3.733752135369857e-71,
+      "computed": "3.73375213536985718815682624717227502321907806979547561847525e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "ω=e^{iπ/3}: barEven ω = 1 (Lean CuspShapeBarParity)"
     },
     {
       "name": "cusp_barOdd_sq_eq_neg3",
-      "computed": 3.1369792523132786e-71,
+      "computed": "3.13697925231327879494342183906761885127522305665701035093283e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "ω=e^{iπ/3}: (barOdd ω)² = −3 (Lean CuspShapeBarParity)"
     },
     {
@@ -25,16 +25,16 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Newton at m=1 recovers Vol(4₁); Vol extremal at complete"
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 26,
   "computation": "qbeta-c3-barodd-pole-cusp-phase",
   "scriptFile": "qbeta_c3_barodd_pole_cusp_phase_probe.py",
-  "scriptHash": "a102cfba849b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "f287ea923a5e",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,12 +44,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [

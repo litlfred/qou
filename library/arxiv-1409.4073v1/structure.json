@@ -1,0 +1,210 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1409.4073v1",
+ "source": {
+  "file": "1409.4073v1.pdf",
+  "sha256": "b40be7f0022f70a14a4de02e4185d276129c7d0ba93b066bdcb8b56d6110350e",
+  "bytes": 520862,
+  "pages": 35,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1409.4073",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "14 Sep 2014"
+  },
+  "doi": null,
+  "title": "SHEAFIFICATION FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION FABIO TONINI",
+  "authors_raw": null,
+  "title_lines": [
+   "SHEAFIFICATION FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION",
+   "FABIO TONINI"
+  ],
+  "abstract": "W e introduce \u201cshea\ufb01\ufb01cation\u201d functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves (of algeb ras) of stacks. They generalize the homogeneous shea\ufb01\ufb01cation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings an d homogeneous shea\ufb01\ufb01cation functors. Moreover, using this theory, we prove a non-neutr al form of Tannaka\u2019s reconstruction, extending the classical correspondence between torsors an d strong monoidal functors.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220531103158-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Notation",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries on sheaves and fibered categories",
+   "page": 5,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Sheafification functors.",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Sheafifying R-linear functors.",
+   "page": 10,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Sheafifying R-linear monoidal functors.",
+   "page": 14,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Yoneda embeddings.",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Group schemes and representations.",
+   "page": 26,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Tannaka reconstruction for stacks with the resolution property.",
+   "page": 27,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 14569,
+   "n_words": 2815
+  },
+  {
+   "id": "sec-001-notation",
+   "number": null,
+   "title": "Notation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1228,
+   "n_words": 245
+  },
+  {
+   "id": "sec-002-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 12245,
+   "n_words": 2573
+  },
+  {
+   "id": "sec-003-2-sheafification-functors",
+   "number": "2",
+   "title": "Sheafification functors.",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 16,
+   "n_chars": 20759,
+   "n_words": 4544
+  },
+  {
+   "id": "sec-004-3-yoneda-embeddings",
+   "number": "3",
+   "title": "Yoneda embeddings.",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 26,
+   "n_chars": 29984,
+   "n_words": 6986
+  },
+  {
+   "id": "sec-005-4-group-schemes-and-representations",
+   "number": "4",
+   "title": "Group schemes and representations.",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3824,
+   "n_words": 746
+  },
+  {
+   "id": "sec-006-5-tannaka-reconstruction-for-stacks-with-the-res",
+   "number": "5",
+   "title": "Tannaka reconstruction for stacks with the resolution property.",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 35,
+   "n_chars": 23483,
+   "n_words": 5140
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 2130,
+   "n_words": 302
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 8,
+  "chars_total": 108222
+ }
+}

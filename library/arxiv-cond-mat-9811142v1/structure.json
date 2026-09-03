@@ -1,0 +1,200 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-cond-mat-9811142v1",
+ "source": {
+  "file": "9811142v1.pdf",
+  "sha256": "8666ebc040336b1483daf0079e215a56de1ff314f5cdee51c52da543366ec96d",
+  "bytes": 353717,
+  "pages": 37,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "cond-mat/9811142",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "10 Nov 1998"
+  },
+  "doi": null,
+  "title": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges",
+  "authors_raw": "P.J. Forrester\u2020, T. Nagao\u2217and G. Honner\u2020",
+  "title_lines": [
+   "Correlations for the orthogonal-unitary",
+   "and symplectic-unitary transitions at",
+   "the hard and soft edges"
+  ],
+  "abstract": "For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the general parameter dependent distribution between two sets of eigenvalues with two di\ufb00erent parameter values can be expressed as a quaternion determinant. For the parameter dependent Gaussian and Laguerre ensembles the matrix elements of the deter- minant are expressed in terms of corresponding skew-orthogonal polynomials, and their limiting value for in\ufb01nite matrix dimension are computed in the vicinity of the soft and hard edges respectively. A connection formula relating the distributions at the hard and soft edge is obtained, and a universal asymptotic behaviour of the two point correlation is identi\ufb01ed.",
+  "docinfo": {
+   "Title": "arXiv:cond-mat/9811142v1  [cond-mat.mes-hall]  10 Nov 1998",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20220326030719-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(x(1)",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(x, y; \u03c4x, \u03c4y) :=",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Ja",
+   "page": 12,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Ja(",
+   "page": 12,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 25,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(4XY ) \u03c1T hard",
+   "page": 30,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 709,
+   "n_words": 103
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 10988,
+   "n_words": 2163
+  },
+  {
+   "id": "sec-002-2-x-y-\u03c4x-\u03c4y",
+   "number": "2",
+   "title": "(x, y; \u03c4x, \u03c4y) :=",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 472,
+   "n_words": 88
+  },
+  {
+   "id": "sec-003-2-x1",
+   "number": "2",
+   "title": "(x(1)",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 11,
+   "n_chars": 7020,
+   "n_words": 1543
+  },
+  {
+   "id": "sec-004-0-ja",
+   "number": "0",
+   "title": "Ja",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 15,
+   "n_words": 4
+  },
+  {
+   "id": "sec-005-0-ja",
+   "number": "0",
+   "title": "Ja(",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 25,
+   "n_chars": 22280,
+   "n_words": 4490
+  },
+  {
+   "id": "sec-006-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 30,
+   "n_chars": 9727,
+   "n_words": 1987
+  },
+  {
+   "id": "sec-007-0-4xy-\u03c1t-hard",
+   "number": "0",
+   "title": "(4XY ) \u03c1T hard",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 36,
+   "n_chars": 11982,
+   "n_words": 2428
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1679,
+   "n_words": 283
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 64872
+ }
+}

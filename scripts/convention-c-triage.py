@@ -183,8 +183,19 @@ def triage(recs, migrate):
 
         if target in migrate._ladder_phase_targets(tree):
             reasons.append(("B2", "feeds the ladder phase (z-1)*h/2 — re-derivation"))
-        if r.get("deliberate") or migrate._file_has_c_reference(tree):
-            reasons.append(("B3", "file references a C-named symbol — comparison"))
+        # B3 names the symbol it fired on. A bare "references a C-named symbol"
+        # is unfalsifiable by the reader, and that is exactly how eight of the
+        # 24 B3 verdicts on `main` came to rest on `__doc__`, `q_fac_n` and
+        # `c_k` (bean `qou-4bq3`) -- a false "deliberate" reads as an excuse and
+        # a genuine defect survives the sweep wearing it.
+        if r.get("deliberate"):
+            reasons.append(("B3", f"the target `{target}` is itself C-named "
+                                  "— labelled comparison"))
+        else:
+            c_sym = migrate._file_c_reference(tree)
+            if c_sym:
+                reasons.append(("B3", f"file references the C-named symbol "
+                                      f"`{c_sym}` — comparison"))
         if WITNESS_MARKERS.search(src):
             reasons.append(("B4", "emits a committed witness — value change"))
         else:
@@ -198,6 +209,163 @@ def triage(recs, migrate):
         klass = "MECHANICAL" if not reasons else reasons[0][0]
         out.append({**r, "klass": klass,
                     "reasons": [f"{c}: {w}" for c, w in reasons]})
+    return out
+
+
+# ---------------------------------------------------------------------------
+# VALUE-LITERAL sites (added 2026-08-24, prompted by a sibling on PR #5622).
+#
+# Every detector above keys on how convention C is *spelled as an expression*
+# -- `1/(sqrt q + 1/sqrt q)`, `sqrt(q)/(q+1)`, a `q**3/(q**2+1)` return form,
+# and so on. A file that carries the C VALUE as a decimal literal is invisible
+# to all of them.
+#
+# Measured instance: `computations/h4_markov_weights_closed_form.py` holds
+#
+#     XCHECK_Z = "0.49932033403359827"
+#
+# and evaluates its closed forms at that (q0, z) to reproduce a published
+# record. It is a DELIBERATE convention-C control arm, and this triage did not
+# list it at all -- so the headline "N sites needing a human" understated the
+# surface, and any completeness claim built on that count was wrong.
+#
+# A sibling hit the same class from the other side: their intersection test for
+# control arms ran at the WITNESS layer and came back empty, which they read as
+# "no control arms here". This one is a *consumer*; no witness-level
+# classification can see it either.
+#
+# Prefix-matched, not exact: the C value differs by anchor (proton z_C =
+# 0.499320334183694..., and the literal above is from a different pin), so the
+# shared stem `0.49932` is what identifies it.
+
+Z_C_LITERAL = re.compile(r"0\.49932\d*")
+
+_VALUE_LITERAL_SELFTEST = 'XCHECK_Z = "0.49932033403359827"'
+assert Z_C_LITERAL.search(_VALUE_LITERAL_SELFTEST), (
+    "Z_C_LITERAL no longer matches its known positive "
+    "(h4_markov_weights_closed_form.py XCHECK_Z) -- refusing to report a "
+    "clean value-literal surface from a detector that cannot see it."
+)
+
+
+# ---------------------------------------------------------------------------
+# EQUIVALENCE-FORM sites (added 2026-08-24, bean qou-u5z0).
+#
+# A convention-C dependency can survive with NO z expression, NO z literal and
+# NO witness edge, as a *derived identity*. Measured instance:
+# `computations/qbeta/toroidal_harmonics.py:52`
+#
+#     x_w = 1/(2*w) - 1          # w = z**2
+#
+# equals `cosh(eta)` exactly when `z = z_C = 1/(2 cosh(eta/2))`, and is off by
+# a factor of 3 under `z_D`. The convention lives in a comment plus arithmetic.
+# Every other detector in this campaign is structurally blind to it: the
+# expression scans key on how z is written, the value-literal scan on the
+# decimal, and the sibling's audits on witness edges. Only re-deriving the
+# mathematics finds it.
+#
+# Ten spellings of z_C were enumerated and checked (all equal
+# 0.499320334183694452 at the proton pin). Clean, so NOT scanned for here:
+# `1/sqrt([2]_q + 2)`, `1/sqrt(q + 1/q + 2)`, `1/sqrt((q+1)**2/q)`,
+# `0.5*sech(ln q/2)`, `q**0.5/(1+q)`, `(q**0.5 + q**-0.5)**-1`. Recorded so
+# they are not re-swept.
+
+# z_C = 1/(2 cosh(eta/2)) with eta = ln q. The HALF-argument is the
+# discriminator: bare `cosh(` is ~873 hits corpus-wide and `1/(2 cosh eta)`
+# WITHOUT the half is the toroidal-harmonic normaliser, a different quantity.
+HYPERBOLIC_Z = re.compile(
+    r"(1\s*/\s*\(\s*2\s*[\*\s]\s*(mp\.|np\.|math\.|sp\.)?cosh)|"
+    r"(0?\.5\s*/\s*(mp\.|np\.|math\.|sp\.)?cosh)|"
+    r"(/\s*\(\s*2\s*\*\s*(mp\.|np\.|math\.|sp\.)?cosh)")
+
+# `two_q_half = sqrt(q) + 1/sqrt(q)` is [2]_{q^(1/2)}, a legitimate Hecke
+# natural form -- but its RECIPROCAL is exactly z_C. Two files define it and
+# neither inverts it today; this watches for the edit that would.
+TWO_Q_HALF_RECIP = re.compile(r"/\s*two_?q_?half\b|\btwo_?q_?half\s*\*\*\s*-\s*1")
+
+_HYP_POS = ["z = 1/(2*cosh(log(q)/2))", "z = 0.5/mp.cosh(mp.log(q)/2)"]
+_HYP_NEG = ["two_cosh_u = 2 * mp.cosh(mp.mpf(u))"]
+for _t in _HYP_POS:
+    assert HYPERBOLIC_Z.search(_t), f"HYPERBOLIC_Z lost its positive selftest: {_t}"
+for _t in _HYP_NEG:
+    assert not HYPERBOLIC_Z.search(_t), (
+        f"HYPERBOLIC_Z widened onto the harmonic normaliser: {_t}")
+assert TWO_Q_HALF_RECIP.search("z = 1 / two_q_half"), "TWO_Q_HALF_RECIP selftest lost"
+assert not TWO_Q_HALF_RECIP.search("form_2 = -two_q_half * h_tilde ** 2 / 2"), (
+    "TWO_Q_HALF_RECIP now matches MULTIPLICATION, which is the legitimate use")
+assert HYPERBOLIC_Z.search("# Then z = 1 / (2 cosh(eta/2))."), (
+    "HYPERBOLIC_Z no longer finds toroidal_harmonics.py:49, the case it was "
+    "written for -- refusing to report an equivalence-form surface it cannot see")
+
+
+def equivalence_form_sites() -> list[tuple[str, int, str, str]]:
+    """Convention C reachable only through an equivalent form.
+
+    Never auto-migratable: these are identities, and substituting z_D into one
+    does not repair it -- the surrounding derivation has to be redone.
+
+    KNOWN LIMITATION, measured on the motivating case. This finds
+    `toroidal_harmonics.py` at line **49**, which is the *comment*
+    `# Then z = 1 / (2 cosh(eta/2))`, NOT line 52 where the identity actually
+    lives (`x_w = 1/(2*w) - 1`, no `cosh` in it at all). That is enough to
+    route a reader to the file, and it is NOT enough to claim coverage: an
+    undocumented instance of the same defect -- the identity with no comment
+    explaining it -- remains invisible to this and to every other detector in
+    the campaign. Do not report a clean equivalence-form surface on the
+    strength of this scan.
+    """
+    out = []
+    for path in sorted(REPO.glob("computations/**/*.py")):
+        rel = str(path.relative_to(REPO))
+        if "_deprecated" in rel or "_internal" in rel:
+            continue
+        try:
+            lines = path.read_text(errors="ignore").splitlines()
+        except Exception:
+            continue
+        for i, ln in enumerate(lines, 1):
+            if HYPERBOLIC_Z.search(ln):
+                out.append((rel, i, ln.strip()[:95], "hyperbolic"))
+            elif TWO_Q_HALF_RECIP.search(ln):
+                out.append((rel, i, ln.strip()[:95], "1/[2]_sqrt(q)"))
+    return out
+
+
+def value_literal_sites() -> list[tuple[str, int, str]]:
+    """Files carrying the convention-C z as a decimal literal.
+
+    Reported SEPARATELY from the expression sites and never auto-migratable:
+    a hardcoded C value is far more often a deliberate reproduction control
+    than a stale spelling, and rewriting one silently breaks a working check.
+
+    Returns (rel, line, text, kind) where kind is "binding" or "mention".
+
+    The split matters: most hits are PROSE -- a comment saying "z = 0.4993203,
+    excised by owner ruling" is documentation of the excision, not a site.
+    Only a binding actually feeds a computation. Reporting them together makes
+    a 27-item list that is ~85% noise, which is how a real site hides.
+    """
+    out = []
+    for path in sorted(REPO.glob("computations/**/*.py")):
+        rel = str(path.relative_to(REPO))
+        if "_deprecated" in rel or "_internal" in rel:
+            continue
+        try:
+            lines = path.read_text().splitlines()
+        except Exception:
+            continue
+        in_doc = False
+        for i, ln in enumerate(lines, 1):
+            if ln.count('"""') % 2 == 1:
+                in_doc = not in_doc
+            if not Z_C_LITERAL.search(ln):
+                continue
+            stripped = ln.strip()
+            prose = in_doc or stripped.startswith("#")
+            if not prose and "#" in ln:
+                # value in a trailing comment only, not in the code part
+                prose = not Z_C_LITERAL.search(ln.split("#", 1)[0])
+            out.append((rel, i, stripped[:100], "mention" if prose else "binding"))
     return out
 
 
@@ -239,6 +407,31 @@ def main() -> int:
             print(f"  {r['path']}:{r['line']}  {r['target']}")
             for why in r["reasons"]:
                 print(f"      {why}")
+
+    vl = value_literal_sites()
+    print(f"\n{'=' * 74}")
+    print(f"VALUE-LITERAL SITES — the C value as a decimal, not an expression  ({len(vl)})")
+    print("=" * 74)
+    print("  Invisible to every expression detector above, so these are NOT in the")
+    print("  counts below. Never auto-migratable: a hardcoded C value is usually a")
+    print("  deliberate reproduction control, and rewriting one breaks a live check.")
+    binds = [r for r in vl if r[3] == "binding"]
+    ment  = [r for r in vl if r[3] == "mention"]
+    print(f"  BINDINGS ({len(binds)}) — a literal actually feeding a computation:")
+    for rel, ln, txt, _ in binds:
+        print(f"    {rel}:{ln}  {txt}")
+    print(f"  mentions ({len(ment)}) — prose/comments citing the value; not sites.")
+
+    eq = equivalence_form_sites()
+    print(f"\n{'=' * 74}")
+    print(f"EQUIVALENCE-FORM SITES — C via an identity, no z and no literal  ({len(eq)})")
+    print("=" * 74)
+    print("  Not in the counts below either. NEVER auto-migratable: substituting")
+    print("  z_D into an identity does not repair it, the derivation must be redone.")
+    print("  Most hyperbolic hits are the harmonic normaliser 1/(2 cosh eta) with NO")
+    print("  half-argument — a different quantity. Check for eta/2 before acting.")
+    for rel, ln, txt, kind in eq:
+        print(f"  [{kind}] {rel}:{ln}  {txt}")
 
     print(f"\n{'=' * 74}\nSUMMARY")
     for k in order:

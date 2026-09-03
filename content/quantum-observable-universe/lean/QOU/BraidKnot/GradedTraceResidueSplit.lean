@@ -81,16 +81,23 @@ theorem level_zero_pure_descended
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
 theorem strutinsky_analogue
     {R : Type u} [CommRing R] (S : GradedTraceResidueSplit R) :
+    -- The split exists and is canonical; the physics interpretation
+    -- is developed in the Physical Observations chapter.
     S.total = S.smooth + S.oscillating :=
   S.split_identity
 
-/-- **Graded trace residue split proposition.**  Conditional on a
-    `[GradedTraceResidueSplit R]` instance, the split identity
-    holds. -/
--- Ref: [manuscript] `prop:graded-trace-residue-split`
-theorem graded_trace_residue_split
-    {R : Type u} [CommRing R] [s : GradedTraceResidueSplit R] :
-    s.total = s.smooth + s.oscillating :=
-  s.split_identity
+
+/-! ### Removed 2026-08-30 — self-assuming projections
+
+- `graded_trace_residue_split` — body was `s.split_identity`: the conclusion was the projected field
+  verbatim, so the declaration restated its own hypothesis.
+
+**Why removal.** The content stays in the class field each declaration
+projected, which asserts the same proposition under the same hypotheses; only
+the restatement goes. That is the vacuity ledger's recorded disposition for
+this category — *"drop the pseudo-theorem and project the field at use sites"*
+— and there were no use sites: each had **zero references anywhere in the
+corpus**, including in this file. Bean `qou-z9ws`.
+-/
 
 end QOU.BraidKnot

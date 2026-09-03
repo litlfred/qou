@@ -1,0 +1,92 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "72-4-841",
+ "source": {
+  "file": "72-4-841.pdf",
+  "sha256": "c852d7d7dcc2662c1d724ccd0f62b33d09a557904f666a680b987c702eca3c33",
+  "bytes": 884242,
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO",
+  "authors_raw": "Department of Physics, Nagoya University, Nagoya 464",
+  "title_lines": [
+   "Progress of Theoretical Physics, Vol. 72, No.4, October 1984",
+   "Euclidean Quantum Gravity on a Flat Lattice",
+   "Kei-ichi KONDO"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "Adobe Acrobat 9.0 Paper Capture Plug-in; modified using iTextSharp.LGPLv2.Core 3.7.4.0",
+   "Creator": "Acrobat 5.0 Scan Plug-in for Windows",
+   "CreationDate": "D:20021031171100+09'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "EJ",
+   "page": 5,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-6-ej",
+   "number": "6",
+   "title": "EJ",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 12,
+   "n_chars": 17730,
+   "n_words": 2854
+  },
+  {
+   "id": "sec-001-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 360,
+   "n_words": 50
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1438,
+   "n_words": 246
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 3,
+  "chars_total": 19528
+ }
+}

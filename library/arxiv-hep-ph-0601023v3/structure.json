@@ -1,0 +1,1771 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-0601023v3",
+ "source": {
+  "file": "0601023v3.pdf",
+  "sha256": "875ab040b50487a16a60aa5340395bbc110ab3551b601df3419ab433759e699d",
+  "bytes": 1506803,
+  "pages": 258,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/0601023",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "23 Apr 2007"
+  },
+  "doi": null,
+  "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
+  "authors_raw": "Pran Nath 1, and Pavel Fileviez Pérez2",
+  "title_lines": [
+   "Proton Stability",
+   "Grand Unified Theories",
+   "in Strings and in Branes"
+  ],
+  "abstract": "A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes non - su- persymmetric uniﬁcation, SUSY and SUGRA uniﬁed models, uni ﬁ- cation based on extra dimensions, and string-M-theory mode ls. The extra dimensional uniﬁcation includes 5D and 6D and univers al extra dimensional (UED) models, and models based on warped geomet ry. Proton stability in a wide array of string theory and M theory models is reviewed. These include Calabi-Yau models, grand uniﬁed models with Kac-Moody levels k > 1, a new class of heterotic string models, models based on intersecting D branes, and string landscape models. The destabilizing eﬀect of quantum gravity on the proton is d iscussed. The possibility of testing grand uniﬁed models, models base d on extra dimensions and string-M-theory models via their distincti ve modes is investigated. The proposed next generation proton decay experi- ments, HyperK, UNO, MEMPHYS, ICARUS, LANNDD (DUSEL), and LENA would shed signiﬁcant light on the nature of uniﬁcat ion complementary to the physics at the LHC. Mathematical tools for the computation of proton lifetime are given in the appendices. Prospects for the future are discussed.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126170504-05'00'",
+   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
+   "Title": "arXiv:hep-ph/0601023v3  23 Apr 2007"
+  },
+  "title_prev": "Proton Stability Grand Unified Theories, in Strings and in Branes"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Department of Physics. Northeastern University",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Departamento de F ´ ısica. Centro de F ´ ısica Te´ orica de Part´ ıculas,",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 5,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Experimental bounds and future searches",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Nucleon decay in non-supersymmetric sce-",
+   "page": 17,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Baryon number violation in the Standard Model",
+   "page": 17,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Grand uniﬁcation and gauge contributions to the",
+   "page": 18,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Vαβ",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Vβα",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(V4V †",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(V1VUD )1α(V3VEN )βl",
+   "page": 20,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Vβα",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(V1VUDV †",
+   "page": 20,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(U †",
+   "page": 20,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay induced by scalar leptoquarks",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Nucleon decay in SUSY and SUGRA uni-",
+   "page": 25,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "R-parity violation and the decay of the proton",
+   "page": 27,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 1,
+   "title": "GeV. In the case of the decay channels into antineutrinos, t he decay rates",
+   "page": 28,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Supersymmetry breaking and SUGRA uniﬁcation",
+   "page": 30,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "(|H1|2 − |H2|2)2 + ∆ V1,",
+   "page": 33,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Eﬀect of CP violating phases on proton lifetime",
+   "page": 36,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Doublet-triplet splitting problem",
+   "page": 40,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in SU (5) supersymmetric grand uni-",
+   "page": 42,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Nucleon decay in SO(10) theories",
+   "page": 48,
+   "source": "inferred",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in models with uniﬁed symmetry",
+   "page": 54,
+   "source": "inferred",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "Testing grand uniﬁcation",
+   "page": 56,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Textures, Planck scale eﬀects and proton decay",
+   "page": 57,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Gravitational smearing eﬀects",
+   "page": 60,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Constraints from gauge coupling uniﬁcation",
+   "page": 62,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "C2(Gi)] (151)",
+   "page": 62,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "TeV, or if one has only the gauginos and higgsinos at the 10 2-103 GeV",
+   "page": 66,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Testing GUTs through proton decay",
+   "page": 67,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in ﬂipped SU (5)",
+   "page": 68,
+   "source": "inferred",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Upper bound on the proton lifetime in GUTs",
+   "page": 71,
+   "source": "inferred",
+   "number": "5.6"
+  },
+  {
+   "level": 1,
+   "title": "Uniﬁcation in Extra Dimensions and Pro-",
+   "page": 72,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in models with 5D",
+   "page": 73,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Matter on the SU(5) brane",
+   "page": 80,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Matter in the bulk",
+   "page": 80,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Matter on the SM brane",
+   "page": 81,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(δ(x5) −δ(x5 −πR))f5u10.10.5H",
+   "page": 81,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(δ(x5) −η¯5η10δ(x5 −πR))f5u10.¯5.¯5H +h.c. (207)",
+   "page": 81,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "SO(10) models in 5D",
+   "page": 84,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "(B−L). Now under the SU (4)C",
+   "page": 85,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "SO(10) brane model",
+   "page": 86,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "G(4,2,2) brane model",
+   "page": 86,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "SO(10) brane",
+   "page": 92,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "SU (5) ×U(1) brane",
+   "page": 92,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Flipped SU (5) ×U(1) brane",
+   "page": 92,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "SU (4)C ×SU (2)L ×SU (2)R brane",
+   "page": 92,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Gauge-Higgs uniﬁcation",
+   "page": 94,
+   "source": "inferred",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in universal extra dimension (UED)",
+   "page": 96,
+   "source": "inferred",
+   "number": "6.6"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in warped geometry",
+   "page": 99,
+   "source": "inferred",
+   "number": "6.7"
+  },
+  {
+   "level": 2,
+   "title": "Proton stability in kink backgrounds",
+   "page": 101,
+   "source": "inferred",
+   "number": "6.8"
+  },
+  {
+   "level": 1,
+   "title": "Proton Decay in String Models",
+   "page": 102,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Baryon and lepton number violating dimension four operat ors are absent",
+   "page": 103,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proton Stability in Calabi-Yau Models",
+   "page": 104,
+   "source": "inferred",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Kac-Moody level k > 1 string models and proton",
+   "page": 109,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "A new class of heterotic string models",
+   "page": 111,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in M theory compactiﬁcations",
+   "page": 112,
+   "source": "inferred",
+   "number": "7.4"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay in intersecting D brane models",
+   "page": 114,
+   "source": "inferred",
+   "number": "7.5"
+  },
+  {
+   "level": 2,
+   "title": "Nucleon stability in string landscape models",
+   "page": 117,
+   "source": "inferred",
+   "number": "7.6"
+  },
+  {
+   "level": 1,
+   "title": "This results in the number of",
+   "page": 118,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "This leads to ⟨DX⟩ = m2/g2",
+   "page": 120,
+   "source": "inferred",
+   "number": "X"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay from black hole and wormhole eﬀects",
+   "page": 121,
+   "source": "inferred",
+   "number": "7.7"
+  },
+  {
+   "level": 2,
+   "title": "U (1) string symmetries and proton stability",
+   "page": 122,
+   "source": "inferred",
+   "number": "7.8"
+  },
+  {
+   "level": 2,
+   "title": "Discrete Symmetries and proton stability",
+   "page": 124,
+   "source": "inferred",
+   "number": "7.9"
+  },
+  {
+   "level": 1,
+   "title": "Other Aspects",
+   "page": 127,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Neutrino masses and proton decay",
+   "page": 128,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Proton stability and dark matter",
+   "page": 133,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Exotic B & L violation",
+   "page": 135,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 3,
+   "title": "B & L violation involving higher generations",
+   "page": 136,
+   "source": "inferred",
+   "number": "8.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Monopole catalyzed proton decay",
+   "page": 137,
+   "source": "inferred",
+   "number": "8.3.3"
+  },
+  {
+   "level": 2,
+   "title": "Proton decay and the ultimate fate of the universe",
+   "page": 138,
+   "source": "inferred",
+   "number": "8.4"
+  },
+  {
+   "level": 1,
+   "title": "Summary and Outlook",
+   "page": 139,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Summary Table of p decay predictions",
+   "page": 144,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Pij (362)",
+   "page": 154,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Qij (363)",
+   "page": 154,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(dRidRj)(uLνLk) (410)",
+   "page": 162,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(ON )2m + 1",
+   "page": 168,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "M2 MZcWcβ −MZcWsβ",
+   "page": 172,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "These reduce the number",
+   "page": 176,
+   "source": "inferred",
+   "number": "LL"
+  },
+  {
+   "level": 1,
+   "title": "(2b1 −b2)¯Λ 0γ5n +",
+   "page": 181,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "GeV. In the previous appendix we already discussed those eﬀ ects for the",
+   "page": 184,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(K ∗",
+   "page": 184,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(V1VUD )1α(V3VEN )βl (567)",
+   "page": 190,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Case (a) ( V1VUD )11 = 0 (Condition V)",
+   "page": 190,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Extra matter at a high scale which can modify the RG evoluti on of",
+   "page": 197,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Non-standard hypercharge normalizations within string models with",
+   "page": 197,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An M theory solution [227] to the gauge coupling/gravity u niﬁcation,",
+   "page": 197,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 199,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Susskind, The Anthropic Landscape of String Theory , hep-",
+   "page": 216,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Wetterich, “Fermion Mass Predictions From Higher Dimens ions,”",
+   "page": 217,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "D. Carone, “Electroweak constraints on extended models w ith extra",
+   "page": 224,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "E. Ibanez, J. E. Kim, H. P. Nilles and F. Quevedo, “Orbifold Com-",
+   "page": 230,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Antoniadis, J. R. Ellis, J. S. Hagelin and D. V. Nanopoulos , “GUT",
+   "page": 230,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-",
+   "page": 231,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Kokorelis, “Standard models and split supersymmetry fro m inter-",
+   "page": 238,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "H. Albright and S. M. Barr, “Realization of the large mixin g an-",
+   "page": 243,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "H. Albright, “Bounds on the neutrino mixing angles for an S O(10)",
+   "page": 244,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Coriano and A. E. Faraggi, “String inspired neutrino mass tex-",
+   "page": 244,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "S. Aulakh, “Consistency of the minimal supersymmetric GU T spec-",
+   "page": 248,
+   "source": "inferred",
+   "number": "C"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-department-of-physics-northeastern-university",
+   "number": "1",
+   "title": "Department of Physics. Northeastern University",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 48,
+   "n_words": 5
+  },
+  {
+   "id": "sec-001-2-departamento-de-f-ısica-centro-de-f-ısica-te-o",
+   "number": "2",
+   "title": "Departamento de F ´ ısica. Centro de F ´ ısica Te´ orica de Part´ ıculas,",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 107,
+   "n_words": 12
+  },
+  {
+   "id": "sec-002-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 5150,
+   "n_words": 1254
+  },
+  {
+   "id": "sec-003-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 12,
+   "n_chars": 17712,
+   "n_words": 3034
+  },
+  {
+   "id": "sec-004-2-experimental-bounds-and-future-searches",
+   "number": "2",
+   "title": "Experimental bounds and future searches",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 9254,
+   "n_words": 1676
+  },
+  {
+   "id": "sec-005-3-nucleon-decay-in-non-supersymmetric-sce",
+   "number": "3",
+   "title": "Nucleon decay in non-supersymmetric sce-",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1571,
+   "n_words": 269
+  },
+  {
+   "id": "sec-006-31-baryon-number-violation-in-the-standard-model",
+   "number": "3.1",
+   "title": "Baryon number violation in the Standard Model",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1347,
+   "n_words": 250
+  },
+  {
+   "id": "sec-007-32-grand-uniﬁcation-and-gauge-contributions-to-t",
+   "number": "3.2",
+   "title": "Grand uniﬁcation and gauge contributions to the",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3895,
+   "n_words": 775
+  },
+  {
+   "id": "sec-008-1-vαβ",
+   "number": "1",
+   "title": "Vαβ",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 57,
+   "n_words": 16
+  },
+  {
+   "id": "sec-009-1-vβα",
+   "number": "1",
+   "title": "Vβα",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-010-2-v4v",
+   "number": "2",
+   "title": "(V4V †",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-4-v1vudv",
+   "number": "4",
+   "title": "(V1VUDV †",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 31,
+   "n_words": 7
+  },
+  {
+   "id": "sec-012-1-v1vud-1αv3ven-βl",
+   "number": "1",
+   "title": "(V1VUD )1α(V3VEN )βl",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 70,
+   "n_words": 19
+  },
+  {
+   "id": "sec-013-4-u",
+   "number": "4",
+   "title": "(U †",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3296,
+   "n_words": 691
+  },
+  {
+   "id": "sec-014-33-proton-decay-induced-by-scalar-leptoquarks",
+   "number": "3.3",
+   "title": "Proton decay induced by scalar leptoquarks",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 3264,
+   "n_words": 697
+  },
+  {
+   "id": "sec-015-4-nucleon-decay-in-susy-and-sugra-uni",
+   "number": "4",
+   "title": "Nucleon decay in SUSY and SUGRA uni-",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 5268,
+   "n_words": 918
+  },
+  {
+   "id": "sec-016-41-r-parity-violation-and-the-decay-of-the-proto",
+   "number": "4.1",
+   "title": "R-parity violation and the decay of the proton",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1397,
+   "n_words": 261
+  },
+  {
+   "id": "sec-017-1-gev-in-the-case-of-the-decay-channels-into-ant",
+   "number": "1",
+   "title": "GeV. In the case of the decay channels into antineutrinos, t he decay rates",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3242,
+   "n_words": 652
+  },
+  {
+   "id": "sec-018-42-supersymmetry-breaking-and-sugra-uniﬁcation",
+   "number": "4.2",
+   "title": "Supersymmetry breaking and SUGRA uniﬁcation",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 6370,
+   "n_words": 1143
+  },
+  {
+   "id": "sec-019-8-h12-h222-v1",
+   "number": "8",
+   "title": "(|H1|2 − |H2|2)2 + ∆ V1,",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 8998,
+   "n_words": 1690
+  },
+  {
+   "id": "sec-020-43-eﬀect-of-cp-violating-phases-on-proton-lifeti",
+   "number": "4.3",
+   "title": "Eﬀect of CP violating phases on proton lifetime",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 8493,
+   "n_words": 1560
+  },
+  {
+   "id": "sec-021-44-doublet-triplet-splitting-problem",
+   "number": "4.4",
+   "title": "Doublet-triplet splitting problem",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 4325,
+   "n_words": 875
+  },
+  {
+   "id": "sec-022-45-proton-decay-in-su-5-supersymmetric-grand-uni",
+   "number": "4.5",
+   "title": "Proton decay in SU (5) supersymmetric grand uni-",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 48,
+   "n_chars": 11233,
+   "n_words": 2042
+  },
+  {
+   "id": "sec-023-46-nucleon-decay-in-so10-theories",
+   "number": "4.6",
+   "title": "Nucleon decay in SO(10) theories",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 54,
+   "n_chars": 10989,
+   "n_words": 2134
+  },
+  {
+   "id": "sec-024-47-proton-decay-in-models-with-uniﬁed-symmetry",
+   "number": "4.7",
+   "title": "Proton decay in models with uniﬁed symmetry",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 4373,
+   "n_words": 819
+  },
+  {
+   "id": "sec-025-5-testing-grand-uniﬁcation",
+   "number": "5",
+   "title": "Testing grand uniﬁcation",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 2272,
+   "n_words": 383
+  },
+  {
+   "id": "sec-026-51-textures-planck-scale-eﬀects-and-proton-decay",
+   "number": "5.1",
+   "title": "Textures, Planck scale eﬀects and proton decay",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 60,
+   "n_chars": 5892,
+   "n_words": 1093
+  },
+  {
+   "id": "sec-027-52-gravitational-smearing-eﬀects",
+   "number": "5.2",
+   "title": "Gravitational smearing eﬀects",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 5745,
+   "n_words": 1063
+  },
+  {
+   "id": "sec-028-53-constraints-from-gauge-coupling-uniﬁcation",
+   "number": "5.3",
+   "title": "Constraints from gauge coupling uniﬁcation",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 610,
+   "n_words": 111
+  },
+  {
+   "id": "sec-029-3-c2gi-151",
+   "number": "3",
+   "title": "C2(Gi)] (151)",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 66,
+   "n_chars": 5285,
+   "n_words": 1073
+  },
+  {
+   "id": "sec-030-1-tev-or-if-one-has-only-the-gauginos-and-higgsi",
+   "number": "1",
+   "title": "TeV, or if one has only the gauginos and higgsinos at the 10 2-103 GeV",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1106,
+   "n_words": 232
+  },
+  {
+   "id": "sec-031-54-testing-guts-through-proton-decay",
+   "number": "5.4",
+   "title": "Testing GUTs through proton decay",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 2704,
+   "n_words": 523
+  },
+  {
+   "id": "sec-032-55-proton-decay-in-ﬂipped-su-5",
+   "number": "5.5",
+   "title": "Proton decay in ﬂipped SU (5)",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 71,
+   "n_chars": 5120,
+   "n_words": 1027
+  },
+  {
+   "id": "sec-033-56-upper-bound-on-the-proton-lifetime-in-guts",
+   "number": "5.6",
+   "title": "Upper bound on the proton lifetime in GUTs",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 3186,
+   "n_words": 583
+  },
+  {
+   "id": "sec-034-6-uniﬁcation-in-extra-dimensions-and-pro",
+   "number": "6",
+   "title": "Uniﬁcation in Extra Dimensions and Pro-",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 73,
+   "n_chars": 2228,
+   "n_words": 389
+  },
+  {
+   "id": "sec-035-61-proton-decay-in-models-with-5d",
+   "number": "6.1",
+   "title": "Proton decay in models with 5D",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 80,
+   "n_chars": 14307,
+   "n_words": 2811
+  },
+  {
+   "id": "sec-036-1-matter-on-the-su5-brane",
+   "number": "1",
+   "title": "Matter on the SU(5) brane",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-037-2-matter-in-the-bulk",
+   "number": "2",
+   "title": "Matter in the bulk",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-038-3-matter-on-the-sm-brane",
+   "number": "3",
+   "title": "Matter on the SM brane",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 760,
+   "n_words": 146
+  },
+  {
+   "id": "sec-039-2-δx5-δx5-πrf5u10105h",
+   "number": "2",
+   "title": "(δ(x5) −δ(x5 −πR))f5u10.10.5H",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 9,
+   "n_words": 4
+  },
+  {
+   "id": "sec-040-2-δx5-η5η10δx5-πrf5u1055h-hc-207",
+   "number": "2",
+   "title": "(δ(x5) −η¯5η10δ(x5 −πR))f5u10.¯5.¯5H +h.c. (207)",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 84,
+   "n_chars": 5957,
+   "n_words": 1117
+  },
+  {
+   "id": "sec-041-62-so10-models-in-5d",
+   "number": "6.2",
+   "title": "SO(10) models in 5D",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 85,
+   "n_chars": 1942,
+   "n_words": 378
+  },
+  {
+   "id": "sec-042-2-bl-now-under-the-su-4c",
+   "number": "2",
+   "title": "(B−L). Now under the SU (4)C",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 949,
+   "n_words": 199
+  },
+  {
+   "id": "sec-043-1-so10-brane-model",
+   "number": "1",
+   "title": "SO(10) brane model",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 86,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-044-2-g422-brane-model",
+   "number": "2",
+   "title": "G(4,2,2) brane model",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 92,
+   "n_chars": 9692,
+   "n_words": 1975
+  },
+  {
+   "id": "sec-045-1-so10-brane",
+   "number": "1",
+   "title": "SO(10) brane",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-046-2-su-5-u1-brane",
+   "number": "2",
+   "title": "SU (5) ×U(1) brane",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-047-3-flipped-su-5-u1-brane",
+   "number": "3",
+   "title": "Flipped SU (5) ×U(1) brane",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-048-4-su-4c-su-2l-su-2r-brane",
+   "number": "4",
+   "title": "SU (4)C ×SU (2)L ×SU (2)R brane",
+   "level": 1,
+   "page_start": 92,
+   "page_end": 94,
+   "n_chars": 3524,
+   "n_words": 696
+  },
+  {
+   "id": "sec-049-65-gauge-higgs-uniﬁcation",
+   "number": "6.5",
+   "title": "Gauge-Higgs uniﬁcation",
+   "level": 2,
+   "page_start": 94,
+   "page_end": 96,
+   "n_chars": 3675,
+   "n_words": 750
+  },
+  {
+   "id": "sec-050-66-proton-decay-in-universal-extra-dimension-ued",
+   "number": "6.6",
+   "title": "Proton decay in universal extra dimension (UED)",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 99,
+   "n_chars": 5171,
+   "n_words": 927
+  },
+  {
+   "id": "sec-051-67-proton-decay-in-warped-geometry",
+   "number": "6.7",
+   "title": "Proton decay in warped geometry",
+   "level": 2,
+   "page_start": 99,
+   "page_end": 101,
+   "n_chars": 5790,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-052-68-proton-stability-in-kink-backgrounds",
+   "number": "6.8",
+   "title": "Proton stability in kink backgrounds",
+   "level": 2,
+   "page_start": 101,
+   "page_end": 102,
+   "n_chars": 3388,
+   "n_words": 587
+  },
+  {
+   "id": "sec-053-7-proton-decay-in-string-models",
+   "number": "7",
+   "title": "Proton Decay in String Models",
+   "level": 1,
+   "page_start": 102,
+   "page_end": 103,
+   "n_chars": 1860,
+   "n_words": 328
+  },
+  {
+   "id": "sec-054-71-proton-stability-in-calabi-yau-models",
+   "number": "7.1",
+   "title": "Proton Stability in Calabi-Yau Models",
+   "level": 2,
+   "page_start": 103,
+   "page_end": 103,
+   "n_chars": 311,
+   "n_words": 58
+  },
+  {
+   "id": "sec-055-3-baryon-and-lepton-number-violating-dimension-f",
+   "number": "3",
+   "title": "Baryon and lepton number violating dimension four operat ors are absent",
+   "level": 1,
+   "page_start": 103,
+   "page_end": 109,
+   "n_chars": 10509,
+   "n_words": 1978
+  },
+  {
+   "id": "sec-056-72-kac-moody-level-k-1-string-models-and-proton",
+   "number": "7.2",
+   "title": "Kac-Moody level k > 1 string models and proton",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 111,
+   "n_chars": 4237,
+   "n_words": 734
+  },
+  {
+   "id": "sec-057-73-a-new-class-of-heterotic-string-models",
+   "number": "7.3",
+   "title": "A new class of heterotic string models",
+   "level": 2,
+   "page_start": 111,
+   "page_end": 112,
+   "n_chars": 2465,
+   "n_words": 439
+  },
+  {
+   "id": "sec-058-74-proton-decay-in-m-theory-compactiﬁcations",
+   "number": "7.4",
+   "title": "Proton decay in M theory compactiﬁcations",
+   "level": 2,
+   "page_start": 112,
+   "page_end": 114,
+   "n_chars": 3983,
+   "n_words": 738
+  },
+  {
+   "id": "sec-059-75-proton-decay-in-intersecting-d-brane-models",
+   "number": "7.5",
+   "title": "Proton decay in intersecting D brane models",
+   "level": 2,
+   "page_start": 114,
+   "page_end": 117,
+   "n_chars": 5930,
+   "n_words": 1158
+  },
+  {
+   "id": "sec-060-76-nucleon-stability-in-string-landscape-models",
+   "number": "7.6",
+   "title": "Nucleon stability in string landscape models",
+   "level": 2,
+   "page_start": 117,
+   "page_end": 118,
+   "n_chars": 3434,
+   "n_words": 626
+  },
+  {
+   "id": "sec-061-l-this-results-in-the-number-of",
+   "number": "L",
+   "title": "This results in the number of",
+   "level": 1,
+   "page_start": 118,
+   "page_end": 120,
+   "n_chars": 2339,
+   "n_words": 423
+  },
+  {
+   "id": "sec-062-x-this-leads-to-dx-m2g2",
+   "number": "X",
+   "title": "This leads to ⟨DX⟩ = m2/g2",
+   "level": 1,
+   "page_start": 120,
+   "page_end": 121,
+   "n_chars": 2457,
+   "n_words": 451
+  },
+  {
+   "id": "sec-063-77-proton-decay-from-black-hole-and-wormhole-eﬀe",
+   "number": "7.7",
+   "title": "Proton decay from black hole and wormhole eﬀects",
+   "level": 2,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 2535,
+   "n_words": 456
+  },
+  {
+   "id": "sec-064-78-u-1-string-symmetries-and-proton-stability",
+   "number": "7.8",
+   "title": "U (1) string symmetries and proton stability",
+   "level": 2,
+   "page_start": 122,
+   "page_end": 124,
+   "n_chars": 3817,
+   "n_words": 700
+  },
+  {
+   "id": "sec-065-79-discrete-symmetries-and-proton-stability",
+   "number": "7.9",
+   "title": "Discrete Symmetries and proton stability",
+   "level": 2,
+   "page_start": 124,
+   "page_end": 127,
+   "n_chars": 7589,
+   "n_words": 1322
+  },
+  {
+   "id": "sec-066-8-other-aspects",
+   "number": "8",
+   "title": "Other Aspects",
+   "level": 1,
+   "page_start": 127,
+   "page_end": 128,
+   "n_chars": 1226,
+   "n_words": 214
+  },
+  {
+   "id": "sec-067-81-neutrino-masses-and-proton-decay",
+   "number": "8.1",
+   "title": "Neutrino masses and proton decay",
+   "level": 2,
+   "page_start": 128,
+   "page_end": 133,
+   "n_chars": 10409,
+   "n_words": 1928
+  },
+  {
+   "id": "sec-068-82-proton-stability-and-dark-matter",
+   "number": "8.2",
+   "title": "Proton stability and dark matter",
+   "level": 2,
+   "page_start": 133,
+   "page_end": 135,
+   "n_chars": 2961,
+   "n_words": 504
+  },
+  {
+   "id": "sec-069-83-exotic-b-l-violation",
+   "number": "8.3",
+   "title": "Exotic B & L violation",
+   "level": 2,
+   "page_start": 135,
+   "page_end": 136,
+   "n_chars": 2637,
+   "n_words": 478
+  },
+  {
+   "id": "sec-070-832-b-l-violation-involving-higher-generations",
+   "number": "8.3.2",
+   "title": "B & L violation involving higher generations",
+   "level": 3,
+   "page_start": 136,
+   "page_end": 137,
+   "n_chars": 1790,
+   "n_words": 330
+  },
+  {
+   "id": "sec-071-833-monopole-catalyzed-proton-decay",
+   "number": "8.3.3",
+   "title": "Monopole catalyzed proton decay",
+   "level": 3,
+   "page_start": 137,
+   "page_end": 138,
+   "n_chars": 2417,
+   "n_words": 440
+  },
+  {
+   "id": "sec-072-84-proton-decay-and-the-ultimate-fate-of-the-uni",
+   "number": "8.4",
+   "title": "Proton decay and the ultimate fate of the universe",
+   "level": 2,
+   "page_start": 138,
+   "page_end": 139,
+   "n_chars": 1308,
+   "n_words": 248
+  },
+  {
+   "id": "sec-073-9-summary-and-outlook",
+   "number": "9",
+   "title": "Summary and Outlook",
+   "level": 1,
+   "page_start": 139,
+   "page_end": 144,
+   "n_chars": 13528,
+   "n_words": 2331
+  },
+  {
+   "id": "sec-074-10-summary-table-of-p-decay-predictions",
+   "number": "10",
+   "title": "Summary Table of p decay predictions",
+   "level": 1,
+   "page_start": 144,
+   "page_end": 154,
+   "n_chars": 15573,
+   "n_words": 3070
+  },
+  {
+   "id": "sec-075-6-pij-362",
+   "number": "6",
+   "title": "Pij (362)",
+   "level": 1,
+   "page_start": 154,
+   "page_end": 154,
+   "n_chars": 117,
+   "n_words": 25
+  },
+  {
+   "id": "sec-076-6-qij-363",
+   "number": "6",
+   "title": "Qij (363)",
+   "level": 1,
+   "page_start": 154,
+   "page_end": 162,
+   "n_chars": 8123,
+   "n_words": 1748
+  },
+  {
+   "id": "sec-077-2-dridrjulνlk-410",
+   "number": "2",
+   "title": "(dRidRj)(uLνLk) (410)",
+   "level": 1,
+   "page_start": 162,
+   "page_end": 167,
+   "n_chars": 5738,
+   "n_words": 1306
+  },
+  {
+   "id": "sec-078-2-on-2m-1",
+   "number": "2",
+   "title": "(ON )2m + 1",
+   "level": 1,
+   "page_start": 167,
+   "page_end": 172,
+   "n_chars": 4905,
+   "n_words": 1243
+  },
+  {
+   "id": "sec-079-0-m2-mzcwcβ-mzcwsβ",
+   "number": "0",
+   "title": "M2 MZcWcβ −MZcWsβ",
+   "level": 1,
+   "page_start": 172,
+   "page_end": 176,
+   "n_chars": 6535,
+   "n_words": 1340
+  },
+  {
+   "id": "sec-080-ll-these-reduce-the-number",
+   "number": "LL",
+   "title": "These reduce the number",
+   "level": 1,
+   "page_start": 176,
+   "page_end": 181,
+   "n_chars": 7293,
+   "n_words": 1519
+  },
+  {
+   "id": "sec-081-3-2b1-b2λ-0γ5n",
+   "number": "3",
+   "title": "(2b1 −b2)¯Λ 0γ5n +",
+   "level": 1,
+   "page_start": 181,
+   "page_end": 184,
+   "n_chars": 2750,
+   "n_words": 704
+  },
+  {
+   "id": "sec-082-1-gev-in-the-previous-appendix-we-already-discus",
+   "number": "1",
+   "title": "GeV. In the previous appendix we already discussed those eﬀ ects for the",
+   "level": 1,
+   "page_start": 184,
+   "page_end": 184,
+   "n_chars": 1478,
+   "n_words": 272
+  },
+  {
+   "id": "sec-083-2-k",
+   "number": "2",
+   "title": "(K ∗",
+   "level": 1,
+   "page_start": 184,
+   "page_end": 190,
+   "n_chars": 8402,
+   "n_words": 1741
+  },
+  {
+   "id": "sec-084-1-v1vud-1αv3ven-βl-567",
+   "number": "1",
+   "title": "(V1VUD )1α(V3VEN )βl (567)",
+   "level": 1,
+   "page_start": 190,
+   "page_end": 190,
+   "n_chars": 626,
+   "n_words": 120
+  },
+  {
+   "id": "sec-085-1-case-a-v1vud-11-0-condition-v",
+   "number": "1",
+   "title": "Case (a) ( V1VUD )11 = 0 (Condition V)",
+   "level": 1,
+   "page_start": 190,
+   "page_end": 197,
+   "n_chars": 10026,
+   "n_words": 1932
+  },
+  {
+   "id": "sec-086-1-extra-matter-at-a-high-scale-which-can-modify",
+   "number": "1",
+   "title": "Extra matter at a high scale which can modify the RG evoluti on of",
+   "level": 1,
+   "page_start": 197,
+   "page_end": 197,
+   "n_chars": 57,
+   "n_words": 9
+  },
+  {
+   "id": "sec-087-2-non-standard-hypercharge-normalizations-within",
+   "number": "2",
+   "title": "Non-standard hypercharge normalizations within string models with",
+   "level": 1,
+   "page_start": 197,
+   "page_end": 197,
+   "n_chars": 36,
+   "n_words": 5
+  },
+  {
+   "id": "sec-088-3-an-m-theory-solution-227-to-the-gauge-coupling",
+   "number": "3",
+   "title": "An M theory solution [227] to the gauge coupling/gravity u niﬁcation,",
+   "level": 1,
+   "page_start": 197,
+   "page_end": 199,
+   "n_chars": 3835,
+   "n_words": 708
+  },
+  {
+   "id": "sec-089-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 199,
+   "page_end": 216,
+   "n_chars": 29882,
+   "n_words": 4838
+  },
+  {
+   "id": "sec-090-l-susskind-the-anthropic-landscape-of-string-the",
+   "number": "L",
+   "title": "Susskind, The Anthropic Landscape of String Theory , hep-",
+   "level": 1,
+   "page_start": 216,
+   "page_end": 217,
+   "n_chars": 1571,
+   "n_words": 267
+  },
+  {
+   "id": "sec-091-c-wetterich-fermion-mass-predictions-from-higher",
+   "number": "C",
+   "title": "Wetterich, “Fermion Mass Predictions From Higher Dimens ions,”",
+   "level": 1,
+   "page_start": 217,
+   "page_end": 224,
+   "n_chars": 12501,
+   "n_words": 1991
+  },
+  {
+   "id": "sec-092-c-d-carone-electroweak-constraints-on-extended-m",
+   "number": "C",
+   "title": "D. Carone, “Electroweak constraints on extended models w ith extra",
+   "level": 1,
+   "page_start": 224,
+   "page_end": 230,
+   "n_chars": 11231,
+   "n_words": 1734
+  },
+  {
+   "id": "sec-093-l-e-ibanez-j-e-kim-h-p-nilles-and-f-quevedo-orbi",
+   "number": "L",
+   "title": "E. Ibanez, J. E. Kim, H. P. Nilles and F. Quevedo, “Orbifold Com-",
+   "level": 1,
+   "page_start": 230,
+   "page_end": 230,
+   "n_chars": 93,
+   "n_words": 17
+  },
+  {
+   "id": "sec-094-i-antoniadis-j-r-ellis-j-s-hagelin-and-d-v-nanop",
+   "number": "I",
+   "title": "Antoniadis, J. R. Ellis, J. S. Hagelin and D. V. Nanopoulos , “GUT",
+   "level": 1,
+   "page_start": 230,
+   "page_end": 231,
+   "n_chars": 867,
+   "n_words": 144
+  },
+  {
+   "id": "sec-095-l-j-dixon-j-a-harvey-c-vafa-and-e-witten-strings",
+   "number": "L",
+   "title": "J. Dixon, J. A. Harvey, C. Vafa and E. Witten, “Strings On Or b-",
+   "level": 1,
+   "page_start": 231,
+   "page_end": 238,
+   "n_chars": 13110,
+   "n_words": 2056
+  },
+  {
+   "id": "sec-096-c-kokorelis-standard-models-and-split-supersymme",
+   "number": "C",
+   "title": "Kokorelis, “Standard models and split supersymmetry fro m inter-",
+   "level": 1,
+   "page_start": 238,
+   "page_end": 243,
+   "n_chars": 8760,
+   "n_words": 1340
+  },
+  {
+   "id": "sec-097-c-h-albright-and-s-m-barr-realization-of-the-lar",
+   "number": "C",
+   "title": "H. Albright and S. M. Barr, “Realization of the large mixin g an-",
+   "level": 1,
+   "page_start": 243,
+   "page_end": 244,
+   "n_chars": 1009,
+   "n_words": 157
+  },
+  {
+   "id": "sec-098-c-h-albright-bounds-on-the-neutrino-mixing-angle",
+   "number": "C",
+   "title": "H. Albright, “Bounds on the neutrino mixing angles for an S O(10)",
+   "level": 1,
+   "page_start": 244,
+   "page_end": 244,
+   "n_chars": 1258,
+   "n_words": 192
+  },
+  {
+   "id": "sec-099-c-coriano-and-a-e-faraggi-string-inspired-neutri",
+   "number": "C",
+   "title": "Coriano and A. E. Faraggi, “String inspired neutrino mass tex-",
+   "level": 1,
+   "page_start": 244,
+   "page_end": 248,
+   "n_chars": 6722,
+   "n_words": 1085
+  },
+  {
+   "id": "sec-100-c-s-aulakh-consistency-of-the-minimal-supersymme",
+   "number": "C",
+   "title": "S. Aulakh, “Consistency of the minimal supersymmetric GU T spec-",
+   "level": 1,
+   "page_start": 248,
+   "page_end": 258,
+   "n_chars": 7624,
+   "n_words": 1330
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 102,
+  "sections": 101,
+  "chars_total": 457674
+ }
+}

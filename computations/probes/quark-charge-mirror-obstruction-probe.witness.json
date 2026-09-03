@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Exact obstruction: the crossing-orientation mirror that def:down-quark states as its mechanism forces Q(d) = -Q(u), which is incompatible with the asserted +2/3 / -1/3 and makes the neutron non-neutral whenever the proton is charged.",
+  "computation": {
+    "script": "computations/probes/quark_charge_mirror_obstruction_probe.py",
+    "arithmetic": "exact rational (fractions.Fraction) throughout; no floating point, no numerical q anchor"
+  },
+  "facts": {
+    "mirror_is_odd": {
+      "claim": "Q(n_-, n_+) = -Q(n_+, n_-) for all crossing counts",
+      "cells_checked": 81,
+      "failures": [],
+      "holds": true
+    },
+    "ratio_obstruction": {
+      "claim": "no crossing count gives the asserted ratio",
+      "asserted_ratio_Qu_over_Qd": "-2",
+      "mirror_ratios_attainable": [
+        "-1"
+      ],
+      "asserted_ratio_attainable": false,
+      "obstruction_holds": true
+    },
+    "representability": {
+      "claim": "Q in (1/2)Z; thirds are unrepresentable",
+      "grid": 9,
+      "any_third_attained": [],
+      "all_attained_have_denominator_dividing_two": true,
+      "obstruction_holds": true
+    },
+    "neutron_neutrality_ladder": [
+      {
+        "Q_up": "1/2",
+        "Q_down_forced_by_mirror": "-1/2",
+        "Q_proton_uud": "1/2",
+        "Q_neutron_udd": "-1/2",
+        "neutron_equals_minus_proton": true,
+        "neutron_neutral": false,
+        "standard_model_proton": "1",
+        "standard_model_neutron": "0",
+        "sm_magnitude_ratio_up_over_down": "2"
+      },
+      {
+        "Q_up": "1",
+        "Q_down_forced_by_mirror": "-1",
+        "Q_proton_uud": "1",
+        "Q_neutron_udd": "-1",
+        "neutron_equals_minus_proton": true,
+        "neutron_neutral": false,
+        "standard_model_proton": "1",
+        "standard_model_neutron": "0",
+        "sm_magnitude_ratio_up_over_down": "2"
+      },
+      {
+        "Q_up": "2",
+        "Q_down_forced_by_mirror": "-2",
+        "Q_proton_uud": "2",
+        "Q_neutron_udd": "-2",
+        "neutron_equals_minus_proton": true,
+        "neutron_neutral": false,
+        "standard_model_proton": "1",
+        "standard_model_neutron": "0",
+        "sm_magnitude_ratio_up_over_down": "2"
+      },
+      {
+        "Q_up": "0",
+        "Q_down_forced_by_mirror": "0",
+        "Q_proton_uud": "0",
+        "Q_neutron_udd": "0",
+        "neutron_equals_minus_proton": true,
+        "neutron_neutral": true,
+        "standard_model_proton": "1",
+        "standard_model_neutron": "0",
+        "sm_magnitude_ratio_up_over_down": "2"
+      }
+    ]
+  },
+  "summary": {
+    "obstruction_established": true,
+    "scope": "(b) structural exclusion of the STATED MECHANISM, not of the framework deriving fractional charge by another route",
+    "invariant_cited": "oddness of the Coulomb charge under crossing-orientation reversal, which down-quark.lean proves relates the two quarks (quark_crossing_asymmetry)",
+    "headline": "the mechanism predicts Q(neutron) = -Q(proton); neutron neutrality forces every quark charge to 0",
+    "note": "Two independent failures, either alone sufficient: the ratio must be -1 and is asserted as -2; and Q lies in (1/2)Z so thirds are unreachable for every braid word. The Standard Model assignment needs |Q_u| = 2|Q_d|, an asymmetry between the two orientations that a pure mirror cannot supply."
+  },
+  "scriptHash": "dbe6b3580aac",
+  "scriptCommitSha": "unknown",
+  "commitSha": "7ebc5799b3952910799c53a5ad407ecaef57a824",
+  "engine": "python",
+  "computedAt": "2026-08-29T04:13:06.254860+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "quark_charge_mirror_obstruction_probe.py"
+}

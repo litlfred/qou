@@ -39,7 +39,25 @@ import math
 import numpy as np
 import sys
 from pathlib import Path
-from mpmath import mp
+from mpmath import mp, mpf as _mpf_type, mpc as _mpc_type
+
+
+class SeminormalPrecisionLoss(ValueError):
+    """Raised when `build_seminormal_matrices` is handed an mpmath `q`.
+
+    A REFUSAL, NOT A CRASH. The float64 builder would truncate the argument to
+    a double without saying so, which is the defect bean `qou-8xb1` records --
+    the caller asked for precision, got a double, and got no signal. Refusing
+    turns a silently wrong number into a visible error naming the exact twin,
+    `build_seminormal_matrices_mp`.
+
+    Subclasses `ValueError` to match the corpus idiom for a domain guard
+    (cf. `habiro_coefficients_atomic.AmDifferenceInvalid`), which AGENTS.md
+    cites as the reason a traceback is not by itself evidence of a defect: an
+    exception type the corpus defines for exactly this case is the guard
+    working, not the producer failing.
+    """
+
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
@@ -55,6 +73,7 @@ z = q0**3 / (q0**2 + 1)
 # convention (hyperbolic-volume heuristic) is removed — it was
 # not derivable from the mass-identity prescription.
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV
 
 
@@ -163,6 +182,56 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     if dim == 0:
         return [], dim, syts
 
+    # DISPATCH ON THE OPERAND (bean qou-8xb1): an mpmath `q` gets exact
+    # arithmetic, a float gets the float64 path, and the decision follows the
+    # VALUE rather than a flag. Same shape `qou-d8gq` landed for the sibling
+    # builder in pyhecke (`dtype=_value_dtype(vals)`), for the same reason.
+    #
+    # This function used to coerce here (`float(q)`) and was float64 all the
+    # way down: it computed the axial-distance entries in float, reached for
+    # mp.sqrt and threw the precision away, and returned np.zeros(). An `mpf`
+    # handed in came back as a double with NO signal -- measured at shape
+    # (3,2,1), dim 16, output was BIT-IDENTICAL to passing the f64 value. An
+    # earlier revision of this branch merely raised on that input; refusing is
+    # better than lying, but the caller still could not get what it asked for.
+    # Now it can.
+    #
+    # `str`, `Fraction` and plain numerics keep coercing -- the #1861 rationale
+    # further down records that callers legitimately pass them, and a string is
+    # not a request for precision. Only the mpmath types dispatch, because only
+    # for those is the downcast unambiguously wrong.
+    if isinstance(q, _mpc_type):
+        # Dispatching mpc here would be worse than useless: the exact twin is
+        # real-only (`q_local = q if isinstance(q, mp.mpf) else mp.mpf(str(q))`
+        # stringifies, and mpf("(1.11 + 0.0j)") dies with an opaque
+        # "invalid literal for int()" from inside mpmath). An earlier revision
+        # of this branch routed mpc there and produced exactly that traceback.
+        #
+        # A complex q is a legitimate FIBRE-level object (AGENTS.md separates
+        # the fibre, where Im(q) is unconstrained, from the archimedean
+        # evaluation, where Im(q_0) = 0). So this is a missing capability, not
+        # a forbidden input, and it says so.
+        raise SeminormalPrecisionLoss(
+            "build_seminormal_matrices() was handed a complex q "
+            f"({type(q).__name__}); the exact seminormal builder is real-only, "
+            "so there is no exact path to dispatch to. Complex q is a "
+            "fibre-level object and supporting it is unimplemented, not "
+            "refused. Pass an mpf for the exact real path. Bean qou-8xb1."
+        )
+    if isinstance(q, _mpf_type):
+        if sparse:
+            # scipy.sparse rejects dtype=object, so an exact matrix cannot be
+            # returned in CSR form. Refusing beats silently handing back a
+            # float64 sparse matrix, which is the defect this dispatch exists
+            # to remove. (Same boundary AGENTS.md records for su4_1111.)
+            raise SeminormalPrecisionLoss(
+                "build_seminormal_matrices(sparse=True) cannot carry an "
+                f"mpmath q: scipy.sparse has no dtype for {type(q).__name__}. "
+                "Pass sparse=False for the exact dense path, or float(q) if "
+                "float64 is genuinely what you want. Bean qou-8xb1."
+            )
+        return build_seminormal_matrices_mp(shape, q)
+
     # Resolve q (override or module default).  Derive amplitude h locally.
     q_local = float(q0) if q is None else float(q)
     h_local = q_local - 1.0 / q_local
@@ -233,6 +302,122 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     return sigmas, dim, syts
 
 
+def build_seminormal_matrices_mp(shape, q):
+    """Exact-arithmetic twin of `build_seminormal_matrices` (mpmath, no float64).
+
+    WHY THIS EXISTS
+    ---------------
+    `build_seminormal_matrices` above computes in float64: it coerces its
+    argument, computes the axial-distance entries in float, reaches for
+    `mp.sqrt` and throws the precision away (`b = float(mp.sqrt(...))`), and
+    returns `np.zeros((dim, dim))`, i.e. float64 storage.
+
+    UPDATED 2026-08-25 (bean qou-8xb1): it no longer SILENTLY downcasts an
+    `mpf` -- it dispatches here instead, so a caller asking for exact
+    arithmetic now gets it through the ordinary entry point. This function
+    remains the implementation and the explicit way to ask.
+
+    Its float64 path is still the DEFAULT (`q=None`, and the ~64 callers that
+    pass a float), and deliberately so. Flipping the default would be a false
+    fix, measured: numpy silently re-truncates `mp.matrix` back to float64 in
+    most operations --
+
+        np.trace(sigma)             -> float64
+        np.abs(sigma)**2            -> float64
+        np.eye(d) @ sigma           -> float64
+        np.sum(np.abs(sigma)**2)    -> float64
+        sigma @ sigma (mpmath's @)  -> mpf, preserved
+
+    -- so callers handed exact matrices would go on producing float64 results
+    while LOOKING exact, which is strictly worse than the honest float64 they
+    get now. That last one matters: `np.sum(np.abs(M)**2)` is exactly what the
+    deuteron probe's `fro2` computed. Exactness has to be carried by the
+    consumer, not merely handed to it, which is why opting in per-consumer is
+    the right shape.
+
+    That makes it a library-level float64 entry point, which is why draining a
+    probe that calls it is not a probe-local fix. Per AGENTS.md ("a float64
+    input poisons the whole result") the honest options are an exact route or
+    an unanswered question — so this is the exact route, added ALONGSIDE rather
+    than in place of the float64 builder. Nothing above is modified and no
+    existing caller changes behaviour; drains of the other 63 can adopt this
+    incrementally.
+
+    THE q -> 1 LIMIT IS EXACT HERE, NOT A FINITE DIFFERENCE
+    -------------------------------------------------------
+    Callers wanting the classical (q = 1) rep have been passing `q = 1 + 1e-7`,
+    because `a = h/(1 - q^-2rho)` is 0/0 at q = 1. In float64 that ratio is
+    formed from two quantities of size ~1e-7 each carrying ~1e-16 of absolute
+    error, so it retains only ~9 significant digits.
+
+    The limit is elementary and needs no epsilon. With q = 1 + eps:
+    h = q - 1/q ~ 2*eps and 1 - q^(-2*rho) ~ 2*rho*eps, so
+
+        a -> 1/rho,   a' -> -1/rho,   b^2 = a*a' + 1 -> 1 - 1/rho^2,
+
+    which is exactly Young's classical seminormal form. `q=1` is therefore
+    handled as its own branch and is exact, not approached.
+
+    Returns (sigmas, dim, syts) with sigmas a list of `mp.matrix`, matching the
+    float64 builder's shape and index conventions exactly.
+    """
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], dim, syts
+
+    q_local = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
+    exact_one = (q_local == 1)
+    h_local = None if exact_one else q_local - 1 / q_local
+
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+    sigmas = []
+
+    for k in range(1, n):
+        M = mp.zeros(dim, dim)
+        processed = set()
+
+        for i in range(dim):
+            if i in processed:
+                continue
+
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+
+            if exact_one:
+                a = mp.mpf(1) / rho
+                a_prime = -a
+            else:
+                a = h_local / (1 - q_local ** (-2 * rho))
+                a_prime = h_local / (1 - q_local ** (2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k] = ci_k1
+            swap_map[k + 1] = ci_k
+
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
+
+            if j is None:
+                M[i, i] = a
+                processed.add(i)
+            else:
+                b = mp.sqrt(abs(a * a_prime + 1))
+                M[i, i] = a
+                M[j, j] = a_prime
+                M[i, j] = b
+                M[j, i] = b
+                processed.add(i)
+                processed.add(j)
+
+        sigmas.append(M)
+
+    return sigmas, dim, syts
+
+
 # ══════════════════════════════════════════════════════════════
 # §3  NUCLEAR BRAID CHARACTER
 # ══════════════════════════════════════════════════════════════
@@ -266,7 +451,7 @@ def _parse_precision(precision):
     Accepts:
       - "f64" / "fast" / "f64_numeric_fallback"  → f64 (16 dps, fast)
       - "mpfr" / "exact" / int N (≥ 50)          → mpfr at N dps (default 50)
-      - "symbolic" / "symbolic_q"                → symbolic (deferred)
+      - "symbolic" / "symbolic_q"                → exact symbolic in q
 
     Returns `(canonical_tag, dps_or_None)`.
     """
@@ -305,7 +490,7 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
             None / "f64" / "fast"        → f64 (~16 dps), fast Rust kernel
             "mpfr" / "mpfr_50dps" / 50  → mpfr at 50 dps, exact (no f64 round)
             "mpfr_<N>dps" / int N≥50    → mpfr at N dps
-            "symbolic" / "symbolic_q"    → symbolic in q (NotImplementedError; F3)
+            "symbolic" / "symbolic_q"    → EXACT symbolic in q (sympy)
         return_precision: if True, return `(value, precision_tag)`;
             if False (default), return value only.
 
@@ -316,24 +501,44 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
 
     Returns the character.  For `f64`: returns `float`. For `mpfr_*`:
     returns a string of the decimal expansion (caller may parse via
-    `mpmath.mpf`).  For `symbolic_q`: not yet implemented (raises).
+    `mpmath.mpf`).  For `symbolic_q`: a **sympy expression** in
+    `hecke_characters_symbolic.q` — a rational function, not a number and not
+    a string, so substituting a value stays the caller's explicit decision.
+    Passing `q_value` alongside `precision='symbolic_q'` is an error rather
+    than being silently ignored.
+
+    `word` accepts both shapes in use in this repo: the signed
+    `[(sign, gen_1based), ...]` above, and — on the symbolic path only, for
+    now — the typed `[(c, d, gen_0based)]` form of `chi_all_lambda`, in which
+    a crossing is the algebra element `c*sigma_g + d`.
     """
+    tag, dps = _parse_precision(precision)
+
+    # The symbolic branch is handled BEFORE `q_value` is defaulted, because
+    # "the caller passed no q" and "the caller passed q0" mean different things
+    # here and the default would erase the distinction.
+    if tag == PRECISION_SYMBOLIC_Q:
+        if q_value is not None:
+            raise ValueError(
+                "precision='symbolic_q' evaluates in a free symbol q, so a "
+                "q_value has nothing to bind to. Substitute yourself — "
+                "`chi_lambda_braid(shape, word, precision='symbolic_q')"
+                ".subs(hecke_characters_symbolic.q, <value>)` — so the "
+                "precision loss happens where you can see it, or ask for "
+                "precision='mpfr_50dps' to get a number directly."
+            )
+        from hecke_characters_symbolic import chi_lambda_braid_symbolic
+        value = chi_lambda_braid_symbolic(shape, word)
+        return (value, PRECISION_SYMBOLIC_Q) if return_precision else value
+
     if q_value is None:
         q_value = float(q0)
-    tag, dps = _parse_precision(precision)
 
     # Normalize word.
     word_marshalled = [
         (1 if (s == '+' or s == 1 or s is True) else -1, int(g))
         for s, g in word
     ]
-
-    if tag == PRECISION_SYMBOLIC_Q:
-        raise NotImplementedError(
-            "symbolic-in-q character evaluation is deferred to F3 "
-            "(Murnaghan–Nakayama / Ram–Wenzl recursion in Rust). "
-            "For now use precision='mpfr_50dps' for exact evaluation."
-        )
 
     if tag.startswith("mpfr_"):
         if not _RUST_CHI_AVAILABLE:
@@ -508,14 +713,38 @@ def chi_lambdas_braid(shapes, word, q_value=None, precision=None):
     ]
 
 
+# Canonical p-n interface offset, bound once at this module's q0. Imported
+# rather than open-coded so there is a single definition of the convention
+# across pyhecke (Layer 2b) and computations (Layer 3); the import is
+# deliberately hard, because a fallback to -h/2 would silently compute the
+# colour-blind convention while reporting success.
+from pyhecke.constants import (  # noqa: E402
+    PN_CONVENTION as _PN_CONVENTION,
+    pn_interface_offset as _pn_interface_offset,
+)
+
+D_PN = _pn_interface_offset(q0)
+
+
 def crossing_coeffs(ti, tj):
-    """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
+    """Crossing (c, d) for nucleon types: 1=proton, 0=neutron.
+
+    The mixed (p-n) branch carries the COLOUR-WEIGHTED offset `D_PN`, not
+    `-h/2`. `-h/2` is `strict_averaged`, which is the bar-symmetriser of z
+    and is colour-BLIND: it averages the two flavours 50/50 and so cannot
+    see the substrate flavour split. Canonical per the owner ruling of
+    2026-08-15 (R3), reaffirmed 2026-08-26.
+
+    This is the INTER-nucleon crossing only. The INTRA-nucleon quark-level
+    averaged crossings elsewhere in this module keep `sigma - (h/2)*1`;
+    nothing here establishes what convention a u-d crossing should carry.
+    """
     if ti == 1 and tj == 1:
         return 1.0, 0.0       # pp: σ
     elif ti == 0 and tj == 0:
         return 1.0, -h        # nn: σ⁻¹
     else:
-        return 1.0, -h / 2    # pn: mixed
+        return 1.0, D_PN      # pn: mixed, colour-weighted
 
 
 def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
@@ -598,8 +827,18 @@ def _q_int_at(k, q):
     `q0_anchor_manifest.json::ideal_muon`. So every q-integer here is a function
     of the ENTRY POINT unless the caller names its q (bean qou-wee5).
     """
-    h = q - 1 / q
-    return (q ** k - q ** (-k)) / h
+    # Association order MIRRORS the module-level `q_int`, which is
+    # `(Q**n - Q_INV**n) / HA` over PRECOMPUTED reciprocal and h. Computing
+    # `q**(-k)` and `q - 1/q` inline instead is the same mathematics but a
+    # different float64 rounding path: measured, it moved `binding_3A` by
+    # 1.7e-16 to 3.2e-16 relative — 1 to 1.5 ULP. That is the floor of the
+    # arithmetic and not a semantic change, but a witness diff cannot tell the
+    # difference, so threading a q would have shown up as "fields moved" across
+    # the whole migration. Binding the reciprocal once makes the explicit path
+    # bit-identical to the default when `q` IS the module q. Bean qou-6p3b.
+    qi = 1 / q
+    h = q - qi
+    return (q ** k - qi ** k) / h
 
 
 def qfac(n, q=None):
@@ -628,7 +867,7 @@ def dim_q(shape, q=None):
     module-level q; pass `q` explicitly to pin the anchor (bean qou-wee5)."""
     n = sum(shape)
     if q is None:
-        return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+        return qfac(n, Q0_PROTON) / math.prod(q_int(hk) for hk in young_hooks(shape))
     return qfac(n, q) / math.prod(_q_int_at(hk, q) for hk in young_hooks(shape))
 
 

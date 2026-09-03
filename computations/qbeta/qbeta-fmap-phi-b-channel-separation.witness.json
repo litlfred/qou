@@ -9,7 +9,7 @@
       "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "|Φ_b(z)| = 1 at real b, real z (pure phase; prop:phi-b-unitary-bar-odd)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 9.055679078826712e-66,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "d|Φ_b|/dz ≈ 0 — magnitude channel carries no variation"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|d arg Φ_b/dz| ≥ 1e-3 (min observed 1.7737) — phase channel carries the variation"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses IsSigmaUnitary.crossFactor"
     }
   ],

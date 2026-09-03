@@ -671,7 +671,7 @@
           "in_degree": 0,
           "cone_size": 18,
           "depth": 8,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 5,
           "edge_span_mean": 3,
           "worst_target": ""
@@ -1009,7 +1009,8 @@
         "reviewed_at": "2026-06-28T10:58:52.268Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1124,7 +1125,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing."
       }
     ],
     "voice-probe-narrative": [
@@ -1190,7 +1192,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -1637,5 +1639,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:53:45.979Z"
+  "updated_at": "2026-08-21T15:53:45.979Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

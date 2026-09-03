@@ -9,7 +9,7 @@
       "computed": 0.2728078875361402,
       "expected": 0.2728,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "B_pred/B_AME (D)",
       "source": "binding-depth-stratified-rust.witness.json regen 2026-06-22"
     }

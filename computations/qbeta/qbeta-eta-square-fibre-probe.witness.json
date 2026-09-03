@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T20:42:56.757075+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-26T07:08:16.559653+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9895,
+  "durationMs": 9379,
   "computation": "qbeta-eta-square-fibre-probe",
   "scriptFile": "qbeta_eta_square_fibre_probe.py",
-  "scriptHash": "d470ce78b462",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "cfcb2c8e508a",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eta_square_fibre_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eta_square_fibre_probe.py"
   },
   "description": "0zr0 eta-square fibre-descent test: (A) exact Pythagorean compatibility P=E^2+2E-O^2 of the cosh/sinh zeta4 fibre model; (B) eta=arcsinh(O) bar-oddness + eta^2 membership in Q(sqrt3)[[u~]] with 08ds conventions, ORD=17.",
   "audit_only": true,

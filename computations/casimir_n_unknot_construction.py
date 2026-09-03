@@ -181,7 +181,23 @@ def main() -> int:
             }
         )
 
-    # n-stability verdict: only the count has constant (zero) deviation
+    # n-stability verdict: only the count has constant (zero) deviation.
+    # Measured as the SPREAD of each candidate's |rel-h²| across the cutoff
+    # range — a functional is n-stable exactly when that spread does not move.
+    # The count's own spread is zero by construction (it never reads q), which
+    # is why the assertion below is about UNIQUENESS among the candidates: that
+    # is the part of the selection principle a number can refute.
+    def _spread(key):
+        vals = [abs(r[key]) for r in per_n if r[key] is not None]
+        return max(vals) - min(vals)
+
+    n_spread = {
+        "bare_count": _spread("count_relh2"),
+        "jones_unlink": _spread("jones_unlink_relh2"),
+        "wenzl_unnorm": _spread("wenzl_unnorm_relh2"),
+    }
+    n_stable = sorted(k for k, v in n_spread.items() if v < 1e-40)
+
     jones_grows = all(
         abs(per_n[i]["jones_unlink_relh2"]) > abs(per_n[i - 1]["jones_unlink_relh2"])
         for i in range(1, len(per_n))
@@ -260,12 +276,21 @@ def main() -> int:
         tolerance=1e-40,
         source="(π²/6)·|ζ(-3)| with disjoint geometric n³ degeneracy",
     )
+    # Was `computed="0", expected="0"` (bean `qou-26f2`) — two literals standing
+    # in for `count_relh2`, which is itself the hard-coded `0.0` a few lines up,
+    # so the check was constant twice over and would have passed even if the
+    # Jones and Wenzl functionals had turned out n-stable too. What the selection
+    # principle actually needs is that the count is the ONLY admissible one, and
+    # that is measurable: the spread of each candidate's |rel-h²| over n = 2..8.
     builder.add_assertion(
-        "bare_count_is_n_stable",
-        computed="0",       # count rel-h² deviation
-        expected="0",
-        tolerance=1e-40,
-        source="disjoint unknot count is q-independent",
+        "bare_count_is_uniquely_n_stable",
+        computed=str(len(n_stable)),
+        expected="1",
+        tolerance=0,
+        unit="candidate mode-count functionals with n-flat rel-h² deviation",
+        source="disjoint unknot count is q-independent; |rel-h²| spread over "
+        "n=2..8 — " + ", ".join(f"{k} {float(v):.3g}" for k, v in n_spread.items())
+        + f" ⇒ n-stable set = {n_stable}",
     )
 
     # ─── Regulator-independence of the 1/120 = ζ(-3) prefactor n-sum ───

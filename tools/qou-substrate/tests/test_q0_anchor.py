@@ -12,11 +12,14 @@ import qou_substrate.witness as w  # noqa: E402
 def test_env_override_muon():
     a, v = w.resolve_q0_anchor("whatever.py", env={"QOU_Q0_ANCHOR": "muon"})
     assert a == "muon"
-    # The muon pin as the COMPUTE path actually uses it. Do NOT "correct" this
-    # to the q_muon_at() value (1.109978595554…): a muon-tagged producer
-    # computes with the witness string, so a derived label would disagree with
-    # the number the witness reports. See _q0_value_for_anchor's note.
-    assert v is None or v.startswith("1.109978595557")
+    # The muon pin as the COMPUTE path actually uses it. The original comment
+    # here warned against "correcting" this to a derived value, because a
+    # muon-tagged producer computes with the witness string and a derived label
+    # would disagree with the number the witness reports. That intent is kept
+    # and is now satisfied by construction: PR #5500 made the WITNESS ITSELF
+    # derive, so reading the same resolver the compute path reads IS the witness
+    # string, and the hard-coded prefix was the thing that had gone stale.
+    assert v is None or v == str(w._q0_value_for_anchor("muon"))
 
 
 def test_env_override_proton():
@@ -249,9 +252,17 @@ def test_save_drops_independent_when_payload_gains_a_q0():
         b.save()
 
         got = json.loads(out.read_text())
-        assert "q0Anchor" not in got, (
+        assert got.get("q0Anchor") != "independent", (
             "a stale independence claim survived onto a witness that now "
             "records a proton q0")
+        # TIGHTENED 2026-08-24 (bean qou-aj91). This asserted `"q0Anchor" not
+        # in got` — correct when the only two outcomes were "keep the stale
+        # label" or "keep none". `build()` now reads the pin off the payload,
+        # so the third and best outcome exists: the stale claim is gone AND
+        # the witness carries the pin its own numbers show. Asserting the
+        # exact label is STRICTER than asserting absence, not looser.
+        assert got.get("q0Anchor") == "proton"
+        assert got["q0Value"].startswith("1.10997858275")
 
 
 def test_save_carries_forward_the_reason_with_the_anchor():
@@ -319,7 +330,9 @@ def test_save_drops_the_reason_with_the_anchor():
         b.save()
 
         got = json.loads(out.read_text())
-        assert "q0Anchor" not in got
+        # See the note in test_save_drops_independent_when_payload_gains_a_q0:
+        # the witness now carries the pin its payload shows, not none.
+        assert got.get("q0Anchor") == "proton"
         assert "q0AnchorReason" not in got, (
             "the reason outlived the anchor it explains — it now reads as "
             "provenance for a claim the witness no longer makes")
@@ -362,3 +375,272 @@ if __name__ == "__main__":
         ran += 1
     print(f"q0-anchor: {ran} passed, {skipped} skipped "
           f"(run under pytest for full coverage)")
+
+
+# ── payload-first anchor resolution (bean qou-aj91) ──────────────────
+#
+# `q0Anchor`/`q0Value` answer "at which pin was this payload computed?".
+# Resolving them from the manifest answers a different question — what the
+# producer was CONFIGURED to do — and the two diverge for the 85 producers
+# that read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`
+# directly: that string IS the muon anchor's definition, 67 of the 85 are
+# absent from the manifest, and the manifest's runtime default is proton.
+
+# DERIVED, not frozen (bean qou-y98b). These were literals, and the muon one
+# went stale the moment PR #5500 landed: it made the muon anchor DERIVE from the
+# live CODATA-2022 m_mu/m_e instead of reading a frozen string, so the pin moved
+# 1.109978595557... -> 1.109978595642... Five tests here then failed, and the two
+# payload-evidence ones failed in a way that reads as a logic bug rather than
+# stale data -- a payload carrying the OLD literal is no longer muon evidence,
+# so it fell through to proton and the assertion said `'proton' == 'muon'`.
+#
+# Re-freezing at the new value would reintroduce exactly what #5500 removed and
+# would break again at the next CODATA revision. Reading them from the same
+# resolver the compute path uses keeps these tests about BEHAVIOUR -- does
+# payload evidence outrank the manifest, does an explicit declaration win --
+# which is what they were always for.
+_MUON = str(w._q0_value_for_anchor("muon"))
+_PROTON = str(w._q0_value_for_anchor("proton"))
+# A REAL path (the stamper hashes the file) whose stem is absent from
+# `q0_anchor_manifest.json`, so it resolves to the runtime default, proton.
+_UNLISTED = __file__
+
+
+def test_payload_evidence_beats_the_manifest_default():
+    """An unlisted producer defaults to proton — unless its payload says muon."""
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "muon"
+    assert payload["q0Value"] == _MUON      # derived, see _MUON above
+
+
+def test_payload_evidence_is_read_before_serialisation():
+    """The commonest producer idiom stamps BEFORE `json.dump(..., default=str)`.
+
+    At that moment `parameters.q0` is still an `mpmath.mpf`, so a check keyed
+    on `isinstance(v, str)` reads the evidence as absent on exactly the
+    witnesses that carry it — and fails silently, falling back to the manifest.
+    Measured on `meson_mass_from_hecke`, whose committed witness reads as muon
+    while a live re-run stamped proton.
+    """
+    mpmath = __import__("mpmath")
+    mpmath.mp.dps = 60
+    payload = {"parameters": {"q0": mpmath.mpf(_MUON)}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "muon"
+
+
+def test_low_precision_value_contributes_no_evidence():
+    """`str(mpf)` at dps 15 is `1.10998` — it distinguishes neither pin.
+
+    Such a value must fall through to the manifest rather than be guessed at:
+    the two pins agree to 8 significant figures.
+    """
+    assert w._q0_anchor_from_payload({"parameters": {"q0": 1.10998}}) is None
+
+
+def test_a_payload_carrying_both_pins_asserts_neither():
+    both = {"a": {"q0": _MUON}, "b": {"q_0": _PROTON}}
+    assert w._q0_anchor_from_payload(both) is None
+
+
+def test_a_declared_payload_anchor_still_wins_over_evidence():
+    """A producer that states its own pin is never overruled — including a
+    cross-anchor probe declaring `ambiguous` over a payload that happens to
+    record one readable q₀."""
+    payload = {"q0Anchor": "ambiguous", "parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert payload["q0Anchor"] == "ambiguous"
+
+
+def test_explicit_kwarg_still_wins_over_payload_evidence():
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+        q0_anchor="proton", q0_value=_PROTON,
+    )
+    assert payload["q0Anchor"] == "proton"
+
+
+def test_resolver_requires_a_declaration_when_there_is_no_evidence():
+    """`build()`'s rule is unchanged for the no-evidence case: without a
+    positive declaration nothing is stamped, because Q0_ANCHOR_MISSING is a
+    tolerated, visible state while a defaulted pin is a silent claim."""
+    a, v = w.resolve_q0_anchor_payload_first(
+        {"nothing": "here"}, _UNLISTED, require_declared=True, env={},
+    )
+    assert (a, v) == (None, None)
+
+
+def test_evidence_outranks_the_declaration_requirement():
+    """A recorded q₀ IS a positive declaration — a stronger one than a manifest
+    entry, since the producer made it by computing rather than by being listed."""
+    a, _ = w.resolve_q0_anchor_payload_first(
+        {"parameters": {"q0": _MUON}}, _UNLISTED, require_declared=True, env={},
+    )
+    assert a == "muon"
+
+
+def test_payload_evidence_does_not_move_any_value():
+    """The whole point: this changes the STAMP, never the numbers."""
+    payload = {"parameters": {"q0": _MUON}, "result": 3.14159, "note": "keep me"}
+    before = dict(payload["parameters"]), payload["result"], payload["note"]
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="mpmath",
+    )
+    assert (dict(payload["parameters"]), payload["result"], payload["note"]) == before
+
+
+# ── q0_anchor=False: the q₀-independent opt-out (bean qou-4un2 / qou-iph3) ──
+
+
+def test_false_declares_independence_and_stamps_no_pin():
+    """A producer that never touches q₀ DECLARES that; it does not get a pin.
+
+    The resolver has no "no anchor" outcome, so before this existed every
+    caller got a pin whether or not the numbers depended on one — and an inert
+    stamp is byte-identical to a load-bearing one. That is what this guards,
+    and it still holds: no proton, no muon, no q0Value.
+
+    CONTRACT CHANGED (bean qou-y98b): `False` now stamps
+    `q0Anchor: "independent"` rather than omitting the field. Omission was
+    byte-identical to never having asked, so a correctly-migrated
+    q0-independent producer was indistinguishable from an unmigrated one, and
+    `q0_anchor_ratchet.py --strict` counted it as Q0_ANCHOR_MISSING and failed
+    on it. "independent" asserts no pin, so it does not reintroduce the inert
+    anchor this branch exists to prevent — it is an established verdict of
+    `q0_anchor_consistency_audit.py` (Q0_INDEPENDENT).
+    """
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    assert payload["q0Anchor"] == "independent"
+    assert payload["q0AnchorReason"]          # audit reports _NO_REASON otherwise
+    assert "q0Value" not in payload           # the original point: NO pin
+    assert payload["q0Anchor"] not in ("proton", "muon")
+
+
+def test_false_still_stamps_the_provenance_fields():
+    """Opting out of the ANCHOR must not opt out of provenance — that is the
+    whole point of the migration this flag exists for."""
+    payload = {"result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    for field in ("scriptHash", "scriptCommitSha", "commitSha", "engine",
+                  "computedAt", "durationMs"):
+        assert field in payload, field
+
+
+def test_false_beats_payload_evidence():
+    """`False` is a caller DECLARATION and outranks payload evidence.
+
+    A q₀-looking number in the payload is not proof the result depends on it —
+    a probe may record the pin it ran beside without consuming it.
+    """
+    payload = {"parameters": {"q0": _MUON}, "result": 42}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False,
+    )
+    # The declaration still wins over the payload's q₀-looking number: the
+    # result is "independent", NOT the muon pin that evidence would resolve to.
+    assert payload["q0Anchor"] == "independent"
+    assert "q0Value" not in payload
+
+
+def test_none_and_str_are_unchanged_by_the_new_branch():
+    """Regression: the default and the explicit-string paths still stamp.
+
+    Deliberately asserts THAT an anchor is stamped, not WHICH one. What the
+    `q0_anchor=False` branch could plausibly break is the other two paths
+    silently stamping nothing; which anchor a given payload resolves to is a
+    different question, owned by the resolution tests above.
+
+    Naming a specific anchor here also made this test hostage to a value it is
+    not about. It first read `assert default.get("q0Anchor") == "muon"` off
+    `_MUON`, and `fca08de7d` ("muon anchor -> CODATA 2022 (owner ruling)")
+    moved the anchor-defining witness to a different one of the THREE values
+    the corpus calls "the muon q₀" (they diverge at the 13th significant
+    digit). That turned this into a sixth instance of the five failures that
+    commit already left in this module -- and it passed in a full-file run
+    anyway, because an earlier test leaks `QOU_Q0_ANCHOR=muon` into the
+    environment and masks it. A test that only passes via another test's
+    leaked state is worse than one that fails honestly.
+    """
+    default = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        default, script_path=_UNLISTED, engine="python",
+    )
+    assert default.get("q0Anchor"), "the default path must still resolve and stamp"
+
+    explicit = {"result": 1}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        explicit, script_path=_UNLISTED, engine="python", q0_anchor="proton",
+    )
+    assert explicit.get("q0Anchor") == "proton"
+
+
+def test_only_False_suppresses_not_any_falsy_value():
+    """`is False`, not truthiness — so the only value that drops the field is
+    the one that means it.
+
+    An empty string is NOT suppression and is NOT resolved: it reaches the
+    explicit-declaration branch and is stamped verbatim, which is this
+    function's pre-existing behaviour for any non-None argument. Asserted so a
+    future change to the `is False` check cannot quietly start swallowing other
+    falsy values. (I first documented `""` as falling through to resolution;
+    this test disagreed and the test was right.)
+    """
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor="",
+    )
+    assert payload.get("q0Anchor") == ""
+    assert "q0Anchor" in payload
+
+
+def test_engine_none_preserves_the_payloads_own_declaration(tmp_path):
+    """`engine=None` keeps what the producer already declared.
+
+    Without it the helper's unconditional `payload["engine"] = engine`
+    DOWNGRADES a producer's own, more specific value. Measured while migrating
+    bean qou-4un2: `qbeta-5two-leading-odd-datum` went from "sympy+mpmath" to
+    "python" while `engineVersion` still read "sympy 1.14.0, mpmath 1.4.1" --
+    an internally contradictory witness written by a provenance pass.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+
+    declared = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        declared, script_path=str(script), engine=None, q0_anchor=False)
+    assert declared["engine"] == "sympy+mpmath"
+
+    bare = {}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        bare, script_path=str(script), engine=None, q0_anchor=False)
+    assert bare["engine"] == "python", "None on a bare payload falls back"
+
+
+def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
+    """The 603 call sites relying on the default must not shift.
+
+    `engine` defaults to the literal "python", NOT to None, precisely so that
+    adding the sentinel changes no existing caller's behaviour. If someone
+    "tidies" the default to None later, every one of those call sites silently
+    starts preserving instead of overwriting -- which is the opposite of what
+    they were written against.
+    """
+    script = tmp_path / "p.py"
+    script.write_text("# producer\n")
+    payload = {"engine": "sympy+mpmath"}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=str(script), q0_anchor=False)
+    assert payload["engine"] == "python"

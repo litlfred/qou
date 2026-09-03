@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",
@@ -40,11 +40,11 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "9b284af269a5",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "e639ff86e719"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -69,7 +69,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -82,7 +82,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-narrative-lean-equiv. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-narrative-lean-equiv. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -97,7 +97,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -110,7 +110,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-statement-integrity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-statement-integrity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -125,7 +125,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -138,7 +138,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-no-self-assuming-projection. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-self-assuming-projection. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -153,7 +153,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -166,7 +166,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-no-trivial-true. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-trivial-true. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -181,7 +181,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -194,7 +194,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-no-false-premise. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-false-premise. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -209,7 +209,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -222,7 +222,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-no-decide-masking. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-decide-masking. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -237,7 +237,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -250,7 +250,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-no-unused-hypotheses. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-no-unused-hypotheses. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -265,7 +265,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -281,7 +281,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-rater-strategy-clarity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-strategy-clarity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -296,7 +296,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -312,7 +312,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -327,7 +327,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -343,7 +343,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-rater-novelty. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-novelty. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -358,7 +358,7 @@
     "voice-statement-no-interpretation": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies voice-statement-no-interpretation. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies voice-statement-no-interpretation. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -373,7 +373,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -386,7 +386,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -400,7 +400,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -413,7 +413,7 @@
     "wall-side-statement": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies wall-side-statement. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies wall-side-statement. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -428,7 +428,7 @@
     "wall-side-proof": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies wall-side-proof. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies wall-side-proof. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -443,7 +443,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -456,7 +456,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -471,7 +471,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -484,7 +484,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -499,7 +499,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -512,7 +512,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -527,7 +527,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -540,7 +540,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -555,7 +555,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -568,7 +568,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -583,7 +583,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -596,7 +596,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -611,7 +611,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -624,7 +624,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -639,7 +639,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -652,7 +652,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -667,7 +667,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -680,7 +680,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -695,7 +695,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -708,7 +708,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -723,7 +723,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -736,7 +736,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -751,7 +751,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -764,7 +764,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -779,7 +779,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -792,7 +792,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -807,7 +807,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -822,7 +822,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -835,7 +835,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically validating rigorous numeric calculations directly against abstract identities.",
         "reviewed_at": "2026-07-08T14:34:25.000Z",
         "reviewed_sha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
         "reviewer": {
@@ -880,11 +880,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "cite-named-theorem": [
@@ -900,11 +900,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "voice-agent-speak": [
@@ -920,11 +920,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "voice-emoji-content": [
@@ -1132,11 +1132,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "voice-status-section": [
@@ -1152,11 +1152,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "framework-canonical": [
@@ -1751,7 +1751,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "pass",
         "reviewer": {
@@ -1759,10 +1759,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "316cc94d5aa5",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "detangler-section-band": [
@@ -1772,7 +1772,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "n/a",
         "reviewer": {
@@ -1780,10 +1780,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "696ee4c80040",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1793,7 +1793,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "n/a",
         "reviewer": {
@@ -1801,10 +1801,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "b01f61430d2a",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1814,7 +1814,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "n/a",
         "reviewer": {
@@ -1822,10 +1822,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "3edb7220507a",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "detangler-block-tanglement": [
@@ -1835,7 +1835,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "pass",
         "reviewer": {
@@ -1843,10 +1843,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "7b9de841a5d5",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66",
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "metrics": {
           "fwd_emitted": 0,
           "fwd_received": 0,
@@ -1855,7 +1855,7 @@
           "in_degree": 11,
           "cone_size": 157,
           "depth": 32,
-          "pagerank": 0.001463,
+          "pagerank": 0.001458,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -1869,7 +1869,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "pass",
         "reviewer": {
@@ -1877,10 +1877,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "53f3fcf3f37b",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66",
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1895,7 +1895,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "n/a",
         "reviewer": {
@@ -1903,10 +1903,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "280aea9a61d8",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1916,7 +1916,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "pass",
         "reviewer": {
@@ -1924,10 +1924,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "8dda7ee9ac99",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1944,11 +1944,11 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "a730f195e37d",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "e639ff86e719"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1965,11 +1965,11 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "e639ff86e719"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1986,11 +1986,11 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "d3202b194d13",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "3e7fa473352a"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72",
+          "deps_hash": "e639ff86e719"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "proof-not-machine-trivial": [
@@ -2466,8 +2466,8 @@
         "reviewed_at": "2026-08-23T20:00:00.000Z",
         "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66",
         "severity": "info",
-        "evidence": "RESOLVED \u2014 the convention mislabel agent:h00 recorded on 2026-08-22 is fixed, along the first of the two routes their notes proposed. The block now prints the convention-D values: denominator q^7(q^2+1)^2, tr_M(sigma_1^7 sigma_2^4)(q_0) ~ 1.88432, rho_p ~ 974.44. Re-derived independently from the block's own recurrence in v = sqrt(q) (which is what stops sympy's radical handling distorting the factorisation \u2014 a first pass in q returned a spurious q^(105/2)), and cross-checked against the live seminormal route: char_fast with the y_lambda solved from the same three axioms gives 1.88431946725498 under D and 1.63315337744906 under C, matching the closed form to 14 digits in each frame. So char_fast is frame-agnostic and the block's 'matches char_fast' claim survives the correction \u2014 it was never a convention discriminator, and 'better than 0.1%' understated a 14-digit agreement.",
-        "notes": "Three notes for whoever reads this next. (1) FILING: this finding sat under 'trap-superlative', a language-trap criterion. The diagnosis was complete and correct and still went unfixed for a day, which is what filing a convention defect under a prose check costs \u2014 nobody triaging language traps acts on it and nobody grepping conventions finds it. (2) PRODUCER: markov_trace_axiomatic_proton.py was separately broken and is fixed here \u2014 it asserted anti_self_reciprocal AND symmetric_under_q_inv both expected=1.0, which is unsatisfiable for any non-zero trace, on sigma_1 sigma_2 sigma_1 rather than this block's sigma_1^7 sigma_2^4, citing two sections of this block that do not exist, in float64. (3) STILL C: computations/probes/poly-q-proof.witness.json \u2014 the corroboration agent:h00 cited \u2014 carries a whole q-sweep of ~1.63 C-frame values and is consumed by prop:markov-trace-antipode-polynomial-symmetry, which is status 'verified' against a witness with NO assertions, so the computation-status gate cannot see it. Tracked in bean qou-zf9n."
+        "evidence": "RESOLVED — the convention mislabel agent:h00 recorded on 2026-08-22 is fixed, along the first of the two routes their notes proposed. The block now prints the convention-D values: denominator q^7(q^2+1)^2, tr_M(sigma_1^7 sigma_2^4)(q_0) ~ 1.88432, rho_p ~ 974.44. Re-derived independently from the block's own recurrence in v = sqrt(q) (which is what stops sympy's radical handling distorting the factorisation — a first pass in q returned a spurious q^(105/2)), and cross-checked against the live seminormal route: char_fast with the y_lambda solved from the same three axioms gives 1.88431946725498 under D and 1.63315337744906 under C, matching the closed form to 14 digits in each frame. So char_fast is frame-agnostic and the block's 'matches char_fast' claim survives the correction — it was never a convention discriminator, and 'better than 0.1%' understated a 14-digit agreement.",
+        "notes": "Three notes for whoever reads this next. (1) FILING: this finding sat under 'trap-superlative', a language-trap criterion. The diagnosis was complete and correct and still went unfixed for a day, which is what filing a convention defect under a prose check costs — nobody triaging language traps acts on it and nobody grepping conventions finds it. (2) PRODUCER: markov_trace_axiomatic_proton.py was separately broken and is fixed here — it asserted anti_self_reciprocal AND symmetric_under_q_inv both expected=1.0, which is unsatisfiable for any non-zero trace, on sigma_1 sigma_2 sigma_1 rather than this block's sigma_1^7 sigma_2^4, citing two sections of this block that do not exist, in float64. (3) STILL C: computations/probes/poly-q-proof.witness.json — the corroboration agent:h00 cited — carries a whole q-sweep of ~1.63 C-frame values and is consumed by prop:markov-trace-antipode-polynomial-symmetry, which is status 'verified' against a witness with NO assertions, so the computation-status gate cannot see it. Tracked in bean qou-zf9n."
       }
     ],
     "trap-nonspeakable": [
@@ -2518,11 +2518,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "fa8b78406bbb",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
       }
     ],
     "render-math-mode-envelope": [
@@ -2552,7 +2552,7 @@
           "ts": "738dad6c6a2a",
           "lean": "215384265d8f",
           "lean_statement": "9353c7ab6004",
-          "graph": "3030b7a0ab4f"
+          "graph": "8dc1e98508e1"
         },
         "result": "n/a",
         "reviewer": {
@@ -2560,12 +2560,118 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "782f89f534a5",
-          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
         },
-        "reviewed_at": "2026-08-23T19:39:06.075Z",
-        "reviewed_sha": "8af36859c4b7cf9a3efebf04978daaa92433fc66"
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc"
+      }
+    ],
+    "dak-companion-present": [
+      {
+        "field_hash": {
+          "md": "717cad123b10",
+          "ts": "738dad6c6a2a",
+          "lean": "215384265d8f",
+          "lean_statement": "9353c7ab6004"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
+        "notes": "criterion applies to dak; block kind \"proposition\" is paper"
+      }
+    ],
+    "dak-bpmn-has-process": [
+      {
+        "field_hash": {
+          "md": "717cad123b10",
+          "ts": "738dad6c6a2a",
+          "lean": "215384265d8f",
+          "lean_statement": "9353c7ab6004"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
+        "notes": "criterion applies to dak; block kind \"proposition\" is paper"
+      }
+    ],
+    "dak-dmn-has-decision-table": [
+      {
+        "field_hash": {
+          "md": "717cad123b10",
+          "ts": "738dad6c6a2a",
+          "lean": "215384265d8f",
+          "lean_statement": "9353c7ab6004"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
+        "notes": "criterion applies to dak; block kind \"proposition\" is paper"
+      }
+    ],
+    "dak-fsh-declares-kind": [
+      {
+        "field_hash": {
+          "md": "717cad123b10",
+          "ts": "738dad6c6a2a",
+          "lean": "215384265d8f",
+          "lean_statement": "9353c7ab6004"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
+        "notes": "criterion applies to dak; block kind \"proposition\" is paper"
+      }
+    ],
+    "dak-label-prefix-matches-kind": [
+      {
+        "field_hash": {
+          "md": "717cad123b10",
+          "ts": "738dad6c6a2a",
+          "lean": "215384265d8f",
+          "lean_statement": "9353c7ab6004"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9fda9d8431d9",
+          "script_commit_sha": "726d67976517fe6a36d604efa8540cd7bcf2cf72"
+        },
+        "reviewed_at": "2026-08-29T15:52:33.383Z",
+        "reviewed_sha": "b1f0b2c3898d0c3fa28159fcbb6d6a95b4b0d9bc",
+        "notes": "criterion applies to dak; block kind \"proposition\" is paper"
       }
     ]
   },
-  "updated_at": "2026-08-23T19:39:06.075Z"
+  "updated_at": "2026-08-29T15:52:33.383Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

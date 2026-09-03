@@ -1,0 +1,116 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-0702179v1",
+ "source": {
+  "file": "0702179v1.pdf",
+  "sha256": "4d78ee89f0e67fbbb91bede3a42d648208e57b62e38425b1d56b0b50a2440bd2",
+  "bytes": 140162,
+  "pages": 8
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/0702179",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "18 Feb 2007"
+  },
+  "doi": null,
+  "title": "Instituto de F \u00b4 \u0131sica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
+  "authors_raw": "Apt. Correus 22085, E-46071 Val` encia, Spain",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211108014811-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The role of Resonance Chiral Theory",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Resonance contributions to the O(p6) LECs",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "K3 decays : determination of f+K0 -(0)",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Perspective",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2240,
+   "n_words": 409
+  },
+  {
+   "id": "sec-001-the-role-of-resonance-chiral-theory",
+   "number": null,
+   "title": "The role of Resonance Chiral Theory",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5668,
+   "n_words": 955
+  },
+  {
+   "id": "sec-002-resonance-contributions-to-the-op6-lecs",
+   "number": null,
+   "title": "Resonance contributions to the O(p6) LECs",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5559,
+   "n_words": 1080
+  },
+  {
+   "id": "sec-003-perspective",
+   "number": null,
+   "title": "Perspective",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3686,
+   "n_words": 627
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 4,
+  "chars_total": 17153
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9304063v2",
+ "source_sha256": "14a82437462eae23",
+ "brief": "Level Spacing Distributions and the Bessel Kernel Craig A. Tracy∗ — 26 sections: INTRODUCTION AND STATEMENT OF RESU; KN(; (α2 −aj + 2v)q2",
+ "extended": "**Level Spacing Distributions and the Bessel Kernel Craig A. Tracy∗**\n\n*Department of Mathematics and Institute of Theoretical Dynamics*\n\n18 pp, 26 sections.\n\n**Outline.** I INTRODUCTION AND STATEMENT OF RESULTS; 6 KN(; 4 (α2 −aj + 2v)q2; C The ordinary diﬀerential equation; II DIFFERENTIAL EQUATIONS; 2 (x −y); 4 Q(x) (I −Kt)−1χJφ (y) −; 4 Q(x) u −; 4 Q(x) v −; 4 (x −α2) φ(x) = 0,; 4 Q(x) −1; 4 Q(x) −x; 4 Q(x) + 1; 2 Q(x) v −1; 4 P(x) u −; 4 Q(x) Q(y); 4 (α2 −s) q + 1; III ASYMPTOTICS",
+ "tokens": {
+  "brief": 34,
+  "extended": 122
+ },
+ "sections": [
+  {
+   "id": "sec-000-i-introduction-and-statement-of-results",
+   "title": "INTRODUCTION AND STATEMENT OF RESULTS",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-6-kn",
+   "title": "KN(",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-4-α2-aj-2vq2",
+   "title": "(α2 −aj + 2v)q2",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-c-the-ordinary-diﬀerential-equation",
+   "title": "The ordinary diﬀerential equation",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-004-ii-differential-equations",
+   "title": "DIFFERENTIAL EQUATIONS",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-005-2-x-y",
+   "title": "(x −y)",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-4-qx-i-kt1χjφ-y",
+   "title": "Q(x) (I −Kt)−1χJφ (y) −",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-4-qx-u",
+   "title": "Q(x) u −",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-008-4-qx-v",
+   "title": "Q(x) v −",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-4-x-α2-φx-0",
+   "title": "(x −α2) φ(x) = 0,",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-4-qx-1",
+   "title": "Q(x) −1",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-011-4-qx-x",
+   "title": "Q(x) −x",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-4-qx-1",
+   "title": "Q(x) + 1",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-013-2-qx-v-1",
+   "title": "Q(x) v −1",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-014-4-px-u",
+   "title": "P(x) u −",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-015-4-qx-qy",
+   "title": "Q(x) Q(y)",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-016-4-α2-s-q-1",
+   "title": "(α2 −s) q + 1",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-017-iii-asymptotics",
+   "title": "ASYMPTOTICS",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-018-1-the-region-x-1",
+   "title": "The region x ≪1",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-019-2-the-region-x-1-sx-1",
+   "title": "The region x ≪1, √sx ≫1",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-020-2-1α",
+   "title": "( 1+α",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-021-3-the-region-s-x-1-1-x-s-1",
+   "title": "The region √s x ≫1, (1 −x) s ≫1",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-022-4-the-region-x-1",
+   "title": "The region x →1",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-023-5-determination-of-as-bs-and-cs",
+   "title": "Determination of a(s), b(s) and c(s)",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-024-6-the-asymptotics-of-λi",
+   "title": "The asymptotics of λi",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-025-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "17-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

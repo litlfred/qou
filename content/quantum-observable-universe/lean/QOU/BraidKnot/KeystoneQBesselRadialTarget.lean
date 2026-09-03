@@ -48,7 +48,7 @@ Nothing here asserts it exists; this file pins exactly what it must satisfy.  Ba
 namespace QOU.BraidKnot.Keystone
 
 open scoped BigOperators
-open QOU.BraidKnot (qInt qFactorial)
+open QOU.BraidKnot (qIntGeo qFactorial)
 open QOU.QBeta (qbesselSecondKindRatio qbessel_second_kind_coeff_closed_form)
 
 variable {R : Type*} [Field R]
@@ -56,30 +56,30 @@ variable {R : Type*} [Field R]
 /-! ## The n = 5 shape identities (sorry-free) -/
 
 /-- `[1]_q = 1`. -/
-theorem qInt_one (q : R) : qInt q 1 = 1 := by
-  simp [qInt]
+theorem qIntGeo_one (q : R) : qIntGeo q 1 = 1 := by
+  simp [qIntGeo]
 
 /-- `[5]_q! = [1][2][3][4][5]` — the q-factorial expanded. -/
 theorem qFactorial_five (q : R) :
     qFactorial q 5
-      = qInt q 1 * qInt q 2 * qInt q 3 * qInt q 4 * qInt q 5 := by
+      = qIntGeo q 1 * qIntGeo q 2 * qIntGeo q 3 * qIntGeo q 4 * qIntGeo q 5 := by
   simp [qFactorial, Finset.prod_range_succ]
 
 /-- Hook-length product of `λ = (5)`: hooks `{5,4,3,2,1}`. -/
 def hookProdRow5 (q : R) : R :=
-  qInt q 5 * qInt q 4 * qInt q 3 * qInt q 2 * qInt q 1
+  qIntGeo q 5 * qIntGeo q 4 * qIntGeo q 3 * qIntGeo q 2 * qIntGeo q 1
 
 /-- Hook-length product of `λ = (4,1)`: hooks `{5,3,2,1,1}`. -/
 def hookProd41 (q : R) : R :=
-  qInt q 5 * qInt q 3 * qInt q 2 * qInt q 1 * qInt q 1
+  qIntGeo q 5 * qIntGeo q 3 * qIntGeo q 2 * qIntGeo q 1 * qIntGeo q 1
 
 /-- Hook-length product of `λ = (3,2)`: hooks `{4,3,2,1,1}`. -/
 def hookProd32 (q : R) : R :=
-  qInt q 4 * qInt q 3 * qInt q 2 * qInt q 1 * qInt q 1
+  qIntGeo q 4 * qIntGeo q 3 * qIntGeo q 2 * qIntGeo q 1 * qIntGeo q 1
 
 /-- Hook-length product of the self-conjugate `λ = (3,1,1)`: hooks `{5,2,2,1,1}`. -/
 def hookProd311 (q : R) : R :=
-  qInt q 5 * qInt q 2 * qInt q 2 * qInt q 1 * qInt q 1
+  qIntGeo q 5 * qIntGeo q 2 * qIntGeo q 2 * qIntGeo q 1 * qIntGeo q 1
 
 /-- **`d_q(5) = [1]_q = 1`** (multiplicative form): `[5]_q! = ∏ hooks(5)`. -/
 theorem shape_row5 (q : R) : qFactorial q 5 = hookProdRow5 q := by
@@ -87,26 +87,26 @@ theorem shape_row5 (q : R) : qFactorial q 5 = hookProdRow5 q := by
 
 /-- **`d_q(4,1) = [4]_q`** (multiplicative form): `[5]_q! = [4]_q · ∏ hooks(4,1)`.
 The standard-representation family `d_q(n−1,1) = [n−1]_q` at `n = 5`. -/
-theorem shape_41 (q : R) : qFactorial q 5 = qInt q 4 * hookProd41 q := by
-  rw [qFactorial_five, hookProd41, qInt_one]; ring
+theorem shape_41 (q : R) : qFactorial q 5 = qIntGeo q 4 * hookProd41 q := by
+  rw [qFactorial_five, hookProd41, qIntGeo_one]; ring
 
 /-- **`d_q(3,2) = [5]_q`** (multiplicative form): `[5]_q! = [5]_q · ∏ hooks(3,2)`.
 The muon block. -/
-theorem shape_32 (q : R) : qFactorial q 5 = qInt q 5 * hookProd32 q := by
-  rw [qFactorial_five, hookProd32, qInt_one]; ring
+theorem shape_32 (q : R) : qFactorial q 5 = qIntGeo q 5 * hookProd32 q := by
+  rw [qFactorial_five, hookProd32, qIntGeo_one]; ring
 
 /-- **`d_q(3,1,1) = [4]_q[3]_q/[2]_q`** (multiplicative form):
 `[5]_q! · [2]_q = [4]_q · [3]_q · ∏ hooks(3,1,1)`.  The electron block — the sole
 self-conjugate class at `n = 5` and the only `d_q` that is NOT a single balanced
 q-integer.  The realization difficulty is concentrated here (value-map screen #3197). -/
 theorem shape_311 (q : R) :
-    qFactorial q 5 * qInt q 2 = qInt q 4 * qInt q 3 * hookProd311 q := by
-  rw [qFactorial_five, hookProd311, qInt_one]; ring
+    qFactorial q 5 * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3 * hookProd311 q := by
+  rw [qFactorial_five, hookProd311, qIntGeo_one]; ring
 
 /-- The division form of the discriminating block:
 `d_q(3,1,1) = [5]_q!/∏hooks = [4]_q[3]_q/[2]_q`. -/
-theorem dq_311_div (q : R) (h2 : qInt q 2 ≠ 0) (h311 : hookProd311 q ≠ 0) :
-    qFactorial q 5 / hookProd311 q = qInt q 4 * qInt q 3 / qInt q 2 := by
+theorem dq_311_div (q : R) (h2 : qIntGeo q 2 ≠ 0) (h311 : hookProd311 q ≠ 0) :
+    qFactorial q 5 / hookProd311 q = qIntGeo q 4 * qIntGeo q 3 / qIntGeo q 2 := by
   rw [div_eq_div_iff h311 h2]
   exact shape_311 q
 
@@ -167,8 +167,8 @@ single-q-integer blocks but misses this product at the self-conjugate block is w
 theorem realization_discriminating_block (q a : R) (h : VerlindeModularData R)
     [r : QBesselRadialPartRealization q a h]
     (p : h.Part) (hp : p ∈ h.parts)
-    (hdim : h.qDim p * qInt q 2 = qInt q 4 * qInt q 3) :
-    r.weight (r.latticePt p) * h.D * qInt q 2 = qInt q 4 * qInt q 3 := by
+    (hdim : h.qDim p * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3) :
+    r.weight (r.latticePt p) * h.D * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3 := by
   rw [r.realizes p hp, h.S0_eq p hp, div_mul_cancel₀ _ h.D_ne, hdim]
 
 end QOU.BraidKnot.Keystone

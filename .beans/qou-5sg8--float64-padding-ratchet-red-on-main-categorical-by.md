@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-16T02:03:14Z
-updated_at: 2026-08-16T03:23:07Z
+updated_at: 2026-08-26T18:09:23Z
 ---
 
 Found 2026-08-16 running `scripts/precision-gates.sh` as the prepare-merge §4b
@@ -256,3 +256,19 @@ just far larger than "lift the read", and no present consumer justifies it.
 Recommendation: do NOT open the engine port off the back of this bean. If a
 future consumer genuinely needs tr_M past 17 digits, that consumer is the
 justification and should carry it.
+
+
+
+## A second live instance of this class, 2026-08-26 (bean `qou-txru`)
+
+The same mechanism produced **46 NEW padded fields** in
+`computations/chi-sym-alt-closed-form.witness.json`, from main's own drain
+commit `187aa0242d`. Root cause traced to
+`chi_sym_alt_closed_form.py:148` — a float64 `Q0` substituted into the
+symbolic seminormal entry and *then* evaluated at 60 dps. Both anchors
+available in that file (`Q0`, `Q0_PROTON`) are float64, so the fix needs
+`mp.mpf(Q_50_DIGIT_STR)` threaded through `mass_at_3A_proper`.
+
+Recording it here because this bean has been open since 2026-08-16 and the
+class is still minting instances: the padding ratchet is red on main again,
+now at 59 occurrences / 46 NEW against a baseline of 13.

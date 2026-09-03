@@ -10,7 +10,17 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 # Substrate q0 — muon-canonical computations/ layer value (per Vassiliev audit)
-q0 = mp.mpf('1.10997859555733471')
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+q0 = mp.mpf(_Q0_RESOLVED)
 h0 = q0 - 1/q0
 print(f"q0 = {q0}")
 print(f"h0 = q0 - 1/q0 = {h0}")
@@ -159,5 +169,18 @@ witness = {
 witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 out = os.path.join(here, "habiro-magnitude-a3.witness.json")
 with open(out, "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+    # Untrue: this producer reads q0 and records it, so the false declaration
+    # DELETED the anchor stamp on every run, converting a visible Q0_FLIP into a
+    # silent Q0_ANCHOR_MISSING (bean qou-1c4y). Resolving is the default.
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None)
     json.dump(witness, f, indent=2)
 print(f"\nwrote {out}  allPassed={witness['allPassed']}")

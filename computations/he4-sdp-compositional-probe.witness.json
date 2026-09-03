@@ -9,7 +9,7 @@
       "computed": 13.19687380754797,
       "expected": 13.19687380754797,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "unit": "MeV",
       "source": "claim 1: x*_{T⊕p} = n_target, all other x*_i = 0 (strict-min cost channel ⇒ unique vertex optimum)"
     },
@@ -18,7 +18,7 @@
       "computed": 1.7404213825561739e-34,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "claim 1 (complement): x*_{D⊕D} = x*_{³He⊕n} = 0"
     },
     {
@@ -40,7 +40,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "primal_obj = dual_obj (strong LP duality)"
     },
     {
@@ -48,7 +48,7 @@
       "computed": 268.94883815407894,
       "expected": 268.949,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "MeV",
       "source": "he4-channel-active-set.md §Solution (268.949, 3-decimal)"
     },
@@ -57,7 +57,7 @@
       "computed": 20.37973857113442,
       "expected": 20.38,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "unit": "MeV",
       "source": "he4-channel-active-set.md §Solution (y0* = 20.380)"
     }

@@ -1,0 +1,403 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2206.14086v3",
+ "source": {
+  "file": "2206.14086v3.pdf",
+  "sha256": "b6c27f820f9630793309e2afa2b53067a2f3d5c142b3f7c3952aa91617686604",
+  "bytes": 542944,
+  "pages": 19,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2206.14086",
+   "version": "3",
+   "primary_class": "math.PR",
+   "stamp_date": "20 Jul 2022"
+  },
+  "doi": null,
+  "title": "KPZ limit theorems Jinho Baik\u2217",
+  "authors_raw": "July 21, 2022",
+  "title_lines": [
+   "KPZ limit theorems",
+   "Jinho Baik\u2217"
+  ],
+  "abstract": "One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers de\ufb01ne 2d height \ufb01elds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random \ufb01eld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in di\ufb00erent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable di\ufb00erential equations, and universality.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220721024126Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "TASEP, corner growth model, and exponential DLPP",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "TASEP",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Corner growth model",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Exponential DLPP",
+   "page": 3,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Hydrodynamic limit and KPZ limit",
+   "page": 4,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "One-point distribution",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Poisson DLPP",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Longest increasing subsequence",
+   "page": 5,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Exponential DLPP",
+   "page": 6,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Integrable method",
+   "page": 6,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Multi-point distributions",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Half-infinite space",
+   "page": 7,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Ring domain",
+   "page": 8,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Formula of multi-point distribution functions",
+   "page": 9,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Formula for KPZ fixed point",
+   "page": 9,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Periodic case",
+   "page": 10,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Transition probabilities",
+   "page": 10,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Integrable differential equations",
+   "page": 11,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Comments on universality",
+   "page": 12,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Thin DLPP",
+   "page": 12,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Interacting particle systems",
+   "page": 13,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "TASEP, Coulomb gas, and random matrices",
+   "page": 13,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Universality in many directions",
+   "page": 13,
+   "source": "outline",
+   "number": "9.4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2347,
+   "n_words": 370
+  },
+  {
+   "id": "sec-001-21-tasep",
+   "number": "2.1",
+   "title": "TASEP",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1854,
+   "n_words": 282
+  },
+  {
+   "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
+   "number": "2",
+   "title": "TASEP, corner growth model, and exponential DLPP",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4714,
+   "n_words": 898
+  },
+  {
+   "id": "sec-003-24-hydrodynamic-limit-and-kpz-limit",
+   "number": "2.4",
+   "title": "Hydrodynamic limit and KPZ limit",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1744,
+   "n_words": 307
+  },
+  {
+   "id": "sec-004-31-poisson-dlpp",
+   "number": "3.1",
+   "title": "Poisson DLPP",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1,
+   "n_words": 1
+  },
+  {
+   "id": "sec-005-3-one-point-distribution",
+   "number": "3",
+   "title": "One-point distribution",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 137,
+   "n_words": 22
+  },
+  {
+   "id": "sec-006-33-exponential-dlpp",
+   "number": "3.3",
+   "title": "Exponential DLPP",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1330,
+   "n_words": 240
+  },
+  {
+   "id": "sec-007-32-longest-increasing-subsequence",
+   "number": "3.2",
+   "title": "Longest increasing subsequence",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2012,
+   "n_words": 350
+  },
+  {
+   "id": "sec-008-34-integrable-method",
+   "number": "3.4",
+   "title": "Integrable method",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2714,
+   "n_words": 394
+  },
+  {
+   "id": "sec-009-4-multi-point-distributions",
+   "number": "4",
+   "title": "Multi-point distributions",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3917,
+   "n_words": 641
+  },
+  {
+   "id": "sec-010-6-ring-domain",
+   "number": "6",
+   "title": "Ring domain",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3616,
+   "n_words": 705
+  },
+  {
+   "id": "sec-011-7-formula-of-multi-point-distribution-functions",
+   "number": "7",
+   "title": "Formula of multi-point distribution functions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1166,
+   "n_words": 259
+  },
+  {
+   "id": "sec-012-72-periodic-case",
+   "number": "7.2",
+   "title": "Periodic case",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 532,
+   "n_words": 113
+  },
+  {
+   "id": "sec-013-73-transition-probabilities",
+   "number": "7.3",
+   "title": "Transition probabilities",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3586,
+   "n_words": 727
+  },
+  {
+   "id": "sec-014-91-thin-dlpp",
+   "number": "9.1",
+   "title": "Thin DLPP",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1104,
+   "n_words": 154
+  },
+  {
+   "id": "sec-015-9-comments-on-universality",
+   "number": "9",
+   "title": "Comments on universality",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1722,
+   "n_words": 336
+  },
+  {
+   "id": "sec-016-92-interacting-particle-systems",
+   "number": "9.2",
+   "title": "Interacting particle systems",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 674,
+   "n_words": 121
+  },
+  {
+   "id": "sec-017-93-tasep-coulomb-gas-and-random-matrices",
+   "number": "9.3",
+   "title": "TASEP, Coulomb gas, and random matrices",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1801,
+   "n_words": 315
+  },
+  {
+   "id": "sec-018-94-universality-in-many-directions",
+   "number": "9.4",
+   "title": "Universality in many directions",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 19,
+   "n_chars": 15236,
+   "n_words": 2373
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 19,
+  "chars_total": 50207
+ }
+}

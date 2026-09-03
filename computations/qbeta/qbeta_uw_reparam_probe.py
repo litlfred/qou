@@ -45,6 +45,10 @@ import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 
 HERE = Path(__file__).resolve().parent
 
@@ -283,11 +287,20 @@ def main() -> None:
         expected="0",
         source="u(1+ε) Taylor expansion ⇒ u is O(ε²), not a proper Taylor coord at q=1",
     )
+    # Was `computed=str(v_leading), expected=str(v_leading)`, with its own
+    # comment conceding "tautological: we just verify it's recorded" -- so it
+    # passed even at v_leading = 0, which is exactly the case that would make v
+    # an IMPROPER Taylor coordinate and invert the claim (bean qou-3e5m). Its
+    # two siblings above and below already carry real expected values ("0" and
+    # "2"); this one now does too. The coefficient is recorded beside the flag.
+    wb.add_data("v_leading_eps_coefficient", str(v_leading))
     wb.add_assertion(
         name="v-leading-eps-coefficient-nonzero",
-        computed=str(v_leading),
-        expected=str(v_leading),  # tautological: we just verify it's recorded
-        source="v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper Taylor coord",
+        computed=1 if v_leading != 0 else 0,
+        expected=1,
+        tolerance=0,
+        source="v(1+ε) = sqrt(b)·ℏ leading coefficient ≠ 0 ⇒ v is O(ε), proper "
+               "Taylor coord; coefficient in data.v_leading_eps_coefficient",
     )
     wb.add_assertion(
         name="w-leading-eps-coefficient",
@@ -297,14 +310,14 @@ def main() -> None:
     )
     wb.add_assertion(
         name="v-reconstruction-error-at-q-1p001",
-        computed=float(sp.N(err_v, 10)),
+        computed=sp.N(err_v, 10),
         expected=0.0,
         tolerance=1e-8,
         source=f"Σ c_k^(v) v^k truncated at order {TAYLOR_ORDER}, reconstruct f(1.001)",
     )
     wb.add_assertion(
         name="w-reconstruction-error-at-q-1p001",
-        computed=float(sp.N(err_w, 10)),
+        computed=sp.N(err_w, 10),
         expected=0.0,
         tolerance=1e-8,
         source=f"Σ c_k^(w) w^k truncated at order {TAYLOR_ORDER}, reconstruct f(1.001)",

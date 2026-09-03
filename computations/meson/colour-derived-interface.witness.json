@@ -1,0 +1,132 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T09:31:15.064725+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
+  "assertions": [
+    {
+      "name": "derived_interface_has_nine_crossings",
+      "computed": "9",
+      "expected": "9",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "the block's 3x3 = 9-element colour-pair coupling matrix"
+    },
+    {
+      "name": "derived_interface_swaps_the_colour_blocks",
+      "computed": "[4, 5, 6, 1, 2, 3]",
+      "expected": "[4, 5, 6, 1, 2, 3]",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "permutation",
+      "source": "every colour sheet of nucleon 1 crosses every sheet of nucleon 2"
+    },
+    {
+      "name": "structural_bar_cleared_not_provably_a_connected_sum",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "single-crossing factorisation fails; NECESSARY for a torus, not sufficient"
+    },
+    {
+      "name": "magnitude_bar_failed",
+      "computed": "0.42172723601489849774",
+      "expected": "0.4217272",
+      "passed": true,
+      "tolerance": "1e-5",
+      "unit": "ratio",
+      "source": "tr_M(atom with I_colour) / sqrt(B_AME); < 1 means it misses"
+    },
+    {
+      "name": "derived_interface_traces_below_the_single_crossing",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "I_colour 0.629005 vs I1 0.693389"
+    },
+    {
+      "name": "control_orientation_changes_the_trace_substantially",
+      "computed": "5.667521744081850353",
+      "expected": "5.667",
+      "passed": true,
+      "tolerance": "1e-2",
+      "unit": "ratio",
+      "source": "forward vs reversed block transposition"
+    },
+    {
+      "name": "control_an_underived_candidate_does_clear",
+      "computed": "1.2475329589197819406",
+      "expected": "1.247533",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "interface-candidate-screen I5 = (s3 s2 s4 s3)^2, traced here and carried forward as the contrast; it clears the magnitude bar (> 1) and has no derivation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 101,
+  "computation": "colour-derived-interface",
+  "scriptFile": "colour_derived_interface_probe.py",
+  "scriptHash": "e68b2c8adec4",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/colour_derived_interface_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/colour_derived_interface_probe.py"
+  },
+  "description": "Derives an interface from the colour-tube structure FIRST -- 9 colour-pair couplings realised as the 9-crossing block transposition -- then measures it. It CLEARS the structural bar (not provably a connected sum) and FAILS the magnitude bar at 0.4217x, tracing BELOW the single crossing it replaces. Addendum 29's I5 clears magnitude at 1.2475x with no derivation. So the interface with a reason does not work and the interface that works has no reason; no rescue is attempted.",
+  "data": {
+    "interface_word": [
+      3,
+      2,
+      1,
+      4,
+      3,
+      2,
+      5,
+      4,
+      3
+    ],
+    "crossings": 9,
+    "permutation": [
+      4,
+      5,
+      6,
+      1,
+      2,
+      3
+    ],
+    "tr_M_current": "0.693389408714651855647004",
+    "tr_M_colour_derived": "0.629005288910094246675701",
+    "tr_M_reversed": "0.110984186265701630425345",
+    "tr_M_I5_underived_control": "1.86069279438826817790211",
+    "required_trace": "1.49149790479236007540919"
+  },
+  "caveats": [
+    "THE 9-CROSSING READING IS MINE, NOT THE BLOCK'S. conj:inter-nucleon-channel-color-tube explicitly specifies a weighted sum over ONE generator. What is proposed is a different realisation of the same geometric input -- nine couplings as nine crossings rather than nine weights on one crossing. The block does not say this.",
+    "RULES OUT (scope (a)): the colour-pair block transposition as a route to the binding magnitude at the deuteron. DOES NOT rule out: the colour-tube structure itself, which may be right about p/n asymmetry and chirality signs while saying nothing about magnitude; a different braid realisation of the same nine couplings (the permutation braid is the minimal positive one, not the only one); or an interface derived from elsewhere.",
+    "Does NOT establish an essential torus. 'Not provably a connected sum' is necessary, not sufficient; incompressibility is geometric and no probe here tests it. float64 traces via block_rep_braid_word; the gaps here are tens of percent."
+  ]
+}

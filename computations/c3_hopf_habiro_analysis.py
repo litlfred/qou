@@ -95,7 +95,7 @@ def main():
     })
 
     wb.add_assertion(
-        "b_sq_exact", computed=float(b_sq), expected=float(b**2),
+        "b_sq_exact", computed=b_sq, expected=b**2,
         tolerance=1e-10, source="b^2 = (h^2+3)/(h^2+4) from Hoefsmit"
     )
     wb.add_assertion(

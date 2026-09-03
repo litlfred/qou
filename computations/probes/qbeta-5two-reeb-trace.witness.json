@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "τ_{4₁} AND τ_{5₂} on V_{(2,1)} are both bar-even (exact sympy): the self-conjugate (2,1) block cannot carry chirality — FINDING 1, refutes the naive q-Reeb guess"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "writhe(4₁)=0 (amphichiral), writhe(5₂)=4 (chiral) — the conjugate-pair (3)/(1,1,1) asymmetry"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "D_odd=½(χ₃−χ₁₁₁): 0 for 4₁ (writhe 0), ½(q⁴−q⁻⁴)≠0 for 5₂ (writhe 4) — FINDING 2: the bar-odd home is the writhe, a sinh-object, nonzero for chiral 5₂"
     },
     {
@@ -33,7 +33,7 @@
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "τ_{4₁}(1) = −1: 4₁ braid (σ₁σ₂⁻¹)² is a 3-cycle in S₃, standard-rep character −1 (validates the H₃ block)"
     }
   ],

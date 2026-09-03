@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-08-02T17:30:46Z
+updated_at: 2026-08-26T03:24:21Z
 parent: qou-a0gr
 ---
 
@@ -95,3 +95,266 @@ look like, not evidence. If it is later cited as support for the eightfold
 line without step 1 being done, that citation is the error.
 Scope (a): unsupported as stated, usual argument invalid; NOT structurally
 excluded, and I have no invariant that would exclude it.
+
+
+## INVENTORY DONE 2026-08-25 — the 2026-08-02 gap list is COMPREHENSIVELY STALE
+
+This bean's near-term step was: inventory the I3/Q/Y, strange-quark and
+three-strand ingredients and establish what the corpus already has. Done. The
+headline is that the gap list below it no longer describes the tree.
+
+The 2026-08-02 entry states: "no relevant meson octet, baryon octet, decuplet,
+or weight diagram layer is present in the content tree, and the existing
+baryon-label table does not yet include a Sigma-0 row."
+
+MEASURED 2026-08-25, all four are present. The eightfold-way chapter carries 16
+blocks:
+
+  meson octet     prop:meson-octet-decomposition   (+ rem:meson-mass-splitting,
+                                                    rem:vector-meson-nonet)
+  baryon octet    prop:baryon-octet-decomposition
+  decuplet        prop:borromean-decuplet, rem:decuplet-equal-spacing
+  weight geometry prop:a2-from-three-strands (the A2 root system),
+                  rem:q-deformation-weight-lattice,
+                  rem:flavor-charge-assignments
+  U-spin          rem:u-spin-coleman-glashow
+  colour side     prop:color-su3-from-g2
+  Schur-Weyl      prop:schur-weyl-eightfold
+
+Sigma-0 IS present, in baryon-octet-decomposition (.md/.ts/.qa.json) and in
+QOU/Eightfold/OctetWeightDegeneracy.lean. It is still absent from
+predicted-spectra/linking-relations-table-table3-data.md, which is the table
+the old entry was actually looking at - so that one clause is narrowly true
+and the general claim built on it is not.
+
+Do not re-derive the multiplet layer. It exists.
+
+## THE ACTUAL BLOCKER FOR THIS BEAN'S OWN QUESTION: A NOTATION COLLISION
+
+This bean asks to DISTINGUISH flavour SU(3) from colour SU(3). Measured, the
+chapter does not distinguish them NOTATIONALLY at all:
+
+  31 occurrences of SU(3) in eightfold-way/*.md
+   0 of them subscripted
+   corpus-wide there are only 4 subscripted forms (_{c}, _c, _R, _L), none in
+     this chapter
+
+So one symbol serves two different groups - colour SU(3) from
+G_2 = Aut(octonions), and flavour SU(3) organising the multiplets - with the
+distinction carried entirely in surrounding prose. Under AGENTS.md section
+7aa that is a register collision of exactly the kind the notation-collisions
+block forbids (compare its H_q ruling: "H_q alone = FORBIDDEN (collision)").
+
+NOT FIXED HERE, deliberately. It is 31 sites across 12 math-bearing .md blocks,
+each needing the render-QA battery and a sidecar refresh, and it is a change to
+the paper's notation register - which AGENTS.md routes through the notation
+content block, not through a chapter edit. Proposed: SU(3)_C and SU(3)_F, added
+to notation-register.md + notation-collisions.md first, then swept. That is an
+owner-visible convention decision, not a mechanical fix.
+
+## WHAT THE COMPLEX-TYPE RESULT CONTRIBUTES TO THIS BEAN
+
+Sym2GateComplexType.lean (this session) proves the mechanism the chapter had
+only asserted, and it bears directly on the flavour/colour split.
+
+color-su3-from-g2.md already says, correctly, that "the 3 and 3-bar are complex
+conjugate (not self-dual)" and that "non-self-duality is what the Sym^2 gate
+consumes". That was prose. It is now a theorem: the parity exclusion
+(dimOfMult_ne_three_of_gate) runs through self-duality, and a complex-type
+irrep whose conjugate is ABSENT passes the gate at any dimension, odd included
+- witnessed at dimension exactly 3.
+
+Consequence for this bean: a 3-dimensional FLAVOUR object is not barred by the
+corpus's own parity invariant, and the property it must have is now named and
+proved - complex type, conjugate absent. That is a genuine constraint on any
+flavour-SU(3) candidate action this bean goes on to build, and it is sharper
+than "must be multi-fibre".
+
+Wired into eightfold-open-problems.md, where the exclusion is stated, so the
+scope travels with the claim rather than sitting only in the Lean.
+
+## STATUS
+
+Near-term (inventory): DONE, and it overturned the recorded gap list.
+Blocker surfaced: the SU(3)_C / SU(3)_F notation collision - needs an owner
+convention decision before the medium-term "flavor-SU(3) candidate action
+without conflating it with the colour module" can even be stated unambiguously.
+Medium and long term: unchanged, open.
+
+
+## RESEARCH 2026-08-26 — colour neutrality formalized as a Z/3 grading (PR #5810)
+
+Attacked the COLOUR side of this bean's question, formalize-first, because the
+constraint turned out to be structural rather than numerical.
+
+CORPUS-GREP, and it is a good example of why topic-grep is not enough.
+"triality" hits 22 files. A topic-grep stops there and concludes the corpus has
+it. It does not: every one of those is either the zeta_3 ROTATION of the
+three-strand Hecke datum (threeStrand_cubes_to_one) or the 3d-index triality of
+the tetrahedron probes. Grepping the claim SHAPE -- "singlet iff", "contains a
+singlet", a mod-3 condition on a tensor product -- returns ZERO across content/,
+docs/, computations/, the ledgers and library/INDEX.md.
+
+PROVED (QOU/Eightfold/TrialitySelectionRule.lean, 14 decls, sorry-free,
+lean-direct exit 0 first attempt, no sorryAx):
+
+  triality a b = a - b in Z/3;  Neutral a b iff it vanishes
+  neutral_iff_mod            a % 3 = b % 3
+  triality_add, neutral_add  a genuine grading: additive, closed
+  hadron table               meson (1,1), baryon (3,0), antibaryon (0,3)
+                             neutral; single quark (1,0), DIQUARK (2,0),
+                             four-quark (4,0) NOT; observed tetraquark (2,2)
+                             and pentaquark (4,1) neutral
+  neutral_decomposition      every neutral combination IS m mesons + n baryons
+    + converse               + n' antibaryons
+
+The decomposition pair is the content: mesons and baryons are not merely
+examples of colour-neutral states, they EXHAUST them -- the neutral monoid is
+generated by (1,1), (3,0), (0,3), so there is no third kind of colour-neutral
+composite to look for. diquark_not_neutral is confinement in this language: no
+colour singlet in a two-quark object, for grading reasons alone, at any q, with
+no dynamical input.
+
+THE MODEL IS THE EQUIVALENCE and is labelled so: "vanishing triality iff a
+singlet occurs" is standard SU(3) rep theory, cited [fulton-harris1991] s13,
+NOT derived (Mathlib has no SU(3) type). Same register as
+Sym2GateMultiplicity.sym2SingletCount. Everything below the definition is
+derived.
+
+A CONFLATION I DELIBERATELY DID NOT MAKE, recorded because it is inviting.
+The Sym^2 gate files count singlets in Sym^2(W); this counts singlets in W.
+Those are different questions. A baryon HAS a singlet in W -- the totally
+ANTISYMMETRIC epsilon tensor, i.e. Lambda^3 -- about which the Sym^2 machinery
+says nothing at all. I checked before writing whether the gate criterion and
+the triality criterion could be unified and they cannot; two singlet-counting
+statements about different objects sharing a word is exactly the arity slip
+AGENTS.md "Grep the claim SHAPE" describes. The file states the separation
+explicitly so a later reader does not merge them.
+
+An earlier line of attack that DID NOT WORK, so it is not re-tried: I tried to
+derive "flavour SU(3) cannot equal colour SU(3)" from the gate, on the argument
+that identifying them puts a quark in 3 (x) 3 of one group, which contains 3bar
+alongside 3 and so fails conjugate_pair_fails_gate. It does not: 3 (x) 3 =
+6 + 3bar contains 3bar but NOT 3, so no conjugate pair is present and the object
+passes. The argument is wrong and the identification is not excluded this way.
+
+BEARING ON THIS BEAN, as a constraint and explicitly NOT an answer: triality is
+a property of each SU(3) copy separately, so a quark carrying both a colour and
+a flavour index has TWO independent gradings with independent neutrality
+conditions, which collapse to one under an identification of the groups. That
+is a structural difference the corpus can test rather than assert.
+eightfold-open-problems.md line 32 stays open.
+
+## NOTATION MEASUREMENT — my earlier "31 ambiguous sites" was WRONG
+
+Reported to the owner as a blocker; re-measured properly, it is smaller and
+partly a non-problem. Of 31 SU(3) occurrences in eightfold-way/*.md:
+
+   17  already disambiguated -- 9 by the adjacent word ("flavour SU(3)",
+       "colour SU(3)"), 8 by unambiguous mathematics (SU(3) subset G_2 can only
+       be colour; "gluon octet")
+    4  DELIBERATELY GENERIC -- "true of any SU(3)", "a theorem of SU(3)
+       representation theory". These are about the abstract Lie group.
+       Subscripting them would ASSERT a physical identification the sentence
+       avoids: a sweep would introduce four errors, not fix four.
+   10  genuinely bare, and several of those are unambiguous to a physicist by
+       standard usage ("SU(3) breaking" is always flavour, "SU(3) gauge" always
+       colour)
+
+THE CORPUS ALREADY HAS A CONVENTION AND IT IS NOT THE ONE I PROPOSED.
+observations/color-superconductivity-borromean.md writes
+SU(3)_c x SU(3)_L x SU(3)_R -> SU(3)_{c+L+R} -- standard colour-flavour-locking
+notation, LOWERCASE _c for colour, _L/_R chiral, the eightfold-way group being
+the diagonal/vector subgroup. My proposed SU(3)_C / SU(3)_F contradicts it on
+case and under-specifies on the flavour side. The notation register itself says
+NOTHING about SU(3), so this would be an addition, not an overturning.
+
+WHY IT IS AN OWNER DECISION rather than a cleanup: eightfold-open-problems.md
+line 32 lists "flavour vs colour SU(3)" as OPEN. Leaving every occurrence bare
+quietly suggests one group; subscripting every occurrence quietly asserts two.
+Both beg the open question, in opposite directions. Recommendation put to the
+owner: adopt SU(3)_c and SU(3)_F, register both, apply ONLY to the ~10 bare
+sites where a definite copy is meant, leave the 4 generic ones bare, and add a
+register note that the subscripts name the two ROLES rather than claiming the
+groups are distinct as objects.
+
+
+## SELF-CORRECTION, same session — the "testable structural difference" is NOT one
+
+I recorded above, and wrote into TrialitySelectionRule.lean and PR #5810, that
+triality gives a way to test the flavour-vs-colour identification: distinct
+groups mean a quark carries one fundamental index of each, identified groups
+mean two indices of one group, so the grading collapses and that is "a
+structural difference the corpus can test rather than assert".
+
+THAT IS WRONG, and it is now a proved negative rather than a corrected sentence.
+
+If the groups are identified the quark's triality is 2, not 1, so neutrality
+reads 2(a - b) = 0 instead of (a - b) = 0. But 2 is a UNIT in Z/3, so
+multiplying the grading by it permutes the non-zero classes and fixes zero. The
+two conditions are the same condition. Checked on the whole hadron table --
+meson, baryon, diquark, four-quark, tetraquark, pentaquark -- and the verdict is
+identical in every case.
+
+Added to the file, sorry-free, lean-direct exit 0:
+
+  trialityWeighted k a b                 = k * triality a b, k = indices per quark
+  trialityWeighted_eq_zero_iff           weighting by a unit changes nothing
+  identification_invisible_to_selection_rule
+                                         the negative, general in (a,b)
+  identification_agrees_on_hadrons       the table, as a corollary
+
+WHY THIS IS WORTH HAVING rather than just deleting the wrong sentence: the
+triality route is the FIRST thing anyone reaches for on this question, and it
+is dead on arrival. The invariant itself is real and the confinement content
+stands; what is now established is that the invariant is BLIND to the
+identification. A discriminator has to look somewhere the Z/3 grading does not
+reach.
+
+So the open question is not narrowed by this work. The file closes one route to
+it, which is a smaller and more honest claim than the one I made an hour ago.
+
+
+## PROGRESS 2026-08-26 — Route B's T_1-vs-G_2 comparison is now a COROLLARY (PR #5810)
+
+This bean records the chapter's argument that the octonionic SU(3) and the
+icosahedral colour triple cannot both come from one construction, "since the
+Sym^2 gate excludes the icosahedral colour triple T_1 while the G_2 route
+passes it". That is a case analysis over two examples. The actual mechanism is
+Frobenius-Schur type -- T_1 is a rotation rep of A_5 subset SO(3) and so REAL,
+the Gunaydin-Gursey triple in Im(O) = R + C^3 is COMPLEX -- and neither of the
+two existing gate files could state it: Sym2GateMultiplicity models FS = +-1
+only, Sym2GateComplexType models FS = 0 only.
+
+QOU/Eightfold/Sym2GateFSTrichotomy.lean unifies them over the full trichotomy
+(12 decls, sorry-free, lean-direct exit 0, axioms [propext, Quot.sound] only --
+not even Classical.choice):
+
+  gate_forces_complex_of_dim_three   ANY dim-3 object passing the gate contains
+                                     a complex-type irrep
+  real_triple_fails_gate             the T_1 half, one line, no icosahedron
+  even_dimOf_of_selfDual             recovers Sym2GateMultiplicity's conclusion
+                                     in the unified language
+
+So real and quaternionic constructions are excluded AS A CLASS, not as two
+examples: passing forces real multiplicities to zero, quaternionic dimensions
+are even, the total is even, and 3 is odd. Complex type is not one way among
+several to reach dimension 3 through this gate -- it is the ONLY way.
+
+Two standard inputs are carried as EXPLICIT HYPOTHESES rather than assumed:
+QuaternionicEvenDim (an H-module has even dimension; Sym2GateMultiplicity got
+this free from dim = 2j+1, there is no such formula here) and the self-duality
+classification. That is deliberate -- the theorem then names exactly what it
+needs, and no fact about octonions or icosahedra is among them.
+
+GAP (i) IS UNCHANGED AND I WANT THAT ON THE RECORD. This does NOT prove the
+Gunaydin-Gursey triple IS complex type; that remains the cited literature
+decomposition, exactly as this bean says. The file establishes what complex type
+BUYS and what real type COSTS. The input is still an input, and Route B still
+needs it formalised or explicitly cited at the point of use.
+
+WHAT IT CHANGES FOR THE ROUTE: the target is now sharper. Route B does not need
+to argue about icosahedra at all -- it needs exactly one thing, that its triple
+is complex type. Everything else follows. Conversely any future candidate that
+is real or quaternionic is dead on arrival at dimension 3, without further
+analysis.

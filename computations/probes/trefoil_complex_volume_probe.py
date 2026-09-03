@@ -25,8 +25,15 @@ This is the part-3 contrast made concrete:
 Hecke/Markov conventions (AGENTS.md §7a): the Hecke generator σ satisfies
     σ² = (q − q⁻¹)σ + 1,    h := q − q⁻¹,
 and J_K(q) = tr_M(ρ(β_K)) with the Ocneanu/Markov normalisation tr(1)=1,
-tr(σ)=z, z = 1/(q^{1/2}+q^{-1/2}) (the Markov parameter, matching the repo's
-z_markov ≈ 0.49932 in pentagon-reduction-li2q.witness.json).
+tr(σ)=z, z = q³/(q²+1) — convention D, canonical per the 2026-08-15 owner
+ruling (R1), z_D(q₀) ≈ 0.6126880.
+
+CORRECTED 2026-08-28.  This read z = 1/(q^{1/2}+q^{-1/2}) — convention C,
+z_C(q₀) ≈ 0.49932 — and cited pentagon-reduction-li2q.witness.json as the
+authority for it.  That citation was stale: the witness carries
+0.6126880371464652515958298639458992480263083915450636084720501751483235,
+i.e. D.  The defect was the CLAIM, not merely the value: the probe asserted
+its convention was the repo's and named a witness that says otherwise.
 
 The trefoil is the closure of σ³ ∈ B₂.  Reducing σ³ in H₂(q):
     σ³ = σ·σ² = σ((q−q⁻¹)σ + 1) = (h²+1)·σ + h,
@@ -48,10 +55,36 @@ from pathlib import Path
 
 getcontext().prec = 60
 
-# Muon-canonical substrate modulus (computations/ layer convention; matches the
+# PROTON-pinned substrate modulus — q₀ ≈ 1.10997858275138080759…
+#
+# This comment used to read "Muon-canonical substrate modulus … matches the
 # committed rho-prefactor-structural-verifier.witness.json `q_0` parameter and
-# the cheat-sheet muon value 1.10997859555733471…).
-Q0 = Decimal("1.1099785955573347")
+# the cheat-sheet muon value 1.10997859555733471…". Every clause of that is now
+# false, and it went false silently:
+#
+#   * `q0_anchor_manifest.json` lists this stem under `physical_proton`, so
+#     `Q_50_DIGIT_STR` resolves to the PROTON pin. Measured: the value this
+#     producer computes at, and writes to `parameters.q_0`, is
+#     1.109978582751380807591669095611.
+#   * `rho-prefactor-structural-verifier.witness.json` still carries
+#     1.1099785955573347 — the MUON pin. The two no longer "match"; they are
+#     11.5 ppb apart, which is the μ–p substrate tension itself.
+#
+# Nothing was computed wrongly — the numbers were always whatever the manifest
+# handed this file. What was wrong is that the source said one layer while the
+# output belonged to the other, so a reader (or a grep-based anchor audit)
+# would classify this producer muon on the strength of a comment.
+#
+# Found by adding the `stamp_q0` call below: the stamp resolved "proton"
+# directly against the payload, one line from a comment asserting muon. That
+# is the stamp doing its job — see bean `1j39`.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _witness_q0_stamp import stamp_q0  # noqa: E402 — bean 1j39, bucket C
+Q0 = Decimal(Q_50_DIGIT_STR)
 
 
 def _sci(d: Decimal, n: int = 30) -> str:
@@ -62,7 +95,7 @@ def compute() -> dict:
     q = Q0
     h = q - 1 / q                      # h = q − q⁻¹
     rootq = q.sqrt()
-    z = 1 / (rootq + 1 / rootq)        # Markov parameter z = 1/(q^{1/2}+q^{-1/2})
+    z = q ** 3 / (q ** 2 + 1)          # Markov parameter, convention D
 
     # tr_M(σ³) = (h²+1)·z + h  (exact reduction; (h²+1, h) are the Laurent
     # coefficients of the reduced Hecke element, convention-robust).
@@ -177,9 +210,24 @@ def main() -> None:
         "data": data,
     }
 
+    # This payload is hand-built in the shape `WitnessBuilder` emits, but it
+    # never goes through `build()`, so it never picked up the `q0Anchor`
+    # provenance stamp that `build()` has applied since 2026-08-25 — and no
+    # number of re-runs would ever add it (bean `1j39`, bucket C).
+    stamp_q0(witness, __file__)
+
     out = script_path.parent / "trefoil-complex-volume-probe.witness.json"
     # Explicit utf-8 so the write does not depend on the locale default
     # encoding (would risk UnicodeEncodeError under LANG=C / POSIX).
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2) + "\n", encoding="utf-8")
     print(f"allPassed={all_passed}")
     print(f"  tr_M(trefoil)@q0 = {data['trM_trefoil_at_q0']}  (|.|={data['abs_trM_trefoil_at_q0']})")

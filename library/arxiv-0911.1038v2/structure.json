@@ -1,0 +1,401 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0911.1038v2",
+ "source": {
+  "file": "0911.1038v2.pdf",
+  "sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
+  "bytes": 228976,
+  "pages": 26,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0911.1038",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Mar 2012"
+  },
+  "doi": null,
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+  "authors_raw": "MACIEJ DO\u0141 \u02db EGA AND PIOTR\u015aNIADY",
+  "title_lines": [
+   "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS:",
+   "STRUCTURE OF KEROV CHARACTER POLYNOMIALS"
+  ],
+  "abstract": "We study asymptotics of characters of the symmetric groups on a \ufb01xed conjugacy class. It was proved by Kerov that such a character can be expressed as a polynomial in free cumulants of the Youn g dia- gram (certain functionals describing the shape of the Young diagram). We show that for each genus there exists a universal symmetric polyno- mial which gives the coef\ufb01cients of the part of Kerov charact er polyno- mials with the prescribed homogeneous degree. The existenc e of such symmetric polynomials was conjectured by Lassalle. 1. I NTRODUCTION 1.1. Asymptotic representation theory of symmetric groups. What can we say about the representations of the symmetric groups S(n) in the limit n \u2192 \u221e ? This very general question is the subject of investigations of the asymptotic representation theory of the symmetric groups. Even though for almost any question of the representation theory of the symm etric groups the answer is known, usually this answer is given by a combina torial algo- rithm (for example, Murnaghan-Nakayama rule or Littlewood -Richardson rule) involving manipulations with boxes of a Young diagram . As n, the number of boxes, tends to in\ufb01nity, such combinatorial algor ithms become very cumbersome and it is not easy to extract from them some re asonable asymptotic answer. For this reason one has to look for new, al ternative ap- proaches, which would less depend on the details of boxes of agiven Young diagram, but rather on its \u2018global\u2019 features. 1.2. Asymptotic shape of Young diagrams. In this article we study the scaling of balanced Young diagrams which means that a Young diagram withn boxes is assumed to have at most O(\u221a n) rows and columns. This scaling almost inevitably leads to the concept of (asymptotic) shape of a Young diagram: roughly speaking, we disregard the informat ion about the number of boxes of a Young diagram and we are interested only h ow the Young diagram looks in large-scale perspective. More preci sely, this con- cept of (asymptotic) ",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211105020013-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic representation theory of symmetric groups",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic shape of Young diagrams",
+   "page": 1,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "How to normalize the characters?",
+   "page": 2,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "How to describe the shape of a Young diagram?",
+   "page": 3,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Free cumulants",
+   "page": 4,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Kerov character polynomials",
+   "page": 4,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 2,
+   "title": "Genus expansion",
+   "page": 5,
+   "source": "outline",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "The main result: proof of some conjectures of Lassalle",
+   "page": 6,
+   "source": "outline",
+   "number": "1.8"
+  },
+  {
+   "level": 2,
+   "title": "General idea of the proof",
+   "page": 7,
+   "source": "outline",
+   "number": "1.9"
+  },
+  {
+   "level": 1,
+   "title": "Goulden-Rattan formula and existence of symmetric polynomials",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Power series P",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Polynomial structure of coefficients of P",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Goulden-Rattan formula",
+   "page": 12,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition ??",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Divisibility of polynomials",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Implications of divisibility",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Divisibility",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the main result",
+   "page": 16,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Technical lemmas",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Identities on symmetric functions",
+   "page": 18,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma ??",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Arithmetic properties of Kerov polynomials",
+   "page": 21,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-asymptotic-representation-theory-of-symmetric",
+   "number": "1.1",
+   "title": "Asymptotic representation theory of symmetric groups",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 858,
+   "n_words": 144
+  },
+  {
+   "id": "sec-001-12-asymptotic-shape-of-young-diagrams",
+   "number": "1.2",
+   "title": "Asymptotic shape of Young diagrams",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2353,
+   "n_words": 421
+  },
+  {
+   "id": "sec-002-13-how-to-normalize-the-characters",
+   "number": "1.3",
+   "title": "How to normalize the characters?",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 286,
+   "n_words": 45
+  },
+  {
+   "id": "sec-003-16-kerov-character-polynomials",
+   "number": "1.6",
+   "title": "Kerov character polynomials",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1251,
+   "n_words": 235
+  },
+  {
+   "id": "sec-004-14-how-to-describe-the-shape-of-a-young-diagram",
+   "number": "1.4",
+   "title": "How to describe the shape of a Young diagram?",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 263,
+   "n_words": 46
+  },
+  {
+   "id": "sec-005-15-free-cumulants",
+   "number": "1.5",
+   "title": "Free cumulants",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4144,
+   "n_words": 722
+  },
+  {
+   "id": "sec-006-17-genus-expansion",
+   "number": "1.7",
+   "title": "Genus expansion",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1083,
+   "n_words": 192
+  },
+  {
+   "id": "sec-007-18-the-main-result-proof-of-some-conjectures-of",
+   "number": "1.8",
+   "title": "The main result: proof of some conjectures of Lassalle",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2026,
+   "n_words": 383
+  },
+  {
+   "id": "sec-008-19-general-idea-of-the-proof",
+   "number": "1.9",
+   "title": "General idea of the proof",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 6961,
+   "n_words": 1444
+  },
+  {
+   "id": "sec-009-23-goulden-rattan-formula",
+   "number": "2.3",
+   "title": "Goulden-Rattan formula",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1513,
+   "n_words": 292
+  },
+  {
+   "id": "sec-010-31-implications-of-divisibility",
+   "number": "3.1",
+   "title": "Implications of divisibility",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 6624,
+   "n_words": 1412
+  },
+  {
+   "id": "sec-011-32-divisibility",
+   "number": "3.2",
+   "title": "Divisibility",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 548,
+   "n_words": 95
+  },
+  {
+   "id": "sec-012-33-proof-of-the-main-result",
+   "number": "3.3",
+   "title": "Proof of the main result",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2535,
+   "n_words": 580
+  },
+  {
+   "id": "sec-013-4-technical-lemmas",
+   "number": "4",
+   "title": "Technical lemmas",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-014-41-identities-on-symmetric-functions",
+   "number": "4.1",
+   "title": "Identities on symmetric functions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 3299,
+   "n_words": 740
+  },
+  {
+   "id": "sec-015-43-arithmetic-properties-of-kerov-polynomials",
+   "number": "4.3",
+   "title": "Arithmetic properties of Kerov polynomials",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 8150,
+   "n_words": 1668
+  },
+  {
+   "id": "sec-016-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 313,
+   "n_words": 50
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 3657,
+   "n_words": 520
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 18,
+  "chars_total": 45864
+ }
+}

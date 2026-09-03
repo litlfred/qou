@@ -1,0 +1,157 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T05:31:36.013454+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "assertions": [
+    {
+      "name": "trace_is_not_monotone_in_wall_crossings",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "I2 crosses the wall twice and traces below I1, which crosses once; so a crossing count is no proxy for the objective"
+    },
+    {
+      "name": "fan_touches_two_strands_but_is_still_a_connected_sum",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "I4 = s2 s3 s4 touches strands 2,3 below and 4,5 above, yet crosses the wall once and factors"
+    },
+    {
+      "name": "control_current_interface_is_provably_a_connected_sum",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "I1 = s3, the single wall crossing measured in Addendum 28"
+    },
+    {
+      "name": "one_candidate_clears_the_threshold",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "candidates with tr_M >= sqrt(B_AME); it is I5"
+    },
+    {
+      "name": "clearing_candidate_ratio",
+      "computed": "1.2475329589197819406",
+      "expected": "1.247533",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "I5 = (s3 s2 s4 s3)^2 -- reported, NOT selected"
+    },
+    {
+      "name": "control_most_candidates_fall_short",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "four of five are below sqrt(B_AME)"
+    },
+    {
+      "name": "control_pure_I1_differs_from_the_committed_atom_trace",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "the canonical interface is the colour-weighted AVERAGED letter; I1 is its pure analogue, so the five are comparable to each other but none is the committed object"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 221,
+  "computation": "interface-candidate-screen",
+  "scriptFile": "interface_candidate_screen_probe.py",
+  "scriptHash": "c5c8553915a2",
+  "scriptCommitSha": "ec0a28fa53f9a93acdd240cee37dfbc6d6f53d97",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/interface_candidate_screen_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/interface_candidate_screen_probe.py"
+  },
+  "description": "Screens five interface words at the deuteron block wall. SELECTS NONE. The trace is NOT monotone in wall crossings (I2 crosses twice and traces below I1, which crosses once), strands touched is independent of strands crossing (I4 touches 2 a side, crosses once, is provably still a connected sum), and one candidate clears sqrt(B_AME) at 1.2475x -- but choosing it BECAUSE it clears would be a fit, so no candidate is chosen. prov.#? False means NOT DETECTED as a connected sum, which is necessary but NOT sufficient for an essential torus.",
+  "data": {
+    "wall": 3,
+    "interface_slot_index": 11,
+    "candidates": [
+      {
+        "tag": "I1",
+        "interface": "s3",
+        "note": "current: a single wall crossing",
+        "wall_crossings": 1,
+        "provably_connected_sum": true,
+        "tr_M": "0.69338940871465185565",
+        "ratio_to_sqrt_AME": "0.46489465824035639355"
+      },
+      {
+        "tag": "I2",
+        "interface": "s3 s2 s4 s3",
+        "note": "2-block transposition (the cabling pattern)",
+        "wall_crossings": 2,
+        "provably_connected_sum": false,
+        "tr_M": "0.4176423087562986508",
+        "ratio_to_sqrt_AME": "0.28001535061790181803"
+      },
+      {
+        "tag": "I3",
+        "interface": "s3 s3",
+        "note": "clasp",
+        "wall_crossings": 2,
+        "provably_connected_sum": false,
+        "tr_M": "1.2766771012898315928",
+        "ratio_to_sqrt_AME": "0.85596975844734095617"
+      },
+      {
+        "tag": "I4",
+        "interface": "s2 s3 s4",
+        "note": "fan: touches 2 strands a side, crosses once",
+        "wall_crossings": 1,
+        "provably_connected_sum": true,
+        "tr_M": "0.32814878260954422761",
+        "ratio_to_sqrt_AME": "0.22001290216711882678"
+      },
+      {
+        "tag": "I5",
+        "interface": "(s3 s2 s4 s3)^2",
+        "note": "doubled block transposition",
+        "wall_crossings": 4,
+        "provably_connected_sum": false,
+        "tr_M": "1.8606927943882681779",
+        "ratio_to_sqrt_AME": "1.2475329589197819406"
+      }
+    ],
+    "required_trace": "1.49149790479236007540919",
+    "selected_candidate": null
+  },
+  "caveats": [
+    "NO CANDIDATE IS SELECTED. I5 clears sqrt(B_AME) at 1.2475x; choosing it BECAUSE it clears would be a fit. Nothing here derives which interface is correct. What could: the colour-tube structure of conj:inter-nucleon-channel-color-tube via conj:s5-so3-fiber-action, or a derivation from the Bring geometry. The AME number may not do the selecting.",
+    "prov.#? is the single-crossing factorisation, a SUFFICIENT condition for a connected sum. True means the closure IS one; False means NOT DETECTED as one and does NOT imply an essential torus. Incompressibility is geometric and no probe here tests it.",
+    "Scope (a). Not claimed: that any candidate produces an essential torus, that any is correct or derivable, that conj:jsj-decomposition-linearity is true or false, or that binding follows. Nothing computes a binding contribution. float64 traces via block_rep_braid_word; the spreads are percent-level."
+  ]
+}

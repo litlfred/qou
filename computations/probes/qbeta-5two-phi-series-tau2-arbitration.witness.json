@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "extracted dominant-saddle V: Re = Vol(5₂) to 1e-4, Im = ±1.379 (GGM eq 21, either CS sign)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the agreed τ¹ coefficient identifies the convention sharply (5e-3) and uniquely up to the generator identity GGM@z = Peacock@ξ (all others > 0.1)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "h1-row max log-residual < 1e-6 over the 12-point grid"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exactly one paper's gate-passing candidate matches the extracted τ² (<0.1 rel, ≥5× separation) — misprint resolved"
     }
   ],

@@ -1,4 +1,7 @@
 {
+  "scriptFile": "beta-decay-from-q.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "computation": "beta-decay-from-q",
   "timestamp": "2026-08-23T21:00:12.032964+00:00",
   "description": "Verification that beta decay half-lives depend on q and \u03bc\u2080 alone. All standard-physics constants (G_F, m_e) decompose into q-dependent factors times the single dimensional scale \u03bc\u2080.",

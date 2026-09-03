@@ -1,0 +1,436 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2403.00360v2",
+ "source": {
+  "file": "2403.00360v2.pdf",
+  "sha256": "b0764ca18a83a84f00ff8da5453541548bb9f51313500584cf27406a6009a23c",
+  "bytes": 696313,
+  "pages": 36,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2403.00360",
+   "version": "2",
+   "primary_class": "math-ph",
+   "stamp_date": "15 Sep 2024"
+  },
+  "doi": null,
+  "title": "CAUSAL FERMION SYSTEMS AND OCTONIONS",
+  "authors_raw": "FELIX FINSTER, NIELS G. GRESNIGT, JOS \u00c9 M. ISIDRO, ANTONINO MARCIAN\u00d2",
+  "title_lines": [
+   "CAUSAL FERMION SYSTEMS AND OCTONIONS"
+  ],
+  "abstract": "We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20240917005851Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.25",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Division Algebras and the Standard Model",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Motivation",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Historical Overview",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Normed Division Algebras",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The Associative Multiplication Algebras of O",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Connection to the Standard Model",
+   "page": 8,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Causal Fermion Systems",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Spacetime Structures",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Dynamical Equations in Spacetime",
+   "page": 12,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Connection to the Standard Model",
+   "page": 12,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Connection to Quantum Field Theory",
+   "page": 15,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Connection to Quantum Geometry and Quantum Gravity",
+   "page": 16,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Comparison",
+   "page": 16,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Foundations of the Approaches",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Connection to the Gauge Group of the Standard Model",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Describing the Three Generations in the Standard Model",
+   "page": 19,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Outlook and Directions of Future Research",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+   "page": 21,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Chiral Symmetry Breaking",
+   "page": 22,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8417,
+   "n_words": 1327
+  },
+  {
+   "id": "sec-001-2-division-algebras-and-the-standard-model",
+   "number": "2",
+   "title": "Division Algebras and the Standard Model",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-motivation",
+   "number": "2.1",
+   "title": "Motivation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2690,
+   "n_words": 420
+  },
+  {
+   "id": "sec-003-22-historical-overview",
+   "number": "2.2",
+   "title": "Historical Overview",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4747,
+   "n_words": 746
+  },
+  {
+   "id": "sec-004-23-the-normed-division-algebras",
+   "number": "2.3",
+   "title": "The Normed Division Algebras",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4276,
+   "n_words": 712
+  },
+  {
+   "id": "sec-005-24-the-associative-multiplication-algebras-of-o",
+   "number": "2.4",
+   "title": "The Associative Multiplication Algebras of O",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2660,
+   "n_words": 436
+  },
+  {
+   "id": "sec-006-25-connection-to-the-standard-model",
+   "number": "2.5",
+   "title": "Connection to the Standard Model",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 832,
+   "n_words": 146
+  },
+  {
+   "id": "sec-007-3-causal-fermion-systems",
+   "number": "3",
+   "title": "Causal Fermion Systems",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2960,
+   "n_words": 501
+  },
+  {
+   "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
+   "number": "3.1",
+   "title": "Causal Fermion Systems and the Reduced Causal Action Principle",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2386,
+   "n_words": 414
+  },
+  {
+   "id": "sec-009-32-spacetime-structures",
+   "number": "3.2",
+   "title": "Spacetime Structures",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 4311,
+   "n_words": 767
+  },
+  {
+   "id": "sec-010-33-dynamical-equations-in-spacetime",
+   "number": "3.3",
+   "title": "Dynamical Equations in Spacetime",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1158,
+   "n_words": 192
+  },
+  {
+   "id": "sec-011-34-connection-to-the-standard-model",
+   "number": "3.4",
+   "title": "Connection to the Standard Model",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 9066,
+   "n_words": 1558
+  },
+  {
+   "id": "sec-012-35-connection-to-quantum-field-theory",
+   "number": "3.5",
+   "title": "Connection to Quantum Field Theory",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1054,
+   "n_words": 177
+  },
+  {
+   "id": "sec-013-36-connection-to-quantum-geometry-and-quantum-gr",
+   "number": "3.6",
+   "title": "Connection to Quantum Geometry and Quantum Gravity",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1507,
+   "n_words": 246
+  },
+  {
+   "id": "sec-014-4-comparison",
+   "number": "4",
+   "title": "Comparison",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 291,
+   "n_words": 44
+  },
+  {
+   "id": "sec-015-41-foundations-of-the-approaches",
+   "number": "4.1",
+   "title": "Foundations of the Approaches",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5757,
+   "n_words": 939
+  },
+  {
+   "id": "sec-016-42-connection-to-the-gauge-group-of-the-standard",
+   "number": "4.2",
+   "title": "Connection to the Gauge Group of the Standard Model",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3876,
+   "n_words": 630
+  },
+  {
+   "id": "sec-017-43-describing-the-three-generations-in-the-stand",
+   "number": "4.3",
+   "title": "Describing the Three Generations in the Standard Model",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 6591,
+   "n_words": 1070
+  },
+  {
+   "id": "sec-018-5-outlook-and-directions-of-future-research",
+   "number": "5",
+   "title": "Outlook and Directions of Future Research",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 79,
+   "n_words": 13
+  },
+  {
+   "id": "sec-019-51-connection-with-the-exceptional-lie-groups-an",
+   "number": "5.1",
+   "title": "Connection with the Exceptional Lie Groups and Jordan Algebras",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3438,
+   "n_words": 547
+  },
+  {
+   "id": "sec-020-52-chiral-symmetry-breaking",
+   "number": "5.2",
+   "title": "Chiral Symmetry Breaking",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 30,
+   "n_chars": 19665,
+   "n_words": 3338
+  },
+  {
+   "id": "sec-021-appendix-a-description-of-majorana-spinors-in-ca",
+   "number": null,
+   "title": "Appendix A. Description of Majorana Spinors in Causal Fermion Systems",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 4621,
+   "n_words": 774
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 36,
+   "n_chars": 17427,
+   "n_words": 2540
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 23,
+  "chars_total": 107809
+ }
+}

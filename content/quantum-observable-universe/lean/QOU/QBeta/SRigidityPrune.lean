@@ -28,8 +28,9 @@ for a categorical function `g` of a single calibration datum `𝔇`":
 **What is NOT excluded (scope-(a), still open).** The invariant excludes only the
 *pure-function-of-one-anchor-invariant-datum* form. It does **not** exclude an
 anchor-*dependent* fibre object `g(𝔇, q₀)` — but such a `g` would need a
-~2×10⁶ logarithmic `q₀`-sensitivity (the registry `dc_3/dq ≈ 4.6×10⁶`
-obstruction) to supply the 2.4 % swing from the ppb-level anchor `q₀` difference,
+~2×10⁶ logarithmic `q₀`-sensitivity (the registry `dc_3/dq ≈ 3.84×10⁶`
+obstruction; corrected 2026-08-29 from `4.6×10⁶`, which is the secant taken
+with the pre-#1422 superseded muon `c₃ = -2.0097` — bean `qou-kt8o`) to supply the 2.4 % swing from the ppb-level anchor `q₀` difference,
 which no *smooth real* `g` provides. The surviving route is fibre-level (the
 ζ₄-residue of `conj:binding-qbeta-complex-volume`), consistent with the Im(q)
 fibre-vs-observable reading — NOT a real function of the pion datum.

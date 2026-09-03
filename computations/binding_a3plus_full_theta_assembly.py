@@ -352,7 +352,7 @@ if "3He" in volume_scaled_results["rho_v2_mu_0"]["per_atom"]:
     )
     wb.add_assertion(
         "he3_volume_scaled_mu0_rel_err_under_25pct",
-        computed=float(he3_vol_mu0 * 100),
+        computed=he3_vol_mu0 * 100,
         expected=17.4,
         tolerance=10.0,
         source=(

@@ -1,12 +1,47 @@
 # Q_β Habiro element — `u^15` depth interpretation (2026-05-31)
 
+> ## ⚠ SUPERSEDED BY THE CONVENTION-D MIGRATION — the answer is now `u^4`
+>
+> **Added 2026-08-30 (bean `qou-saop`). This audit is left as the record of
+> what was found on 2026-05-31 under convention C; its filename and dated
+> findings are deliberately unchanged. Do not cite `u^15` from it as current.**
+>
+> `f392d75408e` (2026-08-18) migrated the Habiro family to convention D under
+> the owner directive *"no C family. D only."*, and recorded the p−n difference
+> there as
+>
+> ```
+> u^4(u^2-u+1)(u^2+u+1)(u^4-u^2+1)(u^32+3u^20-2u^16+3u^12-4u^8+3u^4-2)
+> ```
+>
+> — leading factor **u^4**. Re-running the probe today reproduces exactly that
+> polynomial, with `first_differing_exponent: 4`, `is_first_diff_u15: false`,
+> and the verdict moving from `FIRST-DIFFERING-EXPONENT (Test F)` to
+> **UNCLEAR**. The shared-exponent set is also no longer contiguous.
+>
+> The probe's witness went on reporting the C-era answer with `allPassed: true`
+> for two months, because its only assertion was `6 == 6` and could not
+> contradict a conclusion. That is bean `qou-26f2`'s defect concealing a
+> verdict rather than a number.
+>
+> Two further statements in this audit are convention-C-only. The cyclotomic
+> reading `(u−1)(u+1) = Φ_1·Φ_2` does not survive: the same migration found all
+> four Φ_k multiplicities are 0 on all seven pairs, the differences being
+> nonzero but carrying no cyclotomic content. And the seven candidate
+> interpretations below are answers to "why 15", which is no longer the
+> question. Whether any has a `u^4` analogue is **open**; nothing claims one.
+>
+> The probe has been renamed to `qbeta_habiro_pn_split_depth` — named for the
+> question rather than the answer, since a number in the filename is what let
+> this go stale unnoticed.
+
 > Keystone follow-up to [`2026-05-31-qbeta-habiro-delta-am-factorization.md`](2026-05-31-qbeta-habiro-delta-am-factorization.md):
 > structural explanation of the `u^15` prefactor in
 > `Σ_m Δa_m·(u;u)_m = −u^15·(u−1)(u+1)·P_8(u)`.
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`computations/qbeta/qbeta_habiro_depth15_interpretation.py`](../../computations/qbeta/qbeta_habiro_depth15_interpretation.py).
-> Witness: `computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json`.
+> Probe script: [`computations/qbeta/qbeta_habiro_pn_split_depth.py`](../../computations/qbeta/qbeta_habiro_pn_split_depth.py).
+> Witness: `computations/qbeta/qbeta-habiro-pn-split-depth.witness.json`.
 
 ## TL;DR
 
@@ -240,8 +275,8 @@ with TWO of the three factors now categorically identified.
 
 ## Files touched
 
-- **NEW:** `computations/qbeta/qbeta_habiro_depth15_interpretation.py`
-- **NEW:** `computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json`
+- **NEW:** `computations/qbeta/qbeta_habiro_pn_split_depth.py`
+- **NEW:** `computations/qbeta/qbeta-habiro-pn-split-depth.witness.json`
 - **NEW:** `docs/audits/2026-05-31-qbeta-habiro-depth15-interpretation.md` (this file)
 
 ## Cross-refs

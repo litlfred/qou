@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-05T23:58:18.695937+00:00",
-  "commitSha": "928891912057b2ba3d36beed08ae6ac2bb5b5f5e",
+  "computedAt": "2026-08-29T10:52:03.819049+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "vol_4_1_equals_2_Cl2_pi3",
-      "computed": 2.0298832128193074,
+      "computed": "2.029883212819307250042405108549040571883378615060599584034978213553195",
       "expected": 2.0298832128,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "Vol(4₁) = 2·Cl₂(π/3) (thurston1978); anchors m_μ/m_e = Vol(4₁)/ℏ_q²"
     },
     {
       "name": "trefoil_CS_equals_neg_pi2_over_6",
-      "computed": -0.16666666666666666,
+      "computed": "-0.1666666666666666666666666666666666666666666666666666666666666666666667",
       "expected": -0.16666666666666666,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "CS(3₁) = −π²/6 (standard trefoil Chern–Simons invariant)"
     },
     {
@@ -41,8 +41,8 @@
   "durationMs": 4,
   "computation": "two-filtration-bridge-small-cases",
   "scriptFile": "two_filtration_bridge_small_cases.py",
-  "scriptHash": "285f16ec813d",
-  "scriptCommitSha": "928891912057b2ba3d36beed08ae6ac2bb5b5f5e",
+  "scriptHash": "0972c46af6dd",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,7 +51,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/two_filtration_bridge_small_cases.py"
+    ],
+    "reproduce": "python3 -u computations/two_filtration_bridge_small_cases.py"
   },
   "description": "Probe for prop:two-filtration-bridge-small-cases. Recomputes the standard knot invariants Vol(4₁)=2·Cl₂(π/3), Vol(3₁)=0, CS(3₁)=−π²/6, CS(4₁)=0 and re-derives the iterated-integral depth d_II by the amphichiral(self-conjugate)→2 / chiral-pair→3 rule, verifying the bridge prediction for every partition λ⊢n with n≤4. No fitting: the invariants are classical knot-theory values.",
   "data": {

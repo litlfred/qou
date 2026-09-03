@@ -265,12 +265,38 @@ def main() -> int:
             r["anchor_defining"] = (
                 os.path.splitext(os.path.basename(r["producer"]))[0]
                 in ANCHOR_DEFINING)
-        json.dump({"results": rs, "tally": dict(collections.Counter(
+        # 🛑 `tree_commit` and `population` sit BESIDE the tally, not only inside
+        # `environment`. A tally is meaningless without the population it was
+        # computed over, and this selector's population is not fixed: `targets()`
+        # selects on `q0Anchor == "muon"` in the CURRENT tree, so it grows every
+        # time someone labels an unstamped witness. Measured 2026-08-24 — the
+        # in-scope set went **47 -> 142 in one day**, because main's
+        # `4101909790` ("label 229 witnesses from their own payload") stamped
+        # 229 previously-unlabelled witnesses and every muon one entered here.
+        #
+        # So a reader comparing two tallies must be able to see, without
+        # digging, that they cover different populations — otherwise "47/47"
+        # reads as completion when it is only completion *relative to one
+        # tree*. Bean `qou-6q7q`.
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"results": rs, "tally": dict(collections.Counter(
                        r["verdict"] for r in rs)),
+                   "tree_commit": ENV.get("tree_commit"),
+                   "population": len(runnable),
                    "partial": partial, "measured": len(rs),
                    "total": len(runnable), "environment": ENV,
                    "skipped": [{"witness": w, "scriptFile": s_, "candidates": c}
-                               for w, s_, c in skipped]},
+                               for w, s_, c in skipped]}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+        json.dump(_prov_payload,
                   open(tmp, "w"), indent=2)
         os.replace(tmp, args.out)          # atomic: never a half-written file
 

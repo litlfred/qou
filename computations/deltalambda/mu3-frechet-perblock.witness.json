@@ -1,28 +1,22 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T12:09:19.518213+00:00",
-  "commitSha": "df0d837b80c050e2240268b2a7db952843eb9d6b",
+  "computedAt": "2026-08-25T21:17:48.709230+00:00",
+  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
   "assertions": [
     {
       "name": "linearity_gate",
       "computed": 0,
       "expected": 1,
       "passed": false
-    },
-    {
-      "name": "frechet_violator_found",
-      "computed": 1,
-      "expected": 1,
-      "passed": true
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "mu3-frechet-perblock",
   "scriptFile": "mu3_frechet_perblock_probe.py",
-  "scriptHash": "4b35e1c4fba6",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "00576651935f",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,10 +28,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -51,6 +45,7 @@
     "E0_MeV": "4.1859813632944758969"
   },
   "data": {
+    "frechet_violator_found": 1,
     "results": {
       "T": {
         "n_blocks": 30,
@@ -762,10 +757,10 @@
     "n_negative_y_lambda_at_9": 0
   },
   "caveats": [
-    "y_λ is NOT sign-definite at n=9 (10 of 30 weights negative), so a block's Δ²_λ<0 may come from submodular geometry OR from supermodular geometry carried by a negative weight. Only the former is a Fréchet violation; the two are reported separately. Consequently the Lean lemma reweight_cannot_open_door (hypothesis w_λ ≥ 0) does not apply to this spectrum.",
+    "y_λ IS sign-definite at n=9 (0 of 30 weights negative), so every Δ²_λ<0 is submodular geometry and the negative-weight ambiguity above does not arise. The hypothesis of reweight_cannot_open_door (w_λ ≥ 0) is SATISFIED, so that lemma applies and re-weighting is foreclosed on this spectrum. This inverts what this probe reported while the ≥3-row weights were convention-C nonzero; it is recorded as a consequence of the convention-D row cap, not as an independent derivation, and nothing is wired to it.",
     "Measurement only. No Δ_λ closure, no μ₃ value fitted, nothing wired to production."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513804319",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.results.3He.per_block[].r_a, data.results.T.per_block[].r_b, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

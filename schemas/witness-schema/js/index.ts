@@ -48,7 +48,11 @@ export const ComputationAssertion = z
     computed: ComputedOrExpected,
     expected: ComputedOrExpected,
     passed: z.boolean().optional(),
-    tolerance: z.number().optional(),
+    // `number | string`, exactly like computed/expected above -- 693 committed
+    // assertions across 136 witnesses already carry a string tolerance, because
+    // draining raw float64 at the producer (qou-t0rf) serialises the declared
+    // threshold as its literal. Widened 2026-08-28.
+    tolerance: ComputedOrExpected.optional(),
     unit: z.string().optional(),
     source: z.string().optional(),
   })

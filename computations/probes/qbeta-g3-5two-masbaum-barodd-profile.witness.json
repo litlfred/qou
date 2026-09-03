@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "C_1 regression + max_exp = 3n^2+5n exact integer identity over the profile range"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "convergent tail truncation-certified; odd profile finite and nonzero (5_2 chirality) for n = 1..10"
     }
   ],

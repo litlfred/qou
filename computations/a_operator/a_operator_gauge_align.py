@@ -65,7 +65,7 @@ EXACT_TOL = mp.mpf("1e-25")
 
 
 
-def _d_pn(h):
+def _d_pn(h, q=None):
     """Colour-weighted p-n interface shift -h(1/2 - delta/4) (qou-gdtb).
 
     The interface here is the PHYSICAL p-n bridge (the docstring's
@@ -73,7 +73,32 @@ def _d_pn(h):
     the same colour weighting the canonical braid word emits. It previously
     used the colour-blind -h/2; that agreed to 1.5e-49 only because the chi
     path was colour-blind too. Both are now weighted.
+
+    `q` threads the flavour split (2026-08-24, bean `qou-8chw`). The default
+    `_avg_color_delta()` is a LAZILY-CACHED MODULE GLOBAL evaluated once at the
+    anchor q_0 and taking no q argument, so building the interface at any other
+    q silently baked a q_0-pinned constant into it — the layer straddle
+    `d_for_ctype`'s own `delta=` docstring already warns about for q-symbolic
+    callers, here reached by a numeric off-anchor caller instead.
+
+    It is not a small effect off-anchor: δ SIGN-FLIPS under q -> 1/q
+    (+0.0013757 at q_0, -0.0016949 at 1/q_0), moving the shift by 1.5e-3
+    relative. It was the last of three frozen inputs standing between the A=2
+    branching combiner and the fine-Bratteli transfer at the bar image;
+    threading it took tr_M^atom(D) at 1/q_0 from 3.2e-4 to **2.3e-15** against
+    the transfer's -0.0014808531711619370338, giving that value its second
+    independent method.
+
+    Passing `q` is a PROVABLE NO-OP at the anchor: `flavor_split_leading(q_0)`
+    and `_avg_color_delta()` were measured EXACTLY equal (diff 0.0 at 60 dps),
+    which is why every call site in this module could be threaded without
+    re-verifying each one. The owner-gated `_avg_color_delta()` default is
+    untouched — the muon/proton split rule in AGENTS.md §"q₀ anchor convention"
+    is not in scope here.
     """
+    if q is not None:
+        from _li_2_q_util import flavor_split_leading
+        return -h * (1 - flavor_split_leading(q) / 2) / 2
     from canonical_braid_crossings import _avg_color_delta
     return -h * (1 - _avg_color_delta() / 2) / 2
 
@@ -337,7 +362,7 @@ def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
     P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
     # Interface I_pn = σ_{n_inner-1} − (h/2)·1 (the bridge generator).
-    I_iface = mats[n_inner - 1] + _d_pn(h) * mp.eye(dim)
+    I_iface = mats[n_inner - 1] + _d_pn(h, q) * mp.eye(dim)
     null_tol = mp.mpf("1e-30")
     out = {}
     for mu in ev_in:
@@ -565,7 +590,7 @@ def gauge_aligned_A_combiner_general_cyclic(lam: tuple[int, ...], n_inner: int,
     C_bl = _transposition_class_sum(mats, n_inner, n - 1)
     P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
-    I_iface = mats[n_inner - 1] + _d_pn(h) * mp.eye(dim)
+    I_iface = mats[n_inner - 1] + _d_pn(h, q) * mp.eye(dim)
     tol = mp.mpf("1e-30")
     out = {}
     for mu in ev_in:
@@ -630,7 +655,7 @@ def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
         sig = mp.mp.dps
         q = mp.mpf(q_str)
         h = q - 1 / q
-        d_pn = mp.nstr(_d_pn(h), sig)
+        d_pn = mp.nstr(_d_pn(h, q), sig)
         ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
         ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
         p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
@@ -677,7 +702,7 @@ def gauge_aligned_A_combiner(lam: tuple[int, ...], q_str: str,
     C_bl = aoa._class_sum_C2(mats, 3, 4)
     P_in = aoa._lagrange_projectors(C_in, ev, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev, dim)
-    I_iface = mats[2] + _d_pn(h) * mp.eye(dim)     # pn interface I = σ_2 − (h/2)·1
+    I_iface = mats[2] + _d_pn(h, q) * mp.eye(dim)     # pn interface I = σ_2 − (h/2)·1
     null_tol = mp.mpf("1e-30")
     out = {}
     for mu in ev:
@@ -777,7 +802,7 @@ def verify_combiner_identity(dps: int = 50) -> dict:
         mats6, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
         if dim == 0:
             continue
-        I_iface = mats6[2] + _d_pn(h) * mp.eye(dim)
+        I_iface = mats6[2] + _d_pn(h, q) * mp.eye(dim)
         Acomb = gauge_aligned_A_combiner(lam, q_str, dps)
         if any("error" in v for v in Acomb.values()):
             return {"all_passed": False,
@@ -860,7 +885,7 @@ def verify_combiner_h9(lambdas=None, dps: int = 50) -> dict:
         mats9, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
         if dim == 0:
             continue
-        I_iface = mats9[5] + _d_pn(h) * mp.eye(dim)        # bridge gen 5
+        I_iface = mats9[5] + _d_pn(h, q) * mp.eye(dim)        # bridge gen 5
         Ac = gauge_aligned_A_combiner_general(lam, 6, 3, q_str, dps)
         if any("error" in v for v in Ac.values()):
             return {"all_passed": False, "error": "intertwiner failed λ=" + str(list(lam))}

@@ -1,0 +1,186 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:00:23.318567+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "bar_sends_the_generator_to_its_inverse",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar(T_0) = T_0 - h = T_0^{-1}, from T_0^2 = h T_0 + 1"
+    },
+    {
+      "name": "bar_is_an_involution_on_every_basis_element",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar(bar(T_w)) = T_w for all six w - the map is an involution, so 'bar-odd' and 'bar-even' are well-defined eigenspaces"
+    },
+    {
+      "name": "bar_is_independent_of_the_reduced_word",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar(T_0)bar(T_1)bar(T_0) = bar(T_1)bar(T_0)bar(T_1): the inverses satisfy the braid relation, so bar(T_w) is well-defined"
+    },
+    {
+      "name": "neither_element_lies_in_the_two_row_quotient",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi^(1,1,1)(Delta_S) = (q - 1)*(q + 1)*(q**2 + 1)/(2*q**2) != 0 and chi^(1,1,1)(Delta_L) = -0.171538643777 != 0 - the element analogue of the admissible-root criterion selects NEITHER, so the criterion is about the functional alone"
+    },
+    {
+      "name": "the_fork_survives_descent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Delta_S and Delta_L differ ALREADY in the two-row part (chi^(2,1) = 0 vs -0.106814457652), so no admissible functional identifies them: the fork cannot be deferred to the z-side"
+    },
+    {
+      "name": "no_rescaling_identifies_the_two_models",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "chi^(2,1)(Delta_S) = 0 while chi^(2,1)(Delta_L) != 0, so no scalar multiple of one is the other - the fork is not a normalisation"
+    },
+    {
+      "name": "net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "in GENERAL tr_M(z=1) - net = h * (e_minus coordinate), since tr_M(z=1) weights the basis [1,1,1,1,1,h+1] and net weights it [1,1,1,1,1,1]. Both Delta models have e_minus = 0, so they coincide HERE -- but the identity is not general and must not be quoted as one"
+    },
+    {
+      "name": "short_model_is_exactly_bar_odd",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar(Delta_S) = -Delta_S identically in q. Term by term: bar(h) = -h so bar(h^2/2) = h^2/2 and bar(-h/2) = h/2, while bar(T_s) = T_s - h; the two h^2/2 contributions cancel to -h^2/2 and the generator terms flip sign"
+    },
+    {
+      "name": "long_model_is_neither_bar_odd_nor_bar_even",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "bar(Delta_L) is neither -Delta_L nor +Delta_L - the 11-crossing word has no definite bar parity"
+    },
+    {
+      "name": "long_model_has_a_nonzero_bar_even_part",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Delta_L = (bar-odd part) + (bar-even part) with the even part nonzero; its counit is -0.0395652309646 - it is the even part that spoils the parity"
+    },
+    {
+      "name": "long_models_bar_odd_part_is_not_the_short_model",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the bar-odd part of Delta_L is NOT a scalar multiple of Delta_S - so the short model is not recoverable from the long one by projecting onto the bar-odd eigenspace"
+    },
+    {
+      "name": "bar_reduces_the_symmetric_family_to_two_scalar_equations",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "on x = c + d(sigma_0+sigma_1), bar(x) = (cbar - 2h*dbar) + dbar*(sigma_0+sigma_1) - verified on a generic Laurent pair - so bar(x) = -x reduces to exactly two equations: dbar = -d, and c + cbar = -2hd"
+    },
+    {
+      "name": "the_corpus_crossing_coefficient_is_bar_odd",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "d = -h/2 satisfies dbar = -d, so the corpus's 1-crossing coefficient already sits in the bar-odd eigenspace"
+    },
+    {
+      "name": "bar_oddness_forces_the_bar_even_part_of_c_to_h2_over_2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "with d = -h/2 the condition is c + cbar = h^2, so the BAR-EVEN part of c is forced to be exactly h^2/2 while its bar-odd part is free: adding the bar-odd h keeps the element bar-odd, adding the bar-even h^2 destroys it. h^2/2 is DERIVED from the involution, not fitted"
+    },
+    {
+      "name": "the_forced_coefficient_is_the_one_the_ladder_uses",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "net(Delta_S) = h^2/2 - h = epsNPq, the counit the published ladder is built from - so the forced h^2/2 is not an incidental coefficient but the one the corpus consumes"
+    },
+    {
+      "name": "the_two_models_are_separated_at_both_admissible_parameters",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "tr_M differs between the models at z = q AND at z = z_D, confirming from the functional side what chi^(2,1) shows from the block side: no admissible functional identifies them"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4470,
+  "computation": "qbeta-delta-bar-parity",
+  "scriptFile": "qbeta_delta_bar_parity_probe.py",
+  "scriptHash": "3e7da5b79f0e",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_bar_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_bar_parity_probe.py"
+  },
+  "description": "qou-bg3w: the admissible-root criterion picks the FUNCTIONAL but not the ELEMENT (neither Delta has vanishing (1^3) component). A different canonical criterion -- the Kazhdan-Lusztig bar involution bar(q)=1/q, bar(T_s)=T_s^-1 -- DOES separate them: Delta_S is exactly bar-odd, identically in q; Delta_L is neither bar-odd nor bar-even. Scope-(a): a structural measurement, not an adjudication of the fork.",
+  "data": {
+    "bar_sends_the_generator_to_its_inverse": true,
+    "bar_is_an_involution_on_every_basis_element": true,
+    "bar_is_independent_of_the_reduced_word": true,
+    "chi_(3)_short": "-0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(3)_long": "-0.260387641790120802073285342788008683395823953848067973302616",
+    "chi_(2,1)_short": "0.0",
+    "chi_(2,1)_long": "-0.106814457651578049623631258921144907521837554045085817350151",
+    "chi_(1,1,1)_short": "0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(1,1,1)_long": "-0.171538643776599505671840531694425115158778702109077408139793",
+    "neither_element_lies_in_the_two_row_quotient": true,
+    "the_fork_survives_descent": true,
+    "no_rescaling_identifies_the_two_models": true,
+    "net_equals_tr_at_z_one_ONLY_when_e_minus_vanishes": true,
+    "short_model_is_exactly_bar_odd": true,
+    "long_model_is_neither_bar_odd_nor_bar_even": true,
+    "short_bar_parity": "odd",
+    "long_bar_parity": "indefinite",
+    "long_model_has_a_nonzero_bar_even_part": true,
+    "long_models_bar_odd_part_is_not_the_short_model": true,
+    "bar_reduces_the_symmetric_family_to_two_scalar_equations": true,
+    "the_corpus_crossing_coefficient_is_bar_odd": true,
+    "bar_oddness_forces_the_bar_even_part_of_c_to_h2_over_2": true,
+    "the_forced_coefficient_is_the_one_the_ladder_uses": true,
+    "tr_short_at_q": "-0.210199349900502936568794845696942029965574442560286053602574",
+    "tr_long_at_q": "-0.260387641790120802073285342788008683395823953848067973302616",
+    "tr_short_at_zD": "-0.106235639848092790892141987160551894399375838398475952284352",
+    "tr_long_at_zD": "-0.158016004341491298055061430272824323888679302880732650728172",
+    "the_two_models_are_separated_at_both_admissible_parameters": true,
+    "scope": "a",
+    "adjudicates_the_fork": false,
+    "wires_anything": false,
+    "checks_passed": 15,
+    "checks_total": 15
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

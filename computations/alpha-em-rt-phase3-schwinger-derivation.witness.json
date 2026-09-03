@@ -1,23 +1,23 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T21:20:25.145729+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "computedAt": "2026-08-30T09:01:19.061021+00:00",
+  "commitSha": "3bc8229b5cbafad21c9b85fde44625b75d636308",
   "assertions": [
     {
       "name": "hecke_quadratic_verified_symbolically",
-      "computed": 1,
-      "expected": 1,
+      "computed": 2,
+      "expected": 2,
       "passed": true,
       "tolerance": 0,
-      "source": "Hecke quadratic σ² - h·σ - 1 = 0 verified for both eigenvalues q and -q⁻¹ of σ_i symbolically via sympy.simplify."
+      "source": "Hecke quadratic σ² - h·σ - 1 = 0 verified for both eigenvalues q and -q⁻¹ of σ_i symbolically via sympy.simplify; counts the residuals that reduce to 0."
     }
   ],
   "allPassed": true,
-  "durationMs": 184,
+  "durationMs": 117,
   "computation": "alpha-em-rt-phase3-schwinger-derivation",
   "scriptFile": "alpha_em_rt_phase3_schwinger_derivation.py",
-  "scriptHash": "e1461fec8e05",
+  "scriptHash": "858d5ae5a9f3",
   "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_rt_phase3_schwinger_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_rt_phase3_schwinger_derivation.py"
   },
   "description": "Phase 3 of the RT 2-loop derivation plan (#1495): rigorous symbolic derivation of the (1 - h²α) Schwinger factor from the 2-vertex Hecke quadratic structure. Confirms the algebraic backbone: σ² = hσ + 1 + singlet projection + 2-vertex α-leading-order expansion produces (1 - h²α). The rigorous coefficient match across all 2-loop topologies remains the multi-week subgoal-2 work; this phase nails the structural shape.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

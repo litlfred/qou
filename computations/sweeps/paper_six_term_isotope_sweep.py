@@ -143,6 +143,7 @@ _T1_CACHE_B: dict | None = None
 
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -153,7 +154,7 @@ def _load_canonical_t1() -> dict:
     global _T1_CACHE
     if _T1_CACHE is not None:
         return _T1_CACHE
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
     d = json.loads(path.read_text())
@@ -174,8 +175,16 @@ def _load_canonical_t1_model_b() -> dict:
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(
-            f"missing Model B T1 witness: {path}.  Run "
-            f"probe_sdp_canonical_paper_formula.py first."
+            f"missing Model B T1 witness: {path}. "
+            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
+            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
+            f"in this repo, GitHub code search finds it only in these error "
+            f"strings, and no commit in this clone's history touches it — so "
+            f"the old instruction to 'run it first' could not be followed by "
+            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
+            f"registry's deuteron row is blocked on the 2026-08-29 owner "
+            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
+            f"Model A (3A-strand) is the live T1 route."
         )
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}
@@ -356,7 +365,7 @@ def term4_frobenius_codim(A):
     from schur_weyl_symbolic import partitions_of
     from hecke_characters import young_hooks, qfac
     n = 3 * A
-    nfac_val = mp.mpf(qfac(n))
+    nfac_val = mp.mpf(qfac(n, Q0_PROTON))
     q = Q0
     q_inv = 1 / q
     denom = q - q_inv
@@ -1102,7 +1111,7 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     q = Q_MP  # Q at 50 dps mpmath (was: mp.mpf(repr(Q0_FLOAT)) — f64-quantised)
     z = q**3 / (q**2 + 1)
     h = q - 1 / q
-    Q_A = mp.mpf(repr(M_E_MEV)) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
+    Q_A = mp.mpf(M_E_MEV) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     return float(Q_A * mp.cos((z - 1) * h / 2))
 
 

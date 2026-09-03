@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S=h*D(u): h anchor-blind, D=S/h sign-flips (muon>0>proton) => sign-flip is in the bar-even ladder D(u), consistent with the 1/u^3 extraction (#3636)"
     }
   ],

@@ -81,6 +81,9 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import markov_z, morgan_voyce_b  # noqa: E402
+
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -99,19 +102,13 @@ M_TAU = mpf("1776.86")
 WINDINGS = (3, 5, 7)
 
 
-def morgan_voyce_b(n_max: int, h):
-    """b_0..b_{n_max} at the substrate h, by the defining recurrence."""
-    b = [mpf(0), mpf(1)]
-    for _ in range(2, n_max + 1):
-        b.append(h * b[-1] + b[-2])
-    return b
 
 
 def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = q**3 / (q**2 + 1)          # canonical Markov parameter
+    z = markov_z(q)                          # canonical Markov parameter
 
     N = 15
     b = morgan_voyce_b(N, h)
@@ -363,6 +360,37 @@ def main() -> None:
     for k, v in results.items():
         w.add_data(k, v)
     w.add_data("all_checks_passed", all_ok)
+    # Assertions (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous -- green over an empty list. The two residuals below
+    # were already computed and already compared against `mpf("1e-40")` at the
+    # `verified` keys above; they were recorded as data and never asserted.
+    #
+    # THRESHOLD PROVENANCE: 1e-40 is this file's OWN declared bar, written
+    # twice in `results` above as `... < mpf("1e-40")`. It is not a number
+    # chosen to match the observation -- the measured margin is ~30 orders of
+    # magnitude of headroom (4.3e-70 and 7.2e-71 against a 1e-40 bar).
+    #
+    # NOT asserted: `abs(p_canonical) > 10` (the 10 is an undeclared
+    # order-of-magnitude bar with no stated provenance) and the composite
+    # `all_ok` that depends on it.
+    w.add_assertion(
+        "master_identity_max_abs_err_over_6_readouts_w_1_to_14",
+        computed=str(identity_err),
+        expected="0",
+        tolerance="1e-40",
+        source="phi(w)*(q+1/q) = A q^{w-1} - (-1)^{w-1} B q^{-(w-1)}; "
+               "Lean twin QOU.Archimedean.linFunctionalK_binet. Bar is this "
+               "file's own mpf('1e-40')",
+    )
+    w.add_assertion(
+        "two_step_rigidity_max_abs_err",
+        computed=str(two_step_err),
+        expected="0",
+        tolerance="1e-40",
+        source="phi(w+2) = q^2 phi(w) + (-1)^{w-1} h B q^{-(w-1)}; "
+               "Lean twin QOU.Archimedean.linFunctionalK_two_step. Bar is this "
+               "file's own mpf('1e-40')",
+    )
     w.add_caveat(
         "Scope-(b) covers H_2(q)-linear readouts with no node in the "
         "generation window (including the canonical Markov trace). "

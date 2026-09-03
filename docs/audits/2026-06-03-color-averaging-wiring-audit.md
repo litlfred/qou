@@ -81,6 +81,25 @@ backbone. The color weight is a production-path refinement (Δm_pn scale,
 
 ## Remaining (follow-up)
 
+> **CLOSED 2026-08-25 (both production overrides), bean `qou-cds4`.** Recorded
+> here because a list still headed "Remaining" is read as a live queue.
+>
+> - `binding_canonical.py` `strict_averaged` → `bring_color_weighted` (PR #5767).
+> - `atomic_tr_m_helium4_canonical.py` `chi_lambda_braid` →
+>   `bring_color_weighted`. Confirmed production, not validation: no code
+>   consumer of `atomic-tr-m-helium4-canonical.witness.json` exists. Effect
+>   |tr_M(⁴He)| 0.4185 → 0.3472 (−17.0 %), census {pos 2, neg 1, avg 0} →
+>   {pos 1, neg 1, avg 1}.
+>
+> The third bullet's judgement is **corroborated and is load-bearing**: the
+> Phase 5q empirical slow path is bound to `chi_lambda_braid` via
+> `marshal_to_chi_lambda_braid`, so it validates the closed form as a faithful
+> reimplementation of the OLD MARSHALLING — machinery, not p-n treatment. The
+> ⁴He file had been citing that same 1e-49 agreement as evidence its plain-σ
+> convention was *right*, which it never was. There is consequently **no
+> independent oracle** for |tr_M(⁴He)| in the canonical frame; the regenerated
+> witness says so in `data.cross_check_status` rather than implying one.
+
 - Flip the explicit production overrides that bypass the default:
   `binding_canonical.py` (`strict_averaged`), `atomic_tr_m_helium4_canonical.py`
   (`chi_lambda_braid`) — after confirming each is production, not validation.

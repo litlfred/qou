@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "9511222v1",
+ "source_sha256": "2870b5b709d1f358",
+ "brief": "Murnaghan-Nakayama Rules for Characters of Iwahori-Hecke Algebras of the Complex Reflection Groups G(r,p,n) — 5 sections: Introduction; Characters of Iwahori-Hecke Algebr; Characters of Iwahori-Hecke",
+ "extended": "**Murnaghan-Nakayama Rules for Characters of Iwahori-Hecke Algebras of the Complex Reflection Groups G(r,p,n)**\n\n*Tom Halverson and Arun Ram*\n\n26 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2 Characters of Iwahori-Hecke Algebras of (Z=r; 3 Characters of Iwahori-Hecke Algebras of G(r;; 2 LL s2 L; 4 The Poset Theorem",
+ "tokens": {
+  "brief": 49,
+  "extended": 79
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-characters-of-iwahori-hecke-algebras-of-z-rz-o-s",
+   "title": "Characters of Iwahori-Hecke Algebras of (Z=rZ) o Sn",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-characters-of-iwahori-hecke-algebras-of-g-r-p-n",
+   "title": "Characters of Iwahori-Hecke Algebras of G(r; p; n)",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-003-ll-s2-l",
+   "title": "LL s2 L",
+   "pages": "9-19"
+  },
+  {
+   "id": "sec-004-the-poset-theorem",
+   "title": "The Poset Theorem",
+   "pages": "19-26"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -73,6 +73,7 @@ from mass_at_3A_proper import (
     atom_braid_word_3A, markov_trace_3A, dim_q, qfac,
     E_0_CALIBRATION_MEV)
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -108,7 +109,7 @@ def phi_k(per_partition: list, n_strands: int, k: int) -> mp.mpf:
     per prop:plancherel-term-7-formulation.
     """
     total = mp.mpf(0)
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     for p in per_partition:
         shape = p["partition"]
         depth = len(shape) - 1
@@ -118,7 +119,7 @@ def phi_k(per_partition: list, n_strands: int, k: int) -> mp.mpf:
         dim_classical = p["dim"]
         if dim_classical == 0:
             continue
-        dq = dim_q(shape)  # q-deformed dimension
+        dq = dim_q(shape, Q0_PROTON)  # q-deformed dimension
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -279,7 +280,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) MeV",

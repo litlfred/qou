@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-45,
+      "tolerance": "1e-45",
       "source": "For every nucleon pair (F1,F2) in {p,n,pbar,nbar}^2 and both 2-dim Hecke representations at q0, the color-tube weighted generator with uniform W and the stated eps rule satisfies sigma^(CF1,CF2) = sigma^(F1,F2) to < 1e-45 elementwise (repo-default precision; see precisionMetadata). Matches the Lean derivation: eps is C-invariant (chiralitySign_conj_invariant, sorry-free) and the uniform W is constant; the conjectural class field weight_conj_invariant asserts the same for the open Bring-derived W."
     },
     {

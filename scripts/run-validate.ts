@@ -12,6 +12,7 @@ import { resolve } from "path";
 import { realpathSync } from "fs";
 import { execFileSync } from "child_process";
 import { configureValueRegistry } from "../folio-assistant/content/pipeline/value-registry-di";
+import { configureReferenceRegistry } from "../folio-assistant/content/pipeline/references-registry-di";
 import { WITNESSED_VALUES, lookupValue, verifiedNames } from "../content/values/registry";
 import { configureLeanPackages } from "../folio-assistant/schemas/lean-packages";
 import { LEAN_PACKAGES } from "../schemas/lean-packages";
@@ -83,7 +84,55 @@ try {
     console.error("  ✗ content/schema/references.ts parsed but holds no entries");
     process.exit(1);
   }
-  console.log(`  bibliography: ${n} entries, parses\n`);
+  // Hand the loaded bibliography to the platform's registry — UNDER --strict ONLY.
+  //
+  // Without this, `cites-resolve` NO-OPS ("no reference registry configured")
+  // and every `cites[]` entry goes unvalidated against `references.ts`. The
+  // three members below are exactly `ReferenceRegistryAPI`, and this file
+  // already has them loaded for the parse check above.
+  //
+  // Why --strict and not always: the check has NEVER run in this folio, and its
+  // first run finds 13 unresolved citation keys across 10 blocks. Configuring it
+  // unconditionally would take the default `run-validate` from `Valid — 14` to
+  // `Invalid — 23` for everyone, on a backlog nobody has triaged. Several of the
+  // 13 look like wrong-year typos of held entries (`dimofte-gaiotto-gukov2014`
+  // vs the held `…2013`) and others are plainly distinct works (`macdonald1971`
+  // "Spherical Functions" vs the held `macdonald1995`), so the fix is per-citation
+  // research, not a rename sweep — repointing a citation at a different paper is
+  // worse than a broken link. Bean `qou-cite`.
+  //
+  // Measured under --strict (platform 21498cc): 288 issues with the registry
+  // forced off, 297 with it on. That is +9 for ten new citation lines, because
+  // configuring the registry also SILENCES the `ℹ no reference registry
+  // configured` line, which was itself being counted. 288 − 1 + 10 = 297.
+  //
+  // Do not read 297 as the citation debt: --strict also enables
+  // `term-mention-coverage`, and 288 of the 297 are unwrapped glossary mentions
+  // with no relation to citations.
+  //
+  // And do not read the 13 as one defect. Measured by importing this module
+  // (810 entries) rather than grepping for a spelling, they split two ways:
+  //
+  //   * TEN keys appear ONLY in `.ts` cites[] arrays -- zero in any .md prose,
+  //     zero in any Lean `-- Ref:`. They support no written claim, so nothing a
+  //     reader sees is broken; they are metadata whose key was never added.
+  //   * `manuscript` is a different thing entirely: AGENTS.md §1 instructs
+  //     authors to use `[manuscript]` when no published reference exists, and
+  //     4436 Lean `-- Ref:` sites do exactly that -- against a key that is not
+  //     among the 810. The work it means IS held, as `leitner2026`.
+  //
+  // So the second class is a convention with no backing, not a typo, and its
+  // fix is a decision (alias entry vs. re-key the convention) rather than
+  // research. Both are recorded in bean `qou-cite`.
+  if (strict) {
+    configureReferenceRegistry({
+      references: bib.references,
+      referenceMap: bib.referenceMap,
+      CSLEntrySchema: bib.CSLEntrySchema,
+    });
+  }
+  console.log(`  bibliography: ${n} entries, parses`
+    + (strict ? "; registry configured (cites-resolve ON)" : "") + "\n");
 } catch (err) {
   console.error("  ✗ content/schema/references.ts DOES NOT PARSE — every citation "
     + "in the paper is unresolvable until this is fixed:");

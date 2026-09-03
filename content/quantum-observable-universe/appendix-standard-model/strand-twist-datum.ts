@@ -8,9 +8,30 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:gauge-action-groupoid", "def:coulomb-charge"],
+  cites: ["habiro2000", "bilson-thompson2005", "baez-huerta2010"],
   defines: ["strand-twist-datum"],
   tags: ["appendix", "standard-model", "framing", "ribbon", "hypercharge"],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-08-24",
+      body:
+        "**The prose claim was corrected; the Lean witness still " +
+        "overstates (beans qou-7dzg, qou-w1j9).** This block used to say " +
+        "the datum *is* the framing the ribbon structure carries, AND " +
+        "that it varies at fixed braid word. Those are incompatible: a " +
+        "ribbon twist is determined by the braiding (Habiro, on e_n it is " +
+        "(-1)^n A^{n(n+2)}), so it cannot vary at fixed object. The prose " +
+        "now says the datum is an independent label. Two things remain " +
+        "open. (1) TwistSeparationContent.lean observes that the witness " +
+        "exists_same_writhe_ne_totalTwist mentions NO braid word in its " +
+        "type -- every mention of braid/writhe/word in that file is a " +
+        "comment -- so what is proved is that two integer vectors can " +
+        "have different sums, not that a braid word admits distinct " +
+        "framings. (2) conj:sm-hypercharge-invariant still rests on the " +
+        "separation; the correction weakens its ground from a categorical " +
+        "fact to a property of a label the corpus chose to attach.",
+    },
     {
       kind: "status",
       date: "2026-08-01",

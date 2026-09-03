@@ -408,17 +408,17 @@ def main() -> int:
     )
     wb.add_assertion(
         "numeric_z_series_depth_le2",
-        computed=float(devs["z_series"]), expected=0.0, tolerance=1e-40,
+        computed=devs["z_series"], expected=0.0, tolerance=1e-40,
         source="tr_M(T_w) = z^{ℓ(w)} at 50 dps for all depth ≤ 2 basis words",
     )
     wb.add_assertion(
         "numeric_tr_T121_closed_form",
-        computed=float(devs["t121"]), expected=0.0, tolerance=1e-40,
+        computed=devs["t121"], expected=0.0, tolerance=1e-40,
         source="tr_M(T_Δ) = z + h·z² at 50 dps (Wenzl-bridge y × seminormal χ)",
     )
     wb.add_assertion(
         "alpha3_value_not_derived_near_match_10pc",
-        computed=float(devs["rel_dev_alpha3"]), expected=0.104,
+        computed=devs["rel_dev_alpha3"], expected=0.104,
         tolerance=0.01,
         source="collapsed depth-3/depth-1 weight 1+q^{1/2}−q^{-1/2} deviates "
                "from the assigned α_3 = 1 by ≈10.4% at q₀ (exact only at q→1) "

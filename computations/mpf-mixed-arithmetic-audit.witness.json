@@ -4,7 +4,7 @@
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
     "candidates": 3,
-    "marked": 9,
+    "marked": 10,
     "files": 1,
     "baseline": 3,
     "by_file": {
@@ -45,5 +45,14 @@
         "class": "CANDIDATE"
       }
     ]
-  }
+  },
+  "scriptFile": "mpf_mixed_arithmetic_audit.py",
+  "scriptHash": "9fb4a75eec05",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "commitSha": "18888e2a2dd770d99566230fa93a35471223f3b8",
+  "engine": "python",
+  "computedAt": "2026-08-30T07:56:26.841689+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -51,10 +51,40 @@ q_half = sp.sqrt(q)
 q_half_inv = 1 / sp.sqrt(q)
 HA = q - q_inv                       # q − q⁻¹
 s_skein = q_half - q_half_inv        # q^½ − q^{-½}
-z_markov = 1 / (q_half + q_half_inv) # Markov trace weight
+# CONVENTION D (owner ruling 2026-08-15, R1). This read
+#   z_markov = 1 / (q_half + q_half_inv)   ==  sqrt(q)/(q+1)  ==  z_C,
+# which evaluates to 0.4993203... The canonical value is z_D = 0.6126880...
+# Matches hecke_symbolic.z_markov, the library definition. Published into
+# constants_at_q0 below; not used by the NF reduction, so the normal forms
+# are unchanged by this correction.
+z_markov = q**3 / (q**2 + 1)          # convention D: q^3/(q^2+1)
 
-from q_parameter import Q as q0, Q_INV as qi0, E_CROSS
+from q_parameter import (Q as q0, Q_INV as qi0, E_CROSS,
+                         Q_MP as q0_mp, Q_50_DIGIT_STR)
 from experimental_constants import M_E_MEV, KAPPA
+
+# ── Exact evaluation ─────────────────────────────────────────
+# `q_parameter.Q` is a Python FLOAT (float64); `Q_MP` / `Q_50_DIGIT_STR` carry
+# the full 50 digits.  Values that reach the witness must not be evaluated at
+# the float64 anchor -- NO-FLOAT64 is STRICT for producers.  `_num` evaluates
+# the exact sympy coefficient over Q(q) at the exact rational anchor and
+# returns an mpmath mpf.  float() remains permissible for DISPLAY only.
+import mpmath as _mp
+_mp.mp.dps = 60          # 50-digit serialization needs headroom
+_Q_EXACT = sp.Rational(Q_50_DIGIT_STR)
+
+def _num(c):
+    """Exact 50-dps value of a sympy coefficient at q0.  Returns mpf."""
+    if not hasattr(c, "subs"):
+        return _mp.mpf(c)
+    return _mp.mpf(str(sp.N(c.subs(q, _Q_EXACT), 50)))
+
+def _netsum(terms):
+    """Coordinate sum of a normal form, carried in mpf end to end."""
+    tot = _mp.mpf(0)
+    for c in terms.values():
+        tot += _num(c)
+    return tot
 
 try:
     SHA = subprocess.check_output(['git','rev-parse','HEAD'],
@@ -218,8 +248,8 @@ def reduce_verbose(terms_dict, label="", max_iterations=10000):
         tag = f"  [{name}]" if name else ""
         print(f"  │    {v:+.10f} · {ws(w)}{tag}")
 
-    net = sum(float(c.subs(q, q0)) for c in terms.values())
-    print(f"  │    Net: {net:+.10f}")
+    net = _netsum(terms)
+    print(f"  │    Net: {float(net):+.10f}")
     print(f"  └─ END {label}")
 
     return terms, {'hecke': hecke, 'yb': yb, 'fc': fc, 'total': step_num}
@@ -284,7 +314,7 @@ CROSSING TYPES:
 HECKE CONSTANTS at q₀ = {q0:.10f}:
   HA = q − q⁻¹ = {q0 - 1/q0:.10f}
   s  = q^½ − q^{{-½}} = {q0**0.5 - q0**(-0.5):.10f}
-  z  = 1/(q^½ + q^{{-½}}) = {1/(q0**0.5 + q0**(-0.5)):.10f}
+  z  = q³/(q²+1) [conv D] = {float(q0**3/(q0**2+1)):.10f}
 """)
 
 # ── Step 0: σ₁⁻¹ ─────────────────────────────────────────────
@@ -372,8 +402,8 @@ for w, c in sorted(elem_n.items(), key=lambda x: (len(x[0]), x[0])):
     name = pn(w)
     tag = f"  [{name}]" if name else ""
     print(f"  {v:+.10f} · {ws(w):<15}{tag}")
-net_n = sum(float(c.subs(q, q0)) for c in elem_n.values())
-print(f"  Net: {net_n:+.10f}")
+net_n = _netsum(elem_n)
+print(f"  Net: {float(net_n):+.10f}")
 print(f"  Reductions: {total_steps_n}")
 
 # ── Step 3: NF(proton) = B₃ · crossings(u,u,d) ──────────────
@@ -409,8 +439,8 @@ for w, c in sorted(elem_p.items(), key=lambda x: (len(x[0]), x[0])):
     name = pn(w)
     tag = f"  [{name}]" if name else ""
     print(f"  {v:+.10f} · {ws(w):<15}{tag}")
-net_p = sum(float(c.subs(q, q0)) for c in elem_p.values())
-print(f"  Net: {net_p:+.10f}")
+net_p = _netsum(elem_p)
+print(f"  Net: {float(net_p):+.10f}")
 print(f"  Reductions: {total_steps_p}")
 
 # ── Step 4: Transition n → p ─────────────────────────────────
@@ -433,9 +463,9 @@ for w in all_words:
     print(f"  {ws(w):<15} {vn:+12.6f} {vp:+12.6f} {d:+12.6f} {name}")
 
 print()
-print(f"  Net (neutron):  {net_n:+.10f}")
-print(f"  Net (proton):   {net_p:+.10f}")
-print(f"  Δ(n − p):       {net_n - net_p:+.10f}")
+print(f"  Net (neutron):  {float(net_n):+.10f}")
+print(f"  Net (proton):   {float(net_p):+.10f}")
+print(f"  Δ(n − p):       {float(net_n - net_p):+.10f}")
 print()
 
 # ν and e⁻ sector deltas
@@ -474,6 +504,10 @@ def terms_to_list(terms):
 
 witness = {
     "computation": "free-neutron-decay",
+    # Emitted BY THE PRODUCER. This field was previously hand-added to the
+    # committed witness and was silently lost on every regeneration -- a
+    # hand-edited field is the opposite of derived.
+    "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
     "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. "
                    "All Gröbner--Shirshov relations traced verbosely.",
     "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -492,33 +526,67 @@ witness = {
         "u-d": "½(1+q²)·σ_i − ½q·s·𝟏",
     },
     "constants_at_q0": {
-        "q0": q0, "HA": q0 - 1/q0,
-        "s_skein": q0**0.5 - q0**(-0.5),
-        "z_markov": 1/(q0**0.5 + q0**(-0.5)),
+        # exact at 50 dps, never the float64 q_parameter.Q
+        "q0": str(q0_mp), "HA": str(q0_mp - 1/q0_mp),
+        "s_skein": str(_mp.sqrt(q0_mp) - 1/_mp.sqrt(q0_mp)),
+        # convention D (owner ruling 2026-08-15 R1); was z_C = 0.4993203...
+        "z_markov": str(q0_mp**3 / (q0_mp**2 + 1)),
+        "z_markov_convention": "D: z = q^3/(q^2+1)",
     },
     "neutron": {
         "composition": "[u, d, d]",
         "nf_terms": terms_to_list(elem_n),
         "n_terms": len(elem_n),
-        "net_coefficient": net_n,
+        "net_coefficient": float(net_n),
+        "net_coefficient_exact": str(net_n),
         "reduction_steps": total_steps_n,
     },
     "proton": {
         "composition": "[u, u, d]",
         "nf_terms": terms_to_list(elem_p),
         "n_terms": len(elem_p),
-        "net_coefficient": net_p,
+        "net_coefficient": float(net_p),
+        "net_coefficient_exact": str(net_p),
         "reduction_steps": total_steps_p,
     },
     "transition": {
-        "delta_net": net_n - net_p,
+        # exact 50-dps strings; float64 would truncate at digit 17
+        "delta_net": str(net_n - net_p),
+        "delta_net_float": float(net_n - net_p),  # legacy consumers
         "delta_nu": n_nu - p_nu,
         "delta_e": n_e - p_e,
         "Q_observed_MeV": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV
     },
 }
 
-out = Path("free-neutron-decay.witness.json")
+# Write beside THIS FILE, not into the caller's cwd. As a bare relative path
+# a run from the repo root -- how producers are normally invoked -- created an
+# untracked orphan at ./free-neutron-decay.witness.json and left the tracked
+# computations/ copy untouched. That makes a re-run look like a REPRODUCTION:
+# diffing the committed file after such a run compares it against itself.
+# Measured (bean qou-nxxw): it cost three runs to notice the committed witness
+# was stale by the full 11.5 ppb mu-p tension.
+#
+# `scriptFile` likewise: this producer wrote none, so a downstream provenance
+# backfill guessed `derived_masses.py` -- which only READS this witness. Any
+# tool resolving producer-from-witness therefore re-ran the wrong script.
+witness["scriptFile"] = Path(__file__).name
+out = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"
 with open(out, "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    #
+    # MERGE NOTE: main and this branch fixed the SAME qou-4un2 defect from
+    # different directions and BOTH halves are kept -- main's staleness/q0
+    # stamp, this branch's `auditOnly` above and ensure_ascii=False below.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
+    # ensure_ascii=False: the braid relations are written with real
+    # sigma/subscript glyphs and the corpus stores them readable.
+    json.dump(witness, f, indent=2, default=str, ensure_ascii=False)
 print(f"\nWitness: {out} (commit: {SHA[:8]})")

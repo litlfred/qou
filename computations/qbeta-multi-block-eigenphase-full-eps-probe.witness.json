@@ -1,24 +1,56 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:17:41.412663+00:00",
-  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
+  "computedAt": "2026-08-30T10:19:35.758766+00:00",
+  "commitSha": "0e196b9cfd65a55c44c4977edd1f733de907840a",
   "assertions": [
     {
-      "name": "full_eps_expansion_completed",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "eps_expansion_covers_six_orders_by_three_ansaetze",
+      "computed": 18,
+      "expected": 18,
       "passed": true,
-      "tolerance": 0.0,
-      "source": "probe completes through ε⁶ with all 3 ansätze; verdict reported"
+      "tolerance": 0,
+      "source": "6 orders × 3 ansätze = 18 error values recorded; a shortened order loop reduces this instead of passing silently"
+    },
+    {
+      "name": "order6_row_matches_standalone_canonical_run",
+      "computed": "3.11133468843e-12",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-11",
+      "source": "max over the 3 ansätze of |order-loop ε⁶ error − `canon` error| / |canon error|; bridge_test_full is invoked twice at the same order and precision, so anything beyond the 12-digit serialisation of order_results (1e-12 relative) is leaked state"
+    },
+    {
+      "name": "alpha_eff_increments_shrink_through_eps6",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "|Δα_eff| per order = ε^2:0.009063, ε^3:0.00631, ε^4:0.0009862, ε^5:0.0001888, ε^6:3.224e-5; 4 of 4 successive increments shrink, i.e. the ε-series is converging rather than merely terminating"
+    },
+    {
+      "name": "all_three_ansaetze_below_form_fitting_drift_threshold",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "drift across the canonical and stale-muon pins: cos 0.00029%, exp 0.00003%, 1+α 0.00003%; all under the 0.01% form-fitting threshold"
+    },
+    {
+      "name": "no_ansatz_reaches_compute_precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "best ansatz cos at -11314573.0 ppb against the 0.001 ppb RULED-IN gate; production stays Q_N2"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qbeta-multi-block-eigenphase-full-eps-probe",
   "scriptFile": "qbeta_multi_block_eigenphase_full_eps_probe.py",
-  "scriptHash": "73701b7b1a53",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "5e2b684ec138",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -94,25 +126,25 @@
     ],
     "full_eps_6_canonical": {
       "alpha_eff": "-0.16123596491156575149274343275",
-      "Q_A_MeV": "0.783645827374621226741682415712",
-      "Q_bridge_cos_MeV": "0.773481641377511943454248906443",
-      "Q_bridge_exp_MeV": "0.666954083069713089746297359378",
-      "Q_bridge_lin_MeV": "0.657293936248951886578225380497",
+      "Q_A_MeV": "0.783645827374621213074939751341",
+      "Q_bridge_cos_MeV": "0.773481641377511929964769119718",
+      "Q_bridge_exp_MeV": "0.666954083069713078114652675194",
+      "Q_bridge_lin_MeV": "0.657293936248951875115053156814",
       "err_cos_ppb": "-11314573.185",
       "err_exp_ppb": "-147481016.988",
       "err_lin_ppb": "-159828881.335"
     },
     "q0_stability": {
       "cos": {
-        "drift_pct": 0.00028854988194848856,
+        "drift_pct": 0.00028854988194848807,
         "stable_under_0.01_pct": true
       },
       "exp": {
-        "drift_pct": 2.8224952603080964e-05,
+        "drift_pct": 2.822495260308096e-05,
         "stable_under_0.01_pct": true
       },
       "1+α": {
-        "drift_pct": 2.757455973562728e-05,
+        "drift_pct": 2.7574559735627277e-05,
         "stable_under_0.01_pct": true
       }
     },
@@ -120,7 +152,7 @@
       "classification": "OPEN (cos: q₀-stable but residual -1.131e+7 ppb)",
       "best_ansatz": "cos",
       "best_err_ppb_canonical": "-11314573.185",
-      "best_q0_drift_pct": 0.00028854988194848856,
+      "best_q0_drift_pct": 0.00028854988194848807,
       "production_action": "Q_β stays at Q_N2 (1279 ppb)"
     }
   },

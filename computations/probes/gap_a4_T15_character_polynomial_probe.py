@@ -82,7 +82,7 @@ del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -283,7 +283,7 @@ def main():
     # Assertions
     w.add_assertion(
         "polynomial_form_matches_closed_form_at_q0",
-        computed=float(mp.mpf(closed["absolute_difference"])),
+        computed=fmt(mp.mpf(closed["absolute_difference"])),
         expected=0.0,
         tolerance=float(TOL_50DPS),
         source=(

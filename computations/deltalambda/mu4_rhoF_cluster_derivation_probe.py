@@ -22,7 +22,16 @@ What ρ_F is (no dedicated function — computed from primitives)
 categorically-DERIVED per-bond factors (interface_factor, Lean-proved exact):
     pp/nn positive bond  f = z            (Markov z = q³/(q²+1), convention D)
     nn negative bond     f = z − h        (h = q − 1/q)
-    pn averaged bond     f = z − h/2      (bar-symmetric / charge)
+    pn averaged bond     f = z − h/2      (strict_averaged -- NOT canonical;
+                                           see the CONVENTION note at `FAC`)
+
+CONVENTION CAVEAT. "categorically-DERIVED ... Lean-proved exact" above covers
+the SHAPE of the per-bond factors, not the choice of p-n convention. The p-n
+line uses `strict_averaged`; the owner ruling of 2026-08-15 (R3) makes
+`bring_color_weighted` (`z − h(1/2 − δ/4)`) canonical. Gap `h·δ/4` =
+7.190163e-05 at the proton pin. So this probe's ρ_F is 0-fit but
+convention-conditional, and its numbers move if the convention is flipped.
+Bean `qou-cblw` finding 1.
 Its connected k-body CLUSTER integral is the Ursell part
     c_k = joint_trace − (lower cluster sum),
 computed at H_9 with ZERO fit from the χ_λ / gauge_aligned_a_combiner machinery
@@ -66,6 +75,10 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
@@ -90,7 +103,18 @@ def hecke_h(q):
 
 Z = markov_z(Q0)
 H = hecke_h(Q0)
-FAC = {"pp": Z, "nn": Z - H, "pn": Z - H / 2}
+# CONVENTION: the p-n entry is `strict_averaged` (`z - h/2`), NOT the
+# canonical `bring_color_weighted` (`z - h(1/2 - delta/4)`) made canonical by
+# the owner ruling of 2026-08-15 (R3). The two differ by `h*delta/4`, which is
+# 7.190163e-05 at the proton pin -- a real shift, ~1e11 x the f64 floor.
+#
+# This is labelled rather than flipped: flipping it moves every number this
+# probe reports and its committed witness. Do NOT read the "categorically-
+# DERIVED" language in the module docstring as covering the p-n CONVENTION --
+# it does not, and the derivation is only as canonical as this line.
+# Tracked as bean `qou-cblw` finding 1; canonical implementation lives in
+# `tools/hecke-engine/src/color_weight.rs::pn_interface_factor`.
+FAC = {"pp": Z, "nn": Z - H, "pn": Z + _pn_d(H)}
 
 # ── the residual simplex moments (#4320 targets, dimensionless) ───────────────
 RHO_GRAD = {2: mp.mpf("1.0"), 3: mp.mpf("3.34203107815"), 4: mp.mpf("15.7395726256")}
@@ -234,8 +258,32 @@ def main() -> int:
             },
         },
         "scriptCommitSha": "uncommitted",
+        # Emitted BY THE PRODUCER, not backfilled. These three keys were
+        # previously added downstream by transcription from `parameters.q0`,
+        # so every re-run of this probe silently DELETED them -- the
+        # "bare producer" hazard AGENTS.md documents under the witness
+        # staleness triage ("re-running one deletes the field this audit
+        # keys on ... fix the producer to emit provenance first").
+        # Observed here: a comment-only edit, re-run to refresh scriptHash,
+        # dropped all three.
+        "q0Anchor": "proton",
+        "q0Value": str(Q0),
+        "q0AnchorReason": (
+            "experimental/Physical-Observations pin per the AGENTS.md owner "
+            "directive of 2026-08-07 (all production compute defaults to the "
+            "proton anchor). Emitted by the producer so a re-run preserves it."
+        ),
     }
     out = HERE / "mu4-rhoF-cluster-derivation.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nwitness -> {out.relative_to(COMP.parent)}")
     return 0

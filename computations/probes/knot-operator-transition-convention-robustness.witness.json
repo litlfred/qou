@@ -1,0 +1,142 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-26T03:06:22.829173+00:00",
+  "commitSha": "9e141311c1bb22fb01bc01171e480b056af6778c",
+  "assertions": [
+    {
+      "name": "relative_shift_on_pn_coefficient_is_delta_over_2",
+      "computed": "0.00068785540351354800428",
+      "expected": "0.00068785",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "delta/2 at the proton pin"
+    },
+    {
+      "name": "dominant_unchanged_p_to_D",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "margin 9.56662x"
+    },
+    {
+      "name": "dominant_unchanged_D_to_3H",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "margin 4.78331x"
+    },
+    {
+      "name": "dominant_unchanged_D_to_3He",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "margin 9.56662x"
+    },
+    {
+      "name": "dominant_unchanged_3H_to_4He",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "margin 9.56662x"
+    },
+    {
+      "name": "dominant_unchanged_3He_to_4He",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "margin 4.73161x"
+    },
+    {
+      "name": "margin_min_is_4_7x",
+      "computed": "4.73161",
+      "expected": "4.73",
+      "passed": true,
+      "tolerance": "0.05"
+    },
+    {
+      "name": "margin_max_is_9_6x",
+      "computed": "9.56662",
+      "expected": "9.57",
+      "passed": true,
+      "tolerance": "0.05"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1029,
+  "computation": "knot-operator-transition-convention-robustness",
+  "scriptFile": "knot_operator_transition_convention_robustness_probe.py",
+  "scriptHash": "38f03ae11349",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/knot_operator_transition_convention_robustness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/knot_operator_transition_convention_robustness_probe.py"
+  },
+  "description": "Do the Dominant-NF and Knot-type columns of thm:knot-operator-transition survive the p-n convention change from strict_averaged to the canonical bring_color_weighted? Recomputes the H_3 normal form of all five transition operators under both and compares dominance.",
+  "contentBlock": "thm:knot-operator-transition",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0Anchor": "proton"
+  },
+  "data": {
+    "results": {
+      "p_to_D": {
+        "dominant_blind": "(1, 0, 2)",
+        "dominant_canonical": "(1, 0, 2)",
+        "dominant_unchanged": true,
+        "margin_blind": "9.56661791608",
+        "margin_canonical": "9.57320289542"
+      },
+      "D_to_3H": {
+        "dominant_blind": "(2, 0, 1)",
+        "dominant_canonical": "(2, 0, 1)",
+        "dominant_unchanged": true,
+        "margin_blind": "4.78330895804",
+        "margin_canonical": "4.78330895804"
+      },
+      "D_to_3He": {
+        "dominant_blind": "(2, 0, 1)",
+        "dominant_canonical": "(2, 0, 1)",
+        "dominant_unchanged": true,
+        "margin_blind": "9.56661791608",
+        "margin_canonical": "9.57320289542"
+      },
+      "3H_to_4He": {
+        "dominant_blind": "(2, 1, 0)",
+        "dominant_canonical": "(2, 1, 0)",
+        "dominant_unchanged": true,
+        "margin_blind": "9.56661791608",
+        "margin_canonical": "9.57320289542"
+      },
+      "3He_to_4He": {
+        "dominant_blind": "(2, 1, 0)",
+        "dominant_canonical": "(2, 1, 0)",
+        "dominant_unchanged": true,
+        "margin_blind": "4.73160878795",
+        "margin_canonical": "4.73167912053"
+      }
+    },
+    "conclusion": "All five transitions keep the same dominant NF basis element under both conventions. Margins exceed the relative perturbation by ~4 orders of magnitude, so the Dominant-NF and Knot-type columns are convention-independent."
+  },
+  "caveats": [
+    "This vindicates the block's CONCLUSIONS, not its written operators: those are still in the strict_averaged (delta = 0) form. Labelled rather than flipped -- see bean qou-cblw."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

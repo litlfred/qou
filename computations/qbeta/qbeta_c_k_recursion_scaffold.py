@@ -159,7 +159,7 @@ def main() -> int:
                            for v in seq1)
     builder.add_assertion(
         "toy1_geometric_unit_kernel_all_c_k_eq_neg_one",
-        computed=float(max(abs(v - mp.mpf(-1)) for v in seq1)),
+        computed=max(abs(v - mp.mpf(-1)) for v in seq1),
         expected=0.0,
         tolerance=1e-30,
         source=("Toy 1: depth-1 geometric kernel g = 1, seed c_2 = -1. "

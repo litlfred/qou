@@ -164,7 +164,14 @@ def main() -> int:
             print(f"    {r['file']}:{r['line']}  {r['source']}")
 
     out = HERE / "mpf-float-source-audit.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "schema": "witness/v1",
         "name": "mpf-float-source-audit",
         "description": "Source-level mpf(<float>) detection. DEFECT = the literal is "
@@ -173,7 +180,11 @@ def main() -> int:
                        "by catching the defect at authoring time.",
         "data": {"counts": {k: len(v) for k, v in by.items()},
                  "defects": defects, "rows": rows},
-    }, indent=2) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nWrote {out.name}")
     return 1 if (args.strict and defects) else 0
 

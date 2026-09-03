@@ -9,9 +9,9 @@ See Table 1.
 $$
   \mathrm{net}(T_{3,5}) = 2.316,
   \qquad
-  \mathrm{tr}_{\mathrm{Markov}}(T_{3,5}) = 0.704,
+  \mathrm{tr}_{\mathrm{Markov}}(T_{3,5}) = 0.968,
   \qquad
-  |\mathcal{W}|^2 = 0.495.
+  |\mathcal{W}|^2 = 0.938.
 $$
 
 ## Branching ratio comparison
@@ -35,11 +35,11 @@ $$
   \frac{|\mathrm{tr}_3(T_{2,3} \cdot T_{3,5} \cdot T_{2,7})|^2}
        {|\mathrm{tr}_3(T_{2,5} \cdot T_{3,5} \cdot T_{2,7})|^2}
   =
-  \frac{5.426}{7.865}
-  \approx 0.690.
+  \frac{9.407}{13.730}
+  \approx 0.685.
 $$
 
-This gives a branching ratio of $\approx 0.709$. This is inconsistent with experiment.
+This gives a branching ratio of $\approx 0.704$. This is inconsistent with experiment.
 
 PDG 2024 experimental values:
 

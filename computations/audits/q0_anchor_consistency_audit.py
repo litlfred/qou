@@ -98,7 +98,7 @@ def _canonical(anchor: str) -> str | None:
 
 # The muon/proton pins agree to 8 digits and then diverge; these prefixes are
 # the shortest that separate them.
-_EXPECTED_PREFIX = {"muon": "1.109978595557", "proton": "1.109978582751"}
+_EXPECTED_PREFIX = {"muon": "1.109978595642", "proton": "1.109978582751"}
 
 
 def check_reference_integrity() -> list[str]:

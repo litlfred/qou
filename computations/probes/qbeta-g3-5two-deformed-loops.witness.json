@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "41 (42) + 5_2 (76) nine-integer snap + u->0 continuity with O(u^2) scaling"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "c1_printed/certified ratio saddle-dependent at u->0 — not absorbable by any frame constant"
     }
   ],

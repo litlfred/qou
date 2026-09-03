@@ -2,26 +2,26 @@
   "description": "Laddered Qb reconstruction *using* the merged exact rung c_4^even in the even partial sum. Measurement 1: |c_k^even u^k| shrinks with k at u(q0), so c_4^even is a real sub-leading even rung. Measurement 2: the odd channel (R_exact/R_even) dominates the entire even ladder by ~O(10x) and controls accuracy vs CODATA. c_4^even's Qb effect (~1e-2 keV) is dwarfed by the odd-channel gap (~6 keV) -> cannot move beats_100x. auditOnly; no production wiring; no fit.",
   "audit_only": true,
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
-    "u_q0": "0.0085172363404849214399331129023",
-    "c2_even": "-8.00641005870925442785865819785",
-    "c3_even": "86.6611630646909942600690102713",
-    "c4_even": "-1819.74067252288946759519576958",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "u_q0": "0.00851723455015614218925557360331",
+    "c2_even": "-7.45876032789888019236780697835",
+    "c3_even": "78.5944241201958767026137262347",
+    "c4_even": "-1657.57403579524074151154482699",
     "m_e_MeV": "0.51099895069",
     "Q_beta_codata_MeV": "0.78233341"
   },
   "measurement_1_even_rungs": {
-    "abs_c2_u2": "0.0005808115259447584727",
-    "abs_c3_u3": "0.000053545207835928372284",
-    "abs_c4_u4": "9.5764444921069879268e-6",
+    "abs_c2_u2": "0.00054108297160673389473",
+    "abs_c3_u3": "0.000048560992855855380058",
+    "abs_c4_u4": "8.7230299560910497026e-6",
     "shrinks_with_k": true,
-    "qb_c4_incremental_keV": "0.0074930763567"
+    "qb_c4_incremental_keV": "0.0068255607842"
   },
   "measurement_2_odd_channel": {
-    "log_R_exact": "0.0067718915431060288177",
-    "log_R_even_N4": "-0.00053701297830235566816",
-    "log_odd_factor": "0.0073089045214083844858",
-    "odd_over_even_ratio": "13.6102940091",
+    "log_R_exact": "0.0067718908953797128792",
+    "log_R_even_N4": "-0.00050139266401660751302",
+    "log_odd_factor": "0.0072732835593963203922",
+    "odd_over_even_ratio": "14.5061626972",
     "opposite_sign": true,
     "odd_dominates": true
   },
@@ -30,33 +30,33 @@
       "N": 1,
       "R_even": "1.0",
       "dlogR_from_rung": "0.0",
-      "Qb_pred_MeV": "0.7828614813338303"
+      "Qb_pred_MeV": "0.7828615049273856"
     },
     {
       "N": 2,
-      "R_even": "0.99941918847405524153",
-      "dlogR_from_rung": "-0.00058098026",
-      "Qb_pred_MeV": "0.7824067863622535"
+      "R_even": "0.99945891702839326611",
+      "dlogR_from_rung": "-0.00054122941",
+      "Qb_pred_MeV": "0.7824379118979429"
     },
     {
       "N": 3,
-      "R_even": "0.99947270258221729968",
-      "dlogR_from_rung": "5.3543774e-5",
-      "Qb_pred_MeV": "0.7824486804962415"
+      "R_even": "0.99950745174572280287",
+      "dlogR_from_rung": "4.8559814e-5",
+      "Qb_pred_MeV": "0.7824759078597928"
     },
     {
       "N": 4,
-      "R_even": "0.99946313118735964492",
-      "dlogR_from_rung": "-9.5764903e-6",
-      "Qb_pred_MeV": "0.7824411874198848"
+      "R_even": "0.9994987330122798887",
+      "dlogR_from_rung": "-8.723068e-6",
+      "Qb_pred_MeV": "0.7824690822990086"
     }
   ],
   "accuracy_vs_codata": {
-    "Qb_exact_MeV": "0.78818092539937079734",
-    "acc_exact_rel": "0.0074744544009322027299",
-    "acc_exact_ppb": "7474454.40093",
-    "Qb_even_MeV": "0.78244118741988476478",
-    "acc_even_rel": "0.00013776405111570625558"
+    "Qb_exact_MeV": "0.78818094864271569866",
+    "acc_exact_rel": "0.0074744841112125055007",
+    "acc_exact_ppb": "7474484.11121",
+    "Qb_even_MeV": "0.78246908229900858464",
+    "acc_even_rel": "0.00017342004991015868364"
   },
   "assertions": [
     {
@@ -73,14 +73,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "ed83ce667fa5",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "a5467686b4580f6204e0c793945ac3ea51d3951e",
+  "scriptHash": "50746e121f11",
+  "scriptCommitSha": "3f71469629fc4296bc8734181839673394a446b7",
+  "commitSha": "3f71469629fc4296bc8734181839673394a446b7",
   "engine": "sympy",
-  "computedAt": "2026-08-23T21:00:26.921370+00:00",
-  "durationMs": 3007,
+  "computedAt": "2026-08-29T19:03:21.440538+00:00",
+  "durationMs": 2697,
   "engineVersion": "sympy 1.14.0",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_c4even_ladder_reconstruction_probe.py"
 }

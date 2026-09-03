@@ -38,14 +38,26 @@ The `markov_peel` trace path is *exact-symbolic in q* by construction —
 `crossing_from_cd` maps each numeric (c, d) crossing to an exact element
 of ℚ(q)·H_n(q).  The canonical default p-n interface
 (`pn_convention="bring_color_weighted"`) uses the crossing
-`σ − h·(½ − δ/4)·1` with `δ = flavor_split_leading(q₀)` a *numeric*
-function of q₀ (see `_li_2_q_util.flavor_split_leading` /
-`canonical_braid_crossings._avg_color_delta`).  A numeric δ cannot be
-represented as an exact polynomial in the formal symbol q, so the
-exact-symbolic trace path can only carry the color-blind averaged
-crossing `σ − h/2·1` (`pn_convention="strict_averaged"`).
+`σ − h·(½ − δ/4)·1` with `δ` the substrate flavour split (see
+`_li_2_q_util.flavor_split_leading` / `canonical_braid_crossings._avg_color_delta`).
 
-This combiner therefore uses `strict_averaged` for the bound config.
+This combiner uses the canonical weighted crossing (owner ruling
+2026-08-15, R3).  It previously used `strict_averaged`, on the ground
+that "a numeric δ cannot be represented as an exact polynomial in the
+formal symbol q".  CORRECTED 2026-08-25 — that is wrong twice over:
+
+  * δ is not merely numeric.  `δ(q) = (q−1)²(1−q⁻⁴)/3`, so the weighted
+    shift is the exact RATIONAL function
+    `(q²−1)(−6q⁴+(q−1)²(q⁴−1)) / (12q⁵)`, degree 8 over degree 5,
+    evaluating at q₀ to −0.10445824776972629 — matching the numeric
+    route to 15 digits.  The old claim demands a POLYNOMIAL; what is
+    needed is a rational function, and this path already carries
+    `h = q − 1/q`, itself not a polynomial.
+  * `markov_peel` has carried the weighted form all along:
+    `word_to_element`, the production path, builds it via
+    `crossing_from_cd`, which substitutes the closed form in q
+    (`markov_peel.crossing_element`, bean `qou-8zjd`).
+
 The color weighting is a sub-0.1 % numeric perturbation on a single
 crossing coefficient (δ ≈ 1.4e-3 ⇒ Δd/d ≈ 0.07 %); it is negligible
 against the binding shortfall this script measures (see below), and the
@@ -129,9 +141,30 @@ ZN = {
 ATOMS_DEFAULT = ["D", "T", "3He", "4He"]
 ATOMS_LITHIUM = ["6Li", "7Li"]
 
-# Exact-symbolic trace path can only carry the color-blind averaged
-# interface crossing (see module docstring).
-PN_CONVENTION = "strict_averaged"
+# Canonical colour-weighted p-n interface (owner ruling 2026-08-15, R3).
+#
+# This was `strict_averaged`, on the stated ground that "a numeric delta cannot
+# be represented as an exact polynomial in the formal symbol q, so the
+# exact-symbolic trace path can only carry the color-blind averaged crossing".
+# That is refuted on two independent counts:
+#
+#   1. delta is not merely numeric. It has the closed form
+#      delta(q) = (q-1)^2 (1 - q^-4)/3, so the weighted shift is the exact
+#      RATIONAL function (q^2-1)(-6q^4 + (q-1)^2(q^4-1)) / (12 q^5) — degree
+#      8 over degree 5, evaluating at q0 to -0.10445824776972629, matching the
+#      numeric route to 15 digits. The old claim asks for a POLYNOMIAL; the
+#      requirement is a rational function, and this path already carries
+#      h = q - 1/q, itself not a polynomial.
+#   2. `markov_peel` has carried it all along. `word_to_element` — the
+#      production path — builds the weighted crossing via `crossing_from_cd`,
+#      which substitutes the closed form in q (see markov_peel.crossing_element,
+#      bean qou-8zjd).
+#
+# The docstring's SECOND argument — that the weighting is a sub-0.1% numeric
+# perturbation, negligible against the binding shortfall this script measures —
+# survives, and is now the only reason it would not matter. It is a reason the
+# choice was harmless, not a reason it was forced.
+PN_CONVENTION = "bring_color_weighted"
 
 
 def _trace_abs_at_q0(Z: int, N: int, *, include_inter: bool,
@@ -320,9 +353,13 @@ def main() -> int:
         "wrong A-trend) — trace difference has no magic-A scale factor",
     )
     w.add_data("color_weighting_note",
-               "strict_averaged used; canonical bring_color_weighted delta "
-               "is a sub-0.1% numeric perturbation not representable in the "
-               "exact-symbolic-in-q trace path")
+               f"{PN_CONVENTION} used (canonical per owner ruling R3). This "
+               "note read 'strict_averaged used' until 2026-08-26: the "
+               "convention was flipped in PR #5783 and the note was left "
+               "behind, so the witness went on DECLARING the old convention "
+               "while the code computed the new one. Derived from "
+               "PN_CONVENTION now rather than restated, so it cannot drift "
+               "again (bean qou-cds4).")
     w.add_data("total_wall_sec", round(total_elapsed, 1))
     out_path = w.save()
     print(f"  → wrote {out_path}", flush=True)

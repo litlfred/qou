@@ -9,7 +9,7 @@
       "computed": 3.0776835371752536,
       "expected": 3.052012052160693,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "approach_1_multi_brane (tr-m-plus-tower-and-log)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.440954801177934,
       "expected": 3.4763537648638594,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "approach_1_multi_brane (tr-m-plus-tower-and-log)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 3.804226065180614,
       "expected": 3.819245328124024,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "approach_1_multi_brane (tr-m-plus-tower-and-log)"
     }
   ],

@@ -1,0 +1,124 @@
+{
+  "computation": "qbeta-bring-tau0-and-jet-tower-closure",
+  "engine": "mpmath",
+  "description": "qou-cds1 branch 3, two owner-directed questions, both negative. (1) Riera-Rodriguez Theorem 2 decoded by DERIVATION rather than by a clean scan: given j(tau_0) = -25/2 the possible j(5 tau_0) are the six roots of Phi_5(-25/2,Y), computed here, and -3810.78125 = -5*29^3/2^5 = -121945/32 is among them, matching the garbled OCR '- 293x5' with its 2^5 exponent on the next line. Both invariants are NON-INTEGRAL rationals (v_2 = -1 and -5), i.e. potentially multiplicative reduction at 2, which CM forbids -- so tau_0 is NOT a CM point and the hypothesis that it might be where Serre's E is not is REFUTED. (2) The Grobner-Shirshov jet tower is BLIND to the decay channel: the q-Plancherel weight depends on a partition only through its hook multiset, which transpose permutes, and transpose swaps the trivial and sign branchings, so w_sym(k) = w_alt(k) exactly at every k and every q (verified: zero counterexamples to hook invariance for k <= 9; |w_sym - w_alt| <= 7.3e-40 at 40 dps). Mass sees y_3 + y_(1^3) and decay sees y_3 - y_(1^3), so the tower contributes IDENTICALLY ZERO to decay -- no phase can hide there. Lean: BringEllipticCurveJInvariant.lean and JetTowerBlindToDecay.lean, sorry-free.",
+  "contentBlock": "conj:im-q-physical-role",
+  "assertions": [
+    {
+      "name": "j_five_tau_zero_is_minus_5_times_29_cubed_over_32",
+      "passed": true,
+      "detail": "-5*29^3/2^5 = -121945/32 appears among the six roots of Phi_5(-25/2,Y) as j((tau+2)/5), decoding the OCR fragment '- 293x5' with its '2^5' exponent OCR'd onto the next line \u2014 derived, with the scan only selecting"
+    },
+    {
+      "name": "neither_theorem_2_invariant_is_integral",
+      "passed": true,
+      "detail": "v_2 = -1 and -5; a CM j-invariant is an algebraic integer, so negative 2-adic valuation (potentially multiplicative reduction, Tate curves) rules CM out"
+    },
+    {
+      "name": "tau_zero_is_not_a_CM_point",
+      "passed": true,
+      "detail": "the owner's hypothesis \u2014 that tau_0, a period-matrix parameter, might be CM where Serre's isogeny factor is not \u2014 is REFUTED. tau_0 has no closed form and supplies no derived phase"
+    },
+    {
+      "name": "hook_multiset_is_transpose_invariant",
+      "passed": true,
+      "detail": "zero counterexamples over every partition of every k <= 9, so the q-Plancherel weight W_lambda = [k]_q!/(prod [h]_q)^2 satisfies W_lambda' = W_lambda for every q"
+    },
+    {
+      "name": "jet_tower_sym_and_alt_weights_are_equal",
+      "passed": true,
+      "detail": "worst |w_sym - w_alt| over k=3..9 is 7.34684e-40 at 40 dps (exactly 0 for k=3,4,5) \u2014 the equality is exact, the residue is roundoff"
+    },
+    {
+      "name": "jet_tower_contributes_nothing_to_the_decay_channel",
+      "passed": true,
+      "detail": "mass sees y_3 + y_(1^3), decay sees y_3 - y_(1^3); w_sym - w_alt = 0 identically at every level, so no phase can hide in the tower (Lean decay_combination_zero)"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "dps": 40,
+    "source": "library/pjm-v154-n1-p09-s \u2014 Riera & Rodriguez, The period matrix of Bring's curve, Pacific J. Math. 154 (1992) 179-200",
+    "lean": [
+      "QOU/QBeta/BringEllipticCurveJInvariant.lean",
+      "QOU/QBeta/JetTowerBlindToDecay.lean"
+    ],
+    "lean_vs_numeric": "LEAN: the two j-values as rational identities, their non-integrality, and the involution reindexing that makes the tower blind. NUMERIC: that -3810.78125 is among the six Phi_5 roots; hook-multiset transpose invariance (standard, checked exhaustively k<=9, not formalised); w_sym = w_alt at 40 dps."
+  },
+  "data": {
+    "q0": "1.1099785827513808",
+    "tau_re": "1/2",
+    "tau_im": "0.9333823123140496",
+    "j_tau0": "-25/2",
+    "j_tau0_closed": "-5^2/2",
+    "v2_j_tau0": -1,
+    "j_5tau0": "-121945/32",
+    "j_5tau0_closed": "-5*29^3/2^5",
+    "v2_j_5tau0": -5,
+    "phi5_roots": {
+      "j(5*tau)": "(-5430596809089.695528 + 7.1807979450314365935e-32j)",
+      "j((tau+0)/5)": "(28950949911.228705332 + 226297142162.64226676j)",
+      "j((tau+1)/5)": "(-9126.3809413523692255 + 6879.596592631219366j)",
+      "j((tau+2)/5)": "(-3810.78125 + 9.7589554125970248577e-41j)",
+      "j((tau+3)/5)": "(-9126.3809413523692255 - 6879.596592631219366j)",
+      "j((tau+4)/5)": "(28950949911.228705332 - 226297142162.64226676j)"
+    },
+    "matched_root": "j((tau+2)/5)",
+    "hook_transpose_counterexamples": 0,
+    "tower_weights": {
+      "3": {
+        "w_sym": "0.1418115076422695",
+        "w_alt": "0.1418115076422695",
+        "abs_diff": "0.0"
+      },
+      "4": {
+        "w_sym": "0.3664291714455724",
+        "w_alt": "0.3664291714455724",
+        "abs_diff": "0.0"
+      },
+      "5": {
+        "w_sym": "0.6759003890572279",
+        "w_alt": "0.6759003890572279",
+        "abs_diff": "0.0"
+      },
+      "6": {
+        "w_sym": "1.538253614502489",
+        "w_alt": "1.538253614502489",
+        "abs_diff": "2.2958874e-41"
+      },
+      "7": {
+        "w_sym": "3.808111385907699",
+        "w_alt": "3.808111385907699",
+        "abs_diff": "4.5917748e-41"
+      },
+      "8": {
+        "w_sym": "9.924525904335512",
+        "w_alt": "9.924525904335512",
+        "abs_diff": "1.8367099e-40"
+      },
+      "9": {
+        "w_sym": "28.58131577694276",
+        "w_alt": "28.58131577694276",
+        "abs_diff": "7.3468397e-40"
+      }
+    },
+    "worst_sym_alt_diff": "7.3468397e-40"
+  },
+  "context": {
+    "axis": "branch 3: is tau_0 CM? can the jet tower hide the phase?",
+    "answer": "No and no. tau_0's two j-invariants are non-integral rationals (Tate curves at 2), so no CM and no closed form. The jet tower's sym and alt weights are exactly equal at every level by hook-multiset transpose invariance, so its contribution to the decay combination y_3 - y_(1^3) vanishes identically -- it contributes nothing to the channel that needs a phase.",
+    "consequence": "branch 3 is out of NAMED candidates: the braid image is excluded, arbitrary M is circular, constant-residue holonomies fail the doubling identity, all real-spectrum generators are on the wrong side of 1, Im(q) cannot supply ellipticity, Bring's E is non-CM, tau_0 is non-CM, and the jet tower is blind. What remains is unnamed.",
+    "scope": "Scope-(b) for both exclusions. Nothing derived, proposed, wired or readmitted; no convention adjudicated."
+  },
+  "gitCommit": "57e4e99e7c7e1b17a1bad36de4feb9fdc90b6e5b",
+  "durationMs": 0,
+  "scriptFile": "qbeta_bring_tau0_and_jet_tower_closure_probe.py",
+  "scriptHash": "118f10c2da7d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "57e4e99e7c7e1b17a1bad36de4feb9fdc90b6e5b",
+  "computedAt": "2026-08-31T20:25:38.842519+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808"
+}

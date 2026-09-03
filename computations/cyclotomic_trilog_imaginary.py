@@ -151,6 +151,23 @@ def main() -> None:
         engine="mpmath",
         start_time=start,
     )
+    # The two closed forms this script exists to verify. Both residuals were
+    # already computed and already compared against 1e-45 — a threshold this
+    # file declares four times and states in its own description ("max residual
+    # below 1e-45 in both theorems"), not one chosen to match the observed
+    # value. Recording them only as payload flags left the witness claiming
+    # `allPassed: true` over an empty assertion list (bean `qou-srvu`).
+    # Residuals are passed as STRINGS per the drained convention (qou-t0rf).
+    builder.add_assertion(
+        "theorem_a_im_li3_zeta_n_closed_form",
+        str(max_residual_a), "0", tolerance="1e-45",
+        source=f"max |Im Li_3(zeta_n) - (n-1)(n-2)pi^3/(3n^3)| over n in {TARGET_NS}",
+    )
+    builder.add_assertion(
+        "theorem_b_cl3_orbit_sum_closed_form",
+        str(max_residual_b), "0", tolerance="1e-45",
+        source=f"max |sum_k Cl_3(2 pi k/N) + (N^2-1)/N^2 zeta(3)| over N in {TARGET_NS}",
+    )
     out = builder.save()
     print(f"\nwitness: {out}")
 

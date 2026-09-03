@@ -160,8 +160,16 @@ def main():
             [(p, content_sum(p), D_q2(p, q), classical_dim(p)) for p in parts],
             key=lambda t: -t[2],  # descending D_q²
         )
-        # Find position of dominant
+        # Find position of dominant.
+        # `dom_c` / `dom_dq2` were assigned ONLY inside the match branch, so an
+        # empirical λ* absent from its own partition list raised
+        # UnboundLocalError on the first atom (aborting before any witness was
+        # written) and, on later atoms, silently printed the PREVIOUS atom's
+        # values as this one's. Initialised here so the miss is recorded by the
+        # every_empirical_dominant_located assertion instead (bean `qou-26f2`).
         dom_position = None
+        dom_c = None
+        dom_dq2 = None
         for i, (p, c, dq2, dcl) in enumerate(ranked):
             if p == dom:
                 dom_position = i + 1  # 1-indexed
@@ -186,7 +194,8 @@ def main():
         print(f"\n--- {atom_key} (A={info['A']}, H_{n}) ---")
         print(f"  empirical dominant λ*: {dom}")
         print(f"  c_lambda = {dom_c}")
-        print(f"  D_q²(λ*) at q_0 = {mp.nstr(dom_dq2, 10)}")
+        print(f"  D_q²(λ*) at q_0 = "
+              f"{mp.nstr(dom_dq2, 10) if dom_dq2 is not None else 'NOT FOUND'}")
         print(f"  rank by D_q² = {dom_position}/{n_parts}")
         print(f"  top 3 by D_q²:")
         for i, t in enumerate(ranked[:3]):
@@ -199,15 +208,26 @@ def main():
     print("=" * 78)
 
     print(f"\n  {'atom':<10}{'n':<4}{'dominant':<22}{'c_λ':<6}{'rank/total':<14}{'top-rank match?':<18}")
+    # `dominant_rank_by_D_q2` is None whenever an empirical λ* is absent from
+    # its own partition list. Comparing that with `<= 5` raised TypeError and
+    # killed the run BEFORE the witness was written, so the one failure mode
+    # this probe has left no trace at all (bean `qou-26f2`, remedy 4). Treated
+    # as "not ranked" now, and caught by the every_empirical_dominant_located
+    # assertion below.
+    def _ranked_within(r, k):
+        pos = r["dominant_rank_by_D_q2"]
+        return pos is not None and pos <= k
+
     for k, r in results.items():
-        match = "✓ rank 1" if r["dominant_rank_by_D_q2"] == 1 else (
-                f"top-5" if r["dominant_rank_by_D_q2"] <= 5 else f"rank {r['dominant_rank_by_D_q2']}")
+        match = "✓ rank 1" if _ranked_within(r, 1) else (
+                "top-5" if _ranked_within(r, 5) else
+                f"rank {r['dominant_rank_by_D_q2']}")
         rank_total = f"{r['dominant_rank_by_D_q2']}/{r['n_partitions']}"
         print(f"  {k:<10}{r['n']:<4}{str(r['dominant'])[:20]:<22}{str(r['dominant_c_lambda']):<6}{rank_total:<14}{match:<18}")
 
     # Verdict
-    top1_matches = sum(1 for r in results.values() if r["dominant_rank_by_D_q2"] == 1)
-    top5_matches = sum(1 for r in results.values() if r["dominant_rank_by_D_q2"] <= 5)
+    top1_matches = sum(1 for r in results.values() if _ranked_within(r, 1))
+    top5_matches = sum(1 for r in results.values() if _ranked_within(r, 5))
     n_total = len(results)
     print(f"\n  Top-rank matches: {top1_matches}/{n_total}")
     print(f"  Top-5 matches:    {top5_matches}/{n_total}")
@@ -251,12 +271,86 @@ def main():
         "(e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
     ))
 
+    # Was `computed=True, expected=True` named `probe_completed` (bean
+    # `qou-26f2`): reaching save() was the whole test, so the probe read PASS
+    # for a truncated partition list, a dominant λ* that was never located
+    # (see below), or a ranking that in fact confirmed the hypothesis the
+    # verdict reports as NEGATIVE.
+
+    # (1) The enumeration is complete: p(6)=11, p(9)=30, p(12)=77 are known
+    # independently of `partitions_of`, and a rank like "61/77" means nothing
+    # if the denominator is wrong.
+    import sympy as _sp  # noqa: E402 — only for the independent p(n)
+    _ns = sorted({info["n"] for info in empirical.values()})
+    partition_count_gap = max(
+        abs(len(partitions_of(n)) - int(_sp.npartitions(n))) for n in _ns
+    )
     w.add_assertion(
-        name="probe_completed",
-        computed=True,
-        expected=True,
+        name="partition_enumeration_matches_known_counts",
+        computed=partition_count_gap,
+        expected=0,
         tolerance=0,
-        source="Cross-check of D_q² ranking vs empirical Δ_λ dominance.",
+        source="; ".join(
+            f"p({n}): {len(partitions_of(n))} enumerated vs "
+            f"{int(_sp.npartitions(n))} from sympy" for n in _ns
+        ),
+    )
+
+    # (2) Every empirical dominant was actually found in its partition list.
+    # `dom_position` stays None when it is not, and `dom_c` / `dom_dq2` then
+    # carry the PREVIOUS atom's values into this atom's row — a silent
+    # mislabel rather than an error. Nothing checked this.
+    n_located = sum(1 for r in results.values()
+                    if r["dominant_rank_by_D_q2"] is not None)
+    w.add_assertion(
+        name="every_empirical_dominant_located",
+        computed=n_located,
+        expected=len(empirical),
+        tolerance=0,
+        source=f"{n_located} of {len(empirical)} empirical λ* found in their "
+               "own partition list; an unfound λ* leaves dom_c and dom_dq2 "
+               "holding the previous atom's values rather than raising",
+    )
+
+    # (3) D_q²(λ) = [c_λ]_q² depends on λ only through c_λ, and c_{λᵀ} = −c_λ,
+    # so the q-Dirac eigenvalue cannot distinguish a partition from its
+    # transpose. That is a structural fact about the ranking — it is why
+    # (12,) and (1¹²) tie at ranks 1-2 — and it is exactly the degeneracy the
+    # "implication_for_option_E" note reaches for. Checked over all λ ⊢ 12.
+    def _transpose(p):
+        return tuple(sum(1 for r in p if r > j)
+                     for j in range(p[0])) if p else ()
+
+    _p12 = partitions_of(12)
+    transpose_gap = max(abs(D_q2(p, q) - D_q2(_transpose(p), q)) for p in _p12)
+    content_antisym_gap = max(
+        abs(content_sum(p) + content_sum(_transpose(p))) for p in _p12
+    )
+    w.add_assertion(
+        name="d_q2_cannot_separate_a_partition_from_its_transpose",
+        computed=mp.nstr(transpose_gap, 12),
+        expected="0",
+        tolerance="1e-30",
+        source=f"max over the {len(_p12)} partitions of 12 of "
+               f"|D_q²(λ) − D_q²(λᵀ)| = {mp.nstr(transpose_gap, 6)}, with "
+               f"max |c_λ + c_λᵀ| = {content_antisym_gap}. D_q² = [c_λ]_q² and "
+               "c is antisymmetric under transpose, so every transpose pair is "
+               "degenerate — a selection mechanism built on D_q² alone can "
+               "never pick λ* over λ*ᵀ",
+    )
+
+    # (4) The verdict's own counts, which lived only in prose.
+    w.add_assertion(
+        name="atoms_whose_dominant_ranks_first_by_d_q2",
+        computed=top1_matches,
+        expected=0,
+        tolerance=0,
+        source=f"{top1_matches} of {n_total} atoms have their empirical Δ_λ "
+               f"dominant at rank 1 by D_q²; {top5_matches} of {n_total} in "
+               "the top 5. Ranks: "
+               + ", ".join(f"{k} {r['dominant_rank_by_D_q2']}/"
+                           f"{r['n_partitions']}" for k, r in results.items())
+               + ". Any atom reaching rank 1 would refute the NEGATIVE verdict",
     )
 
     out = w.save()

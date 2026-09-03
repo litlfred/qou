@@ -1,51 +1,51 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:01:03.397193+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:51:55.080788+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "alpha_cosh_h_z_step_correction_rel_err",
-      "computed": 0.0002828827514141016,
+      "computed": "0.0002828827514141016283407063129819890533600042864907330696817470901589522",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "rel_err",
       "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.470014; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0283% (conj:alpha-cosh-h-z-step-correction)."
     },
     {
       "name": "per_N_factor_matches_inv_z_to_4",
-      "computed": 0.016983993028839586,
+      "computed": "0.01698399302883958578389986018361872701260462443317316358946008916460807",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.025,
+      "tolerance": "0.025",
       "unit": "rel_err",
       "source": "empirical T/D and ⁴He/³He ratios match (q^{1/2}+q^{-1/2})^4 to ≤ 2%"
     },
     {
       "name": "two_factor_rel_std_below_phase3_baseline",
-      "computed": 0.006625079349731892,
+      "computed": "0.00662507934973189133046631014886188400379897763831714837472239349142373",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "unit": "rel_std",
       "source": "Phase 3 baseline rel_std = 1.398; this script's two-factor closure achieves rel_std = 0.0066 on the 4 atoms with one fit parameter (α)."
     },
     {
       "name": "zero_param_closure_max_rel_err",
-      "computed": 0.025056910170182283,
+      "computed": "0.02505691017018228480591624799948353539812708019470945413579646611167849",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.03,
+      "tolerance": "0.03",
       "unit": "rel_err",
       "source": "Zero-parameter substrate-derived formula |Δ_λ*(K)| = (Vol_hyp(K) / [8]_q) · [3]_q^(2(Z-1)) · (q^{1/2}+q^{-1/2})^(4N) reproduces empirical |Δ_λ*| to max rel.err. 2.51% on the 4 atoms."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 6,
   "computation": "delta-lambda-z4N-phase4",
   "scriptFile": "delta_lambda_z4N_phase4.py",
-  "scriptHash": "0ea571679ea7",
+  "scriptHash": "acd837a043e0",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -61,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -211,8 +211,8 @@
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-jsj-phase3.witness.json",
-        "sha256": "44d7fb1c6d82929edeee65516e5dd8832e1646ce87fd9a2dbe09368986ea7f08",
-        "size_bytes": 3755,
+        "sha256": "36075a6c2c3353b636ad423ec59fe16475796b52669e199a4015520801012621",
+        "size_bytes": 4109,
         "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
         "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
         "computedAt": "2026-08-15T20:41:56.678257+00:00"

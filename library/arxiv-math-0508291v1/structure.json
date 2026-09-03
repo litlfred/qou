@@ -1,0 +1,392 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0508291v1",
+ "source": {
+  "file": "0508291v1.pdf",
+  "sha256": "d2d541426aaec7427cd52ca09445c2bab7d1521cb56f8e55a969aa1d2d1cfce8",
+  "bytes": 482907,
+  "pages": 52,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0508291",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "16 Aug 2005"
+  },
+  "doi": null,
+  "title": "Stein\u2019s Method and Random Character Ratios",
+  "authors_raw": "Running head: Stein\u2019s Method and Random Character Ratios",
+  "title_lines": [
+   "Stein\u2019s Method and Random Character Ratios"
+  ],
+  "abstract": "Stein\u2019s method is used to prove limit theorems for random character ratios. Tools are developed for four types of stru ctures: \ufb01nite groups, Gelfand pairs, twisted Gelfand pairs, and associat ion schemes. As one example an error term is obtained for a central limit theo rem of Kerov on the spectrum of the Cayley graph of the symmetric group gen erated by i-cycles, or equivalently for the character ratio of a Planc herel distributed representation on an i-cycle. Other main examples include a n error term for a central limit theorem of Ivanov on character ratios of rand om projective representations of the symmetric group, and a new central li mit theorem for the spectrum of certain graphs whose vertices are the set of perfect matchings on 2n symbols. The error terms in the resulting lim it theorems are typically O(n\u22121/ 4) or better. The results are obtained with remarkably little information: a character formula for a single repres entation close to the trivial representation and estimates on two step transi tion probabilities of a random walk. Although the limit theorems stated in this p aper are all for the case of normal approximation, many of the tools de veloped are quite general. Indeed, both the construction of an exchange able pair used for Stein\u2019s method and lemmas computing certain moments are useful for arbitrary distributional approximation.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211124140138-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Stein's Method for Normal Approximation",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Finite groups",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Background from representation theory",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Central limit theorems for character ratios",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Example: Cayley Graphs of the Symmetric Group",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Gelfand pairs",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Background from representation theory",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Central limit theorem for spherical functions",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Example: The Hypercube",
+   "page": 23,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Example: Graphs on Perfect Matchings",
+   "page": 25,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Gelfand Pairs",
+   "page": 27,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Background from representation theory",
+   "page": 29,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Markov chains on strict partitions",
+   "page": 32,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Central limit theorem for shifted Plancherel measure",
+   "page": 34,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Association Schemes",
+   "page": 42,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Background on association schemes",
+   "page": 42,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Central limit theorem for the spectrum",
+   "page": 44,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Example: Hamming Scheme",
+   "page": 49,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 50,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 14120,
+   "n_words": 2610
+  },
+  {
+   "id": "sec-001-3-finite-groups",
+   "number": "3",
+   "title": "Finite groups",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 439,
+   "n_words": 84
+  },
+  {
+   "id": "sec-002-31-background-from-representation-theory",
+   "number": "3.1",
+   "title": "Background from representation theory",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3609,
+   "n_words": 706
+  },
+  {
+   "id": "sec-003-32-central-limit-theorems-for-character-ratios",
+   "number": "3.2",
+   "title": "Central limit theorems for character ratios",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 7534,
+   "n_words": 1683
+  },
+  {
+   "id": "sec-004-33-example-cayley-graphs-of-the-symmetric-group",
+   "number": "3.3",
+   "title": "Example: Cayley Graphs of the Symmetric Group",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3128,
+   "n_words": 651
+  },
+  {
+   "id": "sec-005-4-gelfand-pairs",
+   "number": "4",
+   "title": "Gelfand pairs",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 740,
+   "n_words": 133
+  },
+  {
+   "id": "sec-006-41-background-from-representation-theory",
+   "number": "4.1",
+   "title": "Background from representation theory",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4208,
+   "n_words": 827
+  },
+  {
+   "id": "sec-007-42-central-limit-theorem-for-spherical-functions",
+   "number": "4.2",
+   "title": "Central limit theorem for spherical functions",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 6842,
+   "n_words": 1367
+  },
+  {
+   "id": "sec-008-43-example-the-hypercube",
+   "number": "4.3",
+   "title": "Example: The Hypercube",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 4079,
+   "n_words": 917
+  },
+  {
+   "id": "sec-009-44-example-graphs-on-perfect-matchings",
+   "number": "4.4",
+   "title": "Example: Graphs on Perfect Matchings",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 6402,
+   "n_words": 1338
+  },
+  {
+   "id": "sec-010-5-twisted-gelfand-pairs",
+   "number": "5",
+   "title": "Twisted Gelfand Pairs",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 2716,
+   "n_words": 521
+  },
+  {
+   "id": "sec-011-51-background-from-representation-theory",
+   "number": "5.1",
+   "title": "Background from representation theory",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 5973,
+   "n_words": 1277
+  },
+  {
+   "id": "sec-012-52-markov-chains-on-strict-partitions",
+   "number": "5.2",
+   "title": "Markov chains on strict partitions",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 3820,
+   "n_words": 809
+  },
+  {
+   "id": "sec-013-53-central-limit-theorem-for-shifted-plancherel",
+   "number": "5.3",
+   "title": "Central limit theorem for shifted Plancherel measure",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 42,
+   "n_chars": 11277,
+   "n_words": 2757
+  },
+  {
+   "id": "sec-014-6-association-schemes",
+   "number": "6",
+   "title": "Association Schemes",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 768,
+   "n_words": 132
+  },
+  {
+   "id": "sec-015-61-background-on-association-schemes",
+   "number": "6.1",
+   "title": "Background on association schemes",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 3772,
+   "n_words": 771
+  },
+  {
+   "id": "sec-016-62-central-limit-theorem-for-the-spectrum",
+   "number": "6.2",
+   "title": "Central limit theorem for the spectrum",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 49,
+   "n_chars": 5461,
+   "n_words": 1258
+  },
+  {
+   "id": "sec-017-63-example-hamming-scheme",
+   "number": "6.3",
+   "title": "Example: Hamming Scheme",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 3488,
+   "n_words": 782
+  },
+  {
+   "id": "sec-018-7-acknowledgements",
+   "number": "7",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 82,
+   "n_words": 13
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 6646,
+   "n_words": 999
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 20,
+  "chars_total": 95104
+ }
+}

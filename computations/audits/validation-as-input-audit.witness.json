@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T00:32:55.503282+00:00",
-  "commitSha": "69562b7a9c65c05f03e15b92bef34f7ea649b2e4",
+  "computedAt": "2026-08-24T14:09:01.423583+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 74,
+  "durationMs": 5,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
   "scriptHash": "89ff32cbb954",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptCommitSha": "5cfb7290f012aabde041238bd27bc3504da79486",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,12 +32,20 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/validation_as_input_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/validation_as_input_audit.py"
   },
   "description": "I11 audit per local/compute-integration-watcher: scripts that import M_*_MEV_VALIDATION constants from codata_constants.py are classified by usage. The validation constants are tagged 'DO NOT USE AS PREDICTION INPUTS' in the source; using them outside `pred - VAL` / `abs(...)` / `expected=VAL` style comparison contexts is an I11 violation unless the script's docstring carries a CLASS-A acknowledged-anchor banner (typical for the M_N anchor pending Workplan-0b). Per-script classification surfaces the violation queue for follow-up.",
   "contentBlock": "I11 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_scripts": 55,
+    "total_scripts": 139,
     "validation_constants_in_scope": [
       "M_P_MEV_VALIDATION",
       "M_N_MEV_VALIDATION",
@@ -56,10 +64,10 @@
   },
   "data": {
     "by_result": {
-      "ok_acknowledged_anchor": 22,
-      "ok_comparison_only": 17,
-      "imported_unused": 6,
-      "i11_violation": 10
+      "ok_acknowledged_anchor": 40,
+      "i11_violation": 29,
+      "ok_comparison_only": 57,
+      "imported_unused": 13
     },
     "rows": [
       {
@@ -82,6 +90,20 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "computations/atom_electron_mass.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          64,
+          65
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
         "path": "computations/audit_delta_S_chain.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -94,6 +116,20 @@
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/b_over_m_order_probe.py",
+        "validation_constants_imported": [
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          65,
+          66
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/binding_K_direct.py",
@@ -112,11 +148,11 @@
           90,
           91,
           92,
-          215,
-          216
+          234,
+          235
         ],
         "violation_lines": [
-          226
+          245
         ],
         "violation_count": 1,
         "result": "ok_acknowledged_anchor"
@@ -128,7 +164,7 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          403
+          510
         ],
         "violation_count": 1,
         "result": "ok_acknowledged_anchor"
@@ -139,8 +175,8 @@
           "M_P_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          72,
-          84
+          74,
+          86
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -154,12 +190,74 @@
         "result": "imported_unused"
       },
       {
+        "path": "computations/build_six_term_substrate_model_b.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "violation_count": 6,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
         "path": "computations/canonical_derivation_pipeline_compliance.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
         "result": "imported_unused"
+      },
+      {
+        "path": "computations/canonical_mass_table_extended.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          641
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/canonical_mass_table_nucleon_rows_test.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          46,
+          47
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/canonical_plus_multibrane.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          686,
+          735
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/catalan_binding.py",
@@ -173,6 +271,79 @@
         "result": "ok_comparison_only"
       },
       {
+        "path": "computations/charm_composite_volume_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          72
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/codata_table_vintage_audit.py",
+        "validation_constants_imported": [
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/codata_truncation_audit.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          80,
+          81
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/compound_binding_via_differences.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          90,
+          91,
+          92,
+          93,
+          94,
+          95
+        ],
+        "violation_lines": [
+          79,
+          80
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/crt_markov.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          495,
+          517,
+          607
+        ],
+        "violation_count": 3,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
         "path": "computations/definitive_q0_shift_for_mp.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -180,6 +351,20 @@
         ],
         "comparison_lines": [
           35
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/delta_lambda_multi_atom_crosscheck.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          87,
+          88
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -217,7 +402,7 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          122
+          129
         ],
         "violation_count": 1,
         "result": "ok_acknowledged_anchor"
@@ -228,7 +413,50 @@
           "M_D_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          59
+          60
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/deuteron_from_scratch_ledger.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          232,
+          233,
+          236,
+          237,
+          418,
+          424,
+          425
+        ],
+        "violation_lines": [
+          235
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/dirac_yekutieli_combinations_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/e0_lambda_tryall.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          70,
+          71
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -246,6 +474,42 @@
         ],
         "violation_count": 2,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/gb_residue_tower.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          260
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/h4_habiro_closure.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          29
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/h4_residual_vs_fine_structure_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          59
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
       },
       {
         "path": "computations/habiro/habiro_exact_mass_endomorphism.py",
@@ -271,19 +535,86 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "computations/implied_c2_closed_form_search_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          56
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/inter_nucleon_linked_channel.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/kahler_lift.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          376
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/knot-particle-generation.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          56,
+          57,
+          59,
+          60
+        ],
+        "violation_lines": [
+          22,
+          24,
+          25
+        ],
+        "violation_count": 3,
+        "result": "i11_violation"
+      },
+      {
         "path": "computations/lambda_scale_refinement_h4_correction_bring.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          108
+          112
         ],
         "violation_lines": [
-          109
+          113
         ],
         "violation_count": 1,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/lambda_scale_refinements_composed_predictions.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          84,
+          85
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/linking_weight_canonical_object_lwfix.py",
@@ -304,8 +635,8 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          166,
-          167
+          211,
+          212
         ],
         "violation_count": 2,
         "result": "ok_acknowledged_anchor"
@@ -329,8 +660,8 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          194,
-          195
+          291,
+          292
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -368,10 +699,23 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          273
+          275
         ],
         "violation_count": 1,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/mass_at_3A_proper.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          1087,
+          1114
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/mass_binding_dashboard.py",
@@ -380,6 +724,28 @@
           "M_N_MEV_VALIDATION"
         ],
         "result": "imported_unused"
+      },
+      {
+        "path": "computations/mass_formula_6term_mpfr_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          546,
+          547,
+          548,
+          549,
+          550,
+          551
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/mass_table_comprehensive.py",
@@ -391,18 +757,58 @@
           "M_HE4_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          92,
-          93,
-          94,
-          95,
-          97
+          108,
+          109,
+          110,
+          111,
+          113
         ],
         "violation_lines": [
-          431,
-          432
+          461,
+          462
         ],
         "violation_count": 2,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/me_additive_term_structure.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          85
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/meson_mass_from_hecke.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          90,
+          114
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/meson_per_knot_density.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          58
+        ],
+        "violation_lines": [
+          59
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/meson_vol_density.py",
@@ -411,13 +817,27 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          59
+          58
         ],
         "violation_lines": [
-          60
+          59
         ],
         "violation_count": 1,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          86,
+          87
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
       },
       {
         "path": "computations/mp_dk_decisive_test.py",
@@ -433,6 +853,32 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "computations/mp_habiro_c4_keystone_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          91
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/multi_level_jet_sum.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          176
+        ],
+        "violation_lines": [
+          124
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
         "path": "computations/neutron_error_diagnostic.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -442,6 +888,127 @@
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/ocneanu_12_alt_knot_geometries.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          78
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/ocneanu_12_bring_zero_mode_variants.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          100
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/ocneanu_12_em_correction_candidate.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          108
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/ocneanu_12_qdeformation_discriminator.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          89
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/ocneanu_12_route_reexam.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          135
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/ocneanu_54ppb_residual_exploration.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          89
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/path_c3_klr_prescreen_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          132
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/per_knot_density_deuteron_perknot_probe.py",
+        "validation_constants_imported": [
+          "M_D_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          47
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/per_knot_mass_table_demonstration.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          96,
+          97,
+          98,
+          99,
+          100,
+          101
+        ],
+        "violation_lines": [
+          84,
+          85
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
       },
       {
         "path": "computations/per_observable_100x_status.py",
@@ -456,19 +1023,32 @@
           "M_N_MEV_VALIDATION_ERR"
         ],
         "comparison_lines": [
-          102,
-          104,
-          108,
-          110,
-          112,
-          114,
-          120
+          123,
+          125,
+          129,
+          131,
+          133,
+          135,
+          141
         ],
         "violation_lines": [
-          122
+          143
         ],
         "violation_count": 1,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          90
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
       },
       {
         "path": "computations/phase5/phase2_proton_m_e_hecke_diagnostic.py",
@@ -504,6 +1084,30 @@
         "result": "ok_comparison_only"
       },
       {
+        "path": "computations/pn_alpha_lp_dual.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          71
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/probe_binding_qbeta_recurrence_tie.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          58
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
         "path": "computations/probe_flavor_dressed_mass_from_substrate_split.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -520,6 +1124,319 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "computations/probe_q_beta_operator_valued_N3.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          118
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/probe_q_beta_wenzl_projectors.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          17
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/adjacent_vs_full_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          291,
+          293,
+          345
+        ],
+        "violation_count": 3,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/probes/bring_color_weighted_base_scale_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          52,
+          53
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/delta_lambda_bar_involution_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          192
+        ],
+        "violation_lines": [
+          191
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/delta_lambda_h6_branching_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          107
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/delta_lambda_m_pi_constraint_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          138
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/probes/flavor_split_substrate_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          108,
+          109
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_He3_residual_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          51,
+          52
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/gap_a4_He3_residual_probe_perknot_rerun.py",
+        "validation_constants_imported": [
+          "M_HE3_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/probes/gap_a4_L1_light_series_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_L1_light_series_probe_perknot_rerun.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_S_K_additive_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_S_K_additive_probe_perknot_rerun.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_T2_per_knot_vol_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_T3_mass_pochhammer_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_T4_schur_weyl_icosahedral_probe_perknot_rerun.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/gap_a4_cross_isotope_residual_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/geom_leading_alt_q_locality_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          76
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/ground_state_ordering_a3_probe.py",
+        "validation_constants_imported": [
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/probes/kaon_pion_ratio_7_8_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "computations/probes/l2_light_isotope_error_attribution_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          108,
+          109
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/m_p_bring_plus_phi_q_h4_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          87,
+          88
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/meson_lepton_knot_dictionary_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          83,
+          84
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
         "path": "computations/probes/option_a_vol_per_knot_light_series.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -530,12 +1447,12 @@
           "M_HE4_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          220,
-          227,
-          234,
-          241,
-          248,
-          255
+          225,
+          232,
+          239,
+          246,
+          253,
+          260
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -564,14 +1481,38 @@
         "result": "ok_acknowledged_anchor"
       },
       {
+        "path": "computations/probes/per_knot_density_borromean_h4_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          58
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/per_knot_density_borromean_q_locality_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          104
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
         "path": "computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          56,
-          57
+          57,
+          58
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -600,6 +1541,56 @@
         ],
         "violation_count": 1,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/probes/qbeta_ck_qholonomic_recurrence_test.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          206
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/qbeta_habiro_integrality_kill_test.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          118
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/vol_density_borromean_h4_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          58
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/probes/vol_density_borromean_q_locality_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          79
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/proton_error_anatomy_1ppb.py",
@@ -633,8 +1624,33 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          60,
-          61
+          65,
+          66
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/q_dirac_linking_weight_extended_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          238
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/qbeta/fbor_normalisation_barsymmetry_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          109,
+          147
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -647,12 +1663,35 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          69,
-          70
+          74,
+          75
         ],
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/qbeta/qbeta_c3_measurement_proposal_budget.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_P_MEV_VALIDATION_ERR",
+          "M_N_MEV_VALIDATION_ERR"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          123,
+          124
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/qbeta/qbeta_ck_k_gt_3_habiro_extension_scoping.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
       },
       {
         "path": "computations/qbeta/qbeta_physics.py",
@@ -667,6 +1706,41 @@
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/qbeta_habiro_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          30
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/qbeta_habiro_sweep.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          30
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
       },
       {
         "path": "computations/reading_a_residual_at_50dps.py",
@@ -691,8 +1765,8 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          233,
-          234
+          314,
+          315
         ],
         "violation_count": 2,
         "result": "i11_violation"
@@ -747,8 +1821,10 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [],
-        "violation_count": 0,
+        "violation_lines": [
+          1351
+        ],
+        "violation_count": 1,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -758,11 +1834,43 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          48
+          55
         ],
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/tower_isotope_absolute.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          78,
+          79
+        ],
+        "violation_lines": [
+          37,
+          222,
+          223
+        ],
+        "violation_count": 3,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/unified_lift.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          250
+        ],
+        "violation_lines": [
+          157
+        ],
+        "violation_count": 1,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/verify_isospin_bar_anomaly.py",
@@ -771,8 +1879,8 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          144,
-          145
+          149,
+          150
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -785,6 +1893,18 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "computations/vol_density_deuteron_perknot_probe.py",
+        "validation_constants_imported": [
+          "M_D_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          47
+        ],
         "violation_lines": [],
         "violation_count": 0,
         "result": "ok_comparison_only"
@@ -803,6 +1923,24 @@
         ],
         "violation_count": 1,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/yekutieli_half_h2_observable_hunt.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          77,
+          78,
+          79,
+          80
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       }
     ]
   }

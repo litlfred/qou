@@ -1,15 +1,15 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-23T21:51:03.295811+00:00",
-  "commitSha": "331d3faec9d7da5f42bf81304ccdd2c7dadf207b",
+  "computedAt": "2026-08-29T07:39:08.101117+00:00",
+  "commitSha": "4f96783a6a1040c50988effb4c4857eb1552a87d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 55,
+  "durationMs": 26,
   "computation": "A-operator-extract-h9-pn",
   "scriptFile": "A_operator_extract_at_level.py",
-  "scriptHash": "6682387b66c6",
-  "scriptCommitSha": "b4fe31c3c9934c55c353b87ec0266caf57522fa6",
+  "scriptHash": "36f48bff2dcf",
+  "scriptCommitSha": "e87fe242a1a5a346a049d4608d036b987c228b7f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -92961,6 +92961,13 @@
           }
         }
       }
+    },
+    "precision_tier": "float64",
+    "deprecated": {
+      "reason": "np.linalg.lstsq on dense complex systems, residual ~1e-14. A genuine float64 COMPUTATION, not a float64 exit -- there is no higher-precision value being cast away here. An mpmath rewrite is not available at any budget: mp.qr_solve at 50 dps measures 2.62 / 8.91 / 21.32 / 76.65 s at n_unknowns 64 / 96 / 128 / 192, a fitted exponent of 3.07, and the largest real block is 3,390 unknowns -- ~145 h for one block, ~17,000 h across 30 blocks x 4 witnesses. Robust to the exponent: even at n^2 it is ~500 h. Bean qou-1lr8.",
+      "not_production": "Reachability established by reading the CONTROL FLOW, not by grep and not by import cone -- both of those gave wrong answers first, in opposite directions (qou-1lr8 records them). canonical_tr_m_via_branching sets n = 3*A and returns via the fine-Bratteli transfer for A >= 3 BEFORE the extract load, so the load is reached only at A == 2 where n is always 6. NO H_9 entry is reachable from it, and the canonical mass table reaches these witnesses only through that function. The two real consumers -- sublemma_2_1_h9_tritium_verify.py and sublemma_2_1_h12_helium_4_framework.py -- are ANCHOR-ONLY: neither contains q_val, q0, Q_MP or Q_50_DIGIT anywhere, so the hybrid-off-anchor failure mode qou-8chw fixed for the deuteron cannot arise. Closes that bean's surviving item."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

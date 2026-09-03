@@ -1,15 +1,15 @@
 {
   "engine": "sympy-free exact + mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T13:29:14.202661+00:00",
-  "commitSha": "4f807f48ab00815bbdf1813ec2f92ba7d5957be7",
+  "computedAt": "2026-08-29T11:22:53.174225+00:00",
+  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
   "assertions": [
     {
       "name": "star_exact_to_32",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(★) as integer-Laurent dict equality, n ≤ 32 — machine-exact, no numerics"
     },
     {
@@ -17,12 +17,12 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "c52_laurent == the merged profile module's C52"
     },
     {
       "name": "numeric_path_reaches_residue",
-      "computed": 0.29742494849539175,
+      "computed": "0.297424948495391756371985538889269118715781485583949329987179",
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "qbeta-habiro-tail-util",
   "scriptFile": "qbeta_habiro_tail_util.py",
-  "scriptHash": "a3c38eb7daa7",
-  "scriptCommitSha": "4f807f48ab00815bbdf1813ec2f92ba7d5957be7",
+  "scriptHash": "ad3988f0fd61",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta_habiro_tail_util.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta_habiro_tail_util.py"
   },
   "description": "Canonical compute path for the 5₂ Habiro-tail q-Borel coefficients: the (★) identity (derived PR #4195/#4226) verified MACHINE-EXACTLY as integer-Laurent dict equality for n ≤ 32 (no numerics), C_n cross-checked against the merged profile module, and the cancellation-free numeric path spot-gated at the substrate (dps 60 replaces the direct route's dps 800). WIRING SCOPE: compute infrastructure only — D_odd/O_φ/pole-ladder physics remain scope-(a)/auditOnly; no physical claim is wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

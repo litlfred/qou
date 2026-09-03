@@ -1,0 +1,536 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2311.14221v2",
+ "source": {
+  "file": "2311.14221v2.pdf",
+  "sha256": "5aa4126bbb6df6ebde6299aff731b0ddccee756132b98f560c850996d73c3d6e",
+  "bytes": 446025,
+  "pages": 48,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2311.14221",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "16 May 2024"
+  },
+  "doi": null,
+  "title": "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS",
+  "authors_raw": "SIMON LENTNER AND MART \u00cdN MOMBELLI",
+  "title_lines": [
+   "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF",
+   "ALGEBRAS"
+  ],
+  "abstract": "The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B \u2192 C is an exact faithful monoidal functor of tensor categories, one would like to realize B as category of representations of a braided Hopf alge- bra H(F ) in C. We prove that this is the case i\ufb00 B has the additional structure of a monoidal C-module category compatible with F , which equivalently means that F admits a monoidal section. For Hopf alge- bras, this reduces to a version of the Radford projection the orem. The Hopf algebra is constructed through the relative coend for m odule cate- gories. We expect this basic result to have a wide range of app lications, in particular in the absence of \ufb01bre functors, and we give som e applica- tions. One particular motivation was the logarithmic Kazhd an-Lusztig conjecture.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240516203959-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Background",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Our approach",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 5,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Representations of tensor categories",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Finite tensor categories",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Module categories over tensor categories",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The internal Hom",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "The (co)end for module categories",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Existence of (co)ends",
+   "page": 15,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Hopf algebras in braided tensor categories",
+   "page": 17,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Hopf algebras in braided tensor categories",
+   "page": 17,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Yetter-Drinfeld modules",
+   "page": 18,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Monoidal module categories",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Sections of monoidal functors",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Some natural module transformations",
+   "page": 24,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Fiber functors and reconstruction results",
+   "page": 26,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Coalgebras constructed from a coend",
+   "page": 26,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Some auxiliary results",
+   "page": 30,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Reconstruction results",
+   "page": 32,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Hopf algebras in C constructed from a coend",
+   "page": 35,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "The antipode of H(F)",
+   "page": 40,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 1,
+   "title": "Examples and Applications",
+   "page": 44,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Generic Example",
+   "page": 44,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Generic Consequences",
+   "page": 45,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Lifting and cocycles deformations",
+   "page": 45,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "The logarithmic Kazhdan Lusztig conjecture",
+   "page": 45,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Questions",
+   "page": 47,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 47,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-background",
+   "number": null,
+   "title": "Background",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3260,
+   "n_words": 560
+  },
+  {
+   "id": "sec-002-our-approach",
+   "number": null,
+   "title": "Our approach",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4289,
+   "n_words": 780
+  },
+  {
+   "id": "sec-003-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 758,
+   "n_words": 128
+  },
+  {
+   "id": "sec-004-1-preliminaries",
+   "number": "1",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1557,
+   "n_words": 273
+  },
+  {
+   "id": "sec-005-2-representations-of-tensor-categories",
+   "number": "2",
+   "title": "Representations of tensor categories",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-21-finite-tensor-categories",
+   "number": "2.1",
+   "title": "Finite tensor categories",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1799,
+   "n_words": 346
+  },
+  {
+   "id": "sec-007-22-module-categories-over-tensor-categories",
+   "number": "2.2",
+   "title": "Module categories over tensor categories",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2732,
+   "n_words": 548
+  },
+  {
+   "id": "sec-008-23-the-internal-hom",
+   "number": "2.3",
+   "title": "The internal Hom",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1098,
+   "n_words": 202
+  },
+  {
+   "id": "sec-009-3-the-coend-for-module-categories",
+   "number": "3",
+   "title": "The (co)end for module categories",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 6006,
+   "n_words": 1209
+  },
+  {
+   "id": "sec-010-31-existence-of-coends",
+   "number": "3.1",
+   "title": "Existence of (co)ends",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 2614,
+   "n_words": 497
+  },
+  {
+   "id": "sec-011-4-hopf-algebras-in-braided-tensor-categories",
+   "number": "4",
+   "title": "Hopf algebras in braided tensor categories",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2345,
+   "n_words": 475
+  },
+  {
+   "id": "sec-012-42-yetter-drinfeld-modules",
+   "number": "4.2",
+   "title": "Yetter-Drinfeld modules",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 2064,
+   "n_words": 389
+  },
+  {
+   "id": "sec-013-5-monoidal-module-categories",
+   "number": "5",
+   "title": "Monoidal module categories",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 1959,
+   "n_words": 397
+  },
+  {
+   "id": "sec-014-51-sections-of-monoidal-functors",
+   "number": "5.1",
+   "title": "Sections of monoidal functors",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3674,
+   "n_words": 737
+  },
+  {
+   "id": "sec-015-52-some-natural-module-transformations",
+   "number": "5.2",
+   "title": "Some natural module transformations",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 3750,
+   "n_words": 677
+  },
+  {
+   "id": "sec-016-6-fiber-functors-and-reconstruction-results",
+   "number": "6",
+   "title": "Fiber functors and reconstruction results",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 842,
+   "n_words": 154
+  },
+  {
+   "id": "sec-017-61-coalgebras-constructed-from-a-coend",
+   "number": "6.1",
+   "title": "Coalgebras constructed from a coend",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 6229,
+   "n_words": 1221
+  },
+  {
+   "id": "sec-018-62-some-auxiliary-results",
+   "number": "6.2",
+   "title": "Some auxiliary results",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 3346,
+   "n_words": 683
+  },
+  {
+   "id": "sec-019-63-reconstruction-results",
+   "number": "6.3",
+   "title": "Reconstruction results",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 5415,
+   "n_words": 1055
+  },
+  {
+   "id": "sec-020-64-hopf-algebras-in-c-constructed-from-a-coend",
+   "number": "6.4",
+   "title": "Hopf algebras in C constructed from a coend",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 44,
+   "n_chars": 15630,
+   "n_words": 2984
+  },
+  {
+   "id": "sec-021-7-examples-and-applications",
+   "number": "7",
+   "title": "Examples and Applications",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-022-71-generic-example",
+   "number": "7.1",
+   "title": "Generic Example",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1550,
+   "n_words": 293
+  },
+  {
+   "id": "sec-023-72-generic-consequences",
+   "number": "7.2",
+   "title": "Generic Consequences",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 509,
+   "n_words": 102
+  },
+  {
+   "id": "sec-024-73-lifting-and-cocycles-deformations",
+   "number": "7.3",
+   "title": "Lifting and cocycles deformations",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 1138,
+   "n_words": 211
+  },
+  {
+   "id": "sec-025-74-the-logarithmic-kazhdan-lusztig-conjecture",
+   "number": "7.4",
+   "title": "The logarithmic Kazhdan Lusztig conjecture",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 3036,
+   "n_words": 529
+  },
+  {
+   "id": "sec-026-8-questions",
+   "number": "8",
+   "title": "Questions",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 661,
+   "n_words": 112
+  },
+  {
+   "id": "sec-027-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 48,
+   "n_chars": 3706,
+   "n_words": 557
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 30,
+  "sections": 28,
+  "chars_total": 79967
+ }
+}

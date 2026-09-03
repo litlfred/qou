@@ -1,41 +1,70 @@
 #!/usr/bin/env python3
-"""ylambda_sign_content_threshold_probe.py — sign(y_λ) is a content-threshold parity.
+"""ylambda_sign_content_threshold_probe.py — the content-threshold parity is CONVENTION-C.
 
-THE CLAIM. The Jones–Markov central coefficient is `y_λ = s_λ / Z` with the Wenzl
-principal specialisation (`schur_principal_mpmath`)
+RETIRED AS A LIVE RULE, 2026-08-25 (bean `qou-ulxr`).  This file no longer asserts the
+sign rule; it records WHY the rule cannot be carried into convention D, and asserts the
+two structural facts that replace it.  The C-frame measurement is preserved below, not
+deleted — the numbers were right for the convention they were taken in.
 
-    s_λ  =  Q^{n(λ)} · ∏_{x ∈ λ} (1 − Q^r·Q^{c(x)}) / (1 − Q^{h(x)}),      Q = q².
+WHAT THE PROBE USED TO CLAIM (convention C, still true THERE)
+------------------------------------------------------------
+With `y_λ = s_λ / Z` and the Wenzl principal specialisation
 
-For `q > 1` (so `Q > 1`) every hook length `h(x) ≥ 1` gives `1 − Q^{h(x)} < 0`, so the
-denominator contributes the fixed sign `(−1)^{|λ|}`.  A numerator factor is negative exactly
-when `Q^r·Q^{c(x)} > 1`, i.e. when the cell's content sits ABOVE the threshold
+    s_λ  =  Q^{n(λ)} · ∏_{x ∈ λ} (1 − Q^r·Q^{c(x)}) / (1 − Q^{h(x)}),      Q = q²,
 
-    c* := −log_Q(Q^r).
+for `q > 1` every hook factor `1 − Q^{h(x)}` is negative, so the denominator contributes a
+fixed `(−1)^{|λ|}`; a numerator factor is negative exactly when the cell's content lies
+ABOVE the threshold `c* = −log_Q(Q^r)`.  Writing `P(λ)` for the count of cells BELOW it,
 
-Writing `P(λ) := #{x ∈ λ : c(x) < c*}` for the count of cells BELOW it, the two sign
-contributions combine to
+    sign(s_λ) = (−1)^{P(λ)}.
 
-    sign(s_λ) = (−1)^{P(λ)}                                      [the claim]
+Under C (`r ≈ 2.5995`, `c* ≈ −2.5995`) this held on all 270 partitions for n = 2..12, and
+the committed witness of 2026-08-08 recorded it with both assertions green.
 
-and hence `sign(y_λ) = sign(Z)·(−1)^{P(λ)}`.
+WHY IT DOES NOT SURVIVE CONVENTION D — TWO INDEPENDENT REASONS
+--------------------------------------------------------------
+Convention D pins the Wenzl level at `r = 2` (`wenzlLevel_conventionD`), so `Q^r = Q²`.
 
-WHY IT MATTERS. `Mu3SlotExclusion.door_mechanism_dichotomy` (PR #4657) shows a Wedderburn
-block can push the μ₃ residual submodular in exactly two ways, one of which is
-"negative weight on supermodular geometry".  That mechanism is governed entirely by
-sign(y_λ), which until now was known only as "sign-indefinite for n ≥ 4"
-(`docs/audits/2026-05-19-weight-factor-audit.md` §W3).  This probe replaces that qualitative
-statement with a combinatorial rule, which is what makes the door budget computable rather
-than merely observed.
+1. THE THRESHOLD LANDS ON THE CONTENT LATTICE.  `c* = −log_Q(Q²) = −2` EXACTLY — and −2
+   is an attainable content, realised at row 3, column 1 of every diagram with `ℓ(λ) ≥ 3`.
+   There the test factor is `Q^r·Q^{c} = Q²·Q^{−2} = 1` exactly, so the cell is neither
+   above nor below: the margin is 0, not merely small.  This is precisely the hypothesis
+   `hnd : ∀ x ∈ cells, QR * val x ≠ 1` of `QOU.MassTheory.YLambdaSignThreshold.wenzl_sign`,
+   whose own docstring says that without it "the parity is genuinely undefined, not merely
+   hard to prove".  The Lean is untouched and still correct: it is a conditional, and under
+   D its premise is UNSATISFIABLE on the `ℓ(λ) ≥ 3` stratum.  Conditional-proved is not
+   premise-established.
 
-At q₀ the threshold is `c* ≈ −2.5997`, so `P(λ)` counts cells of content `≤ −3`.  Those
-require `≥ 4` rows, which is why every `ℓ(λ) ≤ 3` block carries a positive weight — including
-`(8,1)`, the case that refutes the naive "ℓ-parity" guess.
+   Under C, `c* ≈ −2.5995` sits strictly between two lattice points, so `hnd` holds
+   everywhere and the rule is well-posed.  The convention change moved the threshold ONTO
+   the lattice; that, and not any numerical drift, is what breaks it.
 
-GATES (fail loudly):
-  * the predicted sign must match the measured sign of `y_λ` for EVERY partition,
-    for every `n` in the swept range — a single mismatch fails the probe;
-  * no cell may sit within `1e-12` of the threshold (a near-degenerate content would make
-    the parity ill-defined at finite precision; report and fail rather than round).
+2. WHERE IT REMAINS WELL-POSED, IT IS VACUOUS.  D also forces `y_λ = 0` for every
+   `ℓ(λ) ≥ 3` (`schurPrincipal_eq_zero_iff`), leaving the two-row stratum.  A cell at row
+   `i`, column `j` has content `j − i`, so for `ℓ(λ) ≤ 2` the minimum content is `−1`,
+   while a below-threshold cell needs `c ≤ −3`.  The threshold is therefore unreachable on
+   the surviving stratum BY CONSTRUCTION, for every `n` — `P(λ) ≡ 0`, the rule predicts the
+   constant `+1`, and it is correct but carries no information.
+
+   All of the rule's discriminating power lived in cells of content `≤ −3`, which need
+   `ℓ(λ) ≥ 4` — exactly the stratum D annihilates.
+
+So there is no two-row restatement to be had: reason 2 says the surviving stratum cannot
+support the rule, and reason 1 says the annihilated stratum cannot even be asked.  This
+probe is a record, not a live test.
+
+SCOPE.  Scope-(a), and about this RULE under this CONVENTION.  Nothing here refutes the
+Lean, which is generic in `Q` and `QR` and remains sorry-free and correct; nothing here
+says a sign rule for the two-row stratum is impossible — it says THIS threshold parity has
+no content there, because the sign is constant.
+
+WHAT THIS PROBE NOW ASSERTS (all measured under D, at q₀)
+---------------------------------------------------------
+  * `threshold_is_on_content_lattice`  — c* is exactly the integer −2
+  * `hnd_fails_on_three_row_stratum`   — every n ≥ 3 has a λ with an exactly-on-threshold
+                                          cell, so `wenzl_sign`'s premise is unsatisfiable
+  * `no_deep_cells_on_surviving_stratum` — P(λ) = 0 for every ℓ(λ) ≤ 2, every n
+  * `surviving_stratum_sign_is_constant` — sign(y_λ) = +1 for every surviving block
 
 Measurement only.  Nothing is fitted and nothing is wired.
 """
@@ -61,13 +90,28 @@ set_compute_dps(50)
 q0 = mp.mpf(str(Q0))
 N_MIN, N_MAX = 2, 12
 DEGEN_TOL = mp.mpf("1e-12")
+SURVIVING_ROWS = 2          # convention D: Wenzl level r = 2
+
+# The convention-C record this probe used to assert, kept verbatim so the finding is not
+# lost with the rule.  Source: the committed witness of 2026-08-08T21:52:48Z.
+C_FRAME_RECORD = {
+    "convention": "C",
+    "computed_at": "2026-08-08T21:52:48Z",
+    "wenzl_level_r": "2.5995 (approx)",
+    "c_star": "-2.5995 (approx) — strictly between lattice points, so hnd holds",
+    "rule_holds_all_partitions": True,
+    "no_threshold_degeneracy": True,
+    "n_negative_y_by_n_2_to_9": [0, 0, 1, 1, 3, 4, 8, 10],
+    "note": "correct for convention C. Superseded as a live rule by this probe under D; "
+            "see the module docstring for the two reasons.",
+}
 
 
 def deep_cell_count(lam, Q, QR):
-    """P(λ) = #{cells whose content lies BELOW the threshold c* = −log_Q(QR)}.
+    """P(λ) = #{cells strictly BELOW the threshold}, plus the smallest |Q^r·Q^c − 1|.
 
-    Equivalently `QR·Q^{c(x)} < 1`.  Returns (P, min_margin) where min_margin is the
-    smallest `|QR·Q^c − 1|` over the diagram — the degeneracy guard.
+    The margin is the degeneracy guard: a cell sitting exactly on the threshold makes the
+    above/below split — and hence the parity — undefined.
     """
     _hs, cs = hooks_and_contents(lam)
     P, margin = 0, None
@@ -83,98 +127,120 @@ def deep_cell_count(lam, Q, QR):
 def main() -> int:
     Q, QR = _wenzl_constants(q0)
     c_star = -mp.log(QR) / mp.log(Q)
-    print("=" * 86)
-    print(" sign(y_λ) is a content-threshold parity — verification sweep")
-    print("=" * 86)
+    c_star_int = mp.floor(c_star + mp.mpf("0.5"))
+    on_lattice = abs(c_star - c_star_int) < mp.mpf("1e-40")
+
+    print("=" * 88)
+    print(" the content-threshold parity is a CONVENTION-C rule — retirement record")
+    print("=" * 88)
     print(f" q₀ = {mp.nstr(q0, 12)}   Q = q₀² = {mp.nstr(Q, 12)}   Q^r = {mp.nstr(QR, 12)}")
-    print(f" content threshold c* = −log_Q(Q^r) = {mp.nstr(c_star, 12)}"
-          f"   → cells with c ≤ {int(mp.floor(c_star))} are 'deep'")
-    print(f" predicted rule:  sign(y_λ) = sign(Z)·(−1)^P(λ),  P = #deep cells\n")
+    print(f" Q^r == Q² (convention D, r = 2)?  {abs(QR - Q ** 2) < mp.mpf('1e-40')}")
+    print(f" c* = −log_Q(Q^r) = {mp.nstr(c_star, 20)}")
+    print(f" c* is EXACTLY the integer {int(c_star_int)}?  {on_lattice}"
+          "   ← if so, the above/below test is degenerate on the lattice\n")
 
-    print(f" {'n':>3} {'parts':>7} {'matches':>9} {'neg y':>7} {'min |QR·Q^c−1|':>17}"
-          f"  {'sign(Z)':>8}  verdict")
-    print(" " + "-" * 76)
+    print(f" {'n':>3} {'parts':>6} | {'ℓ≤2':>5} {'P>0 there':>10} {'signs':>8}"
+          f" | {'ℓ≥3':>5} {'min margin':>12} {'hnd':>9}")
+    print(" " + "-" * 78)
 
-    all_ok, degen_ok, rows = True, True, []
+    rows = []
+    lattice_ok = bool(on_lattice)
+    hnd_fails_all_n = True          # for every n ≥ 3
+    surv_no_deep_all = True
+    surv_positive_all = True
+
     for n in range(N_MIN, N_MAX + 1):
         y = y_lambda_at_q0_mpmath(n, q0)
         shapes = partitions_of(n)
-        # sign(Z) is a single global sign; infer it from any one block, then require
-        # every block to be consistent with that same choice.
-        lam0 = shapes[0]
-        P0, _ = deep_cell_count(lam0, Q, QR)
-        sZ = 1 if (mp.sign(y[lam0]) == (1 if P0 % 2 == 0 else -1)) else -1
+        surv = [l for l in shapes if len(l) <= SURVIVING_ROWS]
+        dead = [l for l in shapes if len(l) > SURVIVING_ROWS]
 
-        matches, n_neg, min_margin = 0, 0, None
-        mismatches = []
+        surv_deep = 0
+        surv_signs = set()
+        for lam in surv:
+            P, _m = deep_cell_count(lam, Q, QR)
+            surv_deep += P
+            surv_signs.add(1 if y[lam] > 0 else (-1 if y[lam] < 0 else 0))
+
+        min_margin = None
         for lam in shapes:
-            P, margin = deep_cell_count(lam, Q, QR)
-            min_margin = margin if min_margin is None else min(min_margin, margin)
-            pred = sZ * (1 if P % 2 == 0 else -1)
-            meas = 1 if y[lam] > 0 else -1
-            if y[lam] < 0:
-                n_neg += 1
-            if pred == meas:
-                matches += 1
-            else:
-                mismatches.append((lam, P, pred, meas, mp.nstr(y[lam], 6)))
-        ok = (matches == len(shapes))
-        deg = min_margin > DEGEN_TOL
-        all_ok, degen_ok = all_ok and ok, degen_ok and deg
-        verdict = "OK" if (ok and deg) else ("MISMATCH" if not ok else "DEGENERATE")
-        print(f" {n:>3} {len(shapes):>7} {matches:>4}/{len(shapes):<4} {n_neg:>7}"
-              f" {mp.nstr(min_margin, 6):>17}  {sZ:>8}  {verdict}")
-        for m in mismatches:
-            print(f"      MISMATCH λ={m[0]} P={m[1]} predicted={m[2]} measured={m[3]}"
-                  f" y={m[4]}")
-        rows.append({"n": n, "n_partitions": len(shapes), "n_matches": matches,
-                     "n_negative_y": n_neg, "sign_Z": sZ,
-                     "min_threshold_margin": mp.nstr(min_margin, 20),
-                     "all_match": bool(ok),
-                     "mismatches": [str(m[0]) for m in mismatches]})
+            _P, m = deep_cell_count(lam, Q, QR)
+            min_margin = m if min_margin is None else min(min_margin, m)
+        hnd_holds = min_margin > DEGEN_TOL
 
-    print("\n" + "=" * 86)
-    if all_ok and degen_ok:
-        tot = sum(r["n_partitions"] for r in rows)
-        print(f" RESULT: the rule holds on ALL {tot} partitions for n = {N_MIN}..{N_MAX}.")
-        print("   sign(y_λ) is determined by the PARITY of the number of cells whose")
-        print("   content falls below c* = −log_Q(Q^r).  Since a cell of content ≤ −3")
-        print("   needs ≥ 4 rows, every λ with ℓ(λ) ≤ 3 carries a positive weight — which")
-        print("   is why (8,1) is positive and the naive ℓ-parity guess fails.")
-    else:
-        print(" RESULT: FAILED — see mismatches above. The rule as stated is wrong.")
-    print("=" * 86)
+        if surv_deep != 0:
+            surv_no_deep_all = False
+        if surv_signs - {1}:
+            surv_positive_all = False
+        if dead and hnd_holds:
+            hnd_fails_all_n = False
+
+        print(f" {n:>3} {len(shapes):>6} | {len(surv):>5} {surv_deep:>10}"
+              f" {str(sorted(surv_signs)):>8} | {len(dead):>5}"
+              f" {mp.nstr(min_margin, 6):>12} {'holds' if hnd_holds else 'UNSAT':>9}")
+
+        rows.append({
+            "n": n,
+            "n_partitions": len(shapes),
+            "n_surviving_two_row": len(surv),
+            "deep_cells_on_surviving_stratum": surv_deep,
+            "surviving_signs": sorted(surv_signs),
+            "n_annihilated_three_row_plus": len(dead),
+            "min_threshold_margin": mp.nstr(min_margin, 20),
+            "hnd_satisfiable": bool(hnd_holds),
+        })
+
+    print("\n" + "=" * 88)
+    print(" c* sits exactly on the content lattice, so `wenzl_sign`'s hypothesis")
+    print(" `hnd : Q^r·val ≠ 1` is UNSATISFIABLE for every ℓ(λ) ≥ 3 — the parity is")
+    print(" undefined there, not merely unmeasured. On the surviving two-row stratum")
+    print(" every P(λ) = 0, so the rule degenerates to the constant +1.")
+    print(" The rule's discriminating power required cells of content ≤ −3, i.e. ℓ ≥ 4,")
+    print(" which is exactly the stratum convention D annihilates.")
+    print("=" * 88)
 
     w = WitnessBuilder("ylambda-sign-content-threshold", engine="mpmath",
                        output_dir=Path(__file__).resolve().parent)
-    w.add_assertion("rule_holds_all_partitions", 1 if all_ok else 0, 1)
-    w.add_assertion("no_threshold_degeneracy", 1 if degen_ok else 0, 1)
+    w.add_assertion("threshold_is_on_content_lattice", 1 if lattice_ok else 0, 1)
+    w.add_assertion("hnd_fails_on_three_row_stratum", 1 if hnd_fails_all_n else 0, 1)
+    w.add_assertion("no_deep_cells_on_surviving_stratum", 1 if surv_no_deep_all else 0, 1)
+    w.add_assertion("surviving_stratum_sign_is_constant", 1 if surv_positive_all else 0, 1)
     w.add_parameter("q0", mp.nstr(q0, 30))
     w.add_parameter("Q", mp.nstr(Q, 30))
     w.add_parameter("QR", mp.nstr(QR, 30))
     w.add_parameter("c_star", mp.nstr(c_star, 30))
+    w.add_parameter("wenzl_level_r", "2 (convention D)")
+    w.add_parameter("surviving_rows", str(SURVIVING_ROWS))
     w.add_data("by_n", rows)
+    w.add_data("convention_c_record", C_FRAME_RECORD)
     w.add_caveat(
-        "The threshold c* = −log_Q(Q^r) is q-dependent; the concrete cut 'content ≤ −3' is "
-        "specific to q₀. The PARITY RULE itself is q-independent for q > 1 — only the "
-        "location of the cut moves."
+        "RETIRED AS A LIVE RULE. This witness no longer asserts sign(y_λ) = sign(Z)·(−1)^P. "
+        "That rule is correct under convention C and is preserved in `convention_c_record`; "
+        "under D it is undefined on ℓ(λ) ≥ 3 (threshold exactly on the content lattice) and "
+        "vacuous on ℓ(λ) ≤ 2 (no cell can reach it). Do not read the C numbers as live."
     )
     w.add_caveat(
-        "sign(Z) is inferred per n from one block and then required to be consistent "
-        "across all blocks; the probe verifies consistency, it does not independently "
-        "derive sign(Z)."
+        "Scope-(a), about this rule under this convention. "
+        "`QOU.MassTheory.YLambdaSignThreshold.wenzl_sign` is generic in Q and QR, remains "
+        "sorry-free and correct, and is NOT refuted here — under D its hypothesis `hnd` is "
+        "simply unsatisfiable on the ℓ(λ) ≥ 3 stratum. Conditional-proved is not "
+        "premise-established. Nor is a two-row sign rule shown impossible; this threshold "
+        "parity merely has no content there, the sign being constant."
     )
     w.set_description(
-        "Verifies that sign(y_λ) equals sign(Z)·(−1)^P(λ), where P(λ) counts cells of λ "
-        "whose content lies below c* = −log_Q(Q^r). Derived from the Wenzl principal "
-        "specialisation: for Q>1 every hook factor 1−Q^h is negative (fixed sign "
-        "(−1)^|λ|), and a numerator factor 1−Q^r·Q^c is negative exactly above the "
-        "threshold. Swept over every partition for n=2..12. Replaces the qualitative "
-        "'sign-indefinite for n≥4' of weight-factor-audit §W3 with a combinatorial rule, "
-        "which is what makes the μ₃ door budget of PR #4657 computable."
+        "Records why the sign(y_λ) content-threshold parity is a convention-C phenomenon "
+        "and cannot be carried into D. Under D the Wenzl level is r = 2, so Q^r = Q² and "
+        "c* = −log_Q(Q^r) = −2 EXACTLY — an attainable content (row 3, col 1), present in "
+        "every λ with ℓ(λ) ≥ 3, where the test factor is exactly 1 and the above/below "
+        "split is undefined. That is `wenzl_sign`'s `hnd` hypothesis failing outright. On "
+        "the surviving two-row stratum the minimum content is −1 while a below-threshold "
+        "cell needs ≤ −3, so P(λ) ≡ 0 and the rule is the constant +1. Swept n = 2..12. "
+        "Supersedes the 2026-08-08 C-frame witness, whose green assertions this replaces."
     )
     w.save()
-    return 0 if (all_ok and degen_ok) else 1
+
+    ok = lattice_ok and hnd_fails_all_n and surv_no_deep_all and surv_positive_all
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

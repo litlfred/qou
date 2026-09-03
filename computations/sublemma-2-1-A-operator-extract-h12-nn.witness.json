@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "boolean",
       "source": "per-λ numpy.linalg.lstsq at rcond=args.rank_tol; consistency threshold rel res < 1e-6"
     }

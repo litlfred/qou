@@ -63,7 +63,7 @@ del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -273,7 +273,7 @@ def main():
 
     w.add_assertion(
         "hecke_relation_holds_on_V_tensor_V",
-        computed=float(mp.mpf(hecke["max_residual_entry"])),
+        computed=fmt(mp.mpf(hecke["max_residual_entry"])),
         expected=0.0,
         tolerance=float(TOL_50DPS),
         source=(
@@ -283,7 +283,7 @@ def main():
     )
     w.add_assertion(
         "direct_rmatrix_matches_schur_weyl_prediction",
-        computed=float(mp.mpf(schur["absolute_difference"])),
+        computed=fmt(mp.mpf(schur["absolute_difference"])),
         expected=0.0,
         tolerance=float(TOL_50DPS),
         source=(
@@ -298,8 +298,10 @@ def main():
     )
     w.add_assertion(
         "trace_at_q_one_equals_dim_8",
-        computed=float(mp.mpf(classical["tr_at_q1"])),
-        expected=8.0,
+        # |tr - 8| against 0: the trace carries roundoff, so comparing it to 8
+        # cancels in the float64 verdict at ~1.8e-15 and 1e-30 is unreachable.
+        computed=fmt(abs(mp.mpf(classical["tr_at_q1"]) - 8)),
+        expected="0",
         tolerance=1e-30,
         source=(
             "At q = 1, β_Bor → identity ∈ S_3, so tr_{V^⊗3}(β_Bor) = "

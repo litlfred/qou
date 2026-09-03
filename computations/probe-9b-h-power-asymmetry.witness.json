@@ -9,7 +9,7 @@
       "computed": 0.03288930862541761,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.07,
+      "tolerance": "0.07",
       "source": "³He residual under M3 (was +1.40 under the bare law); κ is the derived closed-form trace asymmetry, not a fit"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.27180562469106206,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.35,
+      "tolerance": "0.35",
       "source": "max |residual| over D/T/³He/⁴He under M3 (⁴He −0.272 dominates; Z=N so the gate cannot act there)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.4383526339525723,
       "expected": 1.44,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "scope-(a): the antisymmetric (Z−N) factor breaks the T residual to ≈+1.44 — mirror-symmetric application of the asymmetry is refuted; only the proton-excess side carries it (consistent with the PROBE 1 swap/mirror near-cancellation)"
     }
   ],

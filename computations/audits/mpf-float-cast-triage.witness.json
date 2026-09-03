@@ -1,0 +1,75 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T14:24:56.854102+00:00",
+  "commitSha": "c68f6b8a5ea2ecdf6fef6219ed03d0d92feb72da",
+  "assertions": [
+    {
+      "name": "all_findings_are_live_not_deprecated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "0 of the flagged files are under _deprecated/"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "mpf-float-cast-triage",
+  "scriptFile": "mpf_float_cast_triage.py",
+  "scriptHash": "41b313699b4f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/mpf_float_cast_triage.py"
+    ],
+    "reproduce": "python3 -u computations/audits/mpf_float_cast_triage.py"
+  },
+  "description": "AST triage of the critical compute_no_mpf_to_float_cast findings, made visible by the qou-z8x9 sweeper fix. Classifies; does not fix.",
+  "data": {
+    "q0_anchor": "none — a source-level AST scan, nothing is evaluated",
+    "markov_convention": "not applicable",
+    "counts": {
+      "other/assigned_to_a_name": 75,
+      "other/ListComp": 2,
+      "other/arithmetic_operand": 15,
+      "serialised": 17,
+      "assertion_kwarg": 25,
+      "display": 25,
+      "other/DictComp": 1,
+      "other/collected_into_list": 30,
+      "anchor_truncated": 10,
+      "evalf_discarded": 14,
+      "other/IfExp": 7,
+      "other/Lambda": 4,
+      "other/returned": 6,
+      "other/kwarg_vol": 1,
+      "other/passed_to_a_call": 9,
+      "other/compared": 3,
+      "other/GeneratorExp": 2,
+      "string_literal_FALSE_POSITIVE": 1
+    },
+    "total_casts": 246,
+    "files_with_casts": 105,
+    "checker_false_positives": [
+      "computations/audits/float64_leak_audit.py"
+    ]
+  },
+  "caveats": [
+    "`anchor_truncated` and `other` are NOT automatically defects — a numpy consumer may cast at its own boundary deliberately, which AGENTS.md permits. Those two classes need per-file judgement; only `assertion_kwarg` is mechanically safe to drain."
+  ]
+}

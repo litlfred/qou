@@ -1,0 +1,76 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9610193v1",
+ "source": {
+  "file": "9610193v1.pdf",
+  "sha256": "e879864ec3a68fafb2f4cd8574de0b1f712ed07255a3de0dd9e7e1d4e86f2835",
+  "bytes": 656696,
+  "pages": 14,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9610193",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "24 Oct 1996"
+  },
+  "doi": null,
+  "title": "KNOTS AND PARTICLES",
+  "authors_raw": "L. Faddeev \u2217\u266f and Antti J. Niemi \u2217\u2217\u266f",
+  "title_lines": [
+   "KNOTS AND PARTICLES"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126155516-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Faddeev \u2217\u266f and Antti J. Niemi \u2217\u2217\u266f",
+   "page": 1,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-l-faddeev-and-antti-j-niemi",
+   "number": "L",
+   "title": "Faddeev \u2217\u266f and Antti J. Niemi \u2217\u2217\u266f",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 17106,
+   "n_words": 2961
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 2722,
+   "n_words": 505
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 19828
+ }
+}

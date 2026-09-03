@@ -13,7 +13,9 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 The repo owner is physically disabled and types with difficulty.
 Adapt ALL responses accordingly:
-- **Short answers.** One-liners when possible.
+- **Short answers.** One-liners when possible — but read this together
+  with **Terse ≠ compressed** below: "short" cuts ceremony, never
+  evidence, implications, or options.
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
@@ -89,6 +91,111 @@ Adapt ALL responses accordingly:
   whose meaning, cost and consequences were legible only to the agent that had
   just spent the session measuring them.
 
+- **NAMING A DECISION IS ASKING A QUESTION — the frame above applies wherever
+  you raise one, not only in `AskUserQuestion` (STRICT, 2026-08-29).**
+
+  Every rule above says "`AskUserQuestion`", and an agent reads that as a rule
+  about a *tool*. It is not. It is a rule about **handing the author a
+  decision**, and the tool is one of several ways to do that. The others, all
+  of which carry the same obligation:
+
+  - an end-of-turn summary line ("the one thing waiting on you is …");
+  - a `**next**` entry in the beans report;
+  - a "Suggested follow-up" / "open question" section in a PR body;
+  - a bean body's "still open" list;
+  - a chat sentence of the form *"X is a judgement call for you"*.
+
+  **The test is not which tool you used. It is: does this sentence require the
+  author to decide something?** If yes, it owes the six-part frame — expand
+  every identifier, lead with the decision, give each option its what-it-means
+  / costs / risks / commits-to, state the default, name the blast radius in
+  real terms — and a recommendation marked as judgement.
+
+  **The failure mode is specifically the one-line gesture.** *"Whether the mass
+  context should move to `tower_term_li2q` is a judgement about the framework"*
+  names a decision and supplies none of what is needed to make it: not what the
+  two options do, not that the calibration has **zero non-probe consumers**
+  (which is what makes it cheap), not what happens if the author says nothing.
+  The author cannot act on it, and worse, cannot tell that it is cheap to
+  ignore. That is not a hand-off; it is a mention.
+
+  **Cheapest correct move when you do not want to spend the words:** don't
+  raise it. A decision you are not prepared to frame is a decision you should
+  either measure further yourself or leave in the bean unmentioned — a bean the
+  author can read on their own schedule is a fine home for an unframed
+  question. What is not fine is putting it in front of them stripped of
+  everything that would let them answer.
+
+  History: added 2026-08-29 on owner instruction — *"Named decision, but I
+  haven't described any information about it. This is a repeated habit of
+  yours."* The agent had applied the six-part frame diligently inside
+  `AskUserQuestion` calls all session while ending turn after turn with bare
+  one-line decision gestures, because every rule it had was addressed to the
+  tool rather than to the act.
+
+- **Terse ≠ compressed: "short" governs ceremony, never content (STRICT,
+  2026-08-25).** The *Short answers* rule at the top of this section is about
+  **the author's typing cost**, not about how much of what you measured reaches
+  them. Agents read it as licence to compress a finding into a headline and drop
+  the evidence, the implications and the options — and the author then has to
+  spend keystrokes asking for material the agent was already holding. In a repo
+  whose owner types with difficulty, **that round-trip is the single most
+  expensive failure mode there is.** A one-line answer that triggers three
+  follow-up questions cost four messages; the three-paragraph answer costs one.
+
+  **What "short" legitimately cuts** — cut all of it, always:
+
+  - preamble, restating the request back, narrating what you are about to do;
+  - status theatre, apologies, self-criticism, hedging, "great question";
+  - options you have already decided not to pursue;
+  - re-derivation of facts already established earlier in the session.
+
+  **What it must NEVER cut.** Every substantive report carries the same
+  four-part frame the `AskUserQuestion` rules above demand — because a finding
+  and a question need the same scaffolding to be actionable:
+
+  - **The claim**, stated flatly, with its number. Not "the tolerance moved" —
+    `1.9177226708e-06 → 1.9177218447e-06, rel 4.31e-7`.
+  - **The evidence.** File path and line, the exact command run, the value
+    *before* as well as after, the sample size, and whether the figure was
+    measured this session or carried from a prior one.
+  - **The implications** — what this changes for the corpus, the paper or the
+    next agent, in physics-and-paper terms rather than call-graph terms. Name
+    the consumers by file, and say which of them feeds something a reader sees.
+  - **The options**, each with cost / risk / what it forecloses, plus **a stated
+    recommendation marked as your judgement** rather than as a finding. Include
+    the no-op and say what happens if the author does nothing.
+
+  **Two triggers where terseness is always a defect**, because the compressed
+  form is not merely thin but *misleading*:
+
+  1. **Correcting your own earlier claim.** Say what you asserted, what is
+     actually true, how the new figure was measured, and — the part that gets
+     dropped — **what else that error may have contaminated**: which beans, PR
+     bodies, audit docs or content blocks repeated it. A bare "corrected" is
+     unusable, and this corpus has repeatedly had a wrong figure survive in five
+     other places after being fixed in one.
+  2. **Any negative or absence-of-evidence result.** *"I found no rationale in
+     the source"* and *"there is no rationale"* are different claims and only
+     one of them was measured. Say which, name the surface you searched, and say
+     what observation would separate them. Absence of a comment is not evidence
+     of absence of a reason — and a *measurement* you already have outranks the
+     silence of a source file.
+
+  **This applies to chat, commit messages, PR bodies and bean updates alike.**
+  The chat is ephemeral; the commit and the PR are what a reviewer and the next
+  agent read cold. A commit message that says "migrate X" over a change whose
+  whole point is that the previous recommendation was backwards is the same
+  defect as the terse chat answer, with a longer half-life.
+
+  History: added 2026-08-25 on owner instruction — *"you are as USUAL too terse
+  (PLEASE update Agents.md linked directives)"* — after an agent reported that
+  `aoperator_a5_crosscheck` (a probe cross-checking the A-operator at A=5)
+  "carries no muon rationale in its source" and stopped there, in a session that
+  had **already measured** that the producer's own assertions FAIL at the muon
+  anchor and PASS at the proton one. The absent comment and the present
+  measurement are not the same evidence, and only the weaker one was reported.
+
 - **Default `AskUserQuestion` to `multiSelect: true` + 🟡 marker (2026-05-19).** The repo owner is physically disabled and types with difficulty (see top-of-section reminder). Single-select questions force the user to either pick exactly one option or type "1, 2" as free text — neither is accessibility-friendly. Default rules:
   - **Always set `multiSelect: true`** unless the choices are strictly mutually exclusive (e.g. "switch branch to X" vs "switch branch to Y" — picking both is incoherent). 80% of decision points are not mutually exclusive ("which of these should I do?" — answer is usually "1 and 3"), so multi-select is the safer default.
   - **Prefix the question with 🟡** to mark the agent as waiting / blocked on input ("🟡 [Yellow Circle] Waiting on user — …"). The yellow circle is the agent-state symbol for "blocked, needs user input"; using it consistently lets the user scan the chat history and find every pending decision point.
@@ -113,6 +220,46 @@ This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
+
+## The paper is a MATHEMATICAL MODEL by default (owner ruling, 2026-08-07)
+
+**Every object in this paper is a mathematical object unless it is being compared
+to measurement.** This is the default reading for readers and agents alike, and it
+governs how claims should be stated, criticised, and defended.
+
+- **Named terms are model terms.** `electron`, `proton`, `neutron`, `mass`,
+  `binding energy`, `decay width` are *names of constructions inside the model* —
+  `m_e` is a defined quantity in the framework, not an assertion about the physical
+  electron. Naming a construction after a particle is expository convention, exactly
+  as a topologist calls a knot "the trefoil".
+- **Physics enters only at the comparison boundary.** The empirical content of the
+  framework is located precisely where a model quantity is set against an
+  experimental one — AME2020, CODATA, PDG. Those comparisons are the physical
+  claims. Everything upstream of them is mathematics.
+- **Therefore an incomplete physical derivation is not a reason to abandon the
+  physics.** A mathematical model with an honest empirical-comparison section is a
+  legitimate object, and the work must stand up in a **physics** venue as well as a
+  mathematics one. Do **not** propose "split the math off and drop the physics" as a
+  resolution to a derivation gap — the owner has ruled against that framing.
+
+### What this does NOT license
+
+The ruling narrows where the physical claims live; it does not weaken them.
+
+- **The comparison points carry the full burden.** Because physics enters *only*
+  at comparison, the honesty of the comparison is the whole empirical case. A
+  systematic that moves a compared quantity is therefore *more* consequential under
+  this framing, not less — it is attacking the one place the physics lives.
+- **"It's just a model term" is not a defence of a wrong number.** If `m_p` in the
+  model is compared to CODATA `m_p`, the comparison is a physical claim and is
+  judged as one.
+- **The anti-fit discipline is untouched.** A fitted quantity is still a fit whether
+  its name is mathematical or physical.
+
+Practical consequence for agents: when writing or reviewing, keep the register
+straight — state model results as mathematics, and mark the comparison points
+explicitly as where the empirical claim is being made. When criticising, aim at the
+comparisons and at the systematics on them, not at the naming.
 
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
@@ -172,6 +319,55 @@ Concretely:
   independent parallel assessment — like independent adversarial
   assessment — is a source of robustness. The cheapest way to catch a
   wrong turn is a second agent walking in from a different direction.
+
+## Subagents with persistent memory (`.claude/agents/`)
+
+Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
+carrying `memory: project` in its frontmatter. That gives the agent its own
+directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
+25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
+prompt when it starts, and it reads and writes the directory as it works.
+
+| agent | owns |
+|---|---|
+| `lean-verifier` | olean cache restore, `lean`-direct verification, sorry/axiom status |
+| `corpus-grepper` | the six-path checklist before anything is declared open / refuted |
+| `compute-precision-auditor` | the NO-FLOAT64 gate family, witness staleness, producer health |
+| `convention-auditor` | convention C vs D, the muon/proton q₀ pin, Λ vs Cl₂, layer straddles |
+| `merge-coordinator` | branch/PR policy, sibling coordination, drive-to-green |
+
+The point is the failure mode this document is itself a record of: an agent
+spends a session measuring something, writes the number down, and the number
+is quoted months later as though it were current. **Memory does not fix that
+by holding better numbers — it fixes it by holding methods.** Each `MEMORY.md`
+labels every entry as exactly one of:
+
+- **STABLE** — a path, a command, a ruling, a structural fact. Trustworthy;
+  verify cheaply if surprising.
+- **TRAP** — a specific way the task goes wrong, with the evidence that
+  established it. Durable, and the highest-value entry type.
+- **BASELINE** — a measured number, stored **with the command that produced it
+  and the date, and never quoted as a current answer.** A baseline tells the
+  agent what to measure and how; re-run it, report fresh, then update the
+  entry.
+
+**Maintaining them is part of the work.** When a session establishes a durable
+fact in one of these areas — a detector blind spot, a producer that refuses by
+design, a gate that cannot fire — add it to the relevant `MEMORY.md` as a TRAP
+in the same PR. When a session re-measures a BASELINE, update the entry with
+the fresh number and date. A memory file that only accretes becomes the thing
+it exists to prevent.
+
+Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+under 200 lines — split detail into sibling files the agent reads on demand
+(`compute-precision-auditor/producer-health.md` is the worked example). And
+`memory: project` writes under `.claude/agent-memory/`, which is **committed**;
+`memory: local` writes under `.claude/agent-memory-local/`, which is
+gitignored, for anything genuinely per-machine.
+
+The agents defer to `.claude/skills/local/*.md` as the source of truth on
+procedure. Memory summarises; the skill governs. Where the two disagree, the
+skill wins and the memory entry is wrong — fix it.
 
 ## Agent work-plan policy (STRICT)
 
@@ -281,6 +477,13 @@ user's last message, not the most recently mentioned file.
      without a bean, say so and open one. That omission is the failure
      this exists to catch — a manifest-parser bug was found, fixed,
      tested and merged before anyone noticed it had never been claimed.
+   - **The 50-word cap is a cap on the LEDGER, not on the turn.** It
+     bounds this bean-status block so the author can scan it — it is
+     never a budget for the substantive report of what you found, which
+     is governed by **Terse ≠ compressed** in §User accessibility above.
+     A turn that measured something puts the claim, the evidence, the
+     implications and the options in the body of the reply, and uses
+     these lines only to say which beans that touched.
 
 4. **Parallelize independent tasks.** When two queued tasks have no
    dependency between them (e.g. one Lean fix + one .md edit on
@@ -394,7 +597,19 @@ user's last message, not the most recently mentioned file.
       It normalises both producer versions through `ast.unparse` (comments,
       docstrings and formatting gone) and reports which drifts can actually
       move a number. Re-measured three times across 1564 commits of `main`,
-      **zero** of ~700 self-stale witnesses were safe to refresh. Source-
+      **zero** of ~700 self-stale witnesses were safe to refresh.
+
+      > **Re-measured a FOURTH time 2026-08-30 on `main` `655a80ee84d`, and the
+      > answer is unchanged where it matters: `cosmetic = 0`.** The denominator
+      > and the split both moved, so quote these rather than the figures above:
+      > **559 decided** (was 628 in the committed witness), **substantive 186 /
+      > 33.3 %**, **rewritten 309 / 55.3 %**, **unresolvable 60**,
+      > `cosmetic_import_cone_drift` **4**. So the standing advice holds on a
+      > fourth independent run — **not one self-stale witness in the corpus is
+      > safe to refresh**, and an idle pass should spend its budget on sidecars.
+      > Recorded in `computations/witness-staleness-triage.witness.json`.
+
+      Source-
       identical is necessary but not sufficient, and the two extra gates are
       the ones that bite:
 
@@ -489,6 +704,33 @@ user's last message, not the most recently mentioned file.
       type is a **guard the corpus defines**. Without all seven its verdicts are
       about itself.
 
+      **🛑 But requirement one MASKS a whole defect class, and the "2 real
+      defects" figure below cannot see it (added 2026-08-29, bean `qou-0e1t`).**
+      Setting `PYTHONPATH` is necessary for the runner to reach the corpus's
+      bare-name imports — and it is exactly what hides a script whose
+      `import _path_bridge` precedes the `sys.path` bootstrap that resolves it.
+      `_path_bridge` lives in `computations/`; a script in a cluster subdir has
+      `sys.path[0]` set to its own directory, so that import fails unless the
+      parent is already on the path. **Measured on the SAME file at the SAME
+      commit, varying only the environment:** without `PYTHONPATH`,
+      `ModuleNotFoundError: No module named '_path_bridge'`; with
+      `PYTHONPATH=computations`, 4/4 checks pass and the witness is written.
+      **Six such scripts were live on `main`** — among them
+      `qbeta_d_frame_trace_baseline_probe`, whose `gap_over_ladder_ratio =
+      92.1058` the Δ fork-pricing probe calibrates against — and none appears
+      in the "2 real defects" list, because the runner that produced that list
+      set `PYTHONPATH` by its own rule. So read that 2 as *"2 that survive a
+      PYTHONPATH-equipped runner"*, not as *"2 that a user can run"*.
+
+      The fix is at the script (move the import after the bootstrap, per
+      `_path_bridge`'s documented USAGE), and the guard is
+      [`computations/audits/path_bridge_bootstrap_audit.py`](computations/audits/path_bridge_bootstrap_audit.py),
+      which narrows by pattern but **decides by executing each candidate with
+      `PYTHONPATH` stripped**. Its own count was 28 before it was corrected to
+      6: the first pass matched only `sys.path.insert(` and missed
+      `sys.path[:0] = [...]` — 22 false positives from one unknown spelling,
+      the same detector-blindness class as everything else in this section.
+
       **The 2 real defects**, re-verified against `main` on 2026-08-24:
       `su4_1111_markov_trace_probe` (`scipy.sparse` rejects `dtype object` — an
       `mpf` reaching a sparse matrix) and `qbeta_habiro_element_probe`
@@ -557,7 +799,8 @@ user's last message, not the most recently mentioned file.
       `computations/` tree afterwards, not the one file it was looking at, or it
       leaves a dirty tree that reads as real work.
 
-      And ~49 % of the backlog is `rewritten` — the recorded `commitSha`
+      And ~49 % of the backlog is `rewritten` (**55.3 % as re-measured
+      2026-08-30**; see the fourth-run note above) — the recorded `commitSha`
       resolves to nothing. **This text previously named rebase-merge as the
       cause; that is confirmed for only 46 of 376.** Agent clones here are
       **shallow**, so a sha can be missing merely because the history was never
@@ -772,21 +1015,25 @@ ephemeral.
     - **Phase 4:** merge only after reviews resolved + the
       **verification gate** below is satisfied
 
-    > **🛑 Two of the three original gates no longer exist — do NOT
-    > block on them (recorded 2026-08-07).** An agent following the
-    > older wording waits forever on reviewers and a CI run that can
-    > never arrive:
+    > **🛑 ALL THREE original gates are gone — do NOT block on any of
+    > them (recorded 2026-08-07; Copilot row added later, heading
+    > corrected 2026-08-28).** This heading read "Two of the three"
+    > while the table beneath it and its own closing paragraph both say
+    > three, so the line a skimming agent reads contradicted the body it
+    > introduces. An agent following the older wording waits forever on
+    > reviewers and a CI run that can never arrive:
     >
     > | Original gate | Actual state |
     > |---|---|
     > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
     > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
-    > | Copilot review | **Does not arrive.** Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
+    > | Copilot review | **🛑 CORRECTED 2026-08-30 — reviews DO arrive, and are RATIONED.** Measured first-hand on `qou#6122` (~3 min) and `folio-assistant#153` (~4 min), both from `copilot-pull-request-reviewer[bot]`, both with substantive findings — and on qou#6104/#6116, where the reviews landed minutes AFTER those PRs were merged on this row's old guidance, carrying six findings including a real correctness regression. **A quota exists**: five requests across two repos in ~30 min returned *"reached their quota limit"*, so do NOT re-request after every push. The mechanism for the historical zeros is UNSETTLED (three candidates weighed in [`docs/audits/2026-08-30-copilot-review-works-again.md`](docs/audits/2026-08-30-copilot-review-works-again.md), bean `qou-gwe9` **reopened**); note `get_check_runs` still returns `total_count: 0`, so that signal does not discriminate and must not be read as "no review is coming". Superseded text follows: Measured n=5 (bean `qou-gwe9`): requested explicitly via `request_copilot_review` on #5474, #5495, #5411, #5459, #5482 — **zero** reviews every time, and `get_check_runs` returns `total_count: 0` rather than a queued `copilot-pull-request-reviewer` run, so nothing is ever enqueued. Re-requesting after a force-push does not help; the cases span new Lean, a 20-file revert and a beans-only change, so it is not file-type-conditional. |
     >
     > **🛑 So the Phase-4 gate table now has ZERO live external gates, not
     > one.** All three original gates are gone. The agent's own verification
     > is not the last gate standing — it is the *only* gate. Act accordingly:
-    > state the verification you actually ran, and do **not** wait on Copilot.
+    > state the verification you actually ran. (The "do not wait on Copilot" that
+> stood here is corrected above — reviews arrive, subject to quota.)
     > `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a
     > check run that is never created; that wait can only expire, so skip it
     > and record why (citing `qou-gwe9`) rather than burning the window.
@@ -898,6 +1145,33 @@ table, against a path-filtered trigger and against full push+PR triggers. So
 this script is not a stopgap until CI returns; it *is* the gate. Treat a skipped
 run the way you would treat a skipped CI check, and do not re-propose enabling
 the trigger without a new reason.
+
+**A warn-only commit hook now surfaces the blocking gate (2026-08-25).** The
+paragraph above was true and nothing acted on it: `core.hooksPath` was unset,
+there was no `.githooks/`, and every reference to `precision-gates.sh` in the
+tree was prose. A gate nobody invokes is documentation, and the cost is on the
+record — beans `qou-mnrd` and `qou-82ur` reached the same finding from opposite
+directions, that dirty witnesses land, get drained, and are replaced by
+different dirty witnesses, each one arriving the way the last did.
+[`scripts/precommit-precision-warn.sh`](scripts/precommit-precision-warn.sh) is
+a `PreToolUse` hook on `Bash` that runs the **raw-float64 ratchet** when a
+commit touches a witness or a `computations/` script, and prints the NEW-dirty
+list. Three properties are deliberate and should not be "improved" away:
+
+- **It warns; it never blocks.** It always exits 0. A `PreToolUse` hook exiting
+  non-zero stops the tool call, and a bare container is the *default* here —
+  `mpmath`/`numpy`/`scipy` are routinely absent on a fresh clone, exactly when a
+  blocking hook would brick every commit in the session. Warn-on-commit was the
+  owner's choice on 2026-08-25; the push-side block was offered and **declined**.
+  Do not upgrade it to blocking without asking again.
+- **It runs the ratchet only, not the family.** Measured on this corpus:
+  the ratchet is **1.8 s**, the full `precision-gates.sh` is **3 m 12 s**. A
+  hook runs *before* the tool call, so wiring the family in would add three
+  minutes to every witness-touching commit — which buys avoidance, not safety.
+  The advisory gates are deliberately not run here; `precision-gates.sh` remains
+  the full preflight and is still yours to run by hand.
+- **It is not a substitute for the preflight.** It covers one gate on the commit
+  path. Everything the QA-is-agent-owned rule asks of you is unchanged.
 
 **Never make a red run green by widening a baseline.** Fix at the producer —
 carry the value as `mpmath.mpf` from its source and serialize with
@@ -1075,7 +1349,7 @@ corpus — run the **corpus-grep checklist**:
    line will do.
 
    ```sh
-   grep -in <topic> library/INDEX.md              # 320 briefs, ~14k tokens total
+   grep -in <topic> library/INDEX.md              # ~513 briefs (527 lines); re-count, do not trust
    cat library/<doc-id>/summary.json              # ~300 tokens: is it worth opening?
    grep -rln <topic> library/<doc-id>/sections/   # the text itself
    ```
@@ -1111,8 +1385,45 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. 332 documents / 7,313 sections / 24.7 M
-   characters are searchable this way.
+   and re-deriving one. **542** document directories, holding **10,922**
+   section files, are searchable this way (this read *"332 documents /
+   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+
+   **Say which count you mean, or the next reader will "correct" you.**
+   Three numbers describe this library and they are all different:
+   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   *index rows*, because the 23 known duplicate copies deliberately get no
+   row of their own; and `summarize-library.py` prints that 518 as
+   "documents". A grep-coverage claim wants the 542; a "how many distinct
+   works do we hold" claim wants the 518. Quoting one against the other
+   reads as staleness when it is a category difference.
+
+   **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
+   (added 2026-08-30).** Some documents were ingested with their text in
+   `library/<doc-id>/ocr/page-*.txt` and only a **stub** in `sections/`, so
+   the command on the line above cannot see their mathematics at all:
+
+   ```sh
+   grep -rln <topic> library/*/ocr/     # the tier the three above miss
+   ```
+
+   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
+   of the eleven single-`sections/`-file directories hold **under 15 %** of
+   their OCR bytes in `sections/`, six of them under 3 %. The worked case is
+   the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
+   Ricca 1992, _Helicity and the Calugareanu invariant_**, whose `sections/`
+   is **1,916 bytes of JSTOR download banner** against **46,511 bytes** of
+   real text in `ocr/` (4.1 %). A `sections/` grep for *helicity* returns
+   several other documents and **not this one** — the single most on-point
+   held source for the mass/binding self-vs-mutual linking question, invisible
+   to the documented path. `1992evansberger` (*A Hierarchy of Linking
+   Integrals*, 2.2 %) is hidden the same way.
+
+   So a clean `sections/` grep is **not** evidence the library lacks a topic.
+   Run the `ocr/` tier before concluding a source is not held — the whole
+   point of path 5 is to catch a citation, and this is exactly where the
+   citations that matter have been hiding.
 
    This path exists only because the sources were sectioned into text.
    Before that they were 339 PDFs and grep could not see them, which is
@@ -1122,7 +1433,29 @@ corpus — run the **corpus-grep checklist**:
    lists that document's extracted theorems and definitions if you want
    the claims rather than the prose.
 
-Only after **all five** grep paths return empty (modulo the
+6. **The beans** — `grep -rl <topic> .beans/`. The work-plan tracker is a
+   corpus in its own right (tens of thousands of files) and it is where a
+   prior agent's *conclusion* most often sits before it reaches an audit
+   doc or a content block. It is **not** covered by paths 1–5: `.beans/`
+   is not under `docs/`, `content/`, `computations/` or `library/`, and a
+   coordination ledger is a different file.
+
+   Read `status` and the whole body, not the title. A **`completed`** bean
+   is the one that bites — it means the question was answered, and the
+   answer may be a single sentence in the body with no artifact anywhere
+   else. A **`scrapped`** bean is worth as much: it usually names the bean
+   that superseded it, which is how you find the live carrier.
+
+   History: added 2026-08-26 after one PR re-derived two results the
+   corpus already held. The second was `qou-dwsh` (2026-08-03, priority
+   high, `completed`), whose body states the conclusion the PR spent a
+   tranche proving — *"a groupoid with inequivalent fibre objects carrying
+   a 3-dim `W` whose fundamental is **not self-dual**"* — and which paths
+   1–5 cannot reach, because that sentence exists nowhere but the bean.
+   The trail to it ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh`,
+   i.e. through exactly the two statuses this note says to read.
+
+Only after **all six** grep paths return empty (modulo the
 originating file itself) may you declare the item open. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
@@ -1359,8 +1692,38 @@ possible, [PR #1805](https://github.com/litlfred/qou/pull/1805)).
 > `S_prime_qstar`. Reaching 4.7e6 would need `u = 0.0079595`. Since
 > 3.84e6 is just as impossible for a smooth real `f` as 4.6e6, the
 > **prune stands and the real-q c₃ family stays killed** — only the
-> quoted magnitude was wrong. The five other sites are audit docs and
-> `local/compute-author` §precedent-table; tracked in `qou-3nva`.
+> quoted magnitude was wrong.
+>
+> **🛑 "five other sites" was wrong by an order of magnitude, and wrong
+> about WHERE (corrected 2026-08-29, bean `qou-kt8o`).** Measured on
+> `origin/main`, excluding `.beans/`: the figure appears in **43 files on
+> 71 lines** that also name `c₃` on the same line, and in **88 files** by a
+> file-level scan that allows the figure and the `c₃` context to sit on
+> adjacent lines. Either number is ~10–20× the "five" claimed here, so do
+> not treat this figure as nearly drained.
+>
+> **The characterisation misled more than the count.** "Audit docs and
+> `local/compute-author` §precedent-table" names neither of the two places
+> that actually matter. By the tight line-level measure the largest group is
+> **`computations/qbeta` (20 files)** — live probes, producers and witness
+> `description` fields, i.e. code that *recomputes* the stale figure rather
+> than merely recording it — against 8 in `docs/audits`. And there are
+> **5 `.lean` files**, which this note does not mention at all; one of them
+> (`FaddeevModularDouble.lean`) carried the superseded `c₃ = -2.0097`
+> itself, not just the derived slope. All 5 are fixed as of #5942.
+>
+> **Both spellings are the same stale value.** `4.6e6` and `4.66e6` are
+> one figure: the secant `|-2.0693 - (-2.0097)|/1.28e-8 = 4.65958e6`. Its
+> companion `Δc₃ = 0.0596` is a third spelling. A grep for `4.6e6` alone
+> finds well under half of them.
+>
+> **Do not sweep the remainder blind.** Most survivors are dated audit docs
+> — `qou-3nva` deliberately left those as historical records of the
+> analysis, and that decision stands — or witness `description` fields,
+> which cannot be corrected without re-running their producer. Several use
+> `4.66e6` as the *input* to a refutation whose conclusion holds under
+> `3.84e6` anyway. Re-measure the specific file you are editing, and fix at
+> the producer; tracked in `qou-3nva` / `qou-kt8o`.
 
 **Caveat:** if the formalization is harder than the probe AND the probe
 is cheap and decisive, just run the probe — this rule targets
@@ -1459,10 +1822,10 @@ When working on math-affecting code or content, **trace the change to a step in 
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
->    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −8.006`) are separated in §2 and in the notation register.
+>    - **"Taylor" is UNDER-SPECIFIED, not false.** Bean `qou-f09n` (my own text) asserted that *"under the natural reading of 'Taylor' the `u²` coefficient is `−9/8`"*. That is **a** reading offered as **the** reading, and it is **retracted**. Measured symbolically: the `u²` coefficient of the **explicit-factor product** `Π_{k≥2}(1 + c_k u^k)` is exactly `c₂` — trivially, since there is no `k = 1` factor — so `c₂ = −1` **is** a Taylor coefficient of *that* series. It is `c̃₂ = c₂ − 1/8 = −9/8` only for the **full normalised model** `Φ(u)/Φ(0)`, i.e. with the cosine factor inside the series (`QOU.QBeta.normalisedQuadCoeff_eq`, sorry-free, and independent of the phase `α`). **So the fix is to say WHICH SERIES, never to delete the word.** Registry [§9i](docs/coordination/ck-dk-canonical-registry.md); the three live meanings (`c₂` / `c̃₂` / `c₂^even ≈ −7.4588`) are separated in §2 and in the notation register. **That third figure read `−8.006` until 2026-08-29 and was stale, not a different normalisation.** The producer's own upstream source of the exact rungs, `qbeta-c4even-exact-sseries.witness.json`, carries `−7.45876032789888019236780697835`, and a fresh run of `qbeta_c4even_ladder_reconstruction_probe` reproduces it byte-for-byte at BOTH pins — the `c_k^even` are exact s-series coefficients and are **anchor-independent** (only the `abs_ck_uk` products move, by ~4e-7). The downstream ladder witness had simply never been regenerated since it was first written: `−8.006` survived the convention C→D excision (`70d1ade383`) and a sweep whose own message claims it re-ran 154 producers (`119885a4c6`). Fixed in PR #6054, which regenerates that witness and pins the producer to proton.
 >    - **"PROVED" IS wrong.** The Lean is `1 − b²ℏ⁴ = 1 − (bℏ²)²`, a one-line `ring` identity: it proves only that *re-reading* the N=2 factor in the ansatz form yields `−1`. Corpus-grepped: `N2_factor` is a bare `def` with **no** theorem deriving it — every use in `QBetaCategoricalPrecisionLadder.lean` merely `unfold`s it, and its provenance ("Kashiwara `f̃_1†f̃_1`") lives in a docstring. **"Structural" is the defensible word** (no fit, no CODATA, no q₀) and is what the source block itself claims; the compression to "PROVED" happened here, not there.
 > 2. **"`N` is the truncation order chosen by target precision" does not describe the canonical producer.** `qbeta_ck_cache.py` extracts **one** rung by inverting the target; the residual at the next rung is then **exactly zero**, not merely below tolerance, so its guard fires and `c_4 … c_7` are **never computed** (`QOU.QBeta.greedy_rung_exact` / `greedy_later_rungs_vanish`, sorry-free). Whether some abstract ladder converges is a separate question this does not settle; the point is that no `N` is being *chosen* by an `ε` anywhere in the producer.
-> 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3748 %** (proton-normalised; 2.4571 % normalised by the candidate `-2`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.02020024`), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
+> 3. **The "3.47 %" is NOT stale — I checked, expecting it to be.** It is `|−2 − c₃|/2 = 3.4671 %`; the ladder witness's own `err_pct` field reports `3.3509 %`, which is the **same gap** normalised by the extracted `c₃ = −2.06934258` instead. Do **not** "fix" either number into the other. That this trap sits in the same banner as defect 1 is the point: **a quantity differing only by normalisation, mistaken for a discrepancy, is the exact error class this correction is about.** The cross-anchor swing quoted as "≈ 3 %" measures **2.3912 %** (proton-normalised; 2.4741 % normalised by the candidate `-2`) — **corrected 2026-08-31 from 2.3748 % / 2.4571 %, which were themselves on the superseded CODATA-2018 muon pin** (`qou-cds1`; `fca08de7d2` moved the pin to CODATA 2022 on 2026-08-22, and `1/u³ ≈ 1.6e6` turns a 1.451 ppb step on `m_μ/m_e` into 1.7e-4 on `c₃`). That "≈ 3 %" traces to a **superseded** muon `c_3 = -2.0097` (pre-#1422; today's is `-2.01986031` at the CODATA-2022 pin, `-2.02020024` at the CODATA-2018 one), and the corpus's `2.98 %` / `2.88 %` are that one stale gap under the two normalisations — resolved in [`qbeta_c3_crossanchor_swing_provenance_probe.py`](computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py) (3/3). Verdict unaffected. Report TIERED (`proved` / `near-match` / `fitted`), never binary wired/dropped — the four-session wire/un-wire flip-flop (#1452 ↔ #1479) came from conflating "N=3 beats 100× experimental" (true) with "c_3 = -2 is Taylor-exact" (false). **Canonical reference (read before any `c_k` wire/un-wire decision): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).** Permanent fix is the Q_β Habiro element (parallel α_EM `[2]_q·(1−h²α)` in PR #1511). **2026-05-31 c_3 SETTLED** (PR #1580 verdict audit + flip-flop history table now at 6 entries in [`docs/coordination/1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md)); Li_2^q × spectral combiner refuted as mech #7 (PR #1609); Δtr_M bar-decomposition recorded as structural observation (PR #1615) — none of these wire to production.
 >
 > **🛑 CONVENTION LABEL (2026-08-15 ruling) — every number in this banner is
 > CONVENTION-C-frame.** `c_2 = -1`, `c_3 = -2 = J_Hopf(q=1)`, the 3.47 % swing,
@@ -1635,6 +1998,49 @@ seventh fit-based ansatz for the MAGNITUDE** — the three-calibration
 discipline review will catch it. Full framing:
 [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).
 
+> **🟧 Extensive-term frontier + deuteron ruling (2026-08-29/30).** The "separate
+> super-pairwise additive extensive object" above is the arc's one real open
+> problem. It is now bounded by four sorry-free formalize-first results — the
+> *scaling* is pruned from four directions; the *coefficient/mechanism* stays
+> open (`qou-brng`). Do not re-attempt the excluded routes.
+>
+> - **Complete-graph coordination is excluded by saturation.**
+>   `QOU.Mass.CoordinationSaturation` (lean-direct sorry-free): the complete
+>   graph `M = C(A,2)` (the `z = A−1` law) gives `B/A = ε·(A−1)/2`, **unbounded**
+>   (no plateau); bounded-degree gives `B/A = ε·k/2`, constant. Observed
+>   saturation *forces* bounded degree and refutes `z = A−1` **structurally**
+>   (not merely at ⁴He). Audit:
+>   [`docs/audits/2026-08-30-coordination-saturation-formalized.md`](docs/audits/2026-08-30-coordination-saturation-formalized.md).
+> - **Linear-chain coordination is excluded by arrangement-dependence.**
+>   `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` — the chain
+>   bond sum is arrangement-invariant iff `L_pp = L_pn = L_nn`; a nucleus has no
+>   arrangement (scope-(b), bean `qou-m07y`). The saturation lemma's uniform-`ε`
+>   is exactly that order-independent (physical) regime.
+> - **Body-order recurrence depth ≥ 3 is forced**, and 3 terms cannot test it
+>   (`QOU.MassTheory.BodyOrderRecurrenceDepth`).
+> - **The connected 3-body Mayer/Ursell cumulant sign is threshold-forced and
+>   wrong against AME**, independent of the bond set
+>   (`QOU.MassTheory.MayerThreeBodySign`, bean `qou-rraz`).
+>
+> **Deuteron leg — 🟧 OWNER RULING A (2026-08-29):** the deuteron knot is the
+> canonical braid closure (trefoil / Hopf, `Vol = 0`); **the deuteron binding is
+> NOT a hyperbolic-volume term** (Bloch volume leg proved 0, PR #5242). The 6₂
+> census assignment (`Vol = 4.40`) is retired; `qou-e5jf` unblocked. Sourcing the
+> binding from the **Gram/Frobenius pairing (⟨g,g⟩) + confinement SDP** was tested
+> (`deuteron_real_sdp.py`, H₆) and is a **scope-(a) negative**: the diagonal Gram
+> SDP is degenerate and 0 of 6 off-diagonal encodings derive the binding — the
+> only non-zero result (`2.22456607`) is the AME value fed in as the constraint
+> (circular). Same intensive/extensive gap. Audits:
+> [`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`](docs/audits/2026-08-29-deuteron-knot-owner-decision.md),
+> [`docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md`](docs/audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md).
+>
+> **Open positive target (`qou-brng`):** the linking-vs-self-energy amplitude
+> assignment — why the binding multiplier is the *mutual* (coordination) linking
+> count while the mass multiplier is the *self*-linking weight `lw`. The
+> exact-`ℏ_q²` saturated-fraction value is **suspect numerology** (volume-defect
+> route refuted); do not chase it. Consolidated arc ledger:
+> [`docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md`](docs/coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md).
+
 > **🟧 GENERAL owner reversal — the Δ_λ gate is OPEN FOR ALL (2026-07-13).**
 > The owner has lifted the *direction/scope* narrowing on the Δ_λ closure:
 > any **derivation** route (geometric / substrate / categorical brane-tower /
@@ -1680,6 +2086,83 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🛑 OWNER RULING — the muon pin is CODATA 2022. The frozen value is retired.
+> RULED 2026-08-22; IMPLEMENTED 2026-08-28; re-confirmed 2026-08-30.** The
+> original wording is a sibling session's record of the owner's 2026-08-22
+> ruling: *"2022 CODATA better than 2018. A --> CODATA 2022."* It was put to the
+> owner again on 2026-08-30, against the three-values measurement below, and
+> re-confirmed — *"C."* then *"CODATA 2022 for muon"*.
+>
+> **🛑 The 2026-08-30 half of this block was written as though nothing had been
+> done yet. It had. Corrected the same day — read this before acting on the
+> paragraphs below.** The ruling was dated 2026-08-30 (it is 2026-08-22), and the
+> anchor was described as still frozen at A. `fca08de7d29` (2026-08-28, *"muon
+> anchor -> CODATA 2022 (owner ruling): derive it, stop the self-certification"*)
+> had **already migrated it**, and that commit is an ancestor of the one carrying
+> the stale description. The corpus-grep checklist would have caught it — so
+> would `git log` on the named file.
+>
+> **What the tree actually holds, measured on `main` `3a919ad14fe`:**
+>
+> - `computations/q-pinning-50-digit.witness.json` carries
+>   `1.109978595642739046681795129380001752700065561029011556974045769999095`
+>   — that is **C**, not A.
+> - `computations/audits/muon_pin_stored_vs_live_gate.py`: stored and live agree,
+>   **gap 0.0 ppb** (0.0 σ against σ(q₀) = 1.22335 ppb).
+> - `q0_anchor_consistency_audit.py`: **`Q0_FLIP` = 1**, and it is
+>   `hadron-knot-table.witness.json` alone, still carrying **A**.
+>
+> **The fix was to DERIVE, not to re-freeze**, which is why it did not repeat the
+> 2026-08-19 breakage: `q_parameter`'s ideal/muon branch now takes q from
+> `q_muon_at()` over `constants.MASS_RATIO_MU_E_STR`, so the witness records a
+> value it did not choose. Previously `q_pinning_50_digit` was listed `ideal_muon`,
+> so `q_at` was rebound *for that very producer* and it wrote back the value it
+> had just read — **the anchor certified itself.** A also disagreed by 1.4 ppb
+> with the ratio the same witness declares in its own `calibration_inputs`.
+>
+> `computations/audits/muon_pin_three_values_probe.py` establishes that **three
+> different numbers are all called "the muon q₀"**, diverging at the 13th
+> significant digit — five orders of magnitude above the framework's own 1 ppQ L1
+> target, and inside the ~11.5 ppb μ–p separation the two-pin vocabulary exists to
+> keep straight. Re-derived independently 2026-08-30 at `mp.dps = 60`, with
+> `Vol(4₁) = 2·Cl₂(π/3) = 2.02988321281930725004240510855`:
+>
+> | | `m_μ/m_e` | `q₀ = 1/(1 − √(Vol(4₁)/(m_μ/m_e)))` |
+> |---|---|---|
+> | **A** former frozen pin (retired) | *(none — see below)* | `1.1099785955573347…` |
+> | **B** CODATA 2018 | `206.7682830` | `1.10997859555418057528159407961` |
+> | **C** CODATA 2022 | `206.7682827` | `1.10997859564273904668179512938` |
+>
+> **The ruling's reason is the dataset constraint, and it is measured rather than
+> aesthetic: CAL-1, CAL-2 and CAL-3 must come from one experimental dataset.**
+> Inverting **A** through its own defining relation gives `m_μ/m_e =
+> 206.768282989315111`, which matches **neither published figure** — it sits
+> strictly between them (5.17e-11 relative from 2018, 1.40e-9 from 2022). So A is
+> not that derivation at *any* CODATA vintage and cannot be in a common dataset
+> with anything; the tempting reading *"A is just the older CODATA"* is
+> **measurably false**. Between B and C, the live table already decides:
+> `constants.py` serves `MASS_RATIO_MU_E_STR = 206.7682827  # CODATA 2022` from
+> the same `codata.py` that supplies `M_E_MEV` for CAL-1, so **C is the only
+> choice that does not also require rolling CAL-1 back**.
+>
+> **What is already done:** both the live derivation path *and* the
+> anchor-defining witness `computations/q-pinning-50-digit.witness.json` are at C
+> (`fca08de7d29`, 2026-08-28), and `cfe73b8eb5f` drained the resulting flips
+> `Q0_FLIP` 83 → 34. **Do not "migrate the anchor" — that step has run.**
+>
+> **🛑 WHAT REMAINS IS STILL NOT A BULK SWEEP, and the reason is on the record.**
+> The anchor step above was done deliberately and by derivation. Re-pinning that
+> witness *as a step in a bulk pass* is a different act, and it is what took
+> `main` red on 2026-08-19: both anchors
+> collapsed to one string, **262 correctly-stamped muon witnesses flipped to
+> `Q0_FLIP`** (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
+> including, circularly, the one that regenerates the anchor. `q0_repin_sweep.py`
+> carries an `ANCHOR_DEFINING` exclusion for exactly this; **do not remove it** and
+> do not re-pin that file as a step in a bulk pass. Note also that C is a **live**
+> derivation over a CODATA input, so unlike A it moves whenever that table is
+> updated — accepted deliberately as the price of reproducibility from a published
+> source. Migration scope and staging: bean `qou-tekx`.
+>
 > **🛑 OWNER RULING 2026-08-15 — convention D canonical (C excised); proton pin
 > canonical; colour weighting canonical.** Verbatim: *"convention D is
 > convention. excise convention C."* / *"similarly, use proton pin and color
@@ -1705,7 +2188,24 @@ Do not regress either.
 >   `main` 2026-08-16 — **7 files** returned `1/(√q + 1/√q)`, which is
 >   `√q/(q+1) = z_C` *exactly* (`0.49932…` against D's `0.61268…`).
 >
->   **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
+>   **Measured surface, 2026-08-24.** The `computations/` side is no longer
+  unmeasured: `scripts/convention-c-producer-audit.py` reports **26 actionable**
+  sites after the `regime_scanner` fix — 14 live producers, 11 probes, 1 in the
+  **generated** `qou-mass/_internal/` mirror — against 14 further sites that are
+  *deliberately* C-named comparisons and are not defects. Two cautions for
+  whoever drains it. First, the mirror site
+  (`qou-mass/src/qou_mass/_internal/_li_2_q_util.py:312`) must **not** be
+  hand-edited; its source is `computations/_li_2_q_util.py`, which carries the
+  same C at lines **302 and 312** and is load-bearing (`vol_density_*`), so
+  changing it moves real numbers. Second, the detector labels `qou-mass` a
+  **"SHIPPED PACKAGE"**, which contradicts this document's own measured row
+  above — it is **not on PyPI** (404) — so do not treat that label as a reason
+  to leave the site alone. The `content/` side was measured the same day:
+  of 12 grep matches only **5** carried live unscoped C, the other 7 being
+  correct records; 4 of the 5 are migrated and the fifth is a refutation whose
+  scope under D is being established separately.
+
+  **Status 2026-08-16, corrected 2026-08-24.** The detector now scans return
 >   forms, and those seven are migrated, so *that* spelling is closed. This then
 >   named `pyhecke/gram.py:634` (`z_mp`) as **the only return-form C site left in
 >   the tree** — stale in both coordinates by the time it was written. `z_mp` is
@@ -1717,12 +2217,163 @@ Do not regress either.
 >   **Do NOT read that as "the return-form surface is clear."** The named instance
 >   is retired; the count is not. Re-run 2026-08-24, the detector still reports
 >   **1 site in `tools/pyhecke` as "C with NO registry row (unexplained)"**, and
->   this correction did **not** identify it — so one pyhecke site remains
->   unaccounted for. **The posture does not change.** Closing one shape does not
+>   this correction did **not** identify it.
+>
+>   **IDENTIFIED AND CLOSED 2026-08-24.** It is
+>   `tools/pyhecke/python/pyhecke/regime_scanner.py:94`, inside `scan_h2_molecule`'s
+>   `v_std`: `z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))`, which is
+>   `√q/(q+1) = z_C` — unlabelled, no comparison rationale, no registry row.
+>   Migrated to `z_D = q³/(q²+1)`; the detector now reports **26** actionable
+>   sites and no `tools/pyhecke` row. The migration is behaviour-safe rather
+>   than merely believed to be: the module has **zero importers** in the repo
+>   (the only other hit is a sibling worktree's copy of itself) and **no
+>   committed witness** references `scan_h2_molecule` or `rank_drop`, so the
+>   crossings it reports change without invalidating any recorded number.
+>
+>   **The `.lean` surface has never been counted, by this or any other tool
+>   (measured 2026-08-26, bean `qou-cxjq`).**
+>   [`scripts/convention-c-producer-audit.py`](scripts/convention-c-producer-audit.py)
+>   walks the tree four times and every one is `rglob("*.py")` — lines 635, 760,
+>   785, 930. There is no `.lean` path in it. Its numbers are correct and
+>   correctly scoped; they are simply not *about* Lean, and nothing else covers
+>   Lean either. So do not read any figure in this section as an `.lean`
+>   all-clear. **Nor is there one elsewhere in this document:** the single
+>   "**0** in `.lean`/`.ts`" claim above belongs to the **Λ vs Cl₂ naming**
+>   guard (`qou-zdz5`), a different defect class — the two were conflated once,
+>   by shape rather than subject, in a bean about detector blindness.
+>
+>   Measured directly with
+>   [`scripts/lean-markov-convention-audit.py`](scripts/lean-markov-convention-audit.py)
+>   (which the producer audit structurally cannot do), the Lean
+>   Markov-parameter surface is **22 convention-C *definitions* across 18 files,
+>   under 3 spellings**, against **24** in convention D — roughly half the
+>   Markov-parameter definitions in the Lean tree. **Quote `defs`, not total
+>   sites:** the scanner reports 150 sites, but a `q³/(q²+1)` inside a proof
+>   *mentions* a convention while one inside a `def` body *defines* it, and
+>   conflating them inflates the count several-fold. **Not all 22 are defects**: the same script triages
+>   them **14 actionable / 8 deliberate**, where deliberate means the site
+>   announces itself (a `_legacy` name, an `@[deprecated]`, or a docstring saying
+>   convention-C / comparison / historical). That is evidence of *intent*, not a
+>   clean bill — a deliberate C object can still be cited as though it were D. An earlier hand-verified pass in
+>   the audit below reported 7 across 6 files and was an undercount. And **`markovZ` is five
+>   declarations spanning both conventions** — three C (`markov-trace-factorization`,
+>   `QBetaCategoricalPrecisionLadder`, `HoefsmitV21CosSymmetrization`) against two
+>   D (`MarkovBondRule`, `y-lambda-recipe-from-partition`). Same name, opposite
+>   values: `z_C(q₀) = 0.49932…` vs `z_D(q₀) = 0.61268…`. Only **3** of the 7 use
+>   the square-root-variable disguise (`u/(u²+1)` or `s/(s²+1)` with `u² = q`);
+>   the other **4 write `Real.sqrt q` in plain sight** and are trivially
+>   greppable — the surface is unscanned, not invisible-in-principle. Note also
+>   that the Tier-2 migration which replaced `Real.sqrt` with a generic
+>   `markovZ (u : R)` **did not change the convention**: it removed the square
+>   root, which was its stated goal, and left C harder to see. Table and
+>   per-site verdicts:
+>   [`docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md`](docs/audits/2026-08-26-convention-c-in-lean-and-the-markovz-overload.md).
+>
+>   **🛑 RE-MEASURED 2026-08-29 (PR #5972) — every figure in the paragraph above
+>   has moved, and one has moved in a direction worth noticing.** Run the same
+>   two scripts before quoting any of them.
+>
+>   | quantity | recorded above | measured 2026-08-29 |
+>   |---|---|---|
+>   | `.lean` convention-C **defs** | 22 across 18 files | **14** |
+>   | of those, actionable / deliberate | 14 / 8 | **0 / 14** |
+>   | `.lean` convention-D defs | 24 | **38** |
+>   | `computations/` actionable (shape audit) | 26 | **9** (7 registry-blocked on `qou-cds1`) |
+>   | `markovZ` declarations | 5 (3 C, 2 D) | **13** (3 C, 10 D) |
+>   | `content/` live unscoped C | 5 of 12 grep matches | **3** |
+>
+>   **The Lean surface reaching 0 actionable is real progress, not a detector
+>   getting weaker** — the C defs that remain all announce themselves. But
+>   `markovZ` went the OTHER way: 5 declarations became **13**, still spanning
+>   both conventions. The paragraph above names `markov-trace-factorization` and
+>   `QBetaCategoricalPrecisionLadder` as two of the three C `markovZ`; **both are
+>   now D**. The live C three are `HoefsmitV21CosSymmetrization` (the
+>   convention-neutral kernel), `EigenphaseCarrierVacuity`, and
+>   `q-beta-cos-resummation`. So a name that spans two conventions keeps
+>   accreting declarations while the convention question underneath it is being
+>   settled — the overload is a naming defect that migration does not fix, and
+>   it is tracked as bean `qou-961o` with the rename proposal and the
+>   `lean`-direct verification recipe.
+>
+>   **RESOLVED 2026-08-29 (session tender-keller).** The three C `markovZ` were
+>   renamed so bare `markovZ` now means convention D uniformly:
+>   `EigenphaseCarrierVacuity` and `q-beta-cos-resummation` → `markovZC`;
+>   `HoefsmitV21CosSymmetrization`'s convention-neutral kernel → `cosKernel`.
+>   All three are file-local (no cross-file consumers) and `lean`-direct clean;
+>   the 10 D declarations keep the `markovZ` name (one convention for the bare
+>   name — re-measured 2026-08-29: **9 bare `markovZ`, all D**).
+>
+>   **But "no collision" is wrong, and the rename is what created the new one.**
+>   `markovZC` (**upper** C) is convention C; `markovZc` (**lower** c), at
+>   `categorical-chain-convergence-mechanisms.lean:83`, is convention **D**.
+>   They differ by one letter's case and mean opposite things — `0.4993203342`
+>   vs `0.6126880371` at the proton q₀, 0.113 apart. A case-insensitive grep
+>   cannot separate them. Resolve any `markovZ*` to its definition body before
+>   reasoning about its value; the suffix is now actively misleading rather
+>   than merely absent. Bean `qou-961o` (reopened scope).
+>
+>   **RESOLVED 2026-08-29 (#6015), and the docstring was the worse half.**
+>   `markovZc` is renamed to bare `markovZ` (convention D, matching the other
+>   ten), so `markovZC` has no case twin. Underneath the collision its
+>   **docstring** read *"z = 1 / (√q + 1/√q)"* — convention C — above a body
+>   computing `q³/(q²+1)`. Name and docstring agreed with each other and both
+>   were wrong; only the body was right. Docstring corrected to the body.
+>   **Agreement between two labels is not evidence about the third thing.**
+>
+>   **And the `computations/` figure is NOT a measurement of the C surface.**
+>   26 → 9 is real drain, but both numbers count only what a shape-matcher can
+>   see. Measured by VALUE with
+>   [`scripts/convention-c-value-audit.py`](scripts/convention-c-value-audit.py)
+>   (new, PR #5972 — it evaluates each binding at two sample points instead of
+>   matching its shape), `computations/` holds **85 confirmed convention-C
+>   bindings**, of which **21 are reported by the shape audit NOWHERE** — not
+>   actionable, not deliberate, not at all. All 21 use the sqrt-variable
+>   spelling (`1/(sq + 1/sq)` or `u/(u²+1)` with the variable equal to `√q`).
+>   That is the 14th entry for the blindness taxonomy and it hides BOTH buckets
+>   at once, so draining the shape audit to zero would not end the excision.
+>   Confirmed from the other side: five of those sites were registered in
+>   `blocked_on_rederivation` on 2026-08-29 and the audit's printed count did
+>   **not** move, because it never counted them. Live per-tree value counts —
+>   `computations/` 85, `qou-mass/` 1 (the generated mirror of the deliberate
+>   `_wenzl_constants_convention_C_HISTORICAL`), `tools/` **0**, `content/` 0.
+>   Remainder tracked as `qou-t9r1`; the four sites that cannot be migrated by
+>   substituting `z_D` at all are `qou-pmkh`.
+>
+>   **The posture below still does not change**, and the remaining 26 are the
+>   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirteen** distinct detector-blind spellings, four of which were
->   found *by* detectors written to catch the previous blind spot. So: **treat
+>   catalogues **twenty-six** rows, and they split FOUR ways — only the first
+>   group is about conventions at all:
+>
+>   - **1-16** — detector-blind *spellings* of convention C.
+>   - **17-21** — the `qou-t9r1` family. These blind an *exemption* or a guard
+>     rather than a detector: a labelled two-arm comparison whose D arm is a
+>     call, a sibling scope, a derived closed form, a Lean declaration, or
+>     unreachable to an mpmath-only guard, so each is reported as a leak
+>     forever.
+>   - **23-24** — `qou-4lbh`, the Lean statement-carrier arc: a defect that is
+>     an **absent** field rather than a wrong one, and a carrier written as
+>     `def … : Prop` instead of a `class`/`structure`.
+>   - **22, 25, 26** — the NO-FLOAT64 / witness arc, and the three of them are
+>     ONE root worth naming: *the interesting text is assumed to be a `str` in
+>     the AST, at the call.* 22 read a call's operands positionally and so
+>     examined 13 % of a corpus that writes 87 % of its calls with keywords
+>     (`MEASURED: 0` against a true 56). 26 could not see a witness key written
+>     as a keyword argument, because that key is an identifier. 25 could not see
+>     a literal reaching an assertion through a **list slot** two hundred lines
+>     up. Two different audits, two days apart, same assumption.
+>
+>   Several were found *by* detectors written to catch the previous blind spot —
+>   row 26 in the output of the audit that introduced it. Quote the split, not
+>   the total, because folding the last ten into the C figure inflates exactly
+>   the number this note exists to keep honest.
+>   (This line has been stale FIVE times — *thirteen* at 15 rows, *sixteen*
+>   at 17, *eighteen* at 21, *twenty-two* at 26 — and on the fourth fix I first
+>   wrote "twenty are spellings", miscounting the very split I was adding. On
+>   the fifth, the agent adding rows 25-26 called them "the 17th and 18th"
+>   in a commit, a bean and a PR comment before re-counting. **Re-count the
+>   table; do not trust this sentence, including this parenthesis.**) So: **treat
 >   the remaining C surface as UNMEASURED rather than clear — and do not launch
 >   a corpus-wide sweep off any of these numbers.** R1 settles which convention
 >   is canonical; it does not tell you how much code still disagrees.
@@ -1911,9 +2562,15 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
-     `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
-     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
+     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
+     (−11.5 ppb) when the counts below were measured, and since
+     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
+     `1.109978595642739…`. The **counts are still the counts** — they
+     describe witnesses computed under the old anchor, which is exactly
+     the population the migration is about — but do not read the literal
+     as the live anchor. It fed ~72 producers / **870** witnesses — the
+     canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -1921,6 +2578,36 @@ muon; muon-anchor → ~4000σ on proton).
      stale-high**. A both-pin witness is either a deliberate comparison
      or a layer straddle — see the straddling hazard above; triage is
      bean `qou-cds3`.)
+
+     > **State the METHOD when you quote this number, or the next reader
+     > will "correct" it downward (added 2026-08-26).** "Carries the muon
+     > fingerprint" is ambiguous *in this corpus specifically*, because
+     > [`muon_pin_three_values_probe.py`](computations/audits/muon_pin_three_values_probe.py)
+     > establishes that **three different values are all called "the muon
+     > q₀"** — the then-canonical frozen pin `1.1099785955573347…`
+     > (**retired 2026-08-28**; C is canonical now), and the
+     > lepton-tower derivation at CODATA 2018 (`…55541805…`) and 2022
+     > (`…56427390…`). They diverge at the **13th significant digit**, so
+     > the choice of prefix length silently selects which of the three you
+     > are counting:
+     >
+     > | match on | counts | at 2026-08-16 | at 2026-08-26 |
+     > |---|---|---|---|
+     > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
+     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
+     >
+     > The **870** above is the ten-digit reading and is correct. Measured
+     > with the same script at both ends (`git ls-tree` on each revision,
+     > so the denominator moves with the tree: 2947 → 3102 tracked). The
+     > migration has genuinely run — **871 → 477 under the recorded
+     > definition** — but it has *not* fallen to ~149, and an agent
+     > measuring only the canonical literal will think it has.
+     >
+     > Recorded because that is exactly what happened on 2026-08-26: this
+     > figure was measured at 149, called "stale by 5.8×", and was one
+     > edit away from being replaced by a number answering a different
+     > question. Quote the number **with its prefix**, or re-measure and
+     > say which you used.
      These remain **valid as recorded** (they are what they say they are)
      but are **no longer the default an agent should reach for**; see
      rule 4 for the migration posture.
@@ -1949,6 +2636,35 @@ muon; muon-anchor → ~4000σ on proton).
    > > *"we want proton unless for an explicit reason (like comparison on
    > > proton vs muon results). otherwise pin proton"*
    > > *"fix all, even if not visible."*
+   >
+   > **🟧 REAFFIRMED AND SHARPENED 2026-08-30, for the `qou-p77d` tranche
+   > specifically.** The 32 q-dependent producers of `qou-p77d` had been held
+   > as "an owner decision, 32 times". They are not. The owner ruled, in these
+   > words:
+   >
+   > > *"it should be proton unless it is an explicit comparison / discussion
+   > > on CAL 123 math ideal or so."*
+   >
+   > This is the 2026-08-15 directive restated, with the exception set made
+   > explicit. **Proton is the default; there are exactly two exceptions**, and
+   > a producer qualifies only if it can be shown to be one of them:
+   >
+   > - **(E1) An explicit proton-vs-muon comparison** — the producer's PURPOSE
+   >   is to measure the difference between the two pins (the μ–p substrate
+   >   tension). `mu_substrate_tension_audit_100dps` is the type case. Such a
+   >   producer needs BOTH pins and belongs under `physical_proton` with a
+   >   per-process override, per constraint 3 below.
+   > - **(E2) The ideal CAL-1/2/3 mathematical layer** — the producer is
+   >   *about* the canonical calibration triple as mathematics (CAL-2 = 𝔇_β
+   >   with proxy `m_μ/m_e`), not about evaluating an observable. The muon pin
+   >   is what that layer MEANS, so pinning it to proton would not migrate the
+   >   producer, it would misstate the calibration. `q_pinning_50_digit` is the
+   >   type case and is anchor-DEFINING besides (constraint 1).
+   >
+   > **The burden is on the exception, not on the default.** A producer is
+   > proton unless someone can name which of E1/E2 it is and why. "It has
+   > always been muon", "its witness says muon", and "it is in the
+   > `ideal_muon` list" are NOT reasons — that list is what is being migrated.
    >
    > It is recorded **here** because the gate above asks for exactly that
    > and a chat transcript does not satisfy it. PR #5049 held the bulk
@@ -2004,6 +2720,43 @@ muon; muon-anchor → ~4000σ on proton).
    - **Never mix.** If you touch a producer that consumes a muon-built
      cache, move the *whole* quantity to proton rather than leaving one
      input on each layer (see the straddling hazard above).
+   - **Do NOT do it by emptying `ideal_muon` in the manifest.** The
+     tempting one-line version of this migration is to move every stem
+     from `ideal_muon` to `physical_proton` in
+     [`computations/q0_anchor_manifest.json`](computations/q0_anchor_manifest.json)
+     and declare the end state reached. **That is not a migration, it is a
+     disabling.** `q_parameter.py` selects the anchor by
+     `if _stem in _man.get("ideal_muon", [])`, so an empty `ideal_muon`
+     means no producer ever resolves to the muon anchor again — and the
+     anti-corruption guard that hard-fails when the muon anchor cannot be
+     established (`"Refusing to fall back to proton silently"`) can no
+     longer fire for any of them, because none of them ask for it. The
+     relabel also decouples the declaration from reality across every
+     listed producer at once: every witness they have already emitted was
+     computed at the muon pin and stays that way, now labelled proton.
+     Proposed in PR #5049 and deliberately NOT merged (#5315).
+     **And the list does not end at zero.** Measured 2026-08-24: three
+     producers refuse a proton run *by design* — `atomic_tr_m_mpfr_50dps`
+     (dual-layer, emits one witness per layer),
+     `he4_stage2_ranking_seminormal_xcheck` (asserts the muon prefix off
+     the anchor-defining witness), and `cross_check_trM_1ppb` ("L1
+     cross-check must run under the MUON q0 pin") — several more hold the
+     muon value as a deliberate reference, and `q_pinning_50_digit`
+     defines the anchor. A run that drove `ideal_muon` to zero would be a
+     bug, not a completed migration.
+   - **Measured cost of getting this wrong, 2026-08-19.** The sweep ran
+     producer-by-producer, as it should — and still took main RED, because
+     it regenerated `computations/q-pinning-50-digit.witness.json` at the
+     proton pin. That witness is not a *consumer* of the muon anchor, it
+     **is** the anchor: `witness._q0_value_for_anchor("muon")` reads
+     `derived_50_digit.q` out of it. Both anchors collapsed to the same
+     string, 262 correctly-stamped muon witnesses flipped to `Q0_FLIP`
+     (`Q0_OK` 654 → 392), and every `ideal_muon` producer hard-failed —
+     including, circularly, the one that would regenerate the anchor. Fixed
+     in `2e4745448d` by restoring the witness and adding an
+     `ANCHOR_DEFINING` exclusion list to `q0_repin_sweep.py`. The guard did
+     its job; what was missing was an exclusion list. Read that commit
+     before touching this sweep.
    - **Say which pin you used.** Any new witness must record its q₀ so a
      later reader can tell which layer it belongs to without inferring it
      from a call site.
@@ -2868,8 +3621,52 @@ export interface AuthorNote {
 }
 ```
 
-`BlockBase.authorNotes?: AuthorNote[]` — every block kind accepts it
-(builders pass through via `Omit<XBlock, "kind">`).
+`BlockBase.authorNotes?: AuthorNote[]`.
+
+> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
+> silence (measured 2026-08-30).** This line read *"every block kind accepts
+> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
+> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
+> declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
+> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
+> note written on one of those blocks validates clean and **vanishes**.
+>
+> **Six authored fields are being dropped in this corpus right now**, and two
+> of them are substantive:
+>
+> | block | field | what is lost |
+> |---|---|---|
+> | `braids-and-knots/hecke-log-decomposition-table-data` | `authorNotes` | multi-paragraph caveat recording that the table has **no source block** and why the dangling `uses[]` was dropped rather than guessed |
+> | `nuclear-interactions/q-beta-form-a-n1-symbolic-table-data` | `authorNotes` | — |
+> | `observations/fine-structure-data` | `authorNotes` | — |
+> | `appendix-surreals/millennium-bounds-via-surreals-intro` | `authorNotes` | — |
+> | `appendix-transfer-matrices/tm-interaction-completeness` | `authorNotes` | — |
+> | `appendix-knot-periodic-table/knot-periodic-table` | `computation` | the block's link to its producer |
+>
+> **The wider hazard is not `authorNotes`.** Those same four kinds also drop
+> **`defines`** and (all but `prose`) **`cites`**. No block hits those today,
+> but §4c *mandates* `defines` for every glossary term, so the first `prose`
+> or `table` block to register one will have it silently discarded and the
+> glossary gate will not fire. `cites` dropping means bibliography extraction
+> would silently miss those kinds.
+>
+> **A second class, same symptom, different cause.** The validator also
+> reports five *invented* field names no schema declares anywhere —
+> `is_mathematics` (×3), `probe`, `consumers`. Those are authoring errors
+> rather than a schema gap, and they are dropped just as quietly.
+>
+> **You only see any of this if the validator is current.** These warnings
+> come from an "Unknown field" check that a stale `folio-assistant` clone does
+> not have; the same tree reported **1** issue before the clone was
+> fast-forwarded and **14** after. Run
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> check the clone is not behind before trusting a clean validate.
+>
+> **The fix is in `folio-assistant`, not here** — those four schemas should
+> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
+> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
+> be accepted and lost.
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable
@@ -3486,6 +4283,7 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+trap 'rm -f "$TGZ"' EXIT INT TERM   # ~1.6G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
@@ -3493,6 +4291,16 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
   && tar xzf "$TGZ" -C "$ROOT" \
   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
   && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+
+# 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
+# `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
+# ~1.6G, and until 2026-08-28 nothing deleted it — not the recipe, not a reaper.
+# Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
+# disk thirteen days later and was a direct contributor to this container
+# reaching **92K free**, at which point the Bash harness cannot write its own
+# output capture and EVERY command fails, including the `rm` that would fix it.
+# Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
+# used, because the real limit is a per-session quota near 38G.
 
 # 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
 # stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
@@ -3676,7 +4484,8 @@ editor skill suggests the `lean_setup` MCP tool rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
-| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`; renamed from `uploads/` 2026-08-15. |
+| `library/` | **Ingested sources**, one directory per document: `library/<doc-id>/` holds the PDF, `structure.json` (metadata + TOC + section index), `sections/*.md` (**greppable** section text — corpus-grep path 5), and `candidates.json` (extracted claims, *proposals only*). `<doc-id>` is derived from the page-1 arXiv stamp (`arxiv-0706.2213v3`) or the slugified filename, and is the join key to `content/bib-qa-verifications.json`. Produced by folio-assistant's `scripts/pdf-structure.py` + `extract-candidates.py`. |
+| `uploads/` | **Incoming queue** — raw PDFs as dropped, not yet ingested. `uploads/` and `library/` are **two stages of one pipeline, not the same directory renamed**: a file sits in `uploads/` until it is processed into `library/<doc-id>/`, and `uploads/` stays live for the next drop. **Corpus-grep path 5 searches `library/` only**, so anything still in `uploads/` is invisible to it — an un-ingested paper will not be found by any "has the corpus got this?" check, which is exactly how a held source gets re-derived. `scripts/migrate-uploads-to-library.py` moves one across. (Corrected 2026-08-25 on owner instruction: this row previously read *"renamed from `uploads/` 2026-08-15"*, which described the one-time migration of the then-existing backlog as though it had retired the incoming path. It had not, and reading it that way makes an agent treat a live queue as a dead alias.) |
 | `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
 | `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |

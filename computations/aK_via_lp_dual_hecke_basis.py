@@ -78,7 +78,24 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 # `float(mp.mpf(...))` cast was THE textbook L1 precision destroyer
 # flagged by the `compute_no_mpf_to_float_cast` critical QA criterion
 # (author 2026-06-09: "float64 is EVIL").
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q = mp.mpf(_Q50_PROTON)
 H = Q - mp.mpf(1) / Q
 
 # Add tools/pyhecke to sys.path
@@ -249,8 +266,13 @@ def main() -> int:
         "factorisation per audit §7d (H_6 = 720, H_9 = 360K elements)."
     )
     w.set_content_block("prop:mass-coefficient-shadow-price")
-    w.add_parameter("q0", repr(Q))
-    w.add_parameter("h", repr(H))
+    # `mp.nstr`, not `repr`: repr(mpf) serialises as the STRING "mpf('1.1099...')",
+    # which is not a number and which `_q0_anchor_from_payload` cannot read. With
+    # no payload evidence and an unlisted stem, neither staleness test could fire
+    # and the witness inherited the SUPERSEDED muon value A from its previous run
+    # while computing at C -- a Q0_FLIP no re-run could clear (bean qou-1c4y).
+    w.add_parameter("q0", mp.nstr(Q, 50))
+    w.add_parameter("h", mp.nstr(H, 50))
     w.add_parameter("basis_size", 6)
     w.add_parameter("hecke_level", 3)
     w.add_parameter("lp_method", "scipy linprog highs (f64)")
@@ -287,7 +309,17 @@ def main() -> int:
             unit="absolute", source="primal_obj = dual_obj",
         )
 
-    out = w.save()
+    # DECLARED muon with the value actually used. Q is read from
+    # q-pinning-50-digit.witness.json's `derived_50_digit.q` (line 81), i.e. the
+    # canonical MUON anchor, so an auto-resolved stamp would say PROTON (the stem
+    # is unlisted) over muon arithmetic.
+    # PROTON, matching `Q` above. The qou-cds3 migration (2026-08-29) switched
+    # the VALUE to the proton pin -- see the banner at the top of this file --
+    # and left this label reading "muon", so the witness stamped a muon anchor
+    # over a proton value: one of the two live Q0_FLIPs. Re-running under the
+    # muon anchor would be the WRONG fix; the value is correct and deliberate,
+    # the label was the leftover.
+    out = w.save({"q0Anchor": "proton", "q0Value": mp.nstr(Q, 50)})
     print(f"Witness emitted: {out.name}")
     print()
     for r in rows:

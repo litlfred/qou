@@ -133,7 +133,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-InterfaceKind = Literal["positive", "negative", "averaged"]
+InterfaceKind = Literal["positive", "negative", "averaged", "averaged_weighted"]
 PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weighted"]
 
 
@@ -243,6 +243,8 @@ def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
 def canonical_interface_kinds(
     Z: int, N: int,
     pn_convention: PnConvention = "bring_color_weighted",
+    *,
+    weighted_labels: bool = False,
 ) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
@@ -306,6 +308,21 @@ def canonical_interface_kinds(
         # consumers (witness metadata, symbolic Habiro extraction
         # using chi_lambda_braid marshalling) do not crash on the
         # new default.
+        #
+        # THAT DEFAULT IS A TRAP FOR ANY CONSUMER THAT APPLIES ITS OWN
+        # FACTOR. Asking for the canonical convention and then mapping the
+        # returned labels through a three-kind {positive, negative,
+        # averaged} dispatch yields z - h/2 — the colour-BLIND factor —
+        # while the caller believes it is canonical. It cannot be caught by
+        # an equality test against "averaged_weighted", because that label
+        # is never emitted; it fails by returning a slightly smaller number
+        # rather than by raising. Measured live in
+        # `probes/binding_closed_form_C_vs_D_probe.py::interface_factor`.
+        #
+        # `weighted_labels=True` opts into the full vocabulary, emitting
+        # "averaged_weighted" for the p-n interface so such a consumer either
+        # handles the weighting or raises on an unknown kind. It is opt-in
+        # precisely so the label-only consumers above keep working.
         A = Z + N
         if A < 2:
             return []
@@ -318,7 +335,8 @@ def canonical_interface_kinds(
             elif nuc == "n" and next_nuc == "n":
                 kinds_weighted.append("negative")
             else:  # p-n: asymmetric averaging (δ-aware factor applied in closed_form_ratio)
-                kinds_weighted.append("averaged")
+                kinds_weighted.append(
+                    "averaged_weighted" if weighted_labels else "averaged")
         return kinds_weighted
     A = Z + N
     if A < 2:
@@ -438,23 +456,53 @@ def compute_tau_M_nucleon_H3(
     (last two via thin wrappers; the verification script now imports).
 
     Compute path:
-      1. Marshal _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain to (sign, gen)
-         via the standard `canonical_braid_marshalling` helper.
-      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions).
+      1. Take the _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain as (c, d, gen),
+         carrying `d` through unchanged.
+      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions),
+         with χ via the d-preserving `chi_monotone_transfer.chi_all_lambda`.
 
     At mpfr-50-dps this is cheap (sub-second per nucleon, no H_n>3
     machinery involved).
+
+    🛑 **This used to marshal through `marshal_to_chi_lambda_braid` and was
+    WRONG by 15.3 % (proton) / 27.3 % (neutron)** — fixed 2026-08-26, bean
+    `qou-qu2w`. That marshaller "emits signs and drops `d` entirely" (its own
+    docstring) and maps `averaged → sign=+1`. Each nucleon chain carries TWO
+    `averaged` crossings — intra-nucleon, nothing to do with a p-n interface.
+    Censused with `canonical_braid_crossings.classify_crossing`, which is the
+    module that owns the ctype vocabulary (this file deliberately does not
+    re-list it; its own `InterfaceKind` is a separate, interface-level
+    vocabulary — see `interface_factor`):
+
+        proton   6 positive, 2 averaged, 3 inverse
+        neutron  5 positive, 2 averaged, 4 inverse
+
+    so the flattening replaced that crossing's Markov factor `z − h/2` by `z`
+    at two sites per nucleon. The marshaller's defence — "equally lossy for
+    both variants, which is why the collapse is correct *here*" — is about
+    `averaged` vs `averaged_weighted` and does not license `averaged → sigma`.
+
+    **This was not a convention question, which is why it survived every
+    convention audit.** Both paths are convention D, and A=1 has no p-n
+    interface, so no `pn_convention` argument reaches this site — this
+    function correctly takes none. Anything keyed on `pn_convention` is
+    structurally blind here.
+
+    The fixed values reproduce `habiro-coefficients-atomic.witness.json`
+    (τ_p = 1.14575969245730087, τ_n = 0.987743688115809572) to ~1e-50; the
+    old ones missed it by the factors above, and squared into the 2.157×
+    disagreement between `habiro-coefficients-helium-4` and
+    `atomic-tr-m-helium4-canonical`. Measured in
+    `probes/nucleon_h3_marshalling_divergence_probe.py`.
     """
-    import mpmath as mp_local  # noqa: F401 (already imported above)
     # Imports kept local to avoid top-level cycle if a consumer of
     # closed_form_tau_M is itself imported by hecke_characters.
-    from hecke_characters import chi_lambda_braid, partitions_of
+    from hecke_characters import partitions_of
     from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
-    from canonical_braid_marshalling import marshal_to_chi_lambda_braid
+    from chi_monotone_transfer import chi_all_lambda
     from hecke_core import (
         _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
     )
-    from q_parameter import Q as Q0
 
     if nucleon == "p":
         g0, g1 = _PROTON_G0, _PROTON_G1
@@ -463,30 +511,29 @@ def compute_tau_M_nucleon_H3(
     else:
         raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
 
-    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
-    chain_with_gens = (
-        [(c, d, 0) for c, d in g0]
-        + [(c, d, 1) for c, d in g1]
-    )
-    word = marshal_to_chi_lambda_braid(chain_with_gens, h_val)
-    q_str = mp.nstr(q_val, dps, strip_zeros=False)
-    # Per Copilot PR #1080 review: dps is authoritative — derive the
-    # chi_lambda_braid precision tag from it instead of hardcoding
-    # "mpfr_50dps", so a caller requesting (say) dps=100 gets a fully
-    # 100-dps pipeline.  chi_lambda_braid requires dps >= 50 in mpfr
-    # mode; enforce that bound here.
     if dps < 50:
         raise ValueError(
             f"compute_tau_M_nucleon_H3 requires dps >= 50 (got {dps}); "
-            f"chi_lambda_braid mpfr mode is calibrated at 50+ dps."
+            f"the character path is calibrated at 50+ dps."
         )
-    precision_tag = f"mpfr_{dps}dps"
+
+    # The chain is (c, d, gen) and MONOTONE (all gen 0, then all gen 1),
+    # which is what `chi_all_lambda` requires. `d` is carried through as
+    # mpf: it IS the crossing, and dropping it is the defect this function
+    # used to have (see the note above).
+    word = [(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0] + \
+           [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1]
+
+    # `q=q_val` explicitly: the trace and the representation are then built
+    # at ONE q. The previous implementation classified crossing signs against
+    # the module-level `q_parameter.Q` while tracing at the caller's `q_val`
+    # — a pin straddle that was harmless only because every caller happened
+    # to pass the same value.
+    chi = chi_all_lambda(word, 3, dps=dps, q=mp.mpf(q_val))
     total = mp.mpf(0)
     for lam in partitions_of(3):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word, q_value=q_str,
-                                precision=precision_tag)
-        total += y * mp.mpf(str(chi))
+        total += y * chi.get(tuple(lam), mp.mpf(0))
     return total
 
 

@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T11:58:56.645965+00:00",
+  "commitSha": "df62a43ad30812f0cf85a49e9a154925dc6f9abf",
+  "assertions": [
+    {
+      "name": "fitted_pairing_is_far_too_weak",
+      "computed": "25.1062210875225117175981988101456215679576930890515536778815",
+      "expected": "25",
+      "passed": true,
+      "tolerance": "20",
+      "unit": "ratio physical/fitted pairing energy at A=2",
+      "source": "fitted 0.208-0.338 MeV against the SEMF 8.485 MeV; no positive exponent rescues it, since pairing is largest at small A where the fitted term is smallest"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "pairing-delta-overdetermination",
+  "scriptFile": "pairing_delta_overdetermination_probe.py",
+  "scriptHash": "6d006c11d0b5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pairing_delta_overdetermination_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pairing_delta_overdetermination_probe.py"
+  },
+  "description": "delta is over-determined: fixed by the A<=4 cumulants AND independently measurable as the odd-even staggering. The two disagree by 25-40x at A=2 (fitted 0.21-0.34 MeV vs SEMF 8.49 MeV), and no exponent rescues it since pairing is largest where the fitted term is smallest. Refutes pairing as the SOLE quantitative mechanism; the derived SIGN is untouched.",
+  "data": {
+    "determination_1_cumulants": {
+      "raw_isospin_average": {
+        "delta": "0.589010763596699656134393652261963473613919190744321235281721",
+        "energy_at_A2": "0.208246752565546387933706649034061009648927553307623114542449"
+      },
+      "coulomb_corrected": {
+        "delta": "0.955938367480070896807759398602961942624737914214630591732002",
+        "energy_at_A2": "0.337975251020777974713354887218341560951735383095040640532589"
+      }
+    },
+    "determination_2_staggering": {
+      "n_triples": 51,
+      "median_abs_D3": "1.80355210000000000000000000000000000000000000000000000000000",
+      "semf_energy_at_A2": "8.48528137423857029281013234525818847141803125226168843906008",
+      "restricted_to": "A >= 8, to exclude shell-closure jumps"
+    },
+    "disagreement": {
+      "raw_isospin_average": "40.7462842503044485098637759907827646152578604300595264851690",
+      "coulomb_corrected": "25.1062210875225117175981988101456215679576930890515536778815"
+    },
+    "measurement_artifact_removed": {
+      "contaminated_figure": "median of |D3| * A^1.5 over ALL A gives 88 MeV and a 92-150x ratio",
+      "why_wrong": "the low-A entries (A=4 -> 85, A=5 -> 90, A=6 -> 119) are SHELL-CLOSURE jumps, not pairing, and dominate the median",
+      "corrected_to": "restrict to A >= 8 and compare pairing ENERGIES; 25-40x",
+      "headline_moved_by": "~4x when the artifact was removed",
+      "earlier_slip": "a first pass printed NO staggering rows at all, from a sign filter (if d3 > 0) of mine that dropped every entry; recorded so the absence is not read as absence of signal"
+    },
+    "verdict": {
+      "sign_result_untouched": true,
+      "sign_why": "pairing forces b3 > 0 from the parities for EVERY delta; that argument never uses delta's value",
+      "magnitude_route_refuted": true,
+      "magnitude_why": "the pairing term reproducing b3 and b4 is 25-40x too weak to be the physical nuclear pairing force",
+      "scope": "(a) -- refutes pairing as the SOLE quantitative mechanism, not its presence in a multi-term closure",
+      "delta_derived": false
+    }
+  }
+}

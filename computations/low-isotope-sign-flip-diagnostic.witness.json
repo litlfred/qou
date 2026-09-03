@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:16:01.913022+00:00",
-  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
+  "computedAt": "2026-08-30T07:11:48.251597+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "diagnostic_emitted_for_all_isotopes_with_predictions",
-      "computed": 5,
-      "expected": 5,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "unit": "rows",
@@ -18,8 +18,8 @@
   "durationMs": 4,
   "computation": "low-isotope-sign-flip-diagnostic",
   "scriptFile": "low_isotope_sign_flip_diagnostic.py",
-  "scriptHash": "b5dcefa9b59f",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "34a96c31ff55",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,10 +31,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -45,8 +45,8 @@
   "description": "Per-isotope diagnostic correlating B_E (or mass) error against inter-nucleon channel counts (pp / pn / nn) and the signed h-weight sum.  Tests whether the +2.89 % residual is uniform (PR #1063 single-knot VolDensity refinement framing) or whether channel-assignment effects drive sign-flips across the low-isotope sequence.  KLR-positivity (observables ≥ 0) is checked separately; sign-flips in PREDICTION error are not a KLR violation per se (the underlying tr_M values remain positive) but they DO indicate weighting miscalibration.",
   "parameters": {
     "input_witness": "low-isotope-mass-table.witness.json",
-    "q_0_at_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-    "h_q0": "0.20906032199559368",
+    "q_0_at_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "h_q0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "channel_d_coefficients": "pp:0, pn:-h/2, nn:-h (per isotope_record_schema.py CrossingType: SIGMA=(1,0), AVERAGED=(1,-h/2), SIGMA_INV=(1,-h))"
   },
   "data": {
@@ -56,108 +56,108 @@
         "N": 0,
         "A": 1,
         "atom_label": "p",
-        "err_pct": -2.851767032995154e-10,
-        "err_MeV": -2.675733412615955e-09,
+        "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
+        "err_MeV": "-0.000000002675682487897574901580810546875",
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 0,
         "N": 1,
         "A": 1,
         "atom_label": "n",
-        "err_pct": 8.775678797490492e-08,
-        "err_MeV": 8.245324352174066e-07,
+        "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
+        "err_MeV": "0.0004711279811646768939681351184844970703125",
         "prediction_type": "mass",
         "channels_pp": 0,
         "channels_pn": 0,
         "channels_nn": 0,
         "n_inter_total": 0,
-        "signed_h_weight": 0.0
+        "signed_h_weight": "0.0"
       },
       {
         "Z": 1,
         "N": 1,
         "A": 2,
         "atom_label": "²H",
-        "err_pct": 1.0903067242833393,
-        "err_MeV": 0.024254594864734358,
+        "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
+        "err_MeV": "0.0242545979013090647629504720728859696833657096508468932095738",
         "prediction_type": "binding_energy",
         "channels_pp": 0,
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 1,
-        "signed_h_weight": -0.10453016099779684
+        "signed_h_weight": "-0.1045301493978196577154231065648374719298787476315315391276073481708389"
       },
       {
         "Z": 1,
         "N": 2,
         "A": 3,
         "atom_label": "³H",
-        "err_pct": -0.15560163384943174,
-        "err_MeV": -0.013197813466979014,
+        "err_pct": "-0.15560149902991727428132779731255509298844034946271135383209",
+        "err_MeV": "-0.0131978020318625602331372384219999999999999999999949801205468",
         "prediction_type": "binding_energy",
         "channels_pp": 0,
         "channels_pn": 1,
         "channels_nn": 1,
         "n_inter_total": 2,
-        "signed_h_weight": -0.31359048299339054
+        "signed_h_weight": "-0.3135904481934589731462693196945124157896362428945946173828220445125168"
       },
       {
         "Z": 2,
         "N": 1,
         "A": 3,
         "atom_label": "³He",
-        "err_pct": -2.9686548792542626,
-        "err_MeV": -0.2291220102290401,
+        "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
+        "err_MeV": "-0.229122000116779350476516653049055569510095138635922789742849",
         "prediction_type": "binding_energy",
         "channels_pp": 1,
         "channels_pn": 1,
         "channels_nn": 0,
         "n_inter_total": 2,
-        "signed_h_weight": -0.10453016099779684
+        "signed_h_weight": "-0.1045301493978196577154231065648374719298787476315315391276073481708389"
       }
     ],
     "linear_fit_err_pct_vs_n_inter": {
-      "slope": -0.7810641501438265,
-      "intercept_pct": 0.3742742098740777,
-      "R_squared": 0.26528719463905365
+      "slope": "-0.7810765975394945447491329901617671243357281907360429548426583845805233",
+      "intercept_pct": "0.3742967488228924844497236888893935538781641832594207288811590922449419",
+      "R_squared": "0.2652944812197065394440946509926375860363483685828766583837015970373011"
     },
     "linear_fit_err_pct_vs_signed_h_weight": {
-      "slope": 0.496193877122594,
-      "intercept_pct": -0.35492271440800294,
-      "R_squared": 0.0017547699041416728
+      "slope": "0.4962733124490630220642022263143564530525338721467569320808587213738262",
+      "intercept_pct": "-0.3549043252241506684008624786831069107049438105370996616880353692818992",
+      "R_squared": "0.001755323664814371212330776706436980268798858336873637913838476698317553"
     },
     "klr_positivity_check": {
       "trace_level_violations": [],
       "prediction_error_sign_flips": [
         {
           "atom": "p",
-          "err_pct": -2.851767032995154e-10,
+          "err_pct": "-0.000000000285171275799438004559808144017787678295044432823505734577907",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
           "atom": "n",
-          "err_pct": 8.775678797490492e-08,
+          "err_pct": "0.0000501431800450786280633454702979165566281610067571108001092729",
           "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
         },
         {
           "atom": "²H",
-          "err_pct": 1.0903067242833393,
+          "err_pct": "1.09030686078522027184223477246422109997741176013763533360993",
           "interpretation": "OVER-prediction (err > 0) → extra positive contributions OR under-weighted negative channels"
         },
         {
           "atom": "³H",
-          "err_pct": -0.15560163384943174,
+          "err_pct": "-0.155601499029917274281327797312555092988440349462711353832090",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         },
         {
           "atom": "³He",
-          "err_pct": -2.9686548792542626,
+          "err_pct": "-2.96865474823318710188657882242402363181563193076974778756194",
           "interpretation": "UNDER-prediction (err < 0) → missing positive contributions OR over-weighted negative channels"
         }
       ],
@@ -168,25 +168,25 @@
     "upstream_witness_hashes": [
       {
         "path": "low-isotope-mass-table.witness.json",
-        "sha256": "1ffe5632f51a7950050662003877a9c8dbf5670dce94651ed344e9f315c4b6ef",
-        "size_bytes": 23102,
-        "commitSha": "708ce844cfd851e99c92b08ea367a889d64ebc6d",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-15T21:36:26.010824+00:00"
+        "sha256": "11f30408b68f13ec5620c9d5d88d138ebb482b75aa0f34d659f49fcc8026ae83",
+        "size_bytes": 24666,
+        "commitSha": "9305d6b8f7b81283bc671e845325fec348bc9fbd",
+        "scriptCommitSha": "08f590f4e9f6863a2460bad9a25a2bea20b9c924",
+        "computedAt": "2026-08-28T19:05:57.942242+00:00"
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
   "caveats": [
     "This diagnostic is purely empirical/statistical — it correlates observed prediction error against structural channel counts to surface miscalibration patterns.  It does NOT introduce any new calibration or fit.  A high R² indicates WHERE the miscalibration lives (channel weights vs VolDensity refinement); the FIX must still come from a categorical derivation, not from this regression."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

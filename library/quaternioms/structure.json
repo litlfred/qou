@@ -1,0 +1,784 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "quaternioms",
+ "source": {
+  "file": "quaternioms.pdf",
+  "sha256": "becedcbc858611dd5ff2f0e020829bed340ee4510739e990568df01009279cfd",
+  "bytes": 622854,
+  "pages": 41,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.3390/quantum7040055",
+  "title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+  "authors_raw": "Quaternionic and Octonionic",
+  "title_lines": [
+   "3.01.3"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 9.55.0",
+   "CreationDate": "D:20251201012635+01'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+   "Author": "Johan Heriberto Rúa Muñoz, Jorge Eduardo Mahecha Gómez and Santiago Pineda Montoya"
+  },
+  "title_prev": "3.01.3"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Extended Related Work",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction: Bridging Theory and Experiment—Additional Details",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Materials and Methods",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Standard Quantum Computation over C",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Normed Division Algebras",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quaternionic and Octonionic Preliminaries",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Structure of Octonions and the Fano Plane",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Geometric and Group-Theoretic Side Notes",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quaternionic Formalism",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Octonionic Formalism",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Hybrid Architectures and Embeddings—Additional Details",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The Quaternionic-to-Complex Embedding Protocol in Practice",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Simulating Octonionic Dynamics via Associative Decomposition",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Mitigation Palette: Constructions and Workflows",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Cayley–Dickson Product",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Associative Subalgebras and Confinement",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Octonionic Model: Formal Obstructions and Limits",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Complexity Landscape and Feasibility",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Computational Equivalence and Circuit Simplification—Elaboration",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Theoretical Equivalence to Complex Quantum Circuits",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Resource Analysis and the Potential for Circuit Simplification",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Emerging Applications and Future Directions—Elaboration",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Hypercomplex Quantum Machine Learning",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Quaternion-to-Complex Embedding and Proof Details",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Explicit Embedding H-3.45muM2(C)",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Complexity Overhead—Proof-LEVEL Details",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Gate Overhead from Associativity Management",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "State-Space Overhead: The Cost of Complex Embedding",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Path-Ordered Evolution in O",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Magnus-like Expansion",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Strategy 1: Restriction to Associative Subalgebras—Additional Details",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Operator Ordering and Emergent Non-Local Effects",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "The Breakdown of Energy Conservation: A Formal Derivation",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "The Principle of Associative Confinement",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Implementing Gates in an Associative Subspace",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Seven-Factor Decomposition and Decoupling Sequences",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Seven-Factor Algebraic Synthesis",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "Associator-Suppressing Dynamical Decoupling",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6404,
+   "n_words": 893
+  },
+  {
+   "id": "sec-001-extended-related-work",
+   "number": null,
+   "title": "Extended Related Work",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 503,
+   "n_words": 67
+  },
+  {
+   "id": "sec-002-introduction-bridging-theory-and-experimentaddit",
+   "number": null,
+   "title": "Introduction: Bridging Theory and Experiment—Additional Details",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2839,
+   "n_words": 438
+  },
+  {
+   "id": "sec-003-materials-and-methods",
+   "number": null,
+   "title": "Materials and Methods",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-standard-quantum-computation-over-c",
+   "number": null,
+   "title": "Standard Quantum Computation over C",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1579,
+   "n_words": 307
+  },
+  {
+   "id": "sec-005-normed-division-algebras",
+   "number": null,
+   "title": "Normed Division Algebras",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1637,
+   "n_words": 310
+  },
+  {
+   "id": "sec-006-quaternionic-and-octonionic-preliminaries",
+   "number": null,
+   "title": "Quaternionic and Octonionic Preliminaries",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3200,
+   "n_words": 537
+  },
+  {
+   "id": "sec-007-structure-of-octonions-and-the-fano-plane",
+   "number": null,
+   "title": "Structure of Octonions and the Fano Plane",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 629,
+   "n_words": 112
+  },
+  {
+   "id": "sec-008-geometric-and-group-theoretic-side-notes",
+   "number": null,
+   "title": "Geometric and Group-Theoretic Side Notes",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 896,
+   "n_words": 138
+  },
+  {
+   "id": "sec-009-quaternionic-formalism",
+   "number": null,
+   "title": "Quaternionic Formalism",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4258,
+   "n_words": 693
+  },
+  {
+   "id": "sec-010-octonionic-formalism",
+   "number": null,
+   "title": "Octonionic Formalism",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5728,
+   "n_words": 862
+  },
+  {
+   "id": "sec-011-hybrid-architectures-and-embeddingsadditional-de",
+   "number": null,
+   "title": "Hybrid Architectures and Embeddings—Additional Details",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1269,
+   "n_words": 162
+  },
+  {
+   "id": "sec-012-the-quaternionic-to-complex-embedding-protocol-i",
+   "number": null,
+   "title": "The Quaternionic-to-Complex Embedding Protocol in Practice",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 6381,
+   "n_words": 1153
+  },
+  {
+   "id": "sec-013-simulating-octonionic-dynamics-via-associative-d",
+   "number": null,
+   "title": "Simulating Octonionic Dynamics via Associative Decomposition",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1384,
+   "n_words": 207
+  },
+  {
+   "id": "sec-014-cayleydickson-product",
+   "number": null,
+   "title": "Cayley–Dickson Product",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3492,
+   "n_words": 522
+  },
+  {
+   "id": "sec-015-results",
+   "number": null,
+   "title": "Results",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 948,
+   "n_words": 137
+  },
+  {
+   "id": "sec-016-quaternionic-model-structural-universality-and-s",
+   "number": null,
+   "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3183,
+   "n_words": 472
+  },
+  {
+   "id": "sec-017-octonionic-model-formal-obstructions-and-limits",
+   "number": null,
+   "title": "Octonionic Model: Formal Obstructions and Limits",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2318,
+   "n_words": 338
+  },
+  {
+   "id": "sec-018-mitigation-strategies-correctness-guarantees-and",
+   "number": null,
+   "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3636,
+   "n_words": 491
+  },
+  {
+   "id": "sec-019-complexity-landscape-and-feasibility",
+   "number": null,
+   "title": "Complexity Landscape and Feasibility",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1800,
+   "n_words": 253
+  },
+  {
+   "id": "sec-020-computational-equivalence-and-circuit-simplifica",
+   "number": null,
+   "title": "Computational Equivalence and Circuit Simplification—Elaboration",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 964,
+   "n_words": 136
+  },
+  {
+   "id": "sec-021-theoretical-equivalence-to-complex-quantum-circu",
+   "number": null,
+   "title": "Theoretical Equivalence to Complex Quantum Circuits",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3450,
+   "n_words": 603
+  },
+  {
+   "id": "sec-022-resource-analysis-and-the-potential-for-circuit",
+   "number": null,
+   "title": "Resource Analysis and the Potential for Circuit Simplification",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4226,
+   "n_words": 626
+  },
+  {
+   "id": "sec-023-emerging-applications-and-future-directionselabo",
+   "number": null,
+   "title": "Emerging Applications and Future Directions—Elaboration",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 512,
+   "n_words": 68
+  },
+  {
+   "id": "sec-024-quantum-simulation-with-algebraic-symmetries-su2",
+   "number": null,
+   "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 7896,
+   "n_words": 1086
+  },
+  {
+   "id": "sec-025-hypercomplex-quantum-machine-learning",
+   "number": null,
+   "title": "Hypercomplex Quantum Machine Learning",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 2515,
+   "n_words": 351
+  },
+  {
+   "id": "sec-026-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1238,
+   "n_words": 157
+  },
+  {
+   "id": "sec-027-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 857,
+   "n_words": 111
+  },
+  {
+   "id": "sec-028-quaternion-to-complex-embedding-and-proof-detail",
+   "number": null,
+   "title": "Quaternion-to-Complex Embedding and Proof Details",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1766,
+   "n_words": 372
+  },
+  {
+   "id": "sec-029-complexity-overheadproof-level-details",
+   "number": null,
+   "title": "Complexity Overhead—Proof-LEVEL Details",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1096,
+   "n_words": 165
+  },
+  {
+   "id": "sec-030-synthesis-of-contributions-and-answers-to-resear",
+   "number": null,
+   "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 12227,
+   "n_words": 1626
+  },
+  {
+   "id": "sec-031-gate-overhead-from-associativity-management",
+   "number": null,
+   "title": "Gate Overhead from Associativity Management",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3267,
+   "n_words": 505
+  },
+  {
+   "id": "sec-032-state-space-overhead-the-cost-of-complex-embeddi",
+   "number": null,
+   "title": "State-Space Overhead: The Cost of Complex Embedding",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 2862,
+   "n_words": 489
+  },
+  {
+   "id": "sec-033-path-ordered-propagators-and-magnus-expansion-wi",
+   "number": null,
+   "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2466,
+   "n_words": 404
+  },
+  {
+   "id": "sec-034-the-non-associative-hamiltonian-and-its-conseque",
+   "number": null,
+   "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 856,
+   "n_words": 132
+  },
+  {
+   "id": "sec-035-operator-ordering-and-emergent-non-local-effects",
+   "number": null,
+   "title": "Operator Ordering and Emergent Non-Local Effects",
+   "level": 4,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4838,
+   "n_words": 745
+  },
+  {
+   "id": "sec-036-the-breakdown-of-energy-conservation-a-formal-de",
+   "number": null,
+   "title": "The Breakdown of Energy Conservation: A Formal Derivation",
+   "level": 4,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 6269,
+   "n_words": 983
+  },
+  {
+   "id": "sec-037-implementing-gates-in-an-associative-subspace",
+   "number": null,
+   "title": "Implementing Gates in an Associative Subspace",
+   "level": 4,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 3470,
+   "n_words": 597
+  },
+  {
+   "id": "sec-038-seven-factor-decomposition-and-decoupling-sequen",
+   "number": null,
+   "title": "Seven-Factor Decomposition and Decoupling Sequences",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 692,
+   "n_words": 116
+  },
+  {
+   "id": "sec-039-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 15492,
+   "n_words": 2366
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 49,
+  "sections": 40,
+  "chars_total": 129043
+ }
+}

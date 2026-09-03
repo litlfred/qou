@@ -8,7 +8,7 @@ In the surreal lift, the inner integrand at $s = t$ evaluates to $1/0^2 = \omega
 
 **$c_q$ at $q = 1$.** The speed of light $c_q = 1/(q-1)$ at $q = 1 + \varepsilon$ is exactly $\omega \in \mathbf{No}$. The classical-limit divergence "$c_q \to \infty$ as $q \to 1$" becomes the literal identity $c_q\big|_{q = 1 + \varepsilon} = \omega$.
 
-**Vacuum normalisation.** The empty-link Markov trace evaluates to $\mathrm{tr}_M(1) = 1/(\sqrt{q} + 1/\sqrt{q})$. At $q = 1 + \varepsilon$, this is $1/2 + O(\varepsilon)$. In the unnormalised convention $\mathrm{tr}_M(1) = 1$, normalisation factors become $1/0$. The named-surreal calculus makes these distinctions explicit.
+**Vacuum normalisation.** The empty-link Markov trace evaluates to $\mathrm{tr}_M(1) = z = q^3/(q^2+1)$. At $q = 1 + \varepsilon$, this is $1/2 + \varepsilon + O(\varepsilon^2)$. In the unnormalised convention $\mathrm{tr}_M(1) = 1$, normalisation factors become $1/0$. The named-surreal calculus makes these distinctions explicit.
 
 The blow-up calculus respects the birthday grading. The counterterm $C(\omega)$ has the same birthday as $X(\omega)$. Their difference lives at a strictly lower birthday. The standard part collapses it to $\mathbb{R}$. This provides a birthday-graded refinement of BPHZ subtraction, where each subtraction reduces the birthday by a controlled ordinal amount.
 

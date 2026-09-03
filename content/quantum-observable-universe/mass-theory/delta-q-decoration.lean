@@ -12,7 +12,8 @@ import Mathlib.LinearAlgebra.Matrix.Trace
 
 namespace QOU.BraidKnot
 
-/-- The q-dimension decoration map δ_q : H_n(q) → R^|Par(n)| sending an
+/-! ## Status of this formalisation
+The q-dimension decoration map δ_q : H_n(q) → R^|Par(n)| sending an
 algebra element to the tuple of its q-characters in each irreducible
 representation V_λ for λ ⊢ n.
 

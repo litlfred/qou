@@ -221,9 +221,13 @@ pub fn evaluate_all_blocks_letters_capped(
                     partition: shape.clone(),
                     d_lambda: dim,
                     matrix_at_q_0_sym_eigvals: Vec::new(),
-                    min_eigenvalue: 0.0,
-                    max_eigenvalue: 0.0,
-                    psd_symmetric_part: false,
+                    // NOT evaluated -- say so. Emitting 0.0/0.0/false here
+                    // asserted a spectrum and a non-PSD verdict about a matrix
+                    // that was never formed (bean qou-ia6f).
+                    min_eigenvalue: None,
+                    max_eigenvalue: None,
+                    psd_symmetric_part: None,
+                    skipped_dim_cap: true,
                 });
             }
             let mut prod = vec![vec![0.0f64; dim]; dim];
@@ -265,9 +269,10 @@ pub fn evaluate_all_blocks_letters_capped(
                 partition: shape.clone(),
                 d_lambda: dim,
                 matrix_at_q_0_sym_eigvals: eigs.clone(),
-                min_eigenvalue: min_eig,
-                max_eigenvalue: max_eig,
-                psd_symmetric_part: min_eig >= -1e-9,
+                min_eigenvalue: Some(min_eig),
+                max_eigenvalue: Some(max_eig),
+                psd_symmetric_part: Some(min_eig >= -1e-9),
+                skipped_dim_cap: false,
             })
         })
         .collect();
@@ -326,9 +331,10 @@ pub fn evaluate_all_blocks(n: usize, braid_word: &[i32], q: f64) -> Vec<Wedderbu
             partition: shape.clone(),
             d_lambda: dim,
             matrix_at_q_0_sym_eigvals: eigs.clone(),
-            min_eigenvalue: min_eig,
-            max_eigenvalue: max_eig,
-            psd_symmetric_part: min_eig >= -1e-9,
+            min_eigenvalue: Some(min_eig),
+            max_eigenvalue: Some(max_eig),
+            psd_symmetric_part: Some(min_eig >= -1e-9),
+            skipped_dim_cap: false,
         });
     }
     out

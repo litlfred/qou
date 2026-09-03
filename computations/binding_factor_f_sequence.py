@@ -176,11 +176,11 @@ def main() -> int:
         "fittable (forbidden)."))
     wb.add_assertion(
         "closed_form_matches_symbolic_dtr_known4",
-        computed=float(max_val_err), expected=0.0, tolerance=1e-5,
+        computed=max_val_err, expected=0.0, tolerance=1e-5,
         source="closed-form Δtr vs symbolic binding-canonical (D/T/³He/⁴He)")
     wb.add_assertion(
         "he4_magic_peak_above_neighbours",
-        computed=float(1 if (f_he4 > f_3 and f_he4 > f_5li) else 0),
+        computed=1 if (f_he4 > f_3 and f_he4 > f_5li) else 0,
         expected=1.0, tolerance=0.0,
         source=f"f(⁴He)={float(f_he4):.3f} > f(A=3)≈{float(f_3):.3f} and "
                f"> f(5Li)={float(f_5li):.3f} (doubly-magic peak)")

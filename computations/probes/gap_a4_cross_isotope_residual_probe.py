@@ -62,7 +62,8 @@ from codata_constants import (  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.
@@ -319,7 +320,7 @@ def main() -> int:
         # was misleading (suggested fit, not mismatch); renamed per
         # Copilot review on PR #1883.
         "negative_control_He3_under_R5_mismatch_24pct",
-        computed=float(he3_R5_rel),
+        computed=he3_R5_rel,
         # ³He has Z·N = 2 so R5 gives sqrt([3]_q/[2]_q)^2 = [3]_q/[2]_q
         # ≈ 1.514, not 1.222 → expected to be off by ~24 %
         expected=0.24,

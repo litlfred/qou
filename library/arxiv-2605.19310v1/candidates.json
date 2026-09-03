@@ -1,0 +1,112 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2605.19310v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "047d492babc63d2f5412bcb8a996ad1ac6091f976bbd7d31f8b76d2599811d99",
+  "file": "2605.19310v1.pdf"
+ },
+ "provenance": {
+  "title": "A FOURIER-FREE DENSITY-INCREMENT PROOF OF ROTH\u2019S THEOREM MARK LEWKO",
+  "authors": null,
+  "arxiv": {
+   "id": "2605.19310",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "19 May 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "theorem": 1,
+   "lemma": 2,
+   "proposition": 2,
+   "corollary": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": "Roth [ 8]",
+   "statement": "For every \u03b1> 0, if N is sufficiently large, then every",
+   "section_file": "sections/sec-000-2-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "Let g1,g 2,g 3 :Z m \u2192R be bounded in absolute value by an",
+   "section_file": "sections/sec-000-2-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": "Dense modular progression",
+   "statement": "Assume E(f)\u2265\u03b2m 3, with0 <",
+   "section_file": "sections/sec-002-6-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "9",
+   "name": "Density increment",
+   "statement": "Let A\u2282 [N]have density \u03b1, and",
+   "section_file": "sections/sec-002-6-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "9",
+   "name": null,
+   "statement": ", then rescaling the progression it gives back to an interval, pro-",
+   "section_file": "sections/sec-003-8-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "10",
+   "name": null,
+   "statement": "There is an absolute constantC >0such that",
+   "section_file": "sections/sec-003-8-mark-lewko.md",
+   "section_title": "MARK LEWKO",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

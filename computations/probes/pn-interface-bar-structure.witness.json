@@ -1,0 +1,174 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-26T04:13:47.896861+00:00",
+  "commitSha": "de9f24d781bceb9d659d0929be8d353a5360e465",
+  "assertions": [
+    {
+      "name": "f_nn_is_bar_conjugate_of_f_pp",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "strict_pn_is_the_bar_symmetriser",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "strict_pn_is_bar_even",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "canonical_pn_is_the_delta_tilted_mean",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "tilt_weights_sum_to_one",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "canonical_pn_is_NOT_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "bar(f) - f = (q-1)^5 (q+1)^3 (q^2+1) / (12 q^5)"
+    },
+    {
+      "name": "canonical_bar_defect_at_q0",
+      "computed": "0.000016684949257652145568",
+      "expected": "0.0000166849",
+      "passed": true,
+      "tolerance": "1e-9"
+    },
+    {
+      "name": "delta_is_bar_mixed",
+      "computed": "-q**2",
+      "expected": "-q**2",
+      "passed": true,
+      "source": "bar(delta) = -q^2 . delta"
+    },
+    {
+      "name": "bar_condition_is_eps_bar_odd",
+      "computed": "[-epsilon]",
+      "expected": "[-epsilon]",
+      "passed": true,
+      "source": "vanishes iff bar(eps) = -eps"
+    },
+    {
+      "name": "delta_misses_bar_oddness_by_exactly_q_squared",
+      "computed": "-q**2",
+      "expected": "-q**2",
+      "passed": true
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_two_q_over_2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_z_times_bar_z",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "repair_q_delta_E_restores_bar_invariance_h_squared",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eps = q.delta.E/4, E bar-even"
+    },
+    {
+      "name": "bar_parity_of_hbar_q_squared",
+      "computed": "q**2",
+      "expected": "q**2",
+      "passed": true
+    },
+    {
+      "name": "bar_parity_of_h_q",
+      "computed": "-1",
+      "expected": "-1",
+      "passed": true
+    },
+    {
+      "name": "bar_parity_of_two_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1519,
+  "computation": "pn-interface-bar-structure",
+  "scriptFile": "pn_interface_bar_structure_probe.py",
+  "scriptHash": "542045a2e03b",
+  "scriptCommitSha": "84056a59aeacc86f2cb8c58b9e0fc91839a2d1d1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pn_interface_bar_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pn_interface_bar_structure_probe.py"
+  },
+  "description": "Exact bar structure of the three inter-nucleon interface factors: f_pp and f_nn are bar-conjugates, the strict_averaged p-n factor is their bar-symmetriser (exactly bar-even), and the canonical colour-weighted p-n factor is their delta-tilted mean and is NOT bar-invariant -- contradicting a prose claim in prop:pn-averaging-uniqueness that both candidates satisfy its hypothesis (a).",
+  "contentBlock": "prop:pn-averaging-uniqueness",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0Anchor": "proton"
+  },
+  "data": {
+    "repair": {
+      "condition": "bar(eps) = -eps  (offset must be bar-ODD, not bar-even)",
+      "obstruction": "bar(delta) = -q^2 . delta -- misses by exactly q^2",
+      "obstruction_localises_to": "hbar_q^2, the two quanta of substrate Planck action; h_q is already bar-odd and [2]_q is bar-even",
+      "family": "eps = q.delta.E/4 for ANY bar-even E",
+      "note": "bar-invariance is NECESSARY but NOT SUFFICIENT -- it leaves a bar-even function E free, so it does not pin the weighting. No particular E is claimed here."
+    },
+    "factors": {
+      "f_pp": "q**3/(q**2 + 1)",
+      "f_nn": "q**3/(q**2 + 1) - q + 1/q",
+      "f_pn_strict_averaged": "q**3/(q**2 + 1) - q/2 + 1/(2*q)",
+      "f_pn_bring_color_weighted": "q**3/(q**2 + 1) - (q - 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)",
+      "tilt_weight_p": "(6*q**4 + (q - 1)**2*(q**4 - 1))/(12*q**4)",
+      "tilt_weight_n": "(6*q**4 + (1 - q**4)*(q - 1)**2)/(12*q**4)",
+      "canonical_bar_defect": "(q - 1)**5*(q + 1)**3*(q**2 + 1)/(12*q**5)"
+    }
+  },
+  "caveats": [
+    "SCOPE (a) in the AGENTS.md sense: this is a scope-limited negative about ONE stated property of ONE convention. It does not say the colour weighting is wrong, and it does not say the owner's 2026-08-15 R3 ruling should be revisited. It says the uniqueness proposition's hypothesis (a) is not satisfied by the colour-weighted candidate, so that proposition does not cover it.",
+    "The Lean of prop:pn-averaging-uniqueness is UNAFFECTED. It is the conditional-class pattern and proves only the implication. Do not read this probe as finding a defect in pn_averaging_unique."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

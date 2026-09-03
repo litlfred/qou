@@ -101,7 +101,7 @@ def _candidates_at(q):
         ("(d2) 1 - ℏ_q²/24", 1 - hbar_q ** 2 / 24),
         ("(e1) (3q²-1)/(2q²)",
          (3 * q ** 2 - 1) / (2 * q ** 2)),
-        ("(f1) 1 + m_e/m_p", 1 + mp.mpf(repr(M_E_MEV)) / mp.mpf(repr(M_P_MEV))),
+        ("(f1) 1 + m_e/m_p", 1 + mp.mpf(M_E_MEV) / mp.mpf(M_P_MEV)),
         ("(f2) 1 - α_em·ℏ_q", 1 - alpha_em * hbar_q),
         # New cross-anchor focused candidates: q-fibre-structure ones
         ("(g1) 1 + ℏ_q²·[2]_q/2", 1 + hbar_q ** 2 * q2 / 2),
@@ -114,9 +114,9 @@ def _candidates_at(q):
 
 def _residual_at(q, factor):
     """Compute (X_pred - delta_target)/delta_target at given q."""
-    M_e = mp.mpf(repr(M_E_MEV))
-    M_p = mp.mpf(repr(M_P_MEV))
-    Q_n = mp.mpf(repr(Q_NEUTRON_MEV))
+    M_e = mp.mpf(M_E_MEV)
+    M_p = mp.mpf(M_P_MEV)
+    Q_n = mp.mpf(Q_NEUTRON_MEV)
     M_n = M_p + M_e + Q_n
     M_N_avg = (M_p + M_n) / 2
     delta_target = (M_n - M_p) / M_N_avg
@@ -236,8 +236,8 @@ def main() -> int:
 
     builder.add_assertion(
         name="cross_anchor_candidates_evaluated",
-        computed=len(results),
-        expected=len(results),
+        computed=len(results) > 0,
+        expected=True,
         tolerance=0.0,
         source="Cross-anchor enumeration",
     )

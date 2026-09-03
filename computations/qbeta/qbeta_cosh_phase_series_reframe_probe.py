@@ -215,7 +215,7 @@ def main() -> int:
     # Invariants
     wb.add_assertion(
         "phi1_equals_sqrt2_from_proved_c2",
-        computed=float(phi1_p), expected=float(SQRT2), tolerance=1e-12,
+        computed=phi1_p, expected=SQRT2, tolerance=1e-12,
         source="Φ_1 = √(−2·c_2) with c_2 = −1 (Lean-proved) ⇒ Φ_1 = √2 exactly.",
     )
     wb.add_assertion(

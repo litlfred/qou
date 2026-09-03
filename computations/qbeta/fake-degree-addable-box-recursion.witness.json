@@ -1,0 +1,66 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T09:56:19.919994+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
+  "assertions": [
+    {
+      "name": "main_identity_star",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum f^lam q^-kappa qDim = [n]_q!"
+    },
+    {
+      "name": "recursion_R",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "normalizedSum(n+1)=normalizedSum(n)"
+    },
+    {
+      "name": "addable_box_hook_identity_B",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Sum_addable q^-c(b) qDim(mu+b)/qDim(mu) = [|mu|+1]_q, all mu |mu|<=6"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "fake-degree-addable-box-recursion",
+  "scriptFile": "fake_degree_addable_box_recursion_probe.py",
+  "scriptHash": "25b2f934abc8",
+  "scriptCommitSha": "bfa481d67fb167305ba4edada16d4f751f9c4d53",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/fake_degree_addable_box_recursion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/fake_degree_addable_box_recursion_probe.py"
+  },
+  "description": "bean qou-x4zl: the addable-box hook identity (B) Sum_{b addable to mu} q^-c(b) qDim(mu+b)/qDim(mu) = [|mu|+1]_q, verified exact for all mu with |mu|<=6. With SYT branching (A) it proves the one-step recursion normalizedSum(n+1)=normalizedSum(n), which (with base) closes the general-n fake-degree identity by induction (QOU.MathlibExt.MolienFakeDegreeInduction skeleton, sorry-free). (B) needs NO coinvariant algebra, no maj, no q-RSK -- a more elementary third route than the two named in MolienFakeDegreeGeneralN. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-21-molien-mining-the-correct-q-analogue-of-rsk.md",
+  "data": {
+    "identity_B": "Sum_{b addable to mu} q^{-c(b)} qDim(mu+b)/qDim(mu) = [|mu|+1]_q",
+    "verified_up_to_n": 6,
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's entire import cone. Fake-degree / addable-box recursion is combinatorics on partitions; no substrate evaluation enters it."
+}

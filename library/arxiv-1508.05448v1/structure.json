@@ -1,0 +1,528 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1508.05448v1",
+ "source": {
+  "file": "1508.05448v1.pdf",
+  "sha256": "57d2c717d8ec74d053bcaf861cffbb60a826bfea80af7eb89639207e98292c7a",
+  "bytes": 839569,
+  "pages": 134,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1508.05448",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "22 Aug 2015"
+  },
+  "doi": null,
+  "title": "Concentration of Measure Techniques and Applications",
+  "authors_raw": "Meg Walters",
+  "title_lines": [
+   "Concentration of Measure Techniques and",
+   "Applications"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20150825002720Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Biographical Sketch",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Contributors and Funding Sources",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "List of Figures",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 10,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Concentration of Measure Results and other Necessary Background",
+   "page": 14,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Talagrand's Gaussian Concentration of Measure Inequality",
+   "page": 14,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Talagrand's Isoperimetric Inequality",
+   "page": 19,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+   "page": 28,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The Euler-Maclaurin Formula",
+   "page": 34,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Random Operator Compressions",
+   "page": 36,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Background for First Result",
+   "page": 36,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Kac's Walk on SO(n)",
+   "page": 37,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Main Result",
+   "page": 41,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Kac's Model Coupled to a Thermostat",
+   "page": 44,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+   "page": 47,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Remarks",
+   "page": 55,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
+   "page": 57,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Mixed Matrix Moments",
+   "page": 60,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Expected Overlap Functions",
+   "page": 65,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Formulas for the Overlap Functions",
+   "page": 67,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Moments and Constraints on the Overlap Functions",
+   "page": 74,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
+   "page": 83,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Invariance of the Perturbation Series PN(r)",
+   "page": 89,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Summary and Outlook",
+   "page": 93,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 1,
+   "title": "Mallows Random Permutations",
+   "page": 96,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "A q-Stirling's Formula",
+   "page": 96,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The Mallows Measure",
+   "page": 104,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Fisher-Yates Algorithm",
+   "page": 105,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Length of the Longest Increasing Subsequence",
+   "page": 110,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Patience Sorting",
+   "page": 112,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "Four Square Problem",
+   "page": 115,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "Conclusion and Outlook",
+   "page": 122,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "A Python code: Simulating a Mallows Random Permutation",
+   "page": 123,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 127,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-biographical-sketch",
+   "number": null,
+   "title": "Biographical Sketch",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1013,
+   "n_words": 163
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 590,
+   "n_words": 100
+  },
+  {
+   "id": "sec-002-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1348,
+   "n_words": 211
+  },
+  {
+   "id": "sec-003-contributors-and-funding-sources",
+   "number": null,
+   "title": "Contributors and Funding Sources",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 3387,
+   "n_words": 879
+  },
+  {
+   "id": "sec-004-list-of-figures",
+   "number": null,
+   "title": "List of Figures",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 775,
+   "n_words": 203
+  },
+  {
+   "id": "sec-005-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 34,
+   "n_chars": 27626,
+   "n_words": 5260
+  },
+  {
+   "id": "sec-006-24-the-euler-maclaurin-formula",
+   "number": "2.4",
+   "title": "The Euler-Maclaurin Formula",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 1657,
+   "n_words": 293
+  },
+  {
+   "id": "sec-007-31-background-for-first-result",
+   "number": "3.1",
+   "title": "Background for First Result",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 41,
+   "n_chars": 7156,
+   "n_words": 1298
+  },
+  {
+   "id": "sec-008-33-main-result",
+   "number": "3.3",
+   "title": "Main Result",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 47,
+   "n_chars": 6221,
+   "n_words": 1249
+  },
+  {
+   "id": "sec-009-35-an-additional-application-the-length-of-the-l",
+   "number": "3.5",
+   "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 55,
+   "n_chars": 10171,
+   "n_words": 2061
+  },
+  {
+   "id": "sec-010-36-remarks",
+   "number": "3.6",
+   "title": "Remarks",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 59,
+   "n_chars": 5752,
+   "n_words": 948
+  },
+  {
+   "id": "sec-011-41-mixed-matrix-moments",
+   "number": "4.1",
+   "title": "Mixed Matrix Moments",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 65,
+   "n_chars": 8374,
+   "n_words": 1433
+  },
+  {
+   "id": "sec-012-42-the-expected-overlap-functions",
+   "number": "4.2",
+   "title": "The Expected Overlap Functions",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 67,
+   "n_chars": 2488,
+   "n_words": 494
+  },
+  {
+   "id": "sec-013-43-formulas-for-the-overlap-functions",
+   "number": "4.3",
+   "title": "Formulas for the Overlap Functions",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 93,
+   "n_chars": 33727,
+   "n_words": 6472
+  },
+  {
+   "id": "sec-014-47-summary-and-outlook",
+   "number": "4.7",
+   "title": "Summary and Outlook",
+   "level": 2,
+   "page_start": 93,
+   "page_end": 96,
+   "n_chars": 4265,
+   "n_words": 676
+  },
+  {
+   "id": "sec-015-5-mallows-random-permutations",
+   "number": "5",
+   "title": "Mallows Random Permutations",
+   "level": 1,
+   "page_start": 96,
+   "page_end": 104,
+   "n_chars": 6785,
+   "n_words": 1509
+  },
+  {
+   "id": "sec-016-52-the-mallows-measure",
+   "number": "5.2",
+   "title": "The Mallows Measure",
+   "level": 2,
+   "page_start": 104,
+   "page_end": 105,
+   "n_chars": 584,
+   "n_words": 110
+  },
+  {
+   "id": "sec-017-53-fisher-yates-algorithm",
+   "number": "5.3",
+   "title": "Fisher-Yates Algorithm",
+   "level": 2,
+   "page_start": 105,
+   "page_end": 110,
+   "n_chars": 6176,
+   "n_words": 1259
+  },
+  {
+   "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+   "number": "5.4",
+   "title": "Length of the Longest Increasing Subsequence",
+   "level": 2,
+   "page_start": 110,
+   "page_end": 112,
+   "n_chars": 2838,
+   "n_words": 490
+  },
+  {
+   "id": "sec-019-55-patience-sorting",
+   "number": "5.5",
+   "title": "Patience Sorting",
+   "level": 2,
+   "page_start": 112,
+   "page_end": 115,
+   "n_chars": 4025,
+   "n_words": 785
+  },
+  {
+   "id": "sec-020-56-four-square-problem",
+   "number": "5.6",
+   "title": "Four Square Problem",
+   "level": 2,
+   "page_start": 115,
+   "page_end": 122,
+   "n_chars": 6129,
+   "n_words": 1039
+  },
+  {
+   "id": "sec-021-57-conclusion-and-outlook",
+   "number": "5.7",
+   "title": "Conclusion and Outlook",
+   "level": 2,
+   "page_start": 122,
+   "page_end": 127,
+   "n_chars": 4437,
+   "n_words": 1498
+  },
+  {
+   "id": "sec-022-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 127,
+   "page_end": 134,
+   "n_chars": 10986,
+   "n_words": 1520
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "sections": 23,
+  "chars_total": 156510
+ }
+}

@@ -109,13 +109,15 @@ set_compute_dps(_DPS)
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)  # noqa: E402
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
-from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
+from experimental_constants import M_P_MEV, M_N_MEV, M_E_MEV  # noqa: E402
 
 # ── Substrate parameter and Markov parameter (AGENTS.md notation) ──
 Q0 = Q_MP    # was f64 roundtrip — now genuine 50 dps via vol_4_1_at
 QI = Q_INV_MP
-# z = 1/(q^{1/2} + q^{-1/2}) — the Markov parameter
-z_m = mp.mpf(1) / (mp.sqrt(Q0) + mp.sqrt(QI))
+# z = q³/(q²+1) — the Markov parameter, **convention D** (owner ruling
+# 2026-08-15, reaffirmed 2026-08-23).  Was convention C,
+# z = 1/(q^{1/2} + q^{-1/2}) = √q/(q+1), excised.
+z_m = Q0**3 / (Q0**2 + 1)
 
 # ── Wedderburn weights at n=3 ──────────────────────────────────────
 # From [wedderburn-trace-identity.md]: q-deformed dimensions at n=3
@@ -215,6 +217,88 @@ def V_std(chain):
         b_n = a * cm + b * dm
         a, b = a_n, b_n
     return z_m * a + b
+
+
+# ══════════════════════════════════════════════════════════════════
+# CANONICAL Wedderburn mass formula  (B1/B2, thm:wedderburn-mass-formula)
+# ══════════════════════════════════════════════════════════════════
+#
+#   m(Z,N) = Z·m_p + N·m_n + Z·m_e + alpha·( Phi_1 - 2[3]_q·Phi_2 + h_A^2·Phi_3 )
+#
+#   Phi_1 = sum_i ln| z·(M_i)_12 + (M_i)_22 |      standard block
+#   Phi_2 = sum_i ln| det M_i |                    sym x alt
+#   Phi_3 = sum_i ln| lambda_i^sym / lambda_i^alt| sym / alt   <- CHIRALITY
+#
+#   alpha = m_e · 8G  (G = Catalan).  [3]_q = q^2 + 1 + q^-2.
+#
+# THIS alpha IS NOT alpha*. They share a glyph and are different objects:
+# alpha here is DERIVED (m_e is CAL-1, G is a pure constant); alpha* was the
+# free blend parameter of the superseded 2-term frame, fitted by root-finding
+# against CODATA M_p and M_n. The canonical formula has NO free parameter.
+# Conflating them is the overloaded-symbol trap AGENTS.md names as a recurring
+# root cause, and it is why "add the chirality term" looked already-done: the
+# file had an alt CHANNEL (W_ALT·lam_alt), which is not the h_A^2·Phi_3 TERM.
+
+ALPHA_CANONICAL = mp.mpf(str(M_E_MEV)) * 8 * mp.catalan
+BRACKET_3Q = Q0**2 + 1 + Q0**-2          # [3]_q
+H_A = Q0 - QI                            # h_A = q - q^-1
+
+
+def _det_M(chain):
+    """det of the 2x2 transfer matrix for a chain word.
+
+    Each (c,d) factor acts as T = [[c·h + d, c], [c, d]] in the (a,b)
+    recursion V_std uses, so det T = (c·h + d)·d - c^2 and det M is the
+    product over factors.
+    """
+    dv = mp.mpf(1)
+    for c, d in chain:
+        cm, dm = mp.mpf(c), mp.mpf(d)
+        dv *= (cm * H_A + dm) * dm - cm * cm
+    return dv
+
+
+def Phi_1(chains):
+    """sum_i ln| z·(M_i)_12 + (M_i)_22 | — standard (Markov-weighted) block.
+
+    V_std already returns exactly z·a + b, i.e. z·(M)_12 + (M)_22.
+    """
+    return mp.fsum(mp.log(abs(V_std(ch))) for ch in chains)
+
+
+def Phi_2(chains):
+    """sum_i ln| det M_i | — the sym x alt block."""
+    return mp.fsum(mp.log(abs(_det_M(ch))) for ch in chains)
+
+
+def Phi_3(chains):
+    """sum_i ln| lambda_i^sym / lambda_i^alt | — THE CHIRALITY INVARIANT.
+
+    This is the term the 2-term blend dropped and that alpha* was
+    absorbing. It is S-odd (prop:frobenius-s-classification), which is why
+    it vanishes under the Frobenius symmetrisation the 2-term frame applied
+    — and why no closed form for alpha* exists in that frame
+    (canonicalization-review.md §3.1).
+
+    Carries h_A^2 in the formula, so it vanishes as q -> 1
+    (cor:commutative-chirality-vanishes): h_A -> 0 while Phi_3 stays finite.
+    """
+    return mp.fsum(mp.log(abs(lam_sym(ch) / lam_alt(ch))) for ch in chains)
+
+
+def wedderburn_mass_MeV(Z, N, chains, m_p, m_n):
+    """Canonical atomic mass. NO free parameter.
+
+    m_p and m_n are INPUTS, not predictions — consistent with the
+    absolute-mass excision (owner ruling 2026-08-11): the framework does not
+    claim absolute nucleon mass. What this formula supplies is the
+    alpha·(Phi_1 - 2[3]_q·Phi_2 + h_A^2·Phi_3) correction on top of them.
+    """
+    p1, p2, p3 = Phi_1(chains), Phi_2(chains), Phi_3(chains)
+    corr = ALPHA_CANONICAL * (p1 - 2 * BRACKET_3Q * p2 + H_A**2 * p3)
+    base = Z * mp.mpf(str(m_p)) + N * mp.mpf(str(m_n)) + Z * mp.mpf(str(M_E_MEV))
+    return base + corr, {"Phi_1": p1, "Phi_2": p2, "Phi_3": p3,
+                         "correction_MeV": corr, "base_MeV": base}
 
 
 def V_3term(chain):

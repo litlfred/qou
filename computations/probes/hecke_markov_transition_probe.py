@@ -192,7 +192,7 @@ def main() -> int:
         )
         .add_assertion(
             name="spectral_idempotents_satisfy_all_identities",
-            computed=float(max_idem_residue),
+            computed=max_idem_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over {(3), (2,1), (1^3)} × {completeness, "

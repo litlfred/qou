@@ -1,0 +1,198 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2507.12454v1",
+ "source": {
+  "file": "2507.12454v1.pdf",
+  "sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
+  "bytes": 750417,
+  "pages": 23,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2507.12454",
+   "version": "1",
+   "primary_class": "math.AG",
+   "stamp_date": "16 Jul 2025"
+  },
+  "doi": null,
+  "title": "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT",
+  "authors_raw": null,
+  "title_lines": [
+   "COHOMOLOGY RINGS OF CHARACTER VARIETIES",
+   "ANTON MELLIT"
+  ],
+  "abstract": "In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces, such as the proof of the P = W conjecture and the computation of the zero-dimensional COHA. In the case of punctured sphere I present an explicit description relating the cohomology rings to the Hilbert scheme of C2, refining conjectures of Hausel-Letellier-Rodriguez-Villegas and Chuang-Diaconescu-Donagi-Pantev. I explain how the general case should be related to the symplectic geometry of the Hilbert scheme. 1. Classical motivation One way character varieties naturally arise is as follows. Suppose we have a linear ODE (1.1) \u2202 \u2202t\u20d7 \u03c6(t) =A(t)\u20d7 \u03c6(t) ( t\u2208 C). Here A(t) is an n\u00d7n matrix-valued meromorphic function of one complex variable t, and we are looking for vector-valued solutions\u20d7 \u03c6(t). Let t1,...,t k be the poles ofA(t) (including \u221e if necessary), which we call punctures. Choose a basepoint \u2217, away from the poles of A(t). In a neighborhood of \u2217, we have an n-dimensional vector space of solutions of the ODE (1.1). For any loop \u03b3 based at\u2217 avoiding the punctures, solving the ODE along \u03b3 produces a linear transformation of the space of solutions. Choosing a basis, we obtain the monodromy representation of the fundamental group \u03c1 :\u03c01(\u2217, P1(C)\\{t1,...,t k})\u2192 GLn(C). A different choice of basis produces an equivalent representation. Another way to think about this is that local solutions to the ODE form alocally constant sheaf on P1(C)\\{t1,...,t k}. Locally constant sheaves are also called local systems, and they are in a natural bijection with equivalence classes of monodromy representations. More explicitly, the fundamental group of P1(C)\\{t1,...,t k} is the free group on k\u2212 1 generators. Drawing loops around the punctures as shown on Figure 1, one obtains the Date: July 17, 2025. 1 arXiv:2507.12454v1 [math.AG] 16 Jul 2025",
+  "docinfo": {
+   "Author": "Anton Mellit",
+   "Creator": "arXiv GenPDF (tex2pdf:)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Cohomology rings of character varieties"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Classical motivation",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Fricke-Klein example",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Setup",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "What is known?",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "COHAs/Coulomb branches",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Main example",
+   "page": 17,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Poisson geometry of Coulomb branches",
+   "page": 20,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-classical-motivation",
+   "number": "1",
+   "title": "Classical motivation",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3003,
+   "n_words": 484
+  },
+  {
+   "id": "sec-001-2-fricke-klein-example",
+   "number": "2",
+   "title": "Fricke-Klein example",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 11247,
+   "n_words": 1995
+  },
+  {
+   "id": "sec-002-3-setup",
+   "number": "3",
+   "title": "Setup",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1792,
+   "n_words": 309
+  },
+  {
+   "id": "sec-003-4-what-is-known",
+   "number": "4",
+   "title": "What is known?",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 10619,
+   "n_words": 1788
+  },
+  {
+   "id": "sec-004-5-cohascoulomb-branches",
+   "number": "5",
+   "title": "COHAs/Coulomb branches",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 5107,
+   "n_words": 879
+  },
+  {
+   "id": "sec-005-6-main-example",
+   "number": "6",
+   "title": "Main example",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 5498,
+   "n_words": 978
+  },
+  {
+   "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
+   "number": "7",
+   "title": "Poisson geometry of Coulomb branches",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1347,
+   "n_words": 227
+  },
+  {
+   "id": "sec-007-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 196,
+   "n_words": 27
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 6329,
+   "n_words": 964
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 45138
+ }
+}

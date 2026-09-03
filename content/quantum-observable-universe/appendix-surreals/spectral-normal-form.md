@@ -128,7 +128,7 @@ Hahn-substrate)**:
 5. For operators whose entries involve the quantum dilogarithm
    or other transcendentals, appeal to
    Berarducci–Mantova exponential/log on $\mathbf{No}$
-   [@berarducci-mantova2018].
+   \cite{berarducci-mantova2018}.
 
 6. Compute the normal-form expansion of each eigenvalue, reading
    off the leading transfinite exponent.

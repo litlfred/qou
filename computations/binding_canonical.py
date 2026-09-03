@@ -58,7 +58,7 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-# 50-dps sources. `h_q` is only used in 1e-6 tolerance comparisons and `q0`
+# 50-dps sources. `h_q` is only used in _D_HECKE_TOL (1e-9) comparisons and `q0`
 # in a sympy subst cast to complex, so neither NEEDS full precision — but
 # reading the f64 name is what the NO FLOAT64 directive forbids, and the
 # _MP family is a drop-in in both positions.
@@ -77,6 +77,39 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
     ame_binding_mev,
 )
+
+
+# Tolerance for float-to-symbolic conversion of the Hecke `d` coefficient.
+# 1e-6 was too coarse to separate the colour-weighted p-n interface (which sits
+# 7.190163e-05 from -h/2) from a genuine miss, and there was no branch for it in
+# any case. 1e-9 mirrors `atom_nf_symbolic_D._D_HECKE_TOL` and leaves ~7 orders
+# of margin on both sides of every target.
+_D_HECKE_TOL = 1e-9
+
+
+def _flavor_split_leading_sym(q):
+    """Symbolic δ, LEADING term only:  δ(q) = (q−1)²(1−q⁻⁴)/3.
+
+    Deliberately the leading term alone, matching
+    `canonical_braid_crossings._avg_color_delta` — which builds the numeric
+    crossing this must reproduce — and NOT
+    `tr_m_algebraic_q.flavor_split_leading_sym`, which multiplies by a posited
+    subleading (1 + ℏ³) and so disagrees by ℏ³ ≈ 9.727e-04 relative at q_0
+    (bean `qou-4e5k`).
+    """
+    return (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
+
+
+def _d_weighted_at_q0() -> float:
+    """Numeric `d` of the colour-weighted p-n crossing at q_0.
+
+    Sourced from `canonical_braid_crossings.d_for_ctype`, the module that owns
+    ctype knowledge, so this file never carries a second definition of the
+    weighting — the `qou-4e5k` failure mode of two copies of one dispatch
+    disagreeing about the same crossing.
+    """
+    from canonical_braid_crossings import d_for_ctype
+    return float(d_for_ctype("averaged_weighted", h_q))
 
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
@@ -111,6 +144,22 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
     def _factor_from(c_f: float, d_f: float, g: int
                       ) -> SymbolicHeckeElement:
+        """Hecke factor c·T_g + d·I as a symbolic element.
+
+        The colour-weighted p-n interface carries d = -h(1/2 - δ/4), which sits
+        h·δ/4 = 7.190163e-05 from the colour-BLIND -h/2. This function used to
+        have no branch for it at all: with the ±h and ±h/2 windows at 1e-6, the
+        weighted crossing missed both and fell through to `sp.nsimplify(d_f)`,
+        which freezes a q_0 float into a rational and destroys the q-dependence
+        the symbolic path exists to carry.
+
+        That gap is why the closed-form path below was pinned to
+        `strict_averaged` — not a considered choice between conventions, but
+        the only one this builder could express. It is placed STRUCTURALLY here,
+        as in `atom_nf_symbolic_D._factor_from`, which carries the same fix for
+        the sibling failure mode (bean `qou-4e5k`: a 1e-3 window that swallowed
+        the weighting instead of missing it).
+        """
         if abs(c_f) < 1e-12:
             c = sp.Integer(0)
         else:
@@ -119,9 +168,12 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
             d = sp.Integer(0)
         elif abs(d_f - 1.0) < 1e-12:
             d = sp.Integer(1)
-        elif abs(d_f + h_q) < 1e-6:
+        elif abs(d_f + h_q) < _D_HECKE_TOL:
             d = -H_SYMB
-        elif abs(d_f + h_q / 2) < 1e-6:
+        elif abs(d_f - _d_weighted_at_q0()) < _D_HECKE_TOL:
+            # Colour-weighted p-n interface: -h(1/2 - δ/4), δ = flavour split.
+            d = -H_SYMB * (sp.Rational(1, 2) - _flavor_split_leading_sym(q_sym) / 4)
+        elif abs(d_f + h_q / 2) < _D_HECKE_TOL:
             d = -H_SYMB / 2
         else:
             d = sp.nsimplify(d_f)
@@ -201,6 +253,14 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     A = Z + N
     n_strands = 3 * A
 
+    # Hoisted to function scope. Two of the three branches below used to
+    # `import mpmath as mp` locally, which makes `mp` a function-LOCAL name
+    # for the whole body — so the shared tail could reach it on one route and
+    # raise `UnboundLocalError` on another. The tail now needs it on every
+    # route (it carries the trace through as `mpf` rather than collapsing to
+    # binary64), so the import belongs here.
+    import mpmath as mp
+
     # ── Fast path: fine-Bratteli transfer matrix (DEFAULT) ───────
     # Lossless Σ_{λ ⊢ 3A} y_λ χ^λ over ALL p(3A) partitions via the
     # monotone-word transfer matrix — no d_λ wall, no native dep, full
@@ -235,13 +295,16 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "tr_M_atom": mp.nstr(tr_atom_mp, mp.mp.dps),
             "tr_M_free": mp.nstr(tr_free_mp, mp.mp.dps),
             "Q_beta_n_MeV": Q_beta_n_mev,
-            "B_MeV": float(B),
+            # mpf, not `float(B)` — see the note on the shared tail's exit.
+            "B_MeV": B,
             # Δtr is the DIMENSIONLESS categorical scalar — pure Hecke trace
             # arithmetic at 50 dps with no experimental input, so it is the part
             # of B that is genuinely precise. Exposed because Q_β CANCELS in any
             # ratio of two B_pred: B(a)/B(b) = Δtr(a)/Δtr(b), so a consumer
-            # taking ratios (mirror asymmetries, per-A comparisons) can have 50
-            # digits instead of the 16 that float64 B_MeV leaves it.
+            # taking ratios (mirror asymmetries, per-A comparisons) reads the
+            # categorical content directly, with no experimental factor in it
+            # at all — B_MeV's own precision is capped by Q_β's 8.5e-07
+            # relative experimental uncertainty, not by the arithmetic.
             "delta_tr_exact": mp.nstr(delta_tr, mp.mp.dps),
             "n_atom_terms": -1,
             "n_free_terms": -1,
@@ -291,26 +354,41 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 _nucleon_word(_NEUTRON_G0, _NEUTRON_G1),
                 3, Q_50_DIGIT_STR, dps=50,
             )
-            # `strict_averaged` matches the symbolic path's literal
-            # σ - h/2 factor for p-n interfaces (the convention in
-            # `_factor_from` inside build_atom_symbolic). The default
-            # `chi_lambda_braid` convention treats averaged as σ (the
-            # production marshalling for chi_lambda_braid) which
-            # gives a different numerical value here.
+            # `bring_color_weighted` is canonical (owner ruling 2026-08-15,
+            # R3). This call was pinned to `strict_averaged`, justified as
+            # matching the symbolic path's literal σ - h/2 factor — a circular
+            # justification, since that path could not express the weighting
+            # (see `_factor_from` above, now fixed).
+            #
+            # Verified against an independent path rather than assumed: at the
+            # deuteron this returned 0.575090871629810316751633 under
+            # `strict_averaged`, which is exactly the colour-BLIND value bean
+            # `qou-4e5k` identifies as wrong, and returns
+            # 0.575172243917771870826535 under the canonical convention, which
+            # is exactly that bean's bridge/peel value. Uniform 1.415e-04
+            # relative shift across (Z,N) = (1,1), (1,2), (2,1), (2,2), (3,4).
             tr_atom_mp = closed_form_tau_M(
                 Z, N, q_val, tau_p, tau_n,
-                pn_convention="strict_averaged",
+                pn_convention="bring_color_weighted",
             )
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)
             dt = time.time() - t0
-            # Keep the 50-dps mpf. This used to be
-            #     complex(float(tr_atom_mp), 0.0)
-            # which threw away 34 of the 50 digits that had just been computed,
-            # for no reason: mpmath.mpf carries `.real` and `.imag` (0.0), so
-            # the Im-guard below works on it unchanged. Reachable by the
-            # use_closed_form callers (mass_table_comprehensive,
-            # binding_factor_f_*); the default use_transfer path never hit it.
+            # KEEP the mpf. `complex(float(tr_atom_mp), 0.0)` collapsed a
+            # value that `closed_form_tau_M` had just computed at 50 dps
+            # down to binary64 — ~34 significant digits discarded one line
+            # after they were produced, on the path that
+            # `mass_table_comprehensive` and `binding_factor_f_*` take.
+            # Both traces are real here by construction (Im(q_0) = 0), so
+            # there is nothing a `complex` was carrying: the cast bought
+            # only the type the legacy symbolic branch below happens to
+            # produce. The shared tail is polymorphic over mpf / mpc /
+            # complex (`.real` and `.imag` exist on all three), so the two
+            # branches no longer have to agree on a type — only on the
+            # interface. `binding_factor_f_sequence.py` documents the
+            # downstream cost of the collapse at length: a 16-digit
+            # `tr_M_*` string is the double 0.98352601518469637…, not the
+            # datum.
             tr_atom = tr_atom_mp
             tr_free = tr_free_mp
             atom_n_terms = -1  # not computed in closed-form path
@@ -380,14 +458,31 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # silent collapse) and works uniformly for float / Python-complex /
     # mpmath.mpc (the latter does NOT subclass Python `complex`, so an
     # isinstance guard would be fragile — per Gemini review on PR #1738).
-    B = Q_beta_n_mev * delta_tr.real
+    # `Q_beta_n_mev` arrives as a Python float from most callers. Promote it
+    # through its DECIMAL repr, not its binary value, when the trace is exact
+    # — matching the transfer path's `mp.mpf(str(Q_beta_n_mev))` — so the two
+    # exact routes multiply by the same number. On the legacy symbolic route
+    # `delta_tr` is genuinely binary64 (`complex(sp.N(...))` upstream), so the
+    # product stays a float and `B_MeV` keeps float64's honest 17 digits
+    # rather than being dressed in 50 it does not have.
+    _exact = isinstance(delta_tr, (mp.mpf, mp.mpc))
+    B = (mp.mpf(str(Q_beta_n_mev)) if _exact else Q_beta_n_mev) * delta_tr.real
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": str(tr_atom_r),
         "tr_M_free": str(tr_free_r),
         "Q_beta_n_MeV": Q_beta_n_mev,
-        "B_MeV": float(B),
+        # NOT `float(B)`. On the closed-form route this is an mpf carrying the
+        # full trace precision; casting it here re-imposed exactly the binary64
+        # collapse the branch above stopped doing. `mpf` is drop-in for every
+        # reader in the corpus — it does mixed arithmetic with `float`, formats
+        # under `f"{B:.4f}"`, and survives `float(...)` — but it is NOT
+        # JSON-serializable, so a caller writing it to a witness must route it
+        # through `_precision.fmt` (that is a feature: the cast is now visible
+        # at the point where precision is actually being given up).
+        "B_MeV": B,
+        # Companion to B_MeV on this route too: dimensionless, experiment-free.
         "delta_tr_exact": str(delta_tr),
         "n_atom_terms": atom_n_terms,
         "n_free_terms": free_n_terms,
@@ -527,11 +622,32 @@ if __name__ == "__main__":
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
               f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
-        results.append({**r, "atom": name, "B_AME_MeV": B_AME,
-                         "delta_m_over_m_pct": dm})
+        # float() on BOTH derived numbers, here at the witness boundary — see
+        # the note above `safe_results`. `dm` inherits B_MeV's mpf-ness through
+        # the subtraction, so without this it stringifies to 50 digits exactly
+        # as B_MeV would, changing a JSON number into a JSON string under every
+        # reader and advertising 50 digits for a quantity whose Q_beta(n) input
+        # is a seven-digit measurement.
+        results.append({**r, "atom": name,
+                        "B_MeV": float(r["B_MeV"]),
+                        "B_AME_MeV": B_AME,
+                        "delta_m_over_m_pct": float(dm)})
 
     # Coerce sympy/mpmath fragments to JSON-serialisable types so
     # WitnessBuilder.save() (which does strict json.dumps) succeeds.
+    #
+    # NOTE the explicit float() casts at the append site above: B_MeV is an
+    # `mpf` in the returned dict on purpose (see the notes at both return
+    # sites), because collapsing it in memory would throw away digits a ratio
+    # consumer can legitimately use. The cast belongs HERE, at the witness
+    # boundary, where the precision is actually being given up — `default=str`
+    # below would otherwise render the mpf as a 50-digit STRING, which is
+    # wrong twice over: it changes the field's JSON TYPE from number to string
+    # under every existing reader, and it advertises 50 digits for a quantity
+    # whose Q_beta(n) input carries an 8.518e-07 RELATIVE CODATA uncertainty.
+    # Fifty digits on a seven-digit measurement is fake precision by ~44
+    # orders. The genuinely-50-dps companion is `delta_tr_exact`, which is
+    # dimensionless and has no experimental input in it at all.
     safe_results = json.loads(json.dumps(results, default=str))
     builder = (
         WitnessBuilder("binding-canonical", engine="sympy+mpmath")

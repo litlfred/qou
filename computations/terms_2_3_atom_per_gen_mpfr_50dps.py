@@ -106,7 +106,15 @@ def _load_q0_50dps(pin: str = "experimental",
         path = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
         with path.open() as fh:
             d = json.load(fh)
-        q0 = mp.mpf(d["derived_50_digit"]["q"])
+        # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+        # §"q₀ anchor convention": the experimental (proton) anchor is the default
+        # for all production compute; the owner authorisation recorded there covers
+        # this sweep. A direct read of the anchor-defining witness computes at MUON
+        # whatever the manifest or `QOU_Q0_ANCHOR` says — the two pins differ by
+        # 11.54 ppb, the μ–p substrate tension itself. The upstream/path reference is
+        # kept for provenance; it is no longer the source of this q₀.
+        from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
+        q0 = mp.mpf(_Q50_PROTON)
     else:
         raise ValueError(
             f"pin must be 'experimental' or 'ideal', got {pin!r}")

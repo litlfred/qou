@@ -2,8 +2,9 @@
 """Frobenius eigenvalues from Habiro symbolic data — R6 step 1 + 2.
 
 For each atom with a Habiro cyclotomic expansion on disk
-(`habiro-coefficients-atomic-fast.witness.json`, which now covers
-A ∈ {1, 2, 3} after PR #506 fast-path landed), evaluate the
+(`habiro-coefficients-atomic.witness.json`, the symbolic-q
+aggregate carrying the convention-D regeneration; covers
+A ∈ {1, 2, 3}), evaluate the
 truncated Habiro element at u = ζ_{2p} (here u is the spinor
 rate \check{q} substituted to a root of unity; Habiro-literature
 name "u" kept as the local Python symbol) for primes
@@ -66,6 +67,7 @@ del _sys, _Path, _bridge
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from math import gcd
@@ -73,6 +75,7 @@ from pathlib import Path
 from typing import Any
 
 import mpmath
+from _precision import fmt  # noqa: E402
 import sympy as sp
 
 # Standalone scientific-computation script — set mpmath precision
@@ -81,6 +84,7 @@ import sympy as sp
 # *truth* is the exact algebraic Z[ζ_{2p}] representative computed
 # via sp.Poly arithmetic.
 mpmath.mp.dps = 30
+_DISPLAY_DPS = 30
 
 # Frobenius evaluation runs in **exact algebraic arithmetic** in
 # Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
@@ -92,9 +96,20 @@ mpmath.mp.dps = 30
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
 
-# Prefer the fast-path witness (covers more atoms) if available;
-# fall back to the symbolic-q baseline.
-WITNESS_FAST = _pb.witness_path("habiro-coefficients-atomic-fast.witness.json", HERE)
+# CANONICAL SOURCE: the symbolic-q atomic witness, which carries the
+# convention-D regeneration (`cde2fbcd89`, all 25 atoms).
+#
+# This used to prefer `habiro-coefficients-atomic-fast.witness.json`
+# "(covers more atoms)". Both carry 5 atoms today, so that reason had
+# lapsed — and the fast-path file now lives under `_deprecated/` and was
+# never regenerated, so preferring it fed this probe PRE-convention-D
+# coefficients while the mass table around it had migrated. Measured on
+# `cdbdc84af1`: the symbolic-q aggregate matches the per-atom
+# convention-D witnesses 5/5; the deprecated fast path matches 0/5.
+#
+# There is deliberately NO fallback to the deprecated file. Silently
+# substituting superseded data is the defect being fixed here, not a
+# resilience feature: a missing canonical source is an error.
 WITNESS_SYMBOLIC = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
 WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 
@@ -245,8 +260,17 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
 
     num_rep = evaluate_num_in_ring()
 
-    # Fold in the denominator: Frob_p = num · denom⁻¹ in Z[ζ_{2p}].
-    denom_unit = False
+    # Fold in the denominator: Frob_p = num · denom⁻¹ in Q(ζ_{2p}).
+    #
+    # NOTE the ring. `sp.invert(..., Phi_2p)` works over Q, and Q(ζ_{2p}) is a
+    # field, so this succeeds for ANY nonzero denominator. The flag below is
+    # therefore a NONZERO test, not a unit test — `denom_nonzero`, not
+    # `denom_unit`, which is what it was called until 2026-08-28 and which
+    # produced a wrong claim in a PR body ("requires the denominator to be a
+    # unit, so Tr(Frob_p) is an algebraic integer"). Measured: Frob_p is an
+    # algebraic integer on 0 of 45 (atom, prime) cells, so the denominator is
+    # never a unit in Z[ζ_{2p}] and a genuine unit test would pass nowhere.
+    denom_nonzero = False
     denom_inversion_error: str | None = None
     if denom_in_u is not None:
         try:
@@ -264,10 +288,10 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
                     inv_poly = sp.Poly(inv_expr, u)
                     frob_rep = num_rep * inv_poly
                     _, frob_rep = frob_rep.div(phi_2p)
-                    denom_unit = True
+                    denom_nonzero = True
                 except (sp.NotInvertible, ValueError, Exception) as e:
                     denom_inversion_error = (
-                        f"denominator not a unit mod Phi_{n_2p}: "
+                        f"denominator not invertible mod Phi_{n_2p}: "
                         f"{type(e).__name__}"
                     )
         except Exception as e:
@@ -275,14 +299,14 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
                 f"denom parse failed: {type(e).__name__}: {str(e)[:80]}"
             )
 
-    if not denom_unit:
-        # Denominator is not a unit in Z[ζ_{2p}] — typically because
+    if not denom_nonzero:
+        # Denominator vanishes mod Phi_{2p} — typically because
         # tr_M's Plancherel-weight denominator shares a cyclotomic
         # factor with Φ_{2p}. The full Markov-trace evaluation
         # tr_M(ζ_{2p}) lives in Q(ζ_{2p}) \ Z[ζ_{2p}] in this case.
         frob_full_rep: sp.Poly | None = None
     else:
-        frob_full_rep = frob_rep  # set above when denom_unit succeeded
+        frob_full_rep = frob_rep  # set above when denom_nonzero succeeded
 
     # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}. |orbit| = φ(2p).
     galois_ks = [k for k in range(1, n_2p) if gcd(k, n_2p) == 1]
@@ -319,7 +343,16 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
     # already set to 30dps; no need to set per-call.
     zeta_2p_num = mpmath.exp(2j * mpmath.pi / n_2p)
     display_rep = frob_full_rep if frob_full_rep is not None else num_rep
-    frob_num_complex = complex(display_rep.as_expr().subs(u, zeta_2p_num))
+    # Evaluate at the module dps and KEEP it there. This used to end in
+    # `complex(...)`, which collapsed a 30-dps value to binary64 and then
+    # serialized the halves as raw floats — the NO-FLOAT64 defect the probe
+    # rules name (a witness field is a recorded value, not a display).
+    # Measured on one term at n_2p = 10: `complex()` gives an imaginary part
+    # of 1.69e-21, pure float64 noise, where `sp.N(·, 30)` gives 1.82e-31.
+    _disp = sp.N(display_rep.as_expr().subs(u, zeta_2p_num), _DISPLAY_DPS)
+    frob_re = mpmath.mpf(str(sp.re(_disp)))
+    frob_im = mpmath.mpf(str(sp.im(_disp)))
+    frob_abs = mpmath.sqrt(frob_re ** 2 + frob_im ** 2)
 
     return {
         "prime": p,
@@ -332,14 +365,15 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
             str(frob_full_rep.as_expr()) if frob_full_rep is not None
             else None
         ),
-        "denom_folded": denom_unit,
+        "denom_folded": denom_nonzero,
         "denom_inversion_error": denom_inversion_error,
-        # Numeric value (display-only).
+        # Numeric value, serialized through the precision formatter so the
+        # witness carries no raw binary64 (raw-float64 ratchet).
         "frob_complex": {
-            "real": frob_num_complex.real,
-            "imag": frob_num_complex.imag,
+            "real": fmt(frob_re),
+            "imag": fmt(frob_im),
         },
-        "abs_frob": abs(frob_num_complex),
+        "abs_frob": fmt(frob_abs),
         "pochhammer_truncates_at_m": truncate_at,
         "frob_p_is_exact": is_exact,
         "exact_via": (
@@ -364,17 +398,13 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
             is_exact and num_trace_is_integer
         ),
         "step2_full_trace_passed": bool(
-            is_exact and full_trace_is_integer and denom_unit
+            is_exact and full_trace_is_integer and denom_nonzero
         ),
     }
 
 
 def load_atoms() -> dict[str, dict]:
-    """Load atom-records from the fast-path witness if available;
-    fall back to the symbolic-q baseline otherwise."""
-    if WITNESS_FAST.exists():
-        data = json.loads(WITNESS_FAST.read_text())
-        return data.get("results", {})
+    """Load atom-records from the convention-D symbolic-q witness."""
     if WITNESS_SYMBOLIC.exists():
         data = json.loads(WITNESS_SYMBOLIC.read_text())
         return data.get("results", {})
@@ -384,8 +414,10 @@ def load_atoms() -> dict[str, dict]:
 def main() -> int:
     atoms = load_atoms()
     if not atoms:
-        print(f"ERROR: neither {WITNESS_FAST.name} nor "
-              f"{WITNESS_SYMBOLIC.name} exists")
+        print(f"ERROR: {WITNESS_SYMBOLIC.name} not found — regenerate it "
+              f"with _habiro_coefficient_extract.py. Do NOT substitute "
+              f"_deprecated/habiro-coefficients-atomic-fast.witness.json: "
+              f"it predates the convention-D migration.")
         return 1
 
     u = sp.symbols("u")
@@ -428,7 +460,7 @@ def main() -> int:
                        if row["galois_trace_full_int"] is not None else "—")
             print(f"    p = {p:>3}  m_trunc = "
                   f"{row['pochhammer_truncates_at_m']!s:>5}  "
-                  f"|Frob| = {row['abs_frob']:>9.4f}  "
+                  f"|Frob| = {float(row['abs_frob']):>9.4f}  "
                   f"Tr(num) = {tr_num:>8} {num_pass}  "
                   f"Tr(full) = {tr_full:>8} {full_pass}")
             per_prime.append(row)
@@ -460,6 +492,20 @@ def main() -> int:
             },
         })
 
+    all_truncated_cells = [
+        (a["atom_label"], r)
+        for a in atoms_out
+        for r in a["frobenius"]
+        if r["pochhammer_truncates_at_m"] is not None
+    ]
+    n_cells_truncated = len(all_truncated_cells)
+    cells_full_labels = [
+        f"{lab} @ p={r['prime']}"
+        for lab, r in all_truncated_cells
+        if r["step2_full_trace_passed"]
+    ]
+    n_cells_full = len(cells_full_labels)
+
     out = {
         "computation": "habiro-frobenius-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -479,15 +525,13 @@ def main() -> int:
             "def:motivic-substrate",
             "prop:motivic-perpetual-obstruction",
         ],
-        "input_witness": (
-            WITNESS_FAST.name if WITNESS_FAST.exists()
-            else WITNESS_SYMBOLIC.name
-        ),
+        "input_witness": WITNESS_SYMBOLIC.name,
         "primes": PRIMES,
         "atoms": atoms_out,
         "summary": {
             "n_atoms": len(atoms_out),
             "n_primes": len(PRIMES),
+            # --- numerator test (the weaker of the two) ---
             "step2_all_atoms_compatible": all(
                 a["step2_summary"]["all_truncated_primes_compatible"]
                 for a in atoms_out
@@ -496,13 +540,51 @@ def main() -> int:
                 1 for a in atoms_out
                 if a["step2_summary"]["all_truncated_primes_compatible"]
             ),
+            # --- full-trace test (strictly stronger; see the note below) ---
+            "step2_all_atoms_full_trace_compatible": all(
+                a["step2_summary"]["step2_full_trace_compatible"]
+                for a in atoms_out
+            ),
+            "n_atoms_step2_full_trace_passed": sum(
+                1 for a in atoms_out
+                if a["step2_summary"]["step2_full_trace_compatible"]
+            ),
+            "n_cells_truncated": n_cells_truncated,
+            "n_cells_step2_full_trace_passed": n_cells_full,
+            "cells_step2_full_trace_passed": cells_full_labels,
+            "summary_note": (
+                "step2_all_atoms_compatible is the NUMERATOR test: it asks "
+                "only that Tr(numerator) be a rational integer, and the "
+                "denominator does not enter. The full-trace test "
+                "step2_all_atoms_full_trace_compatible is strictly stronger: "
+                "it asks that the Galois trace of the DENOMINATOR-FOLDED value "
+                "be a rational integer. CORRECTED 2026-08-28: an earlier "
+                "wording said it 'requires the denominator to be a unit at "
+                "ζ_{2p}, so Tr(Frob_p) is itself an algebraic integer'. That "
+                "is wrong twice over — the denom_folded flag is a nonzero test "
+                "performed over Q, not a unit test, and Frob_p is an algebraic "
+                "integer on 0 of 45 cells, so a real unit test would pass "
+                "nowhere. What the full-trace test detects is integrality of "
+                "the TRACE, not of the element. Read the full-trace fields as "
+                "the headline; the numerator fields pass on every cell and "
+                "therefore discriminate nothing."
+            ),
         },
     }
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python")
+    out["scriptFile"] = os.path.basename(__file__)
     WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print()
     print(f"Wrote: {WITNESS_OUT.name}")
-    print(f"Step-2 all-atoms-compatible: "
+    print(f"Step-2 numerator test  (weaker):  all-atoms-compatible = "
           f"{out['summary']['step2_all_atoms_compatible']}")
+    print(f"Step-2 FULL-TRACE test (headline): all-atoms-compatible = "
+          f"{out['summary']['step2_all_atoms_full_trace_compatible']}"
+          f"  ({n_cells_full}/{n_cells_truncated} truncated cells"
+          + (f": {', '.join(cells_full_labels)}" if cells_full_labels else "")
+          + ")")
     return 0
 
 

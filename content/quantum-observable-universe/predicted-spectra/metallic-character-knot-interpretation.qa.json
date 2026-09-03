@@ -14,7 +14,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -773,7 +773,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 6,
           "edge_span_mean": 3.5,
           "worst_target": ""
@@ -902,7 +902,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -916,7 +916,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -929,7 +929,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -944,7 +944,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -959,7 +959,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -974,7 +974,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -989,7 +989,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1004,7 +1004,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1019,7 +1019,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1034,7 +1034,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1049,7 +1049,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1064,7 +1064,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1079,7 +1079,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1094,7 +1094,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1109,7 +1109,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1124,7 +1124,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1139,7 +1139,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:56:51.000Z",
         "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
         "reviewer": {
@@ -1245,7 +1245,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.250Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1280,7 +1280,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.293Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1315,7 +1315,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.335Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1351,8 +1351,8 @@
         "reviewed_at": "2026-08-22T04:20:35.633Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "severity": "minor",
-        "evidence": "Three three-item lists in one remark, one of them degenerate. The degenerate one is 'They lack residual sub-links, open linking sites, and delocalisation.' — the preceding sentence has just said 'Noble gases have R = empty', so item 1 restates it verbatim and items 2 and 3 are its immediate consequences (no residual implies no open sites implies no delocalisation). It is one fact written as three. The other two lists (variable oxidation states / catalysis / magnetism; lattice defects / thermal fluctuations / phonons) are substantive and would pass alone; it is the concentration plus the degenerate one that makes this the reflex pattern.",
-        "notes": "flagged, not fixed. Proposed: 'Noble gases have R = empty, hence no open linking sites and no delocalisation.' TWO MATH FINDINGS, neither fixed inline. (1) THE BLOCK CONTRADICTS ITSELF ON THE NOBLE-GAS CONDITION. The classification table's last row reads '|R| = 2n^2 | Noble gas (no residual)' — i.e. the residual is FULL at capacity — while the 'Residual linking number' section three paragraphs later opens 'Noble gases have R = empty'. Those cannot both hold. The same split runs through lambda(R): the display says lambda(R) = 0 iff noble gas, but the closing sentence says metallic character 'weakens as lambda(R) approaches the closure threshold 2n^2', which treats lambda as growing toward the noble-gas end. Either lambda counts filled sites (then lambda = 2n^2 for a noble gas, contradicting the display) or it counts open ones (then the table's last row should be |R| = 0). The parent proposition's condition 1, |R| < 2n^2 for metallic character, sides with the table, so the 'R = empty' paragraph is the outlier. lambda is also introduced twice under two names, 'residual index' in Strategy and 'residual linking number' later, and collides with the partition lambda |- n used throughout the corpus. (2) THE 2n^2 CRITERION DOES NOT CHARACTERISE NOBLE GASES BEYOND NEON. Shell capacity 2n^2 gives 2, 8, 18, 32 for n = 1..4, but argon closes at 3s^2 3p^6 = 8 electrons in shell n = 3, not 18; krypton closes at 8 in n = 4, not 32. So '|R| = 2n^2 -> noble gas' is satisfied by He and Ne and by no other noble gas, and the halogen row '|R| = 2n^2 - 1' likewise works for F (8-1 = 7) and fails for Cl (18-1 = 17 against chlorine's 7 valence electrons). The rows encode the octet rule while the header says 2n^2. Lesser note: Cu sits in the 'approx half-filled d' row but is 3d^10 4s^1, a filled d-shell."
+        "evidence": "Three three-item lists in one remark, one of them degenerate. The degenerate one is 'They lack residual sub-links, open linking sites, and delocalisation.' \u2014 the preceding sentence has just said 'Noble gases have R = empty', so item 1 restates it verbatim and items 2 and 3 are its immediate consequences (no residual implies no open sites implies no delocalisation). It is one fact written as three. The other two lists (variable oxidation states / catalysis / magnetism; lattice defects / thermal fluctuations / phonons) are substantive and would pass alone; it is the concentration plus the degenerate one that makes this the reflex pattern.",
+        "notes": "flagged, not fixed. Proposed: 'Noble gases have R = empty, hence no open linking sites and no delocalisation.' TWO MATH FINDINGS, neither fixed inline. (1) THE BLOCK CONTRADICTS ITSELF ON THE NOBLE-GAS CONDITION. The classification table's last row reads '|R| = 2n^2 | Noble gas (no residual)' \u2014 i.e. the residual is FULL at capacity \u2014 while the 'Residual linking number' section three paragraphs later opens 'Noble gases have R = empty'. Those cannot both hold. The same split runs through lambda(R): the display says lambda(R) = 0 iff noble gas, but the closing sentence says metallic character 'weakens as lambda(R) approaches the closure threshold 2n^2', which treats lambda as growing toward the noble-gas end. Either lambda counts filled sites (then lambda = 2n^2 for a noble gas, contradicting the display) or it counts open ones (then the table's last row should be |R| = 0). The parent proposition's condition 1, |R| < 2n^2 for metallic character, sides with the table, so the 'R = empty' paragraph is the outlier. lambda is also introduced twice under two names, 'residual index' in Strategy and 'residual linking number' later, and collides with the partition lambda |- n used throughout the corpus. (2) THE 2n^2 CRITERION DOES NOT CHARACTERISE NOBLE GASES BEYOND NEON. Shell capacity 2n^2 gives 2, 8, 18, 32 for n = 1..4, but argon closes at 3s^2 3p^6 = 8 electrons in shell n = 3, not 18; krypton closes at 8 in n = 4, not 32. So '|R| = 2n^2 -> noble gas' is satisfied by He and Ne and by no other noble gas, and the halogen row '|R| = 2n^2 - 1' likewise works for F (8-1 = 7) and fails for Cl (18-1 = 17 against chlorine's 7 valence electrons). The rows encode the octet rule while the header says 2n^2. Lesser note: Cu sits in the 'approx half-filled d' row but is 3d^10 4s^1, a filled d-shell."
       }
     ],
     "trap-closing-aphorism": [
@@ -1386,7 +1386,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.379Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1421,7 +1421,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.422Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1456,7 +1456,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.464Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1491,7 +1491,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.506Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1526,7 +1526,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.548Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1561,7 +1561,7 @@
         },
         "reviewed_at": "2026-08-22T04:20:35.590Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
-        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary — it states four specific correspondences rather than announcing emphasis — so it passes.",
+        "evidence": "Full read of the whole interpretation remark (metallic bonding, strategy dictionary, classification table, transition metals, conductivity, residual linking number). Checked: 2(2l+1) = 10 linking sites at l = 2 is correct for a d-shell; Reidemeister moves do preserve linking number, so 'these crossing exchanges conserve the total linking number' is right; the alkali and alkaline-earth rows of the table are correct as chemistry. No em-dash, no pivot, no aphorism, no warmth, no non-speakable chain. The 'Strategy' paragraph reads as meta-commentary but is in fact a dictionary \u2014 it states four specific correspondences rather than announcing emphasis \u2014 so it passes.",
         "notes": "no trap of this class; full-context read"
       }
     ],
@@ -1585,5 +1585,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:20:35.633Z"
+  "updated_at": "2026-08-22T04:20:35.633Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

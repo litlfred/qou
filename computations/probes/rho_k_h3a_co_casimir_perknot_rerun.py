@@ -203,7 +203,7 @@ def main() -> int:
                      computed=1 if fails_all else 0, expected=1, tolerance=0)
     wb.add_assertion(
         "codata_residual_reproduces_minus_2p30_MeV",
-        computed=float(rep_codata["residual_MeV"]),
+        computed=rep_codata["residual_MeV"],
         expected=-2.2986427, tolerance=1e-4)
     wb.save()
     print("\n✓ Witness: rho-k-h3a-co-casimir-perknot-rerun.witness.json")

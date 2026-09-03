@@ -9,21 +9,21 @@
       "computed": "-1.0",
       "expected": "-1",
       "passed": true,
-      "tolerance": 1e-25
+      "tolerance": "1e-25"
     },
     {
       "name": "zeta0_rank4_is_minus1",
       "computed": "-1.0",
       "expected": "-1",
       "passed": true,
-      "tolerance": 1e-25
+      "tolerance": "1e-25"
     },
     {
       "name": "zeta0_rank8_is_minus1",
       "computed": "-1.0",
       "expected": "-1",
       "passed": true,
-      "tolerance": 1e-25
+      "tolerance": "1e-25"
     }
   ],
   "allPassed": true,

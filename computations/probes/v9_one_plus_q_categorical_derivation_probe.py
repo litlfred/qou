@@ -494,12 +494,92 @@ def main() -> int:
         "discriminating_test_open": "WHY (1+σ)/2 instead of (σ+σ⁻¹)/2 — needs Hopf-antipode justification for mirror-swap structure",
     })
 
+    # Was `computed=True, expected=True` named `probe_completed` (bean
+    # `qou-26f2`): reaching save() was the whole test, so the probe read PASS
+    # whether 0 or 7 candidates derived the target, and whether or not its own
+    # chirality factorisation held.
+
+    # (1) The chirality identity, which the module computes TWICE and never
+    # compares: `diff` = (1+q)/2 − (1+q⁻¹)/2 and `h_q/2` sit side by side in
+    # `chirality_factorisation` above as separate strings. Their equality is
+    # the whole "mirror-pair difference is chirality-odd" argument.
+    chirality_gap = abs(diff - h_q / 2)
     w.add_assertion(
-        name="probe_completed",
-        computed=True,
-        expected=True,
+        name="mirror_pair_difference_equals_h_over_2",
+        computed=mp.nstr(chirality_gap, 12),
+        expected="0",
+        tolerance="1e-40",
+        source=f"|[(1+q)/2 − (1+q⁻¹)/2] − h/2| = {mp.nstr(chirality_gap, 6)} "
+               f"at q_0, with h = q − q⁻¹ and both sides = "
+               f"{mp.nstr(diff, 18)}. This exact identity is what makes "
+               "(1+q)/2 chirality-odd where [2]_q/2 is bar-symmetric",
+    )
+
+    # (2) The candidate scan's own result. The narrative section states that
+    # "(a, b, c, d, e, g) ALL evaluate to (1+q)/2" — 6 of 7, with (f) the
+    # deliberate distinguishing failure.
+    n_full = sum(1 for r in results if r["fully_derives_target"])
+    n_c2_fail = sum(1 for r in results
+                    if not r["c2_pass_matches_target_at_q0"])
+    w.add_assertion(
+        name="candidates_fully_deriving_the_target",
+        computed=n_full,
+        expected=6,
         tolerance=0,
-        source="(1+q)/2 categorical-derivation probe completed at 50 dps.",
+        source=f"{n_full} of {len(results)} candidate chains satisfy both C1 "
+               "(q→1 limit = 1) and C2 (matches (1+q)/2 at q_0 within 0.1%): "
+               + ", ".join(r["name"].split()[0] for r in results
+                           if r["fully_derives_target"])
+               + f". {n_c2_fail} fails C2 — the [2]_q/2 distinguishing test. "
+                 "Over-determination is the probe's finding; a count of 7 or "
+                 "of 1 would both refute it",
+    )
+
+    # (3) …and that the distinguishing candidate really is separated, not a
+    # near-miss inside the 0.1% C2 band.
+    _f_row = next((r for r in results
+                   if not r["c2_pass_matches_target_at_q0"]), None)
+    w.add_assertion(
+        name="bar_symmetric_candidate_is_separated_from_target",
+        computed=f"{abs(float(_f_row['error_vs_target_pct'])):.5f}"
+                 if _f_row else "0",
+        expected="4.69586",
+        tolerance="1e-4",
+        unit="percent",
+        source="[2]_q/2 = (q+q⁻¹)/2 misses (1+q)/2 by "
+               f"{_f_row['error_vs_target_pct'] if _f_row else 'n/a'}% at q_0 "
+               "— 47× the 0.1% C2 band, so the bar-symmetric averaging "
+               "operator is excluded rather than merely disfavoured",
+    )
+
+    # (4) The target against the factor v9 empirically required, which is
+    # quoted from #1581 Finding C rather than computed here.
+    target_vs_empirical = abs(target - target_numerical)
+    w.add_assertion(
+        name="target_matches_v9_empirical_correction_factor",
+        computed=mp.nstr(target_vs_empirical, 12),
+        expected="0",
+        tolerance="1e-6",
+        source=f"|(1+q_0)/2 − {mp.nstr(target_numerical, 12)}| = "
+               f"{mp.nstr(target_vs_empirical, 6)}; (1+q_0)/2 = "
+               f"{mp.nstr(target, 18)} against the correction factor v9 needed",
+    )
+    w.add_caveat(
+        "Three prose claims in this module are contradicted by its own "
+        "arithmetic, surfaced by draining the tautological assertion. "
+        "(a) The printed chain 'Categorically: (1+q)/2 = 1 + h/2' and "
+        "'step 6 Frobenius pairing: chirality = 1 + h/2' are wrong: at q_0, "
+        f"(1+q)/2 = {mp.nstr(target, 12)} while 1 + h/2 = "
+        f"{mp.nstr(1 + h_q / 2, 12)}. What IS exact is that the mirror-pair "
+        "DIFFERENCE (1+q)/2 − (1+q⁻¹)/2 equals h/2 (asserted above), and "
+        "that (1+q)/2 = 1 + ℏ_q·q/2, the third form in the same printed "
+        "chain. (b) The header's C2 and the 'step 9 Archimedean' line quote "
+        "the required factor as 1.054855; the value used throughout and "
+        f"recorded in the witness is {mp.nstr(target_numerical, 12)}, and "
+        f"(1+q_0)/2 = {mp.nstr(target, 12)}. (c) The verdict names "
+        "'candidates (b), (d), (e), (g)' as giving (1+q)/2; the scan finds "
+        f"{n_full} — the narrative section's own '(a, b, c, d, e, g)' is the "
+        "correct list. Reported, not silently corrected."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

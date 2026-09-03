@@ -142,7 +142,7 @@ def main() -> int:
     })
     wb.add_assertion(
         "borromean_char_derived_from_hoefsmit",
-        computed=float(char_residual), expected=0.0, tolerance=1e-30,
+        computed=char_residual, expected=0.0, tolerance=1e-30,
         source="tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] = 2 - 3h^4 - h^6",
     )
     wb.add_assertion(

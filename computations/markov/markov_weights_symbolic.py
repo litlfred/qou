@@ -33,9 +33,21 @@ The 3×3 symbolic solve produces closed-form rational functions of q
 for y_{(3)}, y_{(2,1)}, y_{(1,1,1)}, which then assemble the
 canonical tr_M(β) for any braid word β in B_3.
 
-Cross-validation: at q_0 ≈ 1.1097, this reproduces the
-markov_peel / Hoefsmit-Wenzl bridge value
-tr_M(proton) ≈ 1.0653062286 to all printed digits.
+Cross-validation: at the proton-pinned q_0 ≈ 1.1099785828, this
+reproduces the markov_peel / Hoefsmit-Wenzl bridge value
+tr_M(proton) ≈ 1.1457596925 to all printed digits.
+
+CONVENTION FIX (2026-08-31, bean qou-46ab). This read
+``tr_M(proton) ≈ 1.0653062286`` — the CONVENTION C value, 7.55 % from the
+canonical D one — inside a docstring whose opening paragraph states that
+this module uses z = q^3/(q^2 + 1), convention D, and that C was excised.
+The same literal was corrected in this file's own witness-emitting block on
+2026-08-30 under the same bean; that pass drained the field and missed its
+twin 300 lines above it, in the module's own header. Verified against the
+live path before replacing: ``tr_M_canonical(atom_braid_word_3A_to_crossings(1, 0),
+3)`` evaluates to 1.1457596924573008697 at the proton pin, matching
+markov-peel-atomic-tr-m.witness.json to every digit it carries. The stated
+q_0 was also imprecise (1.1097 for 1.1099785828).
 
 For higher n the same construction works with n class-basis elements.
 For n = 6 (deuteron) the basis is {1, σ_1, σ_1σ_2, σ_1σ_2σ_3,
@@ -199,7 +211,28 @@ def y_lambda_symbolic(n: int) -> dict[tuple, sp.Expr]:
 
     with Q = q², z_W = q · z, and Q^r = z_W / (1 - Q + z_W).
 
-    Works for any n.  At q = 1 reduces to f^λ / n! (Plancherel).
+    Works for any n.
+
+    At q = 1 this does **not** reduce to the symmetric-group Plancherel
+    measure f^λ / n!.  That is the r → ∞ statement, and this function is
+    pinned at r = 2 (Q^r = q⁴ = Q², convention D; Lean:
+    `wenzlLevel_conventionD`).  What it reduces to is the **SU(2)**
+    Plancherel measure, cut off by Wenzl's row cap:
+
+        y_λ(1) = (λ₁ − λ₂ + 1) / 2ⁿ   if ℓ(λ) ≤ 2
+        y_λ(1) = 0                    if ℓ(λ) > 2
+
+    Verified over all 43 shapes with n = 2…7.  The two disagree at *every*
+    shape, not just in the tail: at n = 3 this gives (1/2, 1/4, 0) against
+    Plancherel's (1/6, 1/3, 1/6).
+
+    The old docstring asserted the Plancherel form.  It was wrong, and it
+    contradicted `WenzlWeightVanishing.lean` — which is right about the row
+    cap — so the docstring of the function that produces the production
+    weights disagreed with the Lean that certifies them.  Orellana, *Crelle*
+    508 (1999) 157–178, p. 5 states the cap itself: "s_{α,r}(q) = 0 whenever
+    l(α) > r"; `WenzlWeightVanishing.lean` currently cites p. 17 for the
+    type-A restatement, and p. 5 is the sharper citation.
     """
     shapes = [tuple(s) for s in partitions_of(n)]
     s_vals = {sh: schur_principal_symbolic(list(sh)) for sh in shapes}
@@ -287,6 +320,10 @@ def main() -> int:
     print(f"  Σ y_λ · χ^λ(1) = {sum_check}   (must equal 1)")
 
     # Apply to the proton internal braid (canonical markov_peel word).
+    from canonical_trm_reference import tr_m_nucleon
+    _ref_p = tr_m_nucleon("proton")
+    _ref_n = tr_m_nucleon("neutron")
+
     proton = atom_braid_word_3A_to_crossings(1, 0, include_inter=False)
     print()
     print(f"Proton canonical braid (markov_peel): {len(proton)} crossings")
@@ -299,7 +336,7 @@ def main() -> int:
     print(f"  closed form: {trM_p}")
     val_q0 = sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
-    print(f"  markov_peel ref : 1.0653062286131670")
+    print(f"  markov_peel ref : {_ref_p}")
 
     # Same for neutron (canonical markov_peel word).
     neutron = atom_braid_word_3A_to_crossings(0, 1, include_inter=False)
@@ -310,7 +347,7 @@ def main() -> int:
     print(f"  closed form: {trM_n}")
     val_n = sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
-    print(f"  markov_peel ref : 0.9232332971861535")
+    print(f"  markov_peel ref : {_ref_n}")
 
     # Witness JSON.
     out = HERE / "markov_weights_symbolic.witness.json"
@@ -337,14 +374,26 @@ def main() -> int:
         },
         "tr_M_proton_closed_form": str(trM_p),
         "tr_M_proton_at_q0": str(val_q0),
-        # The reference stays at the precision it was recorded with: it comes
-        # from markov_peel, which returns a double. Serializing it through a
-        # 50-digit formatter would pad 17 real digits with 33 invented ones —
-        # exactly the fake precision the padding ratchet exists to catch.
-        "tr_M_proton_markov_peel_reference": "1.0653062286131670",
+        # CONVENTION FIX (2026-08-30, bean qou-46ab). This was the literal
+        # "1.0653062286131670", which is CONVENTION C — 7.55% from the
+        # canonical D value. The defect was visible in this very witness: the
+        # computed `tr_M_proton_at_q0` above read 1.14575969245730086968… (D,
+        # correct) while the field named `..._reference` beside it read the C
+        # value, so anyone comparing the two saw the COMPUTATION as wrong.
+        #
+        # It survived the `.work/convention-c-regen` sweep, which logs this
+        # producer as "ok, 5.2s": re-running a producer updates a computed
+        # field and cannot touch a literal.
+        #
+        # The old comment here justified keeping 17 digits because markov_peel
+        # returns a double. That premise no longer applies — the reference now
+        # comes from the 50-dps witness via `canonical_trm_reference`, selected
+        # by the artifact's own recorded q0, so the digits are real rather than
+        # padded and there is no fake precision to avoid.
+        "tr_M_proton_markov_peel_reference": str(_ref_p),
         "tr_M_neutron_closed_form": str(trM_n),
         "tr_M_neutron_at_q0": str(val_n),
-        "tr_M_neutron_markov_peel_reference": "0.9232332971861535",
+        "tr_M_neutron_markov_peel_reference": str(_ref_n),
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)

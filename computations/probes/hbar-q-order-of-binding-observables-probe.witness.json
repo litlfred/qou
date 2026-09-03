@@ -1,0 +1,233 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T10:17:52.203167+00:00",
+  "commitSha": "fd65598a96c828e676bd8e17ae5d43f78cb71aa9",
+  "assertions": [
+    {
+      "name": "D_trace_difference_classical_floor_is_1_over_8",
+      "computed": "0.124999999874",
+      "expected": "0.125",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "Richardson extrapolation of tr_M(W_free) - tr_M(W_atom) to q -> 1 along q = exp(eta), eta = 1e-3..1e-6, via tr_m_atom_via_transfer.tr_m_atom_zn, vs the dyadic rational 1/8. The claim under test is that the limit is NONZERO -- i.e. that this observable survives where the Hecke algebra degenerates to C[S_n]."
+    },
+    {
+      "name": "4He_trace_difference_classical_floor_is_7_over_128",
+      "computed": "0.054687499701",
+      "expected": "0.0546875",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "Richardson extrapolation of tr_M(W_free) - tr_M(W_atom) to q -> 1 along q = exp(eta), eta = 1e-3..1e-6, via tr_m_atom_via_transfer.tr_m_atom_zn, vs the dyadic rational 7/128. The claim under test is that the limit is NONZERO -- i.e. that this observable survives where the Hecke algebra degenerates to C[S_n]."
+    },
+    {
+      "name": "trace_difference_deviation_from_the_floor_is_first_order_in_hbar_q",
+      "computed": "1.0021164",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e-2",
+      "source": "log-log slope of |diff - c0| against hbar_q over eta = 1e-3..1e-6, worst case over the deuteron and 4He (measured D: 1.00078, 4He: 1.0021164). NOT hbar_q^2, which is what E_0_CONVENTIONS['B_q_value_absorbed'] states for this operator class."
+    },
+    {
+      "name": "delta_net_is_exactly_first_order_with_no_classical_floor",
+      "computed": "0.99992763",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "log-log slope of |Delta(net)| = |h(h-2)/2|, h = q - 1/q, against hbar_q over eta = 1e-3..1e-6. h vanishes identically at q = 1, so there is no floor to extrapolate -- this is convention A's operator class and it passes the test the trace difference fails."
+    },
+    {
+      "name": "plancherel_block_sum_is_second_order_with_no_classical_floor",
+      "computed": "2.0002152",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "1e-2",
+      "source": "log-log slope of b_over_a_evaluator.spectral_b_over_a against hbar_q, worst case over D, 4He, 12C (measured D: 2.0002149, 4He: 2.0002152, 12C: 2.0002149). At q = 1 every one-crossing eigenvalue is +-1, so the log-ratio is identically zero and there is no floor."
+    },
+    {
+      "name": "classical_floor_closed_form_holds_including_at_A_equals_5",
+      "computed": "9.405791e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "source": "worst relative error of the measured floor against c0(A) = 2^-A - 2^(1-2A) over D, T, 3He, 4He, 5Li, 5He. The form is read off A = 2,3,4; A = 5 is a genuine prediction on two isobars that did not enter it. Residuals are Richardson extrapolation error (they grow with A), not discrepancies."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3002,
+  "computation": "hbar-q-order-of-binding-observables-probe",
+  "scriptFile": "hbar_q_order_of_binding_observables_probe.py",
+  "scriptHash": "efee8d7425fa",
+  "scriptCommitSha": "fd65598a96c828e676bd8e17ae5d43f78cb71aa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/hbar_q_order_of_binding_observables_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/hbar_q_order_of_binding_observables_probe.py"
+  },
+  "description": "Classifies the framework's binding observables by their behaviour as q -> 1. Delta(net) and the Plancherel block sum vanish (hbar_q^1 and hbar_q^2). The signed trace difference does NOT: it has an exact dyadic classical floor (1/8 at the deuteron, 7/128 at 4He) plus an hbar_q^1 deformation, so the E_0 registry's 'carries the hbar_q^2 scaling' is wrong for it and no single E_0 convention pairs with it consistently.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "sweep": "q = exp(eta), eta = 1e-3 .. 1e-6"
+  },
+  "data": {
+    "classical_floor_closed_form": {
+      "formula": "c0(A) = 2^-A - 2^(1-2A) = (2^(A-1) - 1)/2^(2A-1)",
+      "depends_on": "A only -- NOT the Z/N split. T and 3He agree exactly, so do 5Li and 5He. At q = 1 every one-crossing eigenvalue is +-1 and flavour disappears, so this is the required behaviour.",
+      "c0_times_2_pow_3A_is_an_integer": "8, 48, 48, 224, 960, 960 = 2^(A+1)(2^(A-1)-1)",
+      "rows": [
+        {
+          "isotope": "D",
+          "A": 2,
+          "n_strands": 6,
+          "measured_c0": "0.1249999998740584",
+          "closed_form": "0.125",
+          "c0_times_2_pow_3A": "7.9999999919397",
+          "relative_error": "1.00753e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "T",
+          "A": 3,
+          "n_strands": 9,
+          "measured_c0": "0.0937499997433446",
+          "closed_form": "0.09375",
+          "c0_times_2_pow_3A": "47.999999868592",
+          "relative_error": "2.73766e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "n_strands": 9,
+          "measured_c0": "0.09374999973037627",
+          "closed_form": "0.09375",
+          "c0_times_2_pow_3A": "47.999999861953",
+          "relative_error": "2.87599e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "n_strands": 12,
+          "measured_c0": "0.05468749970100952",
+          "closed_form": "0.0546875",
+          "c0_times_2_pow_3A": "223.99999877533",
+          "relative_error": "5.46725e-9",
+          "role": "read off"
+        },
+        {
+          "isotope": "5Li",
+          "A": 5,
+          "n_strands": 15,
+          "measured_c0": "0.02929687472443972",
+          "closed_form": "0.029296875",
+          "c0_times_2_pow_3A": "959.99999097044",
+          "relative_error": "9.40579e-9",
+          "role": "PREDICTION (did not enter the reading)"
+        },
+        {
+          "isotope": "5He",
+          "A": 5,
+          "n_strands": 15,
+          "measured_c0": "0.02929687474942921",
+          "closed_form": "0.029296875",
+          "c0_times_2_pow_3A": "959.9999917893",
+          "relative_error": "8.55282e-9",
+          "role": "PREDICTION (did not enter the reading)"
+        }
+      ]
+    },
+    "subtracting_the_floor_costs_the_route_its_best_number": {
+      "deuteron_raw_conv_A_MeV": "2.329685576",
+      "deuteron_floor_removed_conv_A_MeV": "1.806437906",
+      "AME_deuteron_MeV": "2.22456637",
+      "raw_vs_AME": "0.954878x",
+      "floor_removed_vs_AME": "1.23147x short",
+      "he4_raw_conv_A_MeV": "4.68749963",
+      "he4_floor_removed_conv_A_MeV": "4.458578774",
+      "AME_he4_MeV": "28.29561",
+      "he4_floor_removed_vs_AME": "6.34633x short",
+      "reading": "The A-route's 4.7% near-hit at the deuteron was 22.46% classical contamination. Removing it -- which the hbar_q bookkeeping requires -- degrades the deuteron to 1.23x short. 4He is ~6x short either way, consistent with the known 4-body alpha residual. Reported because the repair making a number WORSE is the part most likely to be quietly dropped."
+    },
+    "classification": [
+      {
+        "observable": "Delta(net) = h(h-2)/2, h = q - 1/q",
+        "classical_floor": "0 (exact -- h vanishes at q=1)",
+        "deformation_order": "0.99992763",
+        "registry_operator_class": "A_single_hecke_tick",
+        "consistent_E0_pairing": "A (hbar_q^1) -> total hbar_q^2",
+        "verdict": "PASSES"
+      },
+      {
+        "observable": "Plancherel block sum (b_over_a_evaluator)",
+        "classical_floor": "0 (exact -- eigenvalues -> +-1, log-ratio -> 0)",
+        "deformation_order": {
+          "D": "2.0002149",
+          "4He": "2.0002152",
+          "12C": "2.0002149"
+        },
+        "registry_operator_class": "B_q_value_absorbed (trace-ratio family)",
+        "consistent_E0_pairing": "B (hbar_q^0) -> total hbar_q^2",
+        "verdict": "PASSES"
+      },
+      {
+        "observable": "tr_M(W_free) - tr_M(W_atom)",
+        "classical_floor": {
+          "D": "0.124999999874058  (= 1/8)",
+          "4He": "0.0546874997010095  (= 7/128)"
+        },
+        "deformation_order": {
+          "D": "1.00078",
+          "4He": "1.0021164"
+        },
+        "registry_operator_class": "B_q_value_absorbed, stated as 'carries the hbar_q^2 scaling'",
+        "consistent_E0_pairing": "NONE -- the floor is hbar_q^0 and the deformation is hbar_q^1, so no single scale pairs with the whole thing",
+        "verdict": "FAILS"
+      }
+    ],
+    "classical_contamination_at_q0": {
+      "D": {
+        "trace_difference_at_q0": "0.556544660404438",
+        "classical_floor": "0.124999999874058",
+        "classical_share_percent": "22.46"
+      },
+      "4He": {
+        "trace_difference_at_q0": "1.11980900608624",
+        "classical_floor": "0.0546874997010095",
+        "classical_share_percent": "4.88365"
+      }
+    },
+    "the_two_producers_disagree": {
+      "quantity": "tr_M(W_free) - tr_M(W_atom) for the deuteron = 0.556544660404438",
+      "binding_canonical (convention B)": {
+        "scale_MeV": "0.78233340931",
+        "binding_MeV": "0.4354034816",
+        "vs_AME_2.22456637": "5.10921x short"
+      },
+      "derive_binding_chain_cooperative (convention A)": {
+        "scale_MeV": "4.18598136329447",
+        "binding_MeV": "2.329685576",
+        "vs_AME_2.22456637": "0.954878x short"
+      },
+      "ratio": "5.3506361",
+      "note": "Same trace difference, two live producers, two conventions, 5.35x apart. The registry rule 'atom level MUST use B' rests on the hbar_q^2 claim this probe refutes, so the rule cannot currently adjudicate. Recorded as an inconsistency to resolve, NOT resolved here -- picking the convention that lands closer to AME would be exactly the fit this lane keeps walking into."
+    },
+    "what_is_NOT_concluded": "That the hbar_q-suppressed route is refuted. Delta(net) and the Plancherel block sum both pass the classical-limit test cleanly, and Delta(net) x convention A still predicts Q_beta to 0.168%. What is refuted is the assumption -- mine, stated last turn without checking -- that the trace difference belongs to that category. It does not, and the registry's hbar_q index for it is wrong by two orders.",
+    "verdict": "tr_M(W_free) - tr_M(W_atom) is NOT a pure deformation observable. It has an exact dyadic classical floor -- 1/8 at the deuteron, 7/128 at 4He, extrapolated to 1e-10 -- plus an hbar_q^1 deformation. At q0 the floor is 22.46% of it for the deuteron and 4.88% for 4He, so that fraction of any binding read off it is present in a framework with no deformation at all. E_0_CONVENTIONS says this operator class 'carries the hbar_q^2 scaling'; measured it carries neither an hbar_q^2 leading term nor a vanishing limit. Since the two parts sit at different orders, no single E_0 convention pairs with it consistently -- and two live producers already disagree by 5.35x about which one to use."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

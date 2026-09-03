@@ -1,0 +1,90 @@
+{
+  "computation": "piece-a-corner-removal",
+  "engine": "python",
+  "scriptFile": "computations/probes/piece_a_corner_removal_probe.py",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Exact integer arithmetic on partitions only. No substrate modulus, no q, no float: the import cone is json/os/sys/time. Nothing here can depend on the q0 anchor.",
+  "parameters": {
+    "n_max": 16,
+    "partitions_checked": 914,
+    "corners_checked": 2455,
+    "lean": "QOU.BraidKnot.PieceA.pieceA (arm-leg route; the corner induction checked here is NOT formalised)"
+  },
+  "data": {
+    "per_step_pass_counts": {
+      "col_len_corner": 2455,
+      "row_sum_closed_form": 2455,
+      "column_sum_closed_form": 2455,
+      "size_decomposition": 2455,
+      "corner_removal_obligation": 2455,
+      "obligation_is_hook_sq_difference": 2455,
+      "content_sq_difference_is_corner_content_sq": 2455,
+      "piece_a_holds": 914
+    }
+  },
+  "assertions": [
+    {
+      "name": "col_len_corner",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "row_sum_closed_form",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "column_sum_closed_form",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "size_decomposition",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "corner_removal_obligation",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "obligation_is_hook_sq_difference",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "content_sq_difference_is_corner_content_sq",
+      "computed": 2455,
+      "expected": 2455,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    },
+    {
+      "name": "piece_a_holds",
+      "computed": 914,
+      "expected": 914,
+      "passed": true,
+      "source": "piece_a_corner_removal_probe"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "1ecd01bc6965",
+  "scriptCommitSha": "unknown",
+  "commitSha": "33785eecc406bfcf537efe41898f84213d453138",
+  "computedAt": "2026-08-24T19:05:13.495854+00:00",
+  "durationMs": 601,
+  "engineVersion": "3.11.15"
+}

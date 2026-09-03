@@ -17,7 +17,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -367,11 +367,11 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "In sec:pair-production-knot-operators of Ch13; γγ pair-production generating the operator basis squarely fits the section scope."
+        "notes": "In sec:pair-production-knot-operators of Ch13; \u03b3\u03b3 pair-production generating the operator basis squarely fits the section scope."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -416,7 +416,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Generic-ring algebraic statement (Hecke H₃(q) coefficient identity); no archimedean construct, no numeric q₀, no order hypothesis."
+        "notes": "Generic-ring algebraic statement (Hecke H\u2083(q) coefficient identity); no archimedean construct, no numeric q\u2080, no order hypothesis."
       }
     ],
     "wall-side-proof": [
@@ -442,7 +442,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -457,7 +457,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -475,7 +475,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -493,7 +493,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -511,7 +511,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -526,7 +526,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -541,7 +541,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -556,7 +556,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -571,7 +571,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -586,7 +586,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -621,7 +621,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -655,7 +655,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -690,7 +690,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -724,7 +724,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -759,7 +759,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -794,7 +794,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -828,7 +828,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -863,7 +863,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -898,7 +898,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -933,7 +933,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -968,7 +968,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1002,7 +1002,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1038,7 +1038,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -1800,7 +1800,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 3,
           "edge_span_mean": 3,
           "worst_target": ""
@@ -1938,7 +1938,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1953,7 +1953,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Content is sound.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
         "reviewed_at": "2026-07-13T01:53:35.000Z",
         "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
         "reviewer": {
@@ -2494,5 +2494,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T01:41:45.298Z"
+  "updated_at": "2026-08-22T01:41:45.298Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

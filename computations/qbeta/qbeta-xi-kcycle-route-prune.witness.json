@@ -1,0 +1,47 @@
+{
+  "computation": "qbeta-xi-kcycle-route-prune",
+  "description": "The k-cycle Hecke-trace route into Xi_{k>=3} is pruned: Markov forces tr_M(standard element) = z^{k-1}, so nothing beyond Xi_2 is reachable. Exact at n=3, convention D.",
+  "engine": "sympy-exact",
+  "markov_convention": "D",
+  "assertions": [
+    {
+      "name": "h3_irrep_satisfies_braid_relation",
+      "passed": true
+    },
+    {
+      "name": "h3_irrep_satisfies_hecke_relation",
+      "passed": true
+    },
+    {
+      "name": "d_weights_normalised",
+      "passed": true
+    },
+    {
+      "name": "markov_sigma1_trace_is_z",
+      "passed": true
+    },
+    {
+      "name": "markov_3cycle_trace_is_z_squared",
+      "passed": true
+    },
+    {
+      "name": "proved_k2_identity_reproduced",
+      "passed": true
+    },
+    {
+      "name": "z_squared_is_k2_identity_squared_xi3_absent",
+      "passed": true
+    },
+    {
+      "name": "sigma1_powers_span_only_one_and_xi2",
+      "passed": true
+    }
+  ],
+  "verdict": "PRUNED, scope-(a). The Markov property forces tr_M of every standard element to a power of z, so the k-cycle route reaches no Xi beyond Xi_2: 4 z_D^2 = (h + [2]_q Xi_2)^2 exactly, the proved k=2 identity squared, with Xi_3's coefficient free. Single-crossing powers likewise span only {1, Xi_2}. Xi_{k>=3} is a WEIGHT FUNCTIONAL, not a trace value; the Hecke Murnaghan-Nakayama literature supplies general-n per-block characters, not a bridge to it. qou-ximf's anti-fit fence is unchanged and still binds.",
+  "witness": {
+    "scriptPath": "computations/qbeta/qbeta_xi_kcycle_route_prune_probe.py",
+    "scriptHash": "c80a681b3385",
+    "commitSha": "8f596e17133702514463a98a32f6d68199eace83",
+    "generatedAt": "2026-08-26T03:49:29.273267+00:00"
+  }
+}

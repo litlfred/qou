@@ -120,27 +120,61 @@ noncomputable def chirality_factor_first_order
     inhabited instance; the structural content is in the
     character-weighted average computation. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
-class ChiralityFactorClass : Prop where
-  /-- Structural derivation of the chiral-case first-order
-      factor from the Kauffman framing formula on the Hecke
-      ribbon category, with explicit average-content factor.
-      The uninterpreted function `a_K` represents the actual
-      Kauffman ribbon-twist evaluation, which is asymptotically
-      `1 + w · ⟨c⟩ · h + O(h²)`. -/
-  kauffman_derivation :
-    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
-      ∀ (h : ℝ) (writhe : ℤ) (avg_content : ℝ),
-        a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2
+class ChiralityFactorClass (a_K : ℝ → ℤ → ℝ → ℝ) : Prop where
+  /-- Structural derivation of the chiral-case first-order factor from
+      the Kauffman framing formula on the Hecke ribbon category, with
+      explicit average-content factor: the ribbon-twist evaluation
+      `a_K` agrees with `1 + w · ⟨c⟩ · h` to `O(h²)` near `h = 0`.
 
-/-- **Chirality conditional theorem (sorry-free).** -/
+      **Two things changed on 2026-08-29, and both were load-bearing.**
+
+      `a_K` is now a **parameter**, not an existential. It was
+      `∃ a_K error_term, …`, which asserts only that *some* pair of
+      functions differs by *something* times `h²` — satisfied by taking
+      `a_K` to be the first-order polynomial itself and the error
+      identically zero, which is how the instance below discharged it.
+      An existential over the very object the claim is about says
+      nothing about the Kauffman evaluation; a parameter does.
+
+      The error is now **bounded**, which is what `O(h²)` means. The
+      old field wrote `+ error_term · h²` with `error_term` free, so
+      the `h²` was decoration: an unbounded coefficient times `h²` can
+      be any function at all.
+
+      Same defect family as `HasQPlancherelCLT` (fixed in the same PR)
+      and as the q-RH `hasse-weil-bound` axioms — *an external theorem
+      asserted over a structure that does not carry the theorem's
+      hypotheses*. Recorded in
+      `docs/audits/2026-08-29-q-ns-conditional-class-audit.md`. -/
+  kauffman_derivation :
+    ∃ C δ : ℝ, 0 < C ∧ 0 < δ ∧
+      ∀ (h : ℝ) (writhe : ℤ) (avg_content : ℝ), |h| < δ →
+        |a_K h writhe avg_content
+            - chirality_factor_first_order h writhe avg_content|
+          ≤ C * h ^ 2
+
+/-- **The untwisted evaluation is `1`** — a consequence of the `O(h²)`
+    bound, not an assumption.
+
+    At `h = 0` the first-order factor is `1` and the error budget
+    `C · h²` is exactly `0`, so the bound pins `a_K 0 w ⟨c⟩` on the
+    nose. This composes the class field with the definition of
+    `chirality_factor_first_order`; neither states it alone, and the
+    previous encoding could not state it at all (its `a_K` was
+    existentially quantified, so there was no fixed function to
+    evaluate). -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
-theorem chirality_factor_structural
-    [hC : ChiralityFactorClass]
-    (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
-    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
-      a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2 := by
-  obtain ⟨a_K, error_term, H⟩ := hC.kauffman_derivation
-  exact ⟨a_K, error_term, H h writhe avg_content⟩
+theorem kauffman_eval_at_zero (a_K : ℝ → ℤ → ℝ → ℝ)
+    [hC : ChiralityFactorClass a_K] (writhe : ℤ) (avg_content : ℝ) :
+    a_K 0 writhe avg_content = 1 := by
+  obtain ⟨C, δ, _, hδ, hb⟩ := hC.kauffman_derivation
+  have hbound := hb 0 writhe avg_content (by simpa using hδ)
+  have hfo : chirality_factor_first_order 0 writhe avg_content = 1 := by
+    unfold chirality_factor_first_order; ring
+  have hz : C * (0 : ℝ) ^ 2 = 0 := by ring
+  rw [hfo, hz] at hbound
+  have := abs_nonpos_iff.mp hbound
+  linarith
 
 
 /-! ## z-Habiro convergence (brane-tower |V|≈1 divergence) -/
@@ -225,22 +259,19 @@ spectral-sequence derivation. We leave it as the residual
 conjectural input; an instance closure awaits the upstream
 structural derivation in `conj:shell-correction-term-seven`. -/
 
-/-- **Chirality factor class — unconditional instance.**
-...
-    The Kauffman framing formula on `H_n(R, q)` predicts
-    `a_K(β) = 1 + w(β) · h + O(h²)` (chirality-writhe-ribbon-derivation
-    §Derivation). Our class field merely demands existence of
-    `chirality_factor_first_order h writhe = 1 + writhe · h`,
-    which is closed by `rfl`. The substantive structural content —
-    that the Kauffman ribbon-twist expansion has writhe as the
-    linear-in-`h` coefficient — lives upstream in the .md narrative. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
-instance chiralityFactorInstance : ChiralityFactorClass where
-  kauffman_derivation := by
-    use fun h w c => chirality_factor_first_order h w c
-    use fun _ _ _ => 0
-    intro h writhe avg_content
-    ring
+/-- Inhabitedness witness — the class is consistent, at the trivial
+    `a_K = ` the first-order polynomial itself.
+
+    It is an `example`, deliberately **not** a global `instance`: as an
+    instance it would auto-discharge `[ChiralityFactorClass a_K]`
+    binders and make every conditional theorem above unconditional.
+    An instance for the *actual* Kauffman ribbon-twist evaluation is
+    the open work; this only shows the strengthened field is not
+    vacuously unsatisfiable. -/
+example : ChiralityFactorClass chirality_factor_first_order :=
+  ⟨⟨1, 1, one_pos, one_pos, fun h _ _ _ => by
+    simpa using sq_nonneg h⟩⟩
 
 /-- **z-Habiro convergence class — unconditional instance.**
 ...
@@ -272,19 +303,37 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
 instance alphaOver4PiInstance : AlphaOver4PiClass where
   higher_bloch_realised := fun alpha => ⟨ℝ, id, alpha_over_4pi_target alpha, rfl⟩
 
-/-- **Unconditionalised conditional theorems.** With the three
-    instances above in scope, the conditional theorems
-    `chirality_factor_structural`, `brane_tower_finite`, and
-    `alpha_over_4pi_structural` close unconditionally — the
-    `[Instance]` arguments are inferred. The §3b-cond hooks have
-    been formally discharged; the substantive structural content
-    sits entirely in the upstream conjecture blocks. -/
+/-! ### Unconditionalised conditional theorems
 
-theorem chirality_factor_unconditional
-    (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
-    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
-      a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2 :=
-  chirality_factor_structural h writhe avg_content
+    With the instances
+    above in scope, `brane_tower_finite` and `alpha_over_4pi_structural`
+    close unconditionally — the `[Instance]` arguments are inferred.
+    The §3b-cond hooks are formally discharged; the substantive
+    structural content sits entirely in the upstream conjecture blocks.
+
+    **Chirality is deliberately no longer in this list (2026-08-29).**
+    `ChiralityFactorClass` is now parametrised by the ribbon-twist
+    evaluation `a_K`, so no single instance can discharge it for an
+    arbitrary `a_K`, and its witness is an `example` rather than a
+    global `instance`. That is the point of the change: the previous
+    `chirality_factor_unconditional` asserted
+    `∃ a_K error_term, a_K = first_order + error_term · h²`
+    with nothing bounding `error_term` — a statement provable outright
+    by taking the error to be zero, which said nothing about the
+    Kauffman evaluation while reading as a discharged derivation.
+    What replaces it below is the honest residue: the class is
+    *consistent*, which is a different and much weaker claim. -/
+
+/-- **`ChiralityFactorClass` is consistent** — some `a_K` satisfies the
+    `O(h²)` bound. This is *all* that is unconditionally available, and
+    it is not a derivation of the chirality factor: the witness is the
+    first-order polynomial itself. An instance at the actual Kauffman
+    ribbon-twist evaluation is the open work. -/
+-- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+theorem chirality_factor_class_consistent :
+    ∃ a_K : ℝ → ℤ → ℝ → ℝ, ChiralityFactorClass a_K :=
+  ⟨chirality_factor_first_order,
+    ⟨⟨1, 1, one_pos, one_pos, fun h _ _ _ => by simpa using sq_nonneg h⟩⟩⟩
 
 theorem brane_tower_finite_unconditional :
     ∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ),

@@ -93,7 +93,7 @@ def main() -> int:
     worst = max(abs(inversion_residual(z) + ZETA2) for z in zs)
     print(f"\n[D1] classical: Li₂(z)+Li₂(1/z)+½log²(−z) = −ζ(2)={mp.nstr(-ZETA2,12)} "
           f"(all z∉(0,1)):  max|Δ| = {float(worst):.1e}")
-    wb.add_assertion("dilog_inversion_constant_is_minus_zeta2", computed=float(worst),
+    wb.add_assertion("dilog_inversion_constant_is_minus_zeta2", computed=worst,
                      expected=0.0, tolerance=1e-30,
                      source="Li₂(z)+Li₂(1/z)+½log²(−z) = −π²/6 (dilog inversion formula) "
                             "— the cusp crossing x↔1/x forces this constant")
@@ -112,7 +112,7 @@ def main() -> int:
         prev = d
     final = abs(faddeev_inversion_semiclassical("0.001") + ZETA2)
     wb.add_assertion("faddeev_inversion_semiclassical_is_minus_zeta2",
-                     computed=float(final), expected=0.0, tolerance=1e-4,
+                     computed=final, expected=0.0, tolerance=1e-4,
                      source="the Faddeev inversion constant iπ(b²+b⁻²)/12 at the Li₂ "
                             "level (×2πib²) → −π²/6 as b→0 — the modular anomaly the "
                             "bare partial product lacks and Φ_b carries")
@@ -128,7 +128,7 @@ def main() -> int:
     print(f"\n[D3] the SAME ζ(2): 2·R(e^{{iπ/3}}) − π²/6 = i·Vol(4₁)  "
           f"(|Δ|={float(eb):.1e}, Vol={mp.nstr(Vol41,10)}) — the algebraic↔geometric "
           f"pairing constant.")
-    wb.add_assertion("same_zeta2_is_extended_bloch_pairing", computed=float(eb),
+    wb.add_assertion("same_zeta2_is_extended_bloch_pairing", computed=eb,
                      expected=0.0, tolerance=1e-30,
                      source="2·R(e^{iπ/3})−π²/6 = i·Vol(4₁): the inversion constant = the "
                             "extended-Bloch/Rogers normalization pairing Li₂ ↔ Bloch–Wigner")

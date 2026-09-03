@@ -1,41 +1,74 @@
 {
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T11:36:24.179001+00:00",
+  "commitSha": "a63a9642b80badff001cfa418f19df3b61104d40",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "theta_jet_gb_grading_probe",
+  "scriptFile": "theta_jet_gb_grading_probe.py",
+  "scriptHash": "78bf71b05c73",
+  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/theta_jet_gb_grading_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/theta_jet_gb_grading_probe.py"
+  },
   "description": "theta-order (slope-1/2 Gaussian exponent of the C1 q-lift kernel) vs jet/body order m vs Groebner-Shirshov (Hecke) Poincare q-degree deg_q[m]_q! = C(m,2). Tests whether the theta-order is constant across m (intrinsic) or jet-graded, and whether the m^2/4 Gaussian = (1/2) cumulative GS degree.",
-  "computation": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
-  "generated": "2026-07-20T04:05:41+00:00",
+  "computation_method": "mpmath dps=60; C1 recurrence [m+2]_q b_{m+2}=b_{m+1}+b_m seeded b_0=b_1=1; theta_m=-log_q|b_m|; s_m=theta_m/C(m,2); bridge=theta_m/(m(m-1)/4); involution effective Gevrey order 2 log I(m)/log(m!); flatness via window means/drift.",
+  "generated": "2026-08-29T11:36:24+00:00",
   "parameters": {
     "dps": 60,
     "m_max": 200,
-    "q0": "1.1099785955573347199",
+    "q0": "1.1099785827513808076",
     "q0_anchor": "muon (computations layer canonical)"
   },
   "results": {
     "curvature_2nd_diff_theta": {
       "target_2a": "1/2",
-      "window_20_40": "0.540749665814",
-      "window_140_180": "0.499980646728",
+      "window_20_40": "0.540749676269",
+      "window_140_180": "0.499980646763",
       "sd": "0.00168887",
-      "drift": "0.00059225983",
-      "gaussian_coeff_a": "0.249990323364",
+      "drift": "0.00059226014",
+      "gaussian_coeff_a": "0.249990323381",
       "constant_not_jet_graded": true
     },
     "quadratic_fit_120_180": {
-      "a_target_1_4": "0.250019262144",
-      "b_linear": "11.07160766",
-      "b_pred_framing_half_logq_inv_qm1": "10.57817728",
+      "a_target_1_4": "0.250019262159",
+      "b_linear": "11.07160938",
+      "b_pred_framing_half_logq_inv_qm1": "10.57817901",
       "c": "-97.4613"
     },
     "gs_bridge_leading": {
       "claim": "a = 1/4 = (1/2)*(1/2); leading theta Gaussian = (1/2) cumulative GS deg_q[m]_q! = C(m,2)",
-      "a_fit": "0.250019262144",
+      "a_fit": "0.250019262159",
       "identity_C_m_2_eq_cumulative_gs_degree": true,
       "deg_q_k_q_eq_k_minus_1": true,
       "subleading_linear_is_framing": true,
       "verdict": true
     },
     "slope_s_m_diagnostic_linear_polluted": {
-      "window_20_40": "1.087462091",
-      "window_160_180": "0.6273839911",
-      "drift": "0.4600781",
+      "window_20_40": "1.08746217",
+      "window_160_180": "0.6273840101",
+      "drift": "0.46007816",
       "note": "polluted by framing b; NOT the constancy invariant"
     },
     "gevrey_effective_order": {
@@ -57,7 +90,6 @@
     "route_b": "computations/probes/qlift_routeB_connection_matrix_probe.py (measured C1 decay leg gamma ~ -1/4)",
     "discipline": "scope-(a); pre-stated discriminants; no AME data; the GS-bridge identification is leading-q-order + conjectural (C1 = binding module is the standing keystone conjecture)"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347199",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

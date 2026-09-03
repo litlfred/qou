@@ -1,0 +1,155 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1804.10084v1",
+ "source": {
+  "file": "1804.10084v1.pdf",
+  "sha256": "716da9708f06d930246e5eeb0c30b6d271005199ef58f10102799e07b8d14aa1",
+  "bytes": 158571,
+  "pages": 10,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1804.10084",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "21 Apr 2018"
+  },
+  "doi": null,
+  "title": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+  "authors_raw": "Kevin Garbe Jan Vondr\u00e1k",
+  "title_lines": [
+   "Concentration of Lipschitz Functions",
+   "of Negatively Dependent Variables"
+  ],
+  "abstract": "We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy concentration bounds similar to McD iarmid\u2019s inequality for indepen- dent random variables. We prove such a concentration bound for r andom variables satisfying the condition of negative regression, correcting an earlier proof [5].",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180426203310-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Prior work",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Notions of negative dependence",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Concentration under negative regression",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Adaptive martingale analysis",
+   "page": 4,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Discussion and conclusion",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A The failure of a fixed ordering",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 867,
+   "n_words": 125
+  },
+  {
+   "id": "sec-001-11-prior-work",
+   "number": "1.1",
+   "title": "Prior work",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 984,
+   "n_words": 149
+  },
+  {
+   "id": "sec-002-2-notions-of-negative-dependence",
+   "number": "2",
+   "title": "Notions of negative dependence",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6944,
+   "n_words": 1228
+  },
+  {
+   "id": "sec-003-3-concentration-under-negative-regression",
+   "number": "3",
+   "title": "Concentration under negative regression",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1934,
+   "n_words": 369
+  },
+  {
+   "id": "sec-004-31-adaptive-martingale-analysis",
+   "number": "3.1",
+   "title": "Adaptive martingale analysis",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 9312,
+   "n_words": 2186
+  },
+  {
+   "id": "sec-005-4-discussion-and-conclusion",
+   "number": "4",
+   "title": "Discussion and conclusion",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6871,
+   "n_words": 1250
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 6,
+  "chars_total": 26912
+ }
+}

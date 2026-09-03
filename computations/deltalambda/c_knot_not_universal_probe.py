@@ -160,6 +160,15 @@ def main() -> int:
     except Exception:
         witness["scriptCommitSha"] = "uncommitted"
     out = HERE / "c-knot-not-universal.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2, default=str) + "\n")
 
     print("=== formalize-first: is C_knot one universal derivable factor? NO ===")

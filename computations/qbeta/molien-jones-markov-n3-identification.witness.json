@@ -1,0 +1,83 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-29T09:56:31.145395+00:00",
+  "commitSha": "66688f42271a208e069c1c7b306669c3610abf51",
+  "assertions": [
+    {
+      "name": "y_(3)_=_M_nu_*_Z",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "exact Q(q,z)"
+    },
+    {
+      "name": "y_(1^3)_=_M_nu_*_Z",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "exact Q(q,z)"
+    },
+    {
+      "name": "y_(2,1)_=_M_nu_*_Z",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "exact Q(q,z)"
+    },
+    {
+      "name": "specialisation_u_eq_qsq_is_forced",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "unique solution of the overdetermined conic system"
+    },
+    {
+      "name": "normaliser_is_perfect_square",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Z = (q^2 - q z - 1)^2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "molien-jones-markov-n3-identification",
+  "scriptFile": "molien_jones_markov_n3_identification_probe.py",
+  "scriptHash": "882e9e4a5e69",
+  "scriptCommitSha": "08c6a0e155e5bb2aeea3888d1435ef98a2e7f470",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/molien_jones_markov_n3_identification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/molien_jones_markov_n3_identification_probe.py"
+  },
+  "description": "beans qou-sf1t/qou-3quc: the Jones-Markov weights y_lambda ARE the Webster-Williamson S_3 Molien series M_nu at the FORCED specialisation u=q^2, t=qz/(q^2-qz-1), with one common perfect-square normaliser Z=(q^2-qz-1)^2 (the Poincare/Molien shape, NOT [n]_q!). u=q^2 is the unique solution of an overdetermined elimination (3 z-coeffs, 1 unknown) -> a derivation, not a fit. Resolves the 2026-08-21 lead's items 4/2 and the weight-level half of item 1 for n=3; general n (qou-3quc) open. Exact Q(q,z); Lean QOU/QBeta/MolienJonesMarkovN3.lean sorry-free. Nothing wired.",
+  "auditOnly": "docs/audits/2026-08-29-molien-jones-markov-n3-identification.md",
+  "data": {
+    "molien_conic": "R1*R2*u + R1*u**2 + 2*R1*u + R1 - R2**2*u**2 - R2**2 + R2*u",
+    "u_forced": "['q**(-2)', 'q**2']",
+    "t_specialisation": "q*z/(q^2 - q*z - 1)",
+    "normaliser_Z": "(q^2 - q*z - 1)^2",
+    "scope": "n=3 only; general n (qou-3quc) open",
+    "free_parameters": 0
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: everything is exact in Q(q,z), as this file's own docstring states. q_0 is reachable through an imported probe but is never evaluated at; no q_0 value reaches the payload."
+}

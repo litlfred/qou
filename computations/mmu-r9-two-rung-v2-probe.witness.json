@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T14:56:44.509298+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-08-30T12:52:24.506277+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "v2_at_least_one_meets_100x_l2",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "mmu-r9-two-rung-v2-probe",
   "scriptFile": "mmu_r9_two_rung_v2_probe.py",
-  "scriptHash": "e7828c2e6c97",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "807086db5720",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mmu_r9_two_rung_v2_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mmu_r9_two_rung_v2_probe.py"
   },
   "data": {
     "q_substrate": "1.10997858275138080759166909561",
@@ -50,67 +55,67 @@
     "per_candidate_results": {
       "V1.  +hbar_q^8 * q^2 / 10": {
         "delta_2": "0.00000000114439870063375936366796200791",
-        "err_ppb": -0.021320101858161775,
-        "miss_factor": 0.09794118816643063,
+        "err_ppb": -0.021320101842984496,
+        "miss_factor": 0.0979411880967086,
         "passed_100x_l2": true
       },
       "V2.  +hbar_q^8 / [4]_q": {
         "delta_2": "0.00000000226016370347136273275325787993",
-        "err_ppb": -1.1370853403061865,
-        "miss_factor": 5.223590863548536,
+        "err_ppb": -1.137085340291009,
+        "miss_factor": 5.2235908634788135,
         "passed_100x_l2": false
       },
       "V3.  +hbar_q^7 * (q-1) / 100": {
         "delta_2": "1.03100971353614681952152893182e-10",
-        "err_ppb": 1.0199778473075287,
-        "miss_factor": 4.6856174953261105,
+        "err_ppb": 1.019977847322706,
+        "miss_factor": 4.685617495395832,
         "passed_100x_l2": false
       },
       "V4.  +hbar_q^8 / 8.4": {
         "delta_2": "0.00000000110578035935795953943641218811",
-        "err_ppb": 0.017298247572476777,
-        "miss_factor": 0.07946542336977021,
+        "err_ppb": 0.017298247587654057,
+        "miss_factor": 0.07946542343949224,
         "passed_100x_l2": true
       },
       "V5.  +hbar_q^6 * (q-1)^2 / 100": {
         "delta_2": "1.14439870063375936366796200791e-10",
-        "err_ppb": 1.00863894620339,
-        "miss_factor": 4.633528370516612,
+        "err_ppb": 1.0086389462185672,
+        "miss_factor": 4.633528370586334,
         "passed_100x_l2": false
       },
       "V6.  +hbar_q^6 * hbar^2 / 100": {
         "delta_2": "9.28855501860686013126586238011e-11",
-        "err_ppb": 1.0301932706322134,
-        "miss_factor": 4.73254554026224,
+        "err_ppb": 1.0301932706473906,
+        "miss_factor": 4.732545540331962,
         "passed_100x_l2": false
       },
       "V7.  +hbar_q^8 * (q+1) / 20": {
         "delta_2": "9.79932607698416416324057584917e-10",
-        "err_ppb": 0.1431460258066496,
-        "miss_factor": 0.6575902846092032,
+        "err_ppb": 0.14314602582182687,
+        "miss_factor": 0.6575902846789252,
         "passed_100x_l2": true
       },
       "V8.  +hbar_q^8 / 8": {
         "delta_2": "0.00000000116106937732585751640823279751",
-        "err_ppb": -0.03799078207052194,
-        "miss_factor": 0.17452366598025543,
+        "err_ppb": -0.03799078205534467,
+        "miss_factor": 0.17452366591053342,
         "passed_100x_l2": true
       },
       "V9.  +hbar_q^8 * [3]_q / 25": {
         "delta_2": "0.00000000113086530313718461960400944436",
-        "err_ppb": -0.007786701503808309,
-        "miss_factor": 0.03577087962590404,
+        "err_ppb": -0.00778670148863103,
+        "miss_factor": 0.035770879556182016,
         "passed_100x_l2": true
       },
       "V10. +hbar_q^6 * q * hbar^2 / 50": {
         "delta_2": "2.06201942707229363904305786365e-10",
-        "err_ppb": 0.9168768541826062,
-        "miss_factor": 4.211987780281937,
+        "err_ppb": 0.9168768541977835,
+        "miss_factor": 4.211987780351659,
         "passed_100x_l2": false
       }
     },
     "best_candidate_name": "V9.  +hbar_q^8 * [3]_q / 25",
-    "best_miss_factor": 0.03577087962590404,
+    "best_miss_factor": 0.035770879556182016,
     "any_meets_100x_l2": true
   },
   "q0Anchor": "proton",

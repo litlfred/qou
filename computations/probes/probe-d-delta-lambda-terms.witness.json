@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T12:08:11.935156+00:00",
-  "commitSha": "df0d837b80c050e2240268b2a7db952843eb9d6b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-26T15:38:17.765146+00:00",
+  "commitSha": "64e948be588fc02245ee737fcf52ed1951acba6b",
   "assertions": [
     {
       "name": "wedderburn_closure",
-      "computed": 8.71723001306747e-51,
-      "expected": 0.0,
+      "computed": "8.7172300130674698185e-51",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-9",
       "source": "Σ_λ y_λ χ^λ(β_D) = tr_M(β_D) (witness cross-check)"
     },
     {
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "probe-d-delta-lambda-terms",
   "scriptFile": "probe_d_delta_lambda_terms.py",
-  "scriptHash": "0b0b95349b2a",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "2e99596f25b3",
+  "scriptCommitSha": "1ccff98a55ebfbfdfdddace99578b528f23164a6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,10 +37,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [
@@ -66,7 +66,7 @@
         "y_lambda": "0.115324224902",
         "chi_bound": "1.55987019956",
         "chi_free": "1.5513064682",
-        "chi_qinv": "0.6769250917",
+        "chi_qinv": "0.676984733224",
         "delta_chi": "-0.00856373136367",
         "trM_term": "0.179890821713",
         "binding_term_y_dchi": "-0.000987605681785"
@@ -82,7 +82,7 @@
         "y_lambda": "0.0789529624759",
         "chi_bound": "3.21631734224",
         "chi_free": "5.93121148832",
-        "chi_qinv": "-2.15541571171",
+        "chi_qinv": "-2.15561330121",
         "delta_chi": "2.71489414608",
         "trM_term": "0.253937782432",
         "binding_term_y_dchi": "0.214348935642"
@@ -98,7 +98,7 @@
         "y_lambda": "0.046032434692",
         "chi_bound": "1.67439526203",
         "chi_free": "9.00591303276",
-        "chi_qinv": "0.819715650293",
+        "chi_qinv": "0.819790438079",
         "delta_chi": "7.33151777072",
         "trM_term": "0.0770764905482",
         "binding_term_y_dchi": "0.337487612974"
@@ -115,7 +115,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-0.469805886378",
         "chi_free": "5.36599503401",
-        "chi_qinv": "0.489987771275",
+        "chi_qinv": "0.48981789459",
         "delta_chi": "5.83580092039",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -131,7 +131,7 @@
         "y_lambda": "0.015123810098",
         "chi_bound": "4.24940202292",
         "chi_free": "4.62600801264",
-        "chi_qinv": "3.49756389083",
+        "chi_qinv": "3.49789590964",
         "delta_chi": "0.376605989725",
         "trM_term": "0.0642671492248",
         "binding_term_y_dchi": "0.00569571747038"
@@ -148,7 +148,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-1.97227244615",
         "chi_free": "7.62558351446",
-        "chi_qinv": "1.97282073802",
+        "chi_qinv": "1.97349626237",
         "delta_chi": "9.59785596062",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -166,7 +166,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-0.490125652323",
         "chi_free": "-1.91763458064",
-        "chi_qinv": "0.470191710157",
+        "chi_qinv": "0.470667065291",
         "delta_chi": "-1.42750892832",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -183,7 +183,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-3.49729440651",
         "chi_free": "3.74795844081",
-        "chi_qinv": "-4.24906940541",
+        "chi_qinv": "-4.24865960319",
         "delta_chi": "7.24525284733",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -201,7 +201,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-0.819654948504",
         "chi_free": "0.844233846277",
-        "chi_qinv": "-1.67374772222",
+        "chi_qinv": "-1.67294991921",
         "delta_chi": "1.66388879478",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -220,7 +220,7 @@
         "y_lambda": "0.0",
         "chi_bound": "2.15525533745",
         "chi_free": "-2.23046769817",
-        "chi_qinv": "-3.21589087847",
+        "chi_qinv": "-3.21536545275",
         "delta_chi": "-4.38572303561",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -240,7 +240,7 @@
         "y_lambda": "0.0",
         "chi_bound": "-0.676876683433",
         "chi_free": "0.67325689637",
-        "chi_qinv": "-1.5597586581",
+        "chi_qinv": "-1.55962123317",
         "delta_chi": "1.3501335798",
         "trM_term": "0.0",
         "binding_term_y_dchi": "0.0"
@@ -259,9 +259,9 @@
           1,
           1
         ],
-        "chi_qinv": "0.6769250917",
+        "chi_qinv": "0.6769847332",
         "signed_chi_conj_q": "0.6768766834",
-        "rel_resid": 2.8868113828742803e-05
+        "rel_resid": "0.000064435144318610869594"
       },
       {
         "lambda": [
@@ -275,9 +275,9 @@
           1,
           1
         ],
-        "chi_qinv": "-2.155415712",
+        "chi_qinv": "-2.155613301",
         "signed_chi_conj_q": "-2.155255337",
-        "rel_resid": 5.082766424774953e-05
+        "rel_resid": "0.00011345001272375362919"
       },
       {
         "lambda": [
@@ -290,9 +290,9 @@
           1,
           1
         ],
-        "chi_qinv": "0.8197156503",
+        "chi_qinv": "0.8197904381",
         "signed_chi_conj_q": "0.8196549485",
-        "rel_resid": 3.3358955272647126e-05
+        "rel_resid": "0.000074458937984751321347"
       },
       {
         "lambda": [
@@ -306,9 +306,9 @@
           1,
           1
         ],
-        "chi_qinv": "0.4899877713",
+        "chi_qinv": "0.4898178946",
         "signed_chi_conj_q": "0.4901256523",
-        "rel_resid": 9.25298133221663e-05
+        "rel_resid": "0.0002065313969093338188"
       },
       {
         "lambda": [
@@ -320,9 +320,9 @@
           2,
           2
         ],
-        "chi_qinv": "3.497563891",
+        "chi_qinv": "3.49789591",
         "signed_chi_conj_q": "3.497294407",
-        "rel_resid": 5.99214304339108e-05
+        "rel_resid": "0.00013374777585719361614"
       },
       {
         "lambda": [
@@ -335,9 +335,9 @@
           2,
           1
         ],
-        "chi_qinv": "1.972820738",
+        "chi_qinv": "1.973496262",
         "signed_chi_conj_q": "1.972272446",
-        "rel_resid": 0.00018446891386482731
+        "rel_resid": "0.00041174429190946518226"
       },
       {
         "lambda": [
@@ -351,9 +351,9 @@
           1,
           1
         ],
-        "chi_qinv": "0.4701917102",
+        "chi_qinv": "0.4706670653",
         "signed_chi_conj_q": "0.4698058864",
-        "rel_resid": 0.0002624998191001618
+        "rel_resid": "0.00058591336544084772603"
       },
       {
         "lambda": [
@@ -365,9 +365,9 @@
           3,
           3
         ],
-        "chi_qinv": "-4.249069405",
+        "chi_qinv": "-4.248659603",
         "signed_chi_conj_q": "-4.249402023",
-        "rel_resid": 6.336293281212476e-05
+        "rel_resid": "0.00014142938968650686469"
       },
       {
         "lambda": [
@@ -380,9 +380,9 @@
           4,
           2
         ],
-        "chi_qinv": "-1.673747722",
+        "chi_qinv": "-1.672949919",
         "signed_chi_conj_q": "-1.674395262",
-        "rel_resid": 0.0002421256942513677
+        "rel_resid": "0.00054043725007059679512"
       },
       {
         "lambda": [
@@ -396,9 +396,9 @@
           5,
           1
         ],
-        "chi_qinv": "-3.215890878",
+        "chi_qinv": "-3.215365453",
         "signed_chi_conj_q": "-3.216317342",
-        "rel_resid": 0.00010114603051910857
+        "rel_resid": "0.00022576324564940270445"
       },
       {
         "lambda": [
@@ -412,12 +412,12 @@
         "conj": [
           6
         ],
-        "chi_qinv": "-1.559758658",
+        "chi_qinv": "-1.559621233",
         "signed_chi_conj_q": "-1.5598702",
-        "rel_resid": 4.3573092399129964e-05
+        "rel_resid": "0.000097257427825113199045"
       }
     ],
-    "bar_conjugate_max_rel_resid": 0.0002624998191001618,
+    "bar_conjugate_max_rel_resid": "0.0005859133654408477260339081158770799084341184711696330994101506536201198",
     "sum_y_chi_bound": "0.57517224391777187083",
     "tr_M": "0.57517224391777187083",
     "scalar_binding_trace_diff": "0.5565446604044382119",

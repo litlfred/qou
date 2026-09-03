@@ -1,0 +1,176 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2205.06874v2",
+ "source_sha256": "9b41365160c17ab4",
+ "brief": "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a",
+ "extended": "**State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg**\n\n*Cauerstraße 11, 91058 Erlangen, Germany*\n\n68 pp, 31 sections.\n\n**Abstract.** We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects. Surface defects are oriented embedded 2d PL submanifolds and are labeled with bimodule categories over spherical fusion categories with bimodule traces. Line and point defects form directed graphs on these surfaces and labeled with bimodule functors and bimodule natural transformations. The state sum is based on generalised 6j symbols that encode the coherence isomorphisms of the defect data. We prove the triangulation independence of the state sum and show that it can be computed in terms of polygon diagrams that satisfy the cutting and gluing identities for polygon presentations of oriented surfaces. By computing state sums with defect surfaces, we show that they detect the genus of a defect surface and are sensitive to its embedding.\n\n**Outline.** Spherical fusion categories; Categorical data; (Bi)module categories, functors and natural tr; Finite semisimple (bi)module categories over p; Bimodule categories with bimodule traces; Diagrammatic calculus; Diagrams for spherical fusion categories; Diagrams for (bi)module categories, functors a; Diagrams for 2-categories; Diagrams for pivotal 2-categories; Mixed diagrams; Polygon diagrams; Action on category diagrams; Bordered diagrams; Polygon diagrams; Gluing polygon diagrams; Projections and inclusions for simple objects; Gluing identities for polygon diagrams",
+ "tokens": {
+  "brief": 43,
+  "extended": 424
+ },
+ "sections": [
+  {
+   "id": "sec-000-spherical-fusion-categories",
+   "title": "Spherical fusion categories",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-001-categorical-data",
+   "title": "Categorical data",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-bimodule-categories-functors-and-natural-transfo",
+   "title": "(Bi)module categories, functors and natural transformations",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-003-finite-semisimple-bimodule-categories-over-pivot",
+   "title": "Finite semisimple (bi)module categories over pivotal fusion categories",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-bimodule-categories-with-bimodule-traces",
+   "title": "Bimodule categories with bimodule traces",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-diagrammatic-calculus",
+   "title": "Diagrammatic calculus",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-006-diagrams-for-spherical-fusion-categories",
+   "title": "Diagrams for spherical fusion categories",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-diagrams-for-bimodule-categories-functors-and-na",
+   "title": "Diagrams for (bi)module categories, functors and natural transformations",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-008-diagrams-for-2-categories",
+   "title": "Diagrams for 2-categories",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-009-diagrams-for-pivotal-2-categories",
+   "title": "Diagrams for pivotal 2-categories",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-010-mixed-diagrams",
+   "title": "Mixed diagrams",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-011-polygon-diagrams",
+   "title": "Polygon diagrams",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-012-action-on-category-diagrams",
+   "title": "Action on category diagrams",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-013-bordered-diagrams",
+   "title": "Bordered diagrams",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-014-polygon-diagrams",
+   "title": "Polygon diagrams",
+   "pages": "19-24"
+  },
+  {
+   "id": "sec-015-gluing-polygon-diagrams",
+   "title": "Gluing polygon diagrams",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-016-projections-and-inclusions-for-simple-objects",
+   "title": "Projections and inclusions for simple objects",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-017-gluing-identities-for-polygon-diagrams",
+   "title": "Gluing identities for polygon diagrams",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-018-state-sum-models-with-defects",
+   "title": "State sum models with defects",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-019-triangulated-3-manifolds-with-defects",
+   "title": "Triangulated 3-manifolds with defects",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-020-labeling-of-the-triangulation",
+   "title": "Labeling of the triangulation",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-021-generalised-6j-symbols",
+   "title": "Generalised 6j symbols",
+   "pages": "31-37"
+  },
+  {
+   "id": "sec-022-state-sum-model-with-defects",
+   "title": "State sum model with defects",
+   "pages": "37-39"
+  },
+  {
+   "id": "sec-023-topological-invariance",
+   "title": "Topological invariance",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-024-moves-between-triangulated-pl-manifolds",
+   "title": "Moves between triangulated PL manifolds",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-025-neighbourhoods-of-defect-surfaces",
+   "title": "Neighbourhoods of defect surfaces",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-026-state-sums-with-defect-discs",
+   "title": "State sums with defect discs",
+   "pages": "44-48"
+  },
+  {
+   "id": "sec-027-triangulation-independence",
+   "title": "Triangulation independence",
+   "pages": "48-51"
+  },
+  {
+   "id": "sec-028-examples-of-state-sums",
+   "title": "Examples of state sums",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-029-state-sums-with-defect-surfaces",
+   "title": "State sums with defect surfaces",
+   "pages": "51-59"
+  },
+  {
+   "id": "sec-030-ribbon-invariants-from-line-defects",
+   "title": "Ribbon invariants from line defects",
+   "pages": "59-68"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

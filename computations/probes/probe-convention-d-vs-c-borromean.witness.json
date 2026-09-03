@@ -16,7 +16,7 @@
       "computed": 0.00019554135909192092,
       "expected": 0.00019554,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "D differs from C by the PROBE-4 gap figure — the convention split is exact, not numerical"
     },
     {

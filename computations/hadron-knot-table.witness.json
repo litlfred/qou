@@ -9,7 +9,7 @@
       "computed": 0.419562177934,
       "expected": 0.419562177934,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -18,7 +18,7 @@
       "computed": 0.301675079767,
       "expected": 0.301675079767,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -27,7 +27,7 @@
       "computed": 1.123183539266,
       "expected": 1.123183539266,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -36,7 +36,7 @@
       "computed": 0.253377259444,
       "expected": 0.253377259444,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -54,7 +54,7 @@
       "computed": 0.724982676153,
       "expected": 0.724982676153,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -72,7 +72,7 @@
       "computed": 0.483146974267,
       "expected": 0.483146974267,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },
@@ -90,7 +90,7 @@
       "computed": 1.496291001551,
       "expected": 1.496291001551,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "dimensionless",
       "source": "hecke_core.build_atom_nf → nf_tr"
     },

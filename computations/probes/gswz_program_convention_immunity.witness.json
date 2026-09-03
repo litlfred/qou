@@ -3,15 +3,15 @@
  "probe": "gswz_program_convention_immunity_probe",
  "engine": "python3-sympy-exact",
  "scriptFile": "gswz_program_convention_immunity_probe.py",
- "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "commitSha": "5832d956e315e7d0c738dd2f3471e1875917e869",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
  ],
  "source": "owner ruling docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md; template docs/audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md; AGENTS.md c_k banner",
  "checks": {
-  "no_markov_or_gram_layer_imported": false,
-  "no_trace_parameter_reference": false,
+  "no_markov_or_gram_layer_imported": true,
+  "no_trace_parameter_reference": true,
   "no_substrate_anchor_reference": true,
   "candidates_are_integer_laurent_in_q": true,
   "c3_two_forms_still_identical": true,
@@ -20,29 +20,21 @@
  },
  "result": {
   "programme_probe_count": 39,
-  "trace_layer_hits": [
-   "gswz_epsm_chi_eigenspace_place_probe.py"
-  ],
-  "trace_parameter_hits": [
-   "gswz_epsm_alpha_line_unit_structure_probe.py",
-   "gswz_epsm_chi_eigenspace_place_probe.py",
-   "gswz_epsm_field_variation_probe.py",
-   "gswz_epsm_five_term_validation_probe.py",
-   "gswz_epsm_h_lift_m12_m24_probe.py",
-   "gswz_epsm_h_lift_m8_probe.py",
-   "gswz_epsm_m6_rwf_value_probe.py",
-   "gswz_epsm_m_lattice_eigenspace_census_probe.py",
-   "gswz_epsm_second_element_feasibility_probe.py",
-   "gswz_epsm_v1_computable_m_terminal_probe.py",
-   "gswz_epsm_v1_lift_and_value_probe.py",
-   "gswz_epsm_v2_vacuity_confirmation_probe.py"
-  ],
+  "trace_layer_hits": [],
+  "trace_parameter_hits": [],
   "substrate_anchor_hits": [],
+  "substrate_anchor_scan": "per-line, skipping witness-emission boilerplate (the qou_substrate.witness import and q0_anchor=False/None, the latter being a declaration OF anchor-freedom); selftest pins 4 must-fire and 3 must-not-fire lines",
   "classification": {
    "epsm_descent_chain_addenda_17_18_21_25": "VALID-immune (no q, no z, no anchor)",
    "ck_membership_gates_addendum_19": "VALID-immune (exact Laurent/cyclotomic arithmetic)",
    "ck_candidate_provenance_addendum_19": "C-CONDITIONAL \u2014 the identification of J_Hopf and [2]_q as the corpus's named c_k / alpha_EM candidates comes from the C-frame ladder (qou-cds1); the gate verdicts are unaffected"
   }
  },
- "scope": "scope-(a): MEASURED convention- and anchor-immunity of the eps_m/GSWZ programme (no Markov/Gram layer, no trace parameter, no substrate anchor; the q that appears is the quantum variable and the candidates are integer Laurent elements). Standing gate: it fires if a z- or anchor-dependent input is ever wired in. Does NOT claim the c_k ladder survives convention D (that is qou-cds1); flags the single C-CONDITIONAL item in my merged wording \u2014 the provenance label on the c_k candidates, not the gate verdicts."
+ "scope": "scope-(a): MEASURED convention- and anchor-immunity of the eps_m/GSWZ programme (no Markov/Gram layer, no trace parameter, no substrate anchor; the q that appears is the quantum variable and the candidates are integer Laurent elements). Standing gate: it fires if a z- or anchor-dependent input is ever wired in. Does NOT claim the c_k ladder survives convention D (that is qou-cds1); flags the single C-CONDITIONAL item in my merged wording \u2014 the provenance label on the c_k candidates, not the gate verdicts.",
+ "scriptHash": "63a5c292e409",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "computedAt": "2026-08-30T14:10:56.655274+00:00",
+ "durationMs": 0,
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

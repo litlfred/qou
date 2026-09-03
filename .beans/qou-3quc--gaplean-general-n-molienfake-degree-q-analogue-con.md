@@ -1,11 +1,11 @@
 ---
 # qou-3quc
 title: 'GAP(lean): general-n Molien/fake-degree q-analogue -- concrete n<=4 proved, general blocked on #SYT + coinvariant grading'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:13:18Z
-updated_at: 2026-08-21T21:43:00Z
+updated_at: 2026-08-29T10:58:44Z
 ---
 
 OPENED 2026-08-21 alongside the concrete cases, per AGENTS.md "if you cannot
@@ -81,3 +81,95 @@ PATTERN WORTH RECORDING: three times this arc I wrote 'the corpus lacks X' after
 checking only the obvious upstream -- the Webster-Williamson citation (it was
 cited), qBracket (it existed, definitionally identical to my draft's balQInt),
 and now #SYT. Grep content/**/*.lean before writing a scope note.
+
+## 2026-08-29 — n=3 template established (qou-sf1t / PR pending)
+
+The Molien<->Jones-Markov identification is now EXACT for n=3: y_lambda =
+M_nu(u=q^2, t=qz/(q^2-qz-1)) * (q^2-qz-1)^2, u=q^2 FORCED by an overdetermined
+elimination (not fitted). General-n is the open target this bean names. The n=4
+test: does the same monomial u=q^2 and a perfect-square normaliser Z_n reproduce the
+S_4 Jones-Markov weights from the general S_n Molien series? Template + Lean
+(MolienJonesMarkovN3.lean) + probe (molien_jones_markov_n3_identification_probe.py)
+ready to generalise. Note: the refuted f^l q^-k/[n]! form had the WRONG normaliser;
+the right one is the Molien Z, so the general-n normaliser is a Poincare series.
+
+## 2026-08-29 — general-n formula CONFIRMED at n=4 (numeric+normalization); Lean n=3 only
+
+y_lambda(q,z) = M_nu(u=q^2, t=qz/(q^2-qz-1)) * (1+qz-q^2)^(n-1), M_nu the S_n
+reflection-rep Molien series. Normaliser is a power of ONE linear form (Poincare/
+Molien), not [n]_q!. n=3 Z=(1+qz-q^2)^2=(q^2-qz-1)^2 (even); n>=4 the sign matters.
+n=4 (molien_jones_markov_general_n_probe.py, 3/3): Sum f^lam y_lam=1 EXACT symbolic;
+at z=z_D the >=3-row weights vanish (two-row cap) and survivors match corpus
+y_lambda_su_n(4,q0,2) SU(2) q-dims to <1e-14.
+LEAN STATUS: n=3 sorry-free (general z, MolienJonesMarkovN3.lean). n=4 needs the
+INDEPENDENT general-z H_4 weights as polynomials for a ring proof (only have z=z_D
+corpus pin + exact normalization). forall-n Lean = abstract S_n Molien + H_n Markov
+machinery, a real formalization project = THIS BEAN. Nothing wired.
+
+2026-08-29 Molien->binding hook (probe molien_binding_signed_dimension_probe.py, exact sympy, S3+S4 pass): the PROVED binding signed dims Delta_lambda=(-1)^{n(lambda)} dim V_lambda are read off the SAME M_nu(u,t) as the weights, at the fake-degree edge t=0: fd_lambda(u)=M_nu(u,0)*prod_{i=2}^n(1-u^i), n(lambda)=u-valuation, dim=fd(1). Weights at (u=q^2,t=qz/W); binding signed-dims at (u,t=0). Whole B=Sum y chi Delta is one bigraded Molien object read at two corners. HONEST: needs the FULL coinvariant denominator (reduced numerator gives dim=1 for all lambda -- corrected). Does NOT touch the open binding MAGNITUDE (extensive M_n(K) term). forall-n still open. Nothing wired.
+
+## 2026-08-29 — general-n REDUCTION landed (sorry-free), gap re-scoped precisely
+
+New uncommitted file: content/quantum-observable-universe/lean/QOU/MathlibExt/MolienFakeDegreeGeneralN.lean
+(lean-direct exit 0; axioms [propext, Classical.choice, Quot.sound] — no sorryAx).
+
+PROVED sorry-free, GENERAL n, over the canonical Fintype Nat.Partition n (same index as RSKBurnsideHolds):
+ - hookProd + qDim_eq_qFactorial_div: qDim q lam = [|lam|]_q!/prod[h_x]_q, by rfl, generic [Field R].
+ - molienSum_eq_qFactorial_mul_normalized: molienSum n q = [n]_q! * normalizedSum n q. The genuine
+   content-bearing step: uses PartitionListBridge.toList_sum ((toList p).sum = n) so every partition of
+   n shares the SAME [n]_q! numerator, which is what lets it factor out.
+ - molienSum_eq_qFactorial_iff (1<q): molienSum n q = [n]_q!  <->  normalizedSum n q = 1.
+   Isolates the mathematical content into ONE normalized identity.
+
+GAP re-scoped (the two prior blockers are RESOLVED as blockers, only the deformation content remains):
+ - #SYT: done (SYTEnum). Finset-induction over partitions: done in corpus (PartitionsOfBridge /
+   Nat.Partition Fintype; sum_map_partitionsOf). The classical q=1 face Sum (f^lam)^2 = n! is proved
+   general-n (QOU.Mathlib.rskBurnsideHolds, sorry-free, via Robinson-Schensted).
+ - REMAINING open content = normalizedSum n q = 1 for general n (the q-deformation away from q=1).
+   Two routes, NEITHER in Mathlib v4.24.0: (1) coinvariant-algebra graded Poincare = [n]_q! with
+   fake-degree graded multiplicities (needs graded S_n-module Poincare API + coinvariant algebra +
+   fake-degree=graded-mult theorem); (2) maj-Mahonian [n]_q! = Sum_w q^maj(w) + q-RSK + fake-degree =
+   Sum_T q^maj(T). Genuine multi-week formalization; not a one-line lemma. Bean stays OPEN.
+
+NOT taken (documented in the file): the mechanical faithfulness bridge molienSum n = concrete LHS via
+sum_map_partitionsOf + dimSYT_eq_numSYTenum — blocked only by the un-cached SchenstedRSKBurnside olean
+chain (from-source build), touches none of the open content.
+
+## 2026-08-29 CORRECTION (same session) — the reduction was ALREADY committed; I duplicated it
+
+The note just above overstated my contribution. MolienFakeDegreeGeneralN.lean was NOT new: commit
+53f42206c8 ('lean(3quc): general-n Molien/fake-degree REDUCTION') on THIS branch already committed the
+exact reduction theorems (hookProd, qDim_eq_qFactorial_div, molienSum/normalizedSum,
+molienSum_eq_qFactorial_mul_normalized, molienSum_eq_qFactorial_iff, normalizedSum_iff_molien),
+sorry-free. I independently re-derived a near-identical file WITHOUT knowing it existed, my Write
+overwrote it, then I restored it via git checkout so as not to clobber the prior theorem.
+
+Net verified outcome of THIS session:
+ - Independently reproduced + re-verified the committed reduction is correct and sorry-free (lean-direct
+   exit 0; axioms [propext, Classical.choice, Quot.sound], no sorryAx). Confirmation value only.
+ - Added ONE additive doc paragraph (uncommitted, +11 lines) naming the exact faithfulness-bridge route
+   (PartitionsOfBridge.sum_map_partitionsOf + SYTEnum.dimSYT_eq_numSYTenum) and why it is unbuilt here
+   (SchenstedRSKBurnside olean chain not in lake-cache).
+ - No new theorem proved. The real gap (normalizedSum n q = 1 general n; the q-deformation) is UNCHANGED
+   and remains a multi-week Mathlib project via coinvariant-algebra Poincare OR maj-Mahonian+q-RSK,
+   neither in Mathlib v4.24.0.
+
+2026-08-29: general-n gap SHARPENED via induction route (qou-x4zl). normalizedSum n q=1 reduced (sorry-free, MolienFakeDegreeInduction.lean) to the one-step recursion normalizedSum(n+1)=normalizedSum(n), then to the addable-box hook identity (B) [verified n<=6] + SYT branching (A) [corpus infra exists]. (B) is more elementary than the coinvariant/maj-RSK routes -- no rep theory. Remaining: prove (B) in Lean (q-JM contents) + the Nat.Partition addable-box reindexing.
+
+2026-08-29 CLOSED (math) via corpus telescope, NOT open: normalizedSum n q = 1 follows from MacdonaldTelescopeGeneralX.telescope_generalX at X=0. Convention bridge (exact n<=5): q^-kappa/hookProd_q(lam) = jonesMarkovCoeff(q^2,0,lam) = schurElement(q^2,0,lam)*(1-q^2)^n; telescope@X=0: Sum f schurElement(q^2,0) = (1/(1-q^2))^n; chain = 1. Per-cell 1-q^2h = -q^h(q-q^-1)[h]_q; n-stat identity kappa = Sum h - n - 2 n(lam). Probe fake_degree_via_telescope_probe.py 3/3. So NOT multi-week coinvariant/maj-RSK. Remaining = MECHANICAL Lean bridging (convention foldl + Nat.Partition<->YoungDiagram carrier). Audit 2026-08-29-normalizedsum-closes-via-telescope.md.
+
+
+UPDATE 2026-08-29 (PR #6011): the telescope closure is now assembled and VERIFIED
+sorry-free in Lean. normalizedSum_eq_one_of_convBridge (NormalizedSumClosure.lean)
+compiles lean-direct exit 0; #print axioms = [propext, Classical.choice, Quot.sound],
+no sorryAx. Carrier reindex (CarrierReindexBridge.lean) + per-cell brick
+(one_sub_qsq_pow_eq, #5975) also sorry-free.
+
+The general-n statement's three original blockers (#SYT, coinvariant grading,
+q-RSK) are BYPASSED: the corpus general-X Macdonald telescope (telescope_generalX,
+#5970) closes it at X=0 via the (Q=q^2, X=0) convention bridge. Math CLOSED (probe
+exact n<=5). The ONE remaining unproved Lean input is that per-lambda convention
+bridge hconv itself (q^(-kappa)/hookProd = schurElement(q^2,0)*(1-q^2)^n), carried
+as an explicit hypothesis (NOT a sorry). It reduces to the n-statistic identity
+kappa = sum h - n - 2 n(lambda) + foldl chaining of the per-cell brick -- mechanical,
+no open combinatorics. Follow-up bean for hconv if pursued.

@@ -1,0 +1,113 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9910019v1",
+ "source": {
+  "file": "9910019v1.pdf",
+  "sha256": "07dd7ab7068b1482af34a6f41e56f9ed1e9c55de89e9b46b624e6099ac253f33",
+  "bytes": 205933,
+  "pages": 17,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9910019",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "5 Oct 1999"
+  },
+  "doi": null,
+  "title": "Symmetrized random permutations",
+  "authors_raw": "Jinho Baik\u2217and",
+  "title_lines": [
+   "Symmetrized random permutations"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:math/9910019v1  [math.CO]  5 Oct 1999",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181111005029-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(\u2212x)3/2+",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(\u2212x)3/2\u2212",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 12048,
+   "n_words": 2411
+  },
+  {
+   "id": "sec-001-3-x32",
+   "number": "3",
+   "title": "(\u2212x)3/2+",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 91,
+   "n_words": 25
+  },
+  {
+   "id": "sec-002-3-x32",
+   "number": "3",
+   "title": "(\u2212x)3/2\u2212",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 15,
+   "n_chars": 16587,
+   "n_words": 3274
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 5389,
+   "n_words": 785
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 34115
+ }
+}

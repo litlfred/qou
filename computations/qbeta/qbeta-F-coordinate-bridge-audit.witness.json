@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T11:17:22.230609+00:00",
-  "commitSha": "64ee9432e7e1fca5f9ac444d9f5741fa404eda9c",
+  "computedAt": "2026-08-25T19:02:07.586884+00:00",
+  "commitSha": "da5a308d7508a748fa4f683aebf4d287aa0fd1b0",
   "assertions": [
     {
       "name": "bridge_and_cos_factor_differ_by_more_than_four_orders",
@@ -34,7 +34,7 @@
   "computation": "qbeta-F-coordinate-bridge-audit",
   "scriptFile": "qbeta_F_coordinate_bridge_audit_probe.py",
   "scriptHash": "ba1bde78d5bf",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,10 +45,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_F_coordinate_bridge_audit_probe.py"
   },
   "description": "Measures every proposed Q_β multiplicative correction in the coordinate F = Q_β/Q_A, which is smooth (unlike the phase α, whose square-root branch point 0.062% above q₀ is an artifact of the cos parameterisation). Establishes that the Form-A/Form-B bridge and the ladder's cos factor are DIFFERENT objects: the bridge sits ~5e-2 from what the data requires and the cos factor ~1e-6, because 1+α differs from 1 by α while cos α differs by α²/2 — a size change of 2/|α| ≈ 38. Consequence for 'use the exact bridge everywhere': in the bridge role the exact form is already in use with its truncation error Lean-proved (bridge_first_order_remainder, sorry-free); in the cos role the exact bridge is ~5% wrong, so substituting it would be a regression. The exact bridge is also NOT closer to F_required than the truncation. No fit; nothing wired; nothing derived.",
   "data": {
@@ -81,5 +88,7 @@
       "cos_model_D": "-0.0163042107608635346390354881305428867616800067630805197816549"
     },
     "cos_vs_linear_magnifier": "38.2145254510606100148875750313676409184245688955066392470369"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

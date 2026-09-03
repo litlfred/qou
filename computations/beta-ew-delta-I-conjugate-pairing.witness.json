@@ -9,56 +9,56 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "abs_det_product_eq_1[5_1_x_2_1_1_1_1]",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "abs_det_product_eq_1[4_2_x_2_2_1_1]",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "abs_det_product_eq_1[4_1_1_x_3_1_1_1]",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "abs_det_product_eq_1[3_3_x_2_2_2]",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "det_squared_self_conj_eq_1[lambda=3_2_1]",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "staircase_k=2_det_eq_pair_sign",
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "staircase_k=3_det_eq_pair_sign",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     },
     {
       "name": "staircase_k=3_bar_pairs_eq_8",
@@ -77,7 +77,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     }
   ],
   "allPassed": true,

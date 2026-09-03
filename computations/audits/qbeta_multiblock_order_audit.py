@@ -76,13 +76,39 @@ set_compute_dps()
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# Canonical pins (definitive_q0_shift_for_mp.py): Q_50_DIGIT_STR is the
-# framework (muon-derived) q₀; the m_p-pin q_exact is where m_p is exact.
-Q0_MUON_PIN = Q_50_DIGIT_STR
-Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
+# 🛑 THESE TWO "DIFFERENT" PINS ARE THE SAME NUMBER (bean `qou-t39x`).
+#
+# The comment here read: "Q_50_DIGIT_STR is the framework (muon-derived) q₀;
+# the m_p-pin q_exact is where m_p is exact." That was true before the
+# 2026-05-28 proton re-pin and is false now — `Q_50_DIGIT_STR` IS the proton
+# pin (`qou_substrate.constants`, AGENTS.md §q₀ anchor convention). Verified:
+#
+#     Q0_MUON_PIN == Q0_MP_PIN == 1.1099785827513808075916690956107688798744991218736
+#
+# so the file's "muon-pin vs m_p-pin" framing compares a value with itself.
+#
+# NOT CORRUPTING ANYTHING: both names are dead — defined here and referenced
+# nowhere else in the file. They are kept, correctly labelled, rather than
+# deleted, because the next reader will otherwise re-derive the same confusion
+# from the same source. If a real muon pin is ever wanted here, take it from
+# `qou_substrate.witness._q0_value_for_anchor("muon")`, never from
+# `Q_50_DIGIT_STR`.
+Q0_PROTON_PIN = Q_50_DIGIT_STR       # was misnamed Q0_MUON_PIN
+Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"  # identical to the above
 
 # Empirical c_3 band (qbeta-ck-truncation-order-analysis.witness.json).
-C3_EMP_MUON = mpf("-2.0097")
+#
+# 🛑 THE MUON VALUE WAS -2.0097 (corrected 2026-08-29, bean `qou-t39x`): the
+# pre-#1422 value, matching no anchor now in use. Re-running the extraction
+# c_3 = (Q_codata/Q_N2 - 1)/u^3 gives a different value at each muon pin —
+# -2.02018813 (frozen), -2.02020024 (CODATA-2018), -2.01986031 (CODATA-2022).
+#
+# This file has NO live muon pin to match against (see above), so the frozen
+# pin is used: it is the one `qbeta-ck-cache` extracts at, and the swing this
+# file reports is a C-frame cross-anchor figure of exactly that provenance.
+# The swing printed and recorded below comes ENTIRELY from these two constants
+# — the q₀ names above do not enter it.
+C3_EMP_MUON = mpf("-2.02018812814")
 C3_EMP_MP = mpf("-2.0693")
 
 EPS_ORDER = 8  # ε-series depth

@@ -15,7 +15,7 @@ extensive object is the **isospin-even log-det cumulant**
 graph `K_A` has the exact spectrum `{1+(A−1)m, (1−m)^{×(A−1)}}`, so
 `det_A(m) = (1 + (A−1)m)·(1−m)^{A−1}` — in particular
 
-  `det_2(m) = 1 − m²`,   `det_4(m) = (1+3m)(1−m)^3`.
+  `det_2(m) = 1 − m²`,   `det_3(m) = (1+2m)(1−m)^2`,   `det_4(m) = (1+3m)(1−m)^3`.
 
 The dimensionless magnitude ratio is `ρ_A(m) := b_A(m)/b_2(m)`.
 
@@ -38,6 +38,25 @@ spectrum above. Consequence: the missing extensive term must be **super-pairwise
 `S(m) = m^6+3m^5−8m^3−6m^2+6m+8`, and `S ≥ 0` on `[0,1]` by a Bernstein
 certificate (all degree-6 Bernstein coefficients `= 8, 9, 48/5, 47/5, 8, 11/2, 4`
 are `≥ 0`).
+
+**The A=3 cap (added 2026-08-29).** The same statement one body order down,
+`ρ_3(m) ≤ C(3,2) = 3`, is `det_2(m)^3 ≤ det_3(m)` — and it is *strictly easier*
+than A=4, because the certificate is an exact factorisation rather than a
+Bernstein bound:
+
+  `det_3 − det_2^3 = (1+2m)(1−m)^2 − (1−m²)^3 = m^3 (1−m)^2 (m+2)`,
+
+visibly `≥ 0` for `m ≥ 0`.  Equivalently, cancelling `(1−m)^2`, the whole content
+is the one-line polynomial identity
+
+  `(1−m)(1+m)^3 − (1+2m) = −m^3 (2+m)`.
+
+So at A=3 the log-det cumulant is capped by *sign*, with no numerical search and
+no degree-6 certificate.  Note the domain: cancelling `(1−m)^2` is only an
+equivalence where `1 + 2m > 0`, i.e. `m > −1/2`; at `m = −1/2` the ratio form is
+singular and `b_3` is undefined.  On the physical `m ∈ [0,1]` that never binds,
+but the sign of `−m^3(2+m)` *does* flip on `(−1/2, 0)`, so the cap is a statement
+about non-negative `m` and is not claimed off it.
 
 Base ring `ℝ` (§7c): the ordering `0 ≤ m ≤ 1` is archimedean-essential.
 
@@ -69,5 +88,26 @@ theorem exchangeDet_pow_two_le_four (m : ℝ) (h0 : 0 ≤ m) (h1 : m ≤ 1) :
                mul_nonneg (pow_nonneg h0 6) (pow_nonneg h1m 0)]
   -- (1+3m)(1−m)^3 − (1−m^2)^6 = m^3(1−m)^3·S ≥ 0
   nlinarith [mul_nonneg (mul_nonneg (pow_nonneg h0 3) (pow_nonneg h1m 3)) hS]
+
+/-- **The A=3 pairwise saturation cap (determinant form).** On `[0,1]`,
+    `det_2(m)^3 ≤ det_3(m)`, i.e. `(1−m²)^3 ≤ (1+2m)(1−m)^2`.
+
+    Via `exp`-monotonicity this is exactly `b_3(m) ≤ 3·b_2(m)`, i.e.
+    `ρ_3(m) ≤ C(3,2) = 3`.
+
+    Companion to `exchangeDet_pow_two_le_four`, and strictly easier: the
+    difference factors exactly,
+
+      `det_3 − det_2^3 = m^3 (1−m)^2 (m+2)`,
+
+    so no Bernstein certificate is needed — the sign is read off the
+    factorisation.  Cancelling `(1−m)^2` leaves the bare identity
+    `(1−m)(1+m)^3 − (1+2m) = −m^3(2+m)`. -/
+theorem exchangeDet_pow_two_le_three (m : ℝ) (h0 : 0 ≤ m) (h1 : m ≤ 1) :
+    (1 - m ^ 2) ^ 3 ≤ (1 + 2 * m) * (1 - m) ^ 2 := by
+  have h1m : (0:ℝ) ≤ 1 - m := by linarith
+  have h2m : (0:ℝ) ≤ 2 + m := by linarith
+  -- det_3 − det_2^3 = m^3 · (1−m)^2 · (m+2) ≥ 0
+  nlinarith [mul_nonneg (mul_nonneg (pow_nonneg h0 3) (pow_nonneg h1m 2)) h2m]
 
 end QOU.MassTheory

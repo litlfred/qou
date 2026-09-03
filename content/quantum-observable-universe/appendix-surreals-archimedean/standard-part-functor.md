@@ -20,7 +20,7 @@ $$
 
 sends each finite surreal $x$ to the unique real $r \in \mathbb{R}$
 with $x - r \in \mathbf{No}_{\mathrm{inf}}$. Classically
-[@robinson1966; @alling1987]:
+\cite{robinson1966,alling1987}:
 
 $$
   \mathrm{st}(x) =

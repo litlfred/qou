@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:y-lambda-recipe-from-partition",
   title:
-    "Recipe: $\\lambda \\mapsto y_\\lambda(q)$ — explicit q-rational construction in $\\sqrt q$",
+    "Recipe: $\\lambda \\mapsto y_\\lambda(q)$ — explicit q-rational construction over $\\mathbb{Q}(q)$",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.y_lambda_recipe_from_partition",
     validation: "not_checked",

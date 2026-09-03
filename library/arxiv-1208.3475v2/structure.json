@@ -1,0 +1,199 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1208.3475v2",
+ "source": {
+  "file": "1208.3475v2.pdf",
+  "sha256": "d53fc4eefa070ba38b1651b3d2bc999133159ceb12fd79de25d4fed3e8fe55eb",
+  "bytes": 268293,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1208.3475",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "12 Sep 2012"
+  },
+  "doi": null,
+  "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum Tam\u00e1s G. Kov\u00e1cs Institute for Nuclear Research of the Hungarian Academy of Sciences",
+  "authors_raw": "H-4026 Debrecen, Bem t\u00e9r 18/c, Hungary",
+  "title_lines": [
+   "Poisson - Random Matrix transition in the QCD Dirac spectrum",
+   "Tam\u00e1s G. Kov\u00e1cs",
+   "Institute for Nuclear Research of the Hungarian Academy of Sciences"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180305064439-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "What is the distance scale l on which the lowest",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "How far up in the spectrum (\u03bbc) are the modes",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Hip,",
+   "page": 9,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "B. Lang",
+   "page": 9,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
+   "page": 9,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
+   "page": 10,
+   "source": "inferred",
+   "number": "C"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 23540,
+   "n_words": 3965
+  },
+  {
+   "id": "sec-001-1-what-is-the-distance-scale-l-on-which-the-lowe",
+   "number": "1",
+   "title": "What is the distance scale l on which the lowest",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 25,
+   "n_words": 3
+  },
+  {
+   "id": "sec-002-2-how-far-up-in-the-spectrum-\u03bbc-are-the-modes",
+   "number": "2",
+   "title": "How far up in the spectrum (\u03bbc) are the modes",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 10764,
+   "n_words": 1890
+  },
+  {
+   "id": "sec-003-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3327,
+   "n_words": 538
+  },
+  {
+   "id": "sec-004-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1016,
+   "n_words": 157
+  },
+  {
+   "id": "sec-005-i-hip",
+   "number": "I",
+   "title": "Hip,",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-c-b-lang",
+   "number": "C",
+   "title": "B. Lang",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1074,
+   "n_words": 174
+  },
+  {
+   "id": "sec-007-v-g-bornyakov-e-v-luschevskaya-s-m-mo",
+   "number": "V",
+   "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1386,
+   "n_words": 226
+  },
+  {
+   "id": "sec-008-c-jung-o-kaczmarek-f-karsch-and-e-laermann",
+   "number": "C",
+   "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 938,
+   "n_words": 150
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 42070
+ }
+}

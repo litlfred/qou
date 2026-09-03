@@ -1,0 +1,216 @@
+{
+  "engine": "snappy-ptolemy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-02T22:01:25.352425+00:00",
+  "commitSha": "52279ac31f98da43edbdd7be00d33df9dd6f09e1",
+  "assertions": [
+    {
+      "name": "the_trefoil_sl2_fixtures_ARE_bundled",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "3_1_reproduces_the_expected_total",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "4_1_reproduces_the_expected_total",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "5_2_reproduces_the_expected_total",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_controls_match_the_COMMITTED_certified_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_three_listed_readings_are_NOT_separated_by_the_trefoil",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_triangulation_reading_fits_BOTH_original_knots",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_TREFOIL_KILLS_the_triangulation_reading",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_datum_is_now_THREE_collinear_points_not_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "dt-third-knot-trefoil-count",
+  "scriptFile": "dt_third_knot_trefoil_count_probe.py",
+  "scriptHash": "c440ad0dac77",
+  "scriptCommitSha": "a2b608e32c5900ec7d9b6d1151b0fd59a7e4ef07",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_third_knot_trefoil_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_third_knot_trefoil_count_probe.py"
+  },
+  "description": "The third-knot DT test the corpus recorded as blocked, run: 3_1's bundled sl2 fixtures give 1 irreducible + 1 abelian = 2 connections, with 4_1 and 5_2 reproducing the committed controls. The three listed readings all predict 2, but the trefoil DOES kill a fourth — that the count tracks the non-canonical triangulation, which fits both original knots exactly.",
+  "data": {
+    "knots": {
+      "3_1": {
+        "per_class": [
+          {
+            "obstruction_class": 0,
+            "orbits": 0,
+            "degrees": [],
+            "fields": []
+          },
+          {
+            "obstruction_class": 1,
+            "orbits": 1,
+            "degrees": [
+              1
+            ],
+            "fields": [
+              "Q"
+            ]
+          }
+        ],
+        "irreducible": 1,
+        "abelian": 1,
+        "total": 2,
+        "crossing_number": 3
+      },
+      "4_1": {
+        "per_class": [
+          {
+            "obstruction_class": 0,
+            "orbits": 0,
+            "degrees": [],
+            "fields": []
+          },
+          {
+            "obstruction_class": 1,
+            "orbits": 1,
+            "degrees": [
+              2
+            ],
+            "fields": [
+              "x^2 - x + 1"
+            ]
+          }
+        ],
+        "irreducible": 2,
+        "abelian": 1,
+        "total": 3,
+        "crossing_number": 4
+      },
+      "5_2": {
+        "per_class": [
+          {
+            "obstruction_class": 0,
+            "orbits": 0,
+            "degrees": [],
+            "fields": []
+          },
+          {
+            "obstruction_class": 1,
+            "orbits": 1,
+            "degrees": [
+              3
+            ],
+            "fields": [
+              "x^3 + 2*x^2 + 3*x + 1"
+            ]
+          }
+        ],
+        "irreducible": 3,
+        "abelian": 1,
+        "total": 4,
+        "crossing_number": 5
+      }
+    },
+    "candidate_readings": {
+      "measured_trefoil_total": 2,
+      "predictions": {
+        "crossing_number_minus_1": 2,
+        "trace_field_degree_plus_1": 2,
+        "full_A_polynomial_L_degree_R1": 2
+      },
+      "verdict": "the three listed readings all agree at 3_1, so the third knot does not separate them; it kills a FOURTH, the triangulation reading — see below"
+    },
+    "triangulation_reading_EXCLUDED": {
+      "reading": "total = number of tetrahedra + 1",
+      "why_it_matters": "the adversarial alternative to the R1 identification — that the count tracks the computation's PRESENTATION rather than the knot. The triangulation is not canonical, so had the count tracked it, R1 would be an artifact.",
+      "tets": {
+        "3_1": 2,
+        "4_1": 2,
+        "5_2": 3
+      },
+      "fits_4_1": true,
+      "fits_5_2": true,
+      "fails_3_1": true,
+      "note": "indistinguishable from crossing-1 on the corpus's two knots; separated by the trefoil, which shares 4_1's tetrahedron count and has one fewer crossing. THIS is what the third knot buys."
+    },
+    "what_would_discriminate": {
+      "rules_that_must_diverge": "crossing_number - 2  vs  trace_field_degree (equal on all three knots here; neither controls the other in general)",
+      "route_a_blocked": "trace-field degrees for further knots — M.trace_field_gens() raises SageNotAvailable (SnapPy outside Sage in this container)",
+      "route_b_blocked": "ptolemy data for a fourth KNOT — not bundled; 6_1 (= m032) has no fixture",
+      "status": "both recorded as open, neither guessed at"
+    },
+    "inspected_and_excluded": {
+      "DT_mcbbiceaibjklmdfgh": "identifies as L13a5175 — a 3-component LINK with 3 cusps, not a knot in S^3. Its abelian count is not 1 and its 26 irreducible points across obstruction classes c4 (degree 15) and c5 (degree 11) are not comparable to the knot family. NOT used as a fourth point.",
+      "m019_m135_s000_t00000_v0000": "census manifolds; identify() returns only themselves, i.e. not knot complements in the standard tables."
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "wired": false,
+      "is_a_fit": false,
+      "caveat_3_1_not_hyperbolic": "3_1 is a torus knot, volume 0. The ptolemy variety and the A-polynomial are defined regardless, so the count and the R1 reading are meaningful; but the geometric-component reasoning motivating the hyperbolic cases does not apply, and its single orbit is rational (Q) rather than a genuine trace field."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

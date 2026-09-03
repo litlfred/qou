@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-16T13:25:29.690380+00:00",
-  "commitSha": "61b0fb8642fbe0cb7564f4aa64ed3dea1690cda9",
+  "computedAt": "2026-08-30T07:11:47.982325+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "quad_steps_not_matching_the_measured_shape",
@@ -12,17 +12,17 @@
     },
     {
       "name": "cases_without_exactly_two_quadratic_steps",
-      "computed": "0",
-      "expected": "0",
+      "computed": true,
+      "expected": true,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 259,
+  "durationMs": 250,
   "computation": "hecke-quad-pair-shape",
   "scriptFile": "hecke_quad_pair_shape.py",
-  "scriptHash": "80e8f1c7279d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bad9dbd3f21a",
+  "scriptCommitSha": "8a7bf94489a6f7d1a4a0eec2880ef212c71e4b88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,9 +31,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_quad_pair_shape.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_quad_pair_shape.py"
   },
   "description": "Word-level contexts of the two quadratic steps in the Bokut-Shiao corner's a <= b regime. Both apply the SAME rule, heckeRelation j1, and both are preceded by yangBaxterRelation j1 (j1+1). The two contexts differ by one letter at each end: the second occurrence has sigma_{i-2} prepended on the left and lacks the trailing sigma_i on the right. So one general step lemma with arbitrary contexts covers both -- the analogue of monicStep for the three-word quadratic rule.",
   "parameters": {

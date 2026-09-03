@@ -171,6 +171,50 @@ the refutation. The Lean definitions reproduce the probe's `Φ` values to
 `transferEigen_isRoot` / `transferEigen_vieta` record the **one** conjunct of
 the original `ground_state_ordering` `Prop` that survives: `λ₊·λ₋ = −1`.
 
+### 2.5 The refutation is convention-independent (added 2026-08-24)
+
+Everything in §2.4 was derived with the Markov parameter `z = √q/(q+1)`
+(**convention C**), which the owner ruling of 2026-08-15 excises in favour of
+`z = q³/(q²+1)` (**convention D**). The refutation survives, and not by
+re-derivation: *the argument never reads `z`'s formula.*
+
+`z` enters the readout only through the two weights, and their sum is `1`
+identically in `z`. The whole `A = 5` comparison then collapses to
+
+```
+V̂₀V̂₁(npnnn) − V̂₀V̂₁(pnnnn) = 2·c₊c₋·c⁴·(q⁶ − 1)/q³,
+4·c₊c₋ = 4q(q − z)(qz + 1)/(q² + 1)².
+```
+
+So for `q > 1` the counterexample holds **exactly when `−q⁻¹ < z < q`** — the
+Markov parameter strictly between the two eigenvalues `λ₋ = −q⁻¹`, `λ₊ = q`.
+Both conventions are in that window for every `q > 1`. At the anchor the
+weights are `(c₊, c₋) = (0.69633, 0.30367)` under C and `(0.75270, 0.24730)`
+under D.
+
+The Lean was generalised accordingly (`prescribed_not_minimiser_A5` now
+quantifies over `(q, z)`), with `prescribed_not_minimiser_A5_conventionD` and
+`..._conventionC` as specialisations. §2.4's polynomial certificate is retained
+as the convention-C cross-check. Declaration count is 13 → 30; `#print axioms`
+is `propext`, `Classical.choice`, `Quot.sound` on every one. Probe:
+[`ground_state_ordering_convention_independence_probe.py`](../../computations/probes/ground_state_ordering_convention_independence_probe.py),
+8/8 exact.
+
+**Two windows, and §2.4's "1 < q ≲ 1.22" is the right one — do not "correct" it
+to 1.137.** `hU` is *sufficient, not necessary*: it is only what turns the gap
+identity into an inequality between **absolute** values, and the conclusion
+outlives it. Measured:
+
+| convention | `hU` holds | conclusion `\|sorted\| < \|prescribed\|` holds |
+|---|---|---|
+| C (`√q/(q+1)`) | `1 < q < 1.13700` | `1 < q < 1.22092` |
+| D (`q³/(q²+1)`) | `1 < q < 1.21061` | `1 < q < 1.57015` |
+
+The anchor `q₀ ≈ 1.10998` is inside all four. The canonical convention D
+therefore *widens* the interval on which the refutation is Lean-proved, and
+`sortedV1_zD_nonneg` discharges `hU` outright on `1 < q ≤ 6/5` — so the
+convention-D statement carries no hypothesis but the `q`-range.
+
 ---
 
 ## 3. The `A ≤ 3` clause

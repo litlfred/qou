@@ -95,7 +95,7 @@ of the inductive-limit axioms. -/
     `tau_stab_factor_eq_z : tau_stab_factor = markovZN_legacy q` field
     is discharged by `rfl`. Both names are `@[deprecated]` — Phase 2
     migrates this instance to the generic `markovZN (u : R)` form. -/
-instance markovTraceN_from_inductive_limit (q : ℝ) (n : ℕ)
+noncomputable instance markovTraceN_from_inductive_limit (q : ℝ) (n : ℕ)
     [MarkovTraceInductiveLimit q] : MarkovTraceN n q where
   tau_identity := 1
   tau_identity_eq_one := rfl

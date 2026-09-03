@@ -69,7 +69,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    Q0 = 1.1099785955573347198997632204832250266562084087802
+    # Was a BARE FLOAT literal of the superseded muon pin A -- two defects in
+    # one line: a stale pin, and a float64 input to a file that runs at
+    # mp.dps = 65, so 49 of its digits were noise. Read the anchor as mpf.
+    # Bean qou-3f7a.
+    from q_parameter import q_at  # noqa: E402
+    Q0 = mp.mpf(str(q_at(mp.mp.dps)))
 
     t0 = time.monotonic()
     builder = WitnessBuilder(

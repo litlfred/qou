@@ -1,0 +1,70 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2406.02111v3",
+ "source_sha256": "d7be0c3f08b4d42a",
+ "brief": "Categorical Quantum Volume Operator — 10 sections: Introduction; Quantum tetrahedron; Volume operator",
+ "extended": "**Categorical Quantum Volume Operator**\n\n*Alexander Hahn ,1,∗ Sebastian Murk ,2,† Sukhbinder Singh,3,‡ and Gavin K. Brennen 1,§*\n\n19 pp, 10 sections.\n\n**Outline.** Introduction; Quantum tetrahedron; Volume operator; Spin networks and graph states; String diagrams; Derivation of the categorical volume operator; Beyond ribbon fusion categories; Hermiticity of the categorical volume operator; Discussion and Conclusions; References",
+ "tokens": {
+  "brief": 25,
+  "extended": 107
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-quantum-tetrahedron",
+   "title": "Quantum tetrahedron",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-volume-operator",
+   "title": "Volume operator",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-spin-networks-and-graph-states",
+   "title": "Spin networks and graph states",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-string-diagrams",
+   "title": "String diagrams",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-derivation-of-the-categorical-volume-operator",
+   "title": "Derivation of the categorical volume operator",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-006-beyond-ribbon-fusion-categories",
+   "title": "Beyond ribbon fusion categories",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-hermiticity-of-the-categorical-volume-operator",
+   "title": "Hermiticity of the categorical volume operator",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-008-discussion-and-conclusions",
+   "title": "Discussion and Conclusions",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "15-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

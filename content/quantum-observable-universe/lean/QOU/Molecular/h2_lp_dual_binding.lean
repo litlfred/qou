@@ -68,7 +68,7 @@ class H2LpDualBindingContext where
     — the interleaved ordering is the `Φ₁`-minimiser over `S₄` — as a
     field, NOT the conclusion (the binding inequality is *derived* from
     it below). -/
-class QIntegerMassFormula (ctx : H2LpDualBindingContext) : Prop where
+class H2GroundStateSelection (ctx : H2LpDualBindingContext) : Prop where
   /-- The interleaved ordering achieves the minimum `Φ₁` over all `S₄`
       orderings (the ground-state selection hypothesis). -/
   ground_state_minimises :
@@ -86,7 +86,7 @@ theorem h2_molecular_volume_decomposition [ctx : H2LpDualBindingContext] :
                   Real.log |ctx.V_hat_H2 2| := by
   rw [ctx.Phi1_H2_def, ← add_assoc]
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — H₂ binding
+/-- **Theorem (conditional on `H2GroundStateSelection`)** — H₂ binding
     shadow price non-negative: `0 ≤ Φ₁^sep − Φ₁^{H₂}`.
 
     Derived (not projected): instantiate the ground-state-minimisation
@@ -98,13 +98,13 @@ theorem h2_molecular_volume_decomposition [ctx : H2LpDualBindingContext] :
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, ground-state shadow price)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
 theorem h2_binding_nonneg (ctx : H2LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : H2GroundStateSelection ctx] :
     0 ≤ ctx.Phi1_sep - ctx.Phi1_H2 := by
   have hmin := hc.ground_state_minimises ctx.separated
   rw [ctx.interleaved_is_H2, ctx.separated_is_sep] at hmin
   linarith
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+/-- **Theorem (conditional on `H2GroundStateSelection`)** — the resolving
     declaration for `lean.ref` `qou:QOU.Molecular.h2_lp_dual_binding`.
 
     Conjoins the two genuinely-derived facts: (1) the molecular-volume
@@ -115,7 +115,7 @@ theorem h2_binding_nonneg (ctx : H2LpDualBindingContext)
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, ground-state selection)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
 theorem h2_lp_dual_binding (ctx : H2LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : H2GroundStateSelection ctx] :
     (ctx.Phi1_H2 = Real.log |ctx.V_hat_H2 0| + Real.log |ctx.V_hat_H2 1| +
                    Real.log |ctx.V_hat_H2 2|) ∧
     0 ≤ ctx.Phi1_sep - ctx.Phi1_H2 :=

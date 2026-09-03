@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "(119) identity, (38) reduction, gamma^2, and iota(u=0) = Vol/pi all exact"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "scope-(a) structural finding: the fixed-x saddle difference (0.4495) is NOT the corpus meridian-frame tower singularity (0.6310+0.0210i) — different double-scaling limits; part-2 redirect to the Kashaev limit of the block factorization"
     }
   ],

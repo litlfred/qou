@@ -206,6 +206,73 @@ AUDIT_SUFFIXES = (
 _ASSERTION_VALUE_KEYS = ("computed", "expected")
 
 
+# ── Declared-ideal-layer (muon) exemption ────────────────────────────
+#
+# Second case the premise does not cover. The premise is "a q₀-shaped number
+# must track the LIVE q₀", and this gate hardcodes live = the proton pin. That
+# is right for the physical layer and WRONG for a producer the manifest assigns
+# to the ideal one: `q_parameter` resolves an `ideal_muon` stem TO THE MUON PIN,
+# so for those producers the muon value *is* live. The gate was reading a
+# correct ideal-layer witness as a stale physical-layer one.
+#
+# This is not a widening to get green. The gate's prescribed fix — "re-run the
+# script that generates the stale witness" — is actively destructive here: it
+# would replace the declared muon pin with proton. That exact regeneration was
+# performed and then REVERTED in PR #5436 (`lever1_binding_habiro_single_element_test`,
+# params.q0 1.10997859555733 -> 1.10997858275138), and AGENTS.md requires the
+# ideal layer keep its value: "The muon anchor keeps its definition… something
+# in the tree must continue to hold the muon 50-digit string or the ideal/CAL-2
+# layer becomes unstatable." A gate whose only remedy is forbidden is a gate
+# asking the wrong question.
+#
+# BOTH conditions are required, and each blocks a different failure:
+#
+#   1. the witness positively declares `q0Anchor: "muon"` — a producer cannot be
+#      exempted by the manifest alone, or a mislabelled manifest entry would
+#      silently excuse a genuinely stale physical-layer witness; and
+#   2. its producer stem is listed under `ideal_muon` in
+#      `q0_anchor_manifest.json` — a witness cannot exempt itself by asserting
+#      `muon`, which is the self-declaration hole condition 2 of the
+#      derived-output exemption exists to close.
+#
+# `ambiguous` does NOT qualify, deliberately. Measured on 2026-08-28 the gate
+# flagged two witnesses, both declaring muon: `lever1-binding-habiro-single-
+# element-test` (manifest `ideal_muon` — exempt, the case above) and
+# `lever1-binding-core-characterization` (manifest `ambiguous` — still flagged,
+# because `ambiguous` is precisely the record that its layer is unresolved).
+# One of the two clears; the other stays red until someone decides its layer.
+# An exemption that cleared both would be the widening this is not.
+#
+# Fails closed: an unreadable manifest, an unparseable witness, or a producer
+# absent from the manifest all yield "not exempt".
+_MANIFEST = Path(__file__).resolve().parents[1] / "q0_anchor_manifest.json"
+
+
+def declared_ideal_muon_exempt(witness) -> Optional[str]:
+    """Reason string if this witness is a correctly-pinned ideal-layer record."""
+    try:
+        doc = json.loads(witness) if isinstance(witness, str) else witness
+    except Exception:  # noqa: BLE001
+        return None
+    if not isinstance(doc, dict):
+        return None
+    inner = doc.get("witness") if isinstance(doc.get("witness"), dict) else {}
+    if (doc.get("q0Anchor") or inner.get("q0Anchor")) != "muon":
+        return None
+    stem = (inner.get("scriptFile") or doc.get("scriptFile") or "")
+    stem = Path(str(stem)).stem
+    if not stem:
+        return None
+    try:
+        man = json.loads(_MANIFEST.read_text())
+    except Exception:  # noqa: BLE001
+        return None
+    if stem not in (man.get("ideal_muon") or []):
+        return None
+    return (f"declares q0Anchor=muon and `{stem}` is manifest-declared "
+            f"`ideal_muon`; the muon pin IS live for this producer")
+
+
 def _basin_paths(node, path: str = ""):
     """Yield (json_path, basin_value) for every q₀-shaped number/string."""
     if isinstance(node, dict):
@@ -482,6 +549,8 @@ def main() -> int:
         bad = sorted(v for v in vals if not matches_live_q0(v, max_sig=args.ndigits))
         if bad:
             why = derived_output_exempt(raw, max_sig=args.ndigits)
+            if not why:
+                why = declared_ideal_muon_exempt(raw)
             if why:
                 derived.append((name, bad, why))
             else:
@@ -493,7 +562,12 @@ def main() -> int:
 
     # Never silent: an exemption that stops being printed stops being reviewed.
     for name, bad, why in derived:
-        print(f"  [derived output, not a recorded pin] {name}: {bad} at {why}")
+        # Two exemption kinds share this list; label them apart. Printing the
+        # ideal-layer case as "derived output, not a recorded pin" would be
+        # exactly backwards — it IS a recorded pin, and a correct one.
+        kind = ("declared ideal layer (muon)" if "manifest-declared" in why
+                else "derived output, not a recorded pin")
+        print(f"  [{kind}] {name}: {bad} at {why}")
 
     # Zero-match guard: normally hundreds of witnesses embed q₀. If NONE do,
     # the basin regex has silently stopped matching (an un-tracked re-pin or

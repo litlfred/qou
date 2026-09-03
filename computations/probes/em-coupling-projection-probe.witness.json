@@ -9,7 +9,7 @@
       "computed": "0.00155522118068",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "Relative error of α_EM(q₀) = q₀⁻¹/([9]_q·[10]_q) vs CODATA α_EM = 1/137.035999206, evaluated at the canonical muon-anchored substrate q₀ (50 dps). q-integers [9]_q = dim_q T_{2,9}, [10]_q = dim_q T_{3,5} forced by genus-4 Bring uniqueness. Passes iff rel err < 5e-3 (0.5 %); measured ≈ 1.55e-3 (0.16 %)."
     }
   ],

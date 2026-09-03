@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "0 iff dim = (K−3)/2 = half−1 holds for every K; 1 otherwise (currently all 4 primes match)",
       "source": "Galois-pair count (K−1)/2 minus one orbit-sum relation (modulo ζ(3))."
     },
@@ -18,7 +18,7 @@
       "computed": 1.25416336956505e-198,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over K ∈ {5,7,11,13} of |2K²·Σ Cl_3(2πj/K) + (K²−1)·ζ(3)| (direct evaluation; independent of PSLQ)",
       "source": "Multiplication formula for Li_3 at primitive Kth roots of unity, after Re and pair-merging.  The PSLQ recovery (per-K) is recorded informationally in `per_K_results.pslq_relation` — PSLQ succeeded at K=5, 7; missed the relation at K=11, 13 despite 200-dps precision (algorithm sensitivity to the small coefficient magnitudes), which is why this assertion uses direct residue rather than PSLQ outcome."
     }

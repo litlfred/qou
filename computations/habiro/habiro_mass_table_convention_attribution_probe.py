@@ -59,6 +59,12 @@ Q = sp.Symbol('q')
 
 # Interface primitives.  h is convention-independent.
 H_EXPR = Q - 1 / Q
+# Substrate flavour split δ(q), LEADING term, kept SYMBOLIC. Passing the cached
+# q0 value here instead would bake a q0-pinned constant into an otherwise
+# q-symbolic identity — the layer straddle `canonical_braid_crossings.d_for_ctype`
+# warns symbolic callers about. δ is a rational function of q, so the exact
+# arithmetic this probe relies on is preserved.
+_DELTA_EXPR = (Q - 1) ** 2 * (1 - Q ** (-4)) / sp.Integer(3)
 Z_BY_CONVENTION = {
     'C': sp.sqrt(Q) / (Q + 1),      # 1/(q^{1/2} + q^{-1/2}), excised 2026-08-09
     'D': Q ** 3 / (Q ** 2 + 1),     # production Markov parameter
@@ -76,7 +82,17 @@ def _slug(path: str) -> str:
 
 
 def _interface_product(kinds, z):
-    """PROD of per-interface factors, under the given z."""
+    """PROD of per-interface factors, under the given z.
+
+    Both members of the averaged family are handled. A committed witness
+    records the p-n interface as "averaged" whether it was priced blind or
+    colour-weighted — the label vocabulary cannot carry δ — so a witness
+    written under the canonical convention would previously have been
+    reconstructed with the blind z - h/2 and reported as matching NEITHER
+    convention, attributing a weighting difference to the Markov parameter.
+    "averaged_weighted" is accepted so a witness that does record the
+    distinction is attributed on its own terms.
+    """
     expr = sp.Integer(1)
     for kind in kinds:
         if kind == 'positive':
@@ -85,6 +101,8 @@ def _interface_product(kinds, z):
             expr *= z - H_EXPR
         elif kind == 'averaged':
             expr *= z - H_EXPR / 2
+        elif kind == 'averaged_weighted':
+            expr *= z - H_EXPR * (sp.Rational(1, 2) - _DELTA_EXPR / 4)
         else:
             raise ValueError(f'unknown interface kind {kind!r}')
     return expr

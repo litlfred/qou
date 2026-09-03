@@ -1,0 +1,250 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2105.09342v1",
+ "source": {
+  "file": "2105.09342v1.pdf",
+  "sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
+  "bytes": 718004,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2105.09342",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "19 May 2021"
+  },
+  "doi": null,
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "authors_raw": "Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara",
+  "title_lines": [
+   "A Unitary Matrix Model for q-deformed Plancherel Growth"
+  ],
+  "abstract": "In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satis\ufb01es a di\ufb00erential equation which is theq-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space. We also elaborate the connection between moments of Young diagrams and the in\ufb01nite number of commuting Hamiltonians obtained from the largeN droplets and explicitly compute the moments for asymptotic Young diagrams.",
+  "docinfo": {
+   "Author": "Suvankar Dutta; Debangshu Mukherjee; Neetu; Sanhita Parihar; ",
+   "CreationDate": "D:20210521003113Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": "A Unitary Matrix Model for q-deformed Plancherel Growth"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "q-deformed Plancherel growth",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A unitary matrix model for q-deformed Plancherel growth",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Solution class 1: No-gap solution",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "q-deformed automodel class",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The unitary matrix model from the droplet picture",
+   "page": 12,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Hilbert space",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Moments of Young diagrams and conserved charges",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 19,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix  A q analog of GWW phase transition",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  B Explicit computation of the partition function",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  C Calculation of automodel density for the second class \u00e0 la Strahov",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  C.1 Computing Hconst(h), H(h) and Hseries(h)",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  D Droplet quantisation",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 8814,
+   "n_words": 1482
+  },
+  {
+   "id": "sec-001-2-q-deformed-plancherel-growth",
+   "number": "2",
+   "title": "q-deformed Plancherel growth",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 4460,
+   "n_words": 773
+  },
+  {
+   "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
+   "number": "3",
+   "title": "A unitary matrix model for q-deformed Plancherel growth",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 4834,
+   "n_words": 901
+  },
+  {
+   "id": "sec-003-31-solution-class-1-no-gap-solution",
+   "number": "3.1",
+   "title": "Solution class 1: No-gap solution",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 1745,
+   "n_words": 351
+  },
+  {
+   "id": "sec-004-32-q-deformed-automodel-class",
+   "number": "3.2",
+   "title": "q-deformed automodel class",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1052,
+   "n_words": 196
+  },
+  {
+   "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
+   "number": "3.3",
+   "title": "The unitary matrix model from the droplet picture",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 4598,
+   "n_words": 841
+  },
+  {
+   "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
+   "number": "4",
+   "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 3842,
+   "n_words": 774
+  },
+  {
+   "id": "sec-007-5-the-hilbert-space",
+   "number": "5",
+   "title": "The Hilbert space",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2806,
+   "n_words": 523
+  },
+  {
+   "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
+   "number": "5.1",
+   "title": "Moments of Young diagrams and conserved charges",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1269,
+   "n_words": 228
+  },
+  {
+   "id": "sec-009-6-conclusion",
+   "number": "6",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 31,
+   "n_chars": 22069,
+   "n_words": 4024
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 10,
+  "chars_total": 55489
+ }
+}

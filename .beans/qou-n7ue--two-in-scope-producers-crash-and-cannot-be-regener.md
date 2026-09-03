@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-23T14:55:28Z
-updated_at: 2026-08-23T20:12:24Z
+updated_at: 2026-08-24T14:52:21Z
 ---
 
 Both reproduce under a recorded environment (`mpmath 1.3.0 / sympy 1.14.0 /
@@ -327,3 +327,61 @@ on the reduced sample would be a weaker claim wearing the stronger one's name.
 invert `|rho|` and carry the sign separately. That is a question about what the
 probe *claims*, not about how it runs, and it is the owner's call. Until it is
 answered, this probe has no `n_organized` verdict.
+
+
+---
+
+## Item 3 update: the crash is FIXED and live; the retarget option does NOT exist
+
+**"Item 3 (hadron_knot_table / float64 CSR vs mpf) — untouched" is stale.**
+Verified against the live file rather than against this bean or AGENTS.md,
+both of which can go stale on instances:
+
+- [`hecke_core_legacy.py:1447-1449`](computations/hecke_core_legacy.py) — the
+  `exact_chain` guard, computed **before** the crossing loop, routes an exact
+  chain off scipy entirely.
+- [`hecke_core_legacy.py:1129-1130`](computations/hecke_core_legacy.py) —
+  `if hasattr(sig, "toarray"): sig = sig.toarray()`, with the comment recording
+  *why*: `np.asarray(csr_matrix)` does **not** densify, it returns a 0-d object
+  array, "latent until an exact (mpf) chain routed a…".
+
+So the guardrail analysis in this bean was right and was acted on. What remains
+is **cost, not correctness**: AGENTS.md records deuterium — the first bound atom
+of nineteen — running **50 minutes and being killed by its own timeout**, with
+zero tracebacks. Budget accordingly; do not expect the table to finish.
+
+## The bean's own suggested cheaper route is unavailable — measured
+
+This bean floats: *"the module is named `hecke_core_legacy.py`. Confirm whether
+`hadron_knot_table` should be on it at all — the cheapest fix may be retargeting
+the consumer rather than repairing the legacy path."*
+
+Checked. **There is nothing to retarget to.**
+
+- `binding_energy` (`:2314`) and `classify_nuclear_knot` (`:165`) are defined
+  **only** in `hecke_core_legacy`. Neither `computations/substrate/hecke_core.py`
+  nor the generated `qou-mass/_internal/hecke_core.py` defines either.
+  (`hadron_knot_table` already imports `build_nucleon_nf` / `check_frobenius`
+  from `hecke_core` — so it straddles two modules by design, and only the two
+  functions it takes from the legacy one are unavailable elsewhere.)
+- `hecke_core_legacy` is **not legacy in practice**: 9 real importers by
+  `^\s*(from|import)\s+hecke_core_legacy` (excluding worktrees, `_deprecated`
+  and itself), **three inside the shipped `pyhecke` package** —
+  `partition.py:15`, `tower.py:19`, `trace.py:16`.
+- Its deprecation is **blocked on the owner**, not merely undone:
+  `docs/coordination/2026-05-24-library-reuse-production-readiness.md:46` —
+  *"the actual move-to-`_deprecated/hecke_core_legacy.py` … **Blocked on owner
+  OK of the classification table**"*, dated 2026-05-24.
+
+Repairing the path was therefore the only route, and it is what landed.
+
+**Spun out:** `qou-i2q5` — 13 references across 8 files to
+`computations/_deprecated/hecke_core_legacy.py`, a path that has never existed,
+5 of them in the shipped `pyhecke` package. Not fixed here: different domain,
+8 code sites, and the docs half is a stalled plan that needs the owner, not a
+sweep.
+
+One methodological note, since it caught me again: `wedderburn.py` mentions
+`hecke_core_legacy` only in **comments**, and I nearly counted it as a
+dependency. Same prose-vs-code error as the `--literal` mode note in
+`anchor_flip_straddle_audit`.

@@ -17263,8 +17263,13 @@ than an enumeration.
 -/
 
 /-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis**, modulo
-the single deep-diagonal self-overlap. -/
-theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams)
+the single deep-diagonal self-overlap.
+
+`hdeep` is discharged in §4bw by `deep_selfOverlap_resolves`, and
+`heckeCompleted_isGrobnerShirshovBasis` at the end of this file is the
+unconditional statement. This form is kept because the two halves are proved
+far apart: everything above depends only on the conditional one. -/
+theorem heckeCompleted_isGrobnerShirshovBasis_of_deep (hn : 0 < n) (hp : HeckeParams)
     (hdeep : ∀ (oc' : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)) (a' a e : Fin n),
       a'.val + 1 = a.val → 1 ≤ a'.val → e.val = 0 →
       oc'.rule₁ = bokutShiaoRelation a' a e → oc'.rule₂ = bokutShiaoRelation a' a e →
@@ -17333,6 +17338,144 @@ theorem pairSweep_self (z : Fin n) :
     pairSweep z z = [(⟨z⟩ : HeckeGen n), ⟨z⟩] := by
   simp [pairSweep, descWord_self]
 
+/-! ## §4bt  `CtxAvoids` — the joining's context condition, threaded once
+
+`hdeep`'s two halves are proved (§4br, §4bs), but each on a **one-term**
+element, which is exactly what made every step lemma's side condition vacuous.
+The joining runs those chains inside the S-polynomial, where the other side's
+term sits alongside — so that condition now has to be discharged at every step
+of every chain.
+
+Threading a bespoke condition through all of them would be miserable. One
+definition avoids it:
+
+`CtxAvoids L a b` — every word in `L` differs from **every** word of the shape
+`a ++ _ ++ b`.
+
+Every intermediate of a chain that rewrites strictly inside `a … b` *has* that
+shape, so the single hypothesis discharges all of them structurally, with no
+proof obligation arising inside the chain. `.extend` grows `a` on the right and
+`.extendRight` grows `b` on the left — which is what a recursive call needs when
+it moves letters from the middle out into a context — and `.ne` turns it into
+the `q ≠ W` a step lemma asks for.
+
+`ctxAvoids_nil` says the empty context avoids everything, so the one-term forms
+below are **corollaries** of the general ones rather than duplicates of them.
+
+The head-letter separation §4bs measured is what will discharge `CtxAvoids` at
+top level, once the joining is written. It is deliberately *not* what is
+threaded through the interior: each lemma would then owe a proof about its own
+intermediates' heads, a second invariant to carry. `∀ Z, w ≠ a ++ Z ++ b` owes
+nothing.
+-/
+
+/-- The context condition the whole joining threads: every surrounding term
+differs from **every** word of the shape `a ++ _ ++ b`. Every intermediate of a
+chain that rewrites strictly inside `a … b` has that shape, so this one
+hypothesis discharges all of their side conditions. -/
+def CtxAvoids (L : List (Monomial (HeckeGen n) × ℝ)) (a b : Monomial (HeckeGen n)) : Prop :=
+  ∀ w ∈ L.map Prod.fst, ∀ Z : Monomial (HeckeGen n), w ≠ a ++ Z ++ b
+
+theorem CtxAvoids.extend {L : List (Monomial (HeckeGen n) × ℝ)}
+    {a b : Monomial (HeckeGen n)} (h : CtxAvoids L a b) (u : Monomial (HeckeGen n)) :
+    CtxAvoids L (a ++ u) b := by
+  intro w hw Z hcon
+  exact h w hw (u ++ Z) (by simpa using hcon)
+
+theorem CtxAvoids.extendRight {L : List (Monomial (HeckeGen n) × ℝ)}
+    {a b : Monomial (HeckeGen n)} (h : CtxAvoids L a b) (u : Monomial (HeckeGen n)) :
+    CtxAvoids L a (u ++ b) := by
+  intro w hw Z hcon
+  exact h w hw (Z ++ u) (by simpa using hcon)
+
+theorem CtxAvoids.narrow {L : List (Monomial (HeckeGen n) × ℝ)}
+    {a : Monomial (HeckeGen n)} (h : CtxAvoids L a []) (b : Monomial (HeckeGen n)) :
+    CtxAvoids L a b := by
+  intro w hw Z hcon
+  exact h w hw (Z ++ b) (by simpa using hcon)
+
+theorem CtxAvoids.ne {L : List (Monomial (HeckeGen n) × ℝ)}
+    {a b : Monomial (HeckeGen n)} (h : CtxAvoids L a b) (Z : Monomial (HeckeGen n))
+    {W : Monomial (HeckeGen n)} (hW : W = a ++ Z ++ b) :
+    ∀ w ∈ L.map Prod.fst, w ≠ W := by
+  intro w hw
+  rw [hW]
+  exact h w hw Z
+
+theorem ctxAvoids_nil (a b : Monomial (HeckeGen n)) :
+    CtxAvoids ([] : List (Monomial (HeckeGen n) × ℝ)) a b := by
+  intro w hw
+  simp at hw
+
+/-- A word that *opens* with a descending run is avoided by a context that
+avoids that run's head letter. This is the workhorse turning a head condition
+into the plain `≠` a step lemma asks for. -/
+theorem CtxAvoids.ne_descWord {L : List (Monomial (HeckeGen n) × ℝ)} {i j : Fin n}
+    (hj : j.val ≤ i.val) (h : CtxAvoids L [(⟨i⟩ : HeckeGen n)] [])
+    (u : Monomial (HeckeGen n)) {W : Monomial (HeckeGen n)}
+    (hW : W = descWord i j ++ u) :
+    ∀ w ∈ L.map Prod.fst, w ≠ W := by
+  obtain ⟨t, ht⟩ := descWord_head (i := i) (j := j) hj
+  refine h.ne (t ++ u) ?_
+  rw [hW, ht]; simp
+
+/-- Membership in a context with one distinguished extra term. -/
+theorem mem_ctx_or_eq (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+    (w : Monomial (HeckeGen n)) (d : ℝ) :
+    ∀ q ∈ (L₁ ++ (w, d) :: L₂).map Prod.fst,
+      q ∈ (L₁ ++ L₂).map Prod.fst ∨ q = w := by
+  intro q hq
+  simp only [List.map_append, List.map_cons, List.mem_append,
+    List.mem_cons] at hq ⊢
+  tauto
+
+/-- `doubleDesc_sweep`, carrying arbitrary surrounding terms. -/
+theorem doubleDesc_sweep' (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m : Fin n), m.val = z.val + d →
+      ∀ (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+        (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        CtxAvoids (L₁ ++ L₂) a b →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms
+            (L₁ ++ (a ++ descWord m z ++ descWord m z ++ b, c) :: L₂))
+          (AlgElement.ofTerms (L₁ ++ (a ++ pairSweep m z ++ b, c) :: L₂)) := by
+  intro d
+  induction d with
+  | zero =>
+    intro m hm L₁ L₂ a b c _ _
+    have hmz : m = z := Fin.ext (by omega)
+    subst hmz
+    rw [descWord_self, pairSweep_self]
+    simp only [List.cons_append, List.append_assoc, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro m hm L₁ L₂ a b c hc hctx
+    have hzm : z.val ≤ m.val := by omega
+    have hlt : m.val - 1 < n := by have := m.isLt; omega
+    have hval : (⟨m.val - 1, hlt⟩ : Fin n).val = m.val - 1 := rfl
+    have hmm : (⟨m.val - 1, hlt⟩ : Fin n).val + 1 = m.val := by rw [hval]; omega
+    have hzm' : z.val ≤ (⟨m.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hsplit : a ++ descWord m z ++ descWord m z ++ b
+        = a ++ bsWord₁ m z ++ (descWord ⟨m.val - 1, hlt⟩ z ++ b) := by
+      rw [show descWord m z = (⟨m⟩ : HeckeGen n) :: descWord ⟨m.val - 1, hlt⟩ z from
+        descWord_cons hmm hzm']
+      simp [bsWord₁, descWord_cons hmm hzm']
+    have hafter : a ++ bsWord₂ ⟨m.val - 1, hlt⟩ m z
+          ++ (descWord ⟨m.val - 1, hlt⟩ z ++ b)
+        = (a ++ [(⟨(⟨m.val - 1, hlt⟩ : Fin n)⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)])
+            ++ descWord ⟨m.val - 1, hlt⟩ z ++ descWord ⟨m.val - 1, hlt⟩ z ++ b := by
+      simp [bsWord₂]
+    refine MultiStepReduction.head
+      (bsStep hn hp hmm hzm' L₁ L₂ a (descWord ⟨m.val - 1, hlt⟩ z ++ b) _ _ c hc
+        hsplit rfl
+        ((hctx.extendRight (descWord ⟨m.val - 1, hlt⟩ z)).ne (bsWord₁ m z) hsplit)) ?_
+    rw [hafter]
+    have key := ih ⟨m.val - 1, hlt⟩ (by rw [hval]; omega) L₁ L₂
+      (a ++ [(⟨(⟨m.val - 1, hlt⟩ : Fin n)⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)]) b c hc
+      (hctx.extend [(⟨(⟨m.val - 1, hlt⟩ : Fin n)⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)])
+    rw [pairSweep_cons hmm hzm']
+    simpa using key
+
 /-- **A doubled descending run sweeps to interleaved pairs.**
 
 `descWord m z ++ descWord m z ⟶* pairSweep m z`, by exactly one Bokut–Shiao
@@ -17349,40 +17492,39 @@ theorem doubleDesc_sweep (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
       ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
         MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
           (AlgElement.ofTerms [(a ++ descWord m z ++ descWord m z ++ b, c)])
-          (AlgElement.ofTerms [(a ++ pairSweep m z ++ b, c)]) := by
-  intro d
-  induction d with
-  | zero =>
-    intro m hm a b c _
-    have hmz : m = z := Fin.ext (by omega)
-    subst hmz
-    rw [descWord_self, pairSweep_self]
-    simp only [List.cons_append, List.append_assoc, List.nil_append]
-    exact MultiStepReduction.refl _
-  | succ d ih =>
-    intro m hm a b c hc
-    have hzm : z.val ≤ m.val := by omega
-    have hlt : m.val - 1 < n := by have := m.isLt; omega
-    set m' : Fin n := ⟨m.val - 1, hlt⟩ with hm'
-    have hmm : m'.val + 1 = m.val := by simp only [hm']; omega
-    have hzm' : z.val ≤ m'.val := by simp only [hm']; omega
-    -- the second copy's head closes the first into `bsWord₁ m z`
-    have hsplit : a ++ descWord m z ++ descWord m z ++ b
-        = a ++ bsWord₁ m z ++ (descWord m' z ++ b) := by
-      rw [show descWord m z = (⟨m⟩ : HeckeGen n) :: descWord m' z from
-        descWord_cons hmm hzm']
-      simp [bsWord₁, descWord_cons hmm hzm']
-    have hafter : a ++ bsWord₂ m' m z ++ (descWord m' z ++ b)
-        = (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩])
-            ++ descWord m' z ++ descWord m' z ++ b := by
-      simp [bsWord₂]
-    refine MultiStepReduction.head
-      (bsStep hn hp hmm hzm' [] [] a (descWord m' z ++ b) _ _ c hc hsplit rfl (by simp))
-      ?_
-    rw [hafter]
-    have key := ih m' (by simp only [hm']; omega) (a ++ [(⟨m'⟩ : HeckeGen n), ⟨m⟩]) b c hc
-    rw [pairSweep_cons hmm hzm']
-    simpa using key
+          (AlgElement.ofTerms [(a ++ pairSweep m z ++ b, c)]) :=
+  fun d m hm a b c hc =>
+    doubleDesc_sweep' hn hp z d m hm [] [] a b c hc (ctxAvoids_nil a b)
+
+/-- `bside_to_splitWord`, carrying arbitrary surrounding terms.
+
+Every word of the sweep sits behind the fixed prefix `σ_{i−1}σ_i`, so the
+single head condition "no surrounding word begins with `σ_{i−1}`" covers the
+whole run. -/
+theorem bside_to_splitWord' (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (hi : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCh : CtxAvoids (L₁ ++ L₂) [(⟨i'⟩ : HeckeGen n)] []) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+          ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (pairSweep i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂)) := by
+  have hz : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hctx : CtxAvoids (L₁ ++ L₂) [(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+      [(⟨i⟩ : HeckeGen n)] := by
+    have h := (hCh.extend [(⟨i⟩ : HeckeGen n)]).narrow [(⟨i⟩ : HeckeGen n)]
+    simpa using h
+  have key := doubleDesc_sweep' hn hp ⟨0, hn⟩ i'.val i' (by simp)
+    L₁ L₂ [(⟨i'⟩ : HeckeGen n), ⟨i⟩] [(⟨i⟩ : HeckeGen n)] c hc hctx
+  rw [pairSweep_cons hi hz]
+  have hb : bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+      = [(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] := by
+    simp [bsWord₂]
+  rw [hb]
+  simpa using key
 
 /-- **Side B of the deep self-overlap reaches its split word.**
 
@@ -17400,17 +17542,8 @@ theorem bside_to_splitWord (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
       (AlgElement.ofTerms
         [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
       (AlgElement.ofTerms
-        [(pairSweep i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)]) := by
-  have hz : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
-  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
-    [(⟨i'⟩ : HeckeGen n), ⟨i⟩] [(⟨i⟩ : HeckeGen n)] c hc
-  rw [pairSweep_cons hi hz]
-  have hb : bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
-      = [(⟨i'⟩ : HeckeGen n), ⟨i⟩] ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
-        ++ [(⟨i⟩ : HeckeGen n)] := by
-    simp [bsWord₂]
-  rw [hb]
-  simpa using key
+        [(pairSweep i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)]) :=
+  bside_to_splitWord' hn hp hi [] [] c hc (ctxAvoids_nil _ _)
 
 /-! ## §4bp  Side A, swept — and a correction to what §4bo's measurement said
 
@@ -17439,14 +17572,21 @@ like B's branches reducing onto A's; **they do not** — checked to `i = 6`, no
 B-branch reaches its A-counterpart at all. The two tails are separate work.
 -/
 
-/-- **Side A's opening: three steps to a doubled descending run.** -/
-theorem aside_head (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
-    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+/-- `aside_head`, carrying arbitrary surrounding terms.
+
+Its three steps sit in three different contexts, but each word begins with
+`σ_i` or `σ_{i−2}` — so two head conditions, `CtxAvoids L [σ_x] []` saying no
+surrounding word begins with `σ_x`, cover all of them. -/
+theorem aside_head' (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCi : CtxAvoids (L₁ ++ L₂) [(⟨i⟩ : HeckeGen n)] [])
+    (hCi'' : CtxAvoids (L₁ ++ L₂) [(⟨i''⟩ : HeckeGen n)] []) :
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
-      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms (L₁ ++ (descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c) :: L₂))
       (AlgElement.ofTerms
-        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ descWord i' ⟨0, hn⟩
-            ++ descWord i' ⟨0, hn⟩, c)]) := by
+        (L₁ ++ ([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ descWord i' ⟨0, hn⟩
+            ++ descWord i' ⟨0, hn⟩, c) :: L₂)) := by
   have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
   have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
   have hne_ii : (⟨i''⟩ : HeckeGen n) ≠ ⟨i⟩ := heckeGen_ne_of_val_ne (by omega)
@@ -17454,41 +17594,93 @@ theorem aside_head (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
     descWord_cons h₁ hz'
   have hdi' : descWord i' ⟨0, hn⟩ = (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩ :=
     descWord_cons h₂ hz''
-  -- step 1: the inner Bokut–Shiao rule fires on `bsWord₁ i' 0`
   have e0 : descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩
       = [(⟨i⟩ : HeckeGen n)] ++ bsWord₁ i' ⟨0, hn⟩
         ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
     rw [hdi]; simp [bsWord₁, bsWord₂]
+  have n0 : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w ≠ descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩ := by
+    intro w hw
+    rw [e0]
+    have h := hCi w hw (bsWord₁ i' ⟨0, hn⟩
+      ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩))
+    simpa using h
   refine MultiStepReduction.head
-    (bsStep hn hp h₂ hz'' [] [] [(⟨i⟩ : HeckeGen n)]
-      ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e0 rfl (by simp)) ?_
-  -- step 2: far commutation pulls `σ_{i−2}` to the front
+    (bsStep hn hp h₂ hz'' L₁ L₂ [(⟨i⟩ : HeckeGen n)]
+      ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e0 rfl n0) ?_
   have e1 : [(⟨i⟩ : HeckeGen n)] ++ bsWord₂ i'' i' ⟨0, hn⟩
         ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
       = [] ++ [(⟨i⟩ : HeckeGen n), (⟨i''⟩ : HeckeGen n)]
         ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
             ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
     simp [bsWord₂]
+  have n1 : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w ≠ [(⟨i⟩ : HeckeGen n)] ++ bsWord₂ i'' i' ⟨0, hn⟩
+        ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    intro w hw
+    have h := hCi w hw (bsWord₂ i'' i' ⟨0, hn⟩
+      ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩))
+    simpa using h
   refine MultiStepReduction.head
     (monicStep hn hp (farCommRelation i i'') (farCommRelation_mem hn hp (by omega))
       (fun _ => rfl) (farCommRelation_lm i i'' (by omega)) (by simp [hne_ii])
-      [] [] [] ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
-        ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e1 rfl (by simp)) ?_
-  -- step 3: the outer Bokut–Shiao rule fires on `bsWord₁ i 0`
+      L₁ L₂ [] ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) _ _ c hc e1 rfl
+      n1) ?_
   have e2 : [] ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
         ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
             ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩)
       = [(⟨i''⟩ : HeckeGen n)] ++ bsWord₁ i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
     rw [bsWord₁, hdi, hdi']; simp
+  have n2 : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w ≠ [] ++ [(⟨i''⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+        ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+            ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩) := by
+    intro w hw
+    have h := hCi'' w hw ([(⟨i⟩ : HeckeGen n)]
+      ++ ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩))
+    simpa using h
   refine MultiStepReduction.head
-    (bsStep hn hp h₁ hz' [] [] [(⟨i''⟩ : HeckeGen n)] (descWord i' ⟨0, hn⟩)
-      _ _ c hc e2 rfl (by simp)) ?_
+    (bsStep hn hp h₁ hz' L₁ L₂ [(⟨i''⟩ : HeckeGen n)] (descWord i' ⟨0, hn⟩)
+      _ _ c hc e2 rfl n2) ?_
   have e3 : [(⟨i''⟩ : HeckeGen n)] ++ bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
       = [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
         ++ descWord i' ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ := by
     simp [bsWord₂]
   rw [e3]
   exact MultiStepReduction.refl _
+
+/-- **Side A's opening: three steps to a doubled descending run.** -/
+theorem aside_head (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ descWord i' ⟨0, hn⟩
+            ++ descWord i' ⟨0, hn⟩, c)]) :=
+  aside_head' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+/-- `aside_to_sweptWord`, carrying arbitrary surrounding terms. -/
+theorem aside_to_sweptWord' (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCi : CtxAvoids (L₁ ++ L₂) [(⟨i⟩ : HeckeGen n)] [])
+    (hCi'' : CtxAvoids (L₁ ++ L₂) [(⟨i''⟩ : HeckeGen n)] []) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ ([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ pairSweep i' ⟨0, hn⟩, c) :: L₂)) := by
+  refine MultiStepReduction.trans
+    (aside_head' hn hp h₂ h₁ L₁ L₂ c hc hCi hCi'') ?_
+  have hA : CtxAvoids (L₁ ++ L₂)
+      [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] [] := by
+    intro w hw Z hcon
+    exact hCi'' w hw ([(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] ++ Z)
+      (by simpa using hcon)
+  have key := doubleDesc_sweep' hn hp ⟨0, hn⟩ i'.val i' (by simp) L₁ L₂
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] [] c hc hA
+  simpa using key
 
 /-- **Side A of the deep self-overlap, swept.** The three-step head lands on a
 doubled descending run, and §4bo's sweep takes it from there — so side A costs
@@ -17499,11 +17691,8 @@ theorem aside_to_sweptWord (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
     MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
       (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
       (AlgElement.ofTerms
-        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ pairSweep i' ⟨0, hn⟩, c)]) := by
-  refine MultiStepReduction.trans (aside_head hn hp h₂ h₁ c hc) ?_
-  have key := doubleDesc_sweep hn hp ⟨0, hn⟩ i'.val i' (by simp)
-    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] [] c hc
-  simpa using key
+        [([(⟨i''⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ pairSweep i' ⟨0, hn⟩, c)]) :=
+  aside_to_sweptWord' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
 
 /-! ## §4bq  The far-commutation carry — side A's tail, inner loop
 
@@ -17535,6 +17724,59 @@ Two things about the tail are measured and worth keeping:
   B-branch reaches its A-counterpart at all. Two separate tails.
 -/
 
+/-- `gen_past_descWord`, carrying arbitrary surrounding terms. -/
+theorem gen_past_descWord' (hn : 0 < n) (hp : HeckeParams) (m : Fin n) :
+    ∀ (d : ℕ) (k z : Fin n), k.val = z.val + d → k.val + 1 < m.val →
+      ∀ (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+        (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        CtxAvoids (L₁ ++ L₂) a b →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms
+            (L₁ ++ (a ++ [(⟨m⟩ : HeckeGen n)] ++ descWord k z ++ b, c) :: L₂))
+          (AlgElement.ofTerms
+            (L₁ ++ (a ++ descWord k z ++ [(⟨m⟩ : HeckeGen n)] ++ b, c) :: L₂)) := by
+  intro d
+  induction d with
+  | zero =>
+    intro k z hk hkm L₁ L₂ a b c hc hctx
+    have hkz : k = z := Fin.ext (by omega)
+    subst hkz
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    rw [descWord_self]
+    have hW : a ++ [(⟨m⟩ : HeckeGen n)] ++ [(⟨k⟩ : HeckeGen n)] ++ b
+        = a ++ [(⟨m⟩ : HeckeGen n), (⟨k⟩ : HeckeGen n)] ++ b := by simp
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        L₁ L₂ a b _ _ c hc hW rfl
+        (hctx.ne [(⟨m⟩ : HeckeGen n), (⟨k⟩ : HeckeGen n)] hW)) ?_
+    simp only [List.append_assoc, List.cons_append, List.nil_append]
+    exact MultiStepReduction.refl _
+  | succ d ih =>
+    intro k z hk hkm L₁ L₂ a b c hc hctx
+    have hlt : k.val - 1 < n := by have := k.isLt; omega
+    have hkz : z.val ≤ (⟨k.val - 1, hlt⟩ : Fin n).val := by simp; omega
+    have hkk : (⟨k.val - 1, hlt⟩ : Fin n).val + 1 = k.val := by simp; omega
+    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
+    have hdk : descWord k z
+        = (⟨k⟩ : HeckeGen n) :: descWord ⟨k.val - 1, hlt⟩ z := descWord_cons hkk hkz
+    rw [hdk]
+    have hW : a ++ [(⟨m⟩ : HeckeGen n)]
+          ++ ((⟨k⟩ : HeckeGen n) :: descWord ⟨k.val - 1, hlt⟩ z) ++ b
+        = a ++ [(⟨m⟩ : HeckeGen n), (⟨k⟩ : HeckeGen n)]
+          ++ (descWord ⟨k.val - 1, hlt⟩ z ++ b) := by simp
+    have hctx' : CtxAvoids (L₁ ++ L₂) a (descWord ⟨k.val - 1, hlt⟩ z ++ b) := by
+      intro w hw Z hcon
+      exact hctx w hw (Z ++ descWord ⟨k.val - 1, hlt⟩ z) (by simpa using hcon)
+    refine MultiStepReduction.head
+      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
+        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
+        L₁ L₂ a (descWord ⟨k.val - 1, hlt⟩ z ++ b) _ _ c hc hW rfl
+        (hctx'.ne [(⟨m⟩ : HeckeGen n), (⟨k⟩ : HeckeGen n)] hW)) ?_
+    have key := ih ⟨k.val - 1, hlt⟩ z (by simp; omega) (by simp; omega)
+      L₁ L₂ (a ++ [(⟨k⟩ : HeckeGen n)]) b c hc (hctx.extend [(⟨k⟩ : HeckeGen n)])
+    simpa using key
+
 /-- **A far generator commutes rightward past a whole descending run.**
 
 `σ_m · descWord k z ⟶* descWord k z · σ_m` whenever `k + 1 < m`, by one
@@ -17545,36 +17787,995 @@ theorem gen_past_descWord (hn : 0 < n) (hp : HeckeParams) (m : Fin n) :
       ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
         MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
           (AlgElement.ofTerms [(a ++ [(⟨m⟩ : HeckeGen n)] ++ descWord k z ++ b, c)])
-          (AlgElement.ofTerms [(a ++ descWord k z ++ [(⟨m⟩ : HeckeGen n)] ++ b, c)]) := by
+          (AlgElement.ofTerms [(a ++ descWord k z ++ [(⟨m⟩ : HeckeGen n)] ++ b, c)]) :=
+  fun d k z hk hkm a b c hc =>
+    gen_past_descWord' hn hp m d k z hk hkm [] [] a b c hc (ctxAvoids_nil a b)
+
+/-! ## §4br  The unshuffle — and side A of `hdeep`, complete
+
+§4bq gave the carry; this is the loop that uses it, and with it side A closes
+end to end.
+
+**The unshuffle.** `pairList m z` — the interleaved pairs
+`σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1}`, i.e. `pairSweep` without its trailing
+`σ_zσ_z` — separates into **two descending runs**:
+
+`pairList m z ⟶* descWord (m−1) z ++ (descWord m z).dropLast`
+
+one `gen_past_descWord` per level. The induction hypothesis separates the pairs
+below, and then the top pair's upper letter `σ_m` is carried rightward across
+the lower run it now sits in front of. The base case is `m = z + 1`, where a
+single pair `σ_zσ_m` is already `descWord z z ++ (descWord m z).dropLast` and no
+step is needed.
+
+Writing the upper run as `(descWord m z).dropLast` — the run with its bottom
+letter removed — is what keeps `z + 1` from ever having to be named as a `Fin n`.
+
+**Side A, complete.** §4bp's head, then the unshuffle, then one last carry:
+`σ_i` leaves the leading block and crosses the lower run, which turns
+`σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into `bsWord₂ (i−2) (i−1) 0` and
+`σ_i ++ (descWord (i−1) 0).dropLast` into `(descWord i 0).dropLast`. What is left
+is **one word ending in `σ₀σ₀`**, and the single quadratic step of the whole
+reduction fires there, giving
+
+`NF + (q − q⁻¹)·(NF · σ₀)`,  `NF = bsWord₂ (i−2) (i−1) 0 · (descWord i 0).dropLast`
+
+which is the two-term normal form the probe measured. Every step before that one
+is monomial, exactly as the rule census said.
+
+So `aside_resolves` discharges side A of `hdeep` in full, general in `i`. Side B
+is done to its split word (§4bo) and still needs its tail — the same carry
+sequence shifted by one, plus two Bokut–Shiao steps — and then the two-term
+bookkeeping joins the halves.
+-/
+
+/-- `σ_{m−1}σ_m σ_{m−2}σ_{m−1} ⋯ σ_zσ_{z+1}` — `pairSweep` without its trailing
+`σ_zσ_z`, i.e. the interleaved pairs alone. Zipped against the run's own tail,
+so again no arithmetic on `Fin n`. -/
+def pairList {n : ℕ} (m z : Fin n) : Monomial (HeckeGen n) :=
+  (List.zip (descWord m z) (descWord m z).tail).flatMap (fun p => [p.2, p.1])
+
+theorem pairList_self (z : Fin n) : pairList z z = [] := by
+  simp [pairList, descWord_self]
+
+theorem pairList_cons {m' m z : Fin n} (hm : m'.val + 1 = m.val)
+    (hz : z.val ≤ m'.val) :
+    pairList m z = [(⟨m'⟩ : HeckeGen n), ⟨m⟩] ++ pairList m' z := by
+  simp only [pairList, descWord_cons hm hz, List.tail_cons]
+  obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hz
+  rw [ht]
+  simp
+
+/-- `pairList_unshuffle`, carrying arbitrary surrounding terms. -/
+theorem pairList_unshuffle' (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m' m : Fin n), m'.val = z.val + d → m'.val + 1 = m.val →
+      ∀ (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ))
+        (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        CtxAvoids (L₁ ++ L₂) a b →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms (L₁ ++ (a ++ pairList m z ++ b, c) :: L₂))
+          (AlgElement.ofTerms
+            (L₁ ++ (a ++ descWord m' z ++ (descWord m z).dropLast ++ b, c) :: L₂)) := by
   intro d
   induction d with
   | zero =>
-    intro k z hk hkm a b c hc
-    have hkz : k = z := Fin.ext (by omega)
-    subst hkz
-    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
-    rw [descWord_self]
-    refine MultiStepReduction.head
-      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
-        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
-        [] [] a b _ _ c hc (by simp) rfl (by simp)) ?_
-    simp only [List.append_assoc, List.cons_append, List.nil_append]
+    intro m' m hm' hm L₁ L₂ a b c _ _
+    have hz : z.val ≤ m'.val := by omega
+    have hm'z : m' = z := Fin.ext (by omega)
+    rw [pairList_cons hm hz, descWord_cons hm hz, hm'z, pairList_self,
+      descWord_self]
+    simp only [List.append_nil, List.dropLast_cons₂, List.dropLast_singleton,
+      List.append_assoc, List.cons_append, List.nil_append]
     exact MultiStepReduction.refl _
   | succ d ih =>
-    intro k z hk hkm a b c hc
-    have hlt : k.val - 1 < n := by have := k.isLt; omega
-    have hkz : z.val ≤ (⟨k.val - 1, hlt⟩ : Fin n).val := by simp; omega
-    have hkk : (⟨k.val - 1, hlt⟩ : Fin n).val + 1 = k.val := by simp; omega
-    have hne : (⟨k⟩ : HeckeGen n) ≠ ⟨m⟩ := heckeGen_ne_of_val_ne (by omega)
-    have hdk : descWord k z
-        = (⟨k⟩ : HeckeGen n) :: descWord ⟨k.val - 1, hlt⟩ z := descWord_cons hkk hkz
-    rw [hdk]
-    refine MultiStepReduction.head
-      (monicStep hn hp (farCommRelation m k) (farCommRelation_mem hn hp (by omega))
-        (fun _ => rfl) (farCommRelation_lm m k (by omega)) (by simp [hne])
-        [] [] a (descWord ⟨k.val - 1, hlt⟩ z ++ b) _ _ c hc (by simp) rfl (by simp)) ?_
-    have key := ih ⟨k.val - 1, hlt⟩ z (by simp; omega) (by simp; omega)
-      (a ++ [(⟨k⟩ : HeckeGen n)]) b c hc
-    simpa using key
+    intro m' m hm' hm L₁ L₂ a b c hc hctx
+    have hlt : m'.val - 1 < n := by have := m'.isLt; omega
+    have hzm' : z.val ≤ m'.val := by omega
+    have hval : (⟨m'.val - 1, hlt⟩ : Fin n).val = m'.val - 1 := rfl
+    have hz'' : z.val ≤ (⟨m'.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨m'.val - 1, hlt⟩ : Fin n).val + 1 = m'.val := by rw [hval]; omega
+    have hgap : (⟨m'.val - 1, hlt⟩ : Fin n).val = z.val + d := by rw [hval]; omega
+    have hgap2 : (⟨m'.val - 1, hlt⟩ : Fin n).val
+        = z.val + (m'.val - 1 - z.val) := by rw [hval]; omega
+    have hfar : (⟨m'.val - 1, hlt⟩ : Fin n).val + 1 < m.val := by rw [hval]; omega
+    rw [pairList_cons hm hzm']
+    have step1 := ih ⟨m'.val - 1, hlt⟩ m' hgap hmm L₁ L₂
+      (a ++ [(⟨m'⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)]) b c hc
+      (hctx.extend [(⟨m'⟩ : HeckeGen n), (⟨m⟩ : HeckeGen n)])
+    have step2 := gen_past_descWord' hn hp m (m'.val - 1 - z.val)
+      ⟨m'.val - 1, hlt⟩ z hgap2 hfar L₁ L₂ (a ++ [(⟨m'⟩ : HeckeGen n)])
+      ((descWord m' z).dropLast ++ b) c hc
+      ((hctx.extend [(⟨m'⟩ : HeckeGen n)]).extendRight (descWord m' z).dropLast)
+    have h1 : (⟨m'⟩ : HeckeGen n) :: descWord ⟨m'.val - 1, hlt⟩ z = descWord m' z :=
+      (descWord_cons hmm hz'').symm
+    have h2 : (⟨m⟩ : HeckeGen n) :: (descWord m' z).dropLast
+        = (descWord m z).dropLast := by
+      obtain ⟨t, ht⟩ := descWord_head (i := m') (j := z) hzm'
+      rw [descWord_cons hm hzm', ht]
+      simp
+    refine MultiStepReduction.trans (by simpa using step1) ?_
+    refine MultiStepReduction.trans (by simpa using step2) ?_
+    have hgoal : a ++ [(⟨m'⟩ : HeckeGen n)] ++ descWord ⟨m'.val - 1, hlt⟩ z
+          ++ [(⟨m⟩ : HeckeGen n)] ++ ((descWord m' z).dropLast ++ b)
+        = a ++ descWord m' z ++ (descWord m z).dropLast ++ b := by
+      have e : a ++ [(⟨m'⟩ : HeckeGen n)] ++ descWord ⟨m'.val - 1, hlt⟩ z
+            ++ [(⟨m⟩ : HeckeGen n)] ++ ((descWord m' z).dropLast ++ b)
+          = a ++ ((⟨m'⟩ : HeckeGen n) :: descWord ⟨m'.val - 1, hlt⟩ z)
+            ++ ((⟨m⟩ : HeckeGen n) :: (descWord m' z).dropLast) ++ b := by simp
+      rw [e, h1, h2]
+    rw [← hgoal]
+    simp only [List.append_assoc]
+    exact MultiStepReduction.refl _
+
+/-- **The interleaved pairs unshuffle into two descending runs.**
+
+`pairList m z ⟶* descWord (m−1) z ++ (descWord m z).dropLast`, by one
+`gen_past_descWord` carry per level: the induction hypothesis separates the
+pairs below, and then `σ_m` — the upper letter of the top pair — is carried
+rightward past the whole lower run it now sits in front of.
+
+`(descWord m z).dropLast` is the run with its bottom letter removed, which is
+the upper run; writing it that way avoids naming `z + 1`. -/
+theorem pairList_unshuffle (hn : 0 < n) (hp : HeckeParams) (z : Fin n) :
+    ∀ (d : ℕ) (m' m : Fin n), m'.val = z.val + d → m'.val + 1 = m.val →
+      ∀ (a b : Monomial (HeckeGen n)) (c : ℝ), c ≠ 0 →
+        MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+          (AlgElement.ofTerms [(a ++ pairList m z ++ b, c)])
+          (AlgElement.ofTerms
+            [(a ++ descWord m' z ++ (descWord m z).dropLast ++ b, c)]) :=
+  fun d m' m hm' hm a b c hc =>
+    pairList_unshuffle' hn hp z d m' m hm' hm [] [] a b c hc (ctxAvoids_nil a b)
+
+/-- `pairSweep` is `pairList` with the trailing `σ_zσ_z` — the pairs, then the
+one place the quadratic rule can fire. -/
+theorem pairSweep_eq (z : Fin n) : ∀ (d : ℕ) (m : Fin n), m.val = z.val + d →
+    pairSweep m z = pairList m z ++ [(⟨z⟩ : HeckeGen n), ⟨z⟩] := by
+  intro d
+  induction d with
+  | zero =>
+    intro m hm
+    have hmz : m = z := Fin.ext (by omega)
+    rw [hmz, pairSweep_self, pairList_self]
+    simp
+  | succ d ih =>
+    intro m hm
+    have hlt : m.val - 1 < n := by have := m.isLt; omega
+    have hval : (⟨m.val - 1, hlt⟩ : Fin n).val = m.val - 1 := rfl
+    have hz : z.val ≤ (⟨m.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨m.val - 1, hlt⟩ : Fin n).val + 1 = m.val := by rw [hval]; omega
+    have hgap : (⟨m.val - 1, hlt⟩ : Fin n).val = z.val + d := by rw [hval]; omega
+    rw [pairSweep_cons hmm hz, pairList_cons hmm hz, ih ⟨m.val - 1, hlt⟩ hgap]
+    simp
+
+/-- `aside_to_normalWord`, carrying arbitrary surrounding terms. -/
+theorem aside_to_normalWord' (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCi : CtxAvoids (L₁ ++ L₂) [(⟨i⟩ : HeckeGen n)] [])
+    (hCi'' : CtxAvoids (L₁ ++ L₂) [(⟨i''⟩ : HeckeGen n)] []) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩], c) :: L₂)) := by
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  refine MultiStepReduction.trans
+    (aside_to_sweptWord' hn hp h₂ h₁ L₁ L₂ c hc hCi hCi'') ?_
+  rw [pairSweep_eq ⟨0, hn⟩ i'.val i' (by simp)]
+  have hgap : i''.val = (⟨0, hn⟩ : Fin n).val + i''.val := by simp
+  have hfar : i''.val + 1 < i.val := by omega
+  have hA : CtxAvoids (L₁ ++ L₂)
+      [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+      [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by
+    intro w hw Z hcon
+    exact hCi'' w hw ([(⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)] ++ Z
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+      (by simpa using hcon)
+  have hB : CtxAvoids (L₁ ++ L₂) [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]
+      ((descWord i' ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) := by
+    intro w hw Z hcon
+    exact hCi'' w hw ([(⟨i'⟩ : HeckeGen n)] ++ Z ++ ((descWord i' ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]))
+      (by simpa using hcon)
+  have stepU := pairList_unshuffle' hn hp ⟨0, hn⟩ i''.val i'' i' hgap h₂ L₁ L₂
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n), (⟨i⟩ : HeckeGen n)]
+    [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] c hc hA
+  have stepC := gen_past_descWord' hn hp i i''.val i'' ⟨0, hn⟩ hgap hfar L₁ L₂
+    [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)]
+    ((descWord i' ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) c hc hB
+  refine MultiStepReduction.trans (by simpa using stepU) ?_
+  refine MultiStepReduction.trans (by simpa using stepC) ?_
+  have hb : (⟨i''⟩ : HeckeGen n) :: (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩
+      = bsWord₂ i'' i' ⟨0, hn⟩ := rfl
+  have hd : (⟨i⟩ : HeckeGen n) :: (descWord i' ⟨0, hn⟩).dropLast
+      = (descWord i ⟨0, hn⟩).dropLast := by
+    obtain ⟨t, ht⟩ := descWord_head (i := i') (j := ⟨0, hn⟩) hz'
+    rw [descWord_cons h₁ hz', ht]
+    simp
+  have hgoal : [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] ++ ((descWord i' ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+      = bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by
+    have e : [(⟨i''⟩ : HeckeGen n), (⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+          ++ [(⟨i⟩ : HeckeGen n)] ++ ((descWord i' ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+        = ((⟨i''⟩ : HeckeGen n) :: (⟨i'⟩ : HeckeGen n) :: descWord i'' ⟨0, hn⟩)
+          ++ ((⟨i⟩ : HeckeGen n) :: (descWord i' ⟨0, hn⟩).dropLast)
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by simp
+    rw [e, hb, hd]
+  rw [← hgoal]
+  simp only [List.append_assoc]
+  exact MultiStepReduction.refl _
+
+/-- **Side A of the deep self-overlap, reduced to one word.**
+
+Head (§4bp) → unshuffle → one last carry: `σ_i` leaves the leading block and
+crosses the lower run, which turns `σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into
+`bsWord₂ (i−2) (i−1) 0` and `σ_i ++ (descWord (i−1) 0).dropLast` into
+`(descWord i 0).dropLast`. What is left is a single word ending in `σ₀σ₀`. -/
+theorem aside_to_normalWord (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩], c)]) :=
+  aside_to_normalWord' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+/-- `aside_resolves`, carrying arbitrary surrounding terms — **side A of `hdeep`
+inside an arbitrary S-polynomial**. -/
+theorem aside_resolves' (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCi : CtxAvoids (L₁ ++ L₂) [(⟨i⟩ : HeckeGen n)] [])
+    (hCi'' : CtxAvoids (L₁ ++ L₂) [(⟨i''⟩ : HeckeGen n)] []) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹))
+          :: (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast, c) :: L₂)) := by
+  refine MultiStepReduction.trans
+    (aside_to_normalWord' hn hp h₂ h₁ L₁ L₂ c hc hCi hCi'') ?_
+  have hne : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w ≠ bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩] := by
+    intro w hw
+    have h := hCi'' w hw ([(⟨i'⟩ : HeckeGen n)] ++ descWord i'' ⟨0, hn⟩
+      ++ (descWord i ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩])
+    simpa [bsWord₂] using h
+  have hq := quadStep hn hp ⟨0, hn⟩ L₁ L₂
+    (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast) []
+    (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) c hc
+    (by simp) hne
+  simp only [List.append_nil] at hq
+  exact MultiStepReduction.step (MultiStepReduction.refl _) hq
+
+/-- **Side A of the deep self-overlap resolves, in full.** One word, then the
+single quadratic step, landing on the two-term element
+`NF + (q − q⁻¹)·(NF · σ₀)` with `NF = bsWord₂ (i−2) (i−1) 0 · (descWord i 0).dropLast`.
+Everything before that step is monomial. -/
+theorem aside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms [(descWord i ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩, c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], c * (hp.q - hp.q⁻¹)),
+         (bsWord₂ i'' i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast, c)]) :=
+  aside_resolves' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+/-! ## §4bs  Side B, complete — and both halves of `hdeep` land on one element
+
+§4br closed side A. This closes side B, on **exactly the element side A reaches**.
+
+`bside_to_split` runs §4bo's route to the split word, rewrites it through
+`pairSweep_eq` into pairs-plus-`σ₀σ₀`, unshuffles the pairs with §4br's
+`pairList_unshuffle`, and fires the one quadratic step. So both sides use the
+same unshuffle; only the *context* it runs in differs, which is what the earlier
+measurement meant by "the same carry sequence shifted by one".
+
+`bside_branch` is the tail, and it is **one lemma parameterised by `j`**: the
+trailing `σ_i` closes `descWord i j` into `bsWord₁ i j`, and after that rule
+fires, the `σ_{i'}` its `bsWord₂` puts down closes `descWord i' 0` into
+`bsWord₁ i' 0` for a second. `j = 0` on the `H`-branch and `j = 1` on the
+`1`-branch — that single index is the whole difference between them, and it is
+the extra `σ₀` the split leaves behind. Predicted from the measurement in §4bq
+and confirmed here.
+
+**The two-term bookkeeping, handled by length.** After the split there are two
+terms, so `monicStep`'s side condition is no longer vacuous. Rather than compare
+words, `bside_branch` takes a single hypothesis — every surrounding term has a
+length other than this word's — and discharges both of its steps from it, since
+Bokut–Shiao is monic and all three words of the chain have the same length. The
+two branch words differ in length by exactly one (that same `σ₀`), so each
+serves as the other's witness. `descWord_length` is what makes this arithmetic;
+it is proved on the gap like everything else about `descWord`.
+
+**Both targets are the same element**, via `[σ_i] ++ descWord i' 0 = descWord i 0`
+and `(descWord i 0).dropLast ++ [σ₀] = descWord i 0`. What is left of `hdeep` is
+the joining: running the two chains inside the S-polynomial's two terms, where
+each side's chain carries the *other* side's term as context.
+-/
+
+/-- **The length of a descending run.** `|descWord i j| = i − j + 1`. Proved on
+the gap, like everything else about `descWord`. -/
+theorem descWord_length : ∀ (d : ℕ) {i j : Fin n}, i.val = j.val + d →
+    (descWord i j).length = i.val - j.val + 1 := by
+  intro d
+  induction d with
+  | zero =>
+    intro i j hij
+    have hji : i = j := Fin.ext (by omega)
+    rw [hji, descWord_self]
+    simp
+  | succ d ih =>
+    intro i j hij
+    have hlt : i.val - 1 < n := by have := i.isLt; omega
+    have hval : (⟨i.val - 1, hlt⟩ : Fin n).val = i.val - 1 := rfl
+    have hz : j.val ≤ (⟨i.val - 1, hlt⟩ : Fin n).val := by rw [hval]; omega
+    have hmm : (⟨i.val - 1, hlt⟩ : Fin n).val + 1 = i.val := by rw [hval]; omega
+    have hgap : (⟨i.val - 1, hlt⟩ : Fin n).val = j.val + d := by rw [hval]; omega
+    rw [descWord_cons hmm hz, List.length_cons, ih hgap, hval]
+    omega
+
+/-- `bside_to_split`, carrying arbitrary surrounding terms.
+
+**Two hypotheses, of two different shapes, and the second is not optional.**
+The sweep and the quadratic step both act with a fixed prefix in front, so a
+head condition covers them. The *unshuffle* acts at the left end of the word —
+`a = []` — so nothing sits in front of it to separate on, and what protects it
+is the word's right end instead: no surrounding word may end in `σ₀σ₀σ_i`. -/
+theorem bside_to_split' (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCh : CtxAvoids (L₁ ++ L₂) [(⟨i'⟩ : HeckeGen n)] [])
+    (hCt : CtxAvoids (L₁ ++ L₂) []
+      [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩,
+        (⟨i⟩ : HeckeGen n)]) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+          ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)],
+          c * (hp.q - hp.q⁻¹))
+         :: (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂)) := by
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  refine MultiStepReduction.trans
+    (bside_to_splitWord' hn hp h₁ L₁ L₂ c hc hCh) ?_
+  rw [pairSweep_eq ⟨0, hn⟩ i.val i (by simp)]
+  have hgap : i'.val = (⟨0, hn⟩ : Fin n).val + i'.val := by simp
+  have stepU := pairList_unshuffle' hn hp ⟨0, hn⟩ i'.val i' i hgap h₁ L₁ L₂ []
+    [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩, (⟨i⟩ : HeckeGen n)]
+    c hc hCt
+  refine MultiStepReduction.trans (by simpa using stepU) ?_
+  have hne : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w ≠ descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]
+        ++ [(⟨i⟩ : HeckeGen n)] :=
+    CtxAvoids.ne_descWord hz' hCh
+      ((descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]
+        ++ [(⟨i⟩ : HeckeGen n)]) (by simp)
+  have hq := quadStep hn hp ⟨0, hn⟩ L₁ L₂
+    (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast)
+    [(⟨i⟩ : HeckeGen n)]
+    (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+      ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]
+      ++ [(⟨i⟩ : HeckeGen n)]) c hc (by simp) hne
+  simp only [List.nil_append, List.append_assoc, List.cons_append] at hq ⊢
+  exact MultiStepReduction.step (MultiStepReduction.refl _) hq
+
+/-- Side B, up to and including the split. -/
+theorem bside_to_split (hn : 0 < n) (hp : HeckeParams) {i' i : Fin n}
+    (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)],
+          c * (hp.q - hp.q⁻¹)),
+         (descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+            ++ [(⟨i⟩ : HeckeGen n)], c)]) :=
+  bside_to_split' hn hp h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+/-- Convenience form of `descWord_length`. -/
+theorem descWord_length' {i j : Fin n} (hj : j.val ≤ i.val) :
+    (descWord i j).length = i.val - j.val + 1 :=
+  descWord_length (i.val - j.val) (by omega)
+
+/-- The Bokut–Shiao right-hand side is three letters longer than its
+descending tail is deep. -/
+theorem bsWord₂_length {i' i j : Fin n} (hj : j.val ≤ i'.val) :
+    (bsWord₂ i' i j).length = i'.val - j.val + 3 := by
+  simp only [bsWord₂, List.length_cons, descWord_length' hj]
+
+/-- **One branch of side B's tail, with its two side conditions raw.**
+
+`bside_branch` derives both from a length hypothesis. That is the right
+discharge inside side B, where every word of the chain has the same length,
+but it is the wrong one at the joining: side A's normal form has exactly the
+lengths side B's post-split words do. Both words entering a step here open with
+`descWord i' 0`, so a *head* condition discharges them too — and a caller that
+needs one shape for the ambient terms and the other for side B's own supplies
+whichever it has. -/
+theorem bside_branch_core (hn : 0 < n) (hp : HeckeParams) {i'' i' i j : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hne0 : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ descWord i j ++ [(⟨i⟩ : HeckeGen n)])
+    (hne1 : ∀ q ∈ (L₁ ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i j) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i' ⟨0, hn⟩ ++ descWord i j
+        ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' j, c) :: L₂)) := by
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have e0 : descWord i' ⟨0, hn⟩ ++ descWord i j ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ bsWord₁ i j ++ [] := by simp [bsWord₁]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₁ hj L₁ L₂ (descWord i' ⟨0, hn⟩) [] _ _ c hc e0 rfl hne0) ?_
+  have e1 : descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i j ++ []
+      = [] ++ bsWord₁ i' ⟨0, hn⟩ ++ ([(⟨i⟩ : HeckeGen n)] ++ descWord i' j) := by
+    simp [bsWord₁, bsWord₂]
+  refine MultiStepReduction.head
+    (bsStep hn hp h₂ hz'' L₁ L₂ [] ([(⟨i⟩ : HeckeGen n)] ++ descWord i' j)
+      _ _ c hc e1 rfl (by simpa using hne1)) ?_
+  simp only [List.nil_append, List.append_assoc]
+  exact MultiStepReduction.refl _
+
+/-- **One branch of side B's tail: two Bokut–Shiao steps.**
+
+`descWord i' 0 · descWord i j · σ_i ⟶* bsWord₂ i'' i' 0 · σ_i · descWord i' j`,
+for either `j` — `j = 0` on the `H`-branch and `j = 1` on the `1`-branch, which
+is the only way the two differ. The trailing `σ_i` closes `descWord i j` into
+`bsWord₁ i j`; after that rule fires, `descWord i' 0` is closed by the
+`σ_{i'}` its `bsWord₂` put down, and the second rule fires on that.
+
+The surrounding terms are arbitrary, subject only to a **length** condition:
+every one of them must have a length other than this word's. All three words in
+the chain have the same length — Bokut–Shiao is monic and length-preserving —
+so that single hypothesis discharges both steps' side conditions. -/
+theorem bside_branch (hn : 0 < n) (hp : HeckeParams)
+    {i'' i' i j : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hlen : ∀ w ∈ (L₁ ++ L₂).map Prod.fst,
+      w.length ≠ i'.val + 1 + (i.val - j.val + 1) + 1) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms (L₁ ++ (descWord i' ⟨0, hn⟩ ++ descWord i j
+        ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' j, c) :: L₂)) := by
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hji : j.val ≤ i.val := by omega
+  have hL' : (descWord i' ⟨0, hn⟩).length = i'.val + 1 := by
+    rw [descWord_length' hz']; simp
+  have hLij : (descWord i j).length = i.val - j.val + 1 := descWord_length' hji
+  refine bside_branch_core hn hp h₂ h₁ hj L₁ L₂ c hc ?_ ?_
+  · intro q hq hcon
+    refine hlen q hq ?_
+    rw [hcon]
+    simp only [List.length_append, List.length_singleton, hL', hLij]
+  · intro q hq hcon
+    refine hlen q hq ?_
+    rw [hcon]
+    simp only [List.length_append, bsWord₂_length hj, hL']
+    omega
+
+/-- `bside_resolves`, carrying arbitrary surrounding terms.
+
+The two hypotheses are exactly `bside_to_split'`'s. The branch steps need
+nothing further from the caller: their side conditions against the ambient
+terms follow from the head condition, and their side conditions against side
+B's *own* other term follow from a length count internal to this proof. -/
+theorem bside_resolves' (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val)
+    (L₁ L₂ : List (Monomial (HeckeGen n) × ℝ)) (c : ℝ) (hc : c ≠ 0)
+    (hCh : CtxAvoids (L₁ ++ L₂) [(⟨i'⟩ : HeckeGen n)] [])
+    (hCt : CtxAvoids (L₁ ++ L₂) []
+      [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩,
+        (⟨i⟩ : HeckeGen n)]) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩
+          ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂))
+      (AlgElement.ofTerms
+        (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+            ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹))
+         :: (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+            ++ (descWord i' ⟨0, hn⟩).dropLast, c) :: L₂)) := by
+  have hnn : (1 : ℕ) < n := by have := i'.isLt; omega
+  have hz' : (⟨0, hn⟩ : Fin n).val ≤ i'.val := by simp
+  have hz'' : (⟨0, hn⟩ : Fin n).val ≤ i''.val := by simp
+  have honei' : (⟨1, hnn⟩ : Fin n).val ≤ i'.val := by simp; omega
+  have honei : (⟨1, hnn⟩ : Fin n).val ≤ i.val := by simp; omega
+  have hcH : c * (hp.q - hp.q⁻¹) ≠ 0 := mul_ne_zero hc hp.h_ne_zero
+  have hsnocI : descWord i ⟨0, hn⟩
+      = descWord i ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) honei
+  have hsnocI' : descWord i' ⟨0, hn⟩
+      = descWord i' ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) honei'
+  have hdropI : (descWord i ⟨0, hn⟩).dropLast = descWord i ⟨1, hnn⟩ := by
+    rw [hsnocI]; simp
+  have hdropI' : (descWord i' ⟨0, hn⟩).dropLast = descWord i' ⟨1, hnn⟩ := by
+    rw [hsnocI']; simp
+  -- every length this proof compares, reduced once
+  have hL' : (descWord i' ⟨0, hn⟩).length = i'.val + 1 := by
+    rw [descWord_length' hz']; simp
+  have hLzero : (descWord i ⟨0, hn⟩).length = i.val + 1 := by
+    rw [descWord_length' (by omega : (⟨0, hn⟩ : Fin n).val ≤ i.val)]; simp
+  have hLone : (descWord i ⟨1, hnn⟩).length = i.val - 1 + 1 := by
+    rw [descWord_length' honei]
+  have hBs0 : (bsWord₂ i' i ⟨0, hn⟩).length = i'.val + 3 := by
+    rw [bsWord₂_length hz']; simp
+  have hBs1 : (bsWord₂ i' i ⟨1, hnn⟩).length = i'.val - 1 + 3 := by
+    rw [bsWord₂_length honei']
+  have hBs'' : (bsWord₂ i'' i' ⟨0, hn⟩).length = i''.val + 3 := by
+    rw [bsWord₂_length hz'']; simp
+  refine MultiStepReduction.trans
+    (bside_to_split' hn hp h₁ L₁ L₂ c hc hCh hCt) ?_
+  have eH : descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ descWord i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [hdropI, hsnocI]; simp
+  have eO : descWord i' ⟨0, hn⟩ ++ (descWord i ⟨0, hn⟩).dropLast
+        ++ [(⟨i⟩ : HeckeGen n)]
+      = descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩ ++ [(⟨i⟩ : HeckeGen n)] := by
+    rw [hdropI]
+  rw [eH, eO, hdropI']
+  -- first branch: the `H` side, at `j = 0`; the ambient terms are separated by
+  -- the head condition, side B's own `1`-branch term by its length
+  have hne0H : ∀ q ∈ (L₁ ++ (descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩
+        ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ descWord i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)] := by
+    intro q hq
+    rcases mem_ctx_or_eq L₁ L₂ _ c q hq with h | h
+    · exact CtxAvoids.ne_descWord hz' hCh
+        (descWord i ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]) (by simp) q h
+    · subst h
+      intro hcon
+      have hl := congrArg List.length hcon
+      simp only [List.length_append, List.length_singleton, hL', hLone,
+        hLzero] at hl
+      omega
+  have hne1H : ∀ q ∈ (L₁ ++ (descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩
+        ++ [(⟨i⟩ : HeckeGen n)], c) :: L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i ⟨0, hn⟩ := by
+    intro q hq
+    rcases mem_ctx_or_eq L₁ L₂ _ c q hq with h | h
+    · exact CtxAvoids.ne_descWord hz' hCh (bsWord₂ i' i ⟨0, hn⟩) (by simp) q h
+    · subst h
+      intro hcon
+      have hl := congrArg List.length hcon
+      simp only [List.length_append, List.length_singleton, hL', hLone,
+        hBs0] at hl
+      omega
+  refine MultiStepReduction.trans
+    (bside_branch_core hn hp h₂ h₁ hz' L₁ _ (c * (hp.q - hp.q⁻¹)) hcH
+      (by simpa using hne0H) (by simpa using hne1H)) ?_
+  -- second branch: the `1` side, at `j = 1`; now the extra ambient term is the
+  -- `H` branch's result, again separated by length
+  have hne0O : ∀ q ∈ ((L₁ ++ [(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹))]) ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ descWord i ⟨1, hnn⟩
+        ++ [(⟨i⟩ : HeckeGen n)] := by
+    intro q hq
+    have hq' : q ∈ (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹)) :: L₂).map Prod.fst := by
+      simpa using hq
+    rcases mem_ctx_or_eq L₁ L₂ _ (c * (hp.q - hp.q⁻¹)) q hq' with h | h
+    · exact CtxAvoids.ne_descWord hz' hCh
+        (descWord i ⟨1, hnn⟩ ++ [(⟨i⟩ : HeckeGen n)]) (by simp) q h
+    · subst h
+      intro hcon
+      have hl := congrArg List.length hcon
+      simp only [List.length_append, List.length_singleton, hL', hLone,
+        hBs''] at hl
+      omega
+  have hne1O : ∀ q ∈ ((L₁ ++ [(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹))]) ++ L₂).map Prod.fst,
+      q ≠ descWord i' ⟨0, hn⟩ ++ bsWord₂ i' i ⟨1, hnn⟩ := by
+    intro q hq
+    have hq' : q ∈ (L₁ ++ (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+        ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹)) :: L₂).map Prod.fst := by
+      simpa using hq
+    rcases mem_ctx_or_eq L₁ L₂ _ (c * (hp.q - hp.q⁻¹)) q hq' with h | h
+    · exact CtxAvoids.ne_descWord hz' hCh (bsWord₂ i' i ⟨1, hnn⟩) (by simp) q h
+    · subst h
+      intro hcon
+      have hl := congrArg List.length hcon
+      simp only [List.length_append, List.length_singleton, hL', hBs1,
+        hBs''] at hl
+      omega
+  have main := bside_branch_core hn hp h₂ h₁ honei'
+    (L₁ ++ [(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+      ++ descWord i' ⟨0, hn⟩, c * (hp.q - hp.q⁻¹))]) L₂ c hc hne0O hne1O
+  simpa only [List.append_assoc, List.singleton_append, List.cons_append,
+    List.nil_append] using main
+/-- **Side B of the deep self-overlap resolves, in full** — and on exactly the
+element side A reaches. The split's `H`-branch runs `bside_branch` at `j = 0`
+and its `1`-branch at `j = 1`; that one index is the only difference between
+them, and it is the extra `σ₀` the split leaves behind. -/
+theorem bside_resolves (hn : 0 < n) (hp : HeckeParams) {i'' i' i : Fin n}
+    (h₂ : i''.val + 1 = i'.val) (h₁ : i'.val + 1 = i.val) (c : ℝ) (hc : c ≠ 0) :
+    MultiStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (AlgElement.ofTerms
+        [(bsWord₂ i' i ⟨0, hn⟩ ++ descWord i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)], c)])
+      (AlgElement.ofTerms
+        [(bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)] ++ descWord i' ⟨0, hn⟩,
+          c * (hp.q - hp.q⁻¹)),
+         (bsWord₂ i'' i' ⟨0, hn⟩ ++ [(⟨i⟩ : HeckeGen n)]
+            ++ (descWord i' ⟨0, hn⟩).dropLast, c)]) :=
+  bside_resolves' hn hp h₂ h₁ [] [] c hc (ctxAvoids_nil _ _) (ctxAvoids_nil _ _)
+
+
+/-! ## §4bw  The joining — `hdeep` discharged, and the criterion unconditional
+
+Both sides of the deep self-overlap now run inside an arbitrary S-polynomial
+(§4bu, §4bv). What remains is to identify that S-polynomial and run the two
+chains against each other.
+
+**The collision this section was expected to have to avoid does not exist.**
+Side A and side B reach the *same two monomials*, so running one chain with the
+other's normal form already in the context looks like it must eventually ask a
+step to fire on a word that is already present. It does not, for two independent
+reasons:
+
+* `AlgElement.isZero` is coefficientwise — `∀ m, f.coeff m = 0` — and `ofTerms`
+  *sums* the coefficients of terms sharing a word. Two terms with the same word
+  and opposite coefficients are not an obstacle to be avoided; they are exactly
+  the cancellation the S-polynomial needs.
+* A step's side condition constrains the word it **consumes**, never the word it
+  produces: `monicStep`'s `hne` is used only to show the coefficient at
+  `a ++ lm ++ b` is the `c` the step subtracts.
+
+So the two chains run **sequentially**: side A first, with side B's word as its
+only ambient term; then side B, with side A's two normal-form terms as its
+ambient. The last B step needs its *penultimate* word absent from the context,
+and that word is one step short of side A's normal form.
+
+The contexts are forced. `σ_a σ_{a−1} ⋯ σ₀ σ_a` has exactly one border once
+`a ≥ 1` — the single letter `σ_a` — so `left = descWord a 0` and
+`right = descWord (a−1) 0 ++ [σ_a]`, and the two `bsWord₁` placements of the
+S-polynomial are the same word and cancel. What is left is
+`left · bsWord₂ − bsWord₂ · right`, which is side A's opening word against side
+B's.
+-/
+
+/-- **The S-polynomial of a self-overlap by a monic two-word rule.**
+
+`spoly = lc₂ • (rule₁ · right) − lc₁ • (left · rule₂)`, and when both rules are
+the same monic `L − R` the two `L`-terms are the *same word*: `L ++ right =
+left ++ overlap ++ right = left ++ L`. What is left is the difference of the two
+`R`-placements. -/
+theorem selfOverlap_spoly_coeff
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)}
+    {L R : Monomial (HeckeGen n)}
+    (hrel₁ : ∀ w, oc.rule₁.relation.coeff w
+      = (AlgElement.ofTerms [(L, (1 : ℝ)), (R, -1)]).coeff w)
+    (hrel₂ : ∀ w, oc.rule₂.relation.coeff w
+      = (AlgElement.ofTerms [(L, (1 : ℝ)), (R, -1)]).coeff w)
+    (hlc₁ : oc.rule₁.lc (heckeOrder n) = 1) (hlc₂ : oc.rule₂.lc (heckeOrder n) = 1)
+    (hlm₁ : oc.rule₁.lm (heckeOrder n) = L) (hlm₂ : oc.rule₂.lm (heckeOrder n) = L)
+    (m : Monomial (HeckeGen n)) :
+    oc.spoly.coeff m
+      = (AlgElement.ofTerms
+          [(oc.left ++ R, (1 : ℝ)), (R ++ oc.right, -1)]).coeff m := by
+  have hd₁ : L = oc.left ++ oc.overlap := by rw [← hlm₁]; exact oc.lm₁_decomp
+  have hd₂ : L = oc.overlap ++ oc.right := by rw [← hlm₂]; exact oc.lm₂_decomp
+  have hword : L ++ oc.right = oc.left ++ L := by
+    conv_lhs => rw [hd₁]
+    conv_rhs => rw [hd₂]
+    simp
+  show oc.rule₂.lc (heckeOrder n)
+      * (AlgElement.contextMul [] oc.rule₁.relation oc.right).coeff m
+    - oc.rule₁.lc (heckeOrder n)
+      * (AlgElement.contextMul oc.left oc.rule₂.relation []).coeff m = _
+  rw [hlc₁, hlc₂,
+    AlgElement.contextMul_coeff_congr [] oc.right hrel₁ m,
+    AlgElement.contextMul_coeff_congr oc.left [] hrel₂ m,
+    AlgElement.contextMul_ofTerms_coeff, AlgElement.contextMul_ofTerms_coeff]
+  simp only [List.map_cons, List.map_nil, List.nil_append, List.append_nil,
+    AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+    decide_eq_true_eq, hword]
+  split_ifs <;>
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+
+/-- A context whose words never begin with `x` avoids `x` as a head. -/
+theorem ctxAvoids_head_of_ne {L : List (Monomial (HeckeGen n) × ℝ)}
+    {x : HeckeGen n} (h : ∀ w ∈ L.map Prod.fst, ∀ t, w ≠ x :: t) :
+    CtxAvoids L [x] [] := by
+  intro w hw Z hcon
+  exact h w hw Z (by simpa using hcon)
+
+/-- A context whose words all end in `x` avoids every pattern ending in a
+different letter `y`. This is the *tail* condition side B's unshuffle needs,
+and a last-letter comparison is all it takes. -/
+theorem ctxAvoids_tail_of_last_ne {L : List (Monomial (HeckeGen n) × ℝ)}
+    {b b' : Monomial (HeckeGen n)} {y : HeckeGen n}
+    (hb : b = b' ++ [y])
+    (h : ∀ w ∈ L.map Prod.fst, ∃ u x, w = u ++ [x] ∧ x ≠ y) :
+    CtxAvoids L [] b := by
+  intro w hw Z hcon
+  obtain ⟨u, x, hu, hxy⟩ := h w hw
+  rw [hu, hb] at hcon
+  have heq : u ++ [x] = (Z ++ b') ++ [y] := by
+    rw [List.append_assoc]; simpa using hcon
+  have : ([x] : Monomial (HeckeGen n)) = [y] :=
+    (List.append_inj' heq (by simp)).2
+  exact hxy (by simpa using this)
+
+/-- **The deep self-overlap's contexts are forced.**
+
+`σ_a σ_{a−1} ⋯ σ₀ σ_a` has exactly one border once `a ≥ 1`: the single letter
+`σ_a`. Any longer border of length `k` would need its first letter `σ_a` to
+equal the suffix's first letter `σ_{k−2}`, which happens only at the full word —
+and `left ≠ []` excludes that. `overlap_letter` already does the length-one
+work; what is left is reading `left` and `right` off the two decompositions. -/
+theorem deep_left_right (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {a' a : Fin n}
+    (h₁ : a'.val + 1 = a.val)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation a' a ⟨0, hn⟩)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation a' a ⟨0, hn⟩)
+    (hl : oc.left ≠ []) :
+    oc.left = descWord a ⟨0, hn⟩
+      ∧ oc.right = descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] := by
+  have hja : (⟨0, hn⟩ : Fin n).val ≤ a'.val := by simp
+  have hlm : (bokutShiaoRelation a' a ⟨0, hn⟩).lm (heckeOrder n)
+      = descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] :=
+    bokutShiaoRelation_lm h₁ hja
+  have hm₁ : oc.rule₁ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₁]; exact bokutShiaoRelation_mem hn hp h₁ hja
+  have hm₂ : oc.rule₂ ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+    rw [hr₂]; exact bokutShiaoRelation_mem hn hp h₁ hja
+  obtain ⟨z, hlast, hhead⟩ := overlap_letter hn hp hm₁ hm₂ hl
+  rw [hr₁, hlm] at hlast
+  rw [hr₂, hlm] at hhead
+  obtain ⟨hleft, hzz⟩ := List.append_inj' hlast (by simp)
+  have hza : z = (⟨a⟩ : HeckeGen n) := by
+    have := hzz.symm
+    simpa using this
+  refine ⟨hleft.symm, ?_⟩
+  rw [hza, descWord_cons h₁ hja] at hhead
+  simpa using hhead.symm
+
+/-- **The deep self-overlap resolves** — the last obligation of
+`heckeCompleted_isGrobnerShirshovBasis`.
+
+The S-polynomial is two terms, `left · bsWord₂` and `bsWord₂ · right`, the
+`bsWord₁` placements having cancelled. Side A runs on the first with the second
+as context, side B then on the second with side A's normal form as context, and
+the two normal forms coincide — so the four terms cancel in pairs.
+
+Nothing here needs the two sides not to collide. `isZero` is coefficientwise and
+`ofTerms` sums, so terms sharing a word simply add; and a step's side condition
+constrains the word it *consumes*, never the word it produces. -/
+theorem deep_selfOverlap_resolves (hn : 0 < n) (hp : HeckeParams)
+    {oc : OverlapComposition (HeckeGen n) ℝ (heckeOrder n)} {a' a e : Fin n}
+    (h₁ : a'.val + 1 = a.val) (ha' : 1 ≤ a'.val) (he : e.val = 0)
+    (hr₁ : oc.rule₁ = bokutShiaoRelation a' a e)
+    (hr₂ : oc.rule₂ = bokutShiaoRelation a' a e)
+    (hl : oc.left ≠ []) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      oc.spoly nf ∧ nf.isZero := by
+  have hez : e = ⟨0, hn⟩ := Fin.ext (by simpa using he)
+  subst hez
+  have hnn : (1 : ℕ) < n := by have := a'.isLt; omega
+  obtain ⟨a'', h₂⟩ : ∃ a'' : Fin n, a''.val + 1 = a'.val :=
+    ⟨⟨a'.val - 1, by have := a'.isLt; omega⟩, by show a'.val - 1 + 1 = a'.val; omega⟩
+  have hja : (⟨0, hn⟩ : Fin n).val ≤ a'.val := by simp
+  have hone' : (⟨1, hnn⟩ : Fin n).val ≤ a'.val := by simpa using ha'
+  have honea : (⟨1, hnn⟩ : Fin n).val ≤ a.val := by simp; omega
+  obtain ⟨hleft, hright⟩ := deep_left_right hn hp h₁ hr₁ hr₂ hl
+  -- letters
+  have hne_a'a : (⟨a'⟩ : HeckeGen n) ≠ ⟨a⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_a'a'' : (⟨a'⟩ : HeckeGen n) ≠ ⟨a''⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_a''a' : (⟨a''⟩ : HeckeGen n) ≠ ⟨a'⟩ := heckeGen_ne_of_val_ne (by omega)
+  have hne_0a : (⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n) ≠ ⟨a⟩ :=
+    heckeGen_ne_of_val_ne (by simp; omega)
+  have hne_1a : (⟨(⟨1, hnn⟩ : Fin n)⟩ : HeckeGen n) ≠ ⟨a⟩ :=
+    heckeGen_ne_of_val_ne (by simp; omega)
+  -- descending-run shapes
+  have hdropA : (descWord a ⟨0, hn⟩).dropLast = descWord a ⟨1, hnn⟩ := by
+    rw [descWord_snoc (by simp) honea]; simp
+  have hdropA' : (descWord a' ⟨0, hn⟩).dropLast = descWord a' ⟨1, hnn⟩ := by
+    rw [descWord_snoc (by simp) hone']; simp
+  have hcons1 : descWord a ⟨1, hnn⟩ = (⟨a⟩ : HeckeGen n) :: descWord a' ⟨1, hnn⟩ :=
+    descWord_cons h₁ hone'
+  have hsnocA' : descWord a' ⟨0, hn⟩
+      = descWord a' ⟨1, hnn⟩ ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)] :=
+    descWord_snoc (by simp) hone'
+  -- the two normal forms coincide
+  have hE1 : bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)]
+      = bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] ++ descWord a' ⟨0, hn⟩ := by
+    rw [hdropA, hcons1]
+    conv_rhs => rw [hsnocA']
+    simp
+  have hE2 : bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+      = bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+        ++ (descWord a' ⟨0, hn⟩).dropLast := by
+    rw [hdropA, hcons1, hdropA']; simp
+  -- the two S-polynomial terms
+  have hBcons : bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+      = (⟨a'⟩ : HeckeGen n) :: ((⟨a⟩ : HeckeGen n) :: descWord a' ⟨0, hn⟩
+          ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]) := by
+    simp [bsWord₂]
+  have hNcons : ∀ u : Monomial (HeckeGen n), bsWord₂ a'' a' ⟨0, hn⟩ ++ u
+      = (⟨a''⟩ : HeckeGen n) :: ((⟨a'⟩ : HeckeGen n) :: descWord a'' ⟨0, hn⟩ ++ u) := by
+    intro u; simp [bsWord₂]
+  -- side A's context conditions: the only ambient word is side B's, which
+  -- begins with σ_{a−1}
+  have hheadB : ∀ (x : HeckeGen n), x ≠ (⟨a'⟩ : HeckeGen n) →
+      CtxAvoids ([] ++ [(bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩
+        ++ [(⟨a⟩ : HeckeGen n)], (-1 : ℝ))]) [x] [] := by
+    intro x hx
+    refine ctxAvoids_head_of_ne ?_
+    intro w hw t hcon
+    simp only [List.nil_append, List.map_cons, List.map_nil,
+      List.mem_singleton] at hw
+    rw [hw, hBcons] at hcon
+    injection hcon with hh _
+    exact hx hh.symm
+  -- side B's head condition: side A's normal form begins with σ_{a−2}
+  have hheadN : CtxAvoids
+      ([(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+        (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] ++ [])
+      [(⟨a'⟩ : HeckeGen n)] [] := by
+    refine ctxAvoids_head_of_ne ?_
+    intro w hw t hcon
+    simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hw
+    rcases hw with rfl | rfl
+    · rw [List.append_assoc, hNcons] at hcon
+      injection hcon with hh _
+      exact hne_a''a' hh
+    · rw [hNcons] at hcon
+      injection hcon with hh _
+      exact hne_a''a' hh
+  -- side B's tail condition: side A's normal-form terms end in σ₀ and σ₁,
+  -- and the split's pattern ends in σ_a
+  have htailN : CtxAvoids
+      ([(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+        (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] ++ [])
+      [] [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩,
+          (⟨a⟩ : HeckeGen n)] := by
+    obtain ⟨C, hC⟩ := descWord_last (i := a) (j := (⟨1, hnn⟩ : Fin n)) honea
+    refine ctxAvoids_tail_of_last_ne
+      (b' := [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n), ⟨(⟨0, hn⟩ : Fin n)⟩]) rfl ?_
+    intro w hw
+    simp only [List.append_nil, List.map_cons, List.map_nil, List.mem_cons,
+      List.not_mem_nil, or_false] at hw
+    rcases hw with rfl | rfl
+    · exact ⟨_, _, rfl, hne_0a⟩
+    · exact ⟨bsWord₂ a'' a' ⟨0, hn⟩ ++ C, (⟨(⟨1, hnn⟩ : Fin n)⟩ : HeckeGen n),
+        by rw [hdropA, hC]; simp, hne_1a⟩
+  -- the two chains
+  have chainA := aside_resolves' hn hp h₂ h₁ []
+    [(bsWord₂ a' a ⟨0, hn⟩ ++ descWord a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)],
+      (-1 : ℝ))] 1 one_ne_zero (hheadB _ hne_a'a.symm) (hheadB _ hne_a'a''.symm)
+  have chainB := bside_resolves' hn hp h₂ h₁
+    [(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+        ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+      (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ))] []
+    (-1) (by norm_num) hheadN htailN
+  simp only [List.nil_append, List.cons_append] at chainA chainB
+  -- the four terms cancel in pairs
+  have hzero : (AlgElement.ofTerms
+      [(bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast
+          ++ [(⟨(⟨0, hn⟩ : Fin n)⟩ : HeckeGen n)], (1 : ℝ) * (hp.q - hp.q⁻¹)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ (descWord a ⟨0, hn⟩).dropLast, (1 : ℝ)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)] ++ descWord a' ⟨0, hn⟩,
+         (-1 : ℝ) * (hp.q - hp.q⁻¹)),
+       (bsWord₂ a'' a' ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]
+          ++ (descWord a' ⟨0, hn⟩).dropLast, (-1 : ℝ))]).isZero := by
+    intro m
+    rw [← hE1, ← hE2]
+    simp only [AlgElement.ofTerms_coeff, List.filter_cons, List.filter_nil,
+      decide_eq_true_eq]
+    split_ifs <;>
+      simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil] <;> ring
+  refine reducesToZero_congr ⟨_, ⟨chainA.trans chainB,
+    isNormalForm_of_isZero hzero⟩, hzero⟩ ?_
+  intro m
+  have hrel : ∀ w, (bokutShiaoRelation a' a ⟨0, hn⟩).relation.coeff w
+      = (AlgElement.ofTerms
+          [(descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)], (1 : ℝ)),
+           (bsWord₂ a' a ⟨0, hn⟩, -1)]).coeff w := fun _ => rfl
+  have hsp := selfOverlap_spoly_coeff
+    (L := descWord a ⟨0, hn⟩ ++ [(⟨a⟩ : HeckeGen n)]) (R := bsWord₂ a' a ⟨0, hn⟩)
+    (by rw [hr₁]; exact hrel) (by rw [hr₂]; exact hrel)
+    (by rw [hr₁]; exact bokutShiaoRelation_lc h₁ hja)
+    (by rw [hr₂]; exact bokutShiaoRelation_lc h₁ hja)
+    (by rw [hr₁]; exact bokutShiaoRelation_lm h₁ hja)
+    (by rw [hr₂]; exact bokutShiaoRelation_lm h₁ hja) m
+  rw [hsp, hleft, hright]
+  simp only [List.append_assoc]
+
+/-- **The completed Hecke rewriting system is a Gröbner–Shirshov basis** — with
+no hypothesis left. `deep_selfOverlap_resolves` discharges the `hdeep` the
+conditional form carried. -/
+theorem heckeCompleted_isGrobnerShirshovBasis (hn : 0 < n) (hp : HeckeParams) :
+    IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) :=
+  heckeCompleted_isGrobnerShirshovBasis_of_deep hn hp
+    (fun _ _ _ _ hh ha he hr₁ hr₂ hl =>
+      deep_selfOverlap_resolves hn hp hh ha he hr₁ hr₂ hl)
+
+
+/-! ## §4bx  What the unconditional criterion discharges
+
+`HeckeGS.lean` §7 states normal-form uniqueness and threading-cost uniqueness
+with the Gröbner–Shirshov property as an explicit hypothesis, and its own
+docstring records why: *"`NotAGSBasis.hecke_not_gs_basis_four` shows the
+hypothesis is unsatisfiable at `n = 4` for `heckeRewritingSystem` as it stands;
+it becomes usable once the Bokut–Shiao completion is added."*
+
+Unsatisfiable is the operative word — those two theorems are **vacuous** as they
+stand, because `hecke_is_gs_basis_false` refutes the very hypothesis they take.
+They are not wrong; they are unusable, and deliberately so, pending this.
+
+Against the completed system the hypothesis is now discharged, so the same two
+statements hold outright.
+
+**They are not sorry-free in the same sense the criterion is, and the difference
+is worth stating.** `heckeCompleted_isGrobnerShirshovBasis` depends on
+`[propext, Classical.choice, Quot.sound]` alone. The two below inherit two more
+through `normal_form_unique`, both pre-existing library axioms of the Diamond
+Lemma machinery and neither introduced here:
+
+* `UGB.GrobnerShirshov.local_confluence` — Bergman 1978 §3 Thm 1.2, the step
+  from "all S-polynomials resolve" to local confluence, axiomatised because the
+  three-case argument needs `AlgElement` subtraction;
+* `UGB.GrobnerShirshov.reduction_well_founded` — Bergman 1978 §2 Thm 1.1,
+  termination, axiomatised because it needs a multiset support representation
+  and Dershowitz–Manna.
+
+So what this section establishes is: *given* the Diamond Lemma, the completed
+Hecke system has unique normal forms at every `n`. The GS-basis half of that is
+now proved outright; the Diamond Lemma half is still assumed.
+-/
+
+/-- **Normal forms in the completed Hecke system are unique** — with no
+hypothesis. -/
+theorem heckeCompleted_normalForm_unique (hn : 0 < n) (hp : HeckeParams)
+    (f nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
+    (hred₁ : ReducesToNF (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) f nf₁)
+    (hred₂ : ReducesToNF (heckeOrder n)
+      (heckeCompletedRewritingSystem n hn hp) f nf₂) :
+    nf₁ = nf₂ :=
+  normal_form_unique (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+    (heckeCompleted_isGrobnerShirshovBasis hn hp)
+    (noQuasiZerosFree_of_generator ⟨0, hn⟩) f nf₁ nf₂ hred₁ hred₂
+
+/-- **Threading cost is well-defined** — with no hypothesis. -/
+theorem heckeCompleted_threading_cost_unique (hp : HeckeParams) (hadron : List ℤ)
+    (nf₁ nf₂ : AlgElement (HeckeGen (n + 1)) ℝ)
+    (h₁ : ReducesToNF (heckeOrder (n + 1))
+      (heckeCompletedRewritingSystem (n + 1) (Nat.succ_pos n) hp)
+      (augmentedBraidElement hp hadron) nf₁)
+    (h₂ : ReducesToNF (heckeOrder (n + 1))
+      (heckeCompletedRewritingSystem (n + 1) (Nat.succ_pos n) hp)
+      (augmentedBraidElement hp hadron) nf₂) :
+    nf₁ = nf₂ :=
+  heckeCompleted_normalForm_unique (Nat.succ_pos n) hp _ nf₁ nf₂ h₁ h₂
 
 end UGB.GrobnerShirshov.Hecke

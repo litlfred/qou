@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:10:14.933646+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "assertions": [
+    {
+      "name": "deuteron_delta_tr_changes_under_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C->D change is a per-block reweighting, not a common scale, so it does not cancel in the trace difference that production uses"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "binding-production-route-c-vs-d-deut",
+  "scriptFile": "binding_production_route_C_vs_D_probe.py",
+  "scriptHash": "e20029d09f06",
+  "scriptCommitSha": "57c2ef2eabf25c04a84400387960b4224e73ba4e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_production_route_C_vs_D_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_production_route_C_vs_D_probe.py"
+  },
+  "description": "PRODUCTION binding route (delta_tr = tr_M(free) - tr_M(atom), B = E_0 * delta_tr, per binding_canonical.py) evaluated under the binding channel's current convention C and under the mass channel's settled convention D, at the EXPERIMENTAL (proton) q_0. Measurement only.",
+  "contentBlock": "prop:h3-markov-wenzl-weights",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946"
+  },
+  "data": {
+    "deuteron": {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "n_strands": 6,
+      "n_partitions": 11,
+      "n_zeroed_under_D": 7,
+      "two_row_only": false,
+      "C_values_are_two_row_partial": false,
+      "E_0_MeV": "0.7823334093099085",
+      "tr_M_atom_C": "0.3883571411977909894164935",
+      "tr_M_free_C": "0.9835260324047483356761934",
+      "tr_M_atom_D": "0.5751722439177718708265353",
+      "tr_M_free_D": "1.131716904322210082731308",
+      "delta_tr_C": "0.5951688912069573462597",
+      "delta_tr_D": "0.5565446604044382119047722",
+      "delta_tr_D_over_C": "0.935103747234",
+      "B_MeV_C": "0.465620507773137",
+      "B_MeV_D": "0.435403481607429",
+      "B_AME2020_MeV": "2.224566",
+      "rel_err_C": "-0.7906915291",
+      "rel_err_D": "-0.8042748646",
+      "two_row_share_of_delta_tr_C": "0.773274385259"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

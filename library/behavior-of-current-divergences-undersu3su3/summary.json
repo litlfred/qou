@@ -1,0 +1,36 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "behavior-of-current-divergences-undersu3su3",
+ "source_sha256": "c199da203bf156ec",
+ "brief": "Behavior of Current Divergences under SU(3)xSU(3) — Gell-Mann, Oakes & Renner, Phys. Rev. 175, 2195 (1968). The GMOR paper: chiral SU(3)xSU(3) is broken by H' = -u_0 - c u_8, and the pseudoscalar octet masses are pseudo-Goldstone, vanishing with the breaking. m_i^2 = 2 f_i <0|d_mu F_i,mu^5|P_i> (3.4); the per-channel strength W_i(c) (2.10) vanishes for the pion at c = -sqrt(2) but not for kaon or eta, so m_pi -> 0 while m_K, m_eta stay finite. Fitted c ~ -1.25.",
+ "extended": "**Behavior of Current Divergences under SU(3)xSU(3)**\n\n*M. Gell-Mann (Caltech), R. J. Oakes (Northwestern), B. Renner (Caltech)* — Physical Review **175**, No. 5, 2195-2199 (25 November 1968). DOI 10.1103/PhysRev.175.2195. Received 22 July 1968. 5 pp.\n\nThe paper that fixes the chiral-limit framing of the pseudoscalar meson masses. The SU(3)xSU(3)-violating part of the hadron energy density is assumed to be H' = -u_0 - c u_8 (2.6), with u_0 breaking chiral symmetry but not SU(3) and u_8 breaking SU(3); u_i and v_i are assigned to a single (3,3*)+(3*,3) representation. The axial divergences follow as d_mu F_i,mu^5 = -W_i(c) delta_ik v_k - sqrt(2/3) c delta_i8 v_0 (2.9), with W_i(c) = (sqrt2 + c)/sqrt3 for i=1,2,3 (pion), (sqrt2 - c/2)/sqrt3 for i=4..7 (kaon), (sqrt2 - c)/sqrt3 for i=8 (eta) (2.10). The low-energy vertex gives -lim_{p->0} <P_i(p)|u_0 + c u_8|P_i(p')> = 2 f_i <0|d_mu F_i,mu^5|P_i(p')> = m_i^2 (3.4) — the GMOR relation in the authors' own notation — and its condensate form <0|v_i|P_i> = -m_i^2/(2f_i)W_i(c) ~ -(2f_i)(d_ii0 <0|u_0|0> + d_ii8 <0|u_8|0>) (3.14), with <0|u_8|0> ~ 0 (SU(3)-invariant vacuum) and <0|u_0|0> ~ (3/2)<m^2>_av/(2f)^2.\n\n**Chiral limit.** Abolishing the whole SU(3)xSU(3) violation gives a world with sixteen conserved currents, SU(3) degeneracy and eight massless pseudoscalar mesons (p. 2195); 'the chiral symmetry violation raises the masses of the pseudoscalar mesons to finite values, and the SU(3) violation splits the SU(3) multiplets.' At c = -sqrt(2) the theory has exact SU(2)xSU(2) and m_pi = 0, realized by massless pions rather than parity doubling; the fitted value is c ~ -1.25 (3.12), close to -sqrt(2) ~ -1.414. Breaking runs in two chains, SU(3)xSU(3) -> SU(3) -> SU(2) and SU(3)xSU(3) -> SU(2)xSU(2) -> SU(2) (3.13).\n\n**Why the pion and the kaon differ.** W_i(c) is the only place the channel index enters the axial divergence. At c = -sqrt(2) it vanishes for i=1,2,3 and not for i=4..7 or i=8, so a vanishing pion mass and finite kaon and eta masses are the same statement, not two. The paper also finds f_pi ~ f_K ~ f_eta (3.10) and reproduces the squared-mass (Gell-Mann-Okubo) formula.\n\n**Outline.** I Introduction (p. 2195); II Transformation properties of current divergences (p. 2196); III Applications (p. 2197).",
+ "tokens": {
+  "brief": 116,
+  "extended": 572
+ },
+ "sections": [
+  {
+   "id": "sec-000-i-introduction-we-do-not-consider-here-the-equal",
+   "title": "INTRODUCTION We do not consider here the equal-time commutators",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-ii-transformation-properties-of-we-then-obtain-t",
+   "title": "TRANSFORMATION PROPERTIES OF We then obtain the formula",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-ii-applications-my-my-fr",
+   "title": "APPLICATIONS (my— my) fr",
+   "pages": "3-5"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "page-image reading of the scan",
+   "tesseract OCR of the same pages"
+  ],
+  "note": "Hand-written because the upload is a 1968 page scan with no text layer. The extractive route mis-read the OCR'd running heads and titled the document 'R. J. OaKeEs'. Every equation number and quoted phrase above was checked against the rendered page image, not against the OCR text. Equations are transliterated to ASCII here; the paper's own glyphs are in the PDF."
+ }
+}

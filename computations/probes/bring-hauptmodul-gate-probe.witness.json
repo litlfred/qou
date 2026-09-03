@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T20:08:56.646429+00:00",
-  "commitSha": "498bfbd993f24772bc685935ca0a9ef7d7a6faa4",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:28:00.274079+00:00",
+  "commitSha": "f827bd67d6ef392f264c6d201ecfe7ef72aa0b2e",
   "assertions": [
     {
       "name": "sextic_root_exact",
@@ -22,19 +22,19 @@
     },
     {
       "name": "eta_quotient_lands_on_minus_10",
-      "computed": 1.6845754483580537e-05,
+      "computed": "0.00001684575448358053589530158667906255226137415335032576977242117399578368",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "|(η(τ₀)/η(5τ₀))⁶ + 10| at the 6-d.p. BDH22 τ₀; residual is τ₀-truncation-limited (~2e-5 observed)."
     }
   ],
   "allPassed": true,
-  "durationMs": 113,
+  "durationMs": 81,
   "computation": "bring-hauptmodul-gate-probe",
   "scriptFile": "bring_hauptmodul_gate_probe.py",
-  "scriptHash": "0e976f9ead7c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "407a36981a00",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_hauptmodul_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_hauptmodul_gate_probe.py"
   },
   "description": "Γ₀(5) hauptmodul gate t₅(τ₀) = −10 for Bring's modulus (uploaded-papers audit idea A2). Exact: t = −10 is a root of (t²+250t+3125)³ + (121945/32)t⁵ (sympy Rational; equivalently 32·(…)³ + 121945·t⁵ = 0 over ℤ), with Fricke companion 5³/(−10) = −25/2 = j(5τ₀). Numeric: the η-quotient (η(τ₀)/η(5τ₀))⁶ at BDH22's 6-d.p. τ₀ = −0.5+0.186676i lands on −10 to the τ₀-truncation scale. Lean arithmetic lock: QOU/Archimedean/BringHauptmodulGate.lean. Gate framing: any q₀ ↦ τ dictionary is physical only through Γ₀(5)-invariants (RR92 Thm 1) and must land on the class t₅ = −10 — discrete pass/fail, no precision search. Audit-only; nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-uploaded-papers-binding-mass-gap-ideas.md",

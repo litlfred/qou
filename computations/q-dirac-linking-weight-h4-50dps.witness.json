@@ -1,29 +1,69 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T23:38:15.521159+00:00",
-  "commitSha": "5a6801138de2775f08d37516cec8fe41c450755b",
+  "computedAt": "2026-08-30T14:00:24.725571+00:00",
+  "commitSha": "61e488304ab14fd48a78a66016a110d30f58ff6d",
   "assertions": [
     {
-      "name": "prescreen_completed",
-      "computed": true,
-      "expected": true,
+      "name": "dim_q_at_q_to_one_matches_integer_hook_length_formula",
+      "computed": "9.99999999999999999999999996325",
+      "expected": "10",
+      "passed": true,
+      "tolerance": "1e-20",
+      "source": "Route A: Σ_λ dim_q V_λ from the q-bracket hook product at q = 1 + 1e-25, 50 dps. Route B: Σ_λ 4!/Π hooks(λ) = 10, exact integer arithmetic."
+    },
+    {
+      "name": "sum_of_squared_dimensions_equals_order_of_S4",
+      "computed": 24,
+      "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "Sanity: q-Dirac prescreen completed without error."
+      "source": "Route A: Σ_λ d_λ² over the five partitions in `parts_4`, each d_λ from the hook-length formula. Route B: |S_4| = 4! = 24. Wedderburn: the two agree iff `parts_4` enumerates every irreducible."
+    },
+    {
+      "name": "dim_q_is_invariant_under_partition_conjugation",
+      "computed": "3.04372243324405486567648729811",
+      "expected": "3.04372243324405486567648729811",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "Route A: dim_q V_(3, 1) at q = 1.11 from hooks((3, 1)). Route B: dim_q V_(2, 1, 1) from hooks((2, 1, 1)) — a separately enumerated hook multiset for the transpose partition."
+    },
+    {
+      "name": "signed_content_weighted_sum_vanishes_by_bar_symmetry",
+      "computed": "2.67276471009219564614053646715e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "Route A: scheme 8, Σ c_λ·dim_q V_λ / 4 at q = 1.11, evaluated term by term. Route B: 0, predicted by the module docstring's bar-symmetry — parts_4 is closed under λ ↦ λ' (verified here), c_{λ'} = -c_λ, and dim_q V_{λ'} = dim_q V_λ by the preceding assertion."
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 41,
   "computation": "q-dirac-linking-weight-h4-50dps",
   "scriptFile": "q_dirac_linking_weight_probe_50dps.py",
-  "scriptHash": "94104afdb266",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "62151e2482ab",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_dirac_linking_weight_probe_50dps.py"
+    ],
+    "reproduce": "python3 -u computations/q_dirac_linking_weight_probe_50dps.py"
   },
   "description": "Tests ~9 q-Dirac-derived linking-weight candidates at H_4 (mp.mpf 50 dps). Per author 'is there a PDE/ODE from Dirac?' direction — explores whether the q-Dirac operator D_q²(λ) = [c_λ]_q² acting on Z(H_n(q)) can produce h² ≈ -G (Reading-A) via natural combinations of dim_q V_λ and D_q²(λ).",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
@@ -151,6 +191,53 @@
         "delta_vs_minus_G": "0.12581263"
       }
     },
-    "verdict": "Tested 11 q-Dirac-derived linking-weight candidates at H_4 at mp.mpf 50 dps. Found 2 scheme(s) with negative h² coefficient. Closest to target -G after a_0 normalization: '6_dirac_weighted_normalized' at |Δ| = 0.12581263. Still far from -G — Dirac structure alone doesn't naturally produce Reading-A's h² coefficient via simple weighted-sum combinations."
+    "verdict": "Tested 11 q-Dirac-derived linking-weight candidates at H_4 at mp.mpf 50 dps. Found 2 scheme(s) with negative h² coefficient. Closest to target -G after a_0 normalization: '6_dirac_weighted_normalized' at |Δ| = 0.12581263. Still far from -G — Dirac structure alone doesn't naturally produce Reading-A's h² coefficient via simple weighted-sum combinations.",
+    "classical_hook_length_dims": {
+      "(4,)": 1,
+      "(3, 1)": 3,
+      "(2, 2)": 2,
+      "(2, 1, 1)": 3,
+      "(1, 1, 1, 1)": 1
+    },
+    "dim_q_q_to_one_vs_hook_length": {
+      "(4,)": {
+        "dim_q_at_q_to_1": "1.0",
+        "hook_length_integer": 1
+      },
+      "(3, 1)": {
+        "dim_q_at_q_to_1": "3.0",
+        "hook_length_integer": 3
+      },
+      "(2, 2)": {
+        "dim_q_at_q_to_1": "2.0",
+        "hook_length_integer": 2
+      },
+      "(2, 1, 1)": {
+        "dim_q_at_q_to_1": "3.0",
+        "hook_length_integer": 3
+      },
+      "(1, 1, 1, 1)": {
+        "dim_q_at_q_to_1": "1.0",
+        "hook_length_integer": 1
+      }
+    },
+    "conjugation_pairs": {
+      "(4,)": "(1, 1, 1, 1)",
+      "(3, 1)": "(2, 1, 1)",
+      "(2, 2)": "(2, 2)",
+      "(2, 1, 1)": "(3, 1)",
+      "(1, 1, 1, 1)": "(4,)"
+    },
+    "bar_symmetry_check": {
+      "signed_content_weighted_sum_at_q_mid": "2.67276471009e-51",
+      "parts_4_closed_under_conjugation": true,
+      "contents": {
+        "(4,)": 6,
+        "(3, 1)": 2,
+        "(2, 2)": 0,
+        "(2, 1, 1)": -2,
+        "(1, 1, 1, 1)": -6
+      }
+    }
   }
 }

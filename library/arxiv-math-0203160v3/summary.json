@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0203160v3",
+ "source_sha256": "a84f478d72d40af2",
+ "brief": "Differential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz∗ Department of Mathematics University of California — We analyze in detail projective modules over",
+ "extended": "**Differential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz∗ Department of Mathematics University of California**\n\n*Davis, CA 95616*\n\n13 pp, 5 sections.\n\n**Abstract.** We analyze in detail projective modules over two-dimension al noncom- mutative tori and complex structures on these modules.We co ncentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-fun ctions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind th oroughly analyzed as a basic example.\n\n**Outline.** Abstract; 1 Introduction; Acknowledgments; References; 4 Appendix",
+ "tokens": {
+  "brief": 49,
+  "extended": 188
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-8"
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-004-4-appendix",
+   "title": "Appendix",
+   "pages": "10-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

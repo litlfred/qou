@@ -38,7 +38,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -72,7 +72,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -87,7 +87,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -102,7 +102,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -117,7 +117,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -132,7 +132,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -147,7 +147,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -162,7 +162,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -180,7 +180,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -196,7 +196,7 @@
       },
       {
         "result": "pass",
-        "notes": "Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies proof-rater-goal-plausibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -211,7 +211,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -229,7 +229,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -242,7 +242,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -256,7 +256,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -269,7 +269,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -282,7 +282,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -297,7 +297,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -310,7 +310,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -325,7 +325,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -338,7 +338,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -353,7 +353,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -366,7 +366,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -381,7 +381,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -394,7 +394,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -409,7 +409,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -422,7 +422,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -437,7 +437,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -450,7 +450,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -465,7 +465,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -478,7 +478,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -493,7 +493,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -506,7 +506,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -521,7 +521,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -534,7 +534,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -549,7 +549,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -562,7 +562,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -577,7 +577,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -590,7 +590,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -605,7 +605,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -618,7 +618,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -633,7 +633,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -642,13 +642,14 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
         "reviewed_at": "2026-07-07T23:31:21.966149Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -661,7 +662,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytical projection specifically mapping rigorous representations completely within established variables.",
         "reviewed_at": "2026-07-08T14:39:43.000Z",
         "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
         "reviewer": {
@@ -1652,7 +1653,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2111,5 +2112,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:01:36.377Z"
+  "updated_at": "2026-08-21T15:01:36.377Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

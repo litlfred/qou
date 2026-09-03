@@ -1,0 +1,474 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0808.2716v4",
+ "source": {
+  "file": "0808.2716v4.pdf",
+  "sha256": "ea66f7ddcf9e9fe68292d8334dd47fe60f8a1debcb453f00ac35a8dc183165f8",
+  "bytes": 525847,
+  "pages": 44
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0808.2716",
+   "version": "4",
+   "primary_class": "math.GT",
+   "stamp_date": "11 Feb 2010"
+  },
+  "doi": null,
+  "title": "CUSP AREAS OF F AREY MANIFOLDS",
+  "authors_raw": "AND APPLICA TIONS TO KNOT THEOR Y",
+  "abstract": "This paper gives the \ufb01rst explicit, two\u2013sided estimates on t he cusp area of once\u2013 punctured torus bundles, 4\u2013punctured sphere bundles, and 2 \u2013bridge link complements. The input for these estimates is purely combinatorial data comi ng from the Farey tesselation of the hyperbolic plane. The bounds on cusp area lead to expli cit bounds on the volume of Dehn \ufb01llings of these manifolds, for example sharp bounds on volumes of hyperbolic closed 3\u2013braids in terms of the Schreier normal form of the as sociated braid word. Finally, these results are applied to derive relations between the Jo nes polynomial and the volume of hyperbolic knots, and to disprove a related conjecture. Dedicated to the memory of Xiao-Song Lin",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180528000230-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Cusp shapes and areas",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Cusp area and link diagrams",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Applications to hyperbolic Dehn filling",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Volume and Jones polynomial invariants",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Organization",
+   "page": 6,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 6,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 1,
+   "title": "The canonical triangulation of a Farey manifold",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Ford domain and its dual",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Once\u2013punctured torus bundles",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "4\u2013punctured sphere bundles",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Two-bridge links",
+   "page": 11,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Geometric estimates for Ford domains",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Estimates for triangulated hyperbolic 3\u2013manifolds",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Parameterization by radii of Ford domain faces",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Horosphere estimate",
+   "page": 17,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The length of a meridian",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Cusp area estimates",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Punctured\u2013torus bundles",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "4\u2013punctured sphere bundles",
+   "page": 25,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "2\u2013bridge links",
+   "page": 26,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Volume estimates for closed 3\u2013braids",
+   "page": 27,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "A normal form for 3\u2013braids",
+   "page": 27,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolic 3\u2013braids",
+   "page": 28,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Volume estimates",
+   "page": 32,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "The Jones polynomial and volume of closed 3\u2013braids",
+   "page": 34,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The Jones polynomials of generic 3\u2013braids",
+   "page": 34,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Connections to volume",
+   "page": 40,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1591,
+   "n_words": 263
+  },
+  {
+   "id": "sec-001-11-cusp-shapes-and-areas",
+   "number": "1.1",
+   "title": "Cusp shapes and areas",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5225,
+   "n_words": 946
+  },
+  {
+   "id": "sec-002-12-cusp-area-and-link-diagrams",
+   "number": "1.2",
+   "title": "Cusp area and link diagrams",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 11217,
+   "n_words": 2052
+  },
+  {
+   "id": "sec-003-15-organization",
+   "number": "1.5",
+   "title": "Organization",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 508,
+   "n_words": 90
+  },
+  {
+   "id": "sec-004-16-acknowledgements",
+   "number": "1.6",
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4156,
+   "n_words": 709
+  },
+  {
+   "id": "sec-005-22-oncepunctured-torus-bundles",
+   "number": "2.2",
+   "title": "Once\u2013punctured torus bundles",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6126,
+   "n_words": 1156
+  },
+  {
+   "id": "sec-006-23-4punctured-sphere-bundles",
+   "number": "2.3",
+   "title": "4\u2013punctured sphere bundles",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3056,
+   "n_words": 560
+  },
+  {
+   "id": "sec-007-24-two-bridge-links",
+   "number": "2.4",
+   "title": "Two-bridge links",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3679,
+   "n_words": 640
+  },
+  {
+   "id": "sec-008-3-geometric-estimates-for-ford-domains",
+   "number": "3",
+   "title": "Geometric estimates for Ford domains",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 503,
+   "n_words": 80
+  },
+  {
+   "id": "sec-009-31-estimates-for-triangulated-hyperbolic-3manifo",
+   "number": "3.1",
+   "title": "Estimates for triangulated hyperbolic 3\u2013manifolds",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 15526,
+   "n_words": 3065
+  },
+  {
+   "id": "sec-010-33-horosphere-estimate",
+   "number": "3.3",
+   "title": "Horosphere estimate",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 6633,
+   "n_words": 1324
+  },
+  {
+   "id": "sec-011-34-the-length-of-a-meridian",
+   "number": "3.4",
+   "title": "The length of a meridian",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2318,
+   "n_words": 450
+  },
+  {
+   "id": "sec-012-4-cusp-area-estimates",
+   "number": "4",
+   "title": "Cusp area estimates",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 334,
+   "n_words": 61
+  },
+  {
+   "id": "sec-013-41-puncturedtorus-bundles",
+   "number": "4.1",
+   "title": "Punctured\u2013torus bundles",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 11644,
+   "n_words": 2310
+  },
+  {
+   "id": "sec-014-42-4punctured-sphere-bundles",
+   "number": "4.2",
+   "title": "4\u2013punctured sphere bundles",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2158,
+   "n_words": 430
+  },
+  {
+   "id": "sec-015-43-2bridge-links",
+   "number": "4.3",
+   "title": "2\u2013bridge links",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3451,
+   "n_words": 702
+  },
+  {
+   "id": "sec-016-5-volume-estimates-for-closed-3braids",
+   "number": "5",
+   "title": "Volume estimates for closed 3\u2013braids",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 203,
+   "n_words": 34
+  },
+  {
+   "id": "sec-017-51-a-normal-form-for-3braids",
+   "number": "5.1",
+   "title": "A normal form for 3\u2013braids",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3080,
+   "n_words": 596
+  },
+  {
+   "id": "sec-018-52-hyperbolic-3braids",
+   "number": "5.2",
+   "title": "Hyperbolic 3\u2013braids",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 34,
+   "n_chars": 19061,
+   "n_words": 3815
+  },
+  {
+   "id": "sec-019-6-the-jones-polynomial-and-volume-of-closed-3bra",
+   "number": "6",
+   "title": "The Jones polynomial and volume of closed 3\u2013braids",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 497,
+   "n_words": 95
+  },
+  {
+   "id": "sec-020-61-the-jones-polynomials-of-generic-3braids",
+   "number": "6.1",
+   "title": "The Jones polynomials of generic 3\u2013braids",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 40,
+   "n_chars": 17199,
+   "n_words": 3667
+  },
+  {
+   "id": "sec-021-62-connections-to-volume",
+   "number": "6.2",
+   "title": "Connections to volume",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 5703,
+   "n_words": 1174
+  },
+  {
+   "id": "sec-022-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 8804,
+   "n_words": 1374
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 23,
+  "chars_total": 132672
+ }
+}

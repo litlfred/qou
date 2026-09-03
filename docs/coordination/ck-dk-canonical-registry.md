@@ -86,7 +86,7 @@ cross-referenced so they are never conflated again.
 | rung | status | form / value | residual @ proton q₀ | anchor-stable? | authoritative producer |
 |---|---|---|---|---|---|
 | **c_2** | **CANONICAL** (proved, Taylor-exact) — **for the C-frame ladder object; frame named 2026-08-15, see §9g** (the implied empirical c₂ under convention D is ≈ −9.30 and the rung convergence is C-frame-only; no tier change — the proof stands, its object now carries its convention) | `−1` (Kashiwara f̃₁², bar-even) | exact | yes | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) |
-| **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung; **q→1 shadow = G(0,1) = −2** (longitude norm form on 4₁ cusp, *exact*) | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**); **−[2]_q = −(q+q⁻¹) at q₀: 0.54% off** | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md); **longitude provenance (2026-07-30):** cusp winding (m,ℓ)=(0,1) gives G=(2·0+1)²−3·1²=−2 at angle φ=π/3 (cusp shape); B1 re-run with canonical GGM V₃=−7.693: **0 assembly hits in 180 candidates** (old near-misses were artifacts of wrong V₃); **convention provenance (2026-08-15, §9g):** the extractor consumes the convention-C Markov parameter via `α=(z−1)h/2` (`qbeta_utils.py:124-125`) and the Q_β channel is **unregistered** in `trace-convention-registry.json` — every ≈−2 value-level fact on this row ((H1), `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`) is **C-conditional** (re-extraction under D shifts c₃ to ≈ −974); the REFUTED-as-real-q verdict itself is **convention-immune** (swing D/C = 1.0052, measured) — [validity audit](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md) |
+| **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung; **q→1 shadow = G(0,1) = −2** (longitude norm form on 4₁ cusp, *exact*) | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**); **−[2]_q = −(q+q⁻¹) at q₀: 0.54% off** | **NO** — swings −2.391% to muon (CODATA-2022 pin; −2.375% at the superseded CODATA-2018 one); `dc_3/dq ≈ 3.84×10⁶` **(swing corrected 2026-08-29, PR #5942 / bean `qou-kt8o`: this row read `−2.88%`, which is the SAME stale-c₃ twin as the `4.6×10⁶` beside it and was left behind when the slope was fixed. Both reproduce exactly from the superseded muon `c₃ = −2.0097`: proton-normalised, `|−2.0693 − −2.0097|/2.0693 = 2.8822%` against what was then live, `|−2.0693 − −2.02020024|/2.0693 = 2.3748%` (**itself superseded 2026-08-31, qou-cds1: −2.02020024 is the CODATA-2018 extraction; at the CODATA-2022 pin the live figure is `|−2.0693 − −2.01986031|/2.0693 = 2.3912%`. `dc₃/dq` does NOT move — it is anchor-layer invariant, 3838405.894 vs 3838405.878, identical to 8 digits, because both legs move together**). Caught mechanically — `ck_dk_registry_validate.py --twin` T4, which compares this row against the JSON twin; the JSON had the live swing and the stale slope, this row had the stale swing and the live slope, so **each file was ahead of the other on a different number in the same cell** and no amount of care on one file alone would have found it. Slope corrected 2026-08-25, PR #5765 — this row read `4.6×10⁶`, the stale-c₃ twin AGENTS.md corrected on 2026-08-22 and the authoritative registry had not absorbed. Three independent routes agree: secant on the live anchors `(−2.0693425728 − −2.0202002328)/1.28e-8 = 3.839e6`; `2.37/u³` at `u = 0.00852` = `3.832e6`; and `S_prime_qstar = 3838404.458` in `rem-qstar`'s own witness. Reaching 4.6e6 would need `u = 0.008017`. The REFUTED verdict is unaffected — 3.84e6 is just as impossible for a smooth real `f` as 4.6e6; only the magnitude was wrong.)** | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md); **longitude provenance (2026-07-30):** cusp winding (m,ℓ)=(0,1) gives G=(2·0+1)²−3·1²=−2 at angle φ=π/3 (cusp shape); B1 re-run with canonical GGM V₃=−7.693: **0 assembly hits in 180 candidates** (old near-misses were artifacts of wrong V₃); **convention provenance (2026-08-15, §9g):** the extractor consumes the convention-C Markov parameter via `α=(z−1)h/2` (`qbeta_utils.py:124-125`) and the Q_β channel is **unregistered** in `trace-convention-registry.json` — every ≈−2 value-level fact on this row ((H1), `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`) is **C-conditional** (re-extraction under D shifts c₃ to ≈ −974); the REFUTED-as-real-q verdict itself is **convention-immune** (swing D/C = 1.0052, measured) — [validity audit](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md) |
 | **c_4** | **EMPIRICAL — CODATA fit / artifact (mechanically confirmed 2026-07-11)** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`); P4 entropy audit `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json` (PR #3536) |
 | **c_5** | **EMPIRICAL — outlier** | `−(b² + ½)` (averaging-resonance ½ fingerprint) | proton-anchor only | NO | `qbeta_decay_sdp_extended_ck.py` (Pell-Lucas NON-clean — structural outlier per the §averaging-resonance-rule) |
 | **c_6, c_7** | **EMPIRICAL — APPLIED in extraction (self-consistent)** | `c_3²·b² = 4·b²`, `c_3³ = −8` (Pell-Lucas-clean) | bias-corrected q₀ recovers them: **0.005% / 0.26%** | **cross-anchor tested 2026-06-04: recovered by #1824 bias-correction — but these forms are IMPOSED in the extraction, so this is self-consistency, not independent validation** | applied in `qbeta_decay_sdp_extended_ck.py`; probe `qbeta_c6_c10_crossanchor_falsification.py` (PR #1842) |
@@ -230,12 +230,37 @@ per-block-χ recursion; do not conflate it with the c_k ladder recursion.)
 - **Q_β: c_2 only** (`Q_N2`-level). `q_beta_predicted.py` wires **no** c_3+
   ladder rung; the ~0.17% truncation residual is the c_2-level gap.
 - **m_p: bare.** No d_k wired; ~2.89% categorical `VolDensity` gap stands.
-- **L2 100× dashboard: 2/7** beats-100× (`per-observable-100x-status.witness.json`,
-  `summary.beats_100x_count = 2`; m_e and m_K/m_π). The "3/7" recorded here
-  earlier — and the deep audit's "4/7"/"6/7" — are **stale**: m_p dropped from
-  the count on 2026-07-04 when its fitted Habiro tower was removed (de-fitted
-  round-trip +1.35 ppb, ~437× miss; see AGENTS.md §Precision goals and
+- **L2 100× dashboard: 1/5** beats-100× (`per-observable-100x-status.witness.json`,
+  `summary.beats_100x_scoreable = 1` of `summary.scoreable_total = 5`; the one
+  is **m_K/m_π**). The "3/7" recorded here earlier — and the deep audit's
+  "4/7"/"6/7" — are **stale**: m_p dropped from the count on 2026-07-04 when
+  its fitted Habiro tower was removed (de-fitted round-trip +1.35 ppb, ~437×
+  miss; see AGENTS.md §Precision goals and
   `docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`).
+
+  > **"2/7" was also wrong, and it is a different error from the stale ones
+  > above (corrected 2026-08-29, PR #5942 / bean `qou-kt8o`).** This bullet
+  > read **2/7**, citing `summary.beats_100x_count = 2` and naming the two as
+  > "m_e and m_K/m_π". That field counts the **calibration inputs** alongside
+  > the predictions: `m_e` is the CAL-1 input that fixes the MeV unit, so its
+  > `err_ppb` is not measured but **defined** zero — scoring it is the same
+  > tautology the dashboard already excludes `m_p` for, only stronger.
+  > AGENTS.md §Precision goals is explicit that bare `beats_100x_count`
+  > "must not be quoted as an accuracy result"; the canonical pair is
+  > `beats_100x_scoreable` / `scoreable_total`.
+  >
+  > **Both twins carried it, which is why this needed a check the twin
+  > comparison cannot be.** The JSON said `dashboard_beats_100x: 2`,
+  > `dashboard_total: 7`; this bullet said 2/7. They **agreed**, so a
+  > file-versus-file diff passes them both. `ck_dk_registry_validate.py
+  > --twin` T5 therefore checks each file against the **witness**, not
+  > against the other — and the validator itself used to *print* the 2/7
+  > figure on every green run, which made it a propagation route for the
+  > framing rather than a guard against it. That print is removed.
+  >
+  > Read the surviving 1 with AGENTS.md's further caveat: `m_K/m_π` is a
+  > truncation-fit and `α_em`-`sorry`-conditional, so the **unconditional
+  > parameter-free** count is **0/5**.
 - The c_3 structural form is locked behind the §3b-cond conditional class
   `QbetaC3StructuralFormClass` — **conditional, not a derivation**, not wired.
 
@@ -624,7 +649,10 @@ a weaker and different statement, and conflating the two is the defect.
 [`sleak_offset_genericity_check.py`](../../computations/qbeta/sleak_offset_genericity_check.py)
 (committed well before this note) shows **every** constant in
 
-    window (−c₃(μ), −c₃(p)) = (2.02020024, 2.06934258),  width 0.0491423
+    window (−c₃(μ), −c₃(p)) = (2.01986031, 2.06934258),  width 0.0494823
+    (CODATA-2022 muon pin; was (2.02020024, …) width 0.0491423 at CODATA-2018.
+     Vol(4₁) = 2.0298832 is strictly inside either window, so the offset-
+     genericity conclusion is unchanged — only the endpoint moved.)
 
 puts a zero between the anchors — 7/7 unrelated constants tested (`2+1/36`,
 `63/31`, `e^0.708`, …). As `V` sweeps that window, `q*_V` sweeps the **entire**
@@ -749,7 +777,7 @@ convention D; that core evaluates at `z_C`). Measured
 
 | fact | C frame | D re-extraction | consequence |
 |---|---|---|---|
-| extracted c₃ (proton / muon) | −2.06934258 / −2.02020024 | **−974.43 / −974.38** | every ≈−2 value-level fact ((H1), `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`) is **C-conditional** |
+| extracted c₃ (proton / muon) | −2.06934258 / −2.01986031 (CODATA-2022 pin; −2.02020024 at the superseded CODATA-2018 one) | **−974.43 / −974.38** | every ≈−2 value-level fact ((H1), `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`) is **C-conditional** |
 | anchor swing | 0.0491423 | 0.0493990 (**ratio 1.0052**) | the **REFUTED-as-real-q verdict is convention-immune** — it stands in both frames |
 | implied empirical c₂ | −1.0176 (= −1 + c₃u) | **−9.299** | **c₂ = −1 (proved Taylor-exact) is a C-frame statement**; the proof stands, its object now carries its convention |
 | N2/N1 residual ratio | 0.017 (58× rung improvement) | 0.89 (no convergence) | the ladder's rung convergence exists in the C frame only — the C→D excision does **not** transfer by a z-swap |

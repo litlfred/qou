@@ -78,7 +78,54 @@ type (still conditional on the classes).
 
 | Block | Drain finding (2026-06-07) | Current `main` |
 |---|---|---|
-| `mass-theory/spectral-sequence-collapse` | "Lean only proves `e*e=e` idempotency" | **Developed**: now `class SemisimpleAlgebra`, `class WhiteheadHH` (`-- Ref:[cartan1956]`), real `innerDerivation` (`simp;ring`), `theorem spectral_sequence_collapses_to_centre`, `wedderburnWeight`/`plancherelWeight`. Finding is stale. |
+| `mass-theory/spectral-sequence-collapse` | "Lean only proves `e*e=e` idempotency" | ~~**Developed**: now `class SemisimpleAlgebra`, `class WhiteheadHH` (`-- Ref:[cartan1956]`), real `innerDerivation` (`simp;ring`), `theorem spectral_sequence_collapses_to_centre`, `wedderburnWeight`/`plancherelWeight`. Finding is stale.~~ **🛑 THIS DISPOSITION IS WRONG — see the correction below. The finding was live then and is live now.** |
+
+> **🛑 Correction (2026-08-25): the row above closed a live defect, and the
+> "do NOT re-file" heading it sits under shielded it for two and a half
+> months.**
+>
+> Every fact offered as evidence of staleness is **true**. The file really was
+> developed; `SemisimpleAlgebra`, `WhiteheadHH`, `innerDerivation` and
+> `wedderburnWeight` really were added; a `theorem` really is named
+> `spectral_sequence_collapses_to_centre`. **None of them changes what the
+> theorem proves.** Read on `main` today:
+>
+> ```lean
+> theorem spectral_sequence_collapses_to_centre
+>     {R : Type u} [CommRing R] {A : Type u} [Ring A] [Algebra R A]
+>     [I : SemisimpleAlgebra R A] [WhiteheadHH R A] :
+>     ∀ i : I.central_idempotents, I.e i * I.e i = I.e i :=
+>   fun i => I.e_idem i
+> ```
+>
+> The conclusion is still `e*e = e` and the body is still the class field
+> `I.e_idem`. It never mentions `E_∞`, never mentions a filtration, and
+> **never uses its own `[WhiteheadHH R A]` instance** — the hypothesis the
+> whole result is supposed to turn on. So the 2026-06-07 finding, *"Lean only
+> proves `e*e=e` idempotency"*, is a correct and current description.
+>
+> **The failure mode is worth naming, because it is the repo's own
+> anti-laundering rule seen from the inside.** Scaffolding was added *around*
+> a vacuous theorem and the theorem was given an impressive name; the drain
+> then read the presence of a well-named theorem as answering the complaint
+> that the theorem is trivial. That is exactly what §"Axiomatization is NOT a
+> Proof" and "sorry-free ≠ derived" forbid. A declaration's **name and
+> neighbours are not its content** — only its type and body are.
+>
+> **Corroborating machine signal, present the whole time:**
+> [`lean-triviality.json`](lean-triviality.json) carries
+> `QOU.WedderburnMass.spectral_sequence_collapses_to_centre` with
+> `"closed": false`, last checked `2026-08-07`. The audit never agreed the
+> finding was stale.
+>
+> Rediscovered independently on 2026-08-25 while asking whether the
+> spectral-sequence work could close the binding gap, without knowing this row
+> existed — analysis in
+> [`2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md`](2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md)
+> §2, disposition options in bean `qou-cq5g`. **Do re-file.**
+>
+> The other rows under §2.3 are untouched by this: each was assessed on its own
+> evidence and nothing here bears on them.
 
 ---
 

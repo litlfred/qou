@@ -1,0 +1,134 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T05:31:42.186323+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "assertions": [
+    {
+      "name": "satellite_cable_exceeds_required_trace",
+      "computed": "4.9937848930689173797",
+      "expected": "4.99378",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "max_b tr_M(2-cable) / sqrt(B_AME); >= 1 means the necessary condition is met"
+    },
+    {
+      "name": "control_uncabled_word_falls_short",
+      "computed": "0.68271975402849274107",
+      "expected": "0.68272",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "max_b tr_M(beta_b) / sqrt(B_AME) at n = 6"
+    },
+    {
+      "name": "control_uncabled_max_matches_front2",
+      "computed": "1.0182750826938523554",
+      "expected": "1.018275083",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "dimensionless",
+      "source": "two-remaining-fronts front2_max_branch_trace, via block_rep_braid_word rather than per_block_evaluation"
+    },
+    {
+      "name": "control_M1_normalisation_at_n12",
+      "computed": "1.0866814894592054841e-70",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "dimensionless",
+      "source": "sum_l y_l f^l over the two-row blocks of 12"
+    },
+    {
+      "name": "control_M1_normalisation_at_n6",
+      "computed": "5.4334074472960274205e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "dimensionless",
+      "source": "the same sum at n = 6"
+    },
+    {
+      "name": "control_identity_trace_is_one_at_n12",
+      "computed": "1.0866814894592054841e-70",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "dimensionless",
+      "source": "tr_M(1) = 1 is Markov axiom M1"
+    },
+    {
+      "name": "control_convex_average_reproduces_atom_trace",
+      "computed": "1.8519996023265282971e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "unit": "dimensionless",
+      "source": "sum_b w_b tr_M(beta_b) vs deuteron-real-sdp n_target"
+    },
+    {
+      "name": "atom_convex_2cable_also_clears_the_requirement",
+      "computed": "1.1109865833030256594",
+      "expected": "1.11099",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "sum_b w_b tr_M(2-cable of beta_b) / sqrt(B_AME), the framework's own branch weights -- not the max over branches"
+    },
+    {
+      "name": "control_cable_generators_within_h12",
+      "computed": "11",
+      "expected": "11",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "index",
+      "source": "max |generator| of the 2-cable; H_12 admits 1..11"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5691,
+  "computation": "satellite-cable-escapes-the-bound",
+  "scriptFile": "satellite_cable_escapes_the_bound_probe.py",
+  "scriptHash": "048a55f2e3b5",
+  "scriptCommitSha": "7affd753c3a7eb0d9b9c0a31760e31437ecd163d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/satellite_cable_escapes_the_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/satellite_cable_escapes_the_bound_probe.py"
+  },
+  "description": "The 2-parallel cable of the deuteron braid -- a genuine satellite -- reaches max_b tr_M = 7.448220 against the required 1.491498, i.e. 4.99x over, where the uncabled word reached only 1.018275 (0.683x). The atom's OWN convex-weighted 2-cable also clears it, at 1.657034 = 1.111x -- a thin margin. The satellite escapes the branch-convexity bound exactly as QOU.MassTheory.larger_index_set_escapes_the_bound predicted. Does NOT reproduce binding: the cost, support, Gram and LP all change at n=12 and none of that is redone; exceeding a NECESSARY condition is not sufficiency.",
+  "data": {
+    "branch_count": 32,
+    "cable_word_length": 92,
+    "uncabled_max_trace": "1.01827508269385235536552",
+    "cable_min_trace": "0.14746776848583106107543",
+    "cable_max_trace": "7.44821970499603017377246",
+    "atom_2cable_trace": "1.65703416124888558080082",
+    "required_trace": "1.49149790479236007540919",
+    "ratio_cabled": "4.99378489306891737966741",
+    "lean_predicted_by": "qou:QOU.MassTheory.larger_index_set_escapes_the_bound"
+  },
+  "caveats": [
+    "Scope (a). This does NOT reproduce binding. The cost vector, support, Gram and the whole LP change at n = 12 and none of it is redone here; exceeding a NECESSARY condition (a concentrated cost needs tr_M >= sqrt(B_AME)) is not sufficiency, and nothing here computes a binding contribution.",
+    "The pattern is a CHOICE. 2-parallel with blackboard framing is one satellite among infinitely many; nothing derives it, and a different pattern gives different numbers. And Geom still assigns nothing to a satellite -- this shows the room exists, not that the framework can use it.",
+    "A longer word generally has a larger trace, so 'the cable is bigger' is not by itself interesting. What is: the geometrically-motivated move crosses the threshold by 5x rather than marginally, and the Lean predicted this class escapes before the number was computed.",
+    "block_rep_braid_word returns float64, so this is float64; the verdict turns on a factor of 5. The first attempt used per_block_evaluation, which builds all 77 partitions of 12 and reached 9.99 GB RSS before being killed; restricting to the 7 two-row blocks that matter under convention D ran the whole sweep in 3.6 s."
+  ]
+}

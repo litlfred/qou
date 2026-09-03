@@ -382,5 +382,14 @@ witness = {
     ),
 }
 with open(HERE / "gswz_epsm_five_term_validation.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 sys.exit(0 if npass == len(checks) else 1)

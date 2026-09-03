@@ -1,0 +1,282 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "The monodromy of the canonical Bring chiral cubic X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1) is the full S_3, so its sign character is non-trivial and is cut out by the Vandermonde sqrt(Delta). Establishes the existence of the sign line that prop:baryon-product-from-alt currently selects by hand; does NOT establish that the baryon state occupies it.",
+  "computation": {
+    "script": "computations/probes/bring_cubic_monodromy_probe.py",
+    "arithmetic": "Part A exact over QQ[z] (sympy discriminant / gcd / solve); Part B mpmath at 50 dps. No float64 anywhere: the discriminant's coefficients are integers and every continuation step is mpc."
+  },
+  "exact": {
+    "A1_discriminant_squarefree": {
+      "discriminant": "-16*z**6 - 24*z**5 - 35*z**4 - 50*z**3 - 35*z**2 - 24*z - 16",
+      "degree": 6,
+      "gcd_with_derivative": "1",
+      "squarefree": true,
+      "n_branch_points": 6
+    },
+    "A2_irreducible_transitive": {
+      "ansatz": "X = a*z + e (forced: monic over the integrally closed C[z], leading terms give deg X = 1)",
+      "coefficient_equations": [
+        "a**3 + a**2 + a + 1",
+        "3*a**2*e + a**2 + 2*a*e + a + e + 1",
+        "3*a*e**2 + 2*a*e + a + e**2 + e + 1",
+        "e**3 + e**2 + e + 1"
+      ],
+      "solutions_over_C": [],
+      "has_root_in_C_of_z": false,
+      "irreducible_over_C_of_z": true,
+      "monodromy_transitive": true
+    },
+    "A3_no_triple_root": {
+      "depressed_p": "(2*z**2 + z + 2)/3",
+      "depressed_q": "5*(z + 1)*(4*z**2 - z + 4)/27",
+      "gcd_numer_p_with_discriminant": "1",
+      "coprime": true,
+      "triple_root_possible": false,
+      "local_monodromy_is_transposition": true,
+      "_q_numer_degree": 3
+    },
+    "A4_sign_line_nontrivial": {
+      "discriminant_squarefree": true,
+      "discriminant_degree_positive": true,
+      "is_square_in_C_of_z": false,
+      "quadratic_extension_nontrivial": true
+    },
+    "A5_fibre_genus": {
+      "leading_form_at_infinity": "Y**3 + Y**2 + Y + 1",
+      "leading_form_discriminant": "-16",
+      "unramified_at_infinity": true,
+      "degree": 3,
+      "n_simple_branch_points": 6,
+      "riemann_hurwitz_2g_minus_2": 0,
+      "genus": 1,
+      "fibre_is_elliptic": true,
+      "genus_if_degree_4_with_6_branch_points": 0,
+      "branch_points_needed_for_genus_4_at_degree_3": 12,
+      "branch_points_needed_for_genus_4_at_degree_4": 14
+    },
+    "A6_sheets_are_the_colour_tubes": {
+      "corpus_colour_tube_cubic": "c**3 + c**2*(4*z + 1) + c*(6*z**2 + 3*z + 1) + 4*z**3 + 3*z**2 + 2*z + 1",
+      "substitution": "X = c + z",
+      "chiral_cubic_shifted": "c**3 + c**2*(4*z + 1) + c*(6*z**2 + 3*z + 1) + 4*z**3 + 3*z**2 + 2*z + 1",
+      "identity_holds": true,
+      "discriminant_of_tube_cubic": "-16*z**6 - 24*z**5 - 35*z**4 - 50*z**3 - 35*z**2 - 24*z - 16",
+      "discriminants_identical": true,
+      "consequence": "the three sheets whose monodromy is computed here are the corpus's own colour tubes (r_z, g_z, b_z) = (w_2 - z, w_3 - z, w_4 - z), not an abstract triple: same curve, same six branch points, same monodromy"
+    },
+    "monodromy_group": "S_3",
+    "sgn_character_surjective": true
+  },
+  "numeric": {
+    "base_point": "2",
+    "dps": 50,
+    "n_circle_steps": 2000,
+    "n_segment_steps": 800,
+    "branch_point_min_separation": "0.117242314729",
+    "loop_radius": "0.0390807715763",
+    "min_segment_clearance": "0.108071748775",
+    "worst_guard_ratio_over_all_loops": "0.027947942",
+    "guard_is_safe": true,
+    "loops": [
+      {
+        "branch_point": {
+          "re": "-0.97481553297803860307",
+          "im": "-0.22301272758464377094"
+        },
+        "discriminant_residual": "4.4080365e-50",
+        "segment_clearance": "0.444814373971",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.027947942"
+      },
+      {
+        "branch_point": {
+          "re": "-0.97481553297803860307",
+          "im": "0.22301272758464377094"
+        },
+        "discriminant_residual": "4.4080365e-50",
+        "segment_clearance": "0.444814373971",
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.027947942"
+      },
+      {
+        "branch_point": {
+          "re": "0.10582958618826802099",
+          "im": "-0.93713893783890343691"
+        },
+        "discriminant_residual": "4.2764235e-50",
+        "segment_clearance": "0.135607405778",
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.016931279"
+      },
+      {
+        "branch_point": {
+          "re": "0.10582958618826802099",
+          "im": "0.93713893783890343691"
+        },
+        "discriminant_residual": "4.2764235e-50",
+        "segment_clearance": "0.135607405778",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.016931279"
+      },
+      {
+        "branch_point": {
+          "re": "0.11898594678977058208",
+          "im": "-1.053640742712109145"
+        },
+        "discriminant_residual": "8.5528471e-50",
+        "segment_clearance": "0.108071748775",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.020840616"
+      },
+      {
+        "branch_point": {
+          "re": "0.11898594678977058208",
+          "im": "1.053640742712109145"
+        },
+        "discriminant_residual": "8.5528471e-50",
+        "segment_clearance": "0.108071748775",
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "cycle_type": "transposition",
+        "is_transposition": true,
+        "sgn": -1,
+        "identification_residual": "0.0",
+        "worst_guard_ratio": "0.020840616"
+      }
+    ],
+    "all_transpositions": true,
+    "group_order_generated": 6,
+    "group_generated": "S_3",
+    "A7_composite_is_a_3_cycle": {
+      "distinct_local_monodromies": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ],
+      "composites_of_two_distinct": [
+        {
+          "left": [
+            1,
+            0,
+            2
+          ],
+          "right": [
+            2,
+            1,
+            0
+          ],
+          "product": [
+            2,
+            0,
+            1
+          ],
+          "cycle_type": "3-cycle",
+          "order": 3
+        },
+        {
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "product": [
+            1,
+            2,
+            0
+          ],
+          "cycle_type": "3-cycle",
+          "order": 3
+        }
+      ],
+      "all_composites_are_3_cycles": true,
+      "all_composites_have_order_3": true,
+      "corroborates_corpus_claim": "rem:holonomy-trefoil (as reverted on main by 7adab17a3d) states H_1 H_2 acts as a 3-cycle in S_3 with (H_1 H_2)^3 = id. Two distinct transpositions sharing a letter compose to a 3-cycle, and these do."
+    },
+    "sgn_of_the_six_generators": [
+      -1
+    ],
+    "sgn_image_of_the_group": [
+      -1,
+      1
+    ]
+  },
+  "summary": {
+    "monodromy_group": "S_3",
+    "sign_character_nontrivial": true,
+    "routes_agree": true,
+    "scope": "(a) positive result about the fibre. Two independent exact routes to a non-trivial sgn: transitive + a transposition gives S_3; and Delta squarefree of degree 6 is not a square in C(z), so the quadratic extension is genuine.",
+    "what_is_still_an_input": "the identification of the three sheets with the three colour tubes, and the placement of the physical state in Alt^3 rather than in the trivial or standard isotype. Item 4 of eightfold-open-problems is exactly the first of these.",
+    "consumes": [
+      "computations/bring_chiral_fibre_figure.py (the same six branch points, located numerically at residuals ~1e-15)"
+    ],
+    "corpus_inconsistency_flagged": "rem:brings-qou-4tuple describes the covering as 'degree 4, six branch points' two sentences above 'the S_3 permutation of the three sheets'. By Riemann-Hurwitz a degree-4 cover of P^1 with six simple branch points has genus 0, and a genus-4 cover needs 12 branch points at degree 3 or 14 at degree 4. The degree-3, genus-1 cover computed here is the only reading consistent with both 'six branch points' and 'three sheets', and matches that remark's own 'elliptic cubic'. Flagged for the block's author; not repaired here.",
+    "bears_on": [
+      "prop:baryon-product-from-alt",
+      "eightfold-open-problems item 4 (flavour vs colour)",
+      "eightfold-open-problems item 7 (colour antisymmetry)"
+    ]
+  },
+  "scriptHash": "af013e959dca",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "79e2a903449ef29602f9de9eebfeda5264688c93",
+  "engine": "python",
+  "computedAt": "2026-08-29T20:06:23.544492+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "bring_cubic_monodromy_probe.py"
+}

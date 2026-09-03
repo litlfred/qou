@@ -1,0 +1,174 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T19:42:48.038723+00:00",
+  "commitSha": "12502695f8d508444ca3e5f8d71de45a8444c9fd",
+  "assertions": [
+    {
+      "name": "floor_three_unreached_at_the_meson_cap",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "max Dehornoy floor",
+      "source": "Best floor found among words of length 14. Ito needs 3. Recorded as the measured number so a future run that finds a floor-3 word fails loudly rather than silently agreeing."
+    },
+    {
+      "name": "meson_crossing_cap_is_fourteen",
+      "computed": 14,
+      "expected": 14,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "crossings",
+      "source": "2 * max{3,5,7} = 14, the t-bar t meson."
+    },
+    {
+      "name": "exhaustive_below_length_eight",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "lengths",
+      "source": "Lengths 1..7 are enumerated in full; beyond that 4^L makes enumeration infeasible and the result is a search, not a proof."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "meson-braid-length-cap",
+  "scriptFile": "meson_braid_length_cap_probe.py",
+  "scriptHash": "8667a5bd9026",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/meson_braid_length_cap_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/meson_braid_length_cap_probe.py"
+  },
+  "description": "Asks whether the framework's short braid vocabulary is load-bearing or incidental, by combining the corpus's own crossing-number arithmetic (crossing number = sum of constituent generation windings, from {3,5,7}) with a measurement of which Dehornoy floors are reachable at each word length. Integer arithmetic only.",
+  "auditOnly": "docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md",
+  "data": {
+    "crossing_number_is_a_quantum_number": {
+      "source_lean": "QOU/ParticleInteractions/WeakIsospinT3Grading.lean, sorry-free: signedWrithe up 3 / charm 5 / top 7, genWinding = |signedWrithe|",
+      "source_block": "knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof.md: 'K: u-bar s = 3 + 5 = 8 crossings', 'eta, phi: s-bar s = 5 + 5 = 10 crossings'",
+      "consistency_check": "the corpus meson braid M = (s0 s1)^2 s1 s0 has 6 crossings, and the pion is u-bar d = 3 + 3 = 6 -- the arithmetic reproduces the written word",
+      "nine_is_the_gluon": "T(2,9) is the genus-4 saturating force carrier, not a quark generation, so 9 is unavailable as a constituent winding",
+      "meson_crossing_cap": 14,
+      "cap_realised_by": "t-bar t = 7 + 7"
+    },
+    "reachable_floor_by_length": [
+      {
+        "length": 1,
+        "words_tested": 4,
+        "max_floor_found": 0,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 2,
+        "words_tested": 16,
+        "max_floor_found": 0,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 3,
+        "words_tested": 64,
+        "max_floor_found": 0,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 4,
+        "words_tested": 256,
+        "max_floor_found": 0,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 5,
+        "words_tested": 1024,
+        "max_floor_found": 1,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 6,
+        "words_tested": 4096,
+        "max_floor_found": 1,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 7,
+        "words_tested": 16384,
+        "max_floor_found": 1,
+        "mode": "exhaustive"
+      },
+      {
+        "length": 8,
+        "words_tested": 40000,
+        "max_floor_found": 1,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 9,
+        "words_tested": 40000,
+        "max_floor_found": 1,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 10,
+        "words_tested": 40000,
+        "max_floor_found": 2,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 11,
+        "words_tested": 40000,
+        "max_floor_found": 2,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 12,
+        "words_tested": 40000,
+        "max_floor_found": 2,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 13,
+        "words_tested": 40000,
+        "max_floor_found": 2,
+        "mode": "sampled 40000"
+      },
+      {
+        "length": 14,
+        "words_tested": 40000,
+        "max_floor_found": 2,
+        "mode": "sampled 40000"
+      }
+    ],
+    "finding": {
+      "first_length_reaching_floor_3": null,
+      "max_floor_at_the_meson_cap": 2,
+      "ito_requires": 3,
+      "reading": "Floor 3 is not reached at any length up to the framework's meson cap of 14 crossings; the best found there is 2. Floor 3 appears at 18 crossings (Delta^6). So the short-word vocabulary is LOAD-BEARING: Ito's hypothesis is not merely unmet by the candidates written so far, it is unreachable by any meson braid this framework admits, because crossing number is a quantum number capped at 7+7."
+    },
+    "scope": {
+      "class": "(a) scope-limited, on a SEARCH plus a corpus premise",
+      "claimed": "No B_3 word of length <= 14 was FOUND with Dehornoy floor 3, exhaustively up to length 7 and by 40000-word sampling beyond; and the corpus's own arithmetic caps a meson braid at 14 crossings.",
+      "NOT_claimed": "That no such word EXISTS -- beyond length 7 this is sampling, not enumeration. That the cap is a theorem: 'crossing number = sum of constituent windings' is the corpus's stated construction, taken as given here, not re-derived. And the Dehornoy floor is not a conjugacy invariant, so this is about WORDS, not the link types they close to.",
+      "what_would_overturn_it": "A meson whose braid is not the sum of two constituent windings, a fourth generation winding above 7, or an exhaustive search at length 8-14 finding a floor-3 word."
+    },
+    "verdict": "The short-word vocabulary is LOAD-BEARING, not incidental. Crossing number in this framework is a quantum number -- the sum of two constituent generation windings from {3,5,7} -- so a meson braid is capped at 14 crossings. Measured, Dehornoy floor 3 is not reachable at that length (best found 2); it first appears at 18. So Ito's Theorem 2 cannot apply to ANY meson braid this framework admits, and the same length ceiling is why Giambrone's family excludes the corpus's carriers. The closed-3-braid geometric literature is built for complex braids; this framework structurally cannot supply one. That is a statement about applicability, not about whether Obstruction A is soluble -- it stays open, and now with one fewer route worth importing."
+  }
+}

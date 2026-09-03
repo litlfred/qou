@@ -39,35 +39,35 @@
       "computed": "1.128088744114353785593151654999246049283482818755237021",
       "expected": "1.128088744114353785593151654999246049283482818755237021",
       "passed": true,
-      "tolerance": 1e-50
+      "tolerance": "1e-50"
     },
     {
       "name": "trM_block_sum_eq_full_nn_T(2,-2)_negative_Hopf",
       "computed": "0.9156174644181682038088676806781422604847311419582851956",
       "expected": "0.9156174644181682038088676806781422604847311419582851956",
       "passed": true,
-      "tolerance": 1e-50
+      "tolerance": "1e-50"
     },
     {
       "name": "trM_block_sum_eq_full_pn_T(2,0)_unlink",
       "computed": "1.0",
       "expected": "1",
       "passed": true,
-      "tolerance": 1e-50
+      "tolerance": "1e-50"
     },
     {
       "name": "trM_unlink_pn_eq_1",
       "computed": "1",
       "expected": "1.0",
       "passed": true,
-      "tolerance": 1e-50
+      "tolerance": "1e-50"
     },
     {
       "name": "markov_destab_single_sigma1_eq_z",
       "computed": "0.61268803714646525159582986394589924802630839154509",
       "expected": "0.61268803714646525159582986394589924802630839154509",
       "passed": true,
-      "tolerance": 1e-45
+      "tolerance": "1e-45"
     }
   ],
   "allPassed": true,

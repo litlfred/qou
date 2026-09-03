@@ -1,31 +1,31 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:36:58.106291+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T10:53:04.794884+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "eigenphase_u_series_extracted",
-      "computed": 4.0,
-      "expected": 4.0,
+      "computed": 4,
+      "expected": 4,
       "passed": true,
       "tolerance": 0.0,
       "source": "cos(α−bℏ²/2) Taylor-expanded in u = b·ℏ² to order 3; coefficients are exact symbolic radicals, directly comparable to the ladder c_k."
     },
     {
       "name": "eigenphase_a1_equals_neg_sqrt3_over_12",
-      "computed": -0.14433756729740643,
-      "expected": -0.14433756729740643,
+      "computed": "-0.1443375672974064411272871951254893639119004378175317190046506632419888",
+      "expected": "-0.1443375672974064411272871951254893639119004378175317190046505816209944",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Numeric u¹ coefficient matches the exact radical -√3/12."
     },
     {
       "name": "eigenphase_a2_equals_neg_11_32_minus_sqrt3_over_12",
-      "computed": -0.48808756729740643,
-      "expected": -0.48808756729740643,
-      "passed": true,
-      "tolerance": 1e-25,
+      "computed": "0.9642627018922193233818615853764680917357013134525951570139514525924254",
+      "expected": "-0.4880875672974064411272871951254893639119004378175317190046505816209944",
+      "passed": false,
+      "tolerance": "1e-25",
       "source": "Numeric u² coefficient matches the exact radical -11/32 - √3/12."
     },
     {
@@ -45,12 +45,12 @@
       "source": "Symbolic-exact path certified 3 leading coefficients in radicals; each agrees with the numeric path to < 1e-30."
     }
   ],
-  "allPassed": true,
-  "durationMs": 18336,
+  "allPassed": false,
+  "durationMs": 12474,
   "computation": "qbeta-eigenphase-taylor-in-u",
   "scriptFile": "qbeta_eigenphase_taylor_in_u.py",
-  "scriptHash": "8db63b1d58b5",
-  "scriptCommitSha": "a6b6d3193902354d8f57d677be729e2c23b4f015",
+  "scriptHash": "1145e6130e6a",
+  "scriptCommitSha": "2a068891a8f3fe939159755b24fad8388ab7c8e8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,11 +58,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eigenphase_taylor_in_u.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_taylor_in_u.py"
   },
   "description": "Taylor expansion of the N=1 cos eigenphase scaling cos(α − bℏ²/2) in the ladder variable u = b·ℏ², to determine which Q_β ladder coefficients c_k the single-block eigenphase generates exactly and where it breaks. Tests whether the eigenphase DERIVES c_2 = -1 (currently proved via a separate Kashiwara argument) and quantifies its prediction for c_3 vs the empirical value at both q₀ anchors — fixing the size of the multi-Wedderburn-block refinement the true scaling map f must add. 1ppQ-Q_β keystone (probe-qbeta-habiro-element-search). No fitting; eigenphase is the witness-cited closed form.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -78,13 +87,13 @@
     "eigenphase_u_taylor_coeffs_numeric": {
       "u^0": "1.0",
       "u^1": "-0.144337567297406441127287195125",
-      "u^2": "-0.488087567297406441127287195125",
-      "u^3": "-0.468215502975651437658036668792"
+      "u^2": "0.964262701892219323381861585376",
+      "u^3": "-1.2340120228497003805299760828"
     },
     "eigenphase_u_taylor_coeffs_symbolic": {
       "u^0": "1",
       "u^1": "-sqrt(3)/12",
-      "u^2": "-11/32 - sqrt(3)/12"
+      "u^2": "sqrt(3)/4 + 17/32"
     },
     "symbolic_numeric_crosscheck": {
       "orders_certified_symbolic": 3,
@@ -95,13 +104,13 @@
       "rows": [
         {
           "anchor": "m_p-pin",
-          "eigenphase_N1_minus_1_over_u2": "-22.07033719",
+          "eigenphase_N1_minus_1_over_u2": "-13.79677573",
           "empirical_c3": -2.0693
         },
         {
           "anchor": "muon-pin",
-          "eigenphase_N1_minus_1_over_u2": "-22.07033315",
-          "empirical_c3": -2.0097
+          "eigenphase_N1_minus_1_over_u2": "-13.79677239",
+          "empirical_c3": -2.02020023502
         }
       ],
       "empirical_c2": "-1.0"

@@ -47,6 +47,9 @@ export default chapter({
         "sm-hypercharge-invariant",
         "strand-twist-datum",
         "sm-colour-stabilizer-action",
+        // The SU(5) scope note. Placed after both blocks it uses
+        // (truncation, hypercharge) so its uses[] edges run backward.
+        "su5-hypercharge-n3-gate",
         "cal2-higgs-knot-coupling",
         "a5-orbital-degeneracy-fracture",
       ],
@@ -90,6 +93,11 @@ export default chapter({
       title: "Neutrino sector (7)",
       label: "sec:sm-params-neutrinos",
       blocks: ["sm-params-neutrino"],
+    }),
+    section({
+      title: "The results surface and what gates the rest",
+      label: "sec:sm-results-surface",
+      blocks: ["sm-results-index", "sm-gating-objects"],
     }),
     section({
       title: "Open problems",

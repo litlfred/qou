@@ -1,0 +1,194 @@
+{
+  "schema": "witness/v1",
+  "name": "isospin-sweep-bond-energy",
+  "description": "Bond energy B_tot(A, Z) across every composition Z + N = A, by the column-sparse Schur-Weyl route, with both pure endpoints reproducing the merged B_pp (#6336) and B_nn (#6365) totals.",
+  "beans": [
+    "qou-gcmn",
+    "qou-23dn",
+    "qou-brng"
+  ],
+  "scope": "(a) measurement of the model's composition dependence; nothing fitted, nothing wired, no AME comparison",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "A_list": [
+      2,
+      3,
+      4
+    ],
+    "d_blind": "-0.1045301493978196577154231",
+    "d_weighted": "-0.1044582477697262890178341",
+    "canonical_arm": "blind",
+    "canonical_arm_evidence": "colour_weighting_across_mixed_nuclei_probe cross-checks the blind arm against the canonical Rust value (#6309 for D; T/3He/4He there). Not re-established here.",
+    "rows_blind": {
+      "2": {
+        "0": "2.435584783746245594432895",
+        "1": "2.330026199174927082376546",
+        "2": "2.128360945757083002984978"
+      },
+      "3": {
+        "0": "3.376754267491760844672683",
+        "1": "3.719531467492969587656013",
+        "2": "3.737937770688650971716999",
+        "3": "3.93268521506047772226639"
+      },
+      "4": {
+        "0": "3.722495003950136568863714",
+        "1": "4.239298070148549142484375",
+        "2": "4.687594960460334126959502",
+        "3": "5.032709170970888351111758",
+        "4": "5.554756840629009638693526"
+      }
+    },
+    "rows_colour_weighted": {
+      "2": {
+        "0": "2.435584783746245594432895",
+        "1": "2.329685576294031385581003",
+        "2": "2.128360945757083002984978"
+      },
+      "3": {
+        "0": "3.376754267491760844672683",
+        "1": "3.719395667707038841344426",
+        "2": "3.737698655723077781761689",
+        "3": "3.93268521506047772226639"
+      },
+      "4": {
+        "0": "3.722495003950136568863714",
+        "1": "4.239243929387921603846719",
+        "2": "4.687499629926306906838228",
+        "3": "5.032541313877405027980936",
+        "4": "5.554756840629009638693526"
+      }
+    },
+    "averaged_weighted_count": {
+      "2": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "3": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "3": 0
+      },
+      "4": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 0
+      }
+    },
+    "arm_gap_MeV": {
+      "2": {
+        "0": "0.0",
+        "1": "0.0003406228808956967955423581",
+        "2": "0.0"
+      },
+      "3": {
+        "0": "0.0",
+        "1": "0.0001357997859307463115865903",
+        "2": "0.0002391149655731899553101964",
+        "3": "0.0"
+      },
+      "4": {
+        "0": "0.0",
+        "1": "0.00005414076062753863765693139",
+        "2": "0.00009533053402722012127359901",
+        "3": "0.0001678570934833231308219181",
+        "4": "0.0"
+      }
+    },
+    "arms_agree_at_pure_endpoints": true,
+    "mirror_slice_MeV": {
+      "2|2": "-0.3072238379891625914479166",
+      "3|3": "0.5559309475687168775937072",
+      "3|2": "0.01840630319568138406098626",
+      "4|4": "1.832261836678873069829812",
+      "4|3": "0.7934111008223392086273823"
+    },
+    "two_route_mirror_comparison": {
+      "3": {
+        "D_kappa_MeV": "0.204428272712973871700451",
+        "D_chain_MeV": "0.01840630319568138406098626",
+        "ratio_kappa_over_chain": "11.10642753950387314591523"
+      }
+    },
+    "two_route_note": "D_kappa (the #6336 construction, an EM-linking fraction of the pp bond) vs D_chain (the raw chain composition difference). NOT the same object; reported for size, not as an inconsistency finding.",
+    "mirror_slice_note": "B(A,Z) - B(A,A-Z) for the CHAIN. Not a nuclear displacement energy and deliberately not compared to AME.",
+    "row_shape": {
+      "2": {
+        "monotone": true,
+        "argmax_Z": 0,
+        "argmin_Z": 2,
+        "interior_extremum": false,
+        "max_Z_N_asymmetry_MeV": "0.30722383798916259145",
+        "relative_asymmetry": "0.12613966060200640753"
+      },
+      "3": {
+        "monotone": true,
+        "argmax_Z": 3,
+        "argmin_Z": 0,
+        "interior_extremum": false,
+        "max_Z_N_asymmetry_MeV": "0.55593094756871687759",
+        "relative_asymmetry": "0.14136166948723549078"
+      },
+      "4": {
+        "monotone": true,
+        "argmax_Z": 4,
+        "argmin_Z": 0,
+        "interior_extremum": false,
+        "max_Z_N_asymmetry_MeV": "1.8322618366788730698",
+        "relative_asymmetry": "0.32985455335816128657"
+      }
+    },
+    "bond_count_is_A_minus_1_everywhere": true,
+    "strand_count_constant_per_row": true
+  },
+  "assertions": [
+    {
+      "name": "both pure endpoints reproduce main \u2014 the interior points are validated by them, not separately anchored",
+      "passed": true,
+      "detail": "The interior compositions have no committed twin and cannot be checked directly. Reproducing BOTH ends of each row with the same code path is the only anchor available, and it is the honest one to claim."
+    },
+    {
+      "name": "bond count and strand count are constant across each row \u2014 measured at every composition, not inferred from the endpoints",
+      "passed": true,
+      "detail": "include_inter toggles exactly A-1 crossings at EVERY (Z,N), so the per-bond divisor is the same object across the whole row. This was assumed by both merged probes on the strength of the two pure cases; here it is checked at each interior point."
+    },
+    {
+      "name": "the row shape is reported per A, with the Z<->N asymmetry quantified",
+      "passed": true,
+      "detail": "interior extremum present in at least one row: False. An interior extremum cannot be produced by any function linear in the species counts; a purely monotone row can. Both outcomes are informative, so this check records rather than asserts."
+    },
+    {
+      "name": "Z <-> N asymmetry is nonzero on every row",
+      "passed": true,
+      "detail": "This is a CONFIRMATION of an endpoint fact already on main, extended to the interior \u2014 not an independent discovery. Stating it as new would double-count one measurement."
+    },
+    {
+      "name": "the mirror slice is reported rather than omitted, and explicitly NOT compared to AME",
+      "passed": true,
+      "detail": "The pair is already inside the row; computing the row and skipping the one difference the corpus cares about would be selective reporting. It is stated as a chain quantity, with the nuclear comparison named and declined, so a later reader cannot mistake it for a displacement-energy prediction."
+    },
+    {
+      "name": "both routes to the mirror splitting are reported side by side, with their non-equivalence stated",
+      "passed": true,
+      "detail": "Reported as a comparison, NOT as an inconsistency finding: the two constructions are different objects and a difference between them is not evidence against either. The reason to record it is that the corpus makes this comparison nowhere and the gap is ~10x."
+    },
+    {
+      "name": "the colour arm moves the interior and CANNOT move the endpoints",
+      "passed": true,
+      "detail": "Consequence for check 1: reproducing the merged B_pp and B_nn totals validates the machinery and says NOTHING about whether the arm choice is right at the interior points, which are the points this probe exists to measure. Both arms are therefore reported. The BLIND arm is canonical \u2014 colour_weighting_across_mixed_nuclei_probe cross-checks it against the canonical Rust value (#6309 for D; T/3He/4He there). Endpoint agreement is MEASURED here, not short-circuited, so this check is not verifying its own assignment."
+    },
+    {
+      "name": "scope stated before the conclusion",
+      "passed": true,
+      "detail": "Chains not nuclei; interior unanchored except through endpoints; no pn bond isolated; no AME comparison."
+    }
+  ],
+  "checks_passed": 8,
+  "checks_total": 8
+}

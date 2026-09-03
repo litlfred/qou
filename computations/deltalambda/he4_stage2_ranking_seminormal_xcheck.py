@@ -61,7 +61,7 @@ COMP = REPO / "computations"
 def load_canonical_q() -> str:
     d = json.loads((COMP / "q-pinning-50-digit.witness.json").read_text())
     q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595557"), q
+    assert q.startswith("1.109978595642"), q
     return q
 
 
@@ -188,6 +188,15 @@ def main() -> int:
     }
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "he4-stage2-ranking-seminormal-xcheck.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        wit, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"],
           f" ({wit['elapsed_sec']}s)")

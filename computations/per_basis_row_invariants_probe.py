@@ -212,8 +212,8 @@ def main() -> int:
     print()
 
     # ── Candidate observable ratios at canonical q₀ ──
-    me = mp.mpf(repr(M_E_MEV))
-    mp_p = mp.mpf(repr(M_P_MEV))
+    me = mp.mpf(M_E_MEV)
+    mp_p = mp.mpf(M_P_MEV)
     alpha_em = mp.mpf("0.0072973525693")  # CODATA 2018 fine-structure
     pi = mp.pi
     me_over_mp = me / mp_p

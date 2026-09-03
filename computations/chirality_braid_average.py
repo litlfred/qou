@@ -48,6 +48,7 @@ from hecke_characters import (  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
 import numpy as np
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # ── Canonical T_w for hyperbolic 3-braid knots (already in tracker) ──
@@ -109,8 +110,8 @@ def wedderburn_weight(shape: tuple[int, ...]) -> float:
     """w_λ(q) = dim_q(λ)² / [n]_q!  at the module-default q_0
     (hecke_characters.dim_q / qfac are bound to q_parameter.Q)."""
     n = sum(shape)
-    d = float(dim_q(shape))
-    qfac_n = float(qfac(n))
+    d = float(dim_q(shape, Q0_PROTON))
+    qfac_n = float(qfac(n, Q0_PROTON))
     return d * d / qfac_n
 
 
@@ -138,7 +139,7 @@ def main() -> int:
             shape_t = tuple(shape)
             chi = chi_lambda_braid_word(shape_t, word, q0)
             w = wedderburn_weight(shape_t)
-            d_lam = float(dim_q(shape_t))
+            d_lam = float(dim_q(shape_t, Q0_PROTON))
             num_full += w * chi
             denom_full += w * d_lam
             if not is_self_conjugate(shape_t):

@@ -30,4 +30,4 @@ The character sum vanishes identically at certain atomic-braid cycle types. The 
 
 Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
-The downstream cone includes [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.
+The downstream cone includes [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.

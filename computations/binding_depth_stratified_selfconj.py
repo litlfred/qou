@@ -44,6 +44,7 @@ from codata_constants import (
     M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -85,7 +86,7 @@ def alpha_k(k: int) -> mp.mpf:
 def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
     """Φ_k with low-k restricted to self-conjugate partitions
     (renormalised to preserve total measure within the stratum)."""
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     is_low_k = k <= 3 and restrict_low_k
 
     if is_low_k:
@@ -95,7 +96,7 @@ def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
             shape = tuple(p["partition"])
             if len(shape) - 1 != k:
                 continue
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             w = mp.mpf(str(dq * dq)) / qfact
             Z_uniform += w
             if is_self_conjugate(shape):
@@ -113,7 +114,7 @@ def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue
@@ -195,7 +196,7 @@ def main() -> int:
 
     builder.add_data("results", all_results)
     builder.add_assertion(
-        "data_loaded", computed=float(B_AME["D"]), expected=2.22456607,
+        "data_loaded", computed=B_AME["D"], expected=2.22456607,
         tolerance=1e-10, unit="B(D) MeV", source="AME 2020",
     )
     builder.save()

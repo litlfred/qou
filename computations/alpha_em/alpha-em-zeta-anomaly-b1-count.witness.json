@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "E_Λ(0)=−1 for ℤ^d (d=1,2,3,8) AND non-cubic det=3 lattice => covolume-free"
     },
     {
@@ -17,7 +17,7 @@
       "computed": -8.0,
       "expected": -8.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "ζ_{Δ₁}(0)=b₁·E_Λ(0)=−b₁=−8 on J(M)=T^{b₁}: area-free home of the bare b₁ count"
     }
   ],

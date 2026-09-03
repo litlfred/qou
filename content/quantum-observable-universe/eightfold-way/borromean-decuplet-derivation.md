@@ -30,8 +30,14 @@ $\Sigma^{*0}\ (uds)$ at the centre:
 Each decuplet state is a Borromean baryon: three quark-unknots joined
 by the Borromean link $\mathcal{B}_3$.  The symmetric partition
 $\lambda = (3)$ corresponds to the Hecke symmetrizer
-$e_{(3)} = \sum_{\sigma \in S_3} T_\sigma$, which projects onto the
-subspace where all three strands are interchangeable.
+$e_{(3)} = \sum_{\sigma \in S_3} T_\sigma$, which --- once normalized ---
+projects onto the subspace where all three strands are interchangeable.
+The normalization is not bookkeeping: $e_{(3)}$ satisfies
+$e_{(3)}^2 = c\, e_{(3)}$ with $c = \sum_{\sigma \in S_3} q^{\ell(\sigma)}$,
+equal to $|S_3| = 6$ in the classical limit, so $e_{(3)}$ is idempotent
+only after division by $c$ and the symmetric channel is identifiable with
+$\mathrm{Sym}^3$ only where $c$ is invertible.  In characteristic $2$ or
+$3$ it is not, and the identification fails.
 
 **What the Borromean topology does and does not supply.**
 The Borromean link carries an $S_3$ symmetry permuting its three

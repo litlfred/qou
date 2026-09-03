@@ -90,28 +90,46 @@ from codata_constants import (
 )
 
 Q0 = Q_MP
-M_E_MEV = float(_M_E_MEV_MP)
-M_P_MEV = float(_M_P_MEV_MP)
-m_n_derived_3input = float(_M_N_MEV_MP)
+M_E_MEV = _M_E_MEV_MP   # mpf; float() cast removed 2026-08-31 (qou-46ab)
+M_P_MEV = _M_P_MEV_MP   # mpf; float() cast removed 2026-08-31 (qou-46ab)
+m_n_derived_3input = _M_N_MEV_MP   # mpf; float() cast removed 2026-08-31 (qou-46ab)
 
 
-# Canonical Markov traces from the Hoefsmit+Wenzl bridge witness.
-# Each is |tr_M(T_w; q_0)| at 50 dps, computed via Sum_lambda
-# y_lambda(q) * chi_lambda(beta).  Cross-checked with markov_peel
-# to 4e-16.
+# Canonical Markov traces |tr_M(T_w; q_0)|, read from the committed
+# proton-anchored producer witness
+# computations/canonical-tr-m-via-chi-cache.witness.json (q0Anchor: proton),
+# which agrees with computations/markov/markov-peel-atomic-tr-m.witness.json
+# to <= 3.8e-50.
+#
+# CONVENTION + PRECISION FIX (2026-08-31, bean qou-46ab). This block held
+# SIX convention-C values, as bare float64 literals, under a comment calling
+# them "Canonical":
+#
+#     p 1.0653062286   n 0.9232332972   D  0.3882864715
+#     T 0.1040521187   3He 0.2065408586  4He 0.0553483459
+#
+# Two defects at once. (i) Convention: those are convention-C values at the
+# muon pin -- n 0.9232332972 and D 0.3882864715 are exactly the values the
+# n- and D-tr-M-q0 derivation chains reported before their 2026-08-31
+# migration -- while convention D at the proton pin has been canonical since
+# the owner rulings of 2026-08-09 and 2026-08-15 (R1/R2). Nothing in this
+# file declared a frame, so they read as canonical D. (ii) Precision: bare
+# float literals violate the NO-FLOAT64 discipline; TR_M feeds _geom(), a
+# live computation, so the truncation propagates into the emitted witness.
+# Both are fixed here by carrying mpmath.mpf at full witness precision.
 TR_M = {
-    "p":   1.0653062286,
-    "n":   0.9232332972,
-    "D":   0.3882864715,
-    "T":   0.1040521187,
-    "3He": 0.2065408586,
-    "4He": 0.0553483459,
+    "p":   mp.mpf("1.1457596924573008696890815957741193059437280619435"),
+    "n":   mp.mpf("0.98774368811580957163402016550129498205504875906279"),
+    "D":   mp.mpf("0.57517224391777187082653534398618088915249435289284"),
+    "T":   mp.mpf("0.22931010210455650733209081026890887960280163645605"),
+    "3He": mp.mpf("0.40376703685142817036867025333340254115508707059188"),
+    "4He": mp.mpf("0.16097414544240738182587344098071685392360735413342"),
 }
 
 # CODATA atomic masses (MeV)
 M_AME = {
     "p":   938.78308711,
-    "n":   float(_M_N_MEV_MP),
+    "n":   _M_N_MEV_MP,
     "D":   1876.12393,
     "T":   2809.43215,
     "3He": 2809.41347,
@@ -160,8 +178,10 @@ def main() -> int:
         ta = tr_M_atomic(label)
         defect = tf - ta
         B_AME_val = cs - M_AME[label]
-        print(f"  {label:<6} {Z+N:>3}  {tf:>12.6e} {ta:>12.6e}  "
-              f"{defect:>+12.6e}  {B_AME_val:>+10.4f}")
+        # float() here is DISPLAY ONLY (AGENTS.md permits it inside an
+        # f-string); tf / ta / defect stay mpf in every computation above.
+        print(f"  {label:<6} {Z+N:>3}  {float(tf):>12.6e} {float(ta):>12.6e}  "
+              f"{float(defect):>+12.6e}  {float(B_AME_val):>+10.4f}")
         rows.append({
             "atom": label, "Z": Z, "N": N, "A": Z + N,
             "constituent_sum_MeV": cs,
@@ -177,7 +197,8 @@ def main() -> int:
         return 1
     alpha = rD["B_AME_MeV"] / rD["defect_tr_M"]
     print(f"\n  Calibration: alpha = B(D) / defect(D) = "
-          f"{rD['B_AME_MeV']:.6f} / {rD['defect_tr_M']:.6e} = {alpha:.6e} MeV per unit defect")
+          f"{float(rD['B_AME_MeV']):.6f} / {float(rD['defect_tr_M']):.6e} = "
+          f"{float(alpha):.6e} MeV per unit defect")
 
     # Predict
     print(f"\n  Predictions:")
@@ -190,9 +211,11 @@ def main() -> int:
         b_err = ((B_pred - r["B_AME_MeV"]) / r["B_AME_MeV"] * 100
                  if abs(r["B_AME_MeV"]) > 1e-9 else 0.0)
         m_err = (M_pred - M_AME[r["atom"]]) / M_AME[r["atom"]] * 100
-        print(f"  {r['atom']:<6} {r['A']:>3}  {B_pred:>+10.4f} {r['B_AME_MeV']:>+10.4f} "
-              f"{b_err:>+7.2f}%  {M_pred:>12.4f} {M_AME[r['atom']]:>12.4f} "
-              f"{m_err:>+7.4f}%")
+        print(f"  {r['atom']:<6} {r['A']:>3}  {float(B_pred):>+10.4f} "
+              f"{float(r['B_AME_MeV']):>+10.4f} "
+              f"{float(b_err):>+7.2f}%  {float(M_pred):>12.4f} "
+              f"{float(M_AME[r['atom']]):>12.4f} "
+              f"{float(m_err):>+7.4f}%")
         r["B_pred_MeV"] = B_pred
         r["M_pred_MeV"] = M_pred
         r["B_err_pct"] = b_err
@@ -202,10 +225,10 @@ def main() -> int:
     rT = next(r for r in rows if r["atom"] == "T")
     r3 = next(r for r in rows if r["atom"] == "3He")
     print(f"\n  Isospin (T - ³He):")
-    print(f"    M_pred(T) − M_pred(³He) = {rT['M_pred_MeV'] - r3['M_pred_MeV']:+.6f} MeV")
-    print(f"    CODATA M(T) − M(³He)    = {M_AME['T'] - M_AME['3He']:+.6f} MeV")
-    print(f"    B_pred(T) − B_pred(³He) = {rT['B_pred_MeV'] - r3['B_pred_MeV']:+.6f} MeV")
-    print(f"    B_AME(T) − B_AME(³He)   = {rT['B_AME_MeV'] - r3['B_AME_MeV']:+.6f} MeV")
+    print(f"    M_pred(T) − M_pred(³He) = {float(rT['M_pred_MeV'] - r3['M_pred_MeV']):+.6f} MeV")
+    print(f"    CODATA M(T) − M(³He)    = {float(M_AME['T'] - M_AME['3He']):+.6f} MeV")
+    print(f"    B_pred(T) − B_pred(³He) = {float(rT['B_pred_MeV'] - r3['B_pred_MeV']):+.6f} MeV")
+    print(f"    B_AME(T) − B_AME(³He)   = {float(rT['B_AME_MeV'] - r3['B_AME_MeV']):+.6f} MeV")
 
     # Mean error stats
     pred_rows = [r for r in rows if r["atom"] not in ("p", "n")]
@@ -217,10 +240,10 @@ def main() -> int:
         if non_cal:
             non_cal_m_errs = [abs(r["M_err_pct"]) for r in non_cal]
             non_cal_b_errs = [abs(r["B_err_pct"]) for r in non_cal]
-            print(f"    mean |B_err| = {sum(non_cal_b_errs)/len(non_cal_b_errs):.3f}%")
-            print(f"    max  |B_err| = {max(non_cal_b_errs):.3f}%")
-            print(f"    mean |M_err| = {sum(non_cal_m_errs)/len(non_cal_m_errs):.4f}%")
-            print(f"    max  |M_err| = {max(non_cal_m_errs):.4f}%")
+            print(f"    mean |B_err| = {float(sum(non_cal_b_errs)/len(non_cal_b_errs)):.3f}%")
+            print(f"    max  |B_err| = {float(max(non_cal_b_errs)):.3f}%")
+            print(f"    mean |M_err| = {float(sum(non_cal_m_errs)/len(non_cal_m_errs)):.4f}%")
+            print(f"    max  |M_err| = {float(max(non_cal_m_errs)):.4f}%")
 
     witness = {
         "computation": "path-b-defect-binding-probe",
@@ -237,6 +260,15 @@ def main() -> int:
         "rows": rows,
     }
     out = HERE / "path-b-defect-binding-probe.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\n  Witness: {out}")
     return 0

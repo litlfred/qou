@@ -62,11 +62,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from canonical_tr_m_via_chi_cache import canonical_tr_m  # noqa: E402
 from _li_2_q_util import linking_weight_family_a  # noqa: E402
 from codata_constants import M_E_MEV, M_HE3_MEV_VALIDATION as M_HE3_MEV  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z2 = mp.mpf("12.554")
@@ -206,7 +207,7 @@ def main() -> int:
     pr1874_rel_err = (L1b_he3 - lambda_emp_he3) / lambda_emp_he3
     w.add_assertion(
         "L1b_He3_matches_PR1874_value",
-        computed=float(pr1874_rel_err),
+        computed=pr1874_rel_err,
         expected=-0.1815,
         tolerance=2e-3,
         source="Re-derived L1b(3He) must reproduce PR #1874's -18.15% rel_err.",
@@ -215,7 +216,7 @@ def main() -> int:
     lamA_half_rel = (lam_A / 2 - residual_ratio) / residual_ratio
     w.add_assertion(
         "lambdaA_over_2_baseline_reproduced",
-        computed=float(lamA_half_rel),
+        computed=lamA_half_rel,
         expected=0.0365,
         tolerance=2e-3,
         source=(

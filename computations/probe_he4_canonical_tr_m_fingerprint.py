@@ -254,8 +254,8 @@ def main() -> int:
         # ── Cross-check assertions vs cited values ────────────────
         w.add_assertion(
             name="tr_M_at_q0",
-            computed=float(abs_tr_M),
-            expected=float(CITED_TR_M),
+            computed=abs_tr_M,
+            expected=CITED_TR_M,
             tolerance=5e-7,
             source=(
                 "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = "
@@ -277,7 +277,7 @@ def main() -> int:
         )
         w.add_assertion(
             name="top5_cumulative_pct",
-            computed=float(top5_cum_pct),
+            computed=top5_cum_pct,
             expected=91.130,
             tolerance=0.2,
             source=(
@@ -295,7 +295,7 @@ def main() -> int:
         )
         w.add_assertion(
             name="trivial_rep_pct",
-            computed=float(trivial_pct),
+            computed=trivial_pct,
             expected=5.962,
             tolerance=0.15,
             source="prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%",
@@ -313,7 +313,7 @@ def main() -> int:
             pct = abs(v["contribution"]) / abs_tr_M * 100
             w.add_assertion(
                 name=f"pct_block_{'_'.join(map(str, part))}",
-                computed=float(pct),
+                computed=pct,
                 expected=cited,
                 tolerance=0.15,
                 source=(

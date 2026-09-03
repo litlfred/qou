@@ -46,7 +46,7 @@ Then $(\mathbf{C}, A, \tau)$ determines a
 $\lambda \in R^{\times}$,
 
 $$
-  \mathcal{S}_q
+  \mathfrak{S}_q
   = 
   \mathrm{tr}(\mathcal{L}_q),
 $$
@@ -71,7 +71,7 @@ so the categorical action expands to three terms:
 
 ```tex
 \begin{equation}\label{eq:canonical-action-decomposition}
-  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+  \mathfrak{S}_q[\nabla, \textstyle\int_A, \psi]
   = 
   \underbrace{%
     \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)

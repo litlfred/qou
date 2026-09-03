@@ -149,7 +149,14 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
     out = pn.chi_lambda_all_partitions_mpfr(n, word_signed, q_str, dps)
     elapsed = time.time() - t0
     print(f"[{atom}] {kind}@{q_tag} done in {elapsed:.2f}s", flush=True)
-    legacy.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload_1 = {
         "computation": f"chi-{atom}-{kind}-h{n}-at-{q_tag}-50dps",
         "atom": atom, "kind": kind,
         "n_strands": n,
@@ -167,7 +174,11 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
             "pr_landing_kernel": 1748,
             "pr_consumer": 1742,
         },
-    }, indent=2))
+    }
+    _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload_1, script_path=__file__, engine=None, q0_anchor=None)
+    legacy.write_text(json.dumps(_prov_payload_1, indent=2))
     return {tuple(lam): mp.mpf(s) for lam, s in out}, legacy
 
 
@@ -308,7 +319,14 @@ def main(argv: list[str]) -> int:
               f"{r['growth_channels_free']:>5d}/{r['growth_channels_atom']:<4d}",
               flush=True)
     out = HERE / "bar-pairing-binding-observable-extension.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload_2 = {
         "computation": "bar-pairing-binding-observable-extension",
         "description": (
             "Extension of PR #1742's bar-pairing observable to T, ³He, "
@@ -317,7 +335,11 @@ def main(argv: list[str]) -> int:
             "finding across the light series."
         ),
         "results": results,
-    }, indent=2))
+    }
+    _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=None)
+    out.write_text(json.dumps(_prov_payload_2, indent=2))
     print(f"\nWitness: {out.name}", flush=True)
     return 0
 

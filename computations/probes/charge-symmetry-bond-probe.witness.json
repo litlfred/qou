@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "The n-n bond is σ⁻¹ and the p-p bond is σ, so their symmetric-channel Hecke eigenvalues (q for σ, q⁻¹ for σ⁻¹) multiply to exactly 1 — the n-n interface is the crossing-inverse of p-p, not a small isospin perturbation. This structural inverse is the mechanism of the ~78% L_nn/L_pp gap (~570x the derived p/n split, ~78x the experimental CSB bound)."
     }
   ],

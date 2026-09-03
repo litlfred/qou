@@ -62,14 +62,16 @@ from zhabiro_phiq_wiring import (  # the merged Lean-bridge helpers  # noqa: E40
 # pinning it here makes the precision deterministic (and matches the witness).
 mp.mp.dps = 60
 
-try:
-    sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"))
-    from qou_substrate.constants import q_at  # type: ignore
-    Q0 = mp.mpf(str(q_at()))
-    Q0_SRC = "qou_substrate.constants.q_at (proton pin)"
-except Exception:  # pragma: no cover
-    Q0 = mp.mpf("1.10997859555733")
-    Q0_SRC = "literal fallback"
+# Routed through `substrate.q_parameter`, NOT `qou_substrate.constants` directly.
+# The direct import bypasses the manifest + QOU_Q0_ANCHOR resolution, so an
+# `ideal_muon` listing on this stem would have been INERT -- the lever1 defect
+# recorded on this bean. The frozen fallback was the superseded muon pin A and
+# is gone: a silent fallback to a literal is how a producer keeps computing at a
+# retired anchor while looking like it resolves one (bean qou-1c4y).
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0 = mp.mpf(_Q0_RESOLVED)
+Q0_SRC = "substrate.q_parameter.Q_50_DIGIT_STR (resolved; proton by default)"
 
 N = 16  # series/cyclotomic depth
 
@@ -172,6 +174,15 @@ def main() -> int:
         },
     }
     out = HERE.parent / "zhabiro-phiq-production-crosscheck.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\n  Witness: {out}")
     return 0 if ok else 1

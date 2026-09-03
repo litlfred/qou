@@ -101,11 +101,27 @@ class NonAbelianStokes (M G : Type u) [Group G] where
   finite_slice : Prop
   finite_slice_holds : finite_slice
 
-/-- **Skeleton instance** — vacuously discharges the §3b-cond
-    hypothesis with `Prop := True` placeholders.  Genuine
-    instances over `M = ℝ²`, `G = SU(n)`, etc., arrive once
-    Mathlib's Lie-valued-forms library lands. -/
-instance punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
+/-- **Skeleton model** — both multiplicative integrals are constantly
+    `1` and both `Prop` fields are `True`.  It encodes no Stokes
+    identity and no finite-slice reduction.  Genuine models over
+    `M = ℝ²`, `G = SU(n)`, etc., arrive once Mathlib's
+    Lie-valued-forms library lands.
+
+    **A `def`, not an `instance`, since 2026-08-24.**  This file's own
+    prose at §"Substrate theorem" already named the defect: because
+    `NonAbelianStokes` pairs `stokes_holds : Prop` with
+    `stokes_holds_witness : stokes_holds`, it is a *self-certifying
+    carrier*, inhabited by taking the `Prop` to be `True` — *"which
+    `punitInstance` below literally does"*.  That was written to
+    justify restating a `∃ (_ : NonAbelianStokes M G), True` claim
+    against real content; the instance it names was left resolvable, so
+    any future `[NonAbelianStokes M G]` hypothesis would still have
+    been discharged with `True` before its author noticed.
+
+    Blast radius of the demotion, measured: **zero** — no declaration
+    in the corpus takes `[NonAbelianStokes M G]`.  A caller wanting the
+    skeleton writes `letI := punitInstance M G`. -/
+def punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
   lineIntegral := { integrate := fun _ _ => 1 }
   surfaceIntegral := { integrate := fun _ _ _ => 1 }
   stokes_holds := True
@@ -515,20 +531,31 @@ theorem piecewiseAffineLineIntegral_three_step {G : Type u} [Group G]
   show ((1 * g) * h) * k = g * h * k
   rw [one_mul]
 
-/-! ### Content-bearing Stokes identity (Tier 2 deep)
+/-! ### Named-degeneration Stokes identity
 
-    Replace the trivial `stokes_holds := True` of the canonical
-    instance with a substantive Prop that captures the
-    Yekutieli-Stokes equation `MI₁(α; ∂σ) = MI₂(d_α β; σ)`
-    on a closed (boundaryless) 2-cell.  On the trivial instance
-    where every form evaluates to the identity, both sides equal
-    `1` and the identity holds by `rfl`. -/
+    This section replaces the `stokes_holds := True` of the skeleton
+    model with `(1 : G) = 1`, the form the Yekutieli-Stokes equation
+    `MI₁(α; ∂σ) = MI₂(d_α β; σ)` takes on a closed (boundaryless)
+    2-cell **once both multiplicative integrals have been set to the
+    constant `1`**.
+
+    **Retitled 2026-08-24.**  It was headed *"Content-bearing Stokes
+    identity (Tier 2 deep)"*.  Substituting a tautology for `True`
+    carries no content and reaches no deeper tier: the Prop is still
+    closed by `rfl` and still says nothing about forms, paths or
+    2-cells.  What it does earn over `True` is that a reader can see
+    *which* degeneration is in force.  The substantive material in this
+    file is `piecewiseAffineLineIntegral` and `braidSurfaceMultTrace`
+    below, which compute. -/
 
 /-- **Closed-cell Stokes identity (skeleton form)**: on a
     boundaryless 2-cell, `MI₁(α; ∂σ) = 1` (trivially) and
     `MI₂(d_α β; σ) = 1` (trivially), so the Stokes identity
-    reduces to `1 = 1`.  This is the "tautologically discharged"
-    case and serves as the canonical content-bearing instance. -/
+    reduces to `1 = 1`.  It is a tautology in `G`, and it does not
+    mention any form, path or 2-cell: `(1 : G) = 1` is not the
+    closed-cell case of the Stokes identity, it is what that case
+    degenerates to once both integrals are constants.  A reader
+    should take it as naming the degeneration, not as content. -/
 def closedCellStokesIdentity (G : Type u) [Group G] : Prop :=
   (1 : G) = 1
 
@@ -536,12 +563,21 @@ def closedCellStokesIdentity (G : Type u) [Group G] : Prop :=
 theorem closedCellStokesIdentity_holds (G : Type u) [Group G] :
     closedCellStokesIdentity G := rfl
 
-/-- **Substantive `NonAbelianStokes` instance**: replaces the
-    `True` placeholder in the canonical class with the
-    `closedCellStokesIdentity` predicate.  Non-vacuous (uses an
-    explicit equation, not `True`) and discharges by `rfl` on the
-    trivial-line/surface-integral model. -/
-instance content_bearing_stokes (M G : Type u) [Group G] :
+/-- **`NonAbelianStokes` model with `1 = 1` in place of `True`.**  Its
+    docstring used to call this *"Substantive"* and *"Non-vacuous (uses
+    an explicit equation, not `True`)"*.  Both claims are withdrawn: an
+    explicit equation whose two sides are the same closed term is a
+    tautology, so this differs from `punitInstance` in the syntax of
+    the `Prop` field and in nothing else.  It is retained because
+    naming the degeneration is more informative than `True`, not
+    because it asserts more.
+
+    **A `def`, not an `instance`, since 2026-08-24**, alongside
+    `punitInstance` and for the same reason — demoting only
+    `punitInstance` would have achieved nothing, since resolution would
+    have fallen through to this one and discharged
+    `[NonAbelianStokes M G]` just as globally. -/
+def content_bearing_stokes (M G : Type u) [Group G] :
     NonAbelianStokes M G where
   lineIntegral := { integrate := fun _ _ => 1 }
   surfaceIntegral := { integrate := fun _ _ _ => 1 }

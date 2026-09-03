@@ -1,0 +1,68 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-29T00:12:23.165300+00:00",
+  "commitSha": "d5c779878d18181d35478b20cdaf585d9fe8cc49",
+  "assertions": [
+    {
+      "name": "base_proportional_to_affine_trace",
+      "computed": "1.29385e-11",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "net/aug == (h/2-1)/(h/2-q) (base proportional to tr_M(Delta_S))"
+    },
+    {
+      "name": "trM_base_no_parameter_free_correction_under_5pct",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "closest parameter-free object to F_required(tr_M) exceeds 5%"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-d-frame-admissible-base-correction-search",
+  "scriptFile": "qbeta_d_frame_admissible_base_correction_search_probe.py",
+  "scriptHash": "367d533a829f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_admissible_base_correction_search_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_admissible_base_correction_search_probe.py"
+  },
+  "description": "bean qou-cds1 ladder/correction side (takeover of #5337 unstarted goal): is there a parameter-free correction closing either convention-D admissible base? tr_M base WALLED (closest > 6%); augmentation near-match sqrt(1-h) (0.025%) DIAGNOSED as the forbidden z=1 (net) return — base is proportional to tr_M(Delta_S), so F_required = the affine trace's z=q->z=1 ratio to 0.17% (the net-vs-CODATA gap). No parameter-free ADMISSIBLE correction; nothing wired; free_parameters=0; sqrt(1-h) NOT adopted. VERDICT: SCOPE-(a): no parameter-free ADMISSIBLE correction closes either convention-D base. tr_M base WALLED (closest q^6 at 6.31%); augmentation near-match sqrt(1-h) (0.025%) is the FORBIDDEN z=1 return in disguise (F_required = the trace's z=q->z=1 ratio to 0.17%, base proportional to tr_M(Delta_S) confirmed to 1e-11). Nothing wired; sqrt(1-h) NOT adopted.",
+  "auditOnly": "docs/audits/2026-08-29-cds1-admissible-base-correction-search.md",
+  "data": {
+    "q0": "1.10997858275138080759166909561",
+    "F_required_augmentation": "0.88912581036021176",
+    "F_required_trM": "1.75923699054610623",
+    "trM_base_closest_name": "q^6",
+    "trM_base_closest_relerr": "0.06307338738",
+    "aug_base_closest_name": "sqrt(1-h)",
+    "aug_base_closest_relerr": "0.0002497931015",
+    "trace_ratio_z_q_to_1": "0.890617381157420966",
+    "base_ratio_net_over_aug": "0.89061738114589774",
+    "trM_base_walled": true,
+    "aug_near_match_is_forbidden_z1_return": true,
+    "free_parameters": 0,
+    "sqrt_1_minus_h_adopted": false,
+    "verdict": "SCOPE-(a): no parameter-free ADMISSIBLE correction closes either convention-D base. tr_M base WALLED (closest q^6 at 6.31%); augmentation near-match sqrt(1-h) (0.025%) is the FORBIDDEN z=1 return in disguise (F_required = the trace's z=q->z=1 ratio to 0.17%, base proportional to tr_M(Delta_S) confirmed to 1e-11). Nothing wired; sqrt(1-h) NOT adopted."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

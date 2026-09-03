@@ -233,7 +233,7 @@ def main() -> int:
                      computed=1.0 if g2 else 0.0, expected=1.0, tolerance=0.5,
                      source="c52_laurent == the merged profile module's C52")
     wb.add_assertion("numeric_path_reaches_residue",
-                     computed=float(dev3 / bound3), expected=0.0, tolerance=1.0,
+                     computed=dev3 / bound3, expected=0.0, tolerance=1.0,
                      source="t_hat_exact(96) → (q̃;q̃)_∞² within the DERIVED "
                             "transient bound q̃⁹⁷/(1−q̃)² at dps 60")
     ok = all(a.passed for a in wb.assertions)

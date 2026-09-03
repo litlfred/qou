@@ -77,8 +77,11 @@ def main() -> int:
 
     # exchange-sector reference magnitude g (structural form)
     q0 = mp.mpf(str(Q0))
-    v = mp.sqrt(q0)
-    z = mp.mpf(1) / (v + 1 / v)
+    # Convention D (canonical, owner ruling 2026-08-15 R1, re-affirmed by the
+    # owner 2026-08-29). This read `1/(v + 1/v)` with `v = sqrt(q0)` = z_C — unannounced, and
+    # invisible to scripts/convention-c-producer-audit.py, whose matcher does
+    # not see the sqrt-variable spelling. Found by convention-c-value-audit.py.
+    z = q0 ** 3 / (q0 ** 2 + 1)
     g = z / mp.sqrt(1 + z * z)
     E0 = alpha  # α = E₀ in this convention
     B_exch = float(-mp.mpf(str(E0)) * mp.log(1 - g * g))

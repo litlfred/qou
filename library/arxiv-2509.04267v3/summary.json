@@ -1,0 +1,106 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2509.04267v3",
+ "source_sha256": "9843b9dd71d1ec74",
+ "brief": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY — Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants.",
+ "extended": "**QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER COHOMOLOGY**\n\n*MASAHICO SAITO AND EMANUELE ZAPPALA*\n\n33 pp, 17 sections.\n\n**Abstract.** Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang–Baxter cohomology, from the perspective of deformation theory.\n\n**Outline.** 2 MASAHICO SAITO AND EMANUELE ZAPPALA; 4 MASAHICO SAITO AND EMANUELE ZAPPALA; 6 MASAHICO SAITO AND EMANUELE ZAPPALA; 8 MASAHICO SAITO AND EMANUELE ZAPPALA; 1 Then there exists an; 10 MASAHICO SAITO AND EMANUELE ZAPPALA; 12 MASAHICO SAITO AND EMANUELE ZAPPALA; 14 MASAHICO SAITO AND EMANUELE ZAPPALA; 16 MASAHICO SAITO AND EMANUELE ZAPPALA; 18 MASAHICO SAITO AND EMANUELE ZAPPALA; 20 MASAHICO SAITO AND EMANUELE ZAPPALA; 22 MASAHICO SAITO AND EMANUELE ZAPPALA; 24 MASAHICO SAITO AND EMANUELE ZAPPALA; 26 MASAHICO SAITO AND EMANUELE ZAPPALA; 28 MASAHICO SAITO AND EMANUELE ZAPPALA; 30 MASAHICO SAITO AND EMANUELE ZAPPALA; References",
+ "tokens": {
+  "brief": 38,
+  "extended": 401
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-4-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-6-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-003-8-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-004-1-then-there-exists-an",
+   "title": "Then there exists an",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-10-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-12-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-007-14-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-008-16-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-18-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-010-20-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-011-22-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-012-24-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-013-26-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-014-28-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-015-30-masahico-saito-and-emanuele-zappala",
+   "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "33-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

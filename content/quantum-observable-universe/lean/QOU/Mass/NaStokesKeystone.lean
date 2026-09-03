@@ -28,7 +28,8 @@ Stokes step supplies *what* the period integrates to:
    `Hol(∂S_c) = ∮_{S_c} F` (Yekutieli's MI∫) is therefore a **Hecke element**.
 3. **Markov trace (`QOU.Hecke.MarkovTrace`).** Closing the loop applies the canonical
    trace `tr_M`, which Wedderburn-decomposes as `tr_M(x) = Σ_λ y_λ χ^λ(x)`
-   (`QOU.Hecke.Wedderburn.trace_decomp`).
+   (`QOU.Hecke.Wedderburn.trace_decomposition`, *derived* from `complete` +
+   `block_scaling` since PR #5710; it was a projected class field before that).
 4. **Mean quantum dimension.** Averaging the selection-rule character sum over the
    partitions `λ ⊢ c+1` is precisely `lw(c) = (1/(c+1)) Σ_{λ⊢c+1} dim_q V_λ`. The
    keystone asserts the `n`-jet prolongation period equals this categorical average.

@@ -1,0 +1,195 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2311.15631v3",
+ "source": {
+  "file": "2311.15631v3.pdf",
+  "sha256": "a3cc6d51cd04fc0736955afa21ff937ff60793a255bc282e835a6e7b662688db",
+  "bytes": 308042,
+  "pages": 30,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2311.15631",
+   "version": "3",
+   "primary_class": "math.QA",
+   "stamp_date": "2 May 2024"
+  },
+  "doi": null,
+  "title": "Classification of connected \u00e9tale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI",
+  "authors_raw": "Department of Physics, National Taiwan University, Taipei 10617, Taiwan",
+  "title_lines": [
+   "Classification of connected \u00e9tale algebras in pre-modular",
+   "fusion categories up to rank three",
+   "Ken KIKUCHI"
+  ],
+  "abstract": "We classify connected \u00b4 etale algebras A\u2019s in pre-modular fusion categories B with rank(B) \u2264 3 including degenerate and non-(pseudo-)unitary ones. We c omment on Lagrangian algebras and physical applications to ground st ate degeneracy and proof of spontaneous B-symmetry breaking.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240502202733-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Classification",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Rank one",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Rank two",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "BVecZ/2Z",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "BFib",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Rank three",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "BVecZ/3Z1",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "BIsing",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "BRep(S3)",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Bpsu(2)5",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Physical applications",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conformal dimensions of BRep(S3)",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conformal dimensions of Bpsu(2)5",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 8433,
+   "n_words": 1660
+  },
+  {
+   "id": "sec-001-rank-one",
+   "number": null,
+   "title": "Rank one",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 556,
+   "n_words": 109
+  },
+  {
+   "id": "sec-002-rank-two",
+   "number": null,
+   "title": "Rank two",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 7103,
+   "n_words": 1566
+  },
+  {
+   "id": "sec-003-rank-three",
+   "number": null,
+   "title": "Rank three",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 23,
+   "n_chars": 22940,
+   "n_words": 4671
+  },
+  {
+   "id": "sec-004-physical-applications",
+   "number": null,
+   "title": "Physical applications",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 12890,
+   "n_words": 2143
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 5,
+  "chars_total": 51922
+ }
+}

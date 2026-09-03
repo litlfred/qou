@@ -1,0 +1,196 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T08:14:52.770128+00:00",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "assertions": [
+    {
+      "name": "bar_odd_shift_unique",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "bar_defect_independent_of_z",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "zD_even_is_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "zD_even_eq_twoQ_Xi_over_2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "qbeta-d-frame-eigenphase-window",
+  "scriptFile": "qbeta_d_frame_eigenphase_window_probe.py",
+  "scriptHash": "798a5b870ac7",
+  "scriptCommitSha": "98f6bfecb17731e452230df3979c8f15aec85d94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py"
+  },
+  "description": "Convention-D Q_β ladder: the bar-odd eigenphase is pinned uniquely by bar-parity (exact, z-independent), and the window its implied c_2 must hit is measured against the candidate spread. No fit; nothing wired.",
+  "parameters": {
+    "bean": "qou-cds1",
+    "markov_convention": "D (z = q^3/(q^2+1)); C measured for comparison",
+    "ladder_frame": "u",
+    "band_on_c2": "0.0200000000000000000000000000000000000000000000000000000000000"
+  },
+  "data": {
+    "section1_exact": {
+      "zD_satisfies_full_bar": true,
+      "zC_is_bar_even": true,
+      "defect_is_z_independent": true,
+      "defect_factored": "(q - 1)**2*(q + 1)**2*(2*t + 1)/q**2",
+      "bar_odd_shift_roots": [
+        "-1/2"
+      ],
+      "bar_odd_shift_unique": true,
+      "zD_even_closed_form": "(q**4 + 1)/(2*q*(q**2 + 1))",
+      "zD_even_is_bar_even": true,
+      "Xi_D": "(q**4 + 1)/(q**2 + 1)**2",
+      "Xi_D_matches_lean": true,
+      "zD_even_eq_twoQ_Xi_over_2": true,
+      "zD_even_ne_zC": true
+    },
+    "anchors": {
+      "proton": {
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "u": "0.00851723455015614218925557360330920296919422161162716337301758",
+        "R": "0.998325241673246588884133709366744904990942384746367165695273",
+        "z_C": "0.499320334183694452413442680257666303751948164041532194568092",
+        "z_D": "0.612688037146465251595829863945899248026308391545064759724287",
+        "z_D_even": "0.508157887748645593880406757381061776096429643913552482033439",
+        "candidates": {
+          "alpha_C": {
+            "A": "-0.0565947375433069098934923136915887720976454278122049211493515",
+            "c2_implied": "-1.01762379751300711670884700236845647630032150437346192571529",
+            "c3": "-2.06934257711516783787971951724962858902203099810343886691284",
+            "rung_gain": "0.0173198348318787006404616623635882634238375230836008314873600"
+          },
+          "alpha_D_naive": {
+            "A": "-0.0447443946157208360134750658668690487727344490597214765592576",
+            "c2_implied": "-9.29886287064503418138559059741264428322370604278684917078484",
+            "c3": "-974.431887746748422982615210779173710979388500286240961343459",
+            "rung_gain": "0.892524715822029139911608732147176372347497530943623512785386"
+          },
+          "alpha_D_barodd": {
+            "A": "-0.0556709467488513333639798997862161262147879392380980038182453",
+            "c2_implied": "-1.73311882541942835372337429126024887132876692598868509040927",
+            "c3": "-86.0809935205746182829014777803793290316452923846035479531874",
+            "rung_gain": "0.423036205811088440577673685241559984700849165502072471982539"
+          }
+        },
+        "window": {
+          "band": "0.0200000000000000000000000000000000000000000000000000000000000",
+          "A_star": "-0.0566173007940610323629668069383734567951046903736151758566961",
+          "half_width": "0.0000256003089433678326555756767580528740473983802252691517490108",
+          "relative_demand": "0.000452164066183339146596473966275669990400960312523172858811379",
+          "spread_C_vs_Dbarodd": "0.000923790794455576529512413905372645882857488574106917331106163",
+          "spread_C_vs_Dbarodd_in_w": "36.0851424293025663954315277721499570174763889449018517744433",
+          "spread_C_vs_Dnaive": "0.0118503429275860738800172478247197233249109787524834445900939",
+          "spread_C_vs_Dnaive_in_w": "462.898434304094355853233183009707924453726336166794764106766"
+        }
+      },
+      "muon": {
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "R": "0.998325271781608349305043125005508644030385794219958719271975",
+        "z_C": "0.499320334032560016888283520491754597884981667929951720485360",
+        "z_D": "0.612688050638272415220888927646110664831964631360779679271089",
+        "z_D_even": "0.508157889563114041905488796895150721841896046747840122419219",
+        "candidates": {
+          "alpha_C": {
+            "A": "-0.0565947443068454029923948073894057595599381583035191118490124",
+            "c2_implied": "-1.01720237966693041238903467532645019270647677634887868028657",
+            "c3": "-2.01986031187400546349321995587646029747377592135260349078716",
+            "rung_gain": "0.0169126891747407456129371819131048105652348093376399388947710"
+          },
+          "alpha_D_naive": {
+            "A": "-0.0447443986293273793084248136251043696020637259210836308107502",
+            "c2_implied": "-9.29844100416512862398353218347925701665830605332822562957700",
+            "c3": "-974.382147079536184945277477315145234783021511164620054144175",
+            "rung_gain": "0.892519836448079453634111346170688267924193310023654860229949"
+          },
+          "alpha_D_barodd": {
+            "A": "-0.0556709532037259340403873535981592075346051845066842677402434",
+            "c2_implied": "-1.73269745010426603172380084073784212724319439172723704224699",
+            "c3": "-86.0314984747091427039641125765167499187729269095651912967210",
+            "rung_gain": "0.422895876148648892245607644994838456552913734748093187949635"
+          }
+        },
+        "window": {
+          "band": "0.0200000000000000000000000000000000000000000000000000000000000",
+          "A_star": "-0.0566167681397284550163686882171513974284478262308794845519005",
+          "half_width": "0.0000256005611434218770952279479402807861312105342853254274389116",
+          "relative_demand": "0.000452172774684709552619974613525312365141670234688176007826401",
+          "spread_C_vs_Dbarodd": "0.000923791103119468952007453791246552025332973796834844108768942",
+          "spread_C_vs_Dbarodd_in_w": "36.0847989989016000462249250635870327622100588669709732732555",
+          "spread_C_vs_Dnaive": "0.0118503456775180236839699937643013899578744323824354810382621",
+          "spread_C_vs_Dnaive_in_w": "462.893981547080157907631386323833284775438584093462748546621"
+        }
+      }
+    },
+    "derived_candidate_reaches_c2_band": false,
+    "crossanchor_c3_swing": {
+      "alpha_C": "-0.0494822652411623743864995613731682915482550767508353761256800",
+      "alpha_D_naive": "-0.0497406672122380373377334640284761963669891216209071992840000",
+      "alpha_D_barodd": "-0.0494950458654755789373652038625791128723654750383566564664000"
+    },
+    "crossanchor_swing_ratio_to_C": {
+      "alpha_C": "1.00000000000000000000000000000000000000000000000000000000000",
+      "alpha_D_naive": "1.00522211280781681734226694995186724861187998435101807507730",
+      "alpha_D_barodd": "1.00025828696909722002671188294844950215234608084328975002290"
+    },
+    "required_z_for_c2_minus_one": {
+      "z_star": "0.499104480184784994190898414448076311065995776220039174429022",
+      "rel_gap_to_z_C": "0.000432482591279368859656485034121423447313149389732976268042893",
+      "rel_gap_to_z_D_even": "0.0181393033388695060950132065251199525215235763410868685416727",
+      "rel_gap_to_z_D": "0.227574709246504591741634342429130044326723022450756455763902",
+      "required_bar_even_shift_ce": "-0.00905340756386059968950834293298546503043386769351330760441677",
+      "ce_over_h_squared": "-0.207142368735185935169678343681594183730302602528190394027636",
+      "ce_over_u": "-1.06295153791375019833238138653008996189918677793673295472576",
+      "ce_experimental_sigma": "0.000131608168318692724910823897193220759591877088175238332654256",
+      "ce_relative_resolution": "0.0145368655271907041341820395093976242797833635289155843286820",
+      "ce_significance_sigma": "68.7906205178506047464174260893423000976537172371957590772272",
+      "u_is_not_bar_even": "bar(u)/u = q^2; so ce = -u is parity-inadmissible",
+      "note": "ce is BAR-EVEN, so bar-parity does not exclude it. Reported as an open target; selecting it to hit c_2 = -1 would be a fit."
+    }
+  },
+  "caveats": [
+    "No c_k value here is a proposal. The naive-z-swap row measures the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero forbids, and is reported only to reproduce the sensitivity figure recorded in bean qou-cds1.",
+    "The CODATA inversion is a measuring stick applied AFTER the eigenphase is chosen by the §1 bar-parity argument. No phase is selected by fitting.",
+    "Bar-parity prunes the D eigenphase class to an AFFINE FAMILY, not a point: generalShift_bar_defect shows the bar-even part of the shift cancels. The canonical member (bar-even part zero) is what is measured.",
+    "Scope-(a) negative: the derived bar-odd D eigenphase alone does not reproduce the c_2 = -1 band. No proved invariant excludes the ladder shape, so this is NOT a scope-(b) structural exclusion."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

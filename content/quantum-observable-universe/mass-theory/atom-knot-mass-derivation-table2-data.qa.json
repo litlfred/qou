@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. The tooling-roadmap rungs are out of the table: \"R5-full pending — research-grade\" -> \"not implemented — needs the full joint-tower SDP solver (research-grade)\"; the \"(R2;\", \"(R3;\", \"(R4;\" tags dropped from the three Rust entries; \"R5-minimal\" -> \"reduced form\", which keeps the reduced/full distinction the two rungs encoded. Row 7's branch URL had already been made repo-relative. Every unit-test count, scaling note and the ✓/✗/partial column are unchanged.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The tooling-roadmap rungs are out of the table: \"R5-full pending \u2014 research-grade\" -> \"not implemented \u2014 needs the full joint-tower SDP solver (research-grade)\"; the \"(R2;\", \"(R3;\", \"(R4;\" tags dropped from the three Rust entries; \"R5-minimal\" -> \"reduced form\", which keeps the reduced/full distinction the two rungs encoded. Row 7's branch URL had already been made repo-relative. Every unit-test count, scaling note and the \u2713/\u2717/partial column are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 272,
           "depth": 54,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 3,
           "edge_span_mean": 3,
           "worst_target": ""
@@ -1067,5 +1067,6 @@
     "md": "e3ab7c021463",
     "ts": "73750f7b39f1"
   },
-  "updated_at": "2026-08-19T21:35:56.961Z"
+  "updated_at": "2026-08-19T21:35:56.961Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

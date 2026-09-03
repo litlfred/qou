@@ -1,4 +1,7 @@
 {
+  "scriptFile": "shadow_price_c_321_q0.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "computation": "shadow-price-c-321-q0",
   "description": "Numerical evaluation of the BW shadow-price coefficient C_{[3,2,1]} at q_0 via the closed form from prop:wigner-2-coefficient.  Uses [n]_q \u00b7 h / [3]_q^3 \u00b7 [5]_q closed form; cross-checks via Wigner-2 corollary C = w \u00b7 h/2.",
   "reference_blocks": [

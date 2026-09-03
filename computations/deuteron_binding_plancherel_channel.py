@@ -54,7 +54,7 @@ def main() -> int:
     print("=" * 78)
     print(f"\nq_0 = {q_str(60)} (display)\n")
 
-    m_n_derived_3input = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
+    m_n_derived_3input = M_P_MEV + M_E_MEV + mp.mpf(_ec.Q_NEUTRON_MEV)
     # Deuteron CODATA from the codata_constants registry (no inline literal).
     from codata_constants import M_D_MEV_VALIDATION
     M_D_MEV = M_D_MEV_VALIDATION
@@ -160,8 +160,8 @@ def main() -> int:
 
     w.add_assertion(
         name="deuteron_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )

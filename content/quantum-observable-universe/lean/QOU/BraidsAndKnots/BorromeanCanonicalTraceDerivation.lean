@@ -211,7 +211,34 @@ end TwoDimRep
 
 /-! ## The Markov-forced weights over `ℚ`, in `t = √q` -/
 
-/-- The Markov parameter `z = 1/(√q + 1/√q) = t/(t² + 1)`. -/
+/-- The Markov parameter `z = 1/(√q + 1/√q) = t/(t² + 1)`.
+
+**Convention C, deliberately — this one is NOT migrated (2026-08-26, bean
+`qou-cxjq`).** Every other convention-C Markov parameter in the Lean tree moved
+to `z_D = q³/(q²+1)` under the owner ruling of 2026-08-15. This one stays,
+because the file exists to derive the **C** value: `trC_borromean_derived`
+evaluates the C-forced weight system at `β_Bor` and lands on `trC_borromean`,
+which `BorromeanTraceConventionSplit.conventionD_ne_conventionC` then proves is
+a different function from the D closed form. Migrate `z` here and the file
+derives the D trace and compares it to itself — the registry claim it exists to
+machine-check evaporates.
+
+The whole apparatus below is C-forced and moves with it: `wden`, `wnum3`,
+`wnum21`, `wnum111` are the solution of the 3×3 Markov system at *this* `z`
+(`weights_markov_sigma` closes the loop by recovering `zMarkov t` from them), so
+they are not shared constants that survive a convention change — they are C's
+answer to C's system.
+
+**Why the audit called this actionable, and why that was a detector limit rather
+than a defect.** `scripts/lean-markov-convention-audit.py` takes deliberateness
+evidence from the declaration's name and its own docstring. This module's intent
+was stated only in the **module header** — its first line reads *"Canonical
+(convention C) Markov trace of β_Bor"* — and in `trC_borromean_derived`'s
+docstring three declarations below. A detector that walks back from a
+declaration to the doc-comment opener directly above it cannot see either. Recorded as entry #16 in the
+detector-blindness taxonomy; fixed at the source, here, rather than by teaching
+the scanner to trust module headers, which would silently absolve every C
+definition in any file whose header mentions C. -/
 noncomputable def zMarkov (t : ℚ) : ℚ := t / (t^2 + 1)
 
 /-- Common denominator of the Markov-forced weights:

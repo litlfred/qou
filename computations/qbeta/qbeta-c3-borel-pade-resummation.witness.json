@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "large-order kappa ratio -> A ~ Vol(4_1)/pi=0.646 (geometric<->conjugate saddle gap, literature)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel-Pade resummed Im V=0.0555 stable vs truncation; singularity off imaginary ray => no Stokes, exact smooth, no anchor-dependent transseries"
     }
   ],

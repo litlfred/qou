@@ -1,0 +1,273 @@
+# Copilot reviews DO arrive — mechanism unsettled, and the rule citing their absence was self-sealing
+
+**Date:** 2026-08-30 · **Bean:** `qou-gwe9` (reopened)
+**Corrects:** [`AGENTS.md` §"Branch + PR workflow" rule 10](../../AGENTS.md), the Phase-4 gate table
+
+---
+
+## The finding
+
+**GitHub Copilot reviews are arriving, in both repos.** Measured first-hand
+today. Note the framing: *that* they arrive is established; *why they did not
+before* is not — three candidate mechanisms are weighed below. This file
+originally picked none; **candidate (2) is now closed** in the final section,
+leaving (3) as the live gate and (1) as unneeded rather than refuted.
+
+| PR | requested | review submitted | latency |
+|---|---|---|---|
+| `litlfred/qou#6122` | 2026-08-30 07:24Z | 2026-08-30 **07:27:39Z** | ~3 min |
+| `litlfred/folio-assistant#153` | 2026-08-30 07:48Z | 2026-08-30 **07:51:52Z** | ~4 min |
+
+Both from `copilot-pull-request-reviewer[bot]` (app id 175728472), both
+`COMMENTED` with substantive line-level findings — three on #6122, three on
+#153. **Five of the six were real defects**, and four of those were mine.
+
+The second row matters as much as the first: `folio-assistant` is a *different
+repository*, so this is not a qou-specific setting.
+
+## 🛑 There is a QUOTA, and I exhausted it in thirty minutes
+
+Added after the fact, because it changes the shape of this finding.
+
+The **third** review request on #6122 returned, from the same bot at
+2026-08-30 07:56:06Z:
+
+> *"Copilot was unable to review this pull request because the user who
+> requested the review has reached their **quota limit**."*
+
+So Copilot review here is a **rationed** resource, not a binary
+available/unavailable one. Five requests across two repos in roughly thirty
+minutes — three of which I fired while chasing this very measurement —
+exhausted it. That is my own error and it is worth naming: re-requesting a
+review after every push is expensive in a way nothing in the repo's docs says.
+
+**What this does and does not establish.** It confirms a quota exists and that
+we hit it. It is a *candidate* explanation for the historical zeros, **not an
+established one**, and the reason is a signature mismatch: today's exhaustion
+**announces itself** as a posted review, whereas `qou-gwe9` recorded
+`get_check_runs` returning `total_count: 0` with nothing enqueued and no
+message of any kind. Either the older exhaustion was silent and the message is
+new, or the two are different failure modes. I cannot tell from here, and the
+distinction matters — "we were over quota all along" and "it was off and came
+back" imply different operating rules.
+
+**What is safe to act on:** treat Copilot review as a scarce resource. Request
+it *once* per PR, at the point the branch is actually ready — not after every
+push, which is what burned the quota here. On whether to *wait*, see the
+disposition: the sibling's "do not wait, but it can arrive" is the better rule.
+
+## The prior measurement was sound and has expired
+
+This is not a case of a bad measurement being repeated. `qou-gwe9` was careful:
+it recorded **n=2 controlled cases**, explicitly labelled its five background
+PRs weak evidence that "may simply never have requested it", and stated in
+terms — *"DOES NOT: prove Copilot is disabled at the org/repo level."* A later
+session strengthened it to five explicit requests plus the mechanism
+observation (`get_check_runs` returning `total_count: 0`, i.e. nothing
+*enqueued*, which is the difference between slow and absent), a sixth request
+on #5532, and ~12 merged PRs across #5415–#5880 carrying no reviews of any
+kind.
+
+**And it was not merely slow.** `#5495`, the bean's own controlled case,
+requested 2026-08-22, still shows **zero reviews eight days later**. Nothing
+arrived late.
+
+## 🛑 A sibling reached this first, with a better hypothesis than mine
+
+Found on rebase: another agent had already appended a re-scoping to `qou-gwe9`,
+from a different observation — **one *unrequested* review on #6108**, arriving
+~23 minutes after the last push, with `get_status total_count` at 0 throughout.
+Their reading:
+
+> *"consistent with Copilot reviewing on its own trigger rather than on
+> `request_copilot_review`, which would make the ORIGINAL measurement correct
+> about the API and wrong about the outcome."*
+
+**That is a better hypothesis than the one this file opened with**, and my own
+data cannot distinguish it, because in all three of my cases I *pushed and
+requested within moments of each other*. A push-triggered review and a
+request-triggered review are indistinguishable from my timings.
+
+So there are now **three live candidate mechanisms**, and I am not in a position
+to pick (**(2) is closed in the final section, added by a later session** — the
+list is kept as it stood so the narrowing is legible):
+
+1. **Availability changed** between 08-27 and 08-30 (this file's opening claim —
+   now the weakest, since it rests on the absence I could not distinguish).
+2. **Copilot reviews on its own trigger**, never on `request_copilot_review`
+   (the sibling's, from an unrequested review).
+3. **Quota** gates it (below), which would make all of this intermittent.
+
+One piece of evidence bears on (2): the quota refusal says *"the user who
+**requested** the review has reached their quota limit"*, which implies the
+request path is live and consuming quota. That weakens (2) without settling it —
+the request may be accepted and still not be what schedules the review. **The
+final section settles it**, on the half this paragraph correctly identifies as
+missing: reviews that *followed* requests on PRs which had sat unreviewed for
+hours.
+
+**Their instruction is also better than mine and should be preferred:** state
+*"do not **wait** on Copilot"* (it is unpredictable and there is no check run to
+poll) rather than *"it does not come"*. That is right, and it is what this file
+should have said.
+
+So the bean was right for its window, a sibling had already caught the
+over-claim, and what went wrong is what happened to the finding downstream.
+
+## The actual defect: a time-bounded measurement became a standing instruction
+
+AGENTS.md rule 10 does not merely record the observation. It instructs:
+
+> `prepare-merge-auto` Phase 1b still prescribes a 15-minute poll for a check
+> run that is never created; **that wait can only expire, so skip it** and
+> record why (citing `qou-gwe9`) rather than burning the window.
+
+**That instruction prevents the observation that would falsify it.** An agent
+that never waits for a Copilot review never sees one arrive. The claim
+therefore cannot be disconfirmed by any agent following the rule — it is
+self-sealing.
+
+Measured consequence, in this session alone: I merged **#6068** at 06:59Z
+having requested a Copilot review at ~06:57Z, roughly two minutes earlier,
+because the rule told me not to wait. #6068 shows zero reviews — not because
+none was coming, but because I merged inside the latency window. Its review, if
+it came, had nowhere to land. Every finding Copilot later made on #6122 applied
+to code that also shipped in #6068.
+
+## Why this generalises
+
+AGENTS.md is full of correctly-scoped measurements that later became standing
+facts — the document says so about itself repeatedly (the `4.6e6` slope, the
+`~840` muon witnesses, the "five other sites", the 39 %/73 %/58 % witness
+figures). This is the same class with an extra turn of the screw: **the stale
+fact is not merely quoted, it is wired into an instruction that suppresses
+re-measurement.**
+
+The distinguishing question for any such rule: *if this claim became false,
+what would notice?* Where the answer is "nothing, because the rule tells agents
+not to look", the claim needs an expiry or a cheap periodic probe, not just a
+citation.
+
+## Disposition
+
+Recorded here; `AGENTS.md` rule 10 and `prepare-merge-auto` Phase 1b both need
+the Copilot row rewritten from "does not arrive" to something that does not
+over-claim in the other direction — the sibling's *"do not wait on it, but it
+can arrive"* is the right shape, not my first draft's "arrives in ~3-4 minutes;
+wait for it", which assumes mechanism (1) over (2) and (3). That edit is
+**not** made in this audit — it belongs in a change
+that also revisits the 15-minute poll duration, and this file is the
+measurement that justifies it.
+
+What is safe to act on immediately — adopting the sibling's wording, which is
+more accurate than mine: **do not WAIT on Copilot** (unpredictable, no check
+run to poll), but do **request it once**, when the branch is ready, and give it
+a few minutes if you are not otherwise blocked. The cost of waiting four minutes is four minutes; the cost of not
+waiting is #6068; and the cost of requesting after every push is the quota,
+which I spent proving the point.
+
+## A footnote on trusting the reviewer
+
+Of the six findings Copilot produced today, **five were real and one was
+false**. The false one claimed the refutation proofs in
+`2026-08-30-qns-carriers-are-refutable.lean` "leave goals unsolved" because
+`norm_num at h` does not close `False`. It does, when `h` reduces to `False`,
+and the file was verified before and after: `lean`-direct **exit 0, 0 errors, 0
+`sorry`**, with `#print axioms` on the two named proofs showing only `propext`,
+`Classical.choice`, `Quot.sound` — no `sorryAx`.
+
+Recorded because the correct handling was *not* to apply the suggested fix. A
+review bot's finding is a bug report to verify, and the verification here was
+cheap and decisive. Rewriting two working proofs to satisfy a speculative
+comment would have been the same failure as widening a baseline to make a gate
+green.
+
+---
+
+## Candidate (2) is REFUTED — added 2026-08-30, second session
+
+This file weighs three candidates and picks none. One of them can now be
+closed, on evidence this file did not have.
+
+**Candidate (2) was:** *"Copilot reviews on its own trigger, never on
+`request_copilot_review`"* — sourced from an unrequested review, with the
+quota wording noted as weakening it "without settling it — the request may be
+accepted and still not be what schedules the review."
+
+**Two independent lines settle it.**
+
+**A. A request produced a direct bot response in ~1 second.** Both of my
+`request_copilot_review` calls on `qou#6132` drew a reply from
+`copilot-pull-request-reviewer[bot]` (app 175728472):
+
+| review id | submitted | body |
+|---|---|---|
+| 5060275190 | 07:56:07Z | *"unable to review … reached their quota limit"* |
+| 5060276153 | 07:56:40Z | same |
+
+An ignored request produces no response at all. This one produced two, each
+within a second of the call. The request path is unambiguously live.
+
+**B. Reviews followed requests on PRs that had sat unreviewed for hours.**
+This is the part (A) alone cannot give, since a refusal proves receipt but not
+scheduling:
+
+| PR | created | I requested | review submitted | had sat |
+|---|---|---|---|---|
+| `#6104` | 04:51Z | ~07:36Z | **07:40:25Z** | **2 h 45 m** |
+| `#6116` | 06:57Z | ~07:31Z | **07:36:45Z** | **34 m** |
+
+Neither received an unrequested review in that window. Both received one
+within ~4–5 minutes of an explicit request. Under (2) — reviews fire only on
+Copilot's own trigger — that coincidence has to happen twice, on two PRs, at
+two different ages, in a nine-minute window. Reject.
+
+**What this leaves.** (3) **quota is an active gate** — now confirmed twice
+over, and it is the gate that was hit. (1) *availability changed* is neither
+confirmed nor needed: quota alone produces intermittent zeros, so the
+historical n=5 no longer requires a separate mechanism. It is **not
+established** that quota explains those five — that would need quota state
+from 2026-08-23, which is not recoverable from this repo — but (1) is no
+longer load-bearing.
+
+**Read (2)-is-refuted as "a request CAN schedule", never as "a request WILL".**
+The two are different claims and only the first is measured here. Later the same
+day, four PRs give censored negatives — an event that did not occur inside the
+window watched, which bounds latency from below and nothing more:
+
+**A censored bound is only meaningful with the time it was read at**, because
+it grows until the event happens. Re-read by hand at **10:54Z**:
+
+| PR | pushed | requested | reviews @ 10:54Z | window |
+|---|---|---|---|---|
+| `#6162` | 10:08:42Z | **~10:09Z** | none | **≥ 45 min** |
+| `#6168` | 10:10:53Z | none | none | **≥ 43 min** |
+| `#6170` | 10:04:19Z | none | none | **≥ 42 min** (to its force-push at 10:46Z) |
+| `#6174` | 10:35:45Z | none | none | ≥ 18 min — weak |
+
+`#6162` / `#6168` / `#6174` are a sibling session's,
+[`qou#6179`](https://github.com/litlfred/qou/pull/6179); `#6170` is this PR
+observing itself. All four `get_reviews` → `[]`, verified here rather than
+copied — which is why these bounds are larger than that PR's, not different
+from them.
+
+`#6162` is the row that bears on this section: an explicit request, and nothing
+at ~11× the 3–4 min request→review latency measured above. `#6174` still cannot
+discriminate — at ≥ 18 min it is only ~1.7× the 10m28s push-trigger latency it
+would have to beat.
+
+**It is not a counterexample, and it is not evidence that reviews stopped
+again.** The ration was exhausted at 07:56:40Z and 10:09Z is ~2 h later; nobody
+has evidence it had recharged. Quota alone explains every row. But it does mean
+a request is not a guarantee, and an agent must not plan around one arriving.
+
+**The recharge interval is the one unknown left, and it is measurable for
+free** — no experiment, no spent calls. It is bounded above by the *next
+successful Copilot review anywhere in this repo after 07:56:40Z*. Record that
+timestamp when you see it; do not burn requests probing for it, which is the
+error that created the shortage in the first place.
+
+**Operational consequence, unchanged and now better grounded:** requests work,
+and they are the thing that spends the ration. Do not re-request after every
+push. Five successful reviews across two repos exhausted it in ~30 minutes,
+and the sixth through eighth calls returned refusals.

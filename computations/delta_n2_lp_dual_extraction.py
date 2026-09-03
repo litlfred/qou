@@ -226,6 +226,79 @@ def main() -> int:
     # closed-form symbolic chain for σ_1^a σ_2^b σ_1⁻¹^c σ_2⁻¹^d
     # (the σ⁻¹ exponents introduce a different Hecke-power recurrence).
 
+    # ── Making the KEY FINDING checkable ─────────────────────────
+    # The headline "Δ_n² is particle-dependent, not a uniform scalar" was
+    # asserted with `computed=True` on the strength of having computed ONE
+    # particle, which cannot exhibit a dependence.  The neutron word is
+    # genuinely deferred (above), but the claim does not need it: what the
+    # uniform-scalar hypothesis actually says is that tr_M(Δ_n²·β)/tr_M(β) is
+    # the SAME number for every β.  Evaluate the same pipeline on a second
+    # H_3 word and the hypothesis is refuted by the spread — under it the
+    # spread is exactly 0, so there is no band to choose.
+    #
+    # The control word is the identity braid σ_1^0 σ_2^0, whose ratio has an
+    # independent closed form: χ^λ(1) = f^λ and Σ_λ y_λ f^λ = 1 (the first
+    # Markov axiom), so the ratio must be Σ_λ y_λ f^λ q^{c(λ)} outright.
+    f_lambda_dims = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}
+    identity_exps = [0, 0]
+    sym_chi_identity = {
+        (3,): chi_one_dim(q, identity_exps),
+        (2, 1): chi_std_h3(seq, identity_exps),
+        (1, 1, 1): chi_one_dim(-1 / q, identity_exps),
+    }
+    chi_identity = {}
+    for p in parts_3:
+        fn = sp.lambdify(q, sym_chi_identity[p], modules=["mpmath"])
+        chi_identity[p] = mp.mpf(str(fn(Q_MP)))
+    # Control 1: the character machinery evaluated where the answer is known a
+    # priori — χ^λ(1) is the block dimension (1, 2, 1) for S_3.
+    chi_identity_dim_gap = max(
+        abs(chi_identity[p] - f_lambda_dims[p]) for p in parts_3
+    )
+    tr_M_identity = sum(y_at_q0[p] * chi_identity[p] for p in parts_3)
+    delta_n2_identity = sum(
+        y_at_q0[p] * qc_at_q0[p] * chi_identity[p] for p in parts_3
+    )
+    ratio_identity = delta_n2_identity / tr_M_identity
+    ratio_identity_closed = (
+        sum(y_at_q0[p] * f_lambda_dims[p] * qc_at_q0[p] for p in parts_3)
+        / sum(y_at_q0[p] * f_lambda_dims[p] for p in parts_3)
+    )
+    ratio_identity_route_gap = abs(ratio_identity - ratio_identity_closed)
+    braid_spread = abs(ratio_proton - ratio_identity)
+
+    # Control 2: the solved y_λ really do satisfy the three Markov axioms they
+    # were solved from, at q_0.  Floor is 1e-15, set by Q0_FLOAT being a
+    # float64 (the residuals sit at ~3e-18); it is not a band chosen to pass.
+    _z_q0 = mp.mpf(Q0_FLOAT) ** 3 / (mp.mpf(Q0_FLOAT) ** 2 + 1)
+    _h_q0 = mp.mpf(Q0_FLOAT) - 1 / mp.mpf(Q0_FLOAT)
+    _chi_s1 = {(3,): mp.mpf(Q0_FLOAT), (2, 1): _h_q0,
+               (1, 1, 1): -1 / mp.mpf(Q0_FLOAT)}
+    _chi_s1s2 = {(3,): mp.mpf(Q0_FLOAT) ** 2, (2, 1): _h_q0 ** 2 - 1,
+                 (1, 1, 1): 1 / mp.mpf(Q0_FLOAT) ** 2}
+    markov_residual = max(
+        abs(sum(y_at_q0[p] * f_lambda_dims[p] for p in parts_3) - 1),
+        abs(sum(y_at_q0[p] * _chi_s1[p] for p in parts_3) - _z_q0),
+        abs(sum(y_at_q0[p] * _chi_s1s2[p] for p in parts_3) - _z_q0 ** 2),
+    )
+
+    # The Phase 1.11 scalar this module says is wrong: the dim²-weighted
+    # ⟨q^{c(λ)}⟩ the prose below quotes as 1.0165.  Rebuilt from q_0 and the
+    # S_3 dimensions so the quoted figure is confronted, not restated.
+    uniform_scalar = (
+        sum(f_lambda_dims[p] ** 2 * qc_at_q0[p] for p in parts_3)
+        / sum(f_lambda_dims[p] ** 2 for p in parts_3)
+    )
+    proton_vs_uniform = abs(ratio_proton - uniform_scalar)
+
+    print()
+    print("  ── uniform-scalar hypothesis, confronted ──")
+    print(f"    Phase 1.11 dim²-weighted ⟨q^c⟩ = {mp.nstr(uniform_scalar, 12)}")
+    print(f"    identity-braid ratio           = {mp.nstr(ratio_identity, 12)}")
+    print(f"    proton-braid ratio             = {mp.nstr(ratio_proton, 12)}")
+    print(f"    braid spread (0 if uniform)    = {mp.nstr(braid_spread, 12)}")
+    print(f"    |proton − uniform|             = {mp.nstr(proton_vs_uniform, 12)}")
+
     print()
     print("─" * 100)
     print("  KEY FINDING: Δ_n² shadow-price IS particle-dependent")
@@ -284,10 +357,76 @@ def main() -> int:
         "closed-form chain for the σ⁻¹-rich neutron braid word, which "
         "is naturally subsumed by Item 2's difference formula."
     ))
+    w.add_data("delta_n2_shadow_price_ratio_identity_braid", float(ratio_identity))
+    w.add_data("phase_1_11_uniform_dim2_weighted_scalar", float(uniform_scalar))
+    w.add_data("braid_word_spread_of_shadow_price", float(braid_spread))
+
+    # Was `computed=True, expected=True` with the comment "demonstrated by
+    # computing the proton-specific value" (bean `qou-26f2`).  One particle
+    # cannot demonstrate a dependence on the particle: the assertion would
+    # have read PASS at a shadow price that was perfectly uniform, which is
+    # exactly the hypothesis it claims to refute.  Replaced by the spread the
+    # uniform hypothesis predicts to be zero, plus the two controls that make
+    # the pipeline producing it trustworthy.
     w.add_assertion(
-        "delta_n2_shadow_price_is_particle_dependent",
-        computed=True,   # demonstrated by computing the proton-specific value
-        expected=True,
+        "delta_n2_shadow_price_varies_with_braid_word",
+        computed=float(braid_spread),
+        expected=0.1228605135,
+        tolerance=1e-8,
+        source="|ratio_Δ_n²(σ_1^7σ_2^4) − ratio_Δ_n²(1)| = "
+               f"|{mp.nstr(ratio_proton, 12)} − {mp.nstr(ratio_identity, 12)}|. "
+               "A uniform Δ_n² scalar predicts exactly 0 for every pair of "
+               "braid words, so any nonzero spread refutes the Phase 1.11 "
+               "discharge. NOTE: this shows braid-word dependence, which is "
+               "what the uniform hypothesis denies; proton-vs-NEUTRON "
+               "specifically is still deferred with the σ⁻¹-aware chain.",
+    )
+    w.add_assertion(
+        "phase_1_11_uniform_scalar_reproduced",
+        computed=float(uniform_scalar),
+        expected=1.0165,
+        tolerance=5e-5,
+        source="dim²-weighted Σ_λ (f^λ)²q_0^{c(λ)} / Σ_λ (f^λ)² with "
+               "f^λ=(1,2,1) and c(λ)=(3,0,−3); the prose quotes Phase 1.11's "
+               "value as 1.0165 — rebuilt here so the quoted figure is "
+               "confronted rather than restated",
+    )
+    w.add_assertion(
+        "proton_shadow_price_departs_from_uniform_scalar",
+        computed=float(proton_vs_uniform),
+        expected=0.2918026017,
+        tolerance=1e-8,
+        source=f"|ratio_Δ_n²(p) − ⟨q^c⟩_dim²| = {mp.nstr(proton_vs_uniform, 12)}; "
+               "the size of the error Phase 1.11's uniform discharge makes on "
+               "the proton alone",
+    )
+    # Controls on the pipeline the three numbers above come out of.
+    w.add_assertion(
+        "chi_lambda_at_identity_equals_block_dimension",
+        computed=float(chi_identity_dim_gap),
+        expected=0.0,
+        tolerance=1e-40,
+        source="max_λ |χ^λ(σ_1^0σ_2^0) − f^λ| with f^λ = (1,2,1) the known S_3 "
+               "irrep dimensions; exercises chi_std_h3 and chi_one_dim at the "
+               "one argument whose value is fixed a priori",
+    )
+    w.add_assertion(
+        "identity_braid_ratio_agrees_with_closed_form",
+        computed=float(ratio_identity_route_gap),
+        expected=0.0,
+        tolerance=1e-40,
+        source="the control ratio via the full χ^λ pipeline vs its closed "
+               "form Σ_λ y_λ f^λ q^{c(λ)} (valid because χ^λ(1)=f^λ and "
+               "Σ_λ y_λ f^λ = 1); two routes to the same number",
+    )
+    w.add_assertion(
+        "solved_y_lambda_satisfy_markov_axioms_at_q0",
+        computed=float(markov_residual),
+        expected=0.0,
+        tolerance=1e-15,
+        source="max residual of the three Markov axioms (Σy f=1, Σy χ(σ_1)=z, "
+               f"Σy χ(σ_1σ_2)=z²) at q_0 = {mp.nstr(markov_residual, 6)}; floor "
+               "1e-15 is the float64 q_0's own precision, not a fitted band",
     )
     w.add_assertion(
         "ratio_proton_finite_and_positive",

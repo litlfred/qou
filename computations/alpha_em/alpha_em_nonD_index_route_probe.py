@@ -218,7 +218,7 @@ def main() -> int:
     })
     wb.add_assertion(
         "index_trace_equals_b1_exact",
-        computed=float(trace_index), expected=float(B1), tolerance=1e-6,
+        computed=trace_index, expected=B1, tolerance=1e-6,
         source="Tr_{H1}(1)=-zeta_{Delta1}(0)=-b1*E_L(0)=2g=8, integer/area-free/q-independent "
                "(Epstein E_L(0)=-1 machinery, merged #3834)")
     wb.add_assertion(

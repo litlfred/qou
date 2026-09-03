@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:03:53.678687+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "neither_the_block_nor_what_it_uses_declares_a_producer",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "ilp-solution-count-unwrap.ts is a bare `remark` with no `computation:` field, and prop:stable-atom-decidable, the block it `uses`, declares none either. So nothing in the manifest layer points at code that computes N_l"
+    },
+    {
+      "name": "the_ONE_named_source_is_a_DEAD_citation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the 2026-05-27 mass-formula-uniqueness audit cites '84 feasible integer solutions' with Witness: mass-endomorphism.witness.json. The file exists but contains ZERO fields equal to 84 and ZERO keys naming ilp/solution/feasible/count/gluon. Its description is a different quantity -- a Phi_q tower mass endomorphism recording a 407.06% error against CODATA. The citation resolves to a file, which is why it survived review, but not to the number"
+    },
+    {
+      "name": "the_only_counting_code_CANNOT_return_84_and_is_orphaned",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "confinement_adaptive.ilp_solution_count_nucleon_level returns [0, 1, 2, 3] -- a magic-number lookup capped at 3, whose own docstring calls it 'a categorical proxy' for 'the full ILP enumeration per Lenstra's algorithm'. It cannot produce 84 for anything, and it is deprecated with 0 live importers"
+    },
+    {
+      "name": "N_l_eq_84_is_an_UNSOURCED_FIGURE",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "no manifest declares a producer, the one named witness does not carry the number, and the only counting code is a deprecated heuristic capped at 3. So the two reproduction attempts on this branch were measured against a figure nothing derives, and their failure is NOT evidence against their readings. NOT claimed: that 84 is wrong -- an exhaustive enumeration may have been run and its result recorded by hand. Claimed only: the corpus contains nothing that reproduces it, so it cannot be checked and a mismatch against it cannot be interpreted. Same class as the neutron NF table"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 138,
+  "computation": "qbeta-nl84-provenance",
+  "scriptFile": "qbeta_nl84_provenance_probe.py",
+  "scriptHash": "7eca095e53fd",
+  "scriptCommitSha": "116e63ee17ca9663988cac126502f04d42392831",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nl84_provenance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nl84_provenance_probe.py"
+  },
+  "description": "Provenance audit of N_l = 84: the block declares no producer, the one named witness does not contain the number, and the only ILP-counting code in the corpus is a deprecated heuristic capped at 3. The figure is unsourced, so the two failed reproductions on this branch cannot be read as evidence against their readings.",
+  "data": {
+    "block_declares_computation": true,
+    "used_block_declares_computation": false,
+    "neither_the_block_nor_what_it_uses_declares_a_producer": false,
+    "cited_witness_exists": true,
+    "cited_witness_fields_equal_84": 0,
+    "cited_witness_relevant_keys": [],
+    "the_ONE_named_source_is_a_DEAD_citation": true,
+    "counting_code_return_values": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "counting_code_live_importers": 0,
+    "the_only_counting_code_CANNOT_return_84_and_is_orphaned": true,
+    "grep_adjoin_loose": 51,
+    "grep_adjoin_excluding_adjoint": 8,
+    "N_l_eq_84_is_an_UNSOURCED_FIGURE": false,
+    "scope": "(a) provenance only"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's import cone -- it imports only stdlib and WitnessBuilder. This is provenance bookkeeping over an ILP solution count, with no substrate evaluation. It was declared `ambiguous` in the manifest, which the builder can never stamp, so the witness went out unstamped. Bean qou-fl0a."
+}

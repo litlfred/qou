@@ -162,7 +162,7 @@ def main():
 
     wb.add_assertion(
         "b2_formulas_agree",
-        computed=float(fabs(b2_sq_proved - b2_sq_pr1331)),
+        computed=fabs(b2_sq_proved - b2_sq_pr1331),
         expected=0,
         tolerance=1e-40,
         source="proved b² vs PR #1331 formula (correct sign)",
@@ -183,7 +183,7 @@ def main():
     )
     wb.add_assertion(
         "proton_trace_1994",
-        computed=float(fabs(tr_B3)),
+        computed=fabs(tr_B3),
         expected=1.994,
         tolerance=0.001,
         source="|tr(B₃)| on V_{(2,1)} = |χ^{(2,1)}((σ₁σ₂⁻¹)³)|",

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "form B (proton + derived Schwinger) resid +0.313 ppb < 3σ (=0.45 ppb)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Schwinger term reduces |resid| 1.67 -> 0.313 ppb"
     }
   ],

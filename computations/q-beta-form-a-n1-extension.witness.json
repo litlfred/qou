@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-22T21:16:24.142880+00:00",
-  "commitSha": "9436f70250d61e4e67905dbe5309ad1ddc6c6339",
+  "computedAt": "2026-08-29T11:06:08.530541+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -12,10 +12,10 @@
     },
     {
       "name": "factor_N1_equals_2q_squared_minus_2q_plus_1_over_q_squared",
-      "computed": 1.009817186454275,
-      "expected": 1.009817186454275,
+      "computed": "1.0098171864542750738105690571795642528890492845754",
+      "expected": "1.009817186454275073810569057179564252889049284575397769243735710018152",
       "passed": true,
-      "tolerance": 1e-40
+      "tolerance": "1e-40"
     },
     {
       "name": "geometric_N1_makes_residual_worse_than_N0",
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 438,
+  "durationMs": 320,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
-  "scriptHash": "c2d9c6aa2d17",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "0b19bbdbd569",
+  "scriptCommitSha": "a4edb12a83ed9aa87b2f71996fb8bb5aaabf69fc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

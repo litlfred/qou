@@ -34,7 +34,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies fit-section-chapter.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies fit-section-chapter.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -47,7 +47,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -61,7 +61,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -74,7 +74,7 @@
     "da-false-claim": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -83,11 +83,12 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -102,7 +103,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-vacuous.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-vacuous.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -115,7 +116,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -130,7 +131,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-circular.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-circular.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -143,7 +144,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -158,7 +159,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-overclaim.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-overclaim.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -171,7 +172,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -186,7 +187,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-hidden-dof.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-hidden-dof.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -199,7 +200,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -214,7 +215,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-non-sequitur.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-non-sequitur.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -227,7 +228,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -242,7 +243,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-lean-narrative-divergence.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -255,7 +256,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -270,7 +271,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-citation-misuse.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-citation-misuse.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -283,7 +284,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -298,7 +299,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-definitional-ambiguity.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -311,7 +312,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -326,7 +327,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-empirical-fragility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -339,7 +340,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -354,7 +355,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-physical-implausibility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -367,7 +368,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -382,7 +383,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-reproducibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-reproducibility.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -395,7 +396,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -410,7 +411,7 @@
     "da-referee-verdict": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:23Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -419,11 +420,12 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -438,7 +440,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -453,7 +455,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
         "reviewed_at": "2026-07-08T18:51:22.000Z",
         "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
         "reviewer": {
@@ -1142,7 +1144,7 @@
           "in_degree": 0,
           "cone_size": 132,
           "depth": 46,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1271,7 +1273,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the git working-branch references, the \"sibling\" branch/session references and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the `docs/audits/` and `docs/coordination/` links, the git working-branch references, the \"sibling\" branch/session references and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -1708,5 +1710,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T22:17:18.365Z"
+  "updated_at": "2026-08-21T22:17:18.365Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

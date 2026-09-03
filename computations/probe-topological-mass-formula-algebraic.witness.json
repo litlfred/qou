@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:00:45.119274+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "computedAt": "2026-08-30T12:52:26.741418+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "mass_alg - phi1/hbar_sq == 0 given phi1 = mass_alg*hbar_sq (symbolic)",
@@ -16,7 +16,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "algebraic-side numerical check"
     }
   ],
@@ -24,7 +24,7 @@
   "durationMs": 0,
   "computation": "probe-topological-mass-formula-algebraic",
   "scriptFile": "probe_topological_mass_formula.py",
-  "scriptHash": "035c202a2c10",
+  "scriptHash": "e7b57e236929",
   "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -37,8 +37,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_topological_mass_formula.py"
+    ],
+    "reproduce": "python3 -u computations/probe_topological_mass_formula.py"
   },
   "description": "Algebraic-side topological mass identity mass_alg = Phi_1/hbar_sq (prop:topological-mass-formula-algebraic, Lean AlgebraicMassFormula): exact in Q(q) given the AlgebraicMassFormula hypothesis phi1 = mass_alg*hbar_sq, plus a 50-dps numerical recovery at q0 with phi1 = Vol(4_1). Companion to probe-topological-mass-formula.",
   "contentBlock": "prop:topological-mass-formula-algebraic",

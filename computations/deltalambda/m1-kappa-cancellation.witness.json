@@ -1,0 +1,85 @@
+{
+ "probe": "m1_kappa_cancellation",
+ "bean": [
+  "qou-t6hc",
+  "qou-k5r5"
+ ],
+ "identity_partitions": 914,
+ "growth": [
+  {
+   "n": 100,
+   "nsamp": 20000,
+   "rho_h": "0.974449",
+   "rho_abs": "0.979439",
+   "rho_D": "-0.937145",
+   "kappa": "0.0580934",
+   "cov_abs": "0.165083",
+   "ratio": "-0.648097"
+  },
+  {
+   "n": 200,
+   "nsamp": 12000,
+   "rho_h": "0.985128",
+   "rho_abs": "0.980211",
+   "rho_D": "-0.94554",
+   "kappa": "0.0586416",
+   "cov_abs": "0.169079",
+   "ratio": "-0.653171"
+  },
+  {
+   "n": 400,
+   "nsamp": 6000,
+   "rho_h": "0.992036",
+   "rho_abs": "0.980236",
+   "rho_D": "-0.94927",
+   "kappa": "0.0581034",
+   "cov_abs": "0.169037",
+   "ratio": "-0.656268"
+  },
+  {
+   "n": 800,
+   "nsamp": 3000,
+   "rho_h": "0.995488",
+   "rho_abs": "0.978658",
+   "rho_D": "-0.946774",
+   "kappa": "0.0576763",
+   "cov_abs": "0.167038",
+   "ratio": "-0.654711"
+  },
+  {
+   "n": 1600,
+   "nsamp": 1400,
+   "rho_h": "0.997519",
+   "rho_abs": "0.978852",
+   "rho_D": "-0.948421",
+   "kappa": "0.0561285",
+   "cov_abs": "0.164316",
+   "ratio": "-0.658411"
+  }
+ ],
+ "checks": [
+  {
+   "name": "FINDING 1: sum_cells h = sum_cells (i + j + 1)",
+   "pass": true,
+   "detail": "Exact on all 914 partitions of n = 1..16, 0 violations. CONTROL: dropping the +1 holds for 0/914 -- 0, so the check can fail. Formalised sorry-free as QOU.BraidKnot.M1EdgeCalculus.sum_hookLen_eq_sum_coords, on [propext, Classical.choice, Quot.sound]. This is why the growth-chain path sum below is path-independent."
+  },
+  {
+   "name": "FINDING 1b CONTROL: sum h = sum|c_k| + 2 sum D_k - n on every sample",
+   "pass": true,
+   "detail": "Checked against a direct hook computation on all 42400 sampled diagrams, 0 mismatches. This is the growth-chain form of the gap's [+]/[-] split: adding a box at (r,s) raises sum h by exactly 1 + r + s."
+  },
+  {
+   "name": "FINDING 2 (PREDICTION FALSIFIED): the split terms are NOT single-mode",
+   "pass": true,
+   "detail": "PREDICTED, from sum c^2 being a single Kerov mode (m = 3): each half of the split is single-mode too, so |rho| -> 1 for both and the cancellation becomes a ratio of two constants. FALSE. rho(sum|c_k|, sum c^2) = ['0.979439', '0.980211', '0.980236', '0.978658', '0.978852'] -- FLAT, total spread 0.00158 over a 16x range in n, and nowhere near 1. rho(sum D_k, sum c^2) = ['-0.937145', '-0.94554', '-0.94927', '-0.946774', '-0.948421']. Yet the combination reaches rho(sum h, sum c^2) = ['0.974449', '0.985128', '0.992036', '0.995488', '0.997519']. So the OFF-MODE parts of sum|c_k| and 2 sum D_k cancel each other: sum h is nearly a pure m = 3 statistic while neither of its parts is. That is why the cancellation does not reduce to two constants -- and a sharper account of why sum h is the special combination than 'it is conjugation-symmetric'."
+  },
+  {
+   "name": "FINDING 3: 'ratio > -1' is not live -- kappa is flat while the ratio drifts",
+   "pass": true,
+   "detail": "2 Cov(sum D, sum c^2)/Cov(sum|c|, sum c^2) = ['-0.648097', '-0.653171', '-0.656268', '-0.654711', '-0.658411'] over n = 100..1600: drifting more negative by 0.0103 across a 16x range, so -1 is unreachable at that rate. Meanwhile kappa = ['0.0580934', '0.0586416', '0.0581034', '0.0576763', '0.0561285'] is flat (spread 0.00251, against sqrt(2)/24 = 0.05892557) because Cov(sum|c|, sum c^2) = ['0.165083', '0.169079', '0.169037', '0.167038', '0.164316'] drifts to compensate. A cancellation heading for -1 would show as kappa DECAYING; it does not. Weakest point: n = 1600 uses only 1400 samples."
+  }
+ ],
+ "passed": 4,
+ "total": 4,
+ "ms": 20461
+}

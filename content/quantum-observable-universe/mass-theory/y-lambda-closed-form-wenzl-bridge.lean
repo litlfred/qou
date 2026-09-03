@@ -70,7 +70,7 @@ open Real BigOperators
 /-- Markov parameter `z = 1 / (q^(1/2) + q^(-1/2))` in the σ-convention
     used in this paper (eigenvalues `q, -q⁻¹`). -/
 noncomputable def jonesMarkovZ (q : ℝ) : ℝ :=
-  1 / (Real.sqrt q + 1 / Real.sqrt q)
+  q ^ 3 / (q ^ 2 + 1)
 
 /-- Wenzl-convention variable `Q = q²` from the convention
     isomorphism `G = q σ`. -/

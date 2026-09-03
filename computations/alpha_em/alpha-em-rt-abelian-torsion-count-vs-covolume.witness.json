@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Vol(J)=√det G varies with lattice shape while b₁=d fixed => RS torsion is a covolume (1/Area category, data-excluded), not the bare count b₁; abelian RT route does not give 1/(π b₁)"
     }
   ],

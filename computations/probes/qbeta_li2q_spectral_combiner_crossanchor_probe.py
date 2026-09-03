@@ -229,12 +229,56 @@ def main() -> int:
         "verdict": verdict,
     })
 
+    # Was `computed=1.0, expected=1.0` named `cross_anchor_completion_emitted`
+    # (bean `qou-26f2`): reaching the witness was the whole test, so the probe
+    # read PASS for an unnormalised spectral measure, a candidate that in fact
+    # tracked the anchor, or a swing ratio in either of the two branches the
+    # verdict says would WEAKEN the refutation. All three are pre-stated in
+    # `interpretation_pre_stated` above; none was asserted.
+
+    # (1) The combiner's spectral measure is a probability measure: Σ_λ μ_λ = 1
+    # at each anchor. Computed at both and never checked; a measure that did
+    # not sum to 1 would make every c_3 candidate below meaningless.
+    mu_norm_gap = max(
+        abs(sum(r["mu_lambda_measure"].values()) - 1)
+        for r in (result_p, result_m)
+    )
     builder.add_assertion(
-        name="cross_anchor_completion_emitted",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.0,
-        source="Completes PR #1609 deferred q_muon evaluation using upstream symbolic chi_lambda(q)",
+        name="spectral_measure_normalised_at_both_anchors",
+        computed=fmt(mu_norm_gap),
+        expected="0",
+        tolerance="1e-25",
+        source="max over the proton and muon anchors of |Σ_λ μ_λ − 1|; the "
+               "combiner weights must be a probability measure over the three "
+               "Wedderburn blocks",
+    )
+
+    # (2) The refutation's load-bearing fact: the candidate is q-independent,
+    # so its 13% miss cannot be anchor-extraction noise. The 1e-4 gate is the
+    # module's own pre-registered threshold above, not a chosen band.
+    builder.add_assertion(
+        name="candidate_swing_is_q_independent",
+        computed=f"{abs(swing_ratio):.6e}",
+        expected="0",
+        tolerance="1e-4",
+        source=f"|candidate swing / empirical swing| = {abs(swing_ratio):.4e}; "
+               f"the candidate moves {float(candidate_swing_pct):.2e}% between "
+               f"the anchors while the empirical c_3 moves "
+               f"{float(empirical_swing_pct):.4f}%. Above the pre-registered "
+               "1e-4 the verdict switches to anchor-precision-limited",
+    )
+
+    # (3) …and the miss itself, at the size the verdict and PR #1609 quote.
+    builder.add_assertion(
+        name="c3_candidate_miss_at_proton_anchor_pct",
+        computed=f"{float(err_p):.4f}",
+        expected="13.14",
+        tolerance="0.01",
+        source=f"(c_3 candidate − c_3 empirical)/|c_3 empirical| at q_proton "
+               f"= {float(err_p):+.4f}%; the '13% miss' the structural "
+               f"refutation rests on, and "
+               f"{float(err_p) / abs(float(empirical_swing_pct)):.1f}× the "
+               "whole proton-to-muon anchor swing",
     )
 
     out = builder.save()

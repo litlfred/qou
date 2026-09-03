@@ -1,0 +1,278 @@
+{
+  "engine": "mpmath50+f64-seminormal-sparse",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T21:45:44.198317+00:00",
+  "commitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "assertions": [
+    {
+      "name": "wenzl_level_is_constant_two",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "controlled_object_is_structural_zero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "residual_ordering_is_unstable_in_q",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "a_ladder_confound_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "threerow-isospin-parity",
+  "scriptFile": "threerow_isospin_parity_probe.py",
+  "scriptHash": "c03e0c034db0",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/threerow_isospin_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/threerow_isospin_parity_probe.py"
+  },
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "wenzl_level_r": "2 (convention D)",
+    "q_star_conventionC_pole": "1.27844957657969315917801065461",
+    "null_tolerance": "1.0e-30",
+    "sec_per_grid_point_n12_measured": "54.5",
+    "chi_precision": "f64 Hoefsmit seminormal (sparse kernel)"
+  },
+  "data": {
+    "cost_law_sum_dim_squared_equals_n_factorial": {
+      "6": {
+        "sum_dim_squared_l_ge_3": 588,
+        "n_factorial": 720,
+        "cost_ratio_vs_n12": "1.22808662174e-6",
+        "projected_sec_per_grid_point": "6.69307208851e-5"
+      },
+      "9": {
+        "sum_dim_squared_l_ge_3": 358018,
+        "n_factorial": 362880,
+        "cost_ratio_vs_n12": "0.000747750197524",
+        "projected_sec_per_grid_point": "0.040752385765"
+      },
+      "12": {
+        "sum_dim_squared_l_ge_3": 478793588,
+        "n_factorial": 479001600,
+        "cost_ratio_vs_n12": "1.0",
+        "projected_sec_per_grid_point": "54.5"
+      },
+      "15": {
+        "sum_dim_squared_l_ge_3": 1307664673155,
+        "n_factorial": 1307674368000,
+        "cost_ratio_vs_n12": "2731.16580073",
+        "projected_sec_per_grid_point": "148848.53614"
+      },
+      "18": {
+        "sum_dim_squared_l_ge_3": 6402373228089300,
+        "n_factorial": 6402373705728000,
+        "cost_ratio_vs_n12": "13371885.8994",
+        "projected_sec_per_grid_point": "728767781.516"
+      },
+      "21": {
+        "sum_dim_squared_l_ge_3": 51090942147243172980,
+        "n_factorial": 51090942171709440000,
+        "cost_ratio_vs_n12": "106707657387.0",
+        "projected_sec_per_grid_point": "5.81556732757e+12"
+      }
+    },
+    "a_ladder_confound": [
+      {
+        "iso": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n": 6,
+        "isospin_class": "Z=N",
+        "A_even": true
+      },
+      {
+        "iso": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n": 9,
+        "isospin_class": "Z!=N",
+        "A_even": false
+      },
+      {
+        "iso": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n": 9,
+        "isospin_class": "Z!=N",
+        "A_even": false
+      },
+      {
+        "iso": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n": 12,
+        "isospin_class": "Z=N",
+        "A_even": true
+      },
+      {
+        "iso": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n": 18,
+        "isospin_class": "Z=N",
+        "A_even": true
+      },
+      {
+        "iso": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n": 21,
+        "isospin_class": "Z!=N",
+        "A_even": false
+      }
+    ],
+    "controlled_results_n6": {
+      "D": {
+        "Z": 1,
+        "N": 1,
+        "isospin_class": "Z=N",
+        "n_strands": 6,
+        "F_by_q": {
+          "1.001": "0.0",
+          "1.05": "0.0",
+          "1.1099786": "0.0",
+          "1.2": "7.42369598045e-51",
+          "1.2784496": "3.38447951381e-50",
+          "2.0": "1.88432487129e-46"
+        },
+        "max_abs_F": "1.88432487129e-46",
+        "below_null_tolerance": true,
+        "word": {
+          "word_length": 23,
+          "distinct_interface_types": 4,
+          "census": {
+            "c=1.0,d=-0.209060299": 7,
+            "c=1.0,d=-0.104530149": 4,
+            "c=1.0,d=-0.104458248": 1,
+            "c=1.0,d=0.0": 11
+          }
+        }
+      },
+      "pp": {
+        "Z": 2,
+        "N": 0,
+        "isospin_class": "Z!=N",
+        "n_strands": 6,
+        "F_by_q": {
+          "1.001": "0.0",
+          "1.05": "0.0",
+          "1.1099786": "0.0",
+          "1.2": "4.5957552849e-51",
+          "1.2784496": "1.97954854494e-50",
+          "2.0": "2.11720143877e-46"
+        },
+        "max_abs_F": "2.11720143877e-46",
+        "below_null_tolerance": true,
+        "word": {
+          "word_length": 23,
+          "distinct_interface_types": 3,
+          "census": {
+            "c=1.0,d=-0.209060299": 6,
+            "c=1.0,d=-0.104530149": 4,
+            "c=1.0,d=0.0": 13
+          }
+        }
+      },
+      "nn": {
+        "Z": 0,
+        "N": 2,
+        "isospin_class": "Z!=N",
+        "n_strands": 6,
+        "F_by_q": {
+          "1.001": "0.0",
+          "1.05": "0.0",
+          "1.1099786": "0.0",
+          "1.2": "7.40595495874e-51",
+          "1.2784496": "3.76430276798e-50",
+          "2.0": "1.56894461373e-46"
+        },
+        "max_abs_F": "1.56894461373e-46",
+        "below_null_tolerance": true,
+        "word": {
+          "word_length": 23,
+          "distinct_interface_types": 3,
+          "census": {
+            "c=1.0,d=-0.209060299": 9,
+            "c=1.0,d=-0.104530149": 4,
+            "c=1.0,d=0.0": 10
+          }
+        }
+      }
+    },
+    "residual_ordering_by_q": [
+      {
+        "q": "1.2",
+        "descending_by_abs_F": [
+          "D",
+          "nn",
+          "pp"
+        ]
+      },
+      {
+        "q": "2.0",
+        "descending_by_abs_F": [
+          "pp",
+          "D",
+          "nn"
+        ]
+      }
+    ],
+    "n12_leg_not_run": {
+      "reason": "answer is proved for all n; the sweep is ~70.85 min and returns zero",
+      "measured_sec_per_grid_point": "54.5",
+      "projected_sweep_sec": "4251.0",
+      "cases": [
+        "4He",
+        "4Li",
+        "4H"
+      ]
+    }
+  },
+  "caveats": [
+    "THIS PROBE CANNOT ANSWER ITS OWN QUESTION UNDER CONVENTION D. F_iso sums only l(lam) >= 3, where y_lam = 0 for all n (schurPrincipal_eq_zero_iff, wenzlLevel_conventionD). The controlled test returns the same answer for every isospin class because it returns nothing at all. The isospin question is neither answered nor refuted here — scope-(a), about this instrument.",
+    "DO NOT RE-ENABLE A CROSSING SCAN ON THIS OBJECT. The residual is round-off, it is (Z,N)-dependent because the braid word is by design the only varying input, and its ordering is not stable in q. A bisect-on-sign-change produces isospin-correlated crossings that are artifact, and the previous verdict logic would have reported them as a surviving pattern.",
+    "pp(2,0), nn(0,2), 4Li(3,1), 4H(1,3) are COMBINATORIAL PROBES of the braid word, NOT bound nuclides — the diproton/dineutron are unbound and 4H/4Li are unbound resonances. They are used only because atom_braid_word_3A(Z,N) is defined for any (Z,N). No physical prediction is made about them and AME is never consulted.",
+    "THE CONFOUND AND THE COST LAW ARE CONVENTION-INDEPENDENT AND SURVIVE. In {D,T,3He,4He,6Li,7Li} isospin and strand count move together (Z=N <=> A even), so the A-ladder cannot separate them however many isotopes are added; and Sum_lam dim^2 = n! puts 6Li/7Li out of reach by orders of magnitude. Both stand whatever happens to the sign question."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

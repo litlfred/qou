@@ -65,7 +65,7 @@ from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: 
 from witness_base import WitnessBuilder  # noqa: E402
 
 Q_0 = sp.Rational("1.1099785955573347")
-REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
 
 
 def _load_canonical_tr_m() -> dict[str, float]:

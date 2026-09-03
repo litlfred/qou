@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-08-23T19:34:55Z
+updated_at: 2026-08-29T08:28:37Z
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1589,3 +1589,25 @@ straight repeat.
 
 Derivation + validation: `computations/schurweyl/ocneanu_weight_general_n.py`. Lean:
 `QOU/SchurWeyl/OcneanuWeightMarkov3.lean`. Bean `qou-bsec`.
+
+
+2026-08-29 (bean qou-zloi, PR #5978): the cause is NOT the Markov-parameter
+convention, so do not chase the C->D cascade (qou-dchz) for this one.
+
+`per_generator_V_hat_3A` is affine in Z = Sum_lambda omega_lambda
+tr(sigma^lambda)/dim lambda, and the production normalized_plancherel scheme
+pins Z = h/2 = 0.10453014 by symmetry -- 79 % below convention C, 83 % below D,
+and identical at n = 3, 6, 9. Proved sorry-free:
+QOU.BraidsAndKnots.markov_param_eq_half_h.
+
+Two consequences for whoever works this:
+
+  * The pole distance is set by the sigma-coefficient alpha_i of the collapsed
+    braid word, not by Z. QOU.BraidsAndKnots.vHat_margin: the margin measured
+    in z is the margin measured in V_hat DIVIDED BY alpha. Look at the word.
+  * Changing the weight scheme within the normalised transpose-symmetric family
+    CANNOT help -- every such scheme gives the same Z
+    (QOU.BraidsAndKnots.markov_param_indep_of_weights). Do not code that search.
+
+Measured: computations/probes/tower_vhat_markov_parameter_probe.py, 9 checks,
+witness computations/tower-vhat-markov-parameter.witness.json.

@@ -181,7 +181,24 @@ set_compute_dps()
 
 # Substrate q_0 at 50 dps (witness-derived)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q = mp.mpf(_Q50_PROTON)
 HBAR_Q = (Q - mp.mpf(1)) / Q
 
 # Borromean rings hyperbolic volume.  Exact closed-form via the

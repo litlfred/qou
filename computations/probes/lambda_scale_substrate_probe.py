@@ -69,11 +69,11 @@ VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
-M_E = mp.mpf(repr(_M_E_MEV))
+M_E = mp.mpf(_M_E_MEV)
 from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
-M_P = mp.mpf(repr(_M_P_MEV))
+M_P = mp.mpf(_M_P_MEV)
 from experimental_constants import Q_NEUTRON_MEV as _Q_NEUTRON_MEV  # noqa: E402
-M_N = M_P + mp.mpf(repr(_Q_NEUTRON_MEV)) + M_E  # m_n derived via 3-input scheme
+M_N = M_P + mp.mpf(_Q_NEUTRON_MEV) + M_E  # m_n derived via 3-input scheme
 # Σ baryons (PDG):
 M_SIGMA_PLUS = mp.mpf("1189.37")
 M_SIGMA_0 = mp.mpf("1192.642")
@@ -265,18 +265,25 @@ def main() -> int:
         "Findings inform the open R&D on λ_scale substrate derivation."
     )
 
-    out = w.save({"q0Anchor": "independent",
+    out = w.save({"q0Anchor": "muon",
          "q0AnchorReason": (
-            'Reads no substrate value. PROVED by running this producer'
-            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
-            'witness: the only non-ephemeral leaves that differ are'
-            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
-            'byte-identical, so the pin changes the label and nothing else.'
-            'Its previous `muon` label was therefore a false claim that'
-            'this producer computed at that anchor. `independent` is the'
-            'honest disposition; a q0_anchor_manifest entry would be the'
-            'WRONG fix, promoting a false claim into a declared one. Bean'
-            'qou-o922, class (ii).'
+            'Reads `q-pinning-50-digit.witness.json` DIRECTLY (Q_PIN, module '
+            'scope) -- the muon anchor-DEFINING witness -- so it computes at '
+            'the ideal/CAL-2 layer. The stem is listed `ideal_muon` in '
+            'q0_anchor_manifest.json, which agrees. '
+            'CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was '
+            '`independent`, justified by: "PROVED by running this producer under '
+            'QOU_Q0_ANCHOR=muon and =proton ... every substantive field is '
+            'byte-identical". That experiment is BLIND here, and the blindness '
+            'is structural rather than incidental: QOU_Q0_ANCHOR is read by '
+            '`q_parameter`, and a direct read of the pinning witness never '
+            'consults `q_parameter`. So byte-identity under the flip was '
+            'guaranteed a priori and was evidence of nothing. Re-run 2026-08-28 '
+            'and it does indeed report `clean` -- while the producer is '
+            'hard-pinned to muon. `independent` hid this file from the qou-1c4y '
+            'muon->proton migration; `muon` makes it visible to it. Whether it '
+            'should MOVE to the experimental pin is that migration\'s question, '
+            'not this correction\'s.'
          )})
     print(f"Witness emitted: {out.name}")
     print()

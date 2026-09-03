@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:05:28.718313+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-08-25T22:23:02.282540+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
       "name": "spin_ladder_(2)",
@@ -53,14 +53,6 @@
       "source": "Okounkov-Vershik: JM content vector labels GT basis uniquely"
     },
     {
-      "name": "global_canonical_spin_selector_exists",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "is there a single spin value selecting one copy in EVERY m2 space?"
-    },
-    {
       "name": "final_2_1_block_spin_constant_one_half",
       "computed": 1.0,
       "expected": 1.0,
@@ -69,36 +61,20 @@
       "source": "(2,1) block spin = 1/2 by #1683; same for every copy"
     },
     {
-      "name": "intermediate_H4_spin_simple_on_all_m2_spaces",
-      "computed": 1.0,
-      "expected": 1.0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "RAW: does the path-spin (j of lam4) separate the 2 copies?"
-    },
-    {
       "name": "content_simple_on_all_m2_spaces",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0,
       "source": "Okounkov-Vershik content separation on the m=2 spaces"
-    },
-    {
-      "name": "no_h4_fit_performed",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 0,
-      "source": "discipline: no spin/content chosen to produce h^4"
     }
   ],
   "allPassed": true,
-  "durationMs": 46,
+  "durationMs": 52,
   "computation": "su2-spinor-multiplicity-resolution",
   "scriptFile": "su2_spinor_multiplicity_resolution.py",
-  "scriptHash": "8df21bac3d2f",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "2378023a184e",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -110,13 +86,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/su2_spinor_multiplicity_resolution.py"
+    ],
+    "reproduce": "python3 -u computations/su2_spinor_multiplicity_resolution.py"
   },
   "auditOnly": "docs/audits/2026-06-02-su2-spinor-multiplicity-resolution.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "compute_dps": 70
+    "compute_dps": 70,
+    "no_h4_fit_performed": "0 (DISCIPLINE, not a measurement -- the source field already said so: no spin/content was chosen to produce h^4)"
   },
   "data": {
     "task0_spin_ladder_check": {
@@ -495,6 +480,10 @@
       "global_canonical_spin_selector_exists": false,
       "note": "A canonical SELECTION (not just separation) needs one spin value present in every m=2 space. Separation alone does not nominate a copy; nominating one without this is a fit."
     },
+    "global_canonical_spin_selector_exists_measured": 0.0,
+    "global_canonical_spin_selector_exists_source": "is there a single spin value selecting one copy in EVERY m2 space?",
+    "intermediate_H4_spin_simple_on_all_m2_spaces_measured": 1.0,
+    "intermediate_H4_spin_simple_on_all_m2_spaces_source": "RAW: does the path-spin (j of lam4) separate the 2 copies?",
     "task3_verdict_code": "ii",
     "task3_verdict_meaning": "spin SEPARATES (simple spectrum) but does NOT canonically SELECT (no forced global selector); canonical eigenbasis exists via GT/JM, spin alone insufficient -> physical selection still open",
     "task4_h4_falsification": {

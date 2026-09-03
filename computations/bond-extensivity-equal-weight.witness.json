@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-15T23:05:59.450237+00:00",
-  "commitSha": "a18ef36172ee841e08204f0b36b71ab4aeb9273a",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T15:08:46.389594+00:00",
+  "commitSha": "a1019fbc334e971d44b685eba0ce16487a7237d4",
   "assertions": [
     {
       "name": "coordination_multiplier_is_equal_weight_limit_exact_alpha_coincidence_nucleon",
@@ -18,7 +18,7 @@
   "computation": "bond-extensivity-equal-weight",
   "scriptFile": "bond_extensivity_equal_weight.py",
   "scriptHash": "971b33c85bef",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,11 +28,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bond_extensivity_equal_weight.py"
+    ],
+    "reproduce": "python3 -u computations/bond_extensivity_equal_weight.py"
   },
   "description": "The coordination-number binding multiplier is the EQUAL-WEIGHT limit of the derived log-trace bond-extensivity B=E₀·Σ log(1/f_bond) (#2089). Equal-weight is exact for identical α–α bonds (α-cluster contact counting derived) but fails at the nucleon level (derived ε_pp:ε_pn:ε_nn spread 1.78×); the nucleon z=A−1 is a composition coincidence. The split ε_nn−ε_pp equal-weight drops is the isospin carrier Vol, so w_n=M·Vol = (equal-weight coordination)·(isospin bond asymmetry). Answers 'why multiplier=coordination'; not a closure. Scope-(a).",
   "data": {
@@ -54,5 +59,7 @@
       "equal_weight": 2.0741247268263283,
       "mirror_split_eps_nn_minus_pp": 0.417362881278078
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

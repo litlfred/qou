@@ -69,12 +69,20 @@ from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 H = float(Q0 - 1 / Q0)  # h = q − q⁻¹ at q_0
 
 INTERFACE_COEFS = {
     "pp": (1.0, 0.0),       # bare σ
-    "pn": (1.0, -H / 2),    # averaged
+    "pn": (1.0, _pn_d(H)),  # colour-weighted (was -H/2, colour-blind)
     "nn": (1.0, -H),        # σ⁻¹ via Hecke
 }
 

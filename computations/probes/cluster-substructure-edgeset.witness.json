@@ -1,0 +1,878 @@
+{
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "witness": {
+    "schema": "qou-probe/v1",
+    "kind": "exploratory-probe",
+    "prereg": "docs/audits/2026-08-26-cluster-substructure-prereg.md",
+    "prereg_commit": "843391340b7511f131fcd8342f1e1ea1e925384b",
+    "bean": "qou-52x7",
+    "precision_dps": 60,
+    "float64_used_in_arithmetic": false
+  },
+  "inputs": {
+    "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736",
+    "m_e_mev": "0.51099895069",
+    "alpha_E0_mev": "4.18598136329447589694506215876",
+    "L": {
+      "pp": "0.607166156862425564861548766942",
+      "pn": "0.676740929803152870231636729035",
+      "nn": "0.789995492925922187215176687939"
+    },
+    "alpha_L_mev": {
+      "pp": "2.54158621704924376812193988961",
+      "pn": "2.83282491993457306573280762985",
+      "nn": "3.30690641047454324663284393013"
+    },
+    "convention": "D (z = q^3/(q^2+1)), colour-weighted, writhe-normalised",
+    "E2_inter_cluster_bond_type": "nn",
+    "production_float64_crosscheck": {
+      "pp": {
+        "prod_float64_repr": "0.6071661568624256",
+        "mpf": "0.60716615686242556486",
+        "abs_diff": "3.514e-17"
+      },
+      "pn": {
+        "prod_float64_repr": "0.6767409298031529",
+        "mpf": "0.67674092980315287023",
+        "abs_diff": "2.977e-17"
+      },
+      "nn": {
+        "prod_float64_repr": "0.7899954929259222",
+        "mpf": "0.78999549292592218722",
+        "abs_diff": "1.278e-17"
+      }
+    }
+  },
+  "schemes": {
+    "C1": {
+      "1,1": [
+        [
+          1,
+          1
+        ]
+      ],
+      "1,2": [
+        [
+          1,
+          2
+        ]
+      ],
+      "2,1": [
+        [
+          2,
+          1
+        ]
+      ],
+      "2,2": [
+        [
+          2,
+          2
+        ]
+      ],
+      "3,3": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "3,4": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "C2": {
+      "1,1": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "1,2": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "2,1": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "2,2": [
+        [
+          2,
+          2
+        ]
+      ],
+      "3,3": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "3,4": [
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "rows": [
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 1,
+      "n_nn": 0,
+      "n_edges": 1,
+      "n_edges_chain": 1,
+      "single_cluster": true,
+      "B_model_mev": "2.83282491993457307",
+      "B_ame_mev": "2.2245662",
+      "ratio_ame_over_model": "0.785281922771061541",
+      "abs_ratio_minus_1": "0.214718077229"
+    },
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 2,
+      "n_nn": 1,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.97255625034368938",
+      "B_ame_mev": "8.4817962",
+      "ratio_ame_over_model": "0.945304321683701782",
+      "abs_ratio_minus_1": "0.0546956783163"
+    },
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 2,
+      "n_nn": 0,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.2072360569183899",
+      "B_ame_mev": "7.71804132",
+      "ratio_ame_over_model": "0.940394703707100368",
+      "abs_ratio_minus_1": "0.0596052962929"
+    },
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 3,
+      "single_cluster": true,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "28.2956624",
+      "ratio_ame_over_model": "1.64703169246342549",
+      "abs_ratio_minus_1": "0.647031692463"
+    },
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_clusters": 2,
+      "n_pp": 3,
+      "n_pn": 9,
+      "n_nn": 3,
+      "n_edges": 15,
+      "n_edges_chain": 5,
+      "single_cluster": false,
+      "B_model_mev": "43.0409021619825186",
+      "B_ame_mev": "31.9939872",
+      "ratio_ame_over_model": "0.743339140048506741",
+      "abs_ratio_minus_1": "0.256660859951"
+    },
+    {
+      "scheme": "C1",
+      "rule": "KA",
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_clusters": 2,
+      "n_pp": 3,
+      "n_pn": 12,
+      "n_nn": 6,
+      "n_edges": 21,
+      "n_edges_chain": 6,
+      "single_cluster": false,
+      "B_model_mev": "61.4600961532098676",
+      "B_ame_mev": "39.2450807",
+      "ratio_ame_over_model": "0.638545709433459011",
+      "abs_ratio_minus_1": "0.361454290567"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 1,
+      "n_nn": 0,
+      "n_edges": 1,
+      "n_edges_chain": 1,
+      "single_cluster": true,
+      "B_model_mev": "2.83282491993457307",
+      "B_ame_mev": "2.2245662",
+      "ratio_ame_over_model": "0.785281922771061541",
+      "abs_ratio_minus_1": "0.214718077229"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 2,
+      "n_nn": 1,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.97255625034368938",
+      "B_ame_mev": "8.4817962",
+      "ratio_ame_over_model": "0.945304321683701782",
+      "abs_ratio_minus_1": "0.0546956783163"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 2,
+      "n_nn": 0,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.2072360569183899",
+      "B_ame_mev": "7.71804132",
+      "ratio_ame_over_model": "0.940394703707100368",
+      "abs_ratio_minus_1": "0.0596052962929"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 3,
+      "single_cluster": true,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "28.2956624",
+      "ratio_ame_over_model": "1.64703169246342549",
+      "abs_ratio_minus_1": "0.647031692463"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_clusters": 2,
+      "n_pp": 1,
+      "n_pn": 5,
+      "n_nn": 1,
+      "n_edges": 7,
+      "n_edges_chain": 5,
+      "single_cluster": false,
+      "B_model_mev": "20.0126172271966523",
+      "B_ame_mev": "31.9939872",
+      "ratio_ame_over_model": "1.5986908077430753",
+      "abs_ratio_minus_1": "0.598690807743"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E1",
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_clusters": 2,
+      "n_pp": 1,
+      "n_pn": 6,
+      "n_nn": 2,
+      "n_edges": 9,
+      "n_edges_chain": 6,
+      "single_cluster": false,
+      "B_model_mev": "26.1523485576057687",
+      "B_ame_mev": "39.2450807",
+      "ratio_ame_over_model": "1.50063313103811212",
+      "abs_ratio_minus_1": "0.500633131038"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 1,
+      "n_nn": 0,
+      "n_edges": 1,
+      "n_edges_chain": 1,
+      "single_cluster": true,
+      "B_model_mev": "2.83282491993457307",
+      "B_ame_mev": "2.2245662",
+      "ratio_ame_over_model": "0.785281922771061541",
+      "abs_ratio_minus_1": "0.214718077229"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 0,
+      "n_pn": 2,
+      "n_nn": 1,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.97255625034368938",
+      "B_ame_mev": "8.4817962",
+      "ratio_ame_over_model": "0.945304321683701782",
+      "abs_ratio_minus_1": "0.0546956783163"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 2,
+      "n_nn": 0,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": true,
+      "B_model_mev": "8.2072360569183899",
+      "B_ame_mev": "7.71804132",
+      "ratio_ame_over_model": "0.940394703707100368",
+      "abs_ratio_minus_1": "0.0596052962929"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 3,
+      "single_cluster": true,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "28.2956624",
+      "ratio_ame_over_model": "1.64703169246342549",
+      "abs_ratio_minus_1": "0.647031692463"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_clusters": 2,
+      "n_pp": 1,
+      "n_pn": 5,
+      "n_nn": 2,
+      "n_edges": 8,
+      "n_edges_chain": 5,
+      "single_cluster": false,
+      "B_model_mev": "23.3195236376711956",
+      "B_ame_mev": "31.9939872",
+      "ratio_ame_over_model": "1.37198287997254646",
+      "abs_ratio_minus_1": "0.371982879973"
+    },
+    {
+      "scheme": "C1",
+      "rule": "E2",
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_clusters": 2,
+      "n_pp": 1,
+      "n_pn": 6,
+      "n_nn": 3,
+      "n_edges": 10,
+      "n_edges_chain": 6,
+      "single_cluster": false,
+      "B_model_mev": "29.4592549680803119",
+      "B_ame_mev": "39.2450807",
+      "ratio_ame_over_model": "1.33218171140182685",
+      "abs_ratio_minus_1": "0.332181711402"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_clusters": 2,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 0,
+      "n_edges": 0,
+      "n_edges_chain": 1,
+      "single_cluster": false,
+      "B_model_mev": "0.0",
+      "B_ame_mev": "2.2245662",
+      "ratio_ame_over_model": "inf",
+      "abs_ratio_minus_1": "inf"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_clusters": 3,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 0,
+      "n_edges": 0,
+      "n_edges_chain": 2,
+      "single_cluster": false,
+      "B_model_mev": "0.0",
+      "B_ame_mev": "8.4817962",
+      "ratio_ame_over_model": "inf",
+      "abs_ratio_minus_1": "inf"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_clusters": 3,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 0,
+      "n_edges": 0,
+      "n_edges_chain": 2,
+      "single_cluster": false,
+      "B_model_mev": "0.0",
+      "B_ame_mev": "7.71804132",
+      "ratio_ame_over_model": "inf",
+      "abs_ratio_minus_1": "inf"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 3,
+      "single_cluster": true,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "28.2956624",
+      "ratio_ame_over_model": "1.64703169246342549",
+      "abs_ratio_minus_1": "0.647031692463"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_clusters": 3,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 5,
+      "single_cluster": false,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "31.9939872",
+      "ratio_ame_over_model": "1.86230349167118885",
+      "abs_ratio_minus_1": "0.862303491671"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E1",
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_clusters": 4,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 6,
+      "single_cluster": false,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "39.2450807",
+      "ratio_ame_over_model": "2.28437457206107729",
+      "abs_ratio_minus_1": "1.28437457206"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "2H",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_clusters": 2,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 1,
+      "n_edges": 1,
+      "n_edges_chain": 1,
+      "single_cluster": false,
+      "B_model_mev": "3.30690641047454325",
+      "B_ame_mev": "2.2245662",
+      "ratio_ame_over_model": "0.672703101894187954",
+      "abs_ratio_minus_1": "0.327296898106"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_clusters": 3,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 3,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": false,
+      "B_model_mev": "9.92071923142362974",
+      "B_ame_mev": "8.4817962",
+      "ratio_ame_over_model": "0.854957791077699581",
+      "abs_ratio_minus_1": "0.145042208922"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_clusters": 3,
+      "n_pp": 0,
+      "n_pn": 0,
+      "n_nn": 3,
+      "n_edges": 3,
+      "n_edges_chain": 2,
+      "single_cluster": false,
+      "B_model_mev": "9.92071923142362974",
+      "B_ame_mev": "7.71804132",
+      "ratio_ame_over_model": "0.777971953439958001",
+      "abs_ratio_minus_1": "0.22202804656"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_clusters": 1,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 1,
+      "n_edges": 6,
+      "n_edges_chain": 3,
+      "single_cluster": true,
+      "B_model_mev": "17.1797923072620793",
+      "B_ame_mev": "28.2956624",
+      "ratio_ame_over_model": "1.64703169246342549",
+      "abs_ratio_minus_1": "0.647031692463"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_clusters": 3,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 4,
+      "n_edges": 9,
+      "n_edges_chain": 5,
+      "single_cluster": false,
+      "B_model_mev": "27.100511538685709",
+      "B_ame_mev": "31.9939872",
+      "ratio_ame_over_model": "1.18056764922421864",
+      "abs_ratio_minus_1": "0.180567649224"
+    },
+    {
+      "scheme": "C2",
+      "rule": "E2",
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_clusters": 4,
+      "n_pp": 1,
+      "n_pn": 4,
+      "n_nn": 7,
+      "n_edges": 12,
+      "n_edges_chain": 6,
+      "single_cluster": false,
+      "B_model_mev": "37.0212307701093388",
+      "B_ame_mev": "39.2450807",
+      "ratio_ame_over_model": "1.06006958395576035",
+      "abs_ratio_minus_1": "0.0600695839558"
+    }
+  ],
+  "verdicts": {
+    "S_C1": {
+      "confirmed": true,
+      "premise_all_bond_energies_positive": true,
+      "single_cluster_ratios": [
+        {
+          "scheme": "C1",
+          "iso": "2H",
+          "r_KA": "0.785281922771061541",
+          "r_E1": "0.785281922771061541",
+          "unchanged": true
+        },
+        {
+          "scheme": "C1",
+          "iso": "3H",
+          "r_KA": "0.945304321683701782",
+          "r_E1": "0.945304321683701782",
+          "unchanged": true
+        },
+        {
+          "scheme": "C1",
+          "iso": "3He",
+          "r_KA": "0.940394703707100368",
+          "r_E1": "0.940394703707100368",
+          "unchanged": true
+        },
+        {
+          "scheme": "C1",
+          "iso": "4He",
+          "r_KA": "1.64703169246342549",
+          "r_E1": "1.64703169246342549",
+          "unchanged": true
+        },
+        {
+          "scheme": "C2",
+          "iso": "4He",
+          "r_KA": "1.64703169246342549",
+          "r_E1": "1.64703169246342549",
+          "unchanged": true
+        }
+      ]
+    },
+    "S_C1_ii_pointwise_monotone_by_rule": {
+      "E1": {
+        "holds": true,
+        "violations": []
+      },
+      "E2": {
+        "holds": false,
+        "violations": [
+          {
+            "scheme": "C2",
+            "iso": "2H",
+            "r_KA": "0.7852819228",
+            "r_E": "0.6727031019"
+          },
+          {
+            "scheme": "C2",
+            "iso": "3H",
+            "r_KA": "0.9453043217",
+            "r_E": "0.8549577911"
+          },
+          {
+            "scheme": "C2",
+            "iso": "3He",
+            "r_KA": "0.9403947037",
+            "r_E": "0.7779719534"
+          }
+        ]
+      }
+    },
+    "E2_lower_bound_on_r": {
+      "C1:6Li": "1.37198287997",
+      "C1:7Li": "1.3321817114",
+      "C2:6Li": "1.18056764922",
+      "C2:7Li": "1.06006958396"
+    },
+    "R_ii_he4_immovable": true,
+    "H_all": "REFUTED",
+    "S_i": false,
+    "R_i": false,
+    "per_pair_worst_dev_6Li_7Li": {
+      "C1+E1": "0.59869081",
+      "C1+E2": "0.37198288",
+      "C2+E1": "1.2843746",
+      "C2+E2": "0.18056765"
+    },
+    "S_ii": {
+      "C1+E1": {
+        "worst": "0.64703169",
+        "no_worse_than_KA": true
+      },
+      "C1+E2": {
+        "worst": "0.64703169",
+        "no_worse_than_KA": true
+      },
+      "C2+E1": {
+        "worst": "inf",
+        "no_worse_than_KA": false
+      },
+      "C2+E2": {
+        "worst": "0.64703169",
+        "no_worse_than_KA": true
+      }
+    },
+    "KA_baseline_worst_dev_light4": "0.64703169",
+    "R_iii_below_chain": {
+      "C1+E1": [],
+      "C1+E2": [],
+      "C2+E1": [
+        {
+          "iso": "2H",
+          "n_edges": 0,
+          "n_chain": 1,
+          "n_KA": 1
+        },
+        {
+          "iso": "3H",
+          "n_edges": 0,
+          "n_chain": 2,
+          "n_KA": 3
+        },
+        {
+          "iso": "3He",
+          "n_edges": 0,
+          "n_chain": 2,
+          "n_KA": 3
+        }
+      ],
+      "C2+E2": []
+    },
+    "H_partial": "NEITHER_SUPPORTED_NOR_REFUTED"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:15:44.215749+00:00",
+  "commitSha": "65ead20c4bf19cbee462489a9ff5ed9342f2df61",
+  "assertions": [
+    {
+      "name": "A1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1: 3 settled candidates had NO free choice and still did not deliver the binding term - B: Frobenius co-Casimir 1/dim_q; C: Demazure-fibre; PROBE-4 KL crystal weights. So 'no free parameter' is not a success predictor, and my filter's 'prefer structural' clause is FALSIFIED as stated"
+    },
+    {
+      "name": "A2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A2: the per-block slot DOES vary with the braid word - max |chi(wA) - chi(wB)| = 1.330139487 over the two-row lambda at n = 6. But `1/dim_q(lambda)` has no word argument at all, so it contributes the SAME number to every atom. That is the 'vortex-blind' verdict, recomputed from the formulae rather than taken from the audit"
+    },
+    {
+      "name": "A3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A3: the two costs select DIFFERENT partitions ((6,) vs (5, 1)) on the same feasible set - so the extremum determines nothing; the cost does. Matches QOU.MassTheory.both_orderings_achievable, which proves BOTH orderings are reachable for ANY single constraint"
+    },
+    {
+      "name": "A4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A4: the REFINED rule - 'a free choice anywhere (parameter, objective or selection rule) means undetermined' - is 8/8 on the settled record. It predicts DETERMINACY, which is a property of the specification, not correctness, which is not"
+    },
+    {
+      "name": "A5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A5: whereas my ORIGINAL filter, read as a success predictor, misses 3 of 8 - every structural candidate that made a definite prediction and was then refuted. Those are not filter failures if the filter's job is falsifiability: it promoted them to testable, and the measurement did the rest"
+    },
+    {
+      "name": "A6",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A6: every classification above is read off the candidate's SPECIFICATION - does a parameter, objective or selection rule remain unfixed? - so it is available BEFORE the fit is run, and the rule is not a post-hoc re-description of the outcome. A2 demonstrates this concretely: co-Casimir's blindness is computable from `1/dim_q` alone"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "determinacy-filter-calibration",
+  "scriptFile": "determinacy_filter_calibration_probe.py",
+  "scriptHash": "b648807effda",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/determinacy_filter_calibration_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/determinacy_filter_calibration_probe.py"
+  },
+  "description": "Calibrates the PR #5863 triage heuristic against the settled record and finds it half wrong. 'Extremal' carries no determinacy -- the cost decides (proved in Lean for any single constraint; measured here on the real Hecke objects). 'Structural' does not predict success -- the Frobenius co-Casimir was theorem-forced with no free parameters and failed. What survives: the filter separates DETERMINATE from UNDERDETERMINED, never right from wrong, and the free choice hides in a parameter, an objective OR a selection rule.",
+  "data": {
+    "q0": "1.1099785827513808076",
+    "settled_candidates": [
+      {
+        "name": "Occam single-partition pick",
+        "free_choice": "selection",
+        "blind": false,
+        "outcome": "underdetermined",
+        "citation": "docs/audits/2026-05-09-mass-table-fitting-audit.md"
+      },
+      {
+        "name": "B: Frobenius co-Casimir 1/dim_q",
+        "free_choice": "none",
+        "blind": true,
+        "outcome": "failed",
+        "citation": "docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md"
+      },
+      {
+        "name": "C: Demazure-fibre",
+        "free_choice": "none",
+        "blind": true,
+        "outcome": "failed",
+        "citation": "docs/audits/2026-05-09-mass-table-fitting-audit.md"
+      },
+      {
+        "name": "D: LP shadow prices",
+        "free_choice": "objective",
+        "blind": false,
+        "outcome": "underdetermined",
+        "citation": "docs/audits/2026-05-09-mass-table-fitting-audit.md"
+      },
+      {
+        "name": "growing-width cut, constant w",
+        "free_choice": "parameter",
+        "blind": false,
+        "outcome": "excluded",
+        "citation": "docs/audits/2026-08-25-vol-trm-division-of-labour-is-sound.md (Add. 42)"
+      },
+      {
+        "name": "PROBE-4 KL crystal weights",
+        "free_choice": "none",
+        "blind": true,
+        "outcome": "excluded-by-invariant",
+        "citation": "docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md"
+      },
+      {
+        "name": "Delta_lambda VALUE = signed Springer dim",
+        "free_choice": "none",
+        "blind": false,
+        "outcome": "proved",
+        "citation": "docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md"
+      },
+      {
+        "name": "cable-shift law",
+        "free_choice": "none",
+        "blind": false,
+        "outcome": "determined",
+        "citation": "docs/audits/2026-08-26-cable-shift-deficit-lives-in-multidim-channels.md"
+      }
+    ],
+    "refined_rule_hits": 8,
+    "refined_rule_misses": 0,
+    "original_filter_success_misses": 3,
+    "chi_word_spread_n6": "1.3301394866495062485",
+    "lp_pick_plancherel_cost": "(6,)",
+    "lp_pick_frobenius_cost": "(5, 1)",
+    "verdict": "The proposed filter is HALF WRONG. 'Extremal' supplies no determinacy (the cost decides; Lean-proved for any single constraint). 'Structural' does not predict success (co-Casimir was theorem-forced and failed). What survives: a free choice anywhere - parameter, objective or selection rule - means the candidate cannot be falsified; no free choice means it can. Falsifiability, not correctness."
+  },
+  "caveats": [
+    "Scope (a). A triage heuristic excludes nothing; only a proved invariant does. Nothing here refutes any candidate.",
+    "The Option-D Plancherel/Frobenius numbers in the 2026-05 audit are CITED, not re-run. A3 measures the same PHENOMENON on freshly built Hecke objects with a representative 6-strand word; the generality comes from the Lean, not from this instance.",
+    "The settled-candidate table is hand-assembled from the corpus with citations, and is a sample of what is recorded, not a census.",
+    "DO NOT QUOTE THE 8/8 AS VALIDATION. I assigned BOTH axes of that table - the free-choice label and the outcome class - so A4 is a consistency check on my own bookkeeping, not independent evidence. The two load-bearing results are A1 (three structural candidates failed, recorded by other agents at the time) and A3 (the two costs measurably pick different partitions on freshly built Hecke objects). If the refined rule is ever to earn a hit-rate, it needs candidates classified BEFORE their outcomes are known."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

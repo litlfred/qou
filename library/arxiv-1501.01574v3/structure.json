@@ -1,0 +1,407 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1501.01574v3",
+ "source": {
+  "file": "1501.01574v3.pdf",
+  "sha256": "8af5d6264a0ad5e0fce33b41d7502ba25ad1969ad56e661044f387bdfe537ac3",
+  "bytes": 348734,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1501.01574",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Sep 2015"
+  },
+  "doi": null,
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+  "authors_raw": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "title_lines": [
+   "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+   "POLYNOMIAL"
+  ],
+  "abstract": "We study the behavior of the degree of the colored Jones polyn omial and the boundary slopes of knots under the operation of cabling. We s how that, under certain hypothesis on this degree, if a knot K satis\ufb01es the Slope Conjecture then a ( p, q)-cable of K satis\ufb01es the conjecture, provided that p/q is not a Jones slope of K. As an application we prove the Slope Conjecture for iterated cables of adequat e knots and for iterated torus knots. Furthermore we show that, for these knots, the d egree of the colored Jones polynomial also determines the topology of a surface that sa tis\ufb01es the Slope Conjecture. We also state a conjecture suggesting a topological interpr etation of the linear terms of the degree of the colored Jones polynomial (Conjecture 5.1) , and we prove it for the following classes of knots: iterated torus knots and iterat ed cables of adequate knots, iterated cables of several non-alternating knots with up to nine crossings, pretzel knots of type ( \u2212 2,3, p) and their cables, and two-fusion knots.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20150907204447-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The Slope Conjecture",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Cable knots",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Organization.",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "Boundary Slopes of Cable Knots",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries and statement of main result",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Boundary slopes and homology of cable spaces",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The proof of Theorem ??.",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Cables of Knots with period at most two",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The colored Jones polynomial",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Cables of knots of period at most 2",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Strong Slope Conjecture for iterated cables of adequate knots",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 17,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Low crossing knots with period two",
+   "page": 17,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Cabling knots with constant a(n)",
+   "page": 18,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Conjectures",
+   "page": 22,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Non-alternating Montesinos knots up to nine crossings",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "A family of pretzel knots",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Two-fusion knots",
+   "page": 25,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The highest degree.",
+   "page": 26,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Calculating the linear term",
+   "page": 27,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem ??",
+   "page": 29,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-the-slope-conjecture",
+   "number": "1.1",
+   "title": "The Slope Conjecture",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 979,
+   "n_words": 160
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2390,
+   "n_words": 447
+  },
+  {
+   "id": "sec-002-12-cable-knots",
+   "number": "1.2",
+   "title": "Cable knots",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4713,
+   "n_words": 898
+  },
+  {
+   "id": "sec-003-13-organization",
+   "number": "1.3",
+   "title": "Organization.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 679,
+   "n_words": 128
+  },
+  {
+   "id": "sec-004-2-boundary-slopes-of-cable-knots",
+   "number": "2",
+   "title": "Boundary Slopes of Cable Knots",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 375,
+   "n_words": 66
+  },
+  {
+   "id": "sec-005-21-preliminaries-and-statement-of-main-result",
+   "number": "2.1",
+   "title": "Preliminaries and statement of main result",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5400,
+   "n_words": 1067
+  },
+  {
+   "id": "sec-006-22-boundary-slopes-and-homology-of-cable-spaces",
+   "number": "2.2",
+   "title": "Boundary slopes and homology of cable spaces",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 10371,
+   "n_words": 2205
+  },
+  {
+   "id": "sec-007-3-cables-of-knots-with-period-at-most-two",
+   "number": "3",
+   "title": "Cables of Knots with period at most two",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 466,
+   "n_words": 87
+  },
+  {
+   "id": "sec-008-31-the-colored-jones-polynomial",
+   "number": "3.1",
+   "title": "The colored Jones polynomial",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1638,
+   "n_words": 335
+  },
+  {
+   "id": "sec-009-32-cables-of-knots-of-period-at-most-2",
+   "number": "3.2",
+   "title": "Cables of knots of period at most 2",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 6870,
+   "n_words": 1667
+  },
+  {
+   "id": "sec-010-33-strong-slope-conjecture-for-iterated-cables-o",
+   "number": "3.3",
+   "title": "Strong Slope Conjecture for iterated cables of adequate knots",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 8115,
+   "n_words": 1701
+  },
+  {
+   "id": "sec-011-35-low-crossing-knots-with-period-two",
+   "number": "3.5",
+   "title": "Low crossing knots with period two",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1327,
+   "n_words": 275
+  },
+  {
+   "id": "sec-012-4-cabling-knots-with-constant-an",
+   "number": "4",
+   "title": "Cabling knots with constant a(n)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 8435,
+   "n_words": 2035
+  },
+  {
+   "id": "sec-013-5-conjectures",
+   "number": "5",
+   "title": "Conjectures",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 3134,
+   "n_words": 614
+  },
+  {
+   "id": "sec-014-51-non-alternating-montesinos-knots-up-to-nine-c",
+   "number": "5.1",
+   "title": "Non-alternating Montesinos knots up to nine crossings",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 2665,
+   "n_words": 572
+  },
+  {
+   "id": "sec-015-52-a-family-of-pretzel-knots",
+   "number": "5.2",
+   "title": "A family of pretzel knots",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1480,
+   "n_words": 333
+  },
+  {
+   "id": "sec-016-6-two-fusion-knots",
+   "number": "6",
+   "title": "Two-fusion knots",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 924,
+   "n_words": 237
+  },
+  {
+   "id": "sec-017-61-the-highest-degree",
+   "number": "6.1",
+   "title": "The highest degree.",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 948,
+   "n_words": 257
+  },
+  {
+   "id": "sec-018-62-calculating-the-linear-term",
+   "number": "6.2",
+   "title": "Calculating the linear term",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 5521,
+   "n_words": 1543
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 4430,
+   "n_words": 671
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 20,
+  "chars_total": 70860
+ }
+}

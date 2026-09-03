@@ -91,12 +91,28 @@ def main() -> int:
             "α-level = #3551 Brink deltahedra). No fit.")
         wb.add_data("per_bond_bstar_MeV", float(bstar))
         wb.add_data("bonds_vs_topologies", rows)
+        # Was `computed="1", expected="1"` (bean `qou-26f2`). The principle is an
+        # argument, but it has ONE numerical consequence the table can refute: if
+        # the pairwise edge set were the chain, or any sub-simplex graph, the
+        # implied bond count would land BELOW max-contact — and for A ≤ 4
+        # max-contact is exactly the simplex C(A,2). The constant would have read
+        # PASS on a table that showed the opposite; this counts the isotopes that
+        # actually clear their max-contact floor. The surplus above it is the
+        # Part-7 3-body M_3 reading and is recorded, not asserted.
+        at_or_above = [K for K, r in rows.items()
+                       if r["bonds_implied"] >= r["simplex"]]
+        margins = ", ".join(f"{K} {r['bonds_implied'] - r['simplex']:+.2f}"
+                            for K, r in rows.items())
         wb.add_assertion(
             name="edge_set_is_max_contact_packing",
-            computed="1", expected="1", tolerance=0,
+            computed=str(len(at_or_above)), expected=str(len(rows)), tolerance=0,
+            unit="isotopes with #bonds_implied ≥ max-contact C(A,2)",
             source=("binding-max ⇒ max #bonds subject to 3D hard-core ⇒ max-contact packing; "
-                    "pairwise edges ≈ simplex for A≤4 (D=1, A=3≈triangle); ⁴He surplus = 3-body "
-                    "M_3 not edges. Resolves #2089 chain-vs-complete. Cluster/halo deviation open."))
+                    "for A≤4 max-contact = simplex C(A,2), so no isotope may fall below it. "
+                    f"Surplus over simplex: {margins} (D = 0 by construction, it defines b*; "
+                    "the ⁴He excess is 3-body M_3, not extra edges — Part 7). A chain or any "
+                    "sub-simplex edge set would drive one of these negative. Resolves #2089 "
+                    "chain-vs-complete. Cluster/halo deviation open."))
         out = wb.save()
         print(f"\nWitness: {out}")
     except Exception as e:

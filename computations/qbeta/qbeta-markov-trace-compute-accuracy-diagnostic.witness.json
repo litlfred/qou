@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "Δ(τ_M(T_β))(q_0) — both norms satisfy SDP constraint identically"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "Δ(Q_β) — propagates from τ_M(T_β) invariance via Q_β = E_0 · τ_M(T_β)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "Δ(c_k) — Taylor coefficients of S(q), L2/Markov-invariant"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "Δ(m_n) = Δ(Δ_pn) — downstream of Q_β invariance"
     }
   ],

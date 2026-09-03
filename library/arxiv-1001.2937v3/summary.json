@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1001.2937v3",
+ "source_sha256": "ab44349bc21634ff",
+ "brief": "Microscopic Spectrum of the Wilson Dirac Operator — 4 sections: Str(M[U−U−1])+i 1; Str(Z[U+U−1])+ˆa2Str(U2+U−2); Str(M[U+U−1])+ 1",
+ "extended": "**Microscopic Spectrum of the Wilson Dirac Operator**\n\n*P.H. Damgaard,1 K. Splittorff,2 and J.J.M. Verbaarschot3*\n\n4 pp, 4 sections.\n\n**Outline.** 2 Str(M[U−U−1])+i 1; 2 Str(Z[U+U−1])+ˆa2Str(U2+U−2); 2 Str(M[U+U−1])+ 1; 2 Str(Z[U−U−1])−ˆa2Str(U2+U−2)",
+ "tokens": {
+  "brief": 32,
+  "extended": 62
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-strmuu1i-1",
+   "title": "Str(M[U−U−1])+i 1",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-2-strzuu1ˆa2stru2u2",
+   "title": "Str(Z[U+U−1])+ˆa2Str(U2+U−2)",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-strmuu1-1",
+   "title": "Str(M[U+U−1])+ 1",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-2-strzuu1ˆa2stru2u2",
+   "title": "Str(Z[U−U−1])−ˆa2Str(U2+U−2)",
+   "pages": "3-4"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

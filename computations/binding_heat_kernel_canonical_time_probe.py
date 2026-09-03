@@ -214,7 +214,12 @@ def main() -> int:
                            "every τ ≥ 0: damping only shrinks A-growth and even the undamped "
                            "τ→0 supremum (3.658) falls short of the 12.72 target — so no τ, "
                            "canonical or fitted, works. Forecloses τ-tuning as a fit escape.")})
-    wb.add_assertion("canonical_tau_kernel_evaluated_zero_fit", "1", "1")
+    # Was add_assertion(name, X, X) -- both slots the same literal, so `x == x`:
+    # it renders as "passed": true beside real checks, which reads as machine-
+    # verified. This is a DECLARATION the code cannot verify about itself, so it is
+    # a parameter. The statement is unchanged; only the false badge is removed.
+    # Bean qou-ploj (LITERAL class).
+    wb.add_parameter("canonical_tau_kernel_evaluated_zero_fit", "1 (METHOD declaration: the kernel was evaluated, not fitted)")
     wb.add_assertion("exponential_kernel_family_excluded_all_tau",
                      str(bool(family_excluded)), "True")
     wb.add_assertion("canonical_tau_differs_from_parent_h",

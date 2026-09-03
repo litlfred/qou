@@ -183,7 +183,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("gate_vol_5_2_validates",
-                     computed=float(abs(abs(vol1) - VOL_5_2)), expected=0.0,
+                     computed=abs(abs(vol1) - VOL_5_2), expected=0.0,
                      tolerance=1e-6,
                      source="m=1 NZ saddle reproduces Vol(5₂)=2.82812 (merged witness gate)")
     wb.add_assertion("gate_anchor_slope_O1",
@@ -199,11 +199,11 @@ def main() -> int:
                      source="placing the zero in f instead needs log-slope > 1e6 "
                             "across the anchor window — violates 'smooth O(1)'")
     wb.add_assertion("writhe_D_odd_nonvanishing_at_qstar",
-                     computed=float(abs(D_star_w2)), expected=0.21, tolerance=0.05,
+                     computed=abs(D_star_w2), expected=0.21, tolerance=0.05,
                      source="capstone D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 (writhe-2, "
                             "pre-#3892 6₂-braid era) — constraint-(2) failure")
     wb.add_assertion("corrected_writhe4_D_odd_nonvanishing_at_qstar",
-                     computed=float(abs(D_star_w4)), expected=0.42, tolerance=0.05,
+                     computed=abs(D_star_w4), expected=0.42, tolerance=0.05,
                      source="corrected 5₂ (braid [1,1,1,2,-1,2], writhe 4, #3892): "
                             "½(q*⁴−q*⁻⁴) ≈ 0.42 — same constraint-(2) failure")
     ok = all(a.passed for a in wb.assertions)

@@ -215,12 +215,12 @@ def main() -> int:
                      source="b₁/Area=8/(12π)=2/(3π) exactly (PhotonIRZeroMode): the proved α_EM π "
                             "is the Gauss–Bonnet Area 4π(g−1) — geometric, no loop")
     wb.add_assertion("self_energy_pi_home_differs_from_geometric_by_topology",
-                     computed=float(area_over_pib1), expected=1.5, tolerance=1e-9,
+                     computed=area_over_pib1, expected=1.5, tolerance=1e-9,
                      source="Area/(π·b₁)=12π/8π=2(g−1)/g=3/2: the self-energy π-home (8π) is a "
                             "DIFFERENT π from the proved geometric one (Area=12π), excluding the "
                             "same-geometric-π reading (Area value data-falsified)")
     wb.add_assertion("eight_pi_matches_universal_2d_heat_kernel_factor",
-                     computed=float(mult_hk), expected=2.0, tolerance=1e-9,
+                     computed=mult_hk, expected=2.0, tolerance=1e-9,
                      source="8π = 2·(4π), (4π)^{d/2}|_{d=2}=4π the universal 2D heat-kernel loop "
                             "norm; only universal constant of single-π shape (momentum is 4π², "
                             "Schwinger π-free) — supports the universal-loop reading of the π")

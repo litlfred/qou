@@ -1,11 +1,11 @@
 ---
 # qou-dkm2
 title: _li_2_q_util.load_q_50dps() defaults to the MUON pin — 28 live no-arg call sites
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T19:53:28Z
-updated_at: 2026-08-23T08:06:54Z
+updated_at: 2026-08-28T15:23:57Z
 ---
 
 Found while measuring dual-purpose reads for `qou-1c4y` / `qou-v90i`.
@@ -147,3 +147,13 @@ unchanged it would have reported every fixed caller as a defect. Now keyed on
 Two pre-existing defects surfaced by the re-runs, beaned separately:
 `qou-rh31` (Markov identity broken at **both** pins — import-cone drift, not
 the re-pin) and `qou-a9li` (exact-zero assertions with `tolerance=None`).
+
+
+## CLOSED 2026-08-28 — merged in PR #5494
+
+`load_q_50dps(path=None, anchor="proton")` verified present on main. `path` still
+wins when given, `anchor="muon"` reaches the ideal layer explicitly, anything
+else raises. 23 of 26 callers regenerated in the same commit (constraint 4).
+
+The returned `z` was convention **C** — that was bean `qou-rh31`, also now closed:
+`_markov_z` is convention D on main.

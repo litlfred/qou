@@ -58,9 +58,11 @@ Limits / what's still open:
     non-polynomial — it lives in ``ℚ(q, π²)``.  We therefore offer
     a symbolic helper ``alpha_em_inv_sym()`` returning an
     expression in (q, π).
-  * ``z = 1/(q^{1/2} + q^{-1/2})`` introduces ``√q``.  We carry
-    it as ``sympy.Rational(1) / (sqrt(q) + 1/sqrt(q))`` so the full
-    expression lives in ``ℤ[q^{±1/2}]`` after rationalisation.
+  * ``z = q³/(q²+1)`` (**convention D**) is a rational function of q,
+    so nothing here leaves ``ℚ(q)`` on account of z.  Under the excised
+    convention C, ``z = 1/(q^{1/2} + q^{-1/2})`` introduced ``√q`` and the
+    expression lived in ``ℤ[q^{±1/2}]`` after rationalisation; that branch
+    is gone.
   * Fractions in ``hm`` arise from ``-h/2`` for mixed
     quark/inter-nucleon crossings.  Sympy handles ``Rational(1, 2)``
     natively, so coefficients land in ``ℚ[q^{±1}]``.
@@ -100,9 +102,23 @@ q_inv = 1 / q
 # h = q - q⁻¹  (symbolic)
 h = q - q_inv
 
-# z = 1 / (√q + 1/√q) — irrational in q; sympy carries sqrt(q) cleanly
-sqrt_q = sp.sqrt(q)
-z = sp.Rational(1) / (sqrt_q + 1 / sqrt_q)
+# z = q³/(q²+1) — **convention D** (owner ruling 2026-08-15, reaffirmed
+# 2026-08-23).  Was convention C, z = 1/(√q + 1/√q) = √q/(q+1), excised.
+#
+# This module is the symbolic mirror of pyhecke.gram / hecke_core, and
+# `pyhecke/gram.py` has carried convention D since 2026-08-15 — its own banner
+# records that the change moves z by +22.70% and is NOT value-preserving.  The
+# mirror was left on C, so its `TR_M_SYM` Markov-trace weights disagreed with
+# the module they mirror by +22.70% at length 1, +50.6% at length 2 and +84.7%
+# at length 3.  That is a frame straddle, not a convention preference.
+#
+# Under D, z is rational in q, so the ℚ[q^{±1/2}] half-power branch that C
+# forced does not arise here at all.  The module-level `sqrt_q = sp.sqrt(q)`
+# is DELETED rather than kept: z was its only consumer in this file, it is not
+# part of the public surface listed in the module docstring, and no importer
+# reads it.  Leaving it would advertise a half-power branch that no longer
+# exists.
+z = q ** 3 / (q ** 2 + 1)
 
 # [2]_q, [n]_q
 two_q = q + q_inv
@@ -142,7 +158,12 @@ NF_BASIS: list[tuple[int, ...]] = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES: list[str] = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 # TR_M weights — symbolic via z.  Word lengths 0,1,1,2,2,3.
-TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, z**3]
+# 6th weight is the Ocneanu value on the longest element:
+# tr(T_{s1s2s1}) = z*tr(T_{s1}^2) = z(h z + 1) = h z^2 + z, from the
+# defining Markov property tr(x T_n y) = z tr(xy) plus T^2 = h T + 1.
+# z^3 (the z^len(w) guess) is NOT a trace: it is non-cyclic, so the
+# Gram tr(b_i b_j) comes out asymmetric. Bean qou-isu5.
+TR_M_SYM: list[sp.Expr] = [ONE, z, z, z**2, z**2, h * z**2 + z]
 
 INV_TREFOIL_G0_SYM = [(ONE, -h), (ONE, -h)]  # σ₀⁻¹σ₀⁻¹
 INV_TREFOIL_G1_SYM = [(ONE, -h)]              # σ₁⁻¹
@@ -156,7 +177,8 @@ def hm_sym(nf: Sequence[sp.Expr], c: sp.Expr, d: sp.Expr, gen: int) -> list[sp.E
     """Multiply NF element by (c·σ_gen + d·I) symbolically.
 
     Mirrors ``pyhecke.gram.hm`` line-for-line, but every coefficient
-    stays in ``ℚ[q^{±1}]`` (or ``ℚ[q^{±1/2}]`` once z gets involved).
+    stays in ``ℚ[q^{±1}]``.  (The tables below use only ``h``, ``c`` and
+    ``d`` — z does not enter this function in either convention.)
     Returns a 6-element list of sympy expressions.
     """
     r = [sp.Integer(0)] * 6
@@ -287,8 +309,10 @@ def _vertex_channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]):
     """Return (λ_sym, V_std, λ_alt) symbolically for a crossing chain.
 
     Mirrors ``hecke_core._vertex_channels`` — but nothing is f64.
-    The transfer matrix runs in ``ℚ(q)`` (or the field of fractions
-    of ``ℤ[q^{±1/2}]`` when z appears).
+    The transfer matrix runs in ``ℚ(q)`` — including where z appears,
+    since convention D's ``z = q³/(q²+1)`` is rational in q.  Under the
+    excised convention C this dropped to the field of fractions of
+    ``ℤ[q^{±1/2}]``.
     """
     a = sp.Integer(0)
     b = sp.Integer(1)
@@ -333,9 +357,37 @@ def atom_V_full_sym(Z: int, N: int) -> tuple[sp.Expr, sp.Expr]:
 def build_atom_nf_sym(Z: int, N: int) -> list[sp.Expr]:
     """Symbolic mirror of ``hecke_core.build_atom_nf``.
 
-    Returns a 6-element NF vector with coefficients in
-    ``ℚ(q, √q)``.  Use ``evalf_at_q0`` per-component to obtain
-    f64/mpmath numerical values at the end.
+    Returns a 6-element NF vector.  Use ``evalf_at_q0`` per-component to
+    obtain f64/mpmath numerical values at the end.
+
+    **Coefficient ring — corrected 2026-08-30 (bean `qou-c0yc`).**  This
+    said ``ℚ(q, √q)``, which is wrong on both counts under convention D.
+    There is no ``√q``: the half-power branch was a convention-C artefact
+    of ``z``, and ``z`` does not enter :func:`hm_sym` in either convention
+    (see the module banner, which already records the deletion of
+    ``sqrt_q``).  And the coefficients are not general rational functions:
+    this routine only ever calls ``hm_sym`` with ``c = 1`` and
+    ``d ∈ {0, −h, −h/2}``, so every coefficient is a **Laurent polynomial
+    over the dyadic rationals**, ``ℤ[½][q, q^{±1}]``.  The ``½`` is real
+    and compounds — denominators reach ``2^32`` by A = 8 — so ``ℤ[q^{±1}]``
+    would be wrong too.
+
+    Measured properties (``computations/probes/atom_nf_q_degree_probe.py``,
+    exact over ``Fraction``, gated against this function):
+
+      * support is exactly symmetric, ``lo = −hi``, in every component;
+      * q-exponent parity + NF word length is constant per nucleus, so each
+        coefficient is a ``±1`` eigenvector of ``q ↦ q^{-1}``;
+      * degree is quadratic in A.  On the all-proton ray
+        ``deg(σ₀) = 12A + A(A−1)/2 − 1`` exactly for A = 1…30.
+
+    **Cost.** ``hm_sym`` does not canonicalise, so the expression tree
+    fans out at every one of the ``11A + A(A−1)/2 + Z`` calls and this
+    function is exponential: A = 1 takes ~0.1 s, A = 2 does not finish in
+    15 minutes.  Wrapping each ``hm_sym`` result in ``sp.expand`` is
+    value-preserving and brings A = 8 to ~8.5 s; for degree/structure work
+    the exact ``dict[int, Fraction]`` mirror in the probe above reaches
+    A = 30 in seconds.
     """
     A = Z + N
     if A == 0:
@@ -504,11 +556,16 @@ def evalf_vector_at_q0(vec: Sequence[sp.Expr], dps: int = 50) -> list[mp.mpf]:
 
 
 def as_polynomial_in_q(expr: sp.Expr) -> sp.Expr:
-    """Best-effort: rationalise (clear ``√q``, common denominators) and
-    return the resulting Laurent polynomial in q.
+    """Best-effort: clear common denominators and return the resulting
+    Laurent polynomial in q.
 
     Returns a sympy expression; downstream tooling can call
     ``sp.Poly(result, q)`` if a Poly object is needed.
+
+    The "clear ``√q``" clause this docstring used to carry is dead under
+    convention D — nothing in this module produces a half power any more
+    (module banner, 2026-08-15 ruling).  Corrected 2026-08-30, bean
+    `qou-c0yc`.
     """
     return sp.together(sp.expand(expr.rewrite(sp.Pow)))
 

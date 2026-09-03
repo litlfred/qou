@@ -51,7 +51,29 @@ from hoefsmit_numpy import chi_numpy  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 
-Q0 = 1.1099785955573347
+# READ the pin; do not transcribe it. This was
+#     Q0 = 1.1099785955573347
+# -- a bare float64 literal of the RETIRED muon pin A (superseded by CODATA 2022
+# in fca08de7d29, 2026-08-28). The witness recorded it as `q0` while
+# `stamp_staleness_metadata(..., q0_anchor=None)` below resolved to the default
+# PROTON anchor and wrote `q0Value` = 1.10997858275138..., so the witness
+# declared an anchor it had not computed at, with its own two fields ~11.5 ppb
+# apart -- the mu-p substrate tension itself. `q0_anchor_consistency_audit`
+# compares q0Anchor against q0Value, and those agreed, so the straddle passed
+# every gate (bean `qou-tekx`).
+#
+# Proton is the correct target here, not a choice: AGENTS.md's 2026-08-07 owner
+# directive makes the experimental (proton) pin the default for all touched
+# compute, and this stem is absent from `q0_anchor_manifest.json` entirely, so
+# the stamper already resolves it to proton. Reading `q_parameter.Q` makes the
+# computation agree with the stamp instead of contradicting it.
+#
+# float64 is forced at this boundary, not chosen: scipy/numpy below
+# (`linprog`, `np.linalg`) cannot accept mpf. `q_parameter.Q` is already the
+# float64 view of the proton pin, so nothing is downgraded here that was not
+# float64 for the whole probe. The verdict is combinatorial (support sizes /
+# PSD counts), not a precision measurement.
+from q_parameter import Q as Q0  # noqa: E402
 RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
 
 
@@ -172,6 +194,15 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
     }
     out = HERE.parent / "he-nu-sdp-barfold-h9-test.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
     print(f"  witness: {out}")
     return 0

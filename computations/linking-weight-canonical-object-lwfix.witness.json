@@ -9,21 +9,21 @@
       "computed": "2.5327796564",
       "expected": "2.53278",
       "passed": true,
-      "tolerance": 0.0001
+      "tolerance": "0.0001"
     },
     {
       "name": "H3_bare_borromean_factor_near_0p9986",
       "computed": "0.998562163837",
       "expected": "0.998562",
       "passed": true,
-      "tolerance": 0.0001
+      "tolerance": "0.0001"
     },
     {
       "name": "ratio_prod_over_atomic_proton_reproduces_2p38_gate",
       "computed": "2.37750481681",
       "expected": "2.37751",
       "passed": true,
-      "tolerance": 0.001
+      "tolerance": "0.001"
     }
   ],
   "allPassed": true,

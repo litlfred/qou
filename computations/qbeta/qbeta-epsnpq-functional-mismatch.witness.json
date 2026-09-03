@@ -1,0 +1,91 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-27T05:31:45.416245+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "assertions": [
+    {
+      "name": "epsNPq_is_the_coordinate_sum_of_the_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "coordinate_sum_is_sigma_maps_to_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "sigma_to_one_would_force_h_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "avt6_counit_of_sigma_is_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "sigma_to_q_satisfies_the_hecke_relation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_functionals_differ_by_h_times_q_minus_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "NF_vector_is_not_the_exhibited_element_under_either_functional",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 575,
+  "computation": "qbeta-epsnpq-functional-mismatch",
+  "scriptFile": "qbeta_epsnpq_functional_mismatch_probe.py",
+  "scriptHash": "0fc0758bbe6d",
+  "scriptCommitSha": "1e3f0ed1868e381584fc3713cd61edbd7056bc00",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_epsnpq_functional_mismatch_probe.py"
+  },
+  "description": "qou-99qc: the fork's premise fails. avt6's exclusion is about the multiplicative augmentation sigma -> q; epsNPq is a value of the NON-multiplicative coordinate sum sigma -> 1, which is not an algebra map unless h = 0. So the exclusion does not constrain epsNPq and no choice between the two branches is forced. This does NOT show epsNPq is right: the stated NF vector still is not the exhibited nucleon-word difference (CHECK 5).",
+  "data": {
+    "chi3_exhibited": "-0.260387641790120802073285342788008683395823953848006260161245",
+    "coordinate_sum_epsNPq": "-0.187207194529378320729836545290980788975650514906269924640890",
+    "augmentation_on_same_vector": "-0.210199349900502936568794845696942029965574442560244721602157",
+    "gap_coordinate_sum_minus_augmentation": "0.0229921553711246158389583004059612409899239276539747969612668"
+  }
+}

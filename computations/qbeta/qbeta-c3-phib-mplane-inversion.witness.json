@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T13:26:35.327761+00:00",
-  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:36:40.221715+00:00",
+  "commitSha": "d2e6d7fbc450c46335a8aa285b6382c50381a4fc",
   "assertions": [
     {
       "name": "newton_solver_recovers_vol41",
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "import of #3543 vol_of_m at complete structure"
     },
     {
@@ -17,23 +17,23 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "arg u = 0 => sin(2 arg u) = 0 (substrate real axis)"
     },
     {
       "name": "proton_floor_exceeds_t",
-      "computed": 2.0457657139078074,
+      "computed": "2.045765713907807484750602512104580617241910993246892566842166778897965",
       "expected": 2.0,
       "passed": true,
-      "tolerance": 0.3,
+      "tolerance": "0.3",
       "source": "|u|_min(proton)/t ~ 2 => |u| = O(t) anchor-blind law infeasible"
     },
     {
       "name": "no_candidate_passes_cross_anchor_gate",
-      "computed": 0.0,
+      "computed": 0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "scope-(a): this finite canonical menu fails; nothing excluded"
     },
     {
@@ -41,16 +41,16 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "required 5.308e+7 >= 100x smooth 1633.0 — smooth substrate phase laws cannot carry the anchor swing; the u_ladder^3-lever class can (one-sided lower bound)"
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 13,
   "computation": "qbeta-c3-phib-mplane-inversion",
   "scriptFile": "qbeta_c3_phib_mplane_inversion_probe.py",
-  "scriptHash": "b4b2b22872b4",
-  "scriptCommitSha": "1800525fdaf98834724f92b213aa228206a564c0",
+  "scriptHash": "f4c3179c3f95",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,10 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

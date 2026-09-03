@@ -1,0 +1,152 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-25T21:35:47.060949+00:00",
+  "commitSha": "3f057ab89ea120a45a049c3dc570538e755e3504",
+  "assertions": [
+    {
+      "name": "implementation_respects_prop2_1",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "Prop 2(1) is a theorem the handle-reduction code was not built from, so agreement is an independent check on it."
+    },
+    {
+      "name": "prop2_2_is_tight_on_itos_own_pair",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "Conjugate braids differing by exactly the bound's maximum."
+    },
+    {
+      "name": "no_representative_of_4_1_can_meet_ito_thm2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "floor 0 + Prop 2(2) => class max 1 < 3. A genuinely hyperbolic knot, excluded by proof rather than by sampling."
+    },
+    {
+      "name": "no_representative_of_the_corpus_meson_can_meet_ito_thm2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "floor",
+      "source": "floor 1 + Prop 2(2) => class max 2 < 3."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "meson-braid-floor-conjugacy-bound",
+  "scriptFile": "meson_braid_floor_conjugacy_bound_probe.py",
+  "scriptHash": "43126c533cb6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/meson_braid_floor_conjugacy_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/meson_braid_floor_conjugacy_bound_probe.py"
+  },
+  "description": "Applies Ito's Proposition 2 (attributed to Malyutin-Netsvetaev and Malyutin, quoted in the ingested library/arxiv-0805.1447v2) to upgrade the conjugacy-floor SEARCH to a structural exclusion. Prop 2(2) bounds the floor's variation over a conjugacy class by 1, so a floor-0 braid has no representative above 1 and can never meet Theorem 2's [beta]_D >= 3. Also checks the implementation against Prop 2(1), a theorem it was not built from, and confirms Prop 2(2) is tight on Ito's own pair.",
+  "auditOnly": "docs/audits/2026-08-25-ito-dehornoy-hyperbolicity-criterion.md",
+  "data": {
+    "bound_source": {
+      "quoted_in": "library/arxiv-0805.1447v2/sections/sec-001-2-braid-ordering-and-dehornoy-floor.md",
+      "attributed_by_ito_to": [
+        "[MN] A. Malyutin, N. Netsvetaev, Dehornoy's ordering on the braid group and braid moves, St. Petersburg Math. J. 15, No.3 (2004), 437-448",
+        "[Ma] A. Malyutin, Twist number of (closed) braids, St. Petersburg Math. J. 16, No.5 (2005), 791-813"
+      ],
+      "convention_check": "Ito's Remark 1 says his floor definition differs slightly from [Ma]'s and follows [MN]. Prop 2 is stated in ITO's convention, which is what _dehornoy.py implements and what was validated against Ito's three stated floors -- so it applies directly, with no reconciliation.",
+      "neither_paper_is_ingested": "arxiv.org is denied at CONNECT by this sandbox's proxy (403, policy), as are export.arxiv.org, link.springer.com and mathnet.ru. Not needed: the statement used is quoted in full in a document the corpus holds."
+    },
+    "exclusion_by_prop2_2": [
+      {
+        "braid": "4_1 figure-eight (s1 s2^-1)^2",
+        "geometry": "HYPERBOLIC, Vol 2.0299 (muon carrier)",
+        "closure_is_a_knot": true,
+        "floor": 0,
+        "sigma1_pos": 2,
+        "sigma1_neg": 0,
+        "prop2_1_strict_bound": 2,
+        "prop2_1_respected": true,
+        "max_floor_over_ENTIRE_conjugacy_class_by_prop2_2": 1,
+        "can_ANY_representative_meet_ito_thm2": false
+      },
+      {
+        "braid": "Borromean (s1 s2^-1)^3",
+        "geometry": "HYPERBOLIC, Vol 7.3277 (proton carrier) -- a LINK, Thm 2 excludes it",
+        "closure_is_a_knot": false,
+        "floor": 0,
+        "sigma1_pos": 3,
+        "sigma1_neg": 0,
+        "prop2_1_strict_bound": 3,
+        "prop2_1_respected": true,
+        "max_floor_over_ENTIRE_conjugacy_class_by_prop2_2": 1,
+        "can_ANY_representative_meet_ito_thm2": false
+      },
+      {
+        "braid": "meson M = (s1 s2)^2 s2 s1",
+        "geometry": "torus T(2,5), Vol 0",
+        "closure_is_a_knot": true,
+        "floor": 1,
+        "sigma1_pos": 3,
+        "sigma1_neg": 0,
+        "prop2_1_strict_bound": 3,
+        "prop2_1_respected": true,
+        "max_floor_over_ENTIRE_conjugacy_class_by_prop2_2": 2,
+        "can_ANY_representative_meet_ito_thm2": false
+      },
+      {
+        "braid": "trefoil s1^3",
+        "geometry": "torus T(2,3), Vol 0",
+        "closure_is_a_knot": true,
+        "floor": 0,
+        "sigma1_pos": 3,
+        "sigma1_neg": 0,
+        "prop2_1_strict_bound": 3,
+        "prop2_1_respected": true,
+        "max_floor_over_ENTIRE_conjugacy_class_by_prop2_2": 1,
+        "can_ANY_representative_meet_ito_thm2": false
+      }
+    ],
+    "prop2_2_is_tight": {
+      "a": "Delta^2 s1 s2^-1",
+      "floor_a": 1,
+      "b": "Delta^2 s2 s1^-1",
+      "floor_b": 0,
+      "abs_difference": 1,
+      "prop2_2_allows_at_most": 1,
+      "saturates_the_bound": true
+    },
+    "corrects_my_own_scope_note": {
+      "where": "computations/meson/meson_braid_conjugacy_floor_search_probe.py",
+      "said": "no Malyutin bound is invoked -- that paper is not in library/, so corpus-grep path 5 cannot support citing it",
+      "actual": "the bound is quoted in full in library/arxiv-0805.1447v2, in the SAME section whose conjugate pair that probe uses as its validation gate",
+      "mechanical_cause": "I grepped 'Malyutin' in library/INDEX.md and docs/ only. INDEX.md is ONE LINE PER DOCUMENT, so a result CITED INSIDE a held document is invisible to it by construction, and Malyutin has no document of his own here. AGENTS.md path 5 has three tiers; tier 1 answering 'no' is not tier 3 answering 'no'.",
+      "what_changes": "scope (a) search -> scope (b) structural exclusion with the invariant cited. The 118097-conjugate search becomes corroboration, and it corroborates twice: no counterexample, and its raising control saturates the bound.",
+      "what_does_NOT_change": "the numbers, and the reading. Ito's threshold still sits at 18 crossings and a genuinely hyperbolic knot still cannot reach it. The finding is now proved rather than sampled."
+    }
+  }
+}

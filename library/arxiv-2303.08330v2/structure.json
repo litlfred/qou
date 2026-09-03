@@ -1,0 +1,261 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2303.08330v2",
+ "source": {
+  "file": "2303.08330v2.pdf",
+  "sha256": "94981fa0a792b3fab2d0d5f6c2376a6de076a4198f4bff31c908e20e376d9db0",
+  "bytes": 201832,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2303.08330",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Jan 2024"
+  },
+  "doi": null,
+  "title": "A Cable Knot and BPS-Series II John Chae",
+  "authors_raw": "University of California Davis, 1 Shields Ave, Davis, CA, 95616, USA",
+  "title_lines": [
+   "A Cable Knot and BPS-Series II",
+   "John Chae"
+  ],
+  "abstract": "This is a companion paper to earlier work of the author, which genera lizes to an in\ufb01nite family of (2 , 2w + 1)-cabling of the \ufb01gure eight knot ( |w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots . The formulas provide an insight into the cabling operation. We verify the conjecture throug h explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WR T invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3 , 3w + 1)-cabling (|w| > 3).",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240109215926-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(2w+1,2)-cables (w>3)",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example 1",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example 2",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Dehn surgery and",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example 3",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(3w+1,3)-cables (w>3)",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example 1",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Example 2",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The colored Jones polynomial of a cable knot",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The recursion relation for the figure eight knot",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The definitions of the operators",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5241,
+   "n_words": 1033
+  },
+  {
+   "id": "sec-001-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2705,
+   "n_words": 539
+  },
+  {
+   "id": "sec-002-example-1",
+   "number": null,
+   "title": "Example 1",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 229,
+   "n_words": 46
+  },
+  {
+   "id": "sec-003-example-2",
+   "number": null,
+   "title": "Example 2",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4101,
+   "n_words": 891
+  },
+  {
+   "id": "sec-004-dehn-surgery-and",
+   "number": null,
+   "title": "Dehn surgery and",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1338,
+   "n_words": 299
+  },
+  {
+   "id": "sec-005-example-3",
+   "number": null,
+   "title": "Example 3",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 6732,
+   "n_words": 1397
+  },
+  {
+   "id": "sec-006-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-example-1",
+   "number": null,
+   "title": "Example 1",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2386,
+   "n_words": 524
+  },
+  {
+   "id": "sec-008-example-2",
+   "number": null,
+   "title": "Example 2",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1583,
+   "n_words": 342
+  },
+  {
+   "id": "sec-009-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-the-colored-jones-polynomial-of-a-cable-knot",
+   "number": null,
+   "title": "The colored Jones polynomial of a cable knot",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5717,
+   "n_words": 1211
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 11,
+  "chars_total": 30032
+ }
+}

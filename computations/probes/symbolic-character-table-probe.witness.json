@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:27:52.198925+00:00",
-  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:27:52.296174+00:00",
+  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
   "assertions": [
     {
       "name": "self_conjugate_chi_over_h_are_integers",
-      "computed": 2.0284721136571836e-69,
+      "computed": "2.028472113657183570322042721158865358872886988383166954466505735345552e-69",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "max over {(2,1), (3,1,1), (3,2,1), (4,1,1,1)} of |χ_λ(σ_1)/h − c_λ|, c_λ ∈ {1, 3, 8, 10}",
       "source": "Hoefsmit-seminormal single-generator character; claim that c_λ = χ_λ(σ)/h ∈ ℤ for self-conjugate λ."
     },
@@ -18,7 +18,7 @@
       "computed": "3.112889683346682376331259756242678424609620099360328752669023868415329e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_2) − h²|",
       "source": "prop:symbolic-character-table pair-character row."
     },
@@ -27,7 +27,7 @@
       "computed": "5.433407447296027420505471574532675068409518718883482913749568933961301e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_3) − (h² − 2)|",
       "source": "prop:symbolic-character-table pair-character row."
     },
@@ -36,16 +36,16 @@
       "computed": "1.358351861824006855126367893633168767102379679720870728437392233490325e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|χ_(3,1,1)(σ_1 σ_2 σ_3) − (−h)|",
       "source": "prop:symbolic-character-table Coxeter-triple row."
     }
   ],
   "allPassed": true,
-  "durationMs": 48,
+  "durationMs": 24,
   "computation": "symbolic-character-table-probe",
   "scriptFile": "symbolic_character_table_probe.py",
-  "scriptHash": "1f7f8245004a",
+  "scriptHash": "d6bbda79e1ce",
   "scriptCommitSha": "789481516761c41a7310863b11172b81af3b6707",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -58,9 +58,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -122,5 +123,7 @@
       "coxeter_triple_chi_expected_minus_h": -0.2090602987956393,
       "coxeter_triple_residue": "1.358351861824006855126367893633168767102379679720870728437392233490325e-71"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

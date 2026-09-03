@@ -10,7 +10,7 @@ An opaque type representing the knot complement of an isotope `(Z, N)`.
 -- Ref: [manuscript] §brings-surface — the atomic knot complement of an
 -- isotope (Z,N) is a QOU substrate construction; this names it as an
 -- opaque input rather than re-deriving the categorical construction here.
-axiom AtomicKnot (Z N : ℕ) : Type
+opaque AtomicKnot (Z N : ℕ) : Type
 
 /--
 Axiomatization of the hyperbolic volume of a knot complement
@@ -18,15 +18,15 @@ Axiomatization of the hyperbolic volume of a knot complement
 -/
 -- Ref: [thurston1978] https://www.msri.org/publications/books/gt3m/
 -- — hyperbolic volume (Gromov norm) of a 3-manifold / knot complement.
-axiom Vol (K : Type) : ℝ
+opaque Vol (K : Type) : ℝ
 
 /--
 The foundational topological volume quanta for the QOU nucleon blocks.
 -/
 -- Ref: [manuscript] §mass-theory — Vol_p, Vol_n are the QOU proton/neutron
 -- block volume quanta (substrate-fixed constants), not external values.
-axiom Vol_p : ℝ
-axiom Vol_n : ℝ
+opaque Vol_p : ℝ
+opaque Vol_n : ℝ
 
 /-! ### The theorem and the conjecture, kept apart
 

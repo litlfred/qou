@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "detail": "common denominators: {3: '(q**2 + 1)**2', 4: '(q**2 + 1)**3', 5: '(q**2 + 1)**4'}; no q^-k appears, so clearing is exact",
+      "name": "entry_denominators_are_exactly_(q^2+1)^(n-1)_so_the_Z[q]_route_is_valid",
+      "pass": true
+    },
+    {
+      "detail": "general-n Bareiss-over-Z[q] agrees with #5572's transcribed n=3 determinant exactly -- a different arithmetic domain, so this is a cross-implementation check on the METHOD, not internal consistency",
+      "name": "n3_reproduces_PR5572_closed_form_from_general_n_code",
+      "pass": true
+    },
+    {
+      "detail": "every irreducible factor is root-free on (0,oo) by exact Sturm counting; offenders: none",
+      "name": "det_G_TL(3)_has_NO_real_root_with_q_gt_0__scope_b",
+      "pass": true
+    },
+    {
+      "detail": "every irreducible factor is root-free on (0,oo) by exact Sturm counting; offenders: none",
+      "name": "det_G_TL(4)_has_NO_real_root_with_q_gt_0__scope_b",
+      "pass": true
+    },
+    {
+      "detail": "every irreducible factor is root-free on (0,oo) by exact Sturm counting; offenders: none",
+      "name": "det_G_TL(5)_has_NO_real_root_with_q_gt_0__scope_b",
+      "pass": true
+    },
+    {
+      "detail": "dims [1, 2] -> predicted sign -1; ratio constant -1; all factor multiplicities even: True",
+      "name": "n3_wedderburn_law_ratio_is_a_perfect_square_times_the_transpose_sign",
+      "pass": true
+    },
+    {
+      "detail": "dims [1, 3, 2] -> predicted sign +1; ratio constant 1; all factor multiplicities even: True",
+      "name": "n4_wedderburn_law_ratio_is_a_perfect_square_times_the_transpose_sign",
+      "pass": true
+    },
+    {
+      "detail": "dims [1, 4, 5] -> predicted sign +1; ratio constant 1; all factor multiplicities even: True",
+      "name": "n5_wedderburn_law_ratio_is_a_perfect_square_times_the_transpose_sign",
+      "pass": true
+    },
+    {
+      "detail": "n=3: dims [1, 2] -> 5 = Catalan(3); n=4: dims [1, 3, 2] -> 14 = Catalan(4); n=5: dims [1, 4, 5] -> 42 = Catalan(5)",
+      "name": "surviving_block_dims_squared_sum_to_Catalan_n_eq_quotient_dim",
+      "pass": true
+    }
+  ],
+  "common_denominator_by_n": {
+    "3": "(q**2 + 1)**2",
+    "4": "(q**2 + 1)**3",
+    "5": "(q**2 + 1)**4"
+  },
+  "det_closed_form": {
+    "3": "-(q**4 + 1)*(q**2 - q + 1)**4*(q**2 + q + 1)**4/(q**2 + 1)**10",
+    "4": "(q**4 + 1)**6*(q**2 - q + 1)**13*(q**2 + q + 1)**13*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2 + 1)**42",
+    "5": "(q**4 + 1)**26*(q**2 - q + 1)**41*(q**2 + q + 1)**41*(q**4 - q**2 + 1)*(q**4 - q**3 + q**2 - q + 1)**8*(q**4 + q**3 + q**2 + q + 1)**8/(q**2 + 1)**168"
+  },
+  "det_over_wedderburn_ratio": {
+    "3": "-(q**2 - q + 1)**4*(q**2 + q + 1)**4/q**8",
+    "4": "(q**2 + 1)**14*(q**4 + 1)**6*(q**2 - q + 1)**4*(q**2 + q + 1)**4/q**34",
+    "5": "(q**4 + 1)**10*(q**2 - q + 1)**40*(q**2 + q + 1)**40*(q**4 - q**3 + q**2 - q + 1)**8*(q**4 + q**3 + q**2 + q + 1)**8/q**132"
+  },
+  "max_n": 5,
+  "predicted_sign_by_n": {
+    "3": -1,
+    "4": 1,
+    "5": 1
+  },
+  "scope": "scope-(b) structural for every real q > 0 at n=3,4,5 only; nothing attempted or claimed at n>=6. Exact sympy over Q(q) plus exact Sturm root counting. No float64, no q_0 evaluation, no anchor -- pin-independent. Migrates no consumer.",
+  "seconds_by_n": {
+    "3": 0.066,
+    "4": 0.977,
+    "5": 72.45
+  }
+}

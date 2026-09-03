@@ -1,11 +1,11 @@
 ---
 # qou-if87
 title: Correct codata_2022_source.M_P_MEV to the 2022 value + re-score the L2 dashboard (follow-up to qou-2an8)
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T10:53:26Z
-updated_at: 2026-08-09T18:24:55Z
+updated_at: 2026-08-09T22:25:16Z
 ---
 
 ## Partial delivery (2026-08-09, PR #4860) — label fixed + guard added; VALUE STILL OPEN

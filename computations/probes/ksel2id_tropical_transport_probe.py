@@ -64,8 +64,21 @@ WITNESS = HERE / "ksel2id-tropical-transport.witness.json"
 
 mp.dps = 60
 
-# Substrate pins (canonical strings; evaluation points only, no CODATA read).
-Q_MUON = "1.10997859555733471"
+# Substrate pins (evaluation points only, no CODATA read). RESOLVED, not frozen:
+# the literal here was the superseded muon pin A, which stopped being the muon
+# anchor when PR #5500 re-derived it to CODATA-2022, so the probe went on
+# evaluating at a retired anchor under the name Q_MUON. The pair evaluated is
+# "the substrate pin and its inverse" -- the muon naming was incidental, not a
+# proton-vs-muon comparison -- so it resolves the PROTON pin per the owner
+# directive of 2026-08-15 (bean qou-1c4y).
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q_SUBSTRATE = _Q0_RESOLVED
+Q_MUON = Q_SUBSTRATE          # kept as an alias: the key names below are load-bearing
 PINS = {"muon_pin": Q_MUON, "inverse_muon_pin": None}  # inverse filled below
 
 results: dict = {}
@@ -273,6 +286,20 @@ def main() -> None:
         "precisionMetadata": {"compute_dps": mp.dps, "symbolic": "sympy exact"},
         "data": results,
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. This producer DOES read q0, so the anchor
+    # is resolved and stamped rather than suppressed (qou-1c4y).
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+    # Untrue: this producer reads q0 and records it, so the false declaration
+    # DELETED the anchor stamp on every run, converting a visible Q0_FLIP into a
+    # silent Q0_ANCHOR_MISSING (bean qou-1c4y). Resolving is the default.
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None)
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n✓ Witness: {WITNESS.name}  (3 assertion blocks, all passed)")
     print("witness saved; all assertions passed.")

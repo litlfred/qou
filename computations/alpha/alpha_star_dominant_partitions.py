@@ -58,7 +58,14 @@ def alpha_star_from_min_eig(min_eig: float) -> float:
 
 
 def main() -> int:
-    witness_path = Path(__file__).resolve().parent / "joint-tower-sdp-rust.witness.json"
+    # `witness_path`, not `__file__.parent` -- the Phase-5 subdirectory refactor
+    # (2026-06-02) moved this probe into `alpha/` and added the path bridge
+    # above, but left this read pointing at its OWN directory. The witness is in
+    # `computations/`, so the probe has been dying on FileNotFoundError ever
+    # since; its sibling `alpha_star_vs_binding_gap.py` uses the helper and
+    # works. Bean qou-ia6f.
+    from _path_bridge import witness_path as _resolve
+    witness_path = _resolve("joint-tower-sdp-rust.witness.json")
     with open(witness_path) as f:
         w = json.load(f)
 

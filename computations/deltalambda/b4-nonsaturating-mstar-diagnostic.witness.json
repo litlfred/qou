@@ -1,15 +1,16 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:05.245548+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-25T22:21:53.064324+00:00",
+  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
   "assertions": [
     {
-      "name": "detG_closed_form_ok",
-      "computed": 1,
-      "expected": 1,
+      "name": "detG_closed_form_max_deviation",
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "source": "detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4 verified to 40dps"
+      "tolerance": "1e-40",
+      "source": "detG(m)=(1-5m^2)(1-m^2)=1-6m^2+5m^4, measured at m=0.3"
     },
     {
       "name": "canonical_mstar_physical",
@@ -17,21 +18,14 @@
       "expected": 1,
       "passed": true,
       "source": "required m* below writhe cap 1/sqrt5 (det>0)"
-    },
-    {
-      "name": "derived_lead_found",
-      "computed": 0,
-      "expected": 0,
-      "passed": true,
-      "source": "whether m* matches a derived constant to <0.1% (expected 0 = scope-(a) fit-needed)"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "b4-nonsaturating-mstar-diagnostic",
   "scriptFile": "b4_nonsaturating_mstar_diagnostic.py",
-  "scriptHash": "68c257dc8b16",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "1359a6584110",
+  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -94,9 +88,11 @@
       "h (Hecke)": "13.19107",
       "z - 1/sqrt5": "7.9253654",
       "q0 - 1": "3.3762939"
-    }
+    },
+    "derived_lead_found": 0,
+    "derived_lead_found_source": "whether m* matches a derived constant to <0.1% (expected 0 = scope-(a) fit-needed)"
   },
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,15 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T12:43:13.414526+00:00",
-  "commitSha": "25c627e0a615afb5abdfe36ea7c4168ff6904b45",
-  "assertions": [],
+  "computedAt": "2026-08-30T13:59:30.451181+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "lp_feasible_all_atoms",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Every per-atom operator-selection LP must be feasible and bounded for its emitted duals (y0_star, y_star, active_set) to mean anything; strong duality presupposes it."
+    }
+  ],
   "allPassed": true,
-  "durationMs": 116,
+  "durationMs": 92,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
-  "scriptHash": "00b146ce7261",
-  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+  "scriptHash": "455a3786dd7f",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,13 +30,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rho_prefactor_structural_verifier.py"
+    ],
+    "reproduce": "python3 -u computations/rho_prefactor_structural_verifier.py"
   },
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
-    "q_0": 1.1099785955573347,
-    "m_e_MeV": 0.51099895069,
+    "q_0": 1.1099785827513808,
+    "m_e_MeV": "0.51099895069",
     "registry_size": 4
   },
   "data": {
@@ -142,8 +160,8 @@
             ],
             "is_hook": true,
             "chi": 1.0,
-            "y_wenzl": 0.5054042276901161,
-            "y_times_chi_abs": 0.5054042276901161,
+            "y_wenzl": 0.505404227698321,
+            "y_times_chi_abs": 0.505404227698321,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           },
@@ -153,11 +171,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858103805727,
-            "y_wenzl": 0.24729788615494194,
-            "y_times_chi_abs": 0.49315793550729553,
+            "chi": 1.9941858129799634,
+            "y_wenzl": 0.24729788615083945,
+            "y_times_chi_abs": 0.4931579361419382,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.0108968691190756
+            "dim_q": 2.010896866707122
           },
           {
             "lambda": [
@@ -209,39 +227,39 @@
         "lp_dual": {
           "x_star": [
             1.0,
-            4.168703302370482e-41,
-            3.3533289491843236e-42
+            4.042240128482845e-41,
+            1.910611029380626e-42
           ],
-          "y0_star": -0.5054042276901161,
+          "y0_star": -0.505404227698321,
           "y_star": [
-            3.622417584411427e-42,
-            0.01224629218282057,
-            0.5054042276901161
+            3.188268767292602e-42,
+            0.0122462915563828,
+            0.505404227698321
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5054042276901161,
-          "dual_obj": -0.5054042276901161,
-          "duality_gap": 5.82741003304069e-42,
+          "primal_obj": -0.505404227698321,
+          "dual_obj": -0.505404227698321,
+          "duality_gap": 4.6487180130487603e-42,
           "feasible": true,
           "backend": "clarabel-mpfr",
           "precision_bits": 167,
           "x_star_str": [
-            "9.999999999999999999999999999999999999999549593474413e-1",
-            "4.168703302370481958055760622993391005105957872369896e-41",
-            "3.353328949184323755172985462140985826442261696113584e-42"
+            "9.999999999999999999999999999999999999999576667098451e-1",
+            "4.042240128482845177423288505276719040965118719655145e-41",
+            "1.910611029380626089970266571322859472286240320918211e-42"
           ],
-          "y0_star_str": "-5.054042276901161000000000000000000000000036219649518e-1",
+          "y0_star_str": "-0.50540422769832100000000000000000000000000318792219",
           "y_star_str": [
-            "3.622417584411427203478664408685672089895036322837581e-42",
-            "1.224629218282057000000000000000000000000362115119096e-2",
-            "5.054042276901161000000000000000000000000036219081342e-1"
+            "3.1882687672926017884249354366871243683934520833134e-42",
+            "0.012246291556382800000000000000000000000003187524786",
+            "0.5054042276983210000000000000000000000000031879092"
           ],
-          "primal_obj_str": "-5.054042276901160999999999999999999999999977945549188e-1",
-          "dual_obj_str": "-5.054042276901161000000000000000000000000036219649518e-1",
-          "duality_gap_str": "5.827410033040690336563341199423990785221673080033458e-42",
+          "primal_obj_str": "-0.50540422769832099999999999999999999999999853920417",
+          "dual_obj_str": "-0.50540422769832100000000000000000000000000318792219",
+          "duality_gap_str": "4.6487180130487604868985482722173380933830336210533e-42",
           "channel_lambdas": [
             [
               3
@@ -257,8 +275,8 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5054042276901161,
-            -0.49315793550729553,
+            -0.505404227698321,
+            -0.4931579361419382,
             -0.0
           ],
           "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
@@ -285,8 +303,8 @@
             ],
             "is_hook": true,
             "chi": 1.0,
-            "y_wenzl": 0.5054042276901161,
-            "y_times_chi_abs": 0.5054042276901161,
+            "y_wenzl": 0.505404227698321,
+            "y_times_chi_abs": 0.505404227698321,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           },
@@ -296,11 +314,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858103805727,
-            "y_wenzl": 0.24729788615494194,
-            "y_times_chi_abs": 0.49315793550729553,
+            "chi": 1.9941858129799634,
+            "y_wenzl": 0.24729788615083945,
+            "y_times_chi_abs": 0.4931579361419382,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.0108968691190756
+            "dim_q": 2.010896866707122
           },
           {
             "lambda": [
@@ -352,39 +370,39 @@
         "lp_dual": {
           "x_star": [
             1.0,
-            4.168703302370482e-41,
-            3.3533289491843236e-42
+            4.042240128482845e-41,
+            1.910611029380626e-42
           ],
-          "y0_star": -0.5054042276901161,
+          "y0_star": -0.505404227698321,
           "y_star": [
-            3.622417584411427e-42,
-            0.01224629218282057,
-            0.5054042276901161
+            3.188268767292602e-42,
+            0.0122462915563828,
+            0.505404227698321
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5054042276901161,
-          "dual_obj": -0.5054042276901161,
-          "duality_gap": 5.82741003304069e-42,
+          "primal_obj": -0.505404227698321,
+          "dual_obj": -0.505404227698321,
+          "duality_gap": 4.6487180130487603e-42,
           "feasible": true,
           "backend": "clarabel-mpfr",
           "precision_bits": 167,
           "x_star_str": [
-            "9.999999999999999999999999999999999999999549593474413e-1",
-            "4.168703302370481958055760622993391005105957872369896e-41",
-            "3.353328949184323755172985462140985826442261696113584e-42"
+            "9.999999999999999999999999999999999999999576667098451e-1",
+            "4.042240128482845177423288505276719040965118719655145e-41",
+            "1.910611029380626089970266571322859472286240320918211e-42"
           ],
-          "y0_star_str": "-5.054042276901161000000000000000000000000036219649518e-1",
+          "y0_star_str": "-0.50540422769832100000000000000000000000000318792219",
           "y_star_str": [
-            "3.622417584411427203478664408685672089895036322837581e-42",
-            "1.224629218282057000000000000000000000000362115119096e-2",
-            "5.054042276901161000000000000000000000000036219081342e-1"
+            "3.1882687672926017884249354366871243683934520833134e-42",
+            "0.012246291556382800000000000000000000000003187524786",
+            "0.5054042276983210000000000000000000000000031879092"
           ],
-          "primal_obj_str": "-5.054042276901160999999999999999999999999977945549188e-1",
-          "dual_obj_str": "-5.054042276901161000000000000000000000000036219649518e-1",
-          "duality_gap_str": "5.827410033040690336563341199423990785221673080033458e-42",
+          "primal_obj_str": "-0.50540422769832099999999999999999999999999853920417",
+          "dual_obj_str": "-0.50540422769832100000000000000000000000000318792219",
+          "duality_gap_str": "4.6487180130487604868985482722173380933830336210533e-42",
           "channel_lambdas": [
             [
               3
@@ -400,8 +418,8 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5054042276901161,
-            -0.49315793550729553,
+            -0.505404227698321,
+            -0.4931579361419382,
             -0.0
           ],
           "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
@@ -427,9 +445,9 @@
               3
             ],
             "is_hook": true,
-            "chi": 1.2320524825954329,
-            "y_wenzl": 0.5054042276901161,
-            "y_times_chi_abs": 0.6226845334398349,
+            "chi": 1.232052454166764,
+            "y_wenzl": 0.505404227698321,
+            "y_times_chi_abs": 0.6226845190819744,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           },
@@ -439,11 +457,11 @@
               1
             ],
             "is_hook": true,
-            "chi": -0.8611569221696472,
-            "y_wenzl": 0.24729788615494194,
-            "y_times_chi_abs": 0.21296228650024962,
+            "chi": -0.8611569547181094,
+            "y_wenzl": 0.24729788615083945,
+            "y_times_chi_abs": 0.2129622945458826,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.0108968691190756
+            "dim_q": 2.010896866707122
           },
           {
             "lambda": [
@@ -452,7 +470,7 @@
               1
             ],
             "is_hook": true,
-            "chi": 0.811653735637468,
+            "chi": 0.811653754365758,
             "y_wenzl": 0.0,
             "y_times_chi_abs": 0.0,
             "d_lambda_syt_count": 1,
@@ -495,39 +513,39 @@
         "lp_dual": {
           "x_star": [
             1.0,
-            6.679519158593074e-42,
-            3.064121783385938e-42
+            5.365301879589812e-42,
+            2.3624449600000195e-42
           ],
-          "y0_star": -0.6226845334398349,
+          "y0_star": -0.6226845190819744,
           "y_star": [
-            4.122915043422033e-42,
-            0.40972224693958526,
-            0.6226845334398349
+            5.847300838432092e-42,
+            0.40972222453609186,
+            0.6226845190819744
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.6226845334398349,
-          "dual_obj": -0.6226845334398349,
-          "duality_gap": 8.767525158850575e-42,
+          "primal_obj": -0.6226845190819744,
+          "dual_obj": -0.6226845190819744,
+          "duality_gap": 9.516553311171676e-42,
           "feasible": true,
           "backend": "clarabel-mpfr",
           "precision_bits": 167,
           "x_star_str": [
-            "9.999999999999999999999999999999999999999902562628671e-1",
-            "6.679519158593074331418389911065386589246853606687836e-42",
-            "3.064121783385938460649662425110676006586240130851237e-42"
+            "9.999999999999999999999999999999999999999922721480638e-1",
+            "5.365301879589811690031429975761619311293354743128170e-42",
+            "2.362444960000019569190530890040576608035353348196434e-42"
           ],
-          "y0_star_str": "-6.226845334398349000000000000000000000000041227364222e-1",
+          "y0_star_str": "-0.62268451908197440000000000000000000000000584714654",
           "y_star_str": [
-            "4.122915043422033294539427739294079933099627353733296e-42",
-            "4.097222469395852800000000000000000000000041226147138e-1",
-            "6.226845334398349000000000000000000000000041226857145e-1"
+            "5.8473008384320915060040249878856912433090064924745e-42",
+            "0.40972222453609180000000000000000000000000584709343",
+            "0.62268451908197440000000000000000000000000584712894"
           ],
-          "primal_obj_str": "-6.226845334398348999999999999999999999999953552112633e-1",
-          "dual_obj_str": "-6.226845334398349000000000000000000000000041227364222e-1",
-          "duality_gap_str": "8.767525158850574958002677437372521064816048949385896e-42",
+          "primal_obj_str": "-0.62268451908197439999999999999999999999999633059323",
+          "dual_obj_str": "-0.62268451908197440000000000000000000000000584714654",
+          "duality_gap_str": "9.5165533111716766426298417008066272626213341377233e-42",
           "channel_lambdas": [
             [
               3
@@ -543,8 +561,8 @@
             ]
           ],
           "channel_t_costs": [
-            -0.6226845334398349,
-            -0.21296228650024962,
+            -0.6226845190819744,
+            -0.2129622945458826,
             -0.0
           ],
           "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
@@ -571,8 +589,8 @@
             ],
             "is_hook": true,
             "chi": 1.0,
-            "y_wenzl": 0.5054042276901161,
-            "y_times_chi_abs": 0.5054042276901161,
+            "y_wenzl": 0.505404227698321,
+            "y_times_chi_abs": 0.505404227698321,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           },
@@ -582,11 +600,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858103805727,
-            "y_wenzl": 0.24729788615494194,
-            "y_times_chi_abs": 0.49315793550729553,
+            "chi": 1.9941858129799634,
+            "y_wenzl": 0.24729788615083945,
+            "y_times_chi_abs": 0.4931579361419382,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.0108968691190756
+            "dim_q": 2.010896866707122
           },
           {
             "lambda": [
@@ -638,39 +656,39 @@
         "lp_dual": {
           "x_star": [
             1.0,
-            4.168703302370482e-41,
-            3.3533289491843236e-42
+            4.042240128482845e-41,
+            1.910611029380626e-42
           ],
-          "y0_star": -0.5054042276901161,
+          "y0_star": -0.505404227698321,
           "y_star": [
-            3.622417584411427e-42,
-            0.01224629218282057,
-            0.5054042276901161
+            3.188268767292602e-42,
+            0.0122462915563828,
+            0.505404227698321
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5054042276901161,
-          "dual_obj": -0.5054042276901161,
-          "duality_gap": 5.82741003304069e-42,
+          "primal_obj": -0.505404227698321,
+          "dual_obj": -0.505404227698321,
+          "duality_gap": 4.6487180130487603e-42,
           "feasible": true,
           "backend": "clarabel-mpfr",
           "precision_bits": 167,
           "x_star_str": [
-            "9.999999999999999999999999999999999999999549593474413e-1",
-            "4.168703302370481958055760622993391005105957872369896e-41",
-            "3.353328949184323755172985462140985826442261696113584e-42"
+            "9.999999999999999999999999999999999999999576667098451e-1",
+            "4.042240128482845177423288505276719040965118719655145e-41",
+            "1.910611029380626089970266571322859472286240320918211e-42"
           ],
-          "y0_star_str": "-5.054042276901161000000000000000000000000036219649518e-1",
+          "y0_star_str": "-0.50540422769832100000000000000000000000000318792219",
           "y_star_str": [
-            "3.622417584411427203478664408685672089895036322837581e-42",
-            "1.224629218282057000000000000000000000000362115119096e-2",
-            "5.054042276901161000000000000000000000000036219081342e-1"
+            "3.1882687672926017884249354366871243683934520833134e-42",
+            "0.012246291556382800000000000000000000000003187524786",
+            "0.5054042276983210000000000000000000000000031879092"
           ],
-          "primal_obj_str": "-5.054042276901160999999999999999999999999977945549188e-1",
-          "dual_obj_str": "-5.054042276901161000000000000000000000000036219649518e-1",
-          "duality_gap_str": "5.827410033040690336563341199423990785221673080033458e-42",
+          "primal_obj_str": "-0.50540422769832099999999999999999999999999853920417",
+          "dual_obj_str": "-0.50540422769832100000000000000000000000000318792219",
+          "duality_gap_str": "4.6487180130487604868985482722173380933830336210533e-42",
           "channel_lambdas": [
             [
               3
@@ -686,8 +704,8 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5054042276901161,
-            -0.49315793550729553,
+            -0.505404227698321,
+            -0.4931579361419382,
             -0.0
           ],
           "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
@@ -791,6 +809,6 @@
   "caveats": [
     "B_3 atoms only this session (proton, neutron, ²H/6_2, ³He/L₆ₐ₄). ³H (B_5 / 8_11) needs Hoefsmit at H_5 — deferred. The Wenzl-Schur weights y_λ(q_0) are loaded from y-lambda-wenzl-witness.json (50 dps mpmath); evaluation here is float64 (sufficient for the argmax-λ* identification).  The 'observed ρ' values are taken from the existing canonical-knot table in conj-rho-prefactor-structural.md / joint-tower-sdp-h6-h9.witness.json. **Critical structural finding:** the H_3-level analysis identifies proton and ³He as Markov-equivalent (their braid words are mutual inverses, χ_λ profiles identical), so no rule of the form 'ρ = f(chi, y) at the braid strand count' can reproduce the observed ρ split (1 vs 2). The conjecture's structural form *requires* evaluation at the atomic strand count n_0 = 3·A, where the binding operator K ∈ H_{3·A} carries the inter-nucleon linking. See `structural_finding` in the summary for the proposed categorical decomposition T_w(𝔥) = K · ⊗_i T_w(const_i)."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

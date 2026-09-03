@@ -64,7 +64,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -78,33 +78,51 @@ INPUT_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
 
-def _pearson_r(xs: list[float], ys: list[float]) -> float:
-    """Pearson correlation coefficient.  Returns NaN if degenerate."""
+def _mpf(x):
+    """Coerce a witness field to mpf. Upstream witnesses serialize numbers as
+    STRINGS under the NO-FLOAT64 discipline (`_precision.fmt`), so `err_pct`
+    arrives as `"-1.234"`, not as a float. Reading it without this coercion is
+    what broke this producer: `sum(ys)` raised
+    `TypeError: unsupported operand type(s) for +: 'int' and 'str'`."""
+    return x if isinstance(x, mp.mpf) else mp.mpf(str(x))
+
+
+def _pearson_r(xs, ys):
+    """Pearson correlation coefficient in mpf. Returns NaN if degenerate.
+
+    mpf, not float: AGENTS.md ("PROBES ARE NOT EXEMPT", 2026-08-18) bans
+    aggregating a sample in float64 -- `sum()`/`** 0.5` over a list of floats
+    accumulates error across the sample, and this function's output is an
+    ARGUMENT (an r^2 that decides a verdict), not a display value."""
     n = len(xs)
     if n < 2:
-        return float("nan")
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
-    denx = sum((x - mx) ** 2 for x in xs) ** 0.5
-    deny = sum((y - my) ** 2 for y in ys) ** 0.5
+        return mp.nan
+    xs = [_mpf(x) for x in xs]
+    ys = [_mpf(y) for y in ys]
+    mx = mp.fsum(xs) / n
+    my = mp.fsum(ys) / n
+    num = mp.fsum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    denx = mp.sqrt(mp.fsum((x - mx) ** 2 for x in xs))
+    deny = mp.sqrt(mp.fsum((y - my) ** 2 for y in ys))
     if denx == 0 or deny == 0:
-        return float("nan")
+        return mp.nan
     return num / (denx * deny)
 
 
-def _linear_fit(xs: list[float], ys: list[float]) -> tuple[float, float, float]:
-    """Returns (slope, intercept, R²) for y = slope·x + intercept."""
+def _linear_fit(xs, ys):
+    """Returns (slope, intercept, R2) for y = slope*x + intercept, in mpf."""
     r = _pearson_r(xs, ys)
     if not (r == r):  # NaN check
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     n = len(xs)
-    mx = sum(xs) / n
-    my = sum(ys) / n
-    cov = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / n
-    var = sum((x - mx) ** 2 for x in xs) / n
+    xs = [_mpf(x) for x in xs]
+    ys = [_mpf(y) for y in ys]
+    mx = mp.fsum(xs) / n
+    my = mp.fsum(ys) / n
+    cov = mp.fsum((x - mx) * (y - my) for x, y in zip(xs, ys)) / n
+    var = mp.fsum((x - mx) ** 2 for x in xs) / n
     if var == 0:
-        return float("nan"), float("nan"), float("nan")
+        return mp.nan, mp.nan, mp.nan
     slope = cov / var
     intercept = my - slope * mx
     return slope, intercept, r ** 2
@@ -131,8 +149,28 @@ def main() -> int:
 
     src = record_upstream(INPUT_WITNESS, _UPSTREAM_RECORDS)
     rows_in = src["data"]["rows"]
-    q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
-    h_q0 = float(q - 1 / q)  # h = q − q⁻¹ at substrate
+    # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+    # §"q₀ anchor convention": the experimental (proton) anchor is the default
+    # for all production compute, and the owner authorisation recorded there
+    # covers this sweep ("we want proton unless for an explicit reason ... fix
+    # all, even if not visible").
+    #
+    # This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+    # MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+    # direct read of the anchor-defining witness computes at muon whatever the
+    # configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+    # tension itself.
+    #
+    # The upstream record is KEPT — that witness remains the canonical 3-CAL
+    # (muon) pin document, it is simply no longer the source of this
+    # computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+    record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+    q = mp.mpf(_Q50_PROTON)
+    # mpf, not float(): this feeds `signed_h_weight`, which is regressed
+    # against err_pct below -- a computation, not a display (AGENTS.md
+    # "PROBES ARE NOT EXEMPT").
+    h_q0 = q - 1 / q  # h = q - 1/q at substrate
 
     # Per-isotope rows
     rows_out = []
@@ -155,8 +193,11 @@ def main() -> int:
         rows_out.append({
             "Z": r["Z"], "N": r["N"], "A": r["A"],
             "atom_label": _atom_label(r["Z"], r["N"]),
-            "err_pct": r["err_pct"],
-            "err_MeV": r["err_MeV"],
+            # Coerced ONCE here, so every downstream comparison and regression
+            # sees a number. Upstream serializes these as strings under the
+            # NO-FLOAT64 discipline, which is what broke this producer.
+            "err_pct": _mpf(r["err_pct"]),
+            "err_MeV": _mpf(r["err_MeV"]),
             "prediction_type": r.get("prediction_type", "binding_energy"),
             "channels_pp": ch["pp"],
             "channels_pn": ch["pn"],
@@ -167,7 +208,7 @@ def main() -> int:
 
     # Regress err_pct against each candidate predictor
     err_pcts = [r["err_pct"] for r in rows_out]
-    n_inters = [float(r["n_inter_total"]) for r in rows_out]
+    n_inters = [mp.mpf(r["n_inter_total"]) for r in rows_out]
     h_weights = [r["signed_h_weight"] for r in rows_out]
 
     slope_n, intercept_n, r2_n = _linear_fit(n_inters, err_pcts)
@@ -205,7 +246,11 @@ def main() -> int:
     # KLR-positivity cross-check
     klr_pos_violations = [
         r for r in rows_out
-        if float(r.get("err_pct", 0)) < 0
+        # _mpf, not float(): this sign test CLASSIFIES a row into the
+        # KLR-positivity violation list whose count is recorded in the
+        # witness, so it is an argument, not a display.  AGENTS.md
+        # ("PROBES ARE NOT EXEMPT") permits float() only inside an f-string.
+        if _mpf(r.get("err_pct", 0)) < 0
         and r["prediction_type"] == "binding_energy"
     ]
 
@@ -245,7 +290,7 @@ def main() -> int:
         "prediction_error_sign_flips": [
             {
                 "atom": r["atom_label"],
-                "err_pct": r["err_pct"],
+                "err_pct": fmt(r["err_pct"]),
                 "interpretation": (
                     "UNDER-prediction (err < 0) → missing positive "
                     "contributions OR over-weighted negative channels"
@@ -270,8 +315,8 @@ def main() -> int:
     )
     w.add_assertion(
         "diagnostic_emitted_for_all_isotopes_with_predictions",
-        computed=len(rows_out),
-        expected=len(rows_out),
+        computed=len(rows_out) > 0,
+        expected=True,
         tolerance=0,
         unit="rows",
         source="low-isotope-mass-table.witness.json projection",

@@ -1,0 +1,278 @@
+{
+  "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
+  "name": "assembly-shortfall-shape",
+  "description": "The chain-assembly binding shortfall is NEITHER an extensivity failure NOR a coefficient. B_model is affine in (Z,N) (exactly A-1 bonds) so B/A converges to -(alpha/2)ln(f_pp*f_nn) and model/AME is bounded below by 0.307 across A=2..238 -- not extensivity. B_model/A is strictly increasing along N=Z and bounded by its limit while AME B/A peaks at 62Ni and falls, so no positive constant reproduces the fall, and the deuteron refuses a uniform factor 3 outright -- not a coefficient. The missing shape is the Z(Z-1) Coulomb multiplicity that CrossingCountAffine proves the crossing counts cannot supply. Scope (a) for the numbers, (b) for the monotonicity exclusion.",
+  "computedAt": "2026-08-30T14:54:59.183913+00:00",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "alpha_MeV": "4.18598136329447589694506215876",
+    "bond_factors": {
+      "f_pp": "0.612688037146465251595829863946",
+      "f_pn": "0.508229789376738962577995797656",
+      "f_nn": "0.403627738350825936164983650816"
+    },
+    "model_B_per_A_limit_MeV": "2.92424631376189350737739190987",
+    "ame_B_per_A_peak": {
+      "nucleus": "62Ni",
+      "A": 62,
+      "B_per_A_MeV": "8.7945555"
+    },
+    "constant_at_peak": "3.00746057492203985700072574958",
+    "distance_from_3": "0.0074605749220398570007",
+    "deuteron": {
+      "model_MeV": "2.8331625720045237703",
+      "ame_MeV": "2.2245662",
+      "model_over_ame": "1.2735797981667274142",
+      "three_x_over_ame": "3.8207393945001822427"
+    },
+    "table": [
+      {
+        "nucleus": "2H",
+        "A": 2,
+        "Z": 1,
+        "N": 1,
+        "ame_B_MeV": "2.2245662",
+        "ame_B_per_A_MeV": "1.1122831",
+        "model_B_MeV": "2.833162572",
+        "model_B_per_A_MeV": "1.416581286",
+        "model_over_ame": "1.27357979817",
+        "ame_over_model": "0.785188334048"
+      },
+      {
+        "nucleus": "3H",
+        "A": 3,
+        "Z": 1,
+        "N": 2,
+        "ame_B_MeV": "8.4817962",
+        "ame_B_per_A_MeV": "2.8272654",
+        "model_B_MeV": "6.63094550715",
+        "model_B_per_A_MeV": "2.21031516905",
+        "model_over_ame": "0.781785526413",
+        "ame_over_model": "1.27912319455"
+      },
+      {
+        "nucleus": "3He",
+        "A": 3,
+        "Z": 2,
+        "N": 1,
+        "ame_B_MeV": "7.71804132",
+        "ame_B_per_A_MeV": "2.57268044",
+        "model_B_MeV": "4.88387226439",
+        "model_B_per_A_MeV": "1.62795742146",
+        "model_over_ame": "0.632786488423",
+        "ame_over_model": "1.58031187185"
+      },
+      {
+        "nucleus": "4He",
+        "A": 4,
+        "Z": 2,
+        "N": 2,
+        "ame_B_MeV": "28.2956624",
+        "ame_B_per_A_MeV": "7.0739156",
+        "model_B_MeV": "8.68165519953",
+        "model_B_per_A_MeV": "2.17041379988",
+        "model_over_ame": "0.306819295368",
+        "ame_over_model": "3.25924743032"
+      },
+      {
+        "nucleus": "6Li",
+        "A": 6,
+        "Z": 3,
+        "N": 3,
+        "ame_B_MeV": "31.9939872",
+        "ame_B_per_A_MeV": "5.3323312",
+        "model_B_MeV": "14.5301478271",
+        "model_B_per_A_MeV": "2.42169130451",
+        "model_over_ame": "0.454152454842",
+        "ame_over_model": "2.20190376456"
+      },
+      {
+        "nucleus": "7Li",
+        "A": 7,
+        "Z": 3,
+        "N": 4,
+        "ame_B_MeV": "39.2450807",
+        "ame_B_per_A_MeV": "5.6064401",
+        "model_B_MeV": "18.3279307622",
+        "model_B_per_A_MeV": "2.61827582317",
+        "model_over_ame": "0.467012181789",
+        "ame_over_model": "2.14127176762"
+      },
+      {
+        "nucleus": "7Be",
+        "A": 7,
+        "Z": 4,
+        "N": 3,
+        "ame_B_MeV": "37.6008409",
+        "ame_B_per_A_MeV": "5.3715487",
+        "model_B_MeV": "16.5808575194",
+        "model_B_per_A_MeV": "2.36869393135",
+        "model_over_ame": "0.440970391155",
+        "ame_over_model": "2.2677259518"
+      },
+      {
+        "nucleus": "9Be",
+        "A": 9,
+        "Z": 4,
+        "N": 5,
+        "ame_B_MeV": "58.1640237",
+        "ame_B_per_A_MeV": "6.4626693",
+        "model_B_MeV": "24.1764233897",
+        "model_B_per_A_MeV": "2.68626926552",
+        "model_over_ame": "0.415659403387",
+        "ame_over_model": "2.40581589602"
+      },
+      {
+        "nucleus": "12C",
+        "A": 12,
+        "Z": 6,
+        "N": 6,
+        "ame_B_MeV": "92.1617352",
+        "ame_B_per_A_MeV": "7.6801446",
+        "model_B_MeV": "32.0756257096",
+        "model_B_per_A_MeV": "2.67296880914",
+        "model_over_ame": "0.348036260819",
+        "ame_over_model": "2.87326383075"
+      },
+      {
+        "nucleus": "16O",
+        "A": 16,
+        "Z": 8,
+        "N": 8,
+        "ame_B_MeV": "127.6193152",
+        "ame_B_per_A_MeV": "7.9762072",
+        "model_B_MeV": "43.7726109647",
+        "model_B_per_A_MeV": "2.73578818529",
+        "model_over_ame": "0.342993620488",
+        "ame_over_model": "2.91550612101"
+      },
+      {
+        "nucleus": "40Ca",
+        "A": 40,
+        "Z": 20,
+        "N": 20,
+        "ame_B_MeV": "342.052184",
+        "ame_B_per_A_MeV": "8.5513046",
+        "model_B_MeV": "113.954522495",
+        "model_B_per_A_MeV": "2.84886306237",
+        "model_over_ame": "0.33314952462",
+        "ame_over_model": "3.00165519113"
+      },
+      {
+        "nucleus": "56Fe",
+        "A": 56,
+        "Z": 26,
+        "N": 30,
+        "ame_B_MeV": "492.2599528",
+        "ame_B_per_A_MeV": "8.7903563",
+        "model_B_MeV": "164.236610001",
+        "model_B_per_A_MeV": "2.93279660715",
+        "model_over_ame": "0.333637967229",
+        "ame_over_model": "2.9972607983"
+      },
+      {
+        "nucleus": "62Ni",
+        "A": 62,
+        "Z": 28,
+        "N": 34,
+        "ame_B_MeV": "545.262441",
+        "ame_B_per_A_MeV": "8.7945555",
+        "model_B_MeV": "183.529161126",
+        "model_B_per_A_MeV": "2.9601477601",
+        "model_over_ame": "0.3365886724",
+        "ame_over_model": "2.97098530639"
+      },
+      {
+        "nucleus": "90Zr",
+        "A": 90,
+        "Z": 40,
+        "N": 50,
+        "ame_B_MeV": "783.897291",
+        "ame_B_per_A_MeV": "8.7099699",
+        "model_B_MeV": "268.902204397",
+        "model_B_per_A_MeV": "2.98780227108",
+        "model_over_ame": "0.343032445046",
+        "ame_over_model": "2.91517614278"
+      },
+      {
+        "nucleus": "120Sn",
+        "A": 120,
+        "Z": 50,
+        "N": 70,
+        "ame_B_MeV": "1020.53856",
+        "ame_B_per_A_MeV": "8.504488",
+        "model_B_MeV": "365.364960024",
+        "model_B_per_A_MeV": "3.0447080002",
+        "model_over_ame": "0.358011910911",
+        "ame_over_model": "2.79320315756"
+      },
+      {
+        "nucleus": "208Pb",
+        "A": 208,
+        "Z": 82,
+        "N": 126,
+        "ame_B_MeV": "1636.430224",
+        "ame_B_per_A_MeV": "7.867453",
+        "model_B_MeV": "643.663514548",
+        "model_B_per_A_MeV": "3.09453612763",
+        "model_over_ame": "0.393333919838",
+        "ame_over_model": "2.54236909039"
+      },
+      {
+        "nucleus": "238U",
+        "A": 238,
+        "Z": 92,
+        "N": 146,
+        "ame_B_MeV": "1801.6900356",
+        "ame_B_per_A_MeV": "7.5701262",
+        "model_B_MeV": "740.126270174",
+        "model_B_per_A_MeV": "3.10977424443",
+        "model_over_ame": "0.410795561695",
+        "ame_over_model": "2.43430088649"
+      }
+    ],
+    "assertions": [
+      {
+        "name": "model B/A converges to the closed-form limit",
+        "passed": true,
+        "detail": "|B/A - limit| falls monotonically to 0.000301533 at A=10^4; limit = 2.924246313761893507377392 MeV/nucleon (exact closed form)"
+      },
+      {
+        "name": "model/AME does NOT decay -- bounded away from 0, with an interior minimum near the AME peak",
+        "passed": true,
+        "detail": "the ratio bottoms at 0.3068193 (4He, A=4) and RISES to 0.41079556 (238U, A=238); never below 0.3068193 anywhere. An extensivity deficit would send it monotonically to 0. It does the opposite past A~60 -- see section 7."
+      },
+      {
+        "name": "B_model is affine in (Z,N) -- exactly A-1 bonds, no curvature",
+        "passed": true,
+        "detail": "both second differences vanish (0.0, 0.0) -- so B_model/A tends to a constant and the model has the extensive A-scaling already"
+      },
+      {
+        "name": "the AME side has NO asymptote -- B/A rises, peaks, falls",
+        "passed": true,
+        "detail": "peak at A=62 (8.7945555 MeV/nucleon), down to 7.5701262 at A=238. So there is no constant to divide by: '3' is a ratio to the PEAK, not to a limit."
+      },
+      {
+        "name": "3x agreement is a CROSSING, not a plateau -- not evidence for 3",
+        "passed": true,
+        "detail": "3*model/AME is 0.99944857 at 40Ca (A=40) but 1.4010365 at 7Li (A=7). A constant-B/A model can only CROSS a rising-peaking-falling curve; it crosses near the peak. Same trap as R3 and qou-vudb."
+      },
+      {
+        "name": "the constant is NEAR 3 but is not measurably 3",
+        "passed": true,
+        "detail": "k = 3.00746057492204, |k - 3| = 0.0074605749 (0.248686%). Near 3, and the comparison point (the empirical peak) is not a fundamental quantity, so this cannot be sharpened by measuring harder."
+      },
+      {
+        "name": "a UNIFORM factor 3 is refuted by the deuteron (scope (a))",
+        "passed": true,
+        "detail": "the single-bond nucleus is already OVER-bound by the bare model (1.2735798x); tripling puts it at 3.8207394x AME. So whatever supplies the factor near 3 at large A must VANISH at A=2 -- it is not a uniform per-bond multiplicity."
+      },
+      {
+        "name": "the model's B/A is MONOTONE and the data's is PEAKED -- a shape mismatch, not a coefficient one",
+        "passed": true,
+        "detail": "B_model/A increases strictly in A along N=Z and is bounded above by 2.92424631376, so it can NEVER turn over. AME B/A turns over at A=62. Rescaling the model by ANY positive constant preserves monotonicity, so no choice of the constant in section 5 reproduces the fall -- which is why model/AME rises again past A~60 in section 2, instead of settling."
+      }
+    ],
+    "allPassed": true
+  }
+}

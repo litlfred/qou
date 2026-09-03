@@ -1,0 +1,266 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9211141v1",
+ "source": {
+  "file": "9211141v1.pdf",
+  "sha256": "bd9fbd329884c26e9327a403455c9cc5fbd8cb3f2916830d55e6f06d645e2ee6",
+  "bytes": 268162,
+  "pages": 34,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9211141",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Dec 1992"
+  },
+  "doi": null,
+  "title": "ITD 92/93\u20139",
+  "authors_raw": "Level-Spacing Distributions and the Airy Kernel",
+  "title_lines": [
+   "ITD 92/93\u20139"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:hep-th/9211141v1  1 Dec 1992",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126153501-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+   "page": 2,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "The Ordinary Di\ufb00erential Equations",
+   "page": 5,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+   "page": 9,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+   "page": 16,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "ASYMPTOTICS",
+   "page": 17,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "The region x << t\u22121/2",
+   "page": 21,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The region x \u2212t >> t1/4",
+   "page": 23,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The region |x \u2212t| << t",
+   "page": 24,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotics of \u03bbi",
+   "page": 25,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
+   "page": 26,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
+   "page": 27,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 30,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-introduction-and-summary-of-results",
+   "number": "I",
+   "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 4805,
+   "n_words": 923
+  },
+  {
+   "id": "sec-001-c-the-ordinary-di\ufb00erential-equations",
+   "number": "C",
+   "title": "The Ordinary Di\ufb00erential Equations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 4985,
+   "n_words": 976
+  },
+  {
+   "id": "sec-002-ii-the-system-of-partial-differential-equations",
+   "number": "II",
+   "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 16,
+   "n_chars": 8522,
+   "n_words": 1774
+  },
+  {
+   "id": "sec-003-iii-the-ordinary-differential-equations",
+   "number": "III",
+   "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1118,
+   "n_words": 240
+  },
+  {
+   "id": "sec-004-iv-asymptotics",
+   "number": "IV",
+   "title": "ASYMPTOTICS",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 21,
+   "n_chars": 6193,
+   "n_words": 1240
+  },
+  {
+   "id": "sec-005-1-the-region-x-t12",
+   "number": "1",
+   "title": "The region x << t\u22121/2",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2318,
+   "n_words": 537
+  },
+  {
+   "id": "sec-006-3-the-region-x-t-t14",
+   "number": "3",
+   "title": "The region x \u2212t >> t1/4",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 813,
+   "n_words": 186
+  },
+  {
+   "id": "sec-007-4-the-region-x-t-t",
+   "number": "4",
+   "title": "The region |x \u2212t| << t",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1168,
+   "n_words": 248
+  },
+  {
+   "id": "sec-008-5-the-asymptotics-of-\u03bbi",
+   "number": "5",
+   "title": "The asymptotics of \u03bbi",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1851,
+   "n_words": 365
+  },
+  {
+   "id": "sec-009-1-x-ax-2t-ax-2tf",
+   "number": "1",
+   "title": "(x) = \u2212A\u2032(x \u22122t) + A(x \u22122t)f \u2032",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 173,
+   "n_words": 42
+  },
+  {
+   "id": "sec-010-1-xf2x-dx-\u03bdf",
+   "number": "1",
+   "title": "(x)f2(x) dx = \u2212\u03bdf \u2032",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 4229,
+   "n_words": 897
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 243,
+   "n_words": 40
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 4408,
+   "n_words": 707
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 40826
+ }
+}

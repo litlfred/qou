@@ -1,0 +1,169 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T11:24:14.607074+00:00",
+  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "assertions": [
+    {
+      "name": "cap_k_ge_2_contributes_nothing_to_b3",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "values of k in {1,2,3,4,6,10} with zero b3 contribution",
+      "source": "the cap does not bind for A <= k+1, so f_k = C(A,2) on the window and C(A,2) has zero b3 and b4 contributions; only k=1 contributes, with the wrong sign. Lean: SaturationInvisibleToCumulants.complete_contributes_nothing"
+    },
+    {
+      "name": "no_tested_convex_term_hits_the_fingerprint",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "candidates missing the fingerprint by >20% on either ratio",
+      "source": "three constraints on one coefficient leave two parameter-free predictions; scaling cancels (ratios_are_scale_free)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "two-term-structure-degeneracy",
+  "scriptFile": "two_term_structure_degeneracy_probe.py",
+  "scriptHash": "793e545236b1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_term_structure_degeneracy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_term_structure_degeneracy_probe.py"
+  },
+  "description": "The shell+saturation pairing is degenerate on the data: a coordination cap at k >= 2 contributes exactly zero to b3 (and k >= 3 zero to b4), because the cap does not bind below A=5. So the convex half alone carries b2, b3, b4 -- three constraints on one coefficient, leaving a TWO-NUMBER parameter-free fingerprint (b3/b2, b4/b2) that nothing tested hits. Refutes the pairing, not CoordinationSaturation.",
+  "data": {
+    "capped_bond_counts": [
+      {
+        "k": 1,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "1.50000000000000000000000000000000000000000000000000000000000",
+        "f4": "2.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "-1.50000000000000000000000000000000000000000000000000000000000",
+        "b4_contrib": "2.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib_is_zero": false
+      },
+      {
+        "k": 2,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "3.00000000000000000000000000000000000000000000000000000000000",
+        "f4": "4.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0",
+        "b4_contrib": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib_is_zero": true
+      },
+      {
+        "k": 3,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "3.00000000000000000000000000000000000000000000000000000000000",
+        "f4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0",
+        "b4_contrib": "0.0",
+        "b3_contrib_is_zero": true
+      },
+      {
+        "k": 4,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "3.00000000000000000000000000000000000000000000000000000000000",
+        "f4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0",
+        "b4_contrib": "0.0",
+        "b3_contrib_is_zero": true
+      },
+      {
+        "k": 6,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "3.00000000000000000000000000000000000000000000000000000000000",
+        "f4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0",
+        "b4_contrib": "0.0",
+        "b3_contrib_is_zero": true
+      },
+      {
+        "k": 10,
+        "f2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "f3": "3.00000000000000000000000000000000000000000000000000000000000",
+        "f4": "6.00000000000000000000000000000000000000000000000000000000000",
+        "b3_contrib": "0.0",
+        "b4_contrib": "0.0",
+        "b3_contrib_is_zero": true
+      }
+    ],
+    "target_fingerprint": {
+      "isospin_average": {
+        "b3_over_b2": "0.641122822058520892747538823524334766931188651522260834494384",
+        "b4_over_b2": "4.15514025161400006886735939798060403866605543139152253594431"
+      },
+      "3H_Coulomb_corrected": {
+        "b3_over_b2": "0.812786600821319680214506540645992014083464902055960393536502",
+        "b4_over_b2": "3.46848513656280491899948852949397505005695042925672429977584"
+      }
+    },
+    "fingerprint_candidates": [
+      {
+        "candidate": "dim[1^A] = C(4,A)",
+        "b3_over_b2": "-2.33333333333333333333333333333333333333333333333333333333333",
+        "b4_over_b2": "3.50000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      },
+      {
+        "candidate": "A^3",
+        "b3_over_b2": "0.375000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b2": "0.500000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      },
+      {
+        "candidate": "A!",
+        "b3_over_b2": "0.0",
+        "b4_over_b2": "6.00000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      },
+      {
+        "candidate": "indicator [A<=4]",
+        "b3_over_b2": "-2.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b2": "3.00000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      },
+      {
+        "candidate": "k=1 dimer",
+        "b3_over_b2": "-1.50000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b2": "2.00000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      },
+      {
+        "candidate": "2^A",
+        "b3_over_b2": "-1.00000000000000000000000000000000000000000000000000000000000",
+        "b4_over_b2": "2.00000000000000000000000000000000000000000000000000000000000",
+        "misses": true
+      }
+    ],
+    "verdict": {
+      "pairing_refuted": "shell + saturation, as an explanation of the cumulants",
+      "why": "the saturating half has no signature below A=5, so it cannot be one of the two terms in the window where b3 and b4 live",
+      "not_touched": [
+        "CoordinationSaturation itself (a statement about A -> inf)",
+        "two-term structures in general"
+      ],
+      "what_replaces_the_target": "a TWO-number fingerprint (b3/b2, b4/b2) hit with ZERO free parameters, replacing the single ratio a 9.4% convention band made nearly unfalsifiable",
+      "derives_a_magnitude": false
+    }
+  }
+}

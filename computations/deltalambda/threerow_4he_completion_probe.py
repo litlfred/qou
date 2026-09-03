@@ -88,6 +88,12 @@ COMP = Path(__file__).resolve().parent.parent
 _LAM12 = None
 
 
+# Chosen once and independent of the data: the convention-C value this probe
+# recorded was O(1) (F(q0) = -5.9468...), while f64 chi noise on an O(1)
+# product is ~1e-16.  A threshold below 1e-16 cannot be met by a genuinely
+# non-vanishing object.  NOT tuned to the measurement.
+F_ZERO_TOL_4HE = mp.mpf("1e-30")
+
 def lam_l3(n: int) -> list[tuple[int, ...]]:
     return [lam for lam in partitions_of(n) if len(lam) >= 3]
 
@@ -314,8 +320,19 @@ def main() -> int:
     if chi_rel is not None:
         w.add_assertion("chi_convention_matches_rust_witness",
                         1 if chi_rel < 1e-5 else 0, 1)
-    w.add_assertion("4He_sign_at_q0", int(mp.sign(vals_p[-1])), int(mp.sign(vals_p[-1])))
-    w.add_assertion("4He_sign_at_qlo", int(mp.sign(vals_p[0])), int(mp.sign(vals_p[0])))
+    # These two stood here as
+    #     w.add_assertion("4He_sign_at_q0",  int(mp.sign(vals_p[-1])), int(mp.sign(vals_p[-1])))
+    #     w.add_assertion("4He_sign_at_qlo", int(mp.sign(vals_p[0])),  int(mp.sign(vals_p[0])))
+    # i.e. `x == x` — tautologies that could never fail.  Between conventions C and D
+    # the object went from F(q0) = -5.9468... to identically zero and the sign went
+    # -1 -> 0, and both still reported passed.  A sign is a MEASUREMENT: it is
+    # recorded via add_data below, which is what recording is for.
+    _max_abs_F = max(abs(v) for v in vals_p)
+    w.add_assertion("three_row_object_is_structural_zero",
+                    1 if _max_abs_F < F_ZERO_TOL_4HE else 0, 1)
+    w.add_data("4He_sign_at_q0_measured", int(mp.sign(vals_p[-1])))
+    w.add_data("4He_sign_at_qlo_measured", int(mp.sign(vals_p[0])))
+    w.add_data("4He_max_abs_F_on_grid", fmt_f64_limited(_max_abs_F))
     w.add_caveat(
         "BEYOND-SUBSTRATE DIAGNOSTIC. The 'diagnostic_ray_above_q0' block reports F at "
         "q > q₀ ≈ 1.10998 (experimental proton anchor). That is NOT a physical regime "

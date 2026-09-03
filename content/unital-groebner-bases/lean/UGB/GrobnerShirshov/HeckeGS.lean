@@ -32,6 +32,16 @@ falsehood, which is why it had to go rather than stay as an assumption.
 Everything downstream that used it — `heckeCost_well_defined`,
 `threading_cost_unique` — now takes the GS property as an explicit hypothesis.
 
+**The completion exists and is proved** (2026-08-24, bean `qou-auq3`).
+`HeckeCompletion.lean` adjoins the Bokut–Shiao family to this system and proves
+`heckeCompleted_isGrobnerShirshovBasis` for every `n` and every `HeckeParams`,
+with no hypothesis and no `sorry`. So the two theorems below are not merely
+conditional-and-parked: their completed-system counterparts,
+`heckeCompleted_normalForm_unique` and `heckeCompleted_threading_cost_unique`
+(§4bx there), hold outright — modulo the two Diamond-Lemma axioms
+`local_confluence` and `reduction_well_founded`, which `normal_form_unique`
+carries and which are not this file's to discharge.
+
 ## Axiom budget
 
 | Item | Status | Justification |
@@ -769,7 +779,14 @@ theorem heckeCost_nonneg {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
     the system being a GS basis**, which is now an explicit hypothesis rather
     than the deleted axiom. `NotAGSBasis.hecke_not_gs_basis_four` shows the
     hypothesis is unsatisfiable at `n = 4` for `heckeRewritingSystem` as it
-    stands; it becomes usable once the Bokut–Shiao completion is added. -/
+    stands, so this statement is vacuous as it applies to *this* system.
+
+    The Bokut–Shiao completion has since been added and proved:
+    `HeckeCompletion.heckeCompleted_normalForm_unique` is this statement against
+    `heckeCompletedRewritingSystem`, with the hypothesis discharged. Use that
+    one; this stays because it is stated at the level the abstract framework
+    works at, and because deleting it would erase the record of why the
+    uncompleted system cannot support it. -/
 theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
       (heckeRewritingSystem n hn hp))
@@ -784,9 +801,11 @@ theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
 
 /-- Threading cost uniqueness: two reductions of the same augmented braid
     yield identical normal forms — again **conditionally** on `hgs`, for the
-    same reason as `heckeCost_well_defined`. The "no quasi-zeros" hypothesis
-    is discharged here: `HeckeGen (n+1)` has a generator, so the free algebra
-    on it has none. -/
+    same reason as `heckeCost_well_defined`, and again vacuous for this system.
+    The unconditional form is
+    `HeckeCompletion.heckeCompleted_threading_cost_unique`. The "no quasi-zeros"
+    hypothesis is discharged here: `HeckeGen (n+1)` has a generator, so the free
+    algebra on it has none. -/
 theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen (n + 1)) ℝ (heckeOrder (n + 1))
       (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp))

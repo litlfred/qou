@@ -1,13 +1,13 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-24T16:52:50.494125+00:00",
-  "commitSha": "94bbe54b4ed2ce8253d78c1f4aa180b3648d8305",
+  "computedAt": "2026-08-30T09:12:45.668625+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
       "name": "D5_functional_equation_exact",
-      "computed": "0",
-      "expected": "0",
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0,
       "source": "D₅(ζ₅x)⁵(1−x⁵) − D₅(x)⁵(1−x)⁵ ≡ 0 in ℚ(ζ₅)[x] (GK eq after (9)), exact polynomial identity."
@@ -30,18 +30,18 @@
     },
     {
       "name": "zeta5_branch_invariance_exact",
-      "computed": "True",
-      "expected": "True",
+      "computed": 2,
+      "expected": 2,
       "passed": true,
       "tolerance": 0,
-      "source": "G₅⁺(ζ₅θ)⁵·(/D₅(θ)⁵)² = G₅⁺(θ)⁵·(/D₅(ζ₅θ)⁵)² exactly for both θ's — GK Remarks 1.4/1.5 verified at N=5."
+      "source": "G₅⁺(ζ₅θ)⁵·(/D₅(θ)⁵)² = G₅⁺(θ)⁵·(/D₅(ζ₅θ)⁵)² exactly for both θ's — GK Remarks 1.4/1.5 verified at N=5; counts the θ's for which sympy reduces the difference to exactly 0."
     },
     {
       "name": "quadrature_validated_at_N1",
       "computed": 5.2161532140519286e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 5e-07,
+      "tolerance": "5e-07",
       "source": "direct Faddeev-integral quadrature vs GK closed form (2) at b=1: |Δ| ≈ 5e-9 (double-precision tensor Gauss–Legendre)."
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.8920673032500315e-09,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 5e-07,
+      "tolerance": "5e-07",
       "source": "assembled Cor 1.2 evaluation at b²=1/5 vs direct state integral ∫Φ_b(x)²e^{−πix²}dx — end-to-end gold check of the entire transcription (root of unity, Rogers branches, (1−z)^{13/10}, 1-loop (1+z)/(1−z), /D₅ branches, G₅⁺)."
     },
     {
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14005,
+  "durationMs": 9842,
   "computation": "gk-d5-cyclic-dilog-4one",
   "scriptFile": "gk_d5_cyclic_dilog_4one_probe.py",
-  "scriptHash": "498abe400e0e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "56a6d1e04972",
+  "scriptCommitSha": "8a7bf94489a6f7d1a4a0eec2880ef212c71e4b88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,8 +76,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gk_d5_cyclic_dilog_4one_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gk_d5_cyclic_dilog_4one_probe.py"
   },
   "description": "B4 residue of the Vector-2 double pincer: the Garoufalidis–Kashaev (arXiv:1411.6062) cyclic quantum dilogarithm D₅ product evaluated on the explicit 4₁ state-integral data ((A,B)=(1,2), g(z)=−z(1−z)⁻², z± = e(±1/6)) at b² = 1/5. Exact results in ℚ(ζ₃₀): (/D₅(θ;ζ₅))⁵ is real with minpoly x⁴−46x³−94x²+79x+1 (θ₊=ζ₃₀) / x⁴+29x³−69x²+29x+1 (θ₋=ζ₆); the state sums G₅⁺ are real with minpolys x⁴−60x³+960x²−5175x+6525 / x⁴−60x³+885x²−4500x+6525 — all degree 4, generating the FULL real quartic field ℚ(ζ₃₀)⁺, not ℚ(√5). The assembled Cor 1.2 evaluation I_{1,2}(1/√5) = (1/√5)[c₊e^{−V/10π} + c₋e^{V/10π}] (|c₊|≈5.97438, |c₋|≈5.53868) matches the DIRECT Faddeev state integral to quadrature precision (~2e-9 scale; quadrature itself validated at b=1 against GK eq (2)). The icosahedral Σ(2,3,5) vacuum-row entries (2/√5)sin(kπ/5) do NOT appear: exact in-field comparisons |c±|¹⁰ = ((5∓√5)/10)⁵ all FALSE. Scope-(a): the GK leg closes; the only √5 in the 4₁ evaluation remains the Gauss-sum prefactor 1/√N = 1/√5; m stays OPEN; nothing wired.",
   "auditOnly": "docs/audits/2026-07-24-vector2-residues-sprime-d5.md",

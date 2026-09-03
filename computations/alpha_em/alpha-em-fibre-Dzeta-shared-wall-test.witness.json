@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "D(ζ)=√(Σ_admissible d_ζ²) ∈ {√(5±√5), √(10±2√5)} = {1.66, 2.35, 2.69, 3.80} ∉ {8, 8π} for ALL four corpus-fixed readings (ζ=e^{iπ/5}, McKay-Ê₈/folded-MTC admissible set, no scan) => the shared-wall 'photon b₁ = keystone D' is falsified on the fibre side too; combined with #3871 (observable D(q₀)=11.357), falsified on BOTH sides"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "numeric D_Ê₈(ζ^m)²=10±2√5, D_MTC(ζ^m)²=5±√5, D_Ê₈²=2·D_MTC² to <1e-35 — matches the exact ℚ(√5) values #3822 established (corpus-fixed data reused, not re-derived)"
     }
   ],

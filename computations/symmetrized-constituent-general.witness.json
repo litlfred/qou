@@ -1,40 +1,40 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:30.534376+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T19:25:57.860738+00:00",
+  "commitSha": "3d1a7ae790e4f43bdd34b742c07887bc7fb42257",
   "assertions": [
     {
       "name": "frobenius_Z2_matches_newton_h2",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": 0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Frobenius h₂ == Newton (p₁²+p₂)/2 — the general formula reproduces the hand-derived Z=2 case (symmetrized_constituent_probe.py)."
     },
     {
       "name": "frobenius_Z2_matches_newton_e2",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": 0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Frobenius e₂ == Newton (p₁²−p₂)/2."
     },
     {
       "name": "Z1_no_symmetrization",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "h_1 = e_1 = p_1 = τ_p (one proton carries no exchange symmetry)."
     }
   ],
   "allPassed": true,
-  "durationMs": 11180,
+  "durationMs": 11297,
   "computation": "symmetrized-constituent-general",
   "scriptFile": "symmetrized_constituent_general.py",
-  "scriptHash": "efb61135d9f5",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "82574eaf40f6",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

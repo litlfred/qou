@@ -1,0 +1,162 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:10:12.887487+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "assertions": [
+    {
+      "name": "T_reproduces_upstream_c3_in_convention_C",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C-convention c_3 must match the recorded mu3_abs_choice_robustness_probe EXPECT value before the D-convention numbers here mean anything"
+    },
+    {
+      "name": "T_door_sign_preserved_abs_variant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "whether the recorded mu_3 door verdict (submodular vs supermodular, i.e. the SIGN of Delta^2 g) is the same under convention D as under convention C"
+    },
+    {
+      "name": "3He_reproduces_upstream_c3_in_convention_C",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C-convention c_3 must match the recorded mu3_abs_choice_robustness_probe EXPECT value before the D-convention numbers here mean anything"
+    },
+    {
+      "name": "3He_door_sign_preserved_abs_variant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "whether the recorded mu_3 door verdict (submodular vs supermodular, i.e. the SIGN of Delta^2 g) is the same under convention D as under convention C"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "mu3-door-sign-c-vs-d",
+  "scriptFile": "mu3_door_sign_C_vs_D_probe.py",
+  "scriptHash": "5470cde87a88",
+  "scriptCommitSha": "2149dd01abed3f50e04daf01d9c781e2e1b5c099",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu3_door_sign_C_vs_D_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu3_door_sign_C_vs_D_probe.py"
+  },
+  "description": "Does the recorded mu_3 door verdict -- a SIGN (Delta^2 g < 0 => door OPEN/submodular) -- survive the convention-D resolution? Delta^2 g is a y_lambda-weighted sum over lambda |- 9, and convention D zeroes 25 of the 30 weights, so the sign is not protected. Also reports how far c_3 moves, hence how far the A=3 magnitude target r* ~ 1.585 moves. Proton pin. Measurement only.",
+  "contentBlock": "prop:h3-markov-wenzl-weights",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "E_0_MeV": "4.185981363294475896945062",
+    "E_0_definition": "m_e/(q_0(q_0-1)) - unit-cell scale, per mu3_abs_choice_robustness_probe.py:48",
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946"
+  },
+  "data": {
+    "T": {
+      "atom": "T",
+      "interfaces": [
+        2,
+        5
+      ],
+      "n_partitions": 30,
+      "n_y_D_zero": 25,
+      "C_abs": {
+        "d2g": "0.42254733638246749303",
+        "c3_MeV": "-1.7687752752067307717",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "C_raw": {
+        "d2g": "0.38998770125162964635",
+        "c3_MeV": "-1.6324812493533754511",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "D_abs": {
+        "d2g": "0.32783983234711598262",
+        "c3_MeV": "-1.3723314283506129787",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "D_raw": {
+        "d2g": "0.32783983234711598262",
+        "c3_MeV": "-1.3723314283506129787",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "upstream_recorded_c3_abs": "-1.769",
+      "reproduces_upstream_c3": true,
+      "sign_preserved_abs": true,
+      "c3_D_over_C_abs": "0.775865338908",
+      "r_star_scale_factor_abs": "1.28888345677",
+      "sign_preserved_raw": true,
+      "c3_D_over_C_raw": "0.840641464577",
+      "r_star_scale_factor_raw": "1.18956777906"
+    },
+    "3He": {
+      "atom": "3He",
+      "interfaces": [
+        2,
+        5
+      ],
+      "n_partitions": 30,
+      "n_y_D_zero": 25,
+      "C_abs": {
+        "d2g": "0.33574550659882313332",
+        "c3_MeV": "-1.405424433432536113",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "C_raw": {
+        "d2g": "0.31744947166322414955",
+        "c3_MeV": "-1.3288375721699341204",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "D_abs": {
+        "d2g": "0.24697584011312441551",
+        "c3_MeV": "-1.0338362638975350471",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "D_raw": {
+        "d2g": "0.24697584011312441551",
+        "c3_MeV": "-1.0338362638975350471",
+        "submodular": false,
+        "door": "CLOSED (supermodular)"
+      },
+      "upstream_recorded_c3_abs": "-1.405",
+      "reproduces_upstream_c3": true,
+      "sign_preserved_abs": true,
+      "c3_D_over_C_abs": "0.735604305222",
+      "r_star_scale_factor_abs": "1.35942651899",
+      "sign_preserved_raw": true,
+      "c3_D_over_C_raw": "0.778000476168",
+      "r_star_scale_factor_raw": "1.28534625702"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

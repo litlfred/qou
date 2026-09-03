@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "dimensionless (refutation-confirmed boolean)",
       "source": "Phase 5l.2 reconciliation probe: tested two simple hypotheses for relating Phase 5l.1's symbolic T(B_p, q) (Wenzl-bridge SYMBOLIC) to canonical tr_M^3(𝓑_p, q) (Phase 5l, mpfr-50-dps NUMERIC):\n  Hyp A: T evaluated at q — rel.spread = 5.9127e-02\n  Hyp B: T evaluated at q^2 — rel.spread = 8.0881e-01\nBoth spreads exceed 0.1% across the 5-point substrate window, refuting the simple-multiplicative-constant hypothesis for both q and q^2 interpretations.  The Wenzl-bridge symbolic implementation uses a deeper convention mismatch — likely a different normalization of y_λ that depends on partition structure as well as q.  Verdict: both-hypotheses-falsified.  Reconciliation now queued as a research task (no longer a simple normalization-constant fix)."
     }

@@ -98,7 +98,7 @@ def load_canonical_q() -> str:
     non-manifest process — see docstring)."""
     d = json.loads((COMP / "q-pinning-50-digit.witness.json").read_text())
     q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595557"), q
+    assert q.startswith("1.109978595642"), q
     return q
 
 
@@ -325,7 +325,16 @@ def main() -> int:
         _d = _os.path.dirname(_d)
     _sys.path.insert(0, _os.path.join(_d, "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402
-    WitnessBuilder.stamp_staleness_metadata(wit, script_path=__file__, engine="mpmath")
+    # DECLARED muon, not resolved. This producer deliberately reads the canonical
+    # MUON pin out of q-pinning-50-digit.witness.json (see load_canonical_q, which
+    # asserts the CODATA-2022 prefix) because the certified chi-cache/combiner
+    # chain it corrects is coherently muon-pinned. Its stem is not in
+    # `ideal_muon`, so an auto-resolved stamp would say PROTON over muon
+    # arithmetic -- the straddle AGENTS.md forbids. Passing the anchor and the
+    # value it actually used makes the witness self-consistent (bean qou-1c4y).
+    WitnessBuilder.stamp_staleness_metadata(
+        wit, script_path=__file__, engine="mpmath",
+        q0_anchor="muon", q0_value=load_canonical_q())
     wit["scriptFile"] = _os.path.basename(__file__)
     json.dump(wit, open(out, "w"), indent=1)
     print("witness ->", out.name, " allPassed:", wit["allPassed"])

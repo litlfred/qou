@@ -102,8 +102,15 @@
       ]
     }
   },
-  "computedAt": "2026-04-26T12:00:07.546462+00:00",
+  "computedAt": "2026-08-29T08:31:49.542348+00:00",
   "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
-  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py"
+  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py",
+  "scriptHash": "7e7013de58aa",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

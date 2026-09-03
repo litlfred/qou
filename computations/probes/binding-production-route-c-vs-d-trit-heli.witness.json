@@ -1,0 +1,96 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T13:12:08.420540+00:00",
+  "commitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "assertions": [
+    {
+      "name": "tritium_delta_tr_changes_under_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C->D change is a per-block reweighting, not a common scale, so it does not cancel in the trace difference that production uses"
+    },
+    {
+      "name": "helium-3_delta_tr_changes_under_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C->D change is a per-block reweighting, not a common scale, so it does not cancel in the trace difference that production uses"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "binding-production-route-c-vs-d-trit-heli",
+  "scriptFile": "binding_production_route_C_vs_D_probe.py",
+  "scriptHash": "e485d5a63ca7",
+  "scriptCommitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PRODUCTION binding route (delta_tr = tr_M(free) - tr_M(atom), B = E_0 * delta_tr, per binding_canonical.py) evaluated under the binding channel's current convention C and under the mass channel's settled convention D, at the EXPERIMENTAL (proton) q_0. Measurement only.",
+  "contentBlock": "prop:h3-markov-wenzl-weights",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946"
+  },
+  "data": {
+    "tritium": {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "n_strands": 9,
+      "n_partitions": 30,
+      "n_zeroed_under_D": 25,
+      "E_0_MeV": "0.7823334093100222",
+      "tr_M_atom_C": "0.1040710573547306686400139",
+      "tr_M_free_C": "0.908023915599213337520469",
+      "tr_M_atom_D": "0.2293101021045564978650688",
+      "tr_M_free_D": "1.117846228978226577328341",
+      "delta_tr_C": "0.8039528582444826688804551",
+      "delta_tr_D": "0.8885361268736700794632726",
+      "delta_tr_D_over_C": "1.10520923928",
+      "B_MeV_C": "0.628959180514943",
+      "B_MeV_D": "0.695131497432201",
+      "B_AME2020_MeV": "8.481821",
+      "rel_err_C": "-0.9258462091",
+      "rel_err_D": "-0.9180445452",
+      "two_row_share_of_delta_tr_C": "0.603482250933"
+    },
+    "helium-3": {
+      "atom": "helium-3",
+      "Z": 2,
+      "N": 1,
+      "n_strands": 9,
+      "n_partitions": 30,
+      "n_zeroed_under_D": 25,
+      "E_0_MeV": "0.7823334093100222",
+      "tr_M_atom_C": "0.2065784335106723348951209",
+      "tr_M_free_C": "1.047756325354979671782512",
+      "tr_M_atom_D": "0.4037670368514281536992283",
+      "tr_M_free_D": "1.296675612244944017737899",
+      "delta_tr_C": "0.8411778918443073368873911",
+      "delta_tr_D": "0.892908575393515864038671",
+      "delta_tr_D_over_C": "1.0614979115",
+      "B_MeV_C": "0.658081567962774",
+      "B_MeV_D": "0.698552209989764",
+      "B_AME2020_MeV": "7.718043",
+      "rel_err_C": "-0.914734659",
+      "rel_err_D": "-0.9094910186",
+      "two_row_share_of_delta_tr_C": "0.584675589399"
+    }
+  }
+}

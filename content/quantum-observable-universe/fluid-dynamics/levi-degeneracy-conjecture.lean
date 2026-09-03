@@ -68,6 +68,16 @@ class LeviDegeneracy where
   degeneracySet : Set ℝ
   /-- The Levi form is symmetric. -/
   leviForm_symm : ∀ x y, leviForm x y = leviForm y x
+  /-- **`degeneracySet` is the degeneracy locus OF `leviForm`.**
+
+      Without this field the two are unrelated: `degeneracySet` could
+      be any set at all and the Levi form would be inert decoration,
+      so `levi_degeneracy_holds` below would assert nothing about the
+      Levi form despite being the file's stated subject.  This is what
+      makes the conjecture a statement about contact geometry rather
+      than a bare set equality. -/
+  degeneracy_iff :
+    ∀ x : ℝ, x ∈ degeneracySet ↔ ¬ (0 < leviForm x x)
   /-- **The conjecture itself.**  The (real-parameter projection of
       the) degeneracy set is precisely the countable family
       $\{1/\kappa : \kappa \geq 2\}$, where each $1/\kappa$ is the
@@ -76,5 +86,33 @@ class LeviDegeneracy where
   -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
   levi_degeneracy_holds :
     degeneracySet = { x : ℝ | ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ) }
+
+/-- **Levi positive-definiteness off the principal-root family**
+    ([`conj:levi-degeneracy`]).
+
+    The manuscript's actual claim — *"the Levi form is positive-definite
+    away from $\{q_\kappa\}_{\kappa \geq 2}$"* — now follows, rather
+    than being assumed: it composes `degeneracy_iff` (which locates the
+    degeneracy set as the locus of `leviForm`) with
+    `levi_degeneracy_holds` (which identifies that locus with the
+    angular-reciprocal family).  Neither field states this on its own. -/
+theorem levi_positive_definite_off_family [ctx : LeviDegeneracy]
+    (x : ℝ) (hx : ¬ ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ)) :
+    0 < ctx.leviForm x x := by
+  by_contra hpos
+  have hmem : x ∈ ctx.degeneracySet := (ctx.degeneracy_iff x).mpr hpos
+  rw [ctx.levi_degeneracy_holds] at hmem
+  exact hx hmem
+
+/-- Converse direction: every member of the principal-root family is a
+    genuine degeneracy of the Levi form.  Together with
+    `levi_positive_definite_off_family` this is the "degenerates
+    **exactly** on it" of the file docstring. -/
+theorem levi_degenerate_on_family [ctx : LeviDegeneracy]
+    (κ : ℕ) (hκ : 2 ≤ κ) :
+    ¬ (0 < ctx.leviForm (1 / (κ : ℝ)) (1 / (κ : ℝ))) := by
+  refine (ctx.degeneracy_iff _).mp ?_
+  rw [ctx.levi_degeneracy_holds]
+  exact ⟨κ, hκ, rfl⟩
 
 end QOU.FluidDynamics

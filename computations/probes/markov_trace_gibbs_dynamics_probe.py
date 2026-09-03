@@ -121,21 +121,39 @@ def main() -> int:
             yl = mp.mpf(yl)
             tot += yl * d
             rows.append((tuple(lam), d, yl))
-        zeros = [r for r in rows if r[2] == 0]
-        negs = [r for r in rows if r[2] < 0]
+        # NOISE FLOOR, not `== 0`. The vanishing is a polynomial identity reached
+        # by CANCELLATION at finite precision, so whether the residue lands on
+        # exactly 0.0 or on ~1e-72 depends on how q0 is spelled. Measured at n=6,
+        # ambient dps 70, varying ONLY the spelling:
+        #
+        #   mpf(str(Q50)) inside workdps(60)  ->  0.0        (what this file does)
+        #   float64 round-trip                ->  0.0
+        #   full-precision Q_MP               ->  1.09e-72
+        #   mpf(Q50) at ambient dps           ->  2.19e-72
+        #
+        # Under either of the last two, `== 0` would have: undercounted `zeros`,
+        # reported `misfiled` as NO (a false alarm that the vanishing blocks are
+        # not the >=3-row ones), and — worst — let `yl > 0` fire, printing
+        # `E_lam = -E0 log(1e-72) ~ 3000 MeV` as an energy level for a block that
+        # carries no weight. A nuclear-scale number manufactured from round-off,
+        # in a probe whose whole subject is which blocks carry weight.
+        y_all = max(abs(r[2]) for r in rows)
+        floor = y_all * mp.mpf(10) ** (-(mp.mp.dps - 8))
+        zeros = [r for r in rows if abs(r[2]) < floor]
+        negs = [r for r in rows if r[2] < -floor]
         # the vanishing blocks are exactly the >=3-row partitions
         misfiled = [r for r in rows
-                    if (len(r[0]) >= 3) != (r[2] == 0)]
+                    if (len(r[0]) >= 3) != (abs(r[2]) < floor)]
         verdict_rows.append((n, len(rows), len(zeros), len(negs), tot, misfiled))
 
         print(f"n = {n}:  sum_lam y_lam d_lam = {mp.nstr(tot, 20)}"
               "   (normalisation, must be 1)")
-        print(f"          blocks {len(rows)},  y_lam = 0 exactly: {len(zeros)},"
-              f"  y_lam < 0: {len(negs)}")
+        print(f"          blocks {len(rows)},  y_lam = 0 (below floor"
+              f" {mp.nstr(floor, 4)}): {len(zeros)},  y_lam < 0: {len(negs)}")
         print(f"          vanishing blocks are exactly the >=3-row partitions:"
               f" {'YES' if not misfiled else 'NO -- ' + str(misfiled)}")
         for lam, d, yl in rows:
-            if yl > 0:
+            if yl > floor:
                 E = -E0 * mp.log(yl)
                 print(f"            lam={str(lam):18s} d={d:3d}"
                       f"  y={mp.nstr(yl, 12):>16s}"

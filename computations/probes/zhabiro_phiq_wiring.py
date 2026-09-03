@@ -212,10 +212,27 @@ def main() -> int:
     import os as _os, sys as _sys  # noqa: E402
     _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "../substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    _wpath = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "zhabiro-phiq-wiring", witness,
         script_path=__file__, engine="mpmath", start_time=_T0, output_dir=str(HERE.parent),
-    ).save()
+    )
+    # The two cross-checks the `ok` predicate above is built from, promoted
+    # from data into assertions (bean qou-srvu). The witness previously
+    # recorded `cross_check_ok` as a plain field and shipped `allPassed: true`
+    # over an EMPTY assertion list, so a consumer reading `allPassed` saw a
+    # green witness that checked nothing. Thresholds are this file's own
+    # (`10**-45` / `10**-40` in `ok`), not fitted to the observed errors.
+    _wb.add_assertion(
+        "eulerCoeff_closed_form_matches_recurrence",
+        computed=mp.nstr(rec_err, 6), expected="0", tolerance="1e-45",
+        source="QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff_succ",
+    )
+    _wb.add_assertion(
+        "eulerTrunc_eq_cyclotomic_partial_sum",
+        computed=mp.nstr(ident_err, 6), expected="0", tolerance="1e-40",
+        source="QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic",
+    )
+    _wpath = _wb.save()
     print(f"\nwitness -> {_wpath}")
     return 0 if ok else 1
 

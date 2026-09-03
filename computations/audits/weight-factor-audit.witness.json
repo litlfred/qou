@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T01:18:06.239780+00:00",
-  "commitSha": "159149ee41b669610b3c8c7d76509fbc4b56a7b4",
+  "computedAt": "2026-08-25T01:06:46.792802+00:00",
+  "commitSha": "78ecbf0270fd6d88a0d1edfa2979dec692bf8144",
   "assertions": [
     {
       "name": "all_weight_checks_pass",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 19,
   "computation": "weight-factor-audit",
   "scriptFile": "weight_factor_audit.py",
-  "scriptHash": "f342e20b24f3",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "dba9ddfbba02",
+  "scriptCommitSha": "a606f1a43e8071c20dec0d602993b33467560930",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/weight_factor_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/weight_factor_audit.py"
   },
   "description": "Cross-consistency audit over partition-indexed weight families used in the QOU mass-prediction pipeline. Implements C1-C8 from docs/audits/2026-05-19-weight-factor-audit.md. Trigger: co-Casimir extension err-vs-n scaling (441 → 2.7 ppm as n=3 → n=9) suggests systematic weight error that averages out at high n — this audit catches single-weight bugs by structural identities (sum to 1, q-limit, Frobenius theorem).",
   "parameters": {
@@ -331,10 +338,10 @@
       },
       {
         "check": "C8",
-        "name": "Markov parameter z = 1/(q^0.5 + q^-0.5) at q_0",
-        "computed_z": "0.49932033418369445241344268025766630375194816404153194527617",
-        "classical_limit_distance": "0.000679665816305547586557319742333696248051835958468054723829748",
-        "expected": "0.49932033418369445241344268025766630375194816404153194527617",
+        "name": "Markov parameter z = q^3/(q^2 + 1) at q_0 (convention D)",
+        "computed_z": "0.612688037146465251595829863945899248026308391545087014074774",
+        "classical_limit_distance": "0.112688037146465251595829863945899248026308391545087014074774",
+        "expected": "0.612688037146465251595829863945899248026308391545087014074774",
         "well_defined_positive": true,
         "passed": true
       }

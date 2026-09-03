@@ -9,7 +9,7 @@
       "computed": 5.423045924157175e-41,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "G1: Φ(z−τ;τ)=(1−e(z))Φ(z;τ) max rel err over 3 pts"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.1811504278560277e-23,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "G2: I_{0,0} independent of contour tilt ε∈{0.04..0.20}"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.1745506134584272e-32,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "G3: Im(I_FW/Z_GGM)/|ratio|→0 — same analytic object"
     }
   ],

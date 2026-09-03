@@ -19,7 +19,7 @@ catalogued in `docs/audits/2026-05-19-weight-factor-audit.md`:
   C6: χ^λ(β_1 β_2) = χ^λ(β_2 β_1)  (Hoefsmit cyclic)    — stub (TODO)
   C7: LP shadow-price strong duality                     — external
        (enforced by `lp_dual_witness_validator.py`; not re-run here)
-  C8: z = 1/(q^{1/2} + q^{-1/2}) at q_0 ≈ 0.4993        — IMPLEMENTED
+  C8: z = q^3/(q^2 + 1) at q_0 ≈ 0.6127 (convention D)  — IMPLEMENTED
 
 C2, C3, C6 require additional infrastructure (q → 1 limit machinery,
 Wenzl-bridge eval at q=1, per-atom braid pair inputs) and are filed
@@ -186,15 +186,30 @@ def check_C5(n: int) -> dict:
 # ── Check C8: Markov parameter z at q_0 ──────────────────────────
 
 def check_C8() -> dict:
-    """Verify z = 1/(q^{1/2} + q^{-1/2}) at q_0.
+    """Verify z = q^3/(q^2 + 1) at q_0 — convention **D**.
 
-    The check is well-definedness + numerical reproducibility: at q_0
-    ≈ 1.10977859555…, z = 0.49932033403359825…  This is the value
-    that the Hecke / Markov pipeline uses for the Skein parameter;
-    any consumer hardcoding a different value (e.g. 0.5 as a
-    classical-limit shortcut) would be a bug.
+    The check is well-definedness + numerical reproducibility: at the
+    proton pin q_0 ≈ 1.1099785827513808, z = 0.6126880371464652516…
+    This is the value that the Hecke / Markov pipeline uses for the
+    Skein parameter; any consumer hardcoding a different value (e.g.
+    0.5 as a classical-limit shortcut) would be a bug.
+
+    MIGRATED 2026-08-25 (owner ruling 2026-08-15, convention C excised).
+    This check previously asserted convention C's
+    `1/(q^{1/2} + q^{-1/2})` = 0.49932033418369445 AS THE SPEC — so it
+    did not merely record C, it would have failed a correctly-migrated
+    consumer. Note the C-era docstring also quoted 0.49932033403359825
+    against a stated q_0 of 1.10977859555, which is the MUON pin; the
+    code has read the proton `Q_MP` throughout. Both are corrected here.
+
+    `convention-c-triage.py` classes this site B3 "deliberate comparison
+    — leave it". That is a FALSE POSITIVE: the `DELIBERATE` regex's
+    `C_` alternative is compiled with `re.I`, so it matches the
+    substring `c_` in ordinary identifiers — here `__doc__` and
+    `q_fac_n`, neither a convention-C symbol. Nothing in this file
+    compares the two conventions.
     """
-    z = mp.mpf(1) / (mp.sqrt(Q_MP) + 1 / mp.sqrt(Q_MP))
+    z = Q_MP ** 3 / (Q_MP ** 2 + 1)
     # Re-derive expected from the formula at full precision; this
     # check exists to catch z-substitution bugs elsewhere, not to
     # verify the formula itself.
@@ -202,7 +217,7 @@ def check_C8() -> dict:
     classical_limit = mp.mpf("0.5")
     return {
         "check": "C8",
-        "name": "Markov parameter z = 1/(q^0.5 + q^-0.5) at q_0",
+        "name": "Markov parameter z = q^3/(q^2 + 1) at q_0 (convention D)",
         "computed_z": str(z),
         "classical_limit_distance": str(abs(z - classical_limit)),
         "expected": str(expected),

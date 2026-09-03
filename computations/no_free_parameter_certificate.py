@@ -107,6 +107,11 @@ ADJUDICATED_FREE = {
 # exponent": indices and exponents are small, so a large one is a candidate.
 MAX_STRUCTURAL_INT = 64
 
+
+def _wrap(text: str, width: int) -> list[str]:
+    import textwrap
+    return textwrap.wrap(text, width) or [""]
+
 # Names whose assigned literals are precision / tolerance knobs.
 PRECISION_NAMES = (
     "dps", "prec", "tol", "tolerance", "eps", "epsilon", "atol", "rtol",
@@ -329,6 +334,14 @@ def audit_module(mod: str) -> list[dict]:
         name = _enclosing_assign_name(tree, n)
         lo = name.lower()
 
+        # Initialised BEFORE the chain. Putting it mid-chain (which I did)
+        # TERMINATES the elif, so everything after it runs unconditionally and
+        # overwrites `cls` for every literal already classified tolerance /
+        # precision / calibration. Caught by the witness diff: per-entry-point
+        # `untraceable` lists changed under an edit that should only have
+        # changed REPORTING.
+        adjudicated_free_reason = None
+
         if id(n) in threshold:
             cls = "tolerance"           # pass/fail threshold, never an output value
         elif id(n) in precision_arg:
@@ -344,8 +357,11 @@ def audit_module(mod: str) -> list[dict]:
             cls = "non_arithmetic"
         elif lo in ADJUDICATED_FREE:
             # adjudicated a free parameter — the small-int whitelist below
-            # would otherwise hide it
+            # would otherwise hide it. Stays UNTRACEABLE on purpose: the gate
+            # must keep failing on a known free parameter. But it is NOT an
+            # unreviewed candidate, and the report separates the two below.
             cls = "UNTRACEABLE"
+            adjudicated_free_reason = ADJUDICATED_FREE[lo]
         elif isinstance(val, int) and val in STRUCTURAL_INTS:
             cls = "structural"
         elif isinstance(val, int):
@@ -362,6 +378,10 @@ def audit_module(mod: str) -> list[dict]:
 
         if cls in ("UNTRACEABLE", "unit_conversion", "structural_float", "adjudicated"):
             findings.append({
+                # only present when there IS a recorded verdict -- a null on
+                # every finding is noise in a 2000-line witness
+                **({"adjudicated_free": adjudicated_free_reason}
+                   if adjudicated_free_reason else {}),
                 "module": mod,
                 "line": n.lineno,
                 "value": val,
@@ -454,14 +474,30 @@ def main() -> int:
             print(f"      {u}")
         print("    A green result below does NOT cover these. Resolve them before")
         print("    treating this run as a certificate.")
-    if untraceable:
+    # An ADJUDICATED_FREE literal is UNTRACEABLE on purpose and its verdict is
+    # already recorded. Printing it under "agent verdict required" invites an
+    # agent to re-derive a settled result -- measured: a session spent several
+    # turns re-establishing that A_omega = 3 is a free parameter, which
+    # ADJUDICATED_FREE states in this same file, with a sorry-free Lean proof
+    # behind it. The gate is unchanged; only the reporting separates them.
+    known_free = [f for f in untraceable if f.get("adjudicated_free")]
+    unreviewed = [f for f in untraceable if not f.get("adjudicated_free")]
+    if known_free:
+        print("\n  KNOWN FREE PARAMETERS (adjudicated — do NOT re-litigate; the")
+        print("  gate fails on these BY DESIGN until the parameter is eliminated):")
+        for f in known_free:
+            tgt = f["assigned_to"] or "-"
+            print(f"    {f['module']}.py:{f['line']:<5} {f['value']!r:<24} -> {tgt}")
+            for line in _wrap(f["adjudicated_free"], 68):
+                print(f"        {line}")
+    if unreviewed:
         print("\n  untraceable literals (agent verdict required — high-recall candidates):")
-        for f in untraceable[:40]:
+        for f in unreviewed[:40]:
             tgt = f["assigned_to"] or "-"
             print(f"    {f['module']}.py:{f['line']:<5} {f['value']!r:<24} -> {tgt}")
             print(f"        {f['source']}")
-        if len(untraceable) > 40:
-            print(f"    ... and {len(untraceable) - 40} more")
+        if len(unreviewed) > 40:
+            print(f"    ... and {len(unreviewed) - 40} more")
     else:
         print("\n  ✓ no untraceable literals in the canonical prediction path")
 
@@ -489,6 +525,15 @@ def main() -> int:
         },
     }
     out = HERE / "no-free-parameter-certificate.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(witness, indent=2) + "\n", encoding="utf-8")
     print(f"\nWrote {out.name}")
     if args.json:

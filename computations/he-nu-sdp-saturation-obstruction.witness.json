@@ -3,86 +3,98 @@
   "kind": "exploratory-probe",
   "description": "Capstone of the ν_SDP line: the operator-selection SDP saturation does not reproduce ν=1,2,2 in any principled regime — q→1 gives a single min-cost block (ν=1 always); q₀ is indefinite/rail-degenerate. With per-block-PSD, SDP-active-set, bar-fold, and self-conjugate all refuted, ν_SDP has no first-principles SDP-saturation derivation; 1,2,2 are hand-assigned. No fit.",
   "engine": "numpy+scipy",
-  "q0": 1.1099785955573347,
+  "q0": 1.1099785827513808,
   "regimes": {
     "q→1⁺ (well-posed)": {
       "D": {
         "bounded_support_size": 1,
         "nu_canonical": 1,
-        "neg_norm_blocks": 3,
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 7,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
-              3,
               2,
-              1
+              2,
+              2
             ],
-            0.12578235772282598
+            0.12615900422710985
           ]
         ]
       },
       "T": {
-        "bounded_support_size": 1,
+        "bounded_support_size": 0,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": [
-          [
-            [
-              3,
-              2,
-              2,
-              1,
-              1
-            ],
-            0.031476907548863564
-          ]
-        ]
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": "1e-30",
+        "support": []
       },
       "3He": {
-        "bounded_support_size": 1,
+        "bounded_support_size": 0,
         "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": [
-          [
-            [
-              3,
-              2,
-              2,
-              1,
-              1
-            ],
-            0.03157928461429216
-          ]
-        ]
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": "1e-30",
+        "support": []
       }
     },
     "q₀ (indefinite)": {
       "D": {
-        "bounded_support_size": 0,
-        "nu_canonical": 1,
-        "neg_norm_blocks": 3,
-        "support": []
-      },
-      "T": {
-        "bounded_support_size": 0,
-        "nu_canonical": 2,
-        "neg_norm_blocks": 10,
-        "support": []
-      },
-      "3He": {
         "bounded_support_size": 1,
-        "nu_canonical": 2,
-        "neg_norm_blocks": 10,
+        "nu_canonical": 1,
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 7,
+        "zero_tolerance": "1e-30",
         "support": [
           [
             [
               2,
               2,
-              2,
-              2,
+              2
+            ],
+            0.5751722439177741
+          ]
+        ]
+      },
+      "T": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": "1e-30",
+        "support": [
+          [
+            [
+              4,
+              1,
+              1,
+              1,
+              1,
               1
             ],
-            0.20654085857249782
+            0.2293101021045579
+          ]
+        ]
+      },
+      "3He": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 0,
+        "blocks_indistinguishable_from_zero": 25,
+        "zero_tolerance": "1e-30",
+        "support": [
+          [
+            [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            0.4037670368514308
           ]
         ]
       }
@@ -90,8 +102,8 @@
   },
   "q1_saturation_sizes": {
     "D": 1,
-    "T": 1,
-    "3He": 1
+    "T": 0,
+    "3He": 0
   },
   "verdict": "OBSTRUCTED",
   "conclusion": "No principled Markov-trace SDP saturation yields ν_SDP=1,2,2. The kashaev 'MacMahon SDP-multiplicity' categorical home is aspirational; ρ_F=2 (⁴He) is an underived acknowledged input, not a derived structural quantity.",
@@ -101,10 +113,12 @@
     "computations/deuteron_real_sdp.py"
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptHash": "e3a821f96e1e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:17.802942+00:00",
+  "scriptFile": "he_nu_sdp_saturation_obstruction.py",
+  "scriptHash": "e15ff60dc628",
+  "scriptCommitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "commitSha": "dbc0c4d42932bbb7ab854c9531e1002fae0dc1e1",
+  "computedAt": "2026-08-30T14:14:18.144250+00:00",
   "durationMs": 0,
-  "scriptFile": "he_nu_sdp_saturation_obstruction.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

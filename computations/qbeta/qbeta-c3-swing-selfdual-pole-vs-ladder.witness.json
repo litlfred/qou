@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T13:33:34.586254+00:00",
-  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:16:55.800771+00:00",
+  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
   "assertions": [
     {
       "name": "qstar_is_simple_zero_no_pole",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S'(q*) and S''(q*) both finite => analytic simple zero; S (hence Phi_odd) does not diverge at q*, so the 'rigidity divergence at the self-dual locus' mechanism has no support at q*"
     },
     {
@@ -17,15 +17,15 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "1/|u^2-1| ~ 1.00007 (O(1)) is ~6 orders of magnitude below the measured swing S'(q*) ~ 3.84e6; scale gap = 1/u^3 up to O(1); q0 not near a u^2->1 locus"
     },
     {
       "name": "swing_is_ladder_1_over_u3_smooth_prefactor",
-      "computed": 2.3716291316445135,
+      "computed": "2.3716291316445136469108487425964283619864165595564856825345",
       "expected": 2.37,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S'(q*) = 2.37 x (1/u^3), smooth O(1) prefactor -- the merged 1/u^3 capstone (#3636) stands; the swing is a representation artifact, not a self-dual pole"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness (genuine opposite-sign crossing at q*)"
     }
   ],
@@ -41,8 +41,8 @@
   "durationMs": 6,
   "computation": "qbeta-c3-swing-selfdual-pole-vs-ladder",
   "scriptFile": "qbeta_c3_swing_selfdual_pole_vs_ladder_probe.py",
-  "scriptHash": "9ea530de1ec8",
-  "scriptCommitSha": "a2451852770975fd83b9ebd083b2902ee50aed14",
+  "scriptHash": "de70a9a006ab",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,10 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

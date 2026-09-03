@@ -60,8 +60,9 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 
 
 def main() -> int:
@@ -226,15 +227,55 @@ def main() -> int:
         ),
     })
 
+    # "Decisive" MEASURED, not declared.  The old assertion was
+    # computed=1/expected=1 — green whatever the two ε came out to, including
+    # the case that would make the test indecisive (bean qou-26f2).
+    #
+    # Operationalisation: the comparison is decisive exactly when ONE candidate
+    # stands alone in the leading band.  Take the better |ε| and count how many
+    # candidates sit within an order of magnitude of it; decisive ⇔ that count
+    # is 1.  Expected 1 comes from the meaning of "decisive", not from the data,
+    # and two comparable candidates turn it red — which is the whole point.
+    DECISIVE_BAND = 10
+    eps_by_candidate = {"/25 (q-undeformed)": mp.fabs(eps_main),
+                        "/[5]_q^2 (q-deformed)": mp.fabs(eps_qdef)}
+    best_eps = min(eps_by_candidate.values())
+    in_band = sorted(name for name, e in eps_by_candidate.items()
+                     if e <= DECISIVE_BAND * best_eps)
+    separation = max(eps_by_candidate.values()) / best_eps
+    builder.add_data("decisiveness", {
+        "abs_eps_ppm": {k: mp.nstr(v, 12) for k, v in eps_by_candidate.items()},
+        "band_multiple_of_best": DECISIVE_BAND,
+        "candidates_in_leading_band": in_band,
+        "separation_ratio": mp.nstr(separation, 12),
+    })
+    # The module PRINTS "All four reduce to 25 = 5² at q=1 ✓" without ever
+    # computing it.  Compute it: [5]_q → 5 and [5]_q² → 25 in the classical
+    # limit — an expected value independent of anything measured at q₀.
+    qint_5_at_1 = sp.limit(qint_5, q, 1)
+    builder.add_data("classical_limit_check", {
+        "[5]_q_at_q_to_1": str(qint_5_at_1),
+        "[5]_q_squared_at_q_to_1": str(sp.simplify(qint_5_at_1 ** 2)),
+        "matches_25": bool(sp.simplify(qint_5_at_1 ** 2 - 25) == 0),
+    })
     builder.add_assertion(
         "div25_q_deformation_test_decisive",
-        computed=1,
+        computed=len(in_band),
         expected=1,
         tolerance=0,
-        source=("The probe computes c_3 with /25 (current main) vs "
-                "the q-deformed candidate /[5]_q², and compares "
-                "ε_ppm vs the cal-anchored c_3 target. Reports which "
-                "is closer. Decisive either way."),
+        unit="candidates",
+        source=(
+            f"DECISIVE <=> exactly one of the two candidates lies within "
+            f"{DECISIVE_BAND}x the better |eps_ppm| against the cal-anchored "
+            f"c_3 target. Here /25 gives {float(eps_main):+.3f} ppm and "
+            f"/[5]_q^2 gives {float(eps_qdef):+.3f} ppm — a separation of "
+            f"{float(separation):.1f}x, so the leading band holds "
+            f"{len(in_band)} candidate. Two comparable candidates would give 2 "
+            "and turn this red, which is exactly the outcome the old "
+            "computed=1/expected=1 could not report. WHICH candidate wins is "
+            "in `verdict`; this assertion is about the comparison being "
+            "separable at all."
+        ),
     )
 
     # q0 anchor: `independent`, declared rather than inherited.

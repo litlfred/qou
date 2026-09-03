@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "∏(1−xζ^k)=1−x^N as a polynomial identity (multipoint mpmath check, 1e-40), N=2..8"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "shift factors N-periodic ⇒ recursion closes in ≤N steps"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "N=5: p(5)=7 partitions, ζ₅ 5 roots — the S₅ organization"
     }
   ],

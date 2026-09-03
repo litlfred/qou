@@ -15,6 +15,22 @@ export default remark({
     "convergence-mechanism",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-08-09",
+      body:
+        "**Convention C excised; the loop value went from stipulated to " +
+        "forced.** This remark previously fixed $z = 1/(q^{1/2}+q^{-1/2})$ " +
+        "and described it as \"a stipulation of this definition, not a " +
+        "consequence of it\" — convention C of the trace-convention " +
+        "registry. Under the owner ruling that excised C, the selection is " +
+        "derived instead: the two-row cap already in the mass channel's own " +
+        "decomposition gives $y_{(1^3)} = 0$, and " +
+        "`markovWeights_eq_jones_of_threeRow_eq_zero` then makes the " +
+        "faithful normalised Markov trace unique at $z = q^3/(q^2+1)$. The " +
+        "prose above states the forcing; that an earlier version stipulated " +
+        "is recorded here rather than in the paper, per §4d.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

@@ -183,7 +183,7 @@ def main() -> int:
         })
         .add_assertion(
             name="single_element_traces_match_closed_forms",
-            computed=float(max_single_residue),
+            computed=max_single_residue,
             expected=0.0, tolerance=1e-30,
             unit=(
                 "max over {𝟙, σ_0, σ_1, L_+, L_-, e^-} of "
@@ -193,7 +193,7 @@ def main() -> int:
         )
         .add_assertion(
             name="gram_matrix_symmetric",
-            computed=float(symmetry_resid),
+            computed=symmetry_resid,
             expected=0.0, tolerance=1e-30,
             unit="max over (i,j) of |G_{ij} − G_{ji}|",
             source="Cyclicity of the Markov trace tr_M(ab) = tr_M(ba).",

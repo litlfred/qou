@@ -1,0 +1,526 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2104.01786v1",
+ "source": {
+  "file": "2104.01786v1.pdf",
+  "sha256": "34087d5063ef550753f920ff521868df1305989eeb4e1a9e630da8e17185da80",
+  "bytes": 311885,
+  "pages": 27,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2104.01786",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "5 Apr 2021"
+  },
+  "doi": null,
+  "title": "Spin(11, 3), particles and octonions",
+  "authors_raw": "School of Mathematical Sciences, University of Nottingham , NG7 2RD, UK",
+  "title_lines": [
+   "Spin(11, 3), particles and octonions",
+   "Kirill Krasnov"
+  ],
+  "abstract": "The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real 64-dimensional semi- spinor representation S+ of the group Spin(11 ,3). We describe an octonionic model for Spin(11,3) in which the semi-spinor representation gets identiﬁed w ith S+ = O⊗ ˜O, where O,˜O are the usual and split octonions respectively. It is then we ll-known that choosing a unit imaginary octonion u ∈ Im(O) equips O with a complex structure J. Similarly, choosing a unit imaginary split octonion ˜ u ∈ Im( ˜O) equips ˜O with a complex structure ˜J, except that there are now two inequivalent complex structu res, one parametrised by a choice of a timelike and the other of a spacelike unit ˜ u. In either case, the identiﬁcation S+ = O ⊗ ˜O implies that there are two natural commuting complex struct ures J, ˜J on S+. Our main new observation is that the subgroup of Spin(11 ,3) that commutes with both J, ˜J on S+ is the direct product Spin(6) × Spin(4) × Spin(1,3) of the Pati-Salam and Lorentz groups, when ˜u is chosen to be timelike. The splitting of S+ into eigenspaces of J corresponds to splitting into particles and anti-particle s. The splitting of S+ into eigenspaces of ˜J corresponds to splitting of Lorentz Dirac spinors into two d iﬀerent chiral- ities. We also study the simplest possible symmetry breakin g scenario with the ”Higgs” ﬁeld taking values in the representation that corresponds t o 3-forms in R11, 3. We show that this Higgs can be designed to transform as the bi-double t of the left/right symmetric extension of the SM, and thus breaks Spin(11 ,3) down to the product of the SM, Lorentz and U(1) B−L groups, with the last one remaining unbroken. This 3-form Hi ggs ﬁeld also produces the Dirac mass terms for all the particles.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210405205335-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Spin(11, 3), particles and octonions Kirill Krasnov"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Spin(7) and octonions",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Octonions",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Clifford algebra Cliff7",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Lie algebra so(7)",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Complex structure",
+   "page": 8,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "A different complex structure",
+   "page": 8,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Parametrisation",
+   "page": 9,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "The group of automorphisms of the octonions",
+   "page": 9,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "The group SU(3)",
+   "page": 10,
+   "source": "outline",
+   "number": "2.8"
+  },
+  {
+   "level": 1,
+   "title": "Spin(4,3) and the split octonions",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Split octonions",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The Clifford algebra Cliff4,3",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Lie algebra so(4,3)",
+   "page": 12,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Complex structures",
+   "page": 12,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Decomposition of  under so(3)so(1,3)",
+   "page": 13,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Parametrisation",
+   "page": 14,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "Some useful formulas",
+   "page": 15,
+   "source": "outline",
+   "number": "3.7"
+  },
+  {
+   "level": 2,
+   "title": "The split 2",
+   "page": 16,
+   "source": "outline",
+   "number": "3.8"
+  },
+  {
+   "level": 1,
+   "title": "The octonionic model for Spin(11,3)",
+   "page": 16,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Yet another magic square",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Lie algebra",
+   "page": 17,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Invariant pairing",
+   "page": 17,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The left/right symmetric models",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Spinor fields",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Bi-doublet Higgs field",
+   "page": 18,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Two Higgs in the adjoint",
+   "page": 19,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Two Higgs fields in the fundamental",
+   "page": 20,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "A model with only fundamental Higgs fields",
+   "page": 20,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Dictionary",
+   "page": 20,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Two commuting complex structures on O",
+   "page": 21,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Identification with particles",
+   "page": 21,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Mass terms",
+   "page": 22,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Projection onto 3 R11,3",
+   "page": 22,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "SU(3)U(1) and Lorentz invariant pairing",
+   "page": 23,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Evaluating the mass terms",
+   "page": 23,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 24,
+   "source": "outline",
+   "number": "8"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 13849,
+   "n_words": 2495
+  },
+  {
+   "id": "sec-001-21-octonions",
+   "number": "2.1",
+   "title": "Octonions",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 4366,
+   "n_words": 793
+  },
+  {
+   "id": "sec-002-2-spin7-and-octonions",
+   "number": "2",
+   "title": "Spin(7) and octonions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 2735,
+   "n_words": 508
+  },
+  {
+   "id": "sec-003-23-lie-algebra-so7",
+   "number": "2.3",
+   "title": "Lie algebra so(7)",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 599,
+   "n_words": 105
+  },
+  {
+   "id": "sec-004-24-complex-structure",
+   "number": "2.4",
+   "title": "Complex structure",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2658,
+   "n_words": 497
+  },
+  {
+   "id": "sec-005-26-parametrisation",
+   "number": "2.6",
+   "title": "Parametrisation",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1321,
+   "n_words": 284
+  },
+  {
+   "id": "sec-006-27-the-group-of-automorphisms-of-the-octonions",
+   "number": "2.7",
+   "title": "The group of automorphisms of the octonions",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 725,
+   "n_words": 146
+  },
+  {
+   "id": "sec-007-28-the-group-su3",
+   "number": "2.8",
+   "title": "The group SU(3)",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1731,
+   "n_words": 320
+  },
+  {
+   "id": "sec-008-31-split-octonions",
+   "number": "3.1",
+   "title": "Split octonions",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3065,
+   "n_words": 606
+  },
+  {
+   "id": "sec-009-34-complex-structures",
+   "number": "3.4",
+   "title": "Complex structures",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4337,
+   "n_words": 887
+  },
+  {
+   "id": "sec-010-36-parametrisation",
+   "number": "3.6",
+   "title": "Parametrisation",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2543,
+   "n_words": 536
+  },
+  {
+   "id": "sec-011-37-some-useful-formulas",
+   "number": "3.7",
+   "title": "Some useful formulas",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 895,
+   "n_words": 209
+  },
+  {
+   "id": "sec-012-42-lie-algebra",
+   "number": "4.2",
+   "title": "Lie algebra",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1428,
+   "n_words": 250
+  },
+  {
+   "id": "sec-013-41-yet-another-magic-square",
+   "number": "4.1",
+   "title": "Yet another magic square",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3154,
+   "n_words": 615
+  },
+  {
+   "id": "sec-014-43-invariant-pairing",
+   "number": "4.3",
+   "title": "Invariant pairing",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1353,
+   "n_words": 286
+  },
+  {
+   "id": "sec-015-5-the-leftright-symmetric-models",
+   "number": "5",
+   "title": "The left/right symmetric models",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1962,
+   "n_words": 407
+  },
+  {
+   "id": "sec-016-53-two-higgs-in-the-adjoint",
+   "number": "5.3",
+   "title": "Two Higgs in the adjoint",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2801,
+   "n_words": 553
+  },
+  {
+   "id": "sec-017-6-dictionary",
+   "number": "6",
+   "title": "Dictionary",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 130,
+   "n_words": 24
+  },
+  {
+   "id": "sec-018-61-two-commuting-complex-structures-on-o",
+   "number": "6.1",
+   "title": "Two commuting complex structures on O",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4245,
+   "n_words": 845
+  },
+  {
+   "id": "sec-019-7-mass-terms",
+   "number": "7",
+   "title": "Mass terms",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 3196,
+   "n_words": 657
+  },
+  {
+   "id": "sec-020-73-evaluating-the-mass-terms",
+   "number": "7.3",
+   "title": "Evaluating the mass terms",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1781,
+   "n_words": 355
+  },
+  {
+   "id": "sec-021-8-discussion",
+   "number": "8",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 11724,
+   "n_words": 1891
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 22,
+  "chars_total": 70598
+ }
+}

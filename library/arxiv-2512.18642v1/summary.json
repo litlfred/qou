@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2512.18642v1",
+ "source_sha256": "c4c7f8b0a719aa2d",
+ "brief": "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a",
+ "extended": "**A Hidden Quantum Markov model framework for**\n\n*Entanglement and Topological Order in the AKLT Chain*\n\n20 pp, 8 sections.\n\n**Abstract.** This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-protected topological (SPT) phase. The model’s observation system is the physical spin-1 chain, which emerges from a hidden spin-½layer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information. KeywordsAKLT, Hidden Markov Model, SPT Order, Quantum Theory, Entanglement\n\n**Outline.** Introduction; Preliminaries; Hidden Quantum Markov Models; The AKLT State and its SPT Order; HQMM Structure of the AKLT State; Entanglement Dynamics in Hidden Markov Channel; SPT order on the AKLT,s HQMMs; Conclusion",
+ "tokens": {
+  "brief": 48,
+  "extended": 296
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-hidden-quantum-markov-models",
+   "title": "Hidden Quantum Markov Models",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-the-aklt-state-and-its-spt-order",
+   "title": "The AKLT State and its SPT Order",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-hqmm-structure-of-the-aklt-state",
+   "title": "HQMM Structure of the AKLT State",
+   "pages": "6-12"
+  },
+  {
+   "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
+   "title": "Entanglement Dynamics in Hidden Markov Channel",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-006-spt-order-on-the-aklts-hqmms",
+   "title": "SPT order on the AKLT,s HQMMs",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-007-conclusion",
+   "title": "Conclusion",
+   "pages": "16-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

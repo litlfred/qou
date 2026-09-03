@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2406.05311v1",
+ "source_sha256": "c431fca150329547",
+ "brief": "A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE — 5 sections: Introduction; A Murnaghan–Nakayama rule for (cla; A Murnagha",
+ "extended": "**A QUANTUM MURNAGHAN–NAKAYAMA RULE FOR THE FLAG MANIFOLD C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE**\n\n*C. BENEDETTI, N. BERGERON, L. COLMENAREJO, F. SALIOLA, AND F. SOTTILE*\n\n34 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2 A Murnaghan–Nakayama rule for (classic) coho; 3 A Murnaghan–Nakayama rule for quantum cohomo; 4 Quantum equals classical; 5 Left operators",
+ "tokens": {
+  "brief": 50,
+  "extended": 98
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-a-murnaghan-nakayama-rule-for-classic-cohomology",
+   "title": "A Murnaghan–Nakayama rule for (classic) cohomology",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-002-a-murnaghan-nakayama-rule-for-quantum-cohomology",
+   "title": "A Murnaghan–Nakayama rule for quantum cohomology",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-003-quantum-equals-classical",
+   "title": "Quantum equals classical",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-004-left-operators",
+   "title": "Left operators",
+   "pages": "15-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

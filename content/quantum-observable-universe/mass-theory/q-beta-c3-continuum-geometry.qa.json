@@ -1127,6 +1127,18 @@
         "evidence": "RESOLVED 2026-08-23. The duplication was real: the dated CORRECTION banner at L9-20 restated the body's 'asymptotic bound (scope-limited)' section verbatim. The banner has been migrated out of the scholarly prose into `authorNotes` (AGENTS.md \u00a74d) as part of registering this block, so the correction is now stated once, in the body, where it is scholarly content. Reinstated rather than deleted: this criterion is agent-authored and the mechanical sweep does not regenerate it, so dropping the entry would have erased the finding instead of recording that it was addressed.",
         "notes": "proposed: migrate the L9-20 banner to authorNotes (kind:\"note\", date 2026-07-11) per AGENTS.md 4d and keep only the body section. Not applied: the block has no .ts sibling to hold authorNotes (it is an orphan .md)."
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The closing \"Companion keystone re-scope: `#3501`/`#3503`.\" is deleted \u2014 a pure tracker pointer; \"(Combinatorial constraints proposed over $S_5$ cells did not survive audit.)\" -> \"... did not survive scrutiny.\"; and the three bare \"keystone\" references -> \"the precision ladder\", which the manuscript defines at `prop:q-beta-categorical-precision-ladder`. The whole correction banner survives intact: both anchor deviations (muon +0.479%, proton -1.907%), the 2.43% cross-anchor swing, the 6.9x comparison at the CAL-2 pin, and the \"scope-limited, not exact\" verdict.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-08-23T09:06:39.568Z",
@@ -1142,5 +1154,6 @@
     "ts": "bdc5710994a9",
     "lean": "00c756fef550",
     "lean_statement": "58875ac10247"
-  }
+  },
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

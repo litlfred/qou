@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "root-test slope is +0.0648 at s=0 (divergent) and decreases monotonically in the Borel–Leroy order s, crossing 0 near s*≈0.20: a positive order is required ⇒ mild q-Gevrey divergence (3rd independent method); plain ÷k! (order 1) over-suppresses. The order is O(0.1) but estimator-dependent (vs the log-fit C≈0.06) — the q-Gevrey non-fixed-index signature. The resummed singularity is NOT resolved at k=21; no instanton action claimed."
     }
   ],

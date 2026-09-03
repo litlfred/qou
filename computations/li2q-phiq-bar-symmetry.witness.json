@@ -1,34 +1,34 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T21:09:09.384948+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:05:20.326811+00:00",
+  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
   "assertions": [
     {
       "name": "FALSIFICATION: ½(log Φ_q + log Φ_{q⁻¹}) is identically 0 (NOT Li_2^q)",
-      "computed": 9.33452291679e-61,
+      "computed": "9.33452291679e-61",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "absolute",
       "source": "Algebraic identity log Φ_{q⁻¹}(z) = -log Φ_q(z) for compact-q-dilog Φ_q(z) = ∏(1-q^{2k+1}z)^{-1}; falsifies the boxed identity in prop:li2q-phiq-bar-symmetrization."
     },
     {
       "name": "CORRECT identity: Li_2^q(z) = (h/2)(log Φ_{q⁻¹} - log Φ_q) holds",
-      "computed": 2.0534819527054347e-55,
+      "computed": "2.05348195270543463500968507683558094446237010357413636215271e-55",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "unit": "relative",
       "source": "Bar-anti-symmetrization with (h/2) factor recovers Li_2^q exactly, modulo series-truncation residuals."
     }
   ],
   "allPassed": true,
-  "durationMs": 127,
+  "durationMs": 159,
   "computation": "li2q-phiq-bar-symmetry",
   "scriptFile": "li2q_phiq_bar_symmetry_witness.py",
-  "scriptHash": "7ddb13e06bea",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "829ebe4e7709",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,10 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

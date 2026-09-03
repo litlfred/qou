@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T19:36:58Z
-updated_at: 2026-08-23T08:56:54Z
+updated_at: 2026-08-29T07:12:10Z
 ---
 
 The corollary cor:spectral-decomposition-qvalue (content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean) claims Q = Q_bare × Π_{τ∈E_g} F(τ,N), with (iv) the product collapsing to a single active-shell term and (v) the decomposition exact by Rosso-Jones completeness of torus-knot invariants (prop:cohomological-embedding).
@@ -145,3 +145,52 @@ satisfy Σ y_λ d_λ = 1 + the M3 Markov peel; (b) M3 (Markov peel) as a theorem
 the concrete e_{(1³)}, τ, T_β braid elements + the numerator value. This is
 multi-session infra, not a single-session brick — the structural scaffolding (M1/M2
 shadows) is now in place for it.
+
+
+
+## ═══ REVISED WORKPLAN 2026-08-28 (post-keystone-closure) ═══
+
+PIVOT: my prior notes called the SYT-count f_λ sum 'the deep Mathlib gap' blocking
+the Markov-trace normalisation + Macdonald telescope. That gap is now CLOSED on
+main (sibling work: RSK_substrate_axiom de-axiomatised; RSKBijection n for every n;
+list-model dimension identity for every n; Identity-I chain closed). So what was
+'multi-session infra' is now WIRING.
+
+Landed (structural T2 bricks, all sorry-free, on main): collapse mechanism +
+inactive branches + numerator idempotent-sandwich + denominator closed form +
+weightedCharacterTrace M2 cyclicity + M1 identity (Σ y_λ d_λ). Also: schurElement
+prefactor corrected nLambda (NOT contentSum) by sibling 2026-08-26 — do not
+reintroduce contentSum there.
+
+REVISED TIERS (tractability order):
+ T-n1  Prove Wenzl/Macdonald normalisation Σ_λ f_λ·s_λ = ((1−X)/(1−Q))^n using the
+       now-available RSK/SYT-count machinery — de-abstract wenzlNormalisation
+       (currently defined as the closed form ((1−X)/(1−Q))^n, with the SYT sum
+       'abstracted'). This is the unblocking lemma.
+ T-n2  jonesMarkovCoeff normalisation Σ_λ y_λ·f_λ = 1 (M1 for the REAL y_λ) —
+       derives from T-n1; wires weightedCharacterTrace M1 shadow to concrete y_λ.
+ T-n3  M3 (Markov peel) as a theorem — check whether the sibling HnMarkovTrace /
+       tower work already supplies it before building.
+ T-n4  Numerator value tr_M(e_{(1³)}·τ·T_β) — concrete braid elements; last brick,
+       once M1/M2/M3 + y_λ values are in place.
+Starting T-n1 this session (user directive 2026-08-28).
+
+T-n2 (n=3) LANDED: jonesMarkov_normalisation_three in MacdonaldTelescope.lean — M1 axiom tr_M(1)=1 at nucleon rank H3 for the concrete jonesMarkovCoeff weights (f_lambda = 1,2,1 over partitions of 3), derived from proved telescope_three / Z3. lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free.
+
+General conditional M1 LANDED: jonesMarkov_normalisation_of_telescope in MacdonaldTelescope.lean — for any partition list of common size n, IF the multiplicity-weighted schurElement sum = Z_n (the open general Macdonald telescope, carried as an explicit hypothesis) THEN the same weights normalise jonesMarkovCoeff to 1. Generalises T-n2 off the three partitions of 3 to arbitrary rank; instantiate with a proved telescope and normalisation follows. lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free.
+
+T-n3 (M3 Markov peel) LANDED in MacdonaldTelescope.lean: markovParameter z=(1-X)/(1-Q); wenzlNormalisation_markov_recursion (Z_{n+1}=z*Z_n, the trace-side Markov property tr(x sigma_n)=z tr(x)); telescopeRHS_markov_recursion; pieriStep_iff_markov (Pieri corner-sum = z*s_lambda); markov_peel_two_one (concrete peel at the rank-2->3 (2,1) shape); plus jonesMarkov_normalisation_one/_two completing the concrete M1 ladder at ranks 1,2. All lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound], sorry-free. Concrete M1 now closed at ranks 1,2,3; general M1 conditional on telescope; M3 z-recursion of the normalisation proved + concrete peel at (2,1).
+
+T-n1 RE-SCOPED after corpus-grep (Explore agent map): the GENERAL Macdonald hook telescope is ALREADY PROVED sorry-free in the corpus -- QOU.SchurWeyl.sum_dim_wenzlWeight_eq_one (WenzlNormalisation.lean:129), general n, general level r, resting on sorry-free (F) numStandardYoungTableaux_branching (SYTBranchingRule.lean) and (P) sum_wenzlWeight_addCellOrSelf (BranchingGenericity.lean). Even n=3 is mirrored on the canonical carrier by ocneanuWeight_normalisation_three (OcneanuWeightMarkov3.lean). So re-deriving the telescope in the List layer would DUPLICATE a solved result (forbidden by anti-dup discipline). The general telescope is on the YoungDiagram carrier (wenzlWeight/schurPrincipal, X=Q^r); my MacdonaldTelescope.lean is a parallel List carrier (schurElement, X free); Explore confirmed NO bridge lemma between the two schurElement objects. Re-scoped to build that missing bridge: schurElement Q (Q^r) lam = schurPrincipal r Q (ofRowLens lam hl). NEXT after bridge: full unconditional M1 (discharge jonesMarkov_normalisation_of_telescope htel) also needs a SECOND carrier bridge -- SYT count numSYTenum (List) vs numStandardYoungTableaux (YoungDiagram) -- plus a List-of-partitions vs Finset-of-diagrams sum match; deferred as its own gap.
+
+CARRIER BRIDGE COMPLETE (unconditional, sorry-free): schurElement_eq_schurPrincipal in WenzlSchurElementBridge.lean proves schurElement Q (Q^r) lam = schurPrincipal r Q (ofRowLens lam hl) for weakly-decreasing positive lam, Q!=0. Bricks: B1 content_eq_cellContent, B2 rowLen_ofRowLens_getD, B5 prod_cells_ofRowLens (+ list_range_map_prod, schurElement_eq_finset_prod, cells_ofRowLens_eq_biUnion), B4 nPart_ofRowLens_eq_nLambda (+ list_range_foldl_add), B6 schurElement_eq_schurPrincipal_of_hook, B3 hook_ofRowLens_eq_hookLength. B3 collapsed via corpus-grep: reused QOU.Mathlib.colLen_rowLens + QOU.Mathlib.SYTBeta.colLen_eq_succ_add_cnt_drop (the sorted-list leg identity, already sorry-free in the corpus). All #print axioms = [propext, Classical.choice, Quot.sound]. This is the missing carrier link the Explore map flagged. NEXT: the full unconditional M1 via sum_dim_wenzlWeight_eq_one still needs the SYT-count carrier bridge (numSYTenum vs numStandardYoungTableaux) + List-of-partitions vs Finset-of-diagrams sum match -- deferred.
+
+FULL UNCONDITIONAL M1 drafted (WenzlJonesMarkovNormalisation.lean): sum_dim_jonesMarkovCoeff_eq_one -- SUM over SYT-weighted diagrams of size n of f^nu * jonesMarkovCoeff Q (Q^r) nu.rowLens = 1, general n, unconditional. Route AVOIDS a List-sum conversion: proved termwise = wenzlWeight via the carrier bridge + ofRowLens_to_rowLens_eq_self, then cites the proved SchurWeyl.sum_dim_wenzlWeight_eq_one. Sub-lemmas: rowLens_sum_eq_card, levelBracket_eq (geom sum), jonesMarkovCoeff_rowLens_eq_wenzlWeight. Proof written; blocked only on the SchurWeyl olean cone (WenzlNormalisation + deps missing from restored cache) -- delegated env-build + verification.
+
+FULL UNCONDITIONAL M1 VERIFIED (sorry-free): sum_dim_jonesMarkovCoeff_eq_one compiles via lake build (3308 jobs, whole SchurWeyl cone from source; cache get 403'd). #print axioms = [propext, Classical.choice, Quot.sound]. This closes the M1 arc: general-n Markov normalisation tr_M(1)=1 for the concrete List-carrier jonesMarkovCoeff weights, DERIVED from the proved SchurWeyl.sum_dim_wenzlWeight_eq_one via the carrier bridge (no fit, no assumption). INFRA FINDING: lake-cache/qou-v4-24-0 has ZERO SchurWeyl oleans -- the whole cone must be rebuilt from source by anyone touching it; candidate for re-seeding.
+
+GENERAL-X TELESCOPE (research frontier) STARTED: MacdonaldTelescopeGeneralX.lean lays out the polynomial-identity route (both telescope sides are polynomials in X of degree n, agreeing at all X=Q^r via the merged bridge + sum_dim_wenzlWeight_eq_one; {Q^r} infinite for Q>1 ⇒ Polynomial.eq_of_infinite_eval_eq forces equality for ALL X). Brick 1 landed sorry-free (powers_infinite: {x|∃n,Q^n=x} infinite for Q>1). Bricks 2-4 open + substantial (schurElementPoly : ℝ[X] lift of the nested product; un-normalised X=Q^r agreement; assembly). Research tranche, not one-sitting.
+
+General-X BRICK 2 landed (sorry-free): schurElementPoly Q λ : ℝ[X] (cellFactorPoly per cell) + eval_schurElementPoly ((schurElementPoly Q λ).eval X0 = schurElement Q X0 λ). Proves schurElement Q · λ is a genuine polynomial in X, via WenzlSchurElementBridge.schurElement_eq_finset_prod + Polynomial.eval_prod/eval_mul/eval_C/eval_X + ring. #print axioms = [propext, Classical.choice, Quot.sound]. Remaining: brick 3 (un-normalised X=Q^r agreement Σ f_λ s_λ(Q,Q^r) = Z_n from SchurWeyl.sum_dim_wenzlWeight_eq_one + bridge) and brick 4 (assembly via eq_of_infinite_eval_eq).
+
+GENERAL-X TELESCOPE COMPLETE (sorry-free, all 4 bricks): telescope_generalX proves Σ_{|ν|=n} f^ν·schurElement Q X ν.rowLens = ((1-X)/(1-Q))^n for ALL X (Q>1) -- the corpus previously had it only at X=Q^r. Route: bricks 1 (powers_infinite), 2 (schurElementPoly + eval_schurElementPoly, the ℝ[X] lift), 3 (sum_dim_schurElement_rowLens_eq, un-normalised X=Q^r agreement via sum_dim_wenzlWeight_eq_one + bridge), 4 (telescopeLHS/RHSPoly + eval lemmas + levelBracket_succ_ne_zero + eq_of_infinite_eval_eq over {Q^{r+1}}). All #print axioms = [propext, Classical.choice, Quot.sound]. This generalises the conditional jonesMarkov_normalisation_of_telescope's hypothesis to free X.

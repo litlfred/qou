@@ -97,8 +97,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1  # noqa: E402
-from hecke_characters import build_seminormal_matrices  # noqa: E402
-from mass_at_3A_proper import chi_lambda_of_word  # noqa: E402
+from hoefsmit_mpmath import (BlockCacheMP,  # noqa: E402
+                             chi_lambda_of_word_sparse_mp,
+                             seminormal_matrices_mp)
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from lp_dual_solver import (  # noqa: E402
     solve_operator_selection_lp,
@@ -124,9 +125,9 @@ def nucleon_word(nucleon: str):
         raise ValueError(f"unknown nucleon: {nucleon}")
     word = []
     for c, d in intra_g0:
-        word.append((float(c), float(d), 0))
+        word.append((mp.mpf(c), mp.mpf(d), 0))
     for c, d in intra_g1:
-        word.append((float(c), float(d), 1))
+        word.append((mp.mpf(c), mp.mpf(d), 1))
     return word
 
 
@@ -144,14 +145,17 @@ def per_prefix_decomposition(word, parts_dim):
         prefix = word[:i]
         chi_per_lambda = {}
         for (lam, sigmas, dim_lam) in parts_dim:
-            chi = chi_lambda_of_word(sigmas, dim_lam, prefix, n_gens_required=2)
-            chi_per_lambda[lam] = float(chi)
+            chi = chi_lambda_of_word_sparse_mp(sigmas, dim_lam, prefix,
+                                               n_gens_required=2)
+            chi_per_lambda[lam] = fmt(chi)
         op_str = "·".join(_op_name(*op) for op in prefix) if prefix else "𝟙"
         out.append({
             "step": i,
             "n_ops_so_far": i,
-            "last_op": (None if i == 0 else f"{word[i-1][0]:.3g}·σ_{word[i-1][2]}"
-                        f"{f' + ({word[i-1][1]:.3g})·𝟙' if abs(word[i-1][1]) > 1e-12 else ''}"),
+            "last_op": (None if i == 0
+                        else f"{mp.nstr(word[i-1][0], 3)}·σ_{word[i-1][2]}"
+                        + (f" + ({mp.nstr(word[i-1][1], 3)})·𝟙"
+                           if abs(word[i-1][1]) > mp.mpf('1e-12') else "")),
             "chi_per_lambda": {str(list(lam)): chi_per_lambda[lam]
                                 for lam in chi_per_lambda},
         })
@@ -160,9 +164,9 @@ def per_prefix_decomposition(word, parts_dim):
 
 def _op_name(c, d, gi):
     """Compact label for one (c, d, gen_idx) op."""
-    if abs(d) < 1e-12:
+    if abs(d) < mp.mpf("1e-12"):
         return f"σ_{gi}"
-    return f"({c:.2g}σ_{gi}+{d:.2g}·𝟙)"
+    return f"({mp.nstr(c, 2)}σ_{gi}+{mp.nstr(d, 2)}·𝟙)"
 
 
 # Local alias: q_dim is the imported `dim_q_lambda` (kept under the
@@ -187,6 +191,13 @@ def main() -> int:
             # solvers themselves are float64; the canonical combined tag
             # for python+numpy+cvxpy consumers groups this witness
             # appropriately.
+            #
+            # That first sentence was FALSE until 2026-08-24: the trajectory
+            # ran through `mass_at_3A_proper.chi_lambda_of_word`, a float64
+            # kernel measured at ~14 good digits, not 50 dps. It is true now
+            # (`chi_lambda_of_word_sparse_mp`). Recorded because a provenance
+            # note that describes an intention rather than the code is worse
+            # than none -- it is the field a reader trusts instead of checking.
             engine="python+numpy+cvxpy",
         )
         .set_description(
@@ -209,11 +220,12 @@ def main() -> int:
     # ── Per-λ y_λ + dim + seminormal matrices (independent of nucleon) ─
     print("\n  Building per-λ Hoefsmit seminormal matrices …")
     parts_dim = []
-    y_lambda_dict = y_lambda_at(n, q_val=float(Q_MP))  # {partition: y_value}
+    y_lambda_dict = y_lambda_at(n, q_val=Q_MP)  # {partition: y_value}
     y_at_q0 = {}
     dim_q_at_q0 = {}
+    cache_mp = BlockCacheMP(Q_MP)
     for lam in parts:
-        sigmas, dim_lam, _tableaux = build_seminormal_matrices(lam, q=float(Q_MP))
+        sigmas, dim_lam, _tableaux = seminormal_matrices_mp(lam, cache=cache_mp)
         parts_dim.append((lam, sigmas, dim_lam))
         y_at_q0[lam] = mp.mpf(str(y_lambda_dict[lam]))
         dim_q_at_q0[lam] = q_dim(lam, Q_MP)
@@ -230,7 +242,7 @@ def main() -> int:
         L = len(word)
         print(f"  word length L = {L} (gg-pair-production ops: 7 on σ_0 + 4 on σ_1)")
         for i, (c, d, gi) in enumerate(word):
-            print(f"    op[{i:2d}]:  c={c:.4g}, d={d:+.5g}, gen=σ_{gi}")
+            print(f"    op[{i:2d}]:  c={mp.nstr(c, 4)}, d={mp.nstr(d, 5)}, gen=σ_{gi}")
 
         # ── Per-prefix χ^λ trajectory ──────────────────────────────
         print(f"\n  Per-prefix per-λ characters χ^λ(β_{nuc}^(i)):")
@@ -246,10 +258,10 @@ def main() -> int:
             print(f"  {i:<5}{last[:28]:<28}", end="")
             tr_partial = mp.mpf(0)
             for lam in parts:
-                chi = step["chi_per_lambda"][str(list(lam))]
-                print(f"{chi:>15.6g}", end="")
-                tr_partial += y_at_q0[lam] * mp.mpf(str(chi))
-            print(f"{float(tr_partial):>16.10g}")
+                chi = mp.mpf(step["chi_per_lambda"][str(list(lam))])
+                print(f"{mp.nstr(chi, 6):>15}", end="")
+                tr_partial += y_at_q0[lam] * chi
+            print(f"{mp.nstr(tr_partial, 10):>16}")
 
         # ── Final-step Option G ───────────────────────────────────
         final_chi = {tuple(map(int, k.strip("[]").split(", "))): mp.mpf(str(v))
@@ -429,9 +441,9 @@ def main() -> int:
         residual = abs(mp.mpf(nucleon_data[nuc]["final"]["closure_residual"]))
         builder.add_assertion(
             name=f"option_g_closure_{nuc}",
-            computed=float(residual),
-            expected=0.0,
-            tolerance=1e-13,
+            computed=fmt(residual),
+            expected="0",
+            tolerance="1e-13",
             source=f"Option G binding-equation closure residual at full β_{nuc}",
         )
         # LP duality gap (strong duality)
@@ -439,18 +451,18 @@ def main() -> int:
         if gap is not None:
             builder.add_assertion(
                 name=f"lp_duality_gap_{nuc}",
-                computed=float(gap),
-                expected=0.0,
-                tolerance=1e-6,
+                computed=fmt(mp.mpf(gap)),
+                expected="0",
+                tolerance="1e-6",
                 source=f"LP strong duality gap |primal - dual| at β_{nuc}",
             )
         sdp_gap = nucleon_data[nuc]["sdp"].get("duality_gap")
         if sdp_gap is not None and not (isinstance(sdp_gap, float) and (sdp_gap != sdp_gap)):
             builder.add_assertion(
                 name=f"sdp_duality_gap_{nuc}",
-                computed=float(sdp_gap),
-                expected=0.0,
-                tolerance=1e-4,
+                computed=fmt(mp.mpf(sdp_gap)),
+                expected="0",
+                tolerance="1e-4",
                 source=f"SDP strong duality gap |primal - dual| at β_{nuc}",
             )
 

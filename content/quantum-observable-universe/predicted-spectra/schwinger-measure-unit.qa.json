@@ -6,7 +6,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed, all three leaks. \"the owner premises P1 ... and P2\" -> \"the framework premises P1 ... and P2\", matching the sibling conjecture. \"Empirical support: the exploration probe's exact checks\" -> \"Empirical support is exact rather than numerical\", keeping the moment identity at orders 1 through 6 and the pin-invariance falsifier. \"so content blocks use $\\varsigma$\" -> \"so this paper uses $\\varsigma$\". The concession that canonicity is not proved is untouched.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed, all three leaks. \"the owner premises P1 ... and P2\" -> \"the framework premises P1 ... and P2\", matching the sibling conjecture. \"Empirical support: the exploration probe's exact checks\" -> \"Empirical support is exact rather than numerical\", keeping the moment identity at orders 1 through 6 and the pin-invariance falsifier. \"so content blocks use $\\varsigma$\" -> \"so this paper uses $\\varsigma$\". The concession that canonicity is not proved is untouched.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -724,7 +724,7 @@
           "in_degree": 0,
           "cone_size": 297,
           "depth": 51,
-          "pagerank": 0.000078,
+          "pagerank": 7.8e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": "emits fwd-ref to quantum-observable-universe/information-theory: prop:horizon-conformal-invariance"
@@ -1387,7 +1387,7 @@
         "reviewed_at": "2026-08-22T05:01:28.842Z",
         "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
         "evidence": "Full-block read (batch agent:n00): maximum-strength claims checked against the block's own tables, witness and arithmetic where present; those present are quantified or qualified.",
-        "notes": "a pin-invariance falsifier eliminates every intrinsic per-step rival unit checked against the cited witness computations/probes/r2core-schwinger-measure-explore.witness.json: 10 assertions, non-empty, allPassed true, including intrinsic_step_units_pin_dependent and keystone_normalizer_is_unit_schwinger_moment. Also recomputed: int_0^inf s^n e^{-s} ς ds/s = ς(n-1)! and int_s^{es} ς dt/t = ς are exact, and (1/2)(1/4pi) = 1/8pi."
+        "notes": "a pin-invariance falsifier eliminates every intrinsic per-step rival unit checked against the cited witness computations/probes/r2core-schwinger-measure-explore.witness.json: 10 assertions, non-empty, allPassed true, including intrinsic_step_units_pin_dependent and keystone_normalizer_is_unit_schwinger_moment. Also recomputed: int_0^inf s^n e^{-s} \u03c2 ds/s = \u03c2(n-1)! and int_s^{es} \u03c2 dt/t = \u03c2 are exact, and (1/2)(1/4pi) = 1/8pi."
       }
     ],
     "trap-nonspeakable": [
@@ -1457,5 +1457,6 @@
     "ts": "19fa9cdcc399",
     "lean": "1489f4797658",
     "lean_statement": "f76d93b776e0"
-  }
+  },
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

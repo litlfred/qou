@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T13:12:02.920943+00:00",
+  "commitSha": "f17e4467ea8c0897bf0f4330f2dcd6111fff08ad",
+  "assertions": [
+    {
+      "name": "target_carries_a_convention_systematic",
+      "computed": "0.0942916716364695983691569765818243836312254568834712608895351",
+      "expected": "0.09429",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "fractional width of the convention band",
+      "source": "3H/3He mirror splitting 0.76375488 MeV; no charge-symmetric A=3 binding is measured, so the choice is a convention"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "eps-ratio-target-precision",
+  "scriptFile": "eps_ratio_target_precision_probe.py",
+  "scriptHash": "23ad641edfb1",
+  "scriptCommitSha": "d6eb2d796b68cdd41f4a4e0921f7002975ccd5fe",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/eps_ratio_target_precision_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/eps_ratio_target_precision_probe.py"
+  },
+  "description": "The eps(2)/eps(1) target of qou-edt7 carries a 9.4% CONVENTION systematic from the 3H/3He mirror splitting, so it is 1.21 +- 0.06, not the 8-digit 1.2137076 quoted in PR #6173. Corrects that framing. Cuts both ways: candidates previously read as failures are inside the band, and a near-match in the band is therefore not evidence.",
+  "data": {
+    "convention_band": {
+      "3He_alone": "1.15648634776524070176019036880089250659297080032952042515076",
+      "isospin_average": "1.21370760735284029758251294117477825564372955050742027816479",
+      "3H_alone": "1.27092886694043989340483551354866400469448830068532013117883"
+    },
+    "in_band_candidates": [
+      {
+        "candidate": "2*z_D",
+        "value": "1.22537607429293050319165972789179849605261678309012721694410",
+        "dev_from_isoavg": "0.00961390277971458185927225987484800089383293415217977834900393"
+      },
+      {
+        "candidate": "6/5",
+        "value": "1.20000000000000000000000000000000000000000000000000000000000",
+        "dev_from_isoavg": "0.0112939947560659238019320578963436418466004466444796787072961"
+      },
+      {
+        "candidate": "q0^2",
+        "value": "1.23205245416676393126980451353563618484968142291699735949467",
+        "dev_from_isoavg": "0.0151147168418386229154958344614873960711996230647593796685561"
+      }
+    ],
+    "second_ratio_discriminator": {
+      "iso_average": "1.74666334554693731273917122595930826348189200850700877893743",
+      "3H_based": "1.66802300673057907239035052504562653839760969498418271356249",
+      "note": "2*z_D = 1.2254 and 6/5 = 1.2 are nowhere near either; a candidate that fits the first ratio and not the second has fitted one number"
+    },
+    "scope": {
+      "derives_anything": false,
+      "what_it_corrects": "PR #6173 quoted the target to 8 digits; the physical quantity is defined only to ~1-2 digits",
+      "consequence": "closed-form guessing cannot be evidence at this precision; a mechanism must predict the SECOND ratio too"
+    }
+  }
+}

@@ -1,0 +1,993 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:11:29.636941+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "assertions": [
+    {
+      "name": "coth_exceeds_one_pointwise_on_probed_alphas",
+      "computed": 40,
+      "expected": 40,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The premise of the exclusion: coth(alpha) > 1 pointwise on (0, inf), hence c0 = <coth>_M > 1 for any finite-volume M. Checked on a decade grid 1e-9..10 plus every alpha this probe scores the incumbent at."
+    },
+    {
+      "name": "unsubtracted_kernel_outside_admissible_family",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "The scored H_coth uses c0 = 0.0, strictly below the admissible floor c0 >= 1.0 that the scan above enumerates from, so it is not a member of the family. Structural, no data involved."
+    },
+    {
+      "name": "admissible_family_does_not_beat_incumbent_at_equal_dof",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Either no admissible member improves on the incumbent's scatter, or the one that does sits at c0 > 1 and is the optimum of a scan, hence one DOF richer. Recorded as a boolean so a future run that overturns it fails loudly."
+    },
+    {
+      "name": "measured_kappa_strictly_positive",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "The zero-crossing census is only meaningful if every measured kappa is positive. Minimum over the 29 bound pairs is 1.4020251."
+    },
+    {
+      "name": "reproduces_committed_H_coth_bound_only_scatter",
+      "computed": "3.650257e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "absolute deviation",
+      "source": "End-to-end check that this probe's re-scoring of the incumbent reproduces the committed bound-only H_coth scatter. If it does not, the admissible-family numbers below are not comparable to the published contest."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "em-linking-o2-neutralised-kernel",
+  "scriptFile": "em_linking_o2_neutralised_kernel_probe.py",
+  "scriptHash": "0bdba84f8fd3",
+  "scriptCommitSha": "c126516ce3208bc9887a92c22eb59156334bc3ab",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_o2_neutralised_kernel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_o2_neutralised_kernel_probe.py"
+  },
+  "description": "Applies the corpus's own O2 obstruction (compact-quotient neutrality, docs/audits/2026-08-01-em-linking-reads-round1.md) to the kappa(A) hypothesis contest it constrains, which no prior probe had done (bean qou-17mq, todo since 2026-08-01). O2 forces the admissible pair kernel to be the ZERO-MEAN Green's function coth(alpha) - c0 with c0 = <coth>_M > 1, so the unsubtracted coth that H_coth is scored on is not an admissible member of the family, and its winning qualitative prediction -- saturation at kappa -> +1 -- is a property of the excluded c0 = 0 member. This re-scores the SAME committed kappa series under the admissible family. Nothing is fitted beyond the single scale H_coth already carries; the scan over c0 is declared as an extra DOF and is reported as the family's best case, not as support.",
+  "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+  "data": {
+    "obstruction": {
+      "name": "O2 -- compact-quotient neutrality",
+      "source": "docs/audits/2026-08-01-em-linking-reads-round1.md (round 2)",
+      "statement": "int(Laplacian u) = 0 on a closed manifold forces total charge zero; the Green's function acquires a -1/vol(M) offset and only charge-neutral combinations are well-posed.",
+      "consequence_for_the_kernel": "The admissible pair kernel is the zero-mean Green's function coth(alpha) - c0 with c0 = <coth>_M. Since coth > 1 pointwise on (0, inf), c0 > 1 strictly for any finite-volume M; c0 = 1 is the infinite-volume BOUNDARY of the family, not an interior member. The unsubtracted coth is c0 = 0 and is outside the admissible family entirely.",
+      "sign_change_is_forced": "The robust form of the argument, independent of any model of the compact Green's function: an admissible kernel has zero mean over M and is not identically zero, so it MUST take both signs. coth(alpha) is strictly positive and monotone, so no admissible kernel is a positive saturating function of the separation. Physically this is ordinary jellium behaviour -- a like-charge pair against a neutralising background is repulsive at short range and attractive beyond a critical separation. The single-term model coth(alpha) - c0 used for the scan below is the simplest realisation of that; the sign-change conclusion does not depend on it.",
+      "finite_volume_suffices": "int(Laplacian u) = 0 needs finite volume, not compactness, so the argument covers the corpus's cusped finite-volume hyperbolic knot complements (4_1, L6a4) as well as a closed quotient. The audit states the QOU fibre is a compact hyperbolic quotient; this probe takes that premise as given and notes it is stronger than the argument needs.",
+      "consequence_for_the_contest": "H_coth's distinguishing prediction is saturation at kappa -> +1. Every admissible member instead has kappa -> -c0 <= -1. So the qualitative behaviour that separated H_coth from the power laws is not a prediction of any admissible kernel."
+    },
+    "incumbent_rescored": {
+      "hypothesis": "H_coth (c0 = 0, INADMISSIBLE under O2)",
+      "scale_constant": "0.21944513",
+      "rel_scatter": "0.035046126",
+      "residual_r_vs_A": "0.048530703",
+      "note": "Reproduces the committed bound-only H_coth score; recomputed here so the admissible family is compared against the same arithmetic, not against a quoted number."
+    },
+    "admissible_family_scan": [
+      {
+        "c0": "1.0",
+        "rel_scatter": "0.11150524",
+        "A_zero": null,
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.05",
+        "rel_scatter": "0.11427694",
+        "A_zero": "3399.3824",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.1",
+        "rel_scatter": "0.11694753",
+        "A_zero": "1985.9217",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.15",
+        "rel_scatter": "0.11952282",
+        "A_zero": "1406.5283",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.2",
+        "rel_scatter": "0.1220082",
+        "A_zero": "1086.5177",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.25",
+        "rel_scatter": "0.12440864",
+        "A_zero": "883.03957",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.3",
+        "rel_scatter": "0.12672877",
+        "A_zero": "742.31493",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.35",
+        "rel_scatter": "0.12897286",
+        "A_zero": "639.33924",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.4",
+        "rel_scatter": "0.13114487",
+        "A_zero": "560.85076",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.45",
+        "rel_scatter": "0.13324851",
+        "A_zero": "499.14553",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.5",
+        "rel_scatter": "0.13528719",
+        "A_zero": "449.43768",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.55",
+        "rel_scatter": "0.13726412",
+        "A_zero": "408.59644",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.6",
+        "rel_scatter": "0.13918228",
+        "A_zero": "374.4877",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.65",
+        "rel_scatter": "0.14104444",
+        "A_zero": "345.60708",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.7",
+        "rel_scatter": "0.14285321",
+        "A_zero": "320.86404",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.75",
+        "rel_scatter": "0.14461103",
+        "A_zero": "299.44905",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.8",
+        "rel_scatter": "0.14632017",
+        "A_zero": "280.74888",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.85",
+        "rel_scatter": "0.14798278",
+        "A_zero": "264.29071",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.9",
+        "rel_scatter": "0.14960086",
+        "A_zero": "249.70432",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "1.95",
+        "rel_scatter": "0.15117631",
+        "A_zero": "236.69579",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.0",
+        "rel_scatter": "0.1527109",
+        "A_zero": "225.02896",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.05",
+        "rel_scatter": "0.15420632",
+        "A_zero": "214.51195",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.1",
+        "rel_scatter": "0.15566413",
+        "A_zero": "204.98733",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.15",
+        "rel_scatter": "0.15708584",
+        "A_zero": "196.32477",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.2",
+        "rel_scatter": "0.15847286",
+        "A_zero": "188.41551",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.25",
+        "rel_scatter": "0.15982651",
+        "A_zero": "181.16807",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.3",
+        "rel_scatter": "0.16114807",
+        "A_zero": "174.50499",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.35",
+        "rel_scatter": "0.16243873",
+        "A_zero": "168.36029",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.4",
+        "rel_scatter": "0.16369963",
+        "A_zero": "162.67739",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.45",
+        "rel_scatter": "0.16493184",
+        "A_zero": "157.40756",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.5",
+        "rel_scatter": "0.16613639",
+        "A_zero": "152.50857",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.55",
+        "rel_scatter": "0.16731425",
+        "A_zero": "147.94368",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.6",
+        "rel_scatter": "0.16846634",
+        "A_zero": "143.68077",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.65",
+        "rel_scatter": "0.16959356",
+        "A_zero": "139.69163",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.7",
+        "rel_scatter": "0.17069673",
+        "A_zero": "135.95144",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.75",
+        "rel_scatter": "0.17177667",
+        "A_zero": "132.43821",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.8",
+        "rel_scatter": "0.17283413",
+        "A_zero": "129.13244",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.85",
+        "rel_scatter": "0.17386985",
+        "A_zero": "126.01678",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.9",
+        "rel_scatter": "0.17488451",
+        "A_zero": "123.0757",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "2.95",
+        "rel_scatter": "0.17587879",
+        "A_zero": "120.29533",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.0",
+        "rel_scatter": "0.17685333",
+        "A_zero": "117.66317",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.05",
+        "rel_scatter": "0.17780873",
+        "A_zero": "115.168",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.1",
+        "rel_scatter": "0.17874558",
+        "A_zero": "112.79965",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.15",
+        "rel_scatter": "0.17966444",
+        "A_zero": "110.54894",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.2",
+        "rel_scatter": "0.18056584",
+        "A_zero": "108.40755",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.25",
+        "rel_scatter": "0.18145029",
+        "A_zero": "106.36788",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.3",
+        "rel_scatter": "0.1823183",
+        "A_zero": "104.42304",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.35",
+        "rel_scatter": "0.18317034",
+        "A_zero": "102.56673",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.4",
+        "rel_scatter": "0.18400685",
+        "A_zero": "100.79319",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.45",
+        "rel_scatter": "0.18482829",
+        "A_zero": "99.097117",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.5",
+        "rel_scatter": "0.18563506",
+        "A_zero": "97.473681",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.55",
+        "rel_scatter": "0.18642757",
+        "A_zero": "95.918417",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.6",
+        "rel_scatter": "0.18720621",
+        "A_zero": "94.42722",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.65",
+        "rel_scatter": "0.18797136",
+        "A_zero": "92.996302",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.7",
+        "rel_scatter": "0.18872338",
+        "A_zero": "91.622163",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.75",
+        "rel_scatter": "0.18946261",
+        "A_zero": "90.301566",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.8",
+        "rel_scatter": "0.19018939",
+        "A_zero": "89.031511",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.85",
+        "rel_scatter": "0.19090404",
+        "A_zero": "87.809214",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.9",
+        "rel_scatter": "0.19160687",
+        "A_zero": "86.632091",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "3.95",
+        "rel_scatter": "0.19229819",
+        "A_zero": "85.497737",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.0",
+        "rel_scatter": "0.19297828",
+        "A_zero": "84.403911",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.05",
+        "rel_scatter": "0.19364743",
+        "A_zero": "83.348527",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.1",
+        "rel_scatter": "0.19430591",
+        "A_zero": "82.329636",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.15",
+        "rel_scatter": "0.19495397",
+        "A_zero": "81.345415",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.2",
+        "rel_scatter": "0.19559187",
+        "A_zero": "80.394161",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.25",
+        "rel_scatter": "0.19621985",
+        "A_zero": "79.47428",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.3",
+        "rel_scatter": "0.19683815",
+        "A_zero": "78.584274",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.35",
+        "rel_scatter": "0.19744701",
+        "A_zero": "77.722741",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.4",
+        "rel_scatter": "0.19804663",
+        "A_zero": "76.888363",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.45",
+        "rel_scatter": "0.19863724",
+        "A_zero": "76.079902",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.5",
+        "rel_scatter": "0.19921904",
+        "A_zero": "75.29619",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.55",
+        "rel_scatter": "0.19979224",
+        "A_zero": "74.536132",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.6",
+        "rel_scatter": "0.20035702",
+        "A_zero": "73.798691",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.65",
+        "rel_scatter": "0.20091358",
+        "A_zero": "73.082892",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.7",
+        "rel_scatter": "0.20146211",
+        "A_zero": "72.387814",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.75",
+        "rel_scatter": "0.20200276",
+        "A_zero": "71.712587",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.8",
+        "rel_scatter": "0.20253573",
+        "A_zero": "71.056387",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.85",
+        "rel_scatter": "0.20306118",
+        "A_zero": "70.418436",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.9",
+        "rel_scatter": "0.20357927",
+        "A_zero": "69.797996",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "4.95",
+        "rel_scatter": "0.20409015",
+        "A_zero": "69.194369",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.0",
+        "rel_scatter": "0.20459399",
+        "A_zero": "68.606893",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.05",
+        "rel_scatter": "0.20509092",
+        "A_zero": "68.034939",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.1",
+        "rel_scatter": "0.20558109",
+        "A_zero": "67.47791",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.15",
+        "rel_scatter": "0.20606465",
+        "A_zero": "66.935239",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.2",
+        "rel_scatter": "0.20654173",
+        "A_zero": "66.406389",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.25",
+        "rel_scatter": "0.20701245",
+        "A_zero": "65.890846",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.3",
+        "rel_scatter": "0.20747696",
+        "A_zero": "65.388122",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.35",
+        "rel_scatter": "0.20793537",
+        "A_zero": "64.897753",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.4",
+        "rel_scatter": "0.20838781",
+        "A_zero": "64.419296",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.45",
+        "rel_scatter": "0.2088344",
+        "A_zero": "63.95233",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.5",
+        "rel_scatter": "0.20927524",
+        "A_zero": "63.496451",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.55",
+        "rel_scatter": "0.20971046",
+        "A_zero": "63.051276",
+        "zero_inside_measured_range": false
+      },
+      {
+        "c0": "5.6",
+        "rel_scatter": "0.21014017",
+        "A_zero": "62.616439",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.65",
+        "rel_scatter": "0.21056446",
+        "A_zero": "62.191587",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.7",
+        "rel_scatter": "0.21098344",
+        "A_zero": "61.776388",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.75",
+        "rel_scatter": "0.21139722",
+        "A_zero": "61.370519",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.8",
+        "rel_scatter": "0.21180588",
+        "A_zero": "60.973676",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.85",
+        "rel_scatter": "0.21220954",
+        "A_zero": "60.585564",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.9",
+        "rel_scatter": "0.21260828",
+        "A_zero": "60.205903",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "5.95",
+        "rel_scatter": "0.21300219",
+        "A_zero": "59.834424",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.0",
+        "rel_scatter": "0.21339136",
+        "A_zero": "59.470869",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.05",
+        "rel_scatter": "0.21377588",
+        "A_zero": "59.11499",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.1",
+        "rel_scatter": "0.21415583",
+        "A_zero": "58.766551",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.15",
+        "rel_scatter": "0.21453129",
+        "A_zero": "58.425324",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.2",
+        "rel_scatter": "0.21490235",
+        "A_zero": "58.091089",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.25",
+        "rel_scatter": "0.21526908",
+        "A_zero": "57.763639",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.3",
+        "rel_scatter": "0.21563157",
+        "A_zero": "57.442769",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.35",
+        "rel_scatter": "0.21598987",
+        "A_zero": "57.128288",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.4",
+        "rel_scatter": "0.21634408",
+        "A_zero": "56.820009",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.45",
+        "rel_scatter": "0.21669425",
+        "A_zero": "56.517751",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.5",
+        "rel_scatter": "0.21704046",
+        "A_zero": "56.221344",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.55",
+        "rel_scatter": "0.21738278",
+        "A_zero": "55.930621",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.6",
+        "rel_scatter": "0.21772127",
+        "A_zero": "55.645421",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.65",
+        "rel_scatter": "0.218056",
+        "A_zero": "55.365591",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.7",
+        "rel_scatter": "0.21838703",
+        "A_zero": "55.090984",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.75",
+        "rel_scatter": "0.21871442",
+        "A_zero": "54.821454",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.8",
+        "rel_scatter": "0.21903824",
+        "A_zero": "54.556866",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.85",
+        "rel_scatter": "0.21935854",
+        "A_zero": "54.297086",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.9",
+        "rel_scatter": "0.21967538",
+        "A_zero": "54.041985",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "6.95",
+        "rel_scatter": "0.21998881",
+        "A_zero": "53.79144",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.0",
+        "rel_scatter": "0.2202989",
+        "A_zero": "53.545331",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.05",
+        "rel_scatter": "0.22060569",
+        "A_zero": "53.303543",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.1",
+        "rel_scatter": "0.22090925",
+        "A_zero": "53.065964",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.15",
+        "rel_scatter": "0.22120961",
+        "A_zero": "52.832487",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.2",
+        "rel_scatter": "0.22150684",
+        "A_zero": "52.603008",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.25",
+        "rel_scatter": "0.22180098",
+        "A_zero": "52.377425",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.3",
+        "rel_scatter": "0.22209208",
+        "A_zero": "52.155642",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.35",
+        "rel_scatter": "0.22238018",
+        "A_zero": "51.937565",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.4",
+        "rel_scatter": "0.22266534",
+        "A_zero": "51.723102",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.45",
+        "rel_scatter": "0.2229476",
+        "A_zero": "51.512165",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.5",
+        "rel_scatter": "0.22322701",
+        "A_zero": "51.30467",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.55",
+        "rel_scatter": "0.2235036",
+        "A_zero": "51.100533",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.6",
+        "rel_scatter": "0.22377742",
+        "A_zero": "50.899674",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.65",
+        "rel_scatter": "0.22404852",
+        "A_zero": "50.702016",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.7",
+        "rel_scatter": "0.22431693",
+        "A_zero": "50.507484",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.75",
+        "rel_scatter": "0.22458269",
+        "A_zero": "50.316004",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.8",
+        "rel_scatter": "0.22484585",
+        "A_zero": "50.127508",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.85",
+        "rel_scatter": "0.22510644",
+        "A_zero": "49.941925",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.9",
+        "rel_scatter": "0.2253645",
+        "A_zero": "49.759189",
+        "zero_inside_measured_range": true
+      },
+      {
+        "c0": "7.95",
+        "rel_scatter": "0.22562007",
+        "A_zero": "49.579237",
+        "zero_inside_measured_range": true
+      }
+    ],
+    "admissible_best": {
+      "c0": "1.0",
+      "scale_constant": "0.12597387",
+      "rel_scatter": "0.11150524",
+      "residual_r_vs_A": "-0.9036718",
+      "dof_note": "This is the best of a SCAN over c0, so it carries one DOF more than the 1-parameter H_coth. A better scatter here is not evidence."
+    },
+    "boundary_member_c0_eq_1": {
+      "scale_constant": "0.12597387",
+      "rel_scatter": "0.11150524",
+      "residual_r_vs_A": "-0.9036718",
+      "why_it_matters": "c0 = 1 is the only member whose predicted kappa stays positive at every A, so it is the only one not contradicted outright by kappa > 1 throughout the measured series -- and it is the LEAST-neutralised, infinite-volume boundary of the family."
+    },
+    "zero_crossing_census": {
+      "n_scanned": 140,
+      "n_with_zero_inside_measured_range": 48,
+      "measured_A_range": [
+        3,
+        63
+      ],
+      "reading": "Every measured kappa exceeds 1, so an admissible member whose predicted kappa crosses zero inside the measured A range is contradicted by the data without any appeal to scatter."
+    },
+    "heaviest_pair_endpoint": {
+      "A": 63,
+      "Z": 32,
+      "kappa_measured": "1.412669",
+      "kappa_pred_H_coth_inadmissible": "1.4224982",
+      "kappa_pred_admissible_boundary_c0_1": "1.159336"
+    },
+    "carried_confound": {
+      "bean": "qou-gcmn",
+      "what": "The per-pair Coulomb unit is held at its A=3 H_6 value across the whole series, so any A-dependence of the strong bond B_pp is absorbed into kappa.",
+      "effect_here": "This bounds what any scatter comparison on this series can establish, this probe included. The O2 argument above is structural and does not depend on it; the scatter numbers do."
+    },
+    "scope": {
+      "class": "(a) scope-limited negative on the PARAMETERISATION, plus (b) a structural exclusion of ONE member",
+      "b_part": "Scope-(b), invariant cited: compact-quotient neutrality (int(Laplacian u) = 0 on a closed manifold) excludes the unsubtracted kernel c0 = 0 from the admissible family. This is an exclusion of the kernel AS WRITTEN, not of the hyperbolic Coulomb route.",
+      "a_part": "Scope-(a): the admissible family, scored on this series and with this frozen B_pp unit, does not improve on the inadmissible incumbent. That is a statement about this parameterisation on this data, not an exclusion of the metric Coulomb pairing.",
+      "not_claimed": "The hyperbolic Coulomb pairing <A_1, J_2> remains the surviving route. Nothing here excludes it, and nothing here is wired."
+    },
+    "verdict": "O2 removes the unsubtracted coth from the admissible family, and with it the SATURATION (kappa -> +1) that distinguished H_coth from the withdrawn power laws: every admissible member has kappa -> -c0 <= -1. Scored on the same series, the incumbent c0 = 0 gives 3.505% scatter; the best admissible member found in the scan is c0 = 1.0 at 11.15%, and it carries one DOF more. 48 of 140 scanned admissible members predict a kappa zero-crossing inside the measured A range, which the strictly-positive measured kappa contradicts outright. The contest as posed therefore compared an inadmissible kernel against two hypotheses whose warrant had already been withdrawn, so its ranking does not support the hyperbolic-saturation reading. The metric Coulomb route survives; what fails is this parameterisation of it.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
+        "size_bytes": 10833,
+        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      }
+    ]
+  }
+}

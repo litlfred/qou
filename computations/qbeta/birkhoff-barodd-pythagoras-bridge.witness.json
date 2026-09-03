@@ -1,0 +1,125 @@
+{
+ "computation": "birkhoff-barodd-pythagoras-bridge",
+ "scriptFile": "birkhoff_barodd_pythagoras_bridge_probe.py",
+ "computedAt": "2026-08-29T04:32:32.423851+00:00",
+ "engine": "mpmath mpf/mpc (structural demonstration; 0 free params)",
+ "free_parameters": 0,
+ "inputs": {
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_pin": "proton (experimental pin, resolved)",
+  "q0_precision_note": "RESOLVED from substrate.q_parameter at run time, not frozen. It was a 17-digit muon literal until 2026-08-29 (bean qou-1c4y); a frozen literal cannot follow an anchor move, which is how this witness came to record the superseded muon pin under the label \"muon\".",
+  "h": "0.109978582751380807591669095610768879874499121873600000000000",
+  "h_definition": "q0 - 1 (the A3 crossterm probe's reading; NOT the Hecke h = q - 1/q)",
+  "hbar_q": "0.0990817160442585078391771175189060639852583733894630782552147",
+  "mu3_MeV": "0.4708",
+  "c3_single_trace_MeV": "0.297",
+  "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
+  "arithmetic": "mpmath mpf/mpc at 70 dps (no float64 anywhere)",
+  "mu3_source": "additive-residual-simplex #4320",
+  "c3_source": "borromean-H9-magnitude-lift #4364"
+ },
+ "results": {
+  "structural_checks": [
+   {
+    "name": "barOdd_unitModulus_sq_eq_neg_one[E=+i]",
+    "bar_odd_sigmaE_eq_negE": true,
+    "unit_modulus_E_sigmaE_eq_1": true,
+    "E_squared": [
+     "-1.00000000000000000000000000000000000000000000000000000000000",
+     "0.0"
+    ],
+    "passed": true
+   },
+   {
+    "name": "barOdd_unitModulus_sq_eq_neg_one[E=-i]",
+    "bar_odd_sigmaE_eq_negE": true,
+    "unit_modulus_E_sigmaE_eq_1": true,
+    "E_squared": [
+     "-1.00000000000000000000000000000000000000000000000000000000000",
+     "0.0"
+    ],
+    "passed": true
+   },
+   {
+    "name": "affine_modulus_quadrature[fs=1.0,s=1.0]",
+    "modulus_squared": "2.00000000000000000000000000000000000000000000000000000000000",
+    "fs2_plus_s2": "2.00000000000000000000000000000000000000000000000000000000000",
+    "passed": true
+   },
+   {
+    "name": "affine_modulus_quadrature[fs=0.7,s=1.3]",
+    "modulus_squared": "2.18000000000000000000000000000000000000000000000000000000000",
+    "fs2_plus_s2": "2.18000000000000000000000000000000000000000000000000000000000",
+    "passed": true
+   },
+   {
+    "name": "affine_modulus_quadrature[fs=0.9,s=1.5]",
+    "modulus_squared": "3.06000000000000000000000000000000000000000000000000000000000",
+    "fs2_plus_s2": "3.06000000000000000000000000000000000000000000000000000000000",
+    "passed": true
+   }
+  ],
+  "all_structural_pass": true,
+  "transverse_slope_needed_per_fs": [
+   {
+    "fs": "1.00000000000000000000000000000000000000000000000000000000000",
+    "s_transverse_needed": "1.22996425611909139296735175489816884794057880005277742695551",
+    "is_O1_not_Oh": true
+   },
+   {
+    "fs": "0.950000000000000000000000000000000000000000000000000000000000",
+    "s_transverse_needed": "1.26898072141801659803688607443068231529436505262658258651000",
+    "is_O1_not_Oh": true
+   },
+   {
+    "fs": "0.900000000000000000000000000000000000000000000000000000000000",
+    "s_transverse_needed": "1.30491841558412756163271809549379396543380111420439954367320",
+    "is_O1_not_Oh": true
+   }
+  ],
+  "placeholder_model_fs_s_eq_1_gives_sqrt2": "1.41421356237309504880168872420969807856967187537694807317668",
+  "placeholder_matches_rstar": false,
+  "longitudinal_readings": [
+   {
+    "reading": "h",
+    "rho": "0.109978582751380807591669095610768879874499121873600000000000",
+    "correction_1_minus_rho": "0.890021417248619192408330904389231120125500878126400000000000",
+    "abs_err_vs_rstar": "0.695163767936565992776854280795954065059684307058785185185185",
+    "lands_rstar": false
+   },
+   {
+    "reading": "-h",
+    "rho": "-0.109978582751380807591669095610768879874499121873600000000000",
+    "correction_1_minus_rho": "1.10997858275138080759166909561076887987449912187360000000000",
+    "abs_err_vs_rstar": "0.475206602433804377593516089574416305310686063311585185185185",
+    "lands_rstar": false
+   },
+   {
+    "reading": "\u210f_q",
+    "rho": "0.0990817160442585078391771175189060639852583733894630782552147",
+    "correction_1_minus_rho": "0.900918283955741492160822882481093936014741626610536921744785",
+    "abs_err_vs_rstar": "0.684266901229443693024362302704091249170443558574648263440400",
+    "lands_rstar": false
+   },
+   {
+    "reading": "-\u210f_q",
+    "rho": "-0.0990817160442585078391771175189060639852583733894630782552147",
+    "correction_1_minus_rho": "1.09908171604425850783917711751890606398525837338946307825521",
+    "abs_err_vs_rstar": "0.486103469140926677346008067666279121199926811795722106929970",
+    "lands_rstar": false
+   }
+  ],
+  "n_longitudinal_landing_rstar": 0
+ },
+ "verdict": "STRUCTURAL bridge witnessed: bar-odd + unit-modulus \u21d2 E\u00b2=\u22121 (E=\u00b1i, a \u221a\u22121, not real); the affine lift's modulus is the quadrature fs\u00b2+s\u00b2. REFRAMING: the A=3 magnitude, under the modulus reading, is a TRANSVERSE slope s=\u221a(r*\u00b2\u2212fs\u00b2) (O(1)), not a longitudinal O(h) even-face correction \u2014 which is why all real \u03c1\u2208{\u00b1h,\u00b1\u210f_q} readings miss (0/4 land r*). Relocates the datum to the transverse (imaginary-q) direction = qou-prjo.",
+ "scope": "scope-(a) structural reframing + Lean bridge. Does NOT derive 1.585: fs,s not pinned (placeholder fs=s=1 \u21d2 \u221a2 \u2260 r*); real fs,s need the branching compute (qou-jqof). \u03bc\u2083/c\u2083 never inverted.",
+ "lean": "QOU.QBeta.BirkhoffBarOddPythagorasBridge",
+ "wired": false,
+ "notes": "Companion to BirkhoffBarOddPythagorasBridge.lean (sorry-free). The modulus reading is a structure hypothesis with NO instance; the Pythagorean consequence is conditional. Nothing wired to production.",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "scriptHash": "08533d7824bc",
+ "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+ "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
+ "durationMs": 0
+}

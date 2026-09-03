@@ -27,8 +27,7 @@ namespace QOU.Archimedean
 /-- The Markov trace parameter z = 1/(q^{1/2} + q^{-1/2}). -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def markovZ (q : ℝ) (hq : 0 < q) : ℝ :=
-  let q_half := Real.sqrt q
-  1 / (q_half + 1 / q_half)
+  q ^ 3 / (q ^ 2 + 1)
 
 /-- The Chebyshev transfer matrix at one crossing.
 

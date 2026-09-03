@@ -192,7 +192,7 @@ def main():
     for res in results:
         w.add_assertion(
             f"agreement_at_{res['label'].replace(' ', '_').replace('=', '').replace('→', 'to').replace('⁺', 'plus').replace('.', 'p')}",
-            computed=float(res["abs_diff"]),
+            computed=res["abs_diff"],
             expected=0.0,
             tolerance=float(TOL_50DPS),
             source=(

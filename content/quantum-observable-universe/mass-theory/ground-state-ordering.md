@@ -27,8 +27,9 @@ $$
 $$
 
 *for every $q$ in an interval containing the substrate anchor
-$q_0 \approx 1.10998$, with equality only in the undeformed limit
-$q \to 1$.*
+$q_0 \approx 1.10998$ and for every Markov parameter lying strictly
+between the two transfer-matrix eigenvalues, with equality only in the
+undeformed limit $q \to 1$.*
 
 The eigenvalue relation $\lambda_+\lambda_- = -1$ for the transfer
 matrix survives; the ordering claim does not.
@@ -68,7 +69,7 @@ appended.  The verdicts above are stated for both.  They differ only for
 rule (iii) at $A = 2$, a case that the production path special-cases and
 never routes through the ordering at all.
 
-## Why the readout is a two-parameter object
+## The readout as a two-parameter object
 
 Each transfer factor is $T(d) = S + d\,\mathbf{1}$ for a single fixed
 matrix $S$ with $\mathrm{tr}\, S = q - q^{-1}$ and $\det S = -1$.
@@ -84,17 +85,48 @@ $$
 $$
 
 with $\lambda_+ = q$, $\lambda_- = -q^{-1}$ the roots of the
-characteristic polynomial and $c_+ + c_- = 1$.  Clearing the square root
-in $c_\pm$ turns the $A = 5$ comparison into a polynomial inequality in
-$t = \sqrt{q}$ whose gap factors as $(t-1)$ times a degree-$20$
-polynomial with all coefficients positive — which is why the
-counterexample holds on a whole interval rather than at a single anchor.
+characteristic polynomial and, writing $z$ for the Markov parameter,
+
+$$
+  c_+ = \frac{z + q^{-1}}{q + q^{-1}},
+  \qquad
+  c_- = \frac{q - z}{q + q^{-1}},
+  \qquad
+  c_+ + c_- = 1 .
+$$
+
+The sum is $1$ identically in $z$, and $z$ enters the readout nowhere
+else.
+
+## Independence of the Markov-parameter convention
+
+The two arrangements differ at positions $0$ and $1$ only, and that
+comparison collapses to a single identity in which $z$ survives only
+inside the product $c_+c_-$:
+
+$$
+  \hat{V}_0\hat{V}_1(n\,p\,n\,n\,n) - \hat{V}_0\hat{V}_1(p\,n\,n\,n\,n)
+  = 2\,c_+c_-\left(\frac{q + q^{-1}}{2}\right)^{4}\frac{q^6 - 1}{q^3},
+  \qquad
+  4\,c_+c_- = \frac{4q\,(q - z)(qz + 1)}{(q^2 + 1)^2},
+$$
+
+the fourth power being the mixed proton–neutron eigenfactor, which carries
+no $z$.  For $q > 1$ every other factor is positive, so the counterexample
+holds exactly when $-q^{-1} < z < q$ — the Markov parameter strictly
+between the two eigenvalues.  Both the canonical convention D,
+$z = q^3/(q^2+1)$, and the excised convention C, $z = \sqrt{q}/(q+1)$,
+lie in that window for every $q > 1$, so the refutation is a fact about the
+readout rather than about a choice of $z$; it degenerates to equality only
+at $q = 1$, where the deformation switches off, which is why it holds on a
+whole interval rather than at a single anchor.
 
 ## Scope
 
 The $A \geq 4$ refutation is a structural exclusion: an explicit
 arrangement with strictly smaller $\Phi_q$, proved for an interval of $q$
-containing the anchor.  The description of the actual minimising family
+containing the anchor and for every Markov parameter in the window above.
+The description of the actual minimising family
 is empirical, covering $A \leq 16$ only, and no claim is made beyond that
 range.  Which ordering the mass and binding computations should use is a
 separate question and is not settled here.

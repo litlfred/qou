@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:12:51.651558+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T15:46:18.435582+00:00",
+  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
   "assertions": [
     {
       "name": "descent_block_scalar_is_dominant_qgevrey_driver",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "lever1-transfer-operator-spectral-qgevrey",
   "scriptFile": "lever1_transfer_operator_spectral_qgevrey.py",
-  "scriptHash": "ea3ab94fc58c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "57d712899b3e",
+  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -43,15 +43,14 @@
   },
   "description": "Lever-1 W9 (z2bn follow-up): spectral reading of the descent-set transfer operator T_k = A_k + q^(2k) B_k (W6) evaluated numerically at the muon-canonical q_0. (S1) q=1: Z_n = I(n), per-level log-multiplier ~ (1/2)ln n (Gevrey-1/2). (S2) q_0: multiplier LINEAR in n, tail slope matches 2 ln q_0 within 2% (log Z_n ~ quadratic => q-Gevrey), reproducing the alien-calculus review's measured class change as a spectral statement. (S3) DECOMPOSITION: disabling the q^(2k) descent scalar (content monomials kept) drops the multiplier slope from ~0.18 to ~0.056 \u2014 the descent-block level scalar is the DOMINANT (~2/3) contributor to the q-Gevrey rate; the residual comes from the content weighting q^(j-i), itself quadratic-log (max content n(n-1)/2), so this is an honest decomposition, not a sole-cause claim. Both ingredients vanish at q=1 (Gevrey-1/2). Envelope ratio log S^bal/log(p(n) prod[k]_q0) rises in the tail n>=10 (no plateau, slowly toward 1). Exact operator, 50-dps mpmath; no fit; no wiring; EXPLORATORY.",
   "data": {
-    "q0_str": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q0_str": "1.1099785827513808075916690956107688798744991218736",
     "nmax": 30,
     "S1_q1_equals_involution_numbers": true,
-    "S2_q0_multiplier_slope": "0.179996334212",
-    "S2_target_2_ln_q0": "0.208681463713",
-    "S3_control_multiplier_slope": "0.0558956993195",
+    "S2_q0_multiplier_slope": "0.179996313579",
+    "S2_target_2_ln_q0": "0.208681440639",
+    "S3_control_multiplier_slope": "0.0558956787982",
     "S3_descent_scalar_pct_of_slope": "68.9462"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_str). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

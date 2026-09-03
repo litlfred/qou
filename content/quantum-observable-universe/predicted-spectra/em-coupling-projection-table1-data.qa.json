@@ -9,7 +9,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:22:01Z",
         "reviewer": {
           "kind": "agent",
@@ -550,7 +550,7 @@
           "in_degree": 0,
           "cone_size": 13,
           "depth": 10,
-          "pagerank": 0.000076,
+          "pagerank": 7.6e-05,
           "edge_span_max": 4,
           "edge_span_mean": 4,
           "worst_target": ""
@@ -1077,5 +1077,6 @@
     "md": "1302e277aa04",
     "ts": "052a9c5d746c"
   },
-  "updated_at": "2026-08-21T15:44:05.798Z"
+  "updated_at": "2026-08-21T15:44:05.798Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

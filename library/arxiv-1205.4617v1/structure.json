@@ -1,0 +1,104 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1205.4617v1",
+ "source": {
+  "file": "1205.4617v1.pdf",
+  "sha256": "dd00cf2cee521bf50a16fc5b62ddfea14fa837dc97a0f29e8a9bac667e59bfed",
+  "bytes": 156101,
+  "pages": 14,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1205.4617",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "29 Feb 2012"
+  },
+  "doi": null,
+  "title": "Quaternion Octonion Reformulation of Grand Unified Theories",
+  "authors_raw": "Pushpa(1), P. S. Bisht (1,2), Tianjun Li (2) and O. P. S. Negi (1.2)",
+  "title_lines": [
+   "Quaternion Octonion Reformulation of Grand",
+   "Unified Theories"
+  ],
+  "abstract": "In this paper, Grand Uni\ufb01ed theories are discussed in terms o f quater- nions and octonions by using the relation between quaternio n basis el- ements with Pauli matrices and Octonions with Gell Mann \u03bb matri- ces. Connection between the unitary groups of GUTs and the no rmed division algebra has been established to re-describe the SU (5) gauge group. We have thus described the SU (5) gauge group and its subgroup SU (3)C \u00d7 SU (2)L \u00d7 U (1) by using quaternion and octonion basis ele- ments. As such the connection between U (1) gauge group and complex number, SU (2) gauge group and quaternions and SU (3) and octonions is established. It is concluded that the division algebra ap proach to the the theory of uni\ufb01cation of fundamental interactions as the case of GUTs leads to the consequences towards the new understanding of t hese theories which incorporate the existence of magnetic monopole and dy on.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210614201324-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "SU(5) Gauge Symmetry",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quaternion-Octonion Reformulation of SU(5) gauge Symmetry",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Discussion and Conclusion",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4302,
+   "n_words": 727
+  },
+  {
+   "id": "sec-001-2-su5-gauge-symmetry",
+   "number": "2",
+   "title": "SU(5) Gauge Symmetry",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 11,
+   "n_chars": 8443,
+   "n_words": 1897
+  },
+  {
+   "id": "sec-002-4-discussion-and-conclusion",
+   "number": "4",
+   "title": "Discussion and Conclusion",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5533,
+   "n_words": 928
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 3,
+  "chars_total": 18278
+ }
+}

@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 232,
           "depth": 53,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -1060,7 +1060,7 @@
         "reviewed_at": "2026-08-22T02:50:59.727Z",
         "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
         "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
-        "notes": "READ AND CHECKED. The six weight assignments are internally consistent with the parent formula and the proof's per-term reading: T_1 weighted by E_0,beta approx 0.7823 MeV (the free-neutron beta-decay Q, i.e. the CAL-2 proxy); T_2 and T_3 by alpha = m_e x 8G approx 3.7445 MeV; T_4 by m_e approx 0.5110 MeV; T_5 multiplicative on T_1 with E_0,beta; T_6 weight 1, already MeV. CATALAN IS CORRECT HERE: alpha = m_e x 8G with 8G = Vol(B_3) = 7.327724753, and the sibling proof states G approx 0.9160 = Catalan — in contrast to s4-s3-half-symmetric-projection-proof.md in this same batch, which calls Lambda(pi/4) = G/2 Catalan. RECOMPUTED alpha = m_e x 8G at 25 dps with CODATA m_e = 0.51099895069: 3.744459660, against the proof's hardcoded 3.74446989, high by 1.02e-5 or 2.73 ppm — the printed 3.7445 here rounds correctly either way. TWO ITEMS: (1) row T_3 carries a factor z^2 with z undefined anywhere in this block family and its convention unstated; convention D (z = q^3/(q^2+1) = 0.6126880371) is canonical and C (z = sqrt q/(q+1) = 0.4993203342) is excised, and z^2 differs by a factor 1.506 between them (0.37536 vs 0.24932). I cannot tell from the block which is meant and am reporting it as unstated rather than guessing. (2) Rows T_4 and T_6 assign weights to terms the sibling proof reports as inert — T_4's bound-free differential 'vanishes ... identically' and T_6 'currently returns 0 for A >= 5 atoms' — which the table does not indicate."
+        "notes": "READ AND CHECKED. The six weight assignments are internally consistent with the parent formula and the proof's per-term reading: T_1 weighted by E_0,beta approx 0.7823 MeV (the free-neutron beta-decay Q, i.e. the CAL-2 proxy); T_2 and T_3 by alpha = m_e x 8G approx 3.7445 MeV; T_4 by m_e approx 0.5110 MeV; T_5 multiplicative on T_1 with E_0,beta; T_6 weight 1, already MeV. CATALAN IS CORRECT HERE: alpha = m_e x 8G with 8G = Vol(B_3) = 7.327724753, and the sibling proof states G approx 0.9160 = Catalan \u2014 in contrast to s4-s3-half-symmetric-projection-proof.md in this same batch, which calls Lambda(pi/4) = G/2 Catalan. RECOMPUTED alpha = m_e x 8G at 25 dps with CODATA m_e = 0.51099895069: 3.744459660, against the proof's hardcoded 3.74446989, high by 1.02e-5 or 2.73 ppm \u2014 the printed 3.7445 here rounds correctly either way. TWO ITEMS: (1) row T_3 carries a factor z^2 with z undefined anywhere in this block family and its convention unstated; convention D (z = q^3/(q^2+1) = 0.6126880371) is canonical and C (z = sqrt q/(q+1) = 0.4993203342) is excised, and z^2 differs by a factor 1.506 between them (0.37536 vs 0.24932). I cannot tell from the block which is meant and am reporting it as unstated rather than guessing. (2) Rows T_4 and T_6 assign weights to terms the sibling proof reports as inert \u2014 T_4's bound-free differential 'vanishes ... identically' and T_6 'currently returns 0 for A >= 5 atoms' \u2014 which the table does not indicate."
       }
     ]
   },
@@ -1068,5 +1068,6 @@
     "md": "faffe3545cb3",
     "ts": "d1f718583619"
   },
-  "updated_at": "2026-08-22T02:50:59.727Z"
+  "updated_at": "2026-08-22T02:50:59.727Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

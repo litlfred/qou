@@ -151,29 +151,35 @@ type-level interface here; concrete construction is open work. -/
     with `T_i² = (q - 1) T_i + q` (relation in `R[q, q⁻¹]`,
     integer-coefficient when `R = ℤ`). -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (Iwahori-Hecke algebra over ℤ[q,q⁻¹])
-axiom heckeFormalMul :
+opaque heckeFormalMul :
     ∀ {R : Type*} [CommRing R] {n : ℕ},
       HeckeFormalElement R n → HeckeFormalElement R n → HeckeFormalElement R n
 
-/-- **Formal Hecke-algebra unit** — the multiplicative identity. -/
+/-- **Formal Hecke-algebra unit** — the multiplicative identity.
+    CLOSED: indicator function `δ_{id}` in the group algebra basis,
+    placing `1 ∈ R[q,q⁻¹]` at the identity permutation (index 0). -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (Hecke algebra unit)
-axiom heckeFormalOne :
-    ∀ {R : Type*} [CommRing R] (n : ℕ), HeckeFormalElement R n
+noncomputable def heckeFormalOne
+    {R : Type*} [CommRing R] (n : ℕ) : HeckeFormalElement R n :=
+  Pi.single ⟨0, Nat.factorial_pos n⟩ 1
 
 /-- **T-form Hecke generator** `T_i ∈ Hecke_formal R n`.
     Axiomatised at the type level; concrete construction
     pending Mathlib Iwahori-Hecke port. -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (T-form generators T_i)
-axiom heckeFormalGenerator :
+opaque heckeFormalGenerator :
     ∀ {R : Type*} [CommRing R] {n : ℕ} (_i : Fin (n - 1)),
       HeckeFormalElement R n
 
 /-- **Scalar action** of `R[q, q⁻¹]` on `HeckeFormalElement R n`:
-    formal scalar multiplication by a Laurent polynomial. -/
+    formal scalar multiplication by a Laurent polynomial.
+    CLOSED: pointwise multiplication on the function space. -/
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 §4.4 (scalar action of R[q,q⁻¹])
-axiom heckeFormalSMul :
-    ∀ {R : Type*} [CommRing R] {n : ℕ},
-      LaurentPolynomial R → HeckeFormalElement R n → HeckeFormalElement R n
+noncomputable def heckeFormalSMul
+    {R : Type*} [CommRing R] {n : ℕ}
+    (c : LaurentPolynomial R) (v : HeckeFormalElement R n) :
+    HeckeFormalElement R n :=
+  fun i => c * v i
 
 /-- **T-form Hecke relation** (the F_p-friendly form):
     `T_i² = (q − 1) · T_i + q · 1`.

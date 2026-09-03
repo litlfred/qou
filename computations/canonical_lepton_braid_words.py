@@ -207,7 +207,10 @@ def main() -> int:
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # Markov parameter, convention D (owner ruling 2026-08-15): z = q^3/(q^2+1).
+    # Was convention C `1/(sqrt(q0) + 1/sqrt(q0))`. No square root is needed
+    # under D; a surviving one would be z_C showing through.
+    z = q0 ** 3 / (q0 ** 2 + 1)
 
     print(f"=== Substrate at q_0 = {float(q0):.10f} ===")
     print(f"  h = {float(h):.6f}, z = {float(z):.6f}")

@@ -90,8 +90,36 @@ theorem nodeOf_isHighestWeight
     IsHighestWeight (C.nodeOf T) :=
   fun i => C.crystal_realises T i
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
+/-- **The degenerate model** — a `def`, deliberately NOT an `instance`.
+
+Both carrier types collapse to `PUnit` and both crystal operators return
+`none`, so `crystal_realises` closes by `rfl`: it holds because there is
+nothing for it to say, not because the crystal structure was constructed.
+
+It was declared `instance` and documented as *"Faithful instance. Carries the
+explicit research-grade conjecture as a sorry."* Neither half held. There is no
+`sorry` term anywhere in this file — the two occurrences of the word are both in
+docstrings — so `#print axioms` on anything downstream reported no `sorryAx`,
+and `nodeOf_isHighestWeight` above read as an established result about GS normal
+forms whose only model in scope has exactly one normal form and one node.
+
+As an `instance` it satisfied every `[CrystalGraphRealization R q]` binder by
+synthesis. Demoting it changes nothing else: measured 2026-08-24, all twelve
+files that bind this class — eight library modules and four content-block
+siblings — build with **zero** errors afterwards, because every one of those
+binders is a hypothesis in a signature (the honest §3b-cond shape) rather than a
+synthesis site. The measurement is sensitive rather than vacuous: with this
+declaration a `def`, `inferInstance` for the class fails with *"failed to
+synthesize QOU.BraidKnot.CrystalGraphRealization"*, and succeeds again when it
+is restored to an `instance`.
+
+The model stays available to anyone who wants it by name; it is simply no longer
+found by instance synthesis. Same disposition as `triv_hecke` /
+`triv_wedderburn` (PR #5581) and `skeletonRealisation` (PR #5621).
+`QOU/MassEndomorphism/VolumeBridge.lean` is the instance-free design this
+follows. -/
+-- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+def canonical (R : Type u) [CommRing R] (q : R) :
     CrystalGraphRealization R q where
   NormalForm := PUnit
   CrystalNode := PUnit

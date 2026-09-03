@@ -1,19 +1,20 @@
 {
   "computation": "rho-f-categorical-probe",
-  "description": "W-1 categorical \u03c1_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1\u00d7C2 combined) against the empirical true_\u03c1 from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives \u00b3He at \u22120.14% (vs C0 integer at \u22122.97%).",
-  "computedAt": "2026-08-24T14:19:56.716910+00:00",
+  "description": "W-1 categorical ρ_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1×C2 combined) against the empirical true_ρ from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives ³He at −0.14% (vs C0 integer at −2.97%).",
+  "computedAt": "2026-08-30T07:22:40.705838+00:00",
   "parameters": {
-    "q_0": 1.1099785955573347,
-    "tr_M_proton": 1.06530614425445,
-    "tr_M_neutron": 0.9232332299116371,
-    "tr_M_avg": 0.9942696870830436,
-    "q_2_q": 2.010896869119075
+    "q_0": "1.10997859555733470000000000000000000000000000000000000000000",
+    "q_0_anchor": "muon (ideal 3-CAL) — matches the -muon peel read above",
+    "tr_M_proton": "1.14575978288692531871492792659852736782202059726610000000000",
+    "tr_M_neutron": "0.987743757144974407626767949092124699440620642849570000000000",
+    "tr_M_avg": "1.06675177001594986317084793784532603363132062005783500000000",
+    "q_2_q": "2.01089686911907575706961774022355964228105178355910790200925"
   },
   "candidates": {
-    "C0": "integer \u03c1 = \u2308A/2\u2309  (paper baseline)",
-    "C1": "q-integer \u03c1 = [\u2308A/2\u2309]_q",
-    "C2": "tr_M-ratio \u03c1 = \u2308A/2\u2309 \u00b7 (Z\u00b7tr_M_p + N\u00b7tr_M_n)/(A\u00b7tr_M_avg)",
-    "C3": "combined \u03c1 = [\u2308A/2\u2309]_q \u00b7 (Z\u00b7tr_M_p + N\u00b7tr_M_n)/(A\u00b7tr_M_avg)"
+    "C0": "integer ρ = ⌈A/2⌉  (paper baseline)",
+    "C1": "q-integer ρ = [⌈A/2⌉]_q",
+    "C2": "tr_M-ratio ρ = ⌈A/2⌉ · (Z·tr_M_p + N·tr_M_n)/(A·tr_M_avg)",
+    "C3": "combined ρ = [⌈A/2⌉]_q · (Z·tr_M_p + N·tr_M_n)/(A·tr_M_avg)"
   },
   "rows": [
     {
@@ -22,26 +23,26 @@
       "N": 1,
       "A": 2,
       "label": "deuteron",
-      "true_rho": null,
+      "true_rho": "0.989221229613979300000000000000000000000000000000000000000000",
       "C0_integer": {
-        "rho": 1.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "0.0107787703860207000000000000000000000000000000000000000000000",
+        "err_pct": "1.08962182202932156892248878702346225152178326657628935219280"
       },
       "C1_q_integer": {
-        "rho": 1.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "0.0107787703860207000000000000000000000000000000000000000000000",
+        "err_pct": "1.08962182202932156892248878702346225152178326657628935219280"
       },
       "C2_trm_ratio": {
-        "rho": 1.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "0.0107787703860207000000000000000000000000000000000000000000000",
+        "err_pct": "1.08962182202932156892248878702346225152178326657628935219280"
       },
       "C3_q_trm_combined": {
-        "rho": 1.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "0.0107787703860207000000000000000000000000000000000000000000000",
+        "err_pct": "1.08962182202932156892248878702346225152178326657628935219280"
       }
     },
     {
@@ -50,26 +51,26 @@
       "N": 2,
       "A": 3,
       "label": "tritium",
-      "true_rho": null,
+      "true_rho": "2.00311942815466500000000000000000000000000000000000000000000",
       "C0_integer": {
-        "rho": 2.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "-0.00311942815466500000000000000000000000000000000000000000000000",
+        "err_pct": "-0.155728515774953708405481445257824244051612589768041198791431"
       },
       "C1_q_integer": {
-        "rho": 2.010896869119075,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.01089686911907575706961774022355964228105178355910790200925",
+        "delta": "0.00777744096441075706961774022355964228105178355910790200924520",
+        "err_pct": "0.388266463551580347598010939912224677441276420076903763829565"
       },
       "C2_trm_ratio": {
-        "rho": 1.952369423779571,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.95062393139515225537625158693403227182444745645628823529319",
+        "delta": "-0.0524954967595127446237484130659677281755525435437117647068089",
+        "err_pct": "-2.62068731507802332532131919844069875584493790916315707011363"
       },
       "C3_q_trm_combined": {
-        "rho": 1.963006780821076,
-        "delta": null,
-        "err_pct": null
+        "rho": "1.96125177823562724675169229209541880889805806427287220422330",
+        "delta": "-0.0418676499190377532483077079045811911019419357271277957767028",
+        "err_pct": "-2.09012250246144910736074732148629988012702505811497388515016"
       }
     },
     {
@@ -78,28 +79,36 @@
       "N": 1,
       "A": 3,
       "label": "helium-3",
-      "true_rho": null,
+      "true_rho": "2.06117857083335200000000000000000000000000000000000000000000",
       "C0_integer": {
-        "rho": 2.0,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.00000000000000000000000000000000000000000000000000000000000",
+        "delta": "-0.0611785708333520000000000000000000000000000000000000000000000",
+        "err_pct": "-2.96813540073905310762245534827999477531933091755271108858638"
       },
       "C1_q_integer": {
-        "rho": 2.010896869119075,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.01089686911907575706961774022355964228105178355910790200925",
+        "delta": "-0.0502817017142762429303822597764403577189482164408920979907548",
+        "err_pct": "-2.43946363628003972155453872956146531861978139908895798901203"
       },
       "C2_trm_ratio": {
-        "rho": 2.047630576220429,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.04937606860484774462374841306596772817555254354371176470681",
+        "delta": "-0.0118025022285042553762515869340322718244474564562882352931911",
+        "err_pct": "-0.572609399084350246121284507192194655801760953116795909399214"
       },
       "C3_q_trm_combined": {
-        "rho": 2.058786957417074,
-        "delta": null,
-        "err_pct": null
+        "rho": "2.06054196000252426738754318835170047566404550284534359979519",
+        "delta": "-0.000636610830827732612456811648299524335954497154656400204806826",
+        "err_pct": "-0.0308857679696497837820221361100395694604354537688829232352617"
       }
     }
   ],
-  "note": "C3 reduces \u00b3He error from \u22122.97% to \u22120.14% with zero AME input.  However C3 worsens \u00b3H (\u22122.0% vs C0 +0.15%).  The residual \u00b3H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md."
+  "note": "C3 reduces ³He error from −2.97% to −0.14% with zero AME input.  However C3 worsens ³H (−2.0% vs C0 +0.15%).  The residual ³H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md.",
+  "scriptFile": "rho_f_categorical_probe.py",
+  "scriptHash": "98dd3494cf69",
+  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

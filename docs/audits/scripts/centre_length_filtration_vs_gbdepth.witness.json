@@ -1,0 +1,205 @@
+{
+  "arithmetic": "exact (Fraction over QQ, and F_p with p = 2^61-1); no floating point",
+  "bound_direction": "specialising q can only lower the rank, so every reported dim(Z cap F_k) is an upper bound on the generic-q value; all exclusions below need only that direction",
+  "lemma_2_dim_Z_cap_F1_n3to6": {
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1
+  },
+  "lemma_3_gbdepth_spectrum_contiguous_to_n40": true,
+  "probe": "centre_length_filtration_vs_gbdepth",
+  "question": "does the Coxeter-length filtration F_l = span{T_w : l(w) <= l} induce on Z(H_n(q)) the partition grading span{e_lambda : gbDepth(lambda) = k}, under any shift?",
+  "results": {
+    "2": {
+      "dim_H_n": 2,
+      "dim_Z_cap_F_k": [
+        1,
+        2
+      ],
+      "dim_Z_graded_k": [
+        1,
+        1
+      ],
+      "failure_reasons": [
+        "degree 0: dim Z^(0) = 1 (the unit) but #{lam : gbDepth = 0} = 0 -- gbDepth >= 1 always",
+        "shifted degree 0: dim Z^(0) = 1 but the lowest partition stratum has 2 elements (gbDepth = 2)",
+        "support width: word side spans 2 degrees, partition side spans 1"
+      ],
+      "gbDepth_distribution": {
+        "2": 2
+      },
+      "min_gbDepth": 2,
+      "p_n": 2,
+      "shifts_that_match": [],
+      "total_dim_Z": 2,
+      "total_matches_p_n": true,
+      "unshifted_match": false
+    },
+    "3": {
+      "dim_H_n": 6,
+      "dim_Z_cap_F_k": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "dim_Z_graded_k": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "failure_reasons": [
+        "degree 0: dim Z^(0) = 1 (the unit) but #{lam : gbDepth = 0} = 0 -- gbDepth >= 1 always",
+        "shifted degree 0: dim Z^(0) = 1 but the lowest partition stratum has 3 elements (gbDepth = 3)",
+        "support width: word side spans 4 degrees, partition side spans 1"
+      ],
+      "gbDepth_distribution": {
+        "3": 3
+      },
+      "min_gbDepth": 3,
+      "p_n": 3,
+      "shifts_that_match": [],
+      "total_dim_Z": 3,
+      "total_matches_p_n": true,
+      "unshifted_match": false
+    },
+    "4": {
+      "dim_H_n": 24,
+      "dim_Z_cap_F_k": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        5
+      ],
+      "dim_Z_graded_k": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "failure_reasons": [
+        "degree 0: dim Z^(0) = 1 (the unit) but #{lam : gbDepth = 0} = 0 -- gbDepth >= 1 always",
+        "support width: word side spans 7 degrees, partition side spans 2"
+      ],
+      "gbDepth_distribution": {
+        "3": 1,
+        "4": 4
+      },
+      "min_gbDepth": 3,
+      "p_n": 5,
+      "shifts_that_match": [],
+      "total_dim_Z": 5,
+      "total_matches_p_n": true,
+      "unshifted_match": false
+    },
+    "5": {
+      "dim_H_n": 120,
+      "dim_Z_cap_F_k": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "dim_Z_graded_k": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "failure_reasons": [
+        "degree 0: dim Z^(0) = 1 (the unit) but #{lam : gbDepth = 0} = 0 -- gbDepth >= 1 always",
+        "shifted degree 0: dim Z^(0) = 1 but the lowest partition stratum has 2 elements (gbDepth = 4)",
+        "support width: word side spans 11 degrees, partition side spans 2"
+      ],
+      "gbDepth_distribution": {
+        "4": 2,
+        "5": 5
+      },
+      "min_gbDepth": 4,
+      "p_n": 7,
+      "shifts_that_match": [],
+      "total_dim_Z": 7,
+      "total_matches_p_n": true,
+      "unshifted_match": false
+    },
+    "6": {
+      "dim_H_n": 720,
+      "dim_Z_cap_F_k": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        4,
+        4,
+        5,
+        8,
+        10,
+        11
+      ],
+      "dim_Z_graded_k": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        3,
+        2,
+        1
+      ],
+      "failure_reasons": [
+        "degree 0: dim Z^(0) = 1 (the unit) but #{lam : gbDepth = 0} = 0 -- gbDepth >= 1 always",
+        "shifted degree 0: dim Z^(0) = 1 but the lowest partition stratum has 2 elements (gbDepth = 4)",
+        "support width: word side spans 16 degrees, partition side spans 3"
+      ],
+      "gbDepth_distribution": {
+        "4": 2,
+        "5": 3,
+        "6": 6
+      },
+      "min_gbDepth": 4,
+      "p_n": 11,
+      "shifts_that_match": [],
+      "total_dim_Z": 11,
+      "total_matches_p_n": true,
+      "unshifted_match": false
+    }
+  },
+  "scope": "(b) structural exclusion of the COXETER-LENGTH reading of J^bullet for all n; NOT an exclusion of the identification in the abstract",
+  "verdict": "no n in 2..6 admits the identification, with or without a shift; and for all n >= 3 the gap at word-degree 1 against the gap-free gbDepth spectrum excludes it structurally"
+}

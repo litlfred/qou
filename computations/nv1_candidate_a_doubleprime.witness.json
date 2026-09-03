@@ -1,4 +1,7 @@
 {
+  "scriptFile": "nv1_candidate_a_doubleprime.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-03-nv1-candidate-a-doubleprime-test.md",
   "name": "nv1_candidate_a_doubleprime",
   "description": "Test of the q-deformed Plancherel sum hypothesis N_v = sum_{lambda |- 9} dim_q V_lambda * f_lambda |_{q=q_0} vs the CODATA-G_F-back-solved value N_v = 1,445,519. Source: docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 129-159.",
   "computation": "nv1_candidate_a_doubleprime",

@@ -35,10 +35,10 @@ DATA PROVENANCE (corpus-grep first — no recompute of the long job):
   • D/T/³He/⁴He anchors: binding-reeb-phase-decomposition.witness.json
     (θ_λ vectors) + chi-*-h*-at-q0-50dps.witness.json (y_λ) — the SAME
     cached inputs as the θ_λ magnitude audit, re-derived here as a
-    regression gate (𝒜(D) must reproduce 6.0426).
+    regression gate (𝒜(D) must reproduce 6.4161462, convention D).
   • SECONDARY out-of-sample point ⁵Li (A=5, H₁₅, 176 blocks): cached
     chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json (atom χ+y) +
-    chi_free_lr(3,2) — locates WHERE the law breaks (⁵Li is
+    chi_free_frobenius(3,2) — locates WHERE the law breaks (⁵Li is
     particle-unbound; its AME total binding is the same measured
     diagnostic numerator as the other atoms).
 
@@ -79,7 +79,7 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -92,6 +92,11 @@ from codata_constants import (  # noqa: E402
 )
 from witness_base import WitnessBuilder  # noqa: E402
 from chi_free_via_lr import chi_free_lr, load_nucleon_chi  # noqa: E402
+# Frobenius route: identical values (agree to 1.3e-67 per
+# chi-free-via-frobenius.witness.json) and far faster as A grows —
+# 31x at 6Li, 104x at 7Li — because it needs O(A^2) cycle types where
+# the LR route enumerates O(3^A) tuples.
+from chi_free_via_frobenius import chi_free_frobenius  # noqa: E402
 
 set_compute_dps()
 
@@ -236,7 +241,7 @@ def build_large_a_rows(atom: str, nuc_chi: dict) -> tuple[list[dict], dict]:
     print(f"  [phase] computing {atom} FREE χ via nucleon-cache + "
           f"active-set LR (d_λ²-free path) ...")
     t1 = time.time()
-    chi_free = chi_free_lr(Z, N, nuc_chi=nuc_chi)
+    chi_free = chi_free_frobenius(Z, N, nuc_chi=nuc_chi)
     t2 = time.time()
     print(f"  [phase] free χ done: {len(chi_free)} partitions in "
           f"{t2 - t1:.1f}s (elapsed {t2 - t0:.1f}s)")
@@ -423,13 +428,16 @@ def main() -> int:
                         "rust-chi-q-via-gp-lossless, 1382 s original wall; "
                         "sign-only convention, ≤4.4e-6 rel vs the anchors' "
                         "color-weighted convention where both exist)",
-        "li6_free_chi": "chi_free_via_lr.chi_free_lr(3,3) — nucleon-cache + "
-                        "active-set LR parabolic character formula, "
+        "li6_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,3) — "
+                        "Frobenius characteristic map (power-sum expansion + "
+                        "Murnaghan–Nakayama; forms no LR coefficient). Agrees "
+                        "with the LR route to 1.3e-67 on all 385 blocks "
+                        "(chi-free-via-frobenius.witness.json), "
                         f"{li6_meta['free_chi_wall_sec']} s wall",
         "li5_atom_chi": f"{LARGE_A_ATOM_WITNESS['5Li']} (cached canonical, "
                         "producer rust-chi-q-via-gp-lossless, 67 s original "
                         "wall) — SECONDARY out-of-sample point at A=5",
-        "li5_free_chi": "chi_free_via_lr.chi_free_lr(3,2), "
+        "li5_free_chi": "chi_free_via_frobenius.chi_free_frobenius(3,2), "
                         f"{large_meta['5Li']['free_chi_wall_sec']} s wall",
         "anchors": "binding-reeb-phase-decomposition.witness.json θ vectors "
                    "+ chi-*-h*-at-q0-50dps y_λ (same as the audit probe)",
@@ -497,12 +505,20 @@ def main() -> int:
 
     wb.add_assertion(
         "anchor_kappaD_reproduced",
-        computed=float(kd["D"]), expected=6.0426, tolerance=0.01,
-        source="regression vs theta-lambda-magnitude-kernel-probe "
-               "(same cached inputs, same conventions)")
+        computed=fmt(kd["D"]), expected="6.4161462", tolerance="0.01",
+        source="convention-D value, DERIVED INDEPENDENTLY by "
+               "carrier_table_convention_d_rederivation.py (y_λ recomputed "
+               "from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from "
+               "this script's own output. The prior 6.0426 was the "
+               "convention-C value, correct in its own frame; the weights "
+               "were re-derived when convention C was excised on 2026-08-09 "
+               "and this expectation was not. Same regression as "
+               "carrier_saturation_mechanism_probe; see "
+               "docs/audits/2026-08-26-carrier-saturation-five-failures-"
+               "diagnosis.md")
     wb.add_assertion(
         "anchor_kappa4He_reproduced",
-        computed=float(kd["4He"]), expected=63.05, tolerance=0.1,
+        computed=fmt(kd["4He"]), expected="73.5943", tolerance="0.1",
         source="regression vs the audit's I1 table (w = y·dim)")
     wb.add_assertion(
         "li6_all_385_partitions_present",
@@ -510,32 +526,41 @@ def main() -> int:
         source="cached ⁶Li H₁₈ atom witness is complete (no max_dim skip)")
     wb.add_assertion(
         "li6_trM_internal_consistency",
-        computed=float(li6_meta["tr_M_consistency_rel"]),
+        computed=li6_meta["tr_M_consistency_rel"],
         expected=0.0, tolerance=1e-30,
         source="Σ y_λ·χ_λ(atom) reproduces the witness's own tr_M_at_q0")
     wb.add_assertion(
         "lr_free_path_validated_at_4He",
-        computed=float(lr_max_rel),
+        computed=lr_max_rel,
         expected=0.0, tolerance=LR_CONVENTION_GAP_TOL,
         source="chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness; "
                "tolerance is the documented sign-only-vs-averaged "
                "convention gap (≤1e-5), which perturbs 𝒜 by ≪ 0.01 %")
     wb.add_assertion(
         "li5_trM_internal_consistency",
-        computed=float(large_meta["5Li"]["tr_M_consistency_rel"]),
+        computed=large_meta["5Li"]["tr_M_consistency_rel"],
         expected=0.0, tolerance=1e-30,
         source="Σ y_λ·χ_λ(atom) reproduces the ⁵Li witness's own tr_M_at_q0")
-    wb.add_assertion(
-        "li6_amplification_measured",
-        computed=float(A6["y_dim"]),
-        expected=float(A6["y_dim"]), tolerance=0.0,
-        source="MEASURED diagnostic 𝒜(⁶Li) under w = y·dim — recorded "
-               "value, self-referential by design (no target smuggling)")
-    wb.add_assertion(
-        "geometric_law_verdict_flag",
-        computed=int(survives), expected=int(survives), tolerance=0,
-        source="1 = survives (in anchor-scatter band or ±40 % outer gate), "
-               "0 = breaks — recorded verdict, self-referential by design")
+    # Demoted from `add_assertion` to data (bean `qou-26f2`). Both read
+    # `computed=X, expected=X`, and their own source strings said why —
+    # "self-referential by design (no target smuggling)". That reasoning is
+    # right and the conclusion drawn from it was wrong: refusing to smuggle a
+    # target is a reason not to *assert*, not a reason to assert a tautology.
+    # As assertions they fed `allPassed` a guaranteed pass and made the
+    # witness look like it had checked two more things than it had. As data
+    # they say exactly what they always meant — a measured diagnostic and a
+    # recorded verdict, neither of which has an independent expected value.
+    wb.add_data("li6_amplification_measured", {
+        "value": A6["y_dim"],
+        "meaning": "MEASURED diagnostic 𝒜(⁶Li) under w = y·dim",
+        "has_independent_expected_value": False,
+    })
+    wb.add_data("geometric_law_verdict", {
+        "survives": bool(survives),
+        "meaning": "true = in anchor-scatter band or ±40 % outer gate; "
+                   "false = breaks",
+        "has_independent_expected_value": False,
+    })
     out = wb.save()
     print(f"\n  witness: {out}")
     return 0

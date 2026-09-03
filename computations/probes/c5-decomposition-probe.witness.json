@@ -9,7 +9,7 @@
       "computed": "4.043706208532521989402019335677388309768213960713522216242847344641826",
       "expected": "4.043706208532521989402019335677388309768213960713522216242847344641826",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem quantum_two_squared_eq_skein_squared_plus_four"
     },
     {
@@ -17,7 +17,7 @@
       "computed": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
       "expected": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem c5_decomposition_via_quantum_two"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem c5RationalMap_at_skein_eq_c5Decomposition"
     }
   ],

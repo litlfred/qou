@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:56.388762+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:06:36.043662+00:00",
+  "commitSha": "766a531446726071965fd29785f076e1780bc036",
   "assertions": [
     {
       "name": "alpha1_reproduces_bare_tauN",
-      "computed": 2.2269290288621444e-68,
+      "computed": "2.226929028862144627550872882615002216551261659838183309251083554700827e-68",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "colour α=1 on p=5 fibre == uncoloured s013.tau_N"
     },
     {
@@ -22,10 +22,10 @@
     },
     {
       "name": "alpha5_split_node_vanishes",
-      "computed": 2.0986274160728857e-71,
+      "computed": "2.098627416072885708780031995809497382600375042656381151341877777416751e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "mark α=5 on p₃=5 fibre: sin(6·5π/5)=sin(6π)=0 (split node)"
     },
     {
@@ -46,10 +46,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4362,
+  "durationMs": 3611,
   "computation": "keystone-valuemap-colored-marks-s013",
   "scriptFile": "keystone_valuemap_colored_marks_s013.py",
-  "scriptHash": "aae45821b581",
+  "scriptHash": "26add05bb8b3",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -89,9 +89,9 @@
     ],
     "target_ratios": {
       "(5)": 1.0,
-      "(4,1)": 4.109682435637709,
-      "(3,2)": 5.220441324664574,
-      "(3,1,1)": 6.220441324664574
+      "(4,1)": 4.109682411207941,
+      "(3,2)": 5.220441275326898,
+      "(3,1,1)": 6.220441275326898
     },
     "s0_colored_modulus": {
       "(5)": 0.5257311121191336,

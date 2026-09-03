@@ -46,7 +46,11 @@ bound:
 **Consequence for c₃.** At the substrate `q₀ ≈ 1.10998`, `barOdd q₀ ≈ 0.20906`,
 so `(barOdd q₀)² ≈ 0.0437` and the magnitude amplification is
 `√(1 + 4/0.0437) ≈ 9.62 = O(10)` — **not** the `O(10⁶)` demanded by
-`dc₃/dq₀ ≈ 4.66×10⁶`. Inverting `barOdd_sq_le_of_amplification`, reaching
+`dc₃/dq₀ ≈ 3.84×10⁶` (corrected 2026-08-29 from `4.66×10⁶`, the secant taken
+with the pre-#1422 superseded muon `c₃ = -2.0097`; bean `qou-kt8o`. Both are
+`O(10⁶)`, so nothing below changes — the `ρ ≈ 3×10⁶` inversion was already
+quoted at an order under either value). Inverting
+`barOdd_sq_le_of_amplification`, reaching
 `ρ ≈ 3×10⁶` would require `|barOdd q₀| ≲ 7×10⁻⁷`, i.e. `q₀` within `~3×10⁻⁷` of
 `1`; the substrate is `≈ 0.11` away — **~5 orders of magnitude too far.** So the
 meridian-holonomy deformation **magnitude** is provably anchor-smooth at the

@@ -44,7 +44,7 @@ def chi_block_111(q: mpf) -> mpf:
 LADDER_FRAME = "u"
 
 
-def markov_parameter(q: mpf) -> mpf:
+def markov_parameter_convention_C(q: mpf) -> mpf:
     """The Q_β channel's **convention-C** Markov parameter z(q) = √q/(1 + q).
 
     **NOT canonical.** This docstring read "the canonical Markov parameter"
@@ -67,7 +67,27 @@ def markov_parameter(q: mpf) -> mpf:
 
     Mirrors `markov_parameter` in
     `QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean`.
+
+    SYMBOLIC q IS SUPPORTED (added 2026-08-30, qou-t9r1). Until then this was
+    mpmath-only -- `mpsqrt` raises `TypeError: cannot create mpf from q` on a
+    sympy Symbol -- so every SYMBOLIC consumer needing the C arm had to inline
+    `sqrt(q)/(1+q)`, which is precisely the invisibility the guard above exists
+    to prevent. The guard had a type hole exactly the size of its own purpose.
+    Measured instance: `probes/qbeta_fmap_power_class_prune.py` inlined it to
+    build the Lean-defined `CanonicalMarkovWeightsH3.explicitInstance`, whose
+    definition legitimately fixes z = sqrt(q)/(1+q); the site was correct and
+    ungreppable. Taxonomy row 21.
     """
+    # NOTE the NON-EMPTY test. `hasattr(q, "free_symbols")` is also True for
+    # sympy NUMERICS -- Rational(1,2) and Float(1.11) both carry the attribute
+    # with an EMPTY set -- so the bare hasattr routed numeric callers into the
+    # symbolic branch and handed them a sympy expression where they asked for a
+    # number. Measured; and mpmath accepts both (mpsqrt(Rational(1,2)) ->
+    # 0.471404520791032), so the numeric arm is the correct destination for
+    # them. Caught by Copilot on PR #6058.
+    if getattr(q, "free_symbols", None):   # genuinely symbolic sympy Expr
+        import sympy as _sp
+        return _sp.sqrt(q) / (1 + q)
     return mpsqrt(q) / (1 + q)
 
 
@@ -115,7 +135,7 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
     NOT THE canonical Wenzl–Markov instance (which is open math). See
     `QBetaCanonicalMarkovWeightsInstance.lean`.
     """
-    z = markov_parameter(q)
+    z = markov_parameter_convention_C(q)
     return (
         z * chi_block_3(q)
         + (mpf("0.5") - z) * chi_block_21(q)
@@ -135,7 +155,54 @@ def delta_tau_M_canonical_explicit(q: mpf) -> mpf:
 #   Q_N2(q) = m_e · Q_A(q) · cos(α(q) − b(q)·ℏ_q(q)²/2) · (1 + c_2·u(q)²),
 #   c_2 = −1 (Lean-proved Taylor-exact).
 
-def substrate_ladder_quantities(q: mpf) -> dict:
+
+class _ConventionGuardedQuantities(dict):
+    """Ladder quantities whose CONVENTION-CARRYING keys must be asked for.
+
+    `h`, `hbar_q`, `b`, `u`, `Q_A_over_me` are convention-free and are always
+    present -- measured 2026-08-26: 35 of the 48 in-repo consumers use only
+    those, and they are untouched by this guard.
+
+    `z` and `alpha` are the ONLY places a Markov convention enters the entire
+    Q_beta ladder, so they are withheld unless the caller names a convention.
+    Convention C was excised by owner ruling (2026-08-09, re-affirmed
+    2026-08-15 and 2026-08-26); the point of this guard is that nobody can
+    pick up a C `z` from this helper WITHOUT SAYING SO. A consumer that needs
+    the C arm for a deliberate comparison passes `convention="C"` and is then
+    visible to `grep`, which an inline `sqrt(q)/(1+q)` never was.
+
+    Raises on the withheld keys rather than returning None, because a silent
+    `None` reaching mpmath arithmetic is exactly the failure mode this exists
+    to prevent.
+    """
+
+    _WITHHELD = ("z", "alpha")
+
+    def __missing__(self, key):
+        if key in self._WITHHELD:
+            raise KeyError(
+                f"{key!r} withheld: it carries the Markov convention, and this "
+                "helper will not hand one out unnamed. Call "
+                "substrate_ladder_quantities(q, convention='D') for the "
+                "canonical parameter, or convention='C' for the EXCISED "
+                "convention -- permitted only as a deliberate comparison arm, "
+                "and registered as such in "
+                "docs/coordination/trace-convention-registry.json. "
+                "Under D the c_k ladder is NOT derived (bean qou-cds1): "
+                "substituting z_D into alpha = (z-1)h/2 is proved invalid by "
+                "QOU.QBeta.decayLadder_zC_threeRow_ne_zero and "
+                "QOU.QBeta.eigenphase_bar_defect_of_fullBar."
+            )
+        raise KeyError(key)
+
+    def get(self, key, default=None):
+        # Override so a withheld key cannot be swallowed into a silent None.
+        if key in self._WITHHELD and key not in self:
+            return self[key]          # -> __missing__, raises
+        return super().get(key, default)
+
+
+def substrate_ladder_quantities(q: mpf, *, convention: str | None = None) -> dict:
     """Return the Q_β-ladder substrate quantities at substrate value `q`.
 
     Keys: `h`, `hbar_q`, `b`, `u`, `z`, `alpha`, `Q_A_over_me`, `ladder_frame`.
@@ -185,17 +252,33 @@ def substrate_ladder_quantities(q: mpf) -> dict:
     # equal but NOT bit-equal — `1/(√q + 1/√q)` against `√q/(1+q)` differ by
     # 1.6e-61 relative at 60 dps — and this is the one ladder that must not be
     # perturbed by a substitution, however small.
-    z = 1 / (sq + 1 / sq)
-    alpha = (z - 1) * h / 2
     Q_A_over_me = mpfabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
-    return {
-        "h": h, "hbar_q": hbar_q, "b": b, "u": u,
-        "z": z, "alpha": alpha, "Q_A_over_me": Q_A_over_me,
-        "ladder_frame": LADDER_FRAME,
-    }
+    out = _ConventionGuardedQuantities(
+        h=h, hbar_q=hbar_q, b=b, u=u,
+        Q_A_over_me=Q_A_over_me, ladder_frame=LADDER_FRAME,
+    )
+    if convention is None:
+        return out                      # z / alpha withheld; see the guard
+    if convention == "C":
+        # EXCISED convention, reachable only by asking for it BY NAME. The two
+        # spellings are algebraically equal but NOT bit-equal -- `1/(√q + 1/√q)`
+        # against `√q/(1+q)` differ by 1.6e-61 relative at 60 dps -- and this is
+        # the one ladder that must not be perturbed by a substitution, however
+        # small, so the original spelling is kept verbatim.
+        z = 1 / (sq + 1 / sq)
+    elif convention == "D":
+        z = q ** 3 / (q ** 2 + 1)
+    else:
+        raise ValueError(
+            f"unknown Markov convention {convention!r}; expected 'C' or 'D'")
+    out["z"] = z
+    out["alpha"] = (z - 1) * h / 2
+    out["markov_convention"] = convention
+    return out
 
 
-def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
+def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf, *,
+                 convention: str = "C") -> mpf:
     """Empirical (CAL-anchored) c_3 target at substrate `q`.
 
     **Precondition: `q > 0` and `q ≠ 1`.** At the classical point `q = 1`
@@ -219,7 +302,12 @@ def c3_target_at(q: mpf, q_codata: mpf, m_e: mpf) -> mpf:
     cross-anchor swing of this target is the discriminator the f-map
     search uses to separate a true closure from a single-anchor near-match.
     """
-    sub = substrate_ladder_quantities(q)
+    # Defaults to the EXCISED convention C so every committed c_3 target this
+    # helper has produced stays reproducible to the digit. It is NOT a
+    # recommendation: under D no ladder is derived (qou-cds1), so there is no
+    # D-frame c_3 target to default to. Named explicitly rather than inherited
+    # silently, which is the whole point of the guard above.
+    sub = substrate_ladder_quantities(q, convention=convention)
     if sub["u"] == 0:
         raise ValueError(
             f"c3_target_at: substrate u(q) = b·ℏ_q² is zero at q={q!s} "

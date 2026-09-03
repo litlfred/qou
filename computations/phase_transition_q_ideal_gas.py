@@ -54,10 +54,15 @@ h2 = h * h
 dim_q = Q0 + 1.0 / Q0  # [2]_q
 
 # Molecule Data: (E_cov kJ/mol, n_HB, n_K, T_boil_obs K, T_melt_obs K)
+#
+# Carried as mpf from decimal STRINGS, not float literals. These are exact
+# tabulated values (373.15 K is a definition, not a measurement with a binary64
+# tail), and writing them as `373.15` put six raw float64 into the witness and
+# then propagated into every ratio computed from them.
 MOLECULES = {
-    "H2O": (460.0, 2, 6, 373.15, 273.15),
-    "HF":  (565.0, 1, 3, 293.15, 189.6),
-    "NH3": (391.0, 1, 3, 239.81, 195.4)
+    "H2O": (mp.mpf("460.0"), 2, 6, mp.mpf("373.15"), mp.mpf("273.15")),
+    "HF":  (mp.mpf("565.0"), 1, 3, mp.mpf("293.15"), mp.mpf("189.6")),
+    "NH3": (mp.mpf("391.0"), 1, 3, mp.mpf("239.81"), mp.mpf("195.4"))
 }
 
 def q_integer(n: int, q: float) -> float:
@@ -70,9 +75,13 @@ def main() -> None:
     print("Boiling/Freezing Temperature Scan via q-Equation of State (NO FIT)")
     print("=" * 80)
     
+    # Collected so the "~6-10x" claim below can be checked against the run
+    # rather than asserted as a constant (bean `qou-26f2`).
+    boil_ratios: dict[str, "mp.mpf"] = {}
+
     for name, (e_cov, n_hb, n_k, t_boil_obs, t_melt_obs) in MOLECULES.items():
         print(f"[{name}]")
-        
+
         # 1. Cohesion Energy S_q^(∂)
         S_q_boundary = n_hb * h2 * e_cov * 1000.0  # J/mol
         
@@ -88,6 +97,13 @@ def main() -> None:
         w.add_data(f"{name}_T_boil_pred", t_boil_pred)
         w.add_data(f"{name}_T_boil_obs", t_boil_obs)
         w.add_data(f"{name}_boil_ratio", boil_ratio)
+        # NOT `float(boil_ratio)`. `boil_ratio` is already an mpf — collapsing
+        # it here to populate the dict is what put `boil_ratios.*` and
+        # `boil_ratio_range.{min,max}` into the witness as raw float64, five
+        # fields the raw-float64 ratchet counted as a REGRESSION (6 -> 11).
+        # AGENTS.md permits `float(x)` only inside an f-string for display,
+        # which is where the casts below legitimately are.
+        boil_ratios[name] = boil_ratio
         w.add_data(f"{name}_T_melt_pred", t_melt_pred)
         w.add_data(f"{name}_T_melt_obs", t_melt_obs)
         w.add_data(f"{name}_melt_ratio", melt_ratio)
@@ -99,10 +115,49 @@ def main() -> None:
     print("CONCLUSION: The strict geometric mapping P_q V_q = n_q R T over-predicts temperatures.")
     print("The empirical 'entropy of vaporization' involves a missing topological factor beyond the simple [2]_q.")
     
+    # Was `computed=True, expected=True` under the name "Direct substitution
+    # of [2]_q yields gap ratio ~6-10x" (bean `qou-26f2`). This probe's
+    # finding is a NEGATIVE one — the strict geometric mapping over-predicts —
+    # and the size of the miss is its whole content. A literal `True` recorded
+    # that a conclusion had been reached, not that the numbers supported it:
+    # every ratio could have come out at 1.0, confirming the method works, and
+    # it would still have passed.
+    #
+    # Draining it showed the name was wrong about this script's own numbers.
+    # The measured boil ratios are H2O 6.45x, HF 5.04x, NH3 4.26x — a range of
+    # **4.26-6.45x**, with only one of three inside the stated "6-10x". The
+    # constant had been covering that since the assertion was written.
+    #
+    # RESOLVED (bean `qou-3hre`): the band was wrong when written, not stale.
+    # The two candidates wanted opposite fixes, so both were tested:
+    #   * q₀ moved — the excised literal 1.1099780333553254 gives 4.26-6.44x,
+    #     against 4.26-6.45x at today's `q_at()`. A ~495 ppb shift moves these
+    #     by 0.01x.
+    #   * inputs moved — `MOLECULES` and the cohesion formula were introduced
+    #     once and never modified; every later commit is the float64 excision,
+    #     the q₀ fallback hardening, or the qou-26f2 drain.
+    # The model has not moved, so the prose was corrected to the computation
+    # rather than the reverse. That is not the fit this file's header forbids:
+    # nothing about the model was adjusted to match an observation.
+    #
+    # What is asserted instead is the over-prediction finding itself, which is
+    # what the probe actually establishes and is falsifiable in the direction
+    # that matters: if the geometric mapping ever started working, the ratios
+    # would approach 1 and this would fail.
+    _over = {n: r for n, r in boil_ratios.items() if r > 1.0}
+    w.add_data("boil_ratios", boil_ratios)
+    w.add_data("boil_ratio_range", {"min": min(boil_ratios.values()),
+                                    "max": max(boil_ratios.values()),
+                                    "previously_claimed_band": "6-10x (wrong when written; see bean qou-3hre)",
+                                    "matches_claimed_band": False})
     w.add_assertion(
-        "Direct substitution of [2]_q yields gap ratio ~6-10x",
-        computed=True, expected=True,
-        source="T_boil_pred = S_q / ([2]_q R) misses by a large factor"
+        "Direct substitution of [2]_q over-predicts T_boil for every material",
+        computed=len(_over), expected=len(boil_ratios), tolerance=0,
+        source=f"T_boil_pred = S_q / ([2]_q R) misses high everywhere: "
+               f"{', '.join(f'{n} {r:.2f}x' for n, r in boil_ratios.items())} "
+               f"(range {min(boil_ratios.values()):.2f}-"
+               f"{max(boil_ratios.values()):.2f}x, NOT the 6-10x the previous "
+               f"assertion name claimed — see bean qou-3hre)"
     )
     
     w.set_description(
@@ -110,13 +165,30 @@ def main() -> None:
         "the q-ideal gas law (q-PV = nRT) without fitted scaling factors. Computes the "
         "cohesion energy from the h²-suppressed H-bond network, then sets T_boil = S_q / (n_q R). "
         "With the naive choice n_q = [2]_q (the dimension of the Hopf base exploring S²), "
-        "this over-predicts the temperatures by a factor of 6.4x to 10x. This demonstrates that "
+        "this over-predicts T_boil by a factor of 4.26x to 6.45x (H2O 6.45, HF 5.04, "
+        "NH3 4.26) and T_melt by 1.38x to 2.56x. This demonstrates that "
         "the true entropy of vaporisation ΔS_vap requires a more sophisticated topological "
         "partition function (likely involving the full Reeb flow phase space) rather than just "
         "the bare dimension [2]_q. Result is recorded honestly as open."
     )
     w.add_data("tier", "open")
-    w.add_data("finding", "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil and T_melt by 6-10x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN.")
+    # The band in this string, and in `set_description` above, previously read
+    # "6-10x" and never matched what this script computes (bean `qou-3hre`).
+    # The constant assertion that stood where `boil_ratio_range` now sits was
+    # why: `computed=True, expected=True` could not contradict a prose figure.
+    #
+    # Ruled out before correcting it, because "the model drifted" and "the band
+    # is wrong" want opposite fixes:
+    #   * q₀ — the excised literal 1.1099780333553254 (removed for sitting
+    #     ~495 ppb off either pin) gives 4.26-6.44x, against 4.26-6.45x at
+    #     today's `q_at()`. A 495 ppb shift moves these ratios by 0.01x.
+    #   * inputs — `MOLECULES` and the cohesion formula were introduced once
+    #     and have never been modified; the only later commits are the float64
+    #     excision, the q₀ fallback hardening, and the qou-26f2 drain.
+    # So the model has not moved. The band was wrong when it was written, and
+    # this is a description corrected to match an unchanged computation — not
+    # a model adjusted to match an observation.
+    w.add_data("finding", "The bare mapping P_q V_q = [2]_q R T over-predicts T_boil by 4.26-6.45x (H2O 6.45, HF 5.04, NH3 4.26) and T_melt by 1.38-2.56x. A derived topological factor for ΔS_vap is required. No fit applied. Status remains OPEN.")
     
     w.save()
     print("Saved witness: phase-transition-q-ideal-gas.witness.json")

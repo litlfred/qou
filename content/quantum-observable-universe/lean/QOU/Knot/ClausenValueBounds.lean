@@ -215,7 +215,7 @@ theorem abs_VOL_4_1_sub_decimal_lt :
   have hV : FigureEightVolume.VOL_4_1
       = 2 * QOU.Archimedean.Cl_2 (π / 3) := rfl
   have hD : FigureEightVolume.VOL_4_1_decimal
-      = 2.029883212819307250011597804990 := rfl
+      = 2.029883212819307250042405108549 := rfl
   rw [hV, hD, abs_lt]
   constructor <;> nlinarith [h.1, h.2]
 

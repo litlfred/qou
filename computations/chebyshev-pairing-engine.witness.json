@@ -1,15 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:57:06.394553+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
-  "assertions": [],
+  "computedAt": "2026-08-30T14:04:43.651418+00:00",
+  "commitSha": "0878e35848247b7f0b5195c5082a212c88c774d9",
+  "assertions": [
+    {
+      "name": "identity_holds_all_q",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "(σ⁻¹)^Z = c_Z·σ + d_Z in H₂(q), residual ≤ TOL at every sampled q; the identity is q-independent and algebraic"
+    },
+    {
+      "name": "sign_alternation_all_q_gt_1",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "c_Z < 0 for even Z and > 0 for odd Z when q > 1"
+    },
+    {
+      "name": "max_residual_within_declared_TOL",
+      "computed": "5.796e-70",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "module constant TOL, declared before any result is computed"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chebyshev-pairing-engine",
   "scriptFile": "chebyshev_pairing_engine_witness.py",
-  "scriptHash": "29a69311ca9c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "6bfcde1d3273",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "110b330d42788fa0"
   },
   "invocation": {
     "argv": [

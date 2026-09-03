@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "The real root of y^5 + 5y + 1 = 0 (computed via mpmath polyroots) satisfies the equation to 40-digit precision."
     },
     {

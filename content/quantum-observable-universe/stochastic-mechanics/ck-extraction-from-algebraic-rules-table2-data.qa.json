@@ -12,7 +12,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "The review-process pointer is gone and the reason is now stated: \"superseded per audit\" was replaced by \"the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded\".",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The review-process pointer is gone and the reason is now stated: \"superseded per audit\" was replaced by \"the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded\".",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -553,7 +553,7 @@
           "in_degree": 0,
           "cone_size": 131,
           "depth": 8,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -942,7 +942,7 @@
         },
         "reviewed_at": "2026-08-22T05:22:05.281Z",
         "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
-        "evidence": "Two spaced em-dashes in the 'source of closed form' column (k=4 'Jones x Kashiwara multiplicative mixing — Rules 1+3+4 (...)'; k=5 'Kashiwara b^2 + Hopf-half offset (mixed intra/inter) — the form originally attributed to k = 4').",
+        "evidence": "Two spaced em-dashes in the 'source of closed form' column (k=4 'Jones x Kashiwara multiplicative mixing \u2014 Rules 1+3+4 (...)'; k=5 'Kashiwara b^2 + Hopf-half offset (mixed intra/inter) \u2014 the form originally attributed to k = 4').",
         "notes": "Table-cell appositives attaching the rule-provenance to the mechanism; kept."
       }
     ],
@@ -1070,5 +1070,6 @@
   },
   "label": "tbl:ck-extraction-from-algebraic-rules-table2-data",
   "kind": "table",
-  "updated_at": "2026-08-22T05:22:05.570Z"
+  "updated_at": "2026-08-22T05:22:05.570Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

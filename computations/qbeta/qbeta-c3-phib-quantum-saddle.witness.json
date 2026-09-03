@@ -9,7 +9,7 @@
       "computed": 7.463837006313696e-38,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "term-wise product derivative == numeric dL/dphi"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 9.124924642758281e-73,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "L(phi+2pi i) == L(phi) - log(1+e^((phi+i pi)/b^2))"
     }
   ],

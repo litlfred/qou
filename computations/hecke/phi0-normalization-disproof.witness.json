@@ -1,25 +1,25 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T10:53:44.443256+00:00",
-  "commitSha": "1844fc0bc368d8d384b632c130bf691bab5c1599",
+  "computedAt": "2026-08-30T09:42:02.505029+00:00",
+  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
   "assertions": [
     {
       "name": "phi0_normalization_not_constant_across_orders",
-      "computed": 71.91752577319588,
-      "expected": 71.91752577319588,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 1e-06,
-      "unit": "|N_h2 − N_h4| (large ⇒ −64 is h²-only, not structural)",
+      "tolerance": 0,
+      "unit": "1 = no constant N (|N_h2 − N_h4| ≥ 1e-6) ⇒ −64 is h²-only",
       "source": "N_h2 = alg_h2/κ = −64 ; N_h4 = alg_h4/κ₄ = +7.92 ; differ ⇒ no Φ₀"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 7,
   "computation": "phi0-normalization-disproof",
   "scriptFile": "phi0_normalization_disproof.py",
-  "scriptHash": "0c500e16b642",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "602690de5d31",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,11 +28,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.5",
+    "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke/phi0_normalization_disproof.py"
+    ],
+    "reproduce": "python3 -u computations/hecke/phi0_normalization_disproof.py"
   },
   "description": "NEGATIVE: the Φ₀ '−64 normalization' relating the Q₈ crossed-module multiplicative-integral trace to the Borromean Markov trace is an h²-only coincidence. A constant N would give alg_h2/κ = alg_h4/κ₄; instead N_h2 = −64 but N_h4 = +7.92. No constant normalization exists. Disproves Link 4 of the algebraic→geometric→boundary chain. The proved facts (alg_h2 = −12, κ = 3/16) are unaffected but are NOT connected by a Φ₀ feedback map.",
   "contentBlock": "rem:geom-bridge-status",

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel-Pade[2/2] resummed Im V within 15% of the 4-rung truncation"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "nearest deformed s-plane Borel pole stays off the +real Laplace ray (>0.1*pi) => single-valued Borel sum, #3692 conclusion survives deformation"
     }
   ],

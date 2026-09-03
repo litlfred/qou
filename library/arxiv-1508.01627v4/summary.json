@@ -1,0 +1,55 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1508.01627v4",
+ "source_sha256": "778e60219862e371",
+ "brief": "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups — 7 sections: Introduction; Maximal tori in classical groups; A Murnaghan–Nakayama rule",
+ "extended": "**A Murnaghan-Nakayama rule for values of unipotent characters in classical groups**\n\n*Frank Lubeck and Gunter Malle*\n\n23 pp, 7 sections.\n\n**Outline.** 1 Introduction; 2 Maximal tori in classical groups; 3 A Murnaghan–Nakayama rule; 4 Vanishing of characters; 5 Simple endotrivial modules; 6 Zeroes of characters of quasi-simple groups; 7 An application to small 1-PIMs",
+ "tokens": {
+  "brief": 42,
+  "extended": 92
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-maximal-tori-in-classical-groups",
+   "title": "Maximal tori in classical groups",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-002-a-murnaghan-nakayama-rule",
+   "title": "A Murnaghan–Nakayama rule",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-003-vanishing-of-characters",
+   "title": "Vanishing of characters",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-004-simple-endotrivial-modules",
+   "title": "Simple endotrivial modules",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
+   "title": "Zeroes of characters of quasi-simple groups",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-006-an-application-to-small-1-pims",
+   "title": "An application to small 1-PIMs",
+   "pages": "18-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

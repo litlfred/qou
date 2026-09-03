@@ -132,7 +132,15 @@ def triage() -> list[dict]:
         vals = {m.group(0)[:14] for m in G.Q0_SHAPE.finditer(raw)}
         if not any(v != cur for v in vals):
             continue
-        if G.derived_output_exempt(raw, 12, cur):
+        # Signature is `(witness, max_sig=None)`. It was `(witness, ndigits,
+        # cur)` until 53aafb7795 ("compare at the recorded precision, not at a
+        # fixed width") -- the very fix the docstring above says this module
+        # inherits "with no edit". The edit it did need was here, and without
+        # it this audit raised TypeError on its first proton-anchored witness
+        # and could not run at all. Both dropped arguments are what that commit
+        # removed: `12` is the fixed width, and `cur` is `Q_50_DIGIT_STR[:14]`,
+        # a truncation of the live constant the detector now reads itself.
+        if G.derived_output_exempt(raw):
             continue
 
         flagged = [(p, v) for p, v in basin_paths(doc) if v != cur]
@@ -180,7 +188,18 @@ def main(argv=None) -> int:
 
     rows = triage()
     if args.json:
-        json.dump({"total": len(rows), "rows": rows}, sys.stdout, indent=1)
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"total": len(rows), "rows": rows}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
+        json.dump(_prov_payload, sys.stdout, indent=1)
         return 0
 
     by_class = collections.Counter(r["class"] for r in rows)

@@ -1,0 +1,1093 @@
+{
+  "engine": "python+sympy-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T15:53:00.010107+00:00",
+  "commitSha": "287d2d619d24fa126d57fb03cfc7bf53a65882d5",
+  "assertions": [
+    {
+      "name": "bean_quoted_patterns_reproduced_over_all_partitions",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "some_blocks_have_no_su4_supermultiplet",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "su4_frame_sign_is_NOT_a_function_of_T",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "two_row_stratum_sign_IS_a_function_of_T",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "two_row_closed_form_holds",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "delta-lambda-sign-vs-su4-isospin",
+  "scriptFile": "delta_lambda_sign_vs_su4_isospin_probe.py",
+  "scriptHash": "702d5da8417d",
+  "scriptCommitSha": "89e0a7c72a7116eb48941b47afc32631cdc2d12d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta_lambda_sign_vs_su4_isospin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta_lambda_sign_vs_su4_isospin_probe.py"
+  },
+  "description": "qou-buxs: tests whether the PROVED Delta_lambda sign (-1)^{n(lambda)} can be an isospin-valued grading. ON THE CONVENTION-D PHYSICAL (two-row) STRATUM IT CAN, exactly: sgn(Delta_lambda) = (-1)^((n-2T)/2), verified n=2..10. In the SU(4) (four-row) frame it cannot -- the same isospin value carries blocks of both signs -- but the Lean-proved two-row cap means that frame is not the physical one, so the negative excludes nothing and is retained only as the record of a wrong-frame computation. NOT a closure: the result is about T while the bean claims T3, the phase is n-dependent, and whether the two-row SU(2) is isospin or spin is not established here. audit-only, no fit.",
+  "tier": "structural (exact Schur-Weyl decomposition + Lean-proved sign)",
+  "result": {
+    "two_row_physical_stratum": {
+      "per_n": {
+        "2": [
+          {
+            "lambda": [
+              2
+            ],
+            "k": 0,
+            "T": "1",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              1,
+              1
+            ],
+            "k": 1,
+            "T": "0",
+            "delta_sign": -1,
+            "closed_form": -1
+          }
+        ],
+        "3": [
+          {
+            "lambda": [
+              3
+            ],
+            "k": 0,
+            "T": "3/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "k": 1,
+            "T": "1/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          }
+        ],
+        "4": [
+          {
+            "lambda": [
+              4
+            ],
+            "k": 0,
+            "T": "2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              3,
+              1
+            ],
+            "k": 1,
+            "T": "1",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              2,
+              2
+            ],
+            "k": 2,
+            "T": "0",
+            "delta_sign": 1,
+            "closed_form": 1
+          }
+        ],
+        "5": [
+          {
+            "lambda": [
+              5
+            ],
+            "k": 0,
+            "T": "5/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              4,
+              1
+            ],
+            "k": 1,
+            "T": "3/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              3,
+              2
+            ],
+            "k": 2,
+            "T": "1/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          }
+        ],
+        "6": [
+          {
+            "lambda": [
+              6
+            ],
+            "k": 0,
+            "T": "3",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "k": 1,
+            "T": "2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "k": 2,
+            "T": "1",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "k": 3,
+            "T": "0",
+            "delta_sign": -1,
+            "closed_form": -1
+          }
+        ],
+        "7": [
+          {
+            "lambda": [
+              7
+            ],
+            "k": 0,
+            "T": "7/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              6,
+              1
+            ],
+            "k": 1,
+            "T": "5/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              5,
+              2
+            ],
+            "k": 2,
+            "T": "3/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              4,
+              3
+            ],
+            "k": 3,
+            "T": "1/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          }
+        ],
+        "8": [
+          {
+            "lambda": [
+              8
+            ],
+            "k": 0,
+            "T": "4",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              7,
+              1
+            ],
+            "k": 1,
+            "T": "3",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              6,
+              2
+            ],
+            "k": 2,
+            "T": "2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              5,
+              3
+            ],
+            "k": 3,
+            "T": "1",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              4,
+              4
+            ],
+            "k": 4,
+            "T": "0",
+            "delta_sign": 1,
+            "closed_form": 1
+          }
+        ],
+        "9": [
+          {
+            "lambda": [
+              9
+            ],
+            "k": 0,
+            "T": "9/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "k": 1,
+            "T": "7/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "k": 2,
+            "T": "5/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "k": 3,
+            "T": "3/2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "k": 4,
+            "T": "1/2",
+            "delta_sign": 1,
+            "closed_form": 1
+          }
+        ],
+        "10": [
+          {
+            "lambda": [
+              10
+            ],
+            "k": 0,
+            "T": "5",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              9,
+              1
+            ],
+            "k": 1,
+            "T": "4",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              8,
+              2
+            ],
+            "k": 2,
+            "T": "3",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              7,
+              3
+            ],
+            "k": 3,
+            "T": "2",
+            "delta_sign": -1,
+            "closed_form": -1
+          },
+          {
+            "lambda": [
+              6,
+              4
+            ],
+            "k": 4,
+            "T": "1",
+            "delta_sign": 1,
+            "closed_form": 1
+          },
+          {
+            "lambda": [
+              5,
+              5
+            ],
+            "k": 5,
+            "T": "0",
+            "delta_sign": -1,
+            "closed_form": -1
+          }
+        ]
+      },
+      "sign_is_a_function_of_T": true,
+      "closed_form": "sgn(Delta_lambda) = (-1)^((n-2T)/2)",
+      "closed_form_holds_n_2_to_10": true,
+      "why_this_is_the_physical_stratum": "Convention D carries a Lean-proved two-row cap: partitions with l(lambda)>=3 vanish on the physical spectrum (QOU.Mathlib.YoungDiagramThreeRowCorner.threeRow_vanishing_all_levels; Mu3SlotExclusion.lean:163-166). So the live symmetry is GL(2)-like, which settles bean qou-ubsl ROAST (ii) in favour of GL(2) over GL(4).",
+      "caveats": [
+        "T, not T3: the two-row label is the SU(2) Casimir; T3 is a weight varying WITHIN a multiplet and still cannot be a per-block quantity.",
+        "The phase is n-dependent: (-1)^((n-2T)/2) is not a single grading in T.",
+        "WHICH SU(2) -- RESOLVED 2026-08-29, NEGATIVELY. See which_su2_resolution below: the two-row label is the SU_q(2) / Temperley-Lieb spin of the braid substrate, not nucleon isospin."
+      ],
+      "which_su2_resolution": {
+        "verdict": "The two-row label is the SU_q(2) (Temperley-Lieb) spin of the braid substrate, NOT nucleon isospin. So the closed form, which is exact and stands, is a statement about the wrong SU(2) for bean qou-buxs.",
+        "evidence": [
+          "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md: 'the fibre V is the two-dimensional fundamental of SU_q(2), so no partition with three or more rows survives Schur-Weyl'.",
+          "Corpus grep for any identification of the SU_q(2) fundamental with isospin, over content/ and docs/: ZERO hits.",
+          "content/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.md: the p/n split comes from a CROSSING REVERSAL (Hopf antipode S(T_w)=T_{w^-1}), with sigma_1^3 - sigma_1^-3 = q^3 - q^-3 exactly. Flavour is a property of the braid WORD, not an index on the fibre."
+        ],
+        "scope": "Corpus-status finding, not a proof that no bridge could exist. The identification is UNSUPPORTED as the corpus stands, and the framework's own flavour mechanism is a different structure. A future bridge would have to be stated explicitly; nothing currently implies it."
+      }
+    },
+    "su4_frame_negative": "see per_n below; wrong frame, retained as the record",
+    "per_n": {
+      "2": {
+        "blocks": [
+          {
+            "lambda": [
+              2
+            ],
+            "n_of_lambda": 0,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=1,T=1": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              1,
+              1
+            ],
+            "n_of_lambda": 1,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          }
+        ],
+        "sign_split_su4_representable": "1+/1-",
+        "sign_split_all_partitions": "1+/1-",
+        "partitions_with_no_su4_supermultiplet": [],
+        "n_partitions_all": 2,
+        "n_partitions_su4_representable": 2,
+        "T_values_carrying_both_signs": {
+          "1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ]
+        },
+        "T3_values_carrying_both_signs": {
+          "-1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ],
+          "1": [
+            -1,
+            1
+          ]
+        },
+        "sign_is_a_function_of_T": false,
+        "sign_is_a_function_of_T3": false
+      },
+      "3": {
+        "blocks": [
+          {
+            "lambda": [
+              3
+            ],
+            "n_of_lambda": 0,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=3/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "n_of_lambda": 1,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 2,
+            "su4_ST_content": {
+              "S=3/2,T=1/2": 1,
+              "S=1/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "n_of_lambda": 3,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=1/2,T=1/2": 1
+            }
+          }
+        ],
+        "sign_split_su4_representable": "1+/2-",
+        "sign_split_all_partitions": "1+/2-",
+        "partitions_with_no_su4_supermultiplet": [],
+        "n_partitions_all": 3,
+        "n_partitions_su4_representable": 3,
+        "T_values_carrying_both_signs": {
+          "3/2": [
+            -1,
+            1
+          ],
+          "1/2": [
+            -1,
+            1
+          ]
+        },
+        "T3_values_carrying_both_signs": {
+          "-3/2": [
+            -1,
+            1
+          ],
+          "-1/2": [
+            -1,
+            1
+          ],
+          "1/2": [
+            -1,
+            1
+          ],
+          "3/2": [
+            -1,
+            1
+          ]
+        },
+        "sign_is_a_function_of_T": false,
+        "sign_is_a_function_of_T3": false
+      },
+      "4": {
+        "blocks": [
+          {
+            "lambda": [
+              4
+            ],
+            "n_of_lambda": 0,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=2,T=2": 1,
+              "S=1,T=1": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              1
+            ],
+            "n_of_lambda": 1,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 3,
+            "su4_ST_content": {
+              "S=2,T=1": 1,
+              "S=1,T=2": 1,
+              "S=1,T=1": 1,
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              2
+            ],
+            "n_of_lambda": 2,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 2,
+            "su4_ST_content": {
+              "S=2,T=0": 1,
+              "S=1,T=1": 1,
+              "S=0,T=2": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1
+            ],
+            "n_of_lambda": 3,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 3,
+            "su4_ST_content": {
+              "S=1,T=1": 1,
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "n_of_lambda": 6,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=0,T=0": 1
+            }
+          }
+        ],
+        "sign_split_su4_representable": "3+/2-",
+        "sign_split_all_partitions": "3+/2-",
+        "partitions_with_no_su4_supermultiplet": [],
+        "n_partitions_all": 5,
+        "n_partitions_su4_representable": 5,
+        "T_values_carrying_both_signs": {
+          "2": [
+            -1,
+            1
+          ],
+          "1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ]
+        },
+        "T3_values_carrying_both_signs": {
+          "-2": [
+            -1,
+            1
+          ],
+          "-1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ],
+          "1": [
+            -1,
+            1
+          ],
+          "2": [
+            -1,
+            1
+          ]
+        },
+        "sign_is_a_function_of_T": false,
+        "sign_is_a_function_of_T3": false
+      },
+      "5": {
+        "blocks": [
+          {
+            "lambda": [
+              5
+            ],
+            "n_of_lambda": 0,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=5/2,T=5/2": 1,
+              "S=3/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              4,
+              1
+            ],
+            "n_of_lambda": 1,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 4,
+            "su4_ST_content": {
+              "S=5/2,T=3/2": 1,
+              "S=3/2,T=5/2": 1,
+              "S=3/2,T=3/2": 1,
+              "S=3/2,T=1/2": 1,
+              "S=1/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              2
+            ],
+            "n_of_lambda": 2,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 5,
+            "su4_ST_content": {
+              "S=5/2,T=1/2": 1,
+              "S=3/2,T=3/2": 1,
+              "S=3/2,T=1/2": 1,
+              "S=1/2,T=5/2": 1,
+              "S=1/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1
+            ],
+            "n_of_lambda": 3,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 6,
+            "su4_ST_content": {
+              "S=3/2,T=3/2": 1,
+              "S=3/2,T=1/2": 1,
+              "S=1/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1
+            ],
+            "n_of_lambda": 4,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 5,
+            "su4_ST_content": {
+              "S=3/2,T=1/2": 1,
+              "S=1/2,T=3/2": 1,
+              "S=1/2,T=1/2": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "n_of_lambda": 6,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 4,
+            "su4_ST_content": {
+              "S=1/2,T=1/2": 1
+            }
+          }
+        ],
+        "sign_split_su4_representable": "4+/2-",
+        "sign_split_all_partitions": "5+/2-",
+        "partitions_with_no_su4_supermultiplet": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "n_partitions_all": 7,
+        "n_partitions_su4_representable": 6,
+        "T_values_carrying_both_signs": {
+          "5/2": [
+            -1,
+            1
+          ],
+          "3/2": [
+            -1,
+            1
+          ],
+          "1/2": [
+            -1,
+            1
+          ]
+        },
+        "T3_values_carrying_both_signs": {
+          "-5/2": [
+            -1,
+            1
+          ],
+          "-3/2": [
+            -1,
+            1
+          ],
+          "-1/2": [
+            -1,
+            1
+          ],
+          "1/2": [
+            -1,
+            1
+          ],
+          "3/2": [
+            -1,
+            1
+          ],
+          "5/2": [
+            -1,
+            1
+          ]
+        },
+        "sign_is_a_function_of_T": false,
+        "sign_is_a_function_of_T3": false
+      },
+      "6": {
+        "blocks": [
+          {
+            "lambda": [
+              6
+            ],
+            "n_of_lambda": 0,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 1,
+            "su4_ST_content": {
+              "S=3,T=3": 1,
+              "S=2,T=2": 1,
+              "S=1,T=1": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "n_of_lambda": 1,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 5,
+            "su4_ST_content": {
+              "S=3,T=2": 1,
+              "S=2,T=3": 1,
+              "S=2,T=2": 1,
+              "S=2,T=1": 1,
+              "S=1,T=2": 1,
+              "S=1,T=1": 1,
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "n_of_lambda": 2,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 9,
+            "su4_ST_content": {
+              "S=3,T=1": 1,
+              "S=2,T=2": 1,
+              "S=2,T=1": 1,
+              "S=2,T=0": 1,
+              "S=1,T=3": 1,
+              "S=1,T=2": 1,
+              "S=1,T=1": 2,
+              "S=0,T=2": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              4,
+              1,
+              1
+            ],
+            "n_of_lambda": 3,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 10,
+            "su4_ST_content": {
+              "S=2,T=2": 1,
+              "S=2,T=1": 1,
+              "S=1,T=2": 1,
+              "S=1,T=1": 1,
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "n_of_lambda": 3,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 5,
+            "su4_ST_content": {
+              "S=3,T=0": 1,
+              "S=2,T=1": 1,
+              "S=1,T=2": 1,
+              "S=1,T=0": 1,
+              "S=0,T=3": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1
+            ],
+            "n_of_lambda": 4,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 16,
+            "su4_ST_content": {
+              "S=2,T=1": 1,
+              "S=2,T=0": 1,
+              "S=1,T=2": 1,
+              "S=1,T=1": 2,
+              "S=1,T=0": 1,
+              "S=0,T=2": 1,
+              "S=0,T=1": 1
+            }
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "n_of_lambda": 6,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 10,
+            "su4_ST_content": {
+              "S=1,T=1": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2
+            ],
+            "n_of_lambda": 6,
+            "delta_sign": 1,
+            "dim_S_n_irrep": 5,
+            "su4_ST_content": {
+              "S=1,T=1": 1,
+              "S=0,T=0": 1
+            }
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "n_of_lambda": 7,
+            "delta_sign": -1,
+            "dim_S_n_irrep": 9,
+            "su4_ST_content": {
+              "S=1,T=0": 1,
+              "S=0,T=1": 1
+            }
+          }
+        ],
+        "sign_split_su4_representable": "5+/4-",
+        "sign_split_all_partitions": "6+/5-",
+        "partitions_with_no_su4_supermultiplet": [
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "n_partitions_all": 11,
+        "n_partitions_su4_representable": 9,
+        "T_values_carrying_both_signs": {
+          "3": [
+            -1,
+            1
+          ],
+          "2": [
+            -1,
+            1
+          ],
+          "1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ]
+        },
+        "T3_values_carrying_both_signs": {
+          "-3": [
+            -1,
+            1
+          ],
+          "-2": [
+            -1,
+            1
+          ],
+          "-1": [
+            -1,
+            1
+          ],
+          "0": [
+            -1,
+            1
+          ],
+          "1": [
+            -1,
+            1
+          ],
+          "2": [
+            -1,
+            1
+          ],
+          "3": [
+            -1,
+            1
+          ]
+        },
+        "sign_is_a_function_of_T": false,
+        "sign_is_a_function_of_T3": false
+      }
+    },
+    "bean_quoted_patterns_reproduced": true,
+    "blocks_with_no_su4_supermultiplet_total": 3,
+    "second_arity_problem": "The bean's quoted splits (n=3: 1+/2-, n=6: 6+/5-) count ALL partitions. SU(4) represents only those with at most 4 rows, so at n=6 two blocks -- [2,1,1,1,1] and [1,1,1,1,1,1] -- carry a proved Delta_lambda sign while having NO Wigner supermultiplet at all. For those the identification cannot even be POSED, independently of the f(T) refutation below.",
+    "sign_is_isospin_valued_at_any_n": false,
+    "verdict": "SURVIVES on the physical stratum, with an exact closed form. Under convention D's Lean-proved two-row cap the live blocks are lambda=(n-k,k), where n(lambda)=k gives sgn=(-1)^k and the GL(2) Schur-Weyl label is T=(n-2k)/2, so sgn(Delta_lambda) = (-1)^((n-2T)/2) exactly, verified n=2..10. This settles bean qou-ubsl ROAST (ii) in favour of GL(2) over GL(4). IN THE SU(4) FRAME IT FAILS -- the same isospin value occurs in blocks of opposite sign -- but that frame is not the physical one, so the negative excludes nothing; it is retained as the record of a wrong-frame computation. NOT A CLOSURE, for three stated reasons: the result is about T and the bean claims T3 (a weight, still not per-block); the phase is n-dependent rather than a single grading in T; and -- RESOLVED 2026-08-29, NEGATIVELY -- the two-row SU(2) is the SU_q(2)/Temperley-Lieb spin of the braid substrate, NOT nucleon isospin, so the exact closed form is about the wrong SU(2) for the bean's purpose (see which_su2_resolution). Separately, the bean's own stated test still cannot run: its input, the derived T3 of bean qou-tdrd, is status `todo` and has never been derived."
+  },
+  "context": {
+    "axis": "Delta_lambda magnitude leg (Track-A blocker) -- qou-buxs, child of qou-20sx",
+    "proved_input": "QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional (sorry-free)",
+    "blocked_on": "qou-tdrd (derive weak-isospin T3) -- status todo",
+    "arithmetic": "sympy exact rational/integer throughout; no float64 anywhere"
+  },
+  "auditOnly": true,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Exact representation theory over partitions of n -- SSYT enumeration, hook-length dimensions, and the parity of n(lambda). No substrate modulus enters at any point; sympy exact rationals throughout."
+}

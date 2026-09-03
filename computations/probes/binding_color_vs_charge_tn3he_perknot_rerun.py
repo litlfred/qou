@@ -187,7 +187,7 @@ def main() -> int:
     wb.data["verdict"] = verdict
     wb.data["refutation_scope"] = "scope-limited negative (a) per AGENTS.md"
     wb.add_assertion("density_base_cancels_splits_identical",
-                     computed=float(diff), expected=0.0, tolerance=1e-20)
+                     computed=diff, expected=0.0, tolerance=1e-20)
     wb.add_assertion("color_too_small_under_perknot_base",
                      computed=1 if too_small else 0, expected=1, tolerance=0)
     wb.save()

@@ -61,7 +61,17 @@ set_compute_dps()
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
-Q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0 = mp.mpf(_Q0_RESOLVED)
 
 # verified y_λ(q0) cache (from the canonical wedderburn_jones_markov.solve_y_lambda; see PR #4543)
 Y_LAMBDA_CACHE = {
@@ -230,6 +240,15 @@ def main() -> int:
     except Exception:
         witness["scriptCommitSha"] = "uncommitted"
     out = HERE / "binding-weight-markov-pinning.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str) + "\n")
 
     print("=== pin the binding weight: derived = Markov y_λ; W_λ doubly excluded ===")

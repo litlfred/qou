@@ -46,26 +46,31 @@ theorem jonesHopf_invariant [T : MarkovTraceTower q]
   unfold jonesHopf
   exact T.trM_sigma1_sq_stabilises n 2 hn (le_refl 2)
 
-/-- **Closed form of the Hopf-link Jones value** in the canonical Wenzl-regime
-    instance (`q > 1`):
-    `J(Hopf) = (q^{5/2} − q^{1/2} + q² + q) / (q² + q)`. -/
+/-- **Closed form of the Hopf-link Jones value** in the canonical instance
+    (`q > 1`), **convention D**: `J(Hopf) = (q⁴ + 1) / (q² + 1)`.
+
+    **Migrated 2026-08-26 (bean `qou-cxjq`)** with `markovTraceTower_canonical`.
+    This read `(q^{5/2} − q^{1/2} + q² + q) / (q² + q)`, the convention-C value,
+    and was proved by `rfl` off the instance's `trM_sigma1_sq` field. Because it
+    is `rfl` against a field of that instance, it MUST move whenever the instance
+    does — a `rfl` closed form is exactly as convention-bound as the instance it
+    unfolds, however convention-free its own statement looks. -/
 theorem jonesHopf_canonical (hq : 1 < q) :
-    jonesHopf q (T := markovTraceTower_canonical q hq) =
-      (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q) :=
+    jonesHopf q (T := markovTraceTower_canonical q hq) = (q ^ 4 + 1) / (q ^ 2 + 1) :=
   rfl
 
 /-- **The Hopf-link Jones value is positive** in the Wenzl regime (`q > 1`):
-    the canonical closed form is a ratio of positive reals (numerator
-    `≥ (q² + q) > 0` since `q^{5/2} ≥ q^{1/2}` for `q ≥ 1`). In particular it is
-    nonzero, so it is a valid normalization. Sorry-free. -/
+    under convention D the closed form is `(q⁴ + 1)/(q² + 1)`, a ratio of
+    manifestly positive reals, so `positivity` closes it outright.
+
+    The convention-C proof needed `q^{5/2} ≥ q^{1/2}` via
+    `Real.rpow_le_rpow_of_exponent_le` and then `nlinarith`, because the numerator
+    was a *difference* of half-powers whose sign had to be argued. Convention D
+    has no subtraction and no square roots. Sorry-free. -/
 theorem jonesHopf_pos (hq : 1 < q) :
     0 < jonesHopf q (T := markovTraceTower_canonical q hq) := by
   rw [jonesHopf_canonical q hq]
   have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
-  have h52 : q ^ ((1 : ℝ) / 2) ≤ q ^ ((5 : ℝ) / 2) :=
-    Real.rpow_le_rpow_of_exponent_le hq.le (by norm_num)
-  have hden : 0 < q ^ 2 + q := by positivity
-  apply div_pos _ hden
-  nlinarith [h52, hq0, sq_nonneg q]
+  positivity
 
 end QOU.BraidKnot

@@ -1,10 +1,11 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-21T20:56:34Z
+updated_at: 2026-08-24T19:35:27Z
 ---
 
 
@@ -4962,7 +4963,7 @@ Recorded now so the next pass does not re-derive it.
 | `BS × FC` | §4bi |
 | `FC × ?` (whole row) | §4bj |
 
-## §4bk — `YB × FC`, and the `? × FC` row closed (PR pending)
+## §4bk — `YB × FC`, and the `? × FC` row closed (merged)
 
 The one cell §4bj measured but did not cross. Because that measurement was
 *recorded* rather than left implicit, this pass spent nothing re-deriving it:
@@ -5011,7 +5012,7 @@ in which `lm` lemma they rewrite with — the identification of `i` is uniform.
 | `FC × ?` (whole row) | §4bj |
 | `YB × FC`, and `? × FC` (whole row) | §4bk |
 
-## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (PR pending)
+## §4bl–§4bn — `IsGrobnerShirshovBasis`, modulo one self-overlap (merged)
 
 The bean's stated goal, reached with a single explicit hypothesis left standing.
 
@@ -5070,7 +5071,7 @@ completion is incomplete and needs a further rule. This statement is where that
 would surface — it is a reduction of the problem to one composition, not a
 closure of it.
 
-## The deep self-overlap RESOLVES — measured, with the target (PR pending)
+## The deep self-overlap RESOLVES — measured, with the target (merged)
 
 Before trying to prove `hdeep`, the cheap decisive check (AGENTS.md
 formalize-first §caveat: run the probe when it is cheap and decisive).
@@ -5160,7 +5161,7 @@ Not started. Recorded so it is not re-derived.
 - **`i = 1` needs its own case** (three splits, `H²`, four terms), as does
   `i = 2` (its YB/FC/BS counts do not follow the `i ≥ 3` pattern).
 
-### The chain's shape — and why the obvious induction does NOT fit (PR pending)
+### The chain's shape — and why the obvious induction does NOT fit (merged)
 
 Two findings, one positive and one negative. The negative one is the useful one.
 
@@ -5200,7 +5201,7 @@ The cascade sweeps a descending run downward one index at a time, which is the
 same motion `descWord_split_aux` already formalises — so the induction variable
 is the gap, not `i`.
 
-### Designing the chain: three plans ruled out, two waypoints found (PR pending)
+### Designing the chain: three plans ruled out, two waypoints found (merged)
 
 The reframing that made this tractable: the normal form **factors**,
 
@@ -5259,7 +5260,7 @@ A descent phase — for `k = 1, 2, …` a `BS(-k)@(2k+1)` followed by an `FC` sw
 final `FC` sweep. Doubly nested, and each loop is a descending sweep, so both
 levels are gap inductions of the `descWord_split_aux` kind.
 
-## §4bo — side B's half of `hdeep`, PROVED in full generality (PR pending)
+## §4bo — side B's half of `hdeep`, PROVED in full generality (merged)
 
 Not a measurement this time. Lean, general in `i`, sorry-free.
 
@@ -5319,7 +5320,7 @@ Remaining for `hdeep`, now fully scoped:
 2. B's post-split chain, one lemma in `j` — `(i²−i+4)/2` steps;
 3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
 
-## §4bp — side A, swept, and a correction to my own figure (PR pending)
+## §4bp — side A, swept, and a correction to my own figure (merged)
 
 Side A opens with **three fixed steps** onto a doubled descending run, after
 which §4bo's sweep applies unchanged:
@@ -5359,7 +5360,7 @@ assuming it would have cost the tranche.
 2. side B's tail — `(i²−i+4)/2` per branch, one lemma in `j`;
 3. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term).
 
-## §4bq — the far-commutation carry, side A's tail inner loop (PR pending)
+## §4bq — the far-commutation carry, side A's tail inner loop (merged)
 
 Side A's tail is **pure far commutation**, and its shape was measured, not
 guessed. Grouped by top index the rules are `(2,0)`, `(3,1) (3,0)`,
@@ -5420,3 +5421,410 @@ a parameter.
 This is consistent with the earlier negative — B's branches do *not* reduce onto
 A's. Same rule sequence applied to different words is not the same thing as one
 word reducing to the other, and both facts hold.
+
+## §4br — the unshuffle, and SIDE A OF `hdeep` COMPLETE (merged)
+
+**The unshuffle.** `pairList m z` — the interleaved pairs, i.e. `pairSweep`
+without its trailing `σ_zσ_z` — separates into two descending runs:
+
+```
+pairList m z  ⟶*  descWord (m−1) z ++ (descWord m z).dropLast
+```
+
+one `gen_past_descWord` per level. The IH separates the pairs below; then the
+top pair's upper letter `σ_m` is carried across the lower run it now fronts.
+Base case `m = z+1`: a single pair is already the target, no step.
+
+Writing the upper run as `(descWord m z).dropLast` is what keeps `z + 1` from
+ever having to be named as a `Fin n`. Same trick as `pairSweep`'s zip: **let a
+list operation stand in for Fin arithmetic.** Third time it has paid off.
+
+**Side A closes end to end.** §4bp head → unshuffle → one last carry (`σ_i`
+leaves the leading block, turning `σ_{i−2}σ_{i−1} ++ descWord (i−2) 0` into
+`bsWord₂ (i−2) (i−1) 0` and `σ_i ++ (descWord (i−1) 0).dropLast` into
+`(descWord i 0).dropLast`) → **one word ending in `σ₀σ₀`** → the single quadratic
+step → `NF + (q−q⁻¹)·(NF·σ₀)`.
+
+That is exactly the two-term normal form the probe measured, and every step
+before the last is monomial — exactly as the rule census said. `aside_resolves`
+is side A of `hdeep`, in full, general in `i`, sorry-free.
+
+### Two parse traps worth recording
+
+Both cost a compile cycle and neither is about the mathematics:
+
+- **`;` inside `by simpa using e`** ends the *outer* tactic block, so
+  `simpa using f (by simp; omega)` does not parse as intended.
+- **`[` inside `by simpa using e`** is read as `simpa`'s simp-argument list, so
+  a list-literal argument breaks the term.
+
+Both fixed the same way: bind the term with `have` first, then `simpa using` the
+name. Worth doing by default in this file, where every step lemma takes list
+literals.
+
+### Remaining for `hdeep`
+
+1. side B's tail — the same carry sequence shifted by one, plus two Bokut–Shiao
+   steps, the first with `j` as a parameter;
+2. the two-term bookkeeping (`monicStep`'s `hne` against the other spoly term),
+   which joins the two halves into the S-polynomial statement.
+
+## §4bs — SIDE B COMPLETE. Both halves of `hdeep` land on one element (merged)
+
+`bside_to_split` runs §4bo's route to the split word, rewrites it through
+`pairSweep_eq` into pairs-plus-`σ₀σ₀`, unshuffles with §4br's
+`pairList_unshuffle`, and fires the one quadratic step. **Both sides use the
+same unshuffle**; only the context differs — which is what §4bq's measurement
+meant by "the same carry sequence shifted by one".
+
+`bside_branch` is the tail, **one lemma parameterised by `j`**: the trailing
+`σ_i` closes `descWord i j` into `bsWord₁ i j`; after that fires, the `σ_{i'}`
+its `bsWord₂` puts down closes `descWord i' 0` into `bsWord₁ i' 0` for a second.
+`j = 0` on the `H`-branch, `j = 1` on the `1`-branch. **Predicted in §4bq from
+the measurement, confirmed here in Lean.**
+
+### The two-term bookkeeping, handled by length
+
+After the split `monicStep`'s side condition stops being vacuous. Rather than
+compare words, `bside_branch` takes **one** hypothesis — every surrounding term
+has a length other than this word's — and discharges both its steps from it,
+because Bokut–Shiao is monic and all three words of its chain have the same
+length. The two branch words differ in length by exactly one (that same `σ₀`),
+so **each is the other's witness**. `descWord_length` makes this arithmetic;
+proved on the gap like everything else about `descWord`.
+
+That is the first time the bookkeeping has actually bitten, and length turned
+out to be the cheap invariant. Worth reusing for the joining.
+
+### Both targets are the same element
+
+Via `[σ_i] ++ descWord i' 0 = descWord i 0` and
+`(descWord i 0).dropLast ++ [σ₀] = descWord i 0`.
+
+### An idea that looked good and is wrong
+
+Before writing the tail I checked whether B could reach A's *pre-split* word,
+which would have avoided the bookkeeping entirely. **It cannot**: far
+commutation sorts smaller-index-first, so `σ_z σ_i` is already reduced and
+`σ_i` cannot move left past the `σ₀σ₀`. I had the rewrite direction backwards.
+This is consistent with — and independently confirms — the measured disjointness
+of the two monomial closures.
+
+### Remaining for `hdeep`: the joining, and that is all
+
+Run the two chains inside the S-polynomial's two terms, each carrying the other
+side's term as context. Both chains exist; both land on the same element; the
+coefficients are `+1` and `−1`, so the difference is zero.
+
+### Measured for the joining: length does NOT separate the two sides — the first letter does
+
+Worth knowing before the joining is attempted, because the obvious move fails.
+
+**Length fails.** `A = descWord i 0 ++ bsWord₂ i' i 0` and
+`B = bsWord₂ i' i 0 ++ descWord i' 0 ++ [σ_i]` both have length `2i+3`, and both
+chains are monic until their quadratic step. So the length invariant that
+discharged §4bs's *within-side* bookkeeping cannot separate side A's
+intermediates from side B's term.
+
+**The first letter does.** A's word begins `σ_i`; after its second step (far
+commutation pulling `σ_{i−2}` out) every later A-intermediate begins `σ_{i−2}`,
+because the sweep and the tail all run in a context whose head is that letter.
+B's word begins `σ_{i−1}`, and *every* B-intermediate does too — `bside_to_split`
+runs its sweep in the context `[σ_{i−1}, σ_i]`, which is never touched. Since
+`i`, `i−1`, `i−2` are pairwise distinct, the head letter separates the two sides
+throughout.
+
+**Measured, not just reasoned** — I wrote the paragraph above from the chain
+structure and then checked it, because reasoning-without-measuring has misfired
+four times in this bean. Head letters of *every* monomially-reachable word:
+
+| `i` | A heads | B heads |
+|---|---|---|
+| 3 | `{1, 3}` | `{2}` |
+| 4 | `{2, 4}` | `{3}` |
+| 5 | `{3, 5}` | `{4}` |
+| 6 | `{4, 6}` | `{5}` |
+| 7 | `{5, 7}` | `{6}` |
+| 8 | `{6, 8}` | `{7}` |
+
+Exactly `{i−2, i}` against `{i−1}`, disjoint throughout — extended to `i = 8`,
+where the closures are 2058 and 2055 words and still wholly disjoint. That is also an
+independent confirmation of the measured closure-disjointness, and it is the
+invariant the joining should thread — not length.
+
+## §4bt — `CtxAvoids`: the context abstraction the joining needs (merged)
+
+The joining needs every chain to run with the *other* side's term sitting
+alongside, which means `monicStep`'s side condition stops being vacuous at every
+step of every chain. Threading a bespoke condition through ~400 lines would have
+been the obvious way and would have been miserable. One definition avoids it:
+
+```lean
+def CtxAvoids (L) (a b) : Prop :=
+  ∀ w ∈ L.map Prod.fst, ∀ Z, w ≠ a ++ Z ++ b
+```
+
+Every intermediate of a chain that rewrites strictly inside `a … b` **has that
+shape**, so this single hypothesis discharges all of them. Two lemmas make it
+compositional — `.extend` (grow `a` on the right, for a recursive call that
+moves letters into the prefix) and `.extendRight` (grow `b` on the left) — and
+`.ne` turns it into the `q ≠ W` a step lemma wants, given `W = a ++ Z ++ b`.
+
+`ctxAvoids_nil` says the empty context avoids everything, so **the original
+single-term lemmas fall out as one-liners** rather than being duplicated:
+
+```lean
+theorem doubleDesc_sweep … := doubleDesc_sweep' … [] [] a b c hc (ctxAvoids_nil a b)
+```
+
+Generalised so far, each compiling first try: `gen_past_descWord'`,
+`doubleDesc_sweep'`, `pairList_unshuffle'` — the three **recursive** chains,
+which were the ones I expected to fight. The `∀ Z` shape is what made them
+cheap: a recursive call that moves `[σ_m]` from the middle into the prefix is
+`hctx.extend [σ_m]`, one term.
+
+### Why `∀ Z` and not a head-letter invariant
+
+I considered threading "every context word has a different first letter", which
+is what the *top-level* discharge will use (§4bs measured it). It is the wrong
+shape for the *interior*: each lemma would then have to prove its intermediates'
+heads, which is a second invariant to carry. `∀ Z, w ≠ a ++ Z ++ b` needs no
+proof obligation inside the chain at all — the shape is structural.
+
+### Remaining
+
+The A-side and B-side assemblies (non-recursive, so the same treatment should be
+quicker), then the joining itself: build the canonical composition, compute its
+S-polynomial, and run the two chains against each other, discharging `CtxAvoids`
+at top level from the head-letter separation.
+
+### §4bu — the A side generalised (merged)
+
+`aside_head'`, `aside_to_sweptWord'`, `aside_to_normalWord'`, `aside_resolves'`
+— side A now runs inside an arbitrary S-polynomial. The four originals are
+corollaries at empty context, so again no duplication.
+
+**The A side needed a different hypothesis shape from the recursive chains, and
+`CtxAvoids` supplied it without a new definition.** Its three opening steps sit
+in three *different* contexts, so a single `CtxAvoids L a b` does not cover
+them. But `CtxAvoids L [σ_x] []` unfolds to *"no surrounding word begins with
+`σ_x`"* — a head condition — and every word in the A chain begins with `σ_i` or
+`σ_{i−2}`. So two head hypotheses cover the whole side, and `CtxAvoids.narrow`
+(`b = []` to any `b`) plus a one-line `hCi'' w hw (…)` re-association discharges
+each step.
+
+That is the head-letter invariant §4bs measured, entering exactly where it
+belongs — at the *boundary* of a side, not threaded through its interior.
+
+**One trap worth recording:** a step lemma's `hne` is about the word *as the
+goal currently has it*, not as the accompanying `e`-equation rewrites it. Stating
+it in the rewritten form type-errors; state it on the goal's word and `rw [e]`
+inside the proof.
+
+### §4bv — the B side generalised, and the joining's shape settled
+
+`bside_to_splitWord'`, `bside_to_split'`, `bside_branch_core`,
+`bside_resolves'` — side B now runs inside an arbitrary S-polynomial too. The
+four originals are corollaries at empty context. With §4bu that is **both
+sides** generalised; what is left is the joining itself.
+
+#### The collision I expected does not exist
+
+I had assumed the joining would be blocked at its last step: side A and side B
+reach the *same two monomials*, so running one chain with the other's normal
+form already in the context looked like it would ask a step to fire on a word
+that is already present. It does not, for two independent reasons, and I only
+found them by reading the definitions rather than reasoning from the shape:
+
+- **`isZero` is coefficient-wise** — `∀ m, f.coeff m = 0`
+  ([`Elem.lean:125`](../content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Elem.lean)),
+  and `ofTerms` *sums* over the terms carrying a given monomial. Two terms with
+  the same word and opposite coefficients are not a problem to be avoided; they
+  are exactly the cancellation the S-polynomial needs.
+- **`hne` guards the word ENTERING a step, never the one leaving it.**
+  `monicStep`'s hypothesis is `∀ q ∈ ctx, q ≠ W` with `hW : W = a ++ L ++ b`,
+  and it is used only to prove `coeff (a ++ lm ++ b) = c` — that the step
+  subtracts the right amount. The *result* `W'` may coincide with a context
+  word freely.
+
+So the joining can run the two chains **sequentially**: A first with B's word
+as context, then B with A's normal form as context. The last B step needs its
+*penultimate* word absent from the context, and that word is one step short of
+A's normal form.
+
+#### Side B needs a head condition and a TAIL condition
+
+Side A took two head conditions (§4bu). Side B takes one head and one tail, and
+the tail is not an artefact:
+
+- the sweep and the quadratic step act with `σ_{i−1}σ_i` fixed in front, so
+  `CtxAvoids L [σ_{i−1}] []` covers them;
+- the **unshuffle** acts at `a = []`. Nothing sits in front of it to separate
+  on, so what protects it is the word's right end instead:
+  `CtxAvoids L [] [σ₀,σ₀,σ_i]` — no surrounding word ends in `σ₀σ₀σ_i`.
+
+Cheap to discharge at the joining: side A's normal-form terms end in `σ₀` and
+`σ₁` respectively, and the pattern ends in `σ_i` with `i ≥ 2`, so a last-letter
+comparison settles both.
+
+#### `bside_branch`'s length hypothesis is the wrong discharge at the joining
+
+Within side B every word of the chain has the same length, so one length
+condition served both steps — that is what §4bs shipped. It does **not**
+separate A from B: A's normal form has *exactly* the lengths B's post-split
+words do (`2i+2` and `2i+1`). So `bside_branch_core` now takes its two `≠`s
+raw, and the caller assembles them from whatever it has. `bside_resolves'`
+needs both shapes at once — head for the ambient terms, length for side B's
+*own* other branch, which also begins with `σ_{i−1}` and so is invisible to the
+head condition. `bside_branch` survives unchanged as the length instance.
+
+New helpers: `CtxAvoids.ne_descWord` (a word opening with a descending run is
+avoided by a context avoiding that run's head letter — the workhorse turning a
+head condition into the plain `≠` a step lemma asks for), `bsWord₂_length`,
+`mem_ctx_or_eq`.
+
+**Trap, and it bites twice in adjacent lines.** `rw [descWord_length' h]` closes
+its goal *by rfl* when the `Fin` literal reduces — so `rw [descWord_length'
+honei]; simp` is a "No goals to be solved" error at `⟨1, hnn⟩`, while the
+visually identical `rw [descWord_length' hz']; simp` at `⟨0, hn⟩` **needs** the
+`simp`, because `i.val - 0 + 1` still has to lose its `- 0`. Same for
+`simp only` closing a goal ahead of an `omega` that then has nothing to do.
+
+### §4bw — `hdeep` DISCHARGED; the criterion is unconditional
+
+```
+'UGB.GrobnerShirshov.Hecke.heckeCompleted_isGrobnerShirshovBasis'
+  depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+No hypothesis, no `sorry`. The completed Hecke rewriting system is a
+Gröbner–Shirshov basis, for every `n` and every `HeckeParams`.
+
+The conditional form survives as `heckeCompleted_isGrobnerShirshovBasis_of_deep`
+— everything above §4bw in the file depends only on it, and the two halves are
+proved 1400 lines apart.
+
+#### What the joining needed
+
+1. **`selfOverlap_spoly_coeff`** — when both rules of an overlap composition are
+   the *same* monic `L − R`, the two `L`-placements are the same word:
+   `L ++ right = left ++ overlap ++ right = left ++ L`. They cancel, and the
+   S-polynomial is `left · R − R · right`. Stated for any monic two-word rule,
+   not just Bokut–Shiao.
+2. **`deep_left_right`** — the contexts are forced. `σ_a σ_{a−1} ⋯ σ₀ σ_a` has
+   exactly one border once `a ≥ 1`: a border of length `k ≥ 2` would need its
+   first letter `σ_a` to equal the suffix's first letter `σ_{k−2}`, which holds
+   only at `k = a+2`, the whole word — excluded by `left ≠ []`. So
+   `left = descWord a 0` and `right = descWord (a−1) 0 ++ [σ_a]`, and the two
+   S-polynomial terms are *exactly* side A's and side B's opening words.
+3. **The two chains, sequentially** — A with B's word as its only ambient term,
+   then B with A's two normal-form terms as its ambient. Four terms out, equal
+   in pairs with opposite signs.
+
+#### The collision I expected does not exist — the correction that unlocked it
+
+I had assumed the joining would deadlock at its last step, because both sides
+reach the same two monomials. Reading the definitions rather than reasoning
+from the shape:
+
+* **`isZero` is coefficientwise** (`∀ m, f.coeff m = 0`) and `ofTerms` *sums*
+  over terms carrying a monomial. Two terms with the same word and opposite
+  coefficients are the cancellation the S-polynomial needs, not a problem.
+* **A step's side condition constrains the word it CONSUMES, never the word it
+  produces.** `monicStep`'s `hne` is used only to prove
+  `coeff (a ++ lm ++ b) = c`, i.e. that the step subtracts the right amount.
+
+Both facts were sitting in `Elem.lean` and in `monicStep`'s own proof the whole
+time. The design work of §4bt–§4bv — `CtxAvoids`, the head/tail conditions, the
+raw side conditions on `bside_branch_core` — was still needed, but for the
+*interiors* of the two chains, not for the collision I was bracing against.
+
+#### The context conditions, discharged
+
+| side | condition | discharged by |
+|---|---|---|
+| A | no ambient word begins `σ_a` | B's word begins `σ_{a−1}` |
+| A | no ambient word begins `σ_{a−2}` | same |
+| B | no ambient word begins `σ_{a−1}` | A's normal form begins `σ_{a−2}` |
+| B | no ambient word ends `σ₀σ₀σ_a` | A's terms end `σ₀` and `σ₁`; `a ≥ 2` |
+
+Each is one letter comparison. `ctxAvoids_head_of_ne` and
+`ctxAvoids_tail_of_last_ne` are the two one-line bridges; the second had to be
+generalised from "every ambient word ends in the same letter `x`" to "each ends
+in *some* letter ≠ `y`", because A's two normal-form terms end in `σ₀` and `σ₁`
+respectively.
+
+`deep_selfOverlap_resolves` compiled first try once those were in place.
+
+### §4bx — what the unconditional criterion discharges, and what it does not
+
+Two theorems in `HeckeGS.lean` §7 — `heckeCost_well_defined` and
+`threading_cost_unique` — take the Gröbner–Shirshov property as an explicit
+hypothesis on `heckeRewritingSystem`. **That hypothesis is refuted in the same
+file** (`hecke_is_gs_basis_false`, §4e, via `NotAGSBasis` at `n = 4`), so both
+are vacuous: true, unusable, and deliberately parked. Their own docstring says
+so — *"it becomes usable once the Bokut–Shiao completion is added."*
+
+Added now: `heckeCompleted_normalForm_unique` and
+`heckeCompleted_threading_cost_unique`, the same two statements against the
+completed system, with the hypothesis discharged.
+
+**They are NOT sorry-free in the sense the criterion is, and I nearly reported
+them as if they were.** Measured:
+
+```
+heckeCompleted_isGrobnerShirshovBasis
+  → [propext, Classical.choice, Quot.sound]
+heckeCompleted_normalForm_unique
+  → [propext, Classical.choice, Quot.sound,
+     UGB.GrobnerShirshov.local_confluence,
+     UGB.GrobnerShirshov.reduction_well_founded]
+```
+
+The two extra come through `normal_form_unique` and are pre-existing library
+axioms of the Diamond Lemma machinery, neither introduced here:
+`local_confluence` (Bergman 1978 §3 Thm 1.2 — "all S-polynomials resolve" ⟹
+local confluence, axiomatised because the three-case argument needs
+`AlgElement` subtraction) and `reduction_well_founded` (Bergman 1978 §2 Thm 1.1
+— termination, needing a multiset support representation and Dershowitz–Manna).
+
+So the honest statement is: **given the Diamond Lemma**, the completed Hecke
+system has unique normal forms at every `n`. The GS-basis half is now proved
+outright; the Diamond Lemma half is still assumed. Recorded in the §4bx
+docstring as well as here, because the axiom list is the kind of thing a reader
+will not re-derive.
+
+### Bean status
+
+The title names `hecke_is_gs_basis` — an axiom asserting the **uncompleted**
+`heckeRewritingSystem` is a GS basis. That axiom is gone, and it is gone because
+the corpus **refuted** it, not because it was proved: `hecke_is_gs_basis_false`
+at `HeckeGS.lean:661`. The bean's goal in its corrected form — a proved GS basis
+giving normal forms at general `n` — is what `heckeCompleted_isGrobnerShirshovBasis`
+now is.
+
+
+### COMPLETED 2026-08-24
+
+`heckeCompleted_isGrobnerShirshovBasis` is unconditional and sorry-free —
+`[propext, Classical.choice, Quot.sound]`, for every `n` and every
+`HeckeParams`. The last obligation, `hdeep`, is discharged by
+`deep_selfOverlap_resolves` (§4bw).
+
+Read the title as the corpus corrected it. `hecke_is_gs_basis` asserted the
+**uncompleted** `heckeRewritingSystem` is a GS basis; that is *false*
+(`hecke_is_gs_basis_false`, `HeckeGS.lean:661`, machine-checked at `n = 4`), and
+the axiom was deleted for that reason rather than proved. What the bean actually
+wanted — a proved GS basis giving normal forms at general `n` — is the completed
+system's, and that is what now holds.
+
+Also landed: `heckeCompleted_normalForm_unique` and
+`heckeCompleted_threading_cost_unique`, replacing two vacuous conditionals in
+`HeckeGS.lean` §7 whose hypothesis the same file refutes. Those two ride on the
+Diamond-Lemma axioms `local_confluence` and `reduction_well_founded`, which the
+criterion itself does **not**.
+
+Not in scope here, and the natural follow-on: using the basis to build
+`HeckeAlgebra` instances and the `n!` count at `n ≥ 5`, which is what the
+`docs/audits/2026-08-09-hecke-infrastructure-what-is-needed.md` ladder is
+blocked on.

@@ -1,0 +1,298 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1110.6212v2",
+ "source": {
+  "file": "1110.6212v2.pdf",
+  "sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
+  "bytes": 376888,
+  "pages": 34,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1110.6212",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "26 May 2014"
+  },
+  "doi": null,
+  "title": "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson \u2217",
+  "authors_raw": "November 28, 2013",
+  "title_lines": [
+   "On calibrated representations and the Plancherel Theorem f or",
+   "affine Hecke algebras",
+   "James Parkinson \u2217"
+  ],
+  "abstract": "This paper has two main purposes. Firstly we generalise Ram\u2019s combina torial construc- tion [23] of calibrated representations of the a\ufb03ne Hecke algebra t o the multi-parameter case (including the non-reduced BCn case). We then derive the Plancherel formulae for all rank 1 and rank 2 a\ufb03ne Hecke algebras, using our calibrated repres entations to construct all representations involved.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181120041047-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Definitions and setup",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Root systems and Weyl groups",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Parameter systems",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Affine Hecke algebras",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Harmonic analysis for the affine Hecke algebra",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "Representations of affine Hecke algebras",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Principal series representations",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A combinatorial construction of irreducible calibrated HL-modules",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Characters",
+   "page": 14,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "The Plancherel Theorem",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The rank 1 algebras",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q) algebras with L=Q",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q) algebras with L=P",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q1,q2) algebras with L=Q",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q1,q2) algebras with L=P",
+   "page": 24,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q1,q2) algebras with L=Q",
+   "page": 25,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "The 2(q0,q1,q2) algebras with L=Q",
+   "page": 28,
+   "source": "outline",
+   "number": "3.7"
+  },
+  {
+   "level": 1,
+   "title": "A Constants and c-functions",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 2(q1,q2) algebras with L=Q",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 2(q1,q2) algebras with L=P",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 2(q1,q2) algebras with L=Q",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.4 2(q0,q1,q2) algebras with L=Q",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-root-systems-and-weyl-groups",
+   "number": "1.1",
+   "title": "Root systems and Weyl groups",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2431,
+   "n_words": 598
+  },
+  {
+   "id": "sec-001-12-parameter-systems",
+   "number": "1.2",
+   "title": "Parameter systems",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 9521,
+   "n_words": 2108
+  },
+  {
+   "id": "sec-002-21-principal-series-representations",
+   "number": "2.1",
+   "title": "Principal series representations",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1311,
+   "n_words": 264
+  },
+  {
+   "id": "sec-003-22-a-combinatorial-construction-of-irreducible-c",
+   "number": "2.2",
+   "title": "A combinatorial construction of irreducible calibrated HL-modules",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 7469,
+   "n_words": 1752
+  },
+  {
+   "id": "sec-004-23-examples",
+   "number": "2.3",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 6102,
+   "n_words": 1509
+  },
+  {
+   "id": "sec-005-24-characters",
+   "number": "2.4",
+   "title": "Characters",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5257,
+   "n_words": 1125
+  },
+  {
+   "id": "sec-006-3-the-plancherel-theorem",
+   "number": "3",
+   "title": "The Plancherel Theorem",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1033,
+   "n_words": 200
+  },
+  {
+   "id": "sec-007-31-the-rank-1-algebras",
+   "number": "3.1",
+   "title": "The rank 1 algebras",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 31,
+   "n_chars": 36562,
+   "n_words": 10021
+  },
+  {
+   "id": "sec-008-a-constants-and-c-functions",
+   "number": null,
+   "title": "A Constants and c-functions",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 7075,
+   "n_words": 1521
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 9,
+  "chars_total": 76761
+ }
+}

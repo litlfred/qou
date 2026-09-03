@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "Trivial knot"
     },
@@ -18,7 +18,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
     },
@@ -27,7 +27,7 @@
       "computed": 2.029883212819307,
       "expected": 2.02988321281931,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "OEIS A091518, 2·Cl₂(π/3) = 6Λ(π/3)"
     },
@@ -36,7 +36,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
     },
@@ -45,7 +45,7 @@
       "computed": 2.828122088330783,
       "expected": 2.82812208832975,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "SnapPy census"
     },
@@ -54,7 +54,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
     },
@@ -63,7 +63,7 @@
       "computed": -3.556201149539995e-08,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "volume",
       "source": "Torus link (non-hyperbolic)"
     },
@@ -72,7 +72,7 @@
       "computed": 7.327724753417752,
       "expected": 7.32772475341775,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "volume",
       "source": "8·G (Catalan's constant), OEIS A006752"
     },
@@ -81,7 +81,7 @@
       "computed": 206.7682827,
       "expected": 206.7682827,
       "passed": true,
-      "tolerance": 1e-07,
+      "tolerance": "1e-07",
       "unit": "dimensionless",
       "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)"
     },
@@ -90,7 +90,7 @@
       "computed": 1.109978595642739,
       "expected": 1.10997,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "dimensionless",
       "source": "QOU derivation (Ch11)"
     },
@@ -99,7 +99,7 @@
       "computed": 0.09908172650757774,
       "expected": 0.09905,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "unit": "dimensionless",
       "source": "QOU definition (Ch1)"
     }

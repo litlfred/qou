@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "unit": "|α₆|+|α₈| (must be 0: algebraic side is degree-4 in h)",
       "source": "alg multiplicative integral over 6 Q₈ crossings; order-6 full product is traceless ⇒ α₆=0"
     }

@@ -1,48 +1,48 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T22:27:15.913550+00:00",
-  "commitSha": "f596e8b90a03b81ce29146db2a86b8fdbca1edd7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:16:49.762971+00:00",
+  "commitSha": "125b980adafecc04478c324ccfe3775f40d41b47",
   "assertions": [
     {
       "name": "P1_real_form_identity",
-      "computed": 8.051636639976723e-29,
+      "computed": "8.051636639976723234642015923007331468732877735171485421204435864334491e-29",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Im log Φ_b = −J/2 + πz²/2 + π(b²+b⁻²)/24 on grid"
     },
     {
       "name": "P2_pure_phase",
-      "computed": 1.6445828791439616e-78,
+      "computed": "1.644582879143961622998377551998122965202753975649487177812131031916871e-78",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "Re log Φ_b = 0 at real b, real z (fibre saddle)"
     },
     {
       "name": "P3_J_self_dual",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "J(z,b) = J(z,1/b)"
     },
     {
       "name": "P4_J_odd_in_z",
-      "computed": 0.0,
+      "computed": "0.0",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "J(−z,b) = −J(z,b)"
     }
   ],
   "allPassed": true,
-  "durationMs": 17507,
+  "durationMs": 25387,
   "computation": "qbeta-phi-b-real-form-pin",
   "scriptFile": "qbeta_phi_b_real_form_pin.py",
-  "scriptHash": "bf1f93c8fc88",
-  "scriptCommitSha": "f596e8b90a03b81ce29146db2a86b8fdbca1edd7",
+  "scriptHash": "e5a73f323d61",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,8 +51,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phi_b_real_form_pin.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phi_b_real_form_pin.py"
   },
   "description": "Pins the real-integral representation log Φ_b(z) = i(−J/2 + πz²/2 + π(b²+b⁻²)/24), J = ∫_0^∞ [sin(2zt)/(t·sinh(bt)·sinh(t/b)) − 2z/t²]dt, against the validated contour evaluator (phi_b_evaluator.py) on a generic (z,b) grid. Backs the Lean construction QOU.MathlibExt.FaddeevPhiBRealIntegral (PhiB): P3/P4 are the numeric twins of the sorry-free self-duality and z-parity theorems. Infrastructure only — no c_k, no S comparison, no fits (C14).",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

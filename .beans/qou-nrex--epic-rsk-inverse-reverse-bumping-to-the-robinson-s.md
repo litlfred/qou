@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-16T02:46:29Z
-updated_at: 2026-08-23T12:48:09Z
+updated_at: 2026-08-29T20:04:44Z
 ---
 
 
@@ -1222,3 +1222,12 @@ Also corrected `IdentityIPlancherelConditional`'s framing — it calls its class
 two fields the "only unproved input", axiomatising facts "the pinned Mathlib
 lacks". The corpus has those facts now (the OV tower) and the class is inhabited
 at every `n` by a proof. Signatures and the per-`n` `decide` instances unchanged.
+
+
+## Arc verified on main 2026-08-29
+
+Target achieved and holding: `rskBurnsideHolds` sorry-free for general `n`; all four modules
+compile axiom-clean on main +3323 commits. One dependency moved benignly
+(`YoungDiagramKernel`, `sorry` -> §3b-cond class). A sibling's M₁ workplan (2026-08-28) carries
+the forward plan and scopes this arc correctly as **first-moment infra, not a covariance**.
+Full review: [docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md](docs/audits/2026-08-29-rsk-plancherel-arc-currency-review.md).

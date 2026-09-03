@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:24:04.370110+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T14:18:14.260284+00:00",
   "computation": "he3-brane-tower-structural-gap",
   "scriptFile": "he3_brane_tower_structural_gap.py",
-  "scriptHash": "db7017799047",
+  "scriptHash": "d5c2b9986fdf",
   "contentBlock": "conj:brane-tower-z-habiro",
   "description": "Isolates the \u00b3He structural deficit of the per-generator brane-tower binding formula using the PRODUCTION \u2212Li\u2082^q(\u2212z) form (bounded) + exact production |V\u0302_i^full|. The tower sum is monotone in proton near-pole count (\u00b3He>T), but \u00b3He is the less-bound mirror member (B_AME: \u00b3He<T) \u2014 so the per-generator tower has the wrong Z-ordering at A=3. Structural, not a \u03a6_q artifact (li2q is bounded).",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "tower_form": "\u2212Li\u2082^q(\u2212|V\u0302_i^full|) (production li2q)",
     "near_pole_threshold": "0.9"
   },
@@ -18,13 +18,13 @@
         "Z": 1,
         "N": 1,
         "n_near_pole_gens": 3,
-        "tower_neg_li2q": "3.392619344776267",
+        "tower_neg_li2q": "3.392619344281417",
         "per_gen_terms": [
-          "0.8154112386",
-          "0.8028940917",
-          "0.2485605265",
-          "0.7197556237",
-          "0.8059978643"
+          "0.8154112385",
+          "0.8028940916",
+          "0.2485605264",
+          "0.7197556236",
+          "0.8059978642"
         ],
         "B_AME_MeV": 2.224566
       },
@@ -32,16 +32,16 @@
         "Z": 1,
         "N": 2,
         "n_near_pole_gens": 4,
-        "tower_neg_li2q": "5.072062510847455",
+        "tower_neg_li2q": "5.072062510118112",
         "per_gen_terms": [
-          "0.8154112386",
-          "0.8028940917",
-          "0.2485605265",
-          "0.7197556237",
-          "0.8059978643",
+          "0.8154112385",
+          "0.8028940916",
+          "0.2485605264",
+          "0.7197556236",
+          "0.8059978642",
           "0.153689678",
-          "0.7197556237",
-          "0.8059978643"
+          "0.7197556236",
+          "0.8059978642"
         ],
         "B_AME_MeV": 8.481798
       },
@@ -49,16 +49,16 @@
         "Z": 2,
         "N": 1,
         "n_near_pole_gens": 5,
-        "tower_neg_li2q": "5.350376846775546",
+        "tower_neg_li2q": "5.350376846001806",
         "per_gen_terms": [
-          "0.8154112386",
-          "0.8028940917",
+          "0.8154112385",
+          "0.8028940916",
           "0.3394521717",
-          "0.8154112386",
-          "0.8028940917",
-          "0.2485605265",
-          "0.7197556237",
-          "0.8059978643"
+          "0.8154112385",
+          "0.8028940916",
+          "0.2485605264",
+          "0.7197556236",
+          "0.8059978642"
         ],
         "B_AME_MeV": 7.718043
       }
@@ -82,14 +82,37 @@
     "near_pole_T": 4,
     "tower_ordering_opposes_binding": true
   },
+  "assertions": [
+    {
+      "name": "tower_monotone_He3_gt_T",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "sum_i -Li2^q(-|V_i^full|) at q_0: He3 > T"
+    },
+    {
+      "name": "binding_He3_lt_T_AME2020",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "AME2020: B(3He) < B(3H), the mirror-pair ordering"
+    },
+    {
+      "name": "tower_ordering_opposes_binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the structural deficit this probe exists to isolate: the two orderings above are OPPOSITE, so the per-generator tower has the wrong Z-ordering at A=3"
+    }
+  ],
   "allPassed": true,
   "provenance": [
     "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
     "AME2020"
   ],
-  "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
-  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "commitSha": "47ea2a8ff974b8e4e1364eaabe7adcf539b39383",
   "durationMs": 0,
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

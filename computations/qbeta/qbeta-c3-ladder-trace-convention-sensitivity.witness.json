@@ -5,17 +5,22 @@
   "tier": "convention-provenance audit (exact symbolic + 60-dps measurement; no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T22:16:49.685442+00:00",
-  "commitSha": "08b6ff7e7de3e8c2db5246d3647b42e1ea71b855",
+  "computedAt": "2026-08-31T18:23:49.203197+00:00",
+  "commitSha": "6a7e5f6ac5b3d8fd787ff2aa37e37983c91044c8",
   "engine": "mpmath+sympy",
   "engineVersion": "1.4.1",
   "scriptFile": "qbeta_c3_ladder_trace_convention_sensitivity_probe.py",
-  "scriptHash": "1f28c719f07a",
+  "scriptHash": "08bad77e0fbb",
   "assertions": [
     {
       "name": "C_frame_regression_matches_committed_corpus_values",
       "passed": true,
-      "detail": "probe's C ladder == qbeta_utils.c3_target_at == registry values"
+      "detail": "probe's C ladder == qbeta_utils.c3_target_at == registry values (muon target anchor-qualified: CODATA 2022)"
+    },
+    {
+      "name": "muon_anchor_has_not_slid_back_to_codata_2018",
+      "passed": true,
+      "detail": "distance from the SUPERSEDED 2018 target = 0.000339928 \u2014 guards the straddle that produced qou-cds1 Finding B"
     },
     {
       "name": "zC_bar_even_exact",
@@ -64,9 +69,9 @@
     },
     "c3": {
       "C_proton": "-2.069342577115168",
-      "C_muon": "-2.020200235021255",
+      "C_muon": "-2.019860311874005",
       "D_proton": "-974.4318877467484",
-      "D_muon": "-974.3824887778012"
+      "D_muon": "-974.3821470795362"
     },
     "n1_residual": {
       "C": "-7.3821773e-5",
@@ -81,17 +86,17 @@
       "D": "-9.298862871"
     },
     "swing": {
-      "C": "0.0491423420939",
-      "D": "0.0493989689472",
-      "ratio_D_over_C": "1.00522211279"
+      "C": "0.0494822652412",
+      "D": "0.0497406672122",
+      "ratio_D_over_C": "1.00522211281"
     },
     "extraction_shift_D_minus_C": {
       "proton": "-972.36254517",
-      "muon": "-972.362288543"
+      "muon": "-972.362286768"
     },
     "h1_distance_under_D": {
       "proton": "972.402004534",
-      "muon": "972.352605565"
+      "muon": "972.352263867"
     },
     "vol_4_1": "2.029883212819307",
     "bar_parity_exact": {
@@ -116,5 +121,6 @@
     ],
     "scope": "Scope-(a). No convention is adjudicated for the Q_beta channel; C's excision from mass/binding (owner 2026-08-09) is untouched; whether the two-row forcing transfers to the decay channel is an OPEN item (new bean). No c_k wired; no tier change."
   },
-  "durationMs": 290
+  "durationMs": 0,
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0"
 }

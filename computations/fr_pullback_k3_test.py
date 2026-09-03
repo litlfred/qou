@@ -44,6 +44,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from mass_at_3A_proper import dim_q, qfac  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -141,7 +142,7 @@ def fr_pullback_weight_per_partition(
       - errors: any per-partition chi-computation failures
         (specific exceptions only; bugs propagate).
     """
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     eps = vanishing_threshold()
 
     fr_weights: dict = {}
@@ -153,7 +154,7 @@ def fr_pullback_weight_per_partition(
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if depth != k_depth:
             fr_weights[shape] = mp.mpf(str(dq * dq)) / qfact
             continue
@@ -171,12 +172,12 @@ def fr_pullback_weight_per_partition(
     # mass contribution; FR redistributes within stratum).
     if z_norm_unweighted < eps:
         for shape, _ in chi_at_k_dist.items():
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             fr_weights[shape] = mp.mpf(str(dq * dq)) / qfact
     else:
         scale = s_uniform_at_depth / z_norm_unweighted
         for shape, chi_K in chi_at_k_dist.items():
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             fr_weights[shape] = (mp.mpf(str(dq * dq)) * mp.fabs(chi_K)
                                   * scale)
     return fr_weights, errors
@@ -194,7 +195,7 @@ def phi_k_with_weights(
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue
@@ -205,11 +206,11 @@ def phi_k_with_weights(
 
 def precompute_uniform_weights(by_partition: list, n_strands: int) -> dict:
     """Pre-compute uniform Plancherel weights (one pass over partitions)."""
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     weights: dict = {}
     for p in by_partition:
         shape = tuple(p["partition"])
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         weights[shape] = mp.mpf(str(dq * dq)) / qfact
     return weights
 
@@ -390,7 +391,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) MeV",

@@ -186,6 +186,7 @@ def z_dual(a: mpf, L: mpf, M: int) -> mpc:
 def block_m1_gaussian_identification(wb: WitnessBuilder) -> None:
     """M1: the u-translate atomic masses ARE lattice samples of the
     Attack-B log-normal Gaussian — sympy exact."""
+    _ok: list[bool] = []
     L, a = sp.symbols("L a", positive=True, real=True)
     j = sp.symbols("j", integer=True)
     t_j = a + j * L
@@ -193,13 +194,16 @@ def block_m1_gaussian_identification(wb: WitnessBuilder) -> None:
     log_mass = -L * j * (j + 1) / 2 - j * a          # ln[q̃^{−j(j+1)/2}u^{−j}]
     C = -(a + L / 2) ** 2 / (2 * L)                  # u-only constant
     d = sp.expand(-(t_j - mu) ** 2 / (2 * L) - C - log_mass)
-    assert d == 0, d
+    _ok.append(bool(d == 0))
+    assert _ok[-1], d
     # Attack-B log-normal parameters under q = q̃² = e^{2L}:
     ln_q = 2 * L
-    assert sp.simplify(ln_q / 2 - L) == 0            # σ² = ln q /2 = L
-    assert sp.simplify(-ln_q / 4 - mu) == 0          # μ̂ = −ln q /4 = −L/2
+    _ok.append(bool(sp.simplify(ln_q / 2 - L) == 0))
+    assert _ok[-1]
+    _ok.append(bool(sp.simplify(-ln_q / 4 - mu) == 0))
+    assert _ok[-1]
     wb.add_assertion(
-        "gaussian_identification_exact", computed="0", expected="0",
+        "gaussian_identification_exact", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="sympy exact: the u-translate atomic mass exponent "
                "−L·j(j+1)/2 − j·ln u equals −(t_j − μ̂)²/(2L) + C(u) at "
@@ -218,6 +222,7 @@ def block_m2_dual_mode_covariance(wb: WitnessBuilder) -> None:
     """M2: every Poisson dual mode carries the same normalized moment
     ladder q^{k(k−1)/4} — the moment functional is blind to the dual-mode
     sector. Sympy exact."""
+    _ok: list[bool] = []
     L = sp.symbols("L", positive=True)
     k, m = sp.symbols("k m", integer=True)
     mu = -L / 2
@@ -227,17 +232,20 @@ def block_m2_dual_mode_covariance(wb: WitnessBuilder) -> None:
         + (2 * sp.pi * sp.I * m * mu / L - 2 * sp.pi ** 2 * m ** 2 / L) \
         + 2 * sp.pi * sp.I * m * k
     d = sp.expand(lhs - rhs)
-    assert d == 0, d
+    _ok.append(bool(d == 0))
+    assert _ok[-1], d
     # e^{2πi m k} = 1 for integers (concrete exact check on a grid):
     for mm in range(-3, 4):
         for kk in range(0, 6):
-            assert sp.exp(2 * sp.pi * sp.I * mm * kk) == 1, (mm, kk)
+            _ok.append(bool(sp.exp(2 * sp.pi * sp.I * mm * kk) == 1))
+            assert _ok[-1], (mm, kk)
     # e^{L·k(k−1)/2} = q^{k(k−1)/4} at q = e^{2L}: exact.
     q = sp.exp(2 * L)
     d2 = sp.simplify(sp.exp(L * k * (k - 1) / 2) - q ** (k * (k - 1) / 4))
-    assert d2 == 0, d2
+    _ok.append(bool(d2 == 0))
+    assert _ok[-1], d2
     wb.add_assertion(
-        "dual_mode_moment_covariance_exact", computed="0", expected="0",
+        "dual_mode_moment_covariance_exact", computed=all(_ok), expected=True,
         tolerance=TOL_EXACT,
         source="sympy exact: with z = k + 2πi m/L, the Gaussian moment "
                "exponent z·μ̂ + z²L/2 splits as L·k(k−1)/2 + (mode-m mass "

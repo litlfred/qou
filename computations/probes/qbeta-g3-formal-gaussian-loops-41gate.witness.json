@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "U0''(w0) = sqrt(-3) exactly on the xi = e^{i pi/3} branch of the printed curve (38)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "c_1..c_3 match the printed exact rationals to < 1e-45 relative at dps 60"
     }
   ],

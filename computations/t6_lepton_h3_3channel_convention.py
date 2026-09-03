@@ -53,7 +53,12 @@ def main() -> int:
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     qi = 1 / q0
     h = q0 - qi
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # Convention D (canonical, 2026-08-15 owner ruling): z = q^3/(q^2+1) = q^2/[2]_q.
+    # Convention C, 1/(sqrt q + 1/sqrt q), is excised. Under D no square root is
+    # needed, so a surviving mp.sqrt here would be z_C showing through.
+    # NOTE: "convention" in this file's NAME is the 3-channel H_3 Wedderburn
+    # convention, not a C-vs-D comparison -- this z was plain unlabelled z_C.
+    z = q0**3 / (q0**2 + 1)
 
     # H_3 Wedderburn-Plancherel weights
     # d_q((3)) = 1, d_q((1,1,1)) = 1, d_q((2,1)) = [2]_q = q + q^-1

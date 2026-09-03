@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1009.4034v1",
+ "source_sha256": "8f8d6d786b60c279",
+ "brief": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT — In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young",
+ "extended": "**KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT**\n\n23 pp, 4 sections.\n\n**Abstract.** In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groupsSn on tensor products of vector spacesV ⊗n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use Śniady’s theory of cumulants of observables (cf. [Ś06]).\n\n**Outline.** 2 Observables of diagrams; 4 Gaussian concentration of measures on partit; 5 Moments of the deviations and Chebyshev poly; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 213
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-observables-of-diagrams",
+   "title": "Observables of diagrams",
+   "pages": "6-12"
+  },
+  {
+   "id": "sec-001-4-gaussian-concentration-of-measures-on-partitio",
+   "title": "Gaussian concentration of measures on partitions",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-002-5-moments-of-the-deviations-and-chebyshev-polyno",
+   "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+   "pages": "13-23"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "23-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

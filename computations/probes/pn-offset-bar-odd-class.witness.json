@@ -1,0 +1,221 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:31:15.233870+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
+  "assertions": [
+    {
+      "name": "f_pn_strict_averaged",
+      "computed": "0.508157887748646",
+      "expected": "0.508157887748646",
+      "passed": true,
+      "source": "the sweep's BLIND_KEY, recomputed from z and h rather than read from a producer"
+    },
+    {
+      "name": "f_pn_bring_color_weighted",
+      "computed": "0.508229789376739",
+      "expected": "0.508229789376739",
+      "passed": true,
+      "source": "the sweep's CANON_KEY, likewise"
+    },
+    {
+      "name": "weight_form_bar_odd_worst_defect",
+      "computed": "1.51929e-64",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-45",
+      "source": "every bar-even E gives a bar-odd offset; the criterion selects nothing inside the class"
+    },
+    {
+      "name": "C1_confluence_worst_gap",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "C1 holds identically at q = 1 for every regular E -- vacuous as a selector"
+    },
+    {
+      "name": "C1_approach_slope",
+      "computed": "-1.0",
+      "expected": "-1.0",
+      "passed": true,
+      "tolerance": "1e-6",
+      "source": "f_pn - f_pp = -(1/2 - eps)h and h ~ 2(q-1), so the gap vanishes linearly with slope -1; recorded because mistaking this slope for a confluence failure is what the earlier revision of this check did"
+    },
+    {
+      "name": "C2_bound_times_scale_is_one_half",
+      "computed": "0.5",
+      "expected": "0.5",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "|eps| <= 1/2 with eps = scale*E(q0) means the bound on |E(q0)| is exactly (1/2)/scale = 2/(q0*delta)"
+    },
+    {
+      "name": "C2_excludes_no_candidate",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "the bound is |E(q0)| <= 1309.7495; the largest candidate here is 136, so C2 excludes none of them -- it is a sanity bound, not a selector"
+    },
+    {
+      "name": "C3_bond_form_worst_residual",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "every eps yields a valid bond constant -- C3 is an identity, not a constraint"
+    },
+    {
+      "name": "C4_cubic_limit_for_E_eq_1",
+      "computed": "0.33333333",
+      "expected": "0.3333333",
+      "passed": true,
+      "tolerance": "1e-5",
+      "source": "delta = (q-1)^3 (q+1)(q^2+1)/(3q^4), so eps/(q-1)^3 -> 4/12 = 1/3 at E = 1; finite, hence O((q-1)^3)"
+    },
+    {
+      "name": "C4_geometric_E_diverges",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "the geometric-mean E has a double pole, so its offset is O(q-1), not O((q-1)^3): outside the regular class"
+    },
+    {
+      "name": "geometric_mean_eq_z_over_q2",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "sqrt(z * bar z) = z/q^2 because bar z = z/q^4"
+    },
+    {
+      "name": "geometric_mean_realised_by_eps",
+      "computed": "3.88938e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "the geometric mean is an admissible convex bond"
+    },
+    {
+      "name": "geometric_eps_bar_odd",
+      "computed": "1.45852e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "so it satisfies the criterion, like the strict average"
+    },
+    {
+      "name": "geometric_weights_are_convex",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "weights (p-p, n-n) = (0.44801814, 0.55198186) -- a genuine bond, not a formal solution"
+    },
+    {
+      "name": "geometric_over_canonical_magnitude",
+      "computed": "151.14181",
+      "expected": "151.14",
+      "passed": true,
+      "tolerance": "1e-1",
+      "source": "the two derived candidates differ by two orders of magnitude AND in sign -- they are not variants of one convention"
+    },
+    {
+      "name": "product_of_factors_eq_closed_form",
+      "computed": "3.88938e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "f_pp*f_nn = (q/(q^2+1))^2, which is (z/q^2)^2 -- the reason the geometric mean is z/q^2"
+    },
+    {
+      "name": "markov_trace_not_multiplicative_on_these_bonds",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "the product of the factors misses tau(1)=1 by more than 3/4; it could not do otherwise, since a bond and its inverse would need reciprocal traces"
+    },
+    {
+      "name": "quarter_minus_product_is_a_square",
+      "computed": "1.61045e-62",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "1/4 - f_pp*f_nn = ((q^2-1)/(2(q^2+1)))^2, so the product is <= 1/4 for EVERY q, equality only at q=1 (Lean: quarter_sub_fPP_mul_fNN)"
+    },
+    {
+      "name": "arithmetic_mean_is_trace_of_skein_symmetriser",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-50",
+      "source": "(f_pp+f_nn)/2 = z - h/2 = tau((sigma+sigma^-1)/2); the trace is linear, so the arithmetic mean of the factors IS the trace of a canonical element, and the geometric mean is the trace of nothing"
+    },
+    {
+      "name": "an_E_is_selected",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "source": "none of C1-C4 narrows the class; selecting an E from an isotope anchor would be a fit, and is not done. C2 is the only constraint that can exclude a candidate and it leaves 5 of 5 standing, so the class is not narrowed to one"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "pn-offset-bar-odd-class",
+  "scriptFile": "pn_offset_bar_odd_class_probe.py",
+  "scriptHash": "97c7702adcbe",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/pn_offset_bar_odd_class_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/pn_offset_bar_odd_class_probe.py"
+  },
+  "description": "The bar-odd repair class eps = q*delta*E/4 (E bar-even) is closed under every bar-even E, and four candidate narrowing constraints -- confluence, convex weights, the Markov bond form, and the cubic order of vanishing -- are each vacuous as selectors. Regular E confines the offset to O((q-1)^3); the geometric mean of the bar orbit, z/q^2, is O(q-1) and needs a double pole, so it is outside the class. No E is selected: that would be a fit.",
+  "contentBlock": "prop:pn-averaging-uniqueness",
+  "parameters": {
+    "q0Anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": "60"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "q0": "1.109978582751380807591669",
+    "delta": "0.001375710807027096008551109",
+    "eps_canonical_delta_over_4": "0.0003439277017567740021377773",
+    "eps_geometric": "-0.05198185502620507283832643",
+    "f_pn_strict_averaged": "0.508157887748645593880406757381",
+    "f_pn_bring_color_weighted": "0.508229789376738962577995797656",
+    "f_pn_geometric_mean": "0.497290545604915555995839231665",
+    "constraints_checked": [
+      "confluence",
+      "convex_weights",
+      "markov_bond_form",
+      "cubic_vanishing_order"
+    ],
+    "constraints_that_narrow_E": [],
+    "regular_E_confines_offset_to": "O((q-1)^3)",
+    "geometric_mean_reachable_in_class": false,
+    "geometric_mean_required_E_pole_order": 2,
+    "arithmetic_vs_geometric": "RESOLVED in favour of arithmetic as the structurally-backed choice (qou-s24v): the product-over-bonds argument for the geometric mean is unsound. f_pp and f_nn are the traces of sigma and sigma^-1, which are MUTUALLY INVERSE, so tau of their product is tau(1) = 1 while the product of their traces is <= 1/4 at every q. The closed form multiplies TRACES; there is no multiplicative structure at the factor level to take a midpoint in. The arithmetic mean, by contrast, IS the trace of the skein symmetriser (sigma+sigma^-1)/2, because the trace is linear. This does NOT establish eps = 0 physically; the colour-tube delta/4 sits on top either way.",
+    "product_of_factors_at_q0": "0.2472978867480345984062206",
+    "trace_of_bond_product": "1",
+    "lean": "QOU.MassTheory.PnOffset"
+  }
+}

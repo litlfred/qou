@@ -1,16 +1,26 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-28T23:05:54.641350+00:00",
-  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T13:49:28.292602+00:00",
+  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
   "assertions": [
     {
-      "name": "gmor_reframe_recorded",
-      "computed": 1,
-      "expected": 1,
+      "name": "gmor_lo_reproduces_squared_ratio_within_chpt_lo",
+      "computed": "0.118294613254495649",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0,
-      "source": "GMOR squared-ratio target documented"
+      "tolerance": "0.15",
+      "unit": "relative gap, GMOR LO vs m_K²/m_π²",
+      "source": "Route A: (m_K/m_π)² from PDG-2024 charged meson masses. Route B: (m_u+m_s)/(m_u+m_d) from PDG MS-bar quark masses at 2 GeV — disjoint inputs. Bound 15% = the LO-χPT gap NLO closes; the same GMOR value misses the LINEAR ratio by 296%, which is the reframe this replaces a narration flag with."
+    },
+    {
+      "name": "sweep_winner_is_the_spin1_spin3half_fusion_sum",
+      "computed": "2.89781730522454796e-70",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "unit": "|best sweep candidate − ([2]_q+[4]_q+[6]_q)|",
+      "source": "Route A: the sweep winner, chosen by proximity to the measured m_K²/m_π². Route B: the fusion sum [2]_q+[4]_q+[6]_q. The winner this run is [4]_q·[3]_q."
     },
     {
       "name": "fusion_identity_holds",
@@ -22,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 6,
   "computation": "meson-gmor-derivation-probe",
   "scriptFile": "meson_gmor_derivation_probe.py",
-  "scriptHash": "cc256efd8f78",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "53b7f41560d0",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +44,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "9916510690677ea8"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/meson_gmor_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/meson_gmor_derivation_probe.py"
   },
   "description": "Tests derived routes for m_K/m_π via GMOR (squared ratio) and pure q-integer forms. Best m_K²/m_π² candidate: [4]_q·[3]_q at 0.02% miss. GMOR reframes the target as the squared ratio (m_u+m_s)/(m_u+m_d), correcting the 71% linear-ratio artifact.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
@@ -47,11 +65,17 @@
     "m_K_over_m_pi": 3.537118438946828,
     "m_K2_over_m_pi2": 12.511206851137647,
     "best_pure_q_candidate": "[4]_q·[3]_q",
-    "best_pure_q_value": 12.50866598433135,
-    "best_pure_q_miss_pct": 0.020308726700226615,
+    "best_pure_q_value": 12.508665870090516,
+    "best_pure_q_miss_pct": 0.020309639808250447,
     "gmor_lo_pdg": 13.991215226939971,
     "derived_candidate_found": true,
     "fusion_identity": "[3]_q·[4]_q = [2]_q+[4]_q+[6]_q (spin-1⊗spin-3/2)",
-    "mK2_mpi2_eq_3q4q_miss_ppm": 203.12851981820623
-  }
+    "mK2_mpi2_eq_3q4q_miss_ppm": 203.13765460847037,
+    "gmor_lo_vs_squared_ratio_rel_gap": "0.118294613254",
+    "gmor_lo_vs_linear_ratio_rel_gap": "2.95554049672"
+  },
+  "caveats": [
+    "The (a) candidate list declares 11 forms but only 10 distinct ones: '[5]_q²/[2]_q' and '[5]_q·[5]_q/[2]_q' are the same expression, so that value is scored twice. Recorded, not repaired — it does not change the winner ([4]_q·[3]_q) or any number here.",
+    "best_pure_q_miss_pct and mK2_mpi2_eq_3q4q_miss_ppm drift ~4.5e-5 relative between container images (python/numpy/scipy versions) with no source change. Environmental; the assertions above are stated against bounds far wider than that drift."
+  ]
 }

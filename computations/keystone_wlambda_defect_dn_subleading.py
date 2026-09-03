@@ -299,10 +299,32 @@ def main():
     import os as _os, sys as _sys  # noqa: E402
     _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    _wpath = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "keystone-wlambda-defect-dn-subleading", out,
         script_path=__file__, engine="mpmath", start_time=_T0,
-    ).save()
+    )
+    # Both checks below were computed, printed as PASS/FAIL, and recorded as
+    # data (`method_validation.pass_tol_1e-25`, `closed_form.held_out_validated`)
+    # while the witness shipped `allPassed: true` over an EMPTY assertion list
+    # (bean qou-srvu). Neither threshold is mine: 1e-25 is this file's own
+    # ("Do NOT loosen -- if a value fails this, the fix is more Taylor
+    # precision", l.131), and the held-out check is exact Fraction equality
+    # with no tolerance at all.
+    _wb.add_assertion(
+        "taylor_C_n_matches_proved_exact_closed_form",
+        computed=mp.nstr(max_C_err, 6), expected="0", tolerance="1e-25",
+        source="closed_form_C(n), proved exact; certifies the Taylor precision D(n) then relies on",
+    )
+    if held_out_ok is not None:
+        # Genuinely predictive: the polynomial is interpolated from the first
+        # (degree+1) points ONLY, then required to reproduce the remaining n
+        # exactly. A fit cannot fail this way; this can.
+        _wb.add_assertion(
+            "dn_closed_form_reproduces_held_out_n_exactly",
+            computed=str(bool(held_out_ok)), expected="True",
+            source="degree proved; interpolation exact; held-out n are not in the fit set",
+        )
+    _wpath = _wb.save()
     print(f"\nwitness -> {_wpath}")
     return 0
 

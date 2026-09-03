@@ -268,16 +268,34 @@ def main() -> int:
             print(f"    ... and {len(new) - 25} more")
 
     if args.rebaseline:
-        BASELINE.write_text(json.dumps(
-            {"note": "Known float64-padded witness fields. Regenerate ONLY when "
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload_1 = {"note": "Known float64-padded witness fields. Regenerate ONLY when "
                      "draining; the count must go DOWN. Not a way to silence a "
                      "new failure. Fix at the producer, never by hand-editing.",
              "count": len(rows),
-             "padded_keys": sorted(key(r) for r in rows)}, indent=2) + "\n")
+             "padded_keys": sorted(key(r) for r in rows)}
+        _prov_payload_1.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload_1, script_path=__file__, engine=None, q0_anchor=False)
+        BASELINE.write_text(json.dumps(
+            _prov_payload_1, indent=2) + "\n")
         print(f"\nRebaselined: {len(rows)} padded keys recorded.")
 
     out = HERE / "witness-float64-padding-audit.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload_2 = {
         "schema": "witness/v1",
         "name": "witness-float64-padding-audit",
         "description": "Values serialized at high precision that are really "
@@ -286,7 +304,11 @@ def main() -> int:
         "data": {"occurrences": len(rows), "distinct_values": len(distinct),
                  "files": len(files), "live_files": len(live),
                  "new_not_baselined": len(new), "rows": rows},
-    }, indent=2) + "\n")
+    }
+    _prov_payload_2.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload_2, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload_2, indent=2) + "\n")
     print(f"\nWrote {out.name}")
     return 1 if (args.strict and new) else 0
 

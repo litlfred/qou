@@ -23,7 +23,7 @@
       "computed": 2.78e-10,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "τ_M(T_β^L2)(q_0) - τ_M(T_β^M)(q_0) numerical residue"
     }
   ],

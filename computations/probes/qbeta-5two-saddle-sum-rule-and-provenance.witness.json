@@ -1,56 +1,56 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:36:44.361615+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T09:42:02.952575+00:00",
+  "commitSha": "a4140cde96558b97a449d7e38e120ed536b93857",
   "assertions": [
     {
       "name": "sum_rule_exact",
-      "computed": 2.897817305224548e-70,
+      "computed": "2.89781730522454795760291817308409336981840998340452422066643676477936e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "sum_j Re V_j = -3 pi^2/2"
     },
     {
       "name": "relation_V3_from_V1",
-      "computed": 2.173362978918411e-70,
+      "computed": "2.17336297891841096820218862981307002736380748755339316549982757358452e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "V3 = -2 Re V1 - 3 pi^2/2"
     },
     {
       "name": "extraction_is_centering",
-      "computed": 2.173362978918411e-70,
+      "computed": "2.17336297891841096820218862981307002736380748755339316549982757358452e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-35,
+      "tolerance": "1e-35",
       "source": "sum_j V_j^ext = 0 -- the pi^2/2 shift centers"
     },
     {
       "name": "legacy_literals_are_extraction_convention",
-      "computed": 0.00010498525121583873,
+      "computed": "0.0001049852512158387242524837070541495224308109187153822293479075854239284",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0002,
+      "tolerance": "0.0002",
       "source": "both legacy literals match the extraction convention to ~4 digits"
     },
     {
       "name": "legacy_pair_internally_inconsistent",
-      "computed": 7.30306e-05,
-      "expected": 7.30306e-05,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
-      "source": "the pair violates the exact relation => the two were computed independently"
+      "tolerance": 0,
+      "source": "the pair violates the exact relation (residual exceeds EXACT_TOL) => the two were computed independently; residual in data.legacy_pair_inconsistency"
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
   "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
-  "scriptHash": "d107facd5f64",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "02c0b4ecd9a5",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -75,6 +75,7 @@
   },
   "description": "Exact 5_2 saddle sum rule sum_j Re V_j = -3 pi^2/2 (hence V3 = -2 Re V1 - 3 pi^2/2, and sum_j V_j^ext = 0), plus the provenance verdict on the two long-unexplained corpus literals. auditOnly; comparison to published mathematics; no fit; nothing wired.",
   "data": {
+    "legacy_pair_inconsistency": "0.0000730306",
     "identities": {
       "sum_Re_V": "-14.8044066016340379282517364998",
       "minus_3_pi2_over_2": "-14.8044066016340379282517364998",

@@ -215,6 +215,18 @@ def main() -> int:
                 n_match += 1
     print(f"  §0 canonical NF parse: {len(terms_n)}+{len(terms_p)} terms, "
           f"{n_match}/{n_total} numeric snapshots reproduced (≤1e-9)")
+    # GUARD: refuse a vacuous pass. The nf_parse_matches_witness_numerics
+    # assertion below is n_match == n_total, trivially true at 0 == 0, and
+    # n_total counts the upstream witness's own nf_terms -- so zero means
+    # free-neutron-decay.witness.json carried none, not that every snapshot
+    # was reproduced.
+    if n_total == 0:
+        raise SystemExit(
+            "REFUSING to emit a witness: the upstream "
+            "free-neutron-decay.witness.json supplied 0 nf_terms across both "
+            "sides, so nf_parse_matches_witness_numerics would pass vacuously "
+            "at 0 == 0. Re-run the free-neutron-decay producer first."
+        )
     delta_net_witness = fnd["transition"]["delta_net"]
     print(f"     witness Δ(net) at q_0 = {delta_net_witness:+.13f} "
           f"(coefficient-sum functional)")
@@ -371,7 +383,7 @@ def main() -> int:
     E0 = 1 / (q_sym * (q_sym - 1))   # form-A E₀ (qbeta_delta_tr_vs_formA)
     diag = {}
     for label, anchor in (("proton", Q_PROTON), ("muon", Q_MUON)):
-        sub = substrate_ladder_quantities(anchor)
+        sub = substrate_ladder_quantities(anchor, convention="C")
         Q_A = mp.mpf(M_E_MEV) * sub["Q_A_over_me"]
         QN1 = Q_A * mp.cos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
         rows = {}
@@ -397,7 +409,7 @@ def main() -> int:
     print("  §5 CODATA-referenced ĉ_3 + scalar-peel saturation (k ≥ 4)")
     sat = {}
     for label, anchor in (("proton", Q_PROTON), ("muon", Q_MUON)):
-        sub = substrate_ladder_quantities(anchor)
+        sub = substrate_ladder_quantities(anchor, convention="C")
         u = sub["u"]
         Q_A = mp.mpf(M_E_MEV) * sub["Q_A_over_me"]
         QN1 = Q_A * mp.cos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)

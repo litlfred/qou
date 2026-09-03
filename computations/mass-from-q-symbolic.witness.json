@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-24T14:01:48.106774+00:00",
-  "commitSha": "303a6edf1fdf7823d38b27303c4207c1efa64032",
+  "computedAt": "2026-08-30T07:11:49.244522+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "μ–p substrate tension in band (PREDICTION at the proton pin, not an identity)",
@@ -18,42 +18,24 @@
       "computed": 1.1099785827513808,
       "expected": 1.1099785827513808,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Definitional (q_parameter.py)"
     },
     {
       "name": "Vol(4_1)/ℏ_q² is definitional AT THE MUON PIN (the ideal CAL-2 layer)",
-      "computed": 206.76828298931505,
+      "computed": 206.76828269999987,
       "expected": 206.7682827,
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "unit": "dimensionless",
       "source": "Ideal-layer check. Tolerance 1e-5 absolute (~48 ppb) because the muon pin was solved against CODATA 206.768283 while MASS_RATIO_MU_E here is 206.7682827 — a 1.4 ppb difference that is a CODATA precision artifact, not physics."
-    },
-    {
-      "name": "P_proton(q₀) — Skein polynomial",
-      "computed": 0.6468490981890975,
-      "expected": 0.6468490981890975,
-      "passed": true,
-      "tolerance": 1.3050938107994625e-12,
-      "unit": "dimensionless",
-      "source": "Transfer matrix chain (sympy symbolic → numerical)"
-    },
-    {
-      "name": "P_neutron(q₀) — Skein polynomial",
-      "computed": 0.5047761838462848,
-      "expected": 0.5047761838462848,
-      "passed": true,
-      "tolerance": 7.618516928431518e-14,
-      "unit": "dimensionless",
-      "source": "Transfer matrix chain (sympy symbolic → numerical)"
     },
     {
       "name": "P_proton = ∏ V̂_i (product consistency)",
       "computed": 0.6468490981890975,
       "expected": 0.6468490981890975,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Internal consistency check"
     },
     {
@@ -61,7 +43,7 @@
       "computed": 0.5047761838462848,
       "expected": 0.5047761838462848,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Internal consistency check"
     },
     {
@@ -69,35 +51,26 @@
       "computed": 746.4180075979668,
       "expected": 746.4180075979668,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "m_e",
       "source": "𝔪(K) = Vol(K) / ℏ_q²"
     },
     {
       "name": "𝔪(𝔅₃) in MeV",
-      "computed": 381.4188186586815,
-      "expected": 381.4188186586815,
+      "computed": "381.418818658682",
+      "expected": "381.418818658682",
       "passed": true,
       "tolerance": 8.486312831226684e-06,
       "unit": "MeV",
       "source": "𝔪(K) = Vol(K) / ℏ_q² × m_e"
-    },
-    {
-      "name": "P_n/P_p Skein ratio (combinatorial, not mass ratio)",
-      "computed": 0.7803615793226635,
-      "expected": 0.7803615793226635,
-      "passed": true,
-      "tolerance": 1.5788699793874473e-12,
-      "unit": "dimensionless",
-      "source": "Transfer matrix chain with σ⁻¹ = σ − HA crossing convention"
     }
   ],
   "allPassed": true,
-  "durationMs": 54,
+  "durationMs": 39,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
-  "scriptHash": "1fd2a958aac5",
-  "scriptCommitSha": "fe3d1469ab657f91d51ca727c36902d920978eef",
+  "scriptHash": "4208cfea6df4",
+  "scriptCommitSha": "5f7dad048ff58ea5f48c67453ff03c8c1c47c792",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -112,7 +85,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -135,6 +108,27 @@
     "z_markov": "0.612688037146465"
   },
   "data": {
+    "P_proton_q0": {
+      "value": 0.6468490981890975,
+      "uncertainty": 1.3050938107994625e-12,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic → numerical)",
+      "note": "single route; no independent measurement to assert against"
+    },
+    "P_neutron_q0": {
+      "value": 0.5047761838462848,
+      "uncertainty": 7.618516928431518e-14,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain (sympy symbolic → numerical)",
+      "note": "single route; no independent measurement to assert against"
+    },
+    "skein_ratio_n_p": {
+      "value": 0.7803615793226635,
+      "uncertainty": 1.5788699793874473e-12,
+      "unit": "dimensionless",
+      "source": "Transfer matrix chain with σ⁻¹ = σ − HA crossing convention",
+      "note": "P_proton, P_neutron and their ratio are recorded as data rather than asserted: each has one derivation route, so any assertion over them would compare a value to itself."
+    },
     "proton": {
       "ordering": [
         "u",
@@ -186,7 +180,7 @@
     "topological_mass": {
       "borromean_mass_ratio_me": 746.4180075979668,
       "borromean_mass_ratio_err": 1.6605655330484927e-05,
-      "borromean_mass_MeV": 381.4188186586815,
+      "borromean_mass_MeV": "381.418818658682",
       "borromean_mass_MeV_err": 8.486312831226684e-06,
       "muon_electron_ratio": 206.7683263706738
     },

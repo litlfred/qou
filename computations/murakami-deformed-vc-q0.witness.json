@@ -4,22 +4,22 @@
   "audit_only": true,
   "tier": "scope-(a) numerical falsification (no fit; not wired; \u03bc\u2013p NOT resolved)",
   "precision_dps": 60,
-  "timestamp": "2026-07-18T17:43:21.924594+00:00",
+  "timestamp": "2026-08-29T04:47:03.844467+00:00",
   "inputs": {
-    "q0_muon_pin": "1.10997859555733471989976322048",
-    "q0_proton_pin": "1.10997858275",
+    "q0_muon_pin": "1.10997859564273904668179512938",
+    "q0_proton_pin": "1.10997858275138",
     "Vol_4_1_2Cl2_pi_over_3": "2.02988321281930725004240510855",
     "mu_p_gap_ppb_to_adjudicate": "11.5"
   },
   "branch_b1_undeformed_qindependent": {
-    "hbar_q_squared": "0.00981718851398598439370648689405",
-    "m_mu_over_m_e_from_anchor": "206.76828298931504382",
+    "hbar_q_squared": "0.00981718852772242543775020243252",
+    "m_mu_over_m_e_from_anchor": "206.7682827",
     "S_Vol41_dlog_dlogq0": "0.0",
-    "S_hbar2_dlog_dlogq0_exact_2_over_qm1": "18.185356794789652155",
+    "S_hbar2_dlog_dlogq0_exact_2_over_qm1": "18.185356780667739202",
     "verdict": "Vol(4\u2081) is q-independent (S=0); undeformed anchor's whole q0-sensitivity is in \u210f_q\u207b\u00b2. Determining q0 needs a second q-dependent input; the corpus's is m_\u03bc/m_e (anchor inversion)."
   },
   "branch_b3_winding_and_naive_quantization": {
-    "N_required_for_q0_eq_exp_2pi_over_N": "60.2179531940851696",
+    "N_required_for_q0_eq_exp_2pi_over_N": "60.2179531496796066",
     "N_required_is_integer": false,
     "exp_2pi_over_N_candidates": {
       "3": {
@@ -36,11 +36,11 @@
       },
       "60": {
         "q0_candidate": "1.11039938300559",
-        "miss_ppb_vs_pin": "379095.1"
+        "miss_ppb_vs_pin": "379095.02"
       },
       "61": {
         "q0_candidate": "1.10849477648139",
-        "miss_ppb_vs_pin": "-1336799.7"
+        "miss_ppb_vs_pin": "-1336799.8"
       },
       "120": {
         "q0_candidate": "1.05375489702567",
@@ -49,33 +49,33 @@
     },
     "substrate_winding_data": {
       "N3_k1": {
-        "u": "0.3130221956 + -6.283185307i",
-        "abs_u": "6.29097770615",
+        "u": "0.3130221958 + -6.283185307i",
+        "abs_u": "6.29097770616",
         "abs_im_u_eq_2pi_k": "6.28318530718"
       },
       "N6_k1": {
-        "u": "0.6260443911 + -6.283185307i",
-        "abs_u": "6.31429720428",
+        "u": "0.6260443916 + -6.283185307i",
+        "abs_u": "6.31429720433",
         "abs_im_u_eq_2pi_k": "6.28318530718"
       },
       "N60_k1": {
-        "u": "6.260443911 + -6.283185307i",
-        "abs_u": "8.86969985806",
+        "u": "6.260443916 + -6.283185307i",
+        "abs_u": "8.86969986132",
         "abs_im_u_eq_2pi_k": "6.28318530718"
       },
       "N120_k1": {
-        "u": "12.52088782 + -6.283185307i",
-        "abs_u": "14.0089631835",
+        "u": "12.52088783 + -6.283185307i",
+        "abs_u": "14.0089631917",
         "abs_im_u_eq_2pi_k": "6.28318530718"
       },
       "N60_k2": {
-        "u": "6.260443911 + -12.56637061i",
-        "abs_u": "14.0394739355",
+        "u": "6.260443916 + -12.56637061i",
+        "abs_u": "14.0394739375",
         "abs_im_u_eq_2pi_k": "12.5663706144"
       },
       "N120_k2": {
-        "u": "12.52088782 + -12.56637061i",
-        "abs_u": "17.7393997161",
+        "u": "12.52088783 + -12.56637061i",
+        "abs_u": "17.7393997226",
         "abs_im_u_eq_2pi_k": "12.5663706144"
       }
     },
@@ -83,16 +83,16 @@
     "verdict": "q0=exp(2\u03c0/N) needs the NON-INTEGER N=60.217953; nearest categorical integer N=60 misses q0 by 379095.0 ppb. The substrate-matched datum u=N\u00b7t\u22122\u03c0ik always has |u|\u22652\u03c0 (off the 4\u2081 geometric component, per #3704). No categorical INTEGER N gives anchor-free q0."
   },
   "cross_pin_blindness": {
-    "N_req_muon_pin": "60.2179531940851696",
-    "N_req_proton_pin": "60.2179598531971424",
-    "N_req_continuous_cross_pin_swing_ppb": "110.5835",
+    "N_req_muon_pin": "60.2179531496796066",
+    "N_req_proton_pin": "60.2179598524791981",
+    "N_req_continuous_cross_pin_swing_ppb": "111.30899",
     "nearest_integer_both_pins": 60,
     "note": "The CONTINUOUS N_req moves ~110 ppb between pins (a reparametrisation of q0, not pin-blind), but the nearest INTEGER is 60 for both. A categorical selection yields one integer N, which cannot produce two distinct q0=exp(2\u03c0/N) \u2014 the integer-N route is degenerate w.r.t. the \u03bc\u2013p split, independent of the 379095 ppb absolute miss."
   },
   "overall_verdict": "No anchor-free categorical N-selection currently exists (scope-(a)). B1: undeformed Vol(4\u2081) is q-independent \u21d2 anchor inversion. B3: substrate-matched u=N\u00b7t\u22122\u03c0ik forces |u|\u22652\u03c0 (off-component, #3704); q0=exp(2\u03c0/N) needs the non-integer N=60.218, nearest integer N=60 misses by 3.8e5 ppb (~33000\u00d7 the 11.5 ppb tension); tuning N is a fit. This is scope-(a) (the construction ALONE fails), NOT scope-(b): no proved invariant forbids a future substrate-functor level datum with a small-complex u (the meridian-side surviving direction #3704 flags).",
   "witness": {
-    "scriptCommitSha": "dbc8da6149e62afde11aad259ed11d34b8672855",
-    "scriptHash": "b4e3891fd5cd2564"
+    "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+    "scriptHash": "8fe409c1a5daf767"
   },
   "refs": [
     "docs/audits/2026-07-17-mu-p-pin-sensitivity-map.md",
@@ -100,15 +100,18 @@
     "docs/scope/2026-07-12-mq0-unified-boundary-selection.md",
     "computations/qbeta/qbeta_c3_mq0_nk_scan.py"
   ],
-  "scriptHash": "b4e3891fd5cd",
-  "scriptCommitSha": "dbc8da6149e62afde11aad259ed11d34b8672855",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "scriptHash": "8fe409c1a5da",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "commitSha": "6dfcfa444fbc7abf75b5dd82b93000cbfb52bd7d",
   "engine": "mpmath",
-  "computedAt": "2026-07-18T17:43:22.347220+00:00",
+  "computedAt": "2026-08-29T04:47:04.291556+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "murakami_deformed_vc_q0.py",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): inputs.q0_muon_pin). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "adjudicates the mu-p substrate tension itself: the same deformed-volume construction is evaluated at both pins and the ~11.5 ppb gap between them is the measured quantity, so each pin is read on purpose and reported under its own key",
+  "scriptFile": "murakami_deformed_vc_q0.py"
 }

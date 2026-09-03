@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-cond-mat-9811142v1",
+ "source_sha256": "8666ebc040336b14",
+ "brief": "Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges — For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the",
+ "extended": "**Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges**\n\n*P.J. Forrester†, T. Nagao∗and G. Honner†*\n\n37 pp, 9 sections.\n\n**Abstract.** For the orthogonal-unitary and symplectic-unitary transitions in random matrix the- ory, the general parameter dependent distribution between two sets of eigenvalues with two diﬀerent parameter values can be expressed as a quaternion determinant. For the parameter dependent Gaussian and Laguerre ensembles the matrix elements of the deter- minant are expressed in terms of corresponding skew-orthogonal polynomials, and their limiting value for inﬁnite matrix dimension are computed in the vicinity of the soft and hard edges respectively. A connection formula relating the distributions at the hard and soft edge is obtained, and a universal asymptotic behaviour of the two point correlation is identiﬁed.\n\n**Outline.** Abstract; Introduction; 2 (x, y; τx, τy) :=; 2 (x(1); 0 Ja; 0 Ja(; Discussion; 0 (4XY ) ρT hard; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 253
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-002-2-x-y-τx-τy",
+   "title": "(x, y; τx, τy) :=",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-2-x1",
+   "title": "(x(1)",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-004-0-ja",
+   "title": "Ja",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-005-0-ja",
+   "title": "Ja(",
+   "pages": "11-25"
+  },
+  {
+   "id": "sec-006-discussion",
+   "title": "Discussion",
+   "pages": "25-30"
+  },
+  {
+   "id": "sec-007-0-4xy-ρt-hard",
+   "title": "(4XY ) ρT hard",
+   "pages": "30-36"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "36-37"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

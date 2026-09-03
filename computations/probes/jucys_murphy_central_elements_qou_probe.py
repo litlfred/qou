@@ -214,7 +214,7 @@ def main() -> int:
         .add_data("per_irrep_per_ell_results", results)
         .add_assertion(
             name="P_ell_is_central_scalar_on_V_lambda",
-            computed=float(max_centrality_residue),
+            computed=max_centrality_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over (λ, ℓ, SYT pair) of "
@@ -229,7 +229,7 @@ def main() -> int:
         )
         .add_assertion(
             name="P_ell_scalar_matches_closed_form_c_ell",
-            computed=float(max_closed_form_residue),
+            computed=max_closed_form_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over (λ, ℓ) of |e_ℓ(JM eigenvalues for any SYT) "

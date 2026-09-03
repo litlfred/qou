@@ -191,10 +191,19 @@ def main() -> int:
             "verdict": ("signed-ILP-pure-chirality-refuted"
                         if n_close_pure == 0
                         else "signed-ILP-pure-chirality-partial"),
+            # The bond count is INTERPOLATED from d_ratio, never retyped. It
+            # read "0.572" until 2026-08-25 — the convention-C value, left in
+            # prose when this file's z migrated to D and so sitting in the same
+            # witness dict as the correctly-recomputed 0.7852 one key above it.
+            # It did not stay local: `pauli_young_spin_isospin_delta_lambda_probe`
+            # adopted 0.572 as a cross-check TARGET and, being itself still in C,
+            # reproduced it to 0.015% — a self-consistent C-frame loop reading as
+            # confirmation.
             "note": ("pure chirality (signs only, canonical graph fixed) closes "
                      f"{n_close_pure}/4; adding edge absence (= edge selection, the "
                      f"fitting freedom) closes {n_close_absence}/4 — only 3He, via "
-                     "selection not signs. Deuteron needs 0.572 pn bonds (fractional)."),
+                     f"selection not signs. Deuteron needs {mp.nstr(d_ratio, 4)} pn "
+                     "bonds (fractional; convention D)."),
         },
         "atoms": rows,
         "_provenance": {
@@ -207,6 +216,15 @@ def main() -> int:
         },
     }
     out = HERE.parent / "signed-crossing-feasibility.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    w.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(w, indent=2))
     print(f"\n  Witness: {out}")
     return 0

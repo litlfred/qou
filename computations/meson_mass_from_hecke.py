@@ -94,7 +94,15 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 VOL_4_1 = 2 * clsin(2, mppi / 3) if HAS_MP else mpf("2.029883212819307")
-MASS_RATIO_MU_E = mpf("206.7682830")  # noqa: P31 — standalone-replicated CAL-2 substrate ratio (= experimental_constants.MU_OVER_E)
+# CAL-2 m_mu/m_e from the registry, NOT a private copy. This line read
+# `mpf("206.7682830")` behind a comment asserting `(= experimental_constants
+# .MU_OVER_E)`. That equality ended with PR #4860 / #5149: 206.7682830 is the
+# CODATA-2018 figure and the registry now READS the vendored NIST table
+# (206.7682827). A private literal cannot track an edition bump, which is the
+# whole reason the registry exists -- and here it feeds q0 itself, so the
+# staleness propagated into every number this script emits.
+from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+MASS_RATIO_MU_E = mpf(_MU_E_STR)
 
 HBAR_Q_SQ = VOL_4_1 / MASS_RATIO_MU_E
 HBAR_Q = sqrt(HBAR_Q_SQ) if HAS_MP else mpf(str(math.sqrt(float(HBAR_Q_SQ))))
@@ -401,6 +409,44 @@ witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
 _sys.path.insert(0, str(HERE / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
+
+# DECLARE the anchor rather than let the resolver infer one. witness.py states
+# the stamped label "always matches the value the producer actually computed"
+# BECAUSE it resolves from the same source the runtime uses to pick q0 -- but
+# that holds only for a producer that CALLS q_at(). This one never does: it
+# DERIVES q0 from Vol(4_1) and the registry m_mu/m_e, which is the whole
+# content of Instance 1. So the manifest describes a q0 that was never used,
+# and the inferred label was `proton` while every number here is muon-route.
+#
+# The label is `ambiguous` TRANSITIONALLY, and the reason is not the one I
+# first wrote. I recorded "undetermined pending the A-vs-C ruling"; THE RULING
+# EXISTS and predates that commit by three days -- owner, 2026-08-22 on PR
+# #5500: "2022 CODATA better than 2018. A --> CODATA 2022." Recorded in
+# .beans/qou-bred, docs/audits/2026-08-23-q0-literal-transcription-
+# classification.md and q0_literal_classification_audit.py:240. Declaring an
+# item open that the corpus has closed is the failure the corpus-grep
+# checklist exists to prevent, and I made it.
+#
+# So the value this producer derives -- C, 1.109978595642739... -- IS the
+# ruled muon anchor. What is not yet true is that MAIN carries it: the
+# anchor-defining witness still holds A (1.109978595557334...) while its own
+# calibration_inputs declare 206.7682827, the contradiction #5500 exists to
+# close, and #5500 is unmerged and red on 53 witnesses awaiting regeneration.
+#
+# Stamping `muon` today would therefore read as a Q0_FLIP against main's stale
+# anchor table. `ambiguous` + this reason is the honest transitional record.
+# WHEN #5500 LANDS, THIS SHOULD BECOME `muon` -- at that point the derived
+# value and the anchor agree and no declaration is needed.
+witness["q0Anchor"] = "ambiguous"
+witness["q0AnchorReason"] = (
+    "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio "
+    "rather than reading an anchor, so no manifest entry describes it. The "
+    f"result, {str(q0)[:22]}, is value C of qou-khac -- which the owner RULED "
+    "canonical for the muon anchor on 2026-08-22 (PR #5500, 'A --> CODATA "
+    "2022'). This is ambiguous only transitionally: main's anchor witness "
+    "still holds A, so a 'muon' stamp would read as a Q0_FLIP until #5500 "
+    "lands. Revisit then; the correct label at that point is 'muon'."
+)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = Path(__file__).name
 out_path = HERE / "meson-mass-from-hecke.witness.json"

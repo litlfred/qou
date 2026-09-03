@@ -1,0 +1,60 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1202.0067v3",
+ "source_sha256": "2ce621c8982ee764",
+ "brief": "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters",
+ "extended": "**CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON**\n\n*CHARACTER DEFLATIONS AND A GENERALIZATION*\n\n33 pp, 8 sections.\n\n**Outline.** 1 Introduction; 2 Deflation by averaging; 3 Skew characters; 5 An application to Foulkes’ Conjecture; 1 Foulkes’ Conjecture asserts that if m ≤ n; 1 X (n − 1)! X; 6 Generalized deflations; 7 Symmetric functions",
+ "tokens": {
+  "brief": 45,
+  "extended": 102
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-deflation-by-averaging",
+   "title": "Deflation by averaging",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-002-skew-characters",
+   "title": "Skew characters",
+   "pages": "9-18"
+  },
+  {
+   "id": "sec-003-an-application-to-foulkes-conjecture",
+   "title": "An application to Foulkes’ Conjecture",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-004-foulkes-conjecture-asserts-that-if-m-n",
+   "title": "Foulkes’ Conjecture asserts that if m ≤ n",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-005-x-n-1-x",
+   "title": "X (n − 1)! X",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-006-generalized-deflations",
+   "title": "Generalized deflations",
+   "pages": "22-30"
+  },
+  {
+   "id": "sec-007-symmetric-functions",
+   "title": "Symmetric functions",
+   "pages": "30-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

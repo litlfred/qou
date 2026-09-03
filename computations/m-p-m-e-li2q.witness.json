@@ -1,25 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T20:42:18.797290+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
-  "assertions": [
-    {
-      "name": "codata_mp_me_loaded",
-      "computed": 1836.152,
-      "expected": 1836.152,
-      "passed": true,
-      "tolerance": 1e-10,
-      "unit": "m_p/m_e",
-      "source": "CODATA 2022"
-    }
-  ],
+  "computedAt": "2026-08-30T07:08:22.540984+00:00",
+  "commitSha": "2b80f097d2ec5349d901901b7c519b23e00c41f2",
+  "assertions": [],
   "allPassed": true,
-  "durationMs": 200,
+  "durationMs": 139,
   "computation": "m-p-m-e-li2q",
   "scriptFile": "m_p_m_e_li2q.py",
-  "scriptHash": "a0d0c84068ec",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "c86cd6c91cff",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +23,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/m_p_m_e_li2q.py"
+    ],
+    "reproduce": "python3 -u computations/m_p_m_e_li2q.py"
   },
   "description": "Re-derives m_p/m_e under symmetric Li_2^q (replacing Faddeev Φ_q per prop:mass-endomorphism-tower SUPERSEDED banner). Compares to legacy Faddeev result and CODATA 1836.152.",
   "data": {
@@ -92,6 +89,12 @@
     "phi_q_err_mp_me_pct": 407.0564870527914,
     "li2q_err_mp_me_pct": 99.81852226231092,
     "verdict": "Li_2^q better: 99.82% vs Φ_q 407.06%. Safe to deprecate Φ_q for m_p/m_e tower.",
+    "codata_mp_me_reference": {
+      "value": 1836.152,
+      "source": "CODATA 2022",
+      "loaded_from_registry": false,
+      "note": "local literal; wiring this to qou-mass's codata_constants would make drift detectable"
+    },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
       "electron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (lepton — n/a; no nucleus)",

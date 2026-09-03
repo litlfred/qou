@@ -156,15 +156,47 @@ def main() -> int:
     print(f"═══════════════════════════════════════════════════════")
     w.add_data("c_i_closed_form_family_A", {k: str(v) for k, v in all_c_i.items()})
 
-    # Add assertions for each
+    # Independent route to the same five numbers: substitute the positive
+    # root q(h) = (h + √(h²+4))/2 of q − q⁻¹ = h into λ_A(q) and read the
+    # Taylor coefficients off. Nothing below consults `all_c_i`.
+    q_of_h = (h + sp.sqrt(h**2 + 4)) / 2
+    lambda_A_series = sp.expand(sp.simplify(
+        sp.series(lambda_A_q.subs(q, q_of_h), h, 0, 10).removeO()))
+    derived_c_i = {
+        f"c_{k}": sp.nsimplify(sp.simplify(lambda_A_series.coeff(h, k)))
+        for k in (0, 2, 4, 6, 8)
+    }
+    w.add_data("c_i_from_h_series_family_A",
+               {k: str(v) for k, v in derived_c_i.items()})
+
+    # Each of these read `computed=str(value), expected=str(value)` straight
+    # off the hand-written `all_c_i` dict above — five assertions that a
+    # literal equals itself, which would have passed just as happily had
+    # someone typed c_2 = 7. The source string names the real claim, and
+    # that expansion is computable, so the stated coefficient is now checked
+    # against the one the series actually produces (bean qou-26f2).
     for label, value in all_c_i.items():
         w.add_assertion(
             f"family_A_{label}",
-            computed=str(value),
+            computed=str(derived_c_i[label]),
             expected=str(value),
             tolerance=None,
-            source="closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h",
+            source="closed-form expansion of (3q² + 4 + 3q⁻²)/4 in h — "
+                   "coefficient read off the sympy series in h at "
+                   "q = (h + √(h²+4))/2",
         )
+
+    # The banner above also prints "c_(2k+1) = 0 for all k ≥ 0 (symmetric in
+    # q ↔ q⁻¹)", which nothing checked; the same series answers it.
+    w.add_assertion(
+        "family_A_odd_h_coefficients_vanish",
+        computed=sum(1 for k in (1, 3, 5, 7, 9)
+                     if sp.simplify(lambda_A_series.coeff(h, k)) == 0),
+        expected=5,
+        tolerance=0,
+        source="λ_A is symmetric under q ↔ q⁻¹, so every odd power of h must "
+               "vanish — checked on the h-series through h⁹",
+    )
 
     # Numerical verification at q_0
     Q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -180,9 +212,9 @@ def main() -> int:
 
     # Family B comparison
     from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
-    M_E = mp.mpf(repr(_M_E_MEV))
+    M_E = mp.mpf(_M_E_MEV)
     from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
-    M_P = mp.mpf(repr(_M_P_MEV))
+    M_P = mp.mpf(_M_P_MEV)
     VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
     HBAR_Q = (Q0 - 1) / Q0
     lambda_B_target = float((M_P / M_E) * HBAR_Q**2 / VOL_B3)

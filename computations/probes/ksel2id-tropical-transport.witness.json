@@ -2,10 +2,10 @@
   "schema": "witness/v1",
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "commitSha": "b935a35ae73f1dee030eef2b41703d673b01d1ea",
+  "commitSha": "26dacd1a638b363a7eb2bcc2f6d011cf4ebabdae",
   "scriptFile": "ksel2id_tropical_transport_probe.py",
-  "scriptHash": "5b70cf782558",
-  "scriptCommitSha": "193d1ee239b615d6fd824bd056274ac56a6990ee",
+  "scriptHash": "e98fd60c7682",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "computation": "ksel2id-tropical-transport",
   "description": "KSel-2-ID tropical transport: the E-shift of the lattice class is exact algebra on moment ratios, dissolving the perturbation lemma",
   "auditOnly": "docs/audits/2026-08-01-ksel2id-tropical-transport.md",
@@ -91,24 +91,24 @@
           "rate_rel_err_predicted_tol": "0.0373324"
         },
         {
-          "q": "1.10997859555733471",
-          "dev_k10": "0.317831",
+          "q": "1.1099785827513808075916690956107688798744991218736",
+          "dev_k10": "0.317833",
           "dev_k30": "0.229952",
           "bound_k30": "0.770048",
           "bound_dominates_dev": true,
-          "measured_rate": "0.900222879336651",
-          "predicted_rate_p": "0.900918273561741",
+          "measured_rate": "0.900222889470744",
+          "predicted_rate_p": "0.900918283955741",
           "rate_rel_err": "0.000771873",
           "rate_rel_err_predicted_tol": "0.153963"
         },
         {
-          "q": "0.900918273561741048953080383848878762081800749779305953953074",
-          "dev_k10": "0.317831",
+          "q": "0.900918283955741492160822882481093936014741626610536921744785",
+          "dev_k10": "0.317833",
           "dev_k30": "0.229952",
           "bound_k30": "0.770048",
           "bound_dominates_dev": true,
-          "measured_rate": "0.900222879336651",
-          "predicted_rate_p": "0.900918273561741",
+          "measured_rate": "0.900222889470744",
+          "predicted_rate_p": "0.900918283955741",
           "rate_rel_err": "0.000771873",
           "rate_rel_err_predicted_tol": "0.153963"
         }
@@ -120,12 +120,12 @@
       "muon_pin": {
         "k_for_1e-12": 293,
         "k_for_1e-30": 690,
-        "dev_at_k1000": "8.36869e-45"
+        "dev_at_k1000": "8.36879e-45"
       },
       "inverse_muon_pin": {
         "k_for_1e-12": 293,
         "k_for_1e-30": 690,
-        "dev_at_k1000": "8.36869e-45"
+        "dev_at_k1000": "8.36879e-45"
       },
       "contrast": "HONEST: the tropical route is NOT numerically cheaper at the pins (k \u2248 293 for 1e-12 vs the truncation route's N \u2248 375). Its advantage is of kind, not speed: the error carries the closed-form bound |log_q\u0303(1\u2212p^{k+1})|, so the class limit is proved rather than extrapolated, and no depth is required to establish it. The k values here are illustrative only.",
       "inverse_pin_note": "the inverse pin is evaluated through its >1 representative, so its row duplicates the muon pin by construction (the balanced convention is bar-invariant); it is not an independent datum"
@@ -138,7 +138,8 @@
       "scope": "scope-(a) throughout; nothing wired; the target conjecture is unchanged in kind"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.t3_geometric.ladder[].q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "computedAt": "2026-08-29T04:42:11.298772+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

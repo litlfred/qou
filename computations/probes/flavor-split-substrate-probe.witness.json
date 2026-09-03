@@ -9,7 +9,7 @@
       "computed": "0.00127707524",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "0.002",
       "source": "Relative error of the leading substrate flavor split (m_n−m_p)/M_N = (q−1)²(1−q⁻⁴)/3 (via _li_2_q_util.flavor_split_leading) vs the CODATA split (M_N_MEV_VALIDATION−M_P_MEV_VALIDATION)/M_N, evaluated at the canonical muon-anchored substrate q₀ (50 dps). No fitted quark mass. Passes iff rel err < 2e-3 (0.2 %); measured ≈ 1.3e-3."
     },
     {
@@ -17,7 +17,7 @@
       "computed": "3.53737464017e-74",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Exact identity (q−1)²(1−q⁻⁴)/3 == ℏ_q²·h_q·[2]_q/3 checked at compute precision; both are the same Laurent polynomial in q."
     }
   ],

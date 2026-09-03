@@ -1,6 +1,7 @@
 **Existing data sets.**
 
-* **CODATA 2018** (NIST): $\alpha^{-1} \approx 137.035999084(21)$ (relative uncertainty $1.5 \times 10^{-10}$). Derived from electron $g - 2$ and tenth-order QED.
+* **CODATA 2022** (NIST, current recommended): $\alpha^{-1} \approx 137.035999177(21)$ (relative uncertainty $1.5 \times 10^{-10}$). Derived from electron $g - 2$ and tenth-order QED. This is the value the comparison table below uses.
+* **CODATA 2018** (NIST, superseded): $\alpha^{-1} \approx 137.035999084(21)$. Kept as the **comparison vintage** only: several superseded figures elsewhere in the corpus are recorded against it and stay legible that way. It is never the current value. The $2018 \to 2022$ shift is $9.3 \times 10^{-8}$, or $0.679\;\mathrm{ppb}$.
 * **Cs-133 recoil** (Parker et al., 2018): $\alpha^{-1} \approx 137.035999046(27)$. Independent of $g - 2$.
 * **Rb-87 recoil** (Morel et al., 2020): $\alpha^{-1} \approx 137.035999206(11)$. The most precise determination to date.
 

@@ -230,7 +230,7 @@ def main() -> int:
         })
         .add_assertion(
             name="dim_q_at_q_to_1_equals_classical_f_lambda",
-            computed=float(max_classical_limit_residue),
+            computed=max_classical_limit_residue,
             expected=0.0,
             tolerance=1e-10,
             unit=(

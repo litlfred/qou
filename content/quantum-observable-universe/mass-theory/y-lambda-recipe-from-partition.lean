@@ -1,16 +1,49 @@
 /-
-  Recipe: λ ↦ y_λ(q) — explicit q-rational construction in √q.
+  Recipe: λ ↦ y_λ(q) — explicit q-rational construction over ℚ(q).
+
+  **MIGRATED TO CONVENTION D (2026-08-24).**  The 2026-08-15 owner
+  ruling makes convention D (`z = q³/(q²+1)`) canonical and excises
+  convention C (`z = √q/(q+1)`).  This file was convention C, and the
+  tell was the formal square root: the old universal substitution
+  `X = v³/(1 + q − q² − q³ + v³)` inverts, through the Wenzl lattice
+  relation `X = z_W/(1 − Q + z_W)` at `Q = q²`, to exactly
+  `z_W = q·z_C = q^{3/2}/(q+1)` — the Wenzl-normalised convention-C
+  parameter.  Measured, not inferred.
+
+  Under D the same inversion gives `z_W = q·z_D = q⁴/(q²+1)` and hence
+
+      X = q⁴ = Q²,
+
+  an **integer Wenzl level r = 2**, on the nose.  Three consequences,
+  all of them simplifications:
+
+  * `v` disappears.  Nothing here needs a square root; the whole recipe
+    lives over ℚ(q), not ℚ(√q).  Every signature loses a parameter.
+  * Step 4's normaliser is closed-form: `Z_n = [2]_Q^n = (1 + q²)^n`,
+    proved at every integer level as
+    `QOU.SchurWeyl.sum_dim_schurPrincipal`, so the sum over all `p(n)`
+    partitions is no longer needed to evaluate it.
+  * `y_λ = 0` for every λ with more than two rows
+    (`QOU.SchurWeyl.wenzlWeight_eq_zero_iff`), which the C-frame form
+    does not make visible.
+
+  This was NOT a `z`-swap into a C-frame result — the kind of move
+  bean `qou-cds1` forbids.  `X` is a *parameter* of the recipe, fixed
+  by `z` through the lattice relation, so re-deriving it under D is
+  substituting into the derivation, not into its conclusion.
 
   Statement: given a partition λ ⊢ n, the Jones-Markov central
   coefficient y_λ(q) is determined by the following algorithm:
 
   Step 1: Compute partition data (contents c, hooks h, n(λ)).
-  Step 2: Compute the universal X = v³ / (1 + v² - v⁴ - v⁶ + v³)
-          where v is the formal square root of q (so v² = q).
-  Step 3: Compute s_{λ,r}(Q) = Q^{n(λ)} · ∏ (1 - X·Q^c)/(1 - Q^h)
-          with Q = q² = v⁴.
-  Step 4: Normalise: y_λ(q) = s_λ / Σ_µ d_µ s_µ.
-  Step 5: Factor over Q in v to get cyclotomic denominator + numerator.
+  Step 2: Take the universal X = Q^r with Q = q² and r = 2, i.e.
+          X = q⁴.  Equivalently X = z_W/(1 - Q + z_W) for the
+          Wenzl-normalised convention-D parameter z_W = q·z_D
+          (`universalX_eq_lattice` below proves the equality).
+  Step 3: Compute s_{λ,r}(Q) = Q^{n(λ)} · ∏ (1 - X·Q^c)/(1 - Q^h).
+  Step 4: Normalise: y_λ(q) = s_λ / Σ_µ d_µ s_µ, and that denominator
+          is (1 + q²)^n in closed form.
+  Step 5: Factor over ℚ(q) to get cyclotomic denominator + numerator.
 
   This formalises the algorithmic content of
   prop:y-lambda-closed-form-wenzl-bridge: given any partition, the
@@ -18,12 +51,11 @@
   time.
 
   **Pre-Archimedean stub.** Polymorphic in the ground field `R`.
-  The previous version used `q : ℝ`, `open Real`, `Real.sqrt`, and
-  axiomatised the Schur principal-specialisation as a real-valued
-  `constant`.  All three were Archimedean shortcuts: y_λ is
-  `q`-rational by [wenzl1988] (cf. AGENTS.md §7aa notation register).
-  The stub now parametrises in an abstract `(q, v) : R × R` with
-  `v² = q` and replaces `constant` with `opaque` over `R`.
+  An early version used `q : ℝ`, `open Real` and `Real.sqrt`; those
+  were Archimedean shortcuts, since y_λ is `q`-rational by [wenzl1988].
+  A later version carried an abstract `(q, v)` with `v² = q`.  Under
+  convention D the square root is not needed at all, so `v` is gone and
+  every declaration takes `q` alone.
 
   **Base ring (§7c): the `Field` is essential here, not scaffolding.**
   Adjudicated against `wall-base-ring-minimal`.  The recipe is a
@@ -107,15 +139,37 @@ def hookDim (lam : List ℕ) : ℕ :=
     parameter; `v ∈ R` is its formal square root with `v² = q`.
     No `Real.sqrt`. -/
 
-/-- Markov parameter `z = 1 / (v + v⁻¹) = v / (q + 1)` (using
-    `v² = q`). -/
-noncomputable def markovZ {R : Type u} [Field R] (q v : R) : R :=
-  v / (q + 1)
+/-- **Convention-D Markov parameter** `z_D = q³/(q² + 1)`. -/
+noncomputable def markovZ {R : Type u} [Field R] (q : R) : R :=
+  q ^ 3 / (q ^ 2 + 1)
 
-/-- Universal X = `v³ / (1 + q - q² - q³ + v³)` where `v² = q`.
-    Equivalently `Q^r` for `Q = q²` and `r` the Wenzl level. -/
-noncomputable def universalX {R : Type u} [Field R] (q v : R) : R :=
-  q * v / (1 + q - q^2 - q^3 + q * v)
+/-- The **Wenzl-normalised** parameter `z_W = q · z_D`.  The factor `q` is
+    the Hecke-normalisation shift between `g² = (Q−1)g + Q` and
+    `σ² = (q − q⁻¹)σ + 1`, under which `σ = g/q` and `Q = q²`. -/
+noncomputable def markovZW {R : Type u} [Field R] (q : R) : R :=
+  q * markovZ q
+
+/-- **Universal X**, convention D: `X = Q^r` at `Q = q²`, `r = 2`. -/
+noncomputable def universalX {R : Type u} [Field R] (q : R) : R :=
+  q ^ 4
+
+/-- **`X` is on the Wenzl lattice at level 2.**  `X = z_W/(1 − Q + z_W)`
+    with `Q = q²` — the relation that pins the level — evaluates to `q⁴`,
+    i.e. `Q²`, so the convention-D recipe sits at the integer level `r = 2`.
+
+    This is the lemma the old convention-C form could not state: there the
+    same inversion gives `z_W = q^{3/2}/(q+1)` and an effective level of
+    about `2.5995` at the substrate anchor, which is not an integer and so
+    not on the lattice at all. -/
+theorem universalX_eq_lattice {R : Type u} [Field R] (q : R) (hq2 : q ^ 2 + 1 ≠ 0) :
+    markovZW q / (1 - q ^ 2 + markovZW q) = universalX q := by
+  have hzw : markovZW q = q ^ 4 / (q ^ 2 + 1) := by
+    rw [markovZW, markovZ]; ring
+  -- `(1 − q²)(q² + 1) + q⁴ = 1`, so the whole denominator collapses.
+  have hden : (1 : R) - q ^ 2 + markovZW q = 1 / (q ^ 2 + 1) := by
+    rw [hzw]; field_simp; ring
+  rw [universalX, hden, hzw]
+  field_simp
 
 /-! ## Step 3: Schur principal-specialisation -/
 
@@ -128,9 +182,9 @@ noncomputable def universalX {R : Type u} [Field R] (q v : R) : R :=
     (the `hookDim` iteration pattern), inner fold over columns `j`.  The
     content `c(i,j) : ℤ` gives an integer power `Q ^ (c : ℤ)` (zpow); the
     hook `h(i,j) : ℕ` gives a natural power. -/
-noncomputable def schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : R) : R :=
+noncomputable def schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q : R) : R :=
   let Q := q ^ 2
-  let X := universalX q v
+  let X := universalX q
   Q ^ (nPartition lam) *
     (lam.zip (List.range lam.length)).foldr
       (fun (p : ℕ × ℕ) acc =>
@@ -150,15 +204,15 @@ open QOU.BraidKnot.IdentityI (partitionsOf)
 /-- Partition-function denominator `Z_n = Σ_µ d_µ · s_µ` — a **concrete**
     sum over the shared `partitionsOf n` with `d_µ = hookDim µ`,
     `s_µ = schurPrincipal µ` (de-axiomatised; computable). -/
-noncomputable def partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R :=
+noncomputable def partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q : R) : R :=
   (partitionsOf n).foldr
-    (fun mu acc => acc + (hookDim mu : R) * schurPrincipal mu q v) 0
+    (fun mu acc => acc + (hookDim mu : R) * schurPrincipal mu q) 0
 
 /-- The recipe: `y_λ(q) = s_{λ, r}(Q) / Z_n`. -/
 noncomputable def yLambdaRecipe {R : Type u} [Field R]
-    (lam : List ℕ) (q v : R) : R :=
-  schurPrincipal lam q v /
-    partitionFunctionZ (lam.foldr (· + ·) 0) q v
+    (lam : List ℕ) (q : R) : R :=
+  schurPrincipal lam q /
+    partitionFunctionZ (lam.foldr (· + ·) 0) q
 
 /-! ## Markov-trace convention discriminator
 
@@ -214,7 +268,7 @@ structure MarkovTraceCoefficient (R : Type u) where
     `partitionFunctionZ`), so it is declared as an `axiom`. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom JonesMarkovCoefficient {R : Type u} [Field R]
-    (q v : R) (lam : List ℕ) : R
+    (q : R) (lam : List ℕ) : R
 
 /-- The Markov-trace convention this recipe implements. -/
 def yLambdaRecipeConvention : MarkovTraceConvention :=
@@ -222,13 +276,13 @@ def yLambdaRecipeConvention : MarkovTraceConvention :=
 
 /-- The Wenzl–Schur-tagged y_λ wrapper. -/
 noncomputable def jonesMarkovTagged {R : Type u} [Field R]
-    (q v : R) (lam : List ℕ) : MarkovTraceCoefficient R :=
-  { value := JonesMarkovCoefficient q v lam,
+    (q : R) (lam : List ℕ) : MarkovTraceCoefficient R :=
+  { value := JonesMarkovCoefficient q lam,
     convention := yLambdaRecipeConvention }
 
 @[simp] theorem jonesMarkovTagged_convention {R : Type u} [Field R]
-    (q v : R) (lam : List ℕ) :
-    (jonesMarkovTagged q v lam).convention =
+    (q : R) (lam : List ℕ) :
+    (jonesMarkovTagged q lam).convention =
       MarkovTraceConvention.wenzlSchur :=
   rfl
 
@@ -236,39 +290,39 @@ noncomputable def jonesMarkovTagged {R : Type u} [Field R]
     Jones-Markov coefficient via Macdonald hook telescope. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom y_lambda_recipe_correct_axiom :
-    ∀ {R : Type u} [Field R] (q v : R) (lam : List ℕ),
+    ∀ {R : Type u} [Field R] (q : R) (lam : List ℕ),
       (∀ p ∈ lam, 0 < p) → List.Sorted (· ≥ ·) lam →
-      JonesMarkovCoefficient q v lam = yLambdaRecipe lam q v
+      JonesMarkovCoefficient q lam = yLambdaRecipe lam q
 
 theorem y_lambda_recipe_correct {R : Type u} [Field R]
-    (q v : R) (lam : List ℕ)
+    (q : R) (lam : List ℕ)
     (_hpos : ∀ p ∈ lam, 0 < p)
     (_hnonincr : List.Sorted (· ≥ ·) lam) :
-    JonesMarkovCoefficient q v lam = yLambdaRecipe lam q v :=
-  y_lambda_recipe_correct_axiom q v lam _hpos _hnonincr
+    JonesMarkovCoefficient q lam = yLambdaRecipe lam q :=
+  y_lambda_recipe_correct_axiom q lam _hpos _hnonincr
 
 /-- **External axiom (Wenzl 1988):** Plancherel completeness
     `Σ_λ⊢n d_λ · y_λ(q) = 1`. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom plancherel_via_recipe_axiom :
-    ∀ {R : Type u} [Field R] (q v : R) (n : ℕ)
+    ∀ {R : Type u} [Field R] (q : R) (n : ℕ)
       (parts : List (List ℕ)),
       (∀ lam : List ℕ, lam.foldr (· + ·) 0 = n → lam ∈ parts) →
       parts.Nodup →
-      (parts.map (fun lam => (hookDim lam : R) * yLambdaRecipe lam q v)).sum
+      (parts.map (fun lam => (hookDim lam : R) * yLambdaRecipe lam q)).sum
         = (1 : R)
 
 /-- **Plancherel completeness**: Σ_λ⊢n d_λ · y_λ(q) = 1 for every n. -/
 theorem plancherel_via_recipe {R : Type u} [Field R]
-    (q v : R) (n : ℕ)
+    (q : R) (n : ℕ)
     (parts : List (List ℕ))
     (_parts_complete : ∀ lam : List ℕ,
       lam.foldr (· + ·) 0 = n → lam ∈ parts)
     (_parts_nodup : parts.Nodup) :
     (parts.map
-      (fun lam => (hookDim lam : R) * yLambdaRecipe lam q v)).sum
+      (fun lam => (hookDim lam : R) * yLambdaRecipe lam q)).sum
         = (1 : R) :=
-  plancherel_via_recipe_axiom q v n parts _parts_complete _parts_nodup
+  plancherel_via_recipe_axiom q n parts _parts_complete _parts_nodup
 
 /-- **Cyclotomic factorisation**: the recipe output factors as
     P_λ(v) / D_n(v) where D_n is a pure product of cyclotomic
@@ -279,37 +333,48 @@ opaque YLambdaRecipeCyclotomicFactor : Prop
     y_λ recipe denominator. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom y_lambda_cyclotomic_via_recipe_axiom :
-    ∀ {R : Type u} [Field R] (q v : R) (lam : List ℕ),
+    ∀ {R : Type u} [Field R] (q : R) (lam : List ℕ),
       YLambdaRecipeCyclotomicFactor
 
 theorem y_lambda_cyclotomic_via_recipe {R : Type u} [Field R]
-    (q v : R) (lam : List ℕ) :
+    (q : R) (lam : List ℕ) :
     YLambdaRecipeCyclotomicFactor :=
-  y_lambda_cyclotomic_via_recipe_axiom q v lam
+  y_lambda_cyclotomic_via_recipe_axiom q lam
 
 /-! ## Worked example: n = 2 -/
 
-/-- **Worked example, `λ = (2)` at `n = 2`** — now **proved** (was an
-    axiom).  With `partitionFunctionZ` concrete, `y_{(2)}` reduces through
-    the two `n=2` partitions `{(2), (1,1)}` (both dimension 1) to the closed
-    form.  Requires the denominators of the recipe to be nonzero. -/
+/-- **Worked example, `λ = (2)` at `n = 2`**, convention D.
+
+With `X = q⁴` the recipe reduces through the two `n = 2` partitions
+`{(2), (1,1)}` (both of dimension 1) to
+
+    y_{(2)} = (q² − q + 1)(q² + q + 1) / (q² + 1)²,
+
+whose numerator is `Φ₆(q)·Φ₃(q) = q⁴ + q² + 1` — the cyclotomic factorisation
+of step 5, now visible over ℚ(q) rather than ℚ(√q).
+
+The convention-C statement of this example was
+`(q·v + q + 1)/((q + 1)(q² + 1))` with `v = √q`, and it needed five
+hypotheses (`hq4`, `hp1`, `hX`, `hX1` and the derived `hXm`) purely to keep
+the `X` denominator and the `1 − X` cancellation alive.  Under D, `X = q⁴` is
+a polynomial, so those all disappear: only the two genuine hook denominators
+`1 − q²` and `1 − q⁴` remain, and `q + 1 ≠ 0` is no longer needed at all.
+
+`Z_2 = (1 + q²)²` here is the `n = 2` case of the closed form
+`QOU.SchurWeyl.sum_dim_schurPrincipal` proves at every integer level. -/
 theorem y_lambda_recipe_n2_partition_2 {R : Type u} [Field R]
-    (q v : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq4 : q ^ 4 ≠ 1)
-    (hp1 : q + 1 ≠ 0) (hp2 : q ^ 2 + 1 ≠ 0)
-    (hX : 1 + q - q ^ 2 - q ^ 3 + q * v ≠ 0)
-    (hX1 : 1 + q - q ^ 2 - q ^ 3 ≠ 0) :
-    yLambdaRecipe [2] q v = (q * v + q + 1) / ((q + 1) * (q ^ 2 + 1)) := by
-  -- `rfl` reduces each concrete `schurPrincipal` cell-product fold to its
-  -- explicit form (Q = q², X = universalX q v; `zpow` for the ℤ content).
-  have hs2 : schurPrincipal [2] q v
+    (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq4 : q ^ 4 ≠ 1) (hp2 : q ^ 2 + 1 ≠ 0) :
+    yLambdaRecipe [2] q
+      = (q ^ 2 - q + 1) * (q ^ 2 + q + 1) / (q ^ 2 + 1) ^ 2 := by
+  have hs2 : schurPrincipal [2] q
       = (q ^ 2) ^ (0 : ℕ) *
-        (1 * ((1 * ((1 - universalX q v * (q ^ 2) ^ (1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ)))) *
-              ((1 - universalX q v * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
+        (1 * ((1 * ((1 - universalX q * (q ^ 2) ^ (1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ)))) *
+              ((1 - universalX q * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
     rfl
-  have hs11 : schurPrincipal [1, 1] q v
+  have hs11 : schurPrincipal [1, 1] q
       = (q ^ 2) ^ (1 : ℕ) *
-        ((1 * (1 * ((1 - universalX q v * (q ^ 2) ^ (-1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ))))) *
-         (1 * ((1 - universalX q v * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
+        ((1 * (1 * ((1 - universalX q * (q ^ 2) ^ (-1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ))))) *
+         (1 * ((1 - universalX q * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
     rfl
   have hp : partitionsOf 2 = [[2], [1, 1]] := by decide
   have hd2 : hookDim [2] = 1 := by decide
@@ -318,32 +383,20 @@ theorem y_lambda_recipe_n2_partition_2 {R : Type u} [Field R]
   have hq2ne : q ^ 2 ≠ 0 := pow_ne_zero 2 hq
   have hd1 : (1 : R) - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq2)
   have hd4' : (1 : R) - q ^ 4 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq4)
-  have hd4 : (1 : R) - (q ^ 2) ^ 2 ≠ 0 := by
-    have h : (q ^ 2) ^ 2 = q ^ 4 := by ring
-    rw [h]; exact hd4'
-  -- `1 − X ≠ 0` (the factor the recipe cancels): `1 − qv/Dx = (Dx − qv)/Dx`
-  -- with `Dx − qv = 1 + q − q² − q³` (`hX1`) and `Dx ≠ 0` (`hX`).
-  have hp2' : (1 : R) + q ^ 2 ≠ 0 := by rw [add_comm]; exact hp2
-  have hXm : (1 : R) - universalX q v ≠ 0 := by
-    rw [universalX, ne_eq, sub_eq_zero]
-    intro h
-    rw [eq_div_iff hX] at h
-    exact hX1 (by linear_combination h)
-  -- `Z_2 = (1−X)²/(1−q²)²` (common `(1−q²)(1−q⁴)` denom; `X` abstract), so `Z ≠ 0`.
-  have hZval : schurPrincipal [1, 1] q v + schurPrincipal [2] q v
-      = (1 - universalX q v) ^ 2 / (1 - q ^ 2) ^ 2 := by
-    rw [hs2, hs11]
+  -- `Z_2 = (1 + q²)²`, the closed form, so in particular `Z_2 ≠ 0`.
+  have hZval : schurPrincipal [1, 1] q + schurPrincipal [2] q = (1 + q ^ 2) ^ 2 := by
+    rw [hs2, hs11, universalX]
     simp only [zpow_zero, zpow_one, zpow_neg_one, pow_zero, pow_one, mul_one, one_mul]
-    field_simp [hd1, hd4', hq2ne]
+    field_simp
     ring
-  have hZne : schurPrincipal [1, 1] q v + schurPrincipal [2] q v ≠ 0 := by
-    rw [hZval]; exact div_ne_zero (pow_ne_zero 2 hXm) (pow_ne_zero 2 hd1)
+  have hZne : schurPrincipal [1, 1] q + schurPrincipal [2] q ≠ 0 := by
+    rw [hZval]
+    exact pow_ne_zero 2 (by rw [add_comm]; exact hp2)
   unfold yLambdaRecipe partitionFunctionZ
   rw [hrec, hp]
   simp only [List.foldr_cons, List.foldr_nil, hd2, hd11, Nat.cast_one, one_mul, zero_add]
-  -- Clear the top-level division (needs `Z ≠ 0`), then expand schur/X and ring.
-  rw [div_eq_div_iff hZne (mul_ne_zero hp1 hp2), hs2, hs11, universalX]
-  field_simp [hX, hd1, hd4', hq2ne]
+  rw [div_eq_div_iff hZne (pow_ne_zero 2 hp2), hs2, hs11, universalX]
+  field_simp
   ring
 
 end QOU.BraidsAndKnots

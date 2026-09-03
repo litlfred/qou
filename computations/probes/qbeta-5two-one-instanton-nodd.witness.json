@@ -9,7 +9,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "sin(Im𝔙/πℏ) oscillation produces a zero of N_odd in the substrate window — the feature the RAW Im(ι₁₃) form (A3 probe) lacked"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "parameter-free one-instanton slope at its zero is ~4 orders below A′≈2.37; the 1/u³ lever cancels in the ratio and does NOT rescue it — a derived prefactor/ℏ-scaling is required (must not be fitted)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "the phase-zero q_z is ~0.009 from q₀≈q* (~1e6× the anchor gap) — the parameter-free form does not place the zero at q*"
     }
   ],

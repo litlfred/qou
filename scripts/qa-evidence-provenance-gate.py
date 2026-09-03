@@ -123,6 +123,7 @@ def main() -> int:
     by_criterion: Counter = Counter()
     live = 0
     blocks: set[str] = set()
+    unresolvable = 0
 
     pattern = os.path.join(REPO, args.glob)
     for qa_path in sorted(glob.glob(pattern, recursive=True)):
@@ -136,6 +137,14 @@ def main() -> int:
             if not isinstance(entries, list) or not entries:
                 continue
             latest = entries[-1]
+            # RESOLVABLE ONLY (2026-08-29). A verdict with no `field_hash`
+            # records no block version, so a provenance defect found in it
+            # cannot be attributed to any content and cannot be discharged by
+            # fixing any block. Counting it inflates the gate with findings
+            # nobody can act on. Measured: 232 of 3144 live findings (7.4%).
+            if not latest.get("field_hash"):
+                unresolvable += 1
+                continue
             hits = classify(latest)
             if not hits:
                 continue
@@ -161,6 +170,9 @@ def main() -> int:
 
     print(f"QA evidence-provenance gate — {len(findings)} finding(s) "
           f"across {len(blocks)} block(s); {live} live")
+    if unresolvable:
+        print(f"  ({unresolvable} entr(y|ies) skipped: no field_hash, so no "
+              f"block version to attribute a defect to)")
     if by_sig:
         print("\nby signature:")
         for sig, n in by_sig.most_common():

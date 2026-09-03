@@ -159,7 +159,7 @@ def isPalindrome (h : List ℕ) : Prop :=
   ∀ i, (hi : i < h.length) →
     h.get ⟨i, hi⟩ = h.get ⟨h.length - 1 - i,
       lt_of_le_of_lt (Nat.sub_le _ _)
-        (Nat.sub_lt (Nat.pos_of_lt_of_le (Nat.zero_le i) (Nat.le_of_lt hi)) Nat.one_pos)⟩
+        (Nat.sub_lt (Nat.lt_of_le_of_lt (Nat.zero_le i) hi) Nat.one_pos)⟩
 
 /-- ⁴He histogram {1, 3, 4, 3, 1} is palindromic. -/
 -- Ref: [manuscript] pruned-normal-forms.py witness, A=4

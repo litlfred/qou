@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:28:56.601868+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:26:48.742902+00:00",
+  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
   "assertions": [
     {
       "name": "pade_locates_zeta12",
-      "computed": 0.02217891652486455,
+      "computed": "0.02217891652486455084739481196630093103550246670776608445045761967613484",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "Borel–Padé [11/12] pole within 10% of ζ₁₂ = i(V₁−V₂)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "φ_res(x_sub) = φ_trunc(x_sub) to 1e-8 (both converged at the substrate)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "vs the exact F/C at x = −1, −2, −3: resummed rel err < truncated rel err at every point"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "[φ(x)−φ(−x)]/2 at ±x_sub: truncation vs resummation agree to 1e-6"
     }
   ],
@@ -41,7 +41,7 @@
   "durationMs": 0,
   "computation": "qbeta-5two-median-borel-resummation",
   "scriptFile": "qbeta_5two_median_borel_resummation_probe.py",
-  "scriptHash": "115afd0c20f5",
+  "scriptHash": "0424e97800ce",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -108,8 +108,8 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-5two-phi-series-engine.witness.json",
-        "sha256": "f866db7ad97ad2068716ed86f703443105f2bdf1e635450f0cec58c0a40ae963",
-        "size_bytes": 5970,
+        "sha256": "f4531337dafa8574bab3dac83440a1a11433a3b1ea5c8b09c662239aff2b67d2",
+        "size_bytes": 5978,
         "commitSha": "afa12a6891efda7e1057693f4acc596345bc3d28",
         "scriptCommitSha": "87722fa817342e2b9bd17268c0a9db2080979bbe",
         "computedAt": "2026-08-01T15:17:51.390941+00:00"

@@ -157,9 +157,35 @@ _NET_COEFF_DPS = 30
 def _q_0() -> mp.mpf:
     """Substrate parameter q_0 at 50-dps from the q-pinning witness.
 
-    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`
-    (the canonical CAL-2-derived q_0); legacy float64 fallback in
-    `q_parameter.Q_50_DIGIT_STR` is identical to ~50 digits.
+    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`, which is
+    the **ideal / CAL-2 (muon) anchor** -- that field is what
+    `qou_substrate.witness._q0_value_for_anchor("muon")` returns, so this
+    module computes at the muon pin regardless of what `q_parameter` would
+    resolve for it.
+
+    CORRECTED 2026-08-24 (bean `qou-aj91`).  This docstring previously called
+    `q_parameter.Q_50_DIGIT_STR` a "legacy float64 fallback" that is
+    "identical to ~50 digits".  Both clauses are wrong, and the second one is
+    a false all-clear on a production module -- `derived_masses` predicts MASS
+    and BINDING observables, so "the two pins agree" is exactly the statement
+    that stops a reader from investigating.  Measured:
+
+        pin  (muon) : 1.1099785955573347198997632204...
+        q_parameter : 1.1099785827513808075916690956...
+        first differing digit : index 9
+        separation            : -1.1537118e-8  =  -11.5371 ppb
+
+    They agree to **9** digits, not ~50, and the separation *is* the mu-p
+    substrate tension.  Nor is `Q_50_DIGIT_STR` a legacy fallback: it is the
+    **experimental (proton) pin**, the standing default for all production
+    code since the 2026-08-07 owner directive.
+
+    The layer question -- whether these mass/binding quantities belong on the
+    proton pin -- is triaged in
+    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` (bucket `E`) and
+    is NOT decided here; only the false equivalence is removed.  Changing the
+    read would move every number this module emits by ~11.54 ppb, which is
+    the `qou-1c4y` sweep.
     """
     with _Q_PINNING_WITNESS.open() as fh:
         d = json.load(fh)

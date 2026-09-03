@@ -46,7 +46,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # (per repo convention; avoids P31 hard-coded CODATA literal flag)
 import mpmath as _mp_for_neutron  # noqa: E402
 
-M_N_MEV = M_P_MEV + M_E_MEV + _mp_for_neutron.mpf(repr(_ec.Q_NEUTRON_MEV))
+M_N_MEV = M_P_MEV + M_E_MEV + _mp_for_neutron.mpf(_ec.Q_NEUTRON_MEV)
 
 
 def main() -> int:
@@ -221,8 +221,8 @@ def main() -> int:
 
     w.add_assertion(
         name="refinement_search_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )

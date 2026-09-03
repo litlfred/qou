@@ -78,7 +78,7 @@ from _li_2_q_util import load_q_50dps, li_2_q
 # the Li_2^q series radius) through a recursive identity using
 # convergent sub-arguments.
 from pentagon_reduction_li2q import li_2_q_pentagon
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 B_AME = {
@@ -206,6 +206,12 @@ def main() -> int:
     atom_list = ("D", "T", "3He", "4He") if include_4he else ("D", "T", "3He")
 
     results = {}
+    # mpf ratios kept OUT of `results`: that dict is serialized into the
+    # witness AND consumed by this producer for the cross-atom spread. Storing
+    # the mpf inside it would either leak an mpf into the witness or depend on
+    # popping before add_data() -- which runs BEFORE the consumer, so the
+    # ordering is not obvious. A side table has neither problem.
+    ratio_mpf: dict = {}
     for atom in atom_list:
         Z, N = ZN[atom]
         try:
@@ -245,6 +251,7 @@ def main() -> int:
         ratio_old = B_MeV1 / B_emp
         ratio_full = B_MeV_full / B_emp
 
+        ratio_mpf[atom] = ratio_old
         results[atom] = {
             "Z": Z, "N": N, "A": Z + N, "n_strands": 3 * (Z + N),
             "atom_config": ra, "free_config": rf,
@@ -252,7 +259,12 @@ def main() -> int:
             # consumers that diff'd against PR #801 baseline.
             "B_dim_first_order": str(B_dim1),
             "B_MeV_first_order": str(B_MeV1),
-            "ratio_pred_over_AME": float(ratio_old),
+            # fmt(), not float(). ratio_old is B_MeV1 / B_emp, both mpf, and
+            # float() truncated an mpf to 53 bits on the way into the witness.
+            # These are RATIOS, not counts, so the fix is to carry the mpf and
+            # serialize -- matching this dict's own neighbours, which already
+            # use str() on their mpf values.
+            "ratio_pred_over_AME": fmt(ratio_old),
             # New: T1+T2+T3 with pentagon-reduced T3 (post-τ
             # Rogers log² correction). Per
             # docs/audits/2026-05-19-pentagon-reduction-li2q.md the
@@ -260,7 +272,7 @@ def main() -> int:
             # and substantially improves T, ³He.
             "B_dim_with_t3": str(B_dim_full),
             "B_MeV_with_t3": str(B_MeV_full),
-            "ratio_with_t3_over_AME": float(ratio_full),
+            "ratio_with_t3_over_AME": fmt(ratio_full),
             "T3_atom_contribution": str(ra["t3"]),
             "T3_free_contribution": str(rf["t3"]),
             "T3_imag_residue_atom": ra.get("t3_imag_residue"),
@@ -288,10 +300,10 @@ def main() -> int:
 
     # Cross-atom variance (only successfully-computed atoms)
     computed = {k: r for k, r in results.items() if not r.get("compute_failed")}
-    ratios = [r["ratio_pred_over_AME"] for r in computed.values()]
+    ratios = [ratio_mpf[k] for k in computed]
     abs_ratios = [abs(x) for x in ratios]
     rmin, rmax = (min(abs_ratios), max(abs_ratios)) if abs_ratios else (0, 0)
-    mom = rmax / rmin if rmin > 0 else float("inf")
+    mom = rmax / rmin if rmin > 0 else mp.inf
     signs_correct = all(r["B_pred_sign"] == "+" for r in computed.values())
     builder.add_data("atoms_computed", list(computed.keys()))
     builder.add_data("atoms_failed",
@@ -304,52 +316,56 @@ def main() -> int:
             "geck_pfeiffer Rust kernel from PR #761 for a faster path."
         ))
 
-    builder.add_data("max_over_min_abs_first_order", float(mom))
+    builder.add_data("max_over_min_abs_first_order", fmt(mom))
     builder.add_data("all_signs_correct_first_order", signs_correct)
 
     # Categorical-derivation comparison
     builder.add_data("compared_to_tensor_product_baseline", {
-        "tensor_product_max_over_min": 3.96,
+        # Transcribed baseline from the tensor-product construction, carried as
+        # mpf text rather than a float64 literal. It is a RECORDED reference
+        # value, not a recomputed one -- flagged so a later reader does not
+        # mistake it for something this producer derives.
+        "tensor_product_max_over_min": fmt(mp.mpf("3.96")),
         "tensor_product_sign_correct": False,
         "tensor_product_failure_modes": [
             "T/³He predicted UNBOUND (wrong sign)",
             "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
             "No interface knot in baseline (tensor → no inter-block crossing)",
         ],
-        "this_first_order_max_over_min": float(mom),
+        "this_first_order_max_over_min": fmt(mom),
         "this_first_order_sign_correct": signs_correct,
     })
 
     if mom < 1.05 and signs_correct:
-        verdict = (f"PASS — max/min^(1) = {mom:.3f} < 1.05; all signs correct. "
+        verdict = (f"PASS — max/min^(1) = {float(mom):.3f} < 1.05; all signs correct. "
                    "First-order interface-knot tower closes the variance.")
     elif mom < 1.5 and signs_correct:
-        verdict = (f"STRONG — max/min^(1) = {mom:.3f} < 1.5×, signs correct. "
+        verdict = (f"STRONG — max/min^(1) = {float(mom):.3f} < 1.5×, signs correct. "
                    "Major improvement over tensor-product 3.96× variance + "
                    "sign-wrong.")
     elif signs_correct and mom < 3.96:
-        verdict = (f"IMPROVES — max/min^(1) = {mom:.3f}, signs correct. "
+        verdict = (f"IMPROVES — max/min^(1) = {float(mom):.3f}, signs correct. "
                    "T3 now computed via pentagon-reduction "
                    "(`pentagon_reduction_li2q.li_2_q_pentagon`); "
                    "higher-order tower terms beyond T3 still pending.")
     elif signs_correct:
-        verdict = (f"SIGN-FIX — max/min^(1) = {mom:.3f}; signs correct "
+        verdict = (f"SIGN-FIX — max/min^(1) = {float(mom):.3f}; signs correct "
                    "(tensor-product was wrong-sign). T3 computed via "
                    "pentagon-reduction; higher-order tower pending.")
     else:
-        verdict = (f"NO IMPROVEMENT — max/min^(1) = {mom:.3f}, "
+        verdict = (f"NO IMPROVEMENT — max/min^(1) = {float(mom):.3f}, "
                    f"signs_correct = {signs_correct}")
     builder.add_data("verdict", verdict)
-    print(f"\n  max/min |ratio|^(1) = {mom:.4f}  (was 3.96× under tensor-product)")
+    print(f"\n  max/min |ratio|^(1) = {float(mom):.4f}  (was 3.96× under tensor-product)")
     print(f"  All B_pred^(1) > 0:   {signs_correct}  "
           "(was False — T/³He were UNBOUND under tensor-product)")
     print(f"  Verdict: {verdict}")
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
-        expected=2.22456607,
-        tolerance=1e-10,
+        computed=fmt(B_AME["D"]),
+        expected=fmt(mp.mpf("2.22456607")),
+        tolerance=fmt(mp.mpf("1e-10")),
         unit="B(D) MeV",
         source="AME 2020 deuteron binding",
     )

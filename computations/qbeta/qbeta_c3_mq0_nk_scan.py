@@ -215,16 +215,16 @@ def _validate(wb):
     # V3 — Murakami gluing equations hold on a mid-range real point.
     zt, wt = shapes_explicit(mp.mpf("0.15"))
     e_glue = gluing_residual(zt, wt, mp.mpf("0.15"))
-    wb.add_assertion("v1_complete_recovers_vol_4_1", computed=float(e_vol),
+    wb.add_assertion("v1_complete_recovers_vol_4_1", computed=e_vol,
                      expected=0.0, tolerance=1e-10,
                      source="V_of_u(u→0) Re = Vol(4₁); Im = 0")
-    wb.add_assertion("v1_complete_im_zero", computed=float(e_im0),
+    wb.add_assertion("v1_complete_im_zero", computed=e_im0,
                      expected=0.0, tolerance=1e-20,
                      source="Im 𝔙(u→0) = 0 (complete = amphichiral, CS=0)")
-    wb.add_assertion("v2_nz_leading_slope_2sqrt_minus_3", computed=float(e_slope),
+    wb.add_assertion("v2_nz_leading_slope_2sqrt_minus_3", computed=e_slope,
                      expected=0.0, tolerance=1e-6,
                      source="dv/du|₀ = 2√−3 (Hikami 2v = −2πi + 4√3 i u + …)")
-    wb.add_assertion("v3_murakami_gluing_residual", computed=float(e_glue),
+    wb.add_assertion("v3_murakami_gluing_residual", computed=e_glue,
                      expected=0.0, tolerance=1e-20,
                      source="Murakami gluing eqns log w+log(1−z)=u, Σ log = 0")
     return max(float(e_vol), float(e_slope), float(e_glue))
@@ -288,7 +288,7 @@ def main() -> int:
     print(f"\n[substrate contrast] merged Ohtsuki route: 2πb²=i·t, |·|={float(t):.4f} (SMALL)")
     print(f"    leading odd rung Im[κ₁·i·t] = {float(im_v_substrate):.5f}  "
           f"(Borel–Padé smooth Im 𝔙≈0.055) — target |S|~0.01–0.04 ORDER ✓")
-    wb.add_assertion("substrate_ohtsuki_kappa1_right_order", computed=float(im_v_substrate),
+    wb.add_assertion("substrate_ohtsuki_kappa1_right_order", computed=im_v_substrate,
                      expected=0.055, tolerance=0.02,
                      source="Im[κ₁·(2πb²)] at 2πb²=i·t, κ₁=11√3π/108 (rem:ohtsuki-tower-bar-parity)")
 

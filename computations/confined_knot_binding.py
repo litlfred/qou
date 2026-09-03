@@ -26,6 +26,14 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, q_int
 from witness_base import WitnessBuilder
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 z = q**3 / (q**2 + 1)
 
 # Wedderburn weights (exact symbolic form)
@@ -66,7 +74,7 @@ def chain_V(crossings):
 CROSSING_TYPES = {
     "pp (σ)":           (1, 0),
     "nn (σ⁻¹)":        (1, -h),
-    "pn (½(σ+σ⁻¹))":   (1, -h/2),
+    "pn (colour-weighted)": (1, _pn_d(h)),
     "pe (σ₁⁻¹)":       (1, -h),
     "gluon (σ₀)":      (1, 0),
 }
@@ -101,7 +109,7 @@ for name, (c, d) in CROSSING_TYPES.items():
 
 print()
 print("KEY: pn crossing has sym+alt = 0 (extremal cancellation)")
-print(f"     V_pn = W_std × (z - h/2) = {W_STD:.6f} × {z - h/2:.6f} = {W_STD * (z - h/2):.6f}")
+print(f"     V_pn = W_std × (z + d_pn) = {W_STD:.6f} × {z + _pn_d(h):.6f} = {W_STD * (z + _pn_d(h)):.6f}")
 print()
 
 # ── Symbolic verification of extremal cancellation ���─────────────
@@ -209,7 +217,7 @@ for name, Z, N in NUCLEI:
             elif t1 == t2 == 'n':
                 gen0_crossings += [(1, -h)]     # nn → σ₀⁻¹
             else:
-                gen0_crossings += [(1, -h/2)]   # pn → mixed
+                gen0_crossings += [(1, _pn_d(h))]   # pn → mixed
 
     V_d0, _, _, _ = chain_V(gen0_crossings)
     V_d1, _, _, _ = chain_V(gen1_crossings)
@@ -240,12 +248,15 @@ print()
 
 # ── V_pn symbolic form ──────────────────────────────────────────
 
-V_pn_exact = W_STD * (z - h/2)
+V_pn_exact = W_STD * (z + _pn_d(h))
 print("=" * 80)
 print("§4  Symbolic binding volume")
 print("=" * 80)
-print(f"V_pn = W_std · (z - H_A/2)")
-print(f"     = [(q²+1)² / (q⁴+4q²+1)] · [1/(√q+1/√q) - (q-1/q)/2]")
+print(f"V_pn = W_std · (z + d_pn),  d_pn = -h(1/2 - delta/4)")
+# The old form printed here spelled z as `1/(sqrt q + 1/sqrt q)`, which is
+# convention C, and the offset as `(q - 1/q)/2`, an inlined h/2. Both were
+# display-only and both were wrong for the live computation.
+print(f"     = [(q²+1)² / (q⁴+4q²+1)] · [q³/(q²+1) - h(1/2 - δ/4)]")
 print(f"     = {V_pn_exact:.10f}")
 print()
 print(f"For comparison:")
@@ -253,7 +264,7 @@ print(f"  V_e (trefoil σ³) = {chain_V([(1,0)]*3)[0]:.10f}")
 V_e_val = chain_V([(1,0)]*3)[0]
 print(f"  V_e · z = {V_e_val * z:.10f}")
 print(f"  V_pn / V_e = {V_pn_exact / V_e_val:.10f}")
-print(f"  z - h/2 = {z - h/2:.10f}")
+print(f"  z + d_pn = {z + _pn_d(h):.10f}"  f"   (colour-blind z - h/2 was {z - h/2:.10f})")
 print()
 
 # ── Witness ──────���──────────────────────────────────────────────
@@ -295,9 +306,9 @@ w.add_assertion(
 )
 
 w.add_assertion(
-    "V_pn = W_std*(z-h/2)",
+    "V_pn = W_std*(z+d_pn)",
     computed=V_pn_exact,
-    expected=W_STD * (z - h/2),
+    expected=W_STD * (z + _pn_d(h)),
     tolerance=1e-15,
     unit="dimensionless",
     source="Standard rep carries all pn binding",

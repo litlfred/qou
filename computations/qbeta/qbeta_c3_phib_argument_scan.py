@@ -117,7 +117,7 @@ def main() -> int:
     # ---- targets, from first principles ----
     S, r, sub = {}, {}, {}
     for a, q in anchors.items():
-        sub[a] = substrate_ladder_quantities(q)
+        sub[a] = substrate_ladder_quantities(q, convention="C")
         c3 = c3_target_at(q, Qcod, me)
         S[a] = c3 + Vol41
         r[a] = S[a] * sub[a]["u"] ** 3
@@ -141,7 +141,7 @@ def main() -> int:
 
     # ---- argument menu + readouts per anchor ----
     def args_menu(q, b):
-        s = substrate_ladder_quantities(q)
+        s = substrate_ladder_quantities(q, convention="C")
         t = mp.log(q)
         cb = mp.mpc(0, 1) * (b + 1 / b) / 2
         u = s["u"]
@@ -279,6 +279,15 @@ def main() -> int:
     }
     out = os.path.join(_HERE, "qbeta-c3-phib-argument-scan.witness.json")
     with open(out, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
 
     print("\nVERDICT:", verdict)

@@ -121,6 +121,46 @@ SELF_DESCRIBING = {
 }
 
 
+# Any ONE of these names satisfies "this witness says which producer wrote it".
+# It is a FAMILY, not a single field, and that is load-bearing — see
+# `_has_provenance`. Mirrors PROVENANCE_KEYS in
+# witness_provenance_attribution_audit.py, plus `producer`, which that audit
+# does not yet read.
+PROVENANCE_KEYS = ("scriptFile", "script", "scriptPath", "producer")
+
+
+def _has_provenance(w) -> bool:
+    """Does this witness name its producer, under any accepted key?
+
+    Checked top-level AND under `witness`, because the corpus carries both
+    layouts (the attribution audit records the same split).
+
+    Asking about the FAMILY rather than about `scriptFile` is what keeps this
+    rule quiet, and the difference was measured rather than assumed. Over the
+    400 commits of `main` preceding 2026-08-28 — 141 witness modifications — a
+    naive `scriptFile disappeared` rule fires once, on
+    `chi-deuteron-h6-at-qinv-50dps` at 95413a3619. That is a RENAME, not a
+    loss: `scriptFile` became `producer` in the same commit that added
+    `q0Value`, `q_0_50dps` and `n_colour_weighted_crossings`. The witness
+    gained content and never stopped naming its producer. Flagging it would be
+    the false positive `_check_producer_takeover` has a whole paragraph
+    warning about — "how a guard like this earns a reputation for crying wolf
+    and gets switched off".
+
+    Family rule, same two windows: 0 fires in the 141 clean modifications,
+    17 fires on the 122 modifications made by the `migrate(q0) batch*`
+    commits — which are the 17 real casualties (bean qou-4un2).
+    """
+    if not isinstance(w, dict):
+        return False
+    holders = [w]
+    nested = w.get("witness")
+    if isinstance(nested, dict):
+        holders.append(nested)
+    return any(isinstance(h.get(k), str) and h.get(k).strip()
+               for h in holders for k in PROVENANCE_KEYS)
+
+
 def count_leaves(obj) -> int:
     """Total scalar leaves — the payload size, independent of type."""
     if isinstance(obj, dict):
@@ -147,12 +187,39 @@ def shape_of(w) -> dict:
         "assertions": len(assertions) if isinstance(assertions, list) else 0,
         "data_keys": len(data) if isinstance(data, dict) else 0,
         "durationMs": _duration(w),
+        "provenance": _has_provenance(w),
     }
 
 
 def compare(before: dict, after: dict, tolerance: float) -> list[str]:
     """Reasons the new shape looks like a collapse. Empty list == fine."""
     reasons: list[str] = []
+
+    # Provenance loss, checked first because it is the one rule here with no
+    # tolerance: four lost top-level keys are four leaves out of thousands, so
+    # every OTHER rule in this function is blind to it by arithmetic. That is
+    # not hypothetical — this guard has been wired and blocking since
+    # 2026-08-15 and the `migrate(q0) batch*` commits deleted provenance from
+    # 17 witnesses on 2026-08-24, under it, silently (bean qou-4un2).
+    #
+    # It escaped the provenance audit too, for the complementary reason: that
+    # audit counts witnesses which CARRY a scriptFile, so a deletion shrinks
+    # its denominator instead of failing anything. Its own docstring says
+    # witnesses with "no scriptFile at all are invisible to the method".
+    #
+    # And it cannot be fixed at the writer. `_check_producer_takeover` in
+    # qou_substrate/witness.py already refuses a write that "drops N field(s)
+    # the committed one carries", but it has exactly one call site — inside
+    # WitnessBuilder.save() — and every one of the 17 casualties writes with a
+    # bare json.dump and never reaches it. A guard keyed on the FILE is the
+    # only kind that sees them.
+    if before["provenance"] and not after["provenance"]:
+        reasons.append(
+            "provenance vanished: the committed witness names its producer "
+            f"(one of {', '.join(PROVENANCE_KEYS)}) and this one names none. "
+            "Re-running a producer that does not emit provenance DELETES it; "
+            "restore the field rather than committing the loss (bean qou-4un2)"
+        )
 
     b, a = before["leaves"], after["leaves"]
     if b > 0 and a < b * (1.0 - tolerance):
@@ -228,10 +295,7 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
     """(findings, skipped) over every witness modified against HEAD."""
     findings, skipped = [], []
     for rel in modified_witnesses():
-        if Path(rel).name in SELF_DESCRIBING:
-            skipped.append(f"{rel} (self-describing audit output — shrinks "
-                           f"legitimately as the corpus is drained)")
-            continue
+        self_describing = Path(rel).name in SELF_DESCRIBING
         head_raw = _git("show", f"HEAD:{rel}")
         if head_raw is None:
             skipped.append(f"{rel} (new file — no HEAD copy to compare)")
@@ -244,6 +308,23 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
             before, after = json.loads(head_raw), json.loads(path.read_text())
         except Exception as exc:
             findings.append({"path": rel, "reasons": [f"unparseable JSON: {exc}"]})
+            continue
+        # A self-describing audit output shrinks legitimately as the corpus is
+        # drained, so it is exempt from the SIZE rules — but not from the
+        # provenance rule, which is about identity, not size. An audit witness
+        # that stops naming its producer is exactly as broken as any other.
+        # So the skip is applied per-rule now rather than per-file; before
+        # this, `continue` exempted these files from every future rule too,
+        # which is how a scoped exemption silently becomes a blanket one.
+        if self_describing:
+            reasons = compare(shape_of(before), shape_of(after), tolerance)
+            reasons = [r for r in reasons if r.startswith("provenance vanished")]
+            if not reasons:
+                skipped.append(f"{rel} (self-describing audit output — shrinks "
+                               f"legitimately as the corpus is drained)")
+                continue
+            findings.append({"path": rel, "reasons": reasons,
+                             "before": shape_of(before), "after": shape_of(after)})
             continue
         reasons = compare(shape_of(before), shape_of(after), tolerance)
         reasons += _escape_regression(head_raw, path.read_text())
@@ -285,6 +366,25 @@ def self_test() -> int:
          {"assertions": [{"a": 1}] * 4, "data": {"k": [1] * 200}},
          {"assertions": [], "data": {"k": [1] * 200}}, True),
         ("growth is NOT flagged", gutted, full, False),
+        # Provenance rule (bean qou-4un2). Case 1 is the measured shape of the
+        # 17 casualties: same payload, four top-level keys gone. Case 2 is the
+        # single false positive a naive per-field rule would have produced,
+        # taken from chi-deuteron-h6-at-qinv-50dps at 95413a3619.
+        ("provenance deletion is caught",
+         {"scriptFile": "p.py", "engine": "python", "data": {"k": [1] * 200}},
+         {"data": {"k": [1] * 200}}, True),
+        ("a scriptFile -> producer RENAME is NOT flagged",
+         {"scriptFile": "p.py", "data": {"k": [1] * 200}},
+         {"producer": "p.py", "data": {"k": [1] * 200}}, False),
+        ("a witness that never had provenance is NOT flagged",
+         {"data": {"k": [1] * 200}},
+         {"data": {"k": [1] * 200}}, False),
+        ("provenance nested under `witness` counts",
+         {"witness": {"scriptFile": "p.py"}, "data": {"k": [1] * 200}},
+         {"data": {"k": [1] * 200}}, True),
+        ("an empty-string scriptFile does not count as provenance",
+         {"scriptFile": "   ", "data": {"k": [1] * 200}},
+         {"data": {"k": [1] * 200}}, False),
     ]
 
     failed = 0
@@ -354,12 +454,35 @@ def main() -> int:
         print(f"  COLLAPSED  {f['path']}")
         for r in f["reasons"]:
             print(f"      {r}")
-    print()
-    print("  A witness that lost this much content is almost certainly a partial")
-    print("  write (the producer writes incrementally and was interrupted) rather")
-    print("  than a real result. Re-run the producer to completion and re-check.")
-    print("  The raw-float64 ratchet will NOT catch this: a gutted witness scores")
-    print("  zero raw floats, which reads as a perfect drain (bean qou-h4xk).")
+    # The two rule families need OPPOSITE advice, so the trailer is printed per
+    # family rather than as one block. Telling someone whose witness lost four
+    # provenance keys to "re-run the producer to completion" is not merely
+    # unhelpful — re-running is what deleted them, so the advice would cause
+    # the damage a second time.
+    all_reasons = [r for f in findings for r in f["reasons"]]
+    prov = [r for r in all_reasons if r.startswith("provenance vanished")]
+    size = [r for r in all_reasons if not r.startswith("provenance vanished")]
+
+    if size:
+        print()
+        print("  A witness that lost this much content is almost certainly a partial")
+        print("  write (the producer writes incrementally and was interrupted) rather")
+        print("  than a real result. Re-run the producer to completion and re-check.")
+        print("  The raw-float64 ratchet will NOT catch this: a gutted witness scores")
+        print("  zero raw floats, which reads as a perfect drain (bean qou-h4xk).")
+
+    if prov:
+        print()
+        print("  DO NOT re-run the producer to fix a provenance loss — re-running is")
+        print("  what deleted it. These producers write the witness with a bare")
+        print("  json.dump and never emit scriptFile themselves; the field on disk")
+        print("  was added downstream, so every re-run drops it again.")
+        print()
+        print("  Restore the field from the committed copy instead:")
+        print("      git show HEAD:<path>   # read the provenance keys back")
+        print("  and, if you own the producer, route it through WitnessBuilder so")
+        print("  the next run emits its own provenance (bean qou-4un2).")
+
     print()
     print("  If the shrink is real and intended, re-run with --accept and say so")
     print("  in the commit message.")

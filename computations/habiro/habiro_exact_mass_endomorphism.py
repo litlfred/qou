@@ -90,7 +90,10 @@ HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
 Q0               = mp.mpf(1) / (mp.mpf(1) - HBAR_Q)
 QI0              = mp.mpf(1) / Q0
 HA               = Q0 - QI0
-Z_MARK           = mp.mpf(1) / (mp.sqrt(Q0) + mp.sqrt(QI0))
+# Convention D (canonical, 2026-08-15 owner ruling): z = q^3/(q^2+1) = q^2/[2]_q.
+# Convention C, 1/(sqrt q + 1/sqrt q), is excised. Under D no square root is
+# needed, so a surviving mp.sqrt here would be z_C showing through.
+Z_MARK           = Q0**3 / (Q0**2 + 1)
 
 # Wedderburn weights for n = 3 (per mass_endomorphism.py).
 def qint(k):

@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-lat-0003021v3",
+ "source_sha256": "b35dfd9ab88b71d8",
+ "brief": "Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature — We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in",
+ "extended": "**Low-lying Eigenvalues of the QCD Dirac Operator at Finite Temperature**\n\n*P.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d*\n\n21 pp, 4 sections.\n\n**Abstract.** We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical four ﬂavor QCD. In both cases we ﬁnd, in the high temperature phase, a density with close to square root behavior, ρ(λ) ∼ (λ −λ0)1/2. In the quenched simulations we ﬁnd, in addition, a volume independent tail of small eigenvalues extending down to zero. In the dynamical simulations we also ﬁnd a tail, decreasing with decreasing mass, at the small end of the spectrum. However, the tail falls oﬀquite quickly and does not seem to extend to zero at these couplings. We ﬁnd that the distribution of the smallest Dirac operator eigenvalues provides an eﬃcient observable for an accurate determination of the location of the chiral phase transition, as ﬁrst suggested by Jackson and Verbaarschot. NBI-HE-00-12 NORDITA-2000/30 HE hep-lat/0003021\n\n**Outline.** Abstract; Introduction; Conclusions; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 284
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "2-19"
+  },
+  {
+   "id": "sec-002-conclusions",
+   "title": "Conclusions",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "20-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

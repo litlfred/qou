@@ -23,7 +23,7 @@ That operational conclusion was WRONG. The data is in the corpus.
 ## The methodology defect (self-correction)
 
 The M3 sweep keyed on the string "Stokes". Garoufalidis-Zagier "Knots and Their
-Related q-Series" (SIGMA 19 (2023) 082, uploads/2304.09377v2.pdf) says "Stokes"
+Related q-Series" (SIGMA 19 (2023) 082, library/arxiv-2111.06645/2304.09377v2.pdf) says "Stokes"
 EXACTLY ONCE, so it ranked below thirty other files and was never opened. It is not
 obscure -- it is the sequel [44] that 2111.06645 announces IN ITS OWN ABSTRACT, an
 abstract I had already quoted.
@@ -144,7 +144,7 @@ Went after "an independent resurgence DT count for 6_1". Did NOT get one -- see 
 scope note -- but got a third independent determination of r, and the closest one yet
 to the resurgence side.
 
-Ohtsuki-Yokota (uploads/ki6c.pdf; saddle data extracted by a sibling, bean qou-6ort)
+Ohtsuki-Yokota (library/ki6c/ki6c.pdf; saddle data extracted by a sibling, bean qou-6ort)
 give 6_1's gluing-equation quartic 2z^4 - z^3 - 2z^2 + z + 1, from a STATIONARY-PHASE
 analysis of the Kashaev integral. Measured exactly: irreducible, discriminant 257
 (prime), 0 real roots -> signature [0,2]. Matches DG's trace field on every invariant.
@@ -221,7 +221,7 @@ nineTwelve_prediction. Probe 29/29.
    RESULT: 94 of 371 PDFs match; the ranking is materially different from the
    Stokes ranking, and it surfaced a SECOND confirmed miss:
 
-     uploads/ki6c.pdf = Ohtsuki-Yokota, "On the asymptotic expansions of the Kashaev
+     library/ki6c/ki6c.pdf = Ohtsuki-Yokota, "On the asymptotic expansions of the Kashaev
      invariant of the knots with 6 crossings" -- i.e. 6_1, 6_2, 6_3, with the volume
      conjecture proved for them. It contains the string "Stokes" ZERO times, so it was
      structurally invisible to the original sweep. Second instance of the same defect,

@@ -134,7 +134,7 @@ def main():
 
     wb.add_assertion(
         "wenzl_matches_binding_canonical",
-        computed=float(fact_match),
+        computed=fact_match,
         expected=0,
         tolerance=1e-10,
         source="Wenzl-bridge joint-word Δtr = binding_canonical Δtr to 11 "
@@ -144,7 +144,7 @@ def main():
     )
     wb.add_assertion(
         "conventions_differ",
-        computed=float(fabs(dtr_wenzl - dtr_planck)),
+        computed=fabs(dtr_wenzl - dtr_planck),
         expected=0.171,
         tolerance=0.01,
         source="Wenzl JM (0.5952) ≠ Plancherel (0.4241): per-block weight difference",

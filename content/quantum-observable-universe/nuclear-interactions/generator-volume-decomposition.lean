@@ -29,7 +29,7 @@ noncomputable def transferStep (q : ℝ) (a b c d : ℝ) : ℝ × ℝ :=
     crossings at generator σ_i. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def generatorVolume (q a b : ℝ) : ℝ :=
-  let z := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  let z := q ^ 3 / (q ^ 2 + 1)   -- convention D
   Real.log |z * a + b|
 
 /-- The total nuclear energy is the sum of generator volumes. -/

@@ -10,6 +10,9 @@ import { definition } from "../../schema/builders";
  *
  *   - **pp interface** (proton ↔ proton): bare σ generator
  *   - **pn interface** (heterogeneous): averaged Δ_I = σ − h/2
+ *     (the δ = 0 convention; the canonical colour-tube-weighted
+ *     interface factor is σ − h(1/2 − δ/4), differing by hδ/4 —
+ *     the counts below are independent of this choice)
  *   - **nn interface** (neutron ↔ neutron): inverse σ⁻¹
  *
  * Under the canonical pppnnn ordering (all Z protons first, then
@@ -30,7 +33,7 @@ export default definition({
   label: "def:canonical-braid-interface-composition",
   title:
     "Canonical-braid interface composition $(n_{pp}, n_{pn}, n_{nn})$ for atom $(Z, N)$ in pppnnn ordering",
-  uses: [],
+  uses: ["prop:flavor-split-substrate"],
   cites: [],
   lean: {
     ref: "qou:QOU.BraidKnot.InterfaceComposition",

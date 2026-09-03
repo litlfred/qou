@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:47:03.043010+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-30T07:11:54.569270+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
-      "computed": 8,
-      "expected": 8,
+      "computed": true,
+      "expected": true,
       "passed": true,
       "tolerance": 0.0,
       "source": "Enumeration of structurally-motivated bar-symmetric candidates"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
-  "scriptHash": "de4d24957fbe",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "94e5a2473066",
+  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -45,10 +45,10 @@
   "auditOnly": "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md",
   "data": {
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
-    "m_e_MeV": "0.51099895069",
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "eight_G": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "B_AME_MeV": "28.295674",
-    "required_rho_F": "1.889169370864662482713153983924592115958135460862527017534005472078254",
+    "required_rho_F": "1.889169370864662482713153983924592115958135460862524927082573768461504",
     "candidates": [
       {
         "name": "C1: 2 [production, postulated]",
@@ -126,6 +126,6 @@
     "verdict": "BAR-SYMMETRIC ρ_F CANDIDATES ALL FAIL — best is C1: 2 [production, postulated] at +5.87% vs the current production at +5.87%. None of the substrate bar-symmetric forms naturally produce ⁴He binding. CONFIRMS that ⁴He gap needs the categorical multi-nucleon interface operator (per PR #1621 research direction), NOT a substrate constant. 8th-ansatz fishing among bar-symmetric forms is unproductive.",
     "anti_pattern_guard": "This probe TESTS existing bar-symmetric substrate forms; it does NOT propose new fit candidates. Verdict is binary: a bar-symmetric ρ_F either closes the gap (worth investigating) or doesn't (confirms structural-operator direction). Fishing for sub-1% matches in a 6-parameter family would be the 8th-ansatz trap per AGENTS.md."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

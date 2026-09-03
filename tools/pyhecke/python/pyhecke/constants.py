@@ -39,6 +39,7 @@ Symbols owned by this module:
 """
 
 from __future__ import annotations
+from typing import Literal
 
 import math
 
@@ -119,33 +120,6 @@ _bare_alpha_inv = q0 * q_int(9) * q_int(10)
 # G_CS encodes the CS pairing of T_{2,9}∪T_{3,5} on Bring's surface:
 #   Diagonal: CS + self-linking²/crossing²
 #   Off-diagonal: mutual CS from linking number |2×5-3×9|=17
-_CS_T29 = math.pi**2 * 10.0/9.0       # CS(T_{2,9}) = π²(m²-1)(n²-1)/(12mn)
-_CS_T35 = math.pi**2 * 16.0/15.0      # CS(T_{3,5})
-_hbar_q2 = (1.0 - qi)**2               # ℏ_q²
-_n2 = q_int(2)
-_c1 = (_CS_T29 + _CS_T35) * (_n2/2.0) * _hbar_q2 / _bare_alpha_inv
-
-# Gram matrix of CS pairing (classical)
-_sl = 8  # self-linking = (m-1)(n-1) for both T_{2,9} and T_{3,5}
-_linking = 17  # |2×5-3×9|
-_G_cl_11 = _CS_T29 + math.pi**2 * _sl**2 / (2*9)**2
-_G_cl_22 = _CS_T35 + math.pi**2 * _sl**2 / (3*5)**2
-_G_cl_12 = math.pi**2 * _linking**2 / (2*9 * 3*5)
-_det_G_cl = _G_cl_11 * _G_cl_22 - _G_cl_12**2
-
-# Gram matrix (q-deformed: replace m,n with [m],[n])
-_linking_q = abs(_n2*q_int(5) - q_int(3)*q_int(9))
-_CS_q_29 = math.pi**2 * (_n2**2-1)*(q_int(9)**2-1)/(12*_n2*q_int(9))
-_CS_q_35 = math.pi**2 * (q_int(3)**2-1)*(q_int(5)**2-1)/(12*q_int(3)*q_int(5))
-_sl_q_29 = (_n2-1)*(q_int(9)-1)
-_sl_q_35 = (q_int(3)-1)*(q_int(5)-1)
-_G_q_11 = _CS_q_29 + math.pi**2 * _sl_q_29**2 / (_n2*q_int(9))**2
-_G_q_22 = _CS_q_35 + math.pi**2 * _sl_q_35**2 / (q_int(3)*q_int(5))**2
-_G_q_12 = math.pi**2 * _linking_q**2 / (_n2*q_int(9) * q_int(3)*q_int(5))
-_det_G_q = _G_q_11 * _G_q_22 - _G_q_12**2
-
-_kappa_gram = _det_G_cl / _det_G_q  # J² self-dual damping factor
-
 # ── The CS tower is geometric — sum it exactly, do not truncate ──────
 #
 # The correction tower is  Σ_{j≥1} c₁^j κ^{j−1}, i.e. c₁ times a geometric
@@ -153,21 +127,18 @@ _kappa_gram = _det_G_cl / _det_G_q  # J² self-dual damping factor
 #
 #     1 + Σ_{j≥1} c₁^j κ^{j−1}  =  1 + c₁/(1 − c₁κ)
 #
-# whose expansion is 1 + c₁ + c₁²κ + c₁³κ² + …, reproducing the previous
-# order-2 truncation as its first three terms.
+# whose expansion is 1 + c₁ + c₁²κ + c₁³κ² + …, reproducing an earlier
+# order-2 truncation as its first three terms (the truncation cost 11.06
+# ppb at the substrate anchor; the exact form has no order parameter).
 #
-# This file previously shipped that order-2 truncation
-# (`1 + _c1 + _c1**2 * _kappa_gram`). At the substrate anchor the ratio is
-# c₁·κ ≈ 2.7e-3, so truncating cost **11.06 ppb** — significant for a
-# constant consumed by ppb-level claims. The exact form is no more
-# expensive to evaluate and has no order parameter to get wrong.
-def _alpha_em_tower(c1, kappa):
-    """Exact resummation of the CS correction tower (all orders)."""
-    return 1.0 + c1 / (1.0 - c1 * kappa)
-
-
-ALPHA_EM_INV_DERIVED = _bare_alpha_inv * _alpha_em_tower(_c1, _kappa_gram)
-# ≈ 137.0359350940 at the proton-pinned substrate anchor.
+# FLOAT64 EXCISED (owner directive 2026-08-30, bean qou-ozvb): the CS-tower
+# arithmetic (CS constants, both Gram determinants, κ, the resummation)
+# previously ran a second time at module level in float64 alongside
+# `alpha_em_inv_mp` below. The mp function is now the ONLY implementation;
+# the module-level constant is a single marked downcast of it. The two
+# paths agreed to ~13 digits, so the float64 value of
+# `ALPHA_EM_INV_DERIVED` is unchanged; what changed is that no consumer of
+# this module can now reach an α that did not come through mp arithmetic.
 #
 # NOTE ON THE ANCHOR: this is proton-pinned (`Q` from qou-substrate is
 # `_solve_q_proton_f64`, re-pinned 2026-05-28). A stale comment here used to
@@ -228,9 +199,27 @@ def alpha_em_inv_mp(dps: int = 50):
         return +(bare * (1 + c1 / (1 - c1 * kappa)))
 
 
+ALPHA_EM_INV_DERIVED = float(alpha_em_inv_mp())  # float64-intentional: back-compat downcast of the mp value
+# ≈ 137.0359350940 at the proton-pinned substrate anchor.
+
 # Canonical α_EM: the CS-corrected value is physical
 alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
 alpha_em_derived = alpha_em  # alias for backward compatibility
+
+
+def e_hartree_ev_mp(dps: int = 50):
+    """Hartree energy in eV at mp precision: E_h = α_EM²·m_e c².
+
+    Uses the CS-corrected `alpha_em_inv_mp` and the CODATA electron mass
+    `M_E_MEV` — NOT the rounded 511000.0 eV this module used through
+    2026-08-29, which understated m_e by 2.05e-6 relative and put that
+    error straight into every consumer of `E_HARTREE_EV` (bean qou-ozvb).
+    """
+    import mpmath as _mp
+    with _mp.workdps(dps):
+        inv = alpha_em_inv_mp(dps)
+        me_ev = _mp.mpf(str(M_E_MEV)) * _mp.mpf(10) ** 6
+        return +(me_ev / inv ** 2)
 
 
 # ── Knot-volume binding scales ──
@@ -275,7 +264,10 @@ FIG8_R_41  = (1 - h**2) / (4 - h**2 + 4*h**2)          # [4,1] ratio ≈ 0.239
 
 # ── Molecular energy scales ──
 # Use the CS-corrected alpha_em above (NOT bare α).
-E_HARTREE_EV = 511000.0 * alpha_em**2  # Hartree energy (eV)
+# FLOAT64 EXCISED + rounded-m_e corrected (2026-08-30, bean qou-ozvb): was
+# `511000.0 * alpha_em**2` = 27.211468 eV; now the marked downcast of the mp
+# route with CODATA M_E_MEV = 27.211412 eV (−2.05e-6 rel — the rounded m_e).
+E_HARTREE_EV = float(e_hartree_ev_mp())  # float64-intentional: back-compat downcast
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q**2  # molecular energy unit (eV)
 KAPPA = M_E_MEV                    # nuclear binding scale (MeV)
@@ -344,3 +336,107 @@ __all__ = [
     # Mass constants (re-exported for one-stop convenience)
     "M_E_MEV", "M_P_MEV", "M_N_MEV",
 ]
+
+
+# ── p-n interface convention ──────────────────────────────────────────────────
+#
+# The inter-nucleon (proton-neutron) bond carries the Hecke element
+#
+#     sigma_g - (h/2 - eps*h) * I,     trace factor  f_pn = z - h*(1/2 - eps)
+#
+# with z = q^3/(q^2+1) (convention D) and h = q - 1/q. Two values of the
+# weight offset eps are meaningful:
+#
+#     strict_averaged       eps = 0        f_pn = z - h/2
+#     bring_color_weighted  eps = delta/4  f_pn = z - h*(1/2 - delta/4)
+#
+# `strict_averaged` is the BAR-SYMMETRISER of z: z - h/2 = (z(q) + z(1/q))/2
+# exactly (QOU.MassTheory.strictPn_eq_barSymmetriser, sorry-free). It is
+# correct mathematics and the wrong p-n bond for this framework, because it
+# is COLOUR-BLIND -- it averages the two flavours 50/50 and so cannot see the
+# substrate flavour split at all.
+#
+# The owner ruling of 2026-08-15 (R3), reaffirmed 2026-08-26, makes
+# `bring_color_weighted` canonical.
+#
+# WHY THE WEIGHTING LIVES AT THE p-n BOND AND NOWHERE ELSE. f_pn is the
+# weighted MEAN of f_pp and f_nn, and those two are bar-conjugates of one
+# another (f_nn(q) = f_pp(1/q), QOU.MassTheory.fNN_eq_fPP_bar). A like-flavour
+# bond has no mean to tilt: averaging f_pp with itself returns f_pp for any
+# weights summing to one. Only the mixed bond has two distinct things to
+# weight.
+#
+# At the proton pin the two conventions differ by h*delta/4 = 7.190163e-05,
+# relative 1.415e-04 -- about 1e11 times the float64 floor, so any recorded
+# number identifies its own convention.
+
+PnConvention = Literal["strict_averaged", "bring_color_weighted"]
+
+#: The live convention. Flipping this one line flips every call site that
+#: routes through `pn_interface_offset` -- which is the point of having it.
+PN_CONVENTION: PnConvention = "bring_color_weighted"
+
+
+def flavor_split_leading(q):
+    """Substrate flavour split ``delta = Delta_m / M_N`` at leading order.
+
+        delta = (q - 1)^2 * (1 - q^-4) / 3 = hbar_q^2 * h_q * [2]_q / 3
+
+    Exact for a symbolic ``q`` as well as an ``mpf`` one. The reciprocal is
+    ``1 / q`` and not ``mpf(1) / q``: identical for an mpf argument, but for a
+    sympy ``q`` the latter drags a ``Float(1.0)`` in and the whole expression
+    inherits float contagion instead of staying a rational function.
+
+    Mirrors ``computations/_li_2_q_util.flavor_split_leading``; the two are
+    asserted equal to 50 dps by ``test_pn_convention.py``. The duplication is
+    deliberate -- ``pyhecke`` is Layer 2b and must not import Layer 3 -- and
+    the test is what keeps it from drifting.
+    """
+    qi = 1 / q
+    return (q - 1) ** 2 * (1 - qi ** 4) / 3
+
+
+def pn_interface_offset(q, convention: "PnConvention | None" = None):
+    """The ``d`` coefficient of the p-n crossing: ``-h*(1/2 - eps)``.
+
+    This is the number that goes into a ``(c, d)`` crossing pair, so callers
+    that wrote ``(1.0, -h / 2)`` become ``(1.0, pn_interface_offset(q))``.
+
+    Returns the OFFSET, not the trace factor. The trace factor is
+    ``markov_z(q) + pn_interface_offset(q)``.
+    """
+    conv = PN_CONVENTION if convention is None else convention
+    h = q - 1 / q
+    if conv == "strict_averaged":
+        return -(h / 2)
+    if conv == "bring_color_weighted":
+        # -h*(1/2 - delta/4), rearranged as -h*(1 - delta/2)/2 so that no
+        # Python `1/2` (a float 0.5) ever enters. Do NOT "simplify" this
+        # back: for a sympy q the float would contaminate the whole
+        # rational function, which is the trap flavor_split_leading's own
+        # docstring records.
+        return -(h * (1 - flavor_split_leading(q) / 2) / 2)
+    raise ValueError(f"unknown p-n convention: {conv!r}")
+
+
+def pn_interface_offset_from_h(h, convention: "PnConvention | None" = None):
+    """`pn_interface_offset` for a caller that has ``h`` but not ``q``.
+
+    Most p-n crossing sites in `computations/` bind the Hecke ``h`` at module
+    level and never keep ``q`` in scope, so requiring ``q`` would turn a
+    one-token edit into a hunt through nine files for whatever the local
+    name for the substrate modulus happens to be.
+
+    ``h = q - 1/q`` inverts to ``q = (h + sqrt(h^2 + 4)) / 2`` on the branch
+    ``q > 1``, which is the substrate branch (``q0 ~ 1.11``). The negative
+    root is ``-1/q`` and is not a modulus.
+
+    Python mirror of `color_weight.rs::pn_offset_from_h`, which exists for
+    the same reason on the Rust side.
+    """
+    conv = PN_CONVENTION if convention is None else convention
+    if conv == "strict_averaged":
+        return -(h / 2)          # no q needed on this branch
+    q = (h + (h * h + 4) ** 0.5) / 2 if isinstance(h, float) else \
+        (h + (h * h + 4) ** (type(h)(1) / 2)) / 2
+    return pn_interface_offset(q, conv)

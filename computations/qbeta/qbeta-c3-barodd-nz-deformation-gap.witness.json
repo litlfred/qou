@@ -1,40 +1,40 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:44:54.598799+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T15:28:25.637730+00:00",
+  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
   "assertions": [
     {
       "name": "vol_4_1_eq_2_lambda_pi3",
-      "computed": 3.622271631530685e-71,
+      "computed": "3.62227163153068494700364771635511671227301247925565527583305e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "Bloch-Wigner D(e^{iπ/3})=Λ(π/3)"
     },
     {
       "name": "cs_4_1_complete_zero",
-      "computed": 9.055679078826712e-72,
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "4₁ amphichiral: CS=0 at complete structure"
     },
     {
       "name": "smooth_deformation_ratio_is_unity_not_minus4",
-      "computed": 2.2114311648944016e-07,
+      "computed": "0.000000221143116489440166747553953987200759254724514126386036440489",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "smooth real u(q0)∝log q0 gives ratio~1; measured is -4.08 -> phase channel"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "qbeta-c3-barodd-nz-deformation-gap",
   "scriptFile": "qbeta_c3_barodd_nz_deformation_probe.py",
-  "scriptHash": "77957136ea9b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4b29a7901782",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,12 +44,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
   },
   "invocation": {
     "argv": [

@@ -47,7 +47,7 @@
         "anchor_stable": false,
         "wired": false,
         "producer": "docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md",
-        "note": "Proton-anchor near-match; REFUTED as real-q fibre element (swings -2.88% to muon; dc_3/dq ~ 4.6e6). Locked behind conditional QbetaC3StructuralFormClass (3b-cond), not a derivation."
+        "note": "Proton-anchor near-match; REFUTED as real-q fibre element (swings -2.375% to muon; dc_3/dq ~ 3.84e6). Locked behind conditional QbetaC3StructuralFormClass (3b-cond), not a derivation. CORRECTED 2026-08-29 (qou-kt8o): this note read '-2.88%' and '4.6e6'. Both are the pre-#1422 SUPERSEDED muon c_3 = -2.0097; live was -2.02020024, and the .md twin ck-dk-canonical-registry.md SS3 absorbed the correction on 2026-08-25 (PR #5765) while this JSON did not. The REFUTED verdict is unaffected -- 3.84e6 is just as impossible for a smooth real f as 4.6e6; only the magnitudes were wrong. RE-CORRECTED 2026-08-31 (qou-cds1 / qou-t39x): -2.02020024 is itself the CODATA-2018 extraction, superseded when fca08de7d2 (2026-08-22) moved the muon pin to CODATA 2022. Live muon c_3 = -2.01986031 and the swing is -2.391%, not -2.375%. dc_3/dq is UNCHANGED at 3.84e6 -- it is anchor-layer invariant (secant 3838405.894 at the 2018 pin vs 3838405.878 at the 2022 pin, identical to 8 digits), because both legs move together. AND THE HONEST ERROR BAR, WHICH THIS ROW NEVER CARRIED: propagated through the CAL inputs at CODATA-2022 published uncertainties, c_3(muon) = -2.0199 +- 1.26, dominated by Q_beta alone (0.78 ppm x 1/u^3 = 1.6e6). Nine significant figures are quoted for a quantity the calibration inputs support to 0.2 of one. What IS resolved is the cross-anchor swing: Q_beta and m_e are common mode and cancel in the difference, leaving -0.0494823 +- 0.0052, i.e. 9.5 sigma. So the REFUTED verdict rests on the one quantity here that survives its own error bar; no absolute c_3 digit past the first does."
       },
       {
         "rung": "4",
@@ -142,8 +142,10 @@
     "qbeta_note": "c_2 only (Q_N2-level); q_beta_predicted.py wires no c_3+; ~0.17% c_2-level truncation residual.",
     "mp_wired_rungs": [],
     "mp_note": "bare; ~2.89% categorical VolDensity gap.",
-    "dashboard_beats_100x": 2,
-    "dashboard_total": 7,
+    "dashboard_beats_100x": 1,
+    "dashboard_total": 5,
+    "dashboard_fields": "summary.beats_100x_scoreable / summary.scoreable_total",
+    "dashboard_note": "CORRECTED 2026-08-29 (qou-kt8o) from 2/7. The old pair read summary.beats_100x_count / summary.total, which counts the CALIBRATION INPUTS m_e and m_p alongside the predictions -- m_e's err_ppb is not measured but DEFINED zero, being the CAL-1 input that fixes the MeV unit. AGENTS.md SSPrecision goals: bare beats_100x_count 'must not be quoted as an accuracy result'. The .md twin carried the same 2/7, so the two AGREED and a file-vs-file diff passes them both; ck_dk_registry_validate.py --twin T5 checks each against the witness instead. The surviving 1 is m_K/m_pi, itself truncation-fitted and alpha_em-sorry-conditional, so the UNCONDITIONAL parameter-free count is 0/5.",
     "dashboard_source": "computations/per-observable-100x-status.witness.json"
   },
   "flip_flop_guard": [

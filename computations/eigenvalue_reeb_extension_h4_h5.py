@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
+from math import factorial
 from pathlib import Path
 
 import numpy as np
@@ -29,6 +30,18 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
+
+
+def hook_length_dim(shape) -> int:
+    """f^λ = n! / ∏ hooks — the irrep dimension by a route sharing no code with
+    `build_seminormal_matrices`, so a disagreement between the two is a real
+    finding rather than one construction agreeing with itself."""
+    conj = [sum(1 for r in shape if r > j) for j in range(shape[0])]
+    prod = 1
+    for i, row in enumerate(shape):
+        for j in range(row):
+            prod *= (row - j - 1) + (conj[j] - i - 1) + 1
+    return factorial(sum(shape)) // prod
 
 
 def knot_operator_spectrum(braid_word, n, q_val):
@@ -82,6 +95,12 @@ def main():
 
     vol41 = 2.0298832128
 
+    # Coverage tallies for the "extends beyond H₃" claim, kept for levels 4 and
+    # 5 only — H₃ is the already-proved baseline this probe extends past.
+    spectra_multidim = 0        # multi-dim spectra the run actually produced
+    spectra_expected = 0        # the same count from the hook-length formula
+    level_summaries = []
+
     # Define key braids at each level
     for n_level in [3, 4, 5]:
         print(f"\n{'='*70}")
@@ -106,6 +125,14 @@ def main():
         if n_level >= 5:
             braids["σ₁σ₂σ₃σ₄"] = [(1,0,0),(1,0,1),(1,0,2),(1,0,3)]
             braids["(σ₁σ₂⁻¹)²σ₃σ₄⁻¹"] = [(1,0,0),(1,-1,1),(1,0,0),(1,-1,1),(1,0,2),(1,-1,3)]
+
+        if n_level >= 4:
+            # One spectrum per (braid, multi-dim irrep). How many multi-dim
+            # irreps H_n has is fixed by the hook-length formula, not by
+            # anything this run computed.
+            spectra_expected += len(braids) * sum(
+                1 for p in partitions_of(n_level) if hook_length_dim(tuple(p)) > 1
+            )
 
         for braid_name, word in braids.items():
             results = knot_operator_spectrum(word, n_level, q)
@@ -156,6 +183,17 @@ def main():
 
             print(f"    SUMMARY: {n_unitary}/{n_multidim} multi-dim irreps are unitary")
 
+            if n_level >= 4:
+                spectra_multidim += n_multidim
+            # The per-braid tallies were printed and then discarded — the
+            # witness recorded nothing at all about the levels it extends to.
+            level_summaries.append({
+                "level": n_level,
+                "braid": braid_name,
+                "multidim_irreps": n_multidim,
+                "unitary_multidim_irreps": n_unitary,
+            })
+
     print(f"\n{'='*70}")
     print(f"  PATTERN SUMMARY")
     print(f"{'='*70}")
@@ -169,8 +207,22 @@ def main():
         "irreps at higher Hecke levels."
     )
     w.set_content_block("prop:figure-eight-reeb-rotation")
-    w.add_assertion("extends_beyond_h3", computed=1, expected=1, tolerance=0,
-                     source="H₄ and H₅ eigenvalues computed")
+    w.add_data("per_braid_unitarity", level_summaries)
+    # Was `computed=1, expected=1` (bean `qou-26f2`). "H₄ and H₅ eigenvalues
+    # computed" is a coverage claim about work that was printed and thrown away:
+    # the constant would have read PASS on a run where every H₄/H₅ irrep came
+    # back dim-0 and was skipped, or where the braid tables above were empty.
+    # Count the multi-dim spectra the run produced against the count the
+    # hook-length formula fixes independently — which also catches a
+    # `build_seminormal_matrices` returning the wrong dimension for an irrep.
+    w.add_assertion("extends_beyond_h3",
+                    computed=str(spectra_multidim), expected=str(spectra_expected),
+                    tolerance=0,
+                    unit="multi-dim (braid, irrep) spectra computed at H₄ and H₅",
+                    source=f"H₄ and H₅ eigenvalues computed: {spectra_multidim} "
+                           f"multi-dim spectra over {len(level_summaries)} (level, braid) "
+                           f"pairs; expected {spectra_expected} = Σ_levels #braids × "
+                           f"#{{λ ⊢ n : f^λ > 1}} from the hook-length formula")
     print(f"\n  Witness: {w.save()}")
 
 

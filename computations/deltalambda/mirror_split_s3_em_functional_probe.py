@@ -325,7 +325,7 @@ def main() -> int:
                         "the S3 orbit average of pair weights is exactly 1/3 of pp"))
             wb.add_assertion(
                 name="N1_prediction_within_half_percent_guarded_datum",
-                computed=float(pred_N1 / split), expected=1.0, tolerance=0.005,
+                computed=pred_N1 / split, expected=1.0, tolerance=0.005,
                 source=("split_pred = B_pp·|mu|/3 under the UNDERIVED unit-capacity "
                         "sum rule vs AME2020 — the guarded near-match (-0.23%); "
                         "reported, not tuned; kappa=1/3 is not thereby derived"))

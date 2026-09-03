@@ -110,7 +110,7 @@ def main() -> int:
     deut = [r for r in rows if r["atom"] == "deuteron"][0]
     w.add_assertion(
         name="deuteron_full_equals_capped_control",
-        computed=float(deut["cap_error_rel"]), expected=0.0, tolerance=1e-9,
+        computed=deut["cap_error_rel"], expected=0.0, tolerance=1e-9,
         source="deuteron had 0 skipped → full tr_M == cached tr_M",
     )
     out = w.save()

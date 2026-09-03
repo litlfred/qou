@@ -250,8 +250,20 @@ def main() -> int:
   arithmetic it uses. That is not a 16-digit corroboration and is not quoted as
   one.
 
-  SURVIVES: the combiner cannot arbitrate away from q_0. Three inputs carry q
-  into the A=2 path; only two receive q_val:
+  FIXED 2026-08-24: THE COMBINER NOW REFUSES OFF-ANCHOR q RATHER THAN
+  RETURNING A HYBRID. `compute_tr_m_via_branching` compares q_val against the
+  extract's own `q0Value` stamp and returns a clean error naming the cause.
+  Verified on all four paths: the PRODUCTION default and the 50-digit q_0 pass;
+  the bar image, q = 1.5 and even q_0 + 1e-9 refuse. The gate tolerance is
+  1e-12 rather than 1e-30 because the default sets q_val = float(Q_FLOAT), a
+  float64 truncation ~1e-16 from the stamp -- a tighter gate refused
+  production's own default, caught by testing that path.
+
+  The section below records WHY the refusal is the right disposition, and what
+  it would take to lift it. Read it before attempting to lift it.
+
+  WHAT THE REFUSAL PREVENTS: the combiner cannot arbitrate away from q_0. Three
+  inputs carry q into the A=2 path; only two receive q_val:
 
       y_lambda_at(6, q_val)                     <- q_val   and BAR-EVEN (0.0)
       evaluate_word_matrix_np(mu, intra, q_val) <- q_val
@@ -283,6 +295,24 @@ def main() -> int:
   bar-even: the operator is frozen. The honest minimum is to REJECT
   q_val != q_0 with a clear error rather than return a number. Regenerating
   A^lambda at arbitrary q is the real fix and is separate, larger work.
+
+  WHY NOT JUST BUILD A^lambda AT ARBITRARY q -- I CHECKED, AND THE REPLACEMENT
+  DOES NOT EXIST. `A_operator_extract_at_level`'s header said the correct
+  non-fitted replacement is the closed form
+  `A^lambda_{xi nu}(I) = Pi rho_lambda(I) Pi` in `a_operator_categorical`,
+  "verified exact at 1e-49". Both halves over-read:
+
+    * `categorical_A_interface` is a `raise NotImplementedError` STUB with ZERO
+      callers; its own docstring calls step 4 of the construction "the crux
+      ~500 LOC".
+    * the 1e-49 belongs to a DIFFERENT result -- the combiner identity at
+      lambda |- 12 / A=4 in `a_operator_recursive.py`. What passes on the
+      categorical route is the I = IDENTITY preflight, not the I != 1
+      interface case that is actually needed.
+
+  An agent reading the old wording would conclude the replacement exists and
+  needs only wiring. Corrected in that header (bean `qou-8chw`). Lifting the
+  refusal means implementing that crux, which is genuinely separate work.
 
   NOT CLAIMED. This does not adjudicate tr_M^atom(1/q_0). The transfer value
   there still rests on a single method, and this probe does not add a second.

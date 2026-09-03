@@ -74,6 +74,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _pb  # noqa: E402, F401
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 import json  # noqa: E402
 import sympy as sp  # noqa: E402
@@ -107,8 +108,10 @@ def build_d_ladder():
     O/h through the valuation-aware ser_div)."""
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    q0 = mp.mpf(json.load(open(_pb.witness_path(
-        "q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
+    # q₀ from q_parameter (proton pin, AGENTS.md 2026-08-07 directive).
+    # Was a direct read of q-pinning-50-digit.witness.json, which is the
+    # MUON anchor’s definition and bypasses the manifest entirely.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
     Qb = rat_series(sp.Integer(sgn) * dnet_reg / q)
     QA = rat_series((2 * q + 1 - q**2) * (q + 1) / (2 * q**3))

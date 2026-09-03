@@ -1,0 +1,45 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2408.04921v2",
+ "source_sha256": "dcfe112640a8adda",
+ "brief": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING — 5 sections: Introduction; Irreducible characters of Ck ≀ Sn; X ij",
+ "extended": "**IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING**\n\n*HUIMIN GAO AND NAIHUAN JING*\n\n24 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2 Irreducible characters of Ck ≀ Sn; 1 X ij; 3 Two Iterative Formulas; 4 Further examples",
+ "tokens": {
+  "brief": 38,
+  "extended": 65
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-irreducible-characters-of-ck-sn",
+   "title": "Irreducible characters of Ck ≀ Sn",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-002-x-ij",
+   "title": "X ij",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-two-iterative-formulas",
+   "title": "Two Iterative Formulas",
+   "pages": "7-13"
+  },
+  {
+   "id": "sec-004-further-examples",
+   "title": "Further examples",
+   "pages": "13-24"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

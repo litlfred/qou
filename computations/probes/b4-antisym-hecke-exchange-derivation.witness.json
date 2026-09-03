@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:36.570552+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T08:02:48.177044+00:00",
+  "commitSha": "a263f4f7040df3b4785a5fd050c39f56371cce84",
   "assertions": [
     {
       "name": "candidate1_antisym_hecke_gives_negative_det",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "b4-antisym-hecke-exchange-derivation",
   "scriptFile": "b4_antisym_hecke_exchange_derivation.py",
-  "scriptHash": "1267baf3db56",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "2b4ad1410947",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -49,13 +49,13 @@
   "tier": "structural (one-shot −ln det for two principled exchange factors; no tuning)",
   "result": {
     "building_blocks": {
-      "z_sym": "0.49932",
+      "z_sym": "0.612688",
       "lambda_minus": "-0.949167",
       "minus_h_over_2": "-0.10453"
     },
     "candidate_1_antisym_hecke": {
-      "g": "-0.473938",
-      "det_I_plus_G": "-1.3507",
+      "g": "-0.581543",
+      "det_I_plus_G": "-2.94567",
       "status": "UNPHYSICAL (det < 0 ⇒ −ln det complex)"
     },
     "candidate_2_bar_odd": {

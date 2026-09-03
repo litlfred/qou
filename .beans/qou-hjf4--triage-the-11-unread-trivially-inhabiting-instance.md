@@ -1,11 +1,12 @@
 ---
 # qou-hjf4
 title: Triage the 11 unread trivially-inhabiting-instance candidates
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T14:36:01Z
-updated_at: 2026-08-24T14:36:55Z
+updated_at: 2026-08-24T19:49:32Z
+updated_at: 2026-08-24T17:24:14Z
 ---
 
 From `scripts/trivially-inhabiting-instance-census.py` (PR #5621, audit
@@ -58,3 +59,82 @@ Note `he4-channel-active-set` is in the list above and may be the same story.
 
 Two of the eleven are the **same class in two files**
 (`ShellClosureNFTermCount`), so a single verdict likely covers both.
+
+
+
+---
+
+## Cross-reference added 2026-08-24
+
+`QOU/Interactions/QIntegerMassFormula.lean:185` — third of the three
+"confirmed harmful" above — has a **second** defect this bean does not name, now
+filed as `qou-tpt6`: `fits_AME` is not discharged by the instance at all, it is
+forwarded to `IsAMEValue.fits_bound`, a field whose own docstring reads
+"Trivialized bound hypothesis to close sorry". `IsAMEValue` has **zero instances
+corpus-wide**, so `fits_AME_conditional` is unsatisfiable-as-stated rather than
+vacuously true. Fix them together — the `f_magic := fun _ => 0` verdict this
+bean owns and the laundering `qou-tpt6` owns are the same edit.
+
+
+---
+
+## One candidate removed 2026-08-24 — 11 -> 10, bean stays open
+
+`QIntegerMassFormula.canonical`'s `f_magic := fun _ => 0` is gone: the whole
+module `QOU/Interactions/QIntegerMassFormula.lean` was deleted as unneeded
+(bean `qou-tpt6`). It had no consumers in the compiled tree and duplicated the
+fully-qualified name of an honest sibling under `content/…/mass-theory/` that
+states the conjecture directly and supplies no instance.
+
+So this candidate is not *triaged*, it is **withdrawn** — there is no longer a
+declaration to judge. The remaining ten still need reading.
+## 2026-08-24 — triaged, and the count was wrong: 17 actionable, not 14
+
+PR #5686. Findings recorded, no `content/` Lean changed.
+
+### The pattern the 11 turned out to share
+
+13 files carry the same boilerplate on a global `instance`: *"**Faithful
+instance.** Carries the explicit research-grade conjecture as a sorry."*
+Measured with the census's own comment-stripper: **34 occurrences of `sorry`,
+0 of them a `sorry` term.** All prose. The conjectures are discharged by
+collapsing the model (`PUnit` / `0` / `none` in the data fields), and the
+instances are unconditional, so downstream `#print axioms` shows no `sorryAx`.
+
+- **`CrystalGraphRealization`** — 39 consumers, the largest in the corpus.
+  `NormalForm := PUnit`, `CrystalNode := PUnit`, both crystal operators
+  `none`. Same carrier shape as `triv_hecke`.
+- **`QIntegerMassFormula`** — 13 consumers, split across two declarations.
+  `IsAMEValue`'s third field is the conjecture and says so in its own
+  docstring ("Trivialized bound hypothesis to close sorry");
+  `f_magic := fun _ => 0` is load-bearing for the type match. Verified by
+  `#synth` / `rfl` / `#print axioms`, not by reading.
+- **`MassEndomorphism`** — NOT new. `VolumeBridge.lean` already records it
+  correctly and calls the demotion "tracked separately". It has not landed.
+
+### Two benign, and the discriminator they establish
+
+`HasHe4ChannelActiveSet` (zeros are the inactive channels' real LP values,
+pinned by four `by norm_num` fields) and `hasHoefsmitData_vacuum` (indexed AT
+the vacuum). **A constant is content-free only when the carrier is generic AND
+nothing constrains it** — not merely when a field holds a constant.
+
+### Three defects in my own detector
+
+1. **It hid its worst cases.** Every `[…]` binder counted as a guard, so
+   `instance canonical {R} [CommRing R] {β} : MassEndomorphism R β` read as
+   "guarded by CommRing" and vanished, while the milder `trivial_int_zero`
+   stayed visible only because concrete `ℤ` needs no such binder.
+   23 unguarded / 14 actionable → **30 / 17**.
+2. **ASCII `->` contains `>`**, a `PROP_MARKERS` entry, so a plain data field
+   read as a proof obligation. Fails in the safe direction — which is why it
+   would never have surfaced on its own. 4 such declarations under `content/`.
+3. **The self-test deleted itself on success.** Its positive case was
+   `skeletonRealisation`, which #5621 correctly demoted, so the test failed
+   *because the corpus was repaired*. Now pinned against an inline fixture.
+
+### Next
+
+Measure the blast radius of demoting `CrystalGraphRealization.canonical`
+(39 consumers) before touching it — same discipline #5581/#5621 used for their
+one-file demotions. The 11 lower-consumer rows are cheaper and could go first.

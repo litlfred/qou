@@ -104,7 +104,7 @@ def hp_volume(name: str) -> mp.mpf:
 
 def main() -> int:
     set_compute_dps()
-    me = mp.mpf(repr(M_E_MEV))
+    me = mp.mpf(M_E_MEV)
     B = b_ame()
 
     w = WitnessBuilder("knot-id-volume-match-adjudication", engine="snappea")

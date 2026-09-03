@@ -1,29 +1,34 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:37.288964+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T10:45:58.885743+00:00",
+  "commitSha": "9c8f246b1d93ad04a0b6769db0956a6fbfda6554",
   "assertions": [
     {
       "name": "framework_b4_far_below_target",
-      "computed": "-0.03284",
-      "expected": "0.063",
-      "passed": false,
-      "tolerance": 0.02
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     },
     {
       "name": "framework_b3_wrong_sign",
       "computed": "True",
       "expected": "True",
       "passed": true
+    },
+    {
+      "name": "framework_b4_wrong_sign",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 0,
   "computation": "b4-framework-connected-cumulant-deficit",
   "scriptFile": "b4_framework_connected_cumulant_deficit.py",
-  "scriptHash": "bf19a0a3cc13",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "62551a01c898",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -46,7 +51,7 @@
     ],
     "reproduce": "python3 -u computations/probes/b4_framework_connected_cumulant_deficit.py"
   },
-  "description": "Framework multiplicative complete-graph connected cumulants (Ursell inversion of committed pair factors): b₄=0.58 MeV = 6.3% of the 9.24 target, b₃ wrong-signed. Quantifies the deficit the [1^4] Slater term must close. audit-only, no fit.",
+  "description": "Framework multiplicative complete-graph connected cumulants (Ursell inversion of committed pair factors): b4=-0.3035 MeV = -3.3% of the 9.2431 target and wrong-signed, b3 wrong-signed. Quantifies the deficit the [1^4] Slater term must close. audit-only, no fit.",
   "tier": "structural (framework's own multiplicative binding, cumulant-inverted)",
   "result": {
     "framework_multiplicative_binding_MeV": {
@@ -67,7 +72,9 @@
     },
     "b4_fraction_of_target": "-0.0328373",
     "b3_wrong_sign": true,
-    "verdict": "Framework multiplicative complete-graph model supplies connected b₄ = 0.583 MeV = 6.3% of the 9.243 target, and a WRONG-SIGNED b₃ (−2.52 vs +1.43). So the [1^4] Slater term (Λ^A(4) nucleon-flavor) must supply the missing ~94% of the 4-body AND repair the 3-body sign. This measures the DEFICIT, not the [1^4] value (that needs the Slater↔trace dictionary). b₂ over-binds (multiplicative deuteron). Scope-(a), no fit."
+    "b4_wrong_sign": true,
+    "deficit_fraction_the_slater_term_must_supply": "1.03284",
+    "verdict": "Framework multiplicative complete-graph model supplies connected b4 = -0.3035 MeV = -3.3% of the 9.2431 target, itself WRONG-SIGNED, and a WRONG-SIGNED b3 (-1.388 vs 1.426). So the [1^4] Slater term must supply ~103% of the 4-body AND repair the 3-body sign and the 4-body sign. This measures the DEFICIT, not the [1^4] value (that needs the Slater-to-trace dictionary). Scope-(a), no fit."
   },
   "context": {
     "axis": "GAP-A-4 class-D — [1^4] value leg, framework connected-cumulant baseline",

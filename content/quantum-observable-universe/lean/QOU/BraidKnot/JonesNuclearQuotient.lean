@@ -65,9 +65,17 @@ open QOU.Braiding
 /-- The Hecke parameter `h = q − q⁻¹` (AGENTS.md §7a: `σ² = h·σ + 1`). -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - 1 / q
 
-/-- The canonical Markov parameter `z = 1/(√q + 1/√q)` — the same value carried
-    by `markovTraceTower_canonical`. -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+/-- The canonical Markov parameter in **convention D**, `z = q³/(q² + 1)` — the
+    same value carried by `markovTraceTower_canonical`.
+
+    **Migrated from convention C 2026-08-26 (bean `qou-cxjq`).** This read
+    `1/(√q + 1/√q)` = `√q/(q+1)`, convention C. The "same value carried by
+    `markovTraceTower_canonical`" clause is why this file had to move in the same
+    tranche as that instance: the tower migrated to D first, which made this
+    docstring's claim FALSE for exactly as long as the two disagreed. A
+    cross-reference between two same-named quantities is only as good as the
+    convention they share. -/
+noncomputable def markovZ (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- **Jones value of the unknot** `= (2,1)` torus link `= tr_M(σ₁) = z`. -/
 noncomputable def jonesUnknot (q : ℝ) : ℝ := markovZ q
@@ -80,28 +88,30 @@ noncomputable def jonesHopfLink (q : ℝ) : ℝ := heckeH q * markovZ q + 1
     `= tr_M(σ₁³) = (h²+1)·z + h`. -/
 noncomputable def jonesTrefoil (q : ℝ) : ℝ := (heckeH q ^ 2 + 1) * markovZ q + heckeH q
 
-/-- **The `rpow`-normalisation bridge** (previously deferred pending the LSP):
-    the `(h·z + 1)` Hopf value here equals the canonical Wenzl-regime closed form
-    `jonesHopf` of [`JonesViaMarkovTrace`]. Both reduce to `√q − 1/√q + 1`; the
-    proof converts `Real.sqrt q ↔ q ^ (1/2 : ℝ)` and clears denominators. -/
+/-- **The Hopf-value bridge**: the `(h·z + 1)` Hopf value here equals the
+    canonical closed form `jonesHopf` of [`JonesViaMarkovTrace`].
+
+    **Under convention D this stopped needing an `rpow` normalisation at all**
+    (2026-08-26, bean `qou-cxjq`). It used to be "the `rpow`-normalisation
+    bridge, previously deferred pending the LSP": both sides reduced to
+    `√q − 1/√q + 1`, and the proof had to convert `Real.sqrt q ↔ q ^ (1/2 : ℝ)`,
+    establish `q ^ (5/2) = q² · √q`, and clear denominators around a square root.
+
+    Under D both sides are the *same rational function* `(q⁴ + 1)/(q² + 1)` — the
+    Markov axiom fixes `tr_M(σ₁²) = h·z + 1`, and at `z = q³/(q²+1)` that is
+    exactly the tower's migrated `trM_sigma1_sq`. The square roots are gone from
+    both, so the bridge is `field_simp; ring`.
+
+    Worth noting against the general expectation that a convention migration costs
+    proof effort: here it *removed* a proof obligation that had been deferred. -/
 theorem jonesHopfLink_eq_jonesHopf (q : ℝ) (hq : 1 < q) :
     jonesHopfLink q = jonesHopf q (T := markovTraceTower_canonical q hq) := by
   rw [jonesHopf_canonical q hq]
   have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
-  have hs : (0 : ℝ) < Real.sqrt q := Real.sqrt_pos.mpr hq0
-  have hsq : Real.sqrt q ^ 2 = q := Real.sq_sqrt hq0.le
-  have e1 : q ^ ((1 : ℝ) / 2) = Real.sqrt q := (Real.sqrt_eq_rpow q).symm
-  have e5 : q ^ ((5 : ℝ) / 2) = q ^ 2 * Real.sqrt q := by
-    rw [Real.sqrt_eq_rpow, ← Real.rpow_natCast q 2, ← Real.rpow_add hq0]
-    norm_num
-  unfold jonesHopfLink heckeH markovZ
-  rw [e1, e5]
-  have hsne : Real.sqrt q ≠ 0 := ne_of_gt hs
   have hq' : q ≠ 0 := ne_of_gt hq0
-  have hden : Real.sqrt q + 1 / Real.sqrt q ≠ 0 := by positivity
-  have hqq : q ^ 2 + q ≠ 0 := by positivity
+  have hden : q ^ 2 + 1 ≠ 0 := by positivity
+  unfold jonesHopfLink heckeH markovZ
   field_simp
-  rw [hsq]
   ring
 
 /-- The nuclear magic numbers (closed-shell nucleon counts). -/
@@ -172,9 +182,7 @@ is positive, a valid normalisation), mirroring `JonesViaMarkovTrace.jonesHopf_po
 
 theorem markovZ_pos (q : ℝ) (hq : 0 < q) : 0 < markovZ q := by
   unfold markovZ
-  have h : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq
-  have hsum : 0 < Real.sqrt q + 1 / Real.sqrt q := by positivity
-  exact one_div_pos.mpr hsum
+  positivity
 
 theorem heckeH_pos (q : ℝ) (hq : 1 < q) : 0 < heckeH q := by
   unfold heckeH

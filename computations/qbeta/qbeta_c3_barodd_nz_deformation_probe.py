@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -140,12 +140,12 @@ def main() -> int:
         "object": "Faddeev Phi_b (validated evaluator)",
         "geometry": "S = bar-odd projection of 4_1 NZ deformation phase",
         "open_single_link": "u(q0) complex meridian deformation = z->c_k evaluation map (PR #3458)"})
-    wb.add_assertion("vol_4_1_eq_2_lambda_pi3", computed=float(mp.fabs(vol - 2 * lam_pi3)),
+    wb.add_assertion("vol_4_1_eq_2_lambda_pi3", computed=fmt(mp.fabs(vol - 2 * lam_pi3)),
                      expected=0.0, tolerance=1e-30, source="Bloch-Wigner D(e^{iπ/3})=Λ(π/3)")
-    wb.add_assertion("cs_4_1_complete_zero", computed=float(mp.fabs(cs_complete)),
+    wb.add_assertion("cs_4_1_complete_zero", computed=fmt(mp.fabs(cs_complete)),
                      expected=0.0, tolerance=1e-30, source="4₁ amphichiral: CS=0 at complete structure")
     wb.add_assertion("smooth_deformation_ratio_is_unity_not_minus4",
-                     computed=float(mp.fabs(ratio_smooth - 1)), expected=0.0, tolerance=1e-6,
+                     computed=fmt(mp.fabs(ratio_smooth - 1)), expected=0.0, tolerance=1e-6,
                      source="smooth real u(q0)∝log q0 gives ratio~1; measured is -4.08 -> phase channel")
     wb.save()
 

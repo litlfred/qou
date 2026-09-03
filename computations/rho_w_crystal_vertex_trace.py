@@ -60,6 +60,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from canonical_braid_crossings import (  # noqa: E402
     atom_canonical_crossings, d_for_ctype,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 # ----------------------------------------------------------------------------
@@ -481,6 +482,15 @@ def main() -> int:
         "design_note": "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md",
     }
     out_path = HERE / "rho-w-crystal-vertex-trace.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out_path.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n[rho_w] closure_status = {closure_status}")
     print(f"[rho_w] witness -> {out_path}")

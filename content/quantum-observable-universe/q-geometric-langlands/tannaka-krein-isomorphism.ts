@@ -1,9 +1,9 @@
-import { theorem } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default theorem({
-  label: "thm:tannaka-krein-isomorphism",
+export default conjecture({
+  label: "conj:tannaka-krein-isomorphism",
   title: "Tannaka--Krein duality for the substrate",
-  lean: { ref: "qou:QOU.AlgebraicSubstrate.tannaka_krein_isomorphism",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual",
     validation: "not_checked",
   },
   uses: [

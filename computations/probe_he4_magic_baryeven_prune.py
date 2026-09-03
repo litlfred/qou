@@ -63,7 +63,8 @@ set_compute_dps()
 # Canonical muon-pinned substrate q₀ (computations/q_parameter.py::Q); the
 # bar-symmetry argument is q-independent, so the exact value is only used for
 # the illustrative numerics below.
-Q0 = mp.mpf("1.1099785955573347")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 # a567 witnessed magic factor f(⁴He)/Z·N (binding-factor-f-sequence.witness.json).
 TARGET = mp.mpf("2.0715")
 BAR_EVEN_TOL = mp.mpf("1e-18")
@@ -160,18 +161,24 @@ def _emit_witness(excluded, survivors) -> None:
         source="bar-involution q↦q⁻¹; ⁴He self-mirror ⇒ magic factor bar-even")
     w.set_audit_only(
         "docs/audits/2026-06-25-he4-magic-factor-bar-even-pruning.md")
-    out = w.save({"q0Anchor": "independent",
+    out = w.save({"q0Anchor": "proton",
          "q0AnchorReason": (
-            'Reads no substrate value. PROVED by running this producer'
-            'under QOU_Q0_ANCHOR=muon and =proton and diffing the emitted'
-            'witness: the only non-ephemeral leaves that differ are'
-            'q0Anchor and q0Value THEMSELVES -- every substantive field is'
-            'byte-identical, so the pin changes the label and nothing else.'
-            'Its previous `muon` label was therefore a false claim that'
-            'this producer computed at that anchor. `independent` is the'
-            'honest disposition; a q0_anchor_manifest entry would be the'
-            'WRONG fix, promoting a false claim into a declared one. Bean'
-            'qou-o922, class (ii).'
+            'Resolves q0 through `q_parameter` -- `Q0 = mp.mpf(Q_50_DIGIT_STR)` '
+            'at module scope -- and EVALUATES at it: `f(Q0)` is the bar-even '
+            'predicate that decides the prune, and `f(Q0)` is tabulated. The '
+            'stem is listed `physical_proton` in q0_anchor_manifest.json, so '
+            'that is the anchor it computes at. '
+            'CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was '
+            '`independent`, justified by: "PROVED by running this producer under '
+            'QOU_Q0_ANCHOR=muon and =proton ... every substantive field is '
+            'byte-identical". Re-running that experiment refutes it -- '
+            '`/parameters/q0` moves -- so the stated proof does not hold even '
+            'on its own terms, and the manifest already said proton. The '
+            'SUBSTANTIVE outputs are indeed stable: the bar-even booleans '
+            'survive the 11.54 ppb shift between the two anchors comfortably. '
+            'That makes the old text right about the ROBUSTNESS and wrong about '
+            'the DISPOSITION: a compute whose answer is insensitive to the pin '
+            'still reads the pin, and `independent` asserts that it does not.'
          )})
     print(f"[witness → {out}]")
 

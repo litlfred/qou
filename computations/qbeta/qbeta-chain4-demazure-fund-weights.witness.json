@@ -1,22 +1,31 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T14:27:47.662841+00:00",
-  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:10:11.994059+00:00",
+  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
   "assertions": [
     {
-      "name": "real_demazure_d_i_wiring",
-      "computed": true,
-      "expected": true,
+      "name": "demazure_identity_word_gives_q_pow_j_choose_2",
+      "computed": 9,
+      "expected": 9,
       "passed": true,
-      "source": "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, replacing the q-binomial stub. Cross-checked: identity word at ω_j gives q^{j(j-1)/2}; longest word gives e_j(1,q,...,q^{n-1})."
+      "tolerance": 0,
+      "source": "Demazure subsets computed via Kashiwara f̃_i action on j-subsets, replacing the q-binomial stub. Identity word at ω_j must give q^{j(j-1)/2}; checked for every (n, j) with n ∈ {3,4,5}."
+    },
+    {
+      "name": "demazure_longest_word_gives_e_j_gaussian_binomial",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Longest word w_0 at ω_j must give e_j(1,q,...,q^{n-1}) = q^{j(j-1)/2}·[n choose j]_q, compared against the Gaussian-binomial product formula rather than a second subset sum; checked for every (n, j) with n ∈ {3,4,5}."
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "qbeta-chain4-demazure-fund-weights",
   "scriptFile": "qbeta_chain4_demazure_fund_weights.py",
-  "scriptHash": "3d37b6fe15c6",
+  "scriptHash": "8f395b67ffac",
   "scriptCommitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -29,9 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -43,11 +53,11 @@
   "data": {
     "residue_target_A": "0.000000000000001804",
     "prefactor_target_proton": "2.071732777361373830252735915478817822594805357138621776464328795917553",
-    "prefactor_target_muon": "2.071729517389573143047180051679930079553736982945943277253551475173368",
+    "prefactor_target_muon": "2.071729495648478303329109973875040848087836497510453632917939608426456",
     "h_q_substrate_proton": "0.09908171604425850783917711751828199974846488824121838490576573249117677",
-    "h_q_substrate_muon": "0.09908172643825895908209941598274232360541489286732614018176309084180655",
+    "h_q_substrate_muon": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
     "q_proton": "1.10997858275138080759166909561",
-    "q_muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "step5_results_top10": {
       "D_s1(ω_1)_sl3": {
         "value": "2.10998",

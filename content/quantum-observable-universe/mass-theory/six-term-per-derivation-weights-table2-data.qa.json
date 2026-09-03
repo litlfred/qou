@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -551,7 +551,7 @@
           "in_degree": 0,
           "cone_size": 232,
           "depth": 53,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 3,
           "edge_span_mean": 3,
           "worst_target": ""
@@ -1060,7 +1060,7 @@
         "reviewed_at": "2026-08-22T02:51:00.160Z",
         "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
         "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
-        "notes": "RECOMPUTED EVERY ROW. err% = (pred - AME)/AME x 100 gives p 0.0000, n 0.0000, D -0.0044, T +0.1538, 3He +0.0613, 4He +0.5251, 5Li +0.2505, 6Li +0.2356, 7Li +0.2407, 7Be +0.1624, 8Be +0.3201, 9Be +0.2547 — ALL TWELVE MATCH the printed values to the last digit. The AME column is also correct and is ATOMIC mass, consistent with the proof's Z m_p + N m_n + Z m_e baseline: 938.7831 = m_p + m_e = 938.27208816 + 0.51099895 = 938.78308711, and 1876.1239 = m_d + m_e = 1876.12394152. Mean |err| over all twelve = 0.18406%, matching the proof's Mean = 0.184%, and max 0.525% at 4He, matching. TWO ITEMS: (1) THIS TABLE AND tbl:six-term-per-derivation-weights-table3-data ARE THE SAME TABLE — identical twelve rows, identical numbers, captions differing by a few words — and the proof text cites Table 3 only, so one is redundant. (2) The 0.184% mean averages in the p and n rows, which are 0.000 BY CONSTRUCTION as the free-particle baseline the binding energy is measured against; over the ten genuinely predicted rows the mean is 0.2209%. This is the class AGENTS.md documents for the L2 dashboard, where calibration inputs were scored alongside predictions. The excision-compliant caption (absolute mass in MeV is not a framework prediction) is correct practice and present on both copies."
+        "notes": "RECOMPUTED EVERY ROW. err% = (pred - AME)/AME x 100 gives p 0.0000, n 0.0000, D -0.0044, T +0.1538, 3He +0.0613, 4He +0.5251, 5Li +0.2505, 6Li +0.2356, 7Li +0.2407, 7Be +0.1624, 8Be +0.3201, 9Be +0.2547 \u2014 ALL TWELVE MATCH the printed values to the last digit. The AME column is also correct and is ATOMIC mass, consistent with the proof's Z m_p + N m_n + Z m_e baseline: 938.7831 = m_p + m_e = 938.27208816 + 0.51099895 = 938.78308711, and 1876.1239 = m_d + m_e = 1876.12394152. Mean |err| over all twelve = 0.18406%, matching the proof's Mean = 0.184%, and max 0.525% at 4He, matching. TWO ITEMS: (1) THIS TABLE AND tbl:six-term-per-derivation-weights-table3-data ARE THE SAME TABLE \u2014 identical twelve rows, identical numbers, captions differing by a few words \u2014 and the proof text cites Table 3 only, so one is redundant. (2) The 0.184% mean averages in the p and n rows, which are 0.000 BY CONSTRUCTION as the free-particle baseline the binding energy is measured against; over the ten genuinely predicted rows the mean is 0.2209%. This is the class AGENTS.md documents for the L2 dashboard, where calibration inputs were scored alongside predictions. The excision-compliant caption (absolute mass in MeV is not a framework prediction) is correct practice and present on both copies."
       }
     ]
   },
@@ -1068,5 +1068,6 @@
     "md": "5cab58345210",
     "ts": "091c64baf36d"
   },
-  "updated_at": "2026-08-22T02:51:00.160Z"
+  "updated_at": "2026-08-22T02:51:00.160Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

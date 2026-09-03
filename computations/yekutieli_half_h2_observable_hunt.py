@@ -182,16 +182,22 @@ def main() -> int:
     ]
 
     matches = []
+    pairs_scored = 0          # a NULL verdict is only as strong as its coverage
+    pairs_failed = []
     for obs_name, obs_val, desc in candidates:
         for z_name, z_val in z_basis:
             try:
                 coef = obs_val / (z_val * h2)
                 rel = (coef - mp.mpf("0.5")) / mp.mpf("0.5") * 100
+                pairs_scored += 1
                 if abs(rel) < mp.mpf("0.5"):
                     matches.append((desc, obs_name, z_name,
                                     mp.nstr(coef, 10), mp.nstr(rel, 4)))
-            except Exception:
-                pass
+            except Exception as exc:
+                # Was a bare `except Exception: pass`. A pair that blew up
+                # simply did not appear, and the run still reported NULL over
+                # "5 obs × 13 normalizers" — a coverage claim it no longer had.
+                pairs_failed.append(f"{obs_name} / {z_name}: {type(exc).__name__}")
 
     if matches:
         print(f"\n  ⭐ Within 0.5% matches:")
@@ -239,12 +245,85 @@ def main() -> int:
     w.add_data("normalizers_count", len(z_basis))
     w.add_data("verdict", verdict)
 
+    # ── Was `observable_hunt_completed`, computed=True / expected=True ───
+    # Its own source line ("Scanned 5 obs × 13 normalizers") was the coverage
+    # claim; the True/True pair carried none of it, and a run that scored
+    # zero pairs produced the same True. Replaced by the three things that
+    # decide whether this NULL means anything.
+
+    # (1) The inputs. Route A: the binding energies this file builds as a
+    #     mass defect, Σ m_constituents − m_nucleus, from the CODATA-2022
+    #     nuclear masses. Route B: ame_binding_mev(Z, A), AME2020's own
+    #     quoted binding-energy-per-nucleon × A — a different table, not a
+    #     rearrangement of the first. Every candidate observable below is a
+    #     ratio of these four numbers, so if they are wrong the NULL is
+    #     meaningless. Bound 1e-4 MeV: d and T agree to <5e-7, ³He and ⁴He to
+    #     ~5e-5 because their masses are hand-typed here at 5–6 dp (see the
+    #     caveat). Swapping a proton for a neutron moves B by 1.29 MeV.
+    from codata_constants import ame_binding_mev  # noqa: E402
+    ame_rows = [("d", 1, 2, B_d), ("T", 1, 3, B_T),
+                ("3He", 2, 3, B_He3), ("4He", 2, 4, B_He4)]
+    ame_agree = sum(1 for _n, Z, A, B in ame_rows
+                    if abs(B - ame_binding_mev(Z, A)) < mp.mpf("1e-4"))
+    w.add_data("binding_vs_ame2020", {
+        n: {"mass_defect_MeV": mp.nstr(B, 14),
+            "ame2020_MeV": mp.nstr(ame_binding_mev(Z, A), 14),
+            "abs_gap_MeV": mp.nstr(abs(B - ame_binding_mev(Z, A)), 4)}
+        for n, Z, A, B in ame_rows})
     w.add_assertion(
-        name="observable_hunt_completed",
-        computed=True,
-        expected=True,
+        name="binding_energies_match_ame2020_table",
+        computed=str(ame_agree),
+        expected=str(len(ame_rows)),
         tolerance=0,
-        source=f"Scanned {len(candidates)} obs × {len(z_basis)} normalizers at 60 dps.",
+        unit="nuclides agreeing to <1e-4 MeV",
+        source=("Route A: Σ m_constituents − m_nucleus from CODATA-2022 nuclear "
+                "masses, as computed here. Route B: ame_binding_mev(Z, A), the "
+                "AME2020 quoted binding-energy-per-nucleon × A. Expected = the "
+                "nuclide list rebuilt from the rows the scan actually uses."),
+    )
+
+    # (2) Coverage of the NULL. Route A: pairs that produced a coefficient
+    #     inside the loop. Route B: len(candidates) × len(z_basis), rebuilt
+    #     from the two declaration lists. Before this, the bare `except`
+    #     could drop a pair and the NULL would read the same.
+    w.add_data("pairs_scored", pairs_scored)
+    w.add_data("pairs_failed", pairs_failed)
+    w.add_assertion(
+        name="scan_scored_every_observable_normalizer_pair",
+        computed=str(pairs_scored),
+        expected=str(len(candidates) * len(z_basis)),
+        tolerance=0,
+        unit="(observable, normalizer) pairs",
+        source=("Route A: the pair counter incremented only after the "
+                "coefficient is computed. Route B: len(candidates) × "
+                "len(z_basis) rebuilt from the input lists. The NULL below is "
+                "only worth its coverage, so these must agree."),
+    )
+
+    # (3) The verdict itself. Route A: this run's match list at the 0.5%
+    #     gate. Route B: the NULL recorded in audit
+    #     2026-06-01-closed-route-reexamination-roundup.md §3, which is what
+    #     this probe was opened to confirm. A later normalizer or observable
+    #     that does land on +0.5 flips this red instead of quietly rewriting
+    #     the verdict string.
+    w.add_assertion(
+        name="no_observable_normalizes_to_half_h2_within_0p5pct",
+        computed=str(len(matches)),
+        expected="0",
+        tolerance=0,
+        unit="observable/normalizer pairs within 0.5% of +0.5",
+        source=("Route A: the 0.5%-gate match list from this run's scan. "
+                "Route B: the NULL recorded in audit 2026-06-01 §3 (Task 3 of "
+                "PR #1617). Falsifiable in the direction that matters: a new "
+                "hit fails it."),
+    )
+    w.add_caveat(
+        "m_He3_MeV and m_He4_MeV are hand-typed here at 5–6 dp rather than "
+        "read from the CODATA/AME registry, which is why B(³He) and B(⁴He) sit "
+        "~5e-5 MeV from AME2020 while B(d) and B(T) — built from registry "
+        "masses — agree to <5e-7 MeV. Recorded, not repaired; the "
+        "binding_energies_match_ame2020_table bound is set wide enough to "
+        "carry it and tight enough to catch a real error."
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

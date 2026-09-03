@@ -327,8 +327,8 @@ def main() -> int:
     tr_M_check = sum(p["y"] * p["chi"] for p in partitions)
     builder.add_assertion(
         "tr_M_reconstruction_from_chi",
-        computed=float(tr_M_check),
-        expected=float(tr_M),
+        computed=tr_M_check,
+        expected=tr_M,
         tolerance=1e-10,
         unit="trace value",
         source="chi-deuteron-h6-at-q0-50dps.witness.json",
@@ -343,8 +343,8 @@ def main() -> int:
     # makes allPassed: false consistent with the negative diagnostic.
     builder.add_assertion(
         "best_mapping_B_D_pred_within_1_percent",
-        computed=float(mp.mpf(results[best_map]["B_D_predicted_MeV"])),
-        expected=float(B_D_AME_MEV),
+        computed=mp.mpf(results[best_map]["B_D_predicted_MeV"]),
+        expected=B_D_AME_MEV,
         tolerance=float(B_D_AME_MEV) * 0.01,  # ≤ 1% relative
         unit="MeV",
         source=(

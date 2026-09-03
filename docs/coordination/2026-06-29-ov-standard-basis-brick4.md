@@ -34,7 +34,7 @@ Identity-I rep-theory, reducing each deep `sorry` to a single cited classical co
 ## Update 2026-06-30 — capstone tranche landed (PR #3132)
 
 **PR #3132** (`claude/ov-capstone-reroute-brick3-2026-06-29`) — three reductions, all
-lean-direct EXIT 0, `identityB_general` axioms `[propext, sorryAx, Classical.choice, Quot.sound]`:
+lean-direct EXIT 0, `identityB_general` axioms `[propext, sorryAx, Classical.choice, Quot.sound]` — **accurate on the day this was written; SUPERSEDED.** Measured 2026-08-25 against a source-rebuilt cone, `identityB_general` is now `[propext, Classical.choice, Quot.sound]`, i.e. `sorryAx`-free ([`2026-08-25-ov-general-n-chain-is-closed.md`](../audits/2026-08-25-ov-general-n-chain-is-closed.md)):
 
 | Commit | What | Result |
 |---|---|---|

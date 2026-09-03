@@ -170,7 +170,17 @@ def build_graph(stems: set[str]):
         if not isinstance(d, dict):
             continue
         sf = d.get("scriptFile") or ""
-        st = sf[:-3] if isinstance(sf, str) and sf.endswith(".py") else sf
+        # `Path(...).stem`, not `sf[:-3]`: 36 of the 2687 witnesses carrying a
+        # scriptFile record a PATH ("computations/deltalambda/foo_probe.py")
+        # rather than a basename. `sf[:-3]` turns those into
+        # "computations/deltalambda/foo_probe", which matches no stem, so the
+        # witness is never attached to its producer: the producer then appears
+        # to own nothing, its read-edges vanish from `deps`, and the topo order
+        # silently stops constraining it. Measured 2026-08-29 on
+        # deltalambda_damping_nonmonotone_wall_probe and
+        # deltalambda_graded_two_anchor_nogo_probe, both of which own a witness
+        # and both of which this function reported as owning none.
+        st = Path(sf).stem if isinstance(sf, str) and sf.endswith(".py") else sf
         if st in stems:
             wit.setdefault(st, set()).add(w.name)
 
@@ -411,7 +421,18 @@ def main() -> int:
         done[s] = {"rc": rc, "sec": round(dt, 1), "witnesses": outs,
                    "max_rel_move": mx, "median_rel_move": md,
                    "n_fields": nfields, "err": err[0][:200]}
-        PROGRESS.write_text(json.dumps({"done": done}, indent=1), encoding="utf-8")
+        # Provenance stamp (bean qou-f1rs): the witness dict was built
+        # INLINE at the write below, so there was nothing to stamp. It
+        # is bound to a name here so this producer records which script
+        # wrote it -- a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _prov_payload = {"done": done}
+        _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+        PROGRESS.write_text(json.dumps(_prov_payload, indent=1), encoding="utf-8")
 
         tag = "ok " if rc == 0 else f"FAIL({rc})"
         mv = (f"med {md*1e9:,.1f} / max {mx*1e9:,.1f} ppb" if mx else "no change")

@@ -1,0 +1,103 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-31T02:58:27.452863+00:00",
+  "commitSha": "1ec0c6dec131fbb4293292cbfa42a8e72be10798",
+  "assertions": [
+    {
+      "name": "the Lean closed form is symbolically identical to the direct expression",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sympy simplify of (direct - closed form) as a rational function in q"
+    },
+    {
+      "name": "and agrees numerically across a q sweep spanning 0.25 to 100",
+      "computed": "9.98035618090794128186361957781e-69",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "10 values of q including the substrate pin"
+    },
+    {
+      "name": "the defect is strictly negative at every sampled q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "conventionD_markov_defect_neg, sampled"
+    },
+    {
+      "name": "so z_D is not a root of x^2 - h x - 1 at the substrate pin",
+      "computed": "0.75270211325196540159377935162",
+      "expected": "0.752702113251965",
+      "passed": true,
+      "tolerance": "1e-14",
+      "source": "the quantity markov_repeat_forces_quadratic would require to vanish"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "markov-repeat-defect-lean-guard",
+  "scriptFile": "markov_repeat_defect_lean_guard_probe.py",
+  "scriptHash": "2a239fb47fbc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/markov_repeat_defect_lean_guard_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/markov_repeat_defect_lean_guard_probe.py"
+  },
+  "parameters": {
+    "q0_anchor": "proton",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "lean_declarations_guarded": [
+      "QOU.QBeta.InterfaceScalar.markov_repeat_forces_quadratic",
+      "QOU.QBeta.InterfaceScalar.conventionD_markov_defect",
+      "QOU.QBeta.InterfaceScalar.conventionD_markov_defect_neg",
+      "QOU.QBeta.InterfaceScalar.markov_stabilisation_fails_on_repeat"
+    ],
+    "lean_file": "content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean",
+    "closed_form": "-(q^2 - q + 1)(q^2 + q + 1) / (q^2 + 1)^2",
+    "symbolic_difference": "0",
+    "defect_at_q0": "-0.7527021132519654015937793516202361378302",
+    "z_D_at_q0": "0.6126880371464652515958298639458992480263",
+    "q_values_swept": [
+      "0.25",
+      "0.5",
+      "0.9",
+      "1.0",
+      "1.05",
+      "1.10997858275",
+      "1.5",
+      "2.0",
+      "7.0",
+      "100.0"
+    ]
+  },
+  "caveats": [
+    "This is a WIRING GUARD, not evidence for the theorem. The Lean results are proved; what is checked here is that the closed form in the Lean and the expression the compute layer evaluates are the same function, so a later edit to either side that separates them is caught.",
+    "Scope: the negativity assertion is sampled, not proved, here — the proof is conventionD_markov_defect_neg, which covers every q > 0 via the positive-definiteness of q^2 +- q + 1. Do not cite the sweep as the general result."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

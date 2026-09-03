@@ -54,6 +54,14 @@ sys.path.insert(0, str(_REPO / "tools" / "qou-substrate" / "python"))
 from qou_substrate.constants import M_E_MEV, q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 
+# --- precision: raised for bucket-B fix (bean qou-p77d) ---
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 DPS = 50
 mp.mp.dps = DPS + 15
 
@@ -161,7 +169,7 @@ def main():
     # Counit residual reproduces the merged +0.17 % at the live anchor.
     w.add_assertion(
         "counit_residual_pct",
-        computed=float(counit_res),
+        computed=counit_res,
         expected=0.17,
         tolerance=0.02,
         unit="percent",
@@ -170,7 +178,7 @@ def main():
     # Trace-at-substrate reproduces the merged −56 % wrong-tool signature.
     w.add_assertion(
         "trace_substrate_residual_pct",
-        computed=float(trace_res),
+        computed=trace_res,
         expected=-56.0,
         tolerance=1.0,
         unit="percent",

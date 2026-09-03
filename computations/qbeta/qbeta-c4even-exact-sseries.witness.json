@@ -2,21 +2,21 @@
   "description": "EXACT-rational s-series extraction promoting c_4^even to a validated ladder rung (KC=4, s^10). Extends qbeta_c3even_exact_sseries_probe by folding log(1+c_4 u^4) at its own order; the s^10 residual is a c_5 conditioning check, not a rung. c_2^even/c_3^even reproduced as gates. Casoratian W_3 = c3e*c4o - c4e*c3o now needs only c_4^odd (gated). auditOnly; no production wiring; no fit.",
   "audit_only": true,
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "series_order": 10,
     "KC": 4
   },
   "exact": {
-    "c2_even_exact": "-1049/144 - 5*sqrt(3)/12",
-    "c3_even_exact": "841/144 + 604739*sqrt(3)/12960",
-    "c4_even_exact": "-2483340421/1451520 - 120701*sqrt(3)/1920"
+    "c2_even_exact": "-887/144 - 3*sqrt(3)/4",
+    "c3_even_exact": "733/72 + 15997*sqrt(3)/405",
+    "c4_even_exact": "-425625605/290304 - 2864831*sqrt(3)/25920"
   },
   "numeric_50dps": {
-    "c2_even": "-8.00641005870925442785865819785",
-    "c3_even": "86.6611630646909942600690102713",
-    "c4_even": "-1819.74067252288946759519576958",
-    "c5_even_scale_check_not_a_rung": "63240.994539836873626",
-    "casoratian_W2_shadow": "102.67398318210950312"
+    "c2_even": "-7.45876032789888019236780697835",
+    "c3_even": "78.5944241201958767026137262347",
+    "c4_even": "-1657.57403579524074151154482699",
+    "c5_even_scale_check_not_a_rung": "57602.375205841619493",
+    "casoratian_W2_shadow": "93.511944775993637087"
   },
   "assertions": [
     {
@@ -29,22 +29,22 @@
     },
     {
       "label": "c_2^even gate (-8.006 +/- 0.05)",
-      "passed": true
+      "passed": false
     },
     {
       "label": "c_3^even matches 9fnm witness (<1e-6)",
       "passed": true
     }
   ],
-  "allPassed": true,
-  "scriptHash": "d1f3f64e6284",
-  "scriptCommitSha": "4178809e12768c6a39b5b1a88ce2bd339bfb525b",
-  "commitSha": "a637fb1850f44cbda694f89e0f437fdced9cd3f2",
+  "allPassed": false,
+  "scriptHash": "89ec8e17a80c",
+  "scriptCommitSha": "1c0bba3db72529dd06b784ea0435b123b7e9be17",
+  "commitSha": "51c1f21d6e4999838a0fe9bdea2e3d042bfd187f",
   "engine": "sympy",
-  "computedAt": "2026-07-18T10:28:31.124312+00:00",
-  "durationMs": 357576,
+  "computedAt": "2026-08-29T10:44:47.502149+00:00",
+  "durationMs": 1147917,
   "engineVersion": "sympy 1.14.0",
-  "scriptFile": "qbeta_c4even_exact_sseries_probe.py",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "qbeta_c4even_exact_sseries_probe.py"
 }

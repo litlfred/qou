@@ -1,0 +1,81 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T19:29:34.762631+00:00",
+  "commitSha": "9aeac96d6663289d4a07f5b38e59b6ce77805e74",
+  "assertions": [
+    {
+      "name": "single_generator_control_sterile",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "[delta_q1, delta_q1] = 0 reproduces the deuteron single-generator germ sterility"
+    },
+    {
+      "name": "two_generator_curvature_nonzero",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "F_q=[delta_q1,delta_q2] != 0 on two generators (the non-abelian curvature the single-generator case lacks)"
+    },
+    {
+      "name": "em_channel_moment_decides_live",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "EM-singlet moment of F_q nonzero at q0 => germ non-sterile in the EM channel => route LIVE"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "alpha-em-germ-viability",
+  "scriptFile": "alpha_em_germ_viability_probe.py",
+  "scriptHash": "5fe45b449b50",
+  "scriptCommitSha": "13cb8250680c4ac227787e015f44ce5b8d3d9ce2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_germ_viability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_germ_viability_probe.py"
+  },
+  "description": "Decides whether the continuous-germ Yekutieli-holonomy route to the alpha_EM measure Phi is LIVE or DEAD (bean qou-rrgk). Germ delta_q_i = q*(d_q sigma_i)*sigma_i^-1 (corpus germ normalization); curvature F_q=[delta_q1,delta_q2]; EM-singlet moment m_F=qTr(E F_q E)/qTr(E), E=e_-(x)I. CONTROL: [delta_q1,delta_q1]=0 reproduces the deuteron single-generator sterility (2026-08-09 PR #4848). TEST: on two generators (H3), F_q and its EM-singlet moment are NON-ZERO -> LIVE. The EM sector is multi-generator (T_2,9 / T_3,5 / H5 (4,1)), so the single-generator sterility mechanism does not apply. NECESSARY not sufficient: does not prove the germ reproduces Phi (08a2 keystone); decides route live/dead. Exact Q(q); scope-(a); nothing wired; 1/(8pi) stays phase-4.",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "germ": {
+      "definition": "delta_q_i = q*(d_q sigma_i)*sigma_i^-1",
+      "control_single_generator_zero": true
+    },
+    "curvature": {
+      "F_q_nonzero": true,
+      "EM_singlet_moment_m_F": "(1 - q**2)/(q**2 + 1)",
+      "EM_singlet_moment_closed_form": "-(q^2-1)/(q^2+1) = -h/[2]_q (bar-odd over bar-even)",
+      "m_F_at_q0": "-0.10396371005241014604",
+      "F_norm2_moment_at_q0": "9.7170505888048206047"
+    },
+    "verdict": {
+      "live": true,
+      "text": "LIVE — the germ curvature is non-sterile IN the EM singlet channel on two-generator words (the single-generator binding case structurally lacks this). NECESSARY not sufficient: does NOT prove the germ reproduces Φ (that is the 08a2 keystone); it decides the route is worth the multi-week setup."
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q0-independent: q_0 is unreachable from this producer's import cone -- sympy, mpmath, WitnessBuilder and set_compute_dps, with no q_parameter or qou_substrate.constants anywhere, and it reads no upstream witness. The germ Hol(q) = prod sigma_i(q) is symbolic IN q by construction; the viability question is about whether a germ exists at all, not about its value at any pin. Confirmed by payload: no q_0 value of either anchor appears in it. Declared 2026-08-29 to take the q0-anchor refill ratchet to NEW = 0; bean qou-fl0a."
+}

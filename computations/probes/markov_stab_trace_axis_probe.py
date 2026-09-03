@@ -7,9 +7,9 @@ Executes the §3 plan of
 Formalize-first (PR #1826): the structural invariant is the Markov
 stabilization parameter
 
-    z = 1 / (q^½ + q^{-½})        ([`hecke_symbolic.py:46`])
+    z = q³ / (q² + 1)              (convention D; `hecke_symbolic.py:46`)
 
-which at the substrate q₀ is z ≈ 0.4993 < 1, whereas the production
+which at the substrate q₀ is z ≈ 0.6127 < 1, whereas the production
 `linking_weight ≈ 2.53 > 1`.  A single stabilization β ↦ β·σ₃ scales
 the trace by z < 1, so it CANNOT be a >1 multiplier — the naive
 reading is dead before any scan.  The probe records that obstruction
@@ -18,6 +18,21 @@ and tests the two surviving candidates exactly:
   M1 — linking_weight ?= tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ  (identity
        trace; f^λ = ordinary/hook dimension, χ^λ(1) = f^λ).
   M2 — (1/4)·Σ_{λ⊢4} dim_q ?= z^{±k}·(clean H₃ quantity), k ∈ {1,2}.
+
+CONVENTION LABEL CORRECTED 2026-08-31 (bean qou-t9r1).  The computation
+moved to convention D on 2026-08-30 (`z_markov` at ~line 153), but this
+docstring and the `direction_obstruction_note` field written into the
+witness both still stated `z = 1/(q^½ + q^{-½}) ≈ 0.4993`, which is z_C.
+The committed witness therefore carried TWO DISAGREEING FIELDS: a correct
+`z_markov_at_q0 = 0.61268803714646525159582986394589924802630839154509`
+(z_D) beside prose quoting 0.4993 (z_C), 0.1134 apart.  Only the labels
+were wrong; the numbers were already D.
+
+The CONCLUSION is unchanged by the correction, and that is worth stating
+rather than assuming: the obstruction needs only `z < 1 < linking_weight`,
+and z_D(q₀) = 0.6127 < 1 exactly as z_C(q₀) = 0.4993 did.  A convention
+crossing that moves a quantity by 22.7 % happens not to cross this
+threshold, so the probe's negative result survives its own re-labelling.
 
 EXPLORATORY — no production code, content, or production witnesses
 changed.  Emits `markov-stab-trace-axis-probe.witness.json`.
@@ -42,6 +57,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — proton pin, see below
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -51,8 +67,23 @@ _UPSTREAM_RECORDS: list = []
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-# Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# Canonical 50-dps q₀ anchor — the PROTON pin, read from q_parameter rather
+# than hardcoded.
+#
+# RE-PINNED muon -> proton 2026-08-30 (bean qou-t9r1). This line previously
+# carried the frozen muon literal 1.1099785955573347… while `_load_y_lambda_n`
+# below reads `y-lambda-at-q0.witness.json`, whose header records
+# `q0Anchor: proton` / `q0Value: 1.10997858275138080759…`. Those two met in
+# ONE computed quantity — `contrib = y_lam * f_lam` — with y_λ from the proton
+# layer and f_λ evaluated at the muon literal. That is the layer straddle
+# AGENTS.md forbids ("Never straddle the two layers inside one quantity"),
+# the same shape as the μ₃ Fréchet incident, and it was live before this
+# change rather than introduced by it.
+#
+# Re-pinning z to proton REMOVES the straddle; leaving it would have kept a
+# muon z against a proton y_λ. AGENTS.md's standing directive for touched
+# code ("New / touched code: use proton") points the same way.
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 # ── Young-diagram combinatorics (shared with the Option B probe) ──
@@ -124,10 +155,17 @@ def linking_weight_family_a_sym(q: sp.Expr) -> sp.Expr:
 
 
 def z_markov_sym(q: sp.Expr) -> sp.Expr:
-    """z = 1 / (q^½ + q^{-½}) — Markov stabilization parameter
-    (`hecke_symbolic.py:46`)."""
-    qh = sp.sqrt(q)
-    return 1 / (qh + 1 / qh)
+    """z = q³ / (q² + 1) — Markov stabilization parameter, convention D.
+
+    MIGRATED C -> D 2026-08-30 (bean qou-t9r1). The docstring previously read
+    `z = 1 / (q^½ + q^{-½})` and cited `hecke_symbolic.py:46` as its authority.
+    That citation had gone stale in the strongest possible way: the cited module
+    is `computations/hecke/hecke_symbolic.py`, and its line 56 now reads
+    `z_markov = q**3 / (q**2 + 1)  # convention D`, migrated on 2026-08-09 with
+    the note that convention C "which this line carried until then" was excised.
+    So this site's own stated source had already moved; only the copy here had
+    not."""
+    return q ** 3 / (q ** 2 + 1)
 
 
 def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:
@@ -179,16 +217,19 @@ def main() -> int:
     w.add_data("direction_obstruction", bool(obstruction))
     w.add_data(
         "direction_obstruction_note",
-        "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. "
+        "z = q³/(q²+1) ≈ 0.6127 < 1 at q₀; linking_weight ≈ 2.53 > 1. "
         "A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it "
         "cannot produce the >1 linking_weight multiplier. The naive "
         "stabilization reading is structurally dead.",
     )
+    # NO-FLOAT64 (AGENTS.md, probes are not exempt): these were bare Python
+    # floats and the raw-float64 ratchet flagged them as they entered the
+    # witness.  The quantity is an exact 0/1 indicator, so mpf costs nothing.
     w.add_assertion(
         "z_markov_below_one_linking_weight_above_one",
-        computed=1.0 if obstruction else 0.0,
-        expected=1.0,
-        tolerance=0.5,
+        computed=mp.mpf(1) if obstruction else mp.mpf(0),
+        expected=mp.mpf(1),
+        tolerance=mp.mpf("0.5"),
     )
 
     # ── M1: identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ ──

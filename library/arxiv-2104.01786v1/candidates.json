@@ -1,0 +1,110 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2104.01786v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "34087d5063ef550753f920ff521868df1305989eeb4e1a9e630da8e17185da80",
+  "file": "2104.01786v1.pdf"
+ },
+ "provenance": {
+  "title": "Spin(11, 3), particles and octonions Kirill Krasnov",
+  "authors": "School of Mathematical Sciences, University of Nottingham , NG7 2RD, UK",
+  "arxiv": {
+   "id": "2104.01786",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "5 Apr 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "theorem": 2,
+   "remark": 4
+  },
+  "formalization_candidates": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Let X, Y be a pair of division algebras from the set C, \u02dcC, H, \u02dcH, O, \u02dcO, where C, \u02dcC",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": null,
+   "statement": "The construction in Theorem 1 is very closely related to that of 2 \u00d72 matrix algebras",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2",
+   "name": null,
+   "statement": "This construction of the Cli\ufb00ord algebra identi\ufb01es spinors with ( X \u2297 Y)2, and thus a",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3",
+   "name": null,
+   "statement": "The case of Cli\ufb00 11, 3 corresponds to X = O, Y = \u02dcO. The split case Cli\ufb00 7, 7 can be",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4",
+   "name": null,
+   "statement": "Note that there is no way to get the compact case Spin(14) by this c onstruction,",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "There exist two complex structures J, \u02dcJ on the space of semi-spinors of Spin(11, 3),",
+   "section_file": "sections/sec-001-21-octonions.md",
+   "section_title": "Octonions",
+   "pages": "5-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

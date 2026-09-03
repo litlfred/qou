@@ -88,7 +88,7 @@ def _q0() -> tuple[mpf, str]:
             except Exception:
                 from qou_substrate.constants import Q as _Qf  # type: ignore
 
-                return mpf(str(_Qf)), "qou_substrate.constants.Q (f64, LAUNDERED)"
+                return Q_MP, "qou_substrate.constants.Q (f64, LAUNDERED)"
         except Exception as exc:
             # FAIL rather than degrade silently. The previous last rung
             # returned a 17-digit literal and let the census carry on printing

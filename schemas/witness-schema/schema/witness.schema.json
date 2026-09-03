@@ -134,8 +134,11 @@
           "description": "Whether |computed - expected| ≤ tolerance (or equality for non-numeric)."
         },
         "tolerance": {
-          "type": "number",
-          "description": "Absolute error tolerance."
+          "description": "Absolute error tolerance. Numbers can be encoded as either JSON number or arbitrary-precision string, exactly as `computed` and `expected` are. Widened from `number`-only 2026-08-28: 693 committed assertions across 136 witnesses already carry a string tolerance, because draining raw float64 at the producer (bean qou-t0rf) serialises the declared threshold as its literal. Those files were schema-invalid under the narrower type while doing the very thing the precision discipline asks for.",
+          "anyOf": [
+            { "type": "number" },
+            { "type": "string" }
+          ]
         },
         "unit": {
           "type": "string",

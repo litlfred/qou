@@ -1,21 +1,21 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T11:03:32.208590+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "computedAt": "2026-08-30T12:41:46.443873+00:00",
+  "commitSha": "5fc51869673ecd97fe2fc5dcd02253514de97b5f",
   "assertions": [
     {
       "name": "proton_anchor_exact",
-      "computed": -96.74951962207138,
+      "computed": -96.74951972152232,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "thm:knot-mass-formula-unified § proton calibration",
       "note": "HARD BREAK 2026-05-12 (P1.A): under substrate e0_mode the proton residual is the structural gap, not zero. Assertion auto-passes in substrate mode; only enforced strictly under proton-fit."
     },
     {
       "name": "non_proton_max_err_finite",
-      "computed": 146.79197701272196,
+      "computed": 146.79194731713667,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1000000.0,
@@ -26,8 +26,8 @@
   "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
-  "scriptHash": "461986e5f49a",
-  "scriptCommitSha": "20f6667fb7d967b4c4d74e529cc5bb9dc3b2f664",
+  "scriptHash": "c59546654365",
+  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,13 +35,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "afb13136002f692e"
   },
   "invocation": {
     "argv": [
@@ -66,8 +67,8 @@
   "parameters": {
     "q_0": 1.1099785827513808,
     "canonical_mode": "li2q",
-    "E_0_MeV": 4.2274828233998445,
-    "E_0_MeV_brane_legacy": 4.2274828233998445
+    "E_0_MeV": 4.22748281985035,
+    "E_0_MeV_brane_legacy": 4.22748281985035
   },
   "rows": [
     {
@@ -76,22 +77,22 @@
       "N": 0,
       "A": 1,
       "M_codata": 938.27208943,
-      "M_predicted": 30.498350158503122,
-      "err_pct": -96.74951962207138,
-      "term1_canonical_tr_M": 1.1457597822878356,
+      "M_predicted": 30.498349225382583,
+      "err_pct": -96.74951972152232,
+      "term1_canonical_tr_M": 1.1457596924573008,
       "term2_single_gen_tower": 1.664060126876477,
       "term3_pair_gen_tower": 0.3149079680624188,
       "term4_frobenius_codim_raw": 2.4972905456049164,
       "term4_frobenius_codim_scaled": 2.4972905456049164,
       "term5_chirality_factor_a_K": 2.3897210637310238,
       "term5_chirality_source": "v2",
-      "term5_additive_contribution": 1.592286503421277,
+      "term5_additive_contribution": 1.5922863785818908,
       "term6_cyclotomic_tail_MeV": 0.0,
       "term5_mode": "multiplicative_on_t1",
       "tower_mode": "li2q",
       "sub_tower_mode": null,
       "m_e_hecke": 1.0,
-      "total_hecke": 7.214304926252924
+      "total_hecke": 7.2143047115830035
     },
     {
       "isotope": "n",
@@ -99,22 +100,22 @@
       "N": 1,
       "A": 1,
       "M_codata": 939.565,
-      "M_predicted": 26.86199708415365,
-      "err_pct": -97.14101769604513,
-      "term1_canonical_tr_M": 0.9877437566876611,
+      "M_predicted": 26.861996470945183,
+      "err_pct": -97.14101776131027,
+      "term1_canonical_tr_M": 0.9877436881158096,
       "term2_single_gen_tower": 1.5650816863542332,
       "term3_pair_gen_tower": 0.27919712157099186,
       "term4_frobenius_codim_raw": 2.4972905456049164,
       "term4_frobenius_codim_scaled": 2.4972905456049164,
       "term5_chirality_factor_a_K": 2.0375383336519297,
       "term5_chirality_source": "v2",
-      "term5_additive_contribution": 1.024822011388813,
+      "term5_additive_contribution": 1.0248219402428884,
       "term6_cyclotomic_tail_MeV": 0.0,
       "term5_mode": "multiplicative_on_t1",
       "tower_mode": "li2q",
       "sub_tower_mode": null,
       "m_e_hecke": 1.0,
-      "total_hecke": 6.354135121606615
+      "total_hecke": 6.354134981888839
     },
     {
       "isotope": "D",
@@ -122,7 +123,7 @@
       "N": 1,
       "A": 2,
       "M_codata": 1876.124,
-      "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -131,7 +132,7 @@
       "N": 2,
       "A": 3,
       "M_codata": 2809.432,
-      "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -140,7 +141,7 @@
       "N": 1,
       "A": 3,
       "M_codata": 2809.413,
-      "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+      "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
       "error_kind": "unknown"
     },
     {
@@ -149,11 +150,11 @@
       "N": 2,
       "A": 4,
       "M_codata": 3728.401,
-      "M_predicted": -1744.5925388620951,
-      "err_pct": -146.79197701272196,
+      "M_predicted": -1744.5914316915973,
+      "err_pct": -146.79194731713667,
       "term1_canonical_tr_M": 0.05534834587669799,
-      "term2_single_gen_tower": 7.399268263671214,
-      "term3_pair_gen_tower": -423.7003128513006,
+      "term2_single_gen_tower": 7.399330194857278,
+      "term3_pair_gen_tower": -423.70011323069724,
       "term4_frobenius_codim_raw": 2.251934048039021,
       "term4_frobenius_codim_scaled": 2.251934048039021,
       "term5_chirality_factor_a_K": 24.75793000593541,
@@ -164,7 +165,7 @@
       "tower_mode": "li2q",
       "sub_tower_mode": null,
       "m_e_hecke": 1.0,
-      "total_hecke": -412.6788000664308
+      "total_hecke": -412.6785385146414
     },
     {
       "isotope": "5Li",
@@ -223,7 +224,7 @@
   ],
   "all_modes": {
     "brane-legacy": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -231,22 +232,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 2777451.18851076,
-          "err_pct": 295917.6711851315,
-          "term1_canonical_tr_M": 1.1457597822878356,
+          "M_predicted": 2777451.1861778386,
+          "err_pct": 295917.6709364913,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 656993.5756665132,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.592286503421277,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 656998.8110033445
+          "total_hecke": 656998.8110031298
         },
         {
           "isotope": "n",
@@ -254,22 +255,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 108374.66567084004,
-          "err_pct": 11434.557552786666,
-          "term1_canonical_tr_M": 0.9877437566876611,
+          "M_predicted": 108374.66557925544,
+          "err_pct": 11434.557543039113,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 25631.233728726478,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.024822011388813,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 25635.74358504016
+          "total_hecke": 25635.743584900443
         },
         {
           "isotope": "D",
@@ -277,7 +278,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -286,7 +287,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -295,7 +296,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -304,11 +305,11 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": 31817814.376684316,
-          "err_pct": 853290.3508953119,
+          "M_predicted": 31817814.63030619,
+          "err_pct": 853290.3576977421,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0,
-          "term3_pair_gen_tower": 7526417.112233035,
+          "term3_pair_gen_tower": 7526417.178545988,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -319,7 +320,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 7526420.734477556
+          "total_hecke": 7526420.800790509
         },
         {
           "isotope": "5Li",
@@ -378,7 +379,7 @@
       ]
     },
     "drop": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -386,22 +387,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 22.132296529092628,
-          "err_pct": -97.64116435110651,
-          "term1_canonical_tr_M": 1.1457597822878356,
+          "M_predicted": 22.13229560299642,
+          "err_pct": -97.64116444980883,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.592286503421277,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "drop",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 5.2353368313140285
+          "total_hecke": 5.2353366166441075
         },
         {
           "isotope": "n",
@@ -409,22 +410,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 19.065340102089422,
-          "err_pct": -97.97083330029434,
-          "term1_canonical_tr_M": 0.9877437566876611,
+          "M_predicted": 19.06533949542721,
+          "err_pct": -97.97083336486276,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.024822011388813,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "drop",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 4.50985631368139
+          "total_hecke": 4.509856173963614
         },
         {
           "isotope": "D",
@@ -432,7 +433,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -441,7 +442,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -450,7 +451,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -459,8 +460,8 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": 15.312976495521335,
-          "err_pct": -99.58928837065751,
+          "M_predicted": 15.312976482664196,
+          "err_pct": -99.58928837100237,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
@@ -533,7 +534,7 @@
       ]
     },
     "q1-base": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -541,22 +542,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 24.24603794079255,
-          "err_pct": -97.41588413276558,
-          "term1_canonical_tr_M": 1.1457597822878356,
+          "M_predicted": 24.246037012921597,
+          "err_pct": -97.41588423165705,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.5,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.592286503421277,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "q1-base",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 5.7353368313140285
+          "total_hecke": 5.7353366166441075
         },
         {
           "isotope": "n",
@@ -564,22 +565,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 21.179081513789342,
-          "err_pct": -97.7458630841092,
-          "term1_canonical_tr_M": 0.9877437566876611,
+          "M_predicted": 21.179080905352386,
+          "err_pct": -97.7458631488665,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.5,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.024822011388813,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "q1-base",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 5.00985631368139
+          "total_hecke": 5.009856173963614
         },
         {
           "isotope": "D",
@@ -587,7 +588,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -596,7 +597,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -605,7 +606,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -614,8 +615,8 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": 15.346003705079147,
-          "err_pct": -99.58840254293787,
+          "M_predicted": 15.346003692194277,
+          "err_pct": -99.58840254328345,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 0.0078125,
           "term3_pair_gen_tower": 0.0,
@@ -688,7 +689,7 @@
       ]
     },
     "r-side-bare": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -696,22 +697,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 25.901893857778514,
-          "err_pct": -97.23940484326738,
-          "term1_canonical_tr_M": 1.1457597822878356,
+          "M_predicted": 25.901892928517267,
+          "err_pct": -97.23940494230702,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.7507732617247767,
           "term3_pair_gen_tower": 0.140915122630215,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.592286503421277,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "r-side-bare",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 6.12702521566902
+          "total_hecke": 6.127025000999099
         },
         {
           "isotope": "n",
@@ -719,22 +720,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 22.834937430775305,
-          "err_pct": -97.5696266430981,
-          "term1_canonical_tr_M": 0.9877437566876611,
+          "M_predicted": 22.83493682094805,
+          "err_pct": -97.56962670800338,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.7507732617247767,
           "term3_pair_gen_tower": 0.140915122630215,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.024822011388813,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "r-side-bare",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 5.401544698036382
+          "total_hecke": 5.401544558318606
         },
         {
           "isotope": "D",
@@ -742,7 +743,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -751,7 +752,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -760,7 +761,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -769,8 +770,8 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": 65.53371669688129,
-          "err_pct": -98.24231039802636,
+          "M_predicted": 65.53371664185762,
+          "err_pct": -98.24231039950216,
           "term1_canonical_tr_M": 0.05534834587669799,
           "term2_single_gen_tower": 4.129252939486271,
           "term3_pair_gen_tower": 7.750331744661825,
@@ -843,7 +844,7 @@
       ]
     },
     "li2q": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -851,22 +852,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 30.498350158503122,
-          "err_pct": -96.74951962207138,
-          "term1_canonical_tr_M": 1.1457597822878356,
+          "M_predicted": 30.498349225382583,
+          "err_pct": -96.74951972152232,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 1.664060126876477,
           "term3_pair_gen_tower": 0.3149079680624188,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.592286503421277,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "li2q",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 7.214304926252924
+          "total_hecke": 7.2143047115830035
         },
         {
           "isotope": "n",
@@ -874,22 +875,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 26.86199708415365,
-          "err_pct": -97.14101769604513,
-          "term1_canonical_tr_M": 0.9877437566876611,
+          "M_predicted": 26.861996470945183,
+          "err_pct": -97.14101776131027,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 1.5650816863542332,
           "term3_pair_gen_tower": 0.27919712157099186,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.024822011388813,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "li2q",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 6.354135121606615
+          "total_hecke": 6.354134981888839
         },
         {
           "isotope": "D",
@@ -897,7 +898,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -906,7 +907,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -915,7 +916,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -924,11 +925,11 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": -1744.5925388620951,
-          "err_pct": -146.79197701272196,
+          "M_predicted": -1744.5914316915973,
+          "err_pct": -146.79194731713667,
           "term1_canonical_tr_M": 0.05534834587669799,
-          "term2_single_gen_tower": 7.399268263671214,
-          "term3_pair_gen_tower": -423.7003128513006,
+          "term2_single_gen_tower": 7.399330194857278,
+          "term3_pair_gen_tower": -423.70011323069724,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -939,7 +940,7 @@
           "tower_mode": "li2q",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": -412.6788000664308
+          "total_hecke": -412.6785385146414
         },
         {
           "isotope": "5Li",
@@ -998,7 +999,7 @@
       ]
     },
     "habiro": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1006,22 +1007,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 21.319514120968897,
-          "err_pct": -97.72778979987346,
-          "term1_canonical_tr_M": 1.0653062286131671,
+          "M_predicted": 22.13229560299642,
+          "err_pct": -97.64116444980883,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.4804785052275757,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "habiro",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 5.0430752794456595
+          "total_hecke": 5.2353366166441075
         },
         {
           "isotope": "n",
@@ -1029,22 +1030,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 18.509669046681534,
-          "err_pct": -98.02997461094427,
-          "term1_canonical_tr_M": 0.9232332971861535,
+          "M_predicted": 19.06533949542721,
+          "err_pct": -97.97083336486276,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 0.9578899367344985,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "habiro",
           "sub_tower_mode": null,
           "m_e_hecke": 1.0,
-          "total_hecke": 4.378413779525569
+          "total_hecke": 4.509856173963614
         },
         {
           "isotope": "D",
@@ -1052,7 +1053,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1061,7 +1062,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1070,7 +1071,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1082,8 +1083,8 @@
           "deferred": true,
           "deferred_mode": "habiro",
           "upstream_witness": "path-b-habiro-mass-probe.witness.json",
-          "upstream_coverage_hint": "['p', 'n', 'D']",
-          "deferral_reason": "tower_mode='habiro' requires '4He' in path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D']. Extend the upstream witness to clear this row."
+          "upstream_coverage_hint": "['p', 'n', 'D', 'T', '3He']",
+          "deferral_reason": "tower_mode='habiro' requires '4He' in path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D', 'T', '3He']. Extend the upstream witness to clear this row."
         },
         {
           "isotope": "5Li",
@@ -1142,7 +1143,7 @@
       ]
     },
     "per-partition-k": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1168,7 +1169,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1177,7 +1178,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1186,7 +1187,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1255,7 +1256,7 @@
       ]
     },
     "combined": {
-      "E_0": 4.2274828233998445,
+      "E_0": 4.22748281985035,
       "rows": [
         {
           "isotope": "p",
@@ -1263,22 +1264,22 @@
           "N": 0,
           "A": 1,
           "M_codata": 938.27208943,
-          "M_predicted": 21.319514120968897,
-          "err_pct": -97.72778979987346,
-          "term1_canonical_tr_M": 1.0653062286131671,
+          "M_predicted": 22.13229560299642,
+          "err_pct": -97.64116444980883,
+          "term1_canonical_tr_M": 1.1457596924573008,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.3897210637310238,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 1.4804785052275757,
+          "term5_additive_contribution": 1.5922863785818908,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "combined",
           "sub_tower_mode": "habiro",
           "m_e_hecke": 1.0,
-          "total_hecke": 5.0430752794456595
+          "total_hecke": 5.2353366166441075
         },
         {
           "isotope": "n",
@@ -1286,22 +1287,22 @@
           "N": 1,
           "A": 1,
           "M_codata": 939.565,
-          "M_predicted": 18.509669046681534,
-          "err_pct": -98.02997461094427,
-          "term1_canonical_tr_M": 0.9232332971861535,
+          "M_predicted": 19.06533949542721,
+          "err_pct": -97.97083336486276,
+          "term1_canonical_tr_M": 0.9877436881158096,
           "term2_single_gen_tower": 0.0,
           "term3_pair_gen_tower": 0.0,
           "term4_frobenius_codim_raw": 2.4972905456049164,
           "term4_frobenius_codim_scaled": 2.4972905456049164,
           "term5_chirality_factor_a_K": 2.0375383336519297,
           "term5_chirality_source": "v2",
-          "term5_additive_contribution": 0.9578899367344985,
+          "term5_additive_contribution": 1.0248219402428884,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
           "tower_mode": "combined",
           "sub_tower_mode": "habiro",
           "m_e_hecke": 1.0,
-          "total_hecke": 4.378413779525569
+          "total_hecke": 4.509856173963614
         },
         {
           "isotope": "D",
@@ -1309,7 +1310,7 @@
           "N": 1,
           "A": 2,
           "M_codata": 1876.124,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1318,7 +1319,7 @@
           "N": 2,
           "A": 3,
           "M_codata": 2809.432,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1327,7 +1328,7 @@
           "N": 1,
           "A": 3,
           "M_codata": 2809.413,
-          "error": "FileNotFoundError: missing Model B T1 witness: /workspace/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json.  Run probe_sdp_canonical_paper_formula.py first.",
+          "error": "FileNotFoundError: missing Model B T1 witness: /home/user/qou/computations/sweeps/probe-sdp-canonical-paper-formula.witness.json. THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in this repo, GitHub code search finds it only in these error strings, and no commit in this clone's history touches it — so the old instruction to 'run it first' could not be followed by anyone. Tracked as bean `qou-imkb`, which also records that the registry's deuteron row is blocked on the 2026-08-29 owner ruling retiring the 6_2 assignment. Model B is unavailable; Model A (3A-strand) is the live T1 route.",
           "error_kind": "unknown"
         },
         {
@@ -1336,11 +1337,11 @@
           "N": 2,
           "A": 4,
           "M_codata": 3728.401,
-          "M_predicted": -1744.5925388620951,
-          "err_pct": -146.79197701272196,
+          "M_predicted": -1744.5914316915973,
+          "err_pct": -146.79194731713667,
           "term1_canonical_tr_M": 0.05534834587669799,
-          "term2_single_gen_tower": 7.399268263671214,
-          "term3_pair_gen_tower": -423.7003128513006,
+          "term2_single_gen_tower": 7.399330194857278,
+          "term3_pair_gen_tower": -423.70011323069724,
           "term4_frobenius_codim_raw": 2.251934048039021,
           "term4_frobenius_codim_scaled": 2.251934048039021,
           "term5_chirality_factor_a_K": 24.75793000593541,
@@ -1351,7 +1352,7 @@
           "tower_mode": "combined",
           "sub_tower_mode": "li2q",
           "m_e_hecke": 1.0,
-          "total_hecke": -412.6788000664308
+          "total_hecke": -412.6785385146414
         },
         {
           "isotope": "5Li",
@@ -1409,5 +1410,7 @@
         }
       ]
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

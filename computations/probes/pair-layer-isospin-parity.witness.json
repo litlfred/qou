@@ -1,0 +1,83 @@
+{
+  "schema": "witness/v1",
+  "computedAt": "2026-08-30T12:37:31.394097+00:00",
+  "description": "The pair layer's isospin parity is inverted and bring_color_weighted cannot repair it. The charge-antisymmetric (isovector) part of the like-pair channel is h/2, forced exactly by the Hecke skein relation sigma - sigma^-1 = q - 1/q under p |-> positive crossing, n |-> negative crossing. The charge-symmetric T=0/T=1 splitting is h*delta/4 under bring_color_weighted and exactly zero under strict_averaged. The isovector term is 1454x the isoscalar one; nuclear physics wants the reverse. bring_color_weighted modifies only the p-n factor, which is self-conjugate and therefore already charge-even, so it does not touch the term that is wrong.",
+  "q0_pin": "proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "convention": "D (z = q^3/(q^2+1)), canonical per owner ruling R1 2026-08-15",
+  "factors": {
+    "h": "0.20906029879563931543",
+    "delta": "0.0013757108070270960086",
+    "f_pp": "0.6126880371464652516",
+    "f_nn": "0.40362773835082593616",
+    "f_pn_strict_averaged": "0.50815788774864559388",
+    "f_pn_bring_color_weighted": "0.50822978937673896258"
+  },
+  "parity": {
+    "even_E": "0.50815788774864559388",
+    "odd_O": "0.10453014939781965772",
+    "odd_over_even": "0.205704077252",
+    "t01_splitting_bring": "7.19016280934e-5",
+    "t01_splitting_strict": "0.0",
+    "isovector_over_isoscalar": "1453.79391496"
+  },
+  "energy_layer": {
+    "alpha_MeV": "4.1859813632944759699",
+    "B_pp_MeV": "2.05070969238",
+    "B_pn_MeV": "2.833162572",
+    "B_nn_MeV": "3.79778293514",
+    "model_mirror_asymmetry_MeV": "1.74707324276",
+    "ame_A3_splitting_MeV": "0.763755",
+    "ratio": "2.28747863223"
+  },
+  "assertions": [
+    {
+      "name": "f_pp - f_nn == h exactly -- the isovector term IS the skein relation",
+      "passed": true
+    },
+    {
+      "name": "so the odd part is exactly h/2, with no free coefficient",
+      "passed": true
+    },
+    {
+      "name": "bring_color_weighted leaves f_pp and f_nn untouched, so O is identical under every pn_convention",
+      "passed": true
+    },
+    {
+      "name": "the T=0/T=1 splitting under bring is exactly h*delta/4",
+      "passed": true
+    },
+    {
+      "name": "under strict_averaged the T=0/T=1 splitting is exactly zero",
+      "passed": true
+    },
+    {
+      "name": "the isovector term exceeds the isoscalar splitting by > 1000x",
+      "passed": true
+    },
+    {
+      "name": "the model's mirror asymmetry has the right SIGN (3H more bound)",
+      "passed": true
+    },
+    {
+      "name": "and overshoots the observed A=3 splitting by more than 2x",
+      "passed": true
+    }
+  ],
+  "free_parameters": 0,
+  "scope": "(a) for the physics judgement -- charge symmetry is an empirical near-symmetry, not a theorem about this model, so 'the parity is inverted' is an observation against experiment, not a proved exclusion. EXACT and unconditional for the algebra: f_pp - f_nn = h identically, and bring_color_weighted leaves it unchanged. Those two are what constrain any repair -- the isovector term cannot be reduced by choosing a different pn_convention, only by changing the p/n-to-crossing-sign identification itself. Nothing wired to production; nothing refuted.",
+  "owner_question": "check bring_color_weighted parity (2026-08-30)",
+  "beans": [
+    "qou-1pig",
+    "qou-9v7t"
+  ],
+  "allPassed": true,
+  "scriptHash": "85924402f407",
+  "scriptCommitSha": "cf99e789ef3249962e6c6931d3f4b11a5014c0d4",
+  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "pair_layer_isospin_parity_probe.py"
+}

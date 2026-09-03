@@ -48,10 +48,20 @@ class NSCounterexample where
   /-- Singularity time is strictly positive. -/
   singularityTime_pos : 0 < singularityTime
   /-- **The conjecture itself.**  The velocity is unbounded as
-      $t \to T^{*-}$: for every $M > 0$ there is a time $t < T^*$
-      and a point $x$ where the velocity exceeds $M$. -/
+      $t \to T^{*-}$: on *every* left neighbourhood of $T^*$ it exceeds
+      every bound $M$.
+
+      The `T* - ε < t` conjunct is what puts the blow-up *at* $T^*$ and
+      is not optional: without it the field says only that the velocity
+      is unbounded somewhere on $t < T^*$, which is satisfied by
+      `velocityProfile t x = max (-t) 0` with `T* = 1` — a profile that
+      tends to $0$ as $t \to T^{*-}$ and so exhibits no finite-time
+      singularity at all (verified counterexample:
+      `docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean`). -/
   -- Ref: [manuscript] fluid-dynamics/p5-counterexample
   ns_counterexample_holds :
-    ∀ M : ℝ, ∃ t x : ℝ, t < singularityTime ∧ M < velocityProfile t x
+    ∀ M : ℝ, ∀ ε : ℝ, 0 < ε →
+      ∃ t x : ℝ, singularityTime - ε < t ∧ t < singularityTime ∧
+        M < velocityProfile t x
 
 end QOU.FluidDynamics

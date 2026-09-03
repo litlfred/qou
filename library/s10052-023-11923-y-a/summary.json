@@ -1,0 +1,101 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s10052-023-11923-y-a",
+ "source_sha256": "73d1a03532d62ef7",
+ "brief": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the",
+ "extended": "**Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels Gresnigta , Liam Gourlay, Abhinav Varma*\n\n13 pp, 16 sections.\n\n**Abstract.** An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the Cayley–Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convinc- ingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an alge- braic origin for the existence of exactly three generations has proven difﬁcult to substantiate. We motivate S as a nat- ural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one genera- tion of leptons and quarks in terms of two minimal left ideals of C𝓁(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the S3 automorphism of order three, which is an automor- phism of S but not of O, to generate two additional genera- tions.\n\n**Outline.** Three generations of colored fermions with S3 ; Abstract; 1 Introduction; 2 Normed division algebras; 4 The Cayley–Dickson construction and the alge; 4.1 Octonion subalgebras inside the sedenions; 4.3 Automorphisms of sedenions; 5.1 Why not sedenions?; 5.3 Two additional generations from an S3 auto; 5.4 SU(3)C color symmetries of three generatio; 5.5 Linear dependence of minimal ideal states; 6 Outlook; 7 Discussion; Acknowledgements; Appendix A: Sedenion multiplication table; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 390
+ },
+ "sections": [
+  {
+   "id": "sec-000-three-generations-of-colored-fermions-with-s3-fa",
+   "title": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-2-normed-division-algebras",
+   "title": "Normed division algebras",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-004-4-the-cayleydickson-construction-and-the-algebra",
+   "title": "The Cayley–Dickson construction and the algebra of sedenions",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-41-octonion-subalgebras-inside-the-sedenions",
+   "title": "Octonion subalgebras inside the sedenions",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-006-43-automorphisms-of-sedenions",
+   "title": "Automorphisms of sedenions",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-51-why-not-sedenions",
+   "title": "Why not sedenions?",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-008-53-two-additional-generations-from-an-s3-automor",
+   "title": "Two additional generations from an S3 automorphism",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-009-54-su3c-color-symmetries-of-three-generations",
+   "title": "SU(3)C color symmetries of three generations",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-010-55-linear-dependence-of-minimal-ideal-states",
+   "title": "Linear dependence of minimal ideal states",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-011-6-outlook",
+   "title": "Outlook",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-012-7-discussion",
+   "title": "Discussion",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-014-appendix-a-sedenion-multiplication-table",
+   "title": "Appendix A: Sedenion multiplication table",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "12-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

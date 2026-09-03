@@ -19,7 +19,11 @@ infra sweep generating:
 The Phase 5q closed form (`closed_form_tau_M.py`) provides
 `tr_M(K, q) = τ_p^Z · τ_n^N · Π_i interface_factor(kind_i, q)` for
 every (Z, N), with `canonical_interface_kinds(Z, N)` choosing the
-±/averaged kinds under the production `chi_lambda_braid` convention.
+±/averaged kinds under the canonical `bring_color_weighted` convention
+(owner ruling R3, 2026-08-15; was `chi_lambda_braid` until 2026-08-25,
+bean `qou-cds4`). The p-n interface is priced `z - h(1/2 - δ/4)`, not the
+plain `z` the legacy marshalling used, so every atom carrying a p-n
+interface moves by -17.05 % — see `_interface_product_symbolic`.
 
 OUTPUTS (per atom):
   * habiro-coefficients-<slug>.witness.json with:
@@ -73,6 +77,7 @@ from habiro_coefficients_atomic import (  # noqa: E402
     str_in_u,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR as _Q_CANONICAL_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -168,11 +173,25 @@ def _load_p_n_symbolic(habiro_path: Path, q: sp.Symbol):
 
 
 def _interface_product_symbolic(Z: int, N: int, q: sp.Symbol) -> sp.Expr:
-    """Symbolic per-interface product matching `canonical_interface_kinds`
-    under the production `chi_lambda_braid` convention."""
+    """Symbolic per-interface product under the CANONICAL p-n convention.
+
+    Convention `bring_color_weighted` (owner ruling R3, 2026-08-15); this was
+    `chi_lambda_braid` until 2026-08-25 (bean `qou-cds4`).
+
+    `weighted_labels=True` is not cosmetic and must not be dropped. Without
+    it `canonical_interface_kinds` returns the p-n kind under the LABEL
+    "averaged" for every non-`chi_lambda_braid` convention — the label/value
+    split its own docstring describes — so a dispatch that maps "averaged" to
+    `z - h/2` would silently compute `strict_averaged` while the call site
+    claimed `bring_color_weighted`. Those two differ by only 0.0141 %, which
+    is exactly small enough to go unnoticed. The opt-in returns
+    "averaged_weighted" so the branch below has something to dispatch on.
+    """
     z = _markov_z_q(q)
     h = _hecke_h_q(q)
-    kinds = canonical_interface_kinds(Z, N, pn_convention="chi_lambda_braid")
+    kinds = canonical_interface_kinds(
+        Z, N, pn_convention="bring_color_weighted", weighted_labels=True,
+    )
     expr = sp.Integer(1)
     for kind in kinds:
         if kind == "positive":
@@ -181,6 +200,16 @@ def _interface_product_symbolic(Z: int, N: int, q: sp.Symbol) -> sp.Expr:
             expr = expr * (z - h)
         elif kind == "averaged":
             expr = expr * (z - h / 2)
+        elif kind == "averaged_weighted":
+            # δ from `_li_2_q_util.flavor_split_leading`, which is exact for a
+            # symbolic q (its docstring says so) and is the LEADING term only.
+            # Do NOT reach for `tr_m_algebraic_q.flavor_split_leading_sym`:
+            # that multiplies by a posited subleading (1 + ℏ³) and disagrees
+            # by ~9.7e-4 relative at q_0 (bean `qou-4e5k`). Calling the shared
+            # symbolic-safe function rather than copying the formula keeps
+            # this file from becoming a third definition of one weighting.
+            delta = flavor_split_leading(q)
+            expr = expr * (z - h * (sp.Rational(1, 2) - delta / 4))
         else:
             raise ValueError(f"unknown interface kind {kind!r}")
     return expr
@@ -205,7 +234,9 @@ def analyse_atom(label: str, Z: int, N: int, q,
     """Extract Habiro coefficients for (Z, N)."""
     t0 = time.perf_counter()
     print(f"\n── {label} (Z={Z}, N={N}, A={Z+N}) ──")
-    kinds = canonical_interface_kinds(Z, N, pn_convention="chi_lambda_braid")
+    kinds = canonical_interface_kinds(
+        Z, N, pn_convention="bring_color_weighted", weighted_labels=True,
+    )
     print(f"  canonical_interface_kinds = {kinds}")
 
     tr_M_q = _build_closed_form(Z, N, tau_p, tau_n, q)
@@ -345,7 +376,7 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
             # is the one place the whole table is summarised, so a float64 here
             # is a float64 in the table's own header.
             "q_0": _Q_CANONICAL_STR,
-            "pn_convention": "chi_lambda_braid (legacy production marshalling)",
+            "pn_convention": "bring_color_weighted (canonical, owner ruling R3)",
             "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
             "generator": "_habiro_coefficient_extract.py",
         },
@@ -539,8 +570,8 @@ def main() -> int:
                     f"= Σ_m a_m·(u;u)_m (u = q^{{1/2}}) via the Phase 5q "
                     f"closed form. Mass-table-wide extraction "
                     f"(PR #1642 follow-up infrastructure); covers Z={Z}, "
-                    f"N={N} under chi_lambda_braid (production) "
-                    f"pn-convention. Feeds (i) mirror-pair Φ_k universality "
+                    f"N={N} under the canonical bring_color_weighted "
+                    f"pn-convention (owner ruling R3, 2026-08-15). Feeds (i) mirror-pair Φ_k universality "
                     f"audit, (ii) Φ_8-multiplicity scaling-law table, and "
                     f"(iii) Q_β Habiro element keystone search."
                 ),
@@ -645,7 +676,7 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": _Q_CANONICAL_STR,
-            "pn_convention": "chi_lambda_braid (legacy production marshalling)",
+            "pn_convention": "bring_color_weighted (canonical, owner ruling R3)",
             "generator": "_habiro_coefficient_extract.py",
         },
         "atoms": [

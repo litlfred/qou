@@ -1,13 +1,13 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T03:27:04.838345+00:00",
-  "commitSha": "453d7e2928d7d643f83ca1a34e4b956ffc3c9aa4",
+  "computedAt": "2026-08-30T07:11:58.129579+00:00",
+  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
   "assertions": [
     {
       "name": "curvature_symbolic_exact_residual",
-      "computed": "0",
-      "expected": "0",
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "sympy exact residuals: quarter-Laplacian(2 log y) - (-1/(2y^2)) = 0; mixed d_u d_v [2 log f(u) + 2 log g(v)] = 0; Wirtinger d_tau d_taubar = (1/4)(d_xx + d_yy) verified. Statement: d_tau d_taubar log[(Im tau)^2 |eta|^4] = -1/(2 (Im tau)^2) exactly"
     },
@@ -16,7 +16,7 @@
       "computed": "-14.348054954552774683",
       "expected": "-14.348054954552774683",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im tau)^2 |eta|^4]"
     },
     {
@@ -24,7 +24,7 @@
       "computed": "-0.3652567755131857696",
       "expected": "-0.3652567755131857696",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im tau)^2 |eta|^4]"
     },
     {
@@ -32,56 +32,56 @@
       "computed": "0.768225422326056659002594179576",
       "expected": "0.768225422326056659002594179576",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|eta(i)| = Gamma(1/4)/(2 pi^{3/4})"
     },
     {
       "name": "anomaly_cancellation_t5_max_dev",
-      "computed": 1.4489110934123289e-71,
+      "computed": "1.448911093412328794832905271834887163768384651509462195041481429163268e-71",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|t5(tau)| = 5^(3/2) * (N(tau)/N(5 tau))^6, N = (Im tau)^(1/4) |eta| SL(2,Z)-invariant (T/S invariance asserted < 1e-40): the (Im tau)^{1/4} anomaly factors cancel exactly up to 5^{3/2}; sympy bookkeeping identity asserted exact"
     },
     {
       "name": "fricke_125_is_square_of_cancellation_constant_max_dev",
-      "computed": 4.288769611732331e-68,
+      "computed": "4.288769611732330977252318896164458187331246775438695846586326411873453e-68",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "R(W5 tau) = 1/R(tau) and |t5(tau) * t5(W5 tau)| = 125 = (5^(3/2))^2 via S-invariance of N: the Fricke constant is exactly the square of the anomaly-cancellation constant"
     },
     {
       "name": "w5_fixed_point_value_dev",
-      "computed": 1.448908652612274e-70,
+      "computed": "1.44890865261227397880145908654204668490920499170226211033321838238968e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "t5(i/sqrt5) = 5 sqrt(5); R = 1 at the W5 fixed point => |t5| = 5^(3/2): the 2026-07-24 Fricke-circle invariant re-derived from anomaly bookkeeping"
     },
     {
       "name": "naive_product_m5t0_mt0",
-      "computed": 2.921984030130309,
+      "computed": "2.921984030130308927449358316693555748257710500673236388623234174722695",
       "expected": 2.922,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "m(5 tau_0)*m(tau_0), m(tau) = 1/(sqrt(Im tau) |eta|^2): corpus print 2.922 (2026-07-18 retraction audit) — product of genus-1 Quillen norms, class (b)"
     },
     {
       "name": "retracted_8226_product",
-      "computed": 8.226285221978587,
+      "computed": "8.22628522197858673621475374781827127908926187123505555579799372198755",
       "expected": 8.226,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "m(5 tau_0)^3*m(tau_0): the retracted 8.226 is a product of genus-1 Quillen norms — class (b), frame data, not a candidate distinguished constant"
     }
   ],
   "allPassed": true,
-  "durationMs": 3128,
+  "durationMs": 2924,
   "computation": "quillen-anomaly-classification-probe",
   "scriptFile": "quillen_anomaly_classification_probe.py",
-  "scriptHash": "85943fc6484a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0e77c81a1084",
+  "scriptCommitSha": "8a7bf94489a6f7d1a4a0eec2880ef212c71e4b88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -91,8 +91,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/quillen_anomaly_classification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/quillen_anomaly_classification_probe.py"
   },
   "description": "Quillen holomorphic anomaly classification (bean qou-2nm8). TASK A: the corpus's verified genus-1 identity det'Delta(E_tau) = (Im tau)^2 |eta|^4 has Quillen curvature d_tau d_taubar log = -1/(2 (Im tau)^2) EXACTLY (sympy symbolic: metric part carries all of it, |eta|^4 is del-delbar flat as |holomorphic|^2; mpmath finite-difference quarter-Laplacian confirms to >= 10 digits at the Bring tau_0 and a generic tau) — det'Delta is NOT |f|^2 for holomorphic f, the quantitative form of AGMV Sect. 4 (Quillen theorem Eqs. 4.1-4.2, curvature 4.17-4.18; torus obstruction AGMV Sect. 2 below Eq. 2.3). TASK B: in t5 = (eta/eta(5.))^6 the weight-1/2 anomaly factors (Im tau)^{1/4} cancel EXACTLY up to 5^{3/2} = 5 sqrt(5): |t5| = 5^{3/2} (N(tau)/N(5 tau))^6 with N = (Im tau)^{1/4}|eta| the SL(2,Z)-invariant Petersson norm; the Fricke 125 = 5^3 is exactly the SQUARE of the cancellation constant, and on the W5-fixed circle the norm-ratio is 1 => |t5| = 5 sqrt(5), re-deriving the 2026-07-24 circle invariant. TASK C: classification table — exact gates (t5 = -10, Fricke -25/2, j, a_p) are weight-0 holomorphic-sector (anomaly-free, class a); every stuck magnitude leg (det'Delta(E_tau), polarized Bring 1.38758, product-period 1.4724e12, per-factor m's, the retracted 8.226 — reproduced here from genus-1 Quillen norms) is an anomaly-carrying norm (class b). Organizing principle for the existing scope-(a) negatives; NOT a new no-go. NO FIT; nothing wired; audit-only.",
   "auditOnly": "docs/audits/2026-07-25-quillen-anomaly-classification.md",

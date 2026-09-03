@@ -61,7 +61,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -206,10 +206,10 @@ def main() -> int:
         "open_near_singular": "phase function phi(q0) = Phi_q-pole-seeded Newton",
         "geometric_condition": "q* with real meridian (S=0) is well-posed",
         "next": "seed gluing Newton with substrate pole q0^{-k}; not a fit"})
-    wb.add_assertion("cusp_barEven_eq_one", computed=float(mp.fabs(barEven - 1)),
+    wb.add_assertion("cusp_barEven_eq_one", computed=fmt(mp.fabs(barEven - 1)),
                      expected=0.0, tolerance=1e-20,
                      source="ω=e^{iπ/3}: barEven ω = 1 (Lean CuspShapeBarParity)")
-    wb.add_assertion("cusp_barOdd_sq_eq_neg3", computed=float(mp.fabs(barOdd**2 + 3)),
+    wb.add_assertion("cusp_barOdd_sq_eq_neg3", computed=fmt(mp.fabs(barOdd**2 + 3)),
                      expected=0.0, tolerance=1e-20,
                      source="ω=e^{iπ/3}: (barOdd ω)² = −3 (Lean CuspShapeBarParity)")
     wb.add_assertion("gluing_newton_vol_and_extremal", computed=float(err),

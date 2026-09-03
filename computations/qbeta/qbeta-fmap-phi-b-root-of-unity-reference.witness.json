@@ -9,7 +9,7 @@
       "computed": 7.0823958666850034e-43,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Faddeev shift equation (Hikami math/0604094 eq 2.4a) at each b"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-25,
+      "tolerance": "1e-25",
       "source": "|Φ_b(z)| = 1 at real b, real z — the pure-phase fact behind prop:phi-b-unitary-bar-odd"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "Φ_b(0) = +e^{iπ(b²+b⁻²)/24} (Hikami eq 2.3 at φ=0)"
     }
   ],

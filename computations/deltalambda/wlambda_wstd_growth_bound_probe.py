@@ -41,6 +41,7 @@ _C = os.path.abspath(os.path.join(_HERE, ".."))
 for _p in (_C, os.path.join(_C, "hecke"), os.path.join(_C, "substrate")):
     sys.path.insert(0, _p)
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 KMAX = 10
 
@@ -86,8 +87,8 @@ def w_std_q1(k):
 
 
 def w_std_q0(k):
-    nfac = qfac(k)
-    return sum((dim_q(l) ** 2 / nfac) * skew(l, (2, 1))
+    nfac = qfac(k, Q0_PROTON)
+    return sum((dim_q(l, Q0_PROTON) ** 2 / nfac) * skew(l, (2, 1))
                for l in partitions_of(k) if contains(l, (2, 1)))
 
 

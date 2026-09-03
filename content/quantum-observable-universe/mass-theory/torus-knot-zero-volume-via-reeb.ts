@@ -13,4 +13,5 @@ export default remark({
     "reeb-flow",
   ],
   uses: ["prop:reeb-bundle-complement-equals-volume"],
+  cites: ["murakami2004a"],
 });

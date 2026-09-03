@@ -954,7 +954,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -969,7 +969,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -984,7 +984,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -999,7 +999,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1014,7 +1014,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1029,7 +1029,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1044,7 +1044,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1059,7 +1059,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1077,7 +1077,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1093,7 +1093,7 @@
       },
       {
         "result": "pass",
-        "notes": "The block successfully satisfies proof-rater-goal-plausibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies proof-rater-goal-plausibility.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1108,7 +1108,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1126,7 +1126,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies fit-section-chapter.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies fit-section-chapter.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1139,7 +1139,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1153,7 +1153,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -1166,7 +1166,7 @@
     "da-false-claim": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1175,11 +1175,12 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1194,7 +1195,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-vacuous.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-vacuous.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1207,7 +1208,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1222,7 +1223,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-circular.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-circular.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1235,7 +1236,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1250,7 +1251,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-overclaim.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-overclaim.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1263,7 +1264,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1278,7 +1279,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-hidden-dof.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-hidden-dof.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1291,7 +1292,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1306,7 +1307,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-non-sequitur.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-non-sequitur.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1319,7 +1320,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1334,7 +1335,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-lean-narrative-divergence.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1347,7 +1348,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1362,7 +1363,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-citation-misuse.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-citation-misuse.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1375,7 +1376,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1390,7 +1391,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-definitional-ambiguity.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1403,7 +1404,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1418,7 +1419,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-empirical-fragility.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1431,7 +1432,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1446,7 +1447,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-physical-implausibility.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1459,7 +1460,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1474,7 +1475,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies da-reproducibility.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-reproducibility.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1487,7 +1488,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1502,7 +1503,7 @@
     "da-referee-verdict": [
       {
         "result": "fail",
-        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1511,11 +1512,12 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1530,7 +1532,7 @@
     "expo-milnor-clarity": [
       {
         "result": "warn",
-        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1539,13 +1541,14 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "The block successfully satisfies milnor-brevity.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies milnor-brevity.",
         "reviewed_at": "2026-07-07T23:31:20Z",
         "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
         "reviewer": {
@@ -1558,7 +1561,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
         "reviewed_at": "2026-07-08T18:48:51.000Z",
         "reviewed_sha": "a786853a2ac94f7c317356bb69f19aa637ba0612",
         "reviewer": {
@@ -1633,7 +1636,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends), the `docs/audits/` and `docs/coordination/` links and the workplan item ids (Phase N / Track N / P#.# / tranche) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends), the `docs/audits/` and `docs/coordination/` links and the workplan item ids (Phase N / Track N / P#.# / tranche) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2083,5 +2086,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T14:57:55.490Z"
+  "updated_at": "2026-08-21T14:57:55.490Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

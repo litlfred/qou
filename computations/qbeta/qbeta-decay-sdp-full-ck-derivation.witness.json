@@ -1,71 +1,93 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T01:24:27.011502+00:00",
-  "commitSha": "f7403a5abdaff14705606cc3a5c5f51e6fd25534",
+  "computedAt": "2026-08-29T10:52:38.537148+00:00",
+  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
   "assertions": [
     {
       "name": "c_4_extracted_matches_empirical",
-      "computed": 2.20467108571997e-07,
+      "computed": "114135.009597005008756624701946016274174472815348903418107250951092585",
       "expected": 0,
-      "passed": true,
-      "tolerance": 1e-05,
-      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_4"
+      "passed": false,
+      "tolerance": "1e-05",
+      "source": "SDP-T_β extraction matches empirical sweep c_4"
     },
     {
       "name": "c_5_extracted_matches_empirical",
-      "computed": 4.488483768305418e-07,
+      "computed": "13400477.53830256292072563491919554424443738926674675717035287301664424",
       "expected": 0,
-      "passed": true,
-      "tolerance": 1e-05,
-      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_5"
+      "passed": false,
+      "tolerance": "1e-05",
+      "source": "SDP-T_β extraction matches empirical sweep c_5"
     },
     {
       "name": "c_6_extracted_matches_empirical",
-      "computed": 6.18922254409204e-08,
+      "computed": "1573336681.072116619070005074669627334948879693470548258635422803471927",
       "expected": 0,
-      "passed": true,
-      "tolerance": 1e-05,
-      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_6"
+      "passed": false,
+      "tolerance": "1e-05",
+      "source": "SDP-T_β extraction matches empirical sweep c_6"
     },
     {
       "name": "c_7_extracted_matches_empirical",
-      "computed": 3.2571234902055566e-07,
+      "computed": "184723887995.0141773093795243234846707363092323059730091568779086455906",
       "expected": 0,
-      "passed": true,
-      "tolerance": 0.001,
-      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_7"
+      "passed": false,
+      "tolerance": "0.001",
+      "source": "SDP-T_β extraction matches empirical sweep c_7"
     }
   ],
-  "allPassed": true,
-  "durationMs": 10,
+  "allPassed": false,
+  "durationMs": 4,
   "computation": "qbeta-decay-sdp-full-ck-derivation",
   "scriptFile": "qbeta_decay_sdp_full_ck.py",
-  "scriptHash": "e55e6f5b8135",
-  "scriptCommitSha": "unknown",
-  "description": "FULL c_k derivation from SDP-T_\u03b2 framework. R(q_0) = Q_\u03b2 / (Q_A \u00b7 cos) factored as \u220f(1 + c_k\u00b7b^k\u00b7\u210f_q^(2k)) sequentially. All c_k (k=2..7) reproduced EXACTLY at 50dps. This validates the audit claim that the c_k are tautologically determined by the precision-ladder structure once Q_\u03b2 CODATA is input.",
+  "scriptHash": "92bc4adb4292",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_decay_sdp_full_ck.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_decay_sdp_full_ck.py"
+  },
+  "description": "FULL c_k derivation from SDP-T_β framework. R(q_0) = Q_β / (Q_A · cos) factored as ∏(1 + c_k·b^k·ℏ_q^(2k)) sequentially. All c_k (k=2..7) reproduced EXACTLY at 50dps. This validates the audit claim that the c_k are tautologically determined by the precision-ladder structure once Q_β CODATA is input.",
   "parameters": {
-    "q_0_50dps": "1.10997859555...",
-    "Q_AME_50dps": "0.78233341400000004817906074094935320317745208740256"
+    "q_0_50dps": "1.10997859556...",
+    "Q_AME_50dps": "0.78233355931000000000000000000000000000000000000011"
   },
   "data": {
-    "R_q0": "0.99992621502020147816",
-    "R_minus_1": "-7.37849797985e-5",
+    "R_q0": "0.99932562066973194966",
+    "R_minus_1": "-0.000674379330268",
     "c_k_extracted": {
-      "c_2": -1.0171161867712344,
-      "c_3": -2.0097397609790155,
-      "c_4": -1.1435367795328915,
-      "c_5": -1.2229125511516232,
-      "c_6": 3.4975620618922254,
-      "c_7": 57.14924267428765
+      "c_2": -9.296233772838528,
+      "c_3": -974.1231856054314,
+      "c_4": -114136.15313400501,
+      "c_5": -13400478.761215562,
+      "c_6": -1573336677.5745547,
+      "c_7": -184723887937.86493
     },
     "c_k_closed_forms": {
       "c_2": "-1 (factor convention)",
       "c_3": "-2 (J_Hopf at q=1, Fact 3)",
-      "c_4": "c_3\u00b7b\u2074 = -2\u00b7b\u2074 = -1.133121",
-      "c_5": "-(b\u00b2 + 1/2) = -1.252702",
-      "c_6": "c_3\u00b2\u00b7b\u00b2 = 4\u00b7b\u00b2 = 3.010808",
-      "c_7": "c_3\u00b3 = -8 (loose; N=7 leverage limit)"
+      "c_4": "c_3·b⁴ = -2·b⁴ = -1.133121",
+      "c_5": "-(b² + 1/2) = -1.252702",
+      "c_6": "c_3²·b² = 4·b² = 3.010808",
+      "c_7": "c_3³ = -8 (loose; N=7 leverage limit)"
     },
     "derivation_status": "c_2 derived from R(q_0) factorization. c_3 derived from R(q_0)/N2. c_4..c_7 sequentially extracted; each matches the empirical sweep value EXACTLY at 50dps. The 'closed form' interpretations match c_4 best (0.9%), c_5 (2.4%), c_6 (14%), c_7 (not uniquely)."
   }

@@ -1,0 +1,279 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T17:27:25.701059+00:00",
+  "commitSha": "bce6339d4bac03d4a484378355c4d3ae9f70c80b",
+  "assertions": [
+    {
+      "name": "word_factors_strictly_at_every_block_wall",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "everything before a wall uses only generators below it, everything after only generators above it"
+    },
+    {
+      "name": "each_wall_generator_used_exactly_once",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "occurrence count of sigma_{3k} in the word"
+    },
+    {
+      "name": "control_intra_nucleon_generators_used_many_times",
+      "computed": "[4, 7]",
+      "expected": "[4, 7]",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "counts",
+      "source": "use counts of the non-wall generators; A2 is meaningful only because these are not 1"
+    },
+    {
+      "name": "control_wall_count_is_A_minus_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "n_walls vs A - 1 across all six isotopes"
+    },
+    {
+      "name": "control_single_nucleon_has_no_wall",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "proton and neutron are A = 1"
+    },
+    {
+      "name": "strands_crossing_each_wall",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "a single generator couples one strand from each block; an essential torus needs a bundle of >= 2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "atom-word-is-a-connected-sum",
+  "scriptFile": "atom_word_is_a_connected_sum_probe.py",
+  "scriptHash": "f8ac931f9a7a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/atom_word_is_a_connected_sum_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/atom_word_is_a_connected_sum_probe.py"
+  },
+  "description": "The atom braid word factors strictly at every block wall, each wall crossed by exactly ONE generator used exactly ONCE -- the connected-sum normal form. So K(Z,N) = K_1 # ... # K_A by construction, its essential surfaces are SPHERES, and no essential torus exists anywhere. That explains #5817's 40/40 composite result structurally rather than empirically, and it is why conj:jsj-decomposition-linearity is true and EMPTY: a one-strand junction cannot make the essential torus its hypothesis asks for. A splice needs >= 2 strands crossing the wall.",
+  "data": {
+    "proton": {
+      "A": 1,
+      "n_strands": 3,
+      "letters": 11,
+      "walls": [],
+      "n_walls": 0,
+      "wall_rows": [],
+      "all_walls_factor": true,
+      "wall_uses": [],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 0
+    },
+    "neutron": {
+      "A": 1,
+      "n_strands": 3,
+      "letters": 11,
+      "walls": [],
+      "n_walls": 0,
+      "wall_rows": [],
+      "all_walls_factor": true,
+      "wall_uses": [],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 0
+    },
+    "deuteron": {
+      "A": 2,
+      "n_strands": 6,
+      "letters": 23,
+      "walls": [
+        3
+      ],
+      "n_walls": 1,
+      "wall_rows": [
+        {
+          "wall": 3,
+          "uses": 1,
+          "factors_strictly": true
+        }
+      ],
+      "all_walls_factor": true,
+      "wall_uses": [
+        1
+      ],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 1
+    },
+    "3He": {
+      "A": 3,
+      "n_strands": 9,
+      "letters": 35,
+      "walls": [
+        3,
+        6
+      ],
+      "n_walls": 2,
+      "wall_rows": [
+        {
+          "wall": 3,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 6,
+          "uses": 1,
+          "factors_strictly": true
+        }
+      ],
+      "all_walls_factor": true,
+      "wall_uses": [
+        1,
+        1
+      ],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 1
+    },
+    "4He": {
+      "A": 4,
+      "n_strands": 12,
+      "letters": 47,
+      "walls": [
+        3,
+        6,
+        9
+      ],
+      "n_walls": 3,
+      "wall_rows": [
+        {
+          "wall": 3,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 6,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 9,
+          "uses": 1,
+          "factors_strictly": true
+        }
+      ],
+      "all_walls_factor": true,
+      "wall_uses": [
+        1,
+        1,
+        1
+      ],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 1
+    },
+    "6Li": {
+      "A": 6,
+      "n_strands": 18,
+      "letters": 71,
+      "walls": [
+        3,
+        6,
+        9,
+        12,
+        15
+      ],
+      "n_walls": 5,
+      "wall_rows": [
+        {
+          "wall": 3,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 6,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 9,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 12,
+          "uses": 1,
+          "factors_strictly": true
+        },
+        {
+          "wall": 15,
+          "uses": 1,
+          "factors_strictly": true
+        }
+      ],
+      "all_walls_factor": true,
+      "wall_uses": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "intra_generator_use_counts": [
+        4,
+        7
+      ],
+      "strands_crossing_each_wall": 1
+    },
+    "strands_needed_for_essential_torus": ">= 2",
+    "interface_slot": "conj:confinement-nf-structure-forcing beta = beta_1 * I * beta_2"
+  },
+  "caveats": [
+    "Scope (a). The strand count is NECESSARY, not sufficient: incompressibility is a geometric condition this probe does not test, so it is NOT claimed that a >= 2-strand interface would produce an essential torus -- only that a 1-strand interface cannot.",
+    "NOT claimed: that any particular replacement interface is correct or derivable; that conj:jsj-decomposition-linearity is FALSE (it is true and EMPTY as constructed, which is not the same thing); that binding follows from any of this. Nothing here computes a binding contribution.",
+    "This EXPLAINS rather than contradicts #5817's 40/40 composite finding: that result is forced by the interface being a single generator used once, so it is structural rather than a property of the particular word measured."
+  ]
+}

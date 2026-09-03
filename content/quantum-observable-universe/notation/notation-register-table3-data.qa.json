@@ -14,7 +14,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Fixed. All six dated rename entries are restated as what the symbol means now, with the older notation named but not dated: \"Canonized 2026-07-12\" on h_A and on the 0-indexed generators, \"Renamed from r on 2026-06-04\", \"Renamed from kappa 2026-07-12\", \"Introduced 2026-07-12\", and \"Renamed from r_W in the May 2026 cleanup\" all now read \"Older text writes ...\" or a plain statement of the convention. The repository counts are gone: \"443 corpus uses\" and \"261 generic-angle uses\" become plain distinctions from the contact form and the generic angle, and \"1489+ uses\" is dropped from the Markov-trace row. The formalisation-status marker \"aspirational pending formalization of Reeb as a category\" is now \"whether it promotes to a functor is not settled here, since Reeb is not formalized as a category\", which keeps the unresolved status in present tense. Also removed: a list of block filenames behind the theta_q entry, and \"desync the two blocks\" → \"desynchronize the two statements\". A dangling \"of .\" left by an earlier link removal is closed off.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. All six dated rename entries are restated as what the symbol means now, with the older notation named but not dated: \"Canonized 2026-07-12\" on h_A and on the 0-indexed generators, \"Renamed from r on 2026-06-04\", \"Renamed from kappa 2026-07-12\", \"Introduced 2026-07-12\", and \"Renamed from r_W in the May 2026 cleanup\" all now read \"Older text writes ...\" or a plain statement of the convention. The repository counts are gone: \"443 corpus uses\" and \"261 generic-angle uses\" become plain distinctions from the contact form and the generic angle, and \"1489+ uses\" is dropped from the Markov-trace row. The formalisation-status marker \"aspirational pending formalization of Reeb as a category\" is now \"whether it promotes to a functor is not settled here, since Reeb is not formalized as a category\", which keeps the unresolved status in present tense. Also removed: a list of block filenames behind the theta_q entry, and \"desync the two blocks\" \u2192 \"desynchronize the two statements\". A dangling \"of .\" left by an earlier link removal is closed off.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -166,7 +166,7 @@
         "reviewed_at": "2026-08-09T13:01:23.493Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/notation/notation-register-table3-data.md:7: | Atomic braid word | calligraphic | $\\mathcal{B}_K \\in H_{3A}(q)$ — canonical atomic braid for atom $K = (Z, N)$ with $A = Z + N$. Factorises as $\\mathcal{B}_K = \\mathcal{B}_K^{\\mathrm{vac}} \\cdot \\b"
+        "evidence": "content/quantum-observable-universe/notation/notation-register-table3-data.md:7: | Atomic braid word | calligraphic | $\\mathcal{B}_K \\in H_{3A}(q)$ \u2014 canonical atomic braid for atom $K = (Z, N)$ with $A = Z + N$. Factorises as $\\mathcal{B}_K = \\mathcal{B}_K^{\\mathrm{vac}} \\cdot \\b"
       }
     ],
     "voice-editorializing": [
@@ -557,7 +557,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1074,5 +1074,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:10:24.138Z"
+  "updated_at": "2026-08-22T07:10:24.138Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

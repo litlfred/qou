@@ -179,10 +179,16 @@ def ColoredJones (K : Type u) [SurrealField K] :
     Knot → KComplex K → K → KComplex K :=
   fun _ _ _ => ((0, 0) : K × K)
 
-/-- The **hyperbolic volume** of a knot complement.  Content-bearing
-    placeholder `0 · k` (= unknot volume for every knot), used as
-    the default until a faithful `Vol : Knot → ℝ` is integrated.
-    Total function — no domain restriction to hyperbolic knots. -/
+/-- The **hyperbolic volume** of a knot complement.  This is the
+    **constant zero function**, spelled `0 * (k : ℝ)` so that the
+    argument appears; `0 * k` is not "content-bearing", which the
+    docstring used to claim, and the `k` is inert.  Placeholder until a
+    faithful `Vol : Knot → ℝ` is integrated (bean `qou-ffwk`); total,
+    with no domain restriction to hyperbolic knots.
+
+    Consequence worth knowing before quoting anything downstream: it is
+    what lets `KashaevSurreal.instProvable` discharge the surreal
+    Kashaev volume conjecture, as `0 = 0` on both sides. -/
 def HyperbolicVolume : Knot → ℝ := fun k => 0 * (k : ℝ)
 
 /-- The **Kazhdan–Lusztig cells** of `H_n(ζ_p)` as a finite type
@@ -501,9 +507,11 @@ class JonesBirthday (K : Type u) [SurrealField K] where
       missing-infrastructure note above. -/
   knot_inhabited : Nonempty Knot
 
--- A global `instance JonesBirthday.instProvable : JonesBirthday K`
--- is provided in the "Default instances" section near the end of
--- this file, once `Knot`'s `Inhabited` instance is in scope.
+-- A model `JonesBirthday.instProvable : JonesBirthday K` is provided
+-- near the end of this file, once `Knot`'s `Inhabited` instance is in
+-- scope.  It is a `def`, not an `instance` (2026-08-24): it discharges
+-- the kernel only via the placeholder `Knot = ℕ`, so a caller who wants
+-- it names it.
 
 /-- **Conjecture: Hahn-series substrate.**
 
@@ -886,7 +894,30 @@ theorem standardPart_one_plus_epsilon :
   have huniq := (isFinite_decomposition hfin_one_plus).unique hspec hinf_diff
   exact huniq
 
-/-! ### Default instances for narrow conjecture kernels
+/-! ### Placeholder-semantics models of the narrow conjecture kernels
+
+**Second correction (2026-08-24) — these are `def`s, not `instance`s.**
+Six of the seven declarations below were `instance`s; they are now `def`s.
+The 2026-08-08 note that follows argued the right thing and stopped one step
+short of it: it identified the fabrications, then left them resolvable. As
+`instance`s they answered `[BigBangHeatDeath K]`, `[HahnSubstrate K]`,
+`[ArchimedeanIsStandardPart K]`, `[JonesBirthday K]`, `[KashaevSurreal K]`
+and `[OnPModularHecke p]` for **every** `K` (and every prime `p`), so the
+"Conditional consequence of …" theorems above were not conditional on
+anything.
+
+Demotion is not the replacement of the placeholders — that is still bean
+`qou-ffwk`, still not done here, and every model below is still exactly as
+degenerate as the 2026-08-08 note says. What changes is that discharging a
+conjecture class now requires writing the model's name, so it appears in the
+proof term of whoever relies on it. Each model stays available as
+`letI := BigBangHeatDeath.instProvable` and so on.
+
+`ClassicalLimitIsStandardPart.instProvable` is **not** in this group and
+stays an `instance`: it is a real proof from the class's own two hypotheses
+(continuity at `1`, and `F (1 + ε)` infinitesimally close to `ofReal (f 1)`),
+resting on no placeholder, and `polySurrealEval_standardPart_eq_classicalLimit`
+resolves against it.
 
 **Historical note, and a correction (2026-08-08).** This section used to
 read: *"with the placeholder semantics `QOU_Surreal K = K`,
@@ -910,20 +941,29 @@ below. **Seven remain**, resting on the placeholders that have *not* yet
 been replaced (`QOU_Surreal K = K`, `Knot = ℕ`, the constant
 `QOU_StandardPart`). They are fabrications of the same kind. Removing them
 means replacing those placeholders too, which is tracked in bean `qou-ffwk`
-and is deliberately not done here.  The
+and is deliberately not done here.  *(2026-08-24: six of those seven are now
+`def`s rather than `instance`s — see the note at the top of this section.
+The seventh, `ClassicalLimitIsStandardPart`, was never a fabrication.)*  The
 *deep* mathematical content — categorical QOUs, the actual
 Kashaev volume conjecture, the Kazhdan–Lusztig ↔ nimber
 correspondence, Berarducci–Mantova continuity — remains open at
 the prose level; see the "Conjecture proof sketches" section near
 the end of the file. -/
 
-/-- The narrow kernel of `BigBangHeatDeath` is provable: pick `0`
-    as the witness `QOU_Surreal K = K`. -/
-instance BigBangHeatDeath.instProvable : BigBangHeatDeath K :=
+/-- The narrow kernel of `BigBangHeatDeath` asks for an inhabitant of
+    `QOU_Surreal K`; under the placeholder `QOU_Surreal K = K` that is
+    satisfied by `(0 : K)`.  The model asserts nothing about big-bang or
+    heat-death states — it exhibits zero.
+
+    `def`, not `instance` (2026-08-24): as an `instance` it discharged
+    `[BigBangHeatDeath K]` for every `K`, so
+    `BigBangHeatDeath.qou_real_inhabited` and `of_bigBangHeatDeath`
+    above had free hypotheses. -/
+def BigBangHeatDeath.instProvable : BigBangHeatDeath K :=
   ⟨⟨(0 : K)⟩⟩
 
-/-- Same as above for `HahnSubstrate`. -/
-instance HahnSubstrate.instProvable : HahnSubstrate K :=
+/-- Same as above for `HahnSubstrate`, and `def` for the same reason. -/
+def HahnSubstrate.instProvable : HahnSubstrate K :=
   ⟨⟨(0 : K)⟩⟩
 
 /-! #### Three kernels are no longer provable — and that is the point
@@ -951,17 +991,26 @@ change: their kernels bottom out in *other* placeholders (`QOU_Surreal K = K`,
 They are fabrications of the same kind and should go the same way once those
 placeholders are replaced — see bean `qou-ffwk`. -/
 
-/-- The narrow kernel of `ArchimedeanIsStandardPart` is provable:
-    every `Q : PUnit` is the standard-part of `(0 : K)` (in fact,
-    of every element, since the placeholder standard-part is the
-    constant projection to `PUnit.unit`). -/
-instance ArchimedeanIsStandardPart.instProvable :
+/-- The narrow kernel of `ArchimedeanIsStandardPart` is discharged by
+    `(0 : K)` for every target `Q`, because the placeholder
+    `QOU_StandardPart` is the constant projection to `PUnit.unit` and
+    `PUnit` is a subsingleton — the equation is closed by
+    `Subsingleton.elim`, not by anything about standard parts.
+
+    `def`, not `instance` (2026-08-24): as an `instance` it discharged
+    `[ArchimedeanIsStandardPart K]` for every `K`, so
+    `ArchimedeanIsStandardPart.qou_surreal_of_qou_real` and
+    `of_archimedeanIsStandardPart_and_qou_real` had free hypotheses. -/
+def ArchimedeanIsStandardPart.instProvable :
     ArchimedeanIsStandardPart K :=
   ⟨fun Q => ⟨(0 : K), Subsingleton.elim _ Q⟩⟩
 
-/-- The narrow kernel of `JonesBirthday` is provable: `Knot = ℕ`
-    is inhabited. -/
-instance JonesBirthday.instProvable : JonesBirthday K :=
+/-- The narrow kernel of `JonesBirthday` asks only that `Knot` be
+    inhabited, and the placeholder is `Knot = ℕ`, so `0` answers it.
+    Nothing about knot birthdays is encoded.
+
+    `def`, not `instance` (2026-08-24) — see the section note. -/
+def JonesBirthday.instProvable : JonesBirthday K :=
   ⟨⟨(0 : Knot)⟩⟩
 
 /-- The narrow kernel of `KashaevSurreal` is provable in the
@@ -975,8 +1024,23 @@ instance JonesBirthday.instProvable : JonesBirthday K :=
     - `HyperbolicVolume K_knot = 0`.
 
     So the conjectured equality holds as `0 = 0` for any knot and
-    any choice of `ζ_ω`; we pick `ζ_ω := (0, 0)` as the witness. -/
-instance KashaevSurreal.instProvable : KashaevSurreal K := by
+    any choice of `ζ_ω`; we pick `ζ_ω := (0, 0)` as the witness.
+
+    **Both sides are the constant zero function.**  The right-hand side
+    is zero because `HyperbolicVolume : Knot → ℝ` is defined as
+    `fun k => 0 * (k : ℝ)` — the constant zero, written so that the
+    argument appears.  The left-hand side is zero because `ColoredJones`
+    is the constant `(0, 0)`.  Replacing either placeholder makes this
+    model fail to typecheck, which is the intended outcome (bean
+    `qou-ffwk`) and the reason nothing here should be read as evidence
+    for the Kashaev volume conjecture.
+
+    `def`, not `instance` (2026-08-24): as an `instance` it discharged
+    `[KashaevSurreal K]` for every `K`, so `exists_kcomplex` and
+    `standardPart_eq_volume` above — the latter stated as a
+    *"Conditional consequence of `KashaevSurreal`"* — held outright,
+    with both sides of the volume equation the constant zero. -/
+def KashaevSurreal.instProvable : KashaevSurreal K := by
   refine ⟨fun K_knot => ⟨((0, 0) : KComplex K), ?_⟩⟩
   -- ColoredJones returns the constant complex surreal `(0, 0)`.
   have hCJ : ColoredJones K K_knot ((0, 0) : KComplex K) (omegaSurreal K)
@@ -994,12 +1058,19 @@ instance KashaevSurreal.instProvable : KashaevSurreal K := by
   -- The conjecture's LHS evaluates to standardPart 0 = 0; the RHS is 0.
   rw [hCJ, habs, hlog, hHV, mul_zero, zero_div, standardPart_zero]
 
-/-- The narrow kernel of `OnPModularHecke p` is provable in the
+/-- The narrow kernel of `OnPModularHecke p` is discharged in the
     placeholder semantics: with both `KazhdanLusztigCells p n` and
-    `Nimbers p n` realised as `Fin (p^n)`, the identity function on
-    `Fin (p^n)`, viewed via the trivial `def`-unfolding, is a
-    bijection from one to the other. -/
-instance OnPModularHecke.instProvable
+    `Nimbers p n` realised as `Fin (p^n)`, the bijection asked for is
+    `id`.  The class's stated content is that the bijection respects
+    KL/Nim *structure*; the identity map respects nothing, because
+    neither `abbrev` carries any structure to respect.
+
+    `def`, not `instance` (2026-08-24): as an `instance` it discharged
+    `[OnPModularHecke p]` at every prime, so `cells_equiv_nimbers` —
+    labelled *"Conditional consequence of `OnPModularHecke p`"* — was
+    `card_cells_eq_card_nimbers` in disguise, which the file already
+    proves unconditionally two declarations later. -/
+def OnPModularHecke.instProvable
     {p : ℕ} [Fact (Nat.Prime p)] : OnPModularHecke p :=
   ⟨fun _ => ⟨id, Function.bijective_id⟩⟩
 

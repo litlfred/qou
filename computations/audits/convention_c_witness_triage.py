@@ -306,8 +306,19 @@ def main() -> int:
 
     if args.json:
         with open(args.json, 'w', encoding='utf-8') as fh:
-            json.dump({'schema': 'convention-c-witness-triage/v1',
-                       'records': records}, fh, indent=2)
+            # Provenance stamp (bean qou-f1rs): the witness dict was built
+            # INLINE at the write below, so there was nothing to stamp. It
+            # is bound to a name here so this producer records which script
+            # wrote it -- a re-run of an unstamped producer DELETES the
+            # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+            import os as _os  # noqa: E402 -- provenance stamp
+            from qou_substrate.witness import WitnessBuilder as _WB
+            _prov_payload = {'schema': 'convention-c-witness-triage/v1',
+                       'records': records}
+            _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+            _WB.stamp_staleness_metadata(
+                _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+            json.dump(_prov_payload, fh, indent=2)
         print(f'\nwrote {args.json}')
     return 0
 

@@ -1,0 +1,411 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0701051v4",
+ "source": {
+  "file": "0701051v4.pdf",
+  "sha256": "4592a048c3b84a8d33c983bc76e0a447e5834c24747e8f556986212551cc7c66",
+  "bytes": 212629,
+  "pages": 20,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0701051",
+   "version": "4",
+   "primary_class": null,
+   "stamp_date": "21 Mar 2011"
+  },
+  "doi": null,
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA",
+  "authors_raw": "VALENTIN F\u00c9RAY AND PIOTR\u015aNIADY",
+  "title_lines": [
+   "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS",
+   "RELATED TO STANLEY CHARACTER FORMULA"
+  ],
+  "abstract": "We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram \u03bb with n boxes, r(\u03bb) rows and c(\u03bb) columns \u23d0 \u23d0 \u23d0 \u23d0 Tr\u03c1\u03bb (\u03c0 ) Tr\u03c1\u03bb (e) \u23d0 \u23d0 \u23d0 \u23d0 \u2264 [ a max ( r(\u03bb) n , c(\u03bb) n , |\u03c0 | n )] |\u03c0 | , where |\u03c0 | is the minimal number of factors needed to write \u03c0 \u2208 Sn as a product of transpositions. We also give uniform estimates f or the error term in the Vershik-Kerov\u2019s and Biane\u2019s character formulas and give a new formula for free cumulants of the transition measure. 1. I NTRODUCTION 1.1. Normalized characters. For a Young diagram \u03bb having n boxes and a permutation \u03c0 \u2208 Sl (where l \u2264 n) we de\ufb01ne the normalized character (1) \u03a3 \u03bb(\u03c0) = ( n)l \u03c7\u03bb(\u03c0), where (n)l = n(n \u2212 1) \u00b7 \u00b7 \u00b7(n \u2212 l + 1) denotes the falling power and where \u03c7\u03bb(\u03c0) = Tr\u03c1\u03bb(\u03c0) Tr\u03c1\u03bb(e) is the character rescaled in such a way that \u03c7\u03bb(e) = 1 . 1.2. Short history of the problem. Unfortunately, the canonical tool for calculating characters, the Murnaghan\u2013Nakayama rule, qui ckly becomes cumbersome and hence intractable for computing characters corresponding to large Young diagrams. Nevertheless Roichman [Roi96] showed that it is possible to use it to \ufb01nd an upper bound for characters, namel y he proved that there exist constants 0 < q < 1 and b > 0 such that (2) |\u03c7\u03bb(\u03c0)| \u2264 [ max ( r(\u03bb) n , c(\u03bb) n , q )] b | supp \u03c0| , where r(\u03bb), c(\u03bb) denote the numbers of rows and columns of \u03bb and supp \u03c0 denotes the support of a permutation \u03c0 (the set of its non-\ufb01xed points). In- equality (2) is not satisfactory for many practical purposes (such as [MR\u00b4S07]) 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180124150328-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Normalized characters",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Short history of the problem",
+   "page": 1,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The main result",
+   "page": 2,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Young diagrams",
+   "page": 3,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "The main tool: reformulation of Stanley character formula",
+   "page": 3,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "Overview of the paper",
+   "page": 4,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 1,
+   "title": "Stanley character formula",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Young symmetrizer",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Forgetting injectivity",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Generalization to Young diagrams on R+2",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Characters of symmetric groups, random matrices and free probability",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Stanley character formula and random matrices",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Free cumulants of the transition measure",
+   "page": 10,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Generalized circular operators",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Technical estimates",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Estimates for the number of colorings N(1,2)",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Estimates for the number of factorizations",
+   "page": 13,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics of characters",
+   "page": 15,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Upper bound for characters: proof of Theorem ??",
+   "page": 15,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Error term for balanced Young diagrams",
+   "page": 16,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Characters of symmetric groups related to Thoma characters",
+   "page": 17,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Concluding remarks",
+   "page": 19,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-normalized-characters",
+   "number": "1.1",
+   "title": "Normalized characters",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 250,
+   "n_words": 57
+  },
+  {
+   "id": "sec-001-12-short-history-of-the-problem",
+   "number": "1.2",
+   "title": "Short history of the problem",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2529,
+   "n_words": 460
+  },
+  {
+   "id": "sec-002-14-young-diagrams",
+   "number": "1.4",
+   "title": "Young diagrams",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 124,
+   "n_words": 25
+  },
+  {
+   "id": "sec-003-13-the-main-result",
+   "number": "1.3",
+   "title": "The main result",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 902,
+   "n_words": 197
+  },
+  {
+   "id": "sec-004-15-the-main-tool-reformulation-of-stanley-charac",
+   "number": "1.5",
+   "title": "The main tool: reformulation of Stanley character formula",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1933,
+   "n_words": 408
+  },
+  {
+   "id": "sec-005-16-overview-of-the-paper",
+   "number": "1.6",
+   "title": "Overview of the paper",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 869,
+   "n_words": 149
+  },
+  {
+   "id": "sec-006-21-young-symmetrizer",
+   "number": "2.1",
+   "title": "Young symmetrizer",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 4252,
+   "n_words": 908
+  },
+  {
+   "id": "sec-007-22-forgetting-injectivity",
+   "number": "2.2",
+   "title": "Forgetting injectivity",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3064,
+   "n_words": 652
+  },
+  {
+   "id": "sec-008-31-stanley-character-formula-and-random-matrices",
+   "number": "3.1",
+   "title": "Stanley character formula and random matrices",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3128,
+   "n_words": 670
+  },
+  {
+   "id": "sec-009-32-free-cumulants-of-the-transition-measure",
+   "number": "3.2",
+   "title": "Free cumulants of the transition measure",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1582,
+   "n_words": 318
+  },
+  {
+   "id": "sec-010-33-generalized-circular-operators",
+   "number": "3.3",
+   "title": "Generalized circular operators",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4031,
+   "n_words": 828
+  },
+  {
+   "id": "sec-011-42-estimates-for-the-number-of-factorizations",
+   "number": "4.2",
+   "title": "Estimates for the number of factorizations",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3703,
+   "n_words": 822
+  },
+  {
+   "id": "sec-012-5-asymptotics-of-characters",
+   "number": "5",
+   "title": "Asymptotics of characters",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1481,
+   "n_words": 326
+  },
+  {
+   "id": "sec-013-51-upper-bound-for-characters-proof-of-theorem",
+   "number": "5.1",
+   "title": "Upper bound for characters: proof of Theorem ??",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1214,
+   "n_words": 266
+  },
+  {
+   "id": "sec-014-52-error-term-for-balanced-young-diagrams",
+   "number": "5.2",
+   "title": "Error term for balanced Young diagrams",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1858,
+   "n_words": 407
+  },
+  {
+   "id": "sec-015-53-characters-of-symmetric-groups-related-to-tho",
+   "number": "5.3",
+   "title": "Characters of symmetric groups related to Thoma characters",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 2387,
+   "n_words": 624
+  },
+  {
+   "id": "sec-016-54-concluding-remarks",
+   "number": "5.4",
+   "title": "Concluding remarks",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 497,
+   "n_words": 89
+  },
+  {
+   "id": "sec-017-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 453,
+   "n_words": 72
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3850,
+   "n_words": 564
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 19,
+  "chars_total": 38107
+ }
+}

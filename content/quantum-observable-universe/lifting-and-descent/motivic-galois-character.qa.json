@@ -10,14 +10,14 @@
   "source_hashes": {
     "md": "310ff272580a",
     "ts": "8544c9d092c3",
-    "lean": "e6d21f954c62",
-    "lean_statement": "ed3394cfe5fe"
+    "lean": "338d62adf37c",
+    "lean_statement": "474065e34ead"
   },
   "criteria": {
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",
@@ -31,8 +31,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -41,10 +41,10 @@
           "version": "v1",
           "script_hash": "9b284af269a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "d4ec476d5ea9"
+          "deps_hash": "e6fa656b8dbd"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-26T07:34:01.205Z",
+        "reviewed_sha": "aed745f28e5bb04bda5b9e68b58aea5a92e0a90f"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -69,7 +69,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -84,7 +84,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -99,7 +99,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -114,7 +114,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -129,7 +129,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -144,7 +144,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -159,7 +159,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -174,7 +174,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -192,7 +192,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -210,7 +210,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -228,7 +228,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -242,7 +242,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -255,7 +255,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -270,7 +270,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -285,7 +285,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -300,7 +300,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -315,7 +315,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -330,7 +330,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -345,7 +345,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -360,7 +360,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -375,7 +375,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -390,7 +390,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -405,7 +405,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -420,7 +420,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -435,7 +435,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -450,7 +450,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -465,7 +465,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical synthesis effectively locking continuous formal representations strictly upon explicitly invariant bounds.",
         "reviewed_at": "2026-07-08T14:08:15.000Z",
         "reviewed_sha": "506965375ff2e72fbaf0c3eb4c1d93755489749e",
         "reviewer": {
@@ -678,8 +678,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -689,8 +689,8 @@
           "script_hash": "7e311e463351",
           "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "voice-title-scholarly": [
@@ -814,8 +814,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -825,8 +825,8 @@
           "script_hash": "37b3fa59a3bc",
           "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "q-usage-regime-detected": [
@@ -952,10 +952,10 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "md": "3359009e95b6",
-          "ts": "f4b065a4786f",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "md": "310ff272580a",
+          "ts": "8544c9d092c3",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -963,10 +963,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "5f54e3f82f73",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-09T13:00:56.226Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "proof-build-green": [
@@ -974,8 +974,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "n/a",
         "reviewer": {
@@ -985,17 +985,17 @@
           "script_hash": "492c533d3fbe",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "3359009e95b6",
-          "ts": "f4b065a4786f",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "md": "310ff272580a",
+          "ts": "8544c9d092c3",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1003,11 +1003,11 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "78239d5e66a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
           "deps_hash": "21d9ff417741"
         },
-        "reviewed_at": "2026-08-09T13:00:56.226Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "proof-lean-compiles": [
@@ -1015,8 +1015,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "n/a",
         "reviewer": {
@@ -1027,9 +1027,9 @@
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
           "deps_hash": "16d8c7a8984e"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
-        "notes": "stale: cached lean_sha 2bbb9fc65257 != current e6d21f954c62; re-run content/pipeline/lean-compile-audit.ts to refresh"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531",
+        "notes": "stale: cached lean_sha 2bbb9fc65257 != current 338d62adf37c; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "canonical-calibration-count": [
@@ -1218,8 +1218,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead",
           "graph": "356b2cf3be39"
         },
         "result": "n/a",
@@ -1230,8 +1230,8 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "detangler-no-xchapter-fwd": [
@@ -1239,8 +1239,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead",
           "graph": "356b2cf3be39"
         },
         "result": "n/a",
@@ -1251,8 +1251,8 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "detangler-archimedean-wall": [
@@ -1260,8 +1260,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead",
           "graph": "356b2cf3be39"
         },
         "result": "n/a",
@@ -1272,8 +1272,8 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "detangler-block-tanglement": [
@@ -1341,8 +1341,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead",
           "graph": "356b2cf3be39"
         },
         "result": "n/a",
@@ -1353,8 +1353,8 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "detangler-no-dependency-cycle": [
@@ -1383,8 +1383,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1393,10 +1393,10 @@
           "version": "v1",
           "script_hash": "a730f195e37d",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "d4ec476d5ea9"
+          "deps_hash": "e6fa656b8dbd"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-26T07:34:01.205Z",
+        "reviewed_sha": "aed745f28e5bb04bda5b9e68b58aea5a92e0a90f"
       }
     ],
     "bib-cited-ref-metadata-ok": [
@@ -1404,8 +1404,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1414,10 +1414,10 @@
           "version": "v1",
           "script_hash": "b7cc0ee7d062",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "d4ec476d5ea9"
+          "deps_hash": "e6fa656b8dbd"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-26T07:34:01.205Z",
+        "reviewed_sha": "aed745f28e5bb04bda5b9e68b58aea5a92e0a90f"
       }
     ],
     "bib-cited-ref-has-screenshot": [
@@ -1425,8 +1425,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1435,10 +1435,10 @@
           "version": "v1",
           "script_hash": "d3202b194d13",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
-          "deps_hash": "d4ec476d5ea9"
+          "deps_hash": "e6fa656b8dbd"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-26T07:34:01.205Z",
+        "reviewed_sha": "aed745f28e5bb04bda5b9e68b58aea5a92e0a90f"
       }
     ],
     "clarity-defterm-bold": [
@@ -1465,8 +1465,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "n/a",
         "reviewer": {
@@ -1474,11 +1474,11 @@
           "id": "content/pipeline/qa-checkers-cost.ts",
           "version": "v1",
           "script_hash": "3eb5d65c22b2",
-          "script_commit_sha": "f8585b0e839506a0b5745665e7480610a9093204",
+          "script_commit_sha": "6f3cf6a0c1d29dd9e8c3da3f6073a776ad58c456",
           "deps_hash": "4df6f652b039"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531",
         "notes": "no docs/audits/lean-profile.json"
       }
     ],
@@ -1513,8 +1513,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1522,11 +1522,11 @@
           "id": "content/pipeline/qa-checkers-uses.ts",
           "version": "v1",
           "script_hash": "b7b208d4a0c4",
-          "script_commit_sha": "f8585b0e839506a0b5745665e7480610a9093204",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "3b16849c7b53"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349",
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531",
         "metrics": {
           "formal_only_count": 0,
           "editorial_only_count": 2
@@ -1902,8 +1902,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe"
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead"
         },
         "result": "pass",
         "reviewer": {
@@ -1913,8 +1913,8 @@
           "script_hash": "fa8b78406bbb",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ],
     "render-math-mode-envelope": [
@@ -1942,8 +1942,8 @@
         "field_hash": {
           "md": "310ff272580a",
           "ts": "8544c9d092c3",
-          "lean": "e6d21f954c62",
-          "lean_statement": "ed3394cfe5fe",
+          "lean": "338d62adf37c",
+          "lean_statement": "474065e34ead",
           "graph": "356b2cf3be39"
         },
         "result": "n/a",
@@ -1954,10 +1954,11 @@
           "script_hash": "782f89f534a5",
           "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
         },
-        "reviewed_at": "2026-08-22T21:33:04.212Z",
-        "reviewed_sha": "0044fa0513c00dd92f6ed0df4076a9ed80b48349"
+        "reviewed_at": "2026-08-25T16:42:55.146Z",
+        "reviewed_sha": "def765883764573a2ee92328e010f2aef88c7531"
       }
     ]
   },
-  "updated_at": "2026-08-22T21:33:04.212Z"
+  "updated_at": "2026-08-26T07:34:01.205Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

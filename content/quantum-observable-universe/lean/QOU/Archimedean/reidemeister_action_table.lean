@@ -75,7 +75,7 @@ class ReidemeisterActionTableContext where
 /-- **Manuscript statement** (full body):
 
 Every braid move acts on the three sectors of the categorical
-action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} + \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
+action $\mathfrak{S}_q = \mathfrak{S}_q^{\mathrm{grav}} + \mathfrak{S}_q^{\mathrm{gauge}} + \mathfrak{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table
 gives the complete accounting: what each move preserves, what it
 changes, and what must be tracked for mass and energy calculations.
@@ -85,13 +85,13 @@ For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid
 representative $\beta \in B_A$:
 
 $$
-  \mathcal{S}_q[\beta]
+  \mathfrak{S}_q[\beta]
   = 
   \underbrace{E_0}_{\text{gravity}}
   + 
   \underbrace{\sum_{\text{crossings}} \mathcal{S}_{ij}(q)}_{\text{gauge}}
   + 
-  \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
+  \underbrace{\mathfrak{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
 $$
 
 The gauge sector decomposes via the Iwahori--Hecke algebra:

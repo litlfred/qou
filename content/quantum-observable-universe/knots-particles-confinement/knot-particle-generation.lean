@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.GCD.Basic
 
@@ -35,7 +36,7 @@ noncomputable def q_substrate : ℝ := 1.10997  -- :leanval[q_0]{precision=6}
 
 /-- Quantum Planck constant ℏ_q = 1 - 1/q. -/
 -- Ref: [manuscript] §1/quantum-planck-constant
-noncomputable def hbar_q : ℝ := 1 - 1 / q_substrate
+noncomputable def hbarQ : ℝ := 1 - q_substrate⁻¹
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Torus knot generators

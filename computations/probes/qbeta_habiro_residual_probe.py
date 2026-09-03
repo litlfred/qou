@@ -57,7 +57,7 @@ COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 sys.path.insert(0, str(COMP / "substrate"))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
@@ -81,8 +81,19 @@ OUT = HERE / "qbeta-habiro-residual.witness.json"
 MU_P_Q0_SPLIT_PPB = mp.mpf("11.5")
 # Registry-settled c_3 cross-anchor swing (J_Hopf near-match) and real-q
 # rigidity-falsification slope, ck-dk-canonical-registry.md §3.
-C3_CROSS_ANCHOR_SWING_PCT = mp.mpf("2.98")
-C3_DCDQ = mp.mpf("4.6e6")
+#
+# CORRECTED 2026-08-29 (bean `qou-kt8o`). These read 2.98 and 4.6e6, and the
+# comment above cites §3 — which had already been corrected to 2.375 % and
+# 3.84e6 (PR #5765, 2026-08-25), so the citation refuted the values it
+# introduced. Both stale numbers derive from the same root: the pre-#1422
+# SUPERSEDED muon `c_3 = -2.0097`, where live is `-2.02020024`.
+#
+# Neither constant enters any arithmetic — both are printed and recorded into
+# the witness — so this moves no computed number, only what the witness
+# asserts. The REFUTED verdict is untouched: 3.84e6 is just as impossible for
+# a smooth real `f` as 4.6e6.
+C3_CROSS_ANCHOR_SWING_PCT = mp.mpf("2.3748")
+C3_DCDQ = mp.mpf("3.84e6")
 
 
 def q_beta_single_wrap(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
@@ -210,7 +221,11 @@ def main() -> int:
 
     # cross-check that Q_A in the witness matches the live single-wrap form
     Q_A_live = q_beta_single_wrap(q0, m_e)
-    qA_consistency_ppb = float(abs(Q_A_live - Q_A) / Q_A * 1e9)
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    qA_consistency_ppb_exact_mpf = abs(Q_A_live - Q_A) / Q_A * 1e9
+    qA_consistency_ppb = float(qA_consistency_ppb_exact_mpf)
 
     def rel_ppb(x: mp.mpf) -> float:
         return float((x - Q_codata) / Q_codata * 1e9)
@@ -228,8 +243,12 @@ def main() -> int:
     sigma_theory_ppb = abs(resid_N2_ppb)  # framework's own truncation residual
     sigma_CAL_q0_ppb = float(abs(dlnQ_dlnq) * sig_q0_rel * 1e9)
     sigma_CAL_me_ppb = float(sig_me_rel * 1e9)  # linear in m_e
+    # Exact mpf kept alongside the float: `float(...)` cut this to 17
+    # digits before it reached the witness, while every existing use of
+    # the float below is unchanged (bean qou-p77d).
+    sigma_CAL_total_ppb_exact_mpf = mp.sqrt((abs(dlnQ_dlnq) * sig_q0_rel) ** 2 + sig_me_rel ** 2) * 1e9
     sigma_CAL_total_ppb = float(
-        mp.sqrt((abs(dlnQ_dlnq) * sig_q0_rel) ** 2 + sig_me_rel ** 2) * 1e9
+        sigma_CAL_total_ppb_exact_mpf
     )
     sigma_exp_ppb = float(sig_exp_rel * 1e9)
     target_100x_ppb = sigma_exp_ppb / 100.0
@@ -310,7 +329,7 @@ def main() -> int:
     # committed Q_A witness (guards against a stale q₀ in the witness).
     wb.add_assertion(
         "Q_A_witness_matches_live_single_wrap",
-        computed=qA_consistency_ppb,
+        computed=fmt(qA_consistency_ppb_exact_mpf),
         expected=0.0,
         tolerance=1.0,  # ppb
         source="single-wrap closed form recomputed at canonical q₀",
@@ -318,7 +337,7 @@ def main() -> int:
     # the production residual is σ_theory, two orders above σ_CAL.
     wb.add_assertion(
         "sigma_theory_dominates_sigma_CAL",
-        computed=sigma_CAL_total_ppb,
+        computed=fmt(sigma_CAL_total_ppb_exact_mpf),
         expected=0.0,
         tolerance=sigma_theory_ppb,
         source="σ_CAL << σ_theory (residual is framework's, not propagated)",

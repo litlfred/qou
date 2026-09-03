@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T20:52:07.500036+00:00",
-  "commitSha": "51453478504f0afd0957f3a4410bf273438ce1f9",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T09:31:07.560974+00:00",
+  "commitSha": "7791294df1215689e2253b1d72f9c7b9a379299f",
   "assertions": [
     {
       "name": "controls_reproduce_3822_genuine_smatrix",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "C1..C5: D(2,3,5)=2, S²=1, vacuum row=Cor.12 weights, Σ|S0i|²=1, ratio=φ"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "S_{00} = 1/𝒟 with 𝒟 = √(Σ d_i²) reproduced to 1e-40"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Σd_i²=(5+√5)/2, 𝒟=√((5+√5)/2) — algebraic in ℚ(√5), matched to 1e-40"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "𝒟≈1.902, Σd_i²≈3.618 ∉ {8, 8π=25.13}; #3853 n=5 reading 11.357 also ∉ — the naive S₀₀=1/D shared-wall value identification is falsified"
     },
     {
@@ -41,15 +41,16 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "source": "𝒟,S₀₀ ∈ ℚ(√5) algebraic (cyclotomic quantum dims) ⇒ S-matrix cannot supply the bare π of 1/(π·b₁); π is archimedean (1-loop det 4π²)"
+      "tolerance": "0.5",
+      "source": "𝒟,S₀₀ algebraic (cyclotomic quantum dims): Σd_i² roots z²−5z+5, 𝒟 roots x⁴−5x²+5, S₀₀=1/𝒟 roots 5y⁴−5y²+1, max residual 2.89782e-70 < 1e-40 ⇒ by Lindemann (π transcendental) S₀₀ ≠ 1/(π·b₁) for ANY nonzero rational b₁; the S-matrix cannot supply that bare π — it is archimedean (1-loop det 4π²)"
     }
   ],
   "allPassed": true,
   "durationMs": 3,
   "computation": "alpha-em-smatrix-perloop",
   "scriptFile": "alpha_em_smatrix_perloop_probe.py",
-  "scriptHash": "0f79cc1f8450",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "de8667a283e0",
+  "scriptCommitSha": "37e3a33bc6eb6f3b817a7fedacf29968f1610ac8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,10 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -79,7 +80,7 @@
     "compute_dps": 50,
     "b1_dim_H1_Bring": 8,
     "target_measure": "1/(pi*b1) = 1/(8*pi)",
-    "q0_computations_layer": "1.1099785955541805"
+    "q0_computations_layer": "1.1099785827513808076"
   },
   "data": {
     "reused_smatrix": {
@@ -113,7 +114,7 @@
     },
     "cross_check_n5_hecke_hookcontent": {
       "source": "#3853 alpha_em_2I_total_quantum_dimension_gate_test_probe",
-      "D_q0": "11.356887116006046877",
+      "D_q0": "11.356887025943677419",
       "equals_8_or_8pi": false,
       "note": "the OTHER natural keystone-S-matrix reading; also misses 8 and 8π"
     },

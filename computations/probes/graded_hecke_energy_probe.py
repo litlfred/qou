@@ -48,6 +48,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
+from canonical_trm_reference import tr_m_nucleon  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
@@ -65,8 +66,10 @@ from q_parameter import Q_MP as Q0_FLOAT
 # Canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0;
 # used as the convergence target for cumulative truncation.
 TR_M_TARGETS = {
-    "proton":   mp.mpf("1.0653062286131670"),
-    "neutron":  mp.mpf("0.9232332971861535"),
+    # CONVENTION FIX (2026-08-30, bean qou-46ab): were convention-C literals,
+    # 7.55% from the canonical D values.
+    "proton":   tr_m_nucleon("proton"),
+    "neutron":  tr_m_nucleon("neutron"),
     "deuteron": mp.mpf("0.3882864715477132"),
 }
 
@@ -262,8 +265,8 @@ def main() -> int:
         target = mp.mpf(r["target_tr_M"])
         w.add_assertion(
             f"cumulative_at_max_grade_matches_target[{atom}]",
-            computed=float(last_cum),
-            expected=float(target),
+            computed=last_cum,
+            expected=target,
             tolerance=1e-10,
         )
 

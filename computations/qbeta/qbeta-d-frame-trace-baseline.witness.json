@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-27T05:31:43.465389+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "assertions": [
+    {
+      "name": "third_row_vanishes_at_N_equals_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D_frame_trace_baseline_is_far_from_CODATA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "gap_exceeds_the_entire_existing_ladder",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "three_row_trace_is_further_still",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-d-frame-trace-baseline",
+  "scriptFile": "qbeta_d_frame_trace_baseline_probe.py",
+  "scriptHash": "34a237d59364",
+  "scriptCommitSha": "0da1e06c494349ccd5800a930691970505fdbb81",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_trace_baseline_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_trace_baseline_probe.py"
+  },
+  "description": "qou-cds1: the convention-D trace baseline for Q_beta, built from the two-row (Temperley-Lieb) structure rather than by substituting z_D into the C-frame ladder. Finds the D-frame trace 15.5 % low against the counit's +0.17 %, and prices that gap at ~92x the entire five-rung ladder -- so a D-frame re-derivation of the existing rung structure cannot close it. Scope-(a), not an exclusion of the trace.",
+  "data": {
+    "trM_Delta_N2": "-0.158016004341491298055061430272824323888679302880695453891268",
+    "Qbeta_N2": "0.661452049275741565895300781094576508496317906224132597891946",
+    "err_N2": "-0.154513866588921007566131683419025469092317696466508518074373",
+    "trM_Delta_N3": "-0.135912002739052714053130935554665352608083829231127231966335",
+    "Qbeta_N3": "0.568925110513702422213156580902440179509235173710350451545593",
+    "err_N3": "-0.272784334986348376319598890241075474528901893785299607349691",
+    "counit_baseline_Qbeta": "0.783645827374621213074939751341396890525736441030296026828415",
+    "counit_baseline_err": "0.00167756873104829946723350200931500391578271731363792311191084",
+    "gap_over_ladder_ratio": "92.1058337158958078293820971505915498676663454244306523315260",
+    "chi_1_1_1": "-0.171538643776599505671840531694425115158778702109050313959100",
+    "chi_2_1": "-0.106814457651578049623631258921144907521837554045064212540761",
+    "chi_3": "-0.260387641790120802073285342788008683395823953848006260161245"
+  }
+}

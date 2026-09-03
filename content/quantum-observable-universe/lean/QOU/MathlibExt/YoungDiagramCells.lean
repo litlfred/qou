@@ -41,8 +41,14 @@ The rest cost no errors — each sits in its own namespace — but the copies
 those is reachable from the others without a `rfl` bridge nobody wrote.
 
 This module is the single home. `TwoFiltrationBridge` is migrated onto it;
-the remaining eight are the drain half of `qou-cdup`. Each is definitionally
-equal to the corresponding declaration here, so every bridge is `rfl`.
+the rest are the drain half of `qou-cdup`.
+
+**The counts in the table above are understated, and "every bridge is `rfl`" is
+false.** Re-measured 2026-08-24: **ten** reachable `content` copies, four of
+them never recorded anywhere (one of which an earlier note claimed does not
+exist); and the `hookLength` bridge is conditional, not `rfl`, because it is
+`ℕ`-valued with truncated subtraction. The measured list, the bridges, and the
+`axialDistance` escalation are in `QOU.MathlibExt.YoungDiagramCellsBridges`.
 
 **Namespace note.** This lives under `QOU.MathlibExt` — the corpus's established
 home for Mathlib extensions — rather than the more obvious `QOU.YoungDiagram`.
@@ -96,6 +102,48 @@ theorem one_le_hook {c : ℕ × ℕ} (hc : c ∈ μ) : 1 ≤ hook μ c := by
   have := arm_nonneg hc
   have := leg_nonneg hc
   simp only [hook]; omega
+
+/-! ### Axial distance
+
+The content difference between two cells.  This is the parameter Young's
+seminormal / orthogonal form is built from: `axialDistance (cell of k)
+(cell of k+1)` determines the `2×2` block by which the generator `σ_k` acts.
+
+It is included here for the same reason `content` is: it was defined twice
+independently (`QOU.SchurWeyl.axialDistance` on one copy of `content`,
+`QOU.BraidKnot.TableauContent.axialDistance` on another), and the duplication
+bites harder one level up than it does on `content` itself — see the bridges
+module for why. -/
+
+/-- **Axial distance** from `c` to `d`: the difference of their contents. -/
+def axialDistance (c d : ℕ × ℕ) : ℤ := content d - content c
+
+@[simp] theorem axialDistance_apply (c d : ℕ × ℕ) :
+    axialDistance c d = (d.2 : ℤ) - (d.1 : ℤ) - ((c.2 : ℤ) - (c.1 : ℤ)) := rfl
+
+@[simp] theorem axialDistance_self (c : ℕ × ℕ) : axialDistance c c = 0 := by
+  simp only [axialDistance]; ring
+
+/-- **Axial distance is antisymmetric.**  Exchanging the two cells negates it,
+which is what makes a seminormal pair carry the two parameters `a(d)`, `a(-d)`. -/
+theorem axialDistance_antisymm (c d : ℕ × ℕ) :
+    axialDistance c d = -axialDistance d c := by
+  simp only [axialDistance]; ring
+
+/-- Cells in the same row: the axial distance is the column gap. -/
+theorem axialDistance_same_row (i j₁ j₂ : ℕ) :
+    axialDistance (i, j₁) (i, j₂) = (j₂ : ℤ) - (j₁ : ℤ) := by
+  simp only [axialDistance, content]; ring
+
+/-- Cells in the same column: the axial distance is minus the row gap. -/
+theorem axialDistance_same_col (i₁ i₂ j : ℕ) :
+    axialDistance (i₁, j) (i₂, j) = (i₁ : ℤ) - (i₂ : ℤ) := by
+  simp only [axialDistance, content]; ring
+
+/-- Axial distance telescopes along a chain of cells. -/
+theorem axialDistance_trans (c d e : ℕ × ℕ) :
+    axialDistance c d + axialDistance d e = axialDistance c e := by
+  simp only [axialDistance]; ring
 
 /-! ### The corner, and the content range -/
 

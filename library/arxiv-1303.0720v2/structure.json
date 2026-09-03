@@ -1,0 +1,858 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1303.0720v2",
+ "source": {
+  "file": "1303.0720v2.pdf",
+  "sha256": "389ab465e81a06674df137c14c10ae3f34ab0626b329424eac052cf8a8e9f185",
+  "bytes": 477618,
+  "pages": 41,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1303.0720",
+   "version": "2",
+   "primary_class": "math.CV",
+   "stamp_date": "9 Mar 2013"
+  },
+  "doi": null,
+  "title": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
+  "authors_raw": "ANTTI HAIMI AND HAAKAN HEDENMALM",
+  "title_lines": [
+   "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS"
+  ],
+  "abstract": "We consider the q-analytic functions on a given planar domain \u2126, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if \u00af\u2202q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e\u22122mQ, as the positive real parameter m tends to in\ufb01nity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identi\ufb01ed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors. Finally, we apply the obtained asymptotics for q = 2 to the bianalytic Bergman metrics, and after suitable blow-up, the result is independent of Q for a wide class of potentials Q. We interpret this as an instance of geometric universality. 1. Overview In Section 2, we de\ufb01ne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible rami\ufb01cations for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as vector-valued (analytic) Bergman spaces with singular local inner product matrix. Generally speaking, Bergman kernels are di\ufb03cult to obtain in explicit form. However, it is sometimes possible to obtain an asymptotic expansion for them, for instance as the weight degenerates in a power fashion. In Sections 5\u20139, we extend the asymptotic expansion to the polyanalytic context. Our analysis is based on the microlocal PDE approach of Berman, Berndtsson, Sj\u00f6strand [8]. We focus mainly on the biholomorphic (bianalytic) case, and obtain the explicit form of the \ufb01rst few terms of the expansion. In Section 4, we estimate the norm of point evaluat",
+  "docinfo": {
+   "Title": "",
+   "Author": "",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211119025248-05'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Overview",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Weighted polyanalytic Bergman spaces and kernels",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Basic notation. We let C denote the complex plane and R the real line. For z0 \u2208C and",
+   "page": 1,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The weighted Bergman spaces and kernels. Let \u2126be a domain in C, and let \u03c9 : \u2126\u2192R+",
+   "page": 2,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Musings on polyanalytic Bergman metrics",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Bergman\u2019s \ufb01rst metric. Stefan Bergman [5] considered the Bergman kernel for the weight",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Bergman\u2019s second metric. The second metric is related to the Gaussian curvature. The",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The \ufb01rst polyanalytic Bergman metric. We continue the setting of the preceding subsec-",
+   "page": 5,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "The second polyanalytic Bergman metric. We turn to Bergman\u2019s second metric. The",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Interlude: a priori control on point evaluations",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Introductory comments. Let us consider the unit disk D, and a given subharmonic func-",
+   "page": 7,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The basic estimate. We begin with a lemma. We decompose the given bianalytic function",
+   "page": 7,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The e\ufb00ective estimate of the point evaluation. The problem with Proposition 4.3 as it",
+   "page": 9,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+   "page": 10,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The weighted polyanalytic Bergman space and kernel for power weights. As before, \u2126",
+   "page": 10,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Weighted Bergman kernel expansions for power weights. We should observe \ufb01rst that",
+   "page": 10,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The connection with random normal matrix theory. Apart from to the connection with to",
+   "page": 11,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "The polyanalytic Bergman spaces and Landau levels. The polyanalytic spaces PA2",
+   "page": 11,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 1,
+   "title": "Tools from the approach of Berman-Berndtsson-Sj\u00a8ostrand",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Assumptions on the potential. We \ufb01x a C\u221e-smooth simply connected bounded domain",
+   "page": 13,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Re Q(z, w) \u2212Q(w) \u2212Q(z) \u2264\u22121",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The phase function. We now introduce the phase function:",
+   "page": 14,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Re[(z \u2212w)\u03b8(z, w)] = 2 Re Q(z, w) \u22122Q(w)",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Approximate local reproducing and Bergman kernels. In [8], the point of departure is",
+   "page": 14,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "A di\ufb00erentialoperator and negligible amplitudes. The corrective algorithm involves the",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "A formal di\ufb00usion operator and the characterization of negligible amplitudes. Next, to",
+   "page": 16,
+   "source": "inferred",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm. We",
+   "page": 18,
+   "source": "inferred",
+   "number": "6.6"
+  },
+  {
+   "level": 1,
+   "title": "The kernel expansion algorithm for bianalytic functions",
+   "page": 20,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The initial approximate local bi-reproducing kernel. We now turn our attention to the",
+   "page": 20,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "The characterization of bi-negligible amplitudes. We need to \ufb01nd the bianalytic ana-",
+   "page": 23,
+   "source": "inferred",
+   "number": "7.5"
+  },
+  {
+   "level": 2,
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algo-",
+   "page": 25,
+   "source": "inferred",
+   "number": "7.7"
+  },
+  {
+   "level": 2,
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective al-",
+   "page": 28,
+   "source": "inferred",
+   "number": "7.8"
+  },
+  {
+   "level": 2,
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algo-",
+   "page": 29,
+   "source": "inferred",
+   "number": "7.9"
+  },
+  {
+   "level": 1,
+   "title": "A more precise calculation",
+   "page": 29,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "A priori diagonal estimates of weighted Bergman kernels",
+   "page": 31,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Estimation of point evaluations for local weighted Bergman spaces. The spaces PA2",
+   "page": 31,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Estimation of the weighted Bergman kernel on the diagonal. We recall that PA2",
+   "page": 33,
+   "source": "inferred",
+   "number": "8.2"
+  },
+  {
+   "level": 1,
+   "title": "Bergman kernels: from local to global",
+   "page": 33,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Purpose of the section. In this section we show how the approximate local Bergman",
+   "page": 33,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Analysis of the second term in the pointwise estimate I. We proceed to estimate the",
+   "page": 35,
+   "source": "inferred",
+   "number": "9.4"
+  },
+  {
+   "level": 2,
+   "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem. We should like to",
+   "page": 35,
+   "source": "inferred",
+   "number": "9.5"
+  },
+  {
+   "level": 2,
+   "title": "Analysis of the second term in the pointwise estimate II. As we apply Proposition 9.1",
+   "page": 36,
+   "source": "inferred",
+   "number": "9.6"
+  },
+  {
+   "level": 2,
+   "title": "The pointwise distance to the weighted Bergman kernel. Here, we apply the estimates",
+   "page": 37,
+   "source": "inferred",
+   "number": "9.7"
+  },
+  {
+   "level": 1,
+   "title": "Bianalytic extensions of Bergman\u2019s metrics and asymptotic analysis",
+   "page": 37,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Purpose of the section. In this section, we apply the asymptotic formulae obtained in",
+   "page": 37,
+   "source": "inferred",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Bergman\u2019s \ufb01rst metric. Our starting point is the abschnitt b\u27e82,k\u27e9with k = 0:",
+   "page": 38,
+   "source": "inferred",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "Bergman\u2019s second metric. Given that Theorem 9.3 extends to apply to the lifted kernel,",
+   "page": 39,
+   "source": "inferred",
+   "number": "10.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-overview",
+   "number": "1",
+   "title": "Overview",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1362,
+   "n_words": 212
+  },
+  {
+   "id": "sec-001-2-weighted-polyanalytic-bergman-spaces-and-kerne",
+   "number": "2",
+   "title": "Weighted polyanalytic Bergman spaces and kernels",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-basic-notation-we-let-c-denote-the-complex-pl",
+   "number": "2.1",
+   "title": "Basic notation. We let C denote the complex plane and R the real line. For z0 \u2208C and",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 814,
+   "n_words": 167
+  },
+  {
+   "id": "sec-003-22-the-weighted-bergman-spaces-and-kernels-let-\u03c9",
+   "number": "2.2",
+   "title": "The weighted Bergman spaces and kernels. Let \u2126be a domain in C, and let \u03c9 : \u2126\u2192R+",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6064,
+   "n_words": 1155
+  },
+  {
+   "id": "sec-004-3-musings-on-polyanalytic-bergman-metrics",
+   "number": "3",
+   "title": "Musings on polyanalytic Bergman metrics",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-31-bergmans-\ufb01rst-metric-stefan-bergman-5-conside",
+   "number": "3.1",
+   "title": "Bergman\u2019s \ufb01rst metric. Stefan Bergman [5] considered the Bergman kernel for the weight",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 603,
+   "n_words": 96
+  },
+  {
+   "id": "sec-006-32-bergmans-second-metric-the-second-metric-is-r",
+   "number": "3.2",
+   "title": "Bergman\u2019s second metric. The second metric is related to the Gaussian curvature. The",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1264,
+   "n_words": 228
+  },
+  {
+   "id": "sec-007-33-the-\ufb01rst-polyanalytic-bergman-metric-we-conti",
+   "number": "3.3",
+   "title": "The \ufb01rst polyanalytic Bergman metric. We continue the setting of the preceding subsec-",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2220,
+   "n_words": 423
+  },
+  {
+   "id": "sec-008-34-the-second-polyanalytic-bergman-metric-we-tur",
+   "number": "3.4",
+   "title": "The second polyanalytic Bergman metric. We turn to Bergman\u2019s second metric. The",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1140,
+   "n_words": 199
+  },
+  {
+   "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
+   "number": "3.5",
+   "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1190,
+   "n_words": 232
+  },
+  {
+   "id": "sec-010-4-interlude-a-priori-control-on-point-evaluation",
+   "number": "4",
+   "title": "Interlude: a priori control on point evaluations",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-41-introductory-comments-let-us-consider-the-uni",
+   "number": "4.1",
+   "title": "Introductory comments. Let us consider the unit disk D, and a given subharmonic func-",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 560,
+   "n_words": 105
+  },
+  {
+   "id": "sec-012-42-the-basic-estimate-we-begin-with-a-lemma-we-d",
+   "number": "4.2",
+   "title": "The basic estimate. We begin with a lemma. We decompose the given bianalytic function",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2213,
+   "n_words": 447
+  },
+  {
+   "id": "sec-013-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+   "number": "5",
+   "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1245,
+   "n_words": 254
+  },
+  {
+   "id": "sec-014-44-the-e\ufb00ective-estimate-of-the-point-evaluation",
+   "number": "4.4",
+   "title": "The e\ufb00ective estimate of the point evaluation. The problem with Proposition 4.3 as it",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1689,
+   "n_words": 314
+  },
+  {
+   "id": "sec-015-51-the-weighted-polyanalytic-bergman-space-and-k",
+   "number": "5.1",
+   "title": "The weighted polyanalytic Bergman space and kernel for power weights. As before, \u2126",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1390,
+   "n_words": 248
+  },
+  {
+   "id": "sec-016-52-weighted-bergman-kernel-expansions-for-power",
+   "number": "5.2",
+   "title": "Weighted Bergman kernel expansions for power weights. We should observe \ufb01rst that",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2567,
+   "n_words": 453
+  },
+  {
+   "id": "sec-017-53-the-connection-with-random-normal-matrix-theo",
+   "number": "5.3",
+   "title": "The connection with random normal matrix theory. Apart from to the connection with to",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 957,
+   "n_words": 165
+  },
+  {
+   "id": "sec-018-54-the-polyanalytic-bergman-spaces-and-landau-le",
+   "number": "5.4",
+   "title": "The polyanalytic Bergman spaces and Landau levels. The polyanalytic spaces PA2",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5694,
+   "n_words": 978
+  },
+  {
+   "id": "sec-019-6-tools-from-the-approach-of-berman-berndtsson-s",
+   "number": "6",
+   "title": "Tools from the approach of Berman-Berndtsson-Sj\u00a8ostrand",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 146,
+   "n_words": 25
+  },
+  {
+   "id": "sec-020-61-assumptions-on-the-potential-we-\ufb01x-a-c-smooth",
+   "number": "6.1",
+   "title": "Assumptions on the potential. We \ufb01x a C\u221e-smooth simply connected bounded domain",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1143,
+   "n_words": 214
+  },
+  {
+   "id": "sec-021-2-re-qz-w-qw-qz-1",
+   "number": "2",
+   "title": "Re Q(z, w) \u2212Q(w) \u2212Q(z) \u2264\u22121",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 30,
+   "n_words": 6
+  },
+  {
+   "id": "sec-022-62-the-phase-function-we-now-introduce-the-phase",
+   "number": "6.2",
+   "title": "The phase function. We now introduce the phase function:",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 253,
+   "n_words": 50
+  },
+  {
+   "id": "sec-023-2-rez-w\u03b8z-w-2-re-qz-w-2qw",
+   "number": "2",
+   "title": "Re[(z \u2212w)\u03b8(z, w)] = 2 Re Q(z, w) \u22122Q(w)",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 456,
+   "n_words": 102
+  },
+  {
+   "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
+   "number": "6.3",
+   "title": "Approximate local reproducing and Bergman kernels. In [8], the point of departure is",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3776,
+   "n_words": 654
+  },
+  {
+   "id": "sec-025-64-a-di\ufb00erentialoperator-and-negligible-amplitud",
+   "number": "6.4",
+   "title": "A di\ufb00erentialoperator and negligible amplitudes. The corrective algorithm involves the",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1386,
+   "n_words": 232
+  },
+  {
+   "id": "sec-026-65-a-formal-di\ufb00usion-operator-and-the-characteri",
+   "number": "6.5",
+   "title": "A formal di\ufb00usion operator and the characterization of negligible amplitudes. Next, to",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4214,
+   "n_words": 771
+  },
+  {
+   "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
+   "number": "6.6",
+   "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm. We",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3619,
+   "n_words": 685
+  },
+  {
+   "id": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic",
+   "number": "7",
+   "title": "The kernel expansion algorithm for bianalytic functions",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 344,
+   "n_words": 72
+  },
+  {
+   "id": "sec-029-72-the-initial-approximate-local-bi-reproducing",
+   "number": "7.2",
+   "title": "The initial approximate local bi-reproducing kernel. We now turn our attention to the",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5895,
+   "n_words": 1051
+  },
+  {
+   "id": "sec-030-75-the-characterization-of-bi-negligible-amplitu",
+   "number": "7.5",
+   "title": "The characterization of bi-negligible amplitudes. We need to \ufb01nd the bianalytic ana-",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 5353,
+   "n_words": 978
+  },
+  {
+   "id": "sec-031-77-the-local-asymptotics-for-the-weighted-bianal",
+   "number": "7.7",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algo-",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 7140,
+   "n_words": 1419
+  },
+  {
+   "id": "sec-032-78-the-local-asymptotics-for-the-weighted-bianal",
+   "number": "7.8",
+   "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective al-",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2484,
+   "n_words": 505
+  },
+  {
+   "id": "sec-033-0-a-more-precise-calculation",
+   "number": "0",
+   "title": "A more precise calculation",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3628,
+   "n_words": 821
+  },
+  {
+   "id": "sec-034-8-a-priori-diagonal-estimates-of-weighted-bergma",
+   "number": "8",
+   "title": "A priori diagonal estimates of weighted Bergman kernels",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-035-81-estimation-of-point-evaluations-for-local-wei",
+   "number": "8.1",
+   "title": "Estimation of point evaluations for local weighted Bergman spaces. The spaces PA2",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 1937,
+   "n_words": 327
+  },
+  {
+   "id": "sec-036-82-estimation-of-the-weighted-bergman-kernel-on",
+   "number": "8.2",
+   "title": "Estimation of the weighted Bergman kernel on the diagonal. We recall that PA2",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 583,
+   "n_words": 101
+  },
+  {
+   "id": "sec-037-9-bergman-kernels-from-local-to-global",
+   "number": "9",
+   "title": "Bergman kernels: from local to global",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-038-91-purpose-of-the-section-in-this-section-we-sho",
+   "number": "9.1",
+   "title": "Purpose of the section. In this section we show how the approximate local Bergman",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4499,
+   "n_words": 780
+  },
+  {
+   "id": "sec-039-94-analysis-of-the-second-term-in-the-pointwise",
+   "number": "9.4",
+   "title": "Analysis of the second term in the pointwise estimate I. We proceed to estimate the",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1260,
+   "n_words": 232
+  },
+  {
+   "id": "sec-040-95-digression-on-h\u00f6rmander-type-estimates-and-an",
+   "number": "9.5",
+   "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem. We should like to",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 3332,
+   "n_words": 598
+  },
+  {
+   "id": "sec-041-97-the-pointwise-distance-to-the-weighted-bergma",
+   "number": "9.7",
+   "title": "The pointwise distance to the weighted Bergman kernel. Here, we apply the estimates",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1472,
+   "n_words": 278
+  },
+  {
+   "id": "sec-042-10-bianalytic-extensions-of-bergmans-metrics-and",
+   "number": "10",
+   "title": "Bianalytic extensions of Bergman\u2019s metrics and asymptotic analysis",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-043-101-purpose-of-the-section-in-this-section-we-ap",
+   "number": "10.1",
+   "title": "Purpose of the section. In this section, we apply the asymptotic formulae obtained in",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 381,
+   "n_words": 64
+  },
+  {
+   "id": "sec-044-102-bergmans-\ufb01rst-metric-our-starting-point-is-t",
+   "number": "10.2",
+   "title": "Bergman\u2019s \ufb01rst metric. Our starting point is the abschnitt b\u27e82,k\u27e9with k = 0:",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 4011,
+   "n_words": 726
+  },
+  {
+   "id": "sec-045-103-bergmans-second-metric-given-that-theorem-93",
+   "number": "10.3",
+   "title": "Bergman\u2019s second metric. Given that Theorem 9.3 extends to apply to the lifted kernel,",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 1295,
+   "n_words": 245
+  },
+  {
+   "id": "sec-046-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 4823,
+   "n_words": 693
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 49,
+  "sections": 47,
+  "chars_total": 94432
+ }
+}

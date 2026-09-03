@@ -45,7 +45,7 @@ theorem reeb_time_monotone
   -- Show 0 < 1 - q⁻¹: since q > 1, we have q⁻¹ < 1
   have hq_pos' : (0 : ℝ) < q := by linarith
   have hq_inv_lt : q⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos']
+    rw [inv_lt_one₀ hq_pos']
     exact hq_pos
   linarith
 

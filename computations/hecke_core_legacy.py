@@ -156,6 +156,14 @@ from hecke_core import (  # noqa: E402
     CATALAN_G, VOL_BORROMEAN, VOL_FIGURE8,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: the
+# bar-symmetriser of z, which averages the two flavours 50/50 and so cannot
+# see the substrate flavour split. Imported, not open-coded, so there is one
+# definition; the import is hard on purpose because a fallback would compute
+# the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 # ════════════════════════════════════════════════════════════════════
 # MOVED SYMBOLS — original source preserved verbatim from hecke_core.py
 # ════════════════════════════════════════════════════════════════════
@@ -908,7 +916,7 @@ def _step_chain_22(nucleon_type, prev_types):
         elif ti == 'n' and nucleon_type == 'n':
             chain.append((1.0, -h, 3))       # nn
         else:
-            chain.append((1.0, -h / 2, 3))   # pn
+            chain.append((1.0, _pn_d(h), 3))   # pn
     return chain
 
 
@@ -1192,7 +1200,7 @@ def _step_chain_generic(nucleon_type, prev_types, n_gens, include_inter=True):
             elif ti == 'n' and nucleon_type == 'n':
                 chain.append((1.0, -h, g % n_gens))       # nn
             else:
-                chain.append((1.0, -h / 2, g % n_gens))   # pn
+                chain.append((1.0, _pn_d(h), g % n_gens))   # pn
             g += 1
     return chain
 
@@ -1444,9 +1452,23 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # becomes object after the first crossing multiplies it by an mpf
             # coefficient, so a per-iteration dtype test would take the sparse
             # path once and then crash on the second crossing.
-            exact_chain = any(not isinstance(c, float) or not isinstance(d, float)
-                              for c, d, _g in chain)
-            if s['sparse'] and not exact_chain:
+            # NOTE (2026-08-31, qou-sv7h): the guard used to be
+            #     if s['sparse'] and not exact_chain:
+            # and `exact_chain` is True for EVERY physical chain -- measured over
+            # every (nucleon, prev_types, n_gens) combination. The coefficient
+            # histogram is ('int','int') 132, ('int','mpf') 132, ('float','float')
+            # 48: the mpf are genuine 50-dps values AND `c` is the Python int 1,
+            # which is not a float. So `not exact_chain` was never true, and BOTH
+            # branches below were dead -- including the COO object accumulator
+            # written specifically for the exact case. Every partition, up to
+            # dim 2310, fell through to the O(dim^3) dense path.
+            #
+            # The dtype test below already dispatches correctly per iteration
+            # (float64 -> scipy sparse BLAS; object -> COO over sigma's nonzeros,
+            # both O(dim*nnz)), so the outer exactness test was not only wrong,
+            # it was redundant. Value-equality verified against the pre-fix
+            # result at k_exact = 4..8 (k=8 carries 12 sparse partitions).
+            if s['sparse']:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
@@ -1662,10 +1684,38 @@ def atom_character_raw(Z, N, entry, include_inter=True):
         prev_types = ordering[:kkk]
         chain = _step_chain_generic(nuc, prev_types, n_gens, include_inter=include_inter)
         if sparse_sigmas:
+            # Object-dtype fallback (qou-w2vy, 2026-08-31). scipy's sparse
+            # kernels are float64-only, so `sig_sparse.dot(M)` raises
+            #   TypeError: no supported conversion for types:
+            #              (dtype('float64'), dtype('O'))
+            # the moment an mpf coefficient promotes M_run to dtype object --
+            # which every physical chain does, since _PROTON_G1/_NEUTRON_G1
+            # carry d = -h as an mpf. scipy is RIGHT to refuse: the only way to
+            # satisfy it is to discard the exact coefficients.
+            #
+            # This is the SAME fix da645cf0f32 applied to
+            # unified_iterative_correction; this loop was left behind, and the
+            # crash went unnoticed because binding_energy calls that function
+            # FIRST and it never returns for A >= 2, so control never reached
+            # here. Accumulating over sigma's nonzeros is O(dim*nnz) -- the same
+            # complexity the float64 branch gets from sparse BLAS -- and the
+            # densified COO is cached per generator.
             M_run = M
+            _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        _m = sig_sparse.tocoo()
+                        coo = (_m.row, _m.col, _m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    Msig = np.zeros_like(M_run)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
+                else:
+                    Msig = sig_sparse.T.dot(M_run.T).T
                 M_run = c * Msig + d * M_run
             M = M_run
         else:
@@ -1734,10 +1784,38 @@ def _contrib_single_partition(Z, N, entry):
         prev_types = ordering[:kkk]
         chain = _step_chain_generic(nuc, prev_types, n_gens)
         if sparse_sigmas:
+            # Object-dtype fallback (qou-w2vy, 2026-08-31). scipy's sparse
+            # kernels are float64-only, so `sig_sparse.dot(M)` raises
+            #   TypeError: no supported conversion for types:
+            #              (dtype('float64'), dtype('O'))
+            # the moment an mpf coefficient promotes M_run to dtype object --
+            # which every physical chain does, since _PROTON_G1/_NEUTRON_G1
+            # carry d = -h as an mpf. scipy is RIGHT to refuse: the only way to
+            # satisfy it is to discard the exact coefficients.
+            #
+            # This is the SAME fix da645cf0f32 applied to
+            # unified_iterative_correction; this loop was left behind, and the
+            # crash went unnoticed because binding_energy calls that function
+            # FIRST and it never returns for A >= 2, so control never reached
+            # here. Accumulating over sigma's nonzeros is O(dim*nnz) -- the same
+            # complexity the float64 branch gets from sparse BLAS -- and the
+            # densified COO is cached per generator.
             M_run = M
+            _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                Msig = sig_sparse.T.dot(M_run.T).T
+                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                    coo = _sig_coo.get(gen)
+                    if coo is None:
+                        _m = sig_sparse.tocoo()
+                        coo = (_m.row, _m.col, _m.data)
+                        _sig_coo[gen] = coo
+                    rows_i, cols_j, vals = coo
+                    Msig = np.zeros_like(M_run)
+                    for i, j, v in zip(rows_i, cols_j, vals):
+                        Msig[:, j] += M_run[:, i] * v
+                else:
+                    Msig = sig_sparse.T.dot(M_run.T).T
                 M_run = c * Msig + d * M_run
             M = M_run
         else:

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:04.383151+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T04:22:32.722179+00:00",
+  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
   "assertions": [
     {
       "name": "g_reeb_eq_deformed_criticality",
@@ -57,8 +57,8 @@
   "durationMs": 0,
   "computation": "b4-deformed-sspole-sector",
   "scriptFile": "b4_deformed_sspole_sector_probe.py",
-  "scriptHash": "99708a6018ec",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "a8e9248be974",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -87,17 +87,17 @@
   "tier": "structural (exact deformed-criticality identity + eigen-sector decomposition; no fit)",
   "result": {
     "fact1_derived_magnitude_on_deformed_ss_pole": {
-      "q0": "1.10997859555733471",
-      "two_v_balanced": "2.00272236446270199",
-      "g_reeb": "0.446727067798147204",
+      "q0": "1.10997858275138081",
+      "two_v_balanced": "2.00272236386053329",
+      "g_reeb": "0.44672706790566138",
       "g_reeb_eq_deformed_criticality_1_over_sqrt_1p2v2": true,
       "classical_ceiling_1_over_sqrt5": "0.447213595499957939",
       "g_below_classical_ceiling": true,
       "classical_gap_artifact": "0.000486528",
-      "deformed_ss_pole_residual_(1p2v2)g2_minus_1": "3.62227e-71",
+      "deformed_ss_pole_residual_(1p2v2)g2_minus_1": "-9.05568e-72",
       "on_deformed_pole": true,
-      "classical_ss_factor_1_minus_5g2": "0.0021746345",
-      "deformed_ss_factor_1_minus_(1p2v2)g2": "-3.6222716e-71",
+      "classical_ss_factor_1_minus_5g2": "0.002174634",
+      "deformed_ss_factor_1_minus_(1p2v2)g2": "9.0556791e-72",
       "reading": "g_reeb is EXACTLY the deformed A=4 ss-sector eigenvalue-criticality (1+[2]_v^2)g^2=1, not merely below the classical 1/sqrt5 ceiling; the 4.9e-4 sub-ceiling gap is the classical(integer-5)-vs-deformed artifact. Hence Vector 2 has no sub-ceiling icosahedral entry to select as m: the physical m sits ON the deformed boundary."
     },
     "fact2_pole_in_species_symmetric_non_pauli_sector": {
@@ -118,8 +118,8 @@
         }
       },
       "sqrt5_eigenvectors_are_species_symmetric": true,
-      "pauli_sector_factor_1_minus_g2": "0.8004349269",
-      "pauli_sector_b_finite": "0.2226000404",
+      "pauli_sector_factor_1_minus_g2": "0.8004349268",
+      "pauli_sector_b_finite": "0.2226000405",
       "reading": "lam=+-sqrt5 are the species-SYMMETRIC (pp-sym, nn-sym) center-of-mass modes (the ss-sector that carries the pole); lam=+-1 are the Pauli-required intra-pair antisymmetric modes, FINITE at m=g_reeb. The divergent factor is the NON-Pauli species-symmetric (alpha-condensation) mode."
     },
     "regulator_battery_all_fail": {
@@ -135,9 +135,9 @@
       "lean_verified": "QOU.MassTheory.he4DetViaEig_zero_at_pole (det=0 on the pole), he4DetReduced_gt_one_at_pole (reduced det>1 => repulsive); B4CumulantBarEven.lean, lean-direct exit 0, sorry-free."
     },
     "consequence_single_scalar_determinant_diverges": {
-      "full_det_classical_integer5": "0.0017406534",
-      "full_b_classical_shadow": "6.3534947",
-      "full_det_deformed": "-2.8993927e-71",
+      "full_det_classical_integer5": "0.001740653",
+      "full_b_classical_shadow": "6.3534949",
+      "full_det_deformed": "7.2484818e-72",
       "full_b_deformed": "+inf (deformed ss factor = 0)",
       "reading": "single-scalar b_4 = -ln det(I+g_reeb S) diverges (deformed) / is a large classical shadow -- this IS the #3952 4He overshoot and the bareven-probe rho4-forces-rho3 failure. The b_4 SCALAR m=g_reeb is found; the open object is the pole REGULATOR of the alpha-condensation mode, not the scalar."
     },
@@ -156,8 +156,7 @@
     "q0_convention": "muon-canonical (computations/ layer)",
     "no_fit": true
   },
-  "auditOnly": true,
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.fact1_derived_magnitude_on_deformed_ss_pole.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "auditOnly": true
 }

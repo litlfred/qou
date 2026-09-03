@@ -71,6 +71,26 @@ for step = 1..A:
 B_unified = Σ_λ cumulative_λ
 ```
 
+> **Provenance and scope (2026-08-25).** The witness named here is absent
+> from the tree — added 2026-04-15 in commit `e2814e577f` under
+> `folio-assistant/computations/`, lost in the miga migration. Recovered
+> ([analysis](https://github.com/litlfred/qou/blob/main/docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md)), its `data.mass_by_level` does carry 19 rows
+> from H to $^{208}$Pb, so the coverage claim below is fair, and its
+> $\mathrm{BW}(k{=}5)$ column is accurate ($^3\mathrm{H} \to {}^3\mathrm{He}$:
+> $0.018228$ against $0.01861$ measured).
+>
+> Its **assertions** are another matter. Seven of them test the inaccurate
+> NF-trace column against experiment with a tolerance set just above each
+> discrepancy — $Q({}^3\mathrm{H} \to {}^3\mathrm{He})$ is recorded as
+> *passing* at $13\,017\%$ error under a tolerance $14\,319\%$ of the
+> expected value. A bound sized to its own miss is a fit, and the owner
+> directive of 2026-08-25 is **no fitting**. The contrast is inside the same
+> file: $B(\mathrm{T})$ and $B({}^3\mathrm{He})$ carry tolerances of $0.0004$
+> and $0.0001$ and are recorded as *failing* at $0.0\%$ error.
+>
+> Cite the $\mathrm{BW}(k{=}5)$ figures if any; do not cite the NF-trace
+> Q-values as confirmed.
+
 **Witness:** `mass-qvalue-by-level.witness.json` — every isotope
 ($^1$H to $^{208}$Pb), per-step rows recording per-partition
 contributions; restartable from any

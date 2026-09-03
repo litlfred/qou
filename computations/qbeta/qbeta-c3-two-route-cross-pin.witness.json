@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T13:31:45.739420+00:00",
-  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "computedAt": "2026-08-30T02:57:22.556665+00:00",
+  "commitSha": "18515c1b8d99cdac62d47c4f1c97654695c72cd1",
   "assertions": [
     {
       "name": "local_qpRatio_anchor_blind",
-      "computed": 2.8277935209399292e-09,
+      "computed": "0.00000000282779352093992943949241250323456313726099387301697799756737",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "source": "|qpRatio_p/qpRatio_m| - 1: the local scale-invariant Φ_b quasi-period readout is anchor-independent (proved in MonodromyDatumRigidity.qpRatio_solution_independent); so it carries no cross-anchor lever and cannot be the A_ω swing carrier"
     },
     {
       "name": "local_readout_matches_no_named_count",
-      "computed": 2.9999999971722064,
-      "expected": 3.0,
+      "computed": "2.99999999717220647906007056050758749676542538330198637808158",
+      "expected": "3",
       "passed": true,
-      "tolerance": 2.0,
+      "tolerance": "2",
       "source": "min distance from the anchor-blind qpRatio ratio (~1) to every pre-named integer/count ratio (all near -3..-4) is O(4) >> any entropy bar: the local monodromy is NOT a GGM count ratio — scope-(a), narrows A_ω to the dual monodromy face"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-c3-two-route-cross-pin",
   "scriptFile": "qbeta_c3_two_route_cross_pin_probe.py",
-  "scriptHash": "595e5d569f9e",
-  "scriptCommitSha": "93afd50fb270589a4451f633ff7bf0878b9bf7b8",
+  "scriptHash": "c4a037fa6278",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "ac75fea5c01de435"
   },
   "invocation": {
     "argv": [

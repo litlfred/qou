@@ -96,9 +96,9 @@ def _series_h(fn, _q0: mp.mpf, order: int = 6) -> list[mp.mpf]:
 def main() -> int:
     start = time.monotonic()
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    me = mp.mpf(repr(M_E_MEV))
-    mpc = mp.mpf(repr(M_P_MEV))
-    mnc = mp.mpf(repr(m_n_derived_3input))
+    me = mp.mpf(M_E_MEV)
+    mpc = mp.mpf(M_P_MEV)
+    mnc = mp.mpf(m_n_derived_3input)
 
     gl = geom_leading(VOL_B3, q0)            # Vol(𝓑₃)/ℏ_q²
     lw = linking_weight_family_a(q0)         # global H₄ scalar ≈ 2.53

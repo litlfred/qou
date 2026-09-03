@@ -60,6 +60,9 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import markov_z, morgan_voyce_b  # noqa: E402
+
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -75,11 +78,6 @@ M_TAU = mpf("1776.86")
 WINDINGS = (3, 5, 7)          # T(2,3), T(2,5), T(2,7) -> e, mu, tau
 
 
-def morgan_voyce_b(n_max: int, h):
-    b = [mpf(0), mpf(1)]
-    for _ in range(2, n_max + 1):
-        b.append(h * b[-1] + b[-2])
-    return b
 
 
 def bend(v3, v5, v7):
@@ -245,6 +243,23 @@ def main() -> None:
     for k, v in results.items():
         w.add_data(k, v)
     w.add_data("all_checks_passed", all_ok)
+    # The writhe-prefactor insensitivity above was computed and recorded as
+    # data with the comment "verified not asserted" -- and the witness then
+    # shipped `allPassed: true` over an EMPTY assertion list (bean qou-srvu).
+    # Promote it: the bend x(w+2)^2/(x(w)x(w+4)) annihilates any Jones
+    # normalisation prefactor a*r^w exactly, so the drift is a real
+    # falsifiable claim about the screen itself. Tolerance is this file's own
+    # `1e-40` (line ~199), not a number picked to clear the observed drift.
+    #
+    # The other two conjuncts of `all_ok` are deliberately NOT asserted:
+    # `obs_bend > 10` is a round number sitting just under the observed
+    # 12.295 (a fit-shaped threshold), and the `is not None` conjunct is
+    # plumbing, not mathematics.
+    w.add_assertion(
+        "bend_invariant_under_jones_writhe_prefactor",
+        computed=str(prefactor_drift), expected="0", tolerance="1e-40",
+        source="geometric_readout_forces_unit_bend / prop:lepton-continuant-recurrence",
+    )
     w.add_caveat(
         "Only the exactly-geometric class is HARD-excluded here "
         "(scope-(b), on the proved bend identity). For the remaining "

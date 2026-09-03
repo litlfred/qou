@@ -131,14 +131,24 @@ def main() -> int:
     builder.add_data("verdict", verdict)
     print(f"  Verdict: {verdict}")
 
-    builder.add_assertion(
-        "codata_mp_me_loaded",
-        computed=1836.152,
-        expected=1836.152,
-        tolerance=1e-10,
-        unit="m_p/m_e",
-        source="CODATA 2022",
-    )
+    # `codata_mp_me_loaded` was `computed=1836.152, expected=1836.152` (bean
+    # `qou-26f2`) — the same literal on both sides under `tolerance=1e-10`,
+    # which made it read like a precision check on a loaded constant. Nothing
+    # is loaded: `codata_mp_me` is a local literal a few lines above, so this
+    # compared a hardcoded number to a copy of itself.
+    #
+    # The real fix is to check that literal against the corpus CODATA registry
+    # (`qou-mass/src/qou_mass/_internal/codata_constants.py`), which would make
+    # drift detectable. That is a dependency change rather than a drain — the
+    # registry does not import cleanly from here as it stands — so the value
+    # is recorded as data and the wiring left to that work.
+    builder.add_data("codata_mp_me_reference", {
+        "value": 1836.152,
+        "source": "CODATA 2022",
+        "loaded_from_registry": False,
+        "note": "local literal; wiring this to qou-mass's codata_constants "
+                "would make drift detectable",
+    })
     # Lean SDP-uniqueness cross-reference (PR #1537/#1542/#1554).
     builder.add_data("lean_uniqueness_ref", {
         "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",

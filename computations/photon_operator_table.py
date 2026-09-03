@@ -57,7 +57,12 @@ NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 NF_LATEX = [r"\gamma", r"\sigma_0", r"\sigma_1", r"L_+", r"L_-", r"e^-"]
 
 z = q0**3 / (q0**2 + 1)
-TR_M = [_ONE, z, z, z**2, z**2, z**3]
+# 6th weight is the Ocneanu value on the longest element:
+# tr(T_{s1s2s1}) = z*tr(T_{s1}^2) = z(h z + 1) = h z^2 + z, from the
+# defining Markov property tr(x T_n y) = z tr(xy) plus T^2 = h T + 1.
+# z^3 (the z^len(w) guess) is NOT a trace: it is non-cyclic, so the
+# Gram tr(b_i b_j) comes out asymmetric. Bean qou-isu5.
+TR_M = [_ONE, z, z, z**2, z**2, HA * z**2 + z]
 
 
 def hecke_mul(t1, t2):
@@ -201,13 +206,34 @@ w.add_parameter("z", z)
 w.add_parameter("basis", NF_NAMES)
 
 # Key assertions
+# Expected e⁻ pair counts out of the 36 (b_i, b_j) pairs, pinned.
+#
+# This loop read `computed=data[...], expected=data[...]` — the same expression
+# on both sides, so it passed whatever the table contained and `allPassed` said
+# nothing about it (bean `qou-26f2`). The `T_{2,3}` assertion below already had
+# the right shape with a literal `expected=36`; the loop simply did not follow
+# it.
+#
+# These are REGRESSION PINS, not an independent derivation: the values come
+# from the H₃(q) multiplication table as of 2026-08-25, recorded so that a
+# change in the table, the basis order, or the normal-form reduction is caught
+# instead of silently re-blessed. That is strictly more than the tautology
+# checked, and the docstring says which it is.
+EXPECTED_E_MINUS_PAIRS = {
+    "T_{1,0}": 19,   # trivial (vacuum)
+    "T_{2,1}": 24,   # single crossing
+    "T_{2,2}": 24,   # Hopf link (gluon)
+    "T_{2,3}": 36,   # trefoil (electron) — universally opens the channel
+    "T_{2,5}": 36,   # cinquefoil (muon)
+}
+
 for op_name, data in results.items():
     w.add_assertion(
         f"{op_name} e⁻ pair count",
         computed=data["e_minus_pairs"],
-        expected=data["e_minus_pairs"],
+        expected=EXPECTED_E_MINUS_PAIRS[op_name],
         tolerance=0,
-        source="H₃(q) basis multiplication",
+        source="H₃(q) basis multiplication; expected pinned 2026-08-25",
     )
 
 # The critical physics result

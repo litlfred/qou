@@ -137,6 +137,60 @@ OVERSHOOT: the naive categorical value runs PAST the physical window. -/
 theorem naive_z_unphysical : detG (4993 / 10000) < 0 := by
   apply detG_neg_of_above_ceiling <;> norm_num
 
+/-! ### Convention-D naive magnitude is unphysical across the whole physical q-window -/
+
+/-- The **canonical convention-D** naive per-pair (Markov) bond magnitude
+`z_D(q) = q³/(q²+1)` (owner ruling 2026-08-15 R1: convention D is canonical, C
+excised).  The `naive_z_unphysical` theorem above used the *excised* convention-C
+value `z_C(q₀) ≈ 0.499` as a bare rational; this is its canonical-convention
+replacement, stated symbolically in `q` and proved on the whole window rather
+than at a point. -/
+noncomputable def zD (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
+
+/-- `z_D(q)² = q⁶/(q²+1)²`. -/
+theorem zD_sq (q : ℝ) : zD q ^ 2 = q ^ 6 / (q ^ 2 + 1) ^ 2 := by
+  unfold zD; rw [div_pow]; ring_nf
+
+/-- On the physical window `1 ≤ q ≤ 7/5` the convention-D naive magnitude sits
+strictly **above** the writhe ceiling and **below** `1`: `1/5 < z_D² < 1`.  Both
+bounds are polynomial (`q⁴ + 2q² + 1 ≤ 4q⁶ < 5q⁶` for the lower; `q⁶ < q⁴+2q²+1`
+on the window for the upper).  The window comfortably contains the substrate
+`q₀ ≈ 1.110`. -/
+theorem zD_sq_mem (q : ℝ) (hlo : 1 ≤ q) (hhi : q ≤ 7 / 5) :
+    1 / 5 < zD q ^ 2 ∧ zD q ^ 2 < 1 := by
+  have hq1 : 1 ≤ q ^ 2 := by nlinarith
+  have hqm1 : (0 : ℝ) ≤ q ^ 2 - 1 := by linarith
+  have hq2 : (0 : ℝ) ≤ q ^ 2 := by positivity
+  have hq4 : (0 : ℝ) ≤ q ^ 4 := by positivity
+  have hq6_ge_q4 : q ^ 4 ≤ q ^ 6 := by nlinarith [mul_nonneg hq4 hqm1]
+  have hq6_ge_q2 : q ^ 2 ≤ q ^ 6 := by nlinarith [mul_nonneg hq2 hqm1, mul_nonneg hq4 hqm1]
+  have hq6_ge_1 : (1 : ℝ) ≤ q ^ 6 := by nlinarith [hq1, mul_nonneg hq2 hqm1, mul_nonneg hq4 hqm1]
+  have hd2 : (0 : ℝ) < (q ^ 2 + 1) ^ 2 := by positivity
+  rw [zD_sq]
+  constructor
+  · rw [lt_div_iff₀ hd2]
+    nlinarith [hq6_ge_q4, hq6_ge_q2, hq6_ge_1]
+  · rw [div_lt_one hd2]
+    have hq2u : q ^ 2 ≤ 49 / 25 := by nlinarith [hhi, hlo]
+    nlinarith [hq1, hq2u,
+      mul_nonneg (by linarith : (0 : ℝ) ≤ 49 / 25 - q ^ 2) hq4,
+      mul_nonneg (by linarith : (0 : ℝ) ≤ 49 / 25 - q ^ 2) hq2]
+
+/-- **(SCOPE-(b), convention-D, whole q-window) The canonical convention-D naive
+per-pair magnitude `z_D = q³/(q²+1)` is unphysical for EVERY `q ∈ [1, 7/5]`.**
+`det(I + G)(z_D) < 0`, because `5·z_D² > 1` (above the writhe ceiling `1/√5`)
+while `z_D² < 1`.  This is the convention-D analog of `naive_z_unphysical` (which
+cited the *excised* convention-C value `0.499`): under the CANONICAL Markov
+convention the overshoot is *larger* — `z_D(q₀) ≈ 0.613 > z_C(q₀) ≈ 0.499` — so
+the exclusion is strengthened, and it now holds across the entire `|q| > 1`
+physical window, not just at the substrate point.  Cited invariant: the exchange
+spectrum `{±√5, ±1}` fixing `det = (1 − 5m²)(1 − m²)` (`detG_eq_spectral_product`).
+The surviving mechanism must therefore fix `m` strictly BELOW the naive braiding
+overlap under **either** Markov convention. -/
+theorem zD_unphysical (q : ℝ) (hlo : 1 ≤ q) (hhi : q ≤ 7 / 5) : detG (zD q) < 0 := by
+  obtain ⟨h1, h2⟩ := zD_sq_mem q hlo hhi
+  exact detG_neg_of_above_ceiling (zD q) h1 h2
+
 /-! ### The magnitude functional `b₄(m) = −ln det(I + G)` -/
 
 /-- The connected 4-body cumulant magnitude in the derived form: `b₄(m) = −ln det(I + G)`,

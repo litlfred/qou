@@ -267,7 +267,7 @@ def main():
 
     w.add_assertion(
         name="m_n_residual_within_5ppm",
-        computed=float(abs((m_n_pred - m_n_codata)/m_n_codata * 1e6)),
+        computed=abs((m_n_pred - m_n_codata)/m_n_codata * 1e6),
         expected=0.0,
         tolerance=5.0,
         unit="ppm",

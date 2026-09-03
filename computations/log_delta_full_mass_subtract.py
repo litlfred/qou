@@ -225,7 +225,7 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=float(B_AME["D"]),
+        computed=B_AME["D"],
         expected=2.22456607,
         tolerance=1e-10,
         unit="B(D) AME MeV",

@@ -1,23 +1,23 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:38:18.825620+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-08-31T07:38:26.192637+00:00",
+  "commitSha": "e8f5a64a81caf5c4316336a0c74b75a380c32996",
   "assertions": [
     {
       "name": "z_markov_below_one_linking_weight_above_one",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
-      "tolerance": 0.5
+      "tolerance": "0.5"
     }
   ],
   "allPassed": true,
-  "durationMs": 1555,
+  "durationMs": 1556,
   "computation": "markov-stab-trace-axis-probe",
   "scriptFile": "markov_stab_trace_axis_probe.py",
-  "scriptHash": "64bb471b945f",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptHash": "2ecb3ace0817",
+  "scriptCommitSha": "dfd7f798d7eae98f20711cd15716fb1efcc9abd8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,22 +29,30 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/markov_stab_trace_axis_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/markov_stab_trace_axis_probe.py"
   },
   "description": "Markov-stabilization trace-level axis probe for the H₃→H₄ jump (PR #1762 chain; sibling #1841 Bratteli REFUTED, #1808 Option E lead). Formalize-first: records the z<1 direction obstruction, then tests M1 (identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ) and M2 (z^{±k}·linking_weight vs clean H₃ quantities) exactly. EXPLORATORY — no production code or witnesses changed.",
   "auditOnly": "docs/audits/2026-06-04-markov-stab-trace-axis-scope.md",
   "data": {
-    "z_markov_at_q0": "0.4993203340335612717689663862757371401611757978999",
-    "z_markov_inv_at_q0": "2.002722364462701994524581708012388446606743870573903575759670157141285",
-    "linking_weight_at_q0": "2.5327796636746759826636838141577022737497563139135",
+    "z_markov_at_q0": "0.61268803714646525159582986394589924802630839154509",
+    "z_markov_inv_at_q0": "1.632151991505175166202175663576200362778731435939969166677785936070842",
+    "linking_weight_at_q0": "2.5327796563993914920515145017580412323261604705351",
     "direction_obstruction": true,
-    "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
+    "direction_obstruction_note": "z = q³/(q²+1) ≈ 0.6127 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
     "M1_identity_trace": {
       "verdict": "REFUTED",
       "tr_M_identity_H4_at_q0": "0.999999999999999999999999999999999999999999999999998",
-      "linking_weight_at_q0": "2.5327796636746759826636838141577022737497563139135",
-      "relative_error": "0.6051768677938795044326435331368505471707764945991366408076275233170584",
+      "linking_weight_at_q0": "2.5327796563993914920515145017580412323261604705351",
+      "relative_error": "0.6051768666597695541191636523476336436150576643872776831182147365990942",
       "tr_M_identity_is_one": true,
       "note": "tr_M(1_{H₄}) = 1 (the normalized Markov trace), NOT the linking_weight 2.53. The linking_weight is not the H₄ identity trace.",
       "per_lambda": [
@@ -100,28 +108,28 @@
     "M2_z_renormalised": {
       "verdict": "REFUTED",
       "candidates_at_q0": {
-        "(1/4)Sum_{lam|-3} dim_q": "1.00272421727976894020441595113",
-        "Sum_{lam|-3} dim_q": "4.0108968691190757608176638045",
-        "[4]_q": "4.10968243564372783032773993139",
-        "[3]_q": "3.04370621823290131021824508554",
-        "[2]_q": "2.0108968691190757608176638045"
+        "(1/4)Sum_{lam|-3} dim_q": "1.00272421667678057493812299452",
+        "Sum_{lam|-3} dim_q": "4.01089686670712229975249197809",
+        "[4]_q": "4.1096824112079411617605687891",
+        "[3]_q": "3.04370620853252198940201933568",
+        "[2]_q": "2.01089686670712229975249197809"
       },
       "tests": [
         {
           "form": "linking_weight · z^1",
-          "value_at_q0": "1.26466838769945018562890589346"
+          "value_at_q0": "1.55180379620384187087087991217"
         },
         {
           "form": "linking_weight · z^-1",
-          "value_at_q0": "5.07245447669759421300780769171"
+          "value_at_q0": "4.13388136023606009881539203563"
         },
         {
           "form": "linking_weight · z^2",
-          "value_at_q0": "0.631474641787774837761789084932"
+          "value_at_q0": "0.950771621932565261160646485393"
         },
         {
           "form": "linking_weight · z^-2",
-          "value_at_q0": "10.1587180232012235988908363814"
+          "value_at_q0": "6.74712269475540792349452651916"
         }
       ],
       "note": "No exact z^{±k}·linking_weight = clean-H₃ coincidence found; the z⁻¹ ≈ 2.003 near-2 is not exact (z⁻¹ = q^½+q^{-½}, irrational at q₀)."

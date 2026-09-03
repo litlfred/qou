@@ -28,7 +28,6 @@ export default proposition({
   title:
     "Operator-valued combiner convergence: " +
     "$\\chi^\\lambda(\\beta_{\\mathrm{atom}})$ assembles from the deuteron base case",
-  chapter: "mass-theory",
   uses: [
     "prop:crystal-r-matrix-sub-lemma",
     "prop:lr-coefficient-hecke",

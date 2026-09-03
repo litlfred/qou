@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I_41(1,1) q^1..q^7 == DGG 1112.5179 eq (4.20) -q-q^2+2q^3+7q^4+11q^5+11q^6+3q^7 (exact integer match)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "I_41(1,1) identical for e2-window W vs W+4 through q^15 — convergence certificate replacing the buggy rejection guard (no under-summing artifact)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "mirror symmetry I41(m,e)=I41(-m,-e) for (1,1) and (2,1) through q^{ORD//2-2} (DGG eq 4.19, amphichiral 4₁)"
     }
   ],

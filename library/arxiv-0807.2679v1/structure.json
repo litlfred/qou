@@ -1,0 +1,88 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0807.2679v1",
+ "source": {
+  "file": "0807.2679v1.pdf",
+  "sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
+  "bytes": 198624,
+  "pages": 12,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0807.2679",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "17 Jul 2008"
+  },
+  "doi": null,
+  "title": "A cabling formula for the colored Jones polynomial Roland van der Veen",
+  "authors_raw": "November 18, 2021",
+  "title_lines": [
+   "A cabling formula for the colored Jones",
+   "polynomial",
+   "Roland van der Veen"
+  ],
+  "abstract": "We prove an explicit cabling formula for the colored Jones po lynomial. As an application we prove the volume conjecture for all zero vo lume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211117235235-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of the cabling formula",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of the volume conjecture for zero volume links",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5482,
+   "n_words": 1061
+  },
+  {
+   "id": "sec-001-proof-of-the-cabling-formula",
+   "number": null,
+   "title": "Proof of the cabling formula",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 12,
+   "n_chars": 20260,
+   "n_words": 4299
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 2,
+  "chars_total": 25742
+ }
+}

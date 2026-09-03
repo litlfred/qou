@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T07:40:51.102978+00:00",
-  "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+  "computedAt": "2026-08-24T21:06:34.564638+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "z_naive_unphysical_at_A4",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "deltalambda-perpair-bond-magnitude-derive",
   "scriptFile": "deltalambda_perpair_bond_magnitude_derive_probe.py",
   "scriptHash": "81a320041f59",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -64,7 +64,7 @@
     "constants": {
       "q0": "1.10997858275",
       "E0_MeV_m_e/(q(q-1))": "4.1859814",
-      "z_naive_1/[2]_v": "0.499320334184",
+      "z_naive_1/[2]_v": "0.612688037146",
       "g_reeb_1/sqrt(5+(q0-1)^2/q0)": "0.446727067906",
       "ceiling_1/sqrt5": "0.4472135955"
     },
@@ -97,44 +97,41 @@
     },
     "forward_test_per_candidate": {
       "z_naive": {
-        "magnitude": "0.499320334183694452",
+        "magnitude": "0.612688037146465252",
         "below_ceiling_1/sqrt5": false,
         "physical_all_four": false,
         "rows": [
           {
             "iso": "2H",
             "A": 2,
-            "det_I_plus_G": "0.7506792",
-            "det_term_MeV": "1.2004427",
+            "det_I_plus_G": "0.62461337",
+            "det_term_MeV": "1.9700167",
             "deficit_MeV": "1.8444947",
-            "det_term/deficit": "0.650825",
-            "det_term/AME": "0.53963",
-            "(B_dim+det)/AME": "0.710482"
+            "det_term/deficit": "1.06805",
+            "det_term/AME": "0.885574",
+            "(B_dim+det)/AME": "1.05643"
           },
           {
             "iso": "3H",
             "A": 3,
-            "det_I_plus_G": "0.0030557251",
-            "det_term_MeV": "24.239923",
-            "deficit_MeV": "6.5732882",
-            "det_term/deficit": "3.68764",
-            "det_term/AME": "2.85787",
-            "(B_dim+det)/AME": "3.08288"
+            "det_I_plus_G": "-0.58614969",
+            "det_term_MeV": null,
+            "status": "UNPHYSICAL (det<=0)"
           },
           {
             "iso": "3He",
             "A": 3,
-            "det_I_plus_G": "0.5010195",
-            "det_term_MeV": "2.8929747",
+            "det_I_plus_G": "0.3338299",
+            "det_term_MeV": "4.5925393",
             "deficit_MeV": "5.3734523",
-            "det_term/deficit": "0.538383",
-            "det_term/AME": "0.374832",
-            "(B_dim+det)/AME": "0.678614"
+            "det_term/deficit": "0.854672",
+            "det_term/AME": "0.595038",
+            "(B_dim+det)/AME": "0.89882"
           },
           {
             "iso": "4He",
             "A": 4,
-            "det_I_plus_G": "-0.18512048",
+            "det_I_plus_G": "-0.54774417",
             "det_term_MeV": null,
             "status": "UNPHYSICAL (det<=0)"
           }
@@ -203,5 +200,7 @@
     "no_ame_inversion": true,
     "q0_convention": "muon-canonical (computations/ layer)"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

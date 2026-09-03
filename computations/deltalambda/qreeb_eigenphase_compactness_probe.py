@@ -95,7 +95,14 @@ def main() -> int:
     print("  scope-(a) negative; free_parameters=0; B_AME not read; nothing wired.")
 
     out = COMP / "deltalambda" / "qreeb-eigenphase-compactness.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "description": "q-Reeb eigenphase compactness: sole |chi/d|>1 block per binding knot is the "
                        "trivial 1-dim rep; all dim>=2 rotation blocks compact. Eigenphase route "
                        "cannot supply C_knot (scope-a). bean qou-0g4z.",
@@ -103,7 +110,11 @@ def main() -> int:
         "reads_B_AME": False,
         "knots": results,
         "verdict": "eigenphase-route-compact-cannot-supply-absolute-scale",
-    }, indent=2) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0 if ok else 1
 

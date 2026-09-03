@@ -31,38 +31,38 @@ exponential-decay`'s Lean stub. We record only the form needed for
 Q_β^cat's per-knot truncation: |R_N| ≤ ℏ_q^(2(N+1)) / (1 - ℏ_q²). -/
 
 /-- Quantum Planck constant (local def to avoid imports). -/
-noncomputable def hbarQc (q : ℝ) : ℝ := (q - 1) / q
+noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The per-knot c(K) brane-tower bound at depth N for a typed-braid
     truncation. This is the canonical exponential-decay rate of the
     truncation remainder, derived from the Hecke quadratic structure. -/
 noncomputable def cKBound (q : ℝ) (N : ℕ) : ℝ :=
-  (hbarQc q)^(2*(N + 1)) / (1 - (hbarQc q)^2)
+  (hbarQ q)^(2*(N + 1)) / (1 - (hbarQ q)^2)
 
 -- Ref: [manuscript] prop:categorical-chain-convergence-mechanisms §"Mechanism 1"
 /-- The c(K) bound is positive when 0 < q < 1 + √2 (ensuring ℏ_q² < 1).
     `_hq_lower` documents the physical substrate regime but the
     nonnegativity follows from the even numerator power + positive
     denominator (`hq_upper`) alone. -/
-theorem cKBound_pos (q : ℝ) (_hq_lower : 0 < q) (hq_upper : (hbarQc q)^2 < 1) (N : ℕ) :
+theorem cKBound_pos (q : ℝ) (_hq_lower : 0 < q) (hq_upper : (hbarQ q)^2 < 1) (N : ℕ) :
     0 ≤ cKBound q N := by
   unfold cKBound
-  have h_num : (0 : ℝ) ≤ (hbarQc q)^(2*(N + 1)) := by
+  have h_num : (0 : ℝ) ≤ (hbarQ q)^(2*(N + 1)) := by
     rw [pow_mul]; positivity
-  have h_den : (0 : ℝ) < 1 - (hbarQc q)^2 := by linarith
+  have h_den : (0 : ℝ) < 1 - (hbarQ q)^2 := by linarith
   exact div_nonneg h_num (le_of_lt h_den)
 
 /-- The c(K) bound decreases geometrically in N: each new rung tightens
-    by factor (hbarQc q)². At q_0 ≈ 1.110, this factor is ~0.01, giving
+    by factor (hbarQ q)². At q_0 ≈ 1.110, this factor is ~0.01, giving
     100× tightening per rung. The geometric-decay identity is unconditional
     (the shared denominator cancels); `_hq_lower`/`_hq_upper` document the
     physical convergence regime for API uniformity with `cKBound_pos`. -/
 theorem cKBound_geometric_decay (q : ℝ) (_hq_lower : 0 < q)
-    (_hq_upper : (hbarQc q)^2 < 1) (N : ℕ) :
-    cKBound q (N + 1) = (hbarQc q)^2 * cKBound q N := by
+    (_hq_upper : (hbarQ q)^2 < 1) (N : ℕ) :
+    cKBound q (N + 1) = (hbarQ q)^2 * cKBound q N := by
   unfold cKBound
-  -- (hbarQc q)^(2(N+2)) = (hbarQc q)^2 · (hbarQc q)^(2(N+1))
-  have : (hbarQc q)^(2 * (N + 1 + 1)) = (hbarQc q)^2 * (hbarQc q)^(2 * (N + 1)) := by
+  -- (hbarQ q)^(2(N+2)) = (hbarQ q)^2 · (hbarQ q)^(2(N+1))
+  have : (hbarQ q)^(2 * (N + 1 + 1)) = (hbarQ q)^2 * (hbarQ q)^(2 * (N + 1)) := by
     rw [show 2 * (N + 1 + 1) = 2 + 2 * (N + 1) from by ring]
     rw [pow_add]
   rw [this]
@@ -79,8 +79,11 @@ This is a direct consequence of Markov axiom M3:
   τ_M(x σ_k) = z · τ_M(x)   for x ∈ H_{k}
 applied iteratively to stabilise the disjoint strands. -/
 
-/-- The Markov-Jones parameter z = 1 / (√q + 1/√q). -/
-noncomputable def markovZc (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+/-- The Markov-Jones parameter `z = q³/(q²+1)` (convention D, canonical per the
+2026-08-15 owner ruling). At the proton pin `q₀` this is `0.6126880371`; the
+convention-C value `1/(√q + 1/√q) = 0.4993203342` is a different number and is
+not what this definition computes. -/
+noncomputable def markovZ (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- **Single-strand disjoint-stabilisation (Markov axiom M3).**
 
@@ -103,7 +106,7 @@ class MarkovDisjointStabilisation (q : ℝ) where
   /-- The single-strand Markov stabilisation map on trace values. -/
   stab : ℝ → ℝ
   /-- Markov M3: stabilising by one disjoint strand multiplies by `z`. -/
-  stab_spec : ∀ t : ℝ, stab t = t * markovZc q
+  stab_spec : ∀ t : ℝ, stab t = t * markovZ q
 
 /-- `k`-fold disjoint stabilisation: append `k` unlinked strands, each an
     independent application of the Markov-M3 map `stab` (iterated `k` times). -/
@@ -117,7 +120,7 @@ def stabIter (q : ℝ) [inst : MarkovDisjointStabilisation q] (k : ℕ) (t : ℝ
     the `z^k` factor is derived from the single-strand axiom
     (`stab t = t·z`), it is not the same statement and is not assumed. -/
 theorem stabIter_spec (q : ℝ) [inst : MarkovDisjointStabilisation q] (k : ℕ) (t : ℝ) :
-    stabIter q k t = t * (markovZc q) ^ k := by
+    stabIter q k t = t * (markovZ q) ^ k := by
   unfold stabIter
   induction k with
   | zero => simp
@@ -147,7 +150,7 @@ Markov trace factorises as product times z-power. -/
     computation, the right side its closed form. -/
 theorem inter_knot_decoupling (q : ℝ) [MarkovDisjointStabilisation q]
     (tau_K1 tau_K2 : ℝ) (k : ℕ) :
-    stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZc q) ^ k :=
+    stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZ q) ^ k :=
   stabIter_spec q k (tau_K1 * tau_K2)
 
 /-! ## Combined convergence theorem
@@ -162,14 +165,14 @@ Q_β^cat,full converges to a finite real number at q = q_0 because:
     mechanisms, Q_β^cat,full evaluates to a finite real number at q_0
     via finite-truncation per-knot + linking-locality across knots. -/
 theorem categorical_chain_convergence_mechanisms
-    (q : ℝ) (hq_lower : 0 < q) (hq_upper : (hbarQc q)^2 < 1)
+    (q : ℝ) (hq_lower : 0 < q) (hq_upper : (hbarQ q)^2 < 1)
     [MarkovDisjointStabilisation q] :
     -- Mechanism 1: per-knot c(K) bound is geometrically decaying
-    (∀ N : ℕ, cKBound q (N + 1) = (hbarQc q)^2 * cKBound q N)
+    (∀ N : ℕ, cKBound q (N + 1) = (hbarQ q)^2 * cKBound q N)
     ∧
     -- Mechanism 2: inter-knot decoupling — joint trace = product · z^k
     (∀ (tau_K1 tau_K2 : ℝ) (k : ℕ),
-       stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZc q) ^ k) := by
+       stabIter q k (tau_K1 * tau_K2) = tau_K1 * tau_K2 * (markovZ q) ^ k) := by
   refine ⟨?_, ?_⟩
   · intro N
     exact cKBound_geometric_decay q hq_lower hq_upper N

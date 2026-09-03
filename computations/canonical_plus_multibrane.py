@@ -81,6 +81,7 @@ from canonical_tower import (per_irrep_V_hat, eigen_multiplicities,
 
 
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_MEV = Q_NEUTRON_MEV  # prop:categorical-mass-markov E_0
                                      # = 0.78233341 MeV (CODATA-derived)
 
@@ -106,10 +107,10 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
         return []
     n_strands = 3 * A
     n_gens = n_strands - 1
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, Q0_PROTON)
     V_hat = [0.0] * n_gens
     for shape in partitions_of(n_strands):
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if dq == 0:
             continue
         w_lam = (dq * dq) / nfac
@@ -766,5 +767,14 @@ if __name__ == "__main__":
         "results": results,
     }
     out = Path(__file__).parent / "canonical-plus-multibrane.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

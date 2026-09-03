@@ -1,0 +1,85 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-9211141v1",
+ "source_sha256": "bd9fbd329884c26e",
+ "brief": "ITD 92/93–9 — 13 sections: INTRODUCTION AND SUMMARY OF RESULT; The Ordinary Diﬀerential Equations; THE SYSTEM OF PARTIAL DIFFERENTIAL",
+ "extended": "**ITD 92/93–9**\n\n*Level-Spacing Distributions and the Airy Kernel*\n\n34 pp, 13 sections.\n\n**Outline.** I INTRODUCTION AND SUMMARY OF RESULTS; C The Ordinary Diﬀerential Equations; II THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATION; III THE ORDINARY DIFFERENTIAL EQUATIONS; IV ASYMPTOTICS; 1 The region x << t−1/2; 3 The region x −t >> t1/4; 4 The region |x −t| << t; 5 The asymptotics of λi; 1 (x) = −A′(x −2t) + A(x −2t)f ′; 1 (x)f2(x) dx = −νf ′; Acknowledgments; References",
+ "tokens": {
+  "brief": 33,
+  "extended": 117
+ },
+ "sections": [
+  {
+   "id": "sec-000-i-introduction-and-summary-of-results",
+   "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-001-c-the-ordinary-diﬀerential-equations",
+   "title": "The Ordinary Diﬀerential Equations",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-002-ii-the-system-of-partial-differential-equations",
+   "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+   "pages": "9-16"
+  },
+  {
+   "id": "sec-003-iii-the-ordinary-differential-equations",
+   "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-004-iv-asymptotics",
+   "title": "ASYMPTOTICS",
+   "pages": "17-21"
+  },
+  {
+   "id": "sec-005-1-the-region-x-t12",
+   "title": "The region x << t−1/2",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-006-3-the-region-x-t-t14",
+   "title": "The region x −t >> t1/4",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-007-4-the-region-x-t-t",
+   "title": "The region |x −t| << t",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-008-5-the-asymptotics-of-λi",
+   "title": "The asymptotics of λi",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-009-1-x-ax-2t-ax-2tf",
+   "title": "(x) = −A′(x −2t) + A(x −2t)f ′",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-010-1-xf2x-dx-νf",
+   "title": "(x)f2(x) dx = −νf ′",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "31-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

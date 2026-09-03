@@ -17,7 +17,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-18,
+      "tolerance": "1e-18",
       "source": "r = 6/5 pure SW: (a) the q-difference equation A_w(z) = A_w(wz) - wz A_w(w^2 z) verified symbolically coefficient-wise (k <= 25, exact); (b) the orthonormal-series Nevanlinna function D(z) = z sum p_n(0) p_n(z) equals c0 * z * A_pt(z) with c0 = sum p_n(0)^2 = 21.59646 — ratio constant over sign-spread samples to 6.52e-23 (< 1e-18; series depth 150, dps 220); (c) the Krein (Radau@0) truncation atoms match zeros(A_pt) and the Friedrichs truncation atoms match zeros(A_pt)/qtilde, rel < 1e-6 (measured 1.74e-8 / 1.21e-8, window j <= 8, N = 56) — the Friedrichs support is EXACTLY the Krein support shifted one qtilde-step (the U1 S-map); (d) signed lattice deviation of log_qt zeros -> 0 at measured rate pt (max tail rate error 8.88e-10), raw |dev_60| = 5.99e-10, Aitken^2 = -3.93e-29 (< 1e-12), Krein tail lattice integers ODD => Friedrichs EVEN: the pure-SW extremal class is the INTEGER qtilde-lattice class phi_SW = 0, split odd/even between K and F"
     },
     {
@@ -25,7 +25,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "TRANSFER, exact moment level: m_k = G_k E^k (p;p)_k symbolically exact (k <= 12) — the balanced family is the E-scaled SW family times the geometrically-convergent Jackson correction; correspondingly the balanced Jacobi data converge to the E-scaled SW closed forms at measured rate pt (r = 6/5, dev(40) ~ 9.1e-8). K-ladder at r = 6/5 (qd certified < 1e-600 + exact-Q cross < 1e-700): |Aitken(class) - phi_1| strictly decreasing over K = 48/64/80/96 (0.000205, 5.26e-6, 1.97e-7, 8.05e-10) — the parent's 1.0e-4 (K = 48) promoted to Aitken^2 = 7.86e-10 (< 1e-8; Richardson^2 6.29e-10, cross-extrapolant unc 1.23e-8); Krein class same to Aitken^2 1.71e-9 (< 1e-6); drift rate = pt to 5e-3; mod-2 lattice parities of F and K (relative to the E-scaled qtilde-grid) are constant and OPPOSITE — F and K are the two complementary q-sublattices of the ONE u = 1 grid, now at 1e-8-tier alignment"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "q-ladder 1.8 / 1.5 / 1.3 / 1.2 / 1.15 (with 2.0736 in U3), K = N up to 240, all qd runs certified by moment reproduction, truncation windows per-j Cauchy-certified (N vs N-12), min-max monotone, drift rate = pt(q) measured per rung. PER-RUNG TIERS (a-priori thresholds 1e-7/1e-7/1e-6/1e-5/1e-4, never loosened): rungs meeting their bound with self-consistent uncertainty are CERTIFIED (hard-asserted, >= 2 required; q = 2.0736 separately certified at 1e-8 in U3); rungs missing it are reported honestly as MEASURED-PREASYMPTOTIC with their Aitken^2 value and cross-extrapolant uncertainty (weak sanity gates |Aitken^2| < 0.05, |raw| < 0.2 only — an order of magnitude below the 0.5 half-step discriminator scale). No deviation beyond stated uncertainty from phi_1(q) was observed at any rung. The SW-side class-0 statement is certified truncation-FREE (A_pt zeros, Aitken^2 < 1e-8, odd parity) at the rungs carrying the SW leg"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "source": "q0 pins: the SW-core lattice-class statement is certified TRUNCATION-FREE at the muon pin from 100 zeros of A_pt (signed lattice deviation -> 0, rate = pt to 0.000143, Aitken^2 -8.2e-8 < 1e-4, odd parity, spacing -> 2 qtilde-steps; proton-pin raw lattice deviations coincide index-by-index with the muon pin's to < 1e-6); the balanced qd at the muon pin is certified (< 1e-800) and its Jacobi data decay onto the E-scaled SW closed forms at per-step rate pt to 2e-2; the balanced truncation study at K = 96 is honestly PRE-ASYMPTOTIC (per-j Cauchy 1e-2..1e-3) — no balanced-side class claim at the pins; N-requirement model reported"
     }
   ],

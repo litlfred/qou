@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:36:51.249191+00:00",
-  "commitSha": "b4a1fb8da71c7e36172d20023edd3d2eac0b689f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T11:10:00.624243+00:00",
+  "commitSha": "f2cee621a2b241599a35bfc3de9d88db3a622c88",
   "assertions": [
     {
       "name": "onray_reproduces_committed_resummation",
-      "computed": 3.220136695625281e-13,
+      "computed": "0.0000000000003220136695625280813004252342267448438880603318616990537764359010826865",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "source": "on-ray Laplace Im 𝔙̃_b matches the committed 0.05855"
     },
     {
@@ -17,16 +17,16 @@
       "computed": 0.002991767257638278,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.25,
+      "tolerance": "0.25",
       "source": "lateral discontinuity scales LINEARLY with straddle δ (ratio D(δ)/D(δ/2)≈2 as δ→0): the physical-ray resummation is SMOOTH, no Stokes jump — a genuine jump would give ratio≈1 (constant). Directly computed, not inferred from the off-ray argument"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "qbeta-c3-deformed-median-discontinuity",
   "scriptFile": "qbeta_c3_deformed_median_discontinuity_probe.py",
-  "scriptHash": "144f6088d17d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3a0125079f27",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_c3_deformed_median_discontinuity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_c3_deformed_median_discontinuity_probe.py"
   },
   "description": "DIRECT lateral-Borel/median test of the deformed (u≠0) Φ_b odd tower — the computation the corpus inferred but never ran. Borel–Padé[2/2] of committed κ̃₁..κ̃₄ at the substrate meridian: (1) on-ray Laplace reproduces Im 𝔙̃_b≈0.0585; (2) lateral sums S_± around the physical ray give |S_+−S_−|≈0 — DIRECTLY confirms single-valued (no Stokes jump on the substrate ray); (3) across-singularity residue gives the tower's Stokes-constant magnitude (anchor-blind, ~2 sig figs). VERDICT scope-(a): the deformed median resummation is anchor-BLIND, cannot supply S's swing — subsumed by the Lean-proved no_anchor_invariant_realizes_swing. The swing is the 1/u³ inversion of a smooth N_odd=S·u³ (BarOddLadderShape); its geometric origin (Im 𝔙_q→N_odd) is the open capstone, not a resummation. No c_k; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

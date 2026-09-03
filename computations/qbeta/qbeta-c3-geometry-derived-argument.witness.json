@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Im 𝔙₄₁(ln q₀) = (√3/4)(ln q₀)² > 0 under the corrected form (imV₄₁) — supersedes the wrong-form 'real m silent' claim"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "sign(Im 𝔙₄₁(ln q_muon)) = sign(S(muon)) > 0"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Im 𝔙₄₁/S(muon) = 0.48685"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "real boost gives Im 𝔙₄₁>0 at proton but S(proton)<0"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Δ Im 𝔙₄₁(real) = -1.043e-9 ≪ |S gap| = 0.04914"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "zero-parameter gate (magnitude+sign at both anchors) yields no candidate; sign-flip needs the open diagonal-crossing u(q₀)"
     }
   ],

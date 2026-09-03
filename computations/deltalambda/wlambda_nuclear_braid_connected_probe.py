@@ -60,7 +60,12 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Canonical substrate q0 — muon-anchored computations-layer value carried by
 # computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
-Q0 = mp.mpf("1.10997859555733471")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 H = Q0 - 1 / Q0
 QI = 1 / Q0
 Z = Q0**3 / (Q0**2 + 1)
@@ -102,7 +107,15 @@ def bonds(Z_, N_):
             elif ti == 'n' and tj == 'n':
                 ch.append((mp.mpf(1), -H))
             else:
-                ch.append((mp.mpf(1), -H / 2))
+                # CONVENTION: `strict_averaged` (`z - h/2`), NOT the canonical
+                # `bring_color_weighted` (`z - h(1/2 - delta/4)`) of the
+                # 2026-08-15 owner ruling (R3). Gap `h*delta/4` = 7.190163e-05
+                # at the proton pin. Labelled, not flipped: the flip moves this
+                # probe's numbers and its committed witness, and this template
+                # is presented downstream as THE nuclear-quotient template, so
+                # the convention it encodes has to be stated where it is set.
+                # Bean `qou-cblw` finding 2.
+                ch.append((mp.mpf(1), _pn_d(H)))
     return ch
 
 
@@ -240,6 +253,20 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
     witness["scriptFile"] = os.path.basename(__file__)
+    # Emitted BY THE PRODUCER, not backfilled. `q0Anchor` was previously added
+    # downstream, so every re-run of this probe silently DELETED it -- the
+    # "bare producer" hazard AGENTS.md documents in the witness-staleness
+    # triage ("re-running one deletes the field this audit keys on ... fix the
+    # producer to emit provenance first"). Confirmed live on the sibling probe
+    # `mu4_rhoF_cluster_derivation_probe.py`, where a comment-only edit re-run
+    # to refresh scriptHash dropped all three keys.
+    witness["q0Anchor"] = "proton"
+    witness["q0Value"] = str(Q0)
+    witness["q0AnchorReason"] = (
+        "experimental/Physical-Observations pin (Q_50_DIGIT_STR from "
+        "q_parameter) per the AGENTS.md owner directive of 2026-08-07. "
+        "Emitted by the producer so a re-run preserves it."
+    )
     out = os.path.join(_HERE, "wlambda-nuclear-braid-connected.witness.json")
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)

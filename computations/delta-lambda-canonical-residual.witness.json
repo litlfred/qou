@@ -9,7 +9,7 @@
       "computed": 0.6319999999999997,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "log_q0(B_AME/B_pred) for the deuteron vs 10·2−5 = 15"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 30.794,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "max |log_q0 Δ_λ − (10A−5)| over D, T, ⁴He"
     }
   ],

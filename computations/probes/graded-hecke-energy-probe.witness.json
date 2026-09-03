@@ -1,37 +1,37 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T22:44:16.357124+00:00",
-  "commitSha": "21a3c55f9c3278821a329d53c21433423b92a4ff",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-30T07:22:41.396302+00:00",
+  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
-      "computed": 1.065411768009746,
-      "expected": 1.065306228613167,
-      "passed": false,
-      "tolerance": 1e-10
+      "computed": "1.1457596924573008696890815957741193059437280619434",
+      "expected": "1.1457596924573008696890815957741193059437280619435",
+      "passed": true,
+      "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[neutron]",
-      "computed": 0.923413212248394,
-      "expected": 0.9232332971861535,
-      "passed": false,
-      "tolerance": 1e-10
+      "computed": "0.98774368811580957163402016550129498205504875906272",
+      "expected": "0.98774368811580957163402016550129498205504875906283",
+      "passed": true,
+      "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[deuteron]",
-      "computed": 0.3884713632142838,
-      "expected": 0.3882864715477132,
+      "computed": "0.57517224391777187082653534398618088915249435289275",
+      "expected": "0.3882864715477132",
       "passed": false,
-      "tolerance": 1e-10
+      "tolerance": "1e-10"
     }
   ],
   "allPassed": false,
-  "durationMs": 527,
+  "durationMs": 246,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
-  "scriptHash": "e28ba1eeb8f8",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "609562e893a6",
+  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,9 +43,15 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/graded_hecke_energy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/graded_hecke_energy_probe.py"
   },
   "description": "Phase 8 of the 1 ppb workplan — graded Hecke energy probe demonstrating the truncation bound from `prop:graded-hecke-energy-truncation-bound`.  Stratifies the canonical Wenzl-bridge tr_M(β_K, q_0) per partition λ by the content sum n(λ) (natural ℤ-grade for the principal Schur specialisation underlying y_λ).  For each atom in {proton, neutron, deuteron}: per-partition rows sorted by grade, cumulative trace as grade grows, and the empirical confinement level (smallest ℓ at which |cum(≤ℓ) - tr_M| < 1e-12).",
   "contentBlock": "prop:graded-hecke-energy-truncation-bound",
@@ -60,12 +66,12 @@
         "Z": 1,
         "N": 0,
         "include_inter": false,
-        "target_tr_M": "1.065306228613167",
-        "num_partitions": 3,
-        "num_grades": 3,
-        "max_grade": 3,
-        "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": 3,
+        "target_tr_M": "1.1457596924573008696890815957741193059437280619435",
+        "num_partitions": 2,
+        "num_grades": 2,
+        "max_grade": 1,
+        "effective_confinement_level_tight": 1,
+        "effective_confinement_level_loose_1e_minus_3": 1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -75,9 +81,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.57436452630330705982267438036440431279463940757006",
+            "grade_sum_real": "0.69871854491690028191764460373632635715898454124428",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.57436452630330705982267438036440431279463940757006"
+            "cumulative_abs": "0.69871854491690028191764460373632635715898454124428"
           },
           {
             "grade": 1,
@@ -88,23 +94,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "1.0822229610168786790970471069482861335097983451704",
+            "grade_sum_real": "1.1457596924573008696890815957741193059437280619434",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "1.0822229610168786790970471069482861335097983451704"
-          },
-          {
-            "grade": 3,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                1,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "1.0654117680097459610712389391056632805332388533684",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "1.0654117680097459610712389391056632805332388533684"
+            "cumulative_abs": "1.1457596924573008696890815957741193059437280619434"
           }
         ]
       },
@@ -112,12 +104,12 @@
         "Z": 0,
         "N": 1,
         "include_inter": false,
-        "target_tr_M": "0.9232332971861535",
-        "num_partitions": 3,
-        "num_grades": 3,
-        "max_grade": 3,
-        "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": 3,
+        "target_tr_M": "0.98774368811580957163402016550129498205504875906283",
+        "num_partitions": 2,
+        "num_grades": 2,
+        "max_grade": 1,
+        "effective_confinement_level_tight": 1,
+        "effective_confinement_level_loose_1e_minus_3": 1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -127,9 +119,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.46618512414858937152050324801054730718911555468871",
+            "grade_sum_real": "0.56711753022678167003188672809761373418145978684586",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.46618512414858937152050324801054730718911555468871"
+            "cumulative_abs": "0.56711753022678167003188672809761373418145978684586"
           },
           {
             "grade": 1,
@@ -140,23 +132,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.94412548385030305158951674323785932428999444064786",
+            "grade_sum_real": "0.98774368811580957163402016550129498205504875906272",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.94412548385030305158951674323785932428999444064786"
-          },
-          {
-            "grade": 3,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                1,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.92341321224839404620692485586617049116396783156701",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.92341321224839404620692485586617049116396783156701"
+            "cumulative_abs": "0.98774368811580957163402016550129498205504875906272"
           }
         ]
       },
@@ -165,11 +143,11 @@
         "N": 1,
         "include_inter": true,
         "target_tr_M": "0.3882864715477132",
-        "num_partitions": 11,
-        "num_grades": 9,
-        "max_grade": 15,
+        "num_partitions": 4,
+        "num_grades": 4,
+        "max_grade": 3,
         "effective_confinement_level_tight": -1,
-        "effective_confinement_level_loose_1e_minus_3": 6,
+        "effective_confinement_level_loose_1e_minus_3": -1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -179,9 +157,9 @@
                 6
               ]
             ],
-            "grade_sum_real": "0.092351574571901110108577771454356828746541038744602",
+            "grade_sum_real": "0.1798908217125670511978532470978343992022165450432",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.092351574571901110108577771454356828746541038744602"
+            "cumulative_abs": "0.1798908217125670511978532470978343992022165450432"
           },
           {
             "grade": 1,
@@ -192,9 +170,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.28204972717371394383320173886490078215811840229534",
+            "grade_sum_real": "0.43382860414478880397880921655730705849330927887046",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.28204972717371394383320173886490078215811840229534"
+            "cumulative_abs": "0.43382860414478880397880921655730705849330927887046"
           },
           {
             "grade": 2,
@@ -205,109 +183,22 @@
                 2
               ]
             ],
-            "grade_sum_real": "0.34951680288852121656620841074489709384767073522423",
+            "grade_sum_real": "0.51090509469300909289583773761878484251180266080457",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.34951680288852121656620841074489709384767073522423"
+            "cumulative_abs": "0.51090509469300909289583773761878484251180266080457"
           },
           {
             "grade": 3,
-            "num_partitions_at_grade": 2,
+            "num_partitions_at_grade": 1,
             "partitions_at_grade": [
               [
                 3,
                 3
-              ],
-              [
-                4,
-                1,
-                1
               ]
             ],
-            "grade_sum_real": "0.40477369127930004673953491546974761076105309116257",
+            "grade_sum_real": "0.57517224391777187082653534398618088915249435289275",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.40477369127930004673953491546974761076105309116257"
-          },
-          {
-            "grade": 4,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                3,
-                2,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.39033815817281301336367283762925639082279654461971",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.39033815817281301336367283762925639082279654461971"
-          },
-          {
-            "grade": 6,
-            "num_partitions_at_grade": 2,
-            "partitions_at_grade": [
-              [
-                2,
-                2,
-                2
-              ],
-              [
-                3,
-                1,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.38796992244945899179735662197151058474858164933651",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38796992244945899179735662197151058474858164933651"
-          },
-          {
-            "grade": 7,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                2,
-                2,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.38825037007188703717779829018517807043207621321602",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38825037007188703717779829018517807043207621321602"
-          },
-          {
-            "grade": 10,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                2,
-                1,
-                1,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.3884629466358356326860958872174878070983020797055",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.3884629466358356326860958872174878070983020797055"
-          },
-          {
-            "grade": 15,
-            "num_partitions_at_grade": 1,
-            "partitions_at_grade": [
-              [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-              ]
-            ],
-            "grade_sum_real": "0.38847136321428381166254502993924409773032045519686",
-            "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38847136321428381166254502993924409773032045519686"
+            "cumulative_abs": "0.57517224391777187082653534398618088915249435289275"
           }
         ]
       }
@@ -316,5 +207,7 @@
     "workplan_doc": "docs/audits/2026-05-10-1ppb-workplan-update.md",
     "truncation_proposition": "prop:graded-hecke-energy-truncation-bound",
     "note": "Empirical effective confinement level may be higher than the Lean-side ConfinementLevel.level when the grading is by partition content-sum n(λ) rather than the categorical jet/filtration order; the two coincide modulo the GS-filtration descent (gs-graded-markov-trace-existence conjecture)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

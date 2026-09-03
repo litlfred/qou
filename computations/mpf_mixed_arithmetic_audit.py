@@ -535,7 +535,14 @@ def main() -> int:
     print("  float64 gap). Fix a real one by carrying mpmath end to end.")
 
     out = HERE / "mpf-mixed-arithmetic-audit.witness.json"
-    out.write_text(json.dumps({
+    # Provenance stamp (bean qou-f1rs): the witness dict was built
+    # INLINE at the write below, so there was nothing to stamp. It
+    # is bound to a name here so this producer records which script
+    # wrote it -- a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    _prov_payload = {
         "schema": "witness/v1",
         "name": "mpf-mixed-arithmetic-audit",
         "description": "Static detection of arithmetic mixing an mpmath value with "
@@ -547,7 +554,11 @@ def main() -> int:
         "data": {"candidates": len(cands), "marked": len(marked),
                  "files": len(by_file), "baseline": base,
                  "by_file": by_file, "rows": cands},
-    }, indent=2) + "\n")
+    }
+    _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
+    out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nWrote {out.name}")
     return 1 if (args.strict and len(cands) > base) else 0
 

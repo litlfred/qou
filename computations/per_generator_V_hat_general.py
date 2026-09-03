@@ -176,7 +176,9 @@ def main() -> int:
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
     q0_f = float(q0)
     h_f = float(h)
 
@@ -305,6 +307,15 @@ def main() -> int:
 
     here = Path(__file__).resolve().parent
     out = here / "per-generator-V-hat-general.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nWitness: {out}")
     return 0

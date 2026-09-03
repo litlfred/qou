@@ -1,0 +1,160 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T18:30:58.098061+00:00",
+  "commitSha": "6d90a480ed22814fafcbe24e4d2a2fa7e8cf77a7",
+  "assertions": [
+    {
+      "name": "corpus_meson_braid_has_zero_negative_syllables",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count",
+      "source": "M = (s0 s1)^2 s1 s0 is entirely positive, so it is excluded from the A-adequate family by Sublemma 2.1."
+    },
+    {
+      "name": "v8_matches_corpus_borromean_volume",
+      "computed": "7.32772475342",
+      "expected": "7.32772475342",
+      "passed": true,
+      "tolerance": "1e-10",
+      "unit": "hyperbolic volume",
+      "source": "v8 = 8*Catalan must reproduce the corpus's own Vol(Borromean) = 2*v8, which the prior audit verified in SnapPy to 11 places. Ties this probe's constant to a measured corpus number."
+    },
+    {
+      "name": "heavy_end_windows_are_finite",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "Every target admits a non-empty, finite syllable window."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "meson-braid-syllable-bound",
+  "scriptFile": "meson_braid_syllable_bound_probe.py",
+  "scriptHash": "e0c7dad3fbf4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/meson_braid_syllable_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/meson_braid_syllable_bound_probe.py"
+  },
+  "description": "Bounds the meson-braid candidate space using Giambrone's closed-3-braid volume bounds, read from the INGESTED library copy (library/arxiv-1406.7337v4/). The 2026-08-24 Obstruction-A audit recorded that the library carried nothing on closed-3-braid volumes and that its literature entries were unread search summaries whose constants must be checked before use. The library does carry the paper; this does that checking. Bounds the candidate space; derives no braid and checks no mass.",
+  "auditOnly": "docs/audits/2026-08-24-meson-braid-obstruction-a-measured.md",
+  "data": {
+    "corrects_prior_audit": {
+      "audit": "docs/audits/2026-08-24-meson-braid-obstruction-a-measured.md",
+      "its_claim": "'The corpus library (332 documents) ... carries the volume-conjecture line ... but nothing on the classification or volumes of closed 3-braids, which is exactly the tool Obstruction A needs.'",
+      "correction": "library/arxiv-1406.7337v4/ IS that tool -- Giambrone, 'Semi-Adequate Closed Braids and Volume', the same arXiv id the audit linked as an unfetchable external result. Sectioned and greppable.",
+      "its_own_caveat_now_discharged": "'These are search-result summaries, not read papers ... the exact volume-bound constants are not quoted here and must be checked before use.'",
+      "nothing_else_in_that_audit_is_disturbed": "Its SnapPy measurement, its T(2,5) identification, its axis-trap method note and its chiral-limit refutation all stand."
+    },
+    "theorem_as_read": {
+      "source": "library/arxiv-1406.7337v4 (Giambrone), read from sections",
+      "thm_1_2": "v8*(s-1) <= vol(S^3 \\ K) < 4*v8*s, for a certain A-adequate closed 3-braid diagram",
+      "thm_3_1": "s = t_-(D) = #{negative syllables in beta}, readable off the original 3-braid word",
+      "lemma_2_1_cond_1": "every negative exponent r_i satisfies r_i <= -3",
+      "sublemma_2_1_proof_quote": "'Condition (2a), Condition (2b), and Condition (2c) of Lemma 2.1 imply that beta cannot be positive. Because positive syllables of beta are cyclically neighbored by negative syllables...'",
+      "v8_value": "3.66386237671",
+      "v8_identity": "v8 = 8*Catalan; the corpus carries 2*v8 = 8G = Vol(Borromean) = 7.32772475342"
+    },
+    "consequence_1_positivity_is_structural": {
+      "corpus_braid": "M = (s0 s1)^2 s1 s0 (def:categorical-meson)",
+      "negative_syllables": 0,
+      "reading": "A fully positive 3-braid word is structurally excluded from the A-adequate family by Sublemma 2.1's own proof, and has s = 0. The 2026-08-24 audit measured Vol = 0 in SnapPy and diagnosed 'positivity is the culprit'. That diagnosis is now theorem-backed and quantified: s, the negative-syllable count, is the volume dial.",
+      "not_claimed": "That Theorem 1.2 'predicts' the measured 0. A positive braid is OUTSIDE the theorem's family, so the theorem does not apply to it -- it excludes it. Exclusion from the hyperbolic family and a measured Vol = 0 agree, which is the point, but they are not the same statement."
+    },
+    "consequence_2_heavy_end_is_bounded": {
+      "audit_said": "'the J/psi and D0 targets (59.50, 35.83) lie far above anything reachable at these braid lengths, so the candidate space is not even bounded yet at the heavy end.'",
+      "now_bounded_by": "s > V/(4*v8) and s <= V/v8 + 1, with >= 3 negative crossings per negative syllable from Lemma 2.1(1).",
+      "windows": [
+        {
+          "meson": "pi+-",
+          "vol_rho_target": "2.681392089",
+          "s_min": 1,
+          "s_max": 1,
+          "min_negative_crossings": 3,
+          "window_lo": "0.0",
+          "window_hi": "14.65545"
+        },
+        {
+          "meson": "K+-",
+          "vol_rho_target": "9.484401401",
+          "s_min": 1,
+          "s_max": 3,
+          "min_negative_crossings": 3,
+          "window_lo": "0.0",
+          "window_hi": "43.966349"
+        },
+        {
+          "meson": "K0",
+          "vol_rho_target": "9.559980444",
+          "s_min": 1,
+          "s_max": 3,
+          "min_negative_crossings": 3,
+          "window_lo": "0.0",
+          "window_hi": "43.966349"
+        },
+        {
+          "meson": "eta",
+          "vol_rho_target": "10.52539033",
+          "s_min": 1,
+          "s_max": 3,
+          "min_negative_crossings": 3,
+          "window_lo": "0.0",
+          "window_hi": "43.966349"
+        },
+        {
+          "meson": "D0",
+          "vol_rho_target": "35.82684854",
+          "s_min": 3,
+          "s_max": 10,
+          "min_negative_crossings": 9,
+          "window_lo": "7.3277248",
+          "window_hi": "146.5545"
+        },
+        {
+          "meson": "eta_c",
+          "vol_rho_target": "57.3259547",
+          "s_min": 4,
+          "s_max": 16,
+          "min_negative_crossings": 12,
+          "window_lo": "10.991587",
+          "window_hi": "234.48719"
+        },
+        {
+          "meson": "J/psi",
+          "vol_rho_target": "59.49688298",
+          "s_min": 5,
+          "s_max": 17,
+          "min_negative_crossings": 15,
+          "window_lo": "14.65545",
+          "window_hi": "249.14264"
+        }
+      ]
+    },
+    "scope": {
+      "class": "(a) a NECESSARY-condition bound on a candidate space",
+      "claimed": "Within Giambrone's family, a closed 3-braid realising target volume V must have negative-syllable count s in the stated window, hence at least 3*s_min negative crossings.",
+      "NOT_claimed": "That any braid is derived, proposed, or checked against a mass. Obstruction A -- a canonical, parameter-free operation fixing the braid -- is untouched and open. A candidate outside the family is not excluded by these numbers; it is uncovered by them."
+    },
+    "verdict": "The tool the Obstruction-A audit called absent from the library is IN the library (arxiv-1406.7337v4), and its constants are now read rather than summarised. Two consequences. (1) A fully positive 3-braid is structurally excluded from the A-adequate family -- the corpus braid has s = 0 -- so 'positivity is the culprit' is now structural, with s the volume dial. (2) The heavy end IS bounded, contrary to that audit: J/psi (V = 59.497) needs s in [5, 17], hence at least 15 negative crossings; the pion (V = 2.681) needs s in [1, 1], at least 3. Necessary conditions only -- no braid is derived, proposed, or mass-checked, and Obstruction A stays open."
+  }
+}

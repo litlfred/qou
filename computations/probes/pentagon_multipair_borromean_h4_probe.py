@@ -138,7 +138,10 @@ def get_pair_uv(scheme_name: str, lift: str) -> dict:
     """For each strand pair (i, j), return (u, v) for the Pentagon eval.
     `lift` = how braid generators lift to q-shuffle variables.
     """
-    z_markov = mpf(1) / (mp.sqrt(Q_0) + mpf(1) / mp.sqrt(Q_0))
+    # Convention D (canonical, 2026-08-15 owner ruling): z = q^3/(q^2+1) = q^2/[2]_q.
+    # Convention C, 1/(sqrt q + 1/sqrt q), is excised. Under D no square root is
+    # needed, so a surviving mp.sqrt here would be z_C showing through.
+    z_markov = Q_0**3 / (Q_0**2 + 1)
     if lift == "small_uniform":
         u_val = z_markov ** 2
         return {p: (u_val, u_val) for p in STRAND_PAIRS}

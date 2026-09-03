@@ -98,7 +98,7 @@ K_MAX = 8
 def extract_ck(q: mpf, q_codata: mpf, m_e: mpf, k_max: int) -> list[mpf]:
     """c_2..c_{k_max} via the ladder inversion (Q_codata treated as the
     exact CAL-3 anchor — the cal-anchored convention). c_2 = -1 fixed."""
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     u = sub["u"]
     Q_A = m_e * sub["Q_A_over_me"]
     N1 = Q_A * cos(sub["alpha"] - sub["b"] * sub["hbar_q"] ** 2 / 2)
@@ -119,7 +119,7 @@ def main() -> int:
     q_codata = mpf(str(Q_BETA_MEV))
     dQ_rel = mpf(str(Q_BETA_MEV_ERR)) / q_codata
     qp = q_at(mp.dps)
-    sub = substrate_ladder_quantities(qp)
+    sub = substrate_ladder_quantities(qp, convention="C")
     u = sub["u"]
 
     print("=" * 78)

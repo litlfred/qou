@@ -195,8 +195,8 @@ def main() -> int:
 
     w.add_assertion(
         name="alt_geometry_scan_completed",
-        computed=len(geometries),
-        expected=len(geometries),
+        computed=len(geometries) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(geometries)} knot-operator geometries at 60 dps.",
     )

@@ -129,6 +129,54 @@ def q_pochhammer(u, m):
     return sp.prod(1 - u ** k for k in range(1, m + 1))
 
 
+def residue_mod_phi8(poly, u):
+    """Residue of `poly` in ℚ[u]/(Φ_8) = ℚ[u]/(u⁴+1), as 4 coefficients.
+
+    THE SECOND ROUTE. `cyclotomic_factor_count` below decides Φ_8 |
+    S(u) by repeated polynomial LONG DIVISION (`sp.div`). This decides
+    the same question without dividing anything: it folds the
+    coefficient list of S using u⁴ = −1, so the coefficient of u^i
+    lands on u^(i mod 4) with sign (−1)^(i//4). Φ_8 | S iff all four
+    residues vanish.
+
+    Because Φ_8 is irreducible over ℚ and Φ_8' = 4u³ is coprime to it,
+    Φ_8² | S iff Φ_8 divides both S and S' — so the same fold applied
+    to S' settles the SQUARE, which is the multiplicity this probe's
+    whole verdict turns on.
+
+    Takes and keeps `sp.Poly`: the Δa_m chains reach several hundred
+    terms, and folding them as loose `Expr` builds Add/Mul trees deep
+    enough to hit Python's recursion limit inside sympy's flattener.
+    """
+    p = poly if isinstance(poly, sp.Poly) else sp.Poly(sp.expand(poly), u)
+    buckets = [[], [], [], []]
+    for (i,), c in zip(p.monoms(), p.coeffs()):
+        buckets[i % 4].append(c if (i // 4) % 2 == 0 else -c)
+    return [sp.Add(*b) if b else sp.Integer(0) for b in buckets]
+
+
+def phi8_power_via_root_test(expr, u, cap=3):
+    """Φ_8-multiplicity of `expr` by the residue fold, capped at `cap`.
+
+    Uses `residue_mod_phi8` on S, S', S'', … : Φ_8^k | S iff Φ_8
+    divides the first k−1 derivatives as well (Φ_8 irreducible, Φ_8'
+    coprime to Φ_8). No `sp.div` anywhere. Stays in `sp.Poly` so
+    `.diff` is a coefficient shift rather than an expression rewrite.
+    """
+    p = expr if isinstance(expr, sp.Poly) else sp.Poly(sp.expand(expr), u)
+    if p.is_zero:
+        return 0
+    power = 0
+    for _ in range(cap):
+        if any(c != 0 for c in residue_mod_phi8(p, u)):
+            break
+        power += 1
+        p = p.diff(u)
+        if p.is_zero:
+            break
+    return power
+
+
 def cyclotomic_factor_count(expr, u, max_n=20):
     """For each n = 1..max_n, count how many times Φ_n(u) divides expr.
 
@@ -194,7 +242,11 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
     cy_counts = cyclotomic_factor_count(habiro_sum, u, max_n=16)
     log(f"    Cyclotomic factor map: {cy_counts}")
     phi8_power = cy_counts.get(8, 0)
-    log(f"    Φ_8 power in habiro_sum: {phi8_power}")
+    phi8_root = phi8_power_via_root_test(habiro_sum, u)
+    reconstructs = bool(sp.expand(habiro_sum - p_u) == 0)
+    log(f"    Φ_8 power in habiro_sum: {phi8_power} "
+        f"(division route) / {phi8_root} (residue-fold route)")
+    log(f"    Σ a_m·(u;u)_m == p(u): {reconstructs}")
 
     return {
         "k": k,
@@ -205,6 +257,8 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
         "habiro_sum_factored": factored_str,
         "cyclotomic_counts": cy_counts,
         "phi8_power": phi8_power,
+        "phi8_power_root_test": phi8_root,
+        "reconstructs_input_polynomial": reconstructs,
     }
 
 
@@ -226,9 +280,17 @@ def analyse_pochhammer_factors(u, max_m=20):
         poch = q_pochhammer(u, m)
         cy_counts = cyclotomic_factor_count(poch, u, max_n=20) if m > 0 else {}
         phi8_power = cy_counts.get(8, 0)
-        log(f"    (u;u)_{m}: Φ_8 power = {phi8_power}")
+        # SECOND ROUTE to the same number: the docstring's counting
+        # law. (u;u)_m = Π_{k≤m}(1−u^k) and 1−u^k = Π_{d|k} Φ_d, so
+        # Φ_8's multiplicity is #{k ≤ m : 8 | k} = ⌊m/8⌋ — a divisor
+        # count over the integers, with no polynomial in sight. The
+        # docstring above states this law; nothing tested it.
+        phi8_predicted = m // 8
+        log(f"    (u;u)_{m}: Φ_8 power = {phi8_power} "
+            f"(divided) / {phi8_predicted} (⌊m/8⌋)")
         table.append({"m": m, "cyclotomic_counts": cy_counts,
-                      "phi8_power": phi8_power})
+                      "phi8_power": phi8_power,
+                      "phi8_power_floor_m_over_8": phi8_predicted})
     return table
 
 
@@ -263,6 +325,9 @@ def habiro_of_z_diff(u, q, max_m=20):
         "habiro_sum_factored": str(factored),
         "cyclotomic_counts": cy_counts,
         "phi8_power": cy_counts.get(8, 0),
+        "phi8_power_root_test": phi8_power_via_root_test(habiro_sum, u),
+        "reconstructs_input_polynomial": bool(
+            sp.expand(habiro_sum - p_u) == 0),
     }
 
 
@@ -352,8 +417,10 @@ def extract_helium_witnesses(u):
         factored = sp.factor(habiro_sum)
         cy_counts = cyclotomic_factor_count(habiro_sum, u, max_n=16)
         phi8_power = cy_counts.get(8, 0)
+        phi8_root = phi8_power_via_root_test(habiro_sum, u, cap=4)
         log(f"    cyclotomic factor map: {cy_counts}")
-        log(f"    Φ_8 power = {phi8_power}")
+        log(f"    Φ_8 power = {phi8_power} (division route) / "
+            f"{phi8_root} (residue-fold route)")
         log(f"    First m for which prefix sum has Φ_8 ≥ 1: m = {first_phi8_m}")
         log(f"    First m for which prefix sum has Φ_8 ≥ 2: m = {first_phi8_sq_m}")
         log(f"    factored (first 200 chars): {str(factored)[:200]}")
@@ -361,6 +428,7 @@ def extract_helium_witnesses(u):
             "pair": label,
             "cyclotomic_counts": cy_counts,
             "phi8_power": phi8_power,
+            "phi8_power_root_test": phi8_root,
             "first_phi8_m": first_phi8_m,
             "first_phi8_sq_m": first_phi8_sq_m,
             "factored_excerpt": str(factored)[:400],
@@ -532,13 +600,127 @@ def main() -> int:
         "phi8_at_u0": phi8_at_u0,
     })
 
+    # ── Assertions ────────────────────────────────────────────────────
+    # Every Φ_8 count above comes out of ONE routine —
+    # `cyclotomic_factor_count`, repeated `sp.div` by
+    # `sp.cyclotomic_poly(n, u)`. The verdict is a comparison of those
+    # counts, so the counts themselves need a second route, and so does
+    # the Habiro expansion that produces the polynomials they act on.
+
+    # (1) The expansion is an identity, not an approximation.
+    #   Route A: `cyclotomic_expansion` peels a_m off by sequential
+    #            division by (1 − u^(m+1)) and stops when the quotient
+    #            is zero.
+    #   Route B: the input p(u) itself. Σ a_m·(u;u)_m must reproduce it
+    #            EXACTLY in ℤ[u]. Nothing in this probe had checked
+    #            that, yet every cyclotomic count is taken on the
+    #            reconstructed sum rather than on p(u).
+    reconstruction_flags = (
+        [v["reconstructs_input_polynomial"] for v in z_k_results.values()]
+        + [z_diff_result["reconstructs_input_polynomial"]]
+    )
+    builder.add_data("habiro_reconstruction", {
+        "checked": len(reconstruction_flags),
+        "exact": sum(1 for f in reconstruction_flags if f),
+    })
     builder.add_assertion(
-        "phi8_squared_mechanism_identified",
-        computed=1,
-        expected=1,
+        "habiro_expansion_reconstructs_input_polynomial",
+        computed=sum(1 for f in reconstruction_flags if f),
+        expected=len(reconstruction_flags),
         tolerance=0,
-        source="sympy.factor + cyclotomic_poly on z(q)^k Habiro sums "
-               "and (u;u)_m Pochhammer factors.",
+        source=(
+            "Route A: Σ a_m·(u;u)_m rebuilt from the sequential "
+            "Pochhammer division of `cyclotomic_expansion`, for "
+            "z(q)^1, z(q)^2, z(q)^3 and z²−z. Route B: the "
+            "denominator-cleared p(u) each expansion was given. "
+            "Expanded difference must be identically 0 in ℤ[u]."
+        ),
+    )
+
+    # (2) The Pochhammer counting law this module's own docstring
+    #     states, tested instead of asserted in prose.
+    #   Route A: `cyclotomic_factor_count` divides (u;u)_m by Φ_8(u)
+    #            until there is a remainder.
+    #   Route B: ⌊m/8⌋ — #{k ≤ m : 8 | k}, from 1−u^k = Π_{d|k} Φ_d.
+    #            Integer divisor counting; no polynomial.
+    poch_law_agree = sum(
+        1 for row in poch_table
+        if row["phi8_power"] == row["phi8_power_floor_m_over_8"]
+    )
+    builder.add_data("pochhammer_counting_law", {
+        "rows": len(poch_table),
+        "agreeing": poch_law_agree,
+        "law": "Φ_8 multiplicity of (u;u)_m is #{k<=m : 8|k} = floor(m/8)",
+    })
+    builder.add_assertion(
+        "pochhammer_phi8_multiplicity_matches_floor_m_over_8",
+        computed=poch_law_agree,
+        expected=len(poch_table),
+        tolerance=0,
+        source=(
+            "Route A: repeated sp.div of (u;u)_m by cyclotomic_poly(8, "
+            "u), m = 0..20. Route B: ⌊m/8⌋ from the divisor "
+            "factorisation 1−u^k = Π_{d|k} Φ_d(u). The "
+            "FROM-POCHHAMMER-BOUNDARY verdict is a statement about "
+            "exactly this law."
+        ),
+    )
+
+    # (3) Every Φ_8 multiplicity in the witness, by a second route.
+    #   Route A: repeated long division by Φ_8 (`cyclotomic_factor_count`).
+    #   Route B: `phi8_power_via_root_test` — reduce mod u⁴ = −1 by
+    #            folding the coefficient list, and differentiate for the
+    #            square. Never divides a polynomial.
+    # This covers the three z(q)^k sums (the verdict's premise that they
+    # carry NO Φ_8) and the three real Δa_m chains (the Φ_8² the probe
+    # set out to explain).
+    root_pairs = (
+        [(v["phi8_power"], v["phi8_power_root_test"])
+         for v in z_k_results.values()]
+        + [(z_diff_result["phi8_power"], z_diff_result["phi8_power_root_test"])]
+        + [(r["phi8_power"], r["phi8_power_root_test"]) for r in delta_results]
+    )
+    builder.add_data("phi8_two_routes", {
+        "pairs_division_vs_root_fold": [list(p) for p in root_pairs],
+        "agreeing": sum(1 for a, b in root_pairs if a == b),
+    })
+    builder.add_assertion(
+        "phi8_multiplicity_agrees_with_residue_fold_route",
+        computed=sum(1 for a, b in root_pairs if a == b),
+        expected=len(root_pairs),
+        tolerance=0,
+        source=(
+            "Route A: Φ_8-multiplicity by repeated sp.div. Route B: by "
+            "reducing mod Φ_8 = u⁴+1 through a coefficient fold "
+            "(u^i ↦ (−1)^(i//4)·u^(i mod 4)) and differentiating for "
+            "higher multiplicity — Φ_8 is irreducible over ℚ and Φ_8' = "
+            "4u³ is coprime to it, so Φ_8^k | S iff Φ_8 divides S and "
+            "its first k−1 derivatives. Covers z(q)^1..3, z²−z and the "
+            "three Δa_m chains."
+        ),
+    )
+
+    # (4) The verdict's premise, stated as a number.
+    #   FROM-POCHHAMMER-BOUNDARY is chosen only when z(q)^k alone
+    #   carries no Φ_8. Route A: the measured multiplicities for
+    #   k = 1, 2, 3. Route B: 0 — z(q)^k = u^(6k)/Φ_4(u)^k in u, so
+    #   after `to_u_polynomial` clears the denominator the numerator is
+    #   the monomial u^(6k), whose only cyclotomic factor is Φ_1-free.
+    #   A monomial cannot be divisible by Φ_8.
+    z_phi8_max = max(v["phi8_power"] for v in z_k_results.values())
+    builder.add_assertion(
+        "z_pow_k_habiro_sums_carry_no_phi8",
+        computed=z_phi8_max,
+        expected=0,
+        tolerance=0,
+        source=(
+            "Route A: max Φ_8 multiplicity over the k = 1, 2, 3 Habiro "
+            "sums, measured. Route B: 0, because z(q)^k in u is "
+            "u^(6k)/Φ_4(u)^k and `to_u_polynomial` clears the "
+            "denominator, leaving a monomial — which no cyclotomic "
+            "polynomial of degree > 0 divides. If this is ever nonzero "
+            "the verdict is not FROM-POCHHAMMER-BOUNDARY."
+        ),
     )
 
     elapsed = time.time() - t0

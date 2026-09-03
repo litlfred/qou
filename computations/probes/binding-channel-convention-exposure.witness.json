@@ -1,0 +1,565 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:00:44.654619+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "assertions": [
+    {
+      "name": "C1_X_eq_Q_pow_N_is_ocneanu_fibre_relation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "symbolic: substituting z = q^N/[N]_q into the Wenzl-bridge rank parameter X = qz/(1-q^2+qz) gives exactly Q^N, so the bridge's 'fractional Wenzl rank' IS the fibre dimension of ocneanu_param_eq_of_fibre_qdim"
+    },
+    {
+      "name": "C1_numeric_agreement_50dps",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "integer N=1..6 at the proton pin: max |X - Q^N| = 1.09e-70"
+    },
+    {
+      "name": "C1_zD_is_N_2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "z_D = z(N=2) to 0.0"
+    },
+    {
+      "name": "C1_zC_is_not_integer_N",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "N_eff(z_C) = 2.5995155364 — no integer fibre dimension"
+    },
+    {
+      "name": "C2_D_annihilates_exactly_the_gt2_row_blocks",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "for every partition of n=2..8, s_{lambda,Q^2} = 0 iff ell(lambda) > 2 (the row cap is already encoded in the bridge's (1 - X*Q^{c(x)}) factor, which vanishes on the cell of content -N)"
+    },
+    {
+      "name": "C2_C_annihilates_no_block",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "at the non-integer X_C no cell has content -N_eff, so NO weight vanishes: convention C gives every partition nonzero weight at every n"
+    },
+    {
+      "name": "C3_exposure_grows_with_n",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C-vs-D difference at level n is the whole >2-row complement, of size p(n) - (floor(n/2)+1): 1 of 3 at n=3 but 70 of 77 at n=12 (4He)"
+    },
+    {
+      "name": "C4_D_vector_matches_mass_audit_closed_form",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "this probe's independent D implementation reproduces ([4]_q/[2]_q^3, 1/[2]_q^2, 0) to 9.06e-72"
+    },
+    {
+      "name": "C4_both_normalised",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "sum_lambda y_lambda d_lambda = 1 for both conventions (both are genuine normalised Markov traces; the question is which fibre)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 260,
+  "computation": "binding-channel-convention-exposure",
+  "scriptFile": "binding_channel_convention_exposure_probe.py",
+  "scriptHash": "f8f554eb44ba",
+  "scriptCommitSha": "4ecae4eaffcb56e025c9f1694739ddfe30c773d4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_channel_convention_exposure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_channel_convention_exposure_probe.py"
+  },
+  "description": "Exposure of the BINDING channel to the convention-D resolution that settled the mass channel. Establishes that the binding chain's own weight producer (y_lambda_wenzl_bridge) is parameterised by the fibre quantum dimension via X = Q^N <=> z*[N]_q = q^N, that its hard-coded z_C corresponds to no integer fibre dimension, and that the row cap ell(lambda) <= N is already encoded in its closed form -- so convention D annihilates every >2-row Wedderburn block at every n, not only at n = 3. Measurement only; no production value changed.",
+  "contentBlock": "prop:h3-markov-wenzl-weights",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_experimental_target_values": false,
+    "uses_muon_built_cache": false
+  },
+  "data": {
+    "C1_fibre_dimension_parameterisation": {
+      "symbolic_identity_exact": true,
+      "symbolic_residual": "0",
+      "integer_N_table": [
+        {
+          "N": 1,
+          "z": "1.1099785827513808076",
+          "X": "1.2320524541667639313",
+          "abs_err_X_minus_Q_pow_N": "0.0"
+        },
+        {
+          "N": 2,
+          "z": "0.6126880371464652516",
+          "X": "1.5179532498183459375",
+          "abs_err_X_minus_Q_pow_N": "1.8111e-71"
+        },
+        {
+          "N": 3,
+          "z": "0.44930480909020786056",
+          "X": "1.870198026749108018",
+          "abs_err_X_minus_Q_pow_N": "1.8111e-71"
+        },
+        {
+          "N": 4,
+          "z": "0.36936023223560491856",
+          "X": "2.3041820686340777511",
+          "abs_err_X_minus_Q_pow_N": "0.0"
+        },
+        {
+          "N": 5,
+          "z": "0.32274965047101579086",
+          "X": "2.8388731725076663814",
+          "abs_err_X_minus_Q_pow_N": "1.0867e-70"
+        },
+        {
+          "N": 6,
+          "z": "0.292763411980020647",
+          "X": "3.4976406592562573496",
+          "abs_err_X_minus_Q_pow_N": "3.6223e-71"
+        }
+      ],
+      "z_C": "0.499320334183694452413442680258",
+      "N_eff_C": "2.5995155364001770162",
+      "z_D": "0.612688037146465251595829863946",
+      "N_eff_D": "2.0",
+      "abs_zD_minus_z_N2": "0.0"
+    },
+    "C2_row_cap_in_bridge_closed_form": {
+      "row_cap_holds_for_D": true,
+      "no_vanishing_for_C": true,
+      "n_range": [
+        2,
+        8
+      ],
+      "sample_n_le_6": [
+        {
+          "n": 2,
+          "partition": [
+            2
+          ],
+          "ell": 1,
+          "s_D_is_zero": false,
+          "abs_s_D": "3.75001",
+          "abs_s_C": "6.70824"
+        },
+        {
+          "n": 2,
+          "partition": [
+            1,
+            1
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "1.23205",
+          "abs_s_C": "2.92553"
+        },
+        {
+          "n": 3,
+          "partition": [
+            3
+          ],
+          "ell": 1,
+          "s_D_is_zero": false,
+          "abs_s_D": "5.6202",
+          "abs_s_C": "12.421"
+        },
+        {
+          "n": 3,
+          "partition": [
+            2,
+            1
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "2.75001",
+          "abs_s_C": "8.40025"
+        },
+        {
+          "n": 3,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "3.89243e-71",
+          "abs_s_C": "0.68011"
+        },
+        {
+          "n": 4,
+          "partition": [
+            4
+          ],
+          "ell": 1,
+          "s_D_is_zero": false,
+          "abs_s_D": "7.92439",
+          "abs_s_C": "21.1167"
+        },
+        {
+          "n": 4,
+          "partition": [
+            3,
+            1
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "4.6202",
+          "abs_s_C": "17.436"
+        },
+        {
+          "n": 4,
+          "partition": [
+            2,
+            2
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "1.51795",
+          "abs_s_C": "6.44779"
+        },
+        {
+          "n": 4,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "9.7394e-71",
+          "abs_s_C": "2.18914"
+        },
+        {
+          "n": 4,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 4,
+          "s_D_is_zero": true,
+          "abs_s_D": "1.0513e-71",
+          "abs_s_C": "0.0781946"
+        },
+        {
+          "n": 5,
+          "partition": [
+            5
+          ],
+          "ell": 1,
+          "s_D_is_zero": false,
+          "abs_s_D": "10.7633",
+          "abs_s_C": "34.0344"
+        },
+        {
+          "n": 5,
+          "partition": [
+            4,
+            1
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "6.92439",
+          "abs_s_C": "31.5081"
+        },
+        {
+          "n": 5,
+          "partition": [
+            3,
+            2
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "3.38815",
+          "abs_s_C": "17.7805"
+        },
+        {
+          "n": 5,
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "1.73927e-70",
+          "abs_s_C": "4.82988"
+        },
+        {
+          "n": 5,
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "7.14223e-71",
+          "abs_s_C": "2.23239"
+        },
+        {
+          "n": 5,
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "ell": 4,
+          "s_D_is_zero": true,
+          "abs_s_D": "2.79605e-71",
+          "abs_s_C": "0.267533"
+        },
+        {
+          "n": 5,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 5,
+          "s_D_is_zero": true,
+          "abs_s_D": "4.49494e-72",
+          "abs_s_C": "0.0248305"
+        },
+        {
+          "n": 6,
+          "partition": [
+            6
+          ],
+          "ell": 1,
+          "s_D_is_zero": false,
+          "abs_s_D": "14.2609",
+          "abs_s_C": "52.9201"
+        },
+        {
+          "n": 6,
+          "partition": [
+            5,
+            1
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "9.76326",
+          "abs_s_C": "52.7171"
+        },
+        {
+          "n": 6,
+          "partition": [
+            4,
+            2
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "5.69233",
+          "abs_s_C": "36.0185"
+        },
+        {
+          "n": 6,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "2.70596e-70",
+          "abs_s_C": "9.06039"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            3
+          ],
+          "ell": 2,
+          "s_D_is_zero": false,
+          "abs_s_D": "1.8702",
+          "abs_s_C": "12.6256"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "1.69451e-70",
+          "abs_s_C": "6.54347"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "ell": 4,
+          "s_D_is_zero": true,
+          "abs_s_D": "5.1834e-71",
+          "abs_s_C": "0.612739"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "ell": 3,
+          "s_D_is_zero": true,
+          "abs_s_D": "1.29526e-71",
+          "abs_s_C": "0.691311"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "ell": 4,
+          "s_D_is_zero": true,
+          "abs_s_D": "2.29855e-71",
+          "abs_s_C": "0.305831"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 5,
+          "s_D_is_zero": true,
+          "abs_s_D": "1.24102e-71",
+          "abs_s_C": "0.0881907"
+        },
+        {
+          "n": 6,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ell": 6,
+          "s_D_is_zero": true,
+          "abs_s_D": "2.37723e-72",
+          "abs_s_C": "0.0111209"
+        }
+      ]
+    },
+    "C3_block_count_exposure": {
+      "per_n": [
+        {
+          "n": 3,
+          "A_if_3A": 1,
+          "p_n": 3,
+          "two_row_count": 2,
+          "zeroed_under_D": 1
+        },
+        {
+          "n": 6,
+          "A_if_3A": 2,
+          "p_n": 11,
+          "two_row_count": 4,
+          "zeroed_under_D": 7
+        },
+        {
+          "n": 9,
+          "A_if_3A": 3,
+          "p_n": 30,
+          "two_row_count": 5,
+          "zeroed_under_D": 25
+        },
+        {
+          "n": 12,
+          "A_if_3A": 4,
+          "p_n": 77,
+          "two_row_count": 7,
+          "zeroed_under_D": 70
+        }
+      ]
+    },
+    "C4_n3_D_vector_crosscheck": {
+      "rows": [
+        {
+          "partition": [
+            3
+          ],
+          "y_D": "0.5054042265039308031875587",
+          "y_D_closed_form": "0.5054042265039308031875587",
+          "abs_err": "9.0557e-72",
+          "y_C": "0.4153957953606134013104375"
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "y_D": "0.2472978867480345984062206",
+          "y_D_closed_form": "0.2472978867480345984062206",
+          "abs_err": "9.0557e-72",
+          "y_C": "0.2809296310310197077781513"
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "y_D": "3.500316617481534238010734e-72",
+          "y_D_closed_form": "0.0",
+          "abs_err": "3.5003e-72",
+          "y_C": "0.02274494257734718313325987"
+        }
+      ],
+      "norm_D": "1.0",
+      "norm_C": "1.0",
+      "worst_abs_err": "9.0557e-72"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,112 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2603.25236v1",
+ "source": {
+  "file": "2603.25236v1.pdf",
+  "sha256": "fba6853d6e544e19d5dc4cade32ee0be0dc5ac6b7b70f23e937909b85e96159c",
+  "bytes": 345537,
+  "pages": 8,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2603.25236",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "26 Mar 2026"
+  },
+  "doi": null,
+  "title": "A Concentration of Measure Phenomenon in",
+  "authors_raw": "Lattice Yang-Mills",
+  "title_lines": [
+   "A Concentration of Measure Phenomenon in"
+  ],
+  "abstract": "We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other. Nevertheless, the theorem demonstrated below, even though it does not lead to new results in the current setting, is sufficiently interesting and instructive to be presented as the same methods can be (and in fact are) more successful in other situations. Let us begin by describing our setup. We shall deal with the Euclidean, lattice Yang-Mills theory inDdimensions with periodic boundary conditions. For concreteness, we work with theU(N) group, but essentially everything below can be trivially adapted to the other groups of physical interest. The lattice sites are labelled byx. The positive edge directions are labelled by greek letters. The notationx+\u00b5stands for the lattice site which is displaced fromxone step in the direction defined by\u00b5. The number of lattice sites is denoted byK. We attach to every edge at each site an elementU x,\u00b5\u2208U(N), and are interested in performing the following integral Z= \u02c6 dUe\u2212\u03b2S(U) = \u02c6 Y x,\u00b5 dUx,\u00b5 exp \" 2N 2 \u03bb X {\u00b5,\u03bd} 1 N\u211c \u0010 Tr \u0000 U\u2020 x,\u03bdU\u2020 x+\u03bd,\u00b5Ux+\u00b5,\u03bdUx,\u00b5 \u0001\u0011# , where the sum goes over all (unordered) pairs of\u00b5and\u03bdsuch that\u00b5\u0338=\u03bd, or equivalently, over all plaquettes of the lattice. ThedU\u2019s stand for the Haar measures and\u03bbis the \u2019t Hooft coupling. We want to find the asymptotic of the expression above in the limitN\u2192\u221e while holding\u03bbfixed. We shall do so by pushing forward the product of Haar meas",
+  "docinfo": {
+   "Author": "Tamer Tlas",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "To see this, suppose the half-edges are coupled to produce case (a) for e.g.,",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 9572,
+   "n_words": 1712
+  },
+  {
+   "id": "sec-001-3-to-see-this-suppose-the-half-edges-are-coupled",
+   "number": "3",
+   "title": "To see this, suppose the half-edges are coupled to produce case (a) for e.g.,",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1494,
+   "n_words": 273
+  },
+  {
+   "id": "sec-002-2-coming-from-the-real-part-we-get-that-for-even",
+   "number": "2",
+   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6751,
+   "n_words": 1197
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 815,
+   "n_words": 116
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 18632
+ }
+}

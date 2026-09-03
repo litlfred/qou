@@ -62,7 +62,7 @@ del _sys, _Path, _bridge
 
 import mpmath as mp  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -243,8 +243,8 @@ def main():
 
     w.add_assertion(
         "chi_21_recovers_dim_at_q1",
-        computed=float(sanity["chi_21_at_q1"]),
-        expected=2.0,
+        computed=fmt(abs(mp.mpf(str(sanity["chi_21_at_q1"])) - 2)),
+        expected="0",
         tolerance=1e-30,
         source=(
             "β_Bor projects to id ∈ S_3 under π : B_3 → S_3, so "
@@ -253,8 +253,9 @@ def main():
     )
     w.add_assertion(
         "bratteli_ratio_5_over_4",
-        computed=float(bratteli["chi_ratio_H_over_Borromean"]),
-        expected=1.25,
+        computed=fmt(abs(mp.mpf(str(bratteli["chi_ratio_H_over_Borromean"]))
+                         - mp.mpf(5) / 4)),
+        expected="0",
         tolerance=1e-30,
         source=(
             "2·(y_(3,2)+y_(2,2,1)) / y_(2,1) at q=1 "

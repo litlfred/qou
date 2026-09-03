@@ -1,0 +1,178 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T01:19:21.123706+00:00",
+  "commitSha": "888bf76c110cc30dd9820024bff0c27eed0badd4",
+  "assertions": [
+    {
+      "name": "short_model_net_coefficients_factor_as_one_and_two_crossings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "short_model_carries_the_corpus_counit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "long_model_is_the_eleven_crossing_construction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_models_are_DIFFERENT_elements",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "per_nucleon_net_coefficients_do_not_match_either",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "mechanism_net_is_not_multiplicative_within_one_generator",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "corpus_counit_closed_form_FAILS_on_the_long_model",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "corpus_trace_closed_form_holds_on_the_short_model",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "corpus_trace_closed_form_FAILS_on_the_long_model",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_two_one_vanishes_on_the_short_model_only",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "calibration_long_model_reproduces_the_committed_trace_witness",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "phase_identity_holds_on_the_short_model_for_every_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "phase_identity_FAILS_on_the_long_model",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "calibration_reproduces_the_published_mixed_ratio",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_consistent_short_model_price_is_LARGER",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3744,
+  "computation": "qbeta-delta-element-fork-pricing",
+  "scriptFile": "qbeta_delta_element_fork_pricing_probe.py",
+  "scriptHash": "f461dbbf56ad",
+  "scriptCommitSha": "6a76abdde6ef1331b25b7873cb8ccccac2204a21",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_element_fork_pricing_probe.py"
+  },
+  "description": "qou-cds1: two nucleon-word models (a 1-/2-crossing SHORT model and the 11-crossing LONG model in hecke_core) are both called Delta. Both closed forms in qbeta-counit-closed-form hold for the short one and fail for the long one; the D-frame trace baseline's '92x the ladder' takes its counit from the short model and its trace from the long one; and the ladder phase's linearity in z is short-model specific. Scope-(a): reports which statement holds of which element, decides nothing, wires nothing.",
+  "data": {
+    "chi_(3)_short": "-0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(3)_long": "-0.260387641790120802073285342788008683395823953848067973302616",
+    "chi_(2,1)_short": "0.0",
+    "chi_(2,1)_long": "-0.106814457651578049623631258921144907521837554045085817350151",
+    "chi_(1,1,1)_short": "0.210199349900502936568794845696942029965574442560286053602574",
+    "chi_(1,1,1)_long": "-0.171538643776599505671840531694425115158778702109077408139793",
+    "Qbeta_short_net": "0.783645827374621213074939751341396890525736441030263306568688",
+    "err_short_net": "0.00167756873104829946723350200931500391578271731359567518928738",
+    "Qbeta_short_augmentation": "0.879890561260119838902965955941296576254288512481643700025108",
+    "err_short_augmentation": "0.124700224724220718163168459940365762376459714265121337899115",
+    "Qbeta_short_tr_M_zC": "0.345489779234732800695360652215046037540600986544917756250858",
+    "err_short_tr_M_zC": "-0.558385497636503578374417829018351042573289068596785848338472",
+    "Qbeta_short_tr_M_zD": "0.444700408521780409100962213024942779024902777364459329655145",
+    "err_short_tr_M_zD": "-0.431571752874458076893075387059482675607649443821703621157716",
+    "Qbeta_long_net": "0.976161273530272642013692390410788241100103675098752245151156",
+    "err_long_net": "0.247756087000475298282328105756582052521343832927044239510309",
+    "Qbeta_long_augmentation": "1.08997781576564351936693957909477912586245389497404141468517",
+    "err_long_augmentation": "0.393239509900396894226170556140071410480845992170887684572173",
+    "Qbeta_long_tr_M_zC": "0.594714571667946813037565694176669367476381335406744295657643",
+    "err_long_tr_M_zC": "-0.239819539098373815363630884213856742813892333994542307705401",
+    "Qbeta_long_tr_M_zD": "0.661452049275741565895300781094576508496317906224147902862862",
+    "err_long_tr_M_zD": "-0.154513866588921007566131683419025469092317696466489344605255",
+    "gap_over_ladder_mixed_published": "92.1058337158958078293820971505915498676663454267388150161336",
+    "gap_over_ladder_short_consistent": "257.260251032917317667760281845639423553256645392524299449178",
+    "understatement_factor": "2.79309399474572946922775638724440671775774622361710581706095",
+    "delta_L_coords": "gamma=(1 - q**2)/(2*q); sigma0=(-q**4 + 2*q**2 - 1)/(4*q**2); sigma1=(-q**4 + 2*q**2 - 1)/(4*q**2); L_plus=(-q**6 + q**4 - q**2 + 1)/(4*q**3); L_minus=0; e_minus=0",
+    "net_proton_long": "1.34643522652513785327684609806804531299564726405579277080750",
+    "net_neutron_long": "1.11323751520947915123678206474336877865982398202241380742730",
+    "net_proton_short_corpus": "0.895469850602180342284576893435162528070121252368468426298137",
+    "net_neutron_short_corpus": "0.708262656072802021554740348144181739094470737462165848935831",
+    "trM_z_on_long_model": "-(q - 1)*(q + 1)*(q**4*z**2 + 2*q**3*z + 2*q**2 - 2*q*z + z**2)/(4*q**3)",
+    "net_minus_trM_on_long_model": "(q - 1)*(q + 1)*(z - 1)*(q**4*z + q**4 + 2*q**3 - 2*q + z + 1)/(4*q**3)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

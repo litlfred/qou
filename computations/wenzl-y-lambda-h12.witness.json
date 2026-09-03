@@ -1,6 +1,6 @@
 {
   "computation": "wenzl-y-lambda-h12",
-  "computedAt": "2026-05-26T15:42:56Z",
+  "computedAt": "2026-08-29T08:31:48.778175+00:00",
   "description": "Wenzl Jones-Markov y_\u03bb for all 77 partitions of 12 at q_0 50dps",
   "parameters": {
     "q0": "1.10997859555418057528159407960950937799328227995870",
@@ -795,8 +795,14 @@
       }
     ]
   },
-  "durationMs": 26,
+  "durationMs": 0,
   "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
-  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py"
+  "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py",
+  "scriptHash": "7e7013de58aa",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engine": "python",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

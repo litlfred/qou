@@ -328,8 +328,8 @@ def main() -> int:
         f"invariantForm_pullback_smul) — full normalization-freedom of the "
         f"magnitude is impossible with two pins; the third scale IS the "
         f"tau-scale gate",
-        computed=float(abs(c4_t / c4_0 - expected_factor)), expected=0.0,
-        tolerance=1e-40)
+        computed=abs(c4_t / c4_0 - expected_factor), expected=0.0,
+        tolerance="1e-40")
 
     # ---- K2: theta_5 — the conditional invariant restatement ---------------
     log5R, theta5 = frac_log5(R_conv)
@@ -344,7 +344,7 @@ def main() -> int:
         f"narrowing, Markov leg UNVERIFIED) theta_5 is gauge-invariant and "
         f"'25 = deg^2' restates normalization-independently as theta_5 = 0. "
         f"CONDITIONAL, not derived; H5's Markov leg is tested next",
-        computed=float(theta5), expected=0.0, tolerance=5e-5)
+        computed=theta5, expected=0.0, tolerance="5e-5")
 
     # ---- K3: Markov-side canonical pins ------------------------------------
     # (a) Jones-Markov y_(4,1)(q0) — corpus-canonical producer.
@@ -427,7 +427,7 @@ def main() -> int:
         f"INEQUIVALENT mod 5^Z; there is no unique canonical Markov "
         f"5-class, so H5's Markov leg FAILS for the declared pin menu",
         computed=[float(d) for d in pair_dev], expected="all > 1e-3",
-        tolerance=1e-3)
+        tolerance="1e-3")
 
     # F2: structural — trace pins transmit no module scale.
     # Machine content: (i) the contravariant solve returns a LINE
@@ -449,7 +449,7 @@ def main() -> int:
         f"form scale cancels — the canonical trace normalizations (a),(b) "
         f"are ALGEBRA scalars and transmit NO canonical scale to the module "
         f"Gram entering c. A trace pin is not a module pin (structural)",
-        computed=float(adj_dev), expected=0.0, tolerance=1e-45)
+        computed=adj_dev, expected=0.0, tolerance="1e-45")
 
     # ---- K4: does the 25 survive the declared pins? (per-pin rows) ---------
     # Replacing entry-[0,0]=1 by pin p rescales G_M by lam_p = p (the
@@ -480,7 +480,7 @@ def main() -> int:
         f"normalization-free 25; does not exclude a future verified "
         f"module-level pin + Hodge anchor combination",
         computed={nm: rows[nm]["frac_log5_folded"] for nm in rows},
-        expected="all far from 0", tolerance=5e-5)
+        expected="all far from 0", tolerance="5e-5")
 
     # ---- K5: the exact matching condition ----------------------------------
     match_targets = {nm: rows[nm]["frac_log5_folded"] for nm in rows}
@@ -630,7 +630,22 @@ def main() -> int:
     out = os.path.join(str(_HERE),
                        "alpha-em-b2-canonical-scale-ratio.witness.json")
     with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=None)
+        # `default=str` is what lets an mpf reach the file at full precision;
+        # without it this hand-rolled dump raises "Object of type mpf is not
+        # JSON serializable" and the producer is forced to float() its results
+        # at the assertion, throwing the digits away. This is the same
+        # serialization the canonical WitnessBuilder path uses
+        # (qou_substrate/witness.py).
+        json.dump(witness, f, indent=2, default=str)
     print("witness ->", out)
     return 0 if all_passed else 1
 

@@ -55,7 +55,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -122,7 +122,7 @@ def main() -> int:
         z0_table[label] = float(mp.re(z))
         print(f"    {label:>22}: Z_Λ(0) = {mp.nstr(z, 12)}   |Z(0)+1| = {float(abs(z+1)):.1e}")
     print(f"    ⇒ max |Z_Λ(0) + 1| = {float(worst):.1e}  (metric-independent −1)")
-    wb.add_assertion("scalar_epstein_Z0_is_minus_one", computed=float(worst),
+    wb.add_assertion("scalar_epstein_Z0_is_minus_one", computed=worst,
                      expected=0.0, tolerance=1e-4,
                      source="Z_Λ(0) = −1 for every flat n-torus (Seeley: a_{n/2}=0, "
                             "dim ker=1); verified n∈{1,2,3,8}, several covolumes")
@@ -133,7 +133,7 @@ def main() -> int:
     print(f"\n[2] photon (1-form) Laplacian on J(M)=T^{B1_JACOBIAN} (b₁=2g=8 at g=4):")
     print(f"    ζ_{{1-form}}(0) = b₁·Z_Λ(0) = 8·({mp.nstr(z0_T8,8)}) = {mp.nstr(zeta_1form_0,10)}")
     print(f"    ⇒ ζ_Λ(0) = −b₁ = −{B1_JACOBIAN}  (the bare topological count)")
-    wb.add_assertion("zeta_1form_0_is_minus_b1", computed=float(mp.re(zeta_1form_0)),
+    wb.add_assertion("zeta_1form_0_is_minus_b1", computed=fmt(mp.re(zeta_1form_0)),
                      expected=-float(B1_JACOBIAN), tolerance=1e-3,
                      source="ζ_{1-form on T^{b₁}}(0)=b₁·Z_Λ(0)=−b₁ (1-form Laplacian "
                             "= b₁ copies of scalar; b₁=8 for the g=4 Bring Jacobian)")
@@ -149,7 +149,7 @@ def main() -> int:
           f"integer in ζ(0).")
     covolume_in_heat = abs(hc_num - hc_exp) < mp.mpf("1e-3")
     wb.add_assertion("covolume_in_heat_leading_not_in_zeta0",
-                     computed=float(abs(hc_num - hc_exp)), expected=0.0, tolerance=1e-3,
+                     computed=abs(hc_num - hc_exp), expected=0.0, tolerance=1e-3,
                      source="covolume V appears in the leading heat coeff V/(4π)^{n/2} "
                             "(μ-absorbable) — NOT in ζ(0), which is the bare count −b₁")
 

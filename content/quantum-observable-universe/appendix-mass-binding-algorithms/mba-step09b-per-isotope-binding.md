@@ -39,14 +39,34 @@ the many-body binding **magnitude**: six ansätze have failed on the deuteron
 ### Python API entry point
 
 ```python
-from computations.mass_binding_dashboard import _row
+from qou_mass.api import predict          # the .ts manifest's declared entry point
 
-# The B_unified mass table outputs the model's (calibrated) binding values
+# NOTE (corrected 2026-08-25, PR #5765): this block previously pointed at
+# `computations.mass_binding_dashboard._row`. That module HAS `_row`, but it has
+# ZERO occurrences of `B_unified` — the `B_unified` model lives in
+# `computations/probes/strong_unified_binding_probe.py`, which emits no witness.
+# The entry point above now matches `computation.script` in the .ts manifest.
 ```
 
 ### Witness contract
 
-*Witness generated via the mass binding dashboard runs: `dashboard_and_sweep_results.md`. (The dashboard logs report the model's fit residuals per isotope; these are calibrated near-matches, not a closure — the $\Delta_\lambda$ magnitude is open.)*
+*Witness: [`computations/canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json), as declared by `computation.witness` in this block's `.ts` manifest.*
+
+> **Corrected 2026-08-25 (PR #5765).** This contract previously named
+> `dashboard_and_sweep_results.md`, which **does not exist anywhere in the repo**
+> (`find` → 0 hits) and disagreed with the `.ts` manifest. Two things a consumer should
+> know about the witness that *is* declared:
+>
+> - It carries **no provenance**: `computedAt`, `commitSha`, `witness.scriptHash`,
+>   `witness.scriptFile` and `witness.scriptCommitSha` are **all `null`**, so no
+>   staleness check can key on it and no producer can be resolved from it. It is marked
+>   `auditOnly`.
+> - Its numbers are **not** the live pipeline's. It records D +23 %, T +6 %, ³He +13 %,
+>   ⁴He +3.6 % — i.e. *over*-binding — computed at the 242-ppb nucleon level that the
+>   [2026-07-04 audit](../../../docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)
+>   identified as a fitted-Habiro regression and removed. The live `mass_binding_dashboard`
+>   *under*-binds: ²H −27.5 %, ³H +38 %, ³He +44 %, ⁴He +69 % (`err sym` 0.79 / 1.38 /
+>   1.44 / 3.26). **Do not cite the witness figures as this step's current accuracy.**
 
 ### Notes
 

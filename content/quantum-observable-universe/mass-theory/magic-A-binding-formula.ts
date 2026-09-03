@@ -4,11 +4,18 @@ export default proposition({
   label: "prop:magic-A-binding-formula",
   title:
     "Doubly-magic light-nucleus binding formula: $\\mathfrak{B}(^A_Z\\mathfrak{X}) = \\rho_F \\cdot \\mathfrak{m}_e \\cdot A \\cdot 8G$",
-  chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988"],
   uses: [
+    // The two the `.md` banner declares this theorem conditional on. Both were
+    // missing until 2026-08-30 (bean `qou-s3zd`), so the conditionality existed
+    // in one prose sentence and nowhere else — not in the Lean, not here, and
+    // not reachable from either at any depth of the `uses[]` graph. Neither is
+    // transitively reachable, so neither is redundant under
+    // `prune-transitive-deps.ts`.
+    "conj:magic-numbers-bring",
+    "prop:gravity-spectral-prefactor",
     "prop:binding-alpha-shift-extension",
-    "prop:diagrammatic-double-magic-lr-fusion",
+    "conj:diagrammatic-double-magic-lr-fusion",
     "rem:strutinsky-from-graded-trace",
   ],
   defines: [],

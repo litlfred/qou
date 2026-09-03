@@ -33,7 +33,7 @@ namespace QOU.Interactions
 /-- The Markov–Jones parameter `z(q) = 1 / (√q + 1/√q)` controls
     the conversion between the NF-counit basis and the transfer-
     matrix eigenfunction basis. -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+noncomputable def markovZ (q : ℝ) : ℝ := q ^ 3 / (q ^ 2 + 1)
 
 /-- The Hecke–Skein quantum-integer differential `h(q) = q - q⁻¹`. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹

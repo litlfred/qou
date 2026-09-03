@@ -1,0 +1,137 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T22:54:16.412477+00:00",
+  "commitSha": "d16131a23bb465e1a44afaef90ece0c739966cce",
+  "assertions": [
+    {
+      "name": "over_row_weights_are_EXACTLY_zero_at_every_n_tested",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_test_spans_many_n_not_just_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_over_row_population_actually_grows",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "qbeta-two-row-zeros-exact-computed-route",
+  "scriptFile": "qbeta_two_row_zeros_exact_on_computed_route_probe.py",
+  "scriptHash": "856eab15d809",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_two_row_zeros_exact_on_computed_route_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_two_row_zeros_exact_on_computed_route_probe.py"
+  },
+  "description": "The >N-row Markov weights are EXACTLY zero on the computed route (y_lambda_su_n) at every n from 2 to 9 — structural, since a Schur function of a shape with more rows than variables vanishes identically. The residues qou-e9le tracks are on the cached route.",
+  "data": {
+    "per_n": [
+      {
+        "n": 2,
+        "shapes": 2,
+        "over_row_shapes": 0,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 3,
+        "shapes": 3,
+        "over_row_shapes": 1,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.752702113251965401593779351620236137830175598874906408058882"
+      },
+      {
+        "n": 4,
+        "shapes": 5,
+        "over_row_shapes": 2,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.566560471293974549428549134840957935233064331645055143720860"
+      },
+      {
+        "n": 5,
+        "shapes": 7,
+        "over_row_shapes": 4,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.380418829335983697263318918061679732635953064415203211191660"
+      },
+      {
+        "n": 6,
+        "shapes": 11,
+        "over_row_shapes": 7,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.255433432168036591339079132882887189611554931080596279030266"
+      },
+      {
+        "n": 7,
+        "shapes": 15,
+        "over_row_shapes": 11,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.161356659594086593046889223676772076013077290812287568880743"
+      },
+      {
+        "n": 8,
+        "shapes": 22,
+        "over_row_shapes": 17,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.101928597890953455242494498691082097592865023866484814997578"
+      },
+      {
+        "n": 9,
+        "shapes": 30,
+        "over_row_shapes": 25,
+        "all_exactly_zero": true,
+        "sum_of_kept_weights_times_dim": "0.0620254369606138586214246801119131392775218098287154634417752"
+      }
+    ],
+    "N_variables": 2,
+    "cached_route": "wedderburn_jones_markov._load_y_lambda_at_q0_witness → y-lambda-at-q0.witness.json (solver output; carries ~1e-73 residues — the qou-e9le trap)",
+    "computed_route": "y_lambda_su_n → schur_principal (structural zero: a Schur function of a shape with more rows than variables vanishes identically)",
+    "markov_convention": "D (N = 2)",
+    "assertion_notes": [
+      {
+        "assertion": "over_row_weights_are_EXACTLY_zero_at_every_n_tested",
+        "note": "(n = 2..9, 67 over-row shapes in total; `v == 0`, not 'below tolerance')"
+      },
+      {
+        "assertion": "the_test_spans_many_n_not_just_one",
+        "note": "(checked across n deliberately — an n=3-only check would not be evidence, as qbeta_rank_one_identity_is_n3_only_probe showed)"
+      },
+      {
+        "assertion": "the_over_row_population_actually_grows",
+        "note": "(1 at n=3 -> 25 at n=9, so the result is not carried by a near-empty set)"
+      }
+    ],
+    "verdict": "The qou-e9le trap is a property of the CACHED route, not of the weights. `_load_y_lambda_at_q0_witness` reads solver output, so a provably-zero weight arrives as a ~1e-73 residue and defeats a None/truthiness prune. The COMPUTED route `y_lambda_su_n` evaluates `schur_principal` directly, and a Schur function of a shape with more rows than variables is identically zero — measured at N = 2 for n = 2..9, every one of 67 over-row shapes is exactly `0.0`, not below-tolerance. So the sibling's row-count remedy is right and stays the safe general fix (a consumer cannot tell which route its `y` came from), but the affected producers also have the option of a route on which a truthiness check is already correct. Checked across n on purpose: a single-n check would not have been evidence. NOT claimed: that the cached witness is wrong — its residues move no number."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

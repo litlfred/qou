@@ -54,12 +54,12 @@ class Ch4LpDualBindingContext where
     — every C–H bond has the same binding energy `E_bind^{CH}` — as a
     field, NOT the conclusion (the total-energy identity is *derived*
     from it below). -/
-class QIntegerMassFormula (ctx : Ch4LpDualBindingContext) : Prop where
+class Ch4BondSymmetry (ctx : Ch4LpDualBindingContext) : Prop where
   /-- `S₄` symmetry of the optimum: every C–H bond energy equals the
       single-bond reference (the ground-state symmetry hypothesis). -/
   bonds_symmetric : ∀ i : Fin 4, ctx.E_bind_per_bond i = ctx.E_bind_CH
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+/-- **Theorem (conditional on `Ch4BondSymmetry`)** — the resolving
     declaration for `lean.ref` `qou:QOU.Molecular.ch4_lp_dual_binding`.
 
     The total CH₄ binding energy is exactly `4 · E_bind^{CH}`.  Derived
@@ -71,7 +71,7 @@ class QIntegerMassFormula (ctx : Ch4LpDualBindingContext) : Prop where
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md
 theorem ch4_lp_dual_binding (ctx : Ch4LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : Ch4BondSymmetry ctx] :
     ctx.E_bind_total = 4 * ctx.E_bind_CH := by
   rw [ctx.E_bind_total_def, Fin.sum_univ_four]
   -- ⊢ f 0 + f 1 + f 2 + f 3 = 4 * E_bind^{CH}; each summand = E_bind^{CH}

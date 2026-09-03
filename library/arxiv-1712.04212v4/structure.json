@@ -1,0 +1,183 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1712.04212v4",
+ "source": {
+  "file": "1712.04212v4.pdf",
+  "sha256": "521911fc8724f3c292c3005d2e2404f6297bda393563c94da0ca1569be05cb6e",
+  "bytes": 600856,
+  "pages": 37,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1712.04212",
+   "version": "4",
+   "primary_class": "math.MG",
+   "stamp_date": "16 Aug 2018"
+  },
+  "doi": null,
+  "title": "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION",
+  "authors_raw": "YOHEI SAKURAI",
+  "title_lines": [
+   "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS",
+   "ON MANIFOLDS WITH BOUNDARY",
+   "WITH DIRICHLET BOUNDARY CONDITION"
+  ],
+  "abstract": "In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary. We study con- centration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition around zero, which is called bound- ary concentration phenomena. We \ufb01rst examine relation between boundary concentration phenomena and large spectral gap phe- nomena of Dirichlet eigenvalues of Laplacian. We will obtain ana- logue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds. Furthermore, to capture boundary concentration phenomena, we introduce a new invariant called the observable inscribed radius. We will formulate comparison theo- rems for such invariant under a lower Ricci curvature bound, and a lower mean curvature bound for the boundary. Based on such com- parison theorems, we investigate various boundary concentration phenomena of sequences of manifolds with boundary.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20180817003542Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Invariants",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Dirichlet eigenvalues",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Finite dimensional comparisons",
+   "page": 22,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Infinite dimensional comparisons",
+   "page": 26,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Boundary concentration phenomena",
+   "page": 30,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 14071,
+   "n_words": 2361
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 12519,
+   "n_words": 2289
+  },
+  {
+   "id": "sec-002-3-invariants",
+   "number": "3",
+   "title": "Invariants",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 9389,
+   "n_words": 1614
+  },
+  {
+   "id": "sec-003-4-dirichlet-eigenvalues",
+   "number": "4",
+   "title": "Dirichlet eigenvalues",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 5624,
+   "n_words": 1011
+  },
+  {
+   "id": "sec-004-5-finite-dimensional-comparisons",
+   "number": "5",
+   "title": "Finite dimensional comparisons",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 5620,
+   "n_words": 1034
+  },
+  {
+   "id": "sec-005-6-infinite-dimensional-comparisons",
+   "number": "6",
+   "title": "Infinite dimensional comparisons",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 6309,
+   "n_words": 1239
+  },
+  {
+   "id": "sec-006-7-boundary-concentration-phenomena",
+   "number": "7",
+   "title": "Boundary concentration phenomena",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 35,
+   "n_chars": 9157,
+   "n_words": 1676
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 8286,
+   "n_words": 1286
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 70975
+ }
+}

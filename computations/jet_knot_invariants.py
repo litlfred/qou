@@ -51,8 +51,20 @@ from pyhecke.gram import (
 )
 from hecke_characters import partitions_of, dim_q, qfac
 from witness_base import WitnessBuilder
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
-tr_basis = [1, z, z, z**2, z**2, z**3]
+# tr_basis[5] = tr_M(sigma_0 sigma_1 sigma_0) = h*z^2 + z, NOT z^3 (Markov
+# axioms: tr(s0 s1 s0) = tr(s1 s0^2) = tr(s1 (h s0 + 1)) = h*z^2 + z).
+# docs/audits/2026-05-19-trm5-markov-bug.md fixed this in pyhecke.gram on
+# 2026-05-19; it never propagated here (bean qou-ssex). NOTE: this binding
+# is currently unread in this module -- kept correct rather than deleted so
+# a future consumer does not pick up the wrong weight. h is the one already
+# imported from hecke_core (= q0 - qi, verified), NOT a second q0 source:
+# deriving it from Q0_PROTON instead would pin TR_M[5] to a different anchor
+# than the z it multiplies if hecke_core's pin ever moves (Copilot review,
+# PR #6110). hecke_core.q0 is currently the proton pin, so the value is
+# unchanged -- this removes a latent straddle, not a live one.
+tr_basis = [1, z, z, z**2, z**2, h * z**2 + z]   # h = q0 - qi, from hecke_core
 
 
 def contains(lam, mu):
@@ -131,11 +143,11 @@ def jet_knot_invariants(Z, N, max_k=8):
     chars = {(3,): sp, (2, 1): V_std, (1, 1, 1): ap}
     results = []
     for k in range(3, max_k + 1):
-        nfac_k = qfac(k)
+        nfac_k = qfac(k, Q0_PROTON)
         total_chi = 0.0
         total_dim = 0.0
         for lam in partitions_of(k):
-            d_q_val = dim_q(lam)
+            d_q_val = dim_q(lam, Q0_PROTON)
             w_lam = d_q_val ** 2 / nfac_k
             chi_beta = 0.0
             dim_rest = 0.0

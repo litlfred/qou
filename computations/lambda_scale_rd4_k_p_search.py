@@ -99,8 +99,8 @@ VOL_BRINGS = mp.mpf("28.5783194")  # Bring's surface volume (approx, 5-cusped)
 # explicit `dps=` arguments at emission below; see `_precision.fmt`'s own
 # warning about a value that "reads as measured while carrying ~15
 # significant digits".
-M_E_VAL = mp.mpf(repr(M_E_MEV))
-M_P_VAL = mp.mpf(repr(M_P_MEV))
+M_E_VAL = mp.mpf(M_E_MEV)
+M_P_VAL = mp.mpf(M_P_MEV)
 M_P_OVER_ME = M_P_VAL / M_E_VAL
 VOL_K_P_TARGET = M_P_OVER_ME * HBAR**2
 

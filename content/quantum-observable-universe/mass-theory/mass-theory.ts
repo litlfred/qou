@@ -325,8 +325,10 @@ export default chapter({
             "bond-order-eq-jet-degree-context",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "delta-lambda-dt-index-unification",
             "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
+            "brunnian-binding-channel",
             "jet-filtration-binding-extensive",
             "tower-geometric-lower-bound",
             "level-selection-not-linear",
@@ -603,10 +605,16 @@ export default chapter({
         "gluing-equations-do-not-detect-hyperbolicity",
         "gluing-certification-mechanical-reach",
         "hyperbolic-knot-shape-fields",
-        "five-two-saddle-sum-rule",
+        // thm:five-two-saddle-sum-rule retired 2026-08-24 (bean qou-h1p7):
+        // it duplicated prop:fivetwo-saddle-sum-rule in appendix-qvalues,
+        // down to the same lean.ref, which lean-ref-owns-decl flags. The
+        // appendix block survives (three consumers to this one's none) and
+        // absorbed this one's cites, uses edge and two prose passages.
         "kummer-bloch-wigner-identity",
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-relabelling-invariance",
+        "ideal-tetrahedron-law-of-sines",
+        "birthday-axioms-underdetermine",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
@@ -865,6 +873,17 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
+        // Piece A of Identity I, promoted 2026-08-24 from two unregistered
+        // .md drafts that had sat at the paper root since the 52c68267f2
+        // bulk import (bean qou-cauj listed them as "probably not blocks";
+        // the owner ruled otherwise). The Specht/JM trace pair reads the
+        // JM prop directly above; the corner induction is the alternative
+        // route to the same identity.
+        "piece-a-hook-content-identity",
+        "piece-a-specht-character-trace",
+        "piece-a-specht-character-trace-proof",
+        "piece-a-corner-removal-obligation",
+        "piece-a-corner-removal-obligation-proof",
         // def:spin-involution relocated to knots-particles-confinement §7
         // (2026-08-09, decision 5): three of its four consumers are the
         // EW-triplet charge/spin blocks there, and it has `uses: []` so it

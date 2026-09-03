@@ -33,8 +33,8 @@ G = mp.catalan
 VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
 # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 33 digits, correct to 29 (qou-ckbv)
 VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
-M_E = mp.mpf(repr(M_E_MEV))
-M_P = mp.mpf(repr(M_P_MEV))
+M_E = mp.mpf(M_E_MEV)
+M_P = mp.mpf(M_P_MEV)
 LAM_P_TARGET = (M_P / M_E) * HBAR**2 / VOL_B3
 
 

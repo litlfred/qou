@@ -1,0 +1,80 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1301.6953v1",
+ "source_sha256": "8c9231d0832df3b6",
+ "brief": "LU TP 13-03 Januray 2013 — 12 sections: Chiral Perturbation Theory; Introduction; Determining low-energy-constants i",
+ "extended": "**LU TP 13-03 Januray 2013**\n\n*Chiral Perturbation Theory and Mesons*\n\n13 pp, 12 sections.\n\n**Outline.** 2 Chiral Perturbation Theory; 1 Introduction; 3 Determining low-energy-constants in the cont; 4 Hard pion ChPT; 5 Beyond QCD; 6 Leading logarithms; 1 L + F1; 2 L2 + F2; 1 L + F2; 3 L3 + · · · (6.1); Acknowledgments; References",
+ "tokens": {
+  "brief": 29,
+  "extended": 82
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-chiral-perturbation-theory",
+   "title": "Chiral Perturbation Theory",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
+   "title": "Determining low-energy-constants in the continuum",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-4-hard-pion-chpt",
+   "title": "Hard pion ChPT",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-5-beyond-qcd",
+   "title": "Beyond QCD",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-6-leading-logarithms",
+   "title": "Leading logarithms",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-006-1-l-f1",
+   "title": "L + F1",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-007-2-l2-f2",
+   "title": "L2 + F2",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-008-1-l-f2",
+   "title": "L + F2",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-009-3-l3-61",
+   "title": "L3 + · · · (6.1)",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-010-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "11-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

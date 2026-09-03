@@ -1,0 +1,107 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:09:21.381794+00:00",
+  "commitSha": "c2fc9de586132912bf4f05c5e76813b97800e746",
+  "assertions": [
+    {
+      "name": "the_B3_word_is_a_CORPUS_statement_not_a_reconstruction",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(s0 s1^-1)^3 is stated in binding-knots-visual-inventory-table1-data.md:12 and s1^-1 = s1 - h in categorical-proton-properties.md Step 1, so B_3 = (s0(s1-h))^3 is the corpus's word, not this probe's reconstruction. One of the two reconstruction degrees of freedom I flagged is therefore NOT open -- it was pinned all along, in a table I had not read"
+    },
+    {
+      "name": "the_corpus_INFEASIBILITY_claim_is_CORRECT",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "both properties blocks assert the bare 9-crossing element B_3 x Delta_3 violates Frobenius positivity, and the neutron block names the channel ('the sigma_0 channel violates Frobenius positivity'). Checked directly: no quark-generator assignment whatsoever makes k=0 positive in every NF channel, for either nucleon. So the gluon is forced, exactly as the blocks say -- and this is what makes the selection rule non-trivial, since |tr_M| increases with k and an UNCONSTRAINED minimum would always be the infeasible k=0"
+    },
+    {
+      "name": "the_rule_needs_a_CONSTRAINT_SET_the_corpus_does_not_define",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "'minimize |tr_M|' is monotone in the gluon count k (proton |tr_M| rises 0.815849 -> 1.23196 from k=2 to k=4), so UNCONSTRAINED it returns k=0 -- the bare element both blocks call infeasible. The rule is only meaningful over a feasible set, and the corpus states the rule without defining that set in any machine-checkable way. That gap, not the value of k, is the finding"
+    },
+    {
+      "name": "the_NAIVE_positivity_reading_is_REFUTED_by_the_corpus",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "categorical-proton-properties.md asserts one Hopf link restores stability, i.e. k=1 is feasible for the proton. Under the reading 'every NF channel coefficient >= 0' -- which is the neutron block's own phrasing, since it names the sigma_0 CHANNEL -- k=1 is infeasible for the proton under all 8 assignments. The reading contradicts the corpus, so the reading is wrong, and every k this probe would otherwise 'select' is therefore NOT reportable. This is why no gluon count is claimed here. Frobenius positivity must mean the Gram/LP condition G(q)x >= 0 over operator SELECTIONS, not sign-positivity of one element's NF coefficients -- and that predicate is not pinned by any block I could find"
+    },
+    {
+      "name": "the_selection_RULE_EXISTS_correcting_my_own_earlier_report",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "my previous probe reported all eight quark-generator assignments on the ground that 'the corpus does not say which'. That was wrong: ilp-solution-count-unwrap.md states 'minimizing |tr_M| selects the unique sigma_0 -> sigma_0 solution' out of N_l = 84 feasible ILP solutions, and categorical-proton-properties.md repeats it. A parameter-free tie-break EXISTS and I had not found it. What blocks its use is the undefined feasible set, not the absence of a rule -- a materially different open item"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 218868,
+  "computation": "qbeta-nucleon-selection-rule",
+  "scriptFile": "qbeta_nucleon_selection_rule_probe.py",
+  "scriptHash": "4f467345e1d7",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nucleon_selection_rule_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nucleon_selection_rule_probe.py"
+  },
+  "description": "Applies the corpus's own ILP tie-break -- minimize |tr_M|, stated in ilp-solution-count-unwrap.md and categorical-proton-properties.md -- to the nucleon gluon count, which the neutron block states inconsistently (prose says 13 crossings, its own printed net is the 11-crossing value).",
+  "data": {
+    "markov_convention": "D",
+    "z_D_symbolic": "q**3/(q**2 + 1)",
+    "selection_rule": "minimize |tr_M| over feasible configurations",
+    "z_D_at_q0": "0.612688037146465251595829863945899248026299999999999481630438",
+    "net_B3": "0.999600646188434698263261863659042810866700000000000497659522",
+    "the_B3_word_is_a_CORPUS_statement_not_a_reconstruction": true,
+    "bare_9crossing_feasible_p": false,
+    "bare_9crossing_feasible_n": false,
+    "the_corpus_INFEASIBILITY_claim_is_CORRECT": true,
+    "rule_selected_k_p": 2,
+    "rule_selected_trM_p": "0.815849465470869551057411344484562915342399999999999725860414",
+    "rule_selected_net_p": "1.48905211059390486970386426690460464062600000000000125944733",
+    "rule_selected_gens_p": [
+      0,
+      0,
+      0
+    ],
+    "rule_selected_k_n": 3,
+    "rule_selected_trM_n": "0.815849465470869551057411344484562915342399999999999725860414",
+    "rule_selected_net_n": "1.48905211059390486970386426690460464062600000000000125944733",
+    "rule_selected_gens_n": [
+      1,
+      0,
+      0
+    ],
+    "the_rule_needs_a_CONSTRAINT_SET_the_corpus_does_not_define": true,
+    "corpus_asserts_k1_restores_proton_stability": true,
+    "naive_positivity_says_k1_feasible_p": false,
+    "the_NAIVE_positivity_reading_is_REFUTED_by_the_corpus": true,
+    "the_selection_RULE_EXISTS_correcting_my_own_earlier_report": true,
+    "scope": "(a) scope-limited; adjudicates no net value"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

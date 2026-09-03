@@ -10,6 +10,39 @@ hypothesis class), `c4qz` (gated P-C15 probe, blocked by `ea56`), `iw8o`
 guard) · [refuted-class map](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)
 (methods C1–C15).
 
+> ## 🛑 CURRENCY BANNER — read before using anything below (added 2026-08-26)
+>
+> **This ledger went stale on 2026-07-11** and everything under §1–§4 predates
+> two owner rulings and a four-direction fence. It is kept as the record of how
+> the keystone was worked, **not** as a current statement of where it stands.
+>
+> **(a) The convention is wrong throughout.** §1 and §2 carry
+> `z(q) = √q/(1+q)` — **convention C**, which the owner excised (2026-08-09,
+> re-affirmed 2026-08-15 and 2026-08-26) — as the keystone's *proved upstream
+> datum*. Convention **D**, `z_D = q³/(q²+1)`, is canonical. The parity is
+> genuinely different, so the C results do **not** re-read at `z_D`:
+> `bar(z_C) = z_C` exactly, but `bar(z_D) = q⁻⁴·z_D`
+> (`QOU.QBeta.zD_bar_twist`, sorry-free, added 2026-08-26; the sharp form is
+> `zD_core_bar_even`, `q⁻²·z_D = 1/[2]_q` exactly bar-even). In particular the
+> **`ea56` class-`Z2` exclusion in §5 does not transfer**: its proof runs
+> through "the bar-fixed locus is a subring and `z` lies in it", and `z_D` is
+> not bar-fixed. Registry **KC13** carries this scoping. Re-derivation is bean
+> `qou-cds1` — research, **not** a z-swap.
+>
+> **(b) The keystone's target has since been fenced from four directions.**
+> `c₃ = J_Hopf(1) = −2` is **not forceable** from the D two-row trace in either
+> parity — bar-odd by a proved invariant (scope-(b),
+> `FMapC3ParityExclusion.lean`), bar-even by q=1 genericity (scope-(a)) — nor
+> from the amplitude leg, where the one-scale/two-target gate needs
+> `4λ₂³ + λ₃² = 0` and it measures **6.088**, a sum of two positives
+> ([2026-08-21 fence](../audits/2026-08-21-fmap-c3-parity-genericity-exclusion.md)).
+> A reader working from §1–§4 alone would not know this.
+>
+> **(c) Three further routes closed 2026-08-26**, all by measurement:
+> the `Ξ_k` weight moments (collapse to a function of `h`), the k-cycle Hecke
+> traces (Markov forces `tr_M = z^{k−1}`), and the counit→trace transport
+> (overshoots the required correction by ~300×). See §5's 2026-08-26 rows.
+
 ## 1. The keystone, precisely
 
 Exhibit the **f-map**: the assembly that takes the proved pre-archimedean
@@ -394,3 +427,10 @@ trace-side target, no longer a `u`-series search. Full finding:
 | 2026-07-06 | **Bean `ea56` DONE — the z-alone exclusion (scope-(a)).** `z(q)=√q/(1+q)` proved **exactly bar-EVEN** (twist 1) and `κ_{(2,1)}` exactly bar-ODD, sorry-free Lean [`QOU/QBeta/ZBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean) (`lean`-direct exit 0) + sympy-exact 7/7 witness. Since the bar-fixed locus is a subring and `a₁ = −c₃` is bar-ODD nonzero, **no scalar rational function of z alone can source `a₁`** — class Z2 excluded; survivors are Z3 (bar-even z-functional × bar-odd carrier) and Z4 (operator-level / P-C15). Hypothesis-class lattice: [`docs/scope/2026-07-06-z-ck-fmap-hypothesis-class.md`](../scope/2026-07-06-z-ck-fmap-hypothesis-class.md). Bean `c4qz` unblocked. |
 | 2026-07-11 | **KC19 → W1/W2 → W-odd landed** ([#3473](https://github.com/litlfred/qou/pull/3473), [#3485](https://github.com/litlfred/qou/pull/3485), [#3489](https://github.com/litlfred/qou/pull/3489)): the H₃ GS categorical net's bar-odd projection is exactly `(h/4)·C(q²+q⁻²)` — an independent derivation of KC20's Hopf cubic. **S frontier proved-walled** for fibre approaches (#3474 `no_anchor_invariant_realizes_swing`); S = irreducible CAL-2 leak, closure = Subgoal-2 (owner-gated). |
 | 2026-07-11 | **c₃ over-claim re-scoped** ([#3501](https://github.com/litlfred/qou/pull/3501)): merged `2026-07-08-qbeta-keystone-derivation.md` "PROVEN exact c₃ = −Vol(4₁)+u−(10/3)u²" is anchor-blind (muon 0.07% / proton 2.3%; c₃ swings 2.43%) → muon-anchor near-match (scope-(a)); fails §8 guard; Lean is an axiomatized `def`. Structural pieces (−Vol(4₁) even part, `10/3=lim_{q→1}[10]_q/[3]_q` writhe ratio) kept. **Independently duplicated by [#3503](https://github.com/litlfred/qou/pull/3503)** (same verdict/numbers) — coordinated: only one lands (both edit the 07-08 header); registry §3 bullet must survive. |
+| 2026-08-09 | **Owner ruling: convention D canonical, C excised.** Re-affirmed 2026-08-15 (with the proton pin and colour weighting) and again 2026-08-26. Every `z`-level statement in §1–§4 above is thereby **C-scoped**, including the `ea56` `Z2` exclusion. Re-derivation tranche: bean `qou-cds1`. |
+| 2026-08-15 | KC13 re-scoped in [`ck-dk-canonical-registry.md`](ck-dk-canonical-registry.md): `bar(z_D) = q⁻⁴·z_D` exactly, so "no scalar z-functional sources the odd channel" does **not** transfer to D as stated. Prose only at this point — the Lean still hard-coded C. |
+| 2026-08-21 | **The keystone's target is fenced from four directions** ([audit](../audits/2026-08-21-fmap-c3-parity-genericity-exclusion.md)). Routes A/B (bar-odd crossing term; Z3 carrier) REFUTED scope-(b) by a proved parity invariant — the bar-odd part of any function vanishes at `q=1`, and `−2` is bar-EVEN and nonzero there (`barOdd_at_one`, `barOdd_ne_hopf_value_at_one`, sorry-free). The bar-even redirect REFUTED scope-(a) by q=1 genericity (`−[2]_q`, `−(q²+q⁻²)`, `−y₃/y₂₁`, `−1/(2y₂₁)` all `= −2` there) plus no full q-identity. Route C (Φ_b amplitude) REFUTED scope-(a) structurally: the one-scale/two-target gate requires `4λ₂³ + λ₃² = 0`, measured **6.088**, a sum of two positives; and the odd cumulants carry `√3` while `c₂, c₃` are `√3`-free rationals. |
+| 2026-08-21 | `α` proved **not** a function of the Wedderburn weights (`no_weight_function_gives_phase`, scope-(b)); it is weights **+ `h`**, with `α = (h/4)([2]_q·Ξ + h − 2)` and `Ξ` `n`-independent ([audit](../audits/2026-08-21-ladder-phase-from-wedderburn-weights.md)). PR #5187's `α = −h/4 − (h/2)y₍₂,₁₎` retracted — a change of variable off a false instance, and **tautological**, so no arithmetic check could have caught it. |
+| 2026-08-26 | **ZBarParity de-hard-coded.** §1's defs renamed `zCNum`/`zCDen` and retitled as the excised convention; new §1b adds `zD_bar_twist` and `zD_core_bar_even`, sorry-free over a generic `CommRing`. KC13's scoping is now in the Lean, beside the C theorem it fails to transfer from. |
+| 2026-08-26 | **Three more routes closed, by measurement.** (i) The `Ξ_k = (1+Q^k)/(1+Q)^k` weight moments **collapse**: `Ξ_k = (q^k+q^{−k})/[2]_q^k` is Chebyshev in `[2]_q`, and `[2]² = h²+4`, so the family is a function of `h²` the ladder already has — proposed and **retracted** the same day (`qou-ximf`). (ii) The k-cycle Hecke traces reach nothing past `Ξ₂`, because Markov forces `tr_M(standard element) = z^{k−1}` identically. (iii) The **counit→trace transport overshoots**: under KC19 it is an affine move of the loop weight `w: 1 → z`, and the anchor wants `w* = 0.99850` — only 0.30 % (C) / 0.39 % (D) of that distance, an overshoot of **334× / 258×** (`qou-avt1`). All scope-(a); nothing wired. |
+| 2026-08-26 | Live residue after the above: the **form clash**. `L(w) = E(w)/E(1)` is affine in the loop weight, while the ladder asserts a **cosine** — and the cosine is the axiomatised `QOU.Interactions.QBetaCosResummation`, so dropping it costs nothing proved. Queue: `qou-avtq`. |

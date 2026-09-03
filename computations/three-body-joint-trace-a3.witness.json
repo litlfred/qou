@@ -1,23 +1,24 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-21T15:05:53.488183+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T14:31:51.193416+00:00",
+  "commitSha": "b080cf935a0a7a9e7723866a3eee8c1c22ec5c8e",
   "assertions": [
     {
-      "name": "kernel_ran",
-      "computed": 1,
-      "expected": 1,
+      "name": "connected_3body_correlation_negative_for_every_a3_atom",
+      "computed": "0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0
+      "tolerance": "0",
+      "source": "c3 = E_0(g_a+g_b-g_0-g_ab) < 0: joint trace saturates below the pair-sum"
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 25,
   "computation": "three-body-joint-trace-a3",
   "scriptFile": "three_body_joint_trace_a3.py",
-  "scriptHash": "eeb3aed99cf8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "32e0ef680b13",
+  "scriptCommitSha": "4d32d6863bef5eac962e5e35bf6f79884ee6aba9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/three_body_joint_trace_a3.py"
+    ],
+    "reproduce": "python3 -u computations/three_body_joint_trace_a3.py"
   },
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
@@ -57,7 +66,9 @@
         "joint_err": -0.5157166810413192
       }
     },
-    "note": "Cluster (Ursell) correlation of the two adjacent chain bonds: c3 = joint − pair-sum = E_0(g_a+g_b−g_0−g_ab). c3<0 = destructive co-bond interference = the 3-body force. Adjacent pair only; non-adjacent 1-3 flagged. Rust kernel; zero fit."
+    "note": "Cluster (Ursell) correlation of the two adjacent chain bonds: c3 = joint − pair-sum = E_0(g_a+g_b−g_0−g_ab). c3<0 = destructive co-bond interference = the 3-body force. Adjacent pair only; non-adjacent 1-3 flagged. Rust kernel; zero fit.",
+    "kernel_ran": true,
+    "max_correlation_c3_MeV": "-1.0338362638975412682710906160324504217116456537617"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

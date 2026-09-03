@@ -1,0 +1,133 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0503227v2",
+ "source": {
+  "file": "0503227v2.pdf",
+  "sha256": "4e83adfdef82710343324fc2e1ddd94b3ec5a1b2165a96ddd0a5848abc192f59",
+  "bytes": 185165,
+  "pages": 14,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0503227",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Aug 2006"
+  },
+  "doi": null,
+  "title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman",
+  "authors_raw": "Department of Mathematics, University of Southern Califor nia",
+  "title_lines": [
+   "An Inductive Proof of the Berry-Esseen Theorem for Character",
+   "Ratios",
+   "Running head: Berry-Esseen Theorem for Character Ratios",
+   "By Jason Fulman"
+  ],
+  "abstract": "Bolthausen used a variation of Stein\u2019s method to give an inductive proof of the Berry-Esseen theorem for sums of inde pendent, iden- tically distributed random variables. We modify this techn ique to prove a Berry-Esseen theorem for character ratios of a random repre sentation of the symmetric group on transpositions. An analogous result is p roved for Jack measure on partitions.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190429144604-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Central limit theorem for Plancherel measure",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Central limit theorem for Jack measure",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6524,
+   "n_words": 1213
+  },
+  {
+   "id": "sec-001-2-central-limit-theorem-for-plancherel-measure",
+   "number": "2",
+   "title": "Central limit theorem for Plancherel measure",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 9,
+   "n_chars": 10680,
+   "n_words": 2569
+  },
+  {
+   "id": "sec-002-3-central-limit-theorem-for-jack-measure",
+   "number": "3",
+   "title": "Central limit theorem for Jack measure",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 6701,
+   "n_words": 1523
+  },
+  {
+   "id": "sec-003-4-acknowledgements",
+   "number": "4",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 74,
+   "n_words": 12
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 4768,
+   "n_words": 723
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 28747
+ }
+}

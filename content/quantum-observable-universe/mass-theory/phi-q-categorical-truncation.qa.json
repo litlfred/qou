@@ -790,7 +790,7 @@
           "in_degree": 1,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 0.000095,
+          "pagerank": 9.5e-05,
           "edge_span_max": 179,
           "edge_span_mean": 179,
           "worst_target": ""
@@ -1152,7 +1152,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1197,7 +1197,7 @@
         "reviewed_at": "2026-07-07T14:26:56.838252Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-categorical-truncation.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/phi-q-categorical-truncation.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1224,7 +1224,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -1239,7 +1239,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1257,7 +1257,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1275,7 +1275,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1293,7 +1293,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1308,7 +1308,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1323,7 +1323,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1338,7 +1338,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1353,7 +1353,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1368,7 +1368,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1402,7 +1402,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1435,7 +1435,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1469,7 +1469,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1502,7 +1502,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1536,7 +1536,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1570,7 +1570,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1603,7 +1603,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1637,7 +1637,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1671,7 +1671,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1705,7 +1705,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1739,7 +1739,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1773,7 +1773,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1808,7 +1808,7 @@
       },
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1842,7 +1842,7 @@
     "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Looks good. Heuristically verified.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
         "reviewed_at": "2026-07-19T17:16:30.000Z",
         "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
         "reviewer": {
@@ -1857,7 +1857,7 @@
     "milnor-brevity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
         "reviewed_at": "2026-07-08T18:53:03.000Z",
         "reviewed_sha": "0a4b7ece677c40862c27f1563fa7ed905dc18146",
         "reviewer": {
@@ -1932,7 +1932,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -2320,7 +2320,7 @@
         },
         "reviewed_at": "2026-08-21T21:59:54.650Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "The two closing sentences state the depth's characterisation and the invariance — both new relative to the display."
+        "evidence": "The two closing sentences state the depth's characterisation and the invariance \u2014 both new relative to the display."
       }
     ],
     "trap-performed-warmth": [
@@ -2423,7 +2423,7 @@
         "reviewed_at": "2026-08-21T21:59:54.942Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Two short sentences.",
-        "notes": "RIGOR (reported, epistemic mismatch between statement and proof). This block states the truncation identity and the invariance UNCONDITIONALLY, with no caveat of any kind. Its own sibling prf: block, in contrast, is scrupulous: Step 3 says the partition-depth grading of the centre is 'not stated there and ASSUMED here' and cites docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md; Step 4 says the cor:quantum-dilogarithm identity it starts from is 'unstratified'; and a section headed 'Remaining gap' says the uniform bound needed for the real-valued evaluation 'is the open part', conjectural under conj:brane-tower-z-habiro. The .ts records lean validation 'not_checked'. Per AGENTS.md's 'conditional-proved != premise-established', a reader of the .md alone learns none of this. Proposed: add the one-line conditional banner naming the assumed word-depth-to-partition-depth bridge, the way the corpus's §3b-cond blocks do — the proof already contains the wording. SECOND ITEM, a real gap in the algebra rather than the framing: the coefficients alpha_k appear in this display and in Step 3 of the proof but are never defined, and Step 4's telescope Sum_k alpha_k [Phi^{[<=k]} - Phi^{[<=k-1]}] = Phi^{[<=k_star]} is valid ONLY if alpha_k = 1 for every k (and Phi^{[<=-1]} := 0). Either fix alpha_k = 1 and drop them, or state what they are and why the telescope survives them."
+        "notes": "RIGOR (reported, epistemic mismatch between statement and proof). This block states the truncation identity and the invariance UNCONDITIONALLY, with no caveat of any kind. Its own sibling prf: block, in contrast, is scrupulous: Step 3 says the partition-depth grading of the centre is 'not stated there and ASSUMED here' and cites docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md; Step 4 says the cor:quantum-dilogarithm identity it starts from is 'unstratified'; and a section headed 'Remaining gap' says the uniform bound needed for the real-valued evaluation 'is the open part', conjectural under conj:brane-tower-z-habiro. The .ts records lean validation 'not_checked'. Per AGENTS.md's 'conditional-proved != premise-established', a reader of the .md alone learns none of this. Proposed: add the one-line conditional banner naming the assumed word-depth-to-partition-depth bridge, the way the corpus's \u00a73b-cond blocks do \u2014 the proof already contains the wording. SECOND ITEM, a real gap in the algebra rather than the framing: the coefficients alpha_k appear in this display and in Step 3 of the proof but are never defined, and Step 4's telescope Sum_k alpha_k [Phi^{[<=k]} - Phi^{[<=k-1]}] = Phi^{[<=k_star]} is valid ONLY if alpha_k = 1 for every k (and Phi^{[<=-1]} := 0). Either fix alpha_k = 1 and drop them, or state what they are and why the telescope survives them."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2447,5 +2447,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:59:54.942Z"
+  "updated_at": "2026-08-21T21:59:54.942Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

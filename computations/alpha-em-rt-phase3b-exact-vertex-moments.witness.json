@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Hecke + braid relations, e_- idempotent, dim_q=[2]_q, qTr(e_-)=1 — all exact"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "m2 = h*m1 + 1 exactly (algebra-level consistency of the moment map)"
     }
   ],

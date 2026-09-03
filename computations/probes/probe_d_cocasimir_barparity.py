@@ -154,17 +154,17 @@ def main() -> int:
        .add_data("target_signed", mp.nstr(target, 20)))
     wb.add_assertion(
         "co_casimir_delta_is_bar_even",
-        computed=float(even_dev), expected=0.0, tolerance=1e-30,
+        computed=even_dev, expected=0.0, tolerance=1e-30,
         source="Delta_lambda_co_casimir[λ] = Delta_lambda_co_casimir[λ'] on all "
                "conjugate pairs ⇒ bar-EVEN (norm-type Casimir ∝ Σcontent²)")
     wb.add_assertion(
         "prediction_couples_only_even_sector",
-        computed=float(abs(pred_odd)), expected=0.0, tolerance=1e-30,
+        computed=abs(pred_odd), expected=0.0, tolerance=1e-30,
         source="a bar-even Δ_λ couples only to a^even; the bar-odd sector "
                "contributes 0 to Σ a_λ Δ_λ")
     wb.add_assertion(
         "prediction_matches_witness",
-        computed=float(abs(pred_full - witness_pred)), expected=0.0,
+        computed=abs(pred_full - witness_pred), expected=0.0,
         tolerance=1e-9,
         source="reconstructed Σ a_λ Δ_λ reproduces the committed "
                "co_casimir_prediction")

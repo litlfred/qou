@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:27:37.903027+00:00",
-  "commitSha": "38e9c6e0a4b4b5ec89b69716ea87e5a0fe31e071",
+  "computedAt": "2026-08-30T12:58:45.389955+00:00",
+  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 10,
+      "computed": 14,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "53d6e54d3249a3d0c4d164e3fd01b12bceae16ca",
+  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [
@@ -43,10 +43,34 @@
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 10,
-    "flagged_script_count": 7,
-    "scripts_scanned": 3068,
+    "total_issues": 14,
+    "flagged_script_count": 11,
+    "scripts_scanned": 3460,
     "rows": [
+      {
+        "path": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 112,
+            "var": "TR_D_CACHED",
+            "literal": "0.5751722439177718708265353439858617251768310907401",
+            "context_snippet": "63882816968153229794820994065468, and GATE A was FAILING\n# ON MAIN at rel = 4.81e-01 (the probe exited 1). The old value is CONVENTION\n# C: recombining the transfer's chi with the live convention-C weights\n# (schur_princ"
+          }
+        ]
+      },
+      {
+        "path": "computations/gap_a3_deuteron_A_D_overshoot.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 52,
+            "var": "Q0",
+            "literal": "1.1099785955541805",
+            "context_snippet": "he only difference.\n#\n# DO NOT \"refresh\" TRM_BETA_D to the live value. The corpus moved to convention\n# D on 2026-08-09; the live D deuteron trace is 0.5751722439177719, 48% larger.\n# Substituting it would inflate `flat "
+          }
+        ]
+      },
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
         "issue_count": 1,
@@ -60,14 +84,26 @@
         ]
       },
       {
-        "path": "computations/metallic_q_wenzl_sign_sweep.py",
+        "path": "computations/option_e_canonical_reeb_v5.py",
         "issue_count": 1,
         "issues": [
           {
-            "line": 63,
-            "var": "Q0",
-            "literal": "1.1099785955541805",
-            "context_snippet": "symmetrically.  Output is a\nwitness JSON with the full sweep + a per-interval positive-block count\nN(q, n) per strand count n.\n\nSelf-contained: no pyhecke dependency.  Hook lengths and q-factorials\nare computed from scra"
+            "line": 47,
+            "var": "M_E_MEV",
+            "literal": "0.51099895069",
+            "context_snippet": "eps (n)/(1^n)):\n    extensive contribution = some function of χ_atom - χ_free\n\nScale: μ₀ = m_e / (3(q-q⁻¹)/2) ≈ 1.63 MeV per the framework.\n\nCandidate B(K) formulas (all probed):\n\n  F1: B = μ₀ · Σ_rot y_λ |Δθ_λ|\n  F2: B "
+          }
+        ]
+      },
+      {
+        "path": "computations/option_e_v6_combined_canonical.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 45,
+            "var": "M_E_MEV",
+            "literal": "0.51099895069",
+            "context_snippet": "is.\n\nv6 reproduces both canonical results and tests an explicit COMBINATION:\n\n   B_canonical(K) := μ₀ · ℏ_q · J_q²(n/2)     (rotational scale)\n                   + γ · Σ_rot y_λ Δθ_λ        (per-rep phase correction)\n\nwh"
           }
         ]
       },
@@ -128,6 +164,18 @@
             "var": "S_MUON",
             "literal": "0.00968298",
             "context_snippet": ", but the curve is not, so\n      both are reported.\n\nScope (STRICT). This derives nothing about the VALUE of A_ω and wires nothing.\nIt states, in falsifiable form, what an independent route has to reproduce. The\nmeasured"
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_delta_net_four_values_probe.py",
+        "issue_count": 1,
+        "issues": [
+          {
+            "line": 549,
+            "var": "T_CONSENSUS_49",
+            "literal": "0.0445860283330804029291040528152801211016800484547",
+            "context_snippet": "every z ----------\n    # PRECISION PROVENANCE.  The .md block RENDERS 10 digits\n    # (+0.0445860283), but that is the rendering, not the record.  Four\n    # independent witnesses agree on this quantity to 49 digits:\n   "
           }
         ]
       },

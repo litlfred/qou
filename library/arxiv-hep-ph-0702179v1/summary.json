@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-ph-0702179v1",
+ "source_sha256": "4d78ee89f0e67fbb",
+ "brief": "Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia — 4 sections: Introduction; The role of Resonance Chiral Theor; Resonance contributions to the O(p",
+ "extended": "**Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia**\n\n*Apt. Correus 22085, E-46071 Val` encia, Spain*\n\n8 pp, 4 sections.\n\n**Outline.** Introduction; The role of Resonance Chiral Theory; Resonance contributions to the O(p6) LECs; Perspective",
+ "tokens": {
+  "brief": 42,
+  "extended": 65
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-the-role-of-resonance-chiral-theory",
+   "title": "The role of Resonance Chiral Theory",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-resonance-contributions-to-the-op6-lecs",
+   "title": "Resonance contributions to the O(p6) LECs",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-perspective",
+   "title": "Perspective",
+   "pages": "7-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

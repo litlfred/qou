@@ -4,8 +4,8 @@ export default example({
   label: "ex:single-magic-O18-diagram",
   title:
     "Single-magic illustration: $^{18}\\mathrm{O}$ at $Z = 8$, $N = 10$",
-  interprets: "prop:diagrammatic-double-magic-lr-fusion",
-  uses: ["prop:diagrammatic-double-magic-lr-fusion"],
+  interprets: "conj:diagrammatic-double-magic-lr-fusion",
+  uses: ["conj:diagrammatic-double-magic-lr-fusion"],
   tags: [
     "magic-numbers",
     "single-magic",

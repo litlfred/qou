@@ -1,0 +1,190 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T15:29:22.805685+00:00",
+  "commitSha": "d0591db4bc37abb4c0861c70284e00f8ba470ae4",
+  "assertions": [
+    {
+      "name": "cut_entropy_nonnegative_on_every_block",
+      "computed": "11",
+      "expected": "11",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "S_cut(lambda) over the H_3 (x) H_3 < H_6 bipartition"
+    },
+    {
+      "name": "control_restriction_preserves_dimension",
+      "computed": "11",
+      "expected": "11",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "sum_{mu,nu} c^lambda_{mu,nu} f^mu f^nu = f^lambda"
+    },
+    {
+      "name": "product_blocks_have_exactly_zero_cut_entropy",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "the one-dimensional blocks (6) and (1^6)"
+    },
+    {
+      "name": "control_cut_entropy_strictly_positive_elsewhere",
+      "computed": "9",
+      "expected": "9",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "the other nine blocks of H_6"
+    },
+    {
+      "name": "control_max_cut_entropy_value",
+      "computed": "1.4708084763221113127",
+      "expected": "1.4708084763",
+      "passed": true,
+      "tolerance": "1e-8",
+      "unit": "nats",
+      "source": "attained at (4,1,1) and its conjugate (3,1,1,1)"
+    },
+    {
+      "name": "cut_entropy_invariant_under_conjugation",
+      "computed": "11",
+      "expected": "11",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "S_cut(lambda) = S_cut(lambda') block by block"
+    },
+    {
+      "name": "committed_probe_reports_negative_delta_S",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "binding-von-neumann-entropy-test rows with dS < 0 (2H, 3H)"
+    },
+    {
+      "name": "control_free_state_is_the_induced_product",
+      "computed": "1.983373293071141182e-70",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-60",
+      "unit": "dimensionless",
+      "source": "disjoint character vs LR prediction, sublemma-2-1-deuteron-branching"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "binding-cut-entropy-sign-is-forced",
+  "scriptFile": "binding_cut_entropy_sign_is_forced_probe.py",
+  "scriptHash": "b0082dfb34bb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c85ef99ee89ce1c3"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/binding_cut_entropy_sign_is_forced_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/binding_cut_entropy_sign_is_forced_probe.py"
+  },
+  "description": "Across the proton|neutron cut H_3 (x) H_3 < H_6 the free state is a product (S=0) and every state has S >= 0, so dS >= 0 is a THEOREM. Measured exactly: the per-block cut entropy is non-negative on all 11 blocks, zero on exactly the two one-dimensional ones, and conjugation invariant. The committed binding_von_neumann_entropy_probe reports dS < 0 for 2 of 3 isotopes, so its quantity -- a Shannon entropy over Wedderburn blocks of the whole algebra, with no bipartition, no partial trace and no reduced density matrix -- is not an entanglement entropy and its 'von Neumann entanglement' label is wrong.",
+  "data": {
+    "cut": "H_3 (x) H_3 < H_6 (proton strands | neutron strands)",
+    "per_block": {
+      "(6,)": {
+        "f_lambda": 1,
+        "n_cut_terms": 1,
+        "sum_c_f_f": 1,
+        "S_cut": "0.0"
+      },
+      "(5, 1)": {
+        "f_lambda": 5,
+        "n_cut_terms": 3,
+        "sum_c_f_f": 5,
+        "S_cut": "1.05492016798614412706697"
+      },
+      "(4, 2)": {
+        "f_lambda": 9,
+        "n_cut_terms": 4,
+        "sum_c_f_f": 9,
+        "S_cut": "1.27302833658962563690085"
+      },
+      "(4, 1, 1)": {
+        "f_lambda": 10,
+        "n_cut_terms": 5,
+        "sum_c_f_f": 10,
+        "S_cut": "1.47080847632211131271731"
+      },
+      "(3, 3)": {
+        "f_lambda": 5,
+        "n_cut_terms": 2,
+        "sum_c_f_f": 5,
+        "S_cut": "0.500402423538187879533188"
+      },
+      "(3, 2, 1)": {
+        "f_lambda": 16,
+        "n_cut_terms": 5,
+        "sum_c_f_f": 16,
+        "S_cut": "1.38629436111989061883446"
+      },
+      "(3, 1, 1, 1)": {
+        "f_lambda": 10,
+        "n_cut_terms": 5,
+        "sum_c_f_f": 10,
+        "S_cut": "1.47080847632211131271731"
+      },
+      "(2, 2, 2)": {
+        "f_lambda": 5,
+        "n_cut_terms": 2,
+        "sum_c_f_f": 5,
+        "S_cut": "0.500402423538187879533188"
+      },
+      "(2, 2, 1, 1)": {
+        "f_lambda": 9,
+        "n_cut_terms": 4,
+        "sum_c_f_f": 9,
+        "S_cut": "1.27302833658962563690085"
+      },
+      "(2, 1, 1, 1, 1)": {
+        "f_lambda": 5,
+        "n_cut_terms": 3,
+        "sum_c_f_f": 5,
+        "S_cut": "1.05492016798614412706697"
+      },
+      "(1, 1, 1, 1, 1, 1)": {
+        "f_lambda": 1,
+        "n_cut_terms": 1,
+        "sum_c_f_f": 1,
+        "S_cut": "0.0"
+      }
+    },
+    "zero_cut_entropy_blocks": [
+      "(6,)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "max_cut_entropy": "1.47080847632211131271731"
+  },
+  "caveats": [
+    "Scope (a). Establishes that dS >= 0 is forced across any bipartition, hence that the committed probe's quantity is not an entanglement entropy -- it is a Shannon entropy over Wedderburn blocks of the whole algebra. That probe's arithmetic is not disputed and is not re-run; only its LABEL is refuted, and I relayed that label without checking it.",
+    "NOT claimed: that E_0 * S_cut is the binding energy, or that this cut entropy appears in any binding formula. The value AME would require lies inside the measured range [0, 1.4708], and that is a GENERICITY observation rather than evidence -- a weighting over eleven blocks spanning that interval can be made to hit almost anything in it. No weighting is chosen and no binding contribution is computed.",
+    "Entanglement cost is NOT excluded as an ingredient. The earlier probe refutes one prescription; this one refutes that prescription's label. Neither bears on whether a correctly-defined cut entropy plays a role."
+  ]
+}

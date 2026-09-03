@@ -1,10 +1,17 @@
-"""The one composition `IsGrobnerShirshovBasis` for the Hecke system still rests on.
+"""The composition `IsGrobnerShirshovBasis` for the Hecke system used to rest on.
 
-The Lean assembly (bean `qou-auq3`, §4bn of `HeckeCompletion.lean`) reduces
-`IsGrobnerShirshovBasis` for `heckeCompletedRewritingSystem` to a single
-hypothesis `hdeep`: the longest Bokut-Shiao word `bsWord1(i, 0)` overlapping
-**itself** in its shared trailing `sigma_i`.  Its S-polynomial is the difference
-of two monomials of length `2i + 3` (the two `lm`-length terms cancel):
+**Discharged 2026-08-24** (bean `qou-auq3`, §4bw of `HeckeCompletion.lean`).
+`UGB.GrobnerShirshov.Hecke.deep_selfOverlap_resolves` proves this composition
+resolves for general `i`, and `heckeCompleted_isGrobnerShirshovBasis` is now
+unconditional -- `[propext, Classical.choice, Quot.sound]`, no hypothesis.
+This probe is kept because it is what supplied the **target**: the induction had
+to land on the normal form printed here, and did.
+
+What §4bn of `HeckeCompletion.lean` reduced `IsGrobnerShirshovBasis` for
+`heckeCompletedRewritingSystem` to was a single hypothesis `hdeep`: the longest
+Bokut-Shiao word `bsWord1(i, 0)` overlapping **itself** in its shared trailing
+`sigma_i`.  Its S-polynomial is the difference of two monomials of length
+`2i + 3` (the two `lm`-length terms cancel):
 
     A = left * bsWord2      with  left  = descWord(i, 0)
     B = bsWord2 * right           right = descWord(i-1, 0) ++ [sigma_i]
@@ -12,8 +19,9 @@ of two monomials of length `2i + 3` (the two `lm`-length terms cancel):
 
 This reduces both under the completed rewriting system and reports whether they
 meet.  It is a **probe, not a proof**: it settles small `i` only, and says
-nothing about general `i`.  What it buys is the target -- an induction has to
-land on the normal form printed here, and now does not have to guess it.
+nothing about general `i`.  That gap is now closed in Lean rather than here --
+the probe's own scope is unchanged, and its assertions still guard the target
+against drift.
 
 Rules, read off the Lean definitions (`HeckeGS.lean`, `HeckeCompletion.lean`)
 rather than off prose, with `H = q - 1/q`:
@@ -449,8 +457,10 @@ def main() -> int:
     print("That is strategy-dependent -- a size estimate for the chain, not a")
     print("fact about the algebra.")
     print()
-    print("NOT established: that this holds for all i.  This is a probe; the")
-    print("Lean hypothesis `hdeep` remains open, now with a known target.")
+    print("NOT established HERE: that this holds for all i.  This is a probe,")
+    print("and its scope is small i only.  The general case is proved in Lean --")
+    print("`deep_selfOverlap_resolves` (HeckeCompletion.lean, 4bw), which is what")
+    print("made `heckeCompleted_isGrobnerShirshovBasis` unconditional.")
     return 0 if ok else 1
 
 

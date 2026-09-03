@@ -133,3 +133,111 @@ NOT yet *the* gauged weak isospin. Chiral-EFT lit for the binding-side template 
 Every "closest hit" was gated against search-space entropy; every scaffold is a
 content-bearing conjecture with **no instance** (open); no anchor-inversion was
 wired as canonical; negatives are scope-tagged (a)/(b) with cited invariants.
+
+---
+
+## 2026-08-25 — 4-B (two-like-charge EM-linking): the kernel is not identified
+
+PR [#5770](https://github.com/litlfred/qou/pull/5770), bean `qou-17mq`. Two
+findings, both negative, both scope-tagged. **The route is untouched; what is
+gone is the belief that its kernel has been selected.**
+
+4-B gates `m_d − m_u` — the one honestly extractable quark quantity — and 69 %
+of the ³He mirror residual, and is rank 1 in the cheat sheet's near-term table
+because it needs no `SU(3)`.
+
+1. **The contest's winner is not an admissible kernel.** `H_coth` is scored on
+   an *unsubtracted* `coth(α)`, which the round-2 **O2** obstruction excludes:
+   on a finite-volume quotient the admissible kernel has zero mean, hence takes
+   both signs, so none saturates at `κ → +1` — and saturation is what separated
+   `H_coth` from its rivals. O2 had been recorded 2026-08-01 and applied to
+   nothing (four mentions corpus-wide, all in one file, zero in
+   `computations/`). Re-scored, scatter rises monotonically with neutralisation
+   (3.505 % → 11.15 % → 22.32 %) and the best admissible member carries residual
+   structure `r = −0.904`, more than the `r = +0.799` that got `H_FH_Z`
+   rejected for carrying structure. Scope: **(b)** on the kernel as written,
+   invariant cited (`∫Δu = 0`); **(a)** on the parameterisation.
+2. **The test could not have discriminated.** The series spans
+   `α ∈ [0.317, 0.873]`; `coth` reaches within 10 % of its limit only at
+   `α = 1.522`, i.e. **`A = 334`** — past the heaviest known nuclide (294). Over
+   the measured range `coth` is within 0.97 % of `1/α + α/3` against 3.505 %
+   scatter, so its advantage tracks the curvature term, not saturation; and the
+   two hypotheses differ by at most 1.79 × that scatter. Scope: **(a)** on a
+   *test*, not on a hypothesis.
+
+**Consequence for the ledger.** With round 5's withdrawal of the two `H_FH`
+warrants, no member of that contest carried a live structural warrant when it
+was scored. `qou-i6rg` is `completed` and its ranking has been read as a
+settled selection; it is not one, and its own premise — *"needs NO new theory,
+only more AME data"* — is wrong, since more data cannot reach `A = 334`.
+
+**Next on 4-B changes.** Not "extend the series". Either derive the kernel
+(zero-mean Green's function of an actual finite-volume quotient, *predicting*
+`κ(A)` instead of scoring parameterisations against it), or find an observable
+probing `α ≳ 1.5`, which no nucleus supplies under `α ∝ A^{1/3}`.
+
+Recorded independently: on `H³` the decaying Green's function is
+`−(coth r − 1)/4π`, so the subtraction O2 forces is also just the ordinary
+boundary condition — a route needing neither compactness nor finite volume.
+
+**Carried confound** (`qou-gcmn`): `B_pp` frozen at its `A = 3` value bounds
+every scatter number above. Neither structural argument depends on it.
+
+3. **The separation law is an unexamined Euclidean import.** Upstream of both
+   findings above: every kernel on this front is fed `α ∝ A^{1/3}`, the
+   Euclidean liquid-drop nuclear radius, imported as *"fixed in advance as the
+   standard nuclear radius law"* — which guards against post-hoc selection but
+   is not derivation. The kernel it feeds is hyperbolic by construction. Using
+   the geometry consistently (`H³`: `R ~ ½ ln V`, so `α ∝ ln A` for extensive
+   `V`) scores **9.253 %** against the import's **3.505 %** — consistency costs
+   **2.64×**. The corpus cannot adjudicate: `binding-link-volumes` holds
+   volumes at `A = 2, 3` only and says so. A free-power diagnostic lands at
+   `p = 0.33`, indistinguishable from `1/3`, so the data independently prefers
+   the Euclidean exponent. **Deflationary reading:** `κ(A)` is close to plain
+   Coulomb in a Euclidean nucleus (`5.499 %` for pure `1/r`), the hyperbolic
+   curvature term buying a factor `1.57` on one shared parameter — real, but
+   suggestive rather than decisive and comparable to the `qou-gcmn` confound.
+   Scope: **(a)** on an input assumption. Not claimed: that `A^{1/3}` is wrong
+   (the data prefers it), that the geometry is Euclidean, or that `H_coth` is
+   refuted.
+
+**Net for the ledger.** 4-B carries **three** distinct gaps where the front had
+been carrying one: the route is identified, the kernel is not, and the
+separation law is imported. None of the three refutes the metric Coulomb
+pairing. What they remove is the impression that a kernel had been selected,
+that more data would settle it, and that the hyperbolic reading was
+load-bearing for the fit.
+
+
+---
+
+## 2026-08-25 — 4-C retitled: no third flavour grade is missing
+
+PR [#5770](https://github.com/litlfred/qou/pull/5770), bean `qou-17mq`.
+**Corrects the "D-meson mass gates on exactly TWO objects" entry above: object 1
+is void.**
+
+`orderedContent_injective` is proved sorry-free (`by decide`) on `main`:
+`D̄⁰ (−5,+3)` and `K⁰ (+3,−5)` collide **only as multisets**, and the ordering is
+the quark/antiquark strand orientation — the same `signedWrithe` that gives
+`T₃`, *"topological strand-orientation data, not a fit"*.
+
+The arity slip: `mass_from_graded_content_cannot_separate` quantifies over
+`f : Multiset ℤ → ℚ` — **symmetric** functions of the *unordered* content. It
+does not say the content cannot carry the mass. The ordered complement is
+injective. Fourth recorded instance of `da-arity-conflation`.
+
+**Consequence for the ranking: 4-C does not reduce into 4-A.** That dependency
+placed the rank-2 near-term object behind the `N = 3` problem, the framework's
+hardest open question. It is not there. What remains is object 2 of the entry
+above — `qou-qpj9`'s canonical content → hyperbolic-braid map — which needs no
+`SU(3)`, flavour or colour.
+
+**Not thereby solved.** Injectivity gives a factorisation, never a derivation of
+the factorising map. Fitting through five injectively-labelled points is the
+per-state fit the J/ψ attack already recorded as worthless.
+
+Bean `qou-dnm1` (`todo`) carries the void framing and four attack options for
+the absent grade; body appended, **status left for the author**. A prior agent
+reached this on `qou-mesont3` and it never propagated here — re-verified at
+source rather than taken from that bean.

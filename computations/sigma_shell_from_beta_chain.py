@@ -122,7 +122,7 @@ def evaluate_chi_lambda_on_atom(
 def load_atomic_tr_m(atom_label: str) -> mp.mpf:
     """Load |tr_M(β_K)| for the atom from the legacy 50-dps witness or
     per-atom extensions."""
-    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     label_map = {
         "p": "proton", "n": "neutron",
         "D": "deuteron", "T": "tritium",
@@ -199,7 +199,7 @@ def compute_sigma_shell_a2() -> dict:
         "abs_chi_lambda_on_beta_D": str(abs_chi),
         "chi_lambda_source": "hecke_character_symbolic.q_character_on_braid_word",
         "abs_tr_M_beta_D": str(abs_tr_D),
-        "abs_tr_M_source": "atomic-tr-m-mpfr-50dps.witness.json",
+        "abs_tr_M_source": "atomic-tr-m-mpfr-50dps-proton.witness.json",
         "y_target_computed": str(y_target),
         "y_target_formula": (
             "C_(3,2,1)(q_0) · y_(3,2,1)(q_0) · |χ^(3,2,1)(β_D)(q_0)| "

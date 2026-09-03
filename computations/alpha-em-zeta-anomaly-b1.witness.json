@@ -1,40 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:54:00.631105+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-29T11:02:07.982167+00:00",
+  "commitSha": "67bd5e3e16d6ebf109266e9d11a352152e5fa37a",
   "assertions": [
     {
       "name": "scalar_epstein_Z0_is_minus_one",
-      "computed": 4.0127249212675005e-12,
+      "computed": "0.000000000004012724921267500107315352022392935965439746264484103698500932037087914",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "Z_Λ(0) = −1 for every flat n-torus (Seeley: a_{n/2}=0, dim ker=1); verified n∈{1,2,3,8}, several covolumes"
     },
     {
       "name": "zeta_1form_0_is_minus_b1",
-      "computed": -8.00000000000045,
+      "computed": "-8.00000000000045021282772616001921380486874088211042078489415",
       "expected": -8.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "ζ_{1-form on T^{b₁}}(0)=b₁·Z_Λ(0)=−b₁ (1-form Laplacian = b₁ copies of scalar; b₁=8 for the g=4 Bring Jacobian)"
     },
     {
       "name": "covolume_in_heat_leading_not_in_zeta0",
-      "computed": 3.606000984620583e-20,
+      "computed": "0.00000000000000000003606000984620582717166811142177453051126267037584031427987626420647603",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "covolume V appears in the leading heat coeff V/(4π)^{n/2} (μ-absorbable) — NOT in ζ(0), which is the bare count −b₁"
     }
   ],
   "allPassed": true,
-  "durationMs": 10015,
+  "durationMs": 8089,
   "computation": "alpha-em-zeta-anomaly-b1",
   "scriptFile": "alpha_em_zeta_anomaly_b1_probe.py",
-  "scriptHash": "4c82bbd35c42",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "61f99caba536",
+  "scriptCommitSha": "ca73dcc1820c0935a92c642ce2d5aa91fb4aee39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [

@@ -1,67 +1,71 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:47:26.465091+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-08-30T09:34:40.489206+00:00",
+  "commitSha": "458f17211f5d1442dc573b3c24685bdcfb3e4f66",
   "assertions": [
     {
       "name": "denominator_nonzero_n3",
-      "computed": 0.714099204348418,
-      "expected": 0.714099204348418,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^3| > 0 at q₀"
+      "tolerance": 0,
+      "source": "|1 − h_q·q^3| > 0 at q₀; magnitude in data.denominator_magnitude_n3"
     },
     {
       "name": "roundtrip_identity_n3",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_3·(1−h_q·q^3) = 1 at 50 dps"
     },
     {
       "name": "denominator_nonzero_n4",
-      "computed": 0.6826562400351649,
-      "expected": 0.6826562400351649,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^4| > 0 at q₀"
+      "tolerance": 0,
+      "source": "|1 − h_q·q^4| > 0 at q₀; magnitude in data.denominator_magnitude_n4"
     },
     {
       "name": "roundtrip_identity_n4",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_4·(1−h_q·q^4) = 1 at 50 dps"
     },
     {
       "name": "denominator_nonzero_n9",
-      "computed": 0.46530889612641135,
-      "expected": 0.46530889612641135,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^9| > 0 at q₀"
+      "tolerance": 0,
+      "source": "|1 − h_q·q^9| > 0 at q₀; magnitude in data.denominator_magnitude_n9"
     },
     {
       "name": "roundtrip_identity_n9",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_9·(1−h_q·q^9) = 1 at 50 dps"
     },
     {
       "name": "denominator_nonzero_n10",
-      "computed": 0.40650432631262273,
-      "expected": 0.40650432631262273,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "source": "|1 − h_q·q^10| > 0 at q₀"
+      "tolerance": 0,
+      "source": "|1 − h_q·q^10| > 0 at q₀; magnitude in data.denominator_magnitude_n10"
     },
     {
       "name": "roundtrip_identity_n10",
-      "computed": 9.055679078826712e-72,
-      "expected": 0.0,
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-49,
+      "tolerance": "1e-49",
       "source": "F_10·(1−h_q·q^10) = 1 at 50 dps"
     },
     {
@@ -74,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 4,
   "computation": "bring-residue-resolvent-probe",
   "scriptFile": "probe_bring_residue_resolvent.py",
-  "scriptHash": "cc4c8feb3e7f",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "cb2a3f96b649",
+  "scriptCommitSha": "6587e6f9ca324b65a84407b000d3c4288d78bfdb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -91,7 +95,14 @@
     "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "ac75fea5c01de435"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_bring_residue_resolvent.py"
+    ],
+    "reproduce": "python3 -u computations/probe_bring_residue_resolvent.py"
   },
   "description": "Canonical resolvent F_n(q) = 1/(1−h_q·q^n) verified at substrate q_0 for pole orders n∈{3,4,9,10} (downstream: meson pair, 1/α_EM, p-n weight). Checks: denominator non-zero, round-trip identity, distinct values.",
   "contentBlock": "prop:bring-residue-resolvent",
@@ -103,5 +114,11 @@
       10
     ],
     "q_0_digits_used": 50
+  },
+  "data": {
+    "denominator_magnitude_n3": "0.714099204348417993722694330759362545228900913403775475279459",
+    "denominator_magnitude_n4": "0.682656240035164867887814710574824451949658477669282794873324",
+    "denominator_magnitude_n9": "0.465308896126411369708075014326579975334804177839375657287131",
+    "denominator_magnitude_n10": "0.406504326312622751456628805477065818734119111660027315722580"
   }
 }

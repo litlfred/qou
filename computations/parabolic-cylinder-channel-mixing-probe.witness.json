@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-23T20:53:55.757207+00:00",
-  "commitSha": "173e3480f31035a9291e53516e6e7c7ba6201701",
+  "computedAt": "2026-08-24T17:13:59.979841+00:00",
+  "commitSha": "cd42f7dcd39b88a8454f119938caf9b9787ee2cb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "parabolic-cylinder-channel-mixing-probe",
   "scriptFile": "parabolic_cylinder_channel_mixing_probe.py",
   "scriptHash": "30d8bf71d34f",
-  "scriptCommitSha": "457481eee446e0025107678e01e5e2bbaec7c2aa",
+  "scriptCommitSha": "257ad9a8b3f7c6159f0f25a6edff10fe86fcf15d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,6 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
@@ -64,7 +65,7 @@
     "nu_spread_across_N_classes": "0.055707283954402109821",
     "nu_is_N_organized": null
   },
-  "timestamp": "2026-08-23T20:53:55+00:00",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "timestamp": "2026-08-24T17:13:59+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

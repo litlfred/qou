@@ -895,6 +895,97 @@
    ],
    "id": "etingof-ostrik2018",
    "why_authors": "Spacing repair in the byline: 'PA VEL' -> 'PAVEL'."
+  },
+  "arxiv-hep-ph-0601023v3": {
+   "title": "Proton Stability in Grand Unified Theories, in Strings and in Branes",
+   "authors": [
+    {
+     "family": "Nath",
+     "given": "Pran"
+    },
+    {
+     "family": "Fileviez Perez",
+     "given": "Pavel"
+    }
+   ],
+   "why": "The title is set over four centred lines ('Proton Stability' / 'in' / 'Grand Unified Theories,' / 'in Strings and in Branes'); the extractor dropped the one-word line, yielding 'Proton Stability Grand Unified Theories'. The word restored is present in the document. Authors: the parse welded the affiliation superscripts ('Pran Nath 1, and Pavel Fileviez Perez2')."
+  },
+  "arxiv-0805.1447v2": {
+   "title": "Braid ordering and the geometry of closed braid",
+   "authors": [
+    {
+     "family": "Ito",
+     "given": "Tetsuya"
+    }
+   ],
+   "why": "Removed the byline 'TETSUYA ITO', which the all-caps title style runs into the title with no separator. authors_raw was empty."
+  },
+  "arxiv-1901.01312v1": {
+   "title": "Braided fermions from Hurwitz algebras",
+   "authors": [
+    {
+     "family": "Gresnigt",
+     "given": "Niels G."
+    }
+   ],
+   "why": "Removed the byline 'Niels G Gresnigt'. authors_raw had picked up the affiliation line (Xi'an Jiaotong-Liverpool University) instead of the name."
+  },
+  "arxiv-2104.01786v1": {
+   "title": "Spin(11, 3), particles and octonions",
+   "authors": [
+    {
+     "family": "Krasnov",
+     "given": "Kirill"
+    }
+   ],
+   "why": "Removed the byline 'Kirill Krasnov'. authors_raw had picked up the affiliation line (School of Mathematical Sciences, University of Nottingham)."
+  },
+  "quaternioms": {
+   "band": "high",
+   "title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+   "authors": [
+    {
+     "family": "Rua Munoz",
+     "given": "Johan Heriberto"
+    },
+    {
+     "family": "Mahecha Gomez",
+     "given": "Jorge Eduardo"
+    },
+    {
+     "family": "Pineda Montoya",
+     "given": "Santiago"
+    }
+   ],
+   "why": "The extracted title was '3.01.3', the MDPI reprint cover's section number. The real title is printed directly beneath it on the same page, over five lines, with the three authors on the line after. Nothing supplied from outside the document."
+  },
+  "s10052-023-11923-y-a": {
+   "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
+   "authors": [
+    {
+     "family": "Gresnigt",
+     "given": "Niels"
+    },
+    {
+     "family": "Gourlay",
+     "given": "Liam"
+    },
+    {
+     "family": "Varma",
+     "given": "Abhinav"
+    }
+   ],
+   "why": "Removed the EPJC masthead the extractor took as title ('Eur. Phys. J. C (2023) 83:747 ... Regular Article - Theoretical Physics'). Author 'Gresnigta' carries a welded affiliation letter."
+  },
+  "symmetry-11-01298": {
+   "title": "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics",
+   "authors": [
+    {
+     "family": "Asselmeyer-Maluga",
+     "given": "Torsten"
+    }
+   ],
+   "why": "Removed the MDPI masthead 'symmetryS S Article' and restored the title's second line, which the parse had put in authors_raw ('Number Theory and Symmetry in Particle Physics'). Sole author Torsten Asselmeyer-Maluga."
   }
  }
 }

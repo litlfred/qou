@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-08T10:15:00Z
-updated_at: 2026-08-08T10:15:00Z
+updated_at: 2026-08-29T10:27:34Z
 ---
 
 Successor to qou-qb8b + qou-qb8d, which between them settled the PARITY channel
@@ -499,3 +499,7 @@ bean's gate:
   not involve z).
 - Settle-the-convention is bean qou-b3nk; until it lands, carrier work should
   state "C-frame" on every value-level comparison.
+
+
+## 2026-08-29 — workflow (both lenses survive): OPEN, blocked upstream on cds1; convention-agnostic braid-exclusion handle
+|c3| gate untouched; -974 is a z-swap artifact not a D target (blocked on cds1). CONVENTION-AGNOSTIC scope-(b) prune: the magnitude carrier CANNOT be a braid-word image -- alpha is unbounded/non-constant in BOTH frames (alpha_C->-inf, alpha_D->+inf), so any polynomial relation forces all coeffs zero (BraidImageEigenphase{Exclusion,Algebraic}.lean, sorry-free, char + eigenvalue-pair; the proof never reads z). This is the |c3| analog of the avt1 affine-transport convention-agnostic handle. Sole surviving carrier = branch (3) KZ/Kohno-Drinfeld holonomy on V_(2,1), hbar=2ln q -- but red-team flags qou-pdix precision obstruction (0.579% NF ambiguity > 0.160% target effect, 3.6x). Also: D residual N2/N1~0.89 = NO rung convergence, so c3 may not be a convergent-ladder coeff under D. Audit 2026-08-29-convention-d-qbeta-front.

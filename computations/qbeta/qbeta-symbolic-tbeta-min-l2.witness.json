@@ -9,7 +9,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "symbolic A·S/||A||² vs T_beta_nf_coefficients (knot-operator SDP)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "series(τ_M(T_β)(1+w), w, 0, 8) vs tau_M_taylor_coefficients"
     }
   ],

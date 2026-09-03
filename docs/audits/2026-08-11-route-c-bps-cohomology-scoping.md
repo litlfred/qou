@@ -278,7 +278,7 @@ The §6 sentence *"no `q→0` Stokes matrix for a third hyperbolic knot exists i
 the corpus"* is **still accurate** — nothing retracts it. But the sweep behind it
 keyed on the string **"Stokes"**, and that is far narrower than the question. The
 paper that carries the third knot's grading — Garoufalidis–Zagier, *Knots and
-Their Related q-Series*, SIGMA 19 (2023) 082 (`uploads/2304.09377v2.pdf`) — says
+Their Related q-Series*, SIGMA 19 (2023) 082 (`library/arxiv-2111.06645/2304.09377v2.pdf`) — says
 "Stokes" **exactly once**, so it ranked below thirty other files and was never
 opened. It is not obscure: it is the sequel `[44]` that `2111.06645` **announces
 in its own abstract**, and I had already quoted that abstract in §6.
@@ -385,7 +385,7 @@ The lesson above was tested rather than asserted. Re-running the 371-PDF sweep o
 `A-polynomial`) instead of `Stokes` matches **94** files and ranks them very
 differently. It surfaced a **second** confirmed miss:
 
-> `uploads/ki6c.pdf` — Ohtsuki–Yokota, *On the asymptotic expansions of the
+> `library/ki6c/ki6c.pdf` — Ohtsuki–Yokota, *On the asymptotic expansions of the
 > Kashaev invariant of the knots with 6 crossings* (`6₁`, `6₂`, `6₃`, with the
 > volume conjecture proved for them). It contains the string "Stokes" **zero**
 > times, so it was structurally invisible to the original sweep.
@@ -400,7 +400,7 @@ unopened high-rankers: `1511.05628`, `2412.04241`, `1303.5278`.
 
 ### Dimofte–Garoufalidis §6: the signature inputs confirmed, and Part 4's hypothesis named
 
-The re-sweep also surfaced `uploads/1511.05628v1.pdf` (Dimofte–Garoufalidis,
+The re-sweep also surfaced `library/arxiv-1511.05628v1/1511.05628v1.pdf` (Dimofte–Garoufalidis,
 *Quantum Modularity and Complex Chern–Simons Theory*), which §6 states trace
 fields in the **signature notation `[r₁, r₂]`** — the exact input Part 4's rule
 consumes — for five knots:
@@ -478,7 +478,7 @@ DT correspondence itself rather than of the number-field/Newton-polygon identity
 
 ### A third route to `r(6₁) = 4` — from the saddle analysis itself
 
-Ohtsuki–Yokota (`uploads/ki6c.pdf`, saddle data extracted by a sibling, bean
+Ohtsuki–Yokota (`library/ki6c/ki6c.pdf`, saddle data extracted by a sibling, bean
 `qou-6ort`) give `6₁`'s gluing-equation quartic explicitly:
 
   `2z⁴ − z³ − 2z² + z + 1 = 0`.

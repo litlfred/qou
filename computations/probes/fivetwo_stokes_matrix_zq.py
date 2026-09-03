@@ -90,8 +90,16 @@ ORD = 18              # order to which q-series identities are asserted
 S_P_TARGET = _sw.S_P_TARGET   # [[1,4,0],[0,1,0],[-3,-9,1]]
 S_M_TARGET = _sw.S_M_TARGET   # [[1,0,3],[-4,1,-3],[0,0,1]]
 
-Q0 = mp.mpf(
-    "1.10997859555733471989976322048322502665620840878015368660798114614493")
+# Was a hardcoded literal of the SUPERSEDED muon pin A. Read the anchor
+# instead: this producer's stem is listed `ideal_muon`, so q_parameter rebinds
+# q_at to the muon closure and this follows the anchor through a CODATA
+# revision with no digit edited by hand -- which is the whole point of
+# fca08de7d2. A frozen literal here made the witness stamp (q0Value, set from
+# the anchor) disagree with the arithmetic (run at A): a layer straddle inside
+# one witness. Bean qou-3f7a.
+from q_parameter import q_at  # noqa: E402
+from knot_volumes import vol_at  # noqa: E402 — canonical volume registry
+Q0 = mp.mpf(str(q_at(mp.mp.dps)))
 
 
 # ------------------------------------------------------------------ helpers
@@ -230,7 +238,9 @@ def main() -> int:
 
     # ---- V4: prefactor identification + leading one-instanton contribution
     # GGM eq (21): V(σ1) = ReV + i ImV = Vol(5₂) + i·CS(5₂).
-    ReV = mp.mpf("2.82812208833455")    # hyperbolic volume of 5₂ complement
+    # EXCISED (bean qou-ckbv): was mp.mpf("2.82812208833455"), 15 printed /
+    # 11 correct. Read from the canonical registry instead.
+    ReV = vol_at("5_2", mp.mp.dps)      # hyperbolic volume of 5₂ complement
     ImV = mp.mpf("1.37919181633454")    # Chern–Simons action
     # substrate ray τ = iβ, β = ln q₀/(2π); the leading Borel singularity of
     # Φ_{σ1} sits at the action ζ = V(σ1)/(2π); the one-instanton weight that

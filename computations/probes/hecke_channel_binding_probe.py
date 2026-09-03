@@ -47,6 +47,14 @@ from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
 from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
@@ -76,7 +84,7 @@ w_alt = q2 / denom
 # bond (c, d)
 BONDS = {"pp": (mp.mpf(1), mp.mpf(0)),
          "nn": (mp.mpf(1), -h),
-         "pn": (mp.mpf(1), -h / 2)}
+         "pn": (mp.mpf(1), _pn_d(h))}   # colour-weighted
 
 AME_D = mp.mpf("2.224566")   # only the deuteron is a bound 2-nucleon system
 

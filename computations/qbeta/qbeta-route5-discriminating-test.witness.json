@@ -1,0 +1,359 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T13:53:05.434489+00:00",
+  "commitSha": "d9f33f77857f8e013adf6c1623b3220187758640",
+  "assertions": [
+    {
+      "name": "verdict_correct__alpha_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__alpha_C",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__c*ln_q",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__NEAR-MISS_alpha_D_+",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__NEAR-MISS_alpha_D_*",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__cosh-shaped",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "verdict_correct__scaled_2*alpha_D",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "near_miss_passes_OLD_part1",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "near_miss_REJECTED_by_new_test",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "target_accepted_by_new_test",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "exactly_one_candidate_passes",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "D4_is_load_bearing",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "supergolden_cubic_is_irreducible",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "supergolden_root_is_not_on_the_unit_circle",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "convention_C_fingerprint_is_cyclotomic",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "supergolden_root_is_just_z_D_equals_one",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "z_D_equals_one_at_psi",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "tier1_is_automatic_for_anything_built_from_z",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "name": "tier1_condition_count_matches_free_parameter_count",
+      "computed": "pass",
+      "expected": "pass",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-route5-discriminating-test",
+  "scriptFile": "qbeta_route5_discriminating_test.py",
+  "scriptHash": "efb15fd6428b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_route5_discriminating_test.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_route5_discriminating_test.py"
+  },
+  "description": "CORRECTION-CARRYING. A two-tier acceptance test for qou-pdix route 5, replacing the retired three-part test, plus its validation against known-wrong candidates. Five criteria: D1 algebraic over Q(q); D2 zero locus; D3 pole locus; D4 bar defect; D5 non-circular (structural). The lever is that alpha is ALGEBRAIC and so carries an arithmetic fingerprint: alpha_D = (q-1)(q+1)(q^3-q^2-1)/(2q(q^2+1)) where the cubic is IRREDUCIBLE over Q with real root the supergolden ratio 1.4655712..., |psi| != 1 so not a root of unity — while alpha_C = -Phi_1 Phi_2 Phi_6 /(2u^2) is entirely CYCLOTOMIC. The conventions differ arithmetically in kind. VALIDATED: of seven candidates exactly one (the target) passes, and the decisive row is the near-miss alpha_D + (q-1)^3, which agrees through t^2 and so PASSES the retired test's part 1 while tier 1 REJECTS it. 🛑 CORRECTION of this file's own first draft: the supergolden zero is NOT a rigid independent fingerprint. z_D - 1 = (q^3-q^2-1)/(q^2+1), so psi is exactly where z_D = 1 — immediate from alpha = (z-1)h/2 — and the corpus already carries psi (centered_hecke_variance_positive names it as the z<1 threshold; spectrahedral-phase-collapse as the convention-C Gram degeneracy at u=1/psi). Consequence: EVERY tier-1 criterion is automatic for any candidate of the form c*(z-1)h, so tier 1 pins the constant c and nothing else. It rejects perturbations but CANNOT detect a construction handed (z-1)h/2 — the same circularity that retired the old test. The discriminating power lives entirely in tier 2 (D5 non-circular, D6 fewer than 9 free parameters), which are checks on the DEFINITION and are read, not run.",
+  "contentBlock": "prop:q-beta-cos-resummation",
+  "parameters": {
+    "q0_anchor": "proton (physical_proton pin)",
+    "q0_value": "1.10997858275138",
+    "convention": "D (canonical, owner ruling 2026-08-15)",
+    "nf_builder": "single-wrap (owner ruling 2026-08-30)"
+  },
+  "data": {
+    "assertions_passed": 19,
+    "assertions_total": 19,
+    "checks": [
+      {
+        "name": "verdict_correct__alpha_D",
+        "pass": true,
+        "why": "must PASS everything — new test passes it"
+      },
+      {
+        "name": "verdict_correct__alpha_C",
+        "pass": true,
+        "why": "different convention — must FAIL the D fingerprint — new test rejects it"
+      },
+      {
+        "name": "verdict_correct__c*ln_q",
+        "pass": true,
+        "why": "transcendental — must fail D1 — new test rejects it"
+      },
+      {
+        "name": "verdict_correct__NEAR-MISS_alpha_D_+",
+        "pass": true,
+        "why": "agrees through t^2 so PASSES the OLD part 1 — must FAIL the new test — new test rejects it"
+      },
+      {
+        "name": "verdict_correct__NEAR-MISS_alpha_D_*",
+        "pass": true,
+        "why": "keeps alpha's zeros, adds spurious ones — must fail D2 — new test rejects it"
+      },
+      {
+        "name": "verdict_correct__cosh-shaped",
+        "pass": true,
+        "why": "wrong class entirely — new test rejects it"
+      },
+      {
+        "name": "verdict_correct__scaled_2*alpha_D",
+        "pass": true,
+        "why": "right zeros and poles, WRONG bar defect — must fail D4 only — new test rejects it"
+      },
+      {
+        "name": "near_miss_passes_OLD_part1",
+        "pass": true,
+        "why": "alpha_D + (q-1)^3 agrees through t^2, so the retired test accepts it"
+      },
+      {
+        "name": "near_miss_REJECTED_by_new_test",
+        "pass": true,
+        "why": "and the new test rejects it — this row is the whole point"
+      },
+      {
+        "name": "target_accepted_by_new_test",
+        "pass": true,
+        "why": "the test is not vacuously strict: alpha_D itself passes"
+      },
+      {
+        "name": "exactly_one_candidate_passes",
+        "pass": true,
+        "why": "of seven candidates only the target passes"
+      },
+      {
+        "name": "D4_is_load_bearing",
+        "pass": true,
+        "why": "2*alpha_D has the right zeros AND poles and is caught only by D4, so the bar-defect criterion is not redundant"
+      },
+      {
+        "name": "supergolden_cubic_is_irreducible",
+        "pass": true,
+        "why": "q^3-q^2-1 is irreducible over Q, so its root cannot be produced by a cyclotomic (root-of-unity) construction"
+      },
+      {
+        "name": "supergolden_root_is_not_on_the_unit_circle",
+        "pass": "True",
+        "why": "|psi| = 1.46557123188 != 1, so psi is not a root of unity"
+      },
+      {
+        "name": "convention_C_fingerprint_is_cyclotomic",
+        "pass": true,
+        "why": "alpha_C's nontrivial factor IS Phi_6(u) — C is cyclotomic where D is not, an arithmetic difference in kind between the conventions"
+      },
+      {
+        "name": "supergolden_root_is_just_z_D_equals_one",
+        "pass": true,
+        "why": "z_D - 1 = (q^3-q^2-1)/(q^2+1), so the supergolden zero IS the point z_D = 1 — not an independent fingerprint"
+      },
+      {
+        "name": "z_D_equals_one_at_psi",
+        "pass": "True",
+        "why": "z_D(psi) = 1 exactly"
+      },
+      {
+        "name": "tier1_is_automatic_for_anything_built_from_z",
+        "pass": true,
+        "why": "c*(z-1)h/2 with c=1/2 passes every tier-1 criterion by construction — tier 1 pins the constant and nothing else"
+      },
+      {
+        "name": "tier1_condition_count_matches_free_parameter_count",
+        "pass": true,
+        "why": "5 numerator + 3 denominator + 1 normalisation = 9 conditions; a deg-5/deg-3 rational function has 9 free parameters after scaling, so D6's threshold is exactly the point where fitting becomes possible"
+      }
+    ],
+    "reference_fingerprint": {
+      "alpha_D": "(q - 1)*(q + 1)*(q**3 - q**2 - 1)/(2*q*(q**2 + 1))",
+      "alpha_C_in_u": "-(u-1)(u+1)(u^2-u+1)/(2u^2) = -Phi_1 Phi_2 Phi_6/(2u^2)",
+      "zero_factors": {
+        "q - 1": 1,
+        "q + 1": 1,
+        "q**3 - q**2 - 1": 1
+      },
+      "pole_factors": {
+        "q": 1,
+        "q**2 + 1": 1
+      },
+      "bar_defect": "(q - 1)**2*(q + 1)**2/(2*q**2)",
+      "supergolden_root": "1.465571231876768026656731"
+    },
+    "candidate_matrix": {
+      "alpha_D (the target)": {
+        "D1_algebraic": true,
+        "D2_zeros": true,
+        "D3_poles": true,
+        "D4_bar_defect": true,
+        "new_test_passes": true,
+        "old_test_part1_passes": true,
+        "expected_to_pass": true,
+        "note": "must PASS everything"
+      },
+      "alpha_C (other convention)": {
+        "D1_algebraic": true,
+        "D2_zeros": false,
+        "D3_poles": false,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": false,
+        "expected_to_pass": false,
+        "note": "different convention — must FAIL the D fingerprint"
+      },
+      "c*ln q (constant-residue holonomy)": {
+        "D1_algebraic": false,
+        "D2_zeros": false,
+        "D3_poles": false,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": false,
+        "expected_to_pass": false,
+        "note": "transcendental — must fail D1"
+      },
+      "NEAR-MISS: alpha_D + (q-1)^3": {
+        "D1_algebraic": true,
+        "D2_zeros": false,
+        "D3_poles": true,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": true,
+        "expected_to_pass": false,
+        "note": "agrees through t^2 so PASSES the OLD part 1 — must FAIL the new test"
+      },
+      "NEAR-MISS: alpha_D * (1 + (q-1)^3)": {
+        "D1_algebraic": true,
+        "D2_zeros": false,
+        "D3_poles": false,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": true,
+        "expected_to_pass": false,
+        "note": "keeps alpha's zeros, adds spurious ones — must fail D2"
+      },
+      "cosh-shaped (q^c + q^-c)/2 - 1": {
+        "D1_algebraic": true,
+        "D2_zeros": false,
+        "D3_poles": false,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": false,
+        "expected_to_pass": false,
+        "note": "wrong class entirely"
+      },
+      "scaled: 2*alpha_D": {
+        "D1_algebraic": true,
+        "D2_zeros": true,
+        "D3_poles": true,
+        "D4_bar_defect": false,
+        "new_test_passes": false,
+        "old_test_part1_passes": false,
+        "expected_to_pass": false,
+        "note": "right zeros and poles, WRONG bar defect — must fail D4 only"
+      }
+    },
+    "criteria": {
+      "D1": "algebraic over Q(q) — closes the constant-residue holonomy horn",
+      "D2": "zero locus with multiplicities — the sharp one; the supergolden root is not reachable by a cyclotomic construction",
+      "D3": "pole locus with multiplicities — forces the q^2+1 of the D Markov denominator",
+      "D4": "bar defect F(1/q)+F(q) exact — load-bearing, catches 2*alpha_D which passes D2 and D3",
+      "D5": "TIER 2 — non-circular: the construction does not take alpha, (z-1)h/2, or the ladder residual as an INPUT. A check on the definition, not the output; cannot be run here.",
+      "D6": "TIER 2 — over-determined: fewer than 9 free parameters. A deg-5/deg-3 rational function has 9 free parameters after scaling, so a construction with 9+ tunables hits all of tier 1 by fitting and passing it is worth nothing. A parameter-free construction meeting all nine is over-determined by nine conditions, and that is evidence."
+    },
+    "correction": "This file's first draft presented the supergolden zero as a rigid fingerprint. It is not: z_D - 1 = (q^3-q^2-1)/(q^2+1), so psi is exactly z_D = 1, and the corpus already records psi in two places (centered_hecke_variance_positive, spectrahedral-phase-collapse). The correction forces the two-tier split: tier 1 is necessary but nearly free for z-built candidates.",
+    "prior_art": [
+      "content/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean — names psi as the z<1 threshold",
+      "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md — psi as convention-C Gram degeneracy at u = 1/psi, multiplicity 5"
+    ]
+  }
+}

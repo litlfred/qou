@@ -945,7 +945,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1074,7 +1074,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",
@@ -1163,7 +1163,7 @@
         "reviewed_at": "2026-08-15T10:31:00.447Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
-        "evidence": "1 negation-contrast construction(s): \", not a length-3 word:\" — state the positive claim directly"
+        "evidence": "1 negation-contrast construction(s): \", not a length-3 word:\" \u2014 state the positive claim directly"
       },
       {
         "field_hash": {
@@ -1178,7 +1178,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.395Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1212,7 +1212,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.472Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1246,7 +1246,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.540Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-triples": [
@@ -1280,7 +1280,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.612Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1314,7 +1314,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.698Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1348,7 +1348,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.757Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "'The naive worry is that … The proof above sidesteps that concern because …' names an objection and answers it, which is ordinary mathematical exposition rather than narrating one's own emphasis. It would only be meta-commentary if it announced the importance of the answer instead of giving it."
+        "evidence": "'The naive worry is that \u2026 The proof above sidesteps that concern because \u2026' names an objection and answers it, which is ordinary mathematical exposition rather than narrating one's own emphasis. It would only be meta-commentary if it announced the importance of the answer instead of giving it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1382,7 +1382,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.807Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -1416,7 +1416,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.859Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-superlative": [
@@ -1450,7 +1450,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.907Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -1484,7 +1484,7 @@
         },
         "reviewed_at": "2026-08-21T21:22:37.971Z",
         "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
-        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right — a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1507,5 +1507,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:22:37.971Z"
+  "updated_at": "2026-08-21T21:22:37.971Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

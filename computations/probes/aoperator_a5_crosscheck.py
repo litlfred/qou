@@ -345,13 +345,25 @@ def main() -> int:
           f"   {'OK — combiner reproduces transfer at A=5 (float64)' if rel < 1e-5 else 'CHECK'}",
           flush=True)
 
+    # TOLERANCES SERIALIZE AS STRINGS — do not "simplify" these back to float
+    # literals. main's float64 drain (bc8131bd58, "1232 declared tolerances in
+    # 499 witnesses") converted them in the WITNESS, not here, so every re-run
+    # of this producer silently re-inflated the raw-float64 count by 3 and the
+    # ratchet reported `regressed: 1`. A drain applied to the artifact instead
+    # of to its producer lasts exactly until someone re-runs the producer.
+    #
+    # `a5_per_lambda_max_abs_diff` keeps a float tolerance because it is
+    # COMPUTED (denom * 1e-8), not a literal, and main's drain left it that way
+    # too. Draining it as well is a real improvement but a separate change:
+    # doing it here would take this witness's shape further from main's on a PR
+    # about anchor classification.
     assertions = [
         {"name": "a4_fast_vs_chi_young", "computed": float(worst_fy), "expected": 0.0,
-         "passed": bool(worst_fy < 1e-6), "tolerance": 1e-6,
+         "passed": bool(worst_fy < 1e-6), "tolerance": "1e-06",
          "source": "A4: float64 regrouped combiner vs exact young_seminormal.chi_young "
                    "(small-d λ⊢12) on the real ⁴He word — validates the fast path."},
         {"name": "a4_fast_vs_orig_combiner", "computed": float(worst_fo), "expected": 0.0,
-         "passed": bool(worst_fo < 1e-6), "tolerance": 1e-6,
+         "passed": bool(worst_fo < 1e-6), "tolerance": "1e-06",
          "source": "A4: float64 regrouped combiner vs the original mpmath interface_blocks "
                    "combiner — confirms the regrouping is the same arithmetic."},
         {"name": "a5_per_lambda_max_abs_diff", "computed": float(worst), "expected": 0.0,
@@ -359,7 +371,7 @@ def main() -> int:
          "source": f"A5 ⁵He: max over all {len(chi_comb)} λ⊢15 of |χ_comb − χ_transfer| "
                    f"(rel to max|χ| = {float(worst/denom):.2e}) at λ={argworst}."},
         {"name": "a5_trM_combiner_vs_transfer", "computed": float(rel), "expected": 0.0,
-         "passed": bool(rel < 1e-5), "tolerance": 1e-5,
+         "passed": bool(rel < 1e-5), "tolerance": "1e-05",
          "source": f"A5 ⁵He: relative |Δtr_M| between the operator combiner and the "
                    f"fine-Bratteli transfer (tr_M = Σ_λ y_λ χ^λ = {float(trM_ref):.10g})."},
     ]
@@ -423,6 +435,15 @@ def main() -> int:
         "auditOnly": True,
     }
     wpath = Path(__file__).with_suffix("").as_posix() + ".witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     Path(wpath).write_text(json.dumps(witness, indent=2))
     print(f"[A5] witness → {wpath}  allPassed={witness['allPassed']}", flush=True)
     return 0

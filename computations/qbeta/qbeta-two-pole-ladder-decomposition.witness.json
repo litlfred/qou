@@ -9,7 +9,7 @@
       "computed": 117.4097638129516,
       "expected": 117.40900102154255,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "c_10/c_9 -> 1/u_substrate = 117.41 (reproduces PR #1727)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.7056070198357348e-07,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "0.001",
       "source": "dominant-pole fraction D_3/c_3 < 1e-3: c_3 is NOT a dominant-pole rung (lives in subdominant+entire sector)"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 2.0,
       "expected": 2.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "dominant-peeled residual sign-flips at k=6 => no clean +3.1154 geometric; canonical c_k do not corroborate the silver pole as leading subdominant ladder structure"
     }
   ],

@@ -1,0 +1,101 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2301.00125v3",
+ "source_sha256": "7ecd0cff7d6c2ec4",
+ "brief": "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random",
+ "extended": "**Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd**\n\n*Bronx, NY 10468*\n\n35 pp, 16 sections.\n\n**Abstract.** Given a uniform random permutation π∈Sn, let Zn,k be equal to the number of increasing subsequences of length k: so Zn,k =|{(i1,...,i k)∈ Zk : 1 ≤i1 <··· <i k≤n, πi1 <··· <π ik}|. In an important paper, Ross Pinsky proved E [ Z 2 n,k ] is equal to ∑ iA(k−i,i )B(n, 2k−i), where for any nonnegative integers N and j, we have B(N,j ) = (N j ) /j! and A(N,j ) is a particular nonnegative integer, which Pinsky characterized in two diﬀerent ways. One characterization of A(N,j ) involves the occupation time of the x-axis prior to a ﬁrst return to the origin. Using this, he proved a law of large numbers for the sequence Zn,kn when kn =o(n2/5) asn→∞ . In a follow-up paper, he also proved the sequence Zn,kn fails to obey a law of large numbers when 1/kn = o(1/n4/9) as n→∞ .\n\n**Outline.** 1 Introduction; 1.1 Extended abstract; 1.2 Set-up; 1.4 Motivation for exact solutions; 1.5 Outline for the remainder of the paper; 3 The diagonal (contour integral) method; 4 Main result; 5 Summary and outlook; A Bonferroni inequalities and Bell polynomials; B.1 Mathematical physics and probability devel; C Roots of a class of quadratic equations; D Contour integral alternative derivation of L; F Elementary proofs from the quadratic formula; G Elementary proofs from contour deformations; H Proof of lemmas related to the residue theor; I Elliptic integrals and linear fractional tra",
+ "tokens": {
+  "brief": 48,
+  "extended": 401
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-extended-abstract",
+   "title": "Extended abstract",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-12-set-up",
+   "title": "Set-up",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-14-motivation-for-exact-solutions",
+   "title": "Motivation for exact solutions",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-15-outline-for-the-remainder-of-the-paper",
+   "title": "Outline for the remainder of the paper",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-005-3-the-diagonal-contour-integral-method",
+   "title": "The diagonal (contour integral) method",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-006-4-main-result",
+   "title": "Main result",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-007-5-summary-and-outlook",
+   "title": "Summary and outlook",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-008-a-bonferroni-inequalities-and-bell-polynomials",
+   "title": "A Bonferroni inequalities and Bell polynomials",
+   "pages": "16-21"
+  },
+  {
+   "id": "sec-009-b1-mathematical-physics-and-probability-developm",
+   "title": "B.1 Mathematical physics and probability developments",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-010-c-roots-of-a-class-of-quadratic-equations",
+   "title": "C Roots of a class of quadratic equations",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-011-d-contour-integral-alternative-derivation-of-lem",
+   "title": "D Contour integral alternative derivation of Lemma 2.2",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-012-f-elementary-proofs-from-the-quadratic-formula",
+   "title": "F Elementary proofs from the quadratic formula",
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-013-g-elementary-proofs-from-contour-deformations",
+   "title": "G Elementary proofs from contour deformations",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-014-h-proof-of-lemmas-related-to-the-residue-theorem",
+   "title": "H Proof of lemmas related to the residue theorem",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-015-i-elliptic-integrals-and-linear-fractional-trans",
+   "title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,346 @@
+{
+  "description": "Whether the Markov-parameter convention puts mass_endomorphism's Phi_q tower near its pole. Companion to tower-vhat-markov-parameter, for the producer that actually reads z_mark (convention D) rather than having its Markov parameter pinned at h/2 by weight symmetry.",
+  "scope": "Scope-(a): measures the construction as built. Does not say which Markov parameter is right; excludes no ingredient.",
+  "lean": [
+    "qou:QOU.BraidsAndKnots.prod_eq_linear",
+    "qou:QOU.BraidsAndKnots.vHat_sub_vHat",
+    "qou:QOU.BraidsAndKnots.vHat_eq_iff",
+    "qou:QOU.BraidsAndKnots.markov_param_eq_half_h"
+  ],
+  "q": "1.1099785827513808076",
+  "markov_parameters": {
+    "C_sqrt_q_over_q_plus_1": "0.49932033418369445241",
+    "D_q3_over_q2_plus_1": "0.6126880371464652516",
+    "half_h_from_markov_param_eq_half_h": "0.10453014939781965772"
+  },
+  "particles": [
+    {
+      "particle": "electron",
+      "n_strands": 2,
+      "n_generators": 1,
+      "wedderburn_weights": {
+        "w_sym": "0.16546138503360687748",
+        "w_std": "0.66907722993278624503",
+        "w_alt": "0.16546138503360687748"
+      },
+      "generators": [
+        {
+          "gen": 0,
+          "n_factors": 3,
+          "alpha": "1.0437062085325219894",
+          "beta": "0.20906029879563931543",
+          "dVhat_dz_eq_w_std_alpha": "0.69832005886859076423",
+          "z_free_part": "0.24516356461994774616",
+          "at": {
+            "C_sqrt_q_over_q_plus_1": {
+              "z": "0.49932033418369445241",
+              "V_hat_full": "0.59384896978138966949",
+              "abs_V_over_q": "0.53500939478433456689",
+              "phi_q": "629.93563753103910119"
+            },
+            "D_q3_over_q2_plus_1": {
+              "z": "0.6126880371464652516",
+              "V_hat_full": "0.67301591078814868557",
+              "abs_V_over_q": "0.60633233942216932138",
+              "phi_q": "1892.5178476190129651"
+            },
+            "half_h_from_markov_param_eq_half_h": {
+              "z": "0.10453014939781965772",
+              "V_hat_full": "0.31815906470097575696",
+              "abs_V_over_q": "0.28663531859536680663",
+              "phi_q": "23.251916953049885361"
+            }
+          },
+          "z_star_pole": "1.2384221348769435359",
+          "z_star_pole_negative_branch": "-1.940574569155170115"
+        }
+      ],
+      "tower_totals": {
+        "C_sqrt_q_over_q_plus_1": {
+          "z": "0.49932033418369445241",
+          "descended": "0.59384896978138966949",
+          "single": "629.9356375310391012",
+          "cross": "0.0",
+          "total": "630.52948650082049087"
+        },
+        "D_q3_over_q2_plus_1": {
+          "z": "0.6126880371464652516",
+          "descended": "0.67301591078814868557",
+          "single": "1892.5178476190129651",
+          "cross": "0.0",
+          "total": "1893.1908635298011137"
+        },
+        "half_h_from_markov_param_eq_half_h": {
+          "z": "0.10453014939781965772",
+          "descended": "0.31815906470097575696",
+          "single": "23.25191695304988536",
+          "cross": "0.0",
+          "total": "23.570076017750861117"
+        }
+      },
+      "producer_f64_V_hat_at_D": [
+        "0.6730159107881487"
+      ],
+      "worst_abs_diff_vs_producer_f64": "1.443e-17"
+    },
+    {
+      "particle": "proton",
+      "n_strands": 3,
+      "n_generators": 2,
+      "wedderburn_weights": {
+        "w_sym": "0.16546138503360687748",
+        "w_std": "0.66907722993278624503",
+        "w_alt": "0.16546138503360687748"
+      },
+      "generators": [
+        {
+          "gen": 0,
+          "n_factors": 7,
+          "alpha": "1.2024503809027993411",
+          "beta": "0.54569350643246483328",
+          "dVhat_dz_eq_w_std_alpha": "0.80453216998606867711",
+          "z_free_part": "0.58728795646770380264",
+          "at": {
+            "C_sqrt_q_over_q_plus_1": {
+              "z": "0.49932033418369445241",
+              "V_hat_full": "0.98900722844668048626",
+              "abs_V_over_q": "0.891014695072007385",
+              "phi_q": "671220.97416716177726"
+            },
+            "D_q3_over_q2_plus_1": {
+              "z": "0.6126880371464652516",
+              "V_hat_full": "1.0802151925176545445",
+              "abs_V_over_q": "0.97318561754592625933",
+              "phi_q": "16728764.777169326529"
+            },
+            "half_h_from_markov_param_eq_half_h": {
+              "z": "0.10453014939781965772",
+              "V_hat_full": "0.67138582439169960187",
+              "abs_V_over_q": "0.60486376478318081439",
+              "phi_q": "1848.4388229263380228"
+            }
+          },
+          "z_star_pole": "0.64968269235614027008",
+          "z_star_pole_negative_branch": "-2.1096316623963894074"
+        },
+        {
+          "gen": 1,
+          "n_factors": 4,
+          "alpha": "-0.31815906470097594751",
+          "beta": "1.0883675333971881894",
+          "dVhat_dz_eq_w_std_alpha": "-0.21287298568813509984",
+          "z_free_part": "1.0773619638284652908",
+          "at": {
+            "C_sqrt_q_over_q_plus_1": {
+              "z": "0.49932033418369445241",
+              "V_hat_full": "0.97107015347598486632",
+              "abs_V_over_q": "0.87485485627022280498",
+              "phi_q": "425757.60447472102691"
+            },
+            "D_q3_over_q2_plus_1": {
+              "z": "0.6126880371464652516",
+              "V_hat_full": "0.94693723206569420683",
+              "abs_V_over_q": "0.85311306612642497118",
+              "phi_q": "240468.20498815022483"
+            },
+            "half_h_from_markov_param_eq_half_h": {
+              "z": "0.10453014939781965772",
+              "V_hat_full": "1.0551103188317246029",
+              "abs_V_over_q": "0.95056817782587260571",
+              "phi_q": "5287345.4408875196555"
+            }
+          },
+          "z_star_pole": "-0.15322103374215730328",
+          "z_star_pole_negative_branch": "10.275331740704578672"
+        }
+      ],
+      "tower_totals": {
+        "C_sqrt_q_over_q_plus_1": {
+          "z": "0.49932033418369445241",
+          "descended": "0.96039540111657644556",
+          "single": "1096978.5786418828042",
+          "cross": "82016.120114626239624",
+          "total": "1178995.6591519101604"
+        },
+        "D_q3_over_q2_plus_1": {
+          "z": "0.6126880371464652516",
+          "descended": "1.0228959844379787858",
+          "single": "16969232.982157476791",
+          "cross": "656993.57566650913487",
+          "total": "17626227.580719970364"
+        },
+        "half_h_from_markov_param_eq_half_h": {
+          "z": "0.10453014939781965772",
+          "descended": "0.70838611123302643167",
+          "single": "5289193.8797104459876",
+          "cross": "34.852703818448581661",
+          "total": "5289229.4408003756692"
+        }
+      },
+      "producer_f64_V_hat_at_D": [
+        "1.0802151925176546",
+        "0.9469372320656941"
+      ],
+      "worst_abs_diff_vs_producer_f64": "1.0683e-16"
+    },
+    {
+      "particle": "neutron",
+      "n_strands": 3,
+      "n_generators": 2,
+      "wedderburn_weights": {
+        "w_sym": "0.16546138503360687748",
+        "w_std": "0.66907722993278624503",
+        "w_alt": "0.16546138503360687748"
+      },
+      "generators": [
+        {
+          "gen": 0,
+          "n_factors": 7,
+          "alpha": "1.0883675333971880885",
+          "beta": "0.31815906470097567431",
+          "dVhat_dz_eq_w_std_alpha": "0.72820193439416982733",
+          "z_free_part": "0.35580722857271637992",
+          "at": {
+            "C_sqrt_q_over_q_plus_1": {
+              "z": "0.49932033418369445241",
+              "V_hat_full": "0.71941326180762600134",
+              "abs_V_over_q": "0.64813256128272899775",
+              "phi_q": "3770.0329787393411123"
+            },
+            "D_q3_over_q2_plus_1": {
+              "z": "0.6126880371464652516",
+              "V_hat_full": "0.8019678424029393552",
+              "abs_V_over_q": "0.7225074923653446604",
+              "phi_q": "14244.12813134608716"
+            },
+            "half_h_from_markov_param_eq_half_h": {
+              "z": "0.10453014939781965772",
+              "V_hat_full": "0.43192628556672022099",
+              "abs_V_over_q": "0.3891302879881471361",
+              "phi_q": "83.546345514207519348"
+            }
+          },
+          "z_star_pole": "1.0356623878046958924",
+          "z_star_pole_negative_branch": "-2.0128837099884427979"
+        },
+        {
+          "gen": 1,
+          "n_factors": 4,
+          "alpha": "-0.31815906470097594751",
+          "beta": "1.0883675333971881894",
+          "dVhat_dz_eq_w_std_alpha": "-0.21287298568813509984",
+          "z_free_part": "1.0773619638284652908",
+          "at": {
+            "C_sqrt_q_over_q_plus_1": {
+              "z": "0.49932033418369445241",
+              "V_hat_full": "0.97107015347598486632",
+              "abs_V_over_q": "0.87485485627022280498",
+              "phi_q": "425757.60447472102691"
+            },
+            "D_q3_over_q2_plus_1": {
+              "z": "0.6126880371464652516",
+              "V_hat_full": "0.94693723206569420683",
+              "abs_V_over_q": "0.85311306612642497118",
+              "phi_q": "240468.20498815022483"
+            },
+            "half_h_from_markov_param_eq_half_h": {
+              "z": "0.10453014939781965772",
+              "V_hat_full": "1.0551103188317246029",
+              "abs_V_over_q": "0.95056817782587260571",
+              "phi_q": "5287345.4408875196555"
+            }
+          },
+          "z_star_pole": "-0.15322103374215730328",
+          "z_star_pole_negative_branch": "10.275331740704578672"
+        }
+      ],
+      "tower_totals": {
+        "C_sqrt_q_over_q_plus_1": {
+          "z": "0.49932033418369445241",
+          "descended": "0.69860074655619026294",
+          "single": "429527.637453460368",
+          "cross": "686.87432164027345885",
+          "total": "430215.21037584719765"
+        },
+        "D_q3_over_q2_plus_1": {
+          "z": "0.6126880371464652516",
+          "descended": "0.75941320889073626299",
+          "single": "254712.33311949631198",
+          "cross": "2645.9691115001276025",
+          "total": "257359.06164420533032"
+        },
+        "half_h_from_markov_param_eq_half_h": {
+          "z": "0.10453014939781965772",
+          "descended": "0.45572988087610470093",
+          "single": "5287428.9872330338571",
+          "cross": "1.208863487087199946",
+          "total": "5287430.6518264018204"
+        }
+      },
+      "producer_f64_V_hat_at_D": [
+        "0.8019678424029394",
+        "0.9469372320656941"
+      ],
+      "worst_abs_diff_vs_producer_f64": "1.0683e-16"
+    }
+  ],
+  "pole_headroom_in_markov_parameter": [
+    {
+      "particle": "electron",
+      "gen": 0,
+      "z_star_over_z_D_minus_1": "1.0212931537634940399"
+    },
+    {
+      "particle": "proton",
+      "gen": 0,
+      "z_star_over_z_D_minus_1": "0.060380900175518384976"
+    },
+    {
+      "particle": "neutron",
+      "gen": 0,
+      "z_star_over_z_D_minus_1": "0.69035842878243943882"
+    }
+  ],
+  "tower_total_D_over_C": {
+    "electron": "3.0025413625558295852",
+    "proton": "14.950205663521346539",
+    "neutron": "0.59821004798823770126"
+  },
+  "checks": [
+    {
+      "name": "mpmath re-run reproduces the f64 producer at convention D",
+      "passed": true,
+      "detail": "worst |diff| = 1.0683e-16"
+    },
+    {
+      "name": "NO generator of this producer is at or past the Phi_q pole under D",
+      "passed": true,
+      "detail": "max |V|/q under D = 0.97318561754592625933; divergent generators: none"
+    },
+    {
+      "name": "the C->D change moves this tower by a finite, reportable factor",
+      "passed": true,
+      "detail": "electron: total_D/total_C = 3.0025413625558295852; proton: total_D/total_C = 14.950205663521346539; neutron: total_D/total_C = 0.59821004798823770126"
+    },
+    {
+      "name": "REPORT the headroom rather than only 'not divergent'",
+      "passed": true,
+      "detail": "tightest: z* is 6.0380900175518384976 % above z_D"
+    },
+    {
+      "name": "the C->D move is NOT uniform in direction across particles",
+      "passed": true,
+      "detail": "{'electron': 'up', 'proton': 'up', 'neutron': 'down'} \u2014 a generator with negative dV/dz moves the opposite way, so 'D is larger, so towers grow' is wrong as a general reading"
+    }
+  ],
+  "all_checks_passed": true,
+  "scriptFile": "tower_z_convention_pole_sensitivity_probe.py",
+  "scriptHash": "f473f9909cd7",
+  "scriptCommitSha": "unknown",
+  "commitSha": "3a7b46f752ef6594e0cba4a7c160faf68d39b93c",
+  "engine": "python",
+  "computedAt": "2026-08-29T08:43:18.043676+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,337 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T16:31:51.002038+00:00",
+  "commitSha": "914a13857e33611d501672d17a4c5fc0f95be10d",
+  "assertions": [
+    {
+      "name": "coefficient_lock_holds",
+      "computed": "2.13821e-50",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "beta2 == -6 - 2*h_A^2, identically in q"
+    },
+    {
+      "name": "mean_abs_error_under_one_tenth_percent",
+      "computed": "0.074592501",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.1",
+      "unit": "percent",
+      "source": "AME2020; reported only, never used to choose a coefficient"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "wedderburn-mass-table-z1-20",
+  "scriptFile": "wedderburn_mass_table_z1_20.py",
+  "scriptHash": "abfacd3d5e6c",
+  "scriptCommitSha": "dc17437c90d9279352b9ef02271456fa4560b2eb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/wedderburn_mass_table_z1_20.py"
+    ],
+    "reproduce": "python3 -u computations/wedderburn_mass_table_z1_20.py"
+  },
+  "description": "Z=1-20 atomic masses from thm:wedderburn-mass-formula evaluated at the proton-pin q0 on the Wedderburn invariants recorded in the recovered atom-mass-complete-wedderburn witness. Replaces a published table that was computed with an unattributed third coefficient (beta3=0.0499).",
+  "contentBlock": "tbl:mass-table-z1-20-table-data",
+  "parameters": {
+    "q0": "1.1099785827513808076",
+    "q0_anchor": "physical_proton",
+    "m_e_MeV": "0.510999",
+    "m_p_MeV": "938.230457",
+    "m_n_MeV": "939.532005",
+    "alpha": "3.7444600212717179158",
+    "beta2": "-6.0874124170650439788",
+    "h_A_squared": "0.043706208532521989402",
+    "fitted_parameters": 0,
+    "upstream_invariants_source": "folio-assistant/computations/atom-mass-complete-wedderburn.witness.json@1359fe23ac"
+  },
+  "data": {
+    "results": [
+      {
+        "element": "H",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "M_pred_MeV": "938.885950714",
+        "M_obs_MeV": "938.78313",
+        "delta_MeV": "0.10282071",
+        "delta_pct": "0.0109526",
+        "M_published_superseded": "938.910",
+        "shift_from_published_MeV": "-0.024049286"
+      },
+      {
+        "element": "He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "M_pred_MeV": "3734.63852011",
+        "M_obs_MeV": "3728.4013",
+        "delta_MeV": "6.2372201",
+        "delta_pct": "0.167289",
+        "M_published_superseded": "3734.624",
+        "shift_from_published_MeV": "0.014520110"
+      },
+      {
+        "element": "Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "M_pred_MeV": "6534.23201681",
+        "M_obs_MeV": "6535.367",
+        "delta_MeV": "-1.1349832",
+        "delta_pct": "-0.0173668",
+        "M_published_superseded": "6534.188",
+        "shift_from_published_MeV": "0.044016807"
+      },
+      {
+        "element": "Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "M_pred_MeV": "8378.77193865",
+        "M_obs_MeV": "8394.7937",
+        "delta_MeV": "-16.021761",
+        "delta_pct": "-0.190854",
+        "M_published_superseded": "8378.704",
+        "shift_from_published_MeV": "0.067938651"
+      },
+      {
+        "element": "B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "M_pred_MeV": "10237.3975800",
+        "M_obs_MeV": "10255.103",
+        "delta_MeV": "-17.705420",
+        "delta_pct": "-0.172650",
+        "M_published_superseded": "10237.301",
+        "shift_from_published_MeV": "0.096580049"
+      },
+      {
+        "element": "C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "M_pred_MeV": "11168.9752231",
+        "M_obs_MeV": "11177.9292",
+        "delta_MeV": "-8.9539769",
+        "delta_pct": "-0.0801041",
+        "M_published_superseded": "11168.874",
+        "shift_from_published_MeV": "0.10122308"
+      },
+      {
+        "element": "N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "M_pred_MeV": "13030.1182814",
+        "M_obs_MeV": "13043.7816",
+        "delta_MeV": "-13.663319",
+        "delta_pct": "-0.104750",
+        "M_published_superseded": "13029.983",
+        "shift_from_published_MeV": "0.13528141"
+      },
+      {
+        "element": "O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "M_pred_MeV": "14890.8756652",
+        "M_obs_MeV": "14899.1693",
+        "delta_MeV": "-8.2936348",
+        "delta_pct": "-0.0556651",
+        "M_published_superseded": "14890.701",
+        "shift_from_published_MeV": "0.17466523"
+      },
+      {
+        "element": "F",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "M_pred_MeV": "17691.0534898",
+        "M_obs_MeV": "17696.901",
+        "delta_MeV": "-5.8475102",
+        "delta_pct": "-0.0330426",
+        "M_published_superseded": "17690.792",
+        "shift_from_published_MeV": "0.26148977"
+      },
+      {
+        "element": "Ne",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "M_pred_MeV": "18615.4850487",
+        "M_obs_MeV": "18622.8354",
+        "delta_MeV": "-7.3503513",
+        "delta_pct": "-0.0394696",
+        "M_published_superseded": "18615.219",
+        "shift_from_published_MeV": "0.26604871"
+      },
+      {
+        "element": "Na",
+        "Z": 11,
+        "N": 12,
+        "A": 23,
+        "M_pred_MeV": "21418.6282764",
+        "M_obs_MeV": "21414.8301",
+        "delta_MeV": "3.7981764",
+        "delta_pct": "0.0177362",
+        "M_published_superseded": "21418.256",
+        "shift_from_published_MeV": "0.37227637"
+      },
+      {
+        "element": "Mg",
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "M_pred_MeV": "22343.0350807",
+        "M_obs_MeV": "22341.908",
+        "delta_MeV": "1.1270807",
+        "delta_pct": "0.00504469",
+        "M_published_superseded": "22342.658",
+        "shift_from_published_MeV": "0.37708070"
+      },
+      {
+        "element": "Al",
+        "Z": 13,
+        "N": 14,
+        "A": 27,
+        "M_pred_MeV": "25143.6519555",
+        "M_obs_MeV": "25133.1432",
+        "delta_MeV": "10.508756",
+        "delta_pct": "0.0418123",
+        "M_published_superseded": "25143.149",
+        "shift_from_published_MeV": "0.50295553"
+      },
+      {
+        "element": "Si",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "M_pred_MeV": "26068.4264737",
+        "M_obs_MeV": "26060.3443",
+        "delta_MeV": "8.0821737",
+        "delta_pct": "0.0310133",
+        "M_published_superseded": "26067.918",
+        "shift_from_published_MeV": "0.50847366"
+      },
+      {
+        "element": "P",
+        "Z": 15,
+        "N": 16,
+        "A": 31,
+        "M_pred_MeV": "28873.3491858",
+        "M_obs_MeV": "28851.873",
+        "delta_MeV": "21.476186",
+        "delta_pct": "0.0744360",
+        "M_published_superseded": "28872.696",
+        "shift_from_published_MeV": "0.65318576"
+      },
+      {
+        "element": "S",
+        "Z": 16,
+        "N": 16,
+        "A": 32,
+        "M_pred_MeV": "29797.8453448",
+        "M_obs_MeV": "29781.8",
+        "delta_MeV": "16.045345",
+        "delta_pct": "0.0538763",
+        "M_published_superseded": "29797.187",
+        "shift_from_published_MeV": "0.65834482"
+      },
+      {
+        "element": "Cl",
+        "Z": 17,
+        "N": 18,
+        "A": 35,
+        "M_pred_MeV": "32598.7361948",
+        "M_obs_MeV": "32573.283",
+        "delta_MeV": "25.453195",
+        "delta_pct": "0.0781413",
+        "M_published_superseded": "32597.913",
+        "shift_from_published_MeV": "0.82319476"
+      },
+      {
+        "element": "Ar",
+        "Z": 18,
+        "N": 22,
+        "A": 40,
+        "M_pred_MeV": "37275.0016583",
+        "M_obs_MeV": "37224.719",
+        "delta_MeV": "50.282658",
+        "delta_pct": "0.135079",
+        "M_published_superseded": "37273.796",
+        "shift_from_published_MeV": "1.2056583"
+      },
+      {
+        "element": "K",
+        "Z": 19,
+        "N": 20,
+        "A": 39,
+        "M_pred_MeV": "36325.6366816",
+        "M_obs_MeV": "36294.464",
+        "delta_MeV": "31.172682",
+        "delta_pct": "0.0858883",
+        "M_published_superseded": "36324.625",
+        "shift_from_published_MeV": "1.0116816"
+      },
+      {
+        "element": "Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "M_pred_MeV": "37249.7551939",
+        "M_obs_MeV": "37213.777",
+        "delta_MeV": "35.978194",
+        "delta_pct": "0.0966798",
+        "M_published_superseded": "37248.739",
+        "shift_from_published_MeV": "1.0161939"
+      }
+    ],
+    "summary": {
+      "n_atoms": 20,
+      "mean_abs_pct": "0.074592501",
+      "max_abs_pct": "0.19085354",
+      "max_shift_from_published_MeV": "1.2056583"
+    },
+    "coefficient_lock": {
+      "identity": "[3]_q - 3 == (q - 1/q)^2, hence beta2 == -6 - 2*h_A^2",
+      "residual": "2.13821e-50",
+      "superseded_beta3": "0.0499",
+      "beta2_that_0.0499_would_force": "-6.09980000000",
+      "beta2_recorded_by_producer": "-6.087415",
+      "note": "the producer's recorded beta2 agrees with the PUBLISHED h_A^2, not with its own beta3 -- the superseded witness contradicts its third coefficient in its own arithmetic"
+    },
+    "codata_base_mass_delta": {
+      "delta_m_p_MeV": "0.041631160",
+      "delta_m_n_MeV": "0.033415520",
+      "shift_at_Ca40_MeV": "1.5009336",
+      "note": "NOT applied; a separate defect from the coefficient, left as recorded"
+    }
+  },
+  "caveats": [
+    "Phi_1/Phi_2/Phi_3 are carried verbatim from the recovered witness at 1359fe23ac; this script evaluates the closed form on them and does not re-derive the invariants.",
+    "Base masses are the producer's recorded values, 44/36 ppm below CODATA. Not corrected here; see codata_base_mass_delta."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

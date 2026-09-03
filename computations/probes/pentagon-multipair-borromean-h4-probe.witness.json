@@ -1,7 +1,7 @@
 {
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
   "compute": "pentagon_multipair_borromean_h4_probe",
-  "computedAt": "2026-08-23T09:26:04.985029+00:00",
+  "computedAt": "2026-08-25T01:18:14.808387+00:00",
   "description": "T2b: multi-pair Pentagon-sum for the Borromean braid h\u2074 coefficient. Single-pair (T2, commit 49839f96) was NEGATIVE; this probe tests 6 weighting schemes \u00d7 4 (u,v) lifts (24 configurations). Matches indicate candidate Pentagon \u2192 -3/4 lifting; none indicates the categorical chain requires deeper machinery.",
   "durationMs": 0,
   "engine": "mpmath",
@@ -48,12 +48,12 @@
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "results": [
     {
-      "abs_diff": 0.7517517082457047,
-      "c_4": 0.0017517082457047244,
+      "abs_diff": 0.7585267136700555,
+      "c_4": 0.008526713670055528,
       "lift": "small_uniform",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 100.23356109942729,
+      "relative_diff_pct": 101.1368951560074,
       "scheme": "uniform",
       "target": -0.75,
       "weights": {
@@ -63,12 +63,12 @@
       }
     },
     {
-      "abs_diff": 0.7535034164914094,
-      "c_4": 0.003503416491409449,
+      "abs_diff": 0.7670534273401111,
+      "c_4": 0.017053427340111057,
       "lift": "small_uniform",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 100.4671221988546,
+      "relative_diff_pct": 102.27379031201481,
       "scheme": "generator_weighted",
       "target": -0.75,
       "weights": {
@@ -93,12 +93,12 @@
       }
     },
     {
-      "abs_diff": 0.7514597568714206,
-      "c_4": 0.0014597568714206036,
+      "abs_diff": 0.7571055947250462,
+      "c_4": 0.007105594725046273,
       "lift": "small_uniform",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 100.19463424952275,
+      "relative_diff_pct": 100.94741263000617,
       "scheme": "strand_distance",
       "target": -0.75,
       "weights": {
@@ -108,12 +108,12 @@
       }
     },
     {
-      "abs_diff": 0.7517517082457047,
-      "c_4": 0.0017517082457047244,
+      "abs_diff": 0.7585267136700555,
+      "c_4": 0.008526713670055528,
       "lift": "small_uniform",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 100.23356109942729,
+      "relative_diff_pct": 101.1368951560074,
       "scheme": "jones_coefficient",
       "target": -0.75,
       "weights": {
@@ -123,12 +123,12 @@
       }
     },
     {
-      "abs_diff": 0.7599263467256601,
-      "c_4": 0.009926346725660104,
+      "abs_diff": 0.7983180441303147,
+      "c_4": 0.04831804413031466,
       "lift": "small_uniform",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 101.32351289675468,
+      "relative_diff_pct": 106.44240588404196,
       "scheme": "borromean_squared_minus_third",
       "target": -0.75,
       "weights": {
@@ -228,12 +228,12 @@
       }
     },
     {
-      "abs_diff": 0.7577950409830385,
-      "c_4": 0.0077950409830384775,
+      "abs_diff": 0.7761084175942204,
+      "c_4": 0.02610841759422046,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 101.03933879773847,
+      "relative_diff_pct": 103.48112234589605,
       "scheme": "uniform",
       "target": -0.75,
       "weights": {
@@ -243,12 +243,12 @@
       }
     },
     {
-      "abs_diff": 0.7729528497652216,
-      "c_4": 0.02295284976522158,
+      "abs_diff": 0.8274590316716945,
+      "c_4": 0.07745903167169449,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 103.06037996869621,
+      "relative_diff_pct": 110.32787088955926,
       "scheme": "generator_weighted",
       "target": -0.75,
       "weights": {
@@ -259,7 +259,7 @@
     },
     {
       "abs_diff": 0.75,
-      "c_4": 2.3685498860313645e-64,
+      "c_4": -5.059038591523303e-65,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
@@ -273,12 +273,12 @@
       }
     },
     {
-      "abs_diff": 0.7577229954523895,
-      "c_4": 0.0077229954523895025,
+      "abs_diff": 0.7759640474090593,
+      "c_4": 0.02596404740905931,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 101.02973272698527,
+      "relative_diff_pct": 103.46187298787457,
       "scheme": "strand_distance",
       "target": -0.75,
       "weights": {
@@ -288,12 +288,12 @@
       }
     },
     {
-      "abs_diff": 0.7651578087821831,
-      "c_4": 0.015157808782183105,
+      "abs_diff": 0.801350614077474,
+      "c_4": 0.05135061407747404,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 102.02104117095774,
+      "relative_diff_pct": 106.84674854366321,
       "scheme": "jones_coefficient",
       "target": -0.75,
       "weights": {
@@ -303,12 +303,12 @@
       }
     },
     {
-      "abs_diff": 0.8187144582343668,
-      "c_4": 0.0687144582343668,
+      "abs_diff": 0.9820883546447612,
+      "c_4": 0.23208835464476119,
       "lift": "asymmetric_z",
       "matches_within_20pct": false,
       "matches_within_5pct": false,
-      "relative_diff_pct": 109.16192776458225,
+      "relative_diff_pct": 130.9451139526348,
       "scheme": "borromean_squared_minus_third",
       "target": -0.75,
       "weights": {
@@ -408,9 +408,9 @@
       }
     }
   ],
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
   "scriptFile": "pentagon_multipair_borromean_h4_probe.py",
-  "scriptHash": "2e16f0b4ffe0",
+  "scriptHash": "3a0e0b4e1952",
   "status": "exploratory",
   "summary": {
     "verdict": "NEGATIVE: no multi-pair sum matches -3/4 within 5%. The categorical Pentagon \u2192 -3/4 chain requires more structure than 3-pair Pentagon residual summation. Candidate next steps: (a) Pachner-coherent state-sum via 8 ideal octahedra; (b) Ding-Iohara-Miki master Pentagon; (c) Habiro cyclotomic expansion of colored Jones J_N(B_3) (see docs/audits/2026-05-24-pentagon-identity-broad-context.md \u00a74 for the four candidate routes)."

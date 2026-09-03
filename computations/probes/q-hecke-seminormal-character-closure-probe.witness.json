@@ -1,24 +1,24 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:27:47.097853+00:00",
-  "commitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
+  "computedAt": "2026-08-29T11:23:12.807963+00:00",
+  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
   "assertions": [
     {
       "name": "partition_sum_equals_recursive_reducer",
-      "computed": 2.3185571113579718e-30,
+      "computed": "2.318557111357971772035545985982162928155029111514092274926147283400675e-30",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "unit": "max over 5 test braids of |Σ_λ y_λ(q_0)·χ_λ(β) − tr_M(β) via recursive reducer|",
       "source": "Wedderburn-Artin decomposition H_n(q) ≅ ⊕_λ M_{f^λ}(ℂ) combined with Wenzl 1988 Schur principal specialization for y_λ(q)."
     }
   ],
   "allPassed": true,
-  "durationMs": 729,
+  "durationMs": 493,
   "computation": "q-hecke-seminormal-character-closure-probe",
   "scriptFile": "q_hecke_seminormal_character_closure_probe.py",
-  "scriptHash": "de197e9da17d",
+  "scriptHash": "d8898e804a79",
   "scriptCommitSha": "789481516761c41a7310863b11172b81af3b6707",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -31,9 +31,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
   "invocation": {
     "argv": [
@@ -208,5 +209,7 @@
         ]
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T11:26:04.363685+00:00",
-  "commitSha": "e9fbe11073c65d0e8481b07291e36ac9683bae0b",
+  "computedAt": "2026-08-30T09:29:49.596377+00:00",
+  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "assertions": [
     {
       "name": "genus1_curvature_form_coefficient",
@@ -13,8 +13,8 @@
     },
     {
       "name": "omega_hyp_scale_invariant_under_5tau",
-      "computed": "1",
-      "expected": "1",
+      "computed": true,
+      "expected": true,
       "passed": true,
       "source": "pullback of dx∧dy/y² under (x,y)↦(5x,5y): Jacobian 25 cancels (5y)²/y² — multiplicity bookkeeping over the (5τ,5τ,5τ,τ) fibres is exact"
     },
@@ -40,20 +40,27 @@
       "source": "3(n+1)²−1 = 8 ⇒ (n+1)² = 3: no integer solution (sympy solve over ℤ) — no single AGMV spin weight is 8; only sums reach 8, and the structurally-suggested one (4 scalar factors) is 2g = b₁ in disguise"
     },
     {
+      "name": "prune_sqrt3_irrational_over_Q",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "source": "the same prune stated over ℚ rather than ℤ: (n+1)² = 3 forces n+1 = ±√3, and √3 ∉ ℚ, so the miss is not an artefact of restricting the solve to integers"
+    },
+    {
       "name": "curvature_numeric_at_bring_tau0",
       "computed": "-14.348054954552774683",
       "expected": "-14.348054954552774683",
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "mpmath finite-difference quarter-Laplacian of log[(Im τ)²|η|⁴] at the Bring τ₀ = −0.5 + 0.186676i"
     }
   ],
   "allPassed": true,
-  "durationMs": 2444,
+  "durationMs": 1257,
   "computation": "alpha-em-r2-quillen-curvature-probe",
   "scriptFile": "alpha_em_r2_quillen_curvature_probe.py",
-  "scriptHash": "7366339fe196",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "92f6bcae1736",
+  "scriptCommitSha": "8a7bf94489a6f7d1a4a0eec2880ef212c71e4b88",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,12 +70,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_em_r2_quillen_curvature_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_em_r2_quillen_curvature_probe.py"
   },
   "description": "α_EM R2 Quillen-curvature attack (bean qou-jkcx; DERIVATION-ONLY; owner ruling 2026-07-19 stands: R2 NOT proved, 1/(8π) stays phase-4, NOTHING wires). Executes the §5 proposal of the 2026-07-25 Quillen classification: test whether 1/(8π) is a determinant-line CURVATURE coefficient over the Bring Jacobian family Jac(Bring) ≅ E_{5τ}³ × E_τ. Building block (exact): c₁(L_τ) = −(1/2π)·ω_hyp per elliptic factor (AGMV 4.18 × the verified −1/(2y²)); ω_hyp scale-invariant under τ↦5τ so the (3,1) multiplicities pull back cleanly. Candidate table (exact rational × 1/π, no tolerance): unit-multiplicity product 2/π (MISS ×16); isogeny-weights (5,5,5,1) 8/π (MISS ×64); per-real-mode (÷b₁=8) = 1/(4π) = a₀ EXACTLY (MISS ×2 — the Quillen route independently reproduces the derived heat-kernel unit; the residual 2 is the known open ½, #3925); per-mode on the complexified doubled pair (÷16) = 1/(8π) MATCH but the divisor is the R2-core premise itself; Belavin–Knizhnik WP coefficient with scalar content 8/(64π) = 1/(8π) MATCH but n=0 is unforced (photon spin-1 content gives 13/(8π) or 11/(16π), both MISS) and Σ = 4·2 = 2g = b₁ is the count in disguise under AGMV's WP convention. Prune: no integer n has 3(n+1)²−1 = 8. The forced even/Szegő characteristic (A6) is curvature-coefficient-blind (AGMV: S_L, U_WP reference no characteristic) — it cannot carry the 1/8. VERDICT: shape-compatible, selection-dependent — NOT derived; every exact match needs exactly one unforced choice restating R2's known open content. MISMATCH FINDING: R2-core's object is a Schwinger proper-time measure normalization, not a determinant-line quantity; the curvature attack can reproduce a₀ and relocate the ½, not derive it. Scope-(a); NO FIT; audit-only; nothing wired.",
   "auditOnly": "docs/audits/2026-07-25-alpha-em-r2-quillen-curvature-attack.md",
   "data": {
+    "spin_weight_prune": {
+      "integer_solutions": [],
+      "sqrt3_is_rational": false
+    },
     "target_object_statement": {
       "R2_core": "the loop expansion weighs proper time by the standard Schwinger measure with unit normalization — one per-mode unit on the doubled pair (OPEN; owner ruling 2026-07-19)",
       "working_coefficient": "½·a₀ = 1/(8π), a₀ = 1/(4π) heat-kernel (derived #3909)",

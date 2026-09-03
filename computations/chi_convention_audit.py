@@ -138,7 +138,33 @@ PRODUCER_CONVENTION: dict[str, str] = {
     # left to `chi_convention_from_values_audit`, which measures rather than
     # asserts.
     "chi_at_q0_via_hoefsmit_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
-    "chi_at_q_inv_via_native_mpfr.py": AVERAGED,
+    # Same word-dependence as the Hoefsmit producer above, for the same
+    # reason, plus a second axis: as of bean qou-1oxx this producer emits BOTH
+    # frames on every run -- `chi-{atom}-h{n}-at-qinv-50dps` (colour-blind, the
+    # bar-symmetriser) and `...-colour-weighted` (canonical, R3) -- so a single
+    # constant cannot express it either. Asserting AVERAGED here flagged all
+    # three new colour-weighted witnesses as CRITICAL mismatches against a
+    # label the producer had DERIVED by counting weighted crossings in the
+    # word. Both are accepted.
+    #
+    # The deferral this MIRRORS is now real. It was NOT when the acceptance
+    # was first widened: `chi_convention_from_values_audit` hardcoded
+    # `chi-{atom}-h{n}-at-q0-50dps` and never opened an `-at-qinv-` witness,
+    # so for a while this file asserted a coverage that did not exist. Closed
+    # by bean qou-awwk -- that audit now takes `--point {q0,qinv}` (default
+    # both) and measures BOTH qinv variants, blind and colour-weighted.
+    #
+    # Measured there, the discrimination at the bar point is DECISIVE: the
+    # matching convention lands at ~1e-49 against ~1e-2 for the other, six to
+    # seven orders apart, so the extension is a real check and not a vacuous
+    # pass. All nine rows for D/T/3He AGREE.
+    #
+    # helium-4 stays out of that audit's DEFAULT set, as it always has: H_12
+    # costs a kernel run per convention per witness, ~11 min each. Run it
+    # explicitly with `--atom helium-4` when a helium-4 label is in question.
+    # The `-colour-weighted` suffix is also why COMPUTATION_PATTERNS does not
+    # catch these: its qinv regex is `$`-anchored on `-at-qinv-50dps`.
+    "chi_at_q_inv_via_native_mpfr.py": {AVERAGED, COLOUR_WEIGHTED},
     # symbolic + numeric catalogue (same full-canonical-word as Hoefsmit):
     # value-confirmed averaged — deuteron symbolic χ^(6) @q0 = 1.5598
     # matches the averaged numerical cache (1.5599), NOT sign-only (11.02).
@@ -257,7 +283,14 @@ def classify(path: Path) -> dict:
         "path": path.name,
         "computation": comp,
         "declared": declared,
-        "expected": expected,
+        # SORTED when it is a set. A bare `set` reprs in iteration order, which
+        # is not stable across runs, so this field churned the witness on every
+        # run with no change of meaning -- one diff line per multi-convention
+        # producer, purely from hash ordering. Two producers now carry sets
+        # (Hoefsmit q0, and the qinv driver as of bean qou-1oxx), so the churn
+        # was about to double.
+        "expected": (sorted(expected) if isinstance(expected, (set, frozenset))
+                     else expected),
         "expected_basis": basis,
         "producer": _producer_field(w),
         "status": status,

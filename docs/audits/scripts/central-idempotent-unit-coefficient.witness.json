@@ -1,0 +1,236 @@
+{
+  "probe": "central_idempotent_unit_coefficient",
+  "bean": "qou-09e0",
+  "question": "is tau(e_lambda) != 0 for every central primitive idempotent of H_n(q)? equivalently: is the symmetrizing trace form non-degenerate on Z(H_n(q))?",
+  "convention": "AGENTS.md 7a, sigma^2 = (q - q^-1) sigma + 1; tau = coefficient of T_e",
+  "arithmetic": "exact only (Fraction over QQ, and F_p with p = 2^61-1); no float64 anywhere",
+  "specialisation_direction": "rank B(q0) <= rank B(q) generically, so FULL rank at a specialisation forces full rank generically -- the direction this exclusion needs",
+  "runs": [
+    {
+      "n": 2,
+      "q": "7/3",
+      "field": "QQ (Fraction)",
+      "dim_Z": 2,
+      "p_n": 2,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 2,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 2,
+      "q": "2",
+      "field": "QQ (Fraction)",
+      "dim_Z": 2,
+      "p_n": 2,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 2,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 2,
+      "q": "11/5",
+      "field": "QQ (Fraction)",
+      "dim_Z": 2,
+      "p_n": 2,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 2,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 2,
+      "q": "7/3",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 2,
+      "p_n": 2,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 2,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 2,
+      "q": "5",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 2,
+      "p_n": 2,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 2,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 3,
+      "q": "7/3",
+      "field": "QQ (Fraction)",
+      "dim_Z": 3,
+      "p_n": 3,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 3,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 3,
+      "q": "2",
+      "field": "QQ (Fraction)",
+      "dim_Z": 3,
+      "p_n": 3,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 3,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 3,
+      "q": "11/5",
+      "field": "QQ (Fraction)",
+      "dim_Z": 3,
+      "p_n": 3,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 3,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 3,
+      "q": "7/3",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 3,
+      "p_n": 3,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 3,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 3,
+      "q": "5",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 3,
+      "p_n": 3,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 3,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 4,
+      "q": "7/3",
+      "field": "QQ (Fraction)",
+      "dim_Z": 5,
+      "p_n": 5,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 5,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 4,
+      "q": "2",
+      "field": "QQ (Fraction)",
+      "dim_Z": 5,
+      "p_n": 5,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 5,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 4,
+      "q": "11/5",
+      "field": "QQ (Fraction)",
+      "dim_Z": 5,
+      "p_n": 5,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 5,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 4,
+      "q": "7/3",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 5,
+      "p_n": 5,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 5,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 4,
+      "q": "5",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 5,
+      "p_n": 5,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 5,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 5,
+      "q": "7/3",
+      "field": "QQ (Fraction)",
+      "dim_Z": 7,
+      "p_n": 7,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 7,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 5,
+      "q": "2",
+      "field": "QQ (Fraction)",
+      "dim_Z": 7,
+      "p_n": 7,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 7,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 5,
+      "q": "11/5",
+      "field": "QQ (Fraction)",
+      "dim_Z": 7,
+      "p_n": 7,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 7,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 5,
+      "q": "7/3",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 7,
+      "p_n": 7,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 7,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    },
+    {
+      "n": 5,
+      "q": "5",
+      "field": "F_p (p = 2^61 - 1)",
+      "dim_Z": 7,
+      "p_n": 7,
+      "dim_Z_eq_p_n": true,
+      "rank_trace_form_on_Z": 7,
+      "trace_form_nondegenerate_on_Z": true,
+      "all_idempotents_touch_T_e": true
+    }
+  ],
+  "dual_basis_selfcheck_n3": {
+    "claim": "tau(T_u T_v) = delta_{u, v^{-1}}",
+    "violations": 0,
+    "ok": true
+  },
+  "verdict": "CONFIRMED: at every n and every specialisation tested, the symmetrizing trace form is non-degenerate on Z(H_n(q)); equivalently tau(e_lambda) != 0 for every lambda |- n, i.e. T_e is in the support of every central primitive idempotent."
+}

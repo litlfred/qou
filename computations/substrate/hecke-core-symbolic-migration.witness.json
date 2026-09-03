@@ -1,0 +1,141 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:46:19.591791+00:00",
+  "commitSha": "75b9a9dd8b2e022bf8841d39dcbae43bdd000968",
+  "assertions": [
+    {
+      "name": "nf_basis_agrees_to_float64_floor",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "markov_trace_agrees_to_float64_floor",
+      "computed": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "name": "regenerated_at_canonical_proton_pin",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 11349,
+  "computation": "hecke-core-symbolic-migration",
+  "scriptFile": "hecke_core_symbolic_migration.py",
+  "scriptHash": "8fb176633302",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/hecke_core_symbolic_migration.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/hecke_core_symbolic_migration.py"
+  },
+  "description": "Track-A migration check: hecke_core.py (NUMERICAL fast path, q0 substituted at import so every quantity is float64 from module load) against hecke_core_symbolic.py (parallel SYMBOLIC-in-q module), quantity by quantity. REGENERATED 2026-08-30 by its first producer (bean qou-nro6): the committed witness was hand-written, its own scriptFile read '(legacy -- no matching producer found)', and the producer-resolution audit confirmed nothing wrote it -- while TWO content manifests name it in computation.witness as a maintenance contract. It was also computed at the RETIRED CODATA-2018 muon pin 1.1099785955541805; this runs at the canonical proton pin, so numbers move by roughly the mu-p separation and anything beyond that is a transcription error worth finding.",
+  "data": {
+    "side_by_side_nf_basis": [
+      {
+        "basis_idx": 0,
+        "numerical_f64": "1.01879530385178759999999999999999999999999999999999958209323",
+        "symbolic_at_q0_50dps": "1.01879530385178740868356912019794899867090860503334573400140",
+        "abs_delta": "0.000000000000000191316430879802051001329091394966653848091829495173765975550"
+      },
+      {
+        "basis_idx": 1,
+        "numerical_f64": "0.0868803339084083699999999999999999999999999999999999323792868",
+        "symbolic_at_q0_50dps": "0.0868803339084083541515087168812599350432715768923751123897951",
+        "abs_delta": "0.0000000000000000158484912831187400649567284231076248199894916652452085567833"
+      },
+      {
+        "basis_idx": 2,
+        "numerical_f64": "-0.0921880535371237699999999999999999999999999999999999314283484",
+        "symbolic_at_q0_50dps": "-0.0921880535371237410365402315597637532098443800972798855602202",
+        "abs_delta": "0.0000000000000000289634597684402362467901556199027200458681281656606016223266"
+      },
+      {
+        "basis_idx": 3,
+        "numerical_f64": "-0.0699626098246033999999999999999999999999999999999999366284284",
+        "symbolic_at_q0_50dps": "-0.0699626098246033572595798009484778219049814790255323799296724",
+        "abs_delta": "0.0000000000000000427404201990515221780950185209744675566987559262036387016122"
+      },
+      {
+        "basis_idx": 4,
+        "numerical_f64": "0.0164565446523434119999999999999999999999999999999999873467980",
+        "symbolic_at_q0_50dps": "0.0164565446523434037189618773454267903323526744211057405400414",
+        "abs_delta": "0.00000000000000000828103812265457320966764732557889424680675656020830069180750"
+      },
+      {
+        "basis_idx": 5,
+        "numerical_f64": "0.218297370263564299999999999999999999999999999999999885306020",
+        "symbolic_at_q0_50dps": "0.218297370263564208497863356640143983510927547866930407999569",
+        "abs_delta": "0.0000000000000000915021366433598560164890724521330694773064515264940814570641"
+      }
+    ],
+    "markov_trace": {
+      "numerical_f64": "1.14633769063500529999999999999999999999999999999999878093039",
+      "symbolic_at_q0_50dps": "1.04566514740990891131103840952272517745750441471670451900479",
+      "abs_delta": "0.100672543225096388688961590477274822542495585283294343410337"
+    },
+    "v_full": {
+      "numerical_f64": "1.08021519251765497006631436597900264637576972664740078005361",
+      "symbolic_at_q0_50dps": "1.08021519251765457628831820889929077766603142045543093000747",
+      "abs_delta": "0.000000000000000393777996157079711868709738306191969850046146963331890989789",
+      "committed_witness_recorded_delta": "1.1155095220750846",
+      "note": "the committed witness recorded a V_full delta of 1.1155 -- the two paths did not agree on this quantity when it was written either. Measured and reported, not asserted."
+    },
+    "alpha_em_inv": {
+      "numerical_f64": "137.035935093975600000000000000000000000000000000000070581039",
+      "symbolic_at_q0_50dps": "137.035933577995534986378652814456879171105662229630049999560",
+      "abs_delta": "0.00000151598006501362134718554312082889433777037002058147941493774"
+    },
+    "anchor_change": {
+      "committed_witness_q0": "1.1099785955541805",
+      "committed_anchor": "CODATA-2018 muon derivation -- retired by the 2026-08-22 owner ruling (CODATA 2022) and not the canonical pin for new compute in any case",
+      "this_run_q0": "1.1099785827513808",
+      "this_anchor": "proton (owner directive 2026-08-07)"
+    },
+    "manifest_producer_conflict": {
+      "witness_is_named_by": {
+        "mba-step02-gs-reduction.ts": {
+          "engine": "rust",
+          "script": "tools/hecke-engine/src/gb_nf_reducer.rs"
+        },
+        "e-hartree-categorical-derivation.ts": {
+          "engine": "sympy",
+          "script": "computations/substrate/hecke_core.py"
+        }
+      },
+      "problem": "two manifests name DIFFERENT producers for the same witness, and neither named file mentions it. The sympy claim is closer -- this IS a sympy-vs-float64 comparison -- but it names the NUMERICAL module, only one of the two sides compared.",
+      "resolved_here": false,
+      "reason": "correcting a manifest is a content edit; it belongs with the author, not with this producer."
+    },
+    "precision_note": {
+      "numerical_side": "float64 BY CONSTRUCTION -- that is the property under test, not a defect, and it is why deltas sit at ~1e-16 rather than at 50 dps",
+      "symbolic_side": "evalf_at_q0 at 50 dps",
+      "deltas": "computed in mpmath, serialized with _precision.fmt"
+    },
+    "checks_failed": 2
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "regenerated at the canonical proton pin (owner directive 2026-08-07). The committed witness used the RETIRED CODATA-2018 muon derivation 1.1099785955541805; the anchor change is deliberate and its effect on the numbers is the point."
+}

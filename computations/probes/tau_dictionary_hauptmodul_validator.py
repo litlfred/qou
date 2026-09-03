@@ -233,20 +233,31 @@ def main():
          rate_halfshift, None, "strawman"),
     ]
 
+    # Both cross-candidate checks below used to be bare `assert`s here, and a
+    # bare assert is the reason the witness carried `computed="stable",
+    # expected="stable"`: on the only run where the check matters — one where a
+    # verdict flips — the script dies before `wb.save()` and the witness does
+    # not exist at all, so the constant had to stand in for it on every run
+    # where it did not. Both outcomes are collected instead, published, and
+    # enforced after the witness is written (see the end of `main`). A flip now
+    # produces a red witness AND a non-zero exit, not silence.
     results = {}
+    pin_verdict_sets: dict[str, list[str]] = {}   # q0-dependent candidates only
     print("\nCANDIDATE VERDICTS (both q0 pins where the map depends on q0):")
     for key, formula, fmap, fixed_tau, tier in candidates:
         if fmap is None:
             res = {"pin-independent": gate(fixed_tau)}
         else:
             res = {"muon-pin": gate(fmap(q0_mu)), "proton-pin": gate(fmap(q0_p))}
-            verdicts = {r["verdict"] for r in res.values()}
-            assert len(verdicts) == 1, f"{key}: verdict flips across q0 pins: {verdicts}"
+            pin_verdict_sets[key] = sorted({r["verdict"] for r in res.values()})
         results[key] = {"formula": formula, "tier": tier, "results": res}
         for pin, r in res.items():
             extra = (f"  t5 = {r['t5']}  |t5+10| = {r['abs_residual_t5_plus_10']}"
                      if "t5" in r else f"  ({r['reason']})")
             print(f"  {key:18s} [{pin:15s}] {r['verdict']:12s}{extra}")
+
+    pin_stable = [k for k, v in pin_verdict_sets.items() if len(v) == 1]
+    pin_flipped = {k: v for k, v in pin_verdict_sets.items() if len(v) != 1}
 
     # ── expected verdicts (pre-stated; asserted so exit 0 is meaningful) ───
     expected = {
@@ -257,9 +268,11 @@ def main():
         "S2-hbar": "FAIL",
         "S3-rate-halfshift": "FAIL",
     }
+    verdict_matches = {}
     for key, exp_v in expected.items():
-        got = {r["verdict"] for r in results[key]["results"].values()}
-        assert got == {exp_v}, f"{key}: expected {exp_v}, got {got}"
+        got = sorted({r["verdict"] for r in results[key]["results"].values()})
+        verdict_matches[key] = {"expected": exp_v, "got": got, "match": got == [exp_v]}
+    verdict_mismatches = {k: v for k, v in verdict_matches.items() if not v["match"]}
 
     # ── witness ────────────────────────────────────────────────────────────
     wb.set_description(
@@ -310,14 +323,14 @@ def main():
     )
     wb.add_assertion(
         "control_tau0_passes",
-        computed=float(abs(t5_ref - T5_TARGET)),
+        computed=abs(t5_ref - T5_TARGET),
         expected=0.0,
         tolerance=float(TOL_PASS_T5),
         source="|t5(tau0)+10| at BDH22 6-d.p. tau0 (truncation-limited ~2e-5).",
     )
     wb.add_assertion(
         "gamma0_5_invariance",
-        computed=float(inv_dev),
+        computed=inv_dev,
         expected=0.0,
         tolerance=1e-30,
         source="max |t5(gamma tau0) - t5(tau0)| over gamma in {T, [[1,0],[5,1]]} "
@@ -325,7 +338,7 @@ def main():
     )
     wb.add_assertion(
         "fricke_involution",
-        computed=float(fricke_dev),
+        computed=fricke_dev,
         expected=0.0,
         tolerance=1e-25,
         source="|t5(-1/(5 tau0)) - 5^3/t5(tau0)|; image ~ -25/2 = j(5 tau0).",
@@ -341,16 +354,47 @@ def main():
                "proton pin identical) >> 1e-1 FAIL band — refuted-as-stated, "
                "scope-(a): the map, as stated, does not land on the Bring class.",
     )
+    # Was `computed="stable", expected="stable"` — a literal describing a check
+    # that had already aborted the run if it failed. Now it counts: how many
+    # q0-dependent candidates returned a singleton verdict set, against how many
+    # were evaluated at both pins. Zero q0-dependent candidates would read 0/0
+    # and pass, so `n_pin_dependent_candidates` below records the denominator
+    # the count came from.
+    wb.add_data("pin_verdict_sets", pin_verdict_sets)
+    wb.add_data("n_pin_dependent_candidates", len(pin_verdict_sets))
     wb.add_assertion(
         "verdicts_q0_pin_independent",
-        computed="stable",
-        expected="stable",
-        tolerance=None,
-        source="Asserted in-loop: every q0-dependent candidate's verdict set is "
-               "a singleton across {muon, proton} pins (gate constrains the tau "
-               "side only; pins differ by ~1.6e-8 relative).",
+        computed=len(pin_stable),
+        expected=len(pin_verdict_sets),
+        tolerance=0,
+        source=f"q0-dependent candidates whose verdict set is a singleton "
+               f"across {{muon, proton}}: {len(pin_stable)} of "
+               f"{len(pin_verdict_sets)} (gate constrains the tau side only; "
+               f"pins differ by ~1.6e-8 relative). Flips: "
+               f"{pin_flipped or 'none'}.",
+    )
+    # Same treatment for the pre-stated verdict table, which was the other bare
+    # assert. It is on the abort path of the check above — a pin flip makes
+    # `got` a two-element set and so would have tripped this one first, killing
+    # the run before any of it reached the witness.
+    wb.add_data("expected_verdict_check", verdict_matches)
+    wb.add_assertion(
+        "candidate_verdicts_match_prestated",
+        computed=len(verdict_matches) - len(verdict_mismatches),
+        expected=len(verdict_matches),
+        tolerance=0,
+        source="candidates whose observed verdict set equals the pre-stated "
+               "single expected verdict (REF-tau0 PASS; C1n ill-defined; C1, "
+               f"S1-S3 FAIL). Mismatches: {verdict_mismatches or 'none'}.",
     )
     wb.save()
+
+    # Enforce AFTER the witness exists, so a failure is recorded rather than
+    # only raised. Exit status is unchanged from the old bare asserts.
+    if pin_flipped:
+        raise AssertionError(f"verdict flips across q0 pins: {pin_flipped}")
+    if verdict_mismatches:
+        raise AssertionError(f"verdicts differ from pre-stated: {verdict_mismatches}")
     print("\nwitness saved; all assertions passed.")
 
 

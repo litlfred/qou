@@ -123,7 +123,7 @@ def main() -> int:
             "u_min_over_t": mp.nstr(floors[a] / t[a], 12)} for a in anchors})
     # any anchor-blind |u| = O(t) law dies on the proton floor:
     wb.add_assertion("proton_floor_exceeds_t",
-                     computed=float(floors["proton"] / t["proton"]),
+                     computed=floors["proton"] / t["proton"],
                      expected=2.0, tolerance=0.3,
                      source="|u|_min(proton)/t ~ 2 => |u| = O(t) anchor-blind law infeasible")
 
@@ -156,7 +156,7 @@ def main() -> int:
     print(f"    NOTE: b-aligned t·e^(iπ/4) hits muon to {muon_near*100:.1f}% and misses proton")
     print("    (sign+magnitude) — the single-anchor near-match class again (cf. #3524).")
     wb.add_assertion("no_candidate_passes_cross_anchor_gate",
-                     computed=float(n_pass), expected=0.0, tolerance=0.5,
+                     computed=n_pass, expected=0.0, tolerance=0.5,
                      source="scope-(a): this finite canonical menu fails; nothing excluded")
 
     # ---- M3: required phase-accumulation rate ----
@@ -193,7 +193,7 @@ def main() -> int:
                 "mod-π ambiguity only raises it)"})
     # one-sided claim encoded as a boolean: required rate >= 100x smooth-law rate
     wb.add_assertion("required_phase_rate_excludes_smooth_laws",
-                     computed=float(1.0 if req > 100 * rate_smooth else 0.0),
+                     computed=1.0 if req > 100 * rate_smooth else 0.0,
                      expected=1.0, tolerance=0.1,
                      source=f"required {mp.nstr(req, 4)} >= 100x smooth "
                             f"{mp.nstr(rate_smooth, 4)} — smooth substrate phase "

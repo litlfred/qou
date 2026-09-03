@@ -61,6 +61,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mpmath import mp, mpf, expjpi, fabs, re, im
+import sys as _sys, pathlib as _pl  # noqa: E402
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+import _path_bridge  # noqa: F401, E402
+
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 mp.dps = 60
 
@@ -69,7 +74,7 @@ mp.dps = 60
 IM_TOL = mpf(10) ** (-40)
 
 # ── Pinned canonical constants (verified vs main witnesses) ──
-Q0_STR = "1.1099785955573347198997632204832250266562084087802"
+Q0_STR = Q_50_DIGIT_STR
 C3_CAL_STR = "-2.06934257711516783787971951725"
 
 

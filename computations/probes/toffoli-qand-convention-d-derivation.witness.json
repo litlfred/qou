@@ -1,0 +1,94 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-29T18:19:03.559588+00:00",
+  "commitSha": "52e2f13fecd1bf500c67e1dd282abce78e434daf",
+  "assertions": [
+    {
+      "name": "published_Phi_is_A_zC2_plus_B_zC_exactly",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_closed_form_matches_A_zD2_plus_B_zD",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "Phi_D_has_no_positive_zero_but_q_eq_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_from_construction_matches_published_at_zC",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "P77_construction_has_zero_constant_term",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "toffoli-qand-convention-d-derivation",
+  "scriptFile": "toffoli_qand_convention_d_derivation.py",
+  "scriptHash": "e0e6bef71c25",
+  "scriptCommitSha": "52e2f13fecd1bf500c67e1dd282abce78e434daf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/toffoli_qand_convention_d_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/probes/toffoli_qand_convention_d_derivation.py"
+  },
+  "description": "Derives the convention-D q-AND amplitude rather than z-swapping it. Splitting the published Phi by parity in sqrt(q) gives Phi = A z^2 + B z with A = (q-1)^2(q+1)^2/(2q) and B = (q-1)(q^2+q+1)/(2(q+1)), both RATIONAL in q, and the decomposition is unique because z_C is not in Q(q). The convention enters through z alone, so Phi_D = A z_D^2 + B z_D = q^3(q-1)(q^6+2q^5+q^4-q^3+q^2+q+1) / (2(q+1)(q^2+1)^2). Its sextic has no real roots, so Phi_D vanishes on (0,inf) only at q = 1. The convention-C threshold at q ~ 0.4656, published as a phase reversal of the q-AND, does not exist under the canonical convention. At q0 both amplitudes are positive (0.0495 C, 0.0625 D), so the stability verdict survives. The DIAGONAL is NOT derived: two decompositions exact at z_C disagree at z_D, and the corpus states no chain to choose between them.",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "A_chain_coefficient": "(q - 1)**2*(q + 1)**2/(2*q)",
+    "B_chain_coefficient": "(q - 1)*(q**2 + q + 1)/(2*(q + 1))"
+  },
+  "data": {
+    "Phi_D_closed_form": "q**3*(q - 1)*(q**6 + 2*q**5 + q**4 - q**3 + q**2 + q + 1)/(2*(q + 1)*(q**2 + 1)**2)",
+    "sextic_real_roots": "[]",
+    "convention_C_threshold_q": "0.46557123187676802665673122522",
+    "Phi_D_at_convention_C_threshold": "-0.0209080982892547310368841080021",
+    "Phi_C_at_q0": "0.0495376843629006907569056253187",
+    "Phi_D_at_q0": "0.0624697516022889701705696957421",
+    "P77_candidate_A_no_constant_deg2": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+    "P77_candidate_B_constant_plus_deg1": "z_D + (q-1)/(q+1)",
+    "P77_candidate_A_at_q0": "0.691166478358444526147719530979",
+    "P77_candidate_B_at_q0": "0.664811117281226792765751883737",
+    "P77_C_at_q0": "0.551443414318455993583364700049",
+    "golden_threshold_q_star": "0.381966011250105151795413165634",
+    "diagonal_status": "DERIVED from _deprecated/toffoli-braid.py's chain_reduce: P_77 = z + h z^2, constant term zero, reproduces the published form at z_C exactly",
+    "P66_published_matches_no_ordering": "residual -0.186 at q0, -2.23 at q=2 for all eight 3-strand orderings",
+    "surviving_thresholds_under_D": "for Phi: q = 1 only. For the diagonal: undetermined."
+  },
+  "caveats": [
+    "Phi and the DIAGONAL are both derived; the off-diagonal P_66 is not. ORIGINAL TEXT: Phi ALONE is derived. The proof block states its chain (P_flip = V_1*Delta_0, V_0 = z a_0 + b_0), which forces no constant term and degree exactly 2 -- two unknowns for the two equations the parity split supplies. The corpus states no such chain for the DIAGONAL, and without it the decomposition is underdetermined: P_77 = z + (q-1)/(q+1) and P_77 = z + h z^2 are BOTH exact at z_C and disagree at z_D (0.6648 vs 0.6912 at q0). P_66 carries the same ambiguity. An earlier revision of this probe claimed the diagonal was derived; that is RETRACTED here. Settling it needs the Hecke element whose Markov trace the diagonal is -- any H_3 element traces to sum_w c_w z^{|w|} on the normal-form basis, so the element gives every coefficient at once."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

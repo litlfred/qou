@@ -58,7 +58,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps, COMPUTE_DPS  # noqa: E402
+from _precision import set_compute_dps, COMPUTE_DPS, fmt  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402  (proton-pinned, single source of truth)
 from q_parameter import Q_MP as Q0_MP  # noqa: E402  (high-precision mpf)
 
@@ -262,34 +262,42 @@ def raw_trM_w5_at_q0():
     """
     try:
         import numpy as np  # noqa: F401
-        from hecke_characters import build_seminormal_matrices  # noqa: E402
         from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-        from mass_at_3A_proper import chi_lambda_of_word  # noqa: E402
+        from hoefsmit_mpmath import (BlockCacheMP,  # noqa: E402
+                                     chi_lambda_of_word_sparse_mp,
+                                     seminormal_matrices_mp)
     except Exception as exc:  # pragma: no cover
         return {"available": False, "reason": str(exc)}
 
-    q = float(Q0)
-    h = q - 1.0 / q
+    # `Q0` is the float64 q0; `Q0_MP` is the mpf one, and this module already
+    # imports BOTH -- the destabilization arithmetic below uses Q0_MP while this
+    # block used to downcast. Worse, `sp.Float(q, 30)` asked sympy for thirty
+    # digits of a value that had already been truncated to seventeen, which
+    # LOOKS like a high-precision call and is not one.
+    h = Q0_MP - 1 / Q0_MP
+    one, zero = mp.mpf(1), mp.mpf(0)
     # w_5 = (s1^-1 s2 s3^-1 s4)^3, 0-indexed gens 0,1,2,3
-    word = [(1.0, -h, 0), (1.0, 0.0, 1), (1.0, -h, 2), (1.0, 0.0, 3)] * 3
-    y5 = y_lambda_at(5, q_val=sp.Float(q, 30))
+    word = [(one, -h, 0), (one, zero, 1), (one, -h, 2), (one, zero, 3)] * 3
+    y5 = y_lambda_at(5, q_val=Q0_MP)
+    cache_mp = BlockCacheMP(Q0_MP)
     rows = {}
-    total = 0.0
+    total = mp.mpf(0)
     for shape, yv in y5.items():
-        sig, dim, _ = build_seminormal_matrices(shape, q=q)
+        sig, dim, _ = seminormal_matrices_mp(tuple(shape), cache=cache_mp)
         try:
-            chi = chi_lambda_of_word(sig, dim, word, 4)
+            chi = chi_lambda_of_word_sparse_mp(sig, dim, word, 4)
         except IndexError:
             continue
-        contrib = float(yv) * float(chi)
+        yv_mp = mp.mpf(str(yv))
+        contrib = yv_mp * chi
         total += contrib
         rows[str(tuple(shape))] = {
             "dim": int(dim),
-            "y_at_q0": float(yv),
-            "chi_q_at_q0": float(chi),
-            "contribution": contrib,
+            "y_at_q0": fmt(yv_mp),
+            "chi_q_at_q0": fmt(chi),
+            "contribution": fmt(contrib),
         }
-    return {"available": True, "trM_w5_raw_at_q0": total, "per_block": rows,
+    return {"available": True, "trM_w5_raw_at_q0": fmt(total), "per_block": rows,
             "word": "(sigma_1^-1 sigma_2 sigma_3^-1 sigma_4)^3"}
 
 
@@ -385,6 +393,9 @@ def main():
     )
     w.set_audit_only("docs/audits/2026-06-02-native-5-strand-baryon.md")
     w.add_parameter("q0_falsification_ref", Q0_STR)
+    # True as of 2026-08-24. Before that this field named Q_MP while the
+    # tr_M(w_5) character block ran at `float(Q0)` -- a provenance field
+    # asserting a precision the run did not have.
     w.add_parameter("q0_source", "q_parameter.Q_MP (proton-pinned)")
     w.add_parameter("dps", COMPUTE_DPS)
     w.add_parameter("h4_borromean_falsification_ref", str(H4_BORROMEAN))
@@ -435,16 +446,18 @@ def main():
     raw5 = raw_trM_w5_at_q0()
     w.add_data("raw_trM_w5_at_H5", raw5)
     if raw5.get("available"):
-        # RAW tr_M(B_3) at q0 (numeric, same float64+30dps route, for the
-        # destabilization comparison) and z^2 from arith.
+        # RAW tr_M(B_3) at q0 and z^2 from arith. Both sides are exact now, so
+        # the float() round-trip that used to sit here was the only remaining
+        # downcast in the comparison.
         z = Q0_MP**3 / (Q0_MP**2 + 1)
-        trM_B3_num = float(mp.mpf(arith["trM_B3_raw_at_q0"]))
-        z2_trM_B3 = float(z * z) * trM_B3_num
-        rel_mismatch = abs(raw5["trM_w5_raw_at_q0"] - z2_trM_B3) / abs(z2_trM_B3)
+        trM_B3_num = mp.mpf(arith["trM_B3_raw_at_q0"])
+        z2_trM_B3 = z * z * trM_B3_num
+        trM_w5 = mp.mpf(raw5["trM_w5_raw_at_q0"])
+        rel_mismatch = abs(trM_w5 - z2_trM_B3) / abs(z2_trM_B3)
         w.add_data("destabilization_test_w5_vs_z2_B3", {
-            "trM_w5_raw": raw5["trM_w5_raw_at_q0"],
-            "z2_times_trM_B3": z2_trM_B3,
-            "relative_mismatch": rel_mismatch,
+            "trM_w5_raw": fmt(trM_w5),
+            "z2_times_trM_B3": fmt(z2_trM_B3),
+            "relative_mismatch": fmt(rel_mismatch),
             "reading": "If w_5 were a genuine native-5 carrier with B_3 as its "
                        "Markov shadow, tr_M(w_5) would equal z^2 . tr_M(B_3) "
                        "(two clean destabilizations H5->H3). The large mismatch "
@@ -455,7 +468,7 @@ def main():
         # The mismatch is LARGE (w_5 is not z^2 B_3); assert it is not a clean
         # destabilization (mismatch well above any precision floor).
         w.add_assertion("w5_is_NOT_z2_times_B3_destabilization",
-                        rel_mismatch > 0.01, True)
+                        rel_mismatch > mp.mpf("0.01"), True)
 
     # --- VERDICT -------------------------------------------------------------
     verdict = {

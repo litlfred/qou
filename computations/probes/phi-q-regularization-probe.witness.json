@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "Zeta-regularized bar-pair gives m_p = 21.7172 MeV, a 3.178× improvement over the production Li_2^q tower's 6.83288 MeV.  Pass iff improvement > 2×."
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 1e-12,
+      "tolerance": "1e-12",
       "source": "The bar-pair Archimedean realization should sit between the Li_2^q value (137× too small) and the Φ_q value (642× too big). This structural ordering validates the regularization scheme."
     }
   ],

@@ -9,7 +9,7 @@ updated_at: 2026-08-08T23:34:54Z
 
 A proof step discharged purely by citation should point at a venue the corpus agrees on. Record and resolve the contradiction between the registered entry and the seven Lean Ref strings.
 
-Source: `library/diaconis-ram2000.pdf` (`diaconis-ram2000`)
+Source: `diaconis-ram2000` (bib key; PDF not committed to this repo)
 Relevance: **undetermined** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

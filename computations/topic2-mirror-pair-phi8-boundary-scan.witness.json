@@ -1,15 +1,30 @@
 {
   "engine": "sympy Poly + cyclotomic divisibility",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-18T22:04:20.447182+00:00",
-  "commitSha": "a464c906fe42cd1305937c9bd3214ca8637dd4fa",
-  "assertions": [],
+  "computedAt": "2026-08-31T05:43:07.314815+00:00",
+  "commitSha": "afcb8aec61996bcc11db25b4ace82f5372c5174a",
+  "assertions": [
+    {
+      "name": "universal_M_first_Phi_8_eq_7_holds_for_every_mirror_pair",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "PR #1625 Wenzl-annihilator universal boundary, extended to mirror pairs; 0 = no pair with mult(Phi_8) > 0 misses M = 7"
+    },
+    {
+      "name": "phi8_pair_set_non_empty",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "guards the assertion above against passing vacuously on an empty pair set -- the state convention D produces, where every cyclotomic multiplicity collapses to 0"
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "topic2-mirror-pair-phi8-boundary-scan",
   "scriptFile": "topic2_mirror_pair_phi8_boundary_scan.py",
-  "scriptHash": "53b875ca8953",
-  "scriptCommitSha": "bdfa58a97c1cb7ede9d319eed0550c993590eb5e",
+  "scriptHash": "542abb7b9230",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,9 +34,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/topic2_mirror_pair_phi8_boundary_scan.py"
+    ],
+    "reproduce": "python3 -u computations/topic2_mirror_pair_phi8_boundary_scan.py"
   },
   "description": "Topic 2 probe: extend PR #1625's universal M_first_Φ_8 = 7 finding (atomic-step pair-differences) to mirror pairs (Z, N) ↔ (N, Z). Tests whether the Wenzl-annihilator mechanism is universal across pair-difference types.",
   "reference_blocks": [
@@ -47,8 +71,8 @@
       {
         "pair": "³He − ³H",
         "A": 3,
-        "M_max_used": 15,
-        "mult_Phi_8_observed": 2,
+        "M_max_used": 16,
+        "mult_Phi_8_observed": 4,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -56,8 +80,8 @@
       {
         "pair": "⁵Li − ⁵He",
         "A": 5,
-        "M_max_used": 19,
-        "mult_Phi_8_observed": 4,
+        "M_max_used": 20,
+        "mult_Phi_8_observed": 8,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -66,7 +90,7 @@
         "pair": "⁶He − ⁶Be",
         "A": 6,
         "M_max_used": 21,
-        "mult_Phi_8_observed": 4,
+        "mult_Phi_8_observed": 9,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -75,7 +99,7 @@
         "pair": "⁷Be − ⁷Li",
         "A": 7,
         "M_max_used": 23,
-        "mult_Phi_8_observed": 6,
+        "mult_Phi_8_observed": 12,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -84,7 +108,7 @@
         "pair": "⁸B − ⁸Li",
         "A": 8,
         "M_max_used": 25,
-        "mult_Phi_8_observed": 6,
+        "mult_Phi_8_observed": 13,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -92,8 +116,8 @@
       {
         "pair": "⁹B − ⁹Be",
         "A": 9,
-        "M_max_used": 27,
-        "mult_Phi_8_observed": 8,
+        "M_max_used": 26,
+        "mult_Phi_8_observed": 16,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -102,7 +126,7 @@
         "pair": "¹⁰C − ¹⁰Be",
         "A": 10,
         "M_max_used": 28,
-        "mult_Phi_8_observed": 8,
+        "mult_Phi_8_observed": 17,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -110,8 +134,8 @@
       {
         "pair": "¹²N − ¹²B",
         "A": 12,
-        "M_max_used": 31,
-        "mult_Phi_8_observed": 10,
+        "M_max_used": 30,
+        "mult_Phi_8_observed": 21,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true
@@ -120,7 +144,7 @@
         "pair": "¹⁴O − ¹⁴C",
         "A": 14,
         "M_max_used": 33,
-        "mult_Phi_8_observed": 12,
+        "mult_Phi_8_observed": 25,
         "M_first_Phi_8": 7,
         "M_first_Phi_8_squared": 15,
         "matches_universal_M_eq_7": true

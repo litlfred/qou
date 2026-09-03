@@ -54,11 +54,12 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 # Empirical ladder (registry ck-dk-canonical-registry.md §3).
 C_EMP = {2: mp.mpf("-1"), 3: mp.mpf("-2"), 4: mp.mpf("-0.97157")}

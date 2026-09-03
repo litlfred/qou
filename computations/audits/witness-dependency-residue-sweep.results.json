@@ -1,0 +1,1445 @@
+{
+ "sha": "f6501fba549591122523ebb76ce118e49a7003e1",
+ "results": [
+  {
+   "producer": "atom_braid_active_partitions",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.5,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "a_operator_recursive_a3_crosscheck",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 3.4,
+   "moved": [
+    "computations/a_operator/a-operator-recursive-a3-h9.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/a_operator/a-operator-recursive-a3-h9.witness.json": [
+     ".assertions[0].source",
+     ".assertions[1].source",
+     ".assertions[2].source",
+     ".assertions[3].source",
+     ".data.reconstruct_\u00b3H (triton).max_chi_comb_vs_transfer",
+     ".data.reconstruct_\u00b3H (triton).max_chi_comb_vs_young",
+     ".data.reconstruct_\u00b3H (triton).rel_trM",
+     ".data.reconstruct_\u00b3H (triton).trM_combiner",
+     ".data.reconstruct_\u00b3H (triton).trM_transfer",
+     ".data.reconstruct_\u00b3He.max_chi_comb_vs_transfer",
+     ".data.reconstruct_\u00b3He.max_chi_comb_vs_young",
+     ".data.reconstruct_\u00b3He.rel_trM"
+    ]
+   }
+  },
+  {
+   "producer": "atom_nf_symbolic_D",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 36.6,
+   "moved": [
+    "computations/atom-nf-symbolic-D.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/atom-nf-symbolic-D.witness.json": [
+     ".J_62_polynomial.polynomial_q",
+     ".J_62_polynomial.polynomial_q_latex",
+     ".J_62_polynomial.value_at_q0",
+     ".at_q0.tr_M_D",
+     ".auditOnly",
+     ".difference",
+     ".engine",
+     ".markov_trace",
+     ".markov_trace_polynomial.polynomial_q",
+     ".markov_trace_polynomial.polynomial_q_latex",
+     ".markov_trace_polynomial.value_at_q0",
+     ".nf_top_terms[10].coeff"
+    ]
+   }
+  },
+  {
+   "producer": "atomic_tr_m_mpfr_50dps",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 10.3,
+   "moved": [
+    "computations/atomic-tr-m-mpfr-50dps.witness.json"
+   ],
+   "identical": 3,
+   "fields": {
+    "computations/atomic-tr-m-mpfr-50dps.witness.json": [
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "averaged_block_swap_binding",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 7.4,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "binding_canonical",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 8.8,
+   "moved": [
+    "computations/binding-canonical.witness.json"
+   ],
+   "identical": 1,
+   "fields": {
+    "computations/binding-canonical.witness.json": [
+     ".data.results[0].tr_M_atom",
+     ".data.results[0].tr_M_free",
+     ".data.results[1].tr_M_atom",
+     ".data.results[1].tr_M_free",
+     ".data.results[2].tr_M_atom",
+     ".data.results[2].tr_M_free",
+     ".data.results[3].tr_M_atom",
+     ".data.results[3].tr_M_free",
+     ".data.results[4].B_AME_MeV",
+     ".data.results[4].delta_m_over_m_pct",
+     ".data.results[4].tr_M_atom",
+     ".data.results[4].tr_M_free"
+    ]
+   }
+  },
+  {
+   "producer": "binding_closed_form_C_vs_D_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.7,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "binding_depth_stratified",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.2,
+   "moved": [
+    "computations/binding-depth-stratified.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/binding-depth-stratified.witness.json": [
+     ".assertions[0].computed",
+     ".data.max_over_min_abs",
+     ".data.per_atom.3He.B_AME_MeV",
+     ".data.per_atom.3He.B_MeV",
+     ".data.per_atom.3He.B_dim",
+     ".data.per_atom.3He.contribs_diff_by_depth.0.alpha_k_times_delta_phi",
+     ".data.per_atom.3He.contribs_diff_by_depth.0.delta_phi",
+     ".data.per_atom.3He.contribs_diff_by_depth.0.phi_atom",
+     ".data.per_atom.3He.contribs_diff_by_depth.0.phi_free",
+     ".data.per_atom.3He.contribs_diff_by_depth.1.alpha_k_times_delta_phi",
+     ".data.per_atom.3He.contribs_diff_by_depth.1.delta_phi",
+     ".data.per_atom.3He.contribs_diff_by_depth.1.phi_atom"
+    ]
+   }
+  },
+  {
+   "producer": "binding_per_bond_decomposition",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.8,
+   "moved": [
+    "computations/binding-per-bond-decomposition.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/binding-per-bond-decomposition.witness.json": [
+     ".assertions[0].computed",
+     ".assertions[0].expected",
+     ".data.method_discrepancy_2H.delta_tr_binding_canonical",
+     ".data.method_discrepancy_2H.delta_tr_h3a_direct",
+     ".data.method_discrepancy_2H.gap_pct",
+     ".data.per_bond.2H.B_single_link_MeV",
+     ".data.per_bond.2H.delta_tr",
+     ".data.per_bond.2H.delta_tr_per_bond",
+     ".data.per_bond.2H.single_link_err_pct",
+     ".data.per_bond.2H.tr_bound",
+     ".data.per_bond.2H.tr_free",
+     ".data.per_bond.3H.B_AME_MeV"
+    ]
+   }
+  },
+  {
+   "producer": "binding_production_link_milnor",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.4,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "binding_production_route_C_vs_D_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.0,
+   "moved": [],
+   "identical": 3,
+   "fields": {}
+  },
+  {
+   "producer": "binding_residual_exponent_chain_topology",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.5,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "binding_rotation_phase_lead",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 2.1,
+   "moved": [
+    "computations/binding-rotation-phase-lead.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/binding-rotation-phase-lead.witness.json": [
+     ".data.aggregations.S1_unweighted.A3_pair_spread_pct",
+     ".data.aggregations.S1_unweighted.spread_pct",
+     ".data.aggregations.S2_dim.A3_pair_spread_pct",
+     ".data.aggregations.S2_dim.spread_pct",
+     ".data.aggregations.S3_markov.A3_pair_spread_pct",
+     ".data.aggregations.S3_markov.rho_needed.3He",
+     ".data.aggregations.S3_markov.rho_needed.4He",
+     ".data.aggregations.S3_markov.rho_needed.D",
+     ".data.aggregations.S3_markov.rho_needed.T",
+     ".data.aggregations.S3_markov.spread_pct",
+     ".data.aggregations.S4_markov_signed.A3_pair_spread_pct",
+     ".data.aggregations.S4_markov_signed.rho_needed.3He"
+    ]
+   }
+  },
+  {
+   "producer": "binding_sum_C_vs_D_per_isotope_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.8,
+   "moved": [],
+   "identical": 3,
+   "fields": {}
+  },
+  {
+   "producer": "binding_via_interface_knot",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 2.8,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "binding_volume_difference_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.8,
+   "moved": [
+    "computations/probes/binding-volume-difference-probe.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/binding-volume-difference-probe.witness.json": [
+     ".data.cosh_inversion.3He.abs_tr_atom",
+     ".data.cosh_inversion.3He.abs_tr_free",
+     ".data.cosh_inversion.4He.abs_tr_atom",
+     ".data.cosh_inversion.4He.abs_tr_free",
+     ".data.cosh_inversion.D.abs_tr_atom",
+     ".data.cosh_inversion.D.abs_tr_free",
+     ".data.cosh_inversion.T.abs_tr_atom",
+     ".data.cosh_inversion.T.abs_tr_free",
+     ".data.log_volume_errs_pct.E_0.3He",
+     ".data.log_volume_errs_pct.E_0.4He",
+     ".data.log_volume_errs_pct.E_0.D",
+     ".data.log_volume_errs_pct.E_0.T"
+    ]
+   }
+  },
+  {
+   "producer": "braid_encoding_audit",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.3,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "brunnian_route_feasibility_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.6,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "canonical_tower",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 140.5,
+   "moved": [
+    "computations/canonical-with-proper-tower.witness.json"
+   ],
+   "identical": 2,
+   "fields": {
+    "computations/canonical-with-proper-tower.witness.json": [
+     ".engine",
+     ".results[0].A",
+     ".results[0].B_AME_MeV",
+     ".results[0].B_MeV",
+     ".results[0].E_0_MeV_per_cat",
+     ".results[0].N",
+     ".results[0].Z",
+     ".results[0].atom",
+     ".results[0].binder",
+     ".results[0].delta_m_over_m_pct",
+     ".results[0].m_atom_per_irrep_total",
+     ".results[0].m_free_per_irrep_total"
+    ]
+   }
+  },
+  {
+   "producer": "binding_combiner_markov_peel_fallback",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 180.0,
+   "moved": [
+    "computations/binding-combiner-markov-peel-fallback.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/binding-combiner-markov-peel-fallback.witness.json": [
+     ".data.results[0].bound_config.elapsed_reduce_sec",
+     ".data.results[0].bound_config.elapsed_trace_sec",
+     ".data.results[0].free_config.elapsed_reduce_sec",
+     ".data.results[0].free_config.elapsed_trace_sec",
+     ".data.results[1].bound_config.elapsed_reduce_sec",
+     ".data.results[1].bound_config.elapsed_trace_sec",
+     ".data.results[1].free_config.elapsed_reduce_sec",
+     ".data.results[1].free_config.elapsed_trace_sec",
+     ".data.results[2].bound_config.elapsed_reduce_sec",
+     ".data.results[2].bound_config.elapsed_trace_sec",
+     ".data.results[2].free_config.elapsed_reduce_sec",
+     ".data.results[2].free_config.elapsed_trace_sec"
+    ]
+   }
+  },
+  {
+   "producer": "chirality_weighted_3body_cluster_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.4,
+   "moved": [
+    "computations/chirality-weighted-3body-cluster.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/chirality-weighted-3body-cluster.witness.json": [
+     ".data.rows[0].abs_c3_MeV",
+     ".data.rows[0].chiral_c3_MeV",
+     ".data.rows[0].signed_c3_MeV",
+     ".data.rows[1].abs_c3_MeV",
+     ".data.rows[1].chiral_c3_MeV",
+     ".data.rows[1].signed_c3_MeV",
+     ".parameters.E0_MeV",
+     ".parameters.q_0",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "compute_atom_chi_rust",
+   "verdict": "IDENTICAL",
+   "rc": 1,
+   "sec": 0.3,
+   "moved": [],
+   "identical": 4,
+   "fields": {}
+  },
+  {
+   "producer": "constit_factor_varying_q_phase5k2",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 2.4,
+   "moved": [
+    "computations/constit-factor-varying-q-phase5k2.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/constit-factor-varying-q-phase5k2.witness.json": [
+     ".data.per_q_results[0].wall_seconds_3He",
+     ".data.per_q_results[0].wall_seconds_D",
+     ".data.per_q_results[1].wall_seconds_3He",
+     ".data.per_q_results[1].wall_seconds_D",
+     ".data.per_q_results[2].wall_seconds_3He",
+     ".data.per_q_results[2].wall_seconds_D",
+     ".data.per_q_results[3].wall_seconds_3He",
+     ".data.per_q_results[3].wall_seconds_D",
+     ".data.per_q_results[4].wall_seconds_3He",
+     ".data.per_q_results[4].wall_seconds_D"
+    ]
+   }
+  },
+  {
+   "producer": "convention_systematic_audit_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.4,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "crystal_shift_nf_atomic",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 3.1,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "d_density_derivation",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.5,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "d_frame_neutron_cyclotomic_rule_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.9,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "delta1g_deuteron_measurement_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.3,
+   "moved": [
+    "computations/deltalambda/delta1g-deuteron-measurement.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/delta1g-deuteron-measurement.witness.json": [
+     ".data.delta1g_deuteron.abs_delta1g",
+     ".data.delta1g_deuteron.delta1g",
+     ".data.delta1g_deuteron.g_a",
+     ".data.delta1g_deuteron.g_empty",
+     ".data.delta1g_deuteron.multiplicative_shortfall"
+    ]
+   }
+  },
+  {
+   "producer": "delta_lambda_exponent_from_crossings",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.4,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "delta_lambda_fr_identity_phase5c",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 21.0,
+   "moved": [
+    "computations/delta-lambda-fr-identity-phase5c.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/delta-lambda-fr-identity-phase5c.witness.json": [
+     ".data.results_constit.D.top_5_blocks[4].abs_y_chi",
+     ".data.results_constit.D.top_5_blocks[4].y",
+     ".data.results_constit.D.top_5_blocks[4].y_chi",
+     ".data.results_full.D.top_5_blocks[4].abs_y_chi",
+     ".data.results_full.D.top_5_blocks[4].y",
+     ".data.results_full.D.top_5_blocks[4].y_chi",
+     ".parameters.3_q_squared",
+     ".parameters.alpha_predicted",
+     ".parameters.cosh_h",
+     ".parameters.h",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "delta_lambda_v_hat_z_transfer_phase5d_4",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 3.6,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "derived_chi_catalogue_matrix_m",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 14.3,
+   "moved": [
+    "computations/derived-chi-catalogue-matrix-m-validation.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/derived-chi-catalogue-matrix-m-validation.witness.json": [
+     ".data.phase14_numerical_benchmark.numerical_secs",
+     ".data.phase14_numerical_benchmark.speedup_factor",
+     ".data.phase14_numerical_benchmark.symbolic_secs"
+    ]
+   }
+  },
+  {
+   "producer": "derived_chi_catalogue_sweep",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.6,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "difference_knot_binding_probe",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.3,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "emitted_particle_tracker",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 14.3,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "gg_production_bond_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.2,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "gram_norm_binding_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 2.4,
+   "moved": [
+    "computations/probes/gram-norm-binding-probe.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/gram-norm-binding-probe.witness.json": [
+     ".assertions[0].computed",
+     ".assertions[1].computed",
+     ".data.rows[3].B_AME",
+     ".data.rows[3].B_gram",
+     ".data.rows[3].B_sym",
+     ".data.rows[3].G_atom",
+     ".data.rows[3].G_free",
+     ".data.rows[3].R_abs",
+     ".data.rows[3].R_anti",
+     ".data.rows[3].R_signed",
+     ".data.rows[3].chiral_anti_share_atom",
+     ".data.rows[3].chiral_anti_share_free"
+    ]
+   }
+  },
+  {
+   "producer": "h6_deuteron_free_word_chi_lambda_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.8,
+   "moved": [
+    "computations/h6-deuteron-free-word-chi-lambda.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/h6-deuteron-free-word-chi-lambda.witness.json": [
+     ".characters[0].y_lambda",
+     ".characters[1].y_lambda",
+     ".characters[2].y_lambda",
+     ".characters[4].y_lambda",
+     ".markov_trace.B_pred_single_trace_MeV",
+     ".markov_trace.delta_tr_M_free_minus_bound",
+     ".markov_trace.tr_M_bound",
+     ".markov_trace.tr_M_free"
+    ]
+   }
+  },
+  {
+   "producer": "he3_tritium_cosh_asymmetry_diagnosis",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.3,
+   "moved": [
+    "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json": [
+     ".data.per_mode_mirror_mismatch.full.max_abs_diff",
+     ".data.per_mode_mirror_mismatch.full.sum_abs_diff",
+     ".data.per_mode_mirror_mismatch.inter0.max_abs_diff",
+     ".data.per_mode_mirror_mismatch.inter0.sum_abs_diff",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "he4_binding_k_presentation_correction_probe",
+   "verdict": "MOVED",
+   "rc": 1,
+   "sec": 5.7,
+   "moved": [
+    "computations/deltalambda/he4-binding-k-presentation-correction.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/he4-binding-k-presentation-correction.witness.json": [
+     ".presentation.layer1_plain_word.rel_at_sqrt_q"
+    ]
+   }
+  },
+  {
+   "producer": "iterative_knot_builder",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.7,
+   "moved": [
+    "computations/iterative-knot-builder.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/iterative-knot-builder.witness.json": [
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "iterative_lp_dual_h6_deuteron",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.1,
+   "moved": [
+    "computations/iterative-lp-dual-h6-deuteron.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/iterative-lp-dual-h6-deuteron.witness.json": [
+     ".allPassed",
+     ".assertions[0].computed",
+     ".assertions[0].passed",
+     ".data.tr_M_check_rel_err"
+    ]
+   }
+  },
+  {
+   "producer": "markov_weights_symbolic",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 2.1,
+   "moved": [],
+   "identical": 3,
+   "fields": {}
+  },
+  {
+   "producer": "mu3_abs_choice_robustness_probe",
+   "verdict": "MOVED",
+   "rc": 1,
+   "sec": 0.5,
+   "moved": [
+    "computations/deltalambda/mu3-abs-choice-robustness.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/mu3-abs-choice-robustness.witness.json": [
+     ".allPassed",
+     ".assertions[0].computed",
+     ".assertions[0].passed",
+     ".data.results.3He.abs.c3_MeV",
+     ".data.results.3He.abs.d2",
+     ".data.results.3He.baseline_gate_ok",
+     ".data.results.3He.raw.c3_MeV",
+     ".data.results.3He.raw.d2",
+     ".data.results.3He.relative_shift",
+     ".data.results.T.abs.c3_MeV",
+     ".data.results.T.abs.d2",
+     ".data.results.T.baseline_gate_ok"
+    ]
+   }
+  },
+  {
+   "producer": "mu3_anchor_consistency_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.3,
+   "moved": [
+    "computations/deltalambda/mu3-anchor-consistency.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/mu3-anchor-consistency.witness.json": [
+     ".data.results.3He.mixed (what #4657 did).c3_MeV",
+     ".data.results.3He.mixed (what #4657 did).d2",
+     ".data.results.3He.pure muon.c3_MeV",
+     ".data.results.3He.pure muon.d2",
+     ".data.results.3He.pure muon.rel_shift_vs_mixed",
+     ".data.results.3He.pure proton.c3_MeV",
+     ".data.results.3He.pure proton.d2",
+     ".data.results.3He.pure proton.rel_shift_vs_mixed",
+     ".data.results.T.mixed (what #4657 did).c3_MeV",
+     ".data.results.T.mixed (what #4657 did).d2",
+     ".data.results.T.pure muon.c3_MeV",
+     ".data.results.T.pure muon.d2"
+    ]
+   }
+  },
+  {
+   "producer": "mu3_door_budget_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.5,
+   "moved": [
+    "computations/deltalambda/mu3-door-budget.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/mu3-door-budget.witness.json": [
+     ".data.results.3He.shortfall_factor",
+     ".data.results.T.shortfall_factor"
+    ]
+   }
+  },
+  {
+   "producer": "mu3_frechet_perblock_probe",
+   "verdict": "MOVED",
+   "rc": 1,
+   "sec": 0.5,
+   "moved": [
+    "computations/deltalambda/mu3-frechet-perblock.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/mu3-frechet-perblock.witness.json": [
+     ".caveats[0]",
+     ".q0Value",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "nastokes_germ_gauge_covariance_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 4.7,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "nastokes_multigen_cluster_additivity_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 4.7,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "nastokes_orbit_symmetric_readout_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 5.0,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "option_a_vol_per_knot_light_series",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.5,
+   "moved": [
+    "computations/probes/option-a-vol-per-knot-light-series.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/option-a-vol-per-knot-light-series.witness.json": [
+     ".allPassed",
+     ".assertions[0].computed",
+     ".assertions[0].passed",
+     ".data.geom_uniform_description",
+     ".data.rows[0].canonical_braid_word_first_6[4][1]",
+     ".data.rows[0].gap_perknot_pct",
+     ".data.rows[0].gap_uniform_pct",
+     ".data.rows[0].geom_perknot_50dps",
+     ".data.rows[0].m_K_codata_per_nucleon_MeV",
+     ".data.rows[0].m_K_codata_total_MeV",
+     ".data.rows[0].m_K_perknot_MeV_50dps",
+     ".data.rows[0].ratio_perknot_over_uniform_50dps"
+    ]
+   }
+  },
+  {
+   "producer": "per_bond_growth_a3",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.0,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "phase3_deuteron_tritium_h_expansion",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 3.1,
+   "moved": [
+    "computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/phase5/phase3-deuteron-tritium-h-expansion.witness.json": [
+     ".data.atom_deuteron.h2_total",
+     ".data.atom_helium-3.h2_total",
+     ".data.atom_tritium.h2_total",
+     ".data.cross_isotope_h2_cancellation.deuteron_H6",
+     ".data.cross_isotope_h2_cancellation.he3_H9",
+     ".data.cross_isotope_h2_cancellation.tritium_H9",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "pn_pair_two_sector_split",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 2.8,
+   "moved": [
+    "computations/probes/pn-pair-two-sector-split.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/pn-pair-two-sector-split.witness.json": [
+     ".q0Anchor",
+     ".q0Value",
+     ".result.rows[0].B_norm_MeV",
+     ".result.rows[0].B_redist_MeV",
+     ".result.rows[0].B_scalar_MeV",
+     ".result.rows[0].G_atom",
+     ".result.rows[0].G_free",
+     ".result.rows[0].T_atom",
+     ".result.rows[0].T_free",
+     ".result.rows[0].err_norm_pct",
+     ".result.rows[0].err_scalar_pct",
+     ".result.rows[1].B_norm_MeV"
+    ]
+   }
+  },
+  {
+   "producer": "probe_4b_li6_non_rectangular_scan",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 1.5,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "probe_canonical_braid_interface_composition",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.3,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "probe_d_delta_lambda_terms",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 0.4,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "qlommel_b_ladder_slope_derivation",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.6,
+   "moved": [
+    "computations/qbeta/qlommel-b-ladder-slope-derivation.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/qbeta/qlommel-b-ladder-slope-derivation.witness.json": [
+     ".q0Anchor",
+     ".q0Value"
+    ]
+   }
+  },
+  {
+   "producer": "reeb_rotation_pn_test",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.3,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "rho_constit_equals_tau_M_proton_phase5l",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 2.7,
+   "moved": [
+    "computations/rho-constit-equals-tau-M-proton-phase5l.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/rho-constit-equals-tau-M-proton-phase5l.witness.json": [
+     ".assertions[0].computed",
+     ".data.max_rel_err",
+     ".data.per_q_results[0].diff",
+     ".data.per_q_results[0].rel_err",
+     ".data.per_q_results[0].rho_Z_constit",
+     ".data.per_q_results[0].rho_Z_constit_str",
+     ".data.per_q_results[0].tau_M_proton_H3",
+     ".data.per_q_results[0].tau_M_proton_H3_str",
+     ".data.per_q_results[0].wall_s",
+     ".data.per_q_results[1].diff",
+     ".data.per_q_results[1].rel_err",
+     ".data.per_q_results[1].rho_Z_constit"
+    ]
+   }
+  },
+  {
+   "producer": "rho_k_markov_multiplicativity_probe",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "spectral_selector_validate",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.1,
+   "moved": [
+    "computations/spectral-selector-validate.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/spectral-selector-validate.witness.json": [
+     ".data.upstream_witness_hashes[0].sha256",
+     ".data.upstream_witness_hashes[0].size_bytes"
+    ]
+   }
+  },
+  {
+   "producer": "sublemma_2_1_deuteron_branching",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.9,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "tau_M_proton_closed_form_phase5l1",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 1.1,
+   "moved": [
+    "computations/tau-M-proton-closed-form-phase5l1.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/tau-M-proton-closed-form-phase5l1.witness.json": [
+     ".data.T_proton_structural_at_q0_eval",
+     ".data.T_proton_structural_symbolic",
+     ".data.lean_uniqueness_ref.framework_doc",
+     ".data.lean_uniqueness_ref.note",
+     ".data.lean_uniqueness_ref.nucleus",
+     ".data.lean_uniqueness_ref.theorem",
+     ".data.y_lambda_structural.(1, 1, 1)",
+     ".data.y_lambda_structural.(2, 1)",
+     ".data.y_lambda_structural.(3,)",
+     ".precisionMetadata.compute_dps",
+     ".precisionMetadata.guard_digits",
+     ".precisionMetadata.output_dps"
+    ]
+   }
+  },
+  {
+   "producer": "term5_aK_audit",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 0.4,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "three_body_joint_trace_a3",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 1.1,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "threerow_sign_crossing_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 6.4,
+   "moved": [
+    "computations/deltalambda/threerow-sign-crossing.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/threerow-sign-crossing.witness.json": [
+     ".assertions[1].computed",
+     ".assertions[1].expected",
+     ".assertions[2].computed",
+     ".assertions[2].expected",
+     ".data.any_isotope_sign_crossed",
+     ".data.chi_vs_witness_max_rel_at_q0",
+     ".data.companion_character_free.12.G_at_q0",
+     ".data.companion_character_free.12.G_at_qlo",
+     ".data.companion_character_free.12.crossing_q_values[0]",
+     ".data.companion_character_free.12.crossing_q_values[1]",
+     ".data.companion_character_free.12.sign_crossed",
+     ".data.companion_character_free.12.sign_q0"
+    ]
+   }
+  },
+  {
+   "producer": "tr_m_q_hecke_seminormal",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 19.9,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "trace_convention_reconciliation",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.7,
+   "moved": [
+    "computations/trace-convention-reconciliation.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/trace-convention-reconciliation.witness.json": [
+     ".allPassed",
+     ".assertions[0].computed",
+     ".assertions[0].passed",
+     ".assertions[1].computed",
+     ".assertions[1].passed",
+     ".data.deuteron_delta_tr.normalized_plancherel",
+     ".data.deuteron_delta_tr.wenzl_jm_joint_word",
+     ".data.deuteron_delta_tr.wenzl_matches_canonical_residual",
+     ".data.deuteron_delta_tr.wenzl_over_plancherel",
+     ".precisionMetadata.compute_dps",
+     ".precisionMetadata.guard_digits",
+     ".precisionMetadata.output_dps"
+    ]
+   }
+  },
+  {
+   "producer": "triangle_bond_submodularity_probe",
+   "verdict": "MOVED",
+   "rc": 1,
+   "sec": 1.0,
+   "moved": [
+    "computations/deltalambda/triangle-bond-submodularity.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/triangle-bond-submodularity.witness.json": [
+     ".allPassed",
+     ".assertions[0].computed",
+     ".assertions[0].passed",
+     ".data.triangle_bond.results.3He.a\u00b7b (adjacent, #4404)",
+     ".data.triangle_bond.results.3He.a\u00b7c (0\u21941 \u00d7 0\u21942 band)",
+     ".data.triangle_bond.results.3He.b\u00b7c (1\u21942 \u00d7 0\u21942 band)",
+     ".data.triangle_bond.results.3He.c3_adjacent_MeV",
+     ".data.triangle_bond.results.3He.triple_ursell",
+     ".data.triangle_bond.results.T.a\u00b7b (adjacent, #4404)",
+     ".data.triangle_bond.results.T.a\u00b7c (0\u21941 \u00d7 0\u21942 band)",
+     ".data.triangle_bond.results.T.b\u00b7c (1\u21942 \u00d7 0\u21942 band)",
+     ".data.triangle_bond.results.T.c3_adjacent_MeV"
+    ]
+   }
+  },
+  {
+   "producer": "wenzl_lr_convention_adapter",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 0.4,
+   "moved": [
+    "computations/wenzl-lr-convention-adapter.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/wenzl-lr-convention-adapter.witness.json": [
+     ".cases.Z1_N1.interface_word[0].ctype",
+     ".cases.Z1_N2.interface_word[0].ctype",
+     ".cases.Z2_N1.interface_word[1].ctype",
+     ".cases.Z2_N2.interface_word[1].ctype",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "d_frame_interface_twelve_derivation_probe",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 88.7,
+   "moved": [],
+   "identical": 1,
+   "fields": {}
+  },
+  {
+   "producer": "gap10_tjon_correlation_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 64.2,
+   "moved": [
+    "computations/deltalambda/gap10-tjon-correlation.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/deltalambda/gap10-tjon-correlation.witness.json": [
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).M_op.2",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).M_op.3",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).M_op.4",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).frac_tjon_deviation",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).ladder_normalised.3",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).ladder_normalised.4",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).mu4_op",
+     ".data.tjon_correlation.results.chain only (adjacent: 1,2,3).tjon_two_point_prediction",
+     ".data.tjon_correlation.results.complete graph (C(A,2) bonds: 1,3,6).M_op.2",
+     ".data.tjon_correlation.results.complete graph (C(A,2) bonds: 1,3,6).M_op.3",
+     ".data.tjon_correlation.results.complete graph (C(A,2) bonds: 1,3,6).M_op.4",
+     ".data.tjon_correlation.results.complete graph (C(A,2) bonds: 1,3,6).frac_tjon_deviation"
+    ]
+   }
+  },
+  {
+   "producer": "he4_qreeb_phase_falsification_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 60.0,
+   "moved": [
+    "computations/he4-qreeb-phase-falsification.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/he4-qreeb-phase-falsification.witness.json": [
+     ".data.B_pair_model_MeV",
+     ".data.deficit_observed_MeV",
+     ".data.per_bond_MeV[0]",
+     ".data.per_bond_MeV[1]",
+     ".data.per_bond_MeV[2]",
+     ".data.ratio_observed_MeV_per_rad",
+     ".data.ratio_rel_to_A3_pct",
+     ".inputs.E0_MeV",
+     ".inputs.q0",
+     ".q0Anchor",
+     ".q0Value",
+     ".scriptHash"
+    ]
+   }
+  },
+  {
+   "producer": "markov_peel_atomic_witness",
+   "verdict": "IDENTICAL",
+   "rc": 0,
+   "sec": 174.4,
+   "moved": [],
+   "identical": 2,
+   "fields": {}
+  },
+  {
+   "producer": "orbit_reduction_crosscheck",
+   "verdict": "MOVED",
+   "rc": 1,
+   "sec": 37.8,
+   "moved": [
+    "computations/tier-1b-orbit-reduction-crosscheck.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/tier-1b-orbit-reduction-crosscheck.witness.json": [
+     ".allPassed",
+     ".assertions[8].computed",
+     ".assertions[8].passed",
+     ".data.conclusion.api_correct",
+     ".data.lean_uniqueness_ref.framework_doc",
+     ".data.lean_uniqueness_ref.note",
+     ".data.lean_uniqueness_ref.nucleus",
+     ".data.lean_uniqueness_ref.theorem",
+     ".precisionMetadata.compute_dps",
+     ".precisionMetadata.guard_digits",
+     ".precisionMetadata.output_dps",
+     ".precisionMetadata.truncation_bound"
+    ]
+   }
+  },
+  {
+   "producer": "probe_4_li6_rectangular_python",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 23.7,
+   "moved": [
+    "computations/probe-4-li6-rectangular-python-targeted.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probe-4-li6-rectangular-python-targeted.witness.json": [
+     ".q0Anchor",
+     ".q0Value"
+    ]
+   }
+  },
+  {
+   "producer": "probe_4c_li6_large_d_scan",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 129.9,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "probe_4f_h3_sigma_avg_asymmetry",
+   "verdict": "CRASH",
+   "rc": 1,
+   "sec": 50.0,
+   "moved": [],
+   "identical": 0,
+   "fields": {}
+  },
+  {
+   "producer": "bar_pairing_binding_observable",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "block_swap_binding",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "chi_at_q_inv_via_native_mpfr",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "closed_form_tau_M_verification_phase5q",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "cross_check_trM_cw_seminormal_leg",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "gram_qtrace_hutchinson_probe",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "gram_transfer_quadratic",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "helium4_mu4_cluster_moment_probe",
+   "verdict": "TIMEOUT",
+   "rc": "TIMEOUT",
+   "sec": 900.1,
+   "moved": [],
+   "identical": 0,
+   "fields": {},
+   "exception": "",
+   "timeout_count": 1
+  },
+  {
+   "producer": "mu3_door_sign_C_vs_D_probe",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 300.4,
+   "moved": [
+    "computations/probes/mu3-door-sign-c-vs-d.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probes/mu3-door-sign-c-vs-d.witness.json": [
+     ".scriptHash"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "orbit_trace_identity_proof",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 511.1,
+   "moved": [
+    "computations/orbit-trace-identity.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/orbit-trace-identity.witness.json": [
+     ".allPassed",
+     ".assertions[3].computed",
+     ".assertions[4].computed",
+     ".assertions[4].passed",
+     ".assertions[5].computed",
+     ".assertions[5].passed",
+     ".precisionMetadata.compute_dps",
+     ".precisionMetadata.guard_digits",
+     ".precisionMetadata.output_dps",
+     ".precisionMetadata.truncation_bound",
+     ".scriptHash"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "paper_six_term_isotope_sweep",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 701.9,
+   "moved": [
+    "computations/sweeps/paper-six-term-isotope-sweep.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/sweeps/paper-six-term-isotope-sweep.witness.json": [
+     ".all_modes.brane-legacy.rows[2].error",
+     ".all_modes.brane-legacy.rows[3].error",
+     ".all_modes.brane-legacy.rows[4].error",
+     ".all_modes.combined.rows[2].error",
+     ".all_modes.combined.rows[3].error",
+     ".all_modes.combined.rows[4].error",
+     ".all_modes.drop.rows[2].error",
+     ".all_modes.drop.rows[3].error",
+     ".all_modes.drop.rows[4].error",
+     ".all_modes.habiro.rows[2].error",
+     ".all_modes.habiro.rows[3].error",
+     ".all_modes.habiro.rows[4].error"
+    ]
+   },
+   "exception": ""
+  },
+  {
+   "producer": "probe_9b_laurent_degree_10a5",
+   "verdict": "MOVED",
+   "rc": 0,
+   "sec": 299.3,
+   "moved": [
+    "computations/probe-9b-laurent-degree-10a5.witness.json"
+   ],
+   "identical": 0,
+   "fields": {
+    "computations/probe-9b-laurent-degree-10a5.witness.json": [
+     ".assertions[2].computed",
+     ".assertions[3].computed",
+     ".assertions[4].computed",
+     ".assertions[5].computed",
+     ".assertions[6].computed",
+     ".assertions[7].computed",
+     ".assertions[8].computed",
+     ".assertions[9].computed",
+     ".data.isotope_rows[0].B_pred_MeV",
+     ".data.isotope_rows[0].Delta_lambda",
+     ".data.isotope_rows[0].dev_from_law",
+     ".data.isotope_rows[0].log_decomposition.log_q0_BAME_over_Qbeta"
+    ]
+   },
+   "exception": ""
+  }
+ ]
+}

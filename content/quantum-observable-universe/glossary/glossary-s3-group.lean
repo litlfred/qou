@@ -1,3 +1,5 @@
+import Mathlib.Data.Fintype.Perm
+import Mathlib.Data.Fintype.Card
 import Mathlib.GroupTheory.Perm.Basic
 
 

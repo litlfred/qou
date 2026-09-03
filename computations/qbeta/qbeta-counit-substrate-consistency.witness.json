@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-11T11:15:27.611317+00:00",
-  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
+  "computedAt": "2026-08-29T15:52:37.602417+00:00",
+  "commitSha": "6725c84dadb072d6b7aaa56109d517aeb235b3e0",
   "assertions": [
     {
       "name": "counit_eps_E0_eq_closed_form",
       "computed": "0.78364582737462121307493975134139689052573644103029",
       "expected": "0.78364582737462121307493975134139689052573644103029",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "MeV",
       "source": "Lean Qbeta_closed (qbeta_energy_scale.lean)"
     },
     {
       "name": "counit_residual_pct",
-      "computed": 0.1677567847474663,
+      "computed": "0.16775678474746631042380656367428952391748692290848350148692615609",
       "expected": 0.17,
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "unit": "percent",
       "source": "PR #2363 audit (+0.17 %)"
     },
     {
       "name": "trace_substrate_residual_pct",
-      "computed": -43.157175337586516,
+      "computed": "-43.157175337586514539758411567142098785618426117777087048846522718",
       "expected": -56.0,
       "passed": false,
       "tolerance": 1.0,
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 4,
   "computation": "qbeta-counit-substrate-consistency",
   "scriptFile": "qbeta_counit_substrate_consistency.py",
-  "scriptHash": "1106faaf3dd5",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "4841dabad273",
+  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,10 +56,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_counit_substrate_consistency.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_counit_substrate_consistency.py"
   },
   "description": "Q_β counit/trace consistency at the proton-anchored substrate q₀: reproduces the merged PR #2363 +0.17 % counit and −56 % trace signatures at the live anchor (confirming non-staleness), and pins the N=0 truncation remainder bound O(ℏ_q²/(1−ℏ_q²)) ≈ 1 % that the open convergence leg must respect.",
   "auditOnly": "docs/audits/2026-06-18-qbeta-counit-substrate-consistency.md",

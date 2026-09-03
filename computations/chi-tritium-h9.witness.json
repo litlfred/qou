@@ -1,15 +1,15 @@
 {
-  "description": "Symbolic \u03c7^\u03bb_q(\u03b2_atomic(1, 2)) \u2014 tritium \u2014 for the canonical atomic braid word at H_9, per partition \u03bb \u22a2 9.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far. PARTIAL \u2014 re-run to continue.",
+  "description": "Symbolic χ^λ_q(β_atomic(1, 2)) — tritium — for the canonical atomic braid word at H_9, per partition λ ⊢ 9.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far. PARTIAL — re-run to continue.",
   "atom": "tritium",
   "Z": 1,
   "N": 2,
   "n": 9,
-  "n_partitions": 1,
+  "n_partitions": 2,
   "n_partitions_total": 30,
   "partial": true,
   "convention": "colour-weighted-averaged-crossing",
   "convention_fingerprint": "sigma:16+sigma_inv:12+averaged:6+averaged_weighted:1",
-  "compute_time_sec_so_far": "3.903",
+  "compute_time_sec_so_far": "276.089",
   "workers": 4,
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
   "chi_lambda_symbolic": [
@@ -18,6 +18,13 @@
         9
       ],
       "chi_q_symbolic": "(q**20 - 2*q**19 + 12*q**18 - 10*q**17 + 55*q**16 - 16*q**15 + 134*q**14 + 196*q**12 + 28*q**11 + 182*q**10 + 28*q**9 + 112*q**8 + 50*q**6 - 16*q**5 + 19*q**4 - 10*q**3 + 6*q**2 - 2*q + 1)/(768*q**7)"
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "chi_q_symbolic": "(q**40 - 2*q**39 + 12*q**38 - 10*q**37 + 57*q**36 - 20*q**35 + 142*q**34 - 12*q**33 + 205*q**32 + 22*q**31 + 178*q**30 + 30*q**29 + 125*q**28 - 16*q**27 + 160*q**26 - 16*q**25 + 198*q**24 + 52*q**23 + 93*q**22 + 50*q**21 - 59*q**20 - 16*q**19 - 123*q**18 - 26*q**17 - 142*q**16 - 2*q**15 - 178*q**14 - 14*q**13 - 219*q**12 - 40*q**11 - 212*q**10 - 28*q**9 - 141*q**8 + 10*q**7 - 65*q**6 + 24*q**5 - 24*q**4 + 12*q**3 - 7*q**2 + 2*q - 1)/(768*q**19)"
     }
   ]
 }

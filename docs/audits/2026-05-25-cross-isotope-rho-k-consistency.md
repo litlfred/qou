@@ -26,6 +26,20 @@ closure piece — not a per-isotope coincidence**.
 | **c_αα binding** (T_w(7²_1) in H_?) | 0.2086 (Wenzl) | 2.427 | 0.107 | **22.66** | [`c-alpha-alpha-categorical-via-jones-markov.witness.json`](../../computations/c-alpha-alpha-categorical-via-jones-markov.witness.json) (commit `388a5b77`) |
 | **tritium ⁸B 8_11** (T_w in H_5/B_5) | (TBD) | (binding) | (TBD) | "pattern confirmed" | [`probe_track_b_phase_2.witness.json`](commit `30e90542`) |
 
+> **The ⁴He row is a correctly-pinned historical citation, not a live
+> number (noted 2026-08-25, bean `qou-cds4`).** Its `0.1539` is the value
+> `atomic-tr-m-helium4-canonical.witness.json` held at commit `d2eeec27` —
+> convention C with a plain-σ p-n interface. That witness has since moved
+> twice: to `0.4185` at the convention-D migration, and to **`0.3472`** when
+> the p-n interface was flipped to the canonical colour weighting (owner
+> ruling R3). Recomputed, the ⁴He row reads bare `0.1774` MeV and
+> ρ_K ≈ **21011**, not 47397 — a factor 2.26 smaller.
+>
+> **The audit's finding is unaffected.** ρ_K stays four orders of magnitude
+> from unity, so "|tr_M| alone never suffices" holds, and the other rows
+> were not recomputed here. The row is left as recorded because it is a
+> dated measurement against a named commit; only its currency is corrected.
+
 The ρ_K closure factor is **the universal multiplicative gap between
 the bare |tr_M|-route and the target observable**. Its magnitude
 varies by orders of magnitude per object, but the QUALITATIVE

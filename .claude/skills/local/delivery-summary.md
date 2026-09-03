@@ -7,6 +7,15 @@ user_invocable: true
 
 # Delivery Summary
 
+> **The links are the delivery; the report is not optional (2026-08-25).**
+> Everything below is *packaging* — restart command, viewer links, sibling
+> file list. It sits **alongside** the substantive report of what you found,
+> never in place of it. A summary that lists five links and says "done" has
+> delivered the artifacts and dropped the finding. What the report must carry
+> — claim, evidence, implications, options, and a recommendation marked as
+> judgement — is specified in **AGENTS.md §User accessibility → "Terse ≠
+> compressed"**. Read it before writing this section.
+
 After completing a feature or edit (i.e., after pushing changes), provide:
 
 ## 1. Server restart command
@@ -117,6 +126,32 @@ Always provide:
   PROVIDE")
 - **Commit links**: `https://github.com/litlfred/qou/commit/<hash>` for each commit
 - **Branch diff**: `https://github.com/litlfred/qou/compare/main...<branch>`
+
+## 4. Decisions you leave with the author (STRICT, 2026-08-29)
+
+A summary is one of the places agents hand the author a decision, and the
+commonest way to do it badly is a closing one-liner: *"the one thing waiting on
+you is whether to do X"*, or a `**next**` bean entry that names a choice and
+nothing else.
+
+**Naming a decision is asking a question**, so it owes the same frame as an
+`AskUserQuestion` — see AGENTS.md §"NAMING A DECISION IS ASKING A QUESTION".
+In a delivery summary that means, for each decision you raise:
+
+1. **What is being decided**, in words that do not assume the reader watched
+   you work. Expand every identifier on first use.
+2. **The options**, each with what it means / costs / risks / commits to.
+3. **The default** — what happens if they say nothing. Usually the honest
+   answer is "nothing changes", and saying so lets them defer with confidence.
+4. **The blast radius in real terms** — which files, which producers, which
+   published numbers. "Three consumers" is not a blast radius; naming them is.
+5. **Your recommendation**, marked as judgement rather than finding.
+
+**If you are not willing to spend those words, do not raise it in the
+summary.** Leave it in the bean, where the author reads it on their own
+schedule. An unframed decision in a summary is worse than no mention: it
+occupies the author's attention while withholding what would let them act, and
+it hides how cheap the item might be to ignore.
 
 ## Example output
 

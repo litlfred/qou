@@ -9,7 +9,7 @@
       "computed": 3.517,
       "expected": 3.517,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "rem:operator-valued-magnitude-budget cites scalar Frobenius 3.517"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 3.603,
       "expected": 3.603,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "rem:operator-valued-magnitude-budget cites operator Frobenius 3.603"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.72,
       "expected": 0.72,
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "rem:operator-valued-magnitude-budget cites ratio 0.72 = op_F / sqrt(scalar_F² + op_F²) (operator-valued fraction of total Frobenius magnitude)"
     },
     {

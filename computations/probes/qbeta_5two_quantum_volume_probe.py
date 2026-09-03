@@ -149,7 +149,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("vol_5_2_validates",
-                     computed=float(abs(abs(vol1) - VOL_5_2)), expected=0.0,
+                     computed=abs(abs(vol1) - VOL_5_2), expected=0.0,
                      tolerance=1e-6,
                      source="Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 "
                             "(Hikami eq 4.12 / SnapPy) — validates the NZ saddle")

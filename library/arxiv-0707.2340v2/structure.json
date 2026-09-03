@@ -1,0 +1,360 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.2340v2",
+ "source": {
+  "file": "0707.2340v2.pdf",
+  "sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
+  "bytes": 624516,
+  "pages": 47,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.2340",
+   "version": "2",
+   "primary_class": "math.PR",
+   "stamp_date": "27 Jul 2008"
+  },
+  "doi": null,
+  "title": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+  "authors_raw": "JULIUS BORCEA, PETTER BR\u00c4ND\u00c9N, AND THOMAS M. LIGGETT",
+  "title_lines": [
+   "NEGATIVE DEPENDENCE AND",
+   "THE GEOMETRY OF POLYNOMIALS"
+  ],
+  "abstract": "W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount to the stability of the latter. This class covers important m odels such as de- terminantal measures (e.g. product measures, uniform rand om spanning tree measures) and distributions for symmetric exclusion proce sses. W e show that strongly Rayleigh measures enjoy all virtues of negative de pendence and we also prove a series of conjectures due to Liggett, Pemantle, and W agner, re- spectively. Moreover, we extend Lyons\u2019 recent results on de terminantal mea- sures and we construct counterexamples to several conjectu res of Pemantle and W agner on negative dependence and ultra log-concave ran k sequences.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181023162915-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A Plethora of Negative Dependence Properties and Conjectures",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Negative Dependence Concepts",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Strongly Rayleigh Measures",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric Homogenization",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Measures on countably infinite sets",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Towards a Theory of Negative Dependence: Problems and Solutions",
+   "page": 11,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Negative Dependence in Mathematics and Physics",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Real Stable Polynomials and Transcendental Entire Functions",
+   "page": 13,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Determinantal Probability Measures",
+   "page": 17,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Graphs, Laplacians, Spanning Trees and the Random Cluster Model",
+   "page": 18,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Interacting Particle Systems and Exclusion Evolutions",
+   "page": 20,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric Homogenization via G\u00e5rding Hyperbolic Polynomials",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Stability Implies Negative Association",
+   "page": 24,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Stochastic Domination and Truncations",
+   "page": 25,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The Partial Symmetrization Procedure",
+   "page": 29,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+   "page": 31,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Almost Exchangeable Measures",
+   "page": 33,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Negative Results on Negative Dependence",
+   "page": 41,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 11267,
+   "n_words": 1811
+  },
+  {
+   "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
+   "number": "2",
+   "title": "A Plethora of Negative Dependence Properties and Conjectures",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 377,
+   "n_words": 65
+  },
+  {
+   "id": "sec-002-21-negative-dependence-concepts",
+   "number": "2.1",
+   "title": "Negative Dependence Concepts",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 13575,
+   "n_words": 2807
+  },
+  {
+   "id": "sec-003-22-strongly-rayleigh-measures",
+   "number": "2.2",
+   "title": "Strongly Rayleigh Measures",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2198,
+   "n_words": 409
+  },
+  {
+   "id": "sec-004-23-symmetric-homogenization",
+   "number": "2.3",
+   "title": "Symmetric Homogenization",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 9117,
+   "n_words": 1626
+  },
+  {
+   "id": "sec-005-3-negative-dependence-in-mathematics-and-physics",
+   "number": "3",
+   "title": "Negative Dependence in Mathematics and Physics",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5643,
+   "n_words": 1096
+  },
+  {
+   "id": "sec-006-32-hadamard-fischer-inequalities-and-gkk-matrice",
+   "number": "3.2",
+   "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 5337,
+   "n_words": 1055
+  },
+  {
+   "id": "sec-007-33-determinantal-probability-measures",
+   "number": "3.3",
+   "title": "Determinantal Probability Measures",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 6301,
+   "n_words": 1236
+  },
+  {
+   "id": "sec-008-35-interacting-particle-systems-and-exclusion-ev",
+   "number": "3.5",
+   "title": "Interacting Particle Systems and Exclusion Evolutions",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 4114,
+   "n_words": 731
+  },
+  {
+   "id": "sec-009-4-negative-dependence-theory-for-strongly-raylei",
+   "number": "4",
+   "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 7436,
+   "n_words": 1597
+  },
+  {
+   "id": "sec-010-42-stability-implies-negative-association",
+   "number": "4.2",
+   "title": "Stability Implies Negative Association",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 15144,
+   "n_words": 3155
+  },
+  {
+   "id": "sec-011-44-the-partial-symmetrization-procedure",
+   "number": "4.4",
+   "title": "The Partial Symmetrization Procedure",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4092,
+   "n_words": 815
+  },
+  {
+   "id": "sec-012-5-preservation-of-negative-dependence-by-symmetr",
+   "number": "5",
+   "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 8081,
+   "n_words": 1553
+  },
+  {
+   "id": "sec-013-6-almost-exchangeable-measures",
+   "number": "6",
+   "title": "Almost Exchangeable Measures",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 41,
+   "n_chars": 17233,
+   "n_words": 3868
+  },
+  {
+   "id": "sec-014-7-negative-results-on-negative-dependence",
+   "number": "7",
+   "title": "Negative Results on Negative Dependence",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 45,
+   "n_chars": 8546,
+   "n_words": 1876
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 10289,
+   "n_words": 1566
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 16,
+  "chars_total": 128750
+ }
+}

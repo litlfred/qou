@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:45:52.680603+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-30T12:52:20.754524+00:00",
+  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
   "assertions": [
     {
       "name": "V1_inversion_S+T_S-_eq_I",
@@ -57,8 +57,8 @@
   "durationMs": 4,
   "computation": "fivetwo-stokes-matrix-zq",
   "scriptFile": "fivetwo_stokes_matrix_zq.py",
-  "scriptHash": "af6bde8c53a7",
-  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "scriptHash": "0866a5885822",
+  "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "mpmath": "1.3.0"
   },
   "invocation": {
     "argv": [
@@ -86,7 +83,7 @@
   "parameters": {
     "source": "GGM arXiv:2007.10190v2 §3, eqs (22)-(29)",
     "q0_anchor": "muon",
-    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "series_order_asserted": 18,
     "assembly_convention": "unflipped"
   },
@@ -153,17 +150,17 @@
       -288,
       -684
     ],
-    "V4_ReV_sigma1_vol": "2.82812208833455",
+    "V4_ReV_sigma1_vol": "2.8281220883307831627638988092766349427709813173006",
     "V4_ImV_sigma1_cs": "1.37919181633454",
-    "V4_one_instanton_weight_substrate": "(-7.09604438412e-7 + 1.67304351703e-6j)",
+    "V4_one_instanton_weight_substrate": "(-7.09608415341e-7 + 1.67303894512e-6j)",
     "V4_leading_sigma11_stokes_constant": -12,
-    "V4_leading_disc_contribution": "(8.51525326094e-6 - 2.00765222043e-5j)",
+    "V4_leading_disc_contribution": "(8.5153009841e-6 - 2.00764673415e-5j)",
     "discipline": "literature transcription of GGM 2007.10190; no fit; nothing wired; c₃ read-off downstream and NOT claimed",
     "prefactor_identification": "I_{0,0}=Z_{5₂} and S±(q) are two contractions of the same fundamental solution W₋₁ (eq 29 vs eq-110 factorization); L±,R± + frame phase e^{πi/4} are the FW↔GGM Jacobian prefactor."
   },
   "caveats": [
     "Literature transcription + identification, NOT a QOU c₃ derivation. Residual toward FULL numeric equality with the median-Borel resummation of Φ_{5₂}: the median resummation of the perturbative ϕ_{σⱼ}(τ) (eq 20) is NOT performed here — that is the open gap (gap bean). No fit; nothing wired to production; c₃ NOT claimed derived."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

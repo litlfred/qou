@@ -1,0 +1,2280 @@
+{
+  "computation": "habiro-frobenius-all-primes-probe",
+  "computedAt": "2026-08-28T19:45:03.453771+00:00",
+  "description": "Closes the two scope limits of the head-criterion probes. (1) The criterion is equivalent to a divisibility of P itself — (z;z)_j | head_j iff (z;z)_j | P(zeta), verified on 158 cells — so it never needed the Habiro coefficients, and it is strictly weaker than asking P(zeta) != 0. (2) Therefore decide directly: P(zeta_2p) = 0 iff Phi_2p | P, and deg Phi_2p = p-1 makes that impossible once p-1 > deg P, so finitely many primes settle EVERY prime — no criterion, no a_2, no truncation-depth caveat, and it reaches atoms with no Habiro data on disk. The same argument on denom rules out a pole. (3) The A closed form is derived rather than merely verified: A = n_p(-1)^Z n_n(-1)^N PROD n_k(-1) / G(-1) with n_p(-1)=8, n_n(-1)=2 and per-kind 1/1/2/12, and exactly one averaged_weighted per mixed atom — leaving G(-1) = 1 as the single unproved step. (4) Because `averaged` contributes 2 and not 12, the factor of 3 is a fingerprint of the canonical bring_color_weighted convention, not of the trace. All arithmetic exact; no float.",
+  "reference_lean": [
+    "qou:QOU.Habiro.habiroEval_sub_head",
+    "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd",
+    "qou:QOU.Habiro.habiroEval_at_sq_eq_neg_one"
+  ],
+  "reference_blocks": [
+    "def:motivic-galois-character",
+    "prop:flavor-split-substrate"
+  ],
+  "input_witness": "habiro-coefficients-atomic.witness.json",
+  "max_mass_tested": 10,
+  "criterion_equals_P_divisibility": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 2,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 2,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 2,
+      "j": 3,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 2,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 5,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 7,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 2,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 2,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 2,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 2,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 5,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 7,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 2,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 2,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 2,
+      "j": 3,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 2,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 5,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 11,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 12,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 13,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 7,
+      "j": 14,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 2,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 2,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 2,
+      "j": 3,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 2,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 5,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 11,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 12,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 13,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 7,
+      "j": 14,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 2,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 2,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 2,
+      "j": 3,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 2,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 2,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 5,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 1,
+      "divides_head": true,
+      "divides_P": true,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 2,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 3,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 4,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 5,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 6,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 7,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 8,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 9,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 10,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 11,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 12,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 13,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 7,
+      "j": 14,
+      "divides_head": false,
+      "divides_P": false,
+      "agree": true
+    }
+  ],
+  "on_disk_atoms": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "deg_P": 44,
+      "deg_denom": 26,
+      "degree_bound": 45,
+      "n_primes_checked": 14,
+      "primes_where_P_vanishes": [],
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "deg_P": 36,
+      "deg_denom": 18,
+      "degree_bound": 37,
+      "n_primes_checked": 12,
+      "primes_where_P_vanishes": [],
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "deg_P": 100,
+      "deg_denom": 58,
+      "degree_bound": 101,
+      "n_primes_checked": 26,
+      "primes_where_P_vanishes": [],
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "deg_P": 136,
+      "deg_denom": 82,
+      "degree_bound": 137,
+      "n_primes_checked": 33,
+      "primes_where_P_vanishes": [],
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "deg_P": 144,
+      "deg_denom": 82,
+      "degree_bound": 145,
+      "n_primes_checked": 34,
+      "primes_where_P_vanishes": [],
+      "primes_where_denom_vanishes": []
+    }
+  ],
+  "interface_kind_num_at_minus_one": {
+    "positive": 1,
+    "negative": 1,
+    "averaged": 2,
+    "averaged_weighted": 12
+  },
+  "tau_num_at_minus_one": {
+    "proton": 8,
+    "neutron": 2
+  },
+  "grid": [
+    {
+      "Z": 0,
+      "N": 1,
+      "deg_P": 36,
+      "n_primes_checked": 12,
+      "primes_where_P_vanishes": [],
+      "A": 2,
+      "closed_form": 2,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 2,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 0,
+      "deg_P": 44,
+      "n_primes_checked": 14,
+      "primes_where_P_vanishes": [],
+      "A": 8,
+      "closed_form": 8,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 8,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 2,
+      "deg_P": 72,
+      "n_primes_checked": 21,
+      "primes_where_P_vanishes": [],
+      "A": 4,
+      "closed_form": 4,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 4,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "deg_P": 100,
+      "n_primes_checked": 26,
+      "primes_where_P_vanishes": [],
+      "A": 192,
+      "closed_form": 192,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 192,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "deg_P": 88,
+      "n_primes_checked": 24,
+      "primes_where_P_vanishes": [],
+      "A": 64,
+      "closed_form": 64,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 64,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "deg_P": 108,
+      "n_primes_checked": 29,
+      "primes_where_P_vanishes": [],
+      "A": 8,
+      "closed_form": 8,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 8,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "deg_P": 136,
+      "n_primes_checked": 33,
+      "primes_where_P_vanishes": [],
+      "A": 384,
+      "closed_form": 384,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 384,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "deg_P": 144,
+      "n_primes_checked": 34,
+      "primes_where_P_vanishes": [],
+      "A": 1536,
+      "closed_form": 1536,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 1536,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "deg_P": 132,
+      "n_primes_checked": 32,
+      "primes_where_P_vanishes": [],
+      "A": 512,
+      "closed_form": 512,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 512,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "deg_P": 144,
+      "n_primes_checked": 34,
+      "primes_where_P_vanishes": [],
+      "A": 16,
+      "closed_form": 16,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 16,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "deg_P": 172,
+      "n_primes_checked": 40,
+      "primes_where_P_vanishes": [],
+      "A": 768,
+      "closed_form": 768,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 768,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "deg_P": 180,
+      "n_primes_checked": 42,
+      "primes_where_P_vanishes": [],
+      "A": 3072,
+      "closed_form": 3072,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 3072,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "deg_P": 188,
+      "n_primes_checked": 42,
+      "primes_where_P_vanishes": [],
+      "A": 12288,
+      "closed_form": 12288,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 12288,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "deg_P": 176,
+      "n_primes_checked": 40,
+      "primes_where_P_vanishes": [],
+      "A": 4096,
+      "closed_form": 4096,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 4096,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 5,
+      "deg_P": 180,
+      "n_primes_checked": 42,
+      "primes_where_P_vanishes": [],
+      "A": 32,
+      "closed_form": 32,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 32,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "deg_P": 208,
+      "n_primes_checked": 46,
+      "primes_where_P_vanishes": [],
+      "A": 1536,
+      "closed_form": 1536,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 1536,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "deg_P": 216,
+      "n_primes_checked": 47,
+      "primes_where_P_vanishes": [],
+      "A": 6144,
+      "closed_form": 6144,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 6144,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "deg_P": 224,
+      "n_primes_checked": 48,
+      "primes_where_P_vanishes": [],
+      "A": 24576,
+      "closed_form": 24576,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 24576,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "deg_P": 232,
+      "n_primes_checked": 51,
+      "primes_where_P_vanishes": [],
+      "A": 98304,
+      "closed_form": 98304,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 98304,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 0,
+      "deg_P": 220,
+      "n_primes_checked": 47,
+      "primes_where_P_vanishes": [],
+      "A": 32768,
+      "closed_form": 32768,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 32768,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 6,
+      "deg_P": 216,
+      "n_primes_checked": 47,
+      "primes_where_P_vanishes": [],
+      "A": 64,
+      "closed_form": 64,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 64,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 5,
+      "deg_P": 244,
+      "n_primes_checked": 53,
+      "primes_where_P_vanishes": [],
+      "A": 3072,
+      "closed_form": 3072,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 3072,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "deg_P": 252,
+      "n_primes_checked": 54,
+      "primes_where_P_vanishes": [],
+      "A": 12288,
+      "closed_form": 12288,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 12288,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "deg_P": 260,
+      "n_primes_checked": 55,
+      "primes_where_P_vanishes": [],
+      "A": 49152,
+      "closed_form": 49152,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 49152,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "deg_P": 268,
+      "n_primes_checked": 57,
+      "primes_where_P_vanishes": [],
+      "A": 196608,
+      "closed_form": 196608,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 196608,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 1,
+      "deg_P": 276,
+      "n_primes_checked": 59,
+      "primes_where_P_vanishes": [],
+      "A": 786432,
+      "closed_form": 786432,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 786432,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 6,
+      "N": 0,
+      "deg_P": 264,
+      "n_primes_checked": 56,
+      "primes_where_P_vanishes": [],
+      "A": 262144,
+      "closed_form": 262144,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 262144,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 7,
+      "deg_P": 252,
+      "n_primes_checked": 54,
+      "primes_where_P_vanishes": [],
+      "A": 128,
+      "closed_form": 128,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 128,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 6,
+      "deg_P": 280,
+      "n_primes_checked": 60,
+      "primes_where_P_vanishes": [],
+      "A": 6144,
+      "closed_form": 6144,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 6144,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 5,
+      "deg_P": 288,
+      "n_primes_checked": 61,
+      "primes_where_P_vanishes": [],
+      "A": 24576,
+      "closed_form": 24576,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 24576,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "deg_P": 296,
+      "n_primes_checked": 62,
+      "primes_where_P_vanishes": [],
+      "A": 98304,
+      "closed_form": 98304,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 98304,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "deg_P": 304,
+      "n_primes_checked": 62,
+      "primes_where_P_vanishes": [],
+      "A": 393216,
+      "closed_form": 393216,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 393216,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 2,
+      "deg_P": 312,
+      "n_primes_checked": 65,
+      "primes_where_P_vanishes": [],
+      "A": 1572864,
+      "closed_form": 1572864,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 1572864,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 6,
+      "N": 1,
+      "deg_P": 320,
+      "n_primes_checked": 66,
+      "primes_where_P_vanishes": [],
+      "A": 6291456,
+      "closed_form": 6291456,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 6291456,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 7,
+      "N": 0,
+      "deg_P": 308,
+      "n_primes_checked": 63,
+      "primes_where_P_vanishes": [],
+      "A": 2097152,
+      "closed_form": 2097152,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 2097152,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 8,
+      "deg_P": 288,
+      "n_primes_checked": 61,
+      "primes_where_P_vanishes": [],
+      "A": 256,
+      "closed_form": 256,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 256,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 7,
+      "deg_P": 316,
+      "n_primes_checked": 66,
+      "primes_where_P_vanishes": [],
+      "A": 12288,
+      "closed_form": 12288,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 12288,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 6,
+      "deg_P": 324,
+      "n_primes_checked": 66,
+      "primes_where_P_vanishes": [],
+      "A": 49152,
+      "closed_form": 49152,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 49152,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 5,
+      "deg_P": 332,
+      "n_primes_checked": 67,
+      "primes_where_P_vanishes": [],
+      "A": 196608,
+      "closed_form": 196608,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 196608,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "deg_P": 340,
+      "n_primes_checked": 68,
+      "primes_where_P_vanishes": [],
+      "A": 786432,
+      "closed_form": 786432,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 786432,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 3,
+      "deg_P": 348,
+      "n_primes_checked": 70,
+      "primes_where_P_vanishes": [],
+      "A": 3145728,
+      "closed_form": 3145728,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 3145728,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 6,
+      "N": 2,
+      "deg_P": 356,
+      "n_primes_checked": 71,
+      "primes_where_P_vanishes": [],
+      "A": 12582912,
+      "closed_form": 12582912,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 12582912,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 7,
+      "N": 1,
+      "deg_P": 364,
+      "n_primes_checked": 72,
+      "primes_where_P_vanishes": [],
+      "A": 50331648,
+      "closed_form": 50331648,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 50331648,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 8,
+      "N": 0,
+      "deg_P": 352,
+      "n_primes_checked": 71,
+      "primes_where_P_vanishes": [],
+      "A": 16777216,
+      "closed_form": 16777216,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 16777216,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 9,
+      "deg_P": 324,
+      "n_primes_checked": 66,
+      "primes_where_P_vanishes": [],
+      "A": 512,
+      "closed_form": 512,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 512,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 8,
+      "deg_P": 352,
+      "n_primes_checked": 71,
+      "primes_where_P_vanishes": [],
+      "A": 24576,
+      "closed_form": 24576,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 24576,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 7,
+      "deg_P": 360,
+      "n_primes_checked": 72,
+      "primes_where_P_vanishes": [],
+      "A": 98304,
+      "closed_form": 98304,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 98304,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 6,
+      "deg_P": 368,
+      "n_primes_checked": 73,
+      "primes_where_P_vanishes": [],
+      "A": 393216,
+      "closed_form": 393216,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 393216,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "deg_P": 376,
+      "n_primes_checked": 74,
+      "primes_where_P_vanishes": [],
+      "A": 1572864,
+      "closed_form": 1572864,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 1572864,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 4,
+      "deg_P": 384,
+      "n_primes_checked": 76,
+      "primes_where_P_vanishes": [],
+      "A": 6291456,
+      "closed_form": 6291456,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 6291456,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 6,
+      "N": 3,
+      "deg_P": 392,
+      "n_primes_checked": 77,
+      "primes_where_P_vanishes": [],
+      "A": 25165824,
+      "closed_form": 25165824,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 25165824,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 7,
+      "N": 2,
+      "deg_P": 400,
+      "n_primes_checked": 79,
+      "primes_where_P_vanishes": [],
+      "A": 100663296,
+      "closed_form": 100663296,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 100663296,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 8,
+      "N": 1,
+      "deg_P": 408,
+      "n_primes_checked": 80,
+      "primes_where_P_vanishes": [],
+      "A": 402653184,
+      "closed_form": 402653184,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 402653184,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 9,
+      "N": 0,
+      "deg_P": 396,
+      "n_primes_checked": 78,
+      "primes_where_P_vanishes": [],
+      "A": 134217728,
+      "closed_form": 134217728,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 134217728,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 0,
+      "N": 10,
+      "deg_P": 360,
+      "n_primes_checked": 72,
+      "primes_where_P_vanishes": [],
+      "A": 1024,
+      "closed_form": 1024,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 1024,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 1,
+      "N": 9,
+      "deg_P": 388,
+      "n_primes_checked": 77,
+      "primes_where_P_vanishes": [],
+      "A": 49152,
+      "closed_form": 49152,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 49152,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 2,
+      "N": 8,
+      "deg_P": 396,
+      "n_primes_checked": 78,
+      "primes_where_P_vanishes": [],
+      "A": 196608,
+      "closed_form": 196608,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 196608,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 3,
+      "N": 7,
+      "deg_P": 404,
+      "n_primes_checked": 79,
+      "primes_where_P_vanishes": [],
+      "A": 786432,
+      "closed_form": 786432,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 786432,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 4,
+      "N": 6,
+      "deg_P": 412,
+      "n_primes_checked": 80,
+      "primes_where_P_vanishes": [],
+      "A": 3145728,
+      "closed_form": 3145728,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 3145728,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 5,
+      "N": 5,
+      "deg_P": 420,
+      "n_primes_checked": 82,
+      "primes_where_P_vanishes": [],
+      "A": 12582912,
+      "closed_form": 12582912,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 12582912,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 6,
+      "N": 4,
+      "deg_P": 428,
+      "n_primes_checked": 82,
+      "primes_where_P_vanishes": [],
+      "A": 50331648,
+      "closed_form": 50331648,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 50331648,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 7,
+      "N": 3,
+      "deg_P": 436,
+      "n_primes_checked": 84,
+      "primes_where_P_vanishes": [],
+      "A": 201326592,
+      "closed_form": 201326592,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 201326592,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 8,
+      "N": 2,
+      "deg_P": 444,
+      "n_primes_checked": 86,
+      "primes_where_P_vanishes": [],
+      "A": 805306368,
+      "closed_form": 805306368,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 805306368,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 9,
+      "N": 1,
+      "deg_P": 452,
+      "n_primes_checked": 87,
+      "primes_where_P_vanishes": [],
+      "A": 3221225472,
+      "closed_form": 3221225472,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 1,
+      "A_raw_before_cancellation": 3221225472,
+      "G_at_minus_one": "1"
+    },
+    {
+      "Z": 10,
+      "N": 0,
+      "deg_P": 440,
+      "n_primes_checked": 85,
+      "primes_where_P_vanishes": [],
+      "A": 1073741824,
+      "closed_form": 1073741824,
+      "closed_form_agrees": true,
+      "n_averaged_weighted": 0,
+      "A_raw_before_cancellation": 1073741824,
+      "G_at_minus_one": "1"
+    }
+  ],
+  "summary": {
+    "equivalence_cells": 158,
+    "equivalence_disagreements": 0,
+    "grid_cells": 65,
+    "cells_where_P_vanishes_at_any_prime": 0,
+    "closed_form_mismatches": 0,
+    "distinct_G_at_minus_one": [
+      "1"
+    ],
+    "frobenius_nonzero_at_every_prime": true,
+    "uniform_closure": {
+      "argument": "P = NUM/G with G a monomial; NUM is a product of powers of six fixed polynomials independent of (Z,N); Phi_2p is irreducible over Q with Phi_2p(0) != 0 so it cannot divide u^k; Q[u] is a UFD. Hence Phi_2p | P iff Phi_2p divides one of the six — a finite check, bounded by their largest degree, that settles EVERY (Z,N) at EVERY prime.",
+      "six_factors": {
+        "tau_p": {
+          "degree": 44,
+          "degree_bound": 45,
+          "n_primes_checked": 14,
+          "primes_dividing": []
+        },
+        "tau_n": {
+          "degree": 36,
+          "degree_bound": 37,
+          "n_primes_checked": 12,
+          "primes_dividing": []
+        },
+        "positive": {
+          "degree": 6,
+          "degree_bound": 7,
+          "n_primes_checked": 4,
+          "primes_dividing": []
+        },
+        "negative": {
+          "degree": 0,
+          "degree_bound": 1,
+          "n_primes_checked": 0,
+          "primes_dividing": []
+        },
+        "averaged": {
+          "degree": 8,
+          "degree_bound": 9,
+          "n_primes_checked": 4,
+          "primes_dividing": []
+        },
+        "averaged_weighted": {
+          "degree": 20,
+          "degree_bound": 21,
+          "n_primes_checked": 8,
+          "primes_dividing": []
+        }
+      },
+      "any_cyclotomic_divides_any_factor": [],
+      "largest_factor_degree": 44,
+      "mass_bound_needed": false
+    },
+    "G_at_minus_one_proof": {
+      "A_denominators_are_const_u_i_phi8_j": {
+        "tau_p": "4*u**18*(u**4 + 1)**2",
+        "tau_n": "4*u**18",
+        "positive": "u**4 + 1",
+        "negative": "u**2*(u**4 + 1)",
+        "averaged": "2*u**2*(u**4 + 1)",
+        "averaged_weighted": "12*u**10*(u**4 + 1)"
+      },
+      "B_numerators_coprime_to_u4_plus_1": {
+        "tau_p": true,
+        "tau_n": true,
+        "positive": true,
+        "negative": true,
+        "averaged": true,
+        "averaged_weighted": true
+      },
+      "C_all_in_Z_u_squared": {
+        "tau_p": true,
+        "tau_n": true,
+        "positive": true,
+        "negative": true,
+        "averaged": true,
+        "averaged_weighted": true
+      },
+      "conclusion": "A and B force G to be a monomial u^k; C forces k even; a monomial of even degree is +1 at u = -1. Hence G(-1) = 1."
+    },
+    "interface_census_source": "canonical_interface_kinds builds ['p']*Z + ['n']*N and walks adjacent pairs, so exactly one p->n transition iff Z>=1 and N>=1 — read from source, not sampled.",
+    "closed_form_status": "PROVED: rests on exact symbolic evaluation of six fixed expressions plus a combinatorial fact about adjacent pairs. An earlier version of this probe called G(-1)=1 unproved.",
+    "factor_3_is_convention_specific": true,
+    "all_checks_passed": true
+  },
+  "scriptHash": "e6e0c2d8ec47",
+  "scriptCommitSha": "f138b46f677b67fbdb8a43ea77088cade6df0e69",
+  "commitSha": "f138b46f677b67fbdb8a43ea77088cade6df0e69",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "habiro_frobenius_all_primes_probe.py"
+}

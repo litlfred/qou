@@ -4985,7 +4985,7 @@ computations/qbeta/qbeta-habiro-delta-a-m-pattern-probe.witness.json
 computations/qbeta/qbeta-habiro-delta-am-factorization.witness.json
 computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json
 computations/qbeta/qbeta-habiro-delta6-partition.witness.json
-computations/qbeta/qbeta-habiro-depth15-interpretation.witness.json
+computations/qbeta/qbeta-habiro-pn-split-depth.witness.json
 computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json
 computations/qbeta/qbeta-habiro-partition-followup.witness.json
 computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json
@@ -5118,7 +5118,7 @@ computations/qbeta/qbeta_habiro_delta6_partition_check.py
 computations/qbeta/qbeta_habiro_delta_a_m_pattern_probe.py
 computations/qbeta/qbeta_habiro_delta_am_factorization.py
 computations/qbeta/qbeta_habiro_delta_am_partial_sum_scan.py
-computations/qbeta/qbeta_habiro_depth15_interpretation.py
+computations/qbeta/qbeta_habiro_pn_split_depth.py
 computations/qbeta/qbeta_habiro_f_from_shape_collapse.py
 computations/qbeta/qbeta_habiro_partition_followup.py
 computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py
@@ -5261,7 +5261,7 @@ computations/qbeta/script-qa/qbeta_habiro_delta6_partition_check.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_delta_a_m_pattern_probe.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_delta_am_factorization.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_delta_am_partial_sum_scan.script-qa.json
-computations/qbeta/script-qa/qbeta_habiro_depth15_interpretation.script-qa.json
+computations/qbeta/script-qa/qbeta_habiro_pn_split_depth.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_f_from_shape_collapse.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_partition_followup.script-qa.json
 computations/qbeta/script-qa/qbeta_habiro_phase5q_dn_refactorize.script-qa.json

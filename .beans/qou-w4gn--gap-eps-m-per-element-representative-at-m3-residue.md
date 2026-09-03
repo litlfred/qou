@@ -1,10 +1,10 @@
 ---
 # qou-w4gn
 title: 'GAP: eps_m per-ELEMENT representative at m>=3 — residue-level lattice model shown insufficient (Addendum 25)'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-11T11:21:33Z
-updated_at: 2026-08-11T11:21:33Z
+updated_at: 2026-08-29T17:36:51Z
 ---
 
 
@@ -261,3 +261,85 @@ at different layers with names one letter apart; cross-referenced in #5334.
 **Arc status: CLOSED.** No open ε_m question at `p = 5`. Genuine leftovers,
 none urgent: whether the `Z/24` class varies across the 46 catalogued
 exceptional-unit fields, and `qou-xx9f`'s unprinted normalisation series.
+
+## 2026-08-29 — arc review against main (+3292 commits), and the updated plan
+
+### The arc survives intact, and the q₀-independence was load-bearing
+
+All seven arc probes re-run on current `main`: **96/96 checks pass**,
+unchanged. That matters more than it looks, because in the interval **the
+muon anchor changed VALUE** — `…95557334…` → `…95642739…`. The
+`q0Anchor: "independent"` declarations added in #5296 were not a
+book-keeping label; they described a real property, and the arc's results
+are untouched by an anchor re-derivation that moved everything downstream
+of it.
+
+### My anchor fix: right value, wrong method, and the value was wrong anyway
+
+Three corrections to my own record, all from work that landed since:
+
+1. **The restore reverted an intervening fix.** `f1e71bc964b` (`qou-m9xp`):
+   restoring the whole pin file from `9a9c6b31c^` recovered the anchor value
+   *correctly* and simultaneously reverted a prose fix landed after the
+   defect — because only the VALUE was re-verified afterwards. The reviewer's
+   line is the lesson: *"Nobody's checklist asks 'did the restore preserve
+   the other fixes to this file?'"* A live consumer
+   (`qbeta_habiro_residual_probe`) then straddled layers by **11.54 ppb**,
+   ~1558× its own stated budget.
+2. **The value I restored was itself wrong.** `fca08de7d29`: it inverted to
+   `m_μ/m_e = 206.768282989315`, matching **no** published CODATA and
+   disagreeing by 1.4 ppb with the ratio the same witness declared in its own
+   `calibration_inputs`. The anchor **certified itself** — the circularity
+   `witness.py`'s docstring had flagged. My restore recovered a
+   broken-but-self-consistent state; it did not and could not fix that.
+3. **Superseded by derivation.** Owner ruling 2026-08-22: derive the muon
+   anchor from CODATA 2022. `q_parameter`'s ideal/muon branch now takes `q`
+   from `q_muon_at()` over the live NIST table, so the witness records a
+   value it did not choose. That is the real fix; mine was a stopgap that
+   restored service.
+
+**What of mine survived and still earns its place:** the `ANCHOR_DEFINING`
+guard and its cross-reference to the sibling's `ANCHOR_DEFINITIONS` are both
+on `main`. The root-cause fix — *the sweep must never re-pin its own anchor
+definition* — outlived the value it was protecting.
+
+### Work plan — unchanged in substance
+
+The arc stays **CLOSED**. Nothing that landed reopens it.
+
+| item | status |
+|---|---|
+| ε_m at `v₁` — one invariant, `8 ∈ Z/24`, four levels | closed, re-verified |
+| ε_m at `v₂` — vacuous, two independent reasons | closed, re-verified |
+| CGZ lift constructed at `m = 8, 12, 24` | closed, re-verified |
+| `qou-xx9f` fibre identification | closed (Addendum 36) |
+| `qou-xx9f` normalisation | closed as far as the source permits |
+
+**The one genuinely open question** is Addendum 45's: does `ε` itself vary
+across fields? The local signature varies three ways, so it is *possible*;
+answering it needs a Bloch element per comparison field, and there is no
+canonical construction. **Not queued** — it is open research with no cheap
+entry, not a task.
+
+**One watch item, cheap:** `qou-xx9f` reopens the moment the arXiv LaTeX for
+`2412.04241v2` lands in `library/arxiv-2412.04241v2/`. Checked today —
+**still PDF-only**, no `.tex`. One grep settles the `f₁`/`f₅` reading and
+would either confirm Addendum 36 or overturn it.
+
+---
+
+## CLOSED 2026-08-29 (status: completed)
+
+The gap this bean names is answered for the α-line at the degree-1 place
+`v₁`: one invariant, `8 ∈ Z/24`, consistent across `m = 3, 6, 8, 12, 24`,
+with CGZ's descent explicitly constructed at `m = 8, 12, 24` and validated
+against four CGZ identities. `v₂` is vacuous for two independent reasons
+(Addendum 44). The review of the arc against `main` (+3292 commits) landed
+as PR #6027; all seven arc probes re-ran unchanged, 96/96.
+
+What is **not** closed, and is deliberately not queued here: whether `ε`
+itself varies across fields. The local signature varies three ways
+(Addendum 45), so it is possible — but answering needs a Bloch element per
+comparison field and there is no canonical construction. Open research with
+no cheap entry, not a task. A future agent opening this should open a fresh
+bean rather than reviving this one.

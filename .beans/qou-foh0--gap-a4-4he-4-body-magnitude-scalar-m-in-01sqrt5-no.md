@@ -1,11 +1,11 @@
 ---
 # qou-foh0
 title: 'GAP: A=4 (4He) >=4-body magnitude scalar m in (0,1/sqrt5) not fixed by a categorical driver'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T09:22:59Z
-updated_at: 2026-08-02T09:23:17Z
+updated_at: 2026-08-28T19:51:12Z
 ---
 
 Formalize-first session (branch claude/a4-interface-magnitude-2026-08-02) reduced the A=4 >=4-body magnitude to a SINGLE under-determined scalar m (per-pair bond magnitude) in (0,1/sqrt5).
@@ -18,3 +18,21 @@ DERIVED (sorry-free Lean, QOU/MassTheory/A4InterfaceMagnitude.lean):
 WHAT IS OPEN: an independent categorical DRIVER that fixes m in (0,1/sqrt5) strictly below the naive z (equivalently a normalized color-tube weight W strictly below the geometric d_q^2/D^2). No driver identified. A tuned m is an anchor-inversion fit; do NOT wire.
 
 NEXT HONEST STEP: derive m (or the intermediate W) from the s5-so3 fiber action / interface-operator spectral data WITHOUT inverting B(4He)/mu4/b4. Candidate: the interface operator I=c*sigma+d spectral eigenvalues on the (xi,nu) isotypic blocks (InterfaceOperatorBlockDiagonal.lean) may fix the per-pair coupling m from c,d (Hecke eigenvalues q,-q^-1) rather than a normalized character reweight. Coordinate with #4543 (BindingWeightMarkovPinning, distinct object).
+
+## 2026-08-28 — interface-operator driver route MEASURED to a negative (PR #5916)
+
+The 'NEXT HONEST STEP' (derive m from I=c*sigma+d, Hecke eigenvalues q,-1/q) is
+measured: a4_interface_operator_driver_search_probe.py enumerates the natural
+parameter-free functionals of {q,-1/q,h}.
+- scale-like (overlap: 1/q^2, z_C, z_D, 1/[2]_q, 1/q^3, ...): ALL overshoot 1/sqrt5
+  => scope-(b) unphysical. Whole-window both-convention Lean form: zD_unphysical.
+- gap-like (channel split) + roots: REACHES the target band (sqrt(1-1/q^2)=0.434 is
+  4.2% from m*(b4)=0.416) but 4 land in band, none <0.1% => no uniqueness => any
+  match is a functional-choice fit. Confirms/extends qou-j16x.
+VERDICT: interface operator does NOT categorically fix m. Magnitude stays scope-(a)
+open. Nothing wired.
+
+WHAT WOULD CHANGE IT: a categorical uniqueness argument singling out ONE functional
+of {q,-1/q} BEFORE seeing the target (e.g. a Lean-proved identity forcing the per-pair
+bond weight = a specific spectral invariant). None known.
+Audit: docs/audits/2026-08-28-a4-interface-operator-driver-search.md

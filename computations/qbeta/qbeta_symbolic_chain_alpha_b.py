@@ -70,8 +70,9 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")  # CODATA Q_β = m_n - m_p - m_e
 M_E_MEV = mp.mpf("0.51099895069")  # CODATA m_e
 
@@ -283,7 +284,7 @@ def main() -> int:
     alpha_witness = mp.mpf("-0.052336120268228838798864526889934170613048317006391339462842709574")
     builder.add_assertion(
         "alpha_q0_matches_probe_n3_witness",
-        computed=float(abs(alpha_q0 - alpha_witness)),
+        computed=abs(alpha_q0 - alpha_witness),
         expected=0.0,
         tolerance=1e-30,
         source=("α(q_0) computed from symbolic α = (z-1)·h/2 should "

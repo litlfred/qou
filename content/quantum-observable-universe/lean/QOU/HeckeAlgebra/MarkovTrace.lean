@@ -4,6 +4,7 @@ import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.HeckeAlgebra.Hoefsmit
 import QOU.HeckeAlgebra.Wedderburn
+import QOU.HeckeAlgebra.JonesMarkovWenzl
 
 /-!
 # QOU.HeckeAlgebra.MarkovTrace — extended Markov-trace structure
@@ -66,8 +67,25 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit QOU.HeckeAlgebra.Wedderburn
     `λ` at parameter `q`.  Axiomatised; concrete Wenzl 1988 §3
     formula is deferred to the next round of Lean port. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (Jones-Markov coefficients y_λ)
-axiom JonesMarkovCoefficient :
-    ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
+noncomputable def JonesMarkovCoefficient {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : ℝ :=
+    QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q
+
+/-- **Identification** (Wenzl 1988 Lemma 3.2): the abstract Jones-Markov
+    coefficient IS the Wenzl closed form.
+
+    Definitional, hence `rfl` — `JonesMarkovCoefficient` is defined as
+    `wenzlClosedForm` directly above. Recorded as a named theorem anyway,
+    because until 2026-08-25 this was an `axiom` in
+    `QOU.HeckeAlgebra.JonesMarkovWenzl` and a reader looking for it there will
+    now find only a comment. Stating it here also means a future refactor that
+    makes `JonesMarkovCoefficient` something other than `wenzlClosedForm`
+    breaks a theorem rather than silently changing what the corpus means by
+    `y_λ`. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2
+theorem jonesMarkovCoefficient_eq_wenzlClosedForm
+    {n : ℕ} (lam : Nat.Partition n) (q : ℝ) :
+    JonesMarkovCoefficient lam q
+      = QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q := rfl
 
 /-- The Jones-Markov coefficients `y_λ(q)` are real-valued and
     sum to 1 across partitions: `Σ_{λ ⊢ n} y_λ(q) = 1` (the
@@ -75,35 +93,71 @@ axiom JonesMarkovCoefficient :
 
     Stated against an explicit `Finset` of partitions
     (`partitions_as_finset n`) since `Nat.Partition n` is a
-    proposition, not a `Finset`.  Concrete enumeration of
-    partitions as a Finset is a deferred Mathlib-API task. -/
--- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; Mathlib-API task)
-axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
+    proposition, not a `Finset`.  CLOSED: Mathlib provides
+    `Fintype (Nat.Partition n)` in `Combinatorics.Enumerative.Partition`,
+    so we can use `Finset.univ`. -/
+-- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
+def partitions_as_finset (n : ℕ) : Finset (Nat.Partition n) := Finset.univ
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation Σ_λ y_λ = 1)
 axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
     (∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q) = 1
 
-/-- **Hecke-algebra multiplication** axiom.  Pending the
-    concrete categorical definition (Hoefsmit matrix
-    representation in `QOU.HeckeAlgebra.Hoefsmit`), we
-    axiomatise the multiplication operation at the type level.
-    Concrete instance comes from the matrix algebra under
-    `wedderburnEmbed`. -/
+/-- **Hecke-algebra multiplication**, carried opaquely.
+
+    An `opaque` definition is a datum: it adds nothing to the assumption surface
+    (no `axiom`), it merely declines to say what the operation is. The concrete
+    multiplication is the matrix algebra under `wedderburnEmbed`, via the Hoefsmit
+    representation in `QOU.HeckeAlgebra.Hoefsmit`.
+
+    Kept — unlike the cyclicity axiom that used to accompany it, see below —
+    because `markov_axioms_vacuous_of_weight_zero` needs a multiplication to state
+    what the removed axiom would have constrained. -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (Iwahori-Hecke algebra multiplication)
-axiom heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
+opaque heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
 
 /-- Notation for Hecke-algebra multiplication. -/
 scoped infixl:70 " *_h " => heckeMul
 
-/-- **Cyclicity** of the Markov trace.  `tr_M(x ·_h y) = tr_M(y
-    ·_h x)`.  Inherited from ordinary matrix trace via the
-    Wedderburn block decomposition. -/
--- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov trace cyclicity tr(xy)=tr(yx))
-axiom MarkovTrace_cyclic :
-    ∀ {n : ℕ} (x y : HeckeElement n),
-    markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x)
+/-! ## Cyclicity — removed from this layer, because it lives in two others
+
+This module used to declare, alongside `heckeMul` above,
+
+    axiom MarkovTrace_cyclic :
+      ∀ {n} (x y : HeckeElement n),
+        markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x)
+
+That axiom is gone as of 2026-08-26 (bean `qou-k5jt`). Measured corpus-wide first:
+**it had zero consumers.** `heckeMul` is kept, since it is an `opaque` datum rather
+than an axiom and the degeneracy lemma below needs it.
+
+So it was assumed mathematics that bought nothing, and by
+`markov_axioms_vacuous_of_weight_zero` below it did not even constrain the trace:
+under a zero Riesz weight it reads `0 = 0`.
+
+**Cyclicity itself is not lost — it is proved twice already, and neither proof
+was reachable from here:**
+
+* `QOU.MathlibExt.MarkovTrace.character_append_comm` — for the concrete Markov
+  trace on a Hecke representation, `tr_ρ(v ++ w) = tr_ρ(w ++ v)`, by
+  `ρ.eval_append` and `Matrix.trace_mul_comm`. Sorry-free.
+* `QOU.Machinery.MarkovInductiveCyclicity` — the inductive Ocneanu route over a
+  generic algebra: `cyclic_one_g`, `cyclic_two_g` and the `gwg_*` bricks, all
+  sorry-free and axiom-free, stated conditionally on named hypotheses (`hIH`,
+  `hgwg`, `hCE`) in the §3b-cond style.
+
+Restoring an abstract cyclicity statement here should therefore **not**
+reintroduce an opaque multiplication. `MarkovInductiveCyclicity` already works
+over a generic algebra `A` with a membership predicate, which is the shape that
+composes; an opaque binary operation is the shape that cannot.
+
+⚠ Note what is NOT claimed. `MarkovInductiveCyclicity` is currently an **orphan**
+— nothing imports it and nothing consumes `cyclic_two_g` — and its hypotheses are
+not discharged anywhere. Conditional-proved is not premise-established (AGENTS.md
+§"Conditional-proved ≠ premise-established"). The bricks exist; the assembly into
+an unconditional statement about a specific algebra does not.
+-/
 
 /-- **Stabilisation map** `stab_n : HeckeElement n → HeckeElement
     (n + 1)` corresponding to multiplication by the generator
@@ -111,7 +165,7 @@ axiom MarkovTrace_cyclic :
     (which requires the Hecke generator `σ_n` to be expressible
     as a `HeckeElement (n + 1)` — the natural inclusion). -/
 -- Ref: [kassel2008] https://doi.org/10.1007/978-0-387-68548-9 §13.6 (stabilisation by generator σ_n)
-axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
+opaque heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
 /-- **Markov axiom** for the Markov trace: stabilisation scales
     the trace by *the* Markov parameter
@@ -141,6 +195,53 @@ axiom MarkovTrace_markov_axiom :
     markovTrace (n + 1) (heckeStab x) =
       QSubstrate.markovParameter * markovTrace n x
 
+/-! ## The degeneracy is not excluded — checked, not asserted
+
+`QOU.HeckeAlgebra.markovTrace`'s docstring observes that a zero weight satisfies
+every axiom stated about the trace. That was an observation made by reading the
+axioms; the two lemmas here make it a checked fact.
+
+**What this does and does not establish.** It shows the stated axioms *do not
+exclude* `tr_M ≡ 0`: under a zero weight each of them holds, so none of them can
+be used to derive a contradiction from degeneracy. It is NOT a consistency proof
+of the axiom set, which is a statement about models and is not the kind of thing
+a theorem inside that same set can settle. Read it as "nothing here forces
+`tr_M ≠ 0`", which is the claim being made, and not as more. -/
+
+/-- A zero Riesz weight collapses the trace. -/
+theorem markovTrace_eq_zero_of_weight_zero {n : ℕ}
+    (hw : QOU.HeckeAlgebra.markovTraceWeight n = 0) (x : HeckeElement n) :
+    markovTrace n x = 0 := by
+  simp [QOU.HeckeAlgebra.markovTrace, QOU.HeckeAlgebra.frobeniusInner, hw]
+
+/-- **Both trace properties hold automatically under a zero weight.**
+
+    So neither imposes a constraint that rules out the degenerate trace:
+    cyclicity becomes `0 = 0` and the Markov property becomes `0 = z * 0`.
+
+    "Properties", not "axioms", as of 2026-08-26: cyclicity is **no longer an
+    axiom here** — it was removed as a zero-consumer assumption (see the
+    §Cyclicity note above), so the first conjunct is now an ordinary statement
+    this lemma shows is satisfiable rather than one the module assumes.
+    `MarkovTrace_markov_axiom` is still an axiom, and the second conjunct is
+    still about it.
+
+    This is the sharp form of the warning in `markovTrace`'s docstring, and it is
+    the residue of bean `qou-ck1f`: that bean removed a `∀ (z : ℝ)` binder which
+    *proved* `tr_M ≡ 0`. Removing it removed the proof of degeneracy. Nothing was
+    added that excludes it, and this lemma is what makes that concrete. -/
+theorem markov_axioms_vacuous_of_weight_zero
+    (hw : ∀ n, QOU.HeckeAlgebra.markovTraceWeight n = 0) :
+    (∀ (n : ℕ) (x y : HeckeElement n),
+        markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x))
+      ∧ (∀ (n : ℕ) (x : HeckeElement n),
+        markovTrace (n + 1) (heckeStab x)
+          = QSubstrate.markovParameter * markovTrace n x) := by
+  refine ⟨fun n x y => ?_, fun n x => ?_⟩
+  · rw [markovTrace_eq_zero_of_weight_zero (hw n), markovTrace_eq_zero_of_weight_zero (hw n)]
+  · rw [markovTrace_eq_zero_of_weight_zero (hw (n + 1)),
+        markovTrace_eq_zero_of_weight_zero (hw n), mul_zero]
+
 /-- **Categorical Markov trace on a Wedderburn decomposition**
     (axiomatised) — the categorical-level Markov trace `tr_M`
     applied directly to a `WedderburnDecomposition n`.  Bridges
@@ -149,8 +250,9 @@ axiom MarkovTrace_markov_axiom :
     `wenzlBridge` below relates this trace to the block-trace
     sum form. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (categorical Markov trace on Wedderburn blocks)
-axiom markovTraceOnWedderburn :
-    ∀ {n : ℕ}, WedderburnDecomposition n → ℝ
+noncomputable def markovTraceOnWedderburn {n : ℕ} (x : WedderburnDecomposition n) : ℝ :=
+    ∑ lam ∈ partitions_as_finset n,
+      JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
 
 /-- **Wenzl bridge** (categorical identity): the Markov trace
     of an element via its Wedderburn decomposition equals the
@@ -175,11 +277,10 @@ axiom markovTraceOnWedderburn :
     `Wedderburn.lean`), so `q_0` is the only `q` the statement can
     honestly mean.  Bean `qou-ck1f`. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Wenzl bridge: tr_M = Σ_λ y_λ·χ^λ)
-axiom wenzlBridge :
-    ∀ {n : ℕ} (x : WedderburnDecomposition n),
+@[simp] theorem wenzlBridge {n : ℕ} (x : WedderburnDecomposition n) :
     markovTraceOnWedderburn x =
       ∑ lam ∈ partitions_as_finset n,
-        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
+        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace := rfl
 
 /-- **Trace of an additive sum** distributes.
 

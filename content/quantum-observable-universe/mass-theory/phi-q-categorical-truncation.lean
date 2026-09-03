@@ -19,7 +19,7 @@ analytic Φ_q product truncates at depth k★(T_w) as a categorical
 identity — any deeper truncation is equal modulo E_∞^{≥1, *} = 0.
 
 This file states the claim. The proof reduces to
-spectral_sequence_collapses_to_centre + q-deformed Wedderburn-weighted
+centralIdempotent_idem + q-deformed Wedderburn-weighted
 projection identity (tilde w_λ = dim_q²/[n]_q!; cf.
 prop:plancherel-weight-boundedness for the classical Plancherel
 measure).

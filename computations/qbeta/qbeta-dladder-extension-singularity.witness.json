@@ -9,7 +9,7 @@
       "computed": 31.0,
       "expected": 31.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "exact d_k extended from k=21 to k=31 (ORD 63)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "log|d_k| = A+Bk+C·k·log k with C=0.0613 (k≤31) vs 0.0774 (k≤21) — still drifting, mild q-Gevrey"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.1719012225086752,
       "expected": 0.17,
       "passed": true,
-      "tolerance": 0.1,
+      "tolerance": "0.1",
       "source": "dlog-Padé vs root-test singularity gap 0.172 at k=31 (was ~0.17 at k=21) — persists ⇒ structural q-Gevrey drift, not a finite-k shadow; Écalle/Φ_b is the only honest resummation"
     }
   ],

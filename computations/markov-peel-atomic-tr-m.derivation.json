@@ -1,9 +1,9 @@
 {
-  "target": "production atomic Markov trace tr_M(beta_atom; q_0) for p, n, D, T, 3He, 4He via Markov-axiom recursive ascent on the Groebner-Shirshov normal form",
+  "target": "production atomic Markov trace tr_M(beta_atom; q_0) for p, n, D, T, 3He, 4He via Markov-axiom recursive ascent on the Groebner-Shirshov normal form [CONVENTION-C FRAME — scoped 2026-08-30, bean qou-46ab. Every number in this document was computed with the Markov parameter z = sqrt(q)/(q+1) (convention C). The owner ruling of 2026-08-15 makes convention D (z = q^3/(q^2+1)) canonical. These values are CORRECT FOR C and are kept as the historical record of PR #516; they are NOT the live values and must not be quoted as such.]",
   "target_value": "tr_M(beta_atom) computed symbolically in H_{3A}(q) by incremental GS reduction followed by recursive Markov-axiom descent, then evaluated at q_0; emitted at BOTH substrate pins as a deliberate comparison pair",
   "target_tolerance": 0.0,
   "content_block": "prop:categorical-mass-markov",
-  "description": "Derivation chain for the production atomic Markov-trace witnesses (PR #516, closing #508) -- the recursive-ascent path that makes A >= 4 feasible where the Hoefsmit path is not. Covers markov-peel-atomic-tr-m.witness.json (proton pin) and markov-peel-atomic-tr-m-muon.witness.json (muon pin) -- 2 witnesses, one per anchor. Trust profile: one AXIOM entrypoint (Hecke energy), one AXIOM (Markov axioms / Finite-Jones uniqueness), two DERIVED steps, one SCRIPT_CITED frontier.\n\nThe two witnesses are a SANCTIONED two-pin pair, not a layer straddle: each declares its own q0Anchor, neither mixes pins inside one quantity, and AGENTS.md explicitly allows a comparison producer to carry both.",
+  "description": "Derivation chain for the production atomic Markov-trace witnesses (PR #516, closing #508) -- the recursive-ascent path that makes A >= 4 feasible where the Hoefsmit path is not. Covers markov-peel-atomic-tr-m.witness.json (proton pin) and markov-peel-atomic-tr-m-muon.witness.json (muon pin) -- 2 witnesses, one per anchor. Trust profile: one AXIOM entrypoint (Hecke energy), one AXIOM (Markov axioms / Finite-Jones uniqueness), two DERIVED steps, one SCRIPT_CITED frontier.\n\nThe two witnesses are a SANCTIONED two-pin pair, not a layer straddle: each declares its own q0Anchor, neither mixes pins inside one quantity, and AGENTS.md explicitly allows a comparison producer to carry both.\n\nCONVENTION SCOPING (2026-08-30, bean qou-46ab). This document is a hand-authored derivation record, not a producer output -- there is no script to re-run, which is why it survived the convention-D witness sweep untouched. Both of its numeric steps (3 and 4) are convention-C frame.\n\nThe live convention-D values, for a reader who needs the current numbers:\n  tr_M(p)        = 1.14575969245730086968908159577411930594372806194352738498820\n  tr_M(deuteron) = 0.575172243917771870826535343986180889152494352892855072730158\n  source: computations/atomic-tr-m-mpfr-50dps-proton.witness.json; the same values are carried in derivation_chain.py::TR_M_AT_Q0, which was migrated to D and therefore DISAGREES with this document about the same quantity.\n\nThe C->D gap is 7.55 % on the proton and 48 % on the deuteron -- far larger than anything the steps below discuss, so read step 4's agreement claim with that in mind (see its own note).\n\nThe DERIVATION ITSELF is convention-independent: the Hecke relation (step 0), the Groebner-Shirshov normal form (step 1) and the Markov-axiom recursive ascent (step 2) are unchanged under D. Only the evaluation steps carry the frame.",
   "steps": [
     {
       "name": "Hecke relation and the balanced q-integer",
@@ -52,12 +52,12 @@
     },
     {
       "name": "Evaluation at the substrate anchor -- both pins, deliberately",
-      "operation": "Evaluate the symbolic trace at q_0 to 30+ digits, once at the experimental (proton) pin and once at the ideal-CAL-2 (muon) pin, emitting a separate witness for each. The pair is the point: their difference IS the mu-p substrate tension propagated through the trace.",
+      "operation": "Evaluate the symbolic trace at q_0 to 30+ digits, once at the experimental (proton) pin and once at the ideal-CAL-2 (muon) pin, emitting a separate witness for each. The pair is the point: their difference IS the mu-p substrate tension propagated through the trace. [2026-08-30] The two pins differ here by ~7.9e-8, which is the mu-p substrate tension and is the point of the step. Do not confuse that 7.9e-8 with the convention gap: C vs D on the same pin is 7.55 %, roughly a million times larger.",
       "inputs": [
         "tr_M_symbolic"
       ],
       "output_name": "tr_M_at_q0_both_pins",
-      "output_value": "proton: tr_M(p) = 1.0653061442544499756666334037445034130528872534934;  muon: tr_M(p) = 1.0653062286131670593652845464313725576506616741348",
+      "output_value": "CONVENTION C (see scoping in `description`). proton: tr_M(p) = 1.0653061442544499756666334037445034130528872534934;  muon: tr_M(p) = 1.0653062286131670593652845464313725576506616741348  ||  Live convention-D value at the proton pin: tr_M(p) = 1.14575969245730086968908159577411930594372806194352738498820 (7.55 % from the C value above). The muon leg has no live D twin: the muon-pin migration (qou-1c4y) has not run for this quantity.",
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
@@ -71,7 +71,7 @@
         "tr_M_at_q0_both_pins"
       ],
       "output_name": "peel_vs_bridge",
-      "output_value": "deuteron: peel 0.38835714119779098941649346949090499349342765669822 vs bridge 0.388357122562352815076554060811402206896142251599849801491787, abs_diff = 1.86354e-8",
+      "output_value": "CONVENTION C (see scoping in `description`). deuteron: peel 0.38835714119779098941649346949090499349342765669822 vs bridge 0.388357122562352815076554060811402206896142251599849801491787, abs_diff = 1.86354e-8  ||  BOTH SIDES of this cross-check are convention C, so the agreement to 1.86e-8 is a genuine peel-vs-bridge result WITHIN convention C and says nothing about D. The live D-frame bridge deuteron is 0.575172243917771870826535343986180889152494352892855072730158 -- 48 % from the 0.3883... above. The cross-check has NOT been re-run under D.",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,

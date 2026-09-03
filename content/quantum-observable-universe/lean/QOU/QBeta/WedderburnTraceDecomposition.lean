@@ -8,6 +8,31 @@ import Mathlib.Algebra.Group.Hom.Defs
 
 **Bean `qou-7gei` item 6, and a defect report on `QOU.Hecke.Wedderburn`.**
 
+> **RESOLVED upstream 2026-08-24 (PR #5710); re-scoped 2026-08-30.** The defect
+> described below is fixed: `QOU.Hecke.WedderburnDecomp` no longer carries a
+> `trace_decomp` field, and `QOU.Hecke.Wedderburn.trace_decomposition` now
+> *derives* the identity from `complete` together with a new `block_scaling`
+> field — the very repair this module prescribed. The analysis below is left in
+> the present tense as the record of why that change was made; read "states" as
+> "stated, until PR #5710".
+>
+> **The prescription was necessary and not sufficient**, and the follow-up has
+> since landed. `block_scaling` is an equation on the *product* `y_λ · χ^λ`,
+> and the #5710 class had to carry `chi_lambda` as a second free field, so
+> neither factor was pinned — every nonzero rational was realisable as the
+> weight at every partition. `χ^λ` is now *computed*: the field is replaced by
+> a block representation `ρ_λ : A →ₐ[R] M_{f^λ}(R)` with
+> `χ^λ := Matrix.trace ∘ ρ_λ`, and because an algebra map has `ρ_λ 1 = 1`,
+> `block_scaling` at `x = 1` forces `tr_M(π_λ) = y_λ · f^λ`
+> (`QOU.Hecke.WedderburnDecomp.yLambda_determined`). A second tranche the same
+> day closed the remainder: `blockDim` is no longer a field either but
+> `QOU.Hecke.blockDim λ = dimHLF λ.parts`, so `y_λ` is determined outright
+> (`QOU.Hecke.RankOneDegeneracy.yLambda_forced_one`).
+>
+> The three theorems in this file are untouched by all of it — they were always
+> stated over a generic `tr`, `pi`, `y`, `chi` with the block scaling as an
+> explicit hypothesis, which is exactly why the class change did not reach them.
+
 ## The defect
 
 `QOU/Hecke/Wedderburn.lean` (merged to main in PR #4857) states

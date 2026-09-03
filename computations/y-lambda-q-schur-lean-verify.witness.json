@@ -9,7 +9,7 @@
       "computed": "3.8132240347604973062e-19",
       "expected": "0",
       "passed": false,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Lean theorem yLambdaQSchur_transpose_pair: y_λ(q) · y_{λ^T}(q) = 1/[n]_q!².  Verified at substrate q₀ for all 3 partitions of n=3 (one transpose pair + one self-conjugate).  Max residual across partitions should be 0 within numerical precision."
     },
     {
@@ -17,7 +17,7 @@
       "computed": "2.8298997121333476148e-73",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "Lean corollary yLambdaQSchur_selfconjugate_squared: y_(2,1)(q)² = 1/[n]_q!² since c((2,1)) = 0 (self-conjugate)."
     }
   ],

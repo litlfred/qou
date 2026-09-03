@@ -55,6 +55,10 @@ from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
     H,
 )
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 # Module-level caches: lookup tables that don't depend on call args.
 _LR_TABLE_6_3 = get_lr_table(6, 3)
@@ -427,7 +431,7 @@ def main() -> int:
 
     parts_9 = partitions_of(9)
     beta_full = tritium_braid()
-    w_inner_h6 = _proton_body() + [(1.0, -H / 2, 2)] + \
+    w_inner_h6 = _proton_body() + [(1.0, _pn_d(H), 2)] + \
                  [(c, d, g + 3) for (c, d, g) in _neutron_body()]
     beta_3_h3 = _neutron_body()
 

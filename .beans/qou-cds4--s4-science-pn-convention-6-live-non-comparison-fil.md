@@ -1,11 +1,11 @@
 ---
 # qou-cds4
 title: 'S4 (SCIENCE): p/n convention — 6 live non-comparison files + 28 witnesses off bring_color_weighted'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T04:10:28Z
+updated_at: 2026-08-26T13:20:06Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -208,3 +208,233 @@ committed A witnesses *and* builds `I_pn` at `-h/2`, which is exactly the
 failing shape. Running it refuted that: someone had already put the guard in.
 Recording the prediction and its refutation because the grep signature alone
 is not sufficient evidence for this class, in either direction.
+
+
+## Preserved note (2026-08-25): chi_monotone_transfer oracle frame
+
+The Part-F baseline entry for `chi_monotone_transfer.py::_self_test` was removed
+as stale — the live `pn_convention=` assignment is gone, only a comment remains,
+so the test reported it as no longer needed. Its warning is still live and is
+recorded here so it is not lost with the entry:
+
+> The self-test's oracles are `chi-{deuteron-h6,tritium-h9,helium-3-h9,
+> helium-4-h12}-at-q0-50dps` — the colour-BLIND chi family from 45789ddfa0,
+> which also lacks provenance. The same file already runs a colour-WEIGHTED
+> check at n=6, so it is explicitly two-framed rather than blind. **When those
+> oracles are regenerated weighted, the self-test must flip too**, or it starts
+> comparing across frames and still passes.
+
+## binding_canonical.py: DONE (2026-08-25, PR #5767)
+
+Moved to `bring_color_weighted`. The baseline entry's own condition — *"moving
+it to canonical means moving both halves together, or they diverge by 1.4e-4"* —
+was satisfied: the local `_factor_from` could not express the weighted interface
+at all (no branch for `-h(1/2 - δ/4)`; it fell through to `sp.nsimplify`), so it
+was given the structural branch from `atom_nf_symbolic_D` and `_D_HECKE_TOL`
+tightened to 1e-9. Verified two ways: the deuteron closed form moves off the
+colour-blind value `qou-4e5k` names as wrong onto that bean's bridge/peel value,
+and this file's closed-form and transfer paths now agree to 15 figures where
+they disagreed by 1.5e-4.
+
+
+## Item-2 adjudication 2026-08-25 (PR #5783): 6 -> 5 baselined
+
+`binding_combiner_markov_peel_fallback` MIGRATED to canonical. Its stated
+blocker — *'a numeric δ cannot be represented as an exact polynomial in the
+formal symbol q, so the exact-symbolic trace path can only carry the
+colour-blind averaged crossing'* — is refuted twice:
+
+1. δ(q) = (q−1)²(1−q⁻⁴)/3, so the weighted shift is the exact RATIONAL function
+   (q²−1)(−6q⁴+(q−1)²(q⁴−1))/(12q⁵), evaluating at q₀ to −0.10445824776972629,
+   matching the numeric route to 15 digits. The claim demands a POLYNOMIAL; the
+   requirement is rational, and the path already carries h = q − 1/q.
+2. `markov_peel` has carried it all along via `word_to_element` /
+   `crossing_from_cd` (qou-8zjd).
+
+Verified by prediction stated in advance: D |tr_atom| 0.57509087 -> 0.57517224,
+the qou-4e5k peel value; and B(D), B(4He) now match `binding_canonical`'s
+#5767 values exactly. Two paths that disagreed, agreeing, neither tuned.
+
+**Remaining 5, adjudicated:**
+- `binding_bring_enhancement_compare` — LEGITIMATE, verified: computes BOTH
+  conventions and reports the delta.
+- `closed_form_tau_M_verification_phase5q` — LEGITIMATE: its slow path is
+  *bound* to chi_lambda_braid via `marshal_to_chi_lambda_braid`, so pinning the
+  closed form there is what preserves the verification.
+- `_habiro_coefficient_extract` ×2 and `atomic_tr_m_helium4_canonical` — THIS
+  BEAN'S TRANCHE, still open. The ⁴He one is a ~17 % move in tr_M(⁴He) and is
+  coupled to the Phase-5q slow path; not a rename.
+
+
+## Progress 2026-08-25 (PR #5801)
+
+All three genuinely-off-canon PRODUCTION files are now flipped:
+
+    binding_canonical.py                 strict_averaged   -> canonical  (#5767)
+    binding_combiner_markov_peel_fallback.py               -> canonical  (#5783)
+    atomic_tr_m_helium4_canonical.py     chi_lambda_braid  -> canonical  (#5801)
+    _habiro_coefficient_extract.py       chi_lambda_braid  -> canonical  (#5801, 25 witnesses)
+
+`test_ctype_consumer_coverage.py` Part F now reports **2 baselined, 0
+unadjudicated**, and both survivors are LEGITIMATE, not backlog:
+
+  * `binding_bring_enhancement_compare.py::build_witness` — a labelled
+    comparison against a non-canonical convention, which R3 permits.
+  * `closed_form_tau_M_verification_phase5q.py::main` — deliberately left on
+    chi_lambda_braid by the 2026-06-03 audit, because it is the empirical
+    slow-path validator and must match the frame it validates.
+
+### Still open on this bean
+
+  * `chi_monotone_transfer.py` — COUPLED, do not flip alone. Its four oracle
+    witnesses `chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}-at-q0-50dps`
+    are colour-BLIND; the file compares on the matching word deliberately.
+    Flipping it before those oracles are regenerated makes the self-test compare
+    across frames AND STILL PASS. Regenerate the oracles first.
+  * `iterative_knot_builder.py` — not examined this session.
+  * The 28 committed witnesses recording a non-colour-weighted pn_convention:
+    25 of them were the habiro table and are now canonical.
+
+### Bean's own framing, confirmed by measurement
+
+The bean says "do not order S4 by file count: the 9 chi_lambda_braid
+assignments are the whole tranche's weight". Measured on the habiro table:
+the flip moved every atom by a factor 1.2055 (-17.05 % old-normalised,
++20.55 % new-normalised), versus 0.0141 % for a strict_averaged site.
+That is the 1210x the bean predicted, confirmed on real witnesses.
+
+
+## 🛑 CORRECTION 2026-08-26 — my "the oracles are colour-blind" claim was WRONG
+
+The progress note above says `chi_monotone_transfer.py` is COUPLED and must not
+be flipped until its four oracle witnesses are regenerated, because they are
+colour-blind. **That is false, and it was never measured — by me or by the
+comment I took it from.**
+
+I read it in `test_ctype_consumer_coverage.py`'s 2026-08-21 adjudication
+comment, which asserted the oracles "used the strict_averaged pn convention",
+and I relayed it as established fact into PR #5801's body, this bean, and three
+check-in notes without testing it. The witnesses record no convention field and
+no `scriptFile`, so the claim could not have been checked against them by
+reading — only by recomputation.
+
+Measured, recomputing each oracle under both conventions (max rel), and
+independently reproduced by me after a sibling (`qou-9ag4`) reached it first:
+
+    atom   strict_averaged   bring_color_weighted
+    D          2.625e-04           5.743e-50
+    T          5.482e-04           8.257e-50
+    3He        5.281e-04           7.487e-50
+    4He        1.883e-03           4.079e-49
+
+The oracles were **always canonical**. They reproduce exactly at the 50-dps
+working precision under colour-weighting and miss by 2.6e-4 .. 1.9e-3 under
+strict_averaged, so all four DISCRIMINATE. The self-test was therefore not
+"about to break" — it was ALREADY FAILING on main, quietly, because the
+comparison word was stale. The residual grows with A because the p-n `d`
+differs by 7.19e-05 and compounds per interface: a colour-weighting scale,
+not a precision scale.
+
+`chi_monotone_transfer.py` is flipped and green on main (sibling work,
+`qou-9ag4`); its Part F baseline entry is drained. Nothing here was blocked.
+
+### What I did about it
+
+  * Deleted the orphaned adjudication comment from the ctype test. It had
+    outlived its entry and sat immediately above the closing brace, so the
+    next reader attaches it to a surviving entry — which is how it reached me.
+    Replaced with the measurement above plus a note on why it must be measured.
+  * Fixed `atom_word_braid_letter_census_probe.py`, which was making main RED
+    on the ctype test (pre-existing, confirmed on a clean tree): a private
+    ctype vocabulary plus a family-blind `k == "averaged"` census. It counted
+    correctly only because its private classifier's FALLBACK swallowed
+    averaged_weighted; importing the canonical `classify_crossing`, which
+    returns averaged_weighted as a distinct ctype, would have silently
+    undercounted every p-n interface. Fixed both halves together; totals
+    unchanged (2H 5=2A+1/32 closures, 3He 7/128, 4He 9/512) and the witness
+    now reports the colour-blind/colour-weighted split, which is 1 weighted
+    letter per isotope — the single p-n interface.
+
+### Lesson, recorded because it is the bean's own subject matter
+
+A dated, specific, confident comment in the corpus is not a primary source.
+AGENTS.md says exactly this for `## Status` notes and for sibling beans; it
+applies to test-baseline adjudications too. Measure, then cite the script.
+
+
+## File list DRAINED 2026-08-26
+
+All 8 files the bean named are now canonical or legitimately excepted:
+
+    binding_canonical.py                      canonical  (#5767, mine)
+    binding_combiner_markov_peel_fallback.py  canonical  (#5783, mine)
+    atomic_tr_m_helium4_canonical.py          canonical  (#5801, mine)
+    _habiro_coefficient_extract.py            canonical  (#5801, mine, 25 witnesses)
+    chi_monotone_transfer.py                  canonical  (sibling, qou-9ag4)
+    iterative_knot_builder.py                 canonical  (sibling; was strict_averaged)
+    binding_bring_enhancement_compare.py      LEGITIMATE — labelled comparison, R3 permits
+    closed_form_tau_M_verification_phase5q.py LEGITIMATE — validates the legacy frame,
+                                              must match the frame it validates
+
+`test_ctype_consumer_coverage.py` Part F reports 2 baselined / 0 unadjudicated,
+and both survivors are the two legitimate ones. That 2 is the FLOOR, not a queue.
+
+Not closing the bean: the "28 committed witnesses recording a non-colour-weighted
+pn_convention" line is only partly discharged (25 were the habiro table). The
+remainder has not been enumerated.
+
+
+## WITNESS LINE DISCHARGED 2026-08-26 (PR #5821) — and my earlier count was wrong
+
+I reported this line "discharged to 4". **Wrong**, and the reason generalises:
+I scanned only the field name `pn_convention`. The corpus states this
+convention in a HETEROGENEOUS vocabulary. Keying on the field name
+`convention` as well gives 70 witnesses / 93 declarations, of which **22** are
+on the colour axis under names the first scan never looked for:
+`averaged-crossings`, `colour-weighted-averaged-crossing`,
+`sign-only-crossings`.
+
+### The 22, classified by whether a p-n interface EXISTS
+
+     4  single nucleon (chi-proton-h3, chi-neutron-h3)  no p-n interface
+     7  free / vacuum words                             no interface
+     2  dineutron, diproton                             nn/pp only
+     1  markov-identity-symbolic                        records BOTH; deliberate
+     4  older non-at-q0 generations                     superseded by siblings
+     4  -at-qinv- siblings                              REAL DEFECT -> qou-1oxx
+
+Most are legitimately colour-blind because there is nothing to weight.
+
+### Fixed
+
+  * `binding-combiner-markov-peel-fallback` — STALE WITNESS. PR #5783 flipped
+    PN_CONVENTION and never re-ran, so the witness DECLARED "strict_averaged
+    used" while the code computed canonical (scriptHash be64814b80ef vs file
+    a1402f7398b8). Note now derived from PN_CONVENTION, so it cannot drift.
+  * `canonical_ordering_dof_probe` — MY staleness from PR #5767, twice: it
+    claimed binding_canonical passes strict_averaged, and used that as the
+    `production_size` row, labelling a non-production convention as
+    production. Fixed; effect -0.076% / +0.061% / +0.60%, structure and
+    verdict unchanged, 22/22.
+
+### Scanning note for whoever comes next
+
+`chi_lambda_braid` is BOTH a pn_convention value AND the name of the character
+function `pyhecke_native.chi_lambda_braid`. A value-level grep returns 18
+witnesses, mostly prose naming the FUNCTION. Key on the field NAME.
+
+### Handed off, not closed
+
+The 4 `-at-qinv-` mismatches are bean `qou-1oxx` — structural, live (7
+consumers, several bar-parity), bounded at 0.0141 % per p-n interface.
+
+**This line is now discharged.** The bean's remaining scope is whatever else
+it names, not the witness count.
+
+
+## CLOSED 2026-08-26 — landed on main as 0bc2794da9 (PR #5821, rebase-merge)
+
+Both lines are discharged: the 8-file list drained (2 legitimate exceptions,
+which is the FLOOR not a queue) and the witness line closed. The residual —
+the four `-at-qinv-` frame mismatches — is handed to `qou-1oxx`, which is
+NOT a defect-with-a-known-fix: see that bean's two corrections.

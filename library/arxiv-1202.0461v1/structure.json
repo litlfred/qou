@@ -1,0 +1,147 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1202.0461v1",
+ "source": {
+  "file": "1202.0461v1.pdf",
+  "sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
+  "bytes": 167260,
+  "pages": 6,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1202.0461",
+   "version": "1",
+   "primary_class": "astro-ph.SR",
+   "stamp_date": "2 Feb 2012"
+  },
+  "doi": null,
+  "title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+  "authors_raw": "Enrique Garc\u00b4\u0131a\u2013Berro1,2, Pablo Lor\u00e9n\u2013Aguilar1,2, Gabriela Aznar\u2013Sigu\u00e1n1,2, Santiago Torres1,2",
+  "title_lines": [
+   "Draft version October 11, 2018",
+   "DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS"
+  ],
+  "abstract": "High-\ufb01eld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic \ufb01eld are still unknown. Here we show that the hot, convective, di\ufb00erentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic \ufb01elds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-\ufb01eld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors \u2014 stars: evolution \u2014 stars: white dwarfs \u2014 stars: rotation \u2014 stars: magnetic \ufb01eld \u2014 stars: binaries",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181101093517-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "THE STELLAR DYNAMO",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "MAGNETIC WHITE DWARFS IN THE SOLAR",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "SUMMARY AND CONCLUSIONS",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 5,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 798,
+   "n_words": 128
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 3475,
+   "n_words": 577
+  },
+  {
+   "id": "sec-002-2-the-stellar-dynamo",
+   "number": "2",
+   "title": "THE STELLAR DYNAMO",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 12504,
+   "n_words": 2116
+  },
+  {
+   "id": "sec-003-3-magnetic-white-dwarfs-in-the-solar",
+   "number": "3",
+   "title": "MAGNETIC WHITE DWARFS IN THE SOLAR",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 7124,
+   "n_words": 1206
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 950,
+   "n_words": 148
+  },
+  {
+   "id": "sec-005-4-summary-and-conclusions",
+   "number": "4",
+   "title": "SUMMARY AND CONCLUSIONS",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 6899,
+   "n_words": 1187
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 6,
+  "chars_total": 31750
+ }
+}

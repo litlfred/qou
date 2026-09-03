@@ -9,7 +9,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem skein_bar_antisymmetry (bar(q-q⁻¹) = -(q-q⁻¹))"
     },
     {
@@ -33,7 +33,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem lusztig_eq_hermitian_on_real (q ∈ ℝ precondition)"
     },
     {
@@ -41,7 +41,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem barPoly_involutive (barPoly ∘ barPoly = id)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem barPoly_X_pow_two (barPoly X² = X²)"
     },
     {
@@ -57,7 +57,7 @@
       "computed": "0.0",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "theorem barPoly_X (barPoly X = -X)"
     }
   ],

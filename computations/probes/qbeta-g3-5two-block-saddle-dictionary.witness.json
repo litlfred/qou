@@ -1,31 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:37:04.183036+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T06:50:58.666282+00:00",
+  "commitSha": "0c1f0f9d8f04990ea2f7b8477eccbd104c7c17b3",
   "assertions": [
     {
       "name": "per_term_ratio_data_recorded",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 3,
+      "expected": 3,
       "passed": true,
-      "tolerance": 0.5,
-      "source": "exact per-term Prony-grid ratios + drift recorded; comparable magnitudes; no clean bijection at this window (honest diagnostic)"
+      "tolerance": 0,
+      "source": "exact per-term Prony-grid ratios + drift recorded for every term in the exponent inventory; comparable magnitudes; no clean bijection at this window (honest diagnostic)"
     },
     {
       "name": "saddle_identification_reported",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 3,
+      "expected": 3,
       "passed": true,
-      "tolerance": 0.5,
-      "source": "per-term identification table recorded with honest residuals (derived if < 0.05)"
+      "tolerance": 0,
+      "source": "per-term identification table recorded with honest residuals (derived if < 0.05), one row per term in the exponent inventory"
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "qbeta-g3-5two-block-saddle-dictionary",
   "scriptFile": "qbeta_g3_5two_block_saddle_dictionary.py",
-  "scriptHash": "e15f34954ad8",
+  "scriptHash": "710cf4fa1f8d",
   "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [

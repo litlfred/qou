@@ -1,10 +1,10 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-23T09:40:17.131274+00:00",
+  "computedAt": "2026-08-29T10:57:05.576254+00:00",
   "computation": "su4-connected-1111-magnitude",
   "scriptFile": "su4_connected_1111_magnitude_probe.py",
-  "description": "PROBE 2 magnitude leg: the single connected 4-body [1^4] SU(4)-supermultiplet interface operator, realized as the irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the canonical zero-fit interface graph (g_ij=1\u2212f_ij; f_pp=z, f_nn=z\u2212h, f_pn=z\u2212h(\u00bd\u2212\u03b4/4)), gated by SU(4) dim C(4,A). Tests whether it supplies the measured 2.093\u00d7 super-pairwise excess at \u2074He and vanishes at \u2076Li (C(4,6)=0). Audit-only, no fit, single operator.",
+  "description": "PROBE 2 magnitude leg: the single connected 4-body [1^4] SU(4)-supermultiplet interface operator, realized as the irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the canonical zero-fit interface graph (g_ij=1\u2212f_ij; f_pp=z, f_nn=z\u2212h, f_pn=z\u2212h(\u00bd\u2212\u03b4/4)), gated by SU(4) dim C(4,A). Tests whether it supplies the measured 2.097\u00d7 super-pairwise excess at \u2074He and vanishes at \u2076Li (C(4,6)=0). Audit-only, no fit, single operator.",
   "tier": "structural (zero-fit canonical bond factors + proved SU(4) gate)",
   "data": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -44,7 +44,7 @@
     "he4_needed_enhancement": 2.097462370540429,
     "he4_delivered_over_needed": 0.6664458856188571,
     "verdict": "PARTIAL",
-    "verdict_note": "PARTIAL / scope-(a): the connected [1^4] cluster is right-KIND (irreducible 4-body), right-LOCALITY (A=6 vanishing supplied by the PROVED gate C(4,6)=0 \u2014 the ungated cluster overshoots to 22.2, so the gate is load-bearing), and right-ORDER at A=4 (\u00d71.54 delivered vs \u00d72.09 needed, 74%). It does NOT close the magnitude parameter-free: the exact value is convention-dependent (\u03a3g-normalization hidden DOF). Does NOT exclude the ingredient; constrains the magnitude."
+    "verdict_note": "PARTIAL / scope-(a): the connected [1^4] cluster is right-KIND (irreducible 4-body), right-LOCALITY (A=6 vanishing supplied by the PROVED gate C(4,6)=0 \u2014 the ungated cluster overshoots to 10.17, so the gate is load-bearing), and right-ORDER at A=4 (\u00d71.398 delivered vs \u00d72.097 needed, 67%). It does NOT close the magnitude parameter-free: the exact value is convention-dependent (\u03a3g-normalization hidden DOF). Does NOT exclude the ingredient; constrains the magnitude. The DIRECT (un-normalized) reading is |b4c|=1.174 vs 2.097, i.e. 44% off, reported because the normalized figure flatters it."
   },
   "assertions": [
     {
@@ -68,9 +68,9 @@
     "locality_witness": "probes/su4-supermultiplet-locality.witness.json",
     "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
   },
-  "scriptHash": "82095972ea56",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "scriptHash": "298446fbb7a3",
+  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "commitSha": "9c8f246b1d93ad04a0b6769db0956a6fbfda6554",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

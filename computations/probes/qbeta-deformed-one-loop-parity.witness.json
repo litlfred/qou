@@ -487,7 +487,7 @@
       "computed": 1.1325478634179172e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "DG 1-loop at the complete structure (Garoufalidis-Sabo formula); validates datum + conventions"
     },
     {
@@ -495,7 +495,7 @@
       "computed": 2.3336307e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-55,
+      "tolerance": "1e-55",
       "source": "deformed shapes lie on the CCGLS A-polynomial branch (primary convention cross-check)"
     },
     {
@@ -503,7 +503,7 @@
       "computed": 3.1115e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-55,
+      "tolerance": "1e-55",
       "source": "NZ85 volume evenness (control channel)"
     },
     {
@@ -519,7 +519,7 @@
       "computed": 9.0466083e-62,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "e^{-u} tau(u) even to ~1e-61 on all rays: tau(u) = e^u * tau_even(u), odd part = sinh(u)*tau_even(u)"
     },
     {
@@ -527,7 +527,7 @@
       "computed": 2.9684439e-61,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-50,
+      "tolerance": "1e-50",
       "source": "flattening kernel-shift multiplies tau by -e^{-2u} = -M^{-4}; parity class M^{+-2} x even is invariant"
     }
   ],

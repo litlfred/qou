@@ -38,6 +38,10 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 @lru_cache(maxsize=64)
 def _boxes(shape: tuple[int, ...]) -> tuple[tuple[int, int], ...]:
@@ -166,7 +170,7 @@ def _self_test() -> int:
           f"max_rel={mp.nstr(max_rel, 4)}  {'OK' if ok else 'MISMATCH'}")
     # also a non-atom braid word, all λ⊢6, to exercise σ_i⁻¹ / averaged
     h = float(q - 1 / q)
-    probe = [(1.0, 0.0, 0), (1.0, -h, 1), (1.0, -h / 2, 2),
+    probe = [(1.0, 0.0, 0), (1.0, -h, 1), (1.0, _pn_d(h), 2),
              (1.0, 0.0, 3), (1.0, -h, 4)]
     max_rel2 = mp.mpf(0)
     for lam in partitions_of(6):

@@ -1,24 +1,40 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:12:01.086347+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-08-30T10:23:18.729107+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
-      "name": "cross_anchor_completion_emitted",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "spectral_measure_normalised_at_both_anchors",
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.0,
-      "source": "Completes PR #1609 deferred q_muon evaluation using upstream symbolic chi_lambda(q)"
+      "tolerance": "1e-25",
+      "source": "max over the proton and muon anchors of |Σ_λ μ_λ − 1|; the combiner weights must be a probability measure over the three Wedderburn blocks"
+    },
+    {
+      "name": "candidate_swing_is_q_independent",
+      "computed": "2.705425e-09",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-4",
+      "source": "|candidate swing / empirical swing| = 2.7054e-09; the candidate moves -7.79e-09% between the anchors while the empirical c_3 moves -2.8802%. Above the pre-registered 1e-4 the verdict switches to anchor-precision-limited"
+    },
+    {
+      "name": "c3_candidate_miss_at_proton_anchor_pct",
+      "computed": "13.1356",
+      "expected": "13.14",
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "(c_3 candidate − c_3 empirical)/|c_3 empirical| at q_proton = +13.1356%; the '13% miss' the structural refutation rests on, and 4.6× the whole proton-to-muon anchor swing"
     }
   ],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 62,
   "computation": "qbeta-li2q-spectral-combiner-crossanchor",
   "scriptFile": "qbeta_li2q_spectral_combiner_crossanchor_probe.py",
-  "scriptHash": "9f0edb84d85e",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "a7ed01aa4c69",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -94,11 +110,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-per-block-paper-closed-forms.witness.json",
-        "sha256": "a3f5bfed724755876ad0001296e3422ff35eb056e12b622e99197d7d91009c80",
-        "size_bytes": 3195,
-        "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
-        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-        "computedAt": "2026-08-11T11:02:39.299498+00:00"
+        "sha256": "c6f4efff7cc172d9ef921d4f0cf0ad41653cddb4c87e5cc572cb2c6b5a7d09b8",
+        "size_bytes": 3501,
+        "commitSha": "74887971c02cd91f58e6fa5f360c19502b2a2e63",
+        "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+        "computedAt": "2026-08-29T11:31:57.818024+00:00"
       }
     ]
   }

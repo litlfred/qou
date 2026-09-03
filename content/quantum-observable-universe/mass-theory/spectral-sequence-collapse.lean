@@ -72,21 +72,55 @@ class WhiteheadHH (R : Type u) [CommRing R]
   -- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma);
   --      [weibel1994] Weibel 1994, §9.
 
-/-- **Spectral sequence collapse (structural statement).**
+/-- **The central idempotents are idempotent.**  A re-export of the
+    `SemisimpleAlgebra.e_idem` class field.
 
-    Under `[SemisimpleAlgebra R A]` and `[WhiteheadHH R A]`, the GB
-    filtration spectral sequence has only the centre on the
-    `E_∞`-page: `E_∞^{p,q} = 0` for `p + q ≥ 1`, and
-    `E_∞^{0,0} = Z(A) = ⊕_i R · e_i`.
+    **This does NOT establish the spectral-sequence collapse**, and it was
+    named as though it did until 2026-08-26.  Read the type: the conclusion is
+    `e * e = e`.  It says nothing about `E_∞`, nothing about a filtration, and
+    it does not use the `[WhiteheadHH R A]` instance at all — the hypothesis
+    the collapse is supposed to turn on.  The instance is kept in the signature
+    only so the rename is behaviour-preserving for any call site that supplies
+    it; it is unused, deliberately, and that is the point.
 
-    This is the formal consequence; downstream blocks
-    (`prop:confinement-categorical`, `prop:plancherel-term-7-formulation`)
-    package the categorical and analytic readings respectively. -/
-theorem spectral_sequence_collapses_to_centre
+    History, because this defect was found twice: the QA drain of 2026-06-07
+    reported *"Lean only proves `e*e=e` idempotency"*, and the 2026-06-12 drain
+    closed it as stale under a heading reading "do NOT re-file", on the grounds
+    that the file had since gained `SemisimpleAlgebra`, `WhiteheadHH`, a real
+    `innerDerivation` and a theorem *named* `spectral_sequence_collapses_to_centre`.
+    All true; none of it changed what the theorem proves.  Corrected in
+    `docs/audits/2026-06-12-qa-drain-r5r6-findings.md`; rediscovered
+    independently in `docs/audits/2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md`.
+    `docs/audits/lean-triviality.json` had it flagged `"closed": false` throughout. -/
+theorem centralIdempotent_idem
     {R : Type u} [CommRing R] {A : Type u} [Ring A] [Algebra R A]
     [I : SemisimpleAlgebra R A] [WhiteheadHH R A] :
     ∀ i : I.central_idempotents, I.e i * I.e i = I.e i :=
   fun i => I.e_idem i
+
+/-
+GAP: the collapse itself is NOT stated in Lean, and cannot honestly be stated
+here yet.  Two things are missing, and neither is a matter of effort:
+
+1. **There is no defined filtration to collapse.**  All three objects the
+   corpus calls `J^•` are excluded — the ideal-power reading is provably `⊥`
+   above degree 0 (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`), the
+   Coxeter-length reading fails a dimension count at `n ≤ 3`, and the
+   rewrite-depth reading is identically zero once `def:hecke-normal-form` fixes
+   `T_w` as the unique normal-form basis.  See
+   `docs/audits/2026-08-16-three-gb-filtrations-one-name.md`.  A spectral
+   sequence needs a filtration; there is no agreed one.
+
+2. **Mathlib has no Hochschild-cohomology framework**, so `E_∞` has no type to
+   be stated over.  `WhiteheadHH` is the conjecture carrier standing in for it.
+
+The mathematics of the underlying claim is not in doubt for the FINITE Hecke
+algebra: `H_n(R,q)` is semisimple at generic `q`, so Whitehead's lemma gives
+`HH^k = 0` for `k ≥ 1`.  What is missing is a Lean statement of that fact, and
+writing one requires (1) and (2) first.  Do not close this by renaming a
+different theorem back.
+-- Ref: [cartan1956] Cartan-Eilenberg 1956, Ch. IX §7 (Whitehead's lemma)
+-/
 
 /-- **q-deformed Wedderburn-block weight on λ.**
     `tilde w_λ := dim_q²(λ) / [n]_q!`.  Bounded but `Σ_λ tilde w_λ ≠ 1`

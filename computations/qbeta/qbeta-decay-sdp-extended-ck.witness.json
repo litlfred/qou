@@ -1,31 +1,28 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:52:34.746025+00:00",
-  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
+  "computedAt": "2026-08-30T06:40:19.085665+00:00",
+  "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
-      "computed": 21688247146661.387,
-      "expected": 21688247146661.387,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 1e-10,
       "source": "c_8 extraction at q_0 from R(q_0)/N_2..N_7 factorization"
     },
     {
       "name": "c_9_extracted_finite",
-      "computed": 2546395431398100.0,
-      "expected": 2546395431398100.0,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 1e-10,
       "source": "c_9 extraction at q_0 from R(q_0)/N_2..N_8 factorization"
     },
     {
       "name": "c_10_extracted_finite",
-      "computed": 2.989697438062701e+17,
-      "expected": 2.989697438062701e+17,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 1e-10,
       "source": "c_10 extraction at q_0 from R(q_0)/N_2..N_9 factorization"
     }
   ],
@@ -33,8 +30,8 @@
   "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "305df5e6cc71",
-  "scriptCommitSha": "6e586861b7c9189f334b6cf81cfabb647f0193bd",
+  "scriptHash": "75d0d607a5a3",
+  "scriptCommitSha": "df84635376d417eb321afbec145bf4e631f1d96a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +46,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "0aaae20308e9cca7"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -59,7 +56,7 @@
   },
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_50dps": "1.109978595642739046681795129380001752700065561029",
     "Q_AME_50dps": "0.78233355931000000000000000000000000000000000000011",
     "hoefsmit_b_50dps": "0.86758406696525115565116289153605239570497937739431",
     "hbar_q_sq_50dps": "0.0098171864542750738105690571795642528890492845754014"
@@ -220,11 +217,11 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
@@ -233,5 +230,5 @@
     "Silver-ratio closed forms at k=8, 9, 10 use natural pattern continuation: c_8 = c_3²·b⁴, c_9 = c_3³·b², c_10 = c_3²·b⁶. These are conjectural — the canonical c_k closed forms beyond k=7 are not yet derived from the SDP-T_β / Hoefsmit-N=3 framework."
   ],
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

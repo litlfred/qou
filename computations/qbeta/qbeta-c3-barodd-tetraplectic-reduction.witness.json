@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "classical Frobenius bijection (distinct odd parts ↔ self-conjugate λ); the modular self-duality"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "½[e_k(q,q³,…)−e_k(q⁻¹,q⁻³,…)] ≠ 0 (all k) — the bar-odd S carrier lives on the compact e_k, NOT the modular dual"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-20,
+      "tolerance": "1e-20",
       "source": "|Φ_b|=1 at real b (pure-phase bar-odd carrier; prop:phi-b-unitary-bar-odd)"
     }
   ],

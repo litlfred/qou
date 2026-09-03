@@ -72,8 +72,13 @@ def block_operator(word, shape):
         return None
     P = np.eye(dim)
     I = np.eye(dim)
+    # `c`/`d` arrive as mpmath.mpf since the exact-word change (PR #5745).
+    # np.linalg.eigvals is LAPACK, i.e. float64 only — an mpf coefficient
+    # makes `P` dtype=object and `_assert_finite` rejects it before any
+    # decomposition runs. Everything this function returns is float() anyway,
+    # so casting at the boundary is where the loss belongs and is visible.
     for (c, d, g) in word:
-        P = P @ (c * sigmas[g] + d * I)
+        P = P @ (float(c) * sigmas[g] + float(d) * I)
     ev = np.linalg.eigvals(P)
     return {
         "dim": int(dim),

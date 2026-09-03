@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:02:29.841943+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "computedAt": "2026-08-24T23:47:24.803970+00:00",
+  "commitSha": "7823271e66b3b24b04b491a61bc37c78df85aae7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "sigma-shell-from-beta-chain",
   "scriptFile": "sigma_shell_from_beta_chain.py",
-  "scriptHash": "841bada81241",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "b04e237a432b",
+  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/sigma_shell_from_beta_chain.py"
+    ],
+    "reproduce": "python3 -u computations/sigma_shell_from_beta_chain.py"
   },
   "description": "σ_shell magnitude via the corrected categorical formula (P8 rederived per §5 escalation on PR #564). The earlier β-chain frame gave a 22M% discrepancy at A_magic=2; the corrected formula identifies σ_shell as the staircase Wedderburn coefficient and yields y_target=0.001331 vs benchmark 0.001186 (12% agreement, 300 000× improvement).",
   "parameters": {
@@ -50,8 +58,8 @@
         "chi_lambda_on_beta_D": "-1.97227244615154968904823487800489650545495448631751321404799116232759",
         "abs_chi_lambda_on_beta_D": "1.97227244615154968904823487800489650545495448631751321404799116232759",
         "chi_lambda_source": "hecke_character_symbolic.q_character_on_braid_word",
-        "abs_tr_M_beta_D": "0.575172395398020063703615096331402991214239443722119283098052",
-        "abs_tr_M_source": "atomic-tr-m-mpfr-50dps.witness.json",
+        "abs_tr_M_beta_D": "0.575172243917771870826535343986180889152494352892855072730158",
+        "abs_tr_M_source": "atomic-tr-m-mpfr-50dps-proton.witness.json",
         "y_target_computed": "0.0",
         "y_target_formula": "C_(3,2,1)(q_0) · y_(3,2,1)(q_0) · |χ^(3,2,1)(β_D)(q_0)| / |tr_M(β_D)(q_0)|",
         "y_target_benchmark_BoverAmp": "0.001185459007605897809808412559293749384357619706117276953731883747738008",

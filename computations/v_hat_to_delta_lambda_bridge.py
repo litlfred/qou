@@ -347,12 +347,23 @@ def main() -> int:
             one_dim_total += 1
             if rel < mp.mpf("1e-10"):
                 one_dim_matches += 1
-    w.add_assertion(
-        name="one_dim_universal_product_formula_closes",
-        computed=one_dim_matches,
-        expected=one_dim_total,
-        source="v_hat_to_delta_lambda_bridge",
-    )
+    # Zero means the two `continue`s above filtered every channel out, i.e.
+    # "no 1-dim channels in scope" -- which this producer already prints as a
+    # CONCLUSION. That is a legitimate scope outcome, not a missing input, so
+    # refusing would be wrong. But asserting one_dim_matches == one_dim_total
+    # at 0 == 0 would record `passed: true` for a check that never ran. Record
+    # the empty scope instead, and make no claim.
+    if one_dim_total == 0:
+        w.add_data("one_dim_universal_product_formula_not_applicable",
+                   "no 1-dim channels were in scope; the product formula was "
+                   "never evaluated, so no assertion is made")
+    else:
+        w.add_assertion(
+            name="one_dim_universal_product_formula_closes",
+            computed=one_dim_matches,
+            expected=one_dim_total,
+            source="v_hat_to_delta_lambda_bridge",
+        )
     w.add_data("n_one_dim_channels_matched", one_dim_matches)
     w.add_data("n_one_dim_channels_total", one_dim_total)
     w.add_data("universal_formula", (

@@ -29,11 +29,36 @@ sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python")
 import sympy as sp  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
+# q0 SOURCING — the anchor must never be chosen by whether an import succeeded.
+#
+# This block used to read:
+#
+#     try:      Q0 = str(C.Q_MP) ...        # the PROTON pin
+#     except:   Q0 = "1.10997859555733471"  # the MUON pin, silently
+#
+# so the physics layer depended on whether `qou_substrate` imported, with no
+# warning and nothing recorded. That is the `qou-7vm4` defect shape, here in a
+# second file: an environment-dependent anchor swap. It is not hypothetical —
+# the committed witness carried `q0Anchor: "muon"` and `q0Value` = the muon pin
+# while `params.q0` held the PROTON value, i.e. the provenance stamp asserted a
+# layer the numbers did not belong to. AGENTS.md forbids that straddle
+# "regardless of size".
+#
+# The fallback is REMOVED rather than warned about, because unlike
+# `alpha_k_per_force_assembly` this producer has no reason to run without the
+# substrate package: its whole output is an evaluation AT the substrate pin, so
+# a run that cannot read the pin has nothing to say. Failing loudly is the
+# honest behaviour; a hardcoded pin here can only ever manufacture a straddle.
 try:
     from qou_substrate import constants as C  # noqa: E402
-    Q0 = str(C.Q_MP) if hasattr(C, "Q_MP") else str(C.Q)
-except Exception:
-    Q0 = "1.10997859555733471"
+except Exception as exc:  # noqa: BLE001
+    raise SystemExit(
+        "lever1_binding_core_characterization: cannot import qou_substrate.constants, "
+        "so the substrate q0 is unavailable. Refusing to fall back to a hardcoded pin "
+        "— that is what made this witness declare muon over a proton computation "
+        f"(bean qou-7vm4 shape). Install the package and re-run. Cause: {exc}"
+    )
+Q0 = str(C.Q_MP) if hasattr(C, "Q_MP") else str(C.Q)
 
 WIT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                    "lever1-binding-correction-cyclotomic-structure.witness.json")

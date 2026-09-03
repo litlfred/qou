@@ -5,7 +5,7 @@ The :defterm[$q$-bit–Skein identification]{#q-bit-skein} of one $q$-bit with o
 Each application of the Skein relation
 
 $$
-  qL_+ - q^{-1}L_- = (q - q^{-1})L_0
+  L_+ - L_- = (q - q^{-1})L_0
 $$
 
 resolves one crossing. The resolution produces exactly one $q$-bit ($= \eta_q$) of information: the choice between the symmetric channel and the antisymmetric channel. The $q$-bit is the information content of this binary choice, weighted by the Hecke eigenvalues.

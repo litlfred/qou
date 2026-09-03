@@ -1,0 +1,673 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1603.06017v2",
+ "source": {
+  "file": "1603.06017v2.pdf",
+  "sha256": "3ff091e40573a5ddcf40a03f0d756f17574d719bf2526437c8873953d6da8b24",
+  "bytes": 868228,
+  "pages": 34,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1603.06017",
+   "version": "2",
+   "primary_class": "cs.FL",
+   "stamp_date": "25 May 2021"
+  },
+  "doi": null,
+  "title": "Automatic Theorem Proving in Walnut Hamoon Mousavi",
+  "authors_raw": "May 27, 2021",
+  "title_lines": [
+   "Automatic Theorem Proving in",
+   "Walnut",
+   "Hamoon Mousavi"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210527005151Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Basics",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Words and Automata",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Number Systems",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Automatic Words",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Automata accepting Predicates",
+   "page": 7,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Syntax and Semantic of Predicates in Walnut",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Alphabets",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Arithmetic and Alphabetic Constants",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Variables",
+   "page": 9,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Operators",
+   "page": 9,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Arithmetic Expressions",
+   "page": 10,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Indexing Expressions and Their Semantic Rules",
+   "page": 11,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "Calling Expressions and Their Semantic Rules",
+   "page": 11,
+   "source": "outline",
+   "number": "3.7"
+  },
+  {
+   "level": 2,
+   "title": "Relative Expressions",
+   "page": 11,
+   "source": "outline",
+   "number": "3.8"
+  },
+  {
+   "level": 2,
+   "title": "Predicates",
+   "page": 12,
+   "source": "outline",
+   "number": "3.9"
+  },
+  {
+   "level": 1,
+   "title": "Decision Procedure: Walnut's Implementation",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Cross Product",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantification",
+   "page": 14,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Complement and Reverse",
+   "page": 15,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Arithmetic and Comparison Operators",
+   "page": 16,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Calling an Automaton",
+   "page": 17,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "Indexing an Automatic Word",
+   "page": 18,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 1,
+   "title": "Special Automata in Walnut",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "True and False Automata",
+   "page": 19,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Non-arithmetic Automata",
+   "page": 19,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Installation",
+   "page": 20,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Eclipse",
+   "page": 20,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Commands",
+   "page": 20,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "eval: eval <name> <predicate>",
+   "page": 22,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "def: def <name> <predicate>",
+   "page": 26,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "macro: macro <name> <template>",
+   "page": 27,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Matrices with eval and def",
+   "page": 29,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 2,
+   "title": "reg",
+   "page": 29,
+   "source": "outline",
+   "number": "7.5"
+  },
+  {
+   "level": 2,
+   "title": "load: load <file name>",
+   "page": 31,
+   "source": "outline",
+   "number": "7.6"
+  },
+  {
+   "level": 1,
+   "title": "Working with Input/Output",
+   "page": 32,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Defining Automata in Text Files",
+   "page": 32,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Defining New Automatic Words",
+   "page": 33,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Defining New Number Systems",
+   "page": 33,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "Converting .gv files to .jpeg",
+   "page": 34,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8530,
+   "n_words": 2480
+  },
+  {
+   "id": "sec-001-2-basics",
+   "number": "2",
+   "title": "Basics",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3,
+   "n_words": 1
+  },
+  {
+   "id": "sec-002-21-words-and-automata",
+   "number": "2.1",
+   "title": "Words and Automata",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5111,
+   "n_words": 933
+  },
+  {
+   "id": "sec-003-22-number-systems",
+   "number": "2.2",
+   "title": "Number Systems",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5760,
+   "n_words": 1025
+  },
+  {
+   "id": "sec-004-23-automatic-words",
+   "number": "2.3",
+   "title": "Automatic Words",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2917,
+   "n_words": 542
+  },
+  {
+   "id": "sec-005-24-automata-accepting-predicates",
+   "number": "2.4",
+   "title": "Automata accepting Predicates",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2689,
+   "n_words": 456
+  },
+  {
+   "id": "sec-006-33-variables",
+   "number": "3.3",
+   "title": "Variables",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1941,
+   "n_words": 342
+  },
+  {
+   "id": "sec-007-34-operators",
+   "number": "3.4",
+   "title": "Operators",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1822,
+   "n_words": 331
+  },
+  {
+   "id": "sec-008-3-syntax-and-semantic-of-predicates-in-walnut",
+   "number": "3",
+   "title": "Syntax and Semantic of Predicates in Walnut",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 3,
+   "n_words": 1
+  },
+  {
+   "id": "sec-009-31-alphabets",
+   "number": "3.1",
+   "title": "Alphabets",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 193,
+   "n_words": 35
+  },
+  {
+   "id": "sec-010-32-arithmetic-and-alphabetic-constants",
+   "number": "3.2",
+   "title": "Arithmetic and Alphabetic Constants",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1194,
+   "n_words": 196
+  },
+  {
+   "id": "sec-011-35-arithmetic-expressions",
+   "number": "3.5",
+   "title": "Arithmetic Expressions",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2883,
+   "n_words": 499
+  },
+  {
+   "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
+   "number": "3.6",
+   "title": "Indexing Expressions and Their Semantic Rules",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 118,
+   "n_words": 19
+  },
+  {
+   "id": "sec-013-39-predicates",
+   "number": "3.9",
+   "title": "Predicates",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1429,
+   "n_words": 234
+  },
+  {
+   "id": "sec-014-37-calling-expressions-and-their-semantic-rules",
+   "number": "3.7",
+   "title": "Calling Expressions and Their Semantic Rules",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1035,
+   "n_words": 190
+  },
+  {
+   "id": "sec-015-38-relative-expressions",
+   "number": "3.8",
+   "title": "Relative Expressions",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2108,
+   "n_words": 340
+  },
+  {
+   "id": "sec-016-41-cross-product",
+   "number": "4.1",
+   "title": "Cross Product",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 8692,
+   "n_words": 1660
+  },
+  {
+   "id": "sec-017-43-complement-and-reverse",
+   "number": "4.3",
+   "title": "Complement and Reverse",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1890,
+   "n_words": 317
+  },
+  {
+   "id": "sec-018-44-arithmetic-and-comparison-operators",
+   "number": "4.4",
+   "title": "Arithmetic and Comparison Operators",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3044,
+   "n_words": 580
+  },
+  {
+   "id": "sec-019-45-calling-an-automaton",
+   "number": "4.5",
+   "title": "Calling an Automaton",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2237,
+   "n_words": 406
+  },
+  {
+   "id": "sec-020-46-indexing-an-automatic-word",
+   "number": "4.6",
+   "title": "Indexing an Automatic Word",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1090,
+   "n_words": 177
+  },
+  {
+   "id": "sec-021-5-special-automata-in-walnut",
+   "number": "5",
+   "title": "Special Automata in Walnut",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 3,
+   "n_words": 1
+  },
+  {
+   "id": "sec-022-51-true-and-false-automata",
+   "number": "5.1",
+   "title": "True and False Automata",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1548,
+   "n_words": 278
+  },
+  {
+   "id": "sec-023-52-non-arithmetic-automata",
+   "number": "5.2",
+   "title": "Non-arithmetic Automata",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1040,
+   "n_words": 173
+  },
+  {
+   "id": "sec-024-6-installation",
+   "number": "6",
+   "title": "Installation",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1184,
+   "n_words": 202
+  },
+  {
+   "id": "sec-025-61-eclipse",
+   "number": "6.1",
+   "title": "Eclipse",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-026-7-commands",
+   "number": "7",
+   "title": "Commands",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4084,
+   "n_words": 749
+  },
+  {
+   "id": "sec-027-71-eval-eval-name-predicate",
+   "number": "7.1",
+   "title": "eval: eval <name> <predicate>",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 8497,
+   "n_words": 1572
+  },
+  {
+   "id": "sec-028-72-def-def-name-predicate",
+   "number": "7.2",
+   "title": "def: def <name> <predicate>",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3058,
+   "n_words": 528
+  },
+  {
+   "id": "sec-029-73-macro-macro-name-template",
+   "number": "7.3",
+   "title": "macro: macro <name> <template>",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 3630,
+   "n_words": 656
+  },
+  {
+   "id": "sec-030-74-matrices-with-eval-and-def",
+   "number": "7.4",
+   "title": "Matrices with eval and def",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1888,
+   "n_words": 343
+  },
+  {
+   "id": "sec-031-75-reg",
+   "number": "7.5",
+   "title": "reg",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 5069,
+   "n_words": 891
+  },
+  {
+   "id": "sec-032-8-working-with-inputoutput",
+   "number": "8",
+   "title": "Working with Input/Output",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5563,
+   "n_words": 1053
+  },
+  {
+   "id": "sec-033-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2492,
+   "n_words": 348
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 41,
+  "sections": 34,
+  "chars_total": 92745
+ }
+}

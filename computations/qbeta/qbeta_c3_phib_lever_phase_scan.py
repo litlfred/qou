@@ -58,7 +58,7 @@ def main() -> int:
     anchors = {"proton": q_at(50), "muon": q_muon_at(50)}
     S, sub, t = {}, {}, {}
     for a, q in anchors.items():
-        sub[a] = substrate_ladder_quantities(q)
+        sub[a] = substrate_ladder_quantities(q, convention="C")
         S[a] = c3_target_at(q, Qcod, me) + Vol41
         t[a] = mp.log(q)
     floor_p = mp.sqrt(mp.fabs(S["proton"]) / SQRT3_HALF)  # |u|_min(proton), recorded below

@@ -109,7 +109,17 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
         sys.path.insert(0, _p)
 
 # muon-canonical q₀ (computations/ layer convention); matches #4012 + sibling probes.
-Q0_STR = "1.10997859555733471"
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
 
 
 def q_int(k: int, q: mp.mpf) -> mp.mpf:
@@ -231,6 +241,23 @@ def main() -> int:
           f"(A=3 impossible — whole family ≤ 3.34 < 3.81); a truncation that hit the "
           f"data would be the forbidden 7th fit and is NOT wired")
 
+    # HOW FAR the family is from landing — the one number the Q1 verdict turns
+    # on that nothing above records.  Best member = the (t_3,t_4) minimising
+    # the worse of its two relative misses; a member landing both would drive
+    # this below the 5 % gate, so it is the verdict's own margin.
+    joint_miss = {
+        (t3, t4): max(abs(rho3[t3] / T3 - 1), abs(rho4[(t3, t4)] / T4 - 1))
+        for t3 in range(3) for t4 in range(4)
+    }
+    best_pair = min(joint_miss, key=lambda k: joint_miss[k])
+    best_joint_miss = joint_miss[best_pair]
+    # The A=3 floor: no member does better than t_3=2 on A=3, so 12.35% is a
+    # lower bound on every member's A=3 miss regardless of t_4.
+    a3_family_floor = min(abs(rho3[t3] / T3 - 1) for t3 in range(3))
+    print(f"best joint member {best_pair}: worst-of-two relative miss = "
+          f"{mp.nstr(best_joint_miss * 100, 6)}%  (5% gate); "
+          f"A=3 family floor = {mp.nstr(a3_family_floor * 100, 6)}%")
+
     # convenience roll-ups
     rows = [
         {"A": 3, "target": float(T3), "family_max_rho_grad": float(rho3_max),
@@ -315,9 +342,32 @@ def main() -> int:
     for a in assertions:
         wb.add_assertion(a["name"], computed=str(a["passed"]), expected="True",
                          source=a["detail"])
-    wb.add_assertion("lands_both_targets_parameter_free", computed="False",
-                     expected="False",
-                     source="honest negative: brackets A=4, cannot reach A=3")
+    # Was `computed="False", expected="False"` (bean `qou-26f2`) — a literal on
+    # both sides, so the Q1 headline read PASS even for a family that DID land
+    # both targets, which is the one outcome it exists to deny.  `landed` was
+    # already computed twenty lines above and never compared to it.
+    wb.add_assertion("lands_both_targets_parameter_free",
+                     computed=str(len(landed) > 0), expected="False",
+                     source=f"honest negative: 0 of {len(rho4)} enumerated "
+                            f"truncations land both targets within 5% "
+                            f"(brackets A=4, cannot reach A=3)")
+    # …and by how much it misses, which no other assertion records.
+    wb.add_assertion("best_member_joint_relative_miss",
+                     computed=mp.nstr(best_joint_miss, 12), expected="0.1429147",
+                     tolerance="1e-6",
+                     source=f"min over all {len(rho4)} truncations of "
+                            f"max(|ρ_dem(3)/ρ_strong(3)−1|, |ρ_dem(4)/ρ_strong(4)−1|), "
+                            f"attained at t=(t_3,t_4)={best_pair} where the A=4 leg "
+                            f"binds (14.29% vs 12.35% on A=3). ~2.9× outside the 5% "
+                            f"gate, so the negative is not a near-miss")
+    wb.add_assertion("a3_family_floor_relative_miss",
+                     computed=mp.nstr(a3_family_floor, 12), expected="0.1234702",
+                     tolerance="1e-6",
+                     source="min over t_3 of |ρ_dem(3)/ρ_strong(3)−1|, attained at "
+                            "the FULL truncation t_3=2 ([3]_q0=3.34203 vs 3.81280). "
+                            "Independent of t_4, so it floors every member of the "
+                            "family at 12.35% — this is the monotonicity obstruction "
+                            "the verdict calls 'cannot reach A=3', as a number")
 
     out = wb.save(extra={"auditOnly": "docs/audits/2026-07-18-deltalambda-demazure-subcrystal.md"})
     print("witness ->", out)

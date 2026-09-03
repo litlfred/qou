@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T05:02:30.858554+00:00",
-  "commitSha": "550985daa5aeaf44c63fa89d10084789b08bd22f",
+  "computedAt": "2026-08-29T12:18:15.897803+00:00",
+  "commitSha": "83d101be2f3a9bddedf6ba6efffc988578e26900",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -15,7 +15,7 @@
       "computed": 5.955373008461181e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "absolute",
       "source": "primal_obj = dual_obj"
     },
@@ -30,17 +30,17 @@
       "computed": 3.425255604057077e-44,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-06",
       "unit": "absolute",
       "source": "primal_obj = dual_obj"
     }
   ],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 42,
   "computation": "a-K-via-lp-dual-hecke-basis",
   "scriptFile": "aK_via_lp_dual_hecke_basis.py",
-  "scriptHash": "f1cc27d897e7",
-  "scriptCommitSha": "86e639171915a5090ccc66e60ee9bcf5cc1ab491",
+  "scriptHash": "be8bea6e6c95",
+  "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -65,8 +65,8 @@
   "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
   "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
-    "q0": "mpf('1.109978595557334719899763220483225026656208408780153686607981146144929999')",
-    "h": "mpf('0.2090603219955936789818626364659673502616233016474798267897442369867365562')",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "h": "0.20906029879563931543084621312967494385975749526306",
     "basis_size": 6,
     "hecke_level": 3,
     "lp_method": "scipy linprog highs (f64)"
@@ -489,14 +489,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

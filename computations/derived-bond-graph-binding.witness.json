@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:00:17.500815+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-31T03:32:11.219341+00:00",
+  "commitSha": "10dfa653b505e1665505ba89ad12f132efd0f174",
   "assertions": [
     {
       "name": "f_bond_derivation_matches_measured_trace_ratio",
-      "computed": 2.72e-07,
-      "expected": 0.0,
+      "computed": "3.66130786065678626484155546602326423673994438157436824769807e-31",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 0.005,
+      "tolerance": "0.005",
       "source": "max over D/T/³He/⁴He of |∏_chain (c·z+d) − tr_atom/tr_free| / (tr_atom/tr_free); confirms f_bond is the Markov conditional expectation of the bridge crossing, not a fit."
     }
   ],
   "allPassed": true,
-  "durationMs": -1786192918224,
+  "durationMs": 32,
   "computation": "derived-bond-graph-binding",
   "scriptFile": "derived_bond_graph_binding.py",
-  "scriptHash": "7f4af3d8cf38",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "af10587498fc",
+  "scriptCommitSha": "d81293cdc9793ea5080b3b9d9376b79b1ff7ee0f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,26 +32,33 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
   },
-  "description": "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, f_pn=z−h(½−δ/4) — closed q₀ expressions, NO fit, NO |·|. Validated: ∏_chain f_bond reproduces the measured tr_atom/tr_free to 3e-07. Binding B = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) (extensive, positive — no modulus). FIX: the braid wires only A−1 CHAIN bonds; the complete graph (C(Z,2) pp + Z·N pn + C(N,2) nn) is the all-pairs topology. Per-bond energies E_0·log(1/f): pp=2.907, pn=3.890, nn=5.178 MeV (substrate-fixed).",
+  "invocation": {
+    "argv": [
+      "computations/derived_bond_graph_binding.py"
+    ],
+    "reproduce": "python3 -u computations/derived_bond_graph_binding.py"
+  },
+  "description": "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, f_pn=z−h(½−δ/4) — closed q₀ expressions, NO fit, NO |·|. Validated: ∏_chain f_bond reproduces the measured tr_atom/tr_free to 3.7e-31. Binding B = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) (extensive, positive — no modulus). FIX: the braid wires only A−1 CHAIN bonds; the complete graph (C(Z,2) pp + Z·N pn + C(N,2) nn) is the all-pairs topology. Per-bond energies E_0·log(1/f): pp=2.05071, pn=2.83316, nn=3.79778 MeV (substrate-fixed).",
   "parameters": {
-    "q0": 1.10997858,
-    "z_markov": 0.49932033,
-    "h": 0.2090603,
-    "color_delta": 0.00137571,
-    "E_0_MeV": 4.186
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000",
+    "z_markov": "0.612688037146465251595829863945899248026308391545087014074774",
+    "h": "0.209060298795639315430846213129674943859757495263063078255215",
+    "color_delta": "0.00137571080702709600855110927410655062222547601193777493132134",
+    "E_0_MeV": "4.18598136329447589694506215875900841014348689087871544862230"
   },
   "data": {
     "derived_f_bond": {
-      "pp": 0.49932,
-      "nn": 0.29026,
-      "pn": 0.394862
+      "pp": "0.612688037146465251595829863945899248026308391545087014074774",
+      "nn": "0.403627738350825936164983650816224304166550896282023935819559",
+      "pn": "0.508229789376738962577995797655893603898308390916567021541465"
     },
     "derived_bond_energy_MeV": {
-      "pp": 2.9072,
-      "nn": 5.178,
-      "pn": 3.8897
+      "pp": "2.05070969238143368563095783488465331689032300627252183881746",
+      "nn": "3.79778293514235332912382598485379642424684183886446052154535",
+      "pn": "2.83316257200452377033781580149201952418686016072745970981793"
     },
     "rows": [
       {
@@ -59,126 +66,126 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "B_AME_MeV": 2.2246,
-        "tr_atom_meas": 0.38836,
-        "tr_free_meas": 0.98353,
-        "measured_ratio_atom_over_free": 0.394862,
+        "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.575172243917771870826535343985861725176831090740070000000000",
+        "tr_free_meas": "1.13171690432221008273130756811575036344376556596730000000000",
+        "measured_ratio_atom_over_free": "0.508229789376738962577995797655707525326021891195576919470866",
         "chain_bonds": [
           "pn"
         ],
-        "prod_f_chain_DERIVED": 0.394862,
-        "derivation_rel_err": 2.97e-08,
-        "B_chain_derived_MeV": 3.8897,
-        "miss_chain_x": 0.572,
+        "prod_f_chain_DERIVED": "0.508229789376738962577995797655893603898308390916567021541465",
+        "derivation_rel_err": "3.66130786065678626484155546602326423673994438157436824769807e-31",
+        "B_chain_derived_MeV": "2.83316257200452377033781580149201952418686016072745970981793",
+        "miss_chain_x": "0.785188334048219237983366123922205069568858385201622812440003",
         "complete_bonds_count": {
           "pp": 0,
           "pn": 1,
           "nn": 0
         },
-        "B_complete_derived_MeV": 3.8897,
-        "miss_complete_x": 0.572,
-        "B_chain_bar_MeV": 3.0009,
-        "miss_chain_bar_x": 0.741,
-        "B_complete_bar_MeV": 3.0009,
-        "miss_complete_bar_x": 0.741
+        "B_complete_derived_MeV": "2.83316257200452377033781580149201952418686016072745970981793",
+        "miss_complete_x": "0.785188334048219237983366123922205069568858385201622812440003",
+        "B_chain_bar_MeV": "2.83375486602269092341023902349116732442987041523685013712506",
+        "miss_chain_bar_x": "0.785024218810529631597212245104076389996000100598671579871206",
+        "B_complete_bar_MeV": "2.83375486602269092341023902349116732442987041523685013712506",
+        "miss_complete_bar_x": "0.785024218810529631597212245104076389996000100598671579871206"
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "B_AME_MeV": 8.4818,
-        "tr_atom_meas": 0.10407,
-        "tr_free_meas": 0.90802,
-        "measured_ratio_atom_over_free": 0.114613,
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.229310102104556507332090810268822375141122395452650000000000",
+        "tr_free_meas": "1.11784622897822657732834138482483278533278537134100000000000",
+        "measured_ratio_atom_over_free": "0.205135640448649768926850001660362794444617188871396157758267",
         "chain_bonds": [
           "pn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.114613,
-        "derivation_rel_err": 1.1e-07,
-        "B_chain_derived_MeV": 9.0677,
-        "miss_chain_x": 0.935,
+        "prod_f_chain_DERIVED": "0.205135640448649768926850001660383511760910314195868541405790",
+        "derivation_rel_err": "1.00993256207525534869061060120115146146904982719007546369942e-31",
+        "B_chain_derived_MeV": "6.63094550714687709946164178634581594843370199959192023136328",
+        "miss_chain_x": "1.27912319455170665080389960217806095148659719188055210115203",
         "complete_bonds_count": {
           "pp": 0,
           "pn": 2,
           "nn": 1
         },
-        "B_complete_derived_MeV": 12.9574,
-        "miss_complete_x": 0.655,
-        "B_chain_bar_MeV": 6.3115,
-        "miss_chain_bar_x": 1.344,
-        "B_complete_bar_MeV": 9.3123,
-        "miss_complete_bar_x": 0.911
+        "B_complete_derived_MeV": "9.46410807915140086979945758783783547262056216031937994118121",
+        "miss_complete_x": "0.896206608067447191292643617276758571049322705814201021276343",
+        "B_chain_bar_MeV": "5.75800117978458443078763093336039219499845283780534131730646",
+        "miss_chain_bar_x": "1.47304523482527610001904423164871062285272495504708694631681",
+        "B_complete_bar_MeV": "8.59175604580727535419786995685155951942832325304219145443152",
+        "miss_complete_bar_x": "0.987201702978876467338405100971986829850478322897237203981433"
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "B_AME_MeV": 7.718,
-        "tr_atom_meas": 0.20658,
-        "tr_free_meas": 1.04776,
-        "measured_ratio_atom_over_free": 0.197163,
+        "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.403767036851428170368670253333240521653469699944350000000000",
+        "tr_free_meas": "1.29667561224494401773789929522993119752484314172510000000000",
+        "measured_ratio_atom_over_free": "0.311386312072595652412888396633063340784299453511524086632153",
         "chain_bonds": [
           "pp",
           "pn"
         ],
-        "prod_f_chain_DERIVED": 0.197163,
-        "derivation_rel_err": 3e-08,
-        "B_chain_derived_MeV": 6.7969,
-        "miss_chain_x": 1.136,
+        "prod_f_chain_DERIVED": "0.311386312072595652412888396633099822289561628596073922949007",
+        "derivation_rel_err": "1.17158345912359493800465201396268995036019066630935913892849e-31",
+        "B_chain_derived_MeV": "4.88387226438595745596877363637667284107718316699998154863539",
+        "miss_chain_x": "1.58031187184834751654843058930946010482117286659029667550934",
         "complete_bonds_count": {
           "pp": 1,
           "pn": 2,
           "nn": 0
         },
-        "B_complete_derived_MeV": 10.6866,
-        "miss_complete_x": 0.722,
-        "B_chain_bar_MeV": 5.9081,
-        "miss_chain_bar_x": 1.306,
-        "B_complete_bar_MeV": 8.9089,
-        "miss_complete_bar_x": 0.866
+        "B_complete_derived_MeV": "7.71703483639048122630658943786869236526404332772744125845332",
+        "miss_complete_x": "1.00013042361876774165164787021546602059492359150085223847786",
+        "B_chain_bar_MeV": "5.75800117978458443078763093336039219499845283780534131730646",
+        "miss_chain_bar_x": "1.34040287228436164504346805300183943489472990139147172591882",
+        "B_complete_bar_MeV": "8.59175604580727535419786995685155951942832325304219145443152",
+        "miss_complete_bar_x": "0.898307782349844206595466299013476239299619238420887648086848"
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "B_AME_MeV": 28.2957,
-        "tr_atom_meas": 0.05536,
-        "tr_free_meas": 0.96732,
-        "measured_ratio_atom_over_free": 0.057228,
+        "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.160974145442407381825873440980764507246433793785970000000000",
+        "tr_free_meas": "1.28078315152864641063633786713449683922062429502270000000000",
+        "measured_ratio_atom_over_free": "0.125684152895266269413878505866638385660229297387624865625134",
         "chain_bonds": [
           "pp",
           "pn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.057228,
-        "derivation_rel_err": 1.1e-07,
-        "B_chain_derived_MeV": 11.9749,
-        "miss_chain_x": 2.363,
+        "prod_f_chain_DERIVED": "0.125684152895266269413878505866684099018936722846955642495929",
+        "derivation_rel_err": "3.63716169893899119312682918293372353048267578646074867157032e-31",
+        "B_chain_derived_MeV": "8.68165519952831078509259962123046926532402500586444207018073",
+        "miss_chain_x": "3.25924743032150733901495119465382008649141645495797294239386",
         "complete_bonds_count": {
           "pp": 1,
           "pn": 4,
           "nn": 1
         },
-        "B_complete_derived_MeV": 23.6439,
-        "miss_complete_x": 1.197,
-        "B_chain_bar_MeV": 9.2186,
-        "miss_chain_bar_x": 3.069,
-        "B_complete_bar_MeV": 18.2212,
-        "miss_complete_bar_x": 1.553
+        "B_complete_derived_MeV": "17.1811429155418820961060470257065278378846054880468211996345",
+        "miss_complete_x": "1.64690221943291327154716191027199000732929775149466697033865",
+        "B_chain_bar_MeV": "8.68224749354647793816502284322961706556703526037383249748786",
+        "miss_chain_bar_x": "3.25902508780499407604116363157865778270514687702844646861350",
+        "B_complete_bar_MeV": "17.1835120916145507083957399137031190388566465060843829088630",
+        "miss_complete_bar_x": "1.64667515285237358397694920396349839169062899101598396201612"
       },
       {
         "atom": "6Li",
         "Z": 3,
         "N": 3,
         "A": 6,
-        "B_AME_MeV": 31.9945,
-        "tr_atom_meas": 0.00789,
-        "tr_free_meas": 0.95139,
-        "measured_ratio_atom_over_free": 0.008294,
+        "B_AME_MeV": "31.9945260000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.0450520270665527266978068001977892269632763162623000000000000",
+        "tr_free_meas": "1.44948394335604382837097895803942398159530694834030000000000",
+        "measured_ratio_atom_over_free": "0.0310814254087162226701951515858130080289334210944451928917289",
         "chain_bonds": [
           "pp",
           "pp",
@@ -186,31 +193,31 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.008294,
-        "derivation_rel_err": 1.91e-07,
-        "B_chain_derived_MeV": 20.06,
-        "miss_chain_x": 1.595,
+        "prod_f_chain_DERIVED": "0.0310814254087162226701951515858163186849207499641791371802182",
+        "derivation_rel_err": "1.06515577834485552251873536244049249633375648592281006698731e-31",
+        "B_chain_derived_MeV": "14.5301478270520977998473834409689190064611898510014244305435",
+        "miss_chain_x": "2.20194084608230075142820679762594898812344039300897012054833",
         "complete_bonds_count": {
           "pp": 3,
           "pn": 9,
           "nn": 3
         },
-        "B_complete_derived_MeV": 59.2627,
-        "miss_complete_x": 0.54,
-        "B_chain_bar_MeV": 15.4364,
-        "miss_chain_bar_x": 2.073,
-        "B_complete_bar_MeV": 45.6611,
-        "miss_complete_bar_x": 0.701
+        "B_complete_derived_MeV": "43.0439410306120749773046936726435249410932359819580844694498",
+        "miss_complete_x": "0.743299178326772398059273229365269782214438281990747447105506",
+        "B_chain_bar_MeV": "14.5307401210702649529198066629680668067042001055108148578507",
+        "miss_chain_bar_x": "2.20185109178344013662780802267154200198722070640517000709969",
+        "B_complete_bar_MeV": "43.0492716767755793549565026706358551432803282725425983152139",
+        "miss_complete_bar_x": "0.743207138095684791841277895317393567122236146585851019293635"
       },
       {
         "atom": "7Li",
         "Z": 3,
         "N": 4,
         "A": 7,
-        "B_AME_MeV": 39.2445,
-        "tr_atom_meas": 0.00211,
-        "tr_free_meas": 0.87835,
-        "measured_ratio_atom_over_free": 0.002407,
+        "B_AME_MeV": "39.2445310000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.0179613759806625499996012671121555340628176674362310000000000",
+        "tr_free_meas": "1.43171861607514594269524357386314160655497776875850000000000",
+        "measured_ratio_atom_over_free": "0.0125453254424400246066301674663067521223598422835143321598039",
         "chain_bonds": [
           "pp",
           "pp",
@@ -219,31 +226,31 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.002407,
-        "derivation_rel_err": 2.72e-07,
-        "B_chain_derived_MeV": 25.238,
-        "miss_chain_x": 1.555,
+        "prod_f_chain_DERIVED": "0.0125453254424400246066301674663079460091130873069817000124618",
+        "derivation_rel_err": "9.51658654630179457446448559414877182691468938790453410754843e-32",
+        "B_chain_derived_MeV": "18.3279307621944511289712094258227154307080316898658849520889",
+        "miss_chain_x": "2.14124177514631496617078296745244682373394340239753515591017",
         "complete_bonds_count": {
           "pp": 3,
           "pn": 12,
           "nn": 6
         },
-        "B_complete_derived_MeV": 86.4657,
-        "miss_complete_x": 0.454,
-        "B_chain_bar_MeV": 18.747,
-        "miss_chain_bar_x": 2.093,
-        "B_complete_bar_MeV": 64.5955,
-        "miss_complete_bar_x": 0.608
+        "B_complete_derived_MeV": "62.9367775520527062756896190316809727863943419807338451635396",
+        "miss_complete_x": "0.623554820034157041262106608378043359423605244136344296380875",
+        "B_chain_bar_MeV": "17.4549864348321584602971985728372916772727825280793060380321",
+        "miss_chain_bar_x": "2.24832778567423520299654439494385901673585923297587113554671",
+        "B_complete_bar_MeV": "60.3232752161293326473193954707170317282756867859586222671333",
+        "miss_complete_bar_x": "0.650570295783719901349776361914100330212830076072174071495638"
       },
       {
         "atom": "7Be",
         "Z": 4,
         "N": 3,
         "A": 7,
-        "B_AME_MeV": 37.6003,
-        "tr_atom_meas": 0.0042,
-        "tr_free_meas": 1.01352,
-        "measured_ratio_atom_over_free": 0.004141,
+        "B_AME_MeV": "37.6003500000000000000000000000000000000000000000000000000000",
+        "tr_atom_meas": "0.0316262192154962523053988916404615124648173966649190000000000",
+        "tr_free_meas": "1.66076027716141649102991204055458079748817727119490000000000",
+        "measured_ratio_atom_over_free": "0.0190432175253806139503014064457114434838529589892952291794798",
         "chain_bonds": [
           "pp",
           "pp",
@@ -252,38 +259,40 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.004142,
-        "derivation_rel_err": 1.91e-07,
-        "B_chain_derived_MeV": 22.9672,
-        "miss_chain_x": 1.637,
+        "prod_f_chain_DERIVED": "0.0190432175253806139503014064457132633147804922834148818006592",
+        "derivation_rel_err": "9.55632064333582951155493824819039156053101440793885430333033e-32",
+        "B_chain_derived_MeV": "16.5808575194335314854783412758535723233515128572739462693610",
+        "miss_chain_x": "2.26769634537481862277956947672663035842365886232521359760815",
         "complete_bonds_count": {
           "pp": 6,
           "pn": 12,
           "nn": 3
         },
-        "B_complete_derived_MeV": 79.6534,
-        "miss_complete_x": 0.472,
-        "B_chain_bar_MeV": 18.3436,
-        "miss_chain_bar_x": 2.05,
-        "B_complete_bar_MeV": 63.3853,
-        "miss_complete_bar_x": 0.593
+        "B_complete_derived_MeV": "57.6955578237699473452110145817735434643247854829580291153559",
+        "miss_complete_x": "0.651702685930337976049575088804071564291466292060165646185707",
+        "B_chain_bar_MeV": "17.4549864348321584602971985728372916772727825280793060380321",
+        "miss_chain_bar_x": "2.15413229568411021691127148494722307625294756893958794542490",
+        "B_complete_bar_MeV": "60.3232752161293326473193954707170317282756867859586222671333",
+        "miss_complete_bar_x": "0.623314133148167641313309710076464981862516979775866613087083"
       }
     ],
     "headline": {
-      "derivation": "f_bond = c·z + d (EXACT: max rel err vs measured tr_atom/tr_free = 2.7e-07 over D/T/³He/⁴He)",
-      "chain_miss_range": "0.57–2.36×",
-      "complete_miss_range": "0.45–1.20×",
+      "derivation": "f_bond = c·z + d (EXACT: max rel err vs measured tr_atom/tr_free = 3.66e-31 over D/T/³He/⁴He)",
+      "chain_miss_range": "0.7852–3.259×",
+      "complete_miss_range": "0.6236–1.647×",
       "verdict": "f is DERIVED (Markov factor of the bridge), not fitted. Chain (A−1 bonds, as-wired) under-binds (esp ⁴He); complete graph (C(A,2)) over-binds the light nuclei — the true bond graph is between (saturation/Pauli/shell), the remaining structural question. The per-bond ENERGIES are fixed substrate quantities; only the edge SET is open."
     },
     "upstream_witness_hashes": [
       {
         "path": "binding-canonical.witness.json",
-        "sha256": "3950fb614c34db7fbe3764ce44b0b25c51e8b3e16dd730e8387df0e21e77e497",
-        "size_bytes": 6231,
-        "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
-        "scriptCommitSha": "b2d94df75a85abb27b1790defaaa7ec7dccb5820",
-        "computedAt": "2026-06-29T17:13:41.851813+00:00"
+        "sha256": "141cd06d2a6b9a36fc8cb0c922025d29785651eb00331e67f0444cb3ff55fe39",
+        "size_bytes": 6536,
+        "commitSha": "ed819c29934a44bf7d752a800291f5a01ea1742d",
+        "scriptCommitSha": "77e4e68b75e65453004511c059a6613daee5ee0d",
+        "computedAt": "2026-08-22T19:30:53.367121+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

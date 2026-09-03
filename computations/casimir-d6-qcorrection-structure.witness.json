@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:57:02.039076+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T20:30:25.358619+00:00",
+  "commitSha": "8abc50af621009a3e093e6e625e47ad097feca3d",
   "assertions": [
     {
       "name": "jones_4_1_leading_h2_coefficient_is_three_quarters",
-      "computed": "0.75",
-      "expected": "0.75",
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
+      "tolerance": "1e-30",
       "source": "dJ_{4_1}/d(h²)|_0 = 1 − 1/(2√4) = 3/4"
     },
     {
@@ -17,16 +17,16 @@
       "computed": "1.03280934182539968964952735759",
       "expected": "1.03280934182539968964952735759",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "J_{4_1} = h² + 3 − √(h²+4)"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "casimir-d6-qcorrection-structure",
   "scriptFile": "casimir_d6_qcorrection_structure.py",
-  "scriptHash": "a729d61d6ff0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "11b1afe36d4f",
+  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

@@ -19,7 +19,7 @@ $$
   \cdot g_{ijk}^{(n)}.
 $$
 
-The vanishing of $g_{ijk}^{(n+1)}$ in Cech cohomology imposes the twisted $2$-cocycle equation
+The vanishing of $g_{ijk}^{(n+1)}$ in Čech cohomology imposes the twisted $2$-cocycle equation
 
 $$
   d(g_{ijk}^{(n)})
@@ -27,4 +27,4 @@ $$
   a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot (a_{jk}^{(n)})^{-1},
 $$
 
-where the left-hand side is the Cech coboundary $\delta^2(g^{(n)})_{ijk}$ and the right-hand side is twisted conjugation by the $2$-morphisms. $\square$
+where the left-hand side is the Čech coboundary $\delta^2(g^{(n)})_{ijk}$ and the right-hand side is twisted conjugation by the $2$-morphisms. $\square$

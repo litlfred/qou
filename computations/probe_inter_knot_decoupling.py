@@ -38,7 +38,24 @@ def _load_q_0(w: WitnessBuilder) -> mp.mpf:
     change at all. The builder is threaded in because the record needs
     somewhere to land.
     """
-    return mp.mpf(w.add_upstream(Q_PINNING)["derived_50_digit"]["q"])
+    # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+    # §"q₀ anchor convention": the experimental (proton) anchor is the default
+    # for all production compute, and the owner authorisation recorded there
+    # covers this sweep ("we want proton unless for an explicit reason ... fix
+    # all, even if not visible").
+    #
+    # This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+    # MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+    # direct read of the anchor-defining witness computes at muon whatever the
+    # configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+    # tension itself.
+    #
+    # The upstream record is KEPT — that witness remains the canonical 3-CAL
+    # (muon) pin document, it is simply no longer the source of this
+    # computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+    w.add_upstream(Q_PINNING)
+    from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
+    return mp.mpf(_Q50_PROTON)
 
 def main():
     w = WitnessBuilder("inter-knot-decoupling", engine="sympy+mpmath")

@@ -9,7 +9,7 @@
       "computed": 1.485099840674492e-16,
       "expected": 0,
       "passed": true,
-      "tolerance": 1e-10,
+      "tolerance": "1e-10",
       "source": "min-L2-norm SDP exactly reproduces τ_M(T_β) = Q_β/E_0 at q_0"
     }
   ],

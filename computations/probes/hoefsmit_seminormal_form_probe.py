@@ -149,7 +149,7 @@ def main() -> int:
         .add_data("per_irrep_results", results)
         .add_assertion(
             name="hecke_quadratic_all_irreps_n_2_to_6",
-            computed=float(max_hecke_residue),
+            computed=max_hecke_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over partitions λ ⊢ n (2 ≤ n ≤ 6) and generators "
@@ -163,7 +163,7 @@ def main() -> int:
         )
         .add_assertion(
             name="braid_relation_all_irreps_n_3_to_6",
-            computed=float(max_braid_residue),
+            computed=max_braid_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over partitions λ ⊢ n (3 ≤ n ≤ 6) and adjacent "

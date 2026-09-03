@@ -71,11 +71,12 @@ from codata_constants import (  # noqa: E402
     M_HE3_MEV_VALIDATION as M_HE3_MEV,
     M_HE4_MEV_VALIDATION as M_HE4_MEV,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z1 = mp.mpf("12.776")
@@ -227,7 +228,7 @@ def main() -> int:
     S_p_base = mp.mpf(base["rows"][0]["S_emp_MeV"])
     w.add_assertion(
         "baseline_S_emp_proton_matches_documented",
-        computed=float(S_p_base),
+        computed=S_p_base,
         expected=-27.76,
         tolerance=0.1,
         source=(

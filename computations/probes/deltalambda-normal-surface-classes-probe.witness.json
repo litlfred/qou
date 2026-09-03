@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "sigma=(1,2,0), eps=-1 re-pinned on m004 vs GHHR Ex 10.23/A.10, matching the W9 frozen values"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "quad_vector + boundary_slopes + chi equal to the committed W9 witness for all 52 indices"
     },
     {
@@ -25,7 +25,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "count / chi distribution / quad distribution / cusps-touched pattern equal to W9 witness"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "1-cusp: 4 per cusp, 2-cusp: 8 per pair, 3-cusp: 16"
     },
     {
@@ -41,7 +41,7 @@
       "computed": 48.0,
       "expected": 48.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "SnapPy is_isometric_to(return_isometries=True)"
     },
     {
@@ -49,7 +49,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "all 6 cusp permutations occur among the 48 isometries"
     },
     {
@@ -57,7 +57,7 @@
       "computed": 8.0,
       "expected": 8.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "isometries with trivial cusp permutation"
     },
     {
@@ -65,7 +65,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "16 combinatorial automorphisms realizing only {id, (0 2)} — matches W9"
     },
     {
@@ -73,7 +73,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "at least one cusp-map convention preserves the census slope multiset under all 48 isometries"
     },
     {
@@ -81,7 +81,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "induced map preserves (slope, chi) class set and multiplicities for all 48 isometries"
     },
     {
@@ -89,7 +89,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "all isometries with the same cusp permutation induce the same map on K-orbits (K normal)"
     },
     {
@@ -97,7 +97,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "|S3-orbit| * |stabilizer| = 6 for every orbit; stabilizer orders constant along each orbit"
     },
     {
@@ -105,7 +105,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "H-orbit count identical for all 3 choices of distinguished cusp (conjugate subgroups)"
     },
     {
@@ -113,7 +113,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "no census quad-vector is the sum of two census quad-vectors (vertex/extreme-ray property, pairwise check)"
     }
   ],

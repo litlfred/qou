@@ -81,10 +81,20 @@ SIGMA_Q_REL_OPTIMISTIC = mp.mpf("7.8e-9")  # 7.8 ppb — the 100× target read a
 PIN_REL_PROTON = mp.mpf("0.06e-9")   # 0.06 ppb
 PIN_REL_MUON = mp.mpf("22e-9")       # 22 ppb
 
-# empirical c_3 readouts on record (inter-producer spread evidence)
+# Empirical c_3 readouts on record (inter-producer spread evidence).
+#
+# THESE ARE THREE DIFFERENT PRODUCERS' READOUTS, NOT INTERCHANGEABLE VALUES.
+# Only `C3_EMP_CACHE` is extracted at `Q0_CANONICAL`; pairing either of the
+# others with that pin measures a producer difference, not an anchor slope
+# (bean `qou-t39x` — that mismatch is where the corpus's "4.6e6" came from).
+#
+# `C3_EMP_MUON_HOPF` is a SUPERSEDED readout (pre-#1422) and is retained on
+# purpose: the inter-producer spread below is a real measurement of how far
+# apart two producers' "empirical c_3" got, and deleting it would delete the
+# evidence. It must never enter an arithmetic slope.
 C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")  # root-of-unity probe
-C3_EMP_MUON_HOPF = mp.mpf("-2.0097")                         # hopf-profile probe
-C3_EMP_CACHE = mp.mpf("-2.02018812814143945582016855395")    # ck-cache (canonical q₀)
+C3_EMP_MUON_HOPF = mp.mpf("-2.0097")                         # hopf-profile probe (SUPERSEDED; spread only)
+C3_EMP_CACHE = mp.mpf("-2.02018812814143945582016855395")    # ck-cache, extracted AT Q0_CANONICAL
 
 MARGIN_DIGITS = 3.0  # confidence margin beyond the raw entropy floor
 
@@ -150,13 +160,30 @@ def main():
     # exact partials: dc3/d(eps_Q) = (Q/Q_N2)/u³ ; dc4/d(eps_Q) = (Q/Q_N3)/u⁴
     dc3_dQ = (Q_BETA_CODATA_MEV / chain["Q_N2"]) / u ** 3
     dc4_dQ = (Q_BETA_CODATA_MEV / chain["Q_N3"]) / u ** 4
-    # empirical anchor slope dc3/dq from the two recorded anchors
-    slope_c3 = (C3_EMP_PROTON - C3_EMP_MUON_HOPF) / (Q0_PROTON - Q0_CANONICAL)
+    # Empirical anchor slope dc3/dq from the two recorded anchors.
+    #
+    # 🛑 THIS PAIRED TWO DIFFERENT PRODUCERS' READOUTS (fixed 2026-08-29, bean
+    # `qou-t39x`). It read `C3_EMP_MUON_HOPF`, the hopf-profile probe's value,
+    # against `Q0_CANONICAL` — but this file's OWN readout at that pin is
+    # `C3_EMP_CACHE`, defined three lines above it. The mismatch is the entire
+    # source of the number:
+    #
+    #     proton readout vs HOPF readout   ->  4657409.9      <- the "4.6e6"
+    #     proton readout vs CACHE (same pin) ->  3838405.9    <- the real slope
+    #
+    # and the print below then reported the artifact as agreeing with the
+    # registry's (then also stale) "≈ 4.6e6" — two errors corroborating each
+    # other. `C3_EMP_CACHE` is the value extracted AT `Q0_CANONICAL`, so it is
+    # the only one that makes this a slope rather than a producer difference.
+    #
+    # `C3_EMP_MUON_HOPF` stays defined: the inter-producer spread below is a
+    # DELIBERATE measurement and needs it. It just must not enter a slope.
+    slope_c3 = (C3_EMP_PROTON - C3_EMP_CACHE) / (Q0_PROTON - Q0_CANONICAL)
     print(f"\n  amplifiers:")
     print(f"    dc_3/d(rel Q err) = 1/u³·(Q/Q_N2) = {mp.nstr(dc3_dQ, 6)}")
     print(f"    dc_4/d(rel Q err) = 1/u⁴·(Q/Q_N3) = {mp.nstr(dc4_dQ, 6)}")
     print(f"    dc_3/dq (empirical, cross-anchor) = {mp.nstr(slope_c3, 4)}"
-          f"   (registry: ≈ 4.6e6)")
+          f"   (registry §3, corrected PR #5765: ≈ 3.84e6)")
 
     scenarios = []
     for (label, sigma_q) in [
@@ -360,6 +387,15 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     wpath = os.path.join(here, "qbeta-ck-basis-constrained-pslq.witness.json")
     with open(wpath, "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(out, f, indent=2)
     print(f"\n  witness → {wpath}")
     return out

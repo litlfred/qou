@@ -1,5 +1,17 @@
 # The curvature-rank chain rests on a bridge that is stated nowhere
 
+> **▶ SUPERSEDED IN PART (2026-08-26, bean `qou-wjbd`).** "Unstated" is now an
+> understatement. Every candidate reading of `J^•` present in the corpus has
+> been excluded, and the degree-`0` argument excludes the identification *as
+> written* for any filtration whatsoever:
+> [`2026-08-26-no-shift-rescues-the-word-partition-bridge.md`](2026-08-26-no-shift-rescues-the-word-partition-bridge.md).
+> The scope-(a) framing below — "unstated, not false" — remains correct about
+> the *identification in the abstract*, which is still not refuted: a filtration
+> realising the `gbDepth` grading exists trivially. What is refuted is that any
+> `J^•` the corpus names is one.
+
+
+
 Raised as an open question in [#5183](https://github.com/litlfred/qou/pull/5183)
 while fixing a mis-aimed citation: *"whether the word-depth ↔ partition-depth
 identification is proved anywhere"* was flagged unestablished. It is not proved,

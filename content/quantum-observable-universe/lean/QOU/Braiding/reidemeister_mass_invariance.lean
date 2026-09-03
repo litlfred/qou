@@ -1,51 +1,34 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.Braiding.reidemeister_mass_invariance
+# `QOU.Braiding.reidemeister_mass_invariance` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Canonical declaration** for content block referenced by
-`qou:QOU.Braiding.reidemeister_mass_invariance`.
+This module used to hold `ReidemeisterMassInvarianceContext` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[ReidemeisterMassInvarianceContext]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
+
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.Braiding.reidemeister_mass_invariance`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`mass-theory/reidemeister-mass-invariance.lean`](../../mass-theory/reidemeister-mass-invariance.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `IsKnotInvariant`, `IsRegularInvariant`, `knot_invariant_is_regular`, `KnotDiagram`, `applyR1`, `applyR2`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/Braiding/reidemeister_mass_invariance.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.Braiding
-
-
-/-- Abstract context for the `reidemeister_mass_invariance` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class ReidemeisterMassInvarianceContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Knot mass `𝔪(K)`. -/
-  mass : CategoricalObj → ℝ
-  /-- The three Reidemeister moves R-I, R-II, R-III applied to a knot. -/
-  R_I : CategoricalObj → CategoricalObj
-  R_II : CategoricalObj → CategoricalObj
-  R_III : CategoricalObj → CategoricalObj
-  /-- Manuscript identity: mass is invariant under all three
-      Reidemeister moves. -/
-  claim_reidemeister_mass_invariance : ∀ K : CategoricalObj,
-    mass (R_I K) = mass K ∧
-    mass (R_II K) = mass K ∧
-    mass (R_III K) = mass K
-
-/-- **Content statement** (from manuscript):
-
-- **R-I** (curl): add or remove a single crossing (writhe
-  changes by $\pm 1$).
-- **R-II** (poke): add or remove a pair of crossings with
-  opposite signs (writhe unchanged).
-- **R-III** (slide): move a strand past a crossing (crossing
-  number unchanged).
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts
-def reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :
-    ∀ K : ctx.CategoricalObj,
-      ctx.mass (ctx.R_I K) = ctx.mass K ∧
-      ctx.mass (ctx.R_II K) = ctx.mass K ∧
-      ctx.mass (ctx.R_III K) = ctx.mass K :=
-  ctx.claim_reidemeister_mass_invariance
-
-end QOU.Braiding

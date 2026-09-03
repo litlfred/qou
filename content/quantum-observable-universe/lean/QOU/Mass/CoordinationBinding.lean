@@ -28,6 +28,7 @@ network-blocked). Bean qou-4tj9.
 import Mathlib.Combinatorics.SimpleGraph.Finite
 import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
 namespace QOU.Mass.CoordinationBinding
 
@@ -79,5 +80,36 @@ theorem binding_eq_bond_energy (h : BondExtensiveBinding A) :
 theorem binding_nonneg (h : BondExtensiveBinding A) : 0 ≤ h.binding := by
   rw [h.extensive]
   exact mul_nonneg h.epsilon_nonneg (Nat.cast_nonneg _)
+
+/-- **Coordination bridge: `2·B = ε · ∑_v z(A)`.** Twice the (conditional)
+extensive binding energy equals the per-bond energy times the summed
+coordination degrees `∑_v deg v`. This is the machine-checked combinatorial
+certificate the file's purpose calls for: it routes the binding law's bond
+count through the proved handshake identity (`coordination_handshake`) rather
+than through the bare `A.choose 2`, so the extensivity is tied to the actual
+per-nucleon coordination degrees. Still fully conditional on
+`BondExtensiveBinding` — it certifies the *shape* of the law against the graph,
+it does not assert the law holds. -/
+theorem two_mul_binding_eq_epsilon_sum_degrees (h : BondExtensiveBinding A) :
+    2 * h.binding
+      = h.epsilon * ((∑ v : Fin A, (⊤ : SimpleGraph (Fin A)).degree v : ℕ) : ℝ) := by
+  rw [h.extensive, coordination_handshake]
+  push_cast
+  ring
+
+/-- Given the conditional class, the binding vanishes below two nucleons: with
+fewer than two nucleons there are no bonds (`C(A,2) = 0`), so the extensive
+binding is exactly zero. -/
+theorem binding_eq_zero_of_lt_two (h : BondExtensiveBinding A) (hA : A < 2) :
+    h.binding = 0 := by
+  rw [h.extensive, Nat.choose_eq_zero_of_lt hA, Nat.cast_zero, mul_zero]
+
+/-- Given the conditional class with a strictly positive per-bond energy, the
+binding energy is strictly positive once there is at least one bond (`2 ≤ A`,
+so `C(A,2) > 0`). Sharpens `binding_nonneg` on the coordinated regime. -/
+theorem binding_pos (h : BondExtensiveBinding A) (heps : 0 < h.epsilon) (hA : 2 ≤ A) :
+    0 < h.binding := by
+  rw [h.extensive]
+  exact mul_pos heps (by exact_mod_cast Nat.choose_pos hA)
 
 end QOU.Mass.CoordinationBinding

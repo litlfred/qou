@@ -48,6 +48,9 @@ from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 import snappy  # noqa: E402
 from mpmath import mpf  # noqa: E402
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 # SnapPy's volume is computed at a requested bit precision; 230 bits ~ 69 dps,
 # which covers the repo's 65-dps compute default with margin.
 BITS_PREC = 230
@@ -145,7 +148,16 @@ def main():
         "scope": "(a) scope-limited negative under mass~Vol; SnapPy now available "
                  "for principled follow-up (variable-density / projection).",
     }
-    with open("computations/charm-composite-volume.witness.json", "w") as f:
+    with open(_HERE_W / "charm-composite-volume.witness.json", "w") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(witness, f, indent=2)
     print("\nwrote computations/charm-composite-volume.witness.json")
 

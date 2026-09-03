@@ -43,9 +43,14 @@ m < n), the new strand contributes z · z⁻¹ = 1 in the stabilisation
 chain. Thus tr_n(β) = tr_m(β) for the canonical inclusion
 H_m ⊆ H_n. -/
 class MarkovTraceTower (q : ℝ) where
-  /-- The Markov parameter z = 1/(q^{1/2} + q^{-1/2}). -/
+  /-- The Markov parameter. **The class does not fix a convention** — an
+      instance does, by what it assigns here. This docstring used to read
+      `z = 1/(q^{1/2} + q^{-1/2})`, i.e. it named convention C at the *class*
+      level, which is the wrong place for it: the class is the abstraction over
+      towers, and a convention is a property of an instance. Corrected 2026-08-26
+      (bean `qou-cxjq`). The canonical instance below is convention D. -/
   z : ℝ
-  /-- z is positive (Wenzl regime q > 0, q^{1/2}+q^{-1/2} > 0). -/
+  /-- z is positive. -/
   z_pos : 0 < z
   /-- The Markov trace at H_n: σ_1² → ℝ. This abstracts over the
       concrete Hecke-algebra elements; only the trace of the Hopf
@@ -75,19 +80,34 @@ The numerical implementation lives in
 GS reduction + Markov-axiom recursive ascent). The Lean class
 instance here mirrors that semantic at the type level.
 
-Note: real-valued `q^{1/2}` requires `Real.sqrt`; we use it directly
-via the Mathlib `Real.sqrt_pos` lemma for the positivity proof. -/
+**Convention D** (owner ruling R1, 2026-08-15), migrated from convention C
+2026-08-26 (bean `qou-cxjq`). This instance previously set
+`z := 1/(√q + 1/√q)` — convention C — and was the single most load-bearing
+convention site in the tree: it is the tower downstream Jones-value code resolves
+against. It was invisible to `scripts/lean-markov-convention-audit.py` until that
+scanner learned to read `instance` field assignments, because a convention set by
+a *field* is not set by a `def` body (detector-blindness taxonomy #15).
+
+Both fields move together, and they have to. `trM_sigma1_sq` is the Markov trace
+of the Hopf braid `σ₁²`, which the Markov axiom fixes as `h·z + 1`; the committed
+convention-C value `(q^{5/2} − q^{1/2} + q² + q)/(q² + q)` is exactly that at
+`z = z_C` (verified symbolically). Migrating `z` alone would have left the
+instance internally inconsistent — a tower whose `z` and whose Hopf trace came
+from different conventions.
+
+Under convention D the same identity gives
+`h·z_D + 1 = (q − q⁻¹)·q³/(q²+1) + 1 = (q⁴ + 1)/(q² + 1)`,
+which is **fully rational in `q`**. So the note that used to sit here — that
+real-valued `q^{1/2}` requires `Real.sqrt`, used via `Real.sqrt_pos` for the
+positivity proof — no longer applies: convention D removes every square root
+from this instance, positivity included. -/
 noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
     MarkovTraceTower q where
-  z := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  z := q ^ 3 / (q ^ 2 + 1)
   z_pos := by
     have hq_pos : 0 < q := lt_trans zero_lt_one hq
-    have hsqrt_pos : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq_pos
-    have hsum_pos : 0 < Real.sqrt q + 1 / Real.sqrt q :=
-      add_pos hsqrt_pos (one_div_pos.mpr hsqrt_pos)
-    exact one_div_pos.mpr hsum_pos
-  trM_sigma1_sq := fun _ =>
-    (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q)
+    positivity
+  trM_sigma1_sq := fun _ => (q ^ 4 + 1) / (q ^ 2 + 1)
   trM_sigma1_sq_stabilises := fun _ _ _ _ => rfl
 
 end QOU.Braiding

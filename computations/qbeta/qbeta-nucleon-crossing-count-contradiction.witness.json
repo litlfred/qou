@@ -1,0 +1,112 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:03:48.848278+00:00",
+  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "assertions": [
+    {
+      "name": "no_unrecognised_crossing_shift",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "every stored d is exactly 0, -h or -h/2 -- compared as mpf, not via str(): the str round-trip truncates to ~17 digits and would put all 22 in 'other'"
+    },
+    {
+      "name": "code_proton_is_eleven",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "hecke_core proton = 11 crossings, matching the derivation (bare 9 = 6 B_3 + 3 quark, plus one Hopf link = 2 gluon)"
+    },
+    {
+      "name": "code_proton_decomposition_matches_the_c5_block",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "c5-involution-leibniz-decomposition-interpretation.md:18 says '7 pure sigma_0, 4 pure sigma_1, 1 averaged sigma_0, 1 averaged sigma_1, 3 inverted sigma_1^-1' -- gen0=7 (6 pure + 1 averaged), gen1=4 (3 inverted + 1 averaged). The code matches EXACTLY, so that block describes the LONG model faithfully"
+    },
+    {
+      "name": "corpus_derives_a_thirteen_crossing_neutron",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "categorical-neutron-properties.md: NOT FOUND"
+    },
+    {
+      "name": "corpus_also_asserts_eleven_for_both",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "q-beta-gamma-gamma-canonical-derivation.md: From [`def:categorical-proton`](#def:categorical-proton) and [`def:categorical-neutron`](#def:categorical-neutron), $\\mathcal{B}_p$ and $\\mathcal{B}_n"
+    },
+    {
+      "name": "THE_CONTRADICTION_neutron_derived_13_implemented_11",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "the corpus derives 13 crossings for the neutron (two Hopf links, 4 gluon crossings, because the dd crossing is a deeper instability: tr_M = -0.132 vs -0.006) while hecke_core implements 11. Delta_L = neutron - proton is built on the 11. NOT adjudicated here"
+    },
+    {
+      "name": "the_citation_does_not_say_what_it_is_cited_for",
+      "computed": false,
+      "expected": true,
+      "passed": false,
+      "source": "q-beta-gamma-gamma-canonical-derivation.md:33 cites def:categorical-proton and def:categorical-neutron as authority for '11 typed crossings each'. That is right for the proton and wrong for the neutron: the neutron definition's own properties block derives 13. Same stale-citation class as the convention-C citations drained in this branch"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 7,
+  "computation": "qbeta-nucleon-crossing-count-contradiction",
+  "scriptFile": "qbeta_nucleon_crossing_count_contradiction_probe.py",
+  "scriptHash": "e0908b32191d",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_nucleon_crossing_count_contradiction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_nucleon_crossing_count_contradiction_probe.py"
+  },
+  "description": "qou-bg3w: categorical-neutron-properties derives a 13-crossing neutron (6 B_3 + 3 quark + 4 gluon, two Hopf links) while q-beta-gamma-gamma-canonical-derivation asserts 11 for both nucleons -- citing the very definition that derives 13 -- and hecke_core implements 11. The proton is consistent at 11 across all three. Scope-(a): establishes the mismatch, adjudicates nothing, changes no compute.",
+  "data": {
+    "proton_pure": 6,
+    "proton_inverted": 3,
+    "proton_averaged": 2,
+    "proton_other": 0,
+    "neutron_pure": 5,
+    "neutron_inverted": 4,
+    "neutron_averaged": 2,
+    "neutron_other": 0,
+    "proton_total_code": 11,
+    "neutron_total_code": 11,
+    "no_unrecognised_crossing_shift": true,
+    "code_proton_is_eleven": true,
+    "code_proton_decomposition_matches_the_c5_block": true,
+    "corpus_derives_a_thirteen_crossing_neutron": false,
+    "corpus_also_asserts_eleven_for_both": true,
+    "THE_CONTRADICTION_neutron_derived_13_implemented_11": false,
+    "the_citation_does_not_say_what_it_is_cited_for": false,
+    "scope": "a",
+    "adjudicates": false,
+    "modifies_compute": false,
+    "checks_passed": 4,
+    "checks_total": 7
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

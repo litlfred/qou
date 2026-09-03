@@ -163,6 +163,7 @@ def lowest_q_power(expr: sp.Expr) -> int:
 # Witness scaffold
 # ──────────────────────────────────────────────────────────────────────
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 _witness = (
     WitnessBuilder("ocneanu-cancellation-derivation", engine="sympy")
@@ -239,13 +240,13 @@ print()
 # Compute tr_M = Σ w_λ · χ^λ / f^λ symbolically
 print("Computing tr_M = Σ_λ w_λ · χ^λ / f^λ ...")
 trM = sp.Integer(0)
-qfac_n = qfac(n)
+qfac_n = qfac(n, Q0_PROTON)
 for shape in partitions:
     chi = per_lambda_chi.get(tuple(shape))
     if chi is None:
         continue
     f_lam = len(standard_young_tableaux(list(shape)))
-    d_q = dim_q(list(shape))
+    d_q = dim_q(list(shape), Q0_PROTON)
     w_lam_sym = d_q * d_q / qfac_n  # Wedderburn weight (already symbolic in q)
     contribution = sp.cancel(w_lam_sym * chi / f_lam)
     trM = trM + contribution

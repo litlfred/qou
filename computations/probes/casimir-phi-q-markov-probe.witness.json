@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "count of Φ_q / Markov / extended-q-zeta candidates with rel residue < 1% vs π²/720",
       "source": "Null assertion for Routes A2 + B.  Asserting zero sub-1% matches documents that the Casimir prefactor π²/720 is not recoverable from any single Φ_q evaluation, Markov-parameter combination, or extended q-zeta value at substrate q_0."
     }

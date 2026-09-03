@@ -1,0 +1,249 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1106.2975v1",
+ "source": {
+  "file": "1106.2975v1.pdf",
+  "sha256": "7e966c7392b70ae0c617e3ff2a5b4caaf95f1bfc0c887dd3476083d4fcc43c5d",
+  "bytes": 329042,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1106.2975",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "15 Jun 2011"
+  },
+  "doi": null,
+  "title": "The Polyanalytic Ginibre Ensembles",
+  "authors_raw": "Antti Haimi and H\u00e5kan Hedenmalm",
+  "title_lines": [
+   "The Polyanalytic Ginibre Ensembles"
+  ],
+  "abstract": "For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and \u00afz, of degree \u2264n \u22121 in z and of degree \u2264q \u22121 in \u00afz. We supply Poln,q with the inner product structure of L2 \u0010 C, e\u2212m|z|2dA \u0011 , where dA(z) = dxdy \u03c0 , z = x + iy; the resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m is a positive real. We let Km,n,q denote the reproducing kernel of Polm,n,q, and study the associated determinantal process, in the limit as m, n \u2192+\u221ewhile n = m + O(1); the number q, the degree of polyanalyticity, is kept \ufb01xed. We call these processes polyanalytic Ginibre ensembles, because they generalize the Ginibre ensemble \u2013 the eigenvalue process of random (normal) matrices with Gaussian weight. A possible interpretation is that we permit a few higher Landau levels. We consider local blow-ups of the polyanalytic Ginibre ensem- bles around points in the spectral droplet, which is here the closed unit disk \u00afD := {z \u2208C : |z| \u22641}. We obtain asymptotics for the blow-up process, using a blow-up to characteristic distance m\u22121/2; the typical distance is the same both for interior and for boundary points of \u00afD. This amounts to obtaining the asymp- totical behavior of the generating kernel Km,n,q. Following [2], the asymptotics of the Km,n,q is rather conveniently expressed in terms of the Berezin measure (and density) dB\u27e8z\u27e9 m,n,q(w) := B\u27e8z\u27e9 m,n,q(w)dA(w), B\u27e8z\u27e9 m,n,q(w) = |Km,n,q(z, w)|2 Km,n,q(z, z) e\u2212m|z|2. For interior points |z| < 1, we obtain that dB\u27e8z\u27e9 m,n,q(w) \u2192d\u03b4z in the weak-star sense, where \u03b4z denotes the unit point mass at z. Moreover, if we blow up to the scale of m\u22121/2 around z, we get convergence to a measure which is Gaussian for q = 1, but exhibits more complicated Fresnel zone behavior for q > 1. In contrast, for exterior points |z| > 1, we have instead that dB\u27e8z\u27e9 m,n,q(w) \u2192d\u03c9(w, z, De), where d\u03c9(w, z, De) is the harmonic measure at z with respect to the exterior disk De := {w \u2208C : |w| > 1}. For boundary points, |z| = 1, ",
+  "docinfo": {
+   "Title": "",
+   "Author": "",
+   "Producer": "pdfTeX-1.40.10",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181101050144Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Polyanalytic Bargmann-Fock spaces",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u2212\u03b81)\u22122[1 + |z|2q + |w|2q],",
+   "page": 12,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1\u2212t)2,",
+   "page": 13,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Berezin density asymptotics for an exterior point",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Poly-Bargmann transforms",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(j+1)zj, with j = 0, 1, 2, . . ., form an orthonormal basis for the",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Reproducing kernel and Berezin density asymptotics for a",
+   "page": 23,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(Im \u03be)2+ 1",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(Im \u03b7)2+O(m\u22121/8)",
+   "page": 25,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(t\u2212\u03be\u2212\u00af\u03b7)2dt",
+   "page": 26,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 30,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 16833,
+   "n_words": 3018
+  },
+  {
+   "id": "sec-001-2-polyanalytic-bargmann-fock-spaces",
+   "number": "2",
+   "title": "Polyanalytic Bargmann-Fock spaces",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 7207,
+   "n_words": 1423
+  },
+  {
+   "id": "sec-002-2-1-\u03b8121-z2q-w2q",
+   "number": "2",
+   "title": "(1 \u2212\u03b81)\u22122[1 + |z|2q + |w|2q],",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1533,
+   "n_words": 325
+  },
+  {
+   "id": "sec-003-2-1t2",
+   "number": "2",
+   "title": "(1\u2212t)2,",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2637,
+   "n_words": 473
+  },
+  {
+   "id": "sec-004-3-berezin-density-asymptotics-for-an-exterior-po",
+   "number": "3",
+   "title": "Berezin density asymptotics for an exterior point",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 21,
+   "n_chars": 11577,
+   "n_words": 2177
+  },
+  {
+   "id": "sec-005-4-poly-bargmann-transforms",
+   "number": "4",
+   "title": "Poly-Bargmann transforms",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3191,
+   "n_words": 609
+  },
+  {
+   "id": "sec-006-2-j1zj-with-j-0-1-2-form-an-orthonormal-basis-fo",
+   "number": "2",
+   "title": "(j+1)zj, with j = 0, 1, 2, . . ., form an orthonormal basis for the",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2158,
+   "n_words": 398
+  },
+  {
+   "id": "sec-007-5-reproducing-kernel-and-berezin-density-asympto",
+   "number": "5",
+   "title": "Reproducing kernel and Berezin density asymptotics for a",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3150,
+   "n_words": 625
+  },
+  {
+   "id": "sec-008-2-im-\u03be2-1",
+   "number": "2",
+   "title": "(Im \u03be)2+ 1",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-2-im-\u03b72om18",
+   "number": "2",
+   "title": "(Im \u03b7)2+O(m\u22121/8)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2226,
+   "n_words": 444
+  },
+  {
+   "id": "sec-010-2-t\u03be\u03b72dt",
+   "number": "2",
+   "title": "(t\u2212\u03be\u2212\u00af\u03b7)2dt",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 6872,
+   "n_words": 1281
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3766,
+   "n_words": 532
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 12,
+  "chars_total": 61150
+ }
+}

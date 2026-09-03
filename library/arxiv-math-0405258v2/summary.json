@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0405258v2",
+ "source_sha256": "dbd6bf5a94deebaf",
+ "brief": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES — We extend the relation between random matrices and free probability theory from the level of expectations to",
+ "extended": "**SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES**\n\n*JAMES A. MINGO (∗), PIOTR ŚNIADY (‡), AND ROLAND SPEICHER (∗)(†)*\n\n31 pp, 9 sections.\n\n**Abstract.** We extend the relation between random matrices and free probability theory from the level of expectations to the level of ﬂuctuations. We show how the concept of “second order freenes s”, which was introduced in Part I, allows one to understand global ﬂuctuations of Haar distributed unitary random matrices. In par- ticular, independence between the unitary ensemble and another ensemble goes in the large N limit over into asymptotic second order freeness. Two important consequences of our general th eory are: (i) we obtain a natural generalization of a theorem of Diaconis and Shahshahani to the case of several independent unitary mat ri- ces; (ii) we can show that global ﬂuctuations in unitarily invariant multi-matrix models are not universal.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 The lattice of partitions; 2.2 Permutations; 2.3 A triangle inequality; 2.4 Haar distributed unitary random matrices a; 2.5 Second order freeness; 3 Asymptotic second order freeness for unitary; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 300
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-the-lattice-of-partitions",
+   "title": "The lattice of partitions",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-22-permutations",
+   "title": "Permutations",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-23-a-triangle-inequality",
+   "title": "A triangle inequality",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
+   "title": "Haar distributed unitary random matrices and the Weingarten function",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-25-second-order-freeness",
+   "title": "Second order freeness",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
+   "title": "Asymptotic second order freeness for unitary random matrices",
+   "pages": "10-30"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "30-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

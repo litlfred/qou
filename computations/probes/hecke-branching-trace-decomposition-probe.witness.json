@@ -9,7 +9,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(6,)(β_Bor_2) − Σ_(μ,ν) c^(6,)_{μν} χ_μ χ_ν|",
       "source": "Closed-form (I=𝟙) branching for λ=(6,) ⊢ 6, dim 1.  Direct trace ≈ 1.000000; LR prediction ≈ 1.000000."
     },
@@ -18,7 +18,7 @@
       "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(5, 1)(β_Bor_2) − Σ_(μ,ν) c^(5, 1)_{μν} χ_μ χ_ν|",
       "source": "Closed-form (I=𝟙) branching for λ=(5, 1) ⊢ 6, dim 5.  Direct trace ≈ -0.821355; LR prediction ≈ -0.821355."
     },
@@ -27,7 +27,7 @@
       "computed": 2.263919769706678e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(4, 2)(β_Bor_2) − Σ_(μ,ν) c^(4, 2)_{μν} χ_μ χ_ν|",
       "source": "Closed-form (I=𝟙) branching for λ=(4, 2) ⊢ 6, dim 9.  Direct trace ≈ 0.007979; LR prediction ≈ 0.007979."
     },
@@ -36,7 +36,7 @@
       "computed": 7.24454326306137e-71,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(3, 3)(β_Bor_2) − Σ_(μ,ν) c^(3, 3)_{μν} χ_μ χ_ν|",
       "source": "Closed-form (I=𝟙) branching for λ=(3, 3) ⊢ 6, dim 5.  Direct trace ≈ 1.829333; LR prediction ≈ 1.829333."
     },
@@ -45,7 +45,7 @@
       "computed": 0.0,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "unit": "|tr_H6 ρ_(1, 1, 1, 1, 1, 1)(β_Bor_2) − Σ_(μ,ν) c^(1, 1, 1, 1, 1, 1)_{μν} χ_μ χ_ν|",
       "source": "Closed-form (I=𝟙) branching for λ=(1, 1, 1, 1, 1, 1) ⊢ 6, dim 1.  Direct trace ≈ 1.000000; LR prediction ≈ 1.000000."
     }

@@ -51,7 +51,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "s
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = "1.1099785955541805"          # tools/hecke-engine/src/gram.rs::Q_0
+# The substrate pin is READ, not transcribed. This file previously carried
+#     Q0 = "1.1099785955541805"          # tools/hecke-engine/src/gram.rs::Q_0
+# -- the CODATA-2018 muon derivation B, 11.54 ppb from the canonical proton pin.
+# Two files in this group cited `tools/hecke-engine/src/gram.rs::Q_0` as the
+# source of that number; gram.rs was RE-PINNED to proton on 2026-08-15 (owner
+# decision, bean `qou-m7py`) and now holds 1.1099785827513808, so the citation
+# had outlived the value it pointed at. AGENTS.md's 2026-08-07 directive makes
+# the experimental/proton pin the default for all touched compute.
+#
+# `docs/audits/scripts/` is outside `hardcoded_q0_literal_families_audit.py`'s
+# `_SCAN_ROOT` (which is `computations/`), so nothing flagged these -- bean
+# `qou-2whe`. Reading the pin means a future re-pin reaches this file without
+# anyone editing a digit.
+import sys as _sys, pathlib as _pl  # noqa: E402
+_ROOT = _pl.Path(__file__).resolve().parents[3]
+for _p in (_ROOT / "computations", _ROOT / "computations" / "substrate"):
+    if str(_p) not in _sys.path:
+        _sys.path.insert(0, str(_p))
+from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 DPS = 50
 BORROMEAN = [(-1, 1), (1, 2)] * 3   # β = (σ₁⁻¹ σ₂)³, generators 1,2 only
 
@@ -68,10 +87,34 @@ def chi(lam, q):
 
 
 def weights5(q):
-    """H_5 Markov weights y_λ, λ⊢5, as a dict."""
+    """H_5 Markov weights y_λ, λ⊢5, as a dict.
+
+    Was `ph.trace_weights_n(5, float(q))` wrapped in `mpf(str(w))`. That is a
+    NO-FLOAT64 violation with a real consequence here, not a stylistic one: the
+    `float(q)` downgrades the 50-dps pin to 53 bits, the Rust routine is float64
+    internally (it returns a Python float even when handed an mpf), and the
+    `mpf(str(...))` then dresses 53-bit data as 50 dps.
+
+    What it cost: **four of the seven y_λ are EXACTLY ZERO** and the float64
+    route returned noise for all four --
+
+        lambda        float64 route          exact route
+        (3,1,1)       1.094436485732e-17     0
+        (2,2,1)       1.9631309013882e-17    0
+        (2,1,1,1)     -3.2754415082272e-17   0
+        (1,1,1,1,1)   3.5151413120942e-18    0
+
+    -- while agreeing to 14 digits on the three that are nonzero. The zeros are
+    structural, not accidental: y_λ = 0 exactly iff λ has MORE THAN TWO ROWS,
+    which is the SU(2)/N=2 truncation. (5,), (4,1) and (3,2) have <= 2 rows and
+    survive; every deeper partition is killed.
+
+    This is the direct cause of the qou-j3u0 witness disagreement: the committed
+    witness records y_(3,1,1) = 0.0167666089588 for a quantity that is exactly
+    zero.
+    """
     parts = [tuple(p) for p in ph.partitions_of(5)]
-    ws = ph.trace_weights_n(5, float(q))
-    return {p: mpf(str(w)) for p, w in zip(parts, ws)}
+    return {p: y_lambda_wenzl_bridge_numeric(list(p), q) for p in parts}
 
 
 def projected_traces(q):
@@ -114,19 +157,28 @@ def main():
     # --- the projected E_λ traces and their shift -------------------------
     delta = Tmu - Te
     rel_mu = delta / Tmu
-    rel_e = delta / Te
+    # T_e is EXACTLY zero (y_(3,1,1) = 0; see weights5), so delta/T_e is not a
+    # large number -- it is undefined. It previously read 4.65e+15, which was
+    # delta divided by the float64 noise floor and therefore a statement about
+    # the arithmetic rather than about the traces.
+    rel_e = None if Te == 0 else delta / Te
     print("E_λ-PROJECTED H_5 Markov traces  T_g = y_{λ_g}^{H5} · χ^{λ_g}(β):")
     print(f"  T_muon     (3,2)   = {mp.nstr(Tmu, 14)}")
     print(f"  T_electron (3,1,1) = {mp.nstr(Te, 14)}")
     print(f"  δ = T_μ − T_e      = {mp.nstr(delta, 14)}")
     print(f"  δ / T_μ            = {mp.nstr(rel_mu, 10)}")
-    print(f"  δ / T_e            = {mp.nstr(rel_e, 10)}")
+    print("  δ / T_e            = UNDEFINED (T_e is exactly 0)" if rel_e is None
+          else f"  δ / T_e            = {mp.nstr(rel_e, 10)}")
     print()
 
     # --- magnitude vs the 210 ppb anchor-shift (NO fitting) ---------------
     target = mpf("210e-9")
     print("Magnitude vs the 210 ppb muon re-pin artifact (NOT a fit target):")
     for name, val in (("δ/T_μ", rel_mu), ("δ/T_e", rel_e)):
+        if val is None:
+            print(f"  |{name}| / 210ppb = UNDEFINED (T_e is exactly 0 -- the "
+                  f"(3,1,1) block carries no Markov weight at all)")
+            continue
         ratio = abs(val) / target
         print(f"  |{name}| / 210ppb = {mp.nstr(ratio, 6)}  "
               f"({'too large' if ratio > 10 else 'too small' if ratio < 0.1 else 'ON-SCALE'} "

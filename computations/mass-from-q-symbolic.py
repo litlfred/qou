@@ -486,6 +486,11 @@ w.add_assertion(
 # tension above a statement about the ANCHOR rather than about the framework.
 # Checked here against the committed 50-digit muon pin so the two layers stay
 # separable instead of being averaged into one number.
+# DELIBERATE MUON READ — do NOT reroute through q_parameter. This producer
+# computes at the proton pin throughout; the muon pin is read here, and only
+# here, so the ideal-layer identity above can be checked in its own layer.
+# Rerouting it would collapse the two layers being compared. Declared
+# `ambiguous` in q0_anchor_manifest.json for the same reason.
 _qm = _json.loads(
     (_Path(__file__).resolve().parent / "q-pinning-50-digit.witness.json")
     .read_text(encoding="utf-8")
@@ -506,27 +511,41 @@ w.add_assertion(
     ),
 )
 
-# ── Assertions: Skein polynomials ────────────────────────────────
-# These are the transfer matrix chain construction results.
-# No independent experimental check — assert internal consistency.
+# ── Skein polynomials: RECORDED, not asserted ────────────────────
+#
+# These were `add_assertion` calls with `computed=P_p_num, expected=P_p_num`
+# and the comment "self-consistent (no independent measurement)". The comment
+# was right and the call was the wrong instrument: there is one route to the
+# value, so no assertion over it can fail, and carrying it as an assertion made
+# it count toward `allPassed` and hence toward this block's
+# `computation.status: "verified"` (bean `qou-26f2`).
+#
+# A value with no independent check is DATA. Recorded as data, with its
+# propagated uncertainty, so nothing is lost but nothing is claimed either.
+# The genuinely checked results in this witness — notably the Borromean mass
+# against `borromean_mass_ratio * M_E_MEV` below — still back the block.
+w.add_data("P_proton_q0", {
+    "value": P_p_num,
+    "uncertainty": P_p_err,
+    "unit": "dimensionless",
+    "source": "Transfer matrix chain (sympy symbolic → numerical)",
+    "note": "single route; no independent measurement to assert against",
+})
+w.add_data("P_neutron_q0", {
+    "value": P_n_num,
+    "uncertainty": P_n_err,
+    "unit": "dimensionless",
+    "source": "Transfer matrix chain (sympy symbolic → numerical)",
+    "note": "single route; no independent measurement to assert against",
+})
 
-w.add_assertion(
-    "P_proton(q₀) — Skein polynomial",
-    computed=P_p_num,
-    expected=P_p_num,  # self-consistent (no independent measurement)
-    tolerance=P_p_err,
-    unit="dimensionless",
-    source="Transfer matrix chain (sympy symbolic → numerical)",
+_UNASSERTED_SKEIN = (
+    "P_proton, P_neutron and their ratio are recorded as data rather than "
+    "asserted: each has one derivation route, so any assertion over them "
+    "would compare a value to itself."
 )
 
-w.add_assertion(
-    "P_neutron(q₀) — Skein polynomial",
-    computed=P_n_num,
-    expected=P_n_num,
-    tolerance=P_n_err,
-    unit="dimensionless",
-    source="Transfer matrix chain (sympy symbolic → numerical)",
-)
+
 
 w.add_assertion(
     "P_proton = ∏ V̂_i (product consistency)",
@@ -568,14 +587,16 @@ w.add_assertion(
 # The Skein ratio P_n/P_p encodes the combinatorial crossing
 # structure via the transfer matrix, not the mass ratio.
 
-w.add_assertion(
-    "P_n/P_p Skein ratio (combinatorial, not mass ratio)",
-    computed=skein_ratio_n_p,
-    expected=skein_ratio_n_p,
-    tolerance=skein_ratio_err,
-    unit="dimensionless",
-    source="Transfer matrix chain with σ⁻¹ = σ − HA crossing convention",
-)
+# Same treatment as the two polynomials above: `skein_ratio_n_p` is
+# `abs(P_n_num) / abs(P_p_num)`, so asserting it against itself — or against
+# that quotient — compares the definition to itself.
+w.add_data("skein_ratio_n_p", {
+    "value": skein_ratio_n_p,
+    "uncertainty": skein_ratio_err,
+    "unit": "dimensionless",
+    "source": "Transfer matrix chain with σ⁻¹ = σ − HA crossing convention",
+    "note": _UNASSERTED_SKEIN,
+})
 
 # ── Computation data ─────────────────────────────────────────────
 w.add_data("proton", {

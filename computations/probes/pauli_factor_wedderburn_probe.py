@@ -192,7 +192,7 @@ def main() -> int:
         .add_data("per_braid_results", results)
         .add_assertion(
             name="pauli_factor_equals_neg1_L_times_q_minus_2w",
-            computed=float(max_ratio_residue),
+            computed=max_ratio_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over 8 B_3 braids of "
@@ -206,7 +206,7 @@ def main() -> int:
         )
         .add_assertion(
             name="universal_1d_closed_form_cross_check",
-            computed=float(max_closed_form_residue),
+            computed=max_closed_form_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over 8 braids and 2 1d-irreps of |Hoefsmit "

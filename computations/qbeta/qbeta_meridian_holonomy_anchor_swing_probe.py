@@ -270,6 +270,15 @@ def main() -> int:
         "anchor-smooth; swing lives in the near-singular / non-perturbative phase "
         "arg(u); bounds both this route and #4283's in-block maps.",
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     _OUT.write_text(json.dumps(witness, indent=2) + "\n")
 
     print(f"[meridian-holonomy anchor-swing] {passed}/{len(assertions)} assertions passed")

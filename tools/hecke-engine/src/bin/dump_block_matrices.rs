@@ -204,23 +204,48 @@ fn main() {
     println!("## Wedderburn PSD report (symmetric-part eigenvalues)");
     println!("  λ                     d_λ  min eig (sym)  max eig (sym)  PSD?");
     let mut all_psd = true;
+    let mut any_undetermined = false;
     for r in &reports {
-        let mark = if r.psd_symmetric_part { "✓" } else { "✗" };
-        if !r.psd_symmetric_part {
-            all_psd = false;
+        // A block skipped by the dimension cap has no verdict. Scoring it as
+        // "not PSD" (which this did until 2026-08-29) turns "we did not look"
+        // into "we looked and it failed" -- see bean qou-ia6f.
+        let mark = match r.psd_symmetric_part {
+            Some(true) => "✓",
+            Some(false) => {
+                all_psd = false;
+                "✗"
+            }
+            None => {
+                any_undetermined = true;
+                "?"
+            }
+        };
+        match (r.min_eigenvalue, r.max_eigenvalue) {
+            (Some(lo), Some(hi)) => println!(
+                "  {:<22} {:>3}  {:>13.6}  {:>13.6}  {}",
+                format!("{:?}", r.partition),
+                r.d_lambda,
+                lo,
+                hi,
+                mark,
+            ),
+            _ => println!(
+                "  {:<22} {:>3}  {:>13}  {:>13}  {}",
+                format!("{:?}", r.partition),
+                r.d_lambda,
+                "skipped",
+                "skipped",
+                mark,
+            ),
         }
-        println!(
-            "  {:<22} {:>3}  {:>13.6}  {:>13.6}  {}",
-            format!("{:?}", r.partition),
-            r.d_lambda,
-            r.min_eigenvalue,
-            r.max_eigenvalue,
-            mark,
-        );
     }
     println!(
         "  ALL PSD: {}",
-        if all_psd { "YES (α* = 1)" } else { "NO" }
+        match (all_psd, any_undetermined) {
+            (false, _) => "NO",
+            (true, true) => "UNDETERMINED (some blocks skipped by the dim cap)",
+            (true, false) => "YES (α* = 1)",
+        }
     );
     println!();
 

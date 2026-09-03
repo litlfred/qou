@@ -194,10 +194,18 @@ def main():
     wb.data["method"] = "Habiro-exact: integer a_m ∈ ℤ[u], series terminates at M=8"
     wb.data["supersedes"] = "precision-ladder c_k approach (deprecated in PR #1314)"
 
+    # The name states a CROSS-CHECK: the Habiro sum against the direct tr_M.
+    # `expected` used to repeat the `computed` expression verbatim, so the
+    # assertion compared the ratio to itself and could not fail whatever the
+    # two routes did. The ratio's target is 1 (bean qou-3e5m).
+    #
+    # The guard is exact rather than `float(...) != 0`: an mpf that underflows
+    # a double would have read as zero and silently substituted 0 for the
+    # ratio.
     wb.add_assertion(
         "habiro_tr_M_proton_matches_direct",
-        computed=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
-        expected=float(tr_M_p / tr_M_p_direct) if float(tr_M_p_direct) != 0 else 0,
+        computed=fmt(tr_M_p / tr_M_p_direct, 40) if tr_M_p_direct != 0 else "0",
+        expected="1",
         tolerance=0.01,
     )
     wb.save()

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T15:19:37.822173+00:00",
-  "commitSha": "e56e642964d345f52c3ff7f469c42a3b291f9ff7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-30T10:32:06.767475+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
   "assertions": [
     {
       "name": "arm1_fixed_base_mismatch",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Q>1 over-accelerates to an entire transform; Q<1 leaves the divergence class unchanged; Leroy boundary is the only match"
     },
     {
@@ -17,24 +17,40 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "Borel–Leroy Γ(1+sk) back-transform equals the direct partial sum at the meridian to <1e-15 at both anchors"
     },
     {
-      "name": "no_identification_claimed",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "arm2_estimator_gate_passes",
+      "computed": 0,
+      "expected": 0,
       "passed": true,
-      "tolerance": 0.5,
-      "source": "scope-(a): no instanton action / Stokes datum / candidate value claimed at k=21; gate_pass_anywhere=False"
+      "tolerance": 0,
+      "source": "0 of 21 scanned Borel–Leroy s values clear the pre-registered 15% dlog-Padé / root-test consistency gate at k=21; gate_pass_anywhere=False. A pass here IS the singularity resolution this probe declines to claim"
+    },
+    {
+      "name": "parity_split_gate_passes",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "odd 0/9, even 0/9 = 0 of 18 graded scans clear the gate; both branches unresolved is what makes the negative uniform"
+    },
+    {
+      "name": "dladder_order_reaches_preregistered_k",
+      "computed": 21,
+      "expected": 21,
+      "passed": true,
+      "tolerance": 0,
+      "source": "build_d_ladder() supplied 21 exact D-ladder terms; the docstring and every arm's verdict are stated at k=21, and the probe reports itself blocked on the ORD-63 extension beyond it"
     }
   ],
   "allPassed": true,
-  "durationMs": 7062,
+  "durationMs": 4668,
   "computation": "qbeta-dladder-jackson-qborel-acceleration",
   "scriptFile": "qbeta_dladder_jackson_qborel_acceleration_probe.py",
-  "scriptHash": "724652a4b3c2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "607e0003e3d1",
+  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +60,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_dladder_jackson_qborel_acceleration_probe.py",
+      "43"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_dladder_jackson_qborel_acceleration_probe.py 43"
   },
   "description": "Jackson q-Borel / Écalle acceleration of the exact bar-odd D-ladder (PR #3818; audit 2026-07-17-dladder-qborel-acceleration.md). Four arms: (1) fixed-base class mismatch — only the Q→1 Leroy boundary can match the q-Gevrey exp(Bk+Ck log k) class (Q>1 entire / Q<1 no-op; transform growth exact, ladder class empirical ⇒ scope-(a)); (2) Borel–Leroy s-scan under a pre-registered 15% estimator-consistency gate incl. the merged conformal-mapped core; (3) parity-split (2-adic grading) acceleration per branch; (4) Γ(1+sk) back-transform meridian self-check (<1e-15) + A2 q* smoothness cross-check. Measurement only: no instanton action identified, no candidate value, no c_k wired, no fit, no tier change.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

@@ -135,7 +135,7 @@ def main() -> int:
         )
         .add_assertion(
             name="quadratic_asymptotic_holds_at_n_20",
-            computed=float(mpf(quadratic_check_rows[-1]["deviation_from_1"])),
+            computed=mpf(quadratic_check_rows[-1]["deviation_from_1"]),
             expected=0.0, tolerance=1e-15,
             unit="|H_A²/(4·(q−1)²) − 1| at q = 1 + 10⁻²⁰",
             source="Leading-order Taylor: H_A = q − q⁻¹ ≈ 2(q − 1) + O((q−1)²).",

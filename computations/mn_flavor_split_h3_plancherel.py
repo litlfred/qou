@@ -46,7 +46,7 @@ import experimental_constants as _ec  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
+M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(_ec.Q_NEUTRON_MEV)
 
 
 def main() -> int:
@@ -182,8 +182,8 @@ def main() -> int:
 
     w.add_assertion(
         name="h3_plancherel_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} candidates at 80 dps.",
     )

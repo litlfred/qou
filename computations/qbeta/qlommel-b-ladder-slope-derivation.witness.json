@@ -16,7 +16,7 @@
       "computed": "3.191125612",
       "expected": "3.191125612",
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "b = q0^10 + q0^-10 = 2cosh(10 log q0)"
     },
     {

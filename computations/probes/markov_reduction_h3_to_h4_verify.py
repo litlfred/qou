@@ -34,6 +34,23 @@ cross-check tier the H_3 Lean file documents against `gram.py`.  This is
 evidence, NOT a symbolic-exact proof: a Lean-grade H_4 formalization still
 needs the GB-NF Fin-24 table (ingredient 1) built from the same verified
 source and a cyclicity proof over Q(z,h).
+
+Two caveats added 2026-08-22 (bean `qou-ze9n`), neither of which changes the
+verdict above:
+
+* **This file is convention C.** `z = 1/(sqrt q + 1/sqrt q)` is
+  `sqrt(q)/(q+1)` = 0.4993203342; the canonical convention since the
+  2026-08-15 ruling is D, `q**3/(q**2+1)` = 0.6126880371 — a 23 % difference.
+  The conclusion nonetheless survives the swap: `z` is an *input* to the
+  weight solve here, not an output, so the Ocneanu trace is a one-parameter
+  family and the reduction holds for both. Measured in
+  `markov_reduction_h3_to_h4_conventions.py`, which re-runs this same
+  over-determination test at 50 dps under both, with worst residuals ~1e-51
+  against a 1e-30 tolerance.
+* **The float64 here was never necessary.** `BlockCache` and
+  `build_seminormal_matrices_cached` accept and return `mpf`; the companion
+  probe uses them at 50 dps. This file is left in float64 as the historical
+  record of what the Lean docstring cites; new work should use the companion.
 """
 from __future__ import annotations
 
@@ -41,9 +58,16 @@ import sys
 from pathlib import Path
 
 _ROOT = Path(__file__).resolve().parents[2]
+# Bootstrap fixed 2026-08-22 (qou-ze9n): as committed this probe did NOT run.
+# `.../pyhecke/python/pyhecke` is the package directory, but the qou-mass shim
+# does `from pyhecke.syt_prefix_cache import *`, which needs its PARENT; and
+# `q_parameter` imports `qou_substrate.constants`, whose path was missing
+# entirely. Neither package is installable (both 404 on PyPI per AGENTS.md), so
+# the omission was fatal rather than merely fragile in a clean checkout.
 sys.path[:0] = [
     str(_ROOT / "qou-mass" / "src" / "qou_mass" / "_internal"),
-    str(_ROOT / "tools" / "pyhecke" / "python" / "pyhecke"),
+    str(_ROOT / "tools" / "pyhecke" / "python"),
+    str(_ROOT / "tools" / "qou-substrate" / "python"),
 ]
 
 import numpy as np  # noqa: E402

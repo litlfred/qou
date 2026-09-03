@@ -9,7 +9,8 @@ categorical substrate.  One proposal on the table is:
 
     "perhaps the 4-form degenerates"
 
-i.e. take the tetraplectic 4-form of `bring_tetraplectic.md` (Foth's closed
+i.e. take the tetraplectic 4-form of `def:bring-cone-tetraplectic-structure`
+(Foth's closed
 4-form with Omega^m non-degenerate on a 4m-manifold) and let it degenerate down
 the exceptional chain
 
@@ -250,6 +251,15 @@ or any route not going through generic-form stabilizers.
             "checks": checks,
         },
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        payload, script_path=__file__, engine=None, q0_anchor=False)
     _OUT.write_text(json.dumps(payload, indent=2) + "\n")
     print(f"wrote {_OUT.name}")
     return 0 if all_ok else 1

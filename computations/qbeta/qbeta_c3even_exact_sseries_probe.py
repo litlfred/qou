@@ -43,6 +43,12 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). The literal below was the
+# SUPERSEDED muon pin A (1.10997859555733471...), retired as the muon anchor by
+# PR #5500's re-derivation to CODATA-2022. A frozen literal cannot follow an
+# anchor move. Resolves PROTON per the owner directive of 2026-08-15.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
 sys.path.insert(0, str(ROOT))
@@ -82,8 +88,11 @@ def main() -> int:
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     if q0 is None:
-        # fall back to the canonical muon q0 string used corpus-wide
-        q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+        # NOT a rare fallback -- free-neutron-decay.witness.json carries
+        # `parameters: null`, so this branch fires on EVERY run and the literal
+        # was the producer's real pin. It was the superseded muon value A;
+        # resolved to the proton pin (bean qou-1c4y).
+        q0 = mp.mpf(_Q0_RESOLVED)
     dn_mine = dnet_f(q0)
     print(f"  VALIDATE @ q0: Delta(net) mine = {mp.nstr(dn_mine, 12)}  witness = {mp.nstr(dn_wit, 12)}")
     assert abs(dn_mine - dn_wit) < mp.mpf("1e-6"), "Delta(net) reconstruction drifted"
@@ -98,7 +107,22 @@ def main() -> int:
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)
     Qb_over_me = sgn * dnet_reg / q
-    Rq = Qb_over_me / (QA_over_me * sp.cos(alpha_eff))
+    # cos(alpha_eff) is expanded to a FINITE Taylor polynomial before it ever
+    # reaches sp.series.  This is exact, not an approximation: alpha_eff(q=1) = 0
+    # (so alpha_eff = O(s)), and sp.series(..., 0, NS+1) needs terms only through
+    # s^NS, so a cos polynomial of degree >= NS cannot affect any retained
+    # coefficient.  Keeping the LIVE cos node costs a factor of >= 93x, because
+    # sympy's nseries machinery invokes trigsimp whenever a trig node is present
+    # and futrig then hands the accumulated expression -- which carries
+    # sqrt(q**4+q**2+1) -- to polys.factor, i.e. factoring over an algebraic
+    # extension.  Profiled: 3 factor() calls consumed 97.8% of a 1200s run, and
+    # the live-cos route could not complete even at series order 3 in 420s.
+    # Measured at this probe's own NS+1 = 9: 370s, with the residual against the
+    # live-cos function falling at 9.002 decades per decade (bean qou-uz7q).
+    _kmax = NS // 2                      # degree 2*_kmax >= NS
+    cos_alpha_eff = sum((-1) ** k * alpha_eff ** (2 * k) / sp.factorial(2 * k)
+                        for k in range(_kmax + 1))
+    Rq = Qb_over_me / (QA_over_me * cos_alpha_eff)
 
     # R(1) must be exactly 1 for the ladder normalisation
     R1 = sp.simplify(Rq.subs(q, 1))

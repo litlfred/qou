@@ -1,8 +1,11 @@
 {
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "emitted by the producer: q0 is RESOLVED from substrate.q_parameter.Q_50_DIGIT_STR, which returns the experimental (proton) pin per the owner directive of 2026-08-15; this probe holds no q0 literal",
   "schema": "witness/v1",
   "computation": "deuteron_trefoil_qinvariant_closed_form_probe",
   "description": "Derive-then-check: does a 0-parameter closed-form q-invariant of the sigma_1^3 trefoil (T(2,3)) at q0 reproduce the deuteron C_knot=5.853? VERDICT: honest negative -- no parameter-free hit within exactness threshold.",
-  "q0_anchor": "muon",
+  "q0_anchor": "proton",
   "free_parameters": 0,
   "b_ame_role": "diagnostic-ratio-only-never-inverted",
   "targets": {
@@ -10,27 +13,30 @@
     "B_D_over_m_e": "4.35327704097286078910480355296"
   },
   "inputs": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
-    "z_markov": "0.499320334033561271768966386276",
-    "s_skein": "0.104388069812003712600114172167",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "z_markov": "0.612688037146465251595829863946",
+    "s_skein": "0.10438805825918163783311715935",
     "m_e_MeV": "0.51099895069",
     "B_D_MeV": "2.22452",
     "S_D": "0.7438"
   },
   "best_0knob_candidate": {
     "name": "q0^17",
-    "value": "5.8931605022073942044",
-    "rel_err": "0.00690416"
+    "value": "5.8931593463760140881",
+    "rel_err": "0.00690397"
   },
   "best_0knob_structural_non_numerology": {
     "name": "[3]_q! (sqrt-q)",
-    "value": "6.0299904968755019918",
+    "value": "6.0299904902319609892",
     "rel_err": "0.0302829"
   },
   "exactness_threshold_rel_err": "1e-6",
   "verdict": "honest-negative: no 0-parameter closed-form q-invariant of the trefoil reproduces C_knot to exactness; nearest 0-knob is q0^17 (0.69%, ruled-out numerology #4556 s4); nearest structural single [3]_q! is 3.0% off; objects landing within ~2.5% carry a free level/color knob (= fit).",
-  "scriptHash": "c7a14060cd49",
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): inputs.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptHash": "c56d2162b6a7",
+  "scriptFile": "deuteron_trefoil_qinvariant_closed_form_probe.py",
+  "scriptCommitSha": "2caa0ad00cb4b913541759e54ea2925db9d08af7",
+  "commitSha": "5832d956e315e7d0c738dd2f3471e1875917e869",
+  "engine": "python",
+  "computedAt": "2026-08-30T14:02:52.235650+00:00",
+  "durationMs": 0
 }

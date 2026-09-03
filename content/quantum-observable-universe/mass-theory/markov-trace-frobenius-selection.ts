@@ -3,7 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:markov-trace-frobenius-selection",
   title: "Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy",
-  chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988", "yekutieli2015"],
   uses: [
     "lem:feynman-eigenbasis-decomposition",

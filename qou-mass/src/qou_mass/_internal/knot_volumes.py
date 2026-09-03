@@ -148,10 +148,35 @@ def _vol_6_2(dps: int) -> mpf:
 def _vol_8_11(dps: int) -> mpf:
     """Vol(8_11) — used as the canonical 3H (tritium) knot closure.
 
-    SnapPy 50-dps:
-    8.2863168178065925881... (matched to 13 digits in mass_table_ppb)
+    SnapPy HP 50-dps (snappy 3.3.2, in-sandbox 2026-08-30; verified
+    positively-oriented solution).
+
+    Until 2026-08-30 this returned
+    `8.28631681780659258810000000000000000000000000000000` — the true
+    value to 20 significant digits followed by **thirty fabricated
+    zeros**, held in a variable named `_SNAPPY_HP_50`. The docstring
+    wrote the number with an ellipsis and noted it was "matched to 13
+    digits in mass_table_ppb", so the padding was not concealed so much
+    as unnoticed: the name asserted 50 dps and every mpf consumer got 20
+    (error 2.68e-20 while believing 1e-50).
+
+    Its three literal siblings here are genuine — 7²_1, 6_2 and 5_2 check
+    out at 4.7e-50, 3.5e-50 and 4.9e-50 against SnapPy — so this was one
+    bad entry, not a house style of padding to width.
+
+    Confirmed by three independent routes, all agreeing: ManifoldHP
+    (quad-double), `Manifold.volume(bits_prec=350)`, and a randomized
+    9-tetrahedron re-triangulation of the same manifold — volume is a
+    topological invariant, so a different triangulation is a real second
+    opinion rather than a re-read. Method controlled on the two volumes
+    in this module that have closed forms: SnapPy agrees with
+    2·Cl₂(π/3) to 4.5e-64 and with 8·G to 2.6e-65.
+
+    The f64 view is unchanged: `float()` of the old and new strings is
+    bit-identical, so f64-tier consumers are unaffected and only mpf
+    consumers move — which is exactly where the error was real.
     """
-    _SNAPPY_HP_50 = "8.28631681780659258810000000000000000000000000000000"
+    _SNAPPY_HP_50 = "8.2863168178065925881268247977511671629487442454111"
     with _with_dps(dps):
         return +mpf(_SNAPPY_HP_50)
 
@@ -201,6 +226,50 @@ VOL_8_11      = VOL_8_11_F64
 CATALAN_G     = CATALAN_G_F64
 
 
+# ── Additional census volumes ─────────────────────────────────────
+#
+# Added 2026-08-30 (bean qou-ckbv). This module calls itself "the SINGLE
+# SOURCE OF TRUTH for knot volumes", but only carried the seven above, so
+# every probe needing 6_1, 6_3, 7_4 or an 8-crossing amphichiral knot had
+# no accessor to call and hand-typed a literal instead. Measured across the
+# corpus, those hand-typed copies were correct to between 1 and 11 digits;
+# one 8_3 entry was 25 % wrong. The duplication was not carelessness so
+# much as an unmet need — the registry did not stock what callers wanted.
+#
+# Provenance: snappy 3.3.2 `Manifold(k).volume(bits_prec=2000)`, each value
+# confirmed against a randomized re-triangulation of the same manifold
+# (volume is a topological invariant, so an independent triangulation is a
+# genuine second opinion rather than a re-read). Method controlled on the
+# two volumes in this module that have closed forms: SnapPy agrees with
+# 2·Cl₂(π/3) to 4.5e-64 and with 8·G to 2.6e-65.
+_CENSUS_HP_50 = {
+    "6_1":  "3.1639632288831439839910147159731544848127876715181",
+    "6_3":  "5.6930210912813007651124832774812229269443017330069",
+    "7_4":  "5.1379412018734177698413483394748450356496750927357",
+    "8_3":  "5.2386841007984401554864731063661609234225336039123",
+    "8_9":  "7.5881802236416267173849879305797739440998132473030",
+    "8_12": "8.9358569274866891693428013394897420037013433940627",
+    "8_17": "10.985907606284820303688439759183069403959794127785",
+    "8_18": "12.350906209158200174736304438426152014199256704120",
+    # 10-crossing amphichiral knots, needed by tau_amphichiral_sdp_probe.
+    "10_17": "8.5367555991932346129017704346185992624549606473910",
+    "10_33": "11.535673932282332621552669789468460546732571526929",
+    "10_37": "10.965810532424643965082025201983964734402539429280",
+    "10_43": "12.602596114262076764755925694936541398477214661287",
+    "10_45": "13.716075984752729998985682374831799986324926817226",
+}
+
+
+def _vol_census(name: str):
+    """Accessor factory for the plain-literal census entries above."""
+    def _f(dps: int) -> mpf:
+        with _with_dps(dps):
+            return +mpf(_CENSUS_HP_50[name])
+    _f.__name__ = f"_vol_{name}"
+    _f.__doc__ = f"Vol({name}) — SnapPy HP 50-dps; see `_CENSUS_HP_50`."
+    return _f
+
+
 # ── Lookup API ────────────────────────────────────────────────────
 
 _VOL_DISPATCH = {
@@ -209,9 +278,11 @@ _VOL_DISPATCH = {
     "L6a4":      _vol_borromean,
     "7^2_1":     _vol_7_sq_1,
     "7_sq_1":    _vol_7_sq_1,
+    "L7a6":      _vol_7_sq_1,   # 7²_1 == L7a6 (Thistlethwaite name)
     "5_2":       _vol_5_2,
     "6_2":       _vol_6_2,
     "8_11":      _vol_8_11,
+    **{k: _vol_census(k) for k in _CENSUS_HP_50},
 }
 
 

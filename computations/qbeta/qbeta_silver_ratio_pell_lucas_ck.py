@@ -159,21 +159,21 @@ def main() -> None:
     # Assertions
     w.add_assertion(
         "c_3_at_silver_is_minus_2",
-        computed=float(c_k_closed[3][1]),
+        computed=c_k_closed[3][1],
         expected=-2,
         tolerance=0,
         source="c_3 = J_Hopf(q=1) is constant (q-independent)",
     )
     w.add_assertion(
         "c_4_at_silver_is_minus_49_32",
-        computed=float(c_k_closed[4][1]),
-        expected=float(Fraction(-49, 32)),
+        computed=c_k_closed[4][1],
+        expected=Fraction(-49, 32),
         tolerance=1e-15,
         source="c_4 = c_3·b⁴ with b² = 7/8 at silver → -49/32 (Pell-Lucas-clean)",
     )
     w.add_assertion(
         "c_7_at_silver_is_minus_8",
-        computed=float(c_k_closed[7][1]),
+        computed=c_k_closed[7][1],
         expected=-8,
         tolerance=0,
         source="c_7 = c_3³ is constant; clean integer",
@@ -189,7 +189,7 @@ def main() -> None:
     delta_net_at_silver = h_at_silver * (h_at_silver - 2) / 2
     w.add_assertion(
         "delta_net_at_silver_is_zero",
-        computed=float(delta_net_at_silver),
+        computed=delta_net_at_silver,
         expected=0,
         tolerance=0,
         source="prop:silver-ratio-beta-decay-null — Δ(net) = h(h-2)/2 "
@@ -200,8 +200,8 @@ def main() -> None:
     b_sq_check = Fraction(1) - Fraction(1, 8)
     w.add_assertion(
         "b_sq_at_silver_is_seven_eighths",
-        computed=float(b_sq_check),
-        expected=float(Fraction(7, 8)),
+        computed=b_sq_check,
+        expected=Fraction(7, 8),
         tolerance=0,
         source="prop:silver-ratio-beta-decay-null — b² = 1 - 1/[2]_q² = 7/8 "
         "exactly at silver, where [2]_q² = (2√2)² = 8",

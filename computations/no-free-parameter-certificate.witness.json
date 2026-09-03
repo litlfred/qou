@@ -44,7 +44,7 @@
       },
       "meson_mass_from_hecke": {
         "description": "meson ratios (m_K/m_pi)",
-        "modules": 7,
+        "modules": 8,
         "unresolved": [],
         "untraceable": []
       },
@@ -60,6 +60,7 @@
         "unresolved": [],
         "untraceable": [
           {
+            "adjudicated_free": "A_omega = 3 is the GGM literature value of a Stokes datum, imported rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5 channel has two anchor equations in three unknowns, so A_omega is a genuine free parameter pinned only by a one-sided A >= 2.05; ratio_attained constructs an admissible A for every target ratio. It is NOT a rep dimension, group order, exponent or index, so the small-int whitelist must not wave it through.",
             "module": "qbeta_t4_stokes3_crux_probe",
             "line": 60,
             "value": 3,
@@ -80,6 +81,7 @@
     },
     "untraceable": [
       {
+        "adjudicated_free": "A_omega = 3 is the GGM literature value of a Stokes datum, imported rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5 channel has two anchor equations in three unknowns, so A_omega is a genuine free parameter pinned only by a one-sided A >= 2.05; ratio_attained constructs an admissible A for every target ratio. It is NOT a rep dimension, group order, exponent or index, so the small-int whitelist must not wave it through.",
         "module": "qbeta_t4_stokes3_crux_probe",
         "line": 60,
         "value": 3,
@@ -90,5 +92,14 @@
       }
     ],
     "adjudicated": []
-  }
+  },
+  "scriptFile": "no_free_parameter_certificate.py",
+  "scriptHash": "f5b716707292",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "e81fc71e9e80de1edef60c9b4b1baafa46d5e1f4",
+  "engine": "python",
+  "computedAt": "2026-08-30T10:57:58.804905+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

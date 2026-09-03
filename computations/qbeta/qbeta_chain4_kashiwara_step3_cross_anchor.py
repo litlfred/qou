@@ -101,10 +101,21 @@ def main() -> None:
     target_p = RESIDUE_A / hb_p_15
     target_m = RESIDUE_A / hb_m_15
 
+    # The cross-anchor spread, and the same spread predicted analytically.
+    # A is anchor-INDEPENDENT, so the whole spread has to come from ℏ_q^15:
+    # d(A/ℏ^15)/(A/ℏ^15) = −15·dℏ/ℏ, and dℏ/ℏ = dq/(q(q−1)) for ℏ=(q−1)/q.
+    # Neither expression looks at the other.
+    spread_direct = abs(target_p - target_m) / target_p
+    spread_analytic = 15 * abs(Q_PROTON - Q_MUON) / (Q_PROTON * (Q_PROTON - 1))
+
     print("TARGETS:")
     print(f"  A / ℏ_q(q_proton)^15 = {mp.nstr(target_p, 8)}")
     print(f"  A / ℏ_q(q_muon)^15   = {mp.nstr(target_m, 8)}")
-    print(f"  Δ relative          = {mp.nstr(abs(target_p - target_m) / target_p, 6)}")
+    print(f"  Δ relative          = {mp.nstr(spread_direct, 6)}")
+    print(f"  15·Δq/(q(q−1))      = {mp.nstr(spread_analytic, 6)}  "
+          f"(first-order prediction; gap "
+          f"{mp.nstr(abs(spread_direct - spread_analytic), 4)} is the "
+          f"second-order term)")
     print()
 
     ratio_p = COCHARGE_1111 / target_p
@@ -160,7 +171,13 @@ def main() -> None:
         print("→ The cocharge_(1,1,1,1) = 6 candidate is REFUTED.")
         print("  HONEST CORRECTION: Step 2 used a NON-CANONICAL ℏ_q value")
         print("  (hard-coded 0.0922502; canonical ℏ_q = (q-1)/q ≈ 0.09908)")
-        print("  which gave a wrong target ~6.47 instead of correct ~2.07.")
+        # This line used to read "a wrong target ~6.47 instead of correct
+        # ~2.07". The 2.07 is right; the 6.47 was never computed — A/ℏ^15 at
+        # ℏ=0.0922502 is 6.0496. Printed live now so it cannot drift again;
+        # the discrepancy is recorded as a witness caveat.
+        _target_step2 = RESIDUE_A / mp.mpf("0.0922502") ** 15
+        print(f"  which gave a wrong target ~{mp.nstr(_target_step2, 4)} "
+              f"instead of correct ~{mp.nstr(target_p, 4)}.")
         print("  The 'NEAR-1PCT' at q_proton was a Step-2 BUG ARTIFACT,")
         print("  not a flip-flop.")
         print()
@@ -203,11 +220,34 @@ def main() -> None:
         f"by {mp.nstr(abs(target_p - target_m) / target_p, 4)} relative. "
         f"Verdict: {verdict}."
     )
+    # ── Was `step3_cross_anchor_verdict_recorded`, computed=True/expected=True ──
+    # Its source line said "diagnostic completed". It could not fail, and it
+    # made allPassed look like a two-assertion verdict when only one
+    # assertion here was ever a claim.
+    #
+    # The discriminator's premise is that the candidate is anchor-INDEPENDENT
+    # while the target is anchor-DEPENDENT *through ℏ_q^15 alone* (A is
+    # anchor-independent per PR #1727). That premise is what makes a
+    # flip-flop meaningful, and it is testable:
+    #   Route A: |target_p − target_m| / target_p, evaluated by building both
+    #            targets from their own 50-dps anchors and dividing.
+    #   Route B: 15 · Δq / (q(q−1)) — first-order propagation of the anchor
+    #            gap through ℏ = (q−1)/q and the 15th power. No target, no
+    #            residue A, no division of one target by the other.
+    # They agree to 1.34e-12, which is the second-order term 120·(Δℏ/ℏ)² =
+    # 1.32e-12. A wrong exponent (14 or 16), a non-canonical ℏ_q, or a
+    # mistyped anchor digit moves Route A off Route B by orders of magnitude.
     wb.add_assertion(
-        name="step3_cross_anchor_verdict_recorded",
-        computed=True,
-        expected=True,
-        source="Cross-anchor diagnostic completed; verdict in 'verdict' field",
+        name="cross_anchor_spread_matches_15th_power_propagation",
+        computed=mp.nstr(spread_direct, 20),
+        expected=mp.nstr(spread_analytic, 20),
+        tolerance="5e-12",
+        unit="relative spread of A/ℏ_q^15 between the proton and muon anchors",
+        source=("Route A: |target_p − target_m|/target_p from the two 50-dps "
+                "anchors. Route B: 15·Δq/(q(q−1)), the first-order propagation "
+                "of Δq through ℏ=(q−1)/q and the 15th power. Tolerance 5e-12 "
+                "sits just above the second-order term 120·(Δℏ/ℏ)² = 1.32e-12 "
+                "and ~3e6 below the quantity itself."),
     )
     wb.add_assertion(
         name="step3_proton_anchor_tier",
@@ -228,6 +268,24 @@ def main() -> None:
     wb.add_data("tier_proton", tier_p)
     wb.add_data("tier_muon", tier_m)
     wb.add_data("verdict", verdict)
+    wb.add_data("cross_anchor_spread_direct", mp.nstr(spread_direct, 20))
+    wb.add_data("cross_anchor_spread_analytic", mp.nstr(spread_analytic, 20))
+    wb.add_data("step2_noncanonical_hbar_target",
+                mp.nstr(RESIDUE_A / mp.mpf("0.0922502") ** 15, 12))
+    wb.add_caveat(
+        "step3_proton_anchor_tier is RED and belongs red: cocharge_(1,1,1,1)=6 "
+        "against the canonical target 2.0717 gives ratio 2.896, tier MISS, "
+        "while the assertion encodes Step 2's NEAR-1PCT claim. The script's own "
+        "else-branch says the same thing in prose — Step 2's NEAR-1PCT was a "
+        "bug artifact from a non-canonical ℏ_q. Left failing rather than "
+        "rewritten green; it is the refutation, recorded."
+    )
+    wb.add_caveat(
+        "The else-branch used to print 'a wrong target ~6.47'. A/ℏ^15 at "
+        "Step 2's hard-coded ℏ=0.0922502 is 6.0496, not 6.47 — the 6.47 was "
+        "never computed by anything. Now printed live from RESIDUE_A so it "
+        "cannot drift again; the ~2.07 in the same sentence was correct."
+    )
     out_path = wb.save()
     print(f"  Witness: {out_path.name}")
 

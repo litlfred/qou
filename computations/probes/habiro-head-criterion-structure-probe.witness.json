@@ -1,0 +1,1839 @@
+{
+  "computation": "habiro-head-criterion-structure-probe",
+  "computedAt": "2026-08-28T15:58:05.059347+00:00",
+  "description": "Explains the composite factor of 3 in the j=2 head criterion of habiro_head_divisibility_probe.py. A = P(-1) is an identity (the Pochhammer kills every m>=2 term at u=-1), and u=-1 is q=1, so A = denom(-1) * tr_M(q=1). The trace at q=1 is 2^(1-2A), a pure power of two, so the 3 is not in the trace: it enters through denom(-1), and traces to the literal /3 in delta = flavor_split_leading(q) = hbar_q^2 h_q [2]_q / 3, used by exactly one interface kind (averaged_weighted), which occurs exactly once per MIXED atom — the single p-n junction — and never for a pure one. Hence the closed form A(Z,N) = 2^(3Z+N) * 12^[mixed], verified on every (Z,N) with Z+N <= 6, and hence 3 is the ONLY odd prime that can ever divide A. Raising the index closes p=3 at j=3. p=2 does not close, and cannot: in Z[i] the divisor's valuation at (1-i) is capped at 4 by (i;i)_4 = 0 while four of the five atoms carry a head of valuation >= 4. All arithmetic is exact; no floating point is used anywhere in this script.",
+  "reference_lean": [
+    "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd",
+    "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd_two",
+    "qou:QOU.Habiro.habiroEval_ne_zero_of_head_not_dvd_three",
+    "qou:QOU.Habiro.head_criterion_vacuous_of_isUnit"
+  ],
+  "reference_blocks": [
+    "prop:flavor-split-substrate",
+    "def:motivic-galois-character"
+  ],
+  "input_witness": "habiro-coefficients-atomic.witness.json",
+  "max_mass_tested": 6,
+  "atoms": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "Z": 1,
+      "N": 0,
+      "A": 8,
+      "P_at_minus_1": 8,
+      "denom_at_minus_1": 16,
+      "tr_M_at_q1": "1/2",
+      "tr_M_at_q1_equals_2_pow_1_minus_2A": true,
+      "A_equals_P_at_minus_1": true,
+      "v3_of_A": 0,
+      "v2_of_A": 3
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "Z": 0,
+      "N": 1,
+      "A": 2,
+      "P_at_minus_1": 2,
+      "denom_at_minus_1": 4,
+      "tr_M_at_q1": "1/2",
+      "tr_M_at_q1_equals_2_pow_1_minus_2A": true,
+      "A_equals_P_at_minus_1": true,
+      "v3_of_A": 0,
+      "v2_of_A": 1
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "Z": 1,
+      "N": 1,
+      "A": 192,
+      "P_at_minus_1": 192,
+      "denom_at_minus_1": 1536,
+      "tr_M_at_q1": "1/8",
+      "tr_M_at_q1_equals_2_pow_1_minus_2A": true,
+      "A_equals_P_at_minus_1": true,
+      "v3_of_A": 1,
+      "v2_of_A": 6
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "Z": 1,
+      "N": 2,
+      "A": 384,
+      "P_at_minus_1": 384,
+      "denom_at_minus_1": 12288,
+      "tr_M_at_q1": "1/32",
+      "tr_M_at_q1_equals_2_pow_1_minus_2A": true,
+      "A_equals_P_at_minus_1": true,
+      "v3_of_A": 1,
+      "v2_of_A": 7
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "Z": 2,
+      "N": 1,
+      "A": 1536,
+      "P_at_minus_1": 1536,
+      "denom_at_minus_1": 49152,
+      "tr_M_at_q1": "1/32",
+      "tr_M_at_q1_equals_2_pow_1_minus_2A": true,
+      "A_equals_P_at_minus_1": true,
+      "v3_of_A": 1,
+      "v2_of_A": 9
+    }
+  ],
+  "interface_kinds": [
+    {
+      "kind": "positive",
+      "value_at_q1": "1/2",
+      "num_at_minus_1": 1,
+      "den_at_minus_1": 2,
+      "carries_factor_3": false
+    },
+    {
+      "kind": "negative",
+      "value_at_q1": "1/2",
+      "num_at_minus_1": 1,
+      "den_at_minus_1": 2,
+      "carries_factor_3": false
+    },
+    {
+      "kind": "averaged",
+      "value_at_q1": "1/2",
+      "num_at_minus_1": 2,
+      "den_at_minus_1": 4,
+      "carries_factor_3": false
+    },
+    {
+      "kind": "averaged_weighted",
+      "value_at_q1": "1/2",
+      "num_at_minus_1": 12,
+      "den_at_minus_1": 24,
+      "carries_factor_3": true
+    }
+  ],
+  "interface_kind_census": [
+    {
+      "Z": 0,
+      "N": 1,
+      "n_interfaces": 0,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 0,
+      "n_interfaces": 0,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 0,
+      "N": 2,
+      "n_interfaces": 1,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "n_interfaces": 1,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "n_interfaces": 1,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "n_interfaces": 2,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "n_interfaces": 2,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "n_interfaces": 2,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "n_interfaces": 2,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "n_interfaces": 3,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "n_interfaces": 3,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "n_interfaces": 3,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "n_interfaces": 3,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "n_interfaces": 3,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 0,
+      "N": 5,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 5,
+      "N": 0,
+      "n_interfaces": 4,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 0,
+      "N": 6,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    },
+    {
+      "Z": 1,
+      "N": 5,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 5,
+      "N": 1,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 1,
+      "mixed": true
+    },
+    {
+      "Z": 6,
+      "N": 0,
+      "n_interfaces": 5,
+      "n_averaged_weighted": 0,
+      "mixed": false
+    }
+  ],
+  "closed_form_grid": [
+    {
+      "Z": 0,
+      "N": 1,
+      "mixed": false,
+      "A": 2,
+      "closed_form": 2,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 0,
+      "mixed": false,
+      "A": 8,
+      "closed_form": 8,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 0,
+      "N": 2,
+      "mixed": false,
+      "A": 4,
+      "closed_form": 4,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "mixed": true,
+      "A": 192,
+      "closed_form": 192,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "mixed": false,
+      "A": 64,
+      "closed_form": 64,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "mixed": false,
+      "A": 8,
+      "closed_form": 8,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "mixed": true,
+      "A": 384,
+      "closed_form": 384,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "mixed": true,
+      "A": 1536,
+      "closed_form": 1536,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "mixed": false,
+      "A": 512,
+      "closed_form": 512,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "mixed": false,
+      "A": 16,
+      "closed_form": 16,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "mixed": true,
+      "A": 768,
+      "closed_form": 768,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "mixed": true,
+      "A": 3072,
+      "closed_form": 3072,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "mixed": true,
+      "A": 12288,
+      "closed_form": 12288,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "mixed": false,
+      "A": 4096,
+      "closed_form": 4096,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 0,
+      "N": 5,
+      "mixed": false,
+      "A": 32,
+      "closed_form": 32,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "mixed": true,
+      "A": 1536,
+      "closed_form": 1536,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "mixed": true,
+      "A": 6144,
+      "closed_form": 6144,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "mixed": true,
+      "A": 24576,
+      "closed_form": 24576,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "mixed": true,
+      "A": 98304,
+      "closed_form": 98304,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 5,
+      "N": 0,
+      "mixed": false,
+      "A": 32768,
+      "closed_form": 32768,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 0,
+      "N": 6,
+      "mixed": false,
+      "A": 64,
+      "closed_form": 64,
+      "agree": true,
+      "v3_of_A": 0
+    },
+    {
+      "Z": 1,
+      "N": 5,
+      "mixed": true,
+      "A": 3072,
+      "closed_form": 3072,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "mixed": true,
+      "A": 12288,
+      "closed_form": 12288,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "mixed": true,
+      "A": 49152,
+      "closed_form": 49152,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "mixed": true,
+      "A": 196608,
+      "closed_form": 196608,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 5,
+      "N": 1,
+      "mixed": true,
+      "A": 786432,
+      "closed_form": 786432,
+      "agree": true,
+      "v3_of_A": 1
+    },
+    {
+      "Z": 6,
+      "N": 0,
+      "mixed": false,
+      "A": 262144,
+      "closed_form": 262144,
+      "agree": true,
+      "v3_of_A": 0
+    }
+  ],
+  "first_firing_j": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 2,
+      "first_firing_j": null,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 4,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "p (proton, A=1)",
+      "prime": 3,
+      "first_firing_j": 2,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 5,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 6,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 2,
+      "first_firing_j": 2,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "prime": 3,
+      "first_firing_j": 2,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 5,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 6,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 2,
+      "first_firing_j": null,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 4,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "prime": 3,
+      "first_firing_j": 3,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 5,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 6,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 2,
+      "first_firing_j": null,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 4,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "prime": 3,
+      "first_firing_j": 3,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 5,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 6,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 2,
+      "first_firing_j": null,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 4,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "prime": 3,
+      "first_firing_j": 3,
+      "per_j": [
+        {
+          "j": 1,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "degenerate": false,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 4,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 5,
+          "degenerate": false,
+          "fires": true
+        },
+        {
+          "j": 6,
+          "degenerate": true,
+          "fires": false
+        }
+      ]
+    }
+  ],
+  "p2_valuation_ceiling": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "rows": [
+        {
+          "j": 1,
+          "v_head": 6,
+          "v_pochhammer": 1,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "v_head": 8,
+          "v_pochhammer": 3,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "v_head": 5,
+          "v_pochhammer": 4,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "rows": [
+        {
+          "j": 1,
+          "v_head": 2,
+          "v_pochhammer": 1,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "v_head": 2,
+          "v_pochhammer": 3,
+          "fires": true
+        },
+        {
+          "j": 3,
+          "v_head": 2,
+          "v_pochhammer": 4,
+          "fires": true
+        }
+      ]
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "rows": [
+        {
+          "j": 1,
+          "v_head": 12,
+          "v_pochhammer": 1,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "v_head": 18,
+          "v_pochhammer": 3,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "v_head": 4,
+          "v_pochhammer": 4,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "rows": [
+        {
+          "j": 1,
+          "v_head": 14,
+          "v_pochhammer": 1,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "v_head": 16,
+          "v_pochhammer": 3,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "v_head": 5,
+          "v_pochhammer": 4,
+          "fires": false
+        }
+      ]
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "rows": [
+        {
+          "j": 1,
+          "v_head": 18,
+          "v_pochhammer": 1,
+          "fires": false
+        },
+        {
+          "j": 2,
+          "v_head": 18,
+          "v_pochhammer": 3,
+          "fires": false
+        },
+        {
+          "j": 3,
+          "v_head": 5,
+          "v_pochhammer": 4,
+          "fires": false
+        }
+      ]
+    }
+  ],
+  "p2_direct_evaluation": [
+    {
+      "Z": 0,
+      "N": 1,
+      "A": 2,
+      "P_at_i": [
+        2,
+        0
+      ],
+      "denom_at_i": [
+        -4,
+        0
+      ],
+      "frob_2": "-1/2",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 0,
+      "A": 8,
+      "P_at_i": [
+        8,
+        0
+      ],
+      "denom_at_i": [
+        -16,
+        0
+      ],
+      "frob_2": "-1/2",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 0,
+      "N": 2,
+      "A": 4,
+      "P_at_i": [
+        4,
+        0
+      ],
+      "denom_at_i": [
+        -32,
+        0
+      ],
+      "frob_2": "-1/8",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 192,
+      "P_at_i": [
+        192,
+        0
+      ],
+      "denom_at_i": [
+        -1536,
+        0
+      ],
+      "frob_2": "-1/8",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 2,
+      "N": 0,
+      "A": 64,
+      "P_at_i": [
+        64,
+        0
+      ],
+      "denom_at_i": [
+        -512,
+        0
+      ],
+      "frob_2": "-1/8",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 0,
+      "N": 3,
+      "A": 8,
+      "P_at_i": [
+        8,
+        0
+      ],
+      "denom_at_i": [
+        -256,
+        0
+      ],
+      "frob_2": "-1/32",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 384,
+      "P_at_i": [
+        384,
+        0
+      ],
+      "denom_at_i": [
+        -12288,
+        0
+      ],
+      "frob_2": "-1/32",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 1536,
+      "P_at_i": [
+        1536,
+        0
+      ],
+      "denom_at_i": [
+        -49152,
+        0
+      ],
+      "frob_2": "-1/32",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 3,
+      "N": 0,
+      "A": 512,
+      "P_at_i": [
+        512,
+        0
+      ],
+      "denom_at_i": [
+        -16384,
+        0
+      ],
+      "frob_2": "-1/32",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 0,
+      "N": 4,
+      "A": 16,
+      "P_at_i": [
+        16,
+        0
+      ],
+      "denom_at_i": [
+        -2048,
+        0
+      ],
+      "frob_2": "-1/128",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 3,
+      "A": 768,
+      "P_at_i": [
+        768,
+        0
+      ],
+      "denom_at_i": [
+        -98304,
+        0
+      ],
+      "frob_2": "-1/128",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 3072,
+      "P_at_i": [
+        3072,
+        0
+      ],
+      "denom_at_i": [
+        -393216,
+        0
+      ],
+      "frob_2": "-1/128",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 3,
+      "N": 1,
+      "A": 12288,
+      "P_at_i": [
+        12288,
+        0
+      ],
+      "denom_at_i": [
+        -1572864,
+        0
+      ],
+      "frob_2": "-1/128",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 4,
+      "N": 0,
+      "A": 4096,
+      "P_at_i": [
+        4096,
+        0
+      ],
+      "denom_at_i": [
+        -524288,
+        0
+      ],
+      "frob_2": "-1/128",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 0,
+      "N": 5,
+      "A": 32,
+      "P_at_i": [
+        32,
+        0
+      ],
+      "denom_at_i": [
+        -16384,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 4,
+      "A": 1536,
+      "P_at_i": [
+        1536,
+        0
+      ],
+      "denom_at_i": [
+        -786432,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 2,
+      "N": 3,
+      "A": 6144,
+      "P_at_i": [
+        6144,
+        0
+      ],
+      "denom_at_i": [
+        -3145728,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 3,
+      "N": 2,
+      "A": 24576,
+      "P_at_i": [
+        24576,
+        0
+      ],
+      "denom_at_i": [
+        -12582912,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 4,
+      "N": 1,
+      "A": 98304,
+      "P_at_i": [
+        98304,
+        0
+      ],
+      "denom_at_i": [
+        -50331648,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 5,
+      "N": 0,
+      "A": 32768,
+      "P_at_i": [
+        32768,
+        0
+      ],
+      "denom_at_i": [
+        -16777216,
+        0
+      ],
+      "frob_2": "-1/512",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 0,
+      "N": 6,
+      "A": 64,
+      "P_at_i": [
+        64,
+        0
+      ],
+      "denom_at_i": [
+        -131072,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 1,
+      "N": 5,
+      "A": 3072,
+      "P_at_i": [
+        3072,
+        0
+      ],
+      "denom_at_i": [
+        -6291456,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "A": 12288,
+      "P_at_i": [
+        12288,
+        0
+      ],
+      "denom_at_i": [
+        -25165824,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 49152,
+      "P_at_i": [
+        49152,
+        0
+      ],
+      "denom_at_i": [
+        -100663296,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 4,
+      "N": 2,
+      "A": 196608,
+      "P_at_i": [
+        196608,
+        0
+      ],
+      "denom_at_i": [
+        -402653184,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 5,
+      "N": 1,
+      "A": 786432,
+      "P_at_i": [
+        786432,
+        0
+      ],
+      "denom_at_i": [
+        -1610612736,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    },
+    {
+      "Z": 6,
+      "N": 0,
+      "A": 262144,
+      "P_at_i": [
+        262144,
+        0
+      ],
+      "denom_at_i": [
+        -536870912,
+        0
+      ],
+      "frob_2": "-1/2048",
+      "P_at_i_equals_A": true,
+      "matches_minus_2_pow_1_minus_2M": true,
+      "is_nonzero": true,
+      "is_algebraic_integer": false
+    }
+  ],
+  "denominator_pole_scan": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "denom_degree": 26,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "degree_bound": 27,
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "denom_degree": 18,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "degree_bound": 19,
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "denom_degree": 58,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59
+      ],
+      "degree_bound": 59,
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "denom_degree": 82,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "degree_bound": 83,
+      "primes_where_denom_vanishes": []
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "denom_degree": 82,
+      "primes_checked": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "degree_bound": 83,
+      "primes_where_denom_vanishes": []
+    }
+  ],
+  "integrality_scan": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "per_prime": [
+        {
+          "prime": 2,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 3,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 5,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 7,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 11,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 13,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 17,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 19,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 23,
+          "is_algebraic_integer": false
+        }
+      ]
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "per_prime": [
+        {
+          "prime": 2,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 3,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 5,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 7,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 11,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 13,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 17,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 19,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 23,
+          "is_algebraic_integer": false
+        }
+      ]
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "per_prime": [
+        {
+          "prime": 2,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 3,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 5,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 7,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 11,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 13,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 17,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 19,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 23,
+          "is_algebraic_integer": false
+        }
+      ]
+    },
+    {
+      "atom_label": "T (tritium, A=3)",
+      "per_prime": [
+        {
+          "prime": 2,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 3,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 5,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 7,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 11,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 13,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 17,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 19,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 23,
+          "is_algebraic_integer": false
+        }
+      ]
+    },
+    {
+      "atom_label": "3He (helium-3, A=3)",
+      "per_prime": [
+        {
+          "prime": 2,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 3,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 5,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 7,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 11,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 13,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 17,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 19,
+          "is_algebraic_integer": false
+        },
+        {
+          "prime": 23,
+          "is_algebraic_integer": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "A_equals_P_at_minus_1_on_all_atoms": true,
+    "tr_M_at_q1_is_pure_power_of_two_on_all_atoms": true,
+    "closed_form_cells_tested": 27,
+    "closed_form_mismatches": 0,
+    "factor_3_source": "flavor_split_leading(q) denominator (/3)",
+    "only_odd_prime_dividing_A": 3,
+    "p3_closes_at_j": 3,
+    "p2_head_criterion_closes": false,
+    "p2_head_criterion_reason": "v_(1-i)((i;i)_j) is capped at 4 because (i;i)_4 = 0; four of the five atoms have v(head) >= 4, so no j can catch them. Only the neutron (v(head) = 2) fires.",
+    "p2_closed_by_direct_evaluation": true,
+    "p2_direct_evaluation_reason": "p=2 is a single prime and (i;i)_4 = 0 truncates the sum after four terms, whose coefficients every atom has on disk, so Frob_2 = P(i)/denom(i) is a finite exact computation in Z[i]. Frob_2 = -2^(1-2M) with M = Z+N, verified on every (Z,N) with Z+N <= 6 — never zero. P(i) = P(-1) = A, so one integer runs both p=2 and the odd primes.",
+    "frob_2_closed_form": "-2^(1-2M),  M = Z + N",
+    "p2_cells_tested": 27,
+    "p2_cells_nonzero": 27,
+    "p2_cells_algebraic_integer": 0,
+    "frobenius_is_algebraic_integer_cells": 0,
+    "frobenius_is_algebraic_integer_cells_total": 45,
+    "non_integrality_is_generic": true,
+    "p2_is_special_because": "(u;u)_m vanishes at m = 2p, so p=2 gives the criterion the fewest usable indices of any prime (three) and caps the divisor's valuation at 4. The same shortness makes direct evaluation trivial there — worst prime for the criterion, best for evaluation.",
+    "denominator_vanishes_at_any_prime": false,
+    "frobenius_nonzero_at_every_prime": true,
+    "frobenius_nonzero_scope": "The five on-disk atoms. Numerator: nonzero at every odd prime (j=2 for p not dividing A, j=3 for p=3) and at p=2 by direct evaluation. Denominator: never vanishes at any prime, checked exhaustively below the degree bound p-1 > deg(denom) and impossible above it. The A closed form extends the p != 3 half to every (Z,N) with Z+N <= 6; the p=3 closure at j=3 needs a_2 and is verified for the five atoms only.",
+    "all_checks_passed": true
+  },
+  "scriptHash": "60218945457c",
+  "scriptCommitSha": "4f595d45a05ec6760079e58545ea068782ccd9f9",
+  "commitSha": "4f595d45a05ec6760079e58545ea068782ccd9f9",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "habiro_head_criterion_structure_probe.py"
+}

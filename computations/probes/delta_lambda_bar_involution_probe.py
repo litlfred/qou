@@ -37,6 +37,18 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
+# INPUTS live one level up, in computations/; this probe's OWN witness lives
+# beside it in probes/. Both were `HERE` until 2026-08-30, so every input load
+# looked for a file in the wrong directory and the probe died on the first one
+# (`FileNotFoundError: .../probes/atom-chi-rust-d.witness.json` — the file is
+# real, it is in computations/). Subdirectory-refactor fallout: the probe moved
+# into probes/ and its data loads did not follow.
+#
+# Kept as two names rather than repointing HERE, because HERE also decides
+# where the witness is WRITTEN (below) and that one is already correct —
+# `probes/delta-lambda-bar-involution.witness.json` is the committed path.
+# Repointing HERE would have fixed the reads and silently moved the output.
+COMP = HERE.parent                                       # computations/
 
 q0_str = Q_50_DIGIT_STR
 q0 = mpf(q0_str)
@@ -49,13 +61,29 @@ m_e = 0.51099895069
 # ══════════════════════════════════════════════════════════════════
 
 def load_chi(fname):
-    d = json.load(open(HERE / fname))
+    d = json.load(open(COMP / fname))
     atom = d['data']['atom']
     parts = []
     chis = []
     for entry in atom['by_partition']:
         parts.append(tuple(entry['partition']))
-        chis.append(entry['chi_lambda'])
+        # `chi_lambda` is stored as a 50-dps DECIMAL STRING, and was appended
+        # unparsed until 2026-08-30 -- so the first arithmetic on it,
+        # `D_y[i] * D_chi[i]`, raised `TypeError: can't multiply sequence by
+        # non-int of type 'float'` (a str IS a sequence). Second and independent
+        # defect from the path bug above; the path fix is what made the probe
+        # run far enough to reach it.
+        #
+        # `float`, not `mpf`, and that is deliberate: this probe is float64 END
+        # TO END -- q0f, h_q, m_e, D_y (line ~79, same 50-dps-string-to-float
+        # idiom, already on main) and a numpy `A @ delta_star` solve. Parsing
+        # only this one input at 50 dps would produce mpf-TYPED results
+        # contaminated by float64 everywhere else: precise-looking and not
+        # precise, which is worse than the honest float64 it is. Making the
+        # probe genuinely exact means replacing the numpy solve with mpmath --
+        # a rewrite that moves numbers, not a type fix. Filed, not smuggled in
+        # here.
+        chis.append(float(entry['chi_lambda']))
     return parts, chis, atom['n_strands']
 
 D_parts, D_chi, D_n = load_chi('atom-chi-rust-d.witness.json')
@@ -63,7 +91,7 @@ T_parts, T_chi, T_n = load_chi('atom-chi-rust-t.witness.json')
 He3_parts, He3_chi, He3_n = load_chi('atom-chi-rust-3he.witness.json')
 
 # Load y_lambda from the LP-dual witness (deuteron)
-lp_w = json.load(open(HERE / 'rho-k-h3a-lp-dual.witness.json'))
+lp_w = json.load(open(COMP / 'rho-k-h3a-lp-dual.witness.json'))
 D_y = [float(e['y_lambda_at_q0']) for e in lp_w['data']['per_lambda']]
 D_target = float(lp_w['data']['target_yc_delta_sum'])
 
@@ -71,7 +99,7 @@ D_target = float(lp_w['data']['target_yc_delta_sum'])
 # y_lambda depends on n (strand count), not atom
 # Load from chi-tritium witness if available
 try:
-    t_w = json.load(open(HERE / 'chi-tritium-h9-at-q0-50dps.witness.json'))
+    t_w = json.load(open(COMP / 'chi-tritium-h9-at-q0-50dps.witness.json'))
     T_y_data = t_w.get('data', {}).get('y_lambda', None)
 except:
     T_y_data = None
@@ -235,5 +263,14 @@ witness = {
 }
 
 with open(HERE / "delta-lambda-bar-involution.witness.json", "w") as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    from qou_substrate.witness import WitnessBuilder as _WB
+    import os as _os  # noqa: E402 -- provenance stamp
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(witness, f, indent=2, default=str)
 print(f"\nWitness: delta-lambda-bar-involution.witness.json")

@@ -185,7 +185,7 @@ def main() -> int:
     # Strict assertion: the A=3 mirror split reproduces the Coulomb κ
     wb.add_assertion(
         "a3_mirror_split_matches_kappa_independently",
-        computed=float(kappa), expected=0.367209, tolerance=1e-4,
+        computed=kappa, expected=0.367209, tolerance=1e-4,
         source="κ = T_excess − ³He_excess matches the binding-factor-f-"
                "decomposition κ=0.367 to 1e-4 (independent extraction)")
     wb.save()

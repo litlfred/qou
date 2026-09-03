@@ -64,8 +64,17 @@ from witness_base import WitnessBuilder  # noqa: E402
 def main() -> int:
     t0 = time.time()
     q = sp.Symbol("q", positive=True)
-    qh = sp.sqrt(q)
-    z = 1 / (qh + 1 / qh)
+    # Convention D (canonical, owner ruling 2026-08-15 R1, re-affirmed
+    # 2026-08-29): z = q^3/(q^2 + 1).  This read `z = 1/(sqrt(q) + 1/sqrt(q))`
+    # = sqrt(q)/(q+1), which is convention C -- unannounced, and invisible to
+    # `scripts/convention-c-producer-audit.py`, whose matcher does not see the
+    # sqrt-variable spelling.  Found by `scripts/convention-c-value-audit.py`,
+    # which evaluates the expression instead of matching its shape.
+    #
+    # z_D is RATIONAL in q, so the half-integer powers this file used to carry
+    # into `f_pp`/`f_pn`/`f_nn` (the `q0 ** 1.5` the audit flags separately) are
+    # gone with the square root rather than merely relabelled.
+    z = q ** 3 / (q ** 2 + 1)
     h = q - 1 / q
     delta = sp.Symbol("delta", nonnegative=True)  # color split (formal)
 
@@ -120,7 +129,8 @@ def main() -> int:
         "Pre-archimedean (fibre / formal-q) derivation of the per-bond trace "
         "factor f_bond(q) = c·z + d — the Markov conditional expectation of the "
         "inter-nucleon bridge crossing (a Hecke fact, NOT archimedean). f_pp=z="
-        "√q/(q+1), f_nn=z−h, f_pn=z−h(½−δ/4). tr_M is the Z_q Wedderburn heat "
+        "q³/(q²+1) (convention D), f_nn=z−h, f_pn=z−h(½−δ/4). tr_M is the Z_q "
+        "Wedderburn heat "
         "trace (cf. peaceful-brown §3-bis); binding = E_0·log(tr_free/tr_atom) = "
         "E_0·Σ_bonds log(1/f_bond) is the q-heat free-energy difference "
         "(positive, no |·|). The only archimedean step is q→q₀ at the end."
@@ -134,13 +144,31 @@ def main() -> int:
                "bridge multiplier on the Wedderburn eigenbasis; binding is the "
                "q-heat free energy. See claude/peaceful-brown-hrt19q §3-bis + "
                "QBetaPreArchHeatDepthOneKernel.lean.")
-    # Sanity: symbolic eval at q₀ matches the numeric derivation (1e-12).
+    # Sanity: symbolic eval at q₀ matches an INDEPENDENTLY SPELLED z(q₀).
+    # The comparand is deliberately a second spelling, so the check fails if
+    # only one of the two is migrated -- which is exactly what it did when the
+    # symbolic `z` above moved to convention D and this line still read
+    # `1/(√q₀ + 1/√q₀)` = z_C: computed went 5.55e-17 -> 0.1134, i.e. the whole
+    # C-D gap.  Both are now convention D.
+    #
+    # Deliberately NOT carried in mpmath.  A first attempt wrote the comparand
+    # as `mp.mpf(str(Q0))`, and `precision-gates.sh` was right to fail it on two
+    # counts at once: `q_parameter.Q` is a float64, so `mpf(str(<f64>))` is the
+    # LAUNDERING pattern the f64-into-mpmath tier exists to catch, and the mpf
+    # was built at the default dps=15, tripping the never-raises-dps ratchet.
+    # Every other number in this archimedean block is float64 already, so a
+    # lone mpf comparand would have bought no precision -- only a false claim
+    # of it.  The block's float64 is a PRE-EXISTING defect of this file, out of
+    # scope for a convention migration and tracked separately (bean `qou-uc1n`).
+    _z_d_at_q0 = float((q ** 3 / (q ** 2 + 1)).subs(q, q0))
     w.add_assertion(
         name="symbolic_f_bond_matches_numeric_at_q0",
-        computed=abs(arch["f_pp_at_q0"] - 1.0 / (q0 ** 0.5 + q0 ** -0.5)),
+        computed=abs(arch["f_pp_at_q0"] - _z_d_at_q0),
         expected=0.0, tolerance=1e-12,
-        source="symbolic f_pp(q₀) == numeric z(q₀); the fibre expression "
-               "realizes correctly at the archimedean anchor.",
+        source="symbolic f_pp(q₀) == z_D(q₀) = q₀³/(q₀²+1) evaluated "
+               "independently; the fibre expression realizes correctly at the "
+               "archimedean anchor. Both sides float64, as is this whole "
+               "archimedean block (bean `qou-uc1n`).",
     )
     out = w.save()
     print(f"\n Witness: {out}")

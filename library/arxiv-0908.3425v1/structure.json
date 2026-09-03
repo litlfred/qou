@@ -1,0 +1,882 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0908.3425v1",
+ "source": {
+  "file": "0908.3425v1.pdf",
+  "sha256": "5e88d45bbc1c1b9b71ddc373cf08ce63ae9a6318c47067919d679c988d552479",
+  "bytes": 1042330,
+  "pages": 85
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0908.3425",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "24 Aug 2009"
+  },
+  "doi": null,
+  "title": "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer",
+  "authors_raw": "Institut f\u00a8 ur Kernphysik, Johannes Gutenberg-Universit\u00a8at Mainz",
+  "abstract": "We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some recent developments in the manifestly Lorentz-invariant f ormulation of the one-nucleon sector.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126173556-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Chiral symmetry and spontaneous symmetry breaking",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Quantum chromodynamics and chiral symmetry",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The QCD Lagrangian",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Chiral limit",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Global symmetry currents of the light quark sector",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Chiral algebra",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Quark masses and chiral symmetry breaking",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Green functions, chiral Ward identities, and generating functional",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "PCAC in the presence of an external electromagnetic field",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Spontaneous symmetry breaking and Goldstone theorem",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Linear sigma model",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The hadron spectrum",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The scalar singlet quark condensate",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Mesonic chiral perturbation theory",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Transformation properties of the Goldstone bosons",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "General considerations",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Application to QCD",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Effective Lagrangian and power-counting scheme",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The lowest-order effective Lagrangian",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Symmetry breaking through the quark masses",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Construction of invariants",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Two simple applications: Pion decay and  scattering",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Primer to dimensional regularization",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Power-counting scheme",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Next-to-leading order",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The effective Wess-Zumino-Witten action",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Masses of the Goldstone bosons",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Electromagnetic polarizabilities of the pion",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Baryonic chiral perturbation theory",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Lagrangian",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Transformation properties of the fields",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Baryonic effective Lagrangian at lowest order",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Renormalization and power counting",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The generation of counter terms",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Power counting for renormalized diagrams",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The power-counting problem",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Solutions to the power-counting problem",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Heavy-baryon approach",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Master integral",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Infrared regularization",
+   "page": 60,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Extended on-mass-shell scheme",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Dimensional counting analysis",
+   "page": 64,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Applications",
+   "page": 65,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Nucleon mass and sigma term at O(q4)",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chiral expansion of the nucleon mass to O(q6)",
+   "page": 67,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Form factors of the nucleon",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Scalar form factor",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Electromagnetic form factors",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Axial and induced pseudoscalar form factors",
+   "page": 72,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Pion-nucleon form factor",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7865,
+   "n_words": 2085
+  },
+  {
+   "id": "sec-001-the-qcd-lagrangian",
+   "number": null,
+   "title": "The QCD Lagrangian",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3984,
+   "n_words": 644
+  },
+  {
+   "id": "sec-002-chiral-symmetry-and-spontaneous-symmetry-breakin",
+   "number": null,
+   "title": "Chiral symmetry and spontaneous symmetry breaking",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 284,
+   "n_words": 51
+  },
+  {
+   "id": "sec-003-quantum-chromodynamics-and-chiral-symmetry",
+   "number": null,
+   "title": "Quantum chromodynamics and chiral symmetry",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 3921,
+   "n_words": 749
+  },
+  {
+   "id": "sec-004-chiral-limit",
+   "number": null,
+   "title": "Chiral limit",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2277,
+   "n_words": 436
+  },
+  {
+   "id": "sec-005-global-symmetry-currents-of-the-light-quark-sect",
+   "number": null,
+   "title": "Global symmetry currents of the light quark sector",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1914,
+   "n_words": 385
+  },
+  {
+   "id": "sec-006-chiral-algebra",
+   "number": null,
+   "title": "Chiral algebra",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1544,
+   "n_words": 284
+  },
+  {
+   "id": "sec-007-quark-masses-and-chiral-symmetry-breaking",
+   "number": null,
+   "title": "Quark masses and chiral symmetry breaking",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3158,
+   "n_words": 551
+  },
+  {
+   "id": "sec-008-green-functions-chiral-ward-identities-and-gener",
+   "number": null,
+   "title": "Green functions, chiral Ward identities, and generating functional",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 14169,
+   "n_words": 2577
+  },
+  {
+   "id": "sec-009-pcac-in-the-presence-of-an-external-electromagne",
+   "number": null,
+   "title": "PCAC in the presence of an external electromagnetic field",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2248,
+   "n_words": 403
+  },
+  {
+   "id": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo",
+   "number": null,
+   "title": "Spontaneous symmetry breaking and Goldstone theorem",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-linear-sigma-model",
+   "number": null,
+   "title": "Linear sigma model",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3806,
+   "n_words": 807
+  },
+  {
+   "id": "sec-012-the-hadron-spectrum",
+   "number": null,
+   "title": "The hadron spectrum",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 4994,
+   "n_words": 900
+  },
+  {
+   "id": "sec-013-the-scalar-singlet-quark-condensate",
+   "number": null,
+   "title": "The scalar singlet quark condensate",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3892,
+   "n_words": 781
+  },
+  {
+   "id": "sec-014-mesonic-chiral-perturbation-theory",
+   "number": null,
+   "title": "Mesonic chiral perturbation theory",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 513,
+   "n_words": 86
+  },
+  {
+   "id": "sec-015-transformation-properties-of-the-goldstone-boson",
+   "number": null,
+   "title": "Transformation properties of the Goldstone bosons",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 431,
+   "n_words": 70
+  },
+  {
+   "id": "sec-016-general-considerations",
+   "number": null,
+   "title": "General considerations",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3408,
+   "n_words": 679
+  },
+  {
+   "id": "sec-017-application-to-qcd",
+   "number": null,
+   "title": "Application to QCD",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 7197,
+   "n_words": 1453
+  },
+  {
+   "id": "sec-018-symmetry-breaking-through-the-quark-masses",
+   "number": null,
+   "title": "Symmetry breaking through the quark masses",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 5418,
+   "n_words": 1037
+  },
+  {
+   "id": "sec-019-construction-of-invariants",
+   "number": null,
+   "title": "Construction of invariants",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 15312,
+   "n_words": 2984
+  },
+  {
+   "id": "sec-020-primer-to-dimensional-regularization",
+   "number": null,
+   "title": "Primer to dimensional regularization",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 3665,
+   "n_words": 814
+  },
+  {
+   "id": "sec-021-power-counting-scheme",
+   "number": null,
+   "title": "Power-counting scheme",
+   "level": 3,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 4195,
+   "n_words": 815
+  },
+  {
+   "id": "sec-022-next-to-leading-order",
+   "number": null,
+   "title": "Next-to-leading order",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 2294,
+   "n_words": 359
+  },
+  {
+   "id": "sec-023-the-oq4-lagrangian-of-gasser-and-leutwyler",
+   "number": null,
+   "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 42,
+   "n_chars": 10618,
+   "n_words": 2071
+  },
+  {
+   "id": "sec-024-masses-of-the-goldstone-bosons",
+   "number": null,
+   "title": "Masses of the Goldstone bosons",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 46,
+   "n_chars": 8779,
+   "n_words": 1923
+  },
+  {
+   "id": "sec-025-electromagnetic-polarizabilities-of-the-pion",
+   "number": null,
+   "title": "Electromagnetic polarizabilities of the pion",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 7318,
+   "n_words": 1318
+  },
+  {
+   "id": "sec-026-lagrangian",
+   "number": null,
+   "title": "Lagrangian",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 49,
+   "n_chars": 1809,
+   "n_words": 296
+  },
+  {
+   "id": "sec-027-baryonic-chiral-perturbation-theory",
+   "number": null,
+   "title": "Baryonic chiral perturbation theory",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 9177,
+   "n_words": 1784
+  },
+  {
+   "id": "sec-028-renormalization-and-power-counting",
+   "number": null,
+   "title": "Renormalization and power counting",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 1409,
+   "n_words": 238
+  },
+  {
+   "id": "sec-029-the-generation-of-counter-terms",
+   "number": null,
+   "title": "The generation of counter terms",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 2743,
+   "n_words": 516
+  },
+  {
+   "id": "sec-030-power-counting-for-renormalized-diagrams",
+   "number": null,
+   "title": "Power counting for renormalized diagrams",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 1163,
+   "n_words": 187
+  },
+  {
+   "id": "sec-031-the-power-counting-problem",
+   "number": null,
+   "title": "The power-counting problem",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 57,
+   "n_chars": 7326,
+   "n_words": 1511
+  },
+  {
+   "id": "sec-032-solutions-to-the-power-counting-problem",
+   "number": null,
+   "title": "Solutions to the power-counting problem",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-033-heavy-baryon-approach",
+   "number": null,
+   "title": "Heavy-baryon approach",
+   "level": 3,
+   "page_start": 57,
+   "page_end": 59,
+   "n_chars": 2547,
+   "n_words": 482
+  },
+  {
+   "id": "sec-034-master-integral",
+   "number": null,
+   "title": "Master integral",
+   "level": 3,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 2248,
+   "n_words": 483
+  },
+  {
+   "id": "sec-035-infrared-regularization",
+   "number": null,
+   "title": "Infrared regularization",
+   "level": 3,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 5151,
+   "n_words": 1109
+  },
+  {
+   "id": "sec-036-extended-on-mass-shell-scheme",
+   "number": null,
+   "title": "Extended on-mass-shell scheme",
+   "level": 3,
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 6868,
+   "n_words": 1428
+  },
+  {
+   "id": "sec-037-dimensional-counting-analysis",
+   "number": null,
+   "title": "Dimensional counting analysis",
+   "level": 3,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 2760,
+   "n_words": 576
+  },
+  {
+   "id": "sec-038-applications",
+   "number": null,
+   "title": "Applications",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 420,
+   "n_words": 78
+  },
+  {
+   "id": "sec-039-nucleon-mass-and-sigma-term-at-oq4",
+   "number": null,
+   "title": "Nucleon mass and sigma term at O(q4)",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 3252,
+   "n_words": 671
+  },
+  {
+   "id": "sec-040-chiral-expansion-of-the-nucleon-mass-to-oq6",
+   "number": null,
+   "title": "Chiral expansion of the nucleon mass to O(q6)",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 2432,
+   "n_words": 433
+  },
+  {
+   "id": "sec-041-form-factors-of-the-nucleon",
+   "number": null,
+   "title": "Form factors of the nucleon",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-042-scalar-form-factor",
+   "number": null,
+   "title": "Scalar form factor",
+   "level": 3,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 986,
+   "n_words": 178
+  },
+  {
+   "id": "sec-043-electromagnetic-form-factors",
+   "number": null,
+   "title": "Electromagnetic form factors",
+   "level": 3,
+   "page_start": 68,
+   "page_end": 72,
+   "n_chars": 9421,
+   "n_words": 1667
+  },
+  {
+   "id": "sec-044-axial-and-induced-pseudoscalar-form-factors",
+   "number": null,
+   "title": "Axial and induced pseudoscalar form factors",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 75,
+   "n_chars": 7491,
+   "n_words": 1289
+  },
+  {
+   "id": "sec-045-pion-nucleon-form-factor",
+   "number": null,
+   "title": "Pion-nucleon form factor",
+   "level": 3,
+   "page_start": 75,
+   "page_end": 76,
+   "n_chars": 1849,
+   "n_words": 316
+  },
+  {
+   "id": "sec-046-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 85,
+   "n_chars": 25019,
+   "n_words": 3973
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 53,
+  "sections": 47,
+  "chars_total": 217275
+ }
+}

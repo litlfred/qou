@@ -1,0 +1,134 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T00:42:24.342172+00:00",
+  "commitSha": "7ac9e17b56a1fb0d45b0559e3de34c8e754f66bd",
+  "assertions": [
+    {
+      "name": "delta_rebuilt_from_words_matches_the_corpus_NF_vector",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "net_of_delta_is_the_step_8_epsNPq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "markov_trace_of_delta_is_h2_over_2_minus_h_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D1_two_alpha_IS_the_net_minus_trace_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D2_rungs_2_to_5_carry_no_Markov_parameter_CORROBORATION",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_hoefsmit_diagonal_d1_IS_the_convention_D_markov_parameter",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_D_weight_of_the_2dim_block_is_minus_the_hoefsmit_determinant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "D3_consistency_b_squared_from_both_routes_agrees",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "calibration_reproduces_the_blocks_sub_ppb_muon_frame_number",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "all_three_ADMISSIBLE_baseline_readings_exceed_1e8_ppb",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_INVALID_z_swap_is_the_CLOSEST_reading_adverse_evidence",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_admissible_baselines_BRACKET_CODATA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 60,
+  "computation": "qbeta-d-frame-rung-one-rederivation",
+  "scriptFile": "qbeta_d_frame_rung_one_rederivation_probe.py",
+  "scriptHash": "2eab69ba35e9",
+  "scriptCommitSha": "eb0d6329e712dbdd1099a3ed39751f3e3cf7ae95",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_rung_one_rederivation_probe.py"
+  },
+  "description": "qou-cds1: locates ALL of the Q_beta ladder's convention-dependence in one additive phase inside rung 1, and proves that phase is exactly net(Delta) - tr_M^z(Delta) -- the gap between the inadmissible step-8 baseline and the admissible Ocneanu trace, identically in q and z. Rungs 2-5 carry no Markov parameter. Measures three readings of the D-frame rung 1 plus the augmentation baseline, in an order fixed before evaluation, and selects none of them.",
+  "data": {
+    "net_delta_symbolic": "q**2/2 - q - 1 + 1/q + 1/(2*q**2)",
+    "trM_delta_symbolic": "q**2/2 - q*z - 1 + z/q + 1/(2*q**2)",
+    "alpha_symbolic": "(q**2 - 1)*(z - 1)/(2*q)",
+    "published_C_muon_pin_ppb": "7.33648424231675010808601383982818420474274411068452102579784",
+    "published_C_proton_pin_ppb": "37.7074898557493246572264919369599095480546476060268930180124",
+    "R-i_ppb": "-431618848.392558152280144210768580025433623993125563709214746",
+    "R-ii_ppb": "-432182571.389128416230326947000222062445689522272598377206261",
+    "R-iii_ppb": "601191.531630612538134805679254905825850416810971723496621375",
+    "R-iv_augmentation_ppb": "124607040.861422710676296150873111459701742884858811072002495",
+    "z_D_at_proton_pin": "0.612688037146465251595829863945899248026308391545087014074774",
+    "z_C_at_proton_pin": "0.499320334183694452413442680257666303751948164041531945276170"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

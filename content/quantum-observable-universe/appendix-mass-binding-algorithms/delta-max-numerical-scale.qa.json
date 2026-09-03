@@ -954,7 +954,7 @@
           "in_degree": 0,
           "cone_size": 0,
           "depth": 0,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1108,7 +1108,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",
-        "notes": "Heuristic check: Drifted Lean file found. Both Lean and MD files exist and appear substantive.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Drifted Lean file found. Both Lean and MD files exist and appear substantive.",
         "reviewed_at": "2026-07-08T01:04:03.000Z",
         "reviewed_sha": "6dcb2fffdc5070a45bda19a2044a693f4d93ace7",
         "reviewer": {
@@ -1123,7 +1123,7 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1138,7 +1138,7 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1153,7 +1153,7 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1168,7 +1168,7 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1183,7 +1183,7 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1198,7 +1198,7 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1213,7 +1213,7 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1231,7 +1231,7 @@
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1249,7 +1249,7 @@
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
@@ -1267,7 +1267,7 @@
     "fit-section-chapter": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1281,7 +1281,7 @@
       {
         "field_hash": {},
         "result": "pass",
-        "notes": "Agentic heuristic check: pass.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
         "reviewed_at": "2026-07-19T17:19:09.000Z",
         "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
         "reviewer": {
@@ -1294,7 +1294,7 @@
     "da-false-claim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1309,7 +1309,7 @@
     "da-vacuous": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1324,7 +1324,7 @@
     "da-circular": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1339,7 +1339,7 @@
     "da-overclaim": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1354,7 +1354,7 @@
     "da-hidden-dof": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1369,7 +1369,7 @@
     "da-non-sequitur": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1384,7 +1384,7 @@
     "da-lean-narrative-divergence": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1399,7 +1399,7 @@
     "da-citation-misuse": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1414,7 +1414,7 @@
     "da-definitional-ambiguity": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1429,7 +1429,7 @@
     "da-empirical-fragility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1444,7 +1444,7 @@
     "da-physical-implausibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1459,7 +1459,7 @@
     "da-reproducibility": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1474,7 +1474,7 @@
     "da-referee-verdict": [
       {
         "result": "pass",
-        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
         "reviewed_at": "2026-07-08T08:57:46.000Z",
         "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
         "reviewer": {
@@ -1549,7 +1549,7 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
         "reviewed_at": "2026-08-08T00:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -2059,5 +2059,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-15T21:15:41.696Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

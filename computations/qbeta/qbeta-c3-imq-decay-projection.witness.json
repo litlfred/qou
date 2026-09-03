@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "required Im(q)=eps from S: small (<10% Re q) AND sign-flipped mu/p — candidate (iii) signature"
     }
   ],

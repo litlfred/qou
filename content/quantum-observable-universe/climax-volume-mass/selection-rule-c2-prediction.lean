@@ -25,6 +25,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
+import QOU.Mass.QHookDimension
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -66,5 +67,18 @@ theorem selection_rule_c2_prediction (q : ℝ) (hq : 0 < q) :
     (1 + (q + q⁻¹) + 1) / 3 = (q + 1)^2 / (3 * q) := by
   rw [selection_rule_c2_sum_form q hq]
   exact selection_rule_c2_eq_closed_form q hq
+
+/-! ## Derived from the hook-length formula (bean `qou-lx7k`, 2026-08-29)
+
+The identities above substitute the three H₃ q-dimensions as literals; the
+hook-length step that produces them lived in the docstring.  `QOU.Mass.
+QHookDimension` derives it, with `dim_q V_{(2,1)} = [2]_q` computed from the hook
+multiset `[3,1,1]`.  This is the statement the `.md` describes. -/
+
+theorem selection_rule_c2_prediction_derived {K : Type*} [Field K] [LinearOrder K]
+    [IsStrictOrderedRing K] {q : K} (hq : 0 < q) :
+    (dimQ q [3] + dimQ q [2, 1] + dimQ q [1, 1, 1]) / 3
+      = (q + 1) ^ 2 / (3 * q) :=
+  selection_rule_c2_real hq
 
 end QOU.Mass

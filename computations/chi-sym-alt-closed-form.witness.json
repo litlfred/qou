@@ -1,0 +1,266 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T18:31:59.806224+00:00",
+  "commitSha": "16b392a00f114e2abe6fb9a2442389b625dbe5a9",
+  "assertions": [
+    {
+      "name": "D: n_ud(atom_braid_word_3A) = 2A",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "D: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "D: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.05583976726687183085942112763449928432331975561507218393526",
+      "expected": "-1.05583976726685802726726800242981473390025152215470459497252",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
+    },
+    {
+      "name": "D: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "computed": "-1.05583976726687183085942112763449928432331975561507218393526",
+      "expected": "-1.05583977266638683722777892524670644814903834019208447504911",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "T: n_ud(atom_braid_word_3A) = 2A",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "T: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "T: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.07903920001515735652049250142788912531604191502328584749740",
+      "expected": "-1.07903920001513589983330082571766978075996853873604620432648",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
+    },
+    {
+      "name": "T: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "computed": "-1.07903920001515735652049250142788912531604191502328584749740",
+      "expected": "-1.07903920553330582313559345958108392099808821908934636542556",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "3He: n_ud(atom_braid_word_3A) = 2A",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "3He: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "3He: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.07903920001515738403615248027132955982719169640383980451057",
+      "expected": "-1.07903920001513589983330082571766978075996853873604620432648",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
+    },
+    {
+      "name": "3He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "computed": "-1.07903920001515738403615248027132955982719169640383980451057",
+      "expected": "-1.07903920553330582313559345958108392099808821908934636542556",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "4He: n_ud(atom_braid_word_3A) = 2A",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "source": "two ud letters per nucleon; the p-n interface is NOT one"
+    },
+    {
+      "name": "4He: n_averaged(atom_braid_word_3A) = 2A+1",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "tolerance": 0,
+      "source": "2A ud letters plus exactly one colour-weighted p-n interface, independent of A (pp is σ, nn is σ⁻¹ — both braid generators, neither averaged)"
+    },
+    {
+      "name": "4He: χ_sym·χ_alt matches f_ud^(2A)·f_pn (p-n carried exactly)",
+      "computed": "-1.10274838215584876116480232878528294254734129559734710632188",
+      "expected": "-1.10274838215581929361140070376233848931202129892146527944153",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "closed form with the colour-weighted p-n interface carried as itself rather than folded into the ud power"
+    },
+    {
+      "name": "4He: χ_sym·χ_alt matches −(1 + H_A²/4)^(2A+1)",
+      "computed": "-1.10274838215584876116480232878528294254734129559734710632188",
+      "expected": "-1.10274838779523717138372535540052824662698338004045949781789",
+      "passed": true,
+      "tolerance": "1e-8",
+      "source": "direct character product vs closed form"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 50,
+  "computation": "chi-sym-alt-closed-form",
+  "scriptFile": "chi_sym_alt_closed_form.py",
+  "scriptHash": "5ced955dfa71",
+  "scriptCommitSha": "18bb01185489588b392c4be900bd88cf8199dcf0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "88833bbb2bd7f717"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_sym_alt_closed_form.py"
+    ],
+    "reproduce": "python3 -u computations/chi_sym_alt_closed_form.py"
+  },
+  "description": "Exact closed form χ_sym(β_atom)·χ_alt(β_atom) = −(1 + H_A²/4)^(2A+1) derived from eigenvalue algebra of Hecke factors + ud-factor counting in atom_braid_word_3A.",
+  "contentBlock": "prop:chi-sym-alt-closed-form",
+  "parameters": {
+    "q": "1.10997858275138080759166909561076887987449912187360000000000",
+    "H_A": "0.209060298795639315430846213129674943859757495263063078255215"
+  },
+  "data": {
+    "atoms": [
+      {
+        "atom": "D",
+        "A": 2,
+        "expected_n_ud": 4,
+        "observed_n_ud": 4,
+        "expected_n_averaged": 5,
+        "observed_n_averaged": 5,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.05583976726685802726726800242981473390025152215470459497252",
+        "rel_error_exact": "0.0000000000000130735672031534860074756299864652042280155771235558125122659",
+        "n_pure_sigma": 11,
+        "n_pure_sigma_inv": 7,
+        "chi_sym_direct": "1.55987019956416050737347942016076812784605618896097903359259",
+        "chi_alt_direct": "-0.676876683432942959701106525042705246293255488992605669298127",
+        "product_direct": "-1.05583976726687183085942112763449928432331975561507218393526",
+        "product_closed_form": "-1.05583977266638683722777892524670644814903834019208447504911",
+        "rel_error": "0.00000000511395303165420710361036531307663650782915293490845133386478"
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "expected_n_ud": 6,
+        "observed_n_ud": 6,
+        "expected_n_averaged": 7,
+        "observed_n_averaged": 7,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.07903920001513589983330082571766978075996853873604620432648",
+        "rel_error_exact": "0.0000000000000198849932341426826324444077620731297070133156042254341531149",
+        "n_pure_sigma": 16,
+        "n_pure_sigma_inv": 12,
+        "chi_sym_direct": "1.57691420262061977134953270983640587231095420479598626422648",
+        "chi_alt_direct": "-0.684272611802176060713212117456929164581502022394854887846976",
+        "product_direct": "-1.07903920001515735652049250142788912531604191502328584749740",
+        "product_closed_form": "-1.07903920553330582313559345958108392099808821908934636542556",
+        "rel_error": "0.00000000511394622022821094781559104539421406486442052403756167599344"
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "expected_n_ud": 6,
+        "observed_n_ud": 6,
+        "expected_n_averaged": 7,
+        "observed_n_averaged": 7,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.07903920001513589983330082571766978075996853873604620432648",
+        "rel_error_exact": "0.0000000000000199104933827734807283236873161456713743150799079920496657984",
+        "n_pure_sigma": 18,
+        "n_pure_sigma_inv": 10,
+        "chi_sym_direct": "2.39368203855267517538759277063815501876317537315496831612091",
+        "chi_alt_direct": "-0.450786354509971451979045362537584102279092895605560232705833",
+        "product_direct": "-1.07903920001515738403615248027132955982719169640383980451057",
+        "product_closed_form": "-1.07903920553330582313559345958108392099808821908934636542556",
+        "rel_error": "0.00000000511394619472806244742439094212257099852360725659798957583369"
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "expected_n_ud": 8,
+        "observed_n_ud": 8,
+        "expected_n_averaged": 9,
+        "observed_n_averaged": 9,
+        "n_pn_color": 1,
+        "d_pn_color": "-0.104458247769726289017834066290005644128000000628519992533309",
+        "product_closed_form_exact": "-1.10274838215581929361140070376233848931202129892146527944153",
+        "rel_error_exact": "0.0000000000000267219194137627239225094169062966231537149237908300816967714",
+        "n_pure_sigma": 23,
+        "n_pure_sigma_inv": 15,
+        "chi_sym_direct": "2.41983673013706641829143099997708727721909236911184551588082",
+        "chi_alt_direct": "-0.455711895113430220529301648987707124852478839175471602022163",
+        "product_direct": "-1.10274838215584876116480232878528294254734129559734710632188",
+        "product_closed_form": "-1.10274838779523717138372535540052824662698338004045949781789",
+        "rel_error": "0.00000000511393938330206629158304745772648740957085322368789931012817"
+      }
+    ],
+    "factor_eigenvalue_algebra": {
+      "sym_eigenvalue": "c·q + d",
+      "alt_eigenvalue": "-c/q + d",
+      "per_factor_product": "d² − c² + c·d·H_A",
+      "pure_sigma_product": "-1",
+      "pure_sigma_inv_product": "-1",
+      "ud_product_symbolic": "-(1 + H_A²/4)"
+    },
+    "closed_form": {
+      "formula": "chi_sym * chi_alt = -(1 + H_A^2/4)^(2A+1)",
+      "equivalent": "-([2]_q / 2)^(4A+2)",
+      "ud_factor_count": "n_ud = 2A + 1 (2 per nucleon + 1 p→n transition)"
+    }
+  },
+  "caveats": [
+    "This is a structural identity (no fitting). It explains the numerical coincidence χ_sym·χ_alt ≈ −1.08 as a function of A alone, but does NOT explain the atom-dependent density deviation (D −1.1%, T +0.2%, ³He +3.1%, ⁴He −5.5%)."
+  ]
+}

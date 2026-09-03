@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1108.3035v2",
+ "source_sha256": "935bf1bd3e13821b",
+ "brief": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition — We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix",
+ "extended": "**Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition**\n\n*Gernot Akemann1 and Taro Nagao2*\n\n27 pp, 5 sections.\n\n**Abstract.** We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix and a second Hermitian matrix without symmetries. These are taken from the chiral Gaussian Unitary Ensemble (chGUE) and Gaussian Unitary Ensemble (GUE), respectively. In the microscopic large-n limit in the vicinity of the chGUE (which we denote by weakly non-chiral limit) this theory is in one to one correspondence to the partition function of Wilson chiral perturbation theory in the epsilon regime, such as the related two matrix-model previously introduced in [20, 21]. For a generic number of ﬂavours and rectangular block matrices in the chGUE part we derive an eigenvalue representation for the partition function displaying a Pfaﬃan structure.\n\n**Outline.** 1 Introduction; 2 The Random Matrix Model; 3 The eigenvalue picture; 5 The microscopic weakly non-chiral large-N li; 6 Conclusions",
+ "tokens": {
+  "brief": 49,
+  "extended": 267
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-the-random-matrix-model",
+   "title": "The Random Matrix Model",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-3-the-eigenvalue-picture",
+   "title": "The eigenvalue picture",
+   "pages": "5-15"
+  },
+  {
+   "id": "sec-003-5-the-microscopic-weakly-non-chiral-large-n-limi",
+   "title": "The microscopic weakly non-chiral large-N limit",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-004-6-conclusions",
+   "title": "Conclusions",
+   "pages": "18-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -115,7 +115,7 @@ def _c3_with_z(q, qcod, me, conv: str):
     from `substrate_ladder_quantities` unchanged, so the only difference between
     the two columns is the Markov parameter.
     """
-    sub = substrate_ladder_quantities(q)
+    sub = substrate_ladder_quantities(q, convention="C")
     h, b, hb, u = sub["h"], sub["b"], sub["hbar_q"], sub["u"]
     if u == 0:
         raise ValueError("u = 0 at the classical point")
@@ -134,10 +134,10 @@ def main() -> int:
     print("=" * 74)
     print("1. THE CANONICAL CHAIN IS CONVENTION-C AT ITS ROOT")
     print("=" * 74)
-    subp = substrate_ladder_quantities(Q_PROTON)
+    subp = substrate_ladder_quantities(Q_PROTON, convention="C")
     zC = subp["z"]
     zD = Q_PROTON ** 3 / (Q_PROTON ** 2 + 1)
-    print(f"  substrate_ladder_quantities(q_p)['z'] = {mp.nstr(zC, 18)}")
+    print(f"  substrate_ladder_quantities(q_p, convention='C')['z'] = {mp.nstr(zC, 18)}")
     print(f"  1/(sqrt q + 1/sqrt q)                 = "
           f"{mp.nstr(1 / (mp.sqrt(Q_PROTON) + 1 / mp.sqrt(Q_PROTON)), 18)}  <- C")
     print(f"  q^3/(q^2+1)                           = {mp.nstr(zD, 18)}  <- D")

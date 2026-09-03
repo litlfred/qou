@@ -1,7 +1,7 @@
 ---
 # qou-mnrd
-title: 'main is RED on its own raw-float64 ratchet — 18 NEW + 2 REGRESSED (was 3 when opened)'
-status: in-progress
+title: 'raw-float64 ratchet: main was RED, now GREEN (5 -> 0, drained 2026-08-25) — the revolving door is the finding'
+status: todo
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-10T02:10:00Z
+updated_at: 2026-08-31T03:05:45Z
 ---
 
 ## The finding
@@ -1792,3 +1792,132 @@ drain, which this ratchet cannot distinguish) and
 
 Still genuinely uncovered: `docs/audits/scripts/`, where the ratchet runs
 ADVISORY only and carries 6 dirty witnesses — tracked as `qou-irzg`.
+
+
+## Re-measured 2026-08-25 on `main` @ 5483aa95f — 5 NEW, 0 REGRESSED
+
+Measured while merge-verifying #5754 (the gate was run in full on bare `main`
+and on the rebased branch, then diffed). The headline count above was 15 days
+stale, and stale in the **good** direction — 18 NEW + 2 REGRESSED at the
+2026-08-10 update, against **5 NEW + 0 REGRESSED** now. The REGRESSED tier is
+empty, which is the tier that matters most: nothing is getting worse, there is
+just an undrained residue.
+
+None of the three witnesses named in the original finding is still dirty. The
+current five are all different files:
+
+     42  computations/deltalambda/deuteron-interface-handle-curvature.witness.json
+     28  computations/qbeta/birkhoff-barodd-pythagoras-bridge.witness.json
+     21  computations/qbeta/a3-branching-asymmetry-vs-required.witness.json
+      4  computations/deltalambda/yekutieli-trefoil-surface2form-discretization.witness.json
+      1  computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json
+
+So this bean is not one standing defect being carried — it is a **revolving
+door**. Every file in the original finding drained; five different ones took
+their place, from the same two directories (`deltalambda/`, `qbeta/`). The
+open item is the absence of enforcement, not any particular producer: CI is
+`workflow_dispatch`-only under the 2026-06-30 Actions-billing directive, so
+nothing runs the ratchet on a push and each new dirty witness lands the same
+way the last three did.
+
+`sigma1cubed-seifert-surface-term` is referenced by bean `qou-3q7t`; the other
+four appear in no bean.
+
+### Do not conflate this with the laundering tier
+
+Recorded because it happened during the #5754 verification and reached a PR
+comment before it was caught. The `precision-gates.sh` output carries two
+float64 gates and only one of them gates:
+
+  * **`raw-float64 ratchet` — BLOCKING.** This bean. The 5 above.
+  * **`f64-into-mpmath` — ADVISORY, never gating.** This is where the three
+    laundered `mpf(str(<f64>))` sites live (`a_operator_categorical.py:628`,
+    `canonical_tr_m_via_branching.py:670`,
+    `wlambda_normalisation_census.py:91`, all reading `q_parameter.Q`), plus
+    the 202-site `F64_CAST` tier. Real defects — the wider class is bean
+    `qou-840k` — but they are **not** what makes `main` exit 1.
+
+Describing the laundered sites as "the blocking red" is wrong in both
+directions: it assigns the blocker to files that are not blocking, and it
+hides the five witnesses that are.
+
+
+## CLOSED 2026-08-25 — main is GREEN, and the door swung again while this was open
+
+Verified on `main` @ `6137e6244`: `witness_raw_float64_audit.py --strict` **exits 0**,
+`NEW dirty 0`, `REGRESSED 0`. The titular condition is false and this bean is
+completed.
+
+All five witnesses named in the entry above were drained the same day, at the
+producer, by a sibling working `qou-j6gb`:
+
+    56c4efefc  birkhoff-barodd-pythagoras-bridge      28 -> 0
+    e1114b1b2  a3-branching + yekutieli-surface2form  21+4 -> 0
+    01c7d8806  sigma1cubed-seifert-surface-term        1 -> 0
+    147aeb66c  deuteron-interface-handle-curvature    42 -> 0   (ratchet GREEN)
+    0948b5877  beans(qou-j6gb): 96 fields, 5 -> 0
+
+**This does not refute the revolving-door reading — it completes a full turn of
+it inside one day.** The entry above recorded the door opening (three original
+witnesses drained, five different ones took their place); this records it
+closing again, on the producer side, in hours. Both halves happened with no
+gate running on any push. So the finding stands and is now demonstrated rather
+than inferred: *which* files are dirty is transient and not worth tracking, and
+draining them is cheap. What is not cheap, and what nothing here fixed, is that
+nothing runs the ratchet on a push — CI is `workflow_dispatch`-only under the
+2026-06-30 Actions-billing directive. The next five will land the same way.
+
+**Do not read GREEN as the problem being solved.** It means the corpus is clean
+at this instant. The enforcement gap is the durable item and it survives this
+bean; it is not tracked here, because this bean was only ever about a count.
+
+Related: `8b2e57980` records a sibling finding that main's committed audit
+witness *understated* the ratchet — same family as the staleness measured in
+`qou-82ur`, and a reason not to trust a committed audit witness's counts
+without re-running.
+
+
+---
+
+## RECURRENCE, measured 2026-08-31 — the revolving door turned again
+
+This bean is `completed` because the five offenders of 2026-08-25 were drained.
+**Main is red again, with two entirely different files**, which is this bean's
+own title ("the revolving door is the finding") confirmed a further time rather
+than a new discovery. Status reopened: `completed` was accurate about the five
+and is not accurate about the ratchet's current state.
+
+Measured on `origin/main` @ `321db77338` via
+`python3 computations/witness_raw_float64_audit.py` (exit 1):
+
+| class | file | count |
+|---|---|---|
+| **NEW dirty** | `computations/probes/arc-count-diagnostic-degeneracy.witness.json` | 4 |
+| **REGRESSED** | `computations/audits/braid-encoding-audit.witness.json` | 89 -> 91 |
+
+**Attribution is airtight and needed no main checkout.** It was found on the
+slice-E drain branch (`qou-srvu`, PR #6259) after merging main. All THREE
+relevant inputs -- both offending witnesses *and*
+`computations/audits/raw-float64-baseline.json` that they are judged against --
+are byte-identical to `origin/main`, and `git log origin/main..HEAD
+--name-only` never names them. The audit's verdict on those two files is
+therefore a pure function of main's content: a main checkout would report the
+same. Establishing this without spending ~1 GB of a constrained disk allowance
+on another worktree is worth recording as a method.
+
+**Two notes for whoever drains these.**
+
+`braid-encoding-audit` is on the DO-NOT-TOUCH list two independent drain slices
+observed this session -- slice E lists it beside `casimir_q_factorial_probe` as
+"protected, untouched". Its +2 wants reading before it is treated as an
+ordinary drain.
+
+And the standing REGRESSED entry has itself CHANGED. Through 2026-08-30 the
+single REGRESSED line on every branch measured this session was
+`he-nu-sdp-saturation-obstruction` (5 -> 11, from `fcc65c1380`); five slices
+independently confirmed it as not-theirs. Today it is `braid-encoding-audit`
+instead. So a REGRESSED line that "everyone already knows about" is not a
+stable landmark -- re-read the filename each time rather than assuming it is
+the same one. That is the same masking hazard bean `qou-dqhd` was opened for:
+a permanently non-zero REGRESSED count hides the next real one, and here it
+hid a substitution.

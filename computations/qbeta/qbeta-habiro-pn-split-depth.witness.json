@@ -1,0 +1,274 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T10:36:57.697754+00:00",
+  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
+  "assertions": [
+    {
+      "name": "every_structural_test_recorded",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "test result dicts in witness data",
+      "source": "tests defined: test_a_lowest_degree, test_b_pochhammer5, test_c_per_m_origin, test_d_depth_sum_minus_1, test_e_pochhammer8_and_denom, test_f_ladder_position; recorded: test_A_lowest_degree, test_B_pochhammer5, test_C_per_m_origin, test_D_depth_sum_minus_1, test_E_pochhammer8_and_denom, test_F_first_differing_exponent"
+    },
+    {
+      "name": "min_degree_agrees_with_first_differing_exponent",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "u-exponent",
+      "source": "Test A: min degree of Σ_m Δa_m·(u;u)_m (per-m difference, then sum). Test F: lowest u-exponent where the separately assembled p and n numerators disagree. Equal by linearity; computed by disjoint code paths."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 317,
+  "computation": "qbeta-habiro-pn-split-depth",
+  "scriptFile": "qbeta_habiro_pn_split_depth.py",
+  "scriptHash": "231ce810a2ca",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_habiro_pn_split_depth.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_habiro_pn_split_depth.py"
+  },
+  "description": "Categorical interpretation of the u^15 prefactor in Σ_m Δa_m·(u;u)_m = −u^15·(u−1)(u+1)·P_8(u). Tests six candidates: (A) confirm u^15 is min-degree after cancellation; (B) (u;u)_5 hypothesis (deg 15); (C) per-m origin tracing; (D) M_p + M_n − 1 hypothesis; (E) (u;u)_8 / shared-denominator u^19; (F) first-differing u-exponent of reconstructed p_in_u vs n_in_u.",
+  "contentBlock": "prop:neutron-qvalue-symbolic",
+  "data": {
+    "habiro_witness_used": "habiro-coefficients-atomic.witness.json",
+    "habiro_depths": {
+      "M_p": 8,
+      "M_n": 8
+    },
+    "test_A_lowest_degree": {
+      "expanded_min_deg": 4,
+      "expanded_max_deg": 44,
+      "factored": "-u**4*(u**2 - u + 1)*(u**2 + u + 1)*(u**4 - u**2 + 1)*(u**32 + 3*u**20 - 2*u**16 + 3*u**12 - 4*u**8 + 3*u**4 - 2)",
+      "is_u15_min": false,
+      "per_m_contributions": {
+        "0": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": -6,
+          "coeff_at_u15": 0
+        },
+        "1": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": 138,
+          "coeff_at_u15": 0
+        },
+        "2": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": -824,
+          "coeff_at_u15": 0
+        },
+        "3": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": 2229,
+          "coeff_at_u15": 0
+        },
+        "4": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": -3225,
+          "coeff_at_u15": 0
+        },
+        "5": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": 2645,
+          "coeff_at_u15": 393
+        },
+        "6": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": -1223,
+          "coeff_at_u15": -64
+        },
+        "7": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": 294,
+          "coeff_at_u15": -389
+        },
+        "8": {
+          "min_deg_of_Δa_m_times_pochm": 0,
+          "coeff_at_min_deg": -28,
+          "coeff_at_u15": 60
+        }
+      }
+    },
+    "test_B_pochhammer5": {
+      "poch5_expanded": "-u**15 + u**14 + u**13 - u**10 - u**9 - u**8 + u**7 + u**6 + u**5 - u**2 - u + 1",
+      "poch5_factored": "-(u - 1)**5*(u + 1)**2*(u**2 + 1)*(u**2 + u + 1)*(u**4 + u**3 + u**2 + u + 1)",
+      "poch5_degree": 15,
+      "poch5_top_term_coeff": -1,
+      "divides_cleanly": false,
+      "quotient": null,
+      "quotient_factored": null,
+      "gcd_with_delta_habiro": "u**2 + u + 1",
+      "interpretation": "If (u;u)_5 divides Δ-Habiro CLEANLY, the u^15 is the depth-5 q-Pochhammer top-degree term (categorical: shifted by 5 in the Habiro ladder). If it doesn't divide, the u^15 is a different object (prefactor monomial, not q-Pochhammer top)."
+    },
+    "test_C_per_m_origin": {
+      "per_m_origin": {
+        "0": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 0,
+          "poch_m_top_exp": 0,
+          "prod_min_exp": 0,
+          "prod_max_exp": 0
+        },
+        "1": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 1,
+          "poch_m_top_exp": 1,
+          "prod_min_exp": 0,
+          "prod_max_exp": 2
+        },
+        "2": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 2,
+          "poch_m_top_exp": 3,
+          "prod_min_exp": 0,
+          "prod_max_exp": 5
+        },
+        "3": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 3,
+          "poch_m_top_exp": 6,
+          "prod_min_exp": 0,
+          "prod_max_exp": 9
+        },
+        "4": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 4,
+          "poch_m_top_exp": 10,
+          "prod_min_exp": 0,
+          "prod_max_exp": 14
+        },
+        "5": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 5,
+          "poch_m_top_exp": 15,
+          "prod_min_exp": 0,
+          "prod_max_exp": 20
+        },
+        "6": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 6,
+          "poch_m_top_exp": 21,
+          "prod_min_exp": 0,
+          "prod_max_exp": 27
+        },
+        "7": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 7,
+          "poch_m_top_exp": 28,
+          "prod_min_exp": 0,
+          "prod_max_exp": 35
+        },
+        "8": {
+          "delta_a_m_min_exp": 0,
+          "delta_a_m_max_exp": 8,
+          "poch_m_top_exp": 36,
+          "prod_min_exp": 0,
+          "prod_max_exp": 44
+        }
+      },
+      "min_of_individual_min_exps": 0,
+      "expanded_min_exp_observed": 15,
+      "cancellation_window_size": 15,
+      "interpretation": "The individual products Δa_m·(u;u)_m have low exps starting at u^1 (m=1's Δa_1=10u+10 starts at u^0, but multiplied by (1-u) gives u^0 + u^1 + ...). The u^15 floor of the SUM is the result of CANCELLATION across m of the low-degree terms. The u^15 monomial is the FIRST UN-CANCELLED exponent — a structural shift due to the n vs p Δa_m alignment."
+    },
+    "test_D_depth_sum_minus_1": {
+      "M_p": 8,
+      "M_n": 8,
+      "M_p_plus_M_n_minus_1": 15,
+      "matches_15": true,
+      "caveat_M_eff_for_delta": 6,
+      "caveat_note": "Δa_7 = Δa_8 = 0 (atoms share top coeffs exactly), so the effective support of the Δ-Habiro element is m ∈ {1..6}. The arithmetic M_p+M_n−1=15 holds for the nominal Habiro depths M_p=M_n=8, but the effective Δ-support stops at m_eff = 6 — making the depth-sum reasoning suspect."
+    },
+    "test_E_pochhammer8_and_denom": {
+      "poch8_degree": 36,
+      "matches_15": false,
+      "shared_denom_u_exp": 19,
+      "u15_vs_shared_denom": "u^15 = u^(19-4); the −4 has no clean interp",
+      "divides_by_poch8": false,
+      "interpretation": "(u;u)_8 has degree 36, far above the 15 floor. The shared denominator's u^19 vs the numerator's u^15 differ by u^4 = Φ_4(u)·(1-u²)/(1+u²)... no clean factorization. u^15 ≠ a q-Pochhammer of any depth."
+    },
+    "test_F_first_differing_exponent": {
+      "shared_exponents_u0_to_u14": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ],
+      "shared_exponents_are_contiguous_from_zero": false,
+      "first_differing_exponent": 4,
+      "is_first_diff_u15": false,
+      "interpretation_categorical": "u^4 is the FIRST u-exponent where the proton-numerator and neutron-numerator coefficients differ. The braid words β_p and β_n agree on 13 exponent(s) (u^0, u^1, u^2, u^3, u^5, u^6…) in their full tr_M expansions; the n−p split first appears at u^4. Under convention D this is the u^4 factor of the p−n difference recorded in commit f392d75408e ('regen(D-only) … Φ_k structure does not survive'); the u^15 this module is named for was the convention-C answer."
+    },
+    "verdict": {
+      "best_categorical_interpretation": "UNCLEAR",
+      "candidate_4_depth_sum": {
+        "arithmetic_match": true,
+        "structurally_sound": false,
+        "reason": "Δa_7 = Δa_8 = 0; effective support stops at m=6, not 8, so M_p+M_n−1 doesn't reflect the Δ-element."
+      },
+      "candidate_5_pochhammer5": {
+        "divides_cleanly": false,
+        "verdict": "DOES NOT DIVIDE"
+      },
+      "candidate_F_first_diff_exponent": {
+        "first_differing_u_exp_in_pn_numerators": 4,
+        "is_u15": false,
+        "structural_meaning": "u^15 = lowest u-exponent where β_p and β_n full tr_M expansions disagree. Categorical: structural property of the (β_p, β_n) braid pair (crossing-topology origin)."
+      },
+      "summary": "CANDIDATE 5 (u;u)_5 FAILS: Δ-Habiro is NOT divisible by (u;u)_5. The arithmetic 1+2+3+4+5=15 is COINCIDENTAL — the u^15 monomial is a PREFACTOR (a pure power of u) not a leading term of any q-Pochhammer.; CANDIDATE 4 (M_p+M_n−1=15) ARITHMETIC MATCH: M_p=8+M_n=8−1=15. CAVEAT: Δa_7=Δa_8=0 (per prior audit), so the effective Δ-support is m_eff=6, and the depth-sum reasoning is structurally suspect (the nominal M_p=M_n=8 are the individual atom depths, not properties of the Δ-element)."
+    },
+    "u15_premise": {
+      "claim": "the Δ-Habiro element Σ_m Δa_m·(u;u)_m has its lowest-degree monomial at u^15 (description, Test A, Test F)",
+      "holds": false,
+      "measured_min_degree": 4,
+      "measured_first_differing_exponent": 4,
+      "upstream": "habiro-coefficients-atomic.witness.json",
+      "has_independent_expected_value": false
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "d59c76efc7cdc5050df475ad92df9ce3c0370a38ba1268cb80b048ec3be1bd56",
+        "size_bytes": 23294,
+        "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
+        "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
+        "computedAt": "2026-08-26T14:43:07.168940+00:00"
+      }
+    ]
+  },
+  "caveats": [
+    "PREMISE NOT REPRODUCED: this probe is named and described for a u^15 floor, but against the current habiro-coefficients-atomic.witness.json the floor is u^4 (first differing exponent u^4), the Δa_m support runs m=0..8, and the verdict falls to 'UNCLEAR'. The prose and the description were written against an earlier atomic witness; they have not been rewritten here."
+  ]
+}

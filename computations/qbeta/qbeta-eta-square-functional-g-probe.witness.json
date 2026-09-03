@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T20:43:07.101858+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-26T07:08:26.102093+00:00",
+  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9543,
+  "durationMs": 8878,
   "computation": "qbeta-eta-square-functional-g-probe",
   "scriptFile": "qbeta_eta_square_functional_g_probe.py",
-  "scriptHash": "e9b682957851",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptHash": "ab99a4c65c31",
+  "scriptCommitSha": "9d52483f519dfa887dbf3eacd70314e37ae2ee13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,9 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eta_square_functional_g_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eta_square_functional_g_probe.py"
   },
   "description": "E = G(eta^2) functional identification (queued follow-up of qbeta-eta-square-fibre-probe): T0 exact u~^1 obstruction for pure-series G; T1 two-rung-carrier tail split with g1 (u~^3), g2 (u~^6) forced and rungs 4,5,7,8 as margin-4 exact checks; T2 forced cosh-family constant a = g1^2/(6 g2) vs unit-cosh (+1) / zeta4 image (-1). 08ds ORD-17 conventions, exact Q(sqrt3).",
   "audit_only": true,

@@ -253,6 +253,15 @@ def main() -> int:
             "bean": "b0vf",
         },
     }
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    payload.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        payload, script_path=__file__, engine=None, q0_anchor=None)
     WITNESS.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     print(f"WROTE {WITNESS.name} — 77/77, partial=False", flush=True)
     return 0

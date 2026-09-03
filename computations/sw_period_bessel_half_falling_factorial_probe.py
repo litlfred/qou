@@ -119,7 +119,14 @@ def main() -> int:
     w = WitnessBuilder(
         "sw-period-bessel-half-falling-factorial", engine="python+sympy+mpmath"
     )
-    w.set_audit_only("docs/audits/2026-06-26-bessel-half-falling-factorial-bridge-pruned.md")
+    # The prune this probe performs is written up as "Prune 1 (scope-a)" of the
+    # qinvolution/qHermite identification audit -- which lists this very script in
+    # its own reproduce block. The filename previously named here
+    # ("...-bessel-half-falling-factorial-bridge-pruned.md") was never created, so
+    # the witness carried a dead auditOnly pointer (fixed 2026-08-29, qou-u8oy).
+    w.set_audit_only(
+        "docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md"
+    )
     w.add_parameter("q_0", Q0)
     w.add_data("bridge_hypothesis",
                "lw(n−1) =? scale · |∏_{k=0}^{n-1} [1/2−k]_q|  (q-Bessel-½ falling factorial)")

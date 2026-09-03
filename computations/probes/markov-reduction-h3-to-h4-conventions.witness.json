@@ -1,0 +1,71 @@
+{
+  "engine": "hoefsmit-seminormal-mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-22T16:21:34.119033+00:00",
+  "commitSha": "0f28cc91531280697c2b4cef4362ed8f95cfa732",
+  "assertions": [
+    {
+      "name": "reduction_holds_convention_C",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "over-determination, 9 words"
+    },
+    {
+      "name": "reduction_holds_convention_D",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "over-determination, 9 words"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "markov-reduction-h3-to-h4-conventions",
+  "scriptFile": "markov_reduction_h3_to_h4_conventions.py",
+  "scriptHash": "e6aef8dc03b0",
+  "scriptCommitSha": "207cb6d5a58e54ec1d5da994eb3d37400597ddfb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/markov_reduction_h3_to_h4_conventions.py"
+    ],
+    "reproduce": "python3 -u computations/probes/markov_reduction_h3_to_h4_conventions.py"
+  },
+  "description": "Re-runs the Ind_{H3}^{H4} Markov-reduction over-determination test at 50 dps under BOTH Markov-parameter conventions. The probe MarkovTraceOnHecke.lean cites for keystone ingredient 2 uses convention C (excised 2026-08-15), computes in float64, and does not run as committed (two bootstrap-path bugs). This asks whether its CONCLUSION survives the swap. Bean qou-ze9n; scope-(a); nothing wired.",
+  "data": {
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946",
+    "worst_residuals": {
+      "C": {
+        "reduction": "1.33638e-51",
+        "restriction": "2.67276e-51"
+      },
+      "D": {
+        "reduction": "1.33638e-51",
+        "restriction": "2.67276e-51"
+      }
+    },
+    "verdict": "CONVENTION-ROBUST — the reduction holds under both. z is an input to the weight solve, so the C defect in the cited probe does not touch its conclusion."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "characters evaluated at the experimental pin per the 2026-08-07 directive; the question is about z, not the anchor"
+}

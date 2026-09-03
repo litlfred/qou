@@ -54,7 +54,16 @@ from mpmath import mp, mpf  # noqa: E402
 # Substrate q_0 at 50 dps
 import json
 Q_PIN = COMPUTE_DIR / "q-pinning-50-digit.witness.json"
-Q_0 = mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute; the owner authorisation recorded there covers
+# this sweep. A direct read of the anchor-defining witness computes at MUON
+# whatever the manifest or `QOU_Q0_ANCHOR` says — the two pins differ by
+# 11.54 ppb, the μ–p substrate tension itself. The upstream/path reference is
+# kept for provenance; it is no longer the source of this q₀.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q_0 = mpf(_Q50_PROTON)
 HBAR_Q = (Q_0 - mpf(1)) / Q_0
 B_SQ = (Q_0**4 + Q_0**2 + mpf(1)) / (Q_0**2 + mpf(1))**2  # b² = (q⁴+q²+1)/(q²+1)²
 
@@ -225,12 +234,30 @@ def main() -> None:
         "c_5_kh_hopf_plus_borromean_q0": float(sum_5),
         "c_5_residual": float(empirical_c5 - sum_5),
     })
+    # Was `computed=-2, expected=-2` — the literal −2 typed on both sides, so
+    # it passed without ever touching `kh_hopf_pos`. Any error in the tabulated
+    # Hopf polynomial (or in `empirical_c3`) left it green. Both sides now come
+    # from the run: `kh_at_q1['Hopf+']` is the tabulation evaluated at q=1,
+    # t=−1, and the expected side rebuilds the same number by the *other*
+    # route the module documents — unreduced = (q+q⁻¹)·reduced, with the
+    # (q+q⁻¹) factor read off this run's own unknot entry rather than typed as
+    # 2. Perturb either tabulation and the assertion fails.
+    #
+    # Magnitude, not signed value, and that is deliberate. The source string
+    # claimed "J_Hopf(q=1) = −2"; this module's tabulations are in the
+    # sign-free bracket normalisation (`kh_hopf_pos` = (q+1/q)(q+q⁵t²)), which
+    # at q=1, t=−1 gives +4 unreduced / +2 reduced, never −2. The sign lives in
+    # the Jones variable convention, which nothing here computes, so |c_3| is
+    # the part of that claim these numbers can actually falsify.
     w.add_assertion(
-        "c_3_match_at_q1",
-        computed=-2,
-        expected=-2,
-        tolerance=0,
-        source="J_Hopf(q=1) = -2 ≡ c_3 exactly",
+        "kh_hopf_at_q1_reproduces_abs_c_3",
+        computed=mp.nstr(kh_at_q1["Hopf+"], 30),
+        expected=mp.nstr(kh_at_q1["unknot"] * abs(empirical_c3), 30),
+        tolerance=1e-30,
+        source="unreduced Kh(Hopf+)(q=1, t=−1) = (q+q⁻¹)·Kh^red, and "
+               "Kh^red(Hopf+)(1,−1) = |c_3| = 2; the (q+q⁻¹) factor is this "
+               "run's Kh(unknot)(1,−1). Bracket normalisation is sign-free, so "
+               "the empirical c_3 = −2 is matched in magnitude only.",
     )
     w.save()
 

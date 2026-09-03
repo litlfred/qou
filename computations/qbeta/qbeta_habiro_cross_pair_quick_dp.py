@@ -104,19 +104,39 @@ def delta_factorize(left: dict[int, sp.Poly], right: dict[int, sp.Poly],
         habiro_sum += d.as_expr() * q_pochhammer(m)
     habiro_factored = sp.factor(habiro_sum)
 
-    # Check for cyclotomic factor (u-1)(u+1) = u^2 - 1
+    # ── Route A: polynomial long division by u²-1 in ℤ[u] ────────────
     cyclotomic_present = False
     if not habiro_sum.is_zero:
         quotient, remainder = sp.div(habiro_sum, u**2 - 1, u)
         cyclotomic_present = (remainder == 0)
 
+    # ── Route B (INDEPENDENT): factor theorem at the roots of u²-1 ───
+    # (u−1)(u+1) | S(u)  ⟺  S(1) = 0 AND S(−1) = 0.  This never divides
+    # anything: it evaluates S at the two roots.  It is a genuinely
+    # different derivation of the same divisibility fact from Route A's
+    # long division, so the two disagreeing is a real failure signal
+    # (a parsing/indexing bug in the Habiro sum shows up here).
+    s_at_plus_1 = sp.expand(habiro_sum).subs(u, 1)
+    s_at_minus_1 = sp.expand(habiro_sum).subs(u, -1)
+    cyclotomic_via_root_test = (s_at_plus_1 == 0 and s_at_minus_1 == 0)
+
     return {
         "pair_name": pair_name,
         "max_m": max_m,
         "per_m": per_m,
+        # Popped by main() before the dict reaches the witness — sympy
+        # Poly objects are not JSON-serialisable.
+        "_delta_polys": delta_polys,
         "cross_m_polynomial_gcd": cross_gcd_str,
         "habiro_sum_factored": str(habiro_factored),
         "cyclotomic_u2_minus_1_present": cyclotomic_present,
+        "root_test": {
+            "S_at_u_plus_1": str(s_at_plus_1),
+            "S_at_u_minus_1": str(s_at_minus_1),
+            "cyclotomic_via_root_test": cyclotomic_via_root_test,
+            "agrees_with_division_route": (
+                cyclotomic_via_root_test == cyclotomic_present),
+        },
     }
 
 
@@ -142,6 +162,7 @@ def main() -> int:
 
     # Reference: n - p (already in prior audit)
     np_result = delta_factorize(n, p, "n - p (reference)")
+    np_polys = np_result.pop("_delta_polys")
     builder.add_data("n_minus_p", np_result)
     print(f"\n=== n - p ===")
     print(f"  Cyclotomic (u²-1) present: {np_result['cyclotomic_u2_minus_1_present']}")
@@ -149,6 +170,7 @@ def main() -> int:
 
     # New: D - p
     dp_result = delta_factorize(d, p, "D - p (atomic-step, Z-fixed)")
+    dp_polys = dp_result.pop("_delta_polys")
     builder.add_data("d_minus_p", dp_result)
     print(f"\n=== D - p ===")
     print(f"  Cyclotomic (u²-1) present: {dp_result['cyclotomic_u2_minus_1_present']}")
@@ -156,6 +178,7 @@ def main() -> int:
 
     # New: D - n
     dn_result = delta_factorize(d, n, "D - n (atomic-step, N-fixed)")
+    dn_polys = dn_result.pop("_delta_polys")
     builder.add_data("d_minus_n", dn_result)
     print(f"\n=== D - n ===")
     print(f"  Cyclotomic (u²-1) present: {dn_result['cyclotomic_u2_minus_1_present']}")
@@ -178,12 +201,77 @@ def main() -> int:
     builder.add_data("verdict", verdict)
     print(f"\n=== VERDICT: {verdict} ===")
 
+    # ── Assertion 1 — the Δa_m telescoping identity ───────────────────
+    # (D − p) − (D − n) = n − p termwise in ℤ[u], for every Habiro
+    # order m.  D cancels, so the two atomic-step deltas must rebuild
+    # the isospin delta exactly.
+    #   Route A: Δ_{n−p}(m) computed DIRECTLY from the n and p Habiro
+    #            coefficient tables parsed out of the upstream witness.
+    #   Route B: the same polynomial rebuilt as Δ_{D−p}(m) − Δ_{D−n}(m)
+    #            from the two independently-computed atomic-step deltas.
+    # A mis-indexed m, a bad `a_m` sympify, or wrong zero-padding at the
+    # ragged max_m boundary breaks Route B while leaving Route A intact.
+    n_orders = max(len(np_polys), len(dp_polys), len(dn_polys))
+    zero = sp.Poly(0, u)
+
+    def _at(polys, m):
+        return polys[m] if m < len(polys) else zero
+
+    telescoping_ok = sum(
+        1 for m in range(n_orders)
+        if ((_at(dp_polys, m) - _at(dn_polys, m)) - _at(np_polys, m)).is_zero
+    )
+    builder.add_data("telescoping_identity", {
+        "orders_checked": n_orders,
+        "orders_agreeing": telescoping_ok,
+        "identity": "(D-p)_m - (D-n)_m == (n-p)_m for all m",
+    })
+    print(f"\n  Telescoping (D-p)-(D-n) == (n-p): "
+          f"{telescoping_ok}/{n_orders} Habiro orders agree")
+
     builder.add_assertion(
-        "cross_pair_quick_dp_completed",
-        computed=1,
-        expected=1,
+        "delta_am_telescoping_identity_holds",
+        computed=telescoping_ok,
+        expected=n_orders,
         tolerance=0,
-        source="sympy.factor + sp.gcd on Δa_m for (n-p, D-p, D-n).",
+        unit="Habiro orders m",
+        source=(
+            "Route A: Δa_m(n−p) built directly from the n and p Habiro "
+            "coefficient tables in habiro-coefficients-atomic.witness.json. "
+            "Route B: the same Δa_m rebuilt as Δa_m(D−p) − Δa_m(D−n) from "
+            "the two atomic-step deltas, in which the deuteron cancels. "
+            "Expected = the number of Habiro orders spanned by the parsed "
+            "inputs (max_m + 1), rebuilt from the upstream tables."
+        ),
+    )
+
+    # ── Assertion 2 — divisibility verdict, two routes ────────────────
+    #   Route A: long division of the Habiro sum S(u) by u²−1 in ℤ[u];
+    #            the flag is (remainder == 0).
+    #   Route B: the factor theorem — (u−1)(u+1) | S(u) iff S(1) = 0 and
+    #            S(−1) = 0.  Evaluation at the roots, never a division.
+    # Non-vacuous here: the residues are large and unequal (see the
+    # root_test blocks in the witness), so the two routes are agreeing on
+    # a genuine NON-divisibility rather than both reading a trivial zero.
+    pair_results = [np_result, dp_result, dn_result]
+    routes_agree = sum(
+        1 for r in pair_results if r["root_test"]["agrees_with_division_route"]
+    )
+    print(f"  Divisibility route agreement (long division vs factor "
+          f"theorem): {routes_agree}/{len(pair_results)} pairs")
+
+    builder.add_assertion(
+        "cyclotomic_divisibility_two_routes_agree",
+        computed=routes_agree,
+        expected=len(pair_results),
+        tolerance=0,
+        unit="pairs",
+        source=(
+            "Route A: sp.div(S, u²−1) remainder-is-zero. Route B: factor "
+            "theorem, S(+1) == 0 and S(−1) == 0. Expected = the number of "
+            "pairs actually factorized (rebuilt from the pair list), so "
+            "adding a pair tightens the check rather than diluting it."
+        ),
     )
     builder.save()
     print(f"\n  ✓ Witness saved")

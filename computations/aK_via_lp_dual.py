@@ -58,7 +58,24 @@ set_compute_dps()
 
 # ── Canonical q_0 at 50 dps ──────────────────────────────────────
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute, and the owner authorisation recorded there
+# covers this sweep ("we want proton unless for an explicit reason ... fix
+# all, even if not visible").
+#
+# This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+# MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+# direct read of the anchor-defining witness computes at muon whatever the
+# configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+# tension itself.
+#
+# The upstream record is KEPT — that witness remains the canonical 3-CAL
+# (muon) pin document, it is simply no longer the source of this
+# computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q = mp.mpf(_Q50_PROTON)
 H = Q - mp.mpf(1) / Q
 
 
@@ -301,8 +318,12 @@ def main() -> int:
             R_val = mp.mpf(r["a_K_R_ratio"])
             w.add_assertion(
                 "a_K_R_proton_equals_1",
-                computed=mp.nstr(R_val, 30),
-                expected="1.000000000000000000000000000000",
+                # |R - 1| against 0. Comparing R to a 30-digit "1.000..."
+                # cancels in the float64 verdict (witness.py:830) at ~2.2e-16,
+                # so the 1e-30 bound could never be reached; the residual form
+                # can, because float64 carries 16 digits at any exponent.
+                computed=mp.nstr(abs(R_val - 1), 30),
+                expected="0",
                 tolerance=1e-30,
                 source="W_atom = W_free for free nucleon (R trivially 1)",
             )

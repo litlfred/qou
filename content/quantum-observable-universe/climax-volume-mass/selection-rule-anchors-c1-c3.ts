@@ -13,8 +13,8 @@ export default proposition({
     "lean",
   ],
   lean: {
-    ref: "qou:QOU.Mass.selection_rule_c3_eq_family_a",
-    validation: "not_checked",
+    ref: "qou:QOU.Mass.selection_rule_c3_anchor_derived",
+    validation: "validated",
   },
   uses: [],
 });

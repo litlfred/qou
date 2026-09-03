@@ -64,27 +64,63 @@ m_e = M_E_MEV
 FROB_N3 = m_e * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
 
 
+def _mpf_from_witness_value(key: str, val) -> "mp.mpf":
+    """Parse one Σ-table entry, refusing a JSON float.
+
+    `probe_term4_conventions` serialises with `mp.nstr(..., 50)`, i.e. a
+    STRING, so the 50 digits survive the round-trip. A JSON *number* in this
+    slot means the table was written at float64 and the precision is already
+    gone upstream — `mp.mpf(str(<float>))` would re-wrap that loss in an mpf
+    and hide it, which is the laundering pattern the precision gates flag.
+    Refuse instead, and say where to fix it.
+    """
+    if isinstance(val, str):
+        return mp.mpf(val)
+    raise TypeError(
+        f"probe-term4-conventions: {key} is {type(val).__name__}, not str — "
+        f"the table must be serialised as a decimal string (mp.nstr) or its "
+        f"precision is lost before it is read. Fix the producer, not here."
+    )
+
+
 def _load_sigma_3A_table():
     """Load Σ_{λ⊢3A} 1/dim_q(λ) values at q_0 from the per-3A probe witness.
 
     Per the per-3A correction (audit 2026-04-28b): the genuine algebraic
     Term 4 is m_e · Σ_{λ⊢3A} 1/dim_q(λ), NOT A · m_e · (2 + 1/[2]_q).
-    The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4."""
+    The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4.
+
+    **That witness has never existed in this repository and no producer in
+    the tree writes it** (measured 2026-08-26, bean `qou-nk3h`; the identical
+    loader in `unified_low_isotope_predictor.py` has the same problem). Both
+    swallowing paths below now warn instead of returning `{}` in silence.
+    The table is deliberately not reconstructed here — ten live `dim_q`
+    implementations exist with differing signatures, so building it is a
+    choice among conventions rather than a computation."""
     path = Path(__file__).parent / "probe-term4-conventions.witness.json"
     if not path.exists():
+        print(f"  \u26a0 term4: {path.name} not found — Sigma_(3A) table "
+              f"unavailable; the caller's fallback is in force (bean qou-nk3h)",
+              file=sys.stderr)
         return {}
     try:
         d = json.loads(path.read_text())
-        sigma = d["sigma_inv_dim_q_at_q0"]
+        # WitnessBuilder nests the payload under `data`; the pre-2026-08-26
+        # loader read only the top level, so it would have missed the table
+        # even had the witness existed. Top level kept as a fallback.
+        sigma = d.get("data", {}).get("sigma_inv_dim_q_at_q0") \
+            or d["sigma_inv_dim_q_at_q0"]
         out = {}
         # Map A → n=3A entry (covers all A whose key is present in witness).
         for key, val in sigma.items():
             if key.startswith("n="):
                 n = int(key.split("=")[1])
                 if n % 3 == 0:
-                    out[n // 3] = float(val)
+                    out[n // 3] = _mpf_from_witness_value(key, val)
         return out
-    except Exception:
+    except Exception as exc:
+        print(f"  \u26a0 term4: {path.name} unreadable ({exc!r}) — the "
+              f"caller's fallback is in force (bean qou-nk3h)", file=sys.stderr)
         return {}
 
 
@@ -268,9 +304,9 @@ if __name__ == "__main__":
     Q_cat = t1_n - t1_p
     E_0 = Q_NEUTRON_MEV / abs(Q_cat)
     print(f"[A=1 calibration]")
-    print(f"  |tr_M(p)| @ q_0 = {t1_p:.6e}")
-    print(f"  |tr_M(n)| @ q_0 = {t1_n:.6e}")
-    print(f"  E_0 = Q_β(n)={Q_NEUTRON_MEV:.6f} / |Q_cat| = {E_0:.6f} MeV/cat.unit")
+    print(f"  |tr_M(p)| @ q_0 = {float(t1_p):.6e}")
+    print(f"  |tr_M(n)| @ q_0 = {float(t1_n):.6e}")
+    print(f"  E_0 = Q_β(n)={float(Q_NEUTRON_MEV):.6f} / |Q_cat| = {float(E_0):.6f} MeV/cat.unit")
     print()
 
     # Isotope sweep (skip ⁴He for speed; use light_isotope_sweep results)
@@ -312,23 +348,23 @@ if __name__ == "__main__":
         B_term5 = r["term5_bw_chirality_binding"]
 
         print(f"  Term 2+3 (brane tower)               : B23 = "
-              f"{B_term23:8.4f} MeV  ({t23_status})")
+              f"{float(B_term23):8.4f} MeV  ({t23_status})")
         print(f"  Term 1 only (descended)              : B = "
-              f"{B_term1:8.4f} MeV "
-              f"({(B_term1-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+              f"{float(B_term1):8.4f} MeV "
+              f"({float((B_term1-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         print(f"  T1 + T2+3 + T4 per-vortex            : B = "
-              f"{B_term1_plus_frob_pv:8.4f} MeV "
-              f"({(B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+              f"{float(B_term1_plus_frob_pv):8.4f} MeV "
+              f"({float((B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         if B_term1_plus_frob_p3A is not None:
             print(f"  T1 + T2+3 + T4 per-3A (CANONICAL)    : B = "
-                  f"{B_term1_plus_frob_p3A:8.4f} MeV "
-                  f"({(B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+                  f"{float(B_term1_plus_frob_p3A):8.4f} MeV "
+                  f"({float((B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         if B_term5 is not None:
             print(f"  Term 5 only (paper BW+χ)             : B = "
-                  f"{B_term5:8.4f} MeV "
-                  f"({(B_term5-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+                  f"{float(B_term5):8.4f} MeV "
+                  f"({float((B_term5-B_AME[iso])/B_AME[iso]*100):+7.2f}%)")
         print(f"  B_AME                                : "
-              f"{B_AME[iso]:8.4f} MeV")
+              f"{float(B_AME[iso]):8.4f} MeV")
         print()
 
         err_p3A = (
@@ -373,11 +409,14 @@ if __name__ == "__main__":
         e1 = r['err_pct']['term1_only']
         e14_pv = r['err_pct']['term1_plus_term4_pervortex_legacy']
         e14_p3A = r['err_pct']['term1_plus_term4_per3A_canonical']
-        e14_p3A_str = f"{e14_p3A:>+15.2f}%" if e14_p3A is not None else "     (N/A)"
+        # float() casts here are DISPLAY ONLY (AGENTS.md permits it inside an
+        # f-string). These carry mpf since term 4 became exact.
+        e14_p3A_str = (f"{float(e14_p3A):>+15.2f}%"
+                       if e14_p3A is not None else "     (N/A)")
         t5 = r['err_pct']['term5_only']
-        t5_str = f"{t5:>+11.2f}%" if t5 is not None else "     (N/A)"
-        print(f"{iso:>5}  {e1:>+8.2f}%  "
-              f"{e14_pv:>+15.2f}%   {e14_p3A_str}  {t5_str}")
+        t5_str = f"{float(t5):>+11.2f}%" if t5 is not None else "     (N/A)"
+        print(f"{iso:>5}  {float(e1):>+8.2f}%  "
+              f"{float(e14_pv):>+15.2f}%   {e14_p3A_str}  {t5_str}")
 
     print()
     print("KEY FINDING: n/p discrepancy is NOT visible here because we")
@@ -435,5 +474,14 @@ if __name__ == "__main__":
         "rows": rows,
     }
     out = Path(__file__).parent / "mass-formula-6term.witness.json"
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

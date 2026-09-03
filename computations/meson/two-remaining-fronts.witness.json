@@ -1,0 +1,210 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-27T05:31:43.028413+00:00",
+  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "assertions": [
+    {
+      "name": "growing_cut_entropy_density_approaches_ln_two_q",
+      "computed": "0.68438946545444368804",
+      "expected": "0.6843894655",
+      "passed": true,
+      "tolerance": "1e-6",
+      "unit": "nats per strand",
+      "source": "S(768)/768; the limit is ln[2]_q = 0.6985808249"
+    },
+    {
+      "name": "control_density_is_bounded_by_ln_two_q",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "S(k)/k < ln[2]_q at k = 24, 96, 384, 768"
+    },
+    {
+      "name": "control_S3_reproduces_the_fixed_width_result",
+      "computed": "1.0359164340100518522",
+      "expected": "1.0359164340",
+      "passed": true,
+      "tolerance": "1e-9",
+      "unit": "nats",
+      "source": "cut_entropy_is_A_independent_probe reported 1.0359164340"
+    },
+    {
+      "name": "balanced_cut_ratio_is_not_constant",
+      "computed": "4.6335887002454121695",
+      "expected": "4.6338",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "max/min of E_0*S(k)/B_AME over 2H..16O"
+    },
+    {
+      "name": "ame_not_reachable_by_branch_reweighting",
+      "computed": "0.68271975402849274107",
+      "expected": "0.68272",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "ratio",
+      "source": "max_b tr_M(beta_b) / sqrt(B_AME); < 1 means unreachable"
+    },
+    {
+      "name": "objective_short_even_at_the_convex_maximum",
+      "computed": "0.46610626254072563034",
+      "expected": "0.46611",
+      "passed": true,
+      "tolerance": "1e-4",
+      "unit": "fraction of B_AME",
+      "source": "(max_b tr_M)^2 / B_AME"
+    },
+    {
+      "name": "control_branch_average_reproduces_committed_trace",
+      "computed": "1.8519996023265282971e-9",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-7",
+      "unit": "dimensionless",
+      "source": "sum_b w_b tr_M(beta_b) vs deuteron-real-sdp n_target (per_block_evaluation is float64)"
+    },
+    {
+      "name": "control_branch_count",
+      "computed": "32",
+      "expected": "32",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "atom-branch-convexity-bound deuteron branch count"
+    },
+    {
+      "name": "control_branch_traces_spread_above_the_atom",
+      "computed": "1.7703828551933305482",
+      "expected": "1.7704",
+      "passed": true,
+      "tolerance": "1e-3",
+      "unit": "ratio",
+      "source": "max_b tr_M / tr_M(atom); > 1 so the bound is not trivial"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 378,
+  "computation": "two-remaining-fronts",
+  "scriptFile": "two_remaining_fronts_probe.py",
+  "scriptHash": "831aea8ac664",
+  "scriptCommitSha": "44db2b6ef6ef789f56688ca7228c23d56012429f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/two_remaining_fronts_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/two_remaining_fronts_probe.py"
+  },
+  "description": "Works the two fronts Addendum 22's theorem did not touch. FRONT 1, a growing-width cut: genuinely extensive, S(k) = k ln[2]_q - c, a volume law -- so the escape is real, but the cut width per nucleon is a free parameter and the balanced choice undershoots ~2.1x with a non-constant ratio. FRONT 2, whether tr_M can be 2.59x larger: CLOSED scope (b) by the corpus's proved convexity bound -- max over the 32 deuteron branches is 1.018275 against a required 1.491498, and even at the convex maximum the objective is 2.15x short.",
+  "data": {
+    "front1_ln_two_q": "0.698580824894173876038362727441",
+    "front1_density": {
+      "24": "0.609284034994761209847367",
+      "96": "0.663147802289241412044213",
+      "384": "0.681078683919698281668533",
+      "768": "0.684389465454443688035424"
+    },
+    "front1_rows": [
+      {
+        "isotope": "2H",
+        "A": 2,
+        "k": 3,
+        "S_k": "1.0359164340100518522",
+        "E0_S_MeV": "4.3363268866965488291",
+        "B_AME_MeV": "2.2245662",
+        "ratio": "1.9492910063528560441"
+      },
+      {
+        "isotope": "3H",
+        "A": 3,
+        "k": 4,
+        "S_k": "1.6451463818656779645",
+        "E0_S_MeV": "6.8865520943810650851",
+        "B_AME_MeV": "8.4817962",
+        "ratio": "0.81192142937613439534"
+      },
+      {
+        "isotope": "3He",
+        "A": 3,
+        "k": 4,
+        "S_k": "1.6451463818656779645",
+        "E0_S_MeV": "6.8865520943810650851",
+        "B_AME_MeV": "7.71804132",
+        "ratio": "0.89226680822966429584"
+      },
+      {
+        "isotope": "4He",
+        "A": 4,
+        "k": 6,
+        "S_k": "2.8436868697438199896",
+        "E0_S_MeV": "11.903620239792836302",
+        "B_AME_MeV": "28.2956624",
+        "ratio": "0.4206871029035473756"
+      },
+      {
+        "isotope": "6Li",
+        "A": 6,
+        "k": 9,
+        "S_k": "4.7176183328673763882",
+        "E0_S_MeV": "19.747862420519192802",
+        "B_AME_MeV": "31.9939872",
+        "ratio": "0.61723667941328653159"
+      },
+      {
+        "isotope": "7Li",
+        "A": 7,
+        "k": 10,
+        "S_k": "5.3694687799500818187",
+        "E0_S_MeV": "22.476496243662569698",
+        "B_AME_MeV": "39.2450807",
+        "ratio": "0.57272136641733468772"
+      },
+      {
+        "isotope": "12C",
+        "A": 12,
+        "k": 18,
+        "S_k": "10.616494414817160278",
+        "E0_S_MeV": "44.44044776394452569",
+        "B_AME_MeV": "92.1617352",
+        "ratio": "0.48220064072691771205"
+      },
+      {
+        "isotope": "16O",
+        "A": 16,
+        "k": 24,
+        "S_k": "14.622816839874269036",
+        "E0_S_MeV": "61.210838770582312554",
+        "B_AME_MeV": "127.6193152",
+        "ratio": "0.4796361638099615234"
+      }
+    ],
+    "front1_asymptotic_MeV_per_nucleon": "4.38636947064284026106609",
+    "front2_branch_count": 32,
+    "front2_min_branch_trace": "0.291551623229710033290959",
+    "front2_max_branch_trace": "1.01827508269385235536552",
+    "front2_required_trace": "1.49149790479236007540919"
+  },
+  "caveats": [
+    "FRONT 1 is scope (a) and stays OPEN: the growing-width cut is a genuine volume law and Addendum 22's theorem does not reach it. But the cut width per nucleon is a FREE PARAMETER -- matching would fix w ~ 2.9, which nothing derives, and at w = 3 the cut is the whole system and the entropy is identically zero. No w is chosen here.",
+    "FRONT 2 is scope (b): the invariant is the convexity of the branch decomposition, proved in the corpus (atom-branch-convexity-bound) and not fitted. It excludes reaching AME by any redistribution over the branches of THIS braid word. It does NOT exclude a different word, and says nothing about whether one exists or is derivable.",
+    "Front 1 is exact mpmath from the closed form. Front 2's branch traces go through binding_k_solver.per_block_evaluation, which is float64, so the branch control reproduces the committed trace to ~1e-9 rather than exactly. The verdict turns on a 47 % gap, far above that resolution."
+  ]
+}

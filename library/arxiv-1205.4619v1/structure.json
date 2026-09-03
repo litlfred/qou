@@ -1,0 +1,176 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1205.4619v1",
+ "source": {
+  "file": "1205.4619v1.pdf",
+  "sha256": "8c76e30a52dca57172c7e85a53f7bf3a80d81a537d4ff204b11c852a2a374709",
+  "bytes": 239244,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1205.4619",
+   "version": "1",
+   "primary_class": "physics.gen-ph",
+   "stamp_date": "3 Apr 2012"
+  },
+  "doi": null,
+  "title": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
+  "authors_raw": "Pushpa(1), P. S. Bisht (1), Tianjun Li (2) and O. P. S. Negi (1.2)\u2217",
+  "title_lines": [
+   "Quaternion-Octonion Unitary Symmetries and Analogous",
+   "Casimir Operators"
+  ],
+  "abstract": "An attempt has been made to investigate the global SU (2) and SU (3) unitary \ufb02avor symmetries systematically in terms of quaternion and octonion respect ively. It is shown that these symmetries are suitably handled with quaternions and octonions in orde r to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimi r operators for SU (2) and SU (3) \ufb02avor symmetries are also constructed for the proper testing of th ese symmetries in terms of quaternions and octonions.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180502063419-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Quaternion Gauge Theory and Isospin",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quaternions and Dirac spinors",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Flavor SU(3)f and Octonions",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Generators and Casimir Invariants",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Casimir Operator for Quaternion SU(2) group",
+   "page": 11,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Split Octonions",
+   "page": 12,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Split Octonions and SU(3)f Symmetry",
+   "page": 13,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Casimir Operators for split Octonion SU(3) group",
+   "page": 15,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 16,
+   "source": "outline",
+   "number": "10"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 4088,
+   "n_words": 672
+  },
+  {
+   "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
+   "number": "2",
+   "title": "Quaternion Gauge Theory and Isospin",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 5369,
+   "n_words": 1119
+  },
+  {
+   "id": "sec-002-3-quaternions-and-dirac-spinors",
+   "number": "3",
+   "title": "Quaternions and Dirac spinors",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5895,
+   "n_words": 1253
+  },
+  {
+   "id": "sec-003-5-generators-and-casimir-invariants",
+   "number": "5",
+   "title": "Generators and Casimir Invariants",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6764,
+   "n_words": 1271
+  },
+  {
+   "id": "sec-004-7-split-octonions",
+   "number": "7",
+   "title": "Split Octonions",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 6585,
+   "n_words": 1374
+  },
+  {
+   "id": "sec-005-10-conclusion",
+   "number": "10",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 5801,
+   "n_words": 942
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 6,
+  "chars_total": 34502
+ }
+}

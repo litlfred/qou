@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:40:21.876873+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T10:24:25.746212+00:00",
+  "commitSha": "d8cdeb5f5d0ee218277c97986eeb4c8f37162ca4",
   "assertions": [
     {
       "name": "cusp_coefficients_exact",
@@ -13,26 +13,26 @@
     },
     {
       "name": "cusp_form_matches_eta_product_both_pins",
-      "computed": 2.5015e-119,
+      "computed": "2.5015e-119",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-60,
+      "tolerance": "1e-60",
       "source": "t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at dps 120, both q0 pins — the nome dictionary is exponentially cusp-suppressed at theorem level."
     },
     {
       "name": "fricke_fixed_point_exact_value",
-      "computed": 1.448908652612274e-70,
+      "computed": "1.44890865261227397880145908654204668490920499170226211033321838238968e-70",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125)."
     },
     {
       "name": "w5_circle_family_excluded",
-      "computed": 4.9842457649862225e-68,
+      "computed": "4.9842457649862224870770192577046405960876651714557816595462712354205e-68",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "||t5|^2 - 125| on the bar<->Fricke-equivariant circle family (both pins) — |t5| = 5*sqrt5 != 10 excludes every parametrization of the W5-fixed circle (proved invariant)."
     },
     {
@@ -44,18 +44,20 @@
     },
     {
       "name": "kq_exactly_5_torsion",
-      "computed": "5K = (4,-4,-6,1) + tau_B*(1,-2,-2,1); k=1..4 non-lattice",
-      "expected": "5K = (4,-4,-6,1) + tau_B*(1,-2,-2,1); k=1..4 non-lattice",
+      "computed": 15,
+      "expected": 15,
       "passed": true,
-      "source": "Exact sympy, symbolic in Im(tau0): K_Q (BN12 Thm 3) is exactly 5-torsion, sharpening Lemma 1's 2N = 10 bound; SNF(M-Id) = Diag(1,...,1,5,5) re-derived from printed M (order 5, Sp(8,Z))."
+      "tolerance": 0,
+      "unit": "checks",
+      "source": "All 15 exact-sympy checks on the printed BN12/BDH22 spin data hold: M order 5 and symplectic, SNF(M-Id) = Diag(1,...,1,5,5), M_RR det 125 with spectrum {5,5,5,1} and 5*M_RR^-1 integral, v = (1,-2,-2,1) a 5-eigenvector, 5K_Q = (4,-4,-6,1) + tau_B*v, and k*K_Q NOT in the lattice for k = 1,2,3,4 -- which is the sharpening of BN12 Lemma 1's 2N = 10 bound to EXACTLY 5-torsion. Each check's outcome is in `spin_data_checks`. These were 12 bare `assert` statements (one looped over k = 1..4, hence 15 checks), which ABORT and leave nothing in the witness; the assertion here was a hardcoded string compared against itself and passed regardless (bean qou-26f2)."
     }
   ],
   "allPassed": true,
-  "durationMs": 3175,
+  "durationMs": 1661,
   "computation": "tau-dictionary-fricke-spin-probe",
   "scriptFile": "tau_dictionary_fricke_spin_probe.py",
-  "scriptHash": "57fc9dd50af7",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "eefa3ae51964",
+  "scriptCommitSha": "ccd1272b0edcdf2fc45ca755ca73ff96339069e3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +72,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "4d25408e46482f36"
   },
   "invocation": {
     "argv": [
@@ -366,7 +368,25 @@
     "q0_pins": {
       "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
       "proton": "1.1099785827513808075916690956107688798744991218736"
-    }
+    },
+    "spin_data_checks": {
+      "M_is_order_5": true,
+      "M_is_symplectic": true,
+      "snf_M_minus_Id_is_diag_1x6_5_5": true,
+      "MRR_det_is_125": true,
+      "MRR_spectrum_is_5_5_5_1": true,
+      "five_MRR_inverse_is_integral": true,
+      "v_1m2m21_is_5_eigenvector_of_MRR": true,
+      "5K_lattice_part_is_4_m4_m6_1": true,
+      "kK_not_in_lattice_k1": true,
+      "kK_not_in_lattice_k2": true,
+      "kK_not_in_lattice_k3": true,
+      "kK_not_in_lattice_k4": true,
+      "consistency_m_is_integral": true,
+      "consistency_n_is_integral": true,
+      "consistency_m_and_n_values": true
+    },
+    "spin_data_checks_failed": []
   },
   "caveats": [
     "Scope-(a) throughout: every FAIL refutes the stated map only, never an ingredient. The two (b)-type exclusions (pure-imaginary dictionaries; the W5-fixed-circle family) cite proved invariants (sign positivity of the real-nome eta-product; |t5| = 5*sqrt5 on the Fricke-fixed circle) per AGENTS.md 'Before declaring refuted'. Candidates were enumerated from bar/Fricke/half-period structure only, never adjusted toward -10. The worldline-spin <-> Bring-spin-structure identification remains a framework hypothesis; the tau-functor (B2) remains open."

@@ -13,7 +13,7 @@ The pentagon-identity sites (predicted-spectra/cl2-pentagon-and-faddeev-partial.
 - p. ~10, eqns for S(w) — S(u)S(v) = S(u+v) for a Weyl pair uv = q^2 vu; the pentagon form of the same relation is the quantum/q-analogue of the classical dilogarithm pentagon.
   Use here: This is the statement the lifting-and-descent quantum-dilogarithm Lean file and the pentagon/associator files actually need; it is present here, so those Ref lines are substantively correct even though the DOIs attached to them are not.
 
-Source: `library/faddeev1994.pdf` (`faddeev1994`)
+Source: `faddeev1994` (bib key; PDF not committed to this repo)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

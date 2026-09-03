@@ -231,7 +231,7 @@ def main() -> int:
         f"(resid {mp.nstr(resA, 3)}), tau_B^fund = -1/2 + {mp.nstr(tB, 30)}i "
         f"(resid {mp.nstr(resB, 3)})",
         computed=[float(resA), float(resB)], expected=0.0,
-        tolerance=1e-45)
+        tolerance="1e-45")
 
     # ---- W3: AGM periods from the Q-models (no period-matrix input) --------
     tauA_agm, errA = periods_from_model(c4A, c6A, J_A)
@@ -248,7 +248,7 @@ def main() -> int:
         f"Twist-independent; NO Braden-Northover period matrix consumed",
         computed=[float(abs(tauA_agm - tauA_inv)),
                   float(abs(tauB_agm - tauB_inv))],
-        expected=0.0, tolerance=1e-45)
+        expected=0.0, tolerance="1e-45")
 
     # ---- W4b: recover tau0 at 50 dps via the exact SL2(Z) word -------------
     # Reduction word of the literature tau0: gamma' = [[1,1],[-2,-1]] maps
@@ -264,8 +264,8 @@ def main() -> int:
         f"corpus literature -0.5+0.186676i to the quoted 6 digits "
         f"(|diff| = {mp.nstr(abs(tau0_rec - TAU0_LIT), 3)}); Re(tau0) = -1/2 "
         f"exactly by the SL2(Z) word structure",
-        computed=float(abs(tau0_rec - TAU0_LIT)), expected=0.0,
-        tolerance=2e-6)
+        computed=abs(tau0_rec - TAU0_LIT), expected=0.0,
+        tolerance="2e-6")
 
     # ---- W5: X0(5) + the (1,5,5,5) gate, self-certified ---------------------
     five_iso = abs(reduce_fund(5 * tau0_rec) - tauB_inv)
@@ -279,7 +279,7 @@ def main() -> int:
         f"CONFIRMED); Im ratio Im(tau_B^fund)/Im(tau0_rec) = 4*t_A*t_B = "
         f"{mp.nstr(gate, 30)} — the (1,5,5,5) gate's ratio-5 certified at "
         f"50 dps INDEPENDENTLY of the Braden-Northover normalization",
-        computed=float(gate_dev), expected=0.0, tolerance=1e-45)
+        computed=gate_dev, expected=0.0, tolerance="1e-45")
 
     # ---- W6/W7: the honest tau-scale finding + the deg^2=25 observation ----
     here = os.path.dirname(os.path.abspath(__file__))
@@ -306,7 +306,7 @@ def main() -> int:
         f"carrying per route C's own refutation (entry-[0,0]=1 convention); "
         f"(b) observation, not derivation. Residual 1.1e-5 reported as-is, "
         f"not tuned",
-        computed=float(rel_dev_25), expected=0.0, tolerance=5e-5)
+        computed=rel_dev_25, expected=0.0, tolerance="5e-5")
 
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
@@ -411,7 +411,22 @@ def main() -> int:
     }
     out = os.path.join(here, "alpha-em-b2-cm-weierstrass-scale.witness.json")
     with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        witness.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            witness, script_path=__file__, engine=None, q0_anchor=False)
+        # `default=str` is what lets an mpf reach the file at full precision;
+        # without it this hand-rolled dump raises "Object of type mpf is not
+        # JSON serializable" and the producer is forced to float() its results
+        # at the assertion, throwing the digits away. This is the same
+        # serialization the canonical WitnessBuilder path uses
+        # (qou_substrate/witness.py).
+        json.dump(witness, f, indent=2, default=str)
     print("witness ->", out)
     return 0 if all_passed else 1
 

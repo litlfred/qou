@@ -93,7 +93,7 @@ def main() -> int:
         .add_data("per_n_results", results)
         .add_assertion(
             name="im_li3_zeta_n_closed_form_all_n_1_to_12",
-            computed=float(max_residue),
+            computed=max_residue,
             expected=0.0,
             tolerance=1e-40,
             unit=(

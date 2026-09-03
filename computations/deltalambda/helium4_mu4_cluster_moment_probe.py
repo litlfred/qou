@@ -82,6 +82,10 @@ from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
 q0f = float(Q0)
@@ -141,7 +145,7 @@ def main() -> int:
     # ---- flavour templates DERIVED from the word itself ---------------------
     d_by_gen = {g: float(ifaces[g][1]) for g in sorted(ifaces)}
     pn_d = min((d for d in d_by_gen.values() if d != 0.0),
-               key=lambda d: abs(abs(d) - H / 2))
+               key=lambda d: abs(abs(d) - abs(_pn_d(H))))
     print(f"      adjacent templates {[(g, round(d, 6)) for g, d in d_by_gen.items()]}")
     print(f"      ⇒ ordering (p,p,n,n); p–n template d = {pn_d:.6f}; "
           f"every non-adjacent bond here is p–n")

@@ -1,0 +1,31 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0807.2679v1",
+ "source_sha256": "69ef10f8e70fc6f6",
+ "brief": "A cabling formula for the colored Jones polynomial Roland van der Veen — We prove an explicit cabling formula for the colored Jones po lynomial.",
+ "extended": "**A cabling formula for the colored Jones polynomial Roland van der Veen**\n\n*November 18, 2021*\n\n12 pp, 2 sections.\n\n**Abstract.** We prove an explicit cabling formula for the colored Jones po lynomial. As an application we prove the volume conjecture for all zero vo lume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.\n\n**Outline.** Introduction; Proof of the cabling formula",
+ "tokens": {
+  "brief": 36,
+  "extended": 111
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-proof-of-the-cabling-formula",
+   "title": "Proof of the cabling formula",
+   "pages": "4-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

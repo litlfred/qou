@@ -1,0 +1,874 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-25T23:32:05.198645+00:00",
+  "commitSha": "d79217f4407bc7a95f601e9f0f89b9886a5aeb12",
+  "assertions": [
+    {
+      "name": "reconstruction_exact_proton",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "p_in_u_matches_committed_proton",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "denom_matches_committed_proton",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "all_a_m_match_committed_proton",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "9 coefficients"
+    },
+    {
+      "name": "reconstruction_exact_neutron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "p_in_u_matches_committed_neutron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "denom_matches_committed_neutron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "all_a_m_match_committed_neutron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "9 coefficients"
+    },
+    {
+      "name": "reconstruction_exact_deuteron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "p_in_u_matches_committed_deuteron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "denom_matches_committed_deuteron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "habiro-coefficients-atomic.witness.json"
+    },
+    {
+      "name": "all_a_m_match_committed_deuteron",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "14 coefficients"
+    },
+    {
+      "name": "reconstruction_exact_helium-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "reconstruction_exact_tritium",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "reconstruction_exact_helium-4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "routes_agree_symbolically_proton",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "peel - partition_sum, cancelled"
+    },
+    {
+      "name": "routes_agree_symbolically_deuteron",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "peel - partition_sum, cancelled"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 104495,
+  "computation": "habiro-coefficients-via-peel",
+  "scriptFile": "habiro_coefficients_via_peel.py",
+  "scriptHash": "73bb9c6de39e",
+  "scriptCommitSha": "2ce4cfb58c907b9c5ea16a4aa8db885d4e739b36",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "be4a4848bac0c6b9"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_coefficients_via_peel.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_coefficients_via_peel.py"
+  },
+  "description": "Atomic Habiro cyclotomic coefficients for A=1..4 (through helium-4) obtained via markov_peel.tr_M_atomic instead of the Wedderburn partition sum. The partition route was measured at ~18.1 days for A=3; this one does A=3 in seconds and A=4 in under a minute. Gated on exact reproduction of every committed A<=2 value.",
+  "contentBlock": "prop:markov-pair-z2",
+  "parameters": {
+    "max_a": 4
+  },
+  "data": {
+    "results": {
+      "proton": {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "tr_M_in_q": "(q**22 + q**20 + 2*q**18 + 2*q**16 + 3*q**14 + 2*q**12 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**13 + 8*q**11 + 4*q**9)",
+        "p_in_u": "u**44 + u**40 + 2*u**36 + 2*u**32 + 3*u**28 + 2*u**24 + u**20 - u**16 - u**8 - u**4 - 1",
+        "shift": 0,
+        "denom_in_u": "4*u**26 + 8*u**22 + 4*u**18",
+        "denom_factored": "4*u**18*(u**4 + 1)**2",
+        "deg_p_u": 44,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "8",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-172*u - 172",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "865*u**2 + 922*u + 977",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-1918*u**3 - 2135*u**2 - 2323*u - 2566",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "2171*u**4 + 2474*u**3 + 2831*u**2 + 3204*u + 3635",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-1273*u**5 - 1504*u**4 - 1807*u**3 - 2118*u**2 - 2517*u - 2928",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "356*u**6 + 457*u**5 + 568*u**4 + 717*u**3 + 880*u**2 + 1093*u + 1329",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-38*u**7 - 55*u**6 - 73*u**5 - 104*u**4 - 134*u**3 - 182*u**2 - 234*u - 313",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "u**8 + u**7 + 2*u**6 + 3*u**5 + 6*u**4 + 8*u**3 + 13*u**2 + 18*u + 29",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 198,
+        "elapsed_cancel_ms": 31
+      },
+      "neutron": {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "tr_M_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
+        "p_in_u": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+        "shift": 0,
+        "denom_in_u": "4*u**18",
+        "denom_factored": "4*u**18",
+        "deg_p_u": 36,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "2",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-34*u - 34",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "131*u**2 + 142*u + 153",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-239*u**3 - 272*u**2 - 299*u - 337",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "228*u**4 + 264*u**3 + 309*u**2 + 354*u + 410",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-112*u**5 - 134*u**4 - 165*u**3 - 197*u**2 - 239*u - 283",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "23*u**6 + 31*u**5 + 40*u**4 + 52*u**3 + 66*u**2 + 85*u + 106",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-u**7 - 2*u**6 - 3*u**5 - 4*u**4 - 6*u**3 - 9*u**2 - 12*u - 19",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "1",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 4,
+        "elapsed_cancel_ms": 20
+      },
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "tr_M_in_q": "(q**50 - 2*q**49 + 7*q**48 + q**46 - 2*q**45 + 25*q**44 + 2*q**42 - 4*q**41 + 62*q**40 - 2*q**38 + 4*q**37 + 93*q**36 + 2*q**35 - 8*q**34 + 2*q**33 + 111*q**32 + 4*q**31 - 37*q**30 + 10*q**29 + 89*q**28 + 4*q**27 - 78*q**26 - 4*q**25 + 66*q**24 - 8*q**23 - 110*q**22 + 41*q**20 - 10*q**19 - 88*q**18 - 6*q**17 + 33*q**16 - 50*q**14 + 4*q**13 + 26*q**12 + 4*q**11 - 14*q**10 + 16*q**8 + 4*q**7 - 2*q**6 + 6*q**4 + q**2 - 2*q + 1)/(192*q**29 + 576*q**27 + 576*q**25 + 192*q**23)",
+        "p_in_u": "u**100 - 2*u**98 + 7*u**96 + u**92 - 2*u**90 + 25*u**88 + 2*u**84 - 4*u**82 + 62*u**80 - 2*u**76 + 4*u**74 + 93*u**72 + 2*u**70 - 8*u**68 + 2*u**66 + 111*u**64 + 4*u**62 - 37*u**60 + 10*u**58 + 89*u**56 + 4*u**54 - 78*u**52 - 4*u**50 + 66*u**48 - 8*u**46 - 110*u**44 + 41*u**40 - 10*u**38 - 88*u**36 - 6*u**34 + 33*u**32 - 50*u**28 + 4*u**26 + 26*u**24 + 4*u**22 - 14*u**20 + 16*u**16 + 4*u**14 - 2*u**12 + 6*u**8 + u**4 - 2*u**2 + 1",
+        "shift": 0,
+        "denom_in_u": "192*u**58 + 576*u**54 + 576*u**50 + 192*u**46",
+        "denom_factored": "192*u**46*(u**4 + 1)**3",
+        "deg_p_u": 100,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "192",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-8544*u - 8544",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "111443*u**2 + 114293*u + 117080",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-655879*u**3 - 683754*u**2 - 710207*u - 739447",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "2089133*u**4 + 2209456*u**3 + 2335901*u**2 + 2466525*u + 2603529",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-3950424*u**5 - 4247785*u**4 - 4569085*u**3 - 4903225*u**2 - 5263265*u - 5637472",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "4646264*u**6 + 5093119*u**5 + 5572931*u**4 + 6093323*u**3 + 6651099*u**2 + 7254437*u + 7900073",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-3454106*u**7 - 3865423*u**6 - 4312527*u**5 - 4810976*u**4 - 5351559*u**3 - 5951902*u**2 - 6602380*u - 7322003",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "1604571*u**8 + 1835161*u**7 + 2097431*u**6 + 2389989*u**5 + 2721378*u**4 + 3089970*u**3 + 3505504*u**2 + 3966828*u + 4484907",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 9,
+            "a_m": "-445163*u**9 - 522987*u**8 - 615273*u**7 - 719528*u**6 - 842230*u**5 - 980659*u**4 - 1142617*u**3 - 1324859*u**2 - 1536689*u - 1774678",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 10,
+            "a_m": "66795*u**10 + 81980*u**9 + 99488*u**8 + 121114*u**7 + 146178*u**6 + 176706*u**5 + 212013*u**4 + 254691*u**3 + 303939*u**2 + 363056*u + 431043",
+            "deg_a_m": 10,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 11,
+            "a_m": "-4446*u**11 - 5835*u**10 - 7402*u**9 - 9559*u**8 - 12053*u**7 - 15461*u**6 - 19308*u**5 - 24409*u**4 - 30334*u**3 - 38011*u**2 - 46847*u - 58137",
+            "deg_a_m": 11,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 12,
+            "a_m": "75*u**12 + 102*u**11 + 173*u**10 + 225*u**9 + 325*u**8 + 440*u**7 + 625*u**6 + 826*u**5 + 1130*u**4 + 1482*u**3 + 2047*u**2 + 2638*u + 3508",
+            "deg_a_m": 12,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 13,
+            "a_m": "-u**9 - u**8 - u**6 - 8*u**5 - 8*u**4 - 15*u**3 - 22*u**2 - 36*u - 50",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 260,
+        "elapsed_cancel_ms": 617
+      },
+      "helium-3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "tr_M_in_q": "(q**72 - 2*q**71 + 8*q**70 - 2*q**69 + 10*q**68 - 6*q**67 + 42*q**66 - 6*q**65 + 46*q**64 - 14*q**63 + 139*q**62 - 12*q**61 + 132*q**60 - 12*q**59 + 302*q**58 - 4*q**57 + 255*q**56 - 2*q**55 + 498*q**54 + 14*q**53 + 331*q**52 + 32*q**51 + 584*q**50 + 48*q**49 + 224*q**48 + 44*q**47 + 476*q**46 + 36*q**45 - 101*q**44 + 34*q**43 + 157*q**42 - 492*q**40 - 36*q**39 - 108*q**38 - 72*q**37 - 672*q**36 - 60*q**35 - 153*q**34 - 54*q**33 - 543*q**32 - 36*q**31 + 54*q**30 - 12*q**29 - 252*q**28 + 36*q**27 + 229*q**26 + 46*q**25 - 35*q**24 + 36*q**23 + 263*q**22 + 26*q**21 + 15*q**20 + 16*q**19 + 153*q**18 + 2*q**17 - 10*q**16 - 18*q**15 + 51*q**14 - 12*q**13 - 31*q**12 - 10*q**11 - 2*q**9 - 21*q**8 - 4*q**7 - 5*q**6 + 2*q**5 - 8*q**4 + 2*q**3 - 2*q**2 + 2*q - 1)/(768*q**41 + 4608*q**39 + 11520*q**37 + 15360*q**35 + 11520*q**33 + 4608*q**31 + 768*q**29)",
+        "p_in_u": "u**144 - 2*u**142 + 8*u**140 - 2*u**138 + 10*u**136 - 6*u**134 + 42*u**132 - 6*u**130 + 46*u**128 - 14*u**126 + 139*u**124 - 12*u**122 + 132*u**120 - 12*u**118 + 302*u**116 - 4*u**114 + 255*u**112 - 2*u**110 + 498*u**108 + 14*u**106 + 331*u**104 + 32*u**102 + 584*u**100 + 48*u**98 + 224*u**96 + 44*u**94 + 476*u**92 + 36*u**90 - 101*u**88 + 34*u**86 + 157*u**84 - 492*u**80 - 36*u**78 - 108*u**76 - 72*u**74 - 672*u**72 - 60*u**70 - 153*u**68 - 54*u**66 - 543*u**64 - 36*u**62 + 54*u**60 - 12*u**58 - 252*u**56 + 36*u**54 + 229*u**52 + 46*u**50 - 35*u**48 + 36*u**46 + 263*u**44 + 26*u**42 + 15*u**40 + 16*u**38 + 153*u**36 + 2*u**34 - 10*u**32 - 18*u**30 + 51*u**28 - 12*u**26 - 31*u**24 - 10*u**22 - 2*u**18 - 21*u**16 - 4*u**14 - 5*u**12 + 2*u**10 - 8*u**8 + 2*u**6 - 2*u**4 + 2*u**2 - 1",
+        "shift": 0,
+        "denom_in_u": "768*u**82 + 4608*u**78 + 11520*u**74 + 15360*u**70 + 11520*u**66 + 4608*u**62 + 768*u**58",
+        "denom_factored": "768*u**58*(u**4 + 1)**6",
+        "deg_p_u": 144,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "1536",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-101376*u - 101376",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "2037163*u**2 + 2070952*u + 2104237",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-18888918*u**3 - 19398337*u**2 - 19890857*u - 20416662",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "96408164*u**4 + 99985658*u**3 + 103671598*u**2 + 107442827*u + 111325562",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-298744072*u**5 - 313308244*u**4 - 328544403*u**3 - 344237947*u**2 - 360638583*u - 377523927",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "595387971*u**6 + 632136565*u**5 + 670689894*u**4 + 711229282*u**3 + 753719941*u**2 + 798351450*u + 845089594",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-788126378*u**7 - 847782829*u**6 - 911055222*u**5 - 978570080*u**4 - 1050097271*u**3 - 1126307979*u**2 - 1206965741*u - 1292784229",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "702263312*u**8 + 766077888*u**7 + 835046173*u**6 + 909325853*u**5 + 989467853*u**4 + 1075654565*u**3 + 1168489127*u**2 + 1268185928*u + 1375404790",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 9,
+            "a_m": "-419977211*u**9 - 465399942*u**8 - 515370430*u**7 - 569914191*u**6 - 629783172*u**5 - 695025829*u**4 - 766484757*u**3 - 844233512*u**2 - 929214249*u - 1021532610",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 10,
+            "a_m": "165245353*u**10 + 186546609*u**9 + 210251342*u**8 + 236741566*u**7 + 266160087*u**6 + 298949811*u**5 + 335289765*u**4 + 375692316*u**3 + 420382140*u**2 + 469949044*u + 524669200",
+            "deg_a_m": 10,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 11,
+            "a_m": "-41056202*u**11 - 47386038*u**10 - 54542794*u**9 - 62746206*u**8 - 72004457*u**7 - 82577320*u**6 - 94482313*u**5 - 108030438*u**4 - 123256365*u**3 - 140526834*u**2 - 159893584*u - 181791885",
+            "deg_a_m": 11,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 12,
+            "a_m": "5985117*u**12 + 7088471*u**11 + 8394930*u**10 + 9903037*u**9 + 11678065*u**8 + 13723565*u**7 + 16120352*u**6 + 18874476*u**5 + 22085384*u**4 + 25767914*u**3 + 30043285*u**2 + 34934065*u + 40587789",
+            "deg_a_m": 12,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 13,
+            "a_m": "-446701*u**13 - 547683*u**12 - 674670*u**11 - 822951*u**10 - 1008012*u**9 - 1223313*u**8 - 1488884*u**7 - 1798486*u**6 - 2177397*u**5 - 2618031*u**4 - 3152676*u**3 - 3774033*u**2 - 4523303*u - 5391940",
+            "deg_a_m": 13,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 14,
+            "a_m": "12698*u**14 + 16810*u**13 + 21614*u**12 + 28504*u**11 + 36238*u**10 + 46914*u**9 + 59454*u**8 + 76426*u**7 + 96050*u**6 + 122016*u**5 + 152620*u**4 + 192639*u**3 + 239244*u**2 + 299151*u + 369775",
+            "deg_a_m": 14,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 15,
+            "a_m": "-60*u**15 - 90*u**14 - 126*u**13 - 227*u**12 - 293*u**11 - 431*u**10 - 590*u**9 - 891*u**8 - 1172*u**7 - 1645*u**6 - 2192*u**5 - 3149*u**4 - 4087*u**3 - 5567*u**2 - 7284*u - 9901",
+            "deg_a_m": 15,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 16,
+            "a_m": "u**8 + u**7 + u**5 + 9*u**4 + 9*u**3 + 15*u**2 + 23*u + 46",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 1933,
+        "elapsed_cancel_ms": 2209
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "tr_M_in_q": "(q**68 - 2*q**67 + 6*q**66 + 2*q**65 - 4*q**64 - 6*q**63 + 36*q**62 + 6*q**61 - 31*q**60 - 16*q**59 + 133*q**58 + 14*q**57 - 124*q**56 - 18*q**55 + 331*q**54 + 16*q**53 - 306*q**52 - 16*q**51 + 630*q**50 + 16*q**49 - 594*q**48 + 8*q**47 + 948*q**46 + 4*q**45 - 927*q**44 + 14*q**43 + 1207*q**42 - 4*q**41 - 1265*q**40 + 26*q**39 + 1350*q**38 - 26*q**37 - 1494*q**36 + 14*q**35 + 1381*q**34 - 40*q**33 - 1539*q**32 + 22*q**31 + 1292*q**30 - 50*q**29 - 1310*q**28 + 18*q**27 + 1065*q**26 - 12*q**25 - 919*q**24 + 14*q**23 + 748*q**22 + 14*q**21 - 520*q**20 - 6*q**19 + 421*q**18 + 28*q**17 - 244*q**16 - 20*q**15 + 182*q**14 + 16*q**13 - 94*q**12 - 20*q**11 + 53*q**10 + 10*q**9 - 30*q**8 - 10*q**7 + 9*q**6 + 4*q**5 - 7*q**4 - 2*q**3 + 2*q - 1)/(768*q**41 + 3072*q**39 + 4608*q**37 + 3072*q**35 + 768*q**33)",
+        "p_in_u": "u**136 - 2*u**134 + 6*u**132 + 2*u**130 - 4*u**128 - 6*u**126 + 36*u**124 + 6*u**122 - 31*u**120 - 16*u**118 + 133*u**116 + 14*u**114 - 124*u**112 - 18*u**110 + 331*u**108 + 16*u**106 - 306*u**104 - 16*u**102 + 630*u**100 + 16*u**98 - 594*u**96 + 8*u**94 + 948*u**92 + 4*u**90 - 927*u**88 + 14*u**86 + 1207*u**84 - 4*u**82 - 1265*u**80 + 26*u**78 + 1350*u**76 - 26*u**74 - 1494*u**72 + 14*u**70 + 1381*u**68 - 40*u**66 - 1539*u**64 + 22*u**62 + 1292*u**60 - 50*u**58 - 1310*u**56 + 18*u**54 + 1065*u**52 - 12*u**50 - 919*u**48 + 14*u**46 + 748*u**44 + 14*u**42 - 520*u**40 - 6*u**38 + 421*u**36 + 28*u**34 - 244*u**32 - 20*u**30 + 182*u**28 + 16*u**26 - 94*u**24 - 20*u**22 + 53*u**20 + 10*u**18 - 30*u**16 - 10*u**14 + 9*u**12 + 4*u**10 - 7*u**8 - 2*u**6 + 2*u**2 - 1",
+        "shift": 0,
+        "denom_in_u": "768*u**82 + 3072*u**78 + 4608*u**74 + 3072*u**70 + 768*u**66",
+        "denom_factored": "768*u**66*(u**4 + 1)**4",
+        "deg_p_u": 136,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "384",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-23616*u - 23616",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "441643*u**2 + 449512*u + 457261",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-3810102*u**3 - 3920545*u**2 - 4027049*u - 4141302",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "18090499*u**4 + 18809141*u**3 + 19551441*u**2 + 20311900*u + 21096748",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-52129774*u**5 - 54842555*u**4 - 57691395*u**3 - 60630142*u**2 - 63712525*u - 66890669",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "96535352*u**6 + 102882218*u**5 + 109560981*u**4 + 116609284*u**3 + 124018570*u**2 + 131828357*u + 140030097",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-118550885*u**7 - 128084365*u**6 - 138228752*u**5 - 149103238*u**4 - 160662916*u**3 - 173034044*u**2 - 186167901*u - 200204063",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "97730341*u**8 + 107135001*u**7 + 117351157*u**6 + 128400391*u**5 + 140379317*u**4 + 153315815*u**3 + 167316323*u**2 + 182412025*u + 198722399",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 9,
+            "a_m": "-53815222*u**9 - 59965408*u**8 - 66775299*u**7 - 74239806*u**6 - 82484020*u**5 - 91505742*u**4 - 101444781*u**3 - 112304541*u**2 - 124241124*u - 137262572",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 10,
+            "a_m": "19343205*u**10 + 21978121*u**9 + 24926356*u**8 + 28244191*u**7 + 31946744*u**6 + 36103214*u**5 + 40731841*u**4 + 45911374*u**3 + 51669705*u**2 + 58094660*u + 65222883",
+            "deg_a_m": 10,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 11,
+            "a_m": "-4330316*u**11 - 5038240*u**10 - 5841730*u**9 - 6771770*u**8 - 7826754*u**7 - 9041735*u**6 - 10416715*u**5 - 11995010*u**4 - 13776959*u**3 - 15815771*u**2 - 18112372*u - 20729636",
+            "deg_a_m": 11,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 12,
+            "a_m": "555004*u**12 + 663666*u**11 + 793650*u**10 + 945102*u**9 + 1125025*u**8 + 1333585*u**7 + 1581575*u**6 + 1866957*u**5 + 2204136*u**4 + 2592634*u**3 + 3047867*u**2 + 3572241*u + 4183556",
+            "deg_a_m": 12,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 13,
+            "a_m": "-34378*u**13 - 42812*u**12 - 53572*u**11 - 66082*u**10 - 82506*u**9 - 101149*u**8 - 124834*u**7 - 152613*u**6 - 186849*u**5 - 227248*u**4 - 276972*u**3 - 334793*u**2 - 406332*u - 488843",
+            "deg_a_m": 13,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 14,
+            "a_m": "690*u**14 + 933*u**13 + 1220*u**12 + 1747*u**11 + 2227*u**10 + 2989*u**9 + 3874*u**8 + 5021*u**7 + 6460*u**6 + 8374*u**5 + 10626*u**4 + 13884*u**3 + 17416*u**2 + 22221*u + 27885",
+            "deg_a_m": 14,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 15,
+            "a_m": "-u**15 - u**13 - 7*u**12 - 7*u**11 - 15*u**10 - 21*u**9 - 30*u**8 - 44*u**7 - 60*u**6 - 82*u**5 - 151*u**4 - 189*u**3 - 281*u**2 - 382*u - 514",
+            "deg_a_m": 15,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 16,
+            "a_m": "1",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 3781,
+        "elapsed_cancel_ms": 5104
+      },
+      "helium-4": {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "tr_M_in_q": "(q**90 - 2*q**89 + 7*q**88 + 4*q**86 - 8*q**85 + 46*q**84 + 12*q**82 - 24*q**81 + 186*q**80 + 20*q**78 - 40*q**77 + 516*q**76 + 4*q**75 + 12*q**74 - 52*q**73 + 1114*q**72 + 20*q**71 - 94*q**70 - 24*q**69 + 1908*q**68 + 60*q**67 - 458*q**66 + 16*q**65 + 2720*q**64 + 100*q**63 - 1313*q**62 + 78*q**61 + 3259*q**60 + 100*q**59 - 2709*q**58 + 62*q**57 + 3465*q**56 + 4*q**55 - 4357*q**54 + 22*q**53 + 3451*q**52 - 132*q**51 - 5572*q**50 - 76*q**49 + 3604*q**48 - 220*q**47 - 5817*q**46 - 50*q**45 + 3997*q**44 - 156*q**43 - 5038*q**42 + 32*q**41 + 4374*q**40 - 8*q**39 - 3833*q**38 + 162*q**37 + 4173*q**36 + 84*q**35 - 2740*q**34 + 116*q**33 + 3282*q**32 + 64*q**31 - 2006*q**30 + 12*q**29 + 2060*q**28 - 4*q**27 - 1429*q**26 - 90*q**25 + 1039*q**24 - 8*q**23 - 906*q**22 - 76*q**21 + 442*q**20 + 20*q**19 - 447*q**18 - 38*q**17 + 179*q**16 + 40*q**15 - 160*q**14 - 8*q**13 + 76*q**12 + 24*q**11 - 33*q**10 - 6*q**9 + 29*q**8 + 8*q**7 - 2*q**6 - 4*q**5 + 8*q**4 + q**2 - 2*q + 1)/(3072*q**53 + 21504*q**51 + 64512*q**49 + 107520*q**47 + 107520*q**45 + 64512*q**43 + 21504*q**41 + 3072*q**39)",
+        "p_in_u": "u**180 - 2*u**178 + 7*u**176 + 4*u**172 - 8*u**170 + 46*u**168 + 12*u**164 - 24*u**162 + 186*u**160 + 20*u**156 - 40*u**154 + 516*u**152 + 4*u**150 + 12*u**148 - 52*u**146 + 1114*u**144 + 20*u**142 - 94*u**140 - 24*u**138 + 1908*u**136 + 60*u**134 - 458*u**132 + 16*u**130 + 2720*u**128 + 100*u**126 - 1313*u**124 + 78*u**122 + 3259*u**120 + 100*u**118 - 2709*u**116 + 62*u**114 + 3465*u**112 + 4*u**110 - 4357*u**108 + 22*u**106 + 3451*u**104 - 132*u**102 - 5572*u**100 - 76*u**98 + 3604*u**96 - 220*u**94 - 5817*u**92 - 50*u**90 + 3997*u**88 - 156*u**86 - 5038*u**84 + 32*u**82 + 4374*u**80 - 8*u**78 - 3833*u**76 + 162*u**74 + 4173*u**72 + 84*u**70 - 2740*u**68 + 116*u**66 + 3282*u**64 + 64*u**62 - 2006*u**60 + 12*u**58 + 2060*u**56 - 4*u**54 - 1429*u**52 - 90*u**50 + 1039*u**48 - 8*u**46 - 906*u**44 - 76*u**42 + 442*u**40 + 20*u**38 - 447*u**36 - 38*u**34 + 179*u**32 + 40*u**30 - 160*u**28 - 8*u**26 + 76*u**24 + 24*u**22 - 33*u**20 - 6*u**18 + 29*u**16 + 8*u**14 - 2*u**12 - 4*u**10 + 8*u**8 + u**4 - 2*u**2 + 1",
+        "shift": 0,
+        "denom_in_u": "3072*u**106 + 21504*u**102 + 64512*u**98 + 107520*u**94 + 107520*u**90 + 64512*u**86 + 21504*u**82 + 3072*u**78",
+        "denom_factored": "3072*u**78*(u**4 + 1)**7",
+        "deg_p_u": 180,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "3072",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-254976*u - 254976",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "6572888*u**2 + 6657875*u + 6741845",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-79397375*u**3 - 81040855*u**2 - 82641834*u - 84326783",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "535579457*u**4 + 550810226*u**3 + 566386306*u**2 + 582249201*u + 598465235",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-2226772819*u**5 - 2309646578*u**4 - 2395309509*u**3 - 2483053184*u**2 - 2573698489*u - 2666517252",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "6062523367*u**6 + 6346475765*u**5 + 6641109386*u**4 + 6947109369*u**3 + 7264438730*u**2 + 7593806935*u + 7935181578",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-11219841650*u**7 - 11860962888*u**6 - 12532069748*u**5 - 13236323808*u**4 - 13972982345*u**3 - 14745386121*u**2 - 15552798885*u - 16398703297",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "14419056437*u**8 + 15403225020*u**7 + 16446144920*u**6 + 17549868917*u**5 + 18718337894*u**4 + 19953790332*u**3 + 21260459181*u**2 + 22640816269*u + 24099393938",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 9,
+            "a_m": "-12981019470*u**9 - 14026162082*u**8 - 15147002428*u**7 - 16345823099*u**6 - 17629887541*u**5 - 19001816409*u**4 - 20469555021*u**3 - 22036080593*u**2 - 23710072343*u - 25494917979",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 10,
+            "a_m": "8166207191*u**10 + 8936516690*u**9 + 9771601239*u**8 + 10677312288*u**7 + 11657879101*u**6 + 12719866332*u**5 + 13868125262*u**4 + 15110030465*u**3 + 16451117662*u**2 + 17899653848*u + 19461944140",
+            "deg_a_m": 10,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 11,
+            "a_m": "-3539174497*u**11 - 3928827742*u**10 - 4356776055*u**9 - 4827832488*u**8 - 5344403513*u**7 - 5912008870*u**6 - 6533524046*u**5 - 7215273344*u**4 - 7960702522*u**3 - 8777025751*u**2 - 9668322334*u - 10642834060",
+            "deg_a_m": 11,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 12,
+            "a_m": "1026982465*u**12 + 1158822176*u**11 + 1306436226*u**10 + 1471030925*u**9 + 1654916732*u**8 + 1859592294*u**7 + 2087775815*u**6 + 2341308947*u**5 + 2623387023*u**4 + 2936261896*u**3 + 3283696264*u**2 + 3668400753*u + 4094794409",
+            "deg_a_m": 12,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 13,
+            "a_m": "-189995869*u**13 - 218634103*u**12 - 251420472*u**11 - 288572310*u**10 - 330976514*u**9 - 378932728*u**8 - 433514938*u**7 - 495121699*u**6 - 565056411*u**5 - 643838148*u**4 - 733033507*u**3 - 833331222*u**2 - 946602914*u - 1073737906",
+            "deg_a_m": 13,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 14,
+            "a_m": "20637717*u**14 + 24380780*u**13 + 28713234*u**12 + 33801516*u**11 + 39678766*u**10 + 46553771*u**9 + 54477497*u**8 + 63712162*u**7 + 74329245*u**6 + 86657019*u**5 + 100804502*u**4 + 117172238*u**3 + 135916543*u**2 + 157532718*u + 182234124",
+            "deg_a_m": 14,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 15,
+            "a_m": "-1139725*u**15 - 1397045*u**14 - 1699143*u**13 - 2071951*u**12 - 2508625*u**11 - 3043595*u**10 - 3670170*u**9 - 4434783*u**8 - 5324817*u**7 - 6402398*u**6 - 7660194*u**5 - 9171701*u**4 - 10932409*u**3 - 13037161*u**2 - 15485174*u - 18399777",
+            "deg_a_m": 15,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 16,
+            "a_m": "24246*u**16 + 30817*u**15 + 40037*u**14 + 50908*u**13 + 65602*u**12 + 82747*u**11 + 105495*u**10 + 132376*u**9 + 168463*u**8 + 209908*u**7 + 263830*u**6 + 327627*u**5 + 409221*u**4 + 505316*u**3 + 626829*u**2 + 770408*u + 951863",
+            "deg_a_m": 16,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 17,
+            "a_m": "-75*u**17 - 105*u**16 - 197*u**15 - 249*u**14 - 371*u**13 - 508*u**12 - 742*u**11 - 986*u**10 - 1366*u**9 - 1813*u**8 - 2654*u**7 - 3423*u**6 - 4680*u**5 - 6132*u**4 - 8277*u**3 - 10706*u**2 - 14168*u - 18226",
+            "deg_a_m": 17,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 18,
+            "a_m": "u**9 + u**8 + u**6 + 8*u**5 + 8*u**4 + 15*u**3 + 22*u**2 + 39*u + 53",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 24456,
+        "elapsed_cancel_ms": 18147
+      }
+    },
+    "method": "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial + cyclotomic_expansion",
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "f1681ffc8fd5e6db1e068b62c6b830119e0c678cb3c2778e131913c8d4c3aaf2",
+        "size_bytes": 10289,
+        "commitSha": "06f7907c98af57a87635b879184d4156351546eb",
+        "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
+        "computedAt": "2026-08-18T16:04:42.256921+00:00"
+      }
+    ]
+  },
+  "caveats": [
+    "The A>=3 coefficients are NOT cross-checked against an independent second computation -- there is none: the partition-sum route is the 18-day path this producer exists to avoid. Their warrant is that the SAME code path reproduces every committed A<=2 value exactly, and that the two routes are symbolically identical where both can run.",
+    "Convention: this inherits whatever p-n interface convention atom_canonical_crossings emits (kind 'averaged_weighted', the colour-weighted form). It does NOT inherit the colour-BLIND Rust gram.rs path -- see bean qou-cblw."
+  ]
+}

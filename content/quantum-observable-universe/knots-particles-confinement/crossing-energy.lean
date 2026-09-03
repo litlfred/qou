@@ -60,18 +60,33 @@ theorem BraidWord.pos_plus_neg_eq_total (w : BraidWord) :
 /-- **Crossing energy** of a knot composite with braid word β and
     substrate parameter q.
 
-    Each positive crossing contributes the eigenvalue magnitude `q`,
-    each negative crossing the magnitude `q⁻¹`:
+    Each positive crossing contributes `q`, each negative crossing
+    `−q⁻¹`, following the Skein sign convention of `def:crossing-energy`:
 
-      E_cross(H) = n₊ · q + n₋ · q⁻¹
+      E_cross(H) = n₊ · q − n₋ · q⁻¹
 
-    where n₊, n₋ are the counts of positive and negative crossings.
-    This is exactly the sum of the symmetric (baseline / strong) and
-    antisymmetric (Coulomb) parts — see `decomposition` below.  (The
-    `−q⁻¹` Skein *relation* sign governs the L₊/L₋ skein triple, not
-    the energy magnitude; with `−q⁻¹` the baseline + Coulomb
-    decomposition would not hold, so the energy is the additive
-    `n₊·q + n₋·q⁻¹`.) -/
+    **CORRECTED 2026-08-29 (bean `qou-toul`).** This previously read
+    `n₊ · q + n₋ · q⁻¹`, with a docstring stating that the `−q⁻¹` Skein
+    sign "governs the L₊/L₋ skein triple, not the energy magnitude" and
+    that "with `−q⁻¹` the baseline + Coulomb decomposition would not
+    hold, so the energy is the additive `n₊·q + n₋·q⁻¹`".
+
+    That is the defect, stated in its own docstring: the *definition was
+    adjusted so that the theorem below would be provable*. The
+    decomposition then held by `ring` — of an object the `.md` sibling
+    does not define. `def:crossing-energy` says `−q⁻¹` and cites the
+    Skein relation; `QOU.Braiding.crossingEnergy` in the Lake tree also
+    says `−q⁻¹`. This file was the outlier.
+
+    The decomposition does hold for the Skein sign. What changes is
+    *which multiplicity goes with which channel* — see `decomposition`,
+    and `prop:crossing-energy-decomposition`, which has carried the
+    correct form all along:
+
+      symmetric (strong)   ← (n₊ − n₋)   the writhe; cosh carries the sign
+      antisymmetric (Coul) ← (n₊ + n₋)   the count;  sinh is sign-blind
+
+    The two were swapped here and in `def:coulomb-charge`. -/
 -- Ref: [manuscript] Ch. 4, §10
 structure CrossingEnergy where
   /-- The braid word representing the linking pattern. -/
@@ -82,27 +97,67 @@ structure CrossingEnergy where
   -- `1 < q` (substrate constraint) are omitted: the algebraic
   -- identities below hold for all `q : ℝ`.
 
-/-- The crossing energy value: n₊ · q + n₋ · q⁻¹. -/
+/-- The crossing energy value: n₊ · q − n₋ · q⁻¹ (Skein sign). -/
 noncomputable def CrossingEnergy.value (E : CrossingEnergy) : ℝ :=
-  E.braidWord.numPositive * E.q + E.braidWord.numNegative * E.q⁻¹
+  E.braidWord.numPositive * E.q - E.braidWord.numNegative * E.q⁻¹
 
-/-- Baseline (strong) contribution: ½(n₊ + n₋)(q + q⁻¹).
-    This is the symmetric part under q ↔ q⁻¹. -/
+/-- Baseline (strong) contribution: ½(n₊ − n₋)(q + q⁻¹).
+
+    The multiplicity is the **writhe** `n₊ − n₋`, not the crossing count:
+    `cosh` carries the crossing sign, so reversing a crossing negates its
+    symmetric part. -/
 noncomputable def CrossingEnergy.baseline (E : CrossingEnergy) : ℝ :=
-  (E.braidWord.numPositive + E.braidWord.numNegative) * (E.q + E.q⁻¹) / 2
+  ((E.braidWord.numPositive : ℝ) - E.braidWord.numNegative) * (E.q + E.q⁻¹) / 2
 
-/-- Coulomb correction contribution: ½(n₊ − n₋)(q − q⁻¹).
-    This is the antisymmetric part under q ↔ q⁻¹. -/
+/-- Coulomb contribution: ½(n₊ + n₋)(q − q⁻¹).
+
+    The multiplicity is the **crossing count** `n₊ + n₋`: `sinh` is blind
+    to the crossing sign, contributing `+sinh λ` for a negative crossing
+    exactly as for a positive one. -/
 noncomputable def CrossingEnergy.coulombContribution (E : CrossingEnergy) : ℝ :=
-  ((E.braidWord.numPositive : ℝ) - E.braidWord.numNegative) * (E.q - E.q⁻¹) / 2
+  ((E.braidWord.numPositive : ℝ) + E.braidWord.numNegative) * (E.q - E.q⁻¹) / 2
 
-/-- The crossing energy decomposes as baseline + Coulomb correction:
+/-- The crossing energy decomposes as baseline + Coulomb contribution:
 
-      E_cross = ½(n₊ + n₋)(q + q⁻¹) + ½(n₊ − n₋)(q − q⁻¹) -/
+      E_cross = ½(n₊ − n₋)(q + q⁻¹) + ½(n₊ + n₋)(q − q⁻¹) -/
 -- Ref: [manuscript] Ch. 4, §10
 theorem CrossingEnergy.decomposition (E : CrossingEnergy) :
     E.value = E.baseline + E.coulombContribution := by
   simp only [value, baseline, coulombContribution]
   ring
+
+/-- **The swapped assignment is not merely unproved — it is false.**
+
+    Stated as a theorem so the defect cannot recur silently: assigning the
+    crossing count to the symmetric channel and the writhe to the
+    antisymmetric one reconstructs the Skein energy only when there are no
+    negative crossings. The discrepancy is exactly `2·n₋·q⁻¹`. -/
+theorem CrossingEnergy.swapped_decomposition_off_by (E : CrossingEnergy) :
+    ((E.braidWord.numPositive : ℝ) + E.braidWord.numNegative) * (E.q + E.q⁻¹) / 2
+      + ((E.braidWord.numPositive : ℝ) - E.braidWord.numNegative)
+          * (E.q - E.q⁻¹) / 2
+    = E.value + 2 * E.braidWord.numNegative * E.q⁻¹ := by
+  simp only [value]
+  ring
+
+/-- Corollary: the swapped assignment agrees with the Skein energy exactly
+    on positive braids (`n₋ = 0`), which is why the error survived — every
+    canonical atomic braid the corpus evaluates is positive. -/
+theorem CrossingEnergy.swapped_agrees_iff_positive_braid (E : CrossingEnergy)
+    (hq : E.q ≠ 0) :
+    (((E.braidWord.numPositive : ℝ) + E.braidWord.numNegative) * (E.q + E.q⁻¹) / 2
+      + ((E.braidWord.numPositive : ℝ) - E.braidWord.numNegative)
+          * (E.q - E.q⁻¹) / 2 = E.value)
+    ↔ E.braidWord.numNegative = 0 := by
+  rw [swapped_decomposition_off_by]
+  constructor
+  · intro h
+    have h2 : 2 * (E.braidWord.numNegative : ℝ) * E.q⁻¹ = 0 := by linarith
+    rcases mul_eq_zero.mp h2 with h3 | h4
+    · rcases mul_eq_zero.mp h3 with h5 | h6
+      · norm_num at h5
+      · exact_mod_cast h6
+    · exact absurd (inv_eq_zero.mp h4) hq
+  · intro h; rw [h]; push_cast; ring
 
 end QOU.Braiding

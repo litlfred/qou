@@ -1,0 +1,235 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1406.7337v4",
+ "source": {
+  "file": "1406.7337v4 (1).pdf",
+  "sha256": "5bae8237742733b902201d9414628b8801476f06357bc09479080ef90a5c8a92",
+  "bytes": 446898,
+  "pages": 20,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1406.7337",
+   "version": "4",
+   "primary_class": "math.GT",
+   "stamp_date": "22 May 2015"
+  },
+  "doi": null,
+  "title": "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu",
+  "authors_raw": null,
+  "title_lines": [
+   "Semi-Adequate Closed Braids and Volume",
+   "Adam Giambrone",
+   "Alma College",
+   "giambroneaj@alma.edu"
+  ],
+  "abstract": "In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of braid strings, and a quantity that can be read from the combinatorics of a given closed braid diagram. We also show that the volumes for many of these closed braids can be bounded in terms of a single stable coe\ufb03cient of the colored Jones polynomial, thus showing that this collection of closed braids satis\ufb01es a Coarse Volume Conjecture. By expanding to a wider family of closed braids, we also obtain volume bounds in terms of the number of positive and negative twist regions in a given closed braid diagram. Furthermore, for a family of A-adequate closed 3-braids, we show that the volumes can be bounded in terms of the parameter s from the Schreier normal form of the 3-braid. Finally we show that, for the same family of A-adequate closed 3-braids, the parameters k and s from the Schreier normal form can actually be read o\ufb00 of the original 3-braid word.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210827212301Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Volume bounds for A-adequate closed braids",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Braids and A-adequacy",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "A lemma for closed braids",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Diagrammatic volume bounds",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Volume bounds in terms of the colored Jones polynomial",
+   "page": 11,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Schreier normal form for 3-braids and volume",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Volume bounds in terms of the Schreier normal form",
+   "page": 13,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The proof of Theorem 3.1",
+   "page": 14,
+   "source": "outline",
+   "number": "3.3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4305,
+   "n_words": 734
+  },
+  {
+   "id": "sec-001-2-volume-bounds-for-a-adequate-closed-braids",
+   "number": "2",
+   "title": "Volume bounds for A-adequate closed braids",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-preliminaries",
+   "number": "2.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3117,
+   "n_words": 548
+  },
+  {
+   "id": "sec-003-22-braids-and-a-adequacy",
+   "number": "2.2",
+   "title": "Braids and A-adequacy",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 2167,
+   "n_words": 419
+  },
+  {
+   "id": "sec-004-23-a-lemma-for-closed-braids",
+   "number": "2.3",
+   "title": "A lemma for closed braids",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 13653,
+   "n_words": 2389
+  },
+  {
+   "id": "sec-005-24-diagrammatic-volume-bounds",
+   "number": "2.4",
+   "title": "Diagrammatic volume bounds",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 6487,
+   "n_words": 1151
+  },
+  {
+   "id": "sec-006-25-volume-bounds-in-terms-of-the-colored-jones-p",
+   "number": "2.5",
+   "title": "Volume bounds in terms of the colored Jones polynomial",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1165,
+   "n_words": 214
+  },
+  {
+   "id": "sec-007-3-volume-bounds-for-a-adequate-closed-3-braids-i",
+   "number": "3",
+   "title": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 20,
+   "n_words": 3
+  },
+  {
+   "id": "sec-008-31-the-schreier-normal-form-for-3-braids-and-vol",
+   "number": "3.1",
+   "title": "The Schreier normal form for 3-braids and volume",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2571,
+   "n_words": 496
+  },
+  {
+   "id": "sec-009-32-volume-bounds-in-terms-of-the-schreier-normal",
+   "number": "3.2",
+   "title": "Volume bounds in terms of the Schreier normal form",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2122,
+   "n_words": 399
+  },
+  {
+   "id": "sec-010-33-the-proof-of-theorem-31",
+   "number": "3.3",
+   "title": "The proof of Theorem 3.1",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 20,
+   "n_chars": 18078,
+   "n_words": 3023
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 53685
+ }
+}

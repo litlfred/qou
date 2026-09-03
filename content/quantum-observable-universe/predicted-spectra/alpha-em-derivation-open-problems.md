@@ -12,12 +12,26 @@ This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$.
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
 | Bare | $q[9]_q[10]_q$ | $-1.55\times 10^{-3}$ | Derived |
-| Form A (CS) | $\cdot(1+\delta_{CS}+\kappa\,\delta_{CS}^2)$ with $\kappa=1.722$ | $-4.0\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.888$ needed for exact match |
-| Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
+| Form A (CS) | $\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ with $\kappa=1.722$ | $-4.68\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.9153$ needed for exact match |
+| Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+2.6\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
+
+*Superseded figures, recorded so the change is legible.* This table previously
+gave Form A as the order-$\delta_{CS}^2$ truncation with residual
+$-4.0\times 10^{-7}$ and $\kappa \approx 1.888$, and Form B as
+$+6.7\times 10^{-9}$. All three are **muon-pin** numbers, each correctly
+computed for the pin and truncation it belongs to: $-4.0\times 10^{-7}$ is the
+order-$2$ truncation at the muon pin ($-399.53$ ppb); $+6.7\times 10^{-9}$ is
+Form B at the muon pin against CODATA-2018 ($6.672$ ppb); and
+$\kappa \approx 1.888$ is exact closure at the muon pin under the order-$2$
+truncation ($1.8880423$). They were stale, not wrong. The rows above are the **proton pin** (the standing default) with
+the tower resummed in closed form, matching
+[the Chern-Simons block](#rem:em-coupling-chern-simons), which already carried
+the resummation and the re-pin. Reproduce every entry with
+[`alpha_em_form_comparison_probe.py`](computations/alpha/alpha_em_form_comparison_probe.py).
 
 ## Why both prior attempts fail
 
-**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at $q_0$ requires $\kappa \approx 1.8878$. The discrepancy is $\sim 10\%$ and cannot be quadrature error. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
+**Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-pinned $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
 
 **Form B is hidden numerology.** Of its four factors:
 

@@ -74,11 +74,11 @@ def main() -> int:
     wb.add_data("torsion_modulus", float(abs(Vpp)))
     wb.add_data("im_V_saddle", float(mp.im(V(zc))))
     wb.add_data("vol_4_1_over_4pi", float(band_val))
-    wb.add_assertion("hessian_is_sqrt3_torsion", computed=float(torsion_err), expected=0.0,
+    wb.add_assertion("hessian_is_sqrt3_torsion", computed=torsion_err, expected=0.0,
                      tolerance=1e-20, source="−V''(z*) = −3/2 + i√3/2, |−V''| = √3")
-    wb.add_assertion("im_V_is_vol_4_1", computed=float(vol_err), expected=0.0,
+    wb.add_assertion("im_V_is_vol_4_1", computed=vol_err, expected=0.0,
                      tolerance=1e-20, source="Im V(z*) = Vol(4_1)")
-    wb.add_assertion("vol_over_4pi_in_odd_band", computed=float(in_band), expected=1.0,
+    wb.add_assertion("vol_over_4pi_in_odd_band", computed=in_band, expected=1.0,
                      tolerance=0.5, source="Vol(4_1)/(4π)=0.16153 ∈ [0.147,0.168] (#3810)")
     wb.save()
     ok = torsion_err < 1e-20 and vol_err < 1e-20 and in_band

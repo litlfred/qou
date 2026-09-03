@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:53:07.507104+00:00",
-  "commitSha": "dda6147096dfc140280de3eb57d44810d5404cc1",
+  "computedAt": "2026-08-29T09:30:57.116317+00:00",
+  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 21,
   "computation": "inter-knot-decoupling",
   "scriptFile": "probe_inter_knot_decoupling.py",
-  "scriptHash": "0acb734316e3",
-  "scriptCommitSha": "17c9d83431fb4c20c36d1b97a4f4e6b9827e1a3d",
+  "scriptHash": "768d6ee422d3",
+  "scriptCommitSha": "f6f0b8afaaf70f38d4c12753f9ff1c3c37c59c13",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "825fe60e51bf0442"
   },
   "invocation": {
     "argv": [
@@ -38,13 +38,13 @@
     "markov_convention": "D (z = q^3/(q^2+1)) via closed_form_tau_M.markov_z"
   },
   "data": {
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
-    "z_markov_norm": "0.612688050548890157044516774581866149005964144342327566400904",
+    "q_0_50dps": "1.10997858275138080759166909561076887987449912187360000000000",
+    "z_markov_norm": "0.612688037146465251595829863945899248026308391545087014074774",
     "K_1_braid": "σ_0 in B_3",
     "K_2_braid": "σ_0 · σ_1 in B_3",
-    "tau_M_K1": "0.612688050548890157044516774581866149005964144342327566400904",
-    "tau_M_K2": "0.375386647285399380268877896122060560171677202914949208533359",
-    "predicted_joint_via_M3_factorisation": "0.0528976600644688538537489918465343095435699564515918147682543",
+    "tau_M_K1": "0.612688037146465251595829863945899248026308391545087014074774",
+    "tau_M_K2": "0.375386630862388383999372303379009911453307219880331354258806",
+    "predicted_joint_via_M3_factorisation": "0.0528976531217167246211400079476782936166991799618819648011719",
     "strands_added_by_disjoint_stabilisation": 3,
     "factorisation_formula": "τ_M(K_1 ⊔ K_2 in B_{n_1 + n_2}) = τ_M(K_1) · τ_M(K_2) · z^k where k = strands added by disjoint stabilisation",
     "structural_origin": "Markov axiom M3 (Jones 1985)",
@@ -53,12 +53,14 @@
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
-        "size_bytes": 6237,
-        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
-        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
-        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
+        "size_bytes": 6238,
+        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+        "computedAt": "2026-08-28T20:47:21.480123+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

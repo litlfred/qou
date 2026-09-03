@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T08:45:54.969739+00:00",
-  "commitSha": "437bd0d9515fc63912d92e980662ac8e8c8edf28",
+  "computedAt": "2026-08-24T15:45:38.852464+00:00",
+  "commitSha": "488b8428e360c74c41581f1107d98812e309fbcc",
   "assertions": [
     {
       "name": "row_count_channels_bar_inadmissible",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46,
+  "durationMs": 82,
   "computation": "gap-a3-plambda-bar-even-admissibility-probe",
   "scriptFile": "gap_a3_plambda_bar_even_admissibility_probe.py",
-  "scriptHash": "941ec31276a7",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "42046f73519d",
+  "scriptCommitSha": "2b2f2284eeac614df0954ab32e28a9cf5e04e0cb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "fe19077ea17b978d"
   },
   "invocation": {
     "argv": [
@@ -52,10 +52,10 @@
   "description": "GAP-A-3 P_λ bar-even (λ↔λᵀ) admissibility probe. Follow-up to the content-channel probe (C1–C4 all refuted): tests whether those refuted channels are even ADMISSIBLE under the transpose-invariance constraint a real bar-symmetric categorical deviation must satisfy, measures bar-evenness of the flat weight w_λ=y_λχ^λ(β_D), and reports the bar-even orbit budget. Formalize-first narrowing, no fit, no 7th ansatz. EXPLORATORY.",
   "auditOnly": "docs/audits/2026-06-20-gap-a3-plambda-bar-even-admissibility.md",
   "parameters": {
-    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "A_D_at_q0": "22.975451134838130420437731942051345881424031339093",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "A_D_at_q0": "22.975451662315613206466261572364816994981714298291",
     "tr_M_beta_D": "0.5751722439177718708265353439861808891524943528928544990873291684113575",
-    "target_after_A_factored": "-0.1894734460882181255054591606896381538276463299938177687270753926925065"
+    "target_after_A_factored": "-0.1894734417382284989104672294731036662590919611610931919935792110238943"
   },
   "data": {
     "discipline": "EXPLORATORY",
@@ -221,7 +221,7 @@
       "C3_sl2_qdim": {
         "bar_even_admissible": false,
         "n_violating_pairs": 4,
-        "bar_odd_norm": "16.889489721838563139851531698143633912935936607996",
+        "bar_odd_norm": "16.8894895209919171910638702185638490072320321250367",
         "violations": [
           {
             "pair": [
@@ -237,7 +237,7 @@
                 1
               ]
             ],
-            "P_lambda": 7.625342178928933,
+            "P_lambda": 7.625342037132497,
             "P_lambdaT": 0.0
           },
           {
@@ -254,7 +254,7 @@
                 1
               ]
             ],
-            "P_lambda": 5.220441324676728,
+            "P_lambda": 5.220441275326898,
             "P_lambdaT": 0.0
           },
           {
@@ -270,7 +270,7 @@
                 1
               ]
             ],
-            "P_lambda": 3.0437062182329013,
+            "P_lambda": 3.043706208532522,
             "P_lambdaT": 0.0
           },
           {
@@ -482,6 +482,6 @@
     },
     "verdict": "NARROWING. The bar-even (λ↔λᵀ) admissibility constraint rules the row-count content channels INADMISSIBLE independently of their numerical refutation: C1_sl2_schur_weyl, C2_sl3_schur_weyl, C3_sl2_qdim, C4_sl2_indicator all break P_λ = P_{λᵀ} (the `rows(λ) ≤ k` selector is not transpose-invariant — rows(λᵀ) = columns(λ)). The flat substrate weight w_λ = y_λ·χ^λ(β_D) is carrying a substantial bar-odd component (fraction 50.00%); a bar-even P_λ annihilates it, so any deviation living in the bar-odd sector is structurally unreachable. Conclusion: GAP-A-3 P_λ must be a TRANSPOSE-INVARIANT functional (e.g. of {λ,λᵀ}-symmetric statistics: n(λ)+n(λᵀ), symmetric hook/content combinations), NOT a row-count or column-count selector. This is a formalize-first refutation of the content-channel family and a constraint on the admissible family — not a new fitted P_λ (no 7th ansatz)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

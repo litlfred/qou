@@ -17,9 +17,9 @@ except ImportError:
     sys.exit(1)
 
 def _delta_target():
-    M_e = mp.mpf(repr(M_E_MEV))
-    M_p = mp.mpf(repr(M_P_MEV))
-    Q_n = mp.mpf(repr(Q_NEUTRON_MEV))
+    M_e = mp.mpf(M_E_MEV)
+    M_p = mp.mpf(M_P_MEV)
+    Q_n = mp.mpf(Q_NEUTRON_MEV)
     M_n = M_p + M_e + Q_n
     M_N_avg = (M_p + M_n) / 2
     return (M_n - M_p) / M_N_avg

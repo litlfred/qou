@@ -1,10 +1,11 @@
 ---
 # qou-wgta
 title: 'P0: convention-C excision is INCOMPLETE -- 174 py + 61 lean + tools/ Rust core + a shipped package still on C, incl. 3 hybrids and the registry itself'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-08-09T12:42:32Z
+updated_at: 2026-08-25T21:47:54Z
 ---
 
 
@@ -284,3 +285,55 @@ Cheapest durable fix, in order:
   2. re-run the direct readers, then
   3. make the direct reads go through the guarded accessor so the next
      convention change has exactly one door again.
+
+
+## 2026-08-25 — recovery pass, PR #5799 (branch claude/isotope-mass-binding-dashboard-kdvhz6)
+
+Picked up the partial work of an agent that died on a session limit (git stash).
+Took only what re-measured: `scripts/convention-c-producer-audit.py` +
+`docs/coordination/trace-convention-registry.json`. **Rejected** the three
+witness diffs in the same stash — they drop `clarabel: 0.11.1` from the recorded
+`environment` block, which is an artifact of that agent's bare container
+(clarabel is absent here too), so committing them would record a false
+environment on three committed witnesses.
+
+**Live actionable: 7 before, 7 after.** Nothing was migrated, because nothing
+in the current actionable set is migratable — all 7 are in the qbeta/decay cone
+where a z-swap is invalid per `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
+(sorry-free). What changed is that all 7 now carry their blocking reason in the
+detector output instead of the uninformative "probes / exploratory" bucket.
+
+Per-site classification (all (ii) blocked on `qou-cds1`):
+
+| site | line | why a z-swap is invalid |
+|---|---|---|
+| `qbeta/qbeta_prearchimedean_z_recursion.py` | 103 | the RESULT is a 3-term recursion from z_C being algebraic; z_D residuals at n=1,2,3 are 17/2, 3, -5/4, not 0 |
+| `probes/qbeta_fmap_power_class_prune.py` | 89 | verbatim mirror of the sorry-free `CanonicalMarkovWeightsH3.explicitInstance`, sqrt(q)-bearing by construction; the Lean must move first |
+| `qbeta/qbeta_eta_singularity_probe.py` | 178 | ladder phase alpha moves 20.77 % at the proton pin |
+| `qbeta/qbeta_eval_map_bar_decomposition_probe.py` | 48 | z_C bar-EVEN, z_D bar-NEITHER; the exact even/odd split it reports does not exist under D |
+| `qbeta/qbeta_h_frame_rungs_probe.py` | 73 | alpha = (z-1)h/2 moves 22.64 % |
+| `qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py` | 68 | ord_{q=1}(z-1/2) is 2 under C, 1 under D; the even-order premise of the T3 exclusion is false under D |
+| `qbeta/qbeta_z_bar_parity_fmap_class_probe.py` | 72 | parity(z_D^m) is NEITHER for m=1..4; the z-alone exclusion has no D-frame statement |
+
+Two evidence fields in the recovered rows were WRONG and are corrected in place
+(conclusions unaffected):
+
+- `qbeta_fmap_power_class_prune` claimed a z-swap "would un-refute the pure-power
+  class". False: Arm-1 runs on `dtr`, the z-free atom-word bridge rational;
+  `explicit_differs` is True under both conventions. No Arm-1 verdict moves.
+- `qbeta_eta_singularity_probe` reported its alpha move as 22.64 %. That is the
+  z-dependent part (z-1)h/2; alpha itself also carries u_tilde = 0.0094539479
+  and moves 20.77 % (-0.0570630942 -> -0.0452127513). 22.64 % is correct only
+  for `qbeta_h_frame_rungs_probe`, whose alpha has no u_tilde term.
+
+The one C-SPECIALISED CLOSED FORM (`qbeta_5two...:133 ocneanu_weights`) is a
+detector FALSE POSITIVE, measured by execution: the function returns
+W_(3) = (q^4+1)/(q^2+1)^2, W_(2,1) = q^2/(q^2+1)^2, W_(1^3) = 0 — all exactly
+q-rational. The sqrt is a back-substitution undoing `q = t**2`. Recorded in the
+new `closed_form_measured_clear` registry channel and LABELLED, not suppressed;
+a suppression rule would also hide a genuinely C-derived closed form
+back-substituted the same way.
+
+The other carried-forward closed form (`_li_2_q_util.borromean_markov_trace_h2`)
+is already resolved in-source as the deliberate non-canonical jones-normalisation
+comparison column and no longer appears in the report.

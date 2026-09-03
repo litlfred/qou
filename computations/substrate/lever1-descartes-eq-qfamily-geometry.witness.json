@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:18.142419+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-30T21:28:52.329394+00:00",
+  "commitSha": "0f870c65032f26d79ef299355d5ae0153bfeed3e",
   "assertions": [
     {
       "name": "j_at_q1_eq_128",
@@ -14,18 +14,18 @@
     },
     {
       "name": "j_at_q0_eq_129_86",
-      "computed": 129.86,
+      "computed": "129.86",
       "expected": 129.86,
       "passed": true,
-      "tolerance": 0.05,
+      "tolerance": "0.05",
       "source": "descartes-elliptic-curve.md j(q₀)=129.9"
     },
     {
       "name": "golden_cusp_j_eq_1728",
-      "computed": 1728.0,
-      "expected": 1728.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "source": "s=1/φ cusp (golden-ratio degeneration) is the j=1728 CM point"
     },
     {
@@ -41,8 +41,8 @@
   "durationMs": 23,
   "computation": "lever1-descartes-eq-qfamily-geometry",
   "scriptFile": "lever1_descartes_eq_qfamily_geometry.py",
-  "scriptHash": "faed21c4596e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "6fb29aaabb43",
+  "scriptCommitSha": "ca73dcc1820c0935a92c642ce2d5aa91fb4aee39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e186e42e6d8dd38a"
   },
   "invocation": {
     "argv": [

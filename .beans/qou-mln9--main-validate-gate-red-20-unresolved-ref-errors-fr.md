@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-07T01:00:00Z
-updated_at: 2026-08-07T01:00:00Z
+updated_at: 2026-08-25T17:05:16Z
 ---
 
 ## Symptom
@@ -83,3 +83,54 @@ quietly removed.
 
 Left at `todo`: closing is an owner action (AGENTS.md §4a). Nothing remains to
 do on the symptom.
+
+
+## Re-measured 2026-08-25T16:20Z — named failures drained, the CLASS recurred
+
+Measured on pristine `origin/main` @ `8ce76190cd` in a clean worktree:
+
+```
+run-validate content/quantum-observable-universe
+  ✗ Invalid — 36 issue(s), 9 errors
+```
+
+**None of the seven failures this bean names is still present.** `def:hecke-algebra`,
+`def:octonion-algebra`, `alg:delta-lambda-closure` and `prop:q-deformation-weight-lattice`
+all resolve on current main. So the instance recorded here is drained.
+
+**But item 2 of this bean's own diagnosis — "cascade from a schema-invalid block" —
+recurred, in a new instance, and it is 100 % of main's current error count.**
+All 9 errors are one cascade:
+
+```
+✗ [gauge-coupling-uniqueness] (gauge-coupling-uniqueness.ts): Import error:
+    Invalid enum value. Expected 'not_checked' | 'stub' | 'trivial' | 'external'
+    | 'validated' | 'error' | 'leanok' | 'axioms_only', received 'lean_direct_exit_0'
+✗ [alpha-em-categorical-trace]        Unresolved uses: "cor:gauge-coupling-uniqueness"
+✗ [em-completeness-interpretation]    Unresolved uses: "cor:gauge-coupling-uniqueness"
+✗ [gauge-coupling-uniqueness-novelty] Unresolved uses + interprets label not found
+✗ [gauge-coupling-uniqueness-proof]   Unresolved uses: "cor:gauge-coupling-uniqueness"
+✗ [physics-names-knot-operations]     Unresolved uses: "cor:gauge-coupling-uniqueness"
+✗ [vdw-pskew-isolation]               Unresolved uses: "cor:gauge-coupling-uniqueness"
+✗ [vdw-pskew-isolation-interpretation] Unresolved uses: "cor:gauge-coupling-uniqueness"
+```
+
+One invalid token in one `.ts` makes the schema reject the block on import, so its
+label never registers, so every consumer of that label fails to resolve. Landed via
+#5745 (`fed69b1c4d`); it is the only occurrence in that chapter, the other 67 blocks
+using `not_checked` or `stub`.
+
+**Fix pushed on PR #5761** (`ff6292960f` → `3d828dd0c5`): `lean_direct_exit_0` →
+`leanok`. Branch + fix measures **0 errors, 24 issues, "✓ Valid"**. The 24 residual
+are pre-existing warnings (unknown-field drops, two undefined cross-references),
+not errors, and not that branch's.
+
+**Left `todo` deliberately.** The named instance is drained and the new one has a
+fix in flight, but #5761 is a **draft awaiting an owner merge decision** — until it
+lands, main stays validate-RED for every branch, which is what this bean is about.
+Closing is the author's call.
+
+**The recurrence is the durable finding.** This is now twice that a single
+schema-invalid block has taken the whole corpus validate red by label cascade. The
+generalisable guard is a schema check on `lean.validation` at authoring time; the
+enum is closed and the failure mode is silent at the point of the edit.

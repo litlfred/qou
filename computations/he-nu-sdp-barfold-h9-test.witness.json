@@ -3,7 +3,7 @@
   "kind": "exploratory-probe",
   "description": "Decisive test of the self-conjugate ν_SDP candidate: does the bar-fold SDP support equal the self-conjugate blocks at H₉? REFUTED — |bounded support| = D:1, ³He:1, T:0 ≠ ν=1,2,2; the bar-fold regularises only the deuteron, rails at A≥3. The #self-conj match was coincidence. y_λ via Wenzl bridge, χ^λ via hoefsmit_numpy, no fit.",
   "engine": "numpy+scipy",
-  "q0": 1.1099785955573347,
+  "q0": 1.1099785827513808,
   "atoms": [
     {
       "atom": "D",
@@ -18,17 +18,8 @@
         ]
       ],
       "nu_canonical": 1,
-      "bounded_support": [
-        [
-          [
-            3,
-            2,
-            1
-          ],
-          0.38828647155941004
-        ]
-      ],
-      "bounded_support_size": 1,
+      "bounded_support": [],
+      "bounded_support_size": 0,
       "bounded_subset_self_conj": true,
       "feasible": true
     },
@@ -77,27 +68,16 @@
         ]
       ],
       "nu_canonical": 2,
-      "bounded_support": [
-        [
-          [
-            5,
-            1,
-            1,
-            1,
-            1
-          ],
-          0.20654085860587656
-        ]
-      ],
-      "bounded_support_size": 1,
+      "bounded_support": [],
+      "bounded_support_size": 0,
       "bounded_subset_self_conj": true,
       "feasible": true
     }
   ],
   "bounded_support_sizes": {
-    "D": 1,
+    "D": 0,
     "T": 0,
-    "3He": 1
+    "3He": 0
   },
   "verdict": "REFUTED",
   "weaker_fact": "bounded (non-rail) bar-fold support ⊆ self-conjugate blocks (D,T,³He)",
@@ -109,10 +89,12 @@
     "computations/y_lambda_wenzl_bridge.py, computations/hoefsmit_numpy.py"
   ],
   "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number.",
-  "scriptHash": "69f3243ddc7c",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:17.668299+00:00",
+  "scriptFile": "he_nu_sdp_barfold_h9_test.py",
+  "scriptHash": "ae80e1cd60e6",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "computedAt": "2026-08-30T11:38:00.181928+00:00",
   "durationMs": 0,
-  "scriptFile": "he_nu_sdp_barfold_h9_test.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

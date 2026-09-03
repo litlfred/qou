@@ -54,7 +54,17 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 70
 
 # q0 (muon-canonical computations layer); forward inputs never inverted
-Q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0 = mp.mpf(_Q0_RESOLVED)
 H0 = Q0 - 1 / Q0
 MU3 = mp.mpf("0.4708")     # additive-residual moment mu3 (#4320)
 C3 = mp.mpf("0.297")       # Hecke H_9 near-miss (#4364, atom-dressed)

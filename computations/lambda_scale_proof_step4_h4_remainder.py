@@ -79,9 +79,9 @@ G = mp.catalan
 VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
 
 # CODATA (single source — experimental_constants); m_n derived via 3-input scheme
-M_E = mp.mpf(repr(M_E_MEV))
-M_P = mp.mpf(repr(M_P_MEV))
-M_N = M_P + mp.mpf(repr(Q_NEUTRON_MEV)) + M_E
+M_E = mp.mpf(M_E_MEV)
+M_P = mp.mpf(M_P_MEV)
+M_N = M_P + mp.mpf(Q_NEUTRON_MEV) + M_E
 
 LAM_P_TARGET = (M_P / M_E) * HBAR_Q**2 / VOL_B3
 

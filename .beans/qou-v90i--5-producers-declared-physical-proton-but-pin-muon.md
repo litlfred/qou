@@ -1,11 +1,11 @@
 ---
 # qou-v90i
 title: 5 producers declared physical_proton but pin muon — disposition is per-file, not mechanical
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-22T19:37:16Z
-updated_at: 2026-08-22T21:23:24Z
+updated_at: 2026-08-28T15:23:56Z
 ---
 
 Found while re-baselining `qou-1c4y`; measurement +
@@ -208,3 +208,11 @@ again: `q0_value_drift_audit` scans `q0Value` (the **stamp**) and not
   `Q_MP` swaps a file-hash-backed provenance record for a package constant — a
   provenance-architecture call, on a producer with no stated pin intent. Not
   mine to make unilaterally.
+
+
+## CLOSED 2026-08-28 — contradictions are ZERO on main
+
+`q0_muon_population_partition.py --list-contradictions` exits **0** with an empty
+list. Was 11 when the class was first correctly measured, 2 when PR #5494 merged.
+The remaining two (`q1_mass_gap_probe`, `aK_via_lp_dual_hecke_basis`) have since
+been resolved on main.

@@ -61,8 +61,8 @@ theorem markov_trace_ratio_exact
   simp [jonesNormFactor] at hC
   -- The power of a sum of positive reals is nonzero
   have h1 : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq
-  have h2 : 0 < 1 / Real.sqrt q := div_pos one_pos h1
-  linarith [neg_neg_of_neg (neg_of_neg_pos (by linarith : 0 < Real.sqrt q + 1 / Real.sqrt q))]
+  have h2 : 0 < (Real.sqrt q)⁻¹ := inv_pos.mpr h1
+  linarith [hC.1]
 
 /-- Corollary: Gram matrix entries computed from Markov traces are
     proportional to Gram matrix entries from Jones polynomials.

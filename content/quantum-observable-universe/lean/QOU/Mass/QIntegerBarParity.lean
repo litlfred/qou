@@ -4,8 +4,16 @@
   The corpus carries two q-integer conventions (nine definitions across nine
   files at the time of writing, four geometric and five balanced):
 
-      GEOMETRIC   `qIntPoly q n = ∑_{i<n} q^i`        (`QOU.Mass.QHookDimension`)
+      GEOMETRIC   `qIntPoly q n = ∑_{i<n} q^i`        (`QOU.Mass.QHookDimensionBalanced`)
       BALANCED    `qIntBal  q n = (q^n − q⁻¹^n)/(q − q⁻¹)`
+
+  (Module reference corrected 2026-08-30: the geometric `qIntPoly` was in
+  `QOU.Mass.QHookDimension` when this file was written and moved out in
+  `1646b5d6d3`, which replaced it there with a *balanced* `qInt`. It survives
+  verbatim — same `∑_{i<n} q^i`, over `CommRing` — in
+  `QOU.Mass.QHookDimensionBalanced`, which this file already imports. The
+  `open` was left pointing at the old home, so this file has not compiled
+  since that commit.)
                                                       (`QOU.Mass.QHookDimensionBalanced`)
 
   `qIntBal_eq_twist` already relates them: `qIntBal q n = q⁻¹^(n−1) · qIntPoly (q^2) n`.
@@ -50,7 +58,7 @@ import Mathlib.Tactic
 import QOU.Mass.QHookDimension
 import QOU.Mass.QHookDimensionBalanced
 
-open QOU.Mass.QHookDimension (qIntPoly)
+open QOU.Mass.QHookDimensionBalanced (qIntPoly)
 
 namespace QOU.Mass.QIntegerBarParity
 

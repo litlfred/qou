@@ -239,7 +239,7 @@ def main():
     )
     wb.add_data("seifert_exponent", {"x": x_exact, "delta_x": delta_x})
     wb.add_data("correction", {"C": C, "four_u_sq": float(4 * u ** 2)})
-    wb.add_assertion("R_near_1", computed=float(fabs(R_exact - 1)), expected=0,
+    wb.add_assertion("R_near_1", computed=fabs(R_exact - 1), expected=0,
                      tolerance=0.001, source="R = target/base ≈ 1")
     wb.save()
 

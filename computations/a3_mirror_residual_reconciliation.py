@@ -122,13 +122,13 @@ def main() -> int:
     # derived-Coulomb fraction are the two quantities the gate verdict rests on.
     wb.add_assertion(
         name="he3_bondcount_residual_pct",
-        computed=float((B_HE3_bc - B_HE3) / B_HE3 * 100),
+        computed=(B_HE3_bc - B_HE3) / B_HE3 * 100,
         expected=-2.9686547, tolerance=1e-3, unit="percent",
         source=("³He linear-chain bond-count binding residual m_e·2·Vol(L6a4) vs AME; "
                 "the −2.97% is the whole A=3 mirror residual (current best, no fit)."))
     wb.add_assertion(
         name="derived_coulomb_fraction",
-        computed=float(E_coul_derived / split_AME),
+        computed=E_coul_derived / split_AME,
         expected=0.31118811, tolerance=1e-5,
         source=("tanh(ln q₀)·B_pp / (B_³H − B_³He): the DERIVED pp-Coulomb covers 31.1% "
                 "of the mirror split; the remaining 3.2× is the OPEN two-like-charge "

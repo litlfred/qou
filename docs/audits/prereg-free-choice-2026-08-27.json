@@ -1,0 +1,73 @@
+{
+  "schema": "prereg-free-choice/v1",
+  "registered_utc": "2026-08-27",
+  "registrar": "claude-opus-5, session 019qmr2EGCwvCZiTnSFkqYPG",
+  "rule_under_test": "A free choice anywhere in a candidate's specification -- a PARAMETER, an OBJECTIVE, or a SELECTION RULE -- means the candidate cannot be falsified, because it absorbs any residual into that choice. No free choice means it yields a definite prediction and is therefore testable. The rule predicts FALSIFIABILITY, never correctness.",
+  "rule_provenance": "docs/audits/2026-08-27-determinacy-filter-calibration.md, merged to main as f089bc13c6. Its 8/8 retrospective score is explicitly NOT evidence (both axes were assigned by the same agent); this file exists to give the rule a prospective test.",
+  "anti_peek": "Every candidate below carries outcome=null BY CONSTRUCTION. The registry is validated by prereg_free_choice_guard_probe.py, which FAILS if any outcome is non-null. Filling one in requires a commit whose diff shows it, against this file's git hash. Do not edit a prediction after an outcome is known -- add a new dated entry instead.",
+  "registrar_prior_exposure": "I have worked the cable-shift law, the growing-width cut, and the satellite/JSJ front in this session. I have NOT worked any of the five candidates below. My knowledge of each is limited to the specification text quoted here, read at registration time. Candidate 1 arrives with a free-choice label already written by another agent; I did not author it and flag it as such rather than claiming it as my own call.",
+  "candidates": [
+    {
+      "id": "opvalued-cross-channel",
+      "name": "Operator-valued cross-channel / super-Berezinian cross-sector",
+      "spec_quote": "the *only* A=3-magnitude route not excluded (reaches O(1)); currently a fit unless `B,C` derived from the DM q-cubic period (`qou-jqof`, open)",
+      "spec_citation": "docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md; option-e.md:877-903",
+      "free_choice": "parameter",
+      "reason_from_spec": "Two scalars B and C are unbound. The spec itself says 'currently a fit unless B,C derived', so the freedom is acknowledged in the source rather than inferred by me.",
+      "label_authored_by": "prior agent, not this registrar",
+      "prediction": "UNFALSIFIABLE while B and C remain free: any A=3 magnitude, including the target r* ~ 1.585, is reachable by choosing them, so agreement with the target carries no evidential weight. Becomes testable exactly when qou-jqof derives B and C from the DM q-cubic period -- at which point it makes one definite prediction that can fail.",
+      "what_would_change_this_classification": "A derivation of B and C from the q-cubic period, or a proof that some invariant pins their ratio.",
+      "outcome": null
+    },
+    {
+      "id": "whitehead-chain-higher-volume",
+      "name": "Whitehead-chain higher-volume object (Vol = 4G, positive-sum)",
+      "spec_quote": "fresh 2026-08-02; irreducible >=3-body enhancement of the single 3-body trace",
+      "spec_citation": "docs/audits/2026-08-02-whitehead-chain-positive-sum-route.md",
+      "free_choice": "selection",
+      "reason_from_spec": "Vol = 4G (G = Catalan) is a determined number, so there is no free PARAMETER. But the spec does not say WHICH chain, of what length, is the object for a given nucleus -- and an '>=3-body enhancement' indexed by an unspecified chain leaves the chain-to-isotope assignment open. That assignment is a selection rule.",
+      "prediction": "UNFALSIFIABLE until the chain-to-isotope assignment is fixed by something other than the fit. If the assignment is later derived, the candidate becomes testable and the fixed Vol = 4G makes the prediction sharp -- this is the candidate most likely to convert.",
+      "what_would_change_this_classification": "A rule assigning the chain from the nucleus's own structure (coordination graph, JSJ pieces, strand count) rather than by choosing the chain that matches.",
+      "outcome": null
+    },
+    {
+      "id": "weighted-isospin-even-det",
+      "name": "Weighted isospin-even determinant (Perron eigenvalue -> 1 breaks C(A,2))",
+      "spec_quote": "named as 'what would move it' in the cap audit; no construction yet",
+      "spec_citation": "docs/audits/2026-07-18-deltalambda-saturation-det-ceiling.md:190-197",
+      "free_choice": "unclassifiable",
+      "reason_from_spec": "The spec says 'no construction yet'. A candidate without a construction has no specification to read a free choice off, so the rule DOES NOT APPLY. Recording it as unclassifiable rather than forcing a call is itself part of the test: a rule that classifies everything is not discriminating.",
+      "prediction": "NO PREDICTION. Any later classification of this candidate must be made against the construction when it exists, and must not cite this entry as having called it.",
+      "what_would_change_this_classification": "A written construction.",
+      "outcome": null
+    },
+    {
+      "id": "torus-operator-bloch-wigner",
+      "name": "Torus-operator composition -> hyperbolic closure -> Bloch-Wigner volume",
+      "spec_quote": "compute the Bloch-Wigner volumes of the inter-nucleon composition closures `b_i . beta(T_{m,n}) . b_j` and test whether they supply the missing proportional-to-A magnitude",
+      "spec_citation": "docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md, section 5 (bean qou-q6lw)",
+      "free_choice": "selection",
+      "reason_from_spec": "Three indices are unbound in the spec: which torus operator (m,n), and which flanking words b_i and b_j. The same source notes the leading channels are the LIGHT torus operators for H_3, which constrains but does not determine the choice. Summing over all closures would remove the freedom; picking the closure that matches would not.",
+      "prediction": "UNFALSIFIABLE if the (m,n) and the flanking words are chosen per-isotope to match. TESTABLE if the object is a SUM over a canonically determined set of closures -- in which case it makes one definite prediction for the A-scaling that can fail. Which of these two it becomes is the whole question for this candidate, and it is a specification question, answerable before any volume is computed.",
+      "what_would_change_this_classification": "A canonical rule fixing the closure set -- e.g. all closures at a given n, or those forced by the coordination graph.",
+      "outcome": null
+    },
+    {
+      "id": "su4-supermultiplet",
+      "name": "Wigner spin-isospin SU(4) alpha-cluster antisymmetrizer",
+      "spec_quote": "the `[1^4]` alpha-cluster antisymmetrizer (trace `= C(4,A)`, zero for A>4 -> 4He doubly-magic locality, `SU4SupermultipletGate.lean`)",
+      "spec_citation": "docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md, section 4",
+      "free_choice": "none",
+      "reason_from_spec": "Fully specified: a named representation ([1^4]), a stated trace (C(4,A)), and a stated support (zero for A>4). No parameter, no objective, no selection rule -- and it already has a Lean gate.",
+      "prediction": "TESTABLE, and this is the sharpest entry in the registry. It predicts the term VANISHES for every A > 4. So it cannot supply a binding contribution to 6Li, 12C or 16O at all, and any measurement finding that it does would refute either the candidate or its stated support. Note what this does NOT say: being testable is not being right. Per the rule, a determinate candidate can simply be the wrong object -- exactly what happened to the Frobenius co-Casimir.",
+      "what_would_change_this_classification": "Nothing in the specification; it is already free of choice. Only a restatement that introduced a tunable weight would move it.",
+      "outcome": null
+    }
+  ],
+  "registry_level_predictions": [
+    "Of the five, exactly one (su4-supermultiplet) is classified as free of choice and therefore testable as it stands.",
+    "Three (opvalued-cross-channel, whitehead-chain-higher-volume, torus-operator-bloch-wigner) are classified as carrying a free choice and therefore NOT falsifiable in their current form. The rule predicts that any one of them reported as MATCHING the target, without first fixing its free choice, is uninformative -- not wrong, uninformative.",
+    "One (weighted-isospin-even-det) is unclassifiable because it has no construction. A rule that classified it anyway would be over-reaching.",
+    "The rule makes NO prediction about which candidate is correct. If su4-supermultiplet turns out to be wrong, that is consistent with the rule; if opvalued-cross-channel turns out to be right after B and C are derived, that is also consistent. The rule is refuted only if a candidate carrying an unfixed free choice is shown to have been falsifiable in that state, or if a choice-free candidate turns out to admit no definite prediction."
+  ]
+}

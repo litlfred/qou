@@ -9,7 +9,7 @@
       "computed": 2.220446049250313e-16,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-12
+      "tolerance": "1e-12"
     },
     {
       "name": "framework_overpredicts_n_minus_p_by_factor_~60",

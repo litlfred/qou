@@ -1,0 +1,305 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1905.11619v2",
+ "source": {
+  "file": "1905.11619v2.pdf",
+  "sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
+  "bytes": 342525,
+  "pages": 24,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1905.11619",
+   "version": "2",
+   "primary_class": "math.OA",
+   "stamp_date": "13 Feb 2020"
+  },
+  "doi": null,
+  "title": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS",
+  "authors_raw": "MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI",
+  "title_lines": [
+   "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV",
+   "SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS"
+  ],
+  "abstract": "We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups. We construct higher order Hochschild cocycle s using gradient forms associated with a quantum Markov semi-group. By using Schatten- Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the d erivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We appl y this to q-Gaussian algebras \u0393 q(HR). As a result q-Gaussians satisfy AO + for |q|\u2a7d dim(HR)\u2212 1/ 2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20200213221527-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "General conventions and notation",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Containment of bimodules",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Hochschild cohomology",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Gradient tensoring",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Construction of n-cocycles.",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The Haagerup averaging technique",
+   "page": 9,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "q-Gaussian algebras",
+   "page": 10,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Gradient-Sp estimates",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Consequences for Cartan rigidity",
+   "page": 16,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Derivations and the Akemann-Ostrand property",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Group algebras",
+   "page": 18,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Von Neumann algebras with filtration",
+   "page": 19,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7621,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-general-conventions-and-notation",
+   "number": "2.1",
+   "title": "General conventions and notation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 213,
+   "n_words": 44
+  },
+  {
+   "id": "sec-003-22-containment-of-bimodules",
+   "number": "2.2",
+   "title": "Containment of bimodules",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3020,
+   "n_words": 634
+  },
+  {
+   "id": "sec-004-23-hochschild-cohomology",
+   "number": "2.3",
+   "title": "Hochschild cohomology",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 846,
+   "n_words": 184
+  },
+  {
+   "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
+   "number": "3",
+   "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 8153,
+   "n_words": 1703
+  },
+  {
+   "id": "sec-006-32-construction-of-n-cocycles",
+   "number": "3.2",
+   "title": "Construction of n-cocycles.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1391,
+   "n_words": 280
+  },
+  {
+   "id": "sec-007-41-q-gaussian-algebras",
+   "number": "4.1",
+   "title": "q-Gaussian algebras",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-33-the-haagerup-averaging-technique",
+   "number": "3.3",
+   "title": "The Haagerup averaging technique",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 6761,
+   "n_words": 1370
+  },
+  {
+   "id": "sec-009-42-gradient-sp-estimates",
+   "number": "4.2",
+   "title": "Gradient-Sp estimates",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 16,
+   "n_chars": 14425,
+   "n_words": 3185
+  },
+  {
+   "id": "sec-010-43-consequences-for-cartan-rigidity",
+   "number": "4.3",
+   "title": "Consequences for Cartan rigidity",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3365,
+   "n_words": 660
+  },
+  {
+   "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+   "number": "5",
+   "title": "Derivations and the Akemann-Ostrand property",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3223,
+   "n_words": 651
+  },
+  {
+   "id": "sec-012-51-group-algebras",
+   "number": "5.1",
+   "title": "Group algebras",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 12329,
+   "n_words": 2502
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 5652,
+   "n_words": 889
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "sections": 14,
+  "chars_total": 66999
+ }
+}

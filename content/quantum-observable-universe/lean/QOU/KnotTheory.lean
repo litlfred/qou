@@ -129,11 +129,11 @@ def borromeanRings : BraidWord where
 
 /-- The hyperbolic volume of the figure-eight knot (4₁).
     Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function.
-    Value: 2.029883212819307250042408 (OEIS A091518, 24 dps verified;
+    Value: 2.029883212819307250042405 (OEIS A091518, 24 dps verified;
     previous 15-dps literal `2.02988321281931 ± 1×10⁻¹⁴` bumped
     2026-06-07). -/
 noncomputable def vol_figure_eight : HyperbolicVolume where
-  value := 2.029883212819307250042408
+  value := 2.029883212819307250042405
   error_bound := 1e-24
   error_nonneg := by norm_num
 

@@ -6,7 +6,42 @@ is evaluated from the ONE canonical Jones–Markov transfer trace (`tr_m_atom_zn
 the fine-Bratteli path); B_AME comes from the vendored AME2020 table
 (`data/ame2020.json`). This is the multi-isotope view of the single-pipeline
 probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
-`standard-part-functor.md` for the form definitions.
+`algebraic-quantum-volume.md` (Vol_alg := tr_M) for the naming. NOT
+`standard-part-functor.md` -- corrected 2026-08-25, that block defines the
+standard-part map st: No_fin -> R and the functor St, and contains no B_ form,
+no alpha and no binding.
+
+WHAT LICENSES THE LOG, AND WHAT DOES NOT (corrected 2026-08-26, bean qou-mkm8).
+This docstring, and the B_sym provenance row, cited `vol-through-tau.md` and
+tagged the log-forms KVC-conditional. I put that citation here myself in
+933053614f, and it is wrong twice over -- so the retraction it announced is
+itself retracted. Three neighbouring objects have three different licences:
+
+  (1) The LOG'S EXTENSIVITY is DERIVED and needs no conjecture at all. The
+      interface subalgebra is 2-dimensional (sigma^2 = h*sigma + 1 gives
+      span{1, sigma_2}), so tr_atom = tr_free * prod_bonds (z + d_XY) by the
+      Markov property tr_M(W . sigma_2) = z * tr_M(W). A product over bonds has
+      an additive logarithm. That is the whole reason a log appears, and it is
+      elementary. See `_bond_type_L`.
+
+  (2) E_0 x (trace DIFFERENCE) is licensed -- as a CONJECTURE, not a
+      proposition -- by `knot-factor-frobenius-pairing.md`:
+      B_bulk = E_0 (|tr_M(W_free)| - |tr_M(W_atom)|). That is the B_can0 column,
+      and the code comment there already said "NOT the log B_sym".
+
+  (3) ln|tr_M| = Vol is `vol-through-tau.md`, KVC-conditional -- and it does not
+      reach this object. Its quantifier is "for every BRAID beta in B_n", while
+      atom_braid_word_3A's letters are c*sigma_g + d*1, general Hecke elements
+      that are not braid generators. I corrected that quantifier myself in
+      1c83073b3c, 47 minutes AFTER 933053614f, and did not go back to check what
+      it invalidated. Reading past the quantifier does not help either: 0 of 40
+      branch closures of the atom element are hyperbolic (c64833a979, both
+      controls green), so Vol = 0 while B_sym(2H) = 3.8897 MeV.
+
+So B_sym has (1)'s extensivity and (2)'s prefactor, and NO block asserts the
+combination. It is POSITED, not DERIVED*: the KVC tag was over-hedging in form
+(attaching an irrelevant open conjecture) while under-stating in substance
+(concealing that nothing licenses the energy identification at all).
 
 Feasibility: `B_sym` is the EXACT log-ratio binding, but it no longer needs the
 full per-knot trace `tr_M(W_atom)` (whose partition sum p(3A) explodes — ¹²C
@@ -45,6 +80,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 import codata_constants as _codata  # noqa: E402 — registry (CODATA-2022 u→MeV); bean me3r
+from hecke_core import E_HARTREE_EV as _E_HARTREE_EV_DERIVED  # noqa: E402 — mp-backed downcast (qou-ozvb)
 
 # (name, Z, N) grouped by mass band. The sweep is a curated spread low→high so
 # the trend (and the breakdown past the light nuclei) is visible in one view.
@@ -238,9 +274,29 @@ def _ame_table():
 
 
 def _electron_binding_mev(Z):
-    """Total atomic electron binding B_el(Z) in MeV — the AME (Lunney–Pearson–
-    Thibault) empirical fit used to convert atomic↔nuclear masses:
-    B_el = 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV (H ≈ 14 eV → U ≈ 0.76 MeV)."""
+    """Total atomic electron binding B_el(Z) in MeV — DERIVED (owner-ordered
+    swap 2026-08-30, bean qou-g3x3): bare-Z hydrogenic shell sum at the
+    canonical e-Hartree scale, Ry = E_h/2, E_h = α_EM²·m_e c² with the
+    CS-corrected mp α_EM and CODATA m_e (pyhecke float64 excised, bean
+    qou-ozvb). Replaces the AME Lunney-Pearson-Thibault empirical fit
+    (kept as _electron_binding_mev_ame_fit for comparison). Bare-Z carries
+    no inter-electron screening: exact for H (13.606 eV), over-binds He/Li
+    at the eV scale and Fe by ~18 keV — all far below the MeV-scale nuclear
+    residuals this table reports. mp-exact version + witness:
+    computations/atom_electron_mass.py / atom-electron-mass.witness.json."""
+    ry_mev = _E_HARTREE_EV_DERIVED / 2.0 / 1e6
+    total, n, left = 0.0, 1, Z
+    while left > 0:
+        k = min(2 * n * n, left)
+        total += k * (Z * Z) * ry_mev / (n * n)
+        left -= k
+        n += 1
+    return total
+
+
+def _electron_binding_mev_ame_fit(Z):
+    """AME (Lunney-Pearson-Thibault) empirical fit — COMPARISON ONLY since
+    the 2026-08-30 derived swap: 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV."""
     return 1.44381e-5 * Z ** 2.39 + 1.55468e-12 * Z ** 5.35
 
 
@@ -603,11 +659,18 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         from q_parameter import Q_50_DIGIT_STR as _Q50i
         ta_i, tf_i, _, _ = tr_m_atom_zn(
             Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q50i)), dps=50)
-        ta_i, tf_i = float(ta_i), float(tf_i)
-        E_retained = alpha * (ta + ta_i) / 2.0
-        E_emitted = alpha * abs(ta - ta_i) / 2.0
+        # NO-FLOAT64 (AGENTS.md): these were cast via `float(...)` until
+        # 2026-08-26.  Measured impact on E_multilink was 5e-22..3e-19 relative
+        # (2H/3H/3He/4He), i.e. none of the displayed digits moved -- the two
+        # defects differ at O(1), so the subtraction below is not in fact
+        # near-cancelling at these parameters.  Removed regardless: the rule is
+        # not conditional on the cancellation happening to be benign, and a
+        # dashboard column becomes an argument in an audit the moment it is
+        # quoted.
+        E_retained = alpha * (ta + ta_i) / 2
+        E_emitted = alpha * abs(ta - ta_i) / 2
         defect0, defecti = tf - ta, tf_i - ta_i
-        E_multilink = alpha * abs((defect0 - defecti) / 2.0)
+        E_multilink = alpha * abs((defect0 - defecti) / 2)
         B_sym_ent = B_sym + E_multilink
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
@@ -666,8 +729,16 @@ def _print_provenance() -> None:
           "(AME2020), m_e (CODATA). Not predicted by anything here. |")
     print("| `CAL`       | one of the three calibrations: m_e (CAL-1), q₀ via "
           "CAL-2, m_π (CAL-3). Inputs BY CONSTRUCTION — not successes. |")
+    print("| `DERIVED*`  | as DERIVED, but CONDITIONAL on an open conjecture or "
+          "sorry: E_C on the Witten-κ Gram-determinant sorry. |")
+    print("| `POSITED`   | the functional FORM is asserted, not derived. The "
+          "log-forms: their extensivity follows from the Markov property (no "
+          "conjecture), but no block licenses α·ln(ratio) as an ENERGY — the "
+          "nearest, conj:knot-factor-frobenius-pairing, gives E₀ × the trace "
+          "DIFFERENCE. Corrected 2026-08-26 (bean qou-mkm8); these read "
+          "`DERIVED*` on a KVC citation that does not reach the atom word. |")
     print("| `DERIVED`   | parameter-free from (q₀, m_e) through the Markov "
-          "trace: B_sym, B_qCLT_fac, m_can, F_Bor. No fit, no "
+          "trace: m_can, F_Bor. No fit, no "
           "AME beyond the comparison. |")
     print("| `EXPLORATORY` | shown for comparison, NOT production-wired: "
           "B_lin, B_tetra, m_can⁰, m_tetra. |")
@@ -677,10 +748,19 @@ def _print_provenance() -> None:
     for col, tag, note in (
         ("B_AME / M_meas / σ_exp", "MEASURED", "AME2020 — the target"),
         ("m_e, q₀, m_π", "CAL", "the 3 calibrations; q₀ on the PROTON pin"),
-        ("B_sym", "DERIVED", "exact log-ratio α·ln(tr_free/tr_atom)"),
-        ("B_qCLT_fac", "DERIVED", "colour-weighted q-CLT (A→∞ approximation)"),
+        ("B_sym", "POSITED", "exact log-ratio α·ln(tr_free/tr_atom). The log's "
+         "EXTENSIVITY is derived (Markov property, no conjecture); the α× "
+         "identification as an energy is asserted. NOT KVC-conditional — "
+         "vol-through-tau quantifies over BRAIDS and the atom word's letters "
+         "are general Hecke elements; 0/40 closures hyperbolic ⇒ Vol = 0 while "
+         "B_sym(²H) = 3.89 MeV. Corrected 2026-08-26, bean qou-mkm8"),
+        ("B_qCLT_fac", "POSITED", "colour-weighted q-CLT (A→∞ approximation) — "
+         "same log-form licence as B_sym"),
         ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
-        ("E_C", "DERIVED", "standard uniform-sphere Coulomb, r₀=1.2 fm"),
+        ("E_C", "DERIVED*", "uniform-sphere Coulomb at the CAL-3 length "
+         "R = λ̄_π·A^(1/3), λ̄_π = ℏc/m_π = 1.41382 fm (NOT the empirical "
+         "r₀ = 1.2 fm); α_EM is DERIVED, and *conditional on an open "
+         "Witten-κ sorry — see the legend"),
         ("B_lin / B_tetra / m_can⁰", "EXPLORATORY", "comparison only"),
     ):
         print(f"| `{col}` | `{tag}` | {note} |")
@@ -783,7 +863,7 @@ def _print_legend() -> None:
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
 | `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon — DEPRECATED 2026-08-08 postdiction near-match, NOT derived** (no basis in the derivation chain; the surprisal form was chosen because it lands near 8 and `W_free` is unnormalised so `ln(1/W)` is not a probability — red-team `docs/audits/2026-08-22-avol-binding-redteam.md`) (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
-| `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (standard uniform-sphere; r₀=1.2 fm, α_EM·ℏc=1.43996 MeV·fm — not fit). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
+| `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (uniform sphere). **Both inputs corrected here 2026-08-25 — the legend had described a superseded configuration.** The length is the **CAL-3** radius `R = λ̄_π·A^(1/3)` with `λ̄_π = ℏc/m_π = 1.41382 fm`; `coulomb_energy.R0_FM = LAMBDA_BAR_PI_FM`, and `R0_FM_EMPIRICAL = 1.2` is retained *for comparison only, not as the default*. And `α_EM·ℏc = 1.4399652199 MeV·fm` is no longer the CODATA literal `1.43996` — it is **derived** via `meson_em_sinh_closed_form._alpha_em_inv_derived(q₀)`. So "not fit" understates it in one direction and overstates it in another: it is derived rather than fitted, but that derivation is **conditional on an open Witten-κ Gram-determinant `sorry`**, so `E_C` is tagged `DERIVED*` rather than `DERIVED`. Two weak steps remain named in the module itself: `A^(1/3)` is a saturation assumption (solving `R = λ̄_π·A^x` gives x = 0.97/0.43/0.53/0.31 at A = 2,3,3,4, not ⅓), and coefficient-exactly-1 is a selection among four mass scales, measured at 0.985 ± 0.069 (bean `qou-usft`). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
@@ -814,9 +894,19 @@ is what q₀ and the mass scale are actually pinned to here.
 
 This dashboard's q₀ is the **experimental (proton) pin**, m_p/m_e,
 q₀ = 1.1099785827513808… — per the 2026-08-07 owner directive that all compute
-defaults to it, and now declared explicitly as `physical_proton` in
-`q0_anchor_manifest.json` rather than relying on the "not listed ⇒ proton"
-default.
+defaults to it.
+
+CORRECTED 2026-08-25 (PR #5765): this sentence previously claimed the stem was
+"now declared explicitly as `physical_proton` in `q0_anchor_manifest.json` rather
+than relying on the 'not listed ⇒ proton' default". **That is false, and it was
+load-bearing.** Measured: `mass_binding_dashboard` does not appear in that manifest
+at all — nor do `canonical_mass`, `borromean_binding_recompute` or `coulomb_energy`.
+(`tr_m_atom_via_transfer` IS listed, under `physical_proton`.) So the resolution is
+correct but is obtained **by exactly the default the sentence denied relying on**.
+That matters because the explicit declaration is what would protect these numbers if
+anyone drove `ideal_muon` differently — a protection the dashboard claimed and did
+not have. Either add the four stems to the manifest or say plainly that they resolve
+by default; do not claim the former while doing the latter.
 
 CORRECTED 2026-08-08: this paragraph previously claimed the canonical 3-CAL
 (muon-anchored) value and that the proton re-pin was "not used here". The code
@@ -1011,6 +1101,13 @@ def main(argv=None) -> int:
         print(f"| {r['name']} | {r['A']} | {Z} | {_fmt(m_atom_ame,10,3)} "
               f"| {_fmt(m_atom_pred,10,3)} | {_sci(err,13,3)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(e_layer,7,3)} |")
+    max_fit_dev_kev = max(
+        abs(_electron_binding_mev(r["Z"]) - _electron_binding_mev_ame_fit(r["Z"])) * 1e3
+        for r in rows if r["Z"] > 0
+    )
+    print(f"\n  B_el is DERIVED (bare-Z hydrogenic @ e-Hartree, swap 2026-08-30); "
+          f"max |derived − AME fit| over this group: {max_fit_dev_kev:.4f} keV "
+          f"(screening open; both far below the MeV nuclear residuals)")
 
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
@@ -1100,7 +1197,9 @@ def main(argv=None) -> int:
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
           "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩. "
-          "Defn: standard-part-functor.md.")
+          "Defn: algebraic-quantum-volume.md (Vol_alg := tr_M, a naming). The "
+          "log-forms are POSITED, not KVC-conditional — see the module "
+          "docstring, bean qou-mkm8.")
     _out = sys.stdout.getvalue()
     sys.stdout = _old_stdout
     print(format_md_tables(_out), end="")

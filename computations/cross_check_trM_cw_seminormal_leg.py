@@ -67,7 +67,7 @@ ATOMS = [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1),
 def load_q() -> str:
     d = json.loads((HERE / "q-pinning-50-digit.witness.json").read_text())
     q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595557"), q
+    assert q.startswith("1.109978595642"), q
     return q
 
 
@@ -175,6 +175,15 @@ def main() -> int:
     wit["allPassed"] = all(a["passed"] for a in wit["assertions"])
     out = HERE / "cross-check-trM-cw-seminormal.witness.json"
     with open(out, "w", encoding="utf-8") as f:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        import os as _os  # noqa: E402 -- provenance stamp
+        wit.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            wit, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(wit, f, indent=1)
     print(f"\nworst |Δ|/ref = {float(worst):.2e}  ({'ALL 1ppQ' if all_ok else 'FAIL'})")
     print(f"witness -> {out.name}  allPassed: {wit['allPassed']}  "

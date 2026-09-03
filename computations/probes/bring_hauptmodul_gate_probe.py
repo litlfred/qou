@@ -150,7 +150,7 @@ def main():
     )
     wb.add_assertion(
         "eta_quotient_lands_on_minus_10",
-        computed=float(resid),
+        computed=resid,
         expected=0.0,
         tolerance=1e-3,
         source="|(η(τ₀)/η(5τ₀))⁶ + 10| at the 6-d.p. BDH22 τ₀; residual is "

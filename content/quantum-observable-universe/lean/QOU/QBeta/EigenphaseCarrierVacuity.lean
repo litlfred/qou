@@ -58,13 +58,13 @@ Definitions reproduced verbatim from the content-block sibling so this file is
 self-contained and does not depend on a block's `.lean` staying put. -/
 
 /-- Convention-C Markov parameter, as spelled in the content block. -/
-noncomputable def markovZ (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+noncomputable def markovZC (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- `h = q − q⁻¹`. -/
 noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
 /-- The asserted single-wrap eigenphase `α = (z−1)h/2`. -/
-noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ q - 1) * heckeH q / 2
+noncomputable def eigenphase (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
 
 /-- The existing carrier, fields reproduced verbatim. -/
 class TransferMatrixEigenphase (q : ℝ) : Prop where

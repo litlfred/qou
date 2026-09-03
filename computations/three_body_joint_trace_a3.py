@@ -62,6 +62,7 @@ def main() -> int:
     print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}\n")
     AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": mp.mpf("7.7180")}
     results = {}
+    c3_exact = {}
     for name, (Z, N) in {"T": (1, 2), "3He": (2, 1)}.items():
         full = atom_braid_word_3A(Z, N, include_inter=True)
         free = [x for x in full if x[2] % 3 != 2]
@@ -75,6 +76,9 @@ def main() -> int:
         pair_sum = B_a + B_b
         joint = E0 * (g0 - gab)
         c3 = joint - pair_sum            # connected 2-bond (3-body) correlation
+        # Kept as mpf (not the float()-ed payload copy) so the sign claim below
+        # is asserted in exact-ish arithmetic rather than off a float64 field.
+        c3_exact[name] = c3
         # closed estimate: pair-sum (extensive) is the leading term; add c3
         results[name] = {
             "B_bond_a_MeV": float(B_a), "B_bond_b_MeV": float(B_b),
@@ -98,7 +102,26 @@ def main() -> int:
                        "c3<0 = destructive co-bond interference = the 3-body "
                        "force. Adjacent pair only; non-adjacent 1-3 flagged. "
                        "Rust kernel; zero fit.")
-    wb.add_assertion("kernel_ran", computed=1, expected=1, tolerance=0)
+    # `kernel_ran` was `computed=1, expected=1` (bean `qou-26f2`). Reaching
+    # this line is what proves the kernel ran; an assertion placed after it can
+    # only ever agree with itself. Recorded as data.
+    wb.add_data("kernel_ran", True)
+    # The `kernel_ran` demotion above was right, and it is also exactly how
+    # this witness ended up claiming `allPassed: true` over an EMPTY assertion
+    # list (bean qou-srvu, which records that a correctly-drained producer
+    # lands in that population by default). The probe DOES have a falsifiable
+    # claim -- its own note states it: "c3<0 = destructive co-bond
+    # interference = the 3-body force". Asserted as a count of atoms violating
+    # it. The bar is 0, from the claim's own logic, not a fitted threshold;
+    # the least-negative atom sits at -1.0338 MeV, so the margin is the whole
+    # distance to zero.
+    _viol = sum(1 for v in c3_exact.values() if v >= 0)
+    wb.add_data("max_correlation_c3_MeV", str(max(c3_exact.values())))
+    wb.add_assertion(
+        "connected_3body_correlation_negative_for_every_a3_atom",
+        computed=str(_viol), expected="0", tolerance="0",
+        source="c3 = E_0(g_a+g_b-g_0-g_ab) < 0: joint trace saturates below the pair-sum",
+    )
     wb.save()
     print("✓ Witness: three-body-joint-trace-a3.witness.json")
     return 0

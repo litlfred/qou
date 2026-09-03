@@ -1,0 +1,223 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1707.06608v1",
+ "source": {
+  "file": "1707.06608v1.pdf",
+  "sha256": "7b7db6dce87dc81e00aff8778db68dddfd50882a11d5be9c998b750d5ef6d016",
+  "bytes": 20252884,
+  "pages": 22,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1707.06608",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "20 Jul 2017"
+  },
+  "doi": null,
+  "title": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential",
+  "authors_raw": "A. Samoilenka\u2020 and Ya. Shnir\u2020\u22c6",
+  "title_lines": [
+   "Fractional Hopfions in the Faddeev-Skyrme model with a",
+   "symmetry breaking potential"
+  ],
+  "abstract": "We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum. It includes, as a limiting case, the usualSO(3) symmetry breaking mass term, another limit corresponds to the potentialm2\u03c62 1, which gives a mass to the corresponding component of the scalar \ufb01eld. However we \ufb01nd that the spacial distribution of the energy density of these solutions has more complicated structure, than in the case of the usual Hop\ufb01ons, typically it represents two separate linked tubes with di\ufb00erent thicknesses and positions. In order to classify these con\ufb01gurations we de\ufb01ne a counterpart of the usual position curve, which represents a collection of loopsC1,C\u22121 corresponding to the preimages of the points\u20d7\u03c6 = (\u00b11\u2213\u00b5, 0, 0), respectively. Then the Hopf invariant can be de\ufb01ned asQ = link(C1,C\u22121). In this model, in the sectors of degrees Q = 5, 6, 7 we found solutions of new type, for which one or both of these tubes represent trefoil knots. Further, some of these solutions possess di\ufb00erent types of curvesC1 andC\u22121.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210617085538Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The model",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Initial approximation",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Numerical results",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Q=1",
+   "page": 6,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Q=2",
+   "page": 10,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Multisoliton configurations",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Degrees 3 and 4",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Degrees 5,6 and 7",
+   "page": 18,
+   "source": "outline",
+   "number": "4.3.2"
+  },
+  {
+   "level": 1,
+   "title": "Compact solutions",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Summary",
+   "page": 20,
+   "source": "outline",
+   "number": "6"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2332,
+   "n_words": 353
+  },
+  {
+   "id": "sec-001-2-the-model",
+   "number": "2",
+   "title": "The model",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 9515,
+   "n_words": 1604
+  },
+  {
+   "id": "sec-002-3-initial-approximation",
+   "number": "3",
+   "title": "Initial approximation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 5142,
+   "n_words": 884
+  },
+  {
+   "id": "sec-003-4-numerical-results",
+   "number": "4",
+   "title": "Numerical results",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 866,
+   "n_words": 139
+  },
+  {
+   "id": "sec-004-41-q1",
+   "number": "4.1",
+   "title": "Q=1",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 6645,
+   "n_words": 1202
+  },
+  {
+   "id": "sec-005-42-q2",
+   "number": "4.2",
+   "title": "Q=2",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3666,
+   "n_words": 619
+  },
+  {
+   "id": "sec-006-431-degrees-3-and-4",
+   "number": "4.3.1",
+   "title": "Degrees 3 and 4",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 18,
+   "n_chars": 6920,
+   "n_words": 1156
+  },
+  {
+   "id": "sec-007-432-degrees-56-and-7",
+   "number": "4.3.2",
+   "title": "Degrees 5,6 and 7",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3530,
+   "n_words": 577
+  },
+  {
+   "id": "sec-008-5-compact-solutions",
+   "number": "5",
+   "title": "Compact solutions",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2094,
+   "n_words": 347
+  },
+  {
+   "id": "sec-009-6-summary",
+   "number": "6",
+   "title": "Summary",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 6488,
+   "n_words": 1077
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 10,
+  "chars_total": 47198
+ }
+}

@@ -41,6 +41,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from canonical_braid_marshalling import marshal_to_chi_lambda_braid  # noqa: E402
+from legacy_marshalled_frame import legacy_nucleon_tau_M_H3  # noqa: E402
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1  # noqa: E402
 from closed_form_tau_M import (  # noqa: E402
     closed_form_tau_M, closed_form_ratio, interface_census,
@@ -54,28 +55,17 @@ ATOMS = [
 ]
 
 
-def marshal_intra(chain_g0, chain_g1, h_val: float):
-    """Marshal an H_3 nucleon intra word for chi_lambda_braid."""
-    chain_with_gens = (
-        [(c, d, 0) for c, d in chain_g0]
-        + [(c, d, 1) for c, d in chain_g1]
-    )
-    return marshal_to_chi_lambda_braid(chain_with_gens, h_val)
-
-
-def compute_tau_M_nucleon_H3(g0, g1, q_val: mp.mpf,
-                              dps: int = 50) -> mp.mpf:
-    """tr_M^3(nucleon, q) — proton or neutron H_3 Markov trace."""
-    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
-    word = marshal_intra(g0, g1, h_val)
-    q_str = mp.nstr(q_val, dps, strip_zeros=False)
-    total = mp.mpf(0)
-    for lam in partitions_of(3):
-        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
-        chi = chi_lambda_braid(lam, word, q_value=q_str,
-                                precision="mpfr_50dps")
-        total += y * mp.mpf(str(chi))
-    return total
+# The LEGACY-frame nucleon trace lives in `legacy_marshalled_frame`, and this
+# script's use of it is deliberate: the empirical slow path below is bound to
+# `chi_lambda_braid` via the same marshaller, so both sides of the comparison
+# must sit in ONE frame. See that module's docstring, and DO NOT re-point this
+# at the canonical `closed_form_tau_M` helper — it was fixed on 2026-08-26
+# (bean `qou-qu2w`) and returns different numbers by design.
+#
+# Two local copies used to live here: `marshal_intra`, duplicated verbatim
+# from `rho_constit_equals_tau_M_proton_phase5l`, and a wrapper that SHARED
+# THE CANONICAL HELPER'S NAME while returning something else. Both are gone;
+# the name collision went with them (bean `qou-iu3m`).
 
 
 def compute_tau_M_full(Z: int, N: int, q_val: mp.mpf,
@@ -139,11 +129,11 @@ def main() -> int:
     # Compute the two H_3 building blocks once.
     print(f"Computing H_3 building blocks at q_0...")
     t0 = time.time()
-    tau_p = compute_tau_M_nucleon_H3(_PROTON_G0, _PROTON_G1, q_val)
+    tau_p = legacy_nucleon_tau_M_H3(_PROTON_G0, _PROTON_G1, q_val)
     print(f"  tr_M^3(𝓑_p, q_0) = {float(tau_p):.16f}  "
           f"[{time.time()-t0:.2f}s]")
     t0 = time.time()
-    tau_n = compute_tau_M_nucleon_H3(_NEUTRON_G0, _NEUTRON_G1, q_val)
+    tau_n = legacy_nucleon_tau_M_H3(_NEUTRON_G0, _NEUTRON_G1, q_val)
     print(f"  tr_M^3(𝓑_n, q_0) = {float(tau_n):.16f}  "
           f"[{time.time()-t0:.2f}s]")
     print()

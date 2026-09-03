@@ -16,12 +16,53 @@ mutually orthogonal under this pairing
 
 $$
   \langle Z^{(k)}(A),\, Z^{(\ell)}(A) \rangle \;=\; 0
-  \qquad \text{whenever } k + \ell \neq N,
+  \qquad \text{whenever } k \neq \ell .
 $$
 
-where $N$ is the maximal GB-depth in $Z(A)$. The self-dual pairing
-$Z^{(k)} \times Z^{(N-k)} \to R$ is the **Poincaré duality of
-curvature-rank strata**.
+> **Corrected, and the correction *repairs* Step 4 rather than breaking
+> it.** This displayed condition read
+> "whenever $k + \ell \neq N$", followed by *"the self-dual pairing
+> $Z^{(k)} \times Z^{(N-k)} \to R$ is the **Poincaré duality of
+> curvature-rank strata**"* — an **anti-diagonal** duality, imported
+> from [`prf:spectral-sequence-collapse`](#prf:spectral-sequence-collapse)
+> "§Frobenius duality of strata", where the same claim has now been
+> refuted in place.
+>
+> The strata here are spans of central primitive idempotents, and
+> distinct idempotents **annihilate each other**: for any linear
+> functional $\varphi$,
+> $\varphi(e_\lambda e_\mu) = \varphi(\delta_{\lambda\mu} e_\lambda)$.
+> So the pairing on that basis is $\mathrm{diag}(\tau(e_\lambda))$ —
+> **diagonal**, with every stratum self-dual and every *distinct* pair
+> annihilating. Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the
+> corpus's own idempotents: all six off-diagonal entries identically
+> $0$, diagonal nonzero, completeness self-test
+> $\sum_\lambda \tau(e_\lambda) = 1$
+> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+>
+> **Step 4 needs the diagonal form and does not follow from the
+> anti-diagonal one.** It argues that $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$
+> pairs to zero with any $T_w$ whose $Z^{(k)}$-projection vanishes. That
+> is precisely $\langle Z^{(k)}, Z^{(\ell)}\rangle = 0$ for
+> $k \neq \ell$. Under the old anti-diagonal condition the pairing was
+> licensed to be **non**-zero at $\ell = N - k$, so Step 4's truncation
+> did not follow from Step 1 as written whenever $N - k \leq
+> k_\star(T_w)$. The correction closes that hole.
+>
+> **Still open, and not repaired here:** Step 4 pairs a central
+> $\phi_q^{(k)}$ against a general $T_w \in A$, not against a central
+> element, so "$T_w$ has zero projection on $Z^{(k)}$" has to be read as
+> a statement about $T_w$'s Wedderburn *blocks*. That reading is
+> plausible — $e_\lambda$ central idempotent gives
+> $\tau(e_\lambda a) = \tau(e_\lambda a e_\lambda)$ — but it is not
+> stated in the block, and it is a different question from the one
+> corrected here. Analysis:
+> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+
+where $N$ is the maximal GB-depth in $Z(A)$, retained below only as the
+top of the depth range. The pairing $Z^{(k)} \times Z^{(k)} \to R$ is
+non-degenerate on each stratum separately — each stratum is **self**-dual,
+and there is no Poincaré-type pairing across distinct strata.
 
 *Step 2 (existence of $\phi_q^{(k)}(z_i)$).* By
 [cor: quantum dilogarithm](#cor:quantum-dilogarithm), the level-$i$
@@ -162,7 +203,7 @@ correspondence to the standard $q$-content / hook-length formula plus
 (GB-depth = max hook length), so the structural identification is now
 explicit — **but "explicit" here means *written down*, not *established*.
 The citation does not supply the identification; the passage above, at
-"not a consequence of [curvature-rank stratification] … which … mentions no
+"not a consequence of [curvature-rank stratification] ... which ... mentions no
 partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of

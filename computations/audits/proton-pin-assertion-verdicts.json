@@ -1,0 +1,144 @@
+{
+  "schema": "proton-pin-assertion-verdicts/v1",
+  "producedBy": "computations/audits/proton_pin_assertion_check.py",
+  "generatedAt": "2026-08-30T04:59:35.699951+00:00",
+  "manifestBaseline": "origin/main q0_anchor_manifest.json, ideal_muon = 19 stems (was 21 when this artifact was first written; alpha_5_lp_dual_crystal and qbeta_c4even_ladder_reconstruction_probe were migrated out to physical_proton on 2026-08-29 after both measured PASSES-AT-PROTON)",
+  "READ_THIS_FIRST": "A verdict is sound ONLY for a producer QOU_Q0_ANCHOR actually reaches. The reachability test was WRONG IN BOTH DIRECTIONS in the first version and the count hid it: bare-name matching gave 15 of 21 on 2026-08-29, the corrected test also gives 15, over a DIFFERENT SET. It falsely refused rho_f_categorical_probe (names the producer in a docstring, never reads the witness) and falsely RAN qbeta_jacobi_anger_tower_general (reaches muon via q_muon_at(), never mentions the file) — the second being a false pass, the dangerous direction. A matching count is not agreement.",
+  "verdicts": {
+    "aoperator_a5_crosscheck": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 22,
+      "timeout": 7200,
+      "measured_at": "2026-08-25T09:xxZ",
+      "detail": "physical allPassed=True failing=[]; ideal allPassed=False failing=['a5_per_lambda_max_abs_diff']. Works at PROTON, fails at muon — the reverse of my first recommendation.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "block_swap_binding": {
+      "verdict": "UNKNOWN",
+      "seconds": 7200.333912006,
+      "timeout": 7200,
+      "measured_at": "2026-08-25T12:40:30Z",
+      "detail": "exceeded 7200s. Row 1 (sigma=id) completed in <=19s; row 2 did not finish in the remaining 7181s — a >378x step, so the budget is not the lever.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "gram_norm_binding_probe": {
+      "verdict": "PENDING",
+      "seconds": null,
+      "timeout": 7200,
+      "measured_at": null,
+      "detail": "interrupted by container reclaim at ~2100s while on 3H (n=9); 2H (n=6) had taken 0.8s. Checkpoint holds in_flight, so a restart recovers the tree and re-runs it. NOT a verdict.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "alpha_5_lp_dual_crystal": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 3,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_c4even_ladder_reconstruction_probe": {
+      "verdict": "PASSES-AT-PROTON",
+      "seconds": 4,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "1 witness, 3 assertions, all pass",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "rho_f_categorical_probe": {
+      "verdict": "NO-ASSERTIONS",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "writes a witness but asserts nothing, so running it at proton establishes nothing. Only measurable at all because the reachability false positive was fixed.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "qbeta_hoefsmit_tbeta_matrix_build_probe": {
+      "verdict": "BROKEN-AT-BOTH",
+      "seconds": 1,
+      "timeout": 600,
+      "measured_at": "2026-08-29",
+      "detail": "TypeError: unsupported format string passed to mpf.__format__, IDENTICALLY at both pins. NOT a hold — a pre-existing producer defect (the mpf-formatting class). Fix the producer; the anchor question is unanswered until then.",
+      "sound": true,
+      "group": "A_manifest_driven"
+    },
+    "hadron_knot_table": {
+      "verdict": "UNKNOWN",
+      "seconds": 7200.153592746001,
+      "timeout": 7200,
+      "measured_at": "2026-08-30T04:57:29Z",
+      "detail": "exceeded 7200s. NOT a pass and NOT a fail: it does not establish whether the producer works at the proton pin. It DOES establish a measured lower bound, and a much stronger one than AGENTS.md carries. The three A=1 atoms (proton, neutron, protium) were all complete by the FIRST 30s progress tick; the log then never grew again across 239 further ticks. So deuterium -- atom 4 of 19, the first BOUND atom -- ran >=7170s (~2h) without finishing, against the ~50 min AGENTS.md records before its own timeout cut it off. Producer held 100% CPU throughout (7196s cpu / 7190s wall, RSS 611 MB), so this is compute, not a stall.",
+      "atoms_completed": 3,
+      "atoms_total": 19,
+      "sound": true,
+      "group": "A_manifest_driven"
+    }
+  },
+  "reachability": {
+    "measured_at": "2026-08-30",
+    "criterion": [
+      "q-pinning-50-digit.witness.json",
+      "q_muon_at",
+      "_q0_value_for_anchor",
+      "load_q_50dps"
+    ],
+    "A_measurable": [
+      "hadron_knot_table",
+      "qbeta_hoefsmit_tbeta_matrix_build_probe",
+      "rho_f_categorical_probe"
+    ],
+    "B_refused": [
+      "atomic_tr_m_mpfr_50dps",
+      "cross_check_trM_1ppb",
+      "cross_check_trM_cw_seminormal_leg",
+      "frakV_askey_wilson_recurrence_tie_probe",
+      "he4_binding_k_stage2_probe",
+      "he4_stage2_ranking_seminormal_xcheck",
+      "lambda_scale_substrate_probe",
+      "q0_anchor_consistency_audit",
+      "q1_mass_gap_probe",
+      "q_pinning_50_digit",
+      "qbeta_decay_sdp_extended_ck",
+      "qbeta_fsc_g_pattern_comparison",
+      "qbeta_jacobi_anger_tower_general",
+      "qbeta_physics",
+      "qbeta_symbolic_sdp_strict_complementarity"
+    ],
+    "no_live_producer": [
+      "alpha_high_precision"
+    ],
+    "no_live_producer_note": "alpha_high_precision is listed in ideal_muon but its ONLY file on main is computations/_deprecated/alpha_high_precision.py. The check tool's SKIP tuple excludes _deprecated, so this stem is neither A nor B: there is no live producer to run at either pin. It is a manifest entry with nothing behind it. Do NOT count it as an unmeasured group-A hold. Measured 2026-08-30 by rglob over computations/ with SKIP applied; an rglob WITHOUT SKIP puts it in A_measurable and inflates that list to 4 — that is the deprecated file being read as live, not a fourth measurable producer.",
+    "drift_note": "A_measurable shrank 5 -> 3 between 2026-08-29 and 2026-08-30. Both departures are the migration succeeding, not a measurement changing: alpha_5_lp_dual_crystal and qbeta_c4even_ladder_reconstruction_probe both measured PASSES-AT-PROTON and were moved to physical_proton, so they are no longer ideal_muon stems awaiting a verdict. Their verdicts are retained in the verdicts block. B_refused is unchanged at 15.",
+    "manifest_dead_stems": {
+      "measured_at": "2026-08-30",
+      "method": "for every stem in q0_anchor_manifest.json, rglob computations/**/<stem>.py with the check tool's SKIP tuple ('_deprecated', '__pycache__', 'node_modules', '.git', '.claude') applied; a stem with no surviving hit has no live producer.",
+      "totals": "753 stems audited: ideal_muon 19, physical_proton 718, ambiguous 16. Two stems have no live producer, one in each of the first two lists; ambiguous is clean.",
+      "ideal_muon": [
+        {
+          "stem": "alpha_high_precision",
+          "only_file": "computations/_deprecated/alpha_high_precision.py",
+          "deprecated_in": "f62425070e (2026-08-25, on main) — 'B2: EXCISE alpha* — it is a fit, and only CAL-1/2/3 are admissible'",
+          "entry_is_not_inert": true,
+          "why": "q_parameter selects the anchor by Path(sys.argv[0]).stem, so running the deprecated file directly still matches this entry and rebinds the constants to the MUON pin. Deleting the entry would silently flip that file to proton. Left in place deliberately; recorded rather than fixed.",
+          "related_bean": "qou-2zjp — a todo GAP bean about this producer's bisection bracket, last updated 2026-08-25T01:03Z, hours before the excision. Noted there, not closed."
+        }
+      ],
+      "physical_proton": [
+        {
+          "stem": "binding_k_enumerator",
+          "only_file": "computations/_deprecated/binding_k_enumerator.py",
+          "deprecated_in": "626f332b08 (2026-08-10) — 'deprecate(binding_k_enumerator): historical convention-C ranking leaves the corpus'",
+          "entry_is_not_inert": false,
+          "why": "q_parameter's default for an unlisted stem is already proton, so this entry changes no behaviour for any file, live or deprecated. Removing it would be a true no-op; kept for symmetry with the ideal_muon case, which is not."
+        }
+      ],
+      "caution": "These two are NOT unmeasured group-A holds and must not be counted as such. They are manifest entries whose producers were deliberately excised, with the manifest not updated in the same commit."
+    }
+  }
+}

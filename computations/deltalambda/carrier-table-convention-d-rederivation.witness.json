@@ -1,0 +1,59 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-26T19:20:54.105112+00:00",
+  "commitSha": "82d699c5f732fd77da3692d7156d30593f8692fc",
+  "assertions": [
+    {
+      "name": "markov_normalization_recomputed_weights",
+      "computed": "1.81113581576534247350182385817755835613650623962782763791652e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 609,
+  "computation": "carrier-table-convention-d-rederivation",
+  "scriptFile": "carrier_table_convention_d_rederivation.py",
+  "scriptHash": "ca288cd4a738",
+  "scriptCommitSha": "790a3cd39ac519a05d6129a409ccef4cf93afc55",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "47b406d9ba6e343f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/carrier_table_convention_d_rederivation.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/carrier_table_convention_d_rederivation.py"
+  },
+  "description": "Independent convention-D re-derivation of the carrier table's m_e*S and A columns for the four anchors. y_lambda is RECOMPUTED from y_lambda_su_n and theta is REBUILT from chi/dim, so the probe's expected literals are not checked against the probe's own output. 5Li/6Li are out of scope: their free chi comes from the probe's own LR path, which would not be a cross-check.",
+  "data": {
+    "me_S_MeV_D": "0.346713766129367266507468823794614460018775009523676965674151",
+    "A_req_D": "6.41614616239368098657710443711106247118760376082946475918781",
+    "me_S_MeV_T": "0.471968563125080150455260229412483455204624662619166915223374",
+    "A_req_T": "17.9711041426972575501480521833799846328339327524547032545551",
+    "me_S_MeV_3He": "0.314121863371399831935514353262401952112412554710810339025966",
+    "A_req_3He": "24.5702137290412885091490688422306456967167965582153571465807",
+    "me_S_MeV_4He": "0.384481710104210974425022999173672817333590373380383569632915",
+    "A_req_4He": "73.5943002134761267645890742248712189589190329331883786114476",
+    "me_S_MeV_5Li": "0.256849955461560024798712989768651331150946558322325581591403",
+    "A_req_5Li": "102.513790406090327553122922060264452987737060912297520154043",
+    "me_S_MeV_6Li": "0.296554673175081456929795166211270130818861556192075929879286",
+    "A_req_6Li": "107.885628162437443835303557180149443054317408648448576280840",
+    "scope_note": "D/T/3He/4He rebuild theta from the cached per-block free AND atom chi. 6Li has no cached free chi, so its free half comes from chi_free_via_frobenius -- the power-sum/Murnaghan-Nakayama route, which forms no Littlewood-Richardson coefficient and is therefore independent of the probe's LR path. 5Li is still excluded: no independent check was built for it."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

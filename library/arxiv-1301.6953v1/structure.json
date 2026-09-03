@@ -1,0 +1,245 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1301.6953v1",
+ "source": {
+  "file": "1301.6953v1.pdf",
+  "sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
+  "bytes": 168851,
+  "pages": 13
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1301.6953",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "29 Jan 2013"
+  },
+  "doi": null,
+  "title": "LU TP 13-03 Januray 2013",
+  "authors_raw": "Chiral Perturbation Theory and Mesons",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "Fri Nov 26 15:50:14 2010",
+   "Creator": "gnuplot 4.2 patchlevel 5 ",
+   "Title": "temp.ps",
+   "Author": ",,,"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Chiral Perturbation Theory",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Determining low-energy-constants in the continuum",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Hard pion ChPT",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Beyond QCD",
+   "page": 8,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Leading logarithms",
+   "page": 10,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "L + F1",
+   "page": 10,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L2 + F2",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "L + F2",
+   "page": 10,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
+   "page": 10,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 11,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-chiral-perturbation-theory",
+   "number": "2",
+   "title": "Chiral Perturbation Theory",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 144,
+   "n_words": 18
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 10246,
+   "n_words": 1873
+  },
+  {
+   "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
+   "number": "3",
+   "title": "Determining low-energy-constants in the continuum",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5584,
+   "n_words": 1099
+  },
+  {
+   "id": "sec-003-4-hard-pion-chpt",
+   "number": "4",
+   "title": "Hard pion ChPT",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 4117,
+   "n_words": 744
+  },
+  {
+   "id": "sec-004-5-beyond-qcd",
+   "number": "5",
+   "title": "Beyond QCD",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3733,
+   "n_words": 848
+  },
+  {
+   "id": "sec-005-6-leading-logarithms",
+   "number": "6",
+   "title": "Leading logarithms",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 379,
+   "n_words": 69
+  },
+  {
+   "id": "sec-006-1-l-f1",
+   "number": "1",
+   "title": "L + F1",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-007-2-l2-f2",
+   "number": "2",
+   "title": "L2 + F2",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-1-l-f2",
+   "number": "1",
+   "title": "L + F2",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 6,
+   "n_words": 3
+  },
+  {
+   "id": "sec-009-3-l3-61",
+   "number": "3",
+   "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2000,
+   "n_words": 343
+  },
+  {
+   "id": "sec-010-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 352,
+   "n_words": 50
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 7012,
+   "n_words": 1070
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 12,
+  "chars_total": 33579
+ }
+}

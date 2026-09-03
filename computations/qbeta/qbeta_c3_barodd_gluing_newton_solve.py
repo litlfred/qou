@@ -62,7 +62,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)   # complete shape e^{iπ/3}
@@ -162,7 +162,7 @@ def main() -> int:
         "near_singular": "dc3/dq~4.66e6 => smooth m(q0) excluded; phase accumulates (RoU)",
         "S_identity": "S = Im V (conj:binding-qbeta-complex-volume)"})
     wb.add_assertion("gluing_complete_factor_minus_one",
-                     computed=float(mp.fabs(fac + 1)), expected=0.0, tolerance=1e-25,
+                     computed=fmt(mp.fabs(fac + 1)), expected=0.0, tolerance=1e-25,
                      source="Thurston figure-eight: z(z−1)=−1 at complete z=e^{iπ/3}")
     wb.add_assertion("newton_recovers_vol_4_1",
                      computed=float(err), expected=0.0, tolerance=1e-10,

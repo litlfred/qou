@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:20:25.776629+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-24T16:52:20.270483+00:00",
+  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
   "assertions": [
     {
       "name": "cosh_sinh_bridge_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "alpha-em-coulomb-channel-probe",
   "scriptFile": "alpha_em_coulomb_channel_probe.py",
   "scriptHash": "13656f0a2c22",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,21 +28,30 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_em_coulomb_channel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_em_coulomb_channel_probe.py"
   },
   "description": "Item 2 of PR #1708: tests whether the sinh (Coulomb) channel of prop:cosh-sinh-q-bridge, through Wedderburn, derives the \u03b1_em 2/(3\u03c0) shift and [2]_q/(8\u03c0)\u00b7(1\u2212h\u00b2\u03b1) self-energy. Confirms tree term + [2]_q numerator are Coulomb-channel; shift coeff and Schwinger factor are not independently derived.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802",
-    "lambda_ln_q": "0.1043407318566374688562829"
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "lambda_ln_q": "0.1043407203195195123159063"
   },
   "data": {
     "cosh_sinh_bridge_verified": true,
     "shift_target": "0.2122065907891937810251784",
-    "self_energy_target": "0.07998552549493487734771005",
-    "verdict": "PARTIAL / INTERPRETIVE. The cosh/sinh bridge is verified ([n]_q = sinh(n\u03bb)/sinh(\u03bb) to 1e-40). The tree term IS a pure Coulomb-channel (sinh) object, confirming the chain `cat action \u2192 sinh channel \u2192 Wedderburn` produces the LEADING \u03b1_em\u207b\u00b9. For the CORRECTIONS:\n  \u2022 The 2/(3\u03c0) shift coincides with the STANDARD QED 1-loop vacuum-polarization \u03b2-function coefficient (2/3\u03c0 per charged fermion). The framework's '3' admits a CONSISTENT reading as N_blocks=3 at H_3 (= N_cusps of the Borromean complement), but the value 2/(3\u03c0) is the textbook QED result, not a NEW categorical derivation \u2014 genuine \u03bb-dependent sinh forms (tanh(\u03bb)/(\u03c0\u03bb)-type) do NOT match.\n  \u2022 The self-energy [2]_q/(8\u03c0)\u00b7(1\u2212h\u00b2\u03b1): the [2]_q numerator IS a Coulomb-channel (sinh(2\u03bb)/sinh(\u03bb)) object, but the (1\u2212h\u00b2\u03b1) Schwinger factor is NOT a pure Coulomb-channel form (cosh\u207b\u00b2 damping misses). This factor is the RT-2-loop track's target.\nNET: the Coulomb channel structurally explains the TREE term and the [2]_q numerator of the self-energy, and gives a consistent N_blocks=3 reading of the 2/(3\u03c0) shift \u2014 but does NOT independently DERIVE the 2/(3\u03c0) coefficient or the (1\u2212h\u00b2\u03b1) factor. Those remain the QED-vacuum-polarization import + the RT-2-loop Schwinger derivation respectively. Consistent with Item 1 (multi-cell summed Yekutieli also could not derive the shift coefficient)."
+    "self_energy_target": "0.0799855254046606553931029",
+    "verdict": "PARTIAL / INTERPRETIVE. The cosh/sinh bridge is verified ([n]_q = sinh(nλ)/sinh(λ) to 1e-40). The tree term IS a pure Coulomb-channel (sinh) object, confirming the chain `cat action → sinh channel → Wedderburn` produces the LEADING α_em⁻¹. For the CORRECTIONS:\n  • The 2/(3π) shift coincides with the STANDARD QED 1-loop vacuum-polarization β-function coefficient (2/3π per charged fermion). The framework's '3' admits a CONSISTENT reading as N_blocks=3 at H_3 (= N_cusps of the Borromean complement), but the value 2/(3π) is the textbook QED result, not a NEW categorical derivation — genuine λ-dependent sinh forms (tanh(λ)/(πλ)-type) do NOT match.\n  • The self-energy [2]_q/(8π)·(1−h²α): the [2]_q numerator IS a Coulomb-channel (sinh(2λ)/sinh(λ)) object, but the (1−h²α) Schwinger factor is NOT a pure Coulomb-channel form (cosh⁻² damping misses). This factor is the RT-2-loop track's target.\nNET: the Coulomb channel structurally explains the TREE term and the [2]_q numerator of the self-energy, and gives a consistent N_blocks=3 reading of the 2/(3π) shift — but does NOT independently DERIVE the 2/(3π) coefficient or the (1−h²α) factor. Those remain the QED-vacuum-polarization import + the RT-2-loop Schwinger derivation respectively. Consistent with Item 1 (multi-cell summed Yekutieli also could not derive the shift coefficient)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.1099785955573347198997632204832250266562084087802",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

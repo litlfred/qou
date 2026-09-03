@@ -26,11 +26,13 @@
   "allPassed": true,
   "verdict": "DEFORMATION AMBIGUITY STRUCTURALLY RESOLVED IN FAVOUR OF 5g ((a)-scoped argument, exact identities): the two canonical deformations of the classical 5 are exactly the reeb-flow criticality pair 5g vs 1/g (fully-deformed = reciprocal, g^2(1+[2]^2) = 1), split by the exact factor 1 + x/5, and the SS2e provable-target ladder sqrt(5)(1 - x/10 + 3x^2/200 - ...) is term-by-term the expansion of 5g = 5/sqrt(5+x) (next term -1/400*sqrt(5)*x^3). Selection: by D3 g is a linking RATE (metric, deforms) while channel weights are counting data (topological, q-rigid per T2b) — the weight stays classical 5, only the rate deforms. Consequence: the dimensionless law is exact as 5g and the +0.41% residual belongs entirely to E_unit (= B_AME/5g = 0.995940 MeV, now a sharp fundamental-energy target) or beyond-bond physics. Counterpoint recorded: (ii) would give +0.63%; selection is structural, not numerical. No tier changed, nothing wired.",
   "scriptHash": "fdd970e670c3",
-  "scriptCommitSha": "73c62eb6f8873c3d88ef78dfe729f3eab7e598a3",
-  "commitSha": "73c62eb6f8873c3d88ef78dfe729f3eab7e598a3",
+  "scriptCommitSha": "5158ef253a978c6dcb52930be8603367097fb426",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "engine": "sympy",
-  "computedAt": "2026-07-07T11:25:38.619413+00:00",
+  "computedAt": "2026-08-24T14:28:13.557103+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "deformation_selection_5g_probe.py"
 }

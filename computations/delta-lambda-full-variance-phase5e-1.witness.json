@@ -9,7 +9,7 @@
       "computed": 1.3219081643905783,
       "expected": 1.5621266422764526,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "unit": "rel_variance",
       "source": "Best K_k* variance under FULL formula: 1.3219. Baseline (no FR projector): 1.5621. Phase 5d.5b simplified-formula best: 1.4889 (K_1* = 6_1)."
     }

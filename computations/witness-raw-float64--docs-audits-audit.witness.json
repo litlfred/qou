@@ -18,6 +18,15 @@
       "y0_star",
       "y_star"
     ],
+    "ephemeral_duration_carved_out_fields": 0,
+    "ephemeral_duration_carved_out_by_file": {},
+    "ephemeral_duration_field_names": [
+      "durationMs",
+      "durationSeconds",
+      "duration_sec",
+      "elapsed_sec",
+      "elapsed_seconds"
+    ],
     "f64_integrator_carved_out_fields": 0,
     "deprecated_f64_carved_out_fields": 0,
     "deprecated_f64_carved_out_by_file": {},
@@ -28,5 +37,14 @@
     "new_not_baselined": 0,
     "regressed": 0,
     "drained_files": 11
-  }
+  },
+  "scriptFile": "witness_raw_float64_audit.py",
+  "scriptHash": "410c297b818b",
+  "scriptCommitSha": "0a455009681d90a8a1bc5d6d34b088b8973b3670",
+  "commitSha": "e81fc71e9e80de1edef60c9b4b1baafa46d5e1f4",
+  "engine": "python",
+  "computedAt": "2026-08-30T10:57:48.947076+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

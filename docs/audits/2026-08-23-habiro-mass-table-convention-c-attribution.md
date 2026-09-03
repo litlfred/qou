@@ -16,6 +16,66 @@
 > The five atoms named under "Consequence" below were the reason the fix had to
 > be 25 rather than 20; they are now in `ATOMS` and regenerated.
 
+> **🟦 FOLLOW-UP 2026-08-25 — convention D was only HALF the axis; the table was
+> still on the plain-σ p-n interface (bean `qou-cds4`).** #5526 fixed the Markov
+> parameter. It did not touch the p-n interface, which `_habiro_coefficient_extract`
+> priced as a plain positive crossing (`chi_lambda_braid`) rather than the canonical
+> colour-weighted `z − h(1/2 − δ/4)` of owner ruling R3. The two are independent
+> axes and only one had been closed.
+>
+> **The closed-form table was the outlier, and the fix ALIGNS it rather than
+> splitting it.** The `habiro-coefficients-extended` table is built by the
+> markov_peel braid route, whose crossings were flipped to colour-weighted on
+> 2026-06-01 — so it was already canonical. Measured two independent ways:
+>
+> *Denominator fingerprint* (the "test the answer, not the source" method this
+> audit prescribes; deuteron):
+>
+> | table | `denom_in_u`, factored |
+> |---|---|
+> | closed-form, plain-σ (before) | `16·u³⁰·(u⁴+1)³` |
+> | closed-form, colour-weighted (after) | `192·u⁴⁶·(u⁴+1)³` |
+> | extended, peel route (already on `main`) | `192·u⁴⁶·(u⁴+1)⁵` |
+>
+> The 12× on the leading coefficient is exactly δ's denominator. The residual
+> `(u⁴+1)²` is a normalisation difference between the two pipelines, not a
+> convention one — it is `³` in both closed-form variants.
+>
+> *Direct cross-route comparison at 50 dps* — `mp.mpf`, not the witness's raw
+> float64 `tr_M_at_q0` field, whose agreement would have floored at ~5e-17 and
+> said nothing:
+>
+> | atom | peel route | closed-form, after | rel | closed-form, before |
+> |---|---|---|---|---|
+> | deuteron | 0.575172243917771871 | identical | 1.09e-48 | 0.6933894087146489 |
+> | tritium | 0.229310102104556507 | identical | 1.61e-48 | 0.276441010135575 |
+> | ³He | 0.40376703685142817 | identical | 1.48e-48 | 0.4867546894020543 |
+> | ⁴He | 0.160974145442407382 | identical | 2.0e-48 | 0.1940597250770917 |
+>
+> The pre-flip table missed the peel route by a uniform factor **1.2055** on all
+> four. Quote that as a ratio, or state the normalisation: it is **−17.05 %**
+> against the old value and **+20.55 %** against the new. They are one number,
+> and reporting one as a discrepancy from the other is the error class this
+> corpus keeps re-making.
+>
+> **What did NOT change.** The Φ_8 mirror-pair scaling law — this producer's
+> headline structural result — is completely invariant: `(0, 4, 8, 9, 12, 13,
+> 16, 17, 21, 25)` for A = 1, 3, 5, 6, 7, 8, 9, 10, 12, 14, identical before and
+> after, though every `tr_M` moved. Habiro integrality also survives:
+> `all_integral` and `reconstruction_matches` true for 25/25, despite δ
+> introducing a /12 into the denominator. The attribution probe below still
+> reports **D 25/25, exit 0** — it reads the `averaged_weighted` interfaces its
+> own docstring anticipated.
+>
+> **Separately found, NOT fixed here, and not caused by this change** (bean
+> `qou-qu2w`): `habiro-coefficients-helium-4` gives `tr_M(⁴He) = 0.16097` while
+> `atomic-tr-m-helium4-canonical` gives `0.34716` — both canonical-frame, a
+> factor 2.157 apart. It is entirely in the H₃ constituents, not the interface:
+> the habiro chain reads τ_p = 1.14576, τ_n = 0.98774 from
+> `habiro-coefficients-atomic`, while `compute_tau_M_nucleon_H3` returns
+> 1.32159 / 1.25756, and `(1.32159·1.25756)²/(1.14576·0.98774)² = 2.157`
+> exactly. Both producers disagreed by this factor before the flip too.
+
 ## Verdict
 
 Every committed `computations/habiro-coefficients-*.witness.json` on `main`

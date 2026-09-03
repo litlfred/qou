@@ -1,32 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:21:20.214158+00:00",
-  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
+  "computedAt": "2026-08-30T07:47:17.493788+00:00",
+  "commitSha": "13483c9b488f7fe9c8abbf6fa9b2b376d8d3a035",
   "assertions": [
     {
       "name": "deuteron_endomorphism_exact",
-      "computed": 1.0673151249491584,
+      "computed": "1.067471177766125265427018622163137595007532487513851695352539911819451",
       "expected": 1.0,
       "passed": false,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "source": "B_endo = m_e·Vol(𝓑₃)·Δtr closes D (resid 0.998, 0 closures)"
     },
     {
       "name": "no_derived_scalar_f_closes_A3",
-      "computed": 14.0,
-      "expected": 14.0,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 1,
-      "source": "best derived f leaves ≥12% on A≥3; p/n asymmetry blocks any scalar f"
+      "source": "best derived f (Vol(B3)/[3]_q) leaves 14.1% >= 12% on A>=3; p/n asymmetry blocks any scalar f"
     }
   ],
   "allPassed": false,
-  "durationMs": 25,
+  "durationMs": 28,
   "computation": "binding-shell-enhancement-derivation",
   "scriptFile": "binding_shell_enhancement_derivation.py",
-  "scriptHash": "106ee841f89d",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "fab6fb27ca67",
+  "scriptCommitSha": "a744956372e5e83ca675f59e7d05a5c8135a368a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,130 +36,138 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "4d25408e46482f36"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_shell_enhancement_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/binding_shell_enhancement_derivation.py"
   },
   "description": "Derive-or-refute: does a DERIVED per-magic-closure enhancement f^{n_close} close A≥3 binding on top of the scalar endomorphism B_endo = m_e·Vol(𝓑₃)·Δtr? No AME fitting. Findings: B_endo exact for D (resid 0.998); A≥3 needs f≈2.45–2.88/closure; the torus-knot gap q^{2n_s} is refuted (q⁴=1.52 too small, q¹²=3.50 too big); [3]_q=3.04 is closest but misses ³He by +24%; and T (n-shell, f=2.82) ≠ ³He (p-shell, f=2.45) is a p/n asymmetry no scalar q-factor can produce. Deuteron derived; A≥3 open.",
   "data": {
     "endomorphism": {
       "D": {
-        "dtr": "0.5566260331",
-        "B_endo_MeV": "2.084263727",
+        "dtr": "0.5565446604",
+        "B_endo_MeV": "2.08395903",
         "B_AME_MeV": 2.2245662,
-        "resid": "1.0673151",
+        "resid": "1.0674712",
         "n_close": 0,
         "f_per_closure": "1.0"
       },
       "T": {
-        "dtr": "0.8885685695",
-        "B_endo_MeV": "3.327209163",
+        "dtr": "0.8885361269",
+        "B_endo_MeV": "3.327087683",
         "B_AME_MeV": 8.4817962,
-        "resid": "2.5492224",
+        "resid": "2.5493155",
         "n_close": 1,
-        "f_per_closure": "2.5492224"
+        "f_per_closure": "2.5493155"
       },
       "3He": {
-        "dtr": "0.8929656994",
-        "B_endo_MeV": "3.343674039",
+        "dtr": "0.8929085754",
+        "B_endo_MeV": "3.343460141",
         "B_AME_MeV": 7.71804132,
-        "resid": "2.3082517",
+        "resid": "2.3083994",
         "n_close": 1,
-        "f_per_closure": "2.3082517"
+        "f_per_closure": "2.3083994"
       },
       "4He": {
-        "dtr": "1.119831782",
-        "B_endo_MeV": "4.193164932",
+        "dtr": "1.119809006",
+        "B_endo_MeV": "4.19307965",
         "B_AME_MeV": 28.2956624,
-        "resid": "6.7480442",
+        "resid": "6.7481815",
         "n_close": 2,
-        "f_per_closure": "2.5976998"
+        "f_per_closure": "2.5977262"
       }
     },
-    "f_per_closure_spread_pct": 12.539710588405907,
+    "f_per_closure_spread_pct": 12.53365568612499,
     "pn_asymmetry": {
-      "T_neutron_shell": "2.54922",
-      "3He_proton_shell": "2.30825",
-      "ratio": "1.1044",
+      "T_neutron_shell": "2.54932",
+      "3He_proton_shell": "2.3084",
+      "ratio": "1.10437",
       "implication": "p/n-asymmetric — no scalar q-factor can close A≥3"
     },
     "derived_candidates": {
       "q^2": {
         "value": "1.2320525",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": -51.669479923002086,
-          "3He": -46.623999083804826,
-          "4He": -77.50528598251567
+          "D": -6.320655692767349,
+          "T": -51.67124452178438,
+          "3He": -46.62741360386255,
+          "4He": -77.50574348928888
         },
-        "max_abs_err_A3": 77.50528598251567
+        "max_abs_err_A3": 77.50574348928888
       },
       "q^4 (torus-knot gap n_s=2)": {
         "value": "1.5179532",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": -40.45426412797866,
-          "3He": -34.2379670775943,
-          "4He": -65.85407575342536
+          "D": -6.320655692767349,
+          "T": -40.45643820623901,
+          "3He": -34.24217394541122,
+          "4He": -65.85477022731857
         },
-        "max_abs_err_A3": 65.85407575342536
+        "max_abs_err_A3": 65.85477022731857
       },
       "q^6": {
         "value": "1.870198",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": -26.6365299837102,
-          "3He": -18.977725946954525,
-          "4He": -48.168083321860976
+          "D": -6.320655692767349,
+          "T": -26.639208562166413,
+          "3He": -18.982909028772717,
+          "4He": -48.16913750076407
         },
-        "max_abs_err_A3": 48.168083321860976
+        "max_abs_err_A3": 48.16913750076407
       },
       "q^12 (n_s=6 strands)": {
         "value": "3.4976407",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": 37.20421685993254,
-          "3He": 51.5276970567311,
-          "4He": 81.28941922064158
+          "D": -6.320655692767349,
+          "T": 37.19920738778924,
+          "3He": 51.51800366734224,
+          "4He": 81.28573208164798
         },
-        "max_abs_err_A3": 81.28941922064158
+        "max_abs_err_A3": 81.28573208164798
       },
       "[2]_q": {
         "value": "2.0108969",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": -21.117245405847,
-          "3He": -12.882253806049992,
-          "4He": -40.07587865927334
+          "D": -6.320655692767349,
+          "T": -21.120125499263732,
+          "3He": -12.88782682176224,
+          "4He": -40.07709742077306
         },
-        "max_abs_err_A3": 40.07587865927334
+        "max_abs_err_A3": 40.07709742077306
       },
       "[3]_q": {
         "value": "3.0437062",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": 19.397435979664117,
-          "3He": 31.861971319340444,
-          "4He": 37.286407397693765
+          "D": -6.320655692767349,
+          "T": 19.393076652063186,
+          "3He": 31.853535967530785,
+          "4He": 37.283615210106746
         },
-        "max_abs_err_A3": 37.286407397693765
+        "max_abs_err_A3": 37.283615210106746
       },
       "Vol(B3)/[3]_q": {
         "value": "2.4075007",
         "err_pct": {
-          "D": -6.306958776805962,
-          "T": -5.55941076638493,
-          "3He": 4.299746194094064,
-          "4He": -14.107564929331048
+          "D": -6.320655692767349,
+          "T": -5.562858892920616,
+          "3He": 4.293074027403375,
+          "4He": -14.109311845107849
         },
-        "max_abs_err_A3": 14.107564929331048
+        "max_abs_err_A3": 14.109311845107849
       }
     },
     "conclusion": {
       "deuteron": "derived (B_endo exact, resid 0.998, 0 closures)",
       "torus_knot_q2ns": "REFUTED (q^4=1.52 too small; q^12=3.50 too big)",
       "best_candidate": "Vol(B3)/[3]_q",
-      "best_max_abs_err_A3_pct": 14.107564929331048,
+      "best_max_abs_err_A3_pct": 14.109311845107849,
       "structural_blocker": "p/n asymmetry T≠³He rules out any scalar f",
       "status": "A≥3 open — needs p/n-asymmetric per-closure enhancement, no fitting"
     },

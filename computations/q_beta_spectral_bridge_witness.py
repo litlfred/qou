@@ -59,7 +59,23 @@ Q_PINNING = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 def _load_q_0() -> mp.mpf:
     """CAL-2 q_0 from the canonical pinning witness."""
     with Q_PINNING.open() as fh:
-        return mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+        # 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+        # §"q₀ anchor convention": the experimental (proton) anchor is the default
+        # for all production compute, and the owner authorisation recorded there
+        # covers this sweep ("we want proton unless for an explicit reason ... fix
+        # all, even if not visible").
+        #
+        # This read `q-pinning-50-digit.witness.json` -> `derived_50_digit.q`, the
+        # MUON value, which NO manifest entry and NO `QOU_Q0_ANCHOR` could reach: a
+        # direct read of the anchor-defining witness computes at muon whatever the
+        # configuration says. The two pins differ by 11.54 ppb, the μ–p substrate
+        # tension itself.
+        #
+        # The upstream record is KEPT — that witness remains the canonical 3-CAL
+        # (muon) pin document, it is simply no longer the source of this
+        # computation's q₀. Idiom copied from `alpha/alpha_k_jones_markov_h12.py`.
+        from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON
+        return mp.mpf(_Q50_PROTON)
 
 
 def main() -> int:
@@ -140,13 +156,13 @@ def main() -> int:
     w.add_data("Q_beta_agreement_MeV", str(q_beta_agreement_mev))
     w.add_assertion(
         "bridge_residual_within_O_h_squared",
-        computed=float(bridge_residual),
+        computed=bridge_residual,
         expected=0.0,
         tolerance=float(h_squared),
     )
     w.add_assertion(
         "Q_beta_form_a_form_b_agree_within_O_h_squared_MeV",
-        computed=float(q_beta_agreement_mev),
+        computed=q_beta_agreement_mev,
         expected=0.0,
         # h² · E_0 is the propagated MeV tolerance.
         tolerance=float(h_squared * e_0),

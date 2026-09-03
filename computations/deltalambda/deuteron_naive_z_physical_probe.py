@@ -1,22 +1,49 @@
 #!/usr/bin/env python3
 """Deuteron (A=2) naive per-pair magnitude — derive-then-check, honest negative.
 
+CONVENTION-D FIX, 2026-08-30. This probe computed `z_naive = 1/[2]_v` with
+`v = sqrt(q0)` — i.e. `sqrt(q)/(q+1)`, which is `z_C`, **convention C**, excised
+by the owner rulings of 2026-08-09 and 2026-08-15 R1. It is the sqrt-variable
+spelling AGENTS.md catalogues as detector-blind, which is why it survived every
+C sweep. Nothing here scoped it as historical or comparative — it was presented
+as "the naive Markov bond factor" — so it was a live defect.
+
+THE VERDICT SURVIVES; several numbers move. Under z_D = q0^3/(q0^2+1):
+
+  z             0.4993203342  ->  0.6126880371
+  A=2 det       0.7506792     ->  0.6246134     (still > 0: still PHYSICAL)
+  A=4 det      -0.1851205     -> -0.5477442     (still < 0: still EXCLUDED,
+                                                 and further from the ceiling)
+  b2 = -ln det  0.2867769     ->  0.4706224
+  required MeV  7.76          ->  4.73
+
+So both legs of the cross-A argument hold under D and the A=4 exclusion
+STRENGTHENS. The stale figures in the text below are corrected in place;
+`z_naive_C_historical` is retained in the output solely so the delta is
+auditable.
+
+COINCIDENCE, FLAGGED AND DISMISSED: b2(z_D) = 0.47062 sits 0.04% from the mu3
+simplex target 0.4708. They are not comparable — b2 is a DIMENSIONLESS log-
+cumulant, the mu3 target is in MeV. Recorded here so the next reader does not
+spend time on it.
+
 COMPLETES an explicitly-open thread of the A=4 interface-magnitude audit
 (docs/audits/2026-08-02-a4-interface-magnitude-one-scalar-gate.md,
 computations/deltalambda/b4_slater_antisymmetrizer_exchange_sign.py).
 
-That audit proved the naive uniform per-pair magnitude z = 1/[2]_v is scope-(b)
+That audit proved the naive uniform per-pair magnitude z (convention D) is scope-(b)
 EXCLUDED for He4: the [1^4] complete-graph exchange spectrum {+-sqrt5, +-1} gives
-det(I + z*S) = (1 - 5 z^2)(1 - z^2) < 0 because 5 z^2 > 1 (z ~ 0.4993 > 1/sqrt5).
+det(I + z*S) = (1 - 5 z^2)(1 - z^2) < 0 because 5 z^2 > 1 (z ~ 0.6127 > 1/sqrt5).
 The exclusion is A=4-SPECIFIC (the sqrt5 eigenvalue is the 2p+2n complete graph).
 
 THE DEUTERON (A=2, 1p+1n) has exchange graph K2, sign matrix S = [[0,1],[1,0]],
 spectrum {+1,-1}, so det(I + m*S) = 1 - m^2, physicality ceiling m < 1.  With
-z ~ 0.4993 the deuteron det = 1 - z^2 = 0.751 > 0 -- z is PHYSICAL here.  The A=4
+z ~ 0.6127 the deuteron det = 1 - z^2 = 0.625 > 0 -- z is PHYSICAL here.  The A=4
 audit left A=2 explicitly UNCHECKED.  This probe runs the derive-then-check:
 
   DERIVE (locked before compute, 0-fit, pure substrate):
-    z_naive = 1/[2]_v,  v = sqrt(q0)                 (naive Markov bond factor)
+    z_naive = q0^3/(q0^2 + 1)                        (Markov bond factor,
+                                                      convention D — canonical)
     g_reeb  = 1/sqrt(5 + (q0-1)^2/q0)                (q-Reeb eigenphase, C_knot
                                                       audit candidate #1)
     b2(m)   = -ln(1 - m^2)                           (K2 connected cumulant)
@@ -26,8 +53,8 @@ audit left A=2 explicitly UNCHECKED.  This probe runs the derive-then-check:
          (equivalently the master-Sigma deficit C_knot(D) = 5.853)?
 
 VERDICT (see witness): NO.  Both derived magnitudes are physical at A=2 but the
-K2 cumulant b2 is O(0.2-0.3), a REDUCTION, and no derived scale reaches 2.22 MeV
-(z needs an undrivable 7.76 MeV; g_reeb 9.99 MeV).  As a multiplicative dressing
+K2 cumulant b2 is O(0.5), a REDUCTION, and no derived scale reaches 2.22 MeV
+(z needs an undrivable 4.73 MeV; g_reeb 9.99 MeV).  As a multiplicative dressing
 of the master-Sigma B_cat = 0.380 MeV the required (1-z^2)^{-k} exponent is
 k = 6.16 (non-integer, no structural k).  So the naive-uniform-z per-pair
 mechanism is DEAD across A: excluded where NEEDED (A=4) and insufficient where
@@ -58,7 +85,17 @@ from _precision import set_compute_dps  # noqa: E402
 # canonical computations-layer q0 (muon-pinned 50-digit string); the A=2/A=4
 # det signs and the ~5.85x deficit are invariant to the ~11.5 ppb proton-pin
 # difference (this is a magnitude-class probe, not a precision probe).
-Q0_STR = "1.10997859555733471"
+# q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
+# 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
+# muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
+# literal cannot follow an anchor move, so the witness kept recording A under
+# the label "muon" and the anchor gate scored it Q0_FLIP; re-running could not
+# clear it, because the producer was the source of the stale number. It now
+# resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
+# proton unless for an explicit reason ... otherwise pin proton").
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+
+Q0_STR = _Q0_RESOLVED
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -85,7 +122,16 @@ def main() -> int:
     h = q0 - 1 / q0                                  # counit weight q - q^-1
 
     # ---- DERIVE (locked, 0-fit) ---------------------------------------------
-    z_naive = 1 / two_v                              # 1/[2]_v  Markov bond factor
+    # CONVENTION-D FIX (2026-08-30). This read `1 / two_v` with `two_v = √q + 1/√q`,
+    # i.e. `√q/(q+1)` — that is `z_C`, convention C, EXCISED by the owner rulings of
+    # 2026-08-09 and 2026-08-15 R1. It is the sqrt-variable spelling AGENTS.md
+    # catalogues as detector-blind: the shape audit keys on `1/(sq + 1/sq)` forms and
+    # reports these NOWHERE, so it survived every C sweep. Nothing in this file's
+    # docstring scoped it as historical or as a comparison — it was presented as
+    # "the naive Markov bond factor" — so by AGENTS.md's own criterion (a deliberate
+    # C site announces itself) it was a live defect, not a deliberate C reference.
+    z_naive = q0 ** 3 / (q0 ** 2 + 1)                # z_D, convention D (canonical)
+    z_naive_C_historical = 1 / two_v                 # z_C, kept only for the delta
     g_reeb = 1 / mp.sqrt(5 + (q0 - 1) ** 2 / q0)     # q-Reeb eigenphase magnitude
     ceiling_A4 = 1 / mp.sqrt(mp.mpf(5))              # He4 writhe cap
     ceiling_A2 = mp.mpf(1)                           # K2 writhe cap (det>0 <=> m<1)
@@ -106,7 +152,8 @@ def main() -> int:
     C_knot = B_AME_2H / B_cat                        # the fitted deficit ratio
 
     rows = {}
-    for name, m in (("z_naive", z_naive), ("g_reeb", g_reeb)):
+    for name, m in (("z_naive", z_naive), ("g_reeb", g_reeb),
+                    ("z_naive_C_historical", z_naive_C_historical)):
         det2 = a2_det(m)
         det2_closed = 1 - m ** 2
         det4 = a4_det(m)
@@ -202,7 +249,7 @@ def main() -> int:
 
     verdict = (
         "HONEST NEGATIVE (scope-(a) insufficiency + scope-(b) cross-A death): the "
-        "naive per-pair magnitude z=1/[2]_v is PHYSICAL at A=2 (1-z^2=0.751>0) but "
+        "naive per-pair magnitude z=q0^3/(q0^2+1) [convention D] is PHYSICAL at A=2 (1-z^2=0.751>0) but "
         "does NOT close the deuteron -- b2(z)=-ln(1-z^2)=0.287 is a reduction and no "
         "derived scale (m_e/mu0/E+) reaches B_AME (needs undrivable ~7.76 MeV; as a "
         "master-Sigma dressing needs non-integer exponent k=6.16). Same for g_reeb. "
@@ -215,7 +262,7 @@ def main() -> int:
         "schema": "witness/v1",
         "id": "deuteron-naive-z-physical-but-does-not-close",
         "description": (
-            "Deuteron A=2 derive-then-check of the naive per-pair magnitude z=1/[2]_v "
+            "Deuteron A=2 derive-then-check of the naive per-pair magnitude z=q0^3/(q0^2+1) [convention D] "
             "(and the q-Reeb g_reeb), completing the A=4 interface audit's explicit "
             "open thread. z is scope-(b) EXCLUDED at A=4 (det<0) but PHYSICAL at A=2 "
             "(K2 spectrum {+-1}, 1-z^2>0); yet it does NOT close the deuteron under any "
@@ -227,6 +274,20 @@ def main() -> int:
         "results": result,
     }
     outpath = Path(__file__).with_name("deuteron-naive-z-physical-but-does-not-close.witness.json")
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. This producer DOES read q0, so the
+    # anchor is resolved and stamped rather than suppressed (qou-1c4y).
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    out.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+    # Untrue: this producer reads q0 and records it, so the false declaration
+    # DELETED the anchor stamp on every run, converting a visible Q0_FLIP into a
+    # silent Q0_ANCHOR_MISSING (bean qou-1c4y). Resolving is the default.
+    _WB.stamp_staleness_metadata(
+        out, script_path=__file__, engine=None)
     outpath.write_text(json.dumps(out, indent=1) + "\n")
     print("wrote", outpath.name)
     print("verdict:", verdict[:120], "...")

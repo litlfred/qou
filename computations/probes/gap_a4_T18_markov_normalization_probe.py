@@ -376,7 +376,7 @@ def main():
         # Drop mp.mpf() round-trip — the assertion API accepts a direct
         # float from the json string. Flagged by
         # compute_no_mpf_to_float_cast (mp.mpf -> float was a no-op).
-        computed=float(h4_extract["h4_coefficient"]),
+        computed=h4_extract["h4_coefficient"],
         expected=-0.75,
         tolerance=TOL_FLOAT,
         source=(
@@ -388,7 +388,7 @@ def main():
     )
     w.add_assertion(
         "wenzl_weight_y_2_1_at_q_one_equals_quarter",
-        computed=float(wenzl["derived_value"]),
+        computed=wenzl["derived_value"],
         expected=0.25,
         tolerance=TOL_FLOAT,
         source=(
@@ -401,7 +401,7 @@ def main():
     )
     w.add_assertion(
         "wenzl_weight_equals_inverse_q_2_squared_at_q_one",
-        computed=float(normalization["one_over_q_2_squared"]),
+        computed=normalization["one_over_q_2_squared"],
         expected=0.25,
         tolerance=TOL_FLOAT,
         source=(
@@ -413,7 +413,7 @@ def main():
     )
     w.add_assertion(
         "closed_form_wenzl_markov_sum_equals_one",
-        computed=float(weights_q1["markov_sum_check"]),
+        computed=weights_q1["markov_sum_check"],
         expected=1.0,
         tolerance=TOL_FLOAT,
         source=(
@@ -427,7 +427,7 @@ def main():
     )
     w.add_assertion(
         "borromean_reproduction_from_closed_form_weights",
-        computed=float(weights_q1["borromean_reproduction_diff"]),
+        computed=weights_q1["borromean_reproduction_diff"],
         expected=0.0,
         tolerance=TOL_FLOAT,
         source=(

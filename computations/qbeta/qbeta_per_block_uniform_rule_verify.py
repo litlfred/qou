@@ -159,12 +159,30 @@ def main() -> None:
         "Σ (y_λ/Σ y_μ) · c_k = c_k for any c_k. This is the per-block "
         "extraction rule that holds at all q values."
     ))
+    # The ONLY assertion this producer used to emit was
+    #     ("rule_normalised_y_lambda_holds", computed=0, expected=0)
+    # with the comment "trivially zero by construction" -- which is accurate and
+    # is exactly the problem. Sigma (y_lambda / Sigma y_mu) * c_k = c_k is an
+    # identity, not a measurement; asserting it made the witness report
+    # allPassed=true while this producer's actual finding -- that the
+    # UN-normalised rule FAILS at q0 by ~28% -- sat unasserted in `data.finding`.
+    # A reader scanning assertion outcomes saw a pass on a rule named "_holds".
+    #
+    # `all_match` is the real result and was already computed and recorded via
+    # add_data. It is now asserted, against the value the rule would need to
+    # take to hold. It FAILS, and that is the honest state: no downstream
+    # consumer reads this witness (only the provenance/anchor audits do), so
+    # the flip costs nothing and stops a negative from being reported as a pass.
     w.add_assertion(
-        "rule_normalised_y_lambda_holds",
-        computed=0,  # trivially zero by construction
-        expected=0,
-        tolerance=1e-30,
-        source="Renormalised y_λ/Σ y_μ weighting trivially gives uniform c_k^(λ) = c_k",
+        "uniform_y_lambda_rule_holds_at_q0",
+        computed=str(all_match),
+        expected="True",
+        tolerance=0,
+        source="c_k-weighted uniform per-block rule across c_2..c_7 at q_0; "
+               "fails because Sigma y_lambda != 1 at q != 1 (Wenzl-bridge "
+               "weights are not a probability measure). The normalised-weight "
+               "variant is an identity, not a test, and is recorded in "
+               "data.finding rather than asserted.",
     )
     w.save()
 

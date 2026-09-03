@@ -1,0 +1,112 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1001.2937v3",
+ "source": {
+  "file": "1001.2937v3.pdf",
+  "sha256": "ab44349bc21634ff8d9fd07f8ab61ddcae333a16af659677f1928a90e7064b21",
+  "bytes": 150273,
+  "pages": 4,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1001.2937",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "20 Sep 2010"
+  },
+  "doi": null,
+  "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+  "authors_raw": "P.H. Damgaard,1 K. Splittorff,2 and J.J.M. Verbaarschot3",
+  "title_lines": [
+   "Microscopic Spectrum of the Wilson Dirac Operator"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181023115728-04'00'"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Str(M[U\u2212U\u22121])+i 1",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Str(Z[U+U\u22121])+\u02c6a2Str(U2+U\u22122)",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Str(M[U+U\u22121])+ 1",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Str(Z[U\u2212U\u22121])\u2212\u02c6a2Str(U2+U\u22122)",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-strmuu1i-1",
+   "number": "2",
+   "title": "Str(M[U\u2212U\u22121])+i 1",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-strzuu1\u02c6a2stru2u2",
+   "number": "2",
+   "title": "Str(Z[U+U\u22121])+\u02c6a2Str(U2+U\u22122)",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4302,
+   "n_words": 822
+  },
+  {
+   "id": "sec-002-2-strmuu1-1",
+   "number": "2",
+   "title": "Str(M[U+U\u22121])+ 1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-2-strzuu1\u02c6a2stru2u2",
+   "number": "2",
+   "title": "Str(Z[U\u2212U\u22121])\u2212\u02c6a2Str(U2+U\u22122)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 7348,
+   "n_words": 1315
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 11650
+ }
+}

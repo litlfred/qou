@@ -24,7 +24,14 @@ ask actually cares about:
   it is ~O(10x) LARGER than, and OPPOSITE in sign to, the entire even ladder.
   That odd remainder is the accuracy-controlling leg — a proved representational
   prune (docs/audits/2026-07-07-c3-even-solved-s-complex-volume-rigidity.md;
-  it swings 2.44% between the proton/muon q0 anchors, dc3/dq ~ 4.6e6).
+  it swings 2.43% between the proton/muon q0 anchors — MUON-normalised;
+  the same swing is 2.37% proton-normalised and 2.46% normalised by the
+  candidate J_Hopf(1) = -2, so the normalisation has to be named or the
+  three read as a discrepancy. dc3/dq ~ 3.84e6, NOT the 4.6e6 this line
+  used to carry: that figure is the stale-c3 twin, computed from the
+  superseded muon c_3 = -2.0097 (pre-#1422). Re-measured at 50 dps from
+  c_3(p) = -2.0693425728, c_3(mu) = -2.0202002328, dq = 1.28e-8: secant
+  3.839e6, and AGENTS.md's independent 2.37/u^3 route 3.832e6.)
 
 Wiring verdict: c_4^even is correctly *used* (folded into the even partial sum)
 and is a real sub-leading even rung, but its effect on the reconstructed Qb is
@@ -85,8 +92,14 @@ def main() -> int:
 
     d_wit = json.loads((ROOT / "free-neutron-decay.witness.json").read_text())
     params = d_wit.get("parameters")
+    # The upstream read is the intended path, but free-neutron-decay.witness.json
+    # carries `parameters: null`, so it NEVER fires and the fallback below ran on
+    # every invocation -- silently pinning the arithmetic to the superseded value
+    # A while the witness stamp (q0Value, taken from the anchor) said otherwise.
+    # Fall back to the ANCHOR, not to a frozen digit string. Bean qou-3f7a.
+    from q_parameter import q_at  # noqa: E402
     q0 = mp.mpf(str(params["q"])) if params and "q" in params else \
-        mp.mpf("1.1099785955573347198997632204832250266562084087802")
+        mp.mpf(str(q_at(mp.dps)))
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     dn_mine = dnet_f(q0)

@@ -65,6 +65,14 @@ from char_fast import _compiled_sigmas, chi_lambda_fast  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
+# Canonical p-n interface offset (owner ruling 2026-08-15 R3, reaffirmed
+# 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention: it is
+# the bar-symmetriser of z and averages the two flavours 50/50, so it cannot
+# see the substrate flavour split. Imported rather than open-coded so there is
+# one definition; the import is hard on purpose, because a fallback would
+# silently compute the blind convention while reporting success.
+from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+
 
 H = float(Q0 - 1 / Q0)  # h = q − q⁻¹ at q_0
 
@@ -75,7 +83,7 @@ H = float(Q0 - 1 / Q0)  # h = q − q⁻¹ at q_0
 #   nn:   (1, -h)       — σ⁻¹ via Hecke
 INTERFACE_COEFS = {
     "pp": (1.0, 0.0),
-    "pn": (1.0, -H / 2),
+    "pn": (1.0, _pn_d(H)),   # colour-weighted
     "nn": (1.0, -H),
 }
 
@@ -516,6 +524,34 @@ def main() -> int:
         .add_data("n_consistent", n_consistent)
         .add_data("n_underdetermined", n_underdet)
         .add_data("results_per_lambda", results_per_lambda)
+        .add_data("precision_tier", "float64")
+        .add_data("deprecated", {
+            "reason":
+                "np.linalg.lstsq on dense complex systems, residual ~1e-14. "
+                "A genuine float64 COMPUTATION, not a float64 exit -- there "
+                "is no higher-precision value being cast away here. An "
+                "mpmath rewrite is not available at any budget: mp.qr_solve "
+                "at 50 dps measures 2.62 / 8.91 / 21.32 / 76.65 s at "
+                "n_unknowns 64 / 96 / 128 / 192, a fitted exponent of 3.07, "
+                "and the largest real block is 3,390 unknowns -- ~145 h for "
+                "one block, ~17,000 h across 30 blocks x 4 witnesses. Robust "
+                "to the exponent: even at n^2 it is ~500 h. Bean qou-1lr8.",
+            "not_production":
+                "Reachability established by reading the CONTROL FLOW, not by "
+                "grep and not by import cone -- both of those gave wrong "
+                "answers first, in opposite directions (qou-1lr8 records "
+                "them). canonical_tr_m_via_branching sets n = 3*A and returns "
+                "via the fine-Bratteli transfer for A >= 3 BEFORE the extract "
+                "load, so the load is reached only at A == 2 where n is "
+                "always 6. NO H_9 entry is reachable from it, and the "
+                "canonical mass table reaches these witnesses only through "
+                "that function. The two real consumers -- "
+                "sublemma_2_1_h9_tritium_verify.py and "
+                "sublemma_2_1_h12_helium_4_framework.py -- are ANCHOR-ONLY: "
+                "neither contains q_val, q0, Q_MP or Q_50_DIGIT anywhere, so "
+                "the hybrid-off-anchor failure mode qou-8chw fixed for the "
+                "deuteron cannot arise. Closes that bean's surviving item.",
+        })
         .add_caveat(
             "Phase 1 scope: K_6 = K_3 = 12 test words gives 144 "
             "equations per λ. The high-dim ξ = (3,2,1) (d=16) "
@@ -536,12 +572,22 @@ def main() -> int:
         )
     )
 
-    builder.add_assertion(
-        "overdetermined_lambda_consistent",
-        computed=n_consistent,
-        expected=n_overdet,
-        source="bilinear-system inversion at machine ε",
-    )
+    # n_overdet counts only the lambdas that reached the `elif consistent`
+    # branch of the `if underdet` split, so zero means EVERY lambda was
+    # under-determined -- a real Phase-2 state, not a missing input. Refusing
+    # would be wrong; asserting n_consistent == n_overdet at 0 == 0 would
+    # record a consistency check that never ran.
+    if n_overdet == 0:
+        builder.add_data("overdetermined_lambda_consistent_not_applicable",
+                         "every lambda was under-determined; no overdetermined "
+                         "consistency check was performed, so no assertion is made")
+    else:
+        builder.add_assertion(
+            "overdetermined_lambda_consistent",
+            computed=n_consistent,
+            expected=n_overdet,
+            source="bilinear-system inversion at machine ε",
+        )
 
     out_path = builder.save()
     print(f"  Witness: {out_path}")

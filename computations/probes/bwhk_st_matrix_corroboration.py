@@ -79,7 +79,15 @@ set_compute_dps()
 # drift-proof, full 50-dps) — never hardcode, never the float64 mass_endomorphism.q0.
 import json as _json  # noqa: E402
 _pin = _json.loads((Path(__file__).resolve().parents[1] / "q-pinning-50-digit.witness.json").read_text())
-Q0 = mpf(_pin.get("q0Value") or _pin.get("data", {}).get("q0Value"))
+# 🛑 PROTON PIN (migrated 2026-08-29, bean `qou-cds3`). AGENTS.md
+# §"q₀ anchor convention": the experimental (proton) anchor is the default
+# for all production compute; the owner authorisation recorded there covers
+# this sweep. A direct read of the anchor-defining witness computes at MUON
+# whatever the manifest or `QOU_Q0_ANCHOR` says — the two pins differ by
+# 11.54 ppb, the μ–p substrate tension itself. The upstream/path reference is
+# kept for provenance; it is no longer the source of this q₀.
+from q_parameter import Q_50_DIGIT_STR as _Q50_PROTON  # noqa: E402
+Q0 = mpf(_Q50_PROTON)
 TOL = mpf(10) ** (-40)
 
 N = 5  # the n=5 Hecke blocks λ⊢5

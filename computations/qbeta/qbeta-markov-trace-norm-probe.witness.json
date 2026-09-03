@@ -16,7 +16,7 @@
       "computed": 6.845644678724866e-14,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "A^T x_L2 (witness) reproduces S at q_0"
     },
     {
@@ -24,7 +24,7 @@
       "computed": 6.681911775230489e-52,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1e-09",
       "source": "A^T x_M (computed) reproduces S at q_0"
     },
     {

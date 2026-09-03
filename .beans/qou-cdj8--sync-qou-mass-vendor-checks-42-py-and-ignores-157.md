@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T21:44:29Z
-updated_at: 2026-08-22T09:22:04Z
+updated_at: 2026-08-25T07:35:11Z
 ---
 
 Split from `qou-hp3g`, whose sync-drift half turned out already fixed
@@ -185,3 +185,37 @@ a byproduct of my own before/after measurement on a scan root no gate runs. It
 had already bumped `Q0_AUDIT_EXEMPT` 75 → 76 in the anchor audit. Removed from
 the commit and the audit reverted to 75. Same class as the `docs-audits`
 byproduct caught earlier in this arc.
+
+
+---
+
+## Status measurement 2026-08-25 (PR #5750) — plan step 1 has LANDED
+
+`--check` on current `main` now compares the witness JSONs, not just the 42
+`.py`. Its output reports "N modules, N witness JSON, N package-data witness
+JSON", and the drift list is:
+
+    MISSING (3):  canonical_braid_marshalling, closed_form_tau_M,
+                  y_lambda_wenzl_bridge
+    DRIFTED (23): 21x data/isotopes/canonical-isotope-witness-Z00..Z20.witness.json
+                  _li_2_q_util, mass_at_3A_proper
+
+So the 21 isotope witnesses in that list are exactly the data files this bean
+was opened because the gate ignored. **The gate is now consuming
+`required_witnesses()`** — step 1 is done; steps 2 and 3 (show it fires; re-sync
+and drive the q0 disagreement to 0) are what remain.
+
+Two facts for whoever picks up step 3:
+
+- **`--apply` is safe to run.** Measured with the tree restored between runs:
+  it creates all 3 MISSING modules (43 -> 46 `.py`) and re-syncs the 23, and the
+  facade's outputs are byte-identical before and after
+  (`compute_tr_M(1,1)` = `0.575172243917761909602476197451075851381081919999999859357794`;
+  `predict('2H')` = 2.24882079790130897938677662750706076622009277343750 MeV;
+  `predict('4He')` = 29.9556772795328825980939333878037777219596194454563 MeV).
+  A relayed claim that `--apply` now breaks the package on `load_q_50dps` did
+  not reproduce; the correction is appended to `qou-hp3g`.
+- **The 23 count is independent of in-flight branch edits.** PR #5750 edits
+  `computations/_li_2_q_util.py`, which is in the cone. Re-running `--check`
+  against `origin/main`'s copy of that file still gives 23, so `_li_2_q_util`
+  was already drifted and the branch did not inflate the number.

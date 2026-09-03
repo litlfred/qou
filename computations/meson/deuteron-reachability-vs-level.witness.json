@@ -1,0 +1,154 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-26T13:48:37.996032+00:00",
+  "commitSha": "b69b4d0417d69c8438a8a6853e7b7996ffac983a",
+  "assertions": [
+    {
+      "name": "control_r2_reproduces_committed_ceiling",
+      "computed": "0.146057964137045191581753132792",
+      "expected": "0.146057964937",
+      "passed": true,
+      "tolerance": "1e-9",
+      "unit": "dimensionless",
+      "source": "deuteron_support_reachability_probe.py"
+    },
+    {
+      "name": "control_row_cap_tracks_level",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "Schur-Weyl: ell(lambda) <= r at level r"
+    },
+    {
+      "name": "control_support_widens_with_level",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "support sizes across r"
+    },
+    {
+      "name": "levels_clearing_ame",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "count",
+      "source": "ceiling >= B_D(AME2020) at each r"
+    },
+    {
+      "name": "ceiling_strictly_decreasing_in_level",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "boolean",
+      "source": "normalised weights spread over a wider support as r grows"
+    },
+    {
+      "name": "canonical_level_maximises_ceiling",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "level",
+      "source": "argmax over the swept levels"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "deuteron-reachability-vs-level",
+  "scriptFile": "deuteron_reachability_vs_level_probe.py",
+  "scriptHash": "678f27e04359",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/deuteron_reachability_vs_level_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/deuteron_reachability_vs_level_probe.py"
+  },
+  "description": "Reachability ceiling max(t)*n_target for the deuteron operator-selection LP as a function of Wenzl level r, against B_D(AME2020) = 2.224566. Measures what the 'different level' and 'different cost' escapes from the r=2 infeasibility would each have to supply. Makes no claim that any level other than 2 is realisable.",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "B_D_AME_MeV": "2.22456607",
+    "per_level": {
+      "r=2": {
+        "level": 2,
+        "support_size": 4,
+        "max_rows_in_support": 2,
+        "n_target": "0.575172243917774348333688428395",
+        "max_t": "0.25393778243222284423192837942",
+        "ceiling": "0.146057964137045191581753132792",
+        "ame_over_ceiling": "15.2307070904583116663366253389",
+        "clears_ame": false
+      },
+      "r=3": {
+        "level": 3,
+        "support_size": 7,
+        "max_rows_in_support": 3,
+        "n_target": "0.315377384096929451149979964621",
+        "max_t": "0.161030838756146219789578349617",
+        "ceiling": "0.0507854846858478395375804258246",
+        "ame_over_ceiling": "43.8031867522947896110915171647",
+        "clears_ame": false
+      },
+      "r=4": {
+        "level": 4,
+        "support_size": 9,
+        "max_rows_in_support": 4,
+        "n_target": "0.212257959408762048496830300105",
+        "max_t": "0.118222436028519819389098898702",
+        "ceiling": "0.0250936530277465277838819952409",
+        "ame_over_ceiling": "88.6505471140553004157475508473",
+        "clears_ame": false
+      },
+      "r=5": {
+        "level": 5,
+        "support_size": 10,
+        "max_rows_in_support": 5,
+        "n_target": "0.160273442869796455849233650769",
+        "max_t": "0.0958099567569486976517687616755",
+        "ceiling": "0.0153557916306424860123286100129",
+        "ame_over_ceiling": "144.868211519676905153964060452",
+        "clears_ame": false
+      },
+      "r=6": {
+        "level": 6,
+        "support_size": 11,
+        "max_rows_in_support": 6,
+        "n_target": "0.130108399479639449130354770224",
+        "max_t": "0.0825959756863113412632783830893",
+        "ceiling": "0.010746430200005183105874335913",
+        "ame_over_ceiling": "207.005119709327016384288894209",
+        "clears_ame": false
+      }
+    },
+    "canonical_cost_factor_needed": "15.230707090458311666336625339"
+  },
+  "caveats": [
+    "No level other than 2 is claimed to be realisable. Lambda^2 V = 1 pins the fibre dimension (exteriorSquareDim_eq_one_iff), and su5-hypercharge-n3-gate records that levels are ALTERNATIVES, not stages -- no construction supplies a fibre at any r != 2. A row here is a statement about a fibre the framework does not have.",
+    "Scope (a). A ceiling clearing AME would be NECESSARY, not sufficient: it says room exists, not that any derivable cost reaches it. Nothing here computes a binding contribution or adjudicates the signed-occupation option."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

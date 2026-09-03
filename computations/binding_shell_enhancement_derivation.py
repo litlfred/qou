@@ -203,17 +203,28 @@ def main():
     })
     wb.add_assertion(
         "deuteron_endomorphism_exact",
-        computed=float(endo["D"]["resid"]),
+        computed=endo["D"]["resid"],
         expected=1.0,
         tolerance=0.01,
         source="B_endo = m_e·Vol(𝓑₃)·Δtr closes D (resid 0.998, 0 closures)",
     )
+    # Was `computed=round(best_maxabs, 0), expected=round(best_maxabs, 0)`
+    # under `tolerance=1` (bean `qou-26f2`) — the same expression on both
+    # sides, so the tolerance had nothing to measure and the assertion held
+    # for any `best_maxabs`, including 0, which would mean a scalar f *does*
+    # close A>=3 and refute the name.
+    #
+    # The `source` string states the real claim: "best derived f leaves >=12%
+    # on A>=3". That is a lower bound on `best_maxabs`, and it is the whole
+    # negative result — so it is now asserted as one. If some derived f ever
+    # gets the residual under 12%, this fails, which is exactly when someone
+    # should be told.
     wb.add_assertion(
         "no_derived_scalar_f_closes_A3",
-        computed=round(best_maxabs, 0),
-        expected=round(best_maxabs, 0),
-        tolerance=1,
-        source="best derived f leaves ≥12% on A≥3; p/n asymmetry blocks any scalar f",
+        computed=bool(best_maxabs >= 12.0),
+        expected=True,
+        source=f"best derived f ({best_name}) leaves {best_maxabs:.1f}% "
+               f">= 12% on A>=3; p/n asymmetry blocks any scalar f",
     )
     # Lean SDP-uniqueness cross-reference (post-#1537 wiring).
     wb.add_data("lean_uniqueness_ref", {

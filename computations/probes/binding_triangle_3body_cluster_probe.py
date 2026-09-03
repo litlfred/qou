@@ -17,8 +17,15 @@ The honest decomposition of the product-model binding
 
 with x = 1-f.  The **physical beyond-pairwise 3-body content** is the SUM of the
 higher clusters (2-bond + 3-bond), and it is strongly NEGATIVE (destructive):
--5.7 to -7.0 MeV for T, -4.7 to -5.9 for 3He -- the SAME sign as the framework's
-joint-trace c3 < 0, and OPPOSITE the attractive empirical b3 > 0 (4x too big).
+-3.20 MeV for T and -2.87 for 3He under the canonical convention (-2.45 / -2.13
+under the legacy plain-sigma one) -- the SAME sign as the framework's joint-trace
+c3 < 0, and OPPOSITE the attractive empirical b3 > 0.
+
+(Those magnitudes read "-5.7 to -7.0 for T, -4.7 to -5.9 for 3He" until
+2026-08-26. They were computed from HARDCODED convention-C tau_p / tau_n
+combined with a live convention-D `Z_MK` -- see the constants below. The SIGN,
+which is this probe's entire claim and is Lean-proved for any product model, is
+unchanged; only the magnitudes were wrong.)
 
 So closing the triangle does NOT flip the physical sign. The individual cluster
 signs DO alternate by bond-count parity (Lean: ursell2_nonpos / ursell3_nonneg),
@@ -60,8 +67,23 @@ M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))
 Z_MK = C.markov_z(Q0)
 H_MK = C.hecke_h(Q0)
-TAU_P = mp.mpf("1.22036288908669305595736107223")
-TAU_N = mp.mpf("0.7280918153466761555460727563") / (TAU_P * Z_MK)
+# 🛑 These were HARDCODED convention-C constants combined with a live
+# convention-D `Z_MK` — a frame straddle (fixed 2026-08-26, bean `qou-cds4`).
+#   TAU_P = mp.mpf("1.22036288908669305595736107223")
+#   TAU_N = mp.mpf("0.7280918153466761555460727563") / (TAU_P * Z_MK)
+# 1.2203628890866930... is the Phase 5q **convention-C** proton trace, and
+# 0.7280918153466761... its convention-C deuteron. Back-solving TAU_N from a
+# C-frame ratio while dividing by the D-frame `Z_MK` gave 0.97377, where the
+# C-consistent value is 1.19486 — a factor 1.227 (= z_D/z_C) wrong, in a
+# constant that then entered every row. Both constants were correct when
+# written; the convention-D migration invalidated them silently, because a
+# hardcoded float carries no convention label to audit.
+#
+# Sourced live from the canonical helper instead, so the frame cannot drift
+# again. (That helper was itself fixed the same day — it had been dropping
+# each nucleon's two intra-nucleon `averaged` crossings; bean `qou-qu2w`.)
+TAU_P = C.compute_tau_M_nucleon_H3("p", Q0, dps=50)
+TAU_N = C.compute_tau_M_nucleon_H3("n", Q0, dps=50)
 B2 = mp.mpf("2.224566")
 AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
 TRIANGLE = {"T": (1, 2, ["pn", "pn", "nn"]), "3He": (2, 1, ["pp", "pn", "pn"])}
@@ -77,7 +99,18 @@ def main():
     print(f"  E0={mp.nstr(E0,7)}  (0 tuned params)")
     print("=" * 80)
     rows = []
-    for conv, f_pn in [("chi (pn=z)", Z_MK), ("bar-averaged (pn=z-h/2)", Z_MK - H_MK / 2)]:
+    # The sweep used to omit the CANONICAL convention entirely, comparing only
+    # two non-canonical ones. Added third (owner ruling R3). It lands within
+    # 0.02 % of bar-averaged — the δ/4 term — and does not change the verdict,
+    # which is the useful thing to be able to say.
+    from _li_2_q_util import flavor_split_leading
+    _delta = flavor_split_leading(Q0)
+    for conv, f_pn in [
+        ("chi (pn=z)", Z_MK),
+        ("bar-averaged (pn=z-h/2)", Z_MK - H_MK / 2),
+        ("bring_color_weighted (canonical, R3)",
+         Z_MK - H_MK * (mp.mpf(1) / 2 - _delta / 4)),
+    ]:
         print(f"\n--- pn convention: {conv} ---")
         for atom in ["T", "3He"]:
             Z, N, bonds = TRIANGLE[atom]
@@ -101,10 +134,12 @@ def main():
 
     print("\n" + "=" * 80)
     print("VERDICT (corrected): the multiplicative model's 3-body content is DESTRUCTIVE.")
-    print("  The full beyond-pairwise sum (2-bond + 3-bond) is -4.7 to -7.0 MeV for all")
-    print("  atoms/conventions -- SAME sign as the framework joint-trace c3 < 0, OPPOSITE the")
-    print("  attractive empirical b3 > 0. Closing the triangle does NOT flip the sign; the")
-    print("  +3-bond term alone (~+1.9) was a cherry-pick, not the physical 3-body force.")
+    print("  The full beyond-pairwise sum (2-bond + 3-bond) is -2.13 to -3.20 MeV across all")
+    print("  atoms and all THREE conventions -- SAME sign as the framework joint-trace")
+    print("  c3 < 0, OPPOSITE the attractive empirical b3 > 0. Closing the triangle does NOT")
+    print("  flip the sign; the +3-bond term alone (~+0.5 to +0.7) was a cherry-pick, not the")
+    print("  physical 3-body force. The canonical colour-weighted row lands within 0.02% of")
+    print("  bar-averaged, so the verdict does not depend on the p-n convention either.")
     print("  Per-cluster signs alternate by parity (proved), but the SUM is bounded <= 0:")
     print("  productModel_3body_nonpos (Lean) proves c*(Sf - PROD f - 2) <= 0 for any product")
     print("  model, signed or |chi|. So an attractive 3-body force needs a NON-multiplicative")
@@ -121,16 +156,37 @@ def main():
         "scriptFile": "computations/probes/binding_triangle_3body_cluster_probe.py",
         "parameters": {"q_0": str(Q0), "E0_MeV": str(E0), "tau_p": str(TAU_P),
                        "tau_n": str(TAU_N), "free_parameters": 0},
-        "data": {"rows": rows, "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
+        "data": {"rows": rows,
+                 # Worst case = the LEAST negative beyond-pairwise sum across
+                 # every atom and every pn convention; the margin the sign
+                 # claim below actually has (bean qou-srvu).
+                 "max_beyond_pairwise_MeV": mp.nstr(
+                     max(mp.mpf(r["beyond_pairwise_MeV"]) for r in rows), 10),
+                 "n_rows_sharing_sign_with_empirical_b3": sum(
+                     1 for r in rows if r["same_sign_as_b3"]),
+                 "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
     }
     import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
     _sys.path.insert(0, str(COMP / "substrate"))
     from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-    out = WitnessBuilder.wrap_legacy(
+    _wb = WitnessBuilder.wrap_legacy(
         "binding-triangle-3body-cluster", witness,
         script_path=__file__, engine="mpmath", start_time=_T0,
         output_dir=str(COMP),
-    ).save()
+    )
+    # "The SIGN, which is this probe's entire claim and is Lean-proved for any
+    # product model" (docstring). It was recorded per row as `same_sign_as_b3`
+    # while the witness shipped `allPassed: true` over an EMPTY assertion list
+    # (bean qou-srvu). The bar is 0 rows -- the claim's own logic, not a
+    # fitted threshold; the worst row sits at -2.127 MeV, so the margin is the
+    # whole distance to zero.
+    _n_same = sum(1 for r in rows if r["same_sign_as_b3"])
+    _wb.add_assertion(
+        "beyond_pairwise_3body_never_shares_sign_with_empirical_b3",
+        computed=str(_n_same), expected="0", tolerance="0",
+        source="Lean ursell2_nonpos / ursell3_nonneg / productModel_3body_nonpos",
+    )
+    out = _wb.save()
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

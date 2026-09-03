@@ -226,18 +226,99 @@ def main() -> int:
     plan = deferred_compute_plan()
     w.add_data("deferred_compute_plan", plan)
 
+    # Was `computed=1.0, expected=1.0` named "framework documented +
+    # prerequisite witnesses checked" (bean `qou-26f2`). check_prereqs()
+    # already returned exactly the verdict this claims and it was thrown
+    # away: with a prerequisite missing or red the module printed a ⚠ and
+    # then emitted a witness reading PASS. Both facts the name asserts —
+    # prerequisites checked, plan documented — are counted now.
+
+    # (1) Every prerequisite extract present AND green on its own gate field.
+    n_ok = sum(1 for s in prereq_status
+               if s.get("present") and s.get("passed") is True)
     w.add_assertion(
-        "framework documented + prerequisite witnesses checked",
-        computed=1.0,
-        expected=1.0,
-        tolerance=0.5,
-        unit="boolean",
-        source=(
-            "This is a deferred-compute framework, not a production "
-            "extraction. The H_{12} extract itself is queued as a "
-            "follow-on PR per docs/coordination/2026-05-20-lambda-"
-            "p-followons-ledger.md §Next-direction recommendations."
-        ),
+        "prerequisite_extracts_present_and_passing",
+        computed=n_ok,
+        expected=len(PREREQUISITE_WITNESSES),
+        tolerance=0,
+        source="; ".join(
+            f"{s['file']}: present={s.get('present')}, "
+            f"{s.get('passed_field', 'allPassed')}={s.get('passed')}"
+            for s in prereq_status
+        ) + ". A = 4 cannot be attempted on a red A = 3 baseline, which is "
+            "why this is the framework's real gate",
+    )
+
+    # (2) The deferred plan's two load-bearing sizing constants, recomputed.
+    # It budgets 30-60 min on "all 77 partitions of 12 … Max dim 462 at
+    # λ = [4,4,4]"; both are combinatorial facts, so a wrong one is a wrong
+    # compute estimate for a queued follow-on PR.
+    import sympy as _sp  # noqa: E402 — only for the independent p(12)
+
+    def _f_lambda(lam: tuple[int, ...]) -> int:
+        """SYT count via the hook-length formula."""
+        conj = [sum(1 for r in lam if r > j) for j in range(lam[0])]
+        den = 1
+        for i, row in enumerate(lam):
+            for j in range(row):
+                den *= (row - j - 1) + (conj[j] - i - 1) + 1
+        return int(_sp.factorial(sum(lam)) // den)
+
+    _parts_12 = []
+    for _d in _sp.utilities.iterables.partitions(12):
+        _lam = []
+        for _part, _mult in sorted(_d.items(), reverse=True):
+            _lam.extend([_part] * _mult)
+        _parts_12.append(tuple(_lam))
+    _dims = {lam: _f_lambda(lam) for lam in _parts_12}
+    _max_lam = max(_dims, key=lambda k: _dims[k])
+
+    w.add_data("h12_block_sizing", {
+        "n_partitions_of_12": len(_parts_12),
+        "max_block_dimension": _dims[_max_lam],
+        "argmax_partition": list(_max_lam),
+    })
+    w.add_assertion(
+        "h12_partition_count_matches_plan",
+        computed=len(_parts_12),
+        expected=77,
+        tolerance=0,
+        source=f"p(12) = {len(_parts_12)} enumerated, sympy.npartitions(12) = "
+               f"{int(_sp.npartitions(12))}; the plan's 'all 77 partitions of "
+               "12' sets the per-λ loop count behind its 30-60 min estimate",
+    )
+    w.add_assertion(
+        "h12_dimension_of_444_block_matches_plan",
+        computed=_f_lambda((4, 4, 4)),
+        expected=462,
+        tolerance=0,
+        source=f"f^[4,4,4] = {_f_lambda((4, 4, 4))} by the hook-length "
+               "formula; the plan names this block's dimension as 462 and it "
+               "is correct (its conjugate [3,3,3,3] has the same dimension)",
+    )
+    w.add_assertion(
+        "h12_largest_block_dimension",
+        computed=_dims[_max_lam],
+        expected=7700,
+        tolerance=0,
+        source=f"max_λ f^λ over all {len(_parts_12)} partitions of 12 = "
+               f"{_dims[_max_lam]}, attained at λ = {list(_max_lam)} — NOT at "
+               "[4,4,4]. See the caveat: the plan's cost estimate is pinned "
+               "to the wrong block",
+    )
+    w.add_caveat(
+        "The deferred plan states 'Max dim 462 at λ = [4,4,4]' and "
+        "'λ = [4,4,4] at dim 462 dominates' the dim_λ² × #crossings cost. "
+        "f^[4,4,4] = 462 is correct, but [4,4,4] is not the largest block of "
+        f"H_12: the maximum over all {len(_parts_12)} partitions is "
+        f"{_dims[_max_lam]} at λ = {list(_max_lam)}, and even restricted to "
+        "at most three rows the maximum is 2673 at [6,4,2]. Since the cost "
+        "goes as dim_λ², the dominating block is understated by a factor of "
+        f"({_dims[_max_lam]}/462)² ≈ 278, so the '30-60 min via "
+        "numpy-Hoefsmit' budget for the queued follow-on PR is optimistic by "
+        "roughly that factor unless the extraction is restricted to a "
+        "subset of λ the plan does not name. Reported, not silently "
+        "corrected."
     )
     w.set_audit_only(
         "docs/coordination/2026-05-20-lambda-p-followons-ledger.md"

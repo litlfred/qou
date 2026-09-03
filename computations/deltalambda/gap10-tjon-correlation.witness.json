@@ -1,28 +1,22 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T12:54:12.899203+00:00",
-  "commitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "computedAt": "2026-08-29T17:15:52.019490+00:00",
+  "commitSha": "f7b95349c3686069b6e2718d033f83541153b3eb",
   "assertions": [
     {
       "name": "three_mass_numbers_measured",
       "computed": "True",
       "expected": "True",
       "passed": true
-    },
-    {
-      "name": "tjon_identity_is_lean_backed",
-      "computed": "True",
-      "expected": "True",
-      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 21,
   "computation": "gap10-tjon-correlation",
   "scriptFile": "gap10_tjon_correlation_probe.py",
-  "scriptHash": "54635aed4eda",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "77fcca12ab5a",
+  "scriptCommitSha": "f7b95349c3686069b6e2718d033f83541153b3eb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,71 +26,83 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "825fe60e51bf0442"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/gap10_tjon_correlation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/gap10_tjon_correlation_probe.py"
   },
   "description": "GAP-10 (bean qou-zowh, epic qou-xu6t): tests the block-trace operator against the Tjon correlation B(³H)↔B(⁴He), the target that REPLACES the retired qou-pve2 question 'what supplies ~10× per-order growth'. That question was mis-posed: GAP-9 showed the μ₄ target is −10.21 MeV, 36% of B(⁴He) and 34× the N³LO four-nucleon estimate, so its size is a C(A,k) simplex-basis artifact plus ρ_grad over-subtracting, not four-body physics. The Tjon correlation is the field's own robust observable for the 3-body/4-body question and is convention-free. Formal core (Lean QOU.MassTheory.TjonSimplexForm, sorry-free, generic CommRing): M(4) − (4M(3) − 6M(2)) = μ₄ and μ₄ = 0 ⟺ M(4) = 4M(3) − 6M(2), so the two-point 'no four-body parameter' prediction is 4M(3) − 6M(2) and μ₄ is exactly its deviation — giving the scale-free score μ₄/M(4). Measures M_op(A) = g(all bonds) − g(∅) at A=2 (H₆), A=3 (H₉), A=4 (H₁₂) with the same block trace Σ_λ y_λ|χ_λ| used throughout the epic, under TWO bond conventions (complete graph 1/3/6 bonds matching the C(A,k) basis with BKL bands, and chain-only 1/2/3 adjacent) because GAP-8 flagged μ₄'s sensitivity to the bond set. Scored on the normalised ladder M(A)/M(2) against ρ_strong = (1, 3.8128, 13.0316) and on the fractional Tjon deviation. VERDICT: operator fractional Tjon deviations {'complete graph (C(A,2) bonds: 1,3,6)': 0.4593, 'chain only (adjacent: 1,2,3)': 0.8081} vs nature +0.2901; sign reproduced by at least one bond convention: True; best |ratio| 1.58×; the binding proxy is the trace DEFICIT B_op = -M_op > 0 (corpus canonical), so the operator's sign is CORRECT, not mismatched — an earlier revision claimed otherwise and is retracted; the [T2] score is sign-blind anyway (Lean fracTjon_neg). THE SURVIVING NEGATIVE is the ladder: nearly FLAT in A (complete graph (C(A,2) bonds: 1,3,6): A=3 1.79, A=4 2.11, grows 1.18x; chain only (adjacent: 1,2,3): A=3 1.60, A=4 2.01, grows 1.26x) against nature's 3.81 -> 13.03 (grows 3.42x), off 2.1x at A=3 and 6.2x at A=4. Scope-(a) NEGATIVE on growth, not on sign. No Δ_λ, no μ fitted, no convention tuned, nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
+  "parameters": {
+    "tjon_identity_is_lean_backed": "True (a claim about the LEAN CORPUS, not verified from this probe; the declarations are named in data.tjon_correlation.lean)"
+  },
   "data": {
     "tjon_correlation": {
       "lean": "QOU.MassTheory.TjonSimplexForm: tjon_deviation_eq_mu4, mu4_eq_zero_iff_tjon, mu4_neg_of_below_tjon, additive_higher_moments_vanish",
       "rho_strong": {
-        "2": "1.00000000000000000000000000000000000000000000000000000000000",
-        "3": "3.81279999999999999999999999999991101648989106986834955701784",
-        "4": "13.0316000000000000000000000000000934011311781677977607486621"
+        "2": "1.00000000000000000000000000000",
+        "3": "3.81280000000000000000000000000",
+        "4": "13.0316000000000000000000000000"
       },
       "results": {
         "nature": {
           "ladder": [
-            "1.00000000000000000000000000000000000000000000000000000000000",
-            "3.81279999999999999999999999999991101648989106986834955701784",
-            "13.0316000000000000000000000000000934011311781677977607486621"
+            "1.00000000000000000000000000000",
+            "3.81280000000000000000000000000",
+            "13.0316000000000000000000000000"
           ],
-          "mu4": "3.78040000000000000000000000000044933517161388832436252059079",
-          "frac_tjon_dev": "0.290094846373430737591700174959363211009175493132006212316338"
+          "mu4": "3.78040000000000000000000000000",
+          "frac_tjon_dev": "0.290094846373430737591700174959"
         },
         "complete graph (C(A,2) bonds: 1,3,6)": {
           "M_op": {
-            "2": "-0.556544660404440106891779867724748777172300170490000262483525",
-            "3": "-0.993867352438161606313661777471652120125487113445300937686380",
-            "4": "-1.17673273013741326071568794050966968972669249694099840832817"
+            "2": "-0.556544660404438211904772224124",
+            "3": "-0.993867352438156735290571500900",
+            "4": "-1.17673273013740574030324048983"
           },
           "ladder_normalised": {
-            "2": "1.00000000000000000000000000000000000000000000000000000000000",
-            "3": "1.78578184851494182805541330914068029250183154126726430747276",
-            "4": "2.11435454125511416108699952854427699881797515705868094159912"
+            "2": "1.00000000000000000000000000000",
+            "3": "1.78578184851493915623085968860",
+            "4": "2.11435454125510784759895048937"
           },
-          "tjon_two_point_prediction": "-0.636201447326005783903967903538115817468147430841202175844367",
-          "mu4_op": "-0.540531282811407476811720036971553872258545066099796232483807",
-          "frac_tjon_deviation": "0.459349237909178238140238999975585985599278152877952063804546"
+          "tjon_two_point_prediction": "-0.636201447325997669733652658857",
+          "mu4_op": "-0.540531282811408070569587830976",
+          "frac_tjon_deviation": "0.459349237909181678389235745788"
         },
         "chain only (adjacent: 1,2,3)": {
           "M_op": {
-            "2": "-0.556544660404440106891779867724748777172300170490000262483525",
-            "3": "-0.888536126873674557956841085601790220444757011060001404076842",
-            "4": "-1.11980900608624647679843985157782011908792263945999644735847"
+            "2": "-0.556544660404438211904772224124",
+            "3": "-0.888536126873670069996250574540",
+            "4": "-1.11980900608623902881046442612"
           },
           "ladder_normalised": {
-            "2": "1.00000000000000000000000000000000000000000000000000000000000",
-            "3": "1.59652259753597633647989501222087821214553119644188633910042",
-            "4": "2.01207393719757023374205077043462543958668401479953452010315"
+            "2": "1.00000000000000000000000000000",
+            "3": "1.59652259753597370853084648819",
+            "4": "2.01207393719756370212964903413"
           },
-          "tjon_two_point_prediction": "-0.214876545068057590476685136058668218745227021300004041406216",
-          "mu4_op": "-0.904932461018188886321754715519151900342695618159992405952254",
-          "frac_tjon_deviation": "0.808113219397069189399350887388568671262062658437413920994190"
+          "tjon_two_point_prediction": "-0.214876545068051008556368953416",
+          "mu4_op": "-0.904932461018188020254095472708",
+          "frac_tjon_deviation": "0.808113219397073790853575316163"
         }
       },
       "scores": {
         "complete graph (C(A,2) bonds: 1,3,6)": {
-          "frac": "0.459349237909178238140238999975585985599278152877952063804546",
+          "frac": "0.459349237909181678389235745788",
           "sign_ok": true,
-          "ratio_to_nature": "1.58344501342113192470329556451199697963152742173737439877008"
+          "ratio_to_nature": "1.58344501342114378375229196508"
         },
         "chain only (adjacent: 1,2,3)": {
-          "frac": "0.808113219397069189399350887388568671262062658437413920994190",
+          "frac": "0.808113219397073790853575316163",
           "sign_ok": true,
-          "ratio_to_nature": "2.78568623158788669150793064863285695237920672042482311274819"
+          "ratio_to_nature": "2.78568623158790255340372767170"
         }
       },
       "verdict": "operator fractional Tjon deviations {'complete graph (C(A,2) bonds: 1,3,6)': 0.4593, 'chain only (adjacent: 1,2,3)': 0.8081} vs nature +0.2901; sign reproduced by at least one bond convention: True; best |ratio| 1.58×; the binding proxy is the trace DEFICIT B_op = -M_op > 0 (corpus canonical), so the operator's sign is CORRECT, not mismatched — an earlier revision claimed otherwise and is retracted; the [T2] score is sign-blind anyway (Lean fracTjon_neg). THE SURVIVING NEGATIVE is the ladder: nearly FLAT in A (complete graph (C(A,2) bonds: 1,3,6): A=3 1.79, A=4 2.11, grows 1.18x; chain only (adjacent: 1,2,3): A=3 1.60, A=4 2.01, grows 1.26x) against nature's 3.81 -> 13.03 (grows 3.42x), off 2.1x at A=3 and 6.2x at A=4. Scope-(a) NEGATIVE on growth, not on sign"

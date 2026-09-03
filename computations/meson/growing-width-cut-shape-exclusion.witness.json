@@ -1,0 +1,131 @@
+{
+  "engine": "python-exact",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-30T14:15:34.460791+00:00",
+  "commitSha": "65ead20c4bf19cbee462489a9ff5ed9342f2df61",
+  "assertions": [
+    {
+      "name": "C1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C1: the k-strand Markov measure sums to 1 for k = 1..20 - S is the entropy of a genuine state, not of an unnormalised weight"
+    },
+    {
+      "name": "C2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "C2: reproduces Addendum 23's balanced-cut table (E0*S(floor(1.5A)) at A = 2, 4, 6, 12) to the four decimals it publishes - same object, so the verdict below is about theirs"
+    },
+    {
+      "name": "A1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A1: S(3A) > 0 at EVERY A - Addendum 23's \"at w = 3 the cut is the entire system and the entropy is identically zero\" is FALSE. S is a TRACE-state entropy: S(6) = 2.84368687, S(12) = 6.664991078"
+    },
+    {
+      "name": "A2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A2: S is NOT symmetric under k <-> n-k (S(1) = 0 vs S(5) = 2.2124 at n = 6) - so it is not a pure-state bipartition entropy, no Schmidt argument applies, and there is no \"balanced cut is the maximiser\" justification available for w = 3/2 either"
+    },
+    {
+      "name": "A3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A3: S(k)/k is STRICTLY INCREASING over k = 1..64 - the entropy density rises with the cut width"
+    },
+    {
+      "name": "A4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A4: and it approaches ln[2]_q = 0.6985808249 strictly from BELOW, and SLOWLY - at k = 64 the density is still 6.57242 % short (S(64)/64 = 0.6526671341). So the asymptotic `E0*w*ln[2]_q per nucleon` OVERSTATES the model in the light-nucleus range, where k is single- or double-digit"
+    },
+    {
+      "name": "A5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A5: g_w(4) <= g_w(6) for ALL 581 values of w on a 0.005 grid over [0.10, 3.00] - the model's per-nucleon prediction never decreases from 4He to 6Li. (A grid used to FALSIFY a universal claim, not to select a w)"
+    },
+    {
+      "name": "A6",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A6: but the DATA decreases there - B/A is 7.0739156 at 4He and 5.3323312 at 6Li. This is the 4He peak, a fact about AME, not about this framework"
+    },
+    {
+      "name": "A7",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "A7: THE EXCLUSION - for every w and every positive overall scale c, c*g_w(4) <= c*g_w(6) while B/A decreases across those two isotopes, so no member of the family matches both. The failure is in the SHAPE, not the normalisation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 431,
+  "computation": "growing-width-cut-shape-exclusion",
+  "scriptFile": "growing_width_cut_shape_exclusion_probe.py",
+  "scriptHash": "990ed763e657",
+  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "110b330d42788fa0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/growing_width_cut_shape_exclusion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/growing_width_cut_shape_exclusion_probe.py"
+  },
+  "description": "Excludes the one-parameter growing-width cut of Addendum 23 Front 1 WITHOUT selecting any w. S(k)/k is increasing, so the model's per-nucleon prediction is non-decreasing in A for every fixed w; the AME per-nucleon binding is not, peaking at 4He (7.0739) and dipping at 6Li (5.3323). A non-decreasing function cannot match a function that decreases across the same two points, and an arbitrary positive rescaling preserves that -- so the failure is in the SHAPE, not the normalisation, and the family is excluded scope (b). Also corrects Addendum 23's claim that the entropy is identically zero at w = 3: S(3A) > 0 at every A, because S is a TRACE-state entropy, not a pure-state bipartition entropy (it is not even symmetric under k <-> n-k).",
+  "data": {
+    "q0": "1.1099785827513808076",
+    "E0_MeV": "4.1859813632944758969",
+    "ln_2q": "0.69858082489417387604",
+    "S_3A_positive": {
+      "2": "2.84368686974",
+      "3": "4.71761833287",
+      "4": "6.66499107767",
+      "6": "10.6164944148",
+      "7": "12.6118533941",
+      "12": "22.7152516826",
+      "16": "30.8628878965"
+    },
+    "density_increasing_to_kmax": 64,
+    "density_at_kmax": "0.65266713414394449765",
+    "w_grid_monotonicity_violations": 0,
+    "B_over_A_4He": "7.0739156",
+    "B_over_A_6Li": "5.3323312",
+    "required_rescale_min": "0.51300703524560476372",
+    "required_rescale_max": "2.3770636016604341273",
+    "best_constant_multiplicative_error": "2.1525772228297437249",
+    "verdict": "scope-(b): the one-parameter constant-w growing-width cut, and any overall rescaling of it, is excluded by the monotonicity of S(k)/k against the non-monotonicity of B/A. A cut whose width depends on the isotope's own structure is NOT excluded.",
+    "corrects": "Addendum 23 Front 1: 'at w = 3 the cut is the entire system and the entropy is identically zero' is false; S(3A) > 0 at every A."
+  },
+  "caveats": [
+    "Scope (b) and narrow: what is excluded is the one-parameter family 'cut of width wA with w constant across isotopes', together with any overall positive rescaling of it. A cut whose width depends on the isotope's own structure is NOT excluded, and nothing here says what the missing binding term is.",
+    "No w is selected anywhere. The grid over w scans to FALSIFY a universal monotonicity claim, which is the legitimate direction; it never picks a best-scoring w. The sqrt(rmax/rmin) figure is a closed-form identity verified, not a fitted optimum.",
+    "S(k)/k is measured monotone over k = 1..64, not proved monotone for all k. The exclusion needs it only on the range the isotopes reach."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

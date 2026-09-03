@@ -1,30 +1,30 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-06T22:44:14.399658+00:00",
-  "commitSha": "0ba1fe9fbaebb7beb258d5c7145e55d45f1c8212",
+  "computedAt": "2026-08-29T12:25:04.073751+00:00",
+  "commitSha": "af3568802bf4f8f3251366a73d3514174c46e514",
   "assertions": [
     {
       "name": "bridge_residual_within_O_h_squared",
-      "computed": 0.012475305595727787,
+      "computed": "0.0128063565842577152719584322582874223959890619071351132005253267703198",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.04370621823290131
+      "tolerance": 0.04370620853252199
     },
     {
       "name": "Q_beta_form_a_form_b_agree_within_O_h_squared_MeV",
-      "computed": 0.04874947935668458,
+      "computed": "0.03979879015786683592465093682519242731888426008736102163532914687247063",
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.18295339156907867
+      "tolerance": 0.18295337437739906
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "q-beta-spectral-bridge",
   "scriptFile": "q_beta_spectral_bridge_witness.py",
-  "scriptHash": "26c9fab9e0d8",
-  "scriptCommitSha": "73843978f9a5115d7ff21f15ff6174d46fd032cd",
+  "scriptHash": "39347fcf8c7f",
+  "scriptCommitSha": "e746346775a4636861cd54bb936cae54adb7f800",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,29 +33,40 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "47b406d9ba6e343f"
   },
-  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h\u00b2) of prop:q-beta-spectral-bridge. Form A is the NF-counit |\u0394(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h\u00b2 (the Taylor O(h\u00b2) remainder).",
+  "invocation": {
+    "argv": [
+      "computations/q_beta_spectral_bridge_witness.py"
+    ],
+    "reproduce": "python3 -u computations/q_beta_spectral_bridge_witness.py"
+  },
+  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of prop:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h² (the Taylor O(h²) remainder).",
   "contentBlock": "prop:q-beta-spectral-bridge",
   "parameters": {
-    "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.51099895069"
   },
   "data": {
-    "h": "0.2090603219955936789818626364659673502616233016474798267897442369867366",
-    "z_markov_jones": "0.4993203340335612717689663862757371401611757978998956104471894329672748",
-    "h_squared_tolerance": "0.04370621823290131021824508554360303166634175188467189098756352045257693",
-    "form_a_delta_net": "0.1872072128791430238727400936941658344284524257051438812959624767604481",
-    "form_b_log_one_plus_zh": "0.09929139859972778113479789974144118782422406265194807591692847769386373",
-    "predicted_bridge_ratio": "1.897907634269324234856850262397788670627248151598850809085940080827951",
-    "actual_bridge_ratio": "1.885432328673596447070964850278336216688717277484213153884444204097225",
-    "bridge_residual": "0.01247530559572778778588541211945245393853087411463765520149587673072635",
-    "E_0_MeV": "4.185980827582890914289876185817232762251768697517854997171023821386601",
-    "Q_beta_form_a_MeV": "0.7836458038973215495988764817067477910980670825826358648183381566111344",
-    "Q_beta_form_b_MeV": "0.832395283254006132744313021851514294436313004460123556768282443603997",
-    "Q_beta_agreement_MeV": "0.04874947935668458314543654014476650333824592187748769194994428699286255"
+    "h": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
+    "z_markov_jones": "0.6126880371464652515958298639458992480263083915450870140747738279321425",
+    "h_squared_tolerance": "0.0437062085325219894020193356773883097682139607135222162428473446418258",
+    "form_a_delta_net": "0.187207194529378320729836545290980788975650514906301970133791024020765",
+    "form_b_log_one_plus_zh": "0.1205248238414840391024407351454290509373489474941240640905143998219841",
+    "predicted_bridge_ratio": "1.566073049391009982923250637411157585630337099569728095243391700915463",
+    "actual_bridge_ratio": "1.553266692806752267651292205152870163234348037662592982042866374145143",
+    "bridge_residual": "0.0128063565842577152719584322582874223959890619071351132005253267703198",
+    "E_0_MeV": "4.185981363294475896945062158759008410143486890878715448622304367024271",
+    "Q_beta_form_a_MeV": "0.7836458273746212130749397513413968905257364410302550267583501238891832",
+    "Q_beta_form_b_MeV": "0.8234446175324880489995906881665893178446207011176160483936792707616538",
+    "Q_beta_agreement_MeV": "0.03979879015786683592465093682519242731888426008736102163532914687247063"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

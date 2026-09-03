@@ -1,13 +1,16 @@
 {
+  "scriptFile": "t35-weak-vertex.py",
+  "engine": "python",
+  "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
   "computation": "t35-weak-vertex",
-  "timestamp": "2026-08-24T07:34:12.346201+00:00",
+  "timestamp": "2026-08-28T20:12:07.874290+00:00",
   "description": "T_{3,5} weak vertex form factor W(q) = tr_Markov((\u03c3\u2081\u03c3\u2082)\u2075) in H\u2083(q). The torus knot T_{3,5} with 10 crossings mediates the weak force. Beta decay inserts T_{3,5} at the converting quark; the 10 crossings partition into electron (3) + neutrino (0) + re-reduction (7).",
   "parameters": {
     "q": 1.1099785827513808,
     "q_inv": 0.9009182839557415,
     "s_skein": 0.10438805825918152,
     "s_squared": 0.010896866707122274,
-    "z_markov": 0.4993203341836945,
+    "z_markov": 0.6126880371464652,
     "n_strands": 3
   },
   "t35_braid": {
@@ -40,80 +43,80 @@
     "\u03c31\u00b7\u03c32\u00b7\u03c31": 0.47495821898027324
   },
   "weak_vertex_form_factor": {
-    "W_q": 0.7035537246446991,
-    "W_q_squared": 0.4949878434614291,
+    "W_q": 0.9684433807107949,
+    "W_q_squared": 0.9378825816425537,
     "s_squared": 0.010896866707122274,
     "s_fourth": 0.00011874170403278982,
-    "ratio_W_over_s2": 64.56477293466857,
-    "ratio_W2_over_s4": 4168.60990410531
+    "ratio_W_over_s2": 88.8735640014586,
+    "ratio_W2_over_s4": 7898.51037832136
   },
   "crossing_budget": {
     "total": 10,
     "electron_T23": 3,
     "neutrino_K01": 0,
     "re_reduction": 7,
-    "trefoil_markov_trace": 0.7302040316296949,
+    "trefoil_markov_trace": 0.8485266070590096,
     "unknot_markov_trace": 1
   },
   "halflife_correction": {
-    "rate_ratio": 4168.60990410531,
-    "halflife_ratio": 0.00023988812170099794,
+    "rate_ratio": 7898.51037832136,
+    "halflife_ratio": 0.00012660615129969939,
     "description": "Half-life correction from replacing s\u00b2 with W(q) as weak coupling. t_new = t_old \u00d7 (s\u2074/|W(q)|\u00b2)."
   },
   "corrected_predictions": [
     {
       "name": "\u00b3H",
       "old_corr": 12.4,
-      "t35_pred": 0.0029746127090923744,
+      "t35_pred": 0.0015699162761162724,
       "observed": 12.32,
       "unit": "yr",
       "old_ratio": 1.0064935064935066,
-      "new_ratio": 0.00024144583677697843
+      "new_ratio": 0.00012742826916528185
     },
     {
       "name": "\u00b9\u2074C",
       "old_corr": 6690,
-      "t35_pred": 1.6048515341796763,
+      "t35_pred": 0.8469951521949889,
       "observed": 5730,
       "unit": "yr",
       "old_ratio": 1.1675392670157068,
-      "new_ratio": 0.0002800788017765578
+      "new_ratio": 0.0001478176530881307
     },
     {
       "name": "\u2076\u2070Co",
       "old_corr": 6.17,
-      "t35_pred": 0.0014801097108951573,
+      "t35_pred": 0.0007811599535191452,
       "observed": 5.2714,
       "unit": "yr",
       "old_ratio": 1.1704670486018895,
-      "new_ratio": 0.0002807811418020179
+      "new_ratio": 0.0001481883282466034
     },
     {
       "name": "\u2079\u2070Sr",
       "old_corr": 31.9,
-      "t35_pred": 0.007652431082261834,
+      "t35_pred": 0.0040387362264604106,
       "observed": 28.79,
       "unit": "yr",
       "old_ratio": 1.1080236193122612,
-      "new_ratio": 0.0002658017048371599
+      "new_ratio": 0.00014028260599028867
     },
     {
       "name": "\u00b9\u00b3\u2077Cs",
       "old_corr": 32.9,
-      "t35_pred": 0.007892319203962833,
+      "t35_pred": 0.0041653423777601095,
       "observed": 30.17,
       "unit": "yr",
       "old_ratio": 1.0904872389791183,
-      "new_ratio": 0.00026159493549760796
+      "new_ratio": 0.00013806239236858168
     },
     {
       "name": "\u00b2\u00b9\u2070Bi",
       "old_corr": 5.79,
-      "t35_pred": 0.001388952224648778,
+      "t35_pred": 0.0007330496160252595,
       "observed": 5.012,
       "unit": "d",
       "old_ratio": 1.1552274541101357,
-      "new_ratio": 0.00027712534410390626
+      "new_ratio": 0.0001462589018406344
     }
   ]
 }

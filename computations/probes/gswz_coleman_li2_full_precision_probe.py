@@ -193,6 +193,9 @@ checks = {}
 # (1) 5-integrality of g_2 coefficients + proven tail bound at N
 import math
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 checks["g2_coeffs_5_integral"] = all(c.denominator % 5 != 0 for c in g2)
 c25 = (
     5 / 4
@@ -409,8 +412,17 @@ witness = {
     ),
 }
 with open(
-    "computations/probes/gswz_coleman_li2_full_precision.witness.json", "w"
+    _HERE_W / "gswz_coleman_li2_full_precision.witness.json", "w"
 ) as f:
+    # Provenance stamp (bean qou-4un2): this producer writes its
+    # witness directly, so nothing else records which script made
+    # it -- and a re-run of an unstamped producer DELETES the
+    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    import os as _os  # noqa: E402 -- provenance stamp
+    from qou_substrate.witness import WitnessBuilder as _WB
+    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    _WB.stamp_staleness_metadata(
+        witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "shared exact-series engine reproduces the 18 printed GGM H-tables"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "O(q^40) generation is a prefix of the O(q^128) generation (3 spot series)"
     },
     {
@@ -33,7 +33,7 @@
       "computed": 63.0,
       "expected": 63.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "all 63 pre-registered decisions completed"
     }
   ],

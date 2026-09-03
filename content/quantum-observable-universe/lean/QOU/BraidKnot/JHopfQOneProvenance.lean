@@ -79,7 +79,9 @@ theorem loopValue_one : loopValue 1 = -2 := by
     is therefore *not* the raw reduced trace but the loop-factor / V-normalized
     value. -/
 theorem jonesHopfLink_one : jonesHopfLink 1 = 1 := by
-  unfold jonesHopfLink heckeH markovZ; rw [Real.sqrt_one]; norm_num
+  -- `markovZ`/`heckeH` are the sqrt-free convention-D forms (q³/(q²+1), q−1/q),
+  -- so there is no `Real.sqrt` left to rewrite; `heckeH 1 = 0` kills the term.
+  unfold jonesHopfLink heckeH markovZ; norm_num
 
 /-- **The classical Jones value at `t = 1` for a `c`-component link**, as the
     `(c−1)`-th power of the loop factor `δ(1)`. This is the QOU-side statement of

@@ -59,6 +59,16 @@ cd "$ROOT"
 # name|script|args|self-test?|blocking?
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
+  # The gate above fires on CONTRADICTIONS (Q0_FLIP) only — its --strict
+  # ignores the 1678 witnesses carrying no q0Anchor at all, which its own
+  # header calls "pre-backfill; not a failure". Correct for a contradiction
+  # detector, but it left the INFLOW ungated: measured on witness files newly
+  # added to main, ~50% arrive unstamped (60/101, 20/44, 16/31 over the last
+  # 500/250/100 commits), so the population refills as fast as it drains.
+  # This ratchet tolerates the backlog and blocks NEW arrivals. Blocking is
+  # safe: it is green at its own baseline, so it can only ever fire on a new
+  # regression. Bean qou-y98b.
+  "q0-anchor refill ratchet|computations/audits/q0_anchor_ratchet.py|--strict|yes|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
   "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "never-raises-dps ratchet|computations/never_raises_dps_audit.py|--strict|yes|yes"
@@ -428,22 +438,59 @@ fi
 # a gate that reports failure without examining anything is not a gate either.
 # So: check the imports up front, and exit 2 with a different message, so
 # "cannot evaluate" can never be read as "found a defect".
+#
+# MEASURED AGAIN 2026-08-30, and the list above was INCOMPLETE — which cost
+# exactly what this block exists to prevent. On a container with `mpmath`
+# present but `qou_substrate` absent, the preflight passed and the run reported
+#
+#   RED: q0-anchor flip  q0-anchor refill ratchet  mpf(<float>) source
+#        float64-padding ratchet  raw-float64 ratchet  q0-value drift ratchet
+#        mixed mpf/f64 -> serializer  witness scriptFile provenance
+#
+# Eight blocking failures. Installing `qou_substrate` alone took it to SIX:
+# `mpf(<float>) source` and `mixed mpf/f64 -> serializer` were phantoms, dying
+# on `ModuleNotFoundError: No module named 'qou_substrate'` before examining
+# anything. The remaining six are real and each names a specific witness
+# (diagnosed in bean qou-hah0).
+#
+# The second half of the trap: `qou_substrate` is NOT on PyPI (AGENTS.md
+# §Project structure — it 404s, as do pyhecke, pyhecke-native and qou-mass), so
+# the old `pip install $missing` hint would itself have failed with a confusing
+# not-found. An in-repo package needs an editable install of its source tree,
+# so the hint is now per-module.
 missing=$(python3 - <<'PREFLIGHT_PY'
 import importlib.util
-# Third-party modules the gate scripts import. Extend when a gate gains a dep.
-need = ["mpmath"]
-print(" ".join(m for m in need if importlib.util.find_spec(m) is None))
+# Modules the gate scripts import that are NOT in the standard library and NOT
+# in-repo siblings resolved by a sys.path bootstrap. Measured by an AST walk
+# over every gate script and its import cone, not guessed. Extend when a gate
+# gains a dep — and give it the command that actually installs it.
+NEED = {
+    "mpmath": "pip install mpmath",
+    # In-repo package, NOT on PyPI: only an editable install of the source tree
+    # works. Consumed by mpf_float_source_audit, witness_float64_padding_audit,
+    # q0_value_drift_audit and mpf_mixed_arithmetic_audit, among others.
+    "qou_substrate": "pip install -e tools/qou-substrate",
+}
+for mod, how in NEED.items():
+    try:
+        found = importlib.util.find_spec(mod) is not None
+    except Exception:
+        found = False          # a broken partial install is also unusable
+    if not found:
+        print(f"{mod}\t{how}")
 PREFLIGHT_PY
 )
 if [ -n "$missing" ]; then
   echo "PREFLIGHT FAILED — the precision gates could not be evaluated."
-  echo "  missing Python module(s): $missing"
+  echo
+  printf '%s\n' "$missing" | while IFS=$'\t' read -r mod how; do
+    echo "  missing: $mod"
+    echo "      $how"
+  done
   echo
   echo "  This is NOT a gate failure. Nothing was examined, so nothing is known"
   echo "  about the tree's precision hygiene. Do not report it as red, and do"
   echo "  not go looking for a producer to fix."
-  echo
-  echo "    pip install $missing"
   exit 2
 fi
 
@@ -563,11 +610,46 @@ MASKED_PY
     echo
   fi
   if [ -n "$content_moved" ]; then
-    echo "STALE COMMITTED AUDIT WITNESSES — a substantive field moved:"
+    # These are TREE-MEASURING audit witnesses: they count things across the
+    # whole working tree, so main regenerates them on its own cadence. That
+    # makes them CONTENDED files, and the instruction this banner used to print
+    # ("commit the regenerated one") is wrong from a feature branch for two
+    # independent reasons, both measured — see bean qou-v0t8:
+    #
+    #   1. A branch BEHIND main measures a tree missing main's newer commits,
+    #      so the regenerated count is right for the branch and wrong for main.
+    #      Committing it walks a drain-only ratchet BACKWARDS while reporting
+    #      green (measured: drained_files 913 -> 888, 25 files recorded as
+    #      re-dirtied when nothing was).
+    #   2. Even from a CURRENT tree with the movement correctly attributed to
+    #      main, committing one acquires a conflict with main — and it recurs
+    #      on every subsequent main landing until the branch merges (measured:
+    #      PR #5805 went mergeable_state dirty within twenty minutes, on
+    #      exactly that file).
+    #
+    # So reason 1's "is your tree behind?" test is INSUFFICIENT: reason 2 bites
+    # a tree that is 0 behind. The branch check below is the discriminator that
+    # covers both, which is why it is not conditioned on the behind-count.
+    _branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo HEAD)
+    _behind=$(git rev-list --count "HEAD..origin/main" 2>/dev/null || echo "?")
+    echo "TREE-MEASURING AUDIT WITNESSES MOVED — a substantive field changed:"
     printf '%s' "$content_moved"
-    echo "  The committed copy was stale. Commit the regenerated one AND say"
-    echo "  which count changed — and check whether the movement is yours or"
-    echo "  main's before claiming it (git log the newly-listed entries)."
+    if [ "$_branch" = "main" ]; then
+      echo "  On main: the committed copy was stale. Commit the regenerated one"
+      echo "  AND say which count changed — and check whether the movement is"
+      echo "  yours or an earlier landing's (git log the newly-listed entries)."
+    else
+      echo "  On branch '$_branch' ($_behind behind origin/main)."
+      echo "  DO NOT COMMIT THESE. Revert them:  git checkout -- computations/"
+      echo "  They are contended files that main regenerates on its own cadence,"
+      echo "  so committing one from a feature branch either walks a drain-only"
+      echo "  ratchet backwards (if this tree is behind main) or acquires a"
+      echo "  conflict that recurs until the branch merges (even at 0 behind)."
+      echo "  Both failure modes are measured; see bean qou-v0t8."
+      echo "  The diff is still worth READING — if the movement is your own"
+      echo "  producer's, that is a real finding about your change. It is the"
+      echo "  COMMIT that is wrong here, not the measurement."
+    fi
     echo
   fi
 fi

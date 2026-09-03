@@ -1,0 +1,204 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1002.0168v2",
+ "source": {
+  "file": "1002.0168v2.pdf",
+  "sha256": "c95d5d193d57b0976305756d8463f66c33bb7ccb277b957acf9c56d91ccb2a95",
+  "bytes": 605288,
+  "pages": 22,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1002.0168",
+   "version": "2",
+   "primary_class": "math.QA",
+   "stamp_date": "2 May 2010"
+  },
+  "doi": null,
+  "title": "Non-cyclotomic fusion categories Scott Morrison Noah Snyder",
+  "authors_raw": "URLs: http://tqft.net/ and http://math.columbia.edu/~nsnyder",
+  "title_lines": [
+   "Non-cyclotomic fusion categories",
+   "Scott Morrison",
+   "Noah Snyder"
+  ],
+  "abstract": "Etingof, Nikshych and Ostrik ask in [ 7,\u00a72] if every fusion category can be completely de\ufb01ned over a cyclotomic \ufb01eld. We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor [1] and one coming from the newly constructed extended Haagerup subfactor [ 2] can not be completely de\ufb01ned over a cyclotomic \ufb01eld. On the other hand, we show that the Drinfel\u2019d center of the even part of the Haagerup subfactor is completely de\ufb01ned over a cyclotomic \ufb01eld. We identify the minimal \ufb01eld of de\ufb01nition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181102105857Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Background",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Fusion categories and fields of definition",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Subfactors and category theory",
+   "page": 5,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Shaded planar algebras",
+   "page": 6,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Principal graphs",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "The lopsided normalization",
+   "page": 9,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "The shaded planar algebras H0 and H1",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Rational forms and twisted moments",
+   "page": 14,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Drinfel'd center",
+   "page": 17,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Galois conjugates",
+   "page": 20,
+   "source": "outline",
+   "number": "6"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5583,
+   "n_words": 978
+  },
+  {
+   "id": "sec-001-2-background",
+   "number": "2",
+   "title": "Background",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5907,
+   "n_words": 989
+  },
+  {
+   "id": "sec-002-22-subfactors-and-category-theory",
+   "number": "2.2",
+   "title": "Subfactors and category theory",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1034,
+   "n_words": 166
+  },
+  {
+   "id": "sec-003-23-shaded-planar-algebras",
+   "number": "2.3",
+   "title": "Shaded planar algebras",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6382,
+   "n_words": 1123
+  },
+  {
+   "id": "sec-004-24-principal-graphs",
+   "number": "2.4",
+   "title": "Principal graphs",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 781,
+   "n_words": 126
+  },
+  {
+   "id": "sec-005-25-the-lopsided-normalization",
+   "number": "2.5",
+   "title": "The lopsided normalization",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 9742,
+   "n_words": 1877
+  },
+  {
+   "id": "sec-006-4-rational-forms-and-twisted-moments",
+   "number": "4",
+   "title": "Rational forms and twisted moments",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 20,
+   "n_chars": 13711,
+   "n_words": 2657
+  },
+  {
+   "id": "sec-007-6-galois-conjugates",
+   "number": "6",
+   "title": "Galois conjugates",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 5577,
+   "n_words": 810
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 8,
+  "chars_total": 48717
+ }
+}

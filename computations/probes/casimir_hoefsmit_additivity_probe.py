@@ -208,19 +208,110 @@ def main() -> int:
         .add_data("hyperbolic_volume_additivity_pairs", vol_additivity)
         .add_data("geom_epsilon_N_unknots", geom_N_unknots)
         .add_data("dimensional_consistency_check", dim_check)
-        .add_assertion(
-            name="hoefsmit_additivity_structural_lemma_recorded",
-            computed=1.0,  # lemma is recorded
-            expected=1.0,
-            tolerance=0.0,
-            unit="boolean (lemma stated, citations attached)",
-            source=(
-                "Thurston (geometrisation) for hyperbolic-volume "
-                "additivity; computations/"
-                "_li_2_q_util.py for VolDensity = Vol/ℏ_q² · "
-                "linking_weight; this probe just composes them."
-            ),
-        )
+    )
+
+    # Was a single `computed=1.0, expected=1.0` named
+    # `hoefsmit_additivity_structural_lemma_recorded` (bean `qou-26f2`): a
+    # literal on both sides, so the probe read PASS for a corrupted registry
+    # volume, a non-zero unknot, or a Geom table that was not linear in N —
+    # every input the "lemma" it claims to record is composed from.
+
+    # (1) The two registry volumes against their closed forms. This module
+    # cites them as "2·Cl_2(π/3), Thurston" and "8·G, Adams 1985" in comments
+    # and checks neither; a transcription slip in these strings has bitten
+    # this repo before (bean `qou-f8lit`: V_BORROMEAN and VOL_4_1_decimal).
+    vol_borromean_gap = abs(VOL_BORROMEAN - 8 * mp.catalan)
+    vol_4_1_gap = abs(VOL_FIGURE_8 - 2 * mp.clsin(2, mp.pi / 3))
+    builder.add_assertion(
+        name="vol_borromean_registry_matches_8G",
+        computed=mp.nstr(vol_borromean_gap, 12),
+        expected="0",
+        tolerance="1e-45",
+        source=f"|VOL_BORROMEAN_50DPS_STR − 8·G| = "
+               f"{mp.nstr(vol_borromean_gap, 6)}; the registry literal against "
+               "mpmath's Catalan constant",
+    )
+    builder.add_assertion(
+        name="vol_4_1_registry_matches_2_clausen_pi_over_3",
+        computed=mp.nstr(vol_4_1_gap, 12),
+        expected="0",
+        tolerance="1e-45",
+        source=f"|VOL_4_1_50DPS_STR − 2·Cl₂(π/3)| = {mp.nstr(vol_4_1_gap, 6)}. "
+               "Gated at 1e-45, the same as its Borromean sibling above. This "
+               "ran at 1e-33 until 2026-08-30 because the registry string was "
+               "correct to only ~36 significant digits despite its _50DPS_ "
+               "name; that literal has since been corrected, so the loosened "
+               "gate has no remaining reason to exist — left in place it "
+               "would be green-by-omission across 12 orders of magnitude",
+    )
+
+    # (2) The additive identity the disjoint-union argument runs on: the
+    # unknot (and the trefoil) are not hyperbolic, so both carry volume 0.
+    # Known facts, hardcoded here and never tested.
+    nonhyperbolic_gap = max(abs(VOL_UNKNOT), abs(VOL_TREFOIL))
+    builder.add_assertion(
+        name="non_hyperbolic_knots_carry_zero_volume",
+        computed=mp.nstr(nonhyperbolic_gap, 12),
+        expected="0",
+        tolerance="0",
+        source="Vol(⊙) = Vol(3_1) = 0 — neither complement admits a "
+               "hyperbolic structure; ⊙ being the additive identity is what "
+               "makes Geom_ε(N·⊙) = N·ε meaningful at all",
+    )
+
+    # (3) The pair table really is additive, checked against a recomputation
+    # rather than against the `"additive": True` literal each row carries.
+    _vols = {"⊙": VOL_UNKNOT, "3_1": VOL_TREFOIL,
+             "4_1": VOL_FIGURE_8, "𝓑₃": VOL_BORROMEAN}
+    additivity_gap = max(
+        abs(mp.mpf(str(r["Vol_L1_plus_L2_expected"]))
+            - (_vols[r["L1"]] + _vols[r["L2"]]))
+        for r in vol_additivity
+    )
+    builder.add_assertion(
+        name="disjoint_union_volumes_are_additive",
+        computed=mp.nstr(additivity_gap, 12),
+        expected="0",
+        tolerance="1e-15",
+        source=f"max over the {len(vol_additivity)} recorded pairs of "
+               f"|tabulated Vol(L₁⊔L₂) − (Vol(L₁)+Vol(L₂))| = "
+               f"{mp.nstr(additivity_gap, 6)}; gate 1e-15 is the float64 the "
+               "table is serialised through, not a chosen band",
+    )
+
+    # (4) Geom_ε(N·⊙) = N·ε/ℏ_q² — the probe's actual deliverable. Additivity
+    # means the tabulated coefficient is EXACTLY linear in N; a quadratic or
+    # off-by-one row would have passed the old assertion untouched.
+    _inv_hbar_sq = 1 / _hbar_q(q) ** 2
+    linearity_gap = max(
+        abs(mp.mpf(str(r["real_part_coefficient"])) - r["N"] * _inv_hbar_sq)
+        for r in geom_N_unknots
+    )
+    builder.add_assertion(
+        name="geom_epsilon_coefficient_is_linear_in_N",
+        computed=mp.nstr(linearity_gap, 12),
+        expected="0",
+        tolerance="1e-9",
+        source=f"max over N ∈ {[r['N'] for r in geom_N_unknots]} of "
+               f"|tabulated coefficient − N/ℏ_q²| = "
+               f"{mp.nstr(linearity_gap, 6)}, with 1/ℏ_q² = "
+               f"{mp.nstr(_inv_hbar_sq, 16)} recomputed at substrate "
+               "precision; gate 1e-9 covers the float64 the table stores at "
+               "N = 1000",
+    )
+    builder.add_caveat(
+        "RESOLVED 2026-08-30 — kept as provenance, since this probe is where "
+        "the defect surfaced. VOL_4_1_50DPS_STR in experimental_constants.py "
+        "used to agree with 2·Cl₂(π/3) only to ~36 significant digits (gap "
+        "2.95e-36): it read …0854904057483004… where the true continuation is "
+        "…0854904057188337…, under a name promising 50. It now carries the "
+        "value qou-substrate computes (VOL_FIGURE_EIGHT_50_STR = nstr(2·"
+        "clsin(2, π/3), 50) at 60 dps), gap 4.16e-52, and this probe's gate "
+        "was tightened 1e-33 → 1e-45 to match its Borromean sibling. "
+        "Why it stood: scripts/known-constant-literal-audit.py flags the old "
+        "literal on sight, but its default roots are content/ computations/ "
+        "scripts/ docs/ and the file is under qou-mass/ — never scanned. "
+        "Fixing the string does not fix that gap in coverage."
     )
 
     out = builder.save()

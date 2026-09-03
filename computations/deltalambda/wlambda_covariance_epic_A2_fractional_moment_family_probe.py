@@ -41,6 +41,9 @@ import sys
 import time
 from fractions import Fraction
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 N_MAX = 30
 ALPHA_GRID = [a / 100 for a in range(2, 101, 2)] + [a / 20 for a in range(21, 121)]
 # 0.02..1.00 step .02, then 1.05..6.00 step .05
@@ -183,9 +186,17 @@ def main():
         "per_n": results,
         "runtime_s": f"{time.time() - t0:.3f}",
     }
-    path = ("computations/deltalambda/"
-            "wlambda-covariance-epic-A2-fractional-moment-family.witness.json")
+    path = (_HERE_W / "wlambda-covariance-epic-A2-fractional-moment-family.witness.json")
     with open(path, "w") as fh:
+        # Provenance stamp (bean qou-4un2): this producer writes its
+        # witness directly, so nothing else records which script made
+        # it -- and a re-run of an unstamped producer DELETES the
+        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
+        out.setdefault("scriptFile", _os.path.basename(__file__))
+        _WB.stamp_staleness_metadata(
+            out, script_path=__file__, engine=None, q0_anchor=False)
         json.dump(out, fh, indent=1, default=str)
     print(f"\nverdict: FMP {'HOLDS' if fmp_holds else 'FAILS'} on window; "
           f"worst margin {worst[0]:+.4f} at n={worst[1]}, alpha={worst[2]:.2f}")

@@ -53,6 +53,42 @@ tableaux.
 Per AGENTS.md §"Axiomatization is NOT a Proof", carrying `hup` as a hypothesis
 does not establish it; the contribution here is that the *route* avoids RSK.
 
+### `hdown` is no longer open — it is proved elsewhere in the corpus
+
+Measured 2026-08-21 (bean `qou-wtny`). The text above lists `hdown` and `hup`
+together as the remaining work. That is **stale for `hdown`**:
+`QOU.Mathlib.numStandardYoungTableaux_branching` (`QOU/Mathlib/SYTBranchingRule.lean`)
+already proves, sorry-free and at general `n`,
+
+    numStandardYoungTableaux μ = ∑_{removable corners c} numStandardYoungTableaux (μ ∖ c)
+
+via a genuine `Equiv.ofBijective` on corner deletion / max re-insertion — exactly
+the `hdown` shape. So of this file's two hypotheses **one is discharged in the
+corpus already**, and `hup` is the single remaining mathematical obligation, as
+the header's own next paragraph says.
+
+What is *not* yet done for `hdown` is its **instantiation**: `sum_sq_step` wants
+the sum indexed by a `Finset` of shapes cut out by an incidence relation, whereas
+`numStandardYoungTableaux_branching` indexes by the corner subtype
+`{c // IsCornerCell μ c}`. Bridging the two needs corner-erasure to be a bijection
+onto `{μ ∈ shapes (n−1) : μ ⋖ λ}`. That is bookkeeping, not mathematics, but it is
+not free.
+
+### Mathlib v4.24.0 does not contain RSK — how that was established
+
+The pinned toolchain's olean tree carries exactly two Young modules,
+`Mathlib/Combinatorics/Young/YoungDiagram` and `.../SemistandardTableau`. There is
+no `StandardYoungTableau`, no `hookLength`, and no `RSK` / `Schensted` module
+anywhere in it.
+
+Method note, because it is reusable: **enumerate the olean tree, do not ask an
+index.** `lean_leansearch` / `lean_loogle` are frequently unreachable from a
+sandbox (403 through the agent proxy), and — more importantly — they index a
+*current* Mathlib, not the version this repo pins. A negative from them is
+therefore not evidence about `v4.24.0`. Enumerating
+`.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/**` answers the question for
+the version actually being built against, and needs no network at all.
+
 ## A second route is further along — read this before investing here
 
 Bean `qou-3c2j` (sibling, landing through PRs #5139 / #5151 / #5156) is building

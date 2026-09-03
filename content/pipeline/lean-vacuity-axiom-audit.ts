@@ -162,7 +162,24 @@ type Category =
   // discharges by projection has left the contradiction in plain text. When
   // the prose and `#print axioms` disagree about whether a proof exists, one
   // of them is wrong and the class is usually positing its own conclusion.
-  | "proof-docstring-sorry-mismatch";
+  | "proof-docstring-sorry-mismatch"
+  // A `Prop` carrier that Lean PROVED inhabitable with no hypotheses.
+  //
+  // Every other category on this list is decided by reading source. This one
+  // cannot be: the defect is that the carrier's fields, whatever shape they
+  // have, assert nothing — and shape is exactly what a static scan sees. The
+  // corpus's own exemplar makes the point. AGENTS.md §3b-tax cites
+  // `ConditionalClasses.lean` as the model of a carrier "in the *shape* of the
+  // claim", which it is; each field is a parameter-quantified inequality. Every
+  // one is also discharged by zero, and that file raises **0** lines here.
+  //
+  // So the evidence comes from OUTSIDE this scanner:
+  // `scripts/vacuous-prop-carrier-probe.py` emits a Lean file re-declaring each
+  // self-contained carrier and attempts to inhabit it, and records what Lean
+  // said in `docs/audits/vacuous-prop-carrier-baseline.json`. This audit reads
+  // that record. See `seedProbeInhabitedCandidates` for the asymmetry that
+  // governs which of its verdicts may be used.
+  | "proof-carrier-inhabited-by-probe";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -210,6 +227,13 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   // an audit reading `#print axioms` records a proof. Both are wrong, and they
   // disagree — so neither review path can catch it unaided.
   "proof-docstring-sorry-mismatch": "critical",
+  // Major, not critical, and deliberately so. Lean proving the carrier
+  // inhabitable is a hard fact, but "asserts nothing" is not the same as
+  // "should not exist": a carrier can be provably inhabitable-by-zero and
+  // still be the right disposition — the three `FMap*` carriers are typed
+  // `: True` behind a sanctioned `@marker` opt-out. The probe settles
+  // inhabitability; the agent still settles disposition.
+  "proof-carrier-inhabited-by-probe": "major",
 };
 
 interface Hit {
@@ -1815,8 +1839,22 @@ function docBlockAbove(origLines: string[], declIdx0: number): string {
  * carrier with no `conj:` self-reference is a definition, not a
  * conjecture, and is excluded. */
 function isConjectureCarrier(doc: string): boolean {
+  // A docstring that simply *announces* itself as a conjecture is a carrier.
+  //
+  // Measured 2026-08-29: without this clause the gate rejected every carrier
+  // whose docstring is a bare `**CONJECTURE.** …` with no `conj:` label and no
+  // "axiomatis" wording -- among them `QuantumLanglandsDual`,
+  // `Mirror3d3dCorrespondence`, `LusztigCanonicalBasisQEq1`, `SpinFromSo3Fiber`
+  // and `PoincareLefschetzBorromean`, all five of which carry the content-free
+  // `holds : Prop`. Because the gate runs before every criterion in this
+  // family, those carriers were invisible to `proof-claims-unencoded`,
+  // `proof-no-empty-prop-carrier` AND
+  // `proof-dependent-conjecture-not-conditional` alike, and none had ever
+  // reached the review ledger. The audit could not see the carriers most
+  // likely to be defective.
+  const announcesConjecture = /\*\*\s*conjecture\b|^\s*conjecture[.:]/im.test(doc);
   const hasConjRef = /conj:[a-z0-9-]+/i.test(doc) || /\\label\{conj:/i.test(doc);
-  const axiomatises = /axiomatis/i.test(doc);
+  const axiomatises = /axiomatis/i.test(doc) || announcesConjecture;
   if (!hasConjRef && !axiomatises) return false;
   // A `def:`-labelled carrier that only *references* a conjecture (no
   // `conj:` self-label, no axiomatisation) is a definition — exclude.
@@ -2015,6 +2053,8 @@ interface ConjCarrier {
   sig: string;
   doc: string;
   ownLabels: string[];
+  /** The `.md` sibling's prose, scanned alongside the docstring. */
+  narrative: string;
 }
 
 interface ConjGraph {
@@ -2032,6 +2072,151 @@ function ownConjLabels(doc: string): string[] {
   for (const m of doc.matchAll(/\\label\{conj:([a-z0-9-]+)\}/gi))
     out.add(m[1].toLowerCase());
   return [...out];
+}
+
+/** The content block's own label, read from the authoritative `.ts` sibling.
+ *
+ * `ownConjLabels` keys on `\label{conj:…}`, which appears in **15** `.lean`
+ * files corpus-wide against **113** using the markdown-link form. Since
+ * `labelToName` is built from own-labels, that alone left the map nearly empty
+ * and `proof-dependent-conjecture-not-conditional` unable to resolve any
+ * claimed dependency to a carrier — measured, the criterion returned **0 hits
+ * across 244 carriers and 3264 files** while at least four carriers declare
+ * conditionality in prose and bind nothing. The `.ts` `label:` field is the
+ * block's identity and does not depend on how a docstring was written. */
+function siblingBlockLabel(leanFile: string): string | undefined {
+  const ts = leanFile.replace(/\.lean$/, ".ts");
+  if (!existsSync(ts)) return undefined;
+  try {
+    const m = /label:\s*"(conj:[a-z0-9-]+)"/i.exec(readFileSync(ts, "utf8"));
+    return m ? m[1].slice("conj:".length).toLowerCase() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** The content block's own label of ANY kind (`prop:…`, `thm:…`, `conj:…`).
+ *
+ * `siblingBlockLabel` above deliberately returns only `conj:` labels, because
+ * it feeds `labelToName`, which maps a label to the carrier CLASS that
+ * axiomatises it — and only conjectures have one. The `uses[]`-reachability
+ * check below needs something different: the node this block occupies in the
+ * dependency graph, whatever its kind. A `prop:`-labelled block has no `conj:`
+ * label at all, so without this it has no start node and cannot be checked. */
+function siblingBlockLabelAny(leanFile: string): string | undefined {
+  const ts = leanFile.replace(/\.lean$/, ".ts");
+  if (!existsSync(ts)) return undefined;
+  try {
+    const m = /label:\s*"([a-z]+:[a-z0-9-]+)"/i.exec(readFileSync(ts, "utf8"));
+    return m ? m[1].toLowerCase() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** `label -> uses[]` over every content block, built once and cached.
+ *
+ * This is the EDITORIAL dependency graph the `.md` banners are checked
+ * against. Parsed from the `.ts` manifests rather than from any derived
+ * artifact, so it cannot go stale relative to the blocks themselves. */
+let _usesGraph: Map<string, string[]> | undefined;
+function usesGraph(): Map<string, string[]> {
+  if (_usesGraph) return _usesGraph;
+  const g = new Map<string, string[]>();
+  const root = resolve(REPO_ROOT, "content");
+  const walk = (dir: string): void => {
+    let ents: ReturnType<typeof readdirSync<{ withFileTypes: true }>>;
+    try {
+      ents = readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of ents) {
+      const p = join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".ts")) {
+        let t: string;
+        try {
+          t = readFileSync(p, "utf8");
+        } catch {
+          continue;
+        }
+        const lm = /label:\s*"([a-z]+:[a-z0-9-]+)"/i.exec(t);
+        if (!lm) continue;
+        // Comments are stripped BEFORE the array is matched. `uses: [ … ]` is
+        // matched non-greedily to the first `]`, so a single `]` anywhere in an
+        // explanatory comment inside the array truncates the capture and the
+        // block silently reads as having NO dependencies. Found the hard way:
+        // the comment added to `magic-A-binding-formula.ts` contains the string
+        // `uses[]`, which zeroed out that block's edges and made the very
+        // dependency the comment was documenting look unrecorded.
+        const noComments = t
+          .replace(/\/\*[\s\S]*?\*\//g, "")
+          .replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+        const um = /uses:\s*\[([\s\S]*?)\]/.exec(noComments);
+        g.set(
+          lm[1].toLowerCase(),
+          um ? [...um[1].matchAll(/"([^"]+)"/g)].map((m) => m[1].toLowerCase()) : [],
+        );
+      }
+    }
+  };
+  if (existsSync(root)) walk(root);
+  _usesGraph = g;
+  return g;
+}
+
+/** Is `target` reachable from `from` by walking `uses[]` edges? UNBOUNDED.
+ *
+ * **It was bounded at 5, and that bound manufactured a false positive within
+ * the hour** (bean `qou-s3zd`). `prop:root-of-unity-truncation` reaches
+ * `conj:regularity-breakdown` at depth **6** — one hop past the cutoff — so
+ * the block was reported as claiming a dependency it does not record, and the
+ * verdict written against it said "unreachable at any depth" on the strength
+ * of a search that had only looked five deep. An absence measured under a
+ * bound is not an absence.
+ *
+ * The bound was there on the theory that an unbounded walk over a large graph
+ * would eventually connect almost anything to anything. **Measured, that is
+ * false here**: 3606 blocks joined by 4912 edges — barely more than one edge
+ * per block — and the transitive closures of the four blocks in question are
+ * 164, 110, 11 and 1. A `uses[]` graph is a reading order, not a mesh.
+ *
+ * Unbounded is also the semantics that matters. The question this answers is
+ * "would a direct edge here be redundant?", and `prune-transitive-deps.ts`
+ * strips a redundant edge at ANY depth, so any bound makes the checker
+ * disagree with the tool whose rule it is enforcing. Termination comes from
+ * `seen`, not from a depth counter. */
+function reachableInUses(from: string, target: string): boolean {
+  const g = usesGraph();
+  if (!g.has(from)) return false;
+  const seen = new Set([from]);
+  const queue = [from];
+  while (queue.length > 0) {
+    const n = queue.shift() as string;
+    for (const c of g.get(n) ?? []) {
+      if (c === target) return true;
+      if (!seen.has(c)) {
+        seen.add(c);
+        queue.push(c);
+      }
+    }
+  }
+  return false;
+}
+
+/** The `.md` sibling's prose, where a content block actually declares its
+ * conditionality. The Lean docstring is a summary; the narrative is where
+ * "conditional on [`conj:X`]" is written. Scanning only the docstring was the
+ * second half of the blind spot above. */
+function siblingNarrative(leanFile: string): string {
+  const md = leanFile.replace(/\.lean$/, ".md");
+  if (!existsSync(md)) return "";
+  try {
+    return readFileSync(md, "utf8");
+  } catch {
+    return "";
+  }
 }
 
 /** Conjecture-class names referenced in `sig`'s binders — instance `[…]`,
@@ -2066,13 +2251,17 @@ function classifyConjectures(files: string[]): {
         continue;
       const doc = docBlockAbove(orig, d.startLine - 1);
       if (!isConjectureCarrier(doc)) continue;
+      const ownFromTs = siblingBlockLabel(f);
       carriers.push({
         name: d.name,
         file: relative(REPO_ROOT, f),
         line: d.startLine,
         sig: d.sig,
         doc,
-        ownLabels: ownConjLabels(doc),
+        narrative: siblingNarrative(f),
+        ownLabels: ownFromTs
+          ? [...new Set([...ownConjLabels(doc), ownFromTs])]
+          : ownConjLabels(doc),
       });
     }
   }
@@ -2084,6 +2273,8 @@ function classifyConjectures(files: string[]): {
   const primary: ConjGraph["primary"] = [];
   const dependent: ConjGraph["dependent"] = [];
   const hitsByFile = new Map<string, Hit[]>();
+  /** `.md`-sourced claims already reported for a file — see `scan` below. */
+  const narrativeReported = new Map<string, Set<string>>();
 
   for (const c of carriers) {
     const edges = bindersReferencing(c.sig, names).filter((n) => n !== c.name);
@@ -2095,31 +2286,122 @@ function classifyConjectures(files: string[]): {
     // `conj:Y` (another carrier) yet the type binds no such class. This is
     // the intent-vs-type mismatch — a result that reads as conditional but
     // is stated unconditionally. Plain prose mentions are NOT flagged.
-    const claimed = [
-      ...c.doc.matchAll(
-        /(?:conditional on|assuming|given|depends on|modulo)\s+[[`]?\s*conj:([a-z0-9-]+)/gi,
-      ),
-    ].map((m) => m[1].toLowerCase());
-    const unmet = claimed
-      .filter((l) => !c.ownLabels.includes(l))
-      .map((l) => labelToName.get(l))
-      .filter((n): n is string => !!n && n !== c.name && !edges.includes(n));
-    if (unmet.length > 0) {
+    // Sourced separately, because they have different SCOPE. A Lean docstring
+    // belongs to one declaration; the `.md` is the narrative of the whole
+    // content block, which may define several carriers. Charging a block-level
+    // sentence to each carrier in the file manufactures duplicates: measured,
+    // one line of `phi-q-aj-machinery-identification.md` became three "hits"
+    // across the three classes that share it, and all three were spurious --
+    // those classes are well-formed §3b-cond carriers binding
+    // `[QuantumAPolynomial …]`, not the conjecture the prose names.
+    // `[[`]?` allowed exactly ONE bracket-or-backtick, but the corpus's
+    // canonical cross-reference is ``[`conj:X`]`` -- bracket AND backtick.
+    // That single `?` was the third reason this criterion never fired.
+    //
+    // The label KIND is captured as well as the stem. The pattern was
+    // `conj:` only, which made a second missing dependency in the SAME banner
+    // structurally invisible: `magic-A-binding-formula.md` declares itself
+    // conditional on `conj:magic-numbers-bring` AND
+    // `prop:gravity-spectral-prefactor`, both were absent from `uses[]` and
+    // unreachable, and only the first was ever reported (bean `qou-s3zd`).
+    // ALL labels in the banner clause, not just the first. A trigger phrase is
+    // located, then every `kind:stem` in the clause it opens is taken, because
+    // a banner routinely names several: `magic-A-binding-formula.md` reads
+    // "conditional on [`conj:magic-numbers-bring`](…) and
+    // [`prop:gravity-spectral-prefactor`](…)", and one-label-per-trigger saw
+    // only the first — the second is preceded by "and", not by a trigger.
+    //
+    // The clause ends at the next `**` (banners are bold-delimited) or after
+    // 300 characters, whichever comes first, so the scan cannot run on into
+    // unrelated prose. Markdown link targets in the window are not at risk of
+    // matching: a path (`../…/magic-numbers-bring.md`) and a URL scheme
+    // (`https://`) both fail `[a-z]+:[a-z0-9-]+`, the first for want of a
+    // colon and the second because `//` is not `[a-z0-9-]`.
+    const scan = (text: string): string[] => {
+      const out: string[] = [];
+      const trigger =
+        /(?:conditional on|assuming|given|depends on|modulo)\s+(?=[[`\s]*[a-z]+:[a-z0-9-]+)/gi;
+      for (const t of text.matchAll(trigger)) {
+        const from = (t.index ?? 0) + t[0].length;
+        const rest = text.slice(from, from + 300);
+        const end = rest.indexOf("**");
+        const clause = end === -1 ? rest : rest.slice(0, end);
+        for (const m of clause.matchAll(/([a-z]+):([a-z0-9-]+)/gi))
+          out.push(`${m[1].toLowerCase()}:${m[2].toLowerCase()}`);
+      }
+      return [...new Set(out)];
+    };
+
+    // A DOC claim and a BLOCK claim are checked against different things, and
+    // conflating them produced two of the three hits in the 2026-08-30 sweep.
+    //
+    // A Lean docstring belongs to ONE DECLARATION, so "conditional on conj:Y"
+    // there is a statement about this type and is checked against the type:
+    // does the signature bind Y's carrier class? That is unambiguous.
+    //
+    // The `.md` is the narrative of the WHOLE BLOCK, and its banner routinely
+    // names an upstream result the block is conditional on *editorially* --
+    // what a reader must have read -- while the Lean's own conditionality sits
+    // on a proximate context class. Checking that against the binder is a
+    // category error, and it is what flagged `root-of-unity-truncation` and
+    // `phi-q-aj-machinery-identification`, both of which are well-formed
+    // §3b-cond blocks. What a block-level claim SHOULD match is the block's
+    // dependency record, so it is checked against `uses[]` reachability.
+    const fromDoc = scan(c.doc);
+    const narrativeSeen = narrativeReported.get(c.file) ?? new Set<string>();
+    const fromNarrative = scan(c.narrative).filter((l) => !narrativeSeen.has(l));
+    for (const l of fromNarrative) narrativeSeen.add(l);
+    narrativeReported.set(c.file, narrativeSeen);
+
+    const mkHit = (pattern: string, detail: string): void => {
       const abs = resolve(REPO_ROOT, c.file);
-      const hit: Hit = {
+      const arr = hitsByFile.get(abs) ?? [];
+      arr.push({
         line: c.line,
         category: "proof-dependent-conjecture-not-conditional",
-        pattern: "prose-conditional-not-in-type",
+        pattern,
         snippet: c.name,
         decl: c.name,
         severity: SEVERITY["proof-dependent-conjecture-not-conditional"],
-        detail: `doc claims conditionality on ${unmet
+        detail,
+      });
+      hitsByFile.set(abs, arr);
+    };
+
+    // (1) Doc-level: intent-vs-type. `conj:` only, because `labelToName` maps
+    // a label to the carrier CLASS axiomatising it and only conjectures have
+    // one -- a `prop:` has nothing to bind, so widening here would flag the
+    // absence of a binder that could not exist.
+    const unmetDoc = fromDoc
+      .filter((l) => l.startsWith("conj:"))
+      .map((l) => l.slice("conj:".length))
+      .filter((l) => !c.ownLabels.includes(l))
+      .map((l) => labelToName.get(l))
+      .filter((n): n is string => !!n && n !== c.name && !edges.includes(n));
+    if (unmetDoc.length > 0)
+      mkHit(
+        "prose-conditional-not-in-type",
+        `doc claims conditionality on ${unmetDoc
           .map((n) => `\`${n}\``)
           .join(", ")} but the signature takes no binder on it`,
-      };
-      const arr = hitsByFile.get(abs) ?? [];
-      arr.push(hit);
-      hitsByFile.set(abs, arr);
+      );
+
+    // (2) Block-level: is the declared dependency RECORDED anywhere? Any label
+    // kind. Unreachable in `uses[]` means it exists in one prose sentence and
+    // nowhere a reader or a tool can follow -- the §3b-cond item 4 gap.
+    const own = siblingBlockLabelAny(resolve(REPO_ROOT, c.file));
+    if (own) {
+      const unrecorded = fromNarrative.filter(
+        (l) => l !== own && usesGraph().has(l) && !reachableInUses(own, l),
+      );
+      if (unrecorded.length > 0)
+        mkHit(
+          "prose-conditional-unrecorded-dependency",
+          `the block's .md declares \`${own}\` conditional on ${unrecorded
+            .map((l) => `\`${l}\``)
+            .join(", ")}, which is absent from uses[] and unreachable from it ` +
+            `at any depth — the dependency is claimed in prose only`,
+        );
     }
   }
   return {
@@ -2300,6 +2582,104 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
 function hashFile(p: string): string | undefined {
   if (!existsSync(p)) return undefined;
   return createHash("sha256").update(readFileSync(p)).digest("hex").slice(0, 12);
+}
+
+/** Where the inhabitation probe records what Lean actually said. */
+const PROBE_BASELINE = "docs/audits/vacuous-prop-carrier-baseline.json";
+
+/**
+ * Seed `proof-carrier-inhabited-by-probe` candidates from the probe baseline.
+ *
+ * THE ASYMMETRY, which is the whole reason this is a separate function rather
+ * than three lines inline: **a probe SUCCESS is evidence and a probe FAILURE
+ * is not.** Lean inhabiting a carrier with no hypotheses settles that the
+ * carrier asserts nothing. Lean failing to means the tactic list found no
+ * witness — nothing more. This is not a hypothetical distinction; measured on
+ * this corpus, the generic list misses `QAubinLions`, `BlowupYekutieli` and
+ * `RegularityBreakdown`, all three of which are provable and two of which the
+ * corpus itself proves in its own instance bundle.
+ *
+ * So this reads exactly one verdict, `proved-vacuous`, and every other value
+ * — `uninhabitable-by-design`, `undecided`, anything added later — emits
+ * nothing. A carrier is never flagged because a probe *failed* to settle it,
+ * and the enum cannot drift into flagging one: the check is an allowlist of
+ * one, not a denylist.
+ *
+ * The baseline is optional. It is produced by a script that needs a working
+ * Lean toolchain, which a bare container does not have, and an audit that
+ * hard-failed on its absence would be unrunnable exactly where Lean is
+ * unavailable. Absent baseline → no candidates, no error.
+ *
+ * Staleness is delegated to the ledger's existing `file_sha` logic, keyed on
+ * the CARRIER's file rather than on the baseline. That is deliberate and is a
+ * strict improvement on the baseline alone, which stores no hash at all: edit
+ * a carrier and its ledger verdict goes `needs-agent` on the next
+ * `--review-ledger`, whether or not anyone re-runs the probe.
+ */
+function seedProbeInhabitedCandidates(
+  shaCache: Map<string, string | undefined>,
+): {
+  key: string;
+  rel: string;
+  line: number;
+  decl: string;
+  category: string;
+  pattern: string;
+  file_sha?: string;
+}[] {
+  const p = resolve(REPO_ROOT, PROBE_BASELINE);
+  if (!existsSync(p)) return [];
+  let entries: Record<string, { verdict?: string }> = {};
+  try {
+    entries = JSON.parse(readFileSync(p, "utf-8"))?.entries ?? {};
+  } catch {
+    return [];
+  }
+
+  const out = [];
+  for (const [k, v] of Object.entries(entries)) {
+    if (v?.verdict !== "proved-vacuous") continue;
+    const sep = k.lastIndexOf("::");
+    if (sep < 0) continue;
+    const rel = k.slice(0, sep);
+    const decl = k.slice(sep + 2);
+    const abs = resolve(REPO_ROOT, rel);
+    if (!existsSync(abs)) continue; // carrier's file moved or was deleted
+    if (!shaCache.has(abs)) shaCache.set(abs, hashFile(abs));
+
+    // Locate the declaration. The baseline stores the fully-qualified name;
+    // the source writes the last component, so match on that at a
+    // `class`/`structure` head.
+    const leaf = decl.slice(decl.lastIndexOf(".") + 1);
+    const lines = readFileSync(abs, "utf-8").split("\n");
+    const at = lines.findIndex((l) =>
+      new RegExp(`^\\s*(?:@\\[[^\\]]*\\]\\s*)?(?:class|structure)\\s+${leaf}\\b`).test(l),
+    );
+
+    // A MISS MEANS THE DECLARATION IS GONE, AND THE CANDIDATE IS NOT REAL.
+    // This used to fall through to line 1 on the reasoning that "the candidate
+    // is still real, so fall back rather than dropping it" — but `existsSync`
+    // above tests the FILE, not the DECLARATION, so a carrier deleted from a
+    // file that still exists sailed through. Measured 2026-08-30: five
+    // carriers removed from `core-levi-form.lean` were still being seeded,
+    // each pointing at line 1, and each had collected a `genuine` ledger
+    // verdict for something that was not there — 5 of 19 baseline entries,
+    // and 5 of the 14 candidates in this category. Skipping is correct: the
+    // baseline records what Lean said about a declaration, and there is no
+    // declaration left for it to have said it about. Bean `qou-s3zd`.
+    if (at === -1) continue;
+
+    out.push({
+      key: `${rel}::${decl}::proof-carrier-inhabited-by-probe`,
+      rel,
+      line: at + 1, // `at === -1` is impossible here — skipped above.
+      decl,
+      category: "proof-carrier-inhabited-by-probe",
+      pattern: "lean-inhabited-no-hypotheses",
+      file_sha: shaCache.get(abs),
+    });
+  }
+  return out;
 }
 function gitHeadSha(): string {
   try {
@@ -2791,6 +3171,11 @@ function main() {
       }
     }
 
+    // Candidates this scanner cannot see, because deciding them needs Lean
+    // rather than a reading of the source. Evidence comes from the probe
+    // baseline; only carriers Lean PROVED inhabitable are admitted.
+    candidates.push(...seedProbeInhabitedCandidates(shaCache));
+
     if (reviewLedger) {
       const p = resolve(REPO_ROOT, reviewLedger);
       let led: {
@@ -2840,9 +3225,42 @@ function main() {
           added++;
         }
       }
-      // Drop entries whose candidate no longer flags (resolved/fixed).
-      for (const k of Object.keys(led.entries))
-        if (!seen.has(k)) delete led.entries[k];
+      // Drop entries whose candidate no longer flags (resolved/fixed) — but
+      // ONLY in categories this audit actually produces.
+      //
+      // The ledger is SHARED. Other tools and hand adjudications write into it
+      // under categories this scanner has never heard of, and to this loop an
+      // entry it cannot produce is indistinguishable from one that has been
+      // fixed. Measured on `main` 2026-08-30, before this guard: a single
+      // `--review-ledger` run deleted **116 of 268 entries** — 104
+      // `proof-borrowed-name`, 7 `proof-zero-placeholder`, and one each of
+      // `name-overload`, `proof-docstring-body-mismatch`,
+      // `proof-vacuous-hypotheses` — carrying **38 `genuine`, 56 `legit` and
+      // 22 `advisory` agent verdicts** with them.
+      //
+      // Those verdicts are not recoverable by re-running anything: none of the
+      // five categories is emitted by any script in the tree. Deleting them
+      // discards the one thing the ledger exists to hold, and does it silently,
+      // in a run whose printed summary says only "N candidate(s)".
+      //
+      // `OWNED` is derived from SEVERITY rather than hardcoded, so a category
+      // added to this audit is covered automatically and one belonging to
+      // another tool is left alone by default — the safe direction.
+      const OWNED = new Set(Object.keys(SEVERITY));
+      let foreign = 0;
+      for (const k of Object.keys(led.entries)) {
+        if (seen.has(k)) continue;
+        const cat = k.slice(k.lastIndexOf("::") + 2);
+        if (!OWNED.has(cat)) {
+          foreign++;
+          continue; // another tool's entry — not ours to resolve or delete
+        }
+        delete led.entries[k];
+      }
+      if (foreign && !quiet)
+        console.log(
+          `  (preserved ${foreign} entr(ies) in categories this audit does not produce)`,
+        );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");
       if (!quiet)

@@ -1,0 +1,180 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2201.05665v1",
+ "source": {
+  "file": "2201.05665v1.pdf",
+  "sha256": "bad7bde03d199a733f54dd787a0ac90f394c40a99658f54dd26f5128f1bd2c99",
+  "bytes": 10370402,
+  "pages": 16,
+  "text_source": "embedded",
+  "extractor": "pymupdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2201.05665",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "14 Jan 2022"
+  },
+  "doi": null,
+  "title": "HAROLD WIDOM\u2019S WORK IN RANDOM MATRIX THEORY",
+  "authors_raw": "IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS",
+  "title_lines": [
+   "HAROLD WIDOM\u2019S WORK IN RANDOM MATRIX THEORY"
+  ],
+  "abstract": "This is a survey of Harold Widom\u2019s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy\u2019s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom distributions in mathematics and physics, and close with Tracy and Widom\u2019s remarkable work on the asymmetric simple exclusion pro- cess.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20220119022447Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The sine-kernel determinant",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Tracy-Widom distribution functions",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Universality of the Tracy-Widom Distributions",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "General invariant ensembles and the Wigner ensembles",
+   "page": 7,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Random permutations",
+   "page": 9,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
+   "page": 10,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-2-the-sine-kernel-determinant",
+   "number": "2",
+   "title": "The sine-kernel determinant",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 278,
+   "n_words": 38
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6434,
+   "n_words": 1111
+  },
+  {
+   "id": "sec-002-3-the-tracy-widom-distribution-functions",
+   "number": "3",
+   "title": "The Tracy-Widom distribution functions",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 7246,
+   "n_words": 1250
+  },
+  {
+   "id": "sec-003-4-universality-of-the-tracy-widom-distributions",
+   "number": "4",
+   "title": "Universality of the Tracy-Widom Distributions",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1278,
+   "n_words": 201
+  },
+  {
+   "id": "sec-004-41-general-invariant-ensembles-and-the-wigner-en",
+   "number": "4.1",
+   "title": "General invariant ensembles and the Wigner ensembles",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5895,
+   "n_words": 1044
+  },
+  {
+   "id": "sec-005-42-random-permutations",
+   "number": "4.2",
+   "title": "Random permutations",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3591,
+   "n_words": 635
+  },
+  {
+   "id": "sec-006-5-the-asymmetric-simple-exclusion-process-harold",
+   "number": "5",
+   "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 9638,
+   "n_words": 1666
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 12141,
+   "n_words": 1847
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 46501
+ }
+}

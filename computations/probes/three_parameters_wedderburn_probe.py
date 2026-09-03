@@ -181,14 +181,14 @@ def main() -> int:
         .add_data("per_block_structure", per_block)
         .add_assertion(
             name="dim_h3_equals_sum_of_squared_block_dims",
-            computed=float(abs(sum_squared_dims - expected_dim_h3)),
+            computed=abs(sum_squared_dims - expected_dim_h3),
             expected=0.0, tolerance=0.0,
             unit="|Σ dim²(V_λ) − dim H_3(q)|  (= |1+4+1 − 6|)",
             source="Wedderburn-Artin dimension count.",
         )
         .add_assertion(
             name="eigenvalue_structure_per_block",
-            computed=float(max_eigenvalue_residue),
+            computed=max_eigenvalue_residue,
             expected=0.0, tolerance=1e-40,
             unit=(
                 "max over λ ∈ {(3), (2,1), (1^3)} of |σ_1 eigenvalues "
@@ -203,7 +203,7 @@ def main() -> int:
         )
         .add_assertion(
             name="hecke_quadratic_per_block",
-            computed=float(max_hecke_residue),
+            computed=max_hecke_residue,
             expected=0.0, tolerance=1e-40,
             unit="max over the 3 blocks of |σ² − hσ − 𝟙|_∞",
             source="Defining relation of H_3(q).",

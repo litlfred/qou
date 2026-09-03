@@ -9,7 +9,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "4_1 control + 5_2 gamma match at exactly one trace-field root (the geometric one)"
     },
     {
@@ -17,7 +17,7 @@
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
-      "tolerance": 0.5,
+      "tolerance": "0.5",
       "source": "1/N^2 coefficient vs engine (2 pi i)^2(c2 - c1^2/2) at xi_geo"
     }
   ],

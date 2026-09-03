@@ -160,11 +160,11 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("onray_reproduces_committed_resummation",
-                     computed=float(abs(mp.im(S_on) - IM_V_ONRAY_REF) / IM_V_ONRAY_REF),
+                     computed=abs(mp.im(S_on) - IM_V_ONRAY_REF) / IM_V_ONRAY_REF,
                      expected=0.0, tolerance=0.02,
                      source="on-ray Laplace Im 𝔙̃_b matches the committed 0.05855")
     wb.add_assertion("physical_ray_smooth_no_jump",
-                     computed=float(abs(r23 - 2)), expected=0.0, tolerance=0.25,
+                     computed=abs(r23 - 2), expected=0.0, tolerance=0.25,
                      source="lateral discontinuity scales LINEARLY with straddle δ "
                             "(ratio D(δ)/D(δ/2)≈2 as δ→0): the physical-ray "
                             "resummation is SMOOTH, no Stokes jump — a genuine jump "

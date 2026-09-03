@@ -541,7 +541,7 @@ def main() -> int:
             name="closure_residual_at_dps",
             computed=float(closure_err_MeV) if closure_err_MeV is not None else 1.0,
             expected=0.0,
-            tolerance=float(mp.mpf(10) ** -(mp.mp.dps - 10)),
+            tolerance=fmt(mp.mpf(10) ** -(mp.mp.dps - 10)),
             source="M(D) reconstruction residual after Δ_λ insertion",
         )
     )

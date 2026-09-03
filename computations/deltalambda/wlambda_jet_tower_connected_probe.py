@@ -48,14 +48,15 @@ from jet_knot_invariants import (  # noqa: E402
     count_syt_skew, contains, H3_PARTS, H3_DIMS,
 )
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 def tower_channel_weights(k):
     """(w_sym, w_std, w_alt) at jet level k: Sigma_{lambda|-k} W_lambda * mult_mu."""
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     w = {mu: 0.0 for mu in H3_PARTS}
     for lam in partitions_of(k):
-        W_lam = dim_q(lam) ** 2 / nfac
+        W_lam = dim_q(lam, Q0_PROTON) ** 2 / nfac
         for mu in H3_PARTS:
             if contains(lam, mu):
                 w[mu] += W_lam * count_syt_skew(lam, mu)

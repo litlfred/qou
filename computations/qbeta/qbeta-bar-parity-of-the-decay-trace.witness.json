@@ -1,0 +1,80 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-30T07:58:46.804880+00:00",
+  "commitSha": "9f085c7cc4dea9f3ce26fa7809a35b1456b92657",
+  "assertions": [
+    {
+      "name": "bar_oddness_iff_full_bar_condition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "trace_is_bar_odd_at_zD_and_not_at_zC",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "corpus_identity_bar_zD_equals_zD_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "eps_splits_as_h2_over_2_and_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "alpha_even_is_h2_over_4_and_z_free_under_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 969,
+  "computation": "qbeta-bar-parity-of-the-decay-trace",
+  "scriptFile": "qbeta_bar_parity_of_the_decay_trace_probe.py",
+  "scriptHash": "6c5fb8d233c7",
+  "scriptCommitSha": "f2c3387841aa31e810f2904c81051cb39761dd1a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_parity_of_the_decay_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_parity_of_the_decay_trace_probe.py"
+  },
+  "description": "tr_M^z(Delta) is bar-ODD if and only if bar(z) = z - h, i.e. the bar-oddness of the decay trace IS the convention-D condition. Consequently eps splits as h^2/2 (even) - h (odd), and under D the ladder phase's bar-even part is exactly h^2/4, carrying no z: all of alpha's convention content is bar-ODD. Scope (a); nothing wired.",
+  "data": {
+    "eps_bar_even": "(q - 1)**2*(q + 1)**2/(2*q**2)",
+    "eps_bar_odd": "-(q - 1)*(q + 1)/q",
+    "trM_bar_even_at_zD": "0",
+    "trM_bar_even_at_zC": "(q - 1)**2*(q + 1)**2/(2*q**2)",
+    "alpha_bar_even_at_zD": "(q - 1)**2*(q + 1)**2/(4*q**2)",
+    "alpha_bar_odd_at_zD": "(q - 1)*(q + 1)*(q**4 - 2*q**3 - 2*q + 1)/(4*q**2*(q**2 + 1))"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
