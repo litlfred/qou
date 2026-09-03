@@ -14,7 +14,11 @@
     (iv)  the volume functional is concave and invariant (Rivin; not in Mathlib).
 
   This file settles (i) for m004, **refutes (ii) as stated**, repairs it, and
-  proves the repaired conclusion.  (iv) is untouched.
+  proves the repaired conclusion.  (iv)'s CONCAVITY is discharged separately —
+  not here but in the `qou-7425` volume cluster
+  (`MultiTetVolumeConcave.m004Vol_concaveOn` / `m004Vol_maximizer_unique`); this
+  file's min-angle route stays independent of it.  See the honesty boundary below
+  for what (iv) still lacks (the geometric identification, not concavity).
 
   ═══ (ii) IS FALSE FOR m004 ═══
 
@@ -47,9 +51,18 @@
     optimum.  The min-angle objective is a min of linear forms — concave but
     NOT strictly concave — so global uniqueness does not follow and is not
     claimed here.
-  * (iv) is untouched.  Nothing here says anything about hyperbolic volume;
-    Mathlib has no ideal-tetrahedron volume theory.  That the complete structure
-    also sits at the regular point is used only as context, not as a hypothesis.
+  * (iv)'s CONCAVITY is discharged, though not in this file: the `qou-7425`
+    cluster proves the m004 volume functional concave with a unique maximiser
+    (`MultiTetVolumeConcave.m004Vol_concaveOn` / `m004Vol_maximizer_unique`),
+    built on the corpus's OWN ideal-tetrahedron volume theory
+    `QOU.Archimedean.tetVol` — Mathlib lacks it, the corpus has it (two
+    independent single-tet proofs: `QOU.Archimedean.tetVol_strictConcaveOn` and
+    `QOU.Knot.Rivin.strictConcaveOn_tetVolLine`).  This file's min-angle route
+    stays independent of all that.  What (iv) still lacks is the GEOMETRIC
+    IDENTIFICATION that the analytic `totalVol` IS the hyperbolic volume
+    (Mostow/Thurston; beans qou-7y3g, qou-idvt T2), not the concavity.  Nothing
+    here evaluates a volume; that the complete structure also sits at the regular
+    point is used only as context, not as a hypothesis.
   * The constraint data is not invented.  `tet₁/tet₂/edge₁/edge₂` are SnapPy's
     m004 gluing equations in π-units, via the corpus's own `gluing` /
     `ga_equalities` helpers (`borromean_angle_structure_lp_probe.py`) — the same
