@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T01:34:20Z
-updated_at: 2026-09-03T05:09:35Z
+updated_at: 2026-09-03T11:04:49Z
 ---
 
 SCOPE UPDATE (2026-08-29): 'kink cancels => clean theta^{-1} bulk' is RETRACTED (qou-8quz refuted).
@@ -36,3 +36,43 @@ docs/audits/2026-08-29-covariance-kernel-M1-tvok-remainder-rate.md
 2026-08-29: qou-po72 sibling (PR #5969) pins the de-poissonized CS constants; clarified that step-1 v_A=8/pi^2 is POISSONIZED (k>=1), CS uses V_A=8/(9pi^2) (k>=2). C_A finite-n rate bound still open (Olver-Bessel wall).
 
 2026-09-03: 'compute TV(g'')' is ILL-POSED as stated -- measured, not asserted. The EM-osc target set in PR #6469 (TV(g'')>=48|c_1|~3.25) presumes a local integrand g whose second derivative one takes. TEST 1: the leading variance is a MODE functional, V_A = Sum_{k odd} A_k^2/k with A_k=8(-1)^{(k+1)/2}/(pi(k^2-4)), verified converging to 8/pi^2 to 1.3e-15 at K=5001 -- an H^{1/2}-type NONLOCAL object, not an integral of a pointwise density. TEST 2: the candidate local density c(rho)=Sum_{k!=0}k^2 S(k;rho)^2 = Sum sin^2(pi rho k)/pi^2 DIVERGES -- partial sums 10.132/101.32/1013.2/10132.0 at K=1e2..1e5, exactly linear (ratio 10.0), identical for rho=0.25,0.5,0.75. So c(rho)=+infinity and there is NO local variance density (g')^2 c(rho); the corpus phrasing in rigorous-finite-n-bound.md that suggests one is too loose to hand over a g. CONSEQUENCE: TV(g'') not computable because there is no g. The theta^{-1} RATE is unaffected (c_1~-0.0678 stands, closure needs only C<=23.4). h^2=1/(4theta) scaling is CONSISTENT with EM but consistency is NOT identification -- many mechanisms give theta^{-1}; picking a plausible integrand to check against 3.25 would be fitting a target, so it was not done. WELL-POSED REFORMULATION (TEST 3, verified): for a projection kernel V_A = Sum_x g^2 K(x,x) - Sum_{x!=y} g g K^2 = A-B, exact to ~1e-36 at dps=40 against the (1/2)Sum(dg)^2K^2 form (confirms K^2=K), and A/(A-B) = 4.302 -> 5.352 as theta 64->100 vs sqrt(100/64)=1.25 predicted / 1.244 observed, so the split cancels only by O(sqrt theta) and is numerically viable. NEXT: (P1) EM in the MODE variable k on Sum A_k^2/k, needing the finite-theta deformation of A_k; or (P2) EM on A=Sum g^2 K(x,x) (clean 1-D smooth integrand g^2 rho) to see whether its remainder carries c_1. Probe: wlambda_covariance_epic_M1_tv_gpp_wellposedness.py (exit 0, NO float64). Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-tv-gpp-is-ill-posed.md
+
+
+STEP 3 (2026-09-03, PR #6500): P2 REFUTED -- the trace split cannot localise c_1.
+P2 (named in #6472) was: apply EM to the clean 1-D side A = Sum_x g^2 K(x,x) of
+V_A = A - B and see whether its remainder carries c_1 ~ -0.0678. Measured over
+theta=250..16000 (exact descent-DPP, mpmath dps=40, exit 0, 8.5s), NO, twice over:
+ (a) c_1 = a_1 - b_1. Both sides carry a theta^1 coefficient and b_1 needs the
+     DOUBLE sum B, which is not a 1-D sum and is not EM-able. The split
+     partitions the problem; it does not reduce it.
+ (b) A has NO theta^2 term. Tested DIRECTLY (not by trend), since alpha is pinned
+     independently: (A/theta^{5/2} - alpha)*sqrt(theta) falls 0.02745 -> 0.004681
+     with the per-doubling ratio RISING 1.3333 -> 1.3513 toward sqrt(2). A nonzero
+     a_2 would PLATEAU and drive the ratio to 1; both go the other way. Bound
+     |a_2| <= 0.00468 = at most 0.578% of V's theta^2 coefficient 8/pi^2. So the
+     EM-able side does not hold even V's LEADING coefficient.
+POSITIVE result landed alongside, and it is what makes this a refutation rather
+than a stall: A ~ alpha theta^{5/2} with alpha = 0.429421692 (two-level
+Richardson) against the INDEPENDENT continuum integral
+alpha = 8*Int_{-1}^1 u^4 rho(1-rho) du = 0.429421692, rho(u)=arccos(u)/pi --
+agreeing to 3.3e-10. The continuum reference an EM argument for A would be
+defined against is CONFIRMED by computation, so the negative is about the split,
+not a missing input.
+Supporting: A/V -> 0.52978 sqrt(theta) vs predicted alpha/(8/pi^2) = 0.5297778,
+5 digits (leading half-order cancels exactly, a_{5/2} = b_{5/2}); |c_1|theta/A
+runs 3.978e-5 -> 7.801e-8, exponent 1.4999 -> c_1 sits at relative theta^{-3/2}
+inside A against theta^{-1} inside V, so reading it off A needs HALF AN ORDER
+MORE accuracy, not less.
+UNCHANGED: rate theta^{-1}, c_1 ~ -0.0678, closure needs only C <= 23.4. The
+split itself stands (exact, well-conditioned, now with a verified continuum ref).
+ROUTE INVENTORY after this: pointwise-Bessel refuted (#6438, U/V unbounded, ~17x
+short at theta=78); TV(g'') as posed ill-posed (#6472, c(rho)=+inf, no local
+density); P2 refuted (#6500). REMAINING exhibited candidate: P1, the mode sum
+V_A = Sum_{k odd} A_k^2/k -- already a 1-D sum in k with a smooth summand; if the
+finite-theta correction is an EM remainder IN k then that summand IS the g whose
+TV(g'') #6469 asked for. Needs the finite-theta deformation of A_k, untouched here.
+Probe: computations/deltalambda/wlambda_covariance_epic_M1_p2_trace_split_orders.py
+Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-p2-trace-split-refuted.md
+NOTE symbol collision: PR #6492 (qou-pdg9) lands a different 'c_1' the same day
+(leading hbar_q coefficient of the trace difference, a permutation count). Not
+the same object. Flagged on #6492.
