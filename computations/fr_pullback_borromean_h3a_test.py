@@ -134,10 +134,17 @@ KSTAR_WORDS = {
     "4_1": [(1, 1), (-1, 2), (1, 1), (-1, 2)],
 }
 
-# k3-test reference numbers (proton-q committed run, fr-pullback-
-# k3-test.witness.json) — context only, not assertions.
+# k3-test reference numbers, read from fr-pullback-k3-test.witness.json
+# — context only, not assertions.  CORRECTED 2026-09-03: the best-4_1
+# literal read 1.55 against a witness recording 1.5014667307010572 (3.2%
+# apart); the witness was re-run under convention D at the proton pin on
+# 2026-08-29, and the literal was never updated with it.
+# NOTE both figures are computed against the TEXTBOOK dim_q²/[n]_q!
+# measure, which is not a probability measure in the balanced convention
+# (see uniform_weights / plancherel_convention_gap) — so they are NOT
+# directly comparable to this driver's self-normalized variances.
 K3_TEST_BASELINE_VARIANCE = 1.82
-K3_TEST_BEST_4_1_VARIANCE = 1.55
+K3_TEST_BEST_4_1_VARIANCE = 1.5014667307010572
 
 _T0 = time.time()
 
@@ -250,18 +257,43 @@ def vanishing_threshold() -> mp.mpf:
     return mp.mpf(10) ** (5 - mp.mp.dps)
 
 
-def uniform_weights(shapes, dim_q, qfact_n) -> dict:
-    return {s: dim_q(s, Q0_PROTON) ** 2 / qfact_n for s in shapes}
+def uniform_weights(shapes, dim_q) -> dict:
+    """SELF-NORMALIZED q-Plancherel weights:
+    w(λ) = dim_q(λ)²/Σ_μ dim_q(μ)² — a probability measure BY
+    CONSTRUCTION, independent of q-integer convention.
+
+    In the BALANCED convention ([k] = (q^k − q^{−k})/(q − q^{−1}), the
+    make_qdim convention here) the textbook form dim_q²/[n]_q! does
+    NOT sum to 1: the gap c_n grows with n (≈ 0.991 / 1.111 / 1.517 at
+    n = 6/9/12 at the proton q₀) and simple q^{±2n(λ)} /
+    q^{±(n(λ)−n(λ'))} prefactors do not close it (diagnosis 2026-07-06,
+    re-verified 2026-09-03). c_n is recorded separately
+    (plancherel_convention_gap) as an open normalization item.
+
+    NOTE (2026-09-03): q comes from the make_qdim closure — the full
+    50-dps load_q_50dps() value — NOT from the module-level float64
+    `Q0_PROTON`. Threading that constant in here (as a mechanical sweep
+    briefly did) both broke the arity and would have mixed a float64 q
+    into an MPFR quantity whose qfact/qint come from the closure."""
+    raw = {s: dim_q(s) ** 2 for s in shapes}
+    total = sum(raw.values())
+    return {s: v / total for s, v in raw.items()}
 
 
-def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
+def plancherel_convention_gap(shapes, dim_q, qfact_n) -> mp.mpf:
+    """c_n = Σ_λ dim_q(λ)²/[n]_q! in the balanced convention
+    (≠ 1 at q ≠ 1) — informational, not used as a weight."""
+    return sum(dim_q(s) ** 2 for s in shapes) / qfact_n
+
+
+def fr_weights(shapes, chi_kstar: dict, dim_q,
                depths_to_redistribute) -> dict:
     """FR-pulled-back Plancherel weights: within each depth stratum in
     `depths_to_redistribute`, w_λ ∝ dim_q²·|χ^λ(K*)|, preserving the
     stratum's uniform total; uniform elsewhere (and as fallback when
     the stratum's |χ| mass vanishes)."""
     eps = vanishing_threshold()
-    w = uniform_weights(shapes, dim_q, qfact_n)
+    w = uniform_weights(shapes, dim_q)
     by_depth: dict = {}
     for s in shapes:
         by_depth.setdefault(len(s) - 1, []).append(s)
@@ -269,12 +301,12 @@ def fr_weights(shapes, chi_kstar: dict, dim_q, qfact_n,
         if k not in depths_to_redistribute:
             continue
         s_uniform = sum(w[s] for s in stratum)
-        z_norm = sum(dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
+        z_norm = sum(dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
                      for s in stratum)
         if z_norm < eps:
             continue  # uniform fallback
         for s in stratum:
-            w[s] = (dim_q(s, Q0_PROTON) ** 2 * mp.fabs(chi_kstar[s])
+            w[s] = (dim_q(s) ** 2 * mp.fabs(chi_kstar[s])
                     * s_uniform / z_norm)
     return w
 
@@ -285,7 +317,7 @@ def phi_k(chi_map: dict, k: int, weights: dict, dim_q) -> mp.mpf:
     for s, chi in chi_map.items():
         if len(s) - 1 != k:
             continue
-        magnitude = mp.fabs(chi) * dim_q(s, Q0_PROTON)
+        magnitude = mp.fabs(chi) * dim_q(s)
         if magnitude < eps:
             continue
         total += weights[s] * mp.log(magnitude)
@@ -401,6 +433,7 @@ def main() -> int:
     results: dict = {}
     stratum_mass_dev = mp.mpf(0)
     plancherel_dev = mp.mpf(0)
+    convention_gap_c_n: dict = {}
     for vname, kname, depths in variants:
         per_atom = {}
         for atom in ATOMS:
@@ -409,21 +442,25 @@ def main() -> int:
             ca, cf = atom_chi[atom]
             shapes = tuple(sorted(ca.keys()))
             qf_n = qfact(n)
+            # self-normalized measure: sums to 1 by construction
             plancherel_dev = max(
                 plancherel_dev,
-                mp.fabs(sum(uniform_weights(shapes, dim_q, qf_n)
+                mp.fabs(sum(uniform_weights(shapes, dim_q)
                             .values()) - 1))
+            # the balanced-convention textbook form does NOT: record c_n
+            convention_gap_c_n[str(n)] = mp.nstr(
+                plancherel_convention_gap(shapes, dim_q, qf_n), 20)
             if kname is None:
-                wA = uniform_weights(shapes, dim_q, qf_n)
+                wA = uniform_weights(shapes, dim_q)
                 wF = dict(wA)
             else:
                 dd = (set(depths) if depths is not None
                       else set(range(n)))
                 chiK = kstar_chi[(atom, kname)]
-                wA = fr_weights(shapes, chiK, dim_q, qf_n, dd)
+                wA = fr_weights(shapes, chiK, dim_q, dd)
                 wF = dict(wA)
                 # stratum-mass preservation check
-                wU = uniform_weights(shapes, dim_q, qf_n)
+                wU = uniform_weights(shapes, dim_q)
                 for k in range(n):
                     mA = sum(wA[s] for s in shapes if len(s) - 1 == k)
                     mU = sum(wU[s] for s in shapes if len(s) - 1 == k)
@@ -556,18 +593,56 @@ def main() -> int:
         source="χ^λ((σ1σ2⁻¹)³) at H_3: native MPFR kernel vs proved "
                "closed forms {1, 2−3h⁴−h⁶, 1} at witness q₀",
     )
-    wb.add_assertion(
-        "committed_atomchi_is_proton_q",
-        computed=int(provenance_verified), expected=1, tolerance=0,
-        source="atom-chi-rust-d (free) reproduces EXACTLY (<1e-45) at "
-               "runtime proton q and drifts (>1e-10) at witness q₀ — "
-               "Prereq-1 provenance finding (bean yfvb / tnjb-adjacent)",
-    )
+    # RETIRED 2026-09-03 (arc close-out, bean yfvb): this was the
+    # assertion `committed_atomchi_is_proton_q`. Its subject vanished
+    # when load_q_50dps() flipped to the proton default (2026-08-22,
+    # bean qou-dkm2): "witness q₀" and "runtime proton q" are now the
+    # same anchor, so the drift clause it tested (dev_at_witness_q0 >
+    # 1e-10) can never again be satisfied by ANY input. It was reporting
+    # a permanent FAIL that carried no information. The Prereq-1 finding
+    # it encoded — that the committed atom-chi caches sat at the runtime
+    # proton q, not the then-distinct witness q₀ — was TRUE when measured
+    # (2026-07-06) and is preserved below as a dated historical record.
+    wb.add_data("prereq1_provenance_finding_HISTORICAL", {
+        "measured_on": "2026-07-06",
+        "finding": "committed atom-chi-rust-d (free) reproduced EXACTLY "
+                   "(<1e-45) at the runtime proton q and drifted "
+                   "(>1e-10) at the then-canonical witness q₀ — i.e. "
+                   "the committed χ caches were proton-q inputs.",
+        "obsoleted_by": "load_q_50dps() proton default, 2026-08-22 "
+                        "(bean qou-dkm2); the two anchors now agree to "
+                        + mp.nstr(q_drift, 4) + " relative.",
+        "live_values_this_run": {
+            "dev_at_runtime_q": mp.nstr(dev_at_runtime, 6),
+            "dev_at_witness_q0": mp.nstr(dev_at_witness, 6),
+        },
+        "status": "RETIRED as an assertion — recorded, not gated.",
+    })
     wb.add_assertion(
         "plancherel_completeness",
         computed=float(plancherel_dev), expected=0.0, tolerance=1e-40,
-        source="Σ_λ dim_q²/[n]_q! = 1 at witness q₀ for every H_{3A}",
+        source="Σ_λ w(λ) = 1 for the SELF-NORMALIZED measure "
+               "w = dim_q²/Σ dim_q² at the proton q₀, every H_{3A}. "
+               "(The textbook balanced-convention form dim_q²/[n]_q! "
+               "fails this — c_n up to 1.517 at H_12; see "
+               "plancherel_convention_gap.)",
     )
+    wb.add_data("plancherel_convention_gap", {
+        "c_n_by_n": convention_gap_c_n,
+        "meaning": "c_n = Σ_λ dim_q²/[n]_q! in the BALANCED convention "
+                   "([k] = (q^k − q^{−k})/(q − q^{−1})). A probability "
+                   "measure would give 1; it does not, and the gap "
+                   "grows with n. Simple q^{±2n(λ)} and "
+                   "q^{±(n(λ)−n(λ'))} prefactors do not close it.",
+        "consequence": "This driver uses the self-normalized measure "
+                       "instead. Variance figures computed against the "
+                       "textbook form — including the k3-test's "
+                       "published 1.82x baseline / 1.55x best — carry "
+                       "this distortion and are not comparable to the "
+                       "self-normalized numbers here.",
+        "status": "OPEN normalization-convention item (unregistered "
+                  "in the trace-convention registry as of 2026-09-03)",
+    })
     wb.add_assertion(
         "fr_stratum_mass_preserved",
         computed=float(stratum_mass_dev), expected=0.0, tolerance=1e-40,
