@@ -1,4 +1,4 @@
-# Covariance-kernel epic (`qou-x631`) — M₁>0 `qou-k5r5`: the pointwise route's "~17× short" is overstated — a unit error of mine
+# Covariance-kernel epic (`qou-x631`) — M₁>0 `qou-k5r5`: the pointwise route's error budget was understated 2.943× — a unit error of mine, and the shortfall factor should not be quoted at all
 
 **Date:** 2026-09-03 · **Branch:** `claude/m1-k5r5-rigorous-C-2026-09-03` · **PR:** #6528 ·
 **Tier:** correction of merged content (PR #6438), verdict unchanged · **Epic:** `qou-x631`; gap `qou-k5r5`.
@@ -52,19 +52,23 @@ this locates the exact defect rather than recomputing a different quantity — t
 everything up to the threshold conversion, and diverge only there: `K_adm = 0.17115` against the
 merged `0.058`.
 
-Against a Debye/Olver leading coefficient of `O(1) ≈ 1`, the shortfall is **~5.8×** with `V_A`
-carrying the whole error budget, or **~11.7×** if `V_A` and `V_D` split it evenly — against the
-**~17×** on record.
+Dividing by a Debye/Olver leading coefficient of `O(1) ≈ 1` would turn this into "~5.8× short"
+(`V_A` carrying the whole budget) or "~11.7×" (split evenly with `V_D`), against the `~17×` on
+record — **but see below: that division is not legitimate, and none of those three factors should be
+quoted.** The defensible output of this probe is `K_admissible` itself.
 
 θ = 78 is the right place to evaluate this: it is the largest `n` the exact `Fraction` table reaches,
 so it is exactly where the asymptotic must take over from exhaustive verification.
 
-## Why the number matters even though the verdict doesn't move
+## Why the budget matters even though the verdict doesn't move
 
-"17× short" reads as hopeless; "5.8× short" reads as a gap a sharp constant might close. The honest
-figure should not settle that question by accident. This does **not** revive the pointwise route —
-the structural negative is independent of any constant and stands — but it changes how much a
-sharper pointwise constant would be worth chasing if the cancellation argument stalls.
+The recorded `K < 0.058` understates the error budget the margin allows by 2.943×. That matters
+because the budget is what any future bound — pointwise or not — has to fit inside: an argument
+rejected for exceeding `0.058` may sit comfortably under `0.17115`. It does **not** revive the
+pointwise route, whose failure is structural and independent of any constant.
+
+What it does *not* license is reading "the route is only 5.8× short instead of 17×". Per the next
+section, the denominator in that comparison is not a constant at all.
 
 ## What this does NOT settle — and it is sharper than "the `O(1)` is imprecise"
 
