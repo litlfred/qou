@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-09-03T08:30:20Z
+updated_at: 2026-09-03T12:43:22Z
 parent: qou-mhj9
 ---
 
@@ -968,3 +968,42 @@ P30-stamped.
 **Credit where it is due:** the two halves are `qou-g8i1`'s and
 `PairwiseCumulantVanishing`'s. This tranche is the join and the identification of
 the invariant, not a new exclusion.
+
+
+## 2026-09-03 (cont.) — the positive half, narrowed to a search over WORDS
+
+Checked the obvious candidate for a non-Markov carrier and it is already worked,
+with a measured verdict — plus one apparent tension that turns out to be a
+category difference worth recording.
+
+**No contradiction with the bond rule.** `qou-v7ro` proves the **Brunnian trace
+deficit** `D_A = 1 − qtr(ρ(w_A))/[2]^A` is **nonzero ∀A** (#6217:
+`D_{A+1} = −h²(h²+2)·D_A`, `D_3 = 1.44e-3`). Beside a bond rule verified to
+`4.45e-31` that reads like a factorisation failure. It is not — **different
+words**: the bond rule governs the nucleon **atom word** (a product of bond
+letters `σ_g + d·I` at interior gaps), while `w_A` is the **iterated commutator**
+`w_n = [w_{n−1}, b]`, and a commutator is not a product of independent bond
+letters. So `SatisfiesBondRule` is not falsified for the atom word and the
+exclusion is not vacuous there.
+
+**`D_A` is the one known member of the class my exclusion leaves open.** A
+carrier must *break* the bond rule; a word with nonzero deficit is exactly such a
+word. So the aim is right — and `qou-v7ro` has already measured why this member
+does not finish: `|D_A|` **falls** geometrically (`1.44e-3 → 8.2e-9` over A=3..8,
+factor `−0.0893226497` per step) while the empirical binding fraction **rises**
+(`0.767 → 0.954·ℏ_q²`, ⁴He → ⁵⁶Fe). Opposite trends ⇒ order/parity marker, not
+magnitude. **Scope (a)** on that carrier, not on the class.
+
+**So the positive half is now a stated search: is there a non-factorising word
+whose deficit RISES with `A`?** Not a search over functionals `f` (`f` does not
+appear in the conclusion) and not over edge sets (measured: chain, all-pairs,
+star all give `b₃ = 0`). That is a narrower question than the bean opened with.
+
+**Judgement, not a finding:** the falling/rising mismatch is a *trend* mismatch,
+and trends are cheap to test — any candidate word can be screened by computing
+its deficit at A = 3..6 before any Lean is written. That screen is the next
+concrete step and it is cheap.
+
+Recorded as a scope note in the header of
+`QOU/Mass/MarkovBondRuleForcesPairwise.lean`, so a reader arriving from
+`qou-v7ro` does not read that file as contradicted.
