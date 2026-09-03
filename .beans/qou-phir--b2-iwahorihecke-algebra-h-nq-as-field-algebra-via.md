@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-09-03T04:21:57Z
+updated_at: 2026-09-03T12:55:20Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1140,3 +1140,31 @@ directly, prove the symmetric-difference decomposition by `ext`, and finish with
 Non-vacuity is committed in-file as `decide` guards rather than checked once:
 the criterion is false for the collapsing `s₀ * s₀`, true for the reduced
 `s₀ * s₁`, and the defect there is genuinely 2. Both sides of the iff occur.
+
+## Merged 2026-09-03 — PR #6444, main a2edbcffb7
+
+`length_mul_eq_add_iff` is on main, sorry-free:
+
+    ℓ(u * v) = ℓ(u) + ℓ(v)  ↔  invSet v ⊆ invSet (u * v)
+
+with the counting identity `invCount_add_invCount`. Branch NOT deleted
+(AGENTS.md rule 9). Unsubscribed.
+
+**Next (this is my judgement, not a finding):** apply it at the FIRST descent
+node, per the `qou-garnir-length-probe` result that the first descent suffices.
+That is now a direct application rather than open work.
+
+**TRAP — a rebase silently drops a fix you made while resolving an earlier
+merge.** Resolving a conflict with a merge commit costs the rebase-merge
+(`405 This branch can't be rebased`); linearising with `git rebase` then
+replays the ORIGINAL commit, discarding whatever you corrected in the merge
+resolution. Measured here: the branch briefly carried superseded advice
+("wait and re-arm") while MEMORY.md one file over said that advice was wrong.
+Caught only by grepping the file's CONTENT after `--continue`; `git status`
+was clean and the rebase reported success. Verify content, not exit status.
+
+**Superseded my own advice.** The draft/GraphQL blocker that held this PR ~5 h
+has a working fix a sibling landed the same day (`ec96d89b1a`): close the
+draft, re-create with `draft=false` from the same head, merge — all REST. I had
+tried the re-create and dismissed it, because I ran it while the draft was still
+OPEN, which GitHub refuses. The close is what frees the head.
