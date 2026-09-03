@@ -19,6 +19,59 @@ irreducible summand.
 
 LaTeX label: `prop:knot-eigenbasis-complete`
 
+## 2026-09-03 — the detection claim bound `μ` and never used it
+
+`KnotEigenbasisData.summands_detected` read
+
+    ∀ μ ∈ decomp.partitions, ∃ β : alex.Braid, markov.tr (braid_rep β) ≠ 0
+
+and **`μ` does not occur in the body.** So the field said "some braid has
+non-zero Markov trace", repeated once per partition — not "each summand is
+detected". `mu_free_detection_vacuous` below proves this mechanically: a
+single non-zero value discharges that shape for *every* list of partitions,
+so no instance of it constrains the decomposition at all.
+
+Its own docstring claimed the missing content — *"the Jones polynomial of the
+braid closure β̂, **restricted to the S_μ summand**, is non-zero"* — and the
+`.md` claims more still: that the map from knot types to irreducible summands
+*defined by the support of* `tr_M(ρ_n(β))` is **surjective**. A trace with no
+block components cannot express either.
+
+**Fixed** by giving the bundle a per-block component `trBlock` tied to the
+trace by `tr_eq_sum_blocks` (`tr x = Σ_{μ ∈ partitions} trBlock μ x`), so
+`trBlock` is not free data, and restating detection over it. `μ` now occurs
+in the body of the field and in the conclusions of every theorem below.
+
+Two consequences follow from the constraint that did not follow before:
+`tr_ne_zero_of_single_block` and `single_summand_detected` — block detection
+plus the decomposition gives a braid whose *total* Jones value is non-zero.
+
+## Two duplicate re-exports removed
+
+`knot_eigenbasis_density` was `:= kec.summands_detected` at the field's exact
+type, and `jones_nontrivial_all_summands` was that field applied — the
+self-assuming projection of AGENTS.md §3b-cond item 5, and here also
+*misnamed*. The `.md`'s density claim is its item 3, that the knot-labelled
+summands **span** `V_phys = colim V^⊗n`; re-exporting detection under the
+name `density` reads as though that were encoded. It is not: there is no
+colimit, no inclusion `η : 𝟙 → V`, and no spanning statement anywhere in this
+file, and adding one needs the direct limit rather than a rename.
+
+`jones_nontrivial_all_summands` likewise concluded "no summand is invisible
+to the knot invariant" from a field that, as written, did not mention the
+summand.
+
+## Known to carry the same defect, and NOT fixed here
+
+[`descartes-knot-eigenbasis.lean`](../brings-surface/descartes-knot-eigenbasis.lean)
+`DescartesKnotEigenbasis.all_summands_detected` has it in a stronger form —
+the summand index is bound as `_`, and the detected value is a free
+`∃ jonesVal : ℝ, jonesVal ≠ 0` not tied to any trace, so the field asserts
+that `ℝ` has a non-zero element. That is a different block and its own
+docstring discloses the gap ("full per-summand completeness … is the concrete
+`n = 3` content of `descartes_n3_both_detected`"), so it is recorded rather
+than changed here.
+
 ## References
 
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
@@ -247,6 +300,22 @@ structure MarkovTrace (H : HeckeAlgebra) where
 
 /-! ## Combining Structure -/
 
+/-- **The μ-free detection shape asserts nothing per summand.**
+
+A single non-zero value `f β₀ ≠ 0` discharges
+
+    ∀ μ ∈ l, ∃ β, f β ≠ 0
+
+for **every** list `l` of partitions, because `μ` does not occur in the body.
+This is the shape `summands_detected` had until 2026-09-03, and it is
+recorded as a theorem so the module docstring's claim about it is checked
+rather than asserted — and so a later "simplification" back to that shape
+fails against a standing demonstration of its emptiness. -/
+theorem mu_free_detection_vacuous {α : Type*} {f : α → R_q} {β₀ : α}
+    (h : f β₀ ≠ 0) (l : List BoundedPartition) :
+    ∀ _μ ∈ l, ∃ β, f β ≠ 0 :=
+  fun _ _ => ⟨β₀, h⟩
+
 /-- **Completeness of the knot-type eigenbasis** (full data bundle).
 
     Combines:
@@ -269,13 +338,29 @@ structure KnotEigenbasisData (H : HeckeAlgebra) where
   markov : MarkovTrace H
   /-- Representation map: braid → Hecke algebra element. -/
   braid_rep : alex.Braid → H.carrier
+  /-- Component of the Markov trace in the block `S_μ`.
+
+      Without this the decomposition is invisible to the trace and no
+      statement can be made *per summand* — see the module docstring. -/
+  trBlock : BoundedPartition → H.carrier → R_q
+  /-- The block components decompose the trace:
+      `tr x = Σ_{μ ∈ partitions} trBlock μ x`.
+
+      This is what stops `trBlock` from being free data an instance may
+      choose independently of `markov.tr`, and it is what
+      `tr_ne_zero_of_single_block` is proved from. -/
+  tr_eq_sum_blocks : ∀ (x : H.carrier),
+    markov.tr x = (decomp.partitions.map (fun μ => trBlock μ x)).sum
   /-- **Summand detection**: for each partition μ in the decomposition,
-      there exists a braid β whose Markov trace on the Hecke-algebra
-      image of β is non-zero. This means the Jones polynomial of the
-      braid closure β̂, restricted to the S_μ summand, is non-zero. -/
+      there exists a braid β whose Markov trace **in the block `S_μ`** is
+      non-zero — i.e. the Jones polynomial of the closure β̂, restricted to
+      that summand, does not vanish.
+
+      `μ` occurs in the body. The previous version bound it and did not,
+      which `mu_free_detection_vacuous` above shows says nothing. -/
   -- Ref: [jones1987] Annals of Mathematics 126 (1987), 335–388
   summands_detected : ∀ μ ∈ decomp.partitions,
-    ∃ (β : alex.Braid), markov.tr (braid_rep β) ≠ 0
+    ∃ (β : alex.Braid), trBlock μ (braid_rep β) ≠ 0
 
 /-! ## Main Theorem: Knot Eigenbasis Completeness -/
 
@@ -291,20 +376,12 @@ theorem knot_eigenbasis_complete {H : HeckeAlgebra}
     (kec : KnotEigenbasisData H)
     (v : kec.decomp.tensorPower) :
     ∃ μ, ∃ (_ : μ ∈ kec.decomp.partitions),
-      ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 := by
+      ∃ (β : kec.alex.Braid), kec.trBlock μ (kec.braid_rep β) ≠ 0 := by
   -- By Schur–Weyl completeness, v lies in some summand V_μ ⊗ S_μ.
   obtain ⟨μ, hμ, _, _, _⟩ := kec.decomp.complete v
-  -- By summand detection, μ is reached by some braid β.
+  -- By summand detection, THAT μ's block is reached by some braid β.
   obtain ⟨β, hβ⟩ := kec.summands_detected μ hμ
   exact ⟨μ, hμ, β, hβ⟩
-
-/-- Every summand is detected: equivalent to `summands_detected`, but
-    phrased as a standalone density statement. -/
-theorem knot_eigenbasis_density {H : HeckeAlgebra}
-    (kec : KnotEigenbasisData H) :
-    ∀ μ ∈ kec.decomp.partitions,
-      ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 :=
-  kec.summands_detected
 
 /-- **Corollary**: The eigenbasis is non-empty when V^⊗n has
     at least one irreducible summand (which holds for all n ≥ 1). -/
@@ -312,16 +389,38 @@ theorem eigenbasis_nonempty {H : HeckeAlgebra}
     (kec : KnotEigenbasisData H)
     (h : kec.decomp.partitions ≠ []) :
     ∃ μ ∈ kec.decomp.partitions,
-      ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 := by
+      ∃ (β : kec.alex.Braid), kec.trBlock μ (kec.braid_rep β) ≠ 0 := by
   obtain ⟨μ, hμ⟩ := List.exists_mem_of_ne_nil _ h
   exact ⟨μ, hμ, kec.summands_detected μ hμ⟩
 
-/-- **Corollary**: The Jones polynomial is non-trivial on every
-    irreducible summand — no summand is invisible to the knot invariant. -/
-theorem jones_nontrivial_all_summands {H : HeckeAlgebra}
-    (kec : KnotEigenbasisData H)
-    (μ : BoundedPartition) (hμ : μ ∈ kec.decomp.partitions) :
-    ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 :=
-  kec.summands_detected μ hμ
+/-- **A non-zero block component is visible in the total trace when the
+    decomposition has a single block** — *derived* from `tr_eq_sum_blocks`,
+    which is the constraint the old encoding had no analogue of.
+
+    For `n ≤ 1` the Schur–Weyl decomposition has `⌊n/2⌋ + 1 = 1` partition,
+    so the whole Markov trace is that one block's component. -/
+theorem tr_ne_zero_of_single_block {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H) {μ : BoundedPartition}
+    (hμ : kec.decomp.partitions = [μ]) {x : H.carrier}
+    (h : kec.trBlock μ x ≠ 0) :
+    kec.markov.tr x ≠ 0 := by
+  rw [kec.tr_eq_sum_blocks x, hμ]
+  simpa using h
+
+/-- **The Jones value of some closure is non-zero**, for a single-block
+    decomposition — obtained by composing summand detection with the trace
+    decomposition rather than by re-exporting a field.
+
+    This is the statement `knot_eigenbasis_density` appeared to make and did
+    not: it concerns `markov.tr`, the quantity the manuscript identifies with
+    the Jones polynomial of the closure, and it is *proved* from the block
+    detection rather than assumed. -/
+theorem single_summand_detected {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H) {μ : BoundedPartition}
+    (hμ : kec.decomp.partitions = [μ]) :
+    ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 := by
+  have hmem : μ ∈ kec.decomp.partitions := by rw [hμ]; simp
+  obtain ⟨β, hβ⟩ := kec.summands_detected μ hmem
+  exact ⟨β, tr_ne_zero_of_single_block kec hμ hβ⟩
 
 end QOU.Braiding
