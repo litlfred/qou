@@ -1,10 +1,11 @@
 ---
 # qou-m3sh
 title: 'Fary-Milnor: total curvature is the substrate-computable half of the serpenoid tower; the twist is the other half'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-03T04:32:27Z
-updated_at: 2026-09-03T04:32:27Z
+updated_at: 2026-09-03T18:02:51Z
 ---
 
 
@@ -220,3 +221,35 @@ thread, and the exchange channel is the transverse (linking) direction.
   construction on split quaternions gives (2, −2, 2) — one sign flipped —
   and `split_ne_compact`. Audit addendum + second author note on the lemma
   block. The su(2) survives as the resolvent bundle's structure group only.
+
+## Summary of Changes
+
+Queued from the serpenoid image; delivered, all pushed:
+
+- `total_curvature_is_the_computable_half_probe` — every multi-strand
+  component of the canonical closure is a (2,odd)-torus knot on both
+  classical branches; floor 2π(2A+1); Bennequin pages; Seifert forms; the
+  osculating pencil made explicit and its invariant shadows (open book, Seifert
+  circle fibration) named. Crofton: total curvature = π × mean critical-point
+  count of the height functions — the exact form of "the oscillations happen
+  at the saddle points".
+- `the_curvature_floor_is_sharp_probe` (spherogram + Vogel, independent Jones
+  cross-check, A = 2,3,4,6) and `the_canonical_closure_is_a_chain_of_torus_links_probe`
+  (symbolic: the word is a chain form ∏ σ_{3k}^{a_k} σ_{3k+1}^{b_k} σ_{3k+2}^{±1},
+  interfaces are connected-sum bands with the unknot, W'_A on 2A+1 strands
+  has the same closure) — b(L) = 2A+1 and inf ∫κ = 2π(2A+1) for EVERY A.
+- Lean `QOU.Mass.TorusKnotPages` (Seifert unimodularity, continuant closed
+  form, divisibility, curvature-floor bookkeeping, pages embed on Bring,
+  Bennequin arithmetic) and `QOU.BringConeSplit` (the lemma's construction on
+  split quaternions: (2, −2, 2), `split_ne_compact`).
+- Exposition: `prop:canonical-closure-torus-chain`, `rem:torus-chain-pages-on-bring`;
+  author notes on `lem:bring-cone-reeb-quaternionic-twist`; forward pointer on
+  `atom_closure_milnor_indeterminacy_probe`.
+- Audits: the Bring cone link is UT(Σ₄) and its Reeb triad is sl₂(ℝ) (the
+  "degenerate" conciliation works only as the split form); the colour cubic
+  is a rank-3 spectral curve (Chevalley/Hitchin reading of the eightfold-way
+  gaps — shape given, nothing closed).
+
+Not claimed anywhere: a connection from curvature to binding, or the twist.
+Left for others: whether the lemma's author amends its statement; the
+sheet-sign ↔ twist-torsor identification on the colour side.
