@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T02:58:23Z
+
 updated_at: 2026-09-03T04:57:24Z
 updated_at: 2026-09-03T04:39:05Z
 ---
@@ -870,6 +872,54 @@ L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
 is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
 
+
+## 2026-09-03 — the extensive term MEASURED at four nuclei, and the ceiling reached
+
+PR #6427. The corrected binding path (Rust LP-accumulator kernel + the
+braid-satisfying seminormal family) runs end to end for the first time. Writing
+B_true = B_pred + E(A):
+
+    atom       A  B_pred (MeV)   AME2020     E = AME-B_pred   E/C(A,2)
+    deuterium  2  -7.271102125   +2.224566    9.496           9.496
+    tritium    3  -7.742121347   +8.481796   16.224           5.408
+    he3        3  -7.456199506   +7.718041   15.174           5.058
+    he4        4  -6.828594293  +28.295662   35.124           5.854
+
+THE PREDICTION IS FLAT WHERE BINDING IS EXTENSIVE. Prediction spread 12.5% of its
+mean against an AME range of 12.7x; |pred| vs AME r = -0.731. 4He is sharpest:
+LOWEST |pred| at the HIGHEST binding. Neither a sign flip nor a constant rescale
+repairs it (ratios run 3.269 .. 0.241, spanning 13.6x) -- nothing multiplicative
+fixes a quantity that is flat where the target is extensive.
+
+This is the FIRST DIRECT MEASUREMENT of this bean's missing term. Prior work
+inferred it from six failed closures; this exhibits it, at four nuclei.
+
+TARGET, and its weakness stated. Excluding the deuteron (owner-ruled special),
+E/C(A,2) = 5.408, 5.058, 5.854 -- spread 14.6%, against E/A 58% and E/(A-1) 45%.
+So E ~= 5.4 MeV x C(A,2) for A >= 3. BUT: two distinct A values, and the
+within-A noise floor is 6.7% (tritium vs he3 at the same A), so the signal is only
+2.2x noise. A TARGET, not a determination.
+
+TENSION WITH THE PROVED CAP, flagged not smoothed. An E scaling AS C(A,2) is
+pairwise-shaped, while this bean's framing says super-pairwise and
+exchangeDet_pow_two_le_four proves rho_A <= C(A,2). Three readings: two-point
+artefact; E SATURATES the cap (<= permits proportional-to); or super-pairwise
+growth visible only above A~5.
+
+DISCRIMINATOR NOT MEASURED. 6Li (C(A,2)=15 vs 4He's 6) is where the forms
+diverge. THREE attempts, all killed, each earlier than the last (~900s / 326s /
+124s). Cause undetermined -- dmesg unavailable, OOM neither confirmed nor
+excluded. A=2..4 complete reliably (942/1568/1496/2425s) including across long
+idles, so this is specific to A=6.
+
+CEILING: the corrected binding path reaches A=4 in this container, not A=6.
+
+TWO ROUTES TO SETTLE IT, neither attempted:
+  1. A=6 on a machine that holds the process. Nothing about the computation is
+     known to be wrong; it is scheduling.
+  2. A=4 and A=6 both at reduced k_exact -- not comparable to the k=11 points,
+     but comparable to EACH OTHER, so E(6)/E(4) discriminates cheaply. A
+     different measurement needing its own gate.
 
 ## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
 
