@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-03T15:52:43Z
+updated_at: 2026-09-03T16:59:06Z
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -71,3 +71,57 @@ raise costs nothing on the hot path — the machine is just slower.
 - 4 NEW `never_raises_dps` producers (31/6/3/2 constructions), 10 NEW q0-value
   drifts all at −0.0769 ppb (the CODATA-2022 anchor migration; scoped under
   `qou-3f7a` / `qou-tekx`), 3 raw-float64 regressions, 69 NEW unstamped.
+
+
+## Result: 10 blocking reds -> 8, and the two that went green were one root each
+
+Measured with the full `scripts/precision-gates.sh` on this branch.
+
+**Green: `float64-padding ratchet`.** 70 padded occurrences -> 12, NEW 58 -> 0,
+exit 1 -> 0; everything left is under baseline and in `_deprecated`. Four
+fixes, and only the first was cosmetic:
+
+1. `tower_walk_magic_replication_probe` — 22 fields. Aggregated in mpmath
+   "so float64 error does not compound", at `mp.dps` **15**, where an mpf sum
+   accumulates exactly as a float sum. Then serialized with a bare `fmt`,
+   default width **60**, on values sourced from `float(abs(np.trace(st)))`.
+   The halves pull opposite ways — raising dps fixes the arithmetic and makes
+   the serialization worse — which is why it sat in TWO gates at once.
+2. `qbeta_three_nucleon_nf_alpha_spread_probe` — `mp.mpf("0.99839767")` is the
+   RIGHT idiom, defeated by ORDERING: module scope, dps still 15, so the mpf
+   held the 53-bit double; `main()` raised dps to 50 and `str()` printed that
+   double out to fifty digits. The code looks correct on its own line.
+3+4. `path_b_defect_binding_probe` / `path_b_habiro_mass_probe` — **not
+   cosmetic**. `M_AME` was a MIXED dict (`"n"` mpf from the registry, five
+   siblings bare floats) feeding a binding energy computed as ~1876 − ~1876 ≈
+   1e-5 MeV. Catastrophic cancellation, measured at **2.525e-9 relative**, and
+   the witness moved by exactly that: `B_AME_MeV`
+   `0.000001270690003244…` -> `0.000001270689999999…`. The padding flag was a
+   SYMPTOM of a real numerical defect, not fake precision over a right answer.
+
+   Did NOT swap in the registry's `M_D_MEV_VALIDATION` though the producer
+   already imports two registry constants: those are NUCLEAR masses
+   (1875.61294500), these are ATOMIC (1876.12393). The tidy-up would have
+   silently changed what is compared.
+
+**Green: `import-time dps ratchet`** — fix (2) is one of its sites.
+
+**`q0-anchor flip` still red, but honestly: 1, not 18.** The 17 unmappable
+labels are gone (see above) and the remainder is `hadron-knot-table`, which
+`qou-hah0` says to claim separately with a real compute budget.
+
+The last padding NEW was a **false positive** and is now carved out:
+`hardcoded-literal-audit.witness.json` records literals it FOUND in source as
+evidence. The mechanism already existed and already held two other audits'
+witnesses — only the name was wrong (`SELF_OUTPUTS` for a set that was never
+just self-output). Renamed `QUOTED_EVIDENCE_WITNESSES`, kept a LIST rather than
+a heuristic (a "looks like evidence" test is what would let real padding hide),
+and it now reports itself by name, since an exclusion nobody can see is
+indistinguishable from a hole.
+
+### Still red (8), none touched by this work
+`q0-anchor flip` (1, needs a compute budget) · `q0-anchor refill ratchet`
+(owned by `qou-fl0a`) · `never-raises-dps` (3 NEW) · `raw-float64` (3 regressed)
+· `q0-value drift` (10 NEW at −0.0769 ppb, scoped under `qou-3f7a`/`qou-tekx`)
+· `CODATA stale-edition` · `mixed mpf/f64` (1 over baseline) · `witness
+scriptFile provenance` (1 NOT_A_PRODUCER).
