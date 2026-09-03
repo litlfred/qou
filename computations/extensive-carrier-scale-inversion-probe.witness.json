@@ -2,8 +2,15 @@
   "$schema": "https://litlfred.github.io/qou/schemas/witness.schema.json",
   "name": "extensive-carrier-scale-inversion-probe",
   "description": "Inverts the qou-n4zp alpha-cluster exclusion into an energy-scale requirement (E_req = T / L) and compares it against every energy scale the corpus carries. Records that qou-n4zp's percentages are conditional on E_0 and that the exclusion is scope (a), not (b).",
+  "beans": [
+    "qou-n4zp",
+    "qou-59j5",
+    "qou-brng"
+  ],
+  "q0_anchor": "physical_proton",
   "inputs": {
     "q0": "1.109978582751380807591669095610768879874",
+    "conv_B_Qbeta_mev": "0.78233355931",
     "L_chain_A4": "1.46969815276540455",
     "L_complete_graph_A4": "2.40867875195",
     "alpha_scale_mev": "29.8",
@@ -29,13 +36,22 @@
         "note": "my own earlier outlier (qou-59j5); no reason was given"
       },
       {
+        "scale": "conv B = Q_beta^CODATA",
+        "mev": "0.78233355931",
+        "over_E0": "0.186893703391",
+        "closes_alpha": false,
+        "closes_bulk": false,
+        "excised": false,
+        "note": "derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed'], hbar_q^0"
+      },
+      {
         "scale": "E_0 = m_e/(q_0(q_0-1))",
         "mev": "4.1859813632944758969",
         "over_E0": "1.0",
         "closes_alpha": false,
         "closes_bulk": false,
         "excised": false,
-        "note": "CAL-1 \u2014 a calibration, not a derivation"
+        "note": "CAL-1 \u2014 a calibration, not a derivation; = E_0_CONVENTIONS['A_single_hecke_tick'], hbar_q^1"
       },
       {
         "scale": "hbar_q^2 * m_N",
@@ -66,6 +82,11 @@
   "verdict": "SCOPE (a). Closing one alpha in the trace channel requires E >= 12.372 MeV = 2.956 x E_0; closing the bulk requires 26.175 MeV = 6.253 x E_0. No live corpus energy scale reaches either \u2014 the largest, hbar_q^2*m_N = 9.218 MeV, is 1.34x short of one alpha and 2.84x short of the bulk. The exclusion therefore survives every scale the corpus carries, but a larger scale would close it, so this is a scope-limited negative and NOT a structural exclusion. qou-n4zp's 20.6-33.8 % and 9.8-16.0 % are E_0 figures and must be quoted with the scale named (bean qou-59j5). No energy scale is derived here; that item stays open.",
   "assertions": [
     {
+      "name": "q_0 is the PROTON pin (the pin the L values were measured at)",
+      "passed": true,
+      "detail": "Q_50_DIGIT_STR = 1.109978582751380807..., muon pin = 1.109978595557334719..."
+    },
+    {
       "name": "closing one alpha needs an energy scale strictly above E_0",
       "passed": true,
       "detail": "E_req = 12.371928 MeV = 2.95556 x E_0. The requirement is a scale, not a ratio \u2014 this statement is independent of which scale is chosen, which the 20.6-33.8 % figures in qou-n4zp are not."
@@ -73,7 +94,7 @@
     {
       "name": "NO live corpus energy scale closes even one alpha",
       "passed": true,
-      "detail": "none of m_e, E_0, hbar_q^2*m_N reaches 12.371928 MeV. The largest live scale is hbar_q^2*m_N = 9.2175404 MeV, still 1.34222x short of one alpha and 2.83973x short of the bulk. The only scale that would close it is the excised m_p/tr_M(proton), which overshoots by 134.395x."
+      "detail": "none of m_e, conv-B Q_beta, E_0, hbar_q^2*m_N reaches 12.371928 MeV. The largest live scale is hbar_q^2*m_N = 9.2175404 MeV, still 1.34222x short of one alpha and 2.83973x short of the bulk. The only scale that would close it is the excised m_p/tr_M(proton), which overshoots by 134.395x."
     },
     {
       "name": "the supplied fraction scales EXACTLY linearly with the energy (so the percentages are scale-conditional)",

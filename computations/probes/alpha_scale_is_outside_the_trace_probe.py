@@ -119,7 +119,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MUON_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 set_compute_dps(30)
@@ -159,6 +159,17 @@ def main() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
     E0 = mp.mpf(str(M_E_MEV)) / (q * (q - 1))
     alpha = mp.mpf(ALPHA_SCALE_MEV)
+
+    # Copilot review on #6443: ENFORCE the proton-anchor assumption rather than
+    # merely stating it. The two pins differ at the 9th significant digit
+    # (proton 1.10997858275..., muon 1.10997859564...); L_CHAIN_A4 / L_K4_BEST
+    # were measured at the proton pin, so a muon q here would be a straddle.
+    check("q_0 is the PROTON pin (the pin the L values were measured at)",
+          Q_50_DIGIT_STR != Q_MUON_50_DIGIT_STR
+          and Q_50_DIGIT_STR.startswith("1.10997858"),
+          f"Q_50_DIGIT_STR = {Q_50_DIGIT_STR[:20]}..., muon pin = "
+          f"{Q_MUON_50_DIGIT_STR[:20]}...; they differ at the 9th digit and "
+          f"the proton prefix 1.10997858 is present.")
 
     print("=" * 78)
     print("  The alpha-cluster scale is OUTSIDE the trace channel")
@@ -297,7 +308,7 @@ def main() -> int:
             "(29.8 MeV) even at the complete graph, so the alpha-cluster scale "
             "must come from outside it; plus the two-row support of the "
             "Schur-Weyl sum, extended to n=3,12,15."),
-        "beans": ["qou-brng", "qou-0c19", "qou-lw9l"],
+        "beans": ["qou-n4zp", "qou-59j5", "qou-brng", "qou-0c19", "qou-lw9l"],
         "scope": "(a) — pure-proton chains for the trace figures; 29.8 MeV/alpha "
                  "is the corpus's measured mean, cited not re-derived; no "
                  "mechanism proposed for the missing scale",
