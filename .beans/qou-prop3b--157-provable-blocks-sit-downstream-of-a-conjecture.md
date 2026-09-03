@@ -1,11 +1,11 @@
 ---
 # qou-prop3b
 title: 'CORRECTED: 34 propagation violators, not ~150 — my screen inverted the answer; 9 platform scripts unrunnable'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-29T19:05:00Z
-updated_at: 2026-09-02T22:16:25Z
+updated_at: 2026-09-03T04:28:54Z
 ---
 
 Reached from `qou-hprp`'s revised order, which put
@@ -310,3 +310,73 @@ judgement, not a refactor, and I am not inventing it.
 and prevents the next agent re-deriving this), then take
 `conj:magic-numbers-from-q` — with the author naming what the open content is —
 since it alone is 17 of the remaining 29.
+
+
+---
+
+## 2026-09-03 — measured, fixed the detector, and stopped short of the laundering
+
+**Detector fix landed (folio-assistant#162).** `isClassAxiomatised` resolved a
+conjecture's Lean as `<lakeRoot>/<Decl/Path>.lean`, appending the *declaration
+name* as a path segment. A `lean.ref` is a namespace-plus-declaration path, not
+a file path, so that only resolves when the file is named after its
+declaration. Route (2) resolved to a **non-existent file for all seven**
+blocking conjectures, and three already carried the exact `class` the audit
+said was missing:
+
+| conjecture | class actually at |
+|---|---|
+| `gs-graded-markov-trace-existence` | `QOU/IwahoriHecke/MarkovTrace.lean:93` |
+| `kashaev-surreal` | `QOU/AppendixSurreals/Conjectures.lean:463` |
+| `tower-geometric-lower-bound` | `QOU/Mass/LevelSelectionLogarithmic.lean:48` |
+
+Added route (c), the grep fallback of AGENTS.md §0a's resolution order.
+Violators **34 → 29**; class-axiomatised conjectures **147 → 165**.
+
+**Correcting my own earlier entry here.** I wrote "34 → 29, five detector false
+positives" and gave the mechanism as *"a Lean namespace is not a directory"*.
+The count was right, the mechanism was not sharp enough, and it applies to
+**all seven** blockers rather than five. The five is the number of *blocks*
+that clear — much smaller than the 22 conjecture-instances involved, because
+most affected blocks are independently blocked by a genuinely un-axiomatised
+conjecture in the same cone. **A second self-correction:** a hand-rolled regex
+graph I built mid-investigation reported `NO PATH` from all 17 blocks to the
+conjecture. That was the parser, not the graph — under the audit's own
+`loadBlocksUnder` every path resolves. Second false negative from a hand-rolled
+parser this session.
+
+**The remaining 29, by blocker:** `magic-numbers-from-q` 17,
+`b1-hyperbolic-rows-theorem` 7, `shell-transition-knot` 4,
+`im-q-physical-role` 1.
+
+**All 17 funnel through ONE edge.** `conj:diagrammatic-double-magic-lr-fusion`
+is the only block in the corpus listing `conj:magic-numbers-from-q` in
+`uses[]`. Every one of the 17 paths ends
+`… → conj:diagrammatic-double-magic-lr-fusion → conj:magic-numbers-from-q`.
+
+**Why I did NOT write the class carrier.** `conj:magic-numbers-from-q`'s title
+asserted what its own scope refutes — the sign of δ²Φ is a parity test
+satisfied by every even Z; the local maxima over even Z at K=10 are {4,12,16},
+none magic, with Z=8 sixth of fourteen; and Z=20 is a local maximum at no q in
+(1, φ). The block's own conclusion is *"what survives is the construction and
+its q-dependence, not the identification"*. A class carrier would have to
+encode the identification the block measured and refuted, and would then
+discharge 17 provable blocks against it — 29 → 12 while the corpus got less
+honest. Note the audit checks only **half** of §3b-cond (the class, not the
+downstream `[Instance]` hypothesis), so satisfying the visible half is exactly
+audit-dodging.
+
+**Done instead:** retitled to the block's own opening sentence, with an
+`authorNotes` caveat recording the determination.
+
+**Two dispositions would genuinely clear the 17, both content decisions:**
+(a) state the surviving conjecture precisely enough to axiomatise — the block
+says *"whether some other functional of the same Hoefsmit data carries shell
+structure is open"*, and an existential over unspecified functionals is not a
+class field; (b) retarget the choke-point edge — the LR-fusion conjecture is
+stated for Z, N ∈ 𝔐, the *empirical* magic set, and gets its single-self-
+conjugate-partition support from `prop:categorical-neutrality-saturated-shells`,
+so it may not need the q-derivation of 𝔐 at all. If it does not, all 17 clear
+at once.
+
+Audit doc: `docs/audits/2026-09-03-propagation-audit-detector-blindness-and-the-magic-number-chokepoint.md`
