@@ -802,3 +802,60 @@ extra components beyond the geometric one; this sample is small and uniformly
 well-behaved. Do not treat 6/6 as a theorem.
 
 Nothing wired, nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (9): the bar grading of the node set, and a wrong consequence I caught by reading the Lean ──
+
+`computations/qbeta/dt_d1b_trace_field_bar_grading_probe.py`, **8/8**, same PR
+as entry (8). Entry (8) closed the **node** question and left the **arrow**
+question open. Arrows in a bar-graded quiver need the bar grading *of the node
+set*, and the single-orbit result says exactly where to read it: the nodes are
+the embeddings of the trace field, complex conjugation acts on them, and a
+representation is self-conjugate **iff its embedding is real**.
+
+| manifold | deg | `r₁` fixed | `r₂` pairs |
+|---|---|---|---|
+| 4₁ | 2 | **0** | 1 |
+| 5₂ | 3 | **1** | 1 |
+| m135 | 8 | 0 | 4 |
+| s000 | 6 | 0 | 3 |
+| t00000 | 8 | 0 | 4 |
+| v0000 | 8 | 0 | 4 |
+
+**Five of six trace fields are totally imaginary.** 5₂ is the only one with a
+real embedding — and it **cannot avoid one**: its trace field has **odd
+degree**, and no involution acts freely on a set of odd size. So a mirror-fixed
+node is *forced* for 5₂ and absent for 4₁, by parity rather than by any
+property of the particular polynomial.
+
+### 🛑 The consequence I nearly drew, and why it is wrong
+
+I read this as an **escape** from `QuiverMirrorAutomorphismExcluded` — the
+theory being that the theorem excludes a *freely acting* mirror, so a mirror
+with a fixed point is a different object and 5₂ slips past it.
+
+**I read the theorem before writing that down, and it does not say that.** Its
+hypothesis is
+
+```
+hσ : ∀ e, Ω (σ e) = Ω e
+```
+
+— **count-invariance**, which says nothing about freeness. A `σ` with fixed
+points can satisfy it perfectly well and is excluded on identical terms. **The
+parity fact survives; the consequence does not.** Recorded rather than dropped
+because it reads plausible and would have propagated into the arrow work.
+
+### What this actually is
+
+An **input** to the arrow question: the measured `(r₁, r₂)` is the bar grading
+any bar-graded quiver on these nodes has to reproduce. It does not produce
+arrows, a potential, or `A_ω`, and no construction is proposed.
+
+### Scope
+
+Scope-(a). Exact throughout — Sturm real-root **counting** on rational minimal
+polynomials, no root-finding and no floats. Four of six are census manifolds,
+valid for reading the grading and **not** automatically valid as D1-b nodes.
+The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
+routes now give the same six numbers (orbit degrees in entry (8), polynomial
+degree here), so neither is a parsing artifact.
