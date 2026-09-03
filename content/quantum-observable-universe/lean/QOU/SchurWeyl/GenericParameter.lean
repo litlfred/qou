@@ -107,6 +107,13 @@ theorem ne_one (hq : NotRootOfUnity q) : q ≠ 1 := fun h => hq 1 one_pos (by rw
 /-- **`q ^ 2 ≠ 1`**, the hypothesis the `ℝ` development carries explicitly. -/
 theorem sq_ne_one (hq : NotRootOfUnity q) : q ^ 2 ≠ 1 := hq 2 (by norm_num)
 
+/-- **A positive power of a non-root-of-unity is one.**  `(q ^ k) ^ m = q ^ (k * m)`, and
+`k * m > 0` when both are.  Needed wherever the development passes to `q ^ 2`. -/
+theorem pow_notRootOfUnity (hq : NotRootOfUnity q) {k : ℕ} (hk : 0 < k) :
+    NotRootOfUnity (q ^ k) := by
+  intro m hm h
+  exact hq (k * m) (Nat.mul_pos hk hm) (by rw [pow_mul]; exact h)
+
 /-- **`q ^ 2 + 1 ≠ 0` over any field**, given only that `q` is not a root of unity.
 
 This is the lemma that keeps the general-field migration from needing an order.  Over `ℝ`
