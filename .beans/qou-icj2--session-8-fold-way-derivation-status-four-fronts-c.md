@@ -1,10 +1,11 @@
 ---
 # qou-icj2
 title: 'Session: 8-fold way derivation status + four fronts (claude/8-fold-way-qou-derivation-qj9uzv)'
-status: todo
+status: completed
 type: milestone
+priority: normal
 created_at: 2026-09-03T04:37:52Z
-updated_at: 2026-09-03T04:37:52Z
+updated_at: 2026-09-03T16:15:23Z
 ---
 
 
@@ -20,3 +21,5 @@ updated_at: 2026-09-03T04:37:52Z
   SL(2,Z)); tower rung is scope-(a) 'no six-sheeted object to lift' (44cf9583).
 - Open, owner-level: the successor to 4-A is a question about axiom 5 / a second
   fundamental object, not a fibre-functor or reconstruction search.
+
+Completed 2026-09-03: PR #6458 rebase-merged to main at bf97976176.
