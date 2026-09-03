@@ -197,11 +197,93 @@ supplies the shortfall consistently is OPEN.
 ## Todo (revised)
 
 - [x] Test the derived-`w` question on a fixed, categorically distinguished set.
-- [ ] **Redo the interface candidate on the seminormal-matrix route**, which has
-      no Case C, at `n = 9`. This is the deciding measurement and it is the only
-      thing standing between here and an answer.
+- [x] **Redo the interface candidate on a route with no Case C.** Done
+      2026-09-03 — and the answer is NEGATIVE. See below.
 - [ ] Consider whether `tr_m_word_lq`'s Case C is worth implementing — it blocks
       a class of suffixed words, not just this one, and the failure is loud
       (RuntimeError) rather than silent, which is the good kind.
-- [ ] Repeat at ⁴He once the route is settled (512 expansion terms, over the
-      current `QOU_MAX_TERMS` guard).
+- [x] Repeat at ⁴He. Done — the character route reaches `n = 12` directly, so
+      all four atoms are in the test.
+
+
+---
+
+## The deciding test, 2026-09-03 — NEGATIVE, and it closes the opening
+
+Probe: `computations/qbeta/qbeta_interface_w_deciding_test_probe.py` (5/5).
+This bean opened a gap in an exclusion argument; the gap has now been followed
+to the only place it could live, and there is nothing there.
+
+### Route
+
+`tr_m_word_lq`'s Case C blocked the fast path. It is a limitation of the
+**Markov-trace recursion**, not of the character route:
+`chi_q_atomic_all_partitions_mpfr` evaluates
+`chi_lambda(prod_i (c_i sigma_{g_i} + d_i I))` for every `lambda |- n` directly
+from the `(c, d, g)` letters — no `2^k` expansion, no recursion, no Case C — and
+`tr_M = sum_lambda y_lambda chi^lambda`. It also reaches `n = 12`, so **⁴He is
+in the test** and the overdetermination is three, not two.
+
+**Generator indices are 1-BASED there and 0-based in `tr_m_atomic_mpfr`.**
+Mixing them is silent at `n >= 4` (it evaluates a different word) and only
+raises at small `n`. Worth knowing before using either.
+
+**Validation first.** Reconstructing `sum_lambda y_lambda chi^lambda(beta_atom)`
+reproduces the committed `tr_M_at_q0` at every atom, worst `|chi - committed|`
+`2.0e-49` and worst `|tr_M - committed|` `8.0e-51`.
+
+### Result
+
+| candidate `w` | ²H | ³H | ³He | ⁴He | spread |
+|---|---|---|---|---|---|
+| `w = 1` (control) | 4.1092 | 11.2017 | 10.0486 | 31.2986 | **1.9195** |
+| interface `sigma` product | −4.4767 | −12.9284 | −8.3874 | −28.1999 | **1.7575** |
+| interface `sigma^-1` product | −3.6462 | −12.4687 | −8.7048 | −33.7315 | **2.0553** |
+| interface averaged product | −4.0190 | −12.5391 | −8.4645 | −30.4357 | **1.9053** |
+| first interface only | −4.4767 | 48.6038 | 175.8046 | 71.7717 | **2.4721** |
+
+- spread `< 5 %`: **NONE**
+- beating the control by `2x`: **NONE**
+- best in the fixed set is the interface `sigma` product at 1.7575 against a
+  control of 1.9195 — an 8 % improvement, which is nothing.
+
+Two details worth keeping. All three whole-interface candidates give **negative**
+`c`, so `S_X(w)` carries the opposite sign to the shortfall — the interface
+operator would need a negative coefficient and *still* would not align. And
+"first interface only" is wildly inconsistent (−4.48, 48.60, 175.80, 71.77),
+which is what privileging one bond arbitrarily should look like.
+
+Note also that adding ⁴He raises the **control** spread from 0.83903 (three
+atoms) to 1.9195 — the framework supplies an even smaller fraction of ⁴He's
+binding, so the four-atom test is stiffer than the three-atom one, not weaker.
+
+### What this settles
+
+**The interface route is closed.** The chain was: the ell-1 ceiling bounds only
+the centre (this bean); almost all the non-central freedom is inert on
+`Delta_bind`, and the mechanism narrows the live part to the interface
+subalgebra (`qbeta_derived_w_overdetermined_test_probe.py`); and the interface
+subalgebra, in its categorically distinguished forms, does not supply the
+shortfall at four atoms with one constant.
+
+So **`qou-fvzm`'s practical conclusion survives, on better grounds than it
+had.** Its stated ground — the ell-1 ceiling — genuinely does not cover
+non-central `w`, and that scoping stands. But the uncovered region has now been
+measured where it is reachable, and it is empty. The correction to `qou-fvzm` is
+therefore to its *argument*, not to its *verdict*.
+
+**Still not proved in general.** "The categorically distinguished interface
+elements do not supply it" is not "no non-central `w` supplies it". The
+candidate set was fixed in advance and is small. What has been removed is the
+obvious place to look.
+
+## Todo (revised)
+
+- [ ] Decide with the owner whether `qou-fvzm` should carry a pointer. It is
+      `completed` with 7 inbound references and its closing line is what later
+      sessions quote — this session quoted it twice before testing it. The
+      pointer would now read "the stated ground is narrower than the conclusion,
+      and the gap was measured and found empty", which is a strengthening.
+- [ ] `tr_m_word_lq` Case C is worth a look on its own: it blocks a class of
+      suffixed words, not just this one. It fails loudly, which is the good
+      kind, and the character route is a workable detour.

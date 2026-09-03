@@ -134,11 +134,21 @@ def main() -> int:
     from experimental_constants import Q_NEUTRON_MEV as _QB
     QB = mp.mpf(str(_QB))
 
+    # Memoised: the n = 12 evaluation costs minutes, and `w = 1` is otherwise
+    # recomputed three times per atom (validation, shortfall, control row).
+    _chi_cache: dict = {}
+
     def chis(n, letters, suffix):
         fac = [(_s(c), _s(d), int(g) + 1) for (c, d, g) in letters] \
               + [(_s(c), _s(d), int(g)) for (c, d, g) in suffix]
+        key = (n, tuple(fac))
+        hit = _chi_cache.get(key)
+        if hit is not None:
+            return hit
         out = ph.chi_q_atomic_all_partitions_mpfr(n, fac, Q0S, DPS)
-        return {tuple(lam): mp.mpf(cs) for (lam, cs) in out}
+        res = {tuple(lam): mp.mpf(cs) for (lam, cs) in out}
+        _chi_cache[key] = res
+        return res
 
     print("=" * 74)
     print("1. VALIDATION — reconstruct each committed tr_M from chi and y")
