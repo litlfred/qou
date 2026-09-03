@@ -1211,6 +1211,24 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/skein-mass-from-linking.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-mass-from-linking.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "356ff2891c22",
+          "ts": "a74d0e652bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:30:57Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:30:57Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Statement mixes a Laurent Skein polynomial Q(q) with the real hyperbolic volume Vol(K_i), which is the volume-density shape this mixed chapter carries, and the archimedean side is explicitly flagged by the §7c authorNote in the .ts; prior fail was a non-wall 'Lean sibling missing' refusal.",
+        "evidence": "REGIME. The chapter is mixed, not substrate: mass-theory.ts:3-22 docstring names 'geometric, archimedean, and physical faces' consuming an algebraic core stated upstream, and _folio-chapter-profiles.qou.ts:88-90 admits {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} for mass-theory. The criterion's enumerated substrate chapters (qa-criteria-registry.ts:383-386: braids-and-knots, quantum-observable-universes, models-of-qous, lifting-and-descent, q-geometric-langlands, brings-surface) do not include mass-theory, so FAIL branch 1 does not fire on chapter grounds. The block sits in section 'Algebraic face: transfer matrices, Skein mass, and Markov corrections' > subsection 'Transfer matrices and Skein mass' (mass-theory.ts:119-145, block at :143); every adjudicated peer in that subsection passes this criterion (transfer-matrix-operator, beta-decay-transfer-matrix, transfer-matrix-identities, ground-state-ordering, skein-generation). STATEMENT TOKENS (skein-mass-from-linking.md). Archimedean: line 10 'Vol(K_i)' — hyperbolic volume, a real transcendental (the only genuinely R-valued object). Algebraic/generic: line 15 'Q(q) in Z[q^{+-1}]' (Laurent ring), line 16 'hbar_q = 1 - q^{-1}' (needs q a unit only), line 10 division by hbar_q^2 (unit/field, no ordering). Regime-neutral: line 1-2 mass functional m and hadron H (fraktur physical observable, but a functional not a numeric), line 7 m(L_Hopf), lines 13-14 'binding energy'/'constituent mass' are interpretive labels. NOT present anywhere in the .md: Real.sqrt/log/exp/cos, numeric q or q_0, MeV, m_e, CODATA, order hypotheses, limits over R. Outside the statement: none (the .md is the statement alone; the proof is a separate block). ADJUDICATION. The statement mixes a Laurent-ring Skein polynomial with a real volume — exactly the volume-density shape m = Vol(K)*rho/hbar_q^2 that this chapter exists to carry (cf. peers thurston-volume-additivity, volume-tower-decomposition, algebraic-quantum-volume, all pass). The side IS flagged: skein-mass-from-linking.ts:12-23 carries a §7c authorNote (kind 'note', 2026-08-08) stating that Vol_K : N -> R forces the R and that 'the block sits on the archimedean side of the §7c wall by construction' — the §4d-sanctioned home for such a banner, so the WARN branch ('mixes both regimes without flagging which side') is not met. The .md also self-scopes the archimedean term (line 14: 'zero for torus-knot constituents'). Not FAIL branch 2 either: the statement is not a purely algebraic identity misplaced in an archimedean chapter. Hence PASS: the statement's regime matches the chapter's mixed regime and is explicitly specialised. PRIOR. The 2026-06-28 'fail' (reviewed_sha 6b830a63, field_hash md 8d1b92cd60e8/ts 0c025ddcf791, both since drifted) is grounded solely on 'sibling Lean file is MISSING' — not a wall-side matter for a criterion with depends_on ['md']; it never examined the statement. Side note: the manifest's lean.ref 'qou:QOU.BraidsKnots.skein_mass_from_linking' (ts:5) resolves to the library file content/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean (candidate-2 resolution per AGENTS.md §0a; no sibling is required and a shadowing stub would be forbidden), so even the prior's factual premise was misleading; validation is 'not_checked' (ts:6). Lean not built, per instructions."
       }
     ],
     "wall-side-proof": [
