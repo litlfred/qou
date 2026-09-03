@@ -66,13 +66,25 @@ figure should not settle that question by accident. This does **not** revive the
 the structural negative is independent of any constant and stands — but it changes how much a
 sharper pointwise constant would be worth chasing if the cancellation argument stalls.
 
-## What this does NOT settle
+## What this does NOT settle — and it is sharper than "the `O(1)` is imprecise"
 
-**`O(1)` for the Debye/Olver remainder coefficient is an order of magnitude, not a pinned constant**,
-anywhere in this corpus. Both the `~17×` and every figure here are of the form
-"`K_admissible` vs `O(1)`": `K_admissible` is measured, the ratio is not. Pinning that coefficient is
-separate work, and until it is pinned no shortfall factor in this arc — mine included — is better
-than an order of magnitude.
+`O(1)` for the Debye/Olver remainder coefficient is not a pinned number anywhere in this corpus. But
+[`…_bulk_kernel_rate_probe.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_bulk_kernel_rate_probe.py)
+has already measured something stronger: the pointwise error `|J(x,x+k;θ) − S(k,a)|` **does not decay
+cleanly at all** — its log-log slope **scatters over `b ≈ [−2, +2]`** across `r`, `k` and `θ`, because
+the integer `x` quantises the local density `a = x/√θ` (and `S` is sensitive to `a`), and because the
+sub-leading term oscillates.
+
+**So there is no clean pointwise constant `K` to compare against: the ratio is not merely imprecise,
+it is ill-defined.**
+
+That does not weaken this correction; it relocates it. What is measured here is `K_admissible` — the
+error budget the margin actually allows — which *is* well-defined and was computed 2.943× too small.
+Both `~5.8×` and `~17×` divide that budget by an object the corpus says is not a constant.
+
+**Quote `K_admissible = 0.17115` at θ = 78. Do not quote a shortfall factor at all** — and say the
+pointwise route fails for the *structural* reason (`U/V` unbounded), which is exactly why correcting
+the factor changes no verdict.
 
 ## Blast radius — every site
 
