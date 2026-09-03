@@ -650,3 +650,43 @@ not an artifact of the braid defect". That still holds — but part of the
 INCREASE from the committed values is this rescaling fix, not the braid fix.
 Both changes landed together, so the si28 ratio of 5.69 is their combined
 effect and should not be attributed to either alone.
+
+
+## 2026-09-03 — ca40 (18/19): the two ratios have clearly separated
+
+    atom        stable        | tr_M ratio |  B ratio
+    c14    False -> True      |    -0.0727 |   1.0339
+    n14     True -> True      |     1.2210 |   1.2606
+    o16    False -> True      |     1.0396 |   2.6671
+    ne20   False -> False     |     0.9070 |   3.1236
+    si28   False -> False     |     0.8779 |   5.6852
+    ca40   False -> False     |     0.8772 |  15.8674
+
+Two different things are happening and they should not be conflated:
+
+**`tr_M` is essentially unchanged at high A** — 0.907, 0.878, 0.877, settling
+near a constant ~0.88. That is a ~12% shift, not a structural one, and it
+confirms the earlier finding: the enormous traces (1.5e15 at ca40) are
+intrinsic to the producer, NOT an artifact of the braid defect. `tr_M` comes
+from `nf_tr(build_atom_nf(...))` and never touches the YSN matrices, so the
+residual ~12% is presumably the dps floor and the convention-D `z`, not the
+braid fix at all.
+
+**`B_MeV` diverges, and the ratio is still growing** — 1.03, 1.26, 2.67, 3.12,
+5.69, 15.87. That is the `atom_markov_trace` rescaling (bean `qou-8w8v`):
+`exp(max_ln)` grows with A, so removing the scaling inflates B by a factor
+that grows with A. The shape of the ratio sequence is the evidence for that
+diagnosis, and it is consistent with it.
+
+`B_pred(ca40) = 8,167,488 MeV` against AME2020's ~342 MeV. The committed value
+was 514,735 MeV — also absurd. Both are wrong; the new one is wrong by more,
+and is *more faithful to the documented formula*. That is not a contradiction:
+`E_0*(|tr_free| - |tr_atom|)` over traces that grow like 1e15 cannot produce a
+~342 MeV binding energy, and the old code only looked less absurd because an
+undocumented rescaling was shrinking it.
+
+**So the high-A formula itself is the defect**, not its implementation. That is
+a physics question — worth its own bean now that ca40 confirms the shape from
+two atoms rather than one, and it is NOT something this bean should absorb.
+
+One atom left. fe56's committed values are `tr_M = 5.04e30`, `B = 1.198e9 MeV`.
