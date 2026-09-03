@@ -865,6 +865,22 @@ export default chapter({
       ],
     }),
 
+    // The canonical closure as a link (bean qou-m3sh, 2026-09-03): what the
+    // bond model's cumulants are, what the closure's topology forces, and
+    // which half of Călugăreanu the geometry can supply invariantly.
+    section({
+      title:
+        "The canonical closure as a link: cumulants, the chain form, and what the trace can carry",
+      label: "sec:canonical-closure-as-link",
+      blocks: [
+        "subset-cumulant-recursion",
+        "canonical-closure-torus-chain",
+        "canonical-trace-factorises-over-chain",
+        "torus-chain-pages-on-bring",
+        "frenet-framing-is-not-an-invariant",
+      ],
+    }),
+
     section({
       title: "LP-dual and Jucys-Murphy central elements",
       label: "sec:lp-dual-jucys-murphy",
