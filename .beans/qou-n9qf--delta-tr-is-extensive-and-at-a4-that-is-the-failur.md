@@ -200,8 +200,20 @@ ratio is taken symbolically:
                         4 q^9 [2]_q^3
 ```
 
-`r(q_0) = 0.7019932570132013578` against a measured `0.7019932570132007939`,
-and it predicts `tr_atom(A=3) = 0.5646241124509801` against `...793`.
+`r(q_0) = 0.7019932570132013578` against a measured `0.7019932570132007939`.
+
+**Validated out of sample.** `r(q)` was derived from A = 1 and A = 2 only, so
+A = 3 and A = 4 are predictions rather than fits:
+
+| A | | predicted | measured | rel |
+|---|---|---|---|---|
+| 3 | atom | 0.564624112450980111 | 0.56462411245097933 | 1.4e-15 |
+| 4 | atom | 0.396362319687651586 | 0.396362319687651834 | 6.3e-16 |
+| 4 | free | 1.72335266162679288 | 1.72335266162679656 | 2.1e-15 |
+
+the numeric side being float64-limited by the weight routine. **A = 4 cost
+1958.9 s (33 min) by the matrix route; the closed form is instant**, and A = 6
+is not merely slow by matrices but impossible.
 
 ### Why the headline is wrong
 

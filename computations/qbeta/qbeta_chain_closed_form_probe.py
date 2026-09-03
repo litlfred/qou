@@ -108,8 +108,13 @@ R_DEN = 4*_q**6*(_q**6 + 3*_q**4 + 3*_q**2 + 1)
 T_P = mp.mpf("1.1457596924573008697")
 T_N = mp.mpf("0.98774368811580957163")
 # measured on pure-proton chains, n = 3, 6, 9
-MEAS_ATOM = {1: "1.145759692457301", 2: "0.804315578262544",
-             3: "0.5646241124509793"}
+# A = 1 and A = 2 are what r(q) was DERIVED from; A = 3 and A = 4 are
+# out-of-sample predictions. A = 4 cost 1958.9 s (33 min) by the matrix route.
+MEAS_ATOM = {1: "1.14575969245730086", 2: "0.804315578262543954",
+             3: "0.56462411245097933", 4: "0.396362319687651834"}
+MEAS_FREE_HOMOG = {1: "1.14575969245730086", 2: "1.31276527285984832",
+                   3: "1.50411353530052405", 4: "1.72335266162679656"}
+MATRIX_ROUTE_SECONDS_AT_A4 = 1958.9
 MEAS_FREE = {"2H": ("1.13171690432221", 1, 1),
              "3H": ("1.117846228978227", 1, 2),
              "3He": ("1.296675612244944", 2, 1)}
@@ -169,12 +174,30 @@ def main() -> int:
               abs(r_at_q0 - meas_r) / meas_r < mp.mpf("1e-13"), True,
               "derived by exact Laurent arithmetic, not matched to a candidate")
 
-    pred3 = T_P * r_at_q0**2
-    print(f"  predicts tr_atom(A=3) = {mp.nstr(pred3, 18)}"
-          f"   measured {MEAS_ATOM[3]}")
-    ok &= chk("closed_form_predicts_A_equals_3",
-              abs(pred3 - mp.mpf(MEAS_ATOM[3])) / mp.mpf(MEAS_ATOM[3])
-              < mp.mpf("1e-13"), True)
+    print("\n  OUT-OF-SAMPLE — r(q) was derived from A = 1, 2 only:")
+    oos = []
+    worst_oos = mp.mpf(0)
+    for A in (3, 4):
+        pa = T_P * r_at_q0**(A - 1)
+        pf = T_P**A
+        ra = abs(pa - mp.mpf(MEAS_ATOM[A])) / abs(mp.mpf(MEAS_ATOM[A]))
+        rf = abs(pf - mp.mpf(MEAS_FREE_HOMOG[A])) / abs(mp.mpf(MEAS_FREE_HOMOG[A]))
+        worst_oos = max(worst_oos, ra, rf)
+        oos.append({"A": A, "atom_predicted": mp.nstr(pa, 18),
+                    "atom_measured": MEAS_ATOM[A], "atom_rel": mp.nstr(ra, 4),
+                    "free_predicted": mp.nstr(pf, 18),
+                    "free_measured": MEAS_FREE_HOMOG[A], "free_rel": mp.nstr(rf, 4)})
+        print(f"    A={A}  atom pred {mp.nstr(pa,18):>21}  meas {MEAS_ATOM[A]:>21}"
+              f"  rel {mp.nstr(ra,4)}")
+        print(f"          free pred {mp.nstr(pf,18):>21}  meas "
+              f"{MEAS_FREE_HOMOG[A]:>21}  rel {mp.nstr(rf,4)}")
+    ok &= chk("closed_form_predicts_out_of_sample_A_3_and_4",
+              worst_oos < mp.mpf("1e-13"), True,
+              "derived from A = 1, 2; predicts A = 3, 4 to ~1e-15 "
+              "(float64 weight routine limits the numeric side)")
+    print(f"\n  A = 4 cost {MATRIX_ROUTE_SECONDS_AT_A4} s (33 min) by the matrix "
+          f"route; the closed form is instant, and A = 6 is impossible by "
+          f"matrices.")
 
     print("\n" + "=" * 74)
     print("4. THE CLOSED FORM REFUTES 'Delta_tr IS EXTENSIVE'")
@@ -216,7 +239,9 @@ def main() -> int:
         "data": {"free_factorisation": free_rows,
                  "r_numerator_factored": str(sp.factor(R_NUM)),
                  "r_denominator_factored": str(den_factored),
-                 "growth": grow},
+                 "growth": grow,
+                 "out_of_sample": oos,
+                 "matrix_route_seconds_at_A4": MATRIX_ROUTE_SECONDS_AT_A4},
         "context": {
             "axis": "can the extensivity question be settled symbolically, "
                     "bypassing the n >= 15 dimension wall?",

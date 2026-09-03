@@ -22,10 +22,11 @@
       "note": "derived by exact Laurent arithmetic, not matched to a candidate"
     },
     {
-      "name": "closed_form_predicts_A_equals_3",
+      "name": "closed_form_predicts_out_of_sample_A_3_and_4",
       "computed": true,
       "expected": true,
-      "passed": true
+      "passed": true,
+      "note": "derived from A = 1, 2; predicts A = 3, 4 to ~1e-15 (float64 weight routine limits the numeric side)"
     },
     {
       "name": "delta_per_A_is_NOT_flat_over_the_full_range",
@@ -132,7 +133,28 @@
         "delta_tr": "231.068949645",
         "delta_per_A": "5.7767237"
       }
-    ]
+    ],
+    "out_of_sample": [
+      {
+        "A": 3,
+        "atom_predicted": "0.564624112450980111",
+        "atom_measured": "0.56462411245097933",
+        "atom_rel": "1.383e-15",
+        "free_predicted": "1.50411353530052487",
+        "free_measured": "1.50411353530052405",
+        "free_rel": "5.478e-16"
+      },
+      {
+        "A": 4,
+        "atom_predicted": "0.396362319687651586",
+        "atom_measured": "0.396362319687651834",
+        "atom_rel": "6.265e-16",
+        "free_predicted": "1.72335266162679293",
+        "free_measured": "1.72335266162679656",
+        "free_rel": "2.104e-15"
+      }
+    ],
+    "matrix_route_seconds_at_A4": 1958.9
   },
   "context": {
     "axis": "can the extensivity question be settled symbolically, bypassing the n >= 15 dimension wall?",
@@ -140,14 +162,14 @@
     "consequence": "The closed form REFUTES qou-n9qf's headline. Delta_tr(A) = t_p(t_p^(A-1) - r^(A-1)) is asymptotically exponential, not linear: Delta_tr/A runs 0.254 at A=2 to 5.777 at A=40. The four calibration atoms sat in a shallow region, and t_p > 1 > t_n keeps near-symmetric light nuclei there. The measurement stands; the word 'extensive' is withdrawn.",
     "scope": "Sections 2-4 are for a HOMOGENEOUS pure-proton chain. Real atoms mix p and n, so their p-p, p-n and n-n interfaces need a multi-state transfer matrix, which is not derived here. Section 1 does hold for real atoms."
   },
-  "gitCommit": "5ef896095d835996979ed35ef9d32ffb0fb2a620",
+  "gitCommit": "ab26fb0b2b343044795aae1062d55f5804489374",
   "durationMs": 0,
   "scriptFile": "qbeta_chain_closed_form_probe.py",
-  "scriptHash": "4f22e8bdc09f",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5ef896095d835996979ed35ef9d32ffb0fb2a620",
+  "scriptHash": "2fb8ff6484c0",
+  "scriptCommitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
+  "commitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
   "engine": "mpmath+sympy",
-  "computedAt": "2026-09-03T15:57:12.525946+00:00",
+  "computedAt": "2026-09-03T16:24:14.083419+00:00",
   "q0Anchor": "proton (experimental pin)",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
