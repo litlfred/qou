@@ -25,14 +25,24 @@ the middle step being cyclicity applied to `ρ·σ_{a+1}` and `σ_a`.
 object — and says the whole thing is governed by how the braid word fails to commute with each
 generator: if `ρ` commuted with every `σ_a`, the trace would vanish identically in every irrep.
 
-**What it does not give (measured, `magnus_curvature_commutator_identity_probe.py`).** The
-`b(λ)`-decay is **not** present in the commutator *norm*: the normalised
-`Σ_a ‖[ρ,σ_a]‖_F / (dim·‖ρ‖_F)` does not decrease with `b(λ)` — at A = 2 it *rises* on the
-high-`b` shapes (0.93 at `b=1`, then 1.11, 1.39, 1.22 at `b = 3, 4`) while `|tr|/dim` falls
-monotonically. So the decay is a **cancellation** in the pairing against `σ_{a+1}`, not a size
-effect, and no norm bound `|tr| ≤ Σ_a ‖[ρ,σ_a]‖·‖σ_{a+1}‖` can produce it. That is the negative
-result `(★)` buys, and it is why the hook bound (#6520) had to go through the *spectrum*
-(`e_j` of the Burau moduli) rather than a norm.
+**What it does NOT settle — the mechanism is OPEN (measured,
+`magnus_curvature_commutator_identity_probe.py`).** `(★)` says *what* the decay object is; it does
+not say whether the `b(λ)`-decay is a **size** effect (already in `‖[ρ,σ_a]‖`) or a
+**cancellation** in the pairing against `σ_{a+1}`. The probe reports the normalised
+`Σ_a ‖[ρ,σ_a]‖_F / (dim·‖ρ‖_F)` next to `|tr|/dim`, and **the two orders disagree across the two
+sizes measured so far**:
+
+* **A = 2** (all 11 shapes): the norm *rises* on high-`b` shapes — 0.93 at `b=1`, then 1.11, 1.39,
+  1.22 at `b = 3, 4` — while `|tr|/dim` falls monotonically. That would mean cancellation, and
+  that no norm bound `|tr| ≤ Σ_a ‖[ρ,σ_a]‖·‖σ_{a+1}‖` can produce the decay.
+* **A = 3** (partial, through `b = 4` of `b_max = 8`): the norm is uniformly smaller and *falls*
+  — 0.76, 0.28, 0.17, 0.087, 0.20, 0.058 — which would suggest the opposite.
+
+Both cannot be the general story, and the deciding data — the A = 3 high-`b` tail, exactly where
+A = 2 turned upward — is **not yet measured**. So no claim is made here either way. What is
+independently true is that the hook bound (#6520) *did* have to go through the spectrum (`e_j` of
+the Burau moduli) rather than a norm; whether that was forced by cancellation or was merely the
+route taken is part of the same open question.
 
 **Scope.** Sorry-free and unconditional, over any `R`-algebra `A` with an `R`-linear functional
 `tr` satisfying cyclicity `tr (x*y) = tr (y*x)` — the hypothesis is carried explicitly, since a
@@ -59,14 +69,8 @@ theorem trace_mul_commutator_eq (tr : A →ₗ[R] R)
     (hcyc : ∀ x y : A, tr (x * y) = tr (y * x)) (ρ x y : A) :
     tr (ρ * (x * y - y * x)) = tr ((ρ * x - x * ρ) * y) := by
   have h : tr (ρ * (y * x)) = tr ((x * ρ) * y) := by
-    have : ρ * (y * x) = (ρ * y) * x := by ring
-    rw [this, hcyc (ρ * y) x]
-    congr 1
-    ring
-  rw [mul_sub, map_sub, h, sub_mul, map_sub]
-  congr 1
-  congr 1
-  ring
+    rw [← mul_assoc, hcyc (ρ * y) x, mul_assoc]
+  rw [mul_sub, map_sub, h, sub_mul, map_sub, ← mul_assoc]
 
 /-- **(★) The curvature trace is a commutator-with-`ρ` sum.**
 `tr (ρ · Σ_a [σ_a, σ_{a+1}]) = Σ_a tr ([ρ, σ_a] · σ_{a+1})`, in every representation — no
