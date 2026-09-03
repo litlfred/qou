@@ -159,8 +159,8 @@ Recipes and full diagnosis: [`api-down-and-shared-worktree.md`](api-down-and-sha
 1. **The API can be dead session-wide while `git` is fine** — `mcp__github__*`
    "No such tool available", REST 403 *"GitHub access is not enabled for this
    session"*: an Anthropic session gate, not permission or rate limiting, and it
-   does not clear on retry. **Intermittent** — down on #6395/#6396 and
-   #6400/#6401, up on #6404/#6405 the same day; check, don't assume. Merge
+   does not clear on retry. **Intermittent** — down on #6395/#6396, #6400/#6401
+   and #6415, up on #6404/#6405 the same day; check, don't assume. Merge
    git-natively: branch first, then the **same SHA** to `main`, non-force (so it
    is FF-only and self-guarding).
 2. **`/home/user/qou` is SHARED with concurrent siblings** — a sibling's commit
