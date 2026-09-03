@@ -292,9 +292,23 @@ def main() -> int:
             "corpus_quoted_r2_arc": "0.83",
             "corpus_quoted_r2_signed_h": "0.26",
             "r2_ame_vs_arc_exact": str(ceiling),
-            "r2_ame_vs_arc_float": float(ceiling),
+            # `r2_ame_vs_arc_float` (the `float(ceiling)` twin) is GONE, and
+            # `regressor_race` now carries the exact Fractions rather than
+            # their float64 images. Four raw float64 fields, and every one was
+            # a redundant convenience copy: `ceiling` and every value in `vals`
+            # is an exact `Fraction`, so the float carried strictly less than
+            # the string beside it while taking the raw-float64 ratchet RED.
+            #
+            # Dropping it is safe rather than merely tidy: the only reader of
+            # either field in the whole tree is this producer (checked across
+            # computations/, content/, docs/, scripts/, tools/).
+            #
+            # Exact form also states the FINDING better. The point of the race
+            # is that three different regressors score IDENTICALLY -- which as
+            # exact rationals is literally the same string three times, where
+            # three equal floats invite "rounded to the same value".
             "n_nuclei_ame": len(keys),
-            "regressor_race": {k: float(v) for k, v in vals.items()},
+            "regressor_race_exact": {k: str(v) for k, v in vals.items()},
             "shallow_clone_caveat": (
                 "This clone is shallow; only 2 commits touching the cited "
                 "witness are in the fetched window and both carry 0.2653. An "
