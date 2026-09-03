@@ -59,10 +59,28 @@ COMP = REPO / "computations"
 
 
 def load_canonical_q() -> str:
-    d = json.loads((COMP / "q-pinning-50-digit.witness.json").read_text())
-    q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595642"), q
-    return q
+    """q_0 at the RUNNING SCRIPT's anchor.
+
+    Routed through `q_parameter` on 2026-08-30 (bean `qou-aj91`). It used to
+    read `q-pinning-50-digit.witness.json` directly and assert the muon prefix
+    `1.109978595642`, which made QOU_Q0_ANCHOR inert here and put this producer
+    in the UNSOUND-ENV-BYPASS group -- unmeasurable, not held for cause.
+
+    THE ANCHOR IS UNCHANGED. This stem stays listed `ideal_muon`, and
+    `q_parameter` derives the muon value from `q_muon_at(70)`, byte-identical to
+    all 70 digits of what the direct read returned. So this is a no-op for every
+    number here; only the mechanism moved, from a hardcode to the manifest.
+
+    Re-anchoring the he4 pair to proton is deliberately NOT done here. This
+    producer writes `he4-binding-k-stage2.witness.json` and
+    `he4_stage2_ranking_seminormal_xcheck` reads it back as its authoritative
+    value, so the two must move together and be regenerated together, or the
+    cross-check compares across an 11.6141 ppb anchor gap. That is exactly how
+    `cross_check_trM_cw_seminormal_leg` came to be failing on main at 1e-7
+    against a 1e-15 tolerance.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
+    return Q_50_DIGIT_STR
 
 
 def classify(triples, h_f64):
