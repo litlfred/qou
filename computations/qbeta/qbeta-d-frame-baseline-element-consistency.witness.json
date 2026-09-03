@@ -1,0 +1,97 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T04:30:38.522603+00:00",
+  "commitSha": "2cf6afcbf851cafa4930ae51405dc9695855b64c",
+  "assertions": [
+    {
+      "name": "frobenius_pairing_at_N2_IS_the_markov_trace_at_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "published_ratio_REPRODUCES_at_92_1058_and_is_cross_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_two_consistent_ratios_BRACKET_the_published_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_recorded_2_793x_understatement_is_DELTA_S_CONDITIONAL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_straddle_took_the_flattering_half_of_each_element",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1908,
+  "computation": "qbeta-d-frame-baseline-element-consistency",
+  "scriptFile": "qbeta_d_frame_baseline_element_consistency_probe.py",
+  "scriptHash": "859436542c82",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e186e42e6d8dd38a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_d_frame_baseline_element_consistency_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_baseline_element_consistency_probe.py"
+  },
+  "description": "The D-frame trace baseline's published 92.1058x ratio takes its counit from Delta_S (the short model's closed form h^2/2 - h) and its Markov trace from Delta_L (hecke_core's 11-crossing gen-grouped words) -- two different elements of H_3(q), bean qou-bg3w. Priced consistently the ratio is 257.26x on Delta_S and 0.6237x on Delta_L, so the published figure is BRACKETED by the two rather than approximating either, and the recorded reading 'understates by 2.793x' is itself Delta_S-conditional. Scope-(a): pricing consistency only; adjudicates no element and moves no observable.",
+  "data": {
+    "frobenius_N2_delta_L": "-0.158016004341491298055061430272824323888679302880694229735464",
+    "markov_trace_zD_delta_L": "-0.158016004341491298055061430272824323888679302880732650728172",
+    "frobenius_pairing_at_N2_IS_the_markov_trace_at_zD": true,
+    "net_delta_S": "-0.187207194529378320729836545290980788975650514906301909171128",
+    "net_delta_L": "-0.233197711315658702040064033324676534335823282033378295189022",
+    "trace_zD_delta_S": "-0.106235639848092790892141987160551894399375838398475952284352",
+    "trace_zD_delta_L": "-0.158016004341491298055061430272824323888679302880732650728172",
+    "err_net_delta_S": "0.00167756873104829946723350200931500391578271731381090844198163",
+    "err_net_delta_L": "0.247756087000475298282328105756582052521343832927312518268084",
+    "err_trace_delta_S": "-0.431571752874458076893075387059482675607649443821582678554584",
+    "err_trace_delta_L": "-0.154513866588921007566131683419025469092317696466308264796147",
+    "ratio_published_cross_element": "92.1058337158958078293820971505915498676663454148135803432327",
+    "ratio_consistent_delta_S": "257.260251032917317667760281845639423553256645359445308112370",
+    "ratio_consistent_delta_L": "0.623653160088149867697794608075218227379636651802077854994378",
+    "published_ratio_REPRODUCES_at_92_1058_and_is_cross_element": true,
+    "the_two_consistent_ratios_BRACKET_the_published_one": true,
+    "understatement_vs_delta_S": "2.79309399474572946922775638724440671775774622361959148824133",
+    "overstatement_vs_delta_L": "147.687592415754240862545371287060275093851252420495953221940",
+    "the_recorded_2_793x_understatement_is_DELTA_S_CONDITIONAL": true,
+    "the_straddle_took_the_flattering_half_of_each_element": true,
+    "scope": "(a) pricing consistency only"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
