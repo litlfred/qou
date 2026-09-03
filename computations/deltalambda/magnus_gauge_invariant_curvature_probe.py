@@ -41,8 +41,12 @@ import mpmath as mp  # noqa: E402
 import he4_magnus_omega2_sign_sparse_probe as base  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from magnus_extreme_rep_endpoint_probe import omega2_trace  # noqa: E402
-from magnus_hook_exterior_power_probe import word_dense, word_trace  # noqa: E402
 from magnus_two_row_rmatrix_probe import r_matrix, embed  # noqa: E402
+
+# Pin precision EXPLICITLY here (do not rely on the base module setting mp.mp.dps as an import
+# side effect): the ~1e-140 gauge-invariance agreement below is a genuine dps-floor match, so the
+# claim degrades silently to the 15-dps default if that side effect ever changes.
+mp.mp.dps = 140
 
 
 def sigma_dense_list(shape, q):
@@ -127,17 +131,20 @@ def main():
 
     # ------- (1) GAUGE-INVARIANCE via Schur–Weyl two-row sum -------
     lhsP = mp.mpf(0)
-    lhsg = mp.mpf(0)
-    for k, lam, dim, mult, trP, trg in sorted(two_row_rows):
+    for k, lam, dim, mult, trP, _trg in sorted(two_row_rows):
         lhsP += mult * mp.re(trP)
-        lhsg += mult * mp.re(trg)
     rhsP, _ = projector_curvature_trace_rmatrix(A, q)
     relP = abs(lhsP - rhsP) / (abs(lhsP) + mp.mpf(10) ** -80)
     print(f"\n  (1) GAUGE-INVARIANCE  Σ_k (n-2k+1)·tr_(n-k,k)(ρΩ₂^P)  vs  tr_(ℂ²)^⊗n(ρΩ₂^P):")
     print(f"      seminormal weighted sum = {mp.nstr(lhsP,14)}")
     print(f"      R-matrix tensor trace   = {mp.nstr(mp.re(rhsP),14)}")
+    # Ω₂^P is an EXACT algebra element (no finite difference anywhere), so the two-gauge agreement
+    # is a genuine dps-floor match (~1e-140 at 140 dps). Gate at 1e-100 — far below the true match
+    # yet far above the germ's 6.5% miss — so a real regression cannot slip through a lax 1e-20.
+    GAUGE_TOL = mp.mpf(10) ** -100
+    gauge_ok = relP < GAUGE_TOL
     print(f"      |Δ_rel| = {mp.nstr(relP,4)}   "
-          f"{'✓ GAUGE-INVARIANT (matches to ~1e-140)' if relP < mp.mpf(10)**-20 else '✗ differs'}")
+          f"{'✓ GAUGE-INVARIANT (< 1e-100; measured ~1e-140)' if gauge_ok else '✗ differs — NOT gauge-invariant'}")
     print(f"      [contrast: the germ Ω₂ misses this same test by 6.5% (#6432) — it is NOT an algebra element]")
 
     # ------- (2) does Ω₂^P equal the seminormal-germ decay object? -------
