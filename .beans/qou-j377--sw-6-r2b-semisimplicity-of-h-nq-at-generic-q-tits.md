@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T09:09:54Z
+updated_at: 2026-09-03T12:56:27Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -336,3 +336,68 @@ declaration at `:=` and searches the header.
 defined there.  So the order is `SeminormalRep` → `OffDiagNonvanishing` /
 `QJucysMurphyEigen` → the three `Seminormal*` leaves → `HeckeProductSurjective` →
 `HeckeWedderburnGeneral`.
+
+
+## 2026-09-03 — TRANCHE COMPLETE: `heckeWedderburn` is general-field, 0 `ℝ` on the path
+
+    isSemisimpleRing_hecke_generic {K} [Field K] [CharZero K] (q : K)
+        (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
+      IsSemisimpleRing (Hecke K q q⁻¹ n)
+
+`scripts/lean-general-field-tranche-scope.py` reports **`TRANCHE: 0 ℝ-carrying
+declarations across 0 modules`** — from 54/10 at the start of this arc.
+
+Nine modules retyped in the forced order: `SeminormalRep` → `OffDiagNonvanishing` /
+`QJucysMurphyEigen` → `SeminormalSimpleSpectrum` / `SeminormalRange` /
+`SeminormalRangeTop` → `SeminormalInequivalence` → `HeckeProductSurjective` →
+`HeckeWedderburnGeneral`.
+
+### The design choice that made 41 call sites into 5
+
+**`zpow_ne_one` keeps its hypothesis NAMED `hq2` while its TYPE moves** from `q ^ 2 ≠ 1`
+to `NotRootOfUnity q`.  So `zpow_ne_one hq0 hq2` → `zpow_ne_one hq2` mechanically (the
+`hq0` is genuinely unnecessary — `0 ^ m ≠ 1` either way), and the `seminormalParam_*`
+lemmas, which still want `q ^ 2 ≠ 1`, take `GenericParameter.sq_ne_one hq2`.
+
+### TWO CHARACTERISTIC HYPOTHESES — the only places this was not a retyping
+
+1. **`barSymJMSum_block_eigenvalue_zero_false` needs `(2 : K) ≠ 0`.**  Over `ℝ` the
+   contradiction is `1 + 1 = 0` in the block algebra, closed by `simp` on a diagonal
+   entry.  In characteristic two that equation **holds**, so the statement is **false**
+   there.
+2. **The power-sum cone needs `[CharZero K]`** (7 signatures, from
+   `contentCount_eq_of_contentPowSum_eq`).  `exact_mod_cast` on `(card : K) = (card : K)`
+   is valid only in characteristic zero.  *"Equal power sums force equal exponent
+   multisets"* is a characteristic-zero fact and now says so.
+
+Both are recorded at the declaration, not only in the commit.
+
+### The complete list of proof repairs, across ~3300 lines
+
+One `linarith` → `linear_combination` (`SeminormalRep`); three `sub_ne_zero` shapes
+(`OffDiagNonvanishing`); one `simp only [seminormalGen]` → `unfold` (the extra universe
+from `K` broke the equation lemma); one `rfl` → `norm_cast`; two explicit `(K := K)`
+where `finrank` could not infer it.  **That is all of it** — confirming what
+`SeminormalParam` suggested: most of the `ℝ` was inherited from `variable` lines.
+
+### Added
+
+`GenericParameter.pow_notRootOfUnity` — a positive power of a non-root-of-unity is one;
+needed wherever the development passes to `q ^ 2`.
+
+### §7c splits
+
+`HeckeSemisimpleReal.lean` (the substrate-shaped `isSemisimpleRing_hecke` + the three
+`1 < q` forms) and `SeminormalParamAnchorReal.lean`.  The `ℝ` corollary is **derived**
+from the generic theorem via `ofSqNeOne`, so nothing downstream changed shape.
+`isSemisimpleRing_blocks` and `coshSum_transpose` turned out to need no work at all —
+`inferInstance` and a zpow identity respectively.
+
+### NOT done — do not over-read this
+
+`isSemisimpleRing_iwahoriHecke` (the `T_w` / `twGram` carrier) is **still `ℝ`**: it uses
+`Real.sqrt` to name the `q` with `q ^ 2 = Q`.  That is a separate, smaller step, not part
+of this tranche.
+
+Verified after rebasing onto main (78 commits): `lean`-direct exit 0 on all 15 modules;
+`#print axioms` unchanged; `check-sidecars` zero action lines.
