@@ -1,53 +1,53 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:53:16.582447+00:00",
-  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
+  "computedAt": "2026-09-03T04:43:21.600443+00:00",
+  "commitSha": "f7bcd9d9952464b75c757e892e527ea713801eca",
   "assertions": [
     {
       "name": "delta_n2_shadow_price_varies_with_braid_word",
-      "computed": 0.12286051354167361,
-      "expected": 0.1228605135,
+      "computed": "0.122860513541673610363906226441339889677665716756016923581339208132069",
+      "expected": "0.1228605135",
       "passed": true,
       "tolerance": "1e-08",
       "source": "|ratio_Δ_n²(σ_1^7σ_2^4) − ratio_Δ_n²(1)| = |1.30826685909 − 1.18540634555|. A uniform Δ_n² scalar predicts exactly 0 for every pair of braid words, so any nonzero spread refutes the Phase 1.11 discharge. NOTE: this shows braid-word dependence, which is what the uniform hypothesis denies; proton-vs-NEUTRON specifically is still deferred with the σ⁻¹-aware chain."
     },
     {
       "name": "phase_1_11_uniform_scalar_reproduced",
-      "computed": 1.0164642574168032,
-      "expected": 1.0165,
+      "computed": "1.016464257416803152336583523382945618226756939011231046802816456951954",
+      "expected": "1.0165",
       "passed": true,
       "tolerance": "5e-05",
       "source": "dim²-weighted Σ_λ (f^λ)²q_0^{c(λ)} / Σ_λ (f^λ)² with f^λ=(1,2,1) and c(λ)=(3,0,−3); the prose quotes Phase 1.11's value as 1.0165 — rebuilt here so the quoted figure is confronted rather than restated"
     },
     {
       "name": "proton_shadow_price_departs_from_uniform_scalar",
-      "computed": 0.29180260167418653,
-      "expected": 0.2918026017,
+      "computed": "0.2918026016741865298954041475921224368499579029597756049513469558412323",
+      "expected": "0.2918026017",
       "passed": true,
       "tolerance": "1e-08",
       "source": "|ratio_Δ_n²(p) − ⟨q^c⟩_dim²| = 0.291802601674; the size of the error Phase 1.11's uniform discharge makes on the proton alone"
     },
     {
       "name": "chi_lambda_at_identity_equals_block_dimension",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
       "source": "max_λ |χ^λ(σ_1^0σ_2^0) − f^λ| with f^λ = (1,2,1) the known S_3 irrep dimensions; exercises chi_std_h3 and chi_one_dim at the one argument whose value is fixed a priori"
     },
     {
       "name": "identity_braid_ratio_agrees_with_closed_form",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-40",
       "source": "the control ratio via the full χ^λ pipeline vs its closed form Σ_λ y_λ f^λ q^{c(λ)} (valid because χ^λ(1)=f^λ and Σ_λ y_λ f^λ = 1); two routes to the same number"
     },
     {
       "name": "solved_y_lambda_satisfy_markov_axioms_at_q0",
-      "computed": 2.817248543312573e-18,
-      "expected": 0.0,
+      "computed": "0.000000000000000002817248543312572878773409546326011388972832491192009382955320721991635",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-15",
       "source": "max residual of the three Markov axioms (Σy f=1, Σy χ(σ_1)=z, Σy χ(σ_1σ_2)=z²) at q_0 = 2.81725e-18; floor 1e-15 is the float64 q_0's own precision, not a fitted band"
@@ -60,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 22,
   "computation": "delta-n2-lp-dual-extraction",
   "scriptFile": "delta_n2_lp_dual_extraction.py",
-  "scriptHash": "3fc6ade17840",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "b8c6ac61838c",
+  "scriptCommitSha": "e8b4dea4ee4b1a0469126f92d786d9647a3b1c61",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,7 +79,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -90,31 +90,31 @@
   "description": "Item 4b PROPER (LP-dual) — Δ_n² discharge via per-particle shadow-price extraction.  Computes u^{(Δ_n²)*}(β) = Σ_λ y_λ(q) · q^{c(λ)} · χ^λ(β) for the proton via the closed-form Markov-trace chain (Phase 1.6 / option_b_proton_mass_full_chain.py).  Verifies that Δ_n² is PARTICLE-DEPENDENT, not a uniform scalar — Phase 1.11's simplified discharge missed this.  Per term7-alpha5's prop:mass-formula-iterative-lp-dual, the proper formulation is m = Σ_l u^{(l)*}, where each u^{(l)*} carries the per-braid information.  Δ_n² is the saturated-shell limit at ℓ = n.  Confirms Item 2 (m_n via difference formula) is the framework-consistent closure.",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {
-    "q_0": 1.1099785827513808
+    "q_0": "1.1099785827513808"
   },
   "data": {
     "y_lambda_at_q0": {
-      "(3,)": 0.5018014088346436,
-      "(2, 1)": 0.2509007044173218,
-      "(1, 1, 1)": -0.003602817669287202
+      "(3,)": "0.501801408834643601062519567746824091886783732583269753578354",
+      "(2, 1)": "0.250900704417321800531259783873412045943391866291634876789177",
+      "(1, 1, 1)": "-0.00360281766928720212503913549364818377356746516653950715670809"
     },
     "q_to_c_at_q0": {
-      "(3,)": 1.3675518369513853,
-      "(2, 1)": 1.0,
-      "(1, 1, 1)": 0.7312337075494336
+      "(3,)": "1.36755183695138529974779013097013419837869971192403000950256",
+      "(2, 1)": "1.00000000000000000000000000000000000000000000000000000000000",
+      "(1, 1, 1)": "0.731233707549433614271711009327539510981841922143356271314341"
     },
     "chi_lambda_proton_at_q0": {
-      "(3,)": 3.151088420630976,
-      "(2, 1)": 1.2034860665075826,
-      "(1, 1, 1)": -0.31735066317173016
+      "(3,)": "3.15108842063097573113437369850435938970605994337703899955712",
+      "(2, 1)": "1.20348606650758251795492966142655003249046903865429883673542",
+      "(1, 1, 1)": "-0.317350663171730177371296737673006904305520865799688552791406"
     },
-    "tr_M_proton_at_q0": 1.884319467254975,
-    "tr_M_delta_n2_proton_at_q0": 2.465192710949673,
-    "delta_n2_shadow_price_ratio_proton": 1.3082668590909896,
+    "tr_M_proton_at_q0": "1.88431946725497502509029472310815626347249744177148556611060",
+    "tr_M_delta_n2_proton_at_q0": "2.46519271094967315774740454381735292029461882042047063215189",
+    "delta_n2_shadow_price_ratio_proton": "1.30826685909098968223198767097506805507671484197100665175416",
     "interpretation": "u^{(Δ_n²)*}(β) is particle-dependent. The simplified Phase 1.11 discharge (uniform dim²-weighted ⟨q^{c(λ)}⟩ = 1.0165) made the neutron error 0.09 pp worse. The proper LP-dual extraction per term7-alpha5's formalism gives ratio_Δ_n²(p) ≠ ratio_Δ_n²(n), so a single scalar discharge cannot capture Δ_n²'s effect on p−n splitting. The neutron extraction requires a separate closed-form chain for the σ⁻¹-rich neutron braid word, which is naturally subsumed by Item 2's difference formula.",
-    "delta_n2_shadow_price_ratio_identity_braid": 1.185406345549316,
-    "phase_1_11_uniform_dim2_weighted_scalar": 1.0164642574168032,
-    "braid_word_spread_of_shadow_price": 0.12286051354167361,
+    "delta_n2_shadow_price_ratio_identity_braid": "1.18540634554931607186808144453372816539904912521498972817282",
+    "phase_1_11_uniform_dim2_weighted_scalar": "1.01646425741680315233658352338294561822675693901123104680282",
+    "braid_word_spread_of_shadow_price": "0.122860513541673610363906226441339889677665716756016923581339",
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",

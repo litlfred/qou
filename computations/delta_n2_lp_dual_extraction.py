@@ -339,14 +339,14 @@ def main() -> int:
         "framework-consistent closure."
     )
     w.set_content_block("conj:categorical-neutrality-saturated-shells")
-    w.add_parameter("q_0", float(Q0_FLOAT))
-    w.add_data("y_lambda_at_q0", {str(k): float(v) for k, v in y_at_q0.items()})
-    w.add_data("q_to_c_at_q0", {str(k): float(v) for k, v in qc_at_q0.items()})
+    w.add_parameter("q_0", fmt(Q0_FLOAT))
+    w.add_data("y_lambda_at_q0", {str(k): fmt(v) for k, v in y_at_q0.items()})
+    w.add_data("q_to_c_at_q0", {str(k): fmt(v) for k, v in qc_at_q0.items()})
     w.add_data("chi_lambda_proton_at_q0",
-               {str(k): float(v) for k, v in chi_at_q0["proton (σ_1^7 σ_2^4)"].items()})
-    w.add_data("tr_M_proton_at_q0", float(tr_M_proton))
-    w.add_data("tr_M_delta_n2_proton_at_q0", float(delta_n2_proton))
-    w.add_data("delta_n2_shadow_price_ratio_proton", float(ratio_proton))
+               {str(k): fmt(v) for k, v in chi_at_q0["proton (σ_1^7 σ_2^4)"].items()})
+    w.add_data("tr_M_proton_at_q0", fmt(tr_M_proton))
+    w.add_data("tr_M_delta_n2_proton_at_q0", fmt(delta_n2_proton))
+    w.add_data("delta_n2_shadow_price_ratio_proton", fmt(ratio_proton))
     w.add_data("interpretation", (
         "u^{(Δ_n²)*}(β) is particle-dependent. The simplified Phase 1.11 "
         "discharge (uniform dim²-weighted ⟨q^{c(λ)}⟩ = 1.0165) made the "
@@ -357,9 +357,9 @@ def main() -> int:
         "closed-form chain for the σ⁻¹-rich neutron braid word, which "
         "is naturally subsumed by Item 2's difference formula."
     ))
-    w.add_data("delta_n2_shadow_price_ratio_identity_braid", float(ratio_identity))
-    w.add_data("phase_1_11_uniform_dim2_weighted_scalar", float(uniform_scalar))
-    w.add_data("braid_word_spread_of_shadow_price", float(braid_spread))
+    w.add_data("delta_n2_shadow_price_ratio_identity_braid", fmt(ratio_identity))
+    w.add_data("phase_1_11_uniform_dim2_weighted_scalar", fmt(uniform_scalar))
+    w.add_data("braid_word_spread_of_shadow_price", fmt(braid_spread))
 
     # Was `computed=True, expected=True` with the comment "demonstrated by
     # computing the proton-specific value" (bean `qou-26f2`).  One particle
@@ -370,8 +370,8 @@ def main() -> int:
     # the pipeline producing it trustworthy.
     w.add_assertion(
         "delta_n2_shadow_price_varies_with_braid_word",
-        computed=float(braid_spread),
-        expected=0.1228605135,
+        computed=braid_spread,
+        expected="0.1228605135",
         tolerance=1e-8,
         source="|ratio_Δ_n²(σ_1^7σ_2^4) − ratio_Δ_n²(1)| = "
                f"|{mp.nstr(ratio_proton, 12)} − {mp.nstr(ratio_identity, 12)}|. "
@@ -383,8 +383,8 @@ def main() -> int:
     )
     w.add_assertion(
         "phase_1_11_uniform_scalar_reproduced",
-        computed=float(uniform_scalar),
-        expected=1.0165,
+        computed=uniform_scalar,
+        expected="1.0165",
         tolerance=5e-5,
         source="dim²-weighted Σ_λ (f^λ)²q_0^{c(λ)} / Σ_λ (f^λ)² with "
                "f^λ=(1,2,1) and c(λ)=(3,0,−3); the prose quotes Phase 1.11's "
@@ -393,8 +393,8 @@ def main() -> int:
     )
     w.add_assertion(
         "proton_shadow_price_departs_from_uniform_scalar",
-        computed=float(proton_vs_uniform),
-        expected=0.2918026017,
+        computed=proton_vs_uniform,
+        expected="0.2918026017",
         tolerance=1e-8,
         source=f"|ratio_Δ_n²(p) − ⟨q^c⟩_dim²| = {mp.nstr(proton_vs_uniform, 12)}; "
                "the size of the error Phase 1.11's uniform discharge makes on "
@@ -403,8 +403,8 @@ def main() -> int:
     # Controls on the pipeline the three numbers above come out of.
     w.add_assertion(
         "chi_lambda_at_identity_equals_block_dimension",
-        computed=float(chi_identity_dim_gap),
-        expected=0.0,
+        computed=chi_identity_dim_gap,
+        expected="0",
         tolerance=1e-40,
         source="max_λ |χ^λ(σ_1^0σ_2^0) − f^λ| with f^λ = (1,2,1) the known S_3 "
                "irrep dimensions; exercises chi_std_h3 and chi_one_dim at the "
@@ -412,8 +412,8 @@ def main() -> int:
     )
     w.add_assertion(
         "identity_braid_ratio_agrees_with_closed_form",
-        computed=float(ratio_identity_route_gap),
-        expected=0.0,
+        computed=ratio_identity_route_gap,
+        expected="0",
         tolerance=1e-40,
         source="the control ratio via the full χ^λ pipeline vs its closed "
                "form Σ_λ y_λ f^λ q^{c(λ)} (valid because χ^λ(1)=f^λ and "
@@ -421,8 +421,8 @@ def main() -> int:
     )
     w.add_assertion(
         "solved_y_lambda_satisfy_markov_axioms_at_q0",
-        computed=float(markov_residual),
-        expected=0.0,
+        computed=markov_residual,
+        expected="0",
         tolerance=1e-15,
         source="max residual of the three Markov axioms (Σy f=1, Σy χ(σ_1)=z, "
                f"Σy χ(σ_1σ_2)=z²) at q_0 = {mp.nstr(markov_residual, 6)}; floor "
