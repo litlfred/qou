@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:48:02.508808+00:00",
-  "commitSha": "f3afaa8c51d01c2e3163120d3f5ff85a40f782e5",
+  "computedAt": "2026-09-03T04:41:51.797882+00:00",
+  "commitSha": "ad13600fdb2001a4bd70f749e817e5db917fecf9",
   "assertions": [
     {
       "name": "seminormal_braid_relation",
@@ -124,7 +124,7 @@
   "computation": "h3-gram-degeneracy-is-wedderburn-weight-vanishing",
   "scriptFile": "h3_gram_degeneracy_is_wedderburn_weight_vanishing.py",
   "scriptHash": "234334f47611",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bd98bb54156467a92dc495fd638e04fd1d007180",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -139,7 +139,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -269,5 +269,7 @@
       "psi": "1.46557123187676802665673122522"
     },
     "scope": "Scope-(b) for 'the (2,1) Wedderburn weight cannot vanish at any real q under convention D', with the invariant cited: y_(2,1)(z_D) = q^2/(q^2+1)^2 is a manifestly positive rational function. Scope-(a) for 'there is no hadronic melt' — this excludes the Wedderburn / Gram-degeneracy route only; a transition from some other mechanism is untouched."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

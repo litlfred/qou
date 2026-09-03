@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:57:42.554273+00:00",
-  "commitSha": "06d1c010aec6d1913c4c0738bb6302454de594c5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:47:12.733266+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_bond_is_convex_combination",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 21,
   "computation": "framed_vs_writhe_normalised_bonds_probe",
   "scriptFile": "framed_vs_writhe_normalised_bonds_probe.py",
   "scriptHash": "8c099fc3aeef",
-  "scriptCommitSha": "06d1c010aec6d1913c4c0738bb6302454de594c5",
+  "scriptCommitSha": "def46509f247511bae9f8a7f780e0014a37f0e90",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -164,5 +167,7 @@
     "WHICH CONVENTION BINDING SHOULD USE IS NOT SETTLED HERE. Framing is Tw in Lk = Wr + Tw, and the corpus carries a helicity thread where that decomposition is physical (Moffatt-Ricca, H = n Phi^2). If the nucleus is a framed object the framed trace is right; if the framing is gauge, the normalised one is. This probe only establishes that the two arcs are computing different objects and quantifies the gap — up to 6.4% of AME, all of it at Z != N — so that neither quotes across the line until someone decides.",
     "THE pn SIGN IS REPORTED AS A DEFECT ON A SIBLING'S ACTIVE WORK, found by applying their own stated convention (e = writhe, from their own mu_eff tabulation) to their own three bonds. It is possible that pn's e is deliberately the other sign for a reason not written down — the source comment states the value but not a justification. Numerically it is 0.0095% on 4He, so nothing they have concluded depends on it either way.",
     "The isotope table uses the NAIVE all-pairs sum for both conventions, so it isolates the framing choice. It therefore inherits the sub-additivity overstatement measured in pairwise_ceiling_is_overstated_probe and should not be read as a binding prediction in either column — only the DIFFERENCE between the columns is the quantity of interest here. Concretely: framed 3He lands at -0.01% of AME, which is a COINCIDENCE of the naive sum, not agreement. The measured H_9 trace of the same three-bond word gives 7.0196 against AME 7.71804."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

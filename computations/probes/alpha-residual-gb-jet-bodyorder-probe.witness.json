@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T17:04:56.375386+00:00",
-  "commitSha": "f4a3651eff36f0a89af633b250fd6806c7893540",
+  "computedAt": "2026-09-03T04:44:32.231463+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "three_body_dominates_the_irreducible_four_body_alpha_unit",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "alpha-residual-gb-jet-bodyorder-probe",
   "scriptFile": "alpha_residual_gb_jet_bodyorder_probe.py",
   "scriptHash": "29d4e7b0cf54",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bcc3a734d0a6a3621ae07593ac4bced0ff35e755",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -120,5 +124,7 @@
     },
     "what_neither_filtration_can_inform_about": "The alpha-unit's categorical representation, structurally rather than for want of work. a_D^(n) = (1/n) sum_{lambda |- n} dim_q V_lambda depends ONLY on n -- an average over all partitions, carrying no flavour, no knot type, no linking data, so it cannot distinguish 4He from any other four-body cluster. The GB filtration grades a WORD by Coxeter length, and its q -> 1 associated graded is a permutation character whose floor c0(A) depends only on A (3H and 3He agree exactly; so do 5Li and 5He). Every isotope-specific and alpha-specific fact therefore lives entirely in w_n(K), the undetermined factor. The filtrations organise the expansion; they do not populate it. Concretely: 4He is doubly magic with a first excited state at 20.21 MeV, and neither a_D nor the GB grade has a variable that could express that.",
     "verdict": "The '~21 MeV 4-body alpha-residual' is misnamed. With the empirically correct two-body input -- pn only, since the diproton and dineutron are unbound -- the cluster expansion of 4He is 8.90 two-body, 14.60 THREE-body, 4.79 four-body, with 3-body dominating 4-body by 3.05x. The corpus's figure is a pairwise-chain residual lumping all orders >= 3 and crediting pp/nn bonds nature does not bind. The genuine irreducible alpha unit is ~4.8 MeV. This yields an unfitted constraint on the open jet weight: w_4/w_3 < 0.5279 to peak at n = 3, and = 0.1733 to match 4He. Neither filtration can supply the alpha-unit's categorical representation: a_D depends only on n and the GB floor only on A, so all knot-specific content sits in w_n(K)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

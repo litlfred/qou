@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T03:25:06.009074+00:00",
-  "commitSha": "51429a1445dc1d380381354f7c33ea0a84c1d213",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:44:35.062777+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_betas_are_derived_from_quark_content",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "betas_are_forced_by_quark_content_probe",
   "scriptFile": "betas_are_forced_by_quark_content_probe.py",
   "scriptHash": "10464c79b33f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "cfef887052abafd39d45840640943ed925d8c06a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -138,5 +141,7 @@
     "SCOPE BOUND ON THE EARLIER BINDING RESULTS, not a retraction. The dual-vertex hysteresis, the rank-one dual and the two transition points are correct statements about the per-nucleon LP that was actually built. What A5 establishes is that this LP omits the C(A,2) inter-nucleon bonds and the Z electron crossings the corpus's own atom_gen_chains includes, so 'binding is zero at q_0' has only ever been demonstrated for a nucleus with its bonds left out.",
     "The flavour rule itself is a convention in one respect: it fixes u <-> forward and d <-> inverse rather than the reverse. Swapping that orientation maps proton (0,1/2,1/2) -> (1,1/2,1/2) and neutron (1/2,1/2,1) -> (1/2,1/2,0), i.e. exactly onto the two alternative ordering classes already enumerated in A3/A4 — so the swap changes no conclusion here: those classes are covered and none of them straddles q_0 either.",
     "A container reset mid-investigation dropped this session onto a different branch (claude/omegaorder-exponent-group), whose pyhecke gives a different transition for the same betas (0.679 rather than 0.477). Everything reported here is computed on claude/mt7r-archimedean-eval-2026-08-24, and A6 re-verifies the previous probe's two transition values to 1e-9 as a guard."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
