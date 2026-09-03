@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-08-29T16:34:28Z
+updated_at: 2026-09-03T04:11:26Z
 ---
 
 
@@ -576,3 +576,4 @@ polynomial-on-Young-diagrams)"* — **holds for `omega_3` and fails for
 
 The gap stays OPEN. What changed is which door is worth pushing on.
 
+2026-09-03 (session, branch m1-k5r5-attack): reviewed the ~2400-commit main advance. GAP NOW: reduction Lean-proved (m1_pos_of_cs_margin); m_inf=0.30019 DERIVED (rigorous modulo IO CLT, cited); M1>0 exact to n<=78; Route 1 chosen. Whole remaining gap = one rigorous C with N0=ceil((C/m_inf)^2)<=78 i.e. C<=2.65, empirical ~0.087 (30x headroom); binding sub-constant C_A (Var(Sum|c|) kink, n^{-1/2}). NEED-LIT (answered): YES, one input missing from corpus = Olver's explicit uniform Bessel remainder for J_nu(2sqrt th) in the oscillatory/transition region (DLMF 10.19/10.20 + Olver 1997 Ch10). Corpus has BOO/BDJ/IO/CC/TW/EM-remainder/Gaussian but NOT this. CONTRIBUTION this session (rigorous, corpus-free, no float64): far tail |x|>X* (X*~e sqrt th+O(sqrt th), where theta^{x/2}/x!<1e-20) contributes <1e-37*V_A, via min(theta^{x/2}/x!,1)>=|J_x| (DLMF 10.14.4 + |J_n|<=1). Localises need-lit to the single band x in (2sqrt th, X*], width O(sqrt th) = edge+transition+outer-bulk error. (Caught+fixed a vacuous first majorant that coupled tail to bulk indices.) NEXT: ingest Olver bound, track C_A<=2.65 through the x^2-weighted band. Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-deep-tail-rigorous-need-lit-localised.md. Gap OPEN.
