@@ -69,12 +69,12 @@ ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate")]
 import _path_bridge  # noqa: E402, F401
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
 
 mp.mp.dps = 50
 
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HBAR_Q = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))

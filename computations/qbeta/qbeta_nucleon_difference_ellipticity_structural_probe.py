@@ -80,10 +80,10 @@ import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 from hecke_core import build_nucleon_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 WORDS = [[], [0], [1], [0, 1], [1, 0], [0, 1, 0]]
 H = Q0 - 1 / Q0
 

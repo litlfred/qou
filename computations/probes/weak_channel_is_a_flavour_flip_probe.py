@@ -131,7 +131,7 @@ import mpmath as mp  # noqa: E402
 
 from pyhecke.atom import nucleon_gen_chains  # noqa: E402
 from pyhecke.gram import _hm_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -148,7 +148,7 @@ Q_TRITIUM_KEV = 18.592
 
 def substrate(dps: int):
     mp.mp.dps = dps
-    q = mp.mpf(str(Q0))
+    q = q_at(mp.mp.dps)
     return q, q - 1 / q
 
 

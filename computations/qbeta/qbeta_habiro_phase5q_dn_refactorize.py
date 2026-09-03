@@ -255,17 +255,17 @@ def main() -> int:
     # "(~0.9232333)" that nothing compared against — and both are now stale
     # by ~8% and ~7% because the witness moved to convention D. Compared
     # live, and asserted below.
-    from q_parameter import Q as Q0
-    p_at_q0 = float(p_tr.subs(q, sp.Float(float(Q0))).evalf(30))
-    n_at_q0 = float(n_tr.subs(q, sp.Float(float(Q0))).evalf(30))
+    from q_parameter import q_at
+    p_at_q0 = float(p_tr.subs(q, sp.Float(q_at(mp.mp.dps), 30)).evalf(30))
+    n_at_q0 = float(n_tr.subs(q, sp.Float(q_at(mp.mp.dps), 30)).evalf(30))
     p_at_q0_witness = float(w["results"]["p (proton, A=1)"]["tr_M_at_q0"])
     n_at_q0_witness = float(w["results"]["n (neutron, A=1)"]["tr_M_at_q0"])
     # The comparison itself in mpf, off the witness's full-precision STRINGS
     # and a 40-digit sympy evaluation — not off the float64 prints below.
-    _q0_mp = mp.mpf(str(Q0))
+    _q0_mp = q_at(mp.mp.dps)
     trm_parse_gaps = []
     for _key, _expr in (("p (proton, A=1)", p_tr), ("n (neutron, A=1)", n_tr)):
-        _route_a = mp.mpf(str(sp.N(_expr.subs(q, sp.Float(str(_q0_mp), 40)), 40)))
+        _route_a = mp.mpf(str(sp.N(_expr.subs(q, sp.Float(_q0_mp, 40)), 40)))
         _route_b = mp.mpf(w["results"][_key]["tr_M_at_q0"])
         trm_parse_gaps.append(abs(_route_a - _route_b))
     log(f"  tr_M(p, q_0) = {p_at_q0:.10f}  (witness tr_M_at_q0: "
@@ -284,9 +284,9 @@ def main() -> int:
     log(f"  tr_M(D, q)_Phase5q symbolic form constructed")
 
     # Numerical cross-check
-    z_at_q0 = float(z_q.subs(q, sp.Float(float(Q0))).evalf(30))
-    d_at_q0_phase5q = float(d_tr_phase5q.subs(q, sp.Float(float(Q0))).evalf(30))
-    d_at_q0_witness = float(d_tr_witness.subs(q, sp.Float(float(Q0))).evalf(30))
+    z_at_q0 = float(z_q.subs(q, sp.Float(q_at(mp.mp.dps), 30)).evalf(30))
+    d_at_q0_phase5q = float(d_tr_phase5q.subs(q, sp.Float(q_at(mp.mp.dps), 30)).evalf(30))
+    d_at_q0_witness = float(d_tr_witness.subs(q, sp.Float(q_at(mp.mp.dps), 30)).evalf(30))
     ratio = d_at_q0_phase5q / d_at_q0_witness if d_at_q0_witness else float("inf")
     log(f"  z(q_0) = {z_at_q0:.10f}")
     log(f"  tr_M(D, q_0)_Phase5q  = {d_at_q0_phase5q:.10f}")

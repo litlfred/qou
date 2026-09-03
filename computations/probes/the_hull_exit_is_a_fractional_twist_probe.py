@@ -130,7 +130,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -139,7 +139,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 _Z = _Q ** 3 / (_Q ** 2 + 1)
 LQ = mp.log(_Q)

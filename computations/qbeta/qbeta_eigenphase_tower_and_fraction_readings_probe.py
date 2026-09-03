@@ -104,10 +104,10 @@ import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp, partitions_of  # noqa: E402
 from hecke_core import build_nucleon_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HB = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))
