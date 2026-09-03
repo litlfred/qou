@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-03T04:42:01Z
+updated_at: 2026-09-03T20:58:48Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -239,3 +239,95 @@ an idle-pass step.  Tracked with the rest of the general-field work on
 `qou-j377`, whose own headline ("`q` generic, not a root of unity") turns out to
 name exactly this; that bean's blocker list was stale — it cited SW-5 and SW-3,
 both of which have landed.
+
+
+## 2026-09-03 — NON-VANISHING IS DONE. The remaining scope is the VALUE only.
+
+Landed on claude/p-neq-np-gaps-n8dxxl, PR #6517 (commits c6986748f3, 6154eac0e7,
+3b39d577a9). All sorry-free, [propext, Classical.choice, Quot.sound].
+
+    twGram_det_ne_zero {K} [Field K] [CharZero K] (q : K)
+        (hq0 : q != 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : N) :
+      (twGram K (q ^ 2) n).det != 0
+
+at EVERY n. No determinant is evaluated anywhere in the proof.
+
+### The bean's framing was right and its route was not the only one
+
+This bean says the deliverable is det != 0 for n >= 2 and lists what is supplied so it
+is not re-derived: the basis, the multiplication table, the generator trace, the
+rank-one case, the target VALUES at n=1,2,3, and the symbolic characters from qou-avt2.
+Every one of those is aimed at COMPUTING the determinant, because Geck-Pfeiffer 7.2.6
+is how one normally gets non-vanishing.
+
+None of it was needed. Semisimplicity is proved independently via heckeWedderburn
+(#6437, #6486, and Part 1 of #6517), which owes the Gram determinant nothing, so the
+implication can be run BACKWARDS: semisimple => regular trace form nondegenerate =>
+det != 0 in every basis. The missing piece was the converse of the Gram criterion,
+which is three short lemmas.
+
+### What was actually written
+
+QOU/MathlibExt/RegTraceGramNondegenerate.lean
+
+  regTraceForm_mul_assoc   B(xy,z) = B(x,yz). This is what makes the form's radical a
+                           TWO-SIDED ideal rather than merely a subspace. Left-closure
+                           needs it TOGETHER WITH regTraceForm_comm, because the form
+                           is associative only in that one shape.
+  regTraceRadical          the radical as a TwoSidedIdeal.
+  ..._of_isSimpleRing      the key step: on a simple ring the radical is bot or top,
+                           and top would put 1 in it, giving B(1,1) = 0.
+  regTraceForm_one_one     B(1,1) = finrank K A, since L_1 = id.
+  ..._matrix               the block. Matrix i i K is simple for nonempty i. EMPTY i is
+                           handled separately: it is the zero ring and is NOT simple
+                           (simplicity requires Nontrivial), but its form is
+                           nondegenerate because 0 is its only element.
+  regTraceForm_pi / _pi    reassembly over a finite product. A product of matrix
+                           algebras is NOT simple, so block verdicts are SUMMED, not
+                           transported.
+  ..._algEquiv / _congr    transport along an AlgEquiv.
+
+QOU/MathlibExt/TracePi.lean — a pure Mathlib gap, no algebra structure in it.
+
+  trace_piDiag             trace (sum_i f_i) = sum_i trace f_i. Mathlib has ONLY the
+                           binary case (LinearMap.trace_prodMap' for M x N).
+
+QOU/Hecke/TwGramDetNonzero.lean — composes skeinIwahoriEquiv with heckeWedderburn.
+
+### Cross-checked against the one rank computed by hand
+
+twGram_det_ne_zero_rank_one_agrees. twGram_det_rank_one evaluates the four
+Markov-trace entries directly and gives det = (1+Q)^2; at Q = q^2 its non-vanishing is
+q^4 != 1, which is exactly what NotRootOfUnity q supplies. Same conclusion, same
+hypothesis, two entirely different routes. Kept as a regression.
+
+### The characteristic hypothesis is load-bearing here, not inherited noise
+
+On Matrix (Fin d) (Fin d) K the regular trace is d * the ordinary matrix trace (left
+multiplication acts on d copies of the column space), so the form degenerates EXACTLY
+when d = 0 in K. At char p | d_lambda the Gram determinant of a genuinely semisimple
+algebra really does vanish. The [CharZero K] carried down from #6486 is spent here.
+
+### STILL OPEN — do not close this bean on the above
+
+1. THE VALUE. det(Gram) = prod_lambda (Schur_lambda)^(f^lambda) is untouched, and it
+   is still the book-length development this bean was split out to carry. Everything
+   the bean lists as supplied (qou-avt2's symbolic characters especially) is still the
+   right material for it. A consumer needing the Schur-element product gets nothing
+   from #6517.
+
+2. THE SQUARE ROOT. The statement is at Q = q^2, the same caveat as
+   isSemisimpleRing_iwahoriHecke_sq (qou-j377) and for the same reason:
+   skeinIwahoriEquiv relates the skein algebra at q to the Iwahori carrier at q^2, and
+   a general field need not contain a root. Removing it needs BASE CHANGE of
+   IwahoriHecke along a field extension. Note the hypothesis would survive that move
+   for free -- NotRootOfUnity Q => NotRootOfUnity q when q^2 = Q, since q^m = 1
+   implies Q^m = 1 -- so the missing piece is only the algebra's scalar extension.
+   Over R with Q > 0, or any field where Q is a square, twGram_det_ne_zero_of_sq
+   already gives the statement at Q.
+
+Build note for whoever picks this up: Mathlib.RingTheory.SimpleRing.Matrix and two of
+its deps are NOT in the lake-cache/qou-v4-24-0 restore. Build them lean-direct INTO the
+mathlib build tree (7 s for all three). A scratch LEAN_PATH directory does NOT work --
+Lean commits to the first path root containing Mathlib/, so a partial scratch tree
+silently shadows the entire real one.
