@@ -7,6 +7,7 @@ section_number: 7
 pages: 46-54
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 Recall that q∈ k × is either not a root of unity (in which case e = 0), or that q2
 is a primitive eth root of unity for some e >1. We are going to show that Mod- OS

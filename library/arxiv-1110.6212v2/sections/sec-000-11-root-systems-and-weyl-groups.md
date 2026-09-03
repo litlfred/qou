@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 2-3
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 Let R be an irreducible (not necessarily reduced) ﬁnite crystall ographic root system with simple
 roots α1, . . . , αn in an n-dimensional real vector space V with inner product ⟨·, ·⟩. Let R+ be

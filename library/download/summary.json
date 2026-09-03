@@ -1,0 +1,75 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "download",
+ "source_sha256": "ca9639465b08d34c",
+ "brief": "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1",
+ "extended": "**Concentration of empirical distribution functions with applications to non-i.i.d. models**\n\n*S.G. BOBKOV 1 and F. GÖTZE 2*\n\n30 pp, 11 sections.\n\n**Outline.** Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1; Large deviations above the mean; Empirical log-Sobolev inequalities; Local behavior of empirical distributions; Bounds on the Kolmogorov distance. Proof of Th; High-dimensional random matrices; Appendix; Acknowledgements; References",
+ "tokens": {
+  "brief": 42,
+  "extended": 115
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-empirical-poincaré-inequalities",
+   "title": "Empirical Poincaré inequalities",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-proof-of-theorem-11",
+   "title": "Proof of Theorem 1.1",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-003-large-deviations-above-the-mean",
+   "title": "Large deviations above the mean",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-004-empirical-log-sobolev-inequalities",
+   "title": "Empirical log-Sobolev inequalities",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-005-local-behavior-of-empirical-distributions",
+   "title": "Local behavior of empirical distributions",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-006-bounds-on-the-kolmogorov-distance-proof-of-theor",
+   "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-007-high-dimensional-random-matrices",
+   "title": "High-dimensional random matrices",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-008-appendix",
+   "title": "Appendix",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-009-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "28-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

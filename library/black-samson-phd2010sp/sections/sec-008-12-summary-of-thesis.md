@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 11-22
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 In this dissertation, we consider a third alternative, indirectly related to the g[(111)­
 approach, but we work only with braids, which is Jones' approach via Markov traces ([24]). There

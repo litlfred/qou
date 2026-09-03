@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2103.00651v1",
+ "source_sha256": "c5505d3e4891168e",
+ "brief": "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued",
+ "extended": "**On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu**\n\n*ECE Department, University of Illinois at Urbana-Champaig n, USA*\n\n9 pp, 4 sections.\n\n**Abstract.** We derive two upper bounds for the probability of deviation of a vect or-valued Lipschitz function of a collection of random variables from its expected value. The resulting upper bounds can be tighter than bounds obtained by a direct application o f a classical theorem due to Bobkov and G¨ otze.\n\n**Outline.** 1 Introduction; 2 Preliminaries and Main Result; 3 Proof of Theorem 1 and Additional Results; 4 Example",
+ "tokens": {
+  "brief": 47,
+  "extended": 157
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-preliminaries-and-main-result",
+   "title": "Preliminaries and Main Result",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-3-proof-of-theorem-1-and-additional-results",
+   "title": "Proof of Theorem 1 and Additional Results",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-4-example",
+   "title": "Example",
+   "pages": "5-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

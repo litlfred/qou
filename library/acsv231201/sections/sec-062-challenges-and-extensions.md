@@ -7,6 +7,7 @@ section_number: null
 pages: 442-442
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 In this ﬁnal chapter we look to the future of ACSV , discussing the most im-
 portant challenges and extensions of current results. Work attacking several of

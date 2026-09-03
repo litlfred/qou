@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 5-5
 source_pdf: Download (1).pdf
 source_sha256: b683296f448ed027
+doc_brief: "Central and Lp-concentration of 1-Lipschitz maps into R-trees — In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
 of the knot complement. The shape of an ideal tetrahedron is parameterized by the cross-
 ratio of the coordinates of its four vertices, and the representation space is parameterized

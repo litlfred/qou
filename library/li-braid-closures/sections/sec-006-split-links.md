@@ -7,6 +7,7 @@ section_number: null
 pages: 9-13
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 From from Proposition 1.3 we haveV L(−1) = ∆L(−1) = 0 for all split links. We show that
 this condition is not sufficient.

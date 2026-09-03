@@ -7,6 +7,7 @@ section_number: null
 pages: 187-189
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 GFs
 We now return to the problem at the heart of this book: asymptotically ap-

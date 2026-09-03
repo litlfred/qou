@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 A knot is an embedding of the circleS 1 inS 3, while a link is an embedding of several circles
 inS 3. Through the remainder of this paper, we tacitly work with tame links only.

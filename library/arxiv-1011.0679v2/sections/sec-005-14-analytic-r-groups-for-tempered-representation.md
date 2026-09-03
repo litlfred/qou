@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 11-14
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 tion of the analytic R-group from [DeOp2]. Let δ be a discrete series represen-
 tation of HP with central character W (RP )rδ ∈ TP/W (RP ). Recall that a para-

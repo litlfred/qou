@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 I would ﬁrst and foremost like to thank my advisor, Shannon Starr, for his encour-
 agement, patience, and guidance during my time as his student. This work would

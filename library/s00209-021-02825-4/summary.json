@@ -1,0 +1,161 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "s00209-021-02825-4",
+ "source_sha256": "85ca5ec21f42a988",
+ "brief": "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén",
+ "extended": "**Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021**\n\n42 pp, 28 sections.\n\n**Abstract.** In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea–Brändén result to characterize a certain subclass of the linear operators which preserve such polynomials.\n\n**Outline.** A representation theoretic explanation of the ; Abstract; 1 Introduction; The main idea; 2.1 Notation; A roadmap; 2 Preliminaries; 2.2 Homogeneous polynomials; 3 Homogeneous polynomials as representations; 3.1 The action of SL2(C); 3.2 An important invariant map, and apolarity; 3.3 The symbol of an operator; 4 Polynomial stability theory; 4.1 Polar derivatives; 4.3 Real stable polynomials; 5.1 Other regions; 5.2 Evaluation symbols; 6 Stability properties of complex linear opera",
+ "tokens": {
+  "brief": 48,
+  "extended": 354
+ },
+ "sections": [
+  {
+   "id": "sec-000-a-representation-theoretic-explanation-of-the-bo",
+   "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-the-main-idea",
+   "title": "The main idea",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-21-notation",
+   "title": "Notation",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-005-a-roadmap",
+   "title": "A roadmap",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-006-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-007-22-homogeneous-polynomials",
+   "title": "Homogeneous polynomials",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-008-3-homogeneous-polynomials-as-representations",
+   "title": "Homogeneous polynomials as representations",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-31-the-action-of-sl2c",
+   "title": "The action of SL2(C)",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-010-32-an-important-invariant-map-and-apolarity",
+   "title": "An important invariant map, and apolarity",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-011-33-the-symbol-of-an-operator",
+   "title": "The symbol of an operator",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-012-4-polynomial-stability-theory",
+   "title": "Polynomial stability theory",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-013-41-polar-derivatives",
+   "title": "Polar derivatives",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-014-43-real-stable-polynomials",
+   "title": "Real stable polynomials",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-015-51-other-regions",
+   "title": "Other regions",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-016-52-evaluation-symbols",
+   "title": "Evaluation symbols",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-017-6-stability-properties-of-complex-linear-operato",
+   "title": "Stability properties of complex linear operators",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-018-62-strong-stability-preservation",
+   "title": "Strong stability preservation",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-019-61-weak-stability-preservation",
+   "title": "Weak stability preservation",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-020-63-deriving-the-complex-borceabrändén-characteri",
+   "title": "Deriving the complex Borcea–Brändén characterization",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-021-7-stability-properties-of-real-linear-operators",
+   "title": "Stability properties of real linear operators",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-022-71-weak-real-stability-preservation",
+   "title": "Weak real stability preservation",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-023-72-strong-real-stability-preservation",
+   "title": "Strong real stability preservation",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-024-73-deriving-the-real-borceabrändén-characterizat",
+   "title": "Deriving the real Borcea–Brändén characterization",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-025-74-ray-and-interval-stability",
+   "title": "Ray and interval stability",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-026-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "34-41"
+  },
+  {
+   "id": "sec-027-references",
+   "title": "References",
+   "pages": "41-42"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: 5.7
 pages: 122-127
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 As previously mentioned, the results in this section are preliminary steps toward
 bounding the ﬂuctuations of the length of the longest increasing subsequence of a

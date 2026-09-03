@@ -7,6 +7,7 @@ section_number: 6
 pages: 33-41
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 By Pemantle’s result (Theorem 3.7 in §3.5), for symmetric measures in Pn all
 ﬁve conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, and CNA+ are equivalent

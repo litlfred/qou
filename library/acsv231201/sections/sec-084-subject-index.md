@@ -7,6 +7,7 @@ section_number: null
 pages: 577-589
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 A boldface page number indicates the page on which the term is deﬁned.
 (zi, z j)-elementary diagonal, 46

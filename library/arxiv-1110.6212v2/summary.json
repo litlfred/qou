@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1110.6212v2",
+ "source_sha256": "1923b6a0bfdc810f",
+ "brief": "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes.",
+ "extended": "**On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗**\n\n*November 28, 2013*\n\n34 pp, 9 sections.\n\n**Abstract.** This paper has two main purposes. Firstly we generalise Ram’s combina torial construc- tion [23] of calibrated representations of the aﬃne Hecke algebra t o the multi-parameter case (including the non-reduced BCn case). We then derive the Plancherel formulae for all rank 1 and rank 2 aﬃne Hecke algebras, using our calibrated repres entations to construct all representations involved.\n\n**Outline.** 1.1 Root systems and Weyl groups; 1.2 Parameter systems; 2.1 Principal series representations; 2.2 A combinatorial construction of irreducibl; 2.3 Examples; 2.4 Characters; 3 The Plancherel Theorem; 3.1 The rank 1 algebras; A Constants and c-functions",
+ "tokens": {
+  "brief": 34,
+  "extended": 203
+ },
+ "sections": [
+  {
+   "id": "sec-000-11-root-systems-and-weyl-groups",
+   "title": "Root systems and Weyl groups",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-12-parameter-systems",
+   "title": "Parameter systems",
+   "pages": "3-8"
+  },
+  {
+   "id": "sec-002-21-principal-series-representations",
+   "title": "Principal series representations",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-22-a-combinatorial-construction-of-irreducible-c",
+   "title": "A combinatorial construction of irreducible calibrated HL-modules",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-004-23-examples",
+   "title": "Examples",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-005-24-characters",
+   "title": "Characters",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-006-3-the-plancherel-theorem",
+   "title": "The Plancherel Theorem",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-007-31-the-rank-1-algebras",
+   "title": "The rank 1 algebras",
+   "pages": "16-31"
+  },
+  {
+   "id": "sec-008-a-constants-and-c-functions",
+   "title": "A Constants and c-functions",
+   "pages": "31-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

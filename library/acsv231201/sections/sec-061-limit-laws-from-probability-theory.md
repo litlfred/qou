@@ -7,6 +7,7 @@ section_number: null
 pages: 430-442
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 We now show how to use the techniques of ACSV to derive limit laws. Al-
 though probabilistic interpretations and limit laws can hold for series with neg-

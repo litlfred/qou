@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-4
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 In the Euclidean space Rn, log-concave measures, namely measures whose density is of 
 the form e−U with U being a convex potential are known to satisfy several concentration 

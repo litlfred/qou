@@ -7,6 +7,7 @@ section_number: 6
 pages: 33-41
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 By Pemantle’s result (Theorem 3.7 in §3.5), for symmetric measures in Pn all
 ﬁve conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, CNA+ are equiva lent to the

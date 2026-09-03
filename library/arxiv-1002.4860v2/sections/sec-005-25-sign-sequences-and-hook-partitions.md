@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 3-5
 source_pdf: 1002.4860v2.pdf
 source_sha256: a2cfe924f7a9f5a0
+doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
 ---
 partition (n −ℓ, 1ℓ). We refer to ℓ as leg length .
 Lemma 2.6. Standard tableaux of shape λℓ are in bijection with sign sequences ε =

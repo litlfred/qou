@@ -7,6 +7,7 @@ section_number: 4.5
 pages: 30-31
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 of a torus knot for non-abelian part of the SL(2; C)-character variety is calculated
 in [9, Proposition 7]. Let ρ k,l be the representation described in Theorem 1.4.

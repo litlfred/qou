@@ -7,6 +7,7 @@ section_number: 4
 pages: 17-19
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 Quantum Haar Measure
 Let us deﬁne the linear map ˆΦ[X0X1,Y 0Y1] : V (X0X1)⊗V (Y0Y1) →

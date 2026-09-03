@@ -7,6 +7,7 @@ section_number: null
 pages: 345-357
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Algorithms to compute global monodromy – typically using numerical al-
 gebraic geometry to approximate continuations along paths with rigorous er-

@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 17-20
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 nantal probability measure on 2 [n] to be a measure µ ∈ Pn such that there is an
 n × n matrix A so that for any subset S of [ n] one has

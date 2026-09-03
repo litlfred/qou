@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-11
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 Following [23], the calibration graph of t ∈ Hom(L, C×) is the graph Γ( t) with
 vertex set {wt | w ∈ W0}, and

@@ -7,6 +7,7 @@ section_number: 6
 pages: 20-21
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 In [ 1], Borcea and Brändén were concerned with classifying the class of weak /Omega1-stability
 preserving operators, where /Omega1is some product of open circular regions. What they found is

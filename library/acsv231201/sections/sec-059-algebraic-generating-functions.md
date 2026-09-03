@@ -7,6 +7,7 @@ section_number: null
 pages: 420-422
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Algebraic generating functions in one variable can be analyzed asymptotically
 by the transfer theorems of Section 3.4 in Chapter 3, and often exactly by La-

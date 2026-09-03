@@ -7,6 +7,7 @@ section_number: 1.5
 pages: 5-6
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 two basic ways to understand this: either by taking the trace, or b y passing to the
 Grothendieck ring. Let us brieﬂy recall these deﬁnitions.

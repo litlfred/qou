@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 Since its introduction by Charles Stein ([Ste72, Ste86]), t he so-called Stein’s method is a corpus of
 techniques that revealed itself very successful in studying probability approximation and convergence

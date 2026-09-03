@@ -7,6 +7,7 @@ section_number: 10
 pages: 10-12
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 is the Deligne category mentioned before. As in Theorem 1.3, for n∈ N and any sign
 ε∈{±} , the category Rep GLn of (ﬁnite-dimensional) rational representations of GLn

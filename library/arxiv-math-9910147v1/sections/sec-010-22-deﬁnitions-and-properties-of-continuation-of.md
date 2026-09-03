@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-7
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 In order to understand the problem of continuation of quantum 6 j symbols the reader is invited
 to read the appendix of [1] where deﬁnitions, proofs, as well as ref erences on 6j(1) are given.

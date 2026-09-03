@@ -7,6 +7,7 @@ section_number: 5
 pages: 28-34
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 In the following theorem, we establish lower tail bounds whe n the Stein kernel is uniformly bounded
 away from zero. In particular, the support of the measure is R in this case, as can be seen from the

@@ -7,6 +7,7 @@ section_number: 7.3
 pages: 22-23
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 orem we used the fact that if f ∈ SR[x]MA is multiaﬃne and real stable, then
 ∆ijf(a)≥ 0 for all {i,j}⊆ E and a∈ Rm, by Theorem 3.1. In fact, we only

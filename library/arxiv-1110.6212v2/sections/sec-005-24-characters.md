@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 14-16
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 with tα∨
 1 = q−1

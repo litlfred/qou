@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 10-12
 source_pdf: s00453-026-01372-w.pdf
 source_sha256: 98b569eff84fb489
+doc_brief: "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 · George Z. Li 2 · Juan Luque 1 · Aravind Srinivasan 1 · — We study"
 ---
 In this subsection, we illustrate an application of our proof technique to give concen-
 tration for a read- k family of supermodular functions. Read- k families arise naturally

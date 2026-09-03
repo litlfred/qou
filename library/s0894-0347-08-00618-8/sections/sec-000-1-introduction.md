@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 2. A plethora of negative dependence properties and conjectures 524
 2.1. Negative dependence concepts 524

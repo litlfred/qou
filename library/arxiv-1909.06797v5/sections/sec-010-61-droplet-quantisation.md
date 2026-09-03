@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 19-25
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 The single particle Hamiltonian (2.16) is not in diagonal form. We deﬁne a new variable
 ¯h = h− S (θ). (6.1)

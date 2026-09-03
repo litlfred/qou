@@ -7,6 +7,7 @@ section_number: 1
 pages: 10-34
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 The idea of concentration of measure was ﬁrst introduced by Milman in the asymp-
 totic theory of Banach spaces [Milman and Schechtman, 1986]. The phenomenon

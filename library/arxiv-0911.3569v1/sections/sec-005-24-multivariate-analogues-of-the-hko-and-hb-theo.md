@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 6-8
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 with the univariate HB Theorem, polynomials f,g ∈ R[x] are said to be in proper
 position, denoted by f≪g, when g + if∈ S[x]. (As will be seen, this implies that

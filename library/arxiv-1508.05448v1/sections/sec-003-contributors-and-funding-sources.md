@@ -7,6 +7,7 @@ section_number: null
 pages: 5-9
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 This work was supervised by a dissertation committee consisting of Shannon Starr
 (advisor) of the Department of Applied Mathematics at the University of Alabama

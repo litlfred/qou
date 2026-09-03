@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 28-29
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 the volume conjecture for torus knots is proved by Kashaev an d Tirkkonen [25].
 In fact J. Dubois and Kashaev [9] proved a stronger result.

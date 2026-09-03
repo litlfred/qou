@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 17-20
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
+doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
 ---
 and 4, Notation 4 and the linear operators φn introduced in Notation 5. In par-
 ticular, an H-stable polynomial in the sense of Deﬁnition 4 is precisely a stable

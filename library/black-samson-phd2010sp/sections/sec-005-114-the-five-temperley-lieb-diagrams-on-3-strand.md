@@ -7,6 +7,7 @@ section_number: 11.4
 pages: 8-9
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 II.5. The correspondence between (d, d)-diagrams and (0,2d)-diagrams.
 II.6. The generating diagrams 14 and U{, U~, U~ in TL~(o).

@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 15-19
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Theorem 5.2 (Theorem 1.1 of [5]) . Let κ∈ Nm, and let T : C[x]≤κ→ C[x] be a
 linear transformation. Then T maps S[x]≤κ into S[x] if and only if either

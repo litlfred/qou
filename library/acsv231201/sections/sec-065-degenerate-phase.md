@@ -7,6 +7,7 @@ section_number: null
 pages: 444-448
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Most of our results in previous chapters have relied on reduction to a stationary
 phase integral for which the phase is quadratically nondegenerate at an isolated

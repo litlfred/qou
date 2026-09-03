@@ -7,6 +7,7 @@ section_number: 4
 pages: 21-22
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 In this section, k is a commutative ground ring and z,t∈ k × are arbitrary. The aﬃne
 oriented skein categoryAOS (z,t ) is the strict k -linear monoidal category obtained from

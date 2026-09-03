@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 8-9
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 Given(α : β) ∈ CP1 andφ ∈ SL2(C),w ed e ﬁ n et h eu s u a la c t i o no fS L2(C) onCP1 viaφ·(α :
 β) := φ

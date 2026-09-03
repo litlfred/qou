@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 13-13
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 acts on C[x] by the rule σ(f)(x1,...,x m) =f(xσ(1),...,x σ(m)). Notice that
 σ(xα) =

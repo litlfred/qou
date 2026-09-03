@@ -7,6 +7,7 @@ section_number: null
 pages: 95-107
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 3.5 The saddle point method
 One of the crowning achievements of complex analysis is the development of
