@@ -43,6 +43,26 @@ the gap are supplied the correct rungs are what improves the accuracy. Do the
 re-derivation. What this measurement changes is the EXPECTATION set on it --
 it will not, on its own, land on CODATA -- not whether to do it.
 
+🛑 THE COUNIT AND THE TRACE BELOW ARE ON DIFFERENT ELEMENTS -- read this
+before quoting the 92.1058x (added 2026-09-03, bean qou-bg3w).  The trace is
+computed on `hecke_core`'s ELEVEN-crossing gen-grouped nucleon words
+(Delta_L); the counit closed form `h**2 / 2 - h` hardcoded below is the
+ONE-/TWO-crossing short model's (Delta_S).  Those are different elements of
+H_3(q), so the ratio compares a property of one against a property of the
+other.  Both measurements are correct on the element they are taken on; the
+RATIO is the straddle.
+
+Priced consistently the figure is not one number but two, and they BRACKET
+the published one -- 0.6237x on Delta_L, 92.1058x as published, 257.26x on
+Delta_S.  So it is not an approximation to either, and the recorded reading
+"understates by 2.793x" is itself Delta_S-conditional: against Delta_L the
+same figure OVERSTATES by 148x.  Measured in
+`qbeta_d_frame_baseline_element_consistency_probe.py` (5/5), which also
+verifies that the Frobenius pairing used here IS the Markov trace at z_D.
+Nothing below is changed by this: the 92.1058x is left intact because it is
+what downstream calibrates against, and the fix is to say which element each
+half is on, not to silently move a number consumers key on.
+
 SCOPE -- (a), NOT (b), per AGENTS.md. This is "this construction, alone, does
 not reproduce the numbers as-is". It does NOT exclude the trace as an
 ingredient, does NOT prove Q_beta is not a trace observable, and does NOT
