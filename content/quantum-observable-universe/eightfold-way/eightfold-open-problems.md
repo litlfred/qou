@@ -19,6 +19,7 @@ the list cannot silently break the pointers.
 | $N = 2$ cannot host the eightfold-way decomposition | **standard**, with a sorry-free machine-checked *arithmetic* instance: the Lean defines $\dim V_{(1^3)} := \binom{N}{3}$ and proves $\binom{N}{3} = 0 \iff N < 3$. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited, not formalised — same caveat as `Sym2Gate` and `WeylInvariance` | `RowCapObstruction.lean` |
 | $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
 | No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved** (Lean, sorry-free), and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | `Sym2GateMultiplicity.lean` |
+| Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** (Lean, sorry-free) that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | `FibreFunctorDimensionNotCategorical.lean` |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
 | Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item *Hypercharge $Y$* |
 | The baryon octet's weight map is non-injective | **proved** (Lean, sorry-free): $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
@@ -139,6 +140,29 @@ Gell-Mann--Nishijima relation cannot be closed.
    outside it.  This is the same non-self-duality that
    [the colour construction](#prop:color-su3-from-g2) already identifies as
    what the $\mathrm{Sym}^2$ gate consumes.
+
+   **Nor is the fibre functor the missing knob.**  The single-fibre category
+   admits fibre functors of every dimension $n \ge 2$ \cite{bichon2003}: for
+   $E \in \mathrm{GL}_n$ with $\mathrm{tr}(E^{-1}E^{t}) = -q - q^{-1}$ the
+   comodule category of the bilinear-form quantum group $B(E)$ is monoidally
+   equivalent to that of $\mathcal{O}_q(\mathrm{SL}_2)$, and such $E$ exist
+   over $\mathbb{R}$ at $q_0$ for every $n \ge 3$.  So a three-dimensional
+   image of $V$ is available.  It does not help, because a fibre functor is
+   monoidal and therefore preserves the Clebsch--Gordan rule: under a
+   three-dimensional fibre functor $V^{\otimes 3} \cong V_{3/2} \oplus
+   V_{1/2} \oplus V_{1/2}$ has dimensions $21 + 3 + 3$, and under a fibre
+   functor of any dimension the spin-$0$ summand the decomposition
+   $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$
+   requires is absent from $V^{\otimes 3}$ by parity
+   (`FibreFunctorDimensionNotCategorical.lean`, sorry-free).  Dimension is a
+   property of the fibre functor; the multiplet structure is a property of
+   the category.  This closes the single-fibre reading of Route A --- the
+   question *does the category admit inequivalent fibre functors?* is
+   answered affirmatively and turns out not to bear on $N = 3$ --- and
+   relocates the missing object to the category itself: an object $W$ with
+   $\Lambda^3 W \neq 0$, which the categorical volume constraint
+   ([Definition](#def:quantum-observable-universe), condition 5) forbids for
+   the fundamental.
 
 2. **Hypercharge $Y$.**
    The writhe-to-isospin map $w \mapsto I_3$ is derived.  The
