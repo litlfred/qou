@@ -2,10 +2,9 @@ conjecture blocks with a lean.ref that resolves: 171
   no lean.ref at all:                            5
   lean.ref resolves to no declaration:           3
 
-  class       139
+  class       140
   theorem      25
   def           5
-  axiom         1
   structure     1
 
 `def`/`abbrev` carriers whose body asserts only `True`: 0
@@ -30,5 +29,3 @@ All `def`/`abbrev` carriers (a class/structure is what §3b-tax asks for):
      content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean  (n_v_leading_order)
 
 `axiom` carriers (global assumption where a class would be local):
-  conj:n-v-bring-action
-     content/quantum-observable-universe/observations/n-v-bring-action.lean  (s5_acts_on_ew_slice)

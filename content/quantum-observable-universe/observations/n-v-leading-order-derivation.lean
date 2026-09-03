@@ -51,7 +51,7 @@ noncomputable def N_v : ℝ := 3 * v_ew_real / m_e_real
 
     The factor of `40 = |S_5| / 3` is the categorical contribution
     of the Bring-fibre-functor: the `|S_5| = 120` Markov-trace
-    rescaling at the EW slice (`s5_acts_on_ew_slice`) factors
+    rescaling at the EW slice (`NVBringAction`) factors
     through the `3`-fold splitting `N_v := 3 · v / m_e`, leaving
     `|S_5| / 3 = 40` as the residual prefactor on the
     `v / m_e ↔ q_0^{depth}` bridge.
@@ -126,7 +126,7 @@ theorem v_over_m_e_bridge :
 /-- **Theorem (Leading-order N_v).**
 
     Conditional on
-    [`s5_acts_on_ew_slice`](./n-v-bring-action.lean) and
+    [`NVBringAction`](./n-v-bring-action.lean) and
     [`tower_depth_m_e_to_v_is_ninety`](./n-v-tower-depth-ninety.lean)
     for its *meaning* — but, as of 2026-09-03, on no axiom for its
     *proof*: `v_over_m_e_bridge` above is now a theorem, so this
