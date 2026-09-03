@@ -96,7 +96,11 @@ def dim(lam, nf):
 
 def main():
     t0 = time.monotonic_ns()
-    NMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 30
+    # 34, not 30. FINDING 3 measures the TAIL, `rel[30:]`, i.e. n = 32 onward,
+    # so a default below 32 leaves that slice empty. The committed witness was
+    # produced at 34 (`"nmax": 34` in it) and cannot be reproduced by a bare
+    # `python3 <this file>` while the default is 30. Costs 2 s.
+    NMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 34
     KAP = mpf(128) / (225 * mp.pi ** 2)
     checks = []
     rows = []
@@ -147,7 +151,20 @@ def main():
     })
     # ---- FINDING 3: the weaker sufficient claim ----------------------------
     rel = [abs(mpf(r["kappa_n"]) - KAP) / KAP for r in rows]
-    worst_rel = max(rel[30:]) if len(rel) > 30 else max(rel)
+    # REFUSE rather than substitute. The old fallback was
+    #     max(rel[30:]) if len(rel) > 30 else max(rel)
+    # which, when the tail slice is empty, silently measured the max over the
+    # WHOLE range (n = 2 up, where kappa_n/kappa is ~0.72 at n = 4) and then
+    # reported it under this check's own label "over n = 32..{NMAX}". At the
+    # then-default NMAX = 30 that printed the self-contradictory range
+    # "n = 32..30", a worst_rel of 1.0, and a FAIL -- a wrong quantity under a
+    # true-looking string, which is worse than an error.
+    if len(rel) <= 30:
+        raise SystemExit(
+            f"FINDING 3 needs the tail n >= 32, i.e. NMAX >= 32; got NMAX = "
+            f"{NMAX} ({len(rel)} rows). Re-run with a larger NMAX -- do not\n"
+            f"read a whole-range maximum as a tail maximum.")
+    worst_rel = max(rel[30:])
     n13 = next(r for r in rows if r["n"] == 13)
     checks.append({
         "name": "FINDING 3: (b') |kappa_n - kappa| < kappa suffices, with ~38x more room",
