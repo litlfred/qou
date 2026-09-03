@@ -1993,6 +1993,23 @@ When working on math-affecting code or content, **trace the change to a step in 
 >
 > The `lusztig_q_0_imaginary_part_zero` assertion is an **archimedean constraint** on the evaluation at the substrate anchor — NOT a categorical/fibre claim. Agents searching for c_k or Δ_λ closures must NOT conflate the two levels.
 
+> **🟧 OWNER RULING (2026-09-03, recorded from chat, verbatim):** *"The QOU should be
+> on the full tower in the derivations to the standard model — should make use of the
+> full tower even though what is observable is only order zero."* **Reading (agent's,
+> not the owner's — see the open question below):** a derivation of an SM parameter
+> must be carried on the fibre-level categorical object in full — the Hecke tower
+> `H_n(q)` with the complete Frobenius pairing over all partitions, and all orders of
+> the fibre-level `q`-expansion (the Habiro-element object of the fibre-vs-observable
+> banner) — and the observable parameter is only its **order-zero archimedean
+> rendering** at `q₀`. Consequences: (i) an attack that works only on the leading
+> term, a single crossing, or a first-order ansatz is **structurally incomplete**
+> under this ruling, whatever its residual; (ii) every per-term bean carries a
+> *tower status* line (FULL-TOWER / ORDER-ZERO-ONLY / MIXED); (iii) the L2
+> residual of an order-zero-only construction is not evidence about the tower.
+> **Open (owner):** whether "full tower" means all `n` of the Hecke tower, all orders
+> in `q`, or both — the reading above takes both. Recorded in
+> `docs/audits/2026-09-03-sm-26-term-status.md` §10.
+
 ## Precision goals (STRICT — read before any precision-affecting work)
 
 The framework's headline precision goal has **two independent legs**.

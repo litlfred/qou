@@ -320,4 +320,10 @@ all eight `sm-params-*` blocks are byte-identical to their QA sidecars.
   central obstruction (`dim V = 2`) is invariant along the single-fibre tower,
   and `su5-hypercharge-n3-gate.md` proves Wenzl levels are alternatives, not
   stages. There is no all-orders SM derivation.
+- **🟧 Owner ruling (2026-09-03, verbatim):** *"The QOU should be on the full tower
+  in the derivations to the standard model — should make use of the full tower even
+  though what is observable is only order zero."* Every attack front in this ledger
+  is to be re-read against it: an order-zero-only construction is structurally
+  incomplete regardless of residual; per-term beans (`qou-bsu0`) carry a tower-status
+  line. Reading and open question recorded in the audit above.
 

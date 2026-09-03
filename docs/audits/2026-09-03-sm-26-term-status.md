@@ -264,6 +264,19 @@ The central obstruction, $\dim V = 2$, is invariant along the single-fibre
 tower, and `su5-hypercharge-n3-gate` proves Wenzl levels are alternatives, not
 stages — one fibre occupies one level. There is no all-orders SM derivation.
 
+**Owner ruling, 2026-09-03 (verbatim, from chat):** *"The QOU should be on the full
+tower in the derivations to the standard model — should make use of the full tower
+even though what is observable is only order zero."* Read here as: the derivation is
+to be carried on the fibre-level categorical object in full — the Hecke tower with
+the complete Frobenius pairing over all partitions, and all orders of the
+fibre-level $q$-expansion — with the observable parameter its order-zero
+archimedean rendering at $q_0$. Under that reading every attack in §§2–7 above is
+order-zero-only except the Habiro-element route and the Magnus hook-slice result,
+and the residual of an order-zero-only construction is not evidence about the
+tower. Whether "full tower" means all $n$, all orders in $q$, or both is left to
+the owner; this file takes both. Each per-term bean (`qou-bsu0`) carries a *tower
+status* line accordingly.
+
 ## 11. Corpus defects found, and their disposition
 
 | # | Defect | Where | Disposition |

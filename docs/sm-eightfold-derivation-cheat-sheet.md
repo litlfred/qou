@@ -584,6 +584,7 @@ all four — `qou-xu5t`, `qou-b4lo`, `qou-a5os`, `qou-cy2h` — completed on
 | G5 | *"GMN proved for all six quarks"* | Collapses to **two** distinct arithmetic rows — see §3.2. **Now machine-checked** (2026-08-15): `gmn_check_has_two_distinct_rows` + `gmn_data_factors_through_weakType` prove the collapse, and `genWinding_finer_than_gmn_data` proves the relation is blind to the generation, so the wide phrasing cannot recur unnoticed | `qou-8z5j` ✅ |
 | G6 | Citing the Weinberg **0.127 %** as an accuracy result | **Still a live guardrail** — but now stated in-paper (2026-08-14). It is the residual after picking the best of **74** swept candidates, and the witness itself records the ansatz as neither supported at `10⁻³` nor falsified at `10⁻²` (`path_c_status: inconclusive`). See §3.3 | `qou-s2pl` ✅ |
 | G7 | Quoting the 2026-08-08 audit's *"1 derived"* as a corpus figure | It is a **two-chapter** figure. See §1 | — |
+| G9 | Presenting an order-zero-only construction (leading term, single crossing, first-order ansatz) as a derivation of an SM parameter | **Owner ruling 2026-09-03:** derivations must be carried on the **full tower**; only the order-zero rendering is observable. Say the tower status (FULL-TOWER / ORDER-ZERO-ONLY / MIXED) beside every SM claim; an order-zero-only residual is not evidence about the tower. Reading + open question: [`audits/2026-09-03-sm-26-term-status.md` §10](audits/2026-09-03-sm-26-term-status.md) | `qou-bsu0` |
 | G8 | Citing colour-row proofs at `qou:QOU.StandardModel.ColourStabilizerAction` | The proofs are real but live in `QOU/MathlibExt/Octonion*` (9-module cone, verified `ok=9, err=0`). A reader following the `lean.ref` finds none of them | — |
 
 > **`grep -c sorry` is unusable in this corpus.** Raw counts hit the phrase
@@ -636,6 +637,11 @@ ranking is an agent's judgement, not a corpus fact; argue with it.
 | 5 | **`α_EM` per-loop measure** | Would move the corpus's best number from `partial` toward closed | its own witness calls it *"highest-value but long-horizon conjectural close, not near-term"* — believe the witness |
 | 6 | **`sin²θ_W`** | `μ̄₁₂₃` separates the two `U(1)`s (sorry-free) | relative `U(1)` normalisation inherits open `SU(3)`-flavour; **and** the 0.127 % / 64 % reconciliation (G6) should be settled first |
 | — | **`θ_QCD` smallness, `α_s`, CKM, PMNS, `v`, `m_τ`, heavy-quark masses** | **not** near-term | all gate on 4-A, or have recorded negatives |
+
+**Full-tower note (owner ruling 2026-09-03).** Every row in this table is an
+order-zero attack as currently posed; under the ruling the *full-tower* version of
+each step is the one that counts, and a row whose only formulation is order-zero
+should say so. See G9.
 
 **Formalize-first note.** Before any wide numerical search on this surface,
 check §4's exclusion table. Seven `N=3` routes are already excluded with named
