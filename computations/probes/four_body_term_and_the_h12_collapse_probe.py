@@ -142,9 +142,13 @@ The four-body term measured below is negative and that stands, as does
 everything about `4He`: at `A = 4` the cumulant expansion terminates at
 `k = 4`, so orders `2, 3, 4` exhaust it and all were measured. What does NOT
 extend is the general reading. At `A = 5` the fifth cumulant is **positive**
-and larger than the fourth (`+1.6045` against `-1.2308`), so "every many-body
-term is negative" and "the naive sum is an upper bound" are false from
-`A = 5` on. No `A <= 4` measurement here licenses extrapolation.
+— robustly, in 12 of 12 bond orderings (`qou-1uul`) — so "every many-body term
+is negative" and "the naive sum is an upper bound" are false from `A = 5` on.
+No `A <= 4` measurement here licenses extrapolation.
+
+(A companion claim that the hierarchy *does not converge* was made and then
+**withdrawn**: `|c_5/c_4| > 1` held only in the canonical ordering, 1 of 12.
+Whether the hierarchy converges is unknown.)
 
 -- Ref: [manuscript] bean t7qv
 -- Ref: [probe] three_body_term_has_the_wrong_sign_probe.py (bound now closed)

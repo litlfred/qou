@@ -131,9 +131,10 @@ SIGN CLAIM NARROWED — SEE `cumulant_hierarchy_does_not_converge_probe.py`
 -------------------------------------------------------------------------
 The three-body terms below are negative at every `A = 3` ordering and that
 stands. But the hierarchy does not continue that way: at `A = 5` the fifth
-cumulant is **positive** and larger than the fourth, and the cumulant
-hierarchy does not converge. Read the negative sign as a fact about `c_3`,
-not as a pattern the higher orders follow.
+cumulant is **positive**, robustly across 12 bond orderings (`qou-1uul`). Read
+the negative sign as a fact about `c_3`, not as a pattern the higher orders
+follow. (Whether the hierarchy converges is unknown — an earlier claim that it
+does not was withdrawn as a convention artifact.)
 
 -- Ref: [manuscript] bean t7qv
 -- Ref: [probe] no_distance_decay_in_the_trace_probe.py
