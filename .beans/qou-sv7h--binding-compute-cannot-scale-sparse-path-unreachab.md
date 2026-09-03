@@ -353,3 +353,36 @@ earlier note warned. `scripts/build-pyhecke-native.sh` has to be re-run after
 every reclaim or every Rust path silently takes the slow fallback. The
 `use_rust=True` overloads raise rather than fall back for this reason; only
 `use_rust=None` degrades quietly.
+
+
+## 2026-09-03 — where the three YSN loop copies stand now
+
+`binding_energy` = `unified_iterative_correction` + `sdp_cross_channel_contribution`
++ `binding_from_frobenius_pairing`. Traced all three:
+
+- `unified_iterative_correction`  -> Rust (`chi_q_atomic_prefix_traces_mpfr`)
+- `binding_from_frobenius_pairing` -> `atom_markov_trace` -> `atom_character_raw`
+  -> Rust (`chi_q_atomic_mpfr`)
+- `sdp_cross_channel_contribution` -> builds an active set and solves an
+  SDP (`sol['cross_blocks']`). It does NOT go through a YSN matrix product at
+  all, so there is nothing to route; it was never the bottleneck.
+
+So both heavy terms are Rust-routed, which matches the observed per-atom
+times.
+
+### The one remaining copy — and it is unreachable
+
+`_contrib_single_partition` is still the O(dim^3) mpmath loop with
+`_msig_object_safe`. Its only callers are `conjugate_pair_cross_term` and
+`unified_iterative_correction_jet`, and **neither has a caller outside
+`hecke_core_legacy` itself** (checked across `computations/` and `tools/`).
+So it is on no live producer path and is not blocking anything.
+
+Left un-routed deliberately, but recorded rather than forgotten: this bean and
+`qou-9ay6` have both now been bitten by divergence between copies of this loop
+(three `.dot` sites, then three wrong `a_rho` sites). A fourth copy drifting
+out of sync is the standing failure mode here, so if `_contrib_single_partition`
+ever acquires a live caller it should be routed at the same time, not after.
+
+Not editable right now in any case: the nuclide-table regeneration's resume
+key hashes `hecke_core_legacy.py`, so touching it would discard the run.
