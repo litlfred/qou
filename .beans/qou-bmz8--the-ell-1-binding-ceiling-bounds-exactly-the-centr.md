@@ -92,14 +92,116 @@ object.
 
 - [x] Measure whether the family is non-degenerate and what it spans.
 - [x] Establish that the centre is exactly what the ceiling bounds.
-- [ ] **The derived-`w` question, which is the only one worth pursuing.** Is
-      there a *categorically distinguished* non-central `w` — a Jucys–Murphy
-      element, a Temperley–Lieb projector, the interface operator the corpus
-      already builds — rather than a searched one? A derived `w` would be a
-      candidate additive term; a fitted one is worthless. Note the full twist is
-      **central**, so it is already excluded and is not the answer.
+- [x] **The derived-`w` question.** Attempted 2026-09-03; see the follow-up
+      section below. Answer so far: most of the freedom is INERT, and the part
+      that is not is the interface subalgebra.
 - [ ] Repeat the scope measurement at tritium / ³He / ⁴He, where the committed
       ceilings differ (0.3604 / 0.6925 / 0.4335).
 - [ ] Decide with the owner whether `qou-fvzm` should carry a pointer to this
       scoping. It is `completed` and closing lines of completed beans are what
       later sessions quote — this session quoted that very line twice.
+
+---
+
+## Follow-up measured 2026-09-03 — most of that freedom is INERT
+
+Probe: `computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py`.
+The derived-`w` todo above, attempted. The answer is not the one the todo
+anticipated.
+
+### The test
+
+`binding_canonical.py` computes `B = Q_beta(n) . (tr_M(W_free) - tr_M(W_atom))`,
+`Q_beta(n) = 0.78233340931 MeV`. The dimensionless shortfall is
+
+```
+R_X = B_AME(X)/Q_beta - ( tr_M(free_X) - tr_M(atom_X) )
+```
+
+measured **2.286957** (²H), **9.953130** (³H), **8.972505** (³He) — the framework
+supplies 19.6 %, 8.2 % and 9.1 % of binding. A candidate contributes
+`S_X(w) = tr_M(free_X . w) - tr_M(atom_X . w)`, and the test asks whether
+`c_X = R_X/S_X(w)` is the **same at every atom**. Three atoms, one constant: two
+degrees of overdetermination. One atom would be fitted by construction.
+
+### Result — five candidates, one spread
+
+| candidate `w` | ²H | ³H | ³He | spread |
+|---|---|---|---|---|
+| `w = 1` (control) | 4.109206 | 11.201717 | 10.048627 | **0.83903** |
+| `sigma_1` | 3.116688 | 8.496109 | 7.621531 | **0.83903** |
+| `L_2 = T1T1` (Jucys–Murphy) | 3.221299 | 8.781280 | 7.877346 | **0.83903** |
+| `P+` of `sigma_1` | 3.723212 | 10.149497 | 9.104721 | **0.83903** |
+| `P-` of `sigma_1` | −39.636539 | −108.049420 | −96.926954 | **0.83903** |
+| interface product | −4.476702 | *blocked* | *blocked* | — |
+
+Identical to five digits because every one is a pure **rescaling** of the same
+object, by an **atom-independent** constant:
+
+```
+tr_M(D.sigma_1)/tr_M(D) =  1.318452615852908     at every atom
+tr_M(D.L_2)    /tr_M(D) =  1.275636097818101     at every atom
+tr_M(D.P+)     /tr_M(D) =  1.103672165665516     at every atom
+tr_M(D.P-)     /tr_M(D) = -0.1036721656655155    at every atom
+```
+
+Internal check, asserted in the probe: `P+` and `P-` are complementary spectral
+projectors of `sigma_1`, so their ratios must sum to the `w = 1` ratio of 1 —
+and `1.103672165665516 + (-0.103672165665516) = 1` exactly. That validates the
+whole ratio computation, not just those two rows.
+
+### Mechanism — derived, and it predicts which `w` can matter
+
+Every atom's word begins with the **same intra-nucleon block**:
+`atom_braid_word_3A` emits identical first-nucleon letters whatever `(Z, N)` is.
+By trace cyclicity, a `w` supported there modifies a factor **common to all
+atoms**, so the ratio cannot depend on the atom. Such a `w` carries no
+atom-dependent information and therefore cannot supply an atom-dependent
+shortfall, at any coefficient.
+
+**Not the naive Markov factorisation over disjoint supports** — that predicts
+ratio `tr_M(sigma_1) = z = 0.612688`, and the measurement is 1.318453.
+`Delta_bind` is a difference of two full-length words, not a locally supported
+operator. An earlier draft of this note asserted the factorisation and was
+wrong; the probe docstring records both versions.
+
+### The narrowing, which is the point
+
+The mechanism says which `w` **can** matter: those supported where the atoms
+differ. `atom_braid_word_3A` adds exactly one letter per bond — generator index
+`2` at `A = 2`, `{2, 5}` at `A = 3` — so the **interface generators are the whole
+of the difference**. Measured at ²H, the interface `w` breaks the pattern as
+predicted: ratio **−0.917909**, a sign flip rather than a rescaling.
+
+So `qou-bmz8`'s non-central freedom is real but **almost all of it is inert on
+`Delta_bind`**. The part that can carry the shortfall is the **interface
+subalgebra** — the one the corpus's own `include_inter` switch already names.
+That is a large narrowing of the open question, and it is derived rather than
+searched.
+
+### 🛑 The deciding test is BLOCKED and nothing is concluded from one atom
+
+`tr_m_atomic_mpfr` raises
+
+```
+RuntimeError: tr_m_word_lq: Case C (multiple top-1 in segment) not implemented
+```
+
+on interface-suffixed words at `n = 9`, so ³H and ³He could not be evaluated on
+the fast exact path. **²H alone is one atom and one free constant — fitted by
+construction, and it proves nothing.** Whether an interface-supported `w`
+supplies the shortfall consistently is OPEN.
+
+`spread < 5 %` across all three atoms: **NONE**. No candidate is put forward.
+
+## Todo (revised)
+
+- [x] Test the derived-`w` question on a fixed, categorically distinguished set.
+- [ ] **Redo the interface candidate on the seminormal-matrix route**, which has
+      no Case C, at `n = 9`. This is the deciding measurement and it is the only
+      thing standing between here and an answer.
+- [ ] Consider whether `tr_m_word_lq`'s Case C is worth implementing — it blocks
+      a class of suffixed words, not just this one, and the failure is loud
+      (RuntimeError) rather than silent, which is the good kind.
+- [ ] Repeat at ⁴He once the route is settled (512 expansion terms, over the
+      current `QOU_MAX_TERMS` guard).
