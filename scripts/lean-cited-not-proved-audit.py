@@ -249,6 +249,45 @@ def selftest() -> int:
     return 1 if bad else 0
 
 
+# A field whose TYPE is literally `Prop`: the instance chooses the proposition.
+PROP_FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*Prop[ \t]*$", re.M)
+CARRIER = re.compile(r"^[ \t]*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+)?(class|structure)\s+([A-Za-z0-9_'.]+)", re.M)
+
+
+def prop_valued_fields(code: str):
+    """Fields declared `name : Prop` inside a class or structure.
+
+    This is a strictly worse defect than an uninhabited carrier, and the two are
+    independent.  A field typed `Prop` is a *variable*: the instance supplies the
+    proposition AND its proof, so
+
+        squares_sum_factorial : Prop
+        squares_sum_holds : squares_sum_factorial
+
+    is discharged by `squares_sum_factorial := True; squares_sum_holds := trivial`.
+    The carrier constrains nothing, and unlike a bare `True` field (which
+    AGENTS.md §3b-tax's `proof-claims-unencoded` already flags) it does not even
+    say WHICH nothing — a reader cannot tell what was meant to be asserted.
+
+    AGENTS.md's stated remedy is a parameter-quantified statement in the shape of
+    the claim, so the honest form of the example above is
+
+        squares_sum : ∑ lam, (dim lam) ^ 2 = n !
+    """
+    out = []
+    for m in PROP_FIELD.finditer(code):
+        owner = None
+        for c in CARRIER.finditer(code, 0, m.start()):
+            owner = c
+        out.append({
+            "line": code.count("\n", 0, m.start()) + 1,
+            "field": m.group(2),
+            "carrier": owner.group(2) if owner else "<none>",
+            "carrier_kind": owner.group(1) if owner else "<none>",
+        })
+    return out
+
+
 def git_show(rev: str, path: str) -> str | None:
     r = subprocess.run(["git", "show", f"{rev}:{path}"], capture_output=True, text=True)
     return r.stdout if r.returncode == 0 else None
@@ -258,7 +297,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rev", default="", help="git revision (default: working tree)")
     ap.add_argument("--json", default="")
-    ap.add_argument("--kind", default="all", choices=["sorry", "axiom", "class", "all"])
+    ap.add_argument("--kind", default="all",
+                    choices=["sorry", "axiom", "class", "prop-field", "all"])
     ap.add_argument("--selftest", action="store_true",
                     help="run the known-positive/negative cases and exit")
     a = ap.parse_args()
@@ -278,6 +318,7 @@ def main() -> int:
 
     sorries, axioms, prose_hits = [], [], 0
     uninhabited_out: list = []
+    prop_fields_out: list = []
     class_totals = {}
     for rel in sorted(files):
         raw = git_show(a.rev, rel) if a.rev else (root / rel).read_text(errors="replace")
@@ -351,13 +392,34 @@ def main() -> int:
         class_totals.update(declared=len(classes), inhabited=inhabited,
                             uninhabited=len(uninhabited))
 
+
+    if a.kind in ("prop-field", "all"):
+        pf = []
+        for rel in sorted(files):
+            raw = git_show(a.rev, rel) if a.rev else (root / rel).read_text(errors="replace")
+            if raw is None:
+                continue
+            for e in prop_valued_fields(strip_comments(raw)):
+                e["file"] = rel[len(LEAN_ROOT) + 1:]
+                pf.append(e)
+        carriers = {e["carrier"] for e in pf}
+        print(f"\nPROP-VALUED FIELDS: {len(pf)} across {len({e['file'] for e in pf})} files, "
+              f"in {len(carriers)} carriers")
+        print("  A field typed `Prop` is a VARIABLE: the instance supplies both the")
+        print("  proposition and its proof, so the carrier constrains nothing — and unlike")
+        print("  a bare `True` field it does not even say which nothing.")
+        for e in pf:
+            print(f"  {e['file']}:{e['line']}  {e['carrier_kind']} {e['carrier']} . {e['field']}")
+        prop_fields_out.extend(pf)
+
     if a.json:
         Path(a.json).write_text(json.dumps(
             {"rev": a.rev or "working-tree", "files_scanned": len(files),
              "sorries": sorries, "axioms": axioms,
              "prose_occurrences": prose_hits,
              "class_totals": class_totals,
-             "uninhabited_classes": uninhabited_out}, indent=2))
+             "uninhabited_classes": uninhabited_out,
+             "prop_valued_fields": prop_fields_out}, indent=2))
         print(f"\nwrote {a.json}")
     return 0
 
