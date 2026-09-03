@@ -79,7 +79,7 @@ def sigma2 {C : Type u} [Category.{v} C]
 theorem sigma1_is_iso {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma1 V ≫ ((β_ V V).inv ▷ V) = 𝟙 ((V ⊗ V) ⊗ V) := by
-  simp [sigma1, ← MonoidalCategory.whiskerRight_comp,
+  simp [sigma1, ← MonoidalCategory.comp_whiskerRight,
         Iso.hom_inv_id, MonoidalCategory.whiskerRight_id]
 
 /-- σ₂ is an isomorphism: σ₂ ≫ σ₂⁻¹ = id. -/
@@ -219,8 +219,7 @@ structure BraidRepB3 (C : Type u) [Category.{v} C]
   /-- Generator σ₂ = id_V ⊗ c_{V,V} (via associator). -/
   gen2 : (V ⊗ V) ⊗ V ⟶ (V ⊗ V) ⊗ V := sigma2 V
   /-- The braid relation holds. -/
-  braid_rel : gen1 ≫ gen2 ≫ gen1 = gen2 ≫ gen1 ≫ gen2 :=
-    yang_baxter_braiding V
+  braid_rel : gen1 ≫ gen2 ≫ gen1 = gen2 ≫ gen1 ≫ gen2
 
 /-- Every braided monoidal category yields a B₃ representation on V⊗³. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Cor. XIII.1.4
@@ -228,5 +227,8 @@ def braid_action_tensor {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     BraidRepB3 C where
   V := V
+  gen1 := sigma1 V
+  gen2 := sigma2 V
+  braid_rel := yang_baxter_braiding V
 
 end QOU.Braiding
