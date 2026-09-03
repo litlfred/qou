@@ -167,7 +167,10 @@ def main() -> int:
     wb.add_assertion("tier0_normalization_is_over_85pct_of_C_knot", computed=str(bool(a3)), expected="True")
     wb.add_assertion("dressing_is_small_frame_projection", computed=str(bool(a4)), expected="True")
     wb.add_assertion("verdict_is_ARTIFACT", computed=verdict, expected="ARTIFACT")
-    wb.save(extra={"auditOnly": True})
+    wb.save(extra={"auditOnly": True,
+             "q0Anchor": "independent",
+             "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Is the deuteron `C_knot = 5.853` a REAL missing many-body magnitude, or a master-formula.",
+             })
 
     print("=" * 88)
     print("  Deuteron C_knot = 5.853: ARTIFACT vs REAL — the τ-transfer test")

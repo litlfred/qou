@@ -347,6 +347,7 @@
     "gram_transfer_quadratic",
     "ground_state_ordering_a3_probe",
     "gs_filtration_binding_components",
+    "gs_filtration_jet_shape_magic_probe",
     "h12_trace_multiplicativity_probe",
     "h2-integer-lp",
     "h2-molecular-binding",
@@ -534,6 +535,7 @@
     "mu_substrate_tension_audit_100dps",
     "multi_layer_gap_decomposition",
     "multi_level_jet_sum",
+    "muon_pin_A_residual_surface_audit",
     "muon_pin_migration_stage1_inventory",
     "native_5_strand_baryon",
     "nf-qvalues",
@@ -769,6 +771,7 @@
     "rt_w_sqrt_quantum_two_probe",
     "saturated_fraction_is_not_monotonic_probe",
     "seifert_volume_meson_n7_extension",
+    "shell_shadow_price_magic_contrast_probe",
     "sigma_all_evaluator",
     "sigma_f_electron_shell_chain",
     "sigma_shell_characterization",
@@ -890,5 +893,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

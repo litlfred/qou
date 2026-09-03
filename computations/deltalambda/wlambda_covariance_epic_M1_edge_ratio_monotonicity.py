@@ -371,6 +371,8 @@ def main():
         "total": len(checks),
         "ms": int(ms),
     }
+    out["q0Anchor"] = "independent"
+    out["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: N/P monotonicity extended to n=60, and the per-edge ratio is UNBOUNDED."
     Path(__file__).with_name("m1-edge-ratio-monotonicity.witness.json").write_text(
         json.dumps(out, indent=1) + "\n")
     print()
