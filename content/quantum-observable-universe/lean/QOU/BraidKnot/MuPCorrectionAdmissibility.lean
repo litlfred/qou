@@ -15,11 +15,18 @@ Prune halves consolidated here:
 ## Context
 
 The muon carrier `m_μ/m_e = Vol(4₁)/ℏ_q²` overshoots CODATA at the experimental
-(proton) pin `q₀ = 1.10997858275138` by `+209.755 ppb = 9.534 σ`, so a first
-correction to the carrier would have to supply a multiplicative factor `1 − t`
-with `t = 2.09754920524e-7` (`ℏ_{q₀} = 0.09908171604`). The corpus's standing
-precondition on that correction is that it be **bar-even** (fixed by
-`q ↦ q⁻¹`), argued from the amphichirality of `4₁`.
+(proton) pin `q₀ = 1.10997858275138` (`ℏ_{q₀} = 0.09908171604`), so a first
+correction to the carrier would have to supply a multiplicative factor `1 − t`.
+**Two vintages of the residual are in circulation — state which.** At the
+CODATA-2018 ratio the order-window probe hard-codes (`206.7682830`):
+`+209.755 ppb = 9.534 σ`, `t = 2.09754920524e-7`. At the live CODATA-2022 ratio
+(`206.7682827`, `qou_substrate.constants.MASS_RATIO_MU_E_STR`, owner ruling
+2026-08-22; `mu-substrate-tension-audit-100dps.witness.json`
+`residual_ppb_at_canonical_q0 = 211.165`): `+211.2 ppb = 9.60 σ`,
+`t = 2.1121e-7`. Both lie inside the residual window `[1.8e-7, 2.4e-7]` that
+every theorem below takes as its hypothesis, so nothing here depends on the
+vintage. The corpus's standing precondition on the correction is that it be
+**bar-even** (fixed by `q ↦ q⁻¹`), argued from the amphichirality of `4₁`.
 
 The two prune files each prove one *half* of an exclusion:
 
@@ -32,8 +39,9 @@ The two prune files each prove one *half* of an exclusion:
   says nothing about the `w`-tower on its own.
 
 The probe then *measured* that the `w`-tower admits no order with a
-small-height coefficient (`t/w³ = 0.16211 < 1/5`, `t/w⁴ = 14.877 > 5`), but
-that measurement was never proved.
+small-height coefficient (`t/w³ = 0.1621 < 1/5` and `t/w⁴ = 14.88 > 5` at the
+2018 ratio; `0.1632` and `14.98` at the 2022 ratio), but that measurement was
+never proved.
 
 ## What this file proves
 
@@ -51,23 +59,27 @@ that measurement was never proved.
    `(1/5)·0.0108³ ≈ 2.52e-7`; orders `j ≥ 4` give at most
    `5·0.011⁴ ≈ 7.3e-8`.
 4. `no_bar_even_small_height_monomial` — **capstone**: no bar-even monomial
-   `|c|·ℏ_q^k·q^m` with a small-height coefficient carries the residual at any
-   pin in the window. Proof: (1) forces `k = 2m`, the positive half turns the
-   monomial into `w^m`, and (3) excludes every `m`.
+   `|c|·ℏ_q^k·q^m` with a small-height coefficient equals any `t` in the
+   residual window, for any `q` in the pin window (`q` and `t` are independent
+   parameters — strictly more than the physical reading, in which the residual
+   is `≈ 2.1e-7` at the proton pin and zero by construction at the muon pin).
+   Proof: (1) forces `k = 2m`, the positive half turns the monomial into `w^m`,
+   and (3) excludes every `m`.
 5. `no_bar_even_small_height_monomial_hbarQ` — the capstone restated against
    the production substrate `hbarQ` through the bridge
    `MuPCarrierOrderWindow.hbarGen_eq_hbarQ`.
 6. `GapA4CorrectionAdmissible` + `monomial_not_admissible` — the admissibility
    class as a content-bearing `structure … : Prop` (pin in the window, bar-even
-   as a function, residual carried at the pin), and the statement that no
+   **at the pin**, residual carried at the pin), and the statement that no
    member of the monomial family `q ↦ c·ℏ_q^k·q^m`, `|c| ∈ [1/5, 5]`, belongs
-   to it.
+   to it. The structure is a *filter*, not a certificate — see its docstring.
 
 ## Scope of the negative
 
 **(b)**, structural, relative to a stated class: {single monomial in
 `(ℏ_q, q)`, bar-even, coefficient of height `|c| ∈ [1/5, 5]`} as a carrier of
-the μ–p residual at any pin in `[1.1099, 1.11]`. The two named invariants are
+any value in the residual window `[1.8e-7, 2.4e-7]`, for any `q` in the pin
+window `[1.1099, 1.11]`. The two named invariants are
 **bar parity under `q ↦ q⁻¹`** (`hbarGen_bar`: `ℏ_{q⁻¹} = −q·ℏ_q`, so
 bar-evenness forces `k = 2m`) and **exact interval arithmetic** on the pin
 window (the `w`-bounds and the two `norm_num` inequalities). Nothing outside
@@ -177,7 +189,8 @@ theorem wGen_upper_bound (q : ℝ)
 /-! ## 3. The `w`-tower admits no order with a small-height coefficient -/
 
 /-- **The `w`-tower carries no small-height residual** (Lean form of the
-probe's measured `t/w³ = 0.16211 < 1/5`, `t/w⁴ = 14.877 > 5`). For every
+probe's measured `t/w³ = 0.1621 < 1/5`, `t/w⁴ = 14.88 > 5` at the CODATA-2018
+ratio; `0.1632` and `14.98` at CODATA-2022 — see the module docstring). For every
 order `j`, a monomial `|c|·w^j` with `|c| ∈ [1/5, 5]` and `q` in the pin
 window misses the residual window `t ∈ [1.8e-7, 2.4e-7]`.
 
@@ -261,22 +274,31 @@ when
 
 * `pin_window` — the pin lies in the window `[1.1099, 1.11]` (which contains
   the proton pin `1.10997858275138`);
-* `bar_even` — `F` is fixed by the bar involution, `F q⁻¹ = F q` for `q > 0`
-  (the corpus's precondition, here a *hypothesis on the class*);
+* `bar_even_at_pin` — `F` is fixed by the bar involution **at the pin**,
+  `F q₀⁻¹ = F q₀`. The corpus's precondition is bar-evenness as a function of
+  `q`; that implies this field, so every function bar-even everywhere is in
+  the class, and the exclusion below therefore covers the larger class. (This
+  is also exactly the instance the proof uses.)
 * `carries_residual` — evaluated at the pin, `F` lands in the residual window
-  `[1.8e-7, 2.4e-7]` around the measured `t = 2.0975e-7`.
+  `[1.8e-7, 2.4e-7]` around the measured `t ≈ 2.1e-7`.
 
-Every field is content-bearing; the class is not claimed non-empty. -/
+Every field is content-bearing. **The structure is a filter, not a
+certificate.** It is trivially inhabited — the constant function
+`fun _ => 2/10⁷` at `q₀ = 1.1099` satisfies all three fields — so membership
+encodes no derivation whatever, and `F ∈ GapA4CorrectionAdmissible` must never
+be cited as evidence that a correction exists. Its only content is which
+functions are *excluded* from it: `monomial_not_admissible` below. -/
 structure GapA4CorrectionAdmissible (F : ℝ → ℝ) (q₀ : ℝ) : Prop where
   pin_window : (11099 : ℝ) / 10000 ≤ q₀ ∧ q₀ ≤ (111 : ℝ) / 100
-  bar_even : ∀ q : ℝ, 0 < q → F q⁻¹ = F q
+  bar_even_at_pin : F q₀⁻¹ = F q₀
   carries_residual : (18 : ℝ) / 10 ^ 8 ≤ F q₀ ∧ F q₀ ≤ (24 : ℝ) / 10 ^ 8
 
 /-- **No small-height monomial is admissible.** For every `k, m` and every
 coefficient with `|c| ∈ [1/5, 5]`, the function `q ↦ c·ℏ_q^k·q^m` is not an
-admissible carrier at any pin. (Bar-evenness of the function at `q₀`, after
-cancelling `c ≠ 0`, is the hypothesis of the capstone; positivity of the
-residual forces `c·X = |c|·X`.) -/
+admissible carrier at any pin. (Bar-evenness at `q₀`, after cancelling
+`c ≠ 0`, is the hypothesis of the capstone; positivity of the residual forces
+`c·X = |c|·X`.) Dropping `hc0` admits `c = t/w³ ≈ 0.162` at `(k, m) = (6, 3)`
+as a member — the exclusion is the small-height bound, as designed. -/
 theorem monomial_not_admissible (c q₀ : ℝ) (k m : ℕ)
     (hc0 : (1 : ℝ) / 5 ≤ |c|) (hc1 : |c| ≤ 5) :
     ¬ GapA4CorrectionAdmissible (fun q => c * (hbarGen q ^ k * q ^ m)) q₀ := by
@@ -288,7 +310,7 @@ theorem monomial_not_admissible (c q₀ : ℝ) (k m : ℕ)
   have hpos : (0 : ℝ) < q₀ := by linarith
   have hcne : c ≠ 0 := abs_pos.mp (by linarith)
   have hb : c * (hbarGen q₀⁻¹ ^ k * (q₀⁻¹) ^ m) = c * (hbarGen q₀ ^ k * q₀ ^ m) :=
-    hF.bar_even q₀ hpos
+    hF.bar_even_at_pin
   have hbar : hbarGen q₀⁻¹ ^ k * (q₀⁻¹) ^ m = hbarGen q₀ ^ k * q₀ ^ m :=
     mul_left_cancel₀ hcne hb
   have hX : (0 : ℝ) < hbarGen q₀ ^ k * q₀ ^ m :=
