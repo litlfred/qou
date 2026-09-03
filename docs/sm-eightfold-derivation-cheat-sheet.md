@@ -438,7 +438,7 @@ that yields a new comparable number without touching `SU(3)`.
 > is identified, the kernel is not, and the separation law is imported.
 > [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
 
-### 4-C. A third flavour grade (strangeness / charm Cartan)
+### 4-C. Content → hyperbolic braid map (retitled 2026-09-03; formerly "A third flavour grade (strangeness / charm Cartan)")
 
 **Gates:** the charmed-hadron observable spectrum, `m_s`/`m_c`, the `D`-meson
 mass, `Y = B + S` on strange states, and thereby `sin²θ_W`'s normalisation.
