@@ -1,11 +1,11 @@
 ---
 # qou-sv7h
 title: 'Binding compute cannot scale: sparse path unreachable, zero Rust, float64 straddle'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-03T03:35:17Z
+updated_at: 2026-09-03T17:17:24Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -386,3 +386,45 @@ ever acquires a live caller it should be routed at the same time, not after.
 
 Not editable right now in any case: the nuclide-table regeneration's resume
 key hashes `hecke_core_legacy.py`, so touching it would discard the run.
+
+
+## Summary of Changes
+
+Closed. All five items resolved; two of them by contradicting the bean.
+
+1. **Sparse guard** — already fixed in the tree (`if s['sparse']:`).
+2 & 3. **The fix was not to export a matmul, but to CALL Rust that was already
+   exported.** This bean proposed exporting `dense_dense_mul_mpfr` (">=24x").
+   `pyhecke_native` already exported `chi_q_atomic_mpfr`, which computes the
+   ENTIRE per-partition product, taking `(c,d,gen)` decimal STRINGS so
+   NO-FLOAT64 holds by ABI rather than by care. Routed
+   `unified_iterative_correction` and later `atom_character_raw` (the latter
+   because one accelerated term of three is no faster than the slowest term —
+   the table ran 21 minutes without finishing deuterium until it was done).
+   Added `chi_q_atomic_prefix_traces_mpfr` (new Rust kernel) to get every
+   step's trace from one propagation, O(dim^2*A^2) rather than O(dim^2*A^3);
+   a state registry was measured as unaffordable (~1.6 GB) and proved
+   unnecessary, since the per-basis-vector formulation already passes through
+   every intermediate product.
+
+       deuterium   ~40 days (this bean's estimate)  ->  118 s
+       atom_character_raw at dim 660                ->  301x
+       value equality verified at 4 k_exact levels, 3 nuclides, ~1e-48
+
+4. **SCRAPPED — the recommendation was wrong.** Deleting the `dim >= 8` numpy
+   branch would have been a regression: re-measured on the real input types it
+   is a wash on mpf (±5%, not the claimed 31% loss), and the item missed that
+   `_matmul_dim` was also called with float64 by the q-sweep. Under NO FLOAT64
+   EVER that f64 path was then excised anyway, so the branch now stays purely
+   on the mpf measurement.
+5. **Done** — the q-Gaussian tier is deleted. It added a hardcoded `0.0` never
+   derived from the approximation it computed, and was empty by default.
+
+Also mapped all three `binding_energy` terms and confirmed the one remaining
+un-routed copy of the loop (`_contrib_single_partition`) is reachable from no
+live producer.
+
+Follow-up not blocking this bean: if `_contrib_single_partition` ever gains a
+live caller it should be routed at that moment — divergence between copies of
+this loop has now caused two separate defects (three `.dot` sites, then three
+wrong `a_rho` sites).

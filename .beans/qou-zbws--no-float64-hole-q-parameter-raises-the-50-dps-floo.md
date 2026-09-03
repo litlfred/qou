@@ -1,10 +1,11 @@
 ---
 # qou-zbws
 title: 'NO-FLOAT64 hole: q_parameter raises the 50-dps floor ONLY on the muon anchor — every proton/default-anchor producer computes at mpmath''s 15'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-09-02T21:53:12Z
-updated_at: 2026-09-03T00:00:00Z
+updated_at: 2026-09-03T17:17:25Z
 ---
 
 Found while fixing `qou-uiut` (the YSN braid defect). **Owner-facing**: the

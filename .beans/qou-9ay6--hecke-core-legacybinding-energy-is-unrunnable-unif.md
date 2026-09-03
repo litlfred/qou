@@ -1,11 +1,11 @@
 ---
 # qou-9ay6
 title: 'hecke_core_legacy.binding_energy is unrunnable: unified_iterative_correction >120s at A=2, and binding_from_frobenius_pairing dies in scipy.sparse'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T20:31:59Z
-updated_at: 2026-08-31T02:51:48Z
+updated_at: 2026-09-03T17:17:25Z
 ---
 
 
@@ -312,3 +312,36 @@ Q=313, HA=56, Q_INV=49, HBAR_Q=12, E_CROSS=9, S_SKEIN=5, HBAR_Q_SQ=5, LN_Q=4,
 TWO_Q=4, TANH_LN_Q=1.
 
 Full suite 183 passed; braid audit exit 0.
+
+
+## Summary of Changes
+
+Closed. Both defects fixed, and the NO-FLOAT64 excision this bean is named for
+was carried through to the end.
+
+**(b) the scipy dtype crash** — fixed at the root by extracting
+`_msig_object_safe` and wiring all three divergent copies of the loop to it,
+rather than coercing `c`/`d` to float (which the code itself refuted in
+writing, and which I attempted once and reverted).
+
+**(a) the >120 s runtime** — was NOT the "design cost" this bean concluded it
+was. Two causes, both removed: a factorial tableau enumeration in
+`_count_syts_by_12_relation` (replaced by a closed form, verified on 137
+partitions), and then the per-element mpmath matrix product, routed to Rust
+under `qou-sv7h`. Deuterium now finishes in 118 s.
+
+**NO FLOAT64 EVER** (owner directive, restated 2026-09-03) — excised the f64
+that remained, including paths I had preserved on purpose:
+
+- `_build_ysn_matrices(q=...)` dispatched on operand type to keep an f64
+  sweep bit-identical to the copy it replaced. Bit-compatibility with an f64
+  predecessor is not a reason to keep computing in f64.
+- Both q-sweeps in `sdp_cross_channel` (there was a second copy) carried f64
+  through mu_lambda, the matrices, the characters and the pair couplings.
+- `hadron_knot_table` computed its Markov z in float64 while the exact mpf
+  value sat unused fifteen lines below, and put an f64 q into its witness.
+
+`source_float64_import_audit`: 2 files drained, 463 -> 458.
+
+The remaining corpus-wide NO-FLOAT64 debt is 458 imported names (Q=313,
+HA=56, Q_INV=49, ...) — far beyond this bean's scope and not claimed as done.

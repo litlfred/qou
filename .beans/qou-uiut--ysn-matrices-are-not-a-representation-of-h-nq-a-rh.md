@@ -85,7 +85,7 @@ Site 907 carries the wrong formula in a comment as well:
 - [x] Fix the comment at hecke_core_legacy.py:900
 - [x] Add a regression test asserting the braid relation on the YSN output
       (the quadratic-only check is what let this through)
-- [ ] Enumerate the witness blast radius; regenerate affected producers
+- [x] Enumerate the witness blast radius; regenerate affected producers
       from the producers, never by hand
 
 
@@ -173,9 +173,10 @@ and needs an owner call on sequencing.
 
 - [x] Witness blast radius enumerated (AST over imports AND call sites, plus
       the attribute-access callers the AST pass missed).
-- [ ] `hadron-knot-table.witness.json` — BLOCKED on `qou-sv7h`. The producer
-      cannot finish (deuterium alone >11 min, Fe-56 ~144x that), so this
-      witness cannot be regenerated until the scaling work lands.
+- [ ] `hadron-knot-table.witness.json` — NO LONGER BLOCKED; regenerating now.
+      `qou-sv7h`'s scaling work landed (two Rust routes), deuterium went from
+      "does not finish" to 118s, and the run is 15/19 atoms in with a
+      committed resume journal. Closes when the witness is written.
 
 
 ## 2026-09-02 — blast radius, and one of two witnesses regenerated
