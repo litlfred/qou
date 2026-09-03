@@ -1126,12 +1126,28 @@ an identification and fit to it.
 
 ## 2026-09-01 (correction) — the target ratio is 33.7055, not 22.2457
 
-**What I asserted.** Three entries above quote nature's channel asymmetry as
-**22.2457** — at "Does NOT reach 22.2457" (the length-<=6 regular-rep sweep),
-at "Nature needs 22.2457" (the exactly-`R = 1` minimal-polynomial result), and
-at "Against nature's 22.2457, the measured spread reaches only 5.0". Those three
-sentences are left standing above as the dated record of what was measured
-against; this section is what supersedes the figure in them.
+**What I asserted.** **Five** sites above quote nature's channel asymmetry as
+the superseded figure, under **two spellings** — and a grep for either spelling
+alone finds under half of them:
+
+| spelling | site |
+|---|---|
+| `22.25` | "The 22.25:1 channel asymmetry is excluded by an EXACT inequality" (two exclusions) |
+| `22.25` | "Nature needs `R ~ 22.25 > 1`, so the family is excluded on the wrong side of 1" |
+| `22.2457` | "Does NOT reach 22.2457" (the length-<=6 regular-rep sweep) |
+| `22.2457` | "Nature needs 22.2457" (the exactly-`R = 1` minimal-polynomial result) |
+| `22.2457` | "Against nature's 22.2457, the measured spread reaches only 5.0" |
+
+(A sixth occurrence, "reaches 22.25: True", is the label of a *rejected*
+7.75e9 artefact and is part of that entry's own correction, not a claim.)
+
+Those five sentences are left standing above as the dated record of what was
+measured against; this section is what supersedes the figure in them.
+
+**I got this wrong once already, in this very section.** It first said "three
+entries", having grepped only `22.2457` — the exact one-spelling miss AGENTS.md
+records for the `4.6e6`/`4.66e6` figure. Corrected on re-measure. If you drain
+this figure further, grep **both** spellings.
 
 **What is actually true.** The error was methodological, not arithmetic. A
 *channel* asymmetry must compare **the same pair** across two isospin channels.
