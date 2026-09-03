@@ -21,12 +21,30 @@ permission problem, **not** the `update_pull_request` partial-write trap, and
 **not** rate limiting — so it does **not** clear on retry. Do not spend the
 window polling.
 
-**STANDING CONDITION, not an incident (2/2 sessions, 2026-08-31).** Measured
-identically on two separate dispatches the same day — #6395/#6396, then
-#6400/#6401. Both times all four `mcp__github__*` tools reported *"No such tool
+**STANDING CONDITION, not an incident (3 sessions).** Measured identically on
+#6395/#6396 and #6400/#6401 (both 2026-08-31), and again on **#6415
+(2026-09-03)**. Every time, all `mcp__github__*` tools reported *"No such tool
 available"* and REST returned the 403 above. **Assume the API is unavailable
 when dispatched as a sub-agent here** and plan the merge git-natively from the
 start rather than discovering it midway.
+
+**Do NOT conflate an absent API with the Copilot quota (added 2026-09-03).**
+`copilot-review-arrival.md` records that review requests are quota-rationed and
+that a quota refusal returns a *message* — *"reached their quota limit"* — which
+you can quote in the PR. That is a request that **was transmitted and refused**.
+The session gate is the opposite: there is no reviewer channel at all, so the
+request is **never transmitted**. The two look similar in a report and are not:
+
+| | quota | session gate |
+|---|---|---|
+| request reaches GitHub | yes | **no** |
+| evidence you hold | a refusal message | a 403 / absent tool |
+| honest report | "requested; quota-refused" | "**not requested** — API unavailable" |
+
+On #6415 the dispatching instructions anticipated the quota case and asked for
+the quota message to be recorded. The correct answer was neither: writing
+"quota" there would have invented a transmission that never happened. When Step
+6 cannot run at all, say so and hand the review request to the parent.
 
 The practical consequence is narrow and worth stating so it is not
 over-read: **`git` over HTTPS works fine**, so merges, pushes and rebases all
