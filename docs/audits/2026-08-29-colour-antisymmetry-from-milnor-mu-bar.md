@@ -461,3 +461,102 @@ of the very quantity a more direct argument would have keyed on. §8.2 was
 written against three specific quoted numbers and died with them. **Both were
 about the same block, filed in the same hour.** When a finding can be stated
 against an invariant, state it against the invariant.
+
+
+## 9. §7.4 answered — isomorphic, but NOT the same section
+
+Added 2026-09-03, five days after §8, and after
+[`2026-08-30-statement-b-brunnian-isotype-exclusion.md`](2026-08-30-statement-b-brunnian-isotype-exclusion.md)
+had raised the stakes on this question considerably. That note narrowed
+statement B to a **single** surviving premise and identified it as this one:
+
+> The only thing still assumed is the identification of the colour degree of
+> freedom with link-invariant content, which is the same identification dg07
+> §7.4 examines (canonical vs merely isomorphic — "isomorphic is not equal").
+
+### 9.1 The answer
+
+**The two lines are isomorphic as `S₃`-representations, and the identification
+between their sections is not canonical.** The separating invariant is the
+kernel of `B₃ → S₃` — the pure braid group `P₃`.
+
+Computed exactly in
+[`colour_sign_line_pure_braid_probe.py`](../../computations/probes/colour_sign_line_pure_braid_probe.py)
+(permutations and reduced free-group words; no floating point, no anchor,
+no `q`):
+
+| | fact |
+|---|---|
+| **F2** | the Borromean rings are the closure of `(σ₁σ₂⁻¹)³`, which lies in **`B₃`** — the same braid group as the colour fibre's monodromy — and is a **pure** braid: its image in `S₃` is the identity |
+| **F3** | that braid is nontrivial *as a braid*, by the faithful Artin representation `B₃ → Aut(F₃)`, so `P₃` is not collapsed |
+| **F4** | it and the trivial braid share the **same `S₃` image**, hence the same sign character, while their closures — Borromean rings and 3-component unlink — are separated by `μ̄₁₂₃` (`±1` against `0`, cited) |
+
+So the monodromy sign character **factors through `S₃`** and is therefore
+constant on pure-braid closures, while `μ̄` is not. Two functions with
+different level sets are not the same function, however isomorphic their
+targets. Scope-**(b)**: the invariant is named, and it forbids *any* function
+factoring through `S₃` from separating two pure-braid closures.
+
+### 9.2 The arity check — F5, and it is load-bearing
+
+The two "sections" do not begin on a common domain. The monodromy sign
+character is a function of a **loop** in the base; `μ̄` is a function of a
+**link**. They become comparable only by pulling both back along
+`loop → braid traced by the three sheets → its closure`, and `B₃` is that
+common domain. §9.1 is stated there and is unconditional there.
+
+**What is not established:** that *this* fibration's monodromy image contains a
+witnessing pair. Each local monodromy is a half-twist (the branch points are
+simple — A1/A3 of the monodromy probe), but that probe records them as
+**permutations, not braid lifts**, so the subgroup they generate in `B₃` is
+unknown. Were the image's pure part to carry only `μ̄ = 0`, the two would agree
+**vacuously** — which would not restore a canonical identification, but would
+weaken the practical force of the separation. The next step is to lift the six
+local monodromies to `B₃` and compute the subgroup.
+
+Reaching §9.1 without this paragraph would be the arity conflation §4 of this
+very note was written to avoid.
+
+### 9.3 CORRECTION to §7.4
+
+§7.4 concluded:
+
+> **So the corpus carries one colour `S₃`, not two — the two routes are one
+> route with two derivations of its key step, not independent evidence.**
+
+**The second clause is too strong and is withdrawn.** The first stands: it is
+one `S₃`, acting on one set of three objects, and A6 pins that down. But the
+two routes carry **different sections** of isomorphic lines, so neither's
+evidence transfers to the other and they do not fuse into a single route. What
+§7.4 got right was the group; what it over-read was the identification.
+
+### 9.4 What this does not touch
+
+**Statement B and the Brunnian isotype exclusion are unaffected.** That
+argument runs entirely on the Milnor side — Brunnian ⇒ pairwise linking
+vanishes ⇒ `Sym³` empty; `μ̄` totally antisymmetric ⇒ `Std` empty — and never
+invokes the monodromy line. **B-i** (`Alt³` is a non-trivial line) is likewise
+untouched, being a fact about the monodromy alone. What is removed is only the
+hope that the two could be fused, and with it §7.4's over-reading.
+
+### 9.5 A corpus defect found on the way
+
+[`binding-knots-visual-inventory`](../../content/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory.md)
+states four braid words; **three close to the wrong number of components**:
+
+| entry | stated word | closure | needs |
+|---|---|---|---|
+| gluon / Hopf link | `σ₀σ₁ ∈ B₃` | 1 | 2 |
+| electron / trefoil | `σ₀σ₁σ₀ ∈ B₃` | 2 | 1 |
+| Higgs / figure-eight | `σ₀σ₁⁻¹σ₀σ₁⁻¹ ∈ B₃` | **1** | 1 |
+| proton / Borromean | `σ₀σ₁σ₂σ₀σ₁σ₂ ∈ B₄` | 2 | 3 |
+
+Component count is a braid-word invariant needing no convention beyond which
+generator swaps which strands, and both natural readings of the table's
+0-indexing give these counts. The `Vol(𝓑₃) = 8G ≈ 7.32772475342` in the same
+entry is **exactly** `2·V_oct` and is right — it is the braid words alone.
+
+**No producer consumes any of them** (checked across `computations/`), so the
+blast radius is the table's own prose and diagrams. Not repaired here: the
+table is 0-indexed while much of the corpus is 1-indexed, so the fix requires
+choosing a convention, which is an author call rather than a typo.
