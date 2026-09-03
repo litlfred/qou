@@ -462,7 +462,16 @@ def main() -> int:
             capture_output=True, text=True).stdout.split()
         files = [f for f in listing if f.endswith(".lean")]
     else:
-        files = [str(p.relative_to(root)) for p in (root / LEAN_ROOT).rglob("*.lean")]
+        # EXCLUDE `.lake/` -- the working-tree walk otherwise descends into
+        # `.lake/packages/mathlib` and counts MATHLIB'S OWN declarations as
+        # corpus findings, while the `--rev` path (git ls-tree, tracked files
+        # only) silently does not.  Measured: 10566 files vs 2552, and 216
+        # "axioms" vs a true 19 -- 197 of them Mathlib's.  The two modes must
+        # answer the same question or a working-tree run cannot be compared
+        # against a committed witness.
+        files = [str(p.relative_to(root))
+                 for p in (root / LEAN_ROOT).rglob("*.lean")
+                 if ".lake" not in p.parts]
 
     sorries, axioms, prose_hits = [], [], 0
     uninhabited_out: list = []
