@@ -115,12 +115,14 @@ from them -- cumulants, reconstruction, exchangeability, size-only recursion
 
     reconstruction residual        0 at 200 bits, both orderings
     exchangeability (nnnnn)        |S|=2: 1.74e-59  |S|=3: 2.49e-59  |S|=4: 1.74e-59
-    size-only vs full Mobius       3.73e-59
+    size-only vs full Mobius       4.23e-59  (re-derived here from the stored
+                                   60-digit strings; the run itself printed
+                                   3.73e-59 -- both are the working floor)
 
 Every A=5 figure the arc quoted in float64 is reproduced to all nine printed
 digits, and the same-system comparison the table above could not make is now
 made: the arc's `3.33e-15 / 5.77e-15 / 6.22e-15` spreads and `7.55e-15`
-recursion agreement are `1.74e-59 / 2.49e-59 / 1.74e-59` and `3.73e-59`. The
+recursion agreement are `1.74e-59 / 2.49e-59 / 1.74e-59` and `~4e-59`. The
 `c_5` sign, the A=5 hierarchy, and the ratio straddling `1` across orderings
 are established, not measured.
 
