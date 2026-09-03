@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-09-03T08:33:27Z
+updated_at: 2026-09-03T08:41:15Z
 ---
 
 ## What
@@ -773,3 +773,44 @@ regenerated witness is deliberately **not committed** — alone it would bake in
 
 Also open: the one remaining `setdefault` in
 `he4_binding_k_presentation_correction_probe.py:77`.
+
+
+## TRAP (second instance, new variant): `pgrep -f` matched my own WAIT LOOP
+
+Recorded because I fell for the same class twice in one arc and the second form
+is worse than the first.
+
+**First form**, earlier this arc: `pgrep -f <producer>` matched the *tool*
+running the producer, because the tool's argv carries the producer's filename. I
+profiled the wrapper and reported a 0 %-CPU hang on a run that was at 100 % CPU.
+
+**Second form, 2026-09-03**: I armed
+`until ! pgrep -f "python3 -u deltalambda/he4_binding_k_stage2_probe"; do sleep 20; done`
+as a background wait. That loop's own command line **contains the pattern**, so
+`pgrep` always matches it, the condition is never true, and the loop cannot
+terminate. Worse, every later `pgrep` check I ran returned that loop's PID — so
+the producer looked alive for hours after it had died.
+
+**What it cost.** The producer actually died at 05:09:31 when the container
+restarted, at 109/154 characters. I reported "still running, 109/154,
+checkpointing" **twice** afterwards, on the strength of a PID that was my own
+watcher. Caught only by checking `stat -c '%y'` on the log and the checkpoint:
+both 3.5 h stale while `pgrep` still returned a PID.
+
+**The discriminators, in order of reliability:**
+
+1. **File mtime.** `stat -c '%y' <log> <checkpoint>` — a live long-compute writes
+   periodically. A stale mtime is proof of death; a fresh PID is not proof of
+   life.
+2. **`ps -eo pid,%cpu,cmd` with the watchers filtered out**
+   (`| grep -v "pgrep\|grep\|until"`), and read the %CPU. The real producer here
+   shows 384 %; a wrapper or a watcher shows 0.0.
+3. **Never wait with a loop whose own command line contains the pattern it
+   greps for.** Key the wait on the LOG instead:
+   `until grep -qE "witness ->|Traceback|Error|Killed" <log>; do sleep 30; done`.
+   The loop's argv contains the log path, not the producer name, so it cannot
+   match itself — and the alternation covers failure as well as success, so
+   silence is not mistaken for progress.
+
+Generalisation worth keeping: **a process-existence check is the weakest
+evidence of progress available.** Prefer evidence the work itself emits.
