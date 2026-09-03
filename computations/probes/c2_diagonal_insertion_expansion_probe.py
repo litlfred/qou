@@ -281,7 +281,12 @@ def main() -> int:
              "4He": EXACT_C2["pp"] + EXACT_C2["pn"] + EXACT_C2["nn"]}
     ratios = {k: chain[k] / EXACT_C2[k] for k in chain}
     first = {"T": F(292, 163), "3He": F(30, 17), "4He": F(24, 7)}
-    w.add_data("second_order_chain_over_atom", {k: {"ratio": str(v), "float": float(v),
+    # `ratio` and `first_order` are the exact Fractions as strings. There was a
+    # `"float": float(v)` twin beside each; it is dropped, not reformatted. The
+    # twin carried no information the exact string does not — it was the SAME
+    # rational rounded to a double — and the three of them were the whole of
+    # this witness's raw-float64 count. Nothing in the tree reads the field.
+    w.add_data("second_order_chain_over_atom", {k: {"ratio": str(v),
                                                     "first_order": str(first[k])} for k, v in ratios.items()})
     w.add_assertion("second_order_overcount_is_smaller_than_first_order_at_every_A3_A4",
                     computed="1" if all(abs(ratios[k] - 1) < abs(first[k] - 1) for k in ratios) else "0",
