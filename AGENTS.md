@@ -324,9 +324,65 @@ Concretely:
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
 carrying `memory: project` in its frontmatter. That gives the agent its own
-directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
-25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
-prompt when it starts, and it reads and writes the directory as it works.
+directory under `.claude/agent-memory/<agent-name>/`, which it reads and writes
+as it works.
+
+> **🛑 THE INJECTION DOES NOT HAPPEN IN THIS ENVIRONMENT — measured
+> 2026-09-03.** This paragraph used to state, as fact, that *"the first 200
+> lines (or 25 KB) of that directory's `MEMORY.md` are injected into the
+> subagent's system prompt when it starts."* **For subagents launched via the
+> Agent tool in a Claude Code remote session, nothing is injected — not a
+> truncated 200 lines, none of it.**
+>
+> Measured by asking two agents, independently, what their own system prompt
+> contained: `lean-verifier` and `corpus-grepper` both reported **zero**
+> `MEMORY.md` content. Objective corroboration, checkable without trusting a
+> self-report: **four "see memory" / "see the memory entry" cross-references in
+> three agent definitions are dangling pointers** — they reference content that
+> never arrives. The frontmatter is correct (`memory: project` on all five) and
+> the files exist, so this is a harness behaviour, not a misconfiguration; it
+> may well work in the desktop or CLI harness, and this is a statement about
+> **this** environment only.
+>
+> **Consequence for the 200-line cap.** The cap is now a *convention*, not a
+> live constraint — nothing is being truncated because nothing is being sent.
+> Keep files under it anyway (it bounds what an agent must read), but do not
+> treat "under 200" as evidence an agent has the content.
+>
+> **The repair, and 🛑 it is UNVERIFIED — do not assume it works.** Each
+> agent definition now opens with a `## FIRST ACTION — read your memory; it is
+> NOT injected here` section telling the agent to `Read` its own `MEMORY.md`
+> first, and to open its report with a compliance line naming the files read,
+> `MEMORY.md`'s line count and its last commit sha — so a reader can tell a
+> memory-informed run from a memory-less one instead of taking it on trust.
+> **A report without that line should be presumed to have run without memory.**
+>
+> **But a third agent, launched AFTER that edit, did not receive it** — it
+> quoted its own prompt going straight from the preceding bullet to `## What
+> you do`, with no `## FIRST ACTION` section, while the section was plainly on
+> disk. So agent definitions appear to be **snapshotted** (committed `HEAD`, or
+> cached at session start), and an uncommitted edit to one does not reach a
+> subagent in the same session. The fix may take effect once committed and a
+> fresh session starts; that has **not** been demonstrated.
+>
+> **Which is why this AGENTS.md note is the load-bearing carrier, not the
+> agent-definition edit.** `AGENTS.md` provably arrives in subagent prompts in
+> full — both agents quoted it back verbatim, including this section. So if you
+> are a subagent reading this: **read `.claude/agent-memory/<your-name>/MEMORY.md`
+> yourself before you start, whatever your own definition does or does not
+> say.**
+>
+> **A figure to not repeat.** The first version of the agent-definition block
+> quoted "2,520 lines across 16 files" — that is the *whole tree across all
+> five agents*. Per agent it is **195–419 lines** for `MEMORY.md` and 412–657
+> for the directory, i.e. ~3-7k tokens: cheap. Quoting the tree total in each
+> agent's own file overstates its burden ~6× and invites exactly the wrong
+> trade-off (skipping the read). Caught by the consuming agent, not by me.
+>
+> Tracked in bean `qou-rpgi`.
+>
+> **So "maintaining them is part of the work" below still holds** — the files
+> are read, just deliberately rather than automatically.
 
 | agent | owns |
 |---|---|

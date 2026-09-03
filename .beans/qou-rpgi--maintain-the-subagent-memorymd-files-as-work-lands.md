@@ -130,3 +130,55 @@ Two things moved, both reinforcing rather than settling:
   not evidence about the injector**; the sentinel experiment above is still
   the only thing that settles it, and it is still not done.
 
+### 2026-09-03, SETTLED (the sentinel experiment, run) — nothing is injected at all
+
+The experiment filed above was run, and the answer is not the one the question
+assumed. **It is not truncation. `memory: project` injects NOTHING** for
+subagents launched via the Agent tool in this environment.
+
+- `lean-verifier` (419-line MEMORY.md) and `corpus-grepper` (195) were each
+  asked, independently and with tools forbidden, what their own prompt
+  contained. Both: **zero** `MEMORY.md` content.
+- **Objective corroboration, no self-report needed:** four `see memory` /
+  `see the memory entry` cross-references in three agent definitions are
+  **dangling pointers** into content that never arrives.
+- Frontmatter is correct (`memory: project` on all five), files exist. So it
+  is harness behaviour here, not misconfiguration, and may differ elsewhere.
+
+**Consequence for the 200-line cap: it is a convention, not a live
+constraint.** Nothing is truncated because nothing is sent. Keep files under it
+anyway — it bounds what an agent must *read* — but never treat "under 200" as
+evidence an agent has the content. The three over-cap files are no more broken
+than the two under it.
+
+### 🛑 The repair is UNVERIFIED, and its own delivery failed once
+
+Each agent definition now opens with `## FIRST ACTION — read your memory` plus
+a required **compliance line** (files read, `MEMORY.md` line count, its last
+commit sha) so a memory-informed run is distinguishable from a memory-less one.
+
+**A third agent, launched after that edit, did not receive it** — it quoted its
+prompt going straight past where the section sits on disk. So agent definitions
+appear **snapshotted** (committed `HEAD`, or cached at session start). Test
+after commit: relaunch and ask a subagent to quote the heading back. **Until
+one does, this is not done.**
+
+**`AGENTS.md` is therefore the load-bearing carrier** — both agents quoted it
+back in full — so the instruction lives there too.
+
+### Three corrections the consuming agent made to me
+
+1. **"2,520 lines across 16 files" is the whole tree**, quoted in each agent's
+   own definition — overstating its burden ~6×. Per agent: `MEMORY.md`
+   195–419 lines, directory 412–657, ~3–7k tokens. Fixed to per-agent figures.
+   My third wrong-denominator error of the day.
+2. It reported my new TRAP missing from its memory. **It was right about the
+   tree it saw and I was right that I wrote it** — I had switched to the other
+   branch. Worth recording: a subagent reads the working tree, so it sees
+   whatever branch the launcher is standing on.
+3. It rejected "launcher pastes the relevant entries" for a reason worth
+   keeping: the launcher cannot know which TRAPs apply — *if it did, it would
+   not need the agent* — and it makes memory **write-only**, so a new
+   resolved-topic row would never reach anyone. Read-when-relevant fails the
+   same way: deciding a TRAP is irrelevant requires already knowing it.
+
