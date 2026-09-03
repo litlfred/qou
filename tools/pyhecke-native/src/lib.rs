@@ -503,6 +503,37 @@ fn chi_q_atomic_all_partitions_mpfr(
     seminormal_mpfr::chi_q_atomic_all_partitions_mpfr(n_strands, &factors, &q_str, dps)
 }
 
+/// **Prefix traces of a segmented factor chain — one sweep, N traces.**
+///
+/// `Tr(F_0 ... F_m)` at every prefix boundary given by the cumulative sums of
+/// `segment_lengths`, computed in a SINGLE propagation. Same string-in
+/// contract as `chi_q_atomic_mpfr`: `factors` are `(c_str, d_str,
+/// gen_1based)` decimal strings, `q_str` the substrate parameter. Returns one
+/// decimal string per segment, in caller order.
+///
+/// For a step accumulator that needs the trace after every step, this replaces
+/// N calls to `chi_q_atomic_mpfr` (each re-applying the whole prefix, so
+/// `O(dim^2 * A^3)` overall) with one call that is `O(dim^2 * A^2)` — the same
+/// complexity as an incremental matrix product, at MPFR precision. Memory is
+/// unchanged: one `dim` vector per worker, never a `dim x dim` matrix.
+#[pyfunction]
+#[pyo3(signature = (shape, factors, segment_lengths, q_str, dps=50))]
+fn chi_q_atomic_prefix_traces_mpfr(
+    shape: Vec<usize>,
+    factors: Vec<(String, String, u32)>,
+    segment_lengths: Vec<usize>,
+    q_str: String,
+    dps: u32,
+) -> Vec<String> {
+    seminormal_mpfr::chi_q_atomic_prefix_traces_mpfr(
+        &shape,
+        &factors,
+        &segment_lengths,
+        &q_str,
+        dps,
+    )
+}
+
 /// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
 ///
 /// Computes the irreducible character of the symmetric group `S_n`
@@ -1974,6 +2005,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic_prefix_traces_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;

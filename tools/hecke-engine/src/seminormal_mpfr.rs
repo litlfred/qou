@@ -559,6 +559,169 @@ pub fn chi_q_atomic_mpfr(
     trace.to_string_radix(10, Some(dps as usize))
 }
 
+/// **Prefix traces of a segmented factor chain — one propagation, N traces.**
+///
+/// Computes `Tr(F_0 F_1 ... F_m)` for every prefix boundary `m` given by the
+/// cumulative sums of `segment_lengths`, in a SINGLE sweep. `factors` and
+/// `segment_lengths` are in caller order: segment `s` is the next
+/// `segment_lengths[s]` factors, and result `s` is the trace of the product of
+/// everything up to and including segment `s`.
+///
+/// **Why this exists** (bean `qou-sv7h`). An accumulator that needs the trace
+/// after every step, like `unified_iterative_correction`, otherwise has to call
+/// [`chi_q_atomic_mpfr`] once per step with the whole prefix — re-applying
+/// every earlier factor each time. That is `O(dim² · A³)` for `A` steps where
+/// the incremental algorithm is `O(dim² · A²)`, and it was enough to eat most
+/// of the speedup at the `A = 40` end of the nuclide table.
+///
+/// The per-basis-vector formulation makes the fix nearly free: propagating
+/// `e_i` through the factors already passes through every intermediate
+/// product, so recording `buf[i]` at each boundary costs one read. Memory is
+/// unchanged — one `dim` vector per worker, never a `dim × dim` matrix.
+///
+/// **Order.** [`chi_q_atomic_mpfr`] applies factors in reverse and so forms
+/// `F_{n-1} ... F_0`; this applies them forward and forms `F_0 ... F_{n-1}`.
+/// The two agree because the Hoefsmit seminormal blocks are SYMMETRIC, so
+/// `Tr(F_0 ... F_m) = Tr((F_0 ... F_m)^T) = Tr(F_m ... F_0)`. Forward order is
+/// what lets the prefixes come out in caller order.
+pub fn chi_q_atomic_prefix_traces_mpfr(
+    shape: &[usize],
+    factors: &[(String, String, u32)],
+    segment_lengths: &[usize],
+    q_str: &str,
+    dps: u32,
+) -> Vec<String> {
+    let prec = dps_to_bits(dps);
+    let n: usize = shape.iter().sum();
+    let n_seg = segment_lengths.len();
+    let total: usize = segment_lengths.iter().sum();
+    assert!(
+        total == factors.len(),
+        "chi_q_atomic_prefix_traces_mpfr: segment_lengths sum to {} but {} \
+         factors were given",
+        total,
+        factors.len()
+    );
+    if n == 0 {
+        return vec![
+            Float::with_val(prec, 1).to_string_radix(10, Some(dps as usize));
+            n_seg
+        ];
+    }
+
+    let q = Float::parse(q_str)
+        .map(|p| Float::with_val(prec, p))
+        .unwrap_or_else(|e| {
+            panic!(
+                "chi_q_atomic_prefix_traces_mpfr: invalid q_str {:?}: {}",
+                q_str, e
+            )
+        });
+
+    let (dim, all_blocks) = build_blocks_mpfr(shape, &q, prec);
+    if dim == 0 {
+        return vec![
+            Float::with_val(prec, 0).to_string_radix(10, Some(dps as usize));
+            n_seg
+        ];
+    }
+
+    let resolved: Vec<(Float, Float, &[BlockMpfr])> = factors
+        .iter()
+        .map(|(c_str, d_str, gen)| {
+            assert!(
+                (*gen != 0 && (*gen as usize) <= all_blocks.len()) || all_blocks.is_empty(),
+                "chi_q_atomic_prefix_traces_mpfr: invalid generator index {} \
+                 for n = {} (valid range: 1..={})",
+                gen,
+                n,
+                all_blocks.len()
+            );
+            let c = Float::parse(c_str)
+                .map(|p| Float::with_val(prec, p))
+                .unwrap_or_else(|e| {
+                    panic!(
+                        "chi_q_atomic_prefix_traces_mpfr: invalid c_str {:?}: {}",
+                        c_str, e
+                    )
+                });
+            let d = Float::parse(d_str)
+                .map(|p| Float::with_val(prec, p))
+                .unwrap_or_else(|e| {
+                    panic!(
+                        "chi_q_atomic_prefix_traces_mpfr: invalid d_str {:?}: {}",
+                        d_str, e
+                    )
+                });
+            let blocks: &[BlockMpfr] = if all_blocks.is_empty() {
+                &[]
+            } else {
+                all_blocks[*gen as usize - 1].as_slice()
+            };
+            (c, d, blocks)
+        })
+        .collect();
+
+    // Boundary index (into `resolved`) after which each segment's trace is read.
+    let mut bounds: Vec<usize> = Vec::with_capacity(n_seg);
+    let mut acc = 0usize;
+    for len in segment_lengths {
+        acc += *len;
+        bounds.push(acc);
+    }
+
+    // Same parallel-over-basis-vectors shape as `chi_q_atomic_mpfr`, but each
+    // worker accumulates a VECTOR of partial traces, one per boundary.
+    let partials = (0..dim)
+        .into_par_iter()
+        .fold(
+            || {
+                let buf: Vec<Float> = (0..dim).map(|_| Float::with_val(prec, 0)).collect();
+                let sums: Vec<Float> =
+                    (0..n_seg).map(|_| Float::with_val(prec, 0)).collect();
+                (buf, sums)
+            },
+            |(mut buf, mut sums), i| {
+                for k in 0..dim {
+                    buf[k].assign(0u32);
+                }
+                buf[i].assign(1u32);
+                let mut next = 0usize;
+                for (j, (c, d, blocks)) in resolved.iter().enumerate() {
+                    apply_factor_left_mpfr(&mut buf, blocks, c, d, prec);
+                    // A zero-length segment repeats the previous boundary, so
+                    // advance through every boundary that lands here.
+                    while next < n_seg && bounds[next] == j + 1 {
+                        sums[next] += &buf[i];
+                        next += 1;
+                    }
+                }
+                // Leading zero-length segments (bounds == 0) never hit the loop
+                // above; their trace is Tr(I) = dim, contributed as 1 per i.
+                while next < n_seg && bounds[next] == 0 {
+                    sums[next] += Float::with_val(prec, 1);
+                    next += 1;
+                }
+                (buf, sums)
+            },
+        )
+        .map(|(_, s)| s)
+        .reduce(
+            || (0..n_seg).map(|_| Float::with_val(prec, 0)).collect(),
+            |mut a: Vec<Float>, b: Vec<Float>| {
+                for (x, y) in a.iter_mut().zip(b.into_iter()) {
+                    *x += y;
+                }
+                a
+            },
+        );
+
+    partials
+        .into_iter()
+        .map(|t| t.to_string_radix(10, Some(dps as usize)))
+        .collect()
+}
+
 /// **Batch [`chi_q_atomic_mpfr`] over all partitions of `n_strands`** —
 /// returns `Vec<(partition, chi_decimal_string)>` for every λ ⊢
 /// n_strands.

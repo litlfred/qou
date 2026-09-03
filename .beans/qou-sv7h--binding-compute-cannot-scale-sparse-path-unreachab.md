@@ -159,10 +159,9 @@ does mean the A-scaling is worse than the per-call speedup suggests.
 
 `tr_m_atomic_mpfr_with_state` exists and looks like the fix, but it is a
 DIFFERENT quantity — the Markov trace `tr_M` of a signed braid word, not the
-per-partition character of a `(c, d, gen)` factor chain. A stateful χ variant
-would have to be added Rust-side. cargo 1.94.1 and maturin are both present
-in this container, so it is doable; measure the A-scaling first and only pay
-for it if the curve demands it.
+per-partition character of a `(c, d, gen)` factor chain.
+
+**RESOLVED — see the prefix-traces section below.** No state handle was needed.
 
 ### Items 4 and 5 still open
 
@@ -171,3 +170,71 @@ for it if the curve demands it.
       Now only on the `use_rust=False` fallback path, so lower priority.
 - [ ] Item 5: decide the q-Gaussian tier (k_exact defaults to k_max, so
       `active_gaussian` is empty — 193 exact, 0 gaussian).
+
+
+## 2026-09-03 (later) — the prefix recomputation is gone. New Rust kernel.
+
+### A state registry was the wrong shape, and unnecessary
+
+The obvious fix was a stateful χ holding the running matrix in Rust between
+calls. That does not fit: at 50 dps a dim×dim MPFR matrix is ~213 MB at
+dim 2310, and Σ_λ dim_λ² = 11! ≈ 4·10^7 Floats ≈ 1.6 GB across the partition
+set. Holding state for every partition at once is not affordable.
+
+It is also unnecessary. `chi_q_atomic_mpfr` computes the trace **per basis
+vector** — it propagates `e_i` through the factor list and reads `buf[i]`,
+never materialising a dim×dim product. Propagating `e_i` ALREADY passes
+through every intermediate product, so recording `buf[i]` at each step
+boundary costs one read and no extra memory.
+
+Added `chi_q_atomic_prefix_traces_mpfr(shape, factors, segment_lengths,
+q_str, dps) -> Vec<String>`: one propagation, one trace per segment.
+
+    tools/hecke-engine/src/seminormal_mpfr.rs   kernel
+    tools/pyhecke-native/src/lib.rs             #[pyfunction] + registration
+
+Complexity goes from O(dim²·A³) to **O(dim²·A²)** — the same order as the
+incremental matrix product, at MPFR precision and the Rust constant.
+
+### Order note (why forward iteration is safe)
+
+`chi_q_atomic_mpfr` applies factors in REVERSE and so forms `F_{n-1}···F_0`;
+the new kernel applies them forward and forms `F_0···F_{n-1}`. They agree
+because the Hoefsmit seminormal blocks are SYMMETRIC:
+
+    Tr(F_0···F_m) = Tr((F_0···F_m)^T) = Tr(F_m···F_0)
+
+That is also why the Python path (which builds `M = X_0 X_1 ··· X_m`
+left-to-right) matched the Rust from the start despite the opposite
+convention. Forward order is what makes the prefixes come out in caller order.
+
+### The Python side is one call per partition for the WHOLE run
+
+The per-step chains depend only on `ordering`, never on accumulated state, so
+every crossing is known before the loop starts. `unified_iterative_correction`
+now precomputes the entire trace trajectory per partition in a single kernel
+call, then the existing step loop just reads `s['traces'][kk]`.
+
+### Measured (clean, no competing job)
+
+                  per-step Rust    prefix Rust    improvement
+    A=2 (D)            49.64s         31.33s          1.58x
+    A=3 (T)           100.47s         51.27s          1.96x
+    ratio A=3/A=2       2.02x          1.64x
+
+Values identical to the per-step path and to the pure-Python path
+(-9.14773623102088067 at A=2; the 9 parity tests still pass).
+
+Batching over partitions was measured and REJECTED:
+`chi_q_atomic_all_partitions_mpfr` gave 0.9x-1.2x on 4 cores at k=8,9,10 —
+one large-dim partition dominates, so the outer axis has nothing to give.
+(The Rust docstring already says this and chooses a serial outer loop
+deliberately; the measurement agrees with it.)
+
+### Fallback preserved
+
+`_rust_chi_prefix_traces` falls back to per-step `chi_q_atomic_mpfr` calls
+when the installed wheel predates the new function — slower, same numbers.
+Note the wheel is EPHEMERAL per `scripts/build-pyhecke-native.sh`: it installs
+to user site-packages and dies with the container, so a fresh session must
+re-run that script or it silently takes the slow fallback.

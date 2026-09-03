@@ -1576,6 +1576,43 @@ def _rust_chi_trace(partition, factors, dps):
         list(partition), f, q_str, dps))
 
 
+_HAVE_RUST_PREFIX = _HAVE_RUST_CHI and hasattr(
+    _pyhecke_native, "chi_q_atomic_prefix_traces_mpfr")
+
+
+def _rust_chi_prefix_traces(partition, segments, dps):
+    """Tr M_λ^(0..step) for EVERY step, from one pass over the chain.
+
+    `segments` is the per-step `(c, d, gen0)` chain list. Asking the kernel for
+    each step's prefix separately re-applies every earlier crossing, which is
+    O(dim²·A³) against the incremental algorithm's O(dim²·A²) — at A = 40 that
+    factor of A ate most of the speedup. `chi_q_atomic_prefix_traces_mpfr`
+    propagates once and reads off the trace at each step boundary; because the
+    trace is computed per basis vector, that costs one read per boundary and no
+    extra memory (bean `qou-sv7h`).
+
+    Falls back to per-step calls when the kernel predates that function, so an
+    older wheel still runs — slower, same numbers.
+    """
+    ser = _mp.nstr
+    q_str = ser(q0, dps, strip_zeros=False)
+    flat, lens = [], []
+    for seg in segments:
+        lens.append(len(seg))
+        for c, d, g in seg:
+            flat.append((ser(_mp.mpf(c), dps, strip_zeros=False),
+                         ser(_mp.mpf(d), dps, strip_zeros=False), g + 1))
+    if _HAVE_RUST_PREFIX:
+        out = _pyhecke_native.chi_q_atomic_prefix_traces_mpfr(
+            list(partition), flat, lens, q_str, dps)
+        return [_mp.mpf(x) for x in out]
+    traces, acc = [], []
+    for seg in segments:
+        acc.extend(seg)
+        traces.append(_rust_chi_trace(partition, acc, dps))
+    return traces
+
+
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX,
@@ -1742,14 +1779,24 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             'entry': e, 'dim': dim, 'M': M, 'log_norm': _MPF_ZERO,
             'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
             'sparse': sparse_sigmas,
-            # Cumulative (c, d, gen) chain for the Rust kernel. It computes
-            # Tr M^(0..step) from the whole prefix each step rather than
-            # updating a running matrix, so the prefix is re-multiplied every
-            # step — O(A^2) crossings against the Python path's O(A). At the
-            # measured per-call speedup that trades a factor of A for a factor
-            # of ~dim, and dim reaches 2310 while A reaches 40.
-            'factors': [] if use_rust else None,
+            # Per-step traces from the Rust kernel, filled in below by a
+            # single pass over the whole chain. `None` marks the Python path.
+            'traces': None,
         })
+
+    # ── Rust: one call per partition for the WHOLE run ──────────
+    # The per-step chains depend only on `ordering`, never on any accumulated
+    # state, so every step's crossings are known before the loop starts. That
+    # makes the trace trajectory a single kernel call per partition rather than
+    # A calls, and removes the prefix re-multiplication entirely.
+    if use_rust:
+        _steps = [(ordering[kk], ordering[:kk]) for kk in range(A)]
+        for s in state:
+            n_gens = s['entry']['n_gens']
+            s['traces'] = _rust_chi_prefix_traces(
+                s['entry']['partition'],
+                [_step_chain_generic(nuc, prev, n_gens) for nuc, prev in _steps],
+                _rust_dps)
 
     per_step = []
     cumul_total = 0.0
@@ -1797,14 +1844,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             # both O(dim*nnz)), so the outer exactness test was not only wrong,
             # it was redundant. Value-equality verified against the pre-fix
             # result at k_exact = 4..8 (k=8 carries 12 sparse partitions).
-            if s['factors'] is not None:
-                # Rust path: accumulate the chain and ask for Tr M^(0..step)
-                # of the whole prefix. No running matrix, so no rescaling —
-                # MPFR's exponent range makes the `m_max > 1e80` guard below
-                # unnecessary, and `log_norm` stays 0.
-                s['factors'].extend(chain)
-                tr_run = _rust_chi_trace(entry['partition'], s['factors'],
-                                         _rust_dps)
+            if s['traces'] is not None:
+                # Rust path: the whole trace trajectory was computed above.
+                # No running matrix, so no rescaling — MPFR's exponent range
+                # makes the `m_max > 1e80` guard unnecessary and `log_norm`
+                # stays 0.
+                tr_run = s['traces'][kk]
             elif s['sparse']:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
@@ -1837,7 +1882,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_cross = _crossing_in_partition(c, d, gen, sigmas, dim)
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
-            if s['factors'] is None:
+            if s['traces'] is None:
                 if isinstance(s['M'], np.ndarray):
                     m_max = (np.max(np.abs(s['M'])))
                 else:
