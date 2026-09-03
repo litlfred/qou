@@ -543,3 +543,47 @@ that every estimate on this bean — 4.6 h, 6.9 h, 8.0 h, 8.4 h — has been low
 and the reason each time was extrapolating from A values well below the ones
 that dominate the total. The only figure that has held is the per-atom
 prediction ONE step ahead.
+
+
+## 2026-09-03 — si28 REFUTES my reading of the large traces
+
+Last section I wrote that the committed witness's enormous high-A traces
+(2.09e6 at si28, 1.71e15 at ca40, 5.04e30 at fe56) were "what a product of
+matrices that do NOT satisfy the braid relation looks like -- nothing
+constrains the growth", and said the thing to watch was whether the corrected
+values stay bounded. si28 has landed and the answer is no:
+
+    atom     old      new |         old tr_M         new tr_M |  ratio
+    c14    False     True |        -0.483334         0.035123 |      -
+    o16    False     True |          18.2789          19.0021 |  1.040
+    ne20   False    False |          247.042          224.072 |  0.907
+    si28   False    False |      2.09413e+06       1.8384e+06 |  0.878
+
+The si28 trace is 12% smaller and still 1.8 million. **The growth is intrinsic
+to this producer at high A, not an artifact of the braid defect.** My framing
+was wrong: I attributed it to the defect because the defect was what I had
+just fixed, which is the wrong direction of inference.
+
+### What the fix actually did, on the evidence so far
+
+It restored stability at the SMALL end of the failing set (c14, o16) and
+changed essentially nothing at the large end (ne20, si28 both still FAIL,
+traces within ~10%). That is a real and useful result, and it is a much
+narrower one than "the corrected matrices fix the table".
+
+### The AME2020 question, which this bean has been deferring
+
+    si28   B_pred = +16,578.73 MeV     AME2020 ~ 236 MeV      70x high
+    ca40   B_pred (committed) 514,735 MeV        AME2020 ~ 342 MeV
+    fe56   B_pred (committed) 1.198e9 MeV        AME2020 ~ 492 MeV
+
+The high-A binding energies are not slightly off, they are orders of magnitude
+off, and the braid fix moves them by ~10% at si28. Whatever is wrong at high A
+is a DIFFERENT defect from the one this bean fixed. Worth its own bean once
+ca40 and fe56 land and the shape is confirmed rather than inferred from one
+atom.
+
+Nothing here retracts the braid fix: the matrices were not a representation,
+now they are, that is verified three independent ways (relations, entry-wise
+against Rust, and qou-4m9u's closed form). It does retract my suggestion that
+fixing it would tame the high-A traces.
