@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "3525443b33cc",
     "ts": "e80cdd76f994",
-    "lean": "5867e6c7c587",
-    "lean_statement": "5c44726d5dfb"
+    "lean": "b691474b0498",
+    "lean_statement": "6085a4412fa3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -997,6 +997,25 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs.",
         "evidence": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "3525443b33cc",
+          "ts": "e80cdd76f994",
+          "lean": "b691474b0498"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T10:50:46Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T10:50:46Z",
+        "reviewed_sha": "f75a27581b496ec8c0001355119487c3d8636c59",
+        "notes": "Generic-ring definition (H_n(R,q), hbar_q=1-q^{-1}, [n]_q Laurent) in an ARCHIMEDEAN chapter with zero archimedean tokens in the .md statement; prior fail named no token and mis-called the chapter 'substrate'.",
+        "evidence": "REGIME: `climax-volume-mass` is listed in ARCHIMEDEAN_CHAPTERS at folio-assistant/content/pipeline/_folio-chapter-profiles.qou.ts:174-178, and its admitted profile at :103-105 is {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0}, i.e. a generic-ring statement is explicitly in-profile for this chapter. The block sits in section 'Lagrange Resolvents and $q$-Deformed Kinematics' (climax-volume-mass.ts:68-78) beside def:q-momentum (:73) and def:q-angular-momentum (:76), both of which PASS this criterion (q-momentum.qa.json, q-angular-momentum.qa.json, 2026-07-07, 'Statement respects the chapter's base-ring regime'); 11 of 12 adjudicated blocks in the chapter pass, q-energy is the lone fail. TOKENS IN THE .md STATEMENT (q-energy.md:1-28): line 1 'substrate parameter $q$' (symbolic, no value); lines 7-11 J_q^2 hbar_q + p_q^2 hbar_q/(2[n]_q) + S_q (ring ops + one division); line 18 'Hecke algebra $H_n(R, q)$' (explicit generic base ring R); line 19 'hbar_q = 1 - q^{-1}' (unit inverse, GroupWithZero/Field, generic); line 20 '[n]_q = (q^n - q^{-n})/(q - q^{-1})' (Laurent q-integer for integer n, generic); line 25 'S_q(K) = m(K) c^2' (physical-register mass-energy identification, no numeric value, no units). There is NO Real.sqrt/rpow/log/exp/cos, NO numeric q or q_0, NO MeV/m_e/CODATA, and NO order hypothesis (0<q, q<1, 1<q) anywhere in the .md. OUTSIDE THE STATEMENT (not in scope, depends_on:[md]): q-energy.ts:5 authorNote 'Lean sibling: archimedean specialisation over R (AGENTS.md §7c)' — does not render (§4d); q-energy.lean:107-108 Real.rpow in qNumberReal, :127 hypothesis 1 < q, :136 literal 1.1097 — all below the wall in the Lean sibling and irrelevant to the narrative-statement criterion. BRANCHES: FAIL-1 (generic/substrate chapter hard-coding an archimedean construct) does not apply — the chapter is archimedean, and there is no archimedean construct to hard-code. FAIL-2 (archimedean-chapter statement is a purely algebraic identity that belongs upstream) does not apply — this is a definition, not an identity, and it assembles two definitions that live in this very section (q-momentum, q-angular-momentum) into the chapter's stated subject ('q-deformed kinematics'); the chapter profile admits generic-R, so 'belongs upstream' is not the case. WARN (mixes regimes without flagging evaluation side) does not apply — the statement is uniformly symbolic; line 25 is labelled 'At rest' and is the physical reading, with no numeric evaluation straddling a generic identity. PASS applies on both its clauses: the statement is generic-ring AND it matches its chapter regime. PRIOR ENTRY: field_hash.md 3525443b33cc matches the live file (sha256 prefix recomputed this session), ts e80cdd76f994 matches, lean drifted 5867e6c7c587 -> b691474b0498 (the qou-u87j namespace fix). The prior fail ('Substrate statement contains archimedean constructs.') was INCORRECT: it (a) mis-classified the chapter as substrate against the profile file, (b) named no token, and (c) contradicts the same reviewer's same-day pass on the structurally identical sibling definitions q-momentum and q-angular-momentum. The only archimedean constructs in the triple are in the .lean (1.1097, Real.rpow, 1<q), which the criterion does not read."
       }
     ],
     "da-false-claim": [
@@ -2200,6 +2219,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-09-03T10:54:36.823Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
