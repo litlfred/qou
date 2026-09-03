@@ -1,8 +1,8 @@
 {
   "engine": "python-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T04:46:23.891692+00:00",
-  "commitSha": "32683c355475946a26230e59bb651926addd64f8",
+  "computedAt": "2026-09-03T04:55:54.959377+00:00",
+  "commitSha": "1b76373e1d366a0dc91375ae1f2b031fee5422db",
   "assertions": [
     {
       "name": "H3_has_exactly_THREE_Wedderburn_blocks",
@@ -33,7 +33,14 @@
       "tolerance": "0"
     },
     {
-      "name": "D1c_STATED_VERTEX_ASSIGNMENT_IS_EXCLUDED",
+      "name": "D1c_ONE_VERTEX_PER_BLOCK_reading_IS_EXCLUDED",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "but_the_DIMENSION_WEIGHTED_reading_clears_the_bound",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -48,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 442251,
+  "durationMs": 435838,
   "computation": "dt-d1c-hecke-block-vertex-bound",
   "scriptFile": "dt_d1c_hecke_block_vertex_bound_probe.py",
-  "scriptHash": "d067850c274b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ec1f17086a4e",
+  "scriptCommitSha": "1b76373e1d366a0dc91375ae1f2b031fee5422db",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -87,7 +94,17 @@
       "V": 3,
       "per_ray_ceiling": 3,
       "datum_requires": 4,
-      "verdict": "EXCLUDED — the ceiling is below the requirement, so no blocks->spectrum dictionary can rescue it"
+      "reading_one_vertex_per_block": {
+        "V": 3,
+        "ceiling": 3,
+        "verdict": "EXCLUDED — the ceiling is below the requirement, so no dictionary rescues it"
+      },
+      "reading_dimension_weighted": {
+        "V": 4,
+        "verdict": "clears the bound exactly"
+      },
+      "which_the_bean_means": "not disambiguated. 'Vertices from Wedderburn blocks' reads most naturally as one per block (V=3, excluded), but H_3 has total dimension 4 so the weighted reading survives.",
+      "note": "BOTH escapes land on V = 4 — the dimension-weighted reading and the blocks-plus-abelian repair. Suggestive, not evidence."
     },
     "vertex_bound": {
       "rows": [
@@ -143,10 +160,12 @@
       "status": "PROPOSAL. Nothing here tests whether such a quiver reproduces (4,3) at two rays, and a quiver whose only credential is matching the datum stays a labeled CANDIDATE."
     },
     "what_this_does_NOT_close": {
-      "D1c_the_route": "only the stated VERTEX ASSIGNMENT is excluded",
+      "D1c_the_route": "only the ONE-VERTEX-PER-BLOCK reading of the vertex assignment is excluded; the dimension-weighted reading survives, and the bean does not say which it means",
       "potential": "W = 0 throughout; a potential can only cut further",
       "the_bound_is_measured": "not proved — a numerical proxy for King stability over the stated ranges",
       "derives_A_omega": false
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

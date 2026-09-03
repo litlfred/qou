@@ -348,9 +348,21 @@ slope the θ-semistables form an abelian category whose simples are the
 ### The consequence
 
 `H₃(q)` has exactly **three** Wedderburn blocks — `(3)` dim 1, `(2,1)` dim 2,
-`(1³)` dim 1. D1-c's stated assignment therefore gives `V = 3`, ceiling 3, while
-the datum needs a ray carrying **4** (5₂). **D1-c as written cannot produce
+`(1³)` dim 1 — so one vertex per block gives `V = 3`, ceiling 3, while the datum
+needs a ray carrying **4** (5₂). **Under that reading D1-c cannot produce
 `(4,3)` whatever the blocks→spectrum dictionary turns out to be.**
+
+**🛑 But which reading?** The bean does not say, and the two differ:
+
+    one vertex per block   V = 3   (blocks (3), (2,1), (1³))    EXCLUDED
+    dimension-weighted     V = 4   (dims 1 + 2 + 1)             clears it
+
+"Vertices from Wedderburn blocks" reads most naturally as one per block, which
+is excluded — but `H₃` has total dimension 4, so the weighted reading survives.
+**The exclusion is of the natural reading, not of every reading**, and the probe
+reports both counts rather than picking one. Worth noting that **both** escapes
+land on `V = 4`: the dimension-weighted reading, and the blocks-plus-abelian
+repair below. Suggestive; not evidence.
 
 This is the same bound D1-e anticipated ("`V ≥ 4` … near-trivial pigeonhole").
 **What is new is not the bound but where it lands**: the bean lists D1-e and

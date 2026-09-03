@@ -55,6 +55,23 @@ V>=4 from ray-count 4 is near-trivial pigeonhole"). What is new is not the bound
 but WHERE IT LANDS: the bean lists D1-e and D1-c as separate entries, so nobody
 had pointed the one at the other. D1-c's own vertex count violates it.
 
+🛑 WHICH READING OF "VERTICES FROM WEDDERBURN BLOCKS"? The bean does not say,
+and the two readings give DIFFERENT verdicts — so the exclusion above is
+conditional on the one it names:
+
+  * ONE VERTEX PER BLOCK  ->  V = 3   (blocks (3), (2,1), (1^3))     EXCLUDED
+  * dimension-weighted    ->  V = 4   (dims 1 + 2 + 1)               clears it
+
+"Vertices from Wedderburn blocks" reads most naturally as one vertex per block,
+which is the V = 3 case and is excluded. But `H_3` has total dimension 4, so a
+dimension-weighted vertex set clears the bound exactly — and the bean does not
+disambiguate. The exclusion is therefore of the NATURAL READING, not of every
+reading, and this probe reports both counts rather than picking one.
+
+Worth noting: BOTH escapes land on V = 4 — the dimension-weighted reading, and
+the blocks-plus-abelian repair below. That the two independent routes to a
+workable vertex set agree on 4 is suggestive, and is not evidence.
+
 A STRUCTURALLY-MOTIVATED REPAIR, PROPOSED AND NOT TESTED. The corpus's own
 decomposition of the datum is
 
@@ -197,11 +214,16 @@ def main() -> int:
           "truncation of the root system)")
 
     # ---- the consequence ----------------------------------------------------
-    check("D1c_STATED_VERTEX_ASSIGNMENT_IS_EXCLUDED",
+    check("D1c_ONE_VERTEX_PER_BLOCK_reading_IS_EXCLUDED",
           len(H3_BLOCKS) < DATUM["5_2"],
           f"(H_3 gives V = {len(H3_BLOCKS)}, ceiling {len(H3_BLOCKS)}; the datum "
-          f"needs {DATUM['5_2']}) — D1-c as written cannot produce (4,3) "
+          f"needs {DATUM['5_2']}) — under THIS reading D1-c cannot produce (4,3) "
           "WHATEVER the blocks->spectrum dictionary turns out to be")
+    check("but_the_DIMENSION_WEIGHTED_reading_clears_the_bound",
+          sum(H3_BLOCKS.values()) == DATUM["5_2"],
+          f"(dims 1+2+1 = {sum(H3_BLOCKS.values())}) — the bean does not "
+          "disambiguate, so the exclusion is of the NATURAL reading, not of "
+          "every reading")
 
     # ---- the repair, proposed not tested -----------------------------------
     check("blocks_PLUS_the_abelian_connection_clears_the_bound_exactly",
@@ -214,8 +236,18 @@ def main() -> int:
         "blocks": H3_BLOCKS, "V": len(H3_BLOCKS),
         "per_ray_ceiling": len(H3_BLOCKS),
         "datum_requires": DATUM["5_2"],
-        "verdict": "EXCLUDED — the ceiling is below the requirement, so no "
-                   "blocks->spectrum dictionary can rescue it",
+        "reading_one_vertex_per_block": {"V": 3, "ceiling": 3,
+                                         "verdict": "EXCLUDED — the ceiling is "
+                                                    "below the requirement, so "
+                                                    "no dictionary rescues it"},
+        "reading_dimension_weighted": {"V": sum(H3_BLOCKS.values()),
+                                       "verdict": "clears the bound exactly"},
+        "which_the_bean_means": "not disambiguated. 'Vertices from Wedderburn "
+                                "blocks' reads most naturally as one per block "
+                                "(V=3, excluded), but H_3 has total dimension 4 "
+                                "so the weighted reading survives.",
+        "note": "BOTH escapes land on V = 4 — the dimension-weighted reading and "
+                "the blocks-plus-abelian repair. Suggestive, not evidence.",
     })
     w.add_data("vertex_bound", {"rows": bound_rows,
                                 "statement": "max stable objects on one ray = V",
@@ -239,7 +271,7 @@ def main() -> int:
                   "matching the datum stays a labeled CANDIDATE.",
     })
     w.add_data("what_this_does_NOT_close", {
-        "D1c_the_route": "only the stated VERTEX ASSIGNMENT is excluded",
+        "D1c_the_route": "only the ONE-VERTEX-PER-BLOCK reading of the vertex assignment is excluded; the dimension-weighted reading survives, and the bean does not say which it means",
         "potential": "W = 0 throughout; a potential can only cut further",
         "the_bound_is_measured": "not proved — a numerical proxy for King "
                                  "stability over the stated ranges",
