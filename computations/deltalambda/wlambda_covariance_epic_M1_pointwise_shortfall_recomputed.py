@@ -36,11 +36,21 @@ WHAT SURVIVES, AND WHAT DOES NOT.
 This matters for how the route reads. "17x short" reads as hopeless; "5.8x short" reads as a gap a
 sharp constant might close, and the honest figure should not decide that question by accident.
 
-HONEST LIMIT OF THIS CORRECTION. The shortfall is a ratio against "the leading Debye/Olver remainder
-coefficient is O(1)", which is NOT a pinned number anywhere in the corpus -- it is an order of
-magnitude. Every shortfall factor here, mine and the original, inherits that vagueness: they are
-"K_admissible vs O(1)", not measurements. What IS measured here is K_admissible; the comparison is
-only as good as the O(1).
+HONEST LIMIT OF THIS CORRECTION -- and it is stronger than "the O(1) is imprecise". The shortfall is
+a ratio against "the leading Debye/Olver remainder coefficient is O(1)", which is not a pinned number
+anywhere in the corpus. But wlambda_covariance_epic_M1_bulk_kernel_rate_probe.py has already measured
+something sharper: the POINTWISE error |J(x,x+k;theta) - S(k,a)| does NOT decay cleanly at all -- its
+log-log slope SCATTERS over b ~ [-2, +2] across r, k and theta, because the integer x quantises the
+local density a = x/sqrt(theta) (and S is sensitive to a) and because the sub-leading term is
+oscillatory. So there is no clean pointwise constant K to compare against: the ratio is not merely
+imprecise, it is ILL-DEFINED.
+
+That does not weaken this correction; it relocates it. What is measured here is K_admissible -- the
+error budget the margin actually allows, which is a well-defined quantity and was computed 2.943x too
+small. The "~5.8x" and "~17x" are both comparisons of that budget against an object the corpus says
+is not a constant, and neither should be quoted as a measurement. Quote K_admissible = 0.17115 at
+theta = 78, and say that the pointwise route fails for the STRUCTURAL reason (U/V unbounded), not
+because of any factor.
 
 scope-(a); no fit; nothing wired; no c_k; L2 unchanged. Gap qou-k5r5 OPEN.
 """
@@ -115,12 +125,19 @@ def main():
     print("#   oscillatory cancellation (summation by parts / stationary phase) remains ESSENTIAL.")
     print("#   Only the quoted shortfall FACTOR is corrected.")
     print("#")
-    print("# AND WHAT THIS DOES NOT SETTLE. 'O(1)' for the Debye/Olver coefficient is an order of")
-    print("#   magnitude, not a pinned constant, anywhere in this corpus. Both the ~17x and the")
-    print("#   figures above are 'K_admissible vs O(1)'. K_admissible is measured; the ratio is not.")
-    print(f"RESULT: the pointwise shortfall is ~{mp.nstr(1/k_alone,3)}x (V_A alone) / ~{mp.nstr(1/k_split,3)}x "
-          f"(split), NOT ~17x -- the merged threshold dropped the sig_ratio/2 = {mp.nstr(conv,5)} unit "
-          f"conversion. Structural negative UNCHANGED. qou-k5r5 OPEN.")
+    print("# AND WHAT THIS DOES NOT SETTLE -- sharper than 'the O(1) is imprecise'. There is NO clean")
+    print("#   pointwise constant to compare against at all: _bulk_kernel_rate_probe.py measures that")
+    print("#   |J(x,x+k;theta) - S(k,a)| has no clean exponent, its log-log slope SCATTERING over")
+    print("#   b ~ [-2,+2] (the integer x quantises the density a = x/sqrt(theta), and the sub-leading")
+    print("#   term oscillates). So both '~17x' and the figures above compare a well-defined budget")
+    print("#   against an ILL-DEFINED constant. Quote K_admissible = 0.17115 at theta=78; do not quote")
+    print("#   a shortfall factor. The pointwise route fails STRUCTURALLY (U/V unbounded), not by a")
+    print("#   factor -- which is why the correction above changes no verdict.")
+    print(f"RESULT: K_admissible at theta=78 is {mp.nstr(k_alone,5)} (V_A alone) / {mp.nstr(k_split,5)} (split), "
+          f"not 0.058 -- the merged threshold dropped the sig_ratio_inf/2 = {mp.nstr(conv,5)} unit "
+          f"conversion and was {mp.nstr(1/conv,4)}x too strict. Do NOT quote a shortfall factor: the "
+          f"pointwise constant it would divide by is ill-defined (_bulk_kernel_rate_probe). Structural "
+          f"negative UNCHANGED. qou-k5r5 OPEN.")
     print("EXIT: 0")
     return 0
 
