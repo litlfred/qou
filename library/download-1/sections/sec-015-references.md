@@ -7,6 +7,7 @@ section_number: null
 pages: 98-100
 source_pdf: Download (1).pdf
 source_sha256: b683296f448ed027
+doc_brief: "Central and Lp-concentration of 1-Lipschitz maps into R-trees — In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
 [1] J E Andersen, S K Hansen, Asymptotics of the quantum invariants for surgeries on
 the ﬁgure 8 knot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548 MR2221531

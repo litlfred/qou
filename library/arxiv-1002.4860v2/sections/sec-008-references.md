@@ -7,6 +7,7 @@ section_number: null
 pages: 7-8
 source_pdf: 1002.4860v2.pdf
 source_sha256: a2cfe924f7a9f5a0
+doc_brief: "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum."
 ---
 [1] Samson Black. Representations of Hecke algebras and the Alexander polyno mial. PhD in Math-
 ematics, University of Oregon, 2010.

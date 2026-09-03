@@ -7,6 +7,7 @@ section_number: 5
 pages: 15-17
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 Fix a measure ν on Cn and consider the process νt constructed in Section 2.2. An application of
 [7, Lemma 6] gives

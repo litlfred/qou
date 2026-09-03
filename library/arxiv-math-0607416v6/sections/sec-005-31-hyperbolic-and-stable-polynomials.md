@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 9-16
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
+doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
 ---
 nomials f, g ∈ H 1(R) interlace then the Wronskian W [f, g] := f ′g − f g′ is either
 non-negative or non-positive on the whole real axis R.

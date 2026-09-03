@@ -7,6 +7,7 @@ section_number: 20
 pages: 20-21
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 the deﬁnition ofOS (z,t ) that ır, hence, ˜ır is surjective. We deduce that the right hand
 ˜Ψ is an isomorphism, hence, the left hand one is too. This shows that I is indeed the

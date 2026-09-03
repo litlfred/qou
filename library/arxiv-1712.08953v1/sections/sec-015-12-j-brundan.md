@@ -7,6 +7,7 @@ section_number: 12
 pages: 12-12
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 Let ¯Θ−1 be quasi-inverse to the strongly equivariant equivalence ¯Θ from Theo-
 rem 1.11. We claim that it maps the generator x ofN (as a left tensor ideal) to a

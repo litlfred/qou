@@ -7,6 +7,7 @@ section_number: C
 pages: 21-21
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 ([n]q1∅, 0), while the identity element 1 ∅ ∈ HomˆOS(z,t)(∅, ∅ ) must map to the identity
 element (1∅, 1k )∈ HomC(∅, ∅ ). Since ([n]q1∅, 0) and (1∅, 1k ) are linearly independent,

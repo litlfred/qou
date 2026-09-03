@@ -7,6 +7,7 @@ section_number: 6
 pages: 33-34
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 d
 Pd(E) = L Id®i-l Q9p(E) 129 p(K- 1)®d-i

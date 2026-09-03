@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 3-4
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 tivariate problems to be reduced to univariate ones, as will be seen.
 Lemma 2.3. A polynomial f∈ C[x] is stable if and only if for all a, b∈ Rm with

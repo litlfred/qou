@@ -7,6 +7,7 @@ section_number: null
 pages: 32-35
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 [1] D. Bar-Natan, On the Vassiliev knot invariant, Topology 34 (1995), 423–472.
 [2] J. S. Birman and X.-S. Lin, Knot polynomials and Vassilie v’s invariants, Invent. Math.

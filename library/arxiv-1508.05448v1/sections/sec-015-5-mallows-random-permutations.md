@@ -7,6 +7,7 @@ section_number: 5
 pages: 96-104
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 5.1 A q-Stirling’s Formula
 Before we say anything about a q-deformed Stirling’s formula, recall that Stirling’s

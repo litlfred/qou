@@ -7,6 +7,7 @@ section_number: 6
 pages: 17-18
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 In [ BB09a], Borcea and Br¨ and´ en were concerned with classifying the class o f weak Ω-stability preserving
 operators, where Ω is some product of open circular regions. What they found is that an operator preserves

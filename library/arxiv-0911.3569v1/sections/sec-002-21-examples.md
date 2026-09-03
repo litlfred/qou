@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 2-3
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Proposition 2.1 (Proposition 2.4 of [1]) . Fori∈ [m], let Ai be an n-by-n matrix
 and let xi be an indeterminate, and let B be an n-by-n matrix. If Ai is positive

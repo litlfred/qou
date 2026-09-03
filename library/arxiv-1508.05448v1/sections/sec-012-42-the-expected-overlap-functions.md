@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 65-67
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 Since the moments Mn(p, q) satisfy concentration of measure, one is primarily only
 interested in their expectations. The next quantity we introduce is also deﬁned just

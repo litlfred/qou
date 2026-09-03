@@ -7,6 +7,7 @@ section_number: 4
 pages: 15-17
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
+doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
 In this section, we discuss the growth process controlled by the q-deformed probability
 measure considered in [9], given by (2.11). The partition function (3.2) can be written as

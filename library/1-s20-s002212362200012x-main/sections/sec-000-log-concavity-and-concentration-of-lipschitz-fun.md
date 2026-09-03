@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 functions on the Boolean hypercube
 Ronen Eldan ∗,1, Omer Shamir 2

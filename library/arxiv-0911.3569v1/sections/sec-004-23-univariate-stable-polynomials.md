@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 4-6
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 stable if and only if it has only real roots. Let f and g be two such polynomials,
 let ξ1≤ξ2≤···≤ ξk be the roots of f, and let θ1≤θ2≤···≤ θ𝓁 be the roots of

@@ -7,6 +7,7 @@ section_number: 3
 pages: 8-14
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 Weighted functional inequalities appear naturally when generalizing Gaussian functional inequalities
 such as Poincar´ e and log-Sobolev inequalities. They were put to emphasis for the generalized Cauchy

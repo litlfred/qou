@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 23-24
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 real stability of the associated symbol Symb BB (T ). We have to say “almost equivalent” here because there
 are certain weak real stability preserving operators for which the corresponding symbol is not real stable. As

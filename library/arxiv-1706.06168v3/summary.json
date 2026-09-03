@@ -1,0 +1,136 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1706.06168v3",
+ "source_sha256": "ab3383a95f369922",
+ "brief": "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the",
+ "extended": "**A Representation Theoretic Explanation of the Borcea-Brändén Characterization**\n\n*Jonathan Leake*\n\n36 pp, 23 sections.\n\n**Abstract.** In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the property of being non-vanishing (stable) on pr oducts of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related r esults in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem wh ich addresses polynomials whose roots are all contained in some real interval or ray. This generalizat ion allows us to extend the Borcea-Br¨ and´ en result to characterize a certain subclass of the linear oper ators which preserve such polynomials.\n\n**Outline.** 1 Introduction; 2.1 Notation; 2 Preliminaries; 2.2 Homogeneous Polynomials; 3 Homogeneous Polynomials as Representations; 3.1 The Action of SL2(C); 3.2 An Important Invariant Map, and Apolarity; 3.3 The Symbol of an Operator; 4 Polynomial Stability Theory; 4.1 Polar Derivatives; 4.3 Real Stable Polynomials; 5.1 Other Regions; 5.2 Evaluation Symbols; 6 Stability Properties of Complex Linear Opera; 6.2 Strong Stability Preservation; 6.1 Weak Stability Preservation; 7 Stability Properties of Real Linear Operator; 7.1 Weak Real Stability Preservation",
+ "tokens": {
+  "brief": 48,
+  "extended": 358
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-21-notation",
+   "title": "Notation",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-22-homogeneous-polynomials",
+   "title": "Homogeneous Polynomials",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-3-homogeneous-polynomials-as-representations",
+   "title": "Homogeneous Polynomials as Representations",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-31-the-action-of-sl2c",
+   "title": "The Action of SL2(C)",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-32-an-important-invariant-map-and-apolarity",
+   "title": "An Important Invariant Map, and Apolarity",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-33-the-symbol-of-an-operator",
+   "title": "The Symbol of an Operator",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-008-4-polynomial-stability-theory",
+   "title": "Polynomial Stability Theory",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-009-41-polar-derivatives",
+   "title": "Polar Derivatives",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-010-43-real-stable-polynomials",
+   "title": "Real Stable Polynomials",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-011-51-other-regions",
+   "title": "Other Regions",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-012-52-evaluation-symbols",
+   "title": "Evaluation Symbols",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-6-stability-properties-of-complex-linear-operato",
+   "title": "Stability Properties of Complex Linear Operators",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-014-62-strong-stability-preservation",
+   "title": "Strong Stability Preservation",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-015-61-weak-stability-preservation",
+   "title": "Weak Stability Preservation",
+   "pages": "18-23"
+  },
+  {
+   "id": "sec-016-7-stability-properties-of-real-linear-operators",
+   "title": "Stability Properties of Real Linear Operators",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-017-71-weak-real-stability-preservation",
+   "title": "Weak Real Stability Preservation",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-018-72-strong-real-stability-preservation",
+   "title": "Strong Real Stability Preservation",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-019-74-ray-and-interval-stability",
+   "title": "Ray and Interval Stability",
+   "pages": "26-31"
+  },
+  {
+   "id": "sec-020-a-tensor-product-decomposition-of-sl2c-represent",
+   "title": "A Tensor Product Decomposition of SL2(C) Representations",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-021-b1-polarization-and-projection",
+   "title": "B.1 Polarization and Projection",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-022-b2-the-coincidence-theorem",
+   "title": "B.2 The Coincidence Theorem",
+   "pages": "35-36"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

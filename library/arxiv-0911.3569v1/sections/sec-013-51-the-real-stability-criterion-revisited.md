@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 14-15
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 Proposition 5.1. Let κ∈ Nm and f∈ C[x]≤κ. Then Polκf is stable if and only
 if f is stable.

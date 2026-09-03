@@ -7,6 +7,7 @@ section_number: 26
 pages: 26-28
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 OS♭: The k -span of all ribbons with no components that are cups and in which pr op-
 agating upward strands only cross underneath propagating down ward strands.

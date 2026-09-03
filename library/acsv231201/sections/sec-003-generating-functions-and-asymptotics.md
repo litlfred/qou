@@ -7,6 +7,7 @@ section_number: null
 pages: 23-27
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 The algebraic form of a generating function is intimately related to recur-
 sions – and exact formulae – for its coeﬃcient sequence ar, as well as combi-

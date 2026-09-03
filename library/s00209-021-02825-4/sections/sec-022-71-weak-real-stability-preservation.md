@@ -7,6 +7,7 @@ section_number: 7.1
 pages: 27-27
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 T is almost equivalent to real stability of the associated symbol Symb BB (T).W eh a v et os a y
 “almost equivalent” here because there are certain weak real stability preserving operators for

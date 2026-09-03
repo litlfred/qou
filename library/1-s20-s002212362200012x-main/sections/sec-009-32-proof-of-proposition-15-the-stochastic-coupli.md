@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 15-19
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 Proposition 15 will be proven via a coupling argument laid out below, which is a 
 variant of the standard reﬂection coupling of Brownian motions. Let v ∈ Rn and consider 

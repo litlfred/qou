@@ -7,6 +7,7 @@ section_number: null
 pages: 15-15
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 Consider the Jones polynomial of 4-braid closures. In particular, Example 2.19 yields that
 Vˆα(t) =− (

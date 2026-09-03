@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-5
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 the Riemann sphere). This notation has to do with consideration of “ roots at inﬁnity”, which allows us to
 remove degree restrictions and avoid reference to convex circula r regions. We discuss this rigorously in §2.2.

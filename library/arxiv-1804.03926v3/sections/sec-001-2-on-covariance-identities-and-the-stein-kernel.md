@@ -7,6 +7,7 @@ section_number: 2
 pages: 3-8
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 Take a real random variableX of distributionν with densityp with respect to the Lebesgue measure
 on R and cumulative distribution functionF. Assume that the mean of the distribution ν exists and

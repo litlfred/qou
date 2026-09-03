@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 16-17
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 One way to interpret the stability properties of a given polynomial is v ia the stability-preservation properties
 of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial

@@ -7,6 +7,7 @@ section_number: 5
 pages: 15-16
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 The large N analysis of partition function (4.1) was explicitly done in [7]. We brieﬂy review the
 procedure for the readers not familiar with matrix model techniques (for a more comprehensive

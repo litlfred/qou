@@ -7,6 +7,7 @@ section_number: 4
 pages: 11-11
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 Given λ ∈ Nm
 0 , a polynomial p(x1,y 1,...,x m,y m) ∈ V (λ) is said to be stable if it doesn’t vanish in Hm

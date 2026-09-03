@@ -7,6 +7,7 @@ section_number: 5
 pages: 20-22
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 Fix a measure ν on Cn. Consider the process νt constructed in Section 2.2. The 
 following lemma provides expressions for H(ν)a n d ˜H(ν)i n terms of the process νt.

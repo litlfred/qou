@@ -7,6 +7,7 @@ section_number: null
 pages: 45-47
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 [1] M. Aissen, I. J. Schoenberg, A. Whitney, On the generating functions of totally positive
 sequences I, J. Analyse Math. 2 (1952), 93–103.

@@ -7,6 +7,7 @@ section_number: null
 pages: 9-15
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 There is no perfect time to write a textbook for a ﬁeld in its infancy. Act too
 early and the theory might not have the cohesive structure it will eventually

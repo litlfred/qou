@@ -7,6 +7,7 @@ section_number: 2
 pages: 12-14
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 The monoidal category FOT from the introduction is the category RibV from [T3,
 §I.2.3], taking V to be the trivial monoidal category with just one object ∗ and one

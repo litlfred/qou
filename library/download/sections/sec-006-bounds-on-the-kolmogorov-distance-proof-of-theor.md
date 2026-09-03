@@ -7,6 +7,7 @@ section_number: null
 pages: 20-23
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1"
 ---
 As before, let Fn denote the empirical measure associated with observations x1,...,x n and F =
 EFn their mean with respect to a given probability measure μ on Rn. In this section, we derive

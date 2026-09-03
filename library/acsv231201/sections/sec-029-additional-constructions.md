@@ -7,6 +7,7 @@ section_number: null
 pages: 180-187
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 We end this chapter by deﬁning some additional constructions that will be
 required in Chapters 10 and 11.

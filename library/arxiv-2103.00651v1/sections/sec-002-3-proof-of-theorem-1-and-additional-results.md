@@ -7,6 +7,7 @@ section_number: 3
 pages: 3-5
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
 ---
 Proof of the ﬁrst bound in (2) : The proof of the ﬁrst bound relies on covering arguments;
 see Vershynin (2018); Wainwright (2019); Lattimore and Sze pesv´ ari (2020) and references

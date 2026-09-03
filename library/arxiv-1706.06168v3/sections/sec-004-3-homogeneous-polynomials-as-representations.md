@@ -7,6 +7,7 @@ section_number: 3
 pages: 7-7
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 In this section, we will discuss some basic representation theory of SL2(C) and show how the apolarity form
 and the notion of the symbol of an operator arise naturally in the re presentation theoretic context. Most
