@@ -77,7 +77,7 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q as Q0_FLOAT, HA as HA_FLOAT
+from q_parameter import Q_50_DIGIT_STR
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -174,7 +174,9 @@ def _build_record(name, word_cd, h_num, gens=None):
         "Hecke": f"H_{n_strands}",
         "n_strands": n_strands,
         "n_generators": n_strands - 1,
-        "word_cd": [(float(c), float(d), int(g)) for (c, d, g) in word_cd],
+        # c, d arrive as 50-digit mpf (PR #5745); serialize at full precision
+        # via _precision.fmt rather than downcasting to float64 (qou-6sts).
+        "word_cd": [(fmt(c), fmt(d), int(g)) for (c, d, g) in word_cd],
         "word_str": " · ".join(f"{lab}_{g}" for ((_, _, g), lab) in zip(word_cd, labels)),
         "word_length": len(word_cd),
         "writhe": writhe,
@@ -555,8 +557,11 @@ def main() -> int:
         "m_n directly, hence the −8.3% error."
     )
     w.set_content_block("prop:atomic-mass-gb-nf")
-    w.add_parameter("q_0", float(Q0_FLOAT))
-    w.add_parameter("h", float(HA_FLOAT))
+    # Carry the anchor at its 50-digit source rather than the float64 alias
+    # Q/HA; h = q - 1/q recomputed at compute precision (qou-6sts).
+    _q0_mp = mp.mpf(Q_50_DIGIT_STR)
+    w.add_parameter("q_0", fmt(_q0_mp))
+    w.add_parameter("h", fmt(_q0_mp - 1 / _q0_mp))
     w.add_data("braid_inventory", inventory)
     w.add_data("knot_operation_classifications", classifications)
     w.add_data("gamma_gamma_per_particle", gg)
