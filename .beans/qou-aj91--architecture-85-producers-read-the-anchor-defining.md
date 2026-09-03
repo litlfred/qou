@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-09-03T08:41:15Z
+updated_at: 2026-09-03T09:22:37Z
 ---
 
 ## What
@@ -814,3 +814,45 @@ both 3.5 h stale while `pgrep` still returned a PID.
 
 Generalisation worth keeping: **a process-existence check is the weakest
 evidence of progress available.** Prefer evidence the work itself emits.
+
+
+## TRAP: `cmd | tail -N && git push` masks the exit code — I force-pushed a mid-rebase HEAD
+
+**What happened, 2026-09-03.** I ran, as one line:
+
+    git rebase origin/main 2>&1 | tail -2 && git push --force-with-lease
+
+The rebase hit a conflict and stopped at **commit 2 of 10**. The push ran anyway
+and **force-updated the remote to a branch missing 8 of my 10 commits.**
+
+**Why `&&` did not protect me.** In a pipeline, `$?` is the exit status of the
+LAST command, not the first. `git rebase` exited non-zero; `tail` exited **0**;
+`&&` saw 0 and proceeded. The `| tail -2` I added purely to keep the output short
+is what disarmed the guard.
+
+**Why `--force-with-lease` did not protect me either.** The lease checks that the
+REMOTE has not moved since I fetched. It had not — *I* was the one moving
+backwards. A lease guards against clobbering someone else's push; it says nothing
+about whether your own local ref is in a sane state.
+
+**Cost.** Nothing was lost (the commits were in the rebase todo and the reflog),
+but for several minutes the PR's branch on GitHub contained one commit out of
+ten, and anyone reading it would have seen a truncated tranche.
+
+**Rules, going forward:**
+
+1. **Never pipe a command whose exit status gates the next one.** If output
+   needs trimming, capture it: `out=$(git rebase origin/main 2>&1); rc=$?; echo
+   "$out" | tail -2; [ $rc -eq 0 ] || exit 1`. Or use `set -o pipefail`.
+2. **Never chain rebase and push in one line at all.** Rebase, then *check*
+   (`ls -d .git/rebase-merge`, `git rev-list --count origin/main..HEAD`), then
+   push as a separate call. The check is one command and it is the whole
+   protection.
+3. **Before any force-push, assert the commit count.** I expected 10 and the
+   local ref had 1. A single `git rev-list --count origin/main..HEAD` compared
+   against what the tranche should contain would have caught it before the push
+   rather than after.
+
+Same family as the `pgrep` trap recorded above: **a convenience wrapper around a
+command silently replaced the signal I was reading.** There, the watcher's argv
+matched the pattern; here, `tail`'s exit code replaced `rebase`'s.
