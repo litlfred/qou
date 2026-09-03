@@ -5,16 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T04:08:18Z
-updated_at: 2026-08-31T21:20:07Z
-updated_at: 2026-08-31T04:40:24Z
-updated_at: 2026-08-31T04:44:50Z
-updated_at: 2026-08-31T04:50:43Z
-updated_at: 2026-08-31T05:58:46Z
-updated_at: 2026-08-31T07:27:11Z
-updated_at: 2026-08-31T07:32:23Z
-updated_at: 2026-09-02T22:01:25Z
-updated_at: 2026-09-03T04:24:04Z
+updated_at: 2026-09-03T04:57:24Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -1754,3 +1745,20 @@ capped at 3 while the inversion subtracts 3. **Scope (a)** on everything else.
 exit 0, sorry-free, axioms only `[propext, Classical.choice, Quot.sound]` (three
 theorems need none). `computations/probes/ursell_chain_mismatch_probe.py` — 9/9,
 exact `Fraction`, P30-stamped, zero raw float64. PR #6366.
+
+## Sub-q #2 assessed 2026-09-03 (session): NOT one-session closable — needs ribbon-cat infra; finset re-encoding would LAUNDER
+
+Audit: docs/audits/2026-09-03-brng-subq2-bare-integer-vs-qdim.md.
+
+Surveyed this frontier to pick a non-duplicative angle; sub-q #2 (mutual=bare count vs self=q-dim lw) is the only clean non-gated positive target, but it is a ribbon-category statement:
+- self = tr_q(id_X) = Σ_λ n_λ qdim(V_λ) = lw (closed trace, sums over the object's simple summands);
+- mutual = pairing of two FIXED simples = single S-matrix entry S_ab / bare crossing count (NO internal decomposition, because a,b are fixed simples not a co-traced composite).
+The Σ_λ appears in one and not the other for a structural (ribbon/braided) reason. Mathlib has NO ribbon/fusion categories, quantum dimension, or S-matrix — same infra gap that blocks the R2 lift (qou-301d).
+
+TWO SHORTCUTS BOTH FORBIDDEN:
+- (A magnitude) b_αα do-not-attempt (qou-ebs6); ℏ_q² saturation numerology-suspect — do not force.
+- (B structural) DO NOT extend SelfMutualPartition with a channel index set and 'prove' mutualCount has no Λ-sum — defining it without Λ then observing no Λ ASSUMES the answer (define≠derive laundering).
+
+BindingMassRung does NOT close it: it treats M, lw as free params and only forces q-REGULARITY (order ℏ_q²), not bare-INTEGER-ness. Its own docstring says it does not derive why binding lacks the cusp factor.
+
+RECOMMENDATION: leave sub-q #2 open+unfabricated; the tractable adjacent formalization is the shared quantum-trace/connected-sum-multiplicativity infra (qou-301d), which would foundation BOTH sub-q #2 and R2. Default no-op is safe (nothing moves). Higher-leverage item this frontier sits under: the two-nucleon SIGN defect (binds diproton/dineutron; qou-vbyi route 1) — signs before digits.
