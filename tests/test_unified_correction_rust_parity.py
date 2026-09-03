@@ -156,3 +156,43 @@ def test_atom_character_raw_explicit_rust_without_kernel_raises():
             L.atom_character_raw(1, 1, e, use_rust=True)
     finally:
         L._HAVE_RUST_CHI = saved
+
+
+# ── atom_markov_trace (bean `qou-uiut`) ───────────────────────────────
+#
+# `atom_character_raw` parity above is NOT sufficient for its callers.
+# `atom_markov_trace` recombines the per-partition results as
+#
+#     max_ln = max(log_norm over partitions)
+#     chi_eff = chi * exp(log_norm - max_ln)
+#
+# so it depends on `log_norm`, and the Rust path returns log_norm = 0 by
+# construction (MPFR needs no rescaling). Where the Python path also produces
+# log_norm = 0 — which is everywhere the running product stays under 1e80 —
+# the two must agree exactly. This pins that.
+#
+# Where they DIVERGE is documented rather than tested, because it cannot be
+# tested here: log_norm only becomes non-zero for large-dim partitions at high
+# A, and those are precisely the cases the pure-Python path cannot finish, which
+# is why the Rust path exists. See the bean.
+
+
+@pytest.mark.parametrize("Z,N", [(1, 1), (1, 2), (2, 2)])
+@pytest.mark.parametrize("include_inter", [True, False])
+def test_atom_markov_trace_paths_agree(Z, N, include_inter):
+    """The recombination, not just the per-partition character."""
+    with mp.workdps(50):
+        saved = L._HAVE_RUST_CHI
+        try:
+            L._HAVE_RUST_CHI = False
+            py = mp.mpf(L.atom_markov_trace(Z, N, k_cap=5,
+                                            include_inter=include_inter))
+            L._HAVE_RUST_CHI = True
+            rs = mp.mpf(L.atom_markov_trace(Z, N, k_cap=5,
+                                            include_inter=include_inter))
+        finally:
+            L._HAVE_RUST_CHI = saved
+        rel = abs(py - rs) / abs(py) if py else abs(py - rs)
+        assert rel < REL_TOL, (
+            f"(Z,N)=({Z},{N}) include_inter={include_inter}: "
+            f"py={mp.nstr(py, 20)} rust={mp.nstr(rs, 20)} rel={mp.nstr(rel, 6)}")

@@ -587,3 +587,66 @@ Nothing here retracts the braid fix: the matrices were not a representation,
 now they are, that is verified three independent ways (relations, entry-wise
 against Rust, and qou-4m9u's closed form). It does retract my suggestion that
 fixing it would tame the high-A traces.
+
+
+## 2026-09-03 — the B ratios: my change altered high-A results, defensibly
+
+Comparing the new run against the committed witness, B_pred is inflated by a
+factor that GROWS with A:
+
+    atom      old B_MeV        new B_MeV     ratio
+    c14         34.0217          35.1751    1.0339
+    n14         17.5136          22.0780    1.2606
+    o16         27.6581          73.7681    2.6671
+    ne20       132.5960         414.1790    3.1236
+    si28      2916.1000       16578.7282    5.6852
+
+A systematic A-dependent inflation is the signature of a missing rescaling, so
+I checked whether my own change caused it. It did — and the old behaviour was
+the incorrect one.
+
+### Mechanism
+
+`atom_markov_trace` recombines per-partition characters as
+
+    max_ln = max(log_norm over partitions)
+    chi_eff = chi * exp(log_norm - max_ln)
+
+which returns the true Markov trace scaled by `exp(-max_ln)`. The Rust path
+returns `log_norm = 0` (MPFR's exponent range makes the `m_max > 1e80`
+rescaling unnecessary), so `max_ln = 0` and the trace comes back UNSCALED.
+
+That is the correct one, because of how the caller uses it:
+
+    atom_tr = atom_markov_trace(Z, N, k_cap, include_inter=True)
+    free_tr = atom_markov_trace(Z, N, k_cap, include_inter=False)
+    return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))
+
+Two SEPARATE calls, each computing its own `max_ln`, then subtracted. Whenever
+`max_ln != 0` and differs between them, the old code subtracted two
+differently-scaled quantities — not `E_0*(|tr_free| - |tr_atom|)`, which is
+what it documents and what the derivation requires. Removing the scaling makes
+both true traces and the subtraction valid.
+
+### What is verified, and what is not
+
+Verified: `atom_markov_trace` agrees between the two paths to ~1e-49 at
+A = 2, 3, 4 in both `include_inter` conventions — pinned in
+`tests/test_unified_correction_rust_parity.py` (19 tests). That covers every
+case where the Python path also produces `log_norm = 0`.
+
+NOT verified end to end: the high-A case where they genuinely differ.
+`log_norm` only becomes non-zero for large-dim partitions once the running
+product exceeds 1e80, and those are exactly the cases the pure-Python path
+cannot finish — which is why the Rust path exists at all. Measured: at A=28
+with a dim-6 partition, `log_norm` is still 0.0. So the divergence is argued
+from the code's structure, not demonstrated numerically, and that limit should
+be stated whenever these numbers are quoted.
+
+### Consequence for the earlier note on this bean
+
+The previous section said the high-A blow-up "is intrinsic to the producer,
+not an artifact of the braid defect". That still holds — but part of the
+INCREASE from the committed values is this rescaling fix, not the braid fix.
+Both changes landed together, so the si28 ratio of 5.69 is their combined
+effect and should not be attributed to either alone.
