@@ -40,10 +40,12 @@ mp.mp.dps = 50
 
 
 def gA(k):
-    """Sum|c| linear-statistic weight G_A(k) = sgn(k)*|k|(|k|+1)/2."""
-    kk = abs(k)
-    v = mp.mpf(kk * (kk + 1)) / 2
-    return v if k >= 0 else -v
+    """Sum|c| linear-statistic weight on the SHIFTED descent lattice {lambda_i - i}:
+    G_A(k) = k(k+1)/2 for k >= 0 and -k(k+1)/2 for k < 0, with SIGNED k.
+    NOTE g(-1) = 0 and g(-k) = -g(k-1): the descent lattice's natural involution is
+    x <-> -1-x, NOT x <-> -x. Symmetrising to |k|(|k|+1)/2 is WRONG and was the bug
+    that produced a spurious theta^{-1/2} rate (corrected 2026-09-03)."""
+    return mp.mpf(k * (k + 1)) / 2 if k >= 0 else -mp.mpf(k * (k + 1)) / 2
 
 
 def Jbound(x, theta):
