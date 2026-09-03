@@ -1,11 +1,11 @@
 ---
 # qou-hprp
 title: '23 conjecture carriers assert nothing — the `holds : Prop` shape'
-status: todo
+status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-08-29T18:10:00Z
+updated_at: 2026-09-03T08:35:25Z
 ---
 
 Found sweeping the q-geometric-langlands Lean siblings after the four
@@ -129,3 +129,74 @@ before any of the conjectures.
 category-(a) classical ones, which need a citation rather than a derivation and
 are the only genuinely cheap group; (3) category (b), where the fix is adding a
 binder the prose already asserts; (4) leave (c) and (d) — they need the author.
+
+
+--------
+
+## 2026-09-03 — item (1) of the revised order was ALREADY DONE, and the count moved
+
+**Correcting this bean against the tree.** The revised order above puts
+`prop:crystal-basis-resolves-mass-tower-open-problems` first, "since its kind
+over-claims". That was written 2026-08-29. It was fixed on **2026-08-31** — the
+file now carries `ReducesTo`, a seven-parameter `CrystalBasisCorrespondence` with
+three reduction fields, and a derived `crystal_basis_reduction`, plus a
+"What is NOT claimed here" section. It does not appear in the detector's
+`contentless-carrier` list. The bean's own top-priority item was stale by two
+days; re-run the detector before working from this list.
+
+**Live detector figures, `scripts/lean-overclaim-audit.py` on main + this branch:**
+
+| | at triage | now |
+|---|---:|---:|
+| candidates | — | 128 |
+| `overclaim-structure` | — | 78 |
+| `contentless-carrier` | 39 | **37** |
+| `empty-carrier` | 9 | 9 |
+| `overclaim-independent-binders` | — | 3 |
+
+Both steps measured separately: 39 → **38** after the Poincaré–Lefschetz fix,
+38 → **37** after the Bloch-group one. (This entry briefly carried a 37 that was
+a *prediction* — the Bloch file was still being `lean`-checked when it was
+written. Corrected to a measurement, then re-measured to the same value.)
+
+**Two category-(a) carriers done — the classical ones, as the triage predicted.**
+
+1. **`conj:poincare-lefschetz-borromean`.** Poincaré–Lefschetz duality and
+   `H₁(S³∖𝓑₃) ≅ ℤ³` enter as **cited hypotheses** (the `IsWeilZeta` pattern), not
+   as conjectures — encoding settled topology as "conjectural" would misreport it.
+   The framework's own claim is the third field, that the top-degree pairing is
+   `Vol(𝓑₃)`. Derived: `rankHrel_two_eq_three` (the block's own "in particular
+   `H²(∂𝓑₃) ≅ H₁ ≅ ℤ³`" — none of the fields, and it needs two of them),
+   `plPairing_eq_eight_catalan`, `plPairing_pos`.
+
+2. **`conj:borromean-bloch-group-element`.** Stronger: the block's headline
+   `r₂[𝓑₃] = 8G` is **derived, not assumed**. One classical field
+   (`r₂([i]) = Cl₂(π/2) = G`); Thurston's two-octahedron decomposition lives in the
+   *definition* `borromeanClass := 8 • [i]`; then `regulator_borromean` gets `8G`
+   out of **additivity of the regulator**, so the `8` comes from the group
+   structure rather than from a hypothesis. Also derived: the class is non-zero in
+   `B` (the block's "non-trivial element of `K₃(ℂ)`"), and the `h⁴` shadow
+   `r₂[𝓑₃]·(−3/4) = −6G`.
+
+**Both show non-vacuity from BOTH sides**, which the triage did not ask for and
+which is what actually distinguishes a content-bearing field from a decorative
+one: a witness satisfying the fields, *and* a theorem that a specific datum does
+**not** satisfy them (`b₁ = 2` fails one; a vanishing regulator fails the other).
+Both witnesses are `theorem`s, never `instance`s — as instances the next reader is
+invited to add one to a datum not constructed to satisfy the fields
+(`trivialSkeinGenerationContext`, `qou-skgn`).
+
+**What each file does NOT formalise is written in the file**, not left implied:
+no manifold-with-cusps machinery (the PL block's own "still open" item 3), no
+Bloch group / five-term relation / `K₃` construction, `blochI` not forced to be
+`[i]` so the ζ₄-vs-ζ₆ care in the block is carried only by the *value*, and the
+`h⁴ = −3/4` coefficient taken as a hypothesis rather than re-derived.
+
+Verification: `lean`-direct exit 0 on both; `#print axioms` clean on all ten new
+declarations. Sidecars refreshed.
+
+**Remaining category (a) is now empty.** Next is category (b) — four carriers
+whose `.md` declares a conditionality the type does not carry — and note the fix
+there is **not** just adding a binder: adding `[KazhdanLusztigClassicalLimit]` to a
+`holds : Prop` carrier leaves the field just as contentless. Both halves are
+needed.
