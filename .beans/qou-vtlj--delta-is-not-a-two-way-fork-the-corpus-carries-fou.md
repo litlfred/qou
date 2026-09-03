@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-08-29T07:55:41Z
+updated_at: 2026-09-03T10:41:10Z
 ---
 
 ## Measured, `qbeta_delta_net_four_values_probe.py`, 6/6
@@ -613,3 +613,85 @@ checking status before staging; edits were saved aside, the tree restored to
 HEAD, and each edit re-applied against the post-rebase base after verifying
 0 lines would be lost. Lesson: after dispatching a worktree agent onto the
 SAME branch, treat the local tree as stale and re-check HEAD before staging.
+
+
+
+## 2026-09-03 — my own caveat on rem:categorical-neutron-properties was WRONG; retracted
+
+The note I landed on 2026-08-29 said the $(Gx)_\gamma = tr_M(e_\gamma . T_w)$
+reading "reproduces this chapter's own claim that the bare 9-crossing element
+violates positivity, with exactly one negative channel", and concluded no
+two-gluon adjunction is feasible for the proton (minimum three). Three defects,
+found by the corpus-grep I should have run before writing it:
+
+1. **The corroboration cites STRUCK text.** "This chapter's own claim" is the
+   sentence one paragraph up, struck through since 2026-08-24 by `qou-jqjx`:
+   the bare element's instability is an artefact of the retired weight
+   `tr_M(e-) = z^3`, retired 2026-05-19. That bean is `completed` and predates
+   my note by five days. Reproducing a withdrawn number is evidence AGAINST a
+   reading.
+
+2. **The numbers never reproduced it anyway.** The withdrawn claim is
+   `tr_M(T_w) < 0` (retired-weight -0.0059 / -0.1322). My probe's gamma=1
+   channel gives **+0.5444** = `qou-jqjx`'s corrected live **+0.544370**, to
+   the digit. So it agreed with the CORRECTION and I wrote it up as agreeing
+   with the BUG.
+
+3. **The basis was over-complete, and that is where the negative came from.**
+   `def:stable-atom` defines G over the primitive Wedderburn-block operators
+   `{e_lambda}_{lambda |- k}`; H_3(q) has THREE. My probe built SIX ("1, E+,
+   E-, and 3 central"), which is the same over-completeness I had already
+   measured and retracted elsewhere (rank 4 vs augmented rank 5). The single
+   negative pairing (-0.02275) lives on the extra elements.
+
+Re-run of `computations/probes/nucleon-lp-convention-probe.py` on 2026-09-03,
+convention D: every step of both nucleons is positive.
+
+    proton   min(Gx) = +0.342489, +0.279195, +0.339149
+    neutron  min(Gx) = +0.277726, +0.172959, +0.217525
+
+No negative channel anywhere. My "exactly one negative channel" does not
+survive, and neither does the "minimum is three gluon crossings" that rested
+on it.
+
+### What survives, and it is only the hedge
+
+The note's own hedge -- "that rests on a reading of the predicate rather than
+on the corpus's arithmetic" -- was right, and is now the whole content. The
+open question is genuinely open and is NARROWER than the note claimed:
+
+* `def:stable-atom` names the **primitive-idempotent** basis;
+* `nucleon-lp-convention-probe.py` uses `pyhecke.gram`'s **NF-word** Gram
+  (`NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]`);
+* and the partition-indexed decomposition the definition literally asks for
+  **does not exist** (rank 4 vs augmented rank 5), so the definition as written
+  is not directly evaluable either.
+
+Which object G is, is unanswered. Nothing here answers it; do not read the
+positive min(Gx) row as settling it, only as settling that MY six-element
+construction was not the definition's three.
+
+### Second note added, on a LIVE tension nobody has struck
+
+The `sigma_0` sentence is already struck, so the "sigma_0 vs L_-" item I
+promised to flag is moot in that form. What is NOT struck, and is in tension
+with the live convention, is the next sentence: *"The integer LP dual selects
+L_- as the minimum-action stabiliser"*. Measured (same probe, same day):
+neutron `L+.L-` ranks **26/41** at 0.690056 against bare 0.408267; the
+min-|tr_M| optimum is a **single sigma_0 at one crossing** (0.217525); under
+the minimum-crossing objective `def:universal-ilp-algorithm` actually states it
+is **zero**. Proton likewise (`s0.s0` 10/41 at 0.615273 vs bare 0.544370).
+
+So the selection sentence, the 11-crossing total it feeds, and the m_n - m_p
+mechanism resting on it are all in tension. `qou-jqjx` deliberately proposed no
+replacement ("the derivation needs re-deriving, not patching"); that judgement
+is not revisited. Flagged on the block, not resolved.
+
+Scope-(a) throughout. No observable moves.
+
+### Contamination check
+
+The retracted claim appeared in: this bean, the caveat authorNote (now
+replaced), and PR #5958's body. It did NOT reach any `.md` prose, any witness,
+or any Lean file -- the note said explicitly it was "deliberately not written
+into this block", which is the one thing that limited the blast radius.
