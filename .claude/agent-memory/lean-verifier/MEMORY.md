@@ -240,6 +240,26 @@ Four mechanical, statement-preserving fixes, all on
 - `vecHead (vecTail …)` residue after `!![…]`/`![…]` simp: add
   `Matrix.vecHead, Matrix.vecTail` to the simp set.
 
+## TRAP — the restore SKIPS on a cache that is warm-looking and useless
+
+`scripts/lean-cache-restore.sh` no-ops at `>= 2000` mathlib oleans. Measured
+2026-09-02: **6990** oleans present and the restore skipped — and every one was
+`Mathlib/Tactic/**` or `Mathlib/Lean/**` infrastructure, with `Data`, `Order`
+and `Logic` **absent**, so nothing mathematical compiled. The threshold counts
+files, not coverage, and this failure mode reads exactly like a warm cache.
+
+`.github/workflows/lean-axiom-guard.yml` gates on the same `-lt 2000` test, so
+it will neutral-skip on this state in CI too — a gate that silently declines.
+
+**Check for a module you actually import, not a count:**
+`test -f .lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Choose/Basic.olean`
+Force the restore past the skip by concatenating the parts and extracting by
+hand (the script's own recipe, minus the guard).
+
+Related: `lake exe cache get` is useless here regardless —
+`lakecache.blob.core.windows.net` is denied by organization policy (476 attempts,
+476 failures, 2026-09-02). The orphan branch is over GitHub and works.
+
 ## TRAP — this cache branch restores to ROOT `.lake`, and the per-paper tree is a stale decoy
 
 `lake-cache/qou-v4-24-0` (25 parts) extracts to `$ROOT/.lake/` (root
