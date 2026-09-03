@@ -45,6 +45,27 @@ total headroom (PR #6500), that is most of the available room.
 > ingredients independently.** That is a constraint on the *shape* of the proof, not merely on its
 > constants — and it is the first such constraint this arc has measured.
 
+### So what should be bounded?
+
+The cancellation says: not `V_D` and `V_A` separately. The natural candidate is the **ratio
+`V_D/V_A` as one object**. Measured (exact, not the linearisation) against `(V_D/V_A)_∞ = σ_∞² =
+0.461869183`:
+
+| n | `|δ_A|` | `|δ_D|` | `|δ_ratio|` | gain vs `δ_D` |
+|---|---|---|---|---|
+| 18 | 0.062293 | 0.085562 | 0.024814 | 3.448 |
+| 24 | 0.061753 | 0.087413 | 0.027349 | 3.196 |
+| 36 | 0.037244 | 0.058810 | 0.022400 | 2.625 |
+| 40 | 0.036893 | 0.058358 | 0.022288 | 2.618 |
+
+**Gain over `n ≥ 16`: 2.61× to 4.85×.** So bounding the ratio directly *is* the right target and is
+worth a factor of a few — but **not** the full order of magnitude the two cancellations are jointly
+worth. The rest lives in the **leg-vs-leg** cancellation, which a ratio bound does not capture;
+recovering it needs `ρ_P` and the σ-ratio handled *together*, not two tight bounds added.
+
+Stated explicitly so the next attempt does not spend its effort on the ratio alone and expect the
+whole factor back.
+
 ## Correction to a claim earlier in this same PR
 
 Earlier in #6528 I concluded, from the poissonized large-θ ingredients, that **"`ρ_P` is the bigger
