@@ -18,6 +18,7 @@ channel supply that scale?** It cannot, and the margin is large.
     alpha-cluster scale                                  29.800 MeV/alpha
 
     the trace channel supplies 20.6 % to 33.8 % of ONE alpha
+    (and only 9.8 % to 16.0 % of the BULK coefficient — see the correction below)
 
 and the upper figure already assumes the complete graph with every interference
 term included, which the preceding work showed is the most the bond topology can
@@ -51,6 +52,38 @@ measured shortfall, not as an exclusion of the alpha-cluster term.
 
 The exclusion that IS established here is the numerical one above, and it needs
 no representation-theoretic bridge.
+
+## 🛑 CORRECTION — the target above is the OBSERVED value, not the extensive one
+
+The `~29.8 MeV/alpha` (= `7.45 MeV/nucleon`) figure is an **observed** binding,
+and comparing the trace to it answers "can the trace reproduce the measured 4He
+binding". That is a fair question and `20.6-33.8 %` is its answer. **It is not
+the question an extensive term has to answer.**
+
+`QOU.Mass.SaturationPeakStructure` (landed 2026-08-30) proves the per-nucleon
+curve `f(u) = a_V - a_S/u - a_C*u^2` **never attains** its bulk coefficient
+`a_V` — the surface term keeps it strictly below at every mass number — and
+records the empirical values in units of `hbar_q^2 * m_N`:
+
+    a_V   (bulk volume coefficient)   1.71  ->  15.762 MeV/nucleon
+    peak B/A at 62Ni                  0.954 ->   8.794
+    238U B/A                          0.821 ->   7.568
+
+So **`~8 MeV/nucleon` is the observed peak, and the extensive (bulk) coefficient
+is `15.762`, 1.79x larger.** An extensive term must supply `a_V`; the surface and
+Coulomb terms then subtract to give the observed curve. Measured against that:
+
+    bulk required for 4 nucleons   4 x 15.762  =  63.048 MeV
+    trace, chain                                   6.152 MeV   ->   9.8 %
+    trace, complete graph                         10.083 MeV   ->  16.0 %
+
+**The exclusion is therefore about twice as strong as first stated**, and both
+framings are kept above because they answer different questions.
+
+One thing NOT to read into the `1.71`: it is `a_V/(hbar_q^2 * m_N)` computed
+FROM the empirical `a_V`, i.e. a re-expression of the SEMF constant in substrate
+units, not a derivation of it. That `1.71 * hbar_q^2 * m_N` reproduces
+`a_V ~ 15.8 MeV` is arithmetic, not a prediction.
 
 ## Consequence for the programme
 
@@ -96,6 +129,11 @@ L_CHAIN_A4 = "1.46969815276540455"
 L_K4_BEST = "2.40867875195"
 # corpus mean, docs/audits/2026-08-02-alpha-cluster-su4-extensive-term.md
 ALPHA_SCALE_MEV = "29.8"
+# QOU.Mass.SaturationPeakStructure: the per-nucleon curve NEVER attains a_V.
+# These are that file's recorded empirical values, in units of hbar_q^2 * m_N.
+A_V_OVER_HQ2_MN = "1.71"          # bulk volume coefficient
+PEAK_OVER_HQ2_MN = "0.954"        # observed peak, 62Ni
+M_N_MEV = "938.91875"
 
 
 def all_partitions(n):
@@ -210,6 +248,40 @@ def main() -> int:
   of every alpha. No mechanism for it is proposed here -- proposing one on the
   strength of a ratio would be the numerology the anti-fit discipline forbids.
 """)
+    # ---------------------------- 5. the BULK target, not the observed one
+    print("\n" + "-" * 78)
+    print("  5. CORRECTION: the extensive target is a_V, not the observed B/A")
+    print("-" * 78)
+    hq2 = (1 - 1 / q) ** 2
+    mN = mp.mpf(M_N_MEV)
+    aV = mp.mpf(A_V_OVER_HQ2_MN) * hq2 * mN
+    peak = mp.mpf(PEAK_OVER_HQ2_MN) * hq2 * mN
+    bulk4 = 4 * aV
+    print(f"""
+  QOU.Mass.SaturationPeakStructure proves f(u) = a_V - a_S/u - a_C*u^2 NEVER
+  attains a_V, and records:
+
+    a_V  (bulk)        {A_V_OVER_HQ2_MN} x hbar_q^2 x m_N = {mp.nstr(aV, 8)} MeV/nucleon
+    observed peak      {PEAK_OVER_HQ2_MN} x hbar_q^2 x m_N = {mp.nstr(peak, 8)} MeV/nucleon
+
+  So ~8 MeV/nucleon is the OBSERVED peak; an extensive term must supply a_V,
+  which is {mp.nstr(aV/peak, 6)}x larger. Against the bulk requirement:
+
+    bulk for 4 nucleons  4 x {mp.nstr(aV, 7)} = {mp.nstr(bulk4, 8)} MeV
+    trace chain          {mp.nstr(b_chain, 7)} MeV  ->  {mp.nstr(100*b_chain/bulk4, 4)} %
+    trace complete graph {mp.nstr(b_k4, 7)} MeV  ->  {mp.nstr(100*b_k4/bulk4, 4)} %
+
+  The exclusion is about TWICE as strong as first stated. The 1.71 is
+  a_V/(hbar_q^2*m_N) computed FROM the empirical a_V -- a re-expression in
+  substrate units, NOT a derivation of it.
+""")
+    check("the extensive target is the BULK coefficient, and the trace supplies "
+          "under 20 % of it", b_k4 / bulk4 < mp.mpf("0.20"),
+          f"{mp.nstr(100*b_k4/bulk4, 4)} % of the bulk requirement, against "
+          f"{mp.nstr(100*frac_hi, 4)} % of the observed 4He binding. Both are "
+          f"reported because they answer different questions; the bulk one is "
+          f"what an EXTENSIVE term must meet, and it is the stricter.")
+
     check("the open target is stated as a magnitude, with no mechanism "
           "proposed", True,
           f"missing fraction per alpha: {mp.nstr(100*(1-frac_hi), 4)} % to "
@@ -244,6 +316,11 @@ def main() -> int:
             "support_is_two_row_everywhere": bool(all(two_row)),
             "two_row_fact_is_new": False,
             "representation_inference_drawn": False,
+            "a_V_MeV_per_nucleon": mp.nstr(mp.mpf(A_V_OVER_HQ2_MN)*(1-1/q)**2*mp.mpf(M_N_MEV), 20),
+            "observed_peak_MeV_per_nucleon": mp.nstr(mp.mpf(PEAK_OVER_HQ2_MN)*(1-1/q)**2*mp.mpf(M_N_MEV), 20),
+            "trace_fraction_of_bulk_low": mp.nstr(b_chain/(4*mp.mpf(A_V_OVER_HQ2_MN)*(1-1/q)**2*mp.mpf(M_N_MEV)), 20),
+            "trace_fraction_of_bulk_high": mp.nstr(b_k4/(4*mp.mpf(A_V_OVER_HQ2_MN)*(1-1/q)**2*mp.mpf(M_N_MEV)), 20),
+            "target_is_bulk_not_observed": True,
         },
         "assertions": assertions,
         "checks_passed": sum(checks),

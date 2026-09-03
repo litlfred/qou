@@ -53,7 +53,12 @@
     ],
     "support_is_two_row_everywhere": true,
     "two_row_fact_is_new": false,
-    "representation_inference_drawn": false
+    "representation_inference_drawn": false,
+    "a_V_MeV_per_nucleon": "15.761994142421952424",
+    "observed_peak_MeV_per_nucleon": "8.7935335741932997733",
+    "trace_fraction_of_bulk_low": "0.097578533235626789462",
+    "trace_fraction_of_bulk_high": "0.15992082402012641584",
+    "target_is_bulk_not_observed": true
   },
   "assertions": [
     {
@@ -72,11 +77,16 @@
       "detail": "Stating it would be a stronger result and an invalid one. The numerical exclusion stands on its own and is what is claimed."
     },
     {
+      "name": "the extensive target is the BULK coefficient, and the trace supplies under 20 % of it",
+      "passed": true,
+      "detail": "15.99 % of the bulk requirement, against 33.83 % of the observed 4He binding. Both are reported because they answer different questions; the bulk one is what an EXTENSIVE term must meet, and it is the stricter."
+    },
+    {
       "name": "the open target is stated as a magnitude, with no mechanism proposed",
       "passed": true,
       "detail": "missing fraction per alpha: 66.17 % to 79.36 %. The corpus has the STRUCTURE derived (proved SU(4) gate) and the SCALE open; this bounds the scale from below by what the trace cannot supply."
     }
   ],
-  "checks_passed": 4,
-  "checks_total": 4
+  "checks_passed": 5,
+  "checks_total": 5
 }

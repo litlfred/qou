@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:19:27Z
-updated_at: 2026-09-03T04:20:12Z
+updated_at: 2026-09-03T04:24:42Z
 ---
 
 ## Measured 2026-09-03 — `alpha_scale_is_outside_the_trace_probe.py`, 4/4
@@ -52,3 +52,35 @@ additive cap nor the A=4 sign applies to it. The bond-topology exclusions
 carrier that must supply the missing bulk — and this bounds that bulk from
 below. **No mechanism proposed**; doing so on the strength of a ratio would be
 numerology.
+
+
+## 🛑 CORRECTION same day — the target was the OBSERVED value, not the extensive one
+
+Reading `QOU.Mass.SaturationPeakStructure` (landed 2026-08-30) after opening
+#6443 shows the comparison above answers the wrong question for an EXTENSIVE
+term.
+
+That file proves the per-nucleon curve `f(u) = a_V - a_S/u - a_C*u^2` **never
+attains** its bulk coefficient `a_V` — the surface term keeps it strictly below
+at every mass number — and records, in units of `hbar_q^2 * m_N`:
+
+    a_V  (bulk volume coefficient)   1.71  ->  15.762 MeV/nucleon
+    observed peak, 62Ni              0.954 ->   8.794
+    238U                             0.821 ->   7.568
+
+**So the `~8 MeV/nucleon` in the alpha-cluster audit is the OBSERVED peak.** An
+extensive term must supply `a_V`, 1.79x larger; surface and Coulomb then subtract
+to give the observed curve. Against the bulk requirement:
+
+    bulk for 4 nucleons   4 x 15.762 = 63.048 MeV
+    trace chain             6.152 MeV  ->   9.8 %
+    trace complete graph   10.083 MeV  ->  16.0 %
+
+**The exclusion is about TWICE as strong as first stated** — 9.8-16.0 % of the
+bulk, against 20.6-33.8 % of the observed 4He binding. Both framings are kept
+because they answer different questions; the bulk one is what an extensive term
+must meet, and it is the stricter.
+
+NOT to be read into the 1.71: it is `a_V/(hbar_q^2*m_N)` computed FROM the
+empirical `a_V` — a re-expression of the SEMF constant in substrate units, not a
+derivation. `1.71 * hbar_q^2 * m_N ~ 15.8 MeV` is arithmetic, not a prediction.
