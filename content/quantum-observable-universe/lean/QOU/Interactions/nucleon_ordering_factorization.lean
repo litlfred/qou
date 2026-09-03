@@ -6,7 +6,7 @@ import Mathlib.Tactic.Ring
 # QOU.Interactions.nucleon_ordering_factorization
 
 **Proposition** for content block
-[`prop:nucleon-ordering-factorization`](../../../quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md):
+[`prop:nucleon-ordering-factorization`](../../../nuclear-interactions/nucleon-ordering-factorization.md):
 *For a nuclear braid `𝒩(Z, N)` in `H_A(q)` with nucleon ordering
 `π = (t₁, …, t_A)`, the Markov trace decomposes by Wedderburn channel:*
 
@@ -30,9 +30,16 @@ again.  This is not prose that drifted: commit `b67ee924e84`, *"Convert
 sorry to class fields for all 15 EXT_CITE files"*, re-added
 `factorization_ident` and replaced the `sorry` with the projection, in one
 diff, leaving the notice describing its own removal standing as a false
-claim.  **14 of those 15 files are still in that state, and 8 of them carry
-a docstring asserting a `sorry` the body does not contain** (measured
-2026-09-03).  Adjudicated across the batch in
+claim.  **14 of those 15 files still project a field that commit added**
+(measured 2026-09-03: the field name appears in the commit's `+` lines and a
+`:= …field` / `exact …field` appears in the file now).
+
+How many of the 14 carry a docstring asserting an absent `sorry` is **not
+measured** — a whole-file phrase match says 8 but cannot tell a live claim
+from a historical note about the same defect, and a docstring-scoped
+refinement finds only 3 projections against 14 by the robust test, so its
+pairing is broken.  Treat 8 as an upper bound.  Adjudicated across the batch
+in
 [`docs/audits/lean-vacuity-review-ledger.json`](../../../../../docs/audits/lean-vacuity-review-ledger.json)
 on 2026-08-24, verdict `genuine`.
 

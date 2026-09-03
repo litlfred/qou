@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.knot_factor_spectral_derivation — `a_𝒦` as Plancherel-weighted character pairing
 
-**Proposition** ([`prop:knot-factor-spectral-derivation`](../../../quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md)).
+**Proposition** ([`prop:knot-factor-spectral-derivation`](../../../mass-theory/knot-factor-spectral-derivation.md)).
 
 *Let `𝒦` be a knot with braid representative `β_𝒦 ∈ B_n` and mirror
 `β_𝒦*`, working over `A = H_n(R, q)`.  The knot factor `a_𝒦` in the

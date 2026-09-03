@@ -5,7 +5,7 @@ import Mathlib.Tactic.NormNum
 /-!
 # QOU.ParticleInteractions.atomic_lp_stability — bare H is LP-unstable, dressed H is stable
 
-**Proposition** ([`prop:atomic-lp-stability`](../../../quantum-observable-universe/nuclear-interactions/atomic-lp-stability.md)).
+**Proposition** ([`prop:atomic-lp-stability`](../../../nuclear-interactions/atomic-lp-stability.md)).
 
 *The bare hydrogen atom `[e, 𝔭] = σ₀⁻¹` in `H₂(q)` is LP-unstable:
 there exists a Markov-normalised operator `X* = α · 𝟙 + β · σ₀`

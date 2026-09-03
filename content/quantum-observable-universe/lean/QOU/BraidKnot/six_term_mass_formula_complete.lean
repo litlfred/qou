@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula
 
-**Proposition** ([`prop:six-term-mass-formula-complete`](../../../quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md)).
+**Proposition** ([`prop:six-term-mass-formula-complete`](../../../mass-theory/six-term-mass-formula-complete.md)).
 
 The `.md` states that the categorical mass of a vortex `ϱ` is the sum of six
 **named, concrete** terms:
