@@ -386,3 +386,60 @@ throughout (a potential can only cut further). The bound is **measured**, not
 proved, over the stated ranges with the numerical King proxy. A `V = 5`
 extension was attempted and **timed out** (exit 124); it was not load-bearing —
 `V = 2,3,4` carry the result. Nothing derives `A_ω`.
+
+── 2026-09-03 (3): the V=4 repair CLEARS the bound and FAILS the bar-ray stipulation ──
+
+`computations/qbeta/dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py`, **6/6**.
+
+The previous entry proposed the repair — vertices = the three `H₃` blocks
+**together with the abelian connection**, `V = 4`, from the corpus's own
+`total = irreducible + abelian`. Tested.
+
+**Not the vacuous version.** "Does some V=4 quiver hit (4,3)" is already YES
+(D1-a: 64/74). The content is D1-c's own structure, stipulated in two places:
+vertices are `H₃` blocks, so **bar acts on them as partition conjugation**
+`(3) ↔ (1³)` fixing `(2,1)` and the abelian vertex — `σ = (0 2)`, and *not a
+free choice*, since `bar χ^(3)(Δ) = χ^(1³)(Δ)` is exact and convention-free
+(entry 15 of `qou-cds1`, on main) — and "**rays from the bar involution on
+stability**", so the two rays are `θ` and `σ·θ`.
+
+### The dichotomy
+
+    bar-symmetric quivers on the 4 vertices                        128
+      admit (4,3) on SIGMA-RELATED rays (theta, sigma.theta)         0
+      admit (4,3) on ARBITRARY two rays                            128
+      achievable per-ray counts overall                      [1,2,3,4]
+
+**Every one of the 128 reaches the target somewhere; not one reaches it on a
+bar-related ray pair.** `σ` is a symmetry of the quiver, so it carries the
+stable spectrum at `θ` onto the spectrum at `σ·θ` and the counts are forced
+**equal** — while the datum needs `4 ≠ 3`.
+
+So the repair **clears the counting bound and fails the structure**. Reaching
+`(4,3)` requires giving up either (a) bar-symmetry of the quiver — but then `σ`
+is not an automorphism and "the bar involution on stability" has no compatible
+action to be — or (b) bar-relatedness of the rays, which is D1-c's own wording.
+
+### This is the MEASURED form of a theorem the bean already has
+
+`QuiverMirrorAutomorphismExcluded` (sorry-free) proves any count-invariant
+mirror implementation forces amphichirality, so `(4,3)` is unreachable. **What
+is new is not the statement but that it is checked on the specific vertex set
+the repair proposes** — the repair was designed to clear a *different* bound
+(the vertex count) and does, so it was not obvious the same obstruction would
+survive. It does.
+
+### A second structural fact, measured in passing
+
+Only **25 of 128** bar-symmetric quivers are acyclic, and **none of those 25**
+carries an arrow between the two conjugate blocks. Reason, immediate once seen:
+`σ`-invariance sends `0 → 2` to `2 → 0`, a 2-cycle. **Bar-symmetry forbids
+arrows between conjugate Wedderburn blocks in any acyclic quiver** — a
+bar-symmetric acyclic model can never couple `(3)` to `(1³)` directly.
+
+### Scope
+
+Scope-(a). `W = 0` (a potential can only cut further). What is closed is the
+**blocks-plus-abelian repair under D1-c's own bar-ray stipulation** — not D1-c
+the route, and not every `(Q,W)`. The per-ray equality is **measured** here; the
+cited Lean theorem proves the general statement. Nothing derives `A_ω`.
