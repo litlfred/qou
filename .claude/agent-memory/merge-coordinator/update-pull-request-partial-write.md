@@ -86,3 +86,33 @@ but note the rebase replays your ORIGINAL commit, so any fix you made while
 resolving the earlier merge is silently dropped. Re-apply it and verify the file
 after `--continue`; I lost this exact correction that way and nearly shipped text
 contradicting the corrected `MEMORY.md` one file over.
+
+---
+
+## `qou#6433` 2026-09-03 — a THIRD measurement, and the datum that makes the all-REST route work
+
+Same signature again, independently: `merge_pull_request` → `405 Pull Request is
+still a draft`; every `update_pull_request draft:false` → *"API rate limit
+already exceeded for user ID 662242"*. ~7 attempts across three turns.
+
+**Window ≈ 2 h, not 4** — first refusal ~07:0xZ, cleared ~09:06Z on
+`2026-09-03`. So across three sessions the outage is real and wide but its
+LENGTH varies (≈2 h here, ≈4 h on `#6444` and on the sibling's three PRs).
+**Do not quote a duration and wait it out** — that is what the all-REST route in
+`MEMORY.md` exists to avoid, and it was not yet written when this happened
+(it landed 12:38Z, after this PR cleared on its own).
+
+**The observation that CORROBORATES the all-REST fix from the other side:**
+during the outage I ran `update_pull_request` with `title` **and** `body` and it
+**succeeded**, twice, in the same windows where `draft:false` was refused — and
+`merge_pull_request` returned a real `405`, not a rate-limit. So REST reads
+*and writes* and the merge endpoint were all healthy throughout; only the
+GraphQL mutation was gated. That is the direct evidence that a route composed
+entirely of REST calls will go through, rather than an inference from the
+`MEMORY.md` discriminator.
+
+**Also: `get_reviews` and `get_review_comments` are GraphQL** and were refused
+in the same windows, while `get_status` and `get_check_runs` (REST) answered.
+An empty review list obtained during the outage is therefore **not** evidence
+that no review exists — re-check after it clears before concluding anything
+about Copilot.
