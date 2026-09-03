@@ -192,3 +192,69 @@ a `Prop`-class is doing any work. Four checks, each under a minute:
   `(1/5)(0.0108)³ = 2.519e-7 > 2.4e-7` (5 % margin), `5(0.011)⁴ = 7.32e-8 <
   1.8e-7`. Both pins (proton `1.10997858275`, muon-anchored `1.10997859564`) lie
   in the window, so "at any pin in the window" covers both layers.
+
+## 10. Mutation test, root-directory refusal, verified-bytes == HEAD (measured 2026-09-03, `GramQuotientDetD.lean`)
+
+**A theorem closed by `simp only [<table>]; field_simp; ring` is "about the
+table" iff the same tactic script FAILS when the table changes.** Reasoning
+says so (`ring` decides commutative-ring identities); the measured version costs
+about 40 s and is what a skeptic can cite:
+
+1. Stand-in parent = the real parent's `import` lines + namespace + ONLY the
+   declarations the child uses (`sed -n` the line ranges; nothing re-typed).
+   A second copy with ONE entry changed (`| 1, 1 => (q^4 + 1) / …` →
+   `(q^4 + 2)`; a diagonal entry keeps symmetry so `isSymm` still elaborates).
+2. Two complete `cp -al` mirrors of the current mirror (~0 disk), `rm -f` the
+   parent olean in each, `lean -o` the stand-in into it (~12 s each, warm).
+3. Compile the PRISTINE child against each: control **EXIT 0**; mutant **EXIT 1**
+   at the `ring` line, goal showing two different degree-20 polynomials. The
+   control run is the harness's positive control — without it a mutant failure
+   could be the stripping, not the mutation. Cheap sympy companion: perturb each
+   leading-block entry by `+1` and confirm the determinant moves (25/25 here).
+
+**`lean` v4.24 refuses a source outside its root:** `input file '…' must be
+contained in root directory (/home/user/qou/)`. The root is the cwd (or
+`--root=dir`) and the module name is derived from the path relative to it, so a
+stand-in cannot be a loose file in the scratchpad: lay it out as
+`<scratch-root>/QOU/Interactions/GramMatrixH3Symbolic.lean`, `cd` to the
+scratch root with `ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0` exported, pass the
+relative path. (Builds from `$LEANLIB/QOU/…` with cwd `/home/user/qou` get an
+odd derived module name; imports resolve by search PATH, so consumers do not
+care — measured: the author's mirror built that way imports fine.)
+
+**The branch tip can move while you verify.** HEAD advanced five commits during
+one 20-minute pass (`4dbfd2ee31` → `1d9f1cf9db`) and the file went from `??` to
+tracked. Finish with `git hash-object <file>` against `git ls-tree HEAD --
+<file>` and the remote tip: the verdict is about a BLOB and transfers to a
+commit only if the blobs match (`566da678…` matched HEAD, `origin/<branch>` and
+the commit the bean named). `gh` is not installed and
+`mcp__github__pull_request_read` was not offered in that session; git suffices.
+
+**Statement audit — a headline can be a tautology while every Lean statement
+is not.** "The form induced on `V/rad` is nondegenerate" is automatic for ANY
+symmetric form (its radical is exactly what was quotiented out). The content of
+`det(5×5 minor) ≠ 0 ∀ q ∈ ℝ` is `rank G = 5` — corank EXACTLY 1 for every real
+`q` (it jumps at the complex roots of the numerator) — plus the closed form and
+its sign. Say the content, not the tautology, and do not cite a membership lemma
+(`gramMatrixD_mulVec_radical`) for one-dimensionality: that follows from THIS
+theorem together with `det = 0`, not from membership.
+
+**"Never positive" needs the pairing named.** `gramMatrixD` is the bilinear
+`tr_M(ab)`; the star pairing `tr_M(ab*)` (`L₊ ↔ L₋` in one slot) has a
+positive-definite quotient under D (`QOU/QBeta/GramSignature.lean` 2026-08-09
+block; bean `qou-cds2` §"The named repair"). Same bean, same word "quotient",
+opposite sign — the AGENTS.md claim-shape trap, one file over. The mpmath
+signature of the 5×5 minor at q₀ is (4,1), matching `GramSignature` line 139.
+
+**A witness's 30-digit value can carry 15 digits of input** (cousin of §9's
+first item). The probe did `q0 = q_at(40)` then `sp.Float(str(q0), 40)`;
+`str(mpf)` formats at the ambient `mp.dps = 15`, so the witness `q0Value` is
+`1.10997858275138` and `det_at_q0` is 5.6e-17 off the 50-digit proton anchor
+while printing 30 digits (float64-padding class). Check: evaluate the closed
+form at `qou_substrate.constants.Q_50_DIGIT_STR` at 50 dps and diff; the
+witness's own `q0Value` string length gives it away at a glance. Lean quotes no
+digits, so it is untouched; route the probe to the compute lane.
+
+**A `set_option maxHeartbeats N in` may be decorative.** Delete the line into a
+scratch copy and recompile: this one passed at the default 200000 against a
+declared 4000000. A nit, not a defect — but say so, or the next author copies it.

@@ -19,9 +19,8 @@ you pointed at, the path is one level too shallow: oleans live in
 `.lake/packages/*/.lake/build/lib/lean`, not `.../build/lib`. The olean COUNT
 does not discriminate (6990 present at the moment the import failed).
 
-`#print axioms` needs no olean: append the lines to a COPY of the source and
-run `lean` on it. **A copy under `/tmp` dies** (`no default toolchain configured`)
-unless cwd is `/home/user/qou` or you `export ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0`.
+`#print axioms` needs no olean: append to a COPY and run `lean` on it from cwd
+`/home/user/qou` (or `export ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0`), else `no default toolchain configured`.
 
 ## TRAP — the clone is SHALLOW: git cannot date a source against its olean, and presence ≠ currency
 
@@ -140,6 +139,8 @@ block's sidecar (128 files for one block) — revert all but yours.
    Decisive test: re-run against main's own oleans with your changes off the path.
 5. **A dead constant hides behind `abbrev` hops** (three, measured); grepping
    consumers is not a blast-radius check.
+6. **`lean -o` refuses a source outside its root** (cwd, or `--root`): stand-in /
+   mutant modules go under a scratch root laid out `QOU/…/Mod.lean` — harness §10.
 
 ## STABLE — the honest dispositions when a proof will not close
 
@@ -195,5 +196,4 @@ Diff the probe's literal against `constants.py`; §9 has the inhabitation check.
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
 
-⚠ Never treat a number here as a threshold: a stale `~2919 (healthy)` row once
-made a tree evicted 6990 → 2919 read as healthy.
+⚠ Never treat a number here as a threshold (a stale `~2919 healthy` row once read an evicted 6990 → 2919 tree as healthy).

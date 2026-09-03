@@ -4,6 +4,26 @@ One line-block per session: what was verified, by what method, and any
 `MEMORY.md` entry confirmed or corrected. Moved out of `MEMORY.md` 2026-09-03 so
 the injected file stays under 200 lines. Newest first.
 
+- 2026-09-03 (skeptic pass, `qou-cds2`, `QOU/Interactions/GramQuotientDetD.lean`
+  as committed `338d40f57c`, blob `566da678`): could NOT refute. Mirror currency
+  re-checked (`grep -c -a gramRadicalD` = 2 in the mirror's parent olean vs 0 in
+  the shared Jul-2 one; mirror oleans link-count 1, newer than their sources).
+  lean-direct EXIT 0, 0 diagnostics, 15.0 s wall / 12.2 s user; 10/10 `#print
+  axioms` (9 decls + `Matrix.det_fin_five`) = std-3. `maxHeartbeats 4000000` is
+  NOT load-bearing (default 200000 passes). MUTATION TEST (harness §10): the
+  pristine child passes against a stand-in parent carrying the real table and
+  FAILS at `ring` (line 138) when ONE leading-block entry changes — the theorem
+  is about the table. sympy (own parser): closed form = Lean RHS = witness,
+  `real_roots = []`, signature (4,1) at q₀, 25/25 entry perturbations move the
+  det. Findings, all prose: "nondegenerate on V/rad" is automatic — the content
+  is corank = 1 (rank 5) for every real q; "never positive" is unscoped against
+  the `tr(ab*)` star form's positive-definite quotient (`GramSignature.lean`
+  2026-08-09 block); witness `det_at_q0` evaluated at a 15-digit q₀ (`str(mpf)`
+  under ambient dps 15), 5.6e-17 off the 50-digit anchor while printing 30
+  digits. Branch tip moved mid-run (`4dbfd2ee31` → `1d9f1cf9db`); verified
+  blob == HEAD blob == remote-tip blob. `lean -o` refuses a source outside its
+  root dir (cwd / `--root`) — stand-ins need a scratch root laid out as the
+  module path.
 - 2026-09-03 (skeptic pass, `qou-6gf9`, `QOU/BraidKnot/MuPCorrectionAdmissibility.lean`
   as committed `4dbfd2ee31`): could NOT refute. lean-direct against the author's
   scratch mirror (4 cone oleans rebuilt 10:49, `grep -c -a <decl>` confirmed
