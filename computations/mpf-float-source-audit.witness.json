@@ -4,7 +4,7 @@
   "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
   "data": {
     "counts": {
-      "advisory-cast": 18,
+      "advisory-cast": 16,
       "marked-cast": 1,
       "benign": 15
     },
@@ -147,27 +147,11 @@
         "fix": null
       },
       {
-        "file": "computations/hyperbolic_volume_literal_audit.py",
-        "line": 342,
-        "class": "advisory-cast",
-        "arg": "float(...)",
-        "source": "and mp.mpf(lit) == mp.mpf(float(lit)))",
-        "fix": null
-      },
-      {
         "file": "computations/nuclide_braid_pipeline.py",
         "line": 184,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "chi_re = mp.mpf(float(chi_lambda_fast(shape, word, q_val=q0_chi,",
-        "fix": null
-      },
-      {
-        "file": "computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py",
-        "line": 317,
-        "class": "advisory-cast",
-        "arg": "float(...)",
-        "source": "need_virt = B_DEUT / mp.mpf(float(r_close))",
         "fix": null
       },
       {
@@ -286,10 +270,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "cdeb737aadf9",
-  "scriptCommitSha": "15b4c80be0c7e2aedea9eb9df27fc97182134562",
-  "commitSha": "acdc2d6e769491de3f1f32038719139ed6b10c29",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "39019c3e0b209e02d627af057d4b32f308bbdfe7",
   "engine": "python",
-  "computedAt": "2026-09-03T04:18:14.250600+00:00",
+  "computedAt": "2026-08-31T04:35:42.270878+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
