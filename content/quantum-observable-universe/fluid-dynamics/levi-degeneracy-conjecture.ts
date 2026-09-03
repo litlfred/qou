@@ -21,6 +21,35 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-09-03",
+      body:
+        "**The pair channel's $\\beta$ is exactly 1, not the fitted 0.99628 — so " +
+        "window C is excluded for it.** The 2026-07-25 caveat below records " +
+        "$\\beta_{\\mathrm{fit}} = 0.99628$ for the anti-parallel-pair channel. That " +
+        "value is near 1 but formally sits inside the *marginal window* " +
+        "$0 < \\beta < 1$, where the trichotomy's verdict is undetermined — so read " +
+        "literally it leaves this channel undecided. It does not. Under the lock, " +
+        "with $\\nu_q = (q-1)/(2q)$ and $\\varepsilon := q-1$, the condition number " +
+        "has the **exact** closed form $\\mathcal{C}_L = (2\\Gamma/\\pi)\\," +
+        "(1+\\varepsilon)/\\varepsilon$ — not an asymptotic — so " +
+        "$\\log \\mathcal{C}_L = \\log(2\\Gamma/\\pi) + \\log(1+\\varepsilon) " +
+        "- \\log\\varepsilon$ and $\\beta = 1$ on the nose. The 0.99628 is a " +
+        "least-squares slope over a finite $\\varepsilon$ window dominated by its " +
+        "coarse end: measured at 50 dps, the secant exponent is 0.9629 over " +
+        "$[10^{-1},10^{-2}]$ and 1.0 to $10^{-15}$ by $\\varepsilon = 10^{-15}$, and " +
+        "the *same* fit moved to $[10^{-13},10^{-20}]$ returns 0.999999999999996 " +
+        "(`qns_levi_lock_beta_exact_probe.py`, 4/4). The Lean side does not use any " +
+        "of these numbers: `linear_condNumber_forces_beta_one` " +
+        "(`levi_pair_channel_branch_b.lean`, sorry-free) **derives** $\\beta = 1$ " +
+        "from linear growth, the dual of `bounded_condNumber_forces_beta_zero`, so " +
+        "no fit precision enters the argument. **Scope unchanged:** conditional on " +
+        "the lock formula, which is a model input and is not derived; per-channel, " +
+        "scope (a). The conjecture is NOT resolved — branch B for one channel is not " +
+        "branch B for the flow.",
+      see: "../../../../computations/qns_levi_lock_beta_exact_probe.py",
+    },
+    {
+      kind: "note",
       date: "2026-08-30",
       body:
         "**The trichotomy carrier now ties $\\beta$ to $\\mathcal{C}_L$.** The " +

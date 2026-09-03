@@ -81,6 +81,23 @@ not cover: sustained forcing (SF-arc conclusion) and 3D pair effects (U3).
 
 ## 4. Next honest steps (in priority order)
 
+> **🛑 CURRENCY, 2026-09-03 — items 1 and 2 below are DONE; this list is
+> kept for the record, not as a work plan.** Both closed on 2026-08-14,
+> the same day this audit was written, which is why the list never got
+> updated. Item 1 (U3) is bean `qou-7fi2`, **completed** — the Crow
+> dispersion relation landed as `crow-approach-amplification` plus
+> `computations/qns_crow_efolds_probe.py`, with the bounded power law
+> `A = (d₀²/V_{1,0})^{s*/3}`. Item 2 (U4) is bean `qou-zuz0`,
+> **completed** — `burgers_core_strain_cap.lean` derives the cap
+> `Γ/(4πa²)` from the Gaussian profile, sorry-free.
+>
+> So **all four of U1–U4 now carry results**, and `qou-ohaz`'s *remaining*
+> content is not any of them: it is the bean's headline goal, a controlled
+> reduction of the two-regime ODE from the Biot–Savart PDE **with error
+> bounds** (or the PDE effect that breaks it). U1–U4 constrain that
+> reduction from four directions; none of them is it. Item 3 below is
+> untouched and is still the millennium core.
+
 1. **U3 formalization target:** state the Crow-instability dispersion
    relation as a content block with a probe (the growth rate is classical
    linear theory — computable); decide whether the corpus wants the
