@@ -1,11 +1,11 @@
 ---
 # qou-4bef
 title: 'GAP: alpha_EM ladder producers hardcode q0 (muon literal = retired pin A), emit float64 ppb fields, and honest_status.not_at_target is stale muon-framed'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T05:00:50Z
-updated_at: 2026-09-03T16:22:05Z
+updated_at: 2026-09-03T16:32:23Z
 parent: qou-ggdk
 ---
 
@@ -18,3 +18,5 @@ Two ladder producers done 2026-09-03 (PR #6519); the six-producer alpha_EM tranc
 REOPENED 2026-09-03 16:1xZ on owner 'go': the six-producer tranche, same recipe, riding on PR #6519.
 
 MEASURED 2026-09-03 (tranche 2, session qou-ggdk): the retired literal 1.10997859555733471 sits in 14 producers of the alpha cluster, in three shapes. (A) DEAD FALLBACK, 9 files — 'q_at(50) if the substrate imports, else the muon literal': alpha_em_b2_canonical_scale_ratio_probe, alpha_em_b2_invariant_c_probe, alpha_em_b2_tau_intertwiner_probe, alpha_em_b2_scalar_c_probe, alpha_k_selection_rule_conditional, alpha_k_split_pole_order_audit, alpha_k_four_strand_singlet_selection, alpha_k_per_force_assembly — all computed at proton on disk; the fallback is now a hard refusal (a missing substrate is an error, not a silent anchor switch). The ninth, alpha_em_channel_swap_involution_probe, COMPUTED on the muon literal while its witness was auto-stamped proton — a mislabel no detector could see because the literal never reached the witness; moved to the proton pin by name. (B) EXPLICIT COMPARISONS (E1), 4 files — anchor_preference, loop_measure_consistency, perloop_integer_forcedness (which was DECLARED q0-independent, q0_anchor=False, while reading both pins), theta_graph_two_loop: both pins by name, mpf residuals, q0_comparison stamp. (C) MUON-ONLY WITH NO COMPARISON PURPOSE, 1 file — alpha_em_period_qdeformation_probe: proton by default (2026-08-30 rule), stamped proton. All 14 stems declared under physical_proton in q0_anchor_manifest.json.
+
+COMPLETED 2026-09-03 for the alpha cluster: 14 producers re-pinned in three commits on PR #6519 (577367a41b nine dead-fallback incl. the mislabelled channel-swap stamp; f3bafde098 four comparisons; 9218877589 period probe). CORRECTION to commit 9218877589's message: '47 → 33' was a TOP-LEVEL computations/*.py count; measured recursively, ~180 producers under computations/ (mostly deltalambda/, qbeta/ and other subdirectories) still carry the literal. That remainder is qou-9ugp.
