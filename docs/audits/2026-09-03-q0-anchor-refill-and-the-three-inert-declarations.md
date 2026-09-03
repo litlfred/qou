@@ -73,18 +73,40 @@ grep -l 'write_text\|json.dump' <producer>   # manifest is inert
 The manifest entries are left in place — they state the pin correctly — and
 the declaration is added producer-side, the only route that reaches the file.
 
-### 2. The right value under the wrong key — 14 witnesses
+### 2. The right value under the wrong key — 17 witnesses
 
 `bpp_higher_a_resumable_driver.py` writes `"q0_anchor": "physical_proton"`
 into its witness. The audits read **`q0Anchor`**. The declaration is present,
 correct, deliberate — and invisible.
 
-Measured across 3466 tracked witnesses: **14 are unstamped while carrying a
-near-miss key** — 12 `q0_anchor`, 1 `anchor`, 1 `q0_pin`. A further 15 carry
-a variant *alongside* a correct `q0Anchor`, which is harmless duplication.
+Measured on `origin/main` — 3469 tracked witnesses, 2002 unstamped —
+**17 are unstamped while carrying a near-miss key**: 12 `q0_anchor`,
+1 `anchor`, 4 `q0_pin`. A further 12 carry a variant *alongside* a correct
+`q0Anchor`, which is harmless duplication.
 
-This is a **small** class, not a large one, and is reported as such. Four of
-the 14 are in this refill and are fixed here as a side effect.
+This is a **small** class, not a large one, and is reported as such. **This
+branch fixes 11 of the 17** as a side effect of the anchor declarations,
+leaving 6 (5 `q0_anchor`, 1 `anchor`).
+
+> **🛑 Both figures in this section were wrong when first written, by the
+> error this whole document is about.** It read *"14 ... Four of the 14 are
+> in this refill"*. Neither number was measured against a fixed baseline:
+> the count was taken **mid-session, against the working tree this branch
+> was itself mutating**, so declarations that had already landed had
+> silently removed their own witnesses from the population being counted.
+> Re-measured with `git show origin/main:<witness>` — a baseline the sweep
+> cannot write to — the before-count is **17** and the number fixed here is
+> **11**, not 4.
+>
+> This is the same defect AGENTS.md records for the witness-staleness
+> sweep: *"baseline from git, never from a tree your own sweep writes to."*
+> I had that rule in front of me and still measured against the live tree.
+> The `q0_pin` sub-count is the tell — I recorded 1 where there were 4,
+> because three had already been fixed by my own earlier commits.
+>
+> Corrected in the same PR; the earlier commit message
+> (`audit(qou-y98b): the refill, and three ways...`) still carries the wrong
+> figure and cannot be rewritten after pushing.
 
 ### 3. An `ambiguous` entry in the manifest
 
