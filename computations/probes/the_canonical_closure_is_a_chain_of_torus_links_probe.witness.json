@@ -1,0 +1,118 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T15:50:40.282904+00:00",
+  "commitSha": "375e0fbbd2782c97235bce75e075f31442b5f636",
+  "assertions": [
+    {
+      "name": "every canonical word (A = 2..12, both branches) is a chain form after free reduction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "exponents: a_k odd ≥ 3, b_k even ≠ 0, ε_k = ±1, with A of each a_k, b_k and A-1 of ε_k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "sigma branch: every a_k = 7  (all components T(2,7))",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "symbolic components, knot types and linking match the direct computation (A ≤ 4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "W'_A on 2A+1 strands has the same Jones, μ and per-component Jones as W_A (A ≤ 4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 61,
+  "computation": "the_canonical_closure_is_a_chain_of_torus_links_probe",
+  "scriptFile": "the_canonical_closure_is_a_chain_of_torus_links_probe.py",
+  "scriptHash": "ca7d86a5f3e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py"
+  },
+  "description": "Symbolic proof that the curvature floor is sharp for every A. After resolving the averaged letters and freely reducing, the canonical atom word is a chain form: each generator once, in order, as a single power, with a_k odd on the nucleon generators 3k, b_k even on 3k+1 and eps_k = +-1 on the interfaces 3k+2. A chain-form closed braid is a linear connected sum of the torus links T(2,e_i); an exponent +-1 is a connected sum with the unknot and is removable, giving the (2A+1)-strand chain W'_A with the same closure. Hence mu = A+1, #knotted = A, b(L) = 2A+1 and inf total curvature = 2*pi*(2A+1) for every A. Checked exactly: chain form and exponents for A = 2..12, the symbolic component/knot/linking prediction and the W'_A closure against the direct computation for A <= 4.",
+  "data": {
+    "2H_sigma_a": "[7, 7]",
+    "2H_sigma_b": "[-2, -4]",
+    "2H_sigma_eps": "[1]",
+    "2H_sigma-1_a": "[5, 3]",
+    "2H_sigma-1_b": "[-4, -4]",
+    "2H_sigma-1_eps": "[-1]",
+    "3H_sigma_a": "[7, 7, 7]",
+    "3H_sigma_b": "[-2, -4, -4]",
+    "3H_sigma_eps": "[1, -1]",
+    "3H_sigma-1_a": "[5, 3, 3]",
+    "3H_sigma-1_b": "[-4, -4, -4]",
+    "3H_sigma-1_eps": "[-1, -1]",
+    "3He_sigma_a": "[7, 7, 7]",
+    "3He_sigma_b": "[-2, -2, -4]",
+    "3He_sigma_eps": "[1, 1]",
+    "3He_sigma-1_a": "[5, 5, 3]",
+    "3He_sigma-1_b": "[-4, -4, -4]",
+    "3He_sigma-1_eps": "[1, -1]",
+    "4He_sigma_a": "[7, 7, 7, 7]",
+    "4He_sigma_b": "[-2, -2, -4, -4]",
+    "4He_sigma_eps": "[1, 1, -1]",
+    "4He_sigma-1_a": "[5, 5, 3, 3]",
+    "4He_sigma-1_b": "[-4, -4, -4, -4]",
+    "4He_sigma-1_eps": "[1, -1, -1]",
+    "6Li_sigma_a": "[7, 7, 7, 7, 7, 7]",
+    "6Li_sigma_b": "[-2, -2, -2, -4, -4, -4]",
+    "6Li_sigma_eps": "[1, 1, 1, -1, -1]",
+    "6Li_sigma-1_a": "[5, 5, 5, 3, 3, 3]",
+    "6Li_sigma-1_b": "[-4, -4, -4, -4, -4, -4]",
+    "6Li_sigma-1_eps": "[1, 1, -1, -1, -1]",
+    "8Be_sigma_a": "[7, 7, 7, 7, 7, 7, 7, 7]",
+    "8Be_sigma_b": "[-2, -2, -2, -2, -4, -4, -4, -4]",
+    "8Be_sigma_eps": "[1, 1, 1, 1, -1, -1, -1]",
+    "8Be_sigma-1_a": "[5, 5, 5, 5, 3, 3, 3, 3]",
+    "8Be_sigma-1_b": "[-4, -4, -4, -4, -4, -4, -4, -4]",
+    "8Be_sigma-1_eps": "[1, 1, 1, -1, -1, -1, -1]",
+    "10B_sigma_a": "[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]",
+    "10B_sigma_b": "[-2, -2, -2, -2, -2, -4, -4, -4, -4, -4]",
+    "10B_sigma_eps": "[1, 1, 1, 1, 1, -1, -1, -1, -1]",
+    "10B_sigma-1_a": "[5, 5, 5, 5, 5, 3, 3, 3, 3, 3]",
+    "10B_sigma-1_b": "[-4, -4, -4, -4, -4, -4, -4, -4, -4, -4]",
+    "10B_sigma-1_eps": "[1, 1, 1, 1, -1, -1, -1, -1, -1]",
+    "12C_sigma_a": "[7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]",
+    "12C_sigma_b": "[-2, -2, -2, -2, -2, -2, -4, -4, -4, -4, -4, -4]",
+    "12C_sigma_eps": "[1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1]",
+    "12C_sigma-1_a": "[5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3]",
+    "12C_sigma-1_b": "[-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4]",
+    "12C_sigma-1_eps": "[1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1]"
+  },
+  "caveats": [
+    "The two topological facts — chain form = linear connected sum, and T(2,+-1) = unknot is removable — are classical and cited, not re-proved here; the probe verifies their consequences exactly at A <= 4 and the exponent pattern at A <= 12. The Lean module records the exponent bookkeeping only.",
+    "Per classical branch of the 2A+1 averaged letters. The canonical Hecke element itself is not a link; nothing here is about binding or the twist."
+  ]
+}

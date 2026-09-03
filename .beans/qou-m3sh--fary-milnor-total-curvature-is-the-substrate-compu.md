@@ -198,3 +198,16 @@ thread, and the exchange channel is the transverse (linking) direction.
   `BringCone.lean` cannot be that of a 3-Sasakian structure on this link; the
   split sl₂(ℝ) frame {X,Y,V} is what the manifold carries, and it is the same
   frame on every component complement. Posed as a question to the lemma's owner.
+- [x] **SHARP, and symbolically.** `the_canonical_closure_is_a_chain_of_torus_links_probe`
+  (5/5): after resolving the averaged letters and freely reducing, the canonical
+  word is a CHAIN FORM ∏ σ_{3k}^{a_k} σ_{3k+1}^{b_k} σ_{3k+2}^{ε_k} for A = 2..12
+  on both branches — a_k = 7 (σ branch) or 5/3 (σ⁻¹, p/n), b_k = −2 (p) / −4 (n)
+  on σ and −4 throughout on σ⁻¹, ε_k = ±1 by interface type. A chain-form
+  closed braid is a linear connected sum of the T(2,e_i); the ε = ±1 bands are
+  connected sums with the unknot and drop out, leaving the (2A+1)-strand chain
+  W'_A with the same closure (Jones + components verified at A ≤ 4). Hence
+  μ = A+1, #knotted = A, b(L) = 2A+1 and inf ∫κ = 2π(2A+1) for EVERY A.
+  `the_curvature_floor_is_sharp_probe` (spherogram + Vogel, independent Jones
+  cross-check) is the computational instance at A = 2,3,4,6. The two
+  topological facts (composite closed braids; T(2,±1) removable) are cited,
+  not re-proved; Lean carries the exponent bookkeeping only.
