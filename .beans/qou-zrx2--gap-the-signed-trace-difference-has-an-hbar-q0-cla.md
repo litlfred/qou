@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-03T15:01:58Z
+updated_at: 2026-09-03T20:46:56Z
 ---
 
 
@@ -462,3 +462,99 @@ the limit, instead of predicting it.
 
 I am recording this as a refuted mechanism rather than leaving it untried-
 looking, because the guess is the obvious one and the next agent will make it.
+
+## RETRACTED (2026-09-03): the "cycle-count trace REFUTED" section above is WRONG, and so was the probe I built on it
+
+Retracting three things I wrote earlier today, in one place. The mechanism I
+recorded as refuted is the corpus's own **derived** mechanism; the closed form
+I reported as newly found was already derived, exactly, for every `A`; and the
+probe I committed to carry it (`classical_floor_dyadic_closed_form_probe.py`)
+has been deleted as a weaker duplicate.
+
+### 1. The cycle counts I refuted it with were wrong
+
+I wrote `c_free = n` (the free word's permutation is the identity) and
+`c_atom = n - 1`. Re-measured directly, at the 50-dps `q` the accessor demands:
+
+    include_inter=False  len=22  perm=[1,0,2,4,3,5]  cycles=4 = 2A
+    include_inter=True   len=23  perm=[1,0,3,4,2,5]  cycles=3 = A+1
+
+for the deuteron (`n = 6`). So `c_free = 4`, not 6. My recorded permutation is
+the identity and the real one is `(0 1)(3 4)` — consistent with having applied
+at most one swap of the word's 22 letters, though I cannot now reconstruct
+which line did it.
+
+**I had the discriminator in hand and did not apply it.** My own Richardson
+measurement gave `tr_M(W_free)(q->1) = 1/4`. Under the very formula I was
+testing, `tr_M = 2^(c-n)`, that *forces* `c_free = 4` on `n = 6`. A count of 6
+predicts `2^0 = 1`. The two halves of my own probe contradicted each other and
+I published the disagreement as a refutation of the formula rather than as a
+bug in the count.
+
+With the right counts the formula reproduces the floor exactly:
+`2^(2A-3A) - 2^((A+1)-3A) = 2^-A - 2^(1-2A)`, which is `1/8` at `A=2` and
+`7/128` at `A=4` — the measured values.
+
+### 2a. And it was in THIS FILE, twice, above where I wrote it
+
+Sharper than the missed grep, and the part worth carrying: **the bean I was
+appending to already contained the answer.** Two sections above my "no closed
+form" text, in the same file:
+
+- `## 2026-08-31 (later) — the floor has a CLOSED FORM, confirmed as a
+  prediction` — the identical formula `c0(A) = 2^-A - 2^(1-2A)`, read off at
+  A = 2,3,4 and **tested** at A = 5 on two isobars.
+- `## 2026-08-31 (later still) — the floor is DERIVED, and the arithmetic core
+  is in Lean` — the Schur-Weyl step verbatim, the probe, and the sorry-free
+  Lean file.
+
+I read the file with `tail -60` and wrote from there. Path 6 of the corpus-grep
+checklist is "grep the beans"; the failure mode it does not warn about is
+appending to a long bean without reading it, where the paths are not merely
+un-walked but the destination itself is the source you skipped.
+
+### 2b. Follow-up (2) in this bean is already DONE and still reads as open
+
+While checking: this bean's follow-up list says *"Fix the registry entry.
+`E_0_CONVENTIONS["B_q_value_absorbed"]`'s operator class should record
+hbar_q^0 + hbar_q^1, not hbar_q^2"*. That landed on 2026-08-31 — the entry
+carries a `⚠ CORRECTED 2026-08-31` block with the corrected index, the closed
+form, the derivation and the 22.46% / 4.88% shares. Not re-opening it here;
+recording that the follow-up list is one item staler than it looks, which is
+part of why I read the entry as uncorrected.
+
+### 2. The closed form was not open — it was DERIVED, three days earlier
+
+`computations/probes/classical_floor_derivation_probe.py` (2026-08-31, 5
+assertions, all passing — I re-ran it) derives `c0(A) = 2^-A - 2^(1-2A)` from
+Schur-Weyl at `q = 1` plus the cycle count, verified `A = 2..20`, i.e. well
+past where the trace itself is computable. `QOU/MassTheory/ClassicalTraceFloor.lean`
+is sorry-free. `derivation_chain.E_0_CONVENTIONS["B_q_value_absorbed"]` already
+carries the correction, the same closed form, and the same 22.46% / 4.88%
+classical shares.
+
+My probe's docstring asserted "no closed form was identified". That is the
+failure the corpus-grep checklist exists to prevent, and I skipped it: the
+result was in `computations/probes/` under an obvious name, in a Lean file, and
+in the very `derivation_chain.py` entry I was about to "correct".
+
+Its one apparently-new content — the per-leg split `tr_M(W_free)(q->1) = z^A`,
+`tr_M(W_atom)(q->1) = z^(2A-1)` with `z_D(1) = 1/2` — is the derivation probe's
+step 3 restated. `2^(2A-3A) = 2^-A` and `2^((A+1)-3A) = 2^-(2A-1)` are the same
+two numbers with a derived exponent instead of a fitted one. And the derivation
+attributes the 2 to `dim C^2` via Schur-Weyl, not to `z_D(1) = 1/2`; those
+coincide in value here and my attribution has no derivation behind it.
+
+### 3. What was NOT wrong
+
+The Richardson measurements themselves reproduce: `1/4, 1/8` (D), `1/16, 1/128`
+(4He), and the A=3 prediction `1/8, 1/32` held. They agree with the derived
+values. Only the mechanism claim and the novelty claim were wrong.
+
+### 4. Also reverted
+
+The edit I had staged to `derivation_chain.py` — it would have appended a
+second, numerics-only correction above the existing derived one, and claimed
+A=3 was "predicted before it was measured" as though new. The head sentence it
+was going to remove ("carries the ℏ_q^2 scaling") is superseded-text retained
+above its own correction, which is this corpus's house style, not a defect.
