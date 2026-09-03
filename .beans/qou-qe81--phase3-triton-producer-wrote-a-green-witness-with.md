@@ -196,3 +196,33 @@ says so.
       `expect_errors(...)`. Each needs a producer re-run, so none was done here.
 - [ ] The gate is not mirrored into the vendored
       `qou-mass/src/qou_mass/_internal/witness_base.py`.
+
+
+## 2026-09-03 — the NO-FLOAT64 item is now done in CODE; regeneration owed
+
+Owner restated NO FLOAT64 EVER, which promoted this from "second item, not
+taken" to something to land.
+
+`b_pred` comes out of `binding_from_frobenius_pairing` as mpf and was
+immediately downcast — `b_pred_f = float(b_pred)` — with everything downstream
+computed from the float. So `B_pred_MeV`, `residual_pct` and `residual_keV`
+all reached the witness at ~17 digits out of a 50-dps pipeline.
+
+Worse, `AME_2020_BINDING_MEV` held Python float literals, and those values are
+the DENOMINATOR of the residual: the f64 quantisation of `2.22456612` was
+propagating into every residual the witness records. Now `mp.mpf("...")` of
+the exact decimal.
+
+Also `E_0_MeV` (both sites) and `compute_time_s`, the latter as a string,
+matching `hadron_knot_table`'s `per_atom_wall_seconds` (bean `qou-c7g8`) — a
+diagnostic must not add raw float64 to a witness either.
+
+The only `float()` left in the file is in `print()` calls: a format width is
+presentation, not a value.
+
+- [ ] **Regenerate `phase3-triton-binding-convention-b.witness.json`.** NOT
+      done here: the nuclide-table regeneration (bean `qou-uiut`) is running
+      in this checkout and two producers must not run at once. Until it is
+      regenerated the committed witness still carries the 25 raw-float64
+      fields the corpus's own gate warns about — the code is fixed, the
+      artifact is not.

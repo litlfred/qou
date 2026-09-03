@@ -97,11 +97,16 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 OUT = HERE / "phase3-triton-binding-convention-b.witness.json"
 
+# NO FLOAT64 EVER (owner directive). These are decimal literals from AME2020;
+# as Python floats they are f64-quantised before anything reads them, and they
+# are DENOMINATORS of the residual, so the error propagates into every
+# residual_pct / residual_keV the witness records. `mp.mpf` of a string is the
+# exact decimal. Bean `qou-qe81`.
 AME_2020_BINDING_MEV = {
-    "D":    2.22456612,
-    "T":    8.481798,
-    "3He":  7.71810,
-    "4He": 28.29567,
+    "D":  mp.mpf("2.22456612"),
+    "T":  mp.mpf("8.481798"),
+    "3He": mp.mpf("7.71810"),
+    "4He": mp.mpf("28.29567"),
 }
 
 
@@ -134,22 +139,34 @@ def main() -> int:
                 b_pred = binding_from_frobenius_pairing(Z, N, canonical=False)
                 trace_kind = f"plancherel_fallback ({type(e).__name__})"
             dt = time.time() - t0
-            b_pred_f = float(b_pred)
-            err_pct = (b_pred_f - ame) / ame * 100 if ame else float("nan")
-            err_kev = (b_pred_f - ame) * 1000
+            # `b_pred` is mpf out of `binding_from_frobenius_pairing`. It used
+            # to be downcast here (`b_pred_f = float(b_pred)`) and everything
+            # downstream computed from the float — so the witness's
+            # B_pred_MeV, residual_pct and residual_keV all carried ~17 digits
+            # out of a 50-dps pipeline. NO FLOAT64 EVER; the residual is
+            # arithmetic, and arithmetic stays mpf.
+            #
+            # The one legitimate `float()` is the print below: a format width
+            # is presentation, not a value.
+            err_pct = (b_pred - ame) / ame * 100 if ame else mp.mpf("nan")
+            err_kev = (b_pred - ame) * 1000
             print(f"  {label:>6} {f'({Z},{N})':>8} {h_level:>8} "
-                  f"{b_pred_f:>+15.6f} {ame:>+14.6f} {err_pct:>+10.2f}%")
+                  f"{float(b_pred):>+15.6f} {float(ame):>+14.6f} "
+                  f"{float(err_pct):>+10.2f}%")
             rows.append({
                 "atom": label,
                 "Z": Z, "N": N, "A": A,
                 "hecke_level": h_level,
                 "trace_kind": trace_kind,
-                "E_0_MeV": float(E_0_CALIBRATION_MEV),
-                "B_pred_MeV": b_pred_f,
+                "E_0_MeV": E_0_CALIBRATION_MEV,
+                "B_pred_MeV": b_pred,
                 "B_ame_MeV": ame,
                 "residual_pct": err_pct,
                 "residual_keV": err_kev,
-                "compute_time_s": dt,
+                # Wall time as a STRING, matching `hadron_knot_table`'s
+                # per_atom_wall_seconds (bean qou-c7g8): a diagnostic must not
+                # add raw float64 to a witness either.
+                "compute_time_s": f"{dt:.3f}",
             })
         except Exception as e:
             print(f"  {label}: ERROR {type(e).__name__}: {str(e)[:60]}")
@@ -184,7 +201,7 @@ def main() -> int:
             "all should be derived"
         ),
         "data": {
-            "E_0_MeV": float(E_0_CALIBRATION_MEV),
+            "E_0_MeV": E_0_CALIBRATION_MEV,
             "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
             "rows": rows,
         },
