@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-03T04:45:39Z
+updated_at: 2026-09-03T10:30:36Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -45,3 +45,6 @@ PROGRESS (2026-09-03, PR #6432): BEYOND HOOKS — does the determinant handle re
 PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the germ is underdetermined ⇒ representation-specific. A=q∂σ·σ⁻¹ satisfies {σ,σ'}=h'σ+hσ' (diff'd Hecke): in σ-eigenbasis this FIXES the diagonal (2λ−h≠0 ⇒ A_ii=±1) but leaves the OFF-DIAGONAL FREE (λ_q+λ_₋=h ⇒ coeff vanishes). Verified genuine 2×2 block: diag ±1 both seminormal & R-matrix; off-diag differs (seminormal 0.171 vs R-matrix 1.43). ⇒ seminormal per-irrep germ (base.germ_csr, whole arc) is ONE gauge; P(A)=Σ y_λ tr(ρ_λΩ₂) well-defined specifically in that gauge; explains #6432 two-row 6.5% mismatch at mechanism level. RETRACTION (caught in-session): channel-sign closed form A=(2σ−h)/[2]_q is FALSE on genuine blocks (only holds where σ diagonal; first check used that degenerate case; max|A−(2σ−h)/[2]|=0.27). Arc results STAND (seminormal used consistently). OPEN: gauge-invariant (curvature) formulation? Audit docs/audits/2026-09-03-magnus-germ-is-underdetermined-not-a-full-tower-object.md
 
 2026-09-03 (post #6445): hook column of the gauge-invariant curvature Ω₂^P reduces to the (n−1)-dim reduced Burau in closed form, all orders: tr_hook(ρΩ₂^P) = (4/[2]²)·q^{(L+2)(1−j)}·Σ_a[e_j(eig Wσ_aσ_{a+1}) − e_j(eig Wσ_{a+1}σ_a)], j=n−k. Verified to dps floor (worst 2.6e-139) on every hook at n=6. Endpoint-zeros manifest. TRAP: first pass omitted #6430's word-length twist (len=L+2, not L) and matched only j=0,1+endpoints — those rows cannot detect a missing twist. Probe: magnus_gauge_hook_closed_form_probe.py.
+
+
+- 2026-09-03 (Lean, PR #6480): `MagnusGaugeCurvatureHookColumn.lean` — `curvatureSum` + `trace_mul_curvature_eq_sum_word_traces` (unconditional linearity: curvature trace = signed sum of word-traces of length L+2) + `trace_mul_curvature_eq_of_word_traces` (conditional closed form with a SINGLE common twist c — the L+2 trap made structural). lean-verifier: lean-direct EXIT 0, zero diagnostics, as authored; both thms `#print axioms` = [propext, Classical.choice, Quot.sound], no sorryAx. Generic CommRing/Algebra, no ℝ. Premise (per-word hook identity, 139 digits) stated as hypothesis, not proved.

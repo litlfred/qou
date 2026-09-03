@@ -288,6 +288,18 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-09-03 (magnus-o6ov gauge-hook): verified committed
+  `QOU/MassTheory/MagnusGaugeCurvatureHookColumn.lean` (HEAD 11e80b8a39; def
+  `curvatureSum` + 2 thms over generic CommRing/Algebra, `tr : A →ₗ[R] R`).
+  All 4 imports (`BigOperators.Ring.Finset`, `Module.LinearMap.Defs`,
+  `Algebra.Algebra.Defs`, `Tactic`) have BOTH olean and source in v4.24.0 — the
+  LinearMap/Algebra module names are real. lean-direct EXIT 0, zero diagnostics,
+  AS AUTHORED (no fix). Both thms `#print axioms` = `[propext, Classical.choice,
+  Quot.sound]`, no sorryAx. Cold-cache TRAP again: 3m52s wall / 10s user, warm
+  4.0s. Cache was already present in root `.lake` (3470 mathlib oleans) WITHOUT
+  the `RESTORED-NO-TRACES` marker — absence of the marker ≠ absence of the
+  restore; check the olean count. Disk was 2.1G free: too little for a
+  re-restore tarball (~1.6–2.3G), so a "restore first" reflex would have failed.
 - 2026-09-03 (braid-twist-flip): verified two changed content-block `.lean`
   files realizing trefoil monodromy S₃≅D₃, both lean-direct EXIT 0, no sorryAx,
   no refs to removed `w4_fixed`/`twist_flip_pow_three`/`twist_flip_ne_id`/`Fin 4`.
