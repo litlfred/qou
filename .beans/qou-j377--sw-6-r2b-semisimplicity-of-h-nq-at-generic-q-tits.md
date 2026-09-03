@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T08:51:49Z
+updated_at: 2026-09-03T08:58:22Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -225,3 +225,58 @@ refutation of this note.
 `q⁴ = (q²+1)(q²−1) + 1` by `ring`, then rewrite by the hypothesis.  The obvious
 `linear_combination` route **fails here as "unknown tactic"** — `Mathlib.Tactic.LinearCombination`
 is not imported and deliberately should not be, to keep this file's cone minimal.
+
+
+## 2026-09-03 — CORRECTION to my own entry above: the tranche is 11 modules / 59 declarations, not 13 files
+
+The entry two sections up says *"all 13 files are genuinely on the chain — each is
+referenced by something downstream, ending at `HeckeWedderburnGeneral`.  Nothing is
+incidental, so the tranche cannot be shortened by dropping a file."*  **That is wrong, and
+the reason is the same coarse-detector error this bean already documents twice.**
+
+It was measured at **file** level — does module A reference any declaration of module B.
+Re-measured at **declaration** level, walking references from `heckeWedderburn` itself
+(`scripts/lean-general-field-tranche-scope.py`):
+
+     ℝ-decls  reachable  module
+          19         12  QJucysMurphyEigen
+          16         10  SeminormalRep
+          14          9  SeminormalInequivalence
+          12          0  HoefsmitRep            <-- OFF the general path
+           6          6  HeckeWedderburnGeneral
+           6          5  SeminormalParam
+           6          6  HeckeProductSurjective
+           3          3  SeminormalSimpleSpectrum / SeminormalRangeTop / SeminormalRange
+           1          1  OffDiagNonvanishing
+           1          0  QJucysMurphy           <-- OFF the general path
+           1          0  HoefsmitRepGeneral     <-- OFF the general path
+           1          1  GenericParameterReal
+
+**TRANCHE: 59 ℝ-carrying declarations across 11 modules**, of 92 across 14 in the cone.
+
+### Why `HoefsmitRep` is off the path
+
+Its `ℝ` block is the concrete `S0` / `S1` / `seminormalRep21` / `seminormalRep22`
+development.  It reaches the chain through exactly one bridge —
+`QJucysMurphy.qJM_seminormalRep21_one`, a rank-2 sanity check on the q-Jucys–Murphy element
+— and **that theorem has zero consumers corpus-wide**.  `seminormalRep21`'s other four
+users (`HeckeWedderburn3`, `HeckeDim3Indep`, `HeckeMarkov3`, and the dead lemma) are **not
+in `heckeWedderburn`'s cone at all**; they are the separate concrete rank-3 development.
+`QJucysMurphy` carries exactly one `ℝ` declaration — that same dead lemma — so it comes off
+the tranche entirely too.
+
+### And "244 occurrences" was the wrong unit
+
+`ℝ` is a character.  A theorem mentioning it six times is one declaration of work.  Quote
+**59 declarations across 11 modules**; do not quote 244.
+
+### The check that makes the OFF verdict safe
+
+Reachability here is **name-based** and excludes names of ≤ 3 characters, because a bare
+`S0` matches too much prose to follow.  That is precisely how a file gets *wrongly* called
+off-path — the closure cannot see the very names `HoefsmitRep` exports.  So the script
+carries `--check-short`, which asks directly whether any **reachable** body mentions `S0`
+or `S1`.  Answer: **NONE**.  Run it before believing any OFF verdict.
+
+Recorded because the earlier over-count and this correction come from the same place: a
+detector one granularity too coarse, trusted because it was specific.
