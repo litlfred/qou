@@ -1,11 +1,25 @@
 {
   "engine": "python-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T04:00:03.459053+00:00",
-  "commitSha": "d072cd4fbe7e88d40f3d6f96a4072cc8e3d6364b",
+  "computedAt": "2026-09-03T04:03:56.304236+00:00",
+  "commitSha": "f53867412de004a033277f10f4569d676b322268",
   "assertions": [
     {
       "name": "bar_split_7_1_is_ARITHMETIC_on_4_3_not_independent_data",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "root_enumeration_REPRODUCES_Gabriel_on_five_Dynkin_quivers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_root_count_is_INSENSITIVE_to_the_dimension_box",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -48,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23194,
+  "durationMs": 22762,
   "computation": "dt-d1a-small-quiver-two-ray-scan",
   "scriptFile": "dt_d1a_small_quiver_two_ray_scan_probe.py",
-  "scriptHash": "e03325d116df",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7b43d30bb01a",
+  "scriptCommitSha": "f53867412de004a033277f10f4569d676b322268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
