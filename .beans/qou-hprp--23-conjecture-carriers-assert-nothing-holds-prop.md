@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-09-03T08:51:43Z
+updated_at: 2026-09-03T12:43:22Z
 ---
 
 Found sweeping the q-geometric-langlands Lean siblings after the four
@@ -250,3 +250,66 @@ touched it in that window and `git diff` shows **zero** changes to any `vol_B3` 
 ~200 the injection budget allows, so roughly half of it is not reaching the agent.
 It was 362 before this entry. Pruning someone else's TRAPs is not mine to do
 unilaterally.
+
+
+### 2026-09-03 — category (b) is 1 doable of 4, and the triage above mis-sorts one of them
+
+Measured after doing `conj:lusztig-canonical-basis-q-eq-1`. **Category (b)'s stated
+fix — "adding a binder the prose already asserts" — is structurally impossible for
+three of its four members**, for two distinct reasons. Where each upstream class
+lives decides it:
+
+| downstream (category b) | its upstream | upstream class lives in | content-bearing? | doable? |
+|---|---|---|---|---|
+| `lusztig-canonical-basis-q-eq-1` | `KazhdanLusztigClassicalLimit` | **library** `lean/QOU/BraidKnot/` | yes | ✅ **done** |
+| `kashaev-density-equals-sdp-multiplicity` | `VolumeConjecture` | **content-block sibling** `mass-theory/` | yes | ❌ unimportable |
+| `spin-from-so3-fiber` | `isospin`/`color-tube` | sibling / **absent entirely** | **`holds : Prop`** | ❌ |
+| `wigner-su4-from-spin-isospin` | `spin-from-so3-fiber`, `isospin-from-canonical-bowtie` | siblings | **both `holds : Prop`** | ❌ |
+
+**Reason 1 — siblings cannot import siblings, so a sibling-resident upstream class
+cannot be bound.** Confirmed structurally, not from a docstring:
+`content/quantum-observable-universe/lean/lakefile.toml` declares
+`globs = ["QOU", "QOU.+"]` with `srcDir = "."` (the `lean/` dir), so a file at
+`mass-theory/foo.lean` has no module name at all. Corroborated by measurement:
+**every** `^import QOU.` line in a sibling resolves to a library module
+(`QOU.Basic`, `QOU.MathlibExt.*`, `QOU.BraidKnot.*`) — not one sibling imports
+another. `conj:kashaev-density-equals-sdp-multiplicity` is otherwise the most
+tractable item in the whole bean (a crisp integer identity `ρ_F = ν_SDP` with three
+confirmed atoms), and it is blocked purely on `VolumeConjecture` sitting in
+`mass-theory/kashaev-volume-conjecture.lean:51` instead of the library. Promoting
+it is a refactor with its own blast radius, **not** a carrier fix — it is the
+`IsWeilZeta` move (that class was promoted to a library module for exactly this
+reason, and its docstring says so).
+
+**Reason 2 — binding to a `holds : Prop` upstream buys nothing.** You would get a
+theorem conditional on `True`. Both of `wigner-su4`'s upstreams are contentless
+carriers, so it is transitively blocked; and one of them,
+`conj:isospin-from-canonical-bowtie`, is this bean's own **category (d)** (the
+305 ppm near-match needing the owner). So `wigner-su4` is owner-blocked through
+its dependency, which the triage does not say.
+
+**🛑 `conj:spin-from-so3-fiber` is mis-sorted — it is not category (b).** Its own
+`authorNotes` (2026-06-01, audit `2026-06-01-s5-so3-su2-u1-fiber-action.md`)
+records that the stated mechanism is **falsified**: the premise that `S₃` "sees
+only ℓ ≤ 1" is false (the (2,1) irrep appears at ℓ=1 mult 1 *and* ℓ=2 mult 2), and
+the icosahedral story lives on `A₅ ⊂ S₅` (5 strands) while `h⁴ = −3/4` lives on the
+`H₃` trace (3 strands) — *"different representation rings with no canonical map,
+so the ℓ=2 ⟹ h⁴ link is not derivable as written"*. That is the same
+do-not-launder situation as `conj:magic-numbers-from-q`, not a missing binder.
+
+What survives there is sharp and worth someone's time: **spin-ℤ₂ ≠ sign-ℤ₂**,
+because the binary icosahedral group `2I` is perfect while `|2I| = 120 = |S₅|` and
+`2I ≇ S₅`. That is provable in the abstract form *"a perfect group is not
+isomorphic to a non-perfect one"* — but note this Mathlib has **no `IsPerfect`**
+(grepped: zero hits), so it would be spelled `commutator G = ⊤` by hand.
+
+**Revised order, replacing the one above.** (1) `kashaev-density` **if** the owner
+wants `VolumeConjecture` promoted to the library — one small refactor unblocks the
+bean's best remaining item. (2) `spin-from-so3-fiber`'s surviving positive as a
+standalone proved lemma, leaving the falsified mechanism unencoded. (3) everything
+else waits on the owner.
+
+**Also dead here:** `wigner-su4`'s classical core (`Λ⁴` of a 4-dim space is
+1-dimensional, i.e. four nucleons fill the singlet) is **not cheap** — this
+Mathlib has no `Mathlib/LinearAlgebra/ExteriorPower/` and
+`exteriorPower.finrank_eq` is an unknown identifier. Probed, not assumed.
