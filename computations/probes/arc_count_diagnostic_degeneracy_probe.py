@@ -88,10 +88,15 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
+
+
+def _fr_to_mpf(fr: Fr):
+    """Exact Fraction -> mpf at the active compute precision (no float64)."""
+    return mpf(fr.numerator) / mpf(fr.denominator)
 
 CITED = "low-isotope-sign-flip-diagnostic.witness.json"
 
@@ -292,9 +297,9 @@ def main() -> int:
             "corpus_quoted_r2_arc": "0.83",
             "corpus_quoted_r2_signed_h": "0.26",
             "r2_ame_vs_arc_exact": str(ceiling),
-            "r2_ame_vs_arc_float": float(ceiling),
+            "r2_ame_vs_arc": fmt(_fr_to_mpf(ceiling)),
             "n_nuclei_ame": len(keys),
-            "regressor_race": {k: float(v) for k, v in vals.items()},
+            "regressor_race": {k: fmt(_fr_to_mpf(v)) for k, v in vals.items()},
             "shallow_clone_caveat": (
                 "This clone is shallow; only 2 commits touching the cited "
                 "witness are in the fetched window and both carry 0.2653. An "
