@@ -7,9 +7,17 @@ import QOU.Interactions.GramMatrixH3Symbolic
 /-!
 # QOU.Interactions.GramQuotientDetD
 
-**The convention-D successor to `gramMatrix_det_ne_zero`: the form induced by the
-canonical H_3(q) Gram on the quotient `H_3(q)/rad` is NONDEGENERATE — and
-indefinite — for every real `q`.**
+**The convention-D successor to `gramMatrix_det_ne_zero`: the canonical H_3(q)
+Gram (the bilinear pairing `tr_M(ab)`) has rank EXACTLY 5 — corank exactly 1,
+radical exactly `span(gramRadicalD q)` — for every real `q`, with an explicit,
+strictly negative quotient determinant.**
+
+Stated as "the induced form on `H_3(q)/rad` is nondegenerate" this would be a
+tautology — a form is always nondegenerate on the quotient by its own radical.
+The content is that the leading 5×5 minor is nonzero for **every** real `q`, so
+the rank never drops below 5 (the complex roots of the numerator are where it
+would); together with `gramMatrixD_det_eq_zero` that pins the radical to the
+single direction `gramRadicalD q` at every real `q`.
 
 ## The gap this closes
 
@@ -25,30 +33,35 @@ quotient by the radical.
 
 ## The statement
 
-Under D the radical is one-dimensional, spanned by the three-strand
-q-antisymmetriser `gramRadicalD q = (−q³, q², q², −q, −q, 1)`
+Under D the three-strand q-antisymmetriser
+`gramRadicalD q = (−q³, q², q², −q, −q, 1)` lies in the radical
 (`gramMatrixD_mulVec_radical`). Its **last** coordinate is `1`
 (`gramRadicalD_last`), nonzero for every `q` including `q = 0`, so the basis
-vectors `e_0, …, e_4` project to a basis of `H_3(q)/rad` and the induced form
-in that complement basis is the **leading 5×5 principal minor** of the Gram —
-`gramQuotientD q`, defined here as a `Matrix.submatrix` of `gramMatrixD q`
-along `Fin.castSucc` (never re-typed). Its determinant is
+vectors `e_0, …, e_4` project to a basis of the quotient by that direction, and
+the form in that complement basis is the **leading 5×5 principal minor** of the
+Gram — `gramQuotientD q`, defined here as a `Matrix.submatrix` of
+`gramMatrixD q` along `Fin.castSucc` (never re-typed). Its determinant is
 
   det( G_D | H_3/rad ) = −(q⁴+1)(q²−q+1)⁴(q²+q+1)⁴ / (q²+1)¹⁰
 
 (`gramQuotientD_det`). Every factor is real-rootless —
 `q⁴+1 > 0`, `q²−q+1 = (q−½)²+¾ > 0`, `q²+q+1 = (q+½)²+¾ > 0`, `(q²+1)¹⁰ > 0` —
 so the determinant is **strictly negative for every real `q`**
-(`gramQuotientD_det_neg`), hence **nonzero** (`gramQuotientD_det_ne_zero`):
-the quotient form is nondegenerate, with **no hypothesis on `q`** at all —
-strictly stronger than the `1 < u` the C theorem needs.
+(`gramQuotientD_det_neg`), hence **nonzero** (`gramQuotientD_det_ne_zero`),
+with **no hypothesis on `q`** at all. This is the same strength as the C
+theorem (`1 < u` there), stated about the quotient instead of the whole
+algebra: rank exactly 5, radical exactly `span(gramRadicalD q)`.
 
-The negative sign is not incidental: it means the nondegenerate quotient form
-is **indefinite**, consistent with the negative eigenvalue the D-frame spectrum
-carries at `q₀` (`gram-matrix-dual.witness.json`, and the docstring of
-`gramMatrixD_not_posDef`). **Any D-frame successor to the C-frame
-positive-definiteness reading must therefore say "nondegenerate", never
-"positive".**
+The negative sign is not incidental: the quotient of the **bilinear** pairing
+`tr_M(ab)` is **indefinite** (signature `(4,1)` at `q₀`), consistent with the
+negative eigenvalue the D-frame spectrum carries there
+(`gram-matrix-dual.witness.json`, and the docstring of `gramMatrixD_not_posDef`).
+**Any D-frame successor to the C-frame positive-definiteness reading of THIS
+pairing must therefore say "nondegenerate", never "positive".** That is a
+statement about the bilinear form only: the corpus's `*`-pairing `tr_M(ab*)`
+(`L₊ ↔ L₋` in one slot) has a **positive-definite** quotient under D
+(`QOU.QBeta.GramSignature`, post-retraction: C `(6,0,0)`, D `(5,0,1)`) — a
+different form on the same algebra, not a contradiction.
 
 ## What is basis-dependent and what is not
 
@@ -64,7 +77,8 @@ together with its basis.
 formula) expands the determinant; the entries are unfolded from `gramEntryD`
 by `simp` (every leading-block denominator divides `(q²+1)²`); `field_simp`
 clears the `(q²+1)`-powers against the polynomial right-hand side, and `ring`
-closes the degree-20 identity
+closes the degree-20 identity — within the default heartbeat budget (measured:
+the file compiles at `maxHeartbeats 200000`; no raise is needed) —
 
   (q²+1)¹⁰ · det = −q²⁰ − 4q¹⁸ − 11q¹⁶ − 20q¹⁴ − 29q¹² − 32q¹⁰ − 29q⁸ − 20q⁶
                    − 11q⁴ − 4q² − 1 = −(q⁴+1)(q⁴+q²+1)⁴ .
@@ -125,14 +139,13 @@ theorem gramQuotientD_isSymm (q : ℝ) : (gramQuotientD q).IsSymm :=
 /-- **THEOREM.** `G[0,0] = tr_M(1) = 1` survives on the quotient. -/
 theorem gramQuotientD_top_left (q : ℝ) : gramQuotientD q 0 0 = 1 := rfl
 
-set_option maxHeartbeats 4000000 in
 /-- **THEOREM (cleared form).** `(q²+1)¹⁰ · det(G_D | H_3/rad)` is the
     degree-20 polynomial `−(q⁴+1)(q²−q+1)⁴(q²+q+1)⁴`.
 
     The workhorse: `Matrix.det_fin_five` expands the determinant into its 120
     Leibniz terms, the entries are unfolded from `gramEntryD`, `field_simp`
     clears the `(q²+1)`-power denominators and `ring` closes the polynomial
-    identity. No hypothesis on `q`. -/
+    identity. No hypothesis on `q`; default heartbeat budget suffices. -/
 theorem gramQuotientD_det_mul_denom (q : ℝ) :
     (gramQuotientD q).det * (q ^ 2 + 1) ^ 10
       = -(q ^ 4 + 1) * (q ^ 2 - q + 1) ^ 4 * (q ^ 2 + q + 1) ^ 4 := by
@@ -177,9 +190,12 @@ theorem gramQuotientD_det_neg (q : ℝ) : (gramQuotientD q).det < 0 := by
     exact neg_neg_of_pos hnum
   exact div_neg_of_neg_of_pos hneg h4
 
-/-- **THEOREM.** The induced form on `H_3(q)/rad` is **nondegenerate for every
-    real `q`** — the statement that replaces `gramMatrix_det_ne_zero` in the
-    canonical frame. Basis-independent, unlike the value it is derived from. -/
+/-- **THEOREM.** The leading 5×5 minor of the canonical Gram is nonzero for
+    **every real `q`** — so `gramMatrixD q` has rank exactly 5 and its radical
+    is exactly the antisymmetriser direction, at every real `q`. This is the
+    statement that replaces `gramMatrix_det_ne_zero` in the canonical frame;
+    its nonvanishing is basis-independent, unlike the value it is derived
+    from. -/
 theorem gramQuotientD_det_ne_zero (q : ℝ) : (gramQuotientD q).det ≠ 0 :=
   (gramQuotientD_det_neg q).ne
 
