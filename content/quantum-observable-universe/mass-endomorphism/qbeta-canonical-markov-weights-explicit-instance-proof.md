@@ -18,9 +18,33 @@ This explicitly constructs an instance of `CanonicalMarkovWeightsH3`. It establi
 
 It does not establish:
 
-- That this instance is the canonical Wenzl–Markov weights. The canonical weights from $H_3(q)$ have a specific closed form derived from the Hecke algebra's Bratteli diagram and quantum dimensions. They are tied to the Markov property $\mathrm{tr}_M(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}(q)$. Identifying the canonical inhabitant remains open.
+- That this instance is the canonical Wenzl–Markov weights. The canonical weights from $H_3(q)$ have a specific closed form derived from the Hecke algebra's Bratteli diagram and quantum dimensions. They are tied to the Markov property $\mathrm{tr}_M(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}(q)$. ~~Identifying the canonical inhabitant remains open.~~ **CLOSED 2026-09-03** — see below.
 - A formula for $\Delta\mathrm{tr}_M^{\text{can}}(q)$ at this instance, though it is computable via `delta_tau_M_canonical_has_q2_minus_1_factor`.
 - Any bearing on the $c_k$ ladder closure.
+
+## The canonical inhabitant, identified
+
+**`QOU.BraidKnot.CanonicalMarkovWeightsH3.canonicalInstance`**, sorry-free, carries the production trace's own weights:
+
+$$
+  y_{(3)} = \frac{[4]_q}{[2]_q^{3}} = \frac{q^4+1}{(q^2+1)^2},
+  \qquad
+  y_{(2,1)} = \frac{1}{[2]_q^{2}} = \frac{q^2}{(q^2+1)^2},
+  \qquad
+  y_{(1^3)} = 0 .
+$$
+
+These are exactly the convention-D values this block already quotes below; what was missing was the Lean instance, not the mathematics.
+
+**Why they are the canonical ones, rather than merely another inhabitant.** Convention D is the $N=2$ member of the Ocneanu family $z_N = q^N/[N]_q$ — its framing ratio $a^2 = z/z_-$ is the *monomial* $q^4$, which collapses every Ocneanu numerator into quantum integers and turns the weight product into the hook-content formula $w_\lambda = \dim_q(V_\lambda^{\mathfrak{sl}_N})/[N]_q^{\,n}$ (see [`rem:markov-z-reconciliation`](markov-z-reconciliation.md)). So the three values are **derived from the trace, not chosen to satisfy the class axiom** — and the vanishing $y_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound**, since a partition with more than $N$ rows has a cell of content $-N$ whose numerator factor carries $[0]_q = 0$.
+
+**The normalisation is an identity, not a constraint that had to be arranged.** The class axiom $y_{(3)} + 2y_{(2,1)} + y_{(1^3)} = 1$ reduces to $(q^4+1) + 2q^2 = (q^2+1)^2$, which holds for every $q$ with no positivity hypothesis — equivalently $[4]_q = ([2]_q^2 - 2)[2]_q$, so $[4]_q/[2]_q^3 = 1 - 2/[2]_q^2$.
+
+**The pre-existing `explicitInstance` is untouched and was never wrong.** It satisfies the class axiom because $z + 2(\tfrac12 - z) + z = 1$ for *any* $z$ — which is precisely why it inhabits the class without being the production weights. It differs from the canonical set on all three blocks.
+
+⚠ **The new declaration is a `def`, not a second `instance`.** A second global instance would silently become the resolution default for any future bare `delta_tau_M_canonical q`, since later instances win. Every present use either takes the instance as a hypothesis binder or names `explicitInstance` with `@`, so nothing changes today — but promoting the canonical set to the default is a decision whose blast radius across the `[CanonicalMarkovWeightsH3]` consumers a per-file `lean`-direct check cannot verify, and it is left as an explicit follow-up.
+
+Measurement: [`canonical_markov_weights_h3_are_sl2_dimensions.py`](https://github.com/litlfred/qou/blob/main/computations/probes/canonical_markov_weights_h3_are_sl2_dimensions.py) (11/11).
 
 ## Numerical sanity check
 
