@@ -25,6 +25,12 @@ rather than moved, since the cache section needs it in place too.
 Also: `#print axioms` needs no olean. Append the lines to a COPY of the source
 and run `lean` on the copy — works on a restored tree with no traces.
 
+**But a copy in `/tmp` breaks elan:** `lean f.lean` there dies instantly with
+`no default toolchain configured` (exit 1, 0.01s) because elan resolves the
+toolchain from the nearest up-tree `lean-toolchain`, and `/tmp` has none. Fix:
+`export ELAN_TOOLCHAIN=leanprover/lean4:v4.24.0` (read the version from
+`$ROOT/lean-toolchain`). Verified 2026-09-03.
+
 ## STABLE — workspace shape
 
 - Single **root** Lake workspace: `/lakefile.toml`, `/lean-toolchain`.
@@ -282,6 +288,17 @@ Append one line per session: what you verified, by what method, and any
 entry above you confirmed or corrected. Keep this file under ~200 lines —
 prune the log, never the TRAPs.
 
+- 2026-09-03 (braid-twist-flip): verified two changed content-block `.lean`
+  files realizing trefoil monodromy S₃≅D₃, both lean-direct EXIT 0, no sorryAx,
+  no refs to removed `w4_fixed`/`twist_flip_pow_three`/`twist_flip_ne_id`/`Fin 4`.
+  File 2 (`lean/QOU/BraidTwistFlip.lean`, `α×α×α`, all `rfl`, imports
+  Mathlib.Tactic): all 6 decls "do not depend on any axioms". File 1
+  (`braids-and-knots/braid-twist-flip.lean`, `Fin 3`, imports `QOU.Basic`):
+  built QOU.Basic.olean lean-direct first (5s), then elaborated source against
+  it — 5 decls = std-3 `[propext, Classical.choice, Quot.sound]`, `rotation_ne_id`
+  (via `decide`) = `[propext, Quot.sound]`. Confirmed cold-cache TRAP (File 2 warm
+  run 1m45s wall / 11s user; first attempt timed out at 2m). New: ELAN_TOOLCHAIN
+  note above. Cache already restored (6990 mathlib oleans, RESTORED-NO-TRACES).
 - 2026-09-02 (qtr-kron-consolidation): verified edited
   `QOU/MassTheory/QuantumTraceTower.lean` — the only change vs main is a new
   `import QOU.MathlibExt.MarkovTraceMultiplicative` and `qtr_kron` rerouted to
