@@ -1,11 +1,11 @@
 ---
 # qou-edt7
 title: 'GAP: what replaces the multiplicative assembly W=1-PROD f — both corpus assemblies miss the 3-body sign, in OPPOSITE directions'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T19:59:57Z
+updated_at: 2026-09-03T08:30:20Z
 parent: qou-mhj9
 ---
 
@@ -916,3 +916,55 @@ jet-filtration SUM rather than its collapse".
 Until then the honest statement is: the magnitude is not derived, and with
 the present data it is not DECIDABLE either — any candidate that lands
 within 0.55% on one nucleus has at least seven rivals doing better.
+
+
+## 2026-09-03 — ANSWERED (structurally): `b₃ = 0` is the TRACE's doing, not the assembly's
+
+**The replacement is not another assembly.** Every ingredient was already on
+`main`; what was missing was the composition.
+
+`PairwiseCumulantVanishing` scopes itself honestly — its premises *"constrain `f`
+on **disjoint** clusters, and the observable that fails is a **connected**
+quantity"* — leaving open the hope that the **bound** atom's trace carries
+irreducible many-body content. It does not, because of **`qou-g8i1`** (completed):
+
+    tr(x·(σ_g + d·I)) = (z+d)·tr(x)   ⇒   tr_free/tr_atom = ∏_b 1/(z + d_b)
+
+on 16 nuclei numerically (A = 2..10, to `4.45e-31`) and 6 symbolically, with the
+recorded mechanism *"the Markov property applied at a **GAP**, not at the last
+strand"* — **interior** generators, so the **bound** atom word, not the disjoint
+sector M3 covers (`probe_inter_knot_decoupling.py` is the M3 case).
+
+    bond rule → trace ratio = ∏_bonds μ_b        [bound atom, interior gaps]
+  + f multiplicative→additive                    [§10a Cauchy]
+  ⇒ binding is a bond functional
+  ⇒ b₃ = b₄ = 0 identically                      [PairwiseCumulantVanishing]
+  vs AME b₃ = +1.426222 MeV.
+
+**So the replacement must BREAK THE BOND RULE** — a trace that is not Markov, or
+an object that is not a trace of the atom word. Not a different `f` (`f` does not
+appear in the conclusion), and **not a different edge set** (measured: chain,
+all-pairs and star all give `b₃ = 0`).
+
+**Two things this makes cheaper.** §10a's uniqueness step (continuous Cauchy
+solutions are `c·log`), which `binding_functional_extensivity_probe.py` records
+as *classical and NOT in Lean*, is **irrelevant** rather than merely
+unformalised — the conclusion holds for a discontinuous `f` too (measured). And
+the hypothesis is carried as `SatisfiesBondRule`, a named hypothesis, not an
+axiom: what is proved is the **implication**.
+
+**Scope (b)** on bindings `f ∘ (bond-rule trace of the atom word)`, invariant
+named: the bond rule makes the cluster trace a product over **pairs**, so the
+connected part above order two has nothing to be built from. **(a)** on
+everything else — non-trace carriers are untouched, and if the bond rule fails at
+some `A` the exclusion lapses there.
+
+**Artifacts.** `QOU/Mass/MarkovBondRuleForcesPairwise.lean` — 4 theorems,
+`lean`-direct exit 0, sorry-free, `#print axioms` gives **`[propext]` alone**.
+`computations/probes/markov_bond_rule_forces_pairwise_probe.py` — 5/5, exact
+`Fraction` for the cumulants, mpmath 50 dps for the logs, zero float64,
+P30-stamped.
+
+**Credit where it is due:** the two halves are `qou-g8i1`'s and
+`PairwiseCumulantVanishing`'s. This tranche is the join and the identification of
+the invariant, not a new exclusion.
