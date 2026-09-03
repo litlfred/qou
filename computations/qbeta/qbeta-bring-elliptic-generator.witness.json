@@ -79,14 +79,14 @@
     "provenance_caveat": "the library copy is OCR of a scanned page and is garbled in places. Only the legible and independently checkable parts are used: the curve equation, its j (re-derived), and the (5tau,...,tau) diagonalisation. The paper's own tau_0 is pinned by TWO j-values, the second illegible in this scan, so tau_0 is NOT reconstructed -- only the SL(2,Z) representative with j = -25/2.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted; E is not adopted; no convention adjudicated."
   },
-  "gitCommit": "7c1b082f03acf98b9288c52f9aa138b7b660fb79",
+  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
   "durationMs": 0,
   "scriptFile": "qbeta_bring_elliptic_generator_probe.py",
-  "scriptHash": "05e1cefe5f08",
-  "scriptCommitSha": "unknown",
-  "commitSha": "7c1b082f03acf98b9288c52f9aa138b7b660fb79",
-  "computedAt": "2026-08-31T20:10:08.964777+00:00",
+  "scriptHash": "f9e2d01e55bc",
+  "scriptCommitSha": "dfefda8e3fcaf8760b621f5078ec9a5f297dc5d1",
+  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "computedAt": "2026-09-03T05:10:51.440021+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808"
 }
