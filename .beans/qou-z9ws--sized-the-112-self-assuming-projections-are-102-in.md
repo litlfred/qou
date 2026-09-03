@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-08-31T12:15:10Z
+updated_at: 2026-09-03T04:43:22Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -341,3 +341,35 @@ it in the docstring. (2) `7e9230d39a9` converted 82 decls across 69 files
 theorem->def; I inferred that hid one from the detector and MEASURED IT FALSE
 -- the audit flags it as a def, and it is absent from the ledger because it is
 exempt. The 82 stands; the inference did not.
+
+
+## 2026-09-03 — bucket C, first four repairs (PR #6422)
+
+Four projections repaired to §1a **disposition 3** (name over parameters),
+never to a `sorry`: in each the claim is **refutable at free data**, now proved
+in-file, so a later `sorry` fails against a standing counterexample.
+Library triage 19 → **14 DEFECT** / 2 ACCESSOR / 10 unresolved.
+
+- `knot_operator_selection`, `skein_mass_from_linking` — module docstring
+  **asserted the repair** ("does not carry … as a projected field", "ends in
+  `sorry`") over code that did neither. In the skein file the *class*
+  docstring recorded the field honestly while the module docstring above it
+  did not. Mechanism: the rename `claim_skein_mass_from_linking →
+  mass_identity` defeats `detectSelfAssuming`'s `CONCLUSION_FIELD` gate.
+- `six_term_mass_formula_complete` — the case where naming recovers
+  **nothing**: with six opaque terms the claim is the definition of an
+  additive split. Both facts proved (`sixTermSplit_sum`,
+  `not_sixTermSplit_of_independent`).
+- `nucleon_ordering_factorization` — `b67ee924e84` reverted the 2026-08-08
+  fix. **14 of its 15 files still project a field it added** (method: field
+  in the commit's `+` lines, `:= …field` in the file now). Already analysed
+  under `qou-lo1t`; what is new is that they are still in that state.
+  **No reliable count of false `sorry` docstrings** — whole-file match says
+  8 but cannot separate a live claim from a historical note; my
+  docstring-scoped refinement is broken (3 projections vs 14). Upper bound.
+
+**Tooling (`qou-pwut` neighbour, not it):** `qa-agent-entry.ts` hashed only a
+sibling `.lean`, so on **180 blocks** whose Lean is at the Lake path the
+`lean`/`lean_statement` keys were omitted and an agent verdict could never go
+fresh. Now delegates to `resolveCanonicalLean` + the sweep's own lexer (749/750
+agreement with committed hashes). Verified fresh on the six-term block.
