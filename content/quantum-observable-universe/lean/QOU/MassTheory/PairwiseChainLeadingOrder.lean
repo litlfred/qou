@@ -21,7 +21,16 @@ corrected observable `Δtr − c₀(A)` is `ℏ_q^1`, and its leading coefficien
     T    163/64    ³He  85/32     ⁴He  259/128
 
 Those are measurements, and they enter here as definitions. What this file
-proves is what follows from them: the **leading-order pairwise-vs-exact ratio is
+proves is what follows from them:
+
+> **Superseded as measurements (2026-09-03, bean `qou-pdg9`).** The six values
+> are now *derived* — exact by series arithmetic and by the permutation count
+> `c₁ = 2^{−n} Σ_ℓ w_ℓ 2^{c(σ^{(ℓ)})}` (free − atom), with closed form
+> `(21Z + 16N)(2^{−A−1} − 2^{−2A}) − 4(I_pp − I_nn)2^{−2A}` — in
+> `QOU.MassTheory.LeadingOrderTraceCoefficient` (`c1_defs_eq_closed`,
+> `c1_from_letters`), conditional on Schur–Weyl exactly as `c₀` is. The
+> definitions below are kept so that nothing downstream moves; they are no
+> longer the primary source of the numbers. the **leading-order pairwise-vs-exact ratio is
 an exact rational**, so the chain's error at leading order is not a residual to
 be estimated but a number to be written down.
 
