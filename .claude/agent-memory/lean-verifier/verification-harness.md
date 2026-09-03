@@ -314,3 +314,43 @@ import `QOU/Archimedean/BorromeanVolumeCatalan` (source 2026-08-30, olean
 2026-07-02) — one commit touched it in the window, and `git diff` showed **zero**
 changes to any `vol_B3` / `catalan_G` line, so those greens stand. Measure the
 specific declarations; do not assume either way.
+
+---
+
+## 12. A QOU-only `LEAN_PATH` mis-reports cross-package siblings as broken
+
+Measured 2026-09-03, sweeping all 908 content-block sibling `.lean` files.
+
+The standard env script builds `LEAN_PATH` from the **QOU** package plus the
+root `.lake/packages/*`. That is right for a QOU library file and **wrong for
+a content-block sibling**, because a sibling may import another paper's
+library. `content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean`
+opens with `import UGB.…`, and the two environments disagree on the *same file
+at the same commit*:
+
+    QOU-only LEAN_PATH  ->  error: unknown module prefix 'UGB'
+    all three packages  ->  exit 0, zero errors
+
+**2 of 14 failures in the first 317 files were this.** Its shape is
+indistinguishable from a real defect — a first-line error naming a module —
+so it inflates any "broken siblings" count unless you triage before quoting.
+Same family as §6(a): check whether the harness could have produced the error
+before calling the code broken.
+
+Fix — include every paper package:
+
+```bash
+for pkg in quantum-observable-universe unital-groebner-bases fred2005-formal-groups; do
+  d="$R/content/$pkg/lean/.lake/build/lib/lean"
+  [ -d "$d" ] && LP="${LP:+$LP:}$d"
+done
+```
+
+The other packages are small (UGB 21 oleans, Fred2005 2), so this costs
+nothing and removes a whole false-positive class.
+
+**And the siblings are unchecked by anything else.** They live outside the
+Lake globs (`globs = ["QOU", "QOU.+"]`, `srcDir = "."` = the `lean/` dir), so
+`lake build QOU` never sees them; CI is `workflow_dispatch`-only. A sibling
+can be broken for months with nothing reporting it — `n-v-bring-action.lean`
+was (8 parse errors, `Σ` used as a binder name, which is `Sigma` notation).
