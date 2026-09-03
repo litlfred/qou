@@ -1,0 +1,115 @@
+# Covariance-kernel epic (`qou-x631`) — M₁>0 `qou-k5r5`: the pointwise route's "~17× short" is overstated — a unit error of mine
+
+**Date:** 2026-09-03 · **Branch:** `claude/m1-k5r5-rigorous-C-2026-09-03` · **PR:** #6528 ·
+**Tier:** correction of merged content (PR #6438), verdict unchanged · **Epic:** `qou-x631`; gap `qou-k5r5`.
+
+## What survives, stated first
+
+PR #6438's **structural negative stands and is untouched.** A *pointwise* uniform Bessel remainder
+`|J − S| ≤ ε` cannot pin the variance constant, because
+
+> `U/V = Σw|S| / (½Σw S²)` **grows without bound in θ** — measured 42.8, 45.7, 53.9, 70.7, 91.9 at
+> `θ = 64, 78, 128, 256, 512`.
+
+`S(k) ~ sin(πρk)/(πk)` decays like `1/k` while `S²` decays like `1/k²`, so `U` carries roughly an
+extra power of the band width. No pointwise bound, **however sharp its constant**, controls `V_A`
+uniformly in `θ`. The oscillatory cancellation (summation by parts / stationary phase) is
+**essential, not a refinement**, and that argument never used the arithmetic below.
+
+## The unit error
+
+#6438 closes with:
+
+> At θ = 78 the measured `U/V = 45.65` gives, for a pointwise remainder `ε = K·θ^{-1/2}`, a relative
+> error on `V_A` of about `K·5.17`. Keeping that below `m_∞ = 0.3002` forces **`K < 0.058`**, whereas
+> the leading Debye/Olver remainder coefficient is `O(1)`: the pointwise route misses the required
+> constant by **~17×**.
+
+The last step compares a **relative error on `V_A`** against `m_∞`, an **absolute margin**. Those are
+different objects and the conversion was dropped. The margin is
+`m = ρ_P − σ_D/σ_A` with `σ_D/σ_A = √(V_D/V_A)`, so a relative perturbation `δ_A` on `V_A` scales the
+ratio by `√(1−δ_A) ≈ 1 − δ_A/2` and therefore moves the **margin** by
+
+> `|Δm| = σ_ratio,∞ · δ_A / 2 = 0.679609581 · δ_A / 2 = 0.3398·δ_A` — **not** by `δ_A`.
+
+Admissible relative error on `V_A` is thus `m_∞ / 0.3398 = 0.8834`, not `0.3002`. **The merged
+threshold is 2.943× too strict.**
+
+## Recomputed ([`…_pointwise_shortfall_recomputed.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_pointwise_shortfall_recomputed.py), exit 0, 0.9 s, NO float64)
+
+The probe reuses #6438's own `U_and_V` by explicit file path, so the two are computing the same
+kernel sums.
+
+| θ | `U/V` | rel-err on `V_A` per `K` | `K_adm` (`V_A` alone) | `K_adm` (split with `V_D`) |
+|---|---|---|---|---|
+| 64 | 42.7462 | 5.34327 | 0.16533 | 0.082666 |
+| **78** | **45.5868** | **5.16169** | **0.17115** | **0.085574** |
+| 128 | 53.7259 | 4.74874 | 0.18603 | 0.093015 |
+| 256 | 70.4983 | 4.40614 | 0.20049 | 0.10025 |
+
+**The eps-multiplier reproduces #6438's 5.17 (measured 5.16169).** That agreement is the check that
+this locates the exact defect rather than recomputing a different quantity — the two probes agree on
+everything up to the threshold conversion, and diverge only there: `K_adm = 0.17115` against the
+merged `0.058`.
+
+Against a Debye/Olver leading coefficient of `O(1) ≈ 1`, the shortfall is **~5.8×** with `V_A`
+carrying the whole error budget, or **~11.7×** if `V_A` and `V_D` split it evenly — against the
+**~17×** on record.
+
+θ = 78 is the right place to evaluate this: it is the largest `n` the exact `Fraction` table reaches,
+so it is exactly where the asymptotic must take over from exhaustive verification.
+
+## Why the number matters even though the verdict doesn't move
+
+"17× short" reads as hopeless; "5.8× short" reads as a gap a sharp constant might close. The honest
+figure should not settle that question by accident. This does **not** revive the pointwise route —
+the structural negative is independent of any constant and stands — but it changes how much a
+sharper pointwise constant would be worth chasing if the cancellation argument stalls.
+
+## What this does NOT settle
+
+**`O(1)` for the Debye/Olver remainder coefficient is an order of magnitude, not a pinned constant**,
+anywhere in this corpus. Both the `~17×` and every figure here are of the form
+"`K_admissible` vs `O(1)`": `K_admissible` is measured, the ratio is not. Pinning that coefficient is
+separate work, and until it is pinned no shortfall factor in this arc — mine included — is better
+than an order of magnitude.
+
+## Blast radius — every site
+
+| site | status | disposition |
+|---|---|---|
+| [`…_pointwise_bound_insufficiency.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_pointwise_bound_insufficiency.py) docstring | merged #6438 | correction block inserted |
+| same, printed `RESULT` line | merged #6438 | **rewritten** — it printed `~17×` on every run |
+| [`…_deep_tail_rigorous_majorant.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_deep_tail_rigorous_majorant.py) printed note | merged #6438 | rewritten |
+| [`…-deep-tail-rigorous-need-lit-localised.md`](2026-09-03-covariance-kernel-M1-k5r5-deep-tail-rigorous-need-lit-localised.md) | merged #6438 | correction block appended |
+| [`…-p2-trace-split-refuted.md`](2026-09-03-covariance-kernel-M1-k5r5-p2-trace-split-refuted.md) route inventory | merged #6500 | corrected inline |
+| [`…-weight-bug-retraction-retracted.md`](2026-09-03-covariance-kernel-M1-k5r5-weight-bug-retraction-retracted.md) blast table | merged #6469 | struck + corrected |
+| beans `qou-k5r5`, `qou-tvok` | — | corrected by append |
+
+Probes are fixed **at the producer** because they print the claim on every run; audit docs are
+annotated rather than rewritten, per the convention that they are dated records of what was believed.
+
+## The second unit error in two days, and they are the same error
+
+This is the same failure mode as the `C ≤ 23.4` retraction earlier today (PR #6500): **a quantity
+measured for one object, compared against a threshold belonging to another, with the conversion
+between them dropped.** There, a `θ^{-1}` rate for `V_A`'s remainder was used as a premise about the
+margin `m(n)`. Here, a relative error on `V_A` was compared against an absolute margin. Both times the
+arithmetic *within* each object was correct, which is what let both survive review.
+
+Practical guard for this arc: `V_A`, `σ_A`, `σ_D/σ_A` and `m` are four different objects, and moving
+between them costs a factor — `δ(σ_A) = δ(V_A)/2`, and `Δm = σ_ratio·δ(σ_A/σ_D-ratio)`. Write the
+conversion down before comparing anything to `m_∞`.
+
+## Status of `qou-k5r5`
+
+Gap **OPEN**, unchanged in kind. The remaining step is a **rigorous** `C ≤ 2.6681` in
+`|m(n) − m_∞| ≤ C·n^{-1/2}` (against an empirical envelope of 0.0580 — 46× headroom, PR #6500), and
+it must come from the oscillatory cancellation rather than from any pointwise magnitude bound.
+
+## Cross-references
+
+- The corrected claim's origin: PR #6438 / [`…-deep-tail-rigorous-need-lit-localised.md`](2026-09-03-covariance-kernel-M1-k5r5-deep-tail-rigorous-need-lit-localised.md)
+- The sibling unit error: PR #6500 / [`…-margin-envelope-retraction.md`](2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md)
+- The requirement and the headroom: `…_constant_C_landscape.py`, `…_margin_envelope_exponent.py`
+- Epic `qou-x631`; gap `qou-k5r5`.
