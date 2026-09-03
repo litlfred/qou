@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-02T20:13:54Z
-updated_at: 2026-08-25T18:06:33Z
+updated_at: 2026-09-03T08:31:56Z
 parent: qou-20sx
 ---
 
@@ -63,3 +63,5 @@ qou-mesont3 reached this independently and recommended the same; that note
 never reached this bean or the SM cheat sheet. Re-verified at source here,
 not taken from that bean.
 Audit: docs/audits/2026-08-25-4c-no-third-flavour-grade-is-missing.md
+
+2026-09-03 (qou-bsu0): premise void per own body; superseded by qou-qneo (m_s/m_c per-term bean, gated on qou-qpj9). Closure left to the owner.

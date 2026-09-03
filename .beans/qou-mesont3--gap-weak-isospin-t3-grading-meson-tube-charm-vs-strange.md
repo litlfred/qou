@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T18:21:37Z
+updated_at: 2026-09-03T08:31:56Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -276,3 +276,5 @@ The practical consequence: a future attempt must **not** be framed as "find the
 missing invariant" (there is none missing) and must not be a search for a braid
 that lands on `m_D` (that is the per-state fit the J/ψ attack already recorded as
 worthless). It has to *derive* the content → braid map, then check once.
+
+2026-09-03 (qou-bsu0): own body recommends closing in favour of qou-qpj9. Closure left to the owner.
