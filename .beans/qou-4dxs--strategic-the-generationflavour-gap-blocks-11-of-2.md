@@ -5,9 +5,11 @@ status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-01T21:25:43Z
-updated_at: 2026-09-03T10:28:30Z
+updated_at: 2026-09-03T15:40:11Z
 ---
 
 2026-09-03 (qou-bsu0): strategic framing duplicated by qou-x4qm (three generations, roasted there); title text: "generation/flavour gap blocks 11 of 26; winding ladder n ∈ {3,5,7} = weak generation after GMN realignment". Scrap left to the owner.
 
 Scrapped 2026-09-03 on owner decision (session qou-ggdk): strategic framing duplicated by qou-x4qm (three generations, roasted there 2026-09-03); its title text is preserved in qou-x4qm's supersession note.
+
+Closed 2026-09-03 on owner authorisation (session qou-ggdk, PR #6519): duplicate of qou-x4qm (three generations, roasted there); title text preserved in that bean's 2026-09-03 note.

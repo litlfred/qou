@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-27T11:56:04Z
-updated_at: 2026-09-03T10:28:31Z
+updated_at: 2026-09-03T15:40:11Z
 ---
 
 Machine-checked 2026-08-27 (bean qou-0avp). Full analysis:
@@ -68,3 +68,5 @@ deliberately NOT done on the audit branch.
   smallest.
 
 Completed 2026-09-03 on owner decision (session qou-ggdk): addressed by the UnifiedKnotMass rewrite on claude/standard-model-terms-status-ftoejr (class unpinned, partition sum proved, electron-mass literal removed; audit 2026-09-03-sm-surface-lean-best-practices-sweep.md §3.6).
+
+Closed 2026-09-03 on owner authorisation (session qou-ggdk, PR #6519): addressed by the UnifiedKnotMass rewrite (knot-mass-formula-unified.lean, PR #6519).

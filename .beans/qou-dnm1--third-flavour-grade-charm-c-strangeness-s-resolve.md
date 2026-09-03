@@ -5,7 +5,7 @@ status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-02T20:13:54Z
-updated_at: 2026-09-03T10:28:29Z
+updated_at: 2026-09-03T15:40:10Z
 parent: qou-20sx
 ---
 
@@ -67,3 +67,5 @@ Audit: docs/audits/2026-08-25-4c-no-third-flavour-grade-is-missing.md
 2026-09-03 (qou-bsu0): premise void per own body; superseded by qou-qneo (m_s/m_c per-term bean, gated on qou-qpj9). Closure left to the owner.
 
 Scrapped 2026-09-03 on owner decision (session qou-ggdk): premise void — orderedContent_injective (by decide) shows no third flavour grade is missing; superseded by qou-qneo (m_s/m_c per-term bean, gated on qou-qpj9).
+
+Closed 2026-09-03 on owner authorisation (session qou-ggdk, PR #6519): premise void (orderedContent_injective); superseded by qou-qneo.
