@@ -1,10 +1,11 @@
 ---
 # qou-v0b3
 title: 'ROOT: y-lambda-wenzl-bridge-symbolic-witness.json is convention C and has no producer'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-10T15:25:53Z
-updated_at: 2026-08-10T15:25:53Z
+updated_at: 2026-09-03T14:57:31Z
 ---
 
 
@@ -90,3 +91,8 @@ this witness is the actual remaining work.
 has none), and a dependency-ordered harness run leaves zero structurally-C
 witnesses downstream. Hand-editing the symbolic file is not a close —
 `qou-eea0` hard constraint: nothing hand-edited.
+
+
+
+## RESOLVED 2026-09-03 (verified on main 440c6a164f)
+computations/y-lambda-wenzl-bridge-symbolic-witness.json now carries markov_convention: D, description 'y_lambda = [n-2k+1]_q/[2]_q^n on two-row partitions, exactly 0 on three-or-more rows', scriptFile computations/regenerate_y_lambda_symbolic_convention_d.py (exists), and grep -c 'sqrt(q)' = 0 — the ROOT above (symbolic, convention C, no producer) no longer describes the file. regenerate_y_lambda_mpfr.py line ~105 documents the fix: it takes numbers from y_lambda_wenzl_bridge_numeric (D) rather than sympify'ing the JSON. Lean side: the two-row root is proved (see qou-smtg close note). Closing; the detector-blindness lesson in the body stands as history.
