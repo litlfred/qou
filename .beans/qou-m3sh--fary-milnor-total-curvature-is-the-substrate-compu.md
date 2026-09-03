@@ -268,9 +268,14 @@ Reopened. Two items the closed summary had left implicit:
   200-bit H_6 bond constants to ALL 60 digits. Consequence: connected sum ⟹
   multiplicative trace ⟹ additive L, so the canonical closure carries NO
   many-body binding by theorem; the arc's cumulants (c₃<0, c₄<0, c₅>0, c₆)
-  belong to the all-pairs bond model, which is not a chain. The 62 % ⁴He is
-  short is absent from the canonical closure because a composite link has
-  nowhere to put it: a closure carrying many-body binding must be prime.
+  belong to the all-pairs bond model, which is not a chain. With α = 4.185981
+  MeV the chain gives ⁴He 8.6817 against B_AME 28.2957 — 31 %, so 69 % is
+  absent from the canonical closure because a composite link has nowhere to
+  put it: a closure carrying many-body binding must be prime. (A first draft
+  of this line said "62 %", which was neither a corpus figure nor the chain's;
+  corrected in the same commit as the §4 inversion.) The affine law also kills
+  the obvious repair: closing ⁴He with a common interface offset needs
+  d = −2.4281 h, and the algebra's letters only reach d/h ∈ [−1, 0].
   Lean `QOU.Mass.ChainTraceFactor` (sorry-free): affine law from the Wenzl
   weights; z − h = 1/(q(q²+1)); tr₂(σ)tr₂(σ⁻¹) = 1/[2]²; L_pp + L_nn =
   2 log(q + 1/q); positivity for q ≥ 1; −log ∏ = Σ −log. The H_{3A}

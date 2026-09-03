@@ -65,13 +65,36 @@ order-six datum) belong to the ALL-PAIRS bond model, whose band-routed bonds
 interleave generators across blocks and destroy the chain form. The canonical
 closure itself has none: its Markov trace is exactly a product, its `L` exactly
 a sum of pairwise interface terms, and by the same token so is every other
-multiplicative invariant of a connected sum. The `62 %` that `4He` is short is
-therefore not missing from the canonical closure by measurement — it is absent
-from it by theorem. Any closure that carries genuinely many-body binding must
-fail to be a connected sum: non-split, non-composite, with the kind of
-irreducibly multi-component linking the Borromean rings have and this chain
-does not. That is the precise form of "the missing binding is not in the bond
-graph", and it says which topology the search has to move to.
+multiplicative invariant of a connected sum. With `alpha = m_e/(q0(q0-1)) =
+4.185981 MeV` the chain gives `4He` `alpha (L_pp + L_pn + L_nn) = 8.6817 MeV`
+against `B_AME = 28.2957`, i.e. **31 %**; the missing **69 %** is therefore not
+absent from the canonical closure by measurement — it is absent by theorem.
+
+(A first draft of this paragraph said `62 %` short. That was wrong twice over:
+it was not a corpus figure, and it is not what the chain delivers. Chain
+fractions of `B_AME`, recomputed here: `2H` 1.274, `3H` 0.782, `3He` 0.633,
+`4He` 0.307, `6Li` 0.454 — the naive-additive ALL-PAIRS fractions, for
+contrast, are 1.274 / 1.116 / 1.000 / 0.607 / 1.345.)
+
+Any closure that carries genuinely many-body binding must fail to be a
+connected sum: non-split, non-composite, with the kind of irreducibly
+multi-component linking the Borromean rings have and this chain does not. That
+is the precise form of "the missing binding is not in the bond graph", and it
+says which topology the search has to move to (bean `qou-bygw`).
+
+AND IT RULES OUT THE OBVIOUS REPAIR, IN ONE LINE
+------------------------------------------------
+Because the interface law is affine, `mu(d) = z + d`, ANY proposed modification
+that acts as an interface offset — a different convention, a fractional twist
+insertion `q^{2c(lambda)/n}` — has bond constant `-log(z + d)` immediately, with
+no trace to run. Invert it on `4He`: closing the chain's gap with a common
+offset on all three interfaces needs `-log(z + d) = (B_AME/alpha)/3 = 2.253212`,
+i.e. `z + d = 0.105061`, i.e. `d = -0.507627 = -2.4281 h`. The algebra's letters
+supply `d in {0, -h/2, D_PN, -h}`, so `d/h in [-1, 0]`: the required offset is
+**2.43x more negative than the most negative letter that exists**, and the
+required factor `0.105` is a quarter of the smallest available one
+(`z - h = 0.403628`). No interface offset can close the gap — not a marginal
+miss, an out-of-range one. §4 computes this.
 
 WHAT IS NOT CLAIMED
 -------------------
@@ -228,6 +251,48 @@ def main() -> int:
             all_j &= same
             print(f"  {name:4s} {bname:8s}  V(W_A) == prod_i V(T(2,e_i)): {same}")
     check("Jones of the closure is the product of the torus-link Jones over the chain", all_j)
+
+    print("\n" + "=" * 72)
+    print("§4  WHAT THE CHAIN IS WORTH, AND WHY NO INTERFACE OFFSET CAN FIX IT")
+    print("=" * 72)
+    from codata_constants import M_E_MEV  # noqa: E402
+    from math import comb
+    alpha = mpfr(str(M_E_MEV)) / (E.Q * (E.Q - 1))
+    Lc = {"pp": -gmpy2.log(tr2([(1, E.ZERO, 0)], wp, wm, lp, lm)),
+          "nn": -gmpy2.log(tr2([(1, -E.H, 0)], wp, wm, lp, lm)),
+          "pn": -gmpy2.log(tr2([(1, E.D_PN, 0)], wp, wm, lp, lm))}
+    print(f"  alpha = m_e/(q0(q0-1)) = {float(alpha):.6f} MeV")
+    print(f"  L_pp + L_nn = {fmt(Lc['pp'] + Lc['nn'], 20)}   2 log(q + 1/q) = "
+          f"{fmt(2 * gmpy2.log(E.Q + 1 / E.Q), 20)}")
+    check("L_pp + L_nn = 2 log[2]_q — the pp and nn bond constants are not independent",
+          abs(Lc["pp"] + Lc["nn"] - 2 * gmpy2.log(E.Q + 1 / E.Q)) < mpfr(2) ** (-(E.BITS - 12)))
+    AME = {"2H": (1, 1, "2.22452"), "3H": (1, 2, "8.48182"), "3He": (2, 1, "7.71804"),
+           "4He": (2, 2, "28.2957"), "6Li": (3, 3, "31.9946")}
+    print(f"\n  {'iso':>5} {'B_chain':>9} {'B_allpairs':>11} {'B_AME':>9} {'chain/AME':>10} {'allpr/AME':>10}")
+    frac = {}
+    for name, (Z, N, B) in AME.items():
+        B = mpfr(B)
+        ch = alpha * ((Z - 1) * Lc["pp"] + Lc["pn"] + (N - 1) * Lc["nn"])
+        ap = alpha * (comb(Z, 2) * Lc["pp"] + Z * N * Lc["pn"] + comb(N, 2) * Lc["nn"])
+        frac[name] = ch / B
+        print(f"  {name:>5} {float(ch):9.4f} {float(ap):11.4f} {float(B):9.4f} "
+              f"{float(ch / B):10.4f} {float(ap / B):10.4f}")
+    check("the chain delivers 31 % of 4He's AME binding (so 69 % is missing by theorem)",
+          abs(frac["4He"] - mpfr("0.3068")) < mpfr("0.0005"))
+
+    B4, need = mpfr("28.2957"), mpfr("28.2957") / alpha
+    per = need / 3
+    d_req = gmpy2.exp(-per) - (wp * lp + wm * lm)
+    print(f"\n  Inversion on 4He: a COMMON interface offset closing the chain needs")
+    print(f"    -log(z + d) = (B_AME/alpha)/3 = {float(per):.6f}  =>  z + d = {float(gmpy2.exp(-per)):.6f}"
+          f"  =>  d = {float(d_req):.6f} = {float(d_req / E.H):.4f} h")
+    print(f"    the algebra's letters are d in {{0, -h/2, D_PN, -h}}, i.e. d/h in [-1, 0]:")
+    print(f"      most negative available factor  z - h = {float(wp * lp + wm * lm - E.H):.6f}")
+    print(f"      required factor                 z + d = {float(gmpy2.exp(-per)):.6f}"
+          f"   ({float((wp * lp + wm * lm - E.H) / gmpy2.exp(-per)):.2f}x larger)")
+    check("the offset that would close 4He is d = -2.43 h, OUTSIDE the algebra's range d/h in [-1, 0] "
+          "— no interface offset, fractional twist included, can close the gap",
+          d_req / E.H < mpfr("-2") and (wp * lp + wm * lm - E.H) > gmpy2.exp(-per))
 
     try:
         from witness_base import WitnessBuilder  # noqa: E402

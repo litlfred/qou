@@ -56,13 +56,24 @@ $\Rightarrow$ additive $L$. The canonical closure therefore carries **no
 many-body binding at all** -- not by measurement, by theorem. The many-body
 cumulants the binding arc found ($c_3 < 0$, $c_4 < 0$, $c_5 > 0$, the
 order-six datum) belong to the *all-pairs* bond model, whose band-routed
-bonds interleave generators across blocks and destroy the chain form. The
-$62\,\%$ that $^4$He is short is absent from the canonical closure because a
-connected sum has nothing to put there; any closure that carries genuinely
-many-body binding must fail to be composite -- non-split, prime, with the kind
-of irreducibly multi-component linking the Borromean rings have and this
-chain does not. That is the precise form of "the missing binding is not in the
-bond graph", and it says which topology the search has to move to.
+bonds interleave generators across blocks and destroy the chain form. With
+$\alpha = m_e/(q_0(q_0-1)) = 4.185981$ MeV the chain gives $^4$He
+$8.6817$ MeV against $B_{\mathrm{AME}} = 28.2957$, namely $31\,\%$; the missing
+$69\,\%$ is absent from the canonical closure because a connected sum has
+nothing to put there. Any closure that carries genuinely many-body binding
+must fail to be composite -- non-split, prime, with the kind of irreducibly
+multi-component linking the Borromean rings have and this chain does not. That
+is the precise form of "the missing binding is not in the bond graph", and it
+says which topology the search has to move to.
+
+The affine law also disposes of the obvious repair. Any modification acting as
+an interface offset -- a convention change, a fractional twist insertion
+$q^{2c(\lambda)/n}$ -- has bond constant $-\log(z+d)$ with no trace to run, so
+invert it: closing $^4$He on the chain with a common offset needs
+$-\log(z+d) = 2.253212$, i.e. $d = -0.507627 = -2.4281\,h$. The algebra's
+letters supply $d \in \{0, -h/2, d_{pn}, -h\}$, so $d/h \in [-1, 0]$: the
+required offset is $2.43\times$ more negative than the most negative letter
+that exists. No interface offset can close the gap.
 
 ## What is formalised, what is checked, what is cited
 

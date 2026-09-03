@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T19:51:32.906135+00:00",
-  "commitSha": "bef5ce7710184f8f149b037c84c7dab1a3529df5",
+  "computedAt": "2026-09-03T20:30:28.103584+00:00",
+  "commitSha": "0d09be48c6c2168cc83709dc8dca7fb807031e88",
   "assertions": [
     {
       "name": "two-strand trace of a single sigma is the Markov z = q^3/(q^2+1)",
@@ -27,14 +27,32 @@
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "L_pp + L_nn = 2 log[2]_q — the pp and nn bond constants are not independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the chain delivers 31 % of 4He's AME binding (so 69 % is missing by theorem)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the offset that would close 4He is d = -2.43 h, OUTSIDE the algebra's range d/h in [-1, 0] — no interface offset, fractional twist included, can close the gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 156,
+  "durationMs": 10,
   "computation": "the_canonical_mass_trace_factorises_over_the_chain_probe",
   "scriptFile": "the_canonical_mass_trace_factorises_over_the_chain_probe.py",
-  "scriptHash": "24de60fd7759",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e479df58ecc8",
+  "scriptCommitSha": "43b91ec0051e48ba7a9bf0f7b4305a34cb328382",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
