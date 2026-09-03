@@ -176,6 +176,19 @@ def main():
     )
 
     out = {
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin. q0 enters through "
+            "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+            "anchor (1.1099785827513808075...) because this stem is not "
+            "listed under ideal_muon; proton is the standing default for "
+            "compute per the 2026-08-07 owner directive. The stem IS "
+            "declared physical_proton in "
+            "computations/q0_anchor_manifest.json, and that declaration "
+            "cannot stamp this witness: the manifest is read inside "
+            "WitnessBuilder.build(), and this producer hand-rolls its "
+            "witness and never enters build(). Hence the declaration "
+            "here, which is the only route that reaches the file."),
         "computation": "milnor-recursion-capcup-weight",
         "scriptFile": "milnor_recursion_capcup_weight_probe.py",
         "engine": "python-sympy-exact",

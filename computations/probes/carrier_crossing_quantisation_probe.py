@@ -225,6 +225,15 @@ def main():
           "Borromean c3 = 6 is the degenerate locus")
 
     witness = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The crossing counts are integer braid data and "
+            "the quantisation test is on their ratios; the trace is never "
+            "evaluated at the substrate modulus. Established by import-cone "
+            "trace (cone=1, no q0 import) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no q0 "
+            "field."),
         "computation": "carrier-crossing-quantisation",
         "scriptFile": "probes/carrier_crossing_quantisation_probe.py",
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
