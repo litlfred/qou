@@ -5,6 +5,8 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
+updated_at: 2026-09-03T08:59:54Z
+
 updated_at: 2026-09-03T08:28:10Z
 
 updated_at: 2026-09-03T04:27:36Z
@@ -1937,6 +1939,136 @@ exactly as much as an "open" declaration does.**
 **measured** channel values — ch3/ch4/ch5 within 0.032 of `−1` because they are
 one identity, ch1 at 0.3995 because it is not bond-additive. That reframes my own
 capstone and is not in `qou-edt7`.
+
+CEILING: the corrected binding path reaches A=4 in this container, not A=6.
+
+TWO ROUTES TO SETTLE IT, neither attempted:
+  1. A=6 on a machine that holds the process. Nothing about the computation is
+     known to be wrong; it is scheduling.
+  2. A=4 and A=6 both at reduced k_exact -- not comparable to the k=11 points,
+     but comparable to EACH OTHER, so E(6)/E(4) discriminates cheaply. A
+     different measurement needing its own gate.
+
+## 2026-09-03 — RETRACTION of the `E ≈ 5.4 × C(A,2)` target above, and what replaced it
+
+**The target in the previous entry is WITHDRAWN. Do not carry it forward.** It
+is mostly an artefact of the arithmetic, not a finding about the framework.
+
+The mechanism: `E := AME − B_pred`, and the entry immediately above establishes
+that `B_pred ≈ −7.3 MeV` is **near-constant** across nuclei. So
+`E ≈ AME + 7.3`, and `E/C(A,2) ≈ (AME + 7.3)/C(A,2)` — a statement about
+**AME2020 plus an offset**, with almost no framework content in it. Measured:
+
+    nucleus   A    AME     E/C(A,2)   (AME+7.3)/C(A,2)
+    ²H        2    2.225     9.496          9.525
+    ³H        3    8.482     5.408          5.261
+    ³He       3    7.718     5.058          5.006
+    ⁴He       4   28.296     5.854          5.933
+
+The last two columns agree to **~1 %**. And `AME/C(A,2)` is not constant — it
+is 2.225, 2.827, **4.716**, 2.133, 1.869, 1.396 for ²H/³H/⁴He/⁶Li/⁷Li/¹²C: it
+**peaks at ⁴He and falls steeply**. The near-constancy was a three-point
+coincidence in the region where the AME curve happens to turn over; ⁶Li breaks
+it on AME grounds alone (≈2.62 with the offset), before the framework is
+consulted.
+
+The `E/C(A,2)` figure therefore does **not** bear on the pairwise-cap tension
+flagged in the previous entry — that tension is withdrawn along with the
+figure, not resolved.
+
+### What the retraction bought: a better experiment
+
+The informative measurement is **`B_pred` itself as a function of `A`**, with
+no experimental normalisation anywhere in it — so nothing about AME can
+contaminate it. Run as a **paired** comparison of ⁴He and ⁶Li at *matched*
+truncation `k_exact`, which also sidesteps the A=6 wall (three full
+`binding_energy` attempts at ⁶Li were killed at ~900 s / 326 s / 124 s):
+
+    k_exact   ⁴He (A=4)      ⁶Li (A=6)      ratio li6/he4
+      5      -0.375110164   -0.539212954       1.4375
+      6      -0.838749076   -0.992757495       1.1836
+      7      -1.515118319   -1.414063111       0.9333
+      8      -2.153722974   -2.183158129       1.0137
+      9      -3.711581534   -3.404340982       0.9172
+     10      -5.669659692   -5.467686217       0.9644
+
+`A` grows 1.5×; `C(A,2)` grows 2.5×; the accumulator ratio sits in
+**0.917 … 1.014 for k ≥ 7** (mean 0.957). **The flatness extends to A = 6** —
+`B_pred` carries essentially no `A`-dependence over a range where binding grows
+by 3.5×. That is the finding the withdrawn target was obscuring, and it is the
+direct measurement this bean's missing extensive term needs.
+
+Scope: this is a scope-(a) statement about the current `unified_iterative_correction`
+path at truncations k = 5…10 — not a structural exclusion of any ingredient.
+Audit: `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`; PR #6427.
+
+
+### k = 11 (production truncation) — both legs, added 2026-09-03
+
+The ladder above was extended to the production truncation. Both legs completed:
+
+    he4   A=4  k=11   uic = -8.201558468      1104 s
+    li6   A=6  k=11   uic = -7.794544740      1269 s
+                            ratio li6/he4 = 0.9504
+
+So the k >= 7 ratios are 0.933, 1.014, 0.917, 0.964, **0.950** — mean **0.956**,
+spread ±5 %, no trend in k, while `A` grows 1.5x and `C(A,2)` grows 2.5x.
+**k = 11 was the one rung that is not a reduced-cost proxy, and it behaves like
+the rest.** The flatness is not a truncation artefact.
+
+(The 6Li leg took two attempts: the first died to a worker-process restart at
+~1919 s, an environment event, NOT the A=6 compute ceiling the three earlier
+full-`binding_energy` kills established. The driver is resumable, so only that
+one cell was recomputed.)
+
+**A separate defect surfaced by the same run, worth its own attention:** 4He's
+|uic| runs 1.52 -> 2.15 -> 3.71 -> 5.67 -> 8.20 across k = 7..11 with the
+increments still GROWING (0.64, 1.56, 1.96, 2.53). **The accumulator is not
+converged at the production truncation.** The absolute B_pred values in the
+four-nucleus table are therefore truncation-limited; the matched-k ratio is not,
+which is why the flatness claim rests on the ratio and not on the values.
+
+
+### LOCALISED 2026-09-03 — the A-dependence dies in the y_λ-weighted SUM
+
+`computations/probes/where_the_a_dependence_is_lost_probe.py`, 6/6. Three layers
+instrumented separately.
+
+**L1 chain — A-dependence is fed in, correctly.** `_step_chain_generic` appends
+one inter-nucleon crossing per previous nucleon: he4 50 crossings / 6 inter,
+li6 81 / 15 — exactly `C(4,2)` and `C(6,2)`. The coordination count IS present
+in the input.
+
+**L2 per-partition trace — it SURVIVES.** Same partition, both nuclei, final
+`ln|tr|` at 50 dps: partition (3,1) gives -1.29903 vs +0.09426 (differ in SIGN);
+(5,1) gives +0.58294 vs +0.13563.
+
+**L3 the weighted sum — it is GONE, and Pass 2's gate is NOT the cause.** The
+natural hypothesis (the complementary-slackness gate selects a
+nucleus-independent subset) is refuted:
+
+    k   he4 raw     li6 raw     RAW ratio   he4 gated   li6 gated  GATED   tight
+    5   -0.736660   -0.923253     1.2533    -0.375110   -0.539213  1.4375  5->10
+    7   -2.471104   -2.855260     1.1555    -1.515118   -1.414063  0.9333 18->22
+    9   -6.691821   -7.266773     1.0859    -3.711582   -3.404341  0.9172 42->48
+
+The RAW pre-gate sum is ALREADY flat, and gets flatter with k (1.253 -> 1.156 ->
+1.086) while C(A,2) grows 2.5x. The gate is A-aware (tight 5->10, 18->22,
+42->48) and roughly neutral on the ratio.
+
+**So the cancellation is in the y_λ-weighted telescoped sum over partitions** —
+downstream of the trace, upstream of Pass 2. A fix has to look there; the chain
+builder, the `g % n_gens` generator wrapping, and the gate are all exonerated.
+
+Scope-(a): localises the symptom at k = 5,7,9 in this one path. Does NOT
+identify the cancellation mechanism and excludes no ingredient.
+
+**Relation to the sibling sign work above (`manybody_sign_by_bond_topology_probe`):
+complementary, not conflicting.** That probe builds its object from
+`atom_canonical_crossings` bond topology; this path builds chains from
+`_step_chain_generic`. Different constructions, checked — no shared call. Their
+object IS A-dependent (positive A=3, negative A=4); this one is not. Do not read
+either as confirming the other.
 
 Corrections pushed: retraction banners on `UrsellChainMismatch.lean` and the
 probe, witness description/caveats rewritten to lead with the priority note, and

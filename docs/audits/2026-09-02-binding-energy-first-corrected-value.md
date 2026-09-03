@@ -639,11 +639,68 @@ values in the four-nucleus table above are truncation-limited, though the
 *ratio* is stable across k precisely because both legs are cut at the same
 order.
 
+## LOCALISED — the A-dependence dies in the sum, not the trace and not the gate
+
+`computations/probes/where_the_a_dependence_is_lost_probe.py`, 6/6. The quantity
+passes through three layers; each was instrumented separately.
+
+**Layer 1 — the braid chain. The A-dependence is fed in, correctly.**
+`_step_chain_generic` appends one inter-nucleon crossing per previous nucleon:
+
+    nucleus  A  n_gens  steps  crossings  distinct g  inter-nucleon
+    he4      4     3      4        50          3            6
+    li6      6     3      6        81          3           15
+
+`inter` is exactly `C(4,2) = 6` and `C(6,2) = 15` — **the pairwise coordination
+count is present in the input.** The generator index is `g % n_gens`, so the
+extra crossings wrap onto the same generators, which looks like a candidate
+mechanism for the flatness. Layer 2 shows it is not the one.
+
+**Layer 2 — the per-partition trace. The A-dependence survives.** Same
+partition, both nuclei, final `ln|tr|` from the Rust kernel at 50 dps:
+
+    partition (3,1)   he4  -1.29903312921154638     li6  +0.0942572825986714428
+    partition (5,1)   he4  +0.582942120394291209    li6  +0.135627791973087475
+
+At (3,1) the two differ **in sign**. This is not a residue of A-dependence, it is
+a large one.
+
+**Layer 3 — the weighted sum. The A-dependence is gone, and Pass 2 is not the
+cause.** The natural hypothesis was that Pass 2's complementary-slackness gate
+introduces the flatness by selecting a nucleus-independent subset. It does not:
+
+    k   he4 raw      li6 raw      RAW ratio   he4 gated    li6 gated   GATED   tight
+    5   -0.736660    -0.923253      1.2533    -0.375110    -0.539213  1.4375   5->10
+    7   -2.471104    -2.855260      1.1555    -1.515118    -1.414063  0.9333  18->22
+    9   -6.691821    -7.266773      1.0859    -3.711582    -3.404341  0.9172  42->48
+
+**The raw, pre-gate sum is already flat** — and getting *flatter* with `k`
+(1.253 → 1.156 → 1.086) while `C(A,2)` grows 2.5×. The gate is A-aware (its tight
+count grows 5→10, 18→22, 42→48) and roughly neutral on the ratio.
+
+**So the cancellation happens in the `y_λ`-weighted telescoped sum over
+partitions** — downstream of the trace, upstream of Pass 2. That is where a fix
+has to look; the chain builder and the gate are both exonerated, and the
+`g % n_gens` wrapping is exonerated with them.
+
+Scope-(a): this localises the symptom in this one path at k = 5, 7, 9. It does
+not identify the cancellation mechanism, and excludes no ingredient from a
+corrected closure.
+
+**Precision, checked rather than assumed.** `raw_total_MeV` and
+`gated_total_MeV` are `mpmath.mpf` *containers* carrying only ~17 significant
+digits — `repr` at `mp.dps = 50` gives `mpf('-0.73665972744972374')`. The
+narrowing is the pre-existing `math.log` in the step loop, **not**
+`cumul_total = 0.0` (which promotes on first addition). The mpf type makes that
+invisible to a type check, so it was measured. The ratios are good to ~1e-15,
+fifteen orders below the effects reported, so nothing here rests on the narrowed
+arithmetic — but these values are not 50-dps and should not be quoted as such.
+
 ## Still open
 
-- **Why the accumulator is nucleus-independent** remains unmeasured. This
-  localises the symptom to A = 6 at the production truncation; it does not
-  identify where the A-dependence is lost.
+- **The cancellation mechanism.** *Where* the A-dependence is lost is now
+  measured (the `y_λ`-weighted partition sum, above); *why* the weighted sum
+  cancels it is not.
 - **The accumulator is not converged in `k`** (see the k = 11 section). The
   absolute `B_pred` values are truncation-limited; only the matched-`k` ratio is
   trustworthy as stated.
