@@ -38,14 +38,17 @@ import mpmath as mp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
-from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 CODATA = mp.mpf("137.035999084")
 SIGMA_PPB = mp.mpf("0.15")
-Q_PROTON = "1.109978582751380808"
-Q_MUON = "1.1099785955573347198997632204832250266562084087802"
+# Both pins read BY NAME (bean qou-4bef, 2026-09-03); the muon literal this carried was the
+# pin RETIRED 2026-08-22/28.
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_MUON = q_muon_at(50)
 G = 4
 B1 = 2 * G                     # dim H^1 = 8
 AREA = 4 * mp.pi * (G - 1)     # 12 pi
@@ -78,7 +81,7 @@ def ladder_inv_alpha(q, mu, n_loops=2):
 
 
 def ppb(v):
-    return float((v - CODATA) / CODATA * 1e9)
+    return (v - CODATA) / CODATA * mp.mpf(10) ** 9   # mpf, never float64
 
 
 def main() -> int:
@@ -109,17 +112,17 @@ def main() -> int:
         results[label] = row
         p1 = row["proton"]["1loop_ppb"]; p2 = row["proton"]["2loop_ppb"]
         print(f"  {label}")
-        print(f"      proton: 1-loop {p1:+8.3f} ppb ({abs(p1)/float(SIGMA_PPB):5.1f}s)   "
-              f"2-loop {p2:+8.3f} ppb ({abs(p2)/float(SIGMA_PPB):5.1f}s)")
+        print(f"      proton: 1-loop {mp.nstr(p1, 5)} ppb ({mp.nstr(abs(p1)/SIGMA_PPB, 4)}s)   "
+              f"2-loop {mp.nstr(p2, 5)} ppb ({mp.nstr(abs(p2)/SIGMA_PPB, 4)}s)")
         m2 = row["muon"]["2loop_ppb"]
-        print(f"      muon:   2-loop {m2:+8.3f} ppb\n")
+        print(f"      muon:   2-loop {mp.nstr(m2, 5)} ppb\n")
 
     # verdict
     muA = results["mu_A = 1/(pi*b1) = 1/(8pi)  [phase-4, UNDERIVED]"]["proton"]["2loop_ppb"]
     muB = results["mu_B = 1/Area    = 1/(12pi) [PROVED heat-kernel per-mode]"]["proton"]["2loop_ppb"]
     print("[verdict]")
-    print(f"  The theta-graph 1.3s hit uses mu_A (1/8pi) -> {muA:+.3f} ppb.")
-    print(f"  The PROVED measure mu_B (1/Area=1/12pi)     -> {muB:+.3f} ppb.")
+    print(f"  The theta-graph 1.3s hit uses mu_A (1/8pi) -> {mp.nstr(muA, 5)} ppb.")
+    print(f"  The PROVED measure mu_B (1/Area=1/12pi)     -> {mp.nstr(muB, 5)} ppb.")
     print(f"  => the 1.3s hit is NOT robust to the measure principle actually proved;")
     print(f"     it is contingent on the UNDERIVED 1/(pi b1) identification. Closing")
     print(f"     alpha_EM to <=sigma_a REQUIRES deriving the per-loop measure (1/8pi),")
@@ -144,7 +147,7 @@ def main() -> int:
     wb.add_data("bring_data", {"g": G, "b1": B1, "Area_over_pi": "12",
                                "zero_mode": mp.nstr(B1 / AREA, 15)})
     wb.add_data("measures", {k: mp.nstr(v, 15) for k, v in measures.items()})
-    wb.add_data("ladder_residuals_ppb", results)
+    wb.add_data("ladder_residuals_ppb", {k: {a: {kk: fmt(vv, 20) for kk, vv in r.items()} for a, r in row.items()} for k, row in results.items()})
     wb.add_data("verdict", {
         "proved_per_mode_measure": "1/Area = 1/(12pi)",
         "self_energy_claimed_measure": "1/(pi b1) = 1/(8pi)",
@@ -152,14 +155,17 @@ def main() -> int:
         "theta_hit_robust_to_proved_measure": False,
         "consequence": "closing alpha_EM requires DERIVING 1/(8pi); zero-mode heat-kernel does not supply it"})
     wb.add_assertion("measures_differ",
-                     computed=float(abs(1 / (mp.pi * B1) - 1 / AREA) > mp.mpf("1e-6")),
-                     expected=1.0, tolerance=0.5,
+                     computed=("1" if abs(1 / (mp.pi * B1) - 1 / AREA) > mp.mpf("1e-6") else "0"),
+                     expected="1", tolerance="0.5",
                      source="1/(pi b1)=1/8pi != 1/Area=1/12pi -- the two IR measures are distinct")
     wb.add_assertion("theta_hit_measure_contingent",
-                     computed=float(abs(muA - muB) > float(SIGMA_PPB)),
-                     expected=1.0, tolerance=0.5,
+                     computed=("1" if abs(muA - muB) > SIGMA_PPB else "0"),
+                     expected="1", tolerance="0.5",
                      source="2-loop residual under proved 1/Area differs from the 1/8pi hit by > sigma_a")
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q_MUON, proton=Q_PROTON,
+        reason="per-loop-measure consistency ladder evaluated at both pins on purpose; the proton "
+               "(default) leg carries the verdict, the muon leg the anchor-stability check"))
     print(f"\n  ({time.monotonic() - t0:.1f}s wall)")
     return 0
 

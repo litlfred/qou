@@ -1,21 +1,21 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:43.911907+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T16:20:58.724683+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "measures_differ",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "1/(pi b1)=1/8pi != 1/Area=1/12pi -- the two IR measures are distinct"
     },
     {
       "name": "theta_hit_measure_contingent",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "2-loop residual under proved 1/Area differs from the 1/8pi hit by > sigma_a"
@@ -25,8 +25,8 @@
   "durationMs": 5,
   "computation": "alpha-em-loop-measure-consistency",
   "scriptFile": "alpha_em_loop_measure_consistency_probe.py",
-  "scriptHash": "57f01e841105",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "5991aae379b8",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -66,32 +66,32 @@
     "ladder_residuals_ppb": {
       "mu_A = 1/(pi*b1) = 1/(8pi)  [phase-4, UNDERIVED]": {
         "proton": {
-          "1loop_ppb": 1.6723270482102428,
-          "2loop_ppb": -0.20015278611109236
+          "1loop_ppb": "1.6723270456964245288",
+          "2loop_ppb": "-0.20015278862491064289"
         },
         "muon": {
-          "1loop_ppb": 80.50996340282691,
-          "2loop_ppb": 78.63748385778042
+          "1loop_ppb": "81.035740382392584513",
+          "2loop_ppb": "79.163260839275295433"
         }
       },
       "mu_B = 1/Area    = 1/(12pi) [PROVED heat-kernel per-mode]": {
         "proton": {
-          "1loop_ppb": -1418.5557947010063,
-          "2loop_ppb": -1419.388011504773
+          "1loop_ppb": "-1418.5557947035201419",
+          "2loop_ppb": "-1419.3880115072867678"
         },
         "muon": {
-          "1loop_ppb": -1339.7180480830823,
-          "2loop_ppb": -1340.5502647582812
+          "1loop_ppb": "-1339.1922703681584390",
+          "2loop_ppb": "-1340.0244870424999352"
         }
       },
       "mu_hybrid = 1/(pi*sqrt(b1*Area/pi)) ": {
         "proton": {
-          "1loop_ppb": -780.1773224479485,
-          "2loop_ppb": -781.4256452639303
+          "1loop_ppb": "-780.17732245046241622",
+          "2loop_ppb": "-781.42564526644410522"
         },
         "muon": {
-          "1loop_ppb": -701.3396253923671,
-          "2loop_ppb": -702.587948015498
+          "1loop_ppb": "-700.81384800797996583",
+          "2loop_ppb": "-702.06217062982470815"
         }
       }
     },
@@ -102,5 +102,11 @@
       "theta_hit_robust_to_proved_measure": false,
       "consequence": "closing alpha_EM requires DERIVING 1/(8pi); zero-mode heat-kernel does not supply it"
     }
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "per-loop-measure consistency ladder evaluated at both pins on purpose; the proton (default) leg carries the verdict, the muon leg the anchor-stability check"
 }
