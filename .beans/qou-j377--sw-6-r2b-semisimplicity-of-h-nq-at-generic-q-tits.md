@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T04:41:33Z
+updated_at: 2026-09-03T08:44:21Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -104,3 +104,75 @@ carries it only because `Real.log` does.
 `HeckeWedderburnGeneral` (26).  A tranche, not a step — which is why only the
 must-exist part landed.  Route note kept: still no Tits deformation in Mathlib,
 but the separate-points route no longer needs one.
+
+
+## 2026-09-03 — the `Real.*` surface in the cone is now ZERO (PR #6486)
+
+`GenericParameter` (landed in #6437) is now applied at both sites, so the two `Real.log`
+idioms are gone:
+
+    SeminormalRep.zpow_ne_one                        Real.log_zpow  ->  GenericParameter.zpow_ne_one
+                                                                       (GenericParameter.ofSqNeOne hq0 hq2)
+    SeminormalInequivalence
+      .pow_right_injective_of_pos_of_ne_one          Real.log_pow   ->  GenericParameter.pow_left_injective
+
+**Measured on the 105-module cone, comments AND import lines stripped: `Real.*` function
+uses = 0.**  Strip the import lines or you measure your own `import Mathlib.Data.Real.Basic`
+as a use — it reports 1 otherwise, and that 1 is a path, not a call.
+
+### What this bought, and what it did not
+
+Both sites **fused two claims that are not the same claim**: *"`q ≠ 0 ∧ q² ≠ 1` implies `q`
+is not a root of unity"* (TRUE over `ℝ`, FALSE over a general field — the only place `ℝ`
+does real work here) and *"not a root of unity implies no nonzero power is `1`"* (true over
+any field).  `Real.log` proved the conjunction in one step, so the `ℝ`-specific half was
+invisible, buried in a log identity three files below the theorem that needs it.  It is now
+`GenericParameter.ofSqNeOne` — named, one lemma, in a file whose name says archimedean.
+
+**This does NOT make anything general-field.**  It removes the disguise, not the
+restriction.  `heckeWedderburn` is still `ℝ`-only and its statement is unchanged.
+
+**No signature changed**, deliberately: `zpow_ne_one` keeps `{q : ℝ} (hq0) (hq2)`, so all
+~40 call sites are untouched.  The point of this step is to make the next one mechanical.
+
+### The remaining obstacle is ORDER, and it is a different (smaller) number
+
+Still `ℝ`: **14 files, 244 occurrences** (was 13/248 — the extra file is
+`GenericParameterReal`).  Every one is now a base ring with no `Real` function applied.
+What is left is (a) threading `NotRootOfUnity` in place of `q ≠ 0 ∧ q² ≠ 1`, and (b) the
+order uses, measured separately as **24** (`linarith` / `nlinarith` / `positivity` / `abs` /
+`sq_nonneg`) across **9** files:
+
+    5  OffDiagNonvanishing      5  SeminormalInequivalence   5  SeminormalParam
+    3  CauchyBinet              2  QJucysMurphyEigen         1  JucysMurphy
+    1  SpechtStandardBasisCore  1  HoefsmitRep               1  SeminormalRep
+
+Those work over any **ordered** field, so they are a weaker obstacle than `ℝ` — but they are
+not zero, and `[LinearOrderedField K]` is not `[Field K]`.  Do not report the cone as
+"general-field ready" on the strength of the `Real.* = 0` figure alone.
+
+### Also landed: a §7c split that predates this work
+
+`check-sidecars.sh` flagged `SeminormalInequivalence` MIXED once my edit put it in the
+changed-file set.  **I did not cause it** — the checker's own `GEN` regex gives identical
+hits on `main`'s version and mine, both at `def MatRepEquiv {R A ι κ : Type*} [CommRing R]`.
+66 generic lines moved to `QOU/SchurWeyl/MatRepEquiv.lean`; **zero** consumers outside the
+original file, 16 inside, namespace unchanged.  It also helps this tranche: a block that
+never needed `ℝ` was sitting in the file with the largest `ℝ` surface in the cone (39).
+
+### Chain scoping, for whoever takes the tranche
+
+All 13 files are genuinely on the chain — each is referenced by something downstream,
+ending at `HeckeWedderburnGeneral`.  Nothing is incidental, so the tranche cannot be
+shortened by dropping a file.  Dependency order (deps within the set, then `ℝ` count):
+
+    0  HoefsmitRep 26 | 1  QJucysMurphy 6, SeminormalParam 13 | 2  SeminormalRep 26
+    3  HoefsmitRepGeneral 14, OffDiagNonvanishing 5 | 5  QJucysMurphyEigen 49
+    6  SeminormalInequivalence 39, SeminormalSimpleSpectrum 7 | 7  SeminormalRange 13
+    9  SeminormalRangeTop 7 | 11 HeckeProductSurjective 12 | 12 HeckeWedderburnGeneral 26
+
+One measurement NOT to repeat: I checked whether `HoefsmitRep`'s `ℝ` block is a free island
+by grepping its declaration names corpus-wide.  `S0` and `S1` reported 17 and 13 users —
+**meaningless**, they are two-character names and the grep cannot tell this file's `S0` from
+any other file's.  The reliable signal is `seminormalRep21`, used by 4 files including
+`QJucysMurphy`, which IS in the chain.  So `HoefsmitRep` is not free.
