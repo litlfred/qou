@@ -1,11 +1,11 @@
 ---
 # qou-img9
 title: Six Iwahori-Hecke presentations coexist in the Lean tree
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T04:13:13Z
-updated_at: 2026-08-30T06:25:59Z
+updated_at: 2026-09-03T04:11:03Z
 ---
 
 Measured 2026-08-30 with
@@ -120,3 +120,62 @@ Whether the four content-free `HeckeAlgebra` structures should be renamed or
 deleted is a **different question** from reconciling the genuine presentations,
 and the sibling is right to keep them as separate rows. Nothing is consolidated
 and no consolidation is proposed here.
+
+## 2026-09-03 — TWO more presentations proved to be one algebra (the pair that mattered)
+
+QOU/SchurWeyl/HeckeCarrierEquiv.lean (new, sorry-free):
+
+  carrierEquiv          Hecke K q qi n  =~a  IwahoriHecke K Q n   (CommRing, given the two
+                        matching conditions below)
+  skeinIwahoriEquiv     Hecke K q q^-1 n =~a IwahoriHecke K (q^2) n  (any Field, q != 0)
+  isSemisimpleRing_iwahoriHecke   1 < Q  =>  IsSemisimpleRing (IwahoriHecke R Q n), EVERY rank
+
+### Why it is short: the relations differ in ONE clause
+
+  SchurWeyl.HeckeRel K q qi n :  sigma^2 = (q - qi) sigma + (q*qi)
+  QOU.Hecke.HeckeRel  K Q  n  :  sigma^2 = (Q - 1)  sigma + Q
+
+Braid and far-commutation are VERBATIM IDENTICAL, on the same FreeAlgebra K (Fin n). So
+the entire content is the quadratic, and sigma |-> c . T moves it under exactly two
+conditions, carried as hypotheses rather than assumed:
+
+  c (Q - 1) = q - qi        and        c^2 Q = q qi
+
+The braid and commute clauses are PROVED scale-invariant (homogeneous of equal degree
+both sides), not asserted to be.
+
+At the skein normalisation qi = q^-1, Q = q^2 with c = q^-1 satisfies both identically.
+THE PARAMETER MOVES, NOT THE RING: no square root is adjoined, nothing leaves a generic
+[Field K]. Same rescaling QOU/BraidKnot/HeckeIwahoriConventionBridge.lean derives for
+GENERATOR FAMILIES; new here is the upgrade to an AlgEquiv of the two RingQuot carriers,
+which is what transports a ring-theoretic property.
+
+Independent confirmation: this is the same bridge the character-sum probe measured
+EMPIRICALLY in #6417 (Q = q^2, sigma_Iwahori = q sigma_skein) — reached there from
+numerics, here from the relations.
+
+### Also supplied
+
+The IwahoriHecke side had generators and relations but NO universal property.
+iwahoriLift / iwahoriLift_sigma / iwahori_hom_ext fill that in, mirroring what
+SchurWeyl.Hecke already had.
+
+### Count
+
+QOU/BraidKnot/HeckeTypeAPresentationEquiv.lean crosses IwahoriHeckeOfSn <->
+QOU.Hecke.IwahoriHecke. This file crosses SchurWeyl.Hecke <-> QOU.Hecke.IwahoriHecke.
+Different pairs; between them THREE of the presentations this bean counts are now
+provably one algebra.
+
+### Path correction to this bean
+
+This bean says the convention bridge is at QOU/MathlibExt/HeckeIwahoriConventionBridge.lean.
+It is at QOU/BraidKnot/HeckeIwahoriConventionBridge.lean. Corrected here so the next
+reader does not conclude it is missing.
+
+### Still open on this bean
+
+The Set.univ family (QOU/IwahoriHecke/Defn.lean, the qou-b5gu defect) is untouched, and
+the recommendation to retire rather than repair it still stands with its downstream
+consumers still uncounted. The two structure-shaped HeckeAlgebra declarations under
+braids-and-knots/ are untouched.
