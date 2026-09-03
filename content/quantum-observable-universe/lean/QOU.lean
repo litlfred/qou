@@ -371,6 +371,9 @@ import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.PiBlockSeparation
 import QOU.SchurWeyl.HeckeProductSurjective
 import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.HeckeSemisimpleGeneral
+import QOU.SchurWeyl.HeckeCarrierEquiv
+import QOU.SchurWeyl.GenericParameter
 import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeCoset
