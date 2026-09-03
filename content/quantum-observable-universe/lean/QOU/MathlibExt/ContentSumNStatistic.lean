@@ -19,7 +19,7 @@ is `n(λ) = nLambda λ`; the column part `Σ_{cells} j`, regrouped by column via
 Purely combinatorial: `List ℕ` carrier, `ℤ` values, no `ℝ`, no analytic input.
 
 -- Ref: docs/audits/2026-08-29-normalizedsum-closes-via-telescope.md (the n-statistic identity)
--- Ref: content/.../QOU/Common/HookSumComplete.lean (hookSum_eq: Σh = |λ| + n(λ) + n(λ'))
+-- Ref: content/quantum-observable-universe/lean/QOU/Common/HookSumComplete.lean (hookSum_eq: Σh = |λ| + n(λ) + n(λ'))
 -/
 
 namespace QOU.MathlibExt.ContentSumNStatistic
