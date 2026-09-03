@@ -1,11 +1,11 @@
 ---
 # qou-c35w
 title: 'Wire canonicalInstance to the Markov-derived n=3 weights + credit-sweep: 3y was prior art'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T09:09:28Z
-updated_at: 2026-09-03T09:30:52Z
+updated_at: 2026-09-03T12:47:22Z
 parent: qou-59vq
 ---
 
@@ -27,3 +27,7 @@ Wire today's CanonicalMarkovWeightsH3.canonicalInstance (canonical_y3/y21/0) to 
 
 
 PR #6494 (draft) on claude/ocneanu-schur-bridge-2026-09-03: f06c00e315 (Lean wiring), 59cdc3060f (credit sweep), 621a3c2437 (chore). Comments posted on #6370 / #6440.
+
+
+
+LANDED on main via REST landing PR #6506 (rebase-merge, tip ff9d0e85d0); #6494 superseded.
