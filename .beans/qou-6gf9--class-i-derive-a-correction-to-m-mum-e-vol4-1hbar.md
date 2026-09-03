@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-03T05:22:25Z
+updated_at: 2026-09-03T11:08:27Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -84,3 +84,22 @@ w-tower, w = q + 1/q − 2; the w-tower has no small-height order: t/w^3 ≈ 0.1
 t/w^4 ≈ 14.9). The w-tower half was MEASURED here, never Lean-proved. Target
 file: QOU/BraidKnot/MuPCorrectionAdmissibility.lean (additive; does not touch
 GapA4MuonBranching.lean). Scope (b) on that class; constructs nothing.
+
+
+
+## 2026-09-03 — LANDED (PR #6476, commit 4dbfd2ee31): the consolidation Lean
+
+QOU/BraidKnot/MuPCorrectionAdmissibility.lean: bar_even_monomial_iff (the
+CONVERSE half of the selection rule, 1 < q), wGen bounds on the pin window,
+no_small_height_w_monomial (the measured t/w^3 = 0.162 < 1/5, t/w^4 = 14.9 > 5
+now PROVED for every order j), capstone no_bar_even_small_height_monomial
+(+ hbarQ bridge), and the content-bearing GapA4CorrectionAdmissible structure
+with monomial_not_admissible. Scope (b) on {single monomial in (hbar_q, q),
+bar-even, |c| in [1/5, 5]}; constructs nothing; bar-even precondition stays
+argued, carried as a hypothesis. Companion content block
+rem:mu-p-residual-two-readings (574d8531e1) documents the residual with both
+readings (R1 falsifiable +2.1e-7 prediction of the bare relation / R2
+unclosed bar-even series — the conservative reading) and what decides. GAP
+unchanged: the a-priori coefficient. Note GapA4MuonBranching.lean's
+target_correction_constraint is a def : Prop carrying a float fit target at a
+q0 literal 580 ppb off the pin — handed to the docstring/def-Prop drain (#6471).
