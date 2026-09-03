@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 69,
+    "occurrences": 70,
     "distinct_values": 43,
-    "files": 9,
-    "live_files": 4,
-    "new_not_baselined": 57,
+    "files": 10,
+    "live_files": 5,
+    "new_not_baselined": 58,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -86,6 +86,12 @@
         "field": "data.rows[349].hits[0].literal",
         "value": "8.4817962000000015621026250300928950309753417968750000000000",
         "real_value": "8.481796200000002"
+      },
+      {
+        "file": "computations/probes/path-b-defect-binding-probe.witness.json",
+        "field": "rows[2].M_pred_MeV",
+        "value": "1876.123929999999973006197251379489898681640625",
+        "real_value": "1876.12393"
       },
       {
         "file": "computations/probes/path-b-habiro-mass-probe.witness.json",
@@ -427,10 +433,10 @@
   },
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "ba7a8bbc7be0",
-  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
-  "commitSha": "39019c3e0b209e02d627af057d4b32f308bbdfe7",
+  "scriptCommitSha": "15b4c80be0c7e2aedea9eb9df27fc97182134562",
+  "commitSha": "acdc2d6e769491de3f1f32038719139ed6b10c29",
   "engine": "python",
-  "computedAt": "2026-08-31T04:35:58.373598+00:00",
+  "computedAt": "2026-09-03T04:18:34.664818+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
