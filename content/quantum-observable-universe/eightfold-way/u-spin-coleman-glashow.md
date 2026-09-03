@@ -1,4 +1,4 @@
-Beyond isospin, the flavour $\mathrm{SU}(3)$ contains two further $\mathrm{SU}(2)$
+Beyond isospin, the flavour $\mathrm{SU}(3)_{\mathrm{f}}$ contains two further $\mathrm{SU}(2)$
 subgroups: **U-spin**, exchanging $d \leftrightarrow s$, and **V-spin**,
 exchanging $u \leftrightarrow s$.  U-spin is the useful one, because the electric
 charge is invariant under it --- $d$ and $s$ both carry $Q = -\tfrac{1}{3}$ ---

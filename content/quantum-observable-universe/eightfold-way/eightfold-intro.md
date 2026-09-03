@@ -17,7 +17,7 @@ choosing $n = 3$ is what puts $A_2$ there.  It is not a structural theorem
 about the substrate, and nothing is derived from it.
 
 The $A_2$ that the eightfold way needs is a *different* one: the Lie
-algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which in quantum
+algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which in quantum
 Schur--Weyl duality \cite{jimbo1986}
 ([the baryon-multiplet section](#sec:baryon-multiplets)) is
 the partner acting
@@ -32,7 +32,7 @@ as the chapter's principal open problem rather than as a solved step: the
 single-fibre construction of the
 [braiding chapter](#chap:path-integrals-braiding) yields a quantum form of
 $\mathrm{SU}(2)$, with $\dim V = 2$, and no choice of $q$ raises it.
-Every flavour-$\mathrm{SU}(3)$ statement below is therefore *conditional
+Every flavour-$\mathrm{SU}(3)_{\mathrm{f}}$ statement below is therefore *conditional
 on $N = 3$*, and is marked as such.
 
 [The root-system section](#sec:a2-root-system) derives the $A_2$ root
@@ -54,7 +54,7 @@ decuplet and the Borromean baryon
 ([Definition](#def:borromean-baryon))
 providing the structural realisation.
 [The colour-algebra section](#sec:color-algebra) derives the color
-$\mathrm{SU}(3)$ gauge
+$\mathrm{SU}(3)_{\mathrm{c}}$ gauge
 algebra from octonionic stabilisation.
 [The $q$-deformation section](#sec:q-deformed-eightfold) develops the
 $q$-deformation of the
@@ -79,7 +79,7 @@ not re-derived here, and carrying no QOU content on its own);
 $N = 3$); and *open* (a precisely identified missing object).
 
 **What this chapter does not do.**
-It does not derive flavour $\mathrm{SU}(3)$.  The eightfold-way
+It does not derive flavour $\mathrm{SU}(3)_{\mathrm{f}}$.  The eightfold-way
 classification is reproduced *conditionally on $N = 3$*, and $N = 3$ is
 not available: the framework supplies $\dim V = 2$.  Most of the
 representation theory below is tier *standard* --- correct, and correctly

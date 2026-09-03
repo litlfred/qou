@@ -26,10 +26,10 @@ the list cannot silently break the pointers.
 | $S_4$ bridge: transitive on local Fano lines | verified numerically (`s4_fano_action.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (machine-verified), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only the dimension shadow ($3\cdot 4/2 = 6 \wedge 0 < 1$ --- $\mathrm{Sym}^2$ dimension $6$, singlet count $0$ below the fail threshold).  The singlet count $0$ is the cited $\mathrm{SU}(3)$-irreducibility input, not a formalised one | `Sym2Gate.lean` |
+| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only the dimension shadow ($3\cdot 4/2 = 6 \wedge 0 < 1$ --- $\mathrm{Sym}^2$ dimension $6$, singlet count $0$ below the fail threshold).  The singlet count $0$ is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not a formalised one | `Sym2Gate.lean` |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **closed** 2026-08-29: [definition](#def:octonion-algebra) authored in [the colour-algebra section](#sec:color-algebra). The row previously read "never defined … no definition to point at", which invited a hunt for a missing source; the gap was **exposition only**. The citation side was already closed (\cite{baez2002}, with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ recorded) and so was the Lean side (nine `QOU/MathlibExt/Octonion*.lean` files, including the concrete Baez-convention `octMul`). What was missing was a content block for them to point at | `QOU.MathlibExt.OctonionDerivations` |
-| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
-| Flavour vs. colour $\mathrm{SU}(3)$ | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
+| Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
+| Flavour vs. colour ($\mathrm{SU}(3)_{\mathrm{f}}$ vs. $\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
 | Gell-Mann–Okubo has no discriminating power | **proved** (Lean, sorry-free): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
 | Meson mass splitting; the GMO **deviation** | **open**: the $\approx 6\%$ deviation is the only testable content; no second-order term derived, so the framework predicts $0$ | item *The Gell-Mann--Okubo deviation* |
 | Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item *Spin--flavour--colour selection rule* |
@@ -57,12 +57,12 @@ Gell-Mann--Nishijima relation cannot be closed.
    missing.  *Open:* construct a
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
-   The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)$ candidate
+   The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)_{\mathrm{c}}$ candidate
    that the gate does not exclude --- *not excluded* rather than
    *passes*, since the singlet count $0$ that would make it pass is the
-   cited $\mathrm{SU}(3)$-irreducibility input and not a formalised one
+   cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input and not a formalised one
    (ledger row, `Sym2Gate.lean`).  Whether it yields *flavour*
-   $\mathrm{SU}(3)$ is untested.
+   $\mathrm{SU}(3)_{\mathrm{f}}$ is untested.
 
    **What such a construction must supply is now a theorem, and it is one
    property rather than a list.**  `SelfDualSectorConfinement.lean`
@@ -175,17 +175,17 @@ Gell-Mann--Nishijima relation cannot be closed.
    conjecture, and nothing else in the battery constrains anything.
 
 3. **Continuous $G_2$ completion.**
-   The discrete skeleton of $\mathrm{SU}(3) \subset G_2 =
+   The discrete skeleton of $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2 =
    \mathrm{Aut}(\mathbb{O})$ is machine-checked
    ($\mathrm{GL}(3, \mathbb{F}_2) \cong \mathrm{PSL}(2,7)$ Fano
    symmetry of the associator).  The continuous Lie-group completion
-   --- specifically the coset $S^6 = G_2/\mathrm{SU}(3)$ --- is a
+   --- specifically the coset $S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$ --- is a
    Mathlib gap (no `Octonion` type, no $G_2$ Lie group).  This
    is an infrastructure obstruction, not a structural one.
 
 4. **Flavour versus colour separation.**
-   The octonionic $\mathrm{SU}(3)$ is colour.  The eightfold-way
-   classification requires flavour $\mathrm{SU}(3)$.  Whether these
+   The octonionic $\mathrm{SU}(3)_{\mathrm{c}}$ is colour.  The eightfold-way
+   classification requires flavour $\mathrm{SU}(3)_{\mathrm{f}}$.  Whether these
    are the same, different, or related by a groupoid-level duality
    is open, and **the $\mathrm{Sym}^2$ gate cannot settle it.**
 

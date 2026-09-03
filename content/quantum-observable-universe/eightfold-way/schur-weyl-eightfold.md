@@ -117,7 +117,7 @@ construction directions are:
    whose interaction space is three-dimensional (T3b).
 2. **Octonionic $G_2$ stabilizer:** the Günaydin--Gürsey
    $\mathbf{7} = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
-   provides a non-self-dual triple from $\mathrm{SU}(3) \subset G_2$
+   provides a non-self-dual triple from $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$
    ([Proposition](#prop:color-su3-from-g2)).
 
 **Status of the $\mathrm{Sym}^2$ gate.**  The gate is the
@@ -132,5 +132,5 @@ content supplied by hand in the statement names, not by the proofs.  So
 the correct reading is: the octonionic $\mathbf{3}$ is *not
 excluded* by the $\mathrm{Sym}^2$ gate, on a decomposition taken from the
 literature.  It is not a machine-checked pass, and the file should not be
-cited as one.  Whether the route yields *flavour* $\mathrm{SU}(3)$
-(not just colour) remains open.
+cited as one.  Whether the route yields *flavour* $\mathrm{SU}(3)_{\mathrm{f}}$
+(not just colour $\mathrm{SU}(3)_{\mathrm{c}}$) remains open.

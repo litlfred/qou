@@ -3,7 +3,7 @@ decomposes as $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8}
 \oplus \mathbf{1}$, yielding the meson octet and the flavor singlet.*
 
 A meson is a quark--antiquark bound state.  In the flavor
-$\mathrm{SU}(3)$ classification, a quark transforms in the fundamental
+$\mathrm{SU}(3)_{\mathrm{f}}$ classification, a quark transforms in the fundamental
 $\mathbf{3}$ and an antiquark in the conjugate $\bar{\mathbf{3}}$.
 The tensor product decomposes into the adjoint (octet) and the trivial
 (singlet) representations:

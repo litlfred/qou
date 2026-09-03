@@ -7,7 +7,7 @@ throughout this chapter.*
 > construction**: the braid group on $n$ strands has Coxeter type
 > $A_{n-1}$, so $n = 3$ puts $A_2$ here by definition. Nothing about the
 > substrate is derived from it. In particular this is **not** the
-> $A_2 = \mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)$, which is the
+> $A_2 = \mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which is the
 > Schur--Weyl partner acting on the fibre $V$ and requires $\dim V = 3$
 > ([Proposition](#prop:schur-weyl-eightfold), where the framework
 > supplies $\dim V = 2$). Items 1--3 below are the standard

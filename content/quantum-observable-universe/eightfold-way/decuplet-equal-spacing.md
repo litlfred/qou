@@ -62,7 +62,7 @@ $\Lambda$ share $Y = 0$ with $I = 1$ and $I = 0$ --- so no such substitution
 exists and the argument has nothing to act on
 (`octet_casimir_not_function_of_hypercharge`, derived from the octet weight
 data rather than asserted).  Without that contrast the result above could be
-misread as a fact about every $\mathrm{SU}(3)$ multiplet.
+misread as a fact about every $\mathrm{SU}(3)_{\mathrm{f}}$ multiplet.
 
 ## What this means for the framework
 

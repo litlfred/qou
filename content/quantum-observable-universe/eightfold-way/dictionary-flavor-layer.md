@@ -47,7 +47,7 @@ follow from the octonionic $G_2$ route but remain at the
 discrete-skeleton level pending the continuous $G_2$ completion.
 
 **What the $(I_3, Y)$ columns are.**  With one exception they are
-the standard $\mathrm{SU}(3)$ flavour assignments, imported from the
+the standard $\mathrm{SU}(3)_{\mathrm{f}}$ flavour assignments, imported from the
 eightfold-way classification and placed against the braid column to show
 that the dictionary is *consistent* with it.  They are not outputs
 of the braid construction.  The exception is $I_3$ on the nucleon
