@@ -219,12 +219,21 @@ The theorems in this file depend on:
 - `KnotRegistry.trefoilEntry` — electron = trefoil (3₁)
 - `KnotRegistry.borromeanRingsEntry` — nucleon = Borromean (6₂³)
 
-### Axioms (in HadronicMass, not on critical path)
-- `proton_pair_skein_approx` — pair Skein ↔ proton (Real.rpow limitation)
-- `neutron_pair_skein_approx` — pair Skein ↔ neutron (Real.rpow limitation)
+### Formerly assumed, now PROVED (2026-08-31)
+- `proton_pair_skein_approx` — pair Skein ↔ proton
+- `neutron_pair_skein_approx` — pair Skein ↔ neutron
 
-These two axioms are only used by the pair Skein decomposition (§5a of
-HadronicMass), not by `terminal_resolution_hadronic_mass` or `end_to_end`.
+Both were context classes whose single field was the bound itself, on the
+stated ground of a "`Real.rpow` limitation". The root is eliminated rather
+than evaluated — with `s = q^{1/2}`, only `s > 0` and `s * s = q` are needed —
+and both are now sorry-free theorems in `HadronicMass`, with the classes
+deleted. The side hypothesis they bound
+(`|q^{1/2} + q^{-1/2} − 2.00228| < 1e-4`) is in fact **false** by 4.3×, so
+neither declaration had ever been invocable; that is recorded as
+`HadronicMass.pair_skein_denom_hypothesis_false`.
+
+They are used only by the pair Skein decomposition (§5a of HadronicMass), not
+by `terminal_resolution_hadronic_mass` or `end_to_end`.
 -/
 
 end QOU.CODATAChain

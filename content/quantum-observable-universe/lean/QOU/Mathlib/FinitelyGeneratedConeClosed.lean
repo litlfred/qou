@@ -295,7 +295,7 @@ theorem exists_linearIndependent_support (v : ι → E) {y : E} (hy : y ∈ cone
     ∃ s : Finset ι, LinearIndependent ℝ (fun i : s => v (i : ι)) ∧
       y ∈ coneSpanOn v s := by
   -- Ref: [rockafellar1970] Convex Analysis, Cor. 17.1.2 (conic Carathéodory)
-  -- Ref: [schrijver1986] Theory of Linear and Integer Programming, §7.2
+  -- Ref: [schrijver1986theory] Theory of Linear and Integer Programming, §7.2
   obtain ⟨x, hx, rfl⟩ := hy
   obtain ⟨t, hti, z, hz, hzoff, hzsum⟩ :=
     caratheodory_aux v (Finset.univ.card) Finset.univ x le_rfl hx

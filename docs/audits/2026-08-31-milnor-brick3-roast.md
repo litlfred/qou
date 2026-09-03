@@ -62,6 +62,14 @@ existing file *before* writing it). Continuing brick 3 forces a design choice: b
 lemmas, but must *add* the quantum trace + spin-½ rep + normalisation). Neither is short, and mixing
 them without a bridge lemma would duplicate more.
 
+> **R5 overlap RETIRED (2026-09-02).** `QuantumTraceTower.qtr_kron` now routes through the canonical
+> plain-trace multiplicativity `QOU.MathlibExt.MarkovTraceMultiplicative.trace_kron` instead of
+> re-invoking `Matrix.trace_kronecker` in parallel — so one trace-multiplicativity lemma sits under
+> both the mass/binding Markov-trace compute and this weighted tower. The μ-weighted `qtr_kron` is now
+> a documented specialisation of `trace_kron`, not a parallel track. (The exact name in the file is
+> `trace_kron`, not `markovTrace_kronecker` — this note also corrects the identifier used above.)
+> Statements unchanged; sorry-free; verified lean-direct.
+
 ## Effort + verdict
 
 Brick 3 is a genuine multi-file, multi-session formalisation whose crux (R2) is essentially

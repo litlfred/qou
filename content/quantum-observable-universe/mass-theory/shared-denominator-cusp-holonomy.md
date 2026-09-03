@@ -143,11 +143,21 @@ formulation
 `QOU.QPochhammer.shared_denominator_cusp_holonomy` is a conditional
 theorem over the class `SharedDenominatorCuspHolonomy`, which
 deliberately has **no instance**: the conjecture's open state is
-visible in the type system. (A previous revision fabricated a
-"skeleton" instance with the constant real shape $z = 2$; it is
-removed, and the cusp-completeness predicate now requires a genuinely
-geometric shape, $\mathrm{Im}\, z > 0$, so no real-constant
-witness can discharge it.)
+visible in the type system.
+
+What makes the class unsatisfiable by fiat is that the cusp shape
+assignment $k \mapsto z_k$ is one of its parameters. Requiring a geometric
+shape, $\mathrm{Im}\, z > 0$, excludes real constants such as the
+"skeleton" $z = 2$ of an earlier revision, but a class field asserting only
+that *some* geometric shape exists is discharged by $z = i$ for every $q$,
+$x$ and $n$, since that existential is unlinked to the root index. Binding
+the shape as a parameter is what makes the conjecture constrain the cusp
+data supplied to it.
+
+The conjecture then yields one consequence directly: at a root index the
+matched shape has $\mathrm{Im}\, z_k > 0$, so $z_k$ is not real and in
+particular is not the bare algebraic seed $q_0^{-k}$. The SnapPy witness
+below reaches the same conclusion by measurement.
 
 ### Empirical scope of the seeding pipeline
 

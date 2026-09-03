@@ -6277,3 +6277,106 @@ closed-form bond rates, which `qou-brng` had first and correctly.
 both fail (PR #6264), so the functional form must change. `qou-pdix`. And
 `qou-n1dj` now sits upstream of *that*, since which convention is forced depends
 on the same fibre-categorical premise.
+
+
+---
+
+## Entry 17 — the terminus, recomputed from an independent route, as a PROBE not a summary (2026-08-31)
+
+`computations/qbeta/qbeta_cds1_terminus_status_probe.py` — **13/13**, sympy
+exact, **runs standalone with `PYTHONPATH` stripped**.
+
+### Why
+
+This bean is ~4760 lines over 16 entries and 14 steps and carries **four
+withdrawals** — Step 10's "the block is a ruling" (Step 13), entry 13 (entry
+14), a Step-13 correction that did not propagate (Step 14b), and entry 12's
+framing of the `K` blocker (entry 16). A reader arriving cold cannot tell what
+stands, and this arc's own history is of recorded figures going stale. So the
+consolidation is a probe that RECOMPUTES, not a document that transcribes: if an
+anchor moves or a producer changes, it fails rather than quietly disagreeing.
+
+### Verified here, from a THIRD independent 3×3 Markov solve
+
+    y_(3)(z_D)   = (q^4+1)/(q^2+1)^2        symbolic difference exactly 0
+    y_(1^3)(z_D) = 0                         the cap at z_D
+    y_(3)(q)     = 1                         exactly, at the augmentation root
+    y_(1^3)(q)   = 0
+    admissible set = EXACTLY {q, z_D}        qou-06wh re-derived from the roots
+    chi^(2,1)(Delta) = 0  identically        Step 9
+    g(q0)        = 0.505404226504
+    shortfall    = x1.75923699055            a DOF that does not exist
+    z_required   = 0.998500302563            re-solved, and EXCLUDED by the cap
+    entry 15's two bar conditions            both reproduced
+
+So the terminus is **not a computational artefact**: three routes (this solve,
+the sibling's, and Lean `wtNumer`) agree on the weights.
+
+### A rounding that looked like a disagreement — recorded because it nearly wasn't
+
+My first run FAILED `z_required`, returning `0.998500302519` against the
+recorded `0.998500302563`. That is not a discrepancy: I had hardcoded
+`g_required = 0.8891258104` from this bean's prose, which is the **10-sig-fig
+rounding** of the witness's `0.88912581044405784613`, and that rounding alone
+moves the root by ~4.4e-11. Fixed by reading the witness, **not** by widening
+the tolerance. Two lessons, both already this repo's: a quoted figure is a
+lossy copy of its witness, and the fix for a red goes at the input.
+
+### Not verified here, and the probe says so
+
+Step 14's `chi` leg quotes a required element ratio `1.5516573513` for a
+HYPOTHETICAL decay element whose definition this probe cannot rebuild without
+guessing; Step 14's `K` is an enumeration, not a closed form; and the derived
+cap is a Lean result (`FibreDimensionForcesTL.lean`) to be checked with
+`lean`-direct. All three are recorded as `verified_here: false` with the reason.
+
+### Where the arc stands
+
+**Open:** a derivation of `alpha`. The z direction is closed from three
+independent sides (trace weight, bar parity, anchors); the cos form is closed
+(Steps 7-8, entry 15); the amplitude route is fenced (`qou-i2ir`: C16/C17/C18
+plus a structural one-scale/two-target refutation). **No route is known to be
+open** — stated as a fact about the search, not as an impossibility claim.
+Scope (a). L2 unchanged at 1279 ppb.
+
+### 🛑 Correction to entry 15's cross-reference — I repeated an inflated reading (2026-08-31)
+
+The cross-reference section I added when merging main says the counit entry
+closes the z direction partly because *"`z_required` forces a **negative**
+Wedderburn weight"*. **That phrasing over-states what the negative shows**, and
+PR #6361 is right to deflate it. Verified independently here before accepting it:
+
+    wtNumer(q,z) = (z − q)((q²+1)z − q³)
+
+is an **upward parabola in `z`** (leading coefficient `q²+1 > 0`) whose two real
+roots are *exactly* the two admissible Markov parameters, and
+`q − z_D = q/(q²+1) > 0` **identically**, so `z_D < q` for every `q > 0`.
+Therefore `y_(1³)(z) < 0` for **every** `z` in the open interval `(z_D, q)` —
+width **0.49729055** at the pin, about half the substrate parameter itself.
+
+    z_C   0.4993203342   wtNumer  +0.15452259   outside (left of both roots)
+    z_D   0.6126880371   wtNumer   0            ROOT
+    z*    0.9985003026   wtNumer  −0.095999879  inside
+    z=1   1.0            wtNumer  −0.095076553  inside
+    z=q   1.1099785827   wtNumer   0            ROOT
+
+So the negative at `z*` and the negative at `z = 1` are **one fact**, and it is
+`z ∈ (z_D, q)` — **not** a property of either point. My cross-reference presented
+it as a finding *about* `z_required`, which is the stronger-sounding and weaker
+claim. The z direction is still closed from three sides; that conclusion is
+unaffected. Only the weight of this particular piece of evidence shrinks.
+
+Recorded rather than silently edited because it is the same shape as the errors
+this bean already collects: a quantity that is true at a point, reported as
+though the point were what made it true.
+
+### Entry-numbering collision with PR #6342 — flagged, not unilaterally renumbered
+
+PR #6342 (open, `claude/convention-migration-validation-77exfa`) appends **its
+own** "Entry 15" and "Entry 16" to this bean, for different content — a pinning
+/ non-D sweep, and the `c_k^even` exact rungs against entry 9's `|c_4|`. Mine
+(block bar-defect; K two-anchor filter) landed first, in `7a11282fe58`.
+
+Whoever merges second should renumber rather than union into two Entry 15s and
+two Entry 16s. Flagged on #6342; **not** renumbered here unilaterally, since
+that branch is a sibling's live claim.

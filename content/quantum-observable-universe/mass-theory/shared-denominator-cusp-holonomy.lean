@@ -19,6 +19,57 @@ alg-geom class's `pole_cusp_matched` hypothesis is exactly what an
 instance of THIS class would supply — this conjecture is the
 geometric input, not a consequence.
 
+## 2026-08-31 — the class DID have an instance, and the shape is a parameter now
+
+The previous revision of this file, and the `.md`'s Discussion section,
+both stated that `SharedDenominatorCuspHolonomy` *"deliberately has **no
+instance**: the conjecture's open state is visible in the type system"*, and
+explained that strengthening the shape predicate with `im_pos` made *"any
+real-constant witness impossible"*.
+
+The first half was false, and the second half is why.  The class's field
+concluded `∃ z : ℂ, GeometricShape z` — an existential over **some**
+geometric shape, with no link to the root index `k`.  That proposition is
+provable outright (`exists_geometricShape` below), so
+
+```lean
+example (q x : ℝ) (n : ℕ) : SharedDenominatorCuspHolonomy q x n where
+  cusp_complete_of_root := fun _ _ => ⟨Complex.I, …⟩
+```
+
+inhabits the class for **every** `q`, `x` and `n`.  Measured 2026-08-31:
+`lean`-direct, exit 0.  Excluding real constants excluded the wrong constant;
+`z = i` is not real and discharges the whole conjecture in two lines.
+
+The repair is to bind the existential.  The `.md` claims that the root at
+`x = q^{-k}` is matched to *the shape parameter `z_k` of cusp `k`*, so the
+shape assignment is data the caller supplies: `shape : Fin n → ℂ` is now a
+class **parameter** and the field says the **matched** shape `shape k` is
+geometric.  An instance can no longer pick the shape, and there is now
+genuinely no instance.
+
+Three further changes:
+
+- `shared_denominator_cusp_holonomy` was `:= h.cusp_complete_of_root`, the
+  field handed straight back (AGENTS.md §3b-cond item 5).  It now **derives**
+  the three consequences of a geometric matched shape, none of which is the
+  field.
+- `newton_seed_completeness` was **statement-identical** to it — same binders,
+  same conclusion, character for character — while its docstring claimed
+  something the statement never mentioned: *"the algebraic denominator zeros
+  `{q^{-k} : k < n}` are valid Newton–Raphson seed values"*.  There is no
+  Newton iteration, no seed and no convergence anywhere in that type.  It is
+  removed; the seeding claim is empirical and lives in the `.md` with its two
+  witnesses.
+- `seed_is_not_the_cusp_shape` is new and is **derived**: at a root index the
+  matched shape is not a real number, so the bare algebraic seed `q^{-k}`
+  cannot be the cusp shape.  That is the `.md`'s own bounding finding from
+  `snappy-cusp-seeding.witness.json` (bare seeds sit `0.4`–`0.9` from
+  SnapPy's `z_k`), and it now follows from the conjecture rather than only
+  from the measurement.
+
+Bean `qou-z9ws`.
+
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
 -- Ref: [thurston1978] manuscript: The geometry and topology of 3-manifolds
 -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see content/schema/references.ts
@@ -35,7 +86,8 @@ namespace QOU.QPochhammer
     the ideal triangulation and the Neumann-Zagier potential with
     `Hol_μ(z) = Hol_λ(z) = 1`; those gluing equations remain open here,
     but `im_pos` already excludes every real (flattened) shape, so the
-    predicate is not dischargeable by a constant real witness. -/
+    predicate is not dischargeable by a *real* constant witness — see
+    `exists_geometricShape` for why that is much weaker than it sounds. -/
 -- Ref: [thurston1978] §4.5 (gluing equations)
 structure GeometricShape (z : ℂ) : Prop where
   /-- Shape nondegeneracy: `z ≠ 0` (the degenerate collapsed vertex; the
@@ -47,57 +99,112 @@ structure GeometricShape (z : ℂ) : Prop where
   /-- Geometric (positively oriented) shape: `Im z > 0`. -/
   im_pos : 0 < z.im
 
+/-- **A geometric shape exists**, witnessed by `z = i`.
+
+Recorded as a theorem because it is the reason the previous encoding of this
+conjecture was empty.  The old class field concluded `∃ z : ℂ,
+GeometricShape z` with no link to the root index, and that is exactly this
+statement — so the class was inhabited for every `q`, `x`, `n` by a constant
+witness, despite the file and the `.md` both asserting it had no instance.
+
+`im_pos` does rule out real constants.  It does not rule out constants. -/
+theorem exists_geometricShape : ∃ z : ℂ, GeometricShape z :=
+  ⟨Complex.I,
+   { shape_ne_zero := Complex.I_ne_zero
+     shape_ne_one := by
+       intro h
+       have := congrArg Complex.im h
+       simp at this
+     im_pos := by simp }⟩
+
 /-- The shared-denominator conjecture, packaged as a typeclass over a
-    state variable `x`, substrate parameter `q`, and depth `n`.
-    An instance asserts that whenever the algebraic denominator
-    `(x; q)_n` vanishes at a root of the form `x = q^{-k}`, the
-    matched cusp shape parameter `z_k` satisfies the Thurston cusp-
-    completeness predicate. -/
+    state variable `x`, substrate parameter `q`, depth `n`, and the
+    **cusp shape assignment** `shape : Fin n → ℂ`.
+
+    An instance asserts that whenever the algebraic denominator `(x; q)_n`
+    vanishes at a root of the form `x = q^{-k}`, the *matched* cusp shape
+    parameter `shape k` satisfies the Thurston cusp-completeness predicate.
+
+    `shape` is a **parameter**, not a field.  That is what makes the class a
+    hypothesis about the caller's cusp data rather than about an assignment
+    the instance chose — see `exists_geometricShape` and the module docstring
+    for what happened when the shape was existentially quantified instead. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
 class SharedDenominatorCuspHolonomy
-    (q x : ℝ) (n : ℕ) : Prop where
+    (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ) : Prop where
   /-- For each algebraic denominator zero `x = q^{-k}` (i.e. each
       `k < n` with `1 - x q^k = 0`), the matched complex cusp shape
-      parameter is `GeometricShape`. -/
+      parameter `shape k` is `GeometricShape`. -/
   -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §proof sketch
   cusp_complete_of_root :
-    ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, GeometricShape z
+    ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 → GeometricShape (shape k)
 
-/-- Stated conjecture form: the algebraic denominator zeros are the
-    Thurston cusp-completeness solutions. Inhabited only by an
-    instance of `SharedDenominatorCuspHolonomy`. -/
+/-- **Shared-denominator cusp holonomy**
+([`conj:shared-denominator-cusp-holonomy`]), in consequence form.
+
+At an algebraic denominator zero, the matched cusp shape has non-zero
+imaginary part and is neither of the two degenerate shapes.
+
+Derived: the conclusion is a conjunction of three consequences of
+`GeometricShape (shape k)`, not that proposition, so this is not the class
+field restated.  The previous version *was* — it read
+`:= h.cusp_complete_of_root`. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
 theorem shared_denominator_cusp_holonomy
-    (q x : ℝ) (n : ℕ) [h : SharedDenominatorCuspHolonomy q x n] :
-    ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, GeometricShape z :=
-  h.cusp_complete_of_root
+    (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ)
+    [h : SharedDenominatorCuspHolonomy q x n shape] (k : Fin n)
+    (hroot : 1 - x * q ^ (k : ℕ) = 0) :
+    (shape k).im ≠ 0 ∧ shape k ≠ 0 ∧ shape k ≠ 1 := by
+  have hg := h.cusp_complete_of_root k hroot
+  exact ⟨hg.im_pos.ne', hg.shape_ne_zero, hg.shape_ne_one⟩
 
-/-- **Solver-pipeline corollary.** The algebraic denominator zeros
-    `{q^{-k} : k < n}` are valid Newton–Raphson seed values for the
-    Thurston gluing equations on the matched JSJ piece. This is a
-    direct re-packaging of `shared_denominator_cusp_holonomy` for
-    consumption by the WASM compute layer. -/
+/-- **The bare algebraic seed is not the cusp shape.**
+
+At a root index the matched shape is not a real number, so no real seed —
+`q^{-k}` included — equals `shape k`.  The pole-to-cusp correspondence is a
+bijection of *labels*, and the shape parameter is a non-trivial function of
+the seed.
+
+The `.md` reaches this empirically: `snappy-cusp-seeding.witness.json`
+measures the bare seeds at distance `0.4`–`0.9` from SnapPy's `z_k` for
+`m004`, `m003` and `L6a4`, and concludes the identity `q₀^{-k} = z_k` cannot
+hold.  Here it follows from the conjecture itself, since `im_pos` excludes
+every real shape.
+
+This replaces `newton_seed_completeness`, which had the same type as
+`shared_denominator_cusp_holonomy` above and a docstring claiming a
+Newton–Raphson seeding property its statement did not contain. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §implication
-theorem newton_seed_completeness
-    (q x : ℝ) (n : ℕ) [h : SharedDenominatorCuspHolonomy q x n] :
-    ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, GeometricShape z :=
-  shared_denominator_cusp_holonomy q x n
+theorem seed_is_not_the_cusp_shape
+    (q x : ℝ) (n : ℕ) (shape : Fin n → ℂ)
+    [h : SharedDenominatorCuspHolonomy q x n shape] (k : Fin n)
+    (hroot : 1 - x * q ^ (k : ℕ) = 0) (r : ℝ) :
+    shape k ≠ (r : ℂ) := by
+  intro hEq
+  have hg := h.cusp_complete_of_root k hroot
+  have him : (shape k).im = 0 := by rw [hEq, Complex.ofReal_im]
+  have hpos := hg.im_pos
+  rw [him] at hpos
+  exact lt_irrefl 0 hpos
 
 /-! ## No instance — this is an open primary conjecture
 
-A previous revision carried a "skeleton" `instance canonical` witnessing
-cusp-completeness with the constant real shape `z = 2`. That instance
-encoded none of the Thurston gluing-equation content yet *discharged* the
-§3b-cond hypothesis for every downstream consumer — precisely the
-"fabricated trivial instance" pattern forbidden by AGENTS.md §3b-tax
-("an unproved primary is honestly represented by a content-bearing class
-with no instance"). It is removed: the open state of the conjecture is now
-visible in the type system, and the strengthened `im_pos` field makes any
-real-constant witness impossible. The actual `z_k` for the `k`-th cusp
-must come from the Newton–Raphson gluing pipeline
-(`computations/q-pochhammer-seed.witness.json` records the trefoil case). -/
+A revision before 2026-08-31 carried a "skeleton" `instance canonical`
+witnessing cusp-completeness with the constant real shape `z = 2`. That
+instance encoded none of the Thurston gluing-equation content yet
+*discharged* the §3b-cond hypothesis for every downstream consumer —
+precisely the "fabricated trivial instance" pattern forbidden by AGENTS.md
+§3b-tax ("an unproved primary is honestly represented by a content-bearing
+class with no instance"). It was removed and `im_pos` was added to block a
+real-constant witness.
+
+**That was not enough, and the file said it was.** With the shape
+existentially quantified, `z = i` discharged the class for every `q`, `x`,
+`n` — see `exists_geometricShape`. The shape assignment is now a class
+parameter, so no constant witness of any kind is available, and the class has
+genuinely had no instance since. The actual `z_k` for the `k`-th cusp must
+come from the Newton–Raphson gluing pipeline
+(`computations/q-pochhammer-seed.witness.json` records the trefoil case) —
+and by `seed_is_not_the_cusp_shape` it is not the seed itself. -/
 
 end QOU.QPochhammer

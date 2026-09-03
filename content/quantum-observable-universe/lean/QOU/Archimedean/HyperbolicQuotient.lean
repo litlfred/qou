@@ -70,7 +70,7 @@
   say those words.
 
   -- Ref: [thurston1978] Ch. 4 (quotients of H³ by discrete groups)
-  -- Ref: [ratcliffe2006] §8 (fundamental domains and the volume of a quotient)
+  -- Ref: [ratcliffe] §8 (fundamental domains and the volume of a quotient)
 -/
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import Mathlib.MeasureTheory.Group.FundamentalDomain

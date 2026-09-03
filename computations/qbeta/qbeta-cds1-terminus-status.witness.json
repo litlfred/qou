@@ -1,0 +1,241 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-02T22:06:53.009527+00:00",
+  "commitSha": "297b1f2236abc43b69f4efe08a916675d2248eb3",
+  "assertions": [
+    {
+      "name": "the_3x3_Markov_solve_is_unique",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "weights_reproduce_the_trace_on_the_REMAINING_basis_elements_CONTROL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "g_equals_y3_at_zD_equals_q4plus1_over_q2plus1_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "y_1cubed_vanishes_at_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "y_3_equals_ONE_at_the_augmentation_root_z_eq_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "y_1cubed_vanishes_at_z_eq_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_admissible_set_is_EXACTLY_q_and_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "chi_2_1_of_Delta_vanishes_IDENTICALLY",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "g_at_q0_is_0_505404226504",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "the_decay_channel_is_short_by_1_75923699046",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "z_required_re_solves_to_0_998500302563",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "bar_even_C_block_defects_are_z_dependent_and_sum_to_ZERO_for_every_such_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "full_bar_D_block_defects_are_z_FREE_and_sum_to_h_squared_for_every_such_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2656,
+  "computation": "qbeta-cds1-terminus-status",
+  "scriptFile": "qbeta_cds1_terminus_status_probe.py",
+  "scriptHash": "7445e0c0d77f",
+  "scriptCommitSha": "af41fa4c180caa6a48b9ef88be1befdf2999521c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_cds1_terminus_status_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_cds1_terminus_status_probe.py"
+  },
+  "description": "Every load-bearing number of the qou-cds1 terminus recomputed from an independent 3x3 Markov solve, plus the standing/withdrawn ledger as assertions, so that prose drifting from the mathematics fails a check rather than going quietly stale.",
+  "data": {
+    "stands": [
+      {
+        "claim": "g = y_(3)(z_D) = (q^4+1)/(q^2+1)^2",
+        "source": "Step 14",
+        "verified_here": true,
+        "route": "independent 3x3 Markov solve"
+      },
+      {
+        "claim": "admissible set is exactly {q, z_D}",
+        "source": "qou-06wh",
+        "verified_here": true,
+        "route": "roots of numer(y_(1^3))"
+      },
+      {
+        "claim": "chi^(2,1)(Delta) = 0 identically",
+        "source": "Step 9",
+        "verified_here": true
+      },
+      {
+        "claim": "decay channel short by x1.75923699046",
+        "source": "Step 14",
+        "verified_here": true
+      },
+      {
+        "claim": "z_required = 0.998500302563, and it is EXCLUDED",
+        "source": "Step 10 + Step 13",
+        "verified_here": true,
+        "route": "re-solved, not quoted"
+      },
+      {
+        "claim": "the two bar conditions differ in KIND (C z-dependent and cancelling; D z-free and summing to h^2)",
+        "source": "entry 15",
+        "verified_here": true
+      },
+      {
+        "claim": "the two-row cap is DERIVED (2-dim mass fibre => Lambda^3_q V = 0)",
+        "source": "Step 13, QOU/BraidsAndKnots/FibreDimensionForcesTL.lean (NOTE the path: BraidsAndKnots, not QBeta)",
+        "verified_here": false,
+        "why_not": "a Lean result; this probe is Python and cannot check it",
+        "verified_separately": {
+          "when": "2026-08-31",
+          "how": "lean-direct + #print axioms",
+          "result": "exit 0; all five theorems depend on [propext, Classical.choice, Quot.sound] only — NO sorryAx. Zero sorry / axiom / native_decide in the file.",
+          "declarations": [
+            "qNumber_shift_identity",
+            "ocneanu_param_eq_of_fibre_qdim",
+            "ocneanu_param_of_two_dim_fibre",
+            "threeRow_eq_zero_of_jones_ocneanu",
+            "twoDimFibre_pins_h3_weights"
+          ],
+          "caveat": "verified by an agent this session, NOT by this probe — re-verify with lean-direct if the file changes"
+        }
+      }
+    ],
+    "withdrawn": [
+      {
+        "claim": "the (1^3) block cap is a RULING",
+        "withdrawn_by": "Step 13",
+        "replacement": "the cap is DERIVED"
+      },
+      {
+        "claim": "K(delta) is fixed by the entry-2 bar-midpoint rule",
+        "withdrawn_by": "entry 14",
+        "replacement": "the rule FAILS the N=2 slot by 25.9 %; K free again"
+      },
+      {
+        "claim": "the K blocker is the 59694 ppb gap BETWEEN the candidates",
+        "withdrawn_by": "entry 16",
+        "replacement": "both candidates miss the required VALUE by MORE than that gap (281380 / 221686 ppb)"
+      }
+    ],
+    "open": [
+      {
+        "item": "a derivation of the ladder phase alpha",
+        "status_at_step_14": "the z direction closed from three independent sides (trace weight, bar parity, anchors); the cos form closed (Steps 7-8, entry 15); the amplitude route fenced (qou-i2ir C16/C17/C18 + a structural one-scale/two-target refutation).",
+        "SUPERSEDED_BY": "Steps 15-28 (2026-08-31). The phase is no longer merely unfound: Step 26 EXCLUDES it at 3e11 sigma, having shown symbolically in q that the discriminant curves are genus 0 (short) and genus 8 (long) — NEVER genus 1, so there is no elliptic source and no tower of them. Step 17 adds that the cosine is UNFALSIFIABLE (phase yes, cosine no) and that the only surviving justification would be a KZ/Kohno-Drinfeld holonomy, which nothing supplies. Step 24 closes both eigenphase readings: the Hecke tower repeats the H_3 spectrum and cannot add to it.",
+        "my_earlier_wording_was_wrong": "'no route is known to be open' describes a search that has not found one. Step 26 is an EXCLUSION. Different epistemic state; do not quote the weaker form."
+      },
+      {
+        "item": "selecting the product generator rho in c_{k+1} = rho*c_k",
+        "note": "PR #6282: the place IS named (QBetaSingleHabiroGenerator, open with no instance) and the parity IS derived (bar-INVARIANT, not bar-odd). What is missing is a SELECTOR. That PR corrected two of its own three proposed gates — parity is a class FILTER admitting the entire symmetric q-integer family at once, and the Hankel condition c_2*c_4 = c_3^2 is VACUOUS for rank-1 candidates. The survivors TEST a candidate once you have one; they do not PRODUCE one. The gap is a source, not a test.",
+        "distinct_from": "the N=1 slot, which entries 10-10d DO answer (M = cos(a_D - h^2/4)*cos(h^2/4), Lean-proved). Different slot; do not read one as the other."
+      },
+      {
+        "item": "K(delta)",
+        "note": "free function; filtered but not determined"
+      }
+    ],
+    "corroborates_a_sibling_result": {
+      "sibling": "Step 17 — the only surviving justification for the cosine is a KZ/Kohno-Drinfeld holonomy, and nothing supplies one.",
+      "this_arc_measured_the_same_thing_from_the_other_side": "entry 15 (merged, on main): bar DOES act as Kohno-Drinfeld partition conjugation on the block CHARACTERS (bar chi^(3) = chi^(1^3), exact, convention-free) but NOT on the Markov weights — every residual carries the single factor (z + zbar), so the weights are conjugation-equivariant iff z is bar-ODD, which neither convention is. Independent evidence for Step 17's claim.",
+      "note": "both landed 2026-08-31, so neither cites the other. Recorded here so the connection is not lost."
+    },
+    "symbol_collision": {
+      "symbol": "K",
+      "step14": "trace -> MeV scale, outside the Hecke trace; verdict NEGATIVE",
+      "entries_10c_12_16": "N=1 factor's multiplicative constant, K(0)=1, ~1; verdict FREE then filtered-but-undetermined",
+      "note": "neither verdict transfers; see entry 16b"
+    },
+    "q0_anchor": {
+      "pin": "physical_proton",
+      "registered_in": "computations/q0_anchor_manifest.json"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "derives_nothing_new": true,
+      "c_k_produced": false,
+      "q_beta_ppb": 1279
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

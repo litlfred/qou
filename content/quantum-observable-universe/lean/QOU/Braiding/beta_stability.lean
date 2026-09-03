@@ -1,43 +1,34 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.Braiding.beta_stability
+# `QOU.Braiding.beta_stability` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Canonical declaration** for content block referenced by
-`qou:QOU.Braiding.beta_stability`.
+This module used to hold `BetaStabilityContext` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[BetaStabilityContext]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
+
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.Braiding.beta_stability`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`nuclear-interactions/beta-stability.lean`](../../nuclear-interactions/beta-stability.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `betaStabilityLine`, `classical_limit_symmetric`, `neutron_excess`, `stableNeutronNumber`, `nOverP_classical`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/Braiding/beta_stability.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.Braiding
-
-
-/-- Abstract context for the `beta_stability` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class BetaStabilityContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Proton number `p`. -/
-  p : ℕ
-  /-- Stable neutron number `n*(p)` for proton number `p`. -/
-  n_star : ℕ
-  /-- Skein binding Lagrangian as a function of neutron number. -/
-  L_skein : ℕ → ℝ
-  /-- Manuscript identity: `n*(p)` extremises `L_skein` at fixed `p`:
-      `L_skein(n*) ≤ L_skein(n)` for all `n`. -/
-  claim_beta_stability : ∀ n : ℕ, L_skein n_star ≤ L_skein n
-
-/-- **Content statement** (from manuscript):
-
-The stable neutron number $n^*(p)$ for each element is determined
-by extremizing the Skein binding Lagrangian
-([Skein binding Lagrangian](#def:skein-binding-lagrangian)) over $n$
-at fixed $p$.
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-def beta_stability [ctx : BetaStabilityContext] :
-    ∀ n : ℕ, ctx.L_skein ctx.n_star ≤ ctx.L_skein n :=
-  ctx.claim_beta_stability
-
-end QOU.Braiding

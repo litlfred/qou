@@ -1,40 +1,34 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.explicit_alpha_k_h4
+# `QOU.BraidsAndKnots.explicit_alpha_k_h4` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Canonical declaration** for content block Explicit α_k at H_4.
+This module used to hold `ExplicitAlphaKH4Context` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[ExplicitAlphaKH4Context]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
 
-Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
-this plural `QOU.BraidsAndKnots` namespace was inherited from existing
-`.ts` lean.ref URIs (a pre-existing convention drift).
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.BraidsAndKnots.explicit_alpha_k_h4`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`mass-theory/explicit-alpha-k-h4.lean`](../../mass-theory/explicit-alpha-k-h4.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `r_3_h4_coefficient`, `alpha_3_H4`, `R3OrthogonalToLowerDepthsH4`, `r_3_orthogonal_to_lower_depths`, `Alpha3H4MarkovPairing`, `alpha_3_H4_markov_pairing`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/BraidsAndKnots/explicit_alpha_k_h4.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.BraidsAndKnots
-
-
-/-- Abstract context for the `explicit_alpha_k_h4` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class ExplicitAlphaKH4Context extends QOU.Shared.MarkovTraceContext where
-  /-- Number of `S_4` conjugacy classes (`p(4) = 5`). -/
-  n_classes : ℕ
-  /-- Manuscript identity: `H_4(R, q)` has exactly `p(4) = 5`
-      conjugacy classes (the partitions of 4). -/
-  claim_explicit_alpha_k_h4 : n_classes = 5
-/-- **Content statement** (from manuscript):
-
-**Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
-*Let $z = 1/(\sqrt q + 1/\sqrt q)$ be the Markov parameter and
-$\{T_{w_C}\}_C$ canonical Hecke representatives of the $p(4) = 5$
-conjugacy classes of $S_4$:*
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-def explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :
-    ctx.n_classes = 5 :=
-  ctx.claim_explicit_alpha_k_h4
-
-end QOU.BraidsAndKnots

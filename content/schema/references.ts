@@ -1511,6 +1511,51 @@ export const references: Reference[] = [
     page: "277-282",
   }),
 
+  // ── Added 2026-08-31 (bean qou-e4eu) ──────────────────────────
+  // Two standard texts cited from Lean `-- Ref:` that were absent from the
+  // bibliography. Surfaced by making validate-references.ts runnable for the
+  // first time (scripts/run-validate-references.ts); a `-- Ref:` naming
+  // nothing is a `sorry` whose stated warrant does not exist (AGENTS.md §1).
+  //
+  // Both are identified by the citing comment itself, not by inference:
+  // FinitelyGeneratedConeClosed.lean names "Convex Analysis, Cor. 17.1.2",
+  // and HeckeTwBasis.lean carries the Björner–Brenti DOI inline. No DOI is
+  // asserted for Rockafellar — the Princeton reissue has one, but it was not
+  // verifiable from this sandbox (arxiv.org and general egress are blocked),
+  // and a guessed DOI is worse than none.
+  ref({
+    id: "rockafellar1970",
+    type: "book",
+    title: "Convex Analysis",
+    author: [
+      { family: "Rockafellar", given: "R. Tyrrell" },
+    ],
+    publisher: "Princeton University Press",
+    "publisher-place": "Princeton, NJ",
+    issued: { "date-parts": [[1970]] },
+    "collection-title": "Princeton Mathematical Series",
+    "collection-number": 28,
+    note: "Cited for the conic Carathéodory theorem, Cor. 17.1.2, in QOU/Mathlib/FinitelyGeneratedConeClosed.lean.",
+  }),
+
+  ref({
+    id: "bjorner-brenti2005",
+    type: "book",
+    title: "Combinatorics of Coxeter Groups",
+    author: [
+      { family: "Björner", given: "Anders" },
+      { family: "Brenti", given: "Francesco" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[2005]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 231,
+    DOI: "10.1007/3-540-27596-7",
+    URL: "https://doi.org/10.1007/3-540-27596-7",
+    note: "Cited for Coxeter-group length and the Hecke T_w basis in QOU/Knot/HeckeTwBasis.lean, JetGradePromotion.lean, BlockLengthAdditive.lean and JetGradeLengthShift.lean. DOI taken from the citing Lean comment, which carries it inline.",
+  }),
+
   // ── Leitner 2026 (this manuscript) ────────────────────────────
   ref({
     id: "leitner2026",

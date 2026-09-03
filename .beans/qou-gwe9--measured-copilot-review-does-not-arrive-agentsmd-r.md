@@ -748,6 +748,24 @@ before that.
 datapoint is whatever a fresh session's first PR produces; nothing here needs to
 be bought.
 
+### Request row 2026-08-31 ~04:52Z — qou#6369, accepted-empty
+
+`request_copilot_review` on **litlfred/qou#6369** (q-RH trace-identity tranche,
+branch `claude/q-riemann-hypothesis-gaps-zgxd8m`), fired ~04:52Z. Response body
+**empty** — the known-accepted shape, not the quota-refusal string.
+
+Recording the timestamp only so the latency is measurable if a review lands.
+**Not re-requested**, and it should not be: a sibling session's check-in on
+#6254 records `>= 11h56m with no review` from a 2026-08-30 14:50Z accepted
+request spanning the UTC day boundary, and reaches the conclusion that firing
+requests is what creates the shortage.
+
+Noting for honesty that this request was fired **before** I had read that
+sibling's finding. AGENTS.md's live text says reviews do arrive subject to
+quota and forbids only re-requesting after every push, so the single request
+was within the documented guidance — but the sibling's measurement is newer
+than that text, and on its evidence the right default is now **do not request
+at all** unless the bean's own guidance changes.
 
 ---
 
