@@ -877,6 +877,34 @@ decompositions into one additive many-body series. The Δ_λ gate is dissolved �
 it was never a per-block density — but the many-body series is not yet a closed
 single form; the 4-body ⁴He piece (magic-A) is its most-derived member at +5.87 %.
 
+> **🛑 CURRENCY (2026-08-29 OWNER RULING A) — the deuteron member of that shape
+> family is RETIRED. The paragraph above says "deuteron `6₂` is fixed"; it is
+> not, and the deuteron is no longer a volume term at all.**
+>
+> The deuteron knot is the **canonical braid closure** (trefoil / Hopf),
+> **Vol = 0** — two of the three routes give zero, and only the census *lookup*
+> gave `Vol(6₂) ≈ 4.40083251612`. The `6₂` census assignment is **retired**, and
+> the explicit corollary of the ruling is that **the deuteron binding is NOT a
+> hyperbolic-volume term** (the Bloch volume leg is proved 0, PR #5242). So
+> open item (i) no longer reads "the deuteron is fixed, A=3/A=4 are heuristic":
+> the deuteron is *excluded from the volume shape*, which removes the family's
+> one supposedly-settled member.
+>
+> The obvious replacement was tested and failed: sourcing the binding from the
+> **Gram/Frobenius pairing + confinement SDP** (`deuteron_real_sdp.py`, H₆) is a
+> **scope-(a) negative** — the diagonal Gram SDP is degenerate and 0 of 6
+> off-diagonal encodings derive the binding; the single non-zero result
+> (`2.22456607`) is the AME value fed in as the constraint, i.e. circular. Same
+> intensive-vs-extensive gap as everywhere else on this front.
+>
+> Rulings and measurements:
+> [deuteron-knot owner decision](audits/2026-08-29-deuteron-knot-owner-decision.md),
+> [Gram-SDP compute](audits/2026-08-29-deuteron-binding-via-gram-sdp-compute.md),
+> consolidated arc ledger
+> [bk-crossing reassessment](coordination/2026-08-29-bk-crossing-mass-binding-arc-reassessment.md).
+> Note that ledger also flags the exact-`ℏ_q²` saturated-fraction value as
+> **suspect numerology** (`qou-brng`) — do not chase it.
+
 > **⚠ CURRENCY (2026-08-10) — item (ii) is NOT independently open; it is gated on
 > `conj:s5-so3-fiber-action`. Do not open a scale-rule probe.** The list above
 > predates the **GAP-A-4 final retrospective (2026-06-05)**, which closed that
@@ -969,8 +997,30 @@ The default binding-energy compute IS the depth-stratified tower sum:
 
 α_k coefficients (NOT empirical fits):
 - α_0 = α_1 = α_3 = 1 (trivial layers)
-- α_2 = z² = (1/(√q+1/√q))² ≈ 0.2493 (Markov braid-trace marker²)
+- α_2 = z² ≈ 0.2493 (Markov braid-trace marker²) — **🛑 convention-C
+  frame, in both spelling and value; see the scope note below**
 - α_{k≥4} = m_e · 8G ≈ 3.7445 (Vol(L6a4) Borromean plateau)
+
+> **🛑 CONVENTION SCOPE (added 2026-09-03) — the α₂ line above is
+> convention C, sitting in the canonical-default compute section.**
+> It was written `z = 1/(√q + 1/√q) = √q/(q+1)`, which is the Markov
+> parameter of **convention C**; the 2026-08-15 owner ruling (R1) makes
+> **convention D** (`z = q³/(q²+1)`) canonical and excises C. At the
+> proton q₀ the two differ by more than a factor of 1.5 in α₂:
+>
+> | frame | z(q₀) | α₂ = z² |
+> |---|---|---|
+> | **C** (as written above) | 0.499320334184 | **0.2493207961** |
+> | **D** (canonical since 2026-08-15) | 0.612688037146 | **0.3753866309** |
+>
+> **Do NOT simply substitute 0.3754 and call it migrated.** Per the
+> standing discipline, a C-frame result is *correct for C* and needs
+> **scoping**, and a z-swap is not by itself a valid re-derivation —
+> the depth-stratified functional's α_k assignment has to be re-derived
+> in the D frame, and whether the PROBE-2 `z^k`-series structure below
+> survives that is exactly what is *not* yet established. Until it is,
+> read every α₂-dependent number in this section as **C-conditional**.
+> Tracked with the rest of the D migration (`qou-cds1` family).
 
 > **PROBE 2 verdicts (2026-07-02) — assignment-rule structure checks**
 > ([probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
