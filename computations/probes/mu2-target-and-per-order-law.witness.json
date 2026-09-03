@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:33:37.356694+00:00",
-  "commitSha": "5295a9678c73d40613f0b4605a00843ca03ff3dc",
+  "computedAt": "2026-09-03T04:48:35.461086+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "mu2_target_is_zero",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 15,
   "computation": "mu2-target-and-per-order-law",
   "scriptFile": "mu2_target_and_per_order_law_probe.py",
   "scriptHash": "ba6a8e964440",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b05446067a829eba02ebbeeadd1b8fe76673987c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,9 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -74,5 +75,7 @@
       "scope": "(b), cited invariant = structural vanishing of the 2-body residual"
     },
     "caveat": "k2 = 0 is a property of the SIMPLEX's construction, not an independent measurement. It is the right third point because it is the same kind of quantity as k3 and k4 — target-over-measured for the same model against the same H12 cumulants — but re-anchoring the simplex away from the deuteron would require redoing it."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

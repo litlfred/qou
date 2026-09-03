@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:49:10.726081+00:00",
-  "commitSha": "373778916362da3ff99d571f0a9e5dc08c047d09",
+  "computedAt": "2026-09-03T04:47:24.608690+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "multiplicativity_refuted",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 15,
   "computation": "h12-trace-multiplicativity",
   "scriptFile": "h12_trace_multiplicativity_probe.py",
   "scriptHash": "7a3086abeb37",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6ae41e00659ec19600fefd4d8975d2335c472dcb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -87,5 +88,7 @@
     "lower_branch_relative_spread": "0.152264351823704470457196463147032760590804247287078544698004",
     "multiplicative": false,
     "reading": "No single g0 solves all four triangles, so the H12 subset-trace is NOT a multiplicative Mayer weight. A Mayer/Ursell identity should therefore not be expected to hold of it at ANY order; #6152's n=3 match is the coincidence to explain, not its n=4 miss. This says nothing against the alternation, which the committed He4 witness reproduces."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

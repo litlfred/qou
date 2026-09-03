@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:41:24.986796+00:00",
-  "commitSha": "1a063361160cb2330af3f610ab91009b3f39943c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:48:41.691227+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_sibling_rates_verified",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "no_distance_decay_in_the_trace_probe",
   "scriptFile": "no_distance_decay_in_the_trace_probe.py",
   "scriptHash": "ee85428e5902",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "925b78d10bde5819b9020aa34262bbf521084919",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -123,5 +126,7 @@
     "THIS TOUCHES THE FORM, NOT THE RATES. The sibling's spectral gaps are exact and are re-derived here rather than quoted; 1/q^2 for pp and nn holds to 1.15e-41. The probe being addressed had already identified the form as its load-bearing assumption and said so plainly — this is the measurement it said was missing, not a correction of something it got wrong.",
     "THE LINK-INVARIANCE ARGUMENT IS THE LIKELY MECHANISM, NOT A PROOF GIVEN HERE. What is measured is that four routings and two axial distances give one value to 1e-15. That the closures are actually isotopic is the natural explanation and is consistent with the adjacent bond (permutation [2,3]) matching the far one (permutation [2,6]), but no isotopy is exhibited and no independent link invariant is computed. If some other functional in the framework is NOT a closure invariant, a distance decay could live there and nothing here would see it.",
     "The saturation values are quoted from all_pairs_bonds_and_saturation_probe rather than recomputed. They were measured at A = 3 only, one far-bond configuration per nucleus, so the claim that they have no r^(s-1) shape rests on the shape being wrong at the one separation available (s = 2), not on a fit across several."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

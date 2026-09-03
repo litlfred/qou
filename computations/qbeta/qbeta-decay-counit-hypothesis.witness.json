@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T03:38:16.671350+00:00",
-  "commitSha": "3008755d5fad425bdeb8b16839eaa24ee403b8d0",
+  "computedAt": "2026-09-03T04:59:56.264184+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "my y_(1^3) numerator / q^2 IS QOU.QBeta.AdmissibleRoots.wtNumer",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 20,
   "computation": "qbeta-decay-counit-hypothesis",
   "scriptFile": "qbeta_decay_counit_hypothesis_probe.py",
   "scriptHash": "cd141c2ee6b9",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "9e1a2f7d7152691e1f2ce8b7bc35aa996004af17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,7 +64,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -102,5 +102,7 @@
     "free_parameters": 0,
     "verdict": "REFUTED IN THE STRONG FORM, and the refutation is the sharper result. z = 1 -- where the Ocneanu trace degenerates to the Frobenius counit -- reproduces the measured Q_beta scalar to 0.168 %, against 12.470 % for the augmentation (z = q) and 43.157 % for the Markov trace at z_D. But z = 1 is PROVED not an admissible Markov parameter (one_not_root, unconditional on the substrate window), and the admissible set is EXACTLY those two. So neither available point fits and the point that fits is forbidden. At z_required the (1^3) weight is NEGATIVE (-0.014131), so no positive-weight trace in this family reaches it. SCOPE-(a): measured non-admissibility and a measured negative weight; NOT a proved structural exclusion, which would need a positivity invariant on the decay pairing that the corpus does not carry.",
     "q0Anchor": "muon"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

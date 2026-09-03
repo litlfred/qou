@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T15:01:15.516270+00:00",
-  "commitSha": "e641d6231f5b241f306251640fef720c77681d32",
+  "computedAt": "2026-09-03T04:59:59.193726+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "anchors_share_experimental_input",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "qbeta-ladder-alpha-form-filter",
   "scriptFile": "qbeta_ladder_alpha_form_filter_probe.py",
   "scriptHash": "9f5ce4b4e2f1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "f26b9ac9728bd1f1318eeac0b87f2b49864b3bb4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -73,5 +73,7 @@
         "passes_value_row": false
       }
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

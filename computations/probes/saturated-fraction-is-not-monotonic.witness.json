@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T15:05:39.879548+00:00",
-  "commitSha": "f8d16f249ae7581b8ab6e428884bb66b630777b7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:49:27.524066+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "framework_volume_alone_does_not_isolate_the_light_term",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "saturated-fraction-is-not-monotonic",
   "scriptFile": "saturated_fraction_is_not_monotonic_probe.py",
   "scriptHash": "beabe3df95d3",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "249575e2e5e1c38c55dfaabc2b70f1f2764adb08",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,10 +47,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -110,5 +112,7 @@
       "decreasing_steps": "[(4, 6)]",
       "bean_claim": "qou-brng: 'rises monotonically toward hbar_q^2 with A (2H 0.12 -> 4He 0.77 -> 40Ca 0.93 -> 56Fe 0.95)' -- monotonic only because it skips A=6 and A=8"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T20:40:10.819356+00:00",
-  "commitSha": "825d45ce967538f163b92019e87d8a6efd250f2e",
+  "computedAt": "2026-09-03T04:48:32.212269+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "golden_bound_is_h_below_one",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 27,
   "computation": "metallic-ladder-regime-test",
   "scriptFile": "metallic_ladder_regime_test_probe.py",
   "scriptHash": "4de3f2028571",
-  "scriptCommitSha": "825d45ce967538f163b92019e87d8a6efd250f2e",
+  "scriptCommitSha": "4365b161f185645245badf12d506e9f1029930bb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,8 +54,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -89,5 +91,7 @@
   "caveats": [
     "SCOPE: this tests the observables a SELECTION regime would live in — the cone (Gram signature), the objective, and the discrete solution — at H_3 and H_9. A regime change could still live in something not formed here: a different algebra level, or a functional other than these. The negative is 'the metallic rungs are not distinguished in the SDP data at H_3 or the selection at H_9', not 'the metallic ladder is physically inert'.",
     "The growth-rate maximum sits at h = 0.9875 with a 0.025 scan step, so it is within resolution of h = 1 and the maximum is very flat (0.2% above its neighbour). It is reported as INHERITED rather than absent, because tr_M(free) — which contains no LP — peaks at exactly the same h. Controls |t3| and |x_free| peak at h = 0.7125 and |G| at 0.9375."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

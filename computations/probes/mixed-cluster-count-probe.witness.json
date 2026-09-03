@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T17:16:50.463615+00:00",
-  "commitSha": "32a6d03e276560911e13b1b8b4022578640100de",
+  "computedAt": "2026-09-03T04:48:34.965643+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "mixed_only_cluster_count_halves_the_worst_error_at_A_le_4",
@@ -38,7 +38,7 @@
   "computation": "mixed-cluster-count-probe",
   "scriptFile": "mixed_cluster_count_probe.py",
   "scriptHash": "0ef050595279",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "8c32116ee0fe440491129e2ed64f1a421211397a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -166,5 +170,7 @@
       "The geometric route needs the ARRANGEMENT derived before any number from it is quotable; it currently carries 32.5 points of freedom at 6Li."
     ],
     "verdict": "The cluster count M_n(K) in t7qv's geometric weight must count only mixed clusters — at least one proton and one neutron — because pp, nn, ppp and nnn are all unbound. M_n = C(A,n) − C(Z,n) − C(N,n), which is Z·N at n = 2. On a single deuteron anchor this halves the worst A <= 4 error, 25.0% -> 12.5%, with 4He at −6.60%, and flips a uniform over-count into a uniform under-count. It does not rescue A >= 5, where the divergence is geometric; and the geometric route still carries a 32.5-point arrangement freedom at 6Li whose favourable member is the minority labeling."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
