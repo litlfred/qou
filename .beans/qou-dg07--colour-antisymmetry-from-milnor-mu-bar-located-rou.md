@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-09-03T04:40:19Z
+updated_at: 2026-09-03T05:29:26Z
 ---
 
 ## Summary
@@ -470,3 +470,34 @@ STILL OPEN: whether any pure braid in the image has a closure with
 mu-bar != 0. A nontrivial pure braid can still have mu-bar = 0, so the
 vacuous-agreement escape is NARROWED, not closed. Milnor computation, not
 a braid one.
+
+## §10.2 CLOSED (2026-09-03) — the monodromy image is all of B_3
+
+Probe: computations/probes/colour_mu_bar_monodromy_probe.py
+Witness: computations/probes/colour-mu-bar-monodromy-probe.witness.json
+Audit: docs/audits/2026-08-29-colour-antisymmetry-from-milnor-mu-bar.md §11
+
+The six local monodromies lift to only FOUR distinct braid words, two of
+which generate: sigma_1 = g0^-1, sigma_2^-1 = g0^-1 g1 g0 (g0 = sigma_1^-1,
+g1 = sigma_1^-1 sigma_2^-1 sigma_1). The image contains both Artin
+generators and is a subgroup of B_3, hence EQUALS B_3; its pure part is all
+of P_3. So (sigma_1 sigma_2^-1)^3 is in the image — built from the loop
+lifts, Brunnian, mu-bar_123 = -1 — against 0 for the identity, also in the
+image, both pure hence both sign character +1. F5's vacuous-agreement
+escape is CLOSED, on mu-bar itself.
+
+The sampling route says the opposite and is wrong: 6/6 pure pairwise
+products have indeterminacy 1; a radius-5 Cayley ball (14,801 words) has
+100 Brunnian pure elements, all mu-bar = 0. The Borromean braid needs 12
+generator-letters. A negative from a finite sample bounds the sample.
+
+Two self-caught defects (§11.3): mu-bar written as a SUM of its three
+cyclic readings (they are EQUAL; Borromean returned -3 vs +-1), then cyclic
+agreement enforced unconditionally (it holds only mod the indeterminacy).
+Neither reached a witness or doc. Corpus already had the right form in
+gap2_he4_borromean_mu_bar.py.
+
+Still open elsewhere in this arc (unchanged): binding-knots-visual-inventory
+braid words (3 of 4 close to the wrong component count — needs an indexing
+convention choice); rem:holonomy-trefoil 'isomorphism' -> 'surjection';
+rem:brings-qou-4tuple 'degree 4'.
