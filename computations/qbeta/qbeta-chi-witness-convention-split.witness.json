@@ -1,0 +1,272 @@
+{
+  "computation": "qbeta-chi-witness-convention-split",
+  "assertions": [
+    {
+      "name": "only_one_convention_reaches_n_ge_15",
+      "computed": [
+        "sign-only-crossings"
+      ],
+      "expected": [
+        "sign-only-crossings"
+      ],
+      "passed": true,
+      "note": "so an A-scan crossing A = 4 -> 5 changes convention silently"
+    },
+    {
+      "name": "that_is_not_the_calibration_atoms_convention",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "same_atom_cross_convention_pairs_compared",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "deuteron at n = 6 and helium-4 at n = 12"
+    },
+    {
+      "name": "weights_are_convention_independent_at_a_FIXED_PIN",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "y_lambda depends on n and q only, so it is safe to reuse across the CONVENTION split — but only at the same q pin"
+    },
+    {
+      "name": "cross_pin_pairs_were_excluded_not_averaged_in",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the -muon variants differ in q at 1.3e-8, moving y_lambda by 5.9e-10; a first draft compared across pins and failed"
+    },
+    {
+      "name": "characters_are_NOT_convention_independent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "chi_lambda carries the convention — never reuse across the split"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "dps": 50,
+    "scanned": "computations/chi-*.witness.json"
+  },
+  "data": {
+    "conventions": [
+      {
+        "convention": "averaged-crossings",
+        "witnesses": 16,
+        "n_strands": [
+          3,
+          6,
+          9,
+          12
+        ]
+      },
+      {
+        "convention": "colour-weighted-averaged-crossing",
+        "witnesses": 11,
+        "n_strands": [
+          6,
+          9,
+          12
+        ]
+      },
+      {
+        "convention": "sign-only-crossings",
+        "witnesses": 7,
+        "n_strands": [
+          6,
+          9,
+          12,
+          15,
+          18
+        ]
+      },
+      {
+        "convention": "bring_color_weighted-averaged-crossings",
+        "witnesses": 1,
+        "n_strands": [
+          12
+        ]
+      }
+    ],
+    "n_ge_15_reached_by": [
+      "sign-only-crossings"
+    ],
+    "same_atom_pairs": [
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "sign_only": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-deuteron-h6-at-q0-50dps.witness.json"
+      },
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "sign_only": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "sign_only": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-3-h9-at-q0-50dps.witness.json"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "sign_only": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-3-h9-at-qinv-50dps-colour-weighted.witness.json"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "sign_only": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-tritium-h9-at-q0-50dps.witness.json"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "sign_only": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-tritium-h9-at-qinv-50dps-colour-weighted.witness.json"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "sign_only": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-4-h12-at-q0-50dps.witness.json"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "sign_only": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-4-h12-at-qinv-50dps-colour-weighted.witness.json"
+      }
+    ],
+    "worst_y_diffs": [
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "worst_y_diff": "1.00229e-50"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "worst_y_diff": "6.89072e-52"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "worst_y_diff": "6.89072e-52"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "worst_y_diff": "1.20066e-52"
+      }
+    ],
+    "worst_chi_diffs": [
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "worst_chi_diff": "9.4615"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "worst_chi_diff": "36.6859"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "worst_chi_diff": "41.0642"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "worst_chi_diff": "305.151"
+      }
+    ],
+    "skipped_pairs": [
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "sign_only": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-deuteron-h6-at-qinv-50dps-colour-weighted.witness.json",
+        "reason": "a witness lacks y_lambda or chi_lambda"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "sign_only": "chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-3-h9-at-qinv-50dps-colour-weighted.witness.json",
+        "reason": "a witness lacks y_lambda or chi_lambda"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "sign_only": "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-tritium-h9-at-qinv-50dps-colour-weighted.witness.json",
+        "reason": "a witness lacks y_lambda or chi_lambda"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "sign_only": "chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+        "colour_weighted": "chi-helium-4-h12-at-qinv-50dps-colour-weighted.witness.json",
+        "reason": "a witness lacks y_lambda or chi_lambda"
+      }
+    ],
+    "excluded_cross_pin_pairs": [
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "pin_a": "",
+        "pin_b": "1.1099785827513808075916"
+      },
+      {
+        "n": 6,
+        "atom": "deuteron",
+        "pin_a": "",
+        "pin_b": "1.1099785827513808075916"
+      },
+      {
+        "n": 9,
+        "atom": "helium-3",
+        "pin_a": "1.1099785827513808075916",
+        "pin_b": "1.1099785956427390466817"
+      },
+      {
+        "n": 9,
+        "atom": "tritium",
+        "pin_a": "1.1099785827513808075916",
+        "pin_b": "1.1099785956427390466817"
+      },
+      {
+        "n": 12,
+        "atom": "helium-4",
+        "pin_a": "1.1099785827513808075916",
+        "pin_b": "1.1099785956427390466817"
+      }
+    ]
+  },
+  "context": {
+    "axis": "can committed chi witnesses be used to extend an A-scan past A = 4?",
+    "answer": "Not directly. Four conventions are in use and only sign-only-crossings reaches n = 15 and 18, while the binding law's calibration atoms are colour-weighted-averaged-crossing. Walking from A = 4 to A = 5 on committed witnesses changes convention at the boundary, and any shape change there would be an artefact.",
+    "what_is_safe": "y_lambda is convention-independent (agrees to 1e-51), because the Markov weights depend on n and q alone. chi_lambda is not (differs by 9.46 at n = 6 and 305.15 at n = 12, same atom). So the weights may be lifted and only the characters need recomputing — which is what makes extending the scan tractable.",
+    "scope": "Scope-(a). Nothing refuted, no witness edited. The convention field is present and correct everywhere; the hazard is that nothing forces a consumer to compare it."
+  },
+  "gitCommit": "5815ffa01c261b3789f8f9dfe1180ae083c3e459",
+  "durationMs": 0,
+  "scriptFile": "qbeta_chi_witness_convention_split_probe.py",
+  "scriptHash": "51ca3713afd7",
+  "scriptCommitSha": "unknown",
+  "commitSha": "5815ffa01c261b3789f8f9dfe1180ae083c3e459",
+  "engine": "mpmath",
+  "computedAt": "2026-09-03T15:40:52.099868+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
