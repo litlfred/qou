@@ -34,7 +34,8 @@ the complete graph (`L = 2.40868`, the largest the bond topology can produce):
 ## Against every energy scale in the corpus
 
     m_e                    0.511 MeV    0.122 x E_0     (my own earlier outlier)
-    E_0 = m_e/(q_0(q_0-1)) 4.186 MeV    1.000 x E_0     (CAL-1; the corpus's)
+    conv B = Q_beta        0.782 MeV    0.187 x E_0     (E_0_CONVENTIONS, hbar_q^0)
+    E_0 = m_e/(q_0(q_0-1)) 4.186 MeV    1.000 x E_0     (CAL-1; conv A, hbar_q^1)
     hbar_q^2 * m_N         9.218 MeV    2.202 x E_0     (SaturationPeakStructure's unit)
     ---- required to close one alpha    2.956 x E_0 ----
     ---- required to close the bulk     6.253 x E_0 ----
@@ -87,8 +88,10 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MUON_50_DIGIT_STR  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
+)
 
 set_compute_dps(40)
 
@@ -103,6 +106,10 @@ M_N_MEV = "938.91875"
 # computations/atom_mass_derived.py, E0_MEV = m_p / tr_M(proton).  Excised
 # 2026-08-11 (bean qou-exam); carried here only as an upper comparison point.
 EXCISED_ABS_MASS_SCALE_MEV = "1662.7295"
+# derivation_chain.E_0_CONVENTIONS["B_q_value_absorbed"]: E_0 = Q_beta^CODATA,
+# the hbar_q^0 rung of the registry (bean qou-59j5 §2). Computed in main() as
+# m_n - m_p - m_e from the mpf CODATA constants — NOT from q_parameter's
+# Q_NEUTRON_MEV, which is a Python float and would be f64-into-mpmath.
 
 
 def main() -> int:
@@ -117,9 +124,19 @@ def main() -> int:
     q = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf(str(M_E_MEV))
     E0 = m_e / (q * (q - 1))
+    conv_B = (mp.mpf(str(M_N_MEV_VALIDATION)) - mp.mpf(str(M_P_MEV_VALIDATION))
+              - m_e)   # Q_beta^CODATA = m_n - m_p - m_e, all mpf sources
     hbar_q = 1 - 1 / q
     m_N = mp.mpf(M_N_MEV)
     hq2_mN = hbar_q ** 2 * m_N
+
+    # Copilot review on #6443: ENFORCE the proton-anchor assumption. The L values
+    # were measured at the proton pin; the two pins differ at the 9th digit.
+    check("q_0 is the PROTON pin (the pin the L values were measured at)",
+          Q_50_DIGIT_STR != Q_MUON_50_DIGIT_STR
+          and Q_50_DIGIT_STR.startswith("1.10997858"),
+          f"Q_50_DIGIT_STR = {Q_50_DIGIT_STR[:20]}..., muon pin = "
+          f"{Q_MUON_50_DIGIT_STR[:20]}...")
 
     L_chain = mp.mpf(L_CHAIN_A4)
     L_k4 = mp.mpf(L_K4_BEST)
@@ -164,7 +181,10 @@ def main() -> int:
     print("-" * 78)
     scales = [
         ("m_e", m_e, "my own earlier outlier (qou-59j5); no reason was given"),
-        ("E_0 = m_e/(q_0(q_0-1))", E0, "CAL-1 — a calibration, not a derivation"),
+        ("conv B = Q_beta^CODATA", conv_B,
+         "derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed'], hbar_q^0"),
+        ("E_0 = m_e/(q_0(q_0-1))", E0, "CAL-1 — a calibration, not a derivation; "
+         "= E_0_CONVENTIONS['A_single_hecke_tick'], hbar_q^1"),
         ("hbar_q^2 * m_N", hq2_mN, "the unit SaturationPeakStructure states a_V in"),
         ("m_p / tr_M(proton)", mp.mpf(EXCISED_ABS_MASS_SCALE_MEV),
          "EXCISED 2026-08-11 (qou-exam) — absolute-mass chain"),
@@ -196,7 +216,7 @@ def main() -> int:
 
     check("NO live corpus energy scale closes even one alpha",
           len(live_that_close_alpha) == 0,
-          f"none of m_e, E_0, hbar_q^2*m_N reaches "
+          f"none of m_e, conv-B Q_beta, E_0, hbar_q^2*m_N reaches "
           f"{mp.nstr(E_req_alpha, 8)} MeV. The largest live scale is "
           f"hbar_q^2*m_N = {mp.nstr(hq2_mN, 8)} MeV, still "
           f"{mp.nstr(E_req_alpha/hq2_mN, 6)}x short of one alpha and "
@@ -246,7 +266,7 @@ def main() -> int:
 
     # the count guard is deliberate: `all([])` is True, so a probe that fell
     # through every check would otherwise report success having verified nothing.
-    ok = all(checks) and len(checks) == 4
+    ok = all(checks) and len(checks) == 5
     print("\n" + "=" * 78)
     print(f"  {sum(checks)}/{len(checks)} checks passed")
     print("=" * 78)
@@ -260,8 +280,11 @@ def main() -> int:
             "scale the corpus carries. Records that qou-n4zp's percentages are "
             "conditional on E_0 and that the exclusion is scope (a), not (b)."
         ),
+        "beans": ["qou-n4zp", "qou-59j5", "qou-brng"],
+        "q0_anchor": "physical_proton",
         "inputs": {
             "q0": mp.nstr(q, 40),
+            "conv_B_Qbeta_mev": mp.nstr(conv_B, 20),
             "L_chain_A4": L_CHAIN_A4,
             "L_complete_graph_A4": L_K4_BEST,
             "alpha_scale_mev": ALPHA_SCALE_MEV,
