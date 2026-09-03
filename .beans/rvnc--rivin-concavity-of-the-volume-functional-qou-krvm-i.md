@@ -1,17 +1,16 @@
 ---
 # rvnc
-title: 'Rivin concavity of the volume functional — qou-krvm (iv), the last untouched hypothesis'
-status: in-progress
+title: Rivin concavity of the volume functional — qou-krvm (iv), the last untouched hypothesis
+status: completed
 type: task
 priority: high
 tags:
     - lean
     - hyperbolic-volume
     - angle-structures
-parent: krvm
 created_at: 2026-08-09T19:15:46Z
-branch: claude/fivetwo-level7-ladder-numerators
-updated_at: 2026-08-09T19:22:00Z
+updated_at: 2026-09-03T04:38:06Z
+parent: krvm
 ---
 
 `M004AngleStructure.lean` lists four hypotheses of `SymmetricOptimum.optima_coincide`
@@ -103,3 +102,36 @@ modulus will not apply.
 
 So `qou-krvm` (iv) is **not** discharged — but what remains is assembly, not the
 mathematical content, which is done.
+
+CLAIMED 2026-09-03 (session back-to-math). Plan: formalize single-ideal-tetrahedron concavity — Hessian on the slice gamma=pi-alpha-beta is [[-cotA-cotG,-cotG],[-cotG,-cotB-cotG]]; det = cotA cotB + cotB cotG + cotG cotA = 1 (triangle cotangent identity for A+B+G=pi), diagonal -cotA-cotG = -sinB/(sinA sinG) < 0 => negative definite. Then block-diagonal over tets + restriction to gluing slice preserves NSD. Verifying against M004AngleStructure hypothesis (iv) + BlochWignerLobachevsky (has Lob, Cl_2, tetAngle).
+
+── UPDATE 2026-09-03 (session back-to-math), corpus-grep before writing new Lean ──
+
+(iv)'s CONCAVITY is ALREADY DISCHARGED in the corpus — this bean was stale. The
+qou-7425 / qou-idvt cluster did the multi-tet lift while this bean still called
+(iv) 'untouched':
+
+ • QOU.Archimedean.tetVol_strictConcaveOn — single ideal tet, the real Lobachevsky
+   volume, StrictConcaveOn on the 2-D tetSimplex. Independent of my line-route
+   RivinConcavity.strictConcaveOn_tetVolLine (SOS Hessian). TWO proofs of the core.
+ • MultiTetVolumeConcave.totalVol_strictConcaveOn — block-diagonal sum over tets on
+   any convex block-in-simplex polytope (exactly this bean's planned lift).
+ • MultiTetVolumeConcave.m004Vol_maximizer_unique / convex_m004Polytope — concrete
+   figure-eight: unique volume maximiser. Uniqueness needs NO symmetry (strict
+   concavity alone), so (iv)'s 'invariant' half is not required to close m004.
+
+All verified sorry-free this session via lean-direct + #print axioms
+([propext, Classical.choice, Quot.sound]) against the restored v4-24-0 cache.
+
+WHAT I ADDED (not a re-derivation — the wiring/hygiene the bean's plan called for):
+ • MultiTetVolumeConcave.m004Vol_concaveOn : ConcaveOn ℝ m004Polytope totalVol —
+   the concrete (iv)-concave-half in the exact form SymmetricOptimum.optima_coincide
+   consumes as hf₂, greppable by the hypothesis framing. sorry-free.
+ • Narrowed the two stale '(iv) is untouched' notes in M004AngleStructure.lean to
+   point at the cluster and name the corpus's own tetVol volume theory.
+
+WHAT GENUINELY REMAINS OPEN (NOT concavity — do not re-attack that): the GEOMETRIC
+IDENTIFICATION that the analytic totalVol IS the hyperbolic volume of the ideal
+simplex (Mostow/Thurston; Mathlib has no ideal-tet geometry). That is beans
+qou-7y3g / qou-idvt T2, a large geometric-realization item, out of rvnc's scope.
+rvnc (the Rivin CONCAVITY) is done.
