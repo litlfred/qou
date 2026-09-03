@@ -7,7 +7,7 @@ priority: normal
 tags:
     - needs:combinatorics
 created_at: 2026-08-24T06:44:05Z
-updated_at: 2026-08-30T13:00:02Z
+updated_at: 2026-09-03T20:47:18Z
 parent: qou-vkmt
 ---
 
@@ -115,3 +115,8 @@ DOES NOT: Sum_{lam |- n} f^lam = I(n) itself. That still needs the two base case
 s(0) = s(1) = 1 tied to involutionNumber's, and the induction identifying the two
 sequences. Both are small next to what just landed, but they are not done, and no
 artifact should say the involution identity is proved until they are. Follow-up: qou-jl2.
+
+
+
+## 2026-09-03 — the 'zero consumers outside this file' measurement was WRONG
+6164a8ab6e removed YoungDiagramAddCell.mem_addCell (s) (hs) (x) on the measured claim that mem_addCell had zero consumers outside the file. QOU/SchurWeyl/MarkovConventionD.lean:83 (rowLen_two_pos_addCell, landed 08-23 in d239feda97) called it with that argument order, so MarkovConventionD — and everything downstream: MarkovTraceInstance, the Feynman markov_identification instance — has been red on main since 08-30. Not caught because nothing rebuilds the library: lean-direct on a single file certifies against the oleans ON DISK, and the restored cache predates the change. Fixed on PR #6526 by calling the surviving YoungDiagramAddable.mem_addCell μ c x hc. TRAP: a grep for consumers must include the argument-order-different call shapes, and a 'zero consumers' claim needs a rebuild of the importers, not a grep.
