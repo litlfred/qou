@@ -390,6 +390,7 @@ import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.QJucysMurphyEigen
 import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.MatRepEquiv
 import QOU.SchurWeyl.SeminormalInequivalence
 import QOU.SchurWeyl.OffDiagNonvanishing
 import QOU.SchurWeyl.SeminormalRangeTop
