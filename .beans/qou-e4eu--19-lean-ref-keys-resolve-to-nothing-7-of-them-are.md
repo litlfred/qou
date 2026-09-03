@@ -249,3 +249,31 @@ the extracted `sections/`).
 paper), `koroteev-zeitlin2022` (Lean arXiv id does not resolve), `murakami1996`
 (Kauffman/Hecke, undisambiguated). All three need author input or a
 key/URL repoint, not a lookup.
+
+## 2026-09-03 (cont.) — 3 -> 2: the 2 QOper.lean keys resolved (both had wrong URLs)
+
+Bib-triage sub-agent + web search confirmed both QOper.lean keys point at the
+WRONG arXiv id, and identified the true papers:
+
+- **`frenkel2020`** -> Frenkel-Koroteev-Sage-Zeitlin, "q-Opers, QQ-Systems, and
+  Bethe Ansatz", arXiv:**2002.07344** (2020). The Lean URL was 2007.11786 =
+  "Toroidal q-Opers" (Koroteev-Zeitlin) -- a real but DIFFERENT paper. Entry
+  added; URL repointed 2007.11786 -> 2002.07344.
+- **`koroteev-zeitlin2022`** -> Koroteev-Zeitlin, "q-Opers II: Generalized
+  Minors", arXiv:**2108.04184** (Crelle 2022). The Lean URL 2108.01557 does not
+  resolve (digit transposition). Entry added; URL repointed.
+
+No DOIs (JEMS/Crelle not verifiable this session). PR #6496 f2d49f15ba.
+
+**Status: 2 errors remain**, both genuine owner-decisions, NOT lookups:
+- **`murakami1996`** (JonesPolynomial.lean, "Kauffman bracket = Hecke Markov
+  trace"): no clean 1996 Murakami match. Content is already covered by existing
+  `jones1987` + `kauffman1987`. Recommend either DROP the redundant `-- Ref:`
+  line, or (if a distinct BMW source is wanted) rekey to J. Murakami, Publ.
+  RIMS 24 (**1990**) -- the Kauffman *polynomial* / BMW Markov trace, not the
+  bracket, and 1990 not 1996. Do not fabricate a 1996 entry.
+- **`frenkel-reshetikhin2002`** (quantum-langlands-dual.ts cites[]): no clean FR
+  2002 paper. Likely the q-characters / deformed-W-algebra Langlands piece --
+  either FR "q-characters ... deformations of W-algebras" (math/9810055, 1999)
+  or FR "Deformations of W-algebras" (q-alg/9708006, CMP 197, 1998). Recommend
+  rekey to the true year (`...1998`/`...1999`) after owner confirms which.
