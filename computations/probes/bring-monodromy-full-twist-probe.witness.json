@@ -1,0 +1,507 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Independent verification of the S_3 -> B_3 lift of the Bring colour monodromy (PR #6449, bring_monodromy_braid_lift_probe) by a different route: generic-direction projection, different base point, per-loop conjugacy with explicit conjugators, the full-twist consistency check (six-lift product == large-circle braid == Delta^{2k}), and generation of B_3 via surjection onto SL(2,Z) plus Delta^2 in the image. Statement B's premise is unchanged; no mu-bar computed.",
+  "computation": {
+    "script": "computations/probes/bring_monodromy_full_twist_probe.py",
+    "arithmetic": "mpmath mpc at 50 dps for root transport; exact integers for words, permutations, SL(2,Z) matrices; sympy over Q(t) for Burau characteristic polynomials. No float64; no float().",
+    "runtime_seconds": "155.147"
+  },
+  "parameters": {
+    "dps": 50,
+    "n_circle": 4000,
+    "n_segment": 1500,
+    "n_big_circle": 8000,
+    "n_big_segment": 2000,
+    "projection_theta_rad": "37/100",
+    "base_point": "5/2 + 3/4 i",
+    "large_circle_radius": 4,
+    "lasso_radius": "0.0390807715763",
+    "branch_point_min_separation": "0.117242314729",
+    "segment_clearance": "0.100809763841",
+    "sign_convention": "strands ordered by u = Re(w e^{-i theta}); on an adjacent exchange the letter is sigma_i^{+1} if the strand that was on the left has the larger v = Im(w e^{-i theta}) (passes in front), else sigma_i^{-1}. A ccw half-turn is sigma^{-1}; a ccw turn of all three roots is Delta^{-2}."
+  },
+  "guards": {
+    "max_adjacent_swaps_in_one_step": 1,
+    "min_u_gap_at_crossing": "1.076078608e-5",
+    "worst_step_over_separation": "0.0183431942",
+    "large_circle_max_adjacent_swaps": 1,
+    "large_circle_worst_step_over_separation": "0.003010231216",
+    "why_generic_direction": "with real z the cubic has real coefficients and two roots are conjugate with equal real parts, which degenerates a real-axis reading (PR #6449 §10.1 defect 2); projected onto e^{i theta} their u-coordinates differ by 2 Im(w) sin(theta), so that degeneracy cannot occur"
+  },
+  "loops": [
+    {
+      "branch_point": {
+        "re": "-0.97481553297803860307",
+        "im": "-0.22301272758464377094"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        1,
+        -2,
+        -1
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    },
+    {
+      "branch_point": {
+        "re": "-0.97481553297803860307",
+        "im": "0.22301272758464377094"
+      },
+      "braid_word_raw_length": 1,
+      "braid_word_reduced": [
+        -1
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    },
+    {
+      "branch_point": {
+        "re": "0.10582958618826802099",
+        "im": "-0.93713893783890343691"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        -1
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    },
+    {
+      "branch_point": {
+        "re": "0.10582958618826802099",
+        "im": "0.93713893783890343691"
+      },
+      "braid_word_raw_length": 5,
+      "braid_word_reduced": [
+        -2,
+        -1,
+        2
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    },
+    {
+      "branch_point": {
+        "re": "0.11898594678977058208",
+        "im": "-1.053640742712109145"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        1,
+        -2,
+        -1
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    },
+    {
+      "branch_point": {
+        "re": "0.11898594678977058208",
+        "im": "1.053640742712109145"
+      },
+      "braid_word_raw_length": 5,
+      "braid_word_reduced": [
+        -2,
+        -1,
+        -2,
+        1,
+        2
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type": [
+        1,
+        2
+      ],
+      "exponent_sum": -1,
+      "is_half_twist": true
+    }
+  ],
+  "loop_partition_by_permutation": {
+    "mine": [
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "sibling": [
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "bring_cubic_monodromy_probe": [
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "agree": true
+  },
+  "comparison_with_pr6449": {
+    "sibling_probe": "computations/probes/bring_monodromy_braid_lift_probe.py",
+    "sibling_base_point": "2 + 1/2 i",
+    "sibling_projection": "real axis",
+    "rows": [
+      {
+        "loop": 0,
+        "mine": [
+          1,
+          -2,
+          -1
+        ],
+        "sibling": [
+          -1
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      },
+      {
+        "loop": 1,
+        "mine": [
+          -1
+        ],
+        "sibling": [
+          2,
+          -1,
+          -2
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      },
+      {
+        "loop": 2,
+        "mine": [
+          -1
+        ],
+        "sibling": [
+          2,
+          -1,
+          -2
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      },
+      {
+        "loop": 3,
+        "mine": [
+          -2,
+          -1,
+          2
+        ],
+        "sibling": [
+          -1
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      },
+      {
+        "loop": 4,
+        "mine": [
+          1,
+          -2,
+          -1
+        ],
+        "sibling": [
+          2,
+          1,
+          -2,
+          -1,
+          -2
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      },
+      {
+        "loop": 5,
+        "mine": [
+          -2,
+          -1,
+          -2,
+          1,
+          2
+        ],
+        "sibling": [
+          -1,
+          -2,
+          1
+        ],
+        "equal_in_B3": false,
+        "necessary_condition": true,
+        "burau_charpoly_mine": "(lambda - 1)*(lambda*t + 1)/t",
+        "burau_charpoly_sibling": "(lambda - 1)*(lambda*t + 1)/t",
+        "conjugator_c_with_c_mine_cinv_eq_sibling": [
+          2
+        ],
+        "conjugate_in_B3_proved": true
+      }
+    ],
+    "all_conjugate_with_explicit_conjugator": true,
+    "note": "different base point and projection => lifts agree only up to conjugacy; equal Burau characteristic polynomial is a NECESSARY condition only, the explicit conjugator (checked by Artin action, faithful) is the proof"
+  },
+  "full_twist_check": {
+    "large_circle_word": [
+      -2,
+      -1,
+      -2,
+      -1,
+      -2,
+      -1
+    ],
+    "large_circle_permutation": [
+      0,
+      1,
+      2
+    ],
+    "large_circle_exponent_sum": -6,
+    "large_circle_is_delta_2k_with_k": -1,
+    "angular_order_from_base_point": [
+      5,
+      3,
+      1,
+      0,
+      2,
+      4
+    ],
+    "relative_angles_rad": [
+      "0.00677383405307",
+      "-0.11573994098",
+      "0.347612120876",
+      "-0.344257862087",
+      "0.382037835521",
+      "-0.393093215826"
+    ],
+    "increasing_order_product_equals_large_circle": true,
+    "decreasing_order_product_equals_large_circle": true,
+    "six_lift_product_is_delta_2k_with_k": -1,
+    "n_of_720_orderings_giving_large_circle_element": 72,
+    "distinct_B3_elements_among_six_lifts": 2,
+    "lift_a_loops_1_2_5": [
+      -1
+    ],
+    "lift_b_loops_0_3_4": [
+      1,
+      -2,
+      -1
+    ],
+    "angular_order_classes": "ababab",
+    "ab_cubed_is_delta_2k_with_k": -1,
+    "holonomy_trefoil_lift": "rem:holonomy-trefoil's (H_1 H_2)^3 = id holds in S_3 only; in B_3 the cube of the product of the two distinct lifts is the full twist Delta^{-2}, not the identity",
+    "sibling_words_angular_order_from_their_base": [
+      5,
+      3,
+      1,
+      0,
+      2,
+      4
+    ],
+    "sibling_words_product_k_increasing": -1,
+    "sibling_words_product_k_decreasing": -1,
+    "sibling_words_n_of_720_orderings_giving_delta_2k": 72,
+    "sibling_words_pass": true,
+    "sibling_distinct_B3_elements_among_six": 2,
+    "sibling_loop4_equals_loop0_in_B3": true,
+    "why_k_is_minus_one": "at large |z| the roots are z*(roots of Y^3+Y^2+Y+1) (fact A5), so one ccw turn of z turns all three roots once ccw; under the stated sign convention that is Delta^{-2}. Trivial permutation = unramified at infinity."
+  },
+  "sl2z_generation": {
+    "burau_t_minus_1": {
+      "sigma_1": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "sigma_2": [
+        1,
+        0,
+        -1,
+        1
+      ]
+    },
+    "braid_relation_holds": true,
+    "rho_delta2": [
+      -1,
+      0,
+      0,
+      -1
+    ],
+    "rho_delta4_is_identity": true,
+    "lift_images": {
+      "g0": [
+        2,
+        -1,
+        1,
+        0
+      ],
+      "g1": [
+        1,
+        -1,
+        0,
+        1
+      ],
+      "g2": [
+        1,
+        -1,
+        0,
+        1
+      ],
+      "g3": [
+        2,
+        -1,
+        1,
+        0
+      ],
+      "g4": [
+        2,
+        -1,
+        1,
+        0
+      ],
+      "g5": [
+        1,
+        -1,
+        0,
+        1
+      ]
+    },
+    "S_as_product_of_lifts": [
+      "g1",
+      "g1",
+      "g0"
+    ],
+    "T_as_product_of_lifts": [
+      "g1^-1"
+    ],
+    "minus_I_as_product_of_lifts": [
+      "g0",
+      "g0",
+      "g1",
+      "g0",
+      "g0",
+      "g1"
+    ],
+    "bfs_max_depth": 8,
+    "imported_fact": "ker(B_3 -> SL(2,Z)) = <Delta^4> (Magnus 1934; Milnor, Introduction to Algebraic K-theory, §10). Not verified here.",
+    "argument": "rho(H) = SL(2,Z) and Delta^2 in H: for g in B_3 pick h in H with rho(h) = rho(g); g h^{-1} in <Delta^4> <= <Delta^2> <= H; so H = B_3.",
+    "conclusion": "the monodromy image is B_3 (independent of #6449's generator words)"
+  },
+  "summary": {
+    "verifies": [
+      "PR #6449 loop lifts are half-twists of exponent sum -1 (loop-by-loop conjugate)",
+      "PR #6449 six words multiply to Delta^{-2} in angular order (new joint check)",
+      "image = B_3, by SL(2,Z) surjection + Delta^2 in image (new route)"
+    ],
+    "does_not_touch": [
+      "statement B's premise (the baryon occupies the sign isotype) — unchanged",
+      "mu-bar of any closure — see colour_mu_bar_monodromy_probe (#6449)",
+      "the A6 identification of the sheets with the colour tubes — consumed"
+    ],
+    "scope": "(a)-free positive result: exact group-theoretic conclusion conditional on the numerically read words, which are guarded (one adjacent swap per step, positive u-gap, step < separation/2) and now jointly constrained by the full-twist identity"
+  },
+  "scriptHash": "69c0a0782f9c",
+  "scriptCommitSha": "unknown",
+  "commitSha": "45936ee2281533ce63d38a27625f3c2153603914",
+  "engine": "python",
+  "computedAt": "2026-09-03T08:57:52.888428+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "bring_monodromy_full_twist_probe.py"
+}
