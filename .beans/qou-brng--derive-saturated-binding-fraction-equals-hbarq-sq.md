@@ -1015,6 +1015,44 @@ rank = n stays measured (n=2..7), so the exclusion stays scope-(a).
 
 NOT COMMITTED until lean-direct verification returns.
 
+## 2026-09-03 — the Lean is VERIFIED sorry-free (lean-direct, real import cone)
+
+Four declarations in `QOU/SchurWeyl/OcneanuWeight.lean` (commit 2cb1d14a5e,
+rebased) now verified. The dispatched lean-verifier subagent never returned —
+the session restarted — so this was run directly.
+
+COMMAND (root mathlib had traces ~= oleans, i.e. genuinely built, so lean-direct
+was safe; `lake build` NOT run, per the restored-cache trap):
+
+    LP="$PWD/content/quantum-observable-universe/lean/.lake/build/lib/lean"
+    for p in mathlib batteries aesop Qq proofwidgets importGraph plausible \
+             LeanSearchClient; do
+      LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
+    done
+    LEAN_PATH="$LP" lean \
+      content/quantum-observable-universe/lean/QOU/SchurWeyl/OcneanuWeight.lean
+
+exit 0, no diagnostics. Note exit 0 ALONE is not the gate — lean exits 0 on a
+`sorry` (it is a warning), so #print axioms is what settles it:
+
+    ocneanuNumFactor_affine          [propext, Quot.sound]
+    ocneanuNumFactor_diagonal_z_free [propext, Quot.sound]
+    ocneanuNum_diagonal_split        [propext, Classical.choice, Quot.sound]
+    mem_cells_diag_zero              [propext, Classical.choice, Quot.sound]
+
+No sorryAx. Only the three standard Mathlib axioms; the two `ring` proofs do
+not even need Classical.choice. The only 'sorry' string in the file is a
+docstring quoting 'sorry-free'.
+
+Re-verified after rebasing onto main (38 commits, clean): lean-direct exit 0
+again, and all three probes exit 0 again. A clean rebase is not evidence the
+code still works, so both were re-run rather than assumed.
+
+SCOPE UNCHANGED by this verification: the Lean proves the MECHANISM (z-dependence
+confined to off-diagonal cells; diagonal factors z-free unconditionally), NOT
+the degree count deg_z <= |mu| - d(mu), and NOT rank = n. Those stay measured
+(exact symbolic n=2..6, numeric to n=7), so the exclusion stays scope-(a).
+
 ## SIGN ATTACKED 2026-09-03 — positive at A=3, NEGATIVE at A=4
 
 `computations/probes/manybody_sign_by_bond_topology_probe.py`, 5/5, mpmath.
