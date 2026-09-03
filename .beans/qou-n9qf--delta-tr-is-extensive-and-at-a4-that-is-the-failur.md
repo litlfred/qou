@@ -1,6 +1,6 @@
 ---
 # qou-n9qf
-title: 'Delta_tr IS extensive and at A<=4 that is the failure: flat 0.29/nucleon vs B/A moving 6.4x, and two corpus scales for it differ 5.5x'
+title: '[HEADLINE WITHDRAWN 2026-09-03 — see the closed form] Delta_tr IS extensive and at A<=4 that is the failure: flat 0.29/nucleon vs B/A moving 6.4x, and two corpus scales for it differ 5.5x'
 status: in-progress
 type: task
 created_at: 2026-09-03T10:37:26Z
@@ -162,3 +162,103 @@ shift `d`, or an independent route to `Delta_tr` that never forms the matrices.
       the whole A >= 5 range in the calibration convention. That is the single
       capability standing between here and the extensivity test, and it is a
       tooling question rather than a physics one.
+
+
+---
+
+## 🛑 HEADLINE WITHDRAWN 2026-09-03 — the chain has a CLOSED FORM
+
+Probe: `computations/qbeta/qbeta_chain_closed_form_probe.py` (6/6). Prompted by
+a direct question — can this be settled symbolically instead of by computing
+ever-larger atoms? It can, and the symbolic answer contradicts what four data
+points suggested.
+
+### The closed forms
+
+**Free trace factorises exactly.** The Ocneanu trace is multiplicative over
+disjoint strand ranges and `beta_free` is A disjoint nucleon blocks by
+construction, so
+
+```
+tr_M(beta_free) = t_p^Z . t_n^N          relative error ~1e-40
+t_p = tr_M(proton,  H_3) = 1.1457596924573008697
+t_n = tr_M(neutron, H_3) = 0.98774368811580957163
+```
+
+verified at ²H, ³H, ³He to every digit. **Two H₃ numbers give the free trace for
+every atom** — no n = 18 matrices, no convention problem, no wall.
+
+**Atom trace is geometric on a homogeneous chain**, ratio constant to 22 digits
+across two independent measurements, and the ratio is DERIVED rather than
+matched to a candidate — `tr_m_word_lq` returns exact Laurent polynomials, the
+A = 1 and A = 2 words expand into 32 and 1024 positive braid words, and the
+ratio is taken symbolically:
+
+```
+           (q^8 + q^4 + q^2 + 1)(q^14 + q^12 + q^10 - 1)
+    r(q) = ---------------------------------------------      [2]_q = (q^2+1)/q
+                        4 q^9 [2]_q^3
+```
+
+`r(q_0) = 0.7019932570132013578` against a measured `0.7019932570132007939`,
+and it predicts `tr_atom(A=3) = 0.5646241124509801` against `...793`.
+
+### Why the headline is wrong
+
+`Delta_tr(A) = t_p(t_p^(A-1) - r^(A-1))`, and `t_p > 1 > r`:
+
+| A | 2 | 3 | 4 | 6 | 10 | 20 | 40 |
+|---|---|---|---|---|---|---|---|
+| `Delta_tr/A` | 0.254 | 0.313 | 0.332 | 0.345 | 0.385 | 0.760 | **5.777** |
+
+**A shallow region, then exponential growth** — `Delta_tr` is asymptotically
+`~t_p^A`. The four calibration atoms sat in the flat-looking part of an
+exponential. And the reason those atoms in particular look flat is now visible:
+`t_p = 1.1458 > 1` while `t_n = 0.9877 < 1`, so for `Z ~ N` the free trace hugs
+`(t_p t_n)^(A/2) = 1.0638^A` and barely moves. **Flatness is a property of
+near-symmetric light nuclei, not a law.**
+
+### What survives
+
+The measurement this bean was built on: over A = 2..4, `Delta_tr/A` varies 6.7 %
+while `B/A` varies 6.4x, so the per-nucleon deficit runs 5.1 → 32.3 and is not a
+constant. **That stands.** The word "extensive" does not, and neither does the
+inference that the framework "supplies a flat per-nucleon quantity" as a
+structural fact.
+
+### The wall is bypassed, and that changes the open list
+
+`qou-n9qf` previously recorded the A-scan as untestable past A = 4 because the
+colour-weighted route needs 16,336,320-square matrices at n = 18. The closed
+form does not need matrices at any A. That earlier entry stands as a correct
+statement about the MATRIX route; it is no longer a statement about the
+question.
+
+### Scope — what is NOT derived
+
+The geometric law and `r(q)` are for a **homogeneous** pure-proton chain. Real
+atoms mix p and n, so their p-p, p-n and n-n interfaces need a multi-state
+transfer matrix rather than a single ratio. Not done here. The free-trace
+factorisation DOES hold for real atoms and is verified.
+
+## Todo (revised again)
+
+- [ ] **The mixed-chain transfer matrix.** Three interface types (p-p, p-n,
+      n-n) and two nucleon types give a small transfer matrix whose dominant
+      eigenvalue replaces `r`. That would give `Delta_tr(Z, N)` in closed form
+      for every real atom — the actual object the binding law needs — and it is
+      now a finite algebra problem rather than a compute wall.
+- [ ] **Owner:** which of the two extensive scales is the prediction
+      (1.2309 vs 0.2253 MeV/nucleon)? Unchanged, and sharpened: with `Delta_tr`
+      asymptotically exponential, "extensive energy per nucleon" needs restating
+      before either number means what it says.
+- [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is
+      **vacuous**: the structure carries `traceValue` as a free field plus
+      `factorization : traceValue = prod ...` as an invariant, so the theorem
+      constructs a record with `traceValue := <the product>` and proves `rfl`.
+      Its conclusion mentions no Markov trace and nothing ties the field to one.
+      Two literature citations sit on it. The file's other two results are fine
+      (`markov_trace_product_recursion` is honestly conditional on
+      `[MarkovTraceAxioms]`; `chainProduct_append` is a real list lemma).
+      Checked: the existing vacuity audits catch `def X : True` and do NOT flag
+      this pattern, so it is unrecorded.
