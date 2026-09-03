@@ -199,7 +199,7 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > | form | anchor | residual |
 > |---|---|---:|
 > | quadratic (truncate after `αH`) | **proton** (2026-08-07 default) | 1.67 ppb |
-> | quadratic | muon | 80.51 ppb |
+> | quadratic | muon | 81.04 ppb *(live CODATA-2022 anchor, regenerated 2026-09-03; 80.51 at the retired pin A)* |
 > | **cubic** (retain `(1−h²α)`) | **proton** | **0.313 ppb** ≈ 2.09 σ_α |
 >
 > The cubic is the corpus's best; quoting 1.67 understates it by 5.3×. Against
