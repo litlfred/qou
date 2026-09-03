@@ -3987,7 +3987,7 @@ export interface AuthorNote {
 >
 > | class | count | status |
 > |---|---|---|
-> | invented field names (`is_mathematics` ×3, `probe`, `consumers`) | 5 | **fixed** — branch `claude/manifest-dropped-fields-2026-09-03` |
+> | invented field names (`is_mathematics` ×3, `probe`, `consumers`) | 5 | **fixed** — qou #6501 |
 > | schema gap: `prose:knot-periodic-table` drops `computation` | 1 | **fixed** — folio-assistant#164 |
 > | `authorNotes` dropped | **0** | fixed upstream 2026-08-24 |
 >
