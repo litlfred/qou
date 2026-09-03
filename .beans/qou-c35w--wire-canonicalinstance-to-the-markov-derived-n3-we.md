@@ -1,10 +1,11 @@
 ---
 # qou-c35w
 title: 'Wire canonicalInstance to the Markov-derived n=3 weights + credit-sweep: 3y was prior art'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-03T09:09:28Z
-updated_at: 2026-09-03T09:09:28Z
+updated_at: 2026-09-03T09:30:52Z
 parent: qou-59vq
 ---
 
@@ -22,3 +23,7 @@ CLOSED BY PRIOR ART, all sorry-free, all general n, all in Lean since 2026-08-16
 
 ## The one non-duplicative deliverable
 Wire today's CanonicalMarkovWeightsH3.canonicalInstance (canonical_y3/y21/0) to the corpus's Markov-DERIVED n=3 weights (HeckeMarkov3.markovWeight0/1/2 at z_D, equivalently ocneanuWeight q z_D on the three partitions of 3), so the class inhabitant is proved equal to the derived object rather than checked against a probe.
+
+
+
+PR #6494 (draft) on claude/ocneanu-schur-bridge-2026-09-03: f06c00e315 (Lean wiring), 59cdc3060f (credit sweep), 621a3c2437 (chore). Comments posted on #6370 / #6440.
