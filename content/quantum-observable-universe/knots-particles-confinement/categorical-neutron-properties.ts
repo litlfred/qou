@@ -86,17 +86,71 @@ export default remark({
     },
     {
       kind: "caveat",
-      date: "2026-08-29",
+      date: "2026-09-03",
       body:
-        "**Not settled here: whether two gluon crossings suffice at all.** " +
-        "Evaluating Frobenius positivity as $(\\mathrm{G}x)_\\gamma = " +
-        "\\mathrm{tr}_M(e_\\gamma \\cdot T_w)$ \u2014 a reading that reproduces " +
-        "this chapter's own claim that the bare 9-crossing element violates " +
-        "positivity, with exactly one negative channel \u2014 no adjunction of " +
-        "two gluon crossings is feasible for the *proton*; the minimum is " +
-        "three. That rests on a reading of the predicate rather than on the " +
-        "corpus's arithmetic, so it is deliberately **not** written into " +
-        "this block. Bean `qou-vtlj`; adjudication belongs to `qou-bg3w`.",
+        "**RETRACTED (this note's earlier text, dated 2026-08-29).** It read " +
+        "that evaluating Frobenius positivity as $(\\mathrm{G}x)_\\gamma = " +
+        "\\mathrm{tr}_M(e_\\gamma \\cdot T_w)$ is *\"a reading that " +
+        "reproduces this chapter's own claim that the bare 9-crossing element " +
+        "violates positivity, with exactly one negative channel\"*, and " +
+        "concluded that no two-gluon adjunction is feasible for the proton, " +
+        "the minimum being three. **Three things are wrong with that, and the " +
+        "hedge it carried \u2014 that this rests on a reading of the predicate " +
+        "\u2014 is the only part that survives.**\n\n" +
+        "**1. The corroboration cites struck text.** *\"This chapter's own " +
+        "claim\"* is the sentence one paragraph above, struck through since " +
+        "2026-08-24 by [`qou-jqjx`](#rem:gluon-stabiliser-ledger): the bare " +
+        "element's instability was an artefact of the retired weight " +
+        "$\\mathrm{tr}_M(e^-) = z^3$, retired 2026-05-19. Reproducing a " +
+        "withdrawn number is evidence *against* a reading, not for it.\n\n" +
+        "**2. The numbers did not reproduce it in the first place.** The " +
+        "withdrawn claim was $\\mathrm{tr}_M(T_w) < 0$ (retired-weight " +
+        "$-0.0059$ proton, $-0.1322$ neutron). The probe's $\\gamma = 1$ " +
+        "channel gives $+0.5444$ \u2014 which is `qou-jqjx`'s corrected live " +
+        "value $+0.544370$ to the digit. So it agreed with the *correction* " +
+        "and was described as agreeing with the *bug*.\n\n" +
+        "**3. The basis was over-complete.** " +
+        "[`def:stable-atom`](#def:stable-atom) defines $\\mathrm{G}$ over the " +
+        "primitive Wedderburn-block operators $\\{e_\\lambda\\}_{\\lambda " +
+        "\\vdash k}$, of which $H_3(q)$ has **three**. The probe built " +
+        "**six**, and the extra ones carry the single negative pairing " +
+        "($-0.02275$) the note reported. Re-run of " +
+        "`computations/probes/nucleon-lp-convention-probe.py` on 2026-09-03: " +
+        "under convention D every step of both nucleons is positive \u2014 " +
+        "proton $\\min(\\mathrm{G}x) = +0.342489, +0.279195, +0.339149$; " +
+        "neutron $+0.277726, +0.172959, +0.217525$. No negative channel.\n\n" +
+        "**What is genuinely open** is narrower than the note claimed and is " +
+        "not settled by either side: the definition names the " +
+        "primitive-idempotent basis, the live probe uses `pyhecke.gram`'s " +
+        "NF-word Gram, and the partition-indexed decomposition the definition " +
+        "asks for **does not exist** (rank 4 against augmented rank 5). Which " +
+        "object $\\mathrm{G}$ is remains the open question; nothing above " +
+        "answers it. Scope-(a). Bean `qou-vtlj`.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-09-03",
+      body:
+        "**The surviving $L_-$ sentence disagrees with the live ranking, and " +
+        "is not struck.** The paragraph above still states that the integer " +
+        "LP dual *selects $L_-$ as the minimum-action stabiliser*. Under " +
+        "convention D, measured by " +
+        "`computations/probes/nucleon-lp-convention-probe.py` (re-run " +
+        "2026-09-03), the neutron's $L_+ . L_-$ ranks **26 of 41** feasible " +
+        "configurations at $|\\mathrm{tr}_M| = 0.690056$, against bare " +
+        "$0.408267$ with no gluon at all; the min-$|\\mathrm{tr}_M|$ optimum " +
+        "is a **single $\\sigma_0$ at one crossing** ($0.217525$), and under " +
+        "the minimum-crossing objective that " +
+        "[`def:universal-ilp-algorithm`](#def:universal-ilp-algorithm) " +
+        "actually states it is **zero** crossings. The same holds for the " +
+        "proton ($\\sigma_0 . \\sigma_0$ ranks 10/41 at $0.615273$ against " +
+        "bare $0.544370$). So the selection sentence, the 11-crossing total " +
+        "it feeds, and the $\\mathfrak{m}_{\\mathfrak{n}} - " +
+        "\\mathfrak{m}_{\\mathfrak{p}}$ mechanism that rests on it are all " +
+        "in tension with the live convention. `qou-jqjx` proposed nothing in " +
+        "place of them deliberately \u2014 the derivation needs re-deriving " +
+        "rather than patching \u2014 and that judgement is not revisited " +
+        "here. Flagged, not resolved. Scope-(a).",
     },
   ],
 });
