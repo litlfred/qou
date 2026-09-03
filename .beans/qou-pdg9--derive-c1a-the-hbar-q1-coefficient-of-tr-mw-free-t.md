@@ -1,11 +1,11 @@
 ---
 # qou-pdg9
 title: 'DERIVE c1(A): the hbar_q^1 coefficient of tr_M(W_free) - tr_M(W_atom), exactly, from the Laurent trace'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-09-03T08:32:06Z
-updated_at: 2026-09-03T08:57:43Z
+updated_at: 2026-09-03T09:08:05Z
 ---
 
 Successor to qou-zrx2. c0(A) = 2^-A - 2^(1-2A) is DERIVED (Schur-Weyl + cycle count, ClassicalTraceFloor.lean). c1 = lim (Dtr - c0)/hbar_q is currently six MEASURED dyadic rationals (pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128), entered into PairwiseChainLeadingOrder.lean as defs. Goal: (1) obtain them EXACTLY via laurent_q_trace.tr_M_atomic_lq (formal (z,h)-polynomial with LaurentQ coefficients) expanded at q = e^eta to first order -- no Richardson; (2) find and prove the closed form in A, by the same route as c0 (first-order term of a permutation-character sum). Branch claude/logz-hbarq-rung-operator-class-2026-09-03 (branch name predates the corpus-grep that found qou-ap3d/qou-ssz6 had already closed the log Z rung question).
@@ -75,3 +75,7 @@ CONDITIONAL on those two, not unconditionally.
 Nothing about the scale (`qou-59j5`) or the log channel. It removes one
 "measured" from the pairwise-chain leading-order story: `c0` and `c1` are both
 derived now, so `24/7` at 4He etc. are derived ratios.
+
+
+
+PR #6492 (branch claude/logz-hbarq-rung-operator-class-2026-09-03), commits 2ef2369a71 (Lean) + fd616e8240 (probe, 8/8). Open: the permutation-half formalisation (orbit count under a deleted transposition) — tracked in qou-zrx2 follow-up (5), now needed for both c0 and c1; and the c2 closed form (exact values recorded, no formula attempted).
