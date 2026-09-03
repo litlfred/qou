@@ -1,5 +1,5 @@
 import QOU.SchurWeyl.QJucysMurphyEigen
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.SchurWeyl.GenericParameterReal
 import Mathlib.Algebra.Polynomial.Roots
 
 /-!
@@ -230,15 +230,23 @@ the work, and it comes from `0 < t`, `t ≠ 1`.
 -/
 
 
-/-- `m ↦ t ^ m` is injective for a positive `t ≠ 1`. -/
+/-- **`t` positive and `≠ 1` is not a root of unity.**  The `ℝ`-specific half, isolated:
+`t ^ 2 = 1` with `t > 0` forces `t = 1`, so `GenericParameter.ofSqNeOne` applies. -/
+private theorem notRootOfUnity_of_pos_of_ne_one {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1) :
+    GenericParameter.NotRootOfUnity t :=
+  GenericParameter.ofSqNeOne ht0.ne' (by
+    intro h
+    exact ht1 (by nlinarith [sq_nonneg (t - 1), sq_nonneg (t + 1)]))
+
+/-- `m ↦ t ^ m` is injective for a positive `t ≠ 1`.
+
+Proved through `GenericParameter.pow_left_injective`, which holds over **any** field: the
+content is that the powers of a non-root-of-unity are pairwise distinct, and cancelling
+`t ^ a` needs no order.  Only `notRootOfUnity_of_pos_of_ne_one` above is about `ℝ`.  This
+used to go through `Real.log_pow`, which fused the two.  Bean `qou-j377`. -/
 theorem pow_right_injective_of_pos_of_ne_one {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1) :
-    Function.Injective (fun m : ℕ => t ^ m) := by
-  intro a b hab
-  have hlog : (a : ℝ) * Real.log t = (b : ℝ) * Real.log t := by
-    rw [← Real.log_pow, ← Real.log_pow]
-    exact congrArg Real.log hab
-  have hne : Real.log t ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one ht0 ht1
-  exact_mod_cast mul_right_cancel₀ hne hlog
+    Function.Injective (fun m : ℕ => t ^ m) :=
+  GenericParameter.pow_left_injective ht0.ne' (notRootOfUnity_of_pos_of_ne_one ht0 ht1)
 
 /-- A real polynomial vanishing at every `t ^ m` is the zero polynomial. -/
 theorem poly_eq_zero_of_eval_pow {t : ℝ} (ht0 : 0 < t) (ht1 : t ≠ 1)

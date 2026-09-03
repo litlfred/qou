@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.TableauCells
 import QOU.SchurWeyl.SeminormalParam
+import QOU.SchurWeyl.GenericParameterReal
 
 /-!
 # `QOU.SchurWeyl.SeminormalRep` — the generator matrices on all of `SYT μ` (bean `qou-gjg6`)
@@ -207,21 +208,19 @@ with `m ≠ 0` forces `|q| = 1`, hence `q = ±1`, hence `q² = 1`; so no further
 available to assume and none is needed.  In particular the natural-looking `0 < q ∧ q ≠ 1`
 is **stronger than required** — negative `q` is fine as long as `q ≠ -1` — while a bare
 `q ≠ 0` is **too weak**, since `q = -1` genuinely degenerates the seminormal form (see the
-`S1` discussion in `SeminormalParam.lean`). -/
+`S1` discussion in `SeminormalParam.lean`).
+
+**The two halves now live apart.**  This used to be proved here by `Real.log`, which fused
+"`q ≠ 0 ∧ q² ≠ 1` implies `q` is not a root of unity" (an `ℝ` fact, and the *only* place the
+`ℝ` in the Wedderburn cone is doing real work) with "not a root of unity implies no nonzero
+power is `1`" (true over any field).  They are now
+`GenericParameter.ofSqNeOne` and `GenericParameter.zpow_ne_one` respectively, so the
+statement below is unchanged and all ~40 call sites are untouched, while the `ℝ`-specific
+step is isolated and named.  Bean `qou-j377`. -/
 theorem zpow_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {m : ℤ} (hm : m ≠ 0) :
-    q ^ m ≠ 1 := by
-  intro h
-  -- pass to `q²`, which is positive outright and is exactly what the hypothesis bounds
-  have hsq : (q ^ 2 : ℝ) ^ m = 1 := by
-    rw [show (q ^ 2 : ℝ) = q * q by ring, mul_zpow, h, one_mul]
-  have hpos : (0 : ℝ) < q ^ 2 :=
-    lt_of_le_of_ne (sq_nonneg q) (Ne.symm (pow_ne_zero 2 hq0))
-  have hlog : (m : ℝ) * Real.log (q ^ 2) = 0 := by
-    rw [← Real.log_zpow, hsq, Real.log_one]
-  have hlq : Real.log (q ^ 2) ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hpos hq2
-  rcases mul_eq_zero.mp hlog with h1 | h2
-  · exact hm (by exact_mod_cast h1)
-  · exact hlq h2
+    q ^ m ≠ 1 :=
+  QOU.SchurWeyl.GenericParameter.zpow_ne_one
+    (QOU.SchurWeyl.GenericParameter.ofSqNeOne hq0 hq2) hm
 
 /-- **The swap moves every tableau it is defined on.**  `s_k·T` differs from `T` already at
 the cell holding `k`, which carries `k+1` afterwards. -/
