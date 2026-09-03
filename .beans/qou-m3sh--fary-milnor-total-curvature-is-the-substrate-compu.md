@@ -192,3 +192,9 @@ thread, and the exchange channel is the transverse (linking) direction.
   theorem, the torus-knot identification, the Alexander polynomial and
   monodromy order (checked exactly at n = 3,5,7 by the probe), fibered-knot
   page uniqueness.
+- [x] audit `docs/audits/2026-09-03-bring-cone-link-is-the-unit-tangent-bundle.md`:
+  link of the Bring cone = UT(Σ₄) canonically (Bézout + adjunction), ~SL₂
+  geometry ⇒ no 3-Sasakian structure ⇒ the compact su(2) Reeb triad of
+  `BringCone.lean` cannot be that of a 3-Sasakian structure on this link; the
+  split sl₂(ℝ) frame {X,Y,V} is what the manifold carries, and it is the same
+  frame on every component complement. Posed as a question to the lemma's owner.
