@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-08-30T13:40:13Z
+updated_at: 2026-09-04T14:00:37Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -63,3 +63,79 @@ correct, thrice-cross-checked change behind a pre-existing defect it did not
 cause, and cannot fix, would be the wrong trade — but the resulting witness
 carries three known-stale assertions instead of one and that must be stated
 wherever it is read.
+
+
+---
+
+## UPDATE 2026-09-04 — deuterium DOES complete, and its binding has flipped sign
+
+Independent run this session (different container, live tree, muon anchor C
+`q = 1.1099785956…`). Two things this bean and AGENTS.md both record as
+unmeasured are now measured, and one of them is worse than the staleness this
+bean was opened for.
+
+### 1. Deuterium completes. Both prior records say it does not.
+
+This bean says *"deuterium — the first bound atom — runs indefinitely. Killed
+after ~3.5 minutes of silence here"*; AGENTS.md records a 50-minute run killed
+by its own timeout at `exit 124`. **It finished here**, producing a value. The
+run was then killed at atom 4 of 19 by its own budget, not by deuterium.
+
+So route 1 of this bean ("run it where it can finish") is better-founded than
+it looked: the first bound atom is finite, and the open question is the 15
+atoms above it, not whether A=2 terminates. I do NOT have deuterium's wall
+time — the launch budget is not recoverable from this session — so this
+establishes termination, not cost. `qou-r4w5` already has the cost diagnosis
+(brute-force SYT enumeration in `_count_syts_by_12_relation`, closed form for
+`chi_lambda(sigma_1)` sitting in the docstring two lines above the call).
+
+### 2. The committed deuterium binding is sign-flipped against the live tree
+
+| atom | committed witness | current tree | drift |
+|---|---|---|---|
+| proton `tr_M` | 0.419562177934 | 0.629328 | **+50.00 %** |
+| neutron `tr_M` | 0.301675079767 | 0.475134 | **+57.50 %** |
+| protium `tr_M` | 1.123183539266 | 1.146338 | **+2.06 %** |
+| deuterium `tr_M` | 0.253377259444 | 0.404362 | **+59.59 %** |
+| deuterium `B_MeV` | **+2.2213** | **−8.5281** | **sign flip, 3.84×** |
+
+The proton and neutron figures reproduce this bean's own `+50.00 % / +57.50 %`
+**exactly**, which is what confirms PR #6214's σ₀² gluon term is in the tree I
+ran. Protium's +2.06 % corroborates this bean's independently-measured
+`tr_M(protium) = 1.1463376906350053` — same value, different session, computed
+today.
+
+**The deuterium row is new.** Nobody had it, because nobody had got past A=2.
+It matters more than the others: the committed `+2.2213 MeV` sits **0.15 %**
+from the AME deuteron binding `2.2246 MeV`, and the live tree gives
+`−8.5281 MeV` — wrong sign, 3.84× the magnitude.
+
+**What is NOT claimed.** That #6214 caused the flip. Three drifts are in this
+witness at once — #6214's gluon term, the pre-existing protium-class staleness
+this bean opened for, and possibly the anchor — and one run separates none of
+them. The scope-(a) statement is: *the current tree does not reproduce the
+committed deuterium binding, and the disagreement is a sign, not a tolerance.*
+Bisecting it needs a run per candidate commit at ~one bound atom each.
+
+### 3. The anchor question is now answerable from a ruling, not a judgement
+
+`hadron-knot-table.witness.json` is the corpus's **last remaining `Q0_FLIP`** —
+it carries the retired pin A (`1.1099785955573347…`) while the live canonical
+muon is C (`1.1099785956427390…`). `qou-bypn` puts this producer in group A
+("via `q_parameter`; each needs a decision, not a sweep") — but `qou-bypn` is
+dated 2026-08-25 and the owner's ruling of **2026-08-30** post-dates it and
+supplies the decision rule: proton by default, exceptions only for (E1) an
+explicit proton-vs-muon comparison or (E2) the ideal CAL-1/2/3 layer, with the
+burden on the exception.
+
+Measured against that: the producer's docstring names no pin, no comparison
+and no CAL layer — it computes *"mass formulas and Q-value predictions"*, i.e.
+observable evaluation — and the committed witness's `q0AnchorReason` is
+**`None`**. Neither exception can be named, so under the standing ruling this
+is a **proton** producer.
+
+**Consequence for sequencing, and it is the practical point:** re-running at
+muon to close the flip would spend the whole 19-atom budget producing a witness
+at the anchor the ruling says is wrong, and constraint 4 (manifest and witness
+land together) then requires the same run again. The flip should not be closed
+before the classification is.
