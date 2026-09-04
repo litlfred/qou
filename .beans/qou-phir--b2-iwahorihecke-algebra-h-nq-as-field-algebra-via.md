@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-09-04T09:17:15Z
+updated_at: 2026-09-04T10:36:12Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1188,3 +1188,40 @@ the combinatorics, not the algebra'. #6612 supplies that: `length_swap_dichotomy
 (exactly one of the pair is longer, by one), `mulSwap` as a fixed-point-free
 involution, and the ascending/image split. x_lambda itself is NOT defined and the
 eigenvector property is NOT proved.
+
+## CORRECTION to my own #6614 (2026-09-04)
+
+**I proved a Perm-specific specialization of lemmas Mathlib already has
+generically, and described it as supplying the blocker. That overstated it.**
+
+Mathlib carries `CoxeterSystem.length_mul_simple` (the two-branch length
+dichotomy) and `length_mul_simple_ne` (the two are never equal), for ANY Coxeter
+system. `QOU.Hecke.TwBasis.length_flip` — already on main, in the very file
+defining `rsFun` — already packages them. So #6614's `length_swap_cases` and
+`length_swap_ne` are specializations, not new results.
+
+**What in #6614 survives as additive:** `mulSwap` as a named involution,
+`mulSwap_ne` (fixed-point-freeness, proved directly rather than via lengths),
+the ascending/image split, and `mulSwap_mem` (subgroup closure is free). Thin,
+but not nothing. Nothing in it is WRONG — it compiles sorry-free — the defect is
+in how I priced it.
+
+**Root cause: I grepped the CORPUS for prior work and never grepped MATHLIB.**
+The corpus-grep checklist has six paths and Mathlib is not one of them, because
+it is normally reached through the Lean tooling — which was down this session
+(lean-lsp CONNECT_TIMEOUT throughout, so no `leansearch`/`loogle`). A dead
+search tool silently removed a whole search surface, and I did not notice its
+absence. **Grep `.lake/packages/mathlib` directly when the LSP is down.**
+
+## What is genuinely NOT in Mathlib — PR #6616
+
+The pair identity, which is HeckeCellular's own sentence:
+
+    rsFun_add_rsFun : rsFun i w + rsFun i (w * s_i)
+                        = q . (single w 1 + single (w * s_i) 1)
+
+Stated for an ARBITRARY Coxeter system. The dichotomy it rests on is Mathlib's;
+the CONSEQUENCE — that the two branches collapse to q times the pair, with the
+(q-1) and the 1 combining exactly — is not, and is the step a sum over a Young
+subgroup is reorganised by. It holds over any CommRing: nothing divides by 2,
+which the naive 'sum equals its own reindexing' argument would need.
