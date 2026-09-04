@@ -1257,6 +1257,54 @@ def _check_nonfinite(witness: dict, name: str) -> None:
         raise ValueError(f"non-finite guard: {msg}")
 
 
+Q0_ANCHOR_VOCABULARY = ("muon", "proton", "ambiguous", "independent",
+                        "comparison")
+"""The five tokens `q0_anchor_consistency_audit.py` can map to a pin.
+
+Anything else means the audit COULD NOT CHECK that witness — not that the
+witness is wrong, which is the point: an unmappable label is unfalsifiable.
+"""
+
+
+def _warn_unmappable_anchor(anchor: object, script_path: str) -> None:
+    """Warn — never raise — when an anchor is outside the vocabulary.
+
+    WARN, not raise, and the choice is not timidity. Stamping happens at the
+    END of a producer, after the compute; several producers here run for tens
+    of minutes and one runs past fifty. Raising would discard that entire run
+    to correct a label, which is a worse trade than writing the witness and
+    saying so loudly. The repo has decided this exact question once before in
+    the other direction's favour: `scripts/precommit-precision-warn.sh` was
+    offered as a blocking hook and the owner declined it, 2026-08-25.
+
+    So this closes the ARRIVAL RATE the way that hook does — the author sees it
+    in their own log, while the producer is fresh in mind — and leaves the
+    backlog to `q0_anchor_consistency_audit.py`, which is already CI-failing on
+    it and is the right place for a gate.
+
+    Why it is needed at all: until 2026-09-03 there was no `q0_anchor_reason`
+    slot, so producers wanting to say WHY wrote prose into the token —
+    `'proton (experimental pin)'`, `'none (exact symbolic identities in q)'`.
+    17 witnesses were fixed at the witness and 13 more arrived within four
+    days from the SAME producers, because nothing upstream had changed and
+    nothing said a word when they wrote it (bean qou-eggf). The slot now
+    exists; this is what points at it.
+
+    Silent on `None` and `False`: neither reaches here (both return earlier),
+    and both are documented, correct calls.
+    """
+    if anchor in Q0_ANCHOR_VOCABULARY:
+        return
+    print(
+        f"⚠ q0Anchor={anchor!r} is not one of {Q0_ANCHOR_VOCABULARY} — "
+        f"q0_anchor_consistency_audit cannot map it to a pin, so this witness "
+        f"will be reported Q0_ANCHOR_UNRECOGNISED and never checked. Pass the "
+        f"bare token in q0_anchor and the prose in q0_anchor_reason. "
+        f"[{script_path}]",
+        file=sys.stderr,
+    )
+
+
 class WitnessBuilder:
     """
     Build a structured witness JSON conforming to ComputationWitness.
@@ -1861,6 +1909,7 @@ class WitnessBuilder:
         # An explicit `q0_anchor=` argument still wins over both, since a caller
         # passing it is making the same declaration one call frame out.
         if "q0Anchor" not in payload:
+            _warn_unmappable_anchor(q0_anchor, spath)
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
                 payload["q0Value"] = q0_value
