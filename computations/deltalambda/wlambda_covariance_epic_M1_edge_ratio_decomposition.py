@@ -305,15 +305,23 @@ def main():
         "ms": int(ms),
     }
     wit = Path(__file__).with_name("m1-edge-ratio-decomposition.witness.json")
-    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
-    # this one. Ask for the anchor with the same precedence q_parameter
-    # uses at compute time (env var > manifest stem > proton) rather than
-    # hardcoding a pin this run may not have used.
-    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
-    _q0a, _q0v = _rq0(__file__)
-    out["q0Anchor"] = _q0a
-    if _q0v:
-        out["q0Value"] = _q0v
+    # NOTE (#6537 x #6519): the `resolve_q0_anchor` override that #6519's sweep
+    # placed here has been removed for THIS producer, deliberately.
+    #
+    # That helper resolves the manifest pin -- muon, proton, or ambiguous -- and
+    # defaults to proton for any stem not under `ideal_muon`. It has no way to
+    # return `independent`, so on a producer that provably never reads q0 it
+    # manufactures a proton claim, and it did so by ASSIGNING OVER the literal
+    # below, leaving the `q0AnchorReason` ("Reads no q0 ...") next to a `proton`
+    # stamp that contradicts it.
+    #
+    # `independent` here is measured, not asserted, by three checks:
+    #   - import-cone trace: no q_parameter / qou_substrate.constants edge;
+    #   - producer_baked_pin_audit.py: no q0-VALUED literal in the source;
+    #   - q0_pin_flip_test.py: forcing the muon anchor does not move the
+    #     payload (subjects 0/7, on a harness where controls moved 2/2).
+    # The sweep's pattern is right for a producer that READS q0; this one
+    # does not.
     wit.write_text(json.dumps(out, indent=1) + "\n")
     print()
     for c in checks:
