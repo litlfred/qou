@@ -285,6 +285,14 @@ not sweep for it and I changed nothing.
 
 ### 🛑 THE WEAKEST LINK: the shape parameter is typed **real**, and the corpus's own theorem kills that
 
+> **RESOLVED on this branch, 2026-09-04 — the diagnosis below is kept as the
+> record; the tree no longer has the defect.** `BlochWignerD` is now
+> `opaque BlochWignerD : UpperHalfPlane -> ℝ` and the matched shape is a class
+> **field** `shape : ℍ`, not the state variable `x`. Recommendation (iv) at the
+> end of this document is what was implemented; see the resolution note there
+> for what changed, what it cost, and what it did not buy.
+
+
 This is the sharpest structural finding of the sweep, and it is checkable in
 three files.
 
@@ -516,6 +524,56 @@ change — and it is what makes the class capable of ever carrying a nonzero
 volume. Until it is done, §3's defect stands: as typed, the honest instantiation
 of `BlochWignerD` forces `volume = 0` by the corpus's own
 `eq_zero_of_conjAntisymm_ofReal`.
+
+> **DONE, 2026-09-04 (this branch).** Implemented in
+> `content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean`,
+> `lean`-direct exit 0, all eleven declarations sorry-free
+> (`[propext, Classical.choice, Quot.sound]` only). What changed:
+>
+> - `opaque BlochWignerD : ℝ → ℝ` → `opaque BlochWignerD : UpperHalfPlane → ℝ`.
+>   Mathlib's `UpperHalfPlane` is *definitionally* `{point : ℂ // 0 < point.im}`,
+>   i.e. exactly the type this recommendation named — chosen over a bespoke
+>   subtype so the file inherits `im_pos`, `coe_im`, `ne_int` and, if the
+>   modular action is ever wanted, `UpperHalfPlane/{Metric,Manifold,MoebiusAction}`.
+> - The class gained a field `shape : ℍ`, and `pole_cusp_matched` now reads
+>   `volume = BlochWignerD shape`. This **un-composes** the narrative's `z(x)`:
+>   an instance must exhibit the matching map's value and cannot exhibit a flat
+>   one. `x : ℝ` keeps its own role in `vc_asymptotic` as the q-Pochhammer state
+>   variable.
+> - Three theorems record *why*, so that reverting the retyping reinstates a
+>   visible contradiction rather than a silent one: `eq_zero_of_conjAntisymm_ofReal`
+>   (a conj-odd real-valued function vanishes on ℝ), `flat_shape_has_no_volume`
+>   (hence a real-argument `volume` is forced to 0), and `shape_ne_real`
+>   (no point of ℍ is real, so the degeneracy is now a *type* error).
+>
+> **Blast radius: nil.** Measured across `content/`, `docs/`, `computations/`
+> and `.beans/`: **no instance of the class exists anywhere and nothing outside
+> the file consumes `BlochWignerD`**. The only non-audit mentions are the `.md`
+> sibling's Discussion paragraph (updated in the same commit) and a *docstring*
+> reference in `shared-denominator-cusp-holonomy.lean:17`, which explicitly
+> notes there is no type-level binder.
+>
+> **Two findings that fell out of doing it, neither of which was the point.**
+>
+> 1. **The `.md` was right and the Lean was wrong — this was a
+>    narrative-vs-Lean divergence, not a shared simplification.** The `.md`
+>    already states item 2 as `D(z(x))` with "`z(x)` is the shape parameter of
+>    the ideal tetrahedron" (line 39). Only the Lean had collapsed `z(x)` to
+>    `x`. So the class had been drifting from its own statement, which is the
+>    kind of gap a `lean.ref` cannot catch and a reader would not look for.
+> 2. **The sibling had already made this exact repair, and its shape predicate
+>    has two redundant fields.** `shared-denominator-cusp-holonomy.lean`'s
+>    2026-08-31 note records binding its shape to the root index after
+>    discovering the class was inhabited by a constant. Its `GeometricShape z`
+>    carries `z ≠ 0`, `z ≠ 1` and `0 < Im z` — but the third implies the other
+>    two, since both `0` and `1` are real. Proved here as `shape_ne_zero_ne_one`,
+>    which is why `ℍ` needed no bespoke structure. **Recorded, not changed:**
+>    that is a separate conjecture block and the redundancy is harmless.
+>
+> **What this does NOT buy.** No volume is computed, no instance is constructed,
+> and `BlochWignerD` remains `opaque` — Mathlib still has no Bloch–Wigner
+> dilogarithm. The conjecture is exactly as open as it was; what changed is that
+> it is now *capable* of being true.
 
 **Not reachable without absent API:** anything requiring `ℍ²/Γ` as a *manifold*
 (B3), Mostow rigidity, Thurston hyperbolisation, the Bloch group, or the Borel
