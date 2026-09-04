@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T10:38:53Z
+updated_at: 2026-09-04T12:25:27Z
 ---
 
 
@@ -940,3 +940,33 @@ CORPUS-GREP: the non-polynomiality MECHANISM for the covariance family M_k is al
 odd weight not => M_2j+1 non-polynomial). Those are about M_k. V_A = Var(Sum|c|) is a DIFFERENT
 object and nothing measured it -- which is why it was run rather than inferred. The analogy held;
 that it would was not evidence.
+
+
+2026-09-04 (branch claude/m1-k5r5-cs-relaxation-cost-2026-09-04): THE CS RELAXATION IS CHEAP -- the
+(CS) margin route is validated as the right target, by audit rather than assumption.
+
+THE RELATIONSHIP, which had never been priced. Two sufficient conditions coexist in this corpus:
+  FULMAN (2026-08-21 audit): Sum h = D + A (split identity) and, with omega_3 = W an eigenfunction of
+    the up-down chain, M_1 = Cov(Sum h, W) = P - N with P = Cov(A,W) >= 0 and N = -Cov(D,W) >= 0,
+    both manifest EDGE BY EDGE. So M_1 > 0 is EXACTLY P > N -- necessary and sufficient.
+  (CS) MARGIN (PRs #6500/#6528/#6576/#6602): m = rho_P - sqrt(V_D/V_A) > 0, which multiplied through
+    by sqrt(V_A V_W) is exactly P > sqrt(V_D V_W). Since N <= sqrt(V_D V_W) by Cauchy-Schwarz, THE
+    MARGIN IS THE CS RELAXATION OF P > N -- sufficient only, and it discards N's per-edge structure.
+
+MEASURED (_cs_relaxation_cost.py, exact Fraction over every partition to n=40, NO float64, exit 0):
+  rho_D = N/sqrt(V_D V_W)  over n>=16 : [0.87815, 0.92034]   <- IS the tightness of CS on (D,W)
+  surviving = (P - sqrt(V_D V_W))/(P - N) over n>=16 : [0.78598, 0.85193]
+Both INCREASE with n (0.8371 -> 0.9203; 0.7467 -> 0.8519), so at n>=79 the relaxation should be
+cheaper still -- the conservative direction for the extrapolation.
+
+VERDICT: CS costs at worst 1.27x. The margin route loses little and sharpening delta_A is well spent.
+NOT obvious in advance: had rho_D come out near 0.5, four PRs would have been paying a 2x premium
+avoidable by working P > N directly.
+
+THE CORPUS'S REDUCTION IS RE-VERIFIED INDEPENDENTLY, not assumed. Sum h is computed PER CELL as an
+explicit hook sum, never as D + A, and two assertions gate every number: split identity Sum h == D+A
+at EVERY partition (PASS) and Fulman reduction Cov(Sum h,W) == P - N at EVERY n (PASS). The probe
+refuses to print a cost figure if either fails.
+
+DOES NOT CLOSE EITHER ROUTE. Both still need a rigorous finite-n argument -- delta_A for the margin,
+P > N for Fulman. Window n<=40 against a requirement of n>=79; nothing here is a bound.
