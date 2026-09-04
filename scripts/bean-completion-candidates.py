@@ -63,6 +63,22 @@ is a much smaller claim than the one this script shipped with.
 false-positive classes are semantic and live in the bean body or the author's
 intent. The check that works is an agent reading the bean.
 
+THE OTHER QUESTION AN AGENT ACTUALLY HAS
+----------------------------------------
+"Is this done?" is only half of "can I pick this up?". The other half is
+"is someone on it right now?", and that one a commit date DOES answer.
+
+A bean whose id appears in any commit within the last few hours is presumed
+CLAIMED, not stale, and is flagged `[ACTIVE ...]`. Measured case: `qou-bg3w`
+("Which element is Delta?") carries three commits from the same day, the newest
+hours old -- a live session mid-analysis. Taking it would have duplicated
+settled work, which AGENTS.md permits only for open-outcome research and
+explicitly not for work with one right answer.
+
+This is a cheap signal and a reliable one, in contrast to the completion
+heuristic above: it asks only WHEN, never WHAT, so none of the four semantic
+failure classes touch it.
+
 **Do not bulk-close from this output.** It is a read queue: it tells you which
 beans are worth opening, and the reading is still yours.
 
@@ -91,6 +107,7 @@ _DONE = re.compile(
     r"^(fix|fixes|fixed|close[sd]?|resolve[sd]?|complete[sd]?|drain|repair)\b"
     r"|\b(CLOSED|RESOLVED|COMPLETE|FIXED|drained|discharged)\b", re.I)
 _ORDER = {"high": 0, "medium": 1, "low": 2}
+_ACTIVE_HOURS = 12  # a bean named by a commit this recently is presumed CLAIMED
 
 
 def load_beans(root: pathlib.Path) -> dict:
@@ -109,6 +126,22 @@ def load_beans(root: pathlib.Path) -> dict:
             "title": (g["title"].group(1).strip().strip("'\"") if g["title"] else ""),
             "file": f.name,
         }
+    return out
+
+
+def any_commits(since: str) -> dict:
+    """bean id -> [(sha, iso, subject)], ANY commit naming it. For the
+    active-ownership signal, which does not care what the commit says."""
+    log = subprocess.run(
+        ["git", "log", f"--since={since}", "--format=%H%x01%cI%x01%s"],
+        capture_output=True, text=True).stdout.splitlines()
+    out = collections.defaultdict(list)
+    for line in log:
+        if line.count("\x01") != 2:
+            continue
+        sha, iso, subj = line.split("\x01", 2)
+        for b in set(_ID.findall(subj)):
+            out[b].append((sha, iso, subj))
     return out
 
 
@@ -135,6 +168,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--all", action="store_true", help="every priority, not just high")
+    ap.add_argument("--active", action="store_true",
+                    help="instead: list open beans with a commit in the last "
+                         f"{_ACTIVE_HOURS}h — presumed CLAIMED by a live session")
     ap.add_argument("--since", default="2026-06-01", help="git log window (default 2026-06-01)")
     a = ap.parse_args()
 
@@ -142,6 +178,31 @@ def main() -> int:
                                        capture_output=True, text=True).stdout.strip())
     beans = load_beans(root)
     hits = done_commits(a.since)
+    allc = any_commits(a.since)
+    now = datetime.datetime.now(datetime.timezone.utc)
+
+    if a.active:
+        act = []
+        for bid, b in beans.items():
+            if b["status"] not in ("todo", "in-progress"):
+                continue
+            newest = max((c for c in allc.get(bid, [])), key=lambda c: c[1], default=None)
+            if not newest:
+                continue
+            age_h = (now - datetime.datetime.fromisoformat(newest[1])).total_seconds() / 3600
+            if age_h < _ACTIVE_HOURS:
+                act.append((age_h, bid, b, newest))
+        act.sort()
+        print(f"Open beans with a commit in the last {_ACTIVE_HOURS}h — "
+              f"presume CLAIMED by a live session, do NOT take: {len(act)}\n")
+        for age_h, bid, b, (sha, iso, subj) in act:
+            print(f"  {bid}  ({b['priority']}, {b['status']}, last commit {age_h:.0f}h ago)")
+            print(f"    bean : {b['title'][:100]}")
+            print(f"    last : {sha[:11]} {subj[:100]}")
+        print("\nThis signal asks only WHEN, never WHAT, so none of the four semantic "
+              "failure\nclasses below apply to it. AGENTS.md permits overlapping only "
+              "open-outcome\nresearch — never work that has one right answer.")
+        return 0
 
     rows = []
     for bid, b in beans.items():
@@ -165,6 +226,12 @@ def main() -> int:
           f"updated_at ({sum(1 for r in rows if r[0]=='high')} high priority).\n")
     for pri, bid, b, (sha, iso, subj, ambig) in shown:
         flag = "  [!! subject names >1 bean — the verb may govern another]" if ambig else ""
+        newest = max((c[1] for c in allc.get(bid, [])), default=None)
+        if newest:
+            age_h = (now - datetime.datetime.fromisoformat(newest)).total_seconds() / 3600
+            if age_h < _ACTIVE_HOURS:
+                flag += (f"  [ACTIVE — commit {age_h:.0f}h ago; presume CLAIMED, "
+                         f"do not take]")
         print(f"  {bid}  ({pri}, last updated {b['updated'][:10]}){flag}")
         print(f"    bean : {b['title'][:100]}")
         print(f"    later: {sha[:11]} {iso[:10]} {subj[:100]}")
