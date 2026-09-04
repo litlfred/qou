@@ -233,23 +233,36 @@ file whose cone moved since is checked against old declarations — silently, er
 pointing at your call site. `ls -l <olean>` vs `git log -1 -- <source>` before
 trusting a green OR debugging a red. Does NOT invalidate every restore.
 
-## STABLE — whole-library rebuild from source, in one command (2026-09-04)
+## STABLE — library rebuild: rebuild the DIRTY CLOSURE, not the whole tree (2026-09-04)
 
-The only way to know `main` is green is to rebuild it; single-file
-`lean`-direct certifies against on-disk oleans. Recipe (bean `qou-n9j7`,
-PR #6649): from `content/quantum-observable-universe/lean`, write the
-topological order of every `QOU/**/*.lean` (DFS over `import QOU.` lines)
-to `/tmp/full_topo.txt`, then run `tools/full_rebuild.sh` (kept beside this
-file): `lean -o <olean> -i <ilean> <src>` per module with `LEAN_PATH` on the
-restored dirs, error-only detection, per-module log at `/tmp/qou-rebuild.log`
-and error excerpts at `/tmp/qou-rebuild-errors.txt`. Measured 2026-09-04:
-2,597 library modules, ~3-4 s each warm after a ~100 s cold first module,
-so budget ~2.5-3 h and run it with `nohup` + a Monitor on `^FAIL|^progress`.
-Content-block siblings (907 `.lean` under chapter dirs) are not modules; do
-them after, with the same loop over their paths. Any red must then be
-classified: **mechanical port** (a retype / argument-order / rename already
-made elsewhere in the corpus) vs **real**; fix the first kind, bean the
-second with the exact error, never weaken a statement to get green.
+Single-file `lean`-direct certifies against on-disk oleans, so the only way to
+know `main` is green is to rebuild what the cache cannot vouch for. Recipe
+(bean `qou-n9j7`, PR #6649), from `content/quantum-observable-universe/lean`:
+
+1. Full topological order of `QOU/**/*.lean` (DFS over `import QOU.` lines)
+   → `/tmp/full_topo_all.txt` (2,597 modules on 2026-09-04).
+2. `git log --since=<well before the seed> --format=%ct --name-only origin/main
+   -- content/quantum-observable-universe/lean/QOU > /tmp/src_times.txt`.
+3. `python3 tools/dirty_closure.py > /tmp/full_topo.txt` — a module is dirty if
+   its source's last commit is newer than its olean, the olean is missing, or
+   an import is dirty. **Measured: 158 of 2,597** (63 / 52 / 43).
+4. `nohup tools/full_rebuild.sh &` + a Monitor on `^FAIL|^progress|^DONE`;
+   log `/tmp/qou-rebuild.log`, error excerpts `/tmp/qou-rebuild-errors.txt`.
+
+TRAPS learned getting here, each one cost a relaunch: (a) a single "seed
+commit" criterion is wrong — the restored tarball preserves per-module mtimes
+from different seed builds (oldest 2026-08-17), and one seed date pulled 1,494
+modules including the 25 `Archimedean/PauliWitness/*` at 10+ min each, whose
+sources predate their oleans; (b) an olean's mtime may be YOUR OWN earlier
+rebuild, not the cache's — derive nothing from one file's stamp; (c) `pkill -f
+<script name>` kills the shell that mentions the script name in the same
+command (exit 144) — kill by PID; (d) do not run a second heavy `lean` (e.g.
+compiling a docs audit file) beside the rebuild on this one-core box.
+Warm rate ~3-4 s/module, first module cold ~100 s. Content-block siblings (907
+`.lean` under chapter dirs) are not modules; do them after with the same loop.
+Any red is then classified — **mechanical port** (retype / argument order /
+rename already made elsewhere) vs **real**: fix the first, bean the second
+with the exact error, never weaken a statement to get green.
 
 ## BASELINE — re-measure, do not quote
 
