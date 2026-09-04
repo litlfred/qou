@@ -1,0 +1,293 @@
+{
+  "engine": "exact-integer-ade-enumeration",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T02:29:50.078727+00:00",
+  "commitSha": "507c849b630cb4ec5867b0330e6fbfc10c461ff7",
+  "assertions": [
+    {
+      "name": "C1_positive_root_COUNTS_match_the_known_values",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "A1..A5, D4, D5, E6, E7, E8 all reproduce (10 checked); the generator is not inventing its own root systems"
+    },
+    {
+      "name": "C2_every_generated_union_has_the_RANK_it_was_asked_for",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "so 'edges = rank - components' is applicable; ADE diagrams are trees, which is what makes the arrow count a function of the type alone"
+    },
+    {
+      "name": "C3_the_enumeration_is_EXHAUSTIVE_at_each_rank",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "rank->#types {2: 2, 3: 3, 4: 6, 5: 9}: rank 2 gives A1+A1, A2; rank 3 gives A1^3, A1+A2, A3; rank 4 adds A2+A2, A1+A3, A4, D4. A target is therefore hit by exactly one type or by none — there is nothing to choose"
+    },
+    {
+      "name": "every_reading_gives_a_UNIQUE_Dynkin_type",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "all four (rank, spectrum) pairs are hit by exactly one ADE type. The arrow count is not chosen — it is read off"
+    },
+    {
+      "name": "if_the_abelian_connection_IS_a_node_there_are_ZERO_arrows",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "4_1 -> A1+A1+A1 and 5_2 -> A1+A1+A1+A1, arrows {'4_1': 0, '5_2': 0}. This is exactly the potential-free ABELIANIZED quiver the corpus's M2 result said already realizes the target — reached here from Gabriel rather than from the plethystic log, which is an independent route to the same object"
+    },
+    {
+      "name": "if_it_is_NOT_a_node_there_is_EXACTLY_ONE_arrow",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "4_1 -> A2 and 5_2 -> A1+A2, arrows {'4_1': 1, '5_2': 1}. Both knots land on one arrow, so the two readings are each internally consistent across the two knots rather than one working and one not"
+    },
+    {
+      "name": "SO_THE_ARROW_QUESTION_IS_ANSWERED_conditionally",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the arrow count is FORCED to 0 or 1 by (rank, spectrum) alone, and which of the two depends only on whether the abelian connection is a node. That is a much smaller open question than 'what are the arrows', and it is a question about a CONVENTION the corpus already has an opinion about, not about new mathematics"
+    },
+    {
+      "name": "WHAT_WOULD_BREAK_THIS",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "(A3) finiteness is load-bearing: an infinite BPS spectrum means non-Dynkin and nothing is forced. (A2) acyclicity is assumed. (A5) the recorded DT count must be the indecomposable count rather than a per-ray count — if the corpus's (4,3) are counts at two rays of ONE quiver, the total is >= 7 and rank 4 A1+A3 (7 roots, 2 arrows) becomes the candidate instead. That reading is NOT tested here"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "dt-d1b-arrow-count-forced-by-gabriel",
+  "scriptFile": "dt_d1b_arrow_count_forced_by_gabriel_probe.py",
+  "scriptHash": "9579dc0dea6d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py"
+  },
+  "description": "qou-q9ih D1-b, the arrow question. Answered by a counting argument rather than by searching quivers against the target (the fit D1-a showed cuts nothing). For an acyclic quiver with W=0, Gabriel's theorem says finite representation type <=> simply-laced Dynkin, and then #indecomposables = #positive roots. Every ADE diagram is a TREE, so a rank-V union with k components has exactly V-k edges: the arrow count is determined by the Dynkin type, and the type by (rank, #positive roots). The rank is the node count, which the companion probe made arithmetic; the corpus supplies the spectrum size. Exhaustive ADE enumeration at ranks 2-5, exact integer arithmetic. Both node readings are carried, since the corpus does not settle whether the abelian connection is a node. CONDITIONAL on a stated chain: W=0 (the corpus's M2 finding), acyclicity, FINITE spectrum (the load-bearing one), simply-lacedness, and that the recorded DT count is the indecomposable count. If the spectrum is infinite, Gabriel does not bite and nothing here is forced. Scope-(a); nothing wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "ade_table": {
+      "2": [
+        {
+          "type": "A1+A1",
+          "positive_roots": 2,
+          "components": 2,
+          "edges": 0
+        },
+        {
+          "type": "A2",
+          "positive_roots": 3,
+          "components": 1,
+          "edges": 1
+        }
+      ],
+      "3": [
+        {
+          "type": "A1+A1+A1",
+          "positive_roots": 3,
+          "components": 3,
+          "edges": 0
+        },
+        {
+          "type": "A1+A2",
+          "positive_roots": 4,
+          "components": 2,
+          "edges": 1
+        },
+        {
+          "type": "A3",
+          "positive_roots": 6,
+          "components": 1,
+          "edges": 2
+        }
+      ],
+      "4": [
+        {
+          "type": "A1+A1+A1+A1",
+          "positive_roots": 4,
+          "components": 4,
+          "edges": 0
+        },
+        {
+          "type": "A1+A1+A2",
+          "positive_roots": 5,
+          "components": 3,
+          "edges": 1
+        },
+        {
+          "type": "A2+A2",
+          "positive_roots": 6,
+          "components": 2,
+          "edges": 2
+        },
+        {
+          "type": "A1+A3",
+          "positive_roots": 7,
+          "components": 2,
+          "edges": 2
+        },
+        {
+          "type": "A4",
+          "positive_roots": 10,
+          "components": 1,
+          "edges": 3
+        },
+        {
+          "type": "D4",
+          "positive_roots": 12,
+          "components": 1,
+          "edges": 3
+        }
+      ],
+      "5": [
+        {
+          "type": "A1+A1+A1+A1+A1",
+          "positive_roots": 5,
+          "components": 5,
+          "edges": 0
+        },
+        {
+          "type": "A1+A1+A1+A2",
+          "positive_roots": 6,
+          "components": 4,
+          "edges": 1
+        },
+        {
+          "type": "A1+A2+A2",
+          "positive_roots": 7,
+          "components": 3,
+          "edges": 2
+        },
+        {
+          "type": "A1+A1+A3",
+          "positive_roots": 8,
+          "components": 3,
+          "edges": 2
+        },
+        {
+          "type": "A2+A3",
+          "positive_roots": 9,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A1+A4",
+          "positive_roots": 11,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A1+D4",
+          "positive_roots": 13,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A5",
+          "positive_roots": 15,
+          "components": 1,
+          "edges": 4
+        },
+        {
+          "type": "D5",
+          "positive_roots": 20,
+          "components": 1,
+          "edges": 4
+        }
+      ]
+    },
+    "solutions": {
+      "abelian_IS_a_node": {
+        "4_1": {
+          "nodes": 3,
+          "spectrum": 3,
+          "solutions": [
+            "A1+A1+A1"
+          ],
+          "unique": true,
+          "arrows": 0
+        },
+        "5_2": {
+          "nodes": 4,
+          "spectrum": 4,
+          "solutions": [
+            "A1+A1+A1+A1"
+          ],
+          "unique": true,
+          "arrows": 0
+        }
+      },
+      "abelian_is_NOT_a_node": {
+        "4_1": {
+          "nodes": 2,
+          "spectrum": 3,
+          "solutions": [
+            "A2"
+          ],
+          "unique": true,
+          "arrows": 1
+        },
+        "5_2": {
+          "nodes": 3,
+          "spectrum": 4,
+          "solutions": [
+            "A1+A2"
+          ],
+          "unique": true,
+          "arrows": 1
+        }
+      }
+    },
+    "assumption_chain": {
+      "A1_W_zero": "the corpus's M2 finding (AomegaM2BPSCohomology, lean-direct exit 0)",
+      "A2_acyclic": "ASSUMED; Gabriel requires it",
+      "A3_finite_spectrum": "LOAD-BEARING; an infinite spectrum means non-Dynkin and nothing is forced",
+      "A4_simply_laced": "Gabriel covers quivers; B/C/F/G need valued quivers and are excluded, not overlooked",
+      "A5_DT_count_is_indecomposable_count": "if the corpus's (4,3) are per-ray counts of one quiver instead, the total is >=7 and A1+A3 becomes the candidate"
+    },
+    "scope": {
+      "tier": "scope-(a), conditional on the assumption chain",
+      "method": "exhaustive ADE enumeration + exact positive-root counts; no search against the target, no fit",
+      "arithmetic": "exact integers throughout; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
