@@ -1,11 +1,11 @@
 ---
 # qou-scrx
-title: 'Two scratch_*.lean files on main duplicate real declarations — 6 collisions, 0 importers'
+title: Two scratch_*.lean files on main duplicate real declarations — 6 collisions, 0 importers
 status: todo
 type: task
 priority: medium
 created_at: 2026-08-30T08:00:00Z
-updated_at: 2026-08-30T08:00:00Z
+updated_at: 2026-09-02T22:07:14Z
 ---
 
 Found while running the `/prepare-merge` §4a duplicate-declaration gate on the
@@ -174,3 +174,62 @@ a *different* proposition from its twin (hadron-restricted, closer to the
 narrative), and the canonical module it collides with has its own defect —
 `qou-skgn`. Deleting `scratch_pmass` is safe now; `scratch_skein` waits on that
 bean.
+
+
+--------
+
+## 2026-09-02 — RESOLVED, and this bean's count was stale by 4
+
+### The "6 collisions" is wrong; it is 2
+
+Measured directly (FQN → declaring files, over every `.lean` under `QOU/`):
+**62 duplicated FQNs corpus-wide, of which exactly 2 involve a scratch file**,
+both from `scratch_skein.lean`:
+
+* `QOU.Torsion.SkeinGenerationContext`
+* `QOU.Torsion.skein_generation`
+
+**`scratch_pmass.lean` no longer collides at all.** It was namespaced one level
+deeper — `QOU.Substrate.ProtonMassSubstrateIdentity.Scratch` — by the `qou-kfcl`
+fix, and its own header comment records why. So this bean's collision table is
+stale by 4: three FQNs × 2 files became one FQN pair.
+
+That changes the *justification* for deleting `scratch_pmass.lean`, not the
+conclusion. It is still debris and still goes — a hardcoded
+`m_e_codata : ℝ := 0.51099895069`, an `opaque F_Bor`, and a "theorem" whose
+`h_F : F_Bor q_0 = 4.469…` hypothesis hands it the very number it checks. But
+deleting it is **hygiene, not a gate fix**, and should not be reported as
+recovering collisions.
+
+### The conflict with `qou-skgn`, resolved by doing the work rather than choosing
+
+This bean said *"Delete both files."* `qou-skgn` said **do not** delete
+`scratch_skein.lean` — it was the corpus's only hadron-restricted statement of
+the claim.
+
+Both are now satisfied, because `scratch_skein.lean`'s content was **preserved
+and upgraded** before deletion. On inspection its `hadron_is_polynomial` field
+*was* the conclusion and `skein_generation` merely projected it — the same
+self-assuming defect `qou-skgn` is about, only hadron-restricted. The one thing
+worth keeping was the `Hadron : Skein → Prop` quantifier.
+
+So `QOU/Torsion/skein_generation.lean` now carries `HadronSkeinResolution` —
+hadron-relative `base` and `resolve` (the resolution must *produce* hadrons, or
+the induction could leave the class) — and derives `skein_generation_hadron`,
+the narrative's actual sentence: *"every **hadron** admits a terminal Skein
+resolution into a finite polynomial"*. Derived, not projected.
+
+That is route (3)'s hadron half from `qou-skgn`, and it makes the scratch file
+strictly redundant.
+
+### Result
+
+* duplicated FQNs **62 → 60**; scratch-related **2 → 0**.
+* importers of either file, re-checked immediately before deletion: **0** and **0**.
+* five theorems in `skein_generation.lean`, `lean`-direct exit 0, all
+  `#print axioms`-clean, **0 `sorryAx`**.
+
+### Still open
+
+The `ℤ[q^{±1}]` coefficient ring — `R` is still an arbitrary `CommRing`. That
+is the remaining half of `qou-skgn` route (3), recorded in the module docstring.

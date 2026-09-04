@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T23:10:14Z
-updated_at: 2026-09-03T04:54:10Z
+updated_at: 2026-09-03T10:40:05Z
 ---
 
 ## What is proved (branch claude/milnor-exact-order-coefficient-proof-2026-08-01)
@@ -225,3 +225,66 @@ The R2 crux (concrete evaluable ρ(w_n)) is now supplied at the base case n=3, l
 HONEST SEAM: Schur–Weyl duality itself ([4],[2] qdim weights, χ^{(3)}=1) is CITED as the def of survivingQTrace, not proved in Lean (Mathlib has no ribbon cat / quantum trace). BrunnianDeficitRecursion instance stays UNFABRICATED.
 
 REMAINING (∀n body, still open): position-indexed e_{n-1} on the reduced (≤2-row) space ∀n + the Brunnian-word spectrum recursion. Upstream: qou-o6ov two-row character machinery. Blocked on the same categorical-trace infra gap as R2 (Jones/quantum-trace not in Mathlib) for the general-n closure.
+
+
+## Note from qou-y98b (PR #6493, 2026-09-03) — your A=4 producer hardcodes the q0 pin
+
+Not a request for action; a finding this arc should own the decision on.
+
+**What I found.** `computations/deltalambda/milnor_a4_deficit_h_form.py`
+(08bcf2524f, "exact A=4 Brunnian deficit in convention-D h-form") sets its
+substrate modulus from a literal rather than from `q_parameter`:
+
+    Q0 = sp.Rational("2584370278640139188197914756009",
+                     "2328306436538696289062500000000")
+
+      that value   1.1099785827513805166...
+      canonical    1.1099785827513808075...   (proton pin, q_parameter.Q_50_DIGIT_STR)
+
+Sixteen significant digits of agreement, then divergence. Relative deviation
+2.62e-16. The denominator is 2^8 * 5^40, i.e. a decimal-exact rational built
+from a ~17-digit decimal string — so NOT Fraction(float64), but carrying
+float64's precision. The witness field is named `q0_pin_exact_rational`, which
+is exact about the rational and silent about the pin.
+
+**Why this does not change any of your numbers.** 2.62e-16 is inside the
+framework's own 1 ppQ (1e-15) L1 target, and two orders of magnitude below this
+probe's own comparison resolution — it checks against
+`producer_tauL4 = sp.Rational(1000145898, 1000000000)`, nine digits. Everything
+downstream of the substitution is exact sympy. I could not construct a way for
+this to move the A=3 validation or the A=4 outcome.
+
+**What I did, and deliberately did not do.** PR #6493 adds a producer-side
+`q0Anchor: "proton"` with the above as its `q0AnchorReason`, so the witness
+stops being unstamped and records its own provenance honestly. I did **not**
+route the file through `q_parameter`, because that would move a committed number
+inside your live arc and #6493 has no mandate here.
+
+**The decision, and it is yours:**
+
+- **Leave it.** Costs nothing, changes nothing, and the declaration now says
+  plainly what the pin is. Risk: the literal cannot follow a re-pin, so if the
+  proton anchor is ever re-derived (as the muon one was on 2026-08-28) this file
+  silently keeps the old value while every routed producer moves. Commits you to
+  re-checking it by hand at the next re-pin.
+- **Route it through `q_parameter`** (`from q_parameter import Q_50_DIGIT_STR`;
+  `Q0 = sp.Rational(Q_50_DIGIT_STR)` or the exact rational of it). Costs one
+  line plus a re-run of this producer; the recorded numbers shift by ~1e-16 at
+  most and no assertion of yours is near that. Buys immunity to re-pinning and
+  matches what qou-aj91 is doing across the corpus. Risk: it does perturb a
+  committed witness in an arc under active development, which is why I am not
+  doing it unasked.
+- **Rename the field** `q0_pin_exact_rational` -> `q0_pin_rational_16dp`, with
+  or without either of the above. Nearly free; removes the only genuinely
+  misleading part.
+
+**Default if you do nothing:** the declaration from #6493 stands, the witness is
+stamped `proton` with the provenance spelled out, and nothing else changes.
+
+**My judgement (not a finding):** route it, on the next occasion you touch this
+producer for a substantive reason rather than as a separate errand. The
+correctness case is weak — nothing moves — but the re-pin exposure is real and
+the fix is one line.
+
+Blast radius, in real terms: `milnor-a4-deficit-h-form.witness.json` is the only
+artifact, and grep finds no other producer or content block reading it.

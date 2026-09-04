@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "A fibre functor changes dimensions, not fusion rules: Bichon bilinear-form fibre functors of every dimension n >= 2 exist on Rep(SL_q(2)) and are real at q0, yet none puts a one-dimensional summand into V^(x)3, so the eightfold 10+8+8+1 is not the image of V^(x)3 under any fibre functor of the single-fibre category.",
+  "computation": {
+    "script": "computations/probes/fibre_functor_dimension_not_categorical_probe.py",
+    "arithmetic": "exact: sympy over QQ(q)[b] and ZZ; the only numerical evaluation is the sign of b and of a discriminant at the proton pin, at 30 dps, and only their signs are claimed"
+  },
+  "facts": {
+    "F1_bichon_forms": {
+      "n2_standard_form": {
+        "E": "[[0, 1], [-1/q, 0]]",
+        "trace": "-q - 1/q",
+        "equals_minus_q_minus_qinv": true
+      },
+      "forms": [
+        {
+          "n": 3,
+          "E_block_form": "I_{n-2} (+) [[0, 1], [b, 0]]",
+          "trace_E_inv_E_t": "b + 1 + 1/b",
+          "condition": "b + 1/b = -(q + 1/q) - (n - 2)",
+          "b_roots_exact": [
+            "(-q**2 - q - sqrt((q**2 - q + 1)*(q**2 + 3*q + 1)) - 1)/(2*q)",
+            "(-q**2 - q + sqrt((q**2 - q + 1)*(q**2 + 3*q + 1)) - 1)/(2*q)"
+          ],
+          "b_root_product_vieta": "1",
+          "discriminant_in_q": "q**2 + 2*q - 1 + 2/q + q**(-2)",
+          "discriminant_lower_bound_at_q_plus_qinv_eq_2": "5",
+          "discriminant_at_q0_positive": true,
+          "b_roots_at_q0_30dps": [
+            "-2.63078171087035601321610353518",
+            "-0.380115155836766285106526070660"
+          ],
+          "real_at_q0": true
+        },
+        {
+          "n": 4,
+          "E_block_form": "I_{n-2} (+) [[0, 1], [b, 0]]",
+          "trace_E_inv_E_t": "b + 2 + 1/b",
+          "condition": "b + 1/b = -(q + 1/q) - (n - 2)",
+          "b_roots_exact": [
+            "(-sqrt((q**2 + 1)*(q**2 + 4*q + 1)) - (q + 1)**2)/(2*q)",
+            "(sqrt((q**2 + 1)*(q**2 + 4*q + 1)) - (q + 1)**2)/(2*q)"
+          ],
+          "b_root_product_vieta": "1",
+          "discriminant_in_q": "q**2 + 4*q + 2 + 4/q + q**(-2)",
+          "discriminant_lower_bound_at_q_plus_qinv_eq_2": "12",
+          "discriminant_at_q0_positive": true,
+          "b_roots_at_q0_30dps": [
+            "-3.74378770370335474673479825668",
+            "-0.267109163003767551587831349151"
+          ],
+          "real_at_q0": true
+        },
+        {
+          "n": 5,
+          "E_block_form": "I_{n-2} (+) [[0, 1], [b, 0]]",
+          "trace_E_inv_E_t": "b + 3 + 1/b",
+          "condition": "b + 1/b = -(q + 1/q) - (n - 2)",
+          "b_roots_exact": [
+            "(-q**2 - 3*q - sqrt((q**2 + q + 1)*(q**2 + 5*q + 1)) - 1)/(2*q)",
+            "(-q**2 - 3*q + sqrt((q**2 + q + 1)*(q**2 + 5*q + 1)) - 1)/(2*q)"
+          ],
+          "b_root_product_vieta": "1",
+          "discriminant_in_q": "q**2 + 6*q + 7 + 6/q + q**(-2)",
+          "discriminant_lower_bound_at_q_plus_qinv_eq_2": "21",
+          "discriminant_at_q0_positive": true,
+          "b_roots_at_q0_30dps": [
+            "-4.80267977829769061566780521563",
+            "-0.208217088409431682654824390202"
+          ],
+          "real_at_q0": true
+        },
+        {
+          "n": 6,
+          "E_block_form": "I_{n-2} (+) [[0, 1], [b, 0]]",
+          "trace_E_inv_E_t": "b + 4 + 1/b",
+          "condition": "b + 1/b = -(q + 1/q) - (n - 2)",
+          "b_roots_exact": [
+            "(-q**2 - 4*q + (-q - 1)*sqrt(q**2 + 6*q + 1) - 1)/(2*q)",
+            "(-q**2 - 4*q + (q + 1)*sqrt(q**2 + 6*q + 1) - 1)/(2*q)"
+          ],
+          "b_root_product_vieta": "1",
+          "discriminant_in_q": "q**2 + 8*q + 14 + 8/q + q**(-2)",
+          "discriminant_lower_bound_at_q_plus_qinv_eq_2": "32",
+          "discriminant_at_q0_positive": true,
+          "b_roots_at_q0_30dps": [
+            "-5.83965383973245927910414989372",
+            "-0.171243026974663019218479712118"
+          ],
+          "real_at_q0": true
+        }
+      ]
+    },
+    "F2_F3_dimensions": {
+      "cg_twice_spins_of_cube": [
+        3,
+        1,
+        1
+      ],
+      "spin_zero_absent_from_cube": true,
+      "parity_invariant_checked_to_k": 12,
+      "cube_dims_by_fibre_dimension": {
+        "2": [
+          4,
+          2,
+          2
+        ],
+        "3": [
+          21,
+          3,
+          3
+        ],
+        "4": [
+          56,
+          4,
+          4
+        ],
+        "5": [
+          115,
+          5,
+          5
+        ],
+        "8": [
+          496,
+          8,
+          8
+        ],
+        "10": [
+          980,
+          10,
+          10
+        ]
+      },
+      "cube_total_is_n_cubed": true,
+      "no_one_dim_summand_n_2_to_N": 10000,
+      "no_eightfold_multiset_n_2_to_N": 10000,
+      "n3_minus_2n_eq_10_integer_roots": [],
+      "n3_minus_2n_eq_8_integer_roots": []
+    },
+    "F4_not_the_octet": {
+      "V_tensor_V_dims_at_n3": [
+        8,
+        1
+      ],
+      "tau_V1_is_8_dimensional": true,
+      "square_of_that_8": [
+        55,
+        8,
+        1
+      ],
+      "square_of_su3_octet": [
+        27,
+        10,
+        10,
+        8,
+        8,
+        1
+      ],
+      "same_total": true,
+      "same_multiset": false
+    }
+  },
+  "summary": {
+    "inequivalent_fibre_functors_exist": true,
+    "three_dimensional_fibre_functor_exists_real_at_q0": true,
+    "eightfold_multiset_reachable_by_fibre_functor": false,
+    "scope": "(b) structural exclusion of the fibre-functor route; invariant: Clebsch-Gordan parity of Rep(SL_q(2)), preserved by every fibre functor",
+    "relocates_missing_object_to": "the category: an object W with Lambda^3 W != 0, forbidden for the fundamental by axiom 5",
+    "lean": "QOU/Eightfold/FibreFunctorDimensionNotCategorical.lean"
+  },
+  "scriptHash": "869a141eff35",
+  "scriptCommitSha": "unknown",
+  "commitSha": "6db61d831160af511c6ca9edfa7f3ef80b3518d8",
+  "engine": "python",
+  "computedAt": "2026-09-03T08:35:58.010691+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "fibre_functor_dimension_not_categorical_probe.py"
+}

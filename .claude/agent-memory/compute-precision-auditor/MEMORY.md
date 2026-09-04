@@ -150,6 +150,14 @@ And **baseline from git** (`git show origin/main:<witness>`), never from a
 tree your own sweep writes to — a contaminated baseline produced a 73%
 figure of which two of three spot-checked verdicts were false.
 
+**And a MOVED verdict is usually the harness, not the arithmetic.** Measured
+over 99 producers in two sweeps (`qou-y98b`, #6454/#6493): five distinct causes
+of a false mover — an unlisted field name, a timing formatted into PROSE (no
+field-name mask reaches it), a CLI argument the witness itself records, a
+CWD-relative write that strays the witness to the repo root, and one genuinely
+stale consumer. **Zero were environment drift.** Full worked cases:
+`measurement-hygiene-traps.md`.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,
@@ -235,3 +243,8 @@ TRAPs.
   largest block is *not* at the largest `k`. Also: **atom bonds do not commute** —
   insertion order is worth `11 %` at `A=3` and `38-40 %` at `A=4`, so take the
   order from `atom_gen_chains` (interleaved) and quote it with any trace.
+
+- 2026-09-03 (qou-pdg9): exact leading-order coefficients by running the
+  duck-typed `Fraction` seminormal pipeline over power series; three traps
+  (valuation, constant allocation, `reject_float64_q` vs short decimals) —
+  see `exact-series-route.md`.

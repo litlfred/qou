@@ -476,3 +476,12 @@ what is missing is the construction itself.
 
 Anyone picking this up: read `qou-dwsh` first, then `qou-y7vg`. The setup is
 written down; do not re-derive it.
+
+## Cross-reference 2026-09-03 (PR #6458) — the fibre-functor version of Route A is closed
+
+Route A asks for a 3-dim object at the groupoid level. The single-fibre variant
+"change the fibre functor so dim tau'(V) = 3" is now excluded scope-(b):
+such fibre functors exist (Bichon 2003, real at q0) and preserve fusion rules,
+so V^{x3} still has no singlet. Route A proper (a different category / object,
+not a summand of V^{x n} and not a re-fibred V) is untouched. See
+docs/audits/2026-09-03-fibre-functors-do-not-change-the-category.md §4.

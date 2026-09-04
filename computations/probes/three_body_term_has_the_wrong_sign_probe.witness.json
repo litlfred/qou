@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-01T05:34:40.220800+00:00",
-  "commitSha": "e78695a2b9e7b3a5fc07f7ae4c7c96949b02d485",
+  "computedAt": "2026-09-03T09:48:44.477362+00:00",
+  "commitSha": "601760607ab0af80685f2308f2753c862fe33e76",
   "assertions": [
     {
       "name": "A1_chain_attachment_is_exactly_rank_one",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 22,
   "computation": "three_body_term_has_the_wrong_sign_probe",
   "scriptFile": "three_body_term_has_the_wrong_sign_probe.py",
   "scriptHash": "355af504c37c",
-  "scriptCommitSha": "c1491ec1749b96678f14606d3ca597c2d2cb4bc2",
+  "scriptCommitSha": "2bbb6115c57cb29042b0bcd090826343b6514f41",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -162,5 +165,7 @@
     "THE CEILING IS A ONE-SIDED BOUND WITH ONE UNMEASURED INPUT. B(2H) is exact — a single bond admits no many-body term. The B(4He) figure is the naive pairwise sum, which contains no many-body term at all, so it is an upper bound PROVIDED the A=4 many-body terms are non-positive. That is measured for all eight THREE-body terms at A=3 and NOT measured for the genuine FOUR-body term, which needs H_12. The unconditional statement is the weaker and still sufficient one: a pairwise sum with no many-body content gives 6.0643 against 12.7196, and every many-body term measured so far has the sign that makes it worse.",
     "'Rank one' here is a statement about the functional P -> tr(P.A) restricted to the prefix subalgebra, measured on 20 random words plus the physical configurations — not a proved algebraic rank. The k=1 result is exact to 1e-12 across every prefix tried, which is what the telescoping argument in chain_telescopes_and_ordering_sensitivity_probe already rests on; this reproduces it independently and contrasts it with k=2.",
     "A=3 traces here are H_9 seminormal and the A=2 bond constants are read off the same machinery, matching the arc's independently recorded L_pp / L_pn / L_nn to all printed digits. Everything is the FRAMED convention (-log(z+d), no writhe normalisation); the framed/normalised choice moves these numbers by 1-3 %, which does not approach the 2.1x shortfall and so cannot affect the conclusion."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -236,8 +236,38 @@ SELFTEST = [
 ]
 
 
+PROP_SELFTEST = [
+    # (source, field, expected shape) — the two shapes that wear the same syntax
+    ("class StandardYoungCount (n : Nat) where\n"
+     "  dim : Nat -> Nat\n"
+     "  squares_sum_factorial : Prop\n"
+     "  squares_sum_holds : squares_sum_factorial\n",
+     "squares_sum_factorial", "self_nominating"),
+    ("class AtomLike where\n"
+     "  stable : Prop\n"
+     "  IsFullOfCurls : Prop\n"
+     "  IsNobleGas : Prop\n"
+     "  claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)\n",
+     "IsNobleGas", "parameterised"),
+    # `stable` appears only as an ANTECEDENT, so it is parameterised too
+    ("class AtomLike where\n"
+     "  stable : Prop\n"
+     "  IsFullOfCurls : Prop\n"
+     "  IsNobleGas : Prop\n"
+     "  claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)\n",
+     "stable", "parameterised"),
+]
+
+
 def selftest() -> int:
     bad = 0
+    for src, field, want in PROP_SELFTEST:
+        got = {e["field"]: e["shape"] for e in prop_valued_fields(strip_comments(src))}
+        g = got.get(field, "<missing>")
+        ok = "ok " if g == want else "FAIL"
+        if g != want:
+            bad += 1
+        print(f"  [{ok}] {field}: shape={g} expected={want}")
     for src, cls, want in SELFTEST:
         idx = build_provider_index({"t.lean": strip_comments(src)})
         got = bool(idx.get(cls.split(".")[-1]))
@@ -254,37 +284,68 @@ PROP_FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*Prop[ \
 CARRIER = re.compile(r"^[ \t]*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+)?(class|structure)\s+([A-Za-z0-9_'.]+)", re.M)
 
 
-def prop_valued_fields(code: str):
-    """Fields declared `name : Prop` inside a class or structure.
+def carrier_blocks(code: str):
+    """Split the file into (carrier name, kind, start, end) blocks by indentation."""
+    out = []
+    for m in CARRIER.finditer(code):
+        nxt = CARRIER.search(code, m.end())
+        out.append((m.group(2), m.group(1), m.start(),
+                    nxt.start() if nxt else len(code)))
+    return out
 
-    This is a strictly worse defect than an uninhabited carrier, and the two are
-    independent.  A field typed `Prop` is a *variable*: the instance supplies the
-    proposition AND its proof, so
+
+FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*([^\n]*)$", re.M)
+
+
+def prop_valued_fields(code: str):
+    """Fields declared `name : Prop`, SPLIT by whether the carrier proves them directly.
+
+    Two shapes wear the same syntax and they are not the same defect.  Conflating
+    them inflates the count, which this scan did until a false positive on
+    `QOU/Archimedean/noble_gas_characterization.lean` exposed it.
+
+    **self_nominating** — the defect.  A companion field's type is the `Prop`
+    field itself::
 
         squares_sum_factorial : Prop
         squares_sum_holds : squares_sum_factorial
 
-    is discharged by `squares_sum_factorial := True; squares_sum_holds := trivial`.
-    The carrier constrains nothing, and unlike a bare `True` field (which
-    AGENTS.md §3b-tax's `proof-claims-unencoded` already flags) it does not even
-    say WHICH nothing — a reader cannot tell what was meant to be asserted.
+    An instance supplies both the proposition and its proof, so
+    `:= True; := trivial` discharges it and the carrier constrains nothing.
+    Worse than a bare `True` field (which `AGENTS.md` §3b-tax's
+    `proof-claims-unencoded` flags) because it does not even say WHICH nothing.
 
-    AGENTS.md's stated remedy is a parameter-quantified statement in the shape of
-    the claim, so the honest form of the example above is
+    **parameterised** — legitimate, and NOT a defect.  The `Prop` field is an
+    abstract predicate used as a *component* of some other field's statement::
 
-        squares_sum : ∑ lam, (dim lam) ^ 2 = n !
+        IsNobleGas : Prop
+        IsFullOfCurls : Prop
+        claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)
+
+    Here the content is the relation, and the predicates are parameters of it —
+    the same move as taking `(P : alpha -> Prop)` as an argument.  An instance
+    choosing `True` for both satisfies a *weaker instance*, not a vacuous class:
+    the iff still has to hold for whatever it chose.
+
+    The discriminator is therefore whether the carrier proves the field
+    DIRECTLY, not whether the field is typed `Prop`.
     """
     out = []
-    for m in PROP_FIELD.finditer(code):
-        owner = None
-        for c in CARRIER.finditer(code, 0, m.start()):
-            owner = c
-        out.append({
-            "line": code.count("\n", 0, m.start()) + 1,
-            "field": m.group(2),
-            "carrier": owner.group(2) if owner else "<none>",
-            "carrier_kind": owner.group(1) if owner else "<none>",
-        })
+    for name, kind, lo, hi in carrier_blocks(code):
+        block = code[lo:hi]
+        fields = [(m.group(2), m.group(3).strip(), m.start())
+                  for m in FIELD.finditer(block)]
+        prop_names = {f for f, ty, _ in fields if ty == "Prop"}
+        # a field whose ENTIRE type is another field's name proves it directly
+        proved_directly = {ty for f, ty, _ in fields if ty in prop_names}
+        for f, ty, off in fields:
+            if ty != "Prop":
+                continue
+            out.append({
+                "line": code.count("\n", 0, lo + off) + 1,
+                "field": f, "carrier": name, "carrier_kind": kind,
+                "shape": "self_nominating" if f in proved_directly else "parameterised",
+            })
     return out
 
 
@@ -402,14 +463,17 @@ def main() -> int:
             for e in prop_valued_fields(strip_comments(raw)):
                 e["file"] = rel[len(LEAN_ROOT) + 1:]
                 pf.append(e)
-        carriers = {e["carrier"] for e in pf}
-        print(f"\nPROP-VALUED FIELDS: {len(pf)} across {len({e['file'] for e in pf})} files, "
-              f"in {len(carriers)} carriers")
-        print("  A field typed `Prop` is a VARIABLE: the instance supplies both the")
-        print("  proposition and its proof, so the carrier constrains nothing — and unlike")
-        print("  a bare `True` field it does not even say which nothing.")
-        for e in pf:
-            print(f"  {e['file']}:{e['line']}  {e['carrier_kind']} {e['carrier']} . {e['field']}")
+        selfnom = [e for e in pf if e["shape"] == "self_nominating"]
+        param = [e for e in pf if e["shape"] == "parameterised"]
+        print(f"\nPROP-VALUED FIELDS: {len(pf)} total — and they are TWO shapes, not one")
+        print(f"  self_nominating {len(selfnom):3d}  the DEFECT: a companion field proves it")
+        print(f"                            directly, so the instance picks the claim AND")
+        print(f"                            proves it. `:= True; := trivial` discharges it.")
+        print(f"  parameterised   {len(param):3d}  NOT a defect: an abstract predicate used as a")
+        print(f"                            COMPONENT of another field's statement. The content")
+        print(f"                            is the relation; the predicate is its parameter.")
+        for e in selfnom:
+            print(f"  DEFECT {e['file']}:{e['line']}  {e['carrier_kind']} {e['carrier']} . {e['field']}")
         prop_fields_out.extend(pf)
 
     if a.json:

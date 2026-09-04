@@ -68,6 +68,9 @@ export default chapter({
         "substrate-from-leptons-intro",
         // Phase 7 orphan reconnection (2026-05-25):
         "epistemic-status-of-calibrations",
+        // The μ–p residual: the two readings of the two-pin discrepancy,
+        // the proved constraints on any correction, and what decides.
+        "mu-p-residual-two-readings",
         "skein-mass-relation",
         "skein-mass-relation-proof",
         "knot-volumes-verification",
