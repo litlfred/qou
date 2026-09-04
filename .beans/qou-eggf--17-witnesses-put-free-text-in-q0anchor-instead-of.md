@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-04T14:26:47Z
+updated_at: 2026-09-04T15:21:43Z
 ---
 
 ## The finding
@@ -217,3 +217,39 @@ labels is poor value, and hand-editing a witness to close the gap is forbidden.
 Consequence, stated so nobody reads the gate as unfixed: `q0_anchor_consistency_audit`
 will report **Q0_ANCHOR_UNRECOGNISED: 2** rather than 0, and both are
 `qbeta_derived_w_overdetermined_test` and `qbeta_interface_w_deciding_test`.
+
+
+### setsid does NOT survive session idle either — the finding is now twice-measured
+
+Third attempt, relaunched under `setsid` (own process/session group) at 14:26.
+At the 15:15 check-in, after ~45 min of session idle:
+
+    python3 processes                    0
+    /tmp/eggf/slow.done                  empty (the wrapper was killed too)
+    derived_w log                        337 bytes, last written 14:26:51
+
+So `setsid` buys nothing. Both `nohup` and `setsid` are killed when the container
+is reclaimed at session idle. **Two mechanisms, same result** -- treat this as an
+environment property, not a launch-flag problem.
+
+**🛑 A measurement trap that nearly produced the opposite answer.**
+`pgrep -c -f qbeta_derived_w` returned **4** right after launch and **1** at the
+check-in, and I wrote "python is running" off the 4. Both counts include
+**pgrep's own match against the invoking shell's command line**, because the
+pattern appears in the command being run. `pgrep -af` shows the truth: the only
+match was `/bin/bash -c ...` -- my own shell. Use `pgrep -af` and read the
+cmdlines, or the self-match reports a dead compute as alive.
+
+### Final measured gate state (nothing competing for CPU)
+
+    Q0_OK                   1368   (was 1358)
+    Q0_ANCHOR_UNRECOGNISED     2   (was 13)
+    Q0_FLIP                    1
+
+The 2 are exactly `qbeta-derived-w-overdetermined-test` and
+`qbeta-interface-w-deciding-test`, both still reading `'proton (experimental
+pin)'` because their witnesses were never regenerated. Their PRODUCERS are fixed;
+this closes on the next successful run by anyone.
+
+The 1 flip is `hadron-knot-table` (anchor=muon, value = the retired pin A) --
+`qou-tekx` stage 2, not this bean's.
