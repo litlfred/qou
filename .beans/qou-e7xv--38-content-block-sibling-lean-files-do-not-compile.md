@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T08:21:55Z
+updated_at: 2026-09-04T11:06:18Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -290,3 +290,22 @@ a `norm_num` arithmetic identity; that WAS the block's formalisation.
 `townsend`'s 7 errors were all Mathlib API drift (`Tendsto.pow` → `𝓝 (0^2)`,
 rpow-vs-natural-power, `Pi.div`, an implicit `τ` passed explicitly) — the
 opposite of what its docstring claimed.
+
+
+## Fourth main merge, 2026-09-04
+
+`7297f2f6d5 → d0d473550a` (21 commits), merged as `bf4f787890`. All **37**
+repaired siblings re-verified `lean`-direct: **exit 0, zero errors, every one**.
+No regressions. `pentagon-uv-commutation.lean` reports DELETED, which is this
+sweep's own `git rm` of a verbatim stale duplicate, not a miss.
+
+The single merge conflict was provenance-only (`commitSha` / `computedAt` in
+`computations/witness-raw-float64-audit.witness.json`); both payloads hash
+identically with the volatile keys masked, so the later run was taken and
+nothing computed differently.
+
+`QOU/Mathlib/LPDuality.lean` is the one library file main touched that is in
+this branch's cone (+61 lines from a sibling, no deletions). Compiled anyway —
+exit 0 — because "pure addition" is an argument, not a check.
+
+Sweep stands at **38 → 1**; the remaining one is `qou-0xrn`.

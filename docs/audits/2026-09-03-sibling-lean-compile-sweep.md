@@ -613,3 +613,35 @@ degenerate model is "any two numbers with that product".
 The PR body's §3 calls the four-axiom table "the single most useful thing this
 sweep found". That stands as written — it was, *for this sweep* — but it should
 not be read as novelty. This section is the correction of record.
+
+---
+
+## Update 2026-09-04 — fourth `origin/main` merge, re-verified
+
+`origin/main` `7297f2f6d5 → d0d473550a`, **21 commits**, merged as `bf4f787890`.
+This is the **fourth** merge into the branch (after 151, 49, 26); everywhere
+this document says "three merges", read four.
+
+**All 37 repaired siblings re-verified: `lean`-direct exit 0, zero errors, on
+every one.** None regressed. The one file the merge deleted from the check list
+(`mass-theory/pentagon-uv-commutation.lean`) is the pure duplicate this sweep
+`git rm`'d, so its absence is the expected state and not a miss.
+
+Two notes on the merge itself, both worth keeping because each is a shape that
+recurs.
+
+**The one conflict was provenance-only, and checking that is a two-line job.**
+`computations/witness-raw-float64-audit.witness.json` conflicted on exactly
+three lines — `commitSha` and `computedAt` — with the payload auto-merged. Both
+sides' payloads hash **identically** with `commitSha` / `computedAt` /
+`durationMs` masked, so the later run was taken. Masking the volatile keys and
+hashing is what turns "a witness conflicted" into "nothing computed differently";
+without it the honest report would have had to be "a witness conflicted and I
+picked one".
+
+**One library file main touched is inside this branch's cone.**
+`QOU/Mathlib/LPDuality.lean` gained 61 lines from a sibling
+(`duality_gap_decomposition`, `duality_gap_le_of_residual_bounds`). Pure
+addition, no deletions — but "pure addition" is an argument, not a check, so it
+was compiled: `lean`-direct **exit 0** post-merge. No other `.lean` in the 21
+commits overlaps this branch.
