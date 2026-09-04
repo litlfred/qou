@@ -46,7 +46,28 @@ sufficient alone:
 The witness payload was also checked for a q₀ field. The reason recorded on
 each witness names that evidence rather than asserting the conclusion.
 
-## Three ways a q₀ declaration silently does nothing
+**A third, DYNAMIC check was added after #6519 pointed out that both of the
+above are static** — a producer can be pin-dependent through what it computes
+*with*, which neither a cone trace nor a source scan inspects. #6519 measured
+that: two probes declaring themselves pin-independent whose own `_q0`-named
+fields moved 428.7 ppb and 3.4 ppb under a re-pin.
+[`computations/audits/q0_pin_flip_test.py`](../../computations/audits/q0_pin_flip_test.py)
+forces a stem to the muon anchor, re-runs, and diffs the payload.
+**Result: controls 2/2 moved, subjects 0/7 moved** — all seven `independent`
+verdicts hold dynamically as well as statically.
+
+Its own first run was **vacuous and reported the same conclusion**: the restore
+between producers was `git checkout -- computations/`, and the manifest lives
+under `computations/`, so the pin patch was reverted after the first producer
+and everything after it ran unflipped. The second positive control caught it by
+reading "no move" where it had to move; a single control would not have, since
+`any(controls)` was already True. The gate is now `all(controls)`.
+
+## Four ways a q₀ declaration silently does nothing
+
+(Three found here; the fourth established independently on #6519 and
+credited below. The document filename still says "three" — it is the
+committed path and is left alone.)
 
 The interesting result of this pass is not the 35. It is that **most of these
 producers were already declared, and the declaration was inert.**
@@ -114,6 +135,31 @@ Already documented (bean `qou-fl0a`): `build()` writes the stamp only
 `if _a in ("muon", "proton")`, so an `ambiguous` manifest entry resolves
 correctly and is then discarded. Not encountered in this refill; listed so the
 three are in one place.
+
+### 4. A `physical_proton` entry is not what stamps `proton` (from #6519)
+
+Established independently by the sibling working #6519 (`qou-9ugp`) and
+reported on this PR, from the opposite direction to the three above. They wrote
+that a witness stamps `proton` *because* its stem is in `physical_proton`, then
+tested it by **removing the stem from two producers and re-running** — both
+still stamped `proton`.
+
+`q_parameter` branches only on `ideal_muon`
+(`if _stem in _man.get("ideal_muon", []): ... else: proton`), so
+`physical_proton` membership is a **declaration of intent that no code reads**.
+Anything not listed under `ideal_muon` resolves to proton by default.
+
+This is distinct from mechanism 1, and sharper in one respect. Mechanism 1 says
+a manifest entry cannot stamp a *hand-rolled* producer, because the manifest is
+read inside `build()`. Mechanism 4 says that even where the stamp *does* land,
+the `physical_proton` entry is not what caused it. So a `physical_proton` entry
+is never evidence of anything by itself: on a `WitnessBuilder` producer the
+default would have stamped proton anyway, and on a hand-rolled one it does
+nothing at all.
+
+The practical consequence for triage: **`ideal_muon` membership is the only
+manifest fact with behaviour attached.** Read `physical_proton` as
+documentation.
 
 ## The new audit, and the two bugs in it
 
