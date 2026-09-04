@@ -119,14 +119,14 @@
     "supersedes": "the zeta(3) t^3 test proposed earlier today, which targeted the monodromy reading now closed by a cheaper argument.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "399d2b9ef40e87e121d28ed6b6a6a318401fc277",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_kd_monodromy_reading_closed_probe.py",
-  "scriptHash": "ba59decd17ba",
-  "scriptCommitSha": "unknown",
-  "commitSha": "399d2b9ef40e87e121d28ed6b6a6a318401fc277",
-  "computedAt": "2026-09-01T06:28:16.987100+00:00",
+  "scriptHash": "f0d98e3eecb7",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "computedAt": "2026-09-04T12:40:10.711136+00:00",
   "engineVersion": "sympy 1.14.0",
-  "q0Anchor": "none (exact symbolic identities in q)",
-  "q0Value": "n/a"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact symbolic identities in q: every quantity here is a Laurent polynomial in the sympy symbol q, and no pin is read anywhere in the file or its import cone (stdlib + sympy only). No q0Value is recorded because a single value would assert the one pin this label denies."
 }

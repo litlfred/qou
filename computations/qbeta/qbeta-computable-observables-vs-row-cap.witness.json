@@ -161,15 +161,16 @@
     "what_survives": "Reading a SPECTRUM rather than a trace does see the tall blocks -- rho_(3,2,1)(Delta_bind) is nonzero while its trace contribution is exactly zero. That is not a rescue: the block carries no states at N = 2. Every route from a >2-row block to a physical number is either a trace (zeroed) or a spectrum (stateless).",
     "scope": "Scope-(a). No content block is edited here."
   },
-  "gitCommit": "86d3eda0af8110a08caae4c4fea3b683c63f6873",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_computable_observables_vs_row_cap_probe.py",
-  "scriptHash": "f651737f7d89",
-  "scriptCommitSha": "unknown",
-  "commitSha": "86d3eda0af8110a08caae4c4fea3b683c63f6873",
+  "scriptHash": "37996abaad94",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-02T21:09:35.379179+00:00",
+  "computedAt": "2026-09-04T12:32:02.126632+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

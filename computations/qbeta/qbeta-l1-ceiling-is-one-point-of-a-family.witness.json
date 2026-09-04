@@ -201,15 +201,16 @@
     "anti_fit": "NO w IS SELECTED. The sample is systematic (identity, both crossings of every generator, every ordered pair) and the reported figure is a range. beta_atom . w is a different element of the algebra -- it is not the deuteron -- so a large ceiling(w) is a fact about the algebra, not about binding. This probe does not close the gap and does not identify which functionals are observables.",
     "scope": "Scope-(a). No content block is edited here."
   },
-  "gitCommit": "92d167392f81747e4f6457e43a2b513d1759df8d",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py",
-  "scriptHash": "e831c0bd4a35",
-  "scriptCommitSha": "unknown",
-  "commitSha": "92d167392f81747e4f6457e43a2b513d1759df8d",
+  "scriptHash": "634e4e63f675",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-02T21:57:00.153901+00:00",
+  "computedAt": "2026-09-04T12:40:12.216471+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }
