@@ -521,10 +521,33 @@ def main():
         },
     }
 
+    # Assertion (bean qou-srvu). This witness carried none, so `allPassed:
+    # true` was vacuous. The check already existed: each case compares the
+    # filtration shape the GB reduction actually produced against an
+    # INDEPENDENTLY DECLARED `expected_filtration`, and the verdict was stored
+    # as `expected_pass` / `summary.all_expected_pass` without ever being
+    # asserted. Nothing new is claimed.
+    #
+    # Asserted as a COUNT: `expected` is the number of cases that declare an
+    # expected shape, so the assertion fails if any declared case regresses.
+    # It is not a number chosen to match the observation.
+    #
+    # NOT asserted: `summary.ready_for_joint_tower_sdp`, a HARDCODED True
+    # recording an author's judgement about downstream readiness rather than
+    # anything this script computes.
+    _n_with_expected = witness["summary"]["n_cases_with_expected"]
     saved_path = (
         WitnessBuilder.wrap_legacy(
             "gb-filtration-jet-order", witness,
             script_path=__file__, engine="sympy",
+        )
+        .add_assertion(
+            "gb_filtration_shape_matches_declared_expected_count",
+            computed=str(witness["summary"]["n_expected_pass"]),
+            expected=str(_n_with_expected),
+            source="per-case `actual_filtration == expected_filtration` over "
+                   "the exact symbolic GB normal form in Q(q); expected is the "
+                   "number of cases declaring an expected shape",
         )
         .save()
     )

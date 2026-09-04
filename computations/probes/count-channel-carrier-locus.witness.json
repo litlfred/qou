@@ -2,7 +2,7 @@
   "q0Anchor": "proton",
   "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-03T21:48:20.548382+00:00",
+  "computedAt": "2026-09-04T02:58:23.718073+00:00",
   "description": "The count channel of QOU.Mass.BrunnianBindingChannel, evaluated on the framework's own carriers, predicts b3 = 0. The Borromean L6a4 count multiplicity (3) is exactly three times the Hopf clasp's (1), which is the pair-local condition, so b3 vanishes identically against a measured b3/b2 = 0.6411239316. The MeV scale and the substrate factor h both cancel, so no reparametrisation rescues it. The channel itself is NOT obstructed -- small half-integer multiplicities reach the measured ratio to 0.27% -- so the failure is the carrier assignment, and any carrier that reaches b3 does so as a fit unless its crossing numbers are derived.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -116,5 +116,11 @@
     "probes/pair-locality-shortfall.witness.json",
     "probes/aggregator-convexity-divided-difference.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies; carrier crossing data from QOU.Mass.BrunnianBindingChannel"
+  "source": "AME2020 total nuclear binding energies; carrier crossing data from QOU.Mass.BrunnianBindingChannel",
+  "scriptHash": "32f7e02fb61d",
+  "scriptCommitSha": "d98c675e77f92d294d2e8a4d1d0477925d210f3e",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

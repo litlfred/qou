@@ -2,7 +2,7 @@
   "q0Anchor": "independent",
   "q0AnchorReason": "Reads no q0. The divided differences are taken over AME2020 binding energies and bond counts; no substrate quantity enters. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-04T02:35:15.104640+00:00",
+  "computedAt": "2026-09-04T02:58:22.597535+00:00",
   "description": "AME2020's binding, read as a function of complete-graph bond count at A = 2, 3, 4, is CONVEX and strictly superadditive through the origin. With QOU.MassTheory.AggregatorConvexityDichotomy this converts the two known assembly failures (multiplicative b3 < 0, additive b3 = 0) into one statement -- both aggregators are concave-through-the-origin -- and orients the replacement: the aggregator must be strictly convex at small argument.",
   "q0_pin": "not applicable -- consumes no framework quantity",
   "free_parameters": 0,
@@ -137,5 +137,10 @@
     "probes/mayer-threebody-sign-threshold.witness.json",
     "probes/he4-body-order-shortfall-location.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies"
+  "source": "AME2020 total nuclear binding energies",
+  "scriptHash": "250daf41ecbb",
+  "scriptCommitSha": "c6b8249eb4a85eef5efdb8a0898d66f8cd8ad1ac",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "durationMs": 0
 }

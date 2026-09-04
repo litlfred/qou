@@ -2,7 +2,7 @@
   "q0Anchor": "independent",
   "q0AnchorReason": "Reads no q0. The shortfall is a difference of AME2020 binding energies against a pairwise-additive model built from the same data; no substrate quantity enters. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-04T02:35:15.552916+00:00",
+  "computedAt": "2026-09-04T02:58:23.937952+00:00",
   "description": "Quantifies the pair-locality refutation proved in QOU.Mass.CrossingModelPairLocality. A pair-local crossing model has b3 = b4 = 0 forced, so its binding ceiling is C(A,2)*b2. Against AME2020 that ceiling misses 4He by a factor 2.12 -- 52.8% of the binding is irreducibly many-body and no pairwise assembly reaches it, whatever bond functional is applied. With a Brunnian carrier the pair terms vanish and b3 is exactly the triple channel, so the measured b3 > 0 pins that channel to an attractive 1.4262225 MeV per triple.",
   "q0_pin": "not applicable -- consumes no framework quantity",
   "free_parameters": 0,
@@ -102,5 +102,10 @@
     "probes/aggregator-family-exclusion.witness.json",
     "probes/mayer-threebody-sign-threshold.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies"
+  "source": "AME2020 total nuclear binding energies",
+  "scriptHash": "14cff0d3e2b8",
+  "scriptCommitSha": "c6b8249eb4a85eef5efdb8a0898d66f8cd8ad1ac",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "durationMs": 0
 }

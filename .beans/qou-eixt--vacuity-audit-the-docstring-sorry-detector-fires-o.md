@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T12:44:06Z
-updated_at: 2026-09-03T15:12:34Z
+updated_at: 2026-09-04T02:18:05Z
 ---
 
 MEASURED on main b8d883189d.
@@ -26,3 +26,31 @@ FIX. SORRY_MENTION_QUOTES_SUPERSEDED, a second regex kept separate from the hist
 Result 5 -> 1. The survivor is shell_filling_rule, correctly still flagged.
 
 GUARDED. --selftest-docstring-sorry, 12 fixtures, ALL REAL CORPUS TEXT: the 4 superseded-text quotes must be suppressed, and the 8 genuine mismatches drained in PR #6471 must STILL fire. The risk of these patterns is over-suppression, so the second half is the important half. NEGATIVE CONTROL RUN: adding 'honest' to the pattern makes the selftest fail with 3 named fixtures and exit 1; restoring makes it green. The guard is not merely present, it bites.
+
+MERGED 2026-09-04 as cf6146d66e (rebase, 7 linear commits on main). PR #6507.
+
+WHAT LANDED, per criterion:
+  proof-no-provable-axiom      2 -> 0   (ahlfors1979 cited on the surviving axiom;
+                                         main proved the other mid-flight, e3051fb1df)
+  proof-docstring-sorry-mismatch 5 -> 1 (SORRY_MENTION_QUOTES_SUPERSEDED +
+                                         --selftest-docstring-sorry, 12 real fixtures)
+  proof-claims-unencoded       6 -> 5   (the live q-beta carrier restated; the survivor
+                                         at EigenphaseCarrierVacuity:70 is the deliberate
+                                         demonstration copy and stays)
+
+THE MERGE-METHOD STEP, worth recording because it nearly went wrong:
+rule 8 defaults to rebase-merge, but the branch carried a merge commit (main had been
+merged in to resolve a ledger conflict), and rebase-merge DROPS merge commits. Tested in
+a scratch worktree rather than assumed: `git rebase origin/main` FAILED on the
+axiom-citation commit, which cited both axioms and was being replayed against a main that
+had since proved one. Resolved locally with the entry-union resolver (one trivial
+updated_at hunk) and force-with-lease pushed. The check that made it safe: the rebased
+tree hash is BYTE-IDENTICAL to the verified merge result (299ef22617 both sides), so the
+verification transfers exactly rather than by argument.
+
+CORRECTION TO MY OWN CLAIM, made twice before it was caught: I reported this branch
+conflict-free on `git merge-tree <base> <ours> <theirs> | grep -c '^<<<<<<<'` returning 0.
+That check MEASURES NOTHING -- the old three-argument form does not emit conflict markers
+at line start, so it can only ever return 0. Use `git merge-tree --write-tree HEAD
+origin/main` and read the EXIT CODE. The API's mergeable_state was also true-but-stale
+(computed against a base 16 commits back). A real conflict was hiding behind both.

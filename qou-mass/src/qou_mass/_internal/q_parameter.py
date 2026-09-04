@@ -113,7 +113,6 @@ if _anchor in ("ideal", "muon", "canonical"):
   try:
     import json as _json
     import math as _math
-    from pathlib import Path as _P
 
     # ── Owner ruling 2026-08-22: "A --> CODATA 2022" ────────────────────
     # The ideal/muon anchor IS the CODATA-2022 muon derivation, taken LIVE
@@ -140,7 +139,6 @@ if _anchor in ("ideal", "muon", "canonical"):
     # would deadlock regeneration (the producer needs this module to run).
     import mpmath as _mp_anchor
 
-    _QPIN = _P(__file__).resolve().parent.parent / "q-pinning-50-digit.witness.json"
     with _mp_anchor.workdps(90):
         _d = {"q": _mp_anchor.nstr(q_muon_at(70), 70)}  # noqa: F405 (import *)
 

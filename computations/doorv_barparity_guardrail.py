@@ -69,6 +69,11 @@ from mpmath import mp, mpf
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 set_compute_dps()
 
 # --------------------------------------------------------------------------- #
@@ -317,6 +322,15 @@ def main() -> None:
     out = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
         "doorv_barparity_guardrail.witness.json",
+    )
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    _WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python",
+        q0_anchor=False,
+        q0_anchor_reason=(
+            "the producer performs no q0-dependent computation "
+            "(zero q_parameter / q_at / Q_50_DIGIT references)"),
     )
     with open(out, "w") as fh:
         json.dump(witness, fh, indent=2)

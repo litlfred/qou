@@ -54,6 +54,11 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 set_compute_dps()
 
 AME = {
@@ -245,6 +250,12 @@ def main():
     #     payload (subjects 0/7, on a harness where controls moved 2/2).
     # The sweep's pattern is right for a producer that READS q0; this one
     # does not.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python")
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(_COMP.parent)}")
     return 0 if ok else 1
