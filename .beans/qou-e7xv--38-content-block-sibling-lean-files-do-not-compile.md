@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-03T22:49:05Z
+updated_at: 2026-09-04T02:33:47Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -93,3 +93,43 @@ quantum-observable-universes/{q-connection,q-ext-deriv,quantum-planck-constant,q
 
 Worth noting WHY the wrong fix was attractive: the "five files, one root
 cause" framing. A shared error message is not a shared defect.
+
+
+## UPDATE 2026-09-04: 38 -> 27, and the dominant cause is now clear
+
+It is NOT Mathlib drift and NOT bad mathematics. **Migrations stop at the
+sibling boundary.** A library object changes shape; every consumer inside the
+Lake globs is updated because `lake build` forces it; the content-block
+siblings are left behind because nothing builds them.
+
+    SubstrateParameter split (categorical R_q / ArchimedeanSubstrateField ℝ)   6 files
+    theorem specialised generic `Field R` -> ℝ, ascription left as `(q : R)`   1
+    HeckeExpansion gained `(R : Type*) [Field R]` before `n`                   1
+    HasPentagonRelation / HasBlochGroup given real fields instead of True-ish  1
+
+That is 9 of the 11 repaired so far. The other two were a Lean-notation token
+used as a binder name (`Σ`, `λ`) and orphaned docstrings.
+
+CONSEQUENCE: a mechanically-enforced migration is NOT enforced here. Anyone
+changing a library signature must grep `content/<paper>/**/*.lean` outside
+`lean/` as a separate step — the compiler will not ask.
+
+The Bloch-group case is the sharpest: the stranded sibling was WRONG, not
+merely stale. It carried an instance with every field `:= trivial`, and the
+library's strengthening (real `AddSubgroup` / `→+ ℝ` / torsion fields, its
+docstrings saying "not a `True` placeholder") is exactly what stopped it
+typechecking. The compile error was the guard working, and the fix was
+deletion — supplying `⊥` and the zero hom would typecheck and assert nothing.
+
+Fixed to ZERO errors and ZERO warnings so far (11):
+  n-v-bring-action, quantum-volume, q-connection, q-ext-deriv,
+  quantum-planck-constant, q-lie-bracket, substrate-parameter-exists,
+  confinement-phase-stratification, gram-determinant-plancherel-ratio,
+  flavor-mass-splitting-bound, bloch-group-quotient-construction,
+  knot-factor-shell-closed
+
+Improved but still failing (2): braid-action-tensor 5->2 (`qou-8qby`),
+townsend-biot-savart-strain 9->7 (real-analysis proof drift, not names).
+
+Re-verified against main after merging its 39 commits: those were library-side
+and fixed none of the siblings.

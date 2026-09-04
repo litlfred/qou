@@ -13,8 +13,8 @@ Every `.lean` under `content/quantum-observable-universe/` that is **not** in
       harness: QOU-only LEAN_PATH, file imports UGB    -1
       harness: `import Mathlib` (aggregator olean absent) -2
     REAL                                               38   (4.2 % of 908)
-      fixed on this branch                             -6
-    REMAINING                                          32
+      fixed on this branch                            -11
+    REMAINING                                          27
 
 **Both harness classes were confirmed by re-running, not by inspection.**
 `vertex-algebra-relations.lean` gives `unknown module prefix 'UGB'` under a
@@ -134,6 +134,35 @@ binder name.
 - **Mathlib drift**: `Real.tendsto_log_mul_rpow_nhdsGT_zero`,
   `MonoidalCategory.whiskerRight_comp` (renamed `comp_whiskerRight`) and
   friends.
+
+## The dominant cause, once the files are opened: MIGRATIONS STOP AT THE SIBLING BOUNDARY
+
+Not Mathlib drift, and not bad mathematics. Repeatedly, a library object
+changed shape, every consumer *inside* the Lake globs was updated because
+`lake build` forces it, and the content-block siblings were left behind
+because nothing builds them:
+
+| library change | siblings stranded |
+|---|---|
+| `SubstrateParameter` split into categorical (`→ R_q`) and `ArchimedeanSubstrateField` (`→ ℝ`) | **6** |
+| a theorem specialised from generic `Field R` to `ℝ`, one ascription left as `(q : R)` | 1 |
+| `HeckeExpansion` gained `(R : Type*) [Field R]` before `n` | 1 |
+| `HasPentagonRelation` / `HasBlochGroup` given real fields in place of `True`-ish ones | 1 |
+
+That is **9 of the 11 files repaired so far**. The remaining two were a
+Lean-notation token used as a binder name and a pair of orphaned docstrings.
+
+The consequence is worth stating plainly: **a mechanically-enforced migration
+is not enforced here.** `lake build QOU` cannot see these files
+(`globs = ["QOU", "QOU.+"]`, `srcDir = "."` → the `lean/` directory), and CI
+is `workflow_dispatch`-only, so the compiler never asks the sibling to keep
+up. Anyone changing a library signature should grep
+`content/<paper>/**/*.lean` outside `lean/` as a separate step.
+
+The Bloch-group case is the sharpest, because there the stranded sibling was
+*wrong* rather than merely stale: it carried an instance with every field
+`:= trivial`, and the library's strengthening is exactly what stopped it
+typechecking. The compile error was the guard working.
 
 ## Scope — what this does NOT say
 
