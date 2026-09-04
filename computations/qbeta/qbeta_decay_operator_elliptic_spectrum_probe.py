@@ -110,13 +110,13 @@ sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
 import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
-from hecke_core import build_nucleon_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
 
 mp.mp.dps = 40
 
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HBAR_Q = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))
@@ -168,8 +168,13 @@ def main() -> int:
     print(f"  i.e. [1, T0, T1, T0T1, T1T0, T0T1T0] — 'e^-' IS the longest element,")
     print(f"  which IS the trefoil sigma_0 sigma_1 sigma_0. The electron is in the basis.")
 
-    p = [mp.mpf(str(x)) for x in build_nucleon_nf(list("uud"))]
-    n = [mp.mpf(str(x)) for x in build_nucleon_nf(list("udd"))]
+    # `build_nucleon_nf` returns a list of Python FLOATS, so
+    # `mp.mpf(str(x))` would read a float64 as exact at this file's dps.
+    # `build_nucleon_nf_mp` is the same braid word in mpf -- and it was
+    # STALE by the 2026-08-30 gluon term until it was fixed on this branch;
+    # do not swap to it on a docstring's word without re-measuring.
+    p = build_nucleon_nf_mp(list("uud"), mp.mp.dps)
+    n = build_nucleon_nf_mp(list("udd"), mp.mp.dps)
     d_l = [n[i] - p[i] for i in range(6)]
     d_s = [H ** 2 / 2, -H / 2, -H / 2, mp.mpf(0), mp.mpf(0), mp.mpf(0)]
 

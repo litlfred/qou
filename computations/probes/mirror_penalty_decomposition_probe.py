@@ -76,7 +76,7 @@ for _p in (str(COMP), str(COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 RESIDUAL = "computations/delta-lambda-canonical-residual.witness.json"
@@ -92,7 +92,11 @@ PAIRS = (
 
 def main() -> int:
     set_compute_dps()
-    q = mp.mpf(str(Q))
+    # `q_parameter.Q` is `_solve_q_proton_f64`, a float64 Newton solve, so
+    # `mp.mpf(str(Q))` carries 6.8e-18 into a computation `set_compute_dps`
+    # has just widened well past that. `q_at` re-solves the same proton
+    # identity at the working precision (bean qou-b7cf).
+    q = q_at(mp.mp.dps)
     lnq = mp.log(q)
     src = json.loads((REPO / RESIDUAL).read_text(encoding="utf-8"))
     rows = src["data"]["rows"]

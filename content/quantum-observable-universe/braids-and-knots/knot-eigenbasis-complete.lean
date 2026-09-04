@@ -61,16 +61,23 @@ file, and adding one needs the direct limit rather than a rename.
 to the knot invariant" from a field that, as written, did not mention the
 summand.
 
-## Known to carry the same defect, and NOT fixed here
+## The same defect next door — FIXED 2026-09-04
 
 [`descartes-knot-eigenbasis.lean`](../brings-surface/descartes-knot-eigenbasis.lean)
-`DescartesKnotEigenbasis.all_summands_detected` has it in a stronger form —
-the summand index is bound as `_`, and the detected value is a free
-`∃ jonesVal : ℝ, jonesVal ≠ 0` not tied to any trace, so the field asserts
-that `ℝ` has a non-zero element. That is a different block and its own
-docstring discloses the gap ("full per-summand completeness … is the concrete
-`n = 3` content of `descartes_n3_both_detected`"), so it is recorded rather
-than changed here.
+carried it in a stronger form: `DescartesKnotEigenbasis.all_summands_detected`
+and `DescartesMarkovTrace.summand_detection` both bound the summand index as
+`_`, and the detected value was a free `∃ jonesVal : ℝ, jonesVal ≠ 0` tied to
+no trace, so each field asserted that `ℝ` has a non-zero element.
+
+Repaired the same way (bean `qou-9552`): a `trSummand` component constrained
+by `tr_eq_sum_summands`, with detection stated over it.
+
+Its own docstring named `descartes_n3_both_detected` as the concrete `n = 3`
+content standing in for the general-`n` gap — and **that theorem had the
+defect too**, stated as `∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0`, a
+property of `ℝ`. Worse, once its two values are named, they are provably
+**not separating**: they coincide at `q ≈ 0.7795446638`, a `q` the Descartes
+condition permits (`QOU.Archimedean.jones_channels_not_separating`).
 
 ## References
 

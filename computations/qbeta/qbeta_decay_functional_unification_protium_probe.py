@@ -107,14 +107,14 @@ ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate")]
 import _path_bridge  # noqa: E402, F401
 
-from hecke_core import build_nucleon_nf  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
 from pyhecke.gram import NF_NAMES, build_atom_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
 
 mp.mp.dps = 50
 
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HBAR = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))
@@ -179,10 +179,18 @@ def main() -> int:
     print(f"    Q_A                   = {mp.nstr(QA, 16)}     |difference| = {mp.nstr(ident, 3)}")
 
     # ---- the protium 2x2 ----------------------------------------------
-    els = {n: [mp.mpf(str(x)) for x in f()] for n, f in (
-        ("proton", lambda: build_nucleon_nf(list("uud"))),
-        ("neutron", lambda: build_nucleon_nf(list("udd"))),
-        ("protium", lambda: build_atom_nf(1, 0)))}
+    # The two nucleons come from the mpf builder. `build_atom_nf` has NO
+    # correct mpf route: its exact twin `build_atom_nf_exact` is Fraction
+    # arithmetic at the RATIONAL MODEL q = 111/100, 1.93e-5 off the
+    # substrate q_0 -- float-free and eleven orders of magnitude worse than
+    # the float64 it would replace. So protium stays float64 and is
+    # labelled, not laundered through `mp.mpf(str(...))` at 50 dps.
+    els = {"proton": build_nucleon_nf_mp(list("uud"), mp.mp.dps),
+           "neutron": build_nucleon_nf_mp(list("udd"), mp.mp.dps),
+           "protium": [mp.mpf(x) for x in build_atom_nf(1, 0)]}
+    # d_l is mpf end to end. d_b subtracts the float64 protium, so it carries
+    # a ~1e-16 floor NO MATTER WHAT dps this file runs at -- any d_b-derived
+    # conclusion is only as strong as that floor.
     d_l = [els["neutron"][i] - els["proton"][i] for i in range(6)]
     d_b = [els["neutron"][i] - els["protium"][i] for i in range(6)]
 
