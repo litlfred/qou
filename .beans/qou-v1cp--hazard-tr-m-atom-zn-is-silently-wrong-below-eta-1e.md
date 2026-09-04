@@ -87,3 +87,62 @@ exactly `q = 1` earlier in this work, so it is known to be the fragile point.
 
 **Fixing it is worth doing**: a guard that raises instead of returning degenerate
 values would have turned a near-miss into an error message.
+
+## Narrowed 2026-09-04 — 3 of the 4 candidate sites EXCLUDED by measurement
+
+The bean says the loss is "in the word construction or the transfer kernel".
+Measured at `dps = 90`, sweeping eta across the threshold, it is **not the word
+construction** — that half can be dropped.
+
+**1. `flavor_split_leading(q)` is clean.** Smooth through the threshold, no
+discontinuity, delta ~ (4/3)*eta^3 all the way down:
+
+    eta      delta
+    1e-9     1.3333333320000000017e-27
+    1e-10    1.3333333332e-30
+    1e-11    1.33333333332e-33      <- threshold is here; nothing happens
+    1e-13    1.3333333333332e-39
+
+Its body is two lines of exact mpf arithmetic with no tolerance and no float64.
+
+**2. The BRAID WORDS still differ by flavour BELOW the threshold.** This is the
+decisive exclusion. At eta = 1e-13, well inside the broken regime:
+
+    flavour   word length   distinct d values
+    pp        22            4
+    pn        23            5
+    nn        22            4
+
+Identical structure at 1e-9 (correct regime) and 1e-13 (broken regime). So the
+`d in {0, -h, -h/2}` coefficients that carry the flavour distinction are still
+present and still distinct when the answer has already collapsed. **The flavour
+information reaches the trace and is destroyed there.**
+
+**3. The `y_lambda` weights are not it either.** `y_lambda_at(6, q)` returns 11
+non-zero weights with identical values (to 8 digits) at eta = 1e-7, 1e-9, 1e-11
+and 1e-13 — the same above and below the threshold, so they cannot produce a
+discontinuity that appears only below it.
+
+**Remaining suspect: `chi_all_lambda_reduced_block`** — the reduced-block
+character kernel, the one factor in `_trM = sum y[lam] * chi[lam]` not yet
+cleared. That is the "transfer kernel" half of the original hypothesis, now
+isolated.
+
+## A SEPARATE defect found while reading, not the same bug
+
+`tr_m_atom_via_transfer.py:194` computes
+
+    dtr = abs(tF) - abs(tA)
+
+which is **not** `abs(tF - tA)`. If either trace crosses zero the difference is
+wrong in a way no tolerance would reveal. This is in `main()`, which runs at the
+production q0 (~1.11) rather than on the eta-sweep path, so it is NOT the cause
+of the threshold collapse — recorded so it is not conflated with it, and so it
+gets its own look.
+
+## What was ruled out and should not be re-tried
+
+The `1e-12` cache tolerance at lines 54-61 is **not** the culprit, despite
+matching the cached-accessor shape AGENTS.md warns about. At eta ~ 1e-11 the
+caller's q is ~1 + 2e-11, which is ~0.11 away from the witness's recorded q0 —
+eight orders of magnitude outside the gate. The cache is missed, not hit.
