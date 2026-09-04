@@ -77,9 +77,9 @@ ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 # Format: tuple of signed gen indices (Conway form), where positive
 # = σ_g, negative = σ_g^{-1}.
 CANDIDATE_KNOTS_CONWAY = {
-    "4_1": ((1, -2, 1, -2), 2.0298832),
-    "5_2": ((1, 1, 1, -2, 1, -2), 2.8281220),
-    "6_1": ((1, 1, -2, 1, -2, -2), 3.1639633),
+    "4_1": ((1, -2, 1, -2), "2.0298832"),
+    "5_2": ((1, 1, 1, -2, 1, -2), "2.8281220"),
+    "6_1": ((1, 1, -2, 1, -2, -2), "3.1639633"),
 }
 
 
@@ -396,21 +396,23 @@ def main() -> int:
             B_emp = B_AME[atom]
             ratio = B_pred / B_emp
             r["B_AME_MeV"] = fmt(B_emp)
-            r["ratio_pred_over_AME"] = float(ratio)
+            r["ratio_pred_over_AME"] = fmt(ratio)
             results[atom] = r
             print(f"  {atom:<6} {r['A']:>3} {float(B_pred):>10.4f} "
                   f"{float(B_emp):>10.4f} {float(ratio):>8.4f} "
                   f"{r['B_pred_sign']:>5}")
-        ratios = [abs(r["ratio_pred_over_AME"]) for r in results.values()]
+        ratios = [abs(mp.mpf(r["ratio_pred_over_AME"]))
+                  for r in results.values()]
         if ratios:
             rmin, rmax = min(ratios), max(ratios)
             mom = rmax / rmin if rmin > 0 else float("inf")
             signs_correct = all(r["B_pred_sign"] == "+"
                                  for r in results.values())
-            print(f"  max/min = {mom:.4f}, signs +: {signs_correct}")
+            print(f"  max/min = {float(mom):.4f}, "
+                  f"signs +: {signs_correct}")
             all_results[knot_name] = {
                 "per_atom": results,
-                "max_over_min": float(mom),
+                "max_over_min": fmt(mom),
                 "all_signs_correct": signs_correct,
             }
 
@@ -423,8 +425,8 @@ def main() -> int:
     for atom in ("D", "T", "3He", "4He"):
         rb = compute_atom_binding_no_fr(atom)
         base_ratios.append(abs(mp.mpf(rb["B_MeV"]) / B_AME[atom]))
-    baseline = float(max(base_ratios) / min(base_ratios))
-    builder.add_data("baseline_variance_no_fr", baseline)
+    baseline = max(base_ratios) / min(base_ratios)
+    builder.add_data("baseline_variance_no_fr", fmt(baseline))
     builder.add_data("baseline_provenance",
                      "computed in-run via compute_atom_binding_no_fr "
                      "(uniform weights, same self-normalized measure as "
@@ -435,25 +437,26 @@ def main() -> int:
 
     print("\n=== Summary: variance comparison ===")
     print(f"{'knot':<6} {'max/min':>10} {'signs +':>8} {'vs baseline':>14}")
-    print(f"  {'(none)':<6} {baseline:>10.4f} {'(yes)':>8} {'baseline':>14}")
+    print(f"  {'(none)':<6} {float(baseline):>10.4f} "
+          f"{'(yes)':>8} {'baseline':>14}")
     best_knot = None
     best_mom = baseline
     for kname, r in all_results.items():
-        mom = r["max_over_min"]
+        mom = mp.mpf(r["max_over_min"])
         improvement = (baseline - mom) / baseline * 100
         sign = "+" if r["all_signs_correct"] else "-"
-        print(f"  {kname:<6} {mom:>10.4f} {sign:>8} "
-              f"{improvement:>+11.1f}%")
+        print(f"  {kname:<6} {float(mom):>10.4f} {sign:>8} "
+              f"{float(improvement):>+11.1f}%")
         if r["all_signs_correct"] and mom < best_mom:
             best_mom = mom
             best_knot = kname
 
     paper_knot = "6_1"
     paper_knot_mom = (all_results.get(paper_knot, {}).get("max_over_min")
-                       if paper_knot in all_results else None)
+                      if paper_knot in all_results else None)
     paper_naming_validated = (best_knot == paper_knot)
     n_beating_baseline = sum(1 for r in all_results.values()
-                             if r["max_over_min"] < baseline)
+                             if mp.mpf(r["max_over_min"]) < baseline)
     if best_knot:
         # Grade by improvement RELATIVE to the baseline, not by an
         # absolute cut on best_mom. RECALIBRATED 2026-09-04 (bean
@@ -469,9 +472,9 @@ def main() -> int:
         if paper_naming_validated:
             verdict = (f"FR conjecture {general_support} support: "
                        f"K_3* = {best_knot} (matches paper) is the best "
-                       f"candidate at {best_mom:.4f}× vs a no-FR "
-                       f"baseline of {baseline:.4f}× — an improvement of "
-                       f"{gain * 100:.1f}%. {n_beating_baseline} of "
+                       f"candidate at {float(best_mom):.4f}× vs a no-FR "
+                       f"baseline of {float(baseline):.4f}× — an improvement of "
+                       f"{float(gain) * 100:.1f}%. {n_beating_baseline} of "
                        f"{len(all_results)} candidates beat the baseline "
                        f"at all; the others make the cross-atom variance "
                        f"WORSE. Both figures are under the "
@@ -482,11 +485,11 @@ def main() -> int:
                        f"variance closure it implied was mostly a "
                        f"normalization artifact.")
         else:
-            paper_str = (f"{paper_knot_mom:.3f}×"
+            paper_str = (f"{float(mp.mpf(paper_knot_mom)):.3f}×"
                           if paper_knot_mom else "n/a")
             verdict = (
                 f"FR conjecture {general_support} support: empirically "
-                f"best K_3* = {best_knot} ({best_mom:.3f}×, baseline "
+                f"best K_3* = {best_knot} ({float(best_mom):.3f}×, baseline "
                 f"{baseline}×); paper's named K_3* = {paper_knot} gives "
                 f"{paper_str} (NOT empirically best). Paper's specific "
                 "naming K_3* = 6_1 NOT validated by this test; general "
@@ -500,7 +503,8 @@ def main() -> int:
     builder.add_data("best_max_over_min", best_mom)
     builder.add_data("paper_named_knot", paper_knot)
     builder.add_data("paper_named_knot_max_over_min",
-                      float(paper_knot_mom) if paper_knot_mom else None)
+                      fmt(mp.mpf(paper_knot_mom))
+                      if paper_knot_mom else None)
     builder.add_data("paper_naming_validated", paper_naming_validated)
     print(f"\n  {verdict}")
 
