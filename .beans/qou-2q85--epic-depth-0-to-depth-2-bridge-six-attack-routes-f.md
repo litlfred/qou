@@ -5,7 +5,7 @@ status: todo
 type: milestone
 priority: high
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-09-04T21:48:10Z
+updated_at: 2026-09-04T22:16:50Z
 ---
 
 THE GAP. bowtie_K and the whole knot-convolution layer sit at TRANSCENDENCE DEPTH 0 (algebraic, no polylogarithms); the volume functor sits at DEPTH 2 (P_2/P_1, real). Measured: 44 files build the convolution layer, 9 build the quantum-function layer, ZERO files mention both. The disconnection is a DEPTH GAP, not an oversight.
@@ -28,3 +28,13 @@ The answer: the shuffle filtration and the K-theory tower are CONSISTENT - my R1
 LIVE ROUTES NOW: A (qou-jopk) - the ONLY surviving depth-crossing route, and the prune explicitly does not touch it, since the coproduct's 2=2+0 split is not a product of two degree-1 elements. E (qou-960k) - the only route aimed at flavour. F (qou-zovy) - cheap hygiene. D (qou-blla) - template only. B and C are now both closed.
 
 So the epic is down from six routes to TWO substantive ones (A and E) plus one hygiene item.
+
+ROUTE A SETTLED 2026-09-04 (qou-jopk, completed) - AND THE EPIC NOW HAS NO SURVIVING DEPTH-CROSSING ROUTE.
+
+A's action exists (from the PRODUCT, 0+2=2 - my 'coproduct 2=2+0' framing was wrong), is well-defined on the volume stratum (proved: it preserves decomposables, so it descends to the indecomposable quotient), and is TRIVIAL: def:hq-bi-filtration's own grid gives H_q^(0,K) as the central idempotent e_{lambda_K} (or scalars) at every tabulated cell, and H_q^(2,K) is the e_K-isotypic piece, so the acting element is the UNIT and acts as the identity.
+
+TALLY: B closed by qou-ox7v (shuffle-square lands in the decomposable part, which is what 'ind' discards). C closed three weeks before this session (all three readings of J^bullet excluded, qou-wjbd). A closed here (well-defined, trivial). D is a template that does not cross depth. So of the four routes that targeted VOLUME, all four are now closed or non-crossing.
+
+WHAT REMAINS: E (qou-960k) - PGL(3)/Fock-Goncharov, 35 held library dirs and zero content blocks, and per roast R3 the ONLY route aimed at FLAVOUR, which is what the parent epic qou-8lxd is actually named for. F (qou-zovy) - hygiene, cheap, do regardless.
+
+AND ONE THING THIS EPIC LEARNED THE HARD WAY: three of the four closures came from reading the corpus's own definitions rather than from new mathematics. The 'ind' gloss, the low-(n,K) grid's explicit H_q^(0,K) column, and the three-readings-of-J audit were all already written. The epic's real cost was not derivation; it was that nobody had put those three sentences next to each other.
