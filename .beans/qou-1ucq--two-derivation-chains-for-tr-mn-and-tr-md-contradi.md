@@ -1,11 +1,11 @@
 ---
 # qou-1ucq
-title: Two derivation chains for tr_M(n) and tr_M(D) contradict each other by 73x and 122x their own declared tolerance
+title: 'The 73x/122x tr_M contradiction is RESOLVED; the residue is six narrative chains describing a route nobody takes'
 status: todo
 type: task
 priority: high
 created_at: 2026-08-30T16:49:44Z
-updated_at: 2026-08-30T17:55:24Z
+updated_at: 2026-09-04T07:55:00Z
 ---
 
 Found 2026-08-30 while scoping the six documents of `qou-rm57`. This is a
@@ -334,3 +334,72 @@ itself.
 
 That the reported values were wrong *within* convention C. Unanswerable now — the
 C weights are gone.
+
+
+## 🛑 THE HEADLINE CONTRADICTION IS RESOLVED — this bean's body above is STALE
+
+Re-measured on `main` 2026-09-04. **Everything in the sections above about a
+73x / 122x numerical contradiction, and about the paper table, has been fixed**,
+by two commits that post-date this bean's own last update of 2026-08-30T17:55
+and were never reflected here:
+
+  * `df719b5baf1` (08-31) "recompute the p/n assembly chains on the canonical
+    11-letter element -- they land exactly on production"
+  * `9b00d47036a` (08-31) "fix at the PRODUCER, not the artifact"
+
+**Do not re-derive any of it.** A `todo` status on a high-priority bean whose
+work is done is not neutral -- it is what sent this session down a re-derivation
+before the git log stopped it.
+
+### What is actually true now
+
+The two chains no longer *nearly* agree; they differ by 7.6 % / 7.0 % / 48 %,
+because they were never computing the same object and now say so. The assembly
+chain lands on production exactly -- `markov-trace-assembly-deuteron` reports
+`0.5751722439177719`, which is `tr_m_atom_zn(1, 1)` to every digit it carries
+(independently reproduced this session at 90 dps:
+`0.575172243917771870826535343986`).
+
+The paper half is fully repaired.
+`content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md`
+now carries the production values with a provenance block naming the corrections
+(+7.55 %, +6.99 %, +48.1 %) and stating that the superseded error column
+"measured agreement among paths that were all in the same convention -- it was
+never a bound on the quantity". That is items (a)-(d) of this bean, discharged.
+
+## The live residue, measured and mostly drained 2026-09-04
+
+The content block names it: the six narrative chains "describe a computation
+nobody performs" -- they read a CROSSING NUMBER off `atom_braid_word_3A`, whose
+own step 4 in the same files states the object is a list of Hecke elements, is
+not in the image of rho, and "has no crossing number, no volume and no genus".
+
+**The 2026-08-30 pass corrected step 4 and left the claim standing elsewhere in
+the same file** -- the partial-drain failure mode this corpus keeps recording.
+Measured: **7 surviving crossing-count claims across 5 of the 6 files**, in two
+classes:
+
+  * **5 unflagged naming defects -- FIXED here.** `p-tr-M-q0` step 6,
+    `n-tr-M-q0` step 6, `markov-trace-assembly-proton` step 3 notes,
+    `markov-trace-assembly-neutron` step 3, `markov-trace-assembly-deuteron`
+    step 3. Each said "N crossings"; each now says "N letters" with the
+    in-rho / outside-rho split. Compositions verified against the producer at
+    the production pin, and every `target_value`, `output_value` and
+    `target_tolerance` in all six files is byte-identical to HEAD -- this is a
+    naming correction, no number moves.
+  * **2 deliberately-flagged premise errors -- LEFT OPEN.**
+    `markov-trace-assembly-proton` steps 3 and 5 carry
+    "[flagged 2026-08-30, bean qou-1ucq, NOT repaired.] This step's premise that
+    the proton word has 6 crossings and that they are ALL POSITIVE sigma is
+    false". That is a wrong mathematical premise, not a wrong word, and
+    repairing it is real derivation work. It is the ONLY thing still open on
+    this bean.
+
+### One new measurement, from the producer rather than the documents
+
+The deuteron document said "all 23 crossings". The composition at the
+production pin is **23 letters = 11 sigma + 7 sigma^-1 + 4 averaged + 1
+colour-weighted**, so **5 of the 23 lie OUTSIDE rho(B_6)**, not 0 -- and the
+deuteron carries a colour-weighted letter that neither A=1 word has. The p and
+n breakdowns the documents state (6+3+2 and 5+4+2) are both CORRECT as
+measured; only the noun was wrong. The deuteron's was wrong in substance too.
