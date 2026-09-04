@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-04T12:47:20Z
+updated_at: 2026-09-04T13:34:10Z
 ---
 
 ## The finding
@@ -155,3 +155,21 @@ second full sweep. With it masked: 12/12 byte-identical.
 * The 12 producers hardcode the proton 50-digit literal rather than calling
   `q_at()`, so they will not track a re-pin. Out of scope for this bean
   (`qou-0hnz` territory), recorded so it is not lost.
+
+
+### Long-compute cost of the last 2 witnesses (measured, 2026-09-04)
+
+`qbeta_derived_w_overdetermined_test_probe` and `qbeta_interface_w_deciding_test_probe`
+are genuinely expensive, not stuck. Run CONCURRENTLY with a 3000 s budget, both
+hit `EXIT=124` having printed only **2 candidate rows in ~50 min**, and neither
+wrote a witness -- so a timeout here costs the whole run.
+
+Each row evaluates all four isotopes and 4He is `n = 3*(Z+N) = 12`, the expensive
+case. Relaunched SERIALLY (full CPU each) with a 9000 s budget.
+
+Two things for whoever re-runs these: budget in HOURS not minutes, and run them
+one at a time -- the concurrent attempt gave each roughly half a CPU and bought
+nothing. Until they land, their two witnesses keep the old prose label and the
+gate reads `Q0_ANCHOR_UNRECOGNISED: 2` rather than 0. Their PRODUCERS are already
+fixed, so this is a provenance lag, not a correctness gap, and it closes on the
+next successful run by anyone.
