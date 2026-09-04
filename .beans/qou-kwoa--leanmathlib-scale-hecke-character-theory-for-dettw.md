@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T10:45:46Z
+updated_at: 2026-09-04T12:25:51Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -622,3 +622,61 @@ determinant at all. Independent, neither derived from the other.
 4. Small characteristic — unreachable by this route; #6552's
    regTraceGram_pi_matrix_det_ne_zero_iff says exactly why.
 5. The square root Q = q^2 — low priority, never bites.
+
+
+## 2026-09-04 (later still) — the theorem's prediction TESTED against independent data
+
+PR #6648, commit f5b3cc8a90. #6617 merged as 14af928227.
+
+The T_w transport theorem makes two predictions about det(twGram), a quantity
+tw_gram_determinant_probe.py measured EARLIER by factoring exact symbolic
+determinants of the regular representation. Both hold at all three ranks it
+reached.
+
+ (A) SIGN: prodComm on J x J with |J| = d fixes the d diagonal pairs and swaps
+     the other d(d-1)/2, so signature (-1)^(d(d-1)/2); the determinant's sign is
+     the product over blocks.
+ (B) SQUARE CLASS: all q-dependence sits inside (det P)^2, so dividing out the
+     signed integer constant must leave a PERFECT SQUARE in Q(q).
+
+(B) is the substantive one — a determinant of this size has no reason for every
+exponent to be even, and ONE odd exponent anywhere refutes the theorem's claim
+that the Wedderburn isomorphism contributes no factor.
+
+MEASURED (computations/hecke/tw_gram_square_class_crosscheck.py, exact):
+  n=1  dims 1,1        sign +1  const 1            q-part (q+1)^2
+  n=2  dims 1,2,1      sign -1  const -16          q-part q^2(q+1)^2(q^2+q+1)^6
+  n=3  dims 1,3,2,3,1  sign -1  const -6198727824
+                       q-part q^22(q+1)^48(q^2+1)^20(q^2+q+1)^6
+All perfect squares; sign correct at all three.
+
+NOT CIRCULAR: the probe predates the theorem and neither used the other.
+NOT A PROOF: three ranks are three data points. det P is still not evaluated —
+the square roots tabulated are READ OFF the measurement.
+
+**A DISTINCTION THAT MATTERS AND WAS NOT PREVIOUSLY WRITTEN DOWN HERE.** twGram
+is the REGULAR trace form tr(L_xy). Geck-Pfeiffer's Schur elements belong to the
+CANONICAL SYMMETRIZING trace tau, with tau(T_w) = delta_{w,1}. THESE ARE
+DIFFERENT FORMS. So prod_lambda d_lambda^(d_lambda^2), derived for the regular
+form, is the ANALOGUE of prod_lambda s_lambda^(f^lambda), not the same object.
+Any future attempt on the q-part must start from this: the corpus's Gram is not
+the Gram that Geck-Pfeiffer 7.2.6 is about. Conflating them would produce a
+confident wrong identification.
+
+**SharpElementCriterion is unaffected and remains a CITED CLASS.** Note the
+tempting shortcut and why it is NOT taken: since semisimplicity at
+NotRootOfUnity q is already proved independently via heckeWedderburn, an
+instance of SchurElementCriterion could be discharged trivially (the implication
+holds because its conclusion is separately available). That instance would be
+mathematically true and epistemically worthless — it would make
+semisimple_of_substrate LOOK like a Schur-theoretic result when it is a
+Wedderburn one, with the Schur elements doing no work. Do not declare it.
+
+**NEXT, priced with its route named:** the Lean sign lemma
+  Equiv.Perm.sign (Equiv.prodComm i i) = (-1)^(card i * (card i - 1) / 2)
+via Equiv.Perm.sign_of_cycleType (Mathlib/GroupTheory/Perm/Cycle/Type.lean:164)
+— prodComm squares to 1 so its cycle type is all 2s — plus #support = d^2 - d
+(the fixed points are exactly the diagonal), with two_dvd_card_support (:194)
+for the divisibility. The support computation is the bulk. Not free, not a
+tranche. Naming the route rather than asserting a gap is deliberate, after the
+det_blockDiagonal' error earlier in this same arc.
