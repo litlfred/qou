@@ -247,3 +247,115 @@ instructive.
    **The generalisable rule:** to check whether your files affect a ratchet, remove them and
    diff the counts. Grepping a gate log for your own filename cannot detect a gate that
    counts.
+
+---
+
+# Links — and a correction to this document's own counts
+
+Added 2026-09-04 on owner request ("LINKS for lit pls"). Building the link list
+exposed **two errors in the counts above**, both mine, both from the same cause:
+I reported **keyword hits on files** and called them **held sources on a topic**.
+
+## Correction 1 — files vs works
+
+AGENTS.md §corpus-grep path 5 says *"One line per **work**, not per file… Do not read
+two hits on one work as two sources."* I did exactly that. Four of the hits are
+`duplicate_of` copies of another hit, verified from their section front-matter:
+
+| copy | is a duplicate of |
+|---|---|
+| `arxiv-0808.1533v1` | `arxiv-0808.1533v3` |
+| `arxiv-0901.1612v1` | `deturck-…-2008-triple-lin` |
+| `symmetry-11-01298` | `arxiv-1910.09966v1` |
+| `s10052-023-11923-y-a` | `arxiv-2306.13098v2` |
+
+## Correction 2 — the grep patterns were far too wide, and route 2 is the worst
+
+Route 2's pattern was `asymptotic crossing|Freedman`. **"Freedman" matches any
+bibliography containing a person of that name.** Splitting the disjunction:
+
+| route | as reported above | actually contains the core term | of those, distinct works |
+|---|--:|--:|--:|
+| 1 — SLq(2) | 10 | **2** contain `SLq(2)` | **2** |
+| 2 — Freedman–He | 12 | **4** contain `asymptotic crossing` | **3** |
+| 3 — Milnor | 9 | **6** contain `Milnor invariant`/`triple linking` | **5** |
+
+So route 2's "12 held documents" is **three works**, and eight of the twelve were
+bibliographies mentioning someone called Freedman. **Do not quote 10 / 12 / 9.**
+
+This does not change any route's verdict — every result above rests on sources in
+the *core* tier, and the route-2 correction concerns how much surrounding
+literature exists, not what the primary source says. It changes what "held" is
+worth as a claim.
+
+## Route 1 — SLq(2) `(N, w, r) → irrep`
+
+**Core (2 works — the only held documents that mention `SLq(2)` at all):**
+
+| work | link | held copy |
+|---|---|---|
+| Finkelstein, *Knots and preons* (2008) — **the dictionary**, `D^{N/2}_{w/2,(r+1)/2}` | [arXiv:0806.3105](https://arxiv.org/abs/0806.3105) | [`library/arxiv-0806.3105v3/`](../../library/arxiv-0806.3105v3/) · [`sec-001`](../../library/arxiv-0806.3105v3/sections/sec-001-the-knot-representation.md) |
+| Belaey, *Probing the singularity at the holographic screen via q-holography* (2025) | [arXiv:2507.13873](https://arxiv.org/abs/2507.13873) | [`library/arxiv-2507.13873v1/`](../../library/arxiv-2507.13873v1/) |
+
+**Braided-matter milieu (6 works — `preon` but no `SLq(2)`):** Bilson-Thompson,
+*A topological model of composite preons* — [arXiv:hep-ph/0503213](https://arxiv.org/abs/hep-ph/0503213)
+(the construction the corpus already adopts at the lepton level);
+Bilson-Thompson–Markopoulou–Smolin, *Quantum gravity and the standard model* —
+[doi:10.1088/0264-9381/24/16/002](https://doi.org/10.1088/0264-9381/24/16/002);
+Gresnigt, *Braided fermions from Hurwitz algebras* — [arXiv:1901.01312](https://arxiv.org/abs/1901.01312);
+Gresnigt, *Three generations of colored fermions with S₃ family symmetry* —
+[arXiv:2306.13098](https://arxiv.org/abs/2306.13098) / [doi:10.1140/epjc/s10052-023-11923-y](https://doi.org/10.1140/epjc/s10052-023-11923-y);
+*Braids, 3-manifolds, elementary particles* — [arXiv:1910.09966](https://arxiv.org/abs/1910.09966) /
+[doi:10.3390/sym11101298](https://doi.org/10.3390/sym11101298);
+*Braided matter interactions in quantum gravity via 1-handle attachment* —
+[arXiv:2106.01332](https://arxiv.org/abs/2106.01332) (**not registered** in `references.ts`).
+
+## Route 2 — Freedman–He asymptotic crossing number
+
+**Core (3 works — every held document containing `asymptotic crossing`):**
+
+| work | link | held copy |
+|---|---|---|
+| Komendarczyk, *On the third order helicity of magnetic fields on invariant domains in S³* — **eq. (43), the link bound** | [arXiv:0808.1533](https://arxiv.org/abs/0808.1533) | [`v1/sec-001-energy-bound.md`](../../library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md) (line 211; the Borromean qualifier at 216) · [`v3`](../../library/arxiv-0808.1533v3/) is the indexed copy |
+| Khesin, *Geometry of higher helicities*, Moscow Math. J. **3** (2003) 989–1011 | **no DOI/URL registered** | [`library/helicity03mmj/`](../../library/helicity03mmj/) |
+| Moffatt & Ricca, *Helicity and the Calugareanu invariant* (1992) | **no DOI/URL registered** | [`library/procrsoclondona92/`](../../library/procrsoclondona92/) — **96 % of its text is in `ocr/`**, 19 pages against a 1-section stub |
+
+Freedman–He (1991) itself is **not held**. It does not touch either eq.-43
+correction, since Komendarczyk's statement of the bound is held and unambiguous.
+
+## Route 3 — Milnor invariants / higher helicity
+
+**Core (5 works — every held document containing `Milnor invariant` or `triple linking`):**
+
+| work | link | held copy |
+|---|---|---|
+| DeTurck–Gluck–Komendarczyk–Melvin–Shonkwiler–Vela-Vick, *Triple linking numbers, ambiguous Hopf invariants and integral formulas* | [arXiv:0901.1612](https://arxiv.org/abs/0901.1612) | [`deturck-…-triple-lin/`](../../library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/) |
+| — same group, *Pontryagin invariants and integral formulas for Milnor's triple linking number* | [arXiv:1101.3374](https://arxiv.org/abs/1101.3374) | [`library/arxiv-1101.3374v1/`](../../library/arxiv-1101.3374v1/) |
+| Mellor & Melvin, *A geometric interpretation of Milnor's triple linking numbers*, Alg. Geom. Topol. **3** (2003) 557–568 | **no DOI/URL registered** | [`library/0110001v3/`](../../library/0110001v3/) |
+| Komendarczyk (as route 2) | [arXiv:0808.1533](https://arxiv.org/abs/0808.1533) | — |
+| Khesin (as route 2) | **no DOI/URL registered** | — |
+
+**Adjacent (2 works — matched only on `Massey product` / `higher-order helicity`):**
+Hornig & Mayer, *Towards a third-order topological invariant for magnetic fields* —
+[arXiv:physics/0203048](https://arxiv.org/abs/physics/0203048);
+*A unified Witten–Reshetikhin–Turaev invariant for integral homology spheres* —
+[arXiv:math/0605314](https://arxiv.org/abs/math/0605314).
+
+Also relevant and found only via the `ocr/` tier: Evans & Berger,
+*A Hierarchy of Linking Integrals* — **no DOI/URL registered**,
+[`library/1992evansberger/`](../../library/1992evansberger/).
+
+**None of the five core route-3 works supplies the Magnus expansion of a longitude
+in the free group** — they give integral formulas and geometric interpretations. That
+was route 3's gap, and it is now moot: the min-span triples vanish by their own
+defining condition.
+
+## Four held sources have no resolvable external link
+
+`khesin2003`, `moffatt-ricca-helicity`, `mellor-melvin2003` and `evans-berger1992`
+carry **neither `DOI` nor `URL`** in `references.ts`, and no arXiv or DOI stamp
+appears anywhere in their held text (checked across both the `sections/` and `ocr/`
+tiers). Two of them — Khesin and Moffatt–Ricca — are **core route-2 sources**. Their
+citations are complete enough to identify the work (journal, volume, pages, year for
+three of the four) but a reader cannot click through, and this ledger will not invent
+an identifier it did not measure. Worth a bibliography pass; not done here.
