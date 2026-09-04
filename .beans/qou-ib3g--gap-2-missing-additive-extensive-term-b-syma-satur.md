@@ -126,3 +126,4 @@ still underived; that is the surviving open item and it is not this bean's.
 
 Closing rather than leaving open: the "missing extensive term" is identified and
 characterised, and every remaining thread has a named home.
+## 2026-09-04 (qou-yau0/qou-hfjc, cross-ref) — the 'per-nucleon coefficient at N=Z, E_0·0.698581 = 2.92425 MeV' is exactly the normalised bond energy ε = E_0·ln[2]_q of #6656: the un-normalised pp/nn average −ln(z z')/2 = ln[2]_q identically (checked to 50 dps). So the factor 3.0075 applies unchanged to the normalised (bond-counting) law, where the (N−Z) asymmetry is gone and the law is uniform per bond. Not re-measured there.
