@@ -5,11 +5,11 @@
   "description": "Frame-robustness of the \u03bc\u2083 (A=3 magnitude) target. \u03bc\u2083 = \u03c1_strong(3) \u2212 \u03c1_grad(3) is a small residual (\u22480.47) that is a difference of two O(3.5) numbers, so \u2014 like g\u2082=1+r \u2014 it inherits an \u22487\u00d7 amplified sensitivity to the subtracted baseline. Measured across three legitimate deuteron-normalized A-scaling baselines (graded coinvariant dimension = CORPUS #4300, balanced quantum dimension, classical q\u21921) the SIGNS (\u03bc\u2083>0, \u03bc\u2084<0) are robust but \u03bc\u2083's MAGNITUDE swings by a factor comparable to / exceeding the 1.6\u00d7 gap the closure attempts target. Hence the '1.6\u00d7 A=3 magnitude gap' is baseline-CLASS-relative, not absolute. scope-(a) CAVEAT (not a refutation of the principled graded-dimension route): closure attempts must state their baseline. Anti-fit STRICT; nothing wired; exact (mpmath).",
   "audit_only": true,
   "tier": "scope-(a) frame-robustness measurement (baseline-class spread of the \u03bc\u2083 target); no fit; nothing wired",
-  "scriptHash": "463d95c25ec1",
+  "scriptHash": "68c256ae3b8c",
   "result": {
     "substrate": {
       "q0": "1.109978582751380807591669095610768879874",
-      "source": "muon-canonical jet-filtration witness"
+      "source": "jet-filtration witness (deltalambda-jet-filtration-magnitude), q0Anchor=proton. Label corrected 2026-09-04 from 'muon-canonical' (bean qou-9ugp): the upstream resolves to the proton pin 1.1099785827513808..., so this witness named a layer it does not evaluate at while stamping q0Anchor=proton one field away."
     },
     "c3_cluster_prediction_MeV": "0.297",
     "corrected_rho_strong": {
@@ -151,13 +151,12 @@
     "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
     "no_fit": true
   },
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "scriptFile": "mu3_target_frame_robustness_probe.py",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "engine": "python",
-  "computedAt": "2026-08-29T04:17:52.527780+00:00",
+  "computedAt": "2026-09-04T03:11:12.467360+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

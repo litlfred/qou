@@ -207,6 +207,27 @@ def main() -> int:
     if have_snappy:
         wb.add_assertion("deuteron_is_torus_knot_vol_zero",
                          computed=str(abs(facts["volume"]) < 1e-9), expected="True")
+    else:
+        # REFUSE rather than silently drop it (bean qou-9ugp, 2026-09-04).
+        #
+        # Without this branch, a snappy-less run wrote a witness carrying TWO
+        # assertions instead of three and `allPassed: True` -- so a consumer
+        # reading `allPassed` could not tell that a check had gone missing. The
+        # check that vanishes is `deuteron_is_torus_knot_vol_zero`, i.e. the
+        # Vol = 0 verification underpinning owner ruling A of 2026-08-29 ("the
+        # deuteron knot is the canonical braid closure ... NOT a hyperbolic-volume
+        # term"). Losing that silently is worse than not writing at all.
+        #
+        # snappy is absent by default in a fresh container, so this WILL fire;
+        # `pip install snappy` restores the full run. Refusing-by-design follows
+        # `low_isotope_mass_table` and `qbeta_braid_nf_sdp_offset_probe`; the
+        # reason goes to stdout because a stderr-only harness would not see it.
+        print("REFUSING to write: snappy is absent, so the Vol=0 assertion "
+              "`deuteron_is_torus_knot_vol_zero` cannot be evaluated. Writing "
+              "anyway would emit a 2-assertion witness with allPassed=True, "
+              "hiding the loss of the check that supports owner ruling A "
+              "(2026-08-29). Install snappy and re-run.")
+        return 2
     out = wb.save(extra={"auditOnly": True})
 
     print("=== Deuteron octahedral gluing setup (trefoil T(2,3), σ₁³) ===")

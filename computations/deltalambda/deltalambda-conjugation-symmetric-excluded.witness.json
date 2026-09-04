@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:13.012446+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T03:11:11.245909+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "assertions": [
     {
       "name": "symmetric_families_bar_even_zero",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "deltalambda-conjugation-symmetric-excluded",
   "scriptFile": "deltalambda_conjugation_symmetric_excluded_probe.py",
-  "scriptHash": "d74baf4e08c0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "328137ab80a6",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -100,7 +100,7 @@
     "axis": "Δ_λ binding — μ₀ −9% closure, parity exclusion narrowing the Δ_λ search",
     "lean": "QOU/MassTheory/ConjugationSymmetricDeltaExcluded.lean",
     "builds_on": "#4387 (signed conjugation parity), s5-so3-keystone.md (principal-spec weight)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
     "no_fit": true
   },
   "auditOnly": true
