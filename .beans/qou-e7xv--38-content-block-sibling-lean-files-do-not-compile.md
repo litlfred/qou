@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T02:33:47Z
+updated_at: 2026-09-04T04:07:01Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -133,3 +133,39 @@ townsend-biot-savart-strain 9->7 (real-analysis proof drift, not names).
 
 Re-verified against main after merging its 39 commits: those were library-side
 and fixed none of the siblings.
+
+
+## 2026-09-04 — 38 → 12
+
+26 of the 38 now at **0 errors and 0 warnings**, re-measured lean-direct.
+
+Fixed this pass (PR #6540): `delta-max-uniform-bound` (deleted — `: sorry
+:= sorry` shadowing a proved library theorem), `localized-knot` (added
+`BraidWord.writhe`, which the KnotTheory module header already promised),
+`explicit-central-idempotent`, `bn-mtc-action`, `n-v-tower-depth-ninety`,
+`pentagon-uv-commutation` (deleted — verbatim stale duplicate),
+`typed-b3-sub-braid-extraction`, `borromean-h4-categorical-derivation`,
+`h3-markov-wenzl-weights`, `he4-channel-active-set`,
+`he4-two-row-dominance`, `hyperelliptic-z5-classification`,
+`u-coordinate-discharges`.
+
+Two new cause classes beyond the migration boundary, both cheap:
+
+- **missing tactic import** — `unknown tactic` at `ring` / `linarith` /
+  `interval_cases`, followed by an `unsolved goals` dump that reads as a
+  broken proof. One import line each, no proof step changed.
+- **`import Mathlib`** — the two authored files doing it (the other 21
+  hits are vendored `MathlibTest/`). Unverifiable here and a §8 hygiene
+  defect; narrowed to the real cones.
+
+Triage rule learned: **verify the library declaration the `.ts` ref names
+FIRST.** Three repairs were `git rm` — the sibling was a stale duplicate
+of a complete library theorem and added nothing.
+
+Remaining 12, by error count: `spin-involution-lp-dual-invariance` 22
+(`qou-0xrn`), `townsend-biot-savart-strain` 7,
+`vertex-algebra-jet-relations` 4, then `categorical-transfer-matrix` /
+`gb-depth-period-correspondence` / `categorical-q-ext-deriv-unique` at 3,
+`descent-cocycle-deviation` / `braid-action-tensor` (`qou-8qby`) /
+`lagrange-resolvent-transform` at 2, `vertex-operator` (`qou-xdwp`) and
+`chi-v21-hoefsmit-matrix-derivation` at 1.

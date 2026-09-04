@@ -175,3 +175,92 @@ file; do not treat the 38 as 38 refuted propositions.
 Two are already partly repaired on this branch: `n-v-bring-action.lean`
 (now exit 0, zero warnings) and `braid-action-tensor.lean` (5 errors → 2,
 still failing, bean `qou-8qby`).
+
+---
+
+## Update 2026-09-04 — 38 → 12, and the cause table needs a second half
+
+**Standing: 26 of the 38 are at 0 errors and 0 warnings; 12 remain.**
+Re-measured by re-running every one of the 40 originally-failing paths
+lean-direct with all three paper packages on `LEAN_PATH`.
+
+The migration-boundary table above still holds, and it grew: three more
+stranded siblings, in a shape the first pass did not name.
+
+### The shape that shape has: a stranded shadow is often a pure DUPLICATE
+
+Three of the repairs were `git rm`, not a patch. In each case the block's
+`.ts` `ref` already named a **complete, sorry-free library declaration**,
+and the sibling was a copy of it that had gone stale:
+
+| sibling | what it was |
+|---|---|
+| `mass-theory/delta-max-uniform-bound.lean` | `theorem … : sorry := sorry` — `sorry` in the TYPE, so it asserted nothing — shadowing a proved `QOU.MassEndomorphism.delta_max_uniform_bound`. Both its imports were dead too: `QOU.MassEndomorphism.JetTower` has no source anywhere in the tree. |
+| `mass-theory/pentagon-uv-commutation.lean` | a verbatim copy under an unreferenced `_mass_theory` suffix, stale in one conjunct because `claim_iii_eigenvalue_specialisation` had been migrated from a bare `: Prop` to a real equation. |
+| `predicted-spectra/bloch-group-quotient-construction.lean` | (earlier in this sweep) instances with every field `:= trivial`. |
+
+This matters for triage order: **find the library declaration the `ref`
+names and verify THAT first.** If it compiles and the sibling adds
+nothing, the sibling is the defect. Sibling-first resolution is by
+**file**, so a sibling wins even when it declares a different name than
+the ref — which is how the `bn-mtc-action.ts` ref stayed wrong
+(`qou:QOU.ObservableMTC.bnAction` for a declaration actually named
+`QOU.bnAction`) with nothing to catch it.
+
+### A second cause class, unrelated to migrations: missing imports
+
+Four files failed for reasons that have nothing to do with the library:
+
+- **Missing tactic import (3 files).** `unknown tactic` at `ring`,
+  `linarith`, `interval_cases` respectively — plus an `unsolved goals`
+  dump of the untouched goal, which reads as a broken proof and is not.
+  One import line each; all three to 0/0 with no proof step changed.
+- **`import Mathlib`, the monolithic aggregator (2 files).** Not
+  verifiable here at all (the restored olean cache has no
+  `Mathlib.olean`, and `lake build` evicts the restore), and a §8
+  hygiene defect independently. Measured: these were the **only two**
+  authored files doing it — the other 21 hits of `^import Mathlib$` are
+  inside vendored `MathlibTest/`. Narrowed to the cones actually used.
+
+### Three failures were hiding a content defect, not just a compile defect
+
+The compile error is sometimes the smaller half. Recorded because in each
+case fixing only the error would have left the worse problem in place:
+
+1. **`bn-mtc-action`** concluded `∃ V, (β_ V V).hom ≫ (β_ V V).hom ≠ 𝟙 …`
+   and proved it by `MTC.braiding_nonsymmetric` — projecting out a field
+   of the definition it depends on (§3b-cond item 5), and not the `.md`
+   claim, which is non-factoring through `B_n ↠ S_n`. Rewritten to derive
+   that, via a general group lemma (`not_factorsThrough_of_sq_ne_one`).
+2. **`explicit-central-idempotent`** stated the `(2,2)` case
+   *unconditionally* while proving it from a theorem carrying
+   `[ExplicitCentralIdempotentConjecture q]`. Lean refused it — the
+   elaborator catching exactly the hypothesis-smuggling §3b-cond forbids.
+   This surfaced a larger gap: **§3b-cond item 4 is unsatisfiable for
+   that block**, because the class has no `conj:` content block anywhere,
+   so `conjectural-propagation-audit.ts` sees an empty conjectural cone.
+   Bean `qou-1bua`.
+3. **`borromean-h4-categorical-derivation`** proved
+   `(-3 : ℝ) * (1/4 : ℝ) = -3/4` by `norm_num` under three paragraphs of
+   docstring about the Borromean h⁴ chain — a statement that mentions
+   nothing in the framework and would hold if both factors came from
+   somewhere else. Restated over named objects (`chiTwoOneBorromean`,
+   `yTwoOne`) so it is false if either input is wrong. `#print axioms`
+   cannot see this class: the proof is clean, the STATEMENT is empty.
+
+And one in the reverse direction: `typed-b3-sub-braid-extraction`'s
+`dominant_subbraid_consistency` carried an unused
+`[hd : DominantSubBraidAtEps6]`. An unused instance binder is not a lint
+nit — it **overstates the dependency**, making an unconditional closure
+fact read as conditional on a perturbative-expansion axiom.
+
+### The 12 that remain
+
+| errors | file |
+|---|---|
+| 22 | `mass-theory/spin-involution-lp-dual-invariance` (bean `qou-0xrn`) |
+| 7 | `fluid-dynamics/townsend-biot-savart-strain` (real-analysis proof drift) |
+| 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
+| 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
+| 2 | `lifting-and-descent/descent-cocycle-deviation` (`GroupWithZero M`), `braids-and-knots/braid-action-tensor` (bean `qou-8qby`), `braids-and-knots/lagrange-resolvent-transform` |
+| 1 | `mass-theory/vertex-operator` (bean `qou-xdwp`), `mass-endomorphism/chi-v21-hoefsmit-matrix-derivation` (unknown `hoefsmit_v21_b_sq_rational` + a `whnf` heartbeat timeout) |
