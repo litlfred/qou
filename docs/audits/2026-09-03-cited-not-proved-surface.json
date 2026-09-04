@@ -1,6 +1,6 @@
 {
   "rev": "origin/main",
-  "files_scanned": 3563,
+  "files_scanned": 3571,
   "sorries": [
     {
       "file": "content/fred2005-formal-groups/lean/Fred2005/FormalGroups.lean",
@@ -1039,11 +1039,11 @@
       "ref": "[fred2005] \u00a74 (formal group with GS basis yields a filtered bialgebra structure)"
     }
   ],
-  "prose_occurrences": 3259,
+  "prose_occurrences": 3252,
   "class_totals": {
-    "declared": 993,
-    "inhabited": 341,
-    "uninhabited": 652
+    "declared": 990,
+    "inhabited": 337,
+    "uninhabited": 653
   },
   "uninhabited_classes": [
     {
@@ -3662,8 +3662,18 @@
       "class": "MassFormula"
     },
     {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean",
+      "line": 159,
+      "class": "WeinbergAngleCategorical"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean",
+      "line": 207,
+      "class": "CategoricalHiggsMechanism"
+    },
+    {
       "file": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean",
-      "line": 44,
+      "line": 81,
       "class": "MarkovTraceCyclic"
     },
     {
@@ -3810,11 +3820,6 @@
       "file": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean",
       "line": 66,
       "class": "PieceVolumeConjecture"
-    },
-    {
-      "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
-      "line": 95,
-      "class": "UnifiedKnotMass"
     },
     {
       "file": "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean",
@@ -4097,6 +4102,11 @@
       "class": "TypedGarsideLeadingTerm"
     },
     {
+      "file": "content/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical.lean",
+      "line": 131,
+      "class": "WeinbergAngleCategorical"
+    },
+    {
       "file": "content/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.lean",
       "line": 26,
       "class": "WignerSu4FromSpinIsospin"
@@ -4193,12 +4203,7 @@
     },
     {
       "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-      "line": 129,
-      "class": "AlphaEmGluonOctetConjecture"
-    },
-    {
-      "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-      "line": 169,
+      "line": 193,
       "class": "ChernSimonsCorrectionConjecture"
     },
     {
