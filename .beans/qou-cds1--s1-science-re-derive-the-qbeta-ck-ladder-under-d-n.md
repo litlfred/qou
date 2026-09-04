@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T21:41:12Z
+updated_at: 2026-09-04T07:48:08Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6414,3 +6414,52 @@ finding.
 
 Found by a dispatched audit of the Standard-Model work against the full tower;
 verified against `qou-fvzm` directly rather than taken on the agent's word.
+
+## 2026-09-04 — the open bar-parity question is ANSWERED (PR #6605)
+
+This bean named as its own cheapest next step: *is `F` required to be
+bar-even?* Answered symbolically — **it is not required, and it is not
+satisfiable.**
+
+With `Q_A = m_e·|q²−2q−1|(q+1)/(2q³)` and `bar : q ↦ 1/q`:
+
+    bar(Q_A)/Q_A = −q³·(q² + 2q − 1)/(q² − 2q − 1)
+
+- `+1` only at `q = 1`, where `bar` is the identity and the test is vacuous;
+- `−1` at no positive real `q`;
+- **not bar-definite even up to a power of `q`** — stripping `−q³` leaves
+  `(q²+2q−1)/(q²−2q−1)`, a ratio of two distinct irreducible quadratics
+  (roots `−1+√2`, `1+√2`), not a monomial.
+
+The third test is the operative one, because *"bar-definite up to a power of
+`q`"* is this bean's own working notion: it records `bar(z_D) = q⁻⁴·z_D`.
+`z_D` is covariant in that weaker sense; `Q_A` is not covariant in it at all.
+
+`Q_β^exp` is bar-even trivially, so `F` inherits `Q_A`'s non-parity.
+
+**Consequence for this bean's plan: the `u/2` term does NOT need replacing on
+bar-parity grounds.** The "if it is required" branch is closed — there is no
+constraint for a 15 % term to violate, so the projection is not shown
+incomplete by this route. A case for replacing that term must come from
+elsewhere. Scope (a): about this closed form, not about the weak sector.
+
+Probe `computations/qbeta/qbeta_f_bar_parity_requirement_probe.py` (5/5,
+sympy end to end, no floats / no anchor); audit
+`docs/audits/2026-09-04-qbeta-f-bar-parity-requirement.md`.
+
+### Flagged, NOT resolved — for the owner
+
+Four corpus sites call this same object bar-odd (`AGENTS.md:1937`,
+`epistemic-status-of-calibrations.md:3`,
+`three-calibration-discipline-proof.md:36`, and the strongest,
+`interaction-sector-taxonomy.md:20` — "pure odd"). The Lean cited for the
+split, `mass-theory/bar-parity-split.lean`, proves only the GENERIC
+decomposition of an arbitrary `x` under an arbitrary involution; the
+identification of `Q_β` with the odd part lives in its docstring, not in a
+theorem. Two readings survive — the claim is about the channel (then scope the
+prose), or about the observable (then it is refuted). Physics call; recorded,
+not decided, and explicitly NOT a claim that the corpus is inconsistent.
+
+Symbol collision also flagged: that docstring's `F` (abstract Habiro element)
+and this bean's `F = Q_β^exp/Q_A` (numerical correction factor) are two
+objects sharing a glyph in one channel.
