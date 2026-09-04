@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:48:06Z
+updated_at: 2026-09-04T21:52:42Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -252,3 +252,79 @@ anywhere in the trace machinery**.
   transcription, and anyone building on this should re-derive it from the source.
 - The A>=2 rows remain uninterpretable for the separate colour-weighting reason
   recorded above. This localisation is A=1 only.
+
+
+## 🛑 CORRECTION — "same eleven letters, different order" is WRONG. The caveat bit.
+
+The entry above says the two routes apply the **same multiset** of letters in a
+different order, and flags that the NF sequence was **transcribed by hand**.
+Retired that caveat by recording the letters from the RUNNING code (wrapping the
+module-level `compound_shift_nf.hm_mp`, no source change), and the hand
+transcription was **wrong**:
+
+    canonical  11 letters
+    NF         12 letters      <- not 11
+    MULTISETS EQUAL: False     <- not True
+
+The exact difference at (Z=1,N=0) is **one letter**:
+
+    canonical multiset: {('-h',1):3, ('-h/2',0):1, ('-h/2',1):1, ('0',0):6}
+    NF        multiset: {('-h',1):4, ('-h/2',0):1, ('-h/2',1):1, ('0',0):6}
+
+"Different order" was the *shape* of an answer I reached by eye, and the multiset
+match that made it convincing was an artifact of my own miscount. Recording it
+because I had explicitly named the transcription as the weak link and was still
+persuaded by the thing it undermined.
+
+## What is actually there: TWO structural differences, both in closed form
+
+### 1. A per-proton trailing letter, uncommented
+
+At the very end of `build_atom_nf_mp`, after the per-nucleon and interface loops:
+
+    for _ in range(Z):
+        nf = hm_mp(nf, one, -h, 1, h)
+
+One extra `('-h', 1)` **per proton**. Every other letter in that function carries
+a comment (`σ₀`, `σ₁⁻¹`, `uu pair`, `ud mixed`, `gluon 1`, `gluon 2`); this loop
+has none.
+
+### 2. The interface schedules differ — and this one connects to a proved result
+
+Measured word lengths over 7 configurations, and both closed forms reproduce
+**all seven exactly**:
+
+| Z,N | A | canonical | `12A-1` | NF | `11A + C(A,2) + Z` |
+|---|---|---|---|---|---|
+| 1,0 | 1 | 11 | 11 | 12 | 12 |
+| 0,1 | 1 | 11 | 11 | 11 | 11 |
+| 1,1 | 2 | 23 | 23 | 24 | 24 |
+| 2,1 | 3 | 35 | 35 | 38 | 38 |
+| 1,2 | 3 | 35 | 35 | 37 | 37 |
+| 2,2 | 4 | 47 | 47 | 52 | 52 |
+| 3,1 | 4 | 47 | 47 | 53 | 53 |
+
+    gap = C(A,2) - A + Z + 1
+
+The `C(A,2)` is **read from the code, not fitted**: `for prev in range(k)` runs
+over every previous nucleon, i.e. the complete graph. The canonical `12A-1` IS a
+fit over four values of A and should be confirmed at the source before being
+leaned on.
+
+**Why that matters beyond bookkeeping.** `QOU.Mass.CoordinationSaturation`
+(sorry-free) refutes `M = C(A,2)` as a coordination law — it gives `B/A =
+ε(A-1)/2`, unbounded, no plateau, so observed saturation forces bounded degree.
+The NF route's interface schedule is exactly that refuted complete graph, while
+the canonical route's is linear in A. So the two routes differ on precisely the
+axis a proved Lean result already rules on.
+
+### Scope
+
+- This does **not** say the NF route is wrong. It says the two routes build
+  different braids, in two identified ways, and that one of those ways
+  (complete-graph interfaces) is the shape `CoordinationSaturation` excludes as
+  a *law*. Whether `build_atom_nf_mp` intends to be a coordination law at all is
+  not established here.
+- The A=1 residual (5.045e-4) is now fully explained by difference 1 alone: at
+  A=1 there are no interfaces, and the words differ by exactly the one trailing
+  proton letter.
