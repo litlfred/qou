@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-31T19:43:09Z
+updated_at: 2026-09-04T06:45:25Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1229,3 +1229,68 @@ shape of `α` as a function of `q`, not a generator's spectrum.
 
 **Scope-(b).** Does not show no connection exists, does not derive `α`, does not
 adjudicate a convention, wires nothing.
+
+
+## 2026-09-04 — D0 does not need theta, and two of my own readings were wrong
+
+Arrived here on the author's instruction to "re-derive c_3 under convention D",
+ran the corpus-grep first, and it stopped two errors before they landed. Both are
+recorded because the second is the more instructive.
+
+### ERROR 1 (withdrawn): "the D0 target is C-frame; it should be 0.0447444"
+
+Verified from scratch at 40 dps, not taking this bean's labels on trust:
+
+    C  z=sqrt(q)/(q+1)   alpha_N1 = -0.05659473754   cos = 0.9983989453
+    D  z=q^3/(q^2+1)     alpha_N1 = -0.04474439462   cos = 0.9989991366
+
+This bean's TIER-0 `theta = 0.0565947` is `|alpha_N1|` in convention **C** to 7
+significant figures, which looked like a C-frame number sitting in the tier-0
+gate of a convention-D bean — the exact class the `qou-9ugp` drain has been
+clearing all session.
+
+**It is not.** `docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`
+labels `-0.04474439` explicitly as **"D, naive `z`-swap (banned)"**. My proposed
+correction would have installed a BANNED value in the acceptance test. The
+corpus's live D candidate is the **bar-odd derived** `-0.05567095` (that audit
+§2), which is within 1.7 % of the C figure this bean quotes — so quoting the C
+value here is at worst imprecise, not a frame error. **Withdrawn.**
+
+### ERROR 2 (corrected): I computed the banned object and did not recognise it
+
+Earlier in the same session I reconstructed a `c_3` and got **-974.07 / -974.12**,
+reported it as "not the canonical c_3" and moved on. That was true and far too
+weak. It is the **naive z-swap**, which that audit's calibration table records at
+**-974.43** — a named object this corpus has explicitly banned, and the reason
+AGENTS.md says "this is NOT a z-swap". Getting -974 was not an artefact of my
+reconstruction; it was me performing the banned substitution.
+
+### What actually survives — D0 needs no target value
+
+The elementary obstruction reproduces exactly:
+
+    ln q0                    = 0.10434072032
+    det A (Kohno-Drinfeld)   = -(ln q0)^2 = -0.0108869859168     (bean: -0.010887)
+    cosh(ln q0) = (q+1/q)/2  = 1.00544843335                     (bean:  1.005448)
+    cosh(ln q0) - 1 == (q-1)^2/(2q)   verified to 9e-42
+
+And it generalises off the single target. This bean argues D0 against C's
+`0.998399`. It does not need it:
+
+    C, as recorded             cos = 0.998398945114   < 1
+    D, naive z-swap (banned)   cos = 0.998999136781   < 1
+    D, bar-odd derived         cos = 0.998450772846   < 1
+
+`cos(theta) < 1` for **every** `theta != 0`, and `cosh(a) >= 1` for **every**
+real `a`. So the real-spectrum exclusion holds for any nonzero real eigenphase,
+in any convention, whatever the D value turns out to be.
+
+**Consequence, and it is the useful part:** D0 is applicable NOW. It does not
+wait on the D eigenphase being derived. A candidate generator can be screened on
+`det A > 0` alone — the question is only whether the construction supplies
+imaginarity at real `q`, never what `theta` equals. Restating D0 that way removes
+its one dependence on an unsettled number.
+
+**Scope (b) for the exclusion** (`(x-1)^2 >= 0` is a proved invariant, quantified
+over all real `a`), **scope (a) for everything else**. Derives no `alpha`,
+adjudicates no convention, wires nothing.
