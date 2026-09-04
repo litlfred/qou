@@ -63,6 +63,14 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 from _precision import set_compute_dps, fmt  # noqa: E402
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-04). Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
@@ -142,7 +150,25 @@ if _census_path.exists():
                 "rho_handpick":    r.get("rho_handpick"),
             }
 
-Q0 = _mp.mpf("1.1099785955573347")   # substrate parameter (MUON layer)
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). It was the literal
+# 1.1099785955573347 labelled '(MUON layer)' -- the RETIRED self-certified
+# pin A, superseded 2026-08-22, so the label named a layer the value no longer
+# belonged to.
+#
+# THIS PRODUCER STAYS ON THE MUON LAYER, and that is not a choice made here:
+# `rho_f_categorical_probe` is listed under `ideal_muon` in
+# q0_anchor_manifest.json, and `q_parameter` resolves `Q_50_DIGIT_STR` to the
+# MUON anchor for any producer on that list. So this line now reads the LIVE
+# CODATA-2022 muon derivation rather than the retired frozen literal -- a
+# +0.0769 ppb correction within the same layer, not a layer change.
+#
+# Whether it BELONGS on the muon layer is a separate question and an owner
+# decision (exception E2 of the 2026-08-30 ruling covers the ideal CAL-1/2/3
+# layer; nothing here establishes that this probe is part of it). Moving it
+# would be an 11.54 ppb change and belongs to the `ideal_muon` migration
+# (qou-1c4y), which AGENTS.md says must land its manifest and its witnesses
+# together. Not done unilaterally here.
+Q0 = _mp.mpf(Q_50_DIGIT_STR)
 
 
 def q_integer(n: int, q=Q0):
