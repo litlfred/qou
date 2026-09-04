@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:52:42Z
+updated_at: 2026-09-04T21:56:28Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -328,3 +328,54 @@ axis a proved Lean result already rules on.
 - The A=1 residual (5.045e-4) is now fully explained by difference 1 alone: at
   A=1 there are no interfaces, and the words differ by exactly the one trailing
   proton letter.
+
+
+## The last fitted quantity is now measured — and BOTH schedules are already excluded in Lean
+
+`12A-1` was the one number above obtained by fitting four points. Confirmed at
+the source and extended to A=6. Interface count = total minus `11A`:
+
+| Z,N | A | total | 11A | interfaces | A-1 | C(A,2) |
+|---|---|---|---|---|---|---|
+| 1,0 | 1 | 11 | 11 | 0 | 0 | 0 |
+| 1,1 | 2 | 23 | 22 | 1 | 1 | 1 |
+| 2,1 | 3 | 35 | 33 | **2** | 2 | 3 |
+| 2,2 | 4 | 47 | 44 | **3** | 3 | 6 |
+| 3,1 | 4 | 47 | 44 | **3** | 3 | 6 |
+| 3,2 | 5 | 59 | 55 | **4** | 4 | 10 |
+| 3,3 | 6 | 71 | 66 | **5** | 5 | 15 |
+
+**Canonical interfaces = A-1 exactly: a LINEAR CHAIN.** Independently corroborated
+by the function's own docstring, which accounts for `2A + 1` non-braid letters as
+"two per nucleon ... plus one per interface" — one interface at A=2, i.e. a chain.
+So `11A + (A-1) = 12A - 1`; the fit was right and is now derived.
+
+### The two routes sit on the two coordination laws the corpus has ALREADY excluded
+
+    canonical:  11 letters/nucleon + (A-1) interfaces        <- LINEAR CHAIN
+    NF:         11 letters/nucleon + C(A,2) interfaces + Z   <- COMPLETE GRAPH
+
+And AGENTS.md records a proved, sorry-free Lean exclusion for **each**:
+
+- **Complete graph** — `QOU.Mass.CoordinationSaturation`: `M = C(A,2)` gives
+  `B/A = eps(A-1)/2`, unbounded, no plateau; observed saturation forces bounded
+  degree, so `z = A-1` is refuted **structurally**, not merely at 4He. That is
+  the NF route's schedule.
+- **Linear chain** — `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff`:
+  the chain bond sum is arrangement-invariant iff `L_pp = L_pn = L_nn`, and a
+  nucleus has no arrangement (scope-(b), bean `qou-m07y`). That is the canonical
+  route's schedule.
+
+**Neither schedule is a coordination law the corpus can hold.** The two routes are
+not "one right, one wrong" — they are the two shapes the extensive-term arc has
+separately proved cannot carry the binding law.
+
+### Scope — what this does NOT say
+
+- Those Lean results exclude these graphs **as coordination laws for the
+  extensive binding term**. They do not, by themselves, say a word builder may
+  not use such a schedule for some other purpose. Whether either builder claims
+  to be a coordination law is **not** established here, and asserting it would be
+  the set-level-to-truth-value slide AGENTS.md names as `da-arity-conflation`.
+- It does not identify a defect in either builder, and does not say which word is
+  the nucleon.
