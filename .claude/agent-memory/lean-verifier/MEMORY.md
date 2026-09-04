@@ -233,6 +233,24 @@ file whose cone moved since is checked against old declarations — silently, er
 pointing at your call site. `ls -l <olean>` vs `git log -1 -- <source>` before
 trusting a green OR debugging a red. Does NOT invalidate every restore.
 
+## STABLE — whole-library rebuild from source, in one command (2026-09-04)
+
+The only way to know `main` is green is to rebuild it; single-file
+`lean`-direct certifies against on-disk oleans. Recipe (bean `qou-n9j7`,
+PR #6649): from `content/quantum-observable-universe/lean`, write the
+topological order of every `QOU/**/*.lean` (DFS over `import QOU.` lines)
+to `/tmp/full_topo.txt`, then run `tools/full_rebuild.sh` (kept beside this
+file): `lean -o <olean> -i <ilean> <src>` per module with `LEAN_PATH` on the
+restored dirs, error-only detection, per-module log at `/tmp/qou-rebuild.log`
+and error excerpts at `/tmp/qou-rebuild-errors.txt`. Measured 2026-09-04:
+2,597 library modules, ~3-4 s each warm after a ~100 s cold first module,
+so budget ~2.5-3 h and run it with `nohup` + a Monitor on `^FAIL|^progress`.
+Content-block siblings (907 `.lean` under chapter dirs) are not modules; do
+them after, with the same loop over their paths. Any red must then be
+classified: **mechanical port** (a retype / argument-order / rename already
+made elsewhere in the corpus) vs **real**; fix the first kind, bean the
+second with the exact error, never weaken a statement to get green.
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
