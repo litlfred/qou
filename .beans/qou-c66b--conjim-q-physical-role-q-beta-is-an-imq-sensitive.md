@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T21:47:13Z
+updated_at: 2026-09-04T22:06:39Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -345,3 +345,70 @@ comparison read `status`/`verdict` but not `result`, and reported *zero*
 failures on both sides against a true 2-and-3. Two scripts of mine disagreed and
 the wrong one looked cleaner — the same field-name-assumption class as the
 detector-blindness taxonomy's rows 22/25/26.
+
+
+---
+
+## 2026-09-04 (fifth) — 🛑 RETRACTION: `𝔇_β` is not a decay width, and (iii) returns to OPEN
+
+Branch `claude/frakd-beta-is-not-a-decay-width-2026-09-04`. Probe
+`computations/qbeta/frakd_beta_is_not_a_decay_width_probe.py` (5/5). This is the
+owner-selected follow-up **D** — *exhibit a `Γ` the reciprocal mechanism fails to
+produce* — and the exhibit turned out to be the neutron's own, which retracts an
+interpretive claim I landed in **#6687** and repeated in **#6700**.
+
+### What I claimed
+
+That (iii) was narrowed because *"the framework's one canonical decay width
+`𝔇_β` IS CAL-2, obtained at real `q₀`, so decay needs no `Im(q)`"*.
+
+### Why it is wrong
+
+The corpus asserts both that `𝔇_β` is the neutron β-decay **width** and that
+`𝔔_β = ℏ/𝔇_β ≈ 0.784 MeV` is a **Q-value**
+(`epistemic-status-of-calibrations.md:3`,
+`three-calibration-discipline-discussion.md:7`, cheat sheet `:134`, `:490`).
+A width and a lifetime are reciprocal **by definition**, so:
+
+| reading | consequence |
+|---|---|
+| `𝔇_β := Γ_n` | `ℏ/𝔇_β = τ_n = 878.4 s` — a **time**, not 0.784 MeV |
+| `𝔇_β := ℏ/𝔔_β` | `= 8.3993551e-22 s`, **24.0194 orders** from `τ_n` |
+
+Equivalently `Γ_n = ℏ/τ_n = 7.4933055e-19 eV` sits **24.02 orders** below
+`𝔔_β = 783645.83 eV`.
+
+**`𝔔_β` and `Γ_n` are independent properties of one decay, not reciprocals**: a
+Q-value is fixed by mass differences alone; a width also needs the coupling and
+the phase-space integral. The framework computes the **energy release**, not the
+**rate**.
+
+### What stands and what does not
+
+- **Stands** — `𝔔_β` as a CAL-2 proxy, reproduced to **0.16819 %** (matching the
+  documented 0.17 %). Untouched.
+- **Stands** — all the Lean of #6687. It is about two width *mechanisms* and is
+  pure mathematics; nothing in it is affected.
+- **Retracted** — the step from *"`𝔇_β` is CAL-2"* to *"the framework has a
+  categorical decay width"*. **Candidate (iii) returns to OPEN**, with its
+  obstacle sharpened: the missing object is not a decay observable but
+  specifically the **rate**.
+
+### 🛑 And a silent no-op in #6700 that I only found now
+
+Of the seven edits #6700's body claims, **six landed and one did not**: the
+Obstacles rewrite. My `str.replace` searched for `$\lvert\cdot\rvert$` where the
+file has `$|\cdot|$`, so it matched nothing and I never verified. The PR body
+describes a change that is not in the diff. Fixed here, and every replacement in
+this pass is now verified as it is applied rather than afterwards.
+
+By luck the un-replaced original text says *"(iii) needs a categorical formula
+for decay widths Γ"* — which the retraction above makes **correct again**.
+
+### Candidate status
+
+| candidate | status | scope |
+|---|---|---|
+| (i) chirality | closed at `q₀` | (b) |
+| (ii) phase dual to CAL-2 | closed at `q₀` | (b) |
+| (iii) non-Hermitian | **OPEN** — obstacle stands, now sharpened to *the rate* | (a) |
