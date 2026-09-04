@@ -1,13 +1,13 @@
 {
- "engine": "mpmath",
- "engineVersion": "mpmath 1.4.1",
+ "engine": "python",
+ "engineVersion": "mpmath 1.3.0",
  "computation": "b3-charge-decomposition-a3",
  "scriptFile": "b3_charge_decomposition_a3_probe.py",
  "description": "Charge-symmetric / charge-antisymmetric decomposition of the A=3 3-body cumulant b3 and of every candidate 3-body object in the corpus. 3H and 3He are mirror nuclei, so b3(3H)-b3(3He) is exactly the binding difference and is the Coulomb displacement up to the Nolen-Schiffer residual. FINDINGS: (1) the chirality route's '10-24x' magnitude gap is one number per variant on the symmetric part -- 14.5x (2-bond), 8.4x (triangle-closed) -- the range was Coulomb splitting leaking into a strong-channel comparison; (2) every chiral variant, including triangle-closed and long-range, has a WRONG-SIGNED charge asymmetry, so the inversion is not an artifact of the 2-adjacent-bond truncation; (3) no candidate supplies more than ~22% of the Coulomb displacement and the per-bond factors carry no EM term, so the A=3 charge asymmetry is a missing CHANNEL, not a wrong 3-body operator. Scope-limited: n=2 atoms, a decomposition rather than a closure. Exploratory; no production wiring, no fit.",
  "sources": [
   {
    "witness": "binding-triangle-3body-cluster.witness.json",
-   "scriptHash": "2940d781b124",
+   "scriptHash": "0913f3cc8ab7",
    "convention_row_used": "bring_color_weighted (canonical, R3)"
   },
   {
@@ -187,5 +187,10 @@
   }
  ],
  "allPassed": true,
- "durationMs": 120
+ "durationMs": 0,
+ "scriptHash": "72d3a63aff65",
+ "scriptCommitSha": "184765ce0bfb2508488875abd883e24c5c6ac8eb",
+ "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+ "computedAt": "2026-09-04T02:58:23.380647+00:00",
+ "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

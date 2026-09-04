@@ -35,6 +35,11 @@ import sys, json
 from fractions import Fraction
 from pathlib import Path  # witness path must be FILE-relative, not cwd-relative
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 
 def word_height(bits, k):
     """S_w = sum_{i<k, w i} 3^(#odd after i) * 2^i, exactly."""
@@ -140,6 +145,12 @@ if __name__ == '__main__':
     }
     with open(Path(__file__).with_name('qcollatz_height_criterion_coverage.witness.json'), 'w') as f:
         w["q0Anchor"] = "independent"
+        # P30: add the staleness provenance (scriptHash / commitSha /
+        # engine) that a hand-rolled dump cannot get from build().
+        # The q0Anchor lines just below own the anchor decision and run
+        # after this, so their value stands.
+        _WitnessBuilder.stamp_staleness_metadata(
+            w, script_path=__file__, engine="python")
         w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: How much of the q-Collatz word space does the height criterion exclude?."
         json.dump(w, f, indent=2)
     print("wrote qcollatz_height_criterion_coverage.witness.json")

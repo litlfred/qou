@@ -78,6 +78,11 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 
 import _path_bridge as _bridge  # noqa: E402, F401
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 # AME2020 total nuclear binding, MeV -- the same literals as
 # probes/pair_locality_shortfall_probe.py.
 AME = {"D": F("2.224566"), "3H": F("8.481798"),
@@ -343,6 +348,12 @@ def main():
     #     payload (subjects 0/7, on a harness where controls moved 2/2).
     # The sweep's pattern is right for a producer that READS q0; this one
     # does not.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python")
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(_COMP.parent)}")
     return 0 if ok else 1
