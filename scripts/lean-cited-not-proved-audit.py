@@ -131,9 +131,17 @@ def strip_comments(src: str) -> str:
 
 
 TOKEN = re.compile(r"(?<![A-Za-z0-9_'.!?])(sorry|sorryAx)(?![A-Za-z0-9_'])")
-AXIOM = re.compile(r"^\s*axiom\s+([A-Za-z0-9_'.]+)", re.M)
+# NOTE the `[ \t]*`, NOT `\s*`.  Under re.MULTILINE `^` matches at every line
+# start and `\s` MATCHES NEWLINES, so `^\s*axiom` can begin at a blank line
+# ABOVE the declaration -- putting `mt.start()` up to ten lines early, and
+# sending `ref_above()`'s window past the `-- Ref:` that sits immediately above
+# the real `axiom` line.  Measured on IwahoriHeckeAPI.lean, same commit, varying
+# only the pattern: `centralIdempotent_central_axiom` reported start-line 275 and
+# ref_above False under `\s*`, against 285 and True under `[ \t]*`.  Corpus-wide
+# that one character was the difference between 64 "uncited" axioms and 3.
+AXIOM = re.compile(r"^[ \t]*axiom[ \t]+([A-Za-z0-9_'.]+)", re.M)
 DECL = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+|noncomputable\s+|partial\s+|unsafe\s+)*"
+    r"^[ \t]*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+|noncomputable\s+|partial\s+|unsafe\s+)*"
     r"(theorem|lemma|def|abbrev|instance|example|structure|class|inductive)\s+([A-Za-z0-9_'.]+)?",
     re.M,
 )
@@ -160,7 +168,7 @@ def ref_above(raw_lines: list[str], line_idx: int, window: int = 25):
 
 
 CLASS_DECL = re.compile(
-    r"^\s*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+)?class\s+([A-Za-z0-9_'.]+)", re.M)
+    r"^[ \t]*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+)?class\s+([A-Za-z0-9_'.]+)", re.M)
 # An instance/def/theorem whose TYPE mentions the class name: the inhabitant.
 def result_type(code: str, pos: int) -> str:
     """The result type of a declaration starting at `pos`.
@@ -356,6 +364,21 @@ def selftest() -> int:
             bad += 1
         label = "corpus" if projected else "file-local"
         print(f"  [{ok}] claim ({label}): consumed={g} expected={want}")
+    # `^\s*axiom` vs `^[ \t]*axiom`: `\s` matches newlines, so the match can start
+    # on a blank line above the declaration and `ref_above` scans the wrong window.
+    _refsrc = """/-- doc -/
+-- Ref: [somebody1999] A Citation
+
+axiom cited_thing : True
+"""
+    _lines = _refsrc.splitlines()
+    _mt = AXIOM.search(strip_comments(_refsrc))
+    _li = strip_comments(_refsrc).count("\n", 0, _mt.start()) if _mt else -1
+    _got = bool(ref_above(_lines, _li)) if _mt else False
+    ok = "ok " if _got else "FAIL"
+    if not _got:
+        bad += 1
+    print(f"  [{ok}] AXIOM start-of-line anchor: ref_above found={_got} expected=True")
     for src, field, want in CONSUMED_SELFTEST:
         got = {e["field"]: e.get("consumed") for e in prop_valued_fields(strip_comments(src))}
         g = got.get(field, "<missing>")
