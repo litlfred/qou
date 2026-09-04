@@ -165,20 +165,47 @@ def _walk(obj, path: str, fname: str, out: list) -> None:
             pass
 
 
-# This audit writes its findings (including the offending strings) into its
-# own witness. Scanning that would re-detect them as NEW every run, so the
-# audit outputs are excluded. Same reason the q0 drift audit is excluded.
-SELF_OUTPUTS = {
+# Witnesses that QUOTE numbers rather than compute them.
+#
+# The detector is sound on all of these — the strings really are doubles
+# rendered past their precision. What it cannot see is that the witness is
+# reporting a number found elsewhere, not publishing one of its own, so the
+# finding belongs to the quoted source and re-reporting it here is noise. This
+# audit's own witness is the obvious case (it records every offender it finds),
+# but it was never the only one: the q0-drift and no-free-parameter witnesses
+# were already here for the same reason, which is why the old name
+# `SELF_OUTPUTS` described a narrower set than it held.
+#
+# `hardcoded-literal-audit` joins them, and it is the clearest instance of the
+# class: its whole job is finding over-padded literals in SOURCE files, so its
+# `rows[].hits[].literal` fields are the evidence. One such field
+# (`8.481796200000000156210262503009…`, `matches_constant:
+# AME_B_TRITIUM_MEV_VALIDATION`) was the last NEW entry in this audit — an
+# audit flagging another audit's citation of the thing they both exist to
+# catch.
+#
+# A LIST, not a heuristic, and deliberately: "does this field look quoted?"
+# is exactly the inference that would let a producer's real padding hide
+# behind an evidence-shaped path. Add a witness here only when its numbers
+# come from somewhere else and that somewhere is itself audited.
+QUOTED_EVIDENCE_WITNESSES = {
     "witness-float64-padding-audit.witness.json",
     "q0-value-drift-audit.witness.json",
     "no-free-parameter-certificate.witness.json",
+    "hardcoded-literal-audit.witness.json",
 }
 
 
-def scan() -> list[dict]:
+def scan(skipped: list[str] | None = None) -> list[dict]:
     rows: list[dict] = []
     for p in sorted(HERE.rglob("*.witness.json")):
-        if p.name in SELF_OUTPUTS:
+        if p.name in QUOTED_EVIDENCE_WITNESSES:
+            # Recorded, not silently dropped. An exclusion nobody can see is
+            # indistinguishable from a hole in the audit — the same rule the
+            # raw-float64 carve-outs follow, where every excused field is
+            # counted and reported apart from the total.
+            if skipped is not None:
+                skipped.append(p.relative_to(ROOT).as_posix())
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
@@ -236,7 +263,8 @@ def main() -> int:
     if args.self_test:
         return self_test()
 
-    rows = scan()
+    skipped: list[str] = []
+    rows = scan(skipped)
     key = lambda r: f"{r['file']}::{r['field']}"
     prior = set()
     if BASELINE.exists():
@@ -253,6 +281,11 @@ def main() -> int:
     print(f"  padded occurrences : {len(rows)}")
     print(f"  distinct values    : {len(distinct)}")
     print(f"  files              : {len(files)}  ({len(live)} live)")
+    if skipped:
+        print(f"  quoted-evidence  : {len(skipped)} witness(es) NOT scanned "
+              f"— they cite numbers found elsewhere rather than computing them")
+        for _s in skipped:
+            print(f"      {_s}")
     print(f"  baseline           : {len(prior)}")
     print(f"  NEW (not baselined): {len(new)}")
 

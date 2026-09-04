@@ -1241,6 +1241,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6184d9aadaf",
+          "ts": "0a4eafba0d9b",
+          "lean": "328a4c42b16f",
+          "lean_statement": "aba2fc3f678d"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T21:09:52.782Z",
+        "reviewed_sha": "c85cd09a591bd0788bff852a32711824a92868a7",
+        "severity": "major",
+        "evidence": "Three .md claims have no Lean counterpart. (1) The implication that gives the definition its content — 'when ℒ_p ≠ 0, the Frobenius form λ cannot extend smoothly through p' — has no λ, no smoothness and no extension anywhere in the file, so the defect locus is never connected to the Frobenius failure it measures. (2) The .md's ℒ_p : T_p^{1,0}A × T_p^{0,1}A → ℂ is encoded as a bilinear form on a SINGLE R-module in both arguments; the structure's own comment calls this 'abstracting', and it drops the conjugate splitting. (3) Sing(λ) ⊂ Spec(A): the locus lives in carrier × carrier, there is no Spec.",
+        "notes": "warn, not fail: the locus now exists as an object and the three gaps are stated in the module docstring rather than implied. Gap (1) is the substance of the block and is the real open item here."
       }
     ],
     "da-citation-misuse": [
@@ -1508,6 +1527,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f6184d9aadaf",
+          "ts": "0a4eafba0d9b",
+          "lean": "328a4c42b16f",
+          "lean_statement": "aba2fc3f678d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T21:09:52.484Z",
+        "reviewed_sha": "c85cd09a591bd0788bff852a32711824a92868a7",
+        "evidence": "`matter_locus_nonempty := d.nondeg` restated the structure field's type verbatim (`∃ x y : d.carrier, d.leviForm x y ≠ 0`). This block is a `definition` whose lean.ref is the structure, so a field carrying its own axiom is the accessor idiom; what made it a defect is the NAME — there was no matter locus in the file, so 'the matter locus is nonempty' restated 'the witness I was given exists'.",
+        "notes": "Defined `LeviFormDefect.matterLocus = {(x,y) | ℒ(x,y) ≠ 0}`; `matter_locus_nonempty` now concludes `d.matterLocus.Nonempty`. Added `zero_left/right_notMem_matterLocus` (bilinearity forces the locus to miss the zero section) and `matterLocus_proper` — the locus is proper and non-empty, the first statement here that no field contains. lean-direct exit 0, sorry-free, no sorryAx; zero consumers."
       }
     ],
     "proof-no-trivial-true": [
@@ -2191,6 +2228,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-09-03T21:09:52.782Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

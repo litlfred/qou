@@ -1,0 +1,104 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T14:54:57.192099+00:00",
+  "commitSha": "7fac4b69991837790f4ec15817c191dc3df61232",
+  "assertions": [
+    {
+      "name": "denominator_degree6_factor_is_exactly_the_numerator_of_J_62",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "q^6-q^5+2q^4-2q^3+2q^2-2q+1 equals q^5*J(6_2) identically. The Jones polynomial being compared against survives in the ratio's DENOMINATOR."
+    },
+    {
+      "name": "q_plus_1_exponent_equals_n_minus_1",
+      "computed": "5",
+      "expected": "5",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "exponent",
+      "source": "the other denominator factor is (q+1)^5 at 6 strands -- the exponent the omitted normalisation carries, so it is accounted for and is not evidence against the identification."
+    },
+    {
+      "name": "J62_numerator_does_NOT_divide_the_trace",
+      "computed": "12",
+      "expected": "12",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "remainder terms",
+      "source": "THE RESULT. Polynomial division after q -> t^2 leaves a nonzero remainder, so no rescaling makes the trace a multiple of J(6_2)."
+    },
+    {
+      "name": "J62_numerator_irreducible_and_coprime_to_the_normalisation_factors",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "irreducible over Q, gcd 1 with both (q-1) and (q+1). This is what makes the divisibility failure CONVENTION-INDEPENDENT: no monomial*(1+/-q)^k normalisation can contribute the missing factor."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "r5full-anchor-gate-divisibility",
+  "scriptFile": "r5full_anchor_gate_divisibility_probe.py",
+  "scriptHash": "405f38ef8bf0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/r5full_anchor_gate_divisibility_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/r5full_anchor_gate_divisibility_probe.py"
+  },
+  "description": "EXPLORATORY. qou-5vhf hands over the target 'aim at the ratio being a pure power of -q^{1/2}', taken from atom_nf_symbolic_D.py:290. That test is MISCALIBRATED: the same file's docstring (line 194) names the omitted factor as ((-1/sqrt q)^{n-1} * (q/(1-q^2))^{n-1}), a RATIONAL function, so a non-monomial ratio is what a CORRECT identification would give. Factoring the committed ratio shows the denominator is 32*q^1327*(q+1)^5*(q^5*J(6_2)): the (q+1)^5 carries exponent n-1=5 and is accounted for by the missing normalisation, while the degree-6 factor is EXACTLY the numerator of J(6_2), surviving in the denominator. The gate STANDS on a sharper test -- q^5*J(6_2) does not divide the trace (remainder 12 terms), and being irreducible over Q and coprime to (q-1) and (q+1) it cannot be supplied by any normalisation of the shape monomial*(1+/-q)^k. Convention-independent, unlike the stated test. Scope (a) on the EVIDENCE, not on the knot. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-13-atom-knot-rule-a5plus-constraints.md",
+  "data": {
+    "the_contradiction_inside_one_file": {
+      "line_194_docstring": "Jones(K) = ((-1/sqrt q)^{n-1} * (q/(1-q^2))^{n-1})...",
+      "line_290_comment": "the ratio should be a pure power of -q^{1/2}",
+      "why_incompatible": "(q/(1-q^2))^{n-1} is a rational function with a (1-q^2)^{n-1} denominator; a pure power of -q^{1/2} is a monomial. If the docstring names the omitted factor, a non-monomial ratio is what a CORRECT identification gives, and the stated test cannot discriminate.",
+      "consequence_for_the_handover": "qou-5vhf's closing recommendation points the next agent at the miscalibrated target; this probe replaces it with the divisibility test."
+    },
+    "ratio_structure": {
+      "numerator_terms": 83,
+      "denominator_terms": 11,
+      "denominator_factored": "32*q**1327*(q + 1)**5*(q**6 - q**5 + 2*q**4 - 2*q**3 + 2*q**2 - 2*q + 1)",
+      "q_plus_1_exponent": 5,
+      "n_strands": 6,
+      "n_minus_1": 5,
+      "reading": "(q+1)^5 carries exponent n-1 at 6 strands, matching the exponent of the docstring's omitted factor, so it is accounted for. Matching an exponent is NOT verifying the convention and no such claim is made here."
+    },
+    "the_sharp_test": {
+      "divisor": "q^5 * J(6_2) = q^6 - q^5 + 2q^4 - 2q^3 + 2q^2 - 2q + 1",
+      "J62_divides_the_trace": false,
+      "remainder_terms": 12,
+      "irreducible_over_Q": true,
+      "gcd_with_q_minus_1": "1",
+      "gcd_with_q_plus_1": "1",
+      "conclusion": "J(6_2)'s numerator is irreducible and coprime to (q-1) and (q+1), so no normalisation of the shape monomial*(1+/-q)^k -- the shape every Markov-to-Jones convention takes -- can supply it. Hence tr != N*J(6_2) for every such N. The gate stands, convention-independently."
+    },
+    "scope": {
+      "kind": "(a), on the evidence rather than on the knot",
+      "not_shown": "that D's atom link is not 6_2 by some other route. What is shown is that the HECKE-LEVEL identification fails in a way no framing or normalisation convention can repair."
+    }
+  }
+}
