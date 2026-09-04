@@ -241,9 +241,11 @@ bounded interval around the single fixed `X`. Take `B_AME = 0`: since
 `1 = 0`. The argument holds for **any** `binding_energy_bw`.
 
 The sibling copy at `lean/QOU/Interactions/QIntegerMassFormula.lean:178` is the
-*same class with the same field name* and carries `[IsAMEValue Z N B_AME]`, which
-is exactly the restriction the other one is missing. So the fix is a one-binder
-change, and the correct form is already in the tree.
+*same class with the same field name* and carries `[IsAMEValue Z N B_AME]`.
+
+**🛑 I first wrote here that this makes the fix "a one-binder change, and the
+correct form is already in the tree". That is wrong, and I retract it — see the
+next section.**
 
 ## Name collisions
 
@@ -260,3 +262,76 @@ recorded in `AGENTS.md`, one level up:
 **vacuous**, **uninhabitable**, and **correct** respectively. A reader who meets
 "conditional on `[QIntegerMassFormula]`" cannot tell which they have without
 resolving the declaration.
+
+---
+
+# 🛑 Retraction, and the prior work I should have found first
+
+*Added within the hour, after reading `lean/QOU/Interactions/QIntegerMassFormula.lean`
+in full rather than at the class declaration.*
+
+## What I got wrong
+
+I recommended porting the `[IsAMEValue Z N B_AME]` binder into
+`mass-theory/q-integer-mass-formula.lean`, calling it "a one-binder fix" and the
+gated version "the correct form already in the tree". **Do not do that.** The
+gated version is laundered, and a prior agent measured and documented exactly
+that on 2026-08-24 — in the file itself, on bean `qou-hjf4`, and as **Finding B**
+of [`2026-08-24-faithful-instance-family.md`](2026-08-24-faithful-instance-family.md),
+which even carries the same two-file side-by-side comparison I made.
+
+The laundering is one level up, in the hypothesis class. `IsAMEValue` is
+documented as recording *"the two physical invariants every real entry
+satisfies"* — but it has a **third** field:
+
+```lean
+  /-- Trivialized bound hypothesis to close sorry -/
+  fits_bound : ∀ (q m_e : ℝ), ∃ δ : ℝ, |δ| ≤ (1:ℝ)/100 ∧
+    B_AME = (1 + δ) * binding_energy_bw q m_e Z N 0 0
+```
+
+which asserts the 1 % agreement outright. With it present, that file's
+`fits_AME_conditional` reduces to `∀ …, [claim] → [claim]`, and `canonical`
+discharges `fits_AME` by projecting it (`f_magic := fun _ => 0` is load-bearing:
+it makes the two expressions definitionally equal).
+
+So porting the binder would import a laundered hypothesis into a file that is at
+least *honestly* uninhabited. That trades a vacuous-because-unsatisfiable
+statement for a `claim → claim` one with a model available — **worse on the axis
+this audit is about, not better.** The prior note says so in as many words:
+*"deleting `fits_bound` here would move this file toward a statement that is
+worse, not better … which of the two versions is the paper's claim is the
+author's call."*
+
+**Recommendation, replacing the retracted one:** do not touch either file. This
+is the author's call, already framed on `qou-hjf4`, and it needs the paper's
+claim decided before any Lean moves.
+
+## How I missed it
+
+The corpus-grep checklist has six paths and I ran none of them for
+`QIntegerMassFormula` before recommending. Path 1 (`docs/audits/`) and path 6
+(`.beans/`) each hold the answer on their own. This is the checklist's exact
+failure mode, in a session whose own subject is claims that look established and
+are not.
+
+## What survives, and what is genuinely new here
+
+The **measurement** stands and is not affected: `¬ Nonempty QIntegerMassFormula`
+is a machine-checked proof of what the earlier note asserted in prose ("states
+`fits_AME` over an **arbitrary real** `B_AME`, which is false as written"). A
+proof is stronger than the assertion, and it is checkable by re-running the
+evidence file.
+
+The **carrier finding is not a duplicate of `qou-hjf4`**, and the difference is
+mechanical rather than a matter of framing. That census
+([`scripts/trivially-inhabiting-instance-census.py`](../../scripts/trivially-inhabiting-instance-census.py))
+keys on `INSTANCE_HEAD` — an unguarded global `instance` filling a data field
+with constant content. This audit is about the **class**, with no instance
+required anywhere.
+
+Measured: of the ten `class BorromeanQuark` declarations, exactly **one** has an
+instance in the tree (`observations/borromean-quark.lean:120`). The other nine
+have none, so an instance-keyed census is structurally blind to all nine — there
+is nothing for it to match. The two detectors are complementary, and neither
+subsumes the other.
