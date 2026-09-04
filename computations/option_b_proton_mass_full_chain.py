@@ -61,6 +61,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import mpmath as mp
 import numpy as np
 import sympy as sp
 
@@ -70,8 +71,18 @@ sys.path.insert(0, str(HERE))
 # Reuse existing infrastructure (no reinvention).
 from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+# NO-FLOAT64 (qou-btqh): carry the substrate anchor at its 50-digit source
+# rather than the float64 alias `Q`, and run the mpmath evaluation at compute
+# precision. Feeding a float64 q_0 to the lambdified trace caps the result at
+# ~16 significant digits no matter the dps, which is exactly the "float64 input
+# poisons the whole result" anti-pattern; the closed-form tr_M is exact in q,
+# so evaluated at the full-precision proton pin it carries every digit.
+set_compute_dps()
+Q0_MPF = mp.mpf(Q_50_DIGIT_STR)  # PROTON pin (owner default for compute)
 from lp_dual_solver import (
     provenance,
     solve_psd_operator_selection_sdp,
@@ -602,14 +613,18 @@ def main() -> int:
     print(f"\n  tr_M^Markov(electron σ_1^3)(q)        = {tr_M_electron}")
     print(f"\n  tr_M^Markov(proton σ_1^7 σ_2^4)(q)    = {tr_M_proton}")
 
-    # Numerical evaluation at q_0
+    # Numerical evaluation at q_0 — carry mpmath.mpf end to end (qou-btqh).
+    # The trace is exact in q; evaluated at the full-precision proton pin the
+    # result is a genuine compute at compute precision, so `float(...)` is
+    # never taken (it would discard ~44 significant digits).
     f_proton = sp.lambdify(q, tr_M_proton, modules=["mpmath"])
     f_electron = sp.lambdify(q, tr_M_electron, modules=["mpmath"])
-    val_p = float(f_proton(Q0_FLOAT))
-    val_e = float(f_electron(Q0_FLOAT))
-    print(f"\n  At q_0 = {Q0_FLOAT}:")
-    print(f"    tr_M(electron)(q_0) = {val_e:+.10f}")
-    print(f"    tr_M(proton)(q_0)   = {val_p:+.10f}")
+    val_p = f_proton(Q0_MPF)
+    val_e = f_electron(Q0_MPF)
+    ratio_p_over_e = val_p / val_e if abs(val_e) > mp.mpf("1e-30") else None
+    print(f"\n  At q_0 = {mp.nstr(Q0_MPF, 20)}:")
+    print(f"    tr_M(electron)(q_0) = {mp.nstr(val_e, 12)}")
+    print(f"    tr_M(proton)(q_0)   = {mp.nstr(val_p, 12)}")
 
     # The CODATA m_p/m_e is 1836.15.  The Markov-trace closed form
     # gives a SCALAR per particle; the predicted ratio is a function
@@ -623,9 +638,9 @@ def main() -> int:
         output={
             "tr_M_proton_symbolic": str(tr_M_proton),
             "tr_M_electron_symbolic": str(tr_M_electron),
-            "tr_M_proton_at_q0": val_p,
-            "tr_M_electron_at_q0": val_e,
-            "ratio_tr_M_p_over_e": val_p / val_e if abs(val_e) > 1e-30 else None,
+            "tr_M_proton_at_q0": fmt(val_p),
+            "tr_M_electron_at_q0": fmt(val_e),
+            "ratio_tr_M_p_over_e": fmt(ratio_p_over_e) if ratio_p_over_e is not None else None,
             "codata_m_p_over_m_e": M_P_MEV / M_E_MEV,
             "note": (
                 "The ratio tr_M(p)/tr_M(e) at q_0 is NOT m_p/m_e by itself — "
@@ -660,7 +675,7 @@ def main() -> int:
         "for the formal proposition."
     )
     w.set_content_block("prop:markov-trace-axiomatic-closed-form")
-    w.add_parameter("q_0", float(Q0_FLOAT))
+    w.add_parameter("q_0", fmt(Q0_MPF))
     w.add_parameter("M_E_MEV_codata", M_E_MEV)
     w.add_parameter("M_P_MEV_codata", M_P_MEV)
     w.add_parameter("electron_word", word_to_string(ELECTRON_WORD))
@@ -671,9 +686,9 @@ def main() -> int:
         "proton": str(tr_M_proton),
     })
     w.add_data("tr_M_at_q0", {
-        "electron": val_e,
-        "proton": val_p,
-        "ratio_p_over_e": val_p / val_e if abs(val_e) > 1e-30 else None,
+        "electron": fmt(val_e),
+        "proton": fmt(val_p),
+        "ratio_p_over_e": fmt(ratio_p_over_e) if ratio_p_over_e is not None else None,
     })
     w.add_data("codata_reference", {
         "m_p_over_m_e": M_P_MEV / M_E_MEV,
@@ -728,10 +743,16 @@ def main() -> int:
                "literal M_HECKE_PIPELINE_AT_Q0 from derivation_chain.py is "
                "referenced by no import, name or attribute node here.",
     )
+    # Content block markov-trace-axiomatic-closed-form.md (line 29) quotes
+    #   tr_M(σ_1^7 σ_2^4)(q_0) ≈ 1.88432  (6 sig figs, convention D / proton pin).
+    # The prior reference 1.63315 here was the retired convention-C / muon-pin
+    # value and made this assertion fail against a known-stale constant. Carry
+    # the 6-sig-fig content-block quote as mpf and compare; `computed` is a
+    # genuine mpf distance, serialized via fmt rather than left float64 (qou-btqh).
+    _cb_quote = mp.mpf("1.88432")
     w.add_assertion(
         "tr_M_proton_at_q0_matches_content_block",
-        # Content block claims ≈ 1.63315 (to 5 sig figs); verify match
-        computed=abs(val_p - 1.63315),
+        computed=fmt(abs(val_p - _cb_quote)),
         expected=0.0,
         tolerance=1e-3,
     )
