@@ -1,0 +1,252 @@
+[
+ {
+  "producer": "computations/markov/markov_trace_atomic_proton_full.py",
+  "cone": "q_parameter",
+  "tier": 1
+ },
+ {
+  "producer": "computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py",
+  "cone": "q_parameter",
+  "tier": 1
+ },
+ {
+  "producer": "computations/qbeta/qbeta_d_frame_bridge_generic_z.py",
+  "cone": "q_parameter",
+  "tier": 1
+ },
+ {
+  "producer": "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py",
+  "cone": "q_parameter",
+  "tier": 1
+ },
+ {
+  "producer": "computations/y_lambda_equivalence_proof.py",
+  "cone": "q_parameter",
+  "tier": 1
+ },
+ {
+  "producer": "computations/run_pipeline.py",
+  "cone": "constants_only",
+  "tier": 1
+ },
+ {
+  "producer": "computations/a_operator/A_operator_extract_at_level.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/build_atomic_braid_recipe_4he_chain.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/build_markov_trace_assembly_deuteron_chain.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/build_markov_trace_assembly_neutron_chain.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/build_term7_s_crystal_4he_chain.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/canonical_mass_table_nucleon_rows_test.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/canonical_tr_m_helium4_stub.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/d_u_closed_form_proof.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/derivation_chain.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/gb_filtration_jet_tracker.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/h_3a_vs_h_3_divergence.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/habiro/habiro_coefficients_extended_parallel.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/interface_composition.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/jet_tower_delta_max.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/kl_betti_extrapolation.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/markov/markov_trace_via_wenzl_lr.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/per_irrep_pole_atom.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/per_irrep_pole_deuteron_h6.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/per_irrep_pole_proton_h3.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/cyclic_square_does_not_reopen_milnor_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/fh_genus_handle_requires_brunnian_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/fusion_process_lr_support_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/gs_filtration_jet_shape_magic_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/milnor_minspan_triples_share_no_summand_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/su4_occupancy_binding_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/symbolic_nf_q_degree_magic_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_all_pairs_closure_is_not_one_link_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/probes/total_curvature_is_the_computable_half_probe.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/shift_from_nf_basis.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/sublemma_2_1_A_operator_extract_h12_nn.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/sublemma_2_1_A_operator_extract_h12_nn_streamed.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/sublemma_2_1_A_operator_extract_h9.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/sublemma_2_1_h9_branching_basis.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/sweeps/light_isotope_sweep.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/topic2_mirror_pair_phi8_boundary_scan.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/wenzl_lr_convention_adapter.py",
+  "cone": "q_parameter",
+  "tier": 2
+ },
+ {
+  "producer": "computations/producer_repad_sweep.py",
+  "cone": "constants_only",
+  "tier": 2
+ },
+ {
+  "producer": "computations/witness_padding_provenance.py",
+  "cone": "constants_only",
+  "tier": 2
+ }
+]

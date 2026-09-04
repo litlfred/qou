@@ -64,6 +64,36 @@ VOLATILE = {"computedAt", "durationMs", "scriptHash", "commitSha",
 
 NUM = re.compile(r"-?\d+\.\d{6,}(?:[eE][+-]?\d+)?")
 
+#: Field names denoting a wall-clock measurement rather than a result.
+#:
+#: `VOLATILE` above is an exact-name set and covers the witness ENVELOPE
+#: (`durationMs`, `elapsedMs`). It does not reach into `data`, where producers
+#: name their own timings in snake_case and disagree about it: measured across
+#: the witness tree there are `compute_time_sec` (183), `elapsed_sec` (34),
+#: `wall_sec` (24), `milliseconds` (31), `rerun_seconds`, `compute_seconds`,
+#: `elapsed_reduce_sec`, `y_lambda_load_time_sec`, `hutch_wall_sec`,
+#: `t_dense_sec`, `mp_dps_runtime`, and more. Enumerating them is a losing game.
+#:
+#: Matching on the TIMING WORD (elapsed / wall / duration / runtime / rerun /
+#: *_time_sec / compute_sec* / milliseconds) rather than on a `_seconds$`
+#: suffix is deliberate and the distinction matters in this repo: a bare
+#: `_seconds$` rule would also swallow a physical quantity measured in seconds
+#: -- a lifetime, a decay time -- and silently hide exactly the kind of number
+#: this sweep exists to detect moving.
+_TIMING_FIELD = re.compile(
+    r"(?:^|[._])(?:elapsed|wall|duration|runtime|rerun)"
+    r"|_time_sec"
+    r"|compute_sec|compute_time"
+    r"|^t_[a-z0-9_]*_sec$"
+    r"|milliseconds",
+    re.I)
+
+
+def _is_timing_field(field: str) -> bool:
+    """True for a wall-clock field. `field` is a dotted path, so test the leaf."""
+    leaf = field.rsplit(".", 1)[-1]
+    return bool(_TIMING_FIELD.search(leaf))
+
 #: sys.path additions producers expect. ABSOLUTE, deliberately.
 #:
 #: These were relative on the first run ("..", "../tools/pyhecke/python"), which
@@ -208,6 +238,12 @@ def classify(before: str, after: str):
                          against its q0. Kept separate because a witness
                          regenerated BEFORE its producer was migrated moves
                          exactly this much and looks like a result.
+    ``timing``           a wall-clock measurement (see ``_is_timing_field``).
+                         Moves on every run by whatever else the machine was
+                         doing and says nothing about the computation's VALUES.
+                         Classified rather than dropped: a producer that
+                         suddenly takes 40x longer is worth seeing, it is just
+                         not a numerical result.
     ``shift``            a genuine relative move, reported in ppm. The physics.
     """
     try:
@@ -244,6 +280,11 @@ def diff(before: dict, after: dict):
             kind, rel = classify(x, y)
             if kind == "same":
                 continue
+            # A wall-clock field is never physics, whatever its magnitude.
+            # Checked AFTER classify so `rel` is still carried: a producer that
+            # got 40x slower is worth seeing, it is just not a result.
+            if _is_timing_field(key):
+                kind = "timing"
             rows.append({"field": key, "before": x, "after": y,
                          "kind": kind, "rel": rel})
     return rows
