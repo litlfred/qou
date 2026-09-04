@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T09:24:51Z
+updated_at: 2026-09-04T09:28:36Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -81,3 +81,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (GLOBAL b-ordering: pointwise REFUTED, envelope HOLDS). Prior evidence for the b-decay was conjugate-pair only (#6556), which cannot see a violation between non-conjugate shapes. Tested directly over all λ up to a dim cap: (a) POINTWISE monotonicity is FALSE — 2 real inversions at A=3, hook (3,1^6) at b=6 per-dim 14.32 sitting BELOW OTHER shapes (2,2,2,2,1) 31.56 and (2,2,2,1,1,1) 24.97 at b=7. So a general bound in b ALONE cannot exist; hooks decay faster than handle-less shapes at comparable b. (b) The ENVELOPE max_{b(λ)=b} per-dim IS strictly decreasing at BOTH A — A=2: 320.78 > 174.18 > 53.56 > 19.74; A=3: 4718.6 > 3478.3 > 1498.6 > 981.2 > 211.6 > 31.6 — and the envelope is what a decay BOUND actually needs. So the arc's target survives in envelope form, not as pointwise monotonicity. Endpoint note: trivial/sign are EXACT zeros (Ω₂^P vanishes on 1-dim reps) and are excluded — including them makes 0 < anything read as an inversion, which is how my first run produced 9 spurious ones. Caveat: 17 of 30 shapes at A=3 exceed the dim cap and are unmeasured (named in the output); a found inversion refutes regardless, but the envelope claim is over the measured subset.
+
+
+- 2026-09-04 (second-statistic search: ALL candidates DEAD). Given pointwise b-monotonicity is refuted, tested whether some other single statistic orders tr_λ(X*X)/dim_λ. Candidates: b(λ), ℓ(λ), n(λ)=Σ(i−1)λ_i (the corpus's own Δ_λ grading), n(λ'), n(λ)−n(λ'), b+ℓ, and dim_λ as a NULL CONTROL. Result at A=2 and A=3: NONE is strictly decreasing. Inversions/ties (A=2 | A=3): b 0/7 | 2/8; ℓ 4/7 | 3/8; n(λ) 2/2 | 1/1; n(λ') 32/2 | 53/1; n(λ)−n(λ') 2/2 | 1/0; b+ℓ 2/2 | 1/2; dim_λ 17/8 | 25/7. Two things worth keeping: (i) the NULL CONTROL FAILS HARD (dim_λ 17 and 25 inversions), so the decay is NOT a dimension artifact — it is about λ's shape; (ii) n(λ) and n(λ)−n(λ') are the closest (1–2 inversions) but do NOT order it, so they must not be quoted as the grading. NOTE b(λ) shows 0 inversions at A=2 and fails only on TIES there — the A=3 inversions are what refute it, which is why one size was not enough. NET: the per-dim majorant is not a function of any of these alone; what survives is the ENVELOPE form. 17 of 30 shapes at A=3 unmeasured (dim cap, named in output).
