@@ -59,6 +59,11 @@ from mpmath import mp, mpf  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 set_compute_dps()
 
 AME = {"D": F("2.224566"), "3H": F("8.481798"), "3He": F("7.718043")}
@@ -273,6 +278,12 @@ def main():
     # this one. Ask for the anchor with the same precedence q_parameter
     # uses at compute time (env var > manifest stem > proton) rather than
     # hardcoding a pin this run may not have used.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python")
     from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
     _q0a, _q0v = _rq0(__file__)
     witness["q0Anchor"] = _q0a
