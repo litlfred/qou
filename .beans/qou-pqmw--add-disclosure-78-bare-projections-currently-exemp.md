@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-08-10T01:49:56Z
+updated_at: 2026-09-04T21:00:24Z
 parent: qou-5p7n
 ---
 
@@ -98,3 +98,70 @@ Sub-clusters worth doing together: `Instanton.lean` (4), `QHookBound.lean` (4), 
 - `content/quantum-observable-universe/quantum-universes/categorical-jet.lean:83` — `categorical_jet_prolongation`
 
 Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
+
+
+## 1 of 78 drained (2026-09-04) — `q_beta_spectral_conditional`
+
+`nuclear-interactions/q-beta-spectral-bridge.lean` — the disclosure sentence
+this bean prescribes is now on the declaration.  Status left `todo`: 77 remain.
+
+The old docstring was worse than absent — it *defended* the projection:
+"Derived from the class field `forms_agree` — not a `sorry`-projection of an
+unrelated conclusion."  As `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`
+sets out, that answers the wrong objection: the §3b-cond item-5 complaint is not
+that the conclusion is UNRELATED to the field but that it is IDENTICAL to it.
+That audit already adjudicated this declaration `genuine` in the review ledger.
+
+Recorded on the declaration: the class is honest (content-bearing, uninhabited
+— the correct §3b-tax open state); only the wrapper is the defect, and it is a
+DISCLOSURE defect, not a mathematical one.  The file's real content
+(`q_beta_spectral_bridge`, three identities) is unconditional and is what
+should be cited.
+
+NOT done, deliberately: closing the wrapper properly needs the class to relate
+`Q_beta_A`/`Q_beta_B` to the file's `(h, z)` forms so that agreement DERIVES
+something (exact agreement would force `z = 1` via the ratio identity).  That
+changes what the block claims — authorial, left open.
+
+Verified: `lean`-direct **exit 0** with a COMPLETE sentinel written after the
+process exited (not read from a possibly-truncated log), 0 error lines; the one
+warning is a pre-existing unused `hzh` at line 87.
+
+
+## 🛑 RE-MEASURED 2026-09-04 — the list above is a 2026-08-10 SNAPSHOT and 36 % of it no longer resolves
+
+Do **not** drain this queue entry-by-entry from the list as written. Re-run
+[`scripts/pqmw-queue-recheck.py`](../scripts/pqmw-queue-recheck.py) first.
+
+    entries in the bean : 78
+      file_gone   :  6     the path no longer exists
+      decl_gone   : 22     file exists, declaration name is not in it
+      moved       : 28     resolves, at a different line
+      same_line   : 22     resolves exactly where this bean records
+
+    NO LONGER RESOLVES  : 28 / 78 (36 %)
+
+**The worked case is `core-levi-form.lean`, and it is the reason this was
+checked.** Its three entries (lines 106 / 164 / 172) now point at a blank
+line, a `rw` inside a proof body, and a sentence in a docstring. The file was
+rewritten by `6c17f7203d` (2026-08-31) — *"fix(qou-z9ws): core Levi form —
+data become parameters, and one 'bound' turns out to carry nothing"* — into
+exactly the data-as-parameters shape this queue wants: `CoreLeviData` is
+declared **"Data only … an inhabitant of this structure asserts nothing"**,
+each claim is a separate `def … : Prop` taken as an explicit hypothesis, and
+`core_levi_form` *derives* both conjuncts. It even discloses its own residual
+gap (`QuantumPressureBound`'s `q > 1` restriction is "an open gap here, not a
+discharged hypothesis").
+
+So writing a disclosure onto those three would be worse than a no-op: it would
+annotate declarations that no longer carry the defect, and two of the three
+line numbers do not name a declaration at all.
+
+**Caveat on `decl_gone`:** it means *no longer resolves by name*. A rename and
+a deletion look identical to this check; separating them needs `git log -S` and
+was not done.
+
+**Where to start instead:** the **22 `same_line`** entries are the ones most
+likely still to carry the defect, since neither the file nor the surrounding
+line count has moved since the snapshot. Read the declaration and its class
+before writing anything.

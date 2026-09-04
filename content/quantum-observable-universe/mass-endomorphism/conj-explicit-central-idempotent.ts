@@ -45,7 +45,14 @@ export default conjecture({
         "per ss0a 'no shadowing stubs' -- the ref resolves to the library " +
         "declaration. Per ss3b-tax this is a PRIMARY conjecture (its " +
         "signature binds no other conjecture class) and correctly has NO " +
-        "instance; do not fabricate one.",
+        "instance; do not fabricate one. **Re-encoded the same day**: the class " +
+        "first carried a single field equal to the downstream conclusion, " +
+        "discharged by a bare projection -- a ss3b-cond item-5 violation, " +
+        "caught by the --item5 mode of " +
+        "scripts/conditional-on-class-hypothesis-audit.ts. It now carries the " +
+        "interpolation inputs (per-tableau projectors, idempotent and " +
+        "pairwise orthogonal, summing to e_lambda) and the theorem DERIVES " +
+        "idempotency from them.",
     },
   ],
 });

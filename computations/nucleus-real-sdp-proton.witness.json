@@ -29,9 +29,13 @@
       "active_blocks": [
         "(3,)"
       ],
+      "x_star": [
+        1.1457596924573008,
+        1.2357292440868963e-41
+      ],
       "y0_star": 0.4470411475404006,
       "y_star": [
-        6.824379591562091e-42,
+        3.2032499232202406e-42,
         0.49797248257586973
       ],
       "active_set": [
@@ -39,18 +43,32 @@
       ],
       "primal_obj": 0.5122017277216482,
       "dual_obj": 0.5122017277216482,
-      "duality_gap": 8.004885602063585e-42,
-      "y0_star_str": "4.470411475404005999999999999999999999999966248096772e-1",
-      "y_star_str": [
-        "6.824379591562090877896678928673665701304775010301450e-42",
-        "4.979724825758697325921368630563417506733127937758485e-1"
+      "duality_gap": 4.9252149796622027e-42,
+      "x_star_str": [
+        "1.145759692457300799999999999999999999999987642744172",
+        "1.235729244086896306868817899086898162079825934637497e-41"
       ],
-      "primal_obj_str": "5.122017277216482234157584267004800000000041377285759e-1",
-      "dual_obj_str": "5.122017277216482234157584267004799999999961328429738e-1",
-      "duality_gap_str": "8.004885602063584958126529372505738651365609592931604e-42",
+      "y0_star_str": "0.44704114754040059999999999999999999999999841576953",
+      "y_star_str": [
+        "3.2032499232202406252791910253395987310151780493086e-42",
+        "0.49797248257586973259213686305634175067330925039962"
+      ],
+      "primal_obj_str": "0.51220172772164822341575842670048000000000311006757",
+      "dual_obj_str": "0.51220172772164822341575842670047999999999818485259",
+      "duality_gap_str": "4.9252149796622029168723111993411853896310759404927e-42",
+      "residual_primal_str": "-9.5560341400257951541726713904753319079267039961321e-47",
+      "residual_dual_str": "4.9253105440272340600782417345493842376824851822726e-42",
+      "gap_recomputed_str": "4.9252149836858338021267000078354794843634059152327e-42",
       "backend": "clarabel-mpfr",
       "precision_bits": 167
     },
     "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
-  }
+  },
+  "q0AnchorReason": "inherited: no q0 arithmetic in this producer; all chi inputs (NUCLEI[*]['chi']) are q0-evaluated witnesses declaring q0Anchor='proton'",
+  "scriptHash": "1b2967f558dd",
+  "scriptCommitSha": "a64db763f237a2d693e12319b086ae029ca19775",
+  "commitSha": "2d6b72bd3e0bf65e4c35ba26dc77eb7ad19166f1",
+  "computedAt": "2026-09-04T12:54:03.129186+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton"
 }

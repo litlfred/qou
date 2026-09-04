@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T13:40:40.569799+00:00",
-  "commitSha": "ed918c9fd92d2fd9255c3652a9cef953b61ce128",
+  "computedAt": "2026-09-04T22:08:09.150108+00:00",
+  "commitSha": "28d23398da68cc8e8d048e7a9ae26c3d0760fc78",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -19,9 +19,9 @@
     },
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[D-tr-M-q0.derivation]",
@@ -238,9 +238,9 @@
     },
     {
       "name": "chain_valid[markov-trace-assembly-deuteron.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[markov-trace-assembly-deuteron.derivation]",
@@ -277,9 +277,9 @@
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[n-tr-M-q0.derivation]",
@@ -296,9 +296,9 @@
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false
+      "passed": true
     },
     {
       "name": "leaf_value[p-tr-M-q0.derivation]",
@@ -642,8 +642,8 @@
       "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 4,
+  "allPassed": true,
+  "durationMs": 7,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3bb00f5477af",
@@ -697,11 +697,9 @@
         "target": "tr_M(D, q_0)  [canonical Wenzl-bridge, post-PR #612]  [CONVENTION-C, CODATA-2018 MUON PIN — scoped 2026-08-30, qou-rm57]",
         "target_value": "0.3882864715477134",
         "computed_value": "0.3882864715477134",
-        "structural_ok": false,
+        "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "'Atomic D Hecke element T_w(Z=1, N=1) -- NOT a braid word': script-cited step requires a `script: <path>` note"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
@@ -1478,11 +1476,9 @@
         "target": "tr_M(D, q_0)",
         "target_value": "0.5751722439177719",
         "computed_value": "0.5751722439177719",
-        "structural_ok": false,
+        "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "'Per-irrep characters χ^λ_q(β_D) via Hoefsmit recipe': cited script 'computations/hecke_character_symbolic.py' not found at /home/user/qou/computations/hecke_character_symbolic.py"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 1,
           "derived": 3,
@@ -1526,11 +1522,9 @@
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]  [CONVENTION-C, CODATA-2018 MUON PIN — scoped 2026-08-30, qou-rm57]",
         "target_value": "0.9232332971695838",
         "computed_value": "0.9232332971695838",
-        "structural_ok": false,
+        "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "'Atomic n Hecke element T_w(Z=0, N=1) -- NOT a braid word': script-cited step requires a `script: <path>` note"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
@@ -1560,11 +1554,9 @@
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]  [CONVENTION-C, CODATA-2018 MUON PIN — scoped 2026-08-30, qou-rm57]",
         "target_value": "1.0653062285923893",
         "computed_value": "1.0653062285923893",
-        "structural_ok": false,
+        "structural_ok": true,
         "leaf_matches": true,
-        "issues": [
-          "'Atomic p Hecke element T_w(Z=1, N=0) -- NOT a braid word': script-cited step requires a `script: <path>` note"
-        ],
+        "issues": [],
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
@@ -3759,6 +3751,7 @@
         "fl-sniady-genus-biased-measure.witness.json",
         "fl-sniady-rsk-form-verify.witness.json",
         "gap10-tjon-correlation.witness.json",
+        "he4-magnus-omega2-sign.witness.json",
         "helium-four-body-cluster.witness.json",
         "helium4-mu4-cluster-moment.witness.json",
         "li6-h18-amplification-discriminator.witness.json",
@@ -4263,6 +4256,7 @@
         "mu-p-cyclotomic-ladder-magnitude.witness.json",
         "mu-p-habiro-basis-order.witness.json",
         "mu-p-pin-sensitivity-map.witness.json",
+        "mu-p-sigma235-ohtsuki-resolution.witness.json",
         "mu-substrate-tension-audit-100dps.witness.json",
         "mu-wenzl-closure-probe.witness.json",
         "multi-layer-gap-decomposition.witness.json",
@@ -4643,6 +4637,7 @@
         "mu4-magnitude-gap-anatomy.witness.json",
         "nfold_ip_coupling_duality_gap_probe.witness.json",
         "no_distance_decay_in_the_trace_probe.witness.json",
+        "no_within_generator_noncommutativity_probe.witness.json",
         "nucleon-h3-marshalling-divergence.witness.json",
         "nucleon_chain_sets_the_transition_probe.witness.json",
         "nz-chain-convention-free-observable.witness.json",
@@ -4904,6 +4899,7 @@
         "cauchymul-order-cancellation-witness.witness.json",
         "d1b-52-charge-lattice-sourcing.witness.json",
         "d1b-eq98-rank-correction.witness.json",
+        "d1b-null-direction-is-mirror-symmetric.witness.json",
         "dt-crossknot-connection-count-certified.witness.json",
         "dt-crossknot-sixone-connection-count.witness.json",
         "dt-crossknot-snappy-slope-hardening.witness.json",
@@ -4918,9 +4914,12 @@
         "dt-d1c-v4-blocks-plus-abelian-bar-ray.witness.json",
         "dt-third-knot-trefoil-count.witness.json",
         "fbor-normalisation-barsymmetry.witness.json",
+        "frakd-beta-is-not-a-decay-width.witness.json",
         "gram-convention-d-singularity-structural.witness.json",
         "gram-mp-path-convention-d-migration.witness.json",
         "h3-markov-trace-cyclicity-preflight.witness.json",
+        "imq-chirality-is-the-bar-involution.witness.json",
+        "imq-decay-width-mechanism.witness.json",
         "integer-lp-gluon-convention-d.witness.json",
         "qbessel-jackson-contiguity.witness.json",
         "qbessel-mu-lambda-vs-qlommel-zeros.witness.json",
@@ -5093,6 +5092,7 @@
         "qbeta-direction-sanity-gate-probe.witness.json",
         "qbeta-disc5-parity.witness.json",
         "qbeta-discriminant-curve-in-q.witness.json",
+        "qbeta-disjoint-support-factorisation.witness.json",
         "qbeta-dladder-barodd-borel-pade-laplace.witness.json",
         "qbeta-dladder-coupled-qsqrt3-recurrence.witness.json",
         "qbeta-dladder-ecalle-acceleration.witness.json",
@@ -5169,6 +5169,7 @@
         "qbeta-klr-lusztig-demazure-preflight-run.witness.json",
         "qbeta-l1-ceiling-is-one-point-of-a-family.witness.json",
         "qbeta-ladder-alpha-form-filter.witness.json",
+        "qbeta-ladder-alpha-provenance.witness.json",
         "qbeta-ladder-convention-dependence-is-one-phase.witness.json",
         "qbeta-ladder-convention-fee.witness.json",
         "qbeta-ladder-headline-residual-provenance.witness.json",
@@ -5176,6 +5177,7 @@
         "qbeta-ladder-required-phase.witness.json",
         "qbeta-ladder-verification-1ppq.witness.json",
         "qbeta-last-step-is-the-presentation.witness.json",
+        "qbeta-layout-conflict.witness.json",
         "qbeta-level-k-binding-operator.witness.json",
         "qbeta-level-k-operator-and-real-decays.witness.json",
         "qbeta-li2q-imaginary-quantization.witness.json",
@@ -5264,6 +5266,7 @@
         "qbeta-stage-c-per-block-chi-closed-form-probe.witness.json",
         "qbeta-staircase-ew-lives-in-the-tl-kernel.witness.json",
         "qbeta-stokes3-magnitude-identification.witness.json",
+        "qbeta-strand-multiplicity.witness.json",
         "qbeta-sturm-liouville-block21-probe.witness.json",
         "qbeta-sturm-liouville-symbolic-derivation.witness.json",
         "qbeta-symbolic-chain-alpha-b.witness.json",
@@ -5519,6 +5522,7 @@
         "volume-binding-four-point.witness.json",
         "volume-def-reconcile.witness.json",
         "weak-isospin-t3-grading.witness.json",
+        "weak-vertex-t35-trace.witness.json",
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-mass-table-convention-d.witness.json",
         "wedderburn-mass-table-z1-20.witness.json",
@@ -5554,6 +5558,6 @@
       ]
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

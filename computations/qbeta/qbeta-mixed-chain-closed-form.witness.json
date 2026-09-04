@@ -105,15 +105,16 @@
     "derived_vs_measured": "DERIVED: the form (chain structure plus Ocneanu multiplicativity over disjoint strand ranges); t_p and t_n as H_3 traces; b_pp = z as an identification, not an imposition. NOT DERIVED: b_pn and b_nn are extracted from 2H and 3H and are two measured constants until the exact-Laurent treatment that produced r(q) is applied to them.",
     "scope": "Scope-(a). No content block edited."
   },
-  "gitCommit": "a502223906a4744c2c3a51dae8db55f2b2707e75",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_mixed_chain_closed_form_probe.py",
-  "scriptHash": "a23d3a7c4e50",
-  "scriptCommitSha": "unknown",
-  "commitSha": "a502223906a4744c2c3a51dae8db55f2b2707e75",
+  "scriptHash": "0e4802fc079e",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T16:37:12.338700+00:00",
+  "computedAt": "2026-09-04T12:40:12.383845+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

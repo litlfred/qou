@@ -433,7 +433,7 @@ theorem barSymJMSum_block_eigenvalue_of_pos {N : ℕ} {K : Type*} [Field K] (q :
 partition's `cellContentCoshSum` is the empty sum `0`.  Since `d_λ ≥ 1` always
 (`instNonemptyStandardYoungTableau`), the matrix algebra is nontrivial and `2 · 1 ≠ 0`.
 
-So the `0 < N` hypothesis on `barSymJMSum_block_eigenvalue_of_pos` is not an artefact of the proof
+Hence the `0 < N` hypothesis on `barSymJMSum_block_eigenvalue_of_pos` is not an artefact of the proof
 route: the statement without it is refutable.
 
 **`(2 : K) ≠ 0` is a real hypothesis, not bookkeeping.**  Over `ℝ` the contradiction was

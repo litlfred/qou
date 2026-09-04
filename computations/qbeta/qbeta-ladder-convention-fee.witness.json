@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T07:35:45.608284+00:00",
-  "commitSha": "427a08a42c77d92f0473cfed847f66658fc31457",
+  "computedAt": "2026-09-04T12:28:14.768369+00:00",
+  "commitSha": "23d95c998fe9c6f169ff59e2eb8f6c8a56b13f58",
   "assertions": [
     {
       "name": "canonical_colour_weighting_degrades",
@@ -34,10 +34,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "qbeta-ladder-convention-fee",
   "scriptFile": "qbeta_ladder_convention_fee_probe.py",
-  "scriptHash": "eaeaf85d4ad6",
+  "scriptHash": "e8a05d91384c",
   "scriptCommitSha": "48c8469267939dcf4c13b2faa3b6bff51d60255c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -69,5 +69,11 @@
     "colour-weighted_AND_z_D-substituted_(same_caveat_on_z_D)": "681534.666237442492596949315779946619656283624599938939250634",
     "published_frame_err_ppb": "37.7074898557493246572264919369599095480546476060268930180124",
     "delta_flavor_split": "0.00137571080702709600855110927410655062222547601193777493132134"
+  },
+  "q0Anchor": "comparison",
+  "q0AnchorReason": "deliberate two-pin comparison: the ladder is evaluated at the canonical proton pin (the AS PUBLISHED row and the two convention rows) and at the muon pin read from q-pinning-50-digit.witness.json (the MUON pin row), to price the pin choice against the residual. Stamped 2026-09-04 draining the q0-dataflow ratchet -- bean qou-zk51",
+  "q0Values": {
+    "proton": "1.1099785827513808075916690956107688798744991218736",
+    "muon": "1.109978595642739046681795129380001752700065561029"
   }
 }

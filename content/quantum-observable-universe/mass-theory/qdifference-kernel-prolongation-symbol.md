@@ -185,7 +185,16 @@ local monodromy, not fitted numerically.
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
 > reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
-> sorry-free, $q$ not a root of unity).
+> sorry-free, $q$ not a root of unity). On the actual seed — the branch-point
+> expansion of the colour cubic at its simple ramification point — neither
+> the Jackson nor the $q$-derivative tower, in either $q$-integer convention
+> and on either sheet, satisfies that recurrence at any tested $q$: the
+> defect is of order one relative to the residues themselves, not a
+> precision artefact. And with the weights left free, each level introduces
+> at least four new weight values against one constraint, so the recurrence
+> constrains nothing until the weights are supplied by the geometry. Both
+> statements are scope-(a): they concern these two candidates on this seed,
+> and the two-term derivative-only class, respectively.
 >
 > Two earlier readings of the same kernel took $\sigma$ to be a shift in the
 > $t$-exponent of a single jet — the unit $t$-shift with $x = q^{e}$, or the

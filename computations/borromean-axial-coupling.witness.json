@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T17:00:39.759812+00:00",
-  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
+  "computedAt": "2026-09-04T10:33:13.041094+00:00",
+  "commitSha": "52d7f5999d2412af0b3ac6c3ce6bfe0dc2fae270",
   "assertions": [
     {
       "name": "g_A",
@@ -13,28 +13,28 @@
       "source": "PDG 2024"
     },
     {
-      "name": "lp_duality_gap_zero",
-      "computed": 3.821440179968053e-16,
-      "expected": 0.0,
+      "name": "lp_duality_gap_certified",
+      "computed": "2.01568336418754275886925182273e-45",
+      "expected": "0",
       "passed": true,
-      "tolerance": "1e-10",
-      "source": "prop:operator-selection-lp § strong duality"
+      "tolerance": "1.4166989763856204662e-43",
+      "source": "|gap_recomputed - solver duality_gap|; gap_recomputed from QOU.Mathlib.LPDuality.duality_gap_decomposition applied to the published x*/y*. Tolerance = 100 x the cancellation floor max|x*|*10^(-prec_bits*log10 2), derived not fitted."
     },
     {
       "name": "lp_active_set_nonempty",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": 10.0,
-      "source": "prop:confinement-frobenius-reciprocity § master formula"
+      "tolerance": 0,
+      "source": "prop:confinement-frobenius-reciprocity § master formula; boolean so an EMPTY active set fails (the numeric form with tolerance 10 passed on len=0)"
     }
   ],
   "allPassed": true,
   "durationMs": 6,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "9e202b78b7c5",
-  "scriptCommitSha": "99a0598a63a0c22d8c367c5d1f1d8da9998da146",
+  "scriptHash": "e3e3ce3a6487",
+  "scriptCommitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -171,39 +171,64 @@
     ],
     "shadow_prices": [
       1.0,
-      2.7248538659802635e-19,
-      2.7248538659802635e-19,
-      9.765570879689685e-20,
-      9.765570879689685e-20,
-      1.0418311594816698e-19
+      2.7248538659802985e-47,
+      2.7248538659802985e-47,
+      9.765570879689809e-48,
+      9.765570879689809e-48,
+      1.0418311594816831e-47
     ],
     "active_basis_names": [
       "γ"
     ],
     "x_star": [
-      -265025.00781985413,
-      225670.78755416002,
-      225670.78755416002,
-      -185680.7828620745,
-      -185680.7828620745,
-      185045.99843568314
+      -265025.00781985425,
+      225670.78755416008,
+      225670.78755416008,
+      -185680.7828620746,
+      -185680.7828620746,
+      185045.9984356832
     ],
-    "y0_star": -6.617584414762323e-19,
+    "y0_star": -2.6995660382469014e-46,
     "y_star": [
       1.0,
-      2.7248538659802635e-19,
-      2.7248538659802635e-19,
-      9.765570879689685e-20,
-      9.765570879689685e-20,
-      1.0418311594816698e-19
+      2.7248538659802985e-47,
+      2.7248538659802985e-47,
+      9.765570879689809e-48,
+      9.765570879689809e-48,
+      1.0418311594816831e-47
     ],
     "active_set": [
       0
     ],
-    "primal_obj": 3.814822595553291e-16,
-    "dual_obj": -6.617584414762323e-19,
-    "duality_gap": 3.821440179968053e-16,
+    "primal_obj": 3.5733110840282835e-44,
+    "dual_obj": -2.6995660382469014e-46,
+    "duality_gap": 3.6003067444107526e-44,
     "lp_feasible": true,
+    "backend": "clarabel-mpfr",
+    "precision_bits": 167,
+    "x_star_str": [
+      "-265025.0078198542236828030486380563596380012455038459",
+      "225670.7875541600908760924849016491676695361885323610",
+      "225670.7875541600908760924849016491676695361885322307",
+      "-185680.7828620745756838061498044345928757823550798131",
+      "-185680.7828620745756838061498044345928757823550798888",
+      "185045.9984356831932982303784436272100504935785989575"
+    ],
+    "y0_star_str": "-2.6995660382469014437498133483489973960059190944449e-46",
+    "y_star_str": [
+      "1.0000000000000000000000000000000000000000000003094",
+      "2.7248538659802985654037643949074845192580099580647e-47",
+      "2.7248538659802985654037643949074845192580099583155e-47",
+      "9.7655708796898091128833900853270960770298066505916e-48",
+      "9.765570879689809112883390085327096077029806650244e-48",
+      "1.0418311594816831114325397447433822086631369266801e-47"
+    ],
+    "primal_obj_str": "3.5733110840282835308555104373892861347646679517851e-44",
+    "dual_obj_str": "-2.6995660382469014437498133483489973960059190944449e-46",
+    "duality_gap_str": "3.6003067444107525452930085708727761087247271427296e-44",
+    "residual_primal_str": "-1.65314535351630905295577318155329863466027145452e-42",
+    "residual_dual_str": "1.6911641043246041196214068698484469630454383428114e-42",
+    "gap_recomputed_str": "3.8018750808295066665633688295148328385166888291313e-44",
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",
       "char_on_basis": [
@@ -240,6 +265,7 @@
         1.0
       ]
     },
+    "duality_gap_cancellation_floor": "1.4166989763856205285e-45",
     "g_A_note": "g_A from confinement Frobenius reciprocity (master formula); no external Clebsch-Gordan factor inserted.",
     "interpretation": "g_A is the ratio of two instances of the master formula on the same proton bound state T (operator-selection LP optimum at n_target = 1). The vector channel O_V uses the trivial-rep character (σ_i ↦ q); the axial channel O_A uses the sign-rep character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the LP-active subspace replaces the cyclic-trivial conjugation pattern of the prior implementation. Exact numerical agreement with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan structure to be installed on the same active subspace; this v1 establishes the correct STRUCTURE — the conjugation bug is gone — with refinement (proper isospin projector on T) deferred.",
     "upstream_witness_hashes": [

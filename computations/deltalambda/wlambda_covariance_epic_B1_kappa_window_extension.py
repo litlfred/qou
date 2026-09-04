@@ -66,6 +66,12 @@ from fractions import Fraction as F
 
 import mpmath as mp
 
+sys.path[:0] = [
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "substrate"),
+]
+from witness_base import WitnessBuilder  # noqa: E402
+
 mp.mp.dps = 60
 
 
@@ -120,6 +126,67 @@ def exact_M1(n):
     return F(sXY, nf) - F(sX, nf) * F(sY, nf)
 
 
+
+def _derived(rows, kappa):
+    """The analysis the witness records, recomputed from `rows` alone.
+
+    Every field here was previously assembled OUTSIDE this script: the commit
+    that added `b1-kappa-window-extension.witness.json` added no script at all,
+    so its `scriptFile` named a file that writes no witness, the provenance
+    audit reported it NOT_A_PRODUCER, and `run_pipeline` treated a witness
+    nothing could regenerate as current. `durationMs: 53` on a ~28-minute
+    compute is the other tell.
+
+    Reconstructed and verified BEFORE being wired in: all 8
+    `windowed_exponents` and `secant_over_new_window` reproduce the committed
+    values to their recorded 8 significant digits, exactly — and again after,
+    against a full 1919 s run.
+
+    The exponent is the log-log secant of `kappa_n - kappa` against `n`: a
+    two-point slope over each window, negated so a decaying difference reads as
+    a positive order.
+    """
+    by_n = {int(r["n"]): r for r in rows}
+    ns = sorted(by_n)
+
+    def d(n):
+        r = by_n[n]
+        return (mp.mpf(int(r["M1_num"])) / int(r["M1_den"])
+                / mp.power(n, mp.mpf(5) / 2) - kappa)
+
+    def slope(lo, hi):
+        return -(mp.log(d(hi)) - mp.log(d(lo))) / (mp.log(hi) - mp.log(lo))
+
+    # `slope` takes log(kappa_n - kappa), so it is real only where that
+    # difference is POSITIVE. The one-sided premise says it is for n >= 13, but
+    # a range straddling the crossover makes the log complex and mpmath then
+    # rejects its own `nstr` output on the way back in. Reported as an empty
+    # analysis rather than crashing, or worse, emitting a complex number
+    # dressed as an exponent.
+    if any(d(n) <= 0 for n in ns):
+        return {
+            "kappa": mp.nstr(kappa, 26),
+            "rows": rows,
+            "windowed_exponents": {},
+            "exponents_undefined_because":
+                "kappa_n - kappa is not positive throughout this range, so its "
+                "log-log slope is not real; the one-sided premise holds only "
+                "for n >= 13",
+        }
+    windows = {f"{ns[i]}..{ns[i + 3]}": mp.nstr(slope(ns[i], ns[i + 3]), 8)
+               for i in range(len(ns) - 3)}
+    lo_key = min(windows, key=lambda k: mp.mpf(windows[k]))
+    return {
+        "kappa": mp.nstr(kappa, 26),
+        "rows": rows,
+        # The window's second point: the verdict reads "a minimum NEAR
+        # n = 71-72", reported as one n rather than a 4-wide window.
+        "local_exponent_min_near": int(lo_key.split("..")[0]) + 1,
+        "windowed_exponents": windows,
+        "secant_over_new_window": mp.nstr(slope(ns[0], ns[-1]), 8),
+    }
+
+
 def main() -> int:
     nmin = int(sys.argv[1]) if len(sys.argv) > 1 else 68
     nmax = int(sys.argv[2]) if len(sys.argv) > 2 else 72
@@ -158,6 +225,49 @@ def main() -> int:
                 fh.write("\n")
 
     allpos = all(r["sign"] == "+" for r in rows)
+
+    if "--witness" in sys.argv and len(rows) >= 4:
+        data = _derived(rows, kappa)
+        exps = [mp.mpf(v) for v in data["windowed_exponents"].values()]
+        if not exps:
+            print("  (no real exponents on this range — witness not written)")
+            return 0 if allpos else 1
+        ordered = sorted(rows, key=lambda r: int(r["n"]))
+        ns = [int(r["n"]) for r in ordered]
+        kaps = [mp.mpf(int(r["M1_num"])) / int(r["M1_den"])
+                / mp.power(int(r["n"]), mp.mpf(5) / 2) for r in ordered]
+        w = (
+            WitnessBuilder("b1-kappa-window-extension", engine="python+mpmath")
+            .set_description(
+                "B1 / gap qou-k5r5 Track B: exact kappa_n over an extended n "
+                "window by direct Plancherel summation, Fraction throughout, "
+                "compared against kappa = 128/(225 pi^2) at 60 dps."
+            )
+            .add_parameter("n_min", ns[0])
+            .add_parameter("n_max", ns[-1])
+            .add_parameter("elapsed_sec", round(time.time() - t0, 1))
+        )
+        for k, v in data.items():
+            w.add_data(k, v)
+        w.add_assertion("all_kappa_n_exceed_kappa", computed=int(allpos),
+                        expected=1, tolerance=0,
+                        source="B1_kappa_window_extension")
+        w.add_assertion(
+            "kappa_n_strictly_decreasing",
+            computed=int(all(kaps[i] > kaps[i + 1] for i in range(len(kaps) - 1))),
+            expected=1, tolerance=0, source="B1_kappa_window_extension")
+        w.add_assertion("window_extended_to_78", computed=ns[-1], expected=78,
+                        tolerance=0, source="B1_kappa_window_extension")
+        w.add_assertion(
+            "effective_exponent_is_NOT_monotone",
+            computed=int(not (all(exps[i] <= exps[i + 1] for i in range(len(exps) - 1))
+                              or all(exps[i] >= exps[i + 1] for i in range(len(exps) - 1)))),
+            expected=1, tolerance=0, source="B1_kappa_window_extension")
+        w.add_assertion("exponent_below_edge_order",
+                        computed=int(max(exps) < mp.mpf(2) / 3), expected=1,
+                        tolerance=0, source="B1_kappa_window_extension")
+        w.save()
+
     print(f"\nall kappa_n > kappa on [{nmin}, {nmax}]: {allpos}")
     print(f"total {time.time() - t0:.1f}s")
     return 0 if allpos else 1

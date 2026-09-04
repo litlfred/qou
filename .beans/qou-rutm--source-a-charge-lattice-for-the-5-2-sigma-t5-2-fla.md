@@ -210,3 +210,103 @@ no longer "why rank 2" — it is **"where is the third, null direction"**. That 
 a sharper and more answerable question than the one this bean opened with.
 
 Probe: `d1b_eq98_rank_correction_probe.py`, now 7/7.
+
+## 2026-09-04 ANSWERED — the null direction is MIRROR-SYMMETRIC, and eq (100) forces it
+
+The rung's one surviving question — *where is the third, null direction?* — has an
+answer, and it is a derivation rather than an observation.
+`d1b_null_direction_is_mirror_symmetric_probe.py` (5/5).
+
+**The derivation.** Every 3×3 antisymmetric matrix is the cross-product matrix of
+an axis vector, so writing `M(a,b,c) = [[0,c,−b],[−c,0,a],[b,−a,0]]` the radical
+is `span{(a,b,c)}` — asking where the null direction points *is* asking about
+`(a,b,c)`. Impose GGM **eq (100)** (`S_ij = −S_{φ(i)φ(j)}`, `φ = (1 2)`)
+entrywise:
+
+| entry | condition | yields |
+|---|---|---|
+| (1,2) | `c = −(−c)` | automatic |
+| (1,3) | `−b = −a` | **`a = b`** |
+| (2,3) | `a = −(−b)` | `a = b` (same) |
+
+So eq (100) **forces `a = b`** and leaves `c` free. Since `φ = (1 2)` acts on `ℤ³`
+with `+1` eigenspace `{(x,x,z)}` (dim 2) and `−1` eigenspace `{(x,−x,0)}` (dim 1),
+the radical `(a,a,c)` is **mirror-symmetric for every admissible `M`**, and
+anti-symmetric only for `M = 0`.
+
+Confirmed exhaustively over `|entries| ≤ 4`: all **81** solutions have `a = b` —
+exactly the `(a,a,c)` family, `(2·4+1)² = 81`.
+
+**eq (98) instantiates it.** Axis `(−3,−3,4)`: `Ω₂₃ = −Ω₁₃ = −3` is the *forced
+relation*, `Ω₁₂ = 4` the *free entry*. So that vector is **one constraint plus one
+number**, not three independent facts.
+
+**This does not contradict the previous rung's guard.** That guard says the
+radical is built from the `Ω` entries *by antisymmetry alone*, hence carries no
+information — true, and about 3×3 matrices in general. This is a **second,
+independent** constraint, from eq (100), about *this* datum: antisymmetry says
+"the radical is the axis vector"; eq (100) says "the axis vector is
+mirror-symmetric". Only the latter is informative here.
+
+**What the NZ route must now supply — precise, not a gap.** Embed the rank-2
+`(μ,λ)` cusp form in a rank-3 lattice whose adjoined third direction is
+**(i)** null for the pairing and **(ii)** fixed by the bar involution.
+
+**OBSERVATION, labelled, NOT a claim.** The earlier rung proved the NZ **edge**
+block is exactly zero — Lagrangian — so every edge direction is null and (i) is
+abundantly satisfied there. Whether any satisfies **(ii)** is **untested**. It is
+recorded as an observation because *"null directions exist over here and I need a
+null direction"* is a matching **necessary** condition, and a matching necessary
+condition is not evidence — the precise failure shape that has misfired
+repeatedly on this object today.
+
+**Disconfirmation, and the next rung:** exhibit the bar involution's action on the
+NZ edge lattice and check whether any null direction is fixed. **If none is,
+(ii) is the NZ route's real obstruction** — and that would be a genuine
+scope-(b), unlike the one I had to retract.
+
+**Same session, testing the labelled observation — and I ran a BROKEN detector
+and believed its zero.**
+
+I went to run C5's disconfirmation. First result: a grep pair reporting that
+**0** of the files mentioning "bar involution" touch gluing/Neumann/tetrahedra,
+from which I wrote *"no bar involution is defined on the NZ lattice anywhere in
+this corpus"* and concluded requirement (ii) was **unstatable**.
+
+**That was a false negative from my own check.** Re-run correctly: **35** of them
+match. And what is there is directly on this rung:
+
+* [`QOU/QBeta/CuspShapeBarParity.lean`](content/quantum-observable-universe/lean/QOU/QBeta/CuspShapeBarParity.lean)
+  — `barEven`/`barOdd` on the **cusp shape** `ω`, stating in as many words that
+  *"the `√−3` that drives the **Neumann–Zagier deformation** `CVol(u) = Vol −
+  (τ/4)u² + …` is `barOdd(ω)`"*;
+* [`QOU/QBeta/BarParityZeta4Swap.lean`](content/quantum-observable-universe/lean/QOU/QBeta/BarParityZeta4Swap.lean)
+  — the `barEven`/`barOdd` carrier it builds on.
+
+**So bar parity DOES act on NZ-adjacent geometric data**, and my retraction of
+the previous claim was itself over-stated. Two caveats keep this from closing
+requirement (ii):
+
+* it is **4₁** (both tetrahedra at `ω = e^{iπ/3}`), **not 5₂**;
+* it acts on the cusp **shape**, a scalar — not yet on a lattice **direction**,
+  which is what (ii) needs.
+
+**The 5₂ analogue of `CuspShapeBarParity` is now the concrete next object** —
+much better defined than "acquire a source", and in the same file family.
+
+**Why the false negative happened, since the mechanism matters more than the
+number.** The detector returned a zero that *agreed with the shape of the
+previous finding* (R1: "GGM defines no lattice"), so it read as confirmation
+rather than as a bug. A result that matches what you already believe gets less
+scrutiny — which is exactly when a silent tooling failure lands.
+
+**Also recorded: a near-miss caught BEFORE publication.** snappy reports
+`Manifold('5_2').is_isometric_to(reverse_orientation())` = **True**, which looks
+like "5₂ admits a mirror self-map" and would have handed (ii) its involution for
+free. It is **not a fact about 5₂**: mirroring `S³` gives an
+orientation-reversing homeomorphism of *any* knot complement onto its mirror's,
+so the call returns True for every knot and has no discriminating power. Same
+shape as the session's other misreads — a true statement with no power, mistaken
+for evidence.
+
+Probe: `d1b_null_direction_is_mirror_symmetric_probe.py`, 7/7.

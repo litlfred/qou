@@ -407,3 +407,65 @@ contributed instances, not the class.
 other checklist path reaches it, and a `completed` bean is the one that bites —
 it means the question was answered, sometimes in a single sentence with no
 artifact anywhere else.
+
+---
+
+## TRAP — `Matrix.trace_fin_two` leaves APPLICATIONS; `Matrix.trace_fin_two_of` projects
+
+Measured 2026-09-04 on `chi_v21_matrix_trace_identity` (bean `qou-18b6`), an
+11-fold product of 2×2 matrices over `q`, `q⁻¹` and a square root.
+
+The two names give no hint of the difference and it is the whole proof:
+
+- `Matrix.trace_fin_two` rewrites `trace M` to **`M 0 0 + M 1 1`** — index
+  *applications*, which every later tactic then has to see through.
+- `Matrix.trace_fin_two_of` rewrites `trace !![a,b;c,d]` to **`a + d`**.
+
+With the first, after `Matrix.mul_fin_two` folds the eleven factors into one
+`!![_,_;_,_]`, `field_simp` runs on the un-projected expression and
+**exhausts 2 000 000 heartbeats**. With the second the same proof closes.
+
+**Two consequences worth internalising.**
+
+*The off-diagonal entries are where the mess is.* Only EVEN powers of the
+off-diagonal parameter `b` reach the trace — each symmetric factor moves you
+between diagonal slots, and a path back to the same slot takes an even number
+of steps. Odd powers do exist (`b^3` appeared 20 times in the normalised
+matrix) but only in the entries the trace discards. So projecting first is not
+merely tidier: it is what makes a plain `rw [hb4, hb2]` substitution
+sufficient and removes the need for any `linear_combination` certificate.
+
+*Substitute the higher power first.* `rw [hb2]` where `hb2 : b^2 = c` does NOT
+touch `b^4` — it is not a syntactic subterm. Use `rw [hb4, hb2]`, deriving
+`hb4` by `rw [show (4:ℕ) = 2*2 from rfl, pow_mul, hb2]`.
+
+Also: `reduceIte` does **not** fire on `if (1 : Fin 2) = 0`. A local
+`have hif : ∀ A B, (if (1 : Fin 2) = 0 then A else B) = B := by intro A B; norm_num`
+does. `if_true` handles only the index-0 side.
+
+## TRAP — do not blame a TACTIC for a defect in the goal you handed it
+
+Same session, and this is the more transferable half.
+
+I recorded in a commit message, as a property of the tactic, that **"`ring_nf`
+re-folds matrix literals back into `Matrix.mul` applications, undoing
+`Matrix.mul_fin_two`"** — with the evidence that a subsequent `rw [hb2]` failed
+with *"did not find `b ^ 2`"* and the goal visibly contained `!![…] * …` again.
+
+**Retracted.** `ring_nf` did nothing of the sort. In that run the
+`if (1 : Fin 2) = 0` guards were still unreduced, so four matrix factors had
+never been folded in the first place — `ring_nf` was acting on a goal that
+genuinely still contained matrix multiplication. Add the `hif` helper and the
+same `ring_nf` behaves correctly, and the proof *requires* it.
+
+**The generalisable shape:** a tactic that "misbehaves" on a goal you did not
+fully inspect is usually reporting the goal's state, not its own. Before
+writing a tactic's behaviour into memory, a commit message or a bean, re-run it
+on a goal you have *verified* is in the form you assume. The cost of getting
+this wrong is high and asymmetric: a false trap steers every later agent away
+from the tactic that actually closes the proof.
+
+Note also the failure text was `rewrite failed: Did not find an occurrence of
+the pattern b ^ 2` — nearly identical in shape to this file's older
+`√(hoefsmit_v21_b_sq q) ^ 2` failure, and a *different* cause. Same message,
+different diagnosis, twice in one file.

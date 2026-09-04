@@ -75,15 +75,16 @@
     "conclusion": "B = Q_beta . Delta_tr has no regime of validity in A. Agreement at any particular A is a coincidence of the calibration.",
     "scope": "Scope-(a). Nothing touches the ALGEBRA — Delta_tr(Z,N) is closed-form, derived with zero fitted constants, and reproduces every measured value to 1e-35. What is refuted is the ansatz that binding is a constant times it. Whether some OTHER functional of the same operator works is untouched."
   },
-  "gitCommit": "15ec6203fb3fc80b1d2c020045abca01fc3e9a28",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_no_regime_of_validity_probe.py",
-  "scriptHash": "04338c8f4d24",
-  "scriptCommitSha": "e0ed5c52e4185c3df7df67bf980fa9aedd37943e",
-  "commitSha": "15ec6203fb3fc80b1d2c020045abca01fc3e9a28",
+  "scriptHash": "109c06b46c9f",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-04T09:10:13.489512+00:00",
+  "computedAt": "2026-09-04T12:40:12.791299+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

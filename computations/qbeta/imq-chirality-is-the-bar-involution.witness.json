@@ -1,0 +1,100 @@
+{
+  "description": "conj:im-q-physical-role candidate (i) assigns chirality to arg q. The corpus assigns it to the bar involution q -> 1/q (three citations), and the two operations coincide EXACTLY on |q| = 1 and nowhere else. The substrate has |q_0| = 1.10998, so at the substrate the corpus's chirality flip is 1/q_0 = 0.9009182840 -- a REAL number needing no Im q. Second leg: granting candidate (i)'s identification anyway, Schwarz reflection plus a parity-even Q_beta forces Im q = 0 via the merged im_qbeta_zero_iff theorems.",
+  "engine": "sympy (exact) + mpmath 50 dps; no float64",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute; this is neither a proton-vs-muon comparison nor an ideal-CAL statement",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "candidate_i_identification": "chirality flip = q -> conj(q); arg q is the chirality coordinate",
+    "corpus_identification": "chirality flip = q -> 1/q (bar involution, mirror knot)",
+    "corpus_citations": [
+      {
+        "file": "content/quantum-observable-universe/mass-theory/archimedean-image-table-table1-data.md",
+        "where": "row 4",
+        "text": "J_Kbar(q) = J_K(q^{-1})  (mirror; matter/antimatter CPT)"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/hq-bi-filtration.md",
+        "where": "bar-involution row",
+        "text": "Bar involution * : q -> q^{-1} ; * : H_q^{(n,K)} -> H_q^{(n,K*)} where K* is the mirror knot"
+      },
+      {
+        "file": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid-table2-data.md",
+        "where": "bar-involution row",
+        "text": "Bar involution: H_q^{(n,K)} -> H_q^{(n,K*)} ; mirror knot K*"
+      }
+    ],
+    "they_agree_iff": "|q|^2 = 1 (the unit circle) -- exactly, by q*conj(q) = 1",
+    "candidate_i_regime": "'near the unit circle', Kashaev q = exp(2 pi i / N) -- where the identification IS correct",
+    "substrate_abs_q0": "1.109978582751380807591669",
+    "substrate_on_unit_circle": false,
+    "corpus_mirror_of_q0": "0.9009182839557414921608229",
+    "separation_of_the_two_flips": "0.2090602987956393154308462",
+    "separation_pct_of_q0": "18.83462456",
+    "schwarz_reflection_max_residual": "0.0",
+    "schwarz_checks": [
+      {
+        "case": "q_0 + 0.01i",
+        "extension": "E1",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      },
+      {
+        "case": "q_0 + 0.01i",
+        "extension": "E2",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      },
+      {
+        "case": "q_0 + 0.1i",
+        "extension": "E1",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      },
+      {
+        "case": "q_0 + 0.1i",
+        "extension": "E2",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      },
+      {
+        "case": "0.95 + 0.3i",
+        "extension": "E1",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      },
+      {
+        "case": "0.95 + 0.3i",
+        "extension": "E2",
+        "abs_Qb_conj_q_minus_conj_Qb_q": "0.0"
+      }
+    ],
+    "physics_premise_for_leg_two": "'Q_beta is chirality-invariant' -- a Q-value is a parity-even energy. This is PHYSICS, not a corpus theorem, and is carried as an explicit Lean hypothesis, never assumed inside a proof. Leg one needs no such premise.",
+    "scope": "(b) for leg one -- an exact algebraic identity (conj = inv iff |q|=1) plus three corpus citations, no numerical near-miss. Leg two is conditional on the stated premise. BOTH are scoped to the ARCHIMEDEAN evaluation at the substrate.",
+    "does_not_close": "the FIBRE level, where AGENTS.md's fibre-vs-observable banner leaves Im q unconstrained and where the Kashaev root-of-unity regime actually lives. Candidate (i) may be right on the fibre; what closes is its archimedean reading.",
+    "positive_content": "the chirality the conjecture went looking for in Im q is already in the corpus at real q, as the bar involution's P_skew content (rem:im-q-vs-p-skew) -- which that same block says is 'kept then discarded' by the canonical P_avg projection."
+  },
+  "assertions": [
+    {
+      "name": "conjugation_equals_bar_involution_exactly_on_the_unit_circle",
+      "passed": true,
+      "detail": "conj(q) = 1/q  <=>  q*conj(q) = 1  <=>  |q|^2 = 1, exactly"
+    },
+    {
+      "name": "substrate_is_not_on_the_unit_circle",
+      "passed": true,
+      "detail": "|q_0| = 1.1099785827513808076 != 1, so the two operations are distinct there"
+    },
+    {
+      "name": "corpus_mirror_is_real_at_the_substrate",
+      "passed": true,
+      "detail": "the corpus's chirality flip sends q_0 to 1/q_0 = 0.90091828395574149216, a REAL number -- it needs no Im q at all"
+    },
+    {
+      "name": "the_two_flips_are_separated_at_the_substrate",
+      "passed": true,
+      "detail": "|conj(q_0) - 1/q_0| = 0.209060298796, 18.835 % of q_0 -- not a near-coincidence"
+    },
+    {
+      "name": "schwarz_reflection_holds_for_both_extensions",
+      "passed": true,
+      "detail": "max |Q_beta(conj q) - conj(Q_beta(q))| = 0.0 over 3 points x 2 extensions, at 50 dps"
+    }
+  ],
+  "allPassed": true
+}

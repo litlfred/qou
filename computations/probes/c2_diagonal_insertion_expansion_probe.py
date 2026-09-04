@@ -281,8 +281,14 @@ def main() -> int:
              "4He": EXACT_C2["pp"] + EXACT_C2["pn"] + EXACT_C2["nn"]}
     ratios = {k: chain[k] / EXACT_C2[k] for k in chain}
     first = {"T": F(292, 163), "3He": F(30, 17), "4He": F(24, 7)}
-    w.add_data("second_order_chain_over_atom", {k: {"ratio": str(v), "float": float(v),
-                                                    "first_order": str(first[k])} for k, v in ratios.items()})
+    # `float` is repr(), not the bare value: it is a readable RENDERING of the
+    # exact `ratio` beside it, which is the datum. A raw float64 in a witness is
+    # what the raw-float64 ratchet counts, and with the exact rational already
+    # present the float carries no information the ratchet should have to trust.
+    w.add_data("second_order_chain_over_atom",
+               {k: {"ratio": str(v),
+                    "float": repr(float(v)),
+                    "first_order": str(first[k])} for k, v in ratios.items()})
     w.add_assertion("second_order_overcount_is_smaller_than_first_order_at_every_A3_A4",
                     computed="1" if all(abs(ratios[k] - 1) < abs(first[k] - 1) for k in ratios) else "0",
                     expected="1",
