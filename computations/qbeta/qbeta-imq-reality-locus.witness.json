@@ -1,5 +1,5 @@
 {
-  "description": "Where can Q_beta be real with Im(q) != 0? Under BOTH complex extensions of the closed form the solution set is y=0 plus one non-real branch, and the substrate Re(q)=q_0 lies in neither branch -- so on the substrate, Im(Q_beta)=0 forces Im(q)=0. Corrects bean qou-c66b's stronger unqualified claim, and closes conj:im-q-physical-role candidate (ii) on the substrate branch using an observable the framework already has.",
+  "description": "Where can Q_beta be real with Im(q) != 0? Under BOTH complex extensions of the closed form the solution set is y=0 plus one non-real branch, and the substrate Re(q)=q_0 lies in neither branch -- so on the substrate, Im(Q_beta)=0 forces Im(q)=0. Corrects bean qou-c66b's stronger unqualified claim, and closes conj:im-q-physical-role candidate (ii) using an observable the framework already has -- and not merely at q_0: the CAL-2 Apollonius circle that candidate (ii) posits as its admissible set lies ENTIRELY in Re(q) > 1/2 (leftmost 0.909850, margin 0.410), so every non-real point of the arc is excluded and only its two real intersections survive.",
   "engine": "sympy (exact symbolic over ZZ[x,y]) + mpmath 50 dps spot-checks; no float64",
   "q0Anchor": "proton",
   "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute; this probe is neither an explicit proton-vs-muon comparison (E1) nor an ideal-CAL statement (E2)",
@@ -45,6 +45,23 @@
         "Im_QA_over_me_E2": "0.0"
       }
     ],
+    "cal2_apollonius_circle": {
+      "reading": "CAL-2 with a modulus, |1 - 1/q| = sqrt(k), which is what produces a circle at all; k = Vol(4_1)/(m_mu/m_e)",
+      "Vol_4_1": "2.02988321281930725004240510855",
+      "m_mu_over_m_e": "206.7682827 (CODATA 2022)",
+      "k": "0.00981718852772242543775020243252",
+      "centre": "1.009914521252015572897985",
+      "radius": "0.1000640743907234737838099",
+      "conjecture_states": "centre ~1.010, radius ~0.100",
+      "leftmost_Re_q": "0.9098504468612920991141753",
+      "margin_above_one_half": "0.40985044686129209911",
+      "real_intersections": [
+        "0.9098504468612920991141753",
+        "1.109978595642739046681795"
+      ],
+      "proton_pin_off_circle_residual": "-1.04633191921e-8",
+      "entire_circle_in_substrate_half_plane": true
+    },
     "scope": "(b) -- structural exclusion citing a proved algebraic identity (the exact factorisation of Im, and the sign of y^2 on the substrate branch), not a numerical near-miss. Scoped to the ARCHIMEDEAN evaluation; AGENTS.md's fibre-vs-observable banner leaves Im(q) unconstrained at the fibre level and this does not touch that.",
     "does_not_close": "candidate (i), chirality. Nor does it fix WHICH complex extension is canonical -- it shows the substrate answer does not depend on that choice.",
     "corrects": "bean qou-c66b asserted 'Requiring Im Q_beta = 0 therefore forces Im q = 0' without qualification. One real equation on two real unknowns has a curve of solutions, not a point; the non-real branch is non-empty under both readings. The claim holds on the substrate branch Re(q) > 1/2, and that is where it needed to hold."
@@ -84,6 +101,16 @@
       "name": "numeric_control_E2_vanishes_on_its_own_locus",
       "passed": true,
       "detail": "at q = 1/2 + 0.3i, Im(Q_beta) under E2 is 0 to 1e-40 -- the test can see a real Q_beta at complex q when there is one"
+    },
+    {
+      "name": "apollonius_circle_reproduces_the_conjectures_own_numbers",
+      "passed": true,
+      "detail": "derived centre 1.00991452125 / radius 0.100064074391 against the conjecture's stated ~1.010 / ~0.100 -- so the modulus reading of CAL-2 used here IS the conjecture's reading"
+    },
+    {
+      "name": "entire_cal2_admissible_set_lies_in_Re_q_gt_half",
+      "passed": true,
+      "detail": "leftmost point of the circle is Re(q) = 0.909850446861, a margin of 0.40985045 above 1/2 -- so both branches are empty on the WHOLE arc, not merely near q_0, and candidate (ii)'s test is answered on its entire admissible set"
     },
     {
       "name": "numeric_control_E1_nonzero_off_its_locus",

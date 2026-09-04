@@ -62,6 +62,34 @@ So each has the trivial branch `y = 0` and one non-real branch:
 excludes it and E2's line misses it.  On the substrate branch, `Im Q_beta = 0`
 forces `Im q = 0` under both readings.
 
+STRONGER, AND IT ANSWERS CANDIDATE (ii) AS LITERALLY POSED
+-----------------------------------------------------------
+"On the substrate branch" understates it.  Candidate (ii) does not ask about a
+point; it posits that CAL-2 alone leaves an APOLLONIUS CIRCLE of admissible
+complex `q`, with `Im q` as "the arc coordinate parametrizing the other
+admissible q values", and asks whether a second constraint picks a complex one.
+
+Reading CAL-2 with a modulus -- which is what produces a circle at all --
+`|hbar_q| = sqrt(k)`, `hbar_q = 1 - 1/q`, `k = Vol(4_1)/(m_mu/m_e)`, gives
+`|q-1| = sqrt(k)|q|`: the Apollonius circle with
+
+    centre = 1/(1-k),   radius = sqrt(k)/(1-k)
+
+This probe derives those from the live CODATA-2022 muon ratio and gets
+**centre 1.0099145, radius 0.1000641**, reproducing the conjecture's own stated
+"centre ~ 1.010, radius ~ 0.100".  So the reading is the conjecture's reading,
+not a guess at it.
+
+Its leftmost point is `Re q = 0.909850`, a margin of **0.410 above 1/2**.  The
+ENTIRE admissible set therefore lies in the half-plane where both branches are
+empty, so `Im Q_beta = 0` kills every non-real point of the circle and leaves
+exactly its two real intersections, `0.9098504` and `1.1099785956`.
+
+(The second is the live CODATA-2022 muon `q_0` to every digit shown, as it must
+be -- the circle is built from that ratio.  The proton pin sits 1.046e-8 off the
+circle in the `|q-1|/|q|` residual, which is the mu-p substrate tension seen in
+this coordinate.)
+
 WHY RUNNING BOTH IS THE POINT
 -----------------------------
 The two loci are DISJOINT: E1's is an open strip `-3/2 < x < 1/2`, E2's is the
@@ -221,6 +249,29 @@ def main() -> int:
     e1_nonzero_off_locus = not mp.almosteq(
         mp.mpf(checks[2]["Im_QA_over_me_E1"]), 0, abs_eps=mp.mpf("1e-20"))
 
+    # ---- [8] candidate (ii)'s ENTIRE admissible set, not just the substrate ----
+    # CAL-2 read with a modulus: |1 - 1/q| = sqrt(k), k = Vol(4_1)/(m_mu/m_e).
+    # Equivalently |q-1| = sqrt(k)|q| -- an Apollonius circle.
+    vol41 = 2 * mp.clsin(2, mp.pi / 3)
+    ratio_mu_e = mp.mpf("206.7682827")            # CODATA 2022, the live muon ratio
+    kk = vol41 / ratio_mu_e
+    centre = 1 / (1 - kk)
+    radius = mp.sqrt(kk) / (1 - kk)
+    leftmost = centre - radius
+    circle_in_half_plane = bool(leftmost > mp.mpf("0.5"))
+    q0m = mp.mpf(Q0_STR)
+    off_circle = abs(q0m - 1) / abs(q0m) - mp.sqrt(kk)
+    print("\n[8] candidate (ii)'s admissible set: the CAL-2 Apollonius circle")
+    print(f"    Vol(4_1)             = {mp.nstr(vol41, 25)}")
+    print(f"    k = Vol/(m_mu/m_e)   = {mp.nstr(kk, 25)}")
+    print(f"    centre = 1/(1-k)     = {mp.nstr(centre, 20)}   (conjecture: ~1.010)")
+    print(f"    radius = sqrt(k)/(1-k) = {mp.nstr(radius, 20)}   (conjecture: ~0.100)")
+    print(f"    leftmost Re(q)       = {mp.nstr(leftmost, 20)}"
+          f"   margin above 1/2 = {mp.nstr(leftmost - mp.mpf('0.5'), 12)}")
+    print(f"    real intersections   = {mp.nstr(leftmost, 20)}, {mp.nstr(centre + radius, 20)}")
+    print(f"    proton pin off circle= {mp.nstr(off_circle, 10)}  (the mu-p tension in this coordinate)")
+    print(f"    ENTIRE circle in Re(q) > 1/2: {circle_in_half_plane}")
+
     # ---- assertions ----
     assertions = [
         {"name": "E1_zero_set_factors_as_y_times_branch",
@@ -247,6 +298,18 @@ def main() -> int:
          "passed": bool(e2_vanishes_on_its_locus),
          "detail": "at q = 1/2 + 0.3i, Im(Q_beta) under E2 is 0 to 1e-40 -- the "
                    "test can see a real Q_beta at complex q when there is one"},
+        {"name": "apollonius_circle_reproduces_the_conjectures_own_numbers",
+         "passed": bool(abs(centre - mp.mpf("1.010")) < mp.mpf("0.001")
+                        and abs(radius - mp.mpf("0.100")) < mp.mpf("0.001")),
+         "detail": f"derived centre {mp.nstr(centre, 12)} / radius {mp.nstr(radius, 12)} "
+                   f"against the conjecture's stated ~1.010 / ~0.100 -- so the "
+                   f"modulus reading of CAL-2 used here IS the conjecture's reading"},
+        {"name": "entire_cal2_admissible_set_lies_in_Re_q_gt_half",
+         "passed": circle_in_half_plane,
+         "detail": f"leftmost point of the circle is Re(q) = {mp.nstr(leftmost, 12)}, "
+                   f"a margin of {mp.nstr(leftmost - mp.mpf('0.5'), 8)} above 1/2 -- so "
+                   f"both branches are empty on the WHOLE arc, not merely near q_0, "
+                   f"and candidate (ii)'s test is answered on its entire admissible set"},
         {"name": "numeric_control_E1_nonzero_off_its_locus",
          "passed": bool(e1_nonzero_off_locus),
          "detail": "at q = q_0 + 1e-3 i, Im(Q_beta) under E1 is not 0 -- the test "
@@ -266,8 +329,12 @@ def main() -> int:
                        "non-real branch, and the substrate Re(q)=q_0 lies in neither "
                        "branch -- so on the substrate, Im(Q_beta)=0 forces Im(q)=0. "
                        "Corrects bean qou-c66b's stronger unqualified claim, and closes "
-                       "conj:im-q-physical-role candidate (ii) on the substrate branch "
-                       "using an observable the framework already has.",
+                       "conj:im-q-physical-role candidate (ii) using an observable the "
+                       "framework already has -- and not merely at q_0: the CAL-2 "
+                       "Apollonius circle that candidate (ii) posits as its admissible "
+                       "set lies ENTIRELY in Re(q) > 1/2 (leftmost 0.909850, margin "
+                       "0.410), so every non-real point of the arc is excluded and only "
+                       "its two real intersections survive.",
         "engine": "sympy (exact symbolic over ZZ[x,y]) + mpmath 50 dps spot-checks; no float64",
         "q0Anchor": "proton",
         "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default "
@@ -287,6 +354,21 @@ def main() -> int:
             "loci_disjoint": bool(disjoint),
             "modulus_factor_roots": [str(r) for r in quad_roots],
             "spot_checks": checks,
+            "cal2_apollonius_circle": {
+                "reading": "CAL-2 with a modulus, |1 - 1/q| = sqrt(k), which is what "
+                           "produces a circle at all; k = Vol(4_1)/(m_mu/m_e)",
+                "Vol_4_1": mp.nstr(vol41, 30),
+                "m_mu_over_m_e": "206.7682827 (CODATA 2022)",
+                "k": mp.nstr(kk, 30),
+                "centre": mp.nstr(centre, 25),
+                "radius": mp.nstr(radius, 25),
+                "conjecture_states": "centre ~1.010, radius ~0.100",
+                "leftmost_Re_q": mp.nstr(leftmost, 25),
+                "margin_above_one_half": mp.nstr(leftmost - mp.mpf("0.5"), 20),
+                "real_intersections": [mp.nstr(leftmost, 25), mp.nstr(centre + radius, 25)],
+                "proton_pin_off_circle_residual": mp.nstr(off_circle, 12),
+                "entire_circle_in_substrate_half_plane": circle_in_half_plane,
+            },
             "scope": "(b) -- structural exclusion citing a proved algebraic identity "
                      "(the exact factorisation of Im, and the sign of y^2 on the "
                      "substrate branch), not a numerical near-miss. Scoped to the "

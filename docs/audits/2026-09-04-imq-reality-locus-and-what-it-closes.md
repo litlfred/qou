@@ -95,6 +95,52 @@ negative there and E2's line misses it. The third escape — the modulus factor
 itself vanishing — supplies nothing either: `q² − 2q − 1 = 0` at `1 ± √2`, both
 real.
 
+## Stronger than "on the substrate branch" — candidate (ii)'s ENTIRE admissible set
+
+"On the substrate branch" understates the result, and the understatement
+matters, because candidate (ii) is not a claim about a point.
+
+The conjecture posits that CAL-2 alone leaves an **Apollonius circle** of
+admissible complex `q`, with `Im q` as *"the arc coordinate parametrizing the
+other admissible q values"*, centre `≈ 1.010` and radius `≈ 0.100` *"per the
+formal derivation"*. Reading CAL-2 with a modulus — which is what produces a
+circle at all, since `ℏ_q² = k` real would already force `q` real — gives
+
+```
+|1 − 1/q| = √k,   k = Vol(4₁)/(m_μ/m_e)     ⟺     |q − 1| = √k·|q|
+centre = 1/(1−k),   radius = √k/(1−k)
+```
+
+From the live CODATA-2022 ratio `m_μ/m_e = 206.7682827` and
+`Vol(4₁) = 2·Cl₂(π/3)`:
+
+| | derived here | conjecture states |
+|---|---|---|
+| `k` | `0.00981718852772` | — |
+| centre | **`1.0099145212520`** | `≈ 1.010` |
+| radius | **`0.1000640743907`** | `≈ 0.100` |
+
+Reproducing both to the stated precision is what establishes that this reading
+of CAL-2 **is** the conjecture's reading rather than a guess at it.
+
+**Its leftmost point is `Re q = 0.909850`, a margin of `0.410` above `1/2`.** So
+the entire admissible arc lies in the half-plane where both non-real branches
+are empty. `Im Q_β = 0` therefore kills **every** non-real point of the circle
+and leaves exactly its two real intersections, `0.9098504` and `1.1099785956`.
+
+Two asides worth recording. The upper intersection is the live CODATA-2022 muon
+`q₀` to every digit shown — as it must be, since the circle is built from that
+ratio — and the **proton** pin sits `1.046e-8` off the circle in the
+`|q−1|/|q|` residual, which is the μ–p substrate tension seen in this
+coordinate. Neither is used in the argument; they are consistency checks that
+the circle is the object the corpus already carries.
+
+Lean: `cal2_circle_lies_in_substrate_half_plane` proves the general fact that
+any circle with centre `> 9/10` and radius `< 2/5` lies strictly right of
+`1/2`. The measured pair clears both bounds by an order of magnitude, so the
+theorem applies with room to spare and nothing hinges on the last digits of the
+CODATA input.
+
 ## Why running both extensions is the point, not a hedge
 
 The two non-real loci are **disjoint**: E1's is an open strip and E2's is the
@@ -112,8 +158,8 @@ That cuts both ways, and both are worth stating:
 ## The Lean
 
 [`QOU/QBeta/ImQRealityLocus.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ImQRealityLocus.lean)
-— `lean`-direct **exit 0**, eight declarations, `#print axioms` standard-3 on
-every one, **no `sorryAx`**; code-level `sorry`/`axiom`/`native_decide` = 0/0/0.
+— `lean`-direct **exit 0**, nine theorems, `#print axioms` standard-3 on every
+one, **no `sorryAx`**; code-level `sorry`/`axiom`/`native_decide` = 0/0/0.
 
 The load-bearing pair is `e1_branch_pos` / `e2_branch_pos`: for `1/2 < x`,
 `2x³ + 3x² + 2xy² − y²` regroups as `2x³ + 3x² + y²(2x−1)`, three terms each
@@ -150,9 +196,10 @@ equation reads fine to a human and is caught only by the kernel.
 
 ## What this closes, and what it does not
 
-**Closes — candidate (ii), on the substrate branch, scope-(b).** The
+**Closes — candidate (ii), on its entire admissible set, scope-(b).** The
 conjecture's own test is *"if only real solutions exist, candidate (ii) is
-closed"*. Only real solutions exist at `Re q = q₀`, forbidden by a proved
+closed"*. Only real solutions exist anywhere on the CAL-2 Apollonius circle
+that candidate (ii) names as its admissible set — forbidden by a proved
 algebraic identity rather than a numerical near-miss. And it closes using an
 observable the framework already carries, so the conjecture's "needs a second
 independent constraint" was already satisfied.

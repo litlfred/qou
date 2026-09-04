@@ -142,4 +142,24 @@ theorem branches_disjoint (y : ℝ) :
     2 * (1 / 2 : ℝ) ^ 3 + 3 * (1 / 2 : ℝ) ^ 2 + 2 * (1 / 2 : ℝ) * y ^ 2 - y ^ 2 = 1 := by
   norm_num
 
+/-- **Candidate (ii)'s whole admissible set sits in the half-plane, not just
+`q₀`.** The conjecture posits that CAL-2 alone leaves an Apollonius circle of
+admissible complex `q`, with `Im q` as "the arc coordinate parametrizing the
+other admissible q values". Reading CAL-2 with a modulus — which is what
+produces a circle at all — gives `|q − 1| = √k·|q|` with
+`k = Vol(4₁)/(m_μ/m_e)`, hence centre `1/(1−k)` and radius `√k/(1−k)`. The
+probe derives **centre 1.0099145, radius 0.1000641** from the live CODATA-2022
+ratio, reproducing the conjecture's own stated `≈1.010` / `≈0.100`.
+
+Any circle with centre above `9/10` and radius below `2/5` lies strictly right
+of `1/2`, with room to spare: the measured pair clears both bounds by an order
+of magnitude. So `im_qbeta_zero_iff_e1` and `im_qbeta_zero_iff_e2` apply at
+**every point of the arc**, and `Im Q_β = 0` leaves only its two real
+intersections. That is candidate (ii)'s test answered on its entire admissible
+set rather than at one point. -/
+theorem cal2_circle_lies_in_substrate_half_plane {c r x y : ℝ}
+    (hr0 : 0 ≤ r) (hc : (9 : ℝ) / 10 < c) (hr : r < (2 : ℝ) / 5)
+    (hon : (x - c) ^ 2 + y ^ 2 = r ^ 2) : 1 / 2 < x := by
+  nlinarith [sq_nonneg y, sq_nonneg (x - c), sq_nonneg (c - x - r)]
+
 end QOU.QBeta
