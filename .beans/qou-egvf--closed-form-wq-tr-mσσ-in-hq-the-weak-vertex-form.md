@@ -1,11 +1,11 @@
 ---
 # qou-egvf
 title: 'closed form: W(q) = tr_M((σ₁σ₂)⁵) in H₃(q) — the weak-vertex form factor, Wedderburn-derived under convention D'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T12:58:15Z
-updated_at: 2026-09-04T13:09:29Z
+updated_at: 2026-09-04T13:16:39Z
 ---
 
 Follow-on to qou-jk6k's one-level-down GAP. Exact result (sympy, convention D: h = q − 1/q, z = q³/(q²+1), Ocneanu basis values [1,z,z,z²,z²,hz²+z]):
@@ -27,3 +27,6 @@ DONE on branch claude/weak-vertex-t35-trace-2026-09-04:
 - Audit docs/audits/2026-09-04-weak-vertex-t35-trace-closed-form.md with the owner decision frame on the published 0.7036 (reproduced by neither convention; source = deprecated C hecke_division pipeline; NOT reproduced this session; content NOT edited).
 
 Still open (owner): whether to replace 0.7036 / '11 % reduction' in obs:hadron-half-life-verification and close item 2 of rem:hadron-half-life-fermi — recommendation option 1 as a follow-on tranche with the half-life table re-derived in the same edit.
+
+
+PR #6664 opened 2026-09-04 (lean 41f39732ceb, audit fc1cf16306a, producer c1ee4cf0aa1). Precision gates: red rows all pre-existing corpus baselines, none naming the new files. Waiting on owner merge permission; the content-block correction (0.7036 → 1.1875 + item 2 of the Fermi remark) is the framed follow-on decision, not done here.
