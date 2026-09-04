@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""The convexity obstruction is ORDER TWO in the tower, and the first escape is
-at order five: `L_pn - (L_pp + L_nn)/2` has `hbar`-expansion `-2 hbar^2 +
-(4/3) hbar^5 + ...`, so the graded pieces at orders 5, 8, 10, 12, 13 put `pn`
-ABOVE the midpoint. The escape is real and it is numerically irrelevant at the
-substrate's coupling: the largest positive term is `7.6e-4` of the leading
-negative one.
+"""The convexity obstruction is ORDER TWO in the tower and the first escape is at
+type FOUR — and at the TRACE level, which is what the Vassiliev filtration
+actually grades, there is no obstruction at all: `pn` sits ABOVE the midpoint by
+`h^4(-h^3 + 6h^2 - 16h + 32)/768 > 0`. The obstruction is an artefact of taking
+`-log`. The corpus reads both ways: the mass formula RESUMS (so it inherits the
+obstruction), while the LP/SDP operator selection is graded type by type into
+"independent linear programs" (so it does not).
 
 WHERE THIS SITS
 ---------------
@@ -23,21 +24,43 @@ Jensen on (1) + (2) gives `L_pn < (L_pp + L_nn)/2`, hence the all-pairs binding
 is convex in `Z`, hence no valley of stability in any sum-over-bonds model.
 Ingredient (2) is the only one that could fail higher up. This probe tests it.
 
-THE TOWER, STATED PRECISELY
----------------------------
-Set `q = exp(hbar)`. The `hbar`-expansion IS the Vassiliev / `phi_q` grading:
-the coefficient of `hbar^k` in a Hecke-trace observable is an order-`k` graded
-piece, and `hbar -> 0` is the classical point `q = 1` where the deformation
-switches off. So the order-`k` observable for bond type `X` is
+THE TOWER, STATED PRECISELY — AND IN THE CORPUS'S OWN VARIABLE
+--------------------------------------------------------------
+`vassiliev-filtration-mass-tower` states the grading explicitly: `tr_M(beta)(q)`
+expands in **`h = q - q^-1`**, and `c_k(beta)` is a Vassiliev invariant of type
+`k`. So the graded variable is `h`, NOT `hbar = log q`.
 
-    [hbar^k] L_X(hbar),        L_X = -log(z + d_X),  z = q^3/(q^2+1),
+A first pass here used `hbar`. That is a different grading — `h = 2 hbar +
+hbar^3/3 + ...`, and a reparametrisation MIXES orders — and it moved the answer:
+the first escape sits at order **5** in `hbar` and at type **4** in `h`. The `h`
+answer is the corpus's. Both are reported below, because the discrepancy is the
+point: "which order does X happen at" is not grading-independent, and quoting
+one while the corpus uses the other is how a tower result becomes unfalsifiable.
 
-and the question "can `pn` be extremal at some order" is exactly the sign of
+Two levels have to be distinguished, and they disagree:
 
-    Delta(hbar) = L_pn - (L_pp + L_nn)/2,   coefficient by coefficient.
+  * **trace level** — what the filtration grades. `c_k` are coefficients of
+    `tr_M`, and the bond factor is `z + d_X`, affine in the offset.
+  * **`L` level** — what the binding formula uses, `B = alpha * sum of
+    -log(z + d)`.
 
 MEASURED
 --------
+**At the trace level there is no obstruction.** The bond factor midpoint is
+`z - h/2`, and
+
+    (z + d_pn) - (z - h/2) = h*delta/4 = h^4 (-h^3 + 6h^2 - 16h + 32)/768 > 0,
+
+so `pn` sits ABOVE the midpoint of `pp` and `nn` from order `h^4` on. The
+obstruction found at order zero is created entirely by the `-log`: `-log` is
+strictly convex, and Jensen turns "slightly above the midpoint in the factor"
+into "below the midpoint in `L`". The convexity gap is `O(h^2)` and the colour
+term is `O(h^4)`, which is why the `-log` wins in the resummation.
+
+**At the `L` level, graded in `h`:** first positive coefficient at type `4`
+(`+1/24`), with positives at types 4, 5, 8, 9, 12, 13.
+
+Graded in `hbar` (the non-corpus variable), for contrast:
 `delta = (q-1)^2 (1 - q^-4)/3 = (4/3) hbar^3 - (4/3) hbar^4 + (5/3) hbar^5 + ...`
 is `O(hbar^3)`, so the pn letter is the EXACT midpoint of the pp and nn letters
 through order `hbar^2` — the colour weighting is a third-order effect.
@@ -54,9 +77,9 @@ through order `hbar^2` — the colour weighting is a third-order effect.
    12    644251/2993760      POS       +3.583e-13
    13      88051/38880       POS       +3.935e-13
 
-Orders 0, 1, 3, 4 vanish identically. **The obstruction is order two**, with the
-clean coefficient `-2`, and the first order at which `pn` sits above the
-midpoint is **five**.
+Orders 0, 1, 3, 4 vanish identically there. **The obstruction is order two** in
+both variables — coefficient `-2` in `hbar`, `-1/2` in `h` — but the first
+escape is order 5 in `hbar` and type 4 in `h`.
 
 VALIDATION
 ----------
@@ -66,23 +89,34 @@ Summed at `hbar_0 = log(q_0) = 0.104340720`, the series gives
 Nine digits, from a symbolic expansion on one side and an exact Markov trace on
 the other. The expansion is what it claims to be.
 
-WHAT THIS SETTLES, AND WHAT IT DOES NOT
----------------------------------------
-It settles the bean's question in the interesting direction: **the obstruction
-is NOT uniform across the tower.** Ingredient (2) genuinely fails at orders 5, 8,
-10, 12 and 13, so an all-orders convexity theorem does not exist and the
-order-zero result cannot be promoted to one.
+WHICH READING THE CORPUS USES — the bean's deciding question, answered
+----------------------------------------------------------------------
+Both, in different places, and that is the whole answer:
 
-It does not hand anyone a working model. At `hbar_0` the `k = 2` term is
-`-2.18e-02` and the largest positive term is `+1.65e-05`, a ratio of `7.6e-4`.
-Any observable that resums the tower is dominated by order two and inherits the
-obstruction unchanged — which is exactly what the 200-bit measurement shows,
-since it IS the resummation. The escape is available only to a reading that
-takes a single graded piece as the physical observable, and nothing in this
-probe argues that such a reading is correct.
+  * `phi-q-resums-trace-series`: "the `Phi_q` resummation strictly factors
+    through Markov traces ... the entire tower generates from symbolic
+    differentiation of the descended trace." It RESUMS. Obstruction inherited.
+  * `vassiliev-filtration-mass-tower`, first half: "higher-order terms supply
+    precision refinements, converging rapidly due to the suppression factor
+    `|h|^k ~ (0.209)^k`." The mass formula RESUMS. Obstruction inherited.
+  * `vassiliev-filtration-mass-tower`, second half: "for the LP/SDP
+    operator-selection framework, the Vassiliev filtration provides a canonical
+    cost-vector basis at each type: `t_k^(type m) = c_m(b_k)`. This decomposes
+    the mass-formula optimisation into a graded hierarchy of **independent
+    linear programs**." That reading takes a SINGLE graded piece as the
+    observable, and the escape is available to it.
 
-So the honest summary is: the door is not locked, but nobody has shown there is
-a room behind it.
+So the escape is not hypothetical and it is not general. It lives in the
+LP/SDP cost-vector channel, at Vassiliev type 4, in machinery the corpus already
+has — and it is unavailable to the resummed mass formula, which is what every
+number measured in `qou-mu1h` and `qou-bygw` came from.
+
+WHAT THIS DOES NOT SHOW
+-----------------------
+That a type-4 LP produces a valley of stability, the right asymmetry energy, or
+any binding number at all. Only that the SIGN obstruction which kills the
+resummed reading is absent there. Given how many repairs this arc has already
+buried, that distinction should be held firmly.
 
 WHAT IS NOT CLAIMED
 -------------------
@@ -126,6 +160,27 @@ def dec(x, k=12):
     return f"{sign}0.{'0' * (-e)}{m}" if e <= 0 else f"{sign}{m}e{e}"
 
 
+def series_h(n=NORD):
+    """The CORPUS's grading: h = q - 1/q (vassiliev-filtration-mass-tower)."""
+    hs = sp.symbols("h")
+    q = (hs + sp.sqrt(hs ** 2 + 4)) / 2          # invert q - 1/q = h
+    z = q ** 3 / (q ** 2 + 1)
+    delta = (q - 1) ** 2 * (1 - q ** -4) / 3
+    d = {"pp": sp.Integer(0), "nn": -hs, "pn": -hs * (1 - delta / 2) / 2}
+    # trace level: the bond factor itself, which is what c_k grades
+    fac = {k: sp.series(z + v, hs, 0, 9).removeO().expand() for k, v in d.items()}
+    Dtr = sp.simplify(sp.expand(fac["pn"] - (fac["pp"] + fac["nn"]) / 2))
+    # L level: what the binding formula sums
+    L = {k: sp.series(-sp.log(z + v), hs, 0, n).removeO().expand() for k, v in d.items()}
+    D = sp.expand(L["pn"] - (L["pp"] + L["nn"]) / 2)
+    coeffs = {}
+    for k in range(n):
+        c = sp.nsimplify(sp.simplify(D.coeff(hs, k)), rational=True)
+        if c != 0:
+            coeffs[k] = sp.Rational(c)
+    return coeffs, Dtr, hs
+
+
 def series_data(n=NORD):
     hb = sp.symbols("hbar")
     q = sp.exp(hb)
@@ -153,7 +208,34 @@ def main() -> int:
         print(f"  [{'ok ' if ok else 'FAIL'}] {name}")
 
     print(__doc__.split("\n")[0])
+    ch, Dtr, hs = series_h()
     coeffs, dser, hb = series_data()
+
+    print("\n" + "=" * 74)
+    print("§0  TRACE LEVEL — what the Vassiliev filtration actually grades")
+    print("=" * 74)
+    print(f"    (z + d_pn) - midpoint of the pp/nn factors = {Dtr}")
+    lead = sp.limit(Dtr / hs ** 4, hs, 0)
+    print(f"    leading behaviour: {lead} * h^4   -> POSITIVE")
+    print("    so at the TRACE level pn sits ABOVE the midpoint from order h^4 on;")
+    print("    the obstruction is created entirely by taking -log, which is convex.")
+    check("at the trace level pn is ABOVE the midpoint — no obstruction there",
+          lead > 0)
+
+    print("\n" + "=" * 74)
+    print("§0b  L LEVEL, GRADED IN THE CORPUS'S h = q - 1/q")
+    print("=" * 74)
+    posh = [k for k in sorted(ch) if ch[k] > 0]
+    for k in sorted(ch):
+        print(f"    {k:>3} {str(ch[k]):>24} {('POS' if ch[k] > 0 else 'NEG'):>6}")
+    print(f"    types with pn ABOVE the midpoint, in h: {posh}")
+    check("in the corpus's h-grading the obstruction is type two (-1/2) and the first "
+          "escape is type FOUR (+1/24)",
+          ch.get(2) == sp.Rational(-1, 2) and posh and posh[0] == 4
+          and ch[4] == sp.Rational(1, 24))
+    print("    NOTE: in hbar = log q the first escape is order 5, not 4. A")
+    print("    reparametrisation mixes orders, so 'which order' is not grading-")
+    print("    independent; the corpus's variable is h and that answer is type 4.")
 
     print("\n" + "=" * 74)
     print("§1  THE TOWER: q = exp(hbar), graded piece = [hbar^k]")
@@ -220,8 +302,13 @@ def main() -> int:
           "so any resummed observable inherits the obstruction unchanged",
           ratio < mpfr("1e-3"))
     print("    => a reading that RESUMS the tower is dominated by order two and gains")
-    print("       nothing; the escape is available only to a reading that takes a SINGLE")
-    print("       graded piece as the physical observable, which nothing here justifies.")
+    print("       nothing. That covers phi-q-resums-trace-series ('the entire tower")
+    print("       generates from symbolic differentiation of the descended trace') and the")
+    print("       mass formula itself ('higher-order terms supply precision refinements').")
+    print("       The escape needs a SINGLE graded piece, and the corpus has exactly one")
+    print("       such reading: vassiliev-filtration-mass-tower's LP/SDP cost-vector basis")
+    print("       t_k^(type m) = c_m(b_k), 'a graded hierarchy of independent linear")
+    print("       programs'. That is where type 4 is reachable — and nowhere else.")
 
     try:
         from witness_base import WitnessBuilder  # noqa: E402
@@ -238,7 +325,13 @@ def main() -> int:
             "independently computed 200-bit Delta to 9 digits. But the largest positive "
             "term is 7.6e-4 of the leading negative one, so any resummed observable "
             "inherits the obstruction unchanged: the escape is formal, available only to "
-            "a reading that takes a single graded piece as physical. Bean qou-oooq.")
+            "a reading that takes a single graded piece as physical. The corpus has "
+            "exactly one such reading, vassiliev-filtration-mass-tower's LP/SDP "
+            "cost-vector basis (independent linear programs per type), and the escape is "
+            "reachable there and nowhere else. Also: the corpus grades in h = q - 1/q, "
+            "not log q, and in that variable the first escape is type 4 (+1/24), not 5; "
+            "at the TRACE level the filtration actually grades, pn is ABOVE the midpoint "
+            "from h^4 on, so the obstruction is created by taking -log. Bean qou-oooq.")
         for k in sorted(coeffs):
             wb.add_data(f"delta_coeff_hbar{k}", str(coeffs[k]))
         wb.add_data("first_positive_order", str(pos[0]))
@@ -249,13 +342,13 @@ def main() -> int:
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(
-            "Uses the hbar-expansion, which both the phi_q resummation and the Vassiliev "
-            "filtration are built on; it does NOT distinguish the two gradings, and the "
-            "bean's question of which tower is meant remains open.")
+            "Reports both gradings. The corpus's is h = q - 1/q; hbar = log q is included "
+            "only to show that 'which order' is not grading-independent (first escape 5 "
+            "in hbar, type 4 in h).")
         wb.add_caveat(
-            "No claim that any single graded piece is the physical binding observable. "
-            "Without such a reading the positive orders are unusable, since the "
-            "resummation is dominated by order two.")
+            "Shows only that the SIGN obstruction is absent at type 4. No claim that a "
+            "type-4 LP produces a valley of stability, an asymmetry energy, or any "
+            "binding number at all.")
         wb.add_caveat(
             "Says nothing about qou-bygw's ordering ambiguity, the valley of stability, "
             "or A >= 3; those inherit whatever the bond constants do.")

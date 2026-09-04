@@ -73,7 +73,13 @@ negative in a day.
 - [x] Not applicable: convexity does NOT survive at every order, so there is no
       all-orders result to report.
 
-## Where this actually leaves us — the door is unlocked, the room is unproven
+## Where this actually leaves us — the door is unlocked, and it has an address
+
+*(Superseded in part by the answered items above: the escape has a named home,
+the LP/SDP per-type reading, and it is at type 4 in the corpus's `h` grading,
+not order 5 in `hbar`.)*
+
+## Original framing — the door is unlocked, the room is unproven
 
 The escape is REAL and NUMERICALLY IRRELEVANT, and the second half matters as
 much as the first. At `hbar_0`:
@@ -93,11 +99,51 @@ is obstructed" into "the bond model is obstructed unless the physical observable
 is a single graded piece at order >= 5", which is a much narrower and much more
 falsifiable claim than we had.
 
-- [ ] **The one question that now matters:** does the framework read binding off
-      a single graded piece, or off the resummation? `phi-q-resums-trace-series`
-      and `vassiliev-filtration-mass-tower` should settle it, and they are the
-      two blocks the formulation item above could not distinguish. If it is the
-      resummation, this whole direction closes negative and `qou-qnqf` (retire
-      `L`) becomes the live option.
-- [ ] If a single graded piece: check whether order 5 also survives
-      `qou-bygw`'s ordering ambiguity, which is untouched by any of this.
+- [x] **ANSWERED — both, in different places, and that is the whole answer.**
+      * `phi-q-resums-trace-series`: "the `Phi_q` resummation strictly factors
+        through Markov traces ... the entire tower generates from symbolic
+        differentiation of the descended trace." RESUMS.
+      * `vassiliev-filtration-mass-tower`, first half: "higher-order terms
+        supply precision refinements, converging rapidly due to the suppression
+        factor `|h|^k ~ (0.209)^k`." The mass formula RESUMS.
+      * `vassiliev-filtration-mass-tower`, second half: "for the LP/SDP
+        operator-selection framework, the Vassiliev filtration provides a
+        canonical cost-vector basis at each type: `t_k^(type m) = c_m(b_k)`.
+        This decomposes the mass-formula optimisation into a graded hierarchy of
+        **independent linear programs**." SINGLE GRADED PIECE.
+
+      So the escape is real, specific, and confined: it lives in the LP/SDP
+      cost-vector channel, in machinery the corpus already has, and it is
+      unavailable to the resummed mass formula — which is where every number in
+      `qou-mu1h` and `qou-bygw` came from.
+
+- [x] **Two corrections to my own first pass, both material.**
+
+      **(a) Wrong variable.** `vassiliev-filtration-mass-tower` grades in
+      `h = q - q^-1`, not `hbar = log q`. Since `h = 2 hbar + hbar^3/3 + ...`,
+      a reparametrisation mixes orders — and it moves the answer. In `h` the
+      obstruction is type 2 with coefficient `-1/2` and the first escape is
+      **type 4** (`+1/24`), with positives at types 4, 5, 8, 9, 12, 13. My
+      committed first pass said order 5, which is the `hbar` answer. "Which
+      order" is not grading-independent, and quoting one while the corpus uses
+      the other is how a tower result becomes unfalsifiable.
+
+      **(b) The obstruction is created by the `-log`.** The filtration grades
+      `tr_M`, not `-log tr_M`. At the TRACE level,
+
+          (z + d_pn) - (z - h/2) = h*delta/4
+                                 = h^4 (-h^4 - 4h^3 + 24h^2 - 64h + 128)/3072,
+
+      leading behaviour `+h^4/24` — **positive**. So at the level the Vassiliev
+      coefficients actually live on, `pn` sits ABOVE the midpoint from `h^4` on
+      and there is no obstruction at all. Jensen on the convex `-log` is what
+      flips it: the convexity gap is `O(h^2)` and the colour term is `O(h^4)`,
+      so `-log` wins in the resummation and loses type by type.
+
+- [ ] **Next, and it is now a narrow question.** Does a type-4 LP in the
+      existing LP/SDP cost-vector basis actually produce a valley of stability
+      and a sane asymmetry energy? Only the SIGN obstruction has been cleared.
+      Given how many repairs this arc has buried, that distinction should be
+      held firmly — clearing a sign is not producing a number.
+- [ ] Check whether type 4 also survives `qou-bygw`'s ordering ambiguity, which
+      is untouched by any of this and is independently blocking.
