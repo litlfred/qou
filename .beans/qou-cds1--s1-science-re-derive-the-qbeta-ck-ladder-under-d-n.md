@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T07:48:08Z
+updated_at: 2026-09-04T08:53:46Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6463,3 +6463,26 @@ not decided, and explicitly NOT a claim that the corpus is inconsistent.
 Symbol collision also flagged: that docstring's `F` (abstract Habiro element)
 and this bean's `F = Q_β^exp/Q_A` (numerical correction factor) are two
 objects sharing a glyph in one channel.
+
+
+## Backlog for the re-derivation — two STALE-GREEN witnesses (from #6606, `qou-zk51`)
+
+A sibling flagged these on #6605 and I verified the committed half myself
+(`git show origin/main:<witness>`): both carry the convention-C signature —
+half-integer powers `sqrt(q)`, `q**(15/2)`, `q**(13/2)` — while recording
+`allPassed: true`.
+
+- `computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json`
+  (`A_q_symbolic`: `sqrt(q)`-form → `q**3/(q**2 + 1)` under D)
+- `computations/qbeta/qbeta-markov-trace-norm-probe.witness.json`
+  (same symbolic swap; L2 residue `6.85e-14` → `3.48e-9`)
+
+I confirmed the C-form and the committed green. I did **not** re-run the
+producers, so the sibling's "a fresh run returns `false`" half is
+unverified here — take it as reported, not as measured by me.
+
+**Neither producer is broken.** A C-frame assertion failing under D is exactly
+what `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` predicts. They must not be
+refreshed in place — that would commit a red. They are inputs to this bean's
+re-derivation, and they land green again only when the ladder itself is
+re-derived under D.
