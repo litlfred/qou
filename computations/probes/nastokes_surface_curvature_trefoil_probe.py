@@ -58,12 +58,21 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-# substrate q₀ (proton-pinned package value; the audit's 10⁻⁴ scale is pin-insensitive)
+# substrate q0, proton-pinned, read BY NAME from `q_parameter` (bean qou-9ugp).
+# NO SILENT FALLBACK. The `except` arm used to bind the literal
+# 1.10997859555733471 -- the RETIRED muon pin A -- so any environment where
+# the substrate package failed to import computed at a stale MUON value under
+# a comment that says proton, and nothing said so. A pin that cannot be
+# established is an error, not a default. `q_parameter` rather than
+# `qou_substrate.constants` so the witness resolves its anchor stamp.
 try:
-    from qou_substrate.constants import Q_50_DIGIT_STR  # type: ignore
-    Q0 = mp.mpf(Q_50_DIGIT_STR)
-except Exception:
-    Q0 = mp.mpf("1.10997859555733471")
+    from q_parameter import Q_50_DIGIT_STR  # type: ignore
+except Exception as _exc:  # pragma: no cover
+    raise RuntimeError(
+        "cannot establish the q0 anchor: `q_parameter` did not import. "
+        "Refusing to fall back to a literal -- see bean qou-9ugp."
+    ) from _exc
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 
 def conj(U, F):

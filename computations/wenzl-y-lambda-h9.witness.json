@@ -1,9 +1,9 @@
 {
   "computation": "wenzl-y-lambda-h9",
-  "computedAt": "2026-08-29T08:31:48.638315+00:00",
+  "computedAt": "2026-09-04T02:42:55.357445+00:00",
   "description": "Wenzl Jones-Markov y_\u03bb for all 30 partitions of 9 at q_0 50dps",
   "parameters": {
-    "q0": "1.10997859555418057528159407960950937799328227995870",
+    "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
     "n_strands": 9,
     "dps": 50
   },
@@ -13,21 +13,21 @@
         "partition": [
           9
         ],
-        "y_lambda": "0.022122276611734736518303493946814861163846118173759"
+        "y_lambda": "0.022122276615756767204721690744324177153461306145470"
       },
       {
         "partition": [
           8,
           1
         ],
-        "y_lambda": "0.016638174103057913249809911276393148107358064053971"
+        "y_lambda": "0.016638174104595807217551362725675332810329614277658"
       },
       {
         "partition": [
           7,
           2
         ],
-        "y_lambda": "0.011881263262686593687037493481238146961060009319825"
+        "y_lambda": "0.011881263262923690809560079950761685696524923378567"
       },
       {
         "partition": [
@@ -42,7 +42,7 @@
           6,
           3
         ],
-        "y_lambda": "0.0076436375073284203347031664405932156403998611285047"
+        "y_lambda": "0.0076436375070721038100619626926435753294828041647231"
       },
       {
         "partition": [
@@ -66,7 +66,7 @@
           5,
           4
         ],
-        "y_lambda": "0.0037400862409404702825584024452413246497494234188324"
+        "y_lambda": "0.0037400862406922890550897866555432388272036725834575"
       },
       {
         "partition": [
@@ -293,10 +293,11 @@
   "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
   "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py",
-  "scriptHash": "7e7013de58aa",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "scriptHash": "b47842e6e2e1",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "commitSha": "e448ce97cc66edf6813ff7100c170e0f94e9b850",
   "engine": "python",
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "q0AnchorReason": "computes Wenzl weights y_lambda(q0) at the MUON pin, taken explicitly from pin_value_for_anchor('muon') rather than through the manifest (owner ruling 2026-08-24). Stamped explicitly because the auto-detector reads the import cone and this producer reaches q0 via q0_stamp, not q_parameter, so it was being stamped 'independent' on a value that is a function of the pin."
 }

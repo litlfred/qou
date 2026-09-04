@@ -43,6 +43,21 @@ import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import NF_BASIS as _PG_NF_BASIS  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 
 
 # ── constants ─────────────────────────────────────────────────
@@ -51,7 +66,7 @@ _EPS = mp.mpf('1e-40')      # reducer drop threshold; was 1e-15, a float64 artif
 # Muon pin, as this producer has always used. NOT re-pinned here: the standing
 # proton default governs the value a producer READS, and changing it would move
 # the physics, which belongs to the qou-1c4y migration and not to a float64 fix.
-_Q0_STR = "1.1099785955573347"
+_Q0_STR = Q_50_DIGIT_STR
 PHI = (1 + mp.sqrt(5)) / 2                  # golden ratio — mpf, carried
 Q_STAR = 1 / (PHI ** 2)                     # ≈ 0.38197
 Q0 = mp.mpf(_Q0_STR)                        # physical substrate q (muon pin)

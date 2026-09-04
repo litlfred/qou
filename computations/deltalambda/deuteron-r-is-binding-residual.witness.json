@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:02:03.184821+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:39:18.363201+00:00",
+  "commitSha": "8c037f6aa912c76940b24121029ae63f1121bd10",
   "assertions": [
     {
       "name": "g2_reproduces_corpus",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-r-is-binding-residual",
   "scriptFile": "deuteron_r_is_binding_residual_probe.py",
-  "scriptHash": "a23ce89db98f",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "95b54c857549",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -59,18 +59,18 @@
     "A_exact_g2_reproduced": {
       "E_rot_MeV": "2.0195829 (theory, j=3)",
       "E_AME_MeV": "2.2245662 (measured)",
-      "t_bar_odd": "0.052123086",
-      "h2": "0.043706218",
-      "Eplus": "2.130638345",
-      "g2": "1.0086522  (corpus value 1.00865 — bookkeeping confirmed)",
-      "r_pct": "0.86522"
+      "t_bar_odd": "0.05212308",
+      "h2": "0.043706209",
+      "Eplus": "2.130638333",
+      "g2": "1.0086526  (corpus value 1.00865 — bookkeeping confirmed)",
+      "r_pct": "0.86526"
     },
     "B_amplification_and_precision": {
       "amplification_dg2_per_relE": "23.8887 (Lean-proved g2_amplification coeff)",
       "B_precision_to_pin_r_10pct_ppm": "36.22",
       "B_precision_to_see_r_ppm": "362.2",
       "current_first_order_accuracy_ppm": "92100 (−9.21%)",
-      "ratio_needed_vs_current": "2542.9× tighter",
+      "ratio_needed_vs_current": "2542.8× tighter",
       "meaning": "g₂ is AFFINE in the measured binding (E⁺,h pure theory); the 1/h² magnifies B's relative error ~24×. Deriving r ≡ predicting B(deuteron) to ~36 ppm."
     },
     "C_tabulated_input_floor": {
@@ -91,8 +91,11 @@
     "axis": "Δ_λ binding — μ₀ −9% closure, the exact residual r = g₂ − 1",
     "lean": "QOU/MassTheory/BindingResidualAmplification.lean (g2_affine, g2_amplification)",
     "builds_on": "#4158 (Magnus g₂ definition), #4339 (g₂_leading=1), #4347 (frontier), #4369 (lifted-dilog refutation + pinch degeneracy)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

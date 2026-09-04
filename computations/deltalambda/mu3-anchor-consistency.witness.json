@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:03:30.337325+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-09-04T01:13:23.593640+00:00",
+  "commitSha": "ec597e2e49fc6dcb6758268fc5d14efe387b2ff4",
   "assertions": [
     {
       "name": "verdict_unchanged_across_anchors",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 25,
   "computation": "mu3-anchor-consistency",
   "scriptFile": "mu3_anchor_consistency_probe.py",
-  "scriptHash": "bbfe47d657cb",
-  "scriptCommitSha": "bc96793e5d232b5e974786a6707616af9cfbdd57",
+  "scriptHash": "5e4479032ba8",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -49,7 +49,7 @@
   "parameters": {
     "q0_proton": "1.10997858275138080759166909561",
     "q0_muon": "1.10997859564273904668179512938",
-    "separation_ppb": 11.61406020773339
+    "separation_ppb": "11.6140602077333897125698198393307843523239122374602667054978"
   },
   "data": {
     "results": {
@@ -95,5 +95,11 @@
   },
   "caveats": [
     "DEFECT RECORDED, and it is a CALIBRATION-LAYER crossing, not a cache-staleness bug: mu3_frechet_perblock_probe.py (#4657, merged) took y_lambda from the IDEAL 3-CAL layer (muon-pinned, CAL-2 via proxy m_mu/m_e) while evaluating chi at the EXPERIMENTAL layer (proton-pinned q_parameter.Q). The 11.54 ppb separation is the mu-p substrate tension itself. Mechanism: y_lambda_at()'s fast path serves the ideal-layer cache to an experimental-layer caller with no layer-boundary signal. Correct fix is to pick a layer and stay in it -- for a categorical Delta^2 g in computations/, that layer is MUON. Size ~1e-7 relative; no conclusion changes. Recurring class flagged as bean tnjb."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "The subject of this probe IS the two-pin straddle: y_lambda and chi are evaluated at BOTH the experimental (proton) and ideal-CAL-2 (muon) pins and their separation is published as parameters.separation_ppb. Proton from q_parameter.Q_MP, muon from witness._q0_value_for_anchor('muon'), so both legs follow the anchor and neither can go stale."
 }

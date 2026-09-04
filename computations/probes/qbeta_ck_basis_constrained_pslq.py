@@ -59,16 +59,29 @@ import subprocess
 from datetime import datetime, timezone
 
 import mpmath as mp
+# Path bridge (bean qou-9ugp): `q_parameter` lives in computations/substrate/,
+# and the anchor must be read from it (not from qou_substrate.constants) or the
+# witness gets no q0 stamp. Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 mp.mp.dps = 60  # ≥ 50 dps discipline
 
 # ---------------------------------------------------------------------------
 # Canonical inputs (traced to producers — see docstring)
 # ---------------------------------------------------------------------------
-# canonical (muon-family) q₀ — qbeta-ck-cache.witness.json / Q0_MP_PIN
-Q0_CANONICAL = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-# proton-pinned q₀ — full 50-dps pin (qou_substrate.constants.Q_50_DIGIT_STR)
-Q0_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+# Both pins read BY NAME (bean qou-9ugp, 2026-09-03). `Q0_CANONICAL` was the
+# literal 1.1099785955573… — the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 by the live CODATA-2022 lepton-ratio derivation (+0.0769 ppb);
+# `Q0_PROTON` was the 50-digit proton string re-typed by hand. Two pins are
+# read on purpose here (the manifest files this stem `ambiguous`).
+Q0_CANONICAL = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
+Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
 M_E_MEV = mp.mpf("0.51099895069")
 # Q_β reference used by the cache extraction (qbeta-ck-cache Q_codata)
 Q_BETA_CODATA_MEV = mp.mpf("0.78233341")

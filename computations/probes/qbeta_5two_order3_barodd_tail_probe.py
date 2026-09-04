@@ -54,6 +54,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -82,7 +83,12 @@ def _head_sha():
 
 
 # muon substrate q0 (the computations/ canonical pin)
-Q0 = mp.mpf("1.10997859555733471")
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+# literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+# no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+# on the PROTON default; the pin moves 11.54 ppb.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 PHI_ODD_STRIP = mp.mpf("-0.004145")
@@ -241,7 +247,12 @@ def main() -> int:
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine=None, q0_anchor=False)
+            # q0_anchor was False -- a declaration that this result does not
+            # depend on which pin. Measured false (bean qou-9ugp, 2026-09-03):
+            # re-pinning A -> proton moves T_odd by 428.7 ppb, 37x the 11.54 ppb pin move, and the field is
+            # named _q0. A producer that reports a pin-specific number must
+            # stamp the pin it used.
+            witness, script_path=__file__, engine=None)
         json.dump(witness, fh, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

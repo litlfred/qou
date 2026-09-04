@@ -47,6 +47,8 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import q_muon_at, q_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
@@ -62,8 +64,13 @@ mp.mp.dps = 60
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 T_ODD_B3IX = mp.mpf("0.01916053432")
-Q0_MUON = mp.mpf(
-    "1.10997859555733471989976322048322502665620840878015368")
+# Muon leg read BY NAME (bean qou-9ugp, 2026-09-03). It was the literal
+# 1.1099785955573...15368 -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22. The proton leg (t_p) already used q_at(50) by name, so this probe
+# was comparing a live proton pin against a retired muon one -- inside the very
+# assertion that the mu-vs-p pin move is below 1e-6. Exception E1 of the
+# 2026-08-30 ruling: both pins are read here on purpose.
+Q0_MUON = q_muon_at(50)
 N_COEF = 44
 
 
@@ -264,7 +271,17 @@ def main() -> int:
                      tolerance=0.5,
                      source="muon-vs-proton pin moves D_odd by < 1e-6 "
                             "while anchors differ by 0.049")
-    wb.save()
+    # Explicit `comparison` stamp (bean qou-9ugp): this probe computes
+    # D_odd at BOTH pins and asserts their difference is below 1e-6, so it
+    # belongs to neither anchor list and was going out unstamped. The stamp
+    # carries the values actually computed with.
+    wb.save(q0_comparison(
+        muon=Q0_MUON, proton=q_at(50),
+        reason='computes the 5_2 D_odd median-normalised tail at BOTH the '
+               'muon and proton pins and asserts the pin move is below 1e-6; '
+               'both pins are read on purpose and each is reported under its '
+               'own key',
+    ))
     return 0 if ok else 1
 
 

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:57:25.982638+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T06:47:21.458219+00:00",
+  "commitSha": "7437fb0e029fb39e9fee7337adae7f6c374fc775",
   "assertions": [
     {
       "name": "stage_c_per_block_chi_symbolic_matches_pyhecke",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 299,
+  "durationMs": 338,
   "computation": "qbeta-stage-c-per-block-chi-closed-form-probe",
   "scriptFile": "qbeta_stage_c_per_block_chi_closed_form_probe.py",
-  "scriptHash": "e1325d835613",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9d1d9a031c82",
+  "scriptCommitSha": "2d6e5ccf518f037cab0d4bc091c269d667a6412e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -69,8 +69,8 @@
           3
         ],
         "chi_symbolic_q": "q**3",
-        "chi_at_q_0_symbolic": "1.367551884284206570868045",
-        "chi_at_q_0_pyhecke": "1.3675518842842074",
+        "chi_at_q_0_symbolic": "1.367551836951385187966724",
+        "chi_at_q_0_pyhecke": "1.3675518369513862",
         "match_at_q_0": true
       },
       {
@@ -80,7 +80,7 @@
         ],
         "chi_symbolic_q": "0",
         "chi_at_q_0_symbolic": "0.0",
-        "chi_at_q_0_pyhecke": "4.996003610813204e-16",
+        "chi_at_q_0_pyhecke": "1.1102230246251565e-16",
         "match_at_q_0": true
       },
       {
@@ -90,8 +90,8 @@
           1
         ],
         "chi_symbolic_q": "-1/q**3",
-        "chi_at_q_0_symbolic": "-0.7312336822404454986420315",
-        "chi_at_q_0_pyhecke": "-0.7312336822404466",
+        "chi_at_q_0_symbolic": "-0.7312337075494336740413528",
+        "chi_at_q_0_pyhecke": "-0.7312337075494344",
         "match_at_q_0": true
       }
     ],

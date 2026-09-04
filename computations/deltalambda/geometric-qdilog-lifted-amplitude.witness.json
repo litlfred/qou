@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:02:22.118650+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:18.810420+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "ReL_closed_form_quarter_ln",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "geometric-qdilog-lifted-amplitude",
   "scriptFile": "geometric_qdilog_lifted_amplitude_probe.py",
-  "scriptHash": "7e6761461066",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "f822ed58d532",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -61,15 +61,15 @@
       "shape": "z = −h² (eigenspace cross-ratio, #4345)",
       "Re_zeta0_eq_half": true,
       "note_frames": "Re ζ⁰ = ½ EXACTLY — reconciles the corpus's two trefoil frames (z=½ and −h²)",
-      "Re_L_numeric": "0.0106945124249841",
-      "Re_L_closed_form": "¼ ln(1+h²) = 0.0106945124249841",
+      "Re_L_numeric": "0.0106945101014425",
+      "Re_L_closed_form": "¼ ln(1+h²) = 0.0106945101014425",
       "closed_form_verified_30dps": true,
       "closed_form_verified_symbolic": true,
-      "Im_L_branch_dependent": "0.017537447 (carries ln h — flattening-branch ambiguity)"
+      "Im_L_branch_dependent": "0.017537444 (carries ln h — flattening-branch ambiguity)"
     },
     "R2_refutation_scope_a": {
-      "g2_candidate": "0.978763467294  (= ln(1+h²)/h², normalised to g₂_leading=1)",
-      "r_candidate": "-0.021236533",
+      "g2_candidate": "0.978763471875  (= ln(1+h²)/h², normalised to g₂_leading=1)",
+      "r_candidate": "-0.021236528",
       "r_target": "0.00865",
       "verdict": "WRONG SIGN and ~2.4× magnitude (got −2.12%, target +0.87%). The full lifted dilog (correct amplitude) is FURTHER from target than the bare Li₂ (−1.07%). The eigenspace-shape lifted-dilog route, ALONE, does not reproduce r.",
       "scope": "(a) scope-limited negative — constrains magnitudes/combinations, NOT ingredients. No proved invariant excludes the lifted dilog from a closure; this is not (b).",
@@ -98,9 +98,12 @@
     "paper": "library/arxiv-2509.02354v2/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
     "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch)",
     "builds_on": "#4345 (shape −h² from rep), #4339 (g₂_leading=1), #4347 (frontier: bare Li₂)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true,
     "no_scan": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

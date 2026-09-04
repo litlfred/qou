@@ -45,8 +45,28 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
+# The MUON leg read BY NAME (bean qou-9ugp, 2026-09-04). It was the RETIRED
+# self-certified pin A, retired 2026-08-22 for the CODATA-2022 derivation. This
+# is a deliberate two-pin comparison (the proton leg sits beside it), so the fix
+# is the live MUON, not proton.
+#
+# MISSED BY MY OWN SPLITTER, which required "muon" on the SAME LINE as the
+# literal. Here the label is on the preceding line (a continuation-line literal)
+# or the identifier is `QM` rather than `Q_MUON` -- so the file read as
+# single-pin and was queued for a proton migration that would have deleted the
+# comparison. Caught by reading all 19 by hand. 2 of 12 comparisons, ~17% miss.
+import sys as _sys_qm  # noqa: E402
+from pathlib import Path as _Path_qm  # noqa: E402
+for _p_qm in (_Path_qm(__file__).resolve().parent,
+              _Path_qm(__file__).resolve().parent.parent,
+              _Path_qm(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qm) not in _sys_qm.path:
+        _sys_qm.path.insert(0, str(_p_qm))
+from q_parameter import q_muon_at as _q_muon_at  # noqa: E402
+Q_MUON_LIVE_STR = str(_q_muon_at(50))
+
 set_compute_dps()
-QM = mp.mpf("1.10997859555733471")
+QM = mp.mpf(Q_MUON_LIVE_STR)
 QP = mp.mpf("1.1099785827513808075916690956107688798744991218736")
 SM = mp.mpf("0.00968298")
 SP = mp.mpf("-0.03945936")

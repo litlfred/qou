@@ -72,7 +72,7 @@ import math  # noqa: E402
 
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 from _precision import fmt, str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402, F401
@@ -342,8 +342,14 @@ def _chi(lam, word, n_gens):
 # discipline is exactly this: ask whether a structural claim prunes the class
 # before running the wide search. Recorded in bean `qou-fmoi`.
 # ── anchor identification ──────────────────────────────────────────────
-_PROTON_Q0 = "1.1099785827513808"    # experimental / Physical-Observations pin
-_MUON_Q0 = "1.1099785955573347"      # ideal CAL-2 pin
+# Both fixtures read BY NAME (bean qou-9ugp, 2026-09-04). `_anchor_of` NAMES
+# the pin a value is, so a fixture that cannot follow an anchor move is the
+# one defect this function must not have: the muon leg was
+# 1.1099785955573347, the RETIRED pin A, so `_anchor_of` would have refused
+# to recognise the LIVE muon anchor (CODATA-2022, +0.0769 ppb) as muon at
+# all. Kept at 17 digits -- this is a prefix classifier, not a computation.
+_PROTON_Q0 = Q_50_DIGIT_STR[:18]     # experimental / Physical-Observations pin
+_MUON_Q0 = mp.nstr(q_muon_at(50), 17, strip_zeros=False)   # ideal CAL-2 pin
 
 
 def _anchor_of(q_val) -> str:

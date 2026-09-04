@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:02:01.760269+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:39:17.668099+00:00",
+  "commitSha": "8c037f6aa912c76940b24121029ae63f1121bd10",
   "assertions": [
     {
       "name": "BD_predicted_within_0p04pct",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-g2-frame-artifact",
   "scriptFile": "deuteron_g2_frame_artifact_probe.py",
-  "scriptHash": "70c4750d0645",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "2271cea85f24",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -60,14 +60,14 @@
       "tiers_err_pct": {
         "tier0_E_rot": "-9.2145",
         "tier1_Eplus_bar_odd": "-4.2223",
-        "tier2_bar_even_unit_g2_is_1": "-0.036219"
+        "tier2_bar_even_unit_g2_is_1": "-0.03622"
       },
       "B_D_predicted_to": "-0.03622% (360 ppm), parameter-free",
       "meaning": "the REAL robust result: B(deuteron) predicted to 0.036% from q₀ via three derived tiers (rotational, bar-odd t, bar-even h² unit). g₂≈1 is a genuine prediction, NOT a fit."
     },
     "F2_frame_artifact": {
       "r_by_frame_pct": {
-        "E+ = E_rot/(1-t) [corpus]": "0.8652",
+        "E+ = E_rot/(1-t) [corpus]": "0.8653",
         "E+ = E_rot*(1+t)": "7.373",
         "E+ = E_rot*exp(t)": "4.23",
         "B = E+/(1-g2 h2) [inverse]": "-3.394"
@@ -99,8 +99,11 @@
     "axis": "Δ_λ binding — μ₀ −9% closure, the epistemic status of g₂ / r",
     "owner_question": "keep pushing on g₂ beyond leading; seems fitted to AME; larger context?",
     "builds_on": "#4369 (r is the binding residual magnified 1/h²), #4158 (g₂ definition, Ω_{k≥2}=0), #4339 (g₂_leading=1)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

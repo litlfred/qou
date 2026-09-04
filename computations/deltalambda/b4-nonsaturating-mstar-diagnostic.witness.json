@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T22:21:53.064324+00:00",
-  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
+  "computedAt": "2026-09-04T02:44:37.592928+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "assertions": [
     {
       "name": "detG_closed_form_max_deviation",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 20,
   "computation": "b4-nonsaturating-mstar-diagnostic",
   "scriptFile": "b4_nonsaturating_mstar_diagnostic.py",
-  "scriptHash": "1359a6584110",
-  "scriptCommitSha": "98bbc136d0a4a9ba9f5595821d85301b02c0b233",
+  "scriptHash": "26617afcd188",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

@@ -55,12 +55,20 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-Q0_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
-Q0_MUON = mp.mpf("1.10997859555733471")
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_MUON = q_muon_at(50)
 SWING_REQUIREMENT = mp.mpf("3.84e6")     # |dS/dq| the c₃ swing needs
 FOURONE_NULL_FLOOR = mp.mpf("9.2e-9")    # #3923 4₁ odd-phase null floor
 
@@ -227,6 +235,15 @@ def main() -> int:
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=None)
+        # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+        # pins deliberately, so no anchor list can classify it and it was going
+        # out unstamped. The reason string is kept ASCII on purpose: this
+        # witness is written with json.dump, whose ensure_ascii=True turns any
+        # non-ASCII into a \\uXXXX escape and collapses the shape guard.
+        apply_q0_comparison(witness,
+            muon=Q0_MUON, proton=Q0_PROTON,
+            reason='is an ANCHOR TEST: it evaluates sigma_3 at both pins and reports the difference; both pins are read on purpose',
+        )
         json.dump(witness, f, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

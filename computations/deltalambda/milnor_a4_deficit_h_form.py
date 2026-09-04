@@ -43,6 +43,14 @@ from pathlib import Path
 
 import sympy as sp
 
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 
 q, h = sp.symbols("q h", positive=True)
@@ -193,8 +201,16 @@ def main():
 
     # ── Q0 pin: exact rational (the same q0 the committed A=4 producer used, so any
     # difference from its 1.000145898 is PURELY the convention, not the pin). ──
-    Q0 = sp.Rational("2584370278640139188197914756009",
-                     "2328306436538696289062500000000")
+    # q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was an exact-looking
+    # sp.Rational that is NOT the proton pin: it differs from the canonical
+    # value at the 16th significant digit, 2.62e-16 relative. Its denominator
+    # is exactly 10**40 // 2**32, i.e. the pin round-tripped through binary
+    # floating point and then FROZEN AS A RATIONAL -- so it reads as exact
+    # arithmetic forever while carrying float64-scale contamination. That is
+    # the NO-FLOAT64 defect laundered into a type that cannot be suspected of
+    # it, and no q0 grep could see it. Rational() of the decimal string is
+    # exact and needs no round-trip.
+    Q0 = sp.Rational(Q_50_DIGIT_STR)
 
     # ══ 1. A=3 VALIDATION — must reproduce tauBorromean exactly ══════════════════
     tau3 = tau_convention_d(CHI_W3, DIM3, 3)

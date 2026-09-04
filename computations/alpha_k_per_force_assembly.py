@@ -144,23 +144,19 @@ def _manifest_tag() -> str:
     return f"AMBIGUOUS (stem in {len(hits)} groups: {', '.join(sorted(hits))})"
 
 
-_Q0_MUON_FALLBACK = "1.1099785955573347198997632204832250266562084087802"
 try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
     Q0_SOURCE = "qou_substrate.constants.q_at()"
     Q0_ANCHOR = "proton"
 except Exception as _e:  # pragma: no cover - environment-dependent
-    Q0 = _Q0_MUON_FALLBACK
-    Q0_SOURCE = f"hardcoded muon fallback (qou_substrate import failed: {_e!r})"
-    Q0_ANCHOR = "muon"
-    print(
-        "WARNING: qou_substrate unavailable; falling back to the hardcoded "
-        "MUON q0 literal. This CHANGES THE PHYSICS ANCHOR relative to a run "
-        "with qou_substrate present (proton). Recorded as q0_anchor='muon' "
-        "in the witness. See bean qou-7vm4.",
-        file=sys.stderr,
-    )
+    # No fallback (bean qou-4bef, 2026-09-03): the retired muon literal this fell
+    # back to changed the physics anchor silently; refuse instead.
+    raise RuntimeError(
+        "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+        "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+        "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+        "Install it: pip install -e tools/qou-substrate.") from _e
 
 CODATA_INV_ALPHA = "137.035999177"   # CODATA 2022 1/alpha_EM
 

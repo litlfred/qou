@@ -30,9 +30,20 @@ the class `mu3_anchor_consistency_probe.py` records for the mu3 Frechet probe:
          evaluated at `q_parameter.Q_MP` = 1.1099785827513808...   (PROTON, experimental)
 
     RHS  tr_M(beta_D) read from `atomic-tr-m-mpfr-50dps.witness.json`,
-         which is stamped `q0Anchor: "muon"`  = 1.1099785955573347...   (MUON, ideal 3-CAL)
+         which is stamped `q0Anchor: "muon"`  = 1.1099785956427390...   (MUON, ideal 3-CAL)
 
-    separation = 11.5371 ppb  --  the mu-p substrate tension itself.
+    separation = 11.6141 ppb  --  the mu-p substrate tension itself.
+
+    PIN QUOTES CORRECTED 2026-09-04 (bean qou-9ugp).  This block quoted the RHS
+    witness as 1.1099785955573347... and the separation as 11.5371 ppb.  Both
+    were the RETIRED self-certified muon pin A, superseded 2026-08-22 when the
+    muon anchor was re-derived to the CODATA-2022 lepton ratio.  Measured: that
+    witness now carries 1.10997859564273904668... and the live proton-to-muon
+    separation is 11.6141 ppb, so this probe was UNDERSTATING BY 0.67% the very
+    straddle it exists to measure -- the same 1.0067 ratio found the same day in
+    `convention_systematic_audit_probe` and `aomega_6y1p_swing_reframe`.  The
+    decomposition table below is recomputed by the probe at run time and moves
+    with it; only these two quoted figures were typed.
 
 Per AGENTS.md S"q0 anchor convention": "Never straddle the two layers inside one quantity.
 Mixing an ideal-layer input with an experimental-layer input in a single computed number is

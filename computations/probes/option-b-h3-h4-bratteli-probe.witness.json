@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:38:19.519862+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-09-03T23:17:11.053883+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "h3_h4_box_additions_count_is_7",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 167,
+  "durationMs": 202,
   "computation": "option-b-h3-h4-bratteli-probe",
   "scriptFile": "option_b_h3_h4_bratteli_probe.py",
-  "scriptHash": "8d26f44c6dd3",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptHash": "81893a28b176",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/option_b_h3_h4_bratteli_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/option_b_h3_h4_bratteli_probe.py"
   },
   "description": "Option B probe (PR #1762 §5 / sibling #1816 Option A): H₃ ⊂ H₄ Bratteli induction-restriction test for deriving Family-A linking_weight (3q²+4+3q⁻²)/4. Three sub-hypotheses (B1 uniform / B2 y_λ-weighted / B3 per-source λ) tested symbolically in q (B1, B3) and numerically at q_0 (B2) against the production closed-form. EXPLORATORY — no production code, content blocks, or witnesses changed.",
   "auditOnly": "docs/audits/2026-06-04-option-b-h3-h4-bratteli-scoping.md",
@@ -172,18 +180,18 @@
     "b2_y_lambda_weighted": {
       "hypothesis": "B2 (y_λ-weighted at q_0)",
       "verdict": "REFUTED",
-      "weighted_sum_at_q0": "4.054514673639646223285550264100000104444572169186000549035759163636217",
-      "lambda_A_at_q0": "2.5327796636746759826636838141577022737497563139135",
-      "delta": "1.521735009964970240621866449942297830694815855272500549035759163636217",
-      "relative_error": "0.6008161830220815350652947368648725099944609154488607445687109355317178",
+      "weighted_sum_at_q0": "4.054514661540383595777136742158332861088916356213076545031272873494149",
+      "lambda_A_at_q0": "2.5327796563993914920515145017580412323261604705351",
+      "delta": "1.521735005140992103725622240400291628762755885677976545031272873494149",
+      "relative_error": "0.6008161828432781884328076805445233530238450880123153681240830824641277",
       "per_source": [
         {
           "lambda": [
             3
           ],
           "y_lambda_at_q0": "0.50540422650393080318755870324047227566035119774981",
-          "box_addition_sum": "4.0437062182329013102182450855436030316663417518847",
-          "weighted_contribution": "2.043706213435134696833869541392697988751285708281420213115028659766872",
+          "box_addition_sum": "4.0437062085325219894020193356773883097682139607135",
+          "weighted_contribution": "2.04370620853252198940201933567738830976821396071350559875119827735202",
           "box_additions": [
             {
               "lambda_plus": [
@@ -196,7 +204,7 @@
                 3,
                 1
               ],
-              "dim_q_at_q0": "3.0437062182329013102182450855436030316663417518847"
+              "dim_q_at_q0": "3.0437062085325219894020193356773883097682139607135"
             }
           ]
         },
@@ -205,23 +213,23 @@
             2,
             1
           ],
-          "y_lambda_at_q0": "0.2472978867480345984062206483797638621698244011251",
-          "box_addition_sum": "8.1311186546987039306547352566308090949990252556541",
-          "weighted_contribution": "2.010808460204511526451680722707302115693286460904580335920730503869345",
+          "y_lambda_at_q0": "0.24729788674803459840622064837976386216982440112509",
+          "box_addition_sum": "8.1311186255975659682060580070321649293046418821405",
+          "weighted_contribution": "2.010808453007861606375117406480944551320702395499570946280074596142128",
           "box_additions": [
             {
               "lambda_plus": [
                 3,
                 1
               ],
-              "dim_q_at_q0": "3.0437062182329013102182450855436030316663417518847"
+              "dim_q_at_q0": "3.0437062085325219894020193356773883097682139607135"
             },
             {
               "lambda_plus": [
                 2,
                 2
               ],
-              "dim_q_at_q0": "2.0437062182329013102182450855436030316663417518847"
+              "dim_q_at_q0": "2.0437062085325219894020193356773883097682139607135"
             },
             {
               "lambda_plus": [
@@ -229,7 +237,7 @@
                 1,
                 1
               ],
-              "dim_q_at_q0": "3.0437062182329013102182450855436030316663417518847"
+              "dim_q_at_q0": "3.0437062085325219894020193356773883097682139607135"
             }
           ]
         },
@@ -240,7 +248,7 @@
             1
           ],
           "y_lambda_at_q0": "0.0",
-          "box_addition_sum": "4.0437062182329013102182450855436030316663417518847",
+          "box_addition_sum": "4.0437062085325219894020193356773883097682139607135",
           "weighted_contribution": "0.0",
           "box_additions": [
             {
@@ -249,7 +257,7 @@
                 1,
                 1
               ],
-              "dim_q_at_q0": "3.0437062182329013102182450855436030316663417518847"
+              "dim_q_at_q0": "3.0437062085325219894020193356773883097682139607135"
             },
             {
               "lambda_plus": [
@@ -308,5 +316,7 @@
     "production_wired": false,
     "scoping_doc": "docs/audits/2026-06-04-option-b-h3-h4-bratteli-scoping.md",
     "synthesis_verdict": "All three sub-hypotheses REFUTED at the closed-form level. The box-adding Bratteli induction axis does not derive the Family-A linking_weight by any of {uniform, y_λ-weighted, per-source}. The H₃→H₄ jump must come from a different structural mechanism (e.g. Markov-stabilization analog at the trace level, not the algebra-tower level — PR #1808 Option E literature-import flagged this as the next axis)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

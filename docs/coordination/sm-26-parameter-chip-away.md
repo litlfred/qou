@@ -36,7 +36,7 @@ open knots.
 
 ## Scorecard (honest)
 
-- **Parameter tiers moved: 0.** Canonical L2 count stays 2/7; the 26-param split
+- **Parameter tiers moved: 0.** Canonical L2 count: **1/5 scoreable** (`m_K/m_π` only), **0/5 unconditional** — the earlier "2/7" counted the calibration inputs `m_e`, `m_p` (AGENTS.md, corrected 2026-08-18/22; this line read "stays 2/7" until 2026-09-03); the 26-param split
   stays 1 input / 1 proxy / 1 partial / 2 conjectural / 21 open **by the SM's
   accounting** — but the reframing re-scopes ~14 of the 21 as *derived*.
 - **One genuine structural advance:** μ̄₁₂₃ separating the two U(1)s (#4597) — the
@@ -52,6 +52,7 @@ open knots.
 
 | Date | Agent / branch | Intent | Results |
 |---|---|---|---|
+| 2026-09-03 | Claude / `claude/standard-model-terms-status-ftoejr` (session `qou-ggdk`) | INTENT: term-by-term status of the 26 against the live corpus; refresh this ledger + the cheat sheet; fix the in-paper 4-C contradiction; Lean best-practices sweep on the SM surface; one roasted bean per open term | RESULTS: see the 2026-09-03 section at the end of this file and `docs/audits/2026-09-03-sm-26-term-status.md`. |
 | 2026-08-04 | Copilot / `copilot/eight-fold` | INTENT: external electron.pdf triage + drain nearby electron arc beans in SM/eight-fold scope | RESULTS: network fetch to physicsdetective blocked; corrected electron-arc prose to keep knot identification but remove standalone trefoil-mass overclaim, and aligned the example with CAL-1 framing. |
 
 ## Open fronts (beans / follow-ups)
@@ -142,9 +143,15 @@ PR [#5770](https://github.com/litlfred/qou/pull/5770), bean `qou-17mq`. Two
 findings, both negative, both scope-tagged. **The route is untouched; what is
 gone is the belief that its kernel has been selected.**
 
-4-B gates `m_d − m_u` — the one honestly extractable quark quantity — and 69 %
-of the ³He mirror residual, and is rank 1 in the cheat sheet's near-term table
-because it needs no `SU(3)`.
+4-B gates `m_d − m_u` — the one honestly extractable quark quantity — and is
+rank 1 in the cheat sheet's near-term table because it needs no `SU(3)`.
+(**Corrected 2026-09-03.** This sentence read *"and 69 % of the ³He mirror
+residual"* — the figure is unsourced, and the single-nucleon self-energy
+channel cancels identically in a binding difference; the cheat sheet's 2026-08-25
+§4-B box records the withdrawal but this line was missed, and the cheat sheet's
+own claim that the figure survives "in no ledger" was therefore wrong. The
+2026-08-30 channel split in `qou-bn8e` — self channel does *not* merge, pairwise
+channel *does* — is recorded in the 2026-09-03 section below.)
 
 1. **The contest's winner is not an admissible kernel.** `H_coth` is scored on
    an *unsubtracted* `coth(α)`, which the round-2 **O2** obstruction excludes:
@@ -241,3 +248,83 @@ Bean `qou-dnm1` (`todo`) carries the void framing and four attack options for
 the absent grade; body appended, **status left for the author**. A prior agent
 reached this on `qou-mesont3` and it never propagated here — re-verified at
 source rather than taken from that bean.
+
+---
+
+## 2026-09-03 — currency refresh (session `qou-ggdk`, branch `claude/standard-model-terms-status-ftoejr`)
+
+This ledger recorded nothing after 2026-08-25. What landed 2026-08-26 → 09-03 on
+the SM surface, each verified at source this session (audit:
+`docs/audits/2026-09-03-sm-26-term-status.md`). **Parameter tiers moved: 0** —
+all eight `sm-params-*` blocks are byte-identical to their QA sidecars.
+
+- **4-A (N = 3).** Five sorry-free Lean files (2026-08-26, PRs #5810/#5819):
+  `Sym2GateFSTrichotomy` (real and quaternionic constructions excluded *as a
+  class* at dim 3), `SelfDualSectorConfinement` (the required property is
+  **non-self-duality**, now a pre-Sym² screening test), `OctonionicSu3RankObstruction`
+  (the λ_a ↔ e_a generator-identification route is an **eighth** scope-(b)
+  exclusion), `TrialitySelectionRule`, `FlavourColourDiscriminator` (**no
+  object-level gate separates colour from flavour** — item 4's "cannot both come
+  from one construction" is withdrawn in-paper). The T3g carrier `qou-y7vg` is
+  stalled at step 1: naming the base is a decision (three candidates, two sharing
+  the symbol `R_q`), and both prose carriers of its premise have no formal content
+  (`CategoricalMordellWeil := trivial`). Eightfold half of this surface now lives
+  in `docs/coordination/eightfold-n3-surface.md`.
+- **4-B (intra-nucleon EM self-energy).** The 2026-08-25 "cannot be the same
+  object as the mirror front" is **partially reversed** by channel (`qou-bn8e`,
+  2026-08-30, merged into `qou-o6ml`): the self channel `A·Σqᵢ²` does not merge
+  (cancels in binding), the pairwise channel `B·Σqᵢqⱼ` does. Derived ratio on
+  record: `h/[2]_q = tanh(ln q₀) = 0.10396371…` — what 4-B owes is the bond that
+  multiplies it. `ChargeQuadraticSumRule.lean` (sorry-free): the quadratic-charge
+  ansatz **saturates the octet** (bijection, det −1/3), so Coleman–Glashow could
+  not have failed; the same-branch "CG falls out parameter-free" claim was
+  retracted (`docs/audits/2026-08-29-coleman-glashow-retraction-and-octet-saturation.md`).
+- **4-C.** The in-paper `sm-gating-objects.md` (PR #5744, 2026-08-30) restated
+  the struck "third flavour grade reduces into 4-A" claim five days after #5770
+  struck it with `orderedContent_injective`. Fixed on this branch.
+- **α_EM.** Three rival constructions circulate: the form ladder the appendix
+  states (0.313 ppb cubic / 1.672 ppb quadratic at proton), the Chern–Simons
+  `.md` form the L2 dashboard actually consumes (−467.6 ppb, κ conjectural), and
+  the CS `.lean` (+2.59 ppb, κ = 8q, PSLQ-ruled-out per `qou-aymm`) — the block's
+  `.md` and `.lean` disagree by 470 ppb (`qou-aemx`, in-progress, high). The
+  quoted muon figure 80.51 ppb is at the **retired** pin A; at the live
+  CODATA-2022 anchor it is 81.04 ppb (verdicts unchanged). Both ladder producers
+  hardcode q₀ literals (no `q_parameter` import) and are invisible to three
+  anchor detectors. The EM holonomy germ is **LIVE** (non-sterile,
+  `docs/audits/2026-08-29-alpha-em-germ-viability-live.md`) — necessary, not
+  sufficient; `1/(8π)` stays phase-4 owner-gated.
+- **sin²θ_W.** `weinberg-angle-categorical.md` prints `cot θ_W ≈ 0.6594`;
+  `q₀⁻⁴ = 0.65878` — a wrong digit, not an anchor artefact (the appendix prints
+  0.659 correctly). The 0.127 % compute (`close_321_weinberg_gap.py`) is float64
+  end to end (sympy → `np.complex128` → `eigvals`, 127 raw-float64 fields) under
+  a witness declaring `compute_dps: 70`; verdict `inconclusive` unaffected. Its
+  Lean carrier `weinberg-angle-categorical.lean` is a **vacuous** class (four
+  `def … : Prop := True` + a global `trivial` instance), duplicated in
+  `categorical-higgs-mechanism.lean`, absent from the vacuity ledger. A **third**
+  circulating number, `1 − ([10]_q/[11]_q)² = 0.22998` (0.369 % off), lives only
+  in `docs/beta-decay-handoff.md`.
+- **α_s.** "No candidate formula" is stale as worded: `1/α_s = q^p[9]_q` exists
+  in `computations/alpha_k_selection_rule_conditional.py` (bracket writhe-forced,
+  `p` an undetermined 1-parameter family, only `α_s·α_W = α_EM` invariant,
+  conditional, scale-free), and a fit-shaped `α_s(M_Z) = q⁻¹/[7]_q ≈ 0.1181`
+  sits in `docs/beta-decay-handoff.md` — the exact thing `qou-5iaz` forbids
+  wiring. Neither is a derivation; the tier stays open.
+- **GMO deviation** is provably under-determined (`GellMannOkuboSecondOrder.lean`:
+  two equations, three unknowns, `g` absorbable) — cheat-sheet rank 3 drops
+  (`qou-s4h6`). **Quark charges** ±2/3, ∓1/3 are asserted, not derived; the braid
+  element as carrier is scope-(b) closed (`QuarkBraidChargeObstruction.lean`,
+  `qou-a468`). **`generation-completeness.lean`** is vacuous (`qou-0avp`).
+- **Tower vs order zero (owner question).** Every SM-facing result is a
+  leading-order or single-crossing statement; the eightfold results are
+  first-order octet breaking with the second order under-determined; the
+  central obstruction (`dim V = 2`) is invariant along the single-fibre tower,
+  and `su5-hypercharge-n3-gate.md` proves Wenzl levels are alternatives, not
+  stages. There is no all-orders SM derivation.
+- **🟧 Owner ruling (2026-09-03, verbatim):** *"The QOU should be on the full tower
+  in the derivations to the standard model — should make use of the full tower even
+  though what is observable is only order zero."* Every attack front in this ledger
+  is to be re-read against it: an order-zero-only construction is structurally
+  incomplete regardless of residual; per-term beans (`qou-bsu0`) carry a tower-status
+  line. The owner confirmed the same day that "full tower" means both — all `n`
+  and all orders in `q`; recorded in the audit above.
+

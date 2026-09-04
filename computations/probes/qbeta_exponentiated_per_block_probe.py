@@ -76,13 +76,28 @@ COMP = os.path.dirname(HERE)
 # Proton pin: live from the qou-substrate package (task instruction).
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(COMP), "tools", "qou-substrate", "python"))
-try:
-    from qou_substrate.constants import Q_50_DIGIT_STR as _Q_PROTON_STR
-except Exception:  # pragma: no cover — sandbox fallback, same documented value
-    _Q_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
-Q0_PROTON = mp.mpf(_Q_PROTON_STR)
-# Muon pin: the canonical 3-CAL computations-layer value (task-given).
-Q0_MUON = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# `q_parameter` lives in computations/substrate/ (bean qou-9ugp); the anchor
+# must be read from it so the witness resolves its stamp. Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import apply_q0_comparison  # noqa: E402
+
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+# The proton leg additionally had a silent `except` fallback to a hand-typed
+# copy of the same value. Same number today, and a second place for it to go
+# stale; a pin that cannot be established is an error, not a default.
+Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_MUON = q_muon_at(50)
 
 # Empirical c_3 targets (registry ≈ −2.02 muon / −2.07 proton):
 #   proton: qbeta_root_of_unity_probe.py / c3-rigidity audit (proton-pinned)
@@ -412,6 +427,15 @@ def main():
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             out, script_path=__file__, engine=None, q0_anchor=None)
+        # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+        # pins deliberately, so no anchor list can classify it and it was going
+        # out unstamped. The reason string is kept ASCII on purpose: this
+        # witness is written with json.dump, whose ensure_ascii=True turns any
+        # non-ASCII into a \\uXXXX escape and collapses the shape guard.
+        apply_q0_comparison(out,
+            muon=Q0_MUON, proton=Q0_PROTON,
+            reason='compares the exponentiated per-block c_3 against the empirical target at BOTH pins; both pins are read on purpose and each has its own target',
+        )
         json.dump(out, f, indent=2)
     print(f"\n  witness -> {wout}")
     return out

@@ -38,10 +38,24 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-04). Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 # Anchors and c₃ values — 2026-07-06 cross-anchor verdict (post-bug-fix compute).
-Q_PROTON = mp.mpf("1.10997858275138")
-Q_MUON = mp.mpf("1.10997859555733")
+# Both pins read BY NAME (bean qou-9ugp, 2026-09-04). They were 15-digit
+# TRUNCATIONS, and this file's whole output is their DIFFERENCE -- the mu-p
+# tension -- so the truncation landed directly on the reported quantity. The
+# muon leg was additionally the RETIRED pin A (superseded 2026-08-22).
+# Measured: the truncated legs give 11.5372 ppb against a true 11.6141 ppb,
+# understating the tension by 0.67%. Exception E1: both pins on purpose.
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_MUON = q_muon_at(50)
 C3_PROTON = mp.mpf("-2.06934257711516784")
 C3_MUON = mp.mpf("-2.02018812814143946")
 
