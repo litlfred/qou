@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-09-03T04:21:57Z
+updated_at: 2026-09-04T09:17:15Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1140,3 +1140,51 @@ directly, prove the symmetric-difference decomposition by `ext`, and finish with
 Non-vacuity is committed in-file as `decide` guards rather than checked once:
 the criterion is false for the collapsing `s₀ * s₀`, true for the reduced
 `s₀ * s₁`, and the defect there is genuinely 2. Both sides of the iff occur.
+
+## Mathas 3.13 length half COMPLETE (2026-09-04)
+
+Four PRs, all merged, all sorry-free:
+
+| PR | result |
+|---|---|
+| #6444 `a2edbcffb7` | `length_mul_eq_add_iff` — additivity iff no inversion undone (a Mathlib gap) |
+| #6527 `fd7f900170` | `d(t)`, the tableau<->perm bijection, `refTab` closed form, the length bridge |
+| #6557 `2c37ac54b1` | `g_{ij}` as an interval ROTATION, descent nodes, additivity AT a node |
+| #6598 `5ff6492fac` | descent-node EXISTENCE; `exists_garnir_length_additive` composes both halves |
+
+**Two findings that made it tractable, both from measuring BEFORE formalizing:**
+
+1. **`g_{ij}` is a cyclic rotation of the label interval `[a,b]` by `j+1`**, not
+   a placement procedure (108/108, all partitions n=3..7). A rotation is
+   invertible by construction, so bijectivity was FREE — no surjectivity
+   obligation, no sorting argument.
+2. **Additivity holds at EVERY descent node**, not just the first (3685/3685
+   over 1789 tableaux, n=3..6). So the theorem needs NO minimality hypothesis —
+   stronger than Mathas states AND easier to prove. Mathas asks for 'some'; the
+   prior corpus probe reported 'the first'; both understate it.
+
+**STABLE — the criterion.** `length_mul_eq_add_iff` reduces additivity to
+inversion containment, which unfolds (via the rotation's inversion set) to
+`t(i,c) > t(i+1,c')` for c>=j, c'<=j, which row-standardness chains out of the
+single descent inequality. That chain IS the proof.
+
+**TRAP — omega holds `rowLen i + 1 - (j+1)` as ONE OPAQUE ATOM**, so
+`rowPrefix_succ` never reaches the constraint set. Rewrite the Nat subtraction
+first. Diagnosed with `trace_state`.
+
+**TRAP — `set x := ...` hides the defining equation from omega/rw.** Hit twice
+(#6557 `p.1 = rowPrefix i + c`; #6598 the pattern lemmas). Use an explicit
+`obtain <c, hc> : exists c, ... = ... + c`, or helper lemmas over the patterns.
+
+**TRAP — `subst h` FAILS when both sides are function applications** (e.g.
+`colPattern t l = colPattern t l'`). Route the transport through a lemma whose
+variable is a genuine variable; there subst fires.
+
+## Next front OPENED: PR #6612 (parabolic pairing)
+
+`HeckeCellular` names its own blocker: x_lambda for a general Young subgroup
+needs the w <-> w.s_i pairing over `Perm (Fin (n+1))`, and says 'the blocker is
+the combinatorics, not the algebra'. #6612 supplies that: `length_swap_dichotomy`
+(exactly one of the pair is longer, by one), `mulSwap` as a fixed-point-free
+involution, and the ascending/image split. x_lambda itself is NOT defined and the
+eigenvector property is NOT proved.

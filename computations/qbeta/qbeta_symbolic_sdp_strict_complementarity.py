@@ -195,9 +195,36 @@ def build_symbolic_t_and_G(q):
 
 
 def sym_to_float(expr, q, q0):
-    """Evaluate a q-symbolic expression at q_0 to mpmath precision, then float."""
+    """Evaluate a q-symbolic expression at q_0 to float64. DISPLAY/DIAGNOSTIC ONLY.
+
+    Kept for the numpy-only diagnostics below (eigenvalues, the f64
+    cross-check). It must NOT feed the LP -- see `sym_to_str`, which is what
+    the solver now gets.
+    """
+    return float(sym_to_str(expr, q, q0))
+
+
+def sym_to_str(expr, q, q0, dps: int = 50):
+    """Evaluate a q-symbolic expression at q_0 and return a `dps`-digit STRING.
+
+    Added 2026-09-04. `sym_to_float` computed `sp.N(val, 50)` -- fifty digits --
+    and then threw thirty-four of them away with `float()`. Those float64 values
+    were the LP's inputs, so an MPFR solver running at 167 bits (~50 dps) was
+    solving a float64 problem to 46 digits. AGENTS.md: "A float64 input poisons
+    the whole result."
+
+    The full-precision boundary already existed and this producer was not using
+    it. `lp_dual_solver._solve_operator_selection_lp_clarabel` documents it:
+    "STRINGS IN, not just strings out. Callers may pass decimal strings (or
+    mpmath mpf) for `t`, `G` and `n_target` ... and they now reach the MPFR
+    solver intact. Passing np.ndarray still works and still enters as f64, as
+    before." This producer passed np.ndarray.
+    """
     val = expr.subs(q, sp.Float(str(q0), 60))
-    return float(sp.N(val, 50))
+    # str() of a sympy Float at `dps` IS the decimal string the MPFR solver
+    # wants. (sp.nstr does not exist -- that is mpmath's API, and reaching for
+    # it here failed loudly on the first run, which is the good kind.)
+    return str(sp.N(val, dps))
 
 
 def main() -> int:
@@ -257,11 +284,24 @@ def main() -> int:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — anchor-aware
     q0 = mp.mpf(Q_50_DIGIT_STR)
 
+    # FULL-PRECISION inputs for the LP: 50-digit decimal strings, which the
+    # clarabel-MPFR backend ingests intact (see sym_to_str). The float64
+    # arrays below are retained for the numpy-only DIAGNOSTICS (eigenvalues,
+    # conditioning) and are no longer what the solver sees.
+    t_str = [sym_to_str(t_sym[i], q, q0) for i in range(6)]
+    G_str = [[sym_to_str(G_sym[i][j], q, q0) for j in range(6)] for i in range(6)]
+    # Symmetrize at full precision: the two off-diagonal entries come from
+    # independent simplifications of the same symbolic quantity, so they can
+    # differ in the last digits. mpmath, not numpy -- symmetrizing in f64
+    # would re-narrow exactly what sym_to_str preserved.
+    _Gm = [[mp.mpf(G_str[i][j]) for j in range(6)] for i in range(6)]
+    G_str = [[mp.nstr((_Gm[i][j] + _Gm[j][i]) / 2, 50) for j in range(6)]
+             for i in range(6)]
+
     t_num = np.array([sym_to_float(t_sym[i], q, q0) for i in range(6)])
     G_num = np.array(
         [[sym_to_float(G_sym[i][j], q, q0) for j in range(6)] for i in range(6)]
     )
-    # Symmetrize tiny float asymmetry from independent simplifications.
     G_num = 0.5 * (G_num + G_num.T)
 
     # ---- 2b. Frobenius Gram definiteness diagnostic ---------------------
@@ -280,10 +320,19 @@ def main() -> int:
     # convex selection) rather than the LP min-trace objective: they are
     # DIFFERENT selection principles. Strict complementarity of the LP gives
     # a unique ACTIVE SET, but the LP optimum's magnitude is not the Q_β scale.
-    G_eigs = sorted(np.linalg.eigvalsh(G_num).tolist())
+    # mpmath `eigsy` at the 50-dps compute floor, NOT np.linalg.eigvalsh:
+    # the Gram entries reach here as 50-digit decimal strings (`_Gm`), and
+    # feeding them through numpy would narrow them to f64 before the
+    # eigensolve -- the definiteness verdict below would then be read off
+    # 16 digits of a 50-digit matrix.
+    _Gsym = mp.matrix(6, 6)
+    for _i in range(6):
+        for _j in range(6):
+            _Gsym[_i, _j] = mp.mpf(G_str[_i][_j])
+    G_eigs = sorted(mp.eigsy(_Gsym, eigvals_only=True))
     gram_indefinite = G_eigs[0] < -1e-9
     print("[2b] Frobenius Gram G_{ij}=τ_M(b_i b_j) definiteness:")
-    print(f"     eigenvalues = {[f'{e:+.4f}' for e in G_eigs]}")
+    print(f"     eigenvalues = {[f'{float(e):+.4f}' for e in G_eigs]}")
     print(f"     INDEFINITE (has negative eigenvalue): "
           f"{'YES' if gram_indefinite else 'NO'}")
     print("     ⇒ LP min-trace objective is degenerate; T_β magnitude is NOT")
@@ -300,7 +349,7 @@ def main() -> int:
     # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
     # makes a missing binary an error rather than a changed answer.
     # Bean `qou/ftuv`.
-    res1 = solve_operator_selection_lp(t_num, G_num, 1.0, backend="clarabel")
+    res1 = solve_operator_selection_lp(t_str, G_str, "1.0", backend="clarabel")
     print(f"    feasible       = {res1.feasible}")
     print(f"    x*             = {[f'{x:+.6f}' for x in res1.x_star]}")
     print(f"    y0_star        = {res1.y0_star:+.8f}")
@@ -320,22 +369,29 @@ def main() -> int:
     # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
     # makes a missing binary an error rather than a changed answer.
     # Bean `qou/ftuv`.
-    res_a = solve_operator_selection_lp(t_num, G_num, n_a, backend="clarabel")
+    res_a = solve_operator_selection_lp(t_str, G_str, n_a, backend="clarabel")
     # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
     # whether the Rust binary happens to be built, so the same script
     # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
     # makes a missing binary an error rather than a changed answer.
     # Bean `qou/ftuv`.
-    res_b = solve_operator_selection_lp(t_num, G_num, n_b, backend="clarabel")
+    res_b = solve_operator_selection_lp(t_str, G_str, n_b, backend="clarabel")
     if res_a.feasible and res_b.feasible:
-        dir_a = np.array(res_a.x_star) / n_a
-        dir_b = np.array(res_b.x_star) / n_b
-        dir_diff = float(np.max(np.abs(dir_a - dir_b)))
+        # Full-precision x*: the solver returns decimal-string companions
+        # (`x_star_str`); `np.array(res.x_star)` would drop them to f64.
+        _xa = [mp.mpf(str(v)) for v in
+               (getattr(res_a, "x_star_str", None) or res_a.x_star)]
+        _xb = [mp.mpf(str(v)) for v in
+               (getattr(res_b, "x_star_str", None) or res_b.x_star)]
+        _na, _nb = mp.mpf(str(n_a)), mp.mpf(str(n_b))
+        dir_a = [v / _na for v in _xa]
+        dir_b = [v / _nb for v in _xb]
+        dir_diff = max(mp.fabs(a - b) for a, b in zip(dir_a, dir_b))
         same_active = res_a.active_set == res_b.active_set
         scale_invariant = dir_diff < 1e-7 and same_active
         print(f"    active_set(n_a={n_a:.4f}) = {res_a.active_set}")
         print(f"    active_set(n_b={n_b:.4f}) = {res_b.active_set}")
-        print(f"    max|x*(n_a)/n_a − x*(n_b)/n_b| = {dir_diff:.2e}")
+        print(f"    max|x*(n_a)/n_a − x*(n_b)/n_b| = {float(dir_diff):.2e}")
         print(f"    DIRECTION is scale-invariant (S-independent): "
               f"{'YES' if scale_invariant else 'NO'}")
     else:
@@ -373,11 +429,13 @@ def main() -> int:
     _sub = _qphys.compute_substrate_quantities()
     Q_A = _sub["Q_A"]          # MeV, q-rational × m_e
     Q_AME = _sub["Q_AME"]      # CODATA m_n − m_p − m_e (the Q_β target)
-    qa_rel = float(mp.fabs(Q_A - Q_AME) / Q_AME)
-    qa_ppb = qa_rel * 1e9
+    # mpf end to end -- float() below is DISPLAY ONLY, inside the f-strings.
+    qa_rel = mp.fabs(Q_A - Q_AME) / Q_AME
+    qa_ppb = qa_rel * mp.mpf(10) ** 9
     print(f"     Q_A(q_0)   = {float(Q_A):.9f} MeV  (substrate-derived)")
     print(f"     Q_β(CODATA)= {float(Q_AME):.9f} MeV")
-    print(f"     |Q_A − Q_β|/Q_β = {qa_rel*100:.4f}%  = {qa_ppb:.3e} ppb")
+    print(f"     |Q_A − Q_β|/Q_β = {float(qa_rel)*100:.4f}%"
+          f"  = {float(qa_ppb):.3e} ppb")
     print("     ⇒ the Q_β SCALE is supplied CODATA-Q_β-free by Q_A to ~0.17%;")
     print("       the S-independent c_k ladder refines it. But hitting the")
     print("       7.8 ppb L2 target requires the c_k ABSOLUTE normalisation,")
@@ -435,37 +493,74 @@ def main() -> int:
     wb.add_data("nf_names", nf_names)
     wb.add_data("t_symbolic", [str(sp.together(t_sym[i])) for i in range(6)])
     wb.add_data("G_symbolic_diag", [str(sp.together(G_sym[i][i])) for i in range(6)])
-    wb.add_data("t_at_q0", [float(x) for x in t_num])
+    # `t_str` (50-digit decimals), not `t_num` (f64). t_num exists only for the
+    # numpy diagnostics; serializing it published the narrowed copy of a value
+    # this producer already had exactly.
+    wb.add_data("t_at_q0", list(t_str))
     wb.add_data("t_equals_1739_A", bool(match_1739) if match_1739 is not None else None)
     # LP/SDP first-class-infra REQUIRED fields (primal + dual).
-    wb.add_data("x_star", list(res1.x_star))
-    wb.add_data("y0_star", float(res1.y0_star))
-    wb.add_data("y_star", list(res1.y_star))
+    #
+    # These were float()-cast until 2026-09-04, which is the truncation
+    # `provenance()`'s own docstring says keeps recurring in producers: "Most
+    # cherry-pick the numeric fields off the result and `float()`-cast each
+    # one". The f64 copies were REDUNDANT -- provenance(res1) already spreads
+    # the exact `*_str` companions into the same row, so the witness carried
+    # both an exact and a narrowed copy of every dual, and the narrowed one
+    # under the name a reader reaches for first.
+    #
+    # Serialized from the solver's own decimal strings, NOT by stringifying the
+    # f64 (AGENTS.md: "do NOT stringify the float" -- that would read as
+    # measured while carrying 16 digits). The validator accepts str values.
+    def _pv(attr):
+        v = getattr(res1, attr + "_str", None)
+        return str(v) if v is not None else float(getattr(res1, attr))
+
+    wb.add_data("x_star", [str(v) for v in (getattr(res1, "x_star_str", None) or res1.x_star)])
+    wb.add_data("y0_star", _pv("y0_star"))
+    wb.add_data("y_star", [str(v) for v in (getattr(res1, "y_star_str", None) or res1.y_star)])
     wb.add_data("active_set", list(res1.active_set))
-    wb.add_data("primal_obj", float(res1.primal_obj))
-    wb.add_data("dual_obj", float(res1.dual_obj))
-    wb.add_data("duality_gap", float(res1.duality_gap))
+    wb.add_data("primal_obj", _pv("primal_obj"))
+    wb.add_data("dual_obj", _pv("dual_obj"))
+    wb.add_data("duality_gap", _pv("duality_gap"))
     # Solver, precision, and full-precision decimals behind the f64 above.
     for _k, _v in provenance(res1).items():
         wb.add_data(_k, _v)
     wb.add_data("direction_scale_invariant", bool(scale_invariant))
-    wb.add_data("direction_max_diff_across_scales", float(dir_diff))
-    wb.add_data("frobenius_gram_eigenvalues", [float(e) for e in G_eigs])
+    wb.add_data("direction_max_diff_across_scales", mp.nstr(dir_diff, 50))
+    wb.add_data("frobenius_gram_eigenvalues", [mp.nstr(e, 50) for e in G_eigs])
     wb.add_data("frobenius_gram_indefinite", bool(gram_indefinite))
-    wb.add_data("Q_A_substrate_MeV", float(Q_A))
-    wb.add_data("Q_beta_CODATA_MeV", float(Q_AME))
-    wb.add_data("Q_A_vs_Qbeta_rel_err", qa_rel)
-    wb.add_data("Q_A_vs_Qbeta_ppb", qa_ppb)
+    wb.add_data("Q_A_substrate_MeV", mp.nstr(Q_A, 50))
+    wb.add_data("Q_beta_CODATA_MeV", mp.nstr(Q_AME, 50))
+    wb.add_data("Q_A_vs_Qbeta_rel_err", mp.nstr(qa_rel, 50))
+    wb.add_data("Q_A_vs_Qbeta_ppb", mp.nstr(qa_ppb, 50))
     wb.add_data("S_cancels_from_ck_directions", s_cancels_from_directions)
     wb.add_data("S_cancels_from_Qbeta_scale_via_Q_A_to_0p17pct", True)
     wb.add_data("S_cancels_from_Qbeta_subppb_normalisation", s_cancels_from_magnitude)
     wb.add_data("verdict", verdict)
 
+    # The gap below is the SOLVER's own reported number. It is checkable
+    # rather than merely trusted: `QOU.Mathlib.LPDuality`
+    # (content/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean)
+    # proves, sorry-free and with NO feasibility hypothesis,
+    #
+    #   Σ_j c_j x_j − Σ_i b_i y_i
+    #     = Σ_j (c_j − (Aᵀy)_j)·x_j  +  Σ_i y_i·((Ax)_i − b_i)
+    #
+    # (`duality_gap_decomposition`), plus the bound form
+    # `duality_gap_le_of_residual_bounds`. Recomputing the two residual sums
+    # here from the emitted x*/y* would certify the gap independently of the
+    # solver. NOT wired: the mapping from this LP's packed constraint block
+    # ({Σx = n_target, Gx ≥ 0, x ≥ −M_bound}) onto (A, b, c) — and the sign
+    # convention y* is returned in — lives in the SHARED solver, not here, and
+    # a wrong mapping would fail for a bookkeeping reason that reads as a real
+    # duality failure. Tracked as bean `qou-fr4d`.
     wb.add_assertion(
         name="lp_strong_duality",
-        computed=float(res1.duality_gap),
-        expected=0.0,
-        tolerance=1e-6,
+        # STRINGS: add_assertion coerces with float() for `passed`, but the
+        # recorded value stays at solver precision (qou-t0rf convention).
+        computed=_pv("duality_gap"),
+        expected="0",
+        tolerance="1e-6",
         source="operator-selection LP strong duality |primal - dual|",
     )
     wb.add_assertion(
