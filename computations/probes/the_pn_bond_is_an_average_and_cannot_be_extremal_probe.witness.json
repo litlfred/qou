@@ -1,0 +1,97 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T07:09:08.748661+00:00",
+  "commitSha": "70e60d642735e2fa3adc2bd0ea87631453ea6a65",
+  "assertions": [
+    {
+      "name": "d_pn is exactly the stated convex combination of d_pp and d_nn (sympy)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "tr_2 being affine in d, z + d_pn lies STRICTLY between z + d_nn and z + d_pp",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L = -log(z+d) is decreasing in d, so L_pp < L_pn < L_nn is forced",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "delta is nowhere near the value that would break convexity, so the ordering is not tunable by q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the one system that binds is assigned the MIDDLE bond constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the deuteron itself is overshot by ~1.27x — the same defect seen a second way",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the block's 6.29 MeV is reproduced, so the reading of it is right",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "the_pn_bond_is_an_average_and_cannot_be_extremal_probe",
+  "scriptFile": "the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py",
+  "scriptHash": "b237960f7b0a",
+  "scriptCommitSha": "f815e6a63f2be20c36302c525de23d8d238c62fa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py"
+  },
+  "description": "The pn interface letter of convention D is exactly the convex combination (1/2 + delta/4) d_pp + (1/2 - delta/4) d_nn of the pp and nn letters, verified symbolically and at 200 bits. Since the two-strand trace is affine in the offset and L = -log(z+d) is strictly decreasing in it, L_pp < L_pn < L_nn is forced for every q and every delta in (0,2); delta at q0 is 0.0014 and would have to reach 2 (q = 3.458) to break convexity. But of the three two-body systems only pn binds, so a binding-ranking constant must put pn at an extreme, and a convex combination never is. The inversion measured at A=2 is therefore definitional, not numerical and not tunable. The corpus's np preference lives in the (2,2)|-4 Wigner term (6.2894 MeV, reproduced), which has no analogue at A=2. Caveat recorded: this L has no spin, and the bound/unbound split is a spin effect; the ORDER is not.",
+  "data": {
+    "d_pp": "0.000000000000",
+    "L_pp": "0.489899384255",
+    "B_pp_MeV": "2.050710",
+    "d_pn": "-0.104458247770",
+    "L_pn": "0.676821592386",
+    "B_pn_MeV": "2.833163",
+    "d_nn": "-0.209060298796",
+    "L_nn": "0.907262265533",
+    "B_nn_MeV": "3.797783",
+    "pn_fraction_between_nn_and_pp": "0.500343928",
+    "delta_at_q0": "0.0013757108",
+    "q_at_which_delta_reaches_2": "3.458099",
+    "deuteron_overshoot": "1.273606",
+    "wigner_2_2_MeV": "6.289300"
+  },
+  "caveats": [
+    "This arc's L carries no spin. The deuteron binds in the 3S1 triplet channel and every 1S0 two-body system is unbound, so a spinless bond constant cannot separate bound from unbound and is not claimed to. The finding is the ORDER, which the absence of spin does not explain.",
+    "wigner-np-pairing and reeb-pn-magnitude-criticality are read, not re-derived, and neither is contradicted. Nothing here concerns A >= 3, where other channels exist.",
+    "The alpha = m_e/(q0(q0-1)) normalisation is the sibling's, taken as-is; the ordering conclusion is independent of it, since alpha > 0 is a common factor."
+  ]
+}

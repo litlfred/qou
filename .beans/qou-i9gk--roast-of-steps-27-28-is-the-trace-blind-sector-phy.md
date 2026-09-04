@@ -119,7 +119,7 @@ neither of this session's candidates.
 
 ---
 
-## Hole 1 SETTLED (2026-09-01) — and it reduces to `qou-n1dj`
+## Hole 1 SETTLED (2026-09-01) — the blind sector is unphysical, full stop
 
 [`qbeta_blind_sector_is_the_tl_kernel_probe.py`](../computations/qbeta/qbeta_blind_sector_is_the_tl_kernel_probe.py)
 (4/4).
@@ -135,8 +135,20 @@ shows convention D is forced by the open premise `MassTraceIsFibreCategorical`
 (bean `qou-n1dj`) — the same premise that empties the blind sector. Measuring in
 D and reading D's zeros as hidden information asserts the premise and its
 negation at once. So hole 1 does **not** resolve to yes/no: it resolves to
-*"Step 27's headline is conditional on `qou-n1dj`, and inconsistent with itself
-if the premise holds."*
+*"Step 27's headline is inconsistent with itself."* And — **corrected on a second
+pass the same day** — not merely conditional either:
+
+**And the premise is NOT open.** `qou-n1dj` is **resolved** — its status is
+`todo` only because closing a bean is a human action (AGENTS.md §4a), and
+`qou-cds1` itself already recorded this at line 4285. Verified here:
+`lem:feynman-eigenbasis-decomposition` **defines** the mass channel as
+`V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ` — the row cap is **in the index set** —
+and `FibreDimensionForcesTL.lean` (sorry-free) proves `z·[N]_q = q^N`, so a
+two-dimensional fibre leaves **no residual trace freedom**.
+`MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+Schur–Weyl development exists in this tree; its content is already asserted by
+the mass chapter. **So the blind sector is unphysical FULL STOP, and Step 27's
+headline is false rather than conditional.**
 
 **Bonus, and a cleaner kill than the wall argument.** `N_min(λ) = ℓ(λ)`, so
 `0.0252506` (in `(3,2,1)`) needs `N ≥ 3` and `0.0195531` (in `(2,2,1,1)`) needs
@@ -176,7 +188,7 @@ with `δ` the derived flavour split at CAL-3's order `h³`.
 **Withdrawn:** that it links the p–n bond to the EM sector. It links it to the
 bar involution, which every quantity in the algebra is linked to.
 
-- [x] Hole 1 — the blind sector is the TL kernel; reading reduces to `qou-n1dj`.
+- [x] Hole 1 — the blind sector is the TL kernel; unphysical at `N = 2` FULL STOP (`qou-n1dj` is resolved, not open — corrected second pass).
 - [x] Hole 2 — settled against Step 28 by `qou-brng`.
 - [x] Residual — the tanh/EM match is formal.
 
@@ -202,3 +214,28 @@ structural finding (deficit `(A−1)(A−2)/2`, zero at `A=2`, `22.54 %` orderin
 spread at `A=3`) stands. And Step 27's blind-sector characters are a measurement
 of **what an `N = 3` extension would carry**, which is what `qou-fvzm` says the
 super-pairwise binding term requires.
+
+
+---
+
+## 🛑 Third correction (2026-09-01) — the `N = 3` reading is withdrawn too
+
+**🛑 THIRD CORRECTION, same day — the last positive goes too.** The reading
+*"(3,2,1) is an ℓ = 3 block carrying the largest binding character, so this
+measures what an `N = 3` extension would carry"* cited **`qou-fvzm`'s REOPENED
+paragraph**. That bean is **`status: completed`**, and its line 18 closes
+exactly that paragraph: *"my reopened form … is closed — the route is
+**UNAVAILABLE**, not merely hard"*, and *"**THE MISSING ADDITIVE TERM IS NOT A
+HECKE-TRACE OBJECT AT ALL**."* Moving to `N = 3` re-weights channels the mass
+pipeline already evaluates (`y_(2,1)/y_(3) = q[2]_q[N−1]_q/[N+2]_q` differs at
+every `q`), so it is a **regression risk, not an opening**. The surviving
+candidates that bean names are the ones that were never trace objects — the
+extended-Bloch route (`qou-985x`) and the atomic-braid→nucleus map (`qou-imcd`).
+>
+**So Steps 27–28 retain no positive claim about the blind sector at all.** What
+stands from that arc is the construction `Δ_bind = P·(I−1)·N` (validated to
+`5.4·10⁻¹⁵`, genuinely `H₆`-valued) and the chain-vs-all-pairs structural
+finding.
+
+Found by a dispatched audit of the Standard-Model work against the full tower;
+verified against `qou-fvzm` directly rather than taken on the agent's word.

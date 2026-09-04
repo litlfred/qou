@@ -46,7 +46,11 @@ decoy (~726 mathlib, QOU = 0). 2026-09-03, same repo, different container: root
 mathlib 6990 but the QOU oleans were ONLY in the per-paper tree (942, 168 of
 them rebuilt lean-direct 2026-08-29). **Look at both.** An orchestrator-supplied
 `LEAN_PATH.txt` may carry RELATIVE `.lake/packages/…` entries — valid only with
-cwd = repo root; absolutise them (cwd resets between calls).
+cwd = repo root; absolutise them (cwd resets between calls). 2026-09-04, a third
+container: per-paper **1236**, root **9721**, with `Data/Real/Basic.olean` MISS
+under the per-paper tree and present at the root — the mirror image of the
+2026-09-03 reading, and reading only one of them nearly triggered a redundant
+1.6 GB fetch.
 
 ## TRAP — MATHLIB oleans split across the two trees; "object file does not exist" ≠ absent
 
@@ -92,6 +96,14 @@ stale, rebuilds from source and deletes the restore, silently. Measured
 oleans written in ten minutes **zero** were QOU/UGB/Fred2005. Guard:
 `[ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"`.
 (The marker is absent in some containers; its absence is NOT proof of traces.)
+
+## STABLE — cache shortcuts and hazards → `restore-shortcuts.md`
+
+Before fetching 1.6 GB, check whether a **leaked `/tmp/tmp.*`** already IS the
+cache (it was, 2026-09-04). Run the restore **serially** — the global
+`FETCH_HEAD` makes a concurrent fetch silently truncate the tarball. And a
+partial restore is normal: 2970 of Mathlib's 6996 modules, so outside that cone
+`object file … does not exist` is a gap, not a defect. Detail in the sibling.
 
 ## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
 

@@ -75,3 +75,17 @@ TWO DEFECTS FOUND ON THE WAY (independent of the above):
   * L_nn (1.237) > L_pp (0.695) > L_pn (0.534) makes the p-n bond the WEAKEST, yet the deuteron binds and the dineutron does not. Nothing breaks today (the deuteron is the single-L_pn case and comes out exact), but the ordering should be understood before coordination multiplies these up.
 
 Also: B_gate and B_vol both report 7.58 MeV for a FREE nucleon, where B_AME = 0 by definition. The 7.58 is a_V, the per-nucleon saturation constant, and deriving it is legitimate — but printing it in a binding column against zero is a category error, and makes err gate read 0.00 as though it were a perfect score. Suppress to em-dash at A=1.
+
+## 2026-09-04 — demoted: coordination geometry is NOT the dominant gap
+
+Measured against the additive law's residual over 2548 AME nuclides
+(`qbeta_tower_log_z_and_roast_probe.py`): correlation with the surface shape
+`A^(-1/3)` is **-0.178**, against **-0.804** for `(N-Z)^2/A^2`. And three
+different edge sets — the canonical chain, the alternating chain, and the
+renormalised all-pairs graph — land within 0.6 % of one another, so the bond
+GRAPH is not where the error lives.
+
+The bond COUNT is doing all the work that works (layout-free `(A-1)` scores
+p5-p95 1.1809, better than any isospin-resolved variant), which is consistent
+with `qou-zryq` — the inter-nucleon block encodes a count, not a coordination
+graph. Top lead is now `qou-ubsl`.

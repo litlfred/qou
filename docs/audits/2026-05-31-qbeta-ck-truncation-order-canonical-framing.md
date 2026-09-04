@@ -120,8 +120,31 @@ Taylor coefficient of a convergent series is **q₀-anchor-independent**.
   (proton-normalised). **NEAR-MATCH.** The `0.49%` / `2.98%` that stood here
   are against the superseded muon `c_3 = −2.0097`; see the correction above.
 - `c_4, c_5` — inherit c_3's near-match status; the **N=4→N=5
-  non-monotonicity** (+0.055 → +0.63 ppb) is the experimental signature:
-  a convergent series with *exact* c_k would be **monotone**.
+  non-monotonicity** is the experimental signature. **The conclusion stands;
+  the reason once given here did not, and the figures are frame-scoped
+  (corrected 2026-09-04).**
+
+  - *The reason.* "A convergent series with *exact* c_k would be **monotone**"
+    is **not a correct general statement**. Partial sums of a convergent
+    series need not have monotonically decreasing residuals unless the terms
+    are sign-definite and decreasing, which is nowhere established for this
+    ladder. The sound form of the argument is the **size mismatch**: for an
+    exact series the residual after truncating at `N` tracks the *first
+    omitted* term, so the N=4 residual should sit near `|c_5·u^5| = 0.577`
+    ppb. In convention C it measured **0.055 ppb, ~10× smaller** — an
+    anomalously good landing, which is the fit signature.
+  - *The figures.* `+0.055 → +0.63 ppb` are **convention-C**.
+    `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
+    substrate module is on, and under **D** the same table prints
+    `+600999.7384 → +601000.3155` — the prose in that script disagreed with
+    its own printed table by six orders of magnitude until it was made to
+    read the figures off the table (2026-09-04).
+  - *What is frame-robust.* The **step**, not the baseline: `+0.575` ppb in C
+    against `+0.577` ppb in D. The reversal itself therefore survives the
+    convention change; only the offset moves. Re-deriving the ladder under D
+    is bean `qou-cds1` — research, not a z-swap. Note that
+    `qbeta_ck_cache.py` **refuses to run** under D for this reason and
+    `qbeta_ck_truncation_order_analysis.py` does not.
 
 Per the #1479 discipline lock: *"q₀-dependent residuals are evidence of
 form-fitting at the test q₀."* **Correct.** But the conclusion that
