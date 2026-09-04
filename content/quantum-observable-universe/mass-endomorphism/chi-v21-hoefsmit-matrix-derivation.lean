@@ -302,39 +302,50 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
     closed form recorded in `per-wedderburn-block-ck.witness.json`.
 
     **STATED, NOT PROVED** (AGENTS.md §"Zero-sorry default",
-    state-and-queue). This is the piece the file's §Status already
-    declares deferred, and the tactic script that stood here did not
-    prove it — it merely could not be seen to fail, because it hit the
-    200 000-heartbeat `whnf` timeout first. Raised to 4 000 000 it
-    completes elaboration in 28 s and reports the real failure:
+    state-and-queue) — but the reason changed on 2026-09-04, and the
+    account that stood here was wrong in the way that mattered.
 
-        rewrite failed: Did not find an occurrence of the pattern
-          √(hoefsmit_v21_b_sq q) ^ 2
+    **It used to be false.** Until the `d_1`/`d_2` transposition was fixed
+    (see `hoefsmit_v21_d1`), the matrices in this file gave
 
-    i.e. `ring_nf` had already normalised the square away, so the
-    `rw [h_sqrt]` step never applied.
+        chi_n - chi_p = -(q-1)(q+1)(q⁴+1)(q²-q+1)(q²+q+1) / (4q⁵)
 
-    **How far the proof does get**, recorded so the next attempt does
-    not start from nothing. With `b := √(hoefsmit_v21_b_sq q)` set
-    before unfolding, `simp only [List.foldl, Matrix.trace_fin_two]`
-    followed by `field_simp` reduces the goal to a polynomial identity
-    in `q` and `b` modulo the single quadratic relation
+    which is the right-hand side below multiplied by `(q⁴+q²+1)/q²`. No
+    proof existed to be found, and the previous note here — "the claim is
+    exactly the one sympy verifies" — was not true of *these definitions*.
+    The closed form was never in doubt: expanded at `q = 1+ε` it matches
+    the ε-coefficients in `_deprecated/per-wedderburn-block-ck.witness.json`
+    exactly, while the transposed matrices do not.
 
-        b² = (q⁴ + q² + 1) / (q² + 1)²
+    **It is now true, and what remains is a compute problem, measured.**
+    The proof reaches a fully expanded scalar goal — `simp only` over the
+    definitions and `List.foldl_cons`, then `Matrix.mul_fin_two` and
+    `Matrix.trace_fin_two` over 2×2 literals — and then `field_simp`
+    **exhausts 2 000 000 heartbeats** on it. That is not a slow machine and
+    not a missing lemma: an 11-fold product of 2×2 matrices in `q`, `q⁻¹`
+    and `b` expands to an expression `field_simp` cannot clear at this size.
 
-    (`hoefsmit_v21_b_sq_rational`). What is missing is the elimination
-    step: `nlinarith` does not close it, and `linear_combination`
-    needs the polynomial coefficient of that relation, which is not
-    guessable by hand at degree 11. The tractable route is the one the
-    `@[deprecated]` notice on `sigma1_v21_legacy` already names —
-    restate over `sigma1_v21_gen d1 d2 b` with `b² = d1·d2 + 1` as an
-    explicit hypothesis (Tier 2), so the identity becomes a polynomial
-    one in a free `b` and the relation can be applied by `ring`-level
-    rewriting rather than by search.
+    **The route that avoids the blow-up is structural, and it is short.**
+    Every index-0 crossing is DIAGONAL, so the first seven factors collapse
+    before any expansion:
+
+        sigma_0 - (q-q⁻¹)·I     = diag(q⁻¹, -q)              (= sigma_0⁻¹)
+        sigma_0 - (q-q⁻¹)/2·I   = ((q+q⁻¹)/2) · diag(1, -1)
+
+    so the index-0 block of `beta_p` is `((q+q⁻¹)/2) · diag(q⁶, -q⁻⁶)` and
+    that of `beta_n` is `((q+q⁻¹)/2)² · diag(q⁵, -q⁻⁵)` — one lemma each,
+    provable by `simp` + `field_simp` on a product of diagonal matrices.
+    What is left is `trace(D · M)` with `D` diagonal and `M` a product of
+    only FOUR index-1 factors, i.e. `D₀₀·M₀₀ + D₁₁·M₁₁`. Only even powers
+    of `b` survive in `M₀₀` and `M₁₁` (each index-1 factor is symmetric with
+    off-diagonal `b`), so `b² = hoefsmit_v21_b_sq q` eliminates the square
+    root with no `linear_combination` certificate needed at all.
+
+    That decomposition was verified symbolically alongside the correction;
+    it is the next commit's work, not a guess.
 
     Tracked as bean `qou-18b6`. Do NOT close this by weakening the
-    statement or by assuming it as a class field — the claim is exactly
-    the one sympy verifies. -/
+    statement or by assuming it as a class field. -/
 -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
 -- Ref: [manuscript] empirical sympy verification in
 --   computations/probe_per_wedderburn_block_ck.py
