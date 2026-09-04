@@ -92,6 +92,33 @@ def _decl_blocks(src: str):
         yield m.group(1).split()[-1], _sig_of(src[m.start():end])
 
 
+# --- the decisive column: is the proof term a BARE PROJECTION? ---
+#
+# Neither "still resolves" nor "class is uninhabited" decides whether an entry
+# is a defect.  `q_bkm_criterion` is uninhabited AND is not a projection: it
+# composes TWO fields into an iff (`⟨ctx.bkm_necessity, ctx.bkm_continuation⟩`),
+# which AGENTS.md §3b-cond names as the VERIFIED EXEMPLAR of the pattern working.
+# The discriminator is the Aug-30 one -- derives vs projects -- so test the proof
+# term directly: a bare projection's term is one field access, optionally applied
+# to the theorem's own binders, and nothing else.
+_NOT_BARE = ("⟨", "by ", "by\n", "fun ", "λ", "Iff.", "And.", "· ", "<|", "$")
+
+
+def proof_is_bare_projection(block: str) -> bool | None:
+    """None when the term cannot be isolated (tactic block, or no `:=`)."""
+    i = block.find(":=")
+    if i == -1:
+        return None
+    term = block[i + 2:].strip()
+    if not term:
+        return None
+    term = term.split("\n\n")[0].strip()
+    if any(t in term for t in _NOT_BARE):
+        return False
+    head = term.split()[0] if term.split() else ""
+    return "." in head and head[0].isalpha()
+
+
 def class_is_inhabited(cls: str, root: pathlib.Path) -> bool:
     """Does any `instance` in the tree declare `cls` in its signature?"""
     if cls in _INHAB_CACHE:
@@ -135,6 +162,9 @@ def main() -> int:
                "class": cls}
         if cls:
             rec["class_inhabited"] = class_is_inhabited(cls, pathlib.Path("content"))
+        nxt = re.search(rf"^[ \t]*{DECL}[ \t]+", s[m.end():], re.M)
+        blk = s[m.start(): m.end() + (nxt.start() if nxt else 4000)]
+        rec["bare_projection"] = proof_is_bare_projection(blk)
         out["moved" if now != int(line) else "same_line"].append(rec)
 
     tot = len(rows)
@@ -157,6 +187,26 @@ def main() -> int:
         print("\n  --- INHABITED (do NOT blanket-disclose these) ---")
         for r in sorted(inh, key=lambda r: r["decl"]):
             print(f"    {r['decl']:42s} {r['class']}")
+
+    bare = [r for r in live if r.get("bare_projection") is True]
+    notbare = [r for r in live if r.get("bare_projection") is False]
+    unk = [r for r in live if r.get("bare_projection") is None]
+    print(f"\nDECISIVE COLUMN -- is the proof term a BARE PROJECTION?")
+    print(f"  bare projection  : {len(bare):3d}   conclusion IS one field -> the real queue")
+    print(f"  derives          : {len(notbare):3d}   composes/uses fields -> NOT a defect")
+    print(f"  term not isolable: {len(unk):3d}   tactic block or no `:=`; needs a read")
+    # The two columns CUT ACROSS each other, and the intersection is the queue.
+    #   bare + inhabited   -> the bundle is built, so the accessor is the
+    #                         ordinary Mathlib idiom (Aug-09: legit/advisory)
+    #   bare + uninhabited -> honest open state AND a restatement: the disclosure
+    #   derives            -> not a projection at all, whatever the inhabitation
+    drain = [r for r in bare if r.get("class_inhabited") is False]
+    legit = [r for r in bare if r.get("class_inhabited") is True]
+    print(f"\n  bare AND uninhabited : {len(drain):3d}  <-- THE DRAIN QUEUE")
+    print(f"  bare but inhabited   : {len(legit):3d}      bundle is built; Aug-09 legit/advisory")
+    print("\n  --- THE DRAIN QUEUE ---")
+    for r in sorted(drain, key=lambda r: r["path"]):
+        print(f"    {r['decl']:42s} {str(r['class']):32s} {r['path'].split('/')[-1]}")
 
     if "--json" in sys.argv:
         dest = sys.argv[sys.argv.index("--json") + 1]
