@@ -396,7 +396,12 @@ def main() -> int:
         },
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_tower_log_z_and_roast_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       # `elapsed_sec`, not `elapsed_s` — the ratchet's
+                       # wall-clock carve-out matches field names exactly and
+                       # does not carry the `_s` spelling. Key only; no value
+                       # changes. See the sibling note in
+                       # qbeta_binding_law_options_probe.py.
+                       "elapsed_sec": round(time.monotonic() - t0, 3)},
     }
     out = HERE / "qbeta-tower-log-z-and-roast.witness.json"
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")

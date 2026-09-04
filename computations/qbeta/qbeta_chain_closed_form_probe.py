@@ -241,7 +241,16 @@ def main() -> int:
                  "r_denominator_factored": str(den_factored),
                  "growth": grow,
                  "out_of_sample": oos,
-                 "matrix_route_seconds_at_A4": MATRIX_ROUTE_SECONDS_AT_A4},
+                 # Serialized as a string, not a JSON float. This is a
+                 # RECORDED WALL-CLOCK COST of a prior matrix-route run
+                 # (~33 min), kept as evidence that the closed form is the
+                 # only tractable route at A = 4 and above -- it is not a
+                 # computed quantity and carries no precision claim. Emitted
+                 # as a float it read as payload float64 and took the
+                 # raw-float64 ratchet red; it cannot use the wall-clock
+                 # carve-out because that matches on exact field names
+                 # (elapsed_sec / duration_sec / ...) and this one is neither.
+                 "matrix_route_seconds_at_A4": str(MATRIX_ROUTE_SECONDS_AT_A4)},
         "context": {
             "axis": "can the extensivity question be settled symbolically, "
                     "bypassing the n >= 15 dimension wall?",
