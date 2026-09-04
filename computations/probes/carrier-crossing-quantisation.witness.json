@@ -3,7 +3,7 @@
   "q0AnchorReason": "Reads no q0. The crossing counts are integer braid data and the quantisation test is on their ratios; the trace is never evaluated at the substrate modulus. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "computation": "carrier-crossing-quantisation",
   "scriptFile": "probes/carrier_crossing_quantisation_probe.py",
-  "computedAt": "2026-09-03T21:10:03.286130+00:00",
+  "computedAt": "2026-09-04T02:35:15.382143+00:00",
   "contentBlock": "qou-brng",
   "description": "The count channel's multiplicity is half the carrier's crossing count, so with the owner-ruled Hopf pair carrier (c2 = 2) the ratio b3/b2 = c3/2 - 3 lives on a lattice. The measured 0.6411239316 falls in a gap: the nearest integer carrier assignment misses by 16.98%. All four carrier rules the corpus derives give b3/b2 <= 0. Exact rational arithmetic, no free parameters.",
   "measured": {
