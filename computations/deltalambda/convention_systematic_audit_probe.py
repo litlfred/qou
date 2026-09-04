@@ -71,15 +71,24 @@ import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q_MP as Q0_MP  # noqa: E402 — the mpf, NOT the float64 `Q`
+from q_parameter import Q_MP as Q0_MP, q_muon_at  # noqa: E402 — the mpf, NOT the float64 `Q`
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 set_compute_dps(40)
 
 Q_PROTON = Q0_MP
-Q_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015405145269")
+# The muon leg was the 60-digit literal
+# "1.10997859555733471989976322048322502665620840878015405145269" -- the
+# RETIRED self-certified muon pin A, superseded 2026-08-22 (fca08de7d2) by the
+# live CODATA-2022 lepton-ratio derivation q_muon_at(), +0.0769 ppb. Reading it
+# by name matters MORE here than in a sole-anchor probe, not less: the q0 anchor
+# is axis 1 of this probe's 2x2x2 factorial, so a stale muon leg understates the
+# very systematic being measured. This is an (E1) explicit mu-vs-p comparison, so
+# it needs BOTH pins and belongs in NEITHER anchor list (bean qou-9ugp).
+Q_MUON = q_muon_at(60)
 ANCHORS = {"proton": Q_PROTON, "muon": Q_MUON}
 TRACES = {"abs": abs, "signed": (lambda z: z)}
 PNCONV = ["bring_color_weighted", "strict_averaged"]
@@ -229,7 +238,18 @@ def main() -> int:
         "convention-invariant. The #4404 baseline is convention C, is recorded as history "
         "with its delta, and is deliberately NOT a gate."
     )
-    w.save()
+    _reason = (
+        "Axis 1 of this probe's 2x2x2 factorial IS the q0 anchor: it evaluates "
+        "Delta^2 g and cl_3 at BOTH the experimental (proton) and ideal-CAL-2 "
+        "(muon) pins and publishes their relative separation as "
+        "results.floors.q0_anchor. Both legs are read by name -- proton from "
+        "q_parameter.Q_MP, muon from q_parameter.q_muon_at(60) -- so neither can "
+        "go stale against the anchor. This is a comparison, not a layer straddle "
+        "(bean qou-9ugp).")
+    assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_ascii)"
+    w.save(q0_comparison(muon=mp.nstr(Q_MUON, 50, strip_zeros=False),
+                         proton=mp.nstr(Q_PROTON, 50, strip_zeros=False),
+                         reason=_reason))
     return 0 if gates_ok else 1
 
 
