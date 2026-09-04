@@ -1,11 +1,11 @@
 ---
 # qou-q0rf
-title: 'The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix'
+title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
 status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-09-03T04:40:00Z
+updated_at: 2026-09-04T04:34:01Z
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing
@@ -72,3 +72,44 @@ drain is the third of three. Whoever takes it should know:
 Up from the 1 I left. Not characterised here — the two flips I understood in
 #6017 were a mislabelled producer and a compute-bound re-run, and 18 will not
 be one story. Do not assume it is the same defect eighteen times.
+
+
+---
+
+## Within-session replacement measured 1:1, and one arrival has a mechanism this bean does not record (2026-09-04)
+
+Measured on `claude/resumable-compute-chunking-2026-09-04` while draining four
+witnesses that were blocked on a compute rather than on anyone's attention:
+
+    NEW (not in baseline)     14  ->  14
+    drained since baseline    86  ->  90
+    unstamped (live scope)  1605  -> 1601
+
+**Four out, four in — net zero on NEW**, inside one session. That is this
+bean's thesis at a shorter timescale than the ~29/day arrival rate it records.
+
+The four that arrived did so **via a rebase across 55 commits of main**, not
+spontaneously in my tree — stating the mechanism because \"four arrived while I
+worked\" would otherwise read as a stronger claim than was measured:
+
+    probe-plancherel-convention-gap          ABSENT pre-rebase
+    probes/c1-mirror-asymmetry-sign-probe    ABSENT pre-rebase
+    probes/conjugation-orbit-isospin-room    ABSENT pre-rebase
+    chi-neutron-h3                           PRESENT pre-rebase  <-- different
+
+**The fourth is the one worth reading, and it is a new mechanism.**
+`chi-neutron-h3` was already in my tree **stamped**; the rebase brought a
+version with the stamp **removed**. `9c2058f0bd` — a commit whose own message
+is *\"drain(qou-3f7a): q0 drift NEW 10 -> 5\"* — stripped `q0Anchor` and
+`q0Value` from it. **A drain of one q0 gate refilled another.**
+
+Net on the anchor gate from that commit is **+2** (3 stamps added, 1 stripped),
+so this is not a systematic defect in that drain — but it is a refill source
+this bean's model does not have. Its arrival-rate data is *new witnesses
+landing unstamped*; this is *an existing stamp being removed*. Full evidence
+and the reason it is a genuine regression (the producer reads `Q_MP`, so
+`proton` was correct and nothing replaced it) is recorded on `qou-3f7a`.
+
+Consequence for this bean's conclusion: unchanged, and if anything sharpened.
+A backlog that can be refilled by its own drains is even less amenable to
+being drained than one refilled only by new arrivals.
