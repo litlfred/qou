@@ -7,7 +7,7 @@ priority: normal
 tags:
     - needs:combinatorics
 created_at: 2026-08-24T06:44:05Z
-updated_at: 2026-09-03T20:47:18Z
+updated_at: 2026-09-04T02:23:10Z
 parent: qou-vkmt
 ---
 
@@ -120,3 +120,8 @@ artifact should say the involution identity is proved until they are. Follow-up:
 
 ## 2026-09-03 — the 'zero consumers outside this file' measurement was WRONG
 6164a8ab6e removed YoungDiagramAddCell.mem_addCell (s) (hs) (x) on the measured claim that mem_addCell had zero consumers outside the file. QOU/SchurWeyl/MarkovConventionD.lean:83 (rowLen_two_pos_addCell, landed 08-23 in d239feda97) called it with that argument order, so MarkovConventionD — and everything downstream: MarkovTraceInstance, the Feynman markov_identification instance — has been red on main since 08-30. Not caught because nothing rebuilds the library: lean-direct on a single file certifies against the oleans ON DISK, and the restored cache predates the change. Fixed on PR #6526 by calling the surviving YoungDiagramAddable.mem_addCell μ c x hc. TRAP: a grep for consumers must include the argument-order-different call shapes, and a 'zero consumers' claim needs a rebuild of the importers, not a grep.
+
+
+
+## 2026-09-04 — a SECOND missed consumer
+WenzlNormalisation.colLen_zero_le_addCell:50 called mem_addCell _ hs _ (old order). Same dedup, same wrong 'zero consumers' grep; fixed on #6526. A tree-wide grep for the old call shape now returns nothing.
