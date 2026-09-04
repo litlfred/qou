@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-09-04T20:50:17Z
+updated_at: 2026-09-04T22:13:09Z
 ---
 
 Successor to `qou-768r` route 3, which closed the `Delta = 0` (min-span) family and
@@ -174,3 +174,48 @@ caught pre-commit, and the file now says do not quote 251/2080.
 
 `computations/probes/milnor_vanishing_is_generic_for_monotone_probe.py`, 3/3.
 Scope (a): a sampling result over one regime, not a theorem.
+
+
+## 2026-09-04 — the cyclic square DOES reopen Milnor, and the all-positive arm already did
+
+Closing the residual `cyclic_square_does_not_reopen_milnor_probe.py` named in its own
+witness ("inserted crossings are all positive. A mixed-sign insertion could cancel a
+linking number and is not covered"). The answer corrects that probe's **framing**, not
+its measurement.
+
+**Its measurement is confirmed**, and now through a second independently written
+`analyse`: 694 insertions, 188 span three components, **0** with all three pairwise
+linking numbers zero. Byte-identical to the merged figures.
+
+**Its inference fails.** It concluded "route 3's conclusion does not break, on this
+shape" from `Delta != 0 => mubar is not a genuine integer there anyway`. That conflates
+*not an integer* with *no obstruction*: `mubar` lives in `Z/Delta`, and a nonzero
+residue is a nonvanishing invariant. It never computed `mubar`. Computing it, in that
+probe's **own all-positive arm**:
+
+    4He, position 25, m=5,  lk = [0, -2, 0],  Delta = 2,  mubar = 1
+    8Be, position 77, m=17, lk = [0, 0, -2],  Delta = 2,  mubar = 1
+
+`Delta = 2` with `mubar = 1` is exactly the one bit route 3's stated `Delta = 2`
+residual is about. That probe's own scope note already said "the Delta = 2 one-bit
+triples are untouched" — the scope note is right and the title is not.
+
+**All 16 inserted-sign patterns**, 3008 spanning triples:
+
+    Delta = 0     0   ->    0 nonzero      Delta = 3   373   ->  187 nonzero
+    Delta = 1  2259   ->    0 nonzero      Delta = 4   371   ->  371 nonzero
+    Delta = 2     5   ->    5 nonzero      TOTAL              ->  563 nonzero
+
+**The join is sign-independent**, exactly: `span3 = 188` for every one of the 16
+patterns, because the insertion's permutation `s_m s_{m+1} s_m s_{m+1}` is a 3-cycle
+whatever the signs are. Signs move only the linking *values*. That is why `Delta = 0`
+stays unreachable in every pattern while `mubar` is nonzero in 563 cases.
+
+**Not a refutation of route 3.** Route 3 and `MilnorTriplesAreDefinedExactlyWhereThey
+Vanish.lean` are about the *unperturbed* carrier at `Delta = 0`; control A re-measures
+that null (294 triples, 0 nonzero) through this harness, so the nonzero counts are not
+an artifact. Control B: Borromean gives nonzero.
+
+Scope (a): one insertion shape, all-`sigma^-1` base branch, sampled positions, 4
+isotopes. Probe `computations/probes/mixed_sign_cyclic_square_does_reopen_milnor_probe.py`,
+5/5, idempotent, integer arithmetic throughout.
