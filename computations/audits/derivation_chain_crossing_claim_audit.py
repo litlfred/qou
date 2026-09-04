@@ -20,8 +20,12 @@ WHAT THIS CHECKS
 Every `<atom>-tr-M-q0` and `markov-trace-assembly-<atom>` chain, for any string
 asserting "<N> crossing(s)". Two exemptions, both narrow and both required:
 
-  * text that is the DISCLAIMER itself (it necessarily quotes the wording it
-    retracts -- "previously read", "no crossing number", "not crossings");
+  * text that is the DISCLAIMER itself, or the record of a SUPERSEDED premise
+    (both necessarily quote the wording they retract -- "previously read",
+    "no crossing number", "not crossings", "SUPERSEDED PREMISE",
+    "used to assume"). A repaired step keeps the old premise on the record
+    rather than deleting it, so the exemption has to cover that too; without
+    it, repairing a step makes this audit fail on the repair;
   * text carrying an explicit unrepaired-flag marker, which is an honest record
     of a known-open premise error rather than a silent claim.
 
@@ -45,7 +49,8 @@ CHAINS = [f"{a}-tr-M-q0.derivation.json" for a in ("p", "n", "D")] + [
 ]
 
 _CLAIM = re.compile(r"(\d+)\s+crossings?\b", re.I)
-_DISCLAIMER = ("previously read", "no crossing number", "not crossings")
+_DISCLAIMER = ("previously read", "no crossing number", "not crossings",
+               "SUPERSEDED PREMISE", "used to assume")
 _FLAGGED = ("not repaired", "NOT repaired")
 _WINDOW = 95  # chars of context either side that an exemption may cover
 
