@@ -1,11 +1,11 @@
 ---
 # qou-h3qk
 title: 'HAZARD: the H_3 transition cache is q-BLIND — a second q silently gets the first q''s amplitudes'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-09-04T06:40:00Z
-updated_at: 2026-09-04T06:40:00Z
+updated_at: 2026-09-04T07:35:00Z
 ---
 
 ## The defect
@@ -65,3 +65,43 @@ is the same class of silent staleness one level down.
 
 Add a regression test that is the demonstration above: same ab/shape, two `q`, assert
 the warm result differs from the first and equals the cold-cache result.
+
+
+## FIXED 2026-09-04
+
+The key is now `((mp.nstr(q, 50), mp.mp.dps), ab0, ab1, ab2, shape_in, c_in)`
+via a new `_q_key(q)` helper.
+
+`q` is keyed by its exact 50-digit decimal rather than by the mpf object: an
+mpf carries the precision it was CREATED at, so two mpf equal in value can be
+distinct objects, and `mp.nstr` gives a stable hashable identity. `mp.mp.dps`
+joins it for the reason the "Fix" section above anticipated -- a block computed
+at 50 dps and reused at 90 is the same silent staleness one level down, and it
+was measurably happening: pre-fix, a 90-dps call on the same `q` was served the
+50-dps block byte-identically.
+
+### Verification
+
+Guard: `computations/audits/h3_transition_cache_q_key_audit.py`. It does not
+wait for a natural collision -- it FORCES one, calling `get_h3_transitions`
+twice with identical `(ab, shape, c)` and different `q`, which is precisely the
+state the old key could not distinguish.
+
+  * Run against the PRE-FIX key it exits 1 with three findings: `q_B` received
+    `q_A`'s amplitudes, warm `q_B` differs from cold `q_B`, and the 90-dps call
+    was served the 50-dps block. Post-fix it passes.
+  * Production unmoved: D / T / 3He / 4He atom and free traces byte-identical
+    (expected -- production uses one `q` per process, so the old key was never
+    wrong there; that is why this was survivable and not why it was safe).
+  * Cost measured, not assumed: 6Li cold 1.359 s after vs 1.484 s before, warm
+    0.461 s vs 0.482 s. The `mp.nstr` in the hot loop is inside run-to-run
+    variation, so the key is NOT hoisted out of `get_h3_transitions` -- keeping
+    it at the point of use is what makes it impossible to bypass.
+
+### Standing negative, unchanged
+
+This is still NOT the cause of `qou-v1cp` (see the section above). That was an
+absolute `_TOL` in `chi_monotone_transfer.word_to_mpfr` applied to templates
+that all scale with `h = q - 1/q`; fixed separately in the same PR. The two
+were tested for a causal link twice -- by key-collision analysis and then by
+the decisive cold-cache experiment -- and cleared both times.
