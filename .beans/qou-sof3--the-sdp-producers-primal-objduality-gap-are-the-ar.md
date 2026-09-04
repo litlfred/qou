@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:11:29Z
-updated_at: 2026-09-04T09:12:07Z
+updated_at: 2026-09-04T09:22:49Z
 ---
 
 Found by the FIRST real application of the certified-residual check
@@ -93,3 +93,41 @@ then publishes that ~0 to 50 digits as though it were measured.
 - PR #6608 -- reported `primal_obj`/`duality_gap` moving 16 % as "16 % of a
   residual that is essentially nothing". Right in direction, understated: the
   values are not small measurements, they are not measurements.
+
+
+## RESOLVED (item 1) — the vacuous assertion is replaced, PR #6609 `be1a4e2954`
+
+`lp_strong_duality` is gone. Two falsifiable assertions in its place:
+
+- **`lp_duality_gap_certified`** — |gap_recomputed − solver duality_gap|,
+  computed 2.21176397031290088864e-45 against a tolerance of
+  1.4166990072900729933e-43. The tolerance is DERIVED (100x the cancellation
+  floor max|x*|*10^(-prec_bits*log10 2) = 1.4167e-45), not chosen to pass;
+  the observed value is 1.56x the floor, so it clears by ~64x and goes red if
+  the published certificate stops reproducing the solver by more than two
+  decades above the floor. Floor recorded as `duality_gap_cancellation_floor`.
+- **`strict_complementarity_dual_separation`** — 46.564656861512461309
+  decades, threshold 25. This is the property the producer is NAMED for and
+  never asserted. y* = [1.0, 2.72e-47, 2.72e-47, 9.77e-48, 9.77e-48,
+  1.04e-47]: one genuinely positive dual, five at the floor. Threshold is half
+  the ~50-digit working precision, i.e. the point below which the inactive
+  duals have left the floor. Recorded as `dual_separation_decades`.
+
+**Both shown to fail**, in `lp_dual_certified_residuals_selftest.py` §4 —
+including at the boundary (24 decades FAIL, 26 pass; 1.01x tolerance FAIL).
+Shipping replacements for a non-falsifiable assertion without demonstrating
+they can go red would have repeated the defect.
+
+## STILL OPEN (item 2) — the detector for other LP witnesses
+
+Unchanged: build a detector flagging any LP witness whose objective is
+floor-valued, i.e. where the cancellation eats most of the working precision.
+Candidate criterion, now with a worked instance to calibrate against:
+
+    max|x_star| / |primal_obj|  >~  10^(0.9 * prec_bits * log10 2)
+
+This producer: 2.65e5 / 3.92e-44 = 6.8e48 against a 0.9-threshold of 10^45.2
+-- flagged, correctly. What is NOT yet known is the false-positive rate; an LP
+whose optimum is legitimately tiny would also trip it. Run it across the 54
+LP/SDP witnesses (see `qou-dke6` for that population) before believing any
+count it reports.
