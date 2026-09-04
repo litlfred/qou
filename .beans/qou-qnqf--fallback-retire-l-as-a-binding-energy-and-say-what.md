@@ -28,8 +28,39 @@ gives `4He` at `29.956` against `28.296`, a miss of `+5.9%`. The bond chain give
 outside the two blocks written during the `qou-m3sh` arc, nothing in `content/`
 references the bond constants at all.
 
-- [ ] Say what `L` IS, if not binding. Free energy of bond formation? A
+- [x] **Answered: a free-energy difference.** Free energy of bond formation? A
       topological cost? It is a real, exactly-computable, convention-D-canonical
       quantity and it should be named correctly rather than quietly dropped.
-- [ ] Audit which computations/probes depend on `B = alpha L` and mark them.
+- [x] **Inventoried:** 80 Python files, 61 probes, 31 witnesses, 6 exposition blocks.
 - [ ] Decide the fate of `B_sym` and the `t7qv` / `qou-brng` arc's numbers.
+
+
+## Worked 2026-09-04 — audit `docs/audits/2026-09-04-what-L-is-and-what-retiring-it-would-cost.md`
+
+**What `L` is.** The Markov trace under convention D is a state sum: the Wenzl
+weights `w+ = 0.752702113`, `w- = 0.247297887` sum to exactly 1 and are both
+positive, so they are a genuine probability on the two `H_2` Wedderburn blocks,
+and `tr_2(sigma + d) = E_w[lambda + d] = z + d` with `lambda` the block
+eigenvalue of `sigma` (`q` on `(2)`, `-1/q` on `(1,1)`). Reproduces all three
+bond constants exactly. Since `qou-m3sh` proved the chain trace is exactly the
+product of these factors, `L = log(Z_free / Z_bonded)` is **a free-energy
+difference in the standard sense**, dimensionless, per-interface additive, and
+positive because every `z + d` lies in `(0,1)`.
+
+Caveat recorded: the observable is SIGNED (the `(1,1)` eigenvalue is negative),
+so it is a free energy over a quasi-probability. The sign is the
+`sigma`/`sigma^-1` split, i.e. the p/n distinction itself — which is why the
+Jensen intuitions in `qou-mu1h` needed checking rather than assuming.
+
+**What retiring it would cost.** 80 Python files, 61 of them probes, 31 witness
+JSONs, 6 exposition blocks. Not a small cleanup — this bean was proposed as the
+honest option and the inventory says it is also the expensive one.
+
+**But the expense is avoidable.** Retiring the INTERPRETATION is not retiring
+the QUANTITY. `L` stays a correct free energy in all 80 files; only "and this is
+the binding energy" is in question. Minimal honest action is a re-labelling:
+keep every computation, mark the `B = alpha L` identification as an open
+interpretation in the six exposition blocks and wherever a probe compares
+`alpha L` to AME, and leave the numbers standing.
+
+- [ ] The re-labelling itself — a decision for the owner, not a computation.
