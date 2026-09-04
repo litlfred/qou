@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T12:25:51Z
+updated_at: 2026-09-04T20:53:08Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -680,3 +680,47 @@ via Equiv.Perm.sign_of_cycleType (Mathlib/GroupTheory/Perm/Cycle/Type.lean:164)
 for the divisibility. The support computation is the bulk. Not free, not a
 tranche. Naming the route rather than asserting a gap is deliberate, after the
 det_blockDiagonal' error earlier in this same arc.
+
+
+## 2026-09-04 (evening) — the block sign is now EVALUATED, not abstract
+
+PR #6680, commit 73d7636618. #6648 merged as 18d1c3b6aa.
+
+QOU/MathlibExt/SignProdComm.lean: sign_prodComm gives
+  Equiv.Perm.sign (Equiv.prodComm i i) = (-1)^(card i * (card i - 1) / 2)
+so the per-block sign in twGram_det_eq_sq_mul_prod is explicit rather than a
+black box. Seven declarations plus three decide checks, all sorry-free.
+
+THE STEP WORTH REMEMBERING. sign_of_cycleType gives (-1)^(sum + card), i.e.
+(-1)^(s + s/2) for an involution with support s. The support is the OFF-DIAGONAL
+(prodComm fixes exactly the (a,a)), so s = d^2 - d = d(d-1). That s is EVEN —
+a product of consecutive integers — is what kills the first summand and collapses
+the formula to (-1)^(s/2). Without it there is no simplification to the half-count.
+
+THE ROUTE WAS NAMED BEFORE IT WAS WALKED, and that is the process point. #6648's
+audit doc priced this lemma and named its Mathlib route (sign_of_cycleType,
+#support = d^2-d via Finset.offDiag, two_dvd_card_support) instead of asserting a
+gap. Everything was there; the support computation was the bulk, as predicted.
+Contrast the det_blockDiagonal' error earlier in this same arc, where a blocking
+Mathlib gap was recorded for a capability filed under a weaker hypothesis.
+
+FOUR INDEPENDENT CONFIRMATIONS. decide at d = 1,2,3 evaluates the signature by
+BRUTE FORCE (not via the cycle-type argument) giving 1, -1, -1 against (-1)^0,
+(-1)^1, (-1)^3; and tw_gram_square_class_crosscheck.py on main matches the measured
+determinant signs +, -, - at n = 1,2,3.
+
+A LEAN TRAP RECORDED IN THE FILE. (Equiv.prodComm i i : Equiv.Perm (i x i)).support
+does NOT work — the ascription is unfolded before dot-notation resolves, so Lean
+looks for Equiv.support. Hence the named prodSwap wrapper whose declared type has
+head constant Equiv.Perm. Cost a build cycle; not obvious from the error text.
+
+**STILL OPEN, unchanged in substance:**
+1. det P is NOT evaluated. The constant stays pinned only up to a square, and that
+   is not merely unfinished — a Gram determinant is an invariant only up to squares
+   of units.
+2. THE Q-PART, where the Schur elements live. Untouched, and the large item. Read
+   the trace-form caveat first: twGram is the REGULAR trace form; Geck-Pfeiffer's
+   Schur elements belong to the CANONICAL SYMMETRIZING trace tau.
+3. 0 < d_lambda — small; discharges twGram_det_ne_zero_of_blocks's hypothesis.
+4. Small characteristic — unreachable by this route.
+5. The square root Q = q^2 — low priority, never bites.
