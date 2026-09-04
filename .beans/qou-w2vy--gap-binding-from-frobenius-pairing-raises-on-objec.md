@@ -177,3 +177,55 @@ and `sigmas` for their element types.
 **Related, same shape, one function over:** the `float(_tr)` narrowing at the
 `_lp_kernel_steps` consumer already recorded on this bean. Two independent
 float64 boundaries on the same term-3 path.
+
+## SELF-CORRECTION, same day: the "NOT MEASURED" gap above was ALREADY CLOSED
+
+The section above ends: *"NOT MEASURED, and it decides how much this matters:
+what precision the inputs carry."* I then measured it — and the corpus had the
+answer four days earlier, with the mechanism I did not have.
+
+[`docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md`](../docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md)
+states it directly:
+
+> Both paths are float64-limited **because the YSN matrices are built in
+> float64** (`a_rho = h/q_int(rho)` with float `h`; `off = math.sqrt(...)`), so
+> exact agreement is unobtainable until the matrices themselves are exact.
+
+and draws the consequence this bean should have drawn:
+
+> The 2026-08-30 document recommended: fix the guard, export the Rust matmul,
+> then fix precision. **That order is wrong.** Its own equality gate cannot be
+> satisfied while the matrices are float64, and the matrices are not merely
+> imprecise — they are not a representation.
+
+So the ambient-`mp.dps` finding above is real but **subordinate**: raising `dps`
+cannot help while `entry['ysn']` is float64, and the audit's ordering already
+subsumes it. Do not open a precision item against `atom_character_raw` — the
+open item is the matrices, and it is `qou-4m9u`.
+
+**What my census does add is EXTENT, not the fact.** The audit reasons from the
+construction (`a_rho`, `math.sqrt`); a census of the live table confirms there
+is no exception anywhere in it. Measured on `main`, `H._PARTITION_TABLE`:
+
+    entries                                682
+      empty ysn (n < 2, no generators)     489
+      SCIPY-SPARSE dtype=float64           124
+      nested Python sequence of float        69
+      mpf / object dtype                      0
+    max dim                                2310
+
+**193 of 193 non-empty entries are float64; zero exceptions.** So the float64
+ceiling is a property of the whole partition table, not of a sparse/dense
+branch or a size threshold.
+
+**What this contaminated.** Two artifacts pushed ~20 minutes before this note:
+the section above, and PR #6660's body, both of which present the input
+precision as an open question and name tracing `_crossing_in_partition` /
+`sigmas` as "the next step". That step was already taken on 2026-08-31. Read
+both with this correction attached.
+
+**The lesson is the checklist's own.** I ran the measurement first and the
+corpus-grep second. Reversed, path 1 (`grep -rln ysn docs/audits/`) returns
+that audit as its first hit and the whole detour is unnecessary — and the
+detour was the cheap half; the expensive half was writing a "next step" into a
+bean and a PR body for work already done.
