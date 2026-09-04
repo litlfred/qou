@@ -226,4 +226,75 @@ theorem ame_grid_has_concave_deficit :
   concaveDeficit_class_not_excludable ameGrid ame_grid_is_convex 7 (by
     simp only [GridData.secant₂, ameGrid]; norm_num)
 
+
+/-! ## The same statement on an arbitrary grid
+
+The three-point version above matches the corpus's grid. Nothing in it depends on
+there being three points, and that matters for what to do next: the natural
+reading of the result is "get a fourth data point and the class becomes
+testable", and **that reading is wrong**. The equivalence below is uniform in the
+number of grid points, so no amount of extra data can exclude the class.
+
+Index a grid by `Fin (n+1)` with `x 0 = 0`, `f 0 = 0` if the origin is wanted —
+the statements do not need that hypothesis, since the origin is just index `0`.
+-/
+
+/-- Secant slope of `f` across the `i`-th grid interval. -/
+def slope {n : ℕ} (x f : Fin (n + 1) → R) (i : Fin n) : R :=
+  (f i.succ - f i.castSucc) / (x i.succ - x i.castSucc)
+
+/-- The deficit of `f` against the line `c·x`, on an arbitrary grid. -/
+def deficitFun {n : ℕ} (x f : Fin (n + 1) → R) (c : R) : Fin (n + 1) → R :=
+  fun j => c * x j - f j
+
+omit [IsStrictOrderedRing R] in
+theorem slope_deficitFun {n : ℕ} (x f : Fin (n + 1) → R) (c : R)
+    (hx : ∀ i : Fin n, x i.castSucc < x i.succ) (i : Fin n) :
+    slope x (deficitFun x f c) i = c - slope x f i := by
+  have h : x i.succ - x i.castSucc ≠ 0 := sub_ne_zero_of_ne (ne_of_gt (hx i))
+  simp only [slope, deficitFun]
+  field_simp
+  ring
+
+/-- **Uniform in the grid size.** The deficit's slopes are antitone — the
+discrete concavity of `ψ` — exactly when the data's slopes are monotone, its
+discrete convexity. No hypothesis on `c`, and no dependence on `n`. -/
+theorem deficitFun_antitone_iff_monotone {n : ℕ} (x f : Fin (n + 1) → R) (c : R)
+    (hx : ∀ i : Fin n, x i.castSucc < x i.succ) :
+    Antitone (slope x (deficitFun x f c)) ↔ Monotone (slope x f) := by
+  constructor
+  · intro h a b hab
+    have hba := h hab
+    rw [slope_deficitFun x f c hx, slope_deficitFun x f c hx] at hba
+    linarith
+  · intro h a b hab
+    have hab' := h hab
+    rw [slope_deficitFun x f c hx, slope_deficitFun x f c hx]
+    linarith
+
+/-- The deficit is increasing on every interval exactly when `c` clears every
+secant slope of the data. -/
+theorem deficitFun_slopes_pos_iff {n : ℕ} (x f : Fin (n + 1) → R) (c : R)
+    (hx : ∀ i : Fin n, x i.castSucc < x i.succ) :
+    (∀ i, 0 < slope x (deficitFun x f c) i) ↔ (∀ i, slope x f i < c) := by
+  constructor <;> intro h i <;> have := h i <;>
+    rw [slope_deficitFun x f c hx] at * <;> linarith [h i]
+
+/-- **Extra data points do not help.** On a grid of any size, every
+discretely-convex dataset whose slopes are bounded by `c` is a linear term minus
+a discretely-concave, increasing deficit. So the linear-minus-concave-deficit
+class is not excludable by *any* finite grid, and the standing recommendation to
+extend past `A = 4` buys the ability to test **fixed shapes** and to locate the
+convex→concave turn — not the ability to test this class. -/
+theorem concaveDeficit_not_excludable_on_any_grid {n : ℕ}
+    (x f : Fin (n + 1) → R) (c : R)
+    (hx : ∀ i : Fin n, x i.castSucc < x i.succ)
+    (hconv : Monotone (slope x f)) (hc : ∀ i, slope x f i < c) :
+    Antitone (slope x (deficitFun x f c)) ∧
+      (∀ i, 0 < slope x (deficitFun x f c) i) ∧
+      (∀ j, f j = c * x j - deficitFun x f c j) :=
+  ⟨(deficitFun_antitone_iff_monotone x f c hx).mpr hconv,
+   (deficitFun_slopes_pos_iff x f c hx).mpr hc,
+   fun j => by simp [deficitFun]⟩
+
 end QOU.MassTheory.ConcaveDeficitNonExclusion
