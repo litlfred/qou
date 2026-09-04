@@ -1,10 +1,11 @@
 ---
 # qou-8w8v
 title: atom_markov_trace returns a trace scaled by exp(-max_ln) and DISCARDS max_ln, so its caller subtracts two differently-scaled quantities
-status: todo
+status: completed
 type: bug
+priority: normal
 created_at: 2026-09-03T20:28:03Z
-updated_at: 2026-09-03T20:28:03Z
+updated_at: 2026-09-04T21:15:31Z
 ---
 
 Found while verifying my own change under bean `qou-uiut`, not by looking for
@@ -110,3 +111,56 @@ is `||W_free||^2 = sum_lambda w_lambda = 1` — an identity limit. If the
 intended answer is exactly 1, a silently rescaled return is easy to miss,
 because a wrong value still looks like a plausible number near 1. Worth
 checking what it actually returns as part of this fix.
+
+## 2026-09-04 — FIXED, and the "worth checking" line turned up a second defect
+
+### The fix
+
+Both instances corrected at the point where the scale was lost:
+
+* `atom_markov_trace` now returns `trace * _mp.exp(max_ln)`. The shifted
+  accumulation stays — it is a stability device and still worth having; only
+  the return was wrong.
+* `free_nucleon_frobenius_norm_sq` now applies the third element instead of
+  discarding it: `norm_sq * _mp.exp(2 * max_ln)`. The factor is uniform across
+  the sum (every term carries `(chi*exp(ln-max_ln))^2`), so it survives.
+* `per[...]['chi_rescaled']` deliberately left in the shifted domain: it exists
+  to compare magnitudes across partitions, which is what a common exponent is
+  for.
+
+Measured rather than asserted — `max_ln = 0.0` for D, T and He3 on the default
+Rust path, so both new factors are exactly 1 and `norm_sq_raw == free_norm_sq`
+to every digit. **No published value moves.** The correction bites only on the
+pure-Python fallback at high A, which is where it was wrong. 64 tests pass,
+including the 19 Rust/Python parity tests.
+
+### The second defect this exposed
+
+The last line of this bean asked what `free_nucleon_frobenius_norm_sq`
+actually returns, given its docstring claims the identity limit
+`||W_free||^2 = sum_lambda w_lambda = 1`. Measured:
+
+    D    1.988392799
+    T    0.991042245
+    He3  0.869097004
+
+It is **not 1**, and the three do not agree with each other. D is off by
+essentially a factor of two.
+
+This is NOT the rescaling bug — `max_ln = 0` throughout, so the scaling was
+inert for these atoms and the numbers above are the same before and after
+today's fix. It is a separate, larger problem with what the function computes:
+it evaluates `sum_lambda w_lambda * (chi_lambda(W_free)/d_lambda)^2`, and that
+equals `sum_lambda w_lambda = 1` only if `chi_lambda(W_free)/d_lambda = 1` for
+every lambda — i.e. only if W_free is the IDENTITY braid. It is not: "free"
+removes the inter-nucleon crossings but keeps the intra-nucleon ones. The
+docstring's own "TODO: proper tensor-product decomposition via H_3(q)^A
+restriction" is exactly this gap, and the "for now, use the empirical simpler
+form ... = 1" it settles for is not what the code does either.
+
+The warning written in this bean was right about the failure mode: T at 0.991
+and He3 at 0.869 both look like plausible numbers near 1 and would pass a
+casual glance. D at 1.988 is what makes it unmissable.
+
+Filed separately as **qou-fop2** — it needs the tensor-product decomposition,
+not a scaling correction, so it does not belong in this bean's fix.
