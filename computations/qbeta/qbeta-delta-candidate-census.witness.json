@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:57:04.502342+00:00",
-  "commitSha": "45c530378e8c359ce6acf3c05dec7532b5f18615",
+  "computedAt": "2026-09-04T06:16:13.060449+00:00",
+  "commitSha": "2f0598479f47b3af373c5deb3c477d4fea0032d4",
   "assertions": [
     {
       "name": "closed_form_holds_on_no_constructed_candidate",
@@ -76,11 +76,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2467,
+  "durationMs": 2714,
   "computation": "qbeta-delta-candidate-census",
   "scriptFile": "qbeta_delta_candidate_census_probe.py",
   "scriptHash": "186e22954cb8",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0a31af8b5e1f315b92dc64ad1ac84ba34d1d9ab7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,5 +151,7 @@
       "-0.250674285"
     ],
     "q0_anchor_note": "proton pin; every value in this witness is at Q_50_DIGIT_STR, none at q = 111/100"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
