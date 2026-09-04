@@ -1950,8 +1950,42 @@ When working on math-affecting code or content, **trace the change to a step in 
 > `m_p = 2·(m_μ·F_Bor − 6·m_e)`, `m_μ = m_e·Vol(4₁)/ℏ_q²`, `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` → **m_p ≈ 938.27, m_n ≈ 939.56 (CODATA)**. The `c_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor` — not on `Vol(𝓑₃)`.
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
-> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature.
+> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature — **but not for the reason long given here: see the correction below.**
 >
+> **🛑 CORRECTION (2026-09-04) — the non-monotonicity is real; its stated
+> REASON is not, and its figures are convention-C.** The clause above cited
+> "the N=4 → N=5 non-monotonicity" on the strength of
+> [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md),
+> which argued that *"a convergent series with exact `c_k` would be
+> monotone."* **That is not a correct general statement.** Partial sums of a
+> convergent series need not have monotonically decreasing residuals unless
+> the terms are sign-definite and decreasing, which is nowhere established
+> for this ladder — so as written the argument does not support its
+> conclusion, even though the conclusion is right.
+>
+> **The sound form is the SIZE MISMATCH.** For an exact series the residual
+> after truncating at `N` tracks the *first omitted* term, so the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
+> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
+> fit signature. Use that, not "monotone".
+>
+> **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
+> `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
+> substrate is on; under **D** the same table prints
+> `+600999.7384 → +601000.3155`, and its hardcoded prose disagreed with its
+> own computed table by six orders of magnitude until fixed (2026-09-04).
+> **What survives the convention change is the STEP, not the baseline:**
+> `+0.575` ppb in C against `+0.577` ppb in D — so the reversal is
+> frame-robust and only the offset moves.
+>
+> **Do not read this ladder as a live N-selection.** Per defect 2 below,
+> `qbeta_ck_cache.py` extracts ONE rung by inverting the target — verified
+> 2026-09-04, it prints `c_4: residual below compute precision (0.00e+00) —
+> ladder converged` and stops, because `Q_next = Q_prev·(1 + (Q_codata/Q_prev
+> − 1)) = Q_codata` identically. `c_4 … c_7` are never computed there. That
+> producer also **refuses to run** under convention D; the analysis script
+> does not, which is how the stale prose survived.
+
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
