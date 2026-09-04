@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-04T20:57:56Z
+updated_at: 2026-09-04T22:24:35Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -224,3 +224,54 @@ silenced; only the regression above the baseline is closed.
 Spun out as its own bean: **`qou-9tqx`** -- the drain holds for 489/499, but
 **26 of 33** producers with a float-literal tolerance hand-build, so each
 undoes it on re-run. Ten already reverted, two fixed here, eight open.
+
+
+## 2026-09-04 22:30Z — sixth and seventh sites, and I must CORRECT my own "14"
+
+Two more arrived within ten hours (`qbeta-layout-conflict`,
+`qbeta-disjoint-support-factorisation`), both `/provenance/elapsed_s`. Seven
+sites in two days. Fixed by rename, as before; branch NEW 0 / REGRESSED 0.
+
+**CORRECTION — the "~14 further `elapsed_s` sites" I used to justify NOT
+widening the vocabulary is WRONG.** I quoted it in this bean, in two commit
+messages, in PR #6453's body, and in a comment on #5910, and it was never
+measured properly: it was a raw grep count taken BEFORE the seven fixes and it
+included `computations/_deprecated/`.
+
+Measured now, on the post-fix tree, excluding `_deprecated`:
+
+    remaining `elapsed_s` sites            5   (not 14)
+    of those, in a `provenance` dict       0
+    of those, shape `round(time.monotonic() - t0, 3)`   0
+
+    computations/level1-qvalues.py                      "elapsed_s": elapsed,
+    computations/sigma_all_symbolic_decay.py            "elapsed_s": elapsed,
+    computations/term5_v2_chirality.py                  "elapsed_s": elapsed,
+    computations/staircase_ew_predictions.py            "elapsed_s": time.time() - t_start,
+    computations/probes/qbeta_route76_modstd_reach_probe.py   "elapsed_s": 67.0,
+
+**All five are wall-clock durations, and all five are now examined** — which is
+exactly the condition my objection said was unmet. `67.0` is integral and the
+ratchet already excuses it by design.
+
+So the argument I gave against widening `EPHEMERAL_TIMING_FIELDS` does not
+survive its own premise. That does NOT make widening right — it is a change to
+the gate's declared vocabulary, and AGENTS.md is deliberately wary of anything
+that turns a red green other than at the producer. It makes it an **owner
+decision that is now cheap to state**, where before it was an agent guess
+resting on a number I had not checked.
+
+The live trade-off, both sides measured:
+
+- **Keep renaming** (status quo). Each new probe that writes a provenance
+  timing is a future red; observed rate ~1 per day, ~2 min each. Nothing in
+  the gate changes.
+- **Declare `elapsed_s`** in `EPHEMERAL_TIMING_FIELDS`. Ends the class. Excuses
+  exactly the five above, all inspected, all genuine durations. Precedent
+  exists in this corpus: `witness_regen_classify.py:152` already lists
+  `elapsed_s` beside `elapsed_sec`, `wall_sec` and `time_sec` as volatile.
+
+Recommendation (my judgement, not a finding): **declare it.** The vocabulary is
+a list of names for one concept, not a precision tolerance, and it is already
+inconsistent between two audits in this repo. But it is the owner's call and
+the no-op is safe — renaming keeps working indefinitely.
