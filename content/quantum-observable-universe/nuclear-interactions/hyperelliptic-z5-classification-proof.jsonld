@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-hyperelliptic-z5-classification",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hyperelliptic-z5-classification",
+  "kind": "proof",
+  "title": "Proof of hyperelliptic z5 classification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-hyperelliptic-z5-classification"
+  ],
+  "text": "hyperelliptic-z5-classification-proof.md",
+  "provenance": "authored"
+}

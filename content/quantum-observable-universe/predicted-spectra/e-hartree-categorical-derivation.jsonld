@@ -1,0 +1,39 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-e-hartree-categorical-derivation",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:e-hartree-categorical-derivation",
+  "kind": "conjecture",
+  "title": "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-shift-multiplicative-chain",
+    "papers/quantum-observable-universe/blocks/prop-h2-lp-dual-binding",
+    "papers/quantum-observable-universe/blocks/prop-ilp-covalent-bond",
+    "papers/quantum-observable-universe/blocks/prop-lp-dual-stability",
+    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-collapse",
+    "papers/quantum-observable-universe/blocks/cor-commutative-chirality-vanishes",
+    "papers/quantum-observable-universe/blocks/conj-bohr-radius-categorical",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-phi-q-tower-algebraic-stratification"
+  ],
+  "tags": [
+    "tier:E",
+    "hartree-energy",
+    "molecular-binding",
+    "fine-structure",
+    "alpha-em",
+    "lp-dual",
+    "j1-vanishing",
+    "open-problem",
+    "derivation-roadmap",
+    "conjecture"
+  ],
+  "leanRef": "qou:QOU.Archimedean.EHartreeCategoricalDerivation",
+  "text": "e-hartree-categorical-derivation.md",
+  "leanSource": "e-hartree-categorical-derivation.lean",
+  "provenance": "authored"
+}

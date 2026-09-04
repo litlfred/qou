@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-per-nucleon-channel-decomposition",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:per-nucleon-channel-decomposition",
+  "kind": "definition",
+  "title": "Per-nucleon channel decomposition via $S_3^A$ branching",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "tags": [
+    "branching",
+    "channel-decomposition",
+    "garside",
+    "hecke-algebra",
+    "per-nucleon",
+    "torus-knot"
+  ],
+  "defines": [
+    "per-nucleon-channel-decomposition"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition",
+  "text": "per-nucleon-channel-decomposition.md",
+  "leanSource": "per-nucleon-channel-decomposition.lean",
+  "provenance": "authored"
+}

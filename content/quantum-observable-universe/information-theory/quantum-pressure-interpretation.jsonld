@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-pressure-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-pressure-interpretation",
+  "kind": "remark",
+  "title": "Pressure from Frobenius pairing, not billiard balls",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-pressure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-pressure",
+  "tags": [
+    "pressure",
+    "frobenius",
+    "boundary",
+    "q-anomaly",
+    "classical-comparison"
+  ],
+  "text": "quantum-pressure-interpretation.md",
+  "provenance": "authored"
+}

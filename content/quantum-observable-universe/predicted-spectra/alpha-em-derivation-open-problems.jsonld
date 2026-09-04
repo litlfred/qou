@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-alpha-em-derivation-open-problems",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:alpha-em-derivation-open-problems",
+  "kind": "remark",
+  "title": "Open problems: deriving the $1.55 \\times 10^{-3}$ correction to the bare $1/\\alpha_{EM} = q[9]_q[10]_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-em-coupling-chern-simons",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-bring-zero-mode",
+    "papers/quantum-observable-universe/blocks/rem-gram-kappa-spectral-interpretation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+  "tags": [
+    "alpha-em",
+    "fine-structure",
+    "open-problem",
+    "derivation-roadmap"
+  ],
+  "text": "alpha-em-derivation-open-problems.md",
+  "provenance": "authored"
+}

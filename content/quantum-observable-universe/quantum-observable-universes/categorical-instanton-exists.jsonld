@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-instanton-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-instanton-exists",
+  "kind": "proposition",
+  "title": "Existence of categorical instantons",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-instanton-exists"
+  ],
+  "tags": [
+    "existence",
+    "instanton",
+    "self-duality"
+  ],
+  "leanRef": "qou:QOU.CategoricalInstanton.exists",
+  "text": "categorical-instanton-exists.md",
+  "leanSource": "categorical-instanton-exists.lean",
+  "provenance": "authored"
+}

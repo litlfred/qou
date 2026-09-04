@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+  "contains": [
+    "library/download/sections/sec-000",
+    "library/download/sections/sec-001",
+    "library/download/sections/sec-002",
+    "library/download/sections/sec-003",
+    "library/download/sections/sec-004",
+    "library/download/sections/sec-005",
+    "library/download/sections/sec-006",
+    "library/download/sections/sec-007",
+    "library/download/sections/sec-008",
+    "library/download/sections/sec-009",
+    "library/download/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "download",
+    "source_file": "Download.pdf",
+    "source_sha256": "ca9639465b08d34c6d7aeb0ed967ca253d2faae143f9280fa32d23d44b3609f4",
+    "pages": 30,
+    "arxiv": null,
+    "doi": "10.3150/10-BEJ254",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

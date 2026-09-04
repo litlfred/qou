@@ -139,7 +139,7 @@ import numpy as np  # noqa: E402
 from pyhecke.atom import atom_gen_chains, nucleon_gen_chains  # noqa: E402
 from pyhecke.constants import PN_CONVENTION  # noqa: E402
 from pyhecke.gram import _hm_mp, gram_matrix_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -148,7 +148,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 25
-_QH = mp.mpf(str(Q0))
+_QH = q_at(mp.mp.dps)
 H_Q0 = float(_QH - 1 / _QH)
 PREV_P, PREV_N = 0.477184636796, 0.569840290998
 

@@ -35,7 +35,11 @@ namespace QOU.Archimedean
 /-- The Skein polynomial P(q) of N(p,n) — axiomatized as computed
     by the transfer matrix product ∏ V̂_i. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-axiom skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
+-- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
+-- first is a global axiom contaminating `#print axioms` downstream.  No
+-- proposition becomes provable either way.
+opaque skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ := 0
 
 /-- A nuclear configuration (p,n) is stable at substrate parameter q
     if its Skein polynomial is positive. -/
@@ -76,7 +80,7 @@ axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     opaque approximation function (its asymptotics are the content of the
     divergence/vanishing axioms below). -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
-axiom A_max_approx (q : ℝ) : ℝ
+opaque A_max_approx (q : ℝ) : ℝ := 0
 
 /-- **External axiom (manuscript §6/skein-finiteness-bound):
     A_max diverges as q → 1⁺.** -/

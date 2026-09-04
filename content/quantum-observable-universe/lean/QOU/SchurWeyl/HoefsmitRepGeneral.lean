@@ -95,7 +95,7 @@ non-vacuous.
 `q ≠ 0` together with `q ^ 2 ≠ 1` says exactly that `q` is not a root of unity over `ℝ`, which is
 the genericity `[ram1997]`'s axial-distance formulas presuppose. Note this **admits negative `q`**:
 it is strictly weaker than `0 < q ∧ q ≠ 1`. -/
-theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (lam : Partition N) :
     ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
       2 ≤ dLambda lam →

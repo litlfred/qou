@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1402.4615v3/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Convergence of polynomial functions",
+  "pageStart": 38,
+  "pageEnd": 40,
+  "contains": [
+    "library/arxiv-1402.4615v3/blocks/prose-sec-020",
+    "library/arxiv-1402.4615v3/blocks/lem-sec-020-01",
+    "library/arxiv-1402.4615v3/blocks/prop-sec-020-02"
+  ],
+  "derivedFrom": "library/arxiv-1402.4615v3/manifest",
+  "sourceDocument": "library/arxiv-1402.4615v3/manifest",
+  "provenance": "ingested"
+}

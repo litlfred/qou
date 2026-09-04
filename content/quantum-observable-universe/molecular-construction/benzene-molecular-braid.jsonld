@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-benzene-molecular-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:benzene-molecular-braid",
+  "kind": "definition",
+  "title": "Benzene $C_6H_6$ as a molecular braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid"
+  ],
+  "tags": [
+    "benzene",
+    "C6H6",
+    "aromatic",
+    "delocalization",
+    "threading-link",
+    "molecular-braid"
+  ],
+  "leanRef": "qou:QOU.Molecular.BenzeneBraid",
+  "text": "benzene-molecular-braid.md",
+  "leanSource": "benzene-molecular-braid.lean",
+  "provenance": "authored"
+}

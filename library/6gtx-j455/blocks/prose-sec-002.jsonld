@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/6gtx-j455/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Data availability",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-data-availability.md",
+  "derivedFrom": "library/6gtx-j455/manifest",
+  "sourceDocument": "library/6gtx-j455/manifest",
+  "provenance": "ingested"
+}

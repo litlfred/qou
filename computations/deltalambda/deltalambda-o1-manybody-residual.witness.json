@@ -3,12 +3,12 @@
   "description": "The O(1) residual in \u0394_\u03bb=O(1)\u00b7sgn\u00b7dim is the missing many-body (\u03b1-saturation) term, NOT a categorical constant: n_strands=3A (color already in braid), T/\u00b3He share topology but differ (not topological), residual max at doubly-magic \u2074He (\u03b1-saturation). Deriving it = the known-open operator-valued branching combiner, not a fit. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-o1-manybody-residual.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-08-23T09:01:16.064311+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T03:02:08.215591+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_o1_manybody_probe.py",
-  "scriptHash": "2e50d5053143",
+  "scriptHash": "783be0f8e849",
   "q0": "1.1099785827513808076",
   "q0_source": "qou_substrate.q_at(30)",
   "assertions": [
@@ -35,41 +35,41 @@
         "A": 2,
         "n_strands": 6,
         "n_partitions": 11,
-        "B_dim_MeV": -0.3666138135835564,
+        "B_dim_MeV": -0.3666138571395159,
         "B_AME_MeV": 2.22452,
-        "residual": 6.067747361333402,
+        "residual": 6.067746640448053,
         "B_AME_per_A": 1.11226,
-        "B_dim_per_A": 0.1833069067917782
+        "B_dim_per_A": 0.18330692856975794
       },
       "t": {
         "A": 3,
         "n_strands": 9,
         "n_partitions": 30,
-        "B_dim_MeV": -1.2647941351410825,
+        "B_dim_MeV": -1.2647940935587405,
         "B_AME_MeV": 8.4818,
-        "residual": 6.706071576663257,
+        "residual": 6.706071797137216,
         "B_AME_per_A": 2.8272666666666666,
-        "B_dim_per_A": 0.42159804504702747
+        "B_dim_per_A": 0.42159803118624684
       },
       "3he": {
         "A": 3,
         "n_strands": 9,
         "n_partitions": 30,
-        "B_dim_MeV": -1.5733613393828236,
+        "B_dim_MeV": -1.5733612821086322,
         "B_AME_MeV": 7.71804,
-        "residual": 4.905446579123093,
+        "residual": 4.905446757693324,
         "B_AME_per_A": 2.57268,
-        "B_dim_per_A": 0.5244537797942745
+        "B_dim_per_A": 0.5244537607028774
       },
       "4he": {
         "A": 4,
         "n_strands": 12,
         "n_partitions": 77,
-        "B_dim_MeV": -0.0975689466666363,
+        "B_dim_MeV": -0.09756899978866594,
         "B_AME_MeV": 28.29567,
-        "residual": 290.006922967794,
+        "residual": 290.00676507177803,
         "B_AME_per_A": 7.0739175,
-        "B_dim_per_A": 0.024392236666659076
+        "B_dim_per_A": 0.024392249947166485
       }
     },
     "verdict": "THE O(1) RESIDUAL IS THE MISSING MANY-BODY TERM, NOT A CONSTANT (formalize-first NEGATIVE, no fit): (A1) n_strands=3A exactly \u2014 color \u00d73 is already in the braid, not a free factor; (A2) T and \u00b3He share braid topology but differ in residual (4.4 vs 3.3) \u2014 the residual is NOT topological, so a single constant cannot close it (leaves the 2.8x spread); (A3) B(dim) is sub-linear while B_AME is super-linear, and the residual is MAXIMAL at the doubly-magic \u2074He (\u03b1-saturation) where B_AME/A peaks but B_dim/A does not. So the residual is the SIZE of the missing many-body binding term \u2014 a single Jones\u2013Markov trace tr_M(\u03b2_K) is a 2-body-like object; the \u03b1 enhancement is 4-body saturation. Deriving it = deriving the operator-valued branching combiner (the KNOWN-OPEN Subgoal-1 closure path), NOT fitting a seventh O(1) ansatz. Scope-(a) magnitude-limited. NOTHING WIRED."
@@ -81,7 +81,8 @@
     "concrete_open": "the [1^4] Slater\u2194trace dictionary (\u039b^A(4) nucleon-flavor) closing the b4 deficit \u2014 the operator-valued branching combiner (Subgoal-1)",
     "gate": "\u0394_\u03bb gate \u2014 formalize-first NEGATIVE; no seventh fit-based ansatz; nothing wired"
   },
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808076",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

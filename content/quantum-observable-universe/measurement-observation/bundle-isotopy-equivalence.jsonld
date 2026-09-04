@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-bundle-isotopy-equivalence",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:bundle-isotopy-equivalence",
+  "kind": "definition",
+  "title": "Isotopy equivalence of bundle initial conditions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bundle-initial-conditions"
+  ],
+  "tags": [
+    "bundle",
+    "isotopy",
+    "equivalence"
+  ],
+  "leanRef": "qou:QOU.BundleIsotopyEquiv",
+  "text": "bundle-isotopy-equivalence.md",
+  "leanSource": "bundle-isotopy-equivalence.lean",
+  "provenance": "authored"
+}

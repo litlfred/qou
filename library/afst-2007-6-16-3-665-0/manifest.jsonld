@@ -1,0 +1,46 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/afst-2007-6-16-3-665-0/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Galois theory of q-difference equations",
+  "contains": [
+    "library/afst-2007-6-16-3-665-0/sections/sec-000",
+    "library/afst-2007-6-16-3-665-0/sections/sec-001",
+    "library/afst-2007-6-16-3-665-0/sections/sec-002",
+    "library/afst-2007-6-16-3-665-0/sections/sec-003",
+    "library/afst-2007-6-16-3-665-0/sections/sec-004",
+    "library/afst-2007-6-16-3-665-0/sections/sec-005",
+    "library/afst-2007-6-16-3-665-0/sections/sec-006",
+    "library/afst-2007-6-16-3-665-0/sections/sec-007",
+    "library/afst-2007-6-16-3-665-0/sections/sec-008",
+    "library/afst-2007-6-16-3-665-0/sections/sec-009",
+    "library/afst-2007-6-16-3-665-0/sections/sec-010",
+    "library/afst-2007-6-16-3-665-0/sections/sec-011",
+    "library/afst-2007-6-16-3-665-0/sections/sec-012",
+    "library/afst-2007-6-16-3-665-0/sections/sec-013",
+    "library/afst-2007-6-16-3-665-0/sections/sec-014",
+    "library/afst-2007-6-16-3-665-0/sections/sec-015",
+    "library/afst-2007-6-16-3-665-0/sections/sec-016",
+    "library/afst-2007-6-16-3-665-0/sections/sec-017",
+    "library/afst-2007-6-16-3-665-0/sections/sec-018",
+    "library/afst-2007-6-16-3-665-0/sections/sec-019",
+    "library/afst-2007-6-16-3-665-0/sections/sec-020",
+    "library/afst-2007-6-16-3-665-0/sections/sec-021",
+    "library/afst-2007-6-16-3-665-0/sections/sec-022",
+    "library/afst-2007-6-16-3-665-0/sections/sec-023"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "afst-2007-6-16-3-665-0",
+    "source_file": "AFST_2007_6_16_3_665_0.pdf",
+    "source_sha256": "402b61574e561f861d1d2a5437da11d1f9327b0979317d5b25ca23101be95430",
+    "pages": 55,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

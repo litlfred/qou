@@ -1,11 +1,11 @@
 ---
 # qou-skgn
-title: 'prop:skein-generation is a self-assuming projection — the class field IS the conclusion'
+title: prop:skein-generation is a self-assuming projection — the class field IS the conclusion
 status: todo
 type: task
 priority: medium
 created_at: 2026-08-30T08:20:00Z
-updated_at: 2026-08-30T08:20:00Z
+updated_at: 2026-09-02T21:58:32Z
 ---
 
 Found on `origin/main` while diffing the `qou-scrx` collision pairs. Not a
@@ -89,3 +89,74 @@ provable-kind block whose Lean asserts its own premise. That is the state today
 I did not measure the `uses[]` consumers of `prop:skein-generation`; route (1)
 would need that first, since demoting a proposition propagates. Measure before
 acting.
+
+
+--------
+
+## RESOLVED 2026-09-02 by route (2). My own recommendation of route (1) was WRONG.
+
+### The blast radius, finally measured — and it kills route (1)
+
+This bean said *"Blast radius — unmeasured … Measure before acting."* Measured now,
+by transitive closure over `uses[]` across every `.ts` in the paper:
+
+**437 downstream blocks.** Of those, §3b would force a demotion on:
+
+| kind | count | §3b consequence |
+|---|---|---|
+| proposition | **63** | must demote |
+| theorem | **5** | must demote |
+| lemma | **3** | must demote |
+| proof | **44** | → `remark` + `interprets:` |
+
+The cone contains `thm:knot-mass-formula-unified`, `prop:categorical-proton-*`,
+`prop:markov-trace-*`, `prop:three-calibration-discipline`, the α_EM chain and
+the whole mass-formula spine.
+
+**So my recommendation in this bean — *"(1) now, (3) later … demoting is cheap
+and reversible"* — was wrong**, and it was wrong precisely because I made it
+with the blast radius unmeasured and then said so in the same breath. Demoting
+one proposition would have demoted ~115 provable blocks. Route (1) is off the
+table.
+
+### What was done instead: route (2), the §3b-cond item-5 remedy
+
+`SkeinGenerationContext` no longer carries `generation_top` (the conclusion).
+It now carries the **inputs to** generation:
+
+* `complexity : Skein → ℕ` — crossing number in the intended model;
+* `base` — complexity `0` ⟹ already in the generated subalgebra;
+* `resolve` — positive complexity ⟹ expressible via the generators plus
+  **finitely many strictly simpler** elements.
+
+`skein_generation` is now a genuine strong induction on `complexity`
+(`mem_adjoin_of_complexity_eq`), and `skein_generation_top` — the `= ⊤`
+statement that used to be the *hypothesis* — is now a **consequence**. The
+direction of implication is flipped, which is the whole point.
+
+Three declarations, `lean`-direct exit 0, all `#print axioms`-clean
+(`[propext, Classical.choice, Quot.sound]`).
+
+**The `Finset` in `resolve` is not incidental** — it encodes the narrative's
+*"finite polynomial"*, which the previous encoding dropped entirely.
+
+**Non-vacuity witness added, deliberately as a `def` and NOT an `instance`.**
+As an instance it would apply to every `Skein` by resolution, silently
+discharging the hypothesis everywhere and re-creating the exact defect being
+removed.
+
+### Still open — route (3), and now the only part left
+
+The formalisation carries two of the narrative sentence's four content words.
+Still absent:
+
+* **hadron restriction** — conclusion is for every `h : Skein`, prose says
+  *"every **hadron**"*. `QOU/scratch_skein.lean` is still the corpus's only
+  hadron-restricted statement; **do not delete it** (`qou-scrx`).
+* **`ℤ[q^{±1}]` coefficients** — `R` is an arbitrary `CommRing`.
+
+Both are now recorded in the module docstring under "What is still NOT
+formalised", so the file no longer reads as stronger than it is.
+
+**No cascade from this change**: the block stays a `proposition`, so nothing
+propagates. Its `lean.ref` (`qou:QOU.Torsion.skein_generation`) is unchanged.

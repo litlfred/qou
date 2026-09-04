@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1511.05628v1/blocks/prose-sec-021",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A sample computation",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "text": "../sections/sec-021-52-a-sample-computation.md",
+  "derivedFrom": "library/arxiv-1511.05628v1/manifest",
+  "sourceDocument": "library/arxiv-1511.05628v1/manifest",
+  "provenance": "ingested"
+}

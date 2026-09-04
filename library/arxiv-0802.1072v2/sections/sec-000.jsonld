@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0802.1072v2/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Three basic theorems",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-0802.1072v2/blocks/prose-sec-000",
+    "library/arxiv-0802.1072v2/blocks/thm-sec-000-01",
+    "library/arxiv-0802.1072v2/blocks/rem-sec-000-02",
+    "library/arxiv-0802.1072v2/blocks/thm-sec-000-03",
+    "library/arxiv-0802.1072v2/blocks/thm-sec-000-04",
+    "library/arxiv-0802.1072v2/blocks/thm-sec-000-05"
+  ],
+  "derivedFrom": "library/arxiv-0802.1072v2/manifest",
+  "sourceDocument": "library/arxiv-0802.1072v2/manifest",
+  "provenance": "ingested"
+}

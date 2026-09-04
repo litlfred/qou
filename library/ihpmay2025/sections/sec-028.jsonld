@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Bers-Sullivan-Thurston Density Conjecture and other consequences",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-028",
+    "library/ihpmay2025/blocks/thm-sec-028-01",
+    "library/ihpmay2025/blocks/thm-sec-028-02",
+    "library/ihpmay2025/blocks/cor-sec-028-03"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

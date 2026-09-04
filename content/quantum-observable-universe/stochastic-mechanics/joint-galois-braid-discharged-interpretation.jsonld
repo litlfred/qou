@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-joint-galois-braid-discharged-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:joint-galois-braid-discharged-interpretation",
+  "kind": "remark",
+  "title": "The joint-action conjecture was open in form, not content — what its discharge completes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-discharged",
+    "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-figure-8-verified",
+    "papers/quantum-observable-universe/blocks/conj-joint-galois-braid-action",
+    "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence",
+    "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
+    "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent",
+    "papers/quantum-observable-universe/blocks/prop-two-filtration-bridge-small-cases",
+    "papers/quantum-observable-universe/blocks/def-hq-bi-filtration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-joint-galois-braid-discharged",
+  "text": "joint-galois-braid-discharged-interpretation.md",
+  "provenance": "authored"
+}

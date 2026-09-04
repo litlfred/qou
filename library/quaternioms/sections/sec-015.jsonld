@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Results",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

@@ -54,7 +54,22 @@ mp.mp.dps = 80
 
 # Substrate constants
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
+# Q_PIN is KEPT and still passed to record_upstream(): the anchor witness stays
+# a genuine provenance upstream of this result even though it is no longer the
+# value's source. Dropping it would lose that edge, so the two uses are split.
+#
+# The VALUE now comes from `q_parameter`, i.e. the RUNNING SCRIPT's anchor
+# (routed 2026-09-03, bean `qou-aj91`). The direct read hardcoded muon and made
+# QOU_Q0_ANCHOR inert here.
+#
+# This does NOT disturb bean `qou-324i`, which on 2026-08-28 corrected this
+# producer's disposition from `independent` to `muon`. The stem stays listed
+# `ideal_muon`, q_parameter resolves that to the same value byte-for-byte, and
+# the corrected disposition remains true. Only the `q0AnchorReason` prose in the
+# witness needed updating, because it described the mechanism, not the layer.
+record_upstream(Q_PIN, _UPSTREAM_RECORDS)
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 -- anchor-aware
+Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
@@ -92,7 +107,15 @@ LAM_LAMBDA = (M_LAMBDA / M_E) * HBAR_Q**2 / VOL_B3_LIT
 
 
 def ppm(x, ref):
-    return float((x - ref) / ref * mp.mpf("1e6"))
+    """Parts-per-million difference, as mpf.
+
+    Returned float64 until 2026-09-04 (bean `qou-3f7a` / raw-float64 drain).
+    Its result reaches the witness as every `diff_ppm` field and as the
+    `probe_1_proton_within_10ppm` assertion's `computed`, so the cast put
+    float64 straight into the record. Both operands are mpf; nothing here
+    needed narrowing. Call sites that PRINT it wrap in mp.nstr.
+    """
+    return (x - ref) / ref * mp.mpf("1e6")
 
 
 def main() -> int:
@@ -120,11 +143,12 @@ def main() -> int:
         "lambda_p_target": mp.nstr(LAM_P, 25),
         "5/2 - h²·G": mp.nstr(form_5_2, 25),
         "diff_absolute": mp.nstr(form_5_2 - LAM_P, 15),
-        "diff_ppm": ppm(form_5_2, LAM_P),
+        "diff_ppm": mp.nstr(ppm(form_5_2, LAM_P), 20),
     }
     w.add_data("probe_1_5_2_minus_h2_G_proton", p1)
-    w.add_assertion("probe_1_proton_within_10ppm", computed=abs(p1["diff_ppm"]),
-                    expected=0.0, tolerance=10.0, unit="ppm",
+    w.add_assertion("probe_1_proton_within_10ppm",
+                    computed=mp.nstr(abs(mp.mpf(p1["diff_ppm"])), 20),
+                    expected="0", tolerance="10", unit="ppm",
                     source="5/2 − h²·G vs λ_p_target")
 
     # ── Probe 2: Same form for neutron ────────────────────────
@@ -170,7 +194,7 @@ def main() -> int:
     p3b = {
         "form": "5/2 − G·h²/(1−h²)  (geometric series)",
         "value": mp.nstr(form_geometric_h2, 25),
-        "diff_ppm": ppm(form_geometric_h2, LAM_P),
+        "diff_ppm": mp.nstr(ppm(form_geometric_h2, LAM_P), 20),
     }
     w.add_data("probe_3b_geometric_series", p3b)
 
@@ -189,8 +213,8 @@ def main() -> int:
         "mass_predicted_MeV": mp.nstr(mass_pred_sigma, 8),
         "mass_sigma_plus_codata_MeV": mp.nstr(M_SIGMA_PLUS, 8),
         "mass_sigma_0_codata_MeV": mp.nstr(M_SIGMA_0, 8),
-        "ratio_pred_to_sigma_plus": float(mass_pred_sigma / M_SIGMA_PLUS),
-        "ratio_pred_to_sigma_0": float(mass_pred_sigma / M_SIGMA_0),
+        "ratio_pred_to_sigma_plus": mp.nstr(mass_pred_sigma / M_SIGMA_PLUS, 20),
+        "ratio_pred_to_sigma_0": mp.nstr(mass_pred_sigma / M_SIGMA_0, 20),
         "interpretation": (
             "If p(n)/2 generation hypothesis holds with p(5) = 7, "
             "λ_Σ_pred = 7/2 − h²·G = ~3.46. Observed Σ baryon λ values: "
@@ -215,9 +239,9 @@ def main() -> int:
                 if abs(diff_p) < 100:
                     alternatives.append({
                         "leading": f"{num}/{den}",
-                        "value": float(rat),
+                        "value": mp.nstr(rat, 20),
                         "test_with_h2G": mp.nstr(test, 12),
-                        "diff_p_ppm": diff_p,
+                        "diff_p_ppm": mp.nstr(diff_p, 20),
                     })
     p5 = {
         "search": "leading rational L close to 5/2, test L − h²·G vs λ_p",

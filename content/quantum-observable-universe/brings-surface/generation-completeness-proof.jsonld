@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-generation-completeness",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:generation-completeness",
+  "kind": "proof",
+  "title": "Proof of generation completeness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-generation-completeness"
+  ],
+  "text": "generation-completeness-proof.md",
+  "provenance": "authored"
+}

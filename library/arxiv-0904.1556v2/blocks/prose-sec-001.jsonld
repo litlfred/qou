@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0904.1556v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Standard Model",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-2-the-standard-model.md",
+  "derivedFrom": "library/arxiv-0904.1556v2/manifest",
+  "sourceDocument": "library/arxiv-0904.1556v2/manifest",
+  "provenance": "ingested"
+}

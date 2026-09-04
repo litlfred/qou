@@ -1,14 +1,14 @@
 ---
 # qou-b21r
 title: 'branching_two_one: the differential-poset route (needs ONE lemma, not RSK)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - lean
     - needs:combinatorics
 created_at: 2026-08-30T14:46:08Z
-updated_at: 2026-08-31T03:21:55Z
+updated_at: 2026-08-31T05:02:30Z
 ---
 
 `RSKIdentitiesContext.branching_two_one` is the class's one remaining open field
@@ -171,3 +171,49 @@ DONE: the erase geometry, and the diagram-level facts around it.
 NOT DONE: skewInsertMax, the erase/insert bijection, the branching sum itself, and G(mu,k).
 The remaining work is still the bulk. Do not read 12 sorry-free declarations as the branching
 rule being close -- the hard direction has not started.
+
+
+## CLOSED 2026-08-31 — `RSKIdentitiesContext` is inhabited
+
+The route above is right and it worked. `QOU.Mathlib.SkewBranchingTwoOne.branching_two_one_holds`
+proves `3 * sum_{lam ⊢ k} f^lam f^{lam/(2,1)} = k!` for k ≥ 3 unconditionally, and
+`rskIdentitiesContextInstance` discharges the class. Verified: `branching_two_one 5` and
+`c8_superexp 7` both typecheck at concrete k with no explicit instance argument — until now
+neither could be applied at any k. `#print axioms` clean on all of it (propext /
+Classical.choice / Quot.sound, no sorryAx).
+
+Three chunks, all sorry-free, all lean-direct exit 0:
+
+* `QOU/Mathlib/SkewSYTBranchingBijection.lean` — the skew branching rule
+  `f^{lam/mu} = sum_c f^{(lam-c)/mu}`.
+* `QOU/Mathlib/SkewBranchingSum.lean` — `|mu|! * G(mu,k) = k! * f^mu`.
+* `QOU/Mathlib/SkewBranchingTwoOne.lean` — mu = (2,1), plus the instance.
+
+## Four things the plan above got wrong or did not anticipate
+
+1. **The transposition was NOT the `pairTerm` / `sum_comm` device.** The bean said that
+   manoeuvre 'carries over directly'. It does not — `pairTerm` transposes two Finsets attached
+   to ONE diagram, whereas here the outer sum ranges over every diagram of size k+1. What the
+   step actually needs was already sitting in `YoungLatticeCornerCount`: `rankExchange n`, the
+   sigma equiv `(lam, corner) ≃ (nu, addable cell)` across a whole rank. The corpus already held
+   the tool; the bean named the wrong one.
+2. **Both sums must be WIDENED, not restricted.** The bean states skew branching over 'corners c
+   of lam with c not in mu', which is the true statement — but the restricted index is exactly
+   what `rankExchange` cannot see. Corners inside mu contribute 0 (lam minus such a c no longer
+   contains mu), so widening is free, and dually the addable sum needs no 'outside mu' guard
+   because mu ≤ nu leaves no addable cell inside mu. Widening both is what lets the existing
+   equiv apply unchanged.
+3. **`Finite (SkewStandardYoungTableau outer inner)` did not exist anywhere in the tree.**
+   `fDimSkew` is a `Nat.card`, so strictly every Nat.card fact about it was a fact about a
+   possibly-junk 0. It surfaced because `Nat.card_sigma` refused to fire. Now `finiteSkewSYT`.
+4. **f^{(2,1)} = 2 is the one shelf item**, from the decide-verified small-n hook bridge
+   `numStandardYoungTableaux_eq_dimHLF_le4` — found by corpus-grep, not rebuilt. A computation on
+   one three-cell shape, not the hook-length formula as a theorem.
+
+## The mis-diagnosis is confirmed, for the second time
+
+The bean guessed 'discharged by the RSK correspondence' was wrong. It was. Neither RSK nor the
+general hook-length formula appears anywhere in the proof. That makes twice — `qou-jlam` /
+`qou-m3xr` was the first — that 'Mathlib lacks RSK, therefore blocked' was written into this
+corpus as an infrastructure fact and was actually a mis-diagnosis. The stale docstrings in
+`QOU/BraidKnot/YoungTableauStandard.lean` are corrected in the same PR.

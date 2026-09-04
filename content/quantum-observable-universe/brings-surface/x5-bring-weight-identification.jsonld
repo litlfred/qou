@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-x5-bring-weight-identification",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:x5-bring-weight-identification",
+  "kind": "proposition",
+  "title": "$\\mathbb{Z}_5$-weight identification: $x$ on $\\mathcal{X}_5$ matches $w_1$ on Bring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism"
+  ],
+  "tags": [
+    "lagrange-resolvent",
+    "z5",
+    "weight-grading",
+    "bring",
+    "hyperelliptic"
+  ],
+  "leanRef": "qou:QOU.HyperellipticQuintic.bring_weight_match",
+  "text": "x5-bring-weight-identification.md",
+  "leanSource": "x5-bring-weight-identification.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-skein-mass-from-linking",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:skein-mass-from-linking",
+  "kind": "proof",
+  "title": "Proof of the Skein-resolution mass formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-skein-mass-from-linking"
+  ],
+  "text": "skein-mass-from-linking-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bm-markov-j/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On Markov's Theorem",
+  "contains": [
+    "library/bm-markov-j/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "bm-markov-j",
+    "source_file": "bm-markov-j.pdf",
+    "source_sha256": "ffc46b9daf7dc8587b80f368ce98844401d688e77a32759c4d18a6446ca6079a",
+    "pages": 16,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

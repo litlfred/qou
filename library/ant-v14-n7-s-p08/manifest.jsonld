@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p08/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Burgess bounds for short character sums evaluated at forms",
+  "contains": [
+    "library/ant-v14-n7-s-p08/sections/sec-000",
+    "library/ant-v14-n7-s-p08/sections/sec-001",
+    "library/ant-v14-n7-s-p08/sections/sec-002",
+    "library/ant-v14-n7-s-p08/sections/sec-003",
+    "library/ant-v14-n7-s-p08/sections/sec-004",
+    "library/ant-v14-n7-s-p08/sections/sec-005",
+    "library/ant-v14-n7-s-p08/sections/sec-006",
+    "library/ant-v14-n7-s-p08/sections/sec-007",
+    "library/ant-v14-n7-s-p08/sections/sec-008",
+    "library/ant-v14-n7-s-p08/sections/sec-009",
+    "library/ant-v14-n7-s-p08/sections/sec-010",
+    "library/ant-v14-n7-s-p08/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p08",
+    "source_file": "ant-v14-n7-s-p08.pdf",
+    "source_sha256": "81b8f00fe5fbd0f6b46f6fbc9dfc991ff3617dd879a73ac462c47b53e8df5ca2",
+    "pages": 42,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1911",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

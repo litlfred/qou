@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-frobenius-relation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:frobenius-relation",
+  "kind": "proposition",
+  "title": "Frobenius relation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-frobenius-relation"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-frobenius-su2"
+  ],
+  "tags": [
+    "category-theory",
+    "frobenius"
+  ],
+  "leanRef": "qou:QOU.frobenius_relation",
+  "text": "frobenius-relation.md",
+  "leanSource": "frobenius-relation.lean",
+  "provenance": "authored"
+}

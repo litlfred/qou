@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-antipode-neutron-tower-closure",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-antipode-neutron-tower-closure",
+  "kind": "remark",
+  "title": "Frobenius-antipode symmetrization closes the neutron tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-frobenius-antipode-unifies-chirality-and-tower",
+    "papers/quantum-observable-universe/blocks/thm-six-term-mass-formula-complete"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-frobenius-antipode-unifies-chirality-and-tower",
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "frobenius",
+    "antipode",
+    "neutron-tower",
+    "alpha-blend",
+    "catalan",
+    "determinant-invariant"
+  ],
+  "text": "frobenius-antipode-neutron-tower-closure.md",
+  "provenance": "authored"
+}

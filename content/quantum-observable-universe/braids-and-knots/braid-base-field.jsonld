@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-braid-base-field",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:braid-base-field",
+  "kind": "remark",
+  "title": "Independence from the base field",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+    "papers/quantum-observable-universe/blocks/ex-p-adic-realisation",
+    "papers/quantum-observable-universe/blocks/ex-finite-field-realisation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+  "tags": [
+    "braid-group",
+    "base-field",
+    "p-adic"
+  ],
+  "text": "braid-base-field.md",
+  "provenance": "authored"
+}

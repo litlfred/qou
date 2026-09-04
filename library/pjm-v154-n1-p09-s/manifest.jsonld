@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/pjm-v154-n1-p09-s/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The period matrix of Bring's curve",
+  "contains": [
+    "library/pjm-v154-n1-p09-s/sections/sec-000",
+    "library/pjm-v154-n1-p09-s/sections/sec-001",
+    "library/pjm-v154-n1-p09-s/sections/sec-002",
+    "library/pjm-v154-n1-p09-s/sections/sec-003",
+    "library/pjm-v154-n1-p09-s/sections/sec-004",
+    "library/pjm-v154-n1-p09-s/sections/sec-005",
+    "library/pjm-v154-n1-p09-s/sections/sec-006",
+    "library/pjm-v154-n1-p09-s/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "pjm-v154-n1-p09-s",
+    "source_file": "pjm-v154-n1-p09-s.pdf",
+    "source_sha256": "cbf5c02babe5a61ed34fdd5b67f8af30c4c8b8fcdb8d4a64c33c94fc02860538",
+    "pages": 25,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

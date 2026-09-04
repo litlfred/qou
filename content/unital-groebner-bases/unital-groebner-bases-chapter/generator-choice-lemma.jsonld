@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/lem-generator-choice",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:generator-choice",
+  "kind": "lemma",
+  "title": "Generator choice in the division algorithm",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-groebner-basis",
+    "papers/unital-groebner-bases/blocks/def-division-algorithm"
+  ],
+  "proofs": [
+    "papers/unital-groebner-bases/blocks/prf-generator-choice"
+  ],
+  "tags": [
+    "groebner-basis",
+    "division",
+    "generator"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.generator_choice",
+  "text": "generator-choice-lemma.md",
+  "leanSource": "generator-choice-lemma.lean",
+  "provenance": "authored"
+}

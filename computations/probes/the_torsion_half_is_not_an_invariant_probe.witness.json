@@ -1,0 +1,264 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-03T20:22:49.312146+00:00",
+  "commitSha": "be2d1bf56ca16ec9ecd45acd6dee6e4ae2efca02",
+  "assertions": [
+    {
+      "name": "T(2,3): κ > 0 on the whole family — the Frenet frame is a global framing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): Wr + Tw_F is an integer at every r to 1e-7 (Călugăreanu, numerically)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): Lk_F = -6 for r > 4/(q²+4) = 0.307692 and -3 below it — the Frenet self-linking JUMPS by q across the inflection radius",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): ∫κ ds decreases monotonically toward 4π as r → 0 and stays above it",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): ∫κ ds comes within 5 % of Milnor's floor at the smallest r",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): total torsion is not constant along the family (spread > 1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,3): the writhe is not constant along the family either (spread > 0.1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): κ > 0 on the whole family — the Frenet frame is a global framing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): Wr + Tw_F is an integer at every r to 1e-7 (Călugăreanu, numerically)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): Lk_F = -10 for r > 4/(q²+4) = 0.137931 and -5 below it — the Frenet self-linking JUMPS by q across the inflection radius",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): ∫κ ds decreases monotonically toward 4π as r → 0 and stays above it",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): ∫κ ds comes within 5 % of Milnor's floor at the smallest r",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): total torsion is not constant along the family (spread > 1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,5): the writhe is not constant along the family either (spread > 0.1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): κ > 0 on the whole family — the Frenet frame is a global framing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): Wr + Tw_F is an integer at every r to 1e-7 (Călugăreanu, numerically)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): Lk_F = -14 for r > 4/(q²+4) = 0.0754717 and -7 below it — the Frenet self-linking JUMPS by q across the inflection radius",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): ∫κ ds decreases monotonically toward 4π as r → 0 and stays above it",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): ∫κ ds comes within 5 % of Milnor's floor at the smallest r",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): total torsion is not constant along the family (spread > 1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "T(2,7): the writhe is not constant along the family either (spread > 0.1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "γ'×γ'' at t = π/q carries the factor (q²+4)r − 4 for q = 3, 5, 7 (sympy, exact), and κ(π/q; 4/(q²+4)) vanishes to 1e-15",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "the_torsion_half_is_not_an_invariant_probe",
+  "scriptFile": "the_torsion_half_is_not_an_invariant_probe.py",
+  "scriptHash": "2561f6ac0813",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_torsion_half_is_not_an_invariant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_torsion_half_is_not_an_invariant_probe.py"
+  },
+  "description": "The torsion half of Calugareanu is not an isotopy invariant, the curvature half's infimum is. Standard torus embeddings of T(2,3), T(2,5), T(2,7) along a family r -> 0: total curvature decreases toward Milnor's floor 4*pi (bridge number 2) and stays above it; total torsion and writhe vary across the family while Wr + Tw_F is an integer at every r. Hence the fractional framing scalar the hull exit needs cannot be an isotopy invariant of the closure; the substrate's fractional twist is algebraic or nothing. mpmath quadrature at 24 dps, no float64 in the hot path.",
+  "data": {
+    "T23_r0p45_kappa_min": "0.61005771",
+    "T23_r0p45_total_curvature": "16.8556267400166",
+    "T23_r0p45_total_torsion": "-16.1787910417902",
+    "T23_r0p45_writhe": "-3.42506543244822",
+    "T23_r0p45_Lk_Frenet": "-6.0",
+    "T23_r0p3_kappa_min": "0.036101083",
+    "T23_r0p3_total_curvature": "13.9549629595745",
+    "T23_r0p3_total_torsion": "1.16972120375437",
+    "T23_r0p3_writhe": "-3.18616691161691",
+    "T23_r0p3_Lk_Frenet": "-3.0",
+    "T23_r0p18_kappa_min": "0.55682276",
+    "T23_r0p18_total_curvature": "12.9260867823137",
+    "T23_r0p18_total_torsion": "0.400580124014256",
+    "T23_r0p18_writhe": "-3.06375430684123",
+    "T23_r0p18_Lk_Frenet": "-3.0",
+    "T23_r0p1_kappa_min": "0.81081081",
+    "T23_r0p1_total_curvature": "12.6616689125929",
+    "T23_r0p1_total_torsion": "0.119798754136152",
+    "T23_r0p1_writhe": "-3.01906656389702",
+    "T23_r0p1_Lk_Frenet": "-3.0",
+    "T23_r0p05_kappa_min": "0.92222987",
+    "T23_r0p05_total_curvature": "12.588892529997",
+    "T23_r0p05_total_torsion": "0.0295808344438459",
+    "T23_r0p05_writhe": "-3.00470793602252",
+    "T23_r0p05_Lk_Frenet": "-3.0",
+    "T23_r0p02_kappa_min": "0.97264122",
+    "T23_r0p02_total_curvature": "12.5699159712996",
+    "T23_r0p02_total_torsion": "0.00471570559044298",
+    "T23_r0p02_writhe": "-3.00075052785489",
+    "T23_r0p02_Lk_Frenet": "-3.0",
+    "T25_r0p45_kappa_min": "1.2655409",
+    "T25_r0p45_total_curvature": "28.3832221286596",
+    "T25_r0p45_total_torsion": "-20.9960885407419",
+    "T25_r0p45_writhe": "-6.65836872314432",
+    "T25_r0p45_Lk_Frenet": "-10.0",
+    "T25_r0p3_kappa_min": "1.1163895",
+    "T25_r0p3_total_curvature": "23.166055796208",
+    "T25_r0p3_total_torsion": "-25.4578259691525",
+    "T25_r0p3_writhe": "-5.94826115663617",
+    "T25_r0p3_Lk_Frenet": "-10.0",
+    "T25_r0p18_kappa_min": "0.34861127",
+    "T25_r0p18_total_curvature": "17.0363618373104",
+    "T25_r0p18_total_torsion": "-28.9394916777656",
+    "T25_r0p18_writhe": "-5.39413684891684",
+    "T25_r0p18_Lk_Frenet": "-10.0",
+    "T25_r0p1_kappa_min": "0.31518625",
+    "T25_r0p1_total_curvature": "13.6835393472459",
+    "T25_r0p1_total_torsion": "0.806497038147893",
+    "T25_r0p1_writhe": "-5.12835799021021",
+    "T25_r0p1_Lk_Frenet": "-5.0",
+    "T25_r0p05_kappa_min": "0.6943499",
+    "T25_r0p05_total_curvature": "12.8292073934319",
+    "T25_r0p05_total_torsion": "0.205050300862607",
+    "T25_r0p05_writhe": "-5.03263476896476",
+    "T25_r0p05_Lk_Frenet": "-5.0",
+    "T25_r0p02_kappa_min": "0.88794267",
+    "T25_r0p02_total_curvature": "12.6077340663169",
+    "T25_r0p02_total_torsion": "0.0329582981738935",
+    "T25_r0p02_writhe": "-5.00524547607027",
+    "T25_r0p02_Lk_Frenet": "-5.0",
+    "T27_r0p45_kappa_min": "1.51916",
+    "T27_r0p45_total_curvature": "41.0571069477725",
+    "T27_r0p45_total_torsion": "-23.5177312264865",
+    "T27_r0p45_writhe": "-10.2570368687208",
+    "T27_r0p45_Lk_Frenet": "-14.0000000437",
+    "T27_r0p3_kappa_min": "1.7815577",
+    "T27_r0p3_total_curvature": "35.4032958942231",
+    "T27_r0p3_total_torsion": "-30.462394220066",
+    "T27_r0p3_writhe": "-9.15175938146224",
+    "T27_r0p3_Lk_Frenet": "-14.0",
+    "T27_r0p18_kappa_min": "1.2952399",
+    "T27_r0p18_total_curvature": "26.5110633308713",
+    "T27_r0p18_total_torsion": "-37.4601163081421",
+    "T27_r0p18_writhe": "-8.03803732076186",
+    "T27_r0p18_Lk_Frenet": "-14.0",
+    "T27_r0p1_kappa_min": "0.34852547",
+    "T27_r0p1_total_curvature": "17.8846842665895",
+    "T27_r0p1_total_torsion": "-41.6683290829228",
+    "T27_r0p1_writhe": "-7.36827945607305",
+    "T27_r0p1_Lk_Frenet": "-14.0",
+    "T27_r0p05_kappa_min": "0.36168788",
+    "T27_r0p05_total_curvature": "13.691313013522",
+    "T27_r0p05_total_torsion": "0.608108965687069",
+    "T27_r0p05_writhe": "-7.0967835478276",
+    "T27_r0p05_Lk_Frenet": "-7.0",
+    "T27_r0p02_kappa_min": "0.76142132",
+    "T27_r0p02_total_curvature": "12.7405442505927",
+    "T27_r0p02_total_torsion": "0.0986913576094652",
+    "T27_r0p02_writhe": "-7.015707217404",
+    "T27_r0p02_Lk_Frenet": "-7.0",
+    "worst_Lk_integrality_residual": "4.37e-8"
+  },
+  "caveats": [
+    "The torus embedding is a convenience, not a canonical realisation; every torsion and writhe number here is a property of that embedding and of r, which is the point being made. A canonical embedding (Mobius-energy or ropelength minimiser) would give canonical numbers, and would still not give an isotopy invariant.",
+    "Writhe is a trapezoid x panelled Gauss-Legendre double integral in (t, u = s - t) coordinates, checked only through the integrality of Wr + Tw_F (residual reported as worst_Lk_integrality_residual); its absolute accuracy is well below the 24-dps working precision of the single integrals.",
+    "Per component only. A realisation of the whole chain link is not constructed; the principle does not depend on it."
+  ]
+}

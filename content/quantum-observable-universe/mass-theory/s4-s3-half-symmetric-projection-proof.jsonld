@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-s4-s3-half-symmetric-projection",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:s4-s3-half-symmetric-projection",
+  "kind": "proof",
+  "title": "Proof of s4 s3 half symmetric projection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-s4-s3-half-symmetric-projection"
+  ],
+  "text": "s4-s3-half-symmetric-projection-proof.md",
+  "provenance": "authored"
+}

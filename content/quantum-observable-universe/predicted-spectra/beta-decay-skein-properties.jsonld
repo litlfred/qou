@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-beta-decay-skein-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:beta-decay-skein-properties",
+  "kind": "remark",
+  "title": "Weak vertex, $10$-crossing budget, and $Q$-value of the $\\beta$-decay Skein operation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+    "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+    "papers/quantum-observable-universe/blocks/def-categorical-proton",
+    "papers/quantum-observable-universe/blocks/def-categorical-neutron",
+    "papers/quantum-observable-universe/blocks/rem-force-knot-identification",
+    "papers/quantum-observable-universe/blocks/def-Q-value-transition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+  "tags": [
+    "beta-decay",
+    "skein-relation",
+    "groebner-basis",
+    "hecke-algebra",
+    "weak-force",
+    "crossing-change",
+    "lepton",
+    "normal-form"
+  ],
+  "text": "beta-decay-skein-properties.md",
+  "provenance": "authored"
+}

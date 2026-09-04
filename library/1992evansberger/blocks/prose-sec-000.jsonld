@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1992evansberger/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Document",
+  "pageStart": 1,
+  "pageEnd": 12,
+  "text": "../sections/sec-000-document.md",
+  "derivedFrom": "library/1992evansberger/manifest",
+  "sourceDocument": "library/1992evansberger/manifest",
+  "provenance": "ingested"
+}

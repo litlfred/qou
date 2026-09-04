@@ -138,7 +138,11 @@ def main() -> int:
           "(derivability map's separate underived global dressing sign)", assertions)
 
     # ---- fibre-level: q↦−q⁻¹ at real q₀ is real-negative, not conjugation --
-    q0 = mpf("1.10997859555733471")  # muon-q₀ canonical (computations/ layer)
+    # Proton pin read BY NAME (owner directive 2026-08-07; bean qou-4bef 2026-09-03). This line
+    # carried the RETIRED muon literal while the witness was auto-stamped `proton` — a mislabel
+    # no anchor detector could see, because the literal never reached the witness.
+    from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+    q0 = mpf(Q_50_DIGIT_STR)
     swapped = -1 / q0
     check("eigswap_real_q0_is_real_negative",
           swapped < 0 and abs(swapped.imag if hasattr(swapped, "imag") else 0) < mpf(10) ** -40,

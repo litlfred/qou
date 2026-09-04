@@ -406,6 +406,56 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
         output_dir=path.parent,
     )
     wb.add_data("lean_uniqueness_ref", lean_uniqueness_ref(slug))
+    # qou-gq2p / qou-srvu drain. Every one of these 25 per-atom witnesses
+    # reported `allPassed: true` over an EMPTY assertions list. All four claims
+    # below are already computed above and were being discarded.
+    #
+    # THE FIRST IS THE LOAD-BEARING ONE. `reconstruction_matches` is
+    # `sp.expand(reconstruct(coeffs, u) - p_u) == 0` -- an EXACT symbolic
+    # identity with no tolerance at all -- and the shared loader
+    # `habiro_coefficients_atomic.load_a_m` REFUSES a witness carrying it false
+    # (bean qou-s41x). It was being trusted downstream by a consumer while the
+    # producer itself asserted nothing about it.
+    wb.add_assertion(
+        "habiro_reconstruction_is_exact",
+        str(int(bool(body["reconstruction_matches"]))), "1",
+        source="sp.expand(reconstruct(a_m) - p_u) == 0, exact symbolic "
+               "identity, no tolerance; load_a_m refuses a false one (qou-s41x)",
+    )
+    wb.add_assertion(
+        "habiro_coefficients_all_integral",
+        str(int(bool(body["all_integral"]))), "1",
+        source="every a_m lies in the Habiro ring's coefficient ring",
+    )
+    # Guards the two flags above against passing on a degenerate empty
+    # expansion, where `all(...)` over no coefficients is vacuously True.
+    wb.add_assertion(
+        "habiro_expansion_non_empty",
+        str(int(int(body["n_nonzero"]) > 0)), "1",
+        source="n_nonzero > 0; without it all_integral passes vacuously on an "
+               "empty coefficient list",
+    )
+    # Two-route agreement at q0: tr_M evaluated directly vs reconstructed
+    # through the u-polynomial. The bar is the corpus L1 target (1 ppQ =
+    # 1e-15, AGENTS.md Precision goals), which is what L1 is DEFINED over --
+    # "internal cross-method agreement at substrate q_0" -- not a number
+    # chosen to clear the observation.
+    #
+    # HONEST NOTE ON THE MARGIN: observed residuals across the family are
+    # ~1e-30 to 1e-34, but that is the HARNESS FLOOR, not a measure of how
+    # well the two routes agree. Lines 272/281/293 evaluate through
+    # `sp.N(..., 30)`, so this cross-check cannot resolve better than ~1e-30
+    # however good the agreement is. The L1 bar is still cleared by ~15
+    # orders; do not quote the residual as evidence of 30-digit agreement.
+    _rel = body.get("tr_M_at_q0_rel_err_exact") or body.get("tr_M_at_q0_rel_err")
+    if _rel is not None:
+        wb.add_assertion(
+            "tr_M_two_route_agreement_within_L1",
+            str(_rel), "0", tolerance="1e-15",
+            source="|tr_M(q0) - tr_M_via_u_poly(q0)| / |tr_M(q0)| against the "
+                   "corpus L1 1 ppQ target; resolution capped at ~1e-30 by the "
+                   "sp.N(..., 30) evaluations, so the margin is harness-bounded",
+        )
     wb.save()
     print(f"  → wrote {path.name}")
 
@@ -733,6 +783,15 @@ def main() -> int:
         script_path=__file__,
         engine="sympy Poly + sequential cyclotomic division",
         output_dir=HERE,
+    )
+    # qou-gq2p. The summary aggregates the per-atom runs; its one falsifiable
+    # claim is that none of them failed. `failures` is appended to only in the
+    # per-atom exception handler, so this cannot be true by construction.
+    wb.add_assertion(
+        "no_atom_extraction_failed",
+        str(len(failures)), "0",
+        source="failures[] is appended only from the per-atom exception "
+               "handler; 0 = every atom in the mass table extracted",
     )
     summary_path = wb.save()
     print(f"\n  → wrote {summary_path.name}")

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-parameter-limits-and-lusztig",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:substrate-parameter-limits-and-lusztig",
+  "kind": "remark",
+  "title": "Limits of the substrate parameter and the Lusztig integral form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "cites": [
+    "references/lusztig1993"
+  ],
+  "tags": [
+    "substrate",
+    "deformation",
+    "fibre-coordinate"
+  ],
+  "text": "substrate-parameter-limits-and-lusztig.md",
+  "provenance": "authored"
+}

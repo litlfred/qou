@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-two-filtration-bridge",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:two-filtration-bridge",
+  "kind": "conjecture",
+  "title": "Two-filtration bridge: iterated-integral depth $\\leftrightarrow$ partition-cellular GB-depth via $e_\\lambda$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent"
+  ],
+  "cites": [
+    "references/bloch2000"
+  ],
+  "tags": [
+    "tier:S",
+    "two-filtration-bridge",
+    "iterated-integral-depth",
+    "partition-cellular-depth",
+    "central-idempotent",
+    "graded-mikusinski",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.TwoFiltrationBridge",
+  "text": "two-filtration-bridge.md",
+  "provenance": "authored"
+}

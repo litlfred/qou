@@ -32,7 +32,7 @@ class TowerDepthNinetyConjecture {C : Type*} [GBCategory C] {tower : C → Type*
 theorem tower_depth_m_e_to_v_is_ninety
     {C : Type*} [GBCategory C] {tower : C → Type*} [BraneTower tower]
     (level_m_e level_v : C)
-    [hi : TowerDepthNinetyConjecture level_m_e level_v] :
+    [hi : TowerDepthNinetyConjecture (tower := tower) level_m_e level_v] :
     tower_depth (tower := tower) level_m_e level_v = 90 := by
   -- Ref: [manuscript] conj:n-v-tower-depth-ninety
   exact hi.is_ninety

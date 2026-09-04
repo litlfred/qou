@@ -7,6 +7,7 @@ section_number: 4
 pages: 5-9
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
 ---
 Consider a sample X0:n−1 = {X0, X1, . . . , Xn−1} of size n drawn from an ergodic, discrete-
 time, ﬁnite-state Markov chain ( Xk)k≥0 with state space E = [K] = {1, 2, . . . , K}, transition

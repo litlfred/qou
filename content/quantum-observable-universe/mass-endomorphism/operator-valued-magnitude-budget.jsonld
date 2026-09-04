@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-operator-valued-magnitude-budget",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:operator-valued-magnitude-budget",
+  "kind": "remark",
+  "title": "Magnitude budget: operator-valued vs scalar approximation of $A^\\lambda_{\\mu\\nu}(I)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hecke-branching-trace-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-branching-trace-decomposition",
+  "tags": [
+    "operator-valued",
+    "wedderburn-blocks",
+    "frobenius-decomposition",
+    "structural-magnitude-budget",
+    "empirical-finding"
+  ],
+  "text": "operator-valued-magnitude-budget.md",
+  "provenance": "authored"
+}

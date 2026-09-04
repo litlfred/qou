@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-skew-poisson-integration",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:skew-poisson-integration",
+  "kind": "proposition",
+  "title": "Integration of skewed-Poisson structures",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-witt-vector-lift"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-skew-poisson-integration"
+  ],
+  "leanRef": "qou:QOU.Archimedean.skew_poisson_integration",
+  "text": "skew-poisson-integration.md",
+  "leanSource": "skew-poisson-integration.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-gaussian-solves-q-heat",
+  "kind": "proposition",
+  "title": "Reeb-invariant $q$-Gaussian solves the $q$-heat equation (archimedean)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-taylor"
+  ],
+  "tags": [
+    "q-heat-equation",
+    "q-gaussian",
+    "heat-kernel",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.qGaussianSolvesQHeat",
+  "text": "q-gaussian-solves-q-heat.md",
+  "leanSource": "q-gaussian-solves-q-heat.lean",
+  "provenance": "authored"
+}

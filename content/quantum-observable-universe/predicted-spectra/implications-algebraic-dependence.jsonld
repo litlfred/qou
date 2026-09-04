@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-implications-algebraic-dependence",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:implications-algebraic-dependence",
+  "kind": "remark",
+  "title": "Implications if the QOU volumes are algebraically dependent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-transcendence-shadow",
+    "papers/quantum-observable-universe/blocks/rem-formal-chain-transcendence",
+    "papers/quantum-observable-universe/blocks/prop-cs-evaluation-faithfulness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "transcendence",
+    "algebraic-dependence",
+    "yekutieli",
+    "tower-collapse",
+    "falsification"
+  ],
+  "text": "implications-algebraic-dependence.md",
+  "provenance": "authored"
+}

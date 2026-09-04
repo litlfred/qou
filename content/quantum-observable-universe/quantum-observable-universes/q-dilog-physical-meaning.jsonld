@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilog-physical-meaning",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilog-physical-meaning",
+  "kind": "remark",
+  "title": "Physical meaning of $\\mathrm{Li}_2^q$: Bethe-ansatz generating function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "bethe-ansatz",
+    "entropy"
+  ],
+  "text": "q-dilog-physical-meaning.md",
+  "provenance": "authored"
+}

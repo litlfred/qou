@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.28781v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Sum-product in other settings",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-2605.28781v1/blocks/prose-sec-003",
+    "library/arxiv-2605.28781v1/blocks/thm-sec-003-01",
+    "library/arxiv-2605.28781v1/blocks/thm-sec-003-02",
+    "library/arxiv-2605.28781v1/blocks/thm-sec-003-03"
+  ],
+  "derivedFrom": "library/arxiv-2605.28781v1/manifest",
+  "sourceDocument": "library/arxiv-2605.28781v1/manifest",
+  "provenance": "ingested"
+}

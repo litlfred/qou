@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-variational-equations",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:variational-equations",
+  "kind": "proposition",
+  "title": "Variational equations of the categorical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-variational-equations"
+  ],
+  "tags": [
+    "variational",
+    "yang-mills",
+    "einstein"
+  ],
+  "leanRef": "qou:QOU.variational_equations",
+  "text": "variational-equations.md",
+  "leanSource": "variational-equations.lean",
+  "provenance": "authored"
+}

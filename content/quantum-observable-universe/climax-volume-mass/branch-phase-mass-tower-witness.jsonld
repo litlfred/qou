@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-branch-phase-mass-tower-witness",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:branch-phase-mass-tower-witness",
+  "kind": "remark",
+  "title": "Branch-phase localisation on $\\mathcal{X}_5$ and the mass-tower falsifiability witness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/rem-commutative-crossing-energy",
+    "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic",
+    "papers/quantum-observable-universe/blocks/rem-u1-phase-tube"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "cites": [
+    "references/satula1997"
+  ],
+  "tags": [
+    "branch-phase",
+    "phase-tube",
+    "isospin",
+    "mass-tower",
+    "falsifiability",
+    "golden-ratio"
+  ],
+  "text": "branch-phase-mass-tower-witness.md",
+  "provenance": "authored"
+}

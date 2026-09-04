@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A relative generic vanishing theorem 11",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

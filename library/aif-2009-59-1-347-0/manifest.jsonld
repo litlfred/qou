@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/aif-2009-59-1-347-0/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On q-summation and confluence",
+  "contains": [
+    "library/aif-2009-59-1-347-0/sections/sec-000",
+    "library/aif-2009-59-1-347-0/sections/sec-001",
+    "library/aif-2009-59-1-347-0/sections/sec-002",
+    "library/aif-2009-59-1-347-0/sections/sec-003",
+    "library/aif-2009-59-1-347-0/sections/sec-004",
+    "library/aif-2009-59-1-347-0/sections/sec-005",
+    "library/aif-2009-59-1-347-0/sections/sec-006",
+    "library/aif-2009-59-1-347-0/sections/sec-007",
+    "library/aif-2009-59-1-347-0/sections/sec-008",
+    "library/aif-2009-59-1-347-0/sections/sec-009",
+    "library/aif-2009-59-1-347-0/sections/sec-010",
+    "library/aif-2009-59-1-347-0/sections/sec-011",
+    "library/aif-2009-59-1-347-0/sections/sec-012",
+    "library/aif-2009-59-1-347-0/sections/sec-013",
+    "library/aif-2009-59-1-347-0/sections/sec-014",
+    "library/aif-2009-59-1-347-0/sections/sec-015",
+    "library/aif-2009-59-1-347-0/sections/sec-016",
+    "library/aif-2009-59-1-347-0/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "aif-2009-59-1-347-0",
+    "source_file": "AIF_2009__59_1_347_0.pdf",
+    "source_sha256": "35b8422990e24888d4256e5cd55d698694b029151ea53f0a15a2b489567c33fe",
+    "pages": 47,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

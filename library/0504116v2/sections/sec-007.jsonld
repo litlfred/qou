@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0504116v2/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Reducing the number of equations",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/0504116v2/blocks/prose-sec-007",
+    "library/0504116v2/blocks/prop-sec-007-01"
+  ],
+  "derivedFrom": "library/0504116v2/manifest",
+  "sourceDocument": "library/0504116v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2304.07001v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES",
+  "contains": [
+    "library/arxiv-2304.07001v3/sections/sec-000",
+    "library/arxiv-2304.07001v3/sections/sec-001",
+    "library/arxiv-2304.07001v3/sections/sec-002",
+    "library/arxiv-2304.07001v3/sections/sec-003",
+    "library/arxiv-2304.07001v3/sections/sec-004",
+    "library/arxiv-2304.07001v3/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2304.07001v3",
+    "source_file": "2304.07001v3.pdf",
+    "source_sha256": "b6c0d7f50b6407f1159cf3b6b97dc2180b39100ef7e2c5a64454cdc6d05af324",
+    "pages": 20,
+    "arxiv": {
+      "id": "2304.07001",
+      "version": "3",
+      "primary_class": "math.NT",
+      "stamp_date": "10 Apr 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

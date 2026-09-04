@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/alg-bring-brane",
+  "@type": [
+    "folio:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:bring-brane",
+  "kind": "algorithm",
+  "title": "Bring surface ($\\chi = -6$ brane) — substrate constants",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface"
+  ],
+  "tags": [
+    "mba",
+    "step-4",
+    "bring-surface",
+    "brane",
+    "constants",
+    "canonical-chain"
+  ],
+  "text": "mba-step04-bring-brane.md",
+  "provenance": "authored"
+}

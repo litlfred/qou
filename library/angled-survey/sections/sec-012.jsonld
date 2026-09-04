@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "With this setup, the system of equations is",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-012",
+    "library/angled-survey/blocks/prop-sec-012-01",
+    "library/angled-survey/blocks/prop-sec-012-02",
+    "library/angled-survey/blocks/prop-sec-012-03"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

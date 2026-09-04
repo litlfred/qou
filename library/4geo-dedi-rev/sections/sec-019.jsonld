@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/4geo-dedi-rev/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(where y3",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/4geo-dedi-rev/blocks/prose-sec-019",
+    "library/4geo-dedi-rev/blocks/prop-sec-019-01"
+  ],
+  "derivedFrom": "library/4geo-dedi-rev/manifest",
+  "sourceDocument": "library/4geo-dedi-rev/manifest",
+  "provenance": "ingested"
+}

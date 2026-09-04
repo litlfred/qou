@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 8-9
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 The large commutative subalgebra C[L] of HL can be used to construct ﬁnite dimensional rep-
 resentations of HL. The principal series representation with central character t ∈ Hom(L, C×)

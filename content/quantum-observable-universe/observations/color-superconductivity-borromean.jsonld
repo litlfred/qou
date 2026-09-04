@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-color-superconductivity-borromean",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:color-superconductivity-borromean",
+  "kind": "conjecture",
+  "title": "Color superconductivity as Borromean-to-Hopf topological reconfiguration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-borromean-hopf-energy-crossover",
+    "papers/quantum-observable-universe/blocks/rem-deconfinement-golden-threshold"
+  ],
+  "cites": [
+    "references/alford1999"
+  ],
+  "tags": [
+    "tier:E",
+    "color-superconductivity",
+    "diquark",
+    "cooper-pair",
+    "borromean",
+    "hopf",
+    "CFL",
+    "color-flavor-locking",
+    "neutron-star"
+  ],
+  "leanRef": "qou:QOU.Archimedean.first_order_transition",
+  "text": "color-superconductivity-borromean.md",
+  "leanSource": "color-superconductivity-borromean.lean",
+  "provenance": "authored"
+}

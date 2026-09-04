@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-atom-knot",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:atom-knot",
+  "kind": "definition",
+  "title": "Atom as a knot via Gröbner normal form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-confinement-level"
+  ],
+  "tags": [
+    "atom",
+    "knot",
+    "groebner-normal-form",
+    "block-decomposition",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.AtomKnot",
+  "text": "atom-knot.md",
+  "leanSource": "atom-knot.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:quantum-observable-universe",
+  "kind": "definition",
+  "title": "Quantum Observable Universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe",
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category",
+    "papers/quantum-observable-universe/blocks/def-snake-identity",
+    "papers/unital-groebner-bases/blocks/def-admissible-system"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-qou-su2",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-universe",
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-stokes"
+  ],
+  "tags": [
+    "quantum",
+    "observable",
+    "category-theory"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse",
+  "text": "quantum-observable-universe.md",
+  "leanSource": "quantum-observable-universe.lean",
+  "provenance": "authored"
+}

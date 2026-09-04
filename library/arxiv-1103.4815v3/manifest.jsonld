@@ -1,0 +1,45 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1103.4815v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "contains": [
+    "library/arxiv-1103.4815v3/sections/sec-000",
+    "library/arxiv-1103.4815v3/sections/sec-001",
+    "library/arxiv-1103.4815v3/sections/sec-002",
+    "library/arxiv-1103.4815v3/sections/sec-003",
+    "library/arxiv-1103.4815v3/sections/sec-004",
+    "library/arxiv-1103.4815v3/sections/sec-005",
+    "library/arxiv-1103.4815v3/sections/sec-006",
+    "library/arxiv-1103.4815v3/sections/sec-007",
+    "library/arxiv-1103.4815v3/sections/sec-008",
+    "library/arxiv-1103.4815v3/sections/sec-009",
+    "library/arxiv-1103.4815v3/sections/sec-010",
+    "library/arxiv-1103.4815v3/sections/sec-011",
+    "library/arxiv-1103.4815v3/sections/sec-012",
+    "library/arxiv-1103.4815v3/sections/sec-013",
+    "library/arxiv-1103.4815v3/sections/sec-014",
+    "library/arxiv-1103.4815v3/sections/sec-015",
+    "library/arxiv-1103.4815v3/sections/sec-016",
+    "library/arxiv-1103.4815v3/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1103.4815v3",
+    "source_file": "1103.4815v3.pdf",
+    "source_sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
+    "pages": 65,
+    "arxiv": {
+      "id": "1103.4815",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "17 Jul 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A multisum formula for the colored Jones function of a knot",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "contains": [
+    "library/0309214v3/blocks/prose-sec-006",
+    "library/0309214v3/blocks/lem-sec-006-01",
+    "library/0309214v3/blocks/prop-sec-006-02",
+    "library/0309214v3/blocks/rem-sec-006-03",
+    "library/0309214v3/blocks/thm-sec-006-04"
+  ],
+  "derivedFrom": "library/0309214v3/manifest",
+  "sourceDocument": "library/0309214v3/manifest",
+  "provenance": "ingested"
+}

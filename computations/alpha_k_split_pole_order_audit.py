@@ -66,11 +66,11 @@ try:
 except Exception:
     HAVE_MP = False
 
-try:
-    from q_parameter import q_at
-    Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099785955573347198997632204832250266562084087802"
+# Proton pin read BY NAME; no fallback (bean qou-4bef, 2026-09-03): the literal this
+# fell back to was the muon pin RETIRED 2026-08-22/28, and falling back silently
+# changed the physics anchor without a trace in the witness.
+from q_parameter import q_at
+Q0 = str(q_at())
 
 
 def main() -> None:

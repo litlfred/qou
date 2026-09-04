@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-4
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 Our aim is to generalize (1.1) or its Poissonian version (1.3) in two ways. Instead of Sn we consider
 arbitrary Lipschitz functions of X1,...,X n, and instead of independent Bernoullis we consider a

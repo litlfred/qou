@@ -1,0 +1,52 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/monodromyhitchiny/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the monodromy of the Hitchin connection",
+  "contains": [
+    "library/monodromyhitchiny/sections/sec-000",
+    "library/monodromyhitchiny/sections/sec-001",
+    "library/monodromyhitchiny/sections/sec-002",
+    "library/monodromyhitchiny/sections/sec-003",
+    "library/monodromyhitchiny/sections/sec-004",
+    "library/monodromyhitchiny/sections/sec-005",
+    "library/monodromyhitchiny/sections/sec-006",
+    "library/monodromyhitchiny/sections/sec-007",
+    "library/monodromyhitchiny/sections/sec-008",
+    "library/monodromyhitchiny/sections/sec-009",
+    "library/monodromyhitchiny/sections/sec-010",
+    "library/monodromyhitchiny/sections/sec-011",
+    "library/monodromyhitchiny/sections/sec-012",
+    "library/monodromyhitchiny/sections/sec-013",
+    "library/monodromyhitchiny/sections/sec-014",
+    "library/monodromyhitchiny/sections/sec-015",
+    "library/monodromyhitchiny/sections/sec-016",
+    "library/monodromyhitchiny/sections/sec-017",
+    "library/monodromyhitchiny/sections/sec-018",
+    "library/monodromyhitchiny/sections/sec-019",
+    "library/monodromyhitchiny/sections/sec-020",
+    "library/monodromyhitchiny/sections/sec-021",
+    "library/monodromyhitchiny/sections/sec-022",
+    "library/monodromyhitchiny/sections/sec-023",
+    "library/monodromyhitchiny/sections/sec-024",
+    "library/monodromyhitchiny/sections/sec-025",
+    "library/monodromyhitchiny/sections/sec-026",
+    "library/monodromyhitchiny/sections/sec-027",
+    "library/monodromyhitchiny/sections/sec-028",
+    "library/monodromyhitchiny/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "monodromyhitchiny",
+    "source_file": "MonodromyHitchinY.pdf",
+    "source_sha256": "1c9288ddbb5bc2d8a49a882ef996938967ff8c1a96ecc58fa005bbb5e75028e8",
+    "pages": 14,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

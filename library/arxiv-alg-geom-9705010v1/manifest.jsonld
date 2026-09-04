@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-alg-geom-9705010v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Seiberg-Witten Integrable Systems",
+  "contains": [
+    "library/arxiv-alg-geom-9705010v1/sections/sec-000",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-001",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-002",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-003",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-004",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-005",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-006",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-007",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-008",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-009",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-010",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-011",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-012",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-013",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-014",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-015",
+    "library/arxiv-alg-geom-9705010v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-alg-geom-9705010v1",
+    "source_file": "9705010v1.pdf",
+    "source_sha256": "30ab8d0cc2d8f1aea8bd2c88419325f2533856ffc6b8217a385c5ac1fc6d70ab",
+    "pages": 41,
+    "arxiv": {
+      "id": "alg-geom/9705010",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "7 May 1997"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

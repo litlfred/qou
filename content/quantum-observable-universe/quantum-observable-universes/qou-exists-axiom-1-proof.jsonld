@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-1",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qou-exists-axiom-1",
+  "kind": "proof",
+  "title": "Proof of axiom 1 (Frobenius pairing) for QOU existence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-1"
+  ],
+  "cites": [
+    "references/woronowicz1987"
+  ],
+  "text": "qou-exists-axiom-1-proof.md",
+  "provenance": "authored"
+}

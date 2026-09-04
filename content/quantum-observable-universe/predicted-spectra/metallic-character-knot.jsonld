@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-metallic-character-knot",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:metallic-character-knot",
+  "kind": "proposition",
+  "title": "Metallic character from incomplete sub-Hopf links",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization"
+  ],
+  "tags": [
+    "metal",
+    "metallic-bonding",
+    "hopf-link",
+    "sub-link",
+    "trefoil",
+    "delocalization",
+    "conductivity",
+    "incomplete-shell"
+  ],
+  "leanRef": "qou:QOU.Archimedean.metallic_character_knot",
+  "text": "metallic-character-knot.md",
+  "provenance": "authored"
+}

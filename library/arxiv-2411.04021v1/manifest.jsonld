@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2411.04021v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the Gram determinants of the Specht modules",
+  "contains": [
+    "library/arxiv-2411.04021v1/sections/sec-000",
+    "library/arxiv-2411.04021v1/sections/sec-001",
+    "library/arxiv-2411.04021v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2411.04021v1",
+    "source_file": "2411.04021v1.pdf",
+    "source_sha256": "f5b6980f08d253942633da8703e6c669c2dfcf4f7efaf1b6a643991eefd6ee7b",
+    "pages": 19,
+    "arxiv": {
+      "id": "2411.04021",
+      "version": "1",
+      "primary_class": "math.CO",
+      "stamp_date": "6 Nov 2024"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -60,7 +60,9 @@ from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 try:
-    from qou_substrate.constants import q_at
+    # `q_parameter`, not `qou_substrate.constants`: it is q_parameter that resolves the
+    # anchor from the manifest and lets WitnessBuilder stamp it (bean qou-4bef, 2026-09-03).
+    from q_parameter import q_at
 except Exception:
     q_at = None
 
@@ -69,29 +71,15 @@ SHAPE = (4, 1)
 
 
 def q0_val():
-    if q_at is not None:
-        return q_at(50)
-    # RAISE, do not substitute the other layer (bean qou-0hnz, 2026-08-30).
-    #
-    # This returned mp.mpf("1.10997859555733471989976322048322502665620840878")
-    # — the superseded MUON pin A — whenever `from qou_substrate.constants
-    # import q_at` failed. The happy path is that proton Newton solve, so an
-    # import failure silently moved this producer 11.5371 ppb to the other
-    # ANCHOR LAYER, with nothing recorded and no warning. That is the
-    # cross-layer fallback shape `computations/audits/
-    # q0_cross_layer_fallback_scan.py` exists to find, and its own prose
-    # prescribes this fix: "raising instead of substituting the other layer".
-    #
-    # Nothing computed changes: when the import succeeds — which is the only
-    # case any committed witness here was produced under — this function is
-    # byte-identical to before.
-    raise SystemExit(
-        "alpha_em_b2_tau_intertwiner_probe.py: cannot import qou_substrate.constants.q_at, so the substrate "
-        "q0 is unavailable. Refusing to fall back to a hardcoded pin from the "
-        "OTHER anchor layer (11.5371 ppb away) — that would compute at the "
-        "muon anchor while reporting a proton result. Install the package "
-        "and re-run."
-    )
+    """Proton pin, 50 dps, read BY NAME. No fallback: a missing substrate is an error,
+    not a silent switch to a retired literal (bean qou-4bef, 2026-09-03)."""
+    if q_at is None:
+        raise RuntimeError(
+            "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+            "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+            "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+            "Install it: pip install -e tools/qou-substrate.")
+    return q_at(50)
 
 
 def contravariant_form(sigmas, dim):
@@ -260,18 +248,18 @@ def main() -> int:
     wb.add_data("inv_8pi", mp.nstr(inv8pi, 20))
     wb.add_data("verdict", verdict)
     wb.add_assertion("grams_diagonal_schur_unique",
-                     computed=1.0 if ok12 else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed=("1" if ok12 else "0"), expected="1",
+                     tolerance="0.5",
                      source="both contravariant forms diagonal + "
                             "1-dim nullspace (Schur)")
     wb.add_assertion("markov_not_proportional_hodge",
-                     computed=1.0 if ok3 else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed=("1" if ok3 else "0"), expected="1",
+                     tolerance="0.5",
                      source="diagonal ratio non-constant (spread > "
                             "1e-6) — no single c under q->1")
     wb.add_assertion("nonprop_is_q_deformation",
-                     computed=1.0 if ok4 else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed=("1" if ok4 else "0"), expected="1",
+                     tolerance="0.5",
                      source="spread -> 0 as q -> 1 with a consistent "
                             "leading power (q-deformation certified)")
     wb.save()

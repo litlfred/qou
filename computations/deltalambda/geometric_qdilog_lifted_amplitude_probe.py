@@ -74,7 +74,19 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
+# "1.10997859555733471" -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 (fca08de7d2) by the live CODATA-2022 lepton-ratio derivation.
+# A frozen literal cannot follow the anchor when it moves, and this producer
+# was UNSTAMPED, so the anchor audit filed it Q0_ANCHOR_MISSING rather than
+# Q0_FLIP -- invisible to the corpus-wide drain, which keys on stamps.
+# It resolves the PROTON pin per the owner directive of 2026-08-15, sharpened
+# 2026-08-30: proton unless the producer is (E1) an explicit mu-vs-p
+# comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
+# -- it is a sole-anchor probe that happened to be muon-named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 TWO_PI_I = 2 * mp.pi * mp.mpc(0, 1)
 
 
@@ -197,7 +209,8 @@ def main() -> int:
             "paper": "library/arxiv-2509.02354v2/2509.02354v2.pdf eq (A.15) lifted dilog, (A.17) regular part, §5.2 pinch",
             "lean": "QOU/MassTheory/PinchedOctahedronDegenerate.lean (e2_pinch)",
             "builds_on": "#4345 (shape −h² from rep), #4339 (g₂_leading=1), #4347 (frontier: bare Li₂)",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+            "q0": Q0_STR,   # record the pin used, so a reader need not infer it
             "no_fit": True,
             "no_scan": True,
         },

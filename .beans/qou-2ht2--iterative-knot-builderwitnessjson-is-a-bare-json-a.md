@@ -1,11 +1,11 @@
 ---
 # qou-2ht2
 title: 'iterative-knot-builder.witness.json is a bare JSON array, not a witness: no envelope, no provenance, float64 volumes'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:06:47Z
-updated_at: 2026-08-21T16:07:08Z
+updated_at: 2026-09-04T10:39:43Z
 ---
 
 Found while triaging the provenance-COMPLETENESS audit (PR #5373, bean
@@ -66,3 +66,5 @@ Confirm the recomputed volumes match the committed ones to the precision the
 producer can actually justify. `q-clt-proxy` volumes in the 1e6–1e7 range are
 extrapolation proxies, not hyperbolic volumes — verify what precision is
 meaningful before serializing 50 digits of it.
+
+CLAIMED 2026-09-04 (session cool-johnson). Most of this is ALREADY DONE by prior work: the witness is now a proper dict envelope (engine/assertions/commitSha present), carries NO float64 (volumes drained), and is NOT in raw-float64-baseline. The ONLY remaining piece is the bean's explicit ask: retire the stale isinstance(data,list) tolerance + 'top-level JSON array (e.g. iterative-knot-builder)' comment in derivation_chain_validator.py (lines 408-424). Verified corpus-wide: ZERO bare-array witnesses remain (glob scan of computations/**/*.witness.json), so the branch is dead code. Removing it surfaces any future bare array as computational-only rather than silently tolerating it.

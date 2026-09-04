@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-ph-0010012v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mathematical Tools",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-math-ph-0010012v1/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "library/arxiv-math-ph-0010012v1/manifest",
+  "sourceDocument": "library/arxiv-math-ph-0010012v1/manifest",
+  "provenance": "ingested"
+}

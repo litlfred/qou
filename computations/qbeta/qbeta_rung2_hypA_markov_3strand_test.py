@@ -25,18 +25,9 @@ This probe tests Hyp-A precisely.
 In the QOU Markov-trace convention (per `_precision.py` and the
 operator-valued N=3 probe), the Markov trace on H_n(q) satisfies
 
-  tr_M(1) = z^(n-1)   where  z = q³ / (q² + 1)
+  tr_M(1) = z^(n-1)   where  z = 1 / (√q + 1/√q)
 
 (z = Markov-Jones parameter). So tr_M(1 ∈ H_3(q)) = z².
-
-CONVENTION, corrected 2026-08-30: this said z = 1/(√q + 1/√q), which is
-convention C. The code has computed convention D, z = q³/(q²+1), since the
-convention-D propagation; the prose simply never followed. Measured on this
-file's own recorded value: the committed witness held
-0.123984874514528677997915, which is exactly z²/[2]_q under convention C at
-pin A, while the live code returns 0.186676222474348152002243 — exactly
-convention D at the proton pin. The 50% gap between those two is the
-convention, not the pin; the pin accounts for 11.5 ppb of it.
 
 Hyp-A prediction:
   z² / [2]_q = [1 / (√q + 1/√q)]² · 1 / (q + 1/q)
@@ -79,24 +70,33 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
-# PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
-# RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
-# matching no published CODATA and contradicting the ratio its own defining
-# witness declared as input; the anchor had certified itself. So keeping the
-# value was never an option here; only the layer was open, and it is proton.
-# Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
-# (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
-# at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
 Q0_MP_PIN = Q_50_DIGIT_STR
 
 
@@ -111,8 +111,7 @@ def main() -> int:
         "Definitive test of Hyp-A: does the rung 2 form ℏ_q³/[2]_q "
         "equal (3-strand Markov trace at identity) / dim_q(V_1)? "
         "Symbolic check using QOU Markov-trace convention "
-        "tr_M(1 ∈ H_n) = z^(n-1), z = q^3/(q^2+1) (convention D). "
-        "Hyp-A confirmed "
+        "tr_M(1 ∈ H_n) = z^(n-1), z = 1/(√q+1/√q). Hyp-A confirmed "
         "iff the difference simplifies to 0."
     )
     builder.set_content_block("prop:q-beta-c-2-eq-neg-one-structural")
@@ -135,7 +134,7 @@ def main() -> int:
 
     print(f"  Setup (QOU Markov-trace convention):")
     print(f"    tr_M on H_n(q): tr_M(1) = z^(n-1)")
-    print(f"    z = q³ / (q² + 1) = Markov-Jones parameter (convention D)")
+    print(f"    z = 1 / (√q + 1/√q) = Markov-Jones parameter")
     print(f"    dim_q(V_1) = [2]_q = q + q⁻¹ (fundamental rep)")
     print()
     print(f"  Hyp-A prediction:  rung 2 = tr_M(1 ∈ H_3) / dim_q(V_1)")
@@ -238,10 +237,7 @@ def main() -> int:
     builder.add_data("numerical_at_q0", {
         "rung_2_actual": mp.nstr(actual_q0, 25),
         "hypA_pred": mp.nstr(hypA_q0, 25),
-        # NO FLOAT64 (owner directive): this field ENTERS THE WITNESS, so it
-        # carries mpmath precision. fmt() is handed the mpf itself --
-        # fmt(float(x)) would short-circuit to str() and keep the float64.
-        "relative_gap": fmt(mp.fabs(actual_q0 - hypA_q0) / actual_q0),
+        "relative_gap": float(mp.fabs(actual_q0 - hypA_q0) / actual_q0),
     })
     builder.add_data("implications", (
         "Hyp-A as literally stated (tr_M(1 ∈ H_3) / dim_q(V_1)) "

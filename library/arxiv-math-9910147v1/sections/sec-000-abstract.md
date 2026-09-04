@@ -7,6 +7,7 @@ section_number: null
 pages: 1-2
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 We study the tensor product of principal unitary representa tions of the quantum Lorentz
 Group, prove a decomposition theorem and compute the associ ated intertwiners. We show

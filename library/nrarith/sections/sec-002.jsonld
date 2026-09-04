@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Trace-ﬁelds",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

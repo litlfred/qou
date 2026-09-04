@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-observation-braid-not-predetermined",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observation-braid-not-predetermined",
+  "kind": "remark",
+  "title": "The braid is not predetermined: flow versus observation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/def-bundle-initial-conditions"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-observation",
+  "tags": [
+    "observation",
+    "braid",
+    "reeb-flow",
+    "initial-conditions",
+    "open-map",
+    "computable-sections"
+  ],
+  "text": "observation-braid-not-predetermined.md",
+  "provenance": "authored"
+}

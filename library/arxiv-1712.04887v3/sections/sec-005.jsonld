@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.04887v3/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Compatibilities",
+  "pageStart": 14,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-1712.04887v3/blocks/prose-sec-005",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-005-01",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-005-02",
+    "library/arxiv-1712.04887v3/blocks/rem-sec-005-03",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-005-04"
+  ],
+  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
+  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "provenance": "ingested"
+}

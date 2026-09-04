@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-isovector-chiral-residue",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:isovector-chiral-residue",
+  "kind": "proposition",
+  "title": "Binding isovector coefficient as the $W_\\lambda$ chiral residue (conditional)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mirror-baseline-cancellation",
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term",
+    "papers/quantum-observable-universe/blocks/rem-archimedean-chirality"
+  ],
+  "tags": [
+    "mba",
+    "sidecar",
+    "delta-lambda",
+    "isovector",
+    "chirality",
+    "bring-surface",
+    "keystone-residual-i",
+    "conditional"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.binding_isovector_mirror_from_chiral",
+  "text": "mba-sidecar-isovector-chiral-residue.md",
+  "provenance": "authored"
+}

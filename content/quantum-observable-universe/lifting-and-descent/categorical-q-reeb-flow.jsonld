@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:categorical-q-reeb-flow",
+  "kind": "definition",
+  "title": "Categorical q-Reeb flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-lie-bracket"
+  ],
+  "tags": [
+    "reeb-flow",
+    "q-deformation",
+    "category-theory"
+  ],
+  "leanRef": "qou:QOU.CategoricalQReebFlow",
+  "text": "categorical-q-reeb-flow.md",
+  "leanSource": "categorical-q-reeb-flow.lean",
+  "provenance": "authored"
+}

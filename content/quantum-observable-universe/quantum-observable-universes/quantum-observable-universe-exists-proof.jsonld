@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-quantum-observable-universe-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:quantum-observable-universe-exists",
+  "kind": "proof",
+  "title": "Proof of existence of quantum observable universes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-observable-universe-exists",
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-1",
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-2",
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-3",
+    "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-4"
+  ],
+  "cites": [
+    "references/woronowicz1987",
+    "references/woronowicz1988",
+    "references/reshetikhin1991",
+    "references/kassel1995",
+    "references/chari1994guide"
+  ],
+  "text": "quantum-observable-universe-exists-proof.md",
+  "provenance": "authored"
+}

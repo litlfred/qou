@@ -1,0 +1,230 @@
+{
+  "computation": "qbeta-binding-law-options",
+  "assertions": [
+    {
+      "name": "proton_bonds_bind_less_than_neutron_bonds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp = z = 0.6127 > b_nn = 0.4036, so a p-p bond carries less log-weight than n-n. The ALGEBRAIC fact stands; reading it as 'the sign Coulomb would give' is RETRACTED 2026-09-04 (qou-q7ga) -- aggregated over the table the splitting has the WRONG sign. See qbeta_tower_log_z_and_roast_probe.py"
+    },
+    {
+      "name": "additive_law_shrinks_the_robust_spread_by_over_a_thousandfold",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "p5-p95 1592.23 -> 1.22497; the gain is from the FUNCTIONAL, not the constant -- both consume the same derived bond factors"
+    },
+    {
+      "name": "additive_law_p5_p95_is_within_a_factor_of_1_point_3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "90 % of measured nuclides land inside a 1.225x band"
+    },
+    {
+      "name": "the_additive_full_range_is_set_by_an_unbound_extrapolated_nuclide",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "5Be, B = 0.09 MeV and AME-EXTRAPOLATED. A bond-counting law with strictly positive bond energies predicts ~E_0.0.7A for any configuration and cannot produce B ~ 0: unbound systems are a NAMED limitation, and excluding extrapolations takes the full range from 2.51 to 1.01 decades"
+    },
+    {
+      "name": "excluding_extrapolated_values_more_than_halves_the_full_range",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "additive_band_medians_stay_within_a_factor_of_1_point_3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "no drift with A across the whole table -- the law is structurally extensive, not extensive by accident"
+    },
+    {
+      "name": "atom_object_is_not_a_braid_so_it_has_no_writhe",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2A+1 letters are weight-1 averages of sigma and sigma^-1, so tr_M is a sum of 2^(2A+1) link invariants with 2^(2A+1) different exponent sums -- the Markov normalisation mu^(n-1).nu^e has no e to use, and no single knot for a scale to depend on"
+    },
+    {
+      "name": "closest_right_signed_candidate_is_over_20x_too_steep",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "mu = z, the Markov parameter itself, is 23.8x too steep"
+    },
+    {
+      "name": "the_candidate_closest_in_magnitude_has_the_wrong_sign",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "mu = q is only 5.06x off in magnitude but pushes the correction the wrong way -- so no substrate constant is close on both counts"
+    },
+    {
+      "name": "required_scale_reproduces_minus_ln_t_p_and_minus_ln_t_n_to_20pc",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "cZ off by 19.2 %, cN by 1.39 %. Not tighter because ln B ~ ln(8.5A) is not linear in (Z,N) and contaminates both coefficients. Sign and magnitude are the point: the only scale that rescues the multiplicative law is t_p^-Z t_n^-N, which cancels the trace's own output. REFUSED as a fit"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "corpus_Q_beta_MeV": "0.78233340931",
+    "E_0_MeV": "4.1859813632944758969",
+    "E_0_expression": "m_e/(q0*(q0-1))",
+    "multiplicative_law": "B = s.(tr_M(free) - tr_M(atom))",
+    "additive_law": "B = E_0.log(tr_M(free)/tr_M(atom))",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_all": 3554,
+    "n_measured": 2548,
+    "bond_energies_natural_log": {
+      "minus_ln_b_pp": "0.48989938425513485141",
+      "minus_ln_b_pn": "0.67682159238634338966",
+      "minus_ln_b_nn": "0.90726226553321290067"
+    },
+    "laws": {
+      "all": {
+        "multiplicative_optimal_scale_MeV": "0.948264013788729",
+        "multiplicative": {
+          "min": "0.00201402642055",
+          "max": "78.7504235621",
+          "decades": "4.59218773489",
+          "median": "1.17389302976",
+          "p1_p99": "18534.5165832",
+          "p5_p95": "5247.61293295"
+        },
+        "additive_at_derived_E0": {
+          "min": "0.0100163693639",
+          "max": "3.25924743032",
+          "decades": "2.51240700057",
+          "median": "2.64147225199",
+          "p1_p99": "1.65837787476",
+          "p5_p95": "1.25548195096"
+        },
+        "additive_optimal_scale_MeV": "10.9445837714847",
+        "additive_optimal_over_E0": "2.61458014779"
+      },
+      "measured": {
+        "multiplicative_optimal_scale_MeV": "1.22189321050401",
+        "multiplicative": {
+          "min": "0.00358376157537",
+          "max": "58.1219166662",
+          "decades": "4.21000081873",
+          "median": "1.12191638648",
+          "p1_p99": "5481.86960437",
+          "p5_p95": "1592.226928"
+        },
+        "additive_at_derived_E0": {
+          "min": "0.320114446643",
+          "max": "3.25924743032",
+          "decades": "1.00781205766",
+          "median": "2.68560596181",
+          "p1_p99": "1.78042995557",
+          "p5_p95": "1.22497273261"
+        },
+        "additive_optimal_scale_MeV": "11.1190759444818",
+        "additive_optimal_over_E0": "2.65626503787"
+      }
+    },
+    "additive_band_medians_measured": [
+      {
+        "A_band": "0-39",
+        "n": 247,
+        "median_ratio": "2.6060166"
+      },
+      {
+        "A_band": "40-79",
+        "n": 367,
+        "median_ratio": "2.912904"
+      },
+      {
+        "A_band": "80-119",
+        "n": 477,
+        "median_ratio": "2.8325757"
+      },
+      {
+        "A_band": "120-159",
+        "n": 508,
+        "median_ratio": "2.7153803"
+      },
+      {
+        "A_band": "160-199",
+        "n": 481,
+        "median_ratio": "2.6115492"
+      },
+      {
+        "A_band": "200-239",
+        "n": 363,
+        "median_ratio": "2.503611"
+      },
+      {
+        "A_band": "240-279",
+        "n": 105,
+        "median_ratio": "2.4109279"
+      }
+    ],
+    "worst_additive_outlier": {
+      "A": 5,
+      "Z": 4,
+      "N": 1,
+      "element": "Be",
+      "B_MeV": "0.09",
+      "ame_estimated": true,
+      "ratio": "0.01001636936"
+    },
+    "knot_dependence": {
+      "atom_object_in_image_of_rho": false,
+      "non_braid_letters": "2A+1",
+      "branch_links": "2^(2A+1)",
+      "required_slope_per_nucleon_at_NeqZ": "-0.0618679319918135",
+      "candidates": [
+        {
+          "mu": "z = q^3/(q^2+1)",
+          "slope_per_nucleon": "-1.469698153",
+          "ratio_to_required": "23.755411",
+          "sign_matches": true
+        },
+        {
+          "mu": "1/(q^3+q)",
+          "slope_per_nucleon": "-2.721786797",
+          "ratio_to_required": "43.993499",
+          "sign_matches": true
+        },
+        {
+          "mu": "b_pn",
+          "slope_per_nucleon": "-2.030464777",
+          "ratio_to_required": "32.819341",
+          "sign_matches": true
+        },
+        {
+          "mu": "[2]_q = (q^2+1)/q",
+          "slope_per_nucleon": "2.095742475",
+          "ratio_to_required": "33.874455",
+          "sign_matches": false
+        },
+        {
+          "mu": "q",
+          "slope_per_nucleon": "0.313022161",
+          "ratio_to_required": "5.059522",
+          "sign_matches": false
+        }
+      ],
+      "rescuing_scale_cZ": "-0.109941564291075",
+      "rescuing_scale_cN": "0.0121609934146173",
+      "verdict": "unavailable (no single knot), quantitatively refuted where derivable, a fit where it works"
+    }
+  },
+  "provenance": {
+    "headSha": "c12794de1e0b56d3f98145ae906c843cf1bf1942",
+    "producer": "computations/qbeta/qbeta_binding_law_options_probe.py",
+    "elapsed_s": 0.891
+  }
+}

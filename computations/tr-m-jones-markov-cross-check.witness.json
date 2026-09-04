@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T09:21:53.120693+00:00",
-  "commitSha": "ec89d96130dbd80b03dd333b4bb0eb78999579cb",
+  "computedAt": "2026-09-04T04:20:53.203455+00:00",
+  "commitSha": "f4d031de71efdb0eff9ff827cf194fafc88f44eb",
   "assertions": [
     {
       "name": "jones_markov_finite_positive[proton]",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 43,
   "computation": "tr-m-jones-markov-cross-check",
   "scriptFile": "tr_m_jones_markov_cross_check.py",
-  "scriptHash": "a0ed49ed0532",
-  "scriptCommitSha": "227bd89d9188e50602cda462cb9cccc16500312e",
+  "scriptHash": "d1d55b5bf7f5",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -69,7 +69,7 @@
     ],
     "reproduce": "python3 -u computations/tr_m_jones_markov_cross_check.py"
   },
-  "description": "Cross-check: the new `wedderburn_jones_markov.global_wedderburn_sum_jones_markov` (canonical y_λ via Wenzl) should reproduce the canonical tr_M values from `atomic-tr-m-mpfr-50dps-proton.witness.json` (computed via markov_trace_recursive, the canonical Markov-axiom reducer). If the values agree to 1e-6 relative, the new wiring in crt_markov.py is empirically validated.",
+  "description": "Cross-check: the new `wedderburn_jones_markov.global_wedderburn_sum_jones_markov` (canonical y_λ via Wenzl) should reproduce the canonical tr_M values from `atomic-tr-m-mpfr-50dps.witness.json` (computed via markov_trace_recursive, the canonical Markov-axiom reducer). If the values agree to 1e-6 relative, the new wiring in crt_markov.py is empirically validated.",
   "auditOnly": "docs/audits/2026-05-08-p3-h-3a-divergence.md",
   "data": {
     "cross_check_table": [
@@ -79,11 +79,11 @@
         "Z": 1,
         "N": 0,
         "n_strands": 3,
-        "canonical_abs_tr_M": "1.1457596924573008696890815957741193059437280619435",
-        "jones_markov_partition_sum": "0.50540422650393080318755870324047227566035119774981",
-        "jones_markov_abs": "0.50540422650393080318755870324047227566035119774981",
-        "rel_err_vs_canonical": "0.55889159844679581595010605514618951252233667827473",
-        "elapsed_sec": "0.005",
+        "canonical_abs_tr_M": 1.1457596924573008,
+        "jones_markov_partition_sum": 0.5054042265039308,
+        "jones_markov_abs": 0.5054042265039308,
+        "rel_err_vs_canonical": 0.5588915984467958,
+        "elapsed_sec": 0.011026714000763604,
         "non_zero_terms": 1,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       },
@@ -93,11 +93,11 @@
         "Z": 0,
         "N": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": "0.98774368811580957163402016550129498205504875906283",
-        "jones_markov_partition_sum": "0.50540422650393080318755870324047227566035119774981",
-        "jones_markov_abs": "0.50540422650393080318755870324047227566035119774981",
-        "rel_err_vs_canonical": "0.48832451922013812459532357851564570866931092706270",
-        "elapsed_sec": "0.001",
+        "canonical_abs_tr_M": 0.9877436881158096,
+        "jones_markov_partition_sum": 0.5054042265039308,
+        "jones_markov_abs": 0.5054042265039308,
+        "rel_err_vs_canonical": 0.48832451922013814,
+        "elapsed_sec": 0.0009931469976436347,
         "non_zero_terms": 1,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       },
@@ -107,18 +107,18 @@
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "canonical_abs_tr_M": "0.57517224391777187082653534398618088915249435289286",
-        "jones_markov_partition_sum": "0.13044803500008948541483934770409464658715679774599",
-        "jones_markov_abs": "0.13044803500008948541483934770409464658715679774599",
-        "rel_err_vs_canonical": "0.77320179062962802170395277821092333667445039959129",
-        "elapsed_sec": "0.003",
+        "canonical_abs_tr_M": 0.5751722439177719,
+        "jones_markov_partition_sum": 0.13044803500008947,
+        "jones_markov_abs": 0.13044803500008947,
+        "rel_err_vs_canonical": 0.773201790629628,
+        "elapsed_sec": 0.0041759669984458014,
         "non_zero_terms": 2,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       }
     ],
     "method": {
       "new_path": "wedderburn_jones_markov.global_wedderburn_sum_jones_markov — Σ_{λ ⊢ 3A} y_λ(q_0) · χ^λ(β_atomic) via Wenzl Schur principal specialization (canonical Jones-Markov), numerical-q-from-start.",
-      "canonical_reference": "atomic-tr-m-mpfr-50dps-proton.witness.json — produced by markov_trace_recursive (canonical Markov-axiom recursive ascent), mpfr 50-dps precision.",
+      "canonical_reference": "atomic-tr-m-mpfr-50dps.witness.json — produced by markov_trace_recursive (canonical Markov-axiom recursive ascent), mpfr 50-dps precision.",
       "tolerance": "1e-6 relative"
     }
   }

@@ -7,6 +7,7 @@ section_number: null
 pages: 10-14
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1"
 ---
 In addition to the upper bound on the mean of the Kantorovich–Rubinstein distance W1(Fn,F) ,
 one may wonder how to bound large deviations of W1(Fn,F) above the mean. To this end, the

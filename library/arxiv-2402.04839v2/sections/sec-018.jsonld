@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2402.04839v2/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Determining the minimiser",
+  "pageStart": 21,
+  "pageEnd": 26,
+  "contains": [
+    "library/arxiv-2402.04839v2/blocks/prose-sec-018",
+    "library/arxiv-2402.04839v2/blocks/prop-sec-018-01",
+    "library/arxiv-2402.04839v2/blocks/prop-sec-018-02",
+    "library/arxiv-2402.04839v2/blocks/prop-sec-018-03"
+  ],
+  "derivedFrom": "library/arxiv-2402.04839v2/manifest",
+  "sourceDocument": "library/arxiv-2402.04839v2/manifest",
+  "provenance": "ingested"
+}

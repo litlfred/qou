@@ -18,6 +18,18 @@ deviation a 2-cocycle when twisted by the level-`n` two-morphisms).
 
 LaTeX label: `lem:descent-cocycle-deviation`
 
+**Ground ring (AGENTS.md §7c).**  `TwistedTwoCocycle` is declared
+under `variable (R : Type*) [GroupWithZero R]`, so its real arity is
+`TwistedTwoCocycle R M` — the coefficient ring first, the base second.
+This file applied it to one argument, putting `M` in `R`'s slot, and
+so asked for `GroupWithZero M`:
+
+    failed to synthesize GroupWithZero M
+
+`GroupWithZero` is the library's deliberate minimal choice (its own
+docstring says a field would over-constrain the transition groupoid),
+so it is carried here rather than specialised.
+
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §3 (Čech 1-cocycle
@@ -41,8 +53,9 @@ open QOU.Torsion in
     `twisted_condition` field of the structure. -/
 -- Ref: [yekutieli2010] §3, twisted-cocycle condition
 -- Ref: [manuscript] §3 Lifting and Descent
-theorem descent_cocycle_deviation {M : Type*}
-    (tc : QOU.Torsion.TwistedTwoCocycle M) :
+theorem descent_cocycle_deviation
+    {R : Type*} [GroupWithZero R] {M : Type*}
+    (tc : QOU.Torsion.TwistedTwoCocycle R M) :
     ∀ (p : M),
       tc.coboundary p = tc.triple.twoMorphisms p *
         tc.cocycleDeviation p * (tc.triple.twoMorphisms p)⁻¹ :=
@@ -52,10 +65,13 @@ theorem descent_cocycle_deviation {M : Type*}
     also vanishes — the standard unobstructedness statement
     (`twisted_cocycle_unobstructed` in the Lake tree). -/
 -- Ref: [yekutieli2010] §3, unobstructedness
-theorem descent_cocycle_deviation_unobstructed {M : Type*}
-    (tc : QOU.Torsion.TwistedTwoCocycle M)
+theorem descent_cocycle_deviation_unobstructed
+    {R : Type*} [GroupWithZero R] {M : Type*}
+    (tc : QOU.Torsion.TwistedTwoCocycle R M)
     (h_vanish : ∀ (p : M), tc.coboundary p = 0) :
     ∀ (p : M), tc.cocycleDeviation p = 0 :=
-  QOU.Torsion.twisted_cocycle_unobstructed tc h_vanish
+  -- `R` is an EXPLICIT binder on the library theorem (it comes from
+  -- `variable (R : Type*) [GroupWithZero R]`, not `{R}`), so it is passed.
+  QOU.Torsion.twisted_cocycle_unobstructed R tc h_vanish
 
 end QOU.LiftingDescent

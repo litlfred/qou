@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-sdp-degeneracy-at-metallic-coincidence",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sdp-degeneracy-at-metallic-coincidence",
+  "kind": "remark",
+  "title": "SDP degeneracy at cost-coincidence detects the metallic-ratio ladder",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp",
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp",
+    "papers/quantum-observable-universe/blocks/conj-color-superconductivity-borromean"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-operator-selection-lp",
+  "tags": [
+    "metallic-ratio",
+    "lp-degeneracy",
+    "sdp-strict-complementarity",
+    "active-set",
+    "color-flavor-locking",
+    "cfl-transition",
+    "lean-proved"
+  ],
+  "text": "sdp-degeneracy-at-metallic-coincidence.md",
+  "provenance": "authored"
+}

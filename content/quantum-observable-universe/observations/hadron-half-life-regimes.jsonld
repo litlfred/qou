@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hadron-half-life-regimes",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hadron-half-life-regimes",
+  "kind": "remark",
+  "title": "Half-life regimes and the $q$-landscape",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-half-life"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hadron-half-life",
+  "tags": [
+    "half-life",
+    "beta-decay",
+    "substrate-parameter",
+    "limiting-behaviour",
+    "drip-line"
+  ],
+  "text": "hadron-half-life-regimes.md",
+  "provenance": "authored"
+}

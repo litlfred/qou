@@ -65,6 +65,24 @@ import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -72,15 +90,6 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 
-# q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
-# PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
-# RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
-# matching no published CODATA and contradicting the ratio its own defining
-# witness declared as input; the anchor had certified itself. So keeping the
-# value was never an option here; only the layer was open, and it is proton.
-# Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
-# (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
-# at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
 Q_0 = mp.mpf(Q_50_DIGIT_STR)
 HBAR_Q = (Q_0 - 1) / Q_0
 HBAR_Q_SQ = HBAR_Q ** 2
@@ -88,43 +97,10 @@ INV_HBAR_Q_SQ = 1 / HBAR_Q_SQ  # ≈ 117.4
 
 
 def load_c_k() -> dict:
-    """Resolved c_k from the extraction witness. NULL IS A CONTRACT, NOT A BUG.
-
-    `qbeta-decay-sdp-extended-ck.witness.json` writes `c_k_extracted_50dps[k] =
-    null` for every rung its own `_settle_resolution` could not resolve, and
-    says so at the write site: "Unresolved rungs are now null; the raw quotient
-    is preserved separately under an unmistakable key so the record is complete
-    without being consumable."
-
-    This function used to do `mp.mpf(v)` over the whole dict, so that
-    deliberate state surfaced as `TypeError: cannot create mpf from None` --
-    an opaque mpmath error 60 lines from the field that explains it, which reads
-    like upstream corruption. It is not corruption; it is the upstream refusing
-    to publish numbers that would be misread as extractions.
-
-    `c_k_unresolved_raw_quotient` holds the raw quotients and is NOT a
-    substitute: it is deliberately keyed to be non-consumable, and reading it
-    here would defeat the guard on purpose.
-    """
     p = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     w = record_upstream(p, _UPSTREAM_RECORDS)
     raw = w["data"]["c_k_extracted_50dps"]
-    resolved = {int(k.split("_")[1]): mp.mpf(v)
-                for k, v in raw.items() if v is not None}
-    if not resolved:
-        res = w["data"].get("c_k_resolution", {})
-        raise SystemExit(
-            "no resolvable c_k in qbeta-decay-sdp-extended-ck.witness.json: "
-            f"all {len(raw)} rungs are null "
-            f"(last_resolved_rung={res.get('last_resolved_rung')!r}, "
-            f"n_unresolved={res.get('n_unresolved')!r}). That witness is not "
-            "broken -- it deliberately nulls rungs whose residual never drops "
-            "by the required ~1/u factor. Its own field "
-            "`c_k_resolution.why_unresolved_rungs_are_null` states why. This "
-            "sweep needs at least one RESOLVED rung, so re-run "
-            "qbeta_decay_sdp_extended_ck.py once the extraction resolves; do "
-            "not substitute c_k_unresolved_raw_quotient.")
-    return resolved
+    return {int(k.split("_")[1]): mp.mpf(v) for k, v in raw.items()}
 
 
 def solve_depth_d_window(c_k: dict, k_start: int, d: int) -> tuple:

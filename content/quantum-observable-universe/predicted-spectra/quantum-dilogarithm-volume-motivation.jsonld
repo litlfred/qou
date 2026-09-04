@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-dilogarithm-volume-motivation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-dilogarithm-volume-motivation",
+  "kind": "remark",
+  "title": "Three volumes of a knot: hyperbolic, Hecke weight, and dilogarithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-volume",
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-volume",
+  "text": "quantum-dilogarithm-volume-motivation.md",
+  "provenance": "authored"
+}

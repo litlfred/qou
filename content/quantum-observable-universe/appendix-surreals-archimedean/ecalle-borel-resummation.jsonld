@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:ecalle-borel-resummation",
+  "kind": "definition",
+  "title": "Écalle–Borel resummation: the Borel transform $\\mathcal{B}$ and its lateral and median sums",
+  "cites": [
+    "references/ecalle1981"
+  ],
+  "tags": [
+    "resurgence",
+    "borel-transform",
+    "median-resummation",
+    "alien-derivative",
+    "asymptotic-series",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.EcalleBorelResummation.borelCoeff",
+  "text": "ecalle-borel-resummation.md",
+  "leanSource": "ecalle-borel-resummation.lean",
+  "provenance": "authored"
+}

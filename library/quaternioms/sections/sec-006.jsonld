@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quaternionic and Octonionic Preliminaries",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

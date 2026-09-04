@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/alg-q-beta-truncation",
+  "@type": [
+    "folio:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:q-beta-truncation",
+  "kind": "algorithm",
+  "title": "$\\beta$-decay $\\mathfrak{Q}_\\beta = Q_{\\mathrm{base}} \\cdot \\prod_k (1 + c_k\\, u^k)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder"
+  ],
+  "tags": [
+    "mba",
+    "step-11",
+    "q-beta",
+    "ck-truncation",
+    "kashiwara-b2",
+    "beta-decay",
+    "canonical-chain"
+  ],
+  "text": "mba-step11-q-beta-truncation.md",
+  "provenance": "authored"
+}

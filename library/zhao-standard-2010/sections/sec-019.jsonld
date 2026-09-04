@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Weight two",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "contains": [
+    "library/zhao-standard-2010/blocks/prose-sec-019",
+    "library/zhao-standard-2010/blocks/conj-sec-019-01"
+  ],
+  "derivedFrom": "library/zhao-standard-2010/manifest",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

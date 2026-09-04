@@ -1,0 +1,50 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1508.05448v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Concentration of Measure Techniques and Applications",
+  "contains": [
+    "library/arxiv-1508.05448v1/sections/sec-000",
+    "library/arxiv-1508.05448v1/sections/sec-001",
+    "library/arxiv-1508.05448v1/sections/sec-002",
+    "library/arxiv-1508.05448v1/sections/sec-003",
+    "library/arxiv-1508.05448v1/sections/sec-004",
+    "library/arxiv-1508.05448v1/sections/sec-005",
+    "library/arxiv-1508.05448v1/sections/sec-006",
+    "library/arxiv-1508.05448v1/sections/sec-007",
+    "library/arxiv-1508.05448v1/sections/sec-008",
+    "library/arxiv-1508.05448v1/sections/sec-009",
+    "library/arxiv-1508.05448v1/sections/sec-010",
+    "library/arxiv-1508.05448v1/sections/sec-011",
+    "library/arxiv-1508.05448v1/sections/sec-012",
+    "library/arxiv-1508.05448v1/sections/sec-013",
+    "library/arxiv-1508.05448v1/sections/sec-014",
+    "library/arxiv-1508.05448v1/sections/sec-015",
+    "library/arxiv-1508.05448v1/sections/sec-016",
+    "library/arxiv-1508.05448v1/sections/sec-017",
+    "library/arxiv-1508.05448v1/sections/sec-018",
+    "library/arxiv-1508.05448v1/sections/sec-019",
+    "library/arxiv-1508.05448v1/sections/sec-020",
+    "library/arxiv-1508.05448v1/sections/sec-021",
+    "library/arxiv-1508.05448v1/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1508.05448v1",
+    "source_file": "1508.05448v1.pdf",
+    "source_sha256": "57d2c717d8ec74d053bcaf861cffbb60a826bfea80af7eb89639207e98292c7a",
+    "pages": 134,
+    "arxiv": {
+      "id": "1508.05448",
+      "version": "1",
+      "primary_class": "math.PR",
+      "stamp_date": "22 Aug 2015"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

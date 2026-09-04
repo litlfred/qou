@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/afst-2007-6-16-3-665-0/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Universal Picard-Vessiot extensions",
+  "pageStart": 30,
+  "pageEnd": 33,
+  "contains": [
+    "library/afst-2007-6-16-3-665-0/blocks/prose-sec-015",
+    "library/afst-2007-6-16-3-665-0/blocks/prop-sec-015-01",
+    "library/afst-2007-6-16-3-665-0/blocks/lem-sec-015-02",
+    "library/afst-2007-6-16-3-665-0/blocks/cor-sec-015-03"
+  ],
+  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
+  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "provenance": "ingested"
+}

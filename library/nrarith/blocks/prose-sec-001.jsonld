@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "PSL2C has algebraic integer trace if and only if it has algebraic",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-2-psl2c-has-algebraic-integer-trace-if-and-only.md",
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

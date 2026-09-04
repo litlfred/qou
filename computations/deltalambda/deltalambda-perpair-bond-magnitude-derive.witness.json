@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T21:06:34.564638+00:00",
-  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
+  "computedAt": "2026-09-04T03:11:09.970692+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "assertions": [
     {
       "name": "z_naive_unphysical_at_A4",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "deltalambda-perpair-bond-magnitude-derive",
   "scriptFile": "deltalambda_perpair_bond_magnitude_derive_probe.py",
-  "scriptHash": "81a320041f59",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptHash": "76e0581d3fa4",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,10 +46,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -198,7 +198,7 @@
     "axis": "Delta_lambda Track-A gate — the per-pair [1^4] bond magnitude m",
     "no_fit": true,
     "no_ame_inversion": true,
-    "q0_convention": "muon-canonical (computations/ layer)"
+    "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 10-11
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 tion procedure for arbitrary measures in Pn. This natural construction proves to
 be quite useful for studying strongly Rayleigh measures (§4.1).

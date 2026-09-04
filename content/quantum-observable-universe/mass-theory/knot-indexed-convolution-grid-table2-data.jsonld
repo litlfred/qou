@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-knot-indexed-convolution-grid-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:knot-indexed-convolution-grid-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:knot-indexed-convolution-grid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-indexed-convolution-grid"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "knot-indexed-convolution-grid-table2-data.md",
+  "provenance": "authored"
+}

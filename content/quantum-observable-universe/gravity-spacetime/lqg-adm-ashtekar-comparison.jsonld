@@ -1,0 +1,43 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-lqg-adm-ashtekar-comparison",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:lqg-adm-ashtekar-comparison",
+  "kind": "remark",
+  "title": "QOU as the categorical resolution of ADM, Ashtekar, and Smolin--Rovelli",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton",
+    "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+    "papers/quantum-observable-universe/blocks/ex-categorical-reeb-brings",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+    "papers/quantum-observable-universe/blocks/rem-yang-mills-surreal-bound",
+    "papers/quantum-observable-universe/blocks/conj-os-reflection-positivity-from-reeb"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+  "cites": [
+    "references/ashtekar1986",
+    "references/rovelli1995",
+    "references/rovelli2004",
+    "references/thiemann2007"
+  ],
+  "tags": [
+    "loop-quantum-gravity",
+    "adm",
+    "ashtekar",
+    "spin-network",
+    "spin-foam",
+    "kodama-state",
+    "wheeler-dewitt",
+    "barbero-immirzi",
+    "comparison"
+  ],
+  "text": "lqg-adm-ashtekar-comparison.md",
+  "provenance": "authored"
+}

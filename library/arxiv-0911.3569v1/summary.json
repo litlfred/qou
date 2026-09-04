@@ -1,0 +1,146 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0911.3569v1",
+ "source_sha256": "4e7c15c9724fb453",
+ "brief": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting",
+ "extended": "**MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS**\n\n*DAVID G. WAGNER*\n\n30 pp, 25 sections.\n\n**Abstract.** Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting conclusions in diverse areas. Due mainly to the recent work of two young mathematicians, Julius Borcea and Petter Br¨ and´ en, a very successful multivariate generaliza- tion of this method has been developed. The ﬁrst part of this paper surveys some of the main results of this theory of “multivariate stable” polynomials – the most central of these results is the characterization of linear transfor- mations preserving stability of polynomials. The second part presents various applications of this theory in complex analysis, matrix theory, probability and statistical mechanics, and combinatorics.\n\n**Outline.** 1 Introduction.; 2 Stable polynomials.; 2.1 Examples.; 2.2 Elementary properties.; 2.3 Univariate stable polynomials.; 2.4 Multivariate analogues of the HKO and HB T; 3 Multiaffine stable polynomials.; 3.1 A criterion for real stability.; 3.2 Linear transformations preserving stabilit; 4.1 Reduction to the case of stable polynomial; 4.2 Partial symmetrization.; 4.3 Convergence to the polarization.; 5 Polarization arguments and stability preserv; 5.1 The real stability criterion revisited.; 5.2 Linear transformations preserving stabilit; 7 The symmetric exclusion process.; 7.1 Negative correlation and negative associat; 7.2 A conjecture of Liggett and Pemantle.",
+ "tokens": {
+  "brief": 47,
+  "extended": 382
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction.",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-stable-polynomials",
+   "title": "Stable polynomials.",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-21-examples",
+   "title": "Examples.",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-22-elementary-properties",
+   "title": "Elementary properties.",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-23-univariate-stable-polynomials",
+   "title": "Univariate stable polynomials.",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo",
+   "title": "Multivariate analogues of the HKO and HB Theorems.",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-006-3-multiaffine-stable-polynomials",
+   "title": "Multiaffine stable polynomials.",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-31-a-criterion-for-real-stability",
+   "title": "A criterion for real stability.",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-008-32-linear-transformations-preserving-stability-m",
+   "title": "Linear transformations preserving stability – multiaffine case.",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-41-reduction-to-the-case-of-stable-polynomials",
+   "title": "Reduction to the case of stable polynomials.",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-010-42-partial-symmetrization",
+   "title": "Partial symmetrization.",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-011-43-convergence-to-the-polarization",
+   "title": "Convergence to the polarization.",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-012-5-polarization-arguments-and-stability-preserver",
+   "title": "Polarization arguments and stability preservers.",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-013-51-the-real-stability-criterion-revisited",
+   "title": "The real stability criterion revisited.",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-52-linear-transformations-preserving-stability-p",
+   "title": "Linear transformations preserving stability – polynomial case.",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-015-7-the-symmetric-exclusion-process",
+   "title": "The symmetric exclusion process.",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-016-71-negative-correlation-and-negative-association",
+   "title": "Negative correlation and negative association.",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-017-72-a-conjecture-of-liggett-and-pemantle",
+   "title": "A conjecture of Liggett and Pemantle.",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-018-73-further-observations",
+   "title": "Further observations.",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-019-8-inequalities-for-mixed-discriminants",
+   "title": "Inequalities for mixed discriminants.",
+   "pages": "23-27"
+  },
+  {
+   "id": "sec-020-9-further-directions",
+   "title": "Further Directions.",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-021-91-other-circular-regions",
+   "title": "Other circular regions.",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-022-92-applications-of-theorem-54",
+   "title": "Applications of Theorem 5.4.",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-023-94-phase-and-support-theorems",
+   "title": "Phase and support theorems.",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-024-references",
+   "title": "References",
+   "pages": "29-30"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

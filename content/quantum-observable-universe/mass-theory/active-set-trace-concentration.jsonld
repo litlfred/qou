@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-active-set-trace-concentration",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:active-set-trace-concentration",
+  "kind": "conjecture",
+  "title": "Trace concentration via Littlewood--Richardson fusion of nucleon ground states",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-he4-two-row-dominance",
+    "papers/quantum-observable-universe/blocks/def-two-row-stratum",
+    "papers/quantum-observable-universe/blocks/def-atomic-braid"
+  ],
+  "tags": [
+    "active-set",
+    "trace-concentration",
+    "littlewood-richardson",
+    "kostka",
+    "wedderburn",
+    "he4",
+    "open-conjecture"
+  ],
+  "text": "active-set-trace-concentration.md",
+  "provenance": "authored"
+}

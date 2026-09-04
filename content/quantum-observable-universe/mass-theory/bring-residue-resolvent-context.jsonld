@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bring-residue-resolvent-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bring-residue-resolvent-context",
+  "kind": "remark",
+  "title": "Scaffolded open math, Lean structure, and downstream consequence of the Bring-residue resolvent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bring-residue-resolvent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-bring-residue-resolvent",
+  "tags": [
+    "bring-surface",
+    "residue",
+    "resolvent",
+    "alpha-shift"
+  ],
+  "text": "bring-residue-resolvent-context.md",
+  "provenance": "authored"
+}

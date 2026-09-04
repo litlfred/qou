@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-sl2-prolongation-recurrence",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:sl2-prolongation-recurrence",
+  "kind": "proof",
+  "title": "Proof of the symplectic one-parameter recurrence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sl2-prolongation-recurrence",
+    "papers/quantum-observable-universe/blocks/prop-prolonged-periods-fixed-depth"
+  ],
+  "text": "sl2-prolongation-recurrence-proof.md",
+  "provenance": "authored"
+}

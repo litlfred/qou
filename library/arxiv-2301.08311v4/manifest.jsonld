@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2301.08311v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "FLOER COHOMOLOGY AND HIGHER MUTATIONS SOHAM CHANDA",
+  "contains": [
+    "library/arxiv-2301.08311v4/sections/sec-000",
+    "library/arxiv-2301.08311v4/sections/sec-001",
+    "library/arxiv-2301.08311v4/sections/sec-002",
+    "library/arxiv-2301.08311v4/sections/sec-003",
+    "library/arxiv-2301.08311v4/sections/sec-004",
+    "library/arxiv-2301.08311v4/sections/sec-005",
+    "library/arxiv-2301.08311v4/sections/sec-006",
+    "library/arxiv-2301.08311v4/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2301.08311v4",
+    "source_file": "2301.08311v4.pdf",
+    "source_sha256": "385139c69e18f5b0d43734b1f36250471139baebdadbbb5a216270e2afe31735",
+    "pages": 73,
+    "arxiv": {
+      "id": "2301.08311",
+      "version": "4",
+      "primary_class": "math.SG",
+      "stamp_date": "17 Sep 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

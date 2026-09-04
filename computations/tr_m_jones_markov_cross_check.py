@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 tr_m_jones_markov_cross_check.py — verify wedderburn_jones_markov reproduces
-the canonical tr_M values from `atomic-tr-m-mpfr-50dps-proton.witness.json`.
+the canonical tr_M values from `atomic-tr-m-mpfr-50dps.witness.json`.
 
 Per docs/audits/2026-05-08-p3-h-3a-divergence.md, the new
 `wedderburn_jones_markov.global_wedderburn_sum_jones_markov` (using
@@ -61,85 +61,39 @@ if str(HERE) not in sys.path:
 
 import sympy as sp  # noqa: E402
 
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-# ── q₀ pin: RESOLVED from the substrate, never hardcoded ─────────────
-#
-# WAS:  Q_0 = sp.Rational("1.1099785955573347")
-#
-# 17 digits, and a SUPERSEDED MUON VINTAGE: that literal sits 0.0769 ppb
-# from the muon pin C (`q-pinning-50-digit.witness.json` →
-# derived_50_digit.q) and 11.5371 ppb from the proton pin. It was left
-# behind by the 2026-05-28 re-pin of the substrate to the proton anchor.
-#
-# WHY PROTON IS RIGHT HERE — payload evidence, not a `q0Anchor` stamp.
-# REF_WITNESS (`atomic-tr-m-mpfr-50dps-proton.witness.json`) carries a
-# real q₀ PAYLOAD:
-#
-#   "q_0_50dps"  (and "q0Value", the identical string):
-#     1.1099785827513808075916690956107688798744991218736
-#
-# which is byte-identical to `Q_50_DIGIT_STR` as this producer resolves
-# it. And Q_0 really does drive a recomputation of the quantity that
-# witness holds: `_load_canonical_tr_m()` reads its
-# `results[].tr_M_at_q0_50dps` (tr_M *at that q₀*), and `main()` passes
-# Q_0 as `q_val` to `global_wedderburn_sum_jones_markov`, which is the
-# same Σ_λ y_λ(q)·χ^λ partition sum by a second implementation — then
-# differences the two. Recomputing at one pin and differencing against a
-# reference held at another measures the PIN GAP, not the method gap.
-#
-# ANCHOR RESOLUTION: this producer's stem is absent from
-# `computations/q0_anchor_manifest.json`, so `q_parameter` applies the
-# default physical/proton anchor — exactly what REF_WITNESS requires.
-# Running under `QOU_Q0_ANCHOR=ideal|muon|canonical` would swing Q_0 to
-# the muon pin while REF_WITNESS stays proton, reopening this defect.
-#
-# TYPE: deliberately still `sp.Rational`. `q_val` reaches
-# `wedderburn_jones_markov.y_lambda_at`, which does `mp.mpf(str(q_val))`;
-# a Rational stringifies to an exact fraction that mpmath parses
-# losslessly, so all 50 digits survive (checked: equals
-# `mp.mpf(Q_50_DIGIT_STR)`), and `free_symbols == set()` keeps it on the
-# numeric branch as before.
-#
-# THIS MOVES VALUES — the witness is STALE. q₀ shifts 11.5371 ppb, and
-# because the characters here are the q-INDEPENDENT q=1 MN limit, the
-# whole q-dependence rides on y_λ: measured 2.35 ppb at n=3 (proton,
-# neutron) and 2.26-11.40 ppb across the n=6 shapes (deuteron).
-# `tr-m-jones-markov-cross-check.witness.json` must be regenerated.
-# Bean `qou-jjge`.
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 Q_0 = sp.Rational(Q_50_DIGIT_STR)
-# NAME DRIFT, corrected 2026-08-30: the module docstring, set_description
-# and the witness's own `method.canonical_reference` all still named the
-# UNSUFFIXED `atomic-tr-m-mpfr-50dps.witness.json` after this line moved to
-# the `-proton` sibling. That unsuffixed file is the MUON one (q0Anchor:
-# muon, q_0 = 1.109978595642…, vintage C), so the committed witness was
-# misstating its own upstream to anyone auditing provenance -- the values
-# were right and the citation was wrong. All three now name the file that
-# is actually read.
 REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
 
 
-def _load_canonical_tr_m() -> dict[str, sp.Float]:
-    """Load the canonical |tr_M| reference values from the cached witness.
-
-    Returns sympy ``Float``s at 50 dps, NOT ``float``. The witness stores
-    ``tr_M_at_q0_50dps`` as a 50-digit string; ``float()`` discarded 35 of
-    those digits before the comparison below ever ran (NO FLOAT64, owner
-    directive). sympy carries its own precision, so this needs no ``mp.dps``
-    -- and nothing in this module sets one, which is exactly the hazard
-    ``_precision`` warns about.
-    """
+def _load_canonical_tr_m() -> dict[str, float]:
+    """Load the canonical |tr_M| reference values from the cached witness."""
     if not REF_WITNESS.exists():
         return {}
     data = json.loads(REF_WITNESS.read_text())
-    out: dict[str, sp.Float] = {}
+    out: dict[str, float] = {}
     for row in data.get("results", []):
         name = row.get("atom")
         val = row.get("tr_M_at_q0_50dps")
         if name and val is not None:
-            out[name] = sp.Float(val, 50)
+            out[name] = float(val)
     return out
 
 
@@ -165,7 +119,7 @@ def main() -> int:
             "Cross-check: the new `wedderburn_jones_markov.global_"
             "wedderburn_sum_jones_markov` (canonical y_λ via Wenzl) "
             "should reproduce the canonical tr_M values from "
-            "`atomic-tr-m-mpfr-50dps-proton.witness.json` (computed via "
+            "`atomic-tr-m-mpfr-50dps.witness.json` (computed via "
             "markov_trace_recursive, the canonical Markov-axiom reducer). "
             "If the values agree to 1e-6 relative, the new wiring in "
             "crt_markov.py is empirically validated."
@@ -188,13 +142,13 @@ def main() -> int:
                 Z=Z, N=N, include_inter=True,
                 m_pp=1, m_pn=1, m_nn=1,
             )
-            new_val = sp.N(total, 50)
+            new_val = float(sp.N(total, 30))
             elapsed = time.monotonic() - t0
             new_abs = abs(new_val)
             rel_err = (
                 abs(new_abs - canonical_val) / canonical_val
                 if canonical_val != 0
-                else sp.oo
+                else float("inf")
             )
             # Honest expectation: the new wiring corrects the WEIGHT
             # but not the CHARACTER (q=1 classical MN, not q-Hecke
@@ -208,15 +162,11 @@ def main() -> int:
                 "Z": Z,
                 "N": N,
                 "n_strands": 3 * A,
-                # NO FLOAT64: these carry 50-dps sympy Floats to the JSON as
-                # strings. elapsed_sec is a wall-clock measurement, not a
-                # mathematical quantity, so it is formatted rather than
-                # promoted (same idiom as sigma1cubed_seifert_surface_term).
-                "canonical_abs_tr_M": str(canonical_val),
-                "jones_markov_partition_sum": str(new_val),
-                "jones_markov_abs": str(new_abs),
-                "rel_err_vs_canonical": str(rel_err),
-                "elapsed_sec": f"{elapsed:.3f}",
+                "canonical_abs_tr_M": canonical_val,
+                "jones_markov_partition_sum": new_val,
+                "jones_markov_abs": new_abs,
+                "rel_err_vs_canonical": float(rel_err),
+                "elapsed_sec": float(elapsed),
                 "non_zero_terms": len(terms),
                 "note": (
                     "Discrepancy is the q=1 classical-character limit "
@@ -242,9 +192,9 @@ def main() -> int:
                 computed=str(within_oom),
                 expected="True",
             )
-            print(f"  {name}: canonical={float(canonical_val):.6f}, "
-                  f"jones-markov={float(new_abs):.6f}, "
-                  f"rel_err={float(rel_err):.2e}, {elapsed:.2f}s",
+            print(f"  {name}: canonical={canonical_val:.6f}, "
+                  f"jones-markov={new_abs:.6f}, "
+                  f"rel_err={rel_err:.2e}, {elapsed:.2f}s",
                   file=sys.stderr)
         except Exception as exc:
             elapsed = time.monotonic() - t0
@@ -254,7 +204,7 @@ def main() -> int:
                 "Z": Z,
                 "N": N,
                 "error": f"{type(exc).__name__}: {exc}",
-                "elapsed_sec": f"{elapsed:.3f}",
+                "elapsed_sec": float(elapsed),
             })
             print(f"  {name}: ERROR after {elapsed:.2f}s — "
                   f"{type(exc).__name__}: {exc}", file=sys.stderr)
@@ -270,7 +220,7 @@ def main() -> int:
                 "numerical-q-from-start."
             ),
             "canonical_reference": (
-                "atomic-tr-m-mpfr-50dps-proton.witness.json — produced by "
+                "atomic-tr-m-mpfr-50dps.witness.json — produced by "
                 "markov_trace_recursive (canonical Markov-axiom recursive "
                 "ascent), mpfr 50-dps precision."
             ),

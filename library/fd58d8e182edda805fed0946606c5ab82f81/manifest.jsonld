@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Gröbner-Shirshov bases for Temperley-Lieb algebras",
+  "contains": [
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-000",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-001",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-002",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-003",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-004",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-005",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-006",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-007",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-008",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-009",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-010",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-011",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-012",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-013",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-014",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "fd58d8e182edda805fed0946606c5ab82f81",
+    "source_file": "fd58d8e182edda805fed0946606c5ab82f81.pdf",
+    "source_sha256": "292cb048e70979359ab588ed7644044860fbfdf46d2047624b0ba44559a03881",
+    "pages": 7,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

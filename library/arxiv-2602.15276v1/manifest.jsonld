@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2602.15276v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Compact Q-balls and Q-shells within aCP N Skyrme-Faddeev type model",
+  "contains": [
+    "library/arxiv-2602.15276v1/sections/sec-000",
+    "library/arxiv-2602.15276v1/sections/sec-001",
+    "library/arxiv-2602.15276v1/sections/sec-002",
+    "library/arxiv-2602.15276v1/sections/sec-003",
+    "library/arxiv-2602.15276v1/sections/sec-004",
+    "library/arxiv-2602.15276v1/sections/sec-005",
+    "library/arxiv-2602.15276v1/sections/sec-006",
+    "library/arxiv-2602.15276v1/sections/sec-007",
+    "library/arxiv-2602.15276v1/sections/sec-008",
+    "library/arxiv-2602.15276v1/sections/sec-009",
+    "library/arxiv-2602.15276v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2602.15276v1",
+    "source_file": "2602.15276v1.pdf",
+    "source_sha256": "18d77d6aa140fc50acbd58b10496818adad25bcb9174f1911b6a50dfcc24bed8",
+    "pages": 44,
+    "arxiv": {
+      "id": "2602.15276",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "17 Feb 2026"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

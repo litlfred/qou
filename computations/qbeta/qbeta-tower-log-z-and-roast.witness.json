@@ -1,0 +1,249 @@
+{
+  "computation": "qbeta-tower-log-z-and-roast",
+  "assertions": [
+    {
+      "name": "a_proton_proton_bond_is_exactly_one_markov_reduction",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp = z is a derived identity, so log_z b_pp = 1 on the nose. The tower's own structure map counts p-p bonds exactly"
+    },
+    {
+      "name": "all_five_factors_equal_z_exactly_at_q_equals_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the Hecke algebra degenerates to C[S_n] and z(1) = 1/2, so nu becomes an exact integer bond count -- verified symbolically, not numerically"
+    },
+    {
+      "name": "the_pn_interface_has_no_first_order_term",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "and b_pp, b_nn split symmetrically at +1 and -1 -- the whole isospin structure is one sign, at first order in q-1"
+    },
+    {
+      "name": "like_species_bonds_split_symmetrically_about_z",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "first_order_expansion_is_good_to_four_percent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the order-0 + order-1 picture is the whole law to 4 %"
+    },
+    {
+      "name": "layout_free_bond_counting_beats_every_isospin_resolved_variant",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "1.18085 vs best isospin-resolved 1.22497 -- the q-deformation's contribution to the binding law is net-NEGATIVE"
+    },
+    {
+      "name": "the_three_edge_sets_agree_to_within_one_percent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the nucleon-ordering gap (qou-48is), real for tr_M at 20-36 %, barely touches B"
+    },
+    {
+      "name": "the_derived_asymmetry_has_the_wrong_sign",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "derived +0.2200, data wants ~-0.15. My earlier reading of b_pp > b_nn as 'the sign Coulomb would give' is correct as ALGEBRA and wrong as EVIDENCE. RETRACTED"
+    },
+    {
+      "name": "the_missing_term_is_the_symmetry_energy_not_the_surface_term",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "|corr| 0.8038 vs 0.1781 -- the decision frame named the surface term / edge set as the strongest lead. Wrong by 4x in correlation. But the isospin/SU(4) route (qou-ubsl) is a COMPLETED bean, closed by this arc's own row cap -- so this is a named gap with NO route, not a lead. Corrected same day"
+    },
+    {
+      "name": "binding_information_is_gone_from_Delta_tr_by_mass_eleven",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "above A ~ 11 Delta_tr does not merely MIS-SCALE the binding energy, it does not CONTAIN it -- what is left is t_p^Z t_n^N. That is why no scale works"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "E_0_MeV": "4.1859813632944758969",
+    "E_0_times_abs_ln_z_MeV": "2.0507096923814336856",
+    "z": "0.6126880371464652516",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_measured": 2548,
+    "markov_weights_log_z": {
+      "b_pp": "1.0",
+      "b_pn": "1.3815522414167",
+      "b_nn": "1.85193591723463"
+    },
+    "value_at_q_equals_one": {
+      "t_p": "1/2",
+      "t_n": "1/2",
+      "b_pp": "1/2",
+      "b_pn": "1/2",
+      "b_nn": "1/2",
+      "z": "1/2"
+    },
+    "first_order_coefficients_in_q_minus_1": {
+      "b_pp": "1",
+      "b_pn": "0",
+      "b_nn": "-1"
+    },
+    "laws": {
+      "segregated p..p n..n (canonical)": {
+        "median": "11.241897",
+        "p25_p75": "1.0953026",
+        "p5_p95": "1.2249727",
+        "full": "10.181507"
+      },
+      "alternating p n p n .. (nf builder)": {
+        "median": "11.523023",
+        "p25_p75": "1.0971827",
+        "p5_p95": "1.2322698",
+        "full": "10.399725"
+      },
+      "all-pairs, renormalised to A-1": {
+        "median": "11.407176",
+        "p25_p75": "1.0958344",
+        "p5_p95": "1.226238",
+        "full": "9.9223462"
+      },
+      "bond COUNT only (layout-free)": {
+        "median": "11.902584",
+        "p25_p75": "1.0842546",
+        "p5_p95": "1.1808456",
+        "full": "8.1734436"
+      }
+    },
+    "kappa_scan": [
+      {
+        "kappa": "-0.4",
+        "p5_p95": "1.2027639"
+      },
+      {
+        "kappa": "-0.35",
+        "p5_p95": "1.1878499"
+      },
+      {
+        "kappa": "-0.3",
+        "p5_p95": "1.1790399"
+      },
+      {
+        "kappa": "-0.25",
+        "p5_p95": "1.1709207"
+      },
+      {
+        "kappa": "-0.2",
+        "p5_p95": "1.1652583"
+      },
+      {
+        "kappa": "-0.15",
+        "p5_p95": "1.1649691"
+      },
+      {
+        "kappa": "-0.1",
+        "p5_p95": "1.1688292"
+      },
+      {
+        "kappa": "-0.05",
+        "p5_p95": "1.1730924"
+      },
+      {
+        "kappa": "0.0",
+        "p5_p95": "1.1808456"
+      },
+      {
+        "kappa": "0.05",
+        "p5_p95": "1.1888665"
+      },
+      {
+        "kappa": "0.1",
+        "p5_p95": "1.1987524"
+      },
+      {
+        "kappa": "0.15",
+        "p5_p95": "1.2099975"
+      },
+      {
+        "kappa": "0.2",
+        "p5_p95": "1.2229702"
+      },
+      {
+        "kappa": "0.25",
+        "p5_p95": "1.2365959"
+      },
+      {
+        "kappa": "0.3",
+        "p5_p95": "1.2509609"
+      },
+      {
+        "kappa": "0.35",
+        "p5_p95": "1.2669499"
+      },
+      {
+        "kappa": "0.4",
+        "p5_p95": "1.2832292"
+      }
+    ],
+    "kappa_optimum": "-0.15",
+    "kappa_derived": "0.219957165502762",
+    "residual_correlations": {
+      "(N-Z)^2/A^2  [asymmetry]": "-0.80378541",
+      "A^(-1/3)     [surface]": "-0.17812461",
+      "Z^2/A^(4/3)  [Coulomb]": "-0.043874792"
+    },
+    "delta_tr_saturation": [
+      {
+        "A": 2,
+        "S": "0.67682159",
+        "one_minus": "0.50823"
+      },
+      {
+        "A": 4,
+        "S": "2.0739832",
+        "one_minus": "0.125684"
+      },
+      {
+        "A": 8,
+        "S": "4.8683065",
+        "one_minus": "0.00768637"
+      },
+      {
+        "A": 11,
+        "S": "7.1727305",
+        "one_minus": "0.000767225"
+      },
+      {
+        "A": 20,
+        "S": "13.251276",
+        "one_minus": "1.7581e-6"
+      },
+      {
+        "A": 40,
+        "S": "27.222893",
+        "one_minus": "1.504e-12"
+      },
+      {
+        "A": 100,
+        "S": "69.137742",
+        "one_minus": "9.41586e-31"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "c12794de1e0b56d3f98145ae906c843cf1bf1942",
+    "producer": "computations/qbeta/qbeta_tower_log_z_and_roast_probe.py",
+    "elapsed_s": 2.424
+  }
+}

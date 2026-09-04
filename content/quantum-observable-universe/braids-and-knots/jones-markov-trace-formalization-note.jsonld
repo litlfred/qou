@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-jones-markov-trace-formalization-note",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jones-markov-trace-formalization-note",
+  "kind": "remark",
+  "title": "Formalization strategy for the Markov trace: axiomatic encoding of the three Jones properties",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "tags": [
+    "markov-trace",
+    "jones-polynomial",
+    "formalization-note",
+    "external-proof"
+  ],
+  "text": "jones-markov-trace-formalization-note.md",
+  "provenance": "authored"
+}

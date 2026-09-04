@@ -7,6 +7,7 @@ section_number: 4
 pages: 19-22
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
+doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
 ---
 In what follows, let (M,dM,mM,f ) denote ann-dimensional weighted
 Riemannian manifold with boundary deﬁned as (1.4) such thatmM,f is

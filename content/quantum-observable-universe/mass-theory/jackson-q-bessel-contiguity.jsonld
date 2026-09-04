@@ -1,0 +1,13 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-jackson-q-bessel-contiguity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:jackson-q-bessel-contiguity",
+  "kind": "proof",
+  "leanRef": "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",
+  "text": "jackson-q-bessel-contiguity.md",
+  "provenance": "authored"
+}

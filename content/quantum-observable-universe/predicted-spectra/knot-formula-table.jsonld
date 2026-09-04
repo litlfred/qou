@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-formula-table",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-formula-table",
+  "kind": "remark",
+  "title": "Topological knot formulas for fundamental and composite particles",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-embeddability-closure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-knot-particle-generation",
+  "tags": [
+    "knot",
+    "formula",
+    "notation",
+    "particle",
+    "hadron",
+    "nucleus",
+    "generation",
+    "fermion",
+    "boson",
+    "torus-link"
+  ],
+  "text": "knot-formula-table.md",
+  "provenance": "authored"
+}

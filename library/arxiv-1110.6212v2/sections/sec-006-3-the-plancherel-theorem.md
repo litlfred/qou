@@ -7,6 +7,7 @@ section_number: 3
 pages: 16-16
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 In this section we state and prove the Plancherel Theorem for each irreducible aﬃne Hecke
 algebra of rank 1 or rank 2. In each case we give the generators and relations for the algebra,

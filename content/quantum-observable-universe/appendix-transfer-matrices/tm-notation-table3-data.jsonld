@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-tm-notation-table3-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:tm-notation-table3-data",
+  "kind": "table",
+  "title": "Data table 3 from tm-notation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/tm-notation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "tm-notation-table3-data.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-isotope-knot-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:isotope-knot-properties",
+  "kind": "remark",
+  "title": "Isotopes are knot-distinct with independent stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-isotope-knot",
+    "papers/quantum-observable-universe/blocks/def-unstable-atom"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-isotope-knot",
+  "tags": [
+    "isotope",
+    "knot",
+    "jones-polynomial",
+    "stability",
+    "categorical"
+  ],
+  "text": "isotope-knot-properties.md",
+  "provenance": "authored"
+}

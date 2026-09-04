@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-blowup-examples",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-blowup-examples",
+  "kind": "remark",
+  "title": "Blow-up calculus: examples, cohomological aspect, and significance for QOU",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-surreal-blowup-calculus",
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "renormalisation",
+    "blow-up",
+    "mobius-energy",
+    "bphz",
+    "classical-limit"
+  ],
+  "text": "surreal-blowup-examples.md",
+  "provenance": "authored"
+}

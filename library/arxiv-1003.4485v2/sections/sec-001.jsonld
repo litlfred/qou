@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1003.4485v2/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Categories and Connections",
+  "pageStart": 3,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-1003.4485v2/blocks/prose-sec-001",
+    "library/arxiv-1003.4485v2/blocks/thm-sec-001-01",
+    "library/arxiv-1003.4485v2/blocks/thm-sec-001-02",
+    "library/arxiv-1003.4485v2/blocks/lem-sec-001-03"
+  ],
+  "derivedFrom": "library/arxiv-1003.4485v2/manifest",
+  "sourceDocument": "library/arxiv-1003.4485v2/manifest",
+  "provenance": "ingested"
+}

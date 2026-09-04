@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-mass-identity-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mass-identity-exists",
+  "kind": "proposition",
+  "title": "Existence of the inertial mass identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-mass-identity-exists"
+  ],
+  "tags": [
+    "existence",
+    "mass-identity",
+    "inertial-mass"
+  ],
+  "leanRef": "qou:QOU.MassIdentity.exists",
+  "text": "mass-identity-exists.md",
+  "leanSource": "mass-identity-exists.lean",
+  "provenance": "authored"
+}

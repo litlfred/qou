@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-arc-space",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:arc-space",
+  "kind": "definition",
+  "title": "Arc space $\\mathcal{L}(X)$ of the brane tower",
+  "cites": [
+    "references/denef-loeser2001"
+  ],
+  "tags": [
+    "arc-space",
+    "jet-scheme",
+    "brane-tower",
+    "motivic"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.ArcSpace",
+  "text": "arc-space.md",
+  "leanSource": "arc-space.lean",
+  "provenance": "authored"
+}

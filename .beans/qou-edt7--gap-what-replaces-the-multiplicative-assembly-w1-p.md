@@ -1,11 +1,11 @@
 ---
 # qou-edt7
 title: 'GAP: what replaces the multiplicative assembly W=1-PROD f — both corpus assemblies miss the 3-body sign, in OPPOSITE directions'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T19:59:57Z
+updated_at: 2026-09-03T14:58:34Z
 parent: qou-mhj9
 ---
 
@@ -916,3 +916,148 @@ jet-filtration SUM rather than its collapse".
 Until then the honest statement is: the magnitude is not derived, and with
 the present data it is not DECIDABLE either — any candidate that lands
 within 0.55% on one nucleus has at least seven rivals doing better.
+
+
+## 2026-09-03 — ANSWERED (structurally): `b₃ = 0` is the TRACE's doing, not the assembly's
+
+**The replacement is not another assembly.** Every ingredient was already on
+`main`; what was missing was the composition.
+
+`PairwiseCumulantVanishing` scopes itself honestly — its premises *"constrain `f`
+on **disjoint** clusters, and the observable that fails is a **connected**
+quantity"* — leaving open the hope that the **bound** atom's trace carries
+irreducible many-body content. It does not, because of **`qou-g8i1`** (completed):
+
+    tr(x·(σ_g + d·I)) = (z+d)·tr(x)   ⇒   tr_free/tr_atom = ∏_b 1/(z + d_b)
+
+on 16 nuclei numerically (A = 2..10, to `4.45e-31`) and 6 symbolically, with the
+recorded mechanism *"the Markov property applied at a **GAP**, not at the last
+strand"* — **interior** generators, so the **bound** atom word, not the disjoint
+sector M3 covers (`probe_inter_knot_decoupling.py` is the M3 case).
+
+    bond rule → trace ratio = ∏_bonds μ_b        [bound atom, interior gaps]
+  + f multiplicative→additive                    [§10a Cauchy]
+  ⇒ binding is a bond functional
+  ⇒ b₃ = b₄ = 0 identically                      [PairwiseCumulantVanishing]
+  vs AME b₃ = +1.426222 MeV.
+
+**So the replacement must BREAK THE BOND RULE** — a trace that is not Markov, or
+an object that is not a trace of the atom word. Not a different `f` (`f` does not
+appear in the conclusion), and **not a different edge set** (measured: chain,
+all-pairs and star all give `b₃ = 0`).
+
+**Two things this makes cheaper.** §10a's uniqueness step (continuous Cauchy
+solutions are `c·log`), which `binding_functional_extensivity_probe.py` records
+as *classical and NOT in Lean*, is **irrelevant** rather than merely
+unformalised — the conclusion holds for a discontinuous `f` too (measured). And
+the hypothesis is carried as `SatisfiesBondRule`, a named hypothesis, not an
+axiom: what is proved is the **implication**.
+
+**Scope (b)** on bindings `f ∘ (bond-rule trace of the atom word)`, invariant
+named: the bond rule makes the cluster trace a product over **pairs**, so the
+connected part above order two has nothing to be built from. **(a)** on
+everything else — non-trace carriers are untouched, and if the bond rule fails at
+some `A` the exclusion lapses there.
+
+**Artifacts.** `QOU/Mass/MarkovBondRuleForcesPairwise.lean` — 4 theorems,
+`lean`-direct exit 0, sorry-free, `#print axioms` gives **`[propext]` alone**.
+`computations/probes/markov_bond_rule_forces_pairwise_probe.py` — 5/5, exact
+`Fraction` for the cumulants, mpmath 50 dps for the logs, zero float64,
+P30-stamped.
+
+**Credit where it is due:** the two halves are `qou-g8i1`'s and
+`PairwiseCumulantVanishing`'s. This tranche is the join and the identification of
+the invariant, not a new exclusion.
+
+
+## 2026-09-03 (cont.) — the positive half, narrowed to a search over WORDS
+
+Checked the obvious candidate for a non-Markov carrier and it is already worked,
+with a measured verdict — plus one apparent tension that turns out to be a
+category difference worth recording.
+
+**No contradiction with the bond rule.** `qou-v7ro` proves the **Brunnian trace
+deficit** `D_A = 1 − qtr(ρ(w_A))/[2]^A` is **nonzero ∀A** (#6217:
+`D_{A+1} = −h²(h²+2)·D_A`, `D_3 = 1.44e-3`). Beside a bond rule verified to
+`4.45e-31` that reads like a factorisation failure. It is not — **different
+words**: the bond rule governs the nucleon **atom word** (a product of bond
+letters `σ_g + d·I` at interior gaps), while `w_A` is the **iterated commutator**
+`w_n = [w_{n−1}, b]`, and a commutator is not a product of independent bond
+letters. So `SatisfiesBondRule` is not falsified for the atom word and the
+exclusion is not vacuous there.
+
+**`D_A` is the one known member of the class my exclusion leaves open.** A
+carrier must *break* the bond rule; a word with nonzero deficit is exactly such a
+word. So the aim is right — and `qou-v7ro` has already measured why this member
+does not finish: `|D_A|` **falls** geometrically (`1.44e-3 → 8.2e-9` over A=3..8,
+factor `−0.0893226497` per step) while the empirical binding fraction **rises**
+(`0.767 → 0.954·ℏ_q²`, ⁴He → ⁵⁶Fe). Opposite trends ⇒ order/parity marker, not
+magnitude. **Scope (a)** on that carrier, not on the class.
+
+**So the positive half is now a stated search: is there a non-factorising word
+whose deficit RISES with `A`?** Not a search over functionals `f` (`f` does not
+appear in the conclusion) and not over edge sets (measured: chain, all-pairs,
+star all give `b₃ = 0`). That is a narrower question than the bean opened with.
+
+**Judgement, not a finding:** the falling/rising mismatch is a *trend* mismatch,
+and trends are cheap to test — any candidate word can be screened by computing
+its deficit at A = 3..6 before any Lean is written. That screen is the next
+concrete step and it is cheap.
+
+Recorded as a scope note in the header of
+`QOU/Mass/MarkovBondRuleForcesPairwise.lean`, so a reader arriving from
+`qou-v7ro` does not read that file as contradicted.
+
+
+## 2026-09-03 — the positive half is WALLED, and my own "search over words" was the wrong shape
+
+**Retracting my own stated next step**, before spending a tranche on it. Last
+entry I wrote that the open half is *"a search over words: is there a
+non-factorising word whose deficit rises with `A`?"* That search **cannot close
+the gap whatever it returns**, and the reason is already proved.
+
+`qou-1xne` / [`2026-08-29-w3-closeability.md`](../docs/audits/2026-08-29-w3-closeability.md):
+**`w_3` is a required boundary condition of a rank-2 problem, and the corpus
+supplies exactly one boundary condition** (n=2, the deuteron bond). Every attempt
+to derive it fails on **counting**, not precision — so no amount of further
+carrier data helps. Four routes examined:
+
+| route | verdict |
+|---|---|
+| R1 the period `a_D^(3)` | **determined** — and a *different object* from `w_3`; the gap is the weight, not the period |
+| R2 the SL₂ depth-2 recurrence | **circular** (consumes `a_D^(3)`), refuted past n=5 |
+| **R3 a third anchor at A > 3** | **none exists under any reading of the tower** |
+| R4 the magic form as the n=4 term | determines `w_3` — **negative**, predicting unbound tritium |
+
+Plus a sorry-free scope-(b) exclusion:
+`QOU.Mass.BindingScalarKernelParityExclusion.no_scalar_kernel_on_carrier` — the
+q-Borel-normalised carrier is pure isoclinic of Newton slope `1/2`, every rank-1
+q-difference module has integer slope, so **no scalar `R(q,x)` acts on the
+carrier at any depth**.
+
+**Why this kills the word search specifically.** A word with a rising deficit
+would be *another candidate weight*, not an anchor. R3 says the tower supplies no
+second boundary condition, so a rank-2 recursion stays underdetermined however
+many carriers are screened. Producing one and wiring it would be a **fit**, which
+the Δ_λ gate forbids.
+
+**How this composes with the bond-rule result above.** They are two halves of one
+wall, and neither alone says it:
+- `MarkovBondRuleForcesPairwise`: the carrier **must break the bond rule** — no
+  function of the atom-word trace can work.
+- `qou-1xne`: even a bond-rule-breaking carrier **does not supply the missing
+  boundary condition**.
+
+So the open problem is not *"find a carrier"*. It is *"find a second boundary
+condition"*, and it must come from **outside** the tower — which is the same
+thing as deriving `w_3`, i.e. the gate itself.
+
+**HONEST STATUS: walled.** Not refuted — scope **(a)** on everything except the
+two cited Lean invariants. Nothing here says a second boundary condition cannot
+exist; it says the corpus has none and that the tower does not contain one, so
+the next real move is an ingredient from outside it, not another search inside.
+
+**Judgement, marked as such:** I would leave this walled rather than open a
+carrier-screening tranche. The counting argument makes such a tranche unable to
+close by construction, and its most likely output is a plausible-looking weight
+that would then need labelling as a fit.

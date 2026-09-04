@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Jianqiang Zhao",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "contains": [
+    "library/zhao-standard-2010/blocks/prose-sec-024",
+    "library/zhao-standard-2010/blocks/def-sec-024-01",
+    "library/zhao-standard-2010/blocks/rem-sec-024-02"
+  ],
+  "derivedFrom": "library/zhao-standard-2010/manifest",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,248 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-03T04:47:31.863799+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "assertions": [
+    {
+      "name": "A1_block_swap_permutation_is_correct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "permutation [3, 4, 5, 0, 1, 2] == [3, 4, 5, 0, 1, 2]"
+    },
+    {
+      "name": "A2_spectrum_is_seven_integer_powers_of_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "exponents [-3, -1, 2, 3, 5, 6, 9], all exactly integer powers: True"
+    },
+    {
+      "name": "A3_L_values_are_integer_multiples_of_log_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "bound [3, 1], unbound [-9, -6, -5, -3, -2]"
+    },
+    {
+      "name": "A4_cap_rises_to_three_halves",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "best ratio 1.500000000 = 3/2, from L=+3 vs L=-2 log q"
+    },
+    {
+      "name": "A5_three_halves_still_misses_both_targets",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "QCD 2 short by 1.3333x, nuclear 33.71 short by 22.47x"
+    },
+    {
+      "name": "A6_pauli_identification_does_not_survive_the_lift",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "4 magnitudes carry both parities; the two pure-parity bound channels are one of each parity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "lifting_the_isospin_grading_to_six_strands_probe",
+  "scriptFile": "lifting_the_isospin_grading_to_six_strands_probe.py",
+  "scriptHash": "55064d8ea616",
+  "scriptCommitSha": "de5c18f5882ad02d08b3e2b1e7b34fedd8a52cbb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/lifting_the_isospin_grading_to_six_strands_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/lifting_the_isospin_grading_to_six_strands_probe.py"
+  },
+  "description": "Discharges qou-m896's explicit caveat by lifting the (T,S) grading from the n=2 interface into the corpus's three-strands-per-nucleon construction. Exchanging two nucleons there is a BLOCK SWAP of {0,1,2} with {3,4,5} — the braid (s3 s2 s1)(s4 s3 s2)(s5 s4 s3), permutation [3,4,5,0,1,2] verified before use — not a transposition. Its spectrum across the four live H_6 blocks is seven distinct magnitudes, every eigenvalue exactly +-q^k with k in {-3,-1,2,3,5,6,9} (checked by assertion), so every L is an integer multiple of log q spanning -9 to +3. The n=2 structure of two eigenvalues q and -1/q with product -1 does NOT lift, and consequently the det T = -1 cap does not govern: bound channels have L/log q in {3,1} and unbound in {-2,-3,-5,-6,-9}, so the best |L_bound|/|L_unbound| is EXACTLY 3/2. The cap rises from 1 to 3/2 — the first thing in this arc to move it at all, every convention, crossing count and Wenzl level having left it at 1. But 3/2 still misses QCD's colour ratio of 2 by 1.33x and the nuclear 33.7 by 22.5x. And the gain is paid for: exchange parity is not locked to magnitude (q^2, q^3, q^5, q^6 each carry both signs), so the Pauli-forced identification underpinning the n=2 result is gone; the only two pure-parity BOUND channels are one of each parity, so reading T=1 as the pure symmetric channel gives a bound T=1 — exactly the failure qou-m896 fixed. Recovering the sign pattern at six strands requires choosing an unbound channel by hand.",
+  "data": {
+    "block_swap": {
+      "word": "s3 s2 s1 s4 s3 s2 s5 s4 s3",
+      "permutation": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ],
+      "expected": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ]
+    },
+    "spectrum": {
+      "-q^-3": {
+        "value": "-0.731233707549",
+        "L_over_log_q": 3,
+        "multiplicity": 1,
+        "blocks": [
+          "(3, 3)"
+        ]
+      },
+      "+q^-1": {
+        "value": "+0.900918283956",
+        "L_over_log_q": 1,
+        "multiplicity": 1,
+        "blocks": [
+          "(4, 2)"
+        ]
+      },
+      "-q^2": {
+        "value": "-1.232052454167",
+        "L_over_log_q": -2,
+        "multiplicity": 2,
+        "blocks": [
+          "(4, 2)"
+        ]
+      },
+      "+q^2": {
+        "value": "+1.232052454167",
+        "L_over_log_q": -2,
+        "multiplicity": 2,
+        "blocks": [
+          "(4, 2)"
+        ]
+      },
+      "-q^3": {
+        "value": "-1.367551836951",
+        "L_over_log_q": -3,
+        "multiplicity": 4,
+        "blocks": [
+          "(3, 3)",
+          "(5, 1)"
+        ]
+      },
+      "+q^3": {
+        "value": "+1.367551836951",
+        "L_over_log_q": -3,
+        "multiplicity": 1,
+        "blocks": [
+          "(3, 3)"
+        ]
+      },
+      "-q^5": {
+        "value": "-1.684895596916",
+        "L_over_log_q": -5,
+        "multiplicity": 1,
+        "blocks": [
+          "(4, 2)"
+        ]
+      },
+      "+q^5": {
+        "value": "+1.684895596916",
+        "L_over_log_q": -5,
+        "multiplicity": 3,
+        "blocks": [
+          "(4, 2)"
+        ]
+      },
+      "-q^6": {
+        "value": "-1.870198026749",
+        "L_over_log_q": -6,
+        "multiplicity": 2,
+        "blocks": [
+          "(5, 1)"
+        ]
+      },
+      "+q^6": {
+        "value": "+1.870198026749",
+        "L_over_log_q": -6,
+        "multiplicity": 2,
+        "blocks": [
+          "(5, 1)"
+        ]
+      },
+      "+q^9": {
+        "value": "+2.557592746944",
+        "L_over_log_q": -9,
+        "multiplicity": 1,
+        "blocks": [
+          "(6,)"
+        ]
+      }
+    },
+    "cap": {
+      "n2_cap": "1",
+      "n6_cap": "1.500000000000",
+      "n6_cap_exact": "3/2",
+      "bound_L_over_log_q": [
+        3,
+        1
+      ],
+      "unbound_L_over_log_q": [
+        -9,
+        -6,
+        -5,
+        -3,
+        -2
+      ]
+    },
+    "targets": {
+      "QCD_colour_ratio": 2,
+      "QCD_short_by": "1.333333",
+      "nuclear_ratio": "33.705545",
+      "nuclear_short_by": "22.470364"
+    },
+    "parity_structure": {
+      "both_parities_at_q_pow": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "single_parity": [
+        {
+          "k": -3,
+          "sign": -1
+        },
+        {
+          "k": -1,
+          "sign": 1
+        },
+        {
+          "k": 9,
+          "sign": 1
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "THE 3/2 CAP IS OVER THE BLOCK-SWAP SPECTRUM, NOT A DERIVED PHYSICAL RATIO. It is the largest |L_bound|/|L_unbound| available from any pair of eigenvalues of this operator. Which pair a physical T=0/T=1 split would actually use is NOT determined here — that is exactly what A6 shows is no longer forced. Read 3/2 as an upper bound on what the six-strand exchange can supply, not as a prediction.",
+    "ONLY THE EXCHANGE OPERATOR IS LIFTED, NOT THE WHOLE CONSTRUCTION. This computes the spectrum of the nucleon block swap in H_6 with convention-D weights. It does not attach nucleon internal words, does not use the production bond, and does not recompute any binding energy. A full lift of qou-m896 would have to place the (T,S) grading inside the atom word itself, which remains untested.",
+    "qou-m896's RESULT IS NOT OVERTURNED — it was stated at the n=2 interface and stands there. What is discharged is its caveat: the grading does not lift cleanly. Both facts should be quoted together, since the n=2 argument's force came from the identification being Pauli-forced, and that is precisely what does not survive."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

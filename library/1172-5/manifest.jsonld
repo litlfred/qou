@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-5/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries",
+  "contains": [
+    "library/1172-5/sections/sec-000",
+    "library/1172-5/sections/sec-001",
+    "library/1172-5/sections/sec-002",
+    "library/1172-5/sections/sec-003",
+    "library/1172-5/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1172-5",
+    "source_file": "1172-5.pdf",
+    "source_sha256": "21b7a0e13bd208fc92dc60f6fb750eb76d6d9ccb369136a05300cf3d5ce50175",
+    "pages": 10,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

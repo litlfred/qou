@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-schwinger-measure-unit",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:schwinger-measure-unit",
+  "kind": "definition",
+  "title": "Schwinger proper-time measure and its unit $\\varsigma$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-schwinger-measure-computational-time",
+    "papers/quantum-observable-universe/blocks/prop-horizon-conformal-invariance",
+    "papers/quantum-observable-universe/blocks/prop-boltzmann-constant"
+  ],
+  "tags": [
+    "alpha-em",
+    "r2-core",
+    "schwinger-measure",
+    "proper-time",
+    "haar-measure",
+    "normalization"
+  ],
+  "leanRef": "qou:QOU.Archimedean.SchwingerMeasureUnit.density",
+  "text": "schwinger-measure-unit.md",
+  "leanSource": "schwinger-measure-unit.lean",
+  "provenance": "authored"
+}

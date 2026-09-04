@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0901.1612v1/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Statement of results",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-0901.1612v1/blocks/prose-sec-000",
+    "library/arxiv-0901.1612v1/blocks/thm-sec-000-01",
+    "library/arxiv-0901.1612v1/blocks/rem-sec-000-02",
+    "library/arxiv-0901.1612v1/blocks/thm-sec-000-03"
+  ],
+  "derivedFrom": "library/arxiv-0901.1612v1/manifest",
+  "sourceDocument": "library/arxiv-0901.1612v1/manifest",
+  "provenance": "ingested"
+}

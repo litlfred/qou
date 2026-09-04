@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-flow-bridge",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-flow-bridge",
+  "kind": "remark",
+  "title": "From classical arithmetic time to the $q$-deformed Reeb flow",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation",
+    "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation",
+  "tags": [
+    "exposition",
+    "reeb-flow",
+    "prime-orbits",
+    "vortex-filaments",
+    "classical-limit"
+  ],
+  "text": "reeb-flow-bridge.md",
+  "provenance": "authored"
+}

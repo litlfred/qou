@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:49.451672+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T10:42:14.076898+00:00",
+  "commitSha": "5e0b1213b4182caf3ed7503283cf5c4fadefa94e",
   "assertions": [
     {
       "name": "schwinger_brings_alpha_within_3sigma",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "form B (proton + derived Schwinger) resid +0.313 ppb < 3σ (=0.45 ppb)"
     },
     {
       "name": "schwinger_improves_over_form_A",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "Schwinger term reduces |resid| 1.67 -> 0.313 ppb"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "alpha-em-schwinger-ladder",
   "scriptFile": "alpha_em_schwinger_ladder_probe.py",
-  "scriptHash": "f7a058333793",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "a486cffae389",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -53,17 +53,20 @@
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "ladder_proton": {
-      "form_A_no_schwinger_ppb": 1.6723270482102428,
-      "form_B_schwinger_ppb": 0.31342795361624903,
-      "schwinger_shift_ppb": 1.3588990945939938,
-      "form_A_sigma": 11.148846988068286,
-      "form_B_sigma": 2.0895196907749938
+      "form_A_no_schwinger_ppb": "1.6723270456964245288",
+      "form_B_schwinger_ppb": "0.31342795110243077517",
+      "schwinger_shift_ppb": "1.3588990945939937536",
+      "form_A_sigma": "11.148846971309496858",
+      "form_B_sigma": "2.0895196740162051678",
+      "q0": "1.1099785827513808075916690956107688798744991218736"
     },
     "two_loop": {
-      "c2": "0.000806569394871",
+      "c2": "0.000806569388401",
       "kappa1_ohtsuki": "0.554216472405",
-      "c2_vs_kappa1": "c2 ~ 687x smaller — different object",
+      "c2_vs_kappa1": "c2 ~ 687.0x smaller — different object",
       "status": "uncomputed (RT phase-2 EmFermionLoop)"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

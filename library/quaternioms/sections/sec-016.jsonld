@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-016",
+    "library/quaternioms/blocks/thm-sec-016-01",
+    "library/quaternioms/blocks/prop-sec-016-02",
+    "library/quaternioms/blocks/thm-sec-016-03",
+    "library/quaternioms/blocks/cor-sec-016-04",
+    "library/quaternioms/blocks/lem-sec-016-05"
+  ],
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

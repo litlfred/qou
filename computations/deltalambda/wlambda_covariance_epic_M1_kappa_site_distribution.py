@@ -229,6 +229,8 @@ def main():
         "total": len(checks),
         "ms": int(ms),
     }
+    out["q0Anchor"] = "independent"
+    out["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: what the \"inflation factor\" IS, and why it cannot approach pi/2."
     Path(__file__).with_name("m1-kappa-site-distribution.witness.json").write_text(
         json.dumps(out, indent=1) + "\n")
     print()

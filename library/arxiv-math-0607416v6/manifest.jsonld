@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0607416v6/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES",
+  "contains": [
+    "library/arxiv-math-0607416v6/sections/sec-000",
+    "library/arxiv-math-0607416v6/sections/sec-001",
+    "library/arxiv-math-0607416v6/sections/sec-002",
+    "library/arxiv-math-0607416v6/sections/sec-003",
+    "library/arxiv-math-0607416v6/sections/sec-004",
+    "library/arxiv-math-0607416v6/sections/sec-005",
+    "library/arxiv-math-0607416v6/sections/sec-006",
+    "library/arxiv-math-0607416v6/sections/sec-007",
+    "library/arxiv-math-0607416v6/sections/sec-008",
+    "library/arxiv-math-0607416v6/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0607416v6",
+    "source_file": "0607416v6.pdf",
+    "source_sha256": "0705075947ce4a3d33138b0eec4cc4654ab937324801b4c67f8a2bc5b4dfaa07",
+    "pages": 23,
+    "arxiv": {
+      "id": "math/0607416",
+      "version": "6",
+      "primary_class": null,
+      "stamp_date": "27 Jul 2008"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

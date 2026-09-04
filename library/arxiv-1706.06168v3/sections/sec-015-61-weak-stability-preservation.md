@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 18-23
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 Borcea and Br¨ and´ en deﬁne the following symbol:
 SymbBB (T ) := T [(x +z)λ] =

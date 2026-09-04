@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0809.4303v2/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A. Ferreira 1",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-000-l-a-ferreira-1.md",
+  "derivedFrom": "library/arxiv-0809.4303v2/manifest",
+  "sourceDocument": "library/arxiv-0809.4303v2/manifest",
+  "provenance": "ingested"
+}

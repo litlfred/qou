@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2208.13692v1/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Period Matrix",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-003-22-the-period-matrix.md",
+  "derivedFrom": "library/arxiv-2208.13692v1/manifest",
+  "sourceDocument": "library/arxiv-2208.13692v1/manifest",
+  "provenance": "ingested"
+}

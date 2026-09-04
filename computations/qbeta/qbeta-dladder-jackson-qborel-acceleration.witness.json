@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T10:32:06.767475+00:00",
-  "commitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
+  "computedAt": "2026-09-04T06:22:01.810103+00:00",
+  "commitSha": "9219efdb220a9560808452d396de4f819a344702",
   "assertions": [
     {
       "name": "arm1_fixed_base_mismatch",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4668,
+  "durationMs": 7404,
   "computation": "qbeta-dladder-jackson-qborel-acceleration",
   "scriptFile": "qbeta_dladder_jackson_qborel_acceleration_probe.py",
-  "scriptHash": "607e0003e3d1",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "6261d3416a89",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -81,8 +81,8 @@
       "substrate q0": {
         "Q": "1.1099786",
         "s": 1.0,
-        "root_slope": -0.053642443837609584,
-        "tail": 0.3770721506320905,
+        "root_slope": -0.053642443686386904,
+        "tail": 0.3770721780334372,
         "regime": "over-accel (entire; slope<0)"
       },
       "Q=2": {
@@ -491,10 +491,10 @@
     },
     "arm4_back_transform": {
       "s_used": 0.2,
-      "muon-q0": {
-        "u": "0.00945395003124",
-        "direct_partial": "-0.016674917568541111274",
-        "back_transform": "-0.016674917568541111274",
+      "proton-q0": {
+        "u": "0.00945394793494",
+        "direct_partial": "-0.016674913532964662468",
+        "back_transform": "-0.016674913532964662468",
         "rel_diff": "2.449e-26"
       },
       "q_star(A2)": {

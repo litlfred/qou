@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-categorical-proton-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:categorical-proton-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the categorical proton",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-proton-unique"
+  ],
+  "text": "categorical-proton-unique-proof.md",
+  "provenance": "authored"
+}

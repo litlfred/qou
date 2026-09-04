@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-beta-decay-energy-scale",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:beta-decay-energy-scale",
+  "kind": "remark",
+  "title": "Energy scale of the Hecke normal form: from dimensionless debt to MeV",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-nucleon-nf-observability",
+    "papers/quantum-observable-universe/blocks/prop-beta-decay-transfer-matrix"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-nucleon-nf-observability",
+  "tags": [
+    "beta-decay",
+    "energy-scale",
+    "normalization",
+    "decay-energy",
+    "leptonic-debt",
+    "color-tube",
+    "hecke-algebra",
+    "computational-witness"
+  ],
+  "text": "beta-decay-energy-scale.md",
+  "provenance": "authored"
+}

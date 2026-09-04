@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0410233v4/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Boundary terms",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-math-0410233v4/blocks/prose-sec-008",
+    "library/arxiv-math-0410233v4/blocks/rem-sec-008-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
+  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "provenance": "ingested"
+}

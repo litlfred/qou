@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cuspshapes/blocks/cor-sec-005-04",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "cor-sec-005-04.md",
+  "derivedFrom": "library/cuspshapes/sections/sec-005",
+  "sourceDocument": "library/cuspshapes/manifest",
+  "provenance": "ingested"
+}

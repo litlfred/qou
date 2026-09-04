@@ -1190,6 +1190,71 @@
       "rationale": "The replacement acceptance test's validation matrix rejects known-wrong candidates, and its decisive row (alpha_D + (q-1)^3) is decisive precisely because it PASSES the retired test's convention-C part 1 while tier 1 rejects it. Demonstrating that the old test was non-discriminating requires computing the C arm it was stated over.",
       "adjudicated_by": "claude (session 791c0e50, PR following #6299)",
       "date": "2026-08-30"
+    },
+    {
+      "path": "computations/probes/binding_functional_extensivity_probe.py",
+      "target": "z_C",
+      "source_hash": "8f68fcb6b016",
+      "line_when_adjudicated": 104,
+      "scope": "main",
+      "source": "z_C = mp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "Two-arm C-vs-D frame comparison, and the comparison IS the probe's subject: z_C (line 104) and z_D (line 105) are bound on adjacent lines under a banner the file itself prints -- 'the binding functional: extensivity, and which convention 10a's number is'. The probe exists to decide which convention reproduces the audit's quoted linear defect 1.4875 against the AME bindings in its ceiling table, so binding only z_D would delete the question rather than answer it.",
+      "adjudicated_by": "claude (session t9r1-convC, bean qou-t9r1 drain)",
+      "date": "2026-08-31",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_admissibility_is_a_magnitude_probe.py",
+      "target": "zc",
+      "source_hash": "40c0334103db",
+      "line_when_adjudicated": 168,
+      "scope": "main",
+      "source": "zc = mp.sqrt(q0) / (q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "zc is one SAMPLE POINT in a scan, not a wired value. It appears exactly once, in the tuple driving 'three-row share at other z -- is z=1 special?', beside z=1, z=1/2, z=2, z=0, z=q/2 and z=2q, and its own label in the printed table reads 'z=z_C (excised)'. The scan's point is that z=1 is not distinguished among arbitrary z; dropping the C sample would weaken the null it is testing against. The canonical z_D is bound separately at line 167.",
+      "adjudicated_by": "claude (session t9r1-convC, bean qou-t9r1 drain)",
+      "date": "2026-08-31",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_frame_required_markov_parameter_probe.py",
+      "target": "zC_n",
+      "source_hash": "6177b4c72462",
+      "line_when_adjudicated": 104,
+      "scope": "main",
+      "source": "zC_n = mp.sqrt(q0) / (q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "The probe asks which Markov parameter the CODATA Q-value REQUIRES, and then prints zD_n (line 103) and zC_n (line 104) together as the two 'reference points at this pin' the required z is read against. A required-value probe with only one reference point cannot report a distance; the C arm is the measurement's second axis, not a leftover.",
+      "adjudicated_by": "claude (session t9r1-convC, bean qou-t9r1 drain)",
+      "date": "2026-08-31",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py",
+      "target": "z_C",
+      "source_hash": "eb654aa842d4",
+      "line_when_adjudicated": 138,
+      "scope": "<module>",
+      "source": "z_C = sp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "Strictly parallel two-arm construction at module scope: z_D (line 137) and z_C (line 138) each feed an angle a_D / a_C, which each feed a bar-midpoint M_D / M_C, so every downstream object exists in a matched pair. The file's question is whether the bar midpoint of the D-frame N=1 factor has the claimed closed form, and the C twin is the control that says whether the property is D-specific. Deleting the C arm removes the control, leaving an unfalsifiable single observation.",
+      "adjudicated_by": "claude (session t9r1-convC, bean qou-t9r1 drain)",
+      "date": "2026-08-31",
+      "bean": "qou-t9r1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py",
+      "target": "<return>",
+      "source_hash": "81f975ad164b",
+      "line_when_adjudicated": 77,
+      "scope": "zC",
+      "source": "return mp.sqrt(q) / (q + 1)",
+      "verdict": "deliberate-c-frame",
+      "rationale": "NOT a two-arm comparison -- recorded with a DIFFERENT verdict string on purpose, so it is not read as one. This is the convention-C-frame c_k ladder, which bean qou-cds1 blocks from migration until the ladder is RE-DERIVED under D; a z-swap is not a valid migration here (QOU.QBeta.decayLadder_zC_threeRow_ne_zero makes the C-frame ladder and the mass channel's three-row forcing mutually exclusive). The site already announces itself twice in source -- the helper's docstring is 'Convention C, the frame the published ladder is locked to.' and the module docstring says 'Everything here is CONVENTION C, the frame the block was written in; the D-frame ladder does not exist (qou-cds1)' -- so this entry adds the LEDGER record the value audit reads, nothing more. Not stubbed by --propose-ledger because the file has no inline z_D co-binding to trigger the hint (same reason as the he4_body_order_shortfall_location_probe entry); source_hash computed with the audit's own _site_hash over the whitespace-normalised line. If a future audit revision filters adjudications on verdict == 'comparison', this site SHOULD re-block -- that is the correct behaviour, and it is why the verdict is not 'comparison'.",
+      "adjudicated_by": "claude (session t9r1-convC, bean qou-t9r1 drain)",
+      "date": "2026-08-31",
+      "bean": "qou-cds1"
     }
   ]
 }

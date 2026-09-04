@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-observable-subcategory",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:observable-subcategory",
+  "kind": "definition",
+  "title": "Observable subcategory $\\mathrm{Bun}^{\\circ}(\\mathbb{P}(V))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-bundle-category",
+    "papers/quantum-observable-universe/blocks/def-jet-horizon",
+    "papers/quantum-observable-universe/blocks/def-observation"
+  ],
+  "tags": [
+    "observable-subcategory",
+    "bundle-category",
+    "degree-zero",
+    "frobenius-pairing"
+  ],
+  "leanRef": "qou:QOU.ObservableSubcategory",
+  "text": "observable-subcategory.md",
+  "leanSource": "observable-subcategory.lean",
+  "provenance": "authored"
+}

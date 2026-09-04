@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-braid-action-tensor",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:braid-action-tensor",
+  "kind": "proof",
+  "title": "Proof of Braid-group action on tensor powers",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+  ],
+  "text": "braid-action-tensor-proof.md",
+  "provenance": "authored"
+}

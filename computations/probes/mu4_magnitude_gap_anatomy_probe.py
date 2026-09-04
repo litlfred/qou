@@ -131,7 +131,20 @@ def main() -> int:
     zD = q0 ** 3 / (q0 ** 2 + 1)
     ceiling = 1 / mp.sqrt(5)
     gate = committed(GATE)
-    cited = mp.mpf(str(gate["inputs"]["naive_z_bond_factor"].split()[0]))
+    # The gate's schema changed in 32c059c7d2, when the hand-written witness
+    # got its first producer. `inputs.naive_z_bond_factor` -- a truncated
+    # string "0.499320334  (b4-...)" -- is GONE, and correctly so: it cited
+    # the excised convention-C value as though it were *the* naive factor.
+    # The producer now reports BOTH conventions, at full precision, under
+    # data.naive_z_exclusion_both_conventions. Read that; fall back to the
+    # legacy path so this probe still runs against an older witness.
+    _both = gate.get("data", {}).get("naive_z_exclusion_both_conventions")
+    if _both:
+        cited = mp.mpf(_both["z_C"]["z"])
+        cited_src = "data.naive_z_exclusion_both_conventions.z_C.z"
+    else:
+        cited = mp.mpf(str(gate["inputs"]["naive_z_bond_factor"].split()[0]))
+        cited_src = "inputs.naive_z_bond_factor (legacy schema)"
 
     def det_IG(z):
         return (1 - 5 * z ** 2) * (1 - z ** 2)
@@ -142,8 +155,8 @@ def main() -> int:
 
     print()
     print("(3) CONVENTION FRAME of the live scope-(b) exclusion")
-    print(f"    witness cites naive_z = {mp.nstr(cited, 12)}")
-    print(f"      z_C (excised)   = {mp.nstr(zC, 12)}   cited is z_C? {cited_is_C}")
+    print(f"    witness z_C = {mp.nstr(cited, 12)}   [{cited_src}]")
+    print(f"      z_C (excised)   = {mp.nstr(zC, 12)}   agrees? {cited_is_C}")
     print(f"      z_D (canonical) = {mp.nstr(zD, 12)}")
     print(f"    ceiling 1/sqrt5   = {mp.nstr(ceiling, 12)}")
     for nm, z in (("z_C", zC), ("z_D", zD)):
@@ -160,8 +173,9 @@ def main() -> int:
         "mu4; the geometric per-order reading is underdetermined on two "
         "points; the gap is a known scope-(a) WALL whose mechanism is "
         "surjective onto every target, hence not chaseable by computation; "
-        "and the live scope-(b) naive-z exclusion cites a convention-C value, "
-        "with the verdict unaffected and strengthened under D.")
+        "and the live scope-(b) naive-z exclusion is reported by the gate "
+        "under BOTH conventions, with the verdict unaffected and "
+        "strengthened under D.")
     w.add_data("anatomy", {
         "mu3_measured": fmt(mu3_meas), "mu3_target": fmt(mu3_targ),
         "mu4_measured": fmt(mu4_meas), "mu4_target": fmt(mu4_targ),

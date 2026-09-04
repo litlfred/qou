@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-im-q-vs-p-skew",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:im-q-vs-p-skew",
+  "kind": "remark",
+  "title": "Im(q) is not the EM / P_skew channel — distinct mechanisms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lusztig-vs-hermitian-bar",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-lusztig-vs-hermitian-bar",
+  "tags": [
+    "bar-involution",
+    "modulus-projection",
+    "complex-q",
+    "em-channel",
+    "im-q",
+    "p-skew",
+    "structural-clarification"
+  ],
+  "text": "rem-im-q-vs-p-skew.md",
+  "leanSource": "rem-im-q-vs-p-skew.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0811.2435v1/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Deformation invariance and intermediate Jacobian",
+  "pageStart": 112,
+  "pageEnd": 120,
+  "contains": [
+    "library/arxiv-0811.2435v1/blocks/prose-sec-035",
+    "library/arxiv-0811.2435v1/blocks/conj-sec-035-01",
+    "library/arxiv-0811.2435v1/blocks/rem-sec-035-02",
+    "library/arxiv-0811.2435v1/blocks/conj-sec-035-03",
+    "library/arxiv-0811.2435v1/blocks/rem-sec-035-04"
+  ],
+  "derivedFrom": "library/arxiv-0811.2435v1/manifest",
+  "sourceDocument": "library/arxiv-0811.2435v1/manifest",
+  "provenance": "ingested"
+}

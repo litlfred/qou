@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-mass-formula-validation-table7-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:mass-formula-validation-table7-data",
+  "kind": "table",
+  "title": "Data table 7 from rem:mass-formula-validation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-mass-formula-validation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "mass-formula-validation-table7-data.md",
+  "provenance": "authored"
+}

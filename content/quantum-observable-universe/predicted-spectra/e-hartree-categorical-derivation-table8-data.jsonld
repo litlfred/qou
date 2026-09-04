@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-e-hartree-categorical-derivation-table8-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:e-hartree-categorical-derivation-table8-data",
+  "kind": "table",
+  "title": "Data table 8 from conj:e-hartree-categorical-derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-e-hartree-categorical-derivation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "e-hartree-categorical-derivation-table8-data.md",
+  "provenance": "authored"
+}

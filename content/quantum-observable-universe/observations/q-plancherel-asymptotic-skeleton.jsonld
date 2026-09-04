@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-plancherel-asymptotic-skeleton",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-plancherel-asymptotic-skeleton",
+  "kind": "proposition",
+  "title": "Asymptotic skeleton of the q-Plancherel measure $\\tilde w_\\lambda$ — convergence on a continuous Young-diagram space",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical",
+    "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding"
+  ],
+  "cites": [
+    "references/vershik-kerov1977",
+    "references/biane1998",
+    "references/feray2010"
+  ],
+  "tags": [
+    "causal-fermion-systems",
+    "plancherel",
+    "asymptotic-plancherel",
+    "kerov-vershik",
+    "wedderburn-weight",
+    "thoma-simplex",
+    "partly-established"
+  ],
+  "leanRef": "qou:QOU.Observations.QPlancherelAsymptoticSkeleton",
+  "text": "q-plancherel-asymptotic-skeleton.md",
+  "provenance": "authored"
+}

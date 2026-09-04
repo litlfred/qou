@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1108.0687v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures",
+  "contains": [
+    "library/arxiv-1108.0687v3/sections/sec-000",
+    "library/arxiv-1108.0687v3/sections/sec-001",
+    "library/arxiv-1108.0687v3/sections/sec-002",
+    "library/arxiv-1108.0687v3/sections/sec-003",
+    "library/arxiv-1108.0687v3/sections/sec-004",
+    "library/arxiv-1108.0687v3/sections/sec-005",
+    "library/arxiv-1108.0687v3/sections/sec-006",
+    "library/arxiv-1108.0687v3/sections/sec-007",
+    "library/arxiv-1108.0687v3/sections/sec-008",
+    "library/arxiv-1108.0687v3/sections/sec-009",
+    "library/arxiv-1108.0687v3/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1108.0687v3",
+    "source_file": "1108.0687v3.pdf",
+    "source_sha256": "66ba88e13a429a0a3d01f1a7a2b0a8c5fdfd52b816427d94d0b95d09b6791499",
+    "pages": 23,
+    "arxiv": {
+      "id": "1108.0687",
+      "version": "3",
+      "primary_class": "math.PR",
+      "stamp_date": "28 Jul 2013"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

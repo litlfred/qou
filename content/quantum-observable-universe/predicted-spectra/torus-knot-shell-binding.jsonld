@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:torus-knot-shell-binding",
+  "kind": "proposition",
+  "title": "Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-inter-shell-operator",
+    "papers/quantum-observable-universe/blocks/def-chebyshev-torus-coefficients"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-shell-construction-rules"
+  ],
+  "tags": [
+    "torus-knot",
+    "shell-binding",
+    "magic-numbers",
+    "chebyshev",
+    "hecke-algebra",
+    "transfer-matrix",
+    "nuclear-structure",
+    "inductive-construction"
+  ],
+  "leanRef": "qou:QOU.Archimedean.torus_knot_shell_binding",
+  "text": "torus-knot-shell-binding.md",
+  "leanSource": "torus-knot-shell-binding.lean",
+  "provenance": "authored"
+}

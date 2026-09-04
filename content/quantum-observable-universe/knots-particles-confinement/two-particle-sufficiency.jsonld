@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-two-particle-sufficiency",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:two-particle-sufficiency",
+  "kind": "remark",
+  "title": "Why two-particle interactions suffice",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pairwise-interaction-decomposition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-pairwise-interaction-decomposition",
+  "cites": [
+    "references/kauffman1991",
+    "references/kleckner2013"
+  ],
+  "tags": [
+    "braiding",
+    "yang-baxter",
+    "reidemeister",
+    "s-matrix",
+    "vortex-reconnection",
+    "two-body"
+  ],
+  "text": "two-particle-sufficiency.md",
+  "provenance": "authored"
+}

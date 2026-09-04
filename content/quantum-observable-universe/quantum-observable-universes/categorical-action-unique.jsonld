@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-action-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-action-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the categorical action (given $\\Phi$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-action-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-action-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "categorical-action"
+  ],
+  "leanRef": "qou:QOU.CategoricalAction.unique",
+  "text": "categorical-action-unique.md",
+  "leanSource": "categorical-action-unique.lean",
+  "provenance": "authored"
+}

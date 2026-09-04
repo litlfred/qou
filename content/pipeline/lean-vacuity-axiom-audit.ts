@@ -1021,9 +1021,41 @@ const DOC_CLAIMS_SORRY =
  * Checked on the SAME sentence as the match, not the whole doc block — a file
  * may legitimately say "sorry-free" about one declaration and claim a `sorry`
  * for another in the next paragraph.
+ *
+ * The second line is ATTRIBUTION TO SUPERSEDED TEXT, added 2026-09-03. This
+ * corpus's house style, when a docstring is corrected, is to QUOTE the wording
+ * it replaced — "the paragraph that stood here said …", "Until 2026-08-08 this
+ * docstring said …", "the previous wording called this …". The quoted sentence
+ * still contains a present-tense `sorry` claim, so without these the detector
+ * fires on the correction itself and keeps firing forever.
+ *
+ * Measured on `main` b8d883189d: of the 5 findings then live, **4** were this
+ * shape and only 1 (`shell_filling_rule`) was anything else. Note `previously`
+ * was already here but `previous` was not, so "the previous wording" slipped
+ * through on a suffix.
+ *
+ * The risk is over-suppression — a real claim in a sentence that happens to
+ * mention an old one. `--selftest-docstring-sorry` guards it: the eight genuine
+ * claims drained in PR #6471 must all still fire.
  */
 const SORRY_MENTION_IS_HISTORICAL =
   /sorry-free|no\s+longer|previously|formerly|used\s+to|was\s+`?sorry`?|removed|not\s+a\s+`?sorry`?|no\s+`?sorry`?|instead\s+of|rather\s+than|modulo/i;
+
+/**
+ * Attribution to text this docstring has replaced — see the note above.
+ * Kept separate from `SORRY_MENTION_IS_HISTORICAL` so the two can be measured
+ * apart; `docstringSorryIsHistorical` is the only consumer of both.
+ */
+const SORRY_MENTION_QUOTES_SUPERSEDED =
+  /previous\s+(?:wording|version|revision|encoding|paragraph|sentence|docstring)|(?:stood|read)\s+here|(?:docstring|wording|sentence|paragraph|header|note)\s+(?:said|read|called|claimed)|earlier\s+revision|until\s+\d{4}-\d{2}-\d{2}/i;
+
+/** A `sorry` mention that does not assert this body is currently a `sorry`. */
+function docstringSorryIsHistorical(sentence: string): boolean {
+  return (
+    SORRY_MENTION_IS_HISTORICAL.test(sentence) ||
+    SORRY_MENTION_QUOTES_SUPERSEDED.test(sentence)
+  );
+}
 
 /**
  * Wording that attributes the `sorry` to some OTHER declaration rather than to
@@ -1057,7 +1089,7 @@ function detectDocstringSorryMismatch(
   // Find a sentence that claims a `sorry` in the present tense.
   const sentences = doc.split(/(?<=[.!?])\s+|\n{2,}/);
   const claim = sentences.find(
-    (s) => DOC_CLAIMS_SORRY.test(s) && !SORRY_MENTION_IS_HISTORICAL.test(s),
+    (s) => DOC_CLAIMS_SORRY.test(s) && !docstringSorryIsHistorical(s),
   );
   if (!claim) return undefined;
 
@@ -1966,6 +1998,78 @@ function detectTrueClassField(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
+/** A field typed with the **universe** `Prop` and consumed by nothing:
+ * `holds : Prop`, standing alone. This is the fourth shape in the
+ * carrier-vacuity family, and all three existing detectors structurally miss
+ * it — `proof-no-empty-prop-carrier` requires **zero** fields and returns early
+ * on one; `true-class-field` tests for a literal `True` (it catches the
+ * *defaulted* `Prop := True`, not the bare universe); and `tautological-field`
+ * is deliberately narrow to bounded-function shapes, which `Prop` is not.
+ *
+ * A field of type `Prop` asks the instance to supply *a proposition of its
+ * choosing*, so an unconsumed one leaves the carrier satisfied by `⟨True⟩` and
+ * every `[C]`-conditional downstream result unconditional. §3b-tax: *"Class
+ * fields must carry the conjecture's **content** … never a bare `True` or an
+ * empty body."* An unconsumed universe-typed field is an empty body wearing a
+ * field name.
+ *
+ * **A `Prop`-typed field is NOT vacuous on its own, and the naive rule
+ * over-reports 6x.** Declaring an abstract predicate as a field and then
+ * *consuming* it in a sibling is the correct §3b-cond pattern. Worked
+ * counter-example: `QOU.Torsion.BraneBoundaryContext`, whose five `Prop` fields
+ * are all consumed — `boundary_active : brane_boundary_regular` asserts one and
+ * `impl_brane_boundary_structure : brane_boundary_regular → Codim_at_least_2 ∧
+ * ExceptionalKernel ∧ InvolutionSymmetric ∧ ChiralityInterface` relates the
+ * rest. That carrier states a real implication and must stay silent. Firing on
+ * *any* `Prop` field reported **101** carriers; firing only on **unconsumed**
+ * ones isolates the genuine shape.
+ *
+ * So the criterion is: a `Prop`-typed field whose name appears in **no other
+ * field's type** in the same carrier — nothing asserts it, nothing implies from
+ * it, so it has no role. Honest fix: encode the property as the field's type,
+ * consume it in a sibling field, or demote per §3b-tax.
+ *
+ * Exemplars — all three dualities of the spin/isospin cluster:
+ * `IsospinFromCanonicalBowtie` (D9), `SpinFromSo3Fiber` (D10) and
+ * `WignerSu4FromSpinIsospin` (D11) each declare exactly `holds : Prop` and
+ * nothing else, while their `.md` siblings state real content (D9's is a
+ * mass-split formula quoted at 305 ppm). The material for a contentful class
+ * exists and simply is not in the Lean. */
+const PROP_UNIVERSE_TYPE = /^Prop$/;
+function detectPropUniverseField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  const clean = (s: string) =>
+    s.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+  const universeFields = fields.filter((f) =>
+    PROP_UNIVERSE_TYPE.test(clean(f.type)),
+  );
+  if (universeFields.length === 0) return undefined;
+  // A universe-typed field earns its place if a SIBLING field's type mentions
+  // it — asserting it, or relating it in an implication. Only unconsumed ones
+  // are decoration.
+  const unconsumed = universeFields.filter((f) => {
+    const word = new RegExp(`(^|[^\\w.])${f.name}([^\\w]|$)`);
+    return !fields.some((g) => g.name !== f.name && word.test(clean(g.type)));
+  });
+  if (unconsumed.length === 0) return undefined;
+  const names = unconsumed.map((f) => f.name).join(", ");
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "prop-universe-field", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `unconsumed universe-typed field(s) \`: Prop\` (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "prop-universe-field", false);
+  h.detail =
+    `field(s) typed with the universe \`Prop\` rather than a proposition, and ` +
+    `consumed by no sibling field (${names}) — the instance chooses the ` +
+    `proposition, so \`⟨True⟩\` inhabits the carrier and any ` +
+    `[${d.name}]-conditional result is unconditional. Encode the real property ` +
+    `as the field type, consume it in a sibling, or demote per §3b-tax`;
+  return h;
+}
+
 /** A class/structure field whose Prop is a **tautology about the subject** —
  * neither empty (`proof-no-empty-prop-carrier`) nor literally `: True`
  * (`true-class-field`), but provable for an *arbitrary* substitution of the
@@ -2569,6 +2673,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectEmptyPropCarrier(d, doc));
     push(detectClaimsUnencoded(d, doc));
     push(detectTrueClassField(d, doc + "\n" + rawSpan));
+    push(detectPropUniverseField(d, doc + "\n" + rawSpan));
     push(detectTautologicalField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);
@@ -2893,6 +2998,78 @@ function writeSidecars(
 
 // ── Main ────────────────────────────────────────────────────────────
 
+/**
+ * Guard for `docstringSorryIsHistorical`, added with the superseded-text
+ * patterns on 2026-09-03.
+ *
+ * The risk of those patterns is OVER-suppression: a sentence that mentions old
+ * wording *and* makes a live claim would go silent. So the fixtures are the
+ * eight genuine mismatches drained in PR #6471 (which must all still fire) and
+ * the four attribution-to-superseded-text sentences that were firing on `main`
+ * b8d883189d and must not (three of them predate that PR; one is its own
+ * correction). Every fixture is real text from the corpus, not invented.
+ */
+function selftestDocstringSorry(): number {
+  const suppress: Array<[string, string]> = [
+    ["identityB_general",
+     '**Corrected 2026-08-23.** The sentence that stood here said "the only ' +
+     "residual inputs are the bricks' own honest `sorry`s\"."],
+    ["nucleon_ordering_factorization",
+     "**Honest `sorry` — and now actually one.** Until 2026-08-08 this docstring " +
+     "said \"honest `sorry`\" while the body read `exact ctx.factorization_ident`."],
+    ["whitehead_volume_conjecture",
+     '⚠ The previous wording called this "the one honest `sorry` here".'],
+    ["confinement_categorical",
+     'The paragraph that stood here said the body was "an honest `sorry` + ' +
+     '`-- Ref:`", that "no class field posits this conclusion".'],
+  ];
+  const mustFire: Array<[string, string]> = [
+    ["kappa_commutes_bar",
+     "It is a non-false, non-trivial claim that is NOT derivable from the diagonal " +
+     "structure alone, so it is left as an honest `sorry`."],
+    ["mobius_frobenius_kernel",
+     "neither of which is yet formalised; the body is a `sorry` carrying the " +
+     "manuscript citation per AGENTS.md §1."],
+    ["markovTrace_branching",
+     "that cannot be added as a simple class field, so the body is `sorry` with " +
+     "the manuscript citation."],
+    ["four_term_pair_nucleon",
+     "Honest `sorry`: the polarization-independence is proved as a mechanism."],
+    ["descended_trace_is_base_trace",
+     "Needs the descent / Frobenius-trace infrastructure (not formalised); body is `sorry`."],
+    ["base_mass_is_norm_of_base_trace",
+     "the base level (not formalised); body is `sorry`."],
+    ["ConfinementSDP",
+     "The conic-duality step itself is not in Mathlib, so it is discharged by " +
+     "`sorry` here — the hypothesis is the genuine analytic input."],
+    ["confinement_categorical (pre-fix)",
+     "neither of which is in Mathlib. The body is therefore an honest `sorry` + `-- Ref:`."],
+  ];
+  const fires = (s: string) =>
+    DOC_CLAIMS_SORRY.test(s) && !docstringSorryIsHistorical(s);
+
+  let bad = 0;
+  for (const [name, s] of suppress) {
+    if (fires(s)) {
+      console.log(`SELFTEST FAIL: still fires on superseded-text quote: ${name}`);
+      bad++;
+    }
+  }
+  for (const [name, s] of mustFire) {
+    if (!fires(s)) {
+      console.log(`SELFTEST FAIL: genuine claim no longer fires (over-suppressed): ${name}`);
+      bad++;
+    }
+  }
+  if (bad === 0) {
+    console.log(
+      "selftest ok: 4 attribution-to-superseded-text sentences suppressed, " +
+      "8 genuine sorry-claims still flagged",
+    );
+  }
+  return bad === 0 ? 0 : 1;
+}
+
 function main() {
   const argv = process.argv.slice(2);
   const roots: string[] = [];
@@ -2922,7 +3099,10 @@ function main() {
   let checkLedger: string | undefined;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--json") {
+    if (a === "--selftest-docstring-sorry") {
+      process.exit(selftestDocstringSorry());
+    }
+    else if (a === "--json") {
       jsonOut = argv[++i];
       jsonExplicit = true;
     }
@@ -2961,6 +3141,7 @@ function main() {
           "  --review-ledger F    seed/refresh the agent-verdict ledger\n" +
           "  --check-ledger F     fail unless every candidate has a fresh verdict\n" +
           "  --fail-on A,B        exit non-zero on these categories\n" +
+          "  --selftest-docstring-sorry  guard for the superseded-text patterns\n" +
           "  --quiet\n",
       );
       process.exit(2);

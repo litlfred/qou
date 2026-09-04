@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2412.02281v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+  "contains": [
+    "library/arxiv-2412.02281v1/sections/sec-000",
+    "library/arxiv-2412.02281v1/sections/sec-001",
+    "library/arxiv-2412.02281v1/sections/sec-002",
+    "library/arxiv-2412.02281v1/sections/sec-003",
+    "library/arxiv-2412.02281v1/sections/sec-004",
+    "library/arxiv-2412.02281v1/sections/sec-005",
+    "library/arxiv-2412.02281v1/sections/sec-006",
+    "library/arxiv-2412.02281v1/sections/sec-007",
+    "library/arxiv-2412.02281v1/sections/sec-008",
+    "library/arxiv-2412.02281v1/sections/sec-009",
+    "library/arxiv-2412.02281v1/sections/sec-010",
+    "library/arxiv-2412.02281v1/sections/sec-011",
+    "library/arxiv-2412.02281v1/sections/sec-012",
+    "library/arxiv-2412.02281v1/sections/sec-013",
+    "library/arxiv-2412.02281v1/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2412.02281v1",
+    "source_file": "2412.02281v1.pdf",
+    "source_sha256": "ac4127cf4994b2ba5ef279a9c54ef591c91f1ff089a0c90bc560f1f6912234c2",
+    "pages": 28,
+    "arxiv": {
+      "id": "2412.02281",
+      "version": "1",
+      "primary_class": "math.CA",
+      "stamp_date": "3 Dec 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

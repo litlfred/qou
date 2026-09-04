@@ -66,17 +66,26 @@ mp.mp.dps = 65
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-# q₀ RESOLVED, never a literal. Q2 ruling 2026-08-30: this cluster is
-# PROTON. It held pin A (1.10997859555733471989…), which `fca08de7d2`
-# RETIRED on 2026-08-22 — that value inverts to m_mu/m_e = 206.768282989315,
-# matching no published CODATA and contradicting the ratio its own defining
-# witness declared as input; the anchor had certified itself. So keeping the
-# value was never an option here; only the layer was open, and it is proton.
-# Archeology: docs/coordination/2026-08-30-unclear-44-archeology-triage.md
-# (this file is one of the 10 that ruling clears). VALUES MOVE +11.5371 ppb
-# at q₀ — witness regeneration is bean qou-jjge. Do not put a literal back.
 Q0_MP_PIN = Q_50_DIGIT_STR
 
 

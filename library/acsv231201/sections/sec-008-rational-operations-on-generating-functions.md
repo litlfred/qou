@@ -7,6 +7,7 @@ section_number: null
 pages: 38-48
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 A combinatorial class (in d variables) is a setA together with a partition ofA
 into ﬁnite sets{Ar :r∈Nd} encoded by the weight mapφ of the class, which

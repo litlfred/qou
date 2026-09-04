@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/blocks/conj-sec-021-03",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "title": "Martino’s Conjecture",
+  "pageStart": 45,
+  "pageEnd": 48,
+  "text": "conj-sec-021-03.md",
+  "derivedFrom": "library/hdr/sections/sec-021",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-trace-antipode-polynomial-symmetry",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-trace-antipode-polynomial-symmetry",
+  "kind": "proposition",
+  "title": "Antipode-induced polynomial symmetry $q^{20} p(1/q) = -p(q)$ of the proton Markov trace closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/hoefsmit1974",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "markov-trace",
+    "hopf-antipode",
+    "frobenius-integral",
+    "polynomial-symmetry",
+    "anti-self-reciprocal",
+    "closed-form"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.markovTraceAntipodePolynomialSymmetry",
+  "text": "markov-trace-antipode-polynomial-symmetry.md",
+  "leanSource": "markov-trace-antipode-polynomial-symmetry.lean",
+  "provenance": "authored"
+}

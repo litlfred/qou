@@ -63,6 +63,14 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 from _precision import set_compute_dps, fmt  # noqa: E402
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-04). Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
@@ -142,7 +150,44 @@ if _census_path.exists():
                 "rho_handpick":    r.get("rho_handpick"),
             }
 
-Q0 = _mp.mpf("1.1099785955573347")   # substrate parameter (MUON layer)
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). It was the literal
+# 1.1099785955573347 labelled '(MUON layer)' -- the RETIRED self-certified
+# pin A, superseded 2026-08-22, so the label named a layer the value no longer
+# belonged to.
+#
+# MIGRATED TO PROTON on owner instruction, 2026-09-04. Until this commit the
+# stem was listed `ideal_muon`, so `q_parameter` bound the MUON anchor to
+# `Q_50_DIGIT_STR` here and this line read the live CODATA-2022 muon
+# derivation. The stem is now `physical_proton`, so the same by-name read
+# resolves the proton pin -- an 11.54 ppb move, not the 0.077 ppb of a
+# within-layer refresh.
+#
+# Nothing in this file establishes exception E2 (the ideal CAL-1/2/3 layer),
+# and under the 2026-08-30 ruling the burden is on the exception, so proton is
+# the default this producer falls to. The manifest change and the regenerated
+# witness land in ONE commit, per the AGENTS.md constraint that the
+# `ideal_muon` migration must never be split.
+Q0 = _mp.mpf(Q_50_DIGIT_STR)
+
+# MERGE NOTE 2026-09-04. `origin/main` changed this same block in the opposite
+# direction: it moved the read from the retired literal to `q_muon_at()`, i.e.
+# it REFRESHED WITHIN the muon layer and wrote "Whether it should instead be
+# proton is the `q0Anchor: independent` disposition question owned by bean
+# `qou-324i`, and is deliberately not decided here."
+#
+# That deferral is superseded, not overruled on a judgement call: the owner
+# ruling of 2026-08-30 makes proton the DEFAULT and puts the burden on the
+# exception -- "it should be proton unless it is an explicit comparison /
+# discussion on CAL 123 math ideal or so". This producer is neither (E1: it
+# makes no proton-vs-muon comparison; E2: it is not about the calibration
+# triple as mathematics), and "it has always been muon" is explicitly not a
+# reason. So `qou-324i`'s question is answered for this stem.
+#
+# The sibling's finding is kept and is the reason this reads by NAME rather
+# than by literal: the q0-value drift audit prescribes "fix by RE-RUNNING THE
+# PRODUCER, never by hand-editing the number", and that remedy CANNOT work
+# against a hardcoded literal -- a re-run reproduces it faithfully. Measured
+# there: re-running left the audit still flagging it.
 
 
 def q_integer(n: int, q=Q0):
@@ -342,7 +387,14 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=None)
+        # q0_anchor was False -- 'this witness carries no q0-dependent field'.
+        # Measured false at the migration (2026-09-04): moving muon -> proton
+        # moves the published `parameters.q_2_q` = [2]_q by 1.21e-9 and the C1
+        # err_pct by 3.1e-7. The error PERCENTAGES are near-invariant because
+        # they are ratios and the scale cancels -- but 'the headline is a ratio'
+        # is not the same claim as 'no field depends on q0', and it is the
+        # second that this flag asserted.
+        witness, script_path=__file__, engine=None)
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
     print(f"\n  Witness written: {out}")
     return 0

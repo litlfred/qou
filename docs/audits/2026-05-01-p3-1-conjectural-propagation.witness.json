@@ -1,14 +1,22 @@
 {
-  "audit": "conjectural-propagation (AGENTS.md §3b + §3b-cond)",
-  "generated": "2026-06-13T01:33:37.827Z",
-  "total_blocks": 1968,
+  "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
+  "generated": "2026-09-04T10:58:22.983Z",
+  "total_blocks": 3524,
+  "blocks_failed_to_load": 0,
+  "failed_to_load": [],
   "class_axiomatised_conjectures": [
+    "conj:adelic-critical-line-persistence",
     "conj:algebraic-geometric-dilog-equivalence",
     "conj:alpha-k-categorical-closure",
+    "conj:archimedean-realisation-volume-compatibility",
+    "conj:archimedean-remainder-exponential-decay",
     "conj:archimedean-stpart",
     "conj:atom-braid-exterior-algebra",
     "conj:bigbang-heatdeath",
     "conj:binding-manybody-eq-jet-filtration",
+    "conj:binding-qbeta-complex-volume",
+    "conj:block-multiplicativity-v-free",
+    "conj:bohr-radius-categorical",
     "conj:borel-zagier-qou-volumes",
     "conj:borromean-baryon-mass-formula",
     "conj:borromean-bloch-group-element",
@@ -21,27 +29,36 @@
     "conj:c-from-color-flavor-swap",
     "conj:canonical-knot-id-sdp",
     "conj:casimir-epsilon-vacuum",
+    "conj:casimir-first-q-correction",
     "conj:categorical-higgs-mechanism",
     "conj:categorical-linking-operation",
     "conj:cemetery-group-emergence",
     "conj:cl3-zeta5-geometric-realization",
     "conj:classical-limit-stpart",
     "conj:classical-riemann-hypothesis",
+    "conj:color-superconductivity-borromean",
     "conj:complex-chirality-rotation",
+    "conj:complex-mass-constituent-functional",
     "conj:confinement-grading-correspondence",
     "conj:confinement-nf-structure-forcing",
     "conj:cp-violation-spectral-form",
     "conj:cpt-d6-d7-d8-closure",
     "conj:cpt-orbit-closure-density",
+    "conj:critical-exponent",
     "conj:crossing-graded-mass-expansion",
     "conj:crystal-graph-realization",
     "conj:depth-stratified-frobenius-reciprocity",
+    "conj:diagrammatic-double-magic-lr-fusion",
     "conj:dilogarithm-archimedean-limit",
     "conj:dim-master-pentagon",
     "conj:diophantine-birthday",
     "conj:double-magic-delta-i-bound",
     "conj:e-hartree-categorical-derivation",
+    "conj:electroweak-higgs-torus-link-triplet",
+    "conj:explicit-central-idempotent",
+    "conj:explicit-formula",
     "conj:g-action-on-substrate",
+    "conj:gauge-hecke-realization",
     "conj:gb-depth-period-correspondence",
     "conj:geom-universality",
     "conj:geom-yekutieli-alignment",
@@ -50,7 +67,6 @@
     "conj:gs-archimedean-agreement-trace",
     "conj:gs-graded-markov-trace-existence",
     "conj:gs-residue-at-root-existence",
-    "conj:gs-spectral-decomposition-existence",
     "conj:gs-spectral-sum-finite",
     "conj:h2s-angle-s3-braid-holonomy",
     "conj:hecke-anyonic-substrate",
@@ -58,6 +74,7 @@
     "conj:hoefsmit-scattering-pipeline",
     "conj:hydrogen-shell-writhe",
     "conj:hyperbolic-volume-transcendence",
+    "conj:im-q-physical-role",
     "conj:infinitesimal-frobenius",
     "conj:infinitesimal-observability",
     "conj:inter-nucleon-channel-color-tube",
@@ -67,21 +84,28 @@
     "conj:jet-tower-uniform-delta-max",
     "conj:joint-galois-braid-action",
     "conj:jones-birthday",
+    "conj:jsj-decomposition-linearity",
     "conj:kashaev-density-equals-sdp-multiplicity",
     "conj:kashaev-surreal",
     "conj:kashaev-volume-conjecture",
     "conj:kazhdan-lusztig-classical-limit",
+    "conj:klein-bring-icosahedral-bridge",
     "conj:knot-factor-frobenius-pairing",
+    "conj:lepton-mass-tower-canonical",
     "conj:levi-degeneracy",
     "conj:lifted-crossing-locality",
     "conj:local-infinitesimal-field",
+    "conj:lqg-entropy-qdim-partition-pole",
     "conj:lusztig-canonical-basis-q-eq-1",
+    "conj:macroscopic-stability-equivalence",
     "conj:magic-numbers-bring",
     "conj:mass-endomorphism",
     "conj:mass-volume-factorization",
     "conj:mirror-3d-3d-correspondence",
     "conj:modular-s-transform-q-q-tilde",
     "conj:n-v-bring-action",
+    "conj:n-v-tower-depth-ninety",
+    "conj:ns-counterexample",
     "conj:on-p-modular-hecke",
     "conj:orbital-fourier-decomposition",
     "conj:orbital-space-normal-bundle",
@@ -92,36 +116,50 @@
     "conj:palindromicity-orbital-type",
     "conj:phi-q-wkb-greens-function",
     "conj:poincare-lefschetz-borromean",
+    "conj:proton-borromean-assembly",
     "conj:psd-trace-orthogonality",
+    "conj:q-aubin-lions",
     "conj:q-birch-swinnerton-dyer",
     "conj:q-collatz",
     "conj:q-geometric-langlands",
     "conj:q-gl-classical-limit",
     "conj:q-gl-fiber-functor",
     "conj:q-gl-kummer-filtration",
+    "conj:q-harmonic-flow",
     "conj:q-integer-mass-formula",
     "conj:q-oper-hecke",
     "conj:q-zero-stokes-region-identification",
     "conj:qbeta-ck-truncation-canonical",
+    "conj:qbeta-trace-counit-convergence",
     "conj:qdifference-kernel-prolongation-symbol",
     "conj:qou-infra-discharges-goncharov-zeta5",
     "conj:qou-p-neq-np",
     "conj:quantum-computational-universality",
     "conj:quantum-langlands-dual",
+    "conj:reeb-linking-cwf-normalization",
     "conj:regularity-breakdown",
     "conj:reidemeister-mass-invariance",
     "conj:reverse-limit-q-to-infinity",
+    "conj:rho-k-pair-gen-canonical-form",
     "conj:rho-prefactor-structural",
     "conj:root-of-unity-mtc-truncation",
+    "conj:schwinger-measure-computational-time",
     "conj:shared-denominator-cusp-holonomy",
     "conj:shell-closure-nf-term-count",
+    "conj:shell-space-is-self-square",
     "conj:shell-transition-knot",
     "conj:single-volume-irrationality",
+    "conj:sm-colour-stabilizer-action",
+    "conj:sm-gauge-truncation",
+    "conj:sm-hypercharge-invariant",
     "conj:spectral-normal-form",
     "conj:spin-from-so3-fiber",
     "conj:staircase-ew-residual",
+    "conj:stokes-dt-bps-bridge",
+    "conj:surreal-limit-transfer",
     "conj:symmetric-crystal-pair-production",
     "conj:t-from-trace-cyclicity",
+    "conj:tannaka-krein-isomorphism",
     "conj:tau-all-orders-bridge",
     "conj:three-knot-jet-order-independence",
     "conj:two-filtration-bridge",
@@ -130,24 +168,476 @@
     "conj:weak-spectral-completeness",
     "conj:weinberg-angle-categorical",
     "conj:wenzl-positivity-implies-substrate-positivity",
+    "conj:whipple-rotation-intertwining",
     "conj:wigner-su4-from-spin-isospin",
     "conj:yang-mills-mass-gap",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 140,
-  "violators": [],
+  "provable_blocks_touching_conjecture": 163,
+  "violators": [
+    {
+      "label": "prop:bar-parity-split",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-qbeta-complex-volume",
+        "conj:block-multiplicativity-v-free",
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts"
+    },
+    {
+      "label": "prop:binding-genfun-qdifference",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.ts"
+    },
+    {
+      "label": "prop:c1-theta-zero-locus-and-pole-divisor",
+      "kind": "proposition",
+      "conj": [
+        "conj:qdifference-kernel-prolongation-symbol",
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/c1-theta-zero-locus-and-pole-divisor.ts"
+    },
+    {
+      "label": "prop:calibration-cohomology-alignment",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts"
+    },
+    {
+      "label": "prop:cl3-zeta5-pslq-independence",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.ts"
+    },
+    {
+      "label": "prop:cyclotomic-cl3-orbit-sum-general",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.ts"
+    },
+    {
+      "label": "prop:cyclotomic-depth3-dimension-synthesis",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts"
+    },
+    {
+      "label": "prop:cyclotomic-dimension-synthesis-all-depths",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts"
+    },
+    {
+      "label": "prop:cyclotomic-l-value-decomposition",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.ts"
+    },
+    {
+      "label": "prop:delta-lambda-dt-index-unification",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/delta-lambda-dt-index-unification.ts"
+    },
+    {
+      "label": "prop:electron-period-base",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/electron-period-base.ts"
+    },
+    {
+      "label": "prop:graded-hecke-energy-truncation-bound",
+      "kind": "proposition",
+      "conj": [
+        "conj:gs-graded-markov-trace-existence",
+        "conj:crystal-graph-realization",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.ts"
+    },
+    {
+      "label": "prop:jet-filtration-binding-extensive",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/jet-filtration-binding-extensive.ts"
+    },
+    {
+      "label": "prop:lambda-scale-substrate-form",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-baryon-mass-formula",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:crystal-graph-realization",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts"
+    },
+    {
+      "label": "prop:linear-chain-bond-count",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/linear-chain-bond-count.ts"
+    },
+    {
+      "label": "prop:magic-A-binding-formula",
+      "kind": "proposition",
+      "conj": [
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts"
+    },
+    {
+      "label": "prop:one-loop-prefactor-provenance",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:cl3-zeta5-geometric-realization",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.ts"
+    },
+    {
+      "label": "prop:prolonged-periods-fixed-depth",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts"
+    },
+    {
+      "label": "prop:s4-s3-half-symmetric-projection",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-baryon-mass-formula",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:crystal-graph-realization",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/s4-s3-half-symmetric-projection.ts"
+    },
+    {
+      "label": "prop:sl2-period-conserved-quantity",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.ts"
+    },
+    {
+      "label": "prop:sl2-prolongation-recurrence",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts"
+    },
+    {
+      "label": "prop:three-calibration-discipline",
+      "kind": "proposition",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/observations/three-calibration-discipline.ts"
+    },
+    {
+      "label": "prop:two-filtration-bridge-general",
+      "kind": "proposition",
+      "conj": [
+        "conj:b1-hyperbolic-rows-theorem",
+        "conj:joint-galois-braid-action",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:cl3-zeta5-geometric-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.ts"
+    },
+    {
+      "label": "thm:binding-closure-conditional",
+      "kind": "theorem",
+      "conj": [
+        "conj:binding-manybody-eq-jet-filtration",
+        "conj:magic-numbers-bring",
+        "conj:diagrammatic-double-magic-lr-fusion",
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence",
+        "conj:magic-numbers-from-q",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts"
+    }
+  ],
   "conditional_on_class": [
     {
       "label": "cor:knot-factor-amphicheiral",
       "kind": "corollary",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -157,13 +647,6 @@
       "label": "cor:knot-factor-borromean-composite",
       "kind": "corollary",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -173,13 +656,6 @@
       "label": "cor:knot-factor-shell-closed",
       "kind": "corollary",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -189,13 +665,6 @@
       "label": "cor:lr-tensor-character-bridge",
       "kind": "corollary",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -206,47 +675,26 @@
       "kind": "lemma",
       "conj": [
         "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.ts"
     },
     {
-      "label": "lem:surreal-squeeze",
+      "label": "lem:frobenius-cocasimir-refuted-deuteron",
       "kind": "lemma",
       "conj": [
-        "conj:regularity-breakdown"
+        "conj:rho-prefactor-structural",
+        "conj:canonical-knot-id-sdp",
+        "conj:brane-tower-z-habiro",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
-      "file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.ts"
-    },
-    {
-      "label": "prop:a-8-partition-function-identity",
-      "kind": "proposition",
-      "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.ts"
+      "file": "content/quantum-observable-universe/mass-theory/frobenius-cocasimir-refuted-deuteron.ts"
     },
     {
       "label": "prop:alpha-k-derivation-procedure",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -256,7 +704,11 @@
       "label": "prop:alpha-shift-torus-knot",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.ts"
     },
@@ -268,6 +720,9 @@
         "conj:mass-endomorphism",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -279,13 +734,6 @@
       "conj": [
         "conj:canonical-knot-id-sdp",
         "conj:brane-tower-z-habiro",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -295,7 +743,11 @@
       "label": "prop:atomic-mass-gb-nf",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.ts"
     },
@@ -305,37 +757,22 @@
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.ts"
-    },
-    {
-      "label": "prop:b1-hyperbolic-rows-theorem",
-      "kind": "proposition",
-      "conj": [
-        "conj:cl3-zeta5-geometric-realization",
-        "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge"
-      ],
-      "file": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.ts"
     },
     {
       "label": "prop:b1-soft-sharpness-theorem",
@@ -343,14 +780,18 @@
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
@@ -362,14 +803,18 @@
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
@@ -383,25 +828,15 @@
         "conj:symmetric-crystal-pair-production",
         "conj:crystal-graph-realization"
       ],
-      "file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts"
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.ts"
     },
     {
-      "label": "prop:bar-parity-split",
+      "label": "prop:baryon-octet-decomposition",
       "kind": "proposition",
       "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
+        "conj:sm-hypercharge-invariant"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts"
+      "file": "content/quantum-observable-universe/eightfold-way/baryon-octet-decomposition.ts"
     },
     {
       "label": "prop:baryon-product-from-alt",
@@ -409,54 +844,25 @@
       "conj": [
         "conj:canonical-knot-id-sdp",
         "conj:brane-tower-z-habiro",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.ts"
     },
     {
-      "label": "prop:binding-genfun-qdifference",
+      "label": "prop:benzene-threading-emergence",
       "kind": "proposition",
       "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.ts"
+      "file": "content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts"
     },
     {
       "label": "prop:bloch-group-quotient-construction",
       "kind": "proposition",
       "conj": [
-        "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:kazhdan-lusztig-classical-limit",
@@ -470,6 +876,9 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -481,36 +890,22 @@
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/borel-partial-resolution.ts"
-    },
-    {
-      "label": "prop:calibration-cohomology-alignment",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts"
     },
     {
       "label": "prop:categorical-neutrality-saturated-shells",
@@ -521,46 +916,60 @@
       "file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.ts"
     },
     {
+      "label": "prop:categorical-neutron-exists",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.ts"
+    },
+    {
+      "label": "prop:categorical-neutron-unique",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.ts"
+    },
+    {
+      "label": "prop:categorical-proton-exists",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-proton-exists.ts"
+    },
+    {
+      "label": "prop:categorical-proton-unique",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.ts"
+    },
+    {
+      "label": "prop:ch4-lp-dual-binding",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts"
+    },
+    {
       "label": "prop:chirality-dual-space-derivation",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/chirality-dual-space-derivation.ts"
     },
     {
-      "label": "prop:chirality-from-frobenius-self-pairing",
-      "kind": "proposition",
-      "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/chirality-from-frobenius-self-pairing.ts"
-    },
-    {
       "label": "prop:chirality-residue-mass-term",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -570,13 +979,6 @@
       "label": "prop:chirality-writhe-ribbon-derivation",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -586,20 +988,6 @@
       "label": "prop:cl2-pentagon-and-faddeev-partial",
       "kind": "proposition",
       "conj": [
-        "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:kazhdan-lusztig-classical-limit",
@@ -608,39 +996,45 @@
       "file": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.ts"
     },
     {
-      "label": "prop:cl3-zeta5-pslq-independence",
+      "label": "prop:co-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:cl3-zeta5-geometric-realization"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.ts"
+      "file": "content/quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts"
+    },
+    {
+      "label": "prop:co2-lp-dual-binding",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts"
     },
     {
       "label": "prop:collatz-contact-boundary",
       "kind": "proposition",
       "conj": [
-        "conj:regularity-breakdown"
+        "conj:q-collatz",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:regularity-breakdown",
+        "conj:qou-p-neq-np"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts"
     },
     {
-      "label": "prop:collatz-no-cycles",
+      "label": "prop:composite-crossing-parity",
       "kind": "proposition",
       "conj": [
-        "conj:regularity-breakdown"
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts"
+      "file": "content/quantum-observable-universe/information-theory/composite-crossing-parity.ts"
     },
     {
       "label": "prop:confinement-nf-partial-proof",
@@ -654,17 +1048,12 @@
       "label": "prop:core-levi-form",
       "kind": "proposition",
       "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts"
-    },
-    {
-      "label": "prop:critical-exponent",
-      "kind": "proposition",
-      "conj": [
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts"
     },
     {
       "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
@@ -689,89 +1078,18 @@
       "kind": "proposition",
       "conj": [
         "conj:crystal-graph-realization",
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.ts"
-    },
-    {
-      "label": "prop:cyclotomic-cl3-orbit-sum-general",
-      "kind": "proposition",
-      "conj": [
-        "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:cl3-zeta5-geometric-realization"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.ts"
-    },
-    {
-      "label": "prop:cyclotomic-depth3-dimension-synthesis",
-      "kind": "proposition",
-      "conj": [
-        "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:cl3-zeta5-geometric-realization"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts"
-    },
-    {
-      "label": "prop:cyclotomic-dimension-synthesis-all-depths",
-      "kind": "proposition",
-      "conj": [
-        "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:cl3-zeta5-geometric-realization"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.ts"
-    },
-    {
-      "label": "prop:cyclotomic-strand-doubling",
-      "kind": "proposition",
-      "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts"
     },
     {
       "label": "prop:demazure-fiber-markov-trace",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -783,38 +1101,35 @@
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.ts"
     },
     {
-      "label": "prop:diagrammatic-double-magic-lr-fusion",
+      "label": "prop:deuteron-binding-dressing-proton-net",
       "kind": "proposition",
       "conj": [
-        "conj:mass-endomorphism"
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.ts"
+      "file": "content/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.ts"
     },
     {
       "label": "prop:e-infinity-page-identifications",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -826,54 +1141,18 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
       "file": "content/quantum-observable-universe/mass-theory/eigenvalue-product-expansion.ts"
     },
     {
-      "label": "prop:electron-period-base",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/electron-period-base.ts"
-    },
-    {
-      "label": "prop:em-coupling-bring-zero-mode",
-      "kind": "proposition",
-      "conj": [
-        "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts"
-    },
-    {
       "label": "prop:explicit-alpha-k-h3",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -883,13 +1162,6 @@
       "label": "prop:explicit-alpha-k-h4",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -899,6 +1171,7 @@
       "label": "prop:explicit-central-idempotent",
       "kind": "proposition",
       "conj": [
+        "conj:explicit-central-idempotent",
         "conj:gb-depth-period-correspondence",
         "conj:hoefsmit-scattering-pipeline",
         "conj:geom-yekutieli-alignment",
@@ -906,7 +1179,9 @@
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
         "conj:classical-limit-stpart",
-        "conj:regularity-breakdown"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.ts"
     },
@@ -922,61 +1197,65 @@
       "label": "prop:force-carrier-intertwining-correspondence",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts"
     },
     {
-      "label": "prop:graded-hecke-energy-truncation-bound",
+      "label": "prop:gb-residue-spectral-sum",
       "kind": "proposition",
       "conj": [
-        "conj:gs-graded-markov-trace-existence",
-        "conj:crystal-graph-realization",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:e-hartree-categorical-derivation"
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.ts"
+      "file": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.ts"
     },
     {
       "label": "prop:gram-determinant-plancherel-ratio",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.ts"
     },
     {
-      "label": "prop:habiro-pochhammer-bridge",
+      "label": "prop:h2-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/habiro-pochhammer-bridge.ts"
+      "file": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts"
     },
     {
-      "label": "prop:habiro-precision-ladder-equivalence",
+      "label": "prop:hadron-half-life",
       "kind": "proposition",
       "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.ts"
+      "file": "content/quantum-observable-universe/predicted-spectra/hadron-half-life.ts"
+    },
+    {
+      "label": "prop:hadron-q-self-correction",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/hadron-q-self-correction.ts"
+    },
+    {
+      "label": "prop:hecke-1d-irrep-closed-form-character",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts"
     },
     {
       "label": "prop:hecke-baer-star-generic",
@@ -989,7 +1268,9 @@
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
         "conj:classical-limit-stpart",
-        "conj:regularity-breakdown"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.ts"
     },
@@ -997,36 +1278,18 @@
       "label": "prop:hecke-branching-trace-decomposition",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.ts"
     },
     {
-      "label": "prop:hecke-convergence-bound",
+      "label": "prop:hoefsmit-V21-cos-symmetrization",
       "kind": "proposition",
       "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/hecke-convergence-bound.ts"
-    },
-    {
-      "label": "prop:homological-shell-condensation",
-      "kind": "proposition",
-      "conj": [
-        "conj:mass-endomorphism"
-      ],
-      "file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.ts"
+      "file": "content/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.ts"
     },
     {
       "label": "prop:hook-weight-derivation",
@@ -1042,18 +1305,28 @@
       "file": "content/quantum-observable-universe/mass-theory/hook-weight-derivation.ts"
     },
     {
+      "label": "prop:integer-stability",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/integer-stability.ts"
+    },
+    {
+      "label": "prop:isovector-chiral-residue",
+      "kind": "proposition",
+      "conj": [
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
+      ],
+      "file": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-isovector-chiral-residue.ts"
+    },
+    {
       "label": "prop:jet-prefix-gb-filtration",
       "kind": "proposition",
       "conj": [
         "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/jet-prefix-gb-filtration.ts"
     },
@@ -1061,8 +1334,10 @@
       "label": "prop:joint-galois-braid-discharged",
       "kind": "proposition",
       "conj": [
-        "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
         "conj:gb-depth-period-correspondence",
         "conj:hoefsmit-scattering-pipeline",
         "conj:geom-yekutieli-alignment",
@@ -1070,9 +1345,9 @@
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
         "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.ts"
     },
@@ -1080,8 +1355,10 @@
       "label": "prop:joint-galois-braid-figure-8-verified",
       "kind": "proposition",
       "conj": [
-        "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
         "conj:gb-depth-period-correspondence",
         "conj:hoefsmit-scattering-pipeline",
         "conj:geom-yekutieli-alignment",
@@ -1089,9 +1366,9 @@
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
         "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.ts"
     },
@@ -1101,13 +1378,6 @@
       "conj": [
         "conj:canonical-knot-id-sdp",
         "conj:brane-tower-z-habiro",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1117,13 +1387,6 @@
       "label": "prop:knot-factor-spectral-form",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1134,16 +1397,20 @@
       "kind": "proposition",
       "conj": [
         "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:bring-trilog-depth-3-witness",
+        "conj:two-filtration-bridge",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown"
+        "conj:mass-endomorphism"
       ],
       "file": "content/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid.ts"
     },
@@ -1152,74 +1419,29 @@
       "kind": "proposition",
       "conj": [
         "conj:weak-spectral-completeness",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.ts"
     },
     {
-      "label": "prop:lambda-scale-substrate-form",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-baryon-mass-formula",
-        "conj:gs-graded-markov-trace-existence",
-        "conj:crystal-graph-realization",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:e-hartree-categorical-derivation"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.ts"
-    },
-    {
-      "label": "prop:leray-profile",
-      "kind": "proposition",
-      "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/leray-profile.ts"
-    },
-    {
       "label": "prop:macdonald-hook-telescope",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/macdonald-hook-telescope.ts"
     },
     {
-      "label": "prop:magic-A-binding-formula",
-      "kind": "proposition",
-      "conj": [
-        "conj:mass-endomorphism"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts"
-    },
-    {
       "label": "prop:markov-trace-antipode-polynomial-symmetry",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.ts"
     },
@@ -1227,7 +1449,11 @@
       "label": "prop:markov-trace-axiomatic-closed-form",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts"
     },
@@ -1235,7 +1461,11 @@
       "label": "prop:markov-trace-ratio-exact",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-theory/markov-trace-ratio-exact.ts"
     },
@@ -1243,9 +1473,23 @@
       "label": "prop:markov-trace-recursive-reducer",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.ts"
+    },
+    {
+      "label": "prop:mass-coefficient-shadow-price",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.ts"
     },
     {
       "label": "prop:mass-element-nf",
@@ -1261,6 +1505,9 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -1284,35 +1531,44 @@
       "label": "prop:mass-tower-coefficient-stratification",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.ts"
     },
     {
-      "label": "prop:ns-counterexample",
+      "label": "prop:meson-octet-decomposition",
       "kind": "proposition",
       "conj": [
-        "conj:regularity-breakdown"
+        "conj:sm-hypercharge-invariant"
       ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts"
+      "file": "content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.ts"
+    },
+    {
+      "label": "prop:neutron-prediction-comparison",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/observations/neutron-prediction-comparison.ts"
     },
     {
       "label": "prop:ns-kummer-specialisation",
       "kind": "proposition",
       "conj": [
+        "conj:qou-p-neq-np",
+        "conj:q-collatz",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:regularity-breakdown",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:regularity-breakdown"
+        "conj:hyperbolic-volume-transcendence"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts"
     },
@@ -1322,8 +1578,14 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts"
@@ -1332,14 +1594,33 @@
       "label": "prop:ns-obstruction-tower",
       "kind": "proposition",
       "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts"
     },
     {
+      "label": "prop:operator-valued-combiner-convergence",
+      "kind": "proposition",
+      "conj": [
+        "conj:crystal-graph-realization",
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/operator-valued-combiner-convergence.ts"
+    },
+    {
       "label": "prop:p-vs-np-boundary",
       "kind": "proposition",
       "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts"
@@ -1348,13 +1629,6 @@
       "label": "prop:pauli-factor-wedderburn",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1366,6 +1640,9 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -1377,21 +1654,18 @@
       "conj": [
         "conj:quantum-langlands-dual",
         "conj:dim-master-pentagon",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence",
         "conj:pachner-pentagon-borromean",
         "conj:borromean-bloch-group-element",
         "conj:dilogarithm-archimedean-limit",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
         "conj:mass-volume-factorization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:type-b-folding-cpt",
@@ -1407,66 +1681,24 @@
       "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts"
     },
     {
-      "label": "prop:photon-ir-zero-mode-bring",
-      "kind": "proposition",
-      "conj": [
-        "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence"
-      ],
-      "file": "content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.ts"
-    },
-    {
-      "label": "prop:prolonged-periods-fixed-depth",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts"
-    },
-    {
       "label": "prop:proton-mass-substrate-identity",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
+        "conj:proton-borromean-assembly",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts"
     },
     {
-      "label": "prop:q-aubin-lions",
-      "kind": "proposition",
-      "conj": [
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts"
-    },
-    {
       "label": "prop:qbeta-canonical-markov-weights-explicit-instance",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.ts"
     },
@@ -1474,7 +1706,11 @@
       "label": "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.ts"
     },
@@ -1482,7 +1718,11 @@
       "label": "prop:qbeta-delta-tau-surrogate-taylor-coefficients",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.ts"
     },
@@ -1490,7 +1730,11 @@
       "label": "prop:qbeta-per-block-chi-closed-forms",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
       "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.ts"
     },
@@ -1498,21 +1742,18 @@
       "label": "prop:qbeta-z-recursion-to-ck-recursion-bridge",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation"
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
-      "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-z-recursion-to-ck-recursion-bridge.ts"
+      "file": "content/quantum-observable-universe/mass-theory/qbeta-z-recursion-to-ck-recursion-bridge.ts"
     },
     {
       "label": "prop:qmn-recursive-memoized",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1524,6 +1765,9 @@
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -1547,17 +1791,31 @@
       "file": "content/quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.ts"
     },
     {
+      "label": "prop:residue-at-root",
+      "kind": "proposition",
+      "conj": [
+        "conj:gs-residue-at-root-existence",
+        "conj:gs-graded-markov-trace-existence"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/residue-at-root.ts"
+    },
+    {
+      "label": "prop:rho-k-graded-expansion",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:bohr-radius-categorical",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.ts"
+    },
+    {
       "label": "prop:rho-k-h3a-refinement",
       "kind": "proposition",
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:geom-yekutieli-alignment",
@@ -1577,37 +1835,36 @@
       "label": "prop:root-of-unity-truncation",
       "kind": "proposition",
       "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts"
     },
     {
-      "label": "prop:s4-s3-half-symmetric-projection",
+      "label": "prop:sdp-regime-switch",
       "kind": "proposition",
       "conj": [
-        "conj:borromean-baryon-mass-formula",
-        "conj:gs-graded-markov-trace-existence",
-        "conj:crystal-graph-realization",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:e-hartree-categorical-derivation"
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/s4-s3-half-symmetric-projection.ts"
+      "file": "content/quantum-observable-universe/observations/sdp-regime-switch.ts"
+    },
+    {
+      "label": "prop:shell-structure-eigenvalues",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.ts"
     },
     {
       "label": "prop:sigma-shell-from-beta-chain-derivation",
       "kind": "proposition",
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:geom-yekutieli-alignment",
@@ -1619,79 +1876,32 @@
       "label": "prop:six-term-per-derivation-weights",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/six-term-per-derivation-weights.ts"
     },
     {
-      "label": "prop:sl2-prolongation-recurrence",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts"
-    },
-    {
       "label": "prop:spectral-sequence-h3-explicit",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/spectral-sequence-h3-explicit.ts"
     },
     {
-      "label": "prop:surreal-rate-calculus",
+      "label": "prop:tau-M-asymptotic-rep-theory",
       "kind": "proposition",
       "conj": [
-        "conj:regularity-breakdown"
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.ts"
-    },
-    {
-      "label": "prop:term6-binding-density",
-      "kind": "proposition",
-      "conj": [
-        "conj:mass-endomorphism"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts"
+      "file": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.ts"
     },
     {
       "label": "prop:terms-2-6-higher-operations",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1706,38 +1916,23 @@
       "file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.ts"
     },
     {
-      "label": "prop:two-filtration-bridge-general",
-      "kind": "proposition",
-      "conj": [
-        "conj:joint-galois-braid-action",
-        "conj:bring-trilog-depth-3-witness",
-        "conj:two-filtration-bridge",
-        "conj:gb-depth-period-correspondence",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
-        "conj:cl3-zeta5-geometric-realization"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.ts"
-    },
-    {
       "label": "prop:two-filtration-bridge-small-cases",
       "kind": "proposition",
       "conj": [
         "conj:cl3-zeta5-geometric-realization",
         "conj:joint-galois-braid-action",
-        "conj:gb-depth-period-correspondence",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence",
+        "conj:explicit-central-idempotent",
+        "conj:gb-depth-period-correspondence",
         "conj:dilogarithm-archimedean-limit",
         "conj:mass-endomorphism",
-        "conj:classical-limit-stpart",
-        "conj:regularity-breakdown",
         "conj:bring-trilog-depth-3-witness",
         "conj:two-filtration-bridge"
       ],
@@ -1747,13 +1942,6 @@
       "label": "prop:type-b-folded-crystal-combinatorics",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:kazhdan-lusztig-classical-limit",
@@ -1762,11 +1950,24 @@
       "file": "content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.ts"
     },
     {
+      "label": "prop:unified-iterative-correction",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/unified-iterative-correction.ts"
+    },
+    {
       "label": "prop:universal-braid-branching",
       "kind": "proposition",
       "conj": [
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
@@ -1776,6 +1977,7 @@
       "label": "prop:universality",
       "kind": "proposition",
       "conj": [
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.ts"
@@ -1784,20 +1986,6 @@
       "label": "prop:upstream-mathlib-additions",
       "kind": "proposition",
       "conj": [
-        "conj:bring-hyperbolic-knot-bloch-decomposition",
-        "conj:dilogarithm-archimedean-limit",
-        "conj:mass-endomorphism",
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization",
         "conj:kazhdan-lusztig-classical-limit",
@@ -1806,20 +1994,27 @@
       "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.ts"
     },
     {
-      "label": "prop:volume-perturbation-formula",
+      "label": "prop:vol-through-tau",
       "kind": "proposition",
       "conj": [
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/volume-perturbation-formula.ts"
+      "file": "content/quantum-observable-universe/mass-theory/vol-through-tau.ts"
     },
     {
       "label": "prop:vorticity-lower-bound",
       "kind": "proposition",
       "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts"
@@ -1829,13 +2024,6 @@
       "kind": "proposition",
       "conj": [
         "conj:weak-spectral-completeness",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1845,13 +2033,6 @@
       "label": "prop:wedderburn-bratteli-recursion",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1861,13 +2042,6 @@
       "label": "prop:wenzl-bridge-applicability-qou",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1877,29 +2051,35 @@
       "label": "prop:wenzl-qmn-synergy",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/wenzl-qmn-synergy.ts"
     },
     {
+      "label": "prop:wigner-2-coefficient",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/wigner-2-coefficient.ts"
+    },
+    {
+      "label": "prop:wigner-coefficient-derivation",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.ts"
+    },
+    {
       "label": "prop:y-lambda-closed-form-wenzl-bridge",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1909,13 +2089,6 @@
       "label": "prop:y-lambda-cyclotomic-factorization",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -1925,46 +2098,36 @@
       "label": "prop:y-lambda-recipe-from-partition",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.ts"
     },
     {
-      "label": "prop:zeta8-witness-level2-su2",
-      "kind": "proposition",
+      "label": "thm:aomega-fourone-dt-count",
+      "kind": "theorem",
       "conj": [
+        "conj:stokes-dt-bps-bridge",
+        "conj:im-q-physical-role"
+      ],
+      "file": "content/quantum-observable-universe/mass-theory/aomega-fourone-dt-count.ts"
+    },
+    {
+      "label": "thm:birthday-axioms-do-not-pin-the-birthday",
+      "kind": "theorem",
+      "conj": [
+        "conj:surreal-limit-transfer",
+        "conj:kashaev-surreal",
+        "conj:kashaev-volume-conjecture",
         "conj:hoefsmit-scattering-pipeline",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:geom-yekutieli-alignment",
         "conj:hyperbolic-volume-transcendence"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts"
-    },
-    {
-      "label": "thm:binding-closure-conditional",
-      "kind": "theorem",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:mass-endomorphism",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.ts"
+      "file": "content/quantum-observable-universe/appendix-surreals/birthday-axioms-do-not-pin-the-birthday.ts"
     },
     {
       "label": "thm:confinement-grading-correspondence-conditional",
@@ -1973,19 +2136,20 @@
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
-      "file": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.ts"
+      "file": "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.ts"
+    },
+    {
+      "label": "thm:diophantine-birthday-trajectory",
+      "kind": "theorem",
+      "conj": [
+        "conj:diophantine-birthday"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday-trajectory.ts"
     },
     {
       "label": "thm:frobenius-antipode-unifies-chirality-and-tower",
       "kind": "theorem",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],
@@ -2005,21 +2169,32 @@
       "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.ts"
     },
     {
-      "label": "thm:hoefsmit-ew-cell-content",
+      "label": "thm:geometry-of-incompleteness",
       "kind": "theorem",
       "conj": [
-        "conj:weak-spectral-completeness",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization"
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:regularity-breakdown"
       ],
-      "file": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.ts"
+      "file": "content/quantum-observable-universe/information-theory/geometry-of-incompleteness.ts"
+    },
+    {
+      "label": "thm:hyperreal-limit-transfer",
+      "kind": "theorem",
+      "conj": [
+        "conj:surreal-limit-transfer",
+        "conj:kashaev-surreal",
+        "conj:kashaev-volume-conjecture",
+        "conj:hoefsmit-scattering-pipeline",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:geom-yekutieli-alignment",
+        "conj:hyperbolic-volume-transcendence"
+      ],
+      "file": "content/quantum-observable-universe/appendix-surreals/hyperreal-limit-transfer.ts"
     },
     {
       "label": "thm:knot-mass-formula-unified",
@@ -2036,28 +2211,9 @@
       "file": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.ts"
     },
     {
-      "label": "thm:ns-singularity-descartes",
-      "kind": "theorem",
-      "conj": [
-        "conj:hoefsmit-scattering-pipeline",
-        "conj:classical-limit-stpart",
-        "conj:geom-yekutieli-alignment",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts"
-    },
-    {
       "label": "thm:six-term-mass-formula-complete",
       "kind": "theorem",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-transition-knot",
-        "conj:orbital-fourier-decomposition",
-        "conj:orbital-space-normal-bundle",
-        "conj:reidemeister-mass-invariance",
-        "conj:borromean-quark",
-        "conj:hydrogen-shell-writhe",
         "conj:confinement-grading-correspondence",
         "conj:crystal-graph-realization"
       ],

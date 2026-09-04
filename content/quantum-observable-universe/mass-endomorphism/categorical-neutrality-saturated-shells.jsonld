@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-neutrality-saturated-shells",
+  "kind": "proposition",
+  "title": "Categorical neutrality of saturated shells: full-twist identity action on $\\Phi_n$ at magic $n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/geckpfeiffer2000",
+    "references/ariki1996",
+    "references/jucys1974",
+    "references/murphy1992",
+    "references/mathas1999"
+  ],
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "full-twist",
+    "global-section",
+    "categorical-neutrality",
+    "ribbon-element",
+    "framing-anomaly",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.ShellNeutrality.SaturatedShellConjecture",
+  "text": "categorical-neutrality-saturated-shells.md",
+  "leanSource": "categorical-neutrality-saturated-shells.lean",
+  "provenance": "authored"
+}

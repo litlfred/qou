@@ -57,6 +57,17 @@ import sympy as sp
 from sympy.combinatorics.partitions import IntegerPartition
 from sympy.utilities.iterables import partitions
 
+# q_parameter lives in computations/substrate/ (bean qou-9ugp); the anchor must
+# be read from it, not from qou_substrate.constants, or the witness gets no
+# q0 stamp. Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 
 def _repo_root():
     d = os.path.dirname(os.path.abspath(__file__))
@@ -127,7 +138,13 @@ def n_syt(lam):
 
 # Masbaum 5_2 = K_2 cyclotomic coefficient sign (real q>1): sgn(C_{5_2,n}) = (-1)^n
 def masbaum_c52_sign(n, q0):
-    a = sp.sqrt(sp.Float(float(q0), 30))
+    # `str(q0)`, not `float(q0)` (bean qou-9ugp): the caller now passes the
+    # 50-digit anchor string, and routing it through a Python float threw
+    # away 33 of those digits before sympy widened the result back to 30.
+    # Only the SIGN is consumed downstream, so this never changed a verdict
+    # -- but a float64 bottleneck inside an exact-arithmetic routine is a
+    # defect whether or not it happens to be masked.
+    a = sp.sqrt(sp.Float(str(q0), 30))
     s = sp.Integer(0)
     for k in range(0, n + 1):
         # a-binomial [n,k]
@@ -177,7 +194,12 @@ def main() -> int:
 
     # (2) cyclotomic sign sgn(C_{5₂,n}) = (-1)^n
     print("\n (2) sgn(C_{5₂,n}(q₀)) = (-1)^n  (Masbaum, q₀=1.10998):")
-    q0 = 1.10997859555733471
+    # q0 read BY NAME (bean qou-9ugp, 2026-09-03). It was the bare float64
+    # literal 1.10997859555733471 -- the RETIRED self-certified muon pin A,
+    # superseded 2026-08-22. No comparison leg here, so the 2026-08-30 owner
+    # ruling puts it on the proton default (an 11.54 ppb move). Only the sign
+    # of C_{5_2,n} is consumed, and no pin move of that size can flip it.
+    q0 = Q_50_DIGIT_STR
     cyc_ok = True
     for n in range(1, 5):
         s = masbaum_c52_sign(n, q0)

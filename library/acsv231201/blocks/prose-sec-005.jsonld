@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/acsv231201/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Outline of the remaining chapters",
+  "pageStart": 30,
+  "pageEnd": 35,
+  "text": "../sections/sec-005-outline-of-the-remaining-chapters.md",
+  "derivedFrom": "library/acsv231201/manifest",
+  "sourceDocument": "library/acsv231201/manifest",
+  "provenance": "ingested"
+}

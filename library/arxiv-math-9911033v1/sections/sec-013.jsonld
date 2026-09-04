@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9911033v1/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The uniform corona problem",
+  "pageStart": 24,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-math-9911033v1/blocks/prose-sec-013",
+    "library/arxiv-math-9911033v1/blocks/thm-sec-013-01",
+    "library/arxiv-math-9911033v1/blocks/rem-sec-013-02",
+    "library/arxiv-math-9911033v1/blocks/lem-sec-013-03",
+    "library/arxiv-math-9911033v1/blocks/lem-sec-013-04"
+  ],
+  "derivedFrom": "library/arxiv-math-9911033v1/manifest",
+  "sourceDocument": "library/arxiv-math-9911033v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:10.918890+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:32.013160+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "deuteron_pair_order_matches_AME_6dig",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "cumulant-mev-cluster-expansion",
   "scriptFile": "cumulant_mev_cluster_expansion_probe.py",
-  "scriptHash": "7a8e2aa2c3b0",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3f82e1c60933",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -92,8 +92,11 @@
     "axis": "Δ_λ magnitude — cumulant→MeV map (Item 1, bean qou-4uk9)",
     "builds_on": "PR #4093 (regulator wall) + #4084 (b4 ss-pole)",
     "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2e/§3",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

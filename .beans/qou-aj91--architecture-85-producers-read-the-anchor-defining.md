@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-08-30T08:01:47Z
+updated_at: 2026-09-03T12:42:18Z
 ---
 
 ## What
@@ -673,3 +673,246 @@ updated 2026-08-25T01:03Z — **hours before** the excision commit the same day.
 measurement stands; whether the bean is moot depends on whether its convention-C→D
 `z` diagnosis generalises beyond the one file. Noted on that bean; not closed,
 because that is a scope judgement and I did not write it.
+
+
+## Option-1 routing COMPLETE — 9 of 9, and the detector was lying about all of them (2026-09-03)
+
+Owner chose option 1 (route all). Done. Two of the nine were carrying live
+defects, and the tenth finding was in my own tool.
+
+### The nine
+
+`qbeta_physics`, `cross_check_trM_cw_seminormal_leg`,
+`qbeta_fsc_g_pattern_comparison`, `he4_binding_k_stage2_probe`,
+`he4_stage2_ranking_seminormal_xcheck`, `qbeta_decay_sdp_extended_ck`,
+`qbeta_symbolic_sdp_strict_complementarity`,
+`frakV_askey_wilson_recurrence_tie_probe`, `lambda_scale_substrate_probe`.
+
+All stay `ideal_muon` except `cross_check_trM_cw_seminormal_leg` → `physical_proton`
+(its reference witness is proton-stamped).
+
+**Safety invariant, established before anything was touched:** `q_parameter`
+derives the muon anchor from `q_muon_at(70)`, byte-identical to all 70 digits with
+what the direct reads returned. So routing moves no number, and every regenerated
+witness must be metadata-only. Verified per file; the two exceptions are called out
+below rather than smoothed over.
+
+### Two live defects found by doing it
+
+**`cross_check_trM_cw_seminormal_leg` was RED on `main`.** It compares against
+`markov-peel-atomic-tr-m.witness.json` (stamped `q0Anchor: proton`) at a 1e-15
+tolerance while pinning itself to muon — a gap seven orders of magnitude wider
+than the tolerance. `|Δ|/ref` 7.89e-08 … 2.53e-07 FAIL on all six atoms →
+1.46e-50 … 5.70e-50 OK. **The bypass is what hid it:** group-B producers are
+precisely the ones the assertion check cannot run.
+
+**`qbeta_physics` was straddling a caller by 30 ppb.** Not a producer — no
+`main()`, no witness, never `sys.argv[0]`, so its own `ideal_muon` listing could
+never fire. `paper_six_term_isotope_sweep` (unlisted ⇒ proton) imports `Q_MP` at
+line 81 and used it at 107/1103, then called `compute_substrate_quantities()` and
+got muon: 11.6141 ppb in q₀, **30.1589 ppb in `Q_A`** (amplified ~2.6× by the
+`|q²−2q−1|` near-cancellation).
+
+### A third bypass mechanism, invisible to every q₀ detector
+
+`os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")` — a script forcing its own
+anchor at import, overriding the manifest, matching **none** of the pin markers.
+Found and removed in `cross_check_trM_cw_seminormal_leg:42` and
+`he4_binding_k_stage2_probe:77`. **One remains:**
+`deltalambda/he4_binding_k_presentation_correction_probe.py:77`.
+
+### The detector was reporting all nine as still bypassed
+
+`env_override_reaches()` substring-matched the witness **filename**, which cannot
+tell reading a file from mentioning it. It matched routing comments,
+`w.add_upstream(witness_path(...))` provenance edges, and a witness string
+describing history. Fixed: key on **`derived_50_digit`**, the field a value-read
+always subscripts and a provenance reference never does, over comment- and
+docstring-stripped source.
+
+**My first fix attempt was itself wrong** — making "imports a q from
+`q_parameter`" decisive is too strong, since a file doing *both* is still
+bypassed; it turned `cross_check_trM_1ppb` and `atomic_tr_m_mpfr_50dps` into
+false positives. Caught by a 15-case test, not by eye. Verified 15/15 before
+adoption.
+
+| | before | after |
+|---|---|---|
+| group A (measurable) | 3 | **11** |
+| group B (env-bypassed) | 15 | **6** |
+
+**Part of that movement is producers being fixed and part is the detector
+stopping lying about them — do not quote it as one thing.**
+
+### B is now exclusions only, all six principled
+
+Anchor definer; flip detector (needs both pins); L1-muon cross-check (its source
+says so); dual-layer producer (asserts both); deliberate two-anchor comparison;
+and `q1_mass_gap_probe`, which validates `two_q` and `plancherel_weights_n3` from
+the **same** witness — values derived at its own q₀ — so routing q₀ away while
+keeping those comparisons would manufacture the very straddle this tranche
+removes. Nothing is left in B by accident.
+
+### Two shifts that looked like mine and were not
+
+- `qbeta_symbolic_sdp_strict_complementarity` reports "2 assertions, FAILURES".
+  The committed witness already carried `allPassed: false`, and the producer's
+  own verdict is a deliberate NEGATIVE. Checked against `git show HEAD:`.
+- `lambda-scale`'s `lambda_n_target` moved at the **16th digit** (~9.7e-17) —
+  float64 epsilon, wrong *shape* for the 0.0769 ppb anchor scale. Two controls:
+  importing `q_parameter` does not change `mp.dps` (80 → 80), and re-running the
+  **unrouted** original gives the identical new value. Pre-existing staleness.
+
+### Still open
+
+The he4 witness pair. `he4-binding-k-stage2.witness.json` still carries the
+**retired** pin and is the authoritative value the xcheck reads back; its
+producer is long-compute (154 characters, checkpointing). The xcheck's
+regenerated witness is deliberately **not committed** — alone it would bake in a
+0.0769 ppb straddle. They move together.
+
+Also open: the one remaining `setdefault` in
+`he4_binding_k_presentation_correction_probe.py:77`.
+
+
+## TRAP (second instance, new variant): `pgrep -f` matched my own WAIT LOOP
+
+Recorded because I fell for the same class twice in one arc and the second form
+is worse than the first.
+
+**First form**, earlier this arc: `pgrep -f <producer>` matched the *tool*
+running the producer, because the tool's argv carries the producer's filename. I
+profiled the wrapper and reported a 0 %-CPU hang on a run that was at 100 % CPU.
+
+**Second form, 2026-09-03**: I armed
+`until ! pgrep -f "python3 -u deltalambda/he4_binding_k_stage2_probe"; do sleep 20; done`
+as a background wait. That loop's own command line **contains the pattern**, so
+`pgrep` always matches it, the condition is never true, and the loop cannot
+terminate. Worse, every later `pgrep` check I ran returned that loop's PID — so
+the producer looked alive for hours after it had died.
+
+**What it cost.** The producer actually died at 05:09:31 when the container
+restarted, at 109/154 characters. I reported "still running, 109/154,
+checkpointing" **twice** afterwards, on the strength of a PID that was my own
+watcher. Caught only by checking `stat -c '%y'` on the log and the checkpoint:
+both 3.5 h stale while `pgrep` still returned a PID.
+
+**The discriminators, in order of reliability:**
+
+1. **File mtime.** `stat -c '%y' <log> <checkpoint>` — a live long-compute writes
+   periodically. A stale mtime is proof of death; a fresh PID is not proof of
+   life.
+2. **`ps -eo pid,%cpu,cmd` with the watchers filtered out**
+   (`| grep -v "pgrep\|grep\|until"`), and read the %CPU. The real producer here
+   shows 384 %; a wrapper or a watcher shows 0.0.
+3. **Never wait with a loop whose own command line contains the pattern it
+   greps for.** Key the wait on the LOG instead:
+   `until grep -qE "witness ->|Traceback|Error|Killed" <log>; do sleep 30; done`.
+   The loop's argv contains the log path, not the producer name, so it cannot
+   match itself — and the alternation covers failure as well as success, so
+   silence is not mistaken for progress.
+
+Generalisation worth keeping: **a process-existence check is the weakest
+evidence of progress available.** Prefer evidence the work itself emits.
+
+
+## TRAP: `cmd | tail -N && git push` masks the exit code — I force-pushed a mid-rebase HEAD
+
+**What happened, 2026-09-03.** I ran, as one line:
+
+    git rebase origin/main 2>&1 | tail -2 && git push --force-with-lease
+
+The rebase hit a conflict and stopped at **commit 2 of 10**. The push ran anyway
+and **force-updated the remote to a branch missing 8 of my 10 commits.**
+
+**Why `&&` did not protect me.** In a pipeline, `$?` is the exit status of the
+LAST command, not the first. `git rebase` exited non-zero; `tail` exited **0**;
+`&&` saw 0 and proceeded. The `| tail -2` I added purely to keep the output short
+is what disarmed the guard.
+
+**Why `--force-with-lease` did not protect me either.** The lease checks that the
+REMOTE has not moved since I fetched. It had not — *I* was the one moving
+backwards. A lease guards against clobbering someone else's push; it says nothing
+about whether your own local ref is in a sane state.
+
+**Cost.** Nothing was lost (the commits were in the rebase todo and the reflog),
+but for several minutes the PR's branch on GitHub contained one commit out of
+ten, and anyone reading it would have seen a truncated tranche.
+
+**Rules, going forward:**
+
+1. **Never pipe a command whose exit status gates the next one.** If output
+   needs trimming, capture it: `out=$(git rebase origin/main 2>&1); rc=$?; echo
+   "$out" | tail -2; [ $rc -eq 0 ] || exit 1`. Or use `set -o pipefail`.
+2. **Never chain rebase and push in one line at all.** Rebase, then *check*
+   (`ls -d .git/rebase-merge`, `git rev-list --count origin/main..HEAD`), then
+   push as a separate call. The check is one command and it is the whole
+   protection.
+3. **Before any force-push, assert the commit count.** I expected 10 and the
+   local ref had 1. A single `git rev-list --count origin/main..HEAD` compared
+   against what the tranche should contain would have caught it before the push
+   rather than after.
+
+Same family as the `pgrep` trap recorded above: **a convenience wrapper around a
+command silently replaced the signal I was reading.** There, the watcher's argv
+matched the pattern; here, `tail`'s exit code replaced `rebase`'s.
+
+
+## LANDED — the option-1 tranche is complete on main (2026-09-03)
+
+Five PRs merged: **#6105, #6151, #6163, #6495, #6504.**
+
+**End state, measured on main after the last merge:**
+
+    ideal_muon = 19    A = 12    B = 6    no-live-producer = 1
+
+B is exclusions only: `q_pinning_50_digit` (defines the anchor),
+`q0_anchor_consistency_audit` (flip detector, needs both pins),
+`cross_check_trM_1ppb` (source requires muon), `atomic_tr_m_mpfr_50dps`
+(dual-layer, asserts both), `qbeta_jacobi_anger_tower_general` (deliberate
+two-anchor comparison), `q1_mass_gap_probe` (validates other fields of the same
+witness, derived at its own q₀). Nothing in B by accident.
+
+### Ten producers routed, not nine
+
+The tenth (`he4_binding_k_presentation_correction_probe`) was a loose end I
+created: converting its `setdefault` to a manifest listing made a
+previously-UNLISTED stem visible to the split for the first time, and it was
+correctly flagged bypassed because the conversion left the value read in place.
+The count going 6 → 7 was the measured surface growing, not a regression.
+
+### Two claims of mine that needed correcting after the fact
+
+1. **"B = 6"** was measured on my branch before I listed the tenth stem. On main
+   it read 7 until #6495 routed it.
+2. **"Verified 15/15"** was true for the set I tested — the 9 routed producers
+   and the 6 exclusions — and I stated it as though it established the detector
+   generally. It did not. A test set assembled from files I had just edited
+   cannot exhibit a shape none of them had, and #6504 found exactly such a shape:
+   `derived_50_digit` inside a witness PAYLOAD STRING, surviving both the
+   comment and docstring stripping.
+
+**Residual blind spot, recorded rather than fixed:** the detector still counts a
+descriptive payload literal naming the field. Teaching it to separate prose from
+a subscript key is a fragile discriminator (`d["derived_50_digit"]` is a
+Constant too), and in the one case found the string was independently stale. If
+a second instance appears, that is the signal to revisit.
+
+### What doing the routing surfaced that nothing else would have
+
+- `cross_check_trM_cw_seminormal_leg` **RED on main**, 1e-7 against a 1e-15
+  tolerance → 1e-50 green. Hidden precisely BECAUSE it was group-B.
+- `qbeta_physics` straddling one caller by **30.1589 ppb** in `Q_A`.
+- A third bypass mechanism (`os.environ.setdefault("QOU_Q0_ANCHOR", …)`) that no
+  q₀ detector could see — 3 found, **0 live remain**, AST-verified.
+- A false negative in the detector itself, reporting every correctly-routed file
+  as still broken.
+- The he4 pair regenerated together off the retired pin (2 of `qou-3f7a`'s
+  population drained as a side effect).
+
+### Three traps recorded above, one family
+
+`pgrep -f` matching its own wait loop; `| tail` masking a failed rebase's exit
+code so a force-push shipped 1 of 10 commits; a payload string defeating a
+source-stripping detector. In each, **a convenience layer silently replaced the
+signal being read.**

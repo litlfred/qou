@@ -1,6 +1,10 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Data.Matrix.Basic
+import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
+import QOU.SchurWeyl.HoefsmitRep
 
 
 /-!
@@ -19,6 +23,87 @@ The chain of reasoning:
 5. Alexander surjectivity + Markov trace → knot eigenbasis completeness
 
 LaTeX label: `cor:descartes-knot-eigenbasis`
+
+## 2026-09-04 — three detection claims quantified over an index they discarded
+
+`DescartesMarkovTrace.summand_detection` and
+`DescartesKnotEigenbasis.all_summands_detected` both read, in effect,
+
+    ∀ (_ : Fin numSummands), ∃ (val : ℝ), val ≠ 0
+
+The summand index is bound as `_` — explicitly discarded — and the detected
+value is a free real tied to no trace, no braid and no character. So each
+field asserted that **`ℝ` has a non-zero element**, and any instance
+discharged it with `⟨1, one_ne_zero⟩`. `descartes_knot_eigenbasis` did
+exactly that.
+
+Both are now stated over `DescartesMarkovTrace.trSummand`, a per-summand
+component of the trace constrained by
+`tr_eq_sum_summands : tr n x = Σ_{i < ⌊n/2⌋+1} trSummand n i x`, so the
+component is not free data an instance may choose independently of `tr`, and
+the index occurs in the body. Same repair as
+[`knot-eigenbasis-complete.lean`](../braids-and-knots/knot-eigenbasis-complete.lean)
+next door (bean `qou-9552`).
+
+Also added: `schurWeyl_level`. `DescartesSchurWeyl` carries its own `n`, and
+nothing tied it to the level it was requested at, so `schurWeyl n hn` could
+return the decomposition of any *other* level. The sibling
+`QOU.Braiding.SchurWeylDecomposition` carries the analogous `n_eq`.
+
+## The designated fallback had the defect too — and is provably not separating
+
+The theorem's old docstring named `descartes_n3_both_detected` as the concrete
+`n = 3` content standing in for the missing general-`n` character formula.
+That theorem was `∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0` — again a
+property of `ℝ`. The two Jones values, the two channels and `n = 3` appeared
+only in the proof term and the comments. The proof was real work; the
+statement recorded none of it.
+
+The values are now named (`jonesSymmetric`, `jonesMixed`) and the theorem is
+stated over them. Naming them makes a further fact reachable, and it is not a
+comfortable one:
+
+**The two channel values coincide at a `q` the Descartes condition permits.**
+`jonesSymmetric D = jonesMixed D` reduces over `q > 0` to
+`q⁵ - q⁴ + q³ + q² - 1 = 0` (`jonesSymmetric_eq_jonesMixed_iff`, proved, not
+asserted), which has a root in `[7/10, 4/5]` by the intermediate value theorem
+(`jones_channels_coincide`). At it — `q ≈ 0.779544663820934968877573423932`,
+both channels `≈ -2.0623447988`, verified at 50 decimal digits — the pair
+`(jonesSymmetric, jonesMixed)` carries no more information than one number
+(`jones_channels_not_separating`).
+
+So exhibiting two non-zero values does **not** establish that the two summands
+are distinguished, which is what "both summands are detected" needs. The old
+existential form could not have expressed the difference; the named form makes
+the gap statable and now states it.
+
+## …but the characters DO separate, and that negative is narrow
+
+The sentence that stood here said "the per-summand character values for
+general `n` remain upstream". **That was wrong**, and the corpus-grep
+checklist is what caught it: `chi_lambda_braid` / `chi_lambdas_braid` in
+`tools/hecke-engine/src/seminormal.rs` compute `χ^λ(β)` for general `n` and
+general `λ` by Hoefsmit seminormal form, with MPFR variants, a Geck–Pfeiffer
+canonical-basis expansion beside them, and about twenty entry points reachable
+from Python via `pyhecke_native`. "Not in this Lean file" had been reported as
+"upstream and open".
+
+With that machinery the follow-up question is a measurement, not a research
+problem, and it comes out the other way: **at `q*` itself the two characters
+separate**, on every braid word tried. The two `n = 3` representations are
+written down below (`rhoMixedSigma1`, `rhoMixedSigma2`), `charMixedSigma` is
+their trace rather than an asserted number, and `sigma_separates_n3_channels`
+proves `σ₁` alone separates the summands at every Descartes `q`.
+
+So `jones_channels_not_separating` is a fact about the particular *pair of
+Jones values* those two theorems name — not about the framework's ability to
+separate summands. Bean `qou-qhs3`;
+`computations/descartes_n3_channel_separation_probe.py`.
+
+What genuinely remains is constructing `DescartesMarkovTrace.trSummand` from
+those Hoefsmit values instead of leaving it free data, for general `n`. That
+is a formalisation of the seminormal representation — `n = 3` is done here —
+and not a further open question about the mathematics.
 
 ## References
 
@@ -183,13 +268,27 @@ structure DescartesMarkovTrace (D : DescartesData) where
   tr : ℕ → ℝ → ℝ  -- tr n x: trace of element x at level n
   /-- The trace of the identity is nonzero. -/
   tr_one_ne_zero : ∀ n, n ≥ 2 → tr n 1 ≠ 0
-  /-- Every irreducible summand is detected: for each level n and
-      each summand index i, there exists a braid whose trace on
-      that summand is nonzero. -/
+  /-- Component of the trace in the summand indexed by `i` at level `n`.
+
+      Without this the decomposition is invisible to the trace, and no
+      statement can be made *per summand* — see the module docstring. -/
+  trSummand : ℕ → ℕ → ℝ → ℝ
+  /-- The components decompose the trace:
+      `tr n x = Σ_{i < ⌊n/2⌋+1} trSummand n i x`.
+
+      This is what stops `trSummand` from being free data an instance may
+      choose independently of `tr`. -/
+  tr_eq_sum_summands : ∀ (n : ℕ) (x : ℝ),
+    tr n x = ∑ i ∈ Finset.range (n / 2 + 1), trSummand n i x
+  /-- Every irreducible summand is detected: for each level `n` and each
+      summand index `i`, some element has non-zero trace **in that
+      summand**.
+
+      `i` occurs in the body. It did not until 2026-09-04 — see the module
+      docstring for what the previous form asserted. -/
   -- Ref: [jones1987] §3, character non-vanishing
-  summand_detection : ∀ (n : ℕ) (numSummands : ℕ),
-    numSummands = n / 2 + 1 →
-    ∀ (_ : Fin numSummands), ∃ (val : ℝ), val ≠ 0
+  summand_detection : ∀ (n i : ℕ), i < n / 2 + 1 →
+    ∃ (x : ℝ), trSummand n i x ≠ 0
 
 /-! ## Main Instantiation Theorem -/
 
@@ -211,11 +310,20 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
   braidRep : ∀ (n : ℕ), n ≥ 2 → DescartesBraidRep D
   /-- Markov trace on the Hecke tower. -/
   markov : DescartesMarkovTrace D
-  /-- Each summand at each level is detected by the Markov trace. -/
-  all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),
-    let sw := schurWeyl n hn
-    ∀ (_ : Fin sw.numSummands),
-    ∃ (jonesVal : ℝ), jonesVal ≠ 0
+  /-- Consistency: the decomposition returned at level `n` is a
+      decomposition of `V^⊗n`.
+
+      Missing until 2026-09-04, so `schurWeyl n hn` could return the
+      decomposition of any *other* level and nothing noticed. The sibling
+      `QOU.Braiding.SchurWeylDecomposition` carries the analogous `n_eq`. -/
+  schurWeyl_level : ∀ (n : ℕ) (hn : n ≥ 1), (schurWeyl n hn).n = n
+  /-- Each summand at each level is detected by the Markov trace — stated
+      over `markov.trSummand`, so the summand index occurs in the body and
+      the detected value is the trace's component in *that* summand rather
+      than a free real. -/
+  all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1) (i : ℕ),
+    i < (schurWeyl n hn).numSummands →
+    ∃ (x : ℝ), markov.trSummand n i x ≠ 0
 
 /-- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
     is sufficient to construct the full knot eigenbasis data.
@@ -226,55 +334,445 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     - Markov trace existence ← Jones's construction (1987)
     - Alexander surjectivity ← classical topology (Alexander, 1923)
 
-    All four are available for any Descartes universe.  The summand
-    detector is exhibited concretely as the symmetric-channel Jones
-    value `J = -(q + q⁻¹)`, which is **strictly negative** for a
-    Descartes universe (`q > 0`) — a genuine, `q`-dependent detector
-    whose non-vanishing is forced by the Descartes positivity
-    condition `D.q_pos`, not the trivial constant `1`.  (Full
-    per-summand completeness — the distinct character value on each
-    irreducible for general `n` — is the concrete `n = 3` content of
-    `descartes_n3_both_detected` below; the general-`n` character
-    formula is upstream.) -/
+    All four are available for any Descartes universe.
+
+    **The witness is trivial, and the statement now says so.** The previous
+    version's conclusion was `∀ (_ : Fin numSummands), ∃ jonesVal, jonesVal
+    < 0` — the summand index discarded and the value tied to nothing — and
+    it was proved by exhibiting the symmetric-channel Jones value
+    `-(q + q⁻¹)`, once, for every index. The docstring described that as "a
+    genuine, `q`-dependent detector"; the *type* accepted any negative real
+    and would have accepted the same one for all summands, which is what the
+    proof did.
+
+    The conclusion is now stated over `trSummand`, so the index occurs. The
+    witness constructed below is deliberately the trivial one
+    (`trSummand n i x = x`), because that is all this file can supply: the
+    per-summand character values for general `n` are upstream. Nothing here
+    claims otherwise any more. -/
 -- Ref: [chari1994guide] Ch. 10, [jones1987] §3
 theorem descartes_knot_eigenbasis (D : DescartesData) :
-    ∃ (_ : DescartesMarkovTrace D),
-      ∀ (n : ℕ), n ≥ 1 →
-        ∀ (numSummands : ℕ),
-          numSummands = n / 2 + 1 →
-          ∀ (_ : Fin numSummands), ∃ (jonesVal : ℝ), jonesVal < 0 := by
-  refine ⟨{ z := 1, z_ne_zero := one_ne_zero, tr := fun _ _ => 1,
-            tr_one_ne_zero := fun _ _ => one_ne_zero,
-            summand_detection := fun _ _ _ _ => ⟨1, one_ne_zero⟩ }, ?_⟩
-  intro _ _ _ _ _
-  -- Detect via the symmetric-channel Jones value J = -(q + q⁻¹) < 0,
-  -- strictly negative because the Descartes condition gives q > 0.
-  refine ⟨-(D.q + D.q⁻¹), ?_⟩
-  have hq := D.q_pos
-  have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
-  linarith
+    ∃ mt : DescartesMarkovTrace D,
+      ∀ (n i : ℕ), i < n / 2 + 1 → ∃ x : ℝ, mt.trSummand n i x ≠ 0 := by
+  refine ⟨{ z := 1, z_ne_zero := one_ne_zero
+            tr := fun n x => (n / 2 + 1 : ℕ) * x
+            tr_one_ne_zero := ?_
+            trSummand := fun _ _ x => x
+            tr_eq_sum_summands := ?_
+            summand_detection := fun _ _ _ => ⟨1, one_ne_zero⟩ }, ?_⟩
+  · intro n _
+    have : (0 : ℝ) < ((n / 2 + 1 : ℕ) : ℝ) := by positivity
+    simpa using this.ne'
+  · intro n x
+    simp [Finset.sum_const, nsmul_eq_mul, mul_comm]
+  · exact fun _ _ _ => ⟨1, one_ne_zero⟩
 
-/-- **Corollary**: for n = 3 in a Descartes universe, both summands
-    (spin-3/2 symmetric and spin-1/2 mixed symmetry) are detected by
-    knot types: the unknot detects the symmetric sector, and the
-    trefoil detects the mixed-symmetry sector. -/
+/-- Jones value of the unknot in the symmetric (spin-3/2) channel at `n = 3`:
+    `J = -(q + q⁻¹)`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def jonesSymmetric (D : DescartesData) : ℝ := -(D.q + D.q⁻¹)
+
+/-- Jones value of the trefoil in the mixed-symmetry (spin-1/2) channel at
+    `n = 3`: `J = -q⁻⁴(1 - q² + q⁴)`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def jonesMixed (D : DescartesData) : ℝ :=
+  -(D.q⁻¹ ^ 4 * (1 - D.q ^ 2 + D.q ^ 4))
+
+/-- **Corollary**: for `n = 3` in a Descartes universe, the symmetric and
+    mixed-symmetry channel values are each non-zero — the unknot's value in
+    the spin-3/2 channel and the trefoil's in the spin-1/2 channel.
+
+    Stated over the two **named** values. Until 2026-09-04 this was
+    `∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0`, which is a property of `ℝ`:
+    the two Jones values, and `n = 3`, and the two channels, appeared only in
+    the proof term and the comments. The proof was real work; the statement
+    recorded none of it.
+
+    **This does not say the two channels are separated** — see
+    `jones_channels_coincide` below, which shows they take the *same* value at
+    a `q` the Descartes condition permits. -/
 -- Ref: [manuscript] §4, [jones1987] §3
 theorem descartes_n3_both_detected (D : DescartesData) :
-    ∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0 := by
-  -- The symmetric (spin-3/2) sector has Jones value J(unknot) = -(q + q⁻¹)
-  -- The mixed (spin-1/2) sector has Jones value J(trefoil) = -q⁻⁴(1 - q² + q⁴)
-  -- Both are nonzero for q > 0, q ≠ 1.
-  refine ⟨-(D.q + D.q⁻¹), -(D.q⁻¹ ^ 4 * (1 - D.q ^ 2 + D.q ^ 4)), ?_, ?_⟩
-  · -- j_sym ≠ 0: -(q + q⁻¹) < 0 for q > 0
-    have hq := D.q_pos
-    have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
-    linarith
-  · -- j_mix ≠ 0: -q⁻⁴(1 - q² + q⁴) < 0 for q > 0 (both factors positive)
-    have hq := D.q_pos
-    have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
+    jonesSymmetric D ≠ 0 ∧ jonesMixed D ≠ 0 := by
+  have hq := D.q_pos
+  have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
+  constructor
+  · -- -(q + q⁻¹) < 0 for q > 0
+    have : jonesSymmetric D < 0 := by unfold jonesSymmetric; linarith
+    exact this.ne
+  · -- -q⁻⁴(1 - q² + q⁴) < 0 for q > 0 (both factors positive)
     have hqi4 : 0 < D.q⁻¹ ^ 4 := pow_pos hqi 4
     have h_poly : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1 / 2)]
-    linarith [mul_pos hqi4 h_poly]
+    have : jonesMixed D < 0 := by
+      unfold jonesMixed; linarith [mul_pos hqi4 h_poly]
+    exact this.ne
+
+/-- **The two `n = 3` channel values coincide at a `q` the Descartes
+    condition permits**, so non-vanishing of each does *not* establish that
+    the two summands are distinguished.
+
+    `jonesSymmetric D = jonesMixed D` reduces, over `q > 0`, to
+    `q⁵ - q⁴ + q³ + q² - 1 = 0`, which is negative at `q = 7/10` and positive
+    at `q = 4/5`; the intermediate value theorem supplies a root between.
+    Numerically the root is `q ≈ 0.779544663820934968877573423932`, where both
+    channels take the value `≈ -2.0623447988` (verified at 50 decimal digits).
+
+    Such a `q` satisfies `0 < q` and `q ≠ 1`, so it is a legitimate Descartes
+    parameter. At it, the pair `(jonesSymmetric, jonesMixed)` carries no more
+    information than a single number.
+
+    This is why `descartes_n3_both_detected` is scoped to non-vanishing:
+    separating the channels needs the values attached to their summands, i.e.
+    `DescartesMarkovTrace.trSummand`, not two reals that happen to be
+    non-zero. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem jones_channels_coincide :
+    ∃ q : ℝ, q ∈ Set.Icc (7 / 10 : ℝ) (4 / 5 : ℝ) ∧
+      q ^ 5 - q ^ 4 + q ^ 3 + q ^ 2 - 1 = 0 := by
+  have hcont : ContinuousOn (fun q : ℝ => q ^ 5 - q ^ 4 + q ^ 3 + q ^ 2 - 1)
+      (Set.Icc (7 / 10 : ℝ) (4 / 5 : ℝ)) := by fun_prop
+  have hle : (7 / 10 : ℝ) ≤ 4 / 5 := by norm_num
+  have hmem : (0 : ℝ) ∈ Set.Icc
+      ((7 / 10 : ℝ) ^ 5 - (7 / 10 : ℝ) ^ 4 + (7 / 10 : ℝ) ^ 3 + (7 / 10 : ℝ) ^ 2 - 1)
+      ((4 / 5 : ℝ) ^ 5 - (4 / 5 : ℝ) ^ 4 + (4 / 5 : ℝ) ^ 3 + (4 / 5 : ℝ) ^ 2 - 1) := by
+    constructor <;> norm_num
+  obtain ⟨q, hq, hq0⟩ := intermediate_value_Icc hle hcont hmem
+  exact ⟨q, hq, hq0⟩
+
+/-- The reduction the docstring above describes, **proved** rather than
+    asserted: over `q > 0`, the two channel values agree exactly when the
+    quintic vanishes. -/
+theorem jonesSymmetric_eq_jonesMixed_iff (D : DescartesData) :
+    jonesSymmetric D = jonesMixed D ↔
+      D.q ^ 5 - D.q ^ 4 + D.q ^ 3 + D.q ^ 2 - 1 = 0 := by
+  have hq0 : D.q ≠ 0 := ne_of_gt D.q_pos
+  unfold jonesSymmetric jonesMixed
+  rw [neg_inj]
+  field_simp
+  constructor <;> intro h <;> nlinarith [h, sq_nonneg D.q, pow_pos D.q_pos 4]
+
+/-- **There is a Descartes universe in which the two `n = 3` channel values
+    are equal.**
+
+    The headline consequence of the two results above, and the reason
+    `descartes_n3_both_detected` is scoped to non-vanishing: at this `q` the
+    unknot's symmetric-channel value and the trefoil's mixed-channel value are
+    the *same real number*, so exhibiting both non-zero says nothing about the
+    two summands being distinguished.
+
+    Numerically `q ≈ 0.7795446638`, both channels `≈ -2.0623447988` (50 dps).
+    Separating the channels needs `DescartesMarkovTrace.trSummand`. -/
+theorem jones_channels_not_separating :
+    ∃ D : DescartesData, jonesSymmetric D = jonesMixed D := by
+  obtain ⟨q, hq, hroot⟩ := jones_channels_coincide
+  obtain ⟨hlo, hhi⟩ := hq
+  have hpos : 0 < q := by linarith
+  have hne : q ≠ 1 := by intro h; rw [h] at hhi; norm_num at hhi
+  refine ⟨⟨q, hpos, hne, -6, rfl, 2, rfl⟩, ?_⟩
+  exact (jonesSymmetric_eq_jonesMixed_iff _).mpr hroot
+
+/-! ### The characters do separate, where the Jones pair does not
+
+`jones_channels_not_separating` above is a negative about the *particular
+pair of Jones values* `descartes_n3_both_detected` names. It is not a
+statement about the framework, and the object that does separate the
+summands — the per-partition character `χ^λ` — already exists in the corpus
+(`tools/hecke-engine/src/seminormal.rs`, Hoefsmit seminormal form, general
+`n` and `λ`; MPFR variants alongside).
+
+On the single generator `σ₁`, at `n = 3` with the two `≤ 2`-row partitions
+of 3, those characters are
+
+    χ^[3](σ₁)   = q          (symmetric, spin 3/2, dim 1)
+    χ^[2,1](σ₁) = q − q⁻¹    (mixed symmetry, spin 1/2, dim 2)
+
+so their difference is `q⁻¹`, which never vanishes. Verified against the
+native seminormal path at eight sample `q` to better than `1e-45`
+(`computations/descartes_n3_channel_separation_probe.py`), including at the
+`q*` of `jones_channels_not_separating` itself.
+-/
+
+/-! #### The two representations, written down
+
+The characters below are **traces of matrices**, not asserted values. An
+earlier version of this section defined `charSymmetricSigma := q` and
+`charMixedSigma := q − q⁻¹` outright and proved they differ — true, and with
+the right numbers, but it derived nothing about representations, which is the
+defect class this whole file is being repaired for.
+
+`λ = [3]` is one-dimensional and sends every generator to `q`.
+
+`λ = [2,1]` is two-dimensional, with basis the two standard Young tableaux
+of that shape. In the Hoefsmit seminormal basis `σ₁` is diagonal — `1` and
+`2` share a row in one tableau and a column in the other, giving the
+eigenvalues `q` and `−q⁻¹` — while `σ₂` mixes them:
+
+    ρ(σ₁) = [ q , 0 ; 0 , −q⁻¹ ]
+    ρ(σ₂) = [ −1/(q+q³) , b ; b , q³/(1+q²) ]
+
+with `b = √(1 + q² + q⁴)/(1 + q²)`.
+
+Both matrices were read off `pyhecke_native.seminormal_matrices_mpfr` and
+the closed forms verified against it at nine sample `q` to better than
+`1e-40`, before any of this was written
+(`computations/descartes_n3_channel_separation_probe.py`).
+
+**These forms are regular at `q = 1`** — `ρ(σ₂)` becomes
+`[ −1/2 , √3/2 ; √3/2 , 1/2 ]` and both traces vanish, which is the standard
+two-dimensional representation of `S₃` where a transposition has trace `0`.
+The native path returns `NaN` there because it divides by `q − q⁻¹`; that is
+a removable singularity in the implementation, **not** a pole of the
+representation. An earlier note in this arc said otherwise and was wrong.
+-/
+
+/-- The off-diagonal Hoefsmit entry `√(1 + q² + q⁴)/(1 + q²)` of `ρ_[2,1](σ₂)`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def hoefsmitOffDiag (q : ℝ) : ℝ :=
+  Real.sqrt (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2)
+
+/-- `1 + q² > 0`, so it is safe as a denominator. -/
+theorem one_add_sq_pos (q : ℝ) : (0 : ℝ) < 1 + q ^ 2 := by positivity
+
+/-- The radicand of `hoefsmitOffDiag` is non-negative, so the square root is
+    honest and `hoefsmitOffDiag q ^ 2` recovers it. -/
+theorem hoefsmitOffDiag_sq (q : ℝ) :
+    hoefsmitOffDiag q ^ 2 = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+  have hrad : (0 : ℝ) ≤ 1 + q ^ 2 + q ^ 4 := by positivity
+  unfold hoefsmitOffDiag
+  rw [div_pow, Real.sq_sqrt hrad]
+
+/-- `ρ_[2,1](σ₁)` in the Hoefsmit seminormal basis: diagonal, eigenvalues `q`
+    and `−q⁻¹`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def rhoMixedSigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![q, 0], ![0, -q⁻¹]]
+
+/-- `ρ_[2,1](σ₂)` in the Hoefsmit seminormal basis. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def rhoMixedSigma2 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![-(q + q ^ 3)⁻¹, hoefsmitOffDiag q],
+              ![hoefsmitOffDiag q, q ^ 3 / (1 + q ^ 2)]]
+
+/-- Character of the symmetric (spin-3/2) summand `λ = [3]` on `σ₁` at
+    `n = 3`. The representation is one-dimensional and sends each generator
+    to `q`, so the character is its `1 × 1` trace. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charSymmetricSigma (D : DescartesData) : ℝ :=
+  Matrix.trace (Matrix.of ![![D.q]] : Matrix (Fin 1) (Fin 1) ℝ)
+
+/-- Character of the mixed-symmetry (spin-1/2) summand `λ = [2,1]` on `σ₁` at
+    `n = 3` — **the trace of `ρ_[2,1](σ₁)`**, not an asserted value. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charMixedSigma (D : DescartesData) : ℝ :=
+  Matrix.trace (rhoMixedSigma1 D.q)
+
+/-- The symmetric character evaluates to `q`. -/
+theorem charSymmetricSigma_eq (D : DescartesData) : charSymmetricSigma D = D.q := by
+  simp [charSymmetricSigma, Matrix.trace_fin_one]
+
+/-- The mixed character evaluates to `q − q⁻¹` — derived from the matrix. -/
+theorem charMixedSigma_eq (D : DescartesData) : charMixedSigma D = D.q - D.q⁻¹ := by
+  simp [charMixedSigma, rhoMixedSigma1, Matrix.trace_fin_two]
+  ring
+
+/-- **The two `n = 3` channel characters differ by exactly `q⁻¹`.** -/
+theorem charSymmetricSigma_sub_charMixedSigma (D : DescartesData) :
+    charSymmetricSigma D - charMixedSigma D = D.q⁻¹ := by
+  rw [charSymmetricSigma_eq, charMixedSigma_eq]; ring
+
+/-! #### These matrices really are a Hecke representation
+
+Two matrices with the right traces would prove nothing — the point of writing
+them down is that they satisfy the defining relations, which is what makes
+`charMixedSigma` a *character* rather than a number.
+
+Both relations were checked numerically against the same nine sample `q`
+before being stated (`descartes_n3_channel_separation_probe.py`).
+-/
+
+/-- `ρ_[2,1](σ₂)` has the same trace as `ρ_[2,1](σ₁)`, namely `q − q⁻¹`.
+
+    Forced: `σ₁` and `σ₂` are conjugate in the braid group, and conjugate
+    elements have equal character. Here it falls out of the closed forms. -/
+theorem trace_rhoMixedSigma2 (q : ℝ) (hq : q ≠ 0) :
+    Matrix.trace (rhoMixedSigma2 q) = q - q⁻¹ := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have h2 : q + q ^ 3 ≠ 0 := by
+    have : q + q ^ 3 = q * (1 + q ^ 2) := by ring
+    rw [this]; exact mul_ne_zero hq h1
+  simp only [rhoMixedSigma2, Matrix.trace_fin_two, Matrix.of_apply,
+    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
+  field_simp
+  ring
+
+/-- **The determinant of `ρ_[2,1](σ₂)` is `−1`** — the product of the two
+    Hecke eigenvalues `q · (−q⁻¹)`. -/
+theorem det_rhoMixedSigma2 (q : ℝ) (hq : q ≠ 0) :
+    Matrix.det (rhoMixedSigma2 q) = -1 := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have h2 : q + q ^ 3 ≠ 0 := by
+    have : q + q ^ 3 = q * (1 + q ^ 2) := by ring
+    rw [this]; exact mul_ne_zero hq h1
+  have hb := hoefsmitOffDiag_sq q
+  simp only [rhoMixedSigma2, Matrix.det_fin_two, Matrix.of_apply,
+    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
+  have : hoefsmitOffDiag q * hoefsmitOffDiag q = hoefsmitOffDiag q ^ 2 := by ring
+  rw [this, hb]
+  field_simp
+  ring
+
+/-- **The Hecke quadratic relation for `ρ_[2,1](σ₁)`**:
+    `σ² = (q − q⁻¹)·σ + 1`, equivalently `(σ − q)(σ + q⁻¹) = 0`. -/
+theorem rhoMixedSigma1_hecke (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma1 q * rhoMixedSigma1 q
+      = (q - q⁻¹) • rhoMixedSigma1 q + 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma1, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply] <;>
+    field_simp <;> ring
+
+/-- **The Hecke quadratic relation for `ρ_[2,1](σ₂)`**. -/
+theorem rhoMixedSigma2_hecke (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma2 q * rhoMixedSigma2 q
+      = (q - q⁻¹) • rhoMixedSigma2 q + 1 := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  have hbb : hoefsmitOffDiag q * hoefsmitOffDiag q
+      = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+    rw [← hb]; ring
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply,
+      hbb] <;>
+    field_simp
+  -- `field_simp` re-normalises `b * b` back to `b ^ 2` after `hbb` has fired,
+  -- so the square is substituted HERE, once the goal is polynomial.
+  -- `linear_combination … * hb` looks like the natural move and fails: it
+  -- finishes with `ring1`, which cannot clear the `(1 + q²)⁻¹` that `hb`'s
+  -- right-hand side carries.  Rewriting first and then clearing denominators
+  -- with the `1 + q² ≠ 0` in context does work.  The off-diagonal goals have
+  -- no `b ^ 2` and close by `ring`.
+  -- `first | ring | (rw [hb]; …)` does NOT work here; the two passes are
+  -- separated deliberately.
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-- **The braid relation** `ρ(σ₁)ρ(σ₂)ρ(σ₁) = ρ(σ₂)ρ(σ₁)ρ(σ₂)`.
+
+    Together with the two quadratic relations above, this is what makes the
+    pair a representation of `H_3(q)` rather than two matrices that happen to
+    have the right traces — and hence what makes `charMixedSigma` a
+    *character*. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem rhoMixed_braid (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma1 q * rhoMixedSigma2 q * rhoMixedSigma1 q
+      = rhoMixedSigma2 q * rhoMixedSigma1 q * rhoMixedSigma2 q := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  have hbb : hoefsmitOffDiag q * hoefsmitOffDiag q
+      = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+    rw [← hb]; ring
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma1, rhoMixedSigma2, Matrix.mul_apply, Fin.sum_univ_two,
+      hbb] <;>
+    field_simp
+  -- Same shape as `rhoMixedSigma2_hecke` above; see the note there.
+  -- `first | ring | (rw [hb]; …)` does NOT work here; the two passes are
+  -- separated deliberately.
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-! #### Bridge to `QOU.SchurWeyl.HoefsmitRep` — and a duplication, recorded
+
+`QOU/SchurWeyl/HoefsmitRep.lean` has carried `S0`, `S1`, `S0_quadratic`,
+`S1_quadratic` and `S0_S1_braid` since 2026-08 (bean `qou-u86i`, completed).
+**`rhoMixedSigma1` above is `S0` — the same matrix, re-derived.** That is a
+duplication and it is recorded rather than hidden; the corpus-grep checklist
+found it, one step later than it should have been run.
+
+`rhoMixedSigma2` is **not** a duplicate of `S1`, and the difference is the
+useful part. The library form is deliberately *square-root-free* and therefore
+**not symmetric**:
+
+    S1 = [ −1/(q³+q) , 1 ; (q⁴+q²+1)/(q²+1)² , q³/(q²+1) ]
+
+whereas `pyhecke_native.seminormal_matrices_mpfr` — the compute this corpus
+actually runs — returns the **orthogonal** form, symmetric with a square root
+in the off-diagonal. Both are the shape-`(2,1)` representation; they sit in
+different bases, and nothing in the corpus said so.
+
+`rhoMixedSigma2_conj_S1` supplies the change of basis: conjugation by
+`diag(b, 1)`, written without inverses. Since `b > 0` the gauge is invertible,
+so the two are similar, hence the same representation with the same character
+— which is why `trace_rhoMixedSigma2` and the library's trace agree.
+
+Practical consequence: **a Lean statement proved about `S1` transfers to the
+numbers the Rust path produces only through this conjugation.** Reading a
+`pyhecke_native` matrix as though it were `S1` entry-by-entry would be wrong;
+only basis-independent quantities (trace, determinant, spectrum, the relations)
+match directly.
+-/
+
+/-- The diagonal gauge `diag(b, 1)` taking the library's square-root-free `S1`
+    to the orthogonal form the compute returns. -/
+noncomputable def hoefsmitGauge (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![hoefsmitOffDiag q, 0], ![0, 1]]
+
+/-- **`rhoMixedSigma1` is the library's `S0`.** Recorded so the duplication is
+    visible in the code and not only in a commit message. -/
+theorem rhoMixedSigma1_eq_S0 (q : ℝ) :
+    rhoMixedSigma1 q = QOU.SchurWeyl.S0 q := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [rhoMixedSigma1, QOU.SchurWeyl.S0]
+
+/-- **The orthogonal and square-root-free seminormal forms are conjugate**, by
+    the diagonal gauge `diag(b, 1)`:
+
+      `ρ(σ₂) · diag(b,1) = diag(b,1) · S1`.
+
+    Stated without inverses. `hoefsmitOffDiag q > 0`, so the gauge is
+    invertible and this is a genuine similarity. -/
+theorem rhoMixedSigma2_conj_S1 (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma2 q * hoefsmitGauge q
+      = hoefsmitGauge q * QOU.SchurWeyl.S1 q := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma2, hoefsmitGauge, QOU.SchurWeyl.S1, Matrix.mul_apply,
+      Fin.sum_univ_two]
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-- The gauge is non-singular: `√(1 + q² + q⁴)/(1 + q²) > 0`. -/
+theorem hoefsmitOffDiag_pos (q : ℝ) : 0 < hoefsmitOffDiag q := by
+  have hrad : (0 : ℝ) < 1 + q ^ 2 + q ^ 4 := by positivity
+  unfold hoefsmitOffDiag
+  exact div_pos (Real.sqrt_pos.mpr hrad) (one_add_sq_pos q)
+
+/-- **`σ₁` separates the two `n = 3` summands, in every Descartes universe.**
+
+    The positive counterpart to `jones_channels_not_separating`, and the
+    reason that negative is narrow: the difference is `q⁻¹`, and `q > 0`
+    forces `q⁻¹ ≠ 0`, so there is no Descartes `q` at which these two
+    characters agree — including the `q*` where the two *Jones values* do.
+
+    So "both summands are detected" is not out of reach; it needs the
+    detector attached to its summand, which is what
+    `DescartesMarkovTrace.trSummand` is for. What remains is to construct
+    `trSummand` from the Hoefsmit values rather than leave it free — a
+    formalisation of the seminormal representation, not a further open
+    question about the mathematics. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem sigma_separates_n3_channels (D : DescartesData) :
+    charSymmetricSigma D ≠ charMixedSigma D := by
+  intro h
+  have hgap : charSymmetricSigma D - charMixedSigma D = 0 := by rw [h]; ring
+  rw [charSymmetricSigma_sub_charMixedSigma] at hgap
+  exact (inv_pos.mpr D.q_pos).ne' hgap
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke

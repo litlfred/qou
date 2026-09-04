@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-nucl-th-0309051v5/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory Y. M. Cho ∗",
+  "contains": [
+    "library/arxiv-nucl-th-0309051v5/sections/sec-000",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-001",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-002",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-003",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-004",
+    "library/arxiv-nucl-th-0309051v5/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0309051v5",
+    "source_file": "0309051v5.pdf",
+    "source_sha256": "f7ede32125662908f6b09a68c0035d68903aa891b41502b61807c7fbd3a090f3",
+    "pages": 4,
+    "arxiv": {
+      "id": "nucl-th/0309051",
+      "version": "5",
+      "primary_class": null,
+      "stamp_date": "24 Sep 2004"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

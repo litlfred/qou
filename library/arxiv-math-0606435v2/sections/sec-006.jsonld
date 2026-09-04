@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Applications of the representation theory 42",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-006",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-006-01",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-006-02",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-006-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

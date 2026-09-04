@@ -25,7 +25,11 @@ namespace QOU.BraidKnot
     chains from inner to outer in Young's lattice.  Pending the
     Mathlib StandardYoungTableau enumeration. -/
 -- Ref: [hoefsmit1974]
-axiom skewSYTCount : List ℕ → List ℕ → ℕ
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
+-- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
+-- first is a global axiom contaminating `#print axioms` downstream.  No
+-- proposition becomes provable either way.
+opaque skewSYTCount : List ℕ → List ℕ → ℕ := fun _ _ => 0
 
 /-- The figure-eight character in irrep λ of H_k(q) decomposes
     via the branching rule H_k(q) ↓ H_3(q).

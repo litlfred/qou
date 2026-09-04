@@ -13,6 +13,21 @@ from kazhdan_lusztig import permutations_S_n, kl_polynomial, canonical_basis_C_w
 from rho_w_crystal_vertex_trace import atom_canonical_crossings, rho_lambda_of_word, partitions_of, standard_young_tableaux
 from _precision import set_compute_dps, fmt
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 def rsk(w: tuple[int, ...]) -> tuple[list[list[int]], list[list[int]]]:
     """Robinson-Schensted-Knuth correspondence.
     Returns (P, Q) tableaux."""
@@ -60,20 +75,8 @@ def syt_depth(T_dict: dict[int, tuple[int, int]]) -> int:
 
 def main():
     set_compute_dps()
-    # DEAD q0 REMOVED 2026-08-30 (bean qou-0hnz, precedent 462fdd360). This was
-    #     q  = mpf("1.1099785955573347198997632204832250266562084087802")
-    #     qi = mpf(1) / q
-    # AST-verified dead: `q` was read at exactly one place -- to build `qi` --
-    # and `qi` was never read anywhere in the module. So the literal computed
-    # nothing. It was the retired pin A (fca08de7d2, owner ruling 2026-08-22),
-    # and the archeology filed it as Q6 "needs a ruling"; it does not. A dead
-    # assignment has no anchor intent to rule on. Nothing this file prints or
-    # returns changes, and it writes no witness.
-    #
-    # This probe is q0-INDEPENDENT: Kazhdan-Lusztig polynomials and the left-cell
-    # decomposition below are combinatorial in the Coxeter group S_6, with no
-    # numeric q0 anywhere. If a future revision needs q0, resolve it through
-    # `q_parameter` -- do not retype a literal.
+    q = mpf(Q_50_DIGIT_STR)
+    qi = mpf(1) / q
 
     print("=== PROBE 4 KL BATCH ===")
     n = 6

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T18:25:03.192217+00:00",
-  "commitSha": "4fd2bb31f23ac836be10a1e6d54d73b7568f5309",
+  "computedAt": "2026-09-04T00:44:56.568945+00:00",
+  "commitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "assertions": [
     {
       "name": "m_e_cancels_exactly",
@@ -39,8 +39,8 @@
   "durationMs": 0,
   "computation": "c-knot-tau-transfer-artifact",
   "scriptFile": "c_knot_tau_transfer_artifact_probe.py",
-  "scriptHash": "949d290e45bc",
-  "scriptCommitSha": "05b980f2163baca49064d1b90566a3781e7ba900",
+  "scriptHash": "1ee21313f982",
+  "scriptCommitSha": "15870814e53915f7de951b2fc64122bc4c8140c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -75,7 +75,7 @@
     "tier2_E2": "2.2237605",
     "closes_B_AME_to_pct": "-0.0362"
   },
-  "mu0_MeV_DERIVED": "1.6295104",
+  "mu0_MeV_DERIVED": "1.6295106",
   "C_knot": "5.85287",
   "tau_transfer_decomposition": {
     "tier0_ratio_numeric_E_rot_over_B_A": "5.3135591",
@@ -96,7 +96,8 @@
   },
   "audit_only": true,
   "tier": "fibre→archimedean τ-transfer decomposition; derive-then-check; scope-(a); artifact-vs-real verdict; nothing wired; no fit.",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true,
-  "q0Anchor": "ambiguous",
-  "q0AnchorReason": "Reads a hardcoded, truncated q₀ literal (Q0_STR, 24 sig digits) carrying the muon vintage-A prefix 1.10997859555 — a pin RETIRED 2026-08-22 — instead of resolving through q_at(). Undetermined because the literal names a superseded vintage that no live anchor maps to: it is neither the current muon pin nor proton. Fix is a source edit to read q_at(), which moves published numbers and is tracked by bean qou-cds3, not a restamp."
+  "q0AnchorReason": "Every published number here is a function of q0: h = q0 - 1/q0, hbar_q = 1 - 1/q0, v = sqrt(q0), and C_knot is described by this producer's own docstring as a PURE q0-GEOMETRY RATIO. It previously declared q0Anchor 'independent' on an AST import-cone walk that found no q_parameter reference -- true of the imports, false of the computation, because the pin was a hardcoded literal the walk cannot see (bean qou-9ugp). Now reads Q_50_DIGIT_STR by name; proton per the 2026-08-15/2026-08-30 owner directive."
 }

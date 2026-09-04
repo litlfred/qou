@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-heat-equation-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-heat-equation-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of $q$-heat equation solutions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-equation-unique"
+  ],
+  "text": "q-heat-equation-unique-proof.md",
+  "provenance": "authored"
+}

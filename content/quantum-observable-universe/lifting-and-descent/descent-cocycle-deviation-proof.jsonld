@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-descent-cocycle-deviation",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:descent-cocycle-deviation",
+  "kind": "proof",
+  "title": "Proof of the cocycle deviation formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-descent-cocycle-deviation"
+  ],
+  "text": "descent-cocycle-deviation-proof.md",
+  "provenance": "authored"
+}

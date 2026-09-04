@@ -54,6 +54,18 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 
 
@@ -84,10 +96,10 @@ def main() -> int:
     sgn = (-1) ** (n - 1)
 
     # the bare-trace A=3 magnitude (proved closed form) — for context, at the
-    # PROTON q₀. Read "muon-canonical" until 2026-08-29; the literal below is
-    # the proton pin, 11.5371 ppb from the muon pin it claimed. Label corrected,
-    # value untouched — whether proton is INTENDED here is open (bean qou-fd0e).
-    q0 = mp.mpf('1.1099785827513808075916690956107688798744991218736')
+    # PROTON q₀. (This comment said 'muon-canonical' until 2026-09-04, one line
+    # above the call that reads `Q_50_DIGIT_STR`, which for this stem — not in
+    # `ideal_muon` — resolves to the proton pin; bean qou-9ugp.)
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     h = q0 - 1 / q0
     deficit = h ** 4 * (3 + h ** 2) / (h ** 2 + 4)          # 1 − τ_Borr (dimensionless)
 
@@ -141,7 +153,7 @@ def main() -> int:
         "context": {
             "axis": "Δ_λ binding — A=3 magnitude gate vs the conjugation-parity structure",
             "builds_on": "#4399 GAP-1 (weight-class exclusion), option-e ledger (A=3 magnitude, μ₃)",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
             "no_fit": True,
         },
     }

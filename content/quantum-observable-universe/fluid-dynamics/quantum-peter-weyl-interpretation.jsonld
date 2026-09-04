@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-peter-weyl-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-peter-weyl-interpretation",
+  "kind": "remark",
+  "title": "Closing the completeness gap and recovering the Kelvin dispersion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-quantum-peter-weyl",
+    "papers/quantum-observable-universe/blocks/prop-q-spectral-sobolev",
+    "papers/quantum-observable-universe/blocks/prop-kelvin-dispersion-derivation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-quantum-peter-weyl",
+  "text": "quantum-peter-weyl-interpretation.md",
+  "provenance": "authored"
+}

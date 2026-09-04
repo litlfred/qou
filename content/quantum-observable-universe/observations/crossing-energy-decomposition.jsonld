@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crossing-energy-decomposition",
+  "kind": "proposition",
+  "title": "Crossing energy decomposes into strong and Coulomb channels",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-pair-creation-energy",
+    "papers/quantum-observable-universe/blocks/rem-virtual-particles-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/rem-electron-immortality",
+    "papers/quantum-observable-universe/blocks/rem-crossing-energy-decomposition"
+  ],
+  "tags": [
+    "crossing-energy",
+    "strong-force",
+    "coulomb",
+    "decomposition",
+    "hyperbolic"
+  ],
+  "leanRef": "qou:QOU.Braiding.crossingEnergy_split",
+  "text": "crossing-energy-decomposition.md",
+  "leanSource": "crossing-energy-decomposition.lean",
+  "provenance": "authored"
+}

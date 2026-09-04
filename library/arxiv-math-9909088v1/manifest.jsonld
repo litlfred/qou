@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9909088v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES",
+  "contains": [
+    "library/arxiv-math-9909088v1/sections/sec-000",
+    "library/arxiv-math-9909088v1/sections/sec-001",
+    "library/arxiv-math-9909088v1/sections/sec-002",
+    "library/arxiv-math-9909088v1/sections/sec-003",
+    "library/arxiv-math-9909088v1/sections/sec-004",
+    "library/arxiv-math-9909088v1/sections/sec-005",
+    "library/arxiv-math-9909088v1/sections/sec-006",
+    "library/arxiv-math-9909088v1/sections/sec-007",
+    "library/arxiv-math-9909088v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-9909088v1",
+    "source_file": "9909088v1.pdf",
+    "source_sha256": "52cfb568951f195f96ca14a0048063be4fbe3af24a99164b053a7d5883010f2e",
+    "pages": 9,
+    "arxiv": {
+      "id": "math/9909088",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "15 Sep 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "computation": "markov-bond-rule-forces-pairwise",
+  "scriptFile": "computations/probes/markov_bond_rule_forces_pairwise_probe.py",
+  "computedAt": "2026-09-03T12:45:19.700579+00:00",
+  "contentBlock": "qou-edt7",
+  "description": "The bond rule (qou-g8i1, completed: the Markov property applied at an interior GAP, so it covers the BOUND atom word rather than only the disjoint sector) makes the cluster trace a product over its bonds. Any map carrying products to sums then yields a bond functional, whose connected cumulants above order two vanish identically (PairwiseCumulantVanishing). So b3 = 0 is the TRACE's doing, not the assembly's, and qou-edt7's replacement must break the bond rule -- not merely change f or the edge set.",
+  "bond_factors": {
+    "pp": "1.63215199150517516620217566358",
+    "pn": "1.96789231085327244413814603805",
+    "nn": "2.47753041970276599555839312552"
+  },
+  "q0": "1.10997858275138080759166909561",
+  "z_convention_D": "0.612688037146465251595829863946",
+  "edge_set_rows": [
+    {
+      "edge_set": "chain 0-1-2",
+      "b3": "1.06911e-50"
+    },
+    {
+      "edge_set": "all-pairs",
+      "b3": "0.0"
+    },
+    {
+      "edge_set": "star at 0",
+      "b3": "1.06911e-50"
+    }
+  ],
+  "ame_b3_MeV": "713111/500000",
+  "ame_b2_MeV": "1112283/500000",
+  "ame_b3_over_b2": "950815/1483044",
+  "model_b3": "0 exactly, for every multiplicative-to-additive f",
+  "assertions": [
+    {
+      "name": "bond_factors_positive_and_distinct",
+      "passed": true,
+      "detail": "three positive, pairwise distinct bond factors -- so the pairs are genuinely typed and the vanishing below is not a degeneracy"
+    },
+    {
+      "name": "production_functional_b3_vanishes",
+      "passed": true,
+      "detail": "|b3| = 0.0 < 1e-40 at 50 dps -- zero to the limit of the arithmetic, and exactly zero in the Lean"
+    },
+    {
+      "name": "b3_vanishes_for_every_multiplicative_to_additive_f",
+      "passed": true,
+      "detail": "all 5 f give b3 = 0, the discontinuous one included -- so 10a's uniqueness step (continuous Cauchy solutions are c*log), recorded as classical and NOT in Lean, is IRRELEVANT here rather than merely unformalised. The discontinuous row's residual is ~1e-29 because this probe truncates its logarithm to 30 digits before the rational scaling -- that floor is the harness's, not the mathematics'; the Lean statement is exact"
+    },
+    {
+      "name": "ame_b3_is_nonzero_so_the_family_is_excluded",
+      "passed": true,
+      "detail": "b3 = +1.426222 MeV != 0 instantiates no_traceFunctional_of_b3_ne_zero: the measured binding is not f o (bond-rule trace) for ANY such f -- the whole family at once, not one f at a time"
+    },
+    {
+      "name": "edge_set_is_irrelevant_once_the_trace_factorises",
+      "passed": true,
+      "detail": "every edge set gives b3 = 0: the cumulant subtracts exactly the pair terms the product contains, whatever the product ranges over. So the replacement qou-edt7 asks for is not a different edge set either"
+    }
+  ],
+  "allPassed": true,
+  "lean": "QOU.Mass.MarkovBondRuleForcesPairwise",
+  "scope": "(b) on bindings of the form f o (bond-rule trace of the atom word), invariant named: the bond rule makes the cluster trace a product over PAIRS, so the connected part above order two has nothing to be built from. (a) on everything else.",
+  "caveats": [
+    "This probe does NOT re-verify the bond rule. qou-g8i1 did, on real Hecke traces (16 nuclei numerically to 4.45e-31, 6 symbolically); here it is the stated premise, exactly as it is in the Lean, which carries it as a hypothesis rather than an axiom.",
+    "It refutes no physics and excludes no non-trace carrier. A many-body term sourced from outside the atom-word trace is entirely untouched.",
+    "Whether the bond rule extends past the nuclei qou-g8i1 verified it on is open; if it fails at some A, the exclusion lapses there.",
+    "The 'discontinuous' f in check 3 is a Q-linear map on the exponent lattice of this finite sample -- a stand-in for a Hamel-basis Cauchy solution, not a construction of one. It shows the conclusion does not use continuity; it is not a claim about pathological solutions in general.",
+    "alpha = E0 = m_e/(q0(q0-1)) is derived at working precision (not a pasted decimal) and enters only as an overall scale and cancels from every vanishing claim -- b3 = 0 holds for alpha = 0 too. No accuracy claim is made and none is possible from a quantity that is identically zero."
+  ],
+  "related": [
+    "QOU.Mass.PairwiseCumulantVanishing",
+    "QOU.MassTheory.MayerThreeBodySign",
+    "probes/ursell-chain-mismatch.witness.json"
+  ],
+  "source": "AME2020; bean qou-g8i1 (bond rule); docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md s10a",
+  "scriptHash": "fd5192a82056",
+  "scriptCommitSha": "ccf34387eebfcb5ebe35922dbd9529b3b89365ee",
+  "commitSha": "b244062b19705d1be08448e1edcd204b33d312a8",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": true
+}

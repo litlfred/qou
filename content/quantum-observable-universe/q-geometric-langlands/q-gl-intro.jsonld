@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sec-q-gl-intro-prose",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:q-gl-intro-prose",
+  "kind": "prose",
+  "title": "Introduction to $q$-Geometric Langlands",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared",
+    "papers/quantum-observable-universe/blocks/rem-kummer-filtration-obstruction",
+    "papers/quantum-observable-universe/blocks/rem-fibre-functor-rigidity"
+  ],
+  "text": "q-gl-intro.md",
+  "provenance": "authored"
+}

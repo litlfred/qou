@@ -22,7 +22,19 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 from schur_principal_mpmath import partitions_of,_f_lambda,schur_principal_mpmath,_wenzl_constants
 from threerow_chi_sparse import chi_atom_sparse
-Q0=mp.mpf('1.1099785827513808076')
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 USTAR=mp.findroot(lambda u:-u**6-u**4+u**3+u**2+1, mp.mpf('1.13')); QSTAR=USTAR**2
 def delta(l):
     c=tuple(sum(1 for p in l if p>i) for i in range(l[0]))

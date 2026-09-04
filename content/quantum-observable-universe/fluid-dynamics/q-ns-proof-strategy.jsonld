@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-ns-proof-strategy",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-ns-proof-strategy",
+  "kind": "remark",
+  "title": "Proof strategy: three mechanisms for $q$-deformed regularity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness",
+    "papers/quantum-observable-universe/blocks/thm-quantum-peter-weyl"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness",
+  "tags": [
+    "proof-strategy",
+    "regularity",
+    "enstrophy",
+    "UV-damping"
+  ],
+  "text": "q-ns-proof-strategy.md",
+  "provenance": "authored"
+}

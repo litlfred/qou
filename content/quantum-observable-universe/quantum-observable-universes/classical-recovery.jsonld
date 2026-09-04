@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-recovery",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-recovery",
+  "kind": "remark",
+  "title": "Classical recovery of q-deformed operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-vector-field"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv",
+  "tags": [
+    "q-deformation",
+    "classical-limit"
+  ],
+  "text": "classical-recovery.md",
+  "provenance": "authored"
+}

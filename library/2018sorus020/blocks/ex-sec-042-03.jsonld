@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/blocks/ex-sec-042-03",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "The trefoil knot",
+  "pageStart": 51,
+  "pageEnd": 54,
+  "text": "ex-sec-042-03.md",
+  "derivedFrom": "library/2018sorus020/sections/sec-042",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

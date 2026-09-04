@@ -49,12 +49,14 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from witness_base import q0_comparison  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 CODATA_INV_ALPHA = "137.035999084"
 SIGMA_PPB = 0.15
-Q_PROTON = "1.109978582751380808"
+Q_PROTON = Q_50_DIGIT_STR   # proton pin BY NAME (bean qou-4bef, 2026-09-03)
 
 
 def qint(n):
@@ -135,7 +137,7 @@ def main() -> int:
 
     # ── 2b. the parameter-free θ-ladder: residual + anchor stability ──
     print("\n[2b] parameter-free θ-ladder  1/α = T + α[2]_q/(8π) − α²[3]_q/(8π)²:")
-    Q_MUON = "1.1099785955573347198997632204832250266562084087802"
+    Q_MUON = q_muon_at(50)   # live muon derivation BY NAME; the literal here was the RETIRED pin
     lad = {}
     for aname, qs in (("proton", Q_PROTON), ("muon", Q_MUON)):
         qa = mp.mpf(qs)
@@ -148,10 +150,10 @@ def main() -> int:
         roots = mp.polyroots([-L2a, L1a, Ta, -1])
         aa = min([mp.re(r) for r in roots if abs(mp.im(r)) < mp.mpf("1e-30") and mp.re(r) > 0],
                  key=lambda r: abs(r - mp.mpf("0.0073")))
-        res_ppb = float((1 / aa - inva_c) / inva_c * 1e9)
+        res_ppb = (1 / aa - inva_c) / inva_c * mp.mpf(10) ** 9   # mpf, never float64
         lad[aname] = res_ppb
-        print(f"    {aname:7s}: 1/α = {mp.nstr(1/aa, 15)}   residual = {res_ppb:+.3f} ppb "
-              f"({abs(res_ppb)/SIGMA_PPB:.1f}σ)")
+        print(f"    {aname:7s}: 1/α = {mp.nstr(1/aa, 15)}   residual = {mp.nstr(res_ppb, 5)} ppb "
+              f"({mp.nstr(abs(res_ppb)/SIGMA_PPB, 3)}σ)")
     print(f"    [form B reference at proton: +0.313 ppb = 2.1σ]")
     print("    SIGN CAVEAT: the − on the α² term is required by the window, not yet")
     print("    derived (a dressed-α inversion α = α_tree(1+c₁α+...) would supply the")
@@ -193,18 +195,21 @@ def main() -> int:
     wb.add_data("L2_required", {"value": mp.nstr(L2_req, 10), "two_sigma": mp.nstr(2 * dL2, 6),
                                 "definition": "(1/alpha_CODATA - T - alpha*[2]q/(8pi))/alpha^2 at proton pin"})
     wb.add_data("candidates", results)
-    wb.add_data("theta_ladder_residuals_ppb", {k: v for k, v in lad.items()})
+    wb.add_data("theta_ladder_residuals_ppb", {k: fmt(v, 20) for k, v in lad.items()})
     wb.add_assertion("evaluator_validated",
-                     computed=1.0 if (v1 and v2 and v3 and sym) else 0.0, expected=1.0, tolerance=0.5,
+                     computed=("1" if (v1 and v2 and v3 and sym) else "0"), expected="1", tolerance="0.5",
                      source="theta(a,a,0)=[a+1] (both), theta(1,1,2)=[3]_q, permutation symmetry — all exact")
     wb.add_assertion("grammar_reproduces_one_loop",
-                     computed=1.0 if ok_L1 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=("1" if ok_L1 else "0"), expected="1", tolerance="0.5",
                      source="L=1 grammar term (circle bare eval [2]_q over 8pi) is identically the working form-B H")
     wb.add_assertion("dictated_candidate_ratio_recorded",
-                     computed=best_ratio, expected=1.12, tolerance=0.05,
+                     computed=fmt(best_ratio, 20), expected="1.12", tolerance="0.05",
                      source="-[3]_q/(8pi)^2 vs required TOTAL O(alpha^2): ratio ~1.12 (near-miss, outside 2 sigma) — "
                             "recorded as the constrained-class benchmark, not a derivation")
-    wb.save()
+    wb.save(q0_comparison(
+        muon=mp.mpf(Q_MUON), proton=mp.mpf(Q_PROTON),
+        reason="theta-ladder residual at both pins on purpose (anchor stability); the proton "
+               "(default) leg carries the verdict"))
     print(f"\n  ({time.monotonic() - t0:.1f}s wall)")
     return 0
 

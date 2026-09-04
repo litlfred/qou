@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2104.06067v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Determinant type Murnaghan-Nakayama rule",
+  "pageStart": 12,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-2104.06067v1/blocks/prose-sec-002",
+    "library/arxiv-2104.06067v1/blocks/thm-sec-002-01",
+    "library/arxiv-2104.06067v1/blocks/cor-sec-002-02",
+    "library/arxiv-2104.06067v1/blocks/rem-sec-002-03",
+    "library/arxiv-2104.06067v1/blocks/thm-sec-002-04"
+  ],
+  "derivedFrom": "library/arxiv-2104.06067v1/manifest",
+  "sourceDocument": "library/arxiv-2104.06067v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: can CONCENTRATION of A_sigma close the area input? Measured: no.",
  "probe": "m1_area_fluctuation_scale",
  "bean": [
   "qou-t6hc",
@@ -413,5 +415,5 @@
  ],
  "passed": 7,
  "total": 7,
- "ms": 44721
+ "ms": 46694
 }

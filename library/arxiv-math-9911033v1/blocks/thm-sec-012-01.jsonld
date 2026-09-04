@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9911033v1/blocks/thm-sec-012-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "text": "thm-sec-012-01.md",
+  "derivedFrom": "library/arxiv-math-9911033v1/sections/sec-012",
+  "sourceDocument": "library/arxiv-math-9911033v1/manifest",
+  "provenance": "ingested"
+}

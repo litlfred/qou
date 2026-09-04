@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-no-quasi-zeros",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-no-quasi-zeros",
+  "kind": "remark",
+  "title": "Algebra without quasi-zeros",
+  "cites": [
+    "references/leitnerpawloski2004"
+  ],
+  "tags": [
+    "glossary",
+    "algebra",
+    "ground-ring"
+  ],
+  "defines": [
+    "no-quasi-zeros"
+  ],
+  "text": "glossary-no-quasi-zeros.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2408.04921v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING",
+  "contains": [
+    "library/arxiv-2408.04921v2/sections/sec-000",
+    "library/arxiv-2408.04921v2/sections/sec-001",
+    "library/arxiv-2408.04921v2/sections/sec-002",
+    "library/arxiv-2408.04921v2/sections/sec-003",
+    "library/arxiv-2408.04921v2/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2408.04921v2",
+    "source_file": "2408.04921v2.pdf",
+    "source_sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
+    "pages": 24,
+    "arxiv": {
+      "id": "2408.04921",
+      "version": "2",
+      "primary_class": "math.RT",
+      "stamp_date": "25 Sep 2024"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

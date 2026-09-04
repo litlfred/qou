@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hal-01215114/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Application",
+  "pageStart": 5,
+  "pageEnd": 5,
+  "text": "../sections/sec-007-application.md",
+  "derivedFrom": "library/hal-01215114/manifest",
+  "sourceDocument": "library/hal-01215114/manifest",
+  "provenance": "ingested"
+}

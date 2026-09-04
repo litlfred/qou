@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.1533v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the third order helicity of magnetic fields on invariant domains in S3 R. Komendarczyk ∗",
+  "contains": [
+    "library/arxiv-0808.1533v1/sections/sec-000",
+    "library/arxiv-0808.1533v1/sections/sec-001",
+    "library/arxiv-0808.1533v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0808.1533v1",
+    "source_file": "0808.1533v1.pdf",
+    "source_sha256": "85bb9732afdd70ea2b62816da6f471ba3dce6ce2c4647b23eb7e4b62cbc277f7",
+    "pages": 31,
+    "arxiv": {
+      "id": "0808.1533",
+      "version": "1",
+      "primary_class": "math.DG",
+      "stamp_date": "11 Aug 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -79,13 +79,25 @@ from _precision import set_compute_dps  # noqa: E402
 # 2026-08-26). `-h/2` is `strict_averaged`, the COLOUR-BLIND convention.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 
 # ── derived substrate + interface factors (0 params) ──────────────────────────
-Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale
 

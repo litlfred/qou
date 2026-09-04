@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tm-notation",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-notation",
+  "kind": "prose",
+  "title": "Notation and conventions",
+  "tags": [
+    "transfer-matrix",
+    "notation",
+    "hecke-algebra",
+    "appendix",
+    "self-contained"
+  ],
+  "text": "tm-notation.md",
+  "provenance": "authored"
+}

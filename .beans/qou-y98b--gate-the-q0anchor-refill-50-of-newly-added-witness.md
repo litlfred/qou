@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-28T15:24:07Z
-updated_at: 2026-08-28T15:42:09Z
+updated_at: 2026-09-03T09:06:25Z
 ---
 
 Claimed by branch `claude/q0-anchor-refill-gate-2026-08-28`, PR #5891.
@@ -139,3 +139,239 @@ The 1678 backlog. The gate stops the inflow; draining is separate work, and the
 partition says how to scope it: UNDECLARED (1193) is a manifest+builder problem
 over 1149 producers, NOT_BUILDER (356) needs producer migration, NO_PRODUCER (55)
 are orphans needing a producer or a deletion.
+
+
+## 2026-09-03 — continuing on claude/q0-refill-147-2026-09-03, PR #6454
+
+PR #5891 (this bean's original claim) is MERGED; the gate is live and it is now
+firing. Its own cause partition said the drain was 'a manifest+builder problem
+over 1149 producers' and left it open. This is the first tranche of that drain,
+scoped to what the gate actually reports.
+
+**The 150 the ratchet calls NEW is two things, and neither is quiet debt.**
+  * The baseline records generated_from_rev origin/main 03f57c2b75 (2026-08-28)
+    but was committed into a tree from 08-30/09-01. Measured: 114 of the 150
+    already existed on main at the commit that last touched the baseline, and
+    0 of the 150 existed at 03f57c2b75. Stale on arrival.
+  * Add-commit dates: 73 on 08-30, 48 on 08-31, 15/7/1 on 09-01..03. Almost all
+    t7qv / M1 / milnor. Live output, still arriving — consistent with this
+    bean's own ~50%-of-arrivals rate.
+
+**Triage of the 150** (cone trace for q0 reads + WitnessBuilder check):
+  115  UNDECLARED, reads q0, no muon signal  -> declared physical_proton (#6454)
+   22  NOT_BUILDER (hand-rolled)             -> producer-side, M1 arc's own
+   10  no q0 signal at all                   -> want 'independent' + reason
+    1  muon_pin_A_residual_surface_audit     -> (E1) comparison, needs q0Values
+    2  NO_PRODUCER (bnn/bpp-higher-a-resumable)
+
+The manifest declaration cannot move a number: q_parameter keys on ideal_muon
+alone (substrate/q_parameter.py:108), so these stems already resolved to proton.
+The entry only makes the declaration positive so build()'s require_declared
+passes. Verified both directions.
+
+**Correction to my own first pass.** I reported 24 witnesses as having no
+producer. 22 of them do — the resolver keyed on scriptFile and on a
+witness-stem->script-stem guess, and the M1 cluster names its producer after the
+epic (m1-area-symmetry.witness.json <- wlambda_covariance_epic_M1_area_symmetry.py).
+All 22 are hand-rolled, so the exclusion stands; only the reason was wrong.
+Any witness->producer tool keyed on stem is blind to the whole
+wlambda_covariance_epic_* family.
+
+**Detector blindness, measured, not fixed.** _Q0_FIELDS is a four-name allowlist
+('q_0_50dps','q0','q_0','q0_50dps'). Of the 150, 29 record a prefix-matching q0
+value somewhere and 14 record it ONLY under a key the allowlist does not know
+(q, q0_value, q0Value, q0_muon_pin, q0_proton_pin, q0_current, z, z_1,
+q_core_window, abs_mu_sym). Payload evidence outranks the manifest in
+resolve_q0_anchor_payload_first, so those are witnesses that PROVE their own pin
+and the resolver cannot read it.
+
+**Environment hazard (qou-x5mi) probed, not assumed.** Three of the smallest
+declared producers re-run and diff byte-identical to HEAD modulo provenance —
+only +q0Anchor/+q0Value. A bounded 93-producer sweep is running to establish
+how far that generalises; anything that moves a number is reverted, not landed.
+
+
+## 2026-09-03 — PR #6454 MERGED (593bda46cb, rebase-merge, 5 commits linear)
+
+Landed: 115 manifest declarations under physical_proton (728 -> 843) + 85
+witnesses stamped by re-running their producers. Re-verified on the merge head:
+
+              origin/main   branch
+  unstamped      1748        1663    (-85)
+  NEW refill      153          68    (-85)
+
+Both still red; the gate was red before and is 85 less red now. Baseline file
+untouched — nothing widened.
+
+**Sweep result over the 93 build()-path producers:**
+  83  stamp-only (payload byte-identical modulo provenance) -> landed
+   4  'moved' -> diagnosed, see below
+   5  timeout at the 150 s cap
+   1  crash (mu4_magnitude_gap_anatomy_probe: KeyError 'inputs')
+   6  wrote no witness at all
+   0  sprayed a sibling witness (measured, not assumed)
+
+**The 4 movers were four different things, not four instances of one hazard:**
+
+ 1. phase_b_lr_branching_constraint_probe — NOT a mover. MY volatility mask was
+    incomplete: the whole diff was `build_s`, that producer's own spelling of a
+    wall-clock timing. Landed. Lesson: the mask cannot be a fixed list.
+ 2. operator_selection_active_set_probe — a genuine STALE CONSUMER, and the
+    re-run is the fix. Its section 2 reads nucleus-real-sdp-*.witness.json and
+    republishes their duals. It had the deuteron at active_blocks
+    [(2,1,1,1,1),(2,2,2),(3,3)] / y0_star -0.014433988; the live upstream (and
+    the re-run) give [(4,2),(5,1),(6,)] / y0_star +0.06426714876225478.
+    Upstream was regenerated by 393fec6bfa, whose message claims "full
+
+propagation" — it did not reach this consumer, and nothing detected it because
+    a stale consumer is self-consistent and its assertions still pass (5/5
+    before and after). y0_star is the LP net-constraint shadow price and it
+    SIGN-FLIPS. Bounded: checked the other 4 consumers of nucleus-real-sdp-*,
+    none republishes the deuteron duals, so the gap was this one file.
+ 3. muon_pin_migration_stage1_inventory — inventories the migration, so it
+    tracks corpus state by design. Not landed, not a defect.
+ 4. four_body_term_and_the_h12_collapse — RESOLVED 2026-09-03, and it is NOT a
+    mover either. Re-run under a widened mask, the entire diff is a build time:
+
+        data/h12_blocks/build_seconds   '0.04' -> '0.05'
+        assertions[1]/source            "... built 0.04s; ..." -> "... built 0.05s; ..."
+
+    Note the second line. The same timing is FORMATTED INTO AN ASSERTION'S
+    `source` STRING, so no field-name mask can ever reach it — a witness that
+    prints a duration into human-readable prose is non-reproducible by
+    construction, and a re-run comparison will call it MOVED forever. That is a
+    detector-blindness entry in its own right, and a producer-side defect worth
+    fixing (drop the timing from the assertion source; keep it in its own field).
+
+**CONCLUSION: the qou-x5mi environment hazard did not appear ONCE in a
+93-producer sweep.** All four apparent movers are accounted for — two are
+timings my mask missed, one is a real upstream staleness the sweep usefully
+surfaced, one is an inventory that tracks corpus state by design. Zero are
+mpmath-version drift. This does not refute qou-x5mi (that bean measured four
+producers that genuinely moved, by a different method and on a different set);
+it bounds it: on this population the rate is 0/87 completed, so a producer-side
+declaration is far cheaper than that bean's framing implies. Scope-(a): this is
+about these 93 producers, not about all producers.
+
+**Not done, and whose:** the 22 hand-rolled M1 producers (wlambda_covariance_epic_*)
+need a one-line producer-side save({"q0Anchor": ...}) each — the M1 arc's own;
+the 10 with no q0 signal want "independent" + a reason, which needs a deeper
+cone trace than the file-local grep that classified them; 1 comparison audit
+(muon_pin_A_residual_surface_audit) needs q0Values; 2 orphans
+(bnn/bpp-higher-a-resumable) have no producer at all.
+
+
+### CORRECTION to item 4 above, same day — "a producer-side defect worth fixing" is WRONG
+
+I wrote that formatting `build_s` into an assertion's `source` string is a
+producer-side defect. Read at the producer, it is not:
+
+    ok = max(D12) == 297 and abs(norm - 1) < 1e-12 and build_s < 60
+    assertions.append(("A2_h12_is_seven_small_blocks", ok,
+                       f"7 blocks, max dim {max(D12)}, sum y.dim={norm:.12f}, "
+                       f"built {build_s:.2f}s; reach by A: {reach}"))
+
+The assertion's own predicate includes `build_s < 60` — the build staying under
+a minute IS part of what this assertion claims, so the measured time IS the
+evidence for it, and printing it in `source` is correct. Likewise
+`data/h12_blocks/build_seconds` is legitimate telemetry.
+
+**The defect is in the COMPARISON, not the producer.** A re-run diff that keys
+volatility on field NAMES cannot reach a value formatted into prose, so it will
+report this witness MOVED forever. The fix is to normalise timing-shaped
+substrings (`\b\d+\.\d+\s*s\b` -> `<T>`) in the comparison, which is what the
+second sweep does. Proposing a producer edit here would have been me widening
+scope into a live arc to fix something that is not broken.
+
+Same shape as the `build_s` mask gap two items up, one level deeper: the first
+was a field name I had not listed, this is a value with no field name at all.
+
+
+## MEASURED 2026-09-04 — the warn-only gate FIRES CORRECTLY AND DOES NOT REDUCE THE REFILL
+
+The gate this bean asked for exists. It is the q0Anchor block of
+`scripts/precommit-precision-warn.sh`, landed `0465ce1ec5` at
+2026-09-04T04:15Z. It is warn-only by owner decision (2026-08-25: the
+push-side block was offered and declined).
+
+**It works, and it is not working.** Those are two different claims and both
+were measured.
+
+### The mechanism fires
+
+Tested end-to-end this session: dropped an unstamped
+`computations/zz-hook-probe-delete-me.witness.json` into the tree and fed the
+hook a synthetic `git commit` payload. It printed
+
+    NEW       computations/zz-hook-probe-delete-me.witness.json
+
+in 14 s, exit 0, correct text. So "the warning never reaches anyone" is
+**excluded** for the NEW path — which matters, because the gate's own commit
+message says it was repairing an early exit that had hidden brand-new
+witnesses from the whole hook. That repair holds.
+
+### The rate did not move
+
+Method matches this bean's original measurement — witnesses ADDED between two
+revs, read out of git, not two standing counts.
+
+    window   0465ce1ec5..HEAD   345 commits, 8.4 h
+    added    43
+    stamped  19
+    UNSTAMPED 24  =  55.8%   [95% CI 41.0 - 70.7]
+
+Against this bean's own pre-gate windows (45.5 % / 51.6 % / 59.4 % at 250 /
+100 / 500 commits), 55.8 % sits **inside the band**. The CI is wide enough
+that a modest improvement cannot be excluded; it is not wide enough to admit
+the gate having stopped the refill.
+
+Note the ratchet reports `NEW = 10` for the same period, not 24. Both are
+right and they answer different questions: 10 is "not in
+`q0-anchor-missing-baseline.json`", 24 is "added in this window and currently
+unstamped". The 14-file gap is paths already carried in the baseline — a
+witness deleted and re-added does not read as new to the ratchet.
+
+### It is not a bypass, and it is not a cost
+
+Two candidate causes for "fires but does not work", both excluded by
+measurement rather than by argument:
+
+1. **API commits skip Bash hooks.** A commit made through
+   `mcp__github__push_files` / `create_or_update_file` never invokes a
+   `PreToolUse` Bash hook. Checked the committer of all 24: `Claude
+   <noreply@anthropic.com>` 14, `Carl Leitner <litlfred@gmail.com>` 8, `Claude
+   <ofri@ibiblio.org>` 2 — **zero** `GitHub <noreply@github.com>`. Every one
+   was a local commit, so the hook fired on every one.
+
+   **Do NOT read the 8 under the owner's git identity as the owner.** All 24
+   carry a `Co-Authored-By: Claude` / `Claude-Session:` trailer — **24 agent
+   commits, 0 human ones.** The committer field records whichever identity the
+   container's git was configured with, not who decided to commit. So the
+   population proceeding past this warning is *entirely agent sessions*, which
+   is a different fact from the raw split and points at a different remedy: a
+   gate aimed at agents reaches 100 % of the observed refill, and the 2026-08-25
+   objection that a blocking hook would brick a bare container's commits is
+   weaker than it looks, because the q0 block is pure stdlib JSON with no
+   mpmath/numpy dependency (unlike the raw-float64 ratchet it shares a script
+   with).
+2. **The fix is too expensive to do at commit time.** Classified all 24 by
+   their producer's write path: **20 already call `WitnessBuilder` /
+   `.save()`**, 0 hand-roll `json.dump`, 4 have no producer the glob could
+   locate. So in ~83 % of cases the skipped fix is the one-line
+   `save({"q0Anchor": ..., "q0AnchorReason": ...})` the warning itself prints.
+
+**So the warning is seen and proceeded past.** That is what warn-only means,
+and it is the honest reading: a banner that costs nothing to ignore is
+ignored at roughly the rate it was ignored before it existed.
+
+### Scope
+
+Scope-(a): this measures **this gate over these 345 commits**. It says
+nothing about whether a *blocking* gate would work, and it is not a claim
+that warn-only hooks never work — the raw-float64 half of the same script
+was not measured here.
+
+**The decision of what to do about it is the owner's** — AGENTS.md records
+that warn-only was chosen deliberately and says not to upgrade it to blocking
+without asking again. What is new is that the 2026-08-25 decision was made
+without evidence on whether warn-only works, and now there is some.

@@ -1,97 +1,34 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.BraidKnot.knot_mass_unified
+# `QOU.BraidKnot.knot_mass_unified` — intentionally empty; the formalisation lives in the content-block sibling
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts`](quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts).
+This module used to hold `KnotMassUnifiedContext` together with a projection that discharged the
+manuscript claim from that class's own fields.  Both are removed (2026-08-31).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidKnot.knot_mass_unified` resolves to a real declaration in the `qou`
-Lake package.
+**Why the declaration was empty.**  The class carried the claim as its own
+axioms and the accompanying declaration handed them straight back, so a
+`[KnotMassUnifiedContext]` binder assumed nothing and the declaration
+asserted nothing.  The file's own docstring said as much: *"the substantive
+mathematical content is carried by the context-class axioms"*.  It is the
+`proof-no-self-assuming-projection` shape of AGENTS.md §3b-cond item 5, and the
+class was inhabited by `Unit` and zero (bean `qou-z9ws`).
+
+**Why removal costs nothing readable.**  Three facts, all measured:
+
+1. The content block's `lean.ref` is `qou:QOU.BraidKnot.knot_mass_unified`, and per AGENTS.md §0a
+   resolution checks the **sibling first** — so the block already resolves to
+   [`mass-theory/knot-mass-formula-unified.lean`](../../mass-theory/knot-mass-formula-unified.lean),
+   never to this file.
+2. That sibling carries the real formalisation: `descendedMarkov`, `braneTower`, `electronMass`, `frobeniusCoCasimirTraceFallback`, `frobeniusCoCasimirTrace`, `frobenius_codim_trace_n3`.
+3. **Nothing imports this module** and nothing else in `content/` names the
+   class (measured 2026-08-31 across every `.lean` in the tree).
+
+So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.
+
+The file is kept rather than deleted so that the `lean.ref`'s second resolution
+candidate — `<lakeRoot>/QOU/BraidKnot/knot_mass_unified.lean` — still exists as a real path.
+
+Bean `qou-z9ws`; `docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md`.
 -/
-
-namespace QOU.BraidKnot
-
-
-/-- Abstract context for the `knot_mass_unified` claim — manuscript-themed
-    typed fields below; the boxed six-term spectral expansion of
-    `𝔪(ϱ)` is encoded as a single equality on `mass`.  The identity is a pure
-    additive/subtractive relation, so the base ring need only be a commutative
-    additive group `[AddCommGroup R]` (§7c) — the identity uses `+`/`−`, with no
-    ordering or multiplication; the archimedean
-    specialisation `R := ℝ` is a downstream instantiation, not baked in here. -/
-class KnotMassUnifiedContext (R : Type*) [AddCommGroup R] where
-  /-- Substrate parameter `q : R`. -/
-  q : R
-  /-- The strand count of the braid representative. -/
-  n : ℕ
-  /-- The categorical mass `𝔪(ϱ) : R`. -/
-  mass : R
-  /-- The descended piece `|tr_M(T_w)| : R`. -/
-  descended : R
-  /-- The brane-tower piece (two sums of `Li_2^q`). -/
-  brane_tower : R
-  /-- The Frobenius co-Casimir piece `m_e · tr_M(C_{dim_q}^{H_n})`. -/
-  frobenius_co_casimir : R
-  /-- Manuscript boxed identity — the unified knot-mass formula:
-      `𝔪(ϱ) = descended − brane_tower + frobenius_co_casimir`. -/
-  claim_boxed_six_term_expansion :
-    mass = descended - brane_tower + frobenius_co_casimir
-
-/-- **Manuscript statement** (full body):
-
-Let $\varrho \colon \mathbf{1} \to A$ be a vortex with braid
-representative $\beta \in B_n$ and Hecke mass element
-$T_w \in H_n(R, q)$
-([Hecke mass element](#def:hecke-mass-element)).  Let
-$\hat V_i^{\mathrm{full}}$ denote the additive-Wedderburn traced
-volume at generator $i$ of the braid word.  Let
-$\Phi_q(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-1}$ be the quantum
-dilogarithm and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.
-
-*The boxed theorem below is the **six-term spectral expansion** of
-the Gröbner–Shirshov-NF mass identity
-([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
-$\mathfrak{m}(\varrho) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
-The descended $\lvert\!\operatorname{tr}_M(T_w)\!\rvert$ piece supplies
-the GB-NF normal-form trace; the brane tower and Frobenius co-Casimir
-are the spectral decomposition of $\rho_K$ across Wedderburn blocks.
-Empirically the six-term sum recovers $\rho_K^{\mathrm{CODATA}}$ to
-$\sim 5\%$ for $A = 1$ but under-predicts by $22\%$–$31\%$ for $A \in \{2, 3\}$
-(`rho-k-codata-vs-six-term.witness.json`), so the spectral closure of
-$\rho_K$ from braid data alone remains open.*
-
-**Theorem (unified knot mass formula).**
-*The categorical mass of the vortex $\varrho$ is*
-
-$$
-  \boxed{
-    \mathfrak{m}(\varrho)
-    \;=\;
-    \underbrace{\bigl|\mathrm{tr}_M(T_w)\bigr|}_{\text{descended}}
-    \;-\;
-    \underbrace{\sum_{i=0}^{n-2} \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}}|\bigr)
-               - z^2 \sum_{0 \leq i < j \leq n-2}
-                  \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
-    \;+\;
-    \underbrace{m_e \cdot \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(R, q)}\bigr)}_{\text{Frobenius co-Casimir}}
-  }
-$$
-
-*where $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$
-is the symmetric q-dilogarithm with
-$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
-([mass endomorphism tower proof](#prop:mass-endomorphism-towe
-
-[…truncated; see manuscript for remainder…]
-
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts
-def knot_mass_unified {R : Type*} [AddCommGroup R] [ctx : KnotMassUnifiedContext R] :
-    ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir :=
-  ctx.claim_boxed_six_term_expansion
-
-end QOU.BraidKnot

@@ -1,11 +1,11 @@
 ---
 # qou-1mrn
 title: 'GAP/FIXED: main did not build from source — 3 QOU library modules (JHopf, JetHorizon, Summary)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T11:02:05Z
-updated_at: 2026-08-29T11:02:38Z
+updated_at: 2026-08-29T17:23:57Z
 ---
 
 Surfaced by the qou-snh8 lake-cache reseed (full from-source lake build QOU). CI is billing-disabled and standalone library .lean files have no QA sidecar, so nothing caught these. THREE modules broke main's from-source build; all fixed + verified lean-direct (exit 0, sorry-free) + pushed on claude/lean-qa-backlog-2h3f8d (PR #5985):

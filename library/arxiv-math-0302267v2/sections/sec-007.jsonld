@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0302267v2/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Pour M un motif de Tate mixte, le sous-quotient W−2n(M )/W−2(n+2)(M ) de M est",
+  "pageStart": 7,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-math-0302267v2/blocks/prose-sec-007",
+    "library/arxiv-math-0302267v2/blocks/prop-sec-007-01",
+    "library/arxiv-math-0302267v2/blocks/prop-sec-007-02",
+    "library/arxiv-math-0302267v2/blocks/prop-sec-007-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
+  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "provenance": "ingested"
+}

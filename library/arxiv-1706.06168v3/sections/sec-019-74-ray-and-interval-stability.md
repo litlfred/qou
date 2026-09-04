@@ -7,6 +7,7 @@ section_number: 7.4
 pages: 26-31
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 We now apply the above results to projectively convex regions of th e form H+ ∪J c, where J ⊂ R is some
 connected set. From this, we obtain a classiﬁcation of operators w hich both preserve strong J-rootedness

@@ -297,6 +297,15 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
             "Q_beta_n_MeV": Q_beta_n_mev,
             # mpf, not `float(B)` — see the note on the shared tail's exit.
             "B_MeV": B,
+            # Δtr is the DIMENSIONLESS categorical scalar — pure Hecke trace
+            # arithmetic at 50 dps with no experimental input, so it is the part
+            # of B that is genuinely precise. Exposed because Q_β CANCELS in any
+            # ratio of two B_pred: B(a)/B(b) = Δtr(a)/Δtr(b), so a consumer
+            # taking ratios (mirror asymmetries, per-A comparisons) reads the
+            # categorical content directly, with no experimental factor in it
+            # at all — B_MeV's own precision is capped by Q_β's 8.5e-07
+            # relative experimental uncertainty, not by the arithmetic.
+            "delta_tr_exact": mp.nstr(delta_tr, mp.mp.dps),
             "n_atom_terms": -1,
             "n_free_terms": -1,
             "use_closed_form": False,
@@ -473,6 +482,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         # through `_precision.fmt` (that is a feature: the cast is now visible
         # at the point where precision is actually being given up).
         "B_MeV": B,
+        # Companion to B_MeV on this route too: dimensionless, experiment-free.
+        "delta_tr_exact": str(delta_tr),
         "n_atom_terms": atom_n_terms,
         "n_free_terms": free_n_terms,
         "use_closed_form": use_closed_form,
@@ -611,11 +622,32 @@ if __name__ == "__main__":
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
               f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
-        results.append({**r, "atom": name, "B_AME_MeV": B_AME,
-                         "delta_m_over_m_pct": dm})
+        # float() on BOTH derived numbers, here at the witness boundary — see
+        # the note above `safe_results`. `dm` inherits B_MeV's mpf-ness through
+        # the subtraction, so without this it stringifies to 50 digits exactly
+        # as B_MeV would, changing a JSON number into a JSON string under every
+        # reader and advertising 50 digits for a quantity whose Q_beta(n) input
+        # is a seven-digit measurement.
+        results.append({**r, "atom": name,
+                        "B_MeV": float(r["B_MeV"]),
+                        "B_AME_MeV": B_AME,
+                        "delta_m_over_m_pct": float(dm)})
 
     # Coerce sympy/mpmath fragments to JSON-serialisable types so
     # WitnessBuilder.save() (which does strict json.dumps) succeeds.
+    #
+    # NOTE the explicit float() casts at the append site above: B_MeV is an
+    # `mpf` in the returned dict on purpose (see the notes at both return
+    # sites), because collapsing it in memory would throw away digits a ratio
+    # consumer can legitimately use. The cast belongs HERE, at the witness
+    # boundary, where the precision is actually being given up — `default=str`
+    # below would otherwise render the mpf as a 50-digit STRING, which is
+    # wrong twice over: it changes the field's JSON TYPE from number to string
+    # under every existing reader, and it advertises 50 digits for a quantity
+    # whose Q_beta(n) input carries an 8.518e-07 RELATIVE CODATA uncertainty.
+    # Fifty digits on a seven-digit measurement is fake precision by ~44
+    # orders. The genuinely-50-dps companion is `delta_tr_exact`, which is
+    # dimensionless and has no experimental input in it at all.
     safe_results = json.loads(json.dumps(results, default=str))
     builder = (
         WitnessBuilder("binding-canonical", engine="sympy+mpmath")
@@ -642,6 +674,7 @@ if __name__ == "__main__":
         .set_audit_only("docs/audits/categorical-vs-fitted-q-decay-ba.md")
         .add_parameter("q0", q0)
         .add_parameter("Q_beta_n_MeV", float(_Q_BETA_N))
+        .add_parameter("precision_note", "B_MeV is bounded by EXPERIMENT, not by float64. Q_beta(n) = M_N - M_P - M_E carries a CODATA uncertainty of 6.664e-07 MeV, i.e. 8.518e-07 relative -- about 7.7e9 times coarser than float64's 1.1e-16. Storing B_MeV as a float is therefore already ~9 orders more precision than the physics supports, and serialising it at 50 dps would be fake precision by ~44 orders. Do NOT add a B_MeV_exact. What IS genuinely 50-dps is delta_tr_exact, the dimensionless trace difference: no experimental input enters it, and Q_beta cancels in any ratio B(a)/B(b) = delta_tr(a)/delta_tr(b), so ratio consumers should read delta_tr_exact rather than B_MeV.")
         .add_data("results", safe_results)
     )
     out = builder.save()

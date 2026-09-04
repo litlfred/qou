@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/characteristic/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "For those pro",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "contains": [
+    "library/characteristic/blocks/prose-sec-000"
+  ],
+  "derivedFrom": "library/characteristic/manifest",
+  "sourceDocument": "library/characteristic/manifest",
+  "provenance": "ingested"
+}

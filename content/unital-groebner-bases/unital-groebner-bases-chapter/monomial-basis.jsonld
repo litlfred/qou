@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/def-monomial-basis",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:monomial-basis",
+  "kind": "definition",
+  "title": "Monomials and monomial bases",
+  "tags": [
+    "groebner-basis",
+    "monomial"
+  ],
+  "leanRef": "ugb:UGB.GrobnerShirshov.AlgElement",
+  "text": "monomial-basis.md",
+  "leanSource": "monomial-basis.lean",
+  "provenance": "authored"
+}

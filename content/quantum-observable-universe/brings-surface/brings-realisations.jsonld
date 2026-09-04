@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-realisations",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-realisations",
+  "kind": "remark",
+  "title": "Realisations of Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-universe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "text": "brings-realisations.md",
+  "provenance": "authored"
+}

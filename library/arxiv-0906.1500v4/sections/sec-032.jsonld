@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0906.1500v4/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 14. The proof is essentially based on the Multiplicativity",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-0906.1500v4/blocks/prose-sec-032",
+    "library/arxiv-0906.1500v4/blocks/lem-sec-032-01"
+  ],
+  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
+  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-partition-sum-proton-residual",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:partition-sum-proton-residual",
+  "kind": "proposition",
+  "title": "Proton tower residual = $m_e \\cdot \\mathrm{tr}_M(C_{\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition"
+  ],
+  "tags": [
+    "proton",
+    "residual",
+    "frobenius",
+    "co-casimir",
+    "self-dual",
+    "partition-sum",
+    "hook-length",
+    "mass-endomorphism",
+    "gb-filtration"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.proton_tower_residual_frobenius",
+  "text": "partition-sum-proton-residual.md",
+  "leanSource": "partition-sum-proton-residual.lean",
+  "provenance": "authored"
+}

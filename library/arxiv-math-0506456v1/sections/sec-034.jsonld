@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0506456v1/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Chern–Simons invariants",
+  "pageStart": 35,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-math-0506456v1/blocks/prose-sec-034",
+    "library/arxiv-math-0506456v1/blocks/lem-sec-034-01",
+    "library/arxiv-math-0506456v1/blocks/thm-sec-034-02",
+    "library/arxiv-math-0506456v1/blocks/prop-sec-034-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0506456v1/manifest",
+  "sourceDocument": "library/arxiv-math-0506456v1/manifest",
+  "provenance": "ingested"
+}

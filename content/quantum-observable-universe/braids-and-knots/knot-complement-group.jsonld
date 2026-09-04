@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-complement-group",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-complement-group",
+  "kind": "remark",
+  "title": "Fundamental group of the knot complement",
+  "interprets": "papers/quantum-observable-universe/blocks/def-localized-knot",
+  "tags": [
+    "knot-group",
+    "psl2",
+    "mobius"
+  ],
+  "text": "knot-complement-group.md",
+  "provenance": "authored"
+}

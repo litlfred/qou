@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-force-carrier-bring-uniqueness",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:force-carrier-bring-uniqueness",
+  "kind": "proof",
+  "title": "Proof of force carrier bring uniqueness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness"
+  ],
+  "text": "force-carrier-bring-uniqueness-proof.md",
+  "provenance": "authored"
+}

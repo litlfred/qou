@@ -7,6 +7,7 @@ section_number: 6
 pages: 18-23
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 We consider here only simple point processes and often assume EN <∞ as well. If ρk : (Rd)k → R+
 are measurable functions, then the simple point process Z is said to have joint intensities {ρk} if for

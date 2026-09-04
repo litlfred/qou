@@ -7,6 +7,7 @@ section_number: 3
 pages: 12-13
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 In this section we describe how the colored Jones polynomial s of the ﬁgure-eight
 knot E are related to representations of the fundamental group at SL(2; C) and

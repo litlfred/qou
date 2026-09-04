@@ -17,7 +17,7 @@
     {
       "name": "required_phase_is_below_every_available_eigenphase",
       "passed": true,
-      "detail": "21 elliptic pairs span 0.24949514..2.968607; the required 0.056594738 is below all of them, the smallest by a factor 4.40845"
+      "detail": "21 elliptic pairs span 0.24909643..2.9690161; the required 0.056594738 is below all of them, the smallest by a factor 4.40141"
     },
     {
       "name": "ellipticity_is_common_among_corpus_species",
@@ -80,124 +80,124 @@
         "pairing": "-0.5040094526"
       },
       "tritium -> He3     (Q=18.6keV)": {
-        "disc": "4.461430672",
-        "det_A0": "-1.161193239",
-        "det_B0": "0.722610019",
-        "pairing": "-0.6767744476"
+        "disc": "4.46219058",
+        "det_A0": "-1.161219502",
+        "det_B0": "0.7225399292",
+        "pairing": "-0.6768680723"
       },
       "C14 -> N14         (Q=156 keV)": {
-        "disc": "12.94888732",
-        "det_A0": "-12.20773253",
-        "det_B0": "2.307911568",
-        "pairing": "6.662599136"
+        "disc": "12.80478664",
+        "det_A0": "-12.18004558",
+        "det_B0": "2.307784141",
+        "pairing": "6.671064778"
       }
     },
     "pairs_examined": 105,
     "elliptic_pairs": 21,
     "elliptic_fraction_pct": "20.0",
-    "eigenphase_min": "0.24949514021",
-    "eigenphase_max": "2.968606957",
-    "smallest_over_required": "4.408451228",
+    "eigenphase_min": "0.249096430802",
+    "eigenphase_max": "2.96901611136",
+    "smallest_over_required": "4.401406237",
     "elliptic_list": [
       {
         "a": "b11",
         "b": "n14",
-        "phase": "1.637408292"
+        "phase": "1.635495494"
       },
       {
         "a": "be9",
         "b": "neutron",
-        "phase": "1.936592062"
+        "phase": "1.937270215"
       },
       {
         "a": "be9",
         "b": "proton",
-        "phase": "2.465443873"
+        "phase": "2.465003865"
       },
       {
         "a": "c12",
         "b": "n14",
-        "phase": "0.4258731204"
+        "phase": "0.4259449863"
       },
       {
         "a": "deuterium",
         "b": "he4",
-        "phase": "2.858555094"
+        "phase": "2.858694742"
       },
       {
         "a": "deuterium",
         "b": "neutron",
-        "phase": "2.064346847"
+        "phase": "2.064336444"
       },
       {
         "a": "deuterium",
         "b": "protium",
-        "phase": "2.833918567"
+        "phase": "2.833966747"
       },
       {
         "a": "deuterium",
         "b": "proton",
-        "phase": "2.178145632"
+        "phase": "2.1781155"
       },
       {
         "a": "he3",
         "b": "he4",
-        "phase": "2.968606957"
+        "phase": "2.969016111"
       },
       {
         "a": "he3",
         "b": "neutron",
-        "phase": "2.064498784"
+        "phase": "2.064540107"
       },
       {
         "a": "he3",
         "b": "protium",
-        "phase": "2.766919773"
+        "phase": "2.766965821"
       },
       {
         "a": "he3",
         "b": "proton",
-        "phase": "2.185288652"
+        "phase": "2.185322372"
       },
       {
         "a": "he4",
         "b": "li6",
-        "phase": "0.2494951402"
+        "phase": "0.2490964308"
       },
       {
         "a": "he4",
         "b": "n14",
-        "phase": "1.000393152"
+        "phase": "0.9995440947"
       },
       {
         "a": "li6",
         "b": "neutron",
-        "phase": "2.043814143"
+        "phase": "2.043820143"
       },
       {
         "a": "li6",
         "b": "protium",
-        "phase": "2.82349781"
+        "phase": "2.823745401"
       },
       {
         "a": "li6",
         "b": "proton",
-        "phase": "2.126369643"
+        "phase": "2.126336351"
       },
       {
         "a": "li7",
         "b": "n14",
-        "phase": "1.21777814"
+        "phase": "1.216643069"
       },
       {
         "a": "n14",
         "b": "protium",
-        "phase": "2.04619422"
+        "phase": "2.047087856"
       },
       {
         "a": "n14",
         "b": "tritium",
-        "phase": "1.746045351"
+        "phase": "1.747151098"
       },
       {
         "a": "neutron",
@@ -212,14 +212,14 @@
     "corrects": "Step 23's significance claim. Its mechanism stands and is confirmed by n-p having the smallest |disc| of the 21 elliptic pairs, but ellipticity is common (20 % of corpus pairs), so 'structural' must not be read as 'special'.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
+  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
   "durationMs": 0,
   "scriptFile": "qbeta_level_k_operator_and_real_decays_probe.py",
-  "scriptHash": "e7853ed47670",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5ba2da73f7f44091efeeae01f94fd9a751be02d5",
-  "computedAt": "2026-08-31T21:07:55.992305+00:00",
+  "scriptHash": "24b730301e79",
+  "scriptCommitSha": "99b8130cca816f6d3176bad4e38f7de7ca2fa6ba",
+  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "computedAt": "2026-09-03T05:11:28.338780+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
+  "q0Anchor": "proton",
   "q0Value": "1.1099785827513808"
 }

@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 tangles; this is the framed analog of the oriented tangle category OT introduced by
 Turaev in [T2] and also appears in [EGNO, Remark 8.10.3] where it is deno tedFT .

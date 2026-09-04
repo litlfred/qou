@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+  "pageStart": 54,
+  "pageEnd": 57,
+  "contains": [
+    "library/hdr/blocks/prose-sec-024",
+    "library/hdr/blocks/thm-sec-024-01",
+    "library/hdr/blocks/thm-sec-024-02",
+    "library/hdr/blocks/thm-sec-024-03",
+    "library/hdr/blocks/thm-sec-024-04",
+    "library/hdr/blocks/thm-sec-024-05",
+    "library/hdr/blocks/thm-sec-024-06",
+    "library/hdr/blocks/thm-sec-024-07"
+  ],
+  "derivedFrom": "library/hdr/manifest",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

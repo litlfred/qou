@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-adelic-substrate-integration",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:adelic-substrate-integration",
+  "kind": "remark",
+  "title": "Motivation for the adelic substrate and Tate integration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-adelic-substrate",
+  "cites": [
+    "references/tate1967"
+  ],
+  "tags": [
+    "adeles",
+    "macroscopic-limit",
+    "tate-integral",
+    "global"
+  ],
+  "text": "adelic-substrate-integration.md",
+  "provenance": "authored"
+}

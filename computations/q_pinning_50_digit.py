@@ -345,8 +345,11 @@ if __name__ == "__main__":
             "anchor": "m_p/m_e",
             "anchor_role": (
                 "DERIVATION ROUTE — the identity that defines q0. NOT the "
-                "layer emitted: under the ideal_muon manifest entry this run "
-                "returns the muon literal and this solve does not execute. "
+                "layer emitted: under the ideal_muon manifest entry this "
+                "solve does not execute and q0 is DERIVED live from "
+                "q_muon_at() over constants.MASS_RATIO_MU_E_STR (CODATA "
+                "2022). It is not read back out of this witness — that "
+                "self-certifying read was removed by fca08de7d2. "
                 "For the emitted layer read q0Anchor (muon)."
             ),
             "m_p_over_e_str": MASS_RATIO_P_E_STR,

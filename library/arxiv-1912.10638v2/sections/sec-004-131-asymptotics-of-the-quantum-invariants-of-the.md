@@ -7,6 +7,7 @@ section_number: 1.3.1
 pages: 4-5
 source_pdf: 1912.10638v2.pdf
 source_sha256: 612e44871d91d2e2
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by"
 ---
 Let M1 and M2 be sequences of integers in N with limiting ratios
 si = lim

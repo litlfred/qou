@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Weighted dependency graph for the σi’s and central limit theorem for the magneti-",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "contains": [
+    "library/ising/blocks/prose-sec-013",
+    "library/ising/blocks/thm-sec-013-01"
+  ],
+  "derivedFrom": "library/ising/manifest",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

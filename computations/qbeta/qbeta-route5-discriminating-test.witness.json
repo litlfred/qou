@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T13:53:05.434489+00:00",
-  "commitSha": "d9f33f77857f8e013adf6c1623b3220187758640",
+  "computedAt": "2026-09-03T05:00:14.257164+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "verdict_correct__alpha_D",
@@ -124,7 +124,7 @@
   "computation": "qbeta-route5-discriminating-test",
   "scriptFile": "qbeta_route5_discriminating_test.py",
   "scriptHash": "efb15fd6428b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "1c7c1476a92adc78a7345bfb39fef4e3dbd76713",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -139,7 +139,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -355,5 +355,7 @@
       "content/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean — names psi as the z<1 threshold",
       "content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md — psi as convention-C Gram degeneracy at u = 1/psi, multiplicity 5"
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

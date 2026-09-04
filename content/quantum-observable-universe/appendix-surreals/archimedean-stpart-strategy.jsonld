@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-archimedean-stpart-strategy",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:archimedean-stpart-strategy",
+  "kind": "remark",
+  "title": "Proof strategy for archimedean = $\\mathrm{St}$ of surreal QOU",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-classical-limit-stpart"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-archimedean-stpart",
+  "tags": [
+    "surreal-numbers",
+    "archimedean",
+    "standard-part",
+    "proof-strategy",
+    "open-problem"
+  ],
+  "text": "archimedean-stpart-strategy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-one-dim-qou-channel",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:one-dim-qou-channel",
+  "kind": "definition",
+  "title": "One-dimensional QOU channel (optical fibre)",
+  "tags": [
+    "optical-fibre",
+    "1d-channel",
+    "braid-carrier",
+    "markov-trace",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.Information.OneDimChannel",
+  "text": "one-dim-qou-channel.md",
+  "leanSource": "one-dim-qou-channel.lean",
+  "provenance": "authored"
+}

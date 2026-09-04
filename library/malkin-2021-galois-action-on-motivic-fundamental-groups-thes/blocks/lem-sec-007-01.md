@@ -1,0 +1,1 @@
+Let-\(bearationalcurveover . SupposeG∈

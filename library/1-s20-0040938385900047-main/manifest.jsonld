@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1-s20-0040938385900047-main/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Volumes of hyperbolic three-manifolds",
+  "contains": [
+    "library/1-s20-0040938385900047-main/sections/sec-000",
+    "library/1-s20-0040938385900047-main/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1-s20-0040938385900047-main",
+    "source_file": "1-s2.0-0040938385900047-main.pdf",
+    "source_sha256": "f0db9d97f2ae83c62b2d3cee1f88cee48d1d86c2a3f5e307e4496521edb1665d",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

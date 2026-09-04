@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-groebner-nf-computation-table1-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:groebner-nf-computation-table1-data",
+  "kind": "table",
+  "title": "Table 1 from rem:groebner-nf-computation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-groebner-nf-computation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "groebner-nf-computation-table1-data.md",
+  "provenance": "authored"
+}

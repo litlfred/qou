@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/4geo-dedi-rev/blocks/cor-sec-025-02",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "cor-sec-025-02.md",
+  "derivedFrom": "library/4geo-dedi-rev/sections/sec-025",
+  "sourceDocument": "library/4geo-dedi-rev/manifest",
+  "provenance": "ingested"
+}

@@ -21,31 +21,28 @@ export default proposition({
   // It sits immediately above this block in sec:color-algebra, so the edge
   // reads backward.
   uses: ["def:octonion-algebra"],
-  // The ref now names a DECLARATION, not the module.
+  // lean.ref repointed 2026-09-03 (bean qou-lvux / qou-8fl1 item 3).
   //
-  // What is backed: `sym2_dim_3` gives dim Sym²(V) = 6 at dim V = 3 — the
-  // arithmetic of the "6 | Sym²(3) | no singlet ⇒ complex type" row of the
-  // representation table below. That is all.
+  // Previously `QOU.Eightfold.Sym2Gate.sym2_dim_3 : 3*(3+1)/2 = 6`, an
+  // arithmetic tautology that derived nothing this block claims (AGENTS.md
+  // "Strict Lean Discipline" item 5). The block's one load-bearing Lean-able
+  // sentence is its last: "a self-dual 3 would carry a singlet in Sym² and
+  // fail the gate" — i.e. passing the Sym² gate at dimension three forces
+  // complex type. That is exactly
+  //   QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three
+  // (sorry-free; hypotheses: the gate passes, quaternionic irreps have even
+  // dimension, dim = 3; conclusion: a complex-type irrep is present), with
+  // `real_triple_fails_gate` as the T₁ corollary.
   //
-  // What is NOT backed, and must not be read as machine-checked:
-  //  - this block's headline (PSL(2,7) colour from the octonionic G₂ via the
-  //    Fano plane) has no Lean formalisation anywhere in the corpus;
-  //  - neither does the scope-(b) marked-pair obstruction the .md derives
-  //    (S₄ has no orbit of size ≤ 2 on P², via absolute irreducibility of its
-  //    3-dimensional representation) — that argument is verified in exact
-  //    arithmetic by `s4_marked_pair_obstruction.py`, not in Lean;
-  //  - QOU.Eightfold.Sym2Gate carries dimension SHADOWS, not the SU(3)
-  //    representation-theoretic core: `sym2_dim_3` (Sym²(𝟑) = 6) and the two
-  //    gate applications (`corpus_T1_fails_sym2_gate` / `octonion_3_passes_
-  //    sym2_gate`) stating the singlet count that decides the gate (fail iff
-  //    ≥ 1). The content-free `su3_sym2_irreducible : True` stub was removed
-  //    2026-08-23. The SU(3)-irreducibility that makes the octonion singlet
-  //    count 0 is a Mathlib gap, tracked as bean qou-8fl1 (T2).
-  //
-  // The parity criterion that actually decides the Sym² gate is formalised
-  // (sorry-free, real content) in QOU.Eightfold.Sym2GateParity. It is not
-  // cited as this block's ref because it is a statement about SU(2) irreps,
-  // not about the SU(3) fundamental this block invokes.
+  // What is still NOT backed, and must not be read as machine-checked:
+  //  - the headline (PSL(2,7) colour from the octonionic G₂ via the Fano
+  //    plane) has no Lean formalisation anywhere in the corpus;
+  //  - the scope-(b) marked-pair obstruction (S₄ has no orbit of size ≤ 2 on
+  //    P²) is verified in exact arithmetic by `s4_marked_pair_obstruction.py`,
+  //    not in Lean;
+  //  - that the Günaydin–Gürsey triple IS complex type remains the cited
+  //    literature input (gunaydin-gursey1973); the theorem says what complex
+  //    type buys, not that this triple has it.
   cites: ["gunaydin-gursey1973"],
-  lean: { ref: "qou:QOU.Eightfold.Sym2Gate.sym2_dim_3" },
+  lean: { ref: "qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three" },
 });

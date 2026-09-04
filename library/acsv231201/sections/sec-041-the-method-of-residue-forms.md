@@ -7,6 +7,7 @@ section_number: null
 pages: 275-280
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Deﬁnition 9.20 (strong torality). We say Q satisﬁes the strong torality hy-
 pothesis on the torus T(w) if Q(z) = 0 and|z j| =|w j| for 1≤ j≤ d− 1 implies

@@ -47,3 +47,30 @@ trace already carries. A3 offers no new object.
 Objection (i) was already conceded in this bean's own text (the Casimir gives `(N−Z)²`,
 not `(N−Z)²/A`; the `1/A` is Fermi-gas level density, a separate dynamical input), and
 (iii) — Wigner SU(4) broken by spin-orbit above A ≈ 40 — is untouched and now moot.
+
+## 2026-09-04 — a measurement for the record. NOT a re-opening.
+
+⚠️ This note originally read "promoted to the top lead". **Wrong** — this bean is
+completed, and closed for reasons that remain correct (see above: the `ℓ(λ) > 2`
+annihilation, now also Lean-proved as `QOU/Hecke/RowCap.lean`, and the `2n`
+Casimir collapse). Nothing below re-opens it; the correlation is recorded here
+only because this is where a future reader will look for it.
+
+Correlation of the additive law's residual `B_exp/(E_0.S)` against the three SEMF
+shapes, 2548 measured AME nuclides
+(`computations/qbeta/qbeta_tower_log_z_and_roast_probe.py`):
+
+    (N-Z)^2/A^2   [asymmetry]   **-0.804**
+    A^(-1/3)      [surface]       -0.178
+    Z^2/A^(4/3)   [Coulomb]       -0.044
+
+`docs/audits/2026-09-04-binding-law-options-decision-frame.md` named the SURFACE
+term / edge set (`qou-h7mh`) as "the strongest lead". Wrong by 4x in correlation
+— corrected there. **The dominant missing physics is the symmetry energy, which
+is this bean.**
+
+Sharpening it: the derived law already HAS an `(N-Z)` term, at first order
+`+2(q0-1)(N-Z)`, and it has the **wrong sign** — the data wants `~-0.15(N-Z)`
+(`qou-q7ga`). So the target is not "add a symmetry term" but "explain why the
+isospin Casimir enters with the opposite sign to the q-deformation's own
+splitting of `b_pp` and `b_nn` about `z`".

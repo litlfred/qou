@@ -75,18 +75,6 @@ Audit-only.  Nothing wired; no content block or production script touched.
 """
 from __future__ import annotations
 
-# PATH BRIDGE — required before the provenance stamp can import
-# `qou_substrate` (bean qou-ya1e). That module is not installed and not on
-# PYTHONPATH; it is reachable only through `_path_bridge`, which
-# `migrate_bare_producer_provenance.py` inserted the stamp WITHOUT. The
-# import sits at function scope, so this producer did all its work and then
-# died at the save with ModuleNotFoundError. Idiom copied verbatim from
-# `qbeta/qbeta_c3_candidate_audit.py`.
-import sys as _sys  # noqa: E402
-from pathlib import Path as _Path  # noqa: E402
-_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
-import _path_bridge as _bridge  # noqa: E402, F401
-
 import hashlib
 import json
 import platform
@@ -773,12 +761,46 @@ def main() -> None:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
-    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    # scriptFile a downstream pass had added.
+    #
+    # 🛑 CORRECTED 2026-09-04 (bean qou-zk51). This said "no q0 in this
+    # producer's cone; stamp provenance only" and passed q0_anchor=False,
+    # which stamps `q0Anchor: "independent"`. Both were FALSE, and the
+    # contradiction was inside this same file: line 92 reads the muon anchor's
+    # q0Value out of q-pinning-50-digit.witness.json, line 93 carries the
+    # proton pin, and the `pins_preasymptotic` loop below consumes BOTH --
+    # `q0 = mpf(qs); r = q0 ** 0.25` feeds the moments, the Jacobi recurrence
+    # and every I_F_lower_bound / lambda_min_N this witness reports.
+    #
+    # Measured: the 2026-08-22 muon re-pin (fca08de7d2, A -> CODATA-2022 C)
+    # moves I_F_lower_bound 3.43617345782 -> 3.43617345755, i.e. -0.0786 ppb
+    # against the anchor's own -0.0769 ppb -- a ~1:1 sensitivity, in a witness
+    # declaring it had none.
+    #
+    # A FALSE `independent` is worse than an absent stamp: `q0_anchor_is_declared`
+    # treats it as settled, so no q0 gate ever revisits it, while the
+    # anchor-flip gate (which reads q0Anchor/q0Value) and the value-drift gate
+    # (which reads q0 literals) are both blind to a witness recording only
+    # DERIVED numbers. This producer evaluates at both pins deliberately, so
+    # the honest declaration is "comparison" -- the E1 exception in AGENTS.md
+    # §"q0 anchor convention", not independence.
     from qou_substrate.witness import WitnessBuilder as _WB
     import os as _os  # noqa: E402 -- provenance stamp
     witness.setdefault("scriptFile", _os.path.basename(__file__))
+    # q0Values is what makes the "comparison" claim CHECKABLE rather than
+    # taken on trust: q0_anchor_consistency_audit verifies each named leg
+    # against its canonical pin, and a comparison stamped without it counts
+    # as Q0_COMPARISON_NO_VALUES ("the claim is unchecked"). Measured: adding
+    # the stamp alone moved Q0_ANCHOR_MISSING 1603 -> 1602 and raised
+    # Q0_COMPARISON_NO_VALUES 0 -> 1, i.e. traded one gate red for another.
+    witness["q0Values"] = {"muon": Q0_MUON_STR, "proton": Q0_PROTON_STR}
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=None)
+        witness, script_path=__file__, engine=None, q0_anchor="comparison",
+        q0_anchor_reason=(
+            "deliberate two-pin comparison: pins_preasymptotic evaluates the "
+            "Favard/Jacobi chain at BOTH the muon anchor (read from "
+            "q-pinning-50-digit.witness.json) and the proton pin. Corrected "
+            "2026-09-04 from a false 'independent' -- bean qou-zk51"))
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     log(f"✓ Witness: {WITNESS.name}  (6 assertion blocks, all passed)")
 

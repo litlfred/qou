@@ -1,8 +1,8 @@
 {
   "engine": "python-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T17:03:29.439273+00:00",
-  "commitSha": "4153053248cacfdab84469292b0752021294a6d3",
+  "computedAt": "2026-09-03T04:44:57.499756+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "every_seifert_invariant_is_exactly_affine_in_A",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 114,
+  "durationMs": 124,
   "computation": "every-seifert-invariant-is-affine",
   "scriptFile": "every_seifert_invariant_is_affine_probe.py",
   "scriptHash": "d93cd12b951e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "74a3e61ab30efd378cde991b06675eff86d1d425",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,10 +47,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -156,5 +158,7 @@
       "where_the_gap_actually_is": "upstream of the surface term: the encoding is a word of length linear in A on a strand count linear in A, so every derived invariant inherits that. A surface term needs geometry the encoding does not carry",
       "indexing_bug_recorded": "a first pass assumed 1-based generators, got half-integral genus and 'components = 2', which reads as a SPLIT canonical closure. That was my bug -- generators are 0-based, 0..n-2, all present. Caught by the script printing 'gens used = 5/5' beside 'missing = [5]'"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-dq-squared",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:dq-squared",
+  "kind": "proposition",
+  "title": "$d_q^2$ does not vanish",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-dq-squared"
+  ],
+  "tags": [
+    "q-deformation",
+    "exterior-derivative"
+  ],
+  "leanRef": "qou:QOU.dq_squared",
+  "text": "dq-squared.md",
+  "leanSource": "dq-squared.lean",
+  "provenance": "authored"
+}

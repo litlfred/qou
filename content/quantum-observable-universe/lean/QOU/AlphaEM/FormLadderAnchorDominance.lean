@@ -1,12 +1,11 @@
 /-
 Copyright (c) 2026 QOU contributors. All rights reserved.
 -/
-import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Order.MinMax
+import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Linarith
 
 /-!
 # The α_EM form ladder: its integers are convention-free, and its residual is anchor-dominated
@@ -20,12 +19,12 @@ facts behind `computations/alpha-em-form-ladder.witness.json`:
       Δ₂ = uncomputed archimedean two-loop (weight-3; NOT the −h²Hα² above)
 ```
 
-with the recorded fixed points
-
-| anchor | fixed point | residual vs the witness's CODATA |
-|---|---:|---:|
-| proton | 137.035999313169 | 1.6723 ppb |
-| muon   | 137.036010116763 | 80.5100 ppb |
+with two recorded fixed points (proton- and muon-anchored).  **The recorded
+decimals live in the companion `FormLadderAnchorDominanceChecks.lean`, not
+here** (bean `qou-08zf`, 2026-09-03): they are witness output and CODATA, i.e.
+empirical inputs, and the owner's standing preference is that formal
+mathematics carry none.  This file is the mathematics; the companion is
+recorded-witness arithmetic that *instantiates* it.
 
 ## Part 1 — the ladder's integers need no minimal-strand convention
 
@@ -67,13 +66,15 @@ neighbouring `δ_q` rule genuinely had.
 * `degenerate_correction_is_vacuous` — the one escape, `s = 0`, does equalise
   them, by discarding the prediction entirely.  Named so the exclusion is not
   over-claimed.
-* `anchor_gap_dominates_proton_residual` — on the recorded values the gap is
-  more than `40×` the proton-anchored residual.
-* `leading_term_residual_dwarfs_full_form` — the leading term **alone** misses
-  by more than `5·10⁵×` the full form's proton-anchored residual.  Quoting
-  `q[9]_q[10]_q`'s residual as the framework's α_EM accuracy is a category
-  error of about six orders of magnitude; this file exists partly because that
-  error was made in session and had to be retracted.
+* The instantiation on the recorded values — `predictions_differ`,
+  `anchor_gap_dominates_proton_residual` (gap more than `40×` the
+  proton-anchored residual), `leading_term_residual_dwarfs_full_form` (the
+  leading term **alone** misses by more than `5·10⁵×` the full form's
+  proton-anchored residual; quoting `q[9]_q[10]_q`'s residual as the
+  framework's α_EM accuracy is a category error of about six orders of
+  magnitude, and this file exists partly because that error was made in
+  session and had to be retracted) — is in
+  `QOU.AlphaEM.FormLadder.Checks` (`FormLadderAnchorDominanceChecks.lean`).
 
 ## Honest scope
 
@@ -82,13 +83,19 @@ The witness's own caveats stand and are *not* discharged here: the derivation
 carries **three unproved classes**; the result is **anchor-dependent** (which is
 Part 2's subject, not its refutation); and no coefficient is fitted.  What is
 proved is (i) an arithmetic property of the torus crossing number, and (ii) the
-structural consequence of the two *recorded* residuals — which enter as explicit
-hypotheses or `def`s of measured data, never as derived quantities.
+structural consequence for *any* two anchor predictions — stated over a generic
+commutative ring / integral domain, per §7c; the recorded decimals enter only
+in the companion, as explicit `def`s of measured data, never as derived
+quantities.
 
 Part 1 is generic and convention-free (`ℕ`, `min`).  The genus term is stated
 **division-free over an arbitrary commutative ring** — no `π`, no `Real`, and no
 characteristic hypothesis, per §7c and the standing "rewrite so there is no
-`/2`" steer; only Part 2's comparisons against recorded decimals use `ℝ`.
+`/2`" steer.  Part 2 mentions no `ℝ` at all.
+
+**Tower status (owner ruling 2026-09-03): ORDER-ZERO-ONLY.**  The ladder is the
+leading term plus a one-loop self-coupling on the single force-carrier pair;
+the full `H_n(q)` tower is not used, and nothing here claims otherwise.
 -/
 
 namespace QOU.AlphaEM.FormLadder
@@ -189,39 +196,21 @@ theorem ladder_carriers_transposition_stable :
     crossingNumberTorus 9 2 = 9 ∧ crossingNumberTorus 5 3 = 10 := by
   refine ⟨?_, ?_⟩ <;> decide
 
-/-! ### Part 2 — anchor dominance -/
+/-! ### Part 2 — anchor dominance, generically
 
-/-- Recorded fixed point at the proton anchor (`alpha-em-form-ladder.witness.json`). -/
-def predProton : ℝ := 137.035999313169  -- noqa: P31 - RECORDED witness output, not CODATA
-
-/-- Recorded fixed point at the muon anchor. -/
-def predMuon : ℝ := 137.036010116763  -- noqa: P31 - RECORDED witness output, not CODATA
-
-/-- The reference value the witness scores against. -/
--- noqa: P31 - the CODATA-2018 Cs-recoil value the RECORDED witness scored
--- against. It must track alpha-em-form-ladder.witness.json, not the table:
--- bumping it here alone would desynchronise the Lean from the residuals
--- below, which were computed against this reference.
-def refCodata : ℝ := 137.035999084  -- noqa: P31
-
-/-- Recorded proton-anchored residual, in ppb. -/
-def residProtonPpb : ℝ := 1.6723270482102428
-
-/-- Recorded muon-anchored residual, in ppb. -/
-def residMuonPpb : ℝ := 80.50996334188073
-
-/-- Residual of the leading term `q[9]_q[10]_q` alone, in ppb — the figure that
-must **not** be quoted as the form's accuracy. -/
-def residLeadingOnlyPpb : ℝ := -1552805.3
+No recorded number appears here.  `P` and `M` stand for the proton- and
+muon-anchored predictions, `C` for whatever reference value they are scored
+against; the three statements hold over any commutative ring (the third needs
+cancellation, so an integral domain). -/
 
 /-- **The anchor gap does not depend on the reference value.**
 
 Subtracting the same reference from both predictions cancels: the difference of
 the residuals *is* the difference of the raw predictions.  So the comparison
 between the two anchors is untouched by which CODATA vintage is used — relevant
-because the ladder witness scores against `137.035999084` while
-`alpha-k-per-force-assembly.witness.json` carries `137.035999177`. -/
-theorem anchor_gap_eq_prediction_gap (P M C : ℝ) :
+because the ladder witness scores against one CODATA vintage while
+`alpha-k-per-force-assembly.witness.json` carries another. -/
+theorem anchor_gap_eq_prediction_gap {R : Type*} [CommRing R] (P M C : R) :
     (M - C) - (P - C) = M - P := by ring
 
 /-- **No anchor-blind correction closes the gap.**
@@ -230,39 +219,20 @@ A further term appended to the ladder that does not itself depend on the anchor
 acts as one affine map `x ↦ s·x + c` on both predictions.  For `s ≠ 0` the two
 stay distinct.  So the residual spread cannot be removed by carrying the
 α-expansion further, nor by any other anchor-independent ingredient; only an
-anchor-*dependent* one can move it. -/
+anchor-*dependent* one can move it.  Cancellation of `s` needs an integral
+domain, which is carried as an instance rather than hidden in `ℝ`. -/
 theorem no_anchor_blind_affine_correction_closes_gap
-    (P M s c : ℝ) (hne : P ≠ M) (hs : s ≠ 0) :
+    {R : Type*} [CommRing R] [IsDomain R]
+    (P M s c : R) (hne : P ≠ M) (hs : s ≠ 0) :
     s * P + c ≠ s * M + c := by
   intro h
-  exact hne (mul_left_cancel₀ hs (by linarith))
+  apply hne
+  exact mul_left_cancel₀ hs (add_right_cancel h)
 
 /-- **The one escape, named so the exclusion is not over-claimed.**
 
 `s = 0` does equalise the anchors — by discarding the prediction. -/
-theorem degenerate_correction_is_vacuous (P M c : ℝ) :
-    (0 : ℝ) * P + c = (0 : ℝ) * M + c := by ring
-
-/-- The two recorded predictions are distinct, so the exclusion above applies. -/
-theorem predictions_differ : predProton ≠ predMuon := by
-  unfold predProton predMuon; norm_num
-
-/-- **The anchor gap dominates the proton-anchored residual** — by more than
-`40×` on the recorded values (measured ratio ≈ 47).
-
-This is the quantitative form of "the pin choice is not bookkeeping": it is the
-difference between a ~1.7 ppb result and a ~80 ppb one. -/
-theorem anchor_gap_dominates_proton_residual :
-    residMuonPpb - residProtonPpb > 40 * residProtonPpb := by
-  unfold residMuonPpb residProtonPpb; norm_num
-
-/-- **The leading term alone misses by more than `5·10⁵×` the full form's
-proton-anchored residual** (measured ratio ≈ 9.3·10⁵).
-
-`q[9]_q[10]_q` is one term of a three-term form; its residual is not the form's
-accuracy. -/
-theorem leading_term_residual_dwarfs_full_form :
-    -residLeadingOnlyPpb > 500000 * residProtonPpb := by
-  unfold residLeadingOnlyPpb residProtonPpb; norm_num
+theorem degenerate_correction_is_vacuous {R : Type*} [CommRing R] (P M c : R) :
+    (0 : R) * P + c = (0 : R) * M + c := by ring
 
 end QOU.AlphaEM.FormLadder

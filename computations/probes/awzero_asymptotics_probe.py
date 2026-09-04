@@ -72,18 +72,6 @@ none is tuned to make a check pass.  Nothing here is wired to production.
 
 from __future__ import annotations
 
-# PATH BRIDGE — required before the provenance stamp can import
-# `qou_substrate` (bean qou-ya1e). That module is not installed and not on
-# PYTHONPATH; it is reachable only through `_path_bridge`, which
-# `migrate_bare_producer_provenance.py` inserted the stamp WITHOUT. The
-# import sits at function scope, so this producer did all its work and then
-# died at the save with ModuleNotFoundError. Idiom copied verbatim from
-# `qbeta/qbeta_c3_candidate_audit.py`.
-import sys as _sys  # noqa: E402
-from pathlib import Path as _Path  # noqa: E402
-_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
-import _path_bridge as _bridge  # noqa: E402, F401
-
 import hashlib
 import json
 import platform
@@ -96,8 +84,26 @@ from mpmath import mp, mpf, mpc, nstr, exp as mexp, pi as mpi, log as mlog, sqrt
 HERE = Path(__file__).resolve().parent
 WITNESS = HERE / "awzero-asymptotics.witness.json"
 
-Q_MUON = "1.10997859555733471"      # computations/ layer canonical q₀ (muon pin)
-Q_PROTON = "1.10997858275138081"    # proton pin (package layer), 17 dp like Q_MUON
+# `q_parameter` lives in computations/substrate/ (bean qou-9ugp); the anchor
+# must be read from it so the witness resolves its stamp. Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import apply_q0_comparison  # noqa: E402
+
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+# Both legs were 17-dp transcriptions; they now carry the full 50 digits.
+Q_MUON = nstr(q_muon_at(50), 50, strip_zeros=False)
+Q_PROTON = Q_50_DIGIT_STR
 # Was "1.10997861", commented "proton-pinned spot value" — but that literal is
 # +24.5 ppb from the proton pin, i.e. 2.1x the ~11.5 ppb mu-p substrate tension
 # this very probe measures. A muon-vs-proton comparison run against it was
@@ -689,7 +695,16 @@ def main() -> None:
     import os as _os  # noqa: E402 -- provenance stamp
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=None)
+        witness, script_path=__file__, engine=None, q0_anchor=False)
+    # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+    # pins deliberately, so no anchor list can classify it and it was going
+    # out unstamped. The reason string is kept ASCII on purpose: this
+    # witness is written with json.dump, whose ensure_ascii=True turns any
+    # non-ASCII into a \\uXXXX escape and collapses the shape guard.
+    apply_q0_comparison(witness,
+        muon=Q_MUON, proton=Q_PROTON,
+        reason='measures the A-W zero asymptotics over a w-ladder that includes BOTH substrate pins; the mu-vs-p spread is one of the reported quantities',
+    )
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n✓ Witness: {WITNESS.name}  (5 assertion blocks, all passed)")
 

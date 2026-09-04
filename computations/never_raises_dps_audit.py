@@ -163,6 +163,76 @@ def mp_value_calls(tree: ast.Module) -> list[int]:
     return sorted(out)
 
 
+
+def _module_scope_raisers(tree: ast.Module) -> bool:
+    """Does this module call a raiser at MODULE SCOPE (not inside a def)?"""
+    for node in tree.body:
+        for sub in ast.walk(node):
+            if isinstance(sub, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+                break
+        else:
+            for sub in ast.walk(node):
+                if isinstance(sub, ast.Call):
+                    f = sub.func
+                    nm = (f.attr if isinstance(f, ast.Attribute)
+                          else f.id if isinstance(f, ast.Name) else None)
+                    if nm in RAISERS:
+                        return True
+                if isinstance(sub, ast.Assign):
+                    for t in sub.targets:
+                        if isinstance(t, ast.Attribute) and t.attr == "dps":
+                            return True
+    return False
+
+
+def raises_via_import(path: Path, tree: ast.Module) -> str | None:
+    """The module this file imports that raises dps as an import SIDE EFFECT.
+
+    `mp.dps` is global state, and the module docstring's exemption reasons
+    about one direction of that: a helper inherits its caller's precision, so
+    only runnable files are flagged. The state flows the OTHER way too. A
+    runnable producer that does `import X` where X calls `set_compute_dps()` at
+    module scope has dps raised before a line of its own code executes.
+
+    MEASURED 2026-09-03, by importing each candidate's module-scope imports and
+    reading `mp.dps`: `magnus_sign_row_truncation_probe` and
+    `magnus_tr_decay_perpair_cluster_probe` both go 15 -> **140** through
+    `he4_magnus_omega2_sign_sparse_probe`, which calls `set_compute_dps()` and
+    sets `mp.mp.dps = 140`. They were reported as computing at 15 with 34
+    constructions between them; they compute at 140.
+
+    NOT the clause that was removed above, and the difference is the whole
+    point. That one asked whether a RAISER NAME appeared in an import
+    statement, which proves nothing — `chi_sym_alt_closed_form.py` imported one,
+    never called it, ran at 15, and took the padding ratchet red on main while
+    scoring clean here. This asks whether the IMPORTED MODULE'S OWN CODE calls
+    a raiser at module scope, which is an actual state change.
+
+    One hop, and same-tree only: a deeper or third-party cone is not resolved
+    here, so this UNDER-reports rather than over-reports.
+    """
+    roots = [path.parent, HERE, HERE / "substrate"]
+    for node in tree.body:
+        if isinstance(node, ast.Import):
+            names = [a.name for a in node.names]
+        elif isinstance(node, ast.ImportFrom) and node.module and node.level == 0:
+            names = [node.module]
+        else:
+            continue
+        for name in names:
+            rel = Path(name.replace(".", "/") + ".py")
+            for r in roots:
+                cand = r / rel
+                if not cand.is_file():
+                    continue
+                try:
+                    if _module_scope_raisers(ast.parse(cand.read_text(encoding="utf-8"))):
+                        return name
+                except (SyntaxError, OSError):
+                    pass
+    return None
+
+
 def is_runnable(tree: ast.Module) -> bool:
     """`if __name__ == "__main__":` at module scope.
 
@@ -184,6 +254,7 @@ def emits_witness(src: str) -> bool:
 def scan() -> tuple[dict[str, int], list[dict]]:
     """Return ({path: n_mp_value_calls}, [unparseable rows])."""
     found: dict[str, int] = {}
+    inherited: dict[str, dict] = {}
     broken: list[dict] = []
     for p in sorted(HERE.rglob("*.py")):
         if set(p.relative_to(HERE).parts) & SKIP_DIRS:
@@ -210,9 +281,19 @@ def scan() -> tuple[dict[str, int], list[dict]]:
         if raises_precision(tree) or not is_runnable(tree):
             continue
         calls = mp_value_calls(tree)
-        if calls:
-            found[str(p.relative_to(HERE.parent))] = len(calls)
-    return found, broken
+        if not calls:
+            continue
+        rel = str(p.relative_to(HERE.parent))
+        via = raises_via_import(p, tree)
+        if via:
+            # Not computing at 15, so not a finding — but reported, because
+            # inheriting precision from an import's SIDE EFFECT is fragile:
+            # refactor that module to stop raising and this one silently drops
+            # to 15 with nothing here to say so.
+            inherited[rel] = {"count": len(calls), "via": via}
+            continue
+        found[rel] = len(calls)
+    return found, broken, inherited
 
 
 def self_test() -> int:
@@ -256,6 +337,40 @@ def self_test() -> int:
         if got != want:
             print(f"  FAIL {name}: expected {want}, got {got}")
             bad += 1
+    # The import-side-effect exemption needs cases of its own: a new exemption
+    # with no test is the gap this file's history is a record of. Real files,
+    # because `raises_via_import` resolves an import to a path.
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        d = Path(td)
+        (d / "raiser_mod.py").write_text(
+            "import mpmath as mp\nfrom _precision import set_compute_dps\n"
+            "set_compute_dps()\nmp.mp.dps = 140\n")
+        (d / "importer_only_mod.py").write_text(
+            # The hole that was closed once: imports the NAME, never calls it.
+            "from _precision import set_compute_dps\n")
+        (d / "deep_mod.py").write_text(
+            "def go():\n    from _precision import set_compute_dps\n"
+            "    set_compute_dps()\n")
+        import_cases = [
+            ("detects dps raised by an import's SIDE EFFECT",
+             "import raiser_mod\n", "raiser_mod"),
+            ("does NOT count a module that only IMPORTS a raiser name",
+             "import importer_only_mod\n", None),
+            ("does NOT count a raiser called inside a FUNCTION, not at module scope",
+             "import deep_mod\n", None),
+            ("does NOT count an unresolvable/third-party import",
+             "import numpy\n", None),
+        ]
+        for name, src, want in import_cases:
+            f = d / "probe.py"
+            f.write_text(src)
+            got = raises_via_import(f, ast.parse(src))
+            if got != want:
+                print(f"  FAIL {name}: expected {want!r}, got {got!r}")
+                bad += 1
+        n_extra = len(import_cases)
+
     # A file that does not parse must be reported, never counted as clean.
     try:
         ast.parse("def broken(:\n")
@@ -264,9 +379,9 @@ def self_test() -> int:
     except SyntaxError:
         pass
     if bad:
-        print(f"SELF-TEST FAILED — {bad}/{len(cases) + 1}")
+        print(f"SELF-TEST FAILED — {bad}/{len(cases) + n_extra + 1}")
         return 1
-    print(f"SELF-TEST PASSED — {len(cases) + 1} cases: every condition fires, "
+    print(f"SELF-TEST PASSED — {len(cases) + n_extra + 1} cases: every condition fires, "
           f"every exemption holds, unparseable is not 'clean'.")
     return 0
 
@@ -282,7 +397,7 @@ def main() -> int:
     if a.self_test:
         return self_test()
 
-    found, broken = scan()
+    found, broken, inherited = scan()
     prior: dict[str, int] = {}
     if BASELINE.exists():
         prior = json.loads(BASELINE.read_text())["files"]
@@ -300,6 +415,16 @@ def main() -> int:
     print("=" * 74)
     print(f"  runnable producers never raising dps : {len(found)}")
     print(f"  mpmath value constructions in them   : {total:,}")
+    if inherited:
+        # Named, never silent. These do NOT compute at 15 — measured — so they
+        # are not findings; but inheriting precision from an import's side
+        # effect is fragile, and an exemption nobody can see is the hole this
+        # audit's own history is a record of.
+        n_c = sum(v["count"] for v in inherited.values())
+        print(f"  raise dps only VIA AN IMPORT         : {len(inherited)} file(s), "
+              f"{n_c} construction(s) — not at 15, but fragile:")
+        for f, v in sorted(inherited.items()):
+            print(f"      {v['count']:>4}  {f}\n            inherits from `{v['via']}`")
     if prior:
         print(f"  baseline files / constructions       : {len(prior)} / {base_total:,}")
         print(f"  drained since baseline               : {len(drained)} file(s), "

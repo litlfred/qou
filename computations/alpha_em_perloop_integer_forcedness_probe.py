@@ -36,14 +36,17 @@ import subprocess
 import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 
 CODATA_ALPHA_INV = mp.mpf("137.035999084")
 SIGMA_ALPHA_INV = mp.mpf("0.000000021")          # CODATA 2018 σ on 1/α
+# Both pins read BY NAME (bean qou-4bef, 2026-09-03); the muon literal this carried was the
+# pin RETIRED 2026-08-22/28.
 ANCHORS = {
-    "proton": mp.mpf("1.109978582751380808"),
-    "muon": mp.mpf("1.10997859555733471"),
+    "proton": mp.mpf(Q_50_DIGIT_STR),
+    "muon": q_muon_at(50),
 }
 
 
@@ -109,7 +112,7 @@ def main():
             "sep_from_8_sigma": mp.nstr(sep8, 5),
             "sep_from_9_sigma": mp.nstr(sep9, 5),
         }
-        print(f"\n  --- {name} (q0={float(q):.12f}) ---")
+        print(f"\n  --- {name} (q0={mp.nstr(q, 14)}) ---")
         print(f"    D* (data-selected)     = {mp.nstr(D0, 12)}  ± {mp.nstr(sigD, 3)}")
         print(f"    D* − 8 (dim H¹)         = {mp.nstr(D0 - 8, 6)}")
         print(f"    integer 7 excluded at    {mp.nstr(sep7, 4)} σ")
@@ -180,12 +183,17 @@ def main():
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
-        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
-        from qou_substrate.witness import WitnessBuilder as _WB
+        # scriptFile a downstream pass had added. This producer reads BOTH pins on purpose
+        # (it was wrongly declared q0-independent until 2026-09-03, bean qou-4bef).
+        from qou_substrate.witness import WitnessBuilder as _WB, apply_q0_comparison
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
+        apply_q0_comparison(witness,
+            muon=ANCHORS["muon"], proton=ANCHORS["proton"],
+            reason="per-loop-measure integer forcedness measured at both pins on purpose; "
+                   "the proton (default) leg carries the verdict")
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine=None, q0_anchor=None)
+            witness, script_path=__file__, engine=None, q0_anchor="comparison")
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0

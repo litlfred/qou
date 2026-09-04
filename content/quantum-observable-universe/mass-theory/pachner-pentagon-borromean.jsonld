@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-pachner-pentagon-borromean",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:pachner-pentagon-borromean",
+  "kind": "conjecture",
+  "title": "Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pentagon-uv-commutation",
+    "papers/quantum-observable-universe/blocks/prop-q-rogers-pentagon-archimedean",
+    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-stratified",
+    "papers/quantum-observable-universe/blocks/def-quantum-dilogarithm-disambiguation",
+    "papers/quantum-observable-universe/blocks/def-borromean-baryon",
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-exists",
+    "papers/quantum-observable-universe/blocks/prop-reeb-bundle-complement-equals-volume"
+  ],
+  "cites": [
+    "references/pachner1991",
+    "references/faddeev1996",
+    "references/kashaev1997",
+    "references/turaev-viro1992",
+    "references/neumann-zagier1985"
+  ],
+  "tags": [
+    "tier:S",
+    "pachner",
+    "pentagon",
+    "duality-d15",
+    "borromean",
+    "ideal-tetrahedron",
+    "tv-rt-state-sum",
+    "h4-closure-route",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class",
+    "quantum-dilogarithm"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.PachnerPentagonBorromean",
+  "text": "pachner-pentagon-borromean.md",
+  "provenance": "authored"
+}

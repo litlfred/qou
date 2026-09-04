@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-turbulence-prediction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-turbulence-prediction",
+  "kind": "remark",
+  "title": "Testable prediction: high-wavenumber deviations from Kolmogorov scaling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-turbulence-spectrum",
+    "papers/quantum-observable-universe/blocks/rem-bec-vortex-data"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-turbulence-spectrum",
+  "tags": [
+    "prediction",
+    "turbulence",
+    "BEC",
+    "falsifiable"
+  ],
+  "text": "q-turbulence-prediction.md",
+  "provenance": "authored"
+}

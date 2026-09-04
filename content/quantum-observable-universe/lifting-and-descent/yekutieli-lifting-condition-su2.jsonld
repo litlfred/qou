@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-condition-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:yekutieli-lifting-condition-su2",
+  "kind": "example",
+  "title": "Categorical lifting condition for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition",
+    "papers/quantum-observable-universe/blocks/ex-qou-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-yekutieli-lifting-condition",
+  "tags": [
+    "su2",
+    "yekutieli",
+    "gerbe",
+    "lifting"
+  ],
+  "text": "yekutieli-lifting-condition-su2.md",
+  "provenance": "authored"
+}

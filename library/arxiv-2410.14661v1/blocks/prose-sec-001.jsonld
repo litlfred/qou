@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2410.14661v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Preliminaries",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-2-preliminaries.md",
+  "derivedFrom": "library/arxiv-2410.14661v1/manifest",
+  "sourceDocument": "library/arxiv-2410.14661v1/manifest",
+  "provenance": "ingested"
+}

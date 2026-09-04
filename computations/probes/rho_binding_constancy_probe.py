@@ -18,42 +18,20 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
+sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
+
+import mpmath as mp  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 
-# muon-q0 canonical (computations layer); scale cancels in the ratio anyway.
-# q0 SOURCING — RESOLVED, not hardcoded (beans qou-840k / qou-fd0e, 2026-08-30).
-#
-# This was the float64 literal `1.10997859555733471` — a 17-digit truncation of
-# muon pin A. Two things were wrong with it and only one was obvious:
-#
-#   1. float64, feeding an mpf kernel (`global_wedderburn_sum_q_hecke_seminormal`
-#      became mpf earlier in qou-840k), so the precision was discarded at entry.
-#   2. **A is a SUPERSEDED VINTAGE.** The canonical muon pin moved A -> C on
-#      2026-08-29; `q-pinning-50-digit.witness.json` now serves
-#      1.109978595642739... and stamps itself `q0Anchor: muon`. A hardcoded A is
-#      no longer the muon pin, it is last week's muon pin.
-#
-# Fixed by RESOLVING rather than re-hardcoding at a newer vintage, which is the
-# current convention and the only version that does not go stale again. Idiom
-# copied from `deltalambda/he4_binding_k_presentation_correction_probe.py`,
-# including its prefix assertion — note `q_parameter` is anchor-adaptive and
-# resolves PROTON for a producer not in the manifest, which this one is not, so
-# it cannot be used for the muon layer here.
-import json as _json  # noqa: E402
-from pathlib import Path as _Path  # noqa: E402
-import mpmath as _mp  # noqa: E402
-from _precision import fmt  # noqa: E402
-
-def _load_canonical_muon_q() -> str:
-    d = _json.loads((_Path(__file__).resolve().parent.parent
-                     / "q-pinning-50-digit.witness.json").read_text())
-    q = d["derived_50_digit"]["q"]
-    assert q.startswith("1.109978595642"), f"pinning witness is not the C-vintage muon pin: {q[:24]}"
-    return q
-
-
-Q0 = _mp.mpf(_load_canonical_muon_q())
+# q0 read BY NAME (bean qou-9ugp, 2026-09-03) and carried as mpf, not float.
+# It was the bare float64 literal 1.10997859555733471 -- the RETIRED
+# self-certified muon pin A, superseded 2026-08-22. No comparison leg here,
+# so the 2026-08-30 owner ruling puts it on the proton default (11.54 ppb).
+# The old comment said the scale cancels in the ratio; that is an argument
+# about the RATIO, not a licence to feed a float64 into the Wedderburn sum.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 # AME2020 binding energies (MeV).
 B_OBS = {
@@ -120,16 +98,10 @@ def _emit_witness(ratios, spread, mr):
     data_payload = {
         "name": "rho-binding-constancy",
         "probe": True,
-        "substrate": {"q0": fmt(Q0),
-                      "q0_pin": "muon (computations-layer canonical)"},
-        # `fmt`, not `float`: these descend from an mpf kernel, and the
-        # corpus's raw-float64 guard fires on floats entering a witness.
-        # fmt() is only honest once Q0 above is an mpf — on a float64 it
-        # would render 53 bits out to 50 digits, which _precision.py warns
-        # about explicitly.
-        "ratios_B_over_trM": {k: fmt(v) for k, v in ratios.items()},
-        "relative_spread": fmt(spread),
-        "t_he3_mirror_mismatch": (fmt(mr) if mr is not None else None),
+        "substrate": {"q0": Q0, "q0_pin": "muon (computations-layer canonical)"},
+        "ratios_B_over_trM": {k: float(v) for k, v in ratios.items()},
+        "relative_spread": float(spread),
+        "t_he3_mirror_mismatch": (float(mr) if mr is not None else None),
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/rho_binding_constancy_probe.py"},
     }

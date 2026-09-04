@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+  "contains": [
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-000",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-001",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-002",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-003",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-004",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-005",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-006",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-007",
+    "library/ft-dpm-quaternion-kernel-ieee-tit-2014/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+    "source_file": "FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf",
+    "source_sha256": "aa2f1eb73610a81b0c8ae9e25dec4824ade6661ae3598f907289d9161ecded35",
+    "pages": 14,
+    "arxiv": null,
+    "doi": "10.1109/TIT.2014.2333734",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Limit sets of Kleinian groups",
+  "pageStart": 32,
+  "pageEnd": 32,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-022",
+    "library/ihpmay2025/blocks/thm-sec-022-01",
+    "library/ihpmay2025/blocks/cor-sec-022-02"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

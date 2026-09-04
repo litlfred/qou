@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+exact-int",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T03:17:42.414427+00:00",
-  "commitSha": "f31521cfb6e27abe91f94ad5118c99d291b4a8ff",
+  "computedAt": "2026-09-03T23:25:22.173395+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "median_scheme_robust",
@@ -33,8 +33,8 @@
   "durationMs": 10,
   "computation": "qbeta-g3-5two-dodd-median-crosschecks",
   "scriptFile": "qbeta_g3_5two_dodd_median_crosschecks.py",
-  "scriptHash": "bf3d03f5c2c7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0d51a7d73720",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,8 +46,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_dodd_median_crosschecks.py"
   },
   "description": "Median (delta-torus/Ecalle) normalization of the resummed bar-odd datum D_odd with exact scheme-ambiguity quantification, superasymptotic internal gate, muon-vs-proton pin sensitivity, and the sibling b3ix same-decade row. Scope-(a).",
   "contentBlock": "conj:im-q-physical-role",
@@ -76,8 +84,8 @@
       "min_term": "0.0033453029"
     },
     "pin_sensitivity": {
-      "D_odd_muon": "-0.00757940597892180924",
-      "delta_D": "-2.2395334e-9",
+      "D_odd_muon": "-0.00757940599385750654",
+      "delta_D": "-2.2544691e-9",
       "delta_S_anchors": "0.04914234"
     },
     "b3ix_row": {
@@ -86,15 +94,21 @@
     },
     "comparison_rows": {
       "D_odd_proton": "-0.00757940373939",
-      "D_odd_muon": "-0.00757940597892",
+      "D_odd_muon": "-0.00757940599386",
       "scheme_ambiguity": "4.8555775973e-16",
-      "pin_shift": "-2.23953338154e-9",
+      "pin_shift": "-2.25446907884e-9",
       "S_muon": "0.00968298",
       "S_proton": "-0.03945936",
       "S_diff": "0.04914234",
       "T_odd_b3ix_muon": "0.01916053432",
       "u_cubed_proton": "0.00908764762134"
     },
-    "verdict": "D_ODD MEDIAN-NORMALIZED AND CROSS-CHECKED: (E) the delta-torus average (the q-analogue of the Ecalle median) gives s_med = 0.970997744663 with EXACT scheme ambiguity 4.9e-16 — seven orders below the physics scale, so the normalization question RESOLVES: D_odd = -0.007579403739 +- 4.9e-16 (proton pin) is scheme-robust; (C1) the superasymptotic optimal truncation agrees within its minimal term (0.0017 < 0.0033) — the classic internal resummation gate; (C3) the muon-pin recomputation moves D_odd by only 2.2e-9 while the anchors differ by 0.04914 — so the anchor-dependence of S is per-observable structure, NOT a substrate-modulus effect on this object (an honest constraint on any future identification); (C2) same-decade consistency with the sibling b3ix order-3 estimate recorded. D_odd now stands as a median-normalized, internally-gated, pin-characterized bar-odd number. Scope-(a); no identification; no fit; no c_k wired."
-  }
+    "verdict": "D_ODD MEDIAN-NORMALIZED AND CROSS-CHECKED: (E) the delta-torus average (the q-analogue of the Ecalle median) gives s_med = 0.970997744663 with EXACT scheme ambiguity 4.9e-16 — seven orders below the physics scale, so the normalization question RESOLVES: D_odd = -0.007579403739 +- 4.9e-16 (proton pin) is scheme-robust; (C1) the superasymptotic optimal truncation agrees within its minimal term (0.0017 < 0.0033) — the classic internal resummation gate; (C3) the muon-pin recomputation moves D_odd by only 2.3e-9 while the anchors differ by 0.04914 — so the anchor-dependence of S is per-observable structure, NOT a substrate-modulus effect on this object (an honest constraint on any future identification); (C2) same-decade consistency with the sibling b3ix order-3 estimate recorded. D_odd now stands as a median-normalized, internally-gated, pin-characterized bar-odd number. Scope-(a); no identification; no fit; no c_k wired."
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "computes the 5_2 D_odd median-normalised tail at BOTH the muon and proton pins and asserts the pin move is below 1e-6; both pins are read on purpose and each is reported under its own key"
 }

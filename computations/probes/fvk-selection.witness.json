@@ -2,10 +2,10 @@
   "schema": "witness/v1",
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "commitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "commitSha": "2e5cba248abcc890b178ce06c8720d02c1eda5dd",
   "scriptFile": "fvk_selection_probe.py",
-  "scriptHash": "9e80ba7fe57a",
-  "scriptCommitSha": "a5851c9e5941a3d3719921165456162f6d425839",
+  "scriptHash": "42d193c18d6a",
+  "scriptCommitSha": "48c8469267939dcf4c13b2faa3b6bff51d60255c",
   "computation": "fvk-selection",
   "description": "Friedrichs-vs-Krein selection survey: the S-map/LR fixed-point identity (F = S(K) exactly on the SW core), the ds/s harmonic-moment diagnostic along the nonnegative extension arc, the exact reason the modular criteria are orthogonal, and the moment-blindness of the whole arc",
   "auditOnly": "docs/audits/2026-08-01-fvk-selection-framing.md",
@@ -272,8 +272,12 @@
       "wired": "nothing"
     }
   },
-  "computedAt": "2026-08-30T16:02:47.786445+00:00",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "computedAt": "2026-09-04T08:50:21.697663+00:00",
   "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "comparison",
+  "q0AnchorReason": "deliberate two-pin comparison: pins_preasymptotic evaluates the Favard/Jacobi chain at BOTH the muon anchor (read from q-pinning-50-digit.witness.json) and the proton pin. Corrected 2026-09-04 from a false 'independent' -- bean qou-zk51"
 }

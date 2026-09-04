@@ -385,10 +385,24 @@ def main() -> int:
                "cones x all n_target choices; expected is the number solved",
     )
     _cone = list(results["cone"].values())
-    _rel = [
-        mp.fabs(mp.mpf(repr(r["duality_gap"]))) / mp.fabs(mp.mpf(repr(r["primal_obj"])))
-        for r in _cone if r.get("feasible") and r.get("primal_obj")
-    ]
+    # `workdps`, not a module-scope `set_compute_dps()`. The import comment at
+    # the top says the assertion arithmetic stays off float64 and nothing was
+    # making that true: mpmath's default dps is 15, so this ratio was computed
+    # in 15-digit arithmetic and then compared against `tolerance="1e-15"` — a
+    # tolerance sitting exactly at the floor of the precision evaluating it,
+    # which cannot reliably separate a pass from a fail.
+    #
+    # Scoped rather than global because the LP's own precision is derived from
+    # its INPUT STRINGS (`pyhecke.lp_dual_solver._input_dps`), which this
+    # producer builds; widening them globally would change what the solver
+    # treats as rank-deficient. Measured: this scoping leaves every recorded
+    # duality gap byte-identical to a pristine run.
+    with mp.workdps(50):
+        _rel = [
+            mp.fabs(mp.mpf(repr(r["duality_gap"])))
+            / mp.fabs(mp.mpf(repr(r["primal_obj"])))
+            for r in _cone if r.get("feasible") and r.get("primal_obj")
+        ]
     if _rel:
         builder.add_assertion(
             "positive_cone_strong_duality_worst_relative_gap",

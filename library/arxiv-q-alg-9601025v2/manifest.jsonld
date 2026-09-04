@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-q-alg-9601025v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The hyperbolic volume of knots from the quantum dilogarithm",
+  "contains": [
+    "library/arxiv-q-alg-9601025v2/sections/sec-000",
+    "library/arxiv-q-alg-9601025v2/sections/sec-001",
+    "library/arxiv-q-alg-9601025v2/sections/sec-002",
+    "library/arxiv-q-alg-9601025v2/sections/sec-003",
+    "library/arxiv-q-alg-9601025v2/sections/sec-004",
+    "library/arxiv-q-alg-9601025v2/sections/sec-005",
+    "library/arxiv-q-alg-9601025v2/sections/sec-006",
+    "library/arxiv-q-alg-9601025v2/sections/sec-007",
+    "library/arxiv-q-alg-9601025v2/sections/sec-008",
+    "library/arxiv-q-alg-9601025v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9601025v2",
+    "source_file": "9601025v2.pdf",
+    "source_sha256": "369b0a1a92ce67a8bfcaf6dd1ece5eb550a42562e92cad218a0a6de7a36d062f",
+    "pages": 8,
+    "arxiv": {
+      "id": "q-alg/9601025",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "25 Mar 1996"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

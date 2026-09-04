@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-alpha-shift-extension",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-alpha-shift-extension",
+  "kind": "proposition",
+  "title": "Binding A≥3 via per-rep Reeb phase at a force-carrier torus knot",
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "normalization",
+    "no-fitting",
+    "uniqueness",
+    "binding",
+    "alpha-shift"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.binding_unique_via_alpha_shift",
+  "text": "binding-alpha-shift-extension.md",
+  "leanSource": "binding-alpha-shift-extension.lean",
+  "provenance": "authored"
+}

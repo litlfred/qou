@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:flavor-charge-assignments",
+  "kind": "remark",
+  "title": "Flavor charge assignments and the hypercharge gap",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge",
+    "papers/quantum-observable-universe/blocks/conj-sm-hypercharge-invariant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+  "text": "flavor-charge-assignments.md",
+  "provenance": "authored"
+}

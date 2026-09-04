@@ -1,0 +1,47 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-archimedean-functor-uniqueness",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:archimedean-functor-uniqueness",
+  "kind": "proposition",
+  "title": "Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-volume",
+    "papers/quantum-observable-universe/blocks/conj-dilogarithm-archimedean-limit",
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism",
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/conj-dilogarithm-archimedean-limit"
+  ],
+  "cites": [
+    "references/suslin1991",
+    "references/bloch2000",
+    "references/zagier1986",
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/faddeev1994",
+    "references/thurston1978"
+  ],
+  "tags": [
+    "archimedean",
+    "realization-functor",
+    "uniqueness",
+    "bloch-wigner",
+    "pentagon-identity",
+    "dilogarithm",
+    "motivic",
+    "kashaev",
+    "alpha-em",
+    "fine-structure-constant",
+    "pre-archimedean",
+    "conditional-class"
+  ],
+  "leanRef": "qou:QOU.Archimedean.archimedean_functor_uniqueness",
+  "text": "archimedean-functor-uniqueness.md",
+  "leanSource": "archimedean-functor-uniqueness.lean",
+  "provenance": "authored"
+}

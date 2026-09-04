@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T20:08:49.586130+00:00",
-  "commitSha": "38940fd65b2028e82eb55aec5cdbd56ac1a5f860",
+  "computedAt": "2026-09-04T06:47:18.275114+00:00",
+  "commitSha": "7437fb0e029fb39e9fee7337adae7f6c374fc775",
   "assertions": [
     {
       "name": "silver_pole_genuine_and_subdominant",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 19,
   "computation": "qbeta-silver-pole-subdominant",
   "scriptFile": "qbeta_silver_pole_subdominant_probe.py",
-  "scriptHash": "c149b9f02fcc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f4d47824393a",
+  "scriptCommitSha": "2d6e5ccf518f037cab0d4bc091c269d667a6412e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_silver_pole_subdominant_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_silver_pole_subdominant_probe.py"
   },
   "description": "Corrects PR #2445's dominance claim: the silver/Q_A zero IS a genuine pole of F=Q_β/[Q_A·cos α_eff] (Δ(net)(silver)=82216+58136√2≠0 while Q_A(silver)=0; the true Q_β uses GB-reduced Δ(net), not the cheat-sheet leading term≈Q_A — that check was circular). But it is SUBDOMINANT: u_silver≈0.321 → char root ≈3.12, not the dominant 1/u_substrate≈117.4 (PR #1727). The dominant pole is from a non-Q_A source. NO FLOAT. Exploratory.",
   "contentBlock": "prop:qbeta-silver-anchor-grounding",

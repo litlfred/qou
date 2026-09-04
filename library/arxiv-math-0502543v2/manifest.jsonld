@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0502543v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR",
+  "contains": [
+    "library/arxiv-math-0502543v2/sections/sec-000",
+    "library/arxiv-math-0502543v2/sections/sec-001",
+    "library/arxiv-math-0502543v2/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0502543v2",
+    "source_file": "0502543v2.pdf",
+    "source_sha256": "227ef8150cb08faffa97580266e1708285e686b00fe527276827d90af633bd7f",
+    "pages": 12,
+    "arxiv": {
+      "id": "math/0502543",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "22 Mar 2005"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

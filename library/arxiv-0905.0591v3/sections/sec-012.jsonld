@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0905.0591v3/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Distinguishing knots and links",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-0905.0591v3/blocks/prose-sec-012",
+    "library/arxiv-0905.0591v3/blocks/rem-sec-012-01",
+    "library/arxiv-0905.0591v3/blocks/thm-sec-012-02"
+  ],
+  "derivedFrom": "library/arxiv-0905.0591v3/manifest",
+  "sourceDocument": "library/arxiv-0905.0591v3/manifest",
+  "provenance": "ingested"
+}

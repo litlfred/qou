@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-genus-filtration-derivation-chain",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:genus-filtration-derivation-chain",
+  "kind": "remark",
+  "title": "Non-circular derivation chain: Bring's surface as a consequence of $H_n(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+  "tags": [
+    "derivation-chain",
+    "brings-surface",
+    "genus",
+    "hecke"
+  ],
+  "text": "genus-filtration-derivation-chain.md",
+  "provenance": "authored"
+}

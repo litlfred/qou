@@ -1,0 +1,52 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.4698v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
+  "contains": [
+    "library/arxiv-1202.4698v3/sections/sec-000",
+    "library/arxiv-1202.4698v3/sections/sec-001",
+    "library/arxiv-1202.4698v3/sections/sec-002",
+    "library/arxiv-1202.4698v3/sections/sec-003",
+    "library/arxiv-1202.4698v3/sections/sec-004",
+    "library/arxiv-1202.4698v3/sections/sec-005",
+    "library/arxiv-1202.4698v3/sections/sec-006",
+    "library/arxiv-1202.4698v3/sections/sec-007",
+    "library/arxiv-1202.4698v3/sections/sec-008",
+    "library/arxiv-1202.4698v3/sections/sec-009",
+    "library/arxiv-1202.4698v3/sections/sec-010",
+    "library/arxiv-1202.4698v3/sections/sec-011",
+    "library/arxiv-1202.4698v3/sections/sec-012",
+    "library/arxiv-1202.4698v3/sections/sec-013",
+    "library/arxiv-1202.4698v3/sections/sec-014",
+    "library/arxiv-1202.4698v3/sections/sec-015",
+    "library/arxiv-1202.4698v3/sections/sec-016",
+    "library/arxiv-1202.4698v3/sections/sec-017",
+    "library/arxiv-1202.4698v3/sections/sec-018",
+    "library/arxiv-1202.4698v3/sections/sec-019",
+    "library/arxiv-1202.4698v3/sections/sec-020",
+    "library/arxiv-1202.4698v3/sections/sec-021",
+    "library/arxiv-1202.4698v3/sections/sec-022",
+    "library/arxiv-1202.4698v3/sections/sec-023",
+    "library/arxiv-1202.4698v3/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1202.4698v3",
+    "source_file": "1202.4698.pdf",
+    "source_sha256": "54171c652161ca5b3bfd107ccf3504d24fa91944ca3ed60b71945f6cb9f61e62",
+    "pages": 32,
+    "arxiv": {
+      "id": "1202.4698",
+      "version": "3",
+      "primary_class": "hep-th",
+      "stamp_date": "30 Apr 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

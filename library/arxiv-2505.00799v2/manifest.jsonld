@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2505.00799v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "QUANTUM MODULAR FORMS AND RESURGENCE",
+  "contains": [
+    "library/arxiv-2505.00799v2/sections/sec-000",
+    "library/arxiv-2505.00799v2/sections/sec-001",
+    "library/arxiv-2505.00799v2/sections/sec-002",
+    "library/arxiv-2505.00799v2/sections/sec-003",
+    "library/arxiv-2505.00799v2/sections/sec-004",
+    "library/arxiv-2505.00799v2/sections/sec-005",
+    "library/arxiv-2505.00799v2/sections/sec-006",
+    "library/arxiv-2505.00799v2/sections/sec-007",
+    "library/arxiv-2505.00799v2/sections/sec-008",
+    "library/arxiv-2505.00799v2/sections/sec-009",
+    "library/arxiv-2505.00799v2/sections/sec-010",
+    "library/arxiv-2505.00799v2/sections/sec-011",
+    "library/arxiv-2505.00799v2/sections/sec-012",
+    "library/arxiv-2505.00799v2/sections/sec-013",
+    "library/arxiv-2505.00799v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2505.00799v2",
+    "source_file": "2505.00799v2.pdf",
+    "source_sha256": "cc9d2ab4c6c79b50a95ccb0b9939c59807a7e3ed9ef0b8dd3a258e636b8b1d33",
+    "pages": 32,
+    "arxiv": {
+      "id": "2505.00799",
+      "version": "2",
+      "primary_class": "math.NT",
+      "stamp_date": "29 May 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

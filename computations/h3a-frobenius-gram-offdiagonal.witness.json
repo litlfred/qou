@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-31T18:47:49.013434+00:00",
-  "commitSha": "1e4882f5cda814a114bdccd7c0a50ffa05026224",
+  "computedAt": "2026-09-03T04:47:26.865902+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "markov_trace_multiplicative_on_disjoint_blocks",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 34,
   "computation": "h3a-frobenius-gram-offdiagonal",
   "scriptFile": "h3a_frobenius_gram_offdiagonal_probe.py",
   "scriptHash": "39df73c6b43a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "71a3f7194a0718c6ea7fab6916162cc90405e75f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -136,5 +138,7 @@
     "The BLOCK-basis Gram of nucleus_sdp_assembly is diagonal by a theorem — central primitive idempotents are orthogonal, so tr_M(P_l P_m) = delta tr_M(P_l) identically. Nothing was 'omitted' there and nothing can be added. The Gram built here is a different object on a different space, the constituent subalgebra, and does not replace it.",
     "G^(A) = G^(x)A rests on Markov multiplicativity across disjoint strand blocks, verified to 1.1e-8 relative — the precision of the stored f64 y_lambda table, not an exact check. An exact verification wants a higher-precision y_lambda source.",
     "The A5 sweep is at A=2 (dim 36) for cost; A6 confirms the same dual degeneracy at A=3 (dim 216). Box bounds +-1e4 are used to keep the LP bounded; with the identity dropped from the basis the LP becomes unbounded and hits them, which is reported as a failed route rather than a result."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

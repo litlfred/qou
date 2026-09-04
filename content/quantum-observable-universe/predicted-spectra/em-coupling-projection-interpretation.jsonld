@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-em-coupling-projection-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:em-coupling-projection-interpretation",
+  "kind": "remark",
+  "title": "Classical limit of the electromagnetic coupling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+  "text": "em-coupling-projection-interpretation.md",
+  "provenance": "authored"
+}

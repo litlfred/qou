@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9906120v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Discrete orthogonal polynomial ensembles and the Plancherel measure By Kurt Johansson",
+  "contains": [
+    "library/arxiv-math-9906120v3/sections/sec-000",
+    "library/arxiv-math-9906120v3/sections/sec-001",
+    "library/arxiv-math-9906120v3/sections/sec-002",
+    "library/arxiv-math-9906120v3/sections/sec-003",
+    "library/arxiv-math-9906120v3/sections/sec-004",
+    "library/arxiv-math-9906120v3/sections/sec-005",
+    "library/arxiv-math-9906120v3/sections/sec-006",
+    "library/arxiv-math-9906120v3/sections/sec-007",
+    "library/arxiv-math-9906120v3/sections/sec-008",
+    "library/arxiv-math-9906120v3/sections/sec-009",
+    "library/arxiv-math-9906120v3/sections/sec-010",
+    "library/arxiv-math-9906120v3/sections/sec-011",
+    "library/arxiv-math-9906120v3/sections/sec-012",
+    "library/arxiv-math-9906120v3/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-9906120v3",
+    "source_file": "9906120v3.pdf",
+    "source_sha256": "436982ef45e940bd6b66fa812f8bc38804cabe34d274584de05fe4d6cfeb8bfd",
+    "pages": 38,
+    "arxiv": {
+      "id": "math/9906120",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "24 Feb 2004"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

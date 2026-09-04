@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2111.06645/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "How the q-series arise",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-2-how-the-q-series-arise.md",
+  "derivedFrom": "library/arxiv-2111.06645/manifest",
+  "sourceDocument": "library/arxiv-2111.06645/manifest",
+  "provenance": "ingested"
+}

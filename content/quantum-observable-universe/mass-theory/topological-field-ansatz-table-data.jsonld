@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-topological-field-ansatz-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:topological-field-ansatz-table-data",
+  "kind": "table",
+  "title": "Particle-to-knot axiomatic assignments",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-topological-field-ansatz"
+  ],
+  "tags": [
+    "knot-particle",
+    "dictionary",
+    "axiomatic"
+  ],
+  "text": "topological-field-ansatz-table-data.md",
+  "provenance": "authored"
+}

@@ -137,9 +137,11 @@ def main():
           f"r(q₁₅) = 15 at q₁₅ = {mp.nstr(q15, 25)} (30-dps root of the exact symbolic ratio)")
 
     # V4: pre-stated distinguished-candidate test (the dictionary-free check)
+    from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402 — proton default, by name
+    Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
     phi = (1 + mp.sqrt(5)) / 2
     cands = {
-        "1/q0": 1 / mp.mpf("1.10997859555733471"),
+        "1/q0": 1 / Q0_PROTON,   # proton pin by name (was the RETIRED muon literal; bean qou-4bef)
         "|nome(tau0)|": mp.e ** (-2 * mp.pi * mp.im(T0)),
         "|nome(tau0)|^(1/5)": (mp.e ** (-2 * mp.pi * mp.im(T0))) ** (mp.mpf(1) / 5),
         "1/sqrt(5)": 1 / mp.sqrt(5),
@@ -148,16 +150,16 @@ def main():
         "1/phi^2": 1 / phi ** 2,
         "1/5": mp.mpf(1) / 5,
     }
-    dists = {k: float(abs(q15 - v) / v) for k, v in cands.items()}
+    dists = {k: abs(q15 - v) / v for k, v in cands.items()}   # mpf, never float64 (bean qou-4bef)
     nearest = min(dists, key=dists.get)
     any_match = any(d < 1e-6 for d in dists.values())
     v4 = not any_match  # the pre-stated rule: exact-grade tolerance; a 1e-6 match would flag
     check("distinguished_candidate_test_null", v4,
           f"q₁₅ vs the PRE-STATED candidate list at exact-grade tolerance 1e-6: NO match — "
-          f"nearest is {nearest} at {dists[nearest]:.4%} relative (a clean miss for exact "
+          f"nearest is {nearest} at {mp.nstr(dists[nearest] * 100, 6)}% relative (a clean miss for exact "
           "quantities). HONEST NULL: endpoint-to-distinguished-constant dictionaries are "
           "killed; the deformation matching stays dictionary-gated. Recorded, not scored "
-          f"(post-hoc): r(1/q0) = {mp.nstr(rf(1/mp.mpf('1.10997859555733471')), 8)}")
+          f"(post-hoc): r(1/q0) = {mp.nstr(rf(1/Q0_PROTON), 8)}")
 
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
@@ -209,7 +211,7 @@ def main():
                                 "monotone; endpoints exact",
             "categorical_family": "r(q) = y_[2]/y_[1,1]: r(1)=3; covers [3,15] on [q15,1]",
             "q15": mp.nstr(q15, 30),
-            "candidate_test": {k: d for k, d in sorted(dists.items(), key=lambda kv: kv[1])},
+            "candidate_test": {k: mp.nstr(d, 20) for k, d in sorted(dists.items(), key=lambda kv: kv[1])},   # serialised from mpf
             "outcome": "structured null — no distinguished-constant match; dictionary-gated",
             "recorded_not_scored": "r(1/q0) ~ 4.0072",
             "verdict": verdict,
@@ -232,7 +234,7 @@ def main():
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine=None, q0_anchor=None)
+            witness, script_path=__file__, engine=None, q0_anchor="proton")
         json.dump(witness, f, indent=2)
     print("witness ->", out)
     return 0 if all_passed else 1

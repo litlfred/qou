@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-sm-hypercharge-invariant",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:sm-hypercharge-invariant",
+  "kind": "conjecture",
+  "title": "The hypercharge invariant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gauge-action-groupoid",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "hypercharge",
+    "electroweak",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.StandardModel.HyperchargeInvariant",
+  "text": "sm-hypercharge-invariant.md",
+  "leanSource": "sm-hypercharge-invariant.lean",
+  "provenance": "authored"
+}

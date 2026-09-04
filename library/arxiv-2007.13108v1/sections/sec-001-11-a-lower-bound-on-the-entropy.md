@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 3-3
 source_pdf: 2007.13108v1.pdf
 source_sha256: b298478f5f5b948d
+doc_brief: "Log concavity and concentration of Lipschitz functions on the Boolean hypercube — It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain"
 ---
 Our second result addresses the question of ﬁnding conditio ns under which the entropy of the
 measure ν is close to that of the corresponding product measure, havin g the same marginals as

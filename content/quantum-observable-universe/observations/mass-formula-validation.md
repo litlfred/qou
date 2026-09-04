@@ -40,6 +40,38 @@ See [Table 5](#tbl:mass-formula-validation-table5-data).
 
 All $\beta$-stable nuclei satisfy $|\Delta/M| < 0.04\%$. For $Z = N$ odd-odd nuclei, entanglement imbalance produces a residual $0.05\%$ error.
 
+### What $\Delta/M$ measures, and what it does not
+
+The denominator in Table 5 is the **atomic mass**, which is not a quantity
+this framework predicts: absolute mass is $m_e$ times a dimensionless ratio,
+and $m_e$ fixes the MeV scale by fiat as CAL-1, so a MeV figure carries no
+content beyond the ratio. Normalising a residual by it therefore divides a
+binding-scale error by a nucleon-scale mass, and the ratio is small for that
+reason rather than because the prediction is close.
+
+Against the **binding energy** $B$ — the extensive quantity the framework
+does predict — the same residuals of Table 5 read:
+
+| Atom | $\Delta$ (MeV) | $\Delta/M$ | $B_{\mathrm{AME}}$ (MeV) | $|\Delta|/B$ |
+|:-----|---------------:|-----------:|-------------------------:|-------------:|
+| ${}^4$He | $+0.079$ | $0.002\%$ | $28.296$ | $0.28\%$ |
+| ${}^6$Li | $+2.191$ | $0.039\%$ | $31.995$ | $6.85\%$ |
+| ${}^7$Li | $+1.740$ | $0.027\%$ | $39.245$ | $4.43\%$ |
+| ${}^9$Be | $+1.234$ | $0.015\%$ | $58.165$ | $2.12\%$ |
+| ${}^{10}$B | $+0.648$ | $0.007\%$ | $64.751$ | $1.00\%$ |
+| ${}^{12}$C | $+0.618$ | $0.006\%$ | $92.162$ | $0.67\%$ |
+
+So ${}^6$Li, the row against which the $0.04\%$ bound is tightest, is
+$6.85\%$ of the binding it is meant to reproduce — a factor of $176$ between
+the two normalisations. The bound as stated is a statement about the choice
+of denominator at least as much as about the accuracy of the formula.
+
+The ${}^1$H row is not an accuracy result at all. Hydrogen is a free
+nucleon: it has no binding energy, and Table 1 classifies it as such. Its
+agreement to $10^{-6}\%$ is the $m_e$ scale returning the value that was put
+in, the same round-trip for which the per-observable dashboard excludes
+$m_p$ from scoring.
+
 ## Q-value table
 
 See [Table 6](#tbl:mass-formula-validation-table6-data).

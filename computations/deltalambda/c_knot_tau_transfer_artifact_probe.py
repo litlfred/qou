@@ -59,8 +59,26 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
-# --- substrate inputs (muon-canonical computations/ layer; all derived / committed) ---
-Q0_STR = "1.10997859555733471989976"
+# --- substrate inputs (all derived / committed) ---
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
+# "1.10997859555733471989976" -- the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 (fca08de7d2) by the CODATA-2022 lepton-ratio
+# derivation. It resolves the PROTON pin per the owner directive of
+# 2026-08-15/2026-08-30 (proton unless an explicit mu-vs-p comparison or the
+# ideal CAL-1/2/3 layer; this is neither).
+#
+# It also RETIRES a false q0-independence claim. This producer stamped
+# q0Anchor "independent" on the strength of an AST import-cone walk that found
+# no reference to q_at / q_muon_at / Q_50_DIGIT_STR / q_parameter. That walk
+# was correct about imports and wrong about the conclusion: the pin was typed
+# in by hand on the line below, and h = q0 - 1/q0, hbar_q = 1 - 1/q0 and
+# v = sqrt(q0) carry it into every published number. This file's own docstring
+# calls C_knot "a PURE q0-GEOMETRY RATIO". An import-cone detector is
+# structurally blind to a hardcoded pin -- the producer that types the number
+# in is exactly the one it will call independent.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 M_E_STR = "0.51099895"                 # CODATA electron mass (MeV) — the τ-functor scale
 S_D_STR = "0.7438"                     # |S(D)| pinned Wenzl signed Markov sum (#4543)
 B_AME_STR = "2.2245662"                # AME2020 deuteron binding (MeV) — DIAGNOSTIC ONLY, never inverted
@@ -167,32 +185,21 @@ def main() -> int:
     wb.add_assertion("tier0_normalization_is_over_85pct_of_C_knot", computed=str(bool(a3)), expected="True")
     wb.add_assertion("dressing_is_small_frame_projection", computed=str(bool(a4)), expected="True")
     wb.add_assertion("verdict_is_ARTIFACT", computed=verdict, expected="ARTIFACT")
-    # q₀ stamp (bean qou-sal4). This producer DOES read a q₀ — but a bad one:
-    # `Q0_STR` (line 63) is the muon vintage-A pin RETIRED by owner ruling
-    # 2026-08-22, hardcoded and TRUNCATED to 24 significant digits rather than
-    # resolved through `q_at()`. Its prefix `1.10997859555` is exactly the
-    # superseded-vintage prefix the substrate's staleness guard watches for.
-    #
-    # So the honest stamp is `ambiguous`, not `muon`: stamping `muon` would
-    # assert a live anchor for a retired vintage and would trip that guard,
-    # and stamping `independent` would be false — it reads a pin.
-    #
-    # Repinning it is NOT done here: it moves published numbers and belongs to
-    # the tracked muon→proton migration (bean `qou-cds3`), which requires a
-    # per-producer source edit to read `q_at()`. Recorded there.
-    wb.save(extra={
-        "auditOnly": True,
-        "q0Anchor": "ambiguous",
-        "q0AnchorReason": (
-            "Reads a hardcoded, truncated q₀ literal (Q0_STR, 24 sig digits) "
-            "carrying the muon vintage-A prefix 1.10997859555 — a pin RETIRED "
-            "2026-08-22 — instead of resolving through q_at(). Undetermined "
-            "because the literal names a superseded vintage that no live anchor "
-            "maps to: it is neither the current muon pin nor proton. Fix is a "
-            "source edit to read q_at(), which moves published numbers and is "
-            "tracked by bean qou-cds3, not a restamp."
-        ),
-    })
+    _reason = (
+        "Every published number here is a function of q0: h = q0 - 1/q0, "
+        "hbar_q = 1 - 1/q0, v = sqrt(q0), and C_knot is described by this "
+        "producer's own docstring as a PURE q0-GEOMETRY RATIO. It previously "
+        "declared q0Anchor 'independent' on an AST import-cone walk that found "
+        "no q_parameter reference -- true of the imports, false of the "
+        "computation, because the pin was a hardcoded literal the walk cannot "
+        "see (bean qou-9ugp). Now reads Q_50_DIGIT_STR by name; proton per the "
+        "2026-08-15/2026-08-30 owner directive.")
+    assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_ascii)"
+    wb.save(extra={"auditOnly": True,
+             "q0Anchor": "proton",
+             "q0Value": Q0_STR,
+             "q0AnchorReason": _reason,
+             })
 
     print("=" * 88)
     print("  Deuteron C_knot = 5.853: ARTIFACT vs REAL — the τ-transfer test")

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-frobenius-gram-matrix-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:frobenius-gram-matrix-context",
+  "kind": "remark",
+  "title": "NF Markov-trace computation, operator identification via the dual, and the annihilation identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix",
+  "tags": [
+    "frobenius",
+    "gram-matrix",
+    "markov-trace",
+    "operator-selection"
+  ],
+  "text": "frobenius-gram-matrix-context.md",
+  "provenance": "authored"
+}

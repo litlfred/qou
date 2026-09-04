@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-on-p-modular-hecke-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:on-p-modular-hecke-table-data",
+  "kind": "table",
+  "title": "Data table from conj:on-p-modular-hecke",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-on-p-modular-hecke"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "on-p-modular-hecke-table-data.md",
+  "provenance": "authored"
+}

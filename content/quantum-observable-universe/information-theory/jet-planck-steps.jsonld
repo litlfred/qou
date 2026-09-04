@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-planck-steps",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-planck-steps",
+  "kind": "remark",
+  "title": "Planck steps as jet orders: Taylor approximation of $E$ at the Big Bang",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-discrete-planck-step",
+    "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower",
+    "papers/quantum-observable-universe/blocks/prop-color-elliptic",
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "tags": [
+    "jet-bundle",
+    "planck-time",
+    "discrete-time",
+    "big-bang",
+    "taylor-polynomial",
+    "chiral-cubic",
+    "golden-ratio",
+    "brane-tower",
+    "information-theory",
+    "finite-field"
+  ],
+  "text": "jet-planck-steps.md",
+  "provenance": "authored"
+}

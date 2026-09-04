@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-parabolic-hecke-subalgebra",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:parabolic-hecke-subalgebra",
+  "kind": "definition",
+  "title": "Parabolic Hecke subalgebra $H_\\lambda(q) \\hookrightarrow H_N(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-strand-partition",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "tags": [
+    "parabolic-subalgebra",
+    "young-subgroup",
+    "hecke-algebra",
+    "molecular",
+    "wedderburn"
+  ],
+  "leanRef": "qou:QOU.Molecular.ParabolicHecke",
+  "text": "parabolic-hecke-subalgebra.md",
+  "leanSource": "parabolic-hecke-subalgebra.lean",
+  "provenance": "authored"
+}

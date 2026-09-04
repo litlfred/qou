@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-nuclear-spin-parity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:nuclear-spin-parity",
+  "kind": "proof",
+  "title": "Proof of nuclear spin parity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-spin-parity"
+  ],
+  "text": "nuclear-spin-parity-proof.md",
+  "provenance": "authored"
+}

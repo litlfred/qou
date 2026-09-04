@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/unital-groebner-bases/blocks/def-unital-groebner-basis",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:unital-groebner-basis",
+  "kind": "definition",
+  "title": "Gröbner--Shirshov basis and unital Gröbner--Shirshov basis",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-leading-terms"
+  ],
+  "tags": [
+    "groebner-basis",
+    "unital"
+  ],
+  "leanRef": "ugb:UGB.UnitalGroebner.UnitalGroebnerBasis",
+  "text": "unital-groebner-basis.md",
+  "leanSource": "unital-groebner-basis.lean",
+  "provenance": "authored"
+}

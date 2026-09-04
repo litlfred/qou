@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:electroweak-higgs-torus-link-triplet",
+  "kind": "conjecture",
+  "title": "$(W^\\pm, Z, H) \\leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-electroweak-triplet-bring-embedding",
+    "papers/quantum-observable-universe/blocks/thm-ew-triplet-far-commuting-minimal",
+    "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution",
+    "papers/quantum-observable-universe/blocks/def-spin-involution",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-genus-four-unique",
+    "papers/quantum-observable-universe/blocks/conj-n-v-bring-action",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "tags": [
+    "electroweak",
+    "higgs",
+    "torus-link",
+    "non-bring",
+    "psd-feasibility",
+    "weak-sector",
+    "force-carrier",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.EWHiggsTorusLinkTriplet",
+  "text": "electroweak-higgs-torus-link-triplet.md",
+  "leanSource": "electroweak-higgs-torus-link-triplet.lean",
+  "provenance": "authored"
+}

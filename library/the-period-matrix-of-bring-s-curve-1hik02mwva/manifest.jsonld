@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "PACIFI C JOURNA L OF MATHEMATICS TH E PERIOD MATRIX O F BRING' S CURVE GONZALO RlER A AN D RUBI E . RODRIGUEZ In genu s fou r ther e i s onl y on e Rieman n surfac e admittin g th e",
+  "contains": [
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-000",
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "the-period-matrix-of-bring-s-curve-1hik02mwva",
+    "source_file": "the-period-matrix-of-bring-s-curve-1hik02mwva.pdf",
+    "source_sha256": "56f8ce317a00b0f339384c91086715552902d45a4e2021049fdcc054e29762f2",
+    "pages": 22,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

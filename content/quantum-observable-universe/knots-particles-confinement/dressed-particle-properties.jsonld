@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-dressed-particle-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:dressed-particle-properties",
+  "kind": "remark",
+  "title": "Composition, stability, and Markov-trace functoriality of dressing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-dressed-particle"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-dressed-particle",
+  "tags": [
+    "dressing",
+    "composition",
+    "noble-gas",
+    "markov-trace",
+    "confinement-category"
+  ],
+  "text": "dressed-particle-properties.md",
+  "provenance": "authored"
+}

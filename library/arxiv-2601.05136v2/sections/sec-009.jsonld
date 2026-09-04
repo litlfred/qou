@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2601.05136v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The action and state sums",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-2601.05136v2/blocks/prose-sec-009",
+    "library/arxiv-2601.05136v2/blocks/ex-sec-009-01",
+    "library/arxiv-2601.05136v2/blocks/lem-sec-009-02"
+  ],
+  "derivedFrom": "library/arxiv-2601.05136v2/manifest",
+  "sourceDocument": "library/arxiv-2601.05136v2/manifest",
+  "provenance": "ingested"
+}

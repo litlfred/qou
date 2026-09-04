@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203003v2/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Exchange Representations",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-math-0203003v2/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/arxiv-math-0203003v2/manifest",
+  "sourceDocument": "library/arxiv-math-0203003v2/manifest",
+  "provenance": "ingested"
+}

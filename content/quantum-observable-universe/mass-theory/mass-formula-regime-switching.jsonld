@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-mass-formula-regime-switching",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:mass-formula-regime-switching",
+  "kind": "proposition",
+  "title": "Mass formula regime switch: SW+Frob for $A \\leq 2$, BW+$\\chi$ for $A \\geq 3$ (non-additive)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-np-discrepancy-resolution",
+    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing"
+  ],
+  "tags": [
+    "mass-formula",
+    "unification",
+    "regime-switching",
+    "bethe-weizsacker",
+    "schur-weyl",
+    "chirality"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.mass_formula_regime_switching",
+  "text": "mass-formula-regime-switching.md",
+  "leanSource": "mass-formula-regime-switching.lean",
+  "provenance": "authored"
+}

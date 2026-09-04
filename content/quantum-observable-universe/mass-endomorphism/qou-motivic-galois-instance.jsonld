@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-qou-motivic-galois-instance",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:qou-motivic-galois-instance",
+  "kind": "conjecture",
+  "title": "QOU $\\mathrm{MotivicGaloisCharacter}$ instance via Habiro $\\to \\mathrm{Frob}_p$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-motivic-galois-character"
+  ],
+  "cites": [
+    "references/habiro2002",
+    "references/yekutieli2010",
+    "references/tate1967"
+  ],
+  "tags": [
+    "motivic-galois",
+    "frobenius",
+    "habiro",
+    "qou-substrate",
+    "instance"
+  ],
+  "text": "qou-motivic-galois-instance.md",
+  "provenance": "authored"
+}

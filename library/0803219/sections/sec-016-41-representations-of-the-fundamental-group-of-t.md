@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 24-27
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 choose the generators x and y for π 1(S3 \ T ) as in Figure 10. Note that we take
 these generators so that their linking numbers with the knot are one. Then the

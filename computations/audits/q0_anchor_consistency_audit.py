@@ -11,6 +11,9 @@ bug (bean tnjb) where a value drifts to the wrong anchor.
 Verdicts:
   Q0_OK              anchor ∈ {muon,proton} and q0Value matches that anchor's pin
   Q0_FLIP            anchor and q0Value disagree  ← CI-FAILING (the flip)
+  Q0_ANCHOR_UNRECOGNISED
+                     q0Anchor is a string this audit cannot map to a pin, so no
+                     comparison was attempted  ← CI-FAILING, but NOT a flip
   Q0_AMBIGUOUS       anchor == "ambiguous" WITH a q0AnchorReason naming what
                      is undetermined
   Q0_AMBIGUOUS_NO_REASON
@@ -237,7 +240,28 @@ def classify(path: Path) -> tuple[str, str]:
             )
         return "Q0_COMPARISON", ""
     if anchor not in ("muon", "proton"):
-        return "Q0_FLIP", f"unknown anchor {anchor!r}"
+        # NOT a flip, and calling it one is a category error with a measurable
+        # cost. `Q0_FLIP` means "anchor and q0Value disagree" — a checked
+        # contradiction. Here the label could not be mapped to a pin at all, so
+        # nothing was compared: the value may agree with its anchor perfectly.
+        #
+        # Measured on main 2026-09-03: 18 Q0_FLIP, of which **17** were this
+        # branch — witnesses writing prose into the token field, e.g.
+        # 'proton (experimental pin)' or
+        # 'both: proton q_at() + muon q_muon_at() @ CODATA 2022'. Reported as
+        # eighteen flip-flop bugs where there is ONE, which is how a gate that
+        # is red on arrival gets skipped.
+        #
+        # Still CI-FAILING, and deliberately: an unmappable label means the
+        # audit COULD NOT CHECK that witness, and "could not check" is never
+        # rendered as green. It is a separate line so the two are legible —
+        # this one is fixed at the producer by putting the token in `q0Anchor`
+        # and the prose in `q0AnchorReason`, which is what that field is for.
+        return "Q0_ANCHOR_UNRECOGNISED", (
+            f"q0Anchor={anchor!r} is not a pin this audit can map. Put the "
+            f"token ('muon' / 'proton' / 'ambiguous' / 'independent' / "
+            f"'comparison') in q0Anchor and the prose in q0AnchorReason."
+        )
     value = body.get("q0Value")
     if not value:
         return "Q0_VALUE_MISSING", f"anchor={anchor}"
@@ -252,163 +276,11 @@ def classify(path: Path) -> tuple[str, str]:
     return "Q0_OK", ""
 
 
-def payload_mislabels(path: Path) -> list[dict]:
-    """Fields whose NAME says one anchor while the VALUE is the other one's pin.
-
-    The `Q0_OK`/`Q0_FLIP` verdicts compare the *envelope* (`q0Anchor` vs
-    `q0Value`) and never look inside `data`. That is correct for what they
-    test, and it leaves a seam: a probe that evaluates BOTH anchors and labels
-    one of them wrong is Q0_OK, because its envelope is self-consistent.
-
-    Measured instance (bean `qou-cds3`, 22 witnesses):
-    `probes/flavor-split-alpha-dilog-expansion.witness.json` is Q0_OK with
-    `q0Anchor: "muon"` matching its `q0Value`, while `data/proton_anchor/q0`
-    holds that same *muon* value.
-
-    Diagnostic only — printed, never written to the witness and never able to
-    change the exit code. The `Q0_FLIP` gate is CI-failing, and 22 known hits
-    would fail the build before the migration that fixes them is authorised.
-    """
-    out: list[dict] = []
-    try:
-        doc = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001 — classify() already reports parse errors
-        return out
-
-    def walk(node, jp=""):
-        if isinstance(node, dict):
-            for k, v in node.items():
-                # Use the NEAREST anchor-bearing path segment, not just the
-                # immediate key: `/data/proton_anchor/q0` names its anchor on
-                # the parent, and keying on `k` alone silently misses it.
-                named = _anchor_in_path(f"{jp}/{k}")
-                if named is not None and not isinstance(v, (dict, list)):
-                    got = _anchor_of_value(str(v))
-                    if got is not None and got != named:
-                        out.append({
-                            "witness": path.name,
-                            "field": f"{jp}/{k}",
-                            "name_says": named,
-                            "value_is": got,
-                            "value": str(v)[:34],
-                        })
-                walk(v, f"{jp}/{k}")
-        elif isinstance(node, list):
-            for i, v in enumerate(node):
-                walk(v, f"{jp}[{i}]")
-
-    walk(doc)
-    return out
-
-
-def _anchor_in_path(jp: str) -> str | None:
-    """Innermost path segment naming an anchor wins.
-
-    `/data/proton_anchor/q0` -> proton.  `/q0_pins/muon` -> muon.  Innermost so
-    that a correctly-labelled pair nested under a differently-named parent is
-    read by its own label rather than its container's.
-    """
-    for seg in reversed(jp.split("/")):
-        sl = seg.lower()
-        if "proton" in sl:
-            return "proton"
-        if "muon" in sl:
-            return "muon"
-    return None
-
-
-def _anchor_of_value(v: str) -> str | None:
-    """Which anchor's pin does this literal carry, if any?"""
-    pref = v[:_MATCH_PREFIX]
-    for anchor, want in _EXPECTED_PREFIX.items():
-        if pref == want:
-            return anchor
-    return None
-
-
-def envelope_vs_payload(path: Path) -> dict | None:
-    """The stamped anchor's value appears NOWHERE in the payload, the other's does.
-
-    A THIRD seam, distinct from both existing checks and caught by neither:
-
-      * `Q0_OK` / `Q0_FLIP` compare envelope to envelope — `q0Anchor` against
-        `q0Value`. Both can be perfectly self-consistent while the numbers were
-        computed at the other pin.
-      * `payload_mislabels` compares a field's NAME to its VALUE inside `data`.
-        It is silent when the name and value agree — `data.q_proton` holding the
-        proton pin is correct by that test.
-
-    So a witness stamped `muon`, whose `q0Value` is the canonical muon pin, and
-    whose payload contains only proton-valued fields correctly named `q_proton`,
-    passes both. Measured instance (bean `qou-cds3`, 2026-08-23): six witnesses
-    regenerated by producers listed `ideal_muon` in `q0_anchor_manifest.json` —
-    so `WitnessBuilder` stamped them muon — while every one imports `q_at` from
-    `qou_substrate.constants`, which the manifest auto-select never rebinds, so
-    they compute at proton. All six were `Q0_OK` with zero payload mislabels.
-
-    Reported only when the evidence is unambiguous: the other anchor's pin is
-    present AND the stamped anchor's is absent. A witness with no q0-shaped
-    payload yields no evidence either way and is not reported.
-
-    Diagnostic only, like `payload_mislabels` — printed, never written to the
-    witness, never able to change the exit code.
-    """
-    try:
-        doc = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:  # noqa: BLE001 — classify() already reports parse errors
-        return None
-    if not isinstance(doc, dict):
-        return None
-    anchor = doc.get("q0Anchor")
-    if anchor not in ("muon", "proton"):
-        return None
-    other = "proton" if anchor == "muon" else "muon"
-    want_self, want_other = _EXPECTED_PREFIX[anchor], _EXPECTED_PREFIX[other]
-    saw_self, saw_other = [], []
-    def walk(o, trail):
-        if isinstance(o, dict):
-            for k, v in o.items():
-                walk(v, trail + [str(k)])
-        elif isinstance(o, list):
-            for i, v in enumerate(o):
-                walk(v, trail + [str(i)])
-        else:
-            t = str(o)
-            if t.startswith(want_self):
-                saw_self.append(".".join(trail))
-            elif t.startswith(want_other):
-                saw_other.append(".".join(trail))
-    for key in ("data", "parameters"):
-        if key in doc:
-            walk(doc[key], [key])
-    if saw_other and not saw_self:
-        return {
-            "witness": str(path),
-            "stamped": anchor,
-            "computed": other,
-            "fields": saw_other[:6],
-            "why": (f"q0Anchor={anchor} and q0Value matches the {anchor} pin, but "
-                    f"the payload carries only {other}-pin values "
-                    f"({', '.join(saw_other[:3])}) — the envelope is "
-                    f"self-consistent and describes a different anchor than the "
-                    f"numbers were computed at"),
-        }
-    return None
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--strict", action="store_true",
-        help="Exit 1 if any Q0_FLIP witnesses are found (CI gate).",
-    )
-    parser.add_argument(
-        "--payload-check", action="store_true",
-        help="Also report fields INSIDE data whose name says one anchor while "
-             "the value carries the other's pin — the seam Q0_OK/Q0_FLIP "
-             "cannot see, since they compare only q0Anchor vs q0Value. "
-             "Diagnostic: printed, not written to the witness, and cannot "
-             "change the exit code.",
+        help="Exit 1 on any Q0_FLIP or Q0_ANCHOR_UNRECOGNISED witness (CI gate).",
     )
     args = parser.parse_args(argv)
 
@@ -440,9 +312,11 @@ def main(argv: list[str] | None = None) -> int:
              "Q0_INDEPENDENT_NO_REASON", "Q0_COMPARISON",
              "Q0_COMPARISON_NO_REASON", "Q0_COMPARISON_NO_VALUES",
              "Q0_ANCHOR_MISSING",
-             "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
+             "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR",
+             "Q0_ANCHOR_UNRECOGNISED", "Q0_FLIP"]
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]
+    n_unrec = n["Q0_ANCHOR_UNRECOGNISED"]
 
     print("=" * 70)
     print("q₀-anchor consistency audit — muon/proton flip detector")
@@ -455,6 +329,16 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {r['witness']}: {r['detail']}")
         if n_flip > 25:
             print(f"  ... (+ {n_flip - 25} more)")
+    if n_unrec:
+        # Separate heading on purpose: these were reported as flips until
+        # 2026-09-03, which inflated the headline 1 -> 18 and buried the one
+        # real disagreement among seventeen naming defects.
+        print("\n⚠ Q0_ANCHOR_UNRECOGNISED (label unmappable — NOT a flip; the "
+              "audit could not check these):")
+        for r in by_verdict["Q0_ANCHOR_UNRECOGNISED"][:25]:
+            print(f"  - {r['witness']}: {r['detail']}")
+        if n_unrec > 25:
+            print(f"  ... (+ {n_unrec - 25} more)")
 
     builder = (
         WitnessBuilder("q0-anchor-consistency-audit", engine="python")
@@ -465,7 +349,10 @@ def main(argv: list[str] | None = None) -> int:
             "PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ "
             "at all — a positive, producer-declared statement, distinct from "
             "Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from "
-            "Q0_ANCHOR_MISSING (nothing recorded)."
+            "Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is "
+            "an anchor label that maps to no pin, so NO comparison was made — "
+            "also CI-failing, because 'could not check' is not green, but not "
+            "a flip and counted apart from one."
         )
     )
     builder.add_data("counts", n)
@@ -475,43 +362,20 @@ def main(argv: list[str] | None = None) -> int:
         "no_q0_flip", computed=n_flip, expected=0, tolerance=0,
         source="every witness's q0Value must match its q0Anchor's canonical pin",
     )
+    builder.add_assertion(
+        "no_unrecognised_anchor", computed=n_unrec, expected=0, tolerance=0,
+        source="every q0Anchor must be a token this audit can map to a pin, "
+               "so that the value CAN be checked against it",
+    )
     builder.save()
 
-    if args.payload_check:
-        mis = [m
-               for w in sorted((HERE.parent).rglob("*.witness.json"))
-               for m in payload_mislabels(w)]
-        print("\n" + "=" * 74)
-        print("  payload anchor-label check (--payload-check, diagnostic only)")
-        print("=" * 74)
-        print(f"  fields whose NAME and VALUE disagree on the anchor: {len(mis)}")
-        print(f"  witnesses affected: {len({m['witness'] for m in mis})}")
-        for m in mis[:25]:
-            print(f"    {m['witness'][:44]:46} {m['field'][:30]:32} "
-                  f"name={m['name_says']:6} value={m['value_is']}")
-        if len(mis) > 25:
-            print(f"    … and {len(mis) - 25} more")
-
-        # The THIRD seam: envelope self-consistent, payload computed at the
-        # other anchor. Neither Q0_OK/Q0_FLIP (envelope vs envelope) nor the
-        # check above (field name vs field value) can see it.
-        env = [e for w in sorted((HERE.parent).rglob("*.witness.json"))
-               if "_deprecated" not in w.parts
-               for e in ([envelope_vs_payload(w)] if envelope_vs_payload(w) else [])]
-        print()
-        print(f"  envelope-vs-payload mismatches: {len(env)}")
-        print("    (q0Anchor + q0Value agree with each other, but every q0-shaped")
-        print("     value in the payload belongs to the OTHER anchor)")
-        for e in env[:25]:
-            print(f"    {Path(e['witness']).name[:52]:54} "
-                  f"stamped={e['stamped']:6} payload={e['computed']}")
-        if len(env) > 25:
-            print(f"    … and {len(env) - 25} more")
-
-        print("\n  Exit code unchanged — Q0_FLIP remains the only gate.")
-
-    if args.strict and n_flip:
-        print(f"\nFAIL (--strict): {n_flip} Q0_FLIP witness(es).")
+    if args.strict and (n_flip or n_unrec):
+        parts = []
+        if n_flip:
+            parts.append(f"{n_flip} Q0_FLIP")
+        if n_unrec:
+            parts.append(f"{n_unrec} Q0_ANCHOR_UNRECOGNISED")
+        print(f"\nFAIL (--strict): {' + '.join(parts)} witness(es).")
         return 1
     return 0
 

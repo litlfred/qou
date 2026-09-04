@@ -5,6 +5,37 @@ Seeded 2026-08-29 from `AGENTS.md`. Confirm entries as you use them.
 
 ---
 
+## STABLE — step 0: `corpus_search` (MCP), before any grep
+
+All six paths below are greps, and they share one blind spot: a grep finds
+prior work only if it used **your** words. Work written in different words is
+the case that actually costs a session — the grep comes back empty and reads
+as a clean bill.
+
+`corpus_search` seeds lexically and then expands along the knowledge graph,
+across the authored corpus and the ingested library at once. A block that
+never says "Temperley-Lieb" but `uses` one that does is one hop from the query.
+
+Read three fields. **`why`** — MATCHED vs REACHED, and by which edge; a `~`
+prefix means the edge ran backwards, so that node depends on the seed rather
+than the reverse. **`seedsByProvenance`** — many ingested hits with no authored
+ones means *cite it*, not *derive it*. **`emptyRoots`** — a directory present
+but holding no graph nodes; an ungenerated `.jsonld` corpus answers every query
+with a silence indistinguishable from "nobody has done this".
+
+It does not replace the six: it seeds on labels, titles, kinds and tags
+(`searchText: true` for companion prose), so a topic named only inside a proof
+body is still a grep's job.
+
+## TRAP — an empty `corpus_search` is not evidence until you have read `emptyRoots`
+
+Added 2026-09-03, from the run that generated the graph. Before that day the
+qou graph was **empty**: 3595 authored blocks, 576 library documents, **zero**
+`.jsonld`. Every graph-backed query returned nothing and returned it in the
+shape of "no results" rather than "nothing was indexed". The distinction is the
+entire value of the field, so check it before treating an empty answer as an
+absence — this is the same failure the tool exists to prevent, one level up.
+
 ## STABLE — the six paths, in order
 
 All six must return empty (modulo the originating file) before anything is
@@ -23,37 +54,14 @@ authoritative** — the corpus is.
 6. **`.beans/`** — `grep -rl <topic> .beans/`. See the TRAP below; this is
    the path most often skipped and the one that most often holds the answer.
 
-## STABLE — the library, three tiers
+## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
 
-```sh
-grep -in <topic> library/INDEX.md              # 320 one-line briefs, ~14k tokens total
-cat library/<doc-id>/summary.json              # ~300 tokens: worth opening?
-grep -rln <topic> library/<doc-id>/sections/   # the text itself
-```
-
-Full-text fallback: `grep -rln <topic> library/*/sections/`. Do not grep
-straight into that when a line of `INDEX.md` will do. **But see the `ocr/`
-TRAP below — `sections/` is not always the text.**
-
-A section file's YAML front-matter names document, section and page range,
-so a hit is immediately citable. `library/<doc-id>/candidates.json` holds
-that document's extracted theorems and definitions.
-
-Briefs and summaries are **extractive** — assembled from each document's own
-abstract and section titles, nothing model-written — so a brief is only as
-good as the abstract behind it.
+Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`), with the counts and the commands. Moved there 2026-09-03 to stay under the 200-line cap; the traps below stay here because they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`
 
-Path 5 as written reads a file that, for scanned / JSTOR-style docs, holds only
-the download banner. Measured 2026-08-30: **25 of 536 library dirs carry an
-`ocr/` dir; 10 of the 11 single-section ones hold under 15 % of their OCR bytes
-in `sections/`, six under 3 %.** Worked case: `procrsoclondona92` = Moffatt &
-Ricca, *Helicity and the Calugareanu invariant* — 4.1 % visible; `Lk = Wr + Tw`
-and `H = nΦ²` are in `ocr/page-002.txt` only.
-
-**Add a fourth tier when the topic could sit in an older / scanned paper:**
-`grep -rln <topic> library/*/ocr/`. Table + discriminator:
+25 of 542 library dirs keep their real text in `ocr/`, and the documented
+`sections/` grep cannot see it. Worked cases and the measured share:
 `library-and-staleness-traps.md`.
 
 ## TRAP — `uploads/` is invisible to path 5
@@ -91,7 +99,12 @@ Read `status` and the **whole body**, not the title:
 - a **`completed`** bean is the one that bites — the answer may be a single
   sentence in the body with no artifact anywhere else;
 - a **`scrapped`** bean usually names the bean that superseded it, which is
-  how you find the live carrier.
+  how you find the live carrier;
+- and when you are **appending** to a bean, read the whole file before you
+  write — the destination is the source you are skipping. 2026-09-03
+  (`qou-zrx2`): I wrote "no closed form was identified" two sections below
+  "the floor has a CLOSED FORM" and "the floor is DERIVED", having read the
+  bean with `tail -60`.
 
 Worked case (added 2026-08-26 after a PR re-derived two held results): the
 trail ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh` (completed,
@@ -106,6 +119,15 @@ specific and recent. Worked case: bean `qou-q7lf` reports a scipy-sparse
 boundary in `hecke_core_legacy.unified_iterative_correction`; commits
 `da645cf0f32` and `46dcfc62a57` fixed exactly that site the next day. The
 bean was stale and was believed over the code.
+
+**And the sharper version, 2026-09-04: I cited a bean for the OPPOSITE of what
+it says.** I wrote "anything carrying SPIN … (the same wall bean `qou-7zob`
+reaches from the flavour side)" into five merged artifacts. `qou-7zob` does not
+reach that wall — it *refutes* the spin route, in its own body, via the Pauli
+lock (`S=1 ⟺ T=0`), and `InterfaceScalar.separable_interface_degenerate` proves
+it sorry-free. I had matched the bean on **topic** and cited it on **agreement**
+without reading it. A bean cited in support is a bean you must have read to the
+end; its title tells you the subject, never the verdict.
 
 ## TRAP — grep the claim SHAPE, not only the topic
 
@@ -129,11 +151,65 @@ examples and why a machine checker cannot do this.
 
 ## TRAP — `beans create` is not idempotent
 
-Fresh ID every call, dedupes on nothing. Run the exact-title existence check in
-`.claude/skills/local/todo-manager.md` first. An unguarded re-run on 2026-08-04
-made **14,688** duplicate beans — 92 % of every open bean — and corrupted a
-later agent's corpus-grep. Your searches read `.beans/`; that is why it matters.
-Detail: `library-and-staleness-traps.md`.
+Run the exact-title existence check before every create; an unguarded
+re-run once produced 14,688 duplicates. Detail:
+`library-and-staleness-traps.md`.
+
+## TRAP — an inherited "X is unavailable" is HALF a measurement
+
+2026-09-03: the corpus said *"the ptolemy DB is firewalled; only `4_1`/`5_2`/
+`3_1` ship Magma fixtures"*. I carried both halves into a PR body, a bean and a
+report. **Firewall: real** (403 on CONNECT, re-verified two ways). **Fixture
+list: wrong** — the wheel ships **seven** manifolds; nobody had run `ls`.
+
+**The shape: a claim bundling an ENVIRONMENT fact (a host is blocked) with a
+CORPUS fact (what we hold locally).** The environment half ages slowly and is
+usually right; the local half is cheap to check and is the one that is wrong.
+Enumerate the local surface yourself before repeating either half.
+
+## TRAP — in an UPSTREAM library, grep the statement SHAPE, not the data structure
+
+2026-09-04, `qou-kwoa`. I needed "determinant of a block-diagonal matrix with
+blocks of *differing* sizes", grepped Mathlib for `det` ∩ `blockDiagonal'`, got
+nothing, and wrote into a PR body that this was a **named Mathlib gap** blocking
+the work — with a cost estimate ("~60 lines of permutation combinatorics, and
+the dependent version is harder").
+
+Both greppable facts were TRUE: `Matrix.det_blockDiagonal` really is uniform-size
+only, and there really is no `det_blockDiagonal'`. **The capability was present
+under a different name** — `Matrix.BlockTriangular.det_fintype`
+(`LinearAlgebra/Matrix/Block.lean`) gives `M.det = ∏ k, (M.toSquareBlock b k).det`
+for fibres of arbitrary, differing size, and a block-*diagonal* matrix is
+block-triangular for every `b`. The assembly was 210 lines, not a tranche.
+
+**The shape: I searched for the NAME OF MY DATA STRUCTURE, and the library
+indexes by the HYPOTHESIS THAT MAKES THE THEOREM TRUE.** `blockDiagonal'` is
+how *I* would build the object; `BlockTriangular` is the weakest condition under
+which the conclusion holds, so that is what upstream states it for. Mathlib
+generalises aggressively, so the lemma you want is routinely filed under a
+*weaker* hypothesis than the one you have.
+
+**Do this instead**: grep the *conclusion* (`det.*∏`, `∏.*det`) and enumerate
+the `theorem`/`lemma` heads of the whole plausible file before concluding
+absence — `grep -n '^\(theorem\|lemma\|protected theorem\)' <file>` is one
+command and would have caught this. This is §"grep the claim SHAPE" applied
+outward: same discipline, and an upstream library is where it bites hardest,
+because a missing-capability verdict there turns into a scope decision.
+
+**Independent second instance, SAME DAY, different domain.** Sibling PR #6609
+(`session_01Prc52Z5Sct7AdeXT2TPq6J`) is titled *"the blocker I recorded was one I
+could have read my way past"*: a true caution — *"don't guess the LP's `(A,b,c)`
+packing from a producer"* — had been over-generalised into a prohibition, when
+the packing is stated plainly at `lp_dual_solver.py:995`. *"Reading it took one
+`sed`."*
+
+So the shape is **wider than greps**, and this is the version to carry:
+**a blocker recorded from an INFERENCE rather than from the direct read that
+would settle it.** Mine inferred absence from a name-shaped grep; theirs
+inferred a prohibition from an adjacent caution. Both cost a *scope decision* —
+the expensive kind of wrong, because a phantom blocker silently re-plans the
+work — and both were one command away. Before recording any blocker: name the
+single file or command that would settle it, and run it.
 
 ## STABLE — refutation scoping
 
@@ -155,34 +231,53 @@ factor.
 Found an over-claimed (b)? Re-scope to (a). Do not delete the finding — the
 numerical result stands, only the scope was wrong.
 
+## TRAP — your own two halves disagreeing is a BUG, not a refutation
+
+Testing `tr_M|_(q=1) = 2^(c-n)` for the classical binding floor I got
+`c_free = 6` from a cycle count and `tr_M(W_free) = 1/4` from Richardson —
+and `1/4 = 2^(c-6)` forces `c = 4`. I published that disagreement as a
+refutation of the formula rather than a bug in the count (it was the count:
+the permutation is `(0 1)(3 4)`, 4 cycles). The mechanism was the corpus's
+own **derived** one, in a probe, a sorry-free Lean file, and the bean I was
+appending to. Check a refutation against every other number **in your own
+probe** before you write it down. `qou-zrx2`.
+
+**Second instance, three days apart, a different session** (`qou-brng`,
+`0be7d66fad`): a Lean exclusion re-proved that `qou-edt7` had landed four
+days earlier and proved more generally, plus a "surviving escape" ratio that
+was the corpus's own `w(2)/w(1)` with the obvious mechanism already refuted
+there. Their generalisation is the one to carry: **a "next direction" line in
+a bean or PR body is a novelty claim and needs the checklist exactly as much
+as an "open" declaration does** — and run it BEFORE merging, not after.
+
+## TRAP — a text heuristic cannot decide a question about MEANING
+
+Measured 2026-09-04, three detectors read candidate-by-candidate: commit
+subjects for "is this done?" **2/12**; bean titles for "duplicates?" **bad both
+ways** (it missed the pair it was built for); Lean docstrings for "does the body
+compute what the doc claims?" **1/8**. All three were first estimated 3-6x too
+optimistic **by their author**, always by reading subjects instead of bodies.
+
+Every FP class is SEMANTIC — a quoted or negated verb on a REOPENING, a
+deliberately parked bean, a title template, a doc stating an INTERMEDIATE value.
+No regex reaches them.
+
+**Choose what to OPEN with such a tool; never conclude. Read every candidate
+before quoting a rate. Never ship a detector whose false positives are CORRECT
+artifacts** — sharper than the rate. What works: ask WHEN not what; test the
+ANSWER not the source; ask `git log -L`. Tables and all FP classes:
+[`detector-precision-measured.md`](detector-precision-measured.md).
+
 ## Resolved topics — where the answer actually lives
 
-Append here whenever a sweep lands. Format: *question → where → verdict →
-date*. This is the entry type that saves the most work.
+A lookup table, consulted when a specific topic
+comes up. In `resolved-topics.md` — read it before declaring any of
+these open, and add a row whenever a sweep settles one.
 
-- Groupoid with inequivalent fibre objects carrying a 3-dim `W` whose
-  fundamental is not self-dual → bean `qou-dwsh` body (completed
-  2026-08-03) → answered; reachable by path 6 only.
-
-- **Why is the integer coordination count `M` the binding multiplier while
-  mass carries the q-dim linking weight `lw`?** (bean `qou-brng`, "the
-  linking-vs-self-energy route") → **PARTIALLY COVERED, and the target has
-  moved.** 2026-08-30.
-  - *Still open, and the corpus says so in as many words:*
-    `docs/audits/2026-08-30-coordination-saturation-formalized.md`
-    §"What stays open" — *"the amplitude assignment … is **not** proved."*
-  - *But a `B = Σ_bonds f(bond)` law is scope-(b) EXCLUDED as a TOTAL* by
-    `QOU.Mass.PairwiseCumulantVanishing.b3_eq_zero_ofBondFunctional`
-    (sorry-free, `f` arbitrary, `μ` bond-dependent) against AME
-    `b₃ = +1.426222 MeV`. So "why is `M` the multiplier" cannot be answered
-    by any per-bond assembly alone.
-  - *The nearest existing derivation* is the Gram-quadratic split
-    `B ~ ⟨Σᵢgᵢ⟩²_G = Σᵢ⟨gᵢ⟩²_G + 2Σ_{i<j}⟨gᵢ,gⱼ⟩_G` —
-    `docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`
-    Parts 10–13, beans `qou-v0yw` / `qou-vibo`. **Its numbers are stale**
-    (convention-C + float64, see the TRAP below); its algebra survives.
-  - *Citable rather than re-derivable:* Moffatt–Ricca `procrsoclondona92`
-    (`ocr/` only — see the `ocr/` TRAP).
+- **Exchange-sensitive NON-trace invariant of the six-strand two-nucleon link
+  for the T=0/T=1 ratio 33.7055?** → `resolved-topics.md` (2026-09-03). Open as
+  a *class*; the **linking-data subclass is closed** scope-(b) (`lk` IS `I₃`,
+  both channels at `I₃ = 0`); the exchange OPERATOR is closed three times over.
 
 ## BASELINE — re-measure, do not quote
 
@@ -196,4 +291,8 @@ date*. This is the entry type that saves the most work.
 ---
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
-- 2026-08-30 · `qou-brng` linking-vs-self-energy · **partially covered / target moved** · found on paths 1, 3, 4, 6; the citable source on path 5 was reachable only via `ocr/`.
+- 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
+- 2026-09-04 · `qou-kwoa` Gram-determinant assembly · declared a **Mathlib gap** that was not one — see the upstream-shape TRAP above; the lemma existed under `BlockTriangular`.
+- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
+- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.
+- 2026-09-04 · detector precision · three text heuristics built and measured (2/12, 1/8, bad-both-ways) · **the file is now 253 lines vs the 200-line convention; it was 234 before this entry** (I first wrote 246 here — a PREDICTED number, not a measured one, in the file whose own TRAPs are about exactly that; corrected in the next commit) — the sanctioned prune (this log) is 5 lines, so the cap cannot be met by pruning it; a future session should split a STABLE section into a sibling.

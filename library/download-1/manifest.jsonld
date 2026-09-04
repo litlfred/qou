@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download-1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Central and Lp-concentration of 1-Lipschitz maps into R-trees",
+  "contains": [
+    "library/download-1/sections/sec-000",
+    "library/download-1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "download-1",
+    "source_file": "Download (1).pdf",
+    "source_sha256": "bbb001c909958e8a2c281846eeab29e5bb49e1d1f4645f51221afb88ac641e3f",
+    "pages": 24,
+    "arxiv": null,
+    "doi": "10.2969/jmsj/06120483",
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

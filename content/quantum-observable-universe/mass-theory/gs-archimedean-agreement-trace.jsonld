@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-gs-archimedean-agreement-trace",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gs-archimedean-agreement-trace",
+  "kind": "conjecture",
+  "title": "Archimedean agreement: Habiro polynomial trace evaluates to GB mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-habiro-residue-sum-equivalence",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+    "papers/quantum-observable-universe/blocks/conj-gs-spectral-decomposition-existence"
+  ],
+  "cites": [
+    "references/habiro2004"
+  ],
+  "tags": [
+    "gs-filtration",
+    "spectral-sequence",
+    "habiro-ring",
+    "archimedean-agreement",
+    "equivalence",
+    "noncomputable-opaque",
+    "audit-flag-13a"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement",
+  "text": "gs-archimedean-agreement-trace.md",
+  "provenance": "authored"
+}

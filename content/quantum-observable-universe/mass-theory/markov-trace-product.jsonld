@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-markov-trace-product",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:markov-trace-product",
+  "kind": "theorem",
+  "title": "Product factorization of the Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-vertex-operator"
+  ],
+  "tags": [
+    "markov-trace",
+    "factorization",
+    "jones-polynomial",
+    "hecke-algebra",
+    "vertex-operator"
+  ],
+  "leanRef": "qou:QOU.Hecke.markov_trace_product",
+  "text": "markov-trace-product.md",
+  "leanSource": "markov-trace-product.lean",
+  "provenance": "authored"
+}

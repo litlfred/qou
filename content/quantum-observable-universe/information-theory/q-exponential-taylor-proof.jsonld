@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-exponential-taylor",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-exponential-taylor",
+  "kind": "proof",
+  "title": "Proof of q exponential taylor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-taylor"
+  ],
+  "text": "q-exponential-taylor-proof.md",
+  "provenance": "authored"
+}

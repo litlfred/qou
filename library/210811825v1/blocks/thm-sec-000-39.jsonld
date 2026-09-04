@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/210811825v1/blocks/thm-sec-000-39",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Selberg’s trace formula, [74]",
+  "pageStart": 9,
+  "pageEnd": 163,
+  "text": "thm-sec-000-39.md",
+  "derivedFrom": "library/210811825v1/sections/sec-000",
+  "sourceDocument": "library/210811825v1/manifest",
+  "provenance": "ingested"
+}

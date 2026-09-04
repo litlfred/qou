@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-heat-kernel-computational-fallback",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-heat-kernel-computational-fallback",
+  "kind": "remark",
+  "title": "Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl",
+  "tags": [
+    "computational",
+    "nf-transition",
+    "perron-frobenius",
+    "q-gaussian",
+    "large-k",
+    "hecke"
+  ],
+  "text": "q-heat-kernel-computational-fallback.md",
+  "provenance": "authored"
+}

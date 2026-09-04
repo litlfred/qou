@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0105186v2/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(E,π,Q ) remains invariant under de-",
+  "pageStart": 43,
+  "pageEnd": 45,
+  "contains": [
+    "library/arxiv-math-0105186v2/blocks/prose-sec-025",
+    "library/arxiv-math-0105186v2/blocks/lem-sec-025-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0105186v2/manifest",
+  "sourceDocument": "library/arxiv-math-0105186v2/manifest",
+  "provenance": "ingested"
+}

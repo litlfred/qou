@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/blocks/thm-sec-001-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "text": "thm-sec-001-01.md",
+  "derivedFrom": "library/angled-survey/sections/sec-001",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

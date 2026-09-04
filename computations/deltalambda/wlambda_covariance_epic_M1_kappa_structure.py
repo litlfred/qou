@@ -338,6 +338,8 @@ def main():
     ms = (time.monotonic_ns() - t0) // 1_000_000
     Path(__file__).with_name("m1-kappa-structure.witness.json").write_text(
         json.dumps({
+        "q0Anchor": "independent",
+        "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: the structure of kappa -- sign reduces to a CORRELATION sign.",
             "probe": "m1_kappa_structure", "bean": ["qou-t6hc", "qou-k5r5"],
             "library": ["arxiv-1909.06797v5"],
             "identity_partitions": tot, "hook_sym_partitions": toth, "sigma_c_derived": nstr(sigma_c_pred, 15),

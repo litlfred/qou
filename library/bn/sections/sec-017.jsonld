@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "If s and t are joined by an edge of Γ, then sts = tst (we say s and t",
+  "pageStart": 22,
+  "pageEnd": 27,
+  "contains": [
+    "library/bn/blocks/prose-sec-017",
+    "library/bn/blocks/prop-sec-017-01",
+    "library/bn/blocks/thm-sec-017-02",
+    "library/bn/blocks/cor-sec-017-03",
+    "library/bn/blocks/thm-sec-017-04",
+    "library/bn/blocks/thm-sec-017-05",
+    "library/bn/blocks/ex-sec-017-06"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

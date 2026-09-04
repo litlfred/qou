@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:24:42.090815+00:00",
-  "commitSha": "58ac818738958b35bc7645c6ca41dd0e772059cc",
+  "computedAt": "2026-09-03T23:17:11.053883+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "h3_h4_box_additions_count_is_7",
@@ -13,18 +13,18 @@
     },
     {
       "name": "sigma_over_4_matches_3q2_plus_4_plus_3qinv2",
-      "computed": "10.000000000000000000",
-      "expected": "10",
+      "computed": 10.0,
+      "expected": 10.0,
       "passed": true,
       "tolerance": "1e-12"
     }
   ],
   "allPassed": true,
-  "durationMs": 172,
+  "durationMs": 202,
   "computation": "option-b-h3-h4-bratteli-probe",
   "scriptFile": "option_b_h3_h4_bratteli_probe.py",
-  "scriptHash": "be3149511140",
-  "scriptCommitSha": "1f28547680f2ac0ddf0ead17fabc56261986ad16",
+  "scriptHash": "81893a28b176",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -180,10 +180,10 @@
     "b2_y_lambda_weighted": {
       "hypothesis": "B2 (y_λ-weighted at q_0)",
       "verdict": "REFUTED",
-      "weighted_sum_at_q0": "4.054514661540383595777136742158332861088916356213157856217528849153831",
+      "weighted_sum_at_q0": "4.054514661540383595777136742158332861088916356213076545031272873494149",
       "lambda_A_at_q0": "2.5327796563993914920515145017580412323261604705351",
-      "delta": "1.521735005140992103725622240400291628762755885678057856217528849153831",
-      "relative_error": "0.6008161828432781884328076805445233530238450880123474716614162778552101",
+      "delta": "1.521735005140992103725622240400291628762755885677976545031272873494149",
+      "relative_error": "0.6008161828432781884328076805445233530238450880123153681240830824641277",
       "per_source": [
         {
           "lambda": [
@@ -213,9 +213,9 @@
             2,
             1
           ],
-          "y_lambda_at_q0": "0.2472978867480345984062206483797638621698244011251",
+          "y_lambda_at_q0": "0.24729788674803459840622064837976386216982440112509",
           "box_addition_sum": "8.1311186255975659682060580070321649293046418821405",
-          "weighted_contribution": "2.01080845300786160637511740648094455132070239549965225746633057180181",
+          "weighted_contribution": "2.010808453007861606375117406480944551320702395499570946280074596142128",
           "box_additions": [
             {
               "lambda_plus": [
@@ -316,5 +316,7 @@
     "production_wired": false,
     "scoping_doc": "docs/audits/2026-06-04-option-b-h3-h4-bratteli-scoping.md",
     "synthesis_verdict": "All three sub-hypotheses REFUTED at the closed-form level. The box-adding Bratteli induction axis does not derive the Family-A linking_weight by any of {uniform, y_λ-weighted, per-source}. The H₃→H₄ jump must come from a different structural mechanism (e.g. Markov-stabilization analog at the trace level, not the algebra-tower level — PR #1808 Option E literature-import flagged this as the next axis)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

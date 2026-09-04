@@ -1,0 +1,126 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:44:26.531595+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
+  "assertions": [
+    {
+      "name": "A1_block_product_is_det_of_T_plus_d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(q+d)(-1/q+d) - (d^2+dh-1) simplifies to 0"
+    },
+    {
+      "name": "A2_det_magnitude_is_at_least_one_on_the_hull",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|det| in [1, 1.010926552], endpoints exactly -1 to 0.0e+00"
+    },
+    {
+      "name": "A3_cap_survives_any_number_of_crossings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "200 random bonds: |det product| >= 1.002893188, best ratio 0.968811 <= 1"
+    },
+    {
+      "name": "A4_escape_requires_beta_outside_zero_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "d(d+h) < 0 throughout (-h,0); |det| < 1 first occurs outside the hull"
+    },
+    {
+      "name": "A5_matching_nature_needs_hull_exit_and_finetuning",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "beta* = -4.309370, |mu_anti| = 5.944e-11, ratio falls to 13.19 at d*-1e-4"
+    },
+    {
+      "name": "A6_both_named_escapes_are_closed_in_the_hull",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(b) caps at 1 (qou-m896); (a) cannot lift it at any crossing count (A3); escape needs beta outside [0,1]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "adding_crossings_cannot_break_the_degeneracy_probe",
+  "scriptFile": "adding_crossings_cannot_break_the_degeneracy_probe.py",
+  "scriptHash": "3305035b5db3",
+  "scriptCommitSha": "ded5462ce28709cef973f8ce815b41cf442d77e4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/adding_crossings_cannot_break_the_degeneracy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/adding_crossings_cannot_break_the_degeneracy_probe.py"
+  },
+  "description": "Runs escape (a) — more than one crossing per bond — named by qou-v3u2 and motivated by qou-m896's finding that the (T,S) grading caps the channel-asymmetry ratio at 1. It fails, and the reason subsumes the question. The Hecke relation T^2 = hT + 1 fixes the eigenvalue product at q.(-1/q) = -1, so a crossing's two block ratios multiply to (q+d)(-1/q+d) = d^2 + dh - 1 = det(T + dI), whose magnitude on d in [-h,0] lies in [1, 1.010926552] — always >= 1, with equality only at the endpoints. A bond built from k crossings multiplies those factors, so |mu_sym . mu_anti| >= 1 for ANY crossing count, hence L(T=0) + L(T=1) <= 0 and the ratio is capped at 1 regardless. Verified on 200 random multi-crossing bonds (k=2..6): det products all >= 1, best ratio 0.927. THE ESCAPE CONDITION is |d^2+dh-1| < 1 <=> 0 < d(d+h) < 2, which fails everywhere in the interior (d(d+h) < 0 there) and holds only for d > 0 (beta < 0) or d < -h (beta > 1): the bond operator must LEAVE THE CONVEX HULL of {sigma, sigma^-1}. No crossing count, block grading or convention does that. Even outside the hull, matching nature's 33.7 requires beta* = -4.30937 (4.31 outside) with |mu_anti| = 5.944e-11, i.e. the T=0 channel tuned to within 6e-11 of unbinding, and the point is not robust (ratio falls to 13.19 at d* - 1e-4). Near-threshold tuning is not itself unphysical — the real NN system is unnatural in exactly that way — but leaving the hull is the structural problem and nothing in the construction supplies it.",
+  "data": {
+    "det_identity": {
+      "symbolic_residual": "0",
+      "det_at_beta_0": "-1.0",
+      "det_at_beta_1": "-1.0",
+      "det_at_vertex": "-1.01092655213",
+      "max_abs_on_hull": "1.01092655213"
+    },
+    "multicrossing": {
+      "n_random_bonds": 200,
+      "k_range": "2..6",
+      "min_det_product": "1.002893188499",
+      "max_det_product": "1.059272886464",
+      "n_with_correct_signs": 101,
+      "best_ratio": "0.968811168511"
+    },
+    "escape_condition": {
+      "inequality": "0 < d(d+h) < 2",
+      "fails_inside_hull": true,
+      "requires": "beta < 0 or beta > 1"
+    },
+    "cost_of_matching_nature": {
+      "target_ratio": "33.705545",
+      "d_star": "0.9009182838963",
+      "beta_star": "-4.309370498",
+      "abs_mu_anti": "5.94404e-11",
+      "sensitivity": {
+        "1e-4": "13.185297",
+        "1e-5": "16.480558",
+        "1e-6": "19.776467"
+      }
+    }
+  },
+  "caveats": [
+    "SCOPE: this closes escape (a) for bonds built as a PRODUCT of crossings (T + d_i) with each d_i real and in [-h, 0], which is what the construction uses and what escape (a) proposed. It does NOT close every conceivable multi-crossing construction — a bond that is a SUM of products, or that entangles the two nucleons' internal strands rather than acting on a single interface generator, is not covered by the determinant argument and is not tested here.",
+    "THE 'BOUND <=> |mu| < 1' CONVENTION IS INHERITED FROM qou-m896 and is doing real work here too: the antisymmetric block's eigenvalue is negative, so the magnitude is used. Under a convention treating a negative ratio as unphysical the T=0 channel has no binding reading and the whole (T,S) line of argument does not run. The det-magnitude obstruction in A1-A3 is independent of that choice; the ratio numbers in A5 are not.",
+    "beta* = -4.309 is a solution of a ONE-PARAMETER family (a single crossing with a free real offset), presented to size what nature would cost, NOT as a proposed value. It has no derivation, sits far outside any braid-crossing reading, and requires a 10-digit tuning. It should be read as a measurement of the gap, not a fit.",
+    "The pionless-EFT remark is context, not evidence. The scattering lengths and force range are quoted to establish that near-threshold tuning is a real feature of the NN system; no claim is made that this construction's fine-tuning is the same phenomenon, and the two tunings are not on a common scale."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

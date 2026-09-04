@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-maximal-torus",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:maximal-torus",
+  "kind": "definition",
+  "title": "Maximal torus and weight subcategory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-labels"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-maximal-torus-su2"
+  ],
+  "tags": [
+    "torus",
+    "weight"
+  ],
+  "leanRef": "qou:QOU.MaximalTorus",
+  "text": "maximal-torus.md",
+  "leanSource": "maximal-torus.lean",
+  "provenance": "authored"
+}

@@ -2223,3 +2223,99 @@ superseded probe carries a forward pointer.
 **Still open:** escape (a), more than one crossing per bond — `mu` becomes
 polynomial in `d`, which is the minimal change that can break a degeneracy forced
 by a single generator's eigenvalue product. Not attempted.
+
+---
+
+## 2026-09-02 — the escapes close, and the arc reaches a verdict
+
+Six beans (`qou-vlrq`, `qou-ezhi`, `qou-r1yj`, `qou-bq9l`, `qou-3s5e`, plus
+`qou-o8ww` from the previous session), 36 assertions. **Read the chain in
+order** — three of these correct earlier ones, and no single probe states the
+result.
+
+### The obstruction has one name: `det T = -1`
+
+The Hecke relation `T^2 = hT + 1` fixes the eigenvalue product at `-1`, so a
+crossing's two block ratios multiply to `det(T + dI) = d^2 + dh - 1`, whose
+magnitude is `>= 1` for every `d in [-h, 0]`. Any product of crossings inherits
+it. Therefore `L(bound) + L(unbound) <= 0` and the **channel-asymmetry ratio is
+capped at 1** — in *both* sectors:
+
+    QCD colour, 3bar vs 6        needs 2       (exact group theory)   gives 1
+    nuclear, deuteron vs 1S0     needs 33.7    (measured)             gives 1
+
+One mechanism, two independent sectors. The quark version is the sharper test
+because its target has no error bar. Framing, writhe normalisation, colour
+weighting, the `e_pn` sign, extra crossings, Wenzl level — **every one of them
+only moves `d` inside the hull**, which is why each failed differently and none
+of the failures pointed anywhere.
+
+### The escape is a framing scalar, and it must be fractional (`qou-vlrq`)
+
+A scalar `c` multiplies *both* block ratios, so it scales the obstruction by
+`c^2` — the obstruction was never about `d`. Window `c in (1/q, 1]`, i.e.
+`e in [0, 0.8897722518)`. **One full crossing's writhe (`e = 1`) is outside it**,
+by `0.011570`, so every integer `e >= 1` binds the `T=1` channel. By Calugareanu
+`Lk = Tw + Wr`, the integer part is the writhe this construction carries and the
+continuous part is twist, which it does not — and which the writhe-normalised
+convention explicitly removes.
+
+### Level 3 does not help (`qou-ezhi`)
+
+The audit's never-run falsification, run. `z_r = q^(2r-1)(q^2-1)/(q^(2r)-1)`
+reproduces convention D at `r=2` and the audit's `z_3` at `r=3`, both to
+`1.15e-41`; quantum-dimension weights subsume convention D as their `r=2`
+member. **The colour singlet `(1,1,1)` is exactly zero at `r=2`** — the same
+fact that makes `H_12` cheap. But raising the level relabels which blocks are
+alive and **leaves the eigenvalues, hence the degeneracy, untouched**. Colour
+cannot rescue the nuclear sector.
+
+### Six strands moves the cap, once (`qou-r1yj`)
+
+Nucleon exchange is a block swap, not a transposition; its spectrum is seven
+magnitudes `+-q^k`, `k in {-3,-1,2,3,5,6,9}`. The cap rises from `1` to
+**exactly `3/2`** — the first thing in the arc to move it. Still misses `2` by
+`1.33x` and `33.7` by `22.5x`, and the Pauli-forced identification that made the
+`n=2` result work does not survive.
+
+### The twist exists — and not where it is needed (`qou-bq9l`, corrected by `qou-3s5e`)
+
+`c_n = s_1...s_(n-1)` satisfies `c_n^n = Delta^2`, so it is a genuine `n`-th root
+of the full twist, with block magnitude exactly `q^(2c(lambda)/n)`. Fractional
+values occur from `n = 5`.
+
+**`qou-3s5e` then retracts most of the use I put that to.** The cumulative
+achievable set is dense — `96 %` of denominator-`<=12` rationals by `n <= 24`,
+and all eight group-theoretic targets trivially hit — so "the substrate only
+produces rational ratios" has no discriminating power as stated. Per strand
+count the sets *are* sparse, and that is the physically relevant reading, which
+gives the decisive fact:
+
+    n = 2  (two quarks)     NONE  (only t = 1, the excluded boundary)
+    n = 3  (one nucleon)    NONE
+    n = 6  (two nucleons)   NONE
+    n = 12 (4He)            1/3, 1/2, 2/3
+
+`t in (0,1)` needs `c(lambda)` strictly between `-n/2` and `0`; at `n = 6` the
+achievable content sums are `{-15,-9,-5,-3,0,3,5,9,15}` and the window needs
+`{-1,-2}`. **The two-nucleon sector — where the impossibility lives — admits no
+admissible twist at all**, and the `t = 1/3` QCD hit sits at `n = 12` while two
+quarks are `n = 2`, so it is withdrawn as evidence.
+
+### Verdict
+
+The missing ingredient was correctly identified and **the substrate does not
+supply it where it is needed**. Every escape this arc opened is now closed under
+`beta in [0,1]` at the strand counts where the questions are posed.
+
+Remaining, and not attempted: a subsystem could in principle inherit a twist by
+embedding in a larger braid. That needs the embedding exhibited, and the
+resulting object would no longer be the `n`-strand system's own Coxeter element.
+
+### Corrections made to my own claims this session
+
+`e_pn = +delta/2` retracted (`217x` off); the `3.4693x` headline withdrawn as a
+summary; `A=3` three-body magnitudes corrected to production's bond order; the
+two-row collapse re-attributed to the corpus's own Lean; and the twist
+quantisation's cumulative form plus the `1/3` coincidence both withdrawn. Every
+superseded probe carries a forward pointer.

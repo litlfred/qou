@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1109.3255v2/blocks/prop-sec-005-04",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "prop-sec-005-04.md",
+  "derivedFrom": "library/arxiv-1109.3255v2/sections/sec-005",
+  "sourceDocument": "library/arxiv-1109.3255v2/manifest",
+  "provenance": "ingested"
+}

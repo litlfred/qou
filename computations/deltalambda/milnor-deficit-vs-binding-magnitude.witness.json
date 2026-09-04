@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "proton",
+ "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
  "computation": "milnor-deficit-vs-binding-magnitude",
  "scriptFile": "milnor_deficit_vs_binding_magnitude_probe.py",
  "engine": "python-mpmath-exact",
@@ -48,5 +50,7 @@
   "deficit_sign_alternates": true,
   "opposite_trends": true,
   "verdict": "MEASURED: D_A is the Milnor STRUCTURE, not the binding magnitude. At the proton q\u2080, |D_A| falls geometrically (ratio per step = \u2212h\u00b2(h\u00b2+2) = -0.08932265, |\u00b7|<1) and its sign alternates as (\u22121)^{A\u22123} \u2014 the deficit is a rapidly-decaying, sign-carrying order marker. The empirical binding fraction B/A/m_N RISES with A over the light range (0.767\u21920.954\u00b7\u210f_q\u00b2, \u2074He\u2192\u2075\u2076Fe) via the coordination count z=A\u22121 (qou-brng, binding=\u2212log I). The two objects have OPPOSITE A-dependence, so D_A cannot be the binding magnitude; it carries the Milnor order/parity. This substantiates with numbers the coordination-ledger claim that a MeV binding number from D_A would be a fit (the magnitude lives in the qou-brng coordination free energy, not in D_A)."
- }
+ },
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

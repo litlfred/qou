@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-kashaev-as-archimedean-realization",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:kashaev-as-archimedean-realization",
+  "kind": "remark",
+  "title": "Kashaev limit as the archimedean realization functor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-kashaev-volume-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "kashaev",
+    "volume-conjecture",
+    "realization-functor",
+    "knot-volume",
+    "archimedean"
+  ],
+  "text": "kashaev-as-archimedean-realization.md",
+  "provenance": "authored"
+}

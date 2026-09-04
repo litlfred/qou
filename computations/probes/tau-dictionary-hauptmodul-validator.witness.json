@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:24:14.924971+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-03T23:46:05.723388+00:00",
+  "commitSha": "d15ca14cbb8d6b280ae602f1581bdb606fc784da",
   "assertions": [
     {
       "name": "control_tau0_passes",
@@ -53,11 +53,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 353,
+  "durationMs": 2812,
   "computation": "tau-dictionary-hauptmodul-validator",
   "scriptFile": "tau_dictionary_hauptmodul_validator.py",
-  "scriptHash": "b02d704ae5df",
-  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
+  "scriptHash": "a5ac15187e22",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,7 +72,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -122,11 +122,11 @@
         "tier": "corpus-stated (caveated working choice)",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 + 0.0166063432408j)",
+            "tau": "(0.0 + 0.0166063432531j)",
             "im_tau": "0.016606343",
-            "t5": "(1.70973753874e-31 + 0.0j)",
+            "t5": "(1.70973763415e-31 + 0.0j)",
             "abs_residual_t5_plus_10": "10.0",
-            "j_5tau": "(7.31106366724e+32 + 0.0j)",
+            "j_5tau": "(7.31106325927e+32 + 0.0j)",
             "abs_residual_j5_plus_25_over_2": "7.31106e+32",
             "verdict": "FAIL"
           },
@@ -146,7 +146,7 @@
         "tier": "corpus-adjacent branch",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 - 0.0166063432408j)",
+            "tau": "(0.0 - 0.0166063432531j)",
             "im_tau": "-0.016606343",
             "verdict": "ill-defined",
             "reason": "Im tau <= 0: not a point of the upper half-plane"
@@ -164,11 +164,11 @@
         "tier": "strawman",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 + 0.104340731857j)",
+            "tau": "(0.0 + 0.104340731934j)",
             "im_tau": "0.10434073",
-            "t5": "(0.00073529291937 + 0.0j)",
+            "t5": "(0.0007352929259 + 0.0j)",
             "abs_residual_t5_plus_10": "10.0007",
-            "j_5tau": "(170751.435832 + 0.0j)",
+            "j_5tau": "(170751.434322 + 0.0j)",
             "abs_residual_j5_plus_25_over_2": "170764.0",
             "verdict": "FAIL"
           },
@@ -188,11 +188,11 @@
         "tier": "strawman",
         "results": {
           "muon-pin": {
-            "tau": "(0.0 + 0.0990817264383j)",
-            "im_tau": "0.099081726",
-            "t5": "(0.000388001496183 + 0.0j)",
+            "tau": "(0.0 + 0.0990817265076j)",
+            "im_tau": "0.099081727",
+            "t5": "(0.000388001499626 + 0.0j)",
             "abs_residual_t5_plus_10": "10.0004",
-            "j_5tau": "(322914.317443 + 0.0j)",
+            "j_5tau": "(322914.314584 + 0.0j)",
             "abs_residual_j5_plus_25_over_2": "322927.0",
             "verdict": "FAIL"
           },
@@ -212,11 +212,11 @@
         "tier": "strawman",
         "results": {
           "muon-pin": {
-            "tau": "(-0.5 + 0.104340731857j)",
+            "tau": "(-0.5 + 0.104340731934j)",
             "im_tau": "0.10434073",
-            "t5": "(-4.67797456222 - 7.70136776092e-71j)",
+            "t5": "(-4.67797456996 + 1.73712308967e-70j)",
             "abs_residual_t5_plus_10": "5.32203",
-            "j_5tau": "(1683.67817036 - 6.20570142564e-72j)",
+            "j_5tau": "(1683.67816884 + 1.93778744816e-71j)",
             "abs_residual_j5_plus_25_over_2": "1696.18",
             "verdict": "FAIL"
           },
@@ -233,7 +233,7 @@
       }
     },
     "q0_pins": {
-      "muon": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "muon": "1.1099785956427390466817951293800017527000655610290",
       "proton": "1.1099785827513808075916690956107688798744991218736"
     },
     "pin_verdict_sets": {
@@ -301,5 +301,11 @@
   },
   "caveats": [
     "Strawmen S1-S3 are demonstration inputs for the validator mechanics, NOT dictionary proposals. A FAIL is scope-(a): the map, as stated, does not land on the Bring class; it excludes that stated map only, never an ingredient. tau0 itself is transcendental (Schneider); only its Gamma0(5)-invariants are exact."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.1099785956427390466817951293800017527000655610290",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "validates the tau-dictionary hauptmodul gate at BOTH pins; both pins are read on purpose and each is reported under its own key"
 }

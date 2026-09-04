@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T15:43:25.713750+00:00",
-  "commitSha": "9bf3c62b920603aa4500fb584d92fcdd9f4ed7ad",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-04T04:17:17.258104+00:00",
+  "commitSha": "250654bfcf2a0bada4b09d1feb48f55133ad54bb",
   "assertions": [
     {
       "name": "borel_half_singularity_at_inv_sqrt2_q1_and_q0_class_change",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "lever1-borel-half-singularity-probe",
   "scriptFile": "lever1_borel_half_singularity_probe.py",
-  "scriptHash": "cef18e8cdfb7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "815f1f47c839",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_borel_half_singularity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_borel_half_singularity_probe.py"
   },
   "description": "Lever-1 (z2bn): level-1/2 Borel–Padé singularity hunt for the binding period a_D^(n). q=1 (exact I(n)/n, n≤60): root test extrapolates to sqrt2 (radius rho=1/sqrt2 ~ 0.7071); Padé [28/28] nearest pole on the positive real axis at |xi| ~ rho (Pringsheim) with real poles accumulating beyond rho ⇒ non-polar (branch/essential) singularity — the e^(sqrt n) subexponential signature of a mixed-level transseries. At q0 (n≤28) the level-1/2 root test rises without plateau ⇒ no classical Borel level carries the q0 period (q-Gevrey class; Jackson q-Borel / acceleration chain). The measured (rho, axis, type) datum is the structural target for the open multi-branch super-exp kernel. Anti-fit: expectations derived from proved asymptotics before measurement; exact/categorical inputs; no wiring. Scope-(a).",
   "data": {

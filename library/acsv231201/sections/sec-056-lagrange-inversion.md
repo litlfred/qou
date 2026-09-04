@@ -7,6 +7,7 @@ section_number: null
 pages: 408-411
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 On many families of recursively deﬁned combinatorial classes, such as tree
 enumeration problems, the combinatorial constructions discussed in Chapter 2

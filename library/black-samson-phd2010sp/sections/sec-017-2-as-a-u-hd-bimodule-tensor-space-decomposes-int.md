@@ -7,6 +7,7 @@ section_number: 2
 pages: 38-56
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 W (>9 ... (>9 W ~ EB L(>") (>9 S(>..).
 AEi\+(111.d)

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-frobenius-positivity-filter",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:frobenius-positivity-filter",
+  "kind": "proposition",
+  "title": "Frobenius positivity filter for even-$A$ decays",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-parity-regime-selection"
+  ],
+  "tags": [
+    "frobenius",
+    "positivity",
+    "filter",
+    "even-A",
+    "config-exclusion"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.frobenius_positivity_filter",
+  "text": "frobenius-positivity-filter.md",
+  "provenance": "authored"
+}

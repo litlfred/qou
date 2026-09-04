@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Twisted cohomology",
+  "pageStart": 27,
+  "pageEnd": 30,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-018",
+    "library/2018sorus020/blocks/rem-sec-018-01",
+    "library/2018sorus020/blocks/rem-sec-018-02",
+    "library/2018sorus020/blocks/rem-sec-018-03",
+    "library/2018sorus020/blocks/thm-sec-018-04",
+    "library/2018sorus020/blocks/prop-sec-018-05"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

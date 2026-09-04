@@ -1,0 +1,155 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:47:31.340280+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "assertions": [
+    {
+      "name": "A1_level_family_and_z3_verified",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "z_2 matches convention D to 1.1e-41, z_3 the audit's value to 1.1e-41; only z_1 > 1"
+    },
+    {
+      "name": "A2_weights_subsume_convention_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "support l<=r at all tested (n,r); r=2 matches load_cost to 1.1e-08"
+    },
+    {
+      "name": "A3_colour_singlet_is_exactly_zero_at_r2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "y(1,1,1) = 0.0e+00 at r=2, 0.035464334 at r=3"
+    },
+    {
+      "name": "A4_colour_signs_right_ratio_wrong_by_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "antisym attractive (+0.104340720), sym repulsive (-0.104340720), ratio 1.000000000 vs QCD 2"
+    },
+    {
+      "name": "A5_same_det_obstruction_caps_both_sectors",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "L_a + L_s = 5.74e-42, exactly zero, from |det T| = 1"
+    },
+    {
+      "name": "A6_framing_fix_cannot_be_universal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "QCD needs e_max/3 exactly; nuclear needs 0.942372 e_max; ratio 2.8271"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "level_three_colour_channel_probe",
+  "scriptFile": "level_three_colour_channel_probe.py",
+  "scriptHash": "f536471491bc",
+  "scriptCommitSha": "d2abcb88d9fe25560a9a52c36853f1fdbedc3d73",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/level_three_colour_channel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/level_three_colour_channel_probe.py"
+  },
+  "description": "Runs the named falsification from docs/audits/2026-08-16-wenzl-level-family.md section 4, recorded there as never executed: build the level-3 channel and check whether the blocks r=2 annihilates yield a colour observable with no fourth calibration. Built: z_r = q^(2r-1)(q^2-1)/(q^(2r)-1) reproduces convention D at r=2 and the audit's z_3 = 0.449304809090 at r=3, both to 1.15e-41, and z_1 = q > 1 is the only level whose Markov parameter can exceed 1 and hence the only one that could unbind anything. Weights are U_q(gl_r) quantum dimensions with support exactly l(lambda) <= r, reproducing load_cost's convention-D weights at r=2 to 1.14e-8 (its stored-f64 floor), so the construction subsumes convention D as its r=2 member. The colour singlet (1,1,1) — three quarks being totally antisymmetric in colour — has weight EXACTLY ZERO at r=2 and 0.035464334 at r=3: the substrate as configured has no colour singlet at all, which is the same fact that makes H_12 cheap in qou-38i9. THE OBSERVABLE: 3(x)3 = 3bar + 6 with one-gluon-exchange colour factors -2/3 (antisymmetric, attractive) and +1/3 (symmetric, repulsive), ratio exactly 2 by group theory with no error bar. The substrate's blocks carry q and -1/q at every level, giving L_antisym = +0.104340720320 (attractive, correct) and L_sym = -0.104340720320 (repulsive, correct) — SIGNS FREE — but |L_a/L_s| = 1 exactly, wrong by a factor of 2.0000000000. The cause is L_a + L_s = 0 identically from |det T| = 1, the SAME degeneracy qou-o8ww found capping the nuclear T=0/T=1 ratio at 1 against 33.7. One mechanism caps two independent sectors. A framing fix would need e = e_max/3 exactly for QCD against 0.942372 e_max for the nuclear sector, differing by 2.83x, so it cannot be universal.",
+  "data": {
+    "level_family": {
+      "z_1": "1.10997858275138",
+      "z_2": "0.612688037146465",
+      "z_3": "0.449304809090208",
+      "z_4": "0.369360232235605",
+      "z_5": "0.322749650471016"
+    },
+    "weight_support": {
+      "n=3,r=2": {
+        "live": 2,
+        "total": 3,
+        "max_rows_live": 2
+      },
+      "n=3,r=3": {
+        "live": 3,
+        "total": 3,
+        "max_rows_live": 3
+      },
+      "n=6,r=2": {
+        "live": 4,
+        "total": 11,
+        "max_rows_live": 2
+      },
+      "n=6,r=3": {
+        "live": 7,
+        "total": 11,
+        "max_rows_live": 3
+      }
+    },
+    "convention_D_agreement": {
+      "worst_rel_err_live_blocks": "1.140e-08",
+      "all_ge3row_weights_zero": true
+    },
+    "colour_singlet": {
+      "y_111_at_r2": "0.0",
+      "y_111_at_r3": "0.035464334084"
+    },
+    "colour_observable": {
+      "QCD_C_antitriplet": "-2/3",
+      "QCD_C_sextet": "+1/3",
+      "QCD_ratio": "2 (exact)",
+      "substrate_L_antisym": "0.10434072031952",
+      "substrate_L_sym": "-0.10434072031952",
+      "substrate_ratio": "1.0",
+      "discrepancy_factor": "2.0",
+      "signs_correct": true
+    },
+    "shared_degeneracy": {
+      "L_antisym_plus_L_sym": "5.73972e-42",
+      "cause": "|det T| = 1 from T^2 = hT + 1",
+      "nuclear_target_ratio": "33.705545"
+    },
+    "framing_fix": {
+      "e_max": "0.889772251761",
+      "e_for_QCD": "0.296590750587",
+      "e_for_QCD_over_e_max": "1/3 exactly",
+      "e_for_nuclear": "0.838496742899",
+      "e_for_nuclear_over_e_max": "0.942372",
+      "mismatch_factor": "2.827117"
+    }
+  },
+  "caveats": [
+    "THE COLOUR-FACTOR COMPARISON IS AN IDENTIFICATION, NOT A DERIVATION. It reads the two-strand symmetric/antisymmetric Wedderburn blocks as the sextet and antitriplet of 3(x)3. That is the natural reading — exchange symmetry matches on both sides — but nothing here constructs an SU(3) action on the strands, and no gluon exchange is modelled. What is computed is that the substrate's two exchange channels have the right relative sign and a ratio of exactly 1 against a required 2.",
+    "'ATTRACTIVE/REPULSIVE' USES THE ARC'S |mu| < 1 BINDING CONVENTION (qou-m896), needed because the antisymmetric eigenvalue is negative. The A5 statement L_a + L_s = 0 is convention-independent (it is |det T| = 1); the sign labels in A4 are not.",
+    "RAISING THE LEVEL CHANGES THE WEIGHTS, NOT THE ALGEBRA. The block eigenvalues are q and -1/q at every r, so every per-block ratio and the whole degeneracy argument are level-independent. The level affects which blocks are alive and the Markov parameter z_r — it does not touch the obstruction. Anyone hoping colour would repair the nuclear sector should read this as the reason it cannot.",
+    "e = e_max/3 is what a framing fix WOULD cost for the QCD ratio, reported for comparison with the nuclear requirement. It is not derived from anything, and qou-vlrq's caveat applies: no substrate mechanism producing a fractional twist is exhibited."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

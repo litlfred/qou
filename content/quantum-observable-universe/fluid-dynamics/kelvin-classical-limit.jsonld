@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-kelvin-classical-limit",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:kelvin-classical-limit",
+  "kind": "remark",
+  "title": "Classical limit of the $q$-Kelvin dispersion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-kelvin-dispersion-derivation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-kelvin-dispersion-derivation",
+  "tags": [
+    "classical-limit",
+    "kelvin-wave",
+    "self-induction"
+  ],
+  "text": "kelvin-classical-limit.md",
+  "provenance": "authored"
+}

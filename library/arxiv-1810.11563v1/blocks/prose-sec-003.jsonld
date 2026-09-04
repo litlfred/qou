@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Relative Complexity",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-003-4-relative-complexity.md",
+  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
+  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "provenance": "ingested"
+}

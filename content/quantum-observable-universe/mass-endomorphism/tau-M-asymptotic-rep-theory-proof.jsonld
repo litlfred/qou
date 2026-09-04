@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-tau-M-asymptotic-rep-theory",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:tau-M-asymptotic-rep-theory",
+  "kind": "proof",
+  "title": "Proof of tau M asymptotic rep theory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tau-M-asymptotic-rep-theory"
+  ],
+  "text": "tau-M-asymptotic-rep-theory-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2011.13340v1",
+ "source_sha256": "e73876ed2c923608",
+ "brief": "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional",
+ "extended": "**A Matrix Bernstein Inequality for Strong Rayleigh Distributions***\n\n*Tarun Kathuria*\n\n17 pp, 4 sections.\n\n**Abstract.** The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional inequalities like P oincare and log-Sobolev inequalities. These inequalities are especially useful for deriving conc entration for dependent distributions coming from stationary distributions of Markov chains. In c ontrast to the scalar case, the study of matrix concentration inequalities is fairly recent and t here does not seem to be a general framework for proving matrix concentration inequalities u sing the Entropy method. In this paper, we initiate the study of Matrix valued functional ine qualities and show how matrix valued functional inequalities can be used to establish a ki nd of iterative variance comparison argument to prove Matrix Bernstein like inequalities.\n\n**Outline.** 1 Introduction; 3 A Bernstein Inequality from Matrix valued Po; 5 Conclusion and Open Questions; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 262
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-10"
+  },
+  {
+   "id": "sec-001-3-a-bernstein-inequality-from-matrix-valued-poin",
+   "title": "A Bernstein Inequality from Matrix valued Poincare inequalities",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-002-5-conclusion-and-open-questions",
+   "title": "Conclusion and Open Questions",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "16-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

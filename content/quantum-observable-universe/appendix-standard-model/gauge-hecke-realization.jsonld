@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-gauge-hecke-realization",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:gauge-hecke-realization",
+  "kind": "conjecture",
+  "title": "Hecke realization of the gauge symmetry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-gauge-action-groupoid",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "tags": [
+    "appendix",
+    "standard-model",
+    "hecke-algebra",
+    "gauge-theory",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.StandardModel.GaugeHeckeRealization",
+  "text": "gauge-hecke-realization.md",
+  "leanSource": "gauge-hecke-realization.lean",
+  "provenance": "authored"
+}

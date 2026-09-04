@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-lr-tensor-character-bridge",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:lr-tensor-character-bridge",
+  "kind": "proof",
+  "title": "Proof of lr tensor character bridge",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-lr-tensor-character-bridge"
+  ],
+  "text": "lr-tensor-character-bridge-proof.md",
+  "provenance": "authored"
+}

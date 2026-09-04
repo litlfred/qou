@@ -1,0 +1,5721 @@
+{
+  "rev": "origin/main",
+  "files_scanned": 3571,
+  "sorries": [
+    {
+      "file": "content/fred2005-formal-groups/lean/Fred2005/FormalGroups.lean",
+      "line": 222,
+      "decl_kind": "theorem",
+      "decl": "grobner_shirshov_basis_exists",
+      "ref": "[fred2005] Proposition 3.8 & Theorem 3.15"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/periodic-table-demand-conjecture.lean",
+      "line": 68,
+      "decl_kind": "instance",
+      "decl": "periodic_table_demand_conjecture",
+      "ref": "[manuscript] conj:periodic-table-demand"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/periodic-table-demand-conjecture.lean",
+      "line": 70,
+      "decl_kind": "instance",
+      "decl": "periodic_table_demand_conjecture",
+      "ref": "[manuscript]"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/periodic-table-demand-conjecture.lean",
+      "line": 72,
+      "decl_kind": "instance",
+      "decl": "periodic_table_demand_conjecture",
+      "ref": "[manuscript]"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/periodic-table-demand-conjecture.lean",
+      "line": 74,
+      "decl_kind": "instance",
+      "decl": "periodic_table_demand_conjecture",
+      "ref": "[manuscript]"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/higgs-t28.lean",
+      "line": 50,
+      "decl_kind": "instance",
+      "decl": "higgs_t28_conjecture",
+      "ref": "[manuscript] conj:higgs-t28"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/higgs-t28.lean",
+      "line": 52,
+      "decl_kind": "instance",
+      "decl": "higgs_t28_conjecture",
+      "ref": "[manuscript]"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/higgs-t28.lean",
+      "line": 54,
+      "decl_kind": "instance",
+      "decl": "higgs_t28_conjecture",
+      "ref": "[manuscript]"
+    }
+  ],
+  "axioms": [
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean",
+      "line": 70,
+      "axiom": "antipode_anti_hom",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III (antipode is an anti-homomorphism)"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean",
+      "line": 90,
+      "axiom": "antipode_involution",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean",
+      "line": 102,
+      "axiom": "markov_trace_antipode_invariant",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III; [yekutieli2010] (Markov trace is S-invariant up to parity sign-twist)"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean",
+      "line": 193,
+      "axiom": "jones_markov_trace_exists",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean",
+      "line": 30,
+      "axiom": "QCasimir.exists_axiom",
+      "ref": "[lusztig1993] Introduction to Quantum Groups"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean",
+      "line": 67,
+      "axiom": "QCasimir.unique_up_to_scalar_axiom",
+      "ref": "[kassel1995] Quantum Groups (Springer GTM 155), \u00a7VI.4.9"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean",
+      "line": 547,
+      "axiom": "QCasimir_comm_E_axiom",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 \u00a7VI.4"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean",
+      "line": 565,
+      "axiom": "QCasimir_comm_F_axiom",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 \u00a7VI.4"
+    },
+    {
+      "file": "content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.lean",
+      "line": 74,
+      "axiom": "descartes_elliptic_curve_axiom",
+      "ref": "[manuscript] \u00a75/descartes-elliptic-curve"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-unique.lean",
+      "line": 42,
+      "axiom": "KnotOperatorEnergy.shadowPrice_canonical",
+      "ref": "[manuscript] prop:mass-coefficient-shadow-price"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-jet-relations.lean",
+      "line": 78,
+      "axiom": "markov_level_compatible",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-jet-relations.lean",
+      "line": 105,
+      "axiom": "yekutieli_perpetual",
+      "ref": "[yekutieli2010] Yekutieli, \"Central Extensions of Gerbes,\" Adv. Math. 225 (2010), arXiv:0801.0083"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 104,
+      "axiom": "MarkovTrace",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 113,
+      "axiom": "AlgElement.embed_succ",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 121,
+      "axiom": "AlgElement.mul",
+      "ref": "[kassel1995] Ch. X (Hecke algebras and Markov trace)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 128,
+      "axiom": "AlgElement.zero",
+      "ref": "[kassel1995] Ch. X (Hecke algebras and Markov trace)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 136,
+      "axiom": "markov_conjugation",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 147,
+      "axiom": "markov_stabilisation",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 160,
+      "axiom": "markov_nondegenerate",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 173,
+      "axiom": "observability",
+      "ref": "[manuscript] \u00a74/vertex-algebra-relations"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 186,
+      "axiom": "first_chern_vanishes",
+      "ref": "[manuscript] \u00a74/vertex-algebra-relations"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 215,
+      "axiom": "descartes_trace",
+      "ref": "[manuscript] \u00a74/vertex-algebra-relations"
+    },
+    {
+      "file": "content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean",
+      "line": 225,
+      "axiom": "self_dual_curvature",
+      "ref": "[manuscript] \u00a74/vertex-algebra-relations"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/categorical-neutron.lean",
+      "line": 71,
+      "axiom": "neutron_mass_from_substrate_axiom",
+      "ref": null
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/categorical-proton.lean",
+      "line": 69,
+      "axiom": "proton_mass_from_substrate_axiom",
+      "ref": null
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/cemetery-group.lean",
+      "line": 51,
+      "axiom": "zero_not_in_cemetery",
+      "ref": "[manuscript] Ch. particle-interactions, def:cemetery-group (unit/zero-index state excluded from cemetery group)"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/confinement-level-unique.lean",
+      "line": 31,
+      "axiom": "ConfinementLevel.level_canonical",
+      "ref": "[manuscript] braids-and-knots/confinement-level"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/dressed-particle.lean",
+      "line": 62,
+      "axiom": "DressedParticle.level_canonical_under_bare",
+      "ref": "[manuscript] braids-and-knots/dressed-particle"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean",
+      "line": 22,
+      "axiom": "Hadron",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean",
+      "line": 24,
+      "axiom": "braidingOp",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean",
+      "line": 26,
+      "axiom": "hopfLinkOp",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean",
+      "line": 28,
+      "axiom": "skeinOp",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean",
+      "line": 30,
+      "axiom": "fusionOp",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-correspondence.lean",
+      "line": 26,
+      "axiom": "IrrepSummand",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-correspondence.lean",
+      "line": 28,
+      "axiom": "KnotType",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-correspondence.lean",
+      "line": 30,
+      "axiom": "markovTraceMap",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/knot-particle-correspondence.lean",
+      "line": 43,
+      "axiom": "knot_particle_correspondence_axiom",
+      "ref": "[manuscript] Ch. 4, \u00a710"
+    },
+    {
+      "file": "QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean",
+      "line": 83,
+      "axiom": "b1_holds_at_row",
+      "ref": "[manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md"
+    },
+    {
+      "file": "QOU/Archimedean/WeierstrassProjection.lean",
+      "line": 87,
+      "axiom": "weierstrass_diff_eq_axiom",
+      "ref": "[lang2002algebra] https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 285,
+      "axiom": "centralIdempotent_central_axiom",
+      "ref": "[dipper-james1986] Hecke-algebra extension."
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 305,
+      "axiom": "centralIdempotent_orthogonal_axiom",
+      "ref": "[murphy1981] Murphy, \"A new construction of Young's seminormal representation of the symmetric groups,\" J. Algebra 69 (1981)"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 344,
+      "axiom": "bar_centralIdempotent_transpose_axiom",
+      "ref": "[murphy1981] Murphy, \"A new construction of Young's seminormal representation of the symmetric groups,\" J. Algebra 69 (1981)"
+    },
+    {
+      "file": "QOU/BraidKnot/PSDFeasibilityProxy.lean",
+      "line": 90,
+      "axiom": "evenPower_necessary_for_blockPosSemidef",
+      "ref": "[manuscript] Ch. braid-knot, prop:operator-selection-lp (evenPower necessary for block PSD; binding-k-solver.witness.json)"
+    },
+    {
+      "file": "QOU/Hecke/MarkovTrace.lean",
+      "line": 177,
+      "axiom": "markov_trace_unique_axiom",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "QOU/HeckeAlgebra/Formal.lean",
+      "line": 197,
+      "axiom": "heckeFormalGenerator_T_relation",
+      "ref": "[geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001 \u00a74.4 (T-form Hecke relation T_i\u00b2 = (q\u22121)T_i + q)"
+    },
+    {
+      "file": "QOU/HeckeAlgebra/Hoefsmit.lean",
+      "line": 147,
+      "axiom": "HoefsmitMatrix_hecke_relation",
+      "ref": "[hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) \u2014 seminormal Hecke relation T_i\u00b2 = (q\u22121)T_i + q"
+    },
+    {
+      "file": "QOU/HeckeAlgebra/Hoefsmit.lean",
+      "line": 162,
+      "axiom": "HoefsmitMatrix_braid_relation",
+      "ref": "[hoefsmit1974] Hoefsmit, PhD thesis, UBC (1974) \u2014 seminormal braid relation T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}"
+    },
+    {
+      "file": "QOU/HeckeAlgebra/MarkovTrace.lean",
+      "line": 103,
+      "axiom": "JonesMarkovCoefficient_sum_eq_one",
+      "ref": "[wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation \u03a3_\u03bb y_\u03bb = 1)"
+    },
+    {
+      "file": "QOU/HeckeAlgebra/MarkovTrace.lean",
+      "line": 193,
+      "axiom": "MarkovTrace_markov_axiom",
+      "ref": "[jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov axiom: tr(stab x) = z\u00b7tr(x))"
+    },
+    {
+      "file": "QOU/JetHorizon.lean",
+      "line": 189,
+      "axiom": "aeon_recycling",
+      "ref": "[penrose2010] R. Penrose, \"Cycles of Time\", Bodley Head 2010."
+    },
+    {
+      "file": "QOU/Mathlib/ParallelogramContour.lean",
+      "line": 173,
+      "axiom": "parallelogramIntegral_inv_sub_eq_two_pi_i",
+      "ref": "[ahlfors1979] Ahlfors, Complex Analysis, 3rd ed., Ch. 4 \u00a75 (the residue"
+    },
+    {
+      "file": "QOU/MathlibExt/SDP.lean",
+      "line": 286,
+      "axiom": "strict_complementarity_unique_axiom",
+      "ref": "[todd2001] \u00a73.4"
+    },
+    {
+      "file": "QOU/MathlibExt/SDPRankEquality.lean",
+      "line": 204,
+      "axiom": "strict_complementarity_kernel_disjoint",
+      "ref": "[alizadeh-haeberly-overton-1997] Theorem 3.1"
+    },
+    {
+      "file": "QOU/MathlibExt/SDPRankEquality.lean",
+      "line": 648,
+      "axiom": "affine_slater_rigidity",
+      "ref": "[manuscript] Ch. braid-knot, prop:operator-selection-lp \u00a7\"dual program\" (affine-Slater rigidity: optimal face has dimension zero under Slater + strict complementarity)"
+    },
+    {
+      "file": "QOU/MathlibExt/SDPRealUniqueness.lean",
+      "line": 188,
+      "axiom": "slater_strict_complementarity_kernel_axiom",
+      "ref": "[manuscript] Ch. braid-knot, prop:operator-selection-lp \u00a7\"dual program\" (Slater + strict-complementarity \u27f9 SDP primal optimum unique)"
+    },
+    {
+      "file": "QOU/MathlibExt/SDPRealUniqueness.lean",
+      "line": 586,
+      "axiom": "SDPRankUniqueness",
+      "ref": "[alizadeh-haeberly-overton-1997] *Complementarity and"
+    },
+    {
+      "file": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean",
+      "line": 79,
+      "axiom": "categorical_jet_prolongation",
+      "ref": "[manuscript] prop:categorical-jet-prolongation"
+    },
+    {
+      "file": "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean",
+      "line": 148,
+      "axiom": "ordering_extends",
+      "ref": "[bergman1978] Bergman, \"The diamond lemma for ring theory,\" Adv. Math. 29 (1978)"
+    },
+    {
+      "file": "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean",
+      "line": 156,
+      "axiom": "ordering_compatible",
+      "ref": "[manuscript] unital-groebner-bases/admissible-system"
+    },
+    {
+      "file": "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean",
+      "line": 174,
+      "axiom": "direct_limit_terminates",
+      "ref": "[bergman1978] Bergman, \"The diamond lemma for ring theory,\" Adv. Math. 29 (1978)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean",
+      "line": 60,
+      "axiom": "matrix_algebra_baer_right_axiom",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 \u00a7I"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean",
+      "line": 144,
+      "axiom": "hecke_baer_star_generic_sketch_axiom",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 \u00a7V.5"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean",
+      "line": 56,
+      "axiom": "nonabelian_stokes",
+      "ref": "[yekutieli2015] Yekutieli, \"Nonabelian Multiplicative Integration on Surfaces,\" World Scientific 2015 (DOI: 10.1142/9537)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/mass-identity-C.lean",
+      "line": 68,
+      "axiom": "categorical_equals_multiplicative_integral",
+      "ref": "[manuscript] \u00a73, Corollary: Archimedean mass identity"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean",
+      "line": 173,
+      "axiom": "partitionCount_eq_fintype_card_partition_small",
+      "ref": "[manuscript] a8-partition-function-identity \u2014 semantic bridge; partition values are the standard Hardy\u2013Ramanujan table (OEIS A000041)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-transfer-matrix.lean",
+      "line": 109,
+      "axiom": "transfer_matrix_level_independence",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean",
+      "line": 74,
+      "axiom": "confinement_int_factors_through_centre_axiom",
+      "ref": "[kock2004] https://doi.org/10.1017/CBO9780511615443 (Frobenius integral factors through the Wedderburn centre); cf. [manuscript] prop:confinement-categorical"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean",
+      "line": 120,
+      "axiom": "demazure_principal_specialization_eq_schur_axiom",
+      "ref": "[macdonald1995] Symmetric Functions and Hall Polynomials, 2nd ed., OUP, \u00a7I.3 Ex. 1 (principal specialisation s_\u03bb(1,q,\u2026,q^{n\u22121}) hook-content); cf. prop:macdonald-hook-telescope"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/figure-eight-branching-rule.lean",
+      "line": 68,
+      "axiom": "figure_eight_b_zero_iff_row_or_col_axiom",
+      "ref": "[manuscript] \u00a75.11"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean",
+      "line": 74,
+      "axiom": "gram_kappa_numerical_value_axiom",
+      "ref": "[manuscript] \u00a75/gram-determinant-plancherel-ratio"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean",
+      "line": 111,
+      "axiom": "habiro_step_zero_axiom",
+      "ref": "[manuscript] `prop:habiro-expansion-atomic` Step 2"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean",
+      "line": 122,
+      "axiom": "habiro_expansion_exists_axiom",
+      "ref": "[habiro2004cyclotomic] Habiro, \"Cyclotomic completions of polynomial rings,\" arXiv:math/0209324"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean",
+      "line": 132,
+      "axiom": "habiro_expansion_unique_axiom",
+      "ref": "[manuscript] `prop:habiro-expansion-atomic` Step 5"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean",
+      "line": 144,
+      "axiom": "habiro_termination_bound_axiom",
+      "ref": "[manuscript] `prop:habiro-expansion-atomic` Step 3"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence.lean",
+      "line": 154,
+      "axiom": "protonExample_archimedean_agreement_axiom",
+      "ref": "[jones1987] Hecke algebras and knot polynomials"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean",
+      "line": 258,
+      "axiom": "markov_chain_factorization_axiom",
+      "ref": "[diaconis-ram2000] Diaconis & Ram, \"Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques,\" Ann. Appl. Probab. 12 (2000), arXiv:math/0401318"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/macdonald-hook-telescope.lean",
+      "line": 109,
+      "axiom": "wenzlNormalizationOfShape_eq_telescope",
+      "ref": "[macdonald1995] Symmetric Functions and Hall Polynomials, I.3 ex. 1"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/macdonald-hook-telescope.lean",
+      "line": 141,
+      "axiom": "wenzlSchurElementValue",
+      "ref": "[manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean",
+      "line": 48,
+      "axiom": "PartitionMVF",
+      "ref": "[manuscript] prop:cpt-orbit-closure-density"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean",
+      "line": 52,
+      "axiom": "partitionTransposeMVF",
+      "ref": "[manuscript] prop:cpt-orbit-closure-density"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean",
+      "line": 57,
+      "axiom": "qBetaLadderCoefficients",
+      "ref": "[manuscript] prop:q-beta-radius-of-convergence-gate"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean",
+      "line": 66,
+      "axiom": "qBetaCandidatePoleLocation",
+      "ref": "[manuscript] prop:q-beta-radius-of-convergence-gate"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 86,
+      "axiom": "bareMass",
+      "ref": "[manuscript] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 90,
+      "axiom": "bareMass_R1_invariant",
+      "ref": "[manuscript] Ch. 4 (bare mass invariant under R-I)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 92,
+      "axiom": "bareMass_R2_invariant",
+      "ref": "[manuscript] Ch. 4 (bare mass invariant under R-II)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 94,
+      "axiom": "bareMass_R3_invariant",
+      "ref": "[manuscript] Ch. 4 (bare mass invariant under R-III)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 99,
+      "axiom": "bindingEnergy",
+      "ref": "[manuscript] Ch. 4, prop:reidemeister-mass-invariance (binding energy = embedding/writhe invariant)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 103,
+      "axiom": "bindingEnergy_R2_invariant",
+      "ref": "[manuscript] Ch. 4 (binding energy invariant under R-II)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 105,
+      "axiom": "bindingEnergy_R3_invariant",
+      "ref": "[manuscript] Ch. 4 (binding energy invariant under R-III)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean",
+      "line": 109,
+      "axiom": "bindingEnergy_R1_changes",
+      "ref": "[manuscript] Ch. 4 (binding energy changes under R-I / shell transition)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean",
+      "line": 88,
+      "axiom": "a_eq_one_three_channels_axiom",
+      "ref": "[kassel1995] Ch. X (Hecke algebras and Markov trace)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean",
+      "line": 99,
+      "axiom": "additive_wedderburn_missing_partitions_axiom",
+      "ref": "[manuscript] \u00a7Nuclear Binding"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean",
+      "line": 69,
+      "axiom": "transfer_matrix_level_independence_axiom",
+      "ref": "[jones1987] \u00a73 (The Markov trace) + \u00a74 (Link polynomials)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.lean",
+      "line": 71,
+      "axiom": "term_6_plus_term_7_eq_high_strata_axiom",
+      "ref": "[manuscript] prop:unified-curvature-rank-mass-formula"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/vertex-operator.lean",
+      "line": 68,
+      "axiom": "ope_is_skein",
+      "ref": "[kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion.lean",
+      "line": 225,
+      "axiom": "plancherel_completeness_axiom",
+      "ref": "[wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Plancherel completeness \u03a3_\u03bb y_\u03bb\u00b7d_\u03bb = 1 from Markov-trace normalisation)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
+      "line": 39,
+      "axiom": "wigner_coefficient_axiom",
+      "ref": "[manuscript] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!\u00b7m_e near-match to 68.9 MeV at q_0)"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean",
+      "line": 296,
+      "axiom": "y_lambda_recipe_correct_axiom",
+      "ref": "[wenzl1988] Wenzl, \"Hecke algebras of type A_n and subfactors,\" Invent. Math. 92 (1988). Verified-clean \u2014 see content/bib-qa-verifications.json"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean",
+      "line": 311,
+      "axiom": "plancherel_via_recipe_axiom",
+      "ref": "[wenzl1988] Wenzl, \"Hecke algebras of type A_n and subfactors,\" Invent. Math. 92 (1988). Verified-clean \u2014 see content/bib-qa-verifications.json"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean",
+      "line": 339,
+      "axiom": "y_lambda_cyclotomic_via_recipe_axiom",
+      "ref": "[wenzl1988] Wenzl, \"Hecke algebras of type A_n and subfactors,\" Invent. Math. 92 (1988). Verified-clean \u2014 see content/bib-qa-verifications.json"
+    },
+    {
+      "file": "content/quantum-observable-universe/molecular-construction/ilp-covalent-bond.lean",
+      "line": 32,
+      "axiom": "h2_binding_energy",
+      "ref": "[kock2004] Kock, \"Frobenius Algebras and 2D Topological Quantum Field Theories,\" CUP LMS Student Texts 59, 2004"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 101,
+      "axiom": "Partition",
+      "ref": "[kassel1995] Kassel, \"Quantum Groups\", Ch. IV"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 104,
+      "axiom": "hookLengths",
+      "ref": "[kassel1995] Kassel, \"Quantum Groups\", Ch. IV"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 111,
+      "axiom": "partitionTranspose",
+      "ref": "[fulton1997] https://doi.org/10.1017/CBO9780511626241 \u00a74 (partition transpose \u03bb \u21a6 \u03bb\u1d40)"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 116,
+      "axiom": "hookLengths_transpose",
+      "ref": "[fulton1997] https://doi.org/10.1017/CBO9780511626241 \u00a74 (hook lengths are permuted by partition transpose \u03bb\u21a6\u03bb^T)"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 175,
+      "axiom": "HeckeNormalForm",
+      "ref": "[kassel2008] Kassel\u2013Turaev, \"Braid Groups,\" GTM 247, \u00a74 (normal forms in H_n)"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 181,
+      "axiom": "barNormalForm",
+      "ref": "[kassel2008] Kassel\u2013Turaev, \"Braid Groups,\" GTM 247, \u00a74 (bar-involution q \u21a6 q\u207b\u00b9 on H_n)"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean",
+      "line": 187,
+      "axiom": "isPairProductionOutput",
+      "ref": "[manuscript] conj:symmetric-crystal-pair-production"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean",
+      "line": 70,
+      "axiom": "partitionTranspose_involutive",
+      "ref": "[fulton1997] https://doi.org/10.1017/CBO9780511626241 \u00a71 (conjugate/transpose partition is an involution \u03bb^{TT}=\u03bb)"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean",
+      "line": 109,
+      "axiom": "energy_path_independent",
+      "ref": "[manuscript] unital-groebner-bases/main-theorem"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean",
+      "line": 121,
+      "axiom": "beta_decay_energy_negative",
+      "ref": "[manuscript] \u00a76/groebner-shirshov-energy"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/n-v-bring-action.lean",
+      "line": 88,
+      "axiom": "s5_acts_on_ew_slice",
+      "ref": "[klein1888] + [bring1786] (Bring/Klein curve and its S_5 automorphism group); [manuscript] prop:brings-is-qou (|S_5|=120 rescaling at the EW slice)"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean",
+      "line": 80,
+      "axiom": "v_over_m_e_bridge",
+      "ref": "[manuscript] Ch. observations, conj:n-v-bring-action + conj:n-v-tower-depth-ninety (v/m_e = 40\u00b7q_0^90 substrate bridge)"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean",
+      "line": 89,
+      "axiom": "division_terminates_unique",
+      "ref": "[unital-groebner-bases:thm:ugb-main-theorem]"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/shell-closure-normal-form.lean",
+      "line": 137,
+      "axiom": "hecke_basis_size_axiom",
+      "ref": "[kazhdan-lusztig1979] Kazhdan & Lusztig, \"Representations of Coxeter groups and Hecke algebras,\" Invent. Math. 53 (1979)"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean",
+      "line": 71,
+      "axiom": "q_factorial_exceeds_at_5",
+      "ref": "computations output: [4]! = 25.15 > [2]\u2074 = 16.35"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean",
+      "line": 76,
+      "axiom": "q_factorial_bounded_below_5",
+      "ref": "[manuscript] computations output"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean",
+      "line": 88,
+      "axiom": "A_max_diverges_classical_axiom",
+      "ref": "[manuscript] \u00a76/skein-finiteness-bound"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/skein-finiteness-bound.lean",
+      "line": 98,
+      "axiom": "A_max_vanishes_strong_deformation_axiom",
+      "ref": "[manuscript] \u00a76/skein-finiteness-bound"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean",
+      "line": 40,
+      "axiom": "IsNormalForm",
+      "ref": "[bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 (Gr\u00f6bner-Shirshov normal form predicate); cf. [unital-groebner-bases:thm:ugb-main-theorem]"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean",
+      "line": 46,
+      "axiom": "division_terminates_unique",
+      "ref": "[bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (GS division terminates with unique normal form); cf. [unital-groebner-bases:thm:ugb-main-theorem]"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean",
+      "line": 104,
+      "axiom": "spectral_decomposition_of_braiding",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  \u00a7VIII.3"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean",
+      "line": 39,
+      "axiom": "CategoricalQExtDeriv.exists_axiom",
+      "ref": "[majid2002] A Quantum Groups Primer (Cambridge UP), \u00a75"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.lean",
+      "line": 170,
+      "axiom": "categorical_reeb_exists",
+      "ref": "[witten1988] Witten, \"Topological quantum field theory,\" Comm. Math. Phys. 117 (1988)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean",
+      "line": 73,
+      "axiom": "CategoricalReeb.unique_axiom",
+      "ref": "[witten1988] Witten, \"Topological quantum field theory,\" Comm. Math. Phys. 117 (1988)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 55,
+      "axiom": "DiffForm",
+      "ref": "[manuscript] Ch. 2 \u2014 DiffForm is an R-module"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 60,
+      "axiom": "instAddCommMonoidDiffForm",
+      "ref": "[manuscript] Ch. 2 \u2014 DiffForm is an R-module"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 62,
+      "axiom": "instModuleDiffForm",
+      "ref": "[manuscript] Ch. 2 \u2014 DiffForm is an R-module"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 68,
+      "axiom": "websterInner",
+      "ref": "[manuscript] Ch. 2 \u2014 bilinearity of \u27e8\u00b7,\u00b7\u27e9_\u03b8"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 69,
+      "axiom": "websterInner_linear_left",
+      "ref": "[manuscript] Ch. 2 \u2014 bilinearity of \u27e8\u00b7,\u00b7\u27e9_\u03b8"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 71,
+      "axiom": "websterInner_linear_right",
+      "ref": "[manuscript] Ch. 2 \u2014 bilinearity of \u27e8\u00b7,\u00b7\u27e9_\u03b8"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 76,
+      "axiom": "d_classical",
+      "ref": "[manuscript] Ch. 2, prop:q-codifferential-formula (exterior derivative d on DiffForm)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 82,
+      "axiom": "L_reeb",
+      "ref": "[manuscript] Ch. 2, prop:q-codifferential-formula (Reeb Lie derivative L_\u03be)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 85,
+      "axiom": "L_reeb_star",
+      "ref": "[manuscript] Ch. 2, prop:q-codifferential-formula (adjoint Reeb derivative L_\u03be*)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 105,
+      "axiom": "adjoint_exists_unique'",
+      "ref": "[manuscript] Ch. 2 \u2014 Tanaka-Webster adjoint existence"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 122,
+      "axiom": "L_reeb_star_is_adjoint'",
+      "ref": "[manuscript] Ch. 2 \u2014 L_\u03be* is the formal adjoint of L_\u03be"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean",
+      "line": 128,
+      "axiom": "d_q_decomposition'",
+      "ref": "[manuscript] Ch. 2 \u2014 L_\u03be* is the formal adjoint of L_\u03be"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.lean",
+      "line": 27,
+      "axiom": "QDilogarithm.exists_axiom",
+      "ref": "[kassel1995] Quantum Groups (Springer GTM 155), \u00a7IV"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.lean",
+      "line": 46,
+      "axiom": "QDilogarithm.unique_axiom",
+      "ref": "[kassel1995] Quantum Groups, \u00a7IV"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm.lean",
+      "line": 63,
+      "axiom": "QDilogarithm.unique_up_to_shift_axiom",
+      "ref": null
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-unique.lean",
+      "line": 47,
+      "axiom": "QExponential.unique_axiom",
+      "ref": "[kassel1995] Quantum Groups (Springer GTM 155), \u00a7III.3"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean",
+      "line": 62,
+      "axiom": "QExponential.unique_axiom",
+      "ref": "[manuscript] \u00a72"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-unique.lean",
+      "line": 59,
+      "axiom": "QLogarithm.unique_axiom",
+      "ref": "[kassel1995] Quantum Groups (Springer GTM 155), \u00a7IV.3"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent.lean",
+      "line": 59,
+      "axiom": "QResolvent.first_identity",
+      "ref": "[kassel1995] Quantum Groups, \u00a7IV.4"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean",
+      "line": 120,
+      "axiom": "chart_glue_from_spectrum",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  \u00a7IV.5"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence.lean",
+      "line": 163,
+      "axiom": "su2_emergence",
+      "ref": "[deligne1990] Cat\u00e9gories tannakiennes \u2014 see content/schema/references.ts"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean",
+      "line": 72,
+      "axiom": "substrate_self_duality_axiom",
+      "ref": "[yekutieli2015] Yekutieli, \"Nonabelian Multiplicative Integration on Surfaces,\" World Scientific 2015 (DOI: 10.1142/9537)"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean",
+      "line": 114,
+      "axiom": "tannaka_krein_reconstruction",
+      "ref": "[kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  Theorem XI.4.1"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-unique.lean",
+      "line": 61,
+      "axiom": "FrobeniusHopfData.frobeniusForm_unique_axiom",
+      "ref": "[kock2004] Frobenius Algebras and 2D TQFT, Ch 2"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean",
+      "line": 800,
+      "axiom": "reduction_well_founded",
+      "ref": "[bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 \u00a72 Thm 1.1 (reduction is well-founded / terminating)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean",
+      "line": 77,
+      "axiom": "local_confluence",
+      "ref": "[bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 \u00a73 Thm 1.2 (local confluence from S-polynomial resolution)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean",
+      "line": 95,
+      "axiom": "gs_implies_flat",
+      "ref": "[fred2005] Theorem 3.15 (GS basis \u27f9 flat: Hilbert function preserved between deformed algebra and associated graded)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean",
+      "line": 151,
+      "axiom": "normal_forms_preserved",
+      "ref": "[bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 \u00a75 (filtered deformations preserve the leading-term ideal / normal forms)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/JetOrder.lean",
+      "line": 314,
+      "axiom": "descended_gs_inherited",
+      "ref": "[bergman1978] Bergman, \"The diamond lemma for ring theory,\" Adv. Math. 29 (1978)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/JetOrder.lean",
+      "line": 341,
+      "axiom": "jet_stratified_gs_criterion",
+      "ref": "[bergman1978] Bergman, \"The diamond lemma for ring theory,\" Adv. Math. 29 (1978)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/JetOrder.lean",
+      "line": 395,
+      "axiom": "degree_filtered_reduction_correct",
+      "ref": "[bergman1978] Bergman, \"The diamond lemma for ring theory,\" Adv. Math. 29 (1978)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean",
+      "line": 619,
+      "axiom": "qSerre_is_gs_basis",
+      "ref": "[bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean",
+      "line": 735,
+      "axiom": "dist_algebra_gs_basis",
+      "ref": "[fred2005] Proposition 3.8 (relations of Dist(G) form a GS basis under filtration-compatible order)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean",
+      "line": 100,
+      "axiom": "tensorOrder",
+      "ref": "[bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 \u00a72.1 (admissible order lifts to coproduct G\u2295G)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean",
+      "line": 113,
+      "axiom": "tensorRewritingSystem",
+      "ref": "[bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 \u00a73 (tensor-product rewriting system on k\u27e8G\u2081\u2294G\u2082\u27e9)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean",
+      "line": 128,
+      "axiom": "tensor_gs_basis",
+      "ref": "[bokutchen2014] https://doi.org/10.1007/s13373-014-0054-6 \u00a73 (GS basis induced on tensor product)"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean",
+      "line": 172,
+      "axiom": "strong_multiplicativity_on_generators",
+      "ref": "[fred2005] Theorem 4.12 (strong multiplicativity: \u0394 is an algebra homomorphism on Dist(G))"
+    },
+    {
+      "file": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean",
+      "line": 226,
+      "axiom": "formal_group_is_filtered_bialgebra",
+      "ref": "[fred2005] \u00a74 (formal group with GS basis yields a filtered bialgebra structure)"
+    }
+  ],
+  "prose_occurrences": 3252,
+  "class_totals": {
+    "declared": 990,
+    "inhabited": 337,
+    "uninhabited": 653
+  },
+  "uninhabited_classes": [
+    {
+      "file": "content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.lean",
+      "line": 71,
+      "class": "QbetaCkTruncationCanonicalExists"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean",
+      "line": 71,
+      "class": "HyperchargeInvariant"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean",
+      "line": 25,
+      "class": "WenzlPositivityImpliesSubstratePositivity"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean",
+      "line": 27,
+      "class": "OSReflectionPositivity"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
+      "line": 77,
+      "class": "WoronowiczLeftCalculus"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean",
+      "line": 254,
+      "class": "StandardHeckeWoronowicz"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean",
+      "line": 98,
+      "class": "QuantumSu2Relations"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean",
+      "line": 42,
+      "class": "AcousticHorizonContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean",
+      "line": 44,
+      "class": "DiscreteVortexSpectrumContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.lean",
+      "line": 41,
+      "class": "KelvinDispersionContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean",
+      "line": 62,
+      "class": "LeviDegeneracy"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/observable-mtc.lean",
+      "line": 30,
+      "class": "ObservableMTC"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean",
+      "line": 44,
+      "class": "CriticalExponent"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean",
+      "line": 43,
+      "class": "NSCounterexample"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean",
+      "line": 71,
+      "class": "QAubinLions"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean",
+      "line": 86,
+      "class": "RegularityBreakdown"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean",
+      "line": 31,
+      "class": "RootOfUnityTruncationContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean",
+      "line": 31,
+      "class": "VorticityLowerBoundContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean",
+      "line": 37,
+      "class": "AeonRecycling"
+    },
+    {
+      "file": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean",
+      "line": 79,
+      "class": "QuantumComputationalUniversality"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean",
+      "line": 61,
+      "class": "ConfinementPhaseStratificationContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.lean",
+      "line": 83,
+      "class": "EWSelectionPrinciple"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.lean",
+      "line": 101,
+      "class": "EWSectorEnumeration"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.lean",
+      "line": 139,
+      "class": "EWSectorAssignment"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.lean",
+      "line": 172,
+      "class": "EWHiggsTorusLinkTriplet"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean",
+      "line": 200,
+      "class": "EWSectorSelection"
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean",
+      "line": 728,
+      "class": "EWGroupAssignment"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+      "line": 98,
+      "class": "QAubinLions"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+      "line": 138,
+      "class": "NSCounterexample"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+      "line": 205,
+      "class": "CriticalExponent"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+      "line": 261,
+      "class": "BlowupYekutieli"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/ConditionalClasses.lean",
+      "line": 289,
+      "class": "RegularityBreakdown"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean",
+      "line": 45,
+      "class": "JointGaloisBraidDecomposition"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean",
+      "line": 46,
+      "class": "Figure8SelfConjugateCell"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean",
+      "line": 318,
+      "class": "GaloisPairCharacterSum"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean",
+      "line": 333,
+      "class": "CSCSilverIsCFLTransition"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean",
+      "line": 346,
+      "class": "BarMirrorPhi2CFLgCFLTransition"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean",
+      "line": 390,
+      "class": "SDPDegeneracyDetectsMetallic"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/PlanckStepAtomicity.lean",
+      "line": 136,
+      "class": "PlanckStepAtomicity"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/PvsNPQou.lean",
+      "line": 52,
+      "class": "PvsNPQou"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean",
+      "line": 19,
+      "class": "TwoFiltrationBridgeContext"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean",
+      "line": 21,
+      "class": "TwoFiltrationBridgeSmallCasesContext"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/collatz_contact_boundary.lean",
+      "line": 30,
+      "class": "CollatzContactBoundaryContext"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/collatz_no_cycles.lean",
+      "line": 22,
+      "class": "CollatzNoCyclesContext"
+    },
+    {
+      "file": "QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean",
+      "line": 52,
+      "class": "QouObstructionReductionContext"
+    },
+    {
+      "file": "QOU/Appendix/DeltaMaxNumericalScale.lean",
+      "line": 18,
+      "class": "DeltaMaxNumericalScaleContext"
+    },
+    {
+      "file": "QOU/AppendixQValues/ProtonBorromeanAssembly.lean",
+      "line": 47,
+      "class": "ProtonBorromeanAssembly"
+    },
+    {
+      "file": "QOU/AppendixSurreals/B1Figure8RowTheorem.lean",
+      "line": 17,
+      "class": "B1Figure8RowContext"
+    },
+    {
+      "file": "QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean",
+      "line": 20,
+      "class": "B1SoftSharpnessContext"
+    },
+    {
+      "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean",
+      "line": 18,
+      "class": "B1TorusKnotRowsContext"
+    },
+    {
+      "file": "QOU/AppendixSurreals/Basic.lean",
+      "line": 54,
+      "class": "SurrealField"
+    },
+    {
+      "file": "QOU/AppendixSurreals/BirthdayFaithful.lean",
+      "line": 96,
+      "class": "BirthdayFaithful"
+    },
+    {
+      "file": "QOU/AppendixSurreals/Conjectures.lean",
+      "line": 338,
+      "class": "InfinitesimalFrobenius"
+    },
+    {
+      "file": "QOU/AppendixSurreals/Conjectures.lean",
+      "line": 350,
+      "class": "InfinitesimalObservability"
+    },
+    {
+      "file": "QOU/AppendixSurreals/Conjectures.lean",
+      "line": 410,
+      "class": "VacuumEpsilon'"
+    },
+    {
+      "file": "QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean",
+      "line": 18,
+      "class": "Depth2IdentificationContext"
+    },
+    {
+      "file": "QOU/AppendixSurreals/FigureEightCasimirWeight.lean",
+      "line": 132,
+      "class": "FirstInteractingCasimirCorrection"
+    },
+    {
+      "file": "QOU/AppendixSurreals/QBirchSwinnertonDyer.lean",
+      "line": 43,
+      "class": "QBirchSwinnertonDyer"
+    },
+    {
+      "file": "QOU/AppendixSurreals/QCollatz.lean",
+      "line": 65,
+      "class": "QCollatz"
+    },
+    {
+      "file": "QOU/AppendixSurreals/SpectralNormalForm.lean",
+      "line": 112,
+      "class": "SpectralNormalForm"
+    },
+    {
+      "file": "QOU/AppendixSurreals/VacuumEpsilon.lean",
+      "line": 26,
+      "class": "VacuumEpsilon"
+    },
+    {
+      "file": "QOU/AppendixSurreals/collatz_three_forms.lean",
+      "line": 232,
+      "class": "MarkovTraceConvergence"
+    },
+    {
+      "file": "QOU/Archimedean/BalancedKernelTightness.lean",
+      "line": 218,
+      "class": "ProkhorovSelectionReal"
+    },
+    {
+      "file": "QOU/Archimedean/BalancedKernelTightness.lean",
+      "line": 235,
+      "class": "MomentPassageStieltjes"
+    },
+    {
+      "file": "QOU/Archimedean/BalancedMomentConfluence.lean",
+      "line": 295,
+      "class": "BalancedH2Expansion"
+    },
+    {
+      "file": "QOU/Archimedean/BlochWignerLobachevsky.lean",
+      "line": 626,
+      "class": "FiveTwoTriangulation"
+    },
+    {
+      "file": "QOU/Archimedean/BorelProperTimeMoment.lean",
+      "line": 217,
+      "class": "BindingKernelSchwingerRepresentation"
+    },
+    {
+      "file": "QOU/Archimedean/BorelZagierQouVolumes.lean",
+      "line": 28,
+      "class": "BorelZagierQouVolumes"
+    },
+    {
+      "file": "QOU/Archimedean/DilogNaStokesOrdering.lean",
+      "line": 76,
+      "class": "NaStokesPartBOrdering"
+    },
+    {
+      "file": "QOU/Archimedean/FiveTwoOhtsukiBridge.lean",
+      "line": 901,
+      "class": "OhtsukiAsymptotic"
+    },
+    {
+      "file": "QOU/Archimedean/HyperbolicVolumeIndependence.lean",
+      "line": 33,
+      "class": "HyperbolicVolumeIndependenceAxiom"
+    },
+    {
+      "file": "QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
+      "line": 702,
+      "class": "TowerNoncollapseImpliesIndependence"
+    },
+    {
+      "file": "QOU/Archimedean/JetOrderIndependence.lean",
+      "line": 211,
+      "class": "JetTransportImpliesIndependence"
+    },
+    {
+      "file": "QOU/Archimedean/PauliWitness/witness_12C.lean",
+      "line": 21,
+      "class": "Witness12CPauli"
+    },
+    {
+      "file": "QOU/Archimedean/PauliWitness/witness_4He.lean",
+      "line": 19,
+      "class": "Witness4HePauli"
+    },
+    {
+      "file": "QOU/Archimedean/PauliWitness/witness_8Be.lean",
+      "line": 19,
+      "class": "Witness8BePauli"
+    },
+    {
+      "file": "QOU/Archimedean/PeriodMapWeightReduction.lean",
+      "line": 85,
+      "class": "PeriodMapWeight"
+    },
+    {
+      "file": "QOU/Archimedean/RSK.lean",
+      "line": 240,
+      "class": "RSKInjective"
+    },
+    {
+      "file": "QOU/Archimedean/RSK.lean",
+      "line": 250,
+      "class": "RSKSurjective"
+    },
+    {
+      "file": "QOU/Archimedean/SingleVolumeIrrationality.lean",
+      "line": 26,
+      "class": "SingleVolumeIrrationality"
+    },
+    {
+      "file": "QOU/Archimedean/TMCorrespondence.lean",
+      "line": 310,
+      "class": "MatrixChainEqBuildChains"
+    },
+    {
+      "file": "QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean",
+      "line": 117,
+      "class": "Cl_2_PentagonHolds"
+    },
+    {
+      "file": "QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean",
+      "line": 165,
+      "class": "FaddeevKashaevQuasiClassicalLimit"
+    },
+    {
+      "file": "QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean",
+      "line": 203,
+      "class": "HasAllSubstantiveFillers"
+    },
+    {
+      "file": "QOU/Archimedean/YoungIdempotent.lean",
+      "line": 171,
+      "class": "YoungSym3Eigenvalue"
+    },
+    {
+      "file": "QOU/Archimedean/archimedean.lean",
+      "line": 25,
+      "class": "DescartesTerminalContext"
+    },
+    {
+      "file": "QOU/Archimedean/archimedean_hartree_derivation.lean",
+      "line": 27,
+      "class": "ArchimedeanHartreeDerivationContext"
+    },
+    {
+      "file": "QOU/Archimedean/bohr_radius_categorical.lean",
+      "line": 32,
+      "class": "BohrRadiusCategoricalContext"
+    },
+    {
+      "file": "QOU/Archimedean/borromean_hopf_energy_crossover.lean",
+      "line": 26,
+      "class": "BorromeanHopfEnergyCrossoverContext"
+    },
+    {
+      "file": "QOU/Archimedean/em_coupling_projection.lean",
+      "line": 20,
+      "class": "EmCouplingProjectionContext"
+    },
+    {
+      "file": "QOU/Archimedean/eos_borromean_cfl.lean",
+      "line": 26,
+      "class": "EosBorromeanCflContext"
+    },
+    {
+      "file": "QOU/Archimedean/genus_filtration_ideal.lean",
+      "line": 31,
+      "class": "GenusFiltrationIdealContext"
+    },
+    {
+      "file": "QOU/Archimedean/gram_weighted_qvalue.lean",
+      "line": 29,
+      "class": "GramWeightedQvalueContext"
+    },
+    {
+      "file": "QOU/Archimedean/integer_stability.lean",
+      "line": 33,
+      "class": "IntegerStabilityContext"
+    },
+    {
+      "file": "QOU/Archimedean/metallic_character_knot.lean",
+      "line": 24,
+      "class": "MetallicCharacterContext"
+    },
+    {
+      "file": "QOU/Archimedean/noble_gas_characterization.lean",
+      "line": 34,
+      "class": "AtomLike"
+    },
+    {
+      "file": "QOU/Archimedean/nuclear_spin_parity.lean",
+      "line": 33,
+      "class": "NucleusLike"
+    },
+    {
+      "file": "QOU/Archimedean/parity_violation_skein.lean",
+      "line": 20,
+      "class": "ParityViolationSkeinContext"
+    },
+    {
+      "file": "QOU/Archimedean/reidemeister_action_table.lean",
+      "line": 21,
+      "class": "ReidemeisterActionTableContext"
+    },
+    {
+      "file": "QOU/Archimedean/rj_canonical_inner_product.lean",
+      "line": 42,
+      "class": "HeckeRepRingContext"
+    },
+    {
+      "file": "QOU/Archimedean/skein_polynomial_transfer_matrix.lean",
+      "line": 25,
+      "class": "SkeinPolynomialTransferMatrixContext"
+    },
+    {
+      "file": "QOU/Archimedean/skew_poisson_integration.lean",
+      "line": 20,
+      "class": "SkewPoissonIntegrationContext"
+    },
+    {
+      "file": "QOU/Archimedean/tau_leptonic_universality.lean",
+      "line": 72,
+      "class": "TauLeptonicContext"
+    },
+    {
+      "file": "QOU/Archimedean/yekutieli_leading_coefficient.lean",
+      "line": 221,
+      "class": "YekutieliStokesNormalisation"
+    },
+    {
+      "file": "QOU/ArchimedeanUniverse/brings_euler_characteristic.lean",
+      "line": 103,
+      "class": "BringsEulerCharacteristicContext"
+    },
+    {
+      "file": "QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean",
+      "line": 40,
+      "class": "BringsRiemannHurwitzContext"
+    },
+    {
+      "file": "QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean",
+      "line": 103,
+      "class": "MiSwCartanReductionHypotheses"
+    },
+    {
+      "file": "QOU/BaryonWeight/beta4_hook.lean",
+      "line": 29,
+      "class": "Hook22Weight"
+    },
+    {
+      "file": "QOU/BraidKnot/AdelicCriticalLinePersistence.lean",
+      "line": 66,
+      "class": "AdelicCriticalLinePersistence"
+    },
+    {
+      "file": "QOU/BraidKnot/BindingIsovectorChiralResidue.lean",
+      "line": 43,
+      "class": "WLambdaChiralBinding"
+    },
+    {
+      "file": "QOU/BraidKnot/BraidGroupNStrand.lean",
+      "line": 169,
+      "class": "HeckeQuotient"
+    },
+    {
+      "file": "QOU/BraidKnot/BringTrilogDepth3Witness.lean",
+      "line": 55,
+      "class": "BringTrilogDepth3Witness"
+    },
+    {
+      "file": "QOU/BraidKnot/BringWPlaneMonodromy.lean",
+      "line": 65,
+      "class": "BringWPlaneMonodromy"
+    },
+    {
+      "file": "QOU/BraidKnot/ChiralityWritheRibbon.lean",
+      "line": 86,
+      "class": "RibbonTwistEigenvalue"
+    },
+    {
+      "file": "QOU/BraidKnot/ChiralityWritheRibbon.lean",
+      "line": 312,
+      "class": "PNCrossingRule"
+    },
+    {
+      "file": "QOU/BraidKnot/Cl3Zeta5GeometricRealization.lean",
+      "line": 47,
+      "class": "Cl3Zeta5GeometricRealization"
+    },
+    {
+      "file": "QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean",
+      "line": 19,
+      "class": "Cl3Zeta5PslqIndependenceContext"
+    },
+    {
+      "file": "QOU/BraidKnot/ConfinedParticle.lean",
+      "line": 70,
+      "class": "HasConfinementWitness"
+    },
+    {
+      "file": "QOU/BraidKnot/ConfinementNfStructureForcing.lean",
+      "line": 46,
+      "class": "ConfinementNfStructureForcing"
+    },
+    {
+      "file": "QOU/BraidKnot/ConfinementPhaseStratification.lean",
+      "line": 47,
+      "class": "HasRealAxisData"
+    },
+    {
+      "file": "QOU/BraidKnot/ConfinementPhaseStratification.lean",
+      "line": 103,
+      "class": "HasSDPRegularity"
+    },
+    {
+      "file": "QOU/BraidKnot/CyclotomicLValueDecomposition.lean",
+      "line": 62,
+      "class": "LValueDecomposition"
+    },
+    {
+      "file": "QOU/BraidKnot/ElectronShell.lean",
+      "line": 49,
+      "class": "HasBindingMultiplicity"
+    },
+    {
+      "file": "QOU/BraidKnot/GBSpectralSequence.lean",
+      "line": 44,
+      "class": "GBSpectralSequence"
+    },
+    {
+      "file": "QOU/BraidKnot/GBSpectralSequence.lean",
+      "line": 94,
+      "class": "GBSpectralSequenceCollapsesAtE2"
+    },
+    {
+      "file": "QOU/BraidKnot/GradedBaerStarHq.lean",
+      "line": 35,
+      "class": "GradedBaerStarHq"
+    },
+    {
+      "file": "QOU/BraidKnot/GradedTraceResidueSplit.lean",
+      "line": 55,
+      "class": "GradedTraceResidueSplit"
+    },
+    {
+      "file": "QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean",
+      "line": 229,
+      "class": "V21Eigenphase"
+    },
+    {
+      "file": "QOU/BraidKnot/IsotopeKnot/equivalence.lean",
+      "line": 21,
+      "class": "EquivalenceContext"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 99,
+      "class": "HeckeRingHom"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 107,
+      "class": "HeckeQuadratic"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 116,
+      "class": "HeckeBraid"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 126,
+      "class": "HeckeFarCommute"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 151,
+      "class": "MarkovTraceCyclic"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 161,
+      "class": "HeckeInclusion"
+    },
+    {
+      "file": "QOU/BraidKnot/IwahoriHeckeAPI.lean",
+      "line": 192,
+      "class": "MarkovTraceStabilisation"
+    },
+    {
+      "file": "QOU/BraidKnot/JointGaloisBraidAction.lean",
+      "line": 38,
+      "class": "JointGaloisBraidAction"
+    },
+    {
+      "file": "QOU/BraidKnot/KeystoneQBesselRadialTarget.lean",
+      "line": 132,
+      "class": "QBesselRadialPartRealization"
+    },
+    {
+      "file": "QOU/BraidKnot/KeystoneVerlindeSMatrixBridge.lean",
+      "line": 203,
+      "class": "BWVacuumRowIsHecke"
+    },
+    {
+      "file": "QOU/BraidKnot/KnotFactorFrobeniusPairing.lean",
+      "line": 58,
+      "class": "KnotFactorFrobeniusPairing"
+    },
+    {
+      "file": "QOU/BraidKnot/KnotIndexedConvolutionGrid.lean",
+      "line": 18,
+      "class": "KnotIndexedConvolutionGridContext"
+    },
+    {
+      "file": "QOU/BraidKnot/LevelSufficiency.lean",
+      "line": 58,
+      "class": "HasMarkovTrace"
+    },
+    {
+      "file": "QOU/BraidKnot/LpDualityHypothesisClass.lean",
+      "line": 84,
+      "class": "HasFiniteLPDuality"
+    },
+    {
+      "file": "QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
+      "line": 146,
+      "class": "MarkovTraceAxioms"
+    },
+    {
+      "file": "QOU/BraidKnot/MassGapFrontier.lean",
+      "line": 113,
+      "class": "FiltrationBase"
+    },
+    {
+      "file": "QOU/BraidKnot/MassGapFrontier.lean",
+      "line": 125,
+      "class": "TowerTransport"
+    },
+    {
+      "file": "QOU/BraidKnot/MassGapFrontier.lean",
+      "line": 177,
+      "class": "YMUniversality"
+    },
+    {
+      "file": "QOU/BraidKnot/MathlibBridge.lean",
+      "line": 80,
+      "class": "TransposeBridge"
+    },
+    {
+      "file": "QOU/BraidKnot/MathlibBridge.lean",
+      "line": 116,
+      "class": "ReverseBridge"
+    },
+    {
+      "file": "QOU/BraidKnot/MmuR9V9Closure.lean",
+      "line": 450,
+      "class": "UniversalHabiroStructure"
+    },
+    {
+      "file": "QOU/BraidKnot/OperatorValuedCombiner.lean",
+      "line": 62,
+      "class": "WenzlAOperator"
+    },
+    {
+      "file": "QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean",
+      "line": 67,
+      "class": "PhiQTowerAlgebraicStratification"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+      "line": 441,
+      "class": "QbetaC3StructuralFormClass"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+      "line": 525,
+      "class": "QbetaC4StructuralFormClass"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+      "line": 565,
+      "class": "QbetaC5StructuralFormClass"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+      "line": 605,
+      "class": "QbetaC6StructuralFormClass"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean",
+      "line": 648,
+      "class": "QbetaC7StructuralFormClass"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaHabiroGeneratorRigidity.lean",
+      "line": 189,
+      "class": "QBetaSingleHabiroGenerator"
+    },
+    {
+      "file": "QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean",
+      "line": 1129,
+      "class": "ZRecursionCoeffs"
+    },
+    {
+      "file": "QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean",
+      "line": 19,
+      "class": "QHeckeSeminormalCharacterClosureContext"
+    },
+    {
+      "file": "QOU/BraidKnot/QSchurWeightsGeneral.lean",
+      "line": 51,
+      "class": "WenzlBranching"
+    },
+    {
+      "file": "QOU/BraidKnot/QuantumDilogarithm.lean",
+      "line": 145,
+      "class": "HasCorrectedMassEndomorphismTower"
+    },
+    {
+      "file": "QOU/BraidKnot/QuantumDilogarithm.lean",
+      "line": 200,
+      "class": "ZHabiroRogersSaddle"
+    },
+    {
+      "file": "QOU/BraidKnot/QuaternionFromHecke.lean",
+      "line": 85,
+      "class": "QuaternionFromHecke"
+    },
+    {
+      "file": "QOU/BraidKnot/ResidueAtRoot.lean",
+      "line": 49,
+      "class": "ResidueAtRoot"
+    },
+    {
+      "file": "QOU/BraidKnot/S5bbGeometricIndex.lean",
+      "line": 28,
+      "class": "IsColourReeb"
+    },
+    {
+      "file": "QOU/BraidKnot/S5bbGeometricIndex.lean",
+      "line": 59,
+      "class": "S5bbClosure"
+    },
+    {
+      "file": "QOU/BraidKnot/ShellClosureStability.lean",
+      "line": 79,
+      "class": "HasFrobeniusStability"
+    },
+    {
+      "file": "QOU/BraidKnot/ShellNeutrality.lean",
+      "line": 260,
+      "class": "Saturated"
+    },
+    {
+      "file": "QOU/BraidKnot/ShellNeutrality.lean",
+      "line": 284,
+      "class": "FullTwistContentFormula"
+    },
+    {
+      "file": "QOU/BraidKnot/ShellNeutrality.lean",
+      "line": 298,
+      "class": "KappaZeroImpliesSelfConjugate"
+    },
+    {
+      "file": "QOU/BraidKnot/ShellNeutrality.lean",
+      "line": 342,
+      "class": "SaturatedShellConjecture"
+    },
+    {
+      "file": "QOU/BraidKnot/SixTermPerDerivationWeights.lean",
+      "line": 110,
+      "class": "SixTermAssemblyData"
+    },
+    {
+      "file": "QOU/BraidKnot/StructuralRank.lean",
+      "line": 222,
+      "class": "PanelImageStructure"
+    },
+    {
+      "file": "QOU/BraidKnot/SubstrateEWHypotheses.lean",
+      "line": 101,
+      "class": "SubstrateEWDerivations"
+    },
+    {
+      "file": "QOU/BraidKnot/Term6BindingDensity.lean",
+      "line": 67,
+      "class": "Term6BindingDensity"
+    },
+    {
+      "file": "QOU/BraidKnot/TorusKnotMass.lean",
+      "line": 57,
+      "class": "TorusKnotMass"
+    },
+    {
+      "file": "QOU/BraidKnot/TwoFiltrationBridge.lean",
+      "line": 53,
+      "class": "TwoFiltrationBridge"
+    },
+    {
+      "file": "QOU/BraidKnot/TwoFiltrationBridge.lean",
+      "line": 347,
+      "class": "SeminormalEigenvalue"
+    },
+    {
+      "file": "QOU/BraidKnot/YangBaxterBlowupTruncation.lean",
+      "line": 22,
+      "class": "BraidRelation"
+    },
+    {
+      "file": "QOU/BraidKnot/ZeqNRhoCorrection.lean",
+      "line": 80,
+      "class": "ZeqNRhoCorrection"
+    },
+    {
+      "file": "QOU/BraidKnot/algebraic_quantum_volume_specialization.lean",
+      "line": 19,
+      "class": "AlgebraicQuantumVolumeSpecializationContext"
+    },
+    {
+      "file": "QOU/BraidKnot/e_infinity_identifications.lean",
+      "line": 27,
+      "class": "EInfinityIdentificationsContext"
+    },
+    {
+      "file": "QOU/BraidKnot/geom_universality.lean",
+      "line": 30,
+      "class": "GeomUniversalityContext"
+    },
+    {
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean",
+      "line": 22,
+      "class": "GeomYekutieliAlignmentContext"
+    },
+    {
+      "file": "QOU/BraidKnot/hoefsmit_seminormal_form.lean",
+      "line": 43,
+      "class": "HoefsmitSeminormalContext"
+    },
+    {
+      "file": "QOU/BraidKnot/jet_convergence_classical_limit.lean",
+      "line": 32,
+      "class": "jet_convergence_classical_limit"
+    },
+    {
+      "file": "QOU/BraidKnot/jet_filtered_knot_factor.lean",
+      "line": 58,
+      "class": "jet_filtered_knot_factor"
+    },
+    {
+      "file": "QOU/BraidKnot/markovTraceRecursiveReducer.lean",
+      "line": 29,
+      "class": "MarkovTraceRecursiveReducerContext"
+    },
+    {
+      "file": "QOU/BraidKnot/nonabelian_stokes_surface_boundary_stokes.lean",
+      "line": 165,
+      "class": "YekutieliSurfaceToBoundary"
+    },
+    {
+      "file": "QOU/BraidKnot/per_nucleon_shift_additive_linearity.lean",
+      "line": 38,
+      "class": "PerNucleonShiftContext"
+    },
+    {
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean",
+      "line": 19,
+      "class": "SpectralSequenceH3ExplicitContext"
+    },
+    {
+      "file": "QOU/BraidKnot/terms_2_6_higher_operations.lean",
+      "line": 20,
+      "class": "Terms26HigherOperationsContext"
+    },
+    {
+      "file": "QOU/BraidKnot/volume_perturbation.lean",
+      "line": 53,
+      "class": "VolumePerturbationContext"
+    },
+    {
+      "file": "QOU/Braiding/JonesMobiusDiagonal.lean",
+      "line": 41,
+      "class": "JonesMobiusDiagonal"
+    },
+    {
+      "file": "QOU/Braiding/hecke_mass_trace.lean",
+      "line": 37,
+      "class": "HeckeMassTraceContext"
+    },
+    {
+      "file": "QOU/Braiding/mobius_energy.lean",
+      "line": 19,
+      "class": "MobiusEnergyContext"
+    },
+    {
+      "file": "QOU/Braiding/non_self_intersection.lean",
+      "line": 25,
+      "class": "NonSelfIntersectionContext"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/CFromColorFlavorSwap.lean",
+      "line": 108,
+      "class": "CFromColorFlavorSwap"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/DeltaLambdaDTIndex.lean",
+      "line": 185,
+      "class": "DeltaLambdaDTRealization"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/GapA4MuonBranching.lean",
+      "line": 22,
+      "class": "H5Trace"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/GapA4MuonBranching.lean",
+      "line": 28,
+      "class": "GenerationBranchingFunctor"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/M1DescentDPPConvergence.lean",
+      "line": 68,
+      "class": "DescentDPPMarginConvergence"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/PachnerPentagonBorromean.lean",
+      "line": 53,
+      "class": "PachnerPentagonBorromean"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/PlancherelViaRecipe.lean",
+      "line": 21,
+      "class": "PlancherelViaRecipeContext"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean",
+      "line": 182,
+      "class": "QSchurYLambdaClosedFormClaim"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/RossmannCCBridge.lean",
+      "line": 56,
+      "class": "RossmannCCConcentration"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean",
+      "line": 127,
+      "class": "BorromeanCommonScale"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/S5SO3FiberAction.lean",
+      "line": 856,
+      "class": "A4BettiTraceFactorization"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/TFromTraceCyclicity.lean",
+      "line": 94,
+      "class": "TFromTraceCyclicity"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/YoungDiagramKernel.lean",
+      "line": 389,
+      "class": "CovarianceKernelConjecture"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/YoungDiagramKernelPincer.lean",
+      "line": 119,
+      "class": "KernelPincerLegs"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/YoungDiagramKernelPincer.lean",
+      "line": 1604,
+      "class": "FractionalMomentPositivity"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/ew_interface_knot.lean",
+      "line": 20,
+      "class": "EwInterfaceKnotContext"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/qmn_recursive_memoized.lean",
+      "line": 21,
+      "class": "QmnRecursiveMemoizedContext"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/wenzl_qmn_synergy.lean",
+      "line": 22,
+      "class": "WenzlQmnSynergyContext"
+    },
+    {
+      "file": "QOU/BraidsAndKnots/y_lambda_recipe_from_partition.lean",
+      "line": 21,
+      "class": "YLambdaRecipeFromPartitionContext"
+    },
+    {
+      "file": "QOU/BraidsKnots/LinearJSJVolume.lean",
+      "line": 71,
+      "class": "AtomicJSJDecomposition"
+    },
+    {
+      "file": "QOU/BraidsKnots/mobius_frobenius_kernel.lean",
+      "line": 49,
+      "class": "MobiusFrobeniusKernelContext"
+    },
+    {
+      "file": "QOU/BraidsKnots/nsi_q_deformed_kernel.lean",
+      "line": 148,
+      "class": "NsiQDeformedKernelContext"
+    },
+    {
+      "file": "QOU/BraidsKnots/tmli_constituent_composite_agreement.lean",
+      "line": 84,
+      "class": "TmliConstituentCompositeAgreementContext"
+    },
+    {
+      "file": "QOU/Brings/CategoricalLagrangianDMCubic.lean",
+      "line": 182,
+      "class": "QDonagiMarkmanCubicCondition"
+    },
+    {
+      "file": "QOU/Brings/CategoricalLagrangianDMCubic.lean",
+      "line": 219,
+      "class": "BringHolomorphicSymplectic"
+    },
+    {
+      "file": "QOU/Brings/CategoricalLagrangianDMCubic.lean",
+      "line": 305,
+      "class": "QCubicEqBindingKernel"
+    },
+    {
+      "file": "QOU/Brings/brings_is_qou.lean",
+      "line": 29,
+      "class": "BringsObstruction"
+    },
+    {
+      "file": "QOU/BringsSurface.lean",
+      "line": 209,
+      "class": "MISWAbelianisation"
+    },
+    {
+      "file": "QOU/BringsSurface/lagrange_resolvent_transform.lean",
+      "line": 57,
+      "class": "LagrangeResolventEquivarianceAxiom"
+    },
+    {
+      "file": "QOU/CategoricalReeb/QReebFlowOnColorCoords.lean",
+      "line": 54,
+      "class": "QReebFlowOnColorCoords"
+    },
+    {
+      "file": "QOU/Conjectures/KnotFactorFrobeniusPairing.lean",
+      "line": 49,
+      "class": "KnotFactorFrobeniusPairing"
+    },
+    {
+      "file": "QOU/Conjectures/QuantumLanglandsDual.lean",
+      "line": 56,
+      "class": "QuantumLanglandsDual"
+    },
+    {
+      "file": "QOU/Conjectures/ShellTransitionKnot.lean",
+      "line": 88,
+      "class": "ShellTransitionKnot"
+    },
+    {
+      "file": "QOU/Conjectures/WeakSpectralCompleteness.lean",
+      "line": 78,
+      "class": "WeakSpectralCompleteness"
+    },
+    {
+      "file": "QOU/Experimental/local_substrate_q.lean",
+      "line": 25,
+      "class": "LocalSubstrateQContext"
+    },
+    {
+      "file": "QOU/Experimental/terminal_resolution.lean",
+      "line": 23,
+      "class": "TerminalResolutionContext"
+    },
+    {
+      "file": "QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean",
+      "line": 88,
+      "class": "DressedMassSubstrateSplit"
+    },
+    {
+      "file": "QOU/FlavorDressing/FlavorDressingFunctor.lean",
+      "line": 48,
+      "class": "FlavorDressingFunctor"
+    },
+    {
+      "file": "QOU/FluidDynamics/acoustic_horizon_conditions.lean",
+      "line": 18,
+      "class": "AcousticHorizonConditionsContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/discrete_vortex_spectrum.lean",
+      "line": 23,
+      "class": "DiscreteVortexSpectrumContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/kelvin_dispersion_derivation.lean",
+      "line": 20,
+      "class": "KelvinDispersionDerivationContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/leray_profile.lean",
+      "line": 38,
+      "class": "LerayProfileContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/ns_kummer_specialisation.lean",
+      "line": 34,
+      "class": "NsKummerSpecialisationContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/ns_obstruction_computation.lean",
+      "line": 29,
+      "class": "NsObstructionComputationContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/ns_obstruction_tower.lean",
+      "line": 27,
+      "class": "NsObstructionTowerContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/ns_singularity_descartes.lean",
+      "line": 27,
+      "class": "NsSingularityDescartesContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/p1_nonlinear_uniqueness.lean",
+      "line": 34,
+      "class": "P1NonlinearUniquenessContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/p1_spectral_sobolev.lean",
+      "line": 32,
+      "class": "P1SpectralSobolevContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/p4_universality.lean",
+      "line": 41,
+      "class": "P4UniversalityContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/q_bkm_criterion.lean",
+      "line": 45,
+      "class": "QBKMContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/q_ns_classical_bridge.lean",
+      "line": 82,
+      "class": "CategoricalClassicalNSBridge"
+    },
+    {
+      "file": "QOU/FluidDynamics/q_ns_wellposedness.lean",
+      "line": 80,
+      "class": "QNsWellposednessContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/q_turbulence_spectrum.lean",
+      "line": 165,
+      "class": "QTurbulenceCascadeModel"
+    },
+    {
+      "file": "QOU/FluidDynamics/quantum_peter_weyl.lean",
+      "line": 17,
+      "class": "QuantumPeterWeylContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean",
+      "line": 22,
+      "class": "RootOfUnityTruncationContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/vorticity_lower_bound.lean",
+      "line": 19,
+      "class": "VorticityLowerBoundContext"
+    },
+    {
+      "file": "QOU/FluidDynamics/yekutieli_levi_unification.lean",
+      "line": 78,
+      "class": "NSObstructionLeviData"
+    },
+    {
+      "file": "QOU/FluidDynamics/yekutieli_obstruction_level.lean",
+      "line": 67,
+      "class": "YekutieliObstructionLevel"
+    },
+    {
+      "file": "QOU/FrobeniusHopfData/frobeniusForm.lean",
+      "line": 27,
+      "class": "FrobeniusFormContext"
+    },
+    {
+      "file": "QOU/Habiro/FlowSolution.lean",
+      "line": 49,
+      "class": "HabiroFlowSolution"
+    },
+    {
+      "file": "QOU/HadronicMass/deuteron_binding_energy.lean",
+      "line": 29,
+      "class": "DeuteronBindingEnergyContext"
+    },
+    {
+      "file": "QOU/Hecke/Hoefsmit.lean",
+      "line": 113,
+      "class": "HoefsmitRepresentation"
+    },
+    {
+      "file": "QOU/Hecke/MarkovTraceProduct.lean",
+      "line": 63,
+      "class": "MarkovTraceAxioms"
+    },
+    {
+      "file": "QOU/Hecke/Wedderburn.lean",
+      "line": 58,
+      "class": "SpechtDimension"
+    },
+    {
+      "file": "QOU/HyperellipticQuintic/ScratchZeta5.lean",
+      "line": 17,
+      "class": "Zeta5MonodromyContext"
+    },
+    {
+      "file": "QOU/HyperellipticQuintic/zeta5_residue_monodromy.lean",
+      "line": 24,
+      "class": "Zeta5MonodromyContext"
+    },
+    {
+      "file": "QOU/Information/ChiMinusSix.lean",
+      "line": 48,
+      "class": "QOUCohomology"
+    },
+    {
+      "file": "QOU/Information/ChiMinusSix.lean",
+      "line": 69,
+      "class": "QOUObstruction"
+    },
+    {
+      "file": "QOU/Information/ComplexityDictionaryOptions.lean",
+      "line": 79,
+      "class": "CitedComplexity"
+    },
+    {
+      "file": "QOU/Information/ComplexityDictionaryOptions.lean",
+      "line": 103,
+      "class": "TraceFaithfulness"
+    },
+    {
+      "file": "QOU/Information/CountingModuliGrade.lean",
+      "line": 137,
+      "class": "PhotonicDecisionHard"
+    },
+    {
+      "file": "QOU/Information/GCTMultiplicityObstruction.lean",
+      "line": 71,
+      "class": "QouGCTObstruction"
+    },
+    {
+      "file": "QOU/Information/JetHorizonScaffold.lean",
+      "line": 69,
+      "class": "ComplexityDictionary"
+    },
+    {
+      "file": "QOU/Information/OneDimChannel/ParallelNonInteraction.lean",
+      "line": 10,
+      "class": "SplitLinkTrace"
+    },
+    {
+      "file": "QOU/Information/OptionBCountingTransfer.lean",
+      "line": 65,
+      "class": "MatchingFacts"
+    },
+    {
+      "file": "QOU/Information/OptionBCountingTransfer.lean",
+      "line": 93,
+      "class": "QOUTraceCountHard"
+    },
+    {
+      "file": "QOU/Information/PNeqNpEquivalence.lean",
+      "line": 63,
+      "class": "ResidueFaithfulness"
+    },
+    {
+      "file": "QOU/Information/PNeqNpEquivalence.lean",
+      "line": 132,
+      "class": "JonesComplexityCitations"
+    },
+    {
+      "file": "QOU/Information/QouPNeqNp.lean",
+      "line": 89,
+      "class": "QouPNeqNp"
+    },
+    {
+      "file": "QOU/Information/p_bandwidth_bound.lean",
+      "line": 53,
+      "class": "PBandwidthContext"
+    },
+    {
+      "file": "QOU/Information/photon_threading_mass.lean",
+      "line": 48,
+      "class": "PhotonThreadingMassContext"
+    },
+    {
+      "file": "QOU/Information/reeb_operations_per_planck.lean",
+      "line": 61,
+      "class": "ReebOperationsPerPlanckContext"
+    },
+    {
+      "file": "QOU/Information/toffoli_transfer_matrix.lean",
+      "line": 41,
+      "class": "ToffoliTransferMatrixContext"
+    },
+    {
+      "file": "QOU/Infra/BorelRank.lean",
+      "line": 49,
+      "class": "BorelRank"
+    },
+    {
+      "file": "QOU/Infra/DirichletL.lean",
+      "line": 41,
+      "class": "DirichletLClass"
+    },
+    {
+      "file": "QOU/Interactions/AlgebraicPrimality.lean",
+      "line": 314,
+      "class": "NonTrivialBindingAtTwo"
+    },
+    {
+      "file": "QOU/Interactions/BringShellBinding.lean",
+      "line": 133,
+      "class": "BringShellBindingConjecture"
+    },
+    {
+      "file": "QOU/Interactions/ConfinementSDP.lean",
+      "line": 46,
+      "class": "HasConfinementSDPData"
+    },
+    {
+      "file": "QOU/Interactions/ConfinementSDP.lean",
+      "line": 171,
+      "class": "HasSDPBindingMultiplicity"
+    },
+    {
+      "file": "QOU/Interactions/DoubleMagicDeltaI.lean",
+      "line": 98,
+      "class": "DeltaIBoundConjecture"
+    },
+    {
+      "file": "QOU/Interactions/LRFusion.lean",
+      "line": 191,
+      "class": "DoubleMagicConjecture"
+    },
+    {
+      "file": "QOU/Interactions/QIntegerMassFormula.lean",
+      "line": 170,
+      "class": "IsAMEValue"
+    },
+    {
+      "file": "QOU/Interactions/TrefoilCanonicalMassUnit.lean",
+      "line": 163,
+      "class": "TrefoilElectronMassConj"
+    },
+    {
+      "file": "QOU/Interactions/UniversalILP.lean",
+      "line": 23,
+      "class": "UniversalILPContext"
+    },
+    {
+      "file": "QOU/Interactions/confinementUniversality.lean",
+      "line": 17,
+      "class": "ConfinementUniversalityContext"
+    },
+    {
+      "file": "QOU/Interactions/confinementUniversality.lean",
+      "line": 29,
+      "class": "ConfinementUniversalityConjecture"
+    },
+    {
+      "file": "QOU/Interactions/inductiveGBReduction.lean",
+      "line": 25,
+      "class": "InductiveGBReductionContext"
+    },
+    {
+      "file": "QOU/IwahoriHecke/MarkovTrace.lean",
+      "line": 125,
+      "class": "GradedMarkovTraceExistence"
+    },
+    {
+      "file": "QOU/Kashaev.lean",
+      "line": 57,
+      "class": "VolumeConjecture"
+    },
+    {
+      "file": "QOU/Knot/MortonFranksWilliams.lean",
+      "line": 145,
+      "class": "Markov"
+    },
+    {
+      "file": "QOU/Knot/WhiteheadLinkScaffold.lean",
+      "line": 135,
+      "class": "VdVWhiteheadLemma4"
+    },
+    {
+      "file": "QOU/Knot/WhiteheadVolumeConjecture.lean",
+      "line": 317,
+      "class": "WhiteheadVolumeConjectureLimit"
+    },
+    {
+      "file": "QOU/KnotTheory/Brunnian.lean",
+      "line": 94,
+      "class": "LinkEquivalence"
+    },
+    {
+      "file": "QOU/KnotTheory/JonesPolynomial.lean",
+      "line": 99,
+      "class": "JonesPolynomialDef"
+    },
+    {
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean",
+      "line": 70,
+      "class": "HigherStrandCharacterBifurcation"
+    },
+    {
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean",
+      "line": 93,
+      "class": "CatalogBlindSDPCount"
+    },
+    {
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean",
+      "line": 113,
+      "class": "DeltaLambdaPiecewise"
+    },
+    {
+      "file": "QOU/KnotTheory/Vassiliev/MilnorVassilievBridge.lean",
+      "line": 57,
+      "class": "SymbolIsWeightSystem"
+    },
+    {
+      "file": "QOU/KnotTheory/Vassiliev/MilnorVassilievBridge.lean",
+      "line": 85,
+      "class": "BrunnianVassilievBridge"
+    },
+    {
+      "file": "QOU/LiftingDescent/BBStratification.lean",
+      "line": 153,
+      "class": "BBSpectralSequenceProvider"
+    },
+    {
+      "file": "QOU/LiftingDescent/HomologicalCondensation.lean",
+      "line": 105,
+      "class": "ShellCondensationConjecture"
+    },
+    {
+      "file": "QOU/LiftingDescent/HomologicalCondensation.lean",
+      "line": 140,
+      "class": "IsKnownCondensed"
+    },
+    {
+      "file": "QOU/LiftingDescent/HomologicalCondensation.lean",
+      "line": 145,
+      "class": "IsKnownNotCondensed"
+    },
+    {
+      "file": "QOU/LiftingDescent/JetProlongation.lean",
+      "line": 94,
+      "class": "JetChain"
+    },
+    {
+      "file": "QOU/LiftingDescent/JetProlongation.lean",
+      "line": 204,
+      "class": "InterLevelLift"
+    },
+    {
+      "file": "QOU/LiftingDescent/ccg_cosimplicial_identities.lean",
+      "line": 29,
+      "class": "CcgCosimplicialIdentitiesContext"
+    },
+    {
+      "file": "QOU/LiftingDescent/ccg_crossed_module_structure.lean",
+      "line": 23,
+      "class": "CrossedModuleContext"
+    },
+    {
+      "file": "QOU/LiftingDescent/descent_cocycle_deviation.lean",
+      "line": 29,
+      "class": "DescentCocycleContext"
+    },
+    {
+      "file": "QOU/LiftingDescent/jp_categorical_jet.lean",
+      "line": 16,
+      "class": "JpCategoricalJetContext"
+    },
+    {
+      "file": "QOU/LiftingDescent/tm_descended_is_holonomy.lean",
+      "line": 76,
+      "class": "TmDescendedInputs"
+    },
+    {
+      "file": "QOU/LiftingDescent/tm_dilogarithm_evaluation.lean",
+      "line": 79,
+      "class": "TmDivisorChartInputs"
+    },
+    {
+      "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean",
+      "line": 41,
+      "class": "TmEigenspaceDecompContext"
+    },
+    {
+      "file": "QOU/LiftingDescent/tm_transient_localisation.lean",
+      "line": 62,
+      "class": "TMTransientLocalisationContext"
+    },
+    {
+      "file": "QOU/Machinery/DerivedCharacterCatalogue.lean",
+      "line": 173,
+      "class": "IsLRFactorisedDerived"
+    },
+    {
+      "file": "QOU/Machinery/HeckeBraidedCategoryScaffold.lean",
+      "line": 96,
+      "class": "MarkovStabilization"
+    },
+    {
+      "file": "QOU/Machinery/HeckeTowerBasicConstruction.lean",
+      "line": 211,
+      "class": "JonesBasicConstruction"
+    },
+    {
+      "file": "QOU/Machinery/KLRAlgebraBasic.lean",
+      "line": 47,
+      "class": "KLRAlgebra"
+    },
+    {
+      "file": "QOU/Machinery/KLRAlgebraBasic.lean",
+      "line": 69,
+      "class": "KLRCategorifiesNegativeHalfUqg"
+    },
+    {
+      "file": "QOU/Machinery/KLRAlgebraBasic.lean",
+      "line": 82,
+      "class": "KLRDecategorifiesToCanonicalBasis"
+    },
+    {
+      "file": "QOU/Machinery/KashiwaraCrystalBasic.lean",
+      "line": 345,
+      "class": "CompositeKashiwaraResidueA"
+    },
+    {
+      "file": "QOU/Machinery/MarkovTraceOnHecke.lean",
+      "line": 98,
+      "class": "JonesWenzlProjector"
+    },
+    {
+      "file": "QOU/Machinery/MarkovTraceOnHecke.lean",
+      "line": 119,
+      "class": "ResidueACompositeIdentification"
+    },
+    {
+      "file": "QOU/Machinery/QDilogarithm.lean",
+      "line": 121,
+      "class": "FaddeevQuantumDilogContext"
+    },
+    {
+      "file": "QOU/Machinery/QPochhammer.lean",
+      "line": 144,
+      "class": "QPochhammerHabiroEvaluation"
+    },
+    {
+      "file": "QOU/Machinery/SpectralSequenceBasic.lean",
+      "line": 59,
+      "class": "E2Degenerates"
+    },
+    {
+      "file": "QOU/Machinery/SpectralSequenceBasic.lean",
+      "line": 70,
+      "class": "KLRSpectralSequenceAtE2"
+    },
+    {
+      "file": "QOU/Machinery/StrongAJFigureEight.lean",
+      "line": 131,
+      "class": "TransferLemmas"
+    },
+    {
+      "file": "QOU/Mass/BindingQBesselKernel.lean",
+      "line": 51,
+      "class": "BindingFollowsQBessel"
+    },
+    {
+      "file": "QOU/Mass/BondChannelClassSelection.lean",
+      "line": 135,
+      "class": "BindingVolumeLedger"
+    },
+    {
+      "file": "QOU/Mass/ComplexVolumeZeta4Partner.lean",
+      "line": 211,
+      "class": "SingleFrakVAssembly"
+    },
+    {
+      "file": "QOU/Mass/NaStokesKeystone.lean",
+      "line": 82,
+      "class": "ProlongationPeriodMeanQuantumDim"
+    },
+    {
+      "file": "QOU/MassComputationChainRoadmap.lean",
+      "line": 88,
+      "class": "MRatioInversionMonotone"
+    },
+    {
+      "file": "QOU/MassEndomorphism/AWDeformationPath.lean",
+      "line": 31,
+      "class": "AWDeformationPath"
+    },
+    {
+      "file": "QOU/MassEndomorphism/VolumeBridge.lean",
+      "line": 87,
+      "class": "VolumeBridge"
+    },
+    {
+      "file": "QOU/MassTheory/BraneTowerLevelAmplitude.lean",
+      "line": 139,
+      "class": "CoordinationEdgeAmplitude"
+    },
+    {
+      "file": "QOU/MassTheory/BrunnianDeficitRecursion.lean",
+      "line": 107,
+      "class": "BrunnianDeficitRecursion"
+    },
+    {
+      "file": "QOU/MassTheory/MilnorOrderLawGeneral.lean",
+      "line": 236,
+      "class": "MilnorExactOrderConjecture"
+    },
+    {
+      "file": "QOU/MassTheory/MilnorParitySignLaw.lean",
+      "line": 226,
+      "class": "MilnorParitySignConjecture"
+    },
+    {
+      "file": "QOU/MassTheory/MilnorVassilievGrading.lean",
+      "line": 88,
+      "class": "BarSymmetricDegreeDoubling"
+    },
+    {
+      "file": "QOU/Mathlib/BorelStateIntegralSummability.lean",
+      "line": 95,
+      "class": "BorelSummableToStateIntegral"
+    },
+    {
+      "file": "QOU/Mathlib/EllipticDivisorDegree.lean",
+      "line": 217,
+      "class": "HasArgumentPrinciple"
+    },
+    {
+      "file": "QOU/Mathlib/HadamardFactorization.lean",
+      "line": 321,
+      "class": "HasHadamardFactorization"
+    },
+    {
+      "file": "QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 161,
+      "class": "WenzlBridge"
+    },
+    {
+      "file": "QOU/Mathlib/HeckeAlgebra.lean",
+      "line": 1400,
+      "class": "HasHnMul"
+    },
+    {
+      "file": "QOU/Mathlib/NonAbelianStokes.lean",
+      "line": 306,
+      "class": "LieAlgebraStructure"
+    },
+    {
+      "file": "QOU/Mathlib/PermutationEnumeration.lean",
+      "line": 377,
+      "class": "CoxeterSwapFormulaHolds"
+    },
+    {
+      "file": "QOU/Mathlib/WallCrossing.lean",
+      "line": 109,
+      "class": "KSWallCrossing"
+    },
+    {
+      "file": "QOU/MathlibExt/FrechetShohat.lean",
+      "line": 232,
+      "class": "CarlemanDeterminacyStieltjes"
+    },
+    {
+      "file": "QOU/MathlibExt/FrechetShohat.lean",
+      "line": 249,
+      "class": "FrechetShohatStieltjes"
+    },
+    {
+      "file": "QOU/MathlibExt/ManifoldVolumeBridge.lean",
+      "line": 174,
+      "class": "HyperbolicVolumeBridge"
+    },
+    {
+      "file": "QOU/MathlibExt/MonoidalCalcVar.lean",
+      "line": 67,
+      "class": "HasAction"
+    },
+    {
+      "file": "QOU/MathlibExt/MonoidalCalcVar.lean",
+      "line": 111,
+      "class": "HasMonoidalEOM"
+    },
+    {
+      "file": "QOU/MathlibExt/PhiBFibreExtension.lean",
+      "line": 47,
+      "class": "PhiBFibreExtension"
+    },
+    {
+      "file": "QOU/MathlibExt/QPlancherel.lean",
+      "line": 123,
+      "class": "HasQPlancherelCLT"
+    },
+    {
+      "file": "QOU/MathlibExt/WenzlSchurElement.lean",
+      "line": 253,
+      "class": "SchurElementCriterion"
+    },
+    {
+      "file": "QOU/Molecular/benzene_threading_emergence.lean",
+      "line": 79,
+      "class": "BenzeneThreadingEmergenceContext"
+    },
+    {
+      "file": "QOU/Molecular/benzene_threading_emergence.lean",
+      "line": 115,
+      "class": "BenzeneThreadingSelection"
+    },
+    {
+      "file": "QOU/Molecular/ch4_lp_dual_binding.lean",
+      "line": 40,
+      "class": "Ch4LpDualBindingContext"
+    },
+    {
+      "file": "QOU/Molecular/ch4_lp_dual_binding.lean",
+      "line": 57,
+      "class": "Ch4BondSymmetry"
+    },
+    {
+      "file": "QOU/Molecular/co2_lp_dual_binding.lean",
+      "line": 75,
+      "class": "Co2LpDualBindingContext"
+    },
+    {
+      "file": "QOU/Molecular/co2_lp_dual_binding.lean",
+      "line": 109,
+      "class": "Co2SymmetricSelection"
+    },
+    {
+      "file": "QOU/Molecular/co_lp_dual_binding.lean",
+      "line": 45,
+      "class": "CoLpDualBindingContext"
+    },
+    {
+      "file": "QOU/Molecular/co_lp_dual_binding.lean",
+      "line": 58,
+      "class": "CoGroundStateSelection"
+    },
+    {
+      "file": "QOU/Molecular/h2_lp_dual_binding.lean",
+      "line": 42,
+      "class": "H2LpDualBindingContext"
+    },
+    {
+      "file": "QOU/Molecular/h2_lp_dual_binding.lean",
+      "line": 71,
+      "class": "H2GroundStateSelection"
+    },
+    {
+      "file": "QOU/Molecular/shell_filling_rule.lean",
+      "line": 65,
+      "class": "ShellFillingRuleContext"
+    },
+    {
+      "file": "QOU/Molecular/shell_filling_rule.lean",
+      "line": 201,
+      "class": "ShellFillingLPDuality"
+    },
+    {
+      "file": "QOU/Observations/AlgebraicGnsEmbedding.lean",
+      "line": 43,
+      "class": "HasMarkovGnsEmbedding"
+    },
+    {
+      "file": "QOU/Observations/QCltNonCommutative.lean",
+      "line": 56,
+      "class": "QCltNonCommutative"
+    },
+    {
+      "file": "QOU/Observations/QPlancherelAsymptoticSkeleton.lean",
+      "line": 53,
+      "class": "QPlancherelAsymptoticSkeletonContext"
+    },
+    {
+      "file": "QOU/Observations/SDPRegimeSwitch.lean",
+      "line": 48,
+      "class": "SDPRegimeSwitchContext"
+    },
+    {
+      "file": "QOU/Observations/TraceLocalityMeetsGsNonLocality.lean",
+      "line": 34,
+      "class": "HasReconciliation"
+    },
+    {
+      "file": "QOU/Observations/brane_tower_q_laplacian_decay.lean",
+      "line": 47,
+      "class": "BraneTowerQLaplacianDecayContext"
+    },
+    {
+      "file": "QOU/Observations/hecke_satisfies_blitvic_hypothesis.lean",
+      "line": 61,
+      "class": "HeckeSatisfiesBlitvicHypothesisContext"
+    },
+    {
+      "file": "QOU/Observations/hecke_satisfies_blitvic_hypothesis.lean",
+      "line": 115,
+      "class": "HeckeBlitvicWickRecursion"
+    },
+    {
+      "file": "QOU/Observations/strangelet_crossing_energy.lean",
+      "line": 36,
+      "class": "StrangeletCrossingEnergyContext"
+    },
+    {
+      "file": "QOU/Observations/strangelet_crossing_energy.lean",
+      "line": 53,
+      "class": "StrangeletCrossingEnergyConjecture"
+    },
+    {
+      "file": "QOU/Observations/substrate_consistency_window.lean",
+      "line": 17,
+      "class": "SubstrateConsistencyWindowContext"
+    },
+    {
+      "file": "QOU/Observations/substrate_consistency_window.lean",
+      "line": 32,
+      "class": "SubstrateConsistencyWindowConjecture"
+    },
+    {
+      "file": "QOU/Optimization/AngleStructureFeasibility.lean",
+      "line": 170,
+      "class": "AngleStructureFeasibilityContext"
+    },
+    {
+      "file": "QOU/OptionE/CrystalDeltaLambdaScaffold.lean",
+      "line": 133,
+      "class": "OptionECrystalDeltaLambda"
+    },
+    {
+      "file": "QOU/ParticleInteractions/AtomicityGroupRank.lean",
+      "line": 85,
+      "class": "AlgebraicGroupRank"
+    },
+    {
+      "file": "QOU/ParticleInteractions/AtomicityGroupRank.lean",
+      "line": 113,
+      "class": "RankGroupEqRankLie"
+    },
+    {
+      "file": "QOU/ParticleInteractions/AtomicityRankOneToSingleObject.lean",
+      "line": 123,
+      "class": "RankOneImpliesSingleGenerator"
+    },
+    {
+      "file": "QOU/ParticleInteractions/AtomicityRankOneToSingleObject.lean",
+      "line": 211,
+      "class": "TannakianRankOneSingleGenerator"
+    },
+    {
+      "file": "QOU/ParticleInteractions/AtomicitySelfDualToSymplectic.lean",
+      "line": 102,
+      "class": "SelfDualToSymplectic"
+    },
+    {
+      "file": "QOU/ParticleInteractions/MesonOperatorSelectionT3.lean",
+      "line": 274,
+      "class": "CanonicalHyperbolicMesonBraid"
+    },
+    {
+      "file": "QOU/ParticleInteractions/PerNucleonChannelDecomposition.lean",
+      "line": 21,
+      "class": "PerNucleonChannelDecompositionContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/SpectatorNormalization.lean",
+      "line": 19,
+      "class": "SpectatorNormalizationContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/WeakIsospinT3Grading.lean",
+      "line": 369,
+      "class": "CanonicalWeakIsospinFromBowtie"
+    },
+    {
+      "file": "QOU/ParticleInteractions/WignerSU4FromSpinIsospin.lean",
+      "line": 15,
+      "class": "WignerSU4FromSpinIsospin"
+    },
+    {
+      "file": "QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean",
+      "line": 53,
+      "class": "ConfinementFrobeniusReciprocityContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/confinement_operator_selection.lean",
+      "line": 151,
+      "class": "BrunnianConfinement"
+    },
+    {
+      "file": "QOU/ParticleInteractions/confinement_operator_selection.lean",
+      "line": 175,
+      "class": "BorromeanConfinement"
+    },
+    {
+      "file": "QOU/ParticleInteractions/demand_stability.lean",
+      "line": 27,
+      "class": "DemandStabilityContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/demand_stability.lean",
+      "line": 44,
+      "class": "PeriodicTableDemandConjecture"
+    },
+    {
+      "file": "QOU/ParticleInteractions/deuterium_derived_binding.lean",
+      "line": 21,
+      "class": "DeuteriumDerivedBindingContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/deuterium_derived_binding.lean",
+      "line": 135,
+      "class": "BindingEndomorphismAnalogy"
+    },
+    {
+      "file": "QOU/ParticleInteractions/four_term_pair_nucleon.lean",
+      "line": 57,
+      "class": "FourTermPairNucleonContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/ground_state_ordering.lean",
+      "line": 26,
+      "class": "GroundStateOrderingContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/lp_dual_stability.lean",
+      "line": 41,
+      "class": "LpDualStabilityContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/mass_categorical_descent.lean",
+      "line": 169,
+      "class": "MassDescentOperatorChannels"
+    },
+    {
+      "file": "QOU/ParticleInteractions/parity_regime_selection.lean",
+      "line": 31,
+      "class": "ParityRegimeSelectionContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/positron_correction.lean",
+      "line": 31,
+      "class": "PositronCorrectionContext"
+    },
+    {
+      "file": "QOU/ParticleInteractions/tritium_qvalue_symbolic.lean",
+      "line": 38,
+      "class": "TritiumQvalueContext"
+    },
+    {
+      "file": "QOU/QBeta/A3AntiSelfAdjointLift.lean",
+      "line": 246,
+      "class": "DerivedAmplitudeGivesLift"
+    },
+    {
+      "file": "QOU/QBeta/A3OffBlockDerivation.lean",
+      "line": 271,
+      "class": "A3LiftFromDerivedOffBlock"
+    },
+    {
+      "file": "QOU/QBeta/BirkhoffAmplitudeE.lean",
+      "line": 285,
+      "class": "BirkhoffCrossRatioSuppliesAmplitude"
+    },
+    {
+      "file": "QOU/QBeta/BirkhoffAmplitudeWellPosed.lean",
+      "line": 233,
+      "class": "AmplitudeIsGaugeInvariantCrossRatio"
+    },
+    {
+      "file": "QOU/QBeta/DLadderTwoAdicGrading.lean",
+      "line": 133,
+      "class": "DLadderGradingConjecture"
+    },
+    {
+      "file": "QOU/QBeta/EllipticRTheta.lean",
+      "line": 80,
+      "class": "SingleTauChannelClosure"
+    },
+    {
+      "file": "QOU/QBeta/FMapStructuralPaths.lean",
+      "line": 32,
+      "class": "FMapFaddeevModular"
+    },
+    {
+      "file": "QOU/QBeta/FMapStructuralPaths.lean",
+      "line": 46,
+      "class": "FMapHexagonCharacter"
+    },
+    {
+      "file": "QOU/QBeta/FMapStructuralPaths.lean",
+      "line": 60,
+      "class": "FMapCyclotomicDirect"
+    },
+    {
+      "file": "QOU/QBeta/FaddeevPhiFullUniqueness.lean",
+      "line": 66,
+      "class": "FaddeevPhiPhysical"
+    },
+    {
+      "file": "QOU/QBeta/FiveTwoSaddleSumRule.lean",
+      "line": 268,
+      "class": "FiveTwoDilogLadder"
+    },
+    {
+      "file": "QOU/QBeta/G3RealnessConjugationBrick.lean",
+      "line": 119,
+      "class": "SharedConjugationCovariance"
+    },
+    {
+      "file": "QOU/QBeta/HabiroTailAction.lean",
+      "line": 129,
+      "class": "ClassicalDilog"
+    },
+    {
+      "file": "QOU/QBeta/HabiroTailAction.lean",
+      "line": 183,
+      "class": "LogSinhIntegral"
+    },
+    {
+      "file": "QOU/QBeta/LevelMixingBridge.lean",
+      "line": 72,
+      "class": "LevelMixingBridge"
+    },
+    {
+      "file": "QOU/QBeta/MarkovFrobeniusCollapse/General.lean",
+      "line": 26,
+      "class": "MinNormLiftContext"
+    },
+    {
+      "file": "QOU/QBeta/PhiBSArgumentIdentification.lean",
+      "line": 101,
+      "class": "SArgumentIdentification"
+    },
+    {
+      "file": "QOU/QBeta/RouteCM3CategoryIdentification.lean",
+      "line": 56,
+      "class": "IdentifiesClosedSector"
+    },
+    {
+      "file": "QOU/QBeta/StageCSigma3LiftObligation.lean",
+      "line": 109,
+      "class": "StageCSigma3Lift"
+    },
+    {
+      "file": "QOU/QBeta/StateIntegralRecursionLattice.lean",
+      "line": 86,
+      "class": "Recursion"
+    },
+    {
+      "file": "QOU/QBeta/Stokes3LargeOrderAmplitude.lean",
+      "line": 125,
+      "class": "GeometricKappaAction"
+    },
+    {
+      "file": "QOU/QBeta/StokesAmplitudeE.lean",
+      "line": 209,
+      "class": "GlobalBirkhoffSuppliesAmplitude"
+    },
+    {
+      "file": "QOU/QBeta/StokesDTBPSBridge.lean",
+      "line": 79,
+      "class": "StokesDTBPSBridge"
+    },
+    {
+      "file": "QOU/QBeta/SuperBerezinianA3Magnitude.lean",
+      "line": 187,
+      "class": "A3CrossTermMagnitudeClosed"
+    },
+    {
+      "file": "QOU/QBeta/WindingGFTransform.lean",
+      "line": 67,
+      "class": "FourOneIndexAnnihilated"
+    },
+    {
+      "file": "QOU/QBeta/WindingGFTransform.lean",
+      "line": 194,
+      "class": "SDeformedVolumeChannelWinding"
+    },
+    {
+      "file": "QOU/QGeometricLanglands.lean",
+      "line": 267,
+      "class": "FibreFunctorRigidity"
+    },
+    {
+      "file": "QOU/QGeometricLanglands.lean",
+      "line": 425,
+      "class": "QGeometricLanglandsConjecture"
+    },
+    {
+      "file": "QOU/QGeometricLanglands/q_gl_classical_limit.lean",
+      "line": 40,
+      "class": "q_gl_classical_limit"
+    },
+    {
+      "file": "QOU/QGeometricLanglands/q_gl_fiber_functor.lean",
+      "line": 25,
+      "class": "q_gl_fiber_functor"
+    },
+    {
+      "file": "QOU/QGeometricLanglands/q_gl_kummer_filtration.lean",
+      "line": 27,
+      "class": "q_gl_kummer_filtration"
+    },
+    {
+      "file": "QOU/QGeometricLanglands/q_oper_hecke.lean",
+      "line": 27,
+      "class": "q_oper_hecke"
+    },
+    {
+      "file": "QOU/QuantumComputationalUniversality/QuantumComputationalUniversality.lean",
+      "line": 63,
+      "class": "QuantumComputationalUniversality"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/Instanton.lean",
+      "line": 146,
+      "class": "HasCategoricalIrreducibility"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/Instanton.lean",
+      "line": 297,
+      "class": "HasDqSquaredNonvanishing"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/VolumeForm.lean",
+      "line": 112,
+      "class": "SU2EmergenceVolumeDeterminant"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/VolumeForm.lean",
+      "line": 123,
+      "class": "SU2EmergenceDaggerUnitarity"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean",
+      "line": 26,
+      "class": "ExistsAxiom1FrobeniusContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean",
+      "line": 17,
+      "class": "ExistsAxiom2ObservabilityContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean",
+      "line": 24,
+      "class": "ExistsAxiom3ChernContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/exists_axiom_4_volume.lean",
+      "line": 17,
+      "class": "ExistsAxiom4VolumeContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/fibre_functor_atlas.lean",
+      "line": 26,
+      "class": "FibreFunctorAtlasContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverse/observation_energy.lean",
+      "line": 49,
+      "class": "ObservationEnergyContext"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean",
+      "line": 43,
+      "class": "CategoricalHiggsIdempotent"
+    },
+    {
+      "file": "QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
+      "line": 25,
+      "class": "GActionOnSubstrate"
+    },
+    {
+      "file": "QOU/Resurgence/WardFiltrationCounting.lean",
+      "line": 111,
+      "class": "WardFiltrationCoincidence"
+    },
+    {
+      "file": "QOU/Resurgence/WardFiltrationCounting.lean",
+      "line": 145,
+      "class": "StokesPhaseSign"
+    },
+    {
+      "file": "QOU/Shared/OperatorSelectionLP.lean",
+      "line": 37,
+      "class": "OperatorSelectionLPContext"
+    },
+    {
+      "file": "QOU/Shared/SobolevHkRegularity.lean",
+      "line": 31,
+      "class": "SobolevHkRegularityContext"
+    },
+    {
+      "file": "QOU/Shared/WedderburnBlockDecomposition.lean",
+      "line": 43,
+      "class": "WedderburnBlockDecompositionContext"
+    },
+    {
+      "file": "QOU/StaircaseCornerHook.lean",
+      "line": 146,
+      "class": "StaircaseEWResidual"
+    },
+    {
+      "file": "QOU/StandardModel/SecondCrossingInvariant.lean",
+      "line": 183,
+      "class": "SecondCrossingInvariant"
+    },
+    {
+      "file": "QOU/StandardModel/ThetaQcdFramingCp.lean",
+      "line": 156,
+      "class": "ColorSectorCPEven"
+    },
+    {
+      "file": "QOU/Substrate/ColorAntisymmetric.lean",
+      "line": 80,
+      "class": "FermiColorSinglet"
+    },
+    {
+      "file": "QOU/Substrate/ProtonMassEMSignBlock.lean",
+      "line": 103,
+      "class": "EmSignBlockCorrection"
+    },
+    {
+      "file": "QOU/TopologicalMass/cat_descended_is_base_mass.lean",
+      "line": 69,
+      "class": "CatDescendedInputs"
+    },
+    {
+      "file": "QOU/TopologicalMass/cat_transient_localises_blowup.lean",
+      "line": 72,
+      "class": "CatTransientInputs"
+    },
+    {
+      "file": "QOU/Torsion/KnotParticleGeneration.lean",
+      "line": 17,
+      "class": "KnotParticleGenerationContext"
+    },
+    {
+      "file": "QOU/Torsion/algebraic_filter_classification.lean",
+      "line": 25,
+      "class": "AlgebraicFilterContext"
+    },
+    {
+      "file": "QOU/Torsion/antiparticle_crossing_reversal.lean",
+      "line": 17,
+      "class": "AntiparticleCrossingReversalContext"
+    },
+    {
+      "file": "QOU/Torsion/brane_boundary_structure.lean",
+      "line": 33,
+      "class": "BraneBoundaryContext"
+    },
+    {
+      "file": "QOU/Torsion/mass_decomposition_categorical.lean",
+      "line": 18,
+      "class": "MassDecompositionCategoricalContext"
+    },
+    {
+      "file": "QOU/Torsion/neutron_proton_splitting.lean",
+      "line": 93,
+      "class": "NeutronProtonSplittingNumerics"
+    },
+    {
+      "file": "QOU/Torsion/quantum_dilogarithm.lean",
+      "line": 40,
+      "class": "QuantumDilogarithmContext"
+    },
+    {
+      "file": "QOU/Torsion/weak_equiv_invariance.lean",
+      "line": 18,
+      "class": "WeakEquivInvarianceContext"
+    },
+    {
+      "file": "QOU/WedderburnMass/chirality_residue_mass_term.lean",
+      "line": 23,
+      "class": "ChiralityResidueMassTermContext"
+    },
+    {
+      "file": "QOU/WedderburnMass/confinement_categorical.lean",
+      "line": 73,
+      "class": "ConfinementCategoricalContext"
+    },
+    {
+      "file": "QOU/WedderburnMass/curvature_rank_gb_stratification.lean",
+      "line": 17,
+      "class": "CurvatureRankGbStratificationContext"
+    },
+    {
+      "file": "QOU/WedderburnMass/exterior_square_borromean.lean",
+      "line": 17,
+      "class": "ExteriorSquareBorromeanContext"
+    },
+    {
+      "file": "QOU/dq_squared.lean",
+      "line": 29,
+      "class": "DqSquaredContext"
+    },
+    {
+      "file": "QOU/emergence_to_quantum_flat.lean",
+      "line": 25,
+      "class": "EmergenceToQuantumFlatContext"
+    },
+    {
+      "file": "QOU/frobenius_relation.lean",
+      "line": 38,
+      "class": "FrobeniusRelationContext"
+    },
+    {
+      "file": "QOU/orbital_fourier_decomposition.lean",
+      "line": 22,
+      "class": "OrbitalFourierDecompositionContext"
+    },
+    {
+      "file": "QOU/q_gl_obstruction_calc.lean",
+      "line": 68,
+      "class": "QGlObstructionCalcContext"
+    },
+    {
+      "file": "QOU/qou_canonical_action.lean",
+      "line": 24,
+      "class": "QouCanonicalActionContext"
+    },
+    {
+      "file": "QOU/substrate_radial_coordinate.lean",
+      "line": 33,
+      "class": "SubstrateRadialContext"
+    },
+    {
+      "file": "QOU/variational_equations.lean",
+      "line": 25,
+      "class": "VariationalEquationsContext"
+    },
+    {
+      "file": "QOU/volume_from_rigidity.lean",
+      "line": 24,
+      "class": "SymplecticSelfDualContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean",
+      "line": 49,
+      "class": "BlowupYekutieli"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean",
+      "line": 56,
+      "class": "MarkovAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.lean",
+      "line": 74,
+      "class": "GBNFAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean",
+      "line": 123,
+      "class": "ComplexVolumeMatch"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean",
+      "line": 295,
+      "class": "ChannelLeonardDuality"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.lean",
+      "line": 105,
+      "class": "MarkovDisjointStabilisation"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean",
+      "line": 50,
+      "class": "MarkovAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean",
+      "line": 45,
+      "class": "MassEndoModule"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean",
+      "line": 65,
+      "class": "SaturatedShellConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean",
+      "line": 99,
+      "class": "PairGenCanonical"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean",
+      "line": 67,
+      "class": "ExplicitCentralIdempotentConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.lean",
+      "line": 63,
+      "class": "HeckeRelations"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.lean",
+      "line": 85,
+      "class": "HeckeWedderburn"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean",
+      "line": 56,
+      "class": "HeckeBranchingTraceDecomposition"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.lean",
+      "line": 40,
+      "class": "BBSpectralSequence"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.lean",
+      "line": 59,
+      "class": "HomologicalConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.lean",
+      "line": 37,
+      "class": "HnHilbertRep"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.lean",
+      "line": 51,
+      "class": "HnInductiveEmbedding"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.lean",
+      "line": 72,
+      "class": "MarkovTraceVNFactor"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
+      "line": 453,
+      "class": "ZRecursionCoeffs"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.lean",
+      "line": 53,
+      "class": "GradedRhoKExpansion"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean",
+      "line": 48,
+      "class": "KashiwaraCrystal"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean",
+      "line": 76,
+      "class": "MacdonaldZonal"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean",
+      "line": 83,
+      "class": "HabiroResidue"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.lean",
+      "line": 44,
+      "class": "WhippleRotationIntertwining"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean",
+      "line": 73,
+      "class": "AlgebraicGeometricEquivalence"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.lean",
+      "line": 64,
+      "class": "AlphaKCategoricalClosure"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean",
+      "line": 70,
+      "class": "BlochSuslinUniqueness"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean",
+      "line": 40,
+      "class": "BindingClosureInput"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean",
+      "line": 36,
+      "class": "BindingManyBodyJetFiltration"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean",
+      "line": 59,
+      "class": "BorromeanCommonScale"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean",
+      "line": 129,
+      "class": "MassFormula"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean",
+      "line": 159,
+      "class": "WeinbergAngleCategorical"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-higgs-mechanism.lean",
+      "line": 207,
+      "class": "CategoricalHiggsMechanism"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean",
+      "line": 81,
+      "class": "MarkovTraceCyclic"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean",
+      "line": 71,
+      "class": "YangBaxterRule"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/complex-mass-constituent-functional.lean",
+      "line": 73,
+      "class": "ComplexMassConstituent"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/confinement-categorical.lean",
+      "line": 30,
+      "class": "SemisimpleFrobeniusHeckeLike"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean",
+      "line": 106,
+      "class": "HasFiniteLPDuality"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean",
+      "line": 151,
+      "class": "HasBranchingBlockLemma"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/confinement-sdp.lean",
+      "line": 17,
+      "class": "ConfinementSDPData"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean",
+      "line": 326,
+      "class": "AtomBraidStep4Hypothesis"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.lean",
+      "line": 106,
+      "class": "PSDTraceOrthogonalityHolds"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean",
+      "line": 39,
+      "class": "CrossingGradedMassExpansion"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
+      "line": 95,
+      "class": "CrystalBasisCorrespondence"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean",
+      "line": 118,
+      "class": "CrystalEigenlineSignBlind"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/delta-q-decoration.lean",
+      "line": 37,
+      "class": "DeltaQDecorationConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.lean",
+      "line": 49,
+      "class": "DemazureModel"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean",
+      "line": 26,
+      "class": "DimMasterPentagon"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.lean",
+      "line": 41,
+      "class": "FlavorDressingFunctor"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean",
+      "line": 40,
+      "class": "SemisimpleFrobeniusAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction.lean",
+      "line": 5,
+      "class": "FrobeniusTraceAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.lean",
+      "line": 105,
+      "class": "HabiroCompletion"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.lean",
+      "line": 56,
+      "class": "GBDepthPeriodCorrespondence"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.lean",
+      "line": 63,
+      "class": "GradedMarkovTraceDescent"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean",
+      "line": 188,
+      "class": "QbetaHabiroTaylorBridgeClass"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence.lean",
+      "line": 229,
+      "class": "HabiroGBSameElement"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/hoefsmit-ew-cell-content.lean",
+      "line": 186,
+      "class": "HoefsmitEWCellContent"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean",
+      "line": 78,
+      "class": "MarkovTraceAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean",
+      "line": 185,
+      "class": "MarkovHeckeSkeinAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean",
+      "line": 26,
+      "class": "IsospinFromCanonicalBowtie"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean",
+      "line": 27,
+      "class": "KashaevDensityEqualsSdpMultiplicity"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean",
+      "line": 51,
+      "class": "VolumeConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean",
+      "line": 66,
+      "class": "PieceVolumeConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean",
+      "line": 101,
+      "class": "KnotOperatorLPSelection"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean",
+      "line": 44,
+      "class": "LeptonMassRatioConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean",
+      "line": 130,
+      "class": "FigureEightReductionConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean",
+      "line": 63,
+      "class": "LRCoefficientHecke"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean",
+      "line": 74,
+      "class": "CatalanPrefactor"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean",
+      "line": 107,
+      "class": "MagicABindingFormula"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/markov-trace-product.lean",
+      "line": 83,
+      "class": "MarkovTraceAxioms"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.lean",
+      "line": 77,
+      "class": "MassCoefficientShadowPrice"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
+      "line": 83,
+      "class": "IsDemazureSubCrystal"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
+      "line": 128,
+      "class": "HasBlochGroupQuotient"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
+      "line": 161,
+      "class": "Cl_2_PentagonIdentity"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean",
+      "line": 178,
+      "class": "DeeperMathlibFillers"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/p-from-braid-mirror.lean",
+      "line": 26,
+      "class": "PFromBraidMirror"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/per-braid-mass-tower.lean",
+      "line": 59,
+      "class": "PerBraidMassTower"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean",
+      "line": 83,
+      "class": "PerPieceBridgeAxiom"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean",
+      "line": 51,
+      "class": "IsPieriShift"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.lean",
+      "line": 78,
+      "class": "StandardNorm"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean",
+      "line": 231,
+      "class": "RigidMonoidalStructuralGapInvarianceAxiom"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean",
+      "line": 73,
+      "class": "ThreeFoldMarkovHopfExtraction"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/qbeta-z-recursion-to-ck-recursion-bridge.lean",
+      "line": 38,
+      "class": "ZRecursionCoeffs"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.lean",
+      "line": 33,
+      "class": "QDifferenceKernelIsProlongationSymbol"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/reeb-linking-cwf-normalization.lean",
+      "line": 46,
+      "class": "ReebLinkingCWF"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.lean",
+      "line": 58,
+      "class": "RhoKH3ARefinement"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean",
+      "line": 63,
+      "class": "SchurWeylMassDecomposition"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean",
+      "line": 133,
+      "class": "SharedDenominatorCuspHolonomy"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.lean",
+      "line": 68,
+      "class": "SigmaShellFromBetaChainDerivation"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean",
+      "line": 38,
+      "class": "SemisimpleAlgebra"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean",
+      "line": 69,
+      "class": "WhiteheadHH"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/t-beta-markov-collapse-general-lift.lean",
+      "line": 99,
+      "class": "PSDTrace"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/t-beta-markov-collapse-general-lift.lean",
+      "line": 119,
+      "class": "NonDegTrace"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean",
+      "line": 46,
+      "class": "TauOrderMixingMap"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean",
+      "line": 77,
+      "class": "TauBandedKernelMap"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean",
+      "line": 105,
+      "class": "TauDistinctInvariants"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean",
+      "line": 97,
+      "class": "HasThurstonTriangulation"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean",
+      "line": 44,
+      "class": "WeakSpectralCompleteness"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean",
+      "line": 79,
+      "class": "WeakSymmetricNormalization"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wedderburn-as-noncomm-fourier.lean",
+      "line": 66,
+      "class": "IsInverseFourier"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean",
+      "line": 115,
+      "class": "WedderburnWeightCanonical"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-A-operator.lean",
+      "line": 46,
+      "class": "WenzlAOperator"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+      "line": 25,
+      "class": "SchurWeylSetup"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+      "line": 46,
+      "class": "FibreFunctorMarkovTrace"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+      "line": 69,
+      "class": "MarkovTraceFamilyOneDim"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/wenzl-qmn-synergy.lean",
+      "line": 111,
+      "class": "WenzlQMNCrossValidation"
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+      "line": 52,
+      "class": "MarkovTraceFamilyOneDim"
+    },
+    {
+      "file": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean",
+      "line": 33,
+      "class": "H2SAngleS3HolonomyConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/archimedean-remainder-exponential-decay.lean",
+      "line": 54,
+      "class": "ArchimedeanRemainderExponentialDecay"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean",
+      "line": 100,
+      "class": "CPTClosure"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean",
+      "line": 14,
+      "class": "HyperbolicVolumeTranscendence"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean",
+      "line": 51,
+      "class": "UniversalBase"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean",
+      "line": 92,
+      "class": "MostowPrasadDistinguished"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean",
+      "line": 119,
+      "class": "ReidTraceField"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean",
+      "line": 140,
+      "class": "QZeroStokesIdentification"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/qbeta-trace-counit-convergence.lean",
+      "line": 38,
+      "class": "QBetaTraceCounitConvergence"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber.lean",
+      "line": 26,
+      "class": "SpinFromSo3Fiber"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.lean",
+      "line": 26,
+      "class": "TypeBFoldingCpt"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/typed-garside-element.lean",
+      "line": 64,
+      "class": "TypedGarsideLeadingTerm"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical.lean",
+      "line": 131,
+      "class": "WeinbergAngleCategorical"
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.lean",
+      "line": 26,
+      "class": "WignerSu4FromSpinIsospin"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean",
+      "line": 10,
+      "class": "LinkComplement"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean",
+      "line": 11,
+      "class": "LinkingInvariants"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/complex-chirality-rotation.lean",
+      "line": 46,
+      "class": "ComplexChiralityRotation"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean",
+      "line": 24,
+      "class": "ComplexSubstrate"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
+      "line": 78,
+      "class": "LRFusionData"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
+      "line": 117,
+      "class": "DoubleMagicConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean",
+      "line": 12,
+      "class": "GBCategory"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean",
+      "line": 16,
+      "class": "BraneTower"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/n-v-tower-depth-ninety.lean",
+      "line": 26,
+      "class": "TowerDepthNinetyConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/shell-threading-conjecture.lean",
+      "line": 39,
+      "class": "ShellThreadingEnergy"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/three-calibration-discipline.lean",
+      "line": 94,
+      "class": "ThreeCalibrationDiscipline"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean",
+      "line": 128,
+      "class": "BringHyperbolicDecomposition"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean",
+      "line": 193,
+      "class": "BWQIndependence"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean",
+      "line": 283,
+      "class": "BlochWignerInjective"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean",
+      "line": 44,
+      "class": "NeutronSameHeckeNF"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/categorical-proton-unique.lean",
+      "line": 44,
+      "class": "ProtonSameHeckeNF"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean",
+      "line": 36,
+      "class": "ElectronShellsHopf"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean",
+      "line": 38,
+      "class": "EllipticStabilityLocus"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
+      "line": 193,
+      "class": "ChernSimonsCorrectionConjecture"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.lean",
+      "line": 151,
+      "class": "AlphaEmFixedPointNormalization"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.lean",
+      "line": 73,
+      "class": "BorelProperTimeIdentification"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/skein-shell-correction.lean",
+      "line": 30,
+      "class": "SkeinShellCorrection"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean",
+      "line": 19,
+      "class": "CemeteryGroupRigidity"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
+      "line": 213,
+      "class": "ComplexLiTwoSummable"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
+      "line": 233,
+      "class": "ComplexLiTwoUnitCircleClassical"
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
+      "line": 284,
+      "class": "Cl_2_DoubleAngle"
+    },
+    {
+      "file": "content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean",
+      "line": 26,
+      "class": "Mirror3d3dCorrespondence"
+    },
+    {
+      "file": "content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean",
+      "line": 113,
+      "class": "ModularSTransformQQTilde"
+    },
+    {
+      "file": "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean",
+      "line": 26,
+      "class": "QuantumLanglandsDual"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean",
+      "line": 33,
+      "class": "CommutativeQOU"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean",
+      "line": 91,
+      "class": "FiberAdjointInvolutionContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean",
+      "line": 46,
+      "class": "QHarmonicFlow"
+    },
+    {
+      "file": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean",
+      "line": 84,
+      "class": "QuantumObservableUniverseExistsContext"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean",
+      "line": 96,
+      "class": "LusztigCanonicalBasisQEq1"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean",
+      "line": 143,
+      "class": "MacroscopicStabilityEquivalence"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean",
+      "line": 51,
+      "class": "MarkovClosureMap2Strand"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean",
+      "line": 75,
+      "class": "TrackCReducedAxiom"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+      "line": 167,
+      "class": "QuantumAPolynomial"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+      "line": 186,
+      "class": "PhiQRegulator"
+    },
+    {
+      "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+      "line": 200,
+      "class": "Li2QRegulator"
+    }
+  ],
+  "prop_valued_fields": [
+    {
+      "line": 31,
+      "field": "holds",
+      "carrier": "WenzlPositivityImpliesSubstratePositivity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean"
+    },
+    {
+      "line": 34,
+      "field": "holds",
+      "carrier": "OSReflectionPositivity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean"
+    },
+    {
+      "line": 19,
+      "field": "transverse",
+      "carrier": "BringSurfaceSmoothness",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean"
+    },
+    {
+      "line": 22,
+      "field": "intrinsic_resolution",
+      "carrier": "BringSurfaceSmoothness",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean"
+    },
+    {
+      "line": 25,
+      "field": "regular_foliation",
+      "carrier": "BringSurfaceSmoothness",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/brings-surface/brings-smoothness-resolution.lean"
+    },
+    {
+      "line": 41,
+      "field": "nsBlowsUp",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
+    },
+    {
+      "line": 43,
+      "field": "leviNonDegenerate",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
+    },
+    {
+      "line": 57,
+      "field": "bkmIntegralDiverges",
+      "carrier": "VorticityLowerBoundContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bkm_diverges"
+      ],
+      "consumed": true,
+      "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean"
+    },
+    {
+      "line": 37,
+      "field": "horizontal",
+      "carrier": "CategoricalQTorsionLeaf",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-categorical-q-torsion-leaf.lean"
+    },
+    {
+      "line": 39,
+      "field": "flow_invariant",
+      "carrier": "CategoricalQTorsionLeaf",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-categorical-q-torsion-leaf.lean"
+    },
+    {
+      "line": 23,
+      "field": "q_connection",
+      "carrier": "CategoricalTransport",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-categorical-transport.lean"
+    },
+    {
+      "line": 25,
+      "field": "transport_eq",
+      "carrier": "CategoricalTransport",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-categorical-transport.lean"
+    },
+    {
+      "line": 22,
+      "field": "restriction_exists",
+      "carrier": "DescentData",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-descent.lean"
+    },
+    {
+      "line": 22,
+      "field": "two_form_exists",
+      "carrier": "QuantumFlatness",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-quantum-flatness.lean"
+    },
+    {
+      "line": 24,
+      "field": "curvature_absorbed",
+      "carrier": "QuantumFlatness",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-quantum-flatness.lean"
+    },
+    {
+      "line": 26,
+      "field": "is_commutative",
+      "carrier": "ReebGaugeGroup",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-reeb-gauge-group.lean"
+    },
+    {
+      "line": 28,
+      "field": "preserves_contact",
+      "carrier": "ReebGaugeGroup",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/glossary/glossary-reeb-gauge-group.lean"
+    },
+    {
+      "line": 245,
+      "field": "degree_zero_blocked",
+      "carrier": "HorizonStructure",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/computational-horizon.lean"
+    },
+    {
+      "line": 247,
+      "field": "degree_one_leaks",
+      "carrier": "HorizonStructure",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/computational-horizon.lean"
+    },
+    {
+      "line": 249,
+      "field": "degree_two_leaks",
+      "carrier": "HorizonStructure",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/computational-horizon.lean"
+    },
+    {
+      "line": 243,
+      "field": "q_regularized",
+      "carrier": "ObstructionParallel",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean"
+    },
+    {
+      "line": 245,
+      "field": "classical_obstruction",
+      "carrier": "ObstructionParallel",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean"
+    },
+    {
+      "line": 126,
+      "field": "sublimes",
+      "carrier": "SublimationCondition",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/information-theory/phase-transition-boundary.lean"
+    },
+    {
+      "line": 47,
+      "field": "integrable",
+      "carrier": "HadronFibreEmbedding",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean"
+    },
+    {
+      "line": 49,
+      "field": "confined",
+      "carrier": "HadronFibreEmbedding",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean"
+    },
+    {
+      "line": 325,
+      "field": "holds",
+      "carrier": "GaloisPairCharacterSum",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 337,
+      "field": "holds",
+      "carrier": "CSCSilverIsCFLTransition",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 348,
+      "field": "holds",
+      "carrier": "BarMirrorPhi2CFLgCFLTransition",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 394,
+      "field": "holds",
+      "carrier": "SDPDegeneracyDetectsMetallic",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/AlgebraicSubstrate/MetallicLPIdentities.lean"
+    },
+    {
+      "line": 22,
+      "field": "bloch_suslin",
+      "carrier": "B1TorusKnotRowsContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "h_bloch_suslin"
+      ],
+      "consumed": true,
+      "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
+    },
+    {
+      "line": 24,
+      "field": "garoufalidis_le",
+      "carrier": "B1TorusKnotRowsContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "h_garoufalidis_le"
+      ],
+      "consumed": true,
+      "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean"
+    },
+    {
+      "line": 42,
+      "field": "diquark_favoured",
+      "carrier": "BorromeanHopfEnergyCrossoverContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Archimedean/borromean_hopf_energy_crossover.lean"
+    },
+    {
+      "line": 40,
+      "field": "stable",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 45,
+      "field": "IsFullOfCurls",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 47,
+      "field": "IsNobleGas",
+      "carrier": "AtomLike",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Archimedean/noble_gas_characterization.lean"
+    },
+    {
+      "line": 31,
+      "field": "parityInvariant",
+      "carrier": "ParityViolationSkeinContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Archimedean/parity_violation_skein.lean"
+    },
+    {
+      "line": 72,
+      "field": "is_seifert_gauss_manin",
+      "carrier": "BringWPlaneMonodromy",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "seifert_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/BraidKnot/BringWPlaneMonodromy.lean"
+    },
+    {
+      "line": 27,
+      "field": "no_integer_relation_found",
+      "carrier": "Cl3Zeta5PslqIndependenceContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean"
+    },
+    {
+      "line": 61,
+      "field": "heckeQuadratic",
+      "carrier": "HeckeAnyonicSubstrate",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/BraidKnot/HeckeAnyonicSubstrate.lean"
+    },
+    {
+      "line": 74,
+      "field": "claim_wenzl_bridge_correction",
+      "carrier": "EInfinityIdentificationsContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_wenzl_bridge_correction_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidKnot/e_infinity_identifications.lean"
+    },
+    {
+      "line": 42,
+      "field": "is_hyperbolic",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 44,
+      "field": "is_torus",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 46,
+      "field": "is_trivial",
+      "carrier": "GeomYekutieliAlignmentContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/BraidKnot/geom_yekutieli_alignment.lean"
+    },
+    {
+      "line": 33,
+      "field": "claim_i_d1_differential",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_i_d1_differential_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 37,
+      "field": "claim_ii_d2_differential",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_ii_d2_differential_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 42,
+      "field": "claim_iii_page_identifications_concretised",
+      "carrier": "SpectralSequenceH3ExplicitContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_iii_page_identifications_concretised_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean"
+    },
+    {
+      "line": 35,
+      "field": "claim_ii_miss_computes_via",
+      "carrier": "QmnRecursiveMemoizedContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_ii_miss_computes_via_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidsAndKnots/qmn_recursive_memoized.lean"
+    },
+    {
+      "line": 44,
+      "field": "claim_iii_atom_knot_identification",
+      "carrier": "WenzlQmnSynergyContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "claim_iii_atom_knot_identification_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/BraidsAndKnots/wenzl_qmn_synergy.lean"
+    },
+    {
+      "line": 69,
+      "field": "isBPS",
+      "carrier": "SaddleTrajectory",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/BringsSurface/TurningPoints.lean"
+    },
+    {
+      "line": 26,
+      "field": "acoustic_horizon_formed",
+      "carrier": "AcousticHorizonConditionsContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "horizon_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/acoustic_horizon_conditions.lean"
+    },
+    {
+      "line": 44,
+      "field": "vortex_spectrum_discrete",
+      "carrier": "DiscreteVortexSpectrumContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "spectrum_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/discrete_vortex_spectrum.lean"
+    },
+    {
+      "line": 34,
+      "field": "dispersion_derived",
+      "carrier": "KelvinDispersionDerivationContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "dispersion_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/kelvin_dispersion_derivation.lean"
+    },
+    {
+      "line": 35,
+      "field": "reeb_zero_at_p",
+      "carrier": "NsObstructionComputationContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/ns_obstruction_computation.lean"
+    },
+    {
+      "line": 33,
+      "field": "is_NS_singular",
+      "carrier": "NsObstructionTowerContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/ns_obstruction_tower.lean"
+    },
+    {
+      "line": 51,
+      "field": "extendsSmoothly",
+      "carrier": "QBKMContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/q_bkm_criterion.lean"
+    },
+    {
+      "line": 53,
+      "field": "vorticityIntegralFinite",
+      "carrier": "QBKMContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/q_bkm_criterion.lean"
+    },
+    {
+      "line": 84,
+      "field": "globallyRegular",
+      "carrier": "CategoricalClassicalNSBridge",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/q_ns_classical_bridge.lean"
+    },
+    {
+      "line": 86,
+      "field": "blowsUp",
+      "carrier": "CategoricalClassicalNSBridge",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/q_ns_classical_bridge.lean"
+    },
+    {
+      "line": 77,
+      "field": "observability",
+      "carrier": "QOUFluidUniverse",
+      "carrier_kind": "structure",
+      "shape": "self_nominating",
+      "witnesses": [
+        "observability_holds"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 86,
+      "field": "internalBlowup",
+      "carrier": "QOUFluidUniverse",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 155,
+      "field": "leviNonDegenerate",
+      "carrier": "QOUFluidUniverseLevi",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/qou_ns_in_qou.lean"
+    },
+    {
+      "line": 127,
+      "field": "internalBlowup",
+      "carrier": "QOUNSSurrealBridge",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/qou_ns_surreal_bridge.lean"
+    },
+    {
+      "line": 130,
+      "field": "classicalRegular",
+      "carrier": "QOUNSSurrealBridge",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/qou_ns_surreal_bridge.lean"
+    },
+    {
+      "line": 22,
+      "field": "peter_weyl_holds",
+      "carrier": "QuantumPeterWeylContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "peter_weyl_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/quantum_peter_weyl.lean"
+    },
+    {
+      "line": 37,
+      "field": "nsBlowsUp",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 40,
+      "field": "leviNonDeg",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 42,
+      "field": "root_unity_truncated",
+      "carrier": "RootOfUnityTruncationContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "truncation_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/root_of_unity_truncation.lean"
+    },
+    {
+      "line": 32,
+      "field": "vorticity_bounded_below",
+      "carrier": "VorticityLowerBoundContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bound_active"
+      ],
+      "consumed": true,
+      "file": "QOU/FluidDynamics/vorticity_lower_bound.lean"
+    },
+    {
+      "line": 91,
+      "field": "localCohomNonzero",
+      "carrier": "NSObstructionLeviData",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/yekutieli_levi_unification.lean"
+    },
+    {
+      "line": 93,
+      "field": "leviNonDegenerate",
+      "carrier": "NSObstructionLeviData",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FluidDynamics/yekutieli_levi_unification.lean"
+    },
+    {
+      "line": 36,
+      "field": "is_iso",
+      "carrier": "FrobeniusFormContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/FrobeniusHopfData/frobeniusForm.lean"
+    },
+    {
+      "line": 53,
+      "field": "expQ_solves_base_reeb",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 56,
+      "field": "fourier_diagonalises_qheat",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 60,
+      "field": "liTwoQ_volumetric",
+      "carrier": "HabiroFlowSolution",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Habiro/FlowSolution.lean"
+    },
+    {
+      "line": 37,
+      "field": "pEqNp",
+      "carrier": "CountingDecisionWorld",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/Information/CountingDecisionBarrier.lean"
+    },
+    {
+      "line": 40,
+      "field": "fpEqSharpP",
+      "carrier": "CountingDecisionWorld",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/Information/CountingDecisionBarrier.lean"
+    },
+    {
+      "line": 34,
+      "field": "formallyProvable",
+      "carrier": "DegreeZeroDatum",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/Information/GeometryOfIncompleteness.lean"
+    },
+    {
+      "line": 72,
+      "field": "answerBlocked",
+      "carrier": "ComplexityDictionary",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Information/JetHorizonScaffold.lean"
+    },
+    {
+      "line": 74,
+      "field": "witnessVerifiable",
+      "carrier": "ComplexityDictionary",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "witnesses_leak"
+      ],
+      "consumed": true,
+      "file": "QOU/Information/JetHorizonScaffold.lean"
+    },
+    {
+      "line": 56,
+      "field": "degreeZeroBlocked",
+      "carrier": "JetHorizonTransfer",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Information/JetHorizonTransfer.lean"
+    },
+    {
+      "line": 64,
+      "field": "inP",
+      "carrier": "PBandwidthContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Information/p_bandwidth_bound.lean"
+    },
+    {
+      "line": 67,
+      "field": "bandwidthBounded",
+      "carrier": "PBandwidthContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Information/p_bandwidth_bound.lean"
+    },
+    {
+      "line": 54,
+      "field": "slaterStrict",
+      "carrier": "HasConfinementSDPData",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Interactions/ConfinementSDP.lean"
+    },
+    {
+      "line": 73,
+      "field": "exists_witness",
+      "carrier": "HigherStrandCharacterBifurcation",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean"
+    },
+    {
+      "line": 117,
+      "field": "piecewise_closure_exists",
+      "carrier": "DeltaLambdaPiecewise",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/KnotTheory/MetallicPiecewise.lean"
+    },
+    {
+      "line": 76,
+      "field": "hecke_relation",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "hecke_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 79,
+      "field": "braid_relation",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "braid_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 82,
+      "field": "far_commute",
+      "carrier": "IwahoriHeckeAlgebra",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "far_commute_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 100,
+      "field": "markov_axiom",
+      "carrier": "MarkovTrace",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "markov_axiom_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 148,
+      "field": "blocks_sum_to_one",
+      "carrier": "WedderburnDecomposition",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "blocks_sum_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 151,
+      "field": "blocks_orthogonal",
+      "carrier": "WedderburnDecomposition",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "blocks_orthogonal_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 168,
+      "field": "bridge_identity",
+      "carrier": "WenzlBridge",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bridge_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1154,
+      "field": "markov_axiom_holds",
+      "carrier": "MarkovTraceRecursion",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "markov_axiom_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1283,
+      "field": "hecke_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "hecke_holds_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1288,
+      "field": "braid_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "braid_holds_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 1292,
+      "field": "far_commute_holds",
+      "carrier": "HasGeneratorAction",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "far_commute_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/HeckeAlgebra.lean"
+    },
+    {
+      "line": 95,
+      "field": "stokes_holds",
+      "carrier": "NonAbelianStokes",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "stokes_holds_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 101,
+      "field": "finite_slice",
+      "carrier": "NonAbelianStokes",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "finite_slice_holds"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 370,
+      "field": "stokes_identity",
+      "carrier": "LieValuedStokes",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "stokes_identity_witness"
+      ],
+      "consumed": false,
+      "file": "QOU/Mathlib/NonAbelianStokes.lean"
+    },
+    {
+      "line": 98,
+      "field": "isUnknot",
+      "carrier": "ClassicalMobiusEnergy",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/MobiusEnergy.lean"
+    },
+    {
+      "line": 55,
+      "field": "substrate_derived",
+      "carrier": "RungRule",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/OptionE/RungSelection.lean"
+    },
+    {
+      "line": 46,
+      "field": "is_pair_creation",
+      "carrier": "PositronCorrectionContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/ParticleInteractions/positron_correction.lean"
+    },
+    {
+      "line": 53,
+      "field": "differential_limit",
+      "carrier": "q_gl_classical_limit",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/QGeometricLanglands/q_gl_classical_limit.lean"
+    },
+    {
+      "line": 56,
+      "field": "dual_group_limit",
+      "carrier": "q_gl_classical_limit",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/QGeometricLanglands/q_gl_classical_limit.lean"
+    },
+    {
+      "line": 56,
+      "field": "GloballyConsistent",
+      "carrier": "DescentCondition",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "QOU/Torsion/DescentCondition.lean"
+    },
+    {
+      "line": 27,
+      "field": "particle_spectrum_generated",
+      "carrier": "KnotParticleGenerationContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "generation_active"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/KnotParticleGeneration.lean"
+    },
+    {
+      "line": 225,
+      "field": "mass_gap_holds",
+      "carrier": "HasYangMillsMassGap",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "gap_present"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/MassGap.lean"
+    },
+    {
+      "line": 43,
+      "field": "crossing_reversal_holds",
+      "carrier": "AntiparticleCrossingReversalContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "reversal_active"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/antiparticle_crossing_reversal.lean"
+    },
+    {
+      "line": 39,
+      "field": "Codim_at_least_2",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 41,
+      "field": "ExceptionalKernel",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 43,
+      "field": "InvolutionSymmetric",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 45,
+      "field": "ChiralityInterface",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 47,
+      "field": "brane_boundary_regular",
+      "carrier": "BraneBoundaryContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "boundary_active"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/brane_boundary_structure.lean"
+    },
+    {
+      "line": 28,
+      "field": "mass_decomposes",
+      "carrier": "MassDecompositionCategoricalContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "decomposition_active"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/mass_decomposition_categorical.lean"
+    },
+    {
+      "line": 27,
+      "field": "weak_equiv_invariant",
+      "carrier": "WeakEquivInvarianceContext",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "invariance_active"
+      ],
+      "consumed": true,
+      "file": "QOU/Torsion/weak_equiv_invariance.lean"
+    },
+    {
+      "line": 77,
+      "field": "q_flat",
+      "carrier": "QGlObstructionCalcContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/q_gl_obstruction_calc.lean"
+    },
+    {
+      "line": 83,
+      "field": "kappa_zero",
+      "carrier": "QGlObstructionCalcContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/q_gl_obstruction_calc.lean"
+    },
+    {
+      "line": 40,
+      "field": "simple",
+      "carrier": "SymplecticSelfDualContext",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "QOU/volume_from_rigidity.lean"
+    },
+    {
+      "line": 86,
+      "field": "GloballyConsistent",
+      "carrier": "DescentCondition",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/lifting-and-descent/descent-condition.lean"
+    },
+    {
+      "line": 55,
+      "field": "smooth",
+      "carrier": "BlowupYekutieli",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean"
+    },
+    {
+      "line": 53,
+      "field": "bounded",
+      "carrier": "OperatorSelectionLP",
+      "carrier_kind": "structure",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bounded_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean"
+    },
+    {
+      "line": 55,
+      "field": "feasible",
+      "carrier": "OperatorSelectionLP",
+      "carrier_kind": "structure",
+      "shape": "self_nominating",
+      "witnesses": [
+        "feasible_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean"
+    },
+    {
+      "line": 21,
+      "field": "slaterStrictFeasible",
+      "carrier": "ConfinementSDPData",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/mass-theory/confinement-sdp.lean"
+    },
+    {
+      "line": 193,
+      "field": "constituentUniqueness",
+      "carrier": "CanonicalKnotIdSDP",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "constituentUniqueness_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean"
+    },
+    {
+      "line": 202,
+      "field": "bindingKPSDFeasible",
+      "carrier": "CanonicalKnotIdSDP",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bindingKPSDFeasible_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean"
+    },
+    {
+      "line": 208,
+      "field": "bindingKMinimalLength",
+      "carrier": "CanonicalKnotIdSDP",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bindingKMinimalLength_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean"
+    },
+    {
+      "line": 218,
+      "field": "bindingKMatchesHistoricalMarkovTrace",
+      "carrier": "CanonicalKnotIdSDP",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "bindingKMatchesHistoricalMarkovTrace_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "DimMasterPentagon",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "IsospinFromCanonicalBowtie",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean"
+    },
+    {
+      "line": 28,
+      "field": "holds",
+      "carrier": "KashaevDensityEqualsSdpMultiplicity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "PFromBraidMirror",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/mass-theory/p-from-braid-mirror.lean"
+    },
+    {
+      "line": 20,
+      "field": "holds",
+      "carrier": "HeckeAnyonicSubstrate",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "SpinFromSo3Fiber",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "TypeBFoldingCpt",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.lean"
+    },
+    {
+      "line": 19,
+      "field": "is_knot",
+      "carrier": "KnotOperator",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "WignerSu4FromSpinIsospin",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.lean"
+    },
+    {
+      "line": 98,
+      "field": "is_baryon_realisation",
+      "carrier": "BorromeanQuark",
+      "carrier_kind": "class",
+      "shape": "self_nominating",
+      "witnesses": [
+        "is_baryon_realisation_holds"
+      ],
+      "consumed": false,
+      "file": "content/quantum-observable-universe/observations/borromean-quark.lean"
+    },
+    {
+      "line": 40,
+      "field": "s5_stable",
+      "carrier": "BringPeriodSublattice",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/observations/magic-numbers-bring.lean"
+    },
+    {
+      "line": 42,
+      "field": "tau_stable",
+      "carrier": "BringPeriodSublattice",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/observations/magic-numbers-bring.lean"
+    },
+    {
+      "line": 21,
+      "field": "RestrictsKernel",
+      "carrier": "CemeteryGroupRigidity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
+    },
+    {
+      "line": 22,
+      "field": "GeneratesWords",
+      "carrier": "CemeteryGroupRigidity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "Mirror3d3dCorrespondence",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean"
+    },
+    {
+      "line": 36,
+      "field": "isFundamental",
+      "carrier": "MaxIdeal",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "QuantumLanglandsDual",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean"
+    },
+    {
+      "line": 39,
+      "field": "rigidifying_iso",
+      "carrier": "RigidDualizingComplex",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean"
+    },
+    {
+      "line": 41,
+      "field": "finite_inj_dim",
+      "carrier": "RigidDualizingComplex",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean"
+    },
+    {
+      "line": 43,
+      "field": "vdb_duality",
+      "carrier": "RigidDualizingComplex",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean"
+    },
+    {
+      "line": 93,
+      "field": "monoidal_equiv",
+      "carrier": "TannakaKreinReconstruction",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean"
+    },
+    {
+      "line": 96,
+      "field": "universal_property",
+      "carrier": "TannakaKreinReconstruction",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean"
+    },
+    {
+      "line": 51,
+      "field": "is_exact",
+      "carrier": "ClassicalLimitFunctor",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-functor.lean"
+    },
+    {
+      "line": 49,
+      "field": "adelic_assembly",
+      "carrier": "ClassicalRiemannZeta",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.lean"
+    },
+    {
+      "line": 27,
+      "field": "holds",
+      "carrier": "ReverseLimitQToInfinity",
+      "carrier_kind": "class",
+      "shape": "parameterised",
+      "file": "content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.lean"
+    },
+    {
+      "line": 39,
+      "field": "leadingTermsAgree",
+      "carrier": "SPolynomial",
+      "carrier_kind": "structure",
+      "shape": "parameterised",
+      "file": "content/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean"
+    }
+  ]
+}

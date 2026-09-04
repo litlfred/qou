@@ -60,12 +60,30 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "65")
 os.environ.setdefault("QOU_OUTPUT_DPS", "50")
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 
 from witness_base import WitnessBuilder  # noqa: E402
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
@@ -85,64 +103,8 @@ def c_3_closure(base, h_pieces):
 def main() -> int:
     # Constants defined inside main() per Gemini review (avoid
     # module-level magic numbers).
-    #
-    # ── q₀ MIGRATED to the RESOLVED proton pin (2026-08-30) ────────────
-    #
-    # WAS a hardcoded literal:
-    #   Q0_MP = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-    # That is the SUPERSEDED "muon FROZEN pin" vintage (bean `qou-t39x`
-    # names it the …5557…/…5573… frozen muon pin). It sits 11.5371 ppb from
-    # the proton pin and 0.0769 ppb from the live muon pin C
-    # (`computations/q-pinning-50-digit.witness.json` → `derived_50_digit.q`
-    # = 1.109978595642739046681795…), so it is not even the current muon
-    # value — it is a frozen third vintage.
-    #
-    # EVIDENCE this probe is PROTON-intent (checked, not assumed):
-    #  1. `C3_TARGET` below IS the proton empirical c_3. See
-    #     `computations/probes/qbeta_ck_basis_constrained_pslq.py:95`
-    #         C3_EMP_PROTON = mp.mpf("-2.06934257711516783787971951725")
-    #     which matches -2.069342577 to 5.6e-11 relative. Every muon c_3 on
-    #     record is 2.4–2.9 % away: -2.02018812814 (frozen pin),
-    #     -2.02020023502 (CODATA-2018), -2.01986031187 (CODATA-2022),
-    #     -2.0097 (pre-#1422, superseded) — enumerated in bean `qou-t39x`.
-    #     So the old pairing (frozen MUON pin × PROTON c_3 readout) was
-    #     precisely the anchor/readout mismatch that bean documents.
-    #  2. `docs/coordination/ck-dk-canonical-registry.md` §3, c_3 row, gives
-    #     the headline as "2.65 ppm (`[3]_q/25` at proton **only**)". That
-    #     is the proton evaluation (2.6508); pin A gives 2.6570 → 2.66.
-    #  3. The `pr1811_div25_finding_confirmed_reverse_test` assertion at the
-    #     foot of this file says, in its own source text, "since /25 wins at
-    #     proton anchor".
-    #  4. Owner ruling, AGENTS.md 2026-08-15 R2: "proton pin canonical".
-    #  NOT relied on: this producer's stem is absent from all three lists in
-    #  `computations/q0_anchor_manifest.json` and carries no `q0Anchor`
-    #  stamp in source or witness. That makes proton only the RUNTIME
-    #  DEFAULT of `q_parameter`'s manifest auto-select — a default, not
-    #  evidence, so it is recorded here and not counted above.
-    #
-    # MEASURED EFFECT (recomputed independently at 65 dps; the producer was
-    # NOT run. The pin-A column reproduces the committed witness
-    # bit-for-bit — baseline_eps_ppm and all four delta_eps_ppm — which is
-    # what licenses the proton column beside it):
-    #
-    #     headline ε      pin A  2.657012595123018 ppm
-    #                    proton  2.650828603394010 ppm   (shift -0.006184)
-    #     Δε [ppm]        T1 base    -21385.82051 → -21385.81573
-    #                     T2 [3]_q      -171.07355 →   -171.07349
-    #                     T3 [2]_q        +2.60285 →     +2.60285
-    #                     T4 /[5]_q²    -984.89648 →   -984.89616
-    #
-    # NO VERDICT FLIPS. T1–T4 stay WORSE at both pins; `fibre_pieces` stays
-    # empty at both, so the "/25 is UNIQUE — (5 archimedean) × (1 fibre)"
-    # reading is unchanged; and the reverse-test assertion stays
-    # computed=1 / expected=1 / PASS. Values move, the physics does not.
-    #
-    # ⚠ THIS MOVES VALUES: the committed
-    # `qbeta-c3-closure-piecewise-fibre-archimedean-probe.witness.json` is
-    # now STALE (it still carries the pin-A numbers above) and must be
-    # regenerated serially — bean `qou-jjge`.
-    Q0_MP = mp.mpf(Q_50_DIGIT_STR)      # RESOLVED proton pin — never a literal
-    C3_TARGET = mp.mpf("-2.069342577")  # = C3_EMP_PROTON (evidence 1 above)
+    Q0_MP = mp.mpf(Q_50_DIGIT_STR)
+    C3_TARGET = mp.mpf("-2.069342577")
 
     t0 = time.monotonic()
     builder = WitnessBuilder(
@@ -291,27 +253,21 @@ def main() -> int:
         print(f"  but minimal in this closure.")
     print()
 
-    # NO FLOAT64 (owner directive): these five fields ENTER THE WITNESS and
-    # so must carry mpmath precision. `float()` here truncated 65-dps mpf
-    # values to 53 bits, which the raw-float64 ratchet flags on every run.
-    # `fmt()` must be handed the mpf itself -- `fmt(float(x))` would
-    # short-circuit to str() and keep the float64. The display prints above
-    # keep float(): they are formatting, and never reach the JSON.
-    builder.add_data("baseline_eps_ppm", fmt(eps_baseline))
+    builder.add_data("baseline_eps_ppm", float(eps_baseline))
     builder.add_data("piece_tests", [
         {"piece": "base = -(q²+q⁻²)", "q_0_value": mp.nstr(base_q0, 25),
          "q_1_fibre_value": str(base_fib),
-         "delta_eps_ppm": fmt(eps_t1 - eps_baseline)},
+         "delta_eps_ppm": float(eps_t1 - eps_baseline)},
         {"piece": "[3]_q", "q_0_value": mp.nstr(qint_3_q0, 25),
          "q_1_fibre_value": str(qint_3_fib),
-         "delta_eps_ppm": fmt(eps_t2 - eps_baseline)},
+         "delta_eps_ppm": float(eps_t2 - eps_baseline)},
         {"piece": "[2]_q", "q_0_value": mp.nstr(qint_2_q0, 25),
          "q_1_fibre_value": str(qint_2_fib),
-         "delta_eps_ppm": fmt(eps_t3 - eps_baseline)},
+         "delta_eps_ppm": float(eps_t3 - eps_baseline)},
         {"piece": "/25 → /[5]_q²|_{q=q_0} (cross-check NOT fibre test)",
          "q_0_value_main": str(div_25),
          "alt_q0_value": mp.nstr(div_qint_5_sq, 25),
-         "delta_eps_ppm": fmt(eps_t4 - eps_baseline),
+         "delta_eps_ppm": float(eps_t4 - eps_baseline),
          "purpose": "reverse-direction confirmation of PR #1811"},
     ])
     builder.add_data("verdict", {

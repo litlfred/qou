@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:positive-definite-dagger",
+  "kind": "proposition",
+  "title": "Frobenius dagger is positive-definite",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-involutive-structure",
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-positive-definite-dagger"
+  ],
+  "tags": [
+    "category-theory",
+    "positive-definite",
+    "frobenius"
+  ],
+  "leanRef": "qou:QOU.frobenius_dagger_positive_definite",
+  "text": "positive-definite-dagger.md",
+  "provenance": "authored"
+}

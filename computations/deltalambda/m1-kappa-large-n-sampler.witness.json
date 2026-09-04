@@ -1,4 +1,6 @@
 {
+ "q0Anchor": "independent",
+ "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: the inflation factor at n = 400, by exact Plancherel edge sampling.",
  "probe": "m1_kappa_large_n_sampler",
  "bean": [
   "qou-t6hc",
@@ -164,5 +166,5 @@
  ],
  "passed": 7,
  "total": 7,
- "ms": 172411
+ "ms": 171994
 }

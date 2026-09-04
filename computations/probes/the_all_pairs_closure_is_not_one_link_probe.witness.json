@@ -1,0 +1,130 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T02:11:50.055261+00:00",
+  "commitSha": "8fcdf463f641e17158a9e4f8d917a3dd7e22bcbf",
+  "assertions": [
+    {
+      "name": "the chain is exactly additive — defect below 1e-55, so it IS a connected sum",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the all-pairs c_3 is nonzero by 59 orders of magnitude, so that closure is NOT a connected sum along its bonds",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the six bond orderings give exactly three distinct Markov traces",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "they give exactly three distinct Jones polynomials, one per trace — so the orderings close to at least three DIFFERENT LINKS",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the same three-way split appears on the sigma^-1 branch",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the four orderings with the band first or last agree; only a band BETWEEN the two adjacent bonds moves the answer",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the production word groups all protons then all neutrons, p^Z n^N — exactly one pn interface, which is what (Z-1)L_pp + L_pn + (N-1)L_nn encodes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "both published A=3 all-pairs values are reproduced exactly at their own arrangements",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "3He's published all-pairs number uses the NON-canonical arrangement pnp, which moves the far bond from pn to pp and is worth 0.07 in L",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "at A=4 the bond ordering moves L by more than 0.9, i.e. over 3.7 MeV and more than 13 % of helium-4's binding energy",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the ordering spread is comparable to the many-body defect it is meant to measure",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the model ranks nn > pn > pp while reality binds only pn — an inversion needing no ordering convention, since A=2 has a single bond",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the charge term does not repair the inversion",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "the_all_pairs_closure_is_not_one_link_probe",
+  "scriptFile": "the_all_pairs_closure_is_not_one_link_probe.py",
+  "scriptHash": "58608c1d5099",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_all_pairs_closure_is_not_one_link_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_all_pairs_closure_is_not_one_link_probe.py"
+  },
+  "description": "The all-pairs bond model does not determine a link. Band generators do not commute with the adjacent bonds whose generators they span, so the bond multiset does not fix a braid word. At A=3 the six orderings of three bonds give three distinct 200-bit Markov traces and three distinct Jones polynomials, at identical letter multiset, exponent sum and strand count. At A=4, 40 sampled orderings of 720 give a spread of 0.99 in L, which is 4.15 MeV or 15 percent of helium-4's binding. The chain closure is the control: its defect is 1e-60, it is a connected sum, and its L is exactly additive. The corpus's two published A=3 all-pairs values are reconciled as two different orderings (3He is order pnp, not ppn); the production engine uses a third. Bean qou-bygw.",
+  "data": {
+    "c3_3He_production_ordering": "-3.40054407354987209571349391108e-1",
+    "chain_defect_3He": "2.4892061e-60",
+    "c3_3H_production_ordering": "-3.49053571389927691028948519842e-1",
+    "chain_defect_3H": "1.2446031e-60",
+    "A3_distinct_traces": "3",
+    "A3_distinct_jones_sigma": "3",
+    "A3_distinct_jones_sigma_inv": "3",
+    "A4_distinct_of_40_sampled": "33",
+    "A4_ordering_spread_L": "9.9242576769812693658e-1",
+    "A4_ordering_spread_MeV": "4.154276",
+    "A4_ordering_spread_pct_of_B_AME_4He": "14.6817"
+  },
+  "caveats": [
+    "A=4 is sampled (40 of 720 orderings under a fixed seed), not enumerated, so the reported spread is a lower bound on the true spread.",
+    "The Jones comparison resolves every mixed letter to a crossing sign on each classical branch, as the qou-m3sh probes do; the unresolved Hecke element is not a link and no statement is made about it.",
+    "Says nothing about which ordering is correct, whether a canonical one exists, or whether some prime closure carries the cumulants. It says the multiset does not name one. The alpha conversion is quoted for scale only and no binding claim is made."
+  ]
+}

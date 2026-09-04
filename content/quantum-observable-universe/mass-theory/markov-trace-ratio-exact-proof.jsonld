@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-ratio-exact",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-ratio-exact",
+  "kind": "proof",
+  "title": "Proof of markov trace ratio exact",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-ratio-exact"
+  ],
+  "text": "markov-trace-ratio-exact-proof.md",
+  "provenance": "authored"
+}

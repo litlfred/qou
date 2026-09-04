@@ -108,7 +108,7 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-# muon-canonical q₀ (computations/ layer convention); matches #4012 + sibling probes.
+# q₀ label corrected (bean qou-9ugp): the read below resolves the PROTON pin.
 # q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
 # 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
 # muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
@@ -304,7 +304,7 @@ def main() -> int:
         "tightening; no fit; nothing wired.")
     wb.set_content_block("conj:binding-manybody-eq-jet-filtration")
     wb.add_parameter("q0", Q0_STR)
-    wb.add_parameter("q0_convention", "muon-canonical (computations/ layer)")
+    wb.add_parameter("q0_convention", "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)")
     wb.add_data("strong_targets", {"rho_strong_3": mp.nstr(T3, 8),
                                    "rho_strong_4": mp.nstr(T4, 8),
                                    "data_step_A3_to_A4": mp.nstr(data_step, 8),

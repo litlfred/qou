@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-st-is-median-resummation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:st-is-median-resummation",
+  "kind": "remark",
+  "title": "The standard-part map acts as Écalle median resummation on transseries values",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+    "papers/quantum-observable-universe/blocks/conj-kashaev-surreal"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation",
+  "cites": [
+    "references/ecalle1981",
+    "references/berarducci-mantova2018"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "standard-part",
+    "median-resummation",
+    "resurgence",
+    "transseries",
+    "archimedean"
+  ],
+  "text": "st-is-median-resummation.md",
+  "provenance": "authored"
+}

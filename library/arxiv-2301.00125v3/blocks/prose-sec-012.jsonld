@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "F Elementary proofs from the quadratic formula",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "text": "../sections/sec-012-f-elementary-proofs-from-the-quadratic-formula.md",
+  "derivedFrom": "library/arxiv-2301.00125v3/manifest",
+  "sourceDocument": "library/arxiv-2301.00125v3/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-genus-filtration-ideal-derivation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:genus-filtration-ideal-derivation",
+  "kind": "remark",
+  "title": "Derivation: Hecke completeness, Chebyshev degree, and the obstruction ideal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-genus-filtration-ideal",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "torus-knot",
+    "ideal",
+    "chebyshev",
+    "yekutieli",
+    "obstruction",
+    "genus",
+    "hecke-algebra",
+    "completeness"
+  ],
+  "text": "genus-filtration-ideal-derivation.md",
+  "provenance": "authored"
+}

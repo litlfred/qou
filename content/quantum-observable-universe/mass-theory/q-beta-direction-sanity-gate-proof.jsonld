@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-direction-sanity-gate",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-beta-direction-sanity-gate",
+  "kind": "proof",
+  "title": "Proof of q beta direction sanity gate",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-direction-sanity-gate"
+  ],
+  "text": "q-beta-direction-sanity-gate-proof.md",
+  "provenance": "authored"
+}

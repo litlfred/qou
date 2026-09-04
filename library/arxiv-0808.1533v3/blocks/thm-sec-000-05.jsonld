@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0808.1533v3/blocks/thm-sec-000-05",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Arnold’s Helicity Theorem, [2]",
+  "pageStart": 1,
+  "pageEnd": 21,
+  "text": "thm-sec-000-05.md",
+  "derivedFrom": "library/arxiv-0808.1533v3/sections/sec-000",
+  "sourceDocument": "library/arxiv-0808.1533v3/manifest",
+  "provenance": "ingested"
+}

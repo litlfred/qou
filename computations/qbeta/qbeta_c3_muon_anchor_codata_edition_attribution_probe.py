@@ -505,7 +505,7 @@ def main() -> int:
         # record exactly the ambiguity the probe exists to remove.
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="both: proton q_at() + muon q_muon_at() @ CODATA 2022",
+            q0_anchor="ambiguous", q0_anchor_reason="reads BOTH pins on purpose: proton q_at() + muon q_muon_at() @ CODATA 2022",
             q0_value=mp.nstr(q_mu_22, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")

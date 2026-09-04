@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aggregate-color-quantities",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:aggregate-color-quantities",
+  "kind": "remark",
+  "title": "Aggregate color quantities",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-color-tube-coordinates"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-color-tube-coordinates",
+  "text": "aggregate-color-quantities.md",
+  "provenance": "authored"
+}

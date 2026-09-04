@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Combinatorial scalar curvature and rigidity of ball packings",
+  "contains": [
+    "library/18/sections/sec-000",
+    "library/18/sections/sec-001",
+    "library/18/sections/sec-002",
+    "library/18/sections/sec-003",
+    "library/18/sections/sec-004",
+    "library/18/sections/sec-005",
+    "library/18/sections/sec-006",
+    "library/18/sections/sec-007",
+    "library/18/sections/sec-008",
+    "library/18/sections/sec-009",
+    "library/18/sections/sec-010",
+    "library/18/sections/sec-011",
+    "library/18/sections/sec-012",
+    "library/18/sections/sec-013",
+    "library/18/sections/sec-014",
+    "library/18/sections/sec-015",
+    "library/18/sections/sec-016",
+    "library/18/sections/sec-017",
+    "library/18/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "18",
+    "source_file": "18.pdf",
+    "source_sha256": "0b7bf055085cb04b2eaefba8cfe88575a60e1f3db4a68c657331832d8130ba0f",
+    "pages": 10,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

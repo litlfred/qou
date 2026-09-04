@@ -33,16 +33,27 @@ where `normalizedSum n q = Σ_{p ⊢ n} f_p · q^{−κ_p} / ∏_{x} [h_x]_q`.
   *same* `[n]_q!` numerator. This is where the `Nat.Partition n` index does real work.
 * `molienSum_eq_qFactorial_iff` — the equivalence above, using `qFactorial_ne_zero` (needs `1 < q`).
 
-## What is NOT proved here — the genuine gap (bean `qou-3quc`)
+## The mathematical content — now CLOSED (bean `qou-3quc`)
 
-`normalizedSum n q = 1` for general `n`. This is the **mathematical content** of the identity, and it
-is genuinely open in this corpus and absent from Mathlib `v4.24.0`. It is the graded refinement of the
-classical `Σ_{λ⊢n} (f^λ)² = n!` (which the corpus *does* prove for general `n`:
+`normalizedSum n q = 1` for general `n` is the **mathematical content** of the identity — the graded
+refinement of the classical `Σ_{λ⊢n} (f^λ)² = n!` (which the corpus proves for general `n`:
 `QOU.Mathlib.rskBurnsideHolds`, sorry-free, via Robinson–Schensted). The classical identity is the
-`q → 1` face of `normalizedSum n q = 1`; the deformation away from `q = 1` is exactly what has no
-elementary route.
+`q → 1` face; the deformation away from `q = 1` has no *elementary* route.
 
-Two known proof routes, neither reachable from the pinned Mathlib:
+**It is now proved, sorry-free, for every `n` and every `1 < q`:**
+`QOU.MathlibExt.NormalizedSumUnconditional.normalizedSum_eq_one`, and its headline consequence
+`molienSum_eq_qFactorial : molienSum n q = [n]_q!`. The route is **not** either of the two classical
+routes below — it is the corpus's own general-X Macdonald telescope
+(`MacdonaldTelescopeGeneralN.telescope_generalX`) specialised at `X = 0`, bridged to the balanced
+fake-degree convention by the per-λ **convention bridge** `HconvConventionBridge.hconv`
+(`q^{−κ_λ}/hookProd_q(λ) = schurElement(q²,0,λ)·(1−q²)^{|λ|}`), which turns on the **n-statistic
+identity** `κ_λ = Σ_x h_x − |λ| − 2 n(λ)` (`ContentSumNStatistic.contentSum_eq_hookSum_sub`). Assembly:
+`NormalizedSumClosure.normalizedSum_eq_one_of_convBridge`. Audit
+`docs/audits/2026-08-29-normalizedsum-closes-via-telescope.md`; ledger
+`docs/coordination/molien-fake-degree-generaln.md`.
+
+The two classical routes below are recorded for context — each a multi-week Mathlib project the
+telescope route **bypassed** (neither is reachable from the pinned Mathlib):
 
 1. **Coinvariant-algebra Poincaré polynomial** (Chevalley/Steinberg). The graded regular representation
    `ℂ[x₁…xₙ]/(sym⁺)` has Poincaré polynomial `[n]_q!`, and `V_λ` occurs with graded multiplicity the
@@ -57,10 +68,10 @@ Two known proof routes, neither reachable from the pinned Mathlib:
    theorem. **None exist in Mathlib**; the corpus's Robinson–Schensted layer
    (`QOU.Mathlib.SchenstedRSK*`) is the *un*graded (`q = 1`) correspondence and does not track `maj`.
 
-So general-`n` closure is a genuine multi-week Mathlib-formalisation project (build one of the two
-routes above), not a missing one-line lemma. This file supplies the honest scaffolding — the target,
-correctly typed over `Nat.Partition n`, reduced to the single normalised statement a future proof must
-establish — and leaves the content to bean `qou-3quc`.
+Either classical route is a genuine multi-week Mathlib-formalisation project. This file supplies the
+scaffolding — the target, correctly typed over `Nat.Partition n`, reduced to the single normalised
+statement `normalizedSum n q = 1` — which the telescope route (above) then discharges in
+`NormalizedSumUnconditional`, closing bean `qou-3quc`.
 
 ## Faithfulness to the concrete cases — the one mechanical step, and why it is not taken here
 
@@ -71,7 +82,8 @@ is `QOU.Mathlib.PartitionsOfBridge.sum_map_partitionsOf n g`, which rewrites `�
 `SYTEnum.dimSYT_eq_numSYTenum` to turn `dimSYT p` into the `numSYTenum (toList p)` the concrete file
 uses. It is left unbuilt **only** because `PartitionsOfBridge` imports the `SchenstedRSKBurnside`
 Robinson–Schensted layer, whose oleans are not in the restored `lake-cache` (a from-source build); it
-is otherwise routine and touches none of the open content (`normalizedSum n q = 1`).
+is otherwise routine and touches none of the mathematical content (`normalizedSum n q = 1`, now closed
+in `NormalizedSumUnconditional`).
 
 Base ring: the `hookProd` / `qDim_eq_qFactorial_div` layer is generic `{R : Type*} [Field R]`
 (§7c — purely algebraic). The `molienSum`/`normalizedSum` statements are over `ℝ` because `qDim` and
@@ -124,8 +136,8 @@ noncomputable def molienSum (n : ℕ) (q : ℝ) : ℝ :=
 
 /-- **The normalised hook sum** `Σ_{p ⊢ n} f_p · q^{−κ_p} / ∏_x [h_x]_q`. The identity
     `molienSum n q = [n]_q!` is equivalent to `normalizedSum n q = 1` (see
-    `molienSum_eq_qFactorial_iff`); proving `normalizedSum n q = 1` for general `n` is the open
-    content (bean `qou-3quc`). -/
+    `molienSum_eq_qFactorial_iff`); `normalizedSum n q = 1` for general `n` is the mathematical content
+    (bean `qou-3quc`), now proved in `NormalizedSumUnconditional.normalizedSum_eq_one`. -/
 noncomputable def normalizedSum (n : ℕ) (q : ℝ) : ℝ :=
   ∑ p : Nat.Partition n,
     (dimSYT p : ℝ) * q ^ (-(contentSum (toList p))) / hookProd q (toList p)
@@ -153,8 +165,9 @@ theorem molienSum_eq_qFactorial_mul_normalized (n : ℕ) (q : ℝ) :
       `molienSum n q = qFactorial q n  ⟺  normalizedSum n q = 1`.
 
     The forward direction cancels the nonzero `[n]_q!`; the reverse multiplies it back. This isolates
-    the genuine mathematical content — `normalizedSum n q = 1` — from the bookkeeping. That content is
-    open for general `n` (bean `qou-3quc`); this theorem does **not** close it, it *locates* it. -/
+    the genuine mathematical content — `normalizedSum n q = 1` — from the bookkeeping. That content
+    (bean `qou-3quc`) is closed in `NormalizedSumUnconditional`, so this equivalence now *delivers*
+    `molienSum n q = [n]_q!` (`NormalizedSumUnconditional.molienSum_eq_qFactorial`). -/
 theorem molienSum_eq_qFactorial_iff (n : ℕ) (q : ℝ) (hq : 1 < q) :
     molienSum n q = qFactorial q n ↔ normalizedSum n q = 1 := by
   rw [molienSum_eq_qFactorial_mul_normalized]
@@ -170,7 +183,8 @@ theorem molienSum_eq_qFactorial_iff (n : ℕ) (q : ℝ) (hq : 1 < q) :
     `Nat.Partition 2` index is enumerated — so the general statement is a faithful lift, not a new (and
     possibly weaker) object. Recorded as the seam a future faithfulness bridge closes; see the module
     docstring. The equivalence `molienSum_eq_qFactorial_iff` therefore says, at `n = 2`, exactly that
-    `normalizedSum 2 q = 1`, which is the `n = 2` instance of the open content. -/
+    `normalizedSum 2 q = 1`, the `n = 2` instance of the mathematical content now closed in
+    `NormalizedSumUnconditional`. -/
 theorem normalizedSum_iff_molien (n : ℕ) (q : ℝ) (hq : 1 < q) :
     normalizedSum n q = 1 ↔ molienSum n q = qFactorial q n :=
   (molienSum_eq_qFactorial_iff n q hq).symm

@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-10
 source_pdf: 2011.13340v1.pdf
 source_sha256: e73876ed2c923608
+doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional"
 ---
 Concentration inequalities bound tail probabilities of ge neral functions of random variables. Sev-
 eral methods have been known to prove such inequalities, inc luding martingale methods, infor-

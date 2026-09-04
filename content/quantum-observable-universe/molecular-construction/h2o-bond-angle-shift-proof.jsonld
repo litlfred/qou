@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-h2o-bond-angle-shift",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:h2o-bond-angle-shift",
+  "kind": "proof",
+  "title": "Proof of h2o bond angle shift",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-h2o-bond-angle-shift"
+  ],
+  "text": "h2o-bond-angle-shift-proof.md",
+  "provenance": "authored"
+}

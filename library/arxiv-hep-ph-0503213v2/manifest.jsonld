@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-0503213v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A topological model of composite preons",
+  "contains": [
+    "library/arxiv-hep-ph-0503213v2/sections/sec-000",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-001",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-002",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-003",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-004",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-005",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-006",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-007",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-008",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-009",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-010",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-011",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-012",
+    "library/arxiv-hep-ph-0503213v2/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-0503213v2",
+    "source_file": "0503213v2.pdf",
+    "source_sha256": "637a9e53b9b307764b6768995994562f83dfd41ca25d2767671dfc4223558845",
+    "pages": 6,
+    "arxiv": {
+      "id": "hep-ph/0503213",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "27 Oct 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

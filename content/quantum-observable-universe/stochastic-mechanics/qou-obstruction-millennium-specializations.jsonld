@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-qou-obstruction-millennium-specializations",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qou-obstruction-millennium-specializations",
+  "kind": "remark",
+  "title": "RH, NS and BSD as specializations of the single obstruction class",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
+    "papers/quantum-observable-universe/blocks/tbl-qou-obstruction-reduction-table4-data",
+    "papers/quantum-observable-universe/blocks/conj-qou-p-neq-np"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
+  "text": "qou-obstruction-millennium-specializations.md",
+  "provenance": "authored"
+}

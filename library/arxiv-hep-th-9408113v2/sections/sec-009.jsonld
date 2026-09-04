@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9408113v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(3−",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "contains": [
+    "library/arxiv-hep-th-9408113v2/blocks/prose-sec-009",
+    "library/arxiv-hep-th-9408113v2/blocks/thm-sec-009-01"
+  ],
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
+  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "provenance": "ingested"
+}

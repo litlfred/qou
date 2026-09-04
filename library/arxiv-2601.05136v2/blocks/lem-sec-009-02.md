@@ -1,0 +1,1 @@
+Letβ bealog-coloringofanormalized,non-pinchedshadowcoloring.

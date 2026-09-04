@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-jacobiator",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-jacobiator",
+  "kind": "proof",
+  "title": "Proof of Jacobiator of the q-Lie bracket",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-jacobiator"
+  ],
+  "text": "q-jacobiator-proof.md",
+  "provenance": "authored"
+}

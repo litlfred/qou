@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-058",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Recovering the Burau trace 53",
+  "pageStart": 53,
+  "pageEnd": 53,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-058",
+    "library/arxiv-math-0606435v2/blocks/ex-sec-058-01",
+    "library/arxiv-math-0606435v2/blocks/ex-sec-058-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

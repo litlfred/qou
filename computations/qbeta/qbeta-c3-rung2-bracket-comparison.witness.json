@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:28:58.879176+00:00",
-  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "computedAt": "2026-09-04T06:15:01.974207+00:00",
+  "commitSha": "9219efdb220a9560808452d396de4f819a344702",
   "assertions": [
     {
       "name": "T3_equals_T8_symbolically",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 54,
   "computation": "qbeta-c3-rung2-bracket-comparison",
   "scriptFile": "qbeta_c3_rung2_bracket_comparison.py",
-  "scriptHash": "c5161af6e745",
-  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "scriptHash": "716fe0282205",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-qvalue-observation-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:qvalue-observation-table-data",
+  "kind": "table",
+  "title": "Data table from rem:qvalue-observation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-qvalue-observation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "qvalue-observation-table-data.md",
+  "provenance": "authored"
+}

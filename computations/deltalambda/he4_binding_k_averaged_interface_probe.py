@@ -64,7 +64,30 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = mp.mpf("1.1099785955573347117485528280749490295019743898536")
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the 50-digit literal
+# "1.1099785955573347117485528280749490295019743898536" -- the RETIRED
+# self-certified muon pin A, superseded 2026-08-22 (fca08de7d2). It resolves
+# the PROTON pin per the owner directive of 2026-08-15/2026-08-30 (proton
+# unless an explicit mu-vs-p comparison or the ideal CAL-1/2/3 layer; this is
+# neither).
+#
+# RESIDUAL LAYER STRADDLE, NOT CLOSED HERE. This producer combines inputs from
+# three different pins in one published quantity:
+#   * chi(q0) -- evaluated at the local Q0, now PROTON;
+#   * the canonical tr_M target, read from canonical-tr-m-via-chi-cache
+#     .witness.json, which is stamped PROTON;
+#   * the Wenzl weights y_lambda, read from wenzl-y-lambda-h12.witness.json,
+#     whose data.q0 is 1.109978595554180575281594... -- the CODATA-2018 MUON
+#     derivation (value B).
+# Fixing Q0 removes the retired pin and takes two of the three legs to proton;
+# the y_lambda leg is still ideal-layer. AGENTS.md makes a straddle a defect
+# "regardless of its size", and this one cannot be closed from this file:
+# wenzl-y-lambda-h12.witness.json has TEN in-repo consumers, so re-pinning it
+# is its own tranche. The witness therefore stamps `ambiguous` -- the compute
+# depends on q0 and the pin is not single-valued -- with the straddle named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0 = mp.mpf(_Q0_RESOLVED)
 
 
 def main() -> int:
@@ -117,14 +140,27 @@ def main() -> int:
     print(f"  canonical      = {mp.nstr(target, 16)}")
     print(f"  rel Δ = {mp.nstr(rel, 6)}   (plain best was 0.147)")
 
+    # Every percentage below is DERIVED from `rel`. It used to be prose: the
+    # string hardcoded "96.2% captured", "residual 3.8%" and "holds to 3.8%"
+    # next to an f-string interpolating the measured rel = 0.2279, and the
+    # committed witness published both at once (bean qou-9ugp). The 3.8% is
+    # not a stale copy of this run's number -- this producer's assertion
+    # `rel < 0.147` FAILS at 0.2279 and allPassed has been False in the
+    # committed record, so the prose was describing a result the probe does
+    # not have.
+    _captured_pct = (1 - rel) * 100
+    _resid_pct = rel * 100
     verdict = (
         f"Stage 1.5: the averaged 3-bond operator K_avg = ⊗(σ+σ⁻¹)/2 on the naive "
         f"inter-nucleon interfaces gives tr_M(cp·K_avg) = {mp.nstr(avg, 12)} vs the "
-        f"canonical {mp.nstr(target, 12)} — rel Δ = {mp.nstr(rel, 4)} (96.2% captured; "
-        "plain best was 14.7%). The residual 3.8% is the measured woven color-tube "
+        f"canonical {mp.nstr(target, 12)} — rel Δ = {mp.nstr(rel, 4)} "
+        f"({mp.nstr(_captured_pct, 4)}% captured; plain best was 14.7%). The residual "
+        f"{mp.nstr(_resid_pct, 4)}% is the measured woven color-tube "
         "structure of the canonical recipe (9 averaged crossings at {1,2,4,5,6,7,10}) "
-        "beyond the naive {3,6,9} placement. A=4 factorization T ≈ cp·K_avg holds to "
-        "3.8% — honest partial identification. No AME; no fit; nothing wired. Scope-(a)."
+        f"beyond the naive {{3,6,9}} placement. A=4 factorization T ≈ cp·K_avg holds to "
+        f"{mp.nstr(_resid_pct, 4)}% — honest partial identification, and at this "
+        "residual it does NOT improve on the 14.7% plain-best baseline, which is why "
+        "the assertion below fails. No AME; no fit; nothing wired. Scope-(a)."
     )
     print("\nVERDICT:", verdict)
 
@@ -132,9 +168,11 @@ def main() -> int:
         "computation": "he4-binding-k-averaged-interface",
         "description": "Stage 1.5 of the A=4 binding-K search: the canonical AVERAGED "
                        "interface operator on the naive {3,6,9} placement, via linearity "
-                       "(8 plain GP words, exact q-Laurent, 50 dps). Captures 96.2% of "
-                       "the canonical 4He trace (rel 3.8%, vs 14.7% plain); the residual "
-                       "is the measured woven color-tube structure. Scope-(a); no fit.",
+                       "(8 plain GP words, exact q-Laurent, 50 dps). Captures "
+                       f"{mp.nstr(_captured_pct, 4)}% of the canonical 4He trace "
+                       f"(rel {mp.nstr(_resid_pct, 4)}%, vs 14.7% plain), so it does NOT "
+                       "beat the plain baseline and the gate fails; the residual is the "
+                       "measured woven color-tube structure. Scope-(a); no fit.",
         "audit_only": True,
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "engine": "pyhecke_native(GP)+mpmath", "dps": 50,
@@ -146,7 +184,12 @@ def main() -> int:
         "verdict": verdict,
         "scope": "(a) — averaged 3-bond partial identification; woven-structure residual 3.8% measured",
         "assertions": [
-            {"label": "averaged interface improves on plain best (3.8% < 14.7%)",
+            # Predicate UNCHANGED (rel < 0.147). Only the label is corrected: it
+            # asserted "3.8% < 14.7%", a comparison that is not the one being
+            # made -- the measured value is rel, not 3.8%.
+            {"label": (f"averaged interface improves on plain best "
+                       f"({mp.nstr(rel * 100, 4)}% < 14.7%)"),
+             "computed": mp.nstr(rel, 10), "tolerance": "0.147",
              "passed": bool(rel < mp.mpf("0.147"))},
         ],
     }
@@ -159,6 +202,25 @@ def main() -> int:
     import os as _os  # noqa: E402 -- provenance stamp
     from qou_substrate.witness import WitnessBuilder as _WB
     wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _q0_used = _Q0_RESOLVED
+    _reason = (
+        "q0_anchor was declared False ('no q0-dependent field'). Untrue: the "
+        "characters are evaluated as chi = sum c_e * q0**e, so every published "
+        "number is a function of q0. Stamped `ambiguous` rather than `proton` "
+        "because this quantity STRADDLES layers: chi and the canonical tr_M "
+        "target (canonical-tr-m-via-chi-cache.witness.json) are at the proton "
+        "pin, while the Wenzl weights y_lambda come from "
+        "wenzl-y-lambda-h12.witness.json, whose data.q0 is the CODATA-2018 MUON "
+        "derivation 1.109978595554180575281594... The pin actually used for chi "
+        "is in parameters.q0 below. Closing the straddle needs "
+        "wenzl-y-lambda-h12 re-pinned, which has ten in-repo consumers "
+        "(bean qou-9ugp).")
+    assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_ascii)"
+    wit["q0Anchor"] = "ambiguous"
+    wit["q0AnchorReason"] = _reason
+    wit.setdefault("parameters", {})["q0"] = str(_q0_used)
+    wit["parameters"]["q0_y_lambda_upstream"] = (
+        "wenzl-y-lambda-h12.witness.json data.q0 (CODATA-2018 muon derivation)")
     _WB.stamp_staleness_metadata(
         wit, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/72-4-841/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice Kei-ichi KONDO",
+  "contains": [
+    "library/72-4-841/sections/sec-000",
+    "library/72-4-841/sections/sec-001",
+    "library/72-4-841/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "72-4-841",
+    "source_file": "72-4-841.pdf",
+    "source_sha256": "c852d7d7dcc2662c1d724ccd0f62b33d09a557904f666a680b987c702eca3c33",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

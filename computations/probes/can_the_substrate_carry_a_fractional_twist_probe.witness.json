@@ -1,0 +1,239 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-03T04:44:50.586855+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
+  "assertions": [
+    {
+      "name": "A1_coxeter_is_an_nth_root_of_the_full_twist",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Delta^2 = c_n^n acts as a scalar on every block at n=3,4,5"
+    },
+    {
+      "name": "A2_magnitude_is_q_to_the_2c_over_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "worst deviation from q^(2c/n) is 0.00e+00"
+    },
+    {
+      "name": "A3_fractional_twist_first_appears_at_n5",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "first fractional exponent at n = 5"
+    },
+    {
+      "name": "A4_achievable_twists_are_rational",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "13 distinct t in (0,1) for n <= 12, all rational, hence all ratios rational"
+    },
+    {
+      "name": "A5_qcd_colour_ratio_is_exactly_available",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "t = 1/3 realised at n = 12, giving ratio exactly 2"
+    },
+    {
+      "name": "A6_nuclear_ratio_is_not_available",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "nearest t = 10/11 gives ratio 21, needing a 105.9 keV virtual state vs ~66"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "can_the_substrate_carry_a_fractional_twist_probe",
+  "scriptFile": "can_the_substrate_carry_a_fractional_twist_probe.py",
+  "scriptHash": "ed03717188f3",
+  "scriptCommitSha": "4e9d5e6cebda20f29b60b251f853248e62a3230a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py"
+  },
+  "description": "Answers the question qou-vlrq left open: can the substrate produce the fractional framing twist that the det T = -1 hull exit requires? YES, and with no new ingredient. The Coxeter element c_n = s_1...s_(n-1) satisfies c_n^n = Delta^2, the full twist and centre generator of B_n, so it is a genuine n-th root of a twist; Delta^2 is verified to act as a scalar on every block at n=3,4,5, and the block magnitude of c_n is exactly q^(2 c(lambda)/n) with c(lambda) the content sum (worst deviation 1e-8 or better). Twist exponents are therefore rational with denominator dividing n. Since 2c(lambda) is always even it is divisible by n at n=3 and n=4, so n = 5 is the FIRST strand count carrying a fractional twist (t = 4/5 at (3,2) and (2,2,1)) — the arc had been working at n=2 and n=3 where the fractional part vanishes. Contrast the ribbon twist read directly off the content sum, theta = q^(2c), which is an integer power at every n: the fractionality lives in taking a ROOT of the twist, not in the twist. Exhaustive enumeration over partitions with n <= 12 gives 13 distinct t in (0,1), and every achievable channel ratio (1+t)/(1-t) is rational. The two targets come out opposite. QCD's colour ratio 2 — the exact 3bar/6 colour-factor ratio from 3(x)3 — is hit EXACTLY at t = 1/3, realised at n=12 by (4,4,2,1,1) and (4,3,3,2), with nothing fitted on either side. The nuclear 33.7055 needs t = 0.942372 and is NOT in the set; the nearest is 10/11 giving 21, which would require the np 1S0 virtual state at 105.9 keV against the accepted ~66 keV, a 60% shift far outside its uncertainty. The 1/3 coincidence is reported with its significance assessed downward: 13 rationals is not a sparse set and 1/3 is not an unlikely member.",
+  "data": {
+    "mechanism": {
+      "element": "c_n = s_1 s_2 ... s_{n-1}",
+      "relation": "c_n^n = Delta^2 (full twist, centre of B_n)",
+      "block_magnitude": "q^(2 c(lambda) / n)",
+      "worst_deviation": "0.000e+00",
+      "delta2_scalar_on_all_blocks_n345": true
+    },
+    "onset_of_fractionality": {
+      "2": [
+        "1",
+        "-1"
+      ],
+      "3": [
+        "2",
+        "0",
+        "-2"
+      ],
+      "4": [
+        "3",
+        "1",
+        "0",
+        "-1",
+        "-3"
+      ],
+      "5": [
+        "4",
+        "2",
+        "4/5",
+        "0",
+        "-4/5",
+        "-2",
+        "-4"
+      ],
+      "6": [
+        "5",
+        "3",
+        "5/3",
+        "1",
+        "1",
+        "0",
+        "-1",
+        "-1",
+        "-5/3",
+        "-3",
+        "-5"
+      ]
+    },
+    "available_twists": {
+      "2/11": {
+        "ratio": "13/9",
+        "first_n": 11,
+        "first_partition": "(5, 2, 2, 1, 1)",
+        "n_realisations": 2
+      },
+      "2/9": {
+        "ratio": "11/7",
+        "first_n": 9,
+        "first_partition": "(4, 2, 2, 1)",
+        "n_realisations": 1
+      },
+      "2/7": {
+        "ratio": "9/5",
+        "first_n": 7,
+        "first_partition": "(3, 2, 2)",
+        "n_realisations": 1
+      },
+      "1/3": {
+        "ratio": "2",
+        "first_n": 12,
+        "first_partition": "(4, 4, 2, 1, 1)",
+        "n_realisations": 2
+      },
+      "4/11": {
+        "ratio": "15/7",
+        "first_n": 11,
+        "first_partition": "(4, 3, 2, 2)",
+        "n_realisations": 1
+      },
+      "1/2": {
+        "ratio": "3",
+        "first_n": 8,
+        "first_partition": "(3, 3, 1, 1)",
+        "n_realisations": 2
+      },
+      "3/5": {
+        "ratio": "4",
+        "first_n": 10,
+        "first_partition": "(4, 3, 1, 1, 1)",
+        "n_realisations": 3
+      },
+      "2/3": {
+        "ratio": "5",
+        "first_n": 9,
+        "first_partition": "(3, 3, 2, 1)",
+        "n_realisations": 3
+      },
+      "8/11": {
+        "ratio": "19/3",
+        "first_n": 11,
+        "first_partition": "(4, 3, 2, 1, 1)",
+        "n_realisations": 1
+      },
+      "4/5": {
+        "ratio": "9",
+        "first_n": 5,
+        "first_partition": "(2, 2, 1)",
+        "n_realisations": 1
+      },
+      "6/7": {
+        "ratio": "13",
+        "first_n": 7,
+        "first_partition": "(3, 2, 1, 1)",
+        "n_realisations": 1
+      },
+      "8/9": {
+        "ratio": "17",
+        "first_n": 9,
+        "first_partition": "(4, 2, 1, 1, 1)",
+        "n_realisations": 1
+      },
+      "10/11": {
+        "ratio": "21",
+        "first_n": 11,
+        "first_partition": "(5, 2, 1, 1, 1, 1)",
+        "n_realisations": 2
+      }
+    },
+    "targets": {
+      "QCD": {
+        "required_t": "1/3",
+        "ratio": "2",
+        "available": true,
+        "smallest_n": 12
+      },
+      "nuclear": {
+        "required_t": "0.942372321950",
+        "ratio": "33.705545",
+        "available": false,
+        "nearest_t": "10/11",
+        "nearest_ratio": "21",
+        "implied_virtual_state_keV": "105.93",
+        "accepted_virtual_state_keV": "66"
+      }
+    }
+  },
+  "caveats": [
+    "THE t = 1/3 HIT IS SUGGESTIVE, NOT EVIDENTIAL. It is exact and nothing is fitted on either side, which is worth recording. But the achievable set for n <= 12 has thirteen members and 1/3 is not an unlikely element of a set of small-denominator rationals. No significance test is offered and none should be inferred. What is established without qualification is the ASYMMETRY: a rational set can meet an exact group-theoretic target and cannot meet a dynamical one.",
+    "THIS SHOWS THE TWIST EXISTS, NOT THAT THE CONSTRUCTION USES IT. The Coxeter element is an n-th root of the full twist and its block magnitudes are fractional powers of q from n=5. Nothing here attaches it to a bond, recomputes a binding energy, or exhibits any reason the physical bond SHOULD carry c_n rather than any other element. The hull exit needs a framing scalar; this demonstrates the substrate contains operators supplying fractional ones.",
+    "The n <= 12 enumeration is exhaustive over partitions but is a CUTOFF. Larger n supply further rationals with larger denominators, so 'not in the set' for the nuclear target is a statement about n <= 12, not a theorem. The substantive point survives the cutoff: the set is rational at every n while the nuclear target is a measured ratio of two shallow binding energies.",
+    "The nuclear target inherits qou-m896's least certain input, the np 1S0 virtual state at ~66 keV. That is why A6 is phrased as the shift REQUIRED (to 105.9 keV, 60%) rather than as a bare mismatch — the conclusion is robust precisely because the needed shift is far outside the uncertainty on that number."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

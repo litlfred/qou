@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:30:42.673981+00:00",
-  "commitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "computedAt": "2026-09-04T06:47:21.458219+00:00",
+  "commitSha": "7437fb0e029fb39e9fee7337adae7f6c374fc775",
   "assertions": [
     {
       "name": "stage_c_per_block_chi_symbolic_matches_pyhecke",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 248,
+  "durationMs": 338,
   "computation": "qbeta-stage-c-per-block-chi-closed-form-probe",
   "scriptFile": "qbeta_stage_c_per_block_chi_closed_form_probe.py",
-  "scriptHash": "e84d8f48eb01",
-  "scriptCommitSha": "8c1991c5ef3fa9a33580c6e92527d352ee727089",
+  "scriptHash": "9d1d9a031c82",
+  "scriptCommitSha": "2d6e5ccf518f037cab0d4bc091c269d667a6412e",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

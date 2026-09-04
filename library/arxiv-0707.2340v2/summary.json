@@ -1,0 +1,101 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0707.2340v2",
+ "source_sha256": "bf0f91277a5874ff",
+ "brief": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount",
+ "extended": "**NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS**\n\n*JULIUS BORCEA, PETTER BRÄNDÉN, AND THOMAS M. LIGGETT*\n\n47 pp, 16 sections.\n\n**Abstract.** W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount to the stability of the latter. This class covers important m odels such as de- terminantal measures (e.g. product measures, uniform rand om spanning tree measures) and distributions for symmetric exclusion proce sses. W e show that strongly Rayleigh measures enjoy all virtues of negative de pendence and we also prove a series of conjectures due to Liggett, Pemantle, and W agner, re- spectively. Moreover, we extend Lyons’ recent results on de terminantal mea- sures and we construct counterexamples to several conjectu res of Pemantle and W agner on negative dependence and ultra log-concave ran k sequences.\n\n**Outline.** 1 Introduction; 2 A Plethora of Negative Dependence Properties; 2.1 Negative Dependence Concepts; 2.2 Strongly Rayleigh Measures; 2.3 Symmetric Homogenization; 3 Negative Dependence in Mathematics and Physi; 3.2 Hadamard-Fischer Inequalities and GKK-Matr; 3.3 Determinantal Probability Measures; 3.5 Interacting Particle Systems and Exclusion; 4 Negative Dependence Theory for Strongly Rayl; 4.2 Stability Implies Negative Association; 4.4 The Partial Symmetrization Procedure; 5 Preservation of Negative Dependence by Symme; 6 Almost Exchangeable Measures; 7 Negative Results on Negative Dependence; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 382
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-a-plethora-of-negative-dependence-properties-a",
+   "title": "A Plethora of Negative Dependence Properties and Conjectures",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-negative-dependence-concepts",
+   "title": "Negative Dependence Concepts",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-003-22-strongly-rayleigh-measures",
+   "title": "Strongly Rayleigh Measures",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-23-symmetric-homogenization",
+   "title": "Symmetric Homogenization",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-005-3-negative-dependence-in-mathematics-and-physics",
+   "title": "Negative Dependence in Mathematics and Physics",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-006-32-hadamard-fischer-inequalities-and-gkk-matrice",
+   "title": "Hadamard-Fischer Inequalities and GKK-Matrices",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-007-33-determinantal-probability-measures",
+   "title": "Determinantal Probability Measures",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-008-35-interacting-particle-systems-and-exclusion-ev",
+   "title": "Interacting Particle Systems and Exclusion Evolutions",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-009-4-negative-dependence-theory-for-strongly-raylei",
+   "title": "Negative Dependence Theory for Strongly Rayleigh Measures",
+   "pages": "21-24"
+  },
+  {
+   "id": "sec-010-42-stability-implies-negative-association",
+   "title": "Stability Implies Negative Association",
+   "pages": "24-29"
+  },
+  {
+   "id": "sec-011-44-the-partial-symmetrization-procedure",
+   "title": "The Partial Symmetrization Procedure",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-012-5-preservation-of-negative-dependence-by-symmetr",
+   "title": "Preservation of Negative Dependence by Symmetric Exclusion Processes",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-013-6-almost-exchangeable-measures",
+   "title": "Almost Exchangeable Measures",
+   "pages": "33-41"
+  },
+  {
+   "id": "sec-014-7-negative-results-on-negative-dependence",
+   "title": "Negative Results on Negative Dependence",
+   "pages": "41-45"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "45-47"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tm-knot-pairs",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "tm-knot-pairs",
+  "kind": "prose",
+  "title": "Transfer matrices of knot pairs",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-transfer-matrix-operator"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "knot",
+    "nuclear",
+    "electromagnetic",
+    "photon",
+    "trivial",
+    "appendix",
+    "catalogue"
+  ],
+  "text": "tm-knot-pairs.md",
+  "provenance": "authored"
+}

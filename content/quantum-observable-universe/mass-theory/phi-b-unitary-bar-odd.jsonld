@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-phi-b-unitary-bar-odd",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:phi-b-unitary-bar-odd",
+  "kind": "proposition",
+  "title": "Unitary phases are bar-odd: the fibre-saddle rigidity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phi-b-bar-parity-decomposition"
+  ],
+  "leanRef": "qou:QOU.QBeta.IsSigmaUnitary.sq_eq_one_of_bar_even",
+  "text": "phi-b-unitary-bar-odd.md",
+  "provenance": "authored"
+}

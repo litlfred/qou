@@ -324,9 +324,84 @@ Concretely:
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
 carrying `memory: project` in its frontmatter. That gives the agent its own
-directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
-25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
-prompt when it starts, and it reads and writes the directory as it works.
+directory under `.claude/agent-memory/<agent-name>/`, which it reads and writes
+as it works.
+
+> **🛑 THE INJECTION DOES NOT HAPPEN IN THIS ENVIRONMENT — measured
+> 2026-09-03.** This paragraph used to state, as fact, that *"the first 200
+> lines (or 25 KB) of that directory's `MEMORY.md` are injected into the
+> subagent's system prompt when it starts."* **For subagents launched via the
+> Agent tool in a Claude Code remote session, nothing is injected — not a
+> truncated 200 lines, none of it.**
+>
+> Measured by asking two agents, independently, what their own system prompt
+> contained: `lean-verifier` and `corpus-grepper` both reported **zero**
+> `MEMORY.md` content. Objective corroboration, checkable without trusting a
+> self-report: **four "see memory" / "see the memory entry" cross-references in
+> three agent definitions are dangling pointers** — they reference content that
+> never arrives. The frontmatter is correct (`memory: project` on all five) and
+> the files exist, so this is a harness behaviour, not a misconfiguration; it
+> may well work in the desktop or CLI harness, and this is a statement about
+> **this** environment only.
+>
+> **Consequence for the 200-line cap.** The cap is now a *convention*, not a
+> live constraint — nothing is being truncated because nothing is being sent.
+> Keep files under it anyway (it bounds what an agent must read), but do not
+> treat "under 200" as evidence an agent has the content.
+>
+> **The repair, and 🛑 it is UNVERIFIED — do not assume it works.** Each
+> agent definition now opens with a `## FIRST ACTION — read your memory; it is
+> NOT injected here` section telling the agent to `Read` its own `MEMORY.md`
+> first, and to open its report with a compliance line naming the files read,
+> `MEMORY.md`'s line count and its last commit sha — so a reader can tell a
+> memory-informed run from a memory-less one instead of taking it on trust.
+> **A report without that line should be presumed to have run without memory.**
+>
+> **But a third agent, launched AFTER that edit, did not receive it** — it
+> quoted its own prompt going straight from the preceding bullet to `## What
+> you do`, with no `## FIRST ACTION` section, while the section was plainly on
+> disk. So agent definitions appear to be **snapshotted** (committed `HEAD`, or
+> cached at session start), and an uncommitted edit to one does not reach a
+> subagent in the same session. The fix may take effect once committed and a
+> fresh session starts; that has **not** been demonstrated.
+>
+> **🛑 AND I WAS WRONG ABOUT THE CARRIER — corrected the same hour.** This
+> paragraph first said *"this AGENTS.md note is the load-bearing carrier … it
+> provably arrives in subagent prompts in full"*. It does arrive in full, but
+> **the version that arrives is snapshotted at session start**: a
+> `convention-auditor` launched minutes after this very edit was committed
+> still received the *pre-edit* text, uncaveated. So a mid-session edit to
+> `AGENTS.md` reaches no subagent either — **the same failure as the agent
+> definitions, through a different file.**
+>
+> Three causes remain consistent with that single observation and it does not
+> separate them: session-start snapshotting, a cached/differently-rooted copy,
+> or an edit at a path other than the one `CLAUDE.md` `@`-includes. Snapshotting
+> is the leading candidate only because definitions failed the same way.
+> **The discriminator is a genuinely new top-level session**, not another
+> subagent.
+>
+> **The practical rule, which holds whatever the cause:** nothing you write to
+> `AGENTS.md` or to an agent definition reaches a subagent **in the session you
+> write it**. If a subagent must know something you learned this session, **put
+> it in that subagent's prompt** — that is the only channel demonstrated to
+> work today. Everything here is for *later* sessions.
+>
+> So if you are a subagent reading this in a later session: **read
+> `.claude/agent-memory/<your-name>/MEMORY.md` yourself before you start**,
+> whatever your own definition does or does not say.
+>
+> **A figure to not repeat.** The first version of the agent-definition block
+> quoted "2,520 lines across 16 files" — that is the *whole tree across all
+> five agents*. Per agent it is **195–419 lines** for `MEMORY.md` and 412–657
+> for the directory, i.e. ~3-7k tokens: cheap. Quoting the tree total in each
+> agent's own file overstates its burden ~6× and invites exactly the wrong
+> trade-off (skipping the read). Caught by the consuming agent, not by me.
+>
+> Tracked in bean `qou-rpgi`.
+>
+> **So "maintaining them is part of the work" below still holds** — the files
+> are read, just deliberately rather than automatically.
 
 | agent | owns |
 |---|---|
@@ -358,7 +433,8 @@ in the same PR. When a session re-measures a BASELINE, update the entry with
 the fresh number and date. A memory file that only accretes becomes the thing
 it exists to prevent.
 
-Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+Two mechanical notes. `MEMORY.md` is the entry point an agent reads first
+(**not** injected — see the block above), so keep it
 under 200 lines — split detail into sibling files the agent reads on demand
 (`compute-precision-auditor/producer-health.md` is the worked example). And
 `memory: project` writes under `.claude/agent-memory/`, which is **committed**;
@@ -1229,10 +1305,22 @@ the pipeline render where available
 (`bun run folio-assistant/content/pipeline/render-latex.ts …` after
 [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
 **and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
-`\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
-`\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
-list-parser hijack); align-family environments (`aligned`, `align`) fenced as
-` ```tex `, not inline `$$`.
+`\bigl`-`\bigr`/`\begin`-`\end`; no line starting with `+`/`-`/`*` inside `$$…$$`
+(markdown list-parser hijack); align-family environments (`aligned`, `align`)
+fenced as ` ```tex `, not inline `$$`.
+
+> **`\operatorname{}` is NOT a violation — the old rule was stale (corrected
+> 2026-09-03, bean `qou-iars`).** This battery read *"no `\operatorname{}`
+> (KaTeX rejects → use `\mathrm{}`)"*. Measured: the viewer loads **KaTeX
+> 0.16.11** (`folio-assistant/{viewer,ui}/index.html`, CDN), and KaTeX has
+> supported `\operatorname` since **v0.10.0 (2019)** — so the deployed renderer
+> does not reject it, and pdflatex (amsmath) never did. `\operatorname{Re}`,
+> `\operatorname{Im}`, `\operatorname{ord}`, `\operatorname{Area}`,
+> `\operatorname{Vol}` are the *semantically correct* markup for operators
+> (correct spacing), and blanket-rewriting them to `\mathrm{}` is a downgrade.
+> Do **not** flag or sweep `\operatorname`. (If a KaTeX downgrade below 0.10
+> ever happened it would resurface, but that is a version regression to fix at
+> the CDN pin, not a content rule.)
 
 > **Fencing an align-family env is only HALF the rule — the other half
 > is build-fatal (2026-08-16).** `aligned`/`gathered`/`split`/`cases`/
@@ -1276,9 +1364,11 @@ a sandbox), run the grep battery + expository pass by hand and **state
 explicitly in the commit/PR that the change was not machine-validated** — never
 report a math edit as render-checked when only CI (which may be billing-flaky)
 would have caught it. History: added 2026-06-30 after a mass-derivation survey
-rewrite shipped with `\operatorname` (KaTeX-breaking), a `B`-vs-`𝔪` mislabel, a
-wrong `dim_q = [n]_q`, and a `λ` notation collision — none machine-caught
-because the pipeline was unavailable and the agent skipped the manual battery.
+rewrite shipped with `\operatorname` (believed KaTeX-breaking at the time; that
+belief was itself stale — KaTeX has supported it since v0.10, see the correction
+above), a `B`-vs-`𝔪` mislabel, a wrong `dim_q = [n]_q`, and a `λ` notation
+collision — the latter three none machine-caught because the pipeline was
+unavailable and the agent skipped the manual battery.
 
 ## CI billing failures — distinguish from real failures (STRICT)
 
@@ -1329,6 +1419,40 @@ Before any agent declares an item "open", "Open Math X", "TODO",
 an audit doc, content block, Lean comment, or PR description — or
 asserts as fact in chat that an item is open/unresolved in the
 corpus — run the **corpus-grep checklist**:
+
+0. **`corpus_search` (MCP) — run this FIRST, because every path below
+   shares one blind spot.** Paths 1-6 are greps, and a grep finds prior
+   work only if it used *your* words. Prior work written in different
+   words is not an edge case here; it is the case that actually costs a
+   session, because the grep comes back empty and reads as a clean bill.
+
+   The knowledge graph is the structure that survives a change of
+   vocabulary: a block that never says "Temperley-Lieb" but `uses` one
+   that does is one hop from the query, and `corpus_search` seeds
+   lexically then expands structurally across the authored corpus and
+   the ingested library at once.
+
+   ```
+   corpus_search  query: "<topic>"        # 1 hop, both directions
+   corpus_search  query: "<topic>", direction: "in"   # what depends on it
+   ```
+
+   Read three things in its answer. **`why`** says whether a hit MATCHED
+   or was REACHED, and by which edge — a `~` prefix means the edge ran
+   backwards, so that node depends on the seed rather than the reverse.
+   **`seedsByProvenance`** splits authored from ingested, and the shape
+   that matters is many ingested hits with no authored ones: that means
+   *cite it*, not *derive it*, which is the distinction path 5 exists to
+   draw. **`emptyRoots`** names a directory that exists but holds no
+   graph nodes — a corpus whose `.jsonld` siblings have never been
+   generated answers every query with a silence indistinguishable from
+   "nobody has done this". If it is non-empty, generate them
+   (`gen-block-jsonld` / `gen-library-jsonld`) before reading any absence
+   as an absence.
+
+   It does **not** replace the paths below — it seeds on labels, titles,
+   kinds and tags (add `searchText: true` for companion prose), so a
+   topic named only inside a proof body is still a grep's job.
 
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    typically land as audit docs; the originating source file's
@@ -1385,19 +1509,39 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **542** document directories, holding **10,922**
+   and re-deriving one. **576** document directories, holding **11,528**
    section files, are searchable this way (this read *"332 documents /
-   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+   7,313 sections"* until 2026-08-30 — low by 62 % — and *"542 / 10,922"*
+   until 2026-09-03; the library grows, so **re-count, do not quote**).
 
    **Say which count you mean, or the next reader will "correct" you.**
    Three numbers describe this library and they are all different:
-   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
-   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   `ls -d library/*/ | wc -l` gives **576** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **552**
    *index rows*, because the 23 known duplicate copies deliberately get no
-   row of their own; and `summarize-library.py` prints that 518 as
-   "documents". A grep-coverage claim wants the 542; a "how many distinct
-   works do we hold" claim wants the 518. Quoting one against the other
+   row of their own; and `summarize-library.py` prints that 552 as
+   "documents". A grep-coverage claim wants the 576; a "how many distinct
+   works do we hold" claim wants the 552. Quoting one against the other
    reads as staleness when it is a category difference.
+
+   **🛑 And the duplicates do NOT always explain the gap — INDEX.md goes
+   STALE, silently (found 2026-09-03).** On that date the index carried
+   **519** rows against 576 directories, and only **23** of the 57 missing
+   were marked `duplicate_of`. The other **33 were real documents with real
+   sections that simply had no row** — invisible to this tier, which is the
+   one the checklist tells you to read FIRST. They were not marginal: the
+   volume conjecture (`0803219`), the oriented skein category
+   (`arxiv-1712.08953v1`), affine-Hecke Plancherel (`arxiv-1110.6212v2`),
+   knot polynomials on braid closures (`li-braid-closures`) and q-deformed
+   Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
+   matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
+
+   **So check the arithmetic before trusting tier 1**: `directories −
+   index rows` should equal the duplicate count, and when it does not the
+   index is behind. The producer fixes it deterministically and offline —
+   `python3 scripts/summarize-library.py --apply` (extractive, no model, no
+   network; agent-written summaries are preserved). A clean tier-1 scan is
+   evidence about the index, not about the library.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1408,7 +1552,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 576** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
@@ -1456,7 +1600,10 @@ corpus — run the **corpus-grep checklist**:
    i.e. through exactly the two statuses this note says to read.
 
 Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. The source
+originating file itself) may you declare the item open. Step 0 is not a
+seventh gate — it is the step that most often stops you needing the other
+six, and an empty result from it is not by itself a licence to declare
+anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 
@@ -1754,6 +1901,36 @@ Pattern (always):
 https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 ```
 
+> **🛑 Keep the URL under 150 characters, or the link arrives BROKEN
+> (measured 2026-09-04, bean `qou-pbql`).** A link destination of **150
+> characters or more** in a PR body comes back wrapped in double backticks —
+> `[label](``https://…``)` — and markdown link destinations do not process
+> backticks, so the destination becomes a literal string and the link is dead
+> in the rendered body. 149 is clean; T149 / T150 / T151 were binary-searched
+> with generator-asserted lengths. It is the **URL** length, not the line
+> length (a 130-char label with a 110-char URL is clean), and it is **not** the
+> author's input: the same body was rewritten twice in plain single-delimiter
+> markdown and came back mangled both times.
+>
+> The pattern above is the problem, because a `claude/<theme>-<utc-ymd>` branch
+> name spends ~43 characters of the budget. **Address a long path by short
+> commit sha instead** — the same bean file is **153** characters branch-form
+> and **116** sha-form:
+>
+> ```
+> https://github.com/litlfred/qou/blob/<short-sha>/<path-to>/<block>.md
+> ```
+>
+> A sha-form link is also more durable: rule 8 rebase-merges every branch, which
+> rewrites the shas a branch-form link resolves through.
+>
+> **Do not "fix" this by shortening the bean's filename or blaming `--`.** The
+> first three instances were all `.beans/…--….md` paths, which made both the
+> dot-directory and the double hyphen look causal; tested in isolation a probe
+> carrying **both** is clean at 98 characters and one carrying **neither** is
+> mangled at 155. Bean filenames are `<id>--<slug>.md` with long slugs, so they
+> simply clear 150 more often than `scripts/foo.py` does.
+
 **When to link siblings (`.ts`, `.lean`, `.tex`):**
 - Only in delivery summaries for **modified** files (see
   `.claude/skills/local/delivery-summary.md`) — list every sibling that
@@ -1817,8 +1994,42 @@ When working on math-affecting code or content, **trace the change to a step in 
 > `m_p = 2·(m_μ·F_Bor − 6·m_e)`, `m_μ = m_e·Vol(4₁)/ℏ_q²`, `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` → **m_p ≈ 938.27, m_n ≈ 939.56 (CODATA)**. The `c_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor` — not on `Vol(𝓑₃)`.
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
-> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature.
+> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature — **but not for the reason long given here: see the correction below.**
 >
+> **🛑 CORRECTION (2026-09-04) — the non-monotonicity is real; its stated
+> REASON is not, and its figures are convention-C.** The clause above cited
+> "the N=4 → N=5 non-monotonicity" on the strength of
+> [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md),
+> which argued that *"a convergent series with exact `c_k` would be
+> monotone."* **That is not a correct general statement.** Partial sums of a
+> convergent series need not have monotonically decreasing residuals unless
+> the terms are sign-definite and decreasing, which is nowhere established
+> for this ladder — so as written the argument does not support its
+> conclusion, even though the conclusion is right.
+>
+> **The sound form is the SIZE MISMATCH.** For an exact series the residual
+> after truncating at `N` tracks the *first omitted* term, so the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
+> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
+> fit signature. Use that, not "monotone".
+>
+> **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
+> `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
+> substrate is on; under **D** the same table prints
+> `+600999.7384 → +601000.3155`, and its hardcoded prose disagreed with its
+> own computed table by six orders of magnitude until fixed (2026-09-04).
+> **What survives the convention change is the STEP, not the baseline:**
+> `+0.575` ppb in C against `+0.577` ppb in D — so the reversal is
+> frame-robust and only the offset moves.
+>
+> **Do not read this ladder as a live N-selection.** Per defect 2 below,
+> `qbeta_ck_cache.py` extracts ONE rung by inverting the target — verified
+> 2026-09-04, it prints `c_4: residual below compute precision (0.00e+00) —
+> ladder converged` and stops, because `Q_next = Q_prev·(1 + (Q_codata/Q_prev
+> − 1)) = Q_codata` identically. `c_4 … c_7` are never computed there. That
+> producer also **refuses to run** under convention D; the analysis script
+> does not, which is how the stale prose survived.
+
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
@@ -1860,6 +2071,23 @@ When working on math-affecting code or content, **trace the change to a step in 
 >
 > The `lusztig_q_0_imaginary_part_zero` assertion is an **archimedean constraint** on the evaluation at the substrate anchor — NOT a categorical/fibre claim. Agents searching for c_k or Δ_λ closures must NOT conflate the two levels.
 
+> **🟧 OWNER RULING (2026-09-03, recorded from chat, verbatim):** *"The QOU should be
+> on the full tower in the derivations to the standard model — should make use of the
+> full tower even though what is observable is only order zero."* **Reading (agent's,
+> not the owner's — see the open question below):** a derivation of an SM parameter
+> must be carried on the fibre-level categorical object in full — the Hecke tower
+> `H_n(q)` with the complete Frobenius pairing over all partitions, and all orders of
+> the fibre-level `q`-expansion (the Habiro-element object of the fibre-vs-observable
+> banner) — and the observable parameter is only its **order-zero archimedean
+> rendering** at `q₀`. Consequences: (i) an attack that works only on the leading
+> term, a single crossing, or a first-order ansatz is **structurally incomplete**
+> under this ruling, whatever its residual; (ii) every per-term bean carries a
+> *tower status* line (FULL-TOWER / ORDER-ZERO-ONLY / MIXED); (iii) the L2
+> residual of an order-zero-only construction is not evidence about the tower.
+> **Settled (owner, same day):** "full tower" means **both** — all `n` of the Hecke
+> tower *and* all orders in `q`. Recorded in
+> `docs/audits/2026-09-03-sm-26-term-status.md` §10.
+
 ## Precision goals (STRICT — read before any precision-affecting work)
 
 The framework's headline precision goal has **two independent legs**.
@@ -1868,7 +2096,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -1884,9 +2112,24 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **m_μ is no longer a met goal (2026-05-31 correction).** Before the
   2026-05-28 proton-anchor re-pin, m_μ was the q₀ *anchor* (err ≈ 0).
   Post-re-pin it is a *prediction* (m_e × (m_μ/m_e)_CODATA) and misses
-  the 100× target by **963.6×** (209.8 ppb vs 0.2177 ppb target) per
+  the 100× target by **970.2×** (211.2 ppb vs 0.2177 ppb target) per
   the dashboard. An earlier version of this table listed "4/7 met
   (… m_μ …)"; that was stale (the q0-repin staleness class).
+
+  > **The `963.6× / 209.8 ppb` this line carried until 2026-09-04 was
+  > itself an instance of that same staleness class — one CODATA
+  > edition later.** Those are the **CODATA-2018** figures. The muon
+  > anchor moved to CODATA 2022 on 2026-08-22 (`fca08de7d2`, owner
+  > ruling), which shifts the residual `209.755 → 211.165` ppb and the
+  > miss `963.6 → 970.2×`. Live source, both fields on one row:
+  > `per-observable-100x-status.witness.json`, `rows[]` where
+  > `obs == "m_mu"` — `err_ppb 211.2`, `target_100x_ppb 0.2177`,
+  > `miss_factor 970.2`. **Quote the witness, not this paragraph.**
+  > Drained on `main` at four sites here plus `docs/precision-goals.md`
+  > and two content blocks; the ~17 hits left in `docs/audits/` and
+  > `docs/coordination/` are **dated records of their own analyses and
+  > were deliberately left** — same decision as the `4.66e6` drain
+  > (`qou-3nva`). Beans `qou-silm` (finding) / `qou-m4au` (drain).
 - **m_p dropped from "met" 2026-07-04.** Through 2026-07-04 the count was
   3/7 (m_e, m_p, m_K/m_π), but m_p "met" only because a fitted Habiro
   tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` landed it on CODATA to 0.0004 ppb. That
@@ -2123,7 +2366,7 @@ Do not regress either.
 > `computations/audits/muon_pin_three_values_probe.py` establishes that **three
 > different numbers are all called "the muon q₀"**, diverging at the 13th
 > significant digit — five orders of magnitude above the framework's own 1 ppQ L1
-> target, and inside the ~11.5 ppb μ–p separation the two-pin vocabulary exists to
+> target, and inside the ~11.6 ppb μ–p separation the two-pin vocabulary exists to
 > keep straight. Re-derived independently 2026-08-30 at `mp.dps = 60`, with
 > `Vol(4₁) = 2·Cl₂(π/3) = 2.02988321281930725004240510855`:
 >
@@ -2528,22 +2771,25 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
 CAL-2.** (CAL-1 = m_e; CAL-2 = 𝔇_β, proxy m_μ/m_e; CAL-3 = 𝔇_π, proxy
 m_π; Q_β = ℏ/𝔇_β is the **CAL-2 proxy**, not CAL-3 — see the decay-width
-cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.5 ppb
+cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.6 ppb
 theory residual lands where least significant (proton-anchor → 9.5σ on
-muon; muon-anchor → ~4000σ on proton).
+muon; muon-anchor → ~1.4e4 σ on proton — that figure read "~4000σ" until
+2026-09-04 and was the CODATA-2018 one, computed against σ(m_p/m_e) = 0.06 ppb;
+at the live 0.017 ppb the same 243.86 ppb miss is 1.4e4 σ, and the two-line rule
+above already carries the tighter σ).
 
 **STRICT rules:**
 
 1. **Every precision / accuracy / prediction artifact** — the L2 100×
    dashboard, `per-observable-100x-status`, accuracy audit docs,
    "N/7 met" counts — **must report m_μ as the proton-anchored
-   prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
+   prediction (970.2×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
    value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
    tautology ("equality by construction"), **not** an accuracy win.
    **The same rule applies at CAL-1, and was not being applied.** `m_e` is
@@ -2562,15 +2808,14 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
-     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
-     (−11.5 ppb) when the counts below were measured, and since
-     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
-     `1.109978595642739…`. The **counts are still the counts** — they
-     describe witnesses computed under the old anchor, which is exactly
-     the population the migration is about — but do not read the literal
-     as the live anchor. It fed ~72 producers / **870** witnesses — the
-     canonical 3-CAL (muon) derivation witnesses.
+     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
+     **`1.1099785956427390466817…`** (−11.6 ppb) — see the 🛑 correction
+     below; this read `1.10997859555733471…` until 2026-08-30 and that
+     value has been **retired since 2026-08-22**. The **counts below are
+     still the counts**: they describe witnesses computed under the OLD
+     anchor, which is exactly the population the migration is about — do
+     not read them as counts of the live value. It fed ~72 producers /
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -2594,7 +2839,73 @@ muon; muon-anchor → ~4000σ on proton).
      > | match on | counts | at 2026-08-16 | at 2026-08-26 |
      > |---|---|---|---|
      > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
-     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
+     > | `1.1099785955573347` (full) | ~~the canonical pin only~~ **the RETIRED pin — see below** | 468 | 149 |
+     >
+     > 🛑 **The second row's label is now WRONG, and the table is missing its
+     > largest population (corrected 2026-08-30; found by bean `qou-silm`,
+     > which did the diagnosis and deliberately did not edit this file —
+     > the CODATA-2018 row below is the one part it does not carry).** On an
+     > owner ruling — *"2022 CODATA better than 2018. A → CODATA 2022"* —
+     > commit **`fca08de7d2` (2026-08-22)** re-derived the anchor witness, so
+     > *(A sibling correction on `main` dated this **2026-08-28**. That is the
+     > `computedAt` of a LATER regeneration, `83bab99730`; the VALUE changed on
+     > 2026-08-22, verified with `git log -- <file>`. Bean `qou-silm` made and
+     > corrected the same slip. Do not revert the date — reading a `computedAt`
+     > stamp as the date a value changed is the same error class as reading a
+     > `scriptCommitSha` as provenance.)*
+     > `1.1099785955573347…` has been the **retired** pin for eight days and
+     > the live canonical value is **`1.1099785956427390466817…`**. The row
+     > above tells you to count the retired literal *while calling it
+     > canonical*, which inverts its own warning: an agent following it counts
+     > a dead value and reports it as the live one.
+     >
+     > **Re-measured 2026-08-30 with the recorded method** (`git ls-tree` on
+     > `origin/main`, 3237 tracked `computations/*.witness.json`):
+     >
+     > | match on | is | count |
+     > |---|---|---|
+     > | `1.109978595` (10 digits) | all muon spellings | **403** |
+     > | `1.1099785955541805` | **CODATA 2018** | **257** |
+     > | `1.1099785956427390` | **CODATA 2022 — the LIVE canonical anchor** | **96** |
+     > | `1.1099785955573347` | the **retired** self-certified pin | **40** |
+     > | 10-digit hit, no full muon literal | unaccounted spellings | 17 |
+     >
+     > **That 40 is a count of FILES CONTAINING THE STRING, not of stale
+     > pins — do not read it as 40 stale witnesses.** Bean `qou-silm`
+     > independently reports *"exactly one witness"* still on the old pin, and
+     > **both are right about different questions**: of the 40, only **4**
+     > carry the literal in a `q0Value`/`q` *field*, and only **one**
+     > (`hadron-knot-table.witness.json`) as the top-level `q0Value`. The
+     > other three are payload data — a `scan[]` point, a cross-anchor
+     > `residual_evaluations/muon_q0`, an `across_q[]` array — i.e.
+     > deliberate multi-q records, not stale pins; the remaining 36 carry it
+     > in prose, `description` or provenance. This is the same
+     > string-match-vs-semantics gap the row above it warns about, one level
+     > down, and it is why every row here names its method.
+     >
+     > **CODATA 2018 is 64 % of the muon population and the two-row table
+     > cannot see it at all** — it is neither "the canonical pin" nor
+     > distinguishable from the rest under a 10-digit match. That is the
+     > sharper defect here: the old table's two rows do not partition what
+     > they are counting, so *both* readings under-describe the tree. Quote
+     > four rows, or say which single literal you matched.
+     >
+     > **The shift itself is small; do not confuse it with the μ–p tension.**
+     > retired → live is **0.0769 ppb**, and it moves μ–p from 11.5371 to
+     > **11.6141 ppb**. The witness drain for it is *already scoped* under
+     > bean **`qou-3f7a`** /
+     > [`2026-08-29-q0-muon-anchor-repin-drain.md`](docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md)
+     > (83 `Q0_FLIP` + 165 NEW drift sites, all at that same −0.0769 ppb) —
+     > **do not duplicate it.** That audit cites this document nine times and
+     > never flags that this passage is itself stale, which is why the
+     > correction lands here rather than there.
+     >
+     > **This does NOT weaken rule 1 of the sweep constraints** ("NEVER re-pin
+     > an anchor-defining witness"). That rule binds *agents*; the owner
+     > re-pinned it deliberately, by ruling, having established that the old
+     > value was **self-certifying** — `q_pinning_50_digit` is listed
+     > `ideal_muon`, so `q_parameter` rebound `q_at` for that very producer and
+     > it wrote back the value it had just read.
      >
      > The **870** above is the ten-digit reading and is correct. Measured
      > with the same script at both ends (`git ls-tree` on each revision,
@@ -2615,7 +2926,7 @@ muon; muon-anchor → ~4000σ on proton).
    reads a **muon-q₀** `muon_check.m_mu_pred_MeV` (≈ CODATA, ~0 ppb)
    and scores it as the m_μ *prediction* silently flips m_μ FAIL→MET.
    The committed `per-observable-100x-status.witness.json`
-   (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
+   (m_μ ≈ 105.6583978, 970.2×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
 4. **Migration posture for the 870 muon-q₀ `computations/` witnesses
@@ -4283,18 +4594,21 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
-trap 'rm -f "$TGZ"' EXIT INT TERM   # ~1.6G scratch tarball; NOTHING else reaps it
+trap 'rm -f "$TGZ"' EXIT INT TERM   # ~2.4G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
-  && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
-     | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+  && C=$(git rev-parse FETCH_HEAD) \
+  && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
+     | while read -r p; do git show "$C:$p"; done > "$TGZ" \
   && tar xzf "$TGZ" -C "$ROOT" \
-  && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
-  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+  && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
+  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
 
 # 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
 # `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
-# ~1.6G, and until 2026-08-28 nothing deleted it — not the recipe, not a reaper.
+# ~2.4G (27 parts, 2,514,511,602 B — measured 2026-09-04; it was ~1.6G/18 parts
+# before the 2026-08-31 reseed added own-package oleans), and until 2026-08-28
+# nothing deleted it — not the recipe, not a reaper.
 # Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
 # disk thirteen days later and was a direct contributor to this container
 # reaching **92K free**, at which point the Bash harness cannot write its own
@@ -4302,10 +4616,30 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
-# 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
-# stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
-# Measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB Fred2005` at
-# the root against a tree restored exactly as above: root mathlib oleans
+# 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
+# flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
+# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was reseeded 2026-08-31
+# and carries 100.0% PAIRED trace coverage — 6170 of 6172 oleans have their own
+# .trace sibling (the 2 exceptions are QOU own-package oleans). Measured by
+# stream-listing the 27 parts; the seeders have refused a sub-90% seed since
+# 2026-08-07. So the unconditional `touch` the recipe used to do now asserts
+# something false in the BLOCKING direction, which is why the line above runs
+# scripts/lake-restore-trace-check.sh instead: it sets the marker from the
+# measurement, and cannot go stale the way the assertion did.
+#
+# Count PAIRED traces, never total ones — a Lake tree carries many traces
+# belonging to no olean (cache.trace, lake.trace, *.c.o.export.trace); the naive
+# ratio read 192% on a 13-olean tree.
+#
+# WHAT THAT DOES NOT MEAN. Traces are NECESSARY for Lake to accept a restored
+# olean; they are NOT shown to be sufficient. A trace records input hashes, so
+# Lake can still rebuild if the tree it hashes differs. The eviction below was
+# real and is NOT retracted — only its premise has changed, and whether a
+# `lake build` on a traced restore still evicts is UNTESTED (testing it costs a
+# real build and risks the cache). Keep preferring lean-direct.
+#
+# The eviction, measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB
+# Fred2005` at the root against an UNTRACED restore: root mathlib oleans
 # 6990 -> 334, and of the 536 oleans written in ten minutes, 520 were
 # mathlib/aesop/batteries and ZERO were QOU/UGB/Fred2005. It is silent — the
 # output reads as ordinary build progress. Verify with lean-direct instead

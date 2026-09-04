@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/monodromyhitchiny/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-1-introduction.md",
+  "derivedFrom": "library/monodromyhitchiny/manifest",
+  "sourceDocument": "library/monodromyhitchiny/manifest",
+  "provenance": "ingested"
+}

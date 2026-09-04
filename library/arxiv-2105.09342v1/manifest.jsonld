@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2105.09342v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "contains": [
+    "library/arxiv-2105.09342v1/sections/sec-000",
+    "library/arxiv-2105.09342v1/sections/sec-001",
+    "library/arxiv-2105.09342v1/sections/sec-002",
+    "library/arxiv-2105.09342v1/sections/sec-003",
+    "library/arxiv-2105.09342v1/sections/sec-004",
+    "library/arxiv-2105.09342v1/sections/sec-005",
+    "library/arxiv-2105.09342v1/sections/sec-006",
+    "library/arxiv-2105.09342v1/sections/sec-007",
+    "library/arxiv-2105.09342v1/sections/sec-008",
+    "library/arxiv-2105.09342v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2105.09342v1",
+    "source_file": "2105.09342v1.pdf",
+    "source_sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
+    "pages": 31,
+    "arxiv": {
+      "id": "2105.09342",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "19 May 2021"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

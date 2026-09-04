@@ -43,7 +43,10 @@ the golden 1/φ², survive m < 1/√5).
 
 DISCIPLINE (AGENTS.md): NO fit — m is never solved from the deficits (that is the forbidden
 7th ansatz). Honest negative is a valid outcome; verdict scoped (a) unless a proved invariant
-licenses (b). muon-canonical q0 layer. audit-only, nothing wired.
+licenses (b). q0-INDEPENDENT: this producer reads no q0 and its witness carries
+no q0 value (measured 2026-09-04). The line read "muon-canonical q0 layer"
+until then -- a pin claim for a dependency that does not exist; bean qou-9ugp.
+audit-only, nothing wired.
 
   -- Ref: docs/audits/2026-07-18-deltalambda-attack-vector-map.md §4 (Vector 2)
   -- Ref: computations/deltalambda/b4_slater_antisymmetrizer_exchange_sign.py (#3924: det, ceiling)

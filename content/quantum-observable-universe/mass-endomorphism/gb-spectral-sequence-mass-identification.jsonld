@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-gb-spectral-sequence-mass-identification",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:gb-spectral-sequence-mass-identification",
+  "kind": "remark",
+  "title": "Identification of the six mass terms with spectral-sequence pages",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence",
+  "tags": [
+    "spectral-sequence",
+    "mass-terms",
+    "markov-trace"
+  ],
+  "text": "gb-spectral-sequence-mass-identification.md",
+  "provenance": "authored"
+}

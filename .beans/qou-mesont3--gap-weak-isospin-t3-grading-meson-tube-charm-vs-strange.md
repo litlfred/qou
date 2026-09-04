@@ -1,11 +1,11 @@
 ---
 # qou-mesont3
 title: 'GAP: weak-isospin T₃ grading of the H₃(q) meson tube (charm vs strange; refines qou-qpj9)'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-24T18:21:37Z
+updated_at: 2026-09-03T15:40:10Z
 ---
 
 ## Refines `qou-qpj9` (meson-binding braid gate)
@@ -276,3 +276,9 @@ The practical consequence: a future attempt must **not** be framed as "find the
 missing invariant" (there is none missing) and must not be a search for a braid
 that lands on `m_D` (that is the per-state fit the J/ψ attack already recorded as
 worthless). It has to *derive* the content → braid map, then check once.
+
+2026-09-03 (qou-bsu0): own body recommends closing in favour of qou-qpj9. Closure left to the owner.
+
+Completed 2026-09-03 on owner decision (session qou-ggdk): own body — nothing in the T₃ direction is open; the live object is qou-qpj9 (content→hyperbolic-braid map).
+
+Closed 2026-09-03 on owner authorisation (session qou-ggdk, PR #6519): nothing in the T3 direction is open; the live carrier is qou-qpj9.

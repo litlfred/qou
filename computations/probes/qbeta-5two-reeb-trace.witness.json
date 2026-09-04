@@ -1,48 +1,48 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-11T00:32:49.137865+00:00",
-  "commitSha": "9d8cb5b54ff80e222d4a483c8d8ce1f116f1a563",
+  "computedAt": "2026-09-03T21:21:27.438326+00:00",
+  "commitSha": "925d5d02b4c04229a6389b24c59096d65865d576",
   "assertions": [
     {
       "name": "qreeb_trace_bar_even_both_knots",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "τ_{4₁} AND τ_{5₂} on V_{(2,1)} are both bar-even (exact sympy): the self-conjugate (2,1) block cannot carry chirality — FINDING 1, refutes the naive q-Reeb guess"
     },
     {
       "name": "writhe_amphichiral_vs_chiral",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "writhe(4₁)=0 (amphichiral), writhe(5₂)=4 (chiral) — the conjugate-pair (3)/(1,1,1) asymmetry"
     },
     {
       "name": "bar_odd_writhe_datum_4one_zero_5two_nonzero",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "D_odd=½(χ₃−χ₁₁₁): 0 for 4₁ (writhe 0), ½(q⁴−q⁻⁴)≠0 for 5₂ (writhe 4) — FINDING 2: the bar-odd home is the writhe, a sinh-object, nonzero for chiral 5₂"
     },
     {
       "name": "q1_permutation_anchor",
-      "computed": -1.0,
-      "expected": -1.0,
+      "computed": "-1",
+      "expected": "-1.0",
       "passed": true,
       "tolerance": "0.01",
       "source": "τ_{4₁}(1) = −1: 4₁ braid (σ₁σ₂⁻¹)² is a 3-cycle in S₃, standard-rep character −1 (validates the H₃ block)"
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 26,
   "computation": "qbeta-5two-reeb-trace",
   "scriptFile": "qbeta_5two_reeb_trace_probe.py",
-  "scriptHash": "6342447a7f39",
-  "scriptCommitSha": "572ade6ea65dbffb75b7441074f09d4773c8fa3f",
+  "scriptHash": "49638688ab26",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_reeb_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_reeb_trace_probe.py"
   },
   "description": "Foundational brick of the non-amphichiral (5₂) route (fork option 2). The H₃(q) Hoefsmit V_{(2,1)} q-Reeb trace of the canonical 5₂ 3-braid (1,1,1,2,-1,2): τ_{5₂}(q) is BAR-ASYMMETRIC (nonzero bar-odd part), unlike the amphichiral 4₁ (τ_{4₁} bar-symmetric, bar-odd=0). So 5₂ supplies a NONZERO bar-odd knot-operator datum — the 'nonzero home' the CS=0 fork needs. Validated at the q=1 permutation anchor. HONEST SCOPE: τ_{5₂}(q₀) is smooth, so its value is anchor-invariant-ish and cannot produce S's 2e6 swing (Lean-proved no_anchor_invariant_realizes_swing still binds); the swing needs the anchor-dependent quantum 𝔙_q(5₂), a later brick. No c_k; no fit; scope-(a).",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -71,11 +80,17 @@
       "5_2": "(q**8 - 1)/(2*q**4)"
     },
     "D_odd_5_2_at_anchors": {
-      "muon": "0.429585766647657",
+      "muon": "0.429585766982623",
       "proton": "0.429585716421158"
     },
-    "anchor_smoothness_caveat": "|D_odd(p)−D_odd(mu)| = 5.02265e-8: the writhe datum ½(q₀⁴−q₀⁻⁴) is anchor-smooth, so NOT the S-swing carrier (no_anchor_invariant_realizes_swing binds). 5₂ gives a nonzero bar-odd HOME; the anchor-dependent swing still needs 𝔙_q(5₂).",
+    "anchor_smoothness_caveat": "|D_odd(p)−D_odd(mu)| = 5.05615e-8: the writhe datum ½(q₀⁴−q₀⁻⁴) is anchor-smooth, so NOT the S-swing carrier (no_anchor_invariant_realizes_swing binds). 5₂ gives a nonzero bar-odd HOME; the anchor-dependent swing still needs 𝔙_q(5₂).",
     "braid_word_5_2": "(1,1,1,2,-1,2) = σ₁³σ₂σ₁⁻¹σ₂ (canonical table)",
     "verdict": "TWO FINDINGS. (1) REFUTED the naive q-Reeb guess: τ_{5₂}(q) on V_{(2,1)} is bar-EVEN, same as τ_{4₁} — the self-conjugate (2,1) block cannot carry chirality for any knot. (2) LOCATED the bar-odd datum in the WRITHE: the conjugate-pair (3)/(1,1,1) asymmetry D_odd=½(χ₃−χ₁₁₁) is 0 for amphichiral 4₁ (writhe 0) and ½(q⁴−q⁻⁴)≠0 for chiral 5₂ (writhe 4) — a genuine bar-odd sinh-object, the nonzero home fork-option-2 needs. But D_odd(q₀) is anchor-smooth ⇒ not the S-swing (the Lean-proved anchor-invariance prune binds); the swing needs 𝔙_q(5₂), the next brick. No c_k; no fit; scope-(a)."
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "D_odd is tabulated at BOTH pins (D_odd_5_2_at_anchors) to test anchor-smoothness; both are read on purpose"
 }

@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-b1-soft-sharpness-significance",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:b1-soft-sharpness-significance",
+  "kind": "remark",
+  "title": "Soft vs strong sharpness: Goncharov is bigger than QOU needs",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-depth-2-identification-bloch-suslin"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-b1-soft-sharpness-theorem",
+  "cites": [
+    "references/bloch2000",
+    "references/suslin1991"
+  ],
+  "tags": [
+    "soft-sharpness",
+    "strong-sharpness",
+    "goncharov-conjecture",
+    "beilinson-conjecture",
+    "keystone-discharge",
+    "borel-theorem"
+  ],
+  "text": "b1-soft-sharpness-significance.md",
+  "provenance": "authored"
+}

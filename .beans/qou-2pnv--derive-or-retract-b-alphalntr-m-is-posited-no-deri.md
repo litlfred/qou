@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:53:53Z
-updated_at: 2026-08-25T19:38:42Z
+updated_at: 2026-09-04T10:28:53Z
 parent: qou-9ot5
 ---
 
@@ -30,3 +30,36 @@ E0's own justification and is independent of the deprecated shape.
 Root cause of my error: I read the mass formula's SHAPE out of the AGENTS.md banner and
 did not check whether that shape is live. The banner that states the shape is the same
 banner that deprecates it.
+
+## 2026-09-04 — owner has adopted this as the working assumption; three of the four objections discharged
+
+Owner ruling: **Option B with the Option C framing, and the 2.656 factor stated
+as open.** Option B is exactly this bean's `B = -alpha.ln|tr_M|`, in the form
+
+    B = E_0 . log( tr_M(beta_free) / tr_M(beta_atom) ),   E_0 = m_e/(q0(q0-1))
+
+Against this bean's four objections ("posited — no derivation, nothing in Lean,
+only a notation-table row, and a dead citation"):
+
+- **DERIVATION — supplied.** `tr_M` is multiplicative along the chain (the closed
+  form is a product); binding energy is extensive. `log` is the unique map
+  carrying one to the other, so the functional is forced, not posited. Stronger:
+  the tower's own Markov relation `tr_{n+1}(x.sigma_n) = z.tr_n(x)` makes
+  `nu(x) = log_z tr_M(x)` the additive counter, and `b_pp = z` exactly, so a p-p
+  bond IS one Markov reduction. Option B is `nu`'s archimedean realization at q0.
+- **LEAN — supplied.** `QOU/Hecke/BindingExtensivity.lean`, 6 decls, sorry-free,
+  `[propext, Classical.choice, Quot.sound]`, lean-direct exit 0.
+- **MEASUREMENT — supplied.** p5-p95 residual **1.225x** over 2548 measured AME
+  nuclides at the DERIVED `E_0`, against **1592x** for `B = s.Delta_tr`.
+
+**STILL OPEN, and now sharper:** `E_0` is **2.656x** below the best single scale
+(11.119 MeV) — the "nothing validates E0 at the binding scale" gap this bean's
+own self-correction preserved. And see `qou-q7ga`: the deformation's contribution
+is net-negative, so what is currently earned is "the algebra produces an
+extensive quantity", not the specific bond energies.
+
+Not marking complete: the derive half is done, the SCALE is not.
+`docs/audits/2026-09-04-binding-law-options-decision-frame.md`.
+
+
+## 2026-09-04 (qou-rp9i) — two surfaces created today after #6611's branch and before its merge stated B = Q_β·Δtr: docs/audits/2026-09-04-cyclic-triple-word-class-prune-and-probe.md and computations/probes/cyclic_triple_bond_cross_term_probe.py. Both now carry superseded-law notes pointing at 2026-09-04-cyclic-triple-under-log-law.md. The wider sweep remains unscoped.

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-binding-period-involution-statistic",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:binding-period-involution-statistic",
+  "kind": "proof",
+  "title": "Proof that the balanced dimension sum is the $2\\,\\mathrm{maj} + \\mathrm{content} \\circ \\mathrm{RSK}$ involution generating function",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-period-involution-statistic"
+  ],
+  "text": "binding-period-involution-statistic-proof.md",
+  "provenance": "authored"
+}

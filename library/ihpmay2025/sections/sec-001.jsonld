@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The hyperbolic plane",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-001"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

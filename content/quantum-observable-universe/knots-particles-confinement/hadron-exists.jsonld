@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-hadron-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hadron-exists",
+  "kind": "proposition",
+  "title": "Existence of hadrons",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-hadron-exists"
+  ],
+  "tags": [
+    "existence",
+    "hadron"
+  ],
+  "leanRef": "qou:QOU.Hadron.exists",
+  "text": "hadron-exists.md",
+  "leanSource": "hadron-exists.lean",
+  "provenance": "authored"
+}

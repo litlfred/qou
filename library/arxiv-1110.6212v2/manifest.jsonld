@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1110.6212v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗",
+  "contains": [
+    "library/arxiv-1110.6212v2/sections/sec-000",
+    "library/arxiv-1110.6212v2/sections/sec-001",
+    "library/arxiv-1110.6212v2/sections/sec-002",
+    "library/arxiv-1110.6212v2/sections/sec-003",
+    "library/arxiv-1110.6212v2/sections/sec-004",
+    "library/arxiv-1110.6212v2/sections/sec-005",
+    "library/arxiv-1110.6212v2/sections/sec-006",
+    "library/arxiv-1110.6212v2/sections/sec-007",
+    "library/arxiv-1110.6212v2/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1110.6212v2",
+    "source_file": "1110.6212v2.pdf",
+    "source_sha256": "1923b6a0bfdc810f27d6c2ecf533c3b52ad94c321e9e7004fe962c82ad34c52b",
+    "pages": 34,
+    "arxiv": {
+      "id": "1110.6212",
+      "version": "2",
+      "primary_class": "math.RT",
+      "stamp_date": "26 May 2014"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

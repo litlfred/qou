@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-01T03:23:39Z
+updated_at: 2026-09-03T04:45:00Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -748,6 +748,24 @@ before that.
 datapoint is whatever a fresh session's first PR produces; nothing here needs to
 be bought.
 
+### Request row 2026-08-31 ~04:52Z — qou#6369, accepted-empty
+
+`request_copilot_review` on **litlfred/qou#6369** (q-RH trace-identity tranche,
+branch `claude/q-riemann-hypothesis-gaps-zgxd8m`), fired ~04:52Z. Response body
+**empty** — the known-accepted shape, not the quota-refusal string.
+
+Recording the timestamp only so the latency is measurable if a review lands.
+**Not re-requested**, and it should not be: a sibling session's check-in on
+#6254 records `>= 11h56m with no review` from a 2026-08-30 14:50Z accepted
+request spanning the UTC day boundary, and reaches the conclusion that firing
+requests is what creates the shortage.
+
+Noting for honesty that this request was fired **before** I had read that
+sibling's finding. AGENTS.md's live text says reviews do arrive subject to
+quota and forbids only re-requesting after every push, so the single request
+was within the documented guidance — but the sibling's measurement is newer
+than that text, and on its evidence the right default is now **do not request
+at all** unless the bean's own guidance changes.
 
 ---
 
@@ -857,3 +875,96 @@ look like a rate; one does not.
 
 **Trial 1 (`qou#6406`) final state:** still `[]` at 03:22:41Z, ~6h50m after its
 merge. Remains labelled TRUNCATED and must never be quoted as a timed negative.
+
+
+---
+
+## 🛑 2026-09-01 — A REVIEW ARRIVED, AND I NEVER REQUESTED IT
+
+`qou#6411`, review `5074008688` by `copilot-pull-request-reviewer[bot]`,
+submitted **2026-09-01T04:26:48Z** on commit `128d7e486c`, state `COMMENTED`,
+"🟡 Changes recommended", 2 comments, effort level "Lite".
+
+**I did not call `request_copilot_review` on #6411.** Not once. The review
+arrived unprompted, minutes after the branch was pushed.
+
+**This changes the shape of the question.** Every trial recorded above assumed
+arrival requires a request and measured the request→arrival interval. If
+reviews also fire on push, then:
+
+- the trial-2 negative (`[]` at T+6h21m on `qou#6407`) is **still a clean
+  negative**, but it is a negative about *that PR*, not about the mechanism —
+  #6407 got neither a requested nor an unrequested review;
+- the "quota" reading is weakened: a request that returns silently may simply
+  be redundant with an automatic trigger that did or did not fire for other
+  reasons;
+- **the protocol in `copilot-review-arrival.md` is measuring the wrong
+  variable.** It controls for pushes after the request. It does not control
+  for the push that *creates* the PR, which may be the actual trigger.
+
+**Do NOT conclude "reviews are automatic".** One unrequested arrival against
+one clean unrequested-and-unarrived case (#6407) is n=1 each way. What is now
+established is narrower and more useful: **arrival is not gated on an explicit
+request**, so any future trial must record whether a request was made *and*
+treat the PR-creating push as a candidate trigger.
+
+**The findings were real**, which matters for the merge-gate question
+separately from the timing one: three findings, all correct, all mine — two
+overclaims ("four decades" for a x1024 sweep = 3.0 decades; "constant to 6
+digits" for 4 sig figs / 7.14e-5 relative) and an unused `tr`/`dt` pair. Fixed
+in `4dafadc2b9`. So when a review does arrive here it is worth having, and the
+"merge without waiting" posture has a real cost.
+
+**Still NOT flipping the `merge-coordinator/MEMORY.md` TRAP row.** Its current
+wording — rationed, intermittent, `get_check_runs` = 0 does not discriminate —
+survives this observation unchanged. What needs updating is
+`copilot-review-arrival.md`'s protocol, which controls for the wrong thing.
+
+
+---
+
+## 2026-09-03 — one more arrival, and a PROTOCOL TRAP the staleness test walks into
+
+Adding a data point rather than a finding: the 2026-09-01 entry above already
+records that a review can arrive and that its findings can be real. This
+corroborates it and sharpens one mechanic.
+
+**#6441** — two `.beans/*.md` files, 138-line diff, nothing else. Copilot
+requested at ~04:17Z via `request_copilot_review`; review **submitted 04:19Z**,
+about **two minutes** later. `state: COMMENTED`, *"🟢 Approval recommended"*,
+**0 comments generated**, review effort *"Lite"*. So the arrival is not merely
+possible, it can be fast — and on the smallest possible diff.
+
+### The trap: a pure rebase makes a current review look stale
+
+`prepare-merge-auto` Phase 1b step 2 says a review whose `commit_id` is an
+earlier commit **is stale and does not count**, and to re-request. That rule is
+right for a review predating new *work* — and **wrong after a pure rebase**,
+which is the repo's standard pre-merge step (rule 8).
+
+Here the review carried `commit_id = 0dfd0f8b6b9`, my **pre-rebase** head; the
+merge candidate was `cae9f0fa3ac`. The commit_id test says stale. But the
+rebase changed only the parent:
+
+    git diff <old-base>...<old-head>   ->  138 lines, 2 files
+    git diff origin/main...HEAD        ->  138 lines, 2 files   BYTE-IDENTICAL
+
+Copilot had reviewed exactly the change being merged. Discarding it and
+re-requesting would have thrown away a valid review to wait on a replacement —
+in a protocol whose whole problem is waiting.
+
+**The right test is the diff against its own base, not the commit_id.** A sha
+comparison cannot distinguish "rebased onto newer main" from "new commits
+pushed", and those are opposite situations. I nearly got this wrong twice: first
+by trusting the commit_id, then by comparing the two commits' **whole trees**,
+which showed 15 files changed and "genuinely stale" — that was main's 17
+intervening commits, not my change.
+
+### What this does NOT establish
+
+Nothing about the arrival *rate*. n is now small but nonzero on the arrival
+side, and this case is the most favourable possible input — a two-file markdown
+diff, reviewed "Lite". It says nothing about whether a large Lean or witness
+diff gets reviewed, which is the case that would actually matter at a merge
+gate. Do not read "Copilot reviewed my beans PR in two minutes" as "Copilot
+reviews."

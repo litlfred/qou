@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-qou-obstruction-reduction-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qou-obstruction-reduction-interpretation",
+  "kind": "remark",
+  "title": "The obstruction as a function on $\\mathbb{P}^1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
+    "papers/quantum-observable-universe/blocks/tbl-qou-obstruction-reduction-table3-data"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
+  "text": "qou-obstruction-reduction-interpretation.md",
+  "provenance": "authored"
+}

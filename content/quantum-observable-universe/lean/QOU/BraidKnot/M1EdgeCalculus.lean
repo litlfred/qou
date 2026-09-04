@@ -54,7 +54,7 @@ no per-edge or FKG argument can close the gap — and that weight-suppression is
 refuted, `N/P < 1` being an averaging phenomenon. These lemmas are the floor
 under that analysis, not a route around it.
 
--- Ref: [bean] qou-k5r5, qou-t6hc
+-- Ref: [manuscript] qou-k5r5, qou-t6hc
 -/
 
 namespace QOU.BraidKnot.M1EdgeCalculus

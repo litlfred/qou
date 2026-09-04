@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T18:24:58.120271+00:00",
-  "commitSha": "4fd2bb31f23ac836be10a1e6d54d73b7568f5309",
+  "computedAt": "2026-09-03T04:57:08.427446+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "phi_is_no_single_construction_object",
@@ -42,10 +42,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 23,
   "computation": "toffoli-trio-rederivation",
   "scriptFile": "toffoli_trio_rederivation.py",
-  "scriptHash": "4c3314126f11",
+  "scriptHash": "6fc70e42fe0b",
   "scriptCommitSha": "04f14b7c21acb0584b6b4f74e25000352754aa7c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -61,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -97,6 +97,6 @@
   "caveats": [
     "The published forms are REFUTED as objects of this construction, not shown to be arbitrary: an unrecorded derivation could still produce them, and this probe cannot speak to one absent from the tree. What it settles is that the corpus's own recorded construction does not, under any indexing or convention, and that three of the block's four claims (universal factorization, Delta_1 = 0, antisymmetry) are false against it — the first two by the block's own internal contradiction."
   ],
-  "q0Anchor": "independent",
-  "q0AnchorReason": "Reads no substrate q₀: no q_parameter / Q_MP / q_at import, no pinning-witness read, no q₀ literal. The re-derivation is symbolic in the free variable q. NOTE the two convention assertions (antisymmetry_is_FALSE_convention_C / _D) are symbolic Markov-frame comparisons, NOT anchor choices — they evaluate no pin either. Not 'ambiguous': nothing here is undetermined."
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Numerical precision and summand size",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "contains": [
+    "library/04procbryden/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "library/04procbryden/manifest",
+  "sourceDocument": "library/04procbryden/manifest",
+  "provenance": "ingested"
+}

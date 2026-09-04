@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 5-7
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 2.1 Notation
 Let [n] := {1, 2,...,n } and (1 m) := (1,..., 1) ∈ Nm

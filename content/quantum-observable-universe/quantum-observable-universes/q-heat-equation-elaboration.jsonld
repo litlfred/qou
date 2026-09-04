@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-heat-equation-elaboration",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-heat-equation-elaboration",
+  "kind": "remark",
+  "title": "$q$-heat equation: two times, categorical formulation, and base-ring independence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-heat-equation",
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-expansion",
+    "papers/quantum-observable-universe/blocks/rem-base-field-independence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-heat-equation",
+  "tags": [
+    "q-laplacian",
+    "heat-equation",
+    "reeb-flow",
+    "base-ring-independence"
+  ],
+  "text": "q-heat-equation-elaboration.md",
+  "provenance": "authored"
+}

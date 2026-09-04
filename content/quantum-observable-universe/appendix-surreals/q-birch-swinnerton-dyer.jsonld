@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-birch-swinnerton-dyer",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-birch-swinnerton-dyer",
+  "kind": "conjecture",
+  "title": "The $q$-deformed Birch and Swinnerton-Dyer conjecture",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil",
+    "papers/quantum-observable-universe/blocks/conj-tannaka-krein-isomorphism",
+    "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation"
+  ],
+  "cites": [
+    "references/birch1965",
+    "references/wiles1995",
+    "references/tate1974"
+  ],
+  "tags": [
+    "tier:famous",
+    "birch-swinnerton-dyer",
+    "millennium-problem",
+    "elliptic-curve",
+    "l-function",
+    "mordell-weil",
+    "tate-shafarevich",
+    "categorical",
+    "fibre-functor",
+    "gm-torsion",
+    "kummer",
+    "projective-line"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.QBirchSwinnertonDyer",
+  "text": "q-birch-swinnerton-dyer.md",
+  "provenance": "authored"
+}

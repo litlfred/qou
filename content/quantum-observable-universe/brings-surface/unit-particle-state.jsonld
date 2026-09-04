@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-unit-particle-state",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:unit-particle-state",
+  "kind": "definition",
+  "title": "The unit particle state $\\mathrm{Li}_q(z)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-local-cohomology-group"
+  ],
+  "tags": [
+    "unit-particle",
+    "q-polylogarithm",
+    "generator",
+    "local-cohomology"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.UnitParticleState",
+  "text": "unit-particle-state.md",
+  "leanSource": "unit-particle-state.lean",
+  "provenance": "authored"
+}

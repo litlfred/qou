@@ -1,13 +1,13 @@
 {
   "computation": "a3-magnitude-berezinian-crossterm",
   "scriptFile": "a3_magnitude_berezinian_crossterm_probe.py",
-  "computedAt": "2026-08-30T15:54:09.643406+00:00",
+  "computedAt": "2026-09-04T04:20:40.561723+00:00",
   "engine": "python-float (demonstration; no high-precision needed \u2014 structural, 0 free params)",
   "free_parameters": 0,
   "inputs": {
-    "q0": 1.1099785955573347,
-    "h": 0.10997859555733469,
-    "hbar_q": 0.09908172643825894,
+    "q0": 1.1099785827513808,
+    "h": 0.10997858275138084,
+    "hbar_q": 0.09908171604425853,
     "mu3_MeV": 0.4708,
     "c3_single_trace_MeV": 0.297,
     "mu3_source": "additive-residual-simplex #4320",
@@ -22,51 +22,51 @@
     "natural_readings_scatter": [
       {
         "reading": "\u210f_q",
-        "rho": 0.09908172643825894,
-        "correction": 0.900918273561741,
-        "abs_err_vs_rstar": 0.6842669116234442,
+        "rho": 0.09908171604425853,
+        "correction": 0.9009182839557415,
+        "abs_err_vs_rstar": 0.6842669012294438,
         "lands_rstar": false
       },
       {
         "reading": "-\u210f_q",
-        "rho": -0.09908172643825894,
-        "correction": 1.0990817264382589,
-        "abs_err_vs_rstar": 0.4861034587469264,
+        "rho": -0.09908171604425853,
+        "correction": 1.0990817160442585,
+        "abs_err_vs_rstar": 0.4861034691409267,
         "lands_rstar": false
       },
       {
         "reading": "h",
-        "rho": 0.10997859555733469,
-        "correction": 0.8900214044426653,
-        "abs_err_vs_rstar": 0.6951637807425199,
+        "rho": 0.10997858275138084,
+        "correction": 0.8900214172486192,
+        "abs_err_vs_rstar": 0.6951637679365661,
         "lands_rstar": false
       },
       {
         "reading": "-h",
-        "rho": -0.10997859555733469,
-        "correction": 1.1099785955573347,
-        "abs_err_vs_rstar": 0.47520658962785056,
+        "rho": -0.10997858275138084,
+        "correction": 1.1099785827513808,
+        "abs_err_vs_rstar": 0.4752066024338044,
         "lands_rstar": false
       },
       {
         "reading": "h^2",
-        "rho": 0.012095291480763798,
-        "correction": 0.9879047085192362,
-        "abs_err_vs_rstar": 0.5972804766659491,
+        "rho": 0.012095288664002323,
+        "correction": 0.9879047113359977,
+        "abs_err_vs_rstar": 0.5972804738491876,
         "lands_rstar": false
       },
       {
         "reading": "-h^2",
-        "rho": -0.012095291480763798,
-        "correction": 1.0120952914807637,
-        "abs_err_vs_rstar": 0.5730898937044215,
+        "rho": -0.012095288664002323,
+        "correction": 1.0120952886640022,
+        "abs_err_vs_rstar": 0.573089896521183,
         "lands_rstar": false
       },
       {
         "reading": "(1+q)/2 - 1",
-        "rho": 0.054989297778667456,
-        "correction": 0.9450107022213325,
-        "abs_err_vs_rstar": 0.6401744829638527,
+        "rho": 0.05498929137569042,
+        "correction": 0.9450107086243096,
+        "abs_err_vs_rstar": 0.6401744765608757,
         "lands_rstar": false
       },
       {
@@ -121,10 +121,10 @@
   "lean": "QOU.QBeta.SuperBerezinianA3Magnitude.crossTerm_magnitude_surjective (sorry-free)",
   "wired": false,
   "notes": "\u03bc3/c3 never inverted to derive a substrate constant; DEMONSTRATES the free-parameter structure, does not fit-to-close. Closure needs the DM-cubic-derived off-block (qou-jqof).",
-  "scriptHash": "a267e71b7471",
-  "scriptCommitSha": "142b183be4554271cc86aa5038c3221e9cd52500",
-  "commitSha": "dea4f70c3dc9fb64c8aefe91be1050fe4461baa3",
+  "scriptHash": "e1239db262b0",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "commitSha": "f4d031de71efdb0eff9ff827cf194fafc88f44eb",
   "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

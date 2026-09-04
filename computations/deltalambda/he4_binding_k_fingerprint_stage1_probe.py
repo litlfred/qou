@@ -69,7 +69,30 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0_STR = "1.1099785955573347117485528280749490295019743898536"
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the 50-digit literal
+# "1.1099785955573347117485528280749490295019743898536" -- the RETIRED
+# self-certified muon pin A, superseded 2026-08-22 (fca08de7d2). It resolves
+# the PROTON pin per the owner directive of 2026-08-15/2026-08-30 (proton
+# unless an explicit mu-vs-p comparison or the ideal CAL-1/2/3 layer; this is
+# neither).
+#
+# RESIDUAL LAYER STRADDLE, NOT CLOSED HERE. This producer combines inputs from
+# three different pins in one published quantity:
+#   * chi(q0) -- evaluated at the local Q0, now PROTON;
+#   * the canonical tr_M target, read from canonical-tr-m-via-chi-cache
+#     .witness.json, which is stamped PROTON;
+#   * the Wenzl weights y_lambda, read from wenzl-y-lambda-h12.witness.json,
+#     whose data.q0 is 1.109978595554180575281594... -- the CODATA-2018 MUON
+#     derivation (value B).
+# Fixing Q0 removes the retired pin and takes two of the three legs to proton;
+# the y_lambda leg is still ideal-layer. AGENTS.md makes a straddle a defect
+# "regardless of its size", and this one cannot be closed from this file:
+# wenzl-y-lambda-h12.witness.json has TEN in-repo consumers, so re-pinning it
+# is its own tranche. The witness therefore stamps `ambiguous` -- the compute
+# depends on q0 and the pin is not single-valued -- with the straddle named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 L_MAX = 3
 GENS = [3, -3, 6, -6, 9, -9]
 NUCLEON = [1, -2, 1, -2, 1, -2]
@@ -204,6 +227,25 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     import os as _os  # noqa: E402 -- provenance stamp
     wit.setdefault("scriptFile", _os.path.basename(__file__))
+    _q0_used = _Q0_RESOLVED
+    _reason = (
+        "q0_anchor was declared False ('no q0-dependent field'). Untrue: the "
+        "characters are evaluated as chi = sum c_e * q0**e, so every published "
+        "number is a function of q0. Stamped `ambiguous` rather than `proton` "
+        "because this quantity STRADDLES layers: chi and the canonical tr_M "
+        "target (canonical-tr-m-via-chi-cache.witness.json) are at the proton "
+        "pin, while the Wenzl weights y_lambda come from "
+        "wenzl-y-lambda-h12.witness.json, whose data.q0 is the CODATA-2018 MUON "
+        "derivation 1.109978595554180575281594... The pin actually used for chi "
+        "is in parameters.q0 below. Closing the straddle needs "
+        "wenzl-y-lambda-h12 re-pinned, which has ten in-repo consumers "
+        "(bean qou-9ugp).")
+    assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_ascii)"
+    wit["q0Anchor"] = "ambiguous"
+    wit["q0AnchorReason"] = _reason
+    wit.setdefault("parameters", {})["q0"] = str(_q0_used)
+    wit["parameters"]["q0_y_lambda_upstream"] = (
+        "wenzl-y-lambda-h12.witness.json data.q0 (CODATA-2018 muon derivation)")
     _WB.stamp_staleness_metadata(
         wit, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(wit, open(out, "w"), indent=1)

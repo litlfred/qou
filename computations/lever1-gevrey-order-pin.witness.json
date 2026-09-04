@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:11:57.306830+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T04:17:22.938506+00:00",
+  "commitSha": "250654bfcf2a0bada4b09d1feb48f55133ad54bb",
   "assertions": [
     {
       "name": "binding_period_gevrey_half_at_q1_qgevrey_deformed_at_q0",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "lever1-gevrey-order-pin",
   "scriptFile": "lever1_gevrey_order_pin.py",
-  "scriptHash": "60e405fe8df4",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3a4cff7c3e87",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/blocks/lem-sec-007-02",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "lem-sec-007-02.md",
+  "derivedFrom": "library/ising/sections/sec-007",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

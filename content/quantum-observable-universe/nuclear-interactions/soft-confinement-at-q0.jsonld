@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-soft-confinement-at-q0",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:soft-confinement-at-q0",
+  "kind": "remark",
+  "title": "Soft confinement level $\\ell_*(q_0)$ from Plancherel decay",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-frobenius-packing-density"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-frobenius-packing-density",
+  "tags": [
+    "confinement",
+    "plancherel",
+    "root-of-unity",
+    "fusion-category",
+    "truncation",
+    "substrate-parameter"
+  ],
+  "text": "soft-confinement-at-q0.md",
+  "provenance": "authored"
+}

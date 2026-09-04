@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hamilton-jacobi-phase",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hamilton-jacobi-phase",
+  "kind": "remark",
+  "title": "Hamilton--Jacobi equation for the phase and classical trajectories",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-geodesic-vortices"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-madelung-fluid",
+  "tags": [
+    "hamilton-jacobi",
+    "phase",
+    "classical-limit",
+    "eikonal",
+    "WKB"
+  ],
+  "text": "hamilton-jacobi-phase.md",
+  "provenance": "authored"
+}

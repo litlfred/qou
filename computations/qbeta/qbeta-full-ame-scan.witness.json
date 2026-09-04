@@ -1,0 +1,173 @@
+{
+  "computation": "qbeta-full-ame-scan",
+  "assertions": [
+    {
+      "name": "scanned_more_than_3000_nuclides",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "first evaluation of the binding law beyond four atoms"
+    },
+    {
+      "name": "the_deficit_changes_SIGN_across_the_table",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "for nearly half the table the missing term would have to be SUBTRACTED, not added"
+    },
+    {
+      "name": "substantial_fraction_are_overshoots",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "worst_undershoot_is_a_light_nucleus",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the deficit peaks on the light flank, not at the extremes"
+    },
+    {
+      "name": "crossover_is_far_above_the_calibration_atoms",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the four calibration atoms sit at A <= 4"
+    },
+    {
+      "name": "calibration_atoms_sit_below_the_peak",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so 'the framework supplies 8-20 % of binding' describes where those atoms are, not the law"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "Q_beta_n_MeV": "0.78233340931",
+    "binding_law": "B = Q_beta(n).Delta_tr(Z,N)",
+    "delta_tr": "t_p^Z t_n^N (1 - b_pp^(Z-1) b_pn b_nn^(N-1))",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json",
+    "trace_convention": "D (SU(2)/Temperley-Lieb)"
+  },
+  "data": {
+    "n_evaluated": 3554,
+    "excluded": {
+      "no_binding": 0,
+      "nonpositive_B": 1,
+      "nonpositive_pred": 0,
+      "single_species": 3
+    },
+    "sample_curve": [
+      {
+        "A": 2,
+        "Z": 1,
+        "N": 1,
+        "B_AME": "2.2245662",
+        "B_pred": "0.435403",
+        "ratio": "5.10921"
+      },
+      {
+        "A": 4,
+        "Z": 2,
+        "N": 2,
+        "B_AME": "28.295662",
+        "B_pred": "0.876064",
+        "ratio": "32.2986"
+      },
+      {
+        "A": 12,
+        "Z": 6,
+        "N": 6,
+        "B_AME": "92.161735",
+        "B_pred": "1.64291",
+        "ratio": "56.0965"
+      },
+      {
+        "A": 20,
+        "Z": 9,
+        "N": 11,
+        "B_AME": "154.4027",
+        "B_pred": "2.32445",
+        "ratio": "66.4255"
+      },
+      {
+        "A": 40,
+        "Z": 18,
+        "N": 22,
+        "B_AME": "343.81038",
+        "B_pred": "6.90636",
+        "ratio": "49.7817"
+      },
+      {
+        "A": 56,
+        "Z": 25,
+        "N": 31,
+        "B_AME": "489.3468",
+        "B_pred": "16.0215",
+        "ratio": "30.5432"
+      },
+      {
+        "A": 100,
+        "Z": 43,
+        "N": 57,
+        "B_AME": "859.51184",
+        "B_pred": "134.629",
+        "ratio": "6.38432"
+      },
+      {
+        "A": 150,
+        "Z": 63,
+        "N": 87,
+        "B_AME": "1236.2022",
+        "B_pred": "1413.63",
+        "ratio": "0.874488"
+      },
+      {
+        "A": 208,
+        "Z": 84,
+        "N": 124,
+        "B_AME": "1630.5862",
+        "B_pred": "15600.5",
+        "ratio": "0.104522"
+      },
+      {
+        "A": 238,
+        "Z": 94,
+        "N": 144,
+        "B_AME": "1801.2699",
+        "B_pred": "47529.0",
+        "ratio": "0.0378983"
+      }
+    ],
+    "worst_undershoot": {
+      "A": 39,
+      "Z": 11,
+      "N": 28,
+      "ratio": "95.453156"
+    },
+    "n_overshoot": 1641,
+    "n_undershoot": 1913,
+    "crossover_A": 150
+  },
+  "context": {
+    "axis": "how does the binding law fare across the whole nuclide table, now that Delta_tr is closed-form?",
+    "answer": "It fails in two opposite directions. The deficit rises to ~66x near A = 20, falls, crosses unity near A ~ 140, and reaches a 26x OVERSHOOT at 238-U. 1642 of 3555 nuclides are overshoots. Delta_tr is exponential in Z while real binding is roughly linear in A, and two such curves cross once.",
+    "consequence": "Claims resting on the four light atoms are artefacts of where those atoms sit: 'supplies 8-20 % of binding' is false above A ~ 140, and for nearly half the table a missing term would have to be SUBTRACTED.",
+    "scope": "Scope-(a). Nothing is refuted about the algebra — the closed form reproduces every measured Delta_tr to 1e-35 with no fitted constant. What is measured is the fit of B = Q_beta . Delta_tr to nature."
+  },
+  "gitCommit": "5bccf6857484f1abd2eb548660efb68c5f20f290",
+  "durationMs": 0,
+  "scriptFile": "qbeta_full_ame_scan_probe.py",
+  "scriptHash": "a68a3f00711e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "5bccf6857484f1abd2eb548660efb68c5f20f290",
+  "engine": "mpmath",
+  "computedAt": "2026-09-03T20:33:01.408417+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}

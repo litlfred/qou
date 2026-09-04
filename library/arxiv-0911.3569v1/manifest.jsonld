@@ -1,0 +1,52 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0911.3569v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS",
+  "contains": [
+    "library/arxiv-0911.3569v1/sections/sec-000",
+    "library/arxiv-0911.3569v1/sections/sec-001",
+    "library/arxiv-0911.3569v1/sections/sec-002",
+    "library/arxiv-0911.3569v1/sections/sec-003",
+    "library/arxiv-0911.3569v1/sections/sec-004",
+    "library/arxiv-0911.3569v1/sections/sec-005",
+    "library/arxiv-0911.3569v1/sections/sec-006",
+    "library/arxiv-0911.3569v1/sections/sec-007",
+    "library/arxiv-0911.3569v1/sections/sec-008",
+    "library/arxiv-0911.3569v1/sections/sec-009",
+    "library/arxiv-0911.3569v1/sections/sec-010",
+    "library/arxiv-0911.3569v1/sections/sec-011",
+    "library/arxiv-0911.3569v1/sections/sec-012",
+    "library/arxiv-0911.3569v1/sections/sec-013",
+    "library/arxiv-0911.3569v1/sections/sec-014",
+    "library/arxiv-0911.3569v1/sections/sec-015",
+    "library/arxiv-0911.3569v1/sections/sec-016",
+    "library/arxiv-0911.3569v1/sections/sec-017",
+    "library/arxiv-0911.3569v1/sections/sec-018",
+    "library/arxiv-0911.3569v1/sections/sec-019",
+    "library/arxiv-0911.3569v1/sections/sec-020",
+    "library/arxiv-0911.3569v1/sections/sec-021",
+    "library/arxiv-0911.3569v1/sections/sec-022",
+    "library/arxiv-0911.3569v1/sections/sec-023",
+    "library/arxiv-0911.3569v1/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0911.3569v1",
+    "source_file": "0911.3569v1.pdf",
+    "source_sha256": "4e7c15c9724fb453894cc98728345c4be09627ba9701186cf240d83c83fc1030",
+    "pages": 30,
+    "arxiv": {
+      "id": "0911.3569",
+      "version": "1",
+      "primary_class": "math.CV",
+      "stamp_date": "18 Nov 2009"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

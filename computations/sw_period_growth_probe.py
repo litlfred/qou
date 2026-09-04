@@ -37,6 +37,20 @@ import sympy as sp
 import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
@@ -45,31 +59,19 @@ P = X**3 + (z + 1) * X**2 + (z**2 + z + 1) * X + (z**3 + z**2 + z + 1)
 
 # ---- branch points + branch order (square-root?) -----------------------------
 disc = sp.discriminant(P, X)
-bps = mp.polyroots([complex(c) for c in sp.Poly(disc, z).all_coeffs()])
+# The discriminant's coefficients are exact integers; `complex(c)` used to push
+# them through float64 (a NO-FLOAT64 violation, AGENTS.md §probes-are-not-exempt).
+# Carry them as mpf instead.  Fixed 2026-09-03, bean qou-qx7j.
+bps = mp.polyroots([mp.mpf(int(c)) for c in sp.Poly(disc, z).all_coeffs()],
+                   maxsteps=200, extraprec=300)
 print("color-cubic branch points (disc_X=0):", [mp.nstr(b, 5) for b in bps])
-# verify order-2 branch: at z_k two cubic roots collide (gap → 0)
+# verify order-2 branch: at z_k two cubic roots collide (gap → 0).
+# The collision is the whole point, so the default maxsteps=50 cannot resolve it
+# and mpmath raised NoConvergence here -- this probe did not run at all on main.
 zk = bps[0]
-# maxsteps=200 (was mpmath's default 50) — this producer DIED here.
-#
-# The point z_k is a BRANCH POINT, chosen as a root of the discriminant, so the
-# cubic has a genuine DOUBLE root there. That is the whole subject of the check
-# two lines down ("gap -> 0 ⇒ square-root branch"). mpmath's polyroots uses
-# Durand-Kerner, which converges linearly rather than quadratically on a
-# repeated root, so the default 50 iterations are not enough to reach the
-# tolerance implied by `set_compute_dps()` above.
-#
-# The failure is PRECISION-DEPENDENT, which is why it looked mysterious:
-#     dps=15  OK      dps=30  OK      dps=50  NoConvergence   dps=60  NoConvergence
-# so the probe worked until the ambient dps was raised. Verified that exact
-# rational discriminant coefficients do NOT fix it — this is the repeated root,
-# not coefficient accuracy — while maxsteps=200 does, at every dps tried.
-#
-# It also sharpens the result rather than merely unblocking it: the measured
-# minimum sheet-gap falls with precision (4.5e-16 at dps=30, 4.17e-26 at
-# dps=50), which is the signature of a true double root and is exactly what
-# this probe is asserting.
-roots = sorted(mp.polyroots([1, zk + 1, zk**2 + zk + 1, zk**3 + zk**2 + zk + 1],
-                            maxsteps=200),
+roots = sorted(mp.polyroots([mp.mpf(1), zk + 1, zk**2 + zk + 1,
+                             zk**3 + zk**2 + zk + 1],
+                            maxsteps=200, extraprec=300),
                key=lambda r: abs(r))
 gap_min = min(abs(roots[i] - roots[j]) for i in range(3) for j in range(i + 1, 3))
 print(f"min sheet-gap at a branch point = {mp.nstr(gap_min,4)} (→0 ⇒ square-root branch, exponent 1/2)")
@@ -94,27 +96,8 @@ for n in range(2, 9):
 print("  → |coeff| ratio = (n-1/2) GROWS without bound ⇒ super-exponential period")
 
 # ---- compare to lw (the #1765 target) and to depth-2 (SL2) -------------------
-# q0 RESOLVED, never a literal. Q1 ruling 2026-08-30: the lever1/z2bn
-# binding-period cluster is PROTON. It held pin A, which `fca08de7d2` RETIRED
-# on 2026-08-22 -- that value inverts to m_mu/m_e = 206.768282989315, matching
-# no published CODATA and contradicting the ratio its own defining witness
-# declared as input. Keeping the value was never an option; only the layer was
-# open. Archeology + ruling:
-# docs/coordination/2026-08-30-unclear-44-archeology-triage.md
-# VALUES MOVE +11.5371 ppb at q0 -- regeneration is bean qou-jjge.
-#
-# `tau` IS DERIVED HERE, not re-pinned. It was the literal 2.6423863133015,
-# which is EXACTLY tau(pin A) to all 14 digits it carried -- verified at 40 dps
-# against the closed form in substrate/z2bn_pf_monodromy_synthesis.py:34,
-#     tau = 3(3q^4 + 8q^2 + 3) / (4q(q+1)^2)
-# where that file computes tau FROM q0 by lambdify rather than freezing it.
-# Migrating q while leaving that constant would have paired a proton q with a
-# pin-A tau in one expression -- an internal straddle, and precisely the defect
-# class this campaign removes. Deriving it means tau follows the pin and cannot
-# go stale again. Measured: tau moves 2.6423863133014861 -> 2.6423863094488464,
-# a relative 1.458e-9.
 q = mp.mpf(Q_50_DIGIT_STR)
-tau = 3 * (3 * q**4 + 8 * q**2 + 3) / (4 * q * (q + 1)**2)
+tau = mp.mpf('2.6423863133015')
 def qint(k): return (q**k - q**(-k)) / (q - 1 / q)
 def qfac(n):
     r = mp.mpf(1)
@@ -155,4 +138,17 @@ print("depth-2 SL2 τ is an n≤4 effective fit. The q-difference recurrence for
 print("super-exp a_D^(n) is the q-Bessel-class kernel (jackson-q-bessel-contiguity).")
 print("CONFIRMED two ways: branch-point Puiseux (here) AND the corpus residue sum")
 print("(prop:sw-period-residue-sum: residues = per-block Wedderburn dim_q = lw).")
+print("=" * 70)
+print()
+print("SCOPE CORRECTION (2026-09-03, bean qou-qx7j) -- the SECOND route above is")
+print("withdrawn; the first is untouched.  prop:sw-period-residue-sum was found")
+print("(bean qou-6v5l, PR #6067) to state its residue sum over ALL poles with the")
+print("residue theorem as warrant, which runs backwards: on a compact surface the")
+print("residues SUM TO ZERO.  And the residues are not merely mis-summed, they are")
+print("individually zero -- (ddz f)(-2) = ((-2)+2)*f(0) = 0 for every f, so the")
+print("t^-2 coefficient of any z-derivative vanishes")
+print("(QOU.Brings.ColourCubicBranchLocus.ddz_residue_slot_eq_zero).  So the")
+print("residues are NOT the per-block Wedderburn dim_q, and that leg confirms")
+print("nothing.  The branch-point Puiseux argument for super-exponential GROWTH")
+print("stands on its own, as does the lw/#1765 verdict.")
 print("=" * 70)

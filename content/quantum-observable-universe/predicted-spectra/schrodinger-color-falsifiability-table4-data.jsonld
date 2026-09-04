@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-schrodinger-color-falsifiability-table4-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:schrodinger-color-falsifiability-table4-data",
+  "kind": "table",
+  "title": "Table 4 from rem:schrodinger-color-falsifiability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-schrodinger-color-falsifiability"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "schrodinger-color-falsifiability-table4-data.md",
+  "provenance": "authored"
+}

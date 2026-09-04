@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-jacobiator",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-jacobiator",
+  "kind": "proposition",
+  "title": "Jacobiator of the q-Lie bracket",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-lie-bracket"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-q-jacobiator"
+  ],
+  "tags": [
+    "q-deformation",
+    "lie-bracket",
+    "leibniz-algebra"
+  ],
+  "leanRef": "qou:QOU.q_jacobiator",
+  "text": "q-jacobiator.md",
+  "leanSource": "q-jacobiator.lean",
+  "provenance": "authored"
+}

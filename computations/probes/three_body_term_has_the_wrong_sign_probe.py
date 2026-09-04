@@ -21,6 +21,19 @@ TWO UPDATES — SEE `four_body_term_and_the_h12_collapse_probe.py`
    order. A1-A2 (attachment rank), A5 (no-decay) and A6 (ceiling direction) do
    not depend on bond order at all.
 
+PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
+-----------------------------------------------------------------
+Everything below ran in float64, twice over: the seminormal matrices are
+`numpy`/`scipy` `dtype=float`, and `q` came from `mp.mpf(str(Q0))` off a Python
+float, so it carried 17 digits and no more. The agreements this docstring reads
+as evidence — `5.6e-16`, `1.11e-15`, "agrees to `1e-15`", "exact to `1e-12`" —
+sit at or just above the float64 floor, which is where float64 puts them whether
+or not the identity holds. **Do not quote them as exactness.** The 200-bit
+re-run confirms the underlying identities at `~1e-60`, and puts the honest error
+on these magnitudes at `~1e-13`, set by the truncated `q` rather than by the
+matrix arithmetic. Every sign and magnitude below is unaffected; the word
+"exact" applied to them was not earned.
+
 WHY THIS WAS THE NEXT MEASUREMENT
 ---------------------------------
 The arc had established that binding is carried by inter-nucleon bonds, that the
@@ -127,6 +140,15 @@ here and match the arc's independently-recorded bond constants to all printed
 digits, which is the cross-check that the machinery is the same one. `B_AME` is
 a comparison target only.
 
+SIGN CLAIM NARROWED — SEE `cumulant_hierarchy_does_not_converge_probe.py`
+-------------------------------------------------------------------------
+The three-body terms below are negative at every `A = 3` ordering and that
+stands. But the hierarchy does not continue that way: at `A = 5` the fifth
+cumulant is **positive**, robustly across 12 bond orderings (`qou-1uul`). Read
+the negative sign as a fact about `c_3`, not as a pattern the higher orders
+follow. (Whether the hierarchy converges is unknown — an earlier claim that it
+does not was withdrawn as a convention artifact.)
+
 -- Ref: [manuscript] bean t7qv
 -- Ref: [probe] no_distance_decay_in_the_trace_probe.py
 -- Ref: [probe] chain_telescopes_and_ordering_sensitivity_probe.py
@@ -155,7 +177,7 @@ from codata_constants import M_E_MEV as _ME  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -164,7 +186,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 30
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 HF = float(_H)
 DPN = float(D_PN)

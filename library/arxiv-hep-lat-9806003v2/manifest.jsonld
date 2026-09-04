@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-lat-9806003v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
+  "contains": [
+    "library/arxiv-hep-lat-9806003v2/sections/sec-000",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-001",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-002",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-003",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-004",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-005",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-006",
+    "library/arxiv-hep-lat-9806003v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-lat-9806003v2",
+    "source_file": "9806003v2.pdf",
+    "source_sha256": "e34739e703aae6db3d32504857979dd7c1ebf459e63f9f644369ea32822db5fb",
+    "pages": 26,
+    "arxiv": {
+      "id": "hep-lat/9806003",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "2 Dec 1998"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

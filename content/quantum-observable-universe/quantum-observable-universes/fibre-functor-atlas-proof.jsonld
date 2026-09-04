@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-fibre-functor-atlas",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:fibre-functor-atlas",
+  "kind": "proof",
+  "title": "Proof of fibre functor atlas",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fibre-functor-atlas"
+  ],
+  "text": "fibre-functor-atlas-proof.md",
+  "provenance": "authored"
+}

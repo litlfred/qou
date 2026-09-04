@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-descartes",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:descartes",
+  "kind": "proof",
+  "title": "Proof of Descartes theorem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-descartes"
+  ],
+  "text": "descartes-proof.md",
+  "provenance": "authored"
+}

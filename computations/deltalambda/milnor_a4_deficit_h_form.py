@@ -43,6 +43,14 @@ from pathlib import Path
 
 import sympy as sp
 
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 
 q, h = sp.symbols("q h", positive=True)
@@ -193,8 +201,16 @@ def main():
 
     # ── Q0 pin: exact rational (the same q0 the committed A=4 producer used, so any
     # difference from its 1.000145898 is PURELY the convention, not the pin). ──
-    Q0 = sp.Rational("2584370278640139188197914756009",
-                     "2328306436538696289062500000000")
+    # q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was an exact-looking
+    # sp.Rational that is NOT the proton pin: it differs from the canonical
+    # value at the 16th significant digit, 2.62e-16 relative. Its denominator
+    # is exactly 10**40 // 2**32, i.e. the pin round-tripped through binary
+    # floating point and then FROZEN AS A RATIONAL -- so it reads as exact
+    # arithmetic forever while carrying float64-scale contamination. That is
+    # the NO-FLOAT64 defect laundered into a type that cannot be suspected of
+    # it, and no q0 grep could see it. Rational() of the decimal string is
+    # exact and needs no round-trip.
+    Q0 = sp.Rational(Q_50_DIGIT_STR)
 
     # ══ 1. A=3 VALIDATION — must reproduce tauBorromean exactly ══════════════════
     tau3 = tau_convention_d(CHI_W3, DIM3, 3)
@@ -309,6 +325,23 @@ def main():
             "All exact sympy over Q(q); ZERO float64. A=3 leg validates the "
             "convention by reproducing tauBorromean exactly before A=4 is touched."),
         "q0_pin_exact_rational": Q0_str,
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin, but from a rational hardcoded in "
+            "this file rather than from q_parameter: "
+            "sp.Rational(2584370278640139188197914756009, "
+            "2328306436538696289062500000000) = 1.1099785827513805166..., "
+            "which agrees with the canonical proton pin "
+            "1.1099785827513808075... to 16 significant digits and then "
+            "diverges, relative deviation 2.62e-16. The denominator is 2^8 * "
+            "5^40, i.e. a decimal-exact rational built from a ~17-digit "
+            "decimal string, so it is not Fraction(float64) but carries "
+            "float64 precision. That is inside the 1 ppQ (1e-15) L1 target "
+            "and far below this probe's own comparison resolution "
+            "(producer_tauL4 = 1.000145898, 9 digits), so no conclusion here "
+            "depends on it. The field name q0_pin_exact_rational is exact "
+            "about the rational, not about the pin."
+        ),
         "outcome": outcome,
         "outcome_a_means": "D_4 is a clean rational function of h alone (like A=3)",
         "outcome_b_means": "D_4 genuinely depends on s=sqrt(q) (NOT the case here)",

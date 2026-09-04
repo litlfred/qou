@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-bar-even-kernel-invariant",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-beta-bar-even-kernel-invariant",
+  "kind": "proof",
+  "title": "Proof of q beta bar even kernel invariant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant"
+  ],
+  "text": "q-beta-bar-even-kernel-invariant-proof.md",
+  "provenance": "authored"
+}

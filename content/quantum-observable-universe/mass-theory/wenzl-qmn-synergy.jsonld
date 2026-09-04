@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-wenzl-qmn-synergy",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wenzl-qmn-synergy",
+  "kind": "proposition",
+  "title": "Wenzl-bridge + q-Murnaghan-Nakayama synergy: $\\mathrm{tr}_M$ on canonical braids in $O(p(n)(\\max\\text{hooks} + n^2))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-y-lambda-recipe-from-partition"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/halverson_ram_1998",
+    "references/ram1991"
+  ],
+  "tags": [
+    "wenzl-bridge",
+    "q-murnaghan-nakayama",
+    "markov-trace",
+    "compute-speedup",
+    "atom-knot-id",
+    "synergy"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.wenzl_qmn_synergy",
+  "text": "wenzl-qmn-synergy.md",
+  "leanSource": "wenzl-qmn-synergy.lean",
+  "provenance": "authored"
+}

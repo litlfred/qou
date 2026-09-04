@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-gl-classical-limit",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:q-gl-classical-limit",
+  "kind": "conjecture",
+  "title": "Classical limit of the $q$-Geometric Langlands correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-q-geometric-langlands"
+  ],
+  "cites": [
+    "references/frenkel2007"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "classical-limit"
+  ],
+  "leanRef": "qou:QOU.QGeometricLanglands.q_gl_classical_limit",
+  "text": "q-gl-classical-limit.md",
+  "provenance": "authored"
+}

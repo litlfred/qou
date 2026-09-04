@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "145a8d854153",
     "ts": "d8ab3b33f2ff",
-    "lean": "575487b7fc66",
-    "lean_statement": "e72790d3c650"
+    "lean": "ec50bfd4f107",
+    "lean_statement": "86085189409b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1324,6 +1324,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "145a8d854153",
+          "ts": "d8ab3b33f2ff",
+          "lean": "ec50bfd4f107"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:20:30.777Z",
+        "reviewed_sha": "c2cae021ba996bee9a1f30fa2011b8c47d7cf275",
+        "severity": "minor",
+        "evidence": "core-levi-form.lean omits three things the md asserts. (1) The (1 + O(hbar_q^2)) factors of md parts (a) and (b) are NOT encoded -- AspectSqIsEigenvalueRatio states the leading-order relation as an exact equality, so md (b) comes out as the exact identity cond = max(aperp/apar, apar/aperp)^2. (2) md (c) is encoded only as the (1)<=>(2) equivalence; clauses (3) contact non-degeneracy, (4) the observability axiom Hom_C(1, Ad(A)) = 0, and (5) clean failure of Frobenius integrability have no Lean. (3) The q > 1 restriction on md (d) is not encoded -- CoreLeviData carries no q, and QuantumPressureBound is stated without it. md (e), the q = 1 degeneration, has no encoding either.",
+        "notes": "The class is re-encoded as data + named propositions and both projections are gone. CoreLeviContext previously carried lamPar, lamPerp, aPar, aPerp, cond, hbar, C0 AND md conclusions (b) and (d) as its own fields; lamPar = lamPerp = aPar = aPerp = cond = 1, hbar = C0 = 0 satisfies every field, so the binder assumed nothing, and core_levi_cond_aspect_bound / core_levi_cond_bound returned a field each. FINDING: one of the two was redundant. The old docstring said cond_aspect_bound 'carries the O(hbar_q^2) correction as an explicit bound'. It carried none -- the class already asserted cond = max lam / min lam and (aperp/apar)^2 = lampar/lamperp EXACTLY, and those two force cond = max(aspect)^2 on the nose, so the bound was 0 <= C0*hbar^2 wearing an absolute value. It is now derived. The other, md (d), is a genuine physical claim and is now an explicit hypothesis whose derived consequence (a bound on the aspect ratio) is a different statement. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2510,6 +2528,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-30T08:13:13.753Z",
+  "updated_at": "2026-08-31T11:21:16.155Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

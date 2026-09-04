@@ -1298,6 +1298,52 @@ def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
     return matrices
 
 
+# ── Rust LP-accumulator kernel (qou-sv7h) ───────────────────────────────
+# `pyhecke_native.lp_accumulator_step_traces_mpfr` performs the per-partition
+# chain accumulation entirely in Rust at MPFR precision, building its seminormal
+# matrices via `seminormal_matrices_mpfr` -- the family that satisfies the braid
+# relation (the Python `_build_ysn_matrices` family does NOT; see
+# docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md and
+# computations/audits/ysn_braid_relation_audit.py).
+#
+# Verified against a pure-mpmath reference on the SAME matrices to 7.09e-48:
+# computations/audits/lp_accumulator_kernel_gate.py.
+#
+# Optional by design: a bare container has no pyhecke_native, and this module
+# must still import there. When absent the original Python path runs unchanged.
+try:                                                    # pragma: no cover
+    import pyhecke_native as _PHN
+    _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+except ImportError:                                     # pragma: no cover
+    _PHN = None
+    _HAS_LP_KERNEL = False
+
+
+def _lp_kernel_steps(partition, chains):
+    """Per-step (trace, log_norm) for one partition, computed in Rust.
+
+    Returns None when the kernel is unavailable, so callers fall back.
+    Coefficients cross the boundary as decimal STRINGS: nothing narrows to f64.
+
+    UNWIRED as of the 2026-09-04 merge. `unified_iterative_correction` and
+    `atom_character_raw` both route through `_rust_chi_prefix_traces` /
+    `_rust_chi_trace` instead, which compute the same quantity from the same
+    Rust seminormal builder without materialising a dim x dim MPFR matrix.
+    Kept because it is a working, string-boundary (no-f64) kernel and the
+    only one that returns the rescale's `log_norm` explicitly; see the merge
+    notes in `unified_iterative_correction`.
+    """
+    if not _HAS_LP_KERNEL:
+        return None
+    from mpmath import mp as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    out = _PHN.lp_accumulator_step_traces_mpfr(
+        list(partition),
+        [[(str(c), str(d), g) for c, d, g in ch] for ch in chains],
+        _Q50, 50)
+    return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
+
+
 def _matmul_dim(A, B, dim):
     """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8.
 
@@ -1780,6 +1826,22 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     per_step = []
     cumul_total = 0.0
 
+    # MERGE 2026-09-04: `origin/main` grew a SECOND Rust precompute here,
+    # filling `s['kernel_steps']` from `_lp_kernel_steps`. It is the same
+    # quantity as `s['traces']` above -- both call the same Rust seminormal
+    # builder, `seminormal_matrices_mpfr`, so they cannot disagree, and the
+    # accumulation reads `log_norm + log|tr|` either way. Only one can be
+    # wired, and running both would pay the (larger) LP kernel per partition
+    # for a result nothing reads.
+    #
+    # `s['traces']` is kept as the live path: `chi_q_atomic_prefix_traces_mpfr`
+    # propagates one basis vector at a time and never materialises dim x dim,
+    # whereas `lp_accumulator_step_traces_mpfr` holds a dim x dim MPFR matrix
+    # and rescans it every step -- dim reaches 2310 on fe56. It is also the
+    # path the current `hadron-knot-table.witness.json` (19/19) was regenerated
+    # from. `_lp_kernel_steps` stays defined and unwired; see the note at the
+    # `s['traces'] is not None` branch below.
+
     # ── Pass 1: forward accumulation ──────────────────────────
     for kk in range(A):
         nuc = ordering[kk]
@@ -1828,6 +1890,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                 # No running matrix, so no rescaling — MPFR's exponent range
                 # makes the `m_max > 1e80` guard unnecessary and `log_norm`
                 # stays 0.
+                #
+                # MERGE 2026-09-04: `origin/main`'s alternative read
+                # `s['kernel_steps'][kk]` here, unpacking `(tr_run,
+                # s['log_norm'])` because its kernel replicates the rescale in
+                # Rust. Value-identical -- `log_cur` is `log_norm + log|tr|`
+                # on both -- so the choice is cost, not correctness; see the
+                # note above the accumulation loop.
                 tr_run = s['traces'][kk]
             elif s['sparse']:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
@@ -1978,8 +2047,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             per_step[-1]['n_tight_final'] = n_tight
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
-        return gated_total, per_step
-    return gated_total
+        return float(gated_total), per_step
+    # float, as this function has always returned. See the note on
+    # binding_energy's return: the cast is at the public boundary rather than at
+    # the kernel, so the accumulation keeps its precision, and it costs nothing
+    # because math.log already narrows inside the loop.
+    return float(gated_total)
 
 
 def _jet_witness_path(Z, N, jet, witness_dir):
@@ -2798,7 +2871,23 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
         B += sdp_contrib
     if frobenius:
         B += binding_from_frobenius_pairing(Z, N)
-    return B
+    # Public contract is a float, and has always been. The Rust kernel makes the
+    # accumulator carry mpf internally, and an mpf reaching a witness raises
+    # `TypeError: Object of type mpf is not JSON serializable` at
+    # `hadron_knot_table.py`'s `round(B, 4)` (Copilot, #6427 — verified).
+    #
+    # The cast belongs HERE, not at the kernel boundary as suggested: coercing
+    # the kernel's output would discard the 50-dps the kernel exists to carry,
+    # through the whole accumulation. Casting at the public return keeps the
+    # precision everywhere it can still be used.
+    #
+    # It costs nothing measurable either way: `log_cur = s['log_norm'] +
+    # math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
+    # (math.log returns a Python float whatever it is handed), so this path is
+    # float64-limited well upstream of here. That narrowing is a real,
+    # PRE-EXISTING precision defect and is tracked separately — it is not
+    # introduced, or fixed, by this cast.
+    return float(B)
 
 
 def q_value_beta(Z_parent, N_parent):

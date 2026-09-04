@@ -7,6 +7,7 @@ section_number: null
 pages: 35-35
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 This chapter provides a crash course on generating functions and their uses
 in enumeration. For a more lengthy introduction, we recommend [Wil06] –

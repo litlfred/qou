@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cor-ma1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "SYL VIE CORTEEL AND OLIVIER MALLET",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/cor-ma1/blocks/prose-sec-016",
+    "library/cor-ma1/blocks/prop-sec-016-01",
+    "library/cor-ma1/blocks/prop-sec-016-02",
+    "library/cor-ma1/blocks/prop-sec-016-03",
+    "library/cor-ma1/blocks/prop-sec-016-04"
+  ],
+  "derivedFrom": "library/cor-ma1/manifest",
+  "sourceDocument": "library/cor-ma1/manifest",
+  "provenance": "ingested"
+}

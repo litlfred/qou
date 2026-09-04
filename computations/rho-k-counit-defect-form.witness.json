@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:52:02.100724+00:00",
-  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
+  "computedAt": "2026-09-04T03:47:09.548255+00:00",
+  "commitSha": "cb2197ab70f638c1bbedbf7b6850b0faaa071a10",
   "assertions": [
     {
       "name": "defect_structure_fixes_sign_all_isotopes",
@@ -19,11 +19,10 @@
   ],
   "allPassed": true,
   "durationMs": 0,
-  "durationMsBaseline": "builder-construction",
   "computation": "rho-k-counit-defect-form",
   "scriptFile": "rho_k_counit_defect_form.py",
   "scriptHash": "da5ddb08fedb",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -68,7 +67,7 @@
         "counit_defect_sum_dchi": "-709.667399638",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "42.755",
-        "trM_defect_sum_y_dchi": "-0.888536126835",
+        "trM_defect_sum_y_dchi": "-0.888536126834",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.0535312",
         "target_minus_B_over_me": "-16.59846853"
@@ -78,7 +77,7 @@
         "counit_defect_sum_dchi": "-819.960129459",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "54.2882",
-        "trM_defect_sum_y_dchi": "-0.892908574862",
+        "trM_defect_sum_y_dchi": "-0.892908574858",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.059118",
         "target_minus_B_over_me": "-15.10382749"
@@ -88,7 +87,7 @@
         "counit_defect_sum_dchi": "-28487.6227537",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "514.465",
-        "trM_defect_sum_y_dchi": "-1.11980900688",
+        "trM_defect_sum_y_dchi": "-1.11980900689",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.0202229",
         "target_minus_B_over_me": "-55.37324482"

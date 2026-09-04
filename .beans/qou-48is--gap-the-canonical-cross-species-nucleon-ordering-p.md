@@ -304,3 +304,25 @@ Audit: `docs/audits/2026-08-09-ground-state-ordering-truth-value.md`.
 is not: which ordering production should use is still underived and is the
 owner's call. No production behaviour was changed and no published number
 moved by #4855.
+
+## 2026-09-04 — NARROWED: real for tr_M, nearly irrelevant for B
+
+This bean's measurement stands: `tr_M` tracks the interface multiset and moves
+20-36 % across orderings of the same `(Z,N)`. But for the BINDING law that
+dependence almost cancels. Measured on 2548 AME nuclides
+(`qbeta_tower_log_z_and_roast_probe.py`), p5-p95 residual of
+`B = E_0.log(tr_free/tr_atom)`:
+
+    segregated  p..p n..n   (atom_braid_word_3A)        1.22497
+    alternating p n p n ..  (build_atom_nf_exact)       1.23227
+    all-pairs, renormalised to A-1 bonds                1.22624
+
+within **0.6 %** of each other. And the first-order asymmetry coefficient in
+`e = q-1` is **exactly `N - Z` for all three** (all-pairs 31.76 vs 32 at
+Z=50,N=82) — so the isospin content of the law is layout-INDEPENDENT at first
+order. The layout choice moves `tr_M`; it does not move `B`.
+
+**Worth recording separately:** the two canonical producers genuinely disagree.
+`atom_braid_word_3A` uses `['p']*Z + ['n']*N` (segregated); `build_atom_nf_exact`
+builds an ALTERNATING ordering. That is a live inconsistency for any `tr_M`
+consumer even though it is nearly invisible to `B`.

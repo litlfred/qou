@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:22:23.707097+00:00",
-  "commitSha": "2d63037a695c91e2cc29e069a478443103fdcee7",
+  "computedAt": "2026-09-03T22:54:07.872478+00:00",
+  "commitSha": "afd363f4b81a718f76087553af0c348b7c092c2c",
   "assertions": [
     {
       "name": "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 77,
   "computation": "gap-a3-deuteron-mixed-plethystic-probe",
   "scriptFile": "gap_a3_deuteron_mixed_plethystic_probe.py",
-  "scriptHash": "f32970c05a21",
-  "scriptCommitSha": "0b9d68317007a9bcb8cbf27f45bb5f09a883a53b",
+  "scriptHash": "b8882b7d567c",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -163,5 +163,7 @@
       }
     ],
     "verdict": "REFUTED"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

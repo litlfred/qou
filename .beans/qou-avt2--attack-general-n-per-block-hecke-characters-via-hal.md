@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-08-26T08:03:14Z
+updated_at: 2026-09-02T21:39:56Z
 ---
 
 Newly enabled by the owner's 2026-08-26 Murnaghan-Nakayama upload drop
@@ -74,3 +74,30 @@ SYMBOLIC evaluation for general lambda.
 Un-defer F3 properly: wire the symbolic path into
 `hecke_characters.chi_lambda_braid(precision='symbolic_q')` instead of raising,
 so consumers get it through the ordinary entry point. Separate bean.
+
+
+## 2026-09-02 — cross-link from qou-0y6h / qou-kwoa (no action needed here)
+
+Your symbolic chi_lambda is the supplier for a second consumer, recorded so the
+dependency is visible from this side too.
+
+qou-0y6h measured that the blocker for det(twGram) at rank >= 2 — the diagonal
+structure constant [T_u T_w : T_w] of the T_w basis — is NOT determined by
+length, cycle type, or the pair (refuted with an S_5 witness). It is a character
+sum, and computations/hecke/tw_trace_equals_character_sum_probe.py verifies
+
+    tr(L_{T_u}) = sum_lambda d_lambda chi_lambda(T_u)
+
+for every element of S_3, as exact rational functions, computing the two sides
+by independent routes: the T_w multiplication rule (QOU/Hecke/TwMul.lean, which
+knows nothing about Young tableaux) against your seminormal engine (which knows
+nothing about T_w). That is a cross-validation of both.
+
+CONVENTION BRIDGE, and the identity is false without it:
+  T_w side (QOU.Hecke.IwahoriHecke) : sigma^2 = (Q - 1) sigma + Q
+  hecke_characters (seminormal)     : sigma^2 = (q - 1/q) sigma + 1
+  => Q = q^2, sigma_mine = q sigma_theirs, tr = q^length(u) * sum d chi.
+The engine wants a signed 1-BASED word: [(1, i+1), ...].
+
+No ask. If chi_lambda_braid's normalisation or word convention changes, ping
+qou-kwoa — that probe asserts the identity and will fail loudly.

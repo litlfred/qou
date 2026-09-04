@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-061",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Back to Examples",
+  "pageStart": 82,
+  "pageEnd": 85,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-061",
+    "library/2018sorus020/blocks/thm-sec-061-01",
+    "library/2018sorus020/blocks/thm-sec-061-02"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

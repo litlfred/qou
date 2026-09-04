@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-topological-field-ansatz",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:topological-field-ansatz",
+  "kind": "remark",
+  "title": "Topological ansatz and field character",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-topological-mass-formula"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-topological-mass-formula",
+  "tags": [
+    "mass",
+    "topology",
+    "particle",
+    "knot",
+    "ansatz"
+  ],
+  "text": "topological-field-ansatz.md",
+  "provenance": "authored"
+}

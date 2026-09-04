@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.4538v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The exponential-logarithmic equivalence classes of surreal numbers",
+  "contains": [
+    "library/arxiv-1203.4538v1/sections/sec-000",
+    "library/arxiv-1203.4538v1/sections/sec-001",
+    "library/arxiv-1203.4538v1/sections/sec-002",
+    "library/arxiv-1203.4538v1/sections/sec-003",
+    "library/arxiv-1203.4538v1/sections/sec-004",
+    "library/arxiv-1203.4538v1/sections/sec-005",
+    "library/arxiv-1203.4538v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1203.4538v1",
+    "source_file": "1203.4538v1.pdf",
+    "source_sha256": "5e44909e355c78d6de43c56b420491a7dc92e577bbada483a116276cd97b111a",
+    "pages": 15,
+    "arxiv": {
+      "id": "1203.4538",
+      "version": "1",
+      "primary_class": "math.AC",
+      "stamp_date": "20 Mar 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

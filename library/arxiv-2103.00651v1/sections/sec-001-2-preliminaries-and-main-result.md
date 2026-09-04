@@ -7,6 +7,7 @@ section_number: 2
 pages: 2-3
 source_pdf: 2103.00651v1.pdf
 source_sha256: c5505d3e4891168e
+doc_brief: "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu — We derive two upper bounds for the probability of deviation of a vect or-valued"
 ---
 Let (X, dX) be a Polish space and ρ be a (Borel) probability measure on ( X, dX). The triplet
 (X, dX, ρ) deﬁnes a metric probability space in the sense of Gromov Rag insky and Sason

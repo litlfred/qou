@@ -7,6 +7,7 @@ section_number: 1
 pages: 2-2
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 In [1] we have pursued the work of Podles-Woronowicz [3] and Pusz [4 ]: we have shown that
 the unitary representations of Uq(sl(2, C)R) can be nicely expressed in terms of one variable

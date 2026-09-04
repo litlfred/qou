@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1107.1559v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quaternion-Octonion SU (3) Flavor Symmetry",
+  "contains": [
+    "library/arxiv-1107.1559v1/sections/sec-000",
+    "library/arxiv-1107.1559v1/sections/sec-001",
+    "library/arxiv-1107.1559v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1107.1559v1",
+    "source_file": "1107.1559v1.pdf",
+    "source_sha256": "b9f867ae7120eda6f5b1f6aa6e5765371171f65fe5aa40ebe61f23ff5709f07b",
+    "pages": 12,
+    "arxiv": {
+      "id": "1107.1559",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "8 Jul 2011"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

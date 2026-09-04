@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1112.0030v2/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Setting the stage",
+  "pageStart": 1,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-1112.0030v2/blocks/prose-sec-000",
+    "library/arxiv-1112.0030v2/blocks/rem-sec-000-01",
+    "library/arxiv-1112.0030v2/blocks/conj-sec-000-02"
+  ],
+  "derivedFrom": "library/arxiv-1112.0030v2/manifest",
+  "sourceDocument": "library/arxiv-1112.0030v2/manifest",
+  "provenance": "ingested"
+}

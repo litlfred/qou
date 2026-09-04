@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v12-n2-p04-s/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Statement of the result",
+  "pageStart": 8,
+  "pageEnd": 13,
+  "contains": [
+    "library/agt-v12-n2-p04-s/blocks/prose-sec-003",
+    "library/agt-v12-n2-p04-s/blocks/thm-sec-003-01",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-003-02",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-003-03",
+    "library/agt-v12-n2-p04-s/blocks/cor-sec-003-04",
+    "library/agt-v12-n2-p04-s/blocks/ex-sec-003-05",
+    "library/agt-v12-n2-p04-s/blocks/lem-sec-003-06",
+    "library/agt-v12-n2-p04-s/blocks/rem-sec-003-07"
+  ],
+  "derivedFrom": "library/agt-v12-n2-p04-s/manifest",
+  "sourceDocument": "library/agt-v12-n2-p04-s/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-dictionary-flavor-layer",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:dictionary-flavor-layer",
+  "kind": "remark",
+  "title": "The knot--particle--force dictionary: flavor supplement",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-particle-dictionary",
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments",
+    "papers/quantum-observable-universe/blocks/prop-meson-octet-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+    "papers/quantum-observable-universe/blocks/prop-color-su3-from-g2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+  "text": "dictionary-flavor-layer.md",
+  "provenance": "authored"
+}

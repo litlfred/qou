@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-10
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 of multivariate entire functions studied by Levin [50], the following deﬁnition was
 m a d ei n[ 7 ,8 ,9 ]( s e ea l s o[ 1 0 ,1 1 ] ) .

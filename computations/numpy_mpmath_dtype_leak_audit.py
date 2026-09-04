@@ -376,14 +376,30 @@ def main() -> int:
 
     findings: dict[str, list] = {}
     param_fill: dict[str, list] = {}
+    unparseable: list[tuple[str, int, str]] = []
     scanned = 0
     for p in sorted(ROOT.rglob("*.py")):
         if "_deprecated" in p.parts or ".lake" in p.parts:
             continue
+        rel = p.relative_to(ROOT).as_posix()
         try:
             text = p.read_text(encoding="utf-8")
-        except Exception:
+        except Exception as e:
+            unparseable.append((rel, 0, f"unreadable: {type(e).__name__}: {e}"))
             continue
+        # Report a file this gate cannot parse. `scan_text` returns [] for one,
+        # which is indistinguishable from clean -- the silence that let bean
+        # qou-brkp's two broken producers pass this gate family for a month.
+        # Only files in scope (both imports present) are worth reporting.
+        if (re.search(r"^\s*(?:import numpy|from numpy)", text, re.M)
+                and re.search(r"^\s*(?:import mpmath|from mpmath|import mpmath as)",
+                              text, re.M)):
+            try:
+                ast.parse(text)
+            except SyntaxError as e:
+                unparseable.append((rel, e.lineno or 0, f"SyntaxError: {e.msg}"))
+            except Exception as e:
+                unparseable.append((rel, 0, f"{type(e).__name__}: {e}"))
         hits = scan_text(text)
         if hits:
             findings[p.relative_to(ROOT).as_posix()] = hits
@@ -394,8 +410,17 @@ def main() -> int:
             scanned += 1
 
     if args.json:
-        print(json.dumps(findings, indent=2))
+        print(json.dumps({"findings": findings,
+                          "unparseable": unparseable}, indent=2))
         return 0
+
+    if unparseable:
+        print("=" * 74)
+        print("BLIND SPOTS — in scope (numpy + mpmath) but the gate could not")
+        print("parse them, so their dtype-leak status is UNKNOWN, not clean")
+        print("(bean qou-brkp):")
+        for rel, ln, msg in unparseable:
+            print(f"    {rel}:{ln}  {msg}")
 
     print("=" * 74)
     print("NUMPY/MPMATH DTYPE-LEAK AUDIT — silent BLAS-to-Python demotions")

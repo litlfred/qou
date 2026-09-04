@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0406276v1/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "References",
+  "pageStart": 38,
+  "pageEnd": 40,
+  "text": "../sections/sec-000-references.md",
+  "derivedFrom": "library/0406276v1/manifest",
+  "sourceDocument": "library/0406276v1/manifest",
+  "provenance": "ingested"
+}

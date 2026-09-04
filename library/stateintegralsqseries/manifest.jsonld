@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/stateintegralsqseries/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "FROM STATE INTEGRALS TO q-SERIES",
+  "contains": [
+    "library/stateintegralsqseries/sections/sec-000",
+    "library/stateintegralsqseries/sections/sec-001",
+    "library/stateintegralsqseries/sections/sec-002",
+    "library/stateintegralsqseries/sections/sec-003",
+    "library/stateintegralsqseries/sections/sec-004",
+    "library/stateintegralsqseries/sections/sec-005",
+    "library/stateintegralsqseries/sections/sec-006",
+    "library/stateintegralsqseries/sections/sec-007",
+    "library/stateintegralsqseries/sections/sec-008",
+    "library/stateintegralsqseries/sections/sec-009",
+    "library/stateintegralsqseries/sections/sec-010",
+    "library/stateintegralsqseries/sections/sec-011",
+    "library/stateintegralsqseries/sections/sec-012",
+    "library/stateintegralsqseries/sections/sec-013",
+    "library/stateintegralsqseries/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "stateintegralsqseries",
+    "source_file": "state.integrals.qseries.pdf",
+    "source_sha256": "a5e86443f35e21c0f0c5f6b515379790b13e99d5390e555f29a04997cac2f1fd",
+    "pages": 16,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9211141v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "ITD 92/93–9",
+  "contains": [
+    "library/arxiv-hep-th-9211141v1/sections/sec-000",
+    "library/arxiv-hep-th-9211141v1/sections/sec-001",
+    "library/arxiv-hep-th-9211141v1/sections/sec-002",
+    "library/arxiv-hep-th-9211141v1/sections/sec-003",
+    "library/arxiv-hep-th-9211141v1/sections/sec-004",
+    "library/arxiv-hep-th-9211141v1/sections/sec-005",
+    "library/arxiv-hep-th-9211141v1/sections/sec-006",
+    "library/arxiv-hep-th-9211141v1/sections/sec-007",
+    "library/arxiv-hep-th-9211141v1/sections/sec-008",
+    "library/arxiv-hep-th-9211141v1/sections/sec-009",
+    "library/arxiv-hep-th-9211141v1/sections/sec-010",
+    "library/arxiv-hep-th-9211141v1/sections/sec-011",
+    "library/arxiv-hep-th-9211141v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9211141v1",
+    "source_file": "9211141v1.pdf",
+    "source_sha256": "bd9fbd329884c26e9327a403455c9cc5fbd8cb3f2916830d55e6f06d645e2ee6",
+    "pages": 34,
+    "arxiv": {
+      "id": "hep-th/9211141",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "1 Dec 1992"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

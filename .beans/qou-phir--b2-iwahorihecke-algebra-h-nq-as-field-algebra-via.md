@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-24T16:21:38Z
-updated_at: 2026-08-31T05:53:25Z
+updated_at: 2026-09-04T10:36:12Z
 ---
 
 ## Worked 2026-08-30 — the ALGEBRA is built; the basis and cell modules are not
@@ -1099,3 +1099,191 @@ remaining piece and tells the formaliser exactly what to prove.
 
 **next**: formalise `l(d(t)) = l(d(g)) + l(w)` at the first descent node. Then the Garnir
 tableau itself as a Lean definition, then 3.14's dominance induction.
+
+## Length additivity — CLOSED (PR #6444, 2026-09-03)
+
+`length_mul_eq_add_iff` is proved sorry-free in
+`QOU/Hecke/LengthAdditive.lean`:
+
+    ℓ(u * v) = ℓ(u) + ℓ(v)  ↔  invSet v ⊆ invSet (u * v)
+
+i.e. length is additive exactly when `u` undoes none of `v`'s inversions.
+Via the counting identity, also proved:
+
+    ℓ(u) + ℓ(v) = ℓ(u * v) + 2 · #{p ∈ Inv v : p ∉ Inv (u * v)}
+
+**STABLE — this is a Mathlib gap, not a Murphy-only stepping stone.** Mathlib
+has subadditivity (`CoxeterSystem.length_mul_le`) and one-sided bounds, but no
+equality criterion (checked in `GroupTheory/Coxeter/Length.lean`).
+`finPairsLT` does not substitute: sigma-typed scaffolding for `sign`, carries
+a parity not a count. So the lemma is reusable well beyond this arc.
+
+**STABLE — the enabling fact is `length_eq_invCount`** (`QOU.Hecke.PermLength`,
+already on main): Coxeter length IS the inversion count. That is what converts
+the obligation from Coxeter theory into combinatorics, and Mathlib lacks it too.
+Any future length-additivity work should start there rather than from `length`.
+
+**TRAP — `set` on a membership predicate breaks `rw`.** Binding
+`a := fun p => p ∈ invSet v` with `set ... with ha` and then `rw [ha]` fails
+with *"motive is not type correct"*: the `Finset.filter` carries a
+`DecidablePred` instance depending on the abstracted predicate. Symptom is an
+`Application type mismatch` naming `decidableMem`. Fix used: never abstract the
+predicate — work with the difference sets `D₁ := (invSet v).filter (· ∉ invSet (u*v))`
+directly, prove the symmetric-difference decomposition by `ext`, and finish with
+`filter_card_add_filter_neg_card_eq_card` + `filter_mem_eq_inter` + `omega`.
+
+**Verification** (CI is dispatch-only; the agent's own check is the gate):
+`lean`-direct exit 0 on the new file and on `PermLength.lean`, zero warnings;
+`#print axioms` on all four new results shows only
+[propext, Classical.choice, Quot.sound] — no sorryAx; zero `sorry` in the file.
+
+Non-vacuity is committed in-file as `decide` guards rather than checked once:
+the criterion is false for the collapsing `s₀ * s₀`, true for the reduced
+`s₀ * s₁`, and the defect there is genuinely 2. Both sides of the iff occur.
+
+## Mathas 3.13 length half COMPLETE (2026-09-04)
+
+Four PRs, all merged, all sorry-free:
+
+| PR | result |
+|---|---|
+| #6444 `a2edbcffb7` | `length_mul_eq_add_iff` — additivity iff no inversion undone (a Mathlib gap) |
+| #6527 `fd7f900170` | `d(t)`, the tableau<->perm bijection, `refTab` closed form, the length bridge |
+| #6557 `2c37ac54b1` | `g_{ij}` as an interval ROTATION, descent nodes, additivity AT a node |
+| #6598 `5ff6492fac` | descent-node EXISTENCE; `exists_garnir_length_additive` composes both halves |
+
+**Two findings that made it tractable, both from measuring BEFORE formalizing:**
+
+1. **`g_{ij}` is a cyclic rotation of the label interval `[a,b]` by `j+1`**, not
+   a placement procedure (108/108, all partitions n=3..7). A rotation is
+   invertible by construction, so bijectivity was FREE — no surjectivity
+   obligation, no sorting argument.
+2. **Additivity holds at EVERY descent node**, not just the first (3685/3685
+   over 1789 tableaux, n=3..6). So the theorem needs NO minimality hypothesis —
+   stronger than Mathas states AND easier to prove. Mathas asks for 'some'; the
+   prior corpus probe reported 'the first'; both understate it.
+
+**STABLE — the criterion.** `length_mul_eq_add_iff` reduces additivity to
+inversion containment, which unfolds (via the rotation's inversion set) to
+`t(i,c) > t(i+1,c')` for c>=j, c'<=j, which row-standardness chains out of the
+single descent inequality. That chain IS the proof.
+
+**TRAP — omega holds `rowLen i + 1 - (j+1)` as ONE OPAQUE ATOM**, so
+`rowPrefix_succ` never reaches the constraint set. Rewrite the Nat subtraction
+first. Diagnosed with `trace_state`.
+
+**TRAP — `set x := ...` hides the defining equation from omega/rw.** Hit twice
+(#6557 `p.1 = rowPrefix i + c`; #6598 the pattern lemmas). Use an explicit
+`obtain <c, hc> : exists c, ... = ... + c`, or helper lemmas over the patterns.
+
+**TRAP — `subst h` FAILS when both sides are function applications** (e.g.
+`colPattern t l = colPattern t l'`). Route the transport through a lemma whose
+variable is a genuine variable; there subst fires.
+
+## Next front OPENED: PR #6612 (parabolic pairing)
+
+`HeckeCellular` names its own blocker: x_lambda for a general Young subgroup
+needs the w <-> w.s_i pairing over `Perm (Fin (n+1))`, and says 'the blocker is
+the combinatorics, not the algebra'. #6612 supplies that: `length_swap_dichotomy`
+(exactly one of the pair is longer, by one), `mulSwap` as a fixed-point-free
+involution, and the ascending/image split. x_lambda itself is NOT defined and the
+eigenvector property is NOT proved.
+
+## CORRECTION to my own #6614 (2026-09-04)
+
+**I proved a Perm-specific specialization of lemmas Mathlib already has
+generically, and described it as supplying the blocker. That overstated it.**
+
+Mathlib carries `CoxeterSystem.length_mul_simple` (the two-branch length
+dichotomy) and `length_mul_simple_ne` (the two are never equal), for ANY Coxeter
+system. `QOU.Hecke.TwBasis.length_flip` — already on main, in the very file
+defining `rsFun` — already packages them. So #6614's `length_swap_cases` and
+`length_swap_ne` are specializations, not new results.
+
+**What in #6614 survives as additive:** `mulSwap` as a named involution,
+`mulSwap_ne` (fixed-point-freeness, proved directly rather than via lengths),
+the ascending/image split, and `mulSwap_mem` (subgroup closure is free). Thin,
+but not nothing. Nothing in it is WRONG — it compiles sorry-free — the defect is
+in how I priced it.
+
+**Root cause: I grepped the CORPUS for prior work and never grepped MATHLIB.**
+The corpus-grep checklist has six paths and Mathlib is not one of them, because
+it is normally reached through the Lean tooling — which was down this session
+(lean-lsp CONNECT_TIMEOUT throughout, so no `leansearch`/`loogle`). A dead
+search tool silently removed a whole search surface, and I did not notice its
+absence. **Grep `.lake/packages/mathlib` directly when the LSP is down.**
+
+## What is genuinely NOT in Mathlib — PR #6616
+
+The pair identity, which is HeckeCellular's own sentence:
+
+    rsFun_add_rsFun : rsFun i w + rsFun i (w * s_i)
+                        = q . (single w 1 + single (w * s_i) 1)
+
+Stated for an ARBITRARY Coxeter system. The dichotomy it rests on is Mathlib's;
+the CONSEQUENCE — that the two branches collapse to q times the pair, with the
+(q-1) and the 1 combining exactly — is not, and is the step a sum over a Young
+subgroup is reorganised by. It holds over any CommRing: nothing divides by 2,
+which the naive 'sum equals its own reindexing' argument would need.
+
+## RETRACTED: PR #6626 and its follow-on were DUPLICATES (2026-09-04)
+
+**Both `ParabolicSum.lean` and an unpushed `ParabolicEigen.lean` re-derived results
+that have been on `main` since 2026-08-30.** Removed; #6626 closed.
+
+What is already there, in `QOU/BraidKnot/HeckeMurphy.lean`, sorry-free (0 code
+sorries; the 5 grep hits are the WORD in docstrings, a miscount a previous agent
+already made and corrected in that same file's prose):
+
+| I wrote | already on main | model |
+|---|---|---|
+| `rsFun_add_rsFun` | `σ_mul_Tw_pair` | mine free-module, theirs the algebra |
+| `mul_simple_ne` | `mul_sw_ne` | — |
+| `mul_simple_mul_simple` | `mul_sw_sw` | — |
+| `Rs_parabolicSum` | `σ_mul_murphySum` | same `Finset.sum_involution` proof, line for line |
+| `Rs_parabolicSum_subgroup` | `σ_mul_murphySum_subgroup` | — |
+| — | `murphySum_mul_σ{,_subgroup}` | right action, which I did not even have |
+| — | `HeckeMurphyYoung.σ_mul_murphySum_young` | the GENUINE `x_λ` on a tableau's row stabiliser |
+
+Theirs is strictly stronger: stated in `IwahoriHecke K q n` rather than in the free
+module `W →₀ R`, both-sided, and connected to an actual Young subgroup. The only
+thing mine had that theirs does not is generality in the Coxeter system — which
+nothing in the corpus consumes.
+
+**Root cause: a STALE DOCSTRING, and my second miss of the same kind in one session.**
+`HeckeCellular.lean`'s §"Toward the Murphy basis" said the pairing argument "is the
+open work". It was superseded by `5f38f5286b` **the same day it was written**
+(`a4e94c8b11`, both 2026-08-30) and never updated. I read it and built on it.
+
+The corpus-grep checklist would have caught this — grepping `x_lambda|parabolicSum`
+in `content/**/*.lean` is path 2 — and I DID run that grep. It returned
+`HeckeCellular.parabolicSym` and I stopped there, because that was the file I had
+already read and it matched the story I had. **A grep that confirms your prior is
+where the checklist fails; the hit to chase is the one you did not expect.**
+`murphySum` was one file away and I never searched for it under any name.
+
+The `HeckeCellular` docstring is now corrected in place, pointing at `HeckeMurphy`,
+so the next agent does not repeat this.
+
+## WHERE THE ARC ACTUALLY STANDS
+
+The length half of Mathas 3.13 (#6444, #6527, #6557, #6598) is **not** wasted — it is
+input to the step that IS open. `HeckeMurphyYoung.lean` §9 names it exactly:
+
+> spanning reduces to straightening alone ... **Lemma 3.14** straightens row-standard
+> pairs to standard ones, moving up in dominance ... **the corpus has no row-standard
+> tableau type.** That gap is the whole of step 3.
+
+Steps 1 and 2 of spanning are done (`basisTwOfField`;
+`span_murphySum_one_conjugates_eq_top`). `basisOfSpanning` /
+`murphyBasisOfSpanning` take spanning as an explicit hypothesis, correctly labelled
+"conditional-proved ≠ premise-established".
+
+**Next, in order:**
+1. A row-standard tableau **type** (`IsRowStandard` exists in `GarnirTableau.lean` as
+   a predicate; the family Mathas indexes by needs the subtype + its `Fintype`).
+2. The straightening step, using `exists_garnir_length_additive` (#6598): at a descent
+   node the Garnir permutation's inversions sit inside `d(t)`'s, so
+   `ℓ(g·d(t)) = ℓ(g) + ℓ(d(t))`, hence `T_g · T_{d(t)} = T_{g d(t)}` — which is the
+   multiplicativity straightening runs on.
+3. Dominance monotonicity, then discharge `basisOfSpanning`'s hypothesis.

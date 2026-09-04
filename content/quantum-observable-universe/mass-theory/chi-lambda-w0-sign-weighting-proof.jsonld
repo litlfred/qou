@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-chi-lambda-w0-sign-weighting",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:chi-lambda-w0-sign-weighting",
+  "kind": "proof",
+  "title": "Proof of chi lambda w0 sign weighting",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chi-lambda-w0-sign-weighting"
+  ],
+  "text": "chi-lambda-w0-sign-weighting-proof.md",
+  "provenance": "authored"
+}

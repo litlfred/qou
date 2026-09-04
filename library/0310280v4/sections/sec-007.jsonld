@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310280v4/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The failure of transversal simplicity for certain closed 3–braids",
+  "pageStart": 24,
+  "pageEnd": 26,
+  "contains": [
+    "library/0310280v4/blocks/prose-sec-007",
+    "library/0310280v4/blocks/thm-sec-007-01",
+    "library/0310280v4/blocks/thm-sec-007-02"
+  ],
+  "derivedFrom": "library/0310280v4/manifest",
+  "sourceDocument": "library/0310280v4/manifest",
+  "provenance": "ingested"
+}

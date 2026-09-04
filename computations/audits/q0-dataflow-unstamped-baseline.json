@@ -1,0 +1,19 @@
+{
+  "_schema": "q0-dataflow-unstamped-baseline/v1",
+  "_note": "Anchor-reader witnesses carrying neither a q0 stamp nor a q0 literal, so no q0 gate can see them. DRAINS ONLY. To remove an entry, stamp its producer (q0_anchor=... at the stamp site) and re-run with --write-baseline.",
+  "unstamped": [
+    "computations/chi-lambda-multi-block-first-measurement.witness.json",
+    "computations/habiro-borromean-cyclotomic-coefficients.witness.json",
+    "computations/hydrogen-qshuffle-compound.witness.json",
+    "computations/lambda-scale-derivation-probes-123.witness.json",
+    "computations/probes/qbeta-c3-per-block-categorical-probe.witness.json",
+    "computations/qbeta/qbeta-c3-barodd-determined-solve.witness.json",
+    "computations/qbeta/qbeta-ck-sseries-exact-rational.witness.json",
+    "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
+    "computations/qbeta/qbeta-ladder-convention-fee.witness.json",
+    "computations/qbeta/qbeta-markov-trace-steps-4-5.witness.json",
+    "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
+    "computations/qbeta/qbeta-per-block-symbolic-decomposition.witness.json",
+    "computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json"
+  ]
+}

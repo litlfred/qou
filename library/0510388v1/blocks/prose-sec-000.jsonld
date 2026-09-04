@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0510388v1/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Magnetic fields in R",
+  "pageStart": 8,
+  "pageEnd": 17,
+  "text": "../sections/sec-000-3-magnetic-fields-in-r.md",
+  "derivedFrom": "library/0510388v1/manifest",
+  "sourceDocument": "library/0510388v1/manifest",
+  "provenance": "ingested"
+}

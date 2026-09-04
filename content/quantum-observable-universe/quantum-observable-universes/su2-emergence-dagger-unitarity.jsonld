@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-su2-emergence-dagger-unitarity",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:su2-emergence-dagger-unitarity",
+  "kind": "lemma",
+  "title": "Frobenius dagger forces $G \\subseteq \\mathrm{U}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution",
+    "papers/quantum-observable-universe/blocks/prop-positive-definite-dagger"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-su2-emergence-dagger-unitarity"
+  ],
+  "tags": [
+    "frobenius",
+    "dagger",
+    "unitarity",
+    "u2"
+  ],
+  "leanRef": "qou:QOU.su2_emergence_dagger_unitarity",
+  "text": "su2-emergence-dagger-unitarity.md",
+  "provenance": "authored"
+}

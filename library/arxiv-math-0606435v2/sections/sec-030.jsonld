@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Q polynomial 23",
+  "pageStart": 23,
+  "pageEnd": 25,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-030",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-030-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

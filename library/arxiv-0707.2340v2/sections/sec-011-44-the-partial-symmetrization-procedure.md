@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 29-31
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 symmetrization of (complex) measures on 2 [n] deﬁned in (3), and Deﬁnition 2.9.
 The main result of this section is the following theorem.

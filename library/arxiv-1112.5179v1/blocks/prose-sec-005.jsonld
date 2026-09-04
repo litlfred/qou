@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1112.5179v1/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The tetrahedron index",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-005-3-the-tetrahedron-index.md",
+  "derivedFrom": "library/arxiv-1112.5179v1/manifest",
+  "sourceDocument": "library/arxiv-1112.5179v1/manifest",
+  "provenance": "ingested"
+}

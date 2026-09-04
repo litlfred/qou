@@ -15,6 +15,13 @@ per-block tier. Every row below is sourced to a block, a Lean file, a witness,
 or an audit. Where this file disagrees with a source, the source wins and this
 file is stale — fix it here.
 
+> **Currency 2026-09-03.** Refreshed against the live corpus in session `qou-ggdk`;
+> the measurement and every correction below are recorded in
+> [`audits/2026-09-03-sm-26-term-status.md`](audits/2026-09-03-sm-26-term-status.md).
+> Headline unchanged (1 input / 1 proxy / 1 partial / 2 conjectural / 21 open;
+> all eight `sm-params-*` blocks byte-identical to their sidecars). Rows marked
+> *(2026-09-03)* were stale and are corrected in place.
+
 ---
 
 ## 0. The one-paragraph answer
@@ -176,7 +183,7 @@ isospin doublet. Blocked behind §4-A and §4-C.
 |---|---|---|---|
 | 14 | `α_EM` | **partial** | conditional fixed-point structure; **per-loop measure open** |
 | 15 | `sin²θ_W` | **conjectural** | `conj:weinberg-angle-categorical` |
-| 16 | `α_s` | **open** | no candidate formula at any scale; blocked on colour SU(3) |
+| 16 | `α_s` | **open** | *(2026-09-03)* no derivation — two written expressions exist and neither determines a value: `1/α_s = q^p[9]_q` in `computations/alpha_k_selection_rule_conditional.py` (bracket writhe-forced, `p` an undetermined 1-parameter family, only `α_s·α_W = α_EM` invariant, conditional, scale-free) and a fit-shaped `α_s(M_Z) = q⁻¹/[7]_q ≈ 0.1181` in `docs/beta-decay-handoff.md` that `qou-5iaz` forbids wiring. No fixed-point analogue for the colour sector; blocked on the colour SU(3) action (`conj:sm-colour-stabilizer-action`) |
 
 > **`α_EM` — the corpus's most accurate SM number, and the appendix does not
 > state it.** The assembled form is
@@ -192,7 +199,7 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > | form | anchor | residual |
 > |---|---|---:|
 > | quadratic (truncate after `αH`) | **proton** (2026-08-07 default) | 1.67 ppb |
-> | quadratic | muon | 80.51 ppb |
+> | quadratic | muon | 81.04 ppb *(live CODATA-2022 anchor, regenerated 2026-09-03; 80.51 at the retired pin A)* |
 > | **cubic** (retain `(1−h²α)`) | **proton** | **0.313 ppb** ≈ 2.09 σ_α |
 >
 > The cubic is the corpus's best; quoting 1.67 understates it by 5.3×. Against
@@ -213,10 +220,17 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > 3. **Appendix currency — FIXED 2026-08-14 (`qou-fmyd`).**
 >    [`sm-params-gauge-couplings.md`](../content/quantum-observable-universe/appendix-standard-model/sm-params-gauge-couplings.md)
 >    now states the form, both anchored residuals, and all three
->    undischarged qualifications. **Still open:** the witness's own assertion
->    `source` strings read *"~80 ppb >> target"*, written against the **muon**
->    anchor and stale under the 2026-08-07 proton default — a producer edit,
->    not a block edit.
+>    undischarged qualifications. **Resolved / re-scoped (2026-09-03):** the assertion `source` strings are now
+>    proton-framed; the one stale field is `honest_status.not_at_target`
+>    (*"best ~81 ppb muon"*). The quoted muon figure 80.51 ppb is at the
+>    **retired** pin A — at the live CODATA-2022 anchor it is 81.04 ppb
+>    (verdicts unchanged). Both ladder producers hardcode their q₀ literals and
+>    are invisible to the three anchor detectors. **Larger issue:** three rival
+>    α_EM constructions circulate — this ladder (0.313 ppb), the Chern–Simons
+>    `.md` form the L2 dashboard actually consumes (−467.6 ppb, κ conjectural),
+>    and the CS `.lean` (+2.59 ppb, κ = 8q, PSLQ-ruled-out); the block's `.md`
+>    and `.lean` disagree by 470 ppb (`qou-aemx`). The per-loop measure stays
+>    owner-gated; the EM holonomy germ is LIVE (necessary, not sufficient)
 
 > **`sin²θ_W` — the two numbers are now reconciled in-paper (`qou-s2pl`, 2026-08-14).**
 > They measure different constructions, so neither refutes the other — but the
@@ -238,6 +252,19 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > corner hook of `(3,2,1)`, which makes it structurally **available** — but
 > availability after a proximity search is not derivation, and the sweep ranged
 > well beyond the hook set `{1,3,5}`. Tier stays `conjectural`.
+>
+> **The stronger ground is the row cap, and it is independent of the fit.**
+> `(3,2,1)` has three rows; Schur–Weyl gives `dim V_λ = 0` when `ℓ(λ) > N`, and
+> the fibre is the `SU_q(2)` fundamental, so `N = 2` and the block carries no
+> states — its Ocneanu weight vanishes identically. That is *why* the
+> conjecture's own `tr_M` ratio cannot reach `1.8208`: the trace is blind to
+> the block by construction. So the two numbers are not competing estimates of
+> one quantity — one is inside the carrier, one outside. Every route from such
+> a block to a physical number is a Markov trace (zeroed by the cap) or a
+> spectrum (no states); subtraction opens no third, since a difference of
+> Markov traces is by linearity a Markov trace. **Deriving `q^(1/5)` would not
+> close the gap** — the reading stays outside the carrier whatever the
+> exponent is.
 >
 > The tractable lever is #4597: the **Milnor triple linking `μ̄₁₂₃`** is the
 > writhe-independent second invariant and separates the two `U(1)`s (Lean,
@@ -361,6 +388,22 @@ without dropping a named premise):
 | Hecke centralizer on regular `H₃` | dim 6 < 8 exclusion (#4564) |
 | Tetraplectic / quaternionic | supplies `SU(2)`, already spent on electroweak |
 
+> **🛑 The "surviving direction" below is ANSWERED, and the answer does not
+> help (2026-09-03, PR #6458, bean `qou-yjwg`).** *Inequivalent fibre functors
+> exist* — Bichon 2003 classifies them on `Rep(SL_q(2))`: one at every
+> dimension `n ≥ 2`, real at `q₀` (`E ∈ GL_n`, `tr(E⁻¹Eᵗ) = −q − q⁻¹`). But a
+> fibre functor is monoidal and preserves the fusion rules, so under a 3-dim
+> one `V^{⊗3} = 21 + 3 + 3`, never `10 + 8 + 8 + 1`; the singlet is absent by
+> Clebsch–Gordan parity (`FibreFunctorDimensionNotCategorical.lean`,
+> sorry-free). Scope-(b): the fibre-functor route is closed; the missing object
+> is in the **category** (`Λ³W ≠ 0`), which axiom 5 forbids for the
+> fundamental. The 2026-08-25 "what is the reconstructed Hopf algebra?"
+> re-posing was also already answered by `ex:tannaka-krein-su2`
+> (`𝒪_q(SU(2))`) and does not bear on the multiplets, since every fibre
+> functor's reconstruction gives an equivalent category. The `ℤ/2` lead below
+> is thereby moot for the single-fibre category.
+> [`2026-09-03-fibre-functors-do-not-change-the-category.md`](audits/2026-09-03-fibre-functors-do-not-change-the-category.md)
+
 **Surviving direction:** the non-neutral Tannakian gerbe (`qou-y7vg`, T3g),
 merged in scope with `qou-8p1i` (T3b). The sharp first question: *is
 `Out(SU(3)) = ℤ/2` an obstruction to **every** gerbe route, or only to the
@@ -396,7 +439,19 @@ that yields a new comparable number without touching `SU(3)`.
 > zero** to the mirror split. Deriving one does **not** deliver the other.
 >
 > **The 69 % is unsourced.** Fixed-string grep over `docs/`: it occurred three
-> times, all inside this file, and in no audit, ledger or witness. (For scale,
+> times, all inside this file, and in no audit, ledger or witness. *(Corrected
+> 2026-09-03: it also survived at line 145 of
+> [`coordination/sm-26-parameter-chip-away.md`](coordination/sm-26-parameter-chip-away.md)
+> — a line-scoped grep missed it because "mirror" sits on the next line. Struck there.)*
+>
+> **And the "cannot be the same" is itself partially reversed by channel
+> (2026-08-30, `qou-bn8e` → `qou-o6ml`).** The self channel `A·Σqᵢ²` does *not*
+> merge with the mirror front (it cancels in binding, exactly as above); the
+> pairwise channel `B·Σqᵢqⱼ` *does*. Derived ratio on record: `h/[2]_q =
+> tanh(ln q₀) = 0.10396371…`, so what 4-B owes is the bond that multiplies it,
+> not a coupling. `ChargeQuadraticSumRule.lean` (sorry-free): the quadratic
+> ansatz **saturates the octet** (bijection, det −1/3) — Coleman–Glashow could
+> not have failed. (For scale,
 > the `A=3` mirror ratio is `0.765`, so the residual against the canonical
 > Coulomb is ≈ 23.5 % — the figure does not correspond to that either.) Both
 > other occurrences are corrected with this one.
@@ -438,7 +493,7 @@ that yields a new comparable number without touching `SU(3)`.
 > is identified, the kernel is not, and the separation law is imported.
 > [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
 
-### 4-C. A third flavour grade (strangeness / charm Cartan)
+### 4-C. Content → hyperbolic braid map (retitled 2026-09-03; formerly "A third flavour grade (strangeness / charm Cartan)")
 
 **Gates:** the charmed-hadron observable spectrum, `m_s`/`m_c`, the `D`-meson
 mass, `Y = B + S` on strange states, and thereby `sin²θ_W`'s normalisation.
@@ -492,7 +547,7 @@ none of the programme's quantitative successes.**
 | `N = 2` cannot host the decomposition | `RowCapObstruction.lean` | **proved-neg** | ⚠ **tier caveat** — see §6 |
 | **Meson octet** (0⁻): `3 ⊗ 3̄ = 8 ⊕ 1` | [`meson-octet-decomposition`](../content/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md) | **standard**, conditional on `N=3` | the block calls it "a theorem of `SU(3)` representation theory" |
 | **Baryon decuplet** (3/2⁺) | [`borromean-decuplet-derivation`](../content/quantum-observable-universe/eightfold-way/borromean-decuplet-derivation.md) | **standard**, conditional on `N=3` | "a *matching of dimensions and weights*, not a derivation". Brunnian-ness → Young-symmetriser selection **withdrawn** as a non-sequitur |
-| **Baryon octet** (½⁺) | partial — [`u-spin-coleman-glashow`](../content/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md) | **proved-neg** | **Partly closed 2026-08-15** — the octet now carries real content via the Coleman–Glashow null result. Still missing: the `3⊗3⊗3 = 10 ⊕ 8 ⊕ 8 ⊕ 1` decomposition block itself, with the `p, n, Σ, Λ, Ξ` weight table. That remains the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
+| **Baryon octet** (½⁺) | partial — [`u-spin-coleman-glashow`](../content/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md) | **proved-neg** | **Partly closed 2026-08-15** — the octet now carries real content via the Coleman–Glashow null result. *(2026-09-03)* the decomposition block **exists**: [`baryon-octet-decomposition`](../content/quantum-observable-universe/eightfold-way/baryon-octet-decomposition.md), `prop:baryon-octet-decomposition`, backed by sorry-free `OctetWeightDegeneracy.lean`, and it is content-bearing — the octet weight map is non-injective (`Λ`, `Σ⁰` both at `(0,0)`), so any weight-only mass formula predicts `m_Λ = m_Σ⁰`, refuted by 77 MeV (scope-b). `borromean-decuplet-derivation.md` now redirects to it |
 | **Vector meson nonet** (1⁻) | [`vector-meson-nonet`](../content/quantum-observable-universe/eightfold-way/vector-meson-nonet.md) | **open — and the one content-bearing target** | **CLOSED 2026-08-14.** The mixing is **unconstrained** by the first-order octet ansatz (`NonetMixingUnconstrained.lean`, sorry-free): with the GMO-fixed `m₈` held fixed, *any* spectrum is realisable. So unlike GMO and equal spacing it is **not** automatic. Two nonets, identical `SU(3)` content, opposite mixing: `φ` is **99.5 %** `ss̄` (ideal), `η′` only **50.3 %**. Not currently attemptable — the singlet needs `N = 3` |
 | Gell-Mann–Nishijima `Q = I₃ + Y/2` | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) + `WeakIsospinT3Grading.lean` | **derived** (`I₃` side) / **open** (`Y` side) | see §3.2 for the closure's true width |
 | `I₃` on the nucleon doublet | [`flavor-charge-assignments`](../content/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md) | **derived** | **the one derived entry** — see §7 |
@@ -502,8 +557,8 @@ none of the programme's quantitative successes.**
 | **Decuplet equal-spacing rule + the `Ω⁻` mass prediction** | [`decuplet-equal-spacing`](../content/quantum-observable-universe/eightfold-way/decuplet-equal-spacing.md) | **proved-neg** | **CLOSED 2026-08-14** — the rule is an identity of first-order octet breaking, so it has **zero discriminating power**, same as GMO. `m(Ω) = 2m(Ξ*) − m(Σ*)` identically, so the Ω⁻ extrapolation reads off a value the ansatz already fixed. Cause: on the decuplet `2I = Y + 2`, collapsing the quadratic Casimir term to linear — and this **fails on the octet** (Σ, Λ share `Y = 0`), so it is not generic. Testable content relocated to the **≈ 9.2 %** spacing spread; framework predicts 0. `DecupletEqualSpacing.lean`, sorry-free |
 | **U-spin / V-spin + Coleman–Glashow** | [`u-spin-coleman-glashow`](../content/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md) | **proved-neg** | **CLOSED 2026-08-15.** The "likely the same null-result class" guess recorded here was **checked, not assumed** — and it holds: CG vanishes identically for all **six** first-order parameters (`ColemanGlashowIdentity.lean`, sorry-free). Mechanism: the octet's three U-spin multiplets each sit at fixed `Q`, so the alternating sum cancels every parameter. **One real difference from the other two nulls** — CG rests on a *conjunction* (isospin-exact strong ∧ U-spin-scalar EM), and dropping the second makes the combination nonzero, so it does test those two premises. Residual `−0.064` MeV ≈ **0.8 %** — the *tightest* of the three, hence the hardest second-order target. V-spin yields no independent octet relation |
 | **Coleman–Glashow relation** | ✗ **no block** | — | coverage gap; zero mentions |
-| Colour `SU(3)` from octonionic `G₂` | [`color-su3-from-g2`](../content/quantum-observable-universe/eightfold-way/color-su3-from-g2.md) | **standard** skeleton + **proved-neg** | `PSL(2,7) ≅ GL(3,𝔽₂)` machine-verified. The `S₄` bridge is **refuted** and the Bring→Klein degeneration **excluded**; `S₄ ⊂ PSL(2,7)` maximality as *selection* is **withdrawn**. Continuous `G₂` completion is a **Mathlib gap** (infrastructure, not structural). ⚠ `𝕆` and `G₂` are used throughout but **never defined** in this paper (`qou-8fl1`) |
-| Flavour vs colour `SU(3)` | — | **open** | proved they cannot both come from one construction: the `Sym²` gate excludes the icosahedral triple `T₁` while the `G₂` route passes |
+| Colour `SU(3)` from octonionic `G₂` | [`color-su3-from-g2`](../content/quantum-observable-universe/eightfold-way/color-su3-from-g2.md) | **standard** skeleton + **proved-neg** | `PSL(2,7) ≅ GL(3,𝔽₂)` machine-verified. The `S₄` bridge is **refuted** and the Bring→Klein degeneration **excluded**; `S₄ ⊂ PSL(2,7)` maximality as *selection* is **withdrawn**. Continuous `G₂` completion is a **Mathlib gap** (infrastructure, not structural). *(2026-09-03)* `𝕆` is now defined in-paper ([`octonion-algebra`](../content/quantum-observable-universe/eightfold-way/octonion-algebra.md), 2026-08-29, `qou-7arp`). The `λ_a ↔ e_a` generator-identification route to octonionic `SU(3)` is scope-(b) excluded (`OctonionicSu3RankObstruction.lean`: dim 8 → 7 non-injective; Cartan collapses to rank 1); only the stabiliser route survives |
+| Flavour vs colour `SU(3)` | — | **open** | *(2026-09-03)* the "cannot both come from one construction" claim is **withdrawn** in-paper (2026-08-26): the premise compared two different objects, and `T₁` fails the gate because it is *real*, not because it is icosahedral. Strengthened to a proved blindness — **no object-level gate separates the two triples** (`FlavourColourDiscriminator.lean`: `no_object_gate_separates`); the discriminator lives in the Young-symmetry channel, and the colour-antisymmetry input is *located* in `μ̄₁₂₃` (sign rep of `S₃`, established) but the state's channel being `(1³)` is not established. On the Brunnian configuration `Λ³` is the only non-empty channel (`BrunnianIsotypeExclusion.lean`) |
 | Spin–flavour–colour selection rule | — | **open** | neither the spin factor nor colour antisymmetry is derived |
 | Truncation / "freeze-out" | — | **open** | heuristic; every use of the phrase is a label for the gap |
 | Three generations | — | **open** | ⚠ tier caveat — see §6 |
@@ -528,18 +583,21 @@ entry, and the intro does not count them.
 
 ## 6. Guardrails — recurring over-claims, with the correct phrasing
 
-These are live or recently-live. Each has a bean; **none of the four 2026-08-08
-findings was `completed` as of 2026-08-14.**
+These are live or recently-live. Each has a bean. *(Corrected 2026-09-03: this
+read "none of the four 2026-08-08 findings was `completed` as of 2026-08-14";
+all four — `qou-xu5t`, `qou-b4lo`, `qou-a5os`, `qou-cy2h` — completed on
+2026-08-14/15.)*
 
 | # | Over-claim | Correct phrasing | Bean |
 |---|---|---|---|
-| G1 | *"4 of 10,000 strand-twist assignments survive; `u`, `e` multisets uniquely determined"* | **Zero selectivity.** The constraint `T = 3Q` **factorises per flavour**; the survivors are `1 × 2 × 2 × 1`. The `10⁴` is the *unconstrained* product, so the ratio reads as ~2500× filtering where there is none. `u` and `e` are unique only because `T = +2` and `T = −3` each admit one multiset of three draws from `{−1,0,+1}` — a composition fact, not a framework fact. `TwistBatteryVacuity.lean` proves the battery is *exactly* `T = 3Q` and the `ℤ₆` condition never sees the assignment. **Drained in 2 of 3 sites** — `eightfold-open-problems.md` and `flavor-charge-assignments.md` are fixed; [`sm-open-problems.md:11`](../content/quantum-observable-universe/appendix-standard-model/sm-open-problems.md) **still carries the original wording** | `qou-xu5t` |
+| G1 | *"4 of 10,000 strand-twist assignments survive; `u`, `e` multisets uniquely determined"* | **Zero selectivity.** The constraint `T = 3Q` **factorises per flavour**; the survivors are `1 × 2 × 2 × 1`. The `10⁴` is the *unconstrained* product, so the ratio reads as ~2500× filtering where there is none. `u` and `e` are unique only because `T = +2` and `T = −3` each admit one multiset of three draws from `{−1,0,+1}` — a composition fact, not a framework fact. `TwistBatteryVacuity.lean` proves the battery is *exactly* `T = 3Q` and the `ℤ₆` condition never sees the assignment. **Drained 3 of 3** *(corrected 2026-09-03 — this row said 2 of 3 with `sm-open-problems.md:11` still carrying the original wording; that site was fixed by 2026-08-19, hash-verified against its sidecar)* | `qou-xu5t` ✅ |
 | G2 | `RowCapObstruction` tiered *"the obstruction is **proved** … not an observation but a theorem"* | Same construction as `Sym2Gate` and `WeylInvarianceQDeformation`, which **both** get the arithmetic-vs-rep-theory caveat. Every proof in the file is `Nat.choose` arithmetic; the rep theory is carried by `def` names and docstrings. The chapter knows the rule and applies it in 2 of 3 places — omitting it at the one place where it is load-bearing | `qou-b4lo` |
 | G3 | Three generations tiered *"partially derived"* from `{3,5,7,9} \ {9}` | Three is obtained by **removing one element from a four-element set**, on a criterion (continuant harmonicity) unrelated to generation counting. Any criterion eliminating exactly one of four yields "three". The row's own status says the physical bridge is open. Accurate tier: **`open`, with an adjacent proved divisibility lemma** | `qou-a5os` |
 | G4 | `a5` orbital fracture *"falsifiable in principle"* | Unaddressed against **exact free-atom `f`-shell degeneracy**: free-atom states are labelled by `J` with `2J+1` exact by rotational invariance, and observed lifting is spin–orbit in a `J` pattern, not a `3' ⊕ 4` seam. Either already in tension with spectra, or below all resolution — in which case *untestable*, not falsifiable. (Referee objection, not a computed bound.) Also: this block and `cal2-higgs-knot-coupling` have **no `.qa.json` sidecar**, so they are invisible to every per-block checker | `qou-cy2h` |
 | G5 | *"GMN proved for all six quarks"* | Collapses to **two** distinct arithmetic rows — see §3.2. **Now machine-checked** (2026-08-15): `gmn_check_has_two_distinct_rows` + `gmn_data_factors_through_weakType` prove the collapse, and `genWinding_finer_than_gmn_data` proves the relation is blind to the generation, so the wide phrasing cannot recur unnoticed | `qou-8z5j` ✅ |
 | G6 | Citing the Weinberg **0.127 %** as an accuracy result | **Still a live guardrail** — but now stated in-paper (2026-08-14). It is the residual after picking the best of **74** swept candidates, and the witness itself records the ansatz as neither supported at `10⁻³` nor falsified at `10⁻²` (`path_c_status: inconclusive`). See §3.3 | `qou-s2pl` ✅ |
 | G7 | Quoting the 2026-08-08 audit's *"1 derived"* as a corpus figure | It is a **two-chapter** figure. See §1 | — |
+| G9 | Presenting an order-zero-only construction (leading term, single crossing, first-order ansatz) as a derivation of an SM parameter | **Owner ruling 2026-09-03:** derivations must be carried on the **full tower**; only the order-zero rendering is observable. Say the tower status (FULL-TOWER / ORDER-ZERO-ONLY / MIXED) beside every SM claim; an order-zero-only residual is not evidence about the tower. Reading confirmed by the owner the same day — both: all `n` of the Hecke tower and all orders in `q`: [`audits/2026-09-03-sm-26-term-status.md` §10](audits/2026-09-03-sm-26-term-status.md) | `qou-bsu0` |
 | G8 | Citing colour-row proofs at `qou:QOU.StandardModel.ColourStabilizerAction` | The proofs are real but live in `QOU/MathlibExt/Octonion*` (9-module cone, verified `ok=9, err=0`). A reader following the `lean.ref` finds none of them | — |
 
 > **`grep -c sorry` is unusable in this corpus.** Raw counts hit the phrase
@@ -586,12 +644,17 @@ ranking is an agent's judgement, not a corpus fact; argue with it.
 | Rank | Target | Why near-term | Blocker |
 |---|---|---|---|
 | 1 | **Two-like-charge EM-linking invariant** (4-B) | Smallest scope of the three gating objects; needs **no** `SU(3)`; stage-1 scoping already done and well-posed. ⚠ **The two-for-one rationale is withdrawn** (2026-08-25): this row read *"Closes `m_d − m_u` **and** 69 % of the ³He mirror residual together"*, and that is false — see the box under §4-B. The rank may still stand on the remaining grounds, but **not** on closing two fronts | intra-nucleon EM self-energy is genuinely underived. Two structural prunes landed 2026-08-25 (pairwise linking cannot see the Borromean carrier; the map must be **even** in `μ̄₁₂₃`), narrowing the shape but deriving no value. Per `qou-17mq` (merged above) the front carries **three** distinct gaps: the route is identified, the kernel is not, and the separation law is imported |
-| 2 | **Content → hyperbolic braid map** (4-C, *retitled* 2026-08-25) | `(n, T₃)` separates all six quarks sorry-free, and `orderedContent_injective` (`by decide`) separates all five mesons — **no third flavour grade is missing**; the `D̄⁰`/`K⁰` collision is a symmetric-multiset artefact | `qou-qpj9` Obstruction A — geometric, and **not** gated on 4-A |
-| 3 | **GMO deviation ≈ 6 %** | Uniquely well-posed: a specific number, a specific mechanism (second-order octet breaking + `η`–`η'` mixing), and a live falsification (framework currently predicts 0; producing a *different* value falsifies) | needs a second-order term; conditional on `N=3` for the octet itself |
+| 2 | **Content → hyperbolic braid map** (4-C; re-scoped 2026-08-25, heading retitled 2026-09-03 by #6458) | `(n, T₃)` separates all six quarks sorry-free, and `orderedContent_injective` (`by decide`) separates all five mesons — **no third flavour grade is missing**; the `D̄⁰`/`K⁰` collision is a symmetric-multiset artefact | `qou-qpj9` Obstruction A — geometric, and **not** gated on 4-A |
+| ~~3~~ | **GMO deviation ≈ 6 %** — *(2026-09-03)* **drops from the ranking.** `GellMannOkuboSecondOrder.lean` (sorry-free, `qou-s4h6`): at second order the octet GMO combination is `16(4e − 3f)`, the decuplet `8(4e + 9f + 6g)`, equal spacing supplies no third constraint, and `g` is absorbable on both multiplets — **two equations, three unknowns**, so matching both deviations is a fit with a free parameter, not a prediction. `eightfold-open-problems.md` item 8 still calls a 6 % derivation "a genuine prediction" and needs the same correction | conditional on `N=3`; and now under-determined |
 | 4 | **Non-neutral Tannakian gerbe** (4-A) | The whole eightfold surface has collapsed onto **one** question; seven routes are excluded with cited invariants, so the search is narrow | hardest of the three; a **refutation is equally valuable** and would settle the corpus position |
 | 5 | **`α_EM` per-loop measure** | Would move the corpus's best number from `partial` toward closed | its own witness calls it *"highest-value but long-horizon conjectural close, not near-term"* — believe the witness |
 | 6 | **`sin²θ_W`** | `μ̄₁₂₃` separates the two `U(1)`s (sorry-free) | relative `U(1)` normalisation inherits open `SU(3)`-flavour; **and** the 0.127 % / 64 % reconciliation (G6) should be settled first |
 | — | **`θ_QCD` smallness, `α_s`, CKM, PMNS, `v`, `m_τ`, heavy-quark masses** | **not** near-term | all gate on 4-A, or have recorded negatives |
+
+**Full-tower note (owner ruling 2026-09-03).** Every row in this table is an
+order-zero attack as currently posed; under the ruling the *full-tower* version of
+each step is the one that counts, and a row whose only formulation is order-zero
+should say so. See G9.
 
 **Formalize-first note.** Before any wide numerical search on this surface,
 check §4's exclusion table. Seven `N=3` routes are already excluded with named
@@ -610,8 +673,8 @@ Slot A):
 
 | Chapter | Sections | Blocks | Blocks/section | In band |
 |---|---:|---:|---:|---|
-| `eightfold-way` | 8 | 11 | **1.4** | **0 of 8** |
-| `appendix-standard-model` | 13 | 20 | **1.5** | **1 of 13** (`sec:sm-truncation`, 6) |
+| `eightfold-way` | 8 | 11 → **16** *(2026-09-03)* | **1.4** → 2.0 | **0 of 8** |
+| `appendix-standard-model` | 13 → **14** | 20 → **22** *(2026-09-03)* | **1.5** | **1 of 13** (`sec:sm-truncation`, 6); `sec:sm-results-surface` added |
 
 **20 of 21 sections are below band.** This is the dominant structural fact
 about both chapters, and it inverts the naive fix: the eightfold chapter's
@@ -717,9 +780,9 @@ Six new blocks, ranked by value:
 |---|---|---|---|
 | ~~1~~ | ~~`vector-meson-nonet`~~ | **DONE 2026-08-14** | Landed. The mixing is proved unconstrained by the ansatz — the first eightfold-way quantity whose derivation would carry information. Measured: `φ` 99.5 % `ss̄` vs `η′` 50.3 %, witness `nonet-mixing-purity`. Still gated on `N = 3` |
 | ~~2~~ | ~~`decuplet-equal-spacing`~~ | **DONE 2026-08-14** | Asked and settled: **automatic**, hence zero discriminating power, exactly as GMO. Block landed, Lean sorry-free, deviation (≈ 9.2 %) named as the real target. See [`2026-08-14-decuplet-equal-spacing-null-result.md`](audits/2026-08-14-decuplet-equal-spacing-null-result.md) |
-| 3 | `baryon-octet-decomposition` | medium | The namesake ½⁺ multiplet; promote the passing paragraph at `borromean-decuplet-derivation.md:66-73` |
+| ~~3~~ | ~~`baryon-octet-decomposition`~~ | **DONE (by 2026-08-15; recorded 2026-09-03)** | Landed as `prop:baryon-octet-decomposition` with `OctetWeightDegeneracy.lean`; content-bearing (weight-only mass formulas force `m_Λ = m_Σ⁰`, refuted by 77 MeV) |
 | 4 | `weak-isospin-t3-grading` | medium | The chapter has **no** presence for the T₃ result, though it is the second derived item on the surface. State the GMN closure at two-row width (G5) |
-| 5 | `octonion-algebra` | medium | `𝕆` and `G₂` are used throughout the colour section and **never defined in this paper** (`qou-8fl1`). Required, not optional |
+| ~~5~~ | ~~`octonion-algebra`~~ | **DONE 2026-08-29** (`qou-7arp`; recorded 2026-09-03) | Landed as `def:octonion-algebra`, first in `sec:color-algebra` |
 | ~~6~~ | ~~`u-spin-v-spin`~~ | **DONE 2026-08-15** | Landed as `u-spin-coleman-glashow`. Ranked "low" here on the assumption it was another null; that assumption was checked and confirmed, but the *mechanism* (U-spin multiplets at fixed `Q`) and the conjunction-of-premises distinction were worth having explicitly |
 
 > **A placeholder is a `prose` block, full stop.** It names the missing object,
@@ -771,7 +834,8 @@ So: **consolidate the ledger, not the blocks.**
 Ordered so every phase is useful alone and none blocks the next.
 
 **Phase 1 — Drain the four standing 2026-08-08 findings.** (`qou-b4lo`,
-`qou-xu5t`, `qou-a5os`, `qou-cy2h` — all still `todo` six days on.)
+`qou-xu5t`, `qou-a5os`, `qou-cy2h` — **all `completed` 2026-08-14/15**; this read
+"all still `todo` six days on" until 2026-09-03. Phase 1 is done.)
 Content edits only, no structure. Start with `qou-xu5t`'s **third site**
 ([`sm-open-problems.md:11`](../content/quantum-observable-universe/appendix-standard-model/sm-open-problems.md)),
 which still carries the "4 of 10,000 … `u`, `e` multisets unique" wording after
@@ -791,6 +855,10 @@ render-QA gate run.
 *Detangle impact: none. One witness re-run (long-compute logging discipline).*
 
 **Phase 3 — Build the SM reference surface.** *This is the consolidation.*
+**DONE 2026-08-30 (PR #5744, `qou-fqzs`; recorded 2026-09-03)** — both blocks
+landed in `sec:sm-results-surface`. Caveat: `sm-gating-objects` landed carrying
+the struck 4-C "third grade reduces into 4-A" claim; corrected on
+`claude/standard-model-terms-status-ftoejr` (`qou-ok51`).
 Two new blocks in the appendix, no moves:
 - `sm-results-index` — a table of **every** SM-relevant result in the corpus
   with its home chapter, tier, and Lean/witness pointer. This is the in-paper

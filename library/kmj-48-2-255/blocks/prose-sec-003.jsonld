@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/kmj-48-2-255/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of Theorem 1",
+  "pageStart": 3,
+  "pageEnd": 5,
+  "text": "../sections/sec-003-2-proof-of-theorem-1.md",
+  "derivedFrom": "library/kmj-48-2-255/manifest",
+  "sourceDocument": "library/kmj-48-2-255/manifest",
+  "provenance": "ingested"
+}

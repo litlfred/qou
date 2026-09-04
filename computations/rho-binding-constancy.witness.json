@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T06:56:11.472738+00:00",
-  "commitSha": "a7f646a8413a7736240406f96d19cc11482b32bc",
+  "computedAt": "2026-09-03T23:04:35.791500+00:00",
+  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
   "assertions": [
     {
       "name": "ratios computed for all 3 atoms",
@@ -15,8 +15,8 @@
   "durationMs": 0,
   "computation": "rho-binding-constancy",
   "scriptFile": "rho_binding_constancy_probe.py",
-  "scriptHash": "4dca5f196891",
-  "scriptCommitSha": "a7f646a8413a7736240406f96d19cc11482b32bc",
+  "scriptHash": "99c141489d07",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -43,22 +43,22 @@
   "name": "rho-binding-constancy",
   "probe": true,
   "substrate": {
-    "q0": "1.10997859564273904668179512938000175270006556102901155697405",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "q0_pin": "muon (computations-layer canonical)"
   },
   "ratios_B_over_trM": {
-    "D": "3.86765082378942561732524761660352780305528387106011546562595",
-    "T": "36.9884158094086390612392423357816497308262405088001274697401",
-    "He3": "19.1151186927935057206294927904722258239519869514865831787288"
+    "D": 3.867651861723058,
+    "T": 36.988431482763964,
+    "He3": 19.115126534809143
   },
-  "relative_spread": "1.65683393477623868935323185549336189819531342800258772237877",
-  "t_he3_mirror_mismatch": "0.637154050104047566103635415907489155858490000080690351471199",
+  "relative_spread": 1.6568339885606598,
+  "t_he3_mirror_mismatch": 0.6371540622203117,
   "witness": {
-    "scriptCommitSha": "a7f646a8413a7736240406f96d19cc11482b32bc",
-    "scriptHash": "4dca5f196891",
+    "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+    "scriptHash": "99c141489d07",
     "producer": "computations/probes/rho_binding_constancy_probe.py"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

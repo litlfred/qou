@@ -20,6 +20,46 @@ answer is immediate, integral, and derived:
 
 Coefficients (1, 2, 3, 1, 1).  Total degree 6.  No denominators, no fit.
 
+CORRECTION, 2026-08-31, TO THIS PROBE'S OWN FIRST VERSION.  That coefficient
+string is NOT AN INVARIANT, and the question this probe originally left open --
+"does (1, 2, 3, 1, 1) count something?" -- was ill-posed.  z and hbar are
+ALGEBRAICALLY DEPENDENT:
+
+    R(z, hbar)  =  hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1  =  0
+
+(irreducible over Q, total degree 4; verified below).  So Q[z, hbar] is not a
+polynomial ring but the coordinate ring Q[Z, H]/(R) of an affine rational
+curve, and a representative is unique only MODULO R.  Measured: the degree-<=6
+representatives form a coset of a SIX-dimensional space.  A second, equally
+valid, equally integral degree-6 representative --
+
+    -1 + 4 z^2 - 3 hbar z + 4 z^4 + hbar^2 z^4
+
+-- differs from the first by exactly (hbar z + z^2 + 1) * R.  Six free
+parameters is far too much room for five small integers to mean anything.
+
+WHAT SURVIVES THE CORRECTION, and it is most of the result:
+
+  * The IDENTITY is true and is Lean-proved
+    (`QOU.Information.cone_eq_markov_hecke_polynomial`).  Nothing proved is
+    affected -- the defect was in the interpretation offered alongside it.
+  * MINIMAL DEGREE 6 stands.  That measurement was made over the span of the
+    EVALUATED monomials, so it already accounts for the relation: no
+    polynomial in (z, hbar) of total degree <= 5 equals the constraint,
+    R-multiples included.  Minimal degree IS an invariant of the class.
+  * Integrality stands, and is not a coincidence of one representative: the
+    grevlex normal form modulo R is integral too.
+
+THE CANONICAL REPRESENTATIVE.  Reducing modulo a Groebner basis of (R) under a
+STATED order (grevlex, Z > H) gives one well-defined element of the class, and
+both representatives above reduce to it:
+
+    hbar^5 z + 4 hbar^3 z + hbar^2 - 2 hbar z + 5 z^2 - 1
+
+This is reproducible rather than intrinsic -- a different term order gives a
+different normal form -- so it is the honest object to ask a structural
+question about, and any such question must name the order.
+
 WHY IT IS FORCED -- AND THIS HALF IS NOT NEW.  Every Markov trace of a Hecke
 word lies in Z[z, hbar]: the Markov property tr(x sigma_last) = z tr(x) removes
 the highest generator, and the quadratic relation sigma^2 = hbar sigma + 1
@@ -72,11 +112,20 @@ q^10 N(1/q) has coefficient vector (-1,0,1,0,-1,0,1,0,0,0,1) against N's
 N is the Alexander polynomial of NO knot -- a scope-(b) exclusion, resting on
 the reciprocity invariant rather than on a numerical near-miss.
 
-WHAT IS STILL OPEN.  Whether the specific coefficient string (1, 2, 3, 1, 1)
-has a combinatorial reading -- e.g. as counts of something in the H_3 reduction
-tree -- is unmeasured.  That is now a well-posed question about five small
-integers, where the predecessor's version was a question about ten rationals in
-a basis with no structure.
+WHAT IS STILL OPEN -- RE-POSED, twice now.  The predecessor asked about ten
+rationals in a structureless basis; this probe's first version asked about five
+integers that turned out to be one point in a six-parameter family.  The
+surviving well-posed questions are:
+
+  (a) Does the MINIMAL DEGREE, 6, mean anything?  It is a genuine invariant of
+      the class, unlike any coefficient string.
+  (b) Does the curve R(z, hbar) = 0 -- the relation between the Markov
+      parameter and the Hecke deformation, which is a fact about H_n and not
+      about the Toffoli at all -- appear anywhere else in the corpus?
+  (c) Does the grevlex normal form above mean anything, GIVEN that order?
+
+Ask (b) first: it is the only one of the three whose subject is not an artifact
+of a choice this probe made.
 
 Exact symbolic arithmetic (sympy over Q(q)); no floating point anywhere.
 """
@@ -213,17 +262,58 @@ def main() -> int:
           not below and in_span(6),
           f"membership at total degree 2..5: {below or 'none'}; at 6: yes")
 
+    # ---- 7. the relation, and the non-uniqueness it causes ------------------
+    import sympy as _sp
+    ZS, HS = _sp.symbols("Z H")
+    R = HS ** 3 * ZS - HS ** 2 * ZS ** 2 + 4 * HS * ZS - 4 * ZS ** 2 + 1
+    check("z and hbar satisfy R = hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1 = 0",
+          zero(R.subs({ZS: z, HS: hb})),
+          f"irreducible over Q: {sp.Poly(R, ZS, HS).is_irreducible}; total degree "
+          f"{sp.Poly(R, ZS, HS).total_degree()} -> Q[z,hbar] = Q[Z,H]/(R), the "
+          f"coordinate ring of an affine rational curve, NOT a polynomial ring")
+
+    A = ZS ** 2 + 2 * HS * ZS + 3 * HS ** 2 * ZS ** 2 + HS ** 3 * ZS + HS ** 4 * ZS ** 2
+    B = -1 + 4 * ZS ** 2 - 3 * ZS * HS + 4 * ZS ** 4 + ZS ** 4 * HS ** 2
+    check("a SECOND integral degree-6 representative exists",
+          zero((B.subs({ZS: z, HS: hb})) - CONE)
+          and sp.expand(A - B) != 0,
+          "-1 + 4z^2 - 3 hbar z + 4 z^4 + hbar^2 z^4 also equals the constraint")
+    _, rem = sp.div(sp.Poly(sp.expand(A - B), ZS, HS), sp.Poly(R, ZS, HS))
+    check("the two differ by a multiple of R", rem.is_zero,
+          "quotient (hbar z + z^2 + 1) -- so the coefficient string is NOT an "
+          "invariant")
+
+    mult, mons = [], []
+    for d in range(0, 7):
+        for c in itertools.combinations_with_replacement((ZS, HS), d):
+            mons.append(sp.prod(c))
+            if d <= 2:
+                mult.append(sp.expand(R * sp.prod(c)))
+    vecs = sp.Matrix([[sp.Poly(x, ZS, HS).coeff_monomial(m) for m in mons]
+                      for x in mult])
+    check("degree-<=6 representatives form a SIX-parameter family",
+          vecs.rank() == 6,
+          f"dimension {vecs.rank()} -- far too much room for five small integers "
+          f"to carry information")
+
+    G = sp.groebner([R], ZS, HS, order="grevlex")
+    nfA, nfB = G.reduce(A)[1], G.reduce(B)[1]
+    check("both reduce to one grevlex normal form (reproducible, not intrinsic)",
+          sp.expand(nfA - nfB) == 0,
+          f"normal form: {nfA}")
+
     n_ok = sum(1 for _, ok in CHECKS if ok)
     print()
     print("=" * 74)
     print(f"  {n_ok}/{len(CHECKS)} assertions")
     print("=" * 74)
     print()
-    print("  VERDICT.  The predecessor's open question -- a structural reading of")
-    print("  the ten rational coefficients in the amplitude basis -- is RETIRED as")
-    print("  posed.  In (z, hbar) the expression is integral, degree 6, minimal,")
-    print("  and forced by the Markov trace rather than fitted.  What remains is a")
-    print("  much smaller question: does (1, 2, 3, 1, 1) count something?")
+    print("  VERDICT.  In (z, hbar) the constraint is integral, of MINIMAL degree 6,")
+    print("  and forced by the Markov trace rather than fitted -- and minimal degree")
+    print("  is a genuine invariant.  The coefficient string is NOT: z and hbar are")
+    print("  algebraically dependent, and the degree-6 representatives form a")
+    print("  six-parameter family.  This probe's own first version asked whether")
+    print("  (1, 2, 3, 1, 1) counts something; that question is withdrawn.")
     return 0 if n_ok == len(CHECKS) else 1
 
 

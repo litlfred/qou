@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9310070v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quantum dilogarithm",
+  "contains": [
+    "library/arxiv-hep-th-9310070v1/sections/sec-000",
+    "library/arxiv-hep-th-9310070v1/sections/sec-001",
+    "library/arxiv-hep-th-9310070v1/sections/sec-002",
+    "library/arxiv-hep-th-9310070v1/sections/sec-003",
+    "library/arxiv-hep-th-9310070v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9310070v1",
+    "source_file": "9310070v1.pdf",
+    "source_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
+    "pages": 9,
+    "arxiv": {
+      "id": "hep-th/9310070",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "13 Oct 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

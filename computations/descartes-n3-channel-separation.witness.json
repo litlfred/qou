@@ -1,0 +1,136 @@
+{
+  "$schema": "witness/v1",
+  "name": "descartes-n3-channel-separation",
+  "description": "chi^lambda separates the two n=3 SU_q(2) summands at the q where the two named Jones values of descartes_n3_both_detected coincide. Resolves the scope of QOU.Archimedean.jones_channels_not_separating (PR #6547): that negative is about the named Jones pair, not about the framework's ability to separate summands.",
+  "bean": "qou-qhs3",
+  "precision": {
+    "mp_dps": 60,
+    "native_dps": 50,
+    "tolerance": "1.0e-45",
+    "float64_used": false
+  },
+  "shapes": [
+    [
+      3
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "q_star": "0.77954466382093496887757342393207379621614796545765",
+  "jones_at_q_star": {
+    "symmetric": "-2.06234479883629650831642041711",
+    "mixed": "-2.06234479883629650831642041711",
+    "abs_gap": "0.0",
+    "coincide": true
+  },
+  "character_separation_at_q_star": [
+    {
+      "word": "identity",
+      "chi_sym": "1.0",
+      "chi_mixed": "2.0",
+      "abs_gap": "1.0",
+      "separates": true
+    },
+    {
+      "word": "sigma1",
+      "chi_sym": "0.779544663820934968877573423932",
+      "chi_mixed": "-0.503255471194426570561273569247",
+      "abs_gap": "1.2828001350153615394",
+      "separates": true
+    },
+    {
+      "word": "sigma1^3 (trefoil closure)",
+      "chi_sym": "0.473721405466189342845685196311",
+      "chi_mixed": "-1.6372239486199317447066895221",
+      "abs_gap": "2.1109453540861210876",
+      "separates": true
+    },
+    {
+      "word": "sigma1 sigma2",
+      "chi_sym": "0.60768988289169451699110114916",
+      "chi_mixed": "-1.0",
+      "abs_gap": "1.607689882891694517",
+      "separates": true
+    },
+    {
+      "word": "sigma1 sigma2^-1",
+      "chi_sym": "1.0",
+      "chi_mixed": "-1.25326606928712431172325862024",
+      "abs_gap": "2.2532660692871243117",
+      "separates": true
+    }
+  ],
+  "all_words_separate": true,
+  "closed_forms": {
+    "chi_symmetric_sigma1": "q",
+    "chi_mixed_sigma1": "q - q^-1",
+    "difference": "q^-1",
+    "residuals": [
+      {
+        "q": "0.779544663820934968877573423932",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "7.6962e-52",
+        "resid_gap_minus_qinv": "7.6962e-52"
+      },
+      {
+        "q": "1.1099785956427390466817951293800017527",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "6.27873e-51",
+        "resid_gap_minus_qinv": "6.27873e-51"
+      },
+      {
+        "q": "0.5",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "0.0",
+        "resid_gap_minus_qinv": "0.0"
+      },
+      {
+        "q": "2.0",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "0.0",
+        "resid_gap_minus_qinv": "0.0"
+      },
+      {
+        "q": "0.1",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "0.0",
+        "resid_gap_minus_qinv": "0.0"
+      },
+      {
+        "q": "10.0",
+        "resid_chi_sym_minus_q": "0.0",
+        "resid_chi_mixed_minus_q_minus_qinv": "0.0",
+        "resid_gap_minus_qinv": "2.5281e-61"
+      },
+      {
+        "q": "0.999",
+        "resid_chi_sym_minus_q": "2.0e-49",
+        "resid_chi_mixed_minus_q_minus_qinv": "9.001e-51",
+        "resid_gap_minus_qinv": "2.09001e-49"
+      },
+      {
+        "q": "1.001",
+        "resid_chi_sym_minus_q": "4.0e-49",
+        "resid_chi_mixed_minus_q_minus_qinv": "2.71101e-49",
+        "resid_gap_minus_qinv": "1.28899e-49"
+      }
+    ],
+    "holds_chi_symmetric": true,
+    "holds_chi_mixed": true,
+    "holds_difference": true
+  },
+  "q_equals_one_pole": {
+    "returns": [
+      "NaN",
+      "NaN"
+    ],
+    "silent_nan_not_exception": true,
+    "note": "the seminormal form has a pole at q = 1; Descartes excludes it, but a caller that does not gets NaN propagated into a witness with no error raised"
+  },
+  "verdict": "characters separate the n=3 summands at q*, where the named Jones pair coincides; sigma_1 alone separates at every q outside {0, 1}",
+  "engine": {
+    "pyhecke_native": "0.9.0"
+  }
+}

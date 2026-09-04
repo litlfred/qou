@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:18:54.384893+00:00",
-  "commitSha": "b4ae9836573a159a902455a16ab444abeb2646f3",
+  "computedAt": "2026-09-04T06:15:01.320394+00:00",
+  "commitSha": "9219efdb220a9560808452d396de4f819a344702",
   "assertions": [
     {
       "name": "pr1811_div25_finding_confirmed_reverse_test",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "qbeta-c3-closure-piecewise-fibre-archimedean-probe",
   "scriptFile": "qbeta_c3_closure_piecewise_fibre_archimedean_probe.py",
-  "scriptHash": "e4d13a7b8fcb",
-  "scriptCommitSha": "227bd89d9188e50602cda462cb9cccc16500312e",
+  "scriptHash": "9a176045e061",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -44,31 +44,31 @@
   "description": "Piece-by-piece fibre (q=1) vs archimedean (q=q_0) test of the c_3 closure. Extends PR #1811's finding (/25 is fibre-evaluated [5]_q² at q=1) to the other 5 categorical pieces. Reports which pieces (if any) also fit q=1 fibre evaluation, vs q_0 archimedean. Honest test of the mixed fibre/archimedean structural reading.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   "data": {
-    "baseline_eps_ppm": "2.6508286033940097243844715712125511327365916982464",
+    "baseline_eps_ppm": 2.6508286033940096,
     "piece_tests": [
       {
         "piece": "base = -(q²+q⁻²)",
         "q_0_value": "-2.043706208532521989402019",
         "q_1_fibre_value": "-2.0",
-        "delta_eps_ppm": "-21385.815734039839142554410258261129307135557041164"
+        "delta_eps_ppm": -21385.81573403984
       },
       {
         "piece": "[3]_q",
         "q_0_value": "3.043706208532521989402019",
         "q_1_fibre_value": "3.0",
-        "delta_eps_ppm": "-171.07349000923716476108893753037265175967773607432"
+        "delta_eps_ppm": -171.07349000923716
       },
       {
         "piece": "[2]_q",
         "q_0_value": "2.010896866707122299752492",
         "q_1_fibre_value": "2.0",
-        "delta_eps_ppm": "2.6028460121699451859166686979749522079015535123670"
+        "delta_eps_ppm": 2.602846012169945
       },
       {
         "piece": "/25 → /[5]_q²|_{q=q_0} (cross-check NOT fibre test)",
         "q_0_value_main": "25.0",
         "alt_q0_value": "27.25300710913673180653988",
-        "delta_eps_ppm": "-984.89616090531123910225867291915695556869847250016",
+        "delta_eps_ppm": -984.8961609053113,
         "purpose": "reverse-direction confirmation of PR #1811"
       }
     ],

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "In summary:",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "contains": [
+    "library/bn/blocks/prose-sec-011",
+    "library/bn/blocks/cor-sec-011-01",
+    "library/bn/blocks/rem-sec-011-02",
+    "library/bn/blocks/rem-sec-011-03",
+    "library/bn/blocks/thm-sec-011-04"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

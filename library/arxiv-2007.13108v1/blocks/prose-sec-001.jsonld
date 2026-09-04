@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2007.13108v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A lower bound on the entropy",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-11-a-lower-bound-on-the-entropy.md",
+  "derivedFrom": "library/arxiv-2007.13108v1/manifest",
+  "sourceDocument": "library/arxiv-2007.13108v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2009.03688v6/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "T A(z), A",
+  "pageStart": 7,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-2009.03688v6/blocks/prose-sec-006",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-01",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-02",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-03",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-04",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-05",
+    "library/arxiv-2009.03688v6/blocks/thm-sec-006-06"
+  ],
+  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
+  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "provenance": "ingested"
+}

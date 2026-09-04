@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "PROOF OF THEOREM C",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/candetgl/blocks/prose-sec-014",
+    "library/candetgl/blocks/thm-sec-014-01"
+  ],
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

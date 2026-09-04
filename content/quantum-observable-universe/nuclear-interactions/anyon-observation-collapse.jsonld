@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-anyon-observation-collapse",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:anyon-observation-collapse",
+  "kind": "remark",
+  "title": "Anyon ladder: generic $q$ ↔ root-of-unity ↔ $q \\to 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-root-of-unity-mtc-truncation",
+    "papers/quantum-observable-universe/blocks/conj-kazhdan-lusztig-classical-limit"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hecke-anyonic-substrate",
+  "tags": [
+    "anyon",
+    "ladder",
+    "modular-tensor-category",
+    "classical-limit",
+    "observation-frame",
+    "synthesis"
+  ],
+  "text": "anyon-observation-collapse.md",
+  "provenance": "authored"
+}

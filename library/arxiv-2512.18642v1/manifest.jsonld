@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2512.18642v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A Hidden Quantum Markov model framework for",
+  "contains": [
+    "library/arxiv-2512.18642v1/sections/sec-000",
+    "library/arxiv-2512.18642v1/sections/sec-001",
+    "library/arxiv-2512.18642v1/sections/sec-002",
+    "library/arxiv-2512.18642v1/sections/sec-003",
+    "library/arxiv-2512.18642v1/sections/sec-004",
+    "library/arxiv-2512.18642v1/sections/sec-005",
+    "library/arxiv-2512.18642v1/sections/sec-006",
+    "library/arxiv-2512.18642v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2512.18642v1",
+    "source_file": "2512.18642v1.pdf",
+    "source_sha256": "c4c7f8b0a719aa2df0a0ae6c4260bced585090a6c53c51c07b770579ecbda39e",
+    "pages": 20,
+    "arxiv": {
+      "id": "2512.18642",
+      "version": "1",
+      "primary_class": "quant-ph",
+      "stamp_date": "21 Dec 2025"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

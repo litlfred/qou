@@ -48,6 +48,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -63,7 +64,13 @@ COMP = str(_COMP)
 
 
 def main() -> int:
-    q = mp.mpf("1.10997859555733471")
+    # q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+    # literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+    # superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+    # no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+    # on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
+    # `qou_substrate.constants`, so the witness resolves its anchor stamp.
+    q = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf("0.51099895069")
     E0 = m_e / (q * (q - 1))
     B_D = mp.mpf("2.22452")

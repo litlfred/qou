@@ -7,6 +7,7 @@ section_number: null
 pages: 5-6
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 We now describe the content of the remainder of this paper. In Sect. 2, we discuss the use of
 homogeneous polynomials via the notation V(n) and V(λ), and we describe the relation of

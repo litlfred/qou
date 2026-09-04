@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-parity-violation-skein",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:parity-violation-skein",
+  "kind": "proposition",
+  "title": "Parity non-conservation from the Skein relation at $q \\neq 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+    "papers/quantum-observable-universe/blocks/prop-reidemeister-action-table"
+  ],
+  "tags": [
+    "parity",
+    "weak-force",
+    "skein-relation",
+    "lee-yang",
+    "wu-experiment",
+    "mirror",
+    "crossing-chirality",
+    "symmetry-breaking"
+  ],
+  "leanRef": "qou:QOU.Archimedean.parity_violation_skein",
+  "text": "parity-violation-skein.md",
+  "leanSource": "parity-violation-skein.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,49 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hecke algebras, generalisations and representation theory",
+  "contains": [
+    "library/hdr/sections/sec-000",
+    "library/hdr/sections/sec-001",
+    "library/hdr/sections/sec-002",
+    "library/hdr/sections/sec-003",
+    "library/hdr/sections/sec-004",
+    "library/hdr/sections/sec-005",
+    "library/hdr/sections/sec-006",
+    "library/hdr/sections/sec-007",
+    "library/hdr/sections/sec-008",
+    "library/hdr/sections/sec-009",
+    "library/hdr/sections/sec-010",
+    "library/hdr/sections/sec-011",
+    "library/hdr/sections/sec-012",
+    "library/hdr/sections/sec-013",
+    "library/hdr/sections/sec-014",
+    "library/hdr/sections/sec-015",
+    "library/hdr/sections/sec-016",
+    "library/hdr/sections/sec-017",
+    "library/hdr/sections/sec-018",
+    "library/hdr/sections/sec-019",
+    "library/hdr/sections/sec-020",
+    "library/hdr/sections/sec-021",
+    "library/hdr/sections/sec-022",
+    "library/hdr/sections/sec-023",
+    "library/hdr/sections/sec-024",
+    "library/hdr/sections/sec-025",
+    "library/hdr/sections/sec-026"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "hdr",
+    "source_file": "HDR.pdf",
+    "source_sha256": "35c190fd2d2a393c8cdfc7083bd44d308c4e37611e0f09fce9929668ec1a91d6",
+    "pages": 75,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

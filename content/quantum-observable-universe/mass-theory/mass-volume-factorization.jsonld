@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-mass-volume-factorization",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:mass-volume-factorization",
+  "kind": "conjecture",
+  "title": "Mass-volume factorization of the categorical mass endomorphism",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/murakami-murakami2001"
+  ],
+  "tags": [
+    "tier:S",
+    "mass-endomorphism",
+    "hyperbolic-volume",
+    "density",
+    "frobenius-packing",
+    "jsj-decomposition",
+    "categorical-action"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.MassVolumeFactorization",
+  "text": "mass-volume-factorization.md",
+  "leanSource": "mass-volume-factorization.lean",
+  "provenance": "authored"
+}

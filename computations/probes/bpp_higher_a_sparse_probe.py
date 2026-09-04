@@ -182,7 +182,10 @@ def main() -> int:
                      "S_inter_false": mp.nstr(s_off, 25),
                      "B_total_MeV": mp.nstr(tot, 20),
                      "B_pp_per_bond_MeV": mp.nstr(pb, 20),
-                     "seconds": round(el, 1)})
+                     # wall-clock runtime metadata, not a payload number —
+                     # reserved ephemeral name so the raw-float64 ratchet's
+                     # runtime-duration carve-out covers it (qou-6sts).
+                     "elapsed_sec": round(el, 1)})
         print(f"  {A:>3}{n:>5}{len(cr):>7}{len(cache):>7}"
               f"{max(dims) if dims else 0:>8}{mp.nstr(tot, 12):>16}"
               f"{mp.nstr(pb, 12):>16}{el:>7.1f}")
@@ -257,7 +260,7 @@ def main() -> int:
     print("\n" + "-" * 78)
     print("  4. 'Intractable' was the dense evaluator, not the object")
     print("-" * 78)
-    slowest = max(r["seconds"] for r in rows)
+    slowest = max(r["elapsed_sec"] for r in rows)
     print(f"\n  Largest case here: A=4, n=12, max dim 297 — {slowest:.0f} s.")
     print("  Dense chi_lambda_numerical did not return within 600 s.")
     check("the H_2A bond is computable — the intractability claim was stale",
@@ -289,6 +292,19 @@ def main() -> int:
 """)
 
     wit = {
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin. q0 enters through "
+            "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+            "anchor (1.1099785827513808075...) because this stem is not "
+            "listed under ideal_muon; proton is the standing default for "
+            "compute per the 2026-08-07 owner directive. The stem IS "
+            "declared physical_proton in "
+            "computations/q0_anchor_manifest.json, and that declaration "
+            "cannot stamp this witness: the manifest is read inside "
+            "WitnessBuilder.build(), and this producer hand-rolls its "
+            "witness and never enters build(). Hence the declaration "
+            "here, which is the only route that reaches the file."),
         "$schema": "https://litlfred.github.io/qou/schemas/witness/v1",
         "name": "bpp-higher-a-sparse",
         "description": (
@@ -321,6 +337,15 @@ def main() -> int:
         },
     }
     out = _HERE / "bpp-higher-a-sparse.witness.json"
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
+    # this one. Ask for the anchor with the same precedence q_parameter
+    # uses at compute time (env var > manifest stem > proton) rather than
+    # hardcoding a pin this run may not have used.
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
+    wit["q0Anchor"] = _q0a
+    if _q0v:
+        wit["q0Value"] = _q0v
     out.write_text(json.dumps(wit, indent=2) + "\n", encoding="utf-8")
     print(f"  witness: {out}")
     return 0 if ok else 1

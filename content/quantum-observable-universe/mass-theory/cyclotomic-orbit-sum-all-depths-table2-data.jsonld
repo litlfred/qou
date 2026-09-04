@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-cyclotomic-orbit-sum-all-depths-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:cyclotomic-orbit-sum-all-depths-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:cyclotomic-orbit-sum-all-depths",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-orbit-sum-all-depths"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "cyclotomic-orbit-sum-all-depths-table2-data.md",
+  "provenance": "authored"
+}

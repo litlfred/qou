@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/blocks/thm-sec-013-02",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "text": "thm-sec-013-02.md",
+  "derivedFrom": "library/nrarith/sections/sec-013",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

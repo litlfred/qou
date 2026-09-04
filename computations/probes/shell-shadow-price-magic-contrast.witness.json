@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:39:57.639840+00:00",
-  "commitSha": "343b0f9f6d36753dea38663c92800e129318e921",
+  "computedAt": "2026-09-03T05:57:56.147337+00:00",
+  "commitSha": "106b228b78b00676d525e0e7452b5dea77c1bc6f",
   "assertions": [
     {
       "name": "no_partition_anywhere_violates_feasibility",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 12,
   "computation": "shell-shadow-price-magic-contrast",
   "scriptFile": "shell_shadow_price_magic_contrast_probe.py",
   "scriptHash": "d77ecd5dca74",
-  "scriptCommitSha": "343b0f9f6d36753dea38663c92800e129318e921",
+  "scriptCommitSha": "9cd039b8d435cb9bd094af28341098e5747b27b2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,8 +64,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -168,5 +167,7 @@
   },
   "caveats": [
     "Exhaustive over partitions only to A=10 (p(60)=966,467 puts magic 20+ out of reach), so that leg covers magic {2, 8}; magic 20 and 28 are covered by the default-partition sweep to A=30, and 50/82/126 by neither. min|y| is exactly 0.0 at some partitions for A=3,4,5,10, so its cross-A ranking is degenerate and is not a signal either way."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 8-9
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 To aide in our investigation of inner tensor products of SL 2(C) representations, we now deﬁne an important
 SL2(C)-invariant linear map, denoted by D. This map has a long history in invariant theory, and we touch

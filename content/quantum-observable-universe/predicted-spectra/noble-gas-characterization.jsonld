@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:noble-gas-characterization",
+  "kind": "proposition",
+  "title": "Noble gas characterization: full shell as full curls",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-helium-hopf-diagram"
+  ],
+  "tags": [
+    "noble-gas",
+    "hopf-link",
+    "sub-link",
+    "trefoil",
+    "closed-shell",
+    "curl",
+    "helium",
+    "neon",
+    "argon"
+  ],
+  "leanRef": "qou:QOU.Archimedean.noble_gas_characterization",
+  "text": "noble-gas-characterization.md",
+  "provenance": "authored"
+}

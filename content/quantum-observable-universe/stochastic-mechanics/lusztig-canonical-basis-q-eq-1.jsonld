@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-lusztig-canonical-basis-q-eq-1",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:lusztig-canonical-basis-q-eq-1",
+  "kind": "conjecture",
+  "title": "Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-reverse-limit-q-to-infinity",
+    "papers/quantum-observable-universe/blocks/conj-kazhdan-lusztig-classical-limit"
+  ],
+  "cites": [
+    "references/kazhdan-lusztig1979",
+    "references/lusztig1990",
+    "references/kashiwara1991"
+  ],
+  "tags": [
+    "lusztig-canonical-basis",
+    "duality-d24",
+    "kazhdan-lusztig",
+    "classical-limit",
+    "decategorification",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1",
+  "text": "lusztig-canonical-basis-q-eq-1.md",
+  "leanSource": "lusztig-canonical-basis-q-eq-1.lean",
+  "provenance": "authored"
+}

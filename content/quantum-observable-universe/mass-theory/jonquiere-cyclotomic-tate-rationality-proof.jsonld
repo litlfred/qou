@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-jonquiere-cyclotomic-tate-rationality",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:jonquiere-cyclotomic-tate-rationality",
+  "kind": "proof",
+  "title": "Proof of jonquiere cyclotomic tate rationality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jonquiere-cyclotomic-tate-rationality"
+  ],
+  "text": "jonquiere-cyclotomic-tate-rationality-proof.md",
+  "provenance": "authored"
+}

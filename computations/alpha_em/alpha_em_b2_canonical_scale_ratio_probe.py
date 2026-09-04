@@ -178,29 +178,15 @@ N = 5
 
 
 def q0_val():
-    if q_at is not None:
-        return q_at(50)
-    # RAISE, do not substitute the other layer (bean qou-0hnz, 2026-08-30).
-    #
-    # This returned mp.mpf("1.10997859555733471989976322048322502665620840878")
-    # — the superseded MUON pin A — whenever `from qou_substrate.constants
-    # import q_at` failed. The happy path is that proton Newton solve, so an
-    # import failure silently moved this producer 11.5371 ppb to the other
-    # ANCHOR LAYER, with nothing recorded and no warning. That is the
-    # cross-layer fallback shape `computations/audits/
-    # q0_cross_layer_fallback_scan.py` exists to find, and its own prose
-    # prescribes this fix: "raising instead of substituting the other layer".
-    #
-    # Nothing computed changes: when the import succeeds — which is the only
-    # case any committed witness here was produced under — this function is
-    # byte-identical to before.
-    raise SystemExit(
-        "alpha_em_b2_canonical_scale_ratio_probe.py: cannot import qou_substrate.constants.q_at, so the substrate "
-        "q0 is unavailable. Refusing to fall back to a hardcoded pin from the "
-        "OTHER anchor layer (11.5371 ppb away) — that would compute at the "
-        "muon anchor while reporting a proton result. Install the package "
-        "and re-run."
-    )
+    """Proton pin, 50 dps, read BY NAME. No fallback: a missing substrate is an error,
+    not a silent switch to a retired literal (bean qou-4bef, 2026-09-03)."""
+    if q_at is None:
+        raise RuntimeError(
+            "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+            "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+            "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+            "Install it: pip install -e tools/qou-substrate.")
+    return q_at(50)
 
 
 # ---------------------------------------------------------------- helpers

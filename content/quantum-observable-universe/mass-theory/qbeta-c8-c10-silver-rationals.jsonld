@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-c8-c10-silver-rationals",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-c8-c10-silver-rationals",
+  "kind": "proposition",
+  "title": "$\\mathfrak{Q}_\\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2",
+  "tags": [
+    "qbeta",
+    "c-k",
+    "habiro",
+    "silver-ratio",
+    "pell-lucas",
+    "closed-form",
+    "lean"
+  ],
+  "leanRef": "qou:QOU.QBeta.qbeta_c10_at_silver",
+  "text": "qbeta-c8-c10-silver-rationals.md",
+  "leanSource": "qbeta-c8-c10-silver-rationals.lean",
+  "provenance": "authored"
+}

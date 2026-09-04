@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bsmf-2002-130-3-457-0/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Hyperideal polyhedra",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "contains": [
+    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-000",
+    "library/bsmf-2002-130-3-457-0/blocks/thm-sec-000-01",
+    "library/bsmf-2002-130-3-457-0/blocks/thm-sec-000-02",
+    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-000-03",
+    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-000-04"
+  ],
+  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
+  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "provenance": "ingested"
+}

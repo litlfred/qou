@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Conformal deformation space of singular Euclidean metrics",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/18/blocks/prose-sec-008",
+    "library/18/blocks/thm-sec-008-01",
+    "library/18/blocks/thm-sec-008-02",
+    "library/18/blocks/rem-sec-008-03"
+  ],
+  "derivedFrom": "library/18/manifest",
+  "sourceDocument": "library/18/manifest",
+  "provenance": "ingested"
+}

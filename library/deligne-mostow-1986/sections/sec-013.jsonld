@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The compactified quotient space Qgst",
+  "pageStart": 25,
+  "pageEnd": 31,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-013",
+    "library/deligne-mostow-1986/blocks/ex-sec-013-01",
+    "library/deligne-mostow-1986/blocks/lem-sec-013-02",
+    "library/deligne-mostow-1986/blocks/ex-sec-013-03"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

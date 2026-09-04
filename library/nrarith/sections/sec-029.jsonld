@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Arithmeticity of chain links",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-029",
+    "library/nrarith/blocks/prop-sec-029-01"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-nucleon-ordering-factorization",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:nucleon-ordering-factorization",
+  "kind": "proof",
+  "title": "Proof of nucleon ordering factorization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nucleon-ordering-factorization"
+  ],
+  "text": "nucleon-ordering-factorization-proof.md",
+  "provenance": "authored"
+}

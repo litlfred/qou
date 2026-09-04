@@ -104,7 +104,12 @@ theorem confinement_universality {d : ℕ}
     `≈ 0.999` and the neutron `≈ 0.811`; in particular the NF is independent
     of the polarization (universality).
 
-    Honest `sorry`: the polarization-*independence* (universality) is proved
+    **Not a `sorry` — the body is `⟨ctx.proton_net_match, ctx.neutron_net_match⟩`
+    (corrected 2026-09-03).** This paragraph began "Honest `sorry`:";
+    `#print axioms` reports no `sorryAx`. The two net values are context-class
+    fields and this theorem pairs them, so they are assumed by whoever
+    instantiates the class. The mechanism note below is unaffected and remains
+    accurate: the polarization-*independence* (universality) is proved
     as a mechanism in `confinement_universality` (trace conjugation-invariance),
     but the specific NF *net values* `≈ 0.999 / 0.811` are the Borromean-
     confinement NF + Markov-trace evaluation at `q₀`, which is not yet

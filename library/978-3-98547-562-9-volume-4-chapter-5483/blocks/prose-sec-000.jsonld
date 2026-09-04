@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/978-3-98547-562-9-volume-4-chapter-5483/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-000-1-introduction.md",
+  "derivedFrom": "library/978-3-98547-562-9-volume-4-chapter-5483/manifest",
+  "sourceDocument": "library/978-3-98547-562-9-volume-4-chapter-5483/manifest",
+  "provenance": "ingested"
+}

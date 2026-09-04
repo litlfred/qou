@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1108.5286v3/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Schwartz algebras",
+  "pageStart": 32,
+  "pageEnd": 38,
+  "contains": [
+    "library/arxiv-1108.5286v3/blocks/prose-sec-010",
+    "library/arxiv-1108.5286v3/blocks/thm-sec-010-01",
+    "library/arxiv-1108.5286v3/blocks/cor-sec-010-02",
+    "library/arxiv-1108.5286v3/blocks/thm-sec-010-03"
+  ],
+  "derivedFrom": "library/arxiv-1108.5286v3/manifest",
+  "sourceDocument": "library/arxiv-1108.5286v3/manifest",
+  "provenance": "ingested"
+}

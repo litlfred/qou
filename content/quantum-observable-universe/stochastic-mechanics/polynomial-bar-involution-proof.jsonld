@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-polynomial-bar-involution",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:polynomial-bar-involution",
+  "kind": "proof",
+  "title": "Proof of polynomial bar involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-polynomial-bar-involution"
+  ],
+  "text": "polynomial-bar-involution-proof.md",
+  "provenance": "authored"
+}

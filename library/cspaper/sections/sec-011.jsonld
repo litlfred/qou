@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cspaper/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(c0",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "contains": [
+    "library/cspaper/blocks/prose-sec-011",
+    "library/cspaper/blocks/rem-sec-011-01"
+  ],
+  "derivedFrom": "library/cspaper/manifest",
+  "sourceDocument": "library/cspaper/manifest",
+  "provenance": "ingested"
+}

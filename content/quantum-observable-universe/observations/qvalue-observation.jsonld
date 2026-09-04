@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-qvalue-observation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:qvalue-observation",
+  "kind": "remark",
+  "title": "Q-value predictions vs experiment: $q$-weighted channel separation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue",
+    "papers/quantum-observable-universe/blocks/rem-mass-comparison-table"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue",
+  "tags": [
+    "q-value",
+    "beta-decay",
+    "observation",
+    "channel-separation",
+    "q-weighted",
+    "nndc",
+    "error-propagation"
+  ],
+  "text": "qvalue-observation.md",
+  "provenance": "authored"
+}

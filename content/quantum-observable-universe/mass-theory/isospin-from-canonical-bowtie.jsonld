@@ -1,0 +1,38 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-isospin-from-canonical-bowtie",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:isospin-from-canonical-bowtie",
+  "kind": "conjecture",
+  "title": "Canonical $\\mathrm{SU}(2)_I$ isospin from the operator-valued $\\bowtie_K$ interface (regularised crystal extension)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-isospin-degeneracy",
+    "papers/quantum-observable-universe/blocks/conj-inter-nucleon-channel-color-tube",
+    "papers/quantum-observable-universe/blocks/prop-flavor-split-substrate",
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "cites": [
+    "references/kashiwara1991",
+    "references/wenzl1988",
+    "references/lusztig1990",
+    "references/wigner1937"
+  ],
+  "tags": [
+    "isospin",
+    "duality-d9",
+    "bowtie-interface",
+    "regularised-crystal-functional",
+    "bar-anti-symmetric-residue",
+    "flavor-split",
+    "axiom-class",
+    "open-problem",
+    "conditional-on-class"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.IsospinFromCanonicalBowtie",
+  "text": "isospin-from-canonical-bowtie.md",
+  "leanSource": "isospin-from-canonical-bowtie.lean",
+  "provenance": "authored"
+}

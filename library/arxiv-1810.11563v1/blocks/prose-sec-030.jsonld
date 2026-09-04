@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-030",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "AdS Black Holes",
+  "pageStart": 64,
+  "pageEnd": 65,
+  "text": "../sections/sec-030-171-ads-black-holes.md",
+  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
+  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "provenance": "ingested"
+}

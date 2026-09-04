@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s40879-023-00706-0/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Bring's curve: old and new",
+  "contains": [
+    "library/s40879-023-00706-0/sections/sec-000",
+    "library/s40879-023-00706-0/sections/sec-001",
+    "library/s40879-023-00706-0/sections/sec-002",
+    "library/s40879-023-00706-0/sections/sec-003",
+    "library/s40879-023-00706-0/sections/sec-004",
+    "library/s40879-023-00706-0/sections/sec-005",
+    "library/s40879-023-00706-0/sections/sec-006",
+    "library/s40879-023-00706-0/sections/sec-007",
+    "library/s40879-023-00706-0/sections/sec-008",
+    "library/s40879-023-00706-0/sections/sec-009",
+    "library/s40879-023-00706-0/sections/sec-010",
+    "library/s40879-023-00706-0/sections/sec-011",
+    "library/s40879-023-00706-0/sections/sec-012",
+    "library/s40879-023-00706-0/sections/sec-013",
+    "library/s40879-023-00706-0/sections/sec-014",
+    "library/s40879-023-00706-0/sections/sec-015",
+    "library/s40879-023-00706-0/sections/sec-016",
+    "library/s40879-023-00706-0/sections/sec-017",
+    "library/s40879-023-00706-0/sections/sec-018",
+    "library/s40879-023-00706-0/sections/sec-019",
+    "library/s40879-023-00706-0/sections/sec-020",
+    "library/s40879-023-00706-0/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "s40879-023-00706-0",
+    "source_file": "s40879-023-00706-0.pdf",
+    "source_sha256": "4c5af312d2e5d6a75f1a67146f769bd8b1d959132ed411b7f8be07df6416037e",
+    "pages": 46,
+    "arxiv": null,
+    "doi": "10.1007/s40879-023-00706-0",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

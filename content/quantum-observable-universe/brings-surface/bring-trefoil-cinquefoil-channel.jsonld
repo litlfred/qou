@@ -1,0 +1,39 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-bring-trefoil-cinquefoil-channel",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:bring-trefoil-cinquefoil-channel",
+  "kind": "proposition",
+  "title": "The trefoil $+$ cinquefoil channel in Bring's $\\Sigma_4$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-embeddable-complete",
+    "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism",
+    "papers/quantum-observable-universe/blocks/def-hyperelliptic-quintic",
+    "papers/quantum-observable-universe/blocks/prop-lagrange-resolvent-transform",
+    "papers/quantum-observable-universe/blocks/prop-genus-maximal-descent",
+    "papers/quantum-observable-universe/blocks/rem-color-tube-cubic"
+  ],
+  "cites": [
+    "references/washington1997",
+    "references/bolza1887"
+  ],
+  "tags": [
+    "brings-surface",
+    "torus-knot",
+    "trefoil",
+    "cinquefoil",
+    "chirality",
+    "zeta5",
+    "quintic",
+    "sqrt5",
+    "seifert-genus",
+    "S5"
+  ],
+  "leanRef": "qou:QOU.BringChiralCinquefoil.bring_trefoil_cinquefoil_channel",
+  "text": "bring-trefoil-cinquefoil-channel.md",
+  "leanSource": "bring-trefoil-cinquefoil-channel.lean",
+  "provenance": "authored"
+}

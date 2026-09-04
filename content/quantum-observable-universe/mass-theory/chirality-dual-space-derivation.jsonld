@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-chirality-dual-space-derivation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:chirality-dual-space-derivation",
+  "kind": "proposition",
+  "title": "Chirality $a_K = \\prod_{pn} (1 + \\mathrm{sign}\\cdot h)$ from symmetric-channel trace duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chirality-writhe-ribbon-derivation"
+  ],
+  "tags": [
+    "chirality",
+    "dual-space",
+    "wedderburn",
+    "symmetric-channel",
+    "per-crossing",
+    "term-5",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.chirality_dual_space_derivation",
+  "text": "chirality-dual-space-derivation.md",
+  "leanSource": "chirality-dual-space-derivation.lean",
+  "provenance": "authored"
+}

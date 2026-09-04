@@ -8,16 +8,26 @@ but two documented pins:
 
     IDEAL / canonical 3-CAL (mathematical)
         CAL-2 = 𝔇_β, pinned via its proxy m_μ/m_e
-        → q₀ = 1.10997859555733471989...            (MUON)
-        → this is what `y-lambda-at-q0.witness.json` and the ~840 `computations/`
-          witnesses are built at
+        → q₀ = 1.1099785956427390466817...          (MUON, live CODATA-2022)
+        → this docstring read 1.10997859555733471989... until 2026-09-04. That is
+          the RETIRED self-certified pin A, superseded 2026-08-22 (fca08de7d2) by
+          the CODATA-2022 lepton-ratio derivation, +0.0769 ppb. The CODE was
+          already correct — it takes the muon leg from
+          `witness._q0_value_for_anchor("muon")`, which follows the anchor — so
+          only the prose was stale (bean qou-9ugp).
+        → the muon-fingerprinted `computations/` witnesses are a MIXED population:
+          re-measured 2026-08-30 on main, 403 carry a muon spelling, of which 257
+          are CODATA-2018, 96 the live CODATA-2022 and 40 the retired pin A. The
+          "~840" here is the older ten-digit-prefix count and is not current;
+          re-measure rather than quote it.
 
     EXPERIMENTAL / Physical-Observations layer
-        m_p/m_e (0.06 ppb, vs the muon ratio's 22 ppb; re-pin 2026-05-28)
+        m_p/m_e (0.017 ppb, vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the
+        0.06 ppb this line used to quote was corrected in AGENTS.md 2026-08-21)
         → q₀ = 1.1099785827513808                   (PROTON)
         → this is `q_parameter.Q`, the package layer
 
-    separation = 11.54 ppb  —  precisely the μ–p substrate tension (AGENTS.md quotes the
+    separation = 11.614 ppb (11.537 against the retired pin A)  —  precisely the μ–p substrate tension (AGENTS.md quotes the
     unavoidable theory residual as ~11.5 ppb; this probe measures 11.54 ppb).
 
 `mu3_frechet_perblock_probe.py` (#4657, merged) took `y_λ` from the **ideal/mathematical**
@@ -68,14 +78,20 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q_MP as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0, Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]
                        / "tools" / "qou-substrate" / "python"))
-from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
+from qou_substrate.witness import _q0_value_for_anchor, q0_comparison  # noqa: E402
+
+# The canonical 50-digit pin STRINGS, kept alongside the 40-dps working values.
+# The working mpf is what this probe computes with; the string is what its
+# witness records, so a 40-dps computation cannot pad digits into the record.
+Q_PROTON_STR = Q_50_DIGIT_STR
+Q_MUON_STR = _q0_value_for_anchor("muon")
 
 set_compute_dps(40)
 Q_PROTON = mp.mpf(str(Q0))
@@ -176,7 +192,28 @@ def main() -> int:
     w.add_assertion("sign_rule_anchor_independent", 1 if signs_agree else 0, 1)
     w.add_parameter("q0_proton", mp.nstr(Q_PROTON, 30))
     w.add_parameter("q0_muon", mp.nstr(Q_MUON, 30))
-    w.add_parameter("separation_ppb", float(rel_q) * 1e9)
+    # Was `float(rel_q) * 1e9` -- a raw float64 field entering the witness, and
+    # the producer's own raw-float64 ratchet said so on every run:
+    #   "1 raw float64 field(s) would enter the witness -- .parameters
+    #    .separation_ppb. Carry mpmath.mpf from the source and serialize with
+    #    _precision.fmt; do NOT stringify the float."
+    # rel_q is an mpf computed at the module dps from two 50-digit pins, so the
+    # cast threw away every digit past the 16th on the ONE number this probe
+    # exists to quantify (bean qou-9ugp).
+    # Recomputed at 60 dps from the two CANONICAL 50-digit pin strings, not from
+    # the module's 40-dps working copies. `fmt` renders at OUTPUT_DPS (50), so
+    # formatting a 40-dps value would MANUFACTURE ten digits -- the mirror of the
+    # float64 defect, in the other direction.
+    # 100, not 60: at 60 dps the OUTPUT_DPS=60 rendering is NOT stable in its
+    # last ~5 digits (60 dps gives ...602666793612, 80 and 120 dps both give
+    # ...602667054978). Computing at 100 and rendering at 60 is stable. Note the
+    # value is exact AS A FUNCTION OF THE TWO RECORDED PIN STRINGS; the proton
+    # string carries 50 digits, so digits past ~50 describe the recorded pins
+    # rather than any measurement.
+    with mp.workdps(100):
+        _sep_ppb = (abs(mp.mpf(Q_PROTON_STR) - mp.mpf(Q_MUON_STR))
+                    / mp.mpf(Q_MUON_STR) * mp.mpf(10) ** 9)
+    w.add_parameter("separation_ppb", fmt(_sep_ppb))
     w.add_data("results", results)
     w.add_caveat(
         "DEFECT RECORDED, and it is a CALIBRATION-LAYER crossing, not a cache-staleness "
@@ -196,7 +233,24 @@ def main() -> int:
         "(all 30 signs agree). Correct convention is pure muon per the AGENTS.md q0-anchor "
         "section."
     )
-    w.save()
+    # This producer evaluates y_lambda and chi at BOTH pins and publishes their
+    # separation; it is an (E1) explicit mu-vs-p comparison and belongs in
+    # NEITHER anchor list. It previously stamped nothing, so the anchor audit
+    # filed the very probe that MEASURES the two-layer straddle under
+    # Q0_ANCHOR_MISSING -- indistinguishable from a producer that forgot
+    # (bean qou-9ugp).
+    _reason = (
+        "The subject of this probe IS the two-pin straddle: y_lambda and chi are "
+        "evaluated at BOTH the experimental (proton) and ideal-CAL-2 (muon) pins "
+        "and their separation is published as parameters.separation_ppb. Proton "
+        "from q_parameter.Q_MP, muon from witness._q0_value_for_anchor('muon'), "
+        "so both legs follow the anchor and neither can go stale.")
+    assert _reason.isascii(), "q0AnchorReason must be pure ASCII"
+    # Record the CANONICAL 50-digit strings, not mp.nstr of the 40-dps working
+    # mpf: the latter pads ten digits the working precision never carried, and
+    # the anchor audit compares these against the canonical value character for
+    # character.
+    w.save(q0_comparison(muon=Q_MUON_STR, proton=Q_PROTON_STR, reason=_reason))
     return 0 if same else 1
 
 

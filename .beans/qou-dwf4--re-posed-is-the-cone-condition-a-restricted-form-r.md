@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-08-31T04:35:41Z
+updated_at: 2026-09-04T10:44:38Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -170,3 +170,298 @@ knot. This rests on the reciprocity invariant, not on a numerical near-miss.
 something in the H_3 reduction tree? That is a well-posed question about five
 small integers. The predecessor's version -- ten rationals in a structureless
 basis -- is retired, not answered.
+
+
+---
+
+## CORRECTION 2026-08-31, ~1h after the entry above — the question I left open was ILL-POSED
+
+Probe (corrected in place, not superseded):
+`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, now **18/18**.
+Lean: `markov_hecke_relation`, sorry-free; file now 35 theorems / 0 sorries.
+
+**WHAT I ASSERTED.** That the constraint's expression in (z, hbar) has integer
+coefficients **(1, 2, 3, 1, 1)**, and that the surviving open item was "does
+(1, 2, 3, 1, 1) count something in the H_3 reduction tree? A well-posed question
+about five small integers."
+
+**WHAT IS ACTUALLY TRUE.** z and hbar are ALGEBRAICALLY DEPENDENT:
+
+    R(z, hbar) = hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1 = 0
+
+irreducible over Q, total degree 4. So Q[z, hbar] is NOT a polynomial ring but
+the coordinate ring Q[Z,H]/(R) of an affine rational curve, and a polynomial
+representative is unique only MODULO R. Measured: the degree-<=6 representatives
+form a coset of a **SIX-dimensional** space. A second, equally integral,
+equally degree-6 representative is
+
+    -1 + 4 z^2 - 3 hbar z + 4 z^4 + hbar^2 z^4
+
+differing from the first by exactly (hbar z + z^2 + 1) * R. Six free parameters
+is far too much room for five small integers to carry information. The question
+is WITHDRAWN, not answered.
+
+**HOW IT WAS CAUGHT.** Not by a gate — by expressing all six components of G.t
+in (z, hbar) as a sanity check before starting the H_4 generalisation. The
+solver returned a DIFFERENT degree-6 integer string for row 5 than the one I had
+just merged. Two integral representatives of one quantity is the signal; the
+relation was then one resultant away.
+
+**WHAT SURVIVES, and it is most of the result.**
+
+  * The IDENTITY is true and Lean-proved (`cone_eq_markov_hecke_polynomial`).
+    Nothing proved is affected -- the defect was in the interpretation offered
+    beside it.
+  * MINIMAL DEGREE 6 stands, and is a genuine invariant. That measurement was
+    made over the span of the EVALUATED monomials, so it already accounted for
+    the relation: no polynomial in (z, hbar) of total degree <= 5 equals the
+    constraint, R-multiples included.
+  * Integrality stands and is not a one-representative fluke: the grevlex
+    normal form modulo R is integral too.
+  * The (z, hbar) framing itself stands -- forced by the Markov trace, with
+    `QOU.Machinery.MarkovTraceH4.TRM` as the prior art.
+
+**CANONICAL-ISH REPRESENTATIVE.** Reducing modulo a Groebner basis of (R) under
+a STATED order (grevlex, Z > H) gives a well-defined element, and both
+representatives reduce to it:
+
+    hbar^5 z + 4 hbar^3 z + hbar^2 - 2 hbar z + 5 z^2 - 1
+
+Reproducible, not intrinsic -- another term order gives another normal form.
+
+**CONTAMINATION SWEPT.** The wrong framing reached four places, all corrected
+on branch claude/toffoli-zhbar-relation-2026-08-31: the probe docstring, the
+`cone_eq_markov_hecke_polynomial` Lean docstring, the
+`prop:toffoli-lp-stability` .md block, and this bean. PR #6341's body (merged)
+is edited too. Nothing else in the corpus quoted the string.
+
+**REMAINING, re-posed a THIRD time.** Ask (b) first -- it is the only one whose
+subject is not an artifact of a choice I made:
+
+  (a) does the minimal degree 6 mean anything? (a real invariant)
+  (b) does the curve R(z, hbar) = 0 appear elsewhere in the corpus? It is a
+      fact about H_n(q) and its Markov trace, NOT about the Toffoli, so it
+      should have consequences well outside this arc.
+  (c) does the grevlex normal form mean anything, given that order?
+
+
+---
+
+## ITEM (b) ANSWERED 2026-08-31 — the relation is a statement about CROSSING LOOP VALUES, and it separates convention D from C
+
+Probe: `computations/probes/markov_loop_value_product_and_framing_ratio.py`,
+**13/13**. Lean: `markovZNeg_eq`, `markov_loop_value_product`,
+`markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo`,
+`qDimTwo_sq_sub_hbar_sq` -- all sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. File now 40 theorems / 0 sorries.
+
+**THE CORPUS ALREADY NAMES BOTH SIDES**, and the six-path grep found it:
+`prop:markov-z-reconciliation`
+(`content/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md`)
+defines the NEGATIVE-crossing loop value `z_- = z - (q - 1/q) = z - hbar`,
+forced by the Hecke quadratic relation from the one-sided stabilisation rule,
+and calls `a^2 = z/z_-` the Ocneanu FRAMING RATIO. So `z - hbar`, which the
+Toffoli work met as an algebraic accident, is a named object with a meaning.
+That block ALSO already states `z_C = 1/[2]_{sqrt q}` verbatim -- so that clean
+form is prior art, not a finding.
+
+**THE RELATION, RESTATED.** Using `hbar^2 + 4 = [2]_q^2`, the degree-4 relation
+factors:
+
+    R = hbar^3 z - hbar^2 z^2 + 4 hbar z - 4 z^2 + 1  =  [2]_q^2 . z . (z-hbar) - 1
+
+so in convention D
+
+    z_-      = 1/(q(q^2+1))
+    z_+ z_-  = 1/[2]_q^2        (= w_(2,1), the registered standard-block weight)
+    a^2      = z_+/z_-  =  q^4  ->  a = q^2, a MONOMIAL
+
+**CONVENTION C HAS NEITHER, and that is the point.**
+
+    z_-  = (q^{3/2} - q^3 - q^2 + q + 1)/(q(q+1))
+    a^2  = q^{3/2}/(q^{3/2} - q^3 - q^2 + q + 1)
+
+half-integer and integer powers of q mixed in one numerator, no factorisation,
+no monomial framing ratio. BOTH conventions satisfy
+`tr_M(1) = (z_+ - z_-)/hbar = 1`, so this is not C being INVALID -- it is C
+being STRUCTURELESS.
+
+**WHY THIS MATTERS BEYOND THE TOFFOLI ARC, which was item (b)'s whole point.**
+The owner's rulings of 2026-08-09 and 2026-08-15 make D canonical and excise C.
+The justification on record is EMPIRICAL: 195.8 ppm on `tr_M(beta_Bor)`, -197
+ppm on `m_p`. This is a STRUCTURAL reason pointing the same way, and it is
+independent of any anchor, any measurement and any ppm figure. Recorded in the
+reconciliation block itself, which is its natural home.
+
+**Two further forms**, recorded because they make the pair comparable at a
+glance and neither was in the corpus:
+
+    z_D      = q^2/[2]_q            (exact analogue of C's 1/[2]_{sqrt q})
+    z_D(q)   = q^2 . z_C(q^2)       (a direct C-to-D bridge)
+
+**STILL OPEN**, from the three-item list above: (a) does the minimal degree 6
+mean anything, and (c) does the grevlex normal form mean anything given that
+order. Both are weaker than (b) was and neither has a lead. A better successor,
+suggested by this result: the framing ratio `a = q^2` is a monomial in D -- does
+that have consequences for the Ocneanu weight formula the block quotes, e.g. do
+the D weights `w_lambda` have a closed form in `q` alone that C's do not?
+
+
+---
+
+## ITEM (b) SUCCESSOR ANSWERED 2026-08-31 — the framing ratio CLASSIFIES the convention: D is the sl_2 point
+
+Probe: `computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py`,
+**13/13**. Lean: `qIntSym_two`, `markovZAt_framing`, `markovZAt_two_eq_markovZ`,
+`ocneanu_numerator_collapse` -- sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. File now 44 theorems / 0 sorries.
+
+**THE QUESTION.** The previous step showed D's Ocneanu framing ratio
+`a^2 = z/z_-` is the MONOMIAL `q^4` and C's is not a monomial, and called that a
+structural separation. Successor: does the monomial DO anything in the weight
+formula, or is it decoration?
+
+**THE MECHANISM.** It does. `rem:markov-z-reconciliation` gives the block weights
+by the frame-general Ocneanu product over cells of lambda of
+`(z q^c - z_- q^{-c})/(q^h - q^{-h})`. When `a = q^N`, i.e. `z = q^{2N} z_-`,
+every numerator collapses:
+
+    z q^c - z_- q^{-c} = z_-(q^{2N+c} - q^{-c}) = z_- q^N (q^{N+c} - q^{-(N+c)})
+
+and with `z_- q^N = 1/[N]_q` the whole product is the HOOK-CONTENT FORMULA:
+
+    w_lambda = dim_q(V_lambda^{sl_N}) / [N]_q^n
+
+So an Ocneanu trace whose framing ratio is a power of q IS a Lie-type
+specialisation, and the exponent names which one.
+
+**THE FAMILY.** Solving `a = q^N` for z gives `z_N = q^N/[N]_q`, and
+
+    N=1  z=q                       N=2  z=q^3/(q^2+1)   <== CONVENTION D
+    N=3  z=q^5/(q^4+q^2+1)         N=4  z=q^7/((q^2+1)(q^4+1))
+
+Verified for N=1..4 over EVERY partition of n <= 5: `a^2 = q^{2N}`,
+`z_- q^N = 1/[N]_q`, `w = dim_q/[N]^n`, and `w = 0` exactly when lambda has more
+than N rows.
+
+**TWO CONSEQUENCES.** The registered `w_(3) = [4]_q/[2]_q^3` and
+`w_(2,1) = 1/[2]_q^2` are the quantum dimensions of the 4- and 2-dimensional
+U_q(sl_2) irreps over `[2]_q^3`. And the exact vanishing `y_(1^3) = 0` -- which
+the corpus records as a notable fact verified three independent ways -- is the
+sl_2 ROW BOUND: a partition with more than N rows has a cell of content -N,
+whose numerator factor carries `[0]_q = 0`. Three rows, N = 2.
+
+**C IS IN NO MEMBER, FOR ANY N** -- not merely no integer N. Its framing
+ratio's logarithmic derivative is
+`-(3s^6+s^4+s^2+3)/(2(s^6+s^4-s^3-s^2-1))` with `s = sqrt q`, which is NOT
+constant; `a^2 = q^t` would force it to equal the constant t. And C's weights
+vanish on NO partition (checked `(1^3)`, `(2,1,1)`, `(1^4)`), so C has no row
+bound. This upgrades the previous step from "D is clean, C is ugly" to a
+CLASSIFICATION: D is the sl_2 point of the Ocneanu family, C is off the family.
+
+**PRIOR ART, credited.** `rem:markov-z-reconciliation` supplies the
+frame-general formula, `z_-`, the framing ratio, `z_C = 1/[2]_{sqrt q}`, and the
+registered D weights. The probe READS that file and asserts against it.
+
+**A SYMBOL COLLISION I ALMOST WALKED INTO** (notation register §7aa -- the
+partition-weight families are distinct at q != 1). `wedderburn-weight-canonical`
+defines a DIFFERENT `w_lambda(q) = dim_q(lambda)^2/[n]_q!` from the
+Frame-Robinson-Thrall hook-LENGTH dimension. Mine is the Ocneanu/Markov weight
+(the production `y_lambda`), hook-CONTENT. Measured at n=3 they differ on every
+partition and differ already at q=1: `(1/6, 2/3, 1/6)` against `(1/2, 1/4, 0)`.
+Recorded as a notation warning in the reconciliation block.
+
+**FLAGGED, NOT CLAIMED.** `wedderburn-weight-canonical` says its Wenzl-bridge
+reduction `y_lambda = w_lambda(q)` "applies only to the self-conjugate stratum".
+At n=3 the self-conjugate partition is (2,1), and my two numbers there DISAGREE
+(2/3 vs 1/4 at q=1). That may mean the block is wrong, or that I am reading its
+`dim_q` or `[n]_q!` normalisation differently than intended. I have NOT
+established which, and am not declaring it refuted -- it needs the block's own
+normalisation pinned down first. Successor bean material.
+
+
+---
+
+## FLAG RESOLVED 2026-09-02 — the Wenzl-bridge premise is FALSE, and my flag was right for the wrong reason
+
+Probe: `computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`,
+**10/10**. Lean: `ocneanu_numerator_vanishes_at_content_neg`, sorry-free.
+
+**MY FLAG SAID** the two blocks disagreed on the self-conjugate stratum, and
+that I might be misreading `wedderburn-weight-canonical`'s normalisation. Two
+corrections to my own framing, then the finding.
+
+**FIRST, I HAD "SELF-CONJUGATE" WRONG.** I assumed it meant `lambda = lambda'`.
+The Lean says `kappa_lambda = sum_x c(x) = 0`. (2,1) satisfies both, so my
+example survived, but the stratum is different from what I said.
+
+**SECOND, THE GLYPH.** The block's `.ts` title and `.lean` both call its weight
+`w~_lambda` (the THIRD registered family); only the `.md` body wrote
+`w_lambda(q)`, conflating it with the Ocneanu/Markov family. So there was never
+a cross-block contradiction of the kind I flagged -- there was a WITHIN-block
+notation defect. Fixed in the `.md`.
+
+**THE FINDING, which is bigger than the flag.** The premise
+`y_lambda = w~_lambda on kappa = 0` is FALSE at every such partition with
+n <= 6 except the trivial (1) -- in convention D AND in convention C, so it is
+not a convention-scoping issue:
+
+    lambda      y^D(q0)      y^C(q0)      w~(q0)
+    (1)         1.00000000   1.00000000   1.00000000
+    (2,1)       0.24729789   0.28092963   0.66067377
+    (2,2)       0.06115624   0.06947330   0.16604895
+    (3,1,1)     0            0.01676661   0.29466896
+    (3,2,1)     0            0.00731845   0.35863564
+
+(2,2) and (3,2,1) are exactly the two partitions the block's own cited script
+`_deprecated/bw_wenzl_shadow_equivalence.py` is said to have verified.
+
+**SCOPE (b) for the last two rows** -- structural, not numerical. Convention D
+is the sl_2 point, so `y = 0` identically once lambda has more than two rows (a
+cell of content -2 kills the Ocneanu numerator; Lean:
+`ocneanu_numerator_vanishes_at_content_neg`), while `w~ > 0` as a ratio of
+positive quantum integers. The identity asserts `0 = positive`; no parameter
+reconciles it. **SCOPE (a) for (2,1) and (2,2)**: measured non-equality under
+six readings of `dim_q^2/[n]!` (symmetric vs unbalanced quantum integer,
+q-deformed vs ordinary dimension, squared vs unsquared), none matching -- which
+is not the same as every reading that exists.
+
+**MY IMPLEMENTATION IS VALIDATED AGAINST THE CORPUS**, not merely
+self-consistent: at (2,1) it reproduces the registered `1/[2]_q^2 ~ 0.2472979`
+(D) to 10 digits and the recorded `0.2809` (C). So the disagreement is not an
+artefact of my Ocneanu product.
+
+**WHAT IS *NOT* INVALIDATED, which is most of the block.**
+`y_eq_self_conjugate` is a Lean CLASS FIELD -- assumed, not proved -- so nothing
+in the corpus is *proved* wrong ("conditional-proved != premise-established").
+What follows: the class has no inhabitant carrying the intended `y` and `w~`
+together, so `[WedderburnWeightCanonical R]`-conditional results are VACUOUS at
+the intended instance rather than false. And `beta_mul_h_eq_neg_C`, the file's
+one real theorem, never reads the `y` field (`rw [c.beta_eq, c.C_eq]; ring`) --
+the BW/LP scalings stand as definitional.
+
+**A THIRD DEFECT, found on the way.** The Lean docstring cited
+`computations/probe-wedderburn-weight-scheme.witness.json` for the off-stratum
+ratios "~0.14 to ~2.54". That file DOES NOT EXIST and `git log --all` shows it
+never existed in tracked history -- the only evidence offered for that claim.
+Citation replaced with the live probe.
+
+**DISPOSITION IS THE OWNER'S, deliberately not taken.** Restrict the field to
+lambda = (1), drop it, or demote the block to a conjecture. Weakening the class
+to make it inhabitable would be laundering. Recorded in the `.md` and the Lean
+docstring; the field is left standing.
+
+
+
+## 2026-09-03 — LANDED on main via REST route-around (PR #6487)
+#6440 and #6467 stayed draft for ~5 h because the un-draft mutation is GraphQL-only and the account was rate-limited (6 attempts). Same two commits rebased onto main 7091dcca94, pushed as claude/canonical-sl2-weights-landing-2026-09-03, opened NON-draft over REST (#6487), rebase-merged: c6d514251d (canonical inhabitant) + a8307f0775 (promotion + rfl guard). #6440/#6467 closed as superseded — not close/reopen, not an empty-commit kick. Re-verified after rebase: lean-direct exit 0 on all 5 class-mentioning files, 0 sorries, probe 11/11, run-validate exit 0 (9 pre-existing).
+
+
+
+## 2026-09-03 — 3y is PRIOR ART; self-correction (bean qou-c35w)
+Corpus-grep for 'push the sl2 family into the mass channel' found it proved, sorry-free, general n: TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl / twoRow_share_eq_one_of_wenzl (#5242), WenzlWeightVanishing.level_eq_two_of_conventionD, SchurWeyl/OcneanuWeight (#5575: z_D is the k=2 member of z = q^{2k+1}/(1+..+q^{2k}); C in no member), OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_schurPrincipal (the bridge), WenzlWeightLevelR.wenzlMarkovParam (the family), MarkovTraceInstance. So the 'Ocneanu family z_N' classification in #6370 and the 'derived from the trace' claim in #6440 re-derived Lean prior art from 2026-08-16..24 without credit. What is mine: the framing-ratio per-cell mechanism, the real-exponent (log-derivative) C exclusion, the Toffoli cone algebra, and the H3 class instance + promotion + rfl guard. Credit notes added to markov-z-reconciliation.md, explicit-instance-proof.md, the probe docstring and toffoli-lp-stability.lean; #6370/#6440 to get comments. New: QBetaCanonicalMarkovWeightsDerived.lean proves canonical_y3/y21/0 = HeckeMarkov3.markovWeight0/2/1 at z_D (derived weights), so the default instance no longer rests on a probe.
+
+
+
+## 2026-09-04 — y_eq_self_conjugate DROPPED (owner ruling A)
+The line above ('is a Lean CLASS FIELD — assumed, not proved — so nothing…') is now historical: the field and its projection theorem were removed from wedderburn-weight-canonical.lean on the owner's ruling (branch claude/drop-y-eq-self-conjugate-2026-09-04). Nothing here depended on it.

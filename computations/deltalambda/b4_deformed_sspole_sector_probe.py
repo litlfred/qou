@@ -94,7 +94,8 @@ from _precision import set_compute_dps  # noqa: E402
 COMP = str(_COMP)
 set_compute_dps()
 
-# muon-canonical q0 (the computations/ layer convention; AGENTS.md q0-convention)
+# q0 label corrected (bean qou-9ugp): the read below resolves the PROTON pin, so
+# the old 'muon' convention label described one this producer no longer follows.
 # q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
 # 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
 # muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen
@@ -294,7 +295,7 @@ def main() -> int:
             "axis": "Delta_lambda magnitude wall -- b_4 scalar m (Vector 2 re-scope)",
             "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
             "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
             "no_fit": True,
         },
     }

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-confinement-grading-correspondence-conditional",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:confinement-grading-correspondence-conditional",
+  "kind": "theorem",
+  "title": "Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-confinement-grading-correspondence"
+  ],
+  "cites": [
+    "references/khovanovlauda2009",
+    "references/brundankleshchev2009"
+  ],
+  "tags": [
+    "confinement",
+    "klr",
+    "grading",
+    "filtration",
+    "conditional-theorem",
+    "conditional-on-class",
+    "computational-shortcut"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.confinement_grading_correspondence_conditional",
+  "text": "confinement-grading-correspondence-conditional.md",
+  "leanSource": "confinement-grading-correspondence-conditional.lean",
+  "provenance": "authored"
+}

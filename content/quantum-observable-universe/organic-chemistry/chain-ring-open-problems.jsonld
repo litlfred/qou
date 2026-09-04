@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-chain-ring-open-problems",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chain-ring-open-problems",
+  "kind": "remark",
+  "title": "Open problems: molecular-scale $q$, Hückel's rule, heteroatoms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-chain-ring-comparison",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-chain-ring-comparison",
+  "tags": [
+    "open-problems",
+    "aromaticity",
+    "huckel-rule",
+    "heteroatoms",
+    "substrate-parameter",
+    "alexander-polynomial"
+  ],
+  "text": "chain-ring-open-problems.md",
+  "provenance": "authored"
+}

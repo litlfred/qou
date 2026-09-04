@@ -14,6 +14,24 @@ super-pairwise by construction. The corpus already leans on one instance --
 every pairwise linking number vanishes and the triple invariant carries the
 whole content. So: does the canonical atom closure behave the same way?
 
+## UPDATE 2026-09-03 — the components are KNOTTED. See
+## `total_curvature_is_the_computable_half_probe.py` (bean `qou-m3sh`)
+
+Everything below treats the components as carriers of *linking* only, which
+is the Brunnian frame the Borromean comparison invites. They are not unknots.
+Deleting all other strands and taking the Jones polynomial of each component
+by an exact-integer Kauffman bracket, on BOTH classical branches of the
+averaged letters, every multi-strand component is a `(2, odd)`-torus knot:
+`T(2,7)` throughout on the `sigma` branch, a mix of `T(2,5)` and `T(2,3)` on
+the `sigma^-1` branch, for every isotope tried (`A = 2, 3, 4, 6`). Only the
+single 1-strand component is the unknot. So each component carries its own
+knot-level content -- non-trivial Jones, bridge number 2 -- before any
+linking is counted, and `b(L) >= 2A + 1`. That is a second, independent
+reason the Borromean/Brunnian model does not describe this closure, on top
+of the non-vanishing pairwise linking measured below. Nothing measured
+below changes; `mu`, the path structure and the `Delta` table are all
+component-type-blind.
+
 ## Measured: no. The closure is not Brunnian, and its linking graph is a PATH
 
 Components are the cycles of the word's permutation; `mu = A + 1` (proved

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-tm-gs-normal-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:tm-gs-normal-form",
+  "kind": "proof",
+  "title": "Proof of the Hecke-only Gröbner--Shirshov reduction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-tm-gs-normal-form"
+  ],
+  "cites": [
+    "references/bergman1978"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "groebner",
+    "normal-form",
+    "inductive",
+    "appendix"
+  ],
+  "text": "tm-gs-normal-form-proof.md",
+  "provenance": "authored"
+}

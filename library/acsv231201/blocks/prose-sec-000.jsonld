@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/acsv231201/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Preface to the second edition",
+  "pageStart": 9,
+  "pageEnd": 15,
+  "text": "../sections/sec-000-preface-to-the-second-edition.md",
+  "derivedFrom": "library/acsv231201/manifest",
+  "sourceDocument": "library/acsv231201/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-562",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Berkovich’ approach to non-archimedean analysis",
+  "pageStart": 222,
+  "pageEnd": 227,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-562",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-562-01",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-562-02",
+    "library/arxiv-math-0203194v1/blocks/thm-sec-562-03",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-562-04",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-562-05"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

@@ -59,8 +59,15 @@ _UPSTREAM_RECORDS: list = []
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402
 
 mp.mp.dps = 60
+from q_parameter import q_muon_at  # noqa: E402
 
-Q0_MUON = mp.mpf("1.10997859555733471")
+# q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
+# literal 1.1099785955573… — the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the live CODATA-2022 lepton-ratio derivation
+# q_muon_at() (+0.0769 ppb). A hardcoded pin cannot be checked against the
+# name it is bound to, so it is derived now rather than transcribed.
+
+Q0_MUON = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
 TARGETS = {
     "F_conv": mp.mpf("0.9861565521"),
     "s_Fbar": mp.mpf("0.9709977446"),
@@ -181,7 +188,7 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("splus_reproduces_committed_a2",
-                     computed=dev_s, expected=0.0, tolerance=1e-20,
+                     computed=dev_s, expected="0.0", tolerance="1e-20",
                      source="in-probe S⁺ assembly = the committed A2 witness "
                             "matrix (consistency gate)")
     # DEMOTED (bean qou-3e5m): this compared 'confrontation_completed' to itself and
@@ -212,7 +219,11 @@ def main() -> int:
                   "λ-grading of the block basis), i.e. which λ-row the "
                   "Masbaum tail occupies. Named for the next rung.")
                  + " auditOnly.") if ok else "A gate failed — inspect.")
-    wb.save()
+    wb.save({"q0Anchor": "muon",
+             "q0Value": mp.nstr(q_muon_at(50), 50, strip_zeros=False),
+             "q0AnchorReason": "the GK bilinear pairing is evaluated at the ideal "
+                               "CAL-2 (muon) pin only; no proton leg is computed "
+                               "(bean qou-9ugp: the pin is now read by name)"})
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-T0:.0f}s)")
     print("  witness -> computations/probes/"
           "qbeta-5two-gk-bilinear-pairing.witness.json")

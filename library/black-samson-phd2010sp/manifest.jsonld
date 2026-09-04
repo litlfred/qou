@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/black-samson-phd2010sp/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "REPRESENTATIONS OF HECKE",
+  "contains": [
+    "library/black-samson-phd2010sp/sections/sec-000",
+    "library/black-samson-phd2010sp/sections/sec-001",
+    "library/black-samson-phd2010sp/sections/sec-002",
+    "library/black-samson-phd2010sp/sections/sec-003",
+    "library/black-samson-phd2010sp/sections/sec-004",
+    "library/black-samson-phd2010sp/sections/sec-005",
+    "library/black-samson-phd2010sp/sections/sec-006",
+    "library/black-samson-phd2010sp/sections/sec-007",
+    "library/black-samson-phd2010sp/sections/sec-008",
+    "library/black-samson-phd2010sp/sections/sec-009",
+    "library/black-samson-phd2010sp/sections/sec-010",
+    "library/black-samson-phd2010sp/sections/sec-011",
+    "library/black-samson-phd2010sp/sections/sec-012",
+    "library/black-samson-phd2010sp/sections/sec-013",
+    "library/black-samson-phd2010sp/sections/sec-014",
+    "library/black-samson-phd2010sp/sections/sec-015",
+    "library/black-samson-phd2010sp/sections/sec-016",
+    "library/black-samson-phd2010sp/sections/sec-017",
+    "library/black-samson-phd2010sp/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "black-samson-phd2010sp",
+    "source_file": "Black_Samson_phd2010sp.pdf",
+    "source_sha256": "c16799b0bd54ff292132f4ce777fae56d016b42a2673c5dd237277b15e301d9d",
+    "pages": 58,
+    "arxiv": null,
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

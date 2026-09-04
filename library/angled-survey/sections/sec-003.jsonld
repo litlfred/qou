@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Gluing equations",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "contains": [
+    "library/angled-survey/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

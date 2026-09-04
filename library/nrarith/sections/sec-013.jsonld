@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "We shall make use of the characterization theorems for arithmetic Kleinian groups",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "contains": [
+    "library/nrarith/blocks/prose-sec-013",
+    "library/nrarith/blocks/thm-sec-013-01",
+    "library/nrarith/blocks/thm-sec-013-02",
+    "library/nrarith/blocks/rem-sec-013-03"
+  ],
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}
