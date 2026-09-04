@@ -1,10 +1,10 @@
-**Proposition (conditional).** The statement below is proved in Lean
-*conditionally* on the Lagrange-interpolation cross-checks, which are
-axiomatised as the class `ExplicitCentralIdempotentConjecture q` in the
-sibling `.lean` and are **open**: no instance of that class exists
-anywhere in the corpus. The four cross-checks (sum-to-identity,
-orthogonality, self-adjointness, bar-pairing) are the conjectural input;
-everything downstream of them is machine-checked.
+**Proposition (conditional on [`conj:explicit-central-idempotent`](#conj:explicit-central-idempotent)).**
+The statement below is proved in Lean *conditionally* on the
+Lagrange-interpolation cross-checks, which are axiomatised as the class
+`ExplicitCentralIdempotentConjecture q` and are **open**: no instance of
+that class exists anywhere in the corpus. The four cross-checks
+(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the
+conjectural input; everything downstream of them is machine-checked.
 
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, we have $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 

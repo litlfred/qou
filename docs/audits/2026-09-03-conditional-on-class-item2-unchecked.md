@@ -117,3 +117,61 @@ Fold this check into `conjectural-propagation-audit.ts` so that
 `conditional_on_class` requires items 1 **and** 2, and report a third bucket
 for blocks that pass item 1 and fail item 2. That is a folio-assistant change
 and is not made here.
+
+---
+
+## Update 2026-09-04 — the item-4 gap closed, and one block regressed upstream
+
+Two developments, in opposite directions.
+
+### The `conditional_on_class` bucket gained a member, by closing item 4
+
+`prop:explicit-central-idempotent` was one of the 72 that "binds SOME carrier,
+not the cone's own". Its Lean was never wrong — it carries
+`[ExplicitCentralIdempotentConjecture q]` as an explicit instance hypothesis,
+which is item 2 satisfied. What it lacked was a *cone*: the class had **no
+`conj:` content block anywhere in the corpus**, so `uses[]` had no label to
+name (§3b-cond item 4), the propagation audit saw an empty conjectural cone,
+and this audit's cone-class set could not contain the class it binds. That is
+the **opposite blindness direction** from the one this document measures — item
+2 satisfied and item 4 unsatisfiable, rather than item 1 satisfied and item 2
+unchecked — and the same audit is blind to both.
+
+Closed by registering `conj:explicit-central-idempotent` (bean `qou-1bua`).
+The carrier moved to the library module `QOU.BraidKnot.ExplicitCentralIdempotent`
+rather than being copied into a second sibling, because a content-block sibling
+cannot import another sibling and two independent declarations of one class is
+the divergence shape recorded in the sweep audit.
+
+Measured cleanly on one tree — the branch's changes stashed out, both audits
+re-run, then popped:
+
+| bucket | without | with |
+|---|---|---|
+| BINDS a cone class (item 2 not refuted) | 8 | **9** |
+| binds SOME carrier, not the cone's own | 69 | 68 |
+| binds NO class at all | 49 | 49 |
+| `lean.ref` unresolvable | 13 | 13 |
+
+### The committed witness is stale, and the reason is a regression
+
+Read the "without" column against the numbers in the body of this document —
+**9 / 72 / 45** — and note they disagree. Those were measured before
+`origin/main` `d0d473550a` (21 commits) was merged in. On the post-merge tree,
+with nothing of this branch applied, the split is **8 / 69 / 49**.
+
+So the net `8 → 9` above is a coincidence of two independent moves: this
+branch adds one, and upstream removed one. The block upstream removed is
+**`prop:reeb-bundle-complement-equals-volume`**, which is now in
+`binds_no_carrier`. Neither its `.ts` nor its `.lean` was touched by those 21
+commits, so what changed is a *carrier* in its cone.
+
+**That is as far as this was measured.** `binds_no_carrier` is a candidate set,
+not a violation count — a block that became legitimately unconditional lands
+there too — so this is not yet a claim that anything is unsound. The three
+readings and the one-command next step are in bean `qou-y4v0`.
+
+The general lesson is the one this document already argues, now with a second
+instance: **a bucket count is evidence about the detector and the tree
+together.** Quoting a committed witness across a merge attributes upstream
+movement to your own change, in whichever direction happens to flatter it.

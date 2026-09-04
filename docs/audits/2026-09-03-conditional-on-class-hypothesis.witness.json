@@ -1,6 +1,6 @@
 {
   "audit": "conditional-on-class-hypothesis (AGENTS.md §3b-cond item 2)",
-  "generated": "2026-09-03T21:10:53.136Z",
+  "generated": "2026-09-04T10:58:32.154Z",
   "source_witness": "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
   "note": "The propagation audit splits blocks on whether their CONE's conjectures are class-axiomatised; it never opens the downstream block, so §3b-cond item 2 is unchecked. This measures that. `binds_no_carrier` is a CANDIDATE set for hand triage, NOT a violation count: an unconditionally true theorem correctly binds nothing (hand-checked: lem:frobenius-cocasimir-refuted-deuteron is a numeric refutation, prop:alpha-k-derivation-procedure is generic linear algebra).",
   "conditional_on_class_total": 139,
@@ -22,9 +22,9 @@
   "binds_cone_class": [
     "prop:crystal-r-matrix-sub-lemma",
     "prop:deuteron-binding-dressing-proton-net",
+    "prop:explicit-central-idempotent",
     "prop:operator-valued-combiner-convergence",
     "prop:proton-mass-substrate-identity",
-    "prop:reeb-bundle-complement-equals-volume",
     "prop:residue-at-root",
     "prop:vol-through-tau",
     "thm:aomega-fourone-dt-count",
@@ -58,7 +58,6 @@
     "prop:depth-2-identification-bloch-suslin",
     "prop:e-infinity-page-identifications",
     "prop:explicit-alpha-k-h3",
-    "prop:explicit-central-idempotent",
     "prop:gb-residue-spectral-sum",
     "prop:h2-lp-dual-binding",
     "prop:hadron-half-life",
@@ -66,7 +65,6 @@
     "prop:hoefsmit-V21-cos-symmetrization",
     "prop:hook-weight-derivation",
     "prop:isovector-chiral-residue",
-    "prop:jet-prefix-gb-filtration",
     "prop:joint-galois-braid-discharged",
     "prop:joint-galois-braid-figure-8-verified",
     "prop:knot-operator-lp-selection",
@@ -87,7 +85,6 @@
     "prop:root-of-unity-truncation",
     "prop:sdp-regime-switch",
     "prop:sigma-shell-from-beta-chain-derivation",
-    "prop:six-term-per-derivation-weights",
     "prop:spectral-sequence-h3-explicit",
     "prop:tau-M-asymptotic-rep-theory",
     "prop:terms-2-6-higher-operations",
@@ -101,8 +98,7 @@
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:y-lambda-recipe-from-partition",
     "thm:frobenius-codim-universal",
-    "thm:geometry-of-incompleteness",
-    "thm:six-term-mass-formula-complete"
+    "thm:geometry-of-incompleteness"
   ],
   "binds_no_carrier": [
     "lem:frobenius-cocasimir-refuted-deuteron",
@@ -125,6 +121,7 @@
     "prop:hadron-q-self-correction",
     "prop:hecke-1d-irrep-closed-form-character",
     "prop:integer-stability",
+    "prop:jet-prefix-gb-filtration",
     "prop:knot-factor-spectral-form",
     "prop:macdonald-hook-telescope",
     "prop:markov-trace-antipode-polynomial-symmetry",
@@ -139,8 +136,10 @@
     "prop:qbeta-delta-tau-surrogate-taylor-coefficients",
     "prop:qbeta-per-block-chi-closed-forms",
     "prop:recursive-atom-knot-atlas",
+    "prop:reeb-bundle-complement-equals-volume",
     "prop:rho-k-graded-expansion",
     "prop:shell-structure-eigenvalues",
+    "prop:six-term-per-derivation-weights",
     "prop:unified-iterative-correction",
     "prop:universal-braid-branching",
     "prop:upstream-mathlib-additions",
@@ -149,14 +148,15 @@
     "thm:birthday-axioms-do-not-pin-the-birthday",
     "thm:diophantine-birthday-trajectory",
     "thm:frobenius-antipode-unifies-chirality-and-tower",
-    "thm:hyperreal-limit-transfer"
+    "thm:hyperreal-limit-transfer",
+    "thm:six-term-mass-formula-complete"
   ],
   "counts": {
     "total": 139,
     "decl_unresolvable": 13,
     "binds_cone_class": 9,
     "variable_undecided": 0,
-    "binds_other_carrier": 72,
-    "binds_no_carrier": 45
+    "binds_other_carrier": 68,
+    "binds_no_carrier": 49
   }
 }
