@@ -127,6 +127,42 @@ and the script **asserted that this same derivation reproduces `c₁ = a₁` and
 `c₂ = a₁ + a₂`** before using the `c₃` row — so a bad change of variable would
 have aborted the run rather than produced a plausible-looking `c₃`.
 
+## Δtr has just been refuted as the binding law — what that does and does not do to this
+
+**Landed while this was open:** [#6611](https://github.com/litlfred/qou/pull/6611)
+(`0537eb98cf`) closes `B = Q_β·Δtr` — **p5–p95 1592× at its own optimal scale** —
+and derives the replacement `B = E₀·log(tr_free/tr_atom)` at **1.225×**, same
+bond factors, zero fitted constants.
+
+**This document's claims are unaffected in truth-value.** They are about the
+*expansion structure* of `Δtr` — whether `c₁` is a leading behaviour at A = 4 —
+not about whether `Δtr` is the binding law. The scope note below already said
+"says nothing about whether the underlying physics is right", and that now reads
+as load-bearing rather than boilerplate.
+
+**But the motivation has moved, and a later reader should be told so.** The
+object expanded here is no longer the candidate binding law. The survivor is a
+**different function of the same two traces**: `Δtr = tr_free − tr_atom` is a
+difference; `log(tr_free/tr_atom)` is a log-ratio. Nothing measured here
+transfers to it — the coefficients of a difference are not the coefficients of a
+log-ratio.
+
+**A connection worth flagging, stated as a suggestion and not a finding.** The
+two results are consistent in a way that may not be coincidence: an object whose
+`ℏ_q` expansion has **no leading order at A = 4** (this document) is a poor basis
+for a law, and `Δtr` failed as one by 1592× (#6611). That is *suggestive* of a
+structural reason for the failure — but it is **not established here**, and the
+honest caveats are:
+
+- #6611's failure is measured against **AME binding energies**; this document's
+  crossover is about a **series ordering**. No derivation links them.
+- The failure is at all scales including A = 2 and A = 3, where this document
+  finds the expansion *does* still order (ratios 0.47–0.60 at A = 2). So the
+  crossover cannot be the whole explanation.
+
+Whether `log(tr_free/tr_atom)` has a better-ordered expansion at A = 4 is the
+obvious next question and is **not answered here**.
+
 ## Scope, and what is NOT established
 
 - **One nucleus.** `c₃` is measured at **A = 4 only**. Nothing here says how
