@@ -166,6 +166,14 @@
    "tier": 1
   },
   {
+   "producer": "computations/markov/markov_trace_atomic_proton_full.py",
+   "writes": [
+    "markov-trace-atomic-proton-full.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 1
+  },
+  {
    "producer": "computations/markov/markov_weights_symbolic.py",
    "writes": [
     "markov_weights_symbolic.witness.json"
@@ -311,6 +319,30 @@
    "tier": 1
   },
   {
+   "producer": "computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py",
+   "writes": [
+    "qbeta-d-frame-bar-action-on-traced-volume.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 1
+  },
+  {
+   "producer": "computations/qbeta/qbeta_d_frame_bridge_generic_z.py",
+   "writes": [
+    "qbeta-d-frame-bridge-generic-z.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 1
+  },
+  {
+   "producer": "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py",
+   "writes": [
+    "qbeta-d-frame-ladder-bar-weight-prune.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 1
+  },
+  {
    "producer": "computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py",
    "writes": [
     "qbeta-holonomy-t2-is-a-bar-symmetry-test.witness.json"
@@ -363,6 +395,14 @@
    "producer": "computations/tr_m_jones_markov_cross_check.py",
    "writes": [
     "atomic-tr-m-mpfr-50dps-proton.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 1
+  },
+  {
+   "producer": "computations/y_lambda_equivalence_proof.py",
+   "writes": [
+    "y_lambda_equivalence_proof.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 1
@@ -598,6 +638,14 @@
    "tier": 2
   },
   {
+   "producer": "computations/canonical_tr_m_helium4_stub.py",
+   "writes": [
+    "canonical-tr-m-helium4.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/chirality_braid_average.py",
    "writes": [
     "chirality-braid-average.witness.json"
@@ -633,6 +681,14 @@
    "producer": "computations/d_density_derivation.py",
    "writes": [
     "d-density-derivation.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/d_u_closed_form_proof.py",
+   "writes": [
+    "d-u-closed-form-proof.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -818,6 +874,14 @@
    "tier": 2
   },
   {
+   "producer": "computations/gb_filtration_jet_tracker.py",
+   "writes": [
+    "gb-filtration-jet-order.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/gb_winding_parity_wire_probe.py",
    "writes": [
     "gb-winding-parity-wire.witness.json"
@@ -898,7 +962,23 @@
    "tier": 2
   },
   {
+   "producer": "computations/h_3a_vs_h_3_divergence.py",
+   "writes": [
+    "h-3a-vs-h-3-divergence.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/habiro/habiro_coefficients_extended.py",
+   "writes": [
+    "habiro-coefficients-extended.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/habiro/habiro_coefficients_extended_parallel.py",
    "writes": [
     "habiro-coefficients-extended.witness.json"
    ],
@@ -933,6 +1013,14 @@
    "producer": "computations/hybridization_sp_gap_braid.py",
    "writes": [
     "hybridization-sp-gap-braid.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/jet_tower_delta_max.py",
+   "writes": [
+    "jet-tower-delta-max.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1013,6 +1101,14 @@
    "producer": "computations/markov/d_frame_prefactor_localisation_probe.py",
    "writes": [
     "d-frame-prefactor-localisation.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/markov/markov_trace_via_wenzl_lr.py",
+   "writes": [
+    "markov-trace-via-wenzl-lr.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1270,6 +1366,14 @@
    "tier": 2
   },
   {
+   "producer": "computations/probes/cyclic_square_does_not_reopen_milnor_probe.py",
+   "writes": [
+    "cyclic-square-does-not-reopen-milnor.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/probes/deuteron_frame_arity_reconciliation.py",
    "writes": [
     "r5-full-canonical-knot-solver.witness.json"
@@ -1311,6 +1415,14 @@
    "tier": 2
   },
   {
+   "producer": "computations/probes/fh_genus_handle_requires_brunnian_probe.py",
+   "writes": [
+    "fh-genus-handle-requires-brunnian.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/probes/frobenius_repose_probe.py",
    "writes": [
     "frobenius-repose.witness.json"
@@ -1322,6 +1434,14 @@
    "producer": "computations/probes/full_twist_root_of_unity_probe.py",
    "writes": [
     "full-twist-root-of-unity-probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/gs_filtration_jet_shape_magic_probe.py",
+   "writes": [
+    "gs-filtration-jet-shape-magic.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1364,6 +1484,22 @@
    "producer": "computations/probes/k_versus_selected_operator_probe.py",
    "writes": [
     "k-versus-selected-operator.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/milnor_minspan_triples_share_no_summand_probe.py",
+   "writes": [
+    "milnor-minspan-triples-share-no-summand.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py",
+   "writes": [
+    "milnor-mubar-vanishes-on-every-triple.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1437,9 +1573,73 @@
    "tier": 2
   },
   {
+   "producer": "computations/probes/symbolic_nf_q_degree_magic_probe.py",
+   "writes": [
+    "symbolic-nf-q-degree-magic.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/probes/tensor_picture_markov_trace_probe.py",
    "writes": [
     "tensor-picture-markov-trace-probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_all_pairs_closure_is_not_one_link_probe.py",
+   "writes": [
+    "the_all_pairs_closure_is_not_one_link_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py",
+   "writes": [
+    "the_asymmetry_term_lives_at_vassiliev_type_two_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py",
+   "writes": [
+    "the_canonical_closure_is_a_chain_of_torus_links_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py",
+   "writes": [
+    "the_canonical_mass_trace_factorises_over_the_chain_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py",
+   "writes": [
+    "the_convexity_obstruction_is_order_two_in_the_tower_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py",
+   "writes": [
+    "the_pn_bond_is_an_average_and_cannot_be_extremal_probe.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/probes/total_curvature_is_the_computable_half_probe.py",
+   "writes": [
+    "total_curvature_is_the_computable_half_probe.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1567,9 +1767,25 @@
    "tier": 2
   },
   {
+   "producer": "computations/shift_from_nf_basis.py",
+   "writes": [
+    "shift-from-nf-basis.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/staircase_ew_disjoint_spectrum.py",
    "writes": [
     "staircase-ew-disjoint-spectrum.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/sublemma_2_1_A_operator_extract_h12_nn.py",
+   "writes": [
+    "sublemma-2-1-A-operator-extract-h12-nn.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1602,6 +1818,14 @@
    "tier": 2
   },
   {
+   "producer": "computations/sweeps/light_isotope_sweep.py",
+   "writes": [
+    "light-isotope-sweep.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
    "producer": "computations/sweeps/low_isotope_binding_sweep.py",
    "writes": [
     "low-isotope-binding-sweep.witness.json"
@@ -1622,6 +1846,14 @@
    "producer": "computations/theta_mn_linearchain_vs_allpairs.py",
    "writes": [
     "theta-mn-linearchain-vs-allpairs.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/topic2_mirror_pair_phi8_boundary_scan.py",
+   "writes": [
+    "topic2-mirror-pair-phi8-boundary-scan.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2
@@ -1654,6 +1886,14 @@
    "producer": "computations/wedderburn_pair_volumes.py",
    "writes": [
     "wedderburn-pair-volumes.witness.json"
+   ],
+   "cone": "q_parameter",
+   "tier": 2
+  },
+  {
+   "producer": "computations/wenzl_lr_convention_adapter.py",
+   "writes": [
+    "wenzl-lr-convention-adapter.witness.json"
    ],
    "cone": "q_parameter",
    "tier": 2

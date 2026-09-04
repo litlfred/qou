@@ -52,12 +52,71 @@ SCOPE = os.path.join(HERE, "q_parameter_dps_floor_scope.py")
 STEM = re.compile(r'WitnessBuilder\(\s*[\'"]([A-Za-z0-9._\-/]+)[\'"]')
 LIT = re.compile(r'[\'"]([A-Za-z0-9._\-/]+)\.witness\.json[\'"]')
 
+#: A producer that emits a witness at all. Guards the filename fallback below.
+EMITS = re.compile(r"WitnessBuilder\s*\(|WitnessBuilder\.wrap_legacy\s*\(")
+#: `WitnessBuilder.wrap_legacy("stem", ...)` -- the literal form above does not
+#: match this, because the stem does not follow `WitnessBuilder(` directly.
+WRAP = re.compile(r'WitnessBuilder\.wrap_legacy\(\s*[\'"]([A-Za-z0-9._\-/]+)[\'"]')
+#: `{"name": "stem", ...}` in a wrap_legacy payload.
+NAMEKEY = re.compile(r'[\'"]name[\'"]\s*:\s*[\'"]([A-Za-z0-9._\-/]+)[\'"]')
+
+#: Trees whose witnesses are copies, not outputs: never attribute to a producer.
+_SKIP_TREES = ("_deprecated", "qou-mass/")
+
+_ONDISK = None
+
+
+def _ondisk():
+    """basename -> [repo-relative path] for every live witness."""
+    global _ONDISK
+    if _ONDISK is None:
+        _ONDISK = {}
+        for dirpath, _dirs, files in os.walk(ROOT):
+            for fn in files:
+                if not fn.endswith(".witness.json"):
+                    continue
+                rel = os.path.relpath(os.path.join(dirpath, fn), ROOT)
+                if any(s in rel for s in _SKIP_TREES):
+                    continue
+                _ONDISK.setdefault(fn, []).append(rel)
+    return _ONDISK
+
+
+def _name_candidates(rel):
+    """Witness basenames a producer's FILENAME could imply.
+
+    Producers written as `WitnessBuilder(Path(__file__).stem, ...)` name their
+    witness after themselves, with underscores usually but not always turned
+    into dashes and a trailing `_probe`/`_test` usually but not always dropped.
+    All variants are tried and only ones that EXIST are kept.
+    """
+    base = os.path.splitext(os.path.basename(rel))[0]
+    out = set()
+    for b in (base, base.replace("_probe", ""), base.replace("_test", "")):
+        for v in (b, b.replace("_", "-")):
+            out.add(v + ".witness.json")
+    return out
+
 #: Buckets whose producers move. `raises` already sets its own precision and
 #: `no_mp` builds no mpmath values, so neither is in scope.
 MOVING = ("moves_own_mp", "moves_via_helper")
 
 
 def stems(rel):
+    """Witness basenames `rel` writes, or [] when none can be established.
+
+    Four routes, in decreasing directness. The first two are what the producer
+    literally says; the last two are INFERENCES and are therefore accepted only
+    when the file they name exists on disk.
+
+    The filename fallback is gated on the producer actually constructing a
+    WitnessBuilder, and that guard is load-bearing rather than tidy. Without it,
+    `per_irrep_pole_deuteron_h6.py` -- which builds no witness of its own --
+    matches `per-irrep-pole-deuteron-h6.witness.json` by name and gets credited
+    with a file that `per_irrep_pole_atom.py` actually writes. Regenerating the
+    wrong producer for a witness is worse than leaving the stem unresolved: the
+    queue then reports coverage it does not have.
+    """
     try:
         with open(os.path.join(ROOT, rel), encoding="utf-8", errors="replace") as fh:
             src = fh.read()
@@ -68,7 +127,21 @@ def stems(rel):
         out.append(s if s.endswith(".witness.json") else s + ".witness.json")
     for s in LIT.findall(src):
         out.append(s + ".witness.json")
-    return list(dict.fromkeys(out))
+    if out:
+        return list(dict.fromkeys(out))
+    if not EMITS.search(src):
+        return []                       # emits nothing: not a regeneration target
+    disk = _ondisk()
+    for s in WRAP.findall(src):
+        n = s if s.endswith(".witness.json") else s + ".witness.json"
+        out += disk.get(n, [])
+    if not out:
+        for s in NAMEKEY.findall(src):
+            out += disk.get(s + ".witness.json", [])
+    if not out:
+        for c in _name_candidates(rel):
+            out += disk.get(c, [])
+    return [os.path.basename(p) for p in dict.fromkeys(out)]
 
 
 def load_scope(path=None):

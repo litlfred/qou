@@ -43,7 +43,7 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
   argument for landing the floor in `constants.py` rather than in the
   shim, so omitting it would have reintroduced the hole that placement
   decision closed.
-- **Not every producer here has a resolvable witness stem** (50 do not).
+- **Not every producer here has a resolvable witness stem** (20 do not).
   Those are listed in their own section: the stem is built dynamically,
   written by a helper, or the producer emits none. Each needs a look,
   not a guess.
@@ -57,7 +57,7 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
   cheapest discriminator is to regenerate and diff, not to reason about
   it.
 
-## Tier 1-definite — 45 producers
+## Tier 1-definite — 50 producers
 
 - [ ] `computations/a3_magnitude_berezinian_crossterm_probe.py` -> `a3-magnitude-berezinian-crossterm.witness.json`
 - [ ] `computations/audits/q0_consistency_audit.py` -> `q0-consistency-audit.witness.json`
@@ -79,6 +79,7 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/deuteron_tr_M_symbolic.py` -> `chi-deuteron-h6.witness.json`, `deuteron_tr_M_symbolic.witness.json`
 - [ ] `computations/e_hartree_round24_molecular_reuse.py` -> `e-hartree-round24-molecular-reuse.witness.json`
 - [ ] `computations/lp_confinement_nf_forcing.py` -> `lp-confinement-nf-forcing.witness.json`
+- [ ] `computations/markov/markov_trace_atomic_proton_full.py` -> `markov-trace-atomic-proton-full.witness.json`
 - [ ] `computations/markov/markov_weights_symbolic.py` -> `markov_weights_symbolic.witness.json`
 - [ ] `computations/mass_endomorphism.py` -> `mass-endomorphism.witness.json`
 - [ ] `computations/meson_h6_typed_trace.py` -> `meson-h6-typed-trace.witness.json`
@@ -97,6 +98,9 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/probes/qbeta_habiro_cyclotomic_probe.py` -> `computations/qbeta/qbeta-ck-cache.witness.json`, `qbeta-habiro-cyclotomic.witness.json`
 - [ ] `computations/pyhecke_h3_vs_h3a_impact_comparison.py` -> `pyhecke-h3-vs-h3a-impact-comparison.witness.json`
 - [ ] `computations/qbeta/qbeta_c3_multiblock_recursion_attack.py` -> `qbeta-c3-multiblock-recursion-attack.witness.json`
+- [ ] `computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py` -> `qbeta-d-frame-bar-action-on-traced-volume.witness.json`
+- [ ] `computations/qbeta/qbeta_d_frame_bridge_generic_z.py` -> `qbeta-d-frame-bridge-generic-z.witness.json`
+- [ ] `computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py` -> `qbeta-d-frame-ladder-bar-weight-prune.witness.json`
 - [ ] `computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py` -> `qbeta-holonomy-t2-is-a-bar-symmetry-test.witness.json`
 - [ ] `computations/qbeta/qbeta_route5_discriminating_test.py` -> `qbeta-route5-discriminating-test.witness.json`
 - [ ] `computations/qbeta/qbeta_trm_identity_normalisation_under_d.py` -> `markov-trace-weights-wenzl.witness.json`
@@ -104,8 +108,9 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/staircase_ew_residual_conjecture.py` -> `staircase-ew-residual-conjecture.witness.json`
 - [ ] `computations/tau_M_proton_closed_form_phase5l1.py` -> `tau-M-proton-closed-form-phase5l1.witness.json`, `rho-constit-equals-tau-M-proton-phase5l.witness.json`
 - [ ] `computations/tr_m_jones_markov_cross_check.py` -> `atomic-tr-m-mpfr-50dps-proton.witness.json`
+- [ ] `computations/y_lambda_equivalence_proof.py` -> `y_lambda_equivalence_proof.witness.json`
 
-## Tier 2-probable — 151 producers
+## Tier 2-probable — 176 producers
 
 - [ ] `computations/a_operator/A_operator_extract_general.py` -> `A-operator-extract-general.witness.json`
 - [ ] `computations/a_operator/A_operator_extract_kron.py` -> `A-operator-extract-kron.witness.json`
@@ -130,11 +135,13 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/binding_single_pipeline_comparison.py` -> `binding-single-pipeline-comparison.witness.json`, `binding-canonical.witness.json`, `ame-2020-binding-energies.witness.json`
 - [ ] `computations/canonical_plus_multibrane.py` -> `canonical-plus-multibrane.witness.json`
 - [ ] `computations/canonical_tower.py` -> `canonical-with-proper-tower.witness.json`
+- [ ] `computations/canonical_tr_m_helium4_stub.py` -> `canonical-tr-m-helium4.witness.json`
 - [ ] `computations/chirality_braid_average.py` -> `chirality-braid-average.witness.json`
 - [ ] `computations/co_bond_order_active_set.py` -> `co-bond-order-active-set.witness.json`
 - [ ] `computations/crystal_shift_nf_atomic.py` -> `crystal-shift-nf-atomic.witness.json`
 - [ ] `computations/crystal_transport_h3_verification.py` -> `crystal-transport-h3-verification.witness.json`
 - [ ] `computations/d_density_derivation.py` -> `d-density-derivation.witness.json`
+- [ ] `computations/d_u_closed_form_proof.py` -> `d-u-closed-form-proof.witness.json`
 - [ ] `computations/delta_lambda_alexander_phase4.py` -> `delta-lambda-alexander-phase4.witness.json`, `delta-lambda-empirical-tabulation.witness.json`
 - [ ] `computations/delta_lambda_energy_scale_extensivity_probe.py` -> `delta-lambda-energy-scale-extensivity.witness.json`, `chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json`, `chi-tritium-h9-at-q0-50dps-matrix-m.witness.json`
 - [ ] `computations/delta_lambda_exponent_from_crossings.py` -> `delta-lambda-exponent-from-crossings.witness.json`
@@ -156,6 +163,7 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/deuteron_real_sdp.py` -> `iterative-lp-dual-h6-deuteron.witness.json`, `sublemma-2-1-deuteron-branching.witness.json`, `deuteron-real-sdp.witness.json`
 - [ ] `computations/gap_a1_binding_k_sdp_feasibility.py` -> `gap-a1-binding-k-sdp-feasibility.witness.json`
 - [ ] `computations/gb_conjugation_invariance_probe.py` -> `gb-conjugation-invariance.witness.json`
+- [ ] `computations/gb_filtration_jet_tracker.py` -> `gb-filtration-jet-order.witness.json`
 - [ ] `computations/gb_winding_parity_wire_probe.py` -> `gb-winding-parity-wire.witness.json`
 - [ ] `computations/gb_writhe_normalised_readout_probe.py` -> `gb-writhe-normalised-readout.witness.json`
 - [ ] `computations/gs_filtration_binding_components.py` -> `gs-filtration-binding-components.witness.json`
@@ -166,11 +174,14 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/h2o_bond_angle_magnitude_vsepr.py` -> `h2o-bond-angle-magnitude-vsepr.witness.json`
 - [ ] `computations/h2o_bond_angle_shift_phi1.py` -> `h2o-bond-angle-shift-phi1.witness.json`
 - [ ] `computations/h2s_chirality_residue_s3_holonomy.py` -> `h2s-chirality-residue-s3-holonomy.witness.json`
+- [ ] `computations/h_3a_vs_h_3_divergence.py` -> `h-3a-vs-h-3-divergence.witness.json`
 - [ ] `computations/habiro/habiro_coefficients_extended.py` -> `habiro-coefficients-extended.witness.json`
+- [ ] `computations/habiro/habiro_coefficients_extended_parallel.py` -> `habiro-coefficients-extended.witness.json`
 - [ ] `computations/habiro/habiro_residue_symbolic.py` -> `habiro-residue-symbolic.witness.json`
 - [ ] `computations/habiro/habiro_witness_convention_adjudication_probe.py` -> `habiro-coefficients-extended.witness.json`
 - [ ] `computations/hecke/hecke_division.py` -> `hecke-division.witness.json`
 - [ ] `computations/hybridization_sp_gap_braid.py` -> `hybridization-sp-gap-braid.witness.json`
+- [ ] `computations/jet_tower_delta_max.py` -> `jet-tower-delta-max.witness.json`
 - [ ] `computations/joint_tower_sdp_solver.py` -> `joint-tower-sdp-h3.witness.json`
 - [ ] `computations/joint_tower_sdp_solver_v2.py` -> `joint-tower-sdp-h6-h9.witness.json`
 - [ ] `computations/kahler_lift.py` -> `kahler-lift.witness.json`
@@ -181,6 +192,7 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/markov/d_frame_interface_twelve_derivation_probe.py` -> `d-frame-interface-twelve-derivation.witness.json`
 - [ ] `computations/markov/d_frame_neutron_cyclotomic_rule_probe.py` -> `d-frame-neutron-cyclotomic-rule.witness.json`
 - [ ] `computations/markov/d_frame_prefactor_localisation_probe.py` -> `d-frame-prefactor-localisation.witness.json`
+- [ ] `computations/markov/markov_trace_via_wenzl_lr.py` -> `markov-trace-via-wenzl-lr.witness.json`
 - [ ] `computations/meson/atom_vs_atlas_markov_trace_probe.py` -> `atom-vs-atlas-markov-trace.witness.json`
 - [ ] `computations/meson/atom_word_is_a_connected_sum_probe.py` -> `atom-word-is-a-connected-sum.witness.json`
 - [ ] `computations/multi_level_jet_sum.py` -> `confinement-level-walk.witness.json`, `multi-level-jet-sum.witness.json`
@@ -211,18 +223,23 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/probes/confinement_b3_enumeration_recheck_probe.py` -> `confinement-b3-enumeration-recheck-probe.witness.json`
 - [ ] `computations/probes/coulomb_mirror_killswitch_probe.py` -> `coulomb-mirror-killswitch-probe.witness.json`
 - [ ] `computations/probes/crystal_limit_transport_probe.py` -> `crystal-limit-transport-probe.witness.json`
+- [ ] `computations/probes/cyclic_square_does_not_reopen_milnor_probe.py` -> `cyclic-square-does-not-reopen-milnor.witness.json`
 - [ ] `computations/probes/deuteron_frame_arity_reconciliation.py` -> `r5-full-canonical-knot-solver.witness.json`
 - [ ] `computations/probes/eigenbasis_structural_lemmas_probe.py` -> `eigenbasis-structural-lemmas.witness.json`
 - [ ] `computations/probes/every_seifert_invariant_is_affine_probe.py` -> `every-seifert-invariant-is-affine.witness.json`
 - [ ] `computations/probes/ew_higgs_sdp_probe.py` -> `ew-higgs-sdp-probe.witness.json`
 - [ ] `computations/probes/exact_rational_chi_gauge_probe.py` -> `exact-rational-chi-gauge-probe.witness.json`, `chi-deuteron-h6.witness.json`
+- [ ] `computations/probes/fh_genus_handle_requires_brunnian_probe.py` -> `fh-genus-handle-requires-brunnian.witness.json`
 - [ ] `computations/probes/frobenius_repose_probe.py` -> `frobenius-repose.witness.json`
 - [ ] `computations/probes/full_twist_root_of_unity_probe.py` -> `full-twist-root-of-unity-probe.witness.json`
+- [ ] `computations/probes/gs_filtration_jet_shape_magic_probe.py` -> `gs-filtration-jet-shape-magic.witness.json`
 - [ ] `computations/probes/h3a_frobenius_gram_offdiagonal_probe.py` -> `h3a-frobenius-gram-offdiagonal.witness.json`
 - [ ] `computations/probes/habiro_frobenius_all_primes_probe.py` -> `habiro-coefficients-atomic.witness.json`, `habiro-frobenius-all-primes-probe.witness.json`
 - [ ] `computations/probes/habiro_head_criterion_structure_probe.py` -> `habiro-coefficients-atomic.witness.json`, `habiro-head-criterion-structure-probe.witness.json`
 - [ ] `computations/probes/homflypt_operator_valued_probe.py` -> `homflypt-operator-valued-probe.witness.json`
 - [ ] `computations/probes/k_versus_selected_operator_probe.py` -> `k-versus-selected-operator.witness.json`
+- [ ] `computations/probes/milnor_minspan_triples_share_no_summand_probe.py` -> `milnor-minspan-triples-share-no-summand.witness.json`
+- [ ] `computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py` -> `milnor-mubar-vanishes-on-every-triple.witness.json`
 - [ ] `computations/probes/nf_channel_exact_repair_options_probe.py` -> `nf-channel-exact-repair-options.witness.json`
 - [ ] `computations/probes/operator_selection_active_set_probe.py` -> `operator-selection-active-set.witness.json`, `nucleus-real-sdp-deuteron.witness.json`, `nucleus-real-sdp-tritium.witness.json`
 - [ ] `computations/probes/phase_b_lr_branching_constraint_probe.py` -> `phase-b-lr-branching-constraint.witness.json`
@@ -231,7 +248,15 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/probes/qbeta_5two_masbaum_cyclo_level_probe.py` -> `qbeta-5two-masbaum-cyclo-level.witness.json`
 - [ ] `computations/probes/qbeta_5two_masbaum_theta_tower_probe.py` -> `qbeta-5two-masbaum-theta-tower.witness.json`
 - [ ] `computations/probes/qc_is_the_convexity_boundary_probe.py` -> `qc-convexity-boundary.witness.json`
+- [ ] `computations/probes/symbolic_nf_q_degree_magic_probe.py` -> `symbolic-nf-q-degree-magic.witness.json`
 - [ ] `computations/probes/tensor_picture_markov_trace_probe.py` -> `tensor-picture-markov-trace-probe.witness.json`
+- [ ] `computations/probes/the_all_pairs_closure_is_not_one_link_probe.py` -> `the_all_pairs_closure_is_not_one_link_probe.witness.json`
+- [ ] `computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py` -> `the_asymmetry_term_lives_at_vassiliev_type_two_probe.witness.json`
+- [ ] `computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py` -> `the_canonical_closure_is_a_chain_of_torus_links_probe.witness.json`
+- [ ] `computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py` -> `the_canonical_mass_trace_factorises_over_the_chain_probe.witness.json`
+- [ ] `computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py` -> `the_convexity_obstruction_is_order_two_in_the_tower_probe.witness.json`
+- [ ] `computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py` -> `the_pn_bond_is_an_average_and_cannot_be_extremal_probe.witness.json`
+- [ ] `computations/probes/total_curvature_is_the_computable_half_probe.py` -> `total_curvature_is_the_computable_half_probe.witness.json`
 - [ ] `computations/q_beta_substrate_prediction.py` -> `q-beta-substrate-prediction.witness.json`
 - [ ] `computations/qbeta/bsym_residual_shell_structure.py` -> `bsym-residual-shell-structure.witness.json`, `ame-2020-binding-energies.witness.json`
 - [ ] `computations/qbeta/molien_jones_markov_n3_identification_probe.py` -> `molien-jones-markov-n3-identification.witness.json`
@@ -247,17 +272,22 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/reeb_rotation_pn_test.py` -> `reeb-rotation-pn-test-reeb.witness.json`
 - [ ] `computations/rho_prefactor_structural_verifier.py` -> `rho-prefactor-structural-verifier.witness.json`
 - [ ] `computations/schur_weyl_symbolic.py` -> `schur-weyl-symbolic.witness.json`
+- [ ] `computations/shift_from_nf_basis.py` -> `shift-from-nf-basis.witness.json`
 - [ ] `computations/staircase_ew_disjoint_spectrum.py` -> `staircase-ew-disjoint-spectrum.witness.json`
+- [ ] `computations/sublemma_2_1_A_operator_extract_h12_nn.py` -> `sublemma-2-1-A-operator-extract-h12-nn.witness.json`
 - [ ] `computations/sublemma_2_1_h12_he4_branching.py` -> `sublemma-2-1-h12-he4-branching-verify.witness.json`
 - [ ] `computations/sublemma_2_1_h12_he4_phase25.py` -> `sublemma-2-1-h12-he4-phase25-verify.witness.json`, `he4-canonical-tr-m-block-fingerprint.witness.json`
 - [ ] `computations/sublemma_2_1_h9_tritium_verify.py` -> `sublemma-2-1-A-operator-extract.witness.json`, `sublemma-2-1-A-operator-extract-h9-pn.witness.json`, `sublemma-2-1-A-operator-extract-h9-nn.witness.json`
+- [ ] `computations/sweeps/light_isotope_sweep.py` -> `light-isotope-sweep.witness.json`
 - [ ] `computations/sweeps/low_isotope_binding_sweep.py` -> `low-isotope-binding-sweep.witness.json`
 - [ ] `computations/term7_alpha5_crystal_derivation.py` -> `term7-alpha5-crystal-derivation.witness.json`, `term7-height6-partition-enum.witness.json`
 - [ ] `computations/theta_mn_linearchain_vs_allpairs.py` -> `theta-mn-linearchain-vs-allpairs.witness.json`
+- [ ] `computations/topic2_mirror_pair_phi8_boundary_scan.py` -> `topic2-mirror-pair-phi8-boundary-scan.witness.json`
 - [ ] `computations/tower_psd_marginality_vs_A.py` -> `tower-psd-marginality-vs-A.witness.json`
 - [ ] `computations/tr_m_algebraic_q.py` -> `tr-m-algebraic-q.witness.json`
 - [ ] `computations/unified_lift.py` -> `unified-lift.witness.json`
 - [ ] `computations/wedderburn_pair_volumes.py` -> `wedderburn-pair-volumes.witness.json`
+- [ ] `computations/wenzl_lr_convention_adapter.py` -> `wenzl-lr-convention-adapter.witness.json`
 
 ## Tier 1-definite (constants-only cone) — 5 producers
 
@@ -293,16 +323,11 @@ python3 scripts/regenerate-convention-c-witnesses.py --run \
 - [ ] `computations/witness_regen_wave.py` -> `built-thing.witness.json`, `downstream.witness.json`, `a.witness.json`
 - [ ] `computations/witness_upstream_declaration_audit.py` -> `mine.witness.json`, `w.witness.json`, `y-lambda-at-q0.witness.json`
 
-## No witness stem found by static scan — 50
+## No witness stem found by static scan — 20
 
 These are in the moving set but the scan could not name their
 witness (dynamic stem, helper-written, or they emit none).
 
-- [ ] `computations/markov/markov_trace_atomic_proton_full.py` — resolve stem by hand
-- [ ] `computations/qbeta/qbeta_d_frame_bar_action_on_traced_volume.py` — resolve stem by hand
-- [ ] `computations/qbeta/qbeta_d_frame_bridge_generic_z.py` — resolve stem by hand
-- [ ] `computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py` — resolve stem by hand
-- [ ] `computations/y_lambda_equivalence_proof.py` — resolve stem by hand
 - [ ] `computations/run_pipeline.py` — resolve stem by hand
 - [ ] `computations/a_operator/A_operator_extract_at_level.py` — resolve stem by hand
 - [ ] `computations/build_atomic_braid_recipe_4he_chain.py` — resolve stem by hand
@@ -310,41 +335,16 @@ witness (dynamic stem, helper-written, or they emit none).
 - [ ] `computations/build_markov_trace_assembly_neutron_chain.py` — resolve stem by hand
 - [ ] `computations/build_term7_s_crystal_4he_chain.py` — resolve stem by hand
 - [ ] `computations/canonical_mass_table_nucleon_rows_test.py` — resolve stem by hand
-- [ ] `computations/canonical_tr_m_helium4_stub.py` — resolve stem by hand
-- [ ] `computations/d_u_closed_form_proof.py` — resolve stem by hand
 - [ ] `computations/derivation_chain.py` — resolve stem by hand
-- [ ] `computations/gb_filtration_jet_tracker.py` — resolve stem by hand
-- [ ] `computations/h_3a_vs_h_3_divergence.py` — resolve stem by hand
-- [ ] `computations/habiro/habiro_coefficients_extended_parallel.py` — resolve stem by hand
 - [ ] `computations/interface_composition.py` — resolve stem by hand
-- [ ] `computations/jet_tower_delta_max.py` — resolve stem by hand
 - [ ] `computations/kl_betti_extrapolation.py` — resolve stem by hand
-- [ ] `computations/markov/markov_trace_via_wenzl_lr.py` — resolve stem by hand
 - [ ] `computations/per_irrep_pole_atom.py` — resolve stem by hand
 - [ ] `computations/per_irrep_pole_deuteron_h6.py` — resolve stem by hand
 - [ ] `computations/per_irrep_pole_proton_h3.py` — resolve stem by hand
-- [ ] `computations/probes/cyclic_square_does_not_reopen_milnor_probe.py` — resolve stem by hand
-- [ ] `computations/probes/fh_genus_handle_requires_brunnian_probe.py` — resolve stem by hand
 - [ ] `computations/probes/fusion_process_lr_support_probe.py` — resolve stem by hand
-- [ ] `computations/probes/gs_filtration_jet_shape_magic_probe.py` — resolve stem by hand
-- [ ] `computations/probes/milnor_minspan_triples_share_no_summand_probe.py` — resolve stem by hand
-- [ ] `computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py` — resolve stem by hand
 - [ ] `computations/probes/su4_occupancy_binding_probe.py` — resolve stem by hand
-- [ ] `computations/probes/symbolic_nf_q_degree_magic_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_all_pairs_closure_is_not_one_link_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_canonical_closure_is_a_chain_of_torus_links_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py` — resolve stem by hand
-- [ ] `computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py` — resolve stem by hand
-- [ ] `computations/probes/total_curvature_is_the_computable_half_probe.py` — resolve stem by hand
-- [ ] `computations/shift_from_nf_basis.py` — resolve stem by hand
-- [ ] `computations/sublemma_2_1_A_operator_extract_h12_nn.py` — resolve stem by hand
 - [ ] `computations/sublemma_2_1_A_operator_extract_h12_nn_streamed.py` — resolve stem by hand
 - [ ] `computations/sublemma_2_1_A_operator_extract_h9.py` — resolve stem by hand
 - [ ] `computations/sublemma_2_1_h9_branching_basis.py` — resolve stem by hand
-- [ ] `computations/sweeps/light_isotope_sweep.py` — resolve stem by hand
-- [ ] `computations/topic2_mirror_pair_phi8_boundary_scan.py` — resolve stem by hand
-- [ ] `computations/wenzl_lr_convention_adapter.py` — resolve stem by hand
 - [ ] `computations/producer_repad_sweep.py` — resolve stem by hand
 - [ ] `computations/witness_padding_provenance.py` — resolve stem by hand
