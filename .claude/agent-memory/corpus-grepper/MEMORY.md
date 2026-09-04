@@ -196,6 +196,21 @@ command and would have caught this. This is §"grep the claim SHAPE" applied
 outward: same discipline, and an upstream library is where it bites hardest,
 because a missing-capability verdict there turns into a scope decision.
 
+**Independent second instance, SAME DAY, different domain.** Sibling PR #6609
+(`session_01Prc52Z5Sct7AdeXT2TPq6J`) is titled *"the blocker I recorded was one I
+could have read my way past"*: a true caution — *"don't guess the LP's `(A,b,c)`
+packing from a producer"* — had been over-generalised into a prohibition, when
+the packing is stated plainly at `lp_dual_solver.py:995`. *"Reading it took one
+`sed`."*
+
+So the shape is **wider than greps**, and this is the version to carry:
+**a blocker recorded from an INFERENCE rather than from the direct read that
+would settle it.** Mine inferred absence from a name-shaped grep; theirs
+inferred a prohibition from an adjacent caution. Both cost a *scope decision* —
+the expensive kind of wrong, because a phantom blocker silently re-plans the
+work — and both were one command away. Before recording any blocker: name the
+single file or command that would settle it, and run it.
+
 ## STABLE — refutation scoping
 
 - **(a) scope-limited negative** — "this construction, *alone*, does not
