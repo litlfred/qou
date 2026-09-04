@@ -99,11 +99,36 @@ SCOPE, stated per AGENTS.md 'Before declaring refuted':
       * an invariant sensitive to the braid word BEYOND its linking data (the
         Delta_{3,3} exchange spectrum is exactly such an object -- it is not
         excluded here, it is capped at 9 by a different argument);
-      * a non-Milnor super-pairwise object;
-      * anything carrying SPIN, which is what actually distinguishes the two
-        channels.  Bean `qou-7zob` independently records that there is *"NO map
-        from strand position to orbital angular momentum anywhere in the
-        corpus"* -- this probe reaches the same wall from the linking side.
+      * a non-Milnor super-pairwise object.
+
+  🛑 CORRECTION (2026-09-04).  An earlier version of this list carried a third
+  entry: *"anything carrying SPIN, which is what actually distinguishes the two
+  channels."*  That named as an open route something the corpus has PROVED is
+  not one, and it is withdrawn.  The channels do differ in S (1 vs 0), but in
+  the S-wave the Pauli principle LOCKS spin to isospin -- space symmetric, so
+  spin and isospin symmetry are opposite: S=1 <=> T=0 and S=0 <=> T=1.  A
+  Pauli-consistent interface therefore carries a projector in EACH SU(2) with
+  the roles exchanged, and the same two scalars multiply out to the same number:
+
+      QOU.QBeta.InterfaceScalar.separable_interface_degenerate   (sorry-free)
+        fSpin s1 * fIso t0 * fSpace ell = fSpin s0 * fIso t1 * fSpace ell
+
+  Its own docstring draws the consequence: *"The conclusion holds for EVERY
+  fSpace, so no choice of space index rescues a separable interface."*  So
+  neither a spin factor nor a space factor is an escape while the interface is
+  SEPARABLE.  And the one surviving shape bean `qou-vbyi` names -- a
+  non-separable (S, L) coupling, the 3S1-3D1 tensor force -- is itself closed by
+  `QOU.QBeta.TensorCouplingCannotUnbindSinglet` (PR #6488, two sorry-free
+  invariants).
+
+  WHERE THE RESIDUE ACTUALLY IS, stated from the theorem's own hypotheses.
+  `separable_interface_degenerate` assumes `fSpin s1 = fIso t1` and
+  `fSpin s0 = fIso t0` -- that the SAME two projector scalars serve both SU(2)s.
+  That is a hypothesis, not a derivation.  A framework giving the spin and
+  isospin SU(2)s DIFFERENT scalars breaks the lock and the degeneracy with it.
+  Nothing here establishes that they must be equal, and nothing establishes that
+  they may differ; that is the open question, and it is a question about the
+  interface's construction, not about which quantum number one attaches to it.
 
 CONVERGENCE.  The t7qv arc's `det T = -1` result caps the channel-asymmetry
 ratio at exactly 1 in both sectors, and `isospin_channel_R_is_one_everywhere`
@@ -337,8 +362,15 @@ def main() -> int:
     print("  class might beat: the two inputs are the same matrix.")
     print()
     print("  NOT excluded: an invariant reading the braid word beyond its linking")
-    print("  data; a non-Milnor super-pairwise object; anything carrying SPIN,")
-    print("  which is what actually separates the channels (cf. bean qou-7zob).")
+    print("  data; a non-Milnor super-pairwise object.")
+    print()
+    print("  NOT a route, though an earlier version of this probe said it was:")
+    print("  a SPIN factor.  Pauli locks S to T in the S-wave, and")
+    print("  InterfaceScalar.separable_interface_degenerate proves a separable")
+    print("  interface degenerate for EVERY space index; the non-separable (S,L)")
+    print("  tensor coupling is closed by TensorCouplingCannotUnbindSinglet.")
+    print("  The residue is the theorem's own hypothesis -- that both SU(2)s")
+    print("  carry the SAME two projector scalars -- which is assumed, not derived.")
     return 0
 
 
