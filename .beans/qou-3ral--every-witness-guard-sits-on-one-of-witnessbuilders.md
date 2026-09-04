@@ -188,3 +188,64 @@ The taxonomy row stands and is strengthened: the count in it should read **three
 entry points**, not two. `#6693` still holds
 `docs/audits/2026-08-15-detector-blindness-taxonomy.md`, so the row is still
 offered rather than added.
+
+
+## ENUMERATED, not inspected — and there is a FOURTH route the library cannot reach
+
+The correction above was found by inspection, which is how the two-vs-three
+error happened in the first place. Enumerating instead:
+
+### The library surface is exactly three, and all three are now guarded
+
+Every `WitnessBuilder` entry point that accepts a caller-supplied dict, by
+scanning the class for methods taking `payload` / `extra` / `witness`:
+
+    1555  wrap_legacy(name, payload, ...)        -> guarded (this branch)
+    1735  stamp_staleness_metadata(payload, ...) -> guarded (#6654)
+    2126  save(self, extra=None)                 -> guarded (this branch)
+
+There is no fourth method. **3 of 3.** That figure is now enumerated rather
+than believed, which is the whole point of redoing it this way.
+
+### Route 4: 23 producers bypass the library entirely
+
+Producers that write `"q0Anchor"` and never import or mention `WitnessBuilder`
+— they build a dict and `json.dump` it themselves. **No library guard can ever
+reach these**, because the library is not in the call path at all.
+
+Measured on `main` at `6a9c2c44fb9`, and the narrowing matters:
+
+| | count |
+|---|---:|
+| files naming `"q0Anchor"` with no `WitnessBuilder` | 35 |
+| — of those, READERS (audits comparing the field) | 12 |
+| — **genuine hand-writers** (construct the key AND serialise) | **23** |
+
+**Quote 23, never 35.** The first number counts audit scripts like
+`q0_independence_checker.py` and `q0_pin_flip_test.py`, which *read* the field
+to check it. Counting a reader as a writer is the same defect this bean is
+about, one level down, and I made it once before narrowing.
+
+**And 23 overstates the independence too:** 19 of them are the single
+`wlambda_covariance_epic_M1_*` family, so this is roughly five distinct
+authoring decisions, not twenty-three. (Same inflation as the per-witness
+sampling AGENTS.md records, where 119 of 268 witnesses shared one producer.)
+
+### Route 4 is LATENT, not live
+
+Every one of the 23 currently emits an in-vocabulary token — `proton` ×5,
+`independent` ×18. **Zero off-vocabulary.** So this is a gap in coverage, not a
+defect to drain, and it is stated as such: nothing is broken there today.
+
+What it bounds is the claim this branch can make. The fix closes the arrival
+rate **for producers that use the library** — which is where all three
+historical off-vocabulary populations came from, including the one live
+offender. It does not and cannot close it for the 23, and a future refill could
+arrive through them with nothing to say a word.
+
+The honest options for route 4, none taken here: a static check in
+`q0_anchor_consistency_audit.py` keyed on the producer source rather than the
+witness; migrating the 23 onto `wrap_legacy` (which exists for exactly this and
+is what `codata_corpus_literal_scan.py` already does); or leaving it, since it
+is clean and the audit already catches the *output* CI-failingly. Left for now
+because none of the three is this branch's scope and the last is defensible.
