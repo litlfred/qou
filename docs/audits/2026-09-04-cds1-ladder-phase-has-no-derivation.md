@@ -161,3 +161,46 @@ from, and they are not excluded by anything above.
 This does not change the finding of this audit — the attribution defect and the
 4–5 % / 88× measurements stand independently — but it changes what the finding
 should send someone to do next.
+
+## The KZ / Kohno–Drinfeld route is closed too — and it meets this probe's own number
+
+Checked after the section above named it as the route to look at first.
+`9a8b09c661` on main (2026-09-04) corrects an earlier claim that branch 3 of the
+eigenphase trichotomy was open: `QOU/QBeta/HolonomySpectrumSignObstruction.lean`
+(landed 2026-08-31, `4471ee72ce`, 6 theorems, sorry-free) **excludes every
+holonomy whose generator has real spectrum**, Kohno–Drinfeld included.
+
+The argument is residue-independent, which is why it reaches the whole class
+rather than one candidate: a real generator eigenvalue `a` gives character
+`(eᵃ + e⁻ᵃ)/2 = cosh a ≥ 1` for every real `a`, so a `q`-dependent residue only
+changes which `a` occurs. The required correction factor is **0.998399** — below
+1, hence unreachable. The whole obstruction is `(x−1)² ≥ 0`; no analysis, no
+transcendence.
+
+**That 0.998399 is the number this probe computes independently.** Assertion 3
+above reports `cos(α − u/2) = 0.9983989452530845` at convention C. And the
+surviving condition's angle, `θ = 0.0565947`, is exactly `|α − u/2|` here
+(`−0.052336120 − 0.004258617`). The two results are the same object approached
+from opposite directions — one asking what the ladder's factor *is*, the other
+asking what could *produce* it — which is a useful cross-check on both.
+
+So the three routes left open by the seminormal exclusion now stand as:
+
+| route | status |
+|---|---|
+| non-scalar normalisation (divided by a `q`-dependent non-rational Markov-trace factor) | **open** |
+| `M_β` outside the braid image | **open in general**; the holonomy sub-case is closed for real spectrum |
+| KZ / Kohno–Drinfeld holonomy | **closed** — real spectrum, `cosh a ≥ 1 > 0.998399` |
+
+And the surviving condition is stated sharply rather than as "find a
+connection": find one whose generator is **elliptic** at real `q` — `det A > 0`,
+spectrum `±iθ` with `θ = 0.0565947`. **The imaginarity has to be sourced.** The
+corpus names `conj:im-q-physical-role` for that, and it is Tier-0 condition D0
+on beans `qou-pdix` / `qou-cds1`.
+
+Worth noting where that lands: AGENTS.md's Im(q) banner separates the
+**observable** level (`Im(q₀) = 0`, verified) from the **fibre** level (`Im(q)`
+unconstrained). An elliptic generator at real `q₀` needs its imaginary part from
+somewhere, and the fibre level is the only place the framework leaves for it.
+That is a pointer to where the question lives, not a result — nothing here
+derives such a generator or shows one exists.
