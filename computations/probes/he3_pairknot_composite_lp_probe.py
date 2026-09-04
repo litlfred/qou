@@ -245,6 +245,18 @@ def main() -> int:
             "nf_basis": list(NF_NAMES),
         },
         # LP/SDP dual fields (AGENTS.md §LP/SDP duals — first-class infra)
+        # THE PRIMAL, which was missing. Without x* the objective cannot be
+        # recomputed from the published certificate, and neither
+        # `lp_dual_backend_inference_audit` (which normalises the gap by
+        # max|x*|) nor `duality_gap_residuals` — the instantiation of
+        # QOU.Mathlib.LPDuality.duality_gap_decomposition — can see this
+        # record at all. Bean `qou-dke6`.
+        "x_star": list(res.x_star),
+        **({"x_star_str": list(res.x_star_str)}
+           if getattr(res, "x_star_str", None) else {}),
+        **{_k: getattr(res, _k) for _k in
+           ("gap_recomputed_str", "residual_primal_str", "residual_dual_str")
+           if getattr(res, _k, None) is not None},
         "y0_star": res.y0_star,
         "y_star": y_star,
         "active_set": list(res.active_set),
