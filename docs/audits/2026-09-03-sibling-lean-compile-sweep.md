@@ -178,9 +178,9 @@ still failing, bean `qou-8qby`).
 
 ---
 
-## Update 2026-09-04 — 38 → 12, and the cause table needs a second half
+## Update 2026-09-04 — 38 → 11, and the cause table needs a second half
 
-**Standing: 26 of the 38 are at 0 errors and 0 warnings; 12 remain.**
+**Standing: 27 of the 38 are at 0 errors and 0 warnings; 11 remain.**
 Re-measured by re-running every one of the 40 originally-failing paths
 lean-direct with all three paper packages on `LEAN_PATH`.
 
@@ -254,7 +254,7 @@ And one in the reverse direction: `typed-b3-sub-braid-extraction`'s
 nit — it **overstates the dependency**, making an unconditional closure
 fact read as conditional on a perturbative-expansion axiom.
 
-### The 12 that remain
+### The 11 that remain
 
 | errors | file |
 |---|---|
@@ -264,3 +264,21 @@ fact read as conditional on a perturbative-expansion axiom.
 | 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
 | 2 | `lifting-and-descent/descent-cocycle-deviation` (`GroupWithZero M`), `braids-and-knots/braid-action-tensor` (bean `qou-8qby`), `braids-and-knots/lagrange-resolvent-transform` |
 | 1 | `mass-theory/vertex-operator` (bean `qou-xdwp`), `mass-endomorphism/chi-v21-hoefsmit-matrix-derivation` (unknown `hoefsmit_v21_b_sq_rational` + a `whnf` heartbeat timeout) |
+
+**Correction, same day.** This section first said "38 → 12 / 26 fixed", and
+several commit messages on this branch carry a running `Sweep N -> M` tally
+built on that. **The correct figure is 38 → 11, i.e. 27 fixed**, re-measured
+after merging `origin/main` (151 commits) into the branch. The error was an
+off-by-one in a hand-counted intermediate list — a 15-entry list read as 16 —
+which then propagated through every subsequent subtraction. The per-file table
+above was always right; only the count above it was wrong. The `Sweep N -> M`
+lines in the commit history are left as written rather than rewritten; read
+them as approximate, and this table as authoritative.
+
+The merge changed 33 library `.lean` files. None is in the import cone of any
+file repaired here (`QOU/KnotTheory`, `QOU/BraidKnot/TwoRowStratum`,
+`QOU/BraidKnot/KnotFactorSpectralDerivation`,
+`QOU/MassEndomorphism/DeltaMaxUniformBound`,
+`QOU/QuantumBloch/pentagon_uv_commutation` are all untouched by it), and every
+one of the 40 originally-failing paths was re-run lean-direct after the merge —
+which is where the 11 above comes from.

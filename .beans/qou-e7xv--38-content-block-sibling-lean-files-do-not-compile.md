@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T04:07:01Z
+updated_at: 2026-09-04T04:17:36Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -169,3 +169,10 @@ Remaining 12, by error count: `spin-involution-lp-dual-invariance` 22
 `descent-cocycle-deviation` / `braid-action-tensor` (`qou-8qby`) /
 `lagrange-resolvent-transform` at 2, `vertex-operator` (`qou-xdwp`) and
 `chi-v21-hoefsmit-matrix-derivation` at 1.
+
+
+**Correction:** the count is **38 → 11 (27 fixed)**, not 38 → 12. Off-by-one in
+a hand-counted intermediate list (15 entries read as 16), which propagated
+through the later subtractions. Re-measured after merging origin/main (151
+commits) and re-running all 40 originally-failing paths lean-direct. The
+per-file list is unaffected — it always had 11 rows.
