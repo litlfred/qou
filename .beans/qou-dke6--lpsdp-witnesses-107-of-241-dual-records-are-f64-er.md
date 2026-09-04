@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T08:14:33Z
-updated_at: 2026-09-04T12:20:10Z
+updated_at: 2026-09-04T12:48:18Z
 ---
 
 Found while wiring `qou-fr4d` (certified LP duality residuals). NOT caused by
@@ -182,3 +182,49 @@ Withdrawing the owner question: it was raised on an inflated number, and the
 honest form is a small fix to `sigma_f_electron_shell_chain` to serialize the
 primal it already computes -- if it does. That is worth checking before
 anything else here.
+
+
+## THIRD AND FINAL: the "no x_star" bucket is two different things, and only one is a defect
+
+The correction above said 44 leaf records lack `x_star` and left it as one
+population. It is two, and the split is decisive:
+
+|  | count | meaning |
+|---|---:|---|
+| `duality_gap` exactly 0 | **29** | **CLOSED-FORM dual — no LP was solved.** x* correctly absent. |
+| gap non-zero | **15** | a real solve whose primal was dropped at serialization |
+
+**Confirmed by reading the source, not inferred.** 27 of the 29 are
+`sigma_f_electron_shell_chain`, which builds `y0_star` / `y_star` /
+`active_set` directly from Wedderburn weights and writes
+
+    "duality_gap": "0",  # closed-form => exact strong duality
+
+It **never calls a solver**. There is no primal vector because there is no
+primal solve, and there is nothing for the certified-residual check to verify:
+the gap is 0 by construction, not by computation. Its missing `x_star` is
+correct, and "fixing" it would be meaningless.
+
+**Of the 15 genuine ones, six are one family** — `nucleus-real-sdp-{deuteron,
+he3, he4, neutron, proton, tritium}` — leaving ~9 singletons.
+
+(Scope note, because the audit prints a different number: 29/15 is over all
+187 leaf records; within the 56 UNDECLARED-backend subset it is 29/7, the
+other 8 unserialized records declaring a backend. Same data, two denominators.)
+
+## This bean is closed
+
+Every question it raised is answered, and each answer was smaller than the
+question:
+
+- **f64-era exposure**: 1 live record, already fixed in #6619. No sweep.
+- **105 unattributable**: really 56 (54 wrappers double-counted).
+- **84 blind to the residual check**: really 15, of which 6 are one family.
+- **Should `x_star` be a required field?**: **No.** Withdrawn. The population
+  that would benefit is 15 records across ~10 producers, and 29 of the
+  original 44 would be made non-compliant for having correctly omitted a
+  primal they never computed. A contract change would create defects, not
+  find them.
+
+Successor work, if anyone wants it, is a per-producer serialization fix on the
+`nucleus-real-sdp-*` family. That is small, local, and needs no ruling.

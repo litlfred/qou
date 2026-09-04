@@ -29,11 +29,22 @@ reported as AMBIGUOUS rather than forced either way.
    so it records `backend` itself. Do not write an inferred backend into a
    witness.
 
-🛑 AND SOME RECORDS CANNOT BE CLASSIFIED AT ALL. Measured over LEAF records
-   (see `_has_nested_record`): 44 of 187 carry no `x_star`, so there is no
-   scale to normalise the gap against -- and 27 of those 44 are a single
-   producer, `sigma-f-electron-shell-chain`, whose dual blocks carry
-   `y0_star`/`y_star`/`active_set` and no primal vector at all. `x_star` is not in the LP-dual required-field list in AGENTS.md
+🛑 AND SOME RECORDS HAVE NO PRIMAL, FOR TWO DIFFERENT REASONS. 44 of 187
+   leaf records carry no `x_star`, and lumping them together was a mistake of
+   this script's first version. Split on whether the gap is exactly zero:
+
+     29  CLOSED-FORM dual -- no LP was solved, so x* is correctly absent and
+         there is nothing to certify. 27 are `sigma_f_electron_shell_chain`,
+         confirmed by reading it: it builds the dual from Wedderburn weights
+         and writes `"duality_gap": "0"` with the comment "closed-form =>
+         exact strong duality". It never calls a solver.
+     15  a REAL solve whose primal was dropped at serialization. These are
+         the ones invisible to the certified-residual check (`qou-fr4d`), and
+         six of the fifteen are one family, `nucleus-real-sdp-*`.
+
+   So the actionable population is 15 records across ~10 producers, not 84.
+   That is per-producer work; it is NOT an argument for adding `x_star` to
+   the LP-dual required-field list in AGENTS.md. `x_star` is not in the LP-dual required-field list in AGENTS.md
    (that names y0_star / y_star / active_set / primal_obj / dual_obj /
    duality_gap), so this is not a contract violation -- but it does mean both
    this audit AND the certified-residual check from `qou-fr4d` are blind to
@@ -121,9 +132,22 @@ def classify(rec):
     """-> (verdict, rel or None). Verdict is one of: f64-era, mpfr-era,
     ambiguous, or a reason string beginning 'unclassifiable:'."""
     xs = rec.get("x_star_str") or rec.get("x_star")
-    if not isinstance(xs, list) or not xs:
-        return "unclassifiable: no x_star", None
     g = _mpf(rec.get("duality_gap_str") or rec.get("duality_gap"))
+    if not isinstance(xs, list) or not xs:
+        # NOT one bucket. A record without a primal vector is either a
+        # CLOSED-FORM dual -- no LP was solved, so there is no x* to omit and
+        # nothing to certify -- or a real solve whose primal was dropped on
+        # serialization. `duality_gap == 0` exactly separates them in practice:
+        # a closed form is exact by construction, a solve is not.
+        #
+        # Verified by reading the source, not inferred: 27 of the 29
+        # gap-zero hits are `sigma_f_electron_shell_chain`, which builds
+        # y0_star / y_star / active_set directly from Wedderburn weights and
+        # sets `"duality_gap": "0"  # closed-form => exact strong duality`.
+        # It never calls an LP solver. Its missing x* is CORRECT.
+        if g is not None and g == 0:
+            return "no primal: closed-form dual (x* correctly absent)", None
+        return "no primal: solve with x_star unserialized", None
     if g is None:
         return "unclassifiable: gap not numeric", None
     if g == 0:
