@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T07:40:38.752080+00:00",
-  "commitSha": "427a08a42c77d92f0473cfed847f66658fc31457",
+  "computedAt": "2026-09-04T10:31:01.903464+00:00",
+  "commitSha": "0bdaff9309d04ae0542234d6d5f6e7d0e7391079",
   "assertions": [
     {
       "name": "cache_has_exactly_one_derived_rung",
@@ -55,11 +55,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "qbeta-dashboard-rung-gate",
   "scriptFile": "qbeta_dashboard_rung_gate_is_not_a_truncation_probe.py",
   "scriptHash": "7f9d7b51fe0c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "8268cd5d1623703016eb84391f4bf9a5e0e3fb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -95,5 +95,7 @@
     "err_ppb_is_stored_as_a_string_not_a_number": true,
     "both_figures_reproduce_their_stated_miss_factors": true,
     "correcting_agents_md_would_have_been_laundering": true
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
