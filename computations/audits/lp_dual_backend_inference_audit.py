@@ -147,7 +147,16 @@ def classify(rec):
         # It never calls an LP solver. Its missing x* is CORRECT.
         if g is not None and g == 0:
             return "no primal: closed-form dual (x* correctly absent)", None
-        return "no primal: solve with x_star unserialized", None
+        # 🛑 A NON-ZERO GAP DOES NOT IMPLY A SOLVE HAPPENED. The first version
+        #    of this function assumed it did, and was wrong on 6 of 9 hits:
+        #    four producers (delta_n2_placeholder_audit, deuteron_delta_i_audit,
+        #    compound_binding_via_differences, confinement-operator-selection)
+        #    build dual-shaped records with NO solver call at all, and one
+        #    (gap_a1_binding_k_sdp_feasibility) is a genuine SDP whose primal
+        #    is the MATRIX `X_star`, so a vector `x_star` is correctly absent.
+        #    The gap is decided by `_producer_solver`, which reads the
+        #    producer, not by the number.
+        return "no primal: UNRESOLVED (see --producers)", None
     if g is None:
         return "unclassifiable: gap not numeric", None
     if g == 0:
@@ -166,6 +175,36 @@ def classify(rec):
     return "ambiguous", rel
 
 
+def _producer_solver(doc) -> str:
+    """Which solver, if any, the producing script calls -- read from source.
+
+    This is what separates "a solve whose primal was dropped" (fixable) from
+    "no LP was solved, so there is no primal" (correct as-is) and "an SDP,
+    whose primal is the matrix X_star" (also correct). The witness alone
+    cannot tell you: all three look identical from the numbers.
+    """
+    sf = doc.get("scriptFile")
+    if not sf:
+        return "no scriptFile"
+    src = _ROOT / "computations" / sf
+    if not src.exists():
+        found = list((_ROOT / "computations").glob(f"**/{sf}"))
+        if not found:
+            return "producer not found"
+        src = found[0]
+    try:
+        t = src.read_text()
+    except OSError:
+        return "producer unreadable"
+    if "solve_operator_selection_lp" in t:
+        return "LP -> x_star EXISTS, fixable"
+    if "solve_psd_operator_selection_sdp" in t:
+        return "SDP -> primal is X_star, x_star correctly absent"
+    if "linprog" in t:
+        return "linprog direct"
+    return "NO solver call -> no primal exists"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--include-deprecated", action="store_true",
@@ -175,6 +214,7 @@ def main() -> int:
     declared = collections.Counter()
     verdicts = collections.Counter()
     inferred_f64 = []
+    unresolved: set = set()
     calib = collections.defaultdict(list)
 
     for f in _tracked():
@@ -188,6 +228,12 @@ def main() -> int:
             v, rel = classify(rec)
             if b and rel is not None:
                 calib[b].append(rel)
+            # The no-primal question is independent of whether a backend was
+            # DECLARED, so resolve it over every leaf record. Scoping it to the
+            # undeclared subset undercounts (it hides
+            # `habiro_correction_shadow_price_test`, which declares one).
+            if v.startswith("no primal: UNRESOLVED"):
+                unresolved.add((f, _producer_solver(doc)))
             if b:
                 continue
             verdicts[v] += 1
@@ -220,6 +266,18 @@ def main() -> int:
             print(f"   deprecated rel={float(rel):7.1f}  {f}{path}")
     elif dep:
         print(f"   ({len(dep)} under _deprecated/ hidden; --include-deprecated to list)")
+
+    if unresolved:
+        print(f"\nNO-PRIMAL records (ALL leaf records, declared backend or "
+              f"not), resolved against the PRODUCER SOURCE ({len(unresolved)}):")
+        for f, verdict in sorted(unresolved):
+            print(f"   {verdict:<44} {f.replace('computations/', '')[:44]}")
+        fixable = [x for x in unresolved if x[1].startswith("LP ")]
+        print(f"\n   FIXABLE (a real LP solve whose x* was dropped): "
+              f"{len(fixable)}")
+        print("   The rest are correct as they stand: no solver was called, or")
+        print("   the solve was an SDP whose primal is a matrix. A non-zero")
+        print("   duality_gap does NOT imply a solve happened.")
 
     print("\n  An inference is evidence, NOT a declaration. The fix for a")
     print("  live hit is to re-run the producer so it records `backend`")
