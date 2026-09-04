@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-03T19:42:18Z
+updated_at: 2026-09-04T02:16:07Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -57,3 +57,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-03 (two-row handle): the two-row column of Ω₂^P is carried EXACTLY by the up-spin sectors of the 2-dim R-matrix — tr_(n−k,k)(g) = tr_W_k(g) − tr_W_(k−1)(g), W_k = k-up-spin sector (dim C(n,k)), verified PLAIN and with ρΩ₂^P at A=2,3 to ~1e-139 (magnus_two_row_weight_sector_probe.py). Two-row analogue of the hooks' reduced-Burau handle (#6464); exists because Ω₂^P is an algebra element (#6445) — the germ failed this by 6.5% (#6432). Per-dim two-row decay monotone in k=b(λ) at both A (A=3: 33.6, 8.67, 4.00, 1.70). Next: a decay BOUND for two-rows must respect the difference structure — a per-sector triangle inequality does not decay in k.
+
+
+- 2026-09-04 (mechanism SETTLED, PR pending): the b(λ)-decay is CANCELLATION, not size. Control = conjugate pairs (dim λ = dim λ' exactly, b flips): 9/9 pairs at A=2,3 have commutator-norm ratio ≥ 1 (1.13–1.31, ~1.25) while trace ratio is 0.003–0.27. Sharpest: (8,1) vs (2,1⁷), both dim 8 — norm 0.755→0.955, |tr|/dim 33.65→0.115. So NO bound |tr| ≤ Σ‖[ρ,σ_a]‖·‖σ_(a+1)‖ can produce the decay (scope-(a): plain norm route excluded, not every norm argument); the spectral route the hook bound #6520 takes is the one AVAILABLE, not merely the one taken. The earlier A=2/A=3 'contradiction' was an artifact: the normalised norm is U-SHAPED in b and the A=3 run was truncated inside the falling half. Targeting note: the high-b tail is CHEAP (dim λ = dim λ'), merely last in enumeration order — --min-b 6 --max-dim 50 gets it in ~1 min vs hours.
