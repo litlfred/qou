@@ -3,8 +3,8 @@
   "description": "The \u0394_\u03bb chirality sign sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i} is a cyclotomic (q=i, non-semisimple H_5) fibre signature -- absent at real q_0 (q^{2n(\u03bb)}>0). Locates the sign; does not derive \u0394_\u03bb.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact (sympy; algebraic identities at q=i and real q_0)",
-  "computedAt": "2026-07-18T10:16:45.240958+00:00",
-  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
+  "computedAt": "2026-09-04T22:10:22.430572+00:00",
+  "commitSha": "72b53adb994a592a593263da6a0e51d1fe02e70a",
   "engine": "python",
   "engineVersion": "1.14.0",
   "scriptFile": "deltalambda_sign_cyclotomic_locus_probe.py",
@@ -60,6 +60,8 @@
     "open": "exact chiral operator realizing q^{2n(\u03bb)}; magnitude |\u0394_\u03bb|=dim (Track A)",
     "gate": "\u0394_\u03bb gate -- structural locating result, no fit, nothing wired"
   },
-  "scriptCommitSha": "3207b47926097229a7655751cb4c06b85578e858",
-  "durationMs": 0
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:33:58.797278+00:00",
-  "commitSha": "9836b079bbded07c5a5ed3d3686cdda029de4e0f",
+  "computedAt": "2026-09-04T22:10:18.851328+00:00",
+  "commitSha": "72b53adb994a592a593263da6a0e51d1fe02e70a",
   "assertions": [
     {
       "name": "slope_10A5_refuted_at_A_ge_5",
@@ -29,11 +29,13 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 12,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-z-coefficient-and-slope",
   "scriptFile": "delta_lambda_z_coefficient_and_slope.py",
   "scriptHash": "c4861c93782c",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptCommitSha": "5bd31154b02f054d651816a760bf52eb77541add",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +50,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -58,7 +60,7 @@
   },
   "description": "Slope test + Z-coefficient test on the canonical residual Δ_λ. (1) SLOPE: log_q0 Δ_λ ≈ 10A−5 holds ONLY for A≤4 (slope ~10); at A≥5 (⁶Li/⁷Li/⁷Be) it collapses to ~0.4–2.7/nucleon — the global 10A−5 extrapolation is REFUTED (scope-(a)): B_pred saturates while B_AME grows linearly, so log Δ_λ grows logarithmically; slope-10 was a light-nucleus coincidence broken at the ⁴He shell. (2) Z-CORRECTION: the proton-excess penalty (mirror-pair split) is −1.33 at A=3 (³He/T) and −1.77 at A=7 (⁷Be/⁷Li) — SIGN derived from the p≠n intra-writhe seed (proton +3 > neutron +1), MAGNITUDE O(−1.5) but not a single derivable constant (no fit; Δ_λ gate). NOT wired.",
   "data": {
-    "q0": "1.10997858275138080759166909561072001803790735898419924457009",
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
     "slope_test": {
       "rows": [
         {
@@ -96,9 +98,9 @@
         {
           "atom": "6Li",
           "A": 6,
-          "log_q0_Delta": 32.312,
+          "log_q0_Delta": 32.311,
           "law_10A_5": 55,
-          "dev": -22.688,
+          "dev": -22.689,
           "marginal_slope_per_nucleon": -0.5
         },
         {
@@ -107,14 +109,14 @@
           "log_q0_Delta": 34.206,
           "law_10A_5": 65,
           "dev": -30.794,
-          "marginal_slope_per_nucleon": 1.89
+          "marginal_slope_per_nucleon": 1.9
         },
         {
           "atom": "7Be",
           "A": 7,
-          "log_q0_Delta": 32.436,
+          "log_q0_Delta": 32.437,
           "law_10A_5": 65,
-          "dev": -32.564,
+          "dev": -32.563,
           "marginal_slope_per_nucleon": null
         }
       ],

@@ -3,8 +3,8 @@
   "description": "Derivation: the principal grading g_\u03c1 is the GS/jet-order filtration grading; n(\u03bb)=min maj(SYT(\u03bb)) is its bottom degree on V_\u03bb (fake-degree valuation). Grounds g_\u03c1 in the driver-level Gr\u00f6bner-Shirshov normal form; derives the \u0394_\u03bb sign carrier. Magnitude assembly + wiring remain.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-grho-jet-order-derivation.md",
   "tier": "symbolic-exact (SYT enumeration + classical fake-degree valuation)",
-  "computedAt": "2026-07-18T10:16:43.841111+00:00",
-  "commitSha": "b283e19b694f34f5fcbe98ae5292dc08fdd5649d",
+  "computedAt": "2026-09-04T22:10:21.106242+00:00",
+  "commitSha": "72b53adb994a592a593263da6a0e51d1fe02e70a",
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "deltalambda_grho_jet_order_derivation_probe.py",
@@ -39,6 +39,8 @@
     "still_open": "magnitude assembly \u0394_\u03bb=tr(g_\u03c1) into B=m_e \u03a3 y_\u03bb \u03c7^\u03bb \u0394_\u03bb + wiring (full binding closure)",
     "gate": "Track-A (owner-reversed); derives the SIGN carrier; no fit; nothing wired"
   },
-  "scriptCommitSha": "85f846f023cae47730bf579bd006e0b06d9ba89d",
-  "durationMs": 0
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
