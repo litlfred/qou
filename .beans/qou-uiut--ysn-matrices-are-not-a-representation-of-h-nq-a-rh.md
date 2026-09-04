@@ -829,3 +829,71 @@ demonstrably among them.
       `log_norm != 0` there, and it is 0 — so that leaves the merge and
       convention D, which need an actual git bisect rather than an in-tree
       toggle.
+
+## 2026-09-04 — si28, ca40 and fe56 landed. The braid fix does NOT restore stability.
+
+The three atoms this bean was waiting on have completed, and the regenerated
+`hadron-knot-table.witness.json` survived the origin/main merge byte-identical.
+Final state of the table, all 16 assertions:
+
+    atom     A   LP_stable          tr_M
+    ----------------------------------------------------
+    c14     14      True       0.035122844178
+    n14     14      True       6.877322990493
+    o16     16      True      19.002147240288
+    ne20    20     False     224.072408596362
+    si28    28     False     1838397.009951196
+    ca40    40     False    1499657533706471.8
+    fe56    56     False    4.39170578287642e+30
+
+**12 of 16 pass.** Six LP_stable failures became four: c14 and o16 flipped to
+stable under the corrected matrices; ne20, si28, ca40, fe56 did not.
+
+### The answer to what this bean was watching for
+
+I wrote above that the si28/ca40/fe56 ratios were "the thing to watch, and I am
+NOT predicting it." Measured:
+
+    ne20    224.072408596362      / 247.041699299606   =  0.9070
+    si28    1838397.009951196     / 2.09e+06           =  0.8796
+    ca40    1499657533706471.8    / 1.71e+15           =  0.8770
+    fe56    4.39170578287642e+30  / 5.04e+30           =  0.8714
+
+The braid fix is a **~0.87-0.91 multiplicative correction that drifts slowly
+downward with A** — and that is all it is. It does not bend the growth. A
+factor of 0.87 applied to 5.04e+30 is 4.39e+30; the quantity that has to reach
+O(1) for Frobenius stability is still thirty orders of magnitude away.
+
+So the hypothesis this bean opened with — that the `a_rho = h/[rho]` defect was
+behind the high-A instability — is **refuted for the heavy end**, and refuted
+by the cleanest possible evidence: the corrected computation, run to
+completion, at every A. The defect was real, the fix was right, and it was
+never the cause of this.
+
+What the fix DID buy is the c14/o16 flip. Those two sat close enough to the
+stability boundary that a 13% correction moved them across it. That locates
+the boundary rather than explaining it: stability survives to tr_M ~19 (o16)
+and fails by tr_M ~224 (ne20).
+
+### What that leaves
+
+The blow-up is intrinsic to the model as written, not an artefact of the
+seminormal matrices. Whatever explains 4.39e+30 at A=56 is a separate
+mechanism, and it is not a precision bug either — this run was at compute dps
+70 through the MPFR kernel throughout.
+
+`allPassed: False` on this witness is therefore CORRECT and should stay false.
+It is reporting a real open finding, not a broken producer. Do not chase it
+green by loosening the Gx >= 0 predicate or by dropping the four atoms from
+the table.
+
+### Correcting my own earlier note
+
+I described this regeneration as "19/19" in the commit that landed it
+(0f32ecdf5d) and in session notes. That was wrong twice over: the witness has
+16 assertions, not 19, and 12 pass, not all. The 19 was the nuclide count.
+Separately, 7 `tr_M(<atom>)` assertions present in the 2026-06-17 witness are
+absent from this one — that is NOT a coverage loss: they were self-comparing
+(`computed=r["tr_M"], expected=r["tr_M"]`) and were deliberately deleted under
+bean `qou-26f2`, with the values still recorded in full precision under
+`data.atoms`.
