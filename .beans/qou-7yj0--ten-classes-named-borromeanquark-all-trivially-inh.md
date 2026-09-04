@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T13:51:20Z
+updated_at: 2026-09-04T13:56:36Z
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -164,3 +164,35 @@ merged by rebase after a fresh-fetch mergeability check, a semantic-conflict
 check (main touched NONE of the changed files across 132 / 92 commits), and a
 re-run of `lean`-direct on both changed `.lean` files at their branch tips
 (both exit 0).
+
+
+## C1 was a RE-DISCOVERY — qou-4els named it on 2026-08-24
+
+Read `qou-4els` (completed) properly instead of only seeing it in a grep hit
+list.  Its table already names the C1 vacuity in the same words:
+`CrystalGraphRealization.canonical` — `CrystalNode := PUnit`,
+`raising _ _ := none` → `crystal_realises` is `none = none`.  That IS `C1.triv`.
+
+Second re-discovery this session (the `[IsAMEValue]` retraction was the first
+and costlier).  **Seeing a bean in a grep hit list is not reading it** — that
+is the durable lesson, not either instance.
+
+**What qou-4els fixed, verified on main:** all six `canonical`s are `def` now,
+not `instance`, so `[CrystalGraphRealization R q]` no longer resolves silently.
+
+**What survives:** demotion removes AUTOMATIC resolution; it does not make the
+carrier constrain anything.  One line still satisfies the class and `C1.triv`
+is that line.  Downstream conditionals are gated by nobody having typed it, not
+by mathematics.  Demotion moves a carrier from "inhabited" to "inhabitable" —
+smaller than it reads as, and it strengthens rather than undercuts
+parametrise-don't-field: demotion is necessary, not sufficient.
+
+**Detector caveat from qou-09mr:** `checkNoVacuousInstanceData` needs a
+degenerate VALUE, so definitional laundering (a real non-degenerate function
+chosen to make the claim reflexive) is invisible, as are fields inside a tactic
+`exact { … }` rather than a `where`.  Upstream `folio-assistant-ilbh`.
+
+**Still first measurements:** C2 (`CrystalGraphRealization : Prop`,
+transfer-matrix), C3 (`CanonicalMarkovWeightsH3`), C4 (`QIntegerMassFormula :
+Prop`, wigner) — in neither qou-4els's six nor qou-tsnp's twelve (`holds :
+Prop`, a third shape).
