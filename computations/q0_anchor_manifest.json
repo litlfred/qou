@@ -681,6 +681,7 @@
     "qbeta_decay_counit_hypothesis_probe",
     "qbeta_decay_fibre_bar_parity_derivation_probe",
     "qbeta_delta_bar_parity_probe",
+    "qbeta_delta_candidate_census_probe",
     "qbeta_delta_element_fork_pricing_probe",
     "qbeta_delta_net_four_values_probe",
     "qbeta_delta_tr_bar_decomposition_probe",
@@ -898,5 +899,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

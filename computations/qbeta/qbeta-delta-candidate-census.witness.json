@@ -1,0 +1,155 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T02:57:04.502342+00:00",
+  "commitSha": "45c530378e8c359ce6acf3c05dec7532b5f18615",
+  "assertions": [
+    {
+      "name": "closed_form_holds_on_no_constructed_candidate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "eps(Delta) = h^2/2 - h holds on: none of the four -- so the 27-site incumbent value comes from the 1-/2-crossing SHORT model alone, not from any element built here"
+    },
+    {
+      "name": "D1_unavailable_for_every_long_model",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "(D1) affine in z for: none -- the z^2 coefficient is nonzero on all four, so alpha = (z-1)h/2 is not the counit-minus-trace gap on any of them"
+    },
+    {
+      "name": "bg3w_has_L_plus_and_L_minus_swapped",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "L- = 0 (vanishes) and L+ = -h*(h**2 + 2)/4 = -0.10681445765158, which reproduces qou-vtlj cont.7's closed form -(q^2-1)(q^4+1)/(4q^3) = -0.10681445765158 to 30 dps. So qou-vtlj is right and qou-bg3w's attribution is swapped: the (D1) exclusion rides on L+, not L-"
+    },
+    {
+      "name": "z2_test_needs_the_sum_not_one_coordinate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "[z^2] = d[L+] + d[L-] + h*d[e^-]; on this element L- and e^- both vanish so it collapses to L+ alone -- but that is a property of this element, not of the test"
+    },
+    {
+      "name": "e_minus_nonzero_on_some_long_models",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "e^- coordinate is nonzero on 2/3: ['nuc9_build_nucleon_nf', 'nuc11_interleaved_build_atom_nf_exact']. qbeta-counit-closed-form.md's 'both nucleon models happen to satisfy' e^- = 0 does NOT hold across the candidate set, so the coordinate-sum/tr_M|_{z=1} agreement it licenses is element-specific and must not be carried to another candidate"
+    },
+    {
+      "name": "bg3w_nuc9_residual_is_the_pin_not_float64",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "qou-bg3w calls -0.1883216147 the EXACT net and -0.188290601 the float64 coordinate sum, and attributes the gap to 'float64 h versus exact _H_FRAC'. Measured: the same exact expression gives -0.18832161472187 at q = 111/100 and -0.18829060147138 at the proton pin. The gap is 185 ppm of PIN, not float64 rounding (which would be ~1e-16). Both of bg3w's numbers are exact; they are at different q"
+    },
+    {
+      "name": "constructed_recipe_is_assignment_dependent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "16 readings of the blocks' recipe (8 quark-generator assignments x 2 Hopf orientations) give net(Delta) spanning [-0.250674285119, -0.204683501916] -- 6 distinct values. The corpus fixes the SHIFTS but not the generators, so 'the constructed Delta' is not a single number without a selection rule. Variants reproducing the blocks' stated net(n) = 0.7975664: ['gens=(0, 0, 0),hopf=L-', 'gens=(0, 1, 1),hopf=L-']"
+    },
+    {
+      "name": "bg3w_and_vtlj_bottom_rows_are_one_element_at_two_pins",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "gen-grouped net = -0.233197711316 at q_0 (vtlj's -0.2331977) vs -0.233245896072 at q = 111/100 (bg3w's -0.2332459); rel 0.0002066. Same element, two pins -- NOT two elements"
+    },
+    {
+      "name": "neutron_reproducing_variants_agree_and_match_vtlj",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "2 of 16 readings reproduce the blocks' stated net(n) = 0.7975664, and both give the SAME net(Delta) = -0.21376383061666, independently reproducing qou-vtlj's constructed value -0.2137638. So within this parameterisation the neutron constraint DOES pin Delta -- the assignment freedom that spans [-0.2507, -0.2047] collapses once the stated neutron net is imposed. Note this pins Delta from the NEUTRON alone; qou-vtlj separately found no reading reproduces the stated PROTON net, so the pin rests on one of the block's two numbers"
+    },
+    {
+      "name": "candidate_set_exceeds_the_four_each_bean_reports",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "11 distinct net values at ONE pin: 3 constructed models, the published closed form, the blocks' stated -0.2089, and 6 distinct values from the 16 readings of the blocks' own recipe. Both qou-bg3w and qou-vtlj report 'FOUR', and their fours differ; neither figure is the size of the candidate set"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2467,
+  "computation": "qbeta-delta-candidate-census",
+  "scriptFile": "qbeta_delta_candidate_census_probe.py",
+  "scriptHash": "186e22954cb8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_delta_candidate_census_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_delta_candidate_census_probe.py"
+  },
+  "description": "Census of the Delta-element candidates at ONE pin (proton q_0) in ONE basis. qou-bg3w and qou-vtlj each report FOUR values; their lists differ, so the union is six. Per candidate: net, whether (D1) is affine in z, the e^- coordinate, and whether the published closed form eps(Delta) = h^2/2 - h holds. Selects nothing; scope-(a).",
+  "data": {
+    "nuc9_build_nucleon_nf/net_at_q0": "-0.1882906014713827704417372201264506584168",
+    "nuc9_build_nucleon_nf/net_exact_in_h": "h*(h**6 + 2*h**5 + 2*h**4 + 2*h**3 - h**2 + 2*h - 4)/4",
+    "nuc9_build_nucleon_nf/z2_coeff_exact_in_h": "-h*(h**2 - h + 1)*(h**2 + h + 1)/2",
+    "nuc9_build_nucleon_nf/e_minus_at_q0": "-0.0009759885889369038303660143435808493798705",
+    "nuc9_build_nucleon_nf/crossings": 9,
+    "nuc11_interleaved_build_atom_nf_exact/net_at_q0": "-0.2271597117655695709663935951013034119594",
+    "nuc11_interleaved_build_atom_nf_exact/net_exact_in_h": "h*(2*h**7 + 2*h**6 + 5*h**5 + 4*h**4 + 2*h**3 + h**2 - 2*h - 4)/4",
+    "nuc11_interleaved_build_atom_nf_exact/z2_coeff_exact_in_h": "-h*(h**2 + 2)*(2*h**4 + h**2 + 1)/4",
+    "nuc11_interleaved_build_atom_nf_exact/e_minus_at_q0": "-0.02380508144413480236174169652585585364385",
+    "nuc11_interleaved_build_atom_nf_exact/crossings": 11,
+    "nuc11_gen_grouped_nucleon_gen_chains/net_at_q0": "-0.2331977113156587020400640333246765343358",
+    "nuc11_gen_grouped_nucleon_gen_chains/net_exact_in_h": "-h*(h**2 + 2*h + 4)/4",
+    "nuc11_gen_grouped_nucleon_gen_chains/z2_coeff_exact_in_h": "-h*(h**2 + 2)/4",
+    "nuc11_gen_grouped_nucleon_gen_chains/e_minus_at_q0": "0.0",
+    "nuc11_gen_grouped_nucleon_gen_chains/crossings": 11,
+    "closed_form_holds_on_no_constructed_candidate": true,
+    "D1_unavailable_for_every_long_model": true,
+    "bg3w_has_L_plus_and_L_minus_swapped": true,
+    "z2_test_needs_the_sum_not_one_coordinate": true,
+    "e_minus_nonzero_on_some_long_models": true,
+    "bg3w_nuc9_residual_is_the_pin_not_float64": true,
+    "constructed_recipe_is_assignment_dependent": true,
+    "constructed_net_range_at_q0": [
+      "-0.2506742851187915718832607081041619315885",
+      "-0.204683501915569025409060346435583771425"
+    ],
+    "constructed_variant_count": 16,
+    "bg3w_and_vtlj_bottom_rows_are_one_element_at_two_pins": true,
+    "neutron_reproducing/gens=(0, 0, 0),hopf=L-": "-0.2137638306166646424367972489673122718686",
+    "neutron_reproducing/gens=(0, 1, 1),hopf=L-": "-0.2137638306166646424367972489673122718686",
+    "neutron_reproducing_variants_agree_and_match_vtlj": true,
+    "candidate_set_exceeds_the_four_each_bean_reports": true,
+    "distinct_net_values_at_q0": [
+      "-0.187207194",
+      "-0.188290601",
+      "-0.204683501",
+      "-0.2089",
+      "-0.208961798",
+      "-0.208992139",
+      "-0.213763830",
+      "-0.227159711",
+      "-0.233197711",
+      "-0.250129316",
+      "-0.250674285"
+    ],
+    "q0_anchor_note": "proton pin; every value in this witness is at Q_50_DIGIT_STR, none at q = 111/100"
+  }
+}
