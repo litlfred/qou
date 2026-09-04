@@ -284,7 +284,11 @@ def main() -> int:
         },
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_disjoint_support_factorisation_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       # `elapsed_sec`, not `elapsed_s` — see the sibling note
+                       # in qbeta_binding_law_options_probe.py. Seventh site of
+                       # this class in two days; the recurrence is tracked in
+                       # bean `qou-m549`.
+                       "elapsed_sec": round(time.monotonic() - t0, 3)},
     }
     out = HERE / "qbeta-disjoint-support-factorisation.witness.json"
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
