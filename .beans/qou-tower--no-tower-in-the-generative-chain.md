@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T22:25:00Z
+updated_at: 2026-09-04T20:55:55Z
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -627,3 +627,64 @@ folding. Any surviving many-body information lives in the **weights** on four
 grades, never in the grade index. This probe does not exclude that.
 
 PR #6333.
+
+
+---
+
+## 🛑 SCOPE CORRECTION (2026-09-04, bean qou-hu1f) — "the production chain" is too wide, and the substance survives it
+
+This bean's title and §2 say `build_atom_nf_mp` collapses **"the production
+chain"**. Measured, it has **seven consumers**: five probes, plus
+`all_nuclides_sdp_admissibility_mp.py` (a producer with a committed witness) and
+`qbeta_level_k_binding_operator_probe`. It is **not** the canonical mass path --
+that is `canonical_mass.py`, per the mass-formula guardrail in AGENTS.md.
+
+**The correction does not rescue the tower**, because the canonical path is H_3
+too, by a **different mechanism**. `binding_canonical.py` calls its own current
+path `tower_binding_full (H_3 tower)` (:37), builds from "the H_3 building
+blocks tr_M^3(p), tr_M^3(n)" (:324), and bridges "tau_p, tau_n via the Wenzl
+bridge at H_3" (:341), while carrying `n = 3 * (Z + N)` (:528) as the nominal
+strand count.
+
+Two routes to H_3, and they must not be conflated:
+
+- **NF route** (`build_atom_nf_mp`) -- a growing word is REDUCED to 6 dimensions
+  after every crossing. The tower is built and destroyed. **This bean measures
+  this one.**
+- **Canonical route** (`binding_canonical`) -- per-nucleon H_3 traces are
+  COMPOSED. The tower is never built, so there is no reduction to point at and
+  this bean's argument does not reach it.
+
+### The central claim reproduces, at a case this bean never tested
+
+Re-run directly against `compound_shift_nf.build_atom_nf_mp` (a bean is not a
+primary source, including this one):
+
+    hydrogen A=1    nominal n= 3 strands  -> NF has 6 components
+    4He      A=4    nominal n=12 strands  -> NF has 6 components
+    16O      A=16   nominal n=48 strands  -> NF has 6 components
+
+**16O** -- a nominal `H_48` object carried as six numbers -- is sharper than the
+Pb-208 row already here, because it was run rather than reasoned.
+
+### And it collides with an owner ruling this bean predates
+
+The owner ruled **2026-09-03** that derivations must be carried on the **full
+tower** (both senses: all `n`, all orders in `q`).
+`2026-09-03-sm-26-term-status.md` §10 applies that ruling to the **SM** surface
+only -- it never mentions mass or binding. Meanwhile `build_atom_nf_mp` appears
+in **zero** files under `docs/` or `content/`, so this finding had no durable
+home to be found from. Written up in
+`docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`.
+
+### The measurable step this bean stopped one move short of
+
+The full-tower walk here measured **distributional** quantities -- top-block
+share, participation ratio, argmax partition -- against magic numbers. It never
+compared **a binding energy**. So this is open and reachable:
+
+> does the A <= 4 full-tower walk reproduce the canonical H_3 binding numbers?
+
+Yes => H_3 is a faithful order-zero rendering and the ruling is satisfied in
+substance. No => the two routes disagree, and that gap is a bigger finding than
+the magic-number negative this bean closed on. Tracked as `qou-hu1f`.
