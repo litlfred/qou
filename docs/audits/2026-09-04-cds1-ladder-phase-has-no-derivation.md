@@ -131,11 +131,26 @@ would waste the pass. The closures, so the next agent inherits them:
   not rescue it: `det ρ(w) = (−1)^L` forces `L` even and `λ = ±1`, leaving the
   trace Laurent either way.
 - **No braid-image transfer matrix carries it in *any* convention** —
-  [`qbeta_braid_image_eigenphase_exclusion_probe.py`](../../computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py),
-  by boundedness, never reading `z`'s formula. Extended from Laurent to
-  algebraic in
-  [`qbeta_eigenphase_algebraic_exclusion_probe.py`](../../computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py)
-  and its sorry-free Lean twin `QOU.QBeta.BraidImageEigenphaseAlgebraic`.
+  [`qbeta_braid_image_eigenphase_exclusion_probe.py`](../../computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py)
+  gives an elementary boundedness argument that never reads `z`'s formula,
+  replacing an earlier *unproved* transcendence assertion.
+
+  **What closes branch 1 in full is neither of those, and the distinction is
+  live** — `316c1dcc42` on main corrects three sites that named the
+  transcendence route, and an earlier draft of this section made the adjacent
+  misreading by writing that the result was "extended from Laurent to
+  algebraic", as though algebraicity were what does the work. It is not.
+  Branch 1 is closed — character case *and* eigenvalue-pair case — by
+  **zero-counting**: `QOU.QBeta.BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos`
+  (sorry-free), "a polynomial with infinitely many roots is zero". Its
+  load-bearing hypothesis must be carried with it:
+  `hsurj : ∀ y ≤ 0, ∃ s ≥ 1, α s = y` — **surjectivity onto the non-positive
+  reals**, which the unbounded `(z−1)h/2` family supplies and a bounded
+  `arccos` does not. *"It is algebraic, therefore excluded"* is not what the
+  theorem says. Companion probe:
+  [`qbeta_eigenphase_algebraic_exclusion_probe.py`](../../computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py),
+  whose own header states plainly that boundedness is the wrong invariant to
+  push.
 - **The Lean carrier is proved vacuous** —
   `QOU.QBeta.EigenphaseCarrier.carrier_is_trivial`. So the identification was
   never carried in Lean either, which is consistent with, and independent of,
