@@ -57,7 +57,49 @@ from the subject alone:
     while the verb governs `qou-mfst`. The script flags a multi-id subject
     rather than guessing.
 
+  * **The verb is QUOTED or NEGATED — the commit reports a REOPENING.** The
+    worst class, because it inverts the meaning. `qou-hok7`'s later subject is
+    *"resurgence(qou-hok7): deuteron-wall 'resummation closed' is a
+    wrong-transform artifact"* — `closed` appears **in scare quotes**, inside a
+    subject whose whole point is that the closure was an artifact, and that
+    commit **reopened** the bean. A regex over a subject cannot see quotation
+    marks.
+
 So this is a READ QUEUE, not a close list. **Do not bulk-close from it.**
+
+## Reading the BODIES raises the rate — measured on four
+
+The ~40 % above is what is visible from subjects alone. Four high-priority
+candidates were then opened and read:
+
+| bean | verdict from its own body |
+|---|---|
+| `qou-hok7` | **open** — *"REOPENED. OPEN next step: q-Borel-Laplace resummation"* |
+| `qou-54g5` | **open** — *"Bean stays open on (1)-(4)"* |
+| `qou-qspc` | **open** — the later commit records a finding, not a closure |
+| `qou-c1ln` | arguably done — *"the axis is finished as far as anything needs it"*; the rows still open are explicitly recorded as having **no downstream consumer** |
+
+**Three of four survived the read.** n = 4 is small and I am not turning it into
+a rate, but it points one way: expect most of the print-out to survive. The
+tool's value is that it tells you which beans are worth OPENING — not which are
+finished.
+
+`qou-c1ln` is left for its owner to close. Its remaining rows are open-but-
+consumerless, which is a scope judgement, and making that call on someone else's
+bean is exactly the bulk-closing this bean warns against.
+
+## Independently corroborated, months earlier, by another agent
+
+`qou-c1ln`'s own body already reached this finding from the other direction:
+
+> *"Third instance of the same staleness failure in two days … Both are
+> summaries that went stale against work recorded elsewhere in the same corpus,
+> and both were read as current by a later agent … the pattern is worth a
+> systemic look — **a stale-summary check has no owner today**."*
+
+That is this bean's thesis, written by a different agent before this session,
+sitting inside one of the very beans the audit flagged. It went unowned until
+now. `scripts/bean-completion-candidates.py` is the owner it asked for.
 
 ## The audit caught one of mine
 

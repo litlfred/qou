@@ -35,10 +35,22 @@ small.** Measured on the 12 high-priority candidates in the first run, at least
     "qou-mfst is fixed on main -- close it, and name the pattern it shares with
     qou-lkrd" matches on `qou-lkrd` while the verb governs `qou-mfst`. This
     script cannot bind a verb to one of several ids in one subject.
+  * **The verb is QUOTED or NEGATED -- it reports a REOPENING.** The worst class,
+    because it inverts the meaning. `qou-hok7`'s later subject is
+    "resurgence(qou-hok7): deuteron-wall 'resummation closed' is a wrong-transform
+    artifact" -- the word `closed` appears in QUOTATION MARKS inside a subject
+    whose whole point is that the closure was an artifact, and the bean was
+    REOPENED by that very commit. A regex over a subject cannot see scare quotes.
 
-So roughly 4 in 10 of what it prints is not done. **Do not bulk-close from this
-output.** It is a read queue: it tells you which beans are worth opening, and
-the reading is still yours.
+**Reading the BODIES raises the rate further.** The ~4-in-10 above is what is
+visible from subjects alone. Of the first four high-priority candidates whose
+beans were actually opened and read, THREE were genuinely open and said so in
+their own text ("Bean stays open on (1)-(4)"; "REOPENED. OPEN next step: ...").
+n = 4 is small, but it points one way: treat the print-out as a list of beans
+worth OPENING, and expect most of them to survive the read.
+
+**Do not bulk-close from this output.** It is a read queue: it tells you which
+beans are worth opening, and the reading is still yours.
 
 The wider signal it deliberately does NOT print: 784 open beans have SOME
 commit naming them after their own `updated_at`. That is an upper bound on
@@ -142,9 +154,17 @@ def main() -> int:
         print(f"  {bid}  ({pri}, last updated {b['updated'][:10]}){flag}")
         print(f"    bean : {b['title'][:100]}")
         print(f"    later: {sha[:11]} {iso[:10]} {subj[:100]}")
-    print("\nCANDIDATES, NOT VERDICTS. Measured false-positive rate ~4 in 10 (partial "
-          "completion, or the verb governing a different bean in the same subject).")
-    print("Open each one and read it. Do NOT bulk-close from this output.")
+    print("\nCANDIDATES, NOT VERDICTS. From SUBJECTS alone the false-positive rate is "
+          "~4 in 10; reading four\nof the bodies, THREE were still genuinely open. "
+          "Three structural causes, all unfixable by regex:")
+    print("  1. partial completion  -- 'ITEM 4 CLOSED', 'item 3 fully closed; the "
+          "remaining item is ...'")
+    print("  2. the verb governs a DIFFERENT bean named in the same subject "
+          "(flagged above with !!)")
+    print("  3. the verb is QUOTED or NEGATED and the commit REOPENED the bean -- "
+          "e.g. qou-hok7's\n     \"deuteron-wall 'resummation closed' is a "
+          "wrong-transform artifact\"")
+    print("\nOpen each one and read it. Do NOT bulk-close from this output.")
     return 0
 
 
