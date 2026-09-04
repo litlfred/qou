@@ -1,0 +1,140 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-02T21:54:27.464081+00:00",
+  "commitSha": "ba326aaffbddc38ba8b374f0d839e2326d975f83",
+  "assertions": [
+    {
+      "name": "A1_L_is_additive_on_disjoint_blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "L(union of disjoint parts) - sum = 0.00e+00"
+    },
+    {
+      "name": "A2_cumulants_verified_two_ways",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "recursive vs direct Mobius agree to 2.66e-15"
+    },
+    {
+      "name": "A3_hierarchy_does_not_converge",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "ratios [0.5206, 0.3251, 1.3036]; last is 1.3036 > 1"
+    },
+    {
+      "name": "A4_c5_is_positive_correcting_earlier_claim",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c_3 -3.786046, c_4 -1.230796, c_5 +1.604499"
+    },
+    {
+      "name": "A5_c5_is_not_numerical_noise",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "cancellation 26.3x, c_5 is 1.7e+14x the f64 floor"
+    },
+    {
+      "name": "A6_higher_orders_are_not_suppressed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|c_5| = 1.604499 > |c_4| = 1.230796"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 83,
+  "computation": "cumulant_hierarchy_does_not_converge_probe",
+  "scriptFile": "cumulant_hierarchy_does_not_converge_probe.py",
+  "scriptHash": "6785530ae066",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/cumulant_hierarchy_does_not_converge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/cumulant_hierarchy_does_not_converge_probe.py"
+  },
+  "description": "Establishes that the subset subtraction used throughout this arc is a genuine CUMULANT expansion, then measures its convergence. The Markov trace is multiplicative on disjoint strand blocks, so L = log(tr_free/tr_atom) is additive on them — measured here with bonds placed only inside each part and no cross bonds, residual 0.000e+00. That additivity is exactly the condition making a Mobius inversion over subsets a cumulant expansion, so c_k is the k-th cumulant: what the k-body correlation contributes beyond every lower one. This is what licenses reading order-zero correlations as an indirect probe of higher tower orders. Cumulants verified two independent ways (recursive and direct Mobius) agreeing to 2.7e-15 across all 26 subsets. AT A=5 (5He, pnpnn, n=15) the hierarchy is c_2 = +7.272615735, c_3 = -3.786046394, c_4 = -1.230795704, c_5 = +1.604498983, reconstructing L_full = 3.860272620 exactly. IT DOES NOT CONVERGE: successive ratios 0.520589, 0.325087, then 1.303627 — c_5 exceeds c_4 and is comparable to c_3, with partial sums oscillating (7.27, 3.49, 2.26, 3.86). AND c_5 FLIPS SIGN POSITIVE, correcting qou-bc09 and qou-38i9 which reported every measured many-body term as negative and used that to argue a naive pairwise sum is an upper bound; both stopped at c_4 because 4He is A=4 and has no fifth order. 4He is unaffected — orders 2,3,4 exhaust A=4 — but the general claim is false from A=5 on. c_5 is not noise: cancellation only 26.3x and it sits 1.7e14 times the double-precision floor. The tower reading is that HIGHER ORDERS ARE NOT SUPPRESSED, so no A <= 4 measurement in this arc licenses extrapolation to larger A.",
+  "data": {
+    "additivity": {
+      "L_part1": "0.676821592386",
+      "L_part2": "0.907262265533",
+      "L_union_no_cross": "1.584083857920",
+      "residual": "0.000e+00"
+    },
+    "cumulants": {
+      "2": {
+        "n_terms": 10,
+        "sum_c_k": "7.272615735173",
+        "MeV": "30.443034",
+        "sign": "+"
+      },
+      "3": {
+        "n_terms": 10,
+        "sum_c_k": "-3.786046393612",
+        "MeV": "-15.848320",
+        "sign": "-"
+      },
+      "4": {
+        "n_terms": 5,
+        "sum_c_k": "-1.230795704312",
+        "MeV": "-5.152088",
+        "sign": "-"
+      },
+      "5": {
+        "n_terms": 1,
+        "sum_c_k": "1.604498983118",
+        "MeV": "6.716403",
+        "sign": "+"
+      }
+    },
+    "convergence": {
+      "ratios": [
+        "0.520589",
+        "0.325087",
+        "1.303627"
+      ],
+      "converges": false,
+      "L_full": "3.860272620367",
+      "reconstruction_residual": "0.00e+00",
+      "moebius_cross_check": "2.66e-15"
+    },
+    "c5_noise_audit": {
+      "c5": "1.604498983118",
+      "sum_abs_terms": "42.179648",
+      "cancellation_factor": "26.29",
+      "f64_floor": "9.28e-15",
+      "ratio_to_floor": "1.73e+14"
+    }
+  },
+  "caveats": [
+    "CORRECTS qou-bc09 AND qou-38i9, WHICH ARE MINE. Both reported every measured many-body term as negative and used it to argue the naive pairwise sum bounds binding from above. Both are correct AT A=4, where orders 2,3,4 exhaust the expansion and all were measured negative — the 4He numbers stand. The GENERAL claim, and any use of it at A >= 5, does not.",
+    "MEASURED AT ONE NUCLEON ORDERING AND ONE BOND ORDER. This is 5He at production ordering 'pnpnn' with the interleaved bond order, and subsets inherit the induced order. qou-38i9 measured bond order to be worth 38-40% at A=4, so the MAGNITUDES here are convention-dependent at that level. The sign of c_5 and the non-convergence are not re-tested across orderings and should be, before either is quoted as ordering-independent.",
+    "A=5 IS THE FIRST AND ONLY ORDER TESTED BEYOND c_4. One non-convergent step is not an asymptotic statement: c_6 would need A=6, which is n=18 and ~172 s per trace over 64 subsets, roughly three hours. 'Does not converge' here means the ratio exceeds one at the first opportunity to test it, not that the series has been shown to diverge.",
+    "Everything remains an evaluation at q = q0, i.e. the order-zero observable. The cumulants are correlations BETWEEN order-zero observables — which is precisely the indirect route the corpus intends, and is why they carry higher-order information — but no graded piece is computed here and none is claimed."
+  ]
+}
