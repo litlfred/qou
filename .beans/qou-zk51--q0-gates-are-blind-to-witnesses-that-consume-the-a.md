@@ -224,3 +224,53 @@ to the boolean `True`. That assertion is becoming a different *kind* of check,
 so a refresh is not a numeric update there. The signal I would actually track
 is `constraint_residues_at_q0/L2`, `6.845644678724866e-14 → 3.478181380183418e-09`
 — five orders, and the thing the re-derivation has to recover.
+
+---
+
+## 🛑 RETRACTION of my own "AGENTS.md's table is out of date" (2026-09-04, same session)
+
+The section *"A prediction of mine that was wrong, recorded"* above closes with:
+
+> "**Measured: they are identical today**, both at C. `48c84692679` (2026-08-29
+> …) fixed it. So AGENTS.md's table describing `q0Value` as stale is itself out
+> of date."
+
+**The measurement is right. Both claims I built on it are wrong**, and it is the
+second one that matters.
+
+**1. Wrong document.** That table is **not in AGENTS.md** and never has been:
+
+    grep -c "provenance self-stamp" AGENTS.md            -> 0
+    git log -S "provenance self-stamp" -- AGENTS.md      -> no commits
+
+It lives in [`docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md`](docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md),
+the audit AGENTS.md *points to*. I conflated a cited document with the citing
+one — the same class as citing a bean as though it were the corpus.
+
+**2. Not out of date either.** The repair and the audit doc are **the same
+commit**:
+
+    48c84692679                                   2026-08-29 08:12:58 +0200
+    docs/audits/2026-08-29-...-repin-drain.md     2026-08-29 08:12:58 +0200
+      (first == last commit; the file has been touched once)
+
+So the doc's table is not a stale record of a fixed state — it is the
+**before-state stated as the rationale for the fix in the very commit that
+applied it**, which its own next paragraph makes explicit: *"fixing this file
+is not the forbidden re-pin … Bringing `q0Value` from A to C changes only the
+self-stamp."* Reading a correctly-dated before/after table as a stale claim is
+the inverse of the staleness error, and I made it while writing up a staleness
+audit.
+
+**What this does NOT touch.** The underlying measurement stands and nothing
+downstream of it moves: `derived_50_digit.q` and `q0Value` are both at C today,
+`fvk_selection_probe` reads `q0Value`, and its numbers moved because that field
+went A → C. Every figure in commit 3 is unaffected.
+
+**Contamination — three places, checked rather than assumed.** The claim reached
+(a) this bean, corrected here; (b) the PR body of #6606, corrected there; and
+(c) the commit message of `7296c96e59d`, which cannot be corrected in place and
+is left standing with this retraction as its counterpart — rewriting a pushed
+commit to tidy a message is worse than an additive correction. The coordination
+comments on #6605 and #6595 do **not** carry it; I checked both rather than
+assuming.
