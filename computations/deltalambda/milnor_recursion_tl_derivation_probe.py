@@ -42,6 +42,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from a4_brunnian_deficit_closed_form import band_comm, A01, A12, A23  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
 A34 = [(3, 4, +1)]
@@ -211,6 +216,12 @@ def main():
     # this one. Ask for the anchor with the same precedence q_parameter
     # uses at compute time (env var > manifest stem > proton) rather than
     # hardcoding a pin this run may not have used.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python")
     from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
     _q0a, _q0v = _rq0(__file__)
     out["q0Anchor"] = _q0a

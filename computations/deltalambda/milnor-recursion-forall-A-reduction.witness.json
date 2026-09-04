@@ -3,7 +3,7 @@
  "q0Anchor": "proton",
  "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
  "scriptFile": "milnor_recursion_forall_A_reduction_probe.py",
- "engine": "python-sympy-exact",
+ "engine": "python",
  "free_parameters": 0,
  "description": "Reduces the \u2200A deficit recursion D_{A+1}=-h^2(h^2+2)D_A to the single conditional-expectation identity (\u2605\u2605) [proving the other three qtr-terms A-independent], and verifies the recursive handle E_A(w_A^-1)= E_A(b w_{A-1} b^-1) w_{A-1}^-1 for the induction. Exact Q(q), no float64. No Lean instance created.",
  "results": {
@@ -27,6 +27,10 @@
   "all_verified": true,
   "verdict": "\u2200A REDUCTION CONFIRMED: the recursion's first three qtr-terms are A-independent ([2]^A, proven via [\u03c1(braid),\u03bc]=0 for T2 and loop-closure for T1; scalar T3 exact) and the whole recursion collapses EXACTLY to the single DIRECT identity (\u2605\u2605) qtr_{A+1}(W e_A W\u207b\u00b9 e_A)=[2]^{A+1}(1-u)+u[2]\u00b7qtr_A(W\u2080), u=q\u00b2+q\u207b\u00b2 (verified A=3,4). The recursive handle E_A(w_A\u207b\u00b9)=E_A(b\u00b7w_{A-1}\u00b7b\u207b\u00b9)\u00b7w_{A-1}\u207b\u00b9 holds (A=4). NOTE: an earlier attempt to reduce (\u2605\u2605)'s LHS to the conditional expectation qtr_A(W\u2080\u00b7E_A(W\u2080\u207b\u00b9)) was WRONG (verification caught it); (\u2605\u2605) is stated for the DIRECT 4th-term qtr. The \u2200A proof is reduced to proving (\u2605\u2605) \u2014 three of four qtr-terms are handled \u2200A; (\u2605\u2605) is the single remaining step, replacing the weight-system bridge."
  },
- "q0Anchor": "proton",
+ "scriptHash": "253bd1ee0134",
+ "scriptCommitSha": "084327192d32848e3125f3bc7cef903af6f5cf84",
+ "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+ "computedAt": "2026-09-04T02:57:32.950769+00:00",
+ "durationMs": 0,
  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
