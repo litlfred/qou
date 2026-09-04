@@ -79,8 +79,7 @@ def sigma2 {C : Type u} [Category.{v} C]
 theorem sigma1_is_iso {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma1 V ≫ ((β_ V V).inv ▷ V) = 𝟙 ((V ⊗ V) ⊗ V) := by
-  simp [sigma1, ← MonoidalCategory.comp_whiskerRight,
-        Iso.hom_inv_id, MonoidalCategory.whiskerRight_id]
+  simp [sigma1, ← MonoidalCategory.comp_whiskerRight, Iso.hom_inv_id]
 
 /-- σ₂ is an isomorphism: σ₂ ≫ σ₂⁻¹ = id. -/
 theorem sigma2_is_iso {C : Type u} [Category.{v} C]
@@ -91,12 +90,15 @@ theorem sigma2_is_iso {C : Type u} [Category.{v} C]
   -- After simp: α ≫ (V◁β) ≫ α⁻¹ ≫ α ≫ (V◁β⁻¹) ≫ α⁻¹ = id
   -- Cancel α⁻¹ ≫ α = id in the middle:
   rw [Iso.inv_hom_id_assoc]
-  -- Now: α ≫ (V◁β) ≫ (V◁β⁻¹) ≫ α⁻¹ = id
-  -- Combine whiskers: (V◁β) ≫ (V◁β⁻¹) = V◁(β ≫ β⁻¹) = V◁id = id
-  rw [← MonoidalCategory.whiskerLeft_comp, Iso.hom_inv_id,
-      MonoidalCategory.whiskerLeft_id]
+  -- Now: α ≫ (V◁β) ≫ (V◁β⁻¹) ≫ α⁻¹ = id.
+  -- `rw [← whiskerLeft_comp]` does NOT apply here: `≫` is right-associated,
+  -- so the two whiskers are `V◁β ≫ (V◁β⁻¹ ≫ α⁻¹)` and the pattern
+  -- `?W ◁ ?f ≫ ?W ◁ ?g` is not a syntactic subterm.  `slice_lhs` re-brackets
+  -- the named segment first, which is what it exists for (AGENTS.md §5).
+  slice_lhs 2 3 => rw [← MonoidalCategory.whiskerLeft_comp, Iso.hom_inv_id,
+                       MonoidalCategory.whiskerLeft_id]
   -- Now: α ≫ α⁻¹ = id
-  exact Iso.hom_inv_id (α_ V V V)
+  simp
 
 /-! ## Yang–Baxter Equation (Braid Relation) -/
 
@@ -109,7 +111,7 @@ theorem sigma2_is_iso {C : Type u} [Category.{v} C]
 private theorem sigma12_eq_alpha_braiding {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma1 V ≫ sigma2 V = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom := by
-  simp only [sigma1, sigma2, Category.assoc]
+  simp only [sigma1, sigma2]
   -- Goal: (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom ≫ (α_ V V V).inv
   --     = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom
   -- Uses BraidedCategory.hexagon_forward V V V (with X=Y=Z=V):
@@ -123,10 +125,13 @@ private theorem sigma12_eq_alpha_braiding {C : Type u} [Category.{v} C]
   --     = (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom
   -- From hex.symm: LHS first 3 terms = RHS with extra α at end
   -- We need: LHS_3_terms ≫ α⁻¹ = α ≫ β_{V,V⊗V}
-  rw [← hex]
+  -- Same bracketing point as in `sigma2_is_iso`: `hex`'s right-hand side is
+  -- the FIRST THREE factors of the goal's left-hand side, but the goal is
+  -- `X ≫ (Y ≫ (Z ≫ α⁻¹))`, so `rw [← hex]` finds no `X ≫ (Y ≫ Z)` to match.
+  slice_lhs 1 3 => rw [← hex]
   -- Goal: (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom ≫ (α_ V V V).inv
   --     = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom
-  simp only [Category.assoc, Iso.hom_inv_id, Category.comp_id]
+  simp
 
 /-- **Lemma (braiding naturality).**
     β_{V,V⊗V} ≫ (β_{V,V} ▷ V) = (V ◁ β_{V,V}) ≫ β_{V,V⊗V}.
