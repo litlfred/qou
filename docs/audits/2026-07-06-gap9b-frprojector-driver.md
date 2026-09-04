@@ -40,7 +40,14 @@
 **Branch:** `claude/cheat-sheet-derivation-gaps-0ykco4` (PR #3440)
 **Bean:** `yfvb` — gap-9b FR frontier: producer→witness q₀ refactor (prereq) + H_{3A} Borromean FR driver
 **Driver:** [`computations/fr_pullback_borromean_h3a_test.py`](../../computations/fr_pullback_borromean_h3a_test.py)
-**Witness:** [`computations/fr-pullback-borromean-h3a-test.witness.json`](../../computations/fr-pullback-borromean-h3a-test.witness.json)
+**Witness:** **not committed** — deliberately. The 2026-07-06 run's witness
+exists only on the stranded branch tip `3409f9df39`, and its numbers were
+computed at the **retired muon-era pin A** (`q₀ = 1.10997859555733471…`,
+superseded 2026-08-22/28) with a **convention-C** `z` in α₂. Committing it
+would resurrect a dead anchor's numbers into main as if current. Regenerating
+it needs the ~25-minute H₁₂ leg *and* a decision on whether the whole probe is
+worth re-running given the supersession banner above — see `qou-poi1` for this
+producer's uncommitted-witness status generally.
 **Scope discipline:** derive-or-refute; no new constants; every negative is **(a) scope-limited** unless a proved invariant is cited. Δ_λ "no 7th fit-based ansatz" gate respected — the FR weight is built from χ^λ of a *fixed canonical word* (β_Bor), not fitted.
 
 ## 1. What was tested
