@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 59-65
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 complex Ginibre ensemble, and we will emphasize the relation to spin glass techniques.
 51

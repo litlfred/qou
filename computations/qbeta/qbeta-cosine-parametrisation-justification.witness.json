@@ -101,15 +101,14 @@
     "corrects": "Step 16 of this bean (commit a949c94115): 'the two decay functionals are one functional in two coordinates' is OVERSTATED. The identity prod = affine(z)/cos(theta(z)) needs both sides at the SAME z; the corpus's ladder fixes z = z_conv and the trace route frees z. At z_C the affine correction is 0.4409, 55.8 % from the data, while the ladder's product is 0.999926. Two allocations of one residual, with different free parameters. What survives: the E_0*(-eps) = Q_A bridge, agreement at z = 1, the protium findings, and F_REQUIRED_TRM = (Q_beta/Q_A)/affine(z_D).",
     "scope": "Scope-(a). Does not show the cosine is wrong, propose a replacement, derive alpha, or wire anything. Branch 3 of the eigenphase trichotomy (KZ / Kohno-Drinfeld holonomy) is untouched and would justify the cosine independently of anything measured here."
   },
-  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
   "durationMs": 0,
   "scriptFile": "qbeta_cosine_parametrisation_justification_probe.py",
-  "scriptHash": "ac32057e9235",
+  "scriptHash": "1646ed990364",
   "scriptCommitSha": "b19a6ede64e8a7c54bee1399fc0ab49567de88b1",
-  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
-  "computedAt": "2026-09-03T15:49:05.058343+00:00",
+  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "computedAt": "2026-09-03T05:10:52.001138+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
-  "q0AnchorReason": "experimental pin (the physical-observations layer)"
+  "q0Value": "1.1099785827513808"
 }

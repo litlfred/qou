@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 24-29
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 of the following theorem goes back to Feder-Mihail [29] although the proof of the
 full theorem is scattered over the literature [24, 57, 58, 72].

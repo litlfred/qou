@@ -7,6 +7,7 @@ section_number: 6
 pages: 6-6
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 in Br,s. Morton conjectured that these elements generate the entire c enter Z(Br,s).
 Morton’s conjecture has recently been proved in [JK] assuming k is a ﬁeld of char-

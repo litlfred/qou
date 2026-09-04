@@ -7,6 +7,7 @@ section_number: null
 pages: 317-340
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 The multiple point at p is not an arrangement point because the lattice of
 intersections of the two curves has rank 2 while the tangent lines to the curves

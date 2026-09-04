@@ -1,11 +1,11 @@
 ---
 # qou-edt7
 title: 'GAP: what replaces the multiplicative assembly W=1-PROD f — both corpus assemblies miss the 3-body sign, in OPPOSITE directions'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-08-30T19:59:57Z
+updated_at: 2026-09-03T12:43:22Z
 parent: qou-mhj9
 ---
 
@@ -916,3 +916,94 @@ jet-filtration SUM rather than its collapse".
 Until then the honest statement is: the magnitude is not derived, and with
 the present data it is not DECIDABLE either — any candidate that lands
 within 0.55% on one nucleus has at least seven rivals doing better.
+
+
+## 2026-09-03 — ANSWERED (structurally): `b₃ = 0` is the TRACE's doing, not the assembly's
+
+**The replacement is not another assembly.** Every ingredient was already on
+`main`; what was missing was the composition.
+
+`PairwiseCumulantVanishing` scopes itself honestly — its premises *"constrain `f`
+on **disjoint** clusters, and the observable that fails is a **connected**
+quantity"* — leaving open the hope that the **bound** atom's trace carries
+irreducible many-body content. It does not, because of **`qou-g8i1`** (completed):
+
+    tr(x·(σ_g + d·I)) = (z+d)·tr(x)   ⇒   tr_free/tr_atom = ∏_b 1/(z + d_b)
+
+on 16 nuclei numerically (A = 2..10, to `4.45e-31`) and 6 symbolically, with the
+recorded mechanism *"the Markov property applied at a **GAP**, not at the last
+strand"* — **interior** generators, so the **bound** atom word, not the disjoint
+sector M3 covers (`probe_inter_knot_decoupling.py` is the M3 case).
+
+    bond rule → trace ratio = ∏_bonds μ_b        [bound atom, interior gaps]
+  + f multiplicative→additive                    [§10a Cauchy]
+  ⇒ binding is a bond functional
+  ⇒ b₃ = b₄ = 0 identically                      [PairwiseCumulantVanishing]
+  vs AME b₃ = +1.426222 MeV.
+
+**So the replacement must BREAK THE BOND RULE** — a trace that is not Markov, or
+an object that is not a trace of the atom word. Not a different `f` (`f` does not
+appear in the conclusion), and **not a different edge set** (measured: chain,
+all-pairs and star all give `b₃ = 0`).
+
+**Two things this makes cheaper.** §10a's uniqueness step (continuous Cauchy
+solutions are `c·log`), which `binding_functional_extensivity_probe.py` records
+as *classical and NOT in Lean*, is **irrelevant** rather than merely
+unformalised — the conclusion holds for a discontinuous `f` too (measured). And
+the hypothesis is carried as `SatisfiesBondRule`, a named hypothesis, not an
+axiom: what is proved is the **implication**.
+
+**Scope (b)** on bindings `f ∘ (bond-rule trace of the atom word)`, invariant
+named: the bond rule makes the cluster trace a product over **pairs**, so the
+connected part above order two has nothing to be built from. **(a)** on
+everything else — non-trace carriers are untouched, and if the bond rule fails at
+some `A` the exclusion lapses there.
+
+**Artifacts.** `QOU/Mass/MarkovBondRuleForcesPairwise.lean` — 4 theorems,
+`lean`-direct exit 0, sorry-free, `#print axioms` gives **`[propext]` alone**.
+`computations/probes/markov_bond_rule_forces_pairwise_probe.py` — 5/5, exact
+`Fraction` for the cumulants, mpmath 50 dps for the logs, zero float64,
+P30-stamped.
+
+**Credit where it is due:** the two halves are `qou-g8i1`'s and
+`PairwiseCumulantVanishing`'s. This tranche is the join and the identification of
+the invariant, not a new exclusion.
+
+
+## 2026-09-03 (cont.) — the positive half, narrowed to a search over WORDS
+
+Checked the obvious candidate for a non-Markov carrier and it is already worked,
+with a measured verdict — plus one apparent tension that turns out to be a
+category difference worth recording.
+
+**No contradiction with the bond rule.** `qou-v7ro` proves the **Brunnian trace
+deficit** `D_A = 1 − qtr(ρ(w_A))/[2]^A` is **nonzero ∀A** (#6217:
+`D_{A+1} = −h²(h²+2)·D_A`, `D_3 = 1.44e-3`). Beside a bond rule verified to
+`4.45e-31` that reads like a factorisation failure. It is not — **different
+words**: the bond rule governs the nucleon **atom word** (a product of bond
+letters `σ_g + d·I` at interior gaps), while `w_A` is the **iterated commutator**
+`w_n = [w_{n−1}, b]`, and a commutator is not a product of independent bond
+letters. So `SatisfiesBondRule` is not falsified for the atom word and the
+exclusion is not vacuous there.
+
+**`D_A` is the one known member of the class my exclusion leaves open.** A
+carrier must *break* the bond rule; a word with nonzero deficit is exactly such a
+word. So the aim is right — and `qou-v7ro` has already measured why this member
+does not finish: `|D_A|` **falls** geometrically (`1.44e-3 → 8.2e-9` over A=3..8,
+factor `−0.0893226497` per step) while the empirical binding fraction **rises**
+(`0.767 → 0.954·ℏ_q²`, ⁴He → ⁵⁶Fe). Opposite trends ⇒ order/parity marker, not
+magnitude. **Scope (a)** on that carrier, not on the class.
+
+**So the positive half is now a stated search: is there a non-factorising word
+whose deficit RISES with `A`?** Not a search over functionals `f` (`f` does not
+appear in the conclusion) and not over edge sets (measured: chain, all-pairs,
+star all give `b₃ = 0`). That is a narrower question than the bean opened with.
+
+**Judgement, not a finding:** the falling/rising mismatch is a *trend* mismatch,
+and trends are cheap to test — any candidate word can be screened by computing
+its deficit at A = 3..6 before any Lean is written. That screen is the next
+concrete step and it is cheap.
+
+Recorded as a scope note in the header of
+`QOU/Mass/MarkovBondRuleForcesPairwise.lean`, so a reader arriving from
+`qou-v7ro` does not read that file as contradicted.

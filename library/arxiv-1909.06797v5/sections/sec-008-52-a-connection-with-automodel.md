@@ -7,6 +7,7 @@ section_number: 5.2
 pages: 18-19
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 To make a precise connection between automodel class and the above solution, we need to set up
 a dictionary between the variables deﬁned in ( u, v) plane and ( h, x) plane. The relation between

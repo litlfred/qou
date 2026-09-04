@@ -7,6 +7,7 @@ section_number: 5.4
 pages: 110-112
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 Consider a permutationπ∈Sn. An increasing subsequence i1,i 2,...,i k of a permuta-
 tioni↦→π(i) is a subsequence such thati1 <··· <i k andπ(i1)<π (i2)<··· <π (ik).

@@ -7,6 +7,7 @@ section_number: null
 pages: 27-30
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 and that sequences of generating functions obeying (1.4) satisfy a central limit
 theorem and a local central limit theorem.

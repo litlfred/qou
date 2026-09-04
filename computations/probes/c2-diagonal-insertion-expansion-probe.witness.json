@@ -1,0 +1,201 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T16:05:53.318659+00:00",
+  "commitSha": "d2fa83813a376fa104e828350c44ef7e9a5e37d9",
+  "assertions": [
+    {
+      "name": "insertion_expansion_order0_equals_derived_floor",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "[ε⁰] of the |S|=0 class vs 2^-A - 2^(1-2A), six words, Fraction ==."
+    },
+    {
+      "name": "insertion_expansion_order1_equals_c1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "[ε¹] (|S| ≤ 1, normaliser folded) vs the six derived/recorded c1 values."
+    },
+    {
+      "name": "insertion_expansion_order2_equals_exact_series_c2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "[ε¹]+[ε²] (|S| ≤ 2) vs the exact series c2 from c1_leading_coefficient_derived_probe (4He: 15307/512 from the order-4 run). Fraction == on all six. This is the derivation of c2: a fixed-point count over sub-words with ≤ 2 letters deleted, weighted by the diagonal pattern scalars (q−1 on e11/e22, h on e21, d_ℓ)."
+    },
+    {
+      "name": "second_order_overcount_is_smaller_than_first_order_at_every_A3_A4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "|chain/atom − 1| at second order vs first order: T: 1.0192 vs 1.7914, 3He: 0.8809 vs 1.7647, 4He: 1.2481 vs 3.4286. Smaller in every case, but NOT uniformly ≈ 1 (4He 1.248): the leading-order over-count is partly cancelled one order up, not removed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 230097,
+  "computation": "c2-diagonal-insertion-expansion-probe",
+  "scriptFile": "c2_diagonal_insertion_expansion_probe.py",
+  "scriptHash": "9bd819a6464e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/c2_diagonal_insertion_expansion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/c2_diagonal_insertion_expansion_probe.py"
+  },
+  "description": "The Hecke generator in the tensor picture is EXACTLY a transposition plus a diagonal O(eps) operator, so the Markov trace of a braid word expands as a sum over subsets S of letters of fixed-point counts of the sub-word with S deleted, weighted by pattern scalars; order eps^k needs |S| <= k. Implements the expansion to order 2, reproduces c0, c1 and the exact c2 of all six words, and splits c2 by insertion class.",
+  "data": {
+    "second_order_chain_over_atom": {
+      "T": {
+        "ratio": "372/365",
+        "float": 1.0191780821917809,
+        "first_order": "292/163"
+      },
+      "3He": {
+        "ratio": "3040/3451",
+        "float": 0.8809040857722399,
+        "first_order": "30/17"
+      },
+      "4He": {
+        "ratio": "19104/15307",
+        "float": 1.2480564447638336,
+        "first_order": "24/7"
+      }
+    },
+    "rows": [
+      {
+        "case": "pp",
+        "A": 2,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_ok": true,
+        "c1": "19/8",
+        "c1_recorded": "19/8",
+        "c1_ok": true,
+        "c2": "357/32",
+        "c2_exact_series": "357/32",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "0",
+          "1": "9/4",
+          "2": "285/32"
+        },
+        "eps2_coefficient_a2": "281/32"
+      },
+      {
+        "case": "pn",
+        "A": 2,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_ok": true,
+        "c1": "37/16",
+        "c1_recorded": "37/16",
+        "c1_ok": true,
+        "c2": "403/32",
+        "c2_exact_series": "403/32",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "0",
+          "1": "71/32",
+          "2": "83/8"
+        },
+        "eps2_coefficient_a2": "329/32"
+      },
+      {
+        "case": "nn",
+        "A": 2,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_ok": true,
+        "c1": "9/4",
+        "c1_recorded": "9/4",
+        "c1_ok": true,
+        "c2": "217/16",
+        "c2_exact_series": "217/16",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "0",
+          "1": "35/16",
+          "2": "91/8"
+        },
+        "eps2_coefficient_a2": "181/16"
+      },
+      {
+        "case": "T",
+        "A": 3,
+        "a0": "3/32",
+        "c0_derived": "3/32",
+        "a0_ok": true,
+        "c1": "163/64",
+        "c1_recorded": "163/64",
+        "c1_ok": true,
+        "c2": "3285/128",
+        "c2_exact_series": "3285/128",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "5/32",
+          "1": "321/128",
+          "2": "23"
+        },
+        "eps2_coefficient_a2": "2959/128"
+      },
+      {
+        "case": "3He",
+        "A": 3,
+        "a0": "3/32",
+        "c0_derived": "3/32",
+        "a0_ok": true,
+        "c1": "85/32",
+        "c1_recorded": "85/32",
+        "c1_ok": true,
+        "c2": "3451/128",
+        "c2_exact_series": "3451/128",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "5/32",
+          "1": "41/16",
+          "2": "3103/128"
+        },
+        "eps2_coefficient_a2": "3111/128"
+      },
+      {
+        "case": "4He",
+        "A": 4,
+        "a0": "7/128",
+        "c0_derived": "7/128",
+        "a0_ok": true,
+        "c1": "259/128",
+        "c1_recorded": "259/128",
+        "c1_ok": true,
+        "c2": "15307/512",
+        "c2_exact_series": "15307/512",
+        "c2_ok": true,
+        "c2_by_insertion_class": {
+          "0": "11/64",
+          "1": "127/64",
+          "2": "14203/512"
+        },
+        "eps2_coefficient_a2": "14271/512"
+      }
+    ],
+    "verdict": "c2 is DERIVED by the same mechanism as c0 and c1, one insertion deeper. The Hecke generator is exactly s + (diagonal, O(eps)), so the trace of any word at any order is a weighted fixed-point count over sub-words; order k needs at most k deletions. Conditional only on the Schur-Weyl identification, which the stage-1 probe checks on these words."
+  }
+}

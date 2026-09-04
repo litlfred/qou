@@ -65,74 +65,19 @@ open QOU.Mathlib (StandardYoungTableau)
 
 /-- The Wedderburn block product is semisimple: a finite product of matrix
     rings over `ℝ`. -/
-instance isSemisimpleRing_blocks (n : ℕ) :
+instance isSemisimpleRing_blocks {K : Type*} [Field K] (n : ℕ) :
     IsSemisimpleRing (∀ lam : Partition (n + 1),
       Matrix (StandardYoungTableau (QOU.Mathlib.partitionShape lam))
-        (StandardYoungTableau (QOU.Mathlib.partitionShape lam)) ℝ) :=
+        (StandardYoungTableau (QOU.Mathlib.partitionShape lam)) K) :=
   inferInstance
 
 /-- **`H_{n+1}(q)` is semisimple, at every rank (sorry-free, no cited class).**
 
     Transported along `heckeWedderburn` from the block product.  For every `n`
     and every real `q ∉ {0, 1, -1}`. -/
-theorem isSemisimpleRing_hecke (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
-    IsSemisimpleRing (Hecke ℝ q q⁻¹ n) :=
+theorem isSemisimpleRing_hecke_generic {K : Type*} [Field K] [CharZero K] (q : K)
+    (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ) :
+    IsSemisimpleRing (Hecke K q q⁻¹ n) :=
   (heckeWedderburn q hq0 hq2 n).symm.toRingEquiv.isSemisimpleRing
-
-/-- **The substrate discharges semisimplicity at every rank (sorry-free).**
-
-    For any real `q > 1` — in particular the substrate `q₀ ≈ 1.10998` —
-    `QOU.SchurWeyl.Hecke ℝ q q⁻¹ n` is semisimple at every rank.  This is the
-    shape in which the substrate parameter discharges the semisimplicity leg of
-    the `P ≠ NP`-in-QOU counting argument, with no cited class and no `sorry`.
-
-    The carrier is named explicitly rather than called "the Iwahori–Hecke
-    algebra", because this file's scope section distinguishes it from
-    `QOU.Hecke.IwahoriHecke`, and the informal name would read as a claim about
-    that one. -/
-theorem isSemisimpleRing_hecke_of_one_lt {q : ℝ} (hq : 1 < q) (n : ℕ) :
-    IsSemisimpleRing (Hecke ℝ q q⁻¹ n) := by
-  refine isSemisimpleRing_hecke q (by positivity) ?_ n
-  have h1 : 1 < q ^ 2 := by nlinarith
-  exact ne_of_gt h1
-
-/-! ## Discharging the cited `WenzlCriterion`
-
-`QOU.Information.PNeqNpEquivalence.WenzlCriterion` is a hypothesis class — its
-own docstring says "hypothesis class, not a theorem of this development" — and
-it had **no instance anywhere in the corpus**.  Everything downstream of
-`semisimple_of_one_lt` was therefore conditional on an assumption with no known
-model.  It has one now. -/
-
-/-- **A model for the cited `WenzlCriterion` (sorry-free).**
-
-    For any real `q > 1`, the criterion holds with `semisimple n` instantiated
-    as actual semisimplicity of the rank-`n` algebra.  This is what the class
-    was asking for and had never been supplied.
-
-    The `WenzlGeneric` hypothesis is not used: over `ℝ`, `1 < q` already gives
-    semisimplicity outright, so the criterion is satisfied a fortiori.  Note
-    that a *blanket* instance quantified over all `q` would be **false** as the
-    class is stated — `WenzlGeneric 0 n` holds vacuously (`0 ^ k = 0 ≠ 1`)
-    while `q = 0` is degenerate — which is why this is a theorem taking `hq`,
-    not an `instance`. -/
-theorem wenzlCriterion_of_one_lt {q : ℝ} (hq : 1 < q) :
-    QOU.Information.WenzlCriterion q
-      (fun n => IsSemisimpleRing (Hecke ℝ q q⁻¹ n)) :=
-  ⟨fun n _ => isSemisimpleRing_hecke_of_one_lt hq n⟩
-
-/-- **`semisimple_of_one_lt`, with the criterion discharged (sorry-free).**
-
-    The composition: no cited class remains between `1 < q` and semisimplicity
-    at every rank.
-
-    Scope, so this is not over-read: semisimplicity is a magnitude-axis fact.
-    Nothing here bears on the `P ≠ NP` wall, and the counting-to-decision
-    transfer is untouched. -/
-theorem semisimple_of_one_lt_unconditional {q : ℝ} (hq : 1 < q) (n : ℕ) :
-    IsSemisimpleRing (Hecke ℝ q q⁻¹ n) :=
-  haveI := wenzlCriterion_of_one_lt hq
-  QOU.Information.semisimple_of_one_lt
-    (ss := fun n => IsSemisimpleRing (Hecke ℝ q q⁻¹ n)) hq n
 
 end QOU.SchurWeyl

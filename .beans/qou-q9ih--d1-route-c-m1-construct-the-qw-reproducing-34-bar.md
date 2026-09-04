@@ -501,3 +501,229 @@ This is bookkeeping over the three entries above; it measures nothing new. No
 route is declared refuted, nothing is wired, and `A_ω` remains underived. The
 "no live derivation-tier route" statement is a claim about **this ledger's**
 entries, not about the framework.
+
+── 2026-09-03 (5): D1-b entry test — the NZ datum's SNF is a function of N alone ──
+
+`computations/qbeta/dt_d1b_nz_gluing_invariant_entry_probe.py`, **10/10**
+(PR #6509). Formalize-first, run BEFORE the multi-session NZ → Q dictionary
+assembly the ledger calls for, and it asks the prior question: **can that
+datum carry the information at all?**
+
+### The measurement
+
+The natural first-order invariant of an integer gluing datum is the Smith
+normal form of `A | B` — its class under integral row/column equivalence
+`GL(ℤ) × GL(ℤ)`. Across 16 knots spanning `N = 2..13` tetrahedra:
+
+    SNF(A|B) = (1)^N + (2) + (0)      for EVERY knot.
+
+| N | knots | distinct SNFs |
+|---|---|---|
+| 2 | 3₁, 4₁ | 1 |
+| 3 | 5₁, 5₂, 8₁₉ | 1 |
+| 4 | 6₁, 7₁, 7₂ | 1 |
+| 5 | 6₂, 7₃, 8₂₀, 9₄₂, 10₁₃₉ | 1 |
+| 6 | 6₃, 7₄ | 1 |
+| 13 | 8₁₈ | 1 |
+
+A function of the tetrahedron count alone. The invariant carries **no
+knot-theoretic information**.
+
+### The consequence for D1-b
+
+D1-b's node count must separate 4₁ (3 connections) from 5₂ (4). The SNF
+separates nothing beyond `N`, so **no `GL(ℤ)×GL(ℤ)`-invariant function of the
+NZ gluing matrix can supply it.** The dictionary must read the matrix in a
+**fixed polarization** — its actual entries — not any basis-independent
+invariant of it.
+
+### It does NOT rest on the non-hyperbolic 3₁
+
+The tempting instance is the `N = 2` collision: 3₁ and 4₁ share an SNF but
+have certified `C = 2` and `3`. **3₁ is not hyperbolic** (`contains flat
+tetrahedra`), so a geometric dictionary may legitimately be undefined there —
+that instance *corroborates* and is reported with the caveat attached. What
+*establishes* the claim is the `N = 5` group: five **pairwise non-isometric
+hyperbolic** knots, one SNF, distinctness by `is_isometric_to` rather than by
+comparing volumes.
+
+### Neither input was re-derived
+
+Both already existed and the corpus-grep found them first:
+
+- node counts ← `dt_crossknot_connection_count_certified_probe.py`;
+- the NZ datum ← **cross-checked against** `one_loop_torsion.py::nz_pair`,
+  the corpus's own extractor, rather than replacing it. SnapPy's rectangular
+  form and `nz_pair` agree **exactly** as `(A,B) = (a,−b)` on every row of
+  every knot up to `N = 13`, and the SNF is invariant under that convention
+  flip (both are controls C5/C6).
+
+### Two re-scopings of D1-b the grep surfaced, recorded so they are not redone
+
+- **`W` is NOT needed.** The M2 plethystic-log result
+  (`aomega_m2_bps_cohomology.py` / `AomegaM2BPSCohomology`, lean-direct exit
+  0) gives `dim BPS_d = |Ω_d|`, so a potential-free abelianized quiver already
+  realizes `{3,4}`. **D1-b as written asks for "arrows AND potential" — the
+  potential half asks for an object the corpus records as unnecessary.**
+  Scope-(a), conditional on the imported eq-(98) datum.
+- **The `(7,1)` half of D1-b's target is a no-op** on `(4,3)` — the 2026-09-03
+  (1) Result 0 applies to D1-b exactly as it did to D1-a.
+
+And the live constraint carries over unchanged: `QuiverMirrorAutomorphismExcluded`
+(sorry-free) — the mirror must act on the stability **ray**, never as a quiver
+automorphism.
+
+### Literature gap to plan around
+
+**ACCERV, *BPS quivers and spectra*** — the triangulation-to-BPS-quiver
+precedent — is **NOT held** in `library/`; it appears only in other papers'
+reference lists. DGG (`arxiv-1108.4389`, `arxiv-1112.5179`), KS
+(`arxiv-0811.2435`) and Davison–Meinhardt (`arxiv-1601.02479`) **are** held.
+So the dictionary assembly needs an outbound fetch, not a corpus read.
+
+### A methodology finding from running the checklist (PR #6510)
+
+Path 5's tier 1 — `library/INDEX.md` — was **missing 33 real documents**, and
+AGENTS.md explained the directories-minus-rows gap by the duplicate copies, so
+the shortfall read as accounted for. Among the 33: the volume conjecture, the
+oriented skein category, affine-Hecke Plancherel, knot polynomials on braid
+closures, and q-deformed Plancherel growth. Regenerated with
+`scripts/summarize-library.py --apply`; AGENTS.md corrected with the
+arithmetic check that detects it. **A clean tier-1 scan is evidence about the
+index, not about the library.**
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, a strictly finer equivalence than
+`GL × GL`, so a polarization-dependent construction is **NOT** excluded —
+**D1-b is constrained at its entry, not refuted.** Certified `C` exists only
+for 3₁, 4₁, 5₂ (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled). Exact integer arithmetic throughout; volumes printed for
+orientation and never computed with. Nothing is wired, nothing is fitted, and
+`A_ω` remains underived.
+
+── 2026-09-03 (6): D1-b part 2 — the pincer closes, and the needle is threadable ──
+
+`computations/qbeta/dt_d1b_nz_triangulation_invariance_pincer_probe.py`,
+**7/7** (same PR #6509). Part 1 concluded the dictionary must be
+polarization-dependent and deliberately left that open. This closes it.
+
+### The bracket
+
+| | |
+|---|---|
+| **too coarse** | the basis-independent invariant (part 1) is constant across all knots at fixed `N` |
+| **too fine** | the RAW polarization datum is not a manifold invariant at all — retriangulating ONE manifold moves `(N, SNF(P), det P, rank P)` for `P = A_edge·B_edgeᵀ` |
+
+The node count **is** a manifold invariant, so the dictionary must be
+**strictly finer than the Smith normal form, yet triangulation-invariant.**
+
+### The constructive half — that class is non-empty
+
+The corpus already holds a verified member: the **Dimofte–Garoufalidis 1-loop
+invariant `τ`** (`computations/one_loop_torsion.py`). Measured here it is
+triangulation-invariant (spread `0.0` / `1.4e-40` at 40 dps) and it
+**separates all five N=5 knots the SNF collided**, smallest pairwise gap
+`0.555`:
+
+    6_2  2.2165899308911189066      9_42    8.9879137538564859187
+    7_3  2.7717413902489047800      10_139  6.7715656780558894839
+    8_20 5.9288297060394782874
+
+**So D1-b is LOCATED, not excluded** — the dictionary lives among the
+triangulation-invariant functionals of the NZ datum.
+
+### 🛑 Why NO `τ → C` map is proposed — a hard data limit, not caution
+
+`τ` is a complex number, not an integer count; separating is not counting.
+Sharper: **this corpus cannot test any such map.** Certified `C` exists for
+exactly three knots (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled) and `τ` is **undefined on 3₁** because it is not hyperbolic. That
+leaves **two** usable `(τ, C)` points, and any two-parameter family fits two
+points exactly — a map fitted here would be **unfalsifiable by construction**.
+
+**What would unblock the search is DATA, not cleverness:** more certified
+connection counts, i.e. the ptolemy database or magma. That is now the
+concrete dependency for D1-b, and it belongs beside D1-f's watch items.
+
+### One thing I got wrong and fixed before it landed
+
+The part-2 docstring first said "**eleven** distinct values" for 6₂.
+`randomize()` walks a random move sequence, and the next run gave **nine**. A
+stochastic count written as a fixed one is exactly the staleness pattern this
+corpus keeps paying for. The docstring now says the count is stochastic,
+points at the witness for the run's own figures, and notes that only the
+qualitative fact — that it moves at all — is load-bearing; the assertion tests
+`> 1`.
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, strictly finer than `GL × GL`. Three
+controls, including one (`C3′`) that exists because the invariance claim would
+otherwise be vacuous — an invariance test passes trivially when nothing was
+varied — and one (`C1′`) checking `τ(4₁) = √3/2` against DG's own worked
+example, because the module records that **three** 1-loop implementations
+existed here and disagreed. mpmath at 40 dps; no float64. Nothing wired,
+nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (7): 🛑 CORRECTING entry (6) — six usable points offline, not two ──
+
+Entry (6) above stated D1-b's blocker as *"DATA, not cleverness — the ptolemy
+database or magma"*, on the ground that only **two** usable `(τ, C)` points
+exist. **That is wrong and the error was mine.** It is corrected in the probe
+(`dt_d1b_nz_triangulation_invariance_pincer_probe.py`, now **9/9**), and entry
+(6)'s blocker sentence should be read as superseded by this one.
+
+**How the error happened**, because the mechanism generalises: I inherited
+*"the ptolemy DB is firewalled; only 4₁/5₂/3₁ ship fixtures"* from the corpus
+and **never enumerated the directory**. Half of it was true and half was not,
+and I carried both.
+
+- **True, and re-verified this session:** `ptolemy.unhyperbolic.org` returns
+  **403 on CONNECT** — by `curl` and by snappy's own `retrieve_solutions()`
+  for 6₁.
+- **False:** the wheel ships sl2 Magma fixtures for **seven** manifolds, not
+  three. **Six** are 1-cusped, hyperbolic, and carry both a defined `τ` and a
+  certified irreducible count:
+
+| manifold | N | irreducible | \|τ\| |
+|---|---|---|---|
+| 4₁ | 2 | 2 | 0.86602540378443864676 |
+| 5₂ | 3 | 3 | 1.1611627381339100731 |
+| m135 | 4 | 8 | 11.31370849898476039 |
+| s000 | 6 | 6 | 14.276474167114481671 |
+| t00000 | 8 | 8 | 29.22901156226534965 |
+| v0000 | 7 | 8 | 20.893884161273003105 |
+
+Six points against a two-parameter family leaves **four degrees of freedom**,
+so a candidate relation **is** testable offline. The blocker was overstated 3×.
+
+### What does NOT change
+
+**Still no `τ → C` map is proposed.** Six points make a candidate *testable*;
+they do not make *fishing* legitimate. Searching a functional form across six
+points and reporting the winner is the numerology this repo forbids. So the
+corrected statement of D1-b's need is **a hypothesis stated before looking**,
+not more data — and the probe's closing assertion now says that instead of
+naming the ptolemy DB.
+
+### Three caveats, recorded rather than papered over
+
+1. `m135`, `s000`, `t00000`, `v0000` are **census manifolds, not knots in
+   S³**. Valid for testing whether a relation exists; **not** automatically
+   valid as D1-b nodes, since D1-b's setup is about knots (both 3-braids).
+2. The **abelian `(L−1)` convention** is established for knots in S³ and does
+   **not** carry over to a census manifold, so the common currency across all
+   six is the **irreducible** count, which is what the table reports.
+3. **`irreducible = N` fails.** It holds for four of six and breaks at `m135`
+   (4, 8) and `v0000` (7, 8) — worth stating because it is exactly what one
+   would assume from the 4₁/5₂ pair alone, where the two coincide.
+
+### 🛑 A trap found while excluding 3₁
+
+**`one_loop` does not guard against non-hyperbolic input.** Called on 3₁ it
+returns `0.5` **without raising**, although `solution_type()` is
+`contains flat tetrahedra` and DG's `τ` needs a genuine hyperbolic structure.
+**A returned value is not evidence of hyperbolicity.** The probe therefore
+excludes by an explicit `solution_type()` test, never by trusting an
+exception — and any other consumer of `one_loop` should do the same.

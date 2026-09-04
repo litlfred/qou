@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 4-6
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 For a sequence of Bernoulli variables X1, ..., Xn, there are several notions of negative-
 dependence between those variables (see e.g., [4,17,16,5]), some of which are known or 

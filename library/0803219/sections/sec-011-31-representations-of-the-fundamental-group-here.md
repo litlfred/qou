@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 13-15
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 [53] to describe non-abelian representations of π 1(S3 \ E) at SL(2; C), where E
 is the ﬁgure-eight knot. Let x and y be the generators of π 1(S3 \ E) indicated

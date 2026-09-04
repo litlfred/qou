@@ -146,7 +146,6 @@
     "c_3_categorical_derivation_attempt",
     "c_alpha_alpha_categorical_via_jones_markov",
     "c_k_beta_decay_witness",
-    "c_knot_tau_transfer_artifact_probe",
     "can_the_substrate_carry_a_fractional_twist_probe",
     "canonical_a_k_magnitude_audit",
     "canonical_isospin_pyhecke",
@@ -254,6 +253,8 @@
     "deuteron_from_scratch_ledger",
     "deuteron_tower_fusion_frame_probe",
     "dt_d1a_small_quiver_two_ray_scan_probe",
+    "dt_d1b_nz_gluing_invariant_entry_probe",
+    "dt_d1b_nz_triangulation_invariance_pincer_probe",
     "dt_d1c_hecke_block_vertex_bound_probe",
     "dt_d1c_v4_blocks_plus_abelian_bar_ray_probe",
     "dt_third_knot_trefoil_count_probe",
@@ -347,6 +348,7 @@
     "gram_transfer_quadratic",
     "ground_state_ordering_a3_probe",
     "gs_filtration_binding_components",
+    "gs_filtration_jet_shape_magic_probe",
     "h12_trace_multiplicativity_probe",
     "h2-integer-lp",
     "h2-molecular-binding",
@@ -358,7 +360,6 @@
     "h2s_chiral_residue_bar_antisymmetric",
     "h2s_chirality_residue_s3_holonomy",
     "h2s_lone_pair_asymmetry",
-    "h3_gram_degeneracy_is_wedderburn_weight_vanishing",
     "h3a_frobenius_gram_offdiagonal_probe",
     "h4_categorical_drivers_probe",
     "h4_cyclicity_generator_route_check",
@@ -534,6 +535,7 @@
     "mu_substrate_tension_audit_100dps",
     "multi_layer_gap_decomposition",
     "multi_level_jet_sum",
+    "muon_pin_A_residual_surface_audit",
     "muon_pin_migration_stage1_inventory",
     "native_5_strand_baryon",
     "nf-qvalues",
@@ -769,6 +771,7 @@
     "rt_w_sqrt_quantum_two_probe",
     "saturated_fraction_is_not_monotonic_probe",
     "seifert_volume_meson_n7_extension",
+    "shell_shadow_price_magic_contrast_probe",
     "sigma_all_evaluator",
     "sigma_f_electron_shell_chain",
     "sigma_shell_characterization",
@@ -782,6 +785,7 @@
     "sl2_tau_solver",
     "spectral_selector_validate",
     "staircase_ew_predictions",
+    "structured_combiner_and_triangle_probe",
     "su2_spinor_multiplicity_resolution",
     "su4_casimir_beta_derivation_probe",
     "su4_casimir_coordination_weight_probe",
@@ -889,5 +893,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

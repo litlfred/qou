@@ -7,6 +7,7 @@ section_number: 5.6
 pages: 115-122
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 We would now like to give an idea as to how the q-Stirling’s formula arises in the
 problem of bounding the ﬂuctuations of the length of the longest increasing subse-

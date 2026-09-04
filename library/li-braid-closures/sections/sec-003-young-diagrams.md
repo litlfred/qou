@@ -7,6 +7,7 @@ section_number: null
 pages: 3-4
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 Now we discuss partitions ofnand their Young diagrams.
 Definition 2.6.Letλ⊢nbe a partition. For a boxb∈λin its Young diagram, thehook

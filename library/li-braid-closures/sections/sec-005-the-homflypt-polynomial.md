@@ -7,6 +7,7 @@ section_number: null
 pages: 6-9
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 In [1, Section 6], Jones proposed a multivariable polynomial link invariantX L(q,Λ), which
 reduces to the Jones polynomial under the specializationq= Λ =tand to the Alexander

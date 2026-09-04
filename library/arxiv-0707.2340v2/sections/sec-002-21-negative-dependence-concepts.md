@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 4-9
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 variate polynomial is said to be multi-aﬃne if it has degree at most one in each
 variable. Denote by Pn, n ∈ N, the set of all probability measures on the Boolean

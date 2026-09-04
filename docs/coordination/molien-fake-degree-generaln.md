@@ -43,3 +43,27 @@ The convergence question is answered **YES**: #5970's `telescope_generalX` (all 
 only mechanical Lean bridging remains (per-cell brick `one_sub_qsq_pow_eq` landed sorry-free
 in #5975). The induction/(B) route is now an independent second proof. Posted on #5970
 (issuecomment-5461309188).
+
+## CLOSED 2026-09-03 — the Lean side is complete (unconditional, sorry-free)
+
+The mechanical Lean bridging flagged above is done; `qou-3quc`'s Lean side is closed. Landed on
+`claude/hconv-convention-bridge-2026-09-03` (PR #6447), all sorry-free
+(`#print axioms = [propext, Classical.choice, Quot.sound]`):
+
+| Theorem | File | Statement |
+|---------|------|-----------|
+| `contentSum_eq_hookSum_sub` | `MathlibExt/ContentSumNStatistic.lean` | the n-statistic identity `κ_λ = Σ_x h_x − |λ| − 2 n(λ)` (`Partition.hookLength` encoding) |
+| `hconv` | `MathlibExt/HconvConventionBridge.lean` | the convention bridge `q^{−κ_λ}/hookProd_q(λ) = schurElement(q²,0,λ)·(1−q²)^{|λ|}` |
+| `normalizedSum_eq_one` | `MathlibExt/NormalizedSumUnconditional.lean` | `normalizedSum n q = 1` for all `n`, all `1 < q` — **unconditional** |
+| `molienSum_eq_qFactorial` | `MathlibExt/NormalizedSumUnconditional.lean` | **`molienSum n q = [n]_q!`** — the headline general-`n` fake-degree identity |
+
+Route (not either classical route): the general-X Macdonald telescope
+`MacdonaldTelescopeGeneralN.telescope_generalX` at `X = 0`, bridged to the balanced fake-degree
+convention by `hconv`, which turns on the n-statistic identity `contentSum_eq_hookSum_sub`, assembled
+by `NormalizedSumClosure.normalizedSum_eq_one_of_convBridge` (#6011). Probe-verified exact `n≤5`
+(`fake_degree_via_telescope_probe.py`); audit `docs/audits/2026-08-29-normalizedsum-closes-via-telescope.md`.
+The induction/(B) route (`qou-x4zl`/`qou-ognw`) remains an independent second proof.
+
+| Date | PR | Event |
+|------|----|-------|
+| 2026-09-03 | #6447 | n-statistic identity + `hconv` convention bridge proved sorry-free; `normalizedSum n q = 1` and `molienSum n q = [n]_q!` closed **unconditionally**. `qou-3quc` Lean side complete. |

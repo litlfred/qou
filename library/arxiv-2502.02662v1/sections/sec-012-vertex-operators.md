@@ -7,6 +7,7 @@ section_number: null
 pages: 15-17
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 string coupling factors which seem to break the structure of the genus expansion can in fact
 be re-summed to preserve this structure.

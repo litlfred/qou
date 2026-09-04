@@ -7,6 +7,7 @@ section_number: null
 pages: 456-470
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Our ﬁrst two appendices develop the theoretical background necessary to un-
 derstand what it means to represent the series coe ﬃcients ar of an analytic

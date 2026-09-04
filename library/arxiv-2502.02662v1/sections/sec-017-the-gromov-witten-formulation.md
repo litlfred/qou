@@ -7,6 +7,7 @@ section_number: null
 pages: 21-23
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 The description of the correlation functions of chiral Yang-Mills theory in terms of a partial
 permutation algebra enables us to provide an explicit string dual by deforming the Gromov-

@@ -1,4 +1,59 @@
 /-
+# 🛑 RETRACTION OF NOVELTY (2026-09-03) — §3 of this file DUPLICATES an existing result
+
+**The mathematics below is correct. The claim that §3 was new is not, and it was
+mine.** Read this before citing anything in this file.
+
+`QOU.Mass.UniformBondSimpleGraphExclusion` (landed on `main` `c9d47234ce`,
+2026-08-30 — **four days before** this file merged, bean `qou-edt7`) already
+proves the §3 exclusion, and proves it **more generally**:
+
+| here (§3) | there | relation |
+|---|---|---|
+| `bondAdditive_nonpositive` — `n(3) − 3 ≤ 0` at `n(2) = 1` | `b3Uniform_nonpos` — `ε(e₃ − 3e₂) ≤ 0` for `e₃ ≤ 3`, `e₂ ≥ 1`, `ε ≥ 0` | **theirs is strictly more general**; mine is the `e₂ = 1` case, and mine additionally needs `b₂ ≠ 0` because it divides |
+| `bRatioOfBondCounts_chain` (`−1`) | `b3Uniform_neg_of_chain` | same |
+| `bRatioOfBondCounts_allPairs` (`0`) | `b3Uniform_eq_zero_of_complete` | same |
+| `no_uniform_bond_model_reproduces_b3` | `not_uniform_simple_of_b3_pos` | same |
+
+The invariant is identical — *a simple graph on three vertices has at most
+`C(3,2) = 3` edges while the Ursell inversion subtracts three*.
+
+**And the "surviving escape" was not a new direction either.** The required
+amplification I computed, `w/w_d = 5399947/4449132 = 1.2137079772`, **is** the
+corpus's `w(2)/w(1)`, recorded at 60 digits in
+`coordination-weight-rise-and-turnover.witness.json` as
+`1.21370760735284029758…` — the two agree to `3.05e-7`, the difference being that
+I fed a rounded AME ratio and that probe did not. Its own source line calls that
+number *"the entire content of `b₃ > 0`"*. Worse for my framing: the obvious
+mechanism on that axis, single-ratio (Markov-power) scaling `ε(z) = ε(1)·r^{z−1}`,
+is already **REFUTED** there — the two available ratios disagree by ~44 %, for
+every `r`, convention-independently.
+
+**How it happened.** I ran the six-path corpus-grep *after* merging instead of
+before. Path 3 (`computations/`) surfaces
+`coordination_weight_rise_and_turnover_probe.py` on the first pattern tried, and
+its docstring names `UniformBondSimpleGraphExclusion` in the third paragraph. The
+checklist is not expensive; I simply did not run it at the point it was for.
+
+## What survives as this file's own contribution
+
+Only §1–§2, and only as a **reconciliation of my own earlier capstone** rather
+than as new mathematics: `all_channels_b3_sign_probe` reported four channels
+failing and read them as four findings, and the pair/bond count mismatch shows
+that ch3/ch4/ch5 are **one identity** while ch1 (`−1.3995`, the shipped,
+non-additive channel) is not explained by it. That link between the exclusion and
+the four *measured* channel values is not in `qou-edt7`.
+
+§3 is now best read as an **independent re-derivation** of `b3Uniform_nonpos` by
+a different route (Ursell counts rather than graph edges), arriving at the same
+invariant and the same numbers. That has some corroboration value. It has **no
+priority**, and this file must not be cited as establishing the exclusion — cite
+`UniformBondSimpleGraphExclusion` for that.
+
+Beans `qou-brng` (this arc), `qou-edt7` (the prior result).
+-/
+
+/-
 # The additive channels' `b₃ = -b₂` is the Ursell inversion, not a three-body term
 
 This file reframes a result of my own. `all_channels_b3_sign_probe` measured that

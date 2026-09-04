@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 11-14
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 Remark 2.7. Recently [6] Ram’s construction has been applied to study th e representation
 theory of 1-parameter rank 2 aﬃne Hecke algebras with q a root of the Poincar´ e polynomial,

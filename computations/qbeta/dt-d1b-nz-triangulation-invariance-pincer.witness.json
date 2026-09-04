@@ -1,0 +1,290 @@
+{
+  "engine": "snappy-neumann-zagier-mpmath-40dps",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T13:20:00.936681+00:00",
+  "commitSha": "2ec7e59da48829870c41cc9861741902aa03ae2f",
+  "assertions": [
+    {
+      "name": "C1_tau_reproduces_the_DG_WORKED_figure_eight_value",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "|tau(4_1)| = sqrt(3)/2 to 0.0. This validates the implementation being consumed — the module records that THREE 1-loop implementations existed in this repo and disagreed, so consuming one without this check would be unsafe"
+    },
+    {
+      "name": "C3_the_retriangulator_REALLY_perturbs_the_triangulation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "every knot shows >1 distinct polarization datum, so the invariance test below is not vacuous — an invariance check passes trivially when nothing was varied"
+    },
+    {
+      "name": "the_RAW_POLARIZATION_datum_is_NOT_a_manifold_invariant",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "one manifold, 30 retriangulations: 6_2 gives 9 distinct values, 5_2 4, 4_1 3. The node count IS a manifold invariant, so a construction reading the matrix entries directly cannot equal it without a separate triangulation-invariance argument"
+    },
+    {
+      "name": "C2_tau_IS_triangulation_invariant",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "spread < 1e-30 over retriangulations of 4_1 and 6_2, while C3 confirms the triangulation genuinely changed. So triangulation-invariant functionals of the NZ datum EXIST"
+    },
+    {
+      "name": "tau_SEPARATES_all_five_knots_the_SNF_could_not",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "all 10 pairwise gaps exceed 1e-30; the smallest is 0.555151. The SNF gave these five knots ONE value; a triangulation-invariant functional of the same datum gives five"
+    },
+    {
+      "name": "CORRECTION_there_are_SIX_usable_points_not_TWO",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "an earlier version of this probe claimed the corpus could not TEST a tau->C map — certified C for three knots, tau undefined on the non-hyperbolic 3_1, so two points. THAT WAS WRONG and the error was mine: the fixtures were never enumerated. The ptolemy DB is firewalled (re-verified, 403 on CONNECT), but the wheel ships sl2 fixtures for 7 manifolds and 6 are 1-cusped hyperbolic with both a defined tau and a certified irreducible count: ['4_1', '5_2', 'm135', 's000', 't00000', 'v0000']. Six points against a two-parameter family leaves four degrees of freedom, so a candidate IS testable. The blocker was overstated 3x"
+    },
+    {
+      "name": "the_irreducible_count_is_NOT_the_tetrahedron_count",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "irreducible = N holds for 4 of 6 and FAILS for ['m135', 'v0000']. Worth stating because it is the first thing one would wrongly assume from the 4_1/5_2 pair alone, where both happen to coincide"
+    },
+    {
+      "name": "but_STILL_no_tau_to_C_map_is_proposed",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "six points make a candidate testable; they do not make fishing for one legitimate. Searching a functional form across six points and reporting the winner is the numerology this repo forbids. A map is separate work that must state its hypothesis BEFORE looking, and the census manifolds are valid for testing whether a relation exists while NOT automatically valid as D1-b nodes — D1-b's setup is about knots in S^3, and four of the six are not"
+    },
+    {
+      "name": "CONSEQUENCE_the_dictionary_is_LOCATED_not_excluded",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "it must be strictly finer than the Smith normal form (part 1) and triangulation-invariant (this part). That class is non-empty — tau is in it — so D1-b is narrowed to a well-posed search, not refuted. What is missing to PROSECUTE it is NOT data: the correction above found six offline points, enough to test a candidate. What is missing is a HYPOTHESIS stated before looking. More certified counts (ptolemy DB, firewalled; or magma) would strengthen a test but are no longer the blocker I reported them to be"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10835,
+  "computation": "dt-d1b-nz-triangulation-invariance-pincer",
+  "scriptFile": "dt_d1b_nz_triangulation_invariance_pincer_probe.py",
+  "scriptHash": "8b134678b529",
+  "scriptCommitSha": "26f9dfdb85840798df1b9b2c9c1b23615a5a0569",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_nz_triangulation_invariance_pincer_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_nz_triangulation_invariance_pincer_probe.py"
+  },
+  "description": "D1-b (qou-q9ih) part 2, closing the side part 1 left open. Part 1: the SNF of the NZ gluing matrix is a function of N alone, so the dictionary must be polarization-dependent. Here: the raw polarization-dependent datum is NOT a manifold invariant -- 30 retriangulations of 6_2 give ~a dozen distinct values of (N, SNF(P), det P, rank P) for P = A_edge.B_edge^T -- the exact count is STOCHASTIC, randomize() walks a random move sequence and successive runs gave 9 and 11, so read this run's figures from polarization_variance_under_retriangulation rather than quoting one; the assertion tests only that it moves. Together a pincer: the basis-independent invariant is too coarse, the raw polarization datum too fine, and the node count is a manifold invariant. CONSTRUCTIVE half: the class of triangulation-invariant NZ functionals is non-empty and the corpus holds a verified member -- the Dimofte-Garoufalidis 1-loop invariant tau (one_loop_torsion.py), measured here as triangulation-invariant to 1e-30 and separating all five N=5 knots the SNF collided. So D1-b's dictionary is LOCATED, not excluded. NO tau->C map is proposed. CORRECTION carried in this witness: an earlier version claimed the corpus could not TEST such a map, on the ground that certified C exists for only three knots and tau is undefined on the non-hyperbolic 3_1, leaving two points. That was wrong -- the fixtures were never enumerated. The ptolemy DB is indeed firewalled (re-verified 403 on CONNECT), but the snappy wheel ships sl2 fixtures for SEVEN manifolds, SIX of them 1-cusped hyperbolic with both a defined tau and a certified irreducible count (4_1, 5_2, m135, s000, t00000, v0000). So a candidate IS testable, six points against a two-parameter family; the blocker was overstated 3x. Caveats recorded: four are census manifolds not knots in S^3, the abelian convention does not carry over so the common currency is the irreducible count, and irreducible = N fails for m135 and v0000. Also a trap: one_loop does NOT guard against non-hyperbolic input -- it returns 0.5 for 3_1 without raising, so a returned value is not evidence of hyperbolicity. mpmath at 40 dps throughout; no float64. Scope-(a); nothing wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "polarization_variance_under_retriangulation": {
+      "4_1": {
+        "distinct": 3,
+        "trials": 30,
+        "values": [
+          {
+            "datum": "(2, (4, 0), 0, 1)",
+            "count": 16
+          },
+          {
+            "datum": "(2, (1, 0), 0, 1)",
+            "count": 11
+          },
+          {
+            "datum": "(2, (2, 0), 0, 1)",
+            "count": 3
+          }
+        ]
+      },
+      "5_2": {
+        "distinct": 4,
+        "trials": 30,
+        "values": [
+          {
+            "datum": "(3, (1, 1, 0), 0, 2)",
+            "count": 13
+          },
+          {
+            "datum": "(3, (1, 0, 0), 0, 1)",
+            "count": 9
+          },
+          {
+            "datum": "(3, (1, 4, 0), 0, 2)",
+            "count": 6
+          },
+          {
+            "datum": "(3, (1, 2, 0), 0, 2)",
+            "count": 2
+          }
+        ]
+      },
+      "6_2": {
+        "distinct": 9,
+        "trials": 30,
+        "values": [
+          {
+            "datum": "(5, (1, 1, 1, 2, 0), 0, 4)",
+            "count": 15
+          },
+          {
+            "datum": "(5, (1, 1, 1, 0, 0), 0, 3)",
+            "count": 4
+          },
+          {
+            "datum": "(5, (1, 1, 1, 3, 0), 0, 4)",
+            "count": 3
+          },
+          {
+            "datum": "(5, (1, 1, 2, 2, 0), 0, 4)",
+            "count": 2
+          },
+          {
+            "datum": "(5, (1, 1, 1, 4, 0), 0, 4)",
+            "count": 2
+          },
+          {
+            "datum": "(5, (1, 1, 2, 0, 0), 0, 3)",
+            "count": 1
+          },
+          {
+            "datum": "(5, (1, 1, 4, 0, 0), 0, 3)",
+            "count": 1
+          },
+          {
+            "datum": "(5, (1, 1, 1, 1, 0), 0, 4)",
+            "count": 1
+          },
+          {
+            "datum": "(5, (1, 1, 0, 0, 0), 0, 2)",
+            "count": 1
+          }
+        ]
+      }
+    },
+    "tau_triangulation_invariance": {
+      "4_1": {
+        "values": [
+          "0.8660254037844386467637",
+          "0.8660254037844386467637",
+          "0.8660254037844386467637",
+          "0.8660254037844386467637"
+        ],
+        "spread": "0.0"
+      },
+      "6_2": {
+        "values": [
+          "2.216589930891118906601",
+          "2.216589930891118906601",
+          "2.216589930891118906601",
+          "2.216589930891118906601"
+        ],
+        "spread": "1.83671e-40"
+      }
+    },
+    "tau_on_the_N5_collision_group": {
+      "6_2": "2.216589930891118906601",
+      "7_3": "2.771741390248904780005",
+      "8_20": "5.928829706039478287388",
+      "9_42": "8.987913753856485918677",
+      "10_139": "6.771565678055889483875"
+    },
+    "fixture_manifolds_usable_for_a_tau_to_C_test": {
+      "4_1": {
+        "tetrahedra": 2,
+        "irreducible": 2,
+        "abs_tau": "0.8660254037844386467637",
+        "irreducible_equals_N": true
+      },
+      "5_2": {
+        "tetrahedra": 3,
+        "irreducible": 3,
+        "abs_tau": "1.161162738133910073129",
+        "irreducible_equals_N": true
+      },
+      "m135": {
+        "tetrahedra": 4,
+        "irreducible": 8,
+        "abs_tau": "11.31370849898476039041",
+        "irreducible_equals_N": false
+      },
+      "s000": {
+        "tetrahedra": 6,
+        "irreducible": 6,
+        "abs_tau": "14.27647416711448167113",
+        "irreducible_equals_N": true
+      },
+      "t00000": {
+        "tetrahedra": 8,
+        "irreducible": 8,
+        "abs_tau": "29.22901156226534964981",
+        "irreducible_equals_N": true
+      },
+      "v0000": {
+        "tetrahedra": 7,
+        "irreducible": 8,
+        "abs_tau": "20.89388416127300310464",
+        "irreducible_equals_N": false
+      }
+    },
+    "fixture_manifolds_skipped": {
+      "3_1": "not hyperbolic (contains flat tetrahedra); tau is undefined, though one_loop returns a value without raising"
+    },
+    "ptolemy_db_reachability": {
+      "status": "403 on CONNECT, re-verified this session",
+      "verified_by": "curl to ptolemy.unhyperbolic.org AND snappy's own retrieve_solutions() for 6_1",
+      "consequence": "the bundled wheel fixtures are the whole offline certified-count dataset; they were never enumerated before, which is how the 'two points' claim arose"
+    },
+    "tau_fourone_vs_DG": {
+      "computed": "0.866025403784438646763723170753",
+      "expected_sqrt3_over_2": "0.866025403784438646763723170753",
+      "source": "Dimofte-Garoufalidis arXiv:1202.6268 eq. 3.2"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "shows": "the raw polarization-dependent NZ datum is not a manifold invariant; together with part 1's SNF degeneracy this brackets the dictionary between too-coarse and too-fine",
+      "constructive": "the bracketed class is non-empty; the DG 1-loop tau is triangulation-invariant and separates the five N=5 knots the SNF collided",
+      "does_NOT_show": "that tau, or any triangulation-invariant functional, PRODUCES the node count. tau is a complex number, not an integer count; separating is not counting",
+      "why_no_map_is_offered": "not for lack of data — CORRECTED: six usable (tau, irreducible) points exist offline, so a candidate IS testable. No map is offered because searching a functional form across six points and reporting the winner is a fit; a map must state its hypothesis first",
+      "superseded_claim": "an earlier version said TWO points and that the corpus could not test any map. Wrong by 3x; the wheel fixtures were never enumerated",
+      "what_would_unblock_MORE_points": "the ptolemy database (firewalled, 403 re-verified) or magma",
+      "trap": "one_loop does NOT guard against non-hyperbolic input — it returns 0.5 for 3_1 without raising. A returned value is not evidence of hyperbolicity; check solution_type() yourself",
+      "arithmetic": "mpmath at 40 dps for tau; exact integers for the polarization datum; no float64, no float() outside mp.nstr rendering",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

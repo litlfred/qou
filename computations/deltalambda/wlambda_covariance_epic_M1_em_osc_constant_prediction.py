@@ -40,9 +40,16 @@ an O(1) number. Computing TV(g'') independently from the variance density is the
 landing near 3.25 (from ABOVE -- C_A is a BOUND, c_1 a LIMIT, so C_A >= |c_1| is required, not
 equality) is a genuine test of the route rather than an assumption.
 
-CLOSURE ARITHMETIC: at the theta^{-1} rate, m(n) >= m_inf - C/n > 0 needs only N0 = ceil(C/m_inf) <= 78,
-i.e. C <= 78*0.30019 = 23.4 -- far weaker than the C <= 2.65 required under a conservative n^{-1/2}
-reading. The margin's own empirical envelope is ~0.087.
+CLOSURE ARITHMETIC -- CORRECTED 2026-09-03, the earlier text here was WRONG. It read: "at the
+theta^{-1} rate, m(n) >= m_inf - C/n > 0 needs only N0 = ceil(C/m_inf) <= 78, i.e. C <= 23.4 -- far
+weaker than the C <= 2.65 required under a conservative n^{-1/2} reading." Two defects: (i) the
+theta^{-1} rate measured above is V_A's, not the (CS) MARGIN's -- the margin is a ratio of square
+roots of variances plus a correlation, and nobody has propagated the one into the other; (ii) what
+is PROVED (PR #5929) is |m(n) - m_inf| <= C n^{-1/2}, so N0 = (C/m_inf)^2 (SQUARED) and the
+requirement is C <= m_inf*sqrt(79) = 2.6681 -- that is THE requirement, not "a conservative
+reading". Correct statement: under the proved shape the empirical envelope over n >= 13 is
+C_emp = 0.0580, giving a headroom factor of 46x. Probe:
+wlambda_covariance_epic_M1_margin_envelope_exponent.py.
 
 CORRECTION HISTORY (2026-09-03). An earlier version of THIS probe reported the opposite: rate
 theta^{-1/2}, C_A ~ 0.857, sign d > 0, and on that basis RETRACTED the EM-osc prediction above. That
@@ -121,8 +128,11 @@ def main():
         print(f"#   near {mp.nstr(tv,4)} FROM ABOVE is the genuine test. Computing TV(g'') from the")
         print(f"#   variance density is the REMAINING step.")
     print("#")
-    print("# CLOSURE ARITHMETIC: at theta^{-1}, m(n) >= m_inf - C/n > 0 needs N0 = ceil(C/m_inf) <= 78,")
-    print("#   i.e. C <= 23.4 -- far weaker than the C <= 2.65 a conservative n^{-1/2} reading demands.")
+    print("# CLOSURE ARITHMETIC (CORRECTED 2026-09-03; the 'C <= 23.4' once printed here is RETRACTED).")
+    print("#   The theta^{-1} rate above is V_A's, NOT the (CS) margin's, and the PROVED margin bound")
+    print("#   (PR #5929) is |m - m_inf| <= C n^{-1/2}, whence N0 = (C/m_inf)^2 and the requirement is")
+    print("#   C <= m_inf*sqrt(79) = 2.6681. Empirical envelope over n >= 13 is 0.0580 => 46x headroom.")
+    print("#   See wlambda_covariance_epic_M1_margin_envelope_exponent.py.")
     print("#")
     print("# CORRECTION: an earlier version of this file reported theta^{-1/2}, C_A ~ 0.857, d > 0 and")
     print("#   retracted the EM-osc prediction. That was a BUG -- the Sum|c| weight was symmetrised to")

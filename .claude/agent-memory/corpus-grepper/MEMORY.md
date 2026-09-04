@@ -54,25 +54,9 @@ authoritative** — the corpus is.
 6. **`.beans/`** — `grep -rl <topic> .beans/`. See the TRAP below; this is
    the path most often skipped and the one that most often holds the answer.
 
-## STABLE — the library, three tiers
+## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
 
-```sh
-grep -in <topic> library/INDEX.md              # 320 one-line briefs, ~14k tokens total
-cat library/<doc-id>/summary.json              # ~300 tokens: worth opening?
-grep -rln <topic> library/<doc-id>/sections/   # the text itself
-```
-
-Full-text fallback: `grep -rln <topic> library/*/sections/`. Do not grep
-straight into that when a line of `INDEX.md` will do. **But see the `ocr/`
-TRAP below — `sections/` is not always the text.**
-
-A section file's YAML front-matter names document, section and page range,
-so a hit is immediately citable. `library/<doc-id>/candidates.json` holds
-that document's extracted theorems and definitions.
-
-Briefs and summaries are **extractive** — assembled from each document's own
-abstract and section titles, nothing model-written — so a brief is only as
-good as the abstract behind it.
+Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`), with the counts and the commands. Moved there 2026-09-03 to stay under the 200-line cap; the traps below stay here because they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`
 
@@ -157,6 +141,18 @@ Run the exact-title existence check before every create; an unguarded
 re-run once produced 14,688 duplicates. Detail:
 `library-and-staleness-traps.md`.
 
+## TRAP — an inherited "X is unavailable" is HALF a measurement
+
+2026-09-03: the corpus said *"the ptolemy DB is firewalled; only `4_1`/`5_2`/
+`3_1` ship Magma fixtures"*. I carried both halves into a PR body, a bean and a
+report. **Firewall: real** (403 on CONNECT, re-verified two ways). **Fixture
+list: wrong** — the wheel ships **seven** manifolds; nobody had run `ls`.
+
+**The shape: a claim bundling an ENVIRONMENT fact (a host is blocked) with a
+CORPUS fact (what we hold locally).** The environment half ages slowly and is
+usually right; the local half is cheap to check and is the one that is wrong.
+Enumerate the local surface yourself before repeating either half.
+
 ## STABLE — refutation scoping
 
 - **(a) scope-limited negative** — "this construction, *alone*, does not
@@ -196,42 +192,4 @@ these open, and add a row whenever a sweep settles one.
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
 - 2026-08-30 · `qou-brng` linking-vs-self-energy · **partially covered / target moved** · found on paths 1, 3, 4, 6; the citable source on path 5 was reachable only via `ocr/`.
-
-- **Does the corpus hold "the Markov/Ocneanu trace family over all SU(N)
-  specialisations `z_N = q^N/[N]_q` spans exactly `n` of the `p(n)` trace
-  functionals, so no combination isolates a >1-dim block character"?**
-  → **CLOSED, but on a BRANCH, not `main`.** 2026-09-02.
-  - Carrier: `computations/probes/markov_trace_family_rank_probe.py`, commit
-    `9f97474c46` (PR #6415), branch `claude/tower-row-cap-sm-binding-2026-09-01`
-    — **not on `origin/main`** — plus the `2026-09-02` section of bean
-    `qou-brng`. Verbatim same numbers (rank = n at n=2..7, only the two
-    1-dim blocks recoverable, `(4,2)` visible-but-not-isolable).
-  - **On `main` the result is genuinely absent** — all six paths empty for the
-    span-dimension SHAPE.
-  - **THREE different things are called "rank" here — resolve before citing:**
-    (i) `markov_z_fibre_rank_bar_covariance_probe.py` "fibre rank" = the SU(N)
-    index `N`; (ii) `pyhecke_n_generic.gram_inverse_n` "rank" = Gram rank at a
-    FIXED z = #{≤2-row λ} (2 at n=3, 3 at n=4); (iii) the span dimension = n.
-    A topic-grep for "rank" + "Markov" returns (i) and (ii) and misses (iii).
-  - The H₃ coefficients `6.22044128, −33.41778449, 28.19734321` are in **no
-    commit reachable from main** (`git log --all -S` empty); only the branch
-    probe docstring + the branch bean carry them. The probe's phrase *"the
-    corpus carries a three-trace combination at H₃"* is **unsourced**.
-  - Adjacent-but-different result that IS on `main`: the >2-row blocks are the
-    **TL kernel / Schur–Weyl row cap** (not "hidden information") —
-    `QOU/QBeta/TraceBlindSector.lean` header, `qbeta_blind_sector_is_the_tl_kernel_probe.py`,
-    bean `qou-i9gk` (completed). That is about `ω_λ = 0`, NOT about span rank.
-  - Row cap / hook-content, citable on `main`: `schurPrincipal_eq_zero_iff`
-    (`s_λ=0 ⟺ ℓ(λ)>r`, all n/λ/r, sorry-free), `wenzlLevel_conventionD`,
-    `ocneanu_param_eq_of_fibre_qdim` (`z·[N]_q=q^N`),
-    `computations/schurweyl/ocneanu_weight_general_n.py`,
-    `docs/audits/2026-08-16-wenzl-level-family.md`. **Caveat:**
-    `IsOcneanuWeightSystem` is class-carried with **no instance**.
-  - Over-generalising an n=3 coincidence is a **named recurring defect** here:
-    `qbeta_rank_one_identity_is_n3_only_probe.py` + PR #5337 (*"do not
-    generalise the n=3 coincidence"*).
-  - **Not classical from held sources.** Library has the p(n) side
-    (`arxiv-2409.09372v4`: Irr is a basis of trace functions) and a BMW
-    trace-space dimension (`arxiv-1403.4021v2`, ≤3), but **no rank = n**.
-    **Wenzl 1988 (Invent. Math. 92) is cited in `references.ts` and NOT
-    ingested** — the obvious place the classical statement would live.
+- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).

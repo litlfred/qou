@@ -7,6 +7,7 @@ section_number: null
 pages: 253-256
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Algorithm 2: Simpliﬁed algorithm to compute CPAI assumingV is
 smooth.

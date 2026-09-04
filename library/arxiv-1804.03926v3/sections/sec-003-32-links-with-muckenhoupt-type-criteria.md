@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 14-18
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 It is well-known that the Muckenhoupt criterion [Muc72], wh ich provides a necessary and suﬃcient
 condition for a (weighted) Hardy inequalty to hold on the rea l line, can be used to sharply estimate

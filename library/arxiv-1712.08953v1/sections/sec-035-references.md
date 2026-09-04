@@ -7,6 +7,7 @@ section_number: null
 pages: 56-57
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 [A] S. Ariki, On the decomposition numbers of the Hecke algeb ra of G(m, 1, n ), J. Math.
 Kyoto Univ. 36 (1996), 789–808.

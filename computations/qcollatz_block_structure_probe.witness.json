@@ -1,6 +1,8 @@
 {
   "schema": "qou-probe/v0",
   "description": "Block structure of q-Collatz orbits on the domain-stable cone D_inf, and which N-valued heights descend per BLOCK (the weaker requirement of reaches_cycle_of_block_descent_domainStable) versus per STEP. Exact integer Laurent arithmetic. Exploratory research probe (NOT canonical production).",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q-Collatz orbit combinatorics on D_inf. The variable q here is the Laurent variable of D_inf, NOT the substrate modulus q_0: the arithmetic is exact over Z and Z[w], and the import cone is stdlib only (json, sys, collections), so no substrate constant is reachable.",
   "result": {
     "depth": 22,
     "nodes": 52,
@@ -36,5 +38,7 @@
         "down": 30
       }
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Block structure of q-Collatz orbits on D_inf, and which heights descend."
 }

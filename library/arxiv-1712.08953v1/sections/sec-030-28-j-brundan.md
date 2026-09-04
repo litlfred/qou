@@ -7,6 +7,7 @@ section_number: 28
 pages: 28-30
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 The projection of OS♯ onto its degree zero component OS♯[0] is a surjective ho-
 momorphism OS♯։ OS◦. Using this, we can view any OS◦-module instead as an

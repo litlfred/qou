@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T15:18:09Z
-updated_at: 2026-09-03T08:52:05Z
+updated_at: 2026-09-03T12:36:02Z
 ---
 
 **`qou-bn8e` merged in, 2026-08-30 — with two constraints on this bean's target.**
@@ -1375,3 +1375,62 @@ Also worth recording as a method note, because it nearly went the other way: I
 flagged `Φn → 0` as an escape from the *shape of the hypothesis*, without
 computing the case. One line of arithmetic settled it. Check the limit before
 recording it as open.
+
+
+## 2026-09-03 (later still) — the last two escapes are ONE, and it is the carrier blocker again
+
+Taking up the two escapes left formally open by the merged #6423 and #6485: (1) a
+carrier link that is **not vertex-transitive**, so `ac(L_k, L)` differs between
+components; (2) an `ac` that **depends on the charge assignment**. They are one
+escape, not two.
+
+**(2) is a category error, not a model choice.** `ac(L_k, L)` is Freedman–He's
+asymptotic crossing number of one component against the whole link — a topological
+invariant of `L` alone. It takes no charge input, and neither Komendarczyk
+(arXiv:0808.1533v1 eq. 43) nor Khesin defines any such refinement. Making it
+charge-dependent is not a weaker reading of eq. (43); it is a **different
+functional, for which no bound is in evidence**. Nothing here refutes such a
+functional — there is simply no theorem to appeal to, so it cannot be cited as an
+escape *from one*.
+
+**(1) is a real generalisation, and it relocates rather than frees.** Give each
+component its own weight `a k` and let the proton set be an arbitrary `Finset`.
+The split factorises exactly:
+
+    ΔE = C·m·(φp − φn)·( Σ_{k ∈ P} a k − Σ_{k ∈ Q} a k )
+
+with `P`, `Q` the two partners' proton sets. **The total weight `Σ_k a k` cancels
+entirely**, so every ingredient except that last bracket is A-independent — and
+therefore *all* the A-dependence the split can possibly have is carried by it. A
+non-vertex-transitive carrier does not manufacture A-dependence; it moves the
+obligation onto a purely topological quantity of the carrier and the charge
+assignment, which **cannot be evaluated without saying which link the nucleus is**.
+`qou-5vhf` establishes the `A ≤ 4` carrier assignments are an admitted AME-driven
+census search. So escape (1) is not independent of the blocker that ended route
+(2) — it *is* that blocker, reached from a different direction.
+
+Sharpest form: if the two proton sets happen to carry **equal total weight**, the
+predicted split is exactly **zero**, whatever the fluxes
+(`mirrorSplit_eq_zero_of_equal_weight`). The bracket is not merely where the
+A-dependence lives; it is the only thing standing between this model and a
+vanishing prediction.
+
+The uniform case is recovered as a corollary — the bracket collapses to
+`a·(|P| − |Q|)`, reproducing the merged `mirrorSplit_eq`, constant on the `d = 1`
+ladder where `|P| − |Q| = 1`.
+
+Lean, sorry-free, `lean`-direct exit 0 no warnings, generic `CommRing` (no
+ordering used, so none assumed, §7c):
+`content/quantum-observable-universe/lean/QOU/Mass/NonUniformAcRelocatesTheObligation.lean`
+— `mirrorSplit_nonuniform_eq`, `mirrorSplit_uniform_eq`,
+`mirrorSplit_eq_zero_of_equal_weight`. All three `[propext, Classical.choice,
+Quot.sound]`; zero `sorry`/`axiom`.
+
+**SCOPE — scope-(a), and deliberately WEAK. This does NOT close the escape.**
+Nothing here says a non-uniform carrier cannot produce the observed 13.63×
+growth: the bracket is unconstrained in general, and with enough spread in `a k`
+it could. What is shown is that doing so **requires a specified carrier**, which
+is the ingredient the arc does not have un-fitted. Read this as *relocated to a
+known blocker*, not as *refuted*. Eq. (43) is untouched throughout.
+
+No probe — this is pure structure, and a probe would be padding.

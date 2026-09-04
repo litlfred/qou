@@ -12,42 +12,35 @@
     "odd_preimage": "([2]_q P - 1)/[3]_q (when exact)"
   },
   "question": "Is v_[2](C(P)) < v_[2](P) for every P in D_inf off the attractor? A single violation refutes v_[2] as a descent measure on D_inf.",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "q-Collatz orbit combinatorics on D_inf. The variable q here is the Laurent variable of D_inf, NOT the substrate modulus q_0: the arithmetic is exact over Z and Z[w], and the import cone is stdlib only (json, sys, collections), so no substrate constant is reachable.",
   "result": {
-    "depth": 22,
-    "nodes": 52,
-    "odd_branch_nodes": 3,
-    "forward_verified_in_Dinf": 52,
+    "depth": 14,
+    "nodes": 24,
+    "odd_branch_nodes": 2,
+    "forward_verified_in_Dinf": 24,
     "forward_verification_failures": [],
-    "max_v_two_seen": 23,
+    "max_v_two_seen": 15,
     "transition_histogram": {
       "v0->v7/O": 1,
       "v0->v13/O": 1,
-      "v0->v19/O": 1,
-      "v1->v0/E": 3,
-      "v2->v1/E": 4,
-      "v3->v2/E": 4,
-      "v4->v3/E": 3,
-      "v5->v4/E": 3,
-      "v6->v5/E": 3,
-      "v7->v6/E": 3,
-      "v8->v7/E": 3,
-      "v9->v8/E": 3,
-      "v10->v9/E": 2,
-      "v11->v10/E": 2,
-      "v12->v11/E": 2,
-      "v13->v12/E": 2,
-      "v14->v13/E": 2,
-      "v15->v14/E": 2,
-      "v16->v15/E": 1,
-      "v17->v16/E": 1,
-      "v18->v17/E": 1,
-      "v19->v18/E": 1,
-      "v20->v19/E": 1,
-      "v21->v20/E": 1,
-      "v22->v21/E": 1,
-      "v23->v22/E": 1
+      "v1->v0/E": 2,
+      "v2->v1/E": 2,
+      "v3->v2/E": 2,
+      "v4->v3/E": 2,
+      "v5->v4/E": 2,
+      "v6->v5/E": 2,
+      "v7->v6/E": 2,
+      "v8->v7/E": 1,
+      "v9->v8/E": 1,
+      "v10->v9/E": 1,
+      "v11->v10/E": 1,
+      "v12->v11/E": 1,
+      "v13->v12/E": 1,
+      "v14->v13/E": 1,
+      "v15->v14/E": 1
     },
-    "descent_violations_count": 3,
+    "descent_violations_count": 2,
     "descent_violations": [
       {
         "P": "+1*q^5 +7*q^4 +20*q^3 +29*q^2 +21*q^1 +6*q^0 +1*q^-1",
@@ -64,15 +57,9 @@
         "v_CP": 13,
         "branch": "O",
         "steps_to_cycle": 13
-      },
-      {
-        "P": "+1*q^17 +19*q^16 +170*q^15 +951*q^14 +3724*q^13 +10829*q^12 +24207*q^11 +42484*q^10 +59279*q^9 +66197*q^8 +59280*q^7 +42483*q^6 +24207*q^5 +10830*q^4 +3723*q^3 +951*q^2 +171*q^1 +18*q^0 +1*q^-1",
-        "v_P": 0,
-        "C_P": "+1*q^18 +19*q^17 +171*q^16 +969*q^15 +3876*q^14 +11628*q^13 +27132*q^12 +50388*q^11 +75582*q^10 +92378*q^9 +92378*q^8 +75582*q^7 +50388*q^6 +27132*q^5 +11628*q^4 +3876*q^3 +969*q^2 +171*q^1 +19*q^0 +1*q^-1",
-        "v_CP": 19,
-        "branch": "O",
-        "steps_to_cycle": 19
       }
     ]
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Does v_[2] descend on the domain-stable cone D_inf?  (bean qou-4atn)."
 }

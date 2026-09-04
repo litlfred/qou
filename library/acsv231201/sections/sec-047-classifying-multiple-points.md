@@ -7,6 +7,7 @@ section_number: null
 pages: 340-345
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Having discussed the coeﬃcient asymptotics of generating functions with mul-
 tiple points, we turn to the problem of recognizing when they arise.

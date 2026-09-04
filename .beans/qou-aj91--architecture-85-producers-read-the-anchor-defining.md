@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T17:35:38Z
-updated_at: 2026-09-03T09:22:37Z
+updated_at: 2026-09-03T12:42:18Z
 ---
 
 ## What
@@ -856,3 +856,63 @@ ten, and anyone reading it would have seen a truncated tranche.
 Same family as the `pgrep` trap recorded above: **a convenience wrapper around a
 command silently replaced the signal I was reading.** There, the watcher's argv
 matched the pattern; here, `tail`'s exit code replaced `rebase`'s.
+
+
+## LANDED — the option-1 tranche is complete on main (2026-09-03)
+
+Five PRs merged: **#6105, #6151, #6163, #6495, #6504.**
+
+**End state, measured on main after the last merge:**
+
+    ideal_muon = 19    A = 12    B = 6    no-live-producer = 1
+
+B is exclusions only: `q_pinning_50_digit` (defines the anchor),
+`q0_anchor_consistency_audit` (flip detector, needs both pins),
+`cross_check_trM_1ppb` (source requires muon), `atomic_tr_m_mpfr_50dps`
+(dual-layer, asserts both), `qbeta_jacobi_anger_tower_general` (deliberate
+two-anchor comparison), `q1_mass_gap_probe` (validates other fields of the same
+witness, derived at its own q₀). Nothing in B by accident.
+
+### Ten producers routed, not nine
+
+The tenth (`he4_binding_k_presentation_correction_probe`) was a loose end I
+created: converting its `setdefault` to a manifest listing made a
+previously-UNLISTED stem visible to the split for the first time, and it was
+correctly flagged bypassed because the conversion left the value read in place.
+The count going 6 → 7 was the measured surface growing, not a regression.
+
+### Two claims of mine that needed correcting after the fact
+
+1. **"B = 6"** was measured on my branch before I listed the tenth stem. On main
+   it read 7 until #6495 routed it.
+2. **"Verified 15/15"** was true for the set I tested — the 9 routed producers
+   and the 6 exclusions — and I stated it as though it established the detector
+   generally. It did not. A test set assembled from files I had just edited
+   cannot exhibit a shape none of them had, and #6504 found exactly such a shape:
+   `derived_50_digit` inside a witness PAYLOAD STRING, surviving both the
+   comment and docstring stripping.
+
+**Residual blind spot, recorded rather than fixed:** the detector still counts a
+descriptive payload literal naming the field. Teaching it to separate prose from
+a subscript key is a fragile discriminator (`d["derived_50_digit"]` is a
+Constant too), and in the one case found the string was independently stale. If
+a second instance appears, that is the signal to revisit.
+
+### What doing the routing surfaced that nothing else would have
+
+- `cross_check_trM_cw_seminormal_leg` **RED on main**, 1e-7 against a 1e-15
+  tolerance → 1e-50 green. Hidden precisely BECAUSE it was group-B.
+- `qbeta_physics` straddling one caller by **30.1589 ppb** in `Q_A`.
+- A third bypass mechanism (`os.environ.setdefault("QOU_Q0_ANCHOR", …)`) that no
+  q₀ detector could see — 3 found, **0 live remain**, AST-verified.
+- A false negative in the detector itself, reporting every correctly-routed file
+  as still broken.
+- The he4 pair regenerated together off the retired pin (2 of `qou-3f7a`'s
+  population drained as a side effect).
+
+### Three traps recorded above, one family
+
+`pgrep -f` matching its own wait loop; `| tail` masking a failed rebase's exit
+code so a force-push shipped 1 of 10 commits; a payload string defeating a
+source-stripping detector. In each, **a convenience layer silently replaced the
+signal being read.**

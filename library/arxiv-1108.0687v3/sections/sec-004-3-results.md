@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-9
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 The chief consequence of the strong Rayleigh property that we us e to prove concentration inequalities
 is the stochastic covering property. Although all of our examples s o far of measures with the SCP

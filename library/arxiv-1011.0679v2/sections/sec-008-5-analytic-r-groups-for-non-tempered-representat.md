@@ -7,6 +7,7 @@ section_number: 5
 pages: 20-21
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 In this section we extend the deﬁnitions and results from Sec tion 1.4 (which stem
 from [DeOp2]) to non-tempered induction data ξ ∈ Ξ \ Ξ un. One approach would

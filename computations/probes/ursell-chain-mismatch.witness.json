@@ -1,8 +1,8 @@
 {
   "computation": "ursell-chain-mismatch",
   "scriptFile": "computations/probes/ursell_chain_mismatch_probe.py",
-  "computedAt": "2026-09-03T04:15:46.124058+00:00",
-  "description": "The three bond-additive channels' b3/b2 ~ -1 is the Ursell inversion meeting a bond set, not a three-body finding. Generalised: b3/b2 = n(3)/n(2) - 3 <= 0 for EVERY uniform pairwise-bond model, since n(2) = 1 and n(3) <= C(3,2) = 3.",
+  "computedAt": "2026-09-03T12:46:52.182358+00:00",
+  "description": "RETRACTED NOVELTY: the exclusion here duplicates QOU.Mass.UniformBondSimpleGraphExclusion (main c9d47234ce, 2026-08-30, bean qou-edt7), which proves it more generally, and check 4's ratio is the corpus's recorded w(2)/w(1). The arithmetic is correct and is an independent re-derivation by a different route (Ursell counts rather than graph edges). What is this probe's own is check 5: the link between the exclusion and the four MEASURED channel values, which reframes the earlier capstone -- ch3/ch4/ch5 are one identity, ch1 is not.",
   "measured_b3_over_b2": "950815/1483044",
   "count_table": [
     {
@@ -96,18 +96,25 @@
     {
       "name": "nonuniform_escape_is_open",
       "passed": true,
-      "detail": "w/w_d = 1.213708 (> 1) reproduces the measured value exactly -- so non-uniformity is NOT excluded here, and is the next direction"
+      "detail": "w/w_d = 1.213708 (> 1) reproduces the measured value exactly, so non-uniformity is not excluded HERE -- but see check 6: this is the corpus's already-recorded w(2)/w(1), and its single-ratio (Markov-power) mechanism is already REFUTED in qou-edt7"
     },
     {
       "name": "three_additive_channels_sit_at_minus_one",
       "passed": true,
       "detail": "ch3/ch4/ch5 all within 0.0321 of -1 (the identity), while ch1 -- the SHIPPED, non-additive channel -- is 0.3995 away and is NOT explained by it"
+    },
+    {
+      "name": "check4_ratio_is_the_recorded_coordination_weight_ratio",
+      "passed": true,
+      "detail": "agree to 3.05e-07 -- the same quantity by two routes (my input is a rounded AME ratio; theirs is not). This is CORROBORATION of a recorded number, NOT a new one; see the retraction above"
     }
   ],
   "allPassed": true,
   "lean": "QOU.Mass.UrsellChainMismatch",
   "scope": "(b) on UNIFORM pairwise-bond-additive binding models, invariant named: the bond count on three nodes is capped at C(3,2) = 3 while the Ursell inversion subtracts three pair terms. (a) on everything else.",
   "caveats": [
+    "PRIORITY: this probe does NOT establish the uniform-bond exclusion. UniformBondSimpleGraphExclusion / b3Uniform_nonpos does, more generally, and landed four days earlier. Cite that.",
+    "The single-ratio (Markov-power) scaling family on the non-uniformity axis is ALREADY REFUTED in qou-edt7 (~44% disagreement between the two available ratios, for every r), so 'non-uniformity is the next direction' understates what is already known about it.",
     "This EXCLUDES NO CHANNEL and refutes no physics. It reclassifies why three already-measured channels failed; the measurement itself is unchanged.",
     "ch1, the SHIPPED channel, is NOT explained by this -- it is not bond-additive (trace prefactor exponential in A) and fails for its own reasons. Check 5 measures that separation rather than assuming it.",
     "NON-UNIFORM bond values are NOT excluded. w/w_d = 1.213708 reproduces the measured value exactly, and that is the surviving direction.",
@@ -120,9 +127,9 @@
     "probes/brunnian-triple-exhaustion.witness.json"
   ],
   "source": "AME2020; all-channels-b3-sign.witness.json",
-  "scriptHash": "619ef707024e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "bcf64170c653902665e21bdd268494e569c4d1bd",
+  "scriptHash": "d71c8ae94d41",
+  "scriptCommitSha": "f81232991384cf2fd42c4168a6f4e2ee4ac9aaaf",
+  "commitSha": "b244062b19705d1be08448e1edcd204b33d312a8",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "independent",

@@ -39,11 +39,11 @@ variable {μ : YoungDiagram}
 
 /-- `ρ(L_k)` equals the diagonal matrix read off its own diagonal — the form
 `DiagonalSeparation` consumes. -/
-theorem diagonal_seminormalRep_qJM (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem diagonal_seminormalRep_qJM {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) (k : ℕ) (hk : k ≤ n) :
     Matrix.diagonal (fun T : StandardYoungTableau μ =>
-        seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k) T T)
-      = seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k) := by
+        seminormalRep q hq0 hq2 n hN (qJM K q q⁻¹ n k) T T)
+      = seminormalRep q hq0 hq2 n hN (qJM K q q⁻¹ n k) := by
   rw [seminormalRep_qJM q hq0 hq2 n hN k hk, jmDiagVal]
   ext T U
   by_cases h : T = U
@@ -54,14 +54,14 @@ theorem diagonal_seminormalRep_qJM (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
 
 The `q`-Jucys–Murphy images are diagonal *and* separating, which is exactly the hypothesis pair of
 `single_self_mem_of_separating`; the interpolation there does the rest. -/
-theorem single_self_mem_range (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem single_self_mem_range {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) (T : StandardYoungTableau μ) :
-    Matrix.single T T (1 : ℝ) ∈ (seminormalRep q hq0 hq2 n hN).range := by
+    Matrix.single T T (1 : K) ∈ (seminormalRep q hq0 hq2 n hN).range := by
   refine single_self_mem_of_separating (V := Fin (n + 1)) _
     (fun (T : StandardYoungTableau μ) (k : Fin (n + 1)) =>
-      seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k.val) T T) (fun k => ?_) (fun T1 T2 hne => ?_) T
+      seminormalRep q hq0 hq2 n hN (qJM K q q⁻¹ n k.val) T T) (fun k => ?_) (fun T1 T2 hne => ?_) T
   · rw [diagonal_seminormalRep_qJM q hq0 hq2 n hN k.val (by omega)]
-    exact ⟨qJM ℝ q q⁻¹ n k.val, rfl⟩
+    exact ⟨qJM K q q⁻¹ n k.val, rfl⟩
   · by_contra hcon
     push_neg at hcon
     exact hne (seminormalRep_qJM_spectrum_injective q hq0 hq2 n hN (funext hcon))
@@ -69,13 +69,13 @@ theorem single_self_mem_range (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n :
 /-- **A nonzero matrix entry promotes to an off-diagonal matrix unit.**  If some element of the
 image has a nonzero `(T', T)` entry, then `single T' T 1` is itself in the image: sandwich between
 the two diagonal units and divide by the entry. -/
-theorem single_mem_range_of_entry_ne_zero (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
-    (hN : μ.cells.card = n + 1) {x : Hecke ℝ q q⁻¹ n} {T T' : StandardYoungTableau μ}
+theorem single_mem_range_of_entry_ne_zero {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
+    (hN : μ.cells.card = n + 1) {x : Hecke K q q⁻¹ n} {T T' : StandardYoungTableau μ}
     (hx : seminormalRep q hq0 hq2 n hN x T' T ≠ 0) :
-    Matrix.single T' T (1 : ℝ) ∈ (seminormalRep q hq0 hq2 n hN).range := by
+    Matrix.single T' T (1 : K) ∈ (seminormalRep q hq0 hq2 n hN).range := by
   set A := (seminormalRep q hq0 hq2 n hN).range with hA
-  have hsandwich : Matrix.single T' T' (1 : ℝ) * seminormalRep q hq0 hq2 n hN x
-      * Matrix.single T T (1 : ℝ)
+  have hsandwich : Matrix.single T' T' (1 : K) * seminormalRep q hq0 hq2 n hN x
+      * Matrix.single T T (1 : K)
       = Matrix.single T' T (seminormalRep q hq0 hq2 n hN x T' T) := by
     rw [Matrix.single_mul_mul_single]
     congr 1
@@ -84,7 +84,7 @@ theorem single_mem_range_of_entry_ne_zero (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2
     rw [← hsandwich]
     exact mul_mem (mul_mem (single_self_mem_range q hq0 hq2 n hN T') ⟨x, rfl⟩)
       (single_self_mem_range q hq0 hq2 n hN T)
-  have hscale : Matrix.single T' T (1 : ℝ)
+  have hscale : Matrix.single T' T (1 : K)
       = (seminormalRep q hq0 hq2 n hN x T' T)⁻¹
           • Matrix.single T' T (seminormalRep q hq0 hq2 n hN x T' T) := by
     rw [Matrix.smul_single, smul_eq_mul, inv_mul_cancel₀ hx]

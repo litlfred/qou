@@ -72,7 +72,9 @@ The two forms agree to `~1e−36` at `dps=40` (confirming `K²=K`), and the canc
 
 ## Status of `qou-tvok` / `qou-k5r5`
 
-Gap **OPEN**. Unchanged and correct: rate `θ⁻¹`, `c₁ ≈ −0.0678`, closure needs only `C ≤ 23.4`.
+Gap **OPEN**. Unchanged and correct: rate `θ⁻¹`, `c₁ ≈ −0.0678`. ~~closure needs only `C ≤ 23.4`~~
+
+> **🛑 CORRECTED 2026-09-03 (PR #6500).** The sentence above is **wrong** and is retracted. The `θ^{-1}` rate is `V_A`'s, **not the (CS) margin's** — the margin `m(n) = ρ_P − σ_D/σ_A` is a ratio of square roots of variances plus a correlation, and no one has propagated the one rate into the other. What is **proved** (PR #5929) is `|m(n) − m_∞| ≤ C·n^{-1/2}`, so `N₀ = (C/m_∞)²` — *squared* — and the requirement is `C ≤ m_∞·√79 = 2.6681`. That is **the** requirement under the bound in hand, not "a conservative reading" of it. The route is nonetheless in better shape than either number suggested: the empirical envelope over `n ≥ 13` is `C_emp = 0.0580`, a **46× headroom** under the already-proved shape. See [`…-margin-envelope-retraction.md`](2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md).
 Withdrawn: the implicit claim that `TV(g″)` is a computable quantity of the *local* variance density.
 The next honest step is one of two exhibited pairs:
 

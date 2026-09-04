@@ -441,7 +441,7 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="sympy+mpmath",
-            q0_anchor="proton", q0_anchor_reason="experimental pin (the physical-observations layer)", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_value=mp.nstr(Q0, 30))
         # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
         # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
         json.dump(witness, f, indent=2, ensure_ascii=False)

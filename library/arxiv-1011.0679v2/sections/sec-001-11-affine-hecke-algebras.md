@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 3-4
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 for admissible representations π,π ′ of L. Here the space C ell denotes the space of
 regular semisimple elliptic conjugacy classes of L, equipped with the canonical “el-

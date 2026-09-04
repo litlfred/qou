@@ -132,7 +132,9 @@ def main() -> int:
                     0 if monotone else 1, 1, tolerance=0,
                     source=f"SEMF pairing decreases monotonically in A; "
                            f"e(Z) instead peaks at Z = {zpeak}")
-    w.save()
+    w.save(extra={"q0Anchor": "independent",
+             "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Is delta^2 Phi the SEMF pairing term? Sign yes (vacuously); magnitude NO.",
+             })
     return 0
 
 

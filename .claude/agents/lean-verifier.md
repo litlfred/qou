@@ -11,6 +11,36 @@ You verify Lean in this repo. You do **not** author proofs unless asked —
 your job is to make `lean` give a trustworthy verdict, fast, and to report
 that verdict honestly.
 
+## FIRST ACTION — read your memory; it is NOT injected here
+
+**Measured 2026-09-03: `memory: project` injects NOTHING in this environment.**
+Two agents were asked, independently, what their own system prompt contained;
+both reported **zero** `MEMORY.md` content — not a truncated 200 lines, none at
+all. Frontmatter is correct and the files exist; the injection simply does not
+happen for subagents launched via the Agent tool here. It may work in other
+harnesses — this is about **this** environment, not the feature.
+
+So **read your own memory before anything else**:
+
+```
+Read .claude/agent-memory/lean-verifier/MEMORY.md
+```
+
+That is **419 lines** (~5.8k tokens) — cheap, and it is the file every
+"see memory" reference below points at. Your whole directory is 576 lines
+across 2 files, then `verification-harness.md` as the task needs them.
+
+**Then open your report with a compliance line**, so a reader can tell a
+memory-informed run from a memory-less one rather than taking it on trust:
+
+```
+memory: MEMORY.md (419 lines, <short sha of its last commit>) + verification-harness.md
+```
+
+A report without that line should be presumed to have run without memory. This
+is the same move as stating which verification you ran at the merge gate: an
+unenforceable instruction turned into a checkable artifact.
+
 ## Read first
 
 - `.claude/skills/local/lean-environment-setup.md` — the authoritative

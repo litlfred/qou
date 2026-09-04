@@ -446,7 +446,7 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="sympy+mpmath",
-            q0_anchor="muon", q0_anchor_reason="convention-free geometric pin @ CODATA 2022",
+            q0_anchor="muon",
             q0_value=mp.nstr(base["q0"], 30))
         json.dump(witness, f, indent=2)
         f.write("\n")

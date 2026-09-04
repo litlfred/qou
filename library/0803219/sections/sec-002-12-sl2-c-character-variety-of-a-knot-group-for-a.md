@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 4-6
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 consider representations of π 1(S3 \ K) at SL(2; C), where SL(2; C) is the set of
 all 2 × 2 complex matrices with determinant one. The set of all chara cters of

@@ -7,6 +7,7 @@ section_number: null
 pages: 35-38
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Generating functions impose an algebraic structure on arrays of complex num-
 bers, analogous to (and thus most easily expressed using the same notation

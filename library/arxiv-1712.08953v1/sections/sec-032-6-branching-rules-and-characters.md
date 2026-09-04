@@ -7,6 +7,7 @@ section_number: 6
 pages: 36-46
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 We continue with the setup of the previous section. In this section, we introduce a
 biadjoint pair of endofunctors E andF of Mod-OS, which lift the endofunctors↑⊗? and

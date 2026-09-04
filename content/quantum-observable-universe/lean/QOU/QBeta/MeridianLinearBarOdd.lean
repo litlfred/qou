@@ -31,7 +31,14 @@ exact response algebra and parity, NOT the analytic asymptotics of `J_N`.
 Base ring is `ℝ` by necessity (§7c archimedean side): `π` and the ordering in
 the bound are the content. No `sorry`.
 
--- Ref: [murakami2013] deformed 4₁ asymptotic (theorem-grade regime)
+-- Ref: [ohtsuki-takata-2015] deformed 4₁ asymptotic (theorem-grade regime)
+--   (repointed from the dead key `murakami2013`, 2026-09-03. Evidence is in
+--    this file: the witness it names is
+--    `qbeta-ohtsuki-deformed-meridian-rungs.witness.json`, and
+--    [ohtsuki-takata-2015] is the theorem-grade asymptotic for two-bridge
+--    knots, of which 4₁ is one. The 2013 Murakami work the original key
+--    named is not in `references.ts` nor in `library/`, `ocr/` tier
+--    included. Inferred repoint, not a recovered citation.)
 -- Ref: [manuscript] docs/audits/2026-07-12-bar-odd-s-three-routes.md
 -/
 

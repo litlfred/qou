@@ -7,6 +7,7 @@ section_number: 3
 pages: 13-15
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 3.1. Real Stable Polynomials and T ranscendental Entire F unctio ns. In
 [15] it was proved that a multi-aﬃne polynomial f ∈ R[z1, . . . , zn] is stable (in the

@@ -7,6 +7,7 @@ section_number: 8
 pages: 8-8
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 – When t /∈{± qn|n∈ Z}, the modules {∆( λ )| λ∈e-Bip} give a full set
 of pairwise inequivalent indecomposable projective OS (z,t )-modules, and

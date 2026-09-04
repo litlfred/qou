@@ -7,6 +7,7 @@ section_number: 4.4
 pages: 29-30
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 rem 4.5), or |θ |> 2π/ (ab) and Re( θ ) > 0 (Theorem 4.2), then we can associate
 an abelian representation as in Subsection 3.3 (iii).

@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 10-12
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 Although we are using the “English” notation for Young diagrams, but the limit shape of Young
 diagrams takes a simple form in rotated French notation. A typical shape of Young diagram in

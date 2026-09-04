@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 16-31
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 (1) The ˜A1(q), L = Q, algebra has generators T = T1 and x = xα∨
 1 with relations

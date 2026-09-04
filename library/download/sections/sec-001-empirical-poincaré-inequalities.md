@@ -7,6 +7,7 @@ section_number: null
 pages: 5-7
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1"
 ---
 We assume that the random variables X1,...,X n have a joint distribution μ on Rn, satisfying
 the Poincaré-type inequality (1.1). For a bounded smooth functionf on the real line, we apply it

@@ -7,6 +7,7 @@ section_number: null
 pages: 232-240
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 Finally, we end this chapter with a treatment of critical points and critical val-
 ues at inﬁnity. After giving a rigorous deﬁnition of such points we show how, in

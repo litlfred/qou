@@ -7,6 +7,7 @@ section_number: null
 pages: 78-78
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 In this chapter we review some classical results on the asymptotics of univari-
 ate generating functions. Throughout, f (z) = ∑∞
