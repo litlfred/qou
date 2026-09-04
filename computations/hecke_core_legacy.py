@@ -2596,16 +2596,39 @@ def atom_markov_trace(Z, N, k_cap=None, include_inter=True):
         chi_data[tuple(e['partition'])] = (chi_q, ln, e)
         log_norms[tuple(e['partition'])] = ln
     if not log_norms:
-        return 0.0
+        # mpf, not 0.0 (bean `qou-9ay6`): same TYPE on both return paths.
+        return _MPF_ZERO
     max_ln = max(log_norms.values())
-    trace = 0.0
+    trace = _MPF_ZERO
     for lam, (chi_q, ln, entry) in chi_data.items():
         chi_eff = chi_q * _mp.exp(ln - max_ln)
         d_l = entry['dim']
         w_l = entry['wedderburn_weight']
         # Linear Markov trace — NOT squared
         trace += w_l * chi_eff / d_l
-    return trace
+    # Undo the common shift before returning (bean `qou-8w8v`).
+    #
+    # `max_ln` is subtracted inside the loop only so the summands share an
+    # exponent; it is a STABILITY device, not part of the quantity. Returning
+    # `trace` bare handed back tr_M(W_atom)·exp(−max_ln) while the docstring
+    # promised tr_M(W_atom), and `max_ln` was not returned, so no caller could
+    # undo it.
+    #
+    # That mattered because the one consumer,
+    # `binding_from_frobenius_pairing`, makes TWO separate calls —
+    # `include_inter=True` and `include_inter=False` — which walk different
+    # chains, so they compute different `max_ln`. Subtracting their results
+    # subtracted two quantities on two different scales, and the answer was
+    # not E_0·(|tr_M(W_free)| − |tr_M(W_atom)|).
+    #
+    # No published value moves: the default path is the Rust kernel, which
+    # returns log_norm = 0 by construction (MPFR's exponent range makes the
+    # `> 1e80` rescale unnecessary), so max_ln = 0 and this factor is exactly
+    # 1. The pure-Python fallback at high A is where it was wrong and is now
+    # right. `_mp.exp` cannot overflow here the way the float64 original could
+    # — that is what made the bare accumulation safe to correct rather than
+    # merely document.
+    return trace * _mp.exp(max_ln)
 
 
 def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
@@ -2642,10 +2665,11 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
         log_norms[tuple(e['partition'])] = ln
 
     if not log_norms:
-        return (0.0, {}, 0.0)
+        # mpf, not 0.0 (bean `qou-9ay6`): same TYPE on both return paths.
+        return (_MPF_ZERO, {}, _MPF_ZERO)
 
     max_ln = max(log_norms.values())
-    norm_sq = 0.0
+    norm_sq = _MPF_ZERO
     for lam, (chi_q, ln, entry) in chi_data.items():
         # Rescaled χ to the common exponent max_ln
         chi_eff = chi_q * _mp.exp(ln - max_ln)
@@ -2659,6 +2683,14 @@ def atom_frobenius_norm_sq(Z, N, k_cap=None, include_inter=True):
             'contribution': contrib,
         }
         norm_sq += contrib
+    # `norm_sq` here is the TRUE ||W||²_F times exp(−2·max_ln), uniformly:
+    # every term carries (χ·exp(ln−max_ln))², i.e. the true term times
+    # exp(−2·max_ln), so the common factor survives the sum. `max_ln` is
+    # returned as the third element precisely so a caller can undo it — see
+    # `free_nucleon_frobenius_norm_sq`, which used to throw it away (bean
+    # `qou-8w8v`). `per[...]['chi_rescaled']` and `['contribution']` stay in
+    # the shifted domain on purpose: they exist to compare MAGNITUDES across
+    # partitions, which is what the common exponent is for.
     return (norm_sq, per, max_ln)
 
 
@@ -2684,8 +2716,20 @@ def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
     TODO: proper tensor-product decomposition via H_3(q)^⊗A restriction.
     For now: ||W_free||² ≈ Σ_λ w_λ · 1 = 1 (Wedderburn trace identity).
     """
-    norm_sq, _, _ = atom_frobenius_norm_sq(Z, N, k_cap, include_inter=False)
-    return norm_sq
+    # Apply `max_ln`, do not discard it (bean `qou-8w8v`). This line was
+    #     norm_sq, _, _ = atom_frobenius_norm_sq(...)
+    #     return norm_sq
+    # which returned ||W_free||²·exp(−2·max_ln) while presenting it as the
+    # norm. `atom_frobenius_norm_sq` hands the scale factor back for exactly
+    # this reason; returning the right SHAPE is not the same as anyone using
+    # it, and the file's one caller did not.
+    #
+    # Easy to miss here in particular: the docstring above says the intended
+    # value is the identity limit Σ_λ w_λ = 1, so a silently rescaled return
+    # still looks like a plausible number near 1.
+    norm_sq, _, max_ln = atom_frobenius_norm_sq(Z, N, k_cap,
+                                                include_inter=False)
+    return norm_sq * _mp.exp(2 * max_ln)
 # Single calibration constant E_0 prescribed by prop:categorical-mass-markov
 # as the dimensional bridge τ: R → ℝ from categorical mass to MeV.
 # "To obtain physical masses in MeV, multiply by a calibration constant E_0,
