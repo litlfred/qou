@@ -1085,3 +1085,31 @@ arrow counts 0/1, `{0,1,2}`, 3 and 10. The object is not underdetermined by
 accident — a small integer matrix admits many structural readings, and the only
 thing that has ever discriminated between them in this arc is the sentence
 printed under the equation in the paper.
+
+**🛑 CORRECTION to the addendum, same session, ~20 minutes later. "0 importers"
+was not a finding and I let it read as one.**
+
+The addendum above reports `WallCrossing.lean` as having "0 instances, 0
+importers, 0 mentions" and lets all three carry equal weight. **The importer
+count is unremarkable.** Measured over the QOU tree on 2026-09-04:
+
+    total QOU modules                 2566
+    never imported anywhere            866   (33.8 %)
+
+A third of the library is unimported. It is a long-tracked class with its own
+detector — [`content/pipeline/lean-orphan-audit.ts`](content/pipeline/lean-orphan-audit.ts),
+beans `qou-orph` / `qou-kljb`, which measured 761 of 1598 (47.6 %) on
+2026-08-07 — and the module compiles regardless, because the QOU library is
+glob-declared (`globs = ["QOU", "QOU.+"]`). Being unimported makes
+`WallCrossing.lean` **ordinary**, not notable, and quoting it alongside the
+other two numbers implied a discovery that a five-minute check deflates.
+
+**What is actually specific, and is the load-bearing half: ZERO INSTANCES of
+`ChargeLattice` and `KSWallCrossing` anywhere in the tree.** That is a different
+and stronger statement — an imported module can have no instances, and an
+unimported one can have instances inside itself — and it is the fact that
+blocks the Dirac-pairing test. Quote the instance count; drop the importer
+count.
+
+Nothing else in (12) or the addendum moves: the Gabriel exclusion, F2, F3 and
+C7 are untouched, and the test is still blocked on data.

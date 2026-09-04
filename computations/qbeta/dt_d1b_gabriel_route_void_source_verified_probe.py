@@ -388,15 +388,27 @@ def main() -> int:
         "instances_of_KSWallCrossing": 0,
         "importers": 0,
         "mentions_anywhere_else_in_the_paper_tree": 0,
+        "importers_is_NOT_the_interesting_number": "CORRECTED 2026-09-04 in "
+            "the same session it was written. '0 importers' was reported as "
+            "though it were a finding; it is not. Measured over the QOU tree: "
+            "866 of 2566 modules (33.8%) are never imported anywhere, and this "
+            "is a long-tracked class with its own detector "
+            "(content/pipeline/lean-orphan-audit.ts, beans qou-orph / "
+            "qou-kljb). Being unimported makes this module ORDINARY. The "
+            "library is glob-declared so it still compiles",
+        "what_is_actually_specific": "ZERO INSTANCES of ChargeLattice and "
+            "KSWallCrossing anywhere in the tree. That is a different and "
+            "stronger statement than unimported -- an imported module can have "
+            "no instances, and an unimported one can have instances inside "
+            "itself -- and it is the fact that blocks the D1-b Dirac-pairing "
+            "test. Quote the instance count, not the importer count",
+        "qou_modules_total": 2566,
+        "qou_modules_never_imported": 866,
         "note": "measured 2026-09-04 by grep over content/quantum-observable-"
-                "universe/ excluding .lake/. The module compiles only because "
-                "the QOU library is glob-declared. It is exactly the structure "
-                "the D1-b Dirac-pairing test would need, and it has never been "
-                "instantiated -- so the test is blocked on DATA, not on "
-                "scaffolding. Deliberately NOT instantiated here: giving it eq "
-                "(98) as its euler field would assert that eq (98) IS the Dirac "
-                "pairing, which is precisely hypothesis H and would launder it "
-                "into Lean",
+                "universe/ excluding .lake/. Deliberately NOT instantiated "
+                "here: giving it eq (98) as its euler field would assert that "
+                "eq (98) IS the Dirac pairing, which is precisely hypothesis H "
+                "and would launder it into Lean",
     })
     wb.add_data("scope", {
         "tier": "scope-(b) exclusion + source-verified structural facts",
