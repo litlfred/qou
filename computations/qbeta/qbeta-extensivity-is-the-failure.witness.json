@@ -1,0 +1,124 @@
+{
+  "computation": "qbeta-extensivity-is-the-failure",
+  "assertions": [
+    {
+      "name": "delta_tr_per_A_is_flat_to_within_8pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "measured 0.0672 across A = 2..4"
+    },
+    {
+      "name": "B_per_A_varies_at_least_20x_more_than_delta_tr_per_A",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "26.1x: the framework supplies a flat per-nucleon quantity where the data is not flat"
+    },
+    {
+      "name": "B_per_A_is_not_flat_over_the_same_atoms",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the data the flat quantity is compared against moves 6.4x"
+    },
+    {
+      "name": "per_nucleon_deficit_is_not_a_constant",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so no fixed multiple of an extensive quantity can close it"
+    },
+    {
+      "name": "the_two_corpus_scales_disagree_by_more_than_4x",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "different objects, but the corpus presents both as how far off the extensive term is"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "Q_beta_n_MeV": "0.78233340931",
+    "binding_law": "B = Q_beta(n).(tr_M(W_free) - tr_M(W_atom))",
+    "source_witness": "qbeta-interface-w-deciding-test.witness.json",
+    "BA_plateau_MeV": "8.5",
+    "SEMF_a_V_MeV": "15.8"
+  },
+  "data": {
+    "per_atom": [
+      {
+        "atom": "2H",
+        "A": 2,
+        "delta_tr": "0.556544660404",
+        "delta_tr_per_A": "0.2782723302",
+        "B_MeV": "2.224566",
+        "B_per_A": "1.112283",
+        "deficit_per_nucleon": "5.1092058",
+        "fraction_supplied": "0.19572514"
+      },
+      {
+        "atom": "3H",
+        "A": 3,
+        "delta_tr": "0.888536126874",
+        "delta_tr_per_A": "0.296178709",
+        "B_MeV": "8.481798",
+        "B_per_A": "2.827266",
+        "deficit_per_nucleon": "12.201717",
+        "fraction_supplied": "0.081955677"
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "delta_tr": "0.892908575394",
+        "delta_tr_per_A": "0.2976361918",
+        "B_MeV": "7.718043",
+        "B_per_A": "2.572681",
+        "deficit_per_nucleon": "11.048627",
+        "fraction_supplied": "0.090508981"
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "delta_tr": "1.11980900609",
+        "delta_tr_per_A": "0.2799522515",
+        "B_MeV": "28.295673",
+        "B_per_A": "7.0739182",
+        "deficit_per_nucleon": "32.298637",
+        "fraction_supplied": "0.030961059"
+      }
+    ],
+    "spread_delta_tr_per_A": "0.067233326",
+    "spread_B_per_A": "1.7552098",
+    "B_per_A_max_over_min": "6.3598187",
+    "deficit_per_nucleon_range": [
+      "5.1092058",
+      "32.298637"
+    ],
+    "extensive_energy_per_nucleon": {
+      "normaliser_route_qou_imcd_MeV": "1.2309",
+      "binding_law_route_MeV": "0.225319744",
+      "ratio": "5.4629034"
+    }
+  },
+  "context": {
+    "axis": "is the binding law's own quantity extensive, and is that good news at A <= 4?",
+    "answer": "It is extensive — Delta_tr/A has 6.7 % relative spread, 26x flatter than B/A — and that is exactly the obstruction. B/A moves 6.4x over the same four atoms, so the per-nucleon deficit runs 5.1 to 32.3 and is not a constant. No fixed multiple of an extensive quantity closes it.",
+    "bearing_on_prior_work": "qou-imcd's exponent measurement and qou-78pt's shape claim are not disputed; both measure the NORMALISER. The addition is the same measurement on the binding law's own quantity, plus the observation that all four calibration atoms sit far below the B/A plateau, so extensivity cannot be assessed on them.",
+    "open_for_owner": "The normaliser route and the binding law give 1.2309 and 0.2253 MeV/nucleon for what both are presented as — the framework's extensive energy per nucleon. They are different objects with different scales, so this need not be an error, but they cannot both be the prediction.",
+    "scope": "Scope-(a). Nothing refuted, no content block edited."
+  },
+  "gitCommit": "5f0750964baad278377b3df7a942d2583fdcc84a",
+  "durationMs": 0,
+  "scriptFile": "qbeta_extensivity_is_the_failure_probe.py",
+  "scriptHash": "638c2e7e3625",
+  "scriptCommitSha": "unknown",
+  "commitSha": "5f0750964baad278377b3df7a942d2583fdcc84a",
+  "engine": "mpmath",
+  "computedAt": "2026-09-03T10:38:19.203883+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}
