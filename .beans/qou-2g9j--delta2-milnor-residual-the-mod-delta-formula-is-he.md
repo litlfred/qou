@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-09-04T10:58:45Z
+updated_at: 2026-09-04T12:17:02Z
 ---
 
 Successor to `qou-768r` route 3, which closed the `Delta = 0` (min-span) family and
@@ -78,3 +78,61 @@ This bean is about `Delta = 2` ONLY. `Delta = 0` is closed (`qou-768r`, merged:
 min-span triples are defined exactly where they vanish). `Delta = 1` carries no
 information by definition. Nothing here reopens route 2, which is blocked for an
 unrelated reason (the complement-genus handle is Borromean-only).
+
+
+
+## RESULT 2026-09-04 — mubar VANISHES ON EVERY TRIPLE. Residual CLOSED.
+
+Not just the `Delta = 2` residual: **every** triple, all three indeterminacy
+classes, both crossing-resolution branches, 7 isotopes.
+
+    triples with NONZERO mubar        0  of 606
+    Delta = 0 (route 3's case)      260
+    Delta = 2 (THE RESIDUAL)        256
+    Delta = 1 (no information)       90
+
+Stronger than route 3's own result, which was a STRUCTURAL vanishing on a chosen
+subfamily. This is a COMPUTED VALUE on every triple.
+
+### The controls are the point
+
+An all-zero first run is exactly when a bug is most likely. The **Borromean rings**
+(closure of `(s1 s2^-1)^3` in `B_3`, textbook `mubar_123 = +/-1`) run through the
+SAME code path and are asserted NONZERO — measured `eps_01(lam_2) = -1`, with all
+pairwise linking zero so `delta = 0` and the invariant is a genuine integer. The
+**Hopf link** is asserted at `mu = 2`, `lk = 1`. Without those two the vanishing
+would be indistinguishable from a broken implementation.
+
+Convention recorded because it is a choice: `sigma_i` sends position `i` OVER
+`i+1` (Artin). The Borromean control runs under the SAME convention, so a
+convention flip surfaces as a failed control rather than as silent zeros.
+
+### I DISPROVED MY OWN OBSTACLE, twenty minutes after writing it
+
+The section above says *"what a real attempt needs: Seifert surfaces for the
+carrier's components — and these are `(2, odd)`-torus KNOTS, not discs, so
+`t_ijk` is not free."* **That was wrong, and it is the more useful of the two
+errors on this bean.**
+
+Mellor-Melvin's surface formula is ONE route. **Milnor's ORIGINAL definition needs
+no surface at all**: `mubar_ijk = eps_ij(lambda_k) mod delta`, the degree-2 Magnus
+coefficient of the `k`-th LONGITUDE — and for a BRAID CLOSURE the longitude is read
+straight off the word (walk each strand; at each undercrossing record the meridian
+of the over-strand, with sign). That is the entire implementation.
+
+The pattern worth keeping: I reached for the formula in the source I had **just
+read**, instead of for the definition. The sketch recorded above — `t_ijk = 0` by
+disjoint surfaces, `m_ijk` reduced to `eps_ac(w_b)` — was never needed.
+
+### Files
+
+`computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py` + witness,
+5/5. PR #6634.
+
+### Scope (a), on the carrier as given
+
+These isotopes, these two branches, length-3 invariants. Does **not** say Milnor
+invariants vanish generally — the Borromean control in the same file is a
+counterexample to that reading. Length > 3 invariants NOT examined. Route 2
+untouched (blocked for an unrelated reason: the complement-genus handle is
+Borromean-only).
