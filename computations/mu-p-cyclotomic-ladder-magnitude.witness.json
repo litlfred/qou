@@ -1,0 +1,129 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T03:18:08.064534+00:00",
+  "commitSha": "eb6900b152f0d8b8e9cab2086bb2f1672aa126a1",
+  "assertions": [
+    {
+      "name": "no_cyclotomic_ladder_term_lies_in_the_residual_window",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Scanned every nonzero term P_k(N) = prod_(j=1..k)(q^N+q^-N-q^j-q^-j) for N <= 12 (66 terms; k >= N vanishes identically). None lies in [1.8e-7, 2.4e-7]. Scope-(a) on 'a single term of the 4_1 cyclotomic ladder supplies the residual'; a sum over the ladder is J_N(4_1) itself and is O(1)."
+    },
+    {
+      "name": "ladder_magnitude_floor_is_order_w_not_order_w_cubed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Smallest nonzero term is N=5, k=4: 0.001146530028 = 5429.55x the residual and 0.105216x w, i.e. order w. The residual is order w^3 (t/w^3 = 0.163199). Structural: each factor is an integer polynomial in w with lowest term (N^2-j^2)w and the factors increase with N, so the floor over N > k is M_k(k+1) w^k with M_k = k!(2k+1)!/(k+1)!, which bottoms out near k=4 at ~1e-3."
+    },
+    {
+      "name": "min_coefficient_matches_the_closed_form",
+      "computed": "1260",
+      "expected": "1260",
+      "passed": true,
+      "tolerance": 0,
+      "source": "M_3(4) = (16-1)(16-4)(16-9) = 15*12*7 = 1260 = 3!*7!/4!. Guards the closed form M_k(k+1) = k!(2k+1)!/(k+1)! that the leading-order floor table is computed from, so a future edit to either cannot silently diverge from the other."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "mu-p-cyclotomic-ladder-magnitude",
+  "scriptFile": "mu_p_cyclotomic_ladder_magnitude_probe.py",
+  "scriptHash": "68ce0c97cbcf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mu_p_cyclotomic_ladder_magnitude_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mu_p_cyclotomic_ladder_magnitude_probe.py"
+  },
+  "data": {
+    "pin": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "w": "0.0108968667071222997524919780918628158892407484841329167639324"
+    },
+    "residual": {
+      "t": "0.000000211164914360000000000000000000000000000000000000000000000000",
+      "t_over_w3": "0.163198756379566067664873792042294420021310788758823364464362",
+      "t_over_w4": "14.9766681346021923822048866587067676685246772644266759918340",
+      "window_lo": "0.000000180000000000000000000000000000000000000000000000000000000000",
+      "window_hi": "0.000000240000000000000000000000000000000000000000000000000000000000",
+      "source": "mu-substrate-tension-audit-100dps.witness.json data.residual_ppb_at_canonical_q0 (CODATA 2022); NOT the bean's superseded CODATA-2018 2.09754920524e-7"
+    },
+    "smallest_nonzero_term": {
+      "N": 5,
+      "k": 4,
+      "value": "0.00114653002845634834077062216719697403538374087398386439735317",
+      "over_t": "5429.54795275180552854520224378137566746739770270548460706497",
+      "over_w": "0.105216486470093736690988243868297357802943567232964611818701"
+    },
+    "leading_order_floor": [
+      {
+        "k": 1,
+        "min_coefficient": "3",
+        "leading_estimate": "0.0326906001213668992574759342755884476677222454523987502917973",
+        "over_t": "154810.756419672194910154175082006969387915155605581778958733"
+      },
+      {
+        "k": 2,
+        "min_coefficient": "40",
+        "leading_estimate": "0.00474966816131161568205693239748184845003867107897767920884373",
+        "over_t": "22492.6957004526103701772760612022367882851307163415990165902"
+      },
+      {
+        "k": 3,
+        "min_coefficient": "1260",
+        "leading_estimate": "0.00163032977699157300899008078055707756263928484106937195379959",
+        "over_t": "7720.64706834839079556871883627570241891620295528611770180999"
+      },
+      {
+        "k": 4,
+        "min_coefficient": "72576",
+        "leading_estimate": "0.00102329200906730469903917918412137181909908436806915103972861",
+        "over_t": "4845.93765099995326249698853675310826432067873223345567779583"
+      },
+      {
+        "k": 5,
+        "min_coefficient": "6652800",
+        "leading_estimate": "0.00102214535731639861352355838305915985916224763724331659216244",
+        "over_t": "4840.50752661408468616376248963502224092795846998167291640617"
+      },
+      {
+        "k": 6,
+        "min_coefficient": "889574400",
+        "leading_estimate": "0.00148933401204084668777554728396607422503994172239657289830428",
+        "over_t": "7052.94256176377561255554065883350104203334341454361717055217"
+      },
+      {
+        "k": 7,
+        "min_coefficient": "163459296000",
+        "leading_estimate": "0.00298209238638017416605371325926227868734264403148936304164101",
+        "over_t": "14122.1016541423049596320886612570816063226045838904155803102"
+      }
+    ],
+    "terms_scanned": {
+      "N_max": 12,
+      "count": 66,
+      "note": "k >= N vanishes identically (the j = N factor is zero)"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

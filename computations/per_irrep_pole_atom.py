@@ -186,6 +186,40 @@ def _write_chi_cache(
         "compute_time_sec_so_far": f"{elapsed:.3f}",
         "workers": workers_eff,
         "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+        # This cache is q0-INDEPENDENT, and saying so is the point.
+        #
+        # `chi_lambda_symbolic` delegates to `q_character_on_braid_word(...,
+        # Q)` where `Q` is a sympy SYMBOL, so every value stored below is a
+        # rational function of a formal q. Nothing in this payload is
+        # evaluated at a substrate pin: `convention` and
+        # `convention_fingerprint` derive from the braid WORD, and the rest is
+        # counts and timings. The module imports `Q as Q0_FLOAT` for its OTHER
+        # outputs; this writer never touches it.
+        #
+        # WHY IT IS DECLARED HERE AND NOT IN THE MANIFEST. This is a
+        # hand-rolled `write_text(json.dumps(...))` that never enters
+        # `WitnessBuilder.build()`, and the manifest is read inside build() --
+        # so a manifest entry for this stem would be INERT (mechanism 1 of
+        # docs/audits/2026-09-03-q0-anchor-refill-and-the-three-inert-
+        # declarations.md). Producer-side is the only route that reaches the
+        # file.
+        #
+        # WHY `independent` AND NOT `proton`. Two of these caches carried a
+        # hand-added `q0Anchor: "proton"` (chi-proton-h3 from a4d9906659,
+        # chi-helium-3-h9), asserting a pin a symbolic object does not have --
+        # the exact failure the field exists to prevent, and the one bean
+        # qou-q0rf warns about by name. Stamping `proton` to silence the
+        # ratchet would have been the wrong repair.
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Symbolic in q. chi_lambda_symbolic returns "
+            "q_character_on_braid_word(shape, crossings, Q) with Q a sympy "
+            "Symbol, so chi_q_symbolic holds rational functions of a formal "
+            "q, not values at a substrate anchor. convention and "
+            "convention_fingerprint derive from the braid word; the remaining "
+            "fields are partition counts, timings and worker count. No field "
+            "in this payload is evaluated at q0."
+        ),
         "chi_lambda_symbolic": [
             {"partition": list(lam), "chi_q_symbolic": s}
             for lam, s in sorted(out_str.items(),

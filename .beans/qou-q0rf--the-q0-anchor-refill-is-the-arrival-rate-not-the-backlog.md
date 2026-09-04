@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-09-04T04:34:01Z
+updated_at: 2026-09-04T06:44:37Z
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing
@@ -113,3 +113,44 @@ and the reason it is a genuine regression (the producer reads `Q_MP`, so
 Consequence for this bean's conclusion: unchanged, and if anything sharpened.
 A backlog that can be refilled by its own drains is even less amenable to
 being drained than one refilled only by new arrivals.
+
+
+---
+
+## 🛑 CORRECTIONS to my section above, and a verified all-clear on the hook (2026-09-04)
+
+**The arrival-rate check WORKS — verified by reproduction, not by reading.**
+Stripped `q0Anchor` from a stamped witness, staged it, fed
+`scripts/precommit-precision-warn.sh` the JSON payload the harness sends:
+**14 s, exit 0**, and it printed
+`REGRESSED computations/full-twist-delta-n2-verification.witness.json`.
+No gap. (My first attempt ran the hook **without stdin**, where it blocks
+forever on `cat`; it reached 643 s and I was one step from filing "the hook
+exceeds its own 130 s timeout so the q0 block never runs" — a measurement of my
+own invocation, not of the hook.)
+
+**"A drain of one q0 gate refilled another" is the wrong story.** Retracted in
+full on `qou-3f7a`. `9c2058f0bd` re-ran a **bare producer** that emits no
+provenance; the `q0Anchor: proton` it erased was hand-added downstream by
+`a4d9906659` and was **wrong** — the cache is symbolic in q. So this is not a
+new refill mechanism; it is the bare-producer class AGENTS.md already names.
+
+**And my "12 strip events in 130 commits" was 4x too high.** That scan matched
+diff LINES (`-"q0Anchor"` with no `+`), so it counted **JSON key reordering** as
+stripping: `c29e0752bb` "stripped" nine anchors that are present before AND
+after. Measured at the VALUE level (parse both revisions, compare the field):
+
+    VALUE-LEVEL strips, 0465ce1ec5..HEAD (130 commits):  3
+      6c5bb855a9  probes/arc-count-diagnostic-degeneracy   (repaired)
+      6c5bb855a9  probes/bpp-higher-a-sparse               (repaired)
+      9c2058f0bd  chi-neutron-h3                           (bare producer)
+
+An earlier awk version of the same scan said **2**, because it reset the
+filename before evaluating its print condition and could emit at most one hit
+per commit. Three passes, three numbers; only the value-level one is quotable.
+
+**Consequence for this bean:** the arrival-rate half is genuinely closed and
+verified. The live regression rate is ~1 per 130 commits, and that one is a
+producer defect rather than a committer error — so **do not upgrade the hook to
+blocking on the strength of it.** The remaining work is the backlog, which this
+bean already says not to drain.
