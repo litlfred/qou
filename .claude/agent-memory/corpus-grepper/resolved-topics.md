@@ -126,8 +126,22 @@ date*. This is the entry type that saves the most work.
     **So do NOT propose any higher `μ̄` / linking-integral route for the
     T=0/T=1 split** — including Evans–Berger nth-order linking below, which is
     inside this closed subclass. Still open: an invariant reading the braid word
-    BEYOND its linking data, a non-Milnor super-pairwise object, or anything
-    carrying SPIN (the same wall bean `qou-7zob` reaches from the flavour side).
+    BEYOND its linking data, or a non-Milnor super-pairwise object.
+  - **🛑 CORRECTION 2026-09-04 — the line above used to end "…or anything
+    carrying SPIN (the same wall bean `qou-7zob` reaches from the flavour
+    side)". SPIN IS NOT A ROUTE, and `qou-7zob` says so rather than agreeing
+    with it — I cited a bean for the opposite of what it states.** In the
+    S-wave Pauli LOCKS spin to isospin (`S=1 ⟺ T=0`, `S=0 ⟺ T=1`), so a
+    Pauli-consistent interface carries a projector in each SU(2) with the roles
+    exchanged and the same two scalars multiply to the same number:
+    `QOU.QBeta.InterfaceScalar.separable_interface_degenerate`
+    (`InterfaceScalar.lean:628`, sorry-free). Its docstring carries the sharper
+    half — *"the conclusion holds for **every** `fSpace`, so no choice of space
+    index rescues a separable interface"* — and the one surviving shape
+    (non-separable `(S,L)` tensor coupling, bean `qou-vbyi`) is closed by
+    `TensorCouplingCannotUnbindSinglet` (#6488). **The real residue is that
+    theorem's own hypothesis**: `fSpin s1 = fIso t1`, `fSpin s0 = fIso t0` —
+    the two SU(2)s carrying the SAME scalars is ASSUMED, not derived.
   - *Library:* higher (4th, nth-order) linking integrals + braid winding numbers
     are in `library/1992evansberger/ocr/page-007..011.txt` (**ocr/ only**;
     `sections/` is 437 B). Habegger–Masbaum 2000, Bar-Natan 1995, Birman–Lin
