@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T02:33:06Z
+updated_at: 2026-09-04T02:47:34Z
 ---
 
 
@@ -795,3 +795,67 @@ ERROR LEDGER, entry 5 -- and a DIFFERENT class from 1-4. Those compared quantiti
 different objects. This one COMBINED two correct measurements into a composite never measured, and
 the wrong composite changed a recommendation. Guard: a bound composed from other bounds is a
 hypothesis, not a measurement -- measure the composite before quoting it.
+
+
+2026-09-04 (branch claude/m1-k5r5-envelope-convergence-2026-09-04): THE RATIO ROUTE IS THE TARGET --
+and it is nearly lossless. Retracts a claim merged in #6528 the day before.
+
+MEASURED (_ingredient_envelope_convergence.py, exact Fraction over all partitions to n=46, NO
+float64, exit 0), budgets in MARGIN units at the proved n^-1/2 rate, sup over n>=16:
+
+  C_rho   (linear)              0.0122554
+  C_A     (x sig_inf/2)         0.113046
+  C_D     (x sig_inf/2)         0.162893
+  three-ingredient C_rho+C_A+C_D  0.288194   waste 4.972x   headroom  9.258x
+  C_ratio (x sig_inf/2)         0.0536527
+  ratio route C_rho+C_ratio       0.0659081  waste 1.137x   headroom 40.482x
+  C_true                          0.0579688                 headroom 46.027x
+
+=> Bound rho_P and the RATIO V_D/V_A separately and add: 1.137x lossy, 40.5x of the 46x headroom.
+NOT V_D and V_A individually (9.26x), and NOT a bespoke cancellation-preserving argument (buys
+<=1.14x over the ratio route and is far harder).
+
+RETRACTS from #6528: 'the rest lives in the leg-vs-leg cancellation, which a ratio bound does not
+capture; recovering it needs rho_P and the sigma-ratio handled TOGETHER, not two tight bounds
+added.' Two tight bounds added cost 1.137x. Reason is structural: a cancellation between two terms
+can only cost a budget when they are COMPARABLE, and at the envelope level C_rho is 23% of
+C_ratio. The cancellation that mattered was V_D-vs-V_A, and the ratio bound captures exactly it.
+
+SMALLER SELF-CORRECTION: #6528's three-ingredient figure 0.279796 (9.536x) is max_n[NAIVE(n) sqrt n],
+the SUP OF THE SUM. A per-ingredient proof reports the SUM OF THE SUPS = 0.288194 (9.258x). Quote
+0.288194.
+
+ENVELOPES ARE SETTLED (nothing had checked this; every headroom figure assumed it). Running max of
+|Q| n^p from N upward: at p=1/2 all five FALLING (0.65-0.82); at p=1, L_rho FLAT (0.962, so rho_P's
+deviation is Theta(n^-1)) and the other four FALLING (0.71-0.80). Nothing RISING => each window sup
+OVER-estimates the sup over n>=79, the conservative direction. Still an extrapolation: window ends
+at n=46.
+
+n<=78 PREMISE VERIFIED, not inherited. Five corpus sites assert it and none is the artifact (one is
+my own probe from yesterday, which took it from the others). b1-kappa-window-extension.witness.json
+(allPassed true, exact Fraction Plancherel summation over every partition) certifies kappa_n >= kappa
+= 128/(225 pi^2) > 0 to n=78. C <= m_inf sqrt(79) = 2.6681 STANDS.
+
+NEXT: a rigorous finite-n bound on V_D/V_A. Leading order is ALREADY rigorous for V_D
+(_VD_ceiling_rigorous.py: V_D < 64/(75 pi^2) by certified interval arithmetic + explicit analytic
+tail majorant, over V_D = sum_{k odd>=3} (Ohat_k - Ahat_k)^2/k with elementary closed forms). The one
+open input is the finite-n RATE for that Fourier-side sum, and specifically for the ratio -- a
+different and empirically much better-behaved object than either variance. Whether the closed forms
+extend to a finite-n remainder with an explicit constant is NOT settled and is not claimed.
+
+
+ADDENDUM (same probe, p=1 rate). NOT proved -- the proved shape is n^-1/2 (PR #5929) -- but the
+envelopes are consistent with it. At |m - m_inf| <= C'/n the requirement is N0 = C'/m_inf <= 79,
+i.e. C' <= m_inf*79 = 23.7147, a LINEAR relaxation:
+
+  three-ingredient 1.37319   headroom 17.27x
+  ratio route      0.352994  headroom 67.182x  (waste 1.12x)
+  C'_true          0.315118  headroom 75.257x
+
+ORDER THE LEVERS. Three-ingredient -> ratio route is worth 4.37x at p=1/2; p=1/2 -> p=1 is worth
+only 1.66x (40.48 -> 67.18). DO THE RATIO BOUND FIRST; the better rate is the smaller lever.
+
+METHOD NOTE, and it is the guard from the entry above firing in real time: I first computed the
+p=1 ratio-route headroom BY HAND from the running-max tables and got 89x. Measured, it is 67.18x --
+I had combined running-max values taken at two different N. Same failure class as the retracted
+'order of magnitude'. The arithmetic now lives in the producer, not in prose.
