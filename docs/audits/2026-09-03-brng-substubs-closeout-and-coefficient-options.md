@@ -106,6 +106,69 @@ their risks:
 It is closeable only by a *derived* per-bond normalisation (route 1 or 2), and
 absent that, route 3 is the honest terminus. Do not chase the ℏ_q² fraction.
 
+## 6. Routes 1 and 2 explored — route 2 is CLOSED by a sibling; route 1 is a NULL (added 2026-09-04)
+
+§4 offered three routes. Both categorical ones have now been run down. **§4's
+route-2 recommendation is superseded and is corrected here.**
+
+### 6.1 Route 2 (self-vs-mutual linking split) — CLOSED, scope-(b), not by me
+
+A sibling session landed the closure on `main` within a day of §4 being written
+([`two_nucleon_linking_matrix_channel_blind_probe.py`](../../computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py);
+audit [`2026-09-03-two-mubars-selector-vs-magnitude.md`](2026-09-03-two-mubars-selector-vs-magnitude.md)).
+The inter-nucleon linking number **is** the isospin projection
+(`lk = writhe/2 = I₃`: pp → +1, nn → −1, pn → **0**), so the whole linking class
+is **channel-blind** — and both binding channels sit at `I₃ = 0`. Composed with
+Milnor indeterminacy this is a **scope-(b) structural exclusion of the class**.
+Three sibling routes closed alongside it (isospin `R = 1` everywhere; the
+block-transposition ceiling of 9 against 33.7; the Ocneanu/Markov trace-family
+rank bound).
+
+**Do not re-attempt route 2.** §4 called it "the one categorical question left";
+that is now wrong.
+
+### 6.2 Route 1 (quantised carrier-crossing correction) — NULL, and the entropy guard is why
+
+Route 1 was tested as a **formalize-first class prune** rather than a search
+([`coefficient_quantisation_reachability_probe.py`](../../computations/probes/coefficient_quantisation_reachability_probe.py)):
+carrier-crossing invariants are ratios of *integer* crossing counts
+(`bRatio = c₃/c₂ − 3`, `QOU.Mass.CarrierCrossingQuantisation`), so the question
+is whether the *required* per-nucleus corrections are reachable as
+small-denominator rationals. Verdict rule fixed before reading the numbers
+(`q ≤ 12`, 2 %).
+
+| atom | required correction | best `p/q` (q≤12) | rel err | # admissible |
+|---|--:|--:|--:|--:|
+| D | 0.785190 | 7/9 | 0.0094 | 2 |
+| T | 1.279123 | 14/11 | 0.0050 | 3 |
+| ³He | 1.580312 | 19/12 | 0.0019 | 4 |
+| ⁴He | 3.259250 | 13/4 | 0.0028 | 6 |
+| ⁶Li | 2.201912 | 11/5 | 0.00087 | 4 |
+| ⁷Li | 2.141276 | 15/7 | 0.00074 | 6 |
+| ⁷Be | 2.267718 | 25/11 | 0.0022 | 4 |
+
+**Every** required correction lands within 2 % of a small-denominator rational.
+Read naively that is seven-for-seven and would have been reported as a lead.
+**It is not one.** The entropy guard — the last column — shows a mean of **4.14
+distinct admissible rationals per nucleus**, so landing near a small rational is
+*expected by chance* at this denominator bound and tolerance and carries **no
+evidence**. The best rationals (7/9, 14/11, 19/12, 13/4, 11/5, 15/7, 25/11) show
+no coherent pattern, and the corrections are A-dependent with a **4.15× spread**
+— no single carrier ratio tracks them.
+
+**Verdict: NULL (scope-(a)).** The quantised carrier class is neither excluded
+nor supported. Recorded so the next agent does not read the seven rational hits
+off the table and mistake them for a closure.
+
+### 6.3 Where that leaves the coefficient
+
+With route 2 closed scope-(b) and route 1 null, **§4 route 3 — the honest
+negative — is now the supported reading, not merely the fallback**: the
+framework fixes the binding *form* (extensive log-family on the Lean-forced
+chain) but not its *coefficient*, and the two categorical routes that could have
+supplied one are respectively dead and uninformative. `qou-brng` remains open;
+nothing here closes it, and nothing here licenses a fit.
+
 ## 5. Cross-references
 
 - Taxonomy + chain-forced: `qou-ge9f`, `qou-gwr9`,
