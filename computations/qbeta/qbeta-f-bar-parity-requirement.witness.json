@@ -1,0 +1,50 @@
+{
+  "description": "Is the Q_beta correction factor F required to be bar-even? No -- Q_A carries no bar parity to divide out, so bar-evenness of F is unsatisfiable, not merely un-required. Answers the open question at the end of bean qou-cds1.",
+  "engine": "sympy (exact symbolic; no floating point)",
+  "data": {
+    "Q_A_over_me": "Mul(Integer(-1), Rational(1, 2), Pow(Symbol('q', positive=True), Integer(-3)), Add(Symbol('q', positive=True), Integer(1)), Add(Pow(Symbol('q', positive=True), Integer(2)), Mul(Integer(-1), Integer(2), Symbol('q', positive=True)), Integer(-1)))",
+    "Q_A_over_me_pretty": "-(q + 1)*(q**2 - 2*q - 1)/(2*q**3)",
+    "bar_ratio": "-q**3*(q**2 + 2*q - 1)/(q**2 - 2*q - 1)",
+    "bar_ratio_equals_plus_one_at": [
+      "1"
+    ],
+    "bar_ratio_equals_minus_one_at": [],
+    "residue_after_stripping_minus_q_cubed": "(q**2 + 2*q - 1)/(q**2 - 2*q - 1)",
+    "residue_is_monomial": false,
+    "controls": {
+      "h = q - 1/q": -1,
+      "[2]_q = q + 1/q": 1
+    },
+    "domain_note": "q^2-2q-1 < 0 at q0~1.11 and at its bar image 1/q0~0.901, so |.| resolves consistently on both sides",
+    "scope": "(a) -- on the requirement as the chain states it, not a proof that no representation-theoretic argument could impose one",
+    "flagged_not_resolved": "three-calibration-discipline-proof.md:33-36 and AGENTS.md:1937 call this same closed form 'the bar-odd (sinh) partner'; it is not bar-odd. Either the prose means the channel rather than the expression, or the two are inconsistent -- an owner call, not a symbolic one."
+  },
+  "assertions": [
+    {
+      "name": "Q_A_is_not_bar_even",
+      "passed": true,
+      "detail": "bar(Q_A)/Q_A is not identically +1; it equals +1 only at q=1, where bar is the identity"
+    },
+    {
+      "name": "Q_A_is_not_bar_odd",
+      "passed": true,
+      "detail": "bar(Q_A)/Q_A = -1 at no positive real q"
+    },
+    {
+      "name": "no_power_of_q_restores_parity",
+      "passed": true,
+      "detail": "after stripping -q^3 the residue is a ratio of two distinct irreducible quadratics (roots -1+sqrt2, 1+sqrt2), not a monomial"
+    },
+    {
+      "name": "controls_detect_known_parities",
+      "passed": true,
+      "detail": "h -> -1 (bar-odd), [2]_q -> +1 (bar-even)"
+    },
+    {
+      "name": "F_bar_evenness_is_unsatisfiable_not_merely_unrequired",
+      "passed": true,
+      "detail": "F = Q_beta^exp/Q_A with Q_beta^exp bar-even trivially, so F's parity is Q_A's; Q_A has none, so no F multiplying it is bar-even"
+    }
+  ],
+  "allPassed": true
+}

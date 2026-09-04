@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T14:54:57.192099+00:00",
-  "commitSha": "7fac4b69991837790f4ec15817c191dc3df61232",
+  "computedAt": "2026-09-04T02:58:49.381173+00:00",
+  "commitSha": "6a22e17a4e8abdfd31e1d9f72dd4ad8de5d08b58",
   "assertions": [
     {
       "name": "denominator_degree6_factor_is_exactly_the_numerator_of_J_62",
@@ -45,8 +45,8 @@
   "durationMs": 1,
   "computation": "r5full-anchor-gate-divisibility",
   "scriptFile": "r5full_anchor_gate_divisibility_probe.py",
-  "scriptHash": "405f38ef8bf0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c630c17eb6cc",
+  "scriptCommitSha": "8da6e65a96b05827bb07393add4bfe23a4622345",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,5 +100,7 @@
       "kind": "(a), on the evidence rather than on the knot",
       "not_shown": "that D's atom link is not 6_2 by some other route. What is shown is that the HECKE-LEVEL identification fails in a way no framing or normalisation convention can repair."
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Works entirely in Q[q]: sympy factorisation, polynomial division after q -> t^2, gcd and irreducibility over Q on a symbolic q. No numerical substitution occurs on any path, so no q0Value exists."
 }

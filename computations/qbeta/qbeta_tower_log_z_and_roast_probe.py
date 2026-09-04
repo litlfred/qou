@@ -79,7 +79,13 @@ Correlation of the residual `B/(E_0.S)` against the three SEMF shapes:
 
 The decision frame named the surface term / edge set as "the strongest lead".
 That was wrong by a factor of four in correlation. The lead is the symmetry
-energy, which is `qou-ubsl` (isospin/SU(4) Casimir on the Wedderburn partition).
+energy. 🛑 **But the route is closed** (corrected same day): `qou-ubsl` — the
+isospin/SU(4) Casimir on the Wedderburn partition — is a COMPLETED bean, shut by
+this arc's own row cap (`l(lambda) > 2 => y_lambda = 0`, `QOU/Hecke/RowCap.lean`)
+since SU(4) labels need four rows, and by `C_2^GL(4) - C_2^GL(2) = 2n` collapsing
+the SU(4) label to the SU(2) isospin the trace already carries. The measurement
+stands; the inference that it points somewhere does not. The symmetry energy is a
+named gap with NO available route.
 
 *** 4. WHY OPTION A FAILS, IN ITS FINAL FORM ***
 
@@ -337,8 +343,9 @@ def main() -> int:
               ca > 4*cs, True,
               f"|corr| {mp.nstr(ca,4)} vs {mp.nstr(cs,4)} -- the decision frame "
               "named the surface term / edge set as the strongest lead. Wrong "
-              "by 4x in correlation. The lead is qou-ubsl (isospin/SU(4) "
-              "Casimir), not qou-h7mh")
+              "by 4x in correlation. But the isospin/SU(4) route (qou-ubsl) is "
+              "a COMPLETED bean, closed by this arc's own row cap -- so this is "
+              "a named gap with NO route, not a lead. Corrected same day")
 
     print("\n" + "=" * 78)
     print("4. WHY OPTION A FAILS — Delta_tr/tr_free = 1 - exp(-S) SATURATES")

@@ -1,11 +1,11 @@
 ---
 # qou-vtau
 title: 'The post-merge check `git diff origin/main <merged-head>` is TAUTOLOGICAL — it cannot detect a dropped commit'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-15T23:30:00Z
-updated_at: 2026-08-15T23:30:00Z
+updated_at: 2026-09-04T08:40:00Z
 ---
 
 ## The trap
@@ -75,3 +75,32 @@ A verification that **cannot fail** is not a verification. When a check passes
 first time, every time, on every PR, that is evidence about the *check*, not
 about the code. Ask what result would have failed it — and if the answer is
 "none reachable from here," replace it.
+
+
+## CLOSED 2026-09-04 — and I left it stale for a full session after doing the work
+
+The fix merged to `main` this morning as `3bd8b7689c3` and `711a163a8c1`;
+`scripts/verify-merge-replay.py` is on `main` now. **The bean stayed `todo`
+anyway**, and it was found not by me remembering but by
+`scripts/bean-completion-candidates.py` -- the audit written in the SAME session,
+looking for exactly this defect in other people's beans. It flagged mine.
+
+That is the finding worth keeping. Closing a bean is a separate act from doing
+the work, it is easy to drop, and an agent that has just spent a session on
+backlog hygiene will still drop it. Which is the argument for the audit rather
+than for resolving to be more careful.
+
+### What actually landed
+
+The gap was that `prepare-merge-auto` Phase 5 prescribed NO post-merge
+verification -- not the tautological `git diff origin/main <merged-head>`, not a
+real one. So this bean's own title ("the check is TAUTOLOGICAL") was itself
+wrong: the check was ABSENT. Recorded in the fix commit rather than quietly
+reworded.
+
+`verify-merge-replay.py` compares PATCH-IDs, which survive a rebase, over the
+merge range; `--selftest` synthesises a dropped commit and asserts (a) the
+patch-id check reports it and (b) the tautological check does not, so a checker
+that always says "0 missing" cannot pass itself off as working. Retroactive run
+over ~30 merged branches: 0 real drops, and one false positive that was a
+limitation of the SWEEP's merge-detection heuristic, not of the replay check.

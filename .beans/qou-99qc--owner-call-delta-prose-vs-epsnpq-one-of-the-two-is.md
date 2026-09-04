@@ -371,3 +371,56 @@ under either functional.
 Controls included so the rank is not an artifact: each covector is verified to
 reproduce its functional on every basis element, and the augmentation is
 verified multiplicative on the generators rather than assumed from its shape.
+
+## 2026-09-04 — CORRECTION to this bean: the "1279 ppb is a truncation" reading is backwards
+
+This bean records, under §"THE CONVENTION FEE, priced":
+
+> "ALSO MEASURED, and it corrects the dashboard reading: AGENTS.md's '1279 ppb'
+>  is EXACTLY the 2-rung truncation (computed 1279.465 ppb). The full five
+>  rungs reach 37.7 ppb -- 4.8x short of the 7.8 ppb L2 target, not 164x."
+
+**Every number there is right. The reading is backwards, and acting on it
+would have been an anti-laundering violation.** I set out to correct AGENTS.md
+from 164x to 4.8x and the measurement refused.
+
+Probe: `computations/qbeta/qbeta_dashboard_rung_gate_is_not_a_truncation_probe.py`
+(7/7).
+
+**`per_observable_100x_status.py` does not truncate.** It walks the c_k cache
+and `break`s at the first rung whose `tier` is not `derived`, for the reason
+stated in its own source:
+
+    "The dashboard headline reports the deepest cumulative DERIVED rung only;
+     cal-anchored rungs are cached for downstream reuse but NEVER counted
+     toward a 100x/1x pass (that would be circular)."
+
+And `qbeta-ck-cache.witness.json` holds exactly two rungs:
+
+    k=2  tier=derived       lean-proved, Taylor-exact, q0-independent
+    k=3  tier=cal-anchored  extracted from CODATA Q_beta at canonical q0
+
+So the gate fires at k=2 **by design**, and the rungs carrying the error from
+1279 ppb to 37.7 ppb are extracted from the very measurement being predicted.
+
+**Both figures are real and they answer different questions:**
+
+    1279 ppb (164.0x)  deepest DERIVED rung -- parameter-free. The L2 status.
+    37.7 ppb (4.836x)  full ladder INCLUDING cal-anchored rungs. A statement
+                       about ladder convergence, NOT an accuracy result.
+
+This is the distinction AGENTS.md already draws at CAL-1 and CAL-2 ("an m_mu
+value computed at the muon q0 is the calibration tautology, not an accuracy
+win"), one tier down on the c_k ladder. **AGENTS.md's 1279 ppb / 164.0x is
+correct as written and is deliberately left unedited.**
+
+**Method note, because it nearly produced the opposite report.** The dashboard
+stores `err_ppb` as the STRING `'1279.'`. A numeric scan (`isinstance(v,
+float)` over the witness tree, looking in [1000, 2000]) returns nothing, and
+reads as "the dashboard no longer carries this figure" -- the exact inverse of
+the truth. I wrote that conclusion down before catching it. Match on the
+string. Pinned as an assertion in the probe so it cannot recur silently.
+
+Nothing in the convention-fee pricing (items 1 and 3, the colour-blind
+crossing and the muon pin) is affected; those stand. Scope-(a): nothing wired,
+no content block edited.
