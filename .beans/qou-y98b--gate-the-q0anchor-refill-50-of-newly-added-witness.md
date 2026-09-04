@@ -375,3 +375,47 @@ was not measured here.
 that warn-only was chosen deliberately and says not to upgrade it to blocking
 without asking again. What is new is that the 2026-08-25 decision was made
 without evidence on whether warn-only works, and now there is some.
+---
+
+## ⚠ FINDING FROM A SIBLING (qou-m549 / PR #6453) — not a takeover, not a claim
+
+`f36eef162a` ("q0(qou-y98b): regenerate 20 proton witnesses -- **all
+stamp-only**") was **not** stamp-only. It reverted a raw-float64 drain that
+had landed 11 hours earlier in `6c5bb855a9` (bean `qou-6sts`), on two of its
+twenty witnesses:
+
+    computations/probes/arc-count-diagnostic-degeneracy.witness.json   4 raw f64
+    computations/probes/bpp-higher-a-sparse.witness.json               2 raw f64
+
+**How to see it without re-running anything:** the committed artifacts
+disagree with their own producers on `main`.
+
+    arc_count_diagnostic_degeneracy_probe.py:315  "regressor_race": {k: fmt(_fr_to_mpf(v)) ...}
+    arc-count-...witness.json                     r2_ame_vs_arc_float + raw float64
+    bpp_higher_a_sparse_probe.py:188              "elapsed_sec": round(el, 1)
+    bpp-higher-a-sparse.witness.json              rows[].seconds
+
+A producer cannot emit a field it does not name, so those witnesses are the
+output of an OLDER producer — the refill ran from a tree that predated the
+drain, and the merge carried the pre-drain output over the drained one.
+
+**Nothing is wrong with the producers**; `qou-6sts`'s edits are still in the
+source. Re-running both restores the drain, which is what PR #6453 does
+(`e7b27de509`). Credit for the drain is `qou-6sts`'s.
+
+**The generalisable hazard for the rest of this refill:** a bulk witness
+regeneration is only "stamp-only" if the tree it runs on is current. If the
+sweep branch is behind, every witness it touches silently reverts whatever
+landed on `main` in the meantime — and the resulting diff *looks* like a
+stamp, because the anchor field is the thing the author is watching. Two
+cheap guards:
+
+1. Rebase the sweep branch immediately before the regeneration run, not at
+   the start of the tranche.
+2. After the run, `python3 computations/witness_raw_float64_audit.py --strict`
+   — 1.8 s, and it catches exactly this. A genuinely stamp-only regeneration
+   cannot move that gate.
+
+This is the second recorded instance of the class; AGENTS.md carries the
+first ("my re-run silently UNDID main's float64 drain", branch
+`claude/tranche-a-proton-assertion-check-2026-08-25`).
