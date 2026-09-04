@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-04T14:00:37Z
+updated_at: 2026-09-04T20:56:55Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -139,3 +139,79 @@ muon to close the flip would spend the whole 19-atom budget producing a witness
 at the anchor the ruling says is wrong, and constraint 4 (manifest and witness
 land together) then requires the same run again. The flip should not be closed
 before the classification is.
+
+
+---
+
+## RETRACTION 2026-09-04 — "nobody had got past A=2" is FALSE
+
+The update immediately above says the deuterium row is *"new — nobody had it,
+because nobody had got past A=2."* **That is wrong.** It is in this bean, in
+`qou-bypn`, and in the body of PR #6678, which is now merged to `main`.
+
+`qou-sv7h` got there first and went further. Two commits, both dated
+2026-09-03, both **already in the tree my run used**:
+
+- `815b2a46a0` — wires the Rust LP-accumulator kernel into
+  `unified_iterative_correction` and `atom_character_raw`; `binding_energy`
+  runs end to end for the first time. **deuterium `B_pred = -7.271102125 MeV`
+  in 942.3 s**, wrong sign against AME `+2.224566`.
+- `7b8625230c` — **tritium too**: `-7.742121347` against AME `+8.481796`.
+
+So the corpus already had the sign, at two atoms, before my run.
+
+**And their reading of it is better than mine.** I reported the sign. They
+report the *shape*, which is the informative part: from A=2 to A=3 the
+prediction moves `-7.271 → -7.742` (**6.5 %**) while experimental binding moves
+`2.225 → 8.482` (**+281 %**). The accumulator is nearly **A-independent** where
+real binding grows roughly linearly in A. A sign flip therefore does not supply
+what is missing — whatever is missing is **extensive in A**, which lands exactly
+on the standing open problem in AGENTS.md (the super-pairwise additive extensive
+object the six Δ_λ ansätze failed to produce, with the pairwise cap
+`exchangeDet_pow_two_le_four`). They also establish the sign was **already
+negative before** their correction, so it is not "the fix broke the physics" —
+the accumulator has been wrong-signed all along and nobody could see it because
+the function could not complete.
+
+What survives from my run: the four-atom `tr_M` drift table, and the
+independent corroboration of this bean's `tr_M(protium) = 1.1463376906350053`.
+
+## What the retraction UNCOVERS — a 17.3 % gap on identical code
+
+Setting the two deuterium numbers side by side is worth more than either alone:
+
+| run | stem | anchor | `binding_energy(1,1)` |
+|---|---|---|---|
+| `qou-sv7h` | standalone | **proton** (default) | **−7.271102125** |
+| mine, via `hadron_knot_table` | `hadron_knot_table` | **muon** (`ideal_muon`) | **−8.5281** |
+
+**17.3 % apart, and the code was identical.** Measured, not assumed:
+
+- `git log 7b8625230c..6238f50999 --` over `hecke_core_legacy.py`,
+  `hadron_knot_table.py`, `tools/pyhecke-native/`, `tools/hecke-engine/`,
+  `tools/pyhecke/` is **empty** — no change to any part of the binding path
+  between their measurement and my run-time base.
+- `pyhecke_native` **0.9.0 present**, so both took the Rust kernel path, not
+  the Python fallback.
+- `hadron_knot_table.compute_atom` is `B = binding_energy(Z, N)` with **no
+  additional terms** — we measured the same quantity.
+
+The one difference I can name is the **anchor**: `q_parameter` resolves it from
+`sys.argv[0]`'s stem, `hadron_knot_table` is listed `ideal_muon`, and any
+other stem gets proton.
+
+**If that is the cause it is a serious finding**, because the two pins differ by
+**11.6 ppb** and the outputs differ by 17.3 % — an amplification of order
+**1.5e7**. That would make every number out of this accumulator
+anchor-dominated, and it is consistent with `qou-sv7h`'s own finding that
+`hecke_core_legacy.py:1604`'s `math.log(abs(tr_run))` narrows to **float64
+inside the loop**, upstream of any cast.
+
+**NOT ESTABLISHED — this is a hypothesis with the alternatives named, not a
+result.** Untested alternatives: their harness may differ from a bare
+`binding_energy(1,1)` call in some way their commit does not state; and their
+`B_pred` may be reported at a different point in the accumulation than
+`compute_atom`'s `B`. The decisive test is one ~15-minute run of
+`binding_energy(1,1)` from a non-`ideal_muon` stem: reproducing −7.2711
+confirms the anchor, reproducing −8.5281 refutes it and points at the harness.
+That run is in flight; **do not quote the amplification figure until it lands.**
