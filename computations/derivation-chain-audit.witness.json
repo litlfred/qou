@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T21:51:12.975646+00:00",
-  "commitSha": "e68347cc12a78663fd200ce6a64f80ec29b1c1db",
+  "computedAt": "2026-09-04T22:08:09.150108+00:00",
+  "commitSha": "28d23398da68cc8e8d048e7a9ae26c3d0760fc78",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -643,7 +643,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3bb00f5477af",
@@ -4914,6 +4914,7 @@
         "dt-d1c-v4-blocks-plus-abelian-bar-ray.witness.json",
         "dt-third-knot-trefoil-count.witness.json",
         "fbor-normalisation-barsymmetry.witness.json",
+        "frakd-beta-is-not-a-decay-width.witness.json",
         "gram-convention-d-singularity-structural.witness.json",
         "gram-mp-path-convention-d-migration.witness.json",
         "h3-markov-trace-cyclicity-preflight.witness.json",
