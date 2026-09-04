@@ -83,7 +83,19 @@ COMP = str(_COMP)
 set_compute_dps()
 
 # muon-canonical q0 (the computations/ layer convention; AGENTS.md q0-convention)
-Q0_STR = "1.10997859555733471"
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
+# "1.10997859555733471" -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 (fca08de7d2) by the live CODATA-2022 lepton-ratio derivation.
+# A frozen literal cannot follow the anchor when it moves, and this producer
+# was UNSTAMPED, so the anchor audit filed it Q0_ANCHOR_MISSING rather than
+# Q0_FLIP -- invisible to the corpus-wide drain, which keys on stamps.
+# It resolves the PROTON pin per the owner directive of 2026-08-15, sharpened
+# 2026-08-30: proton unless the producer is (E1) an explicit mu-vs-p
+# comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
+# -- it is a sole-anchor probe that happened to be muon-named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 
 _WSGN = {("p", "p"): 1, ("n", "n"): -1, ("p", "n"): 1, ("n", "p"): 1}
 # words (Z protons first). 3H = pnn (Z=1), 3He = ppn (Z=2).
@@ -229,7 +241,8 @@ def main() -> int:
             "axis": "Delta_lambda magnitude -- b4 pole regulator / alpha-magic (Frontier A cont.)",
             "builds_on": "PR #4084 b4_deformed_sspole_sector_probe.py + B4CumulantBarEven.lean",
             "inter_cluster_audit": "docs/audits/2026-07-13-inter-cluster-bond-term-derive-or-refute.md",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+            "q0": Q0_STR,   # record the pin used, so a reader need not infer it
             "no_fit": True,
         },
     }

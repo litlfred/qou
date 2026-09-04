@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:01:06.985434+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:31.601368+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "rank_sequence_equals_C4A",
@@ -51,8 +51,8 @@
   "durationMs": 0,
   "computation": "b4-slater-antisymmetrizer-exchange-sign",
   "scriptFile": "b4_slater_antisymmetrizer_exchange_sign.py",
-  "scriptHash": "14293249823b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "1c1548f32144",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,7 +67,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -111,15 +111,15 @@
       "attractive_channel_confirmed": true,
       "rows": {
         "z_naive": {
-          "magnitude": "0.499320334033561272",
+          "magnitude": "0.499320334183694452",
           "eigs": [
-            "-1.11651420945",
-            "-0.499320334034",
-            "0.499320334034",
-            "1.11651420945"
+            "-1.11651420978",
+            "-0.499320334184",
+            "0.499320334184",
+            "1.11651420978"
           ],
-          "det_I_plus_G": "-0.185120479337347141",
-          "det_closed_form_(1-5m2)(1-m2)": "-0.185120479337347141",
+          "det_I_plus_G": "-0.185120479863117315",
+          "det_closed_form_(1-5m2)(1-m2)": "-0.185120479863117315",
           "det_matches_closed_form": true,
           "physical_det_gt_0": false,
           "has_negative_eigenvalue": true,
@@ -127,20 +127,20 @@
           "minus_ln_det_dimensionless": "undefined(det<=0)"
         },
         "g_reeb": {
-          "magnitude": "0.446727067798147204",
+          "magnitude": "0.44672706790566138",
           "eigs": [
-            "-0.998912090986",
-            "-0.446727067798",
-            "0.446727067798",
-            "0.998912090986"
+            "-0.998912091226",
+            "-0.446727067906",
+            "0.446727067906",
+            "0.998912091226"
           ],
-          "det_I_plus_G": "0.00174065339290472883",
-          "det_closed_form_(1-5m2)(1-m2)": "0.00174065339290472883",
+          "det_I_plus_G": "0.00174065300825100135",
+          "det_closed_form_(1-5m2)(1-m2)": "0.00174065300825100135",
           "det_matches_closed_form": true,
           "physical_det_gt_0": true,
           "has_negative_eigenvalue": true,
           "binding_det_lt_1": true,
-          "minus_ln_det_dimensionless": "6.35349472308"
+          "minus_ln_det_dimensionless": "6.35349494406"
         }
       },
       "verdict": "DERIVED (parameter-free, no fit): a negative eigenvalue (-sqrt5*mag) is always present so the dictionary's net-attractive branch (s=-1, B=-ln det(I+G)) is realized for any magnitude; det<1 => binding; and PHYSICALITY det>0 requires mag<1/sqrt5, EXACTLY the derived writhe cap. Naive z=0.4993 is excluded (det<0); reeb g=0.4467 sits just below the ceiling."
@@ -159,8 +159,11 @@
   "context": {
     "axis": "GAP-A-4 class-D -- [1^4] connected b4 value leg (locality + exchange sign)",
     "spec": "docs/design/2026-07-06-gap-a4-b4-branching-projector-construction-spec.md",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T06:48:23.631266+00:00",
-  "commitSha": "66f34abd7abdeac230095cfcb7aee8303cf3d131",
+  "computedAt": "2026-09-04T00:42:58.427391+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -56,17 +56,20 @@
     },
     {
       "name": "single_m_lands_both_targets",
-      "computed": "False",
-      "expected": "False",
-      "passed": true
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "m values",
+      "source": "Coherence count over the branches examined (writhe_fix_rho4, iso_bareven_fix_rho4). Each candidate m lands ONE target exactly by construction of the bisection that produced it, and each rho is monotone in m on its branch, so these are the only m that can land both. WRITHE at rho4=T4 gives rho3 off -35.3%; ISO bar-even at rho4=T4 (m=0.31900, all dets positive, so NOT excluded on physicality as the old note claimed) gives rho3_even off -9.9%; WRITHE rho3=T3 has no root at all in the physical window. Gate: 5%, matching writhe_forced_rho3_misses_target_gt5pct."
     }
   ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "65d391861c90",
-  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "scriptHash": "0e84eb2c0dbb",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +84,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -94,9 +97,9 @@
   "tier": "structural (exact det closed forms + bar-parity argument; no fit, no AME inversion)",
   "result": {
     "bar_parity_of_parameter_free_magnitude": {
-      "g_reeb": "0.446727067798147204",
+      "g_reeb": "0.44672706790566138",
       "g_reeb_bar_even": true,
-      "z_naive": "0.499320334033561272",
+      "z_naive": "0.499320334183694452",
       "z_naive_bar_even": true,
       "consequence": "m(q^-1)=m(q) => b_A(q)=b_A(q^-1) for every A => bar-even symmetrization is a STRUCTURAL NO-OP on the actual construction."
     },
@@ -119,7 +122,7 @@
     },
     "forward_test_parameter_free": {
       "g_reeb": {
-        "m": "0.446727067798147204",
+        "m": "0.44672706790566138",
         "below_ceiling": true,
         "writhe": {
           "rho3": "2.45016",
@@ -137,7 +140,7 @@
         }
       },
       "z_naive": {
-        "m": "0.499320334033561272",
+        "m": "0.499320334183694452",
         "below_ceiling": false,
         "writhe": {
           "excluded": "m >= 1/sqrt5 => det(I+mS)<0 (unphysical) at A=4"
@@ -158,6 +161,13 @@
         "rho3_target": "3.8128",
         "rho3_err_pct": "-35.32"
       },
+      "writhe_fix_rho3": {
+        "root_exists": false,
+        "rho3_at_bracket_lo": "2.90692",
+        "rho3_at_bracket_hi": "2.44978",
+        "rho3_target": "3.8128",
+        "note": "rho3_writhe is monotone DECREASING in m and capped below the target over the whole physical window m < 1/sqrt5 -- no m lands rho3=T3 at all, so there is nothing to force rho4 to."
+      },
       "iso_raw_rho4_range": {
         "m->0": "6.0",
         "m->1": "3.0528",
@@ -168,22 +178,40 @@
         "m_det_neg": "0.333333",
         "rho4_even_just_below": "13.283",
         "rho3_even_just_below": "3.4389",
-        "note": "pushing rho4_even toward 13 drives det(I-mS)<0 (complex, unphysical) before the target; rho3_even stalls near 3.4"
+        "note": "rho3_even stalls near 3.4 against the 3.813 target.  (The old note here also claimed det(I-mS) turns negative BEFORE rho4_even reaches 13.03.  It does not -- see iso_bareven_fix_rho4: the target is reached at m=0.31900 with every det still positive.)"
       },
+      "iso_bareven_fix_rho4": {
+        "m": "0.3189995",
+        "rho4_even_forced": "13.0316",
+        "rho4_target": "13.0316",
+        "rho3_even_forced": "3.43496",
+        "rho3_target": "3.8128",
+        "rho3_err_pct": "-9.91",
+        "physical": true,
+        "note": "rho4_even hits the strong A=4 target while all three dets stay positive, so this branch is NOT excluded on physicality -- it is excluded because rho3_even misses."
+      },
+      "coherence_candidates_examined": [
+        "writhe_fix_rho4",
+        "iso_bareven_fix_rho4"
+      ],
+      "single_m_lands_both_count": 0,
       "single_m_lands_both": false
     },
     "verdict": {
       "classification": "HONEST NEGATIVE (scope-(a)) with a scope-(b) sub-result.",
       "scope_b_subresult": "The parameter-free bond magnitude is bar-even (proved here) AND the A=4 writhe cumulant det is even in m (Lean B4CumulantBarEven.lean) => bar-even symmetrization is a structural no-op at the dominant A=4 magnitude wall.",
-      "scope_a_negative": "No single parameter-free (or even free) m reproduces BOTH isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13 forces rho3=6.0 (+58%); ISO raw rho4 caps at ~6; ISO bar-even drives det<0 before 13. Bar-even symmetrization does NOT tame the overshoot (#3952) because the construction is already in the bar-even sector -- there is no bar-odd part to isolate.",
+      "scope_a_negative": "No single parameter-free (or even free) m reproduces BOTH isospin-corrected strong ratios {3.81, 13.03}: WRITHE rho4=13.03 forces rho3=2.466 (-35.3%); WRITHE rho3=3.81 has no root at all (rho3_writhe caps at 2.91 < 3.81 over the whole window); ISO raw rho4 caps at ~6; ISO bar-even DOES reach rho4=13.03 at m=0.31900 while still physical (all dets > 0), but rho3_even there is 3.435 (-9.9%). Bar-even symmetrization does NOT tame the overshoot (#3952) because the construction is already in the bar-even sector -- there is no bar-odd part to isolate.",
       "consistency": "Consistent with (not a re-derivation of) the 2026-06-25 scope-(b) pruning that 4He binding must be bar-even; here the b_A cumulant is shown to be ALREADY bar-even, so the overshoot is a genuine bar-even magnitude problem. Nothing wired, no fit, no AME inversion."
     }
   },
   "context": {
     "axis": "Delta_lambda magnitude wall -- Vector 3 (bar-even symmetrized b_A cumulant)",
     "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

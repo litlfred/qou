@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:02:21.549733+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:18.119880+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "Li2_amplitude_order_1",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "geometric-qdilog-amplitude-r-frontier",
   "scriptFile": "geometric_qdilog_amplitude_r_frontier_probe.py",
-  "scriptHash": "f7e911d0ce64",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "1dc3763b4d3f",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -51,12 +51,12 @@
   "tier": "one principled semiclassical evaluation + honest frontier (no scan, no fit)",
   "result": {
     "pinned_shape": {
-      "z_prime": "-0.043706218",
+      "z_prime": "-0.043706209",
       "equals": "-(m-1/m)^2 = -h^2 (from the rep, #4345)"
     },
     "one_principled_evaluation": {
       "amplitude": "Li₂(z) — the octahedral state-integral saddle (semiclassical)",
-      "Li2_zprime": "-0.04323771455",
+      "Li2_zprime": "-0.04323770505",
       "Li2_over_zprime": "0.98928062 (ORDER 1 — confirms g₂~1's SCALE)",
       "leading_nonlinearity": "0.98907345 (= 1 - h²/4)",
       "no_scan": "ONE evaluation of the principled amplitude; dilog variants NOT scanned (§2e)."
@@ -82,8 +82,11 @@
     "axis": "Δ_λ binding — μ₀ −9% closure, the exact r (geometric quantum-dilog amplitude)",
     "builds_on": "#4345 (shape=−h² from rep), #4339 (g₂_leading=1), #4315 (octahedral e₂)",
     "the_open_object": "geometric quantum-dilog regular part (2509.02354 §5.2) on the 4-shape octahedron",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }
