@@ -171,6 +171,18 @@ def analyze(A):
         print("         fact, and the blocking pair is not an instance of a systematic ordering —")
         print("         it is specific to its b. Any statistic must reproduce a relation that")
         print("         changes sign, which is a much stronger demand than a monotone one.")
+        # WHERE does it reverse? Reported because the answer is suggestive and therefore needs
+        # its sample size stated beside it: b = ⌊n/2⌋ is the LAST b at which a two-row exists at
+        # all — the shape (n−b, b) is as square as it can be. If the reversal always sits there,
+        # it is a boundary effect of the two-row column rather than a crossing in the interior.
+        last_b = max(b for b, _hp, _tp in both)
+        at_edge = trow_wins == [last_b]
+        print(f"       WHERE: first reversal at b = {min(trow_wins)}; the last b with a two-row at all"
+              f" is ⌊n/2⌋ = {n // 2}.")
+        print(f"       Reversal confined to that final b?  {'YES' if at_edge else 'NO'}  — if YES this"
+              " is a BOUNDARY")
+        print("       effect (the two-row is then as square as it gets), not an interior crossing.")
+        print("       ONE SIZE is one data point: do not read a rule off it. Compare across A.")
     elif hook_wins and not trow_wins:
         print("       ⇒ SYSTEMATIC on this sample: the hook exceeds the two-row at every comparable")
         print("         b. Then a statistic ordering the majorant must rank hooks above two-rows at")
