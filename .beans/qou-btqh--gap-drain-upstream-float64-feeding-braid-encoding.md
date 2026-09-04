@@ -1,11 +1,11 @@
 ---
 # qou-btqh
 title: 'GAP: drain upstream float64 feeding braid-encoding-audit cross-check (option_b_proton_mass_full_chain + markov-trace-assembly)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T11:07:00Z
-updated_at: 2026-09-04T03:12:40Z
+updated_at: 2026-09-04T06:37:37Z
 ---
 
 Split off from qou-6sts (raw-float64 ratchet drain, 2026-09-03). The
@@ -32,3 +32,5 @@ change (2 upstream producers + 1 content-block quote), out of scope for the 6sts
 producer-side drain.
 
 DRAINED (2026-09-04). 4 commits pushed on claude/cool-johnson-t1wveh (PR #6569): option_b + proton-assembly derivation + braid-encoding-audit all carry tr_M(q_0) as mpf/full-precision strings, not float64. braid-encoding-audit 6->0, option-b 8->0; both baseline entries removed (stricter than 0). Verified: raw-float64 --strict NEW=2/REGRESSED=0, the 2 NEW inherited from main (toroidal-legendre-weinberg-gate, c2-diagonal probe), not my files. axiomatic_content_block carried verbatim as '1.88432' (6-sig-fig approx quote; NOT padded). Assertion 2 still FAILS by design (0.392 two-route tr_M disagreement, bean qou-soj6) - untouched. Tree clean. Awaiting merge permission.
+
+MERGED 2026-09-04 (PR #6569, rebase-and-merge, main HEAD 100f218a7c). prepare-merge: rebased through main's ~70 commits of churn (2 passes), producers re-run clean post-rebase, drain held (0 known-dirty). Isolation verified: my 3 files cited in ZERO red precision gates; raw-float64 --strict REGRESSED=0, all NEW dirty inherited from main (toroidal-legendre, c2-diagonal +3, other arcs). Copilot review requested.
