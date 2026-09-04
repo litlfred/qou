@@ -379,3 +379,50 @@ without a revision attached cannot be checked by the next reader.
 
 **Cost when it is not caught:** the wrong figure had already reached three
 durable artifacts. Two were editable; the commit message was not.
+
+## TRAP — a producer's ARGUMENT LIST is part of what its committed witness records
+
+Hit **twice in one session** (2026-09-03/04), on two unrelated producers, in
+both cases while re-running only to add a `q0Anchor` stamp. Re-running a
+producer with different arguments than its committed witness was made with does
+not produce a stamped witness — it produces a **different, smaller** witness,
+and the diff reads as a stamp plus "some values moved".
+
+**Case 1 — caught by an assertion.**
+`wlambda_covariance_epic_M1_edge_ratio_decomposition` takes `nmax` and
+**defaults to 40**; its committed witness records **46**. The default run
+failed one assertion (*"needs nmax >= 46, got 40"*) and rewrote the witness
+with a shorter table. The failing assertion is what saved it.
+
+**Case 2 — nothing would have caught it.**
+`bpp_higher_a_resumable_driver` reads
+`A_LIST = [int(x) for x in args] or [5]`. Invoked as `driver.py 5` it computes
+**A=5 only**, while both committed witnesses (`bpp-`/`bnn-higher-a-resumable`)
+record `by_A = {2,3,4,5}`. It would have exited 0, written a valid witness, and
+silently dropped three A values. It sat in my runner across **four launches**
+before I read the arg handling. A downstream consumer would then have failed
+for an unrelated-looking reason: `chain_binding_closed_form_probe` skips a
+species on `if len(As) < 3: continue`.
+
+**The check, before re-running anything:**
+
+```python
+# what was the witness actually built with?
+d = json.load(open(witness))
+d.get("invocation", {}).get("argv")      # often None — do not stop here
+sorted(d.get("data", {}).get("by_A", {}))  # the SHAPE of the payload is the evidence
+```
+
+`invocation.argv` is frequently absent (it was `None` on both of these), so the
+reliable signal is the **payload's own shape** — a range, a table length, an
+`nmax`/`A_LIST`/`depth` field, the set of keys under a per-parameter dict.
+Compare it to what your invocation will produce, *before* you run.
+
+**And add it to the stamp-only gate.** A volatile-field mask compares values
+that exist on both sides; it says nothing about keys that have **disappeared**.
+Check the payload shape explicitly (`by_A == {2,3,4,5}`), or a truncation
+passes as clean.
+
+Related, same session: `qcollatz_vtwo_domain_stable_probe` takes `depth` as
+`sys.argv[1]` defaulting to 14 against a committed 22 — nodes 52→24. Three
+producers, one shape of mistake.
