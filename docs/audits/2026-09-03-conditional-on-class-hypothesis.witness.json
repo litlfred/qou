@@ -1,6 +1,6 @@
 {
   "audit": "conditional-on-class-hypothesis (AGENTS.md §3b-cond item 2)",
-  "generated": "2026-09-04T13:59:19.492Z",
+  "generated": "2026-09-04T14:11:22.662Z",
   "source_witness": "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
   "note": "The propagation audit splits blocks on whether their CONE's conjectures are class-axiomatised; it never opens the downstream block, so §3b-cond item 2 is unchecked. This measures that. `binds_no_carrier` is a CANDIDATE set for hand triage, NOT a violation count: an unconditionally true theorem correctly binds nothing (hand-checked: lem:frobenius-cocasimir-refuted-deuteron is a numeric refutation, prop:alpha-k-derivation-procedure is generic linear algebra).",
   "conditional_on_class_total": 139,
