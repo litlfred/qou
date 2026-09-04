@@ -47,11 +47,35 @@ We work at the SCALAR level (trace-of-product), avoiding the full
 and determinant of each generator and their products, which factor
 via the Hecke quadratic. -/
 
-/-- The Hoefsmit `d_1` diagonal entry: `q³ / (q² + 1)`. -/
-noncomputable def hoefsmit_v21_d1 (q : ℝ) : ℝ := q^3 / (q^2 + 1)
+/-- The Hoefsmit `d_1` diagonal entry — the `(0,0)` entry of `σ_1`:
+    `-q⁻¹ / (q² + 1)`.
 
-/-- The Hoefsmit `d_2` diagonal entry: `-q⁻¹ / (q² + 1)`. -/
-noncomputable def hoefsmit_v21_d2 (q : ℝ) : ℝ := -q⁻¹ / (q^2 + 1)
+    **CORRECTED 2026-09-04 (bean `qou-18b6`): `d_1` and `d_2` were
+    transposed.** They read `d_1 = q³/(q²+1)`, `d_2 = -q⁻¹/(q²+1)`, which
+    with this file's `σ_0 = diag(q, -q⁻¹)` does **not** satisfy the braid
+    relation `σ_0 σ_1 σ_0 = σ_1 σ_0 σ_1` — so the pair was not a
+    representation of `B_3` at all, and every trace computed from it was
+    of something that does not exist.
+
+    Nothing in the file could detect it, and that is the point: `b² =
+    d_1·d_2 + 1`, `d_1 + d_2 = q - q⁻¹` and `det = -1` are all **symmetric
+    in `d_1, d_2`**, so `hoefsmit_v21_b_sq_rational`, `hoefsmit_v21_sigma1_trace`
+    and the Hecke quadratic hold verbatim under the transposition. Only a
+    relation involving `σ_0` and `σ_1` *together* separates them, which is
+    why `hoefsmit_v21_braid_relation` below is now stated.
+
+    Two independent confirmations of the corrected assignment: solving
+    `{trace = q - q⁻¹, det = -1, braid}` for `(d_1, d_2, b)` returns this
+    one (up to the sign of `b`, and the degenerate `b = 0`); and at `q = 1`
+    it gives `σ_1 = !![-1/2, √3/2; √3/2, 1/2]`, the classical Young
+    orthogonal form of `s_2` on the 2-dimensional representation of `S_3`.
+    The transposed version gave `+1/2` in the `(0,0)` slot. -/
+noncomputable def hoefsmit_v21_d1 (q : ℝ) : ℝ := -q⁻¹ / (q^2 + 1)
+
+/-- The Hoefsmit `d_2` diagonal entry — the `(1,1)` entry of `σ_1`:
+    `q³ / (q² + 1)`. See `hoefsmit_v21_d1` for why this is not the other
+    way round. -/
+noncomputable def hoefsmit_v21_d2 (q : ℝ) : ℝ := q^3 / (q^2 + 1)
 
 /-- The Hoefsmit off-diagonal coupling squared:
     `b² = d_1 · d_2 + 1 = (q⁴ + q² + 1) / (q² + 1)²`. -/
@@ -192,6 +216,33 @@ noncomputable def sigma1_v21_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 @[deprecated "Use `sigma1_v21_legacy` explicitly (Phase 1), or migrate to `sigma1_v21_gen` (Phase 2)." (since := "2026-06-01")]
 noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   sigma1_v21_legacy q
+
+open Matrix in
+/-- **The braid relation `σ_0 σ_1 σ_0 = σ_1 σ_0 σ_1` on `V_(2,1)`** — stated
+    for the generic Tier-2 form with the off-diagonal `b` a free parameter
+    constrained only by `b² = d_1 d_2 + 1`.
+
+    This is the relation the file did not have, and its absence is what let a
+    transposed `(d_1, d_2)` stand: trace, determinant and the Hecke quadratic
+    are each **symmetric** in `d_1, d_2`, so all three hold for the wrong
+    matrix. The braid relation couples `σ_0` and `σ_1`, and it is the
+    cheapest statement that does. See `hoefsmit_v21_d1`.
+
+    Note it needs no hypothesis on `b` beyond the quadratic — in particular
+    no `0 ≤ b²` and no square root — so it holds over any field, which is
+    the Tier-2 point. -/
+theorem hoefsmit_v21_braid_relation (q b : ℝ) (hq : q ≠ 0)
+    (hb : b ^ 2 = hoefsmit_v21_d1 q * hoefsmit_v21_d2 q + 1) :
+    sigma0_v21 q * sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b
+        * sigma0_v21 q
+      = sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b
+        * sigma0_v21 q
+        * sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b := by
+  have hq2 : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  unfold sigma0_v21 sigma1_v21_gen hoefsmit_v21_d1 hoefsmit_v21_d2 at *
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_fin_two] <;> field_simp at hb ⊢ <;> nlinarith [hb, sq_nonneg q]
 
 /-- Typed-crossing variant. -/
 inductive TypedCrossingV21 : Type

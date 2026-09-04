@@ -1,11 +1,11 @@
 ---
 # qou-18b6
 title: 'GAP: chi_v21_matrix_trace_identity — the 11-crossing Hoefsmit matrix-product trace is stated, not proved'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T04:40:15Z
-updated_at: 2026-09-04T04:40:48Z
+updated_at: 2026-09-04T12:42:45Z
 ---
 
 ## What is open
