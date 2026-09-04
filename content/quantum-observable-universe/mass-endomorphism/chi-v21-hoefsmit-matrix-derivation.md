@@ -39,6 +39,8 @@ $$
 | `chi_V21_difference_factored_eq_polynomial` | factored $\leftrightarrow$ polynomial form | `field_simp + ring` |
 | `chi_V21_laurent_decomposition` | explicit Laurent: $-q^3/4 + q/4 - q^{-1}/4 + q^{-3}/4$ | `field_simp + ring` |
 | `chi_V21_difference_at_{one,two}` | numerical cross-checks at $q = 1, 2$ | `norm_num` |
+| `hoefsmit_v21_braid_relation` | $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$, generic $b$ with $b^2 = d_1d_2+1$ | `fin_cases` + `field_simp` + `nlinarith` |
+| `chi_v21_matrix_trace_identity` | **the 11-crossing matrix-product trace difference** | `simp only` + `Matrix.trace_fin_two_of` + `ring_nf` + `field_simp` |
 
 All theorems sorry-free.
 
@@ -52,13 +54,15 @@ for the V_(2,1) coefficients.
 
 ## Not yet formalised
 
-The **full Lean matrix-product trace derivation** (computing
-$\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2
-matrices) requires:
+~~The **full Lean matrix-product trace derivation**~~ **is now formalised
+and proved sorry-free** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
+three obstacles listed below are recorded as history; items 2 and 3 are
+resolved, and item 1 turned out not to be needed — the $\sigma_0, \sigma_1$
+matrices are declared locally rather than imported.
 
-1. Importing the Hoefsmit $\sigma_0, \sigma_1$ definitions from
+1. ~~Importing the Hoefsmit $\sigma_0, \sigma_1$ definitions from
    `hoefsmit-V21-cos-symmetrization.lean`, which the Lean module does not
-   yet export.
+   yet export.~~ Not needed.
 2. ~~Resolving the YB cubic anomaly (the `d_1 \leftrightarrow d_2` swap) for
    matrix-level correctness.~~ **Resolved 2026-09-04 — and the parenthetical
    that stood here, "the closed-form rational result is invariant under the
@@ -71,8 +75,21 @@ matrices) requires:
    guard now added is the **braid relation** (`hoefsmit_v21_braid_relation`),
    the cheapest statement that couples $\sigma_0$ to $\sigma_1$ and therefore
    the cheapest one that can see the transposition at all.
-3. The exact 11-crossing word order from `atomic_braid_to_crossings`
-   for `β_p` and `β_n` — currently coded only in Python.
+3. ~~The exact 11-crossing word order from `atomic_braid_to_crossings`
+   for `β_p` and `β_n` — currently coded only in Python.~~ Present as
+   `beta_p_word_v21` / `beta_n_word_v21` and consumed by the proof.
+
+**The one tactic choice that decides it.** Project the folded matrix with
+`Matrix.trace_fin_two_of` (which rewrites $\mathrm{tr}\,!![a,b;c,d]$ straight
+to $a+d$), never `Matrix.trace_fin_two` (which leaves `M 0 0 + M 1 1` as
+*applications*). With the latter, `field_simp` runs on the un-projected
+expression and exhausts 2 000 000 heartbeats. Projecting first also removes
+the need for any `linear_combination` certificate: only **even** powers of
+$b$ reach the trace, because each index-1 factor is symmetric with
+off-diagonal $b$ and a path from a diagonal slot back to itself takes an even
+number of off-diagonal steps. Odd powers do occur — $b^3$ appears 20 times in
+the normalised matrix — but only in the off-diagonal entries, which the trace
+discards.
 
 ## Full matrix-product trace theorem (statement)
 

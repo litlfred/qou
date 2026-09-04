@@ -1,11 +1,11 @@
 ---
 # qou-18b6
 title: 'GAP: chi_v21_matrix_trace_identity — the 11-crossing Hoefsmit matrix-product trace is stated, not proved'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T04:40:15Z
-updated_at: 2026-09-04T13:14:27Z
+updated_at: 2026-09-04T13:29:00Z
 ---
 
 ## What is open
@@ -151,3 +151,65 @@ The `.md`'s "Not yet formalised" item 2 said the swap was known and that "the
 closed-form rational result is invariant under the swap". That parenthetical is
 false and is what let the defect stand — `b²`, trace and determinant are
 invariant; the result is not.
+
+
+---
+
+## CLOSED 2026-09-04 — proved sorry-free (PR #6662)
+
+`chi_v21_matrix_trace_identity` is proved. `#print axioms` =
+`[propext, Classical.choice, Quot.sound]`; no `sorryAx`. The statement is
+byte-identical to the one that carried the `sorry` — only the matrices it is
+about were corrected.
+
+**Mutation test:** changing the closed form's `q^4 + 1` to `q^4 + 2` makes the
+proof FAIL (exit 1, 4 errors). It is not closing vacuously.
+
+## The one tactic choice that decided it
+
+Use **`Matrix.trace_fin_two_of`**, which rewrites `trace !![a,b;c,d]` straight
+to `a + d`. NOT `Matrix.trace_fin_two`, which leaves `M 0 0 + M 1 1` as
+*applications* — with that, `field_simp` runs on the un-projected expression
+and exhausts 2,000,000 heartbeats. The two lemma names give no hint of this.
+
+Working sequence:
+
+    simp only [defs..., List.foldl_cons, List.foldl_nil, if_true, hif, one_mul]
+    simp only [hsm, hsub, Matrix.mul_fin_two, Matrix.trace_fin_two_of]
+    generalize Real.sqrt (hoefsmit_v21_b_sq q) = b at hb2 ⊢
+    ring_nf
+    rw [hb4, hb2]        -- b^4 FIRST; rw [hb2] cannot see inside b^4
+    field_simp
+    ring
+
+with three local helpers: `hif : ∀ A B, (if (1 : Fin 2) = 0 then A else B) = B`
+(by `norm_num` — `reduceIte` does NOT fire on this), `hsm : ∀ c, c • 1 =
+!![c,0;0,c]`, and `hsub` for the subtraction of two `!![...]` literals.
+
+## Corrections to my own earlier notes on this bean
+
+1. **"linear_combination needs a coefficient not guessable at degree 11" —
+   WRONG, no certificate is needed.** Only EVEN powers of `b` reach the trace:
+   each index-1 factor is symmetric with off-diagonal `b`, so a path from a
+   diagonal slot back to itself takes an even number of off-diagonal steps.
+   Odd powers DO occur — `b^3` appears 20 times in the normalised matrix — but
+   only in the OFF-DIAGONAL entries, which the trace discards. Projecting
+   first is what makes `b² ↦ (q⁴+q²+1)/(q²+1)²` sufficient alone.
+2. **"`ring_nf` re-folds the matrix literals back into `Matrix.mul`" —
+   RETRACTED.** I recorded that as a tactic property in a commit message. It
+   was an artifact of that run: `if (1 : Fin 2) = 0` was still unreduced, so
+   matrices genuinely remained for `ring_nf` to act on. With `hif` in place
+   there are none left and `ring_nf` behaves correctly. Do not avoid `ring_nf`
+   here — the proof needs it.
+3. **The structural decomposition I proposed as "the route that works"
+   (collapsing the seven diagonal index-0 factors first) was never needed.**
+   It is correct mathematics and would also work, but the flat expansion
+   closes once the projection is right. Cheaper to fix the projection than to
+   restructure.
+
+## Preceding correction (same PR)
+
+The `sorry` had stood over a FALSE statement: `hoefsmit_v21_d1` and
+`hoefsmit_v21_d2` were transposed, failing the braid relation, so the pair was
+not a `B_3` representation. See the earlier entry. `hoefsmit_v21_braid_relation`
+is now the guard.
