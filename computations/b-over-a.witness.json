@@ -1,11 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:02:43.070122+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-09-04T21:55:38.430707+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "assertions": [],
   "allPassed": true,
+  "allPassedBasis": "vacuous",
   "durationMs": 0,
+  "durationMsBaseline": "caller",
   "computation": "b-over-a",
   "scriptFile": "b_over_a_evaluator.py",
   "scriptHash": "637cf3956815",
@@ -24,7 +26,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -42,7 +44,7 @@
     "w_sym": 0.16338322805625738,
     "w_std_per_copy": 0.6606737736611729,
     "w_alt": 0.16338322805625738,
-    "E_0_MeV": "4.18598136329447",
+    "E_0_MeV": "4.1859813632944746895333596468282228219236787754626",
     "m_e_MeV": "0.51099895069",
     "alpha_EM": 0.0072973525692838015,
     "r_0_fm": 1.2,
@@ -50,7 +52,7 @@
   },
   "fit": {
     "method": "c_S fit to 4He B/A AME2020 = 7.07391420 MeV",
-    "fitted_c_S": "-509.002580778107",
+    "fitted_c_S": "-509.00258077810748417799198443408351009581582012559",
     "rationale": "Geometric derivation of c_S from non-abelian Stokes (referenced in prop:confined-knot-binding and prop:wigner-np-pairing) is not assembled into a closed formula at this commit. We fit c_S to 4He and report residuals on 12C and 40Ca."
   },
   "free_braid_assumption": "Intra-nucleon 3-quark crossings: proton (uud) = (1 pp, 0 nn, 2 pn); neutron (udd) = (0 pp, 1 nn, 2 pn). Free-braid totals scale linearly with nucleon counts: Lambda_lambda^free = (Lambda_lambda^proton)^Z · (Lambda_lambda^neutron)^N.",
@@ -80,15 +82,15 @@
         "std": 0.0,
         "alt": 0.021734577336914244
       },
-      "B_over_A_spectral_only_MeV": "0.00743234680414085",
+      "B_over_A_spectral_only_MeV": "0.0074323468041408507482543845667874045294484674002308",
       "coulomb_correction_MeV": 0.22678020554817568,
-      "surface_correction_MeV": "-7.29326205874403",
-      "c_S": "-509.002580778107",
-      "B_over_A_predicted_MeV": "7.0739142",
+      "surface_correction_MeV": "-7.2932620587440347632031460798629654966670313299631",
+      "c_S": "-509.00258077810748417799198443408351009581582012559",
+      "B_over_A_predicted_MeV": "7.0739141999999999299575392797123640775680541992188",
       "nucleus": "4He",
       "B_over_A_AME2020_MeV": 7.0739142,
-      "residual_MeV": "-8.88178419700125e-16",
-      "residual_pct": "-1.25556855029444e-14"
+      "residual_MeV": "1.069105884036878258456214586860592751526078752042e-50",
+      "residual_pct": "1.5113356676518330813822727741423744131423770005833e-49"
     },
     {
       "Z": 6,
@@ -115,15 +117,15 @@
         "std": 0.0,
         "alt": -0.06520373201074328
       },
-      "B_over_A_spectral_only_MeV": "-0.00743234680414091",
+      "B_over_A_spectral_only_MeV": "-0.0074323468041409130763022606965759103883485244716444",
       "coulomb_correction_MeV": 0.7862030615819098,
-      "surface_correction_MeV": "-5.0568654752239",
-      "c_S": "-509.002580778107",
-      "B_over_A_predicted_MeV": "4.26323006683785",
+      "surface_correction_MeV": "-5.0568654752238977156370426054033362118222330959832",
+      "c_S": "-509.00258077810748417799198443408351009581582012559",
+      "B_over_A_predicted_MeV": "4.263230066837847023595357915401296272121750782449",
       "nucleus": "12C",
       "B_over_A_AME2020_MeV": 7.68014481,
-      "residual_MeV": "-3.41691474316215",
-      "residual_pct": "-44.4902385006221"
+      "residual_MeV": "-3.4169147431621527984301713681632414914738302722385",
+      "residual_pct": "-44.49023850062213706633791791909301889808062718091"
     },
     {
       "Z": 20,
@@ -150,15 +152,15 @@
         "std": 0.0,
         "alt": -1.7387661869531434
       },
-      "B_over_A_spectral_only_MeV": "-0.0594587744331269",
+      "B_over_A_spectral_only_MeV": "-0.059458774433126936693397612884146976677552907429277",
       "coulomb_correction_MeV": 1.9999788925379636,
-      "surface_correction_MeV": "-3.38523237324781",
-      "c_S": "-509.002580778107",
-      "B_over_A_predicted_MeV": "1.32579470627672",
+      "surface_correction_MeV": "-3.3852323732478060336027329860437832609779066482582",
+      "c_S": "-509.00258077810748417799198443408351009581582012559",
+      "B_over_A_predicted_MeV": "1.325794706276715526234615924143370713182952617782",
       "nucleus": "40Ca",
       "B_over_A_AME2020_MeV": 8.55130323,
-      "residual_MeV": "-7.22550852372328",
-      "residual_pct": "-84.495992357919"
+      "residual_MeV": "-7.2255085237232847287831509794768425570044253119055",
+      "residual_pct": "-84.495992357919045671631014601011895672210971755952"
     }
   ],
   "q0Anchor": "proton",

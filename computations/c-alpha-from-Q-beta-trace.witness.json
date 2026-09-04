@@ -1,15 +1,17 @@
 {
   "engine": "topology+β-chain-audit",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:28:28.901996+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-09-04T21:55:55.000107+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 62,
+  "allPassedBasis": "vacuous",
+  "durationMs": 120,
+  "durationMsBaseline": "builder-construction",
   "computation": "c-alpha-from-Q-beta-trace",
   "scriptFile": "c_alpha_from_Q_beta_trace.py",
   "scriptHash": "78a6b1caab0e",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,17 +23,26 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/c_alpha_from_Q_beta_trace.py"
+    ],
+    "reproduce": "python3 -u computations/c_alpha_from_Q_beta_trace.py"
   },
   "description": "Audit: is c_αα = m_e · Vol(7²_1) ≈ 2.427 MeV reproducible from the framework's three-constant calibration (m_e, q_0, Q_β(³H)) without using B(¹²C) or other AME inputs?",
   "parameters": {
-    "m_e_MeV": 0.51099895069,
+    "m_e_MeV": "0.51099895069",
     "Vol_7_sq_1": 4.749499981874439,
     "Q_beta_tritium_MeV": 0.01861
   },
   "data": {
     "route_A_topological": {
-      "c_alpha_MeV": 2.4269895070400125,
+      "c_alpha_MeV": "2.4269895070400122363974906303241141358739696443081",
       "formula": "m_e · Vol(7²_1)",
       "inputs_used": [
         "m_e (calibration)",

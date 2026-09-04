@@ -3,12 +3,12 @@
   "description": "F-construction T5 (qou-bc35): the assembly. F satisfies S1-S5 of the #4035 target spec at the level the merged bricks establish (T1 dims derived, T2 module exact, T3 rho-equivariance proved, T4 q=1 weights derived, discharge path #4035/#3999). Surviving open content of the wall = two named residuals (R1 framework-tau restriction/naturality vs the brings-surface bridge; R2 loop-weight provenance, phase-4) + fibre general-q transport (not measure-relevant). Conditional; nothing asserted; nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t5-assembly.md",
   "tier": "conditional assembly (condition = R1+R2, named, not derived) + one-pass exact re-verification of the merged joints",
-  "computedAt": "2026-07-19T03:22:40.109910+00:00",
-  "commitSha": "b8efef7a5a05e77dc3ae5d4c24479e905681920a",
+  "computedAt": "2026-09-04T21:54:40.722057+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "alpha_em_f_t5_assembly_probe.py",
-  "scriptHash": "b6254c74145e",
+  "scriptHash": "921fb11ddabd",
   "assertions": [
     {
       "name": "geometric_joints_reverified",
@@ -39,5 +39,9 @@
   "context": {
     "bean": "qou-bc35 (T5) closes milestone qou-a46k; T1 #4039, T2 #4040, T3 #4042, T4 #4061 merged",
     "scope_guard": "conditional on R1+R2; neither asserted nor derived; no instance fabricated; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

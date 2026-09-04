@@ -3,12 +3,12 @@
   "description": "Bean qou-tq20 tranche 4: first numerical consistency check of the Reality-realization premise (#3999). Categorical Markov channel dims at q=1 (3,1) match the isotypic dims of Jac(Bring) ~ E_{5t0}^3 x E_{t0} (spec(M)={5:3,1:1}, det 125) exactly. Consistency only (low entropy); next falsifiable target recorded (q-deformed weight ratio). Wall (the tau-identification) remains open. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-reality-consistency.md",
   "tier": "symbolic-exact consistency check (corpus y_lambda_at + exact Thm 2.12 polarization); NOT a derivation",
-  "computedAt": "2026-07-18T23:01:03.418832+00:00",
-  "commitSha": "9d50202becf281d1ec2ce0fa72884b80642b256a",
+  "computedAt": "2026-09-04T21:54:41.832024+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "alpha_em_reality_consistency_probe.py",
-  "scriptHash": "c18b9a2aedb9",
+  "scriptHash": "2d9dac5eccda",
   "assertions": [
     {
       "name": "categorical_channel_dims",
@@ -28,7 +28,7 @@
     {
       "name": "next_falsifiable_target_recorded",
       "passed": true,
-      "detail": "Markov weight ratio y_[2]/y_[1,1]: = 3 exactly at q=1 (matching dim ratio 3/1), q-DEPENDENT away from it (e.g. 15*sqrt(2)/68 + 11/34 at q=2) \u2014 the identification predicts the geometric side carries a q-deformation of the (3,1) weights with this exact ratio function; the period-side computation of that deformation is the next falsifiable comparison. The multiplier pair (5,1) in spec(M) is RECORDED, not interpreted"
+      "detail": "Markov weight ratio y_[2]/y_[1,1]: = 3 exactly at q=1 (matching dim ratio 3/1), q-DEPENDENT away from it (e.g. 21/4 at q=2) \u2014 the identification predicts the geometric side carries a q-deformation of the (3,1) weights with this exact ratio function; the period-side computation of that deformation is the next falsifiable comparison. The multiplier pair (5,1) in spec(M) is RECORDED, not interpreted"
     }
   ],
   "allPassed": true,
@@ -44,5 +44,9 @@
     "bean": "qou-tq20 (B2 lift) tranche 4; #3985 interface, #3992 C-model, #3999 constructor merged",
     "premise_checked": "Reality realization \u2014 H^{1,0}-block = tau-image of the canonical Markov channel weight",
     "scope_guard": "consistency, not derivation; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:21:45.130375+00:00",
-  "commitSha": "4400ec7e819bfc14d0d68c97977460f30249697a",
+  "computedAt": "2026-09-04T21:55:39.957344+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "assertions": [
     {
       "name": "checks_failed",
@@ -20,11 +20,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1189,
+  "allPassedBasis": "assertions",
+  "durationMs": 897,
+  "durationMsBaseline": "builder-construction",
   "computation": "bar-parity-involution-atlas",
   "scriptFile": "bar_parity_involution_atlas_probe.py",
   "scriptHash": "6ef7f20e78ae",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "9d0448fd3a72b4b7fdd31dd2a8d14105bb69c709",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

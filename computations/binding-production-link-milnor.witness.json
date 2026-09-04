@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-11T15:17:35.273017+00:00",
-  "commitSha": "ca59034d4a13492d8d206c3b754e6d5ce2f11ca5",
+  "computedAt": "2026-09-04T21:55:45.193077+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "assertions": [
     {
       "name": "production_link_is_linear_chain",
@@ -14,11 +14,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "allPassedBasis": "assertions",
+  "durationMs": 10,
+  "durationMsBaseline": "builder-construction",
   "computation": "binding-production-link-milnor",
   "scriptFile": "binding_production_link_milnor.py",
   "scriptHash": "bece45891d68",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +32,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_production_link_milnor.py"
+    ],
+    "reproduce": "python3 -u computations/binding_production_link_milnor.py"
   },
   "description": "EXPLORATORY: the production canonical braid (atom_braid_word_3A) is a linear chain with A−1 inter-nucleon bonds (4He=3,6Li=5,12C=11, verified). Milnor: M_2=A−1 (chain linking), M_3=μ̄_123=0 (chain reducible to pairwise). This is the chain model that undershoots — the open 9b coordination gap. The compact canonical link (coordination≈3, μ̄_123≠0 Borromean 3-body) is the open problem.",
   "data": {

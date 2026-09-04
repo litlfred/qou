@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.5.0",
-  "computedAt": "2026-07-07T13:41:17.756172+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-04T21:45:55.274682+00:00",
+  "commitSha": "4c4a8ab2fcecc51583d36d441b88a199f993ba0a",
   "assertions": [
     {
       "name": "all_solved_lambda_residuals_below_1e-10",
@@ -13,11 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "allPassedBasis": "assertions",
+  "durationMs": 9,
+  "durationMsBaseline": "builder-construction",
   "computation": "A-operator-extract-general",
   "scriptFile": "A_operator_extract_general.py",
-  "scriptHash": "865be6e65ce8",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptHash": "b5da1a15dbfc",
+  "scriptCommitSha": "879419b0ac831a02657139f4ad7dbe1ea02137ef",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,12 +27,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/a_operator/A_operator_extract_general.py"
+    ],
+    "reproduce": "python3 -u computations/a_operator/A_operator_extract_general.py"
   },
   "description": "Operator-valued A^λ_{μν}(I) extraction at A=2 via the refined Sub-lemma 2.1 LR-decomposition formula. Generalized from the A=2-only sublemma_2_1_A_operator_extract.py to arbitrary atomic decompositions using lr_coefficients.lr_coef for the LR table.  Per λ ⊢ 6, fits a least-squares operator A^λ_{μν}(I) ∈ End(V_μ ⊗ V_ν)^(⊕ c^λ_{μν}) satisfying χ^λ(β_1·I·β_2) = Σ_(μ,ν) c^λ_{μν} · Tr(A^λ_{μν}(I) · (ρ_μ(β_1) ⊗ ρ_ν(β_2))).",
   "contentBlock": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
@@ -41,7 +51,7 @@
     "splits": "[(3, 3)]"
   },
   "data": {
-    "max_relative_residual_overall": 2.0840199044282142e-15,
+    "max_relative_residual_overall": 3.615789494256467e-15,
     "n_lambda_solved": 11,
     "n_lambda_in_scope": 11,
     "n_lambda_total": 11,
@@ -49,7 +59,7 @@
       "split_3_3": {
         "n1": 3,
         "n2": 3,
-        "elapsed_sec": 0.25860095024108887,
+        "elapsed_sec": 0.6100828647613525,
         "n_partitions": 11,
         "results_per_lambda": {
           "[6]": {
@@ -70,7 +80,7 @@
             "n_unknowns": 1,
             "n_equations": 484,
             "rank": 1,
-            "max_relative_residual": 1.298929303396926e-15,
+            "max_relative_residual": 1.5349884975538914e-15,
             "status": "solved"
           },
           "[5, 1]": {
@@ -117,7 +127,7 @@
             "n_unknowns": 9,
             "n_equations": 484,
             "rank": 9,
-            "max_relative_residual": 1.8630352827134915e-15,
+            "max_relative_residual": 2.739439202660368e-15,
             "status": "solved"
           },
           "[4, 2]": {
@@ -178,7 +188,7 @@
             "n_unknowns": 25,
             "n_equations": 484,
             "rank": 25,
-            "max_relative_residual": 1.859673787649975e-15,
+            "max_relative_residual": 3.615789494256467e-15,
             "status": "solved"
           },
           "[4, 1, 1]": {
@@ -255,7 +265,7 @@
             "n_unknowns": 26,
             "n_equations": 484,
             "rank": 26,
-            "max_relative_residual": 9.269325380823312e-16,
+            "max_relative_residual": 7.283064058260426e-16,
             "status": "solved"
           },
           "[3, 3]": {
@@ -290,7 +300,7 @@
             "n_unknowns": 17,
             "n_equations": 484,
             "rank": 17,
-            "max_relative_residual": 2.0840199044282142e-15,
+            "max_relative_residual": 2.45987332699529e-15,
             "status": "solved"
           },
           "[3, 2, 1]": {
@@ -369,7 +379,7 @@
             "n_unknowns": 32,
             "n_equations": 484,
             "rank": 32,
-            "max_relative_residual": 1.7720580789515715e-15,
+            "max_relative_residual": 1.5023795342982172e-15,
             "status": "solved"
           },
           "[3, 1, 1, 1]": {
@@ -450,7 +460,7 @@
             "n_unknowns": 26,
             "n_equations": 484,
             "rank": 26,
-            "max_relative_residual": 1.6728875531243604e-15,
+            "max_relative_residual": 1.2814103442497621e-15,
             "status": "solved"
           },
           "[2, 2, 2]": {
@@ -489,7 +499,7 @@
             "n_unknowns": 17,
             "n_equations": 484,
             "rank": 17,
-            "max_relative_residual": 9.12992519503073e-16,
+            "max_relative_residual": 7.417935433552652e-16,
             "status": "solved"
           },
           "[2, 2, 1, 1]": {
@@ -558,7 +568,7 @@
             "n_unknowns": 25,
             "n_equations": 484,
             "rank": 25,
-            "max_relative_residual": 1.3149986206829253e-15,
+            "max_relative_residual": 1.4348419585612223e-15,
             "status": "solved"
           },
           "[2, 1, 1, 1, 1]": {
@@ -613,7 +623,7 @@
             "n_unknowns": 9,
             "n_equations": 484,
             "rank": 9,
-            "max_relative_residual": 7.671321752349667e-16,
+            "max_relative_residual": 1.0412290353562278e-15,
             "status": "solved"
           },
           "[1, 1, 1, 1, 1, 1]": {
@@ -638,7 +648,7 @@
             "n_unknowns": 1,
             "n_equations": 484,
             "rank": 1,
-            "max_relative_residual": 1.163890208028587e-15,
+            "max_relative_residual": 8.729800845730114e-16,
             "status": "solved"
           }
         }

@@ -3,7 +3,7 @@
   "engine": "python",
   "auditOnly": "docs/audits/2026-05-06-staircase-ew-predictions.md",
   "computation": "beta-ew-delta-I-numerical-spectrum",
-  "computedAt": "2026-08-29T00:58:06.651137+00:00",
+  "computedAt": "2026-09-04T21:55:43.087537+00:00",
   "description": "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) across all 11 partitions of 6, using PR #546's _hoefsmit_build directly at q = q_0 = Rational specialization. Avoids the symbolic-q combinatorial blowup that timed out on partitions with f_λ ≥ 5.  Tests Weinberg-angle candidate readings using the full Δ_I-coupled spectrum + invariants.",
   "reference_blocks": [
     "def:ew-interface-knot",
@@ -623,8 +623,8 @@
   "codata_cot_theta_W": 1.8230678710486174,
   "verdict": "no-clean-fit",
   "scriptHash": "fc38ee164778",
-  "scriptCommitSha": "12c69f9586b5c98344a3417304de0b16be5636c9",
-  "commitSha": "07cc5ee67781228dcc45440e2926f3be75666cf0",
+  "scriptCommitSha": "7decba09cf1d670a3fcfc03812efa1cfdf4e2a0b",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

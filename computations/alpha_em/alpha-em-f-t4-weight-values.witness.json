@@ -3,12 +3,12 @@
   "description": "F-construction T4 (qou-cjsj): the Markov weight values (3/4,1/4) at q=1 \u2014 the only point the measure needs (B4a) \u2014 are derived: both sides' weights are the same invariant (normalized isotypic projector trace) of matched objects, and T1 derived the dims. Corpus y(1) + explicit Schur-Weyl 4x4 + CW geometric side agree by the same rule, no freedom. General-q transport open (fibre; not needed). Nothing wired.",
   "auditOnly": "docs/audits/2026-07-19-alpha-em-f-t4-weight-values.md",
   "tier": "symbolic-exact; conditional derivation (condition = the T1 isotype correspondence, itself dimension-derived)",
-  "computedAt": "2026-07-19T03:15:49.847861+00:00",
-  "commitSha": "3c7ca66babbfbfd0c690904682659c2e79726760",
+  "computedAt": "2026-09-04T21:54:39.733223+00:00",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "alpha_em_f_t4_weight_values_probe.py",
-  "scriptHash": "cd594c08e7d9",
+  "scriptHash": "ee4b13c25df4",
   "assertions": [
     {
       "name": "corpus_weights_at_q1",
@@ -43,5 +43,9 @@
     "bean": "qou-cjsj (T4) of milestone qou-a46k; T1 #4039, T2 #4040, T3 #4042 merged",
     "why_q1_suffices": "B4a (#3973): the measure's 1/2 is a decategorification-point constant; q-families excluded",
     "scope_guard": "conditional on T1; general-q transport open; T5 residual open; no fit; nothing wired; 1/(8pi) stays phase-4"
-  }
+  },
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
