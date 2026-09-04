@@ -64,12 +64,22 @@ def contents(lam):
 
 
 def q_stats(lam, q):
-    """The q-content symmetric functions. At q=1 every power sum here equals |λ| exactly."""
+    """The q-content symmetric functions, plus the two q-INDEPENDENT controls.
+
+    The controls are here so the comparison is WITHIN-SAMPLE. #6587 measured b(λ) on its own
+    run with its own dim cap and its own counting rule; quoting its inversion count against a
+    count produced here would be a cross-run comparison, and the two rules differ — this one
+    also charges TIES, which b incurs heavily (it takes few values) and an injective statistic
+    cannot. Both numbers must come from the same table or neither means anything.
+    """
     cs = contents(lam)
     p1 = sum(q ** (2 * c) for c in cs)
     p2 = sum(q ** (4 * c) for c in cs)
     pm1 = sum(q ** (-2 * c) for c in cs)
     n = len(cs)
+    nl = sum(i * p for i, p in enumerate(lam))
+    cj = [sum(1 for p in lam if p > j) for j in range(lam[0])]
+    nlp = sum(j * p for j, p in enumerate(cj))
     return {
         "P₁": p1,
         "P₂": p2,
@@ -78,6 +88,8 @@ def q_stats(lam, q):
         "P₁+P₋₁": p1 + pm1,
         "P₁/n": p1 / n,
         "Σ|2c·lnq|": sum(abs(2 * c * mp.log(q)) for c in cs),
+        "b(λ) [ctl]": mp.mpf(-(sum(lam) - lam[0])),   # negated: all candidates read "decreasing"
+        "n'−n [ctl]": mp.mpf(nlp - nl),
     }
 
 
@@ -126,10 +138,13 @@ def analyze(A, max_dim):
         print(f"  {str(lam):<18} {dim:>4}  {mp.nstr(pd,7):>10}   "
               + "  ".join(f"{mp.nstr(st[nm],7):>12}" for nm in names))
 
-    print("\n   statistic            strictly monotone?     inversions   ties(differing per-dim)")
-    winners = []
+    npairs = len(rows) * (len(rows) - 1) // 2
+    print(f"\n   statistic            strictly monotone?     inversions   ties(differing per-dim)"
+          f"   [of {npairs} pairs]")
+    winners, detail = [], {}
     for nm in names:
-        inv = ties = 0
+        inv = ties = inv_up = 0
+        inv_pairs, inv_up_pairs, tie_pairs = [], [], []
         for i in range(len(rows)):
             for j in range(len(rows)):
                 si, sj = rows[i][3][nm], rows[j][3][nm]
@@ -138,22 +153,73 @@ def analyze(A, max_dim):
                 # and take the better — the sign of a statistic is a convention, not a claim.
                 if si < sj and pi < pj:
                     inv += 1
-                if si == sj and i < j and pi != pj:
-                    ties += 1
-        inv_up = 0
-        for i in range(len(rows)):
-            for j in range(len(rows)):
-                si, sj = rows[i][3][nm], rows[j][3][nm]
-                pi, pj = rows[i][2], rows[j][2]
+                    inv_pairs.append((rows[i], rows[j]))
                 if si < sj and pi > pj:
                     inv_up += 1
+                    inv_up_pairs.append((rows[i], rows[j]))
+                if si == sj and i < j and pi != pj:
+                    ties += 1
+                    tie_pairs.append((rows[i], rows[j]))
         best = min(inv, inv_up)
         direction = "dec" if inv <= inv_up else "inc"
+        detail[nm] = (best, direction, inv_pairs if inv <= inv_up else inv_up_pairs, tie_pairs)
         ok = best == 0 and ties == 0
         if ok:
             winners.append((nm, direction))
         print(f"  {nm:<20} {('YES ✓ (' + direction + ')') if ok else 'NO':<22} "
               f"{best:>10}   {ties:>10}")
+
+    # NAME the surviving violations for the near-misses. A count of 1 is a specific pair of
+    # shapes, and reporting it as a number hides the only thing that could be acted on.
+    # Controls INCLUDED here. A control that near-misses as well as the candidate is the whole
+    # result, and filtering it out of the detail would hide exactly that.
+    near = [nm for nm in names if 0 < detail[nm][0] <= 2]
+    blockers = {}
+    for nm in near:
+        best, direction, pairs, _t = detail[nm]
+        print(f"\n  {nm} misses by {best} — the surviving violation(s), named:")
+        for (li, _di, pi, sti), (lj, _dj, pj, stj) in pairs:
+            blockers.setdefault(frozenset((li, lj)), []).append(nm)
+            print(f"    {str(li):<20} {nm}={mp.nstr(sti[nm],7):>10}  per-dim={mp.nstr(pi,7)}")
+            print(f"    {str(lj):<20} {nm}={mp.nstr(stj[nm],7):>10}  per-dim={mp.nstr(pj,7)}"
+                  f"   ← same b-level? {sum(li)-li[0] == sum(lj)-lj[0]}")
+
+    # IS IT ONE PAIR? "every near-miss fails on the same shapes" is a far sharper statement than
+    # "several statistics have 1 inversion", and it is a different claim — so it is tested, not
+    # read off the table by eye.
+    if blockers:
+        print("\n   the blocking pair(s), and which near-miss statistics each defeats:")
+        for pr, who in sorted(blockers.items(), key=lambda kv: -len(kv[1])):
+            a, b_ = sorted(pr, key=lambda t: -sum(t))
+            print(f"    {str(a)} vs {str(b_)}  defeats {len(who)}: {who}")
+        if len(blockers) == 1 and len(near) > 1:
+            print(f"  ⇒ ALL {len(near)} near-miss statistics fail on the SAME single pair. The")
+            print("    obstruction is one shape-degeneracy, not a diffuse failure of the whole")
+            print("    statistic class — a materially different (and more tractable) situation.")
+
+    # IS THE q-CANDIDATE INDEPENDENT EVIDENCE? P₁−P₋₁ = Σ(q^{2c} − q^{−2c}) = 2Σ sinh(2c·ln q),
+    # whose leading term is 4·ln q·Σc = 4·ln q·(n(λ')−n(λ)) — i.e. it is the q-DEFORMATION of the
+    # control, not a different idea. Two statistics agreeing means nothing if one is a deformation
+    # of the other, so the honest test is whether they induce the SAME ORDERING on this sample. If
+    # they do, the q-deformation bought nothing here and must not be reported as corroboration.
+    if "P₁−P₋₁" in names and "n'−n [ctl]" in names:
+        disagree = [(rows[i][0], rows[j][0])
+                    for i in range(len(rows)) for j in range(i + 1, len(rows))
+                    if ((rows[i][3]["P₁−P₋₁"] < rows[j][3]["P₁−P₋₁"])
+                        != (rows[i][3]["n'−n [ctl]"] < rows[j][3]["n'−n [ctl]"]))]
+        print(f"\n  INDEPENDENCE CHECK — P₁−P₋₁ is the q-deformation of the control n(λ')−n(λ)")
+        print(f"  (leading order 4·ln q·Σc). Do they induce the SAME ordering on this sample?  "
+              f"{'YES — ' + str(len(rows)) + ' shapes, 0 disagreements' if not disagree else 'NO, ' + str(len(disagree)) + ' pair(s) differ'}")
+        if not disagree:
+            print("  ⇒ the q-content near-miss is NOT independent evidence: it is the control")
+            print("    wearing a q. Do not report the two as agreeing candidates.")
+        else:
+            print("    differing pair(s): " + ", ".join(f"{a} vs {b_}" for a, b_ in disagree[:5]))
+    for nm in names:
+        if nm.endswith("[ctl]") and detail[nm][3]:
+            print(f"\n  {nm}: {len(detail[nm][3])} tie(s) with differing per-dim — a statistic taking "
+                  f"few values\n    cannot order a sample strictly, which is why its inversion count "
+                  f"alone flatters it.")
 
     if skipped:
         print(f"\n  SKIPPED {len(skipped)} shape(s) over the dim cap (NOT evidence — just not run): "
