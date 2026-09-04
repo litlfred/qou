@@ -21,7 +21,8 @@ namespace QOU.BraidKnot
 /-- **Markov equilibrium hypothesis.**  For shell-closed `Z = N`
 even-even nuclei, every `λ ≠ (n)` block of `β · β*` vanishes and
 the trivial-block character ratio equals one. -/
-structure MarkovEquilibrium {n : ℕ} (β β_mirror : HeckeExpansion n)
+structure MarkovEquilibrium {R : Type*} [Field R] {n : ℕ}
+    (β β_mirror : HeckeExpansion R n)
     (trivialPartition : List ℕ) : Prop where
   trivial_in : trivialPartition ∈ β.partitions
   vanish_offblock : ∀ μ ∈ β.partitions, μ ≠ trivialPartition →
@@ -36,7 +37,7 @@ structure MarkovEquilibrium {n : ℕ} (β β_mirror : HeckeExpansion n)
     `e_{(n)}`, the knot factor equals one exactly. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
 theorem knot_factor_shell_closed
-    {n : ℕ} (β β_mirror : HeckeExpansion n)
+    {R : Type*} [Field R] {n : ℕ} (β β_mirror : HeckeExpansion R n)
     (trivialPartition : List ℕ)
     (eq : MarkovEquilibrium β β_mirror trivialPartition)
     (triv_nz : β.trivial trivialPartition ≠ 0) :
