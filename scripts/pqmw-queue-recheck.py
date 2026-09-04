@@ -137,6 +137,37 @@ def class_has_refutation(cls: str, path: str) -> bool:
                for kw, sig in _decl_blocks(src))
 
 
+def class_has_constructor(cls: str, root: pathlib.Path) -> bool:
+    """Is there a declaration anywhere whose CONCLUSION is `cls`?
+
+    `class_is_inhabited` only looks at `instance`s, and misses the positive
+    direction written as a plain theorem -- an INTRODUCTION RULE.  Worked case:
+    `ScalarLPProjection` has no instance, but `ConfinementSDP.lean` proves
+
+        theorem scalarLPProjection_of_strongDuality … : ScalarLPProjection n h :=
+          ⟨HasConfinementSDPStrongDuality.strong_duality hSlater⟩
+
+    so the carrier follows from strong duality (Boyd-Vandenberghe §5.2.3/§5.3)
+    rather than being assumed.  A carrier with a constructor is load-bearing and
+    its accessor is not a defect."""
+    base = cls.split(".")[-1]
+    pat = re.compile(rf"\b{re.escape(base)}\b")
+    neg = re.compile(rf"¬\s*\(?\s*{re.escape(base)}\b")
+    for f in root.rglob("*.lean"):
+        if ".lake" in f.parts:
+            continue
+        src = f.read_text(errors="replace")
+        if not pat.search(src):
+            continue
+        for kw, sig in _decl_blocks(src):
+            if kw == "class" or neg.search(sig) or ":" not in sig:
+                continue
+            tail = sig.rsplit("]", 1)[-1] if "]" in sig else sig
+            if pat.search(tail):
+                return True
+    return False
+
+
 def class_is_inhabited(cls: str, root: pathlib.Path) -> bool:
     """Does any `instance` in the tree declare `cls` in its signature?"""
     if cls in _INHAB_CACHE:
@@ -182,6 +213,7 @@ def main() -> int:
             rec["class_inhabited"] = class_is_inhabited(cls, pathlib.Path("content"))
         if cls:
             rec["class_refuted"] = class_has_refutation(cls, path)
+            rec["class_constructed"] = class_has_constructor(cls, pathlib.Path("content"))
         nxt = re.search(rf"^[ \t]*{DECL}[ \t]+", s[m.end():], re.M)
         blk = s[m.start(): m.end() + (nxt.start() if nxt else 4000)]
         rec["bare_projection"] = proof_is_bare_projection(blk)
@@ -221,13 +253,16 @@ def main() -> int:
     #   bare + uninhabited -> honest open state AND a restatement: the disclosure
     #   derives            -> not a projection at all, whatever the inhabitation
     drain = [r for r in bare if r.get("class_inhabited") is False
-             and not r.get("class_refuted")]
+             and not r.get("class_refuted") and not r.get("class_constructed")]
+    ctors = [r for r in bare if r.get("class_inhabited") is False
+             and not r.get("class_refuted") and r.get("class_constructed")]
     gates = [r for r in bare if r.get("class_inhabited") is False
              and r.get("class_refuted")]
     legit = [r for r in bare if r.get("class_inhabited") is True]
     print(f"\n  bare AND uninhabited : {len(drain):3d}  <-- THE DRAIN QUEUE")
     print(f"  bare but inhabited   : {len(legit):3d}      bundle is built; Aug-09 legit/advisory")
     print(f"  bare, has refutation : {len(gates):3d}      a working GATE, not a defect")
+    print(f"  bare, has constructor: {len(ctors):3d}      carrier is DERIVED upstream, not assumed")
     print("\n  --- THE DRAIN QUEUE ---")
     for r in sorted(drain, key=lambda r: r["path"]):
         print(f"    {r['decl']:42s} {str(r['class']):32s} {r['path'].split('/')[-1]}")
