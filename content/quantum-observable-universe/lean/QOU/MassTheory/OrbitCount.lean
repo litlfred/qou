@@ -48,49 +48,52 @@ a transposition. `orbitCount σ = card α − orbitDefect σ` recovers the count
   product of one identical block per nucleon, each of defect one, so on `3A` strands
   it leaves `3A − A = 2A` orbits: exactly the `c(σ_free) = 2A` that file assumes.
 * `sign_eq_neg_one_pow_orbitDefect` — the defect's **parity** is the sign, so
-  multiplying by any transposition flips it: `orbitDefect_swap_mul_odd`. Half of the
-  ±1 step comes free this way.
+  multiplying by any transposition flips it: `orbitDefect_swap_mul_odd`.
 * `sameCycle_swap_mul_iff` — a transposition exactly toggles whether two points share
-  a cycle (the (R)/(R2) pair below).
+  a cycle.
+* **The transposition step itself, both directions, sorry-free**:
+  `orbitDefect_swap_mul_of_sameCycle` (split: the defect drops by exactly one) and
+  `orbitDefect_swap_mul_of_not_sameCycle` (merge: it rises by exactly one).
 
-## 🛑 What is NOT proved here, stated plainly
+## The transposition step, and how it is proved
 
-The **magnitude** of the transposition step — that multiplying by a transposition
-changes the orbit count by *exactly* one. Its parity is proved
-(`orbitDefect_swap_mul_odd`); the bound `|Δ| ≤ 1` is the gap.
+Multiplying by a transposition changes the orbit count by **exactly one** — up when
+the two points lay in different cycles, down when they lay in the same one. The
+*parity* comes free from the sign (`orbitDefect_swap_mul_odd`); the **magnitude** is
+the content, and Mathlib supplies none of it — there is no `cycleType_swap_mul` lemma
+in the library at all. It is proved here from one base case, reached twice per
+induction step.
 
-**The DYNAMICS are now fully proved; only the COUNTING is left.**
+* **(S-adj)** `orbitDefect_swap_apply_mul` — the **adjacent** case `b = f a`. Split
+  `f = cycleOf f a * (f * (cycleOf f a)⁻¹)` into disjoint halves
+  (`disjoint_mul_inv_of_mem_cycleFactorsFinset`); the transposition cannot leave the
+  first, so `orbitDefect_mul_of_disjoint` reduces to a single cycle, where Mathlib's
+  `IsCycle.swap_mul` and `support_swap_mul_eq` give a cycle on one fewer point — or,
+  when the cycle *is* that transposition, the identity.
+* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the general case. `b = σ^k a` for a
+  least `k ≥ 1`, and `orbitDefect_swap_mul_aux` walks that arc down to `k = 1`: each
+  step peels the first letter off the front of the arc with (S-adj) and puts it back
+  at the far end with (S-adj) again, glued by the three-cycle identity
+  `swap (σa) b · swap a (σa) = swap a (σa) · swap a b`.
+* **(R)** `sameCycle_swap_mul_of_not_sameCycle` and **(R2)**
+  `not_sameCycle_swap_mul_of_sameCycle` — the dynamics: a transposition **toggles**
+  whether `a` and `b` share a cycle (`sameCycle_swap_mul_iff`). Both are the same walk
+  along `σ`'s orbit of `a`; (R) needs no `a ≠ b` at all.
+* The **merge** is *derived* from (S) and (R) rather than proved again, since
+  `swap a b` is an involution.
 
-* **(R)** `sameCycle_swap_mul_of_not_sameCycle` — **PROVED.** Joining two different
-  cycles with a transposition puts the two points in one cycle of the product. It
-  turned out to need no `a ≠ b` at all.
-* **(R2)** `not_sameCycle_swap_mul_of_sameCycle` — **PROVED.** The converse: within
-  one cycle, the transposition separates them.
-* Hence `sameCycle_swap_mul_iff`: a transposition **exactly toggles** whether `a` and
-  `b` share a cycle. Both proofs are the same walk along `σ`'s orbit of `a`.
-* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split's effect on the *count*.
-  **The one remaining `sorry`.**
+## 🛑 What this does and does not settle for `ClassicalTraceFloor`
 
-`orbitDefect_swap_mul_of_not_sameCycle` (the merge) is **proved from (S) and (R)**,
-using that `swap a b` is an involution.
+It closes the **free** half outright (`orbitCount_prod_of_disjoint_unit_defect`), and
+it supplies the general step the **atom** half needs. It does **not** by itself
+discharge that file's stated counts: knowing that each letter moves the count by ±1
+leaves the bookkeeping of *which* sign each letter of the canonical word carries —
+i.e. whether that letter's two strands already lay in one orbit. That is a statement
+about the specific word, not about permutations in general, and it is not in this
+file.
 
-**(S) reduces further, and this is the sharpened target.** `Equiv.Perm.cycleOf` and
-`cycleFactorsFinset` split `σ` into `c = cycleOf σ a` and a disjoint remainder, and
-`orbitDefect_mul_of_disjoint` handles the remainder, so (S) is equivalent to the
-single-cycle statement
-
-    c a cycle,  a ≠ b,  a, b ∈ support c   ⟹   orbitDefect (swap a b * c) + 1 = orbitDefect c
-
-i.e. *a transposition of two points of one cycle splits it into two disjoint cycles
-on the two arcs*. Mathlib proves only the **adjacent** case, `Equiv.Perm.IsCycle.swap_mul`
-(where `b = c a`, so one arc is a single point); the general two-arc split is absent
-and is what a next attempt should build.
-
-So this file does **not** yet discharge the `ClassicalTraceFloor` hypotheses. It
-closes the **free** half outright, proves the merge and the full transposition
-dynamics, and reduces the **atom** half from "a tabulated count at every `A`" to one
-single-cycle counting statement. That
-is the honest state; do not cite it as closing the cycle-count gap.
+So the general cycle-count gap those two files name is closed; the word-specific
+accounting is not. **Do not cite this file as verifying `c(σ_atom) = A + 1`.**
 
 -- Ref: [manuscript] bean qou-zrx2 follow-up (5); the transposition/cycle-count
 -- step is the classical fact underlying well-definedness of the sign of a
@@ -246,30 +249,27 @@ theorem orbitDefect_swap_mul_odd {σ : Perm α} {a b : α} (h : a ≠ b) :
     rw [ho.neg_one_pow, ho'.neg_one_pow] at hs
     exact (by decide : (-1 : ℤˣ) ≠ 1) hs
 
-/-! ### The transposition step: what remains, and how far it reduces
+/-! ### The transposition step
 
-`orbitDefect_swap_mul_odd` gives the **parity** of the step. The **magnitude**
-`|Δ| ≤ 1` is the gap, and it splits into exactly two pieces, both smaller than the
-statement they replace:
+`orbitDefect_swap_mul_odd` above gives the **parity** of the step. The **magnitude**
+`|Δ| = 1` is the content, and it comes in two halves:
 
 * **(S) the split**, `orbitDefect_swap_mul_of_sameCycle` — within one cycle, the
-  transposition splits it and the defect drops. This is the direction Mathlib comes
-  closest to: `Equiv.Perm.IsCycle.swap_mul` already proves that removing a point
-  from a cycle leaves a cycle.
+  transposition splits it and the defect drops. Proved below via the adjacent case
+  `orbitDefect_swap_apply_mul`, which is where `Equiv.Perm.IsCycle.swap_mul` (removing
+  a point from a cycle leaves a cycle) does the work.
 * **(R) reachability**, `sameCycle_swap_mul_of_not_sameCycle` — joining two
   *different* cycles puts `a` and `b` in the *same* cycle of the product. Elementary,
   and the argument is short: iterating `swap a b * σ` from `b` follows `σ`'s cycle
   (`τ x = σ x` whenever `σ x ∉ {a, b}`) until it reaches `b`'s predecessor `x` with
   `σ x = b`, where `τ x = swap a b b = a`. So `a` is reached from `b`.
 
-**The merge case is then derived, not assumed** — `orbitDefect_swap_mul_of_not_sameCycle`
+**The merge case is derived, not assumed** — `orbitDefect_swap_mul_of_not_sameCycle`
 below is *proved* from (S) and (R), because `swap a b` is an involution: applying (S)
 to `swap a b * σ`, whose `a` and `b` are in one cycle by (R), and using
 `swap a b * (swap a b * σ) = σ`, gives the merge statement directly.
 
-(S) carries `sorry` with `-- Ref:` as the honest "stated, not yet proved" marker per
-the repo's Lean discipline — NOT axiomatised, NOT weakened to something provable, and
-consumed by nothing outside this section. (R) is proved.
+Everything in this section is sorry-free.
 -/
 
 /-- **(R)** Joining two different cycles with a transposition puts the two points in
@@ -390,27 +390,205 @@ theorem sameCycle_swap_mul_iff {σ : Perm α} {a b : α} (h : a ≠ b) :
   ⟨fun hτ hσ => not_sameCycle_swap_mul_of_sameCycle h hσ hτ,
    sameCycle_swap_mul_of_not_sameCycle⟩
 
-/-- **(S)** Within one cycle, the transposition splits it and the defect drops.
-**The one remaining gap.**
+/-! ### (S-adj): the adjacent case, and the arc induction that reduces (S) to it -/
 
-Via `cycleOf`/`cycleFactorsFinset` plus `orbitDefect_mul_of_disjoint` this is
-equivalent to the single-cycle statement: for a cycle `c` with `a ≠ b` both in
-`support c`, `orbitDefect (swap a b * c) + 1 = orbitDefect c` — that a transposition
-of two points of one cycle splits it into two disjoint cycles on the two arcs.
-Mathlib proves only the ADJACENT case `b = c a` (`Equiv.Perm.IsCycle.swap_mul`,
-where one arc is a single point); the general two-arc split is what is missing. -/
+/-- **(S-adj) for a single cycle.** Removing a cycle's start point drops its defect by
+one: `swap x (c x) * c` is the identity when `c` is the transposition `(x, c x)`, and
+otherwise is a cycle on `support c \ {x}` — Mathlib's `IsCycle.swap_mul` and
+`support_swap_mul_eq`. -/
+private theorem orbitDefect_swap_apply_mul_isCycle {c : Perm α} (hc : c.IsCycle) {x : α}
+    (hx : c x ≠ x) :
+    orbitDefect (swap x (c x) * c) + 1 = orbitDefect c := by
+  have hdef : orbitDefect c = #c.support - 1 := by simp [orbitDefect, hc.cycleType]
+  have h2 : 2 ≤ #c.support := hc.two_le_card_support
+  by_cases hcc : c (c x) = x
+  · -- `c` IS the transposition, so the product is the identity and `#support c = 2`
+    have hswap : c = swap x (c x) := hc.eq_swap_of_apply_apply_eq_self hx hcc
+    have key : ∀ (d : Perm α) (z : α), d = swap x z → swap x z * d = 1 := by
+      rintro d z rfl; exact swap_mul_self x z
+    have hone : swap x (c x) * c = 1 := key c (c x) hswap
+    have hsupp2 : #c.support = 2 := by
+      rw [hswap]; exact card_support_swap (Ne.symm hx)
+    rw [hone, orbitDefect_one, hdef, hsupp2]
+  · -- the product is a cycle on one fewer point
+    have hcyc : IsCycle (swap x (c x) * c) := hc.swap_mul hx hcc
+    have hxmem : x ∈ c.support := mem_support.mpr hx
+    have hcard : #(swap x (c x) * c).support = #c.support - 1 := by
+      rw [support_swap_mul_eq c x hcc, card_sdiff,
+        Finset.singleton_inter_of_mem hxmem, card_singleton]
+    have hdef2 : orbitDefect (swap x (c x) * c) = #c.support - 1 - 1 := by
+      unfold orbitDefect
+      rw [hcyc.cycleType, hcard]
+      simp
+    have h3 : 2 ≤ #(swap x (c x) * c).support := hcyc.two_le_card_support
+    rw [hcard] at h3
+    omega
+
+/-- **(S-adj)** Multiplying by the transposition of `x` with its own image `f x` removes
+`x` from its cycle, dropping the defect by exactly one.
+
+Reduces to the single-cycle case by splitting `f = cycleOf f x * (f * (cycleOf f x)⁻¹)`
+into disjoint halves (`disjoint_mul_inv_of_mem_cycleFactorsFinset`) — the transposition
+touches only the first — and applying `orbitDefect_mul_of_disjoint`. -/
+theorem orbitDefect_swap_apply_mul {f : Perm α} {x : α} (hf : f x ≠ x) :
+    orbitDefect (swap x (f x) * f) + 1 = orbitDefect f := by
+  have hxs : x ∈ f.support := mem_support.mpr hf
+  have hcx : f.cycleOf x x = f x := cycleOf_apply_self f x
+  have hcxne : f.cycleOf x x ≠ x := by rw [hcx]; exact hf
+  have hciscyc : (f.cycleOf x).IsCycle := isCycle_cycleOf f hf
+  have hdisj : Disjoint (f.cycleOf x) (f * (f.cycleOf x)⁻¹) :=
+    (disjoint_mul_inv_of_mem_cycleFactorsFinset
+      (cycleOf_mem_cycleFactorsFinset_iff.mpr hxs)).symm
+  have hfeq : f.cycleOf x * (f * (f.cycleOf x)⁻¹) = f := by
+    rw [hdisj.commute.eq, mul_assoc, inv_mul_cancel, mul_one]
+  -- the transposition cannot leave `x`'s own cycle
+  have hsub : (swap x (f.cycleOf x x) * f.cycleOf x).support ⊆ (f.cycleOf x).support := by
+    intro y hy
+    by_contra hnot
+    have hcy : f.cycleOf x y = y := notMem_support.mp hnot
+    have hyx : y ≠ x := by rintro rfl; exact hcxne hcy
+    have hycx : y ≠ f.cycleOf x x := by
+      rintro rfl; exact hcxne ((f.cycleOf x).injective hcy)
+    exact (mem_support.mp hy)
+      (by rw [Perm.mul_apply, hcy, swap_apply_of_ne_of_ne hyx hycx])
+  have hdisj2 : Disjoint (swap x (f.cycleOf x x) * f.cycleOf x) (f * (f.cycleOf x)⁻¹) :=
+    disjoint_iff_disjoint_support.mpr
+      (Finset.disjoint_of_subset_left hsub (disjoint_iff_disjoint_support.mp hdisj))
+  have hsplit : (swap x (f.cycleOf x x) * f.cycleOf x) * (f * (f.cycleOf x)⁻¹)
+      = swap x (f x) * f := by
+    rw [mul_assoc, hfeq, hcx]
+  have h1 : orbitDefect (swap x (f x) * f)
+      = orbitDefect (swap x (f.cycleOf x x) * f.cycleOf x)
+        + orbitDefect (f * (f.cycleOf x)⁻¹) := by
+    rw [← hsplit, orbitDefect_mul_of_disjoint hdisj2]
+  have h2 : orbitDefect f
+      = orbitDefect (f.cycleOf x) + orbitDefect (f * (f.cycleOf x)⁻¹) := by
+    conv_lhs => rw [← hfeq]
+    rw [orbitDefect_mul_of_disjoint hdisj]
+  have h3 := orbitDefect_swap_apply_mul_isCycle hciscyc hcxne
+  omega
+
+/-- **The arc induction.** `b = σ^{k+1} a` with `k+1` least, so `a … b` is an arc of
+`a`'s cycle with no early return. Each step peels the first letter of the arc off the
+front with `(S-adj)` and puts it back at the other end with `(S-adj)` again, via the
+three-cycle identity `swap (σa) b · swap a (σa) = swap a (σa) · swap a b`. -/
+private theorem orbitDefect_swap_mul_aux :
+    ∀ (k : ℕ) (σ : Perm α) (a b : α), a ≠ b → (σ ^ (k + 1)) a = b →
+      (∀ j, 0 < j → j < k + 1 → (σ ^ j) a ≠ b) →
+      orbitDefect (swap a b * σ) + 1 = orbitDefect σ := by
+  intro k
+  induction k with
+  | zero =>
+      -- `b = σ a`: this IS the adjacent case
+      intro σ a b hab hb _
+      have hsa : σ a = b := by simpa using hb
+      have h := orbitDefect_swap_apply_mul (f := σ) (x := a)
+        (by rw [hsa]; exact Ne.symm hab)
+      rwa [hsa] at h
+  | succ n ih =>
+      intro σ a b hab hb hmin
+      -- minimality of the arc forbids an early return to `a` as well as to `b`
+      have hne_a : ∀ j, 0 < j → j < n + 2 → (σ ^ j) a ≠ a := by
+        intro j hj hjk hja
+        have hmod := pow_eq_pow_mod hja (n + 2)
+        rcases Nat.eq_zero_or_pos ((n + 2) % j) with h0 | hpos
+        · rw [h0, pow_zero] at hmod
+          simp only [Perm.coe_one, id_eq] at hmod
+          exact hab (hmod.symm.trans hb)
+        · exact hmin _ hpos (lt_trans (Nat.mod_lt _ hj) hjk) (by rw [← hmod]; exact hb)
+      have hca : σ a ≠ a := by
+        have := hne_a 1 one_pos (by omega); rwa [pow_one] at this
+      have hcb : σ a ≠ b := by
+        have := hmin 1 one_pos (by omega); rwa [pow_one] at this
+      -- peel the first letter: `ρ = swap a (σ a) * σ` drops the defect by one
+      have hρ : orbitDefect (swap a (σ a) * σ) + 1 = orbitDefect σ :=
+        orbitDefect_swap_apply_mul hca
+      -- and `ρ` traces the rest of the arc exactly as `σ` did
+      have hpow : ∀ j, j ≤ n + 1 → ((swap a (σ a) * σ) ^ j) (σ a) = (σ ^ (j + 1)) a := by
+        intro j
+        induction j with
+        | zero => intro _; simp
+        | succ m ihm =>
+            intro hm
+            have hstep : (σ ^ (m + 2)) a = σ ((σ ^ (m + 1)) a) := by
+              rw [pow_succ', Perm.mul_apply]
+            have hne1 : (σ ^ (m + 2)) a ≠ a := by
+              rcases eq_or_lt_of_le hm with h | h
+              · rw [show m + 2 = n + 2 by omega, hb]; exact Ne.symm hab
+              · exact hne_a (m + 2) (by omega) (by omega)
+            have hne2 : (σ ^ (m + 2)) a ≠ σ a := by
+              intro hcon
+              exact hne_a (m + 1) (by omega) (by omega)
+                (σ.injective (by rw [← hstep, hcon]))
+            rw [pow_succ', Perm.mul_apply, ihm (by omega), Perm.mul_apply, ← hstep]
+            exact swap_apply_of_ne_of_ne hne1 hne2
+      have hIH := ih (swap a (σ a) * σ) (σ a) b hcb
+        (by rw [hpow (n + 1) le_rfl]; exact hb)
+        (fun j hj hjn => by rw [hpow j (by omega)]; exact hmin (j + 1) (by omega) (by omega))
+      -- the three-cycle identity `(a b σa)`, written two ways
+      have hswapid : swap (σ a) b * swap a (σ a) = swap a (σ a) * swap a b := by
+        have hba : b ≠ a := Ne.symm hab
+        have hac : a ≠ σ a := Ne.symm hca
+        have hbc : b ≠ σ a := Ne.symm hcb
+        ext y
+        simp only [Perm.mul_apply]
+        by_cases h1 : y = a
+        · subst h1
+          rw [swap_apply_left, swap_apply_left, swap_apply_left,
+            swap_apply_of_ne_of_ne hba hbc]
+        by_cases h2 : y = b
+        · subst h2
+          rw [swap_apply_of_ne_of_ne hba hbc, swap_apply_right, swap_apply_right,
+            swap_apply_left]
+        by_cases h3 : y = σ a
+        · subst h3
+          rw [swap_apply_right, swap_apply_of_ne_of_ne hac hab,
+            swap_apply_of_ne_of_ne hca hcb, swap_apply_right]
+        · rw [swap_apply_of_ne_of_ne h1 h3, swap_apply_of_ne_of_ne h3 h2,
+            swap_apply_of_ne_of_ne h1 h2, swap_apply_of_ne_of_ne h1 h3]
+      have hψ : swap a (σ a) * (swap a b * σ) = swap (σ a) b * (swap a (σ a) * σ) := by
+        rw [← mul_assoc, ← hswapid, mul_assoc]
+      -- `(swap a b * σ) a = σ a`, so (S-adj) applies to it at `a` and puts the letter back
+      have hτa : (swap a b * σ) a = σ a := by
+        rw [Perm.mul_apply, swap_apply_of_ne_of_ne hca hcb]
+      have hτ : orbitDefect (swap a (σ a) * (swap a b * σ)) + 1
+          = orbitDefect (swap a b * σ) := by
+        have h := orbitDefect_swap_apply_mul (f := swap a b * σ) (x := a)
+          (by rw [hτa]; exact hca)
+        rwa [hτa] at h
+      rw [hψ] at hτ
+      omega
+
+/-- **(S)** Within one cycle, the transposition splits it and the defect drops by
+exactly one. **Proved.**
+
+`a` and `b` lie on one cycle, so `b = σ^k a` for a least `k ≥ 1`; the arc induction
+`orbitDefect_swap_mul_aux` walks that arc down to the adjacent case `k = 1`, which is
+`orbitDefect_swap_apply_mul`. -/
 theorem orbitDefect_swap_mul_of_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hc : σ.SameCycle a b) :
     orbitDefect (swap a b * σ) + 1 = orbitDefect σ := by
-  -- Ref: [manuscript] bean qou-zrx2 follow-up (5), piece (S).
-  sorry
+  classical
+  have hex : ∃ k, 0 < k ∧ (σ ^ k) a = b := by
+    obtain ⟨i, _, hi⟩ := hc.exists_pow_eq'
+    refine ⟨i, ?_, hi⟩
+    rcases Nat.eq_zero_or_pos i with rfl | hp
+    · simp only [pow_zero, Perm.coe_one, id_eq] at hi
+      exact absurd hi h
+    · exact hp
+  obtain ⟨hkpos, hk⟩ := Nat.find_spec hex
+  have hmin : ∀ j, j < Nat.find hex → ¬ (0 < j ∧ (σ ^ j) a = b) :=
+    fun j hj => Nat.find_min hex hj
+  obtain ⟨m, hm⟩ : ∃ m, Nat.find hex = m + 1 := ⟨Nat.find hex - 1, by omega⟩
+  rw [hm] at hk hmin
+  exact orbitDefect_swap_mul_aux m σ a b h hk
+    (fun j hj hjm hjb => hmin j hjm ⟨hj, hjb⟩)
 
 /-- **The merge case, DERIVED from (S) and (R).** When `a` and `b` lie in different
 cycles of `σ`, those two orbits merge and the defect rises by exactly one.
 
-No `sorry` of its own: `swap a b` is an involution, so `swap a b * σ` has `a` and `b`
-in one cycle by (R), and applying (S) to it returns `σ`. This is why the two pieces
-above are the whole remaining gap. -/
+`swap a b` is an involution, so `swap a b * σ` has `a` and `b` in one cycle by (R),
+and applying (S) to it returns `σ`. Nothing new is proved here. -/
 theorem orbitDefect_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hnc : ¬ σ.SameCycle a b) :
     orbitDefect (swap a b * σ) = orbitDefect σ + 1 := by
