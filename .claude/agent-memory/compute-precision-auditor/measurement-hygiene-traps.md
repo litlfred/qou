@@ -426,3 +426,37 @@ passes as clean.
 Related, same session: `qcollatz_vtwo_domain_stable_probe` takes `depth` as
 `sys.argv[1]` defaulting to 14 against a committed 22 — nodes 52→24. Three
 producers, one shape of mistake.
+
+## TRAP — a "restore" that also reverts the thing you are testing WITH
+
+Writing the q0 pin-flip test (`computations/audits/q0_pin_flip_test.py`,
+2026-09-04): the harness patches `computations/q0_anchor_manifest.json` to force
+a stem to the muon anchor, re-runs the producer, diffs, and restores the tree
+between producers because **producers write sibling witnesses**. The restore was
+`git checkout -- computations/`.
+
+The manifest **lives under `computations/`**. So the restore after the first
+producer reverted the pin patch, and every producer after it ran at the
+UNFLIPPED pin — trivially showing "no move". The run reported *"0/7 subjects
+moved, all verdicts hold"*, which was **vacuous**: six of the seven were never
+actually tested.
+
+**What caught it was the second positive control**, which read `no move` where
+it had to move. A single control would not have: the first producer ran under a
+correctly-patched manifest and moved, so `any(control_moved)` was True and the
+run looked verified. The gate is now `all(controls moved)`, not `any`.
+
+Two generalisations worth more than the instance:
+
+1. **A restore step is part of the experiment, not scaffolding around it.** Ask
+   what else lives under the path you are reverting. Anything the harness itself
+   installed — a patched config, an env fixture, a stub — is inside the blast
+   radius of a directory-level `git checkout`.
+2. **Use MORE THAN ONE positive control, and require ALL of them.** One control
+   verifies the harness at one moment; a harness that decays partway through a
+   run (as this one did, after the first iteration) passes a single-control
+   check and fails everything after it silently. This is the same shape as a
+   detector whose first pass is sound and whose later passes are not.
+
+The corrected run: 2/2 controls MOVED, 0/7 subjects moved. Only the second
+number was ever in question, and only the fixed harness could answer it.
