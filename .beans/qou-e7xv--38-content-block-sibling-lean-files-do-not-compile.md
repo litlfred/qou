@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T05:07:56Z
+updated_at: 2026-09-04T07:39:02Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -216,3 +216,43 @@ Remaining 6: spin-involution-lp-dual-invariance 22 (`qou-0xrn`),
 townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
 categorical-transfer-matrix (`qou-xdwp`) / gb-depth-period-correspondence /
 categorical-q-ext-deriv-unique 3.
+
+
+## 2026-09-04, fourth pass — 38 → 4, plus a correction and a cost
+
+`categorical-q-ext-deriv-unique` (the `qinv` field is DETERMINED by
+`q * qinv = 1`, so the theorem needed a derivation, not the extra hypothesis
+that would have weakened it) and `gb-depth-period-correspondence` (three
+`opaque` constants were asserting `Nonempty (GroupLikeDepth q n)` — the
+`sharpness` field of the file's own conjecture class — unconditionally; now
+parameters, with the content derived as `depth_period_nonempty`, no axioms).
+
+**CORRECTION to my own claim.** The audit doc said a stranded sibling is
+"often a pure duplicate". That is a rate over a population I never measured;
+I generalised from three repairs. A sibling session measured the adjacent
+population (`02483c5457` on main): `sorry`-typed declarations = **exactly 1**
+corpus-wide, siblings degenerate on a library name = **exactly 1**, both the
+same file. Real shape, wrong rate.
+
+**Corpus-grep miss.** `scripts/lean-sibling-library-divergence-audit.py`
+existed from 2026-09-03 13:11, before this sweep, detecting the same
+phenomenon from the other side. Its motivating incident is worse than any
+found here (a `False` derivable from a stale sibling on 2026-09-03).
+
+**Cost of the sweep, measured not assumed.** `lean.ref` resolves sibling-first
+BY FILE, so making a sibling compile turns a visibly-broken shadow into a
+silently-divergent one. Of the 38 files touched, 6 are in that script's 195
+divergences and **4 verify as real**: `QOU.planck_classical_limit`,
+`QOU.qExtDeriv_classical`, `QOU.qLieBracket_classical`,
+`QOU.FlavorDressing.flavor_mass_splitting_bound`. All pre-existing; deciding
+which declaration is canonical is a per-block judgement about what the `.md`
+means, not a compile fix, so not done here.
+
+The other **2 are false positives** from that script's documented
+namespace-concatenation defect — it paired `descent_cocycle_deviation` with a
+library file declaring no such name. Verify a reported pair against both files;
+another agent's audit script is not a primary source.
+
+Remaining 4: spin-involution-lp-dual-invariance 22 (`qou-0xrn`),
+townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
+categorical-transfer-matrix 3 (`qou-xdwp`).

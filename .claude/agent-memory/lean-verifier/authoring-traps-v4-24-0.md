@@ -322,3 +322,38 @@ Before adding `Inhabited` to silence this: check whether the type's
 inhabitedness is a conjectural claim somewhere in the same file. If it is, take
 the element as a parameter and derive existence from the class instead. Note an
 `opaque` FUNCTION into the type does the same thing as a constant.
+
+## TRAP — repairing a sibling can turn a VISIBLY broken file into a SILENTLY divergent one
+
+`lean.ref` resolves **sibling-first by file** (§0a candidate 1). If a sibling
+declares the same fully-qualified name as a library file, with a different
+statement, the sibling is what a reader reaches. While it does not compile that
+is loud. Once it compiles it is quiet, and nothing else checks the two agree.
+
+Measured 2026-09-04 across 38 sibling files repaired in one sweep: **6 appear in
+`scripts/lean-sibling-library-divergence-audit.py`'s 195 divergences, 4 verified
+real.** Type case: `QOU.planck_classical_limit` is declared in both
+`quantum-planck-constant.lean` and `QuantumObservableUniverse/Propositions.lean`
+— the sibling proving it of `quantumPlanckConstantSibling`, the library of
+`quantumPlanckConstant`.
+
+So run that script over anything you make compile, and check whether the block's
+`.md` means the sibling's statement or the library's. Repairing is not neutral.
+
+## TRAP — that script over-reports; verify a pair against BOTH files first
+
+Same run, 2 of the 6 were **false positives**: it paired
+`QOU.LiftingDescent.descent_cocycle_deviation` with
+`LiftingDescent/ccg_crossed_module_structure.lean`, which declares only
+`CrossedModuleContext` and `ccg_crossed_module_structure`, and
+`QOU.BraidKnot.ConfinementPhaseStratification` with a `ConfinementLevel.lean`
+that declares no such name.
+
+Its own header explains why: it builds a fully-qualified name by concatenating
+**every** `namespace` line in the file, wrong for a file that opens and closes
+several in sequence — 6.1 % of sibling and 8.5 % of library files.
+
+One `grep -cE '^(theorem|lemma|def|structure|class) <name>' <libfile>` settles
+it. Skipping that nearly cost a retraction of a correct repair here, on the
+strength of a tool a sibling agent wrote and I had not checked. **Another
+agent's audit script is not a primary source.**

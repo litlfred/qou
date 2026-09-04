@@ -406,3 +406,87 @@ associativity before concluding a proof is wrong.
 | 7 | `fluid-dynamics/townsend-biot-savart-strain` |
 | 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
 | 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
+
+---
+
+## Update 2026-09-04, fourth pass — 38 → 4, and a cost of this sweep I had not measured
+
+**34 of the 38 at 0 errors.** Two more repaired (`categorical-q-ext-deriv-unique`,
+`gb-depth-period-correspondence`); re-verified after a second `origin/main` merge
+(49 commits, no conflict), and none of the 34 regressed.
+
+### CORRECTION — "a stranded sibling is often a pure duplicate" was a rate claim I did not measure
+
+The 2026-09-04 update above says that, and "often" asserts a rate over a
+population. I repaired three that way and generalised from three.
+
+A sibling session measured the adjacent population and landed it on `main` as
+`02483c5457` while this branch was working. Its numbers:
+
+- declarations whose **type** is `sorry`: **exactly 1** corpus-wide — the
+  `delta-max-uniform-bound` stub deleted here. Singular, not a class.
+- siblings **degenerate on a name the library also declares**: also **exactly 1**,
+  the same file.
+
+So the shape is real and the rate is not "often". `pentagon-uv-commutation` does
+not appear in either count because it declared a *different* name
+(`_mass_theory` suffix), and `bloch-group-quotient-construction` was trivial
+instances rather than a name collision — three repairs, three different shapes.
+Read the earlier paragraph as describing those three, not a population.
+
+### I should have found the pre-existing script, and did not
+
+[`scripts/lean-sibling-library-divergence-audit.py`](../../scripts/lean-sibling-library-divergence-audit.py)
+was written **2026-09-03 13:11**, before this sweep began, and detects exactly
+the phenomenon this audit reports from the other direction: a sibling and a
+library file declaring the same fully-qualified name with different statements.
+Its motivating incident is worse than any found here — `conj:b1-hyperbolic-rows-theorem`
+was repaired in the library on 2026-08-08, the sibling kept the pre-repair
+version, and a `False` was still derivable from the sibling on 2026-09-03.
+
+That is a corpus-grep miss: the sweep's core finding was already tooled.
+
+### The cost: a repair turns a VISIBLY broken sibling into a SILENTLY divergent one
+
+`lean.ref` resolves **sibling-first by file** (§0a candidate 1). A sibling that
+does not compile is visibly broken — a reader following the ref hits errors. A
+sibling that compiles while declaring the same name as a library declaration,
+with a different statement, looks fine and is not.
+
+Making these files compile does not create the divergence (the script compares
+declaration text, not compilation, so it flagged them before too). It changes
+the failure mode from loud to quiet.
+
+**Measured on the 38 sibling files this branch touched: 6 appear in the script's
+195 divergences, and hand-verification says 4 are real.**
+
+| name | library | verdict |
+|---|---|---|
+| `QOU.planck_classical_limit` | `QuantumObservableUniverse/Propositions.lean` | **REAL** — sibling proves it of `quantumPlanckConstantSibling`, library of `quantumPlanckConstant` |
+| `QOU.qExtDeriv_classical` | same | **REAL** |
+| `QOU.qLieBracket_classical` | same | **REAL** |
+| `QOU.FlavorDressing.flavor_mass_splitting_bound` | `FlavorDressing/FlavorMassSplittingBound.lean` | **REAL** |
+| `QOU.BraidKnot.ConfinementPhaseStratification` | `BraidKnot/ConfinementLevel.lean` | **FALSE POSITIVE** — that file declares no such name |
+| `QOU.LiftingDescent.descent_cocycle_deviation` | `LiftingDescent/ccg_crossed_module_structure.lean` | **FALSE POSITIVE** — that file declares only `CrossedModuleContext` and `ccg_crossed_module_structure` |
+
+The two false positives are the script's own documented defect: it builds a
+fully-qualified name by concatenating **every** `namespace` line in a file, which
+is wrong for a file opening and closing several in sequence. Its header says so,
+and says 6.1 % of sibling and 8.5 % of library files have more than one. **So
+verify a reported pair against both files before acting on it** — the
+`descent_cocycle_deviation` row nearly cost a retraction of a correct repair
+here, on the strength of a tool another agent wrote and I had not checked.
+
+The four real ones are **pre-existing and not repaired here**: deciding whether
+the sibling or the library declaration is canonical is a per-block judgement
+about which statement the `.md` means, not a compile fix. Tracked in
+bean `qou-e7xv`.
+
+### The 4 that remain
+
+| errors | file |
+|---|---|
+| 22 | `mass-theory/spin-involution-lp-dual-invariance` (bean `qou-0xrn`) |
+| 7 | `fluid-dynamics/townsend-biot-savart-strain` |
+| 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
+| 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`) |
