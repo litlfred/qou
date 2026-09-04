@@ -478,9 +478,83 @@ directions on either side of A ~ 150. Entries with non-positive `B_AME` or
       now a sharper question behind it. With the law overshooting half the
       table, "how far off is the extensive term" has no single answer; the sign
       of the error depends on A.
-- [ ] The crossover near A ~ 150 is a derived, falsifiable feature. Whether it
-      is a coincidence of `Q_beta` or structural (it is where `t_p^Z t_n^N`
-      meets the SEMF volume term) is a short calculation and would say whether
-      the law has any regime of validity at all.
+- [x] **Settled 2026-09-03: no regime of validity.** See below.
+- [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
+      (unchanged; the existing vacuity audits do not catch this pattern).
+
+
+---
+
+## No choice of scale rescues the law — 4.59 decades at the OPTIMUM
+
+Probe: `computations/qbeta/qbeta_no_regime_of_validity_probe.py` (5/5).
+
+`Q_beta` enters `B = Q_beta . Delta_tr` only as an overall scale, so the
+question is whether the A ~ 150 crossover is structural or an accident of that
+constant. Settled by finding the **best possible** scale and showing it fails —
+the optimum is computed in order to be refuted, which is the opposite of a fit.
+
+### The constant is not the problem
+
+| | |
+|---|---|
+| optimal scale (geometric mean of `B/Delta_tr`) | **0.9482640138 MeV** |
+| corpus `Q_beta` | 0.7823334093 MeV |
+| ratio | **1.2121** |
+
+The corpus value is already within 21 % of the best a single scale can achieve.
+
+### And no scale works
+
+With that optimal scale the residual `B/(scale . Delta_tr)` still runs
+
+```
+min 0.00201403    max 78.7504    max/min = 39101   =  4.59 DECADES
+```
+
+A one-parameter scale multiplying an exponential cannot track a roughly linear
+function. Multiplying by a constant slides the curve; it cannot change that one
+side grows like `t_p^Z` and the other like `a_V A`.
+
+### So the crossover LOCATION is not structural
+
+Along fixed `N/Z` the growth per proton is `c = ln t_p + (N/Z) ln t_n`, with
+`ln t_p = +0.1360679039`, `ln t_n = -0.01233203987`:
+
+| N/Z | c per proton | 10× scale moves Z* by | ΔA |
+|---|---|---|---|
+| 1.0 | 0.12373586 | 18.61 | ~37 |
+| 1.2 | 0.12126946 | 18.99 | ~42 |
+| 1.5 | 0.11756984 | 19.58 | ~49 |
+
+"The law works near A = 150" is a property of the chosen `Q_beta`, movable by
+~40 mass units per decade. What **is** structural is that a crossover exists at
+all: `c > 0`, so an exponential and a line cross exactly once whatever the
+constants.
+
+### 🛑 The conclusion
+
+**`B = Q_beta . Delta_tr` has no regime of validity in A.** It can be made to
+agree at isolated points by choosing the scale, and then fails on both sides.
+Agreement at any particular A is a coincidence of the calibration, not evidence
+of a working law there.
+
+### Scope — the algebra is untouched
+
+`Delta_tr(Z,N)` is closed-form, derived with **zero fitted constants**, and
+reproduces every measured value to 1e-35. What is refuted is the physical ansatz
+that binding is a constant times that quantity. Whether some *other* functional
+of the same operator works is untouched — and this arc's earlier results
+constrain that: the missing piece is not a reweighting (`qou-bmz8`), not
+reachable by larger `N` (`qou-fvzm`), and not in the interface subalgebra
+(`qou-bmz8` deciding test).
+
+## Todo (revised)
+
+- [ ] **Owner:** the two extensive scales question is now answered in a way that
+      dissolves it. Neither 1.2309 nor 0.2253 MeV/nucleon is "the" prediction,
+      because no single scale is: the best possible one leaves 4.6 decades. The
+      live question is whether `B = scale . Delta_tr` should remain the stated
+      law at all.
 - [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
       (unchanged; the existing vacuity audits do not catch this pattern).

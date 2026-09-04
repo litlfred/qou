@@ -1,0 +1,89 @@
+{
+  "computation": "qbeta-no-regime-of-validity",
+  "assertions": [
+    {
+      "name": "corpus_scale_is_already_near_optimal",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "within 21 % of the best a single scale can do — so the law is not mis-calibrated"
+    },
+    {
+      "name": "optimal_scale_still_spans_more_than_three_decades",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a one-parameter scale on an exponential cannot track a line"
+    },
+    {
+      "name": "crossover_moves_tens_of_mass_units_per_decade",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so 'the law works near A = 150' is about the chosen Q_beta"
+    },
+    {
+      "name": "growth_per_proton_is_positive_so_a_crossing_must_exist",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the EXISTENCE of a crossover is structural even though its location is not"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "corpus_Q_beta_MeV": "0.78233340931",
+    "binding_law": "B = Q_beta(n).Delta_tr(Z,N)",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_nuclides": 3554,
+    "optimal_scale_MeV": "0.948264013788729",
+    "optimal_over_corpus": "1.212097045",
+    "residual_min": "0.002014026421",
+    "residual_max": "78.75042356",
+    "residual_decades": "4.5921877",
+    "ln_t_p": "0.136067903858377",
+    "ln_t_n": "-0.0123320398747498",
+    "crossover_sensitivity": [
+      {
+        "N_over_Z": "1.0",
+        "growth_per_proton": "0.12373586",
+        "dZ_per_decade": "18.6089",
+        "dA_per_decade": "37.2177"
+      },
+      {
+        "N_over_Z": "1.2",
+        "growth_per_proton": "0.12126946",
+        "dZ_per_decade": "18.9873",
+        "dA_per_decade": "41.7722"
+      },
+      {
+        "N_over_Z": "1.5",
+        "growth_per_proton": "0.11756984",
+        "dZ_per_decade": "19.5848",
+        "dA_per_decade": "48.9621"
+      }
+    ]
+  },
+  "context": {
+    "axis": "is the A ~ 150 crossover structural, or an accident of the calibration constant Q_beta?",
+    "answer": "Its EXISTENCE is structural — an exponential and a line cross exactly once — but its LOCATION is not, moving 37-49 mass units per decade of scale. And no scale rescues the law: at the optimum (0.9483 MeV, only 1.21x the corpus value) the residual still spans 4.59 decades.",
+    "method": "The optimum is computed in order to be REFUTED, which is the opposite of a fit: showing the best possible choice fails is stronger than showing one choice fails.",
+    "conclusion": "B = Q_beta . Delta_tr has no regime of validity in A. Agreement at any particular A is a coincidence of the calibration.",
+    "scope": "Scope-(a). Nothing touches the ALGEBRA — Delta_tr(Z,N) is closed-form, derived with zero fitted constants, and reproduces every measured value to 1e-35. What is refuted is the ansatz that binding is a constant times it. Whether some OTHER functional of the same operator works is untouched."
+  },
+  "gitCommit": "2049f4d9fa1bc54b6376cb9b6c54512364e3fb86",
+  "durationMs": 0,
+  "scriptFile": "qbeta_no_regime_of_validity_probe.py",
+  "scriptHash": "6b664388fc74",
+  "scriptCommitSha": "unknown",
+  "commitSha": "2049f4d9fa1bc54b6376cb9b6c54512364e3fb86",
+  "engine": "mpmath",
+  "computedAt": "2026-09-04T02:00:15.303135+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.10997858275138080759166909561"
+}
