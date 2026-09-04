@@ -283,6 +283,15 @@ carries the correct `Vol(4₁) = 2·Cl₂(π/3) = 6·Λ(π/3) ≈ 2.029883`. Per
 the *name* is wrong at ~54 sites corpus-wide while the *number* is right; I did
 not sweep for it and I changed nothing.
 
+> **SCOPE, added 2026-09-04 — this route does NOT reach the eightfold.** This
+> document sits under epic `qou-8lxd` and its title reads as a flavour route; it
+> is not one. Bean `qou-52fu` (**completed** 2026-08-04, same epic) settles the
+> question directly: hyperbolic geometry on the complement gives a holonomy
+> `ρ : π₁ → PSL(2,ℂ)`, which is **rank 1** — *more* SL(2), not SU(3) — and names
+> the PGL(3) / Fock–Goncharov analogue as the rank-2 route instead. Everything
+> below is about the volume as it feeds **mass and binding**, and should be read
+> that way.
+
 ### 🛑 THE WEAKEST LINK: the shape parameter is typed **real**, and the corpus's own theorem kills that
 
 > **RESOLVED on this branch, 2026-09-04 — the diagnosis below is kept as the
