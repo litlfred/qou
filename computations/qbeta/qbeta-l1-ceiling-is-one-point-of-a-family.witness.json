@@ -1,0 +1,215 @@
+{
+  "computation": "qbeta-l1-ceiling-is-one-point-of-a-family",
+  "assertions": [
+    {
+      "name": "reproduces_every_committed_chi",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "reproduces_committed_ceiling_at_w_eq_1",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "second_coordinate_varies_with_the_generator",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the extra coordinates are not copies of tr_M(beta)"
+    },
+    {
+      "name": "family_spans_the_whole_partition_space",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "note": "the corpus reads ONE point of a space that fills R^11"
+    },
+    {
+      "name": "w_eq_1_ceiling_does_not_bound_the_family",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the exclusion at w = 1 says nothing about w != 1"
+    },
+    {
+      "name": "central_w_is_exactly_a_reweighting",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the ceiling DOES bound the centre; the freedom it misses is precisely the non-central part"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 50,
+    "atom": "deuteron",
+    "n_strands": 6,
+    "B_AME_MeV": "2.224566",
+    "target_m_e": "4.3533670607271829582",
+    "trace_convention": "D (SU(2)/Temperley-Lieb)"
+  },
+  "data": {
+    "validation": {
+      "worst_chi_error_vs_committed": "3.84878e-49",
+      "ceiling_at_w_eq_1": "0.56613739676704101264",
+      "committed_ceiling_D": "0.5661"
+    },
+    "tr_M_beta": "0.5751722439177718708265353",
+    "tr_M_beta_sigma_g": {
+      "sigma_0": "0.75833734955937301195",
+      "sigma_1": "0.19823030607820698274",
+      "sigma_2": "1.2042468586334074508",
+      "sigma_3": "0.78980409740770166098",
+      "sigma_4": "0.14009296120562848999"
+    },
+    "span": {
+      "sampled_words": 36,
+      "partitions": 11,
+      "rank": 11
+    },
+    "central_is_reweighting": [
+      {
+        "partition": [
+          6
+        ],
+        "c_lambda": "22.7841393096",
+        "max_offdiag": "0.0",
+        "reweighting_residual": "0.0"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "c_lambda": "13.0873225069",
+        "max_offdiag": "1.27e-50",
+        "reweighting_residual": "8.553e-50"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "c_lambda": "6.84901673512",
+        "max_offdiag": "1.069e-50",
+        "reweighting_residual": "2.138e-49"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "c_lambda": "5.21686474361",
+        "max_offdiag": "9.355e-51",
+        "reweighting_residual": "4.811e-50"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "c_lambda": "3.79656930125",
+        "max_offdiag": "5.346e-51",
+        "reweighting_residual": "0.0"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "c_lambda": "1.05443872699",
+        "max_offdiag": "8.018e-51",
+        "reweighting_residual": "0.0"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "c_lambda": "-1.17122184856",
+        "max_offdiag": "6.515e-51",
+        "reweighting_residual": "2.806e-50"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "c_lambda": "-2.32400997667",
+        "max_offdiag": "2.673e-51",
+        "reweighting_residual": "3.635e-49"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "c_lambda": "-3.64875226827",
+        "max_offdiag": "8.018e-51",
+        "reweighting_residual": "3.742e-50"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "c_lambda": "-6.35613631432",
+        "max_offdiag": "3.675e-51",
+        "reweighting_residual": "0.0"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "c_lambda": "-10.5644916065",
+        "max_offdiag": "0.0",
+        "reweighting_residual": "0.0"
+      }
+    ],
+    "ceiling_over_family": {
+      "at_w_eq_1": "0.56613739676704101264",
+      "min": "0.091289201372406526328",
+      "max": "2.2867072400122251124",
+      "n_sampled": 36,
+      "n_above_w_eq_1": 21,
+      "n_above_one": 7
+    }
+  },
+  "context": {
+    "axis": "does the ell-1 binding ceiling bound the family tr_M(. w), or only the single point w = 1 that the corpus reads?",
+    "answer": "Only w = 1. The ceiling ranges over COEFFICIENTS at a fixed evaluation point and never varies the point. Every tr_M(x.w) is a Markov trace, hence a Hecke-trace object inside the N = 2 carrier and not row-capped, and the family's chi-vectors span the full partition space.",
+    "consequence": "qou-fvzm's closing line, 'THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL', is stronger than its evidence: the ell-1 ceiling excludes reweightings at one point, not Hecke-trace objects in general.",
+    "anti_fit": "NO w IS SELECTED. The sample is systematic (identity, both crossings of every generator, every ordered pair) and the reported figure is a range. beta_atom . w is a different element of the algebra -- it is not the deuteron -- so a large ceiling(w) is a fact about the algebra, not about binding. This probe does not close the gap and does not identify which functionals are observables.",
+    "scope": "Scope-(a). No content block is edited here."
+  },
+  "gitCommit": "92d167392f81747e4f6457e43a2b513d1759df8d",
+  "durationMs": 0,
+  "scriptFile": "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py",
+  "scriptHash": "e831c0bd4a35",
+  "scriptCommitSha": "unknown",
+  "commitSha": "92d167392f81747e4f6457e43a2b513d1759df8d",
+  "engine": "mpmath",
+  "computedAt": "2026-09-02T21:57:00.153901+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

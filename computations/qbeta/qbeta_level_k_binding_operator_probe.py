@@ -19,10 +19,12 @@ there; under its negation D is not forced. The headline reduces to qou-n1dj.
 
 N_min(lambda) = l(lambda), so the two small eigenphases below need N >= 3
 ((3,2,1)) and N >= 4 ((2,2,1,1)) — the 0.13 % sum coincidence requires N >= 4,
-which nothing motivates. What SURVIVES: (3,2,1) is an l = 3 block carrying the
-largest binding character, and qou-fvzm says the super-pairwise binding term
-requires N >= 3 — so this probe measures what an N = 3 extension would carry.
-The construction, its validation and the chain-vs-all-pairs finding are untouched.
+which nothing motivates. A SECOND CORRECTION the same day withdrew the last
+positive too: the "measures what an N = 3 extension would carry" reading cited
+qou-fvzm's REOPENED paragraph, which that COMPLETED bean's line 18 closes — the
+N >= 3 route is UNAVAILABLE, not merely hard, and the missing additive term is
+NOT A HECKE-TRACE OBJECT AT ALL. What is UNTOUCHED: the construction, its
+validation, and the chain-vs-all-pairs finding.
 Read every "invisible / cannot see" below through this banner.
 
 *** THIS STEP CORRECTS STEP 25, MINE ***
@@ -83,8 +85,10 @@ seven. Arithmetic confirmation, independent of the numerics:
 **588 of 720 dimensions are the TL KERNEL** (see the banner: they act as zero on
 the N = 2 physical space, they are not a hidden sector), and the binding
 character is large in them — chi_(3,2,1) = -9.598, the largest of any block,
-against chi_(6) = +0.009 in the one-dimensional visible block. Read as a
-measurement of what an N = 3 extension would carry, not of hidden information.
+against chi_(6) = +0.009 in the one-dimensional visible block. That is a fact
+about the algebra; it is NOT a measurement of hidden information, and (second
+correction, same day) NOT a measurement of what an N = 3 extension would carry
+either — see the banner.
 
 *** WHAT IS IN THE BLIND SECTOR ***
 
@@ -353,7 +357,9 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
     big = max(SHAPES, key=lambda s: abs(chis[s]))
     print(f"    largest |chi(binding)| is {str(big)} at "
           f"{mp.nstr(chis[big], 8)} — an l = 3 block, so it measures what an")
-    print(f"    N = 3 extension would carry (qou-fvzm: super-pairwise needs N >= 3)")
+    print(f"    an l = 3 block — but the N = 3 reading is WITHDRAWN too (qou-fvzm is")
+    print(f"    COMPLETED and closes it: the route is UNAVAILABLE and the missing")
+    print(f"    additive term is not a Hecke-trace object at all)")
 
     # [4] the spectra ----------------------------------------------------------
     print(f"\n[4] eigenphases of Delta_bind, block by block")
@@ -525,7 +531,10 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                    f"observable. {tot_dim - vis_dim} of {tot_dim} dimensions are the TL "
                    f"KERNEL — they act as ZERO on the N = 2 physical space (qou-i9gk), not "
                    f"a hidden sector; and (3,2,1) is an l = 3 block, so this measures what "
-                   f"an N = 3 extension would carry"},
+                   f"a fact about the algebra. The 'measures an N = 3 extension' reading "
+                   f"is WITHDRAWN (same day): it cited qou-fvzm's reopened paragraph, which "
+                   f"that COMPLETED bean closes — the route is unavailable and the missing "
+                   f"additive term is not a Hecke-trace object at all"},
         {"name": "the_only_small_eigenphases_are_in_blind_blocks",
          "passed": bool(small and all(not vis[s] for s in small)
                         and all(v < th_req0 for v in small.values())),

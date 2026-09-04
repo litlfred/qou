@@ -1,0 +1,220 @@
+{
+  "computation": "qbeta-derived-w-overdetermined-test",
+  "assertions": [
+    {
+      "name": "some_noncentral_w_is_inert_equal_spread_to_control",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a w supported in the common intra-nucleon block rescales by an atom-independent constant and carries no atom-dependent signal"
+    },
+    {
+      "name": "inert_ratios_are_atom_independent",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "deciding_interface_test_is_recorded_as_blocked_not_passed",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "one atom is fitted by construction; the n=9 evaluation is needed"
+    },
+    {
+      "name": "shortfall_measured_at_every_prepared_atom",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "framework_supplies_well_under_half_of_binding",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the shortfall R is the object being explained"
+    },
+    {
+      "name": "complementary_projector_ratios_sum_to_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "P+ + P- = 1, so their ratios must too — an internal check on the whole ratio computation"
+    },
+    {
+      "name": "every_candidate_reported_with_its_spread",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "note": "no candidate is dropped after seeing its value"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "Q_beta_n_MeV": "0.78233340931",
+    "binding_law": "B = Q_beta(n) . (tr_M(W_free) - tr_M(W_atom))",
+    "trace_convention": "D (SU(2)/Temperley-Lieb)",
+    "atoms_prepared": [
+      "2H",
+      "3H",
+      "3He"
+    ]
+  },
+  "data": {
+    "per_atom": {
+      "2H": {
+        "n": 6,
+        "terms": 32,
+        "dtr_pred": "0.55654466040444",
+        "dtr_required": "2.8435012151175",
+        "shortfall_R": "2.2869565547131",
+        "fraction_supplied": "0.19572514"
+      },
+      "3H": {
+        "n": 9,
+        "terms": 128,
+        "dtr_pred": "0.88853612687367",
+        "dtr_required": "10.84166660795",
+        "shortfall_R": "9.9531304810764",
+        "fraction_supplied": "0.081955677"
+      },
+      "3He": {
+        "n": 9,
+        "terms": 128,
+        "dtr_pred": "0.89290857539352",
+        "dtr_required": "9.8654140397853",
+        "shortfall_R": "8.9725054643918",
+        "fraction_supplied": "0.090508981"
+      }
+    },
+    "overdetermined_test": [
+      {
+        "w": "w = 1 (control)",
+        "ratio_to_w1": {
+          "2H": "1.0",
+          "3H": "1.0",
+          "3He": "1.0"
+        },
+        "blocked_at": null,
+        "c_per_atom": {
+          "2H": "4.109205815",
+          "3H": "11.20171727",
+          "3He": "10.04862727"
+        },
+        "spread": "0.839034"
+      },
+      {
+        "w": "sigma_1 (control)",
+        "ratio_to_w1": {
+          "2H": "1.318452615852908",
+          "3H": "1.318452615852908",
+          "3He": "1.318452615852908"
+        },
+        "blocked_at": null,
+        "c_per_atom": {
+          "2H": "3.116688279",
+          "3H": "8.496109105",
+          "3He": "7.621530841"
+        },
+        "spread": "0.839034"
+      },
+      {
+        "w": "L_2 = T1T1",
+        "ratio_to_w1": {
+          "2H": "1.275636097818101",
+          "3H": "1.275636097818101",
+          "3He": "1.275636097818101"
+        },
+        "blocked_at": null,
+        "c_per_atom": {
+          "2H": "3.221299414",
+          "3H": "8.781279625",
+          "3He": "7.877346284"
+        },
+        "spread": "0.839034"
+      },
+      {
+        "w": "P+ of sigma_1",
+        "ratio_to_w1": {
+          "2H": "1.103672165665516",
+          "3H": "1.103672165665516",
+          "3He": "1.103672165665516"
+        },
+        "blocked_at": null,
+        "c_per_atom": {
+          "2H": "3.723212329",
+          "3H": "10.14949695",
+          "3He": "9.104721118"
+        },
+        "spread": "0.839034"
+      },
+      {
+        "w": "P- of sigma_1",
+        "ratio_to_w1": {
+          "2H": "-0.1036721656655155",
+          "3H": "-0.1036721656655155",
+          "3He": "-0.1036721656655155"
+        },
+        "blocked_at": null,
+        "c_per_atom": {
+          "2H": "-39.63653878",
+          "3H": "-108.0494191",
+          "3He": "-96.92695441"
+        },
+        "spread": "0.839034"
+      },
+      {
+        "w": "interface product",
+        "ratio_to_w1": {
+          "2H": "-0.9179091747058017"
+        },
+        "blocked_at": [
+          "3H: tr_m_word_lq: Case C (multiple top-1 in segment) not impleme",
+          "3He: tr_m_word_lq: Case C (multiple top-1 in segment) not impleme"
+        ],
+        "c_per_atom": {
+          "2H": "-4.476701974",
+          "3H": null,
+          "3He": null
+        },
+        "spread": null
+      }
+    ],
+    "candidates_with_spread_under_5pct": [],
+    "smallest_spread": {
+      "w": "w = 1 (control)",
+      "ratio_to_w1": {
+        "2H": "1.0",
+        "3H": "1.0",
+        "3He": "1.0"
+      },
+      "blocked_at": null,
+      "c_per_atom": {
+        "2H": "4.109205815",
+        "3H": "11.20171727",
+        "3He": "10.04862727"
+      },
+      "spread": "0.839034"
+    }
+  },
+  "context": {
+    "axis": "is there a CATEGORICALLY DISTINGUISHED non-central w whose tr_M(. w) supplies the binding shortfall at every atom with one shared constant?",
+    "method": "The candidate set (Jucys-Murphy elements, the central class-sum as control, a bare generator, the two Lagrange spectral projectors of sigma_1) was fixed in advance. The test is overdetermined: one constant, several atoms.",
+    "anti_fit": "A small spread is a TARGET TO CHECK A FUTURE DERIVATION AGAINST, never a derivation. Every candidate is reported with its spread; none is dropped after the fact. A single-atom match would be fitted by construction.",
+    "numerical_accident": "The deuteron shortfall 2.286957 sits near the 2.2867072 maximum ell-1 ceiling of the sibling probe. Different normalisations (Q_beta vs m_e, ratio 1.53098) — coincidence, flagged so it is not chased.",
+    "scope": "Scope-(a). No content block is edited here."
+  },
+  "gitCommit": "73efaf38f59f303101bd3f94f27ae47af3a3d4f0",
+  "durationMs": 0,
+  "scriptFile": "qbeta_derived_w_overdetermined_test_probe.py",
+  "scriptHash": "5e9bab7a8dd4",
+  "scriptCommitSha": "unknown",
+  "commitSha": "73efaf38f59f303101bd3f94f27ae47af3a3d4f0",
+  "engine": "mpmath",
+  "computedAt": "2026-09-03T04:00:37.050248+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

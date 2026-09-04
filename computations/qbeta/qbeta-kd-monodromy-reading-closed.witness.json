@@ -1,0 +1,132 @@
+{
+  "computation": "qbeta-kd-monodromy-reading-closed",
+  "engine": "sympy",
+  "description": "qou-pdix branch 3. Entry 5 defines the one contentful branch as a connection 'whose monodromy reproduces the Hecke braiding', escaping the rationality exclusion 'because a holonomy is transcendental'. That escape fails for the monodromy reading: Kohno-Drinfeld gives holonomies GAUGE-CONJUGATE to the braid-image matrices, conjugation PRESERVES THE TRACE, and the carrier condition is on the trace. Verified symbolically: every generator has det = -1 exactly so an even-length word has det = +1 and the carrier's `M.det = 1` field is AUTOMATIC and free (it was never the obstruction); every word trace is a Laurent polynomial in Z[q,q^-1], the seminormal radical cancelling identically; and (sigma_0 sigma_1)^3 = I exactly, so the rep factors through B_3/centre = PSL(2,Z) and the achievable traces are a countable set of Laurent polynomials. 2*cos((z-1)h/2) is transcendental over Q(q,z) by entry 4, so the trace field is impossible. Branch 3 AS WORDED is closed, with no associator and no zeta(3) computation — superseding the zeta(3) proposal noted earlier today. SURVIVES: the open-path / non-abelian Stokes reading, which is not a monodromy, not trace-pinned, and gauge-dependent rather than conjugation-covariant.",
+  "contentBlock": "prop:three-calibration-inputs",
+  "assertions": [
+    {
+      "name": "generators_have_det_minus_one_so_the_det_field_is_free",
+      "passed": true,
+      "detail": "in the (2,1) block det rho(sigma_0) = det rho(sigma_1) = det rho(sigma_0^-1) = det rho(sigma_1^-1) = -1 exactly, for every q, so an EVEN-length braid word has det = +1 exactly. The carrier's second field `M.det = 1` is automatic and free on the braid image — it was never the obstruction. (Quadratic and braid relations verified, so this really is the Hecke (2,1) rep.)"
+    },
+    {
+      "name": "word_traces_are_laurent_polynomials_the_radical_cancels",
+      "passed": true,
+      "detail": "the seminormal off-diagonal carries sqrt(q^4+q^2+1), so a trace could have been irrational over Q(q). On ten even-length words it cancels identically and every trace lies in Z[q,q^-1], as characters must. So the carrier's FIRST field asks a Laurent polynomial to equal 2*cos(alpha), which entry 4 proves transcendental over Q(q,z)"
+    },
+    {
+      "name": "full_twist_is_the_identity_so_the_rep_factors_through_PSL2Z",
+      "passed": true,
+      "detail": "(sigma_0 sigma_1)^3 = I exactly in the (2,1) block for every q — verified as a matrix identity, not merely a trace. The full twist generates the centre of B_3, so the representation factors through B_3/<Delta^2> = PSL(2,Z) and the achievable traces are indexed by conjugacy classes there: a countable set of Laurent polynomials"
+    },
+    {
+      "name": "the_monodromy_reading_of_branch_3_is_closed_by_trace_invariance",
+      "passed": true,
+      "detail": "Kohno-Drinfeld gives holonomies gauge-conjugate to the braid-image matrices for any connection whose monodromy reproduces the Hecke braiding; conjugation PRESERVES THE TRACE and the carrier condition is ON the trace, so such a monodromy's trace is some tr rho(w) in Z[q,q^-1] and cannot be 2*cos(alpha). Branch 3 AS ENTRY 5 WORDS IT is closed, with no Drinfeld associator and no zeta(3) computation. Entry 5's escape clause 'a holonomy is transcendental' is the wrong reason: transcendental entries do not buy a transcendental closed-loop trace when the loop must reproduce the braiding. SURVIVES: the open-path / non-abelian Stokes reading, which is not a monodromy, not trace-pinned, and gauge-dependent rather than conjugation-covariant"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "block": "(2,1)",
+    "symbolic": true,
+    "anchor": "none required"
+  },
+  "data": {
+    "generator_dets": {
+      "0": "-1",
+      "1": "-1",
+      "a": "-1",
+      "A": "-1"
+    },
+    "words": [
+      {
+        "word": "01",
+        "len": 2,
+        "det": "1",
+        "trace": "-1",
+        "radical_free": true
+      },
+      {
+        "word": "10",
+        "len": 2,
+        "det": "1",
+        "trace": "-1",
+        "radical_free": true
+      },
+      {
+        "word": "0A",
+        "len": 2,
+        "det": "1",
+        "trace": "-(q**4 - q**2 + 1)/q**2",
+        "radical_free": true
+      },
+      {
+        "word": "1a",
+        "len": 2,
+        "det": "1",
+        "trace": "-(q**4 - q**2 + 1)/q**2",
+        "radical_free": true
+      },
+      {
+        "word": "0110",
+        "len": 4,
+        "det": "1",
+        "trace": "(q**4 + 1)/q**2",
+        "radical_free": true
+      },
+      {
+        "word": "01aA",
+        "len": 4,
+        "det": "1",
+        "trace": "-(q**4 - q**2 + 1)/q**2",
+        "radical_free": true
+      },
+      {
+        "word": "0101",
+        "len": 4,
+        "det": "1",
+        "trace": "-1",
+        "radical_free": true
+      },
+      {
+        "word": "aA01",
+        "len": 4,
+        "det": "1",
+        "trace": "-(q**4 - q**2 + 1)/q**2",
+        "radical_free": true
+      },
+      {
+        "word": "0A1a",
+        "len": 4,
+        "det": "1",
+        "trace": "2",
+        "radical_free": true
+      },
+      {
+        "word": "010101",
+        "len": 6,
+        "det": "1",
+        "trace": "2",
+        "radical_free": true
+      }
+    ],
+    "full_twist_is_identity": true,
+    "quotient": "B_3 / <Delta^2> = PSL(2,Z)"
+  },
+  "context": {
+    "axis": "qou-pdix branch 3: does a KZ/Stokes connection escape the rationality exclusion?",
+    "answer": "Not in the MONODROMY reading. Conjugation preserves the trace, so a monodromy reproducing the Hecke braiding has a Hecke trace — a Laurent polynomial — and cannot equal the transcendental 2*cos(alpha). Only the open-path / non-abelian Stokes reading survives.",
+    "supersedes": "the zeta(3) t^3 test proposed earlier today, which targeted the monodromy reading now closed by a cheaper argument.",
+    "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
+  },
+  "gitCommit": "399d2b9ef40e87e121d28ed6b6a6a318401fc277",
+  "durationMs": 0,
+  "scriptFile": "qbeta_kd_monodromy_reading_closed_probe.py",
+  "scriptHash": "ba59decd17ba",
+  "scriptCommitSha": "unknown",
+  "commitSha": "399d2b9ef40e87e121d28ed6b6a6a318401fc277",
+  "computedAt": "2026-09-01T06:28:16.987100+00:00",
+  "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "none (exact symbolic identities in q)",
+  "q0Value": "n/a"
+}

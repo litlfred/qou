@@ -1,0 +1,203 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-09-03T04:00:39.691328+00:00",
+  "commitSha": "e3e4302fa037bd83883d5de0912062abbc1efef5",
+  "assertions": [
+    {
+      "name": "A1_c2_is_ordering_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c2 spread 0.00e+00 over 12 orderings"
+    },
+    {
+      "name": "A2_c5_positive_in_every_ordering",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c5 > 0 in 12/12, one sign pattern {'+ - - +'}"
+    },
+    {
+      "name": "A3_convergence_claim_is_not_robust",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "|c5/c4| > 1 in only 1/12, range 0.7077..1.3036, straddling 1; the exceedance is the canonical ordering"
+    },
+    {
+      "name": "A4_individual_cumulants_swing_sum_moves_less",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "c3/c4/c5 swings [0.64, 0.29, 2.03]; tail sum spread 23.5%"
+    },
+    {
+      "name": "A5_scope_of_what_survives_is_stated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sign and identification stand; convergence claim withdrawn; convergence itself unknown"
+    },
+    {
+      "name": "A6_sample_supports_falsification_only",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "11 counterexamples to the convergence claim; no distributional claim made"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "c5_sign_is_robust_convergence_claim_is_not_probe",
+  "scriptFile": "c5_sign_is_robust_convergence_claim_is_not_probe.py",
+  "scriptHash": "eeda559466ba",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/c5_sign_is_robust_convergence_claim_is_not_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/c5_sign_is_robust_convergence_claim_is_not_probe.py"
+  },
+  "description": "Tests the two claims qou-441t made from a single bond ordering at A=5, over twelve orderings (canonical production plus eleven random shuffles of the ten bonds). They come apart. THE SIGN IS ROBUST: c5 > 0 in 12 of 12, over the range +1.60 to +3.26, with the identical sign pattern + - - + in every ordering — so the correction to qou-bc09 and qou-38i9 stands, and 'every many-body term is negative' is false from A=5 regardless of convention. THE CONVERGENCE CLAIM IS NOT: |c5/c4| > 1 in only 1 of 12, and that one is the canonical production ordering, the only one qou-441t tested. The ratio ranges 0.7077..1.3036 and straddles 1, so 'the hierarchy does not converge' was an artifact of its convention and is WITHDRAWN; whether the hierarchy converges is unknown. The reason the two behave differently is visible in the spreads: c2 is exactly ordering-independent (a two-element subset has one bond and no internal order), while c3 swings over -2.40..-3.79, c4 over -1.23..-4.19 and c5 over +1.60..+3.26, each by a factor 1.6 to 3.4, with their sum moving less — the ordering artifact redistributes weight between orders. A sign survives that; a ratio between two swinging quantities does not, which applies to anything else in this arc quoted as a cumulant ratio at fixed convention. Untouched: qou-441t's cumulant IDENTIFICATION, that L is additive on disjoint blocks so the Mobius inversion is a genuine cumulant expansion — an exact algebraic fact no ordering affects.",
+  "data": {
+    "trials": {
+      "0": {
+        "c2": "7.272615735",
+        "c3": "-3.786046394",
+        "c4": "-1.230795704",
+        "c5": "1.604498983",
+        "ratio_54": "1.303627",
+        "canonical": true
+      },
+      "1": {
+        "c2": "7.272615735",
+        "c3": "-2.863694549",
+        "c4": "-2.792890903",
+        "c5": "2.527444793",
+        "ratio_54": "0.904957",
+        "canonical": false
+      },
+      "2": {
+        "c2": "7.272615735",
+        "c3": "-2.963892771",
+        "c4": "-2.787438151",
+        "c5": "2.301854448",
+        "ratio_54": "0.825796",
+        "canonical": false
+      },
+      "3": {
+        "c2": "7.272615735",
+        "c3": "-3.121923947",
+        "c4": "-2.498031558",
+        "c5": "2.338678723",
+        "ratio_54": "0.936209",
+        "canonical": false
+      },
+      "4": {
+        "c2": "7.272615735",
+        "c3": "-2.932516065",
+        "c4": "-3.516125816",
+        "c5": "2.632170691",
+        "ratio_54": "0.748600",
+        "canonical": false
+      },
+      "5": {
+        "c2": "7.272615735",
+        "c3": "-3.065529380",
+        "c4": "-2.797651402",
+        "c5": "2.372756728",
+        "ratio_54": "0.848125",
+        "canonical": false
+      },
+      "6": {
+        "c2": "7.272615735",
+        "c3": "-2.501217472",
+        "c4": "-3.198915451",
+        "c5": "2.449918522",
+        "ratio_54": "0.765859",
+        "canonical": false
+      },
+      "7": {
+        "c2": "7.272615735",
+        "c3": "-2.658132756",
+        "c4": "-3.264914597",
+        "c5": "2.909565452",
+        "ratio_54": "0.891161",
+        "canonical": false
+      },
+      "8": {
+        "c2": "7.272615735",
+        "c3": "-2.716866768",
+        "c4": "-3.225957946",
+        "c5": "2.394456271",
+        "ratio_54": "0.742247",
+        "canonical": false
+      },
+      "9": {
+        "c2": "7.272615735",
+        "c3": "-2.802732015",
+        "c4": "-2.997790304",
+        "c5": "2.238010735",
+        "ratio_54": "0.746553",
+        "canonical": false
+      },
+      "10": {
+        "c2": "7.272615735",
+        "c3": "-2.425074144",
+        "c4": "-3.692357968",
+        "c5": "2.613137500",
+        "ratio_54": "0.707715",
+        "canonical": false
+      },
+      "11": {
+        "c2": "7.272615735",
+        "c3": "-2.648309888",
+        "c4": "-4.186343396",
+        "c5": "3.258454530",
+        "ratio_54": "0.778353",
+        "canonical": false
+      }
+    },
+    "robustness": {
+      "c5_positive": "12/12",
+      "c5_range": [
+        "1.604499",
+        "3.258455"
+      ],
+      "sign_patterns": [
+        "+ - - +"
+      ],
+      "ratio54_gt_1": "1/12",
+      "ratio54_range": [
+        "0.707715",
+        "1.303627"
+      ],
+      "c2_spread": "0.000e+00"
+    }
+  },
+  "caveats": [
+    "WITHDRAWS A CLAIM OF MINE FROM THE PREVIOUS TURN. qou-441t's 'the hierarchy does not converge' rested on the canonical ordering alone and does not survive eleven others. Its sign result and its cumulant identification both do. Anyone quoting qou-441t should quote this alongside it.",
+    "TWELVE ORDERINGS IS ENOUGH TO FALSIFY, NOT TO CHARACTERISE. One counterexample refutes a universal claim and there are eleven; but no distribution is estimated and none should be read in. 'c5 > 0 in 12/12' is reported as a count, not as a probability, and a thirteenth ordering could in principle differ.",
+    "ONE NUCLEON ORDERING ONLY. All twelve trials use 5He at production nucleon ordering 'pnpnn' and vary only the BOND order. Nucleon ordering is a separate artifact (measured at 4-5% in three_body_term_has_the_wrong_sign_probe) and is not varied here."
+  ]
+}

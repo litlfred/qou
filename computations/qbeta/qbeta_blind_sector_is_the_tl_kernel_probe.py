@@ -54,10 +54,34 @@ the blocks are real — but then D is not forced and the weights Step 27 used ar
 not the right ones.
 
 So the "hidden information" reading requires DENYING the premise that justifies
-the convention it was measured in. It fails either way as stated. What it
-reduces to is bean `qou-n1dj`, which the corpus already tracks as open — and
-that is the honest status of Step 27's headline: conditional, on a named premise,
-and inconsistent with itself if the premise holds.
+the convention it was measured in.
+
+*** AND THE PREMISE IS NOT OPEN — CORRECTED 2026-09-01, SECOND PASS ***
+
+This probe first said the headline "reduces to bean qou-n1dj, which the corpus
+already tracks as open". It does not. `qou-n1dj` is RESOLVED: its status is
+`todo` only because closing a bean is a human action (AGENTS.md §4a), and its
+verdict block records convention D with the reasoning verified here:
+
+  * `lem:feynman-eigenbasis-decomposition`
+    (content/.../mass-theory/feynman-eigenbasis-decomposition.md, line 6) DEFINES
+    the mass channel's decomposition as
+        V^(x)n  ~=  (+)_{lambda |- n, l(lambda) <= 2} V_lambda (x) S_lambda
+    with the ROW CAP IN THE INDEX SET. The l > 2 blocks are absent from the mass
+    channel by the corpus's own definition, not by a posited premise.
+  * `QOU/BraidsAndKnots/FibreDimensionForcesTL.lean` (sorry-free, verified 0
+    sorries here) proves `z.[N]_q = q^N` — the fibre's quantum dimension
+    DETERMINES the Ocneanu parameter, so a two-dimensional fibre leaves NO
+    residual trace freedom.
+
+`MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+Schur-Weyl development exists in this tree; its CONTENT is already asserted by
+the mass chapter and independently derived by the file above.
+
+**So the blind sector is unphysical FULL STOP, not conditionally.** Step 27's
+headline is not "conditional on an open premise" — it is FALSE. The correction
+below is strengthened accordingly, and the N_min reading is the only surviving
+one.
 
 *** RESULT 3 — N_min(lambda) = l(lambda), AND WHAT IT DOES TO THE COINCIDENCE ***
 
@@ -78,12 +102,24 @@ a much cleaner one than Step 27's degeneracy-wall argument: the two phases canno
 both be physical in any framework with dim V < 4, and the corpus has dim V = 2
 with N = 3 open (`qou-8pl3`) and nothing whatever motivating N = 4.
 
-Note the one thing this does NOT kill: `qou-fvzm` says the super-pairwise binding
-term REQUIRES N >= 3 for row-cap reasons, and (3,2,1) — the block carrying both
-the largest binding character and the smaller of the two phases — is exactly an
-l = 3 block. So Step 27's measurement is a measurement of what an N = 3 extension
-would carry. That is a weaker and different claim than the one Step 27 made, and
-it is the one that survives.
+*** 🛑 AND THE LAST SURVIVING POSITIVE DOES NOT STAND EITHER (corrected same day) ***
+
+This probe first added: "qou-fvzm says the super-pairwise binding term REQUIRES
+N >= 3, and (3,2,1) is an l = 3 block, so Step 27 measured what an N = 3
+extension would carry." **That cites a RETRACTED paragraph as current.**
+
+qou-fvzm is COMPLETED and its line 18 CLOSES the paragraph that claim rests on: "my reopened form ('N>=3 is necessary for the >=3-body term, making the N=3-route load-bearing for binding') is closed -- the route is UNAVAILABLE, not merely hard", and "THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL". Moving to N=3 re-weights channels the mass pipeline already evaluates (y_(2,1)/y_(3) = q[2]_q[N-1]_q/[N+2]_q differs at every q), so it is a regression risk, not an opening.
+
+So Step 27's blind-sector characters are not a measurement of what an N = 3
+extension would carry: there is no such extension to measure for, and the object
+the binding gap is missing is not a Hecke-trace object in the first place. The
+surviving candidates qou-fvzm names are the ones that were never trace objects —
+the extended-Bloch/geometric route (qou-985x) and the atomic-braid -> nucleus map
+(qou-imcd).
+
+**Steps 27-28 now retain no positive claim about the blind sector at all.** What
+stands from that arc is the construction (Delta_bind = P.(I-1).N, validated to
+5.4e-15, genuinely H_6-valued) and the chain-vs-all-pairs structural finding.
 
 SCOPE. Scope-(a). No convention adjudicated — the premise is left open exactly as
 `qou-n1dj` has it. Nothing proposed, wired or readmitted; no N >= 3 extension
@@ -113,6 +149,10 @@ from ocneanu_weights import omega_lambda_via_inversion  # noqa: E402
 mp.mp.dps = 30
 Q0 = mp.mpf(str(CONST.Q_50_DIGIT_STR))
 Z_D0 = Q0 ** 3 / (Q0 ** 2 + 1)
+FVZM_DETAIL = (
+    'qou-fvzm is COMPLETED and its line 18 CLOSES the paragraph that claim rests on: "my reopened form (\'N>=3 is necessary for the >=3-body term, making the N=3-route load-bearing for binding\') is closed -- the route is UNAVAILABLE, not merely hard", and "THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL". Moving to N=3 re-weights channels the mass pipeline already evaluates (y_(2,1)/y_(3) = q[2]_q[N-1]_q/[N+2]_q differs at every q), so it is a regression risk, not an opening.'
+)
+
 SMALL = {(3, 2, 1): "0.0252506327621", (2, 2, 1, 1): "0.0195531302631"}
 
 
@@ -212,15 +252,22 @@ def main() -> int:
                    "at N = 2, structurally rather than as an n = 6 accident"},
         {"name": "step27_reading_contradicts_the_convention_it_used",
          "passed": True,
-         "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj) proves that "
+         "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj, RESOLVED — "
+                   "`todo` only because closing a bean is a human action) proves that "
                    "the l > 2 channels are absent at N = 2 and that y_(1^3) = 0 forces "
-                   "JONES, with one open premise between them: that the mass trace IS the "
-                   "categorical trace of the fibre action on V^(x)n. Convention D is "
+                   "JONES, with a class between them asserting the mass trace IS the "
+                   "categorical trace of the fibre action on V^(x)n — a class only because "
+                   "no quantum Schur-Weyl development exists in the tree; its CONTENT is "
+                   "already asserted by the mass chapter. Convention D is "
                    "forced BY the premise that makes the blind sector unphysical. Step 27 "
                    "computed in D and read D's zeros as hidden information — but under "
                    "the premise giving D there are no states there, and under its "
-                   "negation D is not forced and D's weights are the wrong ones. The "
-                   "reading fails either way as stated; what it reduces to is qou-n1dj"},
+                   "negation D is not forced and D's weights are the wrong ones. And the "
+                   "premise is NOT open: `lem:feynman-eigenbasis-decomposition` DEFINES the "
+                   "mass channel with the row cap l(lambda) <= 2 IN THE INDEX SET, and "
+                   "`FibreDimensionForcesTL.lean` (sorry-free) proves z.[N]_q = q^N so a "
+                   "2-dim fibre leaves no residual trace freedom. The blind sector is "
+                   "unphysical FULL STOP — Step 27's headline is false, not conditional"},
         {"name": "the_two_small_phases_need_N3_and_N4_respectively",
          "passed": bool(n_min_ok and sum_needs_4),
          "detail": "a block acquires states exactly when N reaches l(lambda). Step 27's "
@@ -229,14 +276,15 @@ def main() -> int:
                    "requires N >= 4 — a structural kill, cleaner than the degeneracy-wall "
                    "argument. The corpus has dim V = 2, N = 3 open (qou-8pl3), and "
                    "nothing motivating N = 4"},
-        {"name": "what_survives_is_a_measurement_of_an_N3_extension",
-         "passed": bool(any(b["rows"] == 3 and b["small_phase"] for b in blocks)),
-         "detail": "qou-fvzm says the super-pairwise binding term REQUIRES N >= 3 for "
-                   "row-cap reasons, and (3,2,1) — carrying both the largest binding "
-                   "character (-9.598) and the smaller of the two phases — is an l = 3 "
-                   "block. So Step 27 measured what an N = 3 extension would carry. That "
-                   "is weaker and different from what Step 27 claimed, and it is the part "
-                   "that survives"},
+        {"name": "the_N3_extension_reading_is_withdrawn_too",
+         "passed": True,
+         "detail": "this probe first claimed Step 27's blind-sector characters measure "
+                   "\"what an N = 3 extension would carry\", citing qou-fvzm. WITHDRAWN: "
+                   + FVZM_DETAIL +
+                   " So Steps 27-28 retain NO positive claim about the blind sector. What "
+                   "stands from that arc is the construction (Delta_bind = P.(I-1).N, "
+                   "validated to 5.4e-15, genuinely H_6-valued) and the chain-vs-all-pairs "
+                   "structural finding"},
     ]
     ok = all(v["passed"] for v in a)
     print("\n  assertions:")
@@ -263,8 +311,12 @@ def main() -> int:
             "(in (2,2,1,1)) needs N >= 4 — the 0.13 % sum coincidence requires N >= 4, a "
             "structural kill cleaner than the degeneracy-wall argument. What survives is "
             "that (3,2,1) is an l = 3 block carrying the largest binding character, so "
-            "Step 27 measured what an N = 3 extension would carry — which is what "
-            "qou-fvzm says the super-pairwise term requires."),
+            "AND the N = 3 reading is withdrawn too (same-day correction): it cited "
+            "qou-fvzm's REOPENED paragraph, which that COMPLETED bean's line 18 closes — "
+            "the N>=3 route is UNAVAILABLE, not merely hard, and the missing additive term "
+            "is NOT A HECKE-TRACE OBJECT AT ALL. Steps 27-28 therefore retain no positive "
+            "claim about the blind sector; what stands is the construction and the "
+            "chain-vs-all-pairs finding."),
         "contentBlock": "prop:three-calibration-inputs",
         "assertions": a,
         "allPassed": ok,
@@ -274,15 +326,22 @@ def main() -> int:
         "data": {"q0": mp.nstr(Q0, 20), "per_n": rows, "h6_blocks": blocks,
                  "physical_at_N2": at2, "added_at_N3": at3, "added_at_N4": at4,
                  "sum_coincidence_requires_N": 4,
-                 "open_premise": "MassTraceIsFibreCategorical (bean qou-n1dj)"},
+                 "premise_status": "NOT open — qou-n1dj resolved; the mass chapter's "
+                 "lem:feynman-eigenbasis-decomposition carries the row cap in its index "
+                 "set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N"},
         "context": {
             "axis": "qou-i9gk hole 1: is Step 27's trace-blind sector physical?",
             "answer": (
                 "It is the TL kernel, so at N = 2 it acts as zero on the physical space. "
                 "Step 27's reading of it as hidden information contradicts convention D, "
                 "which is forced by the very premise that empties it. The headline "
-                "reduces to the open premise qou-n1dj, and the 0.13 % sum coincidence "
-                "separately requires N >= 4."),
+                "is NOT open — qou-n1dj is resolved (`todo` only because closing a bean "
+                "is a human action), the mass chapter's lem:feynman-eigenbasis-"
+                "decomposition DEFINES the decomposition with the row cap in its index "
+                "set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N. "
+                "So the blind sector is unphysical FULL STOP and Step 27's headline is "
+                "false, not conditional. The 0.13 % sum coincidence separately requires "
+                "N >= 4."),
             "corrects": "Step 27's '588 of 720 dimensions carry information the "
                         "observable cannot see'.",
             "scope": "Scope-(a). No convention adjudicated; the premise is left open "
