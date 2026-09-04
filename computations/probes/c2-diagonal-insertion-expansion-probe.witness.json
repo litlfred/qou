@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T16:05:53.318659+00:00",
-  "commitSha": "d2fa83813a376fa104e828350c44ef7e9a5e37d9",
+  "computedAt": "2026-09-04T02:44:24.393183+00:00",
+  "commitSha": "a8f7fe3b88a4fb5f1dab53c25028cdb3e79c2fd1",
   "assertions": [
     {
       "name": "insertion_expansion_order0_equals_derived_floor",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 230097,
+  "durationMs": 314274,
   "computation": "c2-diagonal-insertion-expansion-probe",
   "scriptFile": "c2_diagonal_insertion_expansion_probe.py",
-  "scriptHash": "9bd819a6464e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e3518d8ea049",
+  "scriptCommitSha": "a2e07cef4c43c14f89f8c1e81ad851d5395b7817",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,7 +53,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -66,17 +66,17 @@
     "second_order_chain_over_atom": {
       "T": {
         "ratio": "372/365",
-        "float": 1.0191780821917809,
+        "float": "1.0191780821917809",
         "first_order": "292/163"
       },
       "3He": {
         "ratio": "3040/3451",
-        "float": 0.8809040857722399,
+        "float": "0.8809040857722399",
         "first_order": "30/17"
       },
       "4He": {
         "ratio": "19104/15307",
-        "float": 1.2480564447638336,
+        "float": "1.2480564447638336",
         "first_order": "24/7"
       }
     },
