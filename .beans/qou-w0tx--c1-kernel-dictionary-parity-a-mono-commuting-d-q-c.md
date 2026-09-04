@@ -1,11 +1,11 @@
 ---
 # qou-w0tx
 title: 'C1 kernel dictionary parity: a mono-commuting D_q carries no (−1)^m residual — does Door-v force σ = unit shift?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T08:31:31Z
-updated_at: 2026-09-04T08:52:08Z
+updated_at: 2026-09-04T10:42:55Z
 ---
 
 Follow-on to `qou-33hb` (#6582). The two σ ↔ t-shift dictionaries for the C1 kernel disagree on parity: (a) unit shift has an odd component, (b) double cover commutes with the covering monodromy. Question: does the Door-v `(−1)^m` residual (the target property #6474 demanded of D_q's tower) decide between them?
@@ -29,3 +29,7 @@ Consequence: if symbol = L_K and D_q is its symbol, the (−1)^m twist is not ma
 Artifacts: `lean/QOU/Mass/C1KernelDictionaryParity.lean`, `computations/probes/c1_kernel_door_v_residual_probe.py`, `docs/audits/2026-09-04-c1-kernel-cannot-carry-door-v-residual.md`, scope paragraph on `mass-theory/qdifference-kernel-prolongation-symbol.md` (sidecar re-swept).
 
 Waiting on: owner merge permission for #6610.
+
+
+
+## Merged as #6610 (rebase, 2026-09-04). CORRECTION pending in the level-reading bean: the σ ↔ t-shift dictionaries were the wrong axis — σ is the level step (see that bean).
