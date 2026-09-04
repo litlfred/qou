@@ -21,8 +21,8 @@ variable {R : Type*} [CommRing R]
 /-- The categorical Euler characteristic at level n: tr(id_{Aₙ}).
     Defined as the rigidity trace of the identity endomorphism. -/
 def categoricalEulerChar
-    (trace : ∀ n, (Unit → R) → R)
-    (identity : ∀ n, Unit → R)
+    (trace : ∀ n : ℕ, (Unit → R) → R)
+    (identity : ∀ n : ℕ, Unit → R)
     (n : ℕ) : R :=
   trace n (identity n)
 
