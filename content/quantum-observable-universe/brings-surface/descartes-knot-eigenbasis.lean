@@ -441,6 +441,64 @@ theorem jones_channels_not_separating :
   refine ⟨⟨q, hpos, hne, -6, rfl, 2, rfl⟩, ?_⟩
   exact (jonesSymmetric_eq_jonesMixed_iff _).mpr hroot
 
+/-! ### The characters do separate, where the Jones pair does not
+
+`jones_channels_not_separating` above is a negative about the *particular
+pair of Jones values* `descartes_n3_both_detected` names. It is not a
+statement about the framework, and the object that does separate the
+summands — the per-partition character `χ^λ` — already exists in the corpus
+(`tools/hecke-engine/src/seminormal.rs`, Hoefsmit seminormal form, general
+`n` and `λ`; MPFR variants alongside).
+
+On the single generator `σ₁`, at `n = 3` with the two `≤ 2`-row partitions
+of 3, those characters are
+
+    χ^[3](σ₁)   = q          (symmetric, spin 3/2, dim 1)
+    χ^[2,1](σ₁) = q − q⁻¹    (mixed symmetry, spin 1/2, dim 2)
+
+so their difference is `q⁻¹`, which never vanishes. Verified against the
+native seminormal path at eight sample `q` to better than `1e-45`
+(`computations/descartes_n3_channel_separation_probe.py`), including at the
+`q*` of `jones_channels_not_separating` itself.
+-/
+
+/-- Character of the symmetric (spin-3/2) summand `λ = [3]` on `σ₁` at
+    `n = 3`: the one-dimensional representation sends each generator to `q`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charSymmetricSigma (D : DescartesData) : ℝ := D.q
+
+/-- Character of the mixed-symmetry (spin-1/2) summand `λ = [2,1]` on `σ₁` at
+    `n = 3`: the two-dimensional representation has `σ₁` with eigenvalues `q`
+    and `−q⁻¹`, so its trace is `q − q⁻¹`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charMixedSigma (D : DescartesData) : ℝ := D.q - D.q⁻¹
+
+/-- **The two `n = 3` channel characters differ by exactly `q⁻¹`.** -/
+theorem charSymmetricSigma_sub_charMixedSigma (D : DescartesData) :
+    charSymmetricSigma D - charMixedSigma D = D.q⁻¹ := by
+  unfold charSymmetricSigma charMixedSigma; ring
+
+/-- **`σ₁` separates the two `n = 3` summands, in every Descartes universe.**
+
+    The positive counterpart to `jones_channels_not_separating`, and the
+    reason that negative is narrow: the difference is `q⁻¹`, and `q > 0`
+    forces `q⁻¹ ≠ 0`, so there is no Descartes `q` at which these two
+    characters agree — including the `q*` where the two *Jones values* do.
+
+    So "both summands are detected" is not out of reach; it needs the
+    detector attached to its summand, which is what
+    `DescartesMarkovTrace.trSummand` is for. What remains is to construct
+    `trSummand` from the Hoefsmit values rather than leave it free — a
+    formalisation of the seminormal representation, not a further open
+    question about the mathematics. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem sigma_separates_n3_channels (D : DescartesData) :
+    charSymmetricSigma D ≠ charMixedSigma D := by
+  intro h
+  have hgap : charSymmetricSigma D - charMixedSigma D = 0 := by rw [h]; ring
+  rw [charSymmetricSigma_sub_charMixedSigma] at hgap
+  exact (inv_pos.mpr D.q_pos).ne' hgap
+
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke
     algebra quotient is well-defined and the braid representation
