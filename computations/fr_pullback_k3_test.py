@@ -13,10 +13,18 @@ modifies the Wedderburn weight at depth k via:
                    (Σ_μ dim_q²(μ) · |χ^μ(e_{K_k*})|)
                    · S_uniform_k
 
-where S_uniform_k = Σ_{μ:depth=k} dim_q²(μ) / [n]_q! is the total
-uniform-Plancherel weight at depth k (preserved by the FR pullback,
-which only REDISTRIBUTES weight within the depth-k stratum, not
-rescales it).
+where S_uniform_k = Σ_{μ:depth=k} dim_q²(μ) / Σ_ν dim_q²(ν) is the
+total uniform-Plancherel weight at depth k (preserved by the FR
+pullback, which only REDISTRIBUTES weight within the depth-k stratum,
+not rescales it).
+
+NORMALIZATION CORRECTED 2026-09-04 (bean qou-7o7h): the denominator was
+[n]_q!, which is NOT a probability measure in the balanced q-integer
+convention this corpus uses, and whose defect c_n GROWS with n — so it
+distorted this test's cross-atom metric. Fixing it REVERSED the knot
+ranking; see the verdict note in the witness and
+docs/audits/2026-09-04-plancherel-convention-gap.md. The chi path was
+moved from the f64 kernel to MPFR at the same time.
 
 This script tests the FR pullback at k=3 with candidate distinguished
 knots K_3* ∈ {4_1, 5_2, 6_1} using the repo's canonical braid words
@@ -124,15 +132,50 @@ def embed_knot_braid(knot_word: list[tuple[int, int]],
 
 def chi_lambda_braid_via_rust(shape: list[int],
                                 braid_word_signed: list,
-                                q: float) -> float:
-    """Compute χ^λ(β) at q (f64) via pyhecke_native.chi_lambda_braid."""
+                                q_str: str) -> mp.mpf:
+    """χ^λ(β) at q via pyhecke_native, MPFR tier (50 dps).
+
+    FIXED 2026-09-04 (bean qou-7o7h follow-up): this took `q: float` and
+    called the f64 kernel, so every FR weight in this test carried ~1e-16
+    rounding — a NO-FLOAT64 violation on the production path, and one
+    that a caller could not see because the f64-ness was buried behind a
+    `q_f64 = float(Q0)` two frames up. `chi_lambda_braid_mpfr` takes the
+    q as a DECIMAL STRING precisely to avoid the lossy f64 boundary
+    conversion, and returns a decimal string for the caller to parse.
+    """
     word = [(int(s), int(g)) for (s, g) in braid_word_signed]
-    return pyhecke_native.chi_lambda_braid(list(shape), word, float(q))
+    return mp.mpf(pyhecke_native.chi_lambda_braid_mpfr(
+        list(shape), word, str(q_str), 50))
+
+
+def selfnorm_denominator(by_partition: list, n_strands: int) -> mp.mpf:
+    """Σ_μ dim_q²(μ) — the SELF-NORMALIZING denominator.
+
+    CORRECTED 2026-09-04 (bean qou-7o7h).  This test previously divided
+    dim_q² by [n]_q!, the textbook q-Plancherel form.  That form is a
+    probability measure at q = 1 and in the ASYMMETRIC q-integer
+    convention — but NOT in the BALANCED convention this corpus uses,
+    where c_n = Σ_λ dim_q²/[n]_q! is 0.991 / 1.111 / 1.517 at
+    n = 6/9/12 and grows with n.
+
+    Because the binding functional is linear in the weights, the whole
+    effect is that B scales by c_n: harmless within one atom, and NOT
+    harmless across atoms, since n = 3A differs.  This test's headline
+    metric is max/min ACROSS atoms, so it was distorted — it inflated
+    ⁴He (largest n) by 1.517 for every candidate knot, which pinned ⁴He
+    as the max and swamped the real spread.  See
+    docs/audits/2026-09-04-plancherel-convention-gap.md.
+    """
+    total = mp.mpf(0)
+    for p in by_partition:
+        dq = dim_q(tuple(p["partition"]), Q0_PROTON)
+        total += mp.mpf(str(dq)) * mp.mpf(str(dq))
+    return total
 
 
 def fr_pullback_weight_per_partition(
     by_partition: list, n_strands: int, k_depth: int,
-    knot_word: list, q_f64: float
+    knot_word: list, q_str: str
 ) -> tuple[dict, dict]:
     """Compute FR-pullback weight + errors per partition.
 
@@ -142,7 +185,7 @@ def fr_pullback_weight_per_partition(
       - errors: any per-partition chi-computation failures
         (specific exceptions only; bugs propagate).
     """
-    qfact = qfac(n_strands, Q0_PROTON)
+    qfact = selfnorm_denominator(by_partition, n_strands)
     eps = vanishing_threshold()
 
     fr_weights: dict = {}
@@ -160,9 +203,9 @@ def fr_pullback_weight_per_partition(
             continue
         s_uniform_at_depth += mp.mpf(str(dq * dq)) / qfact
         try:
-            chi_K = chi_lambda_braid_via_rust(list(shape), knot_word, q_f64)
+            chi_K = chi_lambda_braid_via_rust(list(shape), knot_word, q_str)
         except (ValueError, RuntimeError, OverflowError) as exc:
-            chi_K = 0.0
+            chi_K = mp.mpf(0)
             errors[shape] = f"{type(exc).__name__}: {exc}"
         chi_at_k_dist[shape] = chi_K
         z_norm_unweighted += mp.mpf(str(dq * dq)) * mp.fabs(chi_K)
@@ -205,8 +248,8 @@ def phi_k_with_weights(
 
 
 def precompute_uniform_weights(by_partition: list, n_strands: int) -> dict:
-    """Pre-compute uniform Plancherel weights (one pass over partitions)."""
-    qfact = qfac(n_strands, Q0_PROTON)
+    """Self-normalized q-Plancherel weights (see selfnorm_denominator)."""
+    qfact = selfnorm_denominator(by_partition, n_strands)
     weights: dict = {}
     for p in by_partition:
         shape = tuple(p["partition"])
@@ -231,12 +274,12 @@ def compute_atom_binding_fr(atom: str, knot_word: list[tuple[int, int]],
     upstream_sha = w.get("commitSha", "unknown")
 
     embedded_word = embed_knot_braid(knot_word, n_strands)
-    q_f64 = float(Q0)
+    q_str = str(Q0)
 
     fr_atom_weights, atom_errors = fr_pullback_weight_per_partition(
-        atom_data["by_partition"], n_strands, 3, embedded_word, q_f64)
+        atom_data["by_partition"], n_strands, 3, embedded_word, q_str)
     fr_free_weights, free_errors = fr_pullback_weight_per_partition(
-        free_data["by_partition"], n_strands, 3, embedded_word, q_f64)
+        free_data["by_partition"], n_strands, 3, embedded_word, q_str)
 
     uniform_atom_weights = precompute_uniform_weights(
         atom_data["by_partition"], n_strands)
@@ -273,6 +316,40 @@ def compute_atom_binding_fr(atom: str, knot_word: list[tuple[int, int]],
     }
 
 
+def compute_atom_binding_no_fr(atom: str) -> dict:
+    """B(K) with NO FR pullback — uniform weights at every depth.
+
+    ADDED 2026-09-04 (bean qou-7o7h). The baseline was previously the
+    hardcoded literal `1.82`, carried from a run under the OLD textbook
+    normalization. Once the weights here are self-normalized, comparing
+    corrected FR figures against that literal straddles two
+    normalizations and overstates every improvement — it reported 6_1 as
+    "+42.4% vs baseline" when the like-for-like figure is much smaller.
+    The baseline is now COMPUTED through the same path as the FR
+    variants, so both sides always share a normalization.
+    """
+    Z, N = ZN[atom]
+    A = Z + N
+    n_strands = 3 * A
+    w_path = HERE / f"atom-chi-rust-{atom.lower()}.witness.json"
+    w = json.loads(w_path.read_text())
+    atom_data = w["data"]["atom"]
+    free_data = w["data"]["free"]
+
+    wA = precompute_uniform_weights(atom_data["by_partition"], n_strands)
+    wF = precompute_uniform_weights(free_data["by_partition"], n_strands)
+
+    delta_phi_total = mp.mpf(0)
+    for d in range(n_strands):
+        phi_atom = phi_k_with_weights(
+            atom_data["by_partition"], n_strands, d, wA)
+        phi_free = phi_k_with_weights(
+            free_data["by_partition"], n_strands, d, wF)
+        delta_phi_total += alpha_k(d) * (phi_free - phi_atom)
+    return {"A": A, "B_MeV": fmt(delta_phi_total),
+            "B_pred_sign": "+" if delta_phi_total > 0 else "-"}
+
+
 def main() -> int:
     set_compute_dps()
     builder = WitnessBuilder("fr-pullback-k3-test")
@@ -285,7 +362,7 @@ def main() -> int:
         "_deprecated/hyperbolic_knot_db_extended.py canonical table."
     )
     builder.add_parameter("m_e_CAL1_MeV", str(M_E_MEV))
-    builder.add_parameter("q0_f64", str(float(Q0)))
+    builder.add_parameter("q0_50dps", str(Q0))
 
     builder.add_data("candidate_knots", {
         name: {
@@ -337,8 +414,23 @@ def main() -> int:
                 "all_signs_correct": signs_correct,
             }
 
-    baseline = 1.82
+    # Baseline COMPUTED through the same path (see
+    # compute_atom_binding_no_fr) so it shares the FR variants'
+    # normalization; it used to be the literal 1.82 from a textbook-
+    # normalized run, which straddled two normalizations once the
+    # weights here were corrected.
+    base_ratios = []
+    for atom in ("D", "T", "3He", "4He"):
+        rb = compute_atom_binding_no_fr(atom)
+        base_ratios.append(abs(mp.mpf(rb["B_MeV"]) / B_AME[atom]))
+    baseline = float(max(base_ratios) / min(base_ratios))
     builder.add_data("baseline_variance_no_fr", baseline)
+    builder.add_data("baseline_provenance",
+                     "computed in-run via compute_atom_binding_no_fr "
+                     "(uniform weights, same self-normalized measure as "
+                     "the FR variants). Was the hardcoded literal 1.82 "
+                     "under the old textbook normalization — bean "
+                     "qou-7o7h.")
     builder.add_data("per_knot", all_results)
 
     print("\n=== Summary: variance comparison ===")
@@ -360,12 +452,35 @@ def main() -> int:
     paper_knot_mom = (all_results.get(paper_knot, {}).get("max_over_min")
                        if paper_knot in all_results else None)
     paper_naming_validated = (best_knot == paper_knot)
+    n_beating_baseline = sum(1 for r in all_results.values()
+                             if r["max_over_min"] < baseline)
     if best_knot:
-        general_support = ("STRONG" if best_mom < 1.5 else "PARTIAL")
+        # Grade by improvement RELATIVE to the baseline, not by an
+        # absolute cut on best_mom. RECALIBRATED 2026-09-04 (bean
+        # qou-7o7h): the old rule was `STRONG if best_mom < 1.5`, which
+        # was tuned when the baseline was the textbook-normalized 1.82.
+        # Against the corrected baseline (~1.07) that cut is satisfied
+        # by anything at all, so it reported "STRONG support" for what
+        # is in fact a ~2% improvement. An absolute threshold cannot
+        # survive a change in the baseline it was calibrated against.
+        gain = (baseline - best_mom) / baseline
+        general_support = ("STRONG" if gain > 0.25 else
+                           "MODEST" if gain > 0.05 else "MARGINAL")
         if paper_naming_validated:
             verdict = (f"FR conjecture {general_support} support: "
-                       f"K_3* = {best_knot} (matches paper) closes "
-                       f"variance to {best_mom:.3f}× (was {baseline}×).")
+                       f"K_3* = {best_knot} (matches paper) is the best "
+                       f"candidate at {best_mom:.4f}× vs a no-FR "
+                       f"baseline of {baseline:.4f}× — an improvement of "
+                       f"{gain * 100:.1f}%. {n_beating_baseline} of "
+                       f"{len(all_results)} candidates beat the baseline "
+                       f"at all; the others make the cross-atom variance "
+                       f"WORSE. Both figures are under the "
+                       f"self-normalized measure (bean qou-7o7h); the "
+                       f"previously published 1.82× baseline was "
+                       f"inflated ~53% by the textbook "
+                       f"dim_q²/[n]_q! form, so the large apparent "
+                       f"variance closure it implied was mostly a "
+                       f"normalization artifact.")
         else:
             paper_str = (f"{paper_knot_mom:.3f}×"
                           if paper_knot_mom else "n/a")
