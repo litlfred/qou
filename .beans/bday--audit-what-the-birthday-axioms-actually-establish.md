@@ -1,6 +1,6 @@
 ---
 # bday
-title: 'Audit what the birthday axioms actually establish — they admit a two-valued model'
+title: Audit what the birthday axioms actually establish — they admit a two-valued model
 status: in-progress
 type: task
 priority: high
@@ -9,9 +9,9 @@ tags:
     - surreals
     - axiom-audit
     - stale-claim-corrected
-parent: hypr
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T04:15:00Z
+updated_at: 2026-09-04T09:56:56Z
+parent: hypr
 ---
 
 Follows from the finding proved in `QOU/AppendixSurreals/HyperrealLimitTransfer.lean`
@@ -900,3 +900,45 @@ untouched and stays `in-progress`.
 Stale prose corrected in the same integration: `DiophantineBirthdayScope.lean` §1 and
 `DiophantineBirthdayTrajectory.lean` §3 both described the old field schema in the
 present tense.
+
+
+## 2026-09-04 — four more instances, from the sibling compile sweep (qou-e7xv)
+
+The degenerate-model method here generalises past the birthday axioms. Four
+members found while repairing content-block siblings (PR #6540), listed because
+this bean is the right home for the class and a separate bean would fragment it:
+
+- **`QOU.transfer_matrix_level_independence`** — the same mechanism as
+  `qou-k4ul`'s `operator_selection_lp`: `CategoricalTransferMatrix` carries
+  `base`, `filtration`, `vertex_volume` as pure data, and the axiom asserted
+  `T₁.base = T₂.base → T₁.vertex_volume = T₂.vertex_volume`. Refuted by
+  `⟨(), trivialFiltration, 0⟩` vs `⟨(), trivialFiltration, 1⟩`;
+  `level_independence_false_as_stated` now proves it.
+- **`QOU.ope_is_skein`** — EMPTY rather than false. `OPE` carries the Hecke
+  eigenvalues as *fields*, so the degenerate instance discharges it:
+  `⟨⟨Y₁, Y₂, q, -q_inv_param⟩, rfl, rfl, rfl, rfl⟩`. Would have fallen to this
+  bean's test immediately.
+- **`markov_level_compatible`** — a shape not previously on the list: provable
+  by `rfl` (its `levelHecke` discards the level argument it quantifies over)
+  AND its docstring described a different claim entirely (`tr_M^{(n+1)}(ℓ_n(w))
+  = tr_M^{(n)}(w)`, with neither `tr_M` nor `ℓ_n` in the statement and the bound
+  `w` unused).
+- **`kappa_squared_tends_to_zero_axiom`** — also new: **not an axiom at all**, a
+  `theorem` with a real filter proof, under a docstring announcing it as
+  "auto-extracted … pending Mathlib infrastructure". Its seven errors were
+  Mathlib API drift. A reader auditing axioms would have counted it as one on
+  the name.
+
+Two statements in the same sweep were empty in the same way without being
+axioms: `borromean_h4_numeric_factorisation` (`(-3) * (1/4) = -3/4` by
+`norm_num`, under three paragraphs about the Borromean h⁴ chain) and
+`euler_level_stable` (`(2:ℤ) - 2*4 = -6`, which WAS its block's `lean.ref`
+target). Both restated over named objects so they are false if an input is
+wrong. The degenerate model for these is "any two numbers with that product".
+
+**Suggested scope extension for this bean**, not acted on: the test is
+mechanical for any `structure`/`class` whose fields are pure data — construct
+the degenerate instance and see what survives. `bday` names 11 modules for the
+surreals; the class is corpus-wide.
+
+Audit: docs/audits/2026-09-03-sibling-lean-compile-sweep.md §"Precedent check".

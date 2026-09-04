@@ -45,7 +45,10 @@ Borromean closed form `prop:borromean-markov-trace-closed-form`
 pins y_(2,1)(q) = 1/[2]_q² uniquely.
 -/
 
-import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 

@@ -39,10 +39,10 @@ noncomputable def gramKappa (n : ℕ)
     (q_factorial : ℝ) (n_factorial : ℝ)
     (cs : CharacterDecomposition n)
     (cw : CharacterDecomposition n) : ℝ :=
-  cs.partitions.prod fun λ =>
-    let dim_cl := (cs.dim_classical λ : ℝ)
-    let dim_q := cs.dim_quantum λ
-    let exponent := cs.chi λ * cw.chi λ
+  cs.partitions.prod fun lam =>
+    let dim_cl := (cs.dim_classical lam : ℝ)
+    let dim_q := cs.dim_quantum lam
+    let exponent := cs.chi lam * cw.chi lam
     ((dim_cl / dim_q) * (q_factorial / n_factorial)) ^ exponent
 
 /-- **Proposition (closed-form κ via Plancherel weights)**.
@@ -61,10 +61,15 @@ theorem gram_determinant_plancherel_ratio
     ∃ κ : ℝ, κ = gramKappa n q_factorial n_factorial cs cw := by
   exact ⟨gramKappa n q_factorial n_factorial cs cw, rfl⟩
 
-/-- At the substrate value `q₀ ≈ 1.1097` for the genus-4 torus
-    pair `(T_{2,9}, T_{3,5})`, `κ ≈ 1.722`. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
 /-- **External axiom (§3b-cond pattern): gram_kappa_numerical_value.**
+
+    At the substrate value `q₀ ≈ 1.1097` for the genus-4 torus pair
+    `(T_{2,9}, T_{3,5})`, `κ ≈ 1.722`.  (This paragraph was a SECOND docstring
+    sitting immediately above this one, left orphaned by whatever extracted
+    the axiom below — two docstrings cannot both attach to one declaration, so
+    the file did not parse.  Merged rather than dropped: it is the only place
+    the numerical value is stated.)
 
     Auto-extracted from the single-sorry theorem body in this file.
     Encodes the categorical content pending Mathlib infrastructure

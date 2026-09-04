@@ -118,10 +118,16 @@ noncomputable def RogersPair.shape₃
     -- h is now: r.y = r.x
     exact h.symm
 
-/-- Helper: in a field, `1 - y⁻¹ ≠ 0` whenever `y ≠ 0` and
-    `y ≠ 1`. -/
+/-- Helper: in a field, `1 - y⁻¹ ≠ 0` whenever `y ≠ 1`.
+
+    The `y ≠ 0` hypothesis this carried until 2026-09-03 was never used — the
+    `unusedVariables` linter said so, invisibly, because the file did not
+    compile. It is not needed: Lean's junk-value convention gives `0⁻¹ = 0`,
+    so at `y = 0` the claim reads `1 - 0 ≠ 0`. Dropped rather than silenced,
+    which strengthens the lemma; the three call sites in this file lose their
+    now-redundant first argument. -/
 private theorem one_sub_inv_ne_zero
-    {F : Type*} [Field F] {y : F} (hy : y ≠ 0) (hy1 : y ≠ 1) :
+    {F : Type*} [Field F] {y : F} (hy1 : y ≠ 1) :
     (1 - y⁻¹) ≠ 0 := by
   intro h
   apply hy1
@@ -148,15 +154,15 @@ noncomputable def RogersPair.shape₄
   val := (1 - r.y⁻¹) / (1 - r.x⁻¹)
   ne_zero :=
     div_ne_zero
-      (one_sub_inv_ne_zero r.hy_ne_zero r.hy_ne_one)
-      (one_sub_inv_ne_zero r.hx_ne_zero r.hx_ne_one)
+      (one_sub_inv_ne_zero r.hy_ne_one)
+      (one_sub_inv_ne_zero r.hx_ne_one)
   ne_one := by
     intro h
     -- h : (1 - r.y⁻¹) / (1 - r.x⁻¹) = 1
     -- We derive r.x = r.y, contradicting r.hxy_ne.
     apply r.hxy_ne
     have hd : (1 - r.x⁻¹) ≠ 0 :=
-      one_sub_inv_ne_zero r.hx_ne_zero r.hx_ne_one
+      one_sub_inv_ne_zero r.hx_ne_one
     -- div = 1 ⇒ numerator = denominator
     have hnd : (1 - r.y⁻¹) = (1 - r.x⁻¹) := by
       field_simp [hd] at h
@@ -355,22 +361,47 @@ theorem quot_rogersGenerator_eq_zero
   exact (QuotientAddGroup.eq_zero_iff _).mpr
     (rogersGenerator_mem_pentagonSubgroup r)
 
-/-- **Concrete `HasBlochGroup F` instance** (closes substantive
-    gap (1)): with the `BlochGroup F` quotient now constructed,
-    the previously-axiomatic class can be inhabited. The two
-    boolean fields are discharged trivially: the quotient is an
-    abelian group by Mathlib's `QuotientAddGroup` instance, and
-    the Bloch-Wigner regulator is hooked from
-    `BlochWigner_unit_circle` in the unit-circle restriction. -/
 -- Ref: [manuscript] rem:three-substantive-mathlib-fillers
-instance hasPentagonRelation_real :
-    HasPentagonRelation ℝ where
-  pentagon_subgroup_exists := trivial
+/- **The two instances that stood here are REMOVED (2026-09-03), and the
+   compile error that removing them resolves was the guard working.**
 
-instance hasBlochGroup_real :
-    @HasBlochGroup ℝ _ _ _ hasPentagonRelation_real where
-  bloch_quotient_is_abelian := trivial
-  bloch_wigner_regulator_exists := trivial
+   Their own docstring claimed they "close substantive gap (1)" by making
+   "the previously-axiomatic class ... inhabited", while stating in the same
+   breath that "**the two boolean fields are discharged trivially**".  That
+   sentence is the defect, written down: an instance whose every field is
+   `trivial` inhabits the class without asserting anything, and a downstream
+   `[HasBlochGroup ℝ]` hypothesis then resolves to it silently.
+
+   They read
+
+       instance hasPentagonRelation_real : HasPentagonRelation ℝ where
+         pentagon_subgroup_exists := trivial
+
+       instance hasBlochGroup_real : @HasBlochGroup ℝ _ _ _ hasPentagonRelation_real where
+         bloch_quotient_is_abelian := trivial
+         bloch_wigner_regulator_exists := trivial
+
+   i.e. every field discharged by `trivial`.  `QOU/Archimedean/
+   ThreeSubstantiveMathlibFillers.lean` has since been strengthened —
+   deliberately, its docstrings say "not a `True` placeholder" — so those
+   classes now carry real content:
+
+       pentagon_subgroup : AddSubgroup (PreBlochGroup F)
+       regulator         : (PreBlochGroup F ⧸ pentagon_subgroup) →+ ℝ
+       kernel_torsion    : ∀ x ∈ regulator.ker, ∃ k, 0 < k ∧ k • x = 0
+
+   The old field names no longer exist, which is why this file stopped
+   compiling.  The fix is NOT to supply values of the new types: `⊥` and the
+   zero hom would typecheck and assert nothing, and would make
+   `HasBlochGroup ℝ` inhabited by the trivial model — so every downstream
+   `[HasBlochGroup ℝ]` result would silently resolve to it.  That is the
+   fabricated instance AGENTS.md §3b-tax forbids ("an unproved primary is
+   honestly represented by a content-bearing class with NO instance").
+
+   A genuine instance needs the pentagon-relation generating set and the
+   Bloch-Wigner function `D(z)` — which the library's own docstrings name as
+   "the conjectural analytic input, carried abstractly".  Open work, not a
+   wiring gap.  Nothing in the corpus referenced either instance. -/
 
 
 end QOU.Archimedean.BlochQuotient

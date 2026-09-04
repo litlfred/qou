@@ -32,4 +32,28 @@ export default proposition({
     witness: "computations/gram-matrix-dual.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-09-04",
+      body:
+        "The deleted content-block sibling carried this note verbatim: *\"The " +
+        "proof strategy based on representation dimension bound by braid length " +
+        "is known to be incomplete/mathematically flawed.\"* It names Step 4 of " +
+        "the narrative proof, which bounds the Jones-Wenzl module dimension " +
+        "`d_q` by `L(beta) * ||rho(beta)||_op` citing Kassel-Turaev Prop. 4.4.3. " +
+        "That source is not held in `library/`, so the citation has not been " +
+        "checked here and the note is recorded as received, not re-derived. " +
+        "What IS verified: the Lean formalisation " +
+        "(`QOU.MassEndomorphism.DeltaMaxUniformBound`) does not assert Step 4 -- " +
+        "`OperatorNormBound.per_level_bound` carries the combined Steps 1-4 " +
+        "conclusion as a **hypothesis field** and `delta_max_uniform_bound` " +
+        "derives `|Delta^(n)| <= Delta_max` from it, sorry-free " +
+        "(`[propext, Classical.choice, Quot.sound]`). So the Lean is a rigorous " +
+        "conditional and the open item is the per-level bound itself. " +
+        "Migrated here when the `theorem delta_max_uniform_bound : sorry := sorry` " +
+        "sibling was deleted: it shadowed the real library theorem of the same " +
+        "name and the same namespace (AGENTS.md ss0a, no shadowing stubs).",
+    },
+  ],
 });

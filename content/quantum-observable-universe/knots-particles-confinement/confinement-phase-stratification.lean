@@ -51,11 +51,15 @@ opaque mu : ConfinedParticleTy → ℝ → ℕ
 /-- Frobenius stability index. -/
 opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
 
-/-- **Phase stratification, claim (1) — openness.**
-    `Ω(P)` is open in ℝ.
-    
-    This theorem requires massive infrastructure (Slater-strict SDP feasibility
-    topology and continuity of constraint matrices) and is left as a sorry. -/
+/- **Phase stratification, claim (1) — openness.**  `Ω(P)` is open in ℝ.
+
+   This was a docstring with no declaration under it — the theorem it
+   documented is gone and the comment was left behind, which is a parse error
+   (a docstring must attach to a declaration).  Demoted to a section comment
+   rather than deleted, because it records why the claim is not proved here:
+   it needs Slater-strict SDP feasibility topology and continuity of the
+   constraint matrices.  The `isOpen` field of the class below is what
+   currently carries it, as a hypothesis. -/
 
 /-- The topological input for the confinement phase stratification. -/
 class ConfinementPhaseStratificationContext (P : ConfinedParticleTy) where
