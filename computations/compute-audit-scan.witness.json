@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T11:09:22.517907+00:00",
-  "commitSha": "71b7f12756fbe48004fc5d633b1713756867530d",
+  "computedAt": "2026-09-04T13:40:36.547166+00:00",
+  "commitSha": "ed918c9fd92d2fd9255c3652a9cef953b61ce128",
   "assertions": [],
   "allPassed": true,
   "durationMs": 5,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "4ef22dbfca2a",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,7 +35,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1503,
+    "files_scanned": 1504,
     "patterns": [
       "P15",
       "P16",
