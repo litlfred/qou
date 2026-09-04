@@ -7,7 +7,7 @@ priority: normal
 tags:
     - sm-26
 created_at: 2026-09-03T16:32:23Z
-updated_at: 2026-09-04T01:43:56Z
+updated_at: 2026-09-04T02:10:34Z
 ---
 
 Measured 2026-09-03 (session qou-ggdk) after the alpha-cluster tranche (PR #6519, commits 577367a41b f3bafde098 9218877589). Method: grep -rlF '1.10997859555733471' computations --include=*.py. The literal is the self-certified muon pin A, retired 2026-08-22/28 (fca08de7d2, 83bab99730); the live muon anchor is q_muon_at() over the CODATA-2022 lepton ratio (…56427390…) and the proton default is Q_50_DIGIT_STR. These producers are UNSTAMPED, so q0_anchor_consistency_audit files them under Q0_ANCHOR_MISSING and the corpus-wide drain qou-3f7a (which keys on stamps) cannot see them. Recipe that worked on the 14 alpha producers, in three shapes: (A) dead fallback 'q_at(50) if the substrate imports else the literal' → hard refusal, import q_at from q_parameter (NOT qou_substrate.constants, or the witness gets no stamp), declare the stem under physical_proton; (B) explicit proton-vs-muon comparison (E1) → both pins by name, mpf residuals via _precision.fmt, assertion booleans as strings, wb.save(q0_comparison(muon=…, proton=…, reason=…)); (C) muon-only with no comparison purpose → proton default (2026-08-30 rule), stamp proton. Per-producer: run, diff the witness with volatile keys masked, expect proton legs unchanged past the 9th digit and muon legs shifted by the −0.0769 ppb pin migration; precision-gates.sh --changed must show zero NEW-dirty and only drained entries. Never re-pin an anchor-DEFINING witness (q-pinning-50-digit). Land manifest + witnesses together (constraint 4). Scope by subdirectory (deltalambda/, qbeta/, …) — a tranche per directory keeps each PR reviewable.
@@ -246,3 +246,47 @@ because my first AST pass treated a `#` comment as live (comments never become
 AST constants, so a comment-only file had NO constant carrying the literal and
 fell through to the wrong bucket). Both a raw grep and a careless AST walk
 inflate this surface ~3x. State which measure you used.
+
+
+RESOLVED 2026-09-04 — the 1.4% cp_trace move flagged as UNVERIFIED in 56fdff0d2e
+is PRE-EXISTING STALENESS, not the pin. Measured by running the UNMODIFIED HEAD
+producer (git show HEAD:...he4_binding_k_fingerprint_stage1_probe.py, run in
+place so _HERE/output_dir resolve identically):
+
+  quantity            committed@HEAD        HEAD-producer re-run   my re-pinned run
+  target_canonical    0.055358426266783106  0.1609741454424074     0.16097414544240738183
+  cp_trace_no_binding 0.89307385932774589   0.905400288181         0.90540033019518634354
+  best K word         [3, -6, 9]            [3, 6, -9]             [3, 6, -9]
+  best tr_M           0.0634900512741141    0.145898300376         0.1458983071527361
+  best rel delta      0.14689               0.09365                0.0936538
+
+The HEAD producer reproduces EVERY structural difference on its own: the 2.91x
+target, the 1.38e-2 cp move, the different winning K word, and rel 0.147 ->
+0.0937. The re-pin accounts for 4.64e-8 on cp and 4.65e-8 on the best trace,
+i.e. a pin sensitivity of 4.02 (= 4.64e-8 / 1.1541e-8), NOT the ~1.2e6 the
+commit message hypothesised. Pre-existing / pin = 297437.
+
+ROOT CAUSE, and it is the stale-consumer class: target_canonical_trace is READ
+from canonical-tr-m-via-chi-cache.witness.json, whose helium-4 tr_M_q0 is
+0.16097414544240738182587344098071685392360735413344 on origin/main AND in the
+working tree. The sibling he4_binding_k_averaged_interface_probe reads the SAME
+field with the SAME walk() code and its committed witness already carried
+0.16097414544240738183. So the fingerprint witness alone was a generation
+behind, its assertions passed before and after (allPassed True both), and
+nothing looking at it in isolation could tell.
+
+CONSEQUENCE FOR THE RESULT, not just the bookkeeping: the committed record
+ranked candidates against a target 2.91x too small and named [3, -6, 9] as the
+best plain inter-nucleon K at rel 0.14689. The live answer is [3, 6, -9] at rel
+0.09365 — a different word and a 36% better residual. The rankings in the
+committed top10 were not measuring what their labels said.
+
+The refreshed witness in 56fdff0d2e is correct; only the commit message's open
+question needed answering.
+
+METHOD NOTE for the next agent doing this: the HEAD copy must live in the
+producer's OWN directory (Path(__file__).parent drives _HERE and output_dir).
+Mine was deleted mid-run by a concurrent agent's untracked-file cleanup and the
+producer died with FileNotFoundError at file_content_hash() — after printing the
+verdict, which is why the comparison survived. If you need the witness rather
+than the stdout, keep the copy out of a shared checkout.
