@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-09-04T22:12:28Z
+updated_at: 2026-09-04T22:16:53Z
 parent: qou-5p7n
 ---
 
@@ -248,3 +248,46 @@ Plus **5 needing a carrier read** (`categorical_jet_prolongation`,
 `topological_mass_decomposition`) where the heuristic found no class binder.
 
 Read each declaration and its class before writing. Still.
+
+
+## Final narrowing: the queue is **5**, not 78 — four of the nine are working GATES
+
+Read `mass-side-kernel-formalize-first-gates.lean` before editing it and found
+the design is already correct:
+
+```lean
+class MassAnchorStableGateClass (swing : ℝ) : Prop where
+  swing_within_tolerance : swing ≤ anchorTolerance
+
+theorem mass_anchor_stable_forward (swing : ℝ) [hC : MassAnchorStableGateClass swing] :
+    swing ≤ anchorTolerance := hC.swing_within_tolerance
+
+theorem mass_anchor_stable_reject (swing : ℝ) (h : swing > anchorTolerance) :
+    ¬ MassAnchorStableGateClass swing := ...
+```
+
+The carrier is **parametrised** and there is a **proved refutation**. That is a
+gate: `_forward` extracts the bound, `_reject` shows the class is uninhabitable
+when the bound fails. The projection is the gate's intended API, not a
+restatement — and it is exactly the parametrise-and-refute shape this whole
+thread has been recommending.
+
+**Four of the nine are this shape** (`mass_anchor_stable_forward`,
+`mass_direction_sanity_forward`, `qbeta_direction_sanity_magnitude_match`,
+`qbeta_g_simple_pole_at_u_substrate`), so the queue is **5**:
+
+    matrixChain_eq_buildChains_axiom      MatrixChainEqBuildChains      TMCorrespondence.lean
+    dressed_mass_from_substrate_split     DressedMassSubstrateSplit     DressedMassFromSubstrateSplit.lean
+    sdp_lp_projection                     ScalarLPProjection            ConfinementSDP.lean
+    categorical_dq_squared_nonvanishing   HasDqSquaredNonvanishing      Instanton.lean
+    opening_eq_holonomy_of_conj           H2SAngleS3HolonomyConjecture  h2s-angle-s3-braid-holonomy.lean
+
+(Plus the 5 whose carrier the heuristic could not identify — excluded on
+measurement uncertainty, not merit.)
+
+**Seventh measurement error of the session, same family.** My first refutation
+check looked one line past the `theorem` keyword and returned NONE for all
+nine — including `mass_anchor_stable_reject`, whose `¬ MassAnchorStableGateClass`
+sits on the THIRD line, and which I had read with my own eyes two minutes
+earlier. Caught instantly *because* the file had been read first. The whole-block
+search is now in the script with that note attached.
