@@ -878,6 +878,7 @@ export default chapter({
         "canonical-trace-factorises-over-chain",
         "torus-chain-pages-on-bring",
         "frenet-framing-is-not-an-invariant",
+        "pn-bond-cannot-be-extremal",
       ],
     }),
 

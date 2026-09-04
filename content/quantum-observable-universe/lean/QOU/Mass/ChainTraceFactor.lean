@@ -188,4 +188,67 @@ theorem L_nn_eq {q : ℝ} (hq : 0 < q) : L_nn q = Real.log q + Real.log (q ^ 2 +
     Real.log_mul hq.ne' (by positivity)]
   ring
 
+/-!
+## The `pn` bond can never be the strongest (bean `qou-mu1h`)
+
+`computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py` measured
+at `A = 2`, where no ordering or arrangement convention is in play, that the three bond
+constants come out `L_pp < L_pn < L_nn` — so the model ranks the unbound dineutron above
+the bound deuteron. That is not a numerical accident. The `pn` interface letter is by
+definition the weighted average of the `pp` letter (`σ`, offset `0`) and the `nn` letter
+(`σ⁻¹`, offset `-h`), the two-strand trace is affine in the offset (`twoStrandTrace_eq`),
+and `-log` is strictly decreasing, so the ordering is forced for every `q > 0` and every
+`δ ∈ (0,2)`. Since exactly one of the three two-body systems binds, and a binding-ranking
+constant would have to put that one at an EXTREME, a convex combination cannot do it.
+
+`δ` at the substrate's `q₀` is `0.00138`, and it would have to reach `2` — at `q ≈ 3.458`
+— before the convexity even breaks, so nothing here is tunable. The physics is NOT
+formalised: that only `pn` binds is an empirical input, and this arc's `L` carries no
+spin (the real distinction is `3S1` versus `1S0`). What is proved is the ordering.
+-/
+
+/-- The `pn` offset written as the convex combination of the `pp` offset `0` and the
+`nn` offset `-h` with weights `1/2 + δ/4` and `1/2 - δ/4`, which sum to `1`. -/
+theorem dPN_eq_convex (q : ℝ) :
+    dPN q = (1 / 2 + deltaPN q / 4) * 0 + (1 / 2 - deltaPN q / 4) * (-(heckeH q)) := by
+  unfold dPN
+  ring
+
+theorem convex_weights_sum (q : ℝ) :
+    (1 / 2 + deltaPN q / 4) + (1 / 2 - deltaPN q / 4) = 1 := by ring
+
+/-- The `pn` offset lies strictly between the `nn` offset `-h` and the `pp` offset `0`,
+whenever `0 < h` and `0 < δ < 2`. -/
+theorem dPN_strict_between {q : ℝ} (hh : 0 < heckeH q) (hd0 : 0 < deltaPN q)
+    (hd2 : deltaPN q < 2) : -(heckeH q) < dPN q ∧ dPN q < 0 := by
+  unfold dPN
+  constructor <;> nlinarith [mul_pos hh hd0]
+
+/-- **The forced ordering.** With the offsets strictly ordered and `tr₂(σ + d) = z + d`
+affine, the three trace factors are strictly ordered the same way. -/
+theorem factors_strict_mono {q : ℝ} (hh : 0 < heckeH q) (hd0 : 0 < deltaPN q)
+    (hd2 : deltaPN q < 2) :
+    markovZ q - heckeH q < markovZ q + dPN q ∧ markovZ q + dPN q < markovZ q := by
+  obtain ⟨h1, h2⟩ := dPN_strict_between hh hd0 hd2
+  constructor <;> linarith
+
+/-- **`L_pp < L_pn < L_nn`, for every `q > 0` and every `δ ∈ (0,2)`.** The bound
+two-body system is assigned the MIDDLE bond constant, and no choice of `q` changes it:
+`L = -log(z + d)` is strictly decreasing in the offset, and the `pn` offset is a convex
+combination of the other two. -/
+theorem L_strict_mono {q : ℝ} (hq : 0 < q) (hh : 0 < heckeH q) (hd0 : 0 < deltaPN q)
+    (hd2 : deltaPN q < 2) : L_pp q < L_pn q ∧ L_pn q < L_nn q := by
+  obtain ⟨hlo, hhi⟩ := factors_strict_mono hh hd0 hd2
+  have hnn : 0 < markovZ q - heckeH q := mirror_pos hq
+  have hpn : 0 < markovZ q + dPN q := by linarith
+  unfold L_pp L_pn L_nn
+  exact ⟨by simpa using Real.log_lt_log hpn hhi, by simpa using Real.log_lt_log hnn hlo⟩
+
+/-- `h = q - q⁻¹ > 0` for `q > 1`: the hypothesis the substrate supplies. -/
+theorem heckeH_pos {q : ℝ} (hq : 1 < q) : 0 < heckeH q := by
+  have hq0 : 0 < q := by linarith
+  unfold heckeH
+  have : q⁻¹ < 1 := by rw [inv_lt_one₀ hq0]; exact hq
+  linarith
+
 end QOU.Mass.ChainTraceFactor
