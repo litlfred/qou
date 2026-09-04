@@ -5,9 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-04T03:13:31Z
-
-updated_at: 2026-09-04T06:45:25Z
+updated_at: 2026-09-04T10:44:01Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1618,3 +1616,69 @@ its one dependence on an unsettled number.
 **Scope (b) for the exclusion** (`(x-1)^2 >= 0` is a proved invariant, quantified
 over all real `a`), **scope (a) for everything else**. Derives no `alpha`,
 adjudicates no convention, wires nothing.
+
+
+## 2026-09-04 (2) — Route A's "impossible" is OBSERVABLE-level, and D0 only bites at real q
+
+Following the author's instruction to chip at where the imaginarity comes from.
+Read `ImQCannotSupplyEllipticGenerator.lean` first; it closes routes A and B and
+leaves the conjecture's **chirality** role untouched. That is the gap examined here.
+
+### The two closed routes share a hypothesis, and it is an evaluation point
+
+`abs_sq_gt_one {x y} (hx : 1 < x) : 1 < x² + y²` and everything built on it carry
+`1 < Re q`. Candidate (i) — chirality — lives in the Kashaev regime, `q` on or near
+the **unit circle**, where that hypothesis simply fails:
+
+    arg q = 0.05659474 :  Re q = 0.998398945114   1 < Re q ?  False   |q| = 1
+    arg q = 0.04474439 :  Re q = 0.998999136781   1 < Re q ?  False   |q| = 1
+    arg q = 0.05567095 :  Re q = 0.998450772846   1 < Re q ?  False   |q| = 1
+
+So the Route-A exclusion does not reach candidate (i). It is not wrong; its
+hypothesis is the substrate's **archimedean evaluation point**, and the record
+reads "impossible, since Re q = 1.10998 > 1" without that scope. `qou-cds1` draws
+exactly this distinction 5,000 lines earlier for the complex-volume route —
+"cannot supply the D-frame correction **at the observable level** AT ALL ... must
+first close a FIBRE-level construction" — and the elliptic-generator entry does
+not carry it.
+
+### At |q| = 1 the generator is elliptic BY CONSTRUCTION
+
+`ln q = iθ` exactly, so spectrum `±iθ` and `det A = +θ² > 0`:
+
+    C, as recorded       cos θ = 0.998398945114   det A = +0.0032029646
+    D, naive (banned)    cos θ = 0.998999136781   det A = +0.0020020604
+    D, bar-odd derived   cos θ = 0.998450772846   det A = +0.0030992547
+
+and the character `(q + 1/q)/2 = cos θ` reproduces **any** sub-unit target
+exactly. **That last point is a tautology, not evidence** — θ was chosen as
+`arccos(target)`. What it establishes is only that the modulus-1 locus is
+precisely the set where the generator is elliptic *and* the character sub-unit,
+so no tuning is required there.
+
+### Consequence, and it sharpens my own D0 entry above
+
+The frontier as recorded — *"find one whose generator is ELLIPTIC at real q"* —
+asks for something the proved argument forbids. Ellipticity is free off the real
+axis and impossible on it. **So D0, which I argued above is applicable without
+knowing θ, is a screen against REAL-q constructions specifically**; off the real
+axis it excludes nothing. That is a real limit on the criterion I proposed, and
+it belongs beside it.
+
+The open problem is therefore not "supply imaginarity" — candidate (i) supplies
+it and passes D0 identically — but **the bridge**: a fibre-level connection at
+`|q| = 1` whose archimedean evaluation sits at `|q₀| = 1.10998`, an 11.0 % gap in
+modulus. That is the fibre-vs-observable structure AGENTS.md already names, and
+it is where this route's remaining content is.
+
+### Also filed: `qou-c66b`
+
+Chipping at the conjecture directly turned up that its stated obstacle — *"no
+mass observable can detect Im(q)"*, candidate (iii) *"needs a categorical formula
+for decay widths Γ"* — overlooks `Q_β`, whose formula modulus-projects **one of
+three factors**, making it Im(q)-sensitive with `∂Im(Q_β)/∂Im(q) ≈ 3.418` while
+the mass shape is invariant to the last digit. Requiring `Im Q_β = 0` then forces
+`Im q = 0` from a decay observable. Caveat there is load-bearing: the complex
+extension of `Q_β` is mine, not the corpus's.
+
+Scope (a) throughout — no `α` derived, no construction proposed, nothing wired.
