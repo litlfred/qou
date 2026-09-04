@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T20:56:04Z
+updated_at: 2026-09-04T21:47:13Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -297,3 +297,51 @@ is the author's naming, so it is flagged and left alone. **Author's call.**
 
 All three scoped to the **archimedean evaluation**. The **fibre** is untouched
 throughout and is where the Kashaev regime lives.
+
+
+---
+
+## 2026-09-04 (fourth) — the conjecture block itself, retargeted to the fibre (owner picked A + B)
+
+Branch `claude/imq-conjecture-retarget-fibre-2026-09-04`. The three earlier PRs
+deliberately left the block untouched because editing it is a verdict on the
+author's conjecture; the owner has now chosen both the scope note (A) and the
+fibre retarget (B), so they land as one edit.
+
+**What changed in `conj-im-q-physical-role.md`:**
+
+1. **Opening** — the catalogue no longer says "open work". All three candidates
+   are settled at `q_0` and all three stay open on the fibre, so the conjecture
+   is restated as a fibre-level question.
+2. **New section** `Reality of $\mathfrak{Q}_\beta$ at the substrate` — the
+   three conclusions with scope and Lean carrier, plus why `Q_β` is the
+   Im-sensitive observable the opening paragraph did not anticipate.
+3. **Each candidate's `Testable`** retargeted to the fibre, keeping the
+   superseded archimedean form visible rather than deleting it.
+4. **Obstacles** — two of the three stated requirements were satisfied by
+   observables *already in the corpus*; what survives is one obstacle and it is
+   at the fibre.
+5. 🛑 **`Default value: Im(q) = 0`** — this said *"**NOT structurally forced** …
+   a convention pending an Im-sensitive measurement"*. That is now **false at
+   the archimedean layer**: `im_qbeta_zero_iff_e2` derives it, and the
+   measurement it was waiting for is `Q_β` itself. Split by layer — forced at
+   `q_0`, not forced on the fibre. **This is the correction the block most
+   needed**; left alone it would have kept asserting the opposite of a merged
+   theorem.
+
+**Candidate (ii) states its own closure condition** — *"if only real solutions
+exist, candidate (ii) is closed"* — and that is exactly what #6639 proved. Quoted
+in the block.
+
+**QA.** `qa-sweep` clean of anything I introduced. One catch worth recording: my
+first heading was `## Archimedean status`, which tripped `voice-status-section`
+— a status label in prose, the §4d violation. Renamed to a noun phrase naming
+the mathematics. `trap-nonspeakable` and `trap-superlative` fail both before and
+after and are **pre-existing on main**, not mine; verified by diffing the
+sidecar against `origin/main` rather than by reading the post-edit state alone.
+
+**A measurement slip of my own, caught mid-check:** my first before/after
+comparison read `status`/`verdict` but not `result`, and reported *zero*
+failures on both sides against a true 2-and-3. Two scripts of mine disagreed and
+the wrong one looked cleaner — the same field-name-assumption class as the
+detector-blindness taxonomy's rows 22/25/26.
