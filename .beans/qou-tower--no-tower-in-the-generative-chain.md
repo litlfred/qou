@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-09-04T20:55:55Z
+updated_at: 2026-09-04T21:02:12Z
 ---
 
 Asked to walk the generative production chain step by step, look past the
@@ -688,3 +688,41 @@ compared **a binding energy**. So this is open and reachable:
 Yes => H_3 is a faithful order-zero rendering and the ruling is satisfied in
 substance. No => the two routes disagree, and that gap is a bigger finding than
 the magic-number negative this bean closed on. Tracked as `qou-hu1f`.
+
+
+---
+
+## 🛑 CORRECTION (same day) — I was wrong about the canonical route, and it was the important half
+
+The entry above says `binding_canonical` is H_3 too and that on the canonical
+route "the tower is never built". **False.** Its DEFAULT path
+(`use_transfer=True`) is the fine-Bratteli transfer matrix and sums the Frobenius
+pairing over EVERY partition of `3A`. Measured, not read:
+
+| nucleus | `n = 3A` | `n_partitions` | `p(3A)` |
+|---|---|---|---|
+| 2H  | 6  | **11** | 11 |
+| 3He | 9  | **30** | 30 |
+| 4He | 12 | **77** | 77 |
+
+Exact at every level. **The canonical binding path is full-tower in `n`** and
+already satisfies that half of the 2026-09-03 ruling.
+
+**The trap, because it is reusable.** I cited `binding_canonical.py:37`, `:324`
+("the H_3 building blocks tr_M^3(p), tr_M^3(n)") and `:341` (Wenzl bridge at
+H_3). Those lines exist — but **:324 and :341 are inside the
+`use_closed_form=True` branch**, a non-default alternative kept for one caller
+family. Three grep hits naming H_3, and I inferred the default from them without
+checking which branch they sat in. **A grep hit inside a branch that does not run
+is not evidence about the path that does.**
+
+### What survives, and it is sharper than what I claimed
+
+- `build_atom_nf_mp` really does collapse to 6 components at every A — measured
+  here at hydrogen, 4He and **16O** (nominal `H_48` carried as six numbers).
+- The 2026-09-03 ruling has still been applied to **neither** route in any doc.
+- But the two routes are **different objects**: canonical = full tower in `n`;
+  NF = no tower at all. So the live question is not "does the mass surface
+  honour the ruling" — it is **do the two routes agree**, and any probe that
+  reasons from `build_atom_nf_mp` to a claim about *the framework's* binding is
+  reasoning about the wrong object.
