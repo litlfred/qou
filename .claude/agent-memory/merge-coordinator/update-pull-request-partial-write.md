@@ -31,6 +31,43 @@ Three consequences, in order of how much time each saves:
    NOT open a fresh non-draft PR from the same branch — that abandons the
    review history and violates the one-branch-one-PR rule.
 
+## TRAP — the SAME REST/GraphQL split blocks READS, and it has a REST way round
+
+Measured 2026-09-04 across `qou#6528`, `#6576`, `#6602`, `#6627`, `#6651`:
+`pull_request_read` with `method: "get_review_comments"` returned
+*"API rate limit already exceeded for user ID 662242"* on **every** attempt for
+**~10 hours**, while REST methods on the same tool answered instantly
+throughout. Same two-budget split as the write case above, one tool over.
+
+**Which method is which** — this is the part that saves the time:
+
+| method | API | during the outage |
+|---|---|---|
+| `get_review_comments` (review **threads**) | GraphQL | dead |
+| `get` (merge state, head sha, counts) | REST | fine |
+| `get_reviews` | REST | fine |
+| `get_comments` (issue-level) | REST | fine |
+| `get_files`, `get_commits`, `get_diff` | REST | fine |
+
+**So a GraphQL outage does NOT stop you answering "are there open review
+threads?"** A review thread cannot exist outside a review, so `get_reviews`
+returning `[]` proves there are none; `get_comments` covers the issue-level
+ones. Together they settle it without GraphQL.
+
+**Cost of not knowing this:** I reported "review threads remain unread" across
+four consecutive PRs, correctly but needlessly — the answer was one REST call
+away each time. Worse, the principle was **already in this very file** (point 2
+above, *"do not generalise 'rate limited' across the whole API"*) and I
+re-derived it instead of reading it. In this environment `MEMORY.md` and its
+siblings are **not injected** into the prompt (see AGENTS.md); nothing reads
+them for you.
+
+**Also note the duration.** ~10 hours is far longer than a normal GitHub
+rate-limit window (1 h), so do not plan on it clearing within a session — take
+the REST route rather than waiting.
+
+---
+
 Related in kind to the CI-billing rule in AGENTS.md: an infrastructure error
 whose surface message names the wrong cause. The tell here is the same one that
 caught the ledger `source_hash` bug earlier in the same session — **the count
