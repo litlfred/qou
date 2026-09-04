@@ -369,3 +369,41 @@ module moves above: grep the mathlib **source** tree.
 
 Bernoulli itself is `one_add_mul_le_pow (H : -2 ≤ a) (n : ℕ) : 1 + n*a ≤ (1+a)^n`
 in `Mathlib.Algebra.Order.Ring.Pow`.
+
+## TECHNIQUE — the degenerate-model test, and it is sharper than reading the docstring
+
+From bean `bday`, and it generalises well past its origin. For any `structure` or
+`class` whose fields are **pure data with no relating hypotheses**, construct the
+degenerate instance and see what survives:
+
+- `flatBirthday x := if x = 0 then 0 else 1` — two-valued — satisfies **all six**
+  birthday axioms of `SurrealField`. So any theorem proved from those axioms
+  alone is true in the flat model, and if it degenerates to something trivial
+  there, it carries no content whatever its statement looks like.
+- `qou-k4ul`: `OperatorSelectionLpContext` carries only data, so
+  `operator_selection_lp` is **refutable** — `d = 1, n_target = 1, x_star = 0`
+  makes its first conjunct say `0 = 1`.
+- Same mechanism, 2026-09-04: `CategoricalTransferMatrix` carries `base`,
+  `filtration`, `vertex_volume` as free fields, and
+  `transfer_matrix_level_independence` asserted a relation among them for every
+  instance. Refuted by two instances sharing a base with volumes `0` and `1`.
+
+Why it beats "read the statement against the `.md`": it is **mechanical and
+decides**, where reading raises a suspicion. `ope_is_skein` — an axiom whose
+`OPE` carries the eigenvalues as fields — falls to it in one step.
+
+**So when a `structure`'s fields are data and a theorem over it concludes a
+relation among them, try to refute before trying to prove.**
+
+## TRAP — check `.beans/` (checklist path 6) BEFORE calling a finding new
+
+Measured 2026-09-04: a four-axiom table was written up as "the single most useful
+thing this sweep found" and the `.beans/` grep, run afterwards, turned up
+`qou-k4ul` (completed 2026-08-16) carrying the *same mechanism* on a different
+declaration, and `bday` (in-progress) carrying the *general method*. The sweep
+contributed instances, not the class.
+
+`.beans/` is not under `docs/`, `content/`, `computations/` or `library/`, so no
+other checklist path reaches it, and a `completed` bean is the one that bites —
+it means the question was answered, sometimes in a single sentence with no
+artifact anywhere else.

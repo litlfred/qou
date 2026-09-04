@@ -559,3 +559,57 @@ Everything else compiles. Note the caveat recorded in the previous section
 stands: 4 of the 38 repaired files carry **real** sibling/library name
 collisions that repairing has made silent rather than loud, and choosing which
 declaration is canonical is a per-block judgement, not a compile fix.
+
+---
+
+## Precedent check, 2026-09-04 — the axiom family is NOT a new finding
+
+Before opening a bean for the proposed "corpus-wide statement-vs-`.md` pass", the
+`.beans/` corpus-grep (checklist path 6). It should have been run before calling
+the four-axiom table "the single most useful thing this sweep found". Two beans
+already name the class:
+
+**`qou-k4ul` — "operator_selection_lp is false as stated, not merely unproved"**
+(completed, 2026-08-16). Machine-verified: `False` is derivable from
+`operator_selection_lp`, because `OperatorSelectionLpContext` carries **only data
+and no hypotheses**, while the theorem concludes a relation among that data for
+*every* instance. Instantiate with `d = 1, n_target = 1, x_star = 0` and the
+first conjunct says `0 = 1`.
+
+That is **the same mechanism** as `transfer_matrix_level_independence` here —
+free fields, a conclusion relating them, refutable by instantiating degenerately
+— found a month earlier on a different declaration. So this sweep's "false axiom"
+is the *second* instance of a diagnosed class, not a discovery.
+
+**`bday` — "Audit what the birthday axioms actually establish"** (in-progress).
+Same family from the other side: `flatBirthday x := if x = 0 then 0 else 1`
+satisfies **all six** birthday axioms, so any theorem proved from those axioms
+alone is true in the two-valued model too. Its method is the generalisation this
+sweep was groping toward:
+
+> instantiate it at the degenerate model. If it degenerates to something trivial,
+> the theorem carries no content, whatever its statement looks like.
+
+That is strictly sharper than "read the statement against the `.md`" — it is
+*mechanical*, and it decides the question rather than raising it. `ope_is_skein`
+would have fallen to it immediately (`OPE` carries the eigenvalues as fields, so
+the degenerate instance discharges it); so would the `norm_num` statements, whose
+degenerate model is "any two numbers with that product".
+
+### What this changes
+
+- **The sweep's contribution is instances, not the class.** Four more members,
+  two of them in shapes the earlier beans had not seen (`markov_level_compatible`,
+  provable by `rfl` *and* docstring-mismatched; `kappa_squared_tends_to_zero_axiom`,
+  not an axiom at all). Recorded as such.
+- **No new bean was opened.** The right home is `bday`, which is in-progress and
+  already carries the method; a fresh bean would have fragmented it.
+- **The proposed corpus-wide pass should be scoped as extending `bday`'s
+  degenerate-model test**, not as a new statement-vs-`.md` idea. `bday` names 11
+  modules for the surreals case; the generalisation is: for every `structure` or
+  `class` whose fields are pure data, construct the degenerate instance and see
+  what survives.
+
+The PR body's §3 calls the four-axiom table "the single most useful thing this
+sweep found". That stands as written — it was, *for this sweep* — but it should
+not be read as novelty. This section is the correction of record.
