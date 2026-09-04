@@ -122,6 +122,28 @@ Three ways out, none of them taken here:
     representable, since a set of pairwise bonds applied "at once" is not a
     braid word at all.
 
+CONVERGENCE WITH THE SIBLING ARC (added 2026-09-04, after merging main)
+-----------------------------------------------------------------------
+`docs/audits/2026-09-04-monotone-word-trace-factorizes-derived-link-map.md`
+(beans `qou-kru4`, `qou-5vhf`) reaches the same phenomenon from the algebra side
+and gets the closed form this probe only measures. Their
+`content_reorder_defect` is
+
+    tr(g0 g1 g0 g2 g1) = (product over the same content) + z (z^2 - h z - 1)
+
+— "same letters, non-ascending order, cross term", which is exactly what §2
+here measures as three distinct traces from one bond multiset. They also prove
+the complement: a MONOTONE word (ascending, one run per generator) always
+factorizes, which is the chain form of `qou-m3sh` and the control in §1.
+
+The two results are complementary rather than duplicated. Theirs supplies the
+exact cross term at `n = 4`; this one supplies the link-level consequence (three
+distinct Jones polynomials, so the orderings close to different links), the
+magnitude at `A = 4` (15 % of helium-4), and the reconciliation of the corpus's
+two published `A = 3` all-pairs numbers. The cross term evaluates to `-0.4612`
+at `q_0`, negative, agreeing in SIGN with the `c_3 = -0.34` measured here; it is
+a different word so the numbers are not the same quantity and are not compared.
+
 WHAT IS NOT CLAIMED
 -------------------
 Not that no prime closure carries the cumulants — only that this model does not

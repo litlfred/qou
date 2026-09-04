@@ -78,3 +78,28 @@ in the triplet channel and every ¹S₀ two-body system is unbound — so a
 spinless bond constant cannot be expected to separate them. What it can be
 expected not to do is rank the unbound `nn` system above the bound `pn` one.
 Worth its own bean; it is upstream of every cumulant question.
+
+
+## Convergence with the sibling arc (2026-09-04)
+
+Merging `main` surfaced `docs/audits/2026-09-04-monotone-word-trace-factorizes-derived-link-map.md`
+(beans `qou-kru4`, `qou-5vhf`), which reaches this bean's central finding from
+the algebra side and supplies the closed form this bean only measured:
+
+    content_reorder_defect:
+    tr(g0 g1 g0 g2 g1) = (product over the same content) + z (z^2 - h z - 1)
+
+"same letters, non-ascending order, cross term" is exactly "the bond multiset
+does not determine a word". They also prove the complement — a MONOTONE word
+always factorizes — which is the `qou-m3sh` chain form and the control here.
+
+Complementary, not duplicated. Theirs: the exact `n = 4` cross term. Ours: the
+link-level consequence (three distinct Jones polynomials, so different links),
+the `A = 4` magnitude (15 % of helium-4), and the reconciliation of the corpus's
+two published `A = 3` numbers. The cross term is `-0.4612` at `q_0` — negative,
+agreeing in sign with `c_3 = -0.34`, though a different word, so the two are not
+the same quantity.
+
+**This strengthens the bean's blocked verdict rather than unblocking it.** Two
+independent routes now say the all-pairs word's trace depends on ordering. The
+open item is still a modelling decision, not a computation.
