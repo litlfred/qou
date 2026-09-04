@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:58:08Z
-updated_at: 2026-09-04T12:17:02Z
+updated_at: 2026-09-04T20:50:17Z
 ---
 
 Successor to `qou-768r` route 3, which closed the `Delta = 0` (min-span) family and
@@ -136,3 +136,41 @@ invariants vanish generally — the Borromean control in the same file is a
 counterexample to that reading. Length > 3 invariants NOT examined. Route 2
 untouched (blocked for an unrelated reason: the complement-genus handle is
 Borromean-only).
+
+
+
+## 2026-09-04 — GENERICITY CHECK: the vanishing is generic, which WEAKENS the result above
+
+Ran the check AGENTS.md demands on my own merged result (#6634 / `046296ff06`).
+It applies to a VANISHING exactly as to a near-match.
+
+    MONOTONE random words       238 words   1879 triples    0 nonzero mubar
+    NON-MONOTONE random words   220 words   1456 triples   27 nonzero mubar
+
+**The vanishing is generic for monotone closures.** Any monotone word would have
+given it, so it says nothing about the framework's carrier CHOICE. Honest reading:
+
+    NOT  "the derived carrier has vanishing Milnor triples, a fact about the carrier"
+    BUT  "the framework's word is monotone, and monotone closures have vanishing
+          Milnor triples"
+
+**Unaffected:** route 3's `Delta = 2` residual is closed either way — the residual
+does not care WHY `mubar` vanishes. **What changes:** the closure carries no
+information about whether the carrier is the right object, which is the question
+the carrier-derivation arc is actually about.
+
+**Second positive control, in the same probe deliberately.** 27 nonzero over 1456
+non-monotone triples proves the scan detects nonzero in the RANDOM regime, not only
+on the hand-picked Borromean example. A monotone zero beside a non-monotone zero
+would indict the scanner; beside a non-monotone nonzero it is a dichotomy.
+
+**Third independent route to the monotonicity root.** #6561 from the algebra,
+#6560 route 3 from the topology, this from random words — with a rate (~1.9 % of
+non-monotone triples).
+
+Figure hygiene: the docstring first quoted 251/2080 (an exploratory run consuming
+the RNG in a different order). The probe's figures are 238/1879 at seed 20260904;
+caught pre-commit, and the file now says do not quote 251/2080.
+
+`computations/probes/milnor_vanishing_is_generic_for_monotone_probe.py`, 3/3.
+Scope (a): a sampling result over one regime, not a theorem.
