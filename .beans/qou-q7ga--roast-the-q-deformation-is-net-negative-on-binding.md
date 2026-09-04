@@ -43,3 +43,30 @@ the culprit. The live suspect is that `-ln b` is not the per-bond energy.
 
 **(c) The ordering gap barely touches B** -> see `qou-48is`.
 **(d) The missing term is the symmetry energy** -> see `qou-ubsl`.
+
+## Independent corroboration from main — `pn-bond-cannot-be-extremal` (merged 2026-09-04)
+
+A sibling landed `content/quantum-observable-universe/mass-theory/pn-bond-cannot-be-extremal.md`
+reaching the same defect from `A = 2` instead of from 2548 nuclides, with the
+same numbers: `L_pp = 0.489899`, `L_pn = 0.676822`, `L_nn = 0.907262`, and
+`alpha = 2.0507 MeV` — which is exactly this arc's `E_0.|ln z|`, so the two
+calibrations are the same object.
+
+Its argument: `d_pn` is a convex combination of `d_pp` and `d_nn` with weights
+`(1/2 +/- delta/4)`, the two-strand trace is affine in the offset, and
+`L = -log(z+d)` is strictly decreasing, so **`L_pp < L_pn < L_nn` for every
+`q > 0` and every `delta in (0,2)`** — not just to first order. At `A = 2`
+exactly one of the three binds and it is `pn`, so a constant ranking binding
+strength must put `pn` at an EXTREME, and a convex combination never is. The
+deuteron is overshot by `1.274x` — the same figure measured here.
+
+**The two findings are one fact.** Their convexity is why `b_pn`'s first-order
+term in `e = q-1` vanishes (this bean's symbolic result: `+1, 0, -1`), and that
+vanishing is why the aggregate asymmetry comes out `+2e(N-Z)` with the wrong
+sign. Structural at `A = 2`; measured at `-0.15` vs `+0.2200` over the table.
+
+Their caveat is worth carrying: `L` is spinless and the real distinction is the
+`3S1` triplet, so a spinless constant should not be expected to separate bound
+from unbound — but that does not excuse the ORDER, which comes from the
+averaging convention and would survive into a spin-resolved theory keeping the
+same letter.
