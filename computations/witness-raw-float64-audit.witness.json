@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1032,
-    "total_fields": 33982,
+    "dirty_witnesses": 1024,
+    "total_fields": 33968,
     "lp_dual_carved_out_fields": 379,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -36,7 +36,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 45,
+    "ephemeral_duration_carved_out_fields": 50,
     "ephemeral_duration_carved_out_by_file": {
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
       "computations/per-irrep-pole-atom-crystal.witness.json": 6,
@@ -58,7 +58,12 @@
       "computations/probes/qbeta-nz-even-series-fourone.witness.json": 1,
       "computations/probes/qbeta-sdeformed-leading-bound.witness.json": 1,
       "computations/probes/sdeformed-channel-signflip.witness.json": 1,
-      "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json": 1
+      "computations/qbeta/qbeta-binding-law-options.witness.json": 1,
+      "computations/qbeta/qbeta-disjoint-support-factorisation.witness.json": 1,
+      "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json": 1,
+      "computations/qbeta/qbeta-layout-conflict.witness.json": 1,
+      "computations/qbeta/qbeta-strand-multiplicity.witness.json": 1,
+      "computations/qbeta/qbeta-tower-log-z-and-roast.witness.json": 1
     },
     "ephemeral_duration_field_names": [
       "durationMs",
@@ -85,16 +90,16 @@
     "f64_integrator_declared_tier": "float64-integrator",
     "baseline_files": 1093,
     "baseline_fields": 35251,
-    "new_not_baselined": 8,
-    "regressed": 1,
+    "new_not_baselined": 0,
+    "regressed": 0,
     "drained_files": 190
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "e68347cc12a78663fd200ce6a64f80ec29b1c1db",
+  "commitSha": "e9f956591268a61f454b60f781a60f18f497f767",
   "engine": "python",
-  "computedAt": "2026-09-04T21:59:39.310042+00:00",
+  "computedAt": "2026-09-04T22:22:29.832931+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T20:51:04.647827+00:00",
+  "computedAt": "2026-09-04T22:21:17.405265+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "743d31a23423fbd0f68adf2a84905fddec4983b0",
+  "commitSha": "e9f956591268a61f454b60f781a60f18f497f767",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -134,7 +134,7 @@
   },
   "allPassed": false,
   "scriptHash": "9ead6ab81ab0",
-  "scriptCommitSha": "afd363f4b81a718f76087553af0c348b7c092c2c",
+  "scriptCommitSha": "a1c617a444ce4451df61a4f640bd6c96d9b3f7e6",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
