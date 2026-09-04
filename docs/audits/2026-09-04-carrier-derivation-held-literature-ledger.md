@@ -50,7 +50,10 @@ The dictionary sends a quantum knot to `D^{N/2}_{w/2,(r+1)/2}` with `(N, w, r)` 
 Registered as `finkelstein2008` (`content/schema/references.ts:10757`) and **still cited by
 no content block** — re-verified this session, unchanged from the 2026-08-31 survey.
 
-**Ten SLq(2) / braid-matter documents held**, measured on `SLq(2)|preon` across both tiers:
+**🛑 CORRECTED — this said "Ten SLq(2) / braid-matter documents held" (pattern `SLq(2)|preon`).
+Only **2** contain `SLq(2)` at all, and the other 8 are the `preon` milieu; two of those 8 are
+`duplicate_of` copies, so it is **8 distinct works**, not 10 documents. See §Links below. The
+list that follows is retained as the raw hit set:**
 
 | doc | note |
 |---|---|
@@ -156,14 +159,19 @@ not index staleness** — the arithmetic checks out: 576 directories − 552 row
 unrelated to any of these routes. Cite the `v1` sections for eq. (43); its text is the one
 that has been verified line-by-line.
 
-**Twelve documents** match `asymptotic crossing|Freedman` across both tiers, including
+**🛑 CORRECTED — "twelve documents" is a hit count on `asymptotic crossing|Freedman`, and
+"Freedman" matches any bibliography containing a person of that name. Only **4** contain
+`asymptotic crossing`, and two of those are one work: **3 works**. See §Links below. Raw hit
+set retained:** twelve documents match, including
 [`procrsoclondona92`](../../library/procrsoclondona92/) — Moffatt & Ricca, *Helicity and
 the Calugareanu invariant*, whose real text is **19 OCR pages against a 1-section stub**,
 so a `sections/`-only grep does not find it.
 
 ## Route 3 — Milnor invariants / higher helicity
 
-**Nine documents** match `Milnor invariant|triple linking|mu-bar|higher-order helicity|Massey product`:
+**🛑 CORRECTED — "nine documents" is a hit count on a five-way disjunction. Only **6** contain
+`Milnor invariant` or `triple linking`, and one of those is a `duplicate_of` copy: **5 works**
+in the core tier, plus 2 adjacent. See §Links below. Raw hit set retained:**
 
 | doc | title |
 |---|---|
