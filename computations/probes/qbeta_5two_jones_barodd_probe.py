@@ -42,12 +42,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q = {"muon": mp.mpf("1.10997859555733471"),
-     "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
+# q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
+# literal 1.1099785955573… — the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 by the live CODATA-2022 lepton-ratio derivation q_muon_at()
+# (+0.0769 ppb); the proton leg was the 50-digit string re-typed by hand. A
+# hardcoded pin cannot be checked against the name it is bound to.
+Q = {"muon": mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
+     "proton": mp.mpf(Q_50_DIGIT_STR)}
 
 BRAID_5_2 = [1, 1, 1, 2, -1, 2]      # CORRECT 5₂: det 7, writhe 4 (validated below)
 BRAID_6_2 = [1, 1, 1, -2, 1, -2]     # the corpus-table "5_2" braid — actually 6₂
@@ -231,15 +237,15 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("jones_4one_validates",
-                     computed=1.0 if ok41 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(ok41))), expected="1.0", tolerance="0.5",
                      source="TL₃-computed V(4₁) == known q⁻²−q⁻¹+1−q+q² (palindromic)")
     wb.add_assertion("jones_5two_validates",
-                     computed=1.0 if ok52 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(ok52))), expected="1.0", tolerance="0.5",
                      source="TL₃-computed V(5₂) == known q⁻¹−q⁻²+2q⁻³−q⁻⁴+q⁻⁵−q⁻⁶ "
                             "(or its mirror) — validates the H₃/TL₃ machinery")
     wb.add_assertion("jones_4one_bar_even_5two_bar_odd",
-                     computed=0.0 if (amphi41 and chiral52) else 1.0,
-                     expected=0.0, tolerance=0.5,
+                     computed="0.0" if (amphi41 and chiral52) else "1.0",
+                     expected="0.0", tolerance="0.5",
                      source="V(4₁) bar-odd = 0 (amphichiral), V(5₂) bar-odd ≠ 0 "
                             "(chiral) — the complete classical bar-odd datum")
     ok = all(a.passed for a in wb.assertions)
@@ -263,7 +269,9 @@ def main() -> int:
                  "sinh(u) is its leading term. Step 1 (quantum 𝔙_q(5₂), "
                  "anchor-dependent) is the swing test. No c_k; no fit; scope-(a)."
                  if ok else "INCONCLUSIVE — an assertion failed; inspect output."))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q["muon"], proton=Q["proton"],
+        reason="the bar-odd Jones datum is evaluated at BOTH pins and the cross-anchor drift is the measured quantity"))
     print(f"\n  assertions passed: {ok}")
     print("  witness -> computations/probes/qbeta-5two-jones-barodd.witness.json")
     return 0 if ok else 1

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:27:13.960549+00:00",
-  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
+  "computedAt": "2026-09-03T16:17:42.955996+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "pole orders exact: ord[9]=-8, ord[10]=-9, ord h=-1, ord 1/alpha=-16",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 69,
+  "durationMs": 75,
   "computation": "alpha-k-split-pole-order-audit",
   "scriptFile": "alpha_k_split_pole_order_audit.py",
-  "scriptHash": "b4820128becb",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "e78f6c758e9f",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,9 +48,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_k_split_pole_order_audit.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_k_split_pole_order_audit.py"
   },
   "description": "Item-2 audit: does the pole-order primitive (prop:alpha-em-shift-multiplicative-chain) force the per-carrier split of 1/alpha_EM = q[9]_q[10]_q?  NO — exact verdict.  Pole orders at q->0: ord [k]_q = -(k-1), ord delta_q(K) = -w(K), ord 1/alpha_EM = -16; the BRACKET part of each carrier coupling is forced by writhe (alpha_shift = 9, 10), but the q-prefactor constraint p + p' = 1 is one linear equation in two unknowns (1-dim solution family).  Three structurally-named splits (symmetric 1/2|1/2, writhe-weighted 9/19|10/19, strand-weighted 1/3|2/3) are all exactly consistent with the established total and give distinct per-carrier values at q_0 — no available structure prefers one, so the symmetric split remains CONVENTION and only the product alpha_s * alpha_W = alpha_EM is invariant.  Open target recorded: a per-carrier seminormal-trace object with trace q^p [w]_q (half-twist framed top channel candidate).  Negative-space result; no fitting; no experimental comparison.",
   "contentBlock": "prop:alpha-em-shift-multiplicative-chain",

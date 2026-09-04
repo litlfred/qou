@@ -39,13 +39,17 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
-from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 CODATA = mp.mpf("137.035999084")
-Q_PROTON = mp.mpf("1.109978582751380808")
-Q_MUON = mp.mpf("1.10997859555733471")
+# Both pins read BY NAME (bean qou-4bef, 2026-09-03): the muon literal this carried was the
+# pin RETIRED 2026-08-22/28; the muon leg now tracks the CODATA lepton ratio. The docstring
+# figures above were computed at the retired pin — the witness carries the live ones.
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q_MUON = q_muon_at(50)
 
 
 def qb(n, q):
@@ -78,47 +82,50 @@ def main() -> int:
     q_alpha = mp.findroot(lambda q: alpha_inv(q) - CODATA, Q_PROTON)
 
     def dppb(q):
-        return float((q - q_alpha) / q_alpha * 1e9)
+        return (q - q_alpha) / q_alpha * mp.mpf(10) ** 9
 
     dp, dm = dppb(Q_PROTON), dppb(Q_MUON)
     print(f"\n  q_alpha (α_EM-exact q0) = {mp.nstr(q_alpha, 18)}")
-    print(f"  proton pin              = {mp.nstr(Q_PROTON, 18)}   Δ = {dp:+.3f} ppb")
-    print(f"  muon pin                = {mp.nstr(Q_MUON, 18)}   Δ = {dm:+.3f} ppb")
-    print(f"  proton-muon gap         = {float((Q_MUON-Q_PROTON)/Q_PROTON*1e9):+.2f} ppb (mu-p tension)")
-    print(f"\n  => α_EM prefers the PROTON anchor by {abs(dm)/abs(dp):.0f}× "
+    print(f"  proton pin              = {mp.nstr(Q_PROTON, 18)}   Δ = {mp.nstr(dp, 5)} ppb")
+    print(f"  muon pin                = {mp.nstr(Q_MUON, 18)}   Δ = {mp.nstr(dm, 5)} ppb")
+    print(f"  proton-muon gap         = {mp.nstr((Q_MUON-Q_PROTON)/Q_PROTON*10**9, 5)} ppb (mu-p tension)")
+    print(f"\n  => α_EM prefers the PROTON anchor by {mp.nstr(abs(dm)/abs(dp), 3)}× "
           f"(0.245 ppb vs 11.8 ppb).")
 
     print("\n  residuals in 1/α at each pin:")
     for nm, q in [("proton", Q_PROTON), ("muon", Q_MUON)]:
-        r = float((alpha_inv(q) - CODATA) / CODATA * 1e9)
-        print(f"    {nm:7s}: {r:+7.2f} ppb ({abs(r)/0.15:.0f}× σ_α)")
+        r = (alpha_inv(q) - CODATA) / CODATA * mp.mpf(10) ** 9
+        print(f"    {nm:7s}: {mp.nstr(r, 5)} ppb ({mp.nstr(abs(r) / mp.mpf('0.15'), 3)}× σ_α)")
     # amplification: how much 1/a moves per fractional q0 move
     eps = mp.mpf("1e-9")
-    ampl = float(((alpha_inv(q_alpha*(1+eps)) - alpha_inv(q_alpha)) / alpha_inv(q_alpha)) / eps)
-    print(f"  sensitivity d(1/α)/(1/α) per dq0/q0 ≈ {ampl:.2f}×  "
+    ampl = ((alpha_inv(q_alpha*(1+eps)) - alpha_inv(q_alpha)) / alpha_inv(q_alpha)) / eps
+    print(f"  sensitivity d(1/α)/(1/α) per dq0/q0 ≈ {mp.nstr(ampl, 3)}×  "
           f"=> +1.67 ppb(1/α) at proton = +0.245 ppb in q0-space")
 
     proton_wins = abs(dp) < abs(dm) and abs(dp) < 1.0
 
     wb.add_data("q_alpha", mp.nstr(q_alpha, 30))
     wb.add_data("anchor_deltas_ppb", {
-        "proton": dp, "muon": dm,
-        "mu_p_gap": float((Q_MUON - Q_PROTON) / Q_PROTON * 1e9)})
+        "proton": fmt(dp, 20), "muon": fmt(dm, 20),
+        "mu_p_gap": fmt((Q_MUON - Q_PROTON) / Q_PROTON * mp.mpf(10) ** 9, 20)})
     wb.add_data("alpha_inv_residual_ppb", {
-        "proton": float((alpha_inv(Q_PROTON) - CODATA) / CODATA * 1e9),
-        "muon": float((alpha_inv(Q_MUON) - CODATA) / CODATA * 1e9)})
+        "proton": fmt((alpha_inv(Q_PROTON) - CODATA) / CODATA * mp.mpf(10) ** 9, 20),
+        "muon": fmt((alpha_inv(Q_MUON) - CODATA) / CODATA * mp.mpf(10) ** 9, 20)})
     wb.add_data("interpretation", {
         "prefers": "proton",
-        "factor": abs(dm) / abs(dp),
-        "q0_sensitivity": ampl,
+        "factor": fmt(abs(dm) / abs(dp), 20),
+        "q0_sensitivity": fmt(ampl, 20),
         "note": "alpha_EM (EM sector) agrees with proton pin to sub-ppb; muon is the outlier (mu-p tension)"})
     wb.add_assertion("alpha_em_prefers_proton_anchor",
-                     computed=float(proton_wins), expected=1.0, tolerance=0.5,
+                     computed=("1" if proton_wins else "0"), expected="1", tolerance="0.5",
                      source="q_alpha within 0.245 ppb of proton pin vs 11.8 ppb of muon pin")
     wb.add_assertion("proton_delta_sub_ppb",
-                     computed=abs(dp), expected=0.0, tolerance=1.0,
+                     computed=fmt(abs(dp), 20), expected="0", tolerance="1",
                      source="|q_proton - q_alpha| = 0.245 ppb < 1 ppb")
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q_MUON, proton=Q_PROTON,
+        reason="anchor-preference cross-check: which documented pin the alpha_EM-exact q0 "
+               "agrees with; both pins are read on purpose and each is reported under its own key"))
 
     print("\n  RESULT: α_EM independently prefers the proton anchor (cross-check; no fit)")
     return 0 if proton_wins else 1

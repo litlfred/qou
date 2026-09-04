@@ -21,7 +21,10 @@ THE ERROR (one layer, measured here):
 PIN NUANCE (documented, NOT a stage-1/1.5 error): `q_parameter` is
 anchor-adaptive — producers listed in `q0_anchor_manifest.json` `ideal_muon`
 resolve the canonical-muon pin from `q-pinning-50-digit.witness.json`
-(1.10997859555733471989976…), while ad-hoc shells resolve the proton pin
+(1.109978595642739046681795…, the live CODATA-2022 derivation — this line read
+1.10997859555733471989976… until 2026-09-04, the RETIRED pin A superseded
+2026-08-22 by fca08de7d2, and contradicted the note below at line ~92 which
+already quoted the live value; bean qou-9ugp), while ad-hoc shells resolve the proton pin
 (1.10997858275138080759…). The certified chi-cache/combiner chain is
 coherently MUON-pinned. Stage 1/1.5 hardcoded a muon string that agrees with
 the canonical witness value to ~1e-17, so the pin contributed nothing to

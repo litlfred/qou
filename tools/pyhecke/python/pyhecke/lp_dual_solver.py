@@ -71,6 +71,19 @@ class LpDualResult:
     primal_obj_str: Optional[str] = None
     dual_obj_str: Optional[str] = None
     duality_gap_str: Optional[str] = None
+    # CERTIFIED RESIDUALS — the gap recomputed from the published certificate.
+    #
+    # `duality_gap` above is the SOLVER's own arithmetic: it computes the
+    # answer and then grades itself, so a witness asserting `duality_gap ~ 0`
+    # asserts nothing an independent reader could check. These three fields
+    # are `duality_gap_residuals()` applied to (t, G, n_target) and the
+    # returned x*/y*, in mpmath, at the precision of the inputs — i.e. the
+    # instantiation of `QOU.Mathlib.LPDuality.duality_gap_decomposition`
+    # (sorry-free) at this LP. `None` when the residuals could not be formed
+    # (infeasible solve, or mpmath unavailable).
+    residual_primal_str: Optional[str] = None
+    residual_dual_str: Optional[str] = None
+    gap_recomputed_str: Optional[str] = None
     #: Set only when the false-infeasible rescue fired: the power of two the
     #: cost vector was scaled by before re-solving. `None` on a normal solve.
     #: Present so a witness records that the raw solve was rejected rather
@@ -137,6 +150,9 @@ class LpDualResult:
             ("primal_obj_str", self.primal_obj_str),
             ("dual_obj_str", self.dual_obj_str),
             ("duality_gap_str", self.duality_gap_str),
+            ("residual_primal_str", self.residual_primal_str),
+            ("residual_dual_str", self.residual_dual_str),
+            ("gap_recomputed_str", self.gap_recomputed_str),
         ):
             if val is not None:
                 d[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
@@ -150,6 +166,7 @@ PROVENANCE_STR_FIELDS = (
     "x_star_str", "y0_star_str", "y_star_str",
     "X_star_str", "Z_star_str", "eigenvalues_str",
     "primal_obj_str", "dual_obj_str", "duality_gap_str",
+    "residual_primal_str", "residual_dual_str", "gap_recomputed_str",
 )
 
 
@@ -909,6 +926,141 @@ def _solve_operator_selection_lp_clarabel(
     return res
 
 
+def duality_gap_residuals(t, G, n_target, x_star, y0_star, y_star, *,
+                          dps: Optional[int] = None):
+    """Recompute an operator-selection LP's duality gap from its certificate.
+
+    This is `QOU.Mathlib.LPDuality.duality_gap_decomposition` — proved
+    sorry-free in
+    `content/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean`
+    (`#print axioms` = [propext, Classical.choice, Quot.sound]) — instantiated
+    at this module's LP. The Lean statement is
+
+        Σ_j c_j x_j − Σ_i b_i y_i
+          = Σ_j (c_j − (Aᵀy)_j)·x_j  +  Σ_i y_i·((Ax)_i − b_i)
+
+    and carries **no feasibility hypothesis**: it holds for every A, b, c, x, y.
+    That is what makes it usable as a check — a wrong x or y does not make the
+    identity false, it makes the residuals large, which is exactly the signal.
+
+    THE MAPPING, which is the only part that could be got wrong.
+    `solve_operator_selection_lp` poses (see the scipy path, which states it
+    plainly):
+
+        min t·x   s.t.   Σ_i x_i = n_target      (dual y0, free sign)
+                         G x ≥ 0                 (dual y ≥ 0)
+                         x_i ≥ −M_bound          (bound multipliers, below)
+
+    so  A = [𝟙ᵀ ; G],  b = [n_target ; 0],  c = t,  y = [y0 ; y_1..y_d],
+    giving  (Aᵀy)_j = y0 + (Gᵀy)_j  and
+
+        residual_primal = Σ_j (t_j − y0 − (Gᵀy)_j)·x_j     (reduced cost × x)
+        residual_dual   = y0·(Σx − n_target) + Σ_i y_i·(Gx)_i
+
+    The sign convention on `y` is the solver's own: the scipy path returns
+    `y_star = −ineqlin.marginals` precisely so that `y ≥ 0` pairs with
+    `Gx ≥ 0`, i.e. the `Ax ≥ b` orientation the Lean uses.
+
+    🛑 THE BOUND ROWS ARE DELIBERATELY NOT INCLUDED, and that is a FEATURE.
+    `x_i ≥ −M_bound` carries its own multiplier `w_i ≥ 0`, contributing
+    `−M_bound·Σw` to the dual objective. Neither this function nor the solver's
+    `dual_obj = n_target·y0` accounts for it. So when a bound is active, the
+    recomputed gap is genuinely non-zero and says so — it is reporting that the
+    solve hit the artificial box, which is a real defect in the LP's posing and
+    not a defect in this check. Do not "fix" it by adding a `w` term inferred
+    from which `x_i` sit at the bound; that would launder the diagnosis away.
+
+    WHAT AGREEMENT TO EXPECT, so a real difference is not read as a bug.
+    The recomputed gap will NOT match the solver's `duality_gap` to 50 digits,
+    and that is arithmetic rather than error. Measured on a 3x3 solve:
+
+        solver duality_gap   6.4441296085437079772...e-42
+        recomputed gap       6.4441296012273399585...e-42
+        agreement            9 significant digits (rel 1.14e-9)
+
+    while the identity itself closes to **5.18e-62** against the objectives
+    recomputed from the published certificate. The two facts sit together: the
+    gap is a near-total cancellation of two objectives ~1e-2, so rounding x*
+    and y0* to 50 published digits perturbs it at ~1e-51 absolute — about 1e-9
+    relative on a 1e-42 gap. So a 50-digit certificate can certify a gap of
+    this size to roughly 9 significant digits and no further, and a witness
+    asserting `duality_gap ~ 0` at face value is asserting something ~8 digits
+    below what its own published numbers support. Publish more digits, or
+    quote the agreement rather than the gap.
+
+    Returns `(residual_primal_str, residual_dual_str, gap_recomputed_str)` as
+    decimal strings, or `(None, None, None)` if mpmath is unavailable or any
+    input is non-finite (an infeasible solve returns NaNs).
+    """
+    try:
+        import mpmath as _mp
+    except ImportError:
+        return (None, None, None)
+
+    def _rows(x):
+        return x.tolist() if hasattr(x, "tolist") else list(x)
+
+    try:
+        t_l = _rows(t)
+        G_l = [_rows(r) for r in _rows(G)]
+        x_l = _rows(x_star)
+        y_l = _rows(y_star)
+    except TypeError:
+        return (None, None, None)
+    d = len(t_l)
+    if len(x_l) != d or len(y_l) != d or len(G_l) != d:
+        return (None, None, None)
+
+    # Work above the data: the residuals are a difference of like-sized
+    # products, so they cancel to many digits and the answer is the
+    # cancellation. Solving at the data's own width would report rounding.
+    want = _input_dps(G_l) if dps is None else dps
+    with _mp.workdps(max(60, want + 15)):
+        try:
+            T = [_mp.mpf(str(v)) for v in t_l]
+            Gm = [[_mp.mpf(str(G_l[i][j])) for j in range(d)] for i in range(d)]
+            X = [_mp.mpf(str(v)) for v in x_l]
+            Y = [_mp.mpf(str(v)) for v in y_l]
+            N = _mp.mpf(str(n_target))
+            Y0 = _mp.mpf(str(y0_star))
+        except (ValueError, TypeError):
+            return (None, None, None)
+        if not all(_mp.isfinite(v) for v in T + X + Y + [N, Y0]):
+            return (None, None, None)
+
+        # (Aᵀy)_j = y0 + Σ_i y_i G_ij
+        ATy = [Y0 + _mp.fsum(Y[i] * Gm[i][j] for i in range(d))
+               for j in range(d)]
+        r_primal = _mp.fsum((T[j] - ATy[j]) * X[j] for j in range(d))
+        r_dual = Y0 * (_mp.fsum(X) - N) + _mp.fsum(
+            Y[i] * _mp.fsum(Gm[i][j] * X[j] for j in range(d))
+            for i in range(d)
+        )
+        out_dps = max(50, want)
+        return (_mp.nstr(r_primal, out_dps),
+                _mp.nstr(r_dual, out_dps),
+                _mp.nstr(r_primal + r_dual, out_dps))
+
+
+def _attach_residuals(res, t, G, n_target):
+    """Populate `res`'s certified-residual fields in place, then return it.
+
+    Uses the solver's `*_str` companions when the clarabel-MPFR backend
+    supplied them, so on that path the check runs entirely at ~50 dps and
+    never round-trips through f64.
+    """
+    if res is None or not getattr(res, "feasible", False):
+        return res
+    x = res.x_star_str if res.x_star_str is not None else res.x_star
+    y = res.y_star_str if res.y_star_str is not None else res.y_star
+    y0 = res.y0_star_str if res.y0_star_str is not None else res.y0_star
+    rp, rd, gap = duality_gap_residuals(t, G, n_target, x, y0, y)
+    res.residual_primal_str = rp
+    res.residual_dual_str = rd
+    res.gap_recomputed_str = gap
+    return res
+
+
 def solve_operator_selection_lp(
     t: np.ndarray,
     G: np.ndarray,
@@ -978,7 +1130,7 @@ def solve_operator_selection_lp(
             # Return clarabel when forced, or in auto mode when it actually
             # solved; otherwise (auto + infeasible/error) fall back to scipy.
             if backend == "clarabel" or _res.feasible:
-                return _res
+                return _attach_residuals(_res, t, G, n_target)
 
     from scipy.optimize import linprog  # SciPy is required for LP duals.
 
@@ -1037,17 +1189,20 @@ def solve_operator_selection_lp(
     dual_obj = float(n_target * y0_star)
     duality_gap = abs(primal_obj - dual_obj)
 
-    return LpDualResult(
-        x_star=list(x_star),
-        y0_star=y0_star,
-        y_star=y_star,
-        active_set=active_set,
-        primal_obj=primal_obj,
-        dual_obj=dual_obj,
-        duality_gap=duality_gap,
-        feasible=True,
-        backend="scipy-highs",
-        precision_bits=53,
+    return _attach_residuals(
+        LpDualResult(
+            x_star=list(x_star),
+            y0_star=y0_star,
+            y_star=y_star,
+            active_set=active_set,
+            primal_obj=primal_obj,
+            dual_obj=dual_obj,
+            duality_gap=duality_gap,
+            feasible=True,
+            backend="scipy-highs",
+            precision_bits=53,
+        ),
+        t, G, n_target,
     )
 
 

@@ -59,6 +59,7 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
@@ -71,7 +72,14 @@ from qbeta_5two_phi_series_engine_probe import (  # noqa: E402
 
 mp.mp.dps = 60
 
-Q0_MUON = mp.mpf("1.10997859555733471")
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+# literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+# no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+# on the PROTON default; the pin moves 11.54 ppb.
+# The NAME Q0_MUON is kept so its call sites stay legible; it holds the proton
+# pin, which is what this producer computes at.
+Q0_MUON = mp.mpf(Q_50_DIGIT_STR)
 # Canonical GGM saddle values — computed from the 5₂ cubic, not hardcoded.
 # GGM convention (Im V₁ = Vol) mandated by the Stokes population argument
 # (GGM eqs 82–83). The prior literal Im V₁ = 1.3790860299 is NOT the H-series

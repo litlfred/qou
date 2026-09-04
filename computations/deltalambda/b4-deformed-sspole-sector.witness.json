@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:22:32.722179+00:00",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "computedAt": "2026-09-04T01:06:48.150647+00:00",
+  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
   "assertions": [
     {
       "name": "g_reeb_eq_deformed_criticality",
@@ -57,8 +57,8 @@
   "durationMs": 0,
   "computation": "b4-deformed-sspole-sector",
   "scriptFile": "b4_deformed_sspole_sector_probe.py",
-  "scriptHash": "a8e9248be974",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "04aad12d295e",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -153,7 +153,7 @@
     "axis": "Delta_lambda magnitude wall -- b_4 scalar m (Vector 2 re-scope)",
     "attack_vector_map": "docs/audits/2026-07-18-deltalambda-attack-vector-map.md",
     "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
     "no_fit": true
   },
   "q0Anchor": "proton",

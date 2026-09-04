@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:02:20.611375+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:16.536727+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "counit_3crossing_matches_table",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "eunit-counit-mu0-tracing",
   "scriptFile": "eunit_counit_mu0_tracing_probe.py",
-  "scriptHash": "4cda48dd432f",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "c373047749cb",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -62,11 +62,11 @@
   "audit_only": true,
   "tier": "structural tracing (corpus-documented counit/crossing-energy + derived μ₀ arithmetic)",
   "result": {
-    "counit_skein_weight_q_minus_qinv": "0.209060322",
+    "counit_skein_weight_q_minus_qinv": "0.2090602988",
     "counit_provenance": "h=q−q⁻¹ = antisymmetric Hecke eigenvalue diff = skein L₊−L₋ = counit-character difference; PROVED + in-paper (crossing-energy-categorical-origin; categorical-action.lean matter=unit≫counit).",
     "deuteron_3crossing_net_skein": "0.627181",
     "matches_crossing_energy_table_0p630": true,
-    "mu0_derived_per_crossing_MeV": "1.6295104",
+    "mu0_derived_per_crossing_MeV": "1.6295106",
     "mu0_matches_cheatsheet_1p6295": true,
     "deuteron_mu0_form": {
       "E_rot_mu0_hbarq_Jq2_3_MeV": "2.0195829",
@@ -76,7 +76,7 @@
     },
     "deuteron_5g_form": {
       "B_5g_E_unit_ladder_MeV": "2.22456679",
-      "err_pct": "3.536e-5",
+      "err_pct": "3.539e-5",
       "E_unit_external_MeV": "0.99594",
       "note": "+0.4% (6-dig match) but E_unit external/scale-free (§2h.2)."
     },
@@ -101,8 +101,11 @@
     "axis": "Δ_λ binding magnitude — E_unit source via counit (owner steer 2026-07-19)",
     "builds_on": "merged #4101 (cluster expansion §4 E_unit wall) + cheat sheet μ₀",
     "provenance": "climax-volume-mass/crossing-energy-*; observations/crossing-energy-interpretation.md; docs/audits/2026-07-06-reeb-…-provenance §2h.2",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

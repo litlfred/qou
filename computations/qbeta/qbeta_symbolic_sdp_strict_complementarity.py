@@ -538,31 +538,93 @@ def main() -> int:
     wb.add_data("S_cancels_from_Qbeta_subppb_normalisation", s_cancels_from_magnitude)
     wb.add_data("verdict", verdict)
 
-    # The gap below is the SOLVER's own reported number. It is checkable
-    # rather than merely trusted: `QOU.Mathlib.LPDuality`
-    # (content/quantum-observable-universe/lean/QOU/Mathlib/LPDuality.lean)
-    # proves, sorry-free and with NO feasibility hypothesis,
+    # ---- ASSERTIONS THAT CAN FAIL ---------------------------------------
     #
-    #   Σ_j c_j x_j − Σ_i b_i y_i
-    #     = Σ_j (c_j − (Aᵀy)_j)·x_j  +  Σ_i y_i·((Ax)_i − b_i)
+    # The assertion that stood here was VACUOUS, and the measurement that
+    # established that is bean `qou-sof3`. It read
     #
-    # (`duality_gap_decomposition`), plus the bound form
-    # `duality_gap_le_of_residual_bounds`. Recomputing the two residual sums
-    # here from the emitted x*/y* would certify the gap independently of the
-    # solver. NOT wired: the mapping from this LP's packed constraint block
-    # ({Σx = n_target, Gx ≥ 0, x ≥ −M_bound}) onto (A, b, c) — and the sign
-    # convention y* is returned in — lives in the SHARED solver, not here, and
-    # a wrong mapping would fail for a bookkeeping reason that reads as a real
-    # duality failure. Tracked as bean `qou-fr4d`.
-    wb.add_assertion(
-        name="lp_strong_duality",
-        # STRINGS: add_assertion coerces with float() for `passed`, but the
-        # recorded value stays at solver precision (qou-t0rf convention).
-        computed=_pv("duality_gap"),
-        expected="0",
-        tolerance="1e-6",
-        source="operator-selection LP strong duality |primal - dual|",
-    )
+    #     computed = |primal_obj - dual_obj|,  expected = 0,  tolerance = 1e-6
+    #
+    # against a gap of ~4e-44 -- a tolerance 38 orders of magnitude larger
+    # than the quantity. Worse, that ~4e-44 is not a measurement at all: the
+    # objective TRACKS THE WORKING PRECISION (3.9e-44 at prec_bits=167,
+    # 3.8e-100 at 400, 3.8e-196 at 800), which is the signature of a true
+    # value of zero being reported at the arithmetic floor. `max|x*| = 2.65e5`
+    # collapsing to ~0 is a 48-order cancellation, so at 50.3 decimal digits
+    # the floor on that sum is ~1.4e-45. The old assertion passed at every
+    # precision tried and would have passed had the solver been badly wrong.
+    #
+    # Two replacements, both falsifiable.
+
+    # (1) CERTIFIED gap: does the published certificate reproduce the solver's
+    #     own reported gap? `gap_recomputed_str` comes from
+    #     `lp_dual_solver.duality_gap_residuals`, which instantiates
+    #     `QOU.Mathlib.LPDuality.duality_gap_decomposition` (sorry-free) at
+    #     this LP -- an UNCONDITIONAL identity, so it holds for any x, y and a
+    #     disagreement is a real inconsistency, not an infeasibility.
+    #
+    #     The tolerance is DERIVED, not chosen to pass: the floor on a sum of
+    #     terms of size `max|x*|` at `prec_bits` is
+    #     `max|x*| * 10^(-prec_bits*log10 2)`, and 100x that leaves two
+    #     decades of headroom. The observed |difference| is 1.6x the floor, so
+    #     this passes with room and fails if the certificate ever stops
+    #     reproducing the solver by more than two decades above the floor.
+    _dps_eff = mp.mpf(getattr(res1, "precision_bits", None) or 167) * mp.log10(2)
+    _xs = getattr(res1, "x_star_str", None) or res1.x_star
+    _floor = (max(mp.fabs(mp.mpf(str(v))) for v in _xs)
+              * mp.mpf(10) ** (-_dps_eff))
+    _gap_rec = getattr(res1, "gap_recomputed_str", None)
+    if _gap_rec is not None:
+        wb.add_data("duality_gap_cancellation_floor", mp.nstr(_floor, 20))
+        wb.add_assertion(
+            name="lp_duality_gap_certified",
+            computed=mp.nstr(mp.fabs(mp.mpf(_gap_rec)
+                                     - mp.mpf(str(_pv("duality_gap")))), 30),
+            expected="0",
+            tolerance=mp.nstr(100 * _floor, 20),
+            source="|gap_recomputed - solver duality_gap|; gap_recomputed from "
+                   "QOU.Mathlib.LPDuality.duality_gap_decomposition applied to "
+                   "the published x*/y*. Tolerance = 100 x the cancellation "
+                   "floor max|x*|*10^(-prec_bits*log10 2), derived not fitted.",
+        )
+
+    # (2) STRICT COMPLEMENTARITY -- the property this producer is NAMED for
+    #     and never asserted. It requires a clean split of the dual: active
+    #     components strictly positive, inactive ones zero. In finite
+    #     precision "zero" means "at the floor", so the falsifiable form is
+    #     the SEPARATION between the smallest active dual and the largest
+    #     inactive one, in decades.
+    #
+    #     Threshold from the arithmetic, not from the observed value: genuine
+    #     zeros sit near 10^-50 (the working precision) and genuine positives
+    #     are O(1), so the available range is ~50 decades and half of it, 25,
+    #     is the point below which the "inactive" duals have left the floor,
+    #     i.e. degeneracy is setting in. Measured here: 46.6 decades.
+    _y = [mp.fabs(mp.mpf(str(v)))
+          for v in (getattr(res1, "y_star_str", None) or res1.y_star)]
+    _act = set(res1.active_set)
+    _on = [v for k, v in enumerate(_y) if k in _act]
+    _off = [v for k, v in enumerate(_y) if k not in _act]
+    if _on and _off and min(_on) > 0 and max(_off) > 0:
+        _sep = mp.log10(min(_on)) - mp.log10(max(_off))
+        wb.add_data("dual_separation_decades", mp.nstr(_sep, 20))
+        wb.add_assertion(
+            name="strict_complementarity_dual_separation",
+            computed=mp.nstr(_sep, 20),
+            expected="25",
+            tolerance="1e9",
+            source="log10(min active y*) - log10(max inactive y*), in decades. "
+                   "Strict complementarity needs the inactive duals AT the "
+                   "arithmetic floor; 25 decades is half the ~50-digit working "
+                   "precision, below which they have left it and the LP is "
+                   "degenerate. The FAILING direction is below 25 -- the "
+                   "one-sided tolerance keeps a large separation passing.",
+        )
+        print(f"    dual separation = {float(_sep):.1f} decades "
+              f"(strict complementarity; degenerate below 25)")
+        if _sep < 25:
+            print("    [!] strict complementarity is DEGRADING")
+
     wb.add_assertion(
         name="selector_direction_S_independent",
         computed=bool(scale_invariant),

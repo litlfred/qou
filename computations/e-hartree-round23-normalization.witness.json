@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:21.370566+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-09-04T04:11:05.052314+00:00",
+  "commitSha": "92ad0c0c9c60eb0dd4c9c8c8088182a0b2d27ceb",
   "assertions": [
     {
       "name": "normalizer (q[9][10])² = α_EM^{-2} = two EM-exchange cost (cplx·cplx)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 365,
+  "durationMs": 467,
   "computation": "e-hartree-round23-normalization",
   "scriptFile": "e_hartree_round23_normalization.py",
-  "scriptHash": "81f30ae10678",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "3e9711bbc7a0",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +36,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/e_hartree_round23_normalization.py"
+    ],
+    "reproduce": "python3 -u computations/e_hartree_round23_normalization.py"
   },
   "description": "conj:e-hartree round 23 (item 3, the normalization): reduces the round-20 normalizer (q[9]_q[10]_q)² = α_EM^{-2} to established structure rather than the refuted Mechanism B.  cplx = q[9][10] is the EM Bring-complex force-carrier complexity (prop:em-coupling-projection) = the q-DIMENSION-LAYER cost of one EM (2,2)-block exchange (round 11; NOT a per-crossing Markov weight, which round 10 refuted).  The normalizer is cplx·cplx = TWO such exchanges, the exponent 2 being the covalent Pauli count (2 shared electrons through the (2,2)=EM scalar block, prop:force-carrier-intertwining-correspondence).  So ρ_(2,2) = χ_(2,2)·α_EM² with α² = two-electron covalent EM cost — the normalization is FORCED by (i) em-coupling-projection per-exchange cost + (ii) Pauli-2, modulo ONE isolated natural assumption: the molecular EM exchange reuses the bare EM complexity cplx (same Bring complex).  That assumption is the honest residual (successor to the refuted Mechanism B); exact bookkeeping (cplx²=α^{-2}, ρ=C·α²) verified.  No fit, no experimental number.",
   "contentBlock": "conj:e-hartree-categorical-derivation",

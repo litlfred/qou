@@ -4,6 +4,7 @@ import Mathlib.Data.Fin.VecNotation
 import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
+import QOU.SchurWeyl.HoefsmitRep
 
 
 /-!
@@ -683,6 +684,74 @@ theorem rhoMixed_braid (q : ℝ) (hq : q ≠ 0) :
   -- separated deliberately.
   all_goals (try ring)
   all_goals (rw [hb]; field_simp; ring)
+
+/-! #### Bridge to `QOU.SchurWeyl.HoefsmitRep` — and a duplication, recorded
+
+`QOU/SchurWeyl/HoefsmitRep.lean` has carried `S0`, `S1`, `S0_quadratic`,
+`S1_quadratic` and `S0_S1_braid` since 2026-08 (bean `qou-u86i`, completed).
+**`rhoMixedSigma1` above is `S0` — the same matrix, re-derived.** That is a
+duplication and it is recorded rather than hidden; the corpus-grep checklist
+found it, one step later than it should have been run.
+
+`rhoMixedSigma2` is **not** a duplicate of `S1`, and the difference is the
+useful part. The library form is deliberately *square-root-free* and therefore
+**not symmetric**:
+
+    S1 = [ −1/(q³+q) , 1 ; (q⁴+q²+1)/(q²+1)² , q³/(q²+1) ]
+
+whereas `pyhecke_native.seminormal_matrices_mpfr` — the compute this corpus
+actually runs — returns the **orthogonal** form, symmetric with a square root
+in the off-diagonal. Both are the shape-`(2,1)` representation; they sit in
+different bases, and nothing in the corpus said so.
+
+`rhoMixedSigma2_conj_S1` supplies the change of basis: conjugation by
+`diag(b, 1)`, written without inverses. Since `b > 0` the gauge is invertible,
+so the two are similar, hence the same representation with the same character
+— which is why `trace_rhoMixedSigma2` and the library's trace agree.
+
+Practical consequence: **a Lean statement proved about `S1` transfers to the
+numbers the Rust path produces only through this conjugation.** Reading a
+`pyhecke_native` matrix as though it were `S1` entry-by-entry would be wrong;
+only basis-independent quantities (trace, determinant, spectrum, the relations)
+match directly.
+-/
+
+/-- The diagonal gauge `diag(b, 1)` taking the library's square-root-free `S1`
+    to the orthogonal form the compute returns. -/
+noncomputable def hoefsmitGauge (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![hoefsmitOffDiag q, 0], ![0, 1]]
+
+/-- **`rhoMixedSigma1` is the library's `S0`.** Recorded so the duplication is
+    visible in the code and not only in a commit message. -/
+theorem rhoMixedSigma1_eq_S0 (q : ℝ) :
+    rhoMixedSigma1 q = QOU.SchurWeyl.S0 q := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [rhoMixedSigma1, QOU.SchurWeyl.S0]
+
+/-- **The orthogonal and square-root-free seminormal forms are conjugate**, by
+    the diagonal gauge `diag(b, 1)`:
+
+      `ρ(σ₂) · diag(b,1) = diag(b,1) · S1`.
+
+    Stated without inverses. `hoefsmitOffDiag q > 0`, so the gauge is
+    invertible and this is a genuine similarity. -/
+theorem rhoMixedSigma2_conj_S1 (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma2 q * hoefsmitGauge q
+      = hoefsmitGauge q * QOU.SchurWeyl.S1 q := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma2, hoefsmitGauge, QOU.SchurWeyl.S1, Matrix.mul_apply,
+      Fin.sum_univ_two]
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-- The gauge is non-singular: `√(1 + q² + q⁴)/(1 + q²) > 0`. -/
+theorem hoefsmitOffDiag_pos (q : ℝ) : 0 < hoefsmitOffDiag q := by
+  have hrad : (0 : ℝ) < 1 + q ^ 2 + q ^ 4 := by positivity
+  unfold hoefsmitOffDiag
+  exact div_pos (Real.sqrt_pos.mpr hrad) (one_add_sq_pos q)
 
 /-- **`σ₁` separates the two `n = 3` summands, in every Descartes universe.**
 

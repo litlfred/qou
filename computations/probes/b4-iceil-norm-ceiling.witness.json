@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:18:37.529071+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:12:29.312503+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "trace_ceiling_admits_connected_excess",
@@ -22,8 +22,8 @@
   "durationMs": 0,
   "computation": "b4-iceil-norm-ceiling",
   "scriptFile": "b4_iceil_norm_ceiling_probe.py",
-  "scriptHash": "e4023e6981b1",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9568291c7a5e",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -49,14 +49,14 @@
   "description": "I-ceil: the parameter-free trace-magnitude ceiling B_vol(⁴He)=30.3 MeV leaves 16.8 MeV connected room ≥ the 14.8 MeV needed excess ⇒ the [1^4] connected term is not excluded (~14% headroom); value computation licensed. audit-only, no fit.",
   "tier": "structural (parameter-free B_vol ceiling + committed pairwise best)",
   "result": {
-    "E0_MeV": "4.1859808",
+    "E0_MeV": "4.1859814",
     "B_AME_he4_MeV": "28.29567",
     "best_pairwise_MeV": "13.522857",
     "needed_connected_excess_MeV": "14.772813",
-    "a_V_MeV_per_nucleon": "7.5835662",
-    "trace_ceiling_B_vol_he4_MeV": "30.334265",
-    "max_connected_room_MeV": "16.811408",
-    "headroom_fraction": "0.137996",
+    "a_V_MeV_per_nucleon": "7.5835672",
+    "trace_ceiling_B_vol_he4_MeV": "30.334269",
+    "max_connected_room_MeV": "16.811412",
+    "headroom_fraction": "0.137997",
     "verdict": "I-ceil PASSES: max connected room (16.811 MeV = B_vol − pairwise) ≥ needed excess (14.773 MeV), ~14% headroom. The trace framework admits the connected b₄^even excess; the [1^4] term is NOT excluded by the norm ceiling — the value computation is licensed. NECESSARY condition only: passing ≠ the term supplies it; the connected-slice value (not the total 30.3 MeV) must reach ~14.8 MeV. Modest headroom. Scope-(a), no fit.",
     "gates_status": "I-par (done), I-conn (done), I-ceil (done) — all three magnitude gates cleared."
   },
@@ -65,5 +65,7 @@
     "scoping": "docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md §3",
     "ceiling_form": "B_vol = a_V·A, a_V = E₀·ln(1/W_free) (standard-part-functor.md)"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

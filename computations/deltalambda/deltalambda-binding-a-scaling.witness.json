@@ -3,12 +3,12 @@
   "description": "A-stability criterion selects the irrep dimension (\u0394_\u03bb=sgn\u00b7dim, p=1, min cross-isotope spread ~2.8x, ratios 0.11-0.30) over the block dim\u00b2 (p=2, spread ~119x, blows up). Uses the classical q=1 dim (#3542), not the q\u2080 quantum dim. Vindicates the #3542 irrep trace as the correct A-scaling; residual is an O(1) factor (~3-9), same power. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-a-scaling.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-08-23T09:01:11.687319+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T02:47:21.492854+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_binding_a_scaling_probe.py",
-  "scriptHash": "8dcab009c3d7",
+  "scriptHash": "a1a61e471973",
   "q0": "1.1099785827513808076",
   "q0_source": "qou_substrate.q_at(30)",
   "assertions": [
@@ -38,47 +38,47 @@
     "magnitude": "classical q=1 dim(\u03bb) (hook-length integer), NOT q\u2080 quantum dim (#3542)",
     "ratio_by_p": {
       "0": {
-        "d": 0.014067015463355639,
-        "t": 0.0030495812754476785,
-        "3he": 0.004000599505478475,
-        "4he": 0.00019013956588332246
+        "d": 0.01406701635047399,
+        "t": 0.003049581213554398,
+        "3he": 0.004000599470565931,
+        "4he": 0.0001901395634396847
       },
       "1": {
-        "d": 0.16480580690825722,
-        "t": 0.14911859925264478,
-        "3he": 0.20385503824582712,
-        "4he": 0.0034481935457487418
+        "d": 0.16480582648819336,
+        "t": 0.14911859435010735,
+        "3he": 0.20385503082500636,
+        "4he": 0.00344819542313951
       },
       "1.5": {
-        "d": 0.29786361742154144,
-        "t": 1.0481512321961344,
-        "3he": 1.5100834298200558,
-        "4he": -0.2207530614531363
+        "d": 0.29786370344311,
+        "t": 1.0481511816981177,
+        "3he": 1.510083341084801,
+        "4he": -0.22075300648908613
       },
       "2": {
-        "d": 0.35192690446576563,
-        "t": 7.602869236632956,
-        "3he": 11.49071012392136,
-        "4he": -7.519143805778336
+        "d": 0.35192723063982234,
+        "t": 7.602868764379677,
+        "3he": 11.490709247769614,
+        "4he": -7.5191424962469675
       }
     },
     "ratio_p1_irrep": {
-      "d": 0.16480580690825722,
-      "t": 0.14911859925264478,
-      "3he": 0.20385503824582712,
-      "4he": 0.0034481935457487418
+      "d": 0.16480582648819336,
+      "t": 0.14911859435010735,
+      "3he": 0.20385503082500636,
+      "4he": 0.00344819542313951
     },
     "ratio_p2_block": {
-      "d": 0.35192690446576563,
-      "t": 7.602869236632956,
-      "3he": 11.49071012392136,
-      "4he": -7.519143805778336
+      "d": 0.35192723063982234,
+      "t": 7.602868764379677,
+      "3he": 11.490709247769614,
+      "4he": -7.5191424962469675
     },
     "residual_O1_factor_p1": {
-      "d": 6.067747361333403,
-      "t": 6.706071576663257,
-      "3he": 4.905446579123093,
-      "4he": 290.0069229677941
+      "d": 6.0677466404480525,
+      "t": 6.706071797137216,
+      "3he": 4.905446757693324,
+      "4he": 290.00676507177803
     },
     "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
   },
@@ -89,7 +89,8 @@
     "open": "the O(1) multiplicative factor (~3-9) \u2014 same power \u2014 DERIVE, do not fit",
     "gate": "\u0394_\u03bb gate \u2014 A-stability is a structural criterion, not a fit; nothing wired"
   },
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808076",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,11 +1,11 @@
 ---
 # qou-2364
 title: 'STALE: qbeta-markov-trace-norm witness records L2 6.85e-14 but HEAD''s script gives 3.48e-09 — 50000x, and scriptHash differs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T07:13:03Z
-updated_at: 2026-08-30T07:13:20Z
+updated_at: 2026-09-04T07:43:58Z
 ---
 
 
@@ -132,3 +132,17 @@ commit still fetchable from the remote (`git fetch origin <sha>` works;
 `git branch -r --contains` returns nothing). This whole diagnosis depended on
 that object still existing. A witness whose provenance pointer is unreachable
 cannot be audited at all — worth knowing before anyone prunes.
+
+CLAIMED 2026-09-04 (session cool-johnson). Confirmed the staleness AND found the root cause the bean did not name: the producer emits 5 RAW FLOAT64 fields (assertions[1].computed/expected = L2, assertions[2] = Markov, data.max_abs_x_L2_minus_x_M). So the 3.478e-9 residual is computed in float64 and is untrustworthy per NO-FLOAT64 — we do not actually know whether the L2 constraint genuinely fails at 1e-9 or the 50000x 'regression' is float64 noise. Plan: drain the producer to mpf end-to-end, re-run, and let the TRUE exact residual decide. Branch claude/cool-johnson-t1wveh.
+
+RESOLVED 2026-09-04 (commit a56b2b98141, PR #6596). The 50000x L2 'regression' was NEITHER a real constraint violation NOR float64 noise — TWO defects:
+
+1. FLOAT64: err_L2/err_M/max_diff were 50-dps sympy Floats downcast with float() at serialization. Now full-precision strings; baseline entry removed.
+
+2. PIN STRADDLE (root cause). The probe read q_0 from q-pinning-50-digit (q0Anchor: muon) to build A(q), while the upstream SDP witness qbeta-decay-sdp-knot-operator (contains 1.1099785827..., PROTON) supplies S + the L2 coords. Proton coords vs A(q_muon) => residual 3.48e-9 = the mu-p tension. Aligning the probe to proton (owner directive 2026-08-07) collapses it to 8.08e-18. allPassed: True.
+
+Verified: raw-float64 --strict this witness clean, REGRESSED=0 (the 5 NEW are inherited-main backlog, #6453/#6575).
+
+TWO WIDER FINDINGS worth a follow-up (not fixed here):
+- The SDP witness qbeta-decay-sdp-knot-operator records NO q0Anchor/q0Value — that provenance gap is exactly what let the straddle hide. Should record its pin.
+- Other probes reading q-pinning-50-digit (muon) while consuming proton-pinned inputs would have the same straddle. Worth a sweep.

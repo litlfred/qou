@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:43.675015+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:44:24.256402+00:00",
+  "commitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "assertions": [
     {
       "name": "alpha_em_not_at_100x_target",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "proton-anchored quadratic residual 1.67 ppb exceeds the L2 100x target sigma_a/100 = 0.0015 ppb by ~1115x. The cubic (+Schwinger) form reaches 0.313 ppb, still ~209x short -- see alpha_em_schwinger_ladder_probe.py, which supersedes this probe's best number."
+      "source": "proton-anchored quadratic residual 1.672 ppb exceeds the L2 100x target sigma_a/100 = 0.0015 ppb by ~1115.0x. The cubic (+Schwinger) form reaches 0.313 ppb, still ~209x short -- see alpha_em_schwinger_ladder_probe.py, which supersedes this probe's best number."
     },
     {
       "name": "alpha_em_anchor_dependent",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "quadratic fixed-point residual is 1.67 ppb at the proton (default) pin vs 80.5 ppb at the muon pin -- the mu-p substrate tension, not an intrinsic scale"
+      "source": "quadratic fixed-point residual is 1.672 ppb at the proton (default) pin vs 81.04 ppb at the muon pin (live CODATA-2022 derivation; the retired pin A gave 80.51) -- the mu-p substrate tension, not an intrinsic scale"
     }
   ],
   "allPassed": true,
   "durationMs": 6,
   "computation": "alpha-em-form-ladder",
   "scriptFile": "alpha_em_form_ladder_probe.py",
-  "scriptHash": "ff7108ccc652",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "487f170f5bfc",
+  "scriptCommitSha": "f44d3bf79fa2e971e858e99483235d152ec9a0f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -54,13 +54,14 @@
   "data": {
     "ladder": {
       "muon": {
-        "tree": "136.823219657222",
+        "tree": "136.823219729273",
         "zero_mode": "0.212206590789194",
-        "additive": "137.035426248011",
-        "plus_oalpha": "137.036006955305",
-        "fixed_point": "137.036010116763",
-        "fixed_point_resid_ppb": 80.50996334188073,
-        "additive_resid_ppb": -4180.186173452064
+        "additive": "137.035426320062",
+        "plus_oalpha": "137.036007027356",
+        "fixed_point": "137.036010188814",
+        "fixed_point_resid_ppb": "81.035740382392584513",
+        "additive_resid_ppb": "-4179.6603942054591178",
+        "q0": "1.1099785956427390466817951293800017527000655610290"
       },
       "proton": {
         "tree": "136.823208853583",
@@ -68,9 +69,16 @@
         "additive": "137.035415444372",
         "plus_oalpha": "137.035996151711",
         "fixed_point": "137.035999313169",
-        "fixed_point_resid_ppb": 1.6723270482102428,
-        "additive_resid_ppb": -4259.02414053849
+        "fixed_point_resid_ppb": "1.6723270456964245288",
+        "additive_resid_ppb": "-4259.0241405410041263",
+        "q0": "1.1099785827513808075916690956107688798744991218736"
       }
+    },
+    "codata_reference": {
+      "alpha_inv": "137.035999084000000000000000000000000000000000000000000000000",
+      "sigma_ppb": "0.150000000000000000000000000000000000000000000000000000000000",
+      "vintage": "CODATA-2018 (Cs recoil)",
+      "note": "the live table carries 137.035999177; this producer scores against the 2018 value on purpose, and bumping it alone would desynchronise the recorded residuals"
     },
     "integers_provenance": {
       "g": "4 = genus of Bring's surface (structural)",
@@ -80,11 +88,17 @@
     "honest_status": {
       "conjectural": "3 unproved classes; conditional-class != established",
       "anchor_dependent": {
-        "proton_ppb": 1.6723270482102428,
-        "muon_ppb": 80.50996334188073
+        "proton_ppb": "1.6723270456964245288",
+        "muon_ppb": "81.035740382392584513"
       },
-      "not_at_target": "best ~81 ppb muon = ~537x sigma_a",
+      "not_at_target": "proton (default) quadratic 1.672 ppb = ~11.1x sigma_a = ~1115.0x the L2 100x criterion; muon (ideal CAL-2, live CODATA-2022 derivation) 81.04 ppb. Superseded on the best number by the +Schwinger cubic (0.313 ppb, proton).",
       "verdict": "highest-value but long-horizon conjectural close, not near-term"
     }
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "anchor-dependence ladder: both pins are read on purpose and each is reported under its own key; the proton (default) leg is the scored one, the muon leg measures the mu-p substrate tension on 1/alpha"
 }

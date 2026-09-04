@@ -38,12 +38,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q = {"muon": mp.mpf("1.10997859555733471"),
-     "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
+# q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
+# literal 1.1099785955573… — the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 by the live CODATA-2022 lepton-ratio derivation q_muon_at()
+# (+0.0769 ppb); the proton leg was the 50-digit string re-typed by hand. A
+# hardcoded pin cannot be checked against the name it is bound to.
+Q = {"muon": mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
+     "proton": mp.mpf(Q_50_DIGIT_STR)}
 VOL_5_2 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
 
 
@@ -149,13 +155,13 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("vol_5_2_validates",
-                     computed=abs(abs(vol1) - VOL_5_2), expected=0.0,
-                     tolerance=1e-6,
+                     computed=abs(abs(vol1) - VOL_5_2), expected="0.0",
+                     tolerance="1e-6",
                      source="Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 "
                             "(Hikami eq 4.12 / SnapPy) — validates the NZ saddle")
     wb.add_assertion("five_two_chiral_re_nonzero",
-                     computed=1.0 if abs(cs1) > mp.mpf(10) ** -6 else 0.0,
-                     expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(abs(cs1) > mp.mpf(10) ** -6))),
+                     expected="1.0", tolerance="0.5",
                      source="Re 𝔙(5₂) ≠ 0 (chiral, CS≠0) — the bar-odd/CS home 4₁ "
                             "(amphichiral, CS=0) structurally lacks")
     ok = all(a.passed for a in wb.assertions)
@@ -179,7 +185,9 @@ def main() -> int:
                  f"{'this is the swing carrier' if swing_sensitive else 'its smooth q₀-dependence still cannot supply the 2e6-amplified swing; the swing remains the 1/u³ inversion of a smooth numerator (BarOddLadderShape), pinned by experimental Q_β'}. "
                  f"No c_k; no fit; scope-(a)."
                  if ok else "INCONCLUSIVE — an assertion failed; inspect output."))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q["muon"], proton=Q["proton"],
+        reason="the cross-anchor quantum-volume slope |d𝔙/dq| between the two pins is the measured quantity"))
     print(f"\n  assertions passed: {ok}")
     print("  witness -> computations/probes/qbeta-5two-quantum-volume.witness.json")
     return 0 if ok else 1

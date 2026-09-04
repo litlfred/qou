@@ -49,7 +49,8 @@ Hoefsmit Hecke-algebra computation, not from nuclear data).
 | **C2** | ρ = ⌈A/2⌉ · (Z·tr_M_p + N·tr_M_n) / (A·tr_M_avg) | nucleon-composition weighting |
 | **C3** | ρ = [⌈A/2⌉]_q · (Z·tr_M_p + N·tr_M_n) / (A·tr_M_avg) | C1 × C2 correction |
 
-Parameters at q₀ = 1.1099785955541805:
+Parameters at the proton pin q₀ = 1.1099785827513808… (pin corrected 2026-09-04; see §8 — the quoted 5-figure values below are
+unchanged, [2]_q moving by 1.21e-9):
 
 - [2]_q = q₀ + q₀⁻¹ = **2.01090**
 - tr_M(proton) = **1.06531**
@@ -169,6 +170,24 @@ regression is resolved.  **Not wired yet**: pending C4 Milnor-μ̄ probe.
 
 `computations/probes/rho-f-categorical-probe.witness.json`
 
-Computed at q₀ = 1.1099785955541805 using tr_M from
+Computed at the **proton** pin q₀ = 1.1099785827513808…, using tr_M from
 `markov-peel-atomic-tr-m.witness.json` (50 dps, Hoefsmit bridge
 verified).  Zero AME input.
+
+> **Pin corrected 2026-09-04 (bean `qou-9ugp`).**  This line read
+> `q₀ = 1.1099785955541805`, the CODATA-2018 **muon** derivation — and that was
+> not the value the producer used either: it held the *retired* self-certified
+> muon pin A, `1.1099785955573347…`, retired 2026-08-22.  So the doc, the
+> producer and the live anchor named three different numbers.  The producer now
+> reads the anchor by name and is listed `physical_proton` on owner instruction,
+> so both it and this line are on the proton pin.
+>
+> **The table above is unchanged, and that is a result rather than a
+> coincidence.**  The C0–C3 entries are *ratios*, so the substrate scale
+> cancels: moving muon → proton (11.54 ppb) shifts the C1 `err_pct` by 3.1e-7
+> relative — the seventh significant figure — and every figure quoted here to
+> two decimals is identical.  What does move is the published
+> `parameters.q_2_q` = [2]_q, by 1.21e-9.  That is why the producer's
+> `q0_anchor=False` declaration was withdrawn in the same commit: "the headline
+> is a ratio" and "no field depends on q₀" are different claims, and only the
+> first was true.

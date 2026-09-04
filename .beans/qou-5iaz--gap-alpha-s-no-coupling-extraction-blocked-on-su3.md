@@ -4,10 +4,13 @@ title: 'GAP: alpha_s — no coupling extraction; blocked on SU(3) action (see qo
 status: todo
 type: task
 priority: normal
+tags:
+    - sm-26
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-08-02T18:17:21Z
+updated_at: 2026-09-03T08:32:40Z
 blocked_by:
     - qou-ni4b
+    - qou-lxh5
 ---
 
 ## Goal (owner, 2026-08-02): DERIVE alpha_S like we derived alpha_EM
@@ -83,3 +86,12 @@ So the honest attack ladder becomes:
 Do NOT chase a bare $\alpha_s(q_0)=0.118$ trace ratio — tuning $[a]_q[b]_q$ to
 hit 0.118 is a **fit**, not a derivation (anti-laundering rule). Λ_QCD is the
 only single-number target that isn't a category error.
+
+## 🔥 Roast addendum (2026-09-03, qou-bsu0) — currency + tower
+
+(i) Unchanged: Λ_QCD as a confinement-scale Markov-trace object, then α_s(μ) via the q→1 q-CLT flow (`qou-jsx5`); needs the SU(3) action on the framework's own three-strand space (`qou-ni4b`; the abstract module on O = C⊕C³ is done).
+(ii) New since 2026-08-25: the λ_a↔e_a generator identification is an eighth scope-b exclusion (`OctonionicSu3RankObstruction.lean`); no object-level gate separates colour from flavour (`FlavourColourDiscriminator.no_object_gate_separates`); colour antisymmetry is located in μ̄₁₂₃ but the state's channel is not established (`qou-dg07`); the level-3 test (`qou-lxh5`, z₃ = q⁵/(q⁴+q²+1) forced by the fibre) is wired to nothing.
+(iii) Trap: "no candidate formula" is stale — `1/α_s = q^p[9]_q` (p free, conditional; `alpha_k_selection_rule_conditional.py`) and the fit-shaped `q⁻¹/[7]_q = 0.1182` (`docs/beta-decay-handoff.md:181`) both exist; neither may be wired.
+(iv) Next: run `qou-lxh5` — does the ℓ(λ) = 3 sector at level 3 yield any colour quantity at the three existing calibrations? PASS/FAIL is decisive.
+(v) Forecast: Λ_QCD before α_s(μ); neither before `qou-ni4b`.
+Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY so far (single bracket ratios at q₀); the level-3 Markov trace over all three-row blocks IS the full-tower formulation, and it exists as a test.

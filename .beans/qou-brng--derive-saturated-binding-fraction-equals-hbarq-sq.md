@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T03:13:25Z
+updated_at: 2026-09-04T10:28:53Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2355,3 +2355,49 @@ differ — exactly as unestablished as the converse.
 question decidable for the first time. Larger than anything in this arc; already
 tracked in `docs/duality-tracker.md`.
 ## 2026-09-04 (qou-sorn) — the word-level route dies of the same gap. Formalize-first: the only non-monotone shape carrying a Markov-trace cross term is the cyclic square (g_m g_{m+1})^2 (RevisitClassCrossTerm.lean); measured on 2H–4He with the production binding law it gives ≤1 MeV total and SHRINKS with A (3He 1.00 → 4He 0.68 MeV) against residuals growing 7 → 27 MeV, because it multiplies a product of sub-unit letter traces. Same intensive/extensive gap as the four bond-graph routes. Judgement: the extensive term is not a functional of the single atom word's tr_M.
+
+## 2026-09-04 — the Pauli lock is a PAIR-LAYER claim; a sibling's result applies to it independently
+
+Sibling `88ca3408d4` landed within the hour on this same bean, by a different
+route, and it bears on the section above. Neither was written with the other in
+view.
+
+**Their result.** `QOU.MassTheory.PairIsospinAssignment` — no `C`-invariant total
+isospin label separates the two `H₂` blocks (`C` swaps them, `T` is `C`-invariant,
+so `T` is constant) — with the explicit warning that this is *easy to over-read*
+as closing the channel asymmetry. It does not: the argument turns on ONE `C`-orbit
+covering both blocks, and at the forced six-strand carrier `H₆`, `C` acts on 11
+blocks in **6** orbits.
+
+Verified here independently rather than cited (exact partition arithmetic, no
+floats): `n=2` → 2 blocks, **1** orbit; `n=6` → 11 blocks, **6** orbits, `(3,2,1)`
+self-conjugate.
+
+**Why it applies to my section above.** `separable_interface_degenerate`'s `μ±`
+are `y₂`, `y₁₁` — the weights of the two **1-dimensional blocks of `H₂`**
+(`InterfaceScalar.lean:365–384`). So the Pauli lock is a **pair-layer** statement,
+structurally the same layer as `PairIsospinAssignment`. By the sibling's own
+argument a pair-layer obstruction does not propagate to six strands — and the
+two-nucleon link's forced carrier **is** `H₆`.
+
+**Consequence — two independent, non-overlapping reasons the fifth closure is
+weak:**
+
+1. **Conditional** on an unexamined identification of the spin/isospin `SU(2)`
+   projector scalars, one side of which (D9) has no witness. *(my finding)*
+2. **Pair-layer**: it does not reach the layer where the question lives.
+   *(the sibling's)*
+
+**Scope.** Does **not** claim a `T`-labelling of `H₆` exists — the sibling
+disclaims that too. Does **not** reopen the magnitude, still bounded by the
+integer-exponent crossing budget `R ≤ s² = 9` (`block_transposition_lift_probe`,
+which the sibling's commit cites for exactly this role). Two layers, two
+obstructions, neither subsuming the other: the pair layer cannot **label** the
+distinction; the six-strand layer can label it but cannot reach the **magnitude**.
+
+**Convergence.** Two agents, adjacent conclusions on one bean within an hour, by
+different routes — `C`-orbit structure of Wedderburn blocks vs the projector-scalar
+hypothesis of an interface theorem. Recorded as two arguments rather than merged
+into one claim, because they remain independent.
+
+## 2026-09-04 later (qou-rp9i) — under #6611's log law the cyclic-triple reorder IS extensive (per-bond constants), so 'not a functional of tr_M' from earlier today is too strong as stated; but the class over-shoots 3–8× with the retracted +N−Z asymmetry sign. Word-level route: closed for this class under both laws.

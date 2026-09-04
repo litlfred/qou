@@ -1113,3 +1113,34 @@ count.
 
 Nothing else in (12) or the addendum moves: the Gabriel exclusion, F2, F3 and
 C7 are untouched, and the test is still blocked on data.
+
+## 2026-09-04 (13) — (12) merged as #6597; the lattice rung is `qou-rutm`, and H is UNSTATED
+
+The Gabriel-void result merged to `main` (`a46ddb84a7`, rebase). PR #6566 was
+recreated as **#6597** via the all-REST route — GitHub's GraphQL draft toggle
+was rate-limited ~40 min while REST stayed live, the split recorded in
+`merge-coordinator` memory; recreating beat waiting it out, 1st try.
+
+**The lattice rung is opened as `qou-rutm` and its first pass closes three
+routes.** The short version, because it changes what "blocked" means here:
+
+* **R1.** GGM `arXiv:2012.00062v3` — the paper that produced the datum — contains
+  **0** `"charge lattice"` and **0** `"Dirac pairing"`. Its 2 `"symplectic"` are
+  both §7, both naming Neumann–Zagier. H's test has no referent in its own source.
+* **R2.** The NZ datum is **Lagrangian on the edge block** (`A·Bᵀ` symmetric — the
+  NZ symplectic theorem — so the antisymmetrization is exactly zero), and its
+  entire antisymmetric content is the **rank-2 cusp block** `(μ,λ)` at `±2`.
+  Both 4₁ and 5₂, so structural. eq (98) is rank 3 ⇒ NZ cannot carry it at any
+  index set. **Scope-(b).**
+* **R3.** KRSS quivers are **symmetric** by the paper's own definition; eq (98) is
+  antisymmetric ⇒ not a KRSS quiver matrix. **Kept separate** from this bean's
+  standing *"refuted KRSS open-sector route (det(K)=5)"* — different claim,
+  different construction, neither is evidence for the other.
+
+**So H is UNSTATED, not unconfirmed.** "The Dirac pairing on the charges" does
+not yet denote anything: the missing object is a map `{σ₁,σ₂,σ₃} ⟶ Γ` with `Γ`
+carrying an antisymmetric integral pairing, which would come from the 3d-3d
+flavour lattice of `T[5₂]` — not held in `library/`, not computable here. The
+next step is **acquiring a source**, not another probe against what is held.
+
+Detail and the 6/6 probe: `qou-rutm`, PR #6599.

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:57:35.892000+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "computedAt": "2026-09-03T23:04:35.791500+00:00",
+  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
   "assertions": [
     {
       "name": "ratios computed for all 3 atoms",
@@ -15,8 +15,8 @@
   "durationMs": 0,
   "computation": "rho-binding-constancy",
   "scriptFile": "rho_binding_constancy_probe.py",
-  "scriptHash": "fbcc340b7a1b",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "99c141489d07",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -43,20 +43,22 @@
   "name": "rho-binding-constancy",
   "probe": true,
   "substrate": {
-    "q0": 1.1099785955573347,
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "q0_pin": "muon (computations-layer canonical)"
   },
   "ratios_B_over_trM": {
-    "D": 3.867650830665649,
-    "T": 36.98841591324332,
-    "He3": 19.115118744746205
+    "D": 3.867651861723058,
+    "T": 36.988431482763964,
+    "He3": 19.115126534809143
   },
-  "relative_spread": 1.6568339351325567,
-  "t_he3_mirror_mismatch": 0.6371540501843171,
+  "relative_spread": 1.6568339885606598,
+  "t_he3_mirror_mismatch": 0.6371540622203117,
   "witness": {
-    "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
-    "scriptHash": "fbcc340b7a1b",
+    "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+    "scriptHash": "99c141489d07",
     "producer": "computations/probes/rho_binding_constancy_probe.py"
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

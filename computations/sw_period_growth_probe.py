@@ -38,6 +38,21 @@ import mpmath as mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 z, X = sp.symbols('z X')
 P = X**3 + (z + 1) * X**2 + (z**2 + z + 1) * X + (z**3 + z**2 + z + 1)
@@ -81,7 +96,7 @@ for n in range(2, 9):
 print("  → |coeff| ratio = (n-1/2) GROWS without bound ⇒ super-exponential period")
 
 # ---- compare to lw (the #1765 target) and to depth-2 (SL2) -------------------
-q = mp.mpf('1.1099785955573347')
+q = mp.mpf(Q_50_DIGIT_STR)
 tau = mp.mpf('2.6423863133015')
 def qint(k): return (q**k - q**(-k)) / (q - 1 / q)
 def qfac(n):

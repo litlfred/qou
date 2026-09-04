@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T15:28:26.987767+00:00",
-  "commitSha": "09e2be2b5054b12bf60037d38ac46895f2b26f72",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-04T04:38:06.285557+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "fig8_eigenvalue_unit_modulus",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-c3-reeb-rotation-phase",
   "scriptFile": "qbeta_c3_reeb_rotation_phase_probe.py",
-  "scriptHash": "10845ba8a49e",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptHash": "e7f067ec9b59",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,10 +52,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -70,13 +72,13 @@
       "braid_ok": true,
       "hecke_ok": true,
       "det_M": "1.0",
-      "tr_M_q0": "-0.910677330022",
+      "tr_M_q0": "-0.910677329887",
       "unit_circle": true,
       "closed_form_ok": true
     },
     "theta_deg": {
       "q_eq_1": "120.0",
-      "muon": "117.086726647",
+      "muon": "117.086726643",
       "proton": "117.086727299",
       "required_arg_u": {
         "muon": "82.6",
@@ -85,7 +87,7 @@
     },
     "smoothness": {
       "dtheta_dq_deg": "-50.878278",
-      "anchor_split_deg": "-6.51545e-7"
+      "anchor_split_deg": "-6.5589e-7"
     },
     "amphichirality_seed": {
       "delta_theta_deg": "-2.9132734",

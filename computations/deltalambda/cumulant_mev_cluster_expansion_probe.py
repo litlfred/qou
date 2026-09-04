@@ -71,7 +71,19 @@ from _precision import set_compute_dps  # noqa: E402
 COMP = str(_COMP)
 set_compute_dps()
 
-Q0_STR = "1.10997859555733471"           # muon-canonical q0 (computations/ layer)
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
+# "1.10997859555733471" -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 (fca08de7d2) by the live CODATA-2022 lepton-ratio derivation.
+# A frozen literal cannot follow the anchor when it moves, and this producer
+# was UNSTAMPED, so the anchor audit filed it Q0_ANCHOR_MISSING rather than
+# Q0_FLIP -- invisible to the corpus-wide drain, which keys on stamps.
+# It resolves the PROTON pin per the owner directive of 2026-08-15, sharpened
+# 2026-08-30: proton unless the producer is (E1) an explicit mu-vs-p
+# comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
+# -- it is a sole-anchor probe that happened to be muon-named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 E_UNIT_STR = "0.995940"                   # corpus deuteron anchor (the ONE open; provenance §2e)
 
 
@@ -163,7 +175,8 @@ def main() -> int:
             "axis": "Δ_λ magnitude — cumulant→MeV map (Item 1, bean qou-4uk9)",
             "builds_on": "PR #4093 (regulator wall) + #4084 (b4 ss-pole)",
             "provenance": "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2e/§3",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+            "q0": Q0_STR,   # record the pin used, so a reader need not infer it
             "no_fit": True,
         },
     }

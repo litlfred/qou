@@ -7,6 +7,15 @@ production ²H/³H/³He/⁴He words with **no fitted count**. Verdict: **scope-(
 cyclic-triple class under the production binding law. **Nothing is wired, nothing is fitted, no
 production number moves.**
 
+> **🛑 LAW SUPERSEDED THE SAME DAY (retraction of this note's MeV column, `qou-rp9i`).** Every
+> MeV figure and the verdict in §3–§4 below use `B = Q_β·(tr_free − tr_atom)`. #6611 (merged
+> 2026-09-04 09:17 UTC) refutes that law at every scale and leaves `B = E₀·ln(tr_free/tr_atom)`,
+> `E₀ = m_e/(q₀(q₀−1))`, standing. Under the log law this class is **extensive** (per-bond
+> shifts p–p 3.77 / p–n 5.65 / n–n 14.09 MeV, A-independent) and **over-shoots by 3–8× with the
+> retracted asymmetry sign** — still a scope-(a) negative, for a different reason. Read
+> `2026-09-04-cyclic-triple-under-log-law.md` for the live numbers; §2 (the Lean prune) and the
+> 32/32 kernel agreement here are law-independent and stand.
+
 ## 1. The question, and the order it was answered in
 
 PR #6561's audit left one option open: *"a formalize-first probe of a non-monotone word class,

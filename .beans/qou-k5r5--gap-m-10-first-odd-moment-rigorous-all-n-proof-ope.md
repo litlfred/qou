@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T02:47:34Z
+updated_at: 2026-09-04T07:39:42Z
 ---
 
 
@@ -859,3 +859,41 @@ METHOD NOTE, and it is the guard from the entry above firing in real time: I fir
 p=1 ratio-route headroom BY HAND from the running-max tables and got 89x. Measured, it is 67.18x --
 I had combined running-max values taken at two different N. Same failure class as the retracted
 'order of magnitude'. The arithmetic now lives in the producer, not in prose.
+
+
+2026-09-04 (branch claude/m1-k5r5-delta-ratio-structure-2026-09-04): THE RATIO ROUTE IS A CONSTANT-
+FACTOR GAIN, NOT A RATE GAIN. The exciting branch is excluded.
+
+QUESTION (posed before starting the proof, per formalize-first): does bounding V_D/V_A buy a better
+RATE or only a better CONSTANT? It buys a rate iff delta_D/delta_A -> 1 (leading corrections equal =>
+they cancel in the ratio).
+
+MEASURED (_delta_ratio_structure.py, exact Fraction over every partition to n=46, NO float64, exit 0):
+
+  Q1  Is rho_delta = delta_D/delta_A -> 1?  NO, DECISIVELY.
+      Every tail value (n>=30) is >= 0.4613 away from 1; tail min 1.46132. Nowhere in the table --
+      not even at n=4 (0.508) or n=8 (1.224) -- does it approach 1. RATE-GAIN BRANCH EXCLUDED, and
+      this conclusion does NOT require the limit to be pinned.
+  Q2  What is r?  UNPINNED. Tail range [1.46132, 1.59818], relative spread 0.0895, still drifting up.
+
+  RATE COMPARISON INCONCLUSIVE BY CONSTRUCTION: local log-log exponents over n>=30 are
+  |delta_A| mean 0.8236 spread 4.667; |delta_R| mean 0.1887 spread 5.25. Scatter ~8x the difference
+  of the means => the means are NOT rates. Same oscillation that made peak-ratio fitting noise in
+  #6500; the running-max envelope (#6576) is the tool that works here.
+
+CONSEQUENCE. The remaining work is a rigorous finite-n bound on delta_A ITSELF. The ratio divides its
+constant by |r-1| ~ 0.53, i.e. ~1.89x, and nothing more. Effort goes to delta_A; the ratio is applied
+at the end as bookkeeping.
+
+TWO GAIN FIGURES, BOTH RIGHT, DO NOT CONFLATE. #6576's 4.37x is the ratio route vs the THREE-
+INGREDIENT budget; the gain over bounding delta_A ALONE is ~1.89x. The three-ingredient budget pays
+for delta_A AND delta_D separately (0.113+0.163=0.276 margin units), the ratio pays once (0.0537).
+Most of the 4.37x is NOT the cancellation -- it is not double-paying. Conflating them overstates the
+cancellation's worth by ~2.3x.
+
+VERDICT-LOGIC DEFECT IN MY OWN PROBE, corrected in the same commit. The first run printed
+'UNANSWERED -- a wider exact table is needed' on IDENTICAL data, because the verdict tree gated
+everything on 'settled' (spread < 5%). 'Have I pinned r?' and 'is r = 1?' are different claims and
+only the second decides the project; rho_delta -> 1 requires the tail to APPROACH 1, so a tail whose
+minimum is 1.46 excludes it whatever the spread. Fixed to answer Q1 from the tail MINIMUM. Same shape
+as da-arity-conflation: a claim about a family tested as a claim about a point.

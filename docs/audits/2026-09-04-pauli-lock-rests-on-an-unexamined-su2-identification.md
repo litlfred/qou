@@ -148,6 +148,57 @@ So the useful work is not a sixth invariant. It is D9 — a witness for
 decidable rather than assumed. That is larger than anything in this arc so far and is
 already tracked (`docs/duality-tracker.md`, D9; the D9-bottleneck note).
 
+## Addendum, same day: a second and independent reason the fifth closure is weak — it is a *pair-layer* statement
+
+A sibling landed `88ca3408d4` (*"channel asymmetry: the pair-layer isospin
+impossibility does NOT close the six-strand layer"*) within the hour, on this same
+bean. It bears directly on the theorem analysed above, and neither PR was written with
+the other in view.
+
+**Their result.** `QOU.MassTheory.PairIsospinAssignment` proves no `C`-invariant
+total-isospin label can separate the two `H₂` blocks — conjugation `C` swaps them, `T`
+is `C`-invariant, so `T` is constant. Their point is that this is *easy to over-read*
+as closing the channel asymmetry, and does not: the argument turns on one `C`-orbit
+covering both blocks, and at the forced six-strand carrier `H₆`, `C` acts on 11 blocks
+in **6** orbits, leaving 6 independent values for a `C`-invariant `T`.
+
+Verified independently here (partitions and conjugation, exact, no floats):
+
+| | blocks | `C`-orbits | self-conjugate |
+|---|--:|--:|---|
+| `n = 2` | 2 | **1** | — |
+| `n = 6` | 11 | **6** | `(3,2,1)` |
+
+**Why it applies to the theorem above.** `separable_interface_degenerate`'s scalars
+`μ±` are `y₂`, `y₁₁` — the weights of the **two 1-dimensional blocks of `H₂`**
+(`InterfaceScalar.lean:365–384`, `markov_param_determined`). So the Pauli lock is a
+**pair-layer** statement, structurally the same layer as `PairIsospinAssignment`. By
+the sibling's own argument, a pair-layer obstruction does not propagate to six strands
+— and the two-nucleon link's forced carrier *is* `H₆`.
+
+**Consequence.** There are now **two independent reasons** the fifth closure is weaker
+than the other four, and they do not overlap:
+
+1. It is **conditional** on an unexamined identification of the spin and isospin
+   `SU(2)` projector scalars, one of whose two sides (D9) has no witness — the body of
+   this note.
+2. It is a **pair-layer** claim, and pair-layer impossibilities provably do not close
+   the six-strand layer where the question actually lives — the sibling's result.
+
+**Scope, stated carefully.** This does **not** claim a `T`-labelling of `H₆` exists;
+the sibling explicitly disclaims that too. It does not reopen the magnitude, which
+remains bounded by the separate integer-exponent crossing budget `R ≤ s² = 9`
+(`block_transposition_lift_probe`) — a result the sibling's commit message cites for
+exactly this role. The picture is two layers with two obstructions, neither subsuming
+the other: the pair layer cannot *label* the distinction, the six-strand layer can
+label it but cannot reach the *magnitude*.
+
+**On the convergence.** Two agents reached adjacent conclusions on the same bean within
+an hour by different routes — one from the `C`-orbit structure of Wedderburn blocks,
+one from the projector-scalar hypothesis of an interface theorem. That is corroboration
+of the kind AGENTS.md §"Parallel exploration" describes, and it is recorded rather than
+merged into a single claim, because the two arguments remain independent.
+
 ## References
 
 - `content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean:628` —

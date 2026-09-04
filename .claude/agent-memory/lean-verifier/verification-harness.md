@@ -27,7 +27,7 @@ anything the cache predates.
 
 **The cheap content-level test, which §11 does not give:**
 `strings <olean> | grep -c <an identifier the new source introduces>`. A zero is
-proof of staleness that needs no timestamp (§12 on why timestamps lie). Measured
+proof of staleness that needs no timestamp (§16 on why timestamps lie). Measured
 2026-09-03 on `QOU/SchurWeyl/HeckeWedderburnGeneral.olean` out of
 `lake-cache/qou-v4-24-0`: **zero** occurrences of `NotRootOfUnity` while its
 source defines `heckeWedderburn` with exactly that hypothesis, so a consumer
@@ -330,9 +330,70 @@ import `QOU/Archimedean/BorromeanVolumeCatalan` (source 2026-08-30, olean
 changes to any `vol_B3` / `catalan_G` line, so those greens stand. Measure the
 specific declarations; do not assume either way.
 
----
+## 12. Auditing a conjecture carrier: four checks, all cheap (measured 2026-09-04, seven GAP beans)
 
-## 12. A QOU-only `LEAN_PATH` mis-reports cross-package siblings as broken
+"Content-bearing class with no instance" is the honest representation of an open
+conjecture (§3b-tax) — but *asserting* a carrier is content-bearing is not a
+measurement. Four tests, each a scratch `example` against a copy of the file
+(`cp` the content-block sibling, append, `lean` it — plain `lean`, not `-o`, so
+the root restriction of §10 does not apply):
+
+1. **Trivial-inhabitation.** `example : C := ⟨⟨0, rfl⟩⟩`. If it compiles the
+   carrier is vacuous. `BringZeroModeBlochClass` FAILS this (good): its field
+   constrains a `noncomputable opaque` function, so it is neither provable nor
+   refutable — **undecidable, not unfalsifiable**; the two are different verdicts.
+2. **Falsifier.** Prove `¬ (field holds for <explicit data>)`. This is the
+   *positive* demonstration that a field constrains, and it belongs IN the file:
+   `postTraceMultiplicative_fails` (A = ℚ×ℚ, trace `(x,y) ↦ x+y`, non-scalar
+   braiding `c = (2,3)`; sides are `(2,2)` vs `(2,3)`) plus a `no_global_instance`
+   corollary is what turns "we removed the global instance" into "the global
+   instance asserted something false".
+3. **Satisfied-by-choosing-the-output?** `example (structural hyps) : C … (chosenOut)
+   := ⟨h1, h2, rfl⟩`. This separates two very different carriers that read alike:
+   - **definitional in a free output parameter** — `WeinbergAngleCategorical`
+     (choose `cotW := trW/trB`) and `ChernSimonsCorrectionConjecture` (choose
+     `alphaInv := alphaEmInvChernSimons …`) both compile. A downstream `[C]`
+     binder then assumes only "the named parameter is that ratio", NOT the
+     physical identification — correct under the comparison-boundary ruling, and
+     easy for a later agent to over-cite.
+   - **constrains its input data** — `CategoricalHiggsMechanism` is
+     unsatisfiable for EVERY `m` once `scale ≠ 0` and the photon's projected
+     trace is non-zero. Strictly stronger.
+4. **Instance search across the tree**, not just the file:
+   `grep -rn "instance.*<C>\|: *<C>.*:=\|<C>.*where"`. It found
+   `bring_hyperbolic_decomposition : BringZeroModeBlochClass where … := hD.bw_sum_realised`
+   in a *different* chapter — a `theorem` (so it does not auto-fire) whose two
+   classes carry the **identical** field, i.e. a renaming sold as a decomposition.
+
+**Extensional `True` is invisible to a `:= True` grep.** Bean `qou-yt29` scoped
+`categorical-linking-operation.lean` at 2 vacuous fields of 5; it was 5 of 5.
+The other three were `∀ a b c : R, a*(b+c)=a*b+a*c` (ring distributivity),
+`q ^ (0:ℕ) = 1` (`pow_zero`) and `∀ k : ℤ, -(-k) = k` (`neg_neg` — the body does
+not mention `q` at all), each under a docstring claiming a categorical property
+of `Lk_R`. **Test the BODY for dependence on the parameters**; a predicate whose
+body ignores its own arguments is `True` however it is spelled.
+
+## 13. TRAP — two declarations of ONE fully-qualified name; importing both is build-fatal
+
+`QOU.Archimedean.BlochWigner_unit_circle` exists twice, same namespace, two
+modules: `BlochWignerUnitCircle.lean:67` `noncomputable opaque … (_θ : ℝ) : ℝ`
+(sealed, no content) and `BlochWignerMathlibFiller.lean:60` `noncomputable def
+… (θ : ℝ) : ℝ := Cl_2 θ` (the real Clausen body). Measured:
+
+    error: import QOU.Archimedean.BlochWignerMathlibFiller failed, environment
+    already contains 'QOU.Archimedean.BlochWigner_unit_circle' from
+    QOU.Archimedean.BlochWignerUnitCircle
+
+`QOU/Archimedean.lean` hides this by keeping the filler import **commented out**
+(line 36) — so the collision is invisible to anything that only builds the
+library root. Consequence beyond the build: a class field over that name is
+**undecidable** under one import and **provable** under the other (`2/(3π) ≈
+0.212` is in the range of `Cl₂`, so IVT). Same syntax, opposite epistemic status,
+selected by an import. `markovZ` class of defect. Resolve any such name to the
+module it came from before reasoning about its content.
+
+---
+## 14. A QOU-only `LEAN_PATH` mis-reports cross-package siblings as broken
 
 Measured 2026-09-03, sweeping all 908 content-block sibling `.lean` files.
 
@@ -372,7 +433,7 @@ was (8 parse errors, `Σ` used as a binder name, which is `Sigma` notation).
 
 ---
 
-## 13. No Mathlib source and no LSP: grep the OLEANS for renamed declarations
+## 15. No Mathlib source and no LSP: grep the OLEANS for renamed declarations
 
 Measured 2026-09-03. This container's restore gives `.lake/packages/mathlib/`
 containing **only** `.lake/build` — there is no `Mathlib/` source tree — and
@@ -413,7 +474,7 @@ goals` inside a real-analysis argument — proof-level drift, not name-level.
 Budget accordingly: grep the names, then expect the proof body to still need
 doing.
 
-## 14. TRAP — do NOT key staleness on mtime; `git checkout` sets source mtimes
+## 16. TRAP — do NOT key staleness on mtime; `git checkout` sets source mtimes
 
 The obvious way to automate §1 ("rebuild anything whose source is newer than its
 olean") is **wrong on a fresh clone**, and wrong in the expensive direction.
@@ -446,7 +507,7 @@ this file — §1 and §2 already state both traps, §2 already naming `QOU/` an
 `SearchPath.findWithExt`. Reading the memory first would have cost a minute and
 saved the re-derivation and the discarded tool. Only this section was actually new.
 
-## 13. The union mirror — when MATHLIB itself is split across the two trees
+## 17. The union mirror — when MATHLIB itself is split across the two trees
 
 §2 says a partial overlay shadows the whole namespace, and names `QOU/`. **The
 same rule applies to `Mathlib/`, and that is the case you will actually hit**,
@@ -488,7 +549,7 @@ from two revisions is not sound. With the union both routes compiled exit 0.
 append `example : (1:Nat) = 2 := rfl` to a copy and confirm exit 1. A harness
 that returns 0 on everything is worse than no harness.
 
-## 14. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
+## 18. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
 
 §1 says to check the reverse-import cone. It does not say *of what*, and getting that
 wrong produces a check that looks rigorous and measures nothing.
@@ -524,4 +585,3 @@ Two corollaries from the same incident:
 
 Do not read the incident as an argument against §1's check. It is an argument for aiming
 it: the same session's #6517 check was correctly *executed* and pointed at the wrong set.
-

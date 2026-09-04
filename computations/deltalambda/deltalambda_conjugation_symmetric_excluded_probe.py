@@ -80,8 +80,18 @@ def nlam(p):
 
 def main() -> int:
     # Source q₀ from the SAME pinning the character caches were computed at (its `q_str`), so q₀ and
-    # χ^λ(q₀) can never drift apart. (NOT qou_substrate.q_at / Q_50_DIGIT_STR: a ~11.7 ppb different
-    # pin — muon↔proton — which would break consistency with these caches.)
+    # χ^λ(q₀) can never drift apart.
+    #
+    # CORRECTED 2026-09-04 (bean qou-9ugp). This comment read: "(NOT
+    # qou_substrate.q_at / Q_50_DIGIT_STR: a ~11.7 ppb different pin — muon↔proton
+    # — which would break consistency with these caches.)" That is false, and it
+    # was load-bearing: it told every later reader the producer must not be
+    # migrated. Measured — the cache's own `q_str` is
+    # 1.1099785827513808075916690956107688798744991218736, byte-identical to
+    # `q_parameter.Q_50_DIGIT_STR` for this stem. The cache IS at the proton pin;
+    # there is no muon↔proton gap here to preserve. Sourcing q₀ from the cache
+    # remains right (it couples q₀ to the χ it is used with) — only the stated
+    # reason was wrong.
     _q0cache = json.load(open(_COMP / 'chi-deuteron-free-h6-at-q0-50dps.witness.json'))
     q0 = mp.mpf(_q0cache['q_str'])
     qi = 1 / q0
@@ -189,7 +199,7 @@ def main() -> int:
             "axis": "Δ_λ binding — μ₀ −9% closure, parity exclusion narrowing the Δ_λ search",
             "lean": "QOU/MassTheory/ConjugationSymmetricDeltaExcluded.lean",
             "builds_on": "#4387 (signed conjugation parity), s5-so3-keystone.md (principal-spec weight)",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
             "no_fit": True,
         },
     }

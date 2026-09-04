@@ -48,7 +48,24 @@ try:
     from q_parameter import Q_MP as Q0
     q = mp.mpf(str(Q0))
 except Exception:
-    q = mp.mpf("1.10997859555733471")
+    # HARD REFUSAL, replacing a silent fallback (bean qou-9ugp, 2026-09-04).
+    # This `except` bound the RETIRED self-certified muon pin A
+    # (1.1099785955573347...), superseded 2026-08-22 by the CODATA-2022
+    # derivation. The `try` above reads the live anchor by name, so the two
+    # branches silently disagreed by ~46 ppb and only the fallback said nothing.
+    #
+    # Scoped by measurement: blocking `qou_substrate` outright kills these
+    # scripts EARLIER, at `witness_base`'s own import, so the fallback was
+    # unreachable in the total-absence case. The reachable case is a PARTIAL
+    # failure -- the package imports but the q0 read raises. Refusing follows
+    # the nine dead fallbacks converted in the alpha_EM re-pin; the reason goes
+    # to stdout because a stderr-only harness would not see it.
+    raise SystemExit(
+        "REFUSING to run: the q0 read from `q_parameter` failed, and the "
+        "fallback here was\nthe RETIRED muon pin 1.1099785955573347..., "
+        "superseded 2026-08-22.\nInstall qou-substrate and re-run; see bean "
+        "qou-9ugp."
+    )
 
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402 — CAL-1 registry (single source)
 M_E = mp.mpf(str(_M_E_MEV))  # CODATA-2022 m_e (full precision; prior literal was 8 sig figs)

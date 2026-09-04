@@ -63,7 +63,9 @@ from derived_chi_catalogue_matrix_m_mpfr import (  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 try:
-    from qou_substrate.constants import q_at
+    # `q_parameter`, not `qou_substrate.constants`: it is q_parameter that resolves the
+    # anchor from the manifest and lets WitnessBuilder stamp it (bean qou-4bef, 2026-09-03).
+    from q_parameter import q_at
 except Exception:
     q_at = None
 
@@ -74,9 +76,15 @@ INV_8PI = 1 / (8 * mp.pi)
 
 
 def q0_val():
-    if q_at is not None:
-        return q_at(50)
-    return mp.mpf("1.10997859555733471989976322048322502665620840878")
+    """Proton pin, 50 dps, read BY NAME. No fallback: a missing substrate is an error,
+    not a silent switch to a retired literal (bean qou-4bef, 2026-09-03)."""
+    if q_at is None:
+        raise RuntimeError(
+            "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+            "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+            "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+            "Install it: pip install -e tools/qou-substrate.")
+    return q_at(50)
 
 
 def contravariant_diag(q, dim):
@@ -254,14 +262,14 @@ def main() -> int:
         "ratio_to_inv8pi": mp.nstr(gm / INV_8PI, 12)})
     wb.add_data("verdict", verdict)
     wb.add_assertion("no_convention_free_single_c",
-                     computed=1.0 if ok1 else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed=("1" if ok1 else "0"), expected="1",
+                     tolerance="0.5",
                      source="single c rescales by lambda/mu under "
                             "independent Gram normalizations; only "
                             "degree-0 ratios invariant")
     wb.add_assertion("intrinsic_scalars_are_q_deformation",
-                     computed=1.0 if ok4 else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed=("1" if ok4 else "0"), expected="1",
+                     tolerance="0.5",
                      source="spectral condition -> 0, geometric-mean "
                             "-> 1 as q -> 1")
     wb.save()

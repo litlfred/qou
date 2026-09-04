@@ -50,6 +50,7 @@ from pathlib import Path
 # (Copilot review, PR #1841 — consolidated the duplicate mutation).
 
 import mpmath as mp  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
@@ -67,7 +68,13 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+# literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+# no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+# on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
+# `qou_substrate.constants`, so the witness resolves its anchor stamp.
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 # ── §1. Young-diagram box-adding (Bratteli induction H_n → H_{n+1}) ──

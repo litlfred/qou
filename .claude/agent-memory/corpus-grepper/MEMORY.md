@@ -250,6 +250,24 @@ there. Their generalisation is the one to carry: **a "next direction" line in
 a bean or PR body is a novelty claim and needs the checklist exactly as much
 as an "open" declaration does** — and run it BEFORE merging, not after.
 
+## TRAP — a text heuristic cannot decide a question about MEANING
+
+Measured 2026-09-04, three detectors read candidate-by-candidate: commit
+subjects for "is this done?" **2/12**; bean titles for "duplicates?" **bad both
+ways** (it missed the pair it was built for); Lean docstrings for "does the body
+compute what the doc claims?" **1/8**. All three were first estimated 3-6x too
+optimistic **by their author**, always by reading subjects instead of bodies.
+
+Every FP class is SEMANTIC — a quoted or negated verb on a REOPENING, a
+deliberately parked bean, a title template, a doc stating an INTERMEDIATE value.
+No regex reaches them.
+
+**Choose what to OPEN with such a tool; never conclude. Read every candidate
+before quoting a rate. Never ship a detector whose false positives are CORRECT
+artifacts** — sharper than the rate. What works: ask WHEN not what; test the
+ANSWER not the source; ask `git log -L`. Tables and all FP classes:
+[`detector-precision-measured.md`](detector-precision-measured.md).
+
 ## Resolved topics — where the answer actually lives
 
 A lookup table, consulted when a specific topic
@@ -277,3 +295,4 @@ these open, and add a row whenever a sweep settles one.
 - 2026-09-04 · `qou-kwoa` Gram-determinant assembly · declared a **Mathlib gap** that was not one — see the upstream-shape TRAP above; the lemma existed under `BlockTriangular`.
 - 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
 - 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.
+- 2026-09-04 · detector precision · three text heuristics built and measured (2/12, 1/8, bad-both-ways) · **the file is now 253 lines vs the 200-line convention; it was 234 before this entry** (I first wrote 246 here — a PREDICTED number, not a measured one, in the file whose own TRAPs are about exactly that; corrected in the next commit) — the sanctioned prune (this log) is 5 lines, so the cap cannot be met by pruning it; a future session should split a STABLE section into a sibling.

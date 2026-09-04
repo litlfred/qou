@@ -18,11 +18,20 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
+sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
+
+import mpmath as mp  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 
-# muon-q0 canonical (computations layer); scale cancels in the ratio anyway.
-Q0 = 1.10997859555733471
+# q0 read BY NAME (bean qou-9ugp, 2026-09-03) and carried as mpf, not float.
+# It was the bare float64 literal 1.10997859555733471 -- the RETIRED
+# self-certified muon pin A, superseded 2026-08-22. No comparison leg here,
+# so the 2026-08-30 owner ruling puts it on the proton default (11.54 ppb).
+# The old comment said the scale cancels in the ratio; that is an argument
+# about the RATIO, not a licence to feed a float64 into the Wedderburn sum.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 # AME2020 binding energies (MeV).
 B_OBS = {

@@ -104,8 +104,24 @@ structure Partition (n : ℕ) where
 
 /-- Number of standard Young tableaux of shape λ (= dimension of the
     irreducible S_n-rep V_λ). Computed via hook-length formula.
-    Concrete model: returns `1` (the genuine hook-length formula
-    lives in `Mathlib.Combinatorics.Young`). -/
+
+    Concrete model: returns `n !` — the NUMERATOR of the hook-length
+    formula `f^λ = n! / ∏ h(x)`, not `f^λ` itself. Note `_lam` is
+    discarded, so this cannot depend on λ and therefore cannot be
+    `f^λ` for any non-trivial shape. The genuine formula lives in
+    `Mathlib.Combinatorics.Young`; a real implementation is
+    `hookDim` in `y-lambda-recipe-from-partition.lean`, which does
+    divide by `∏ cellHook`.
+
+    Corrected 2026-09-04 (bean `qou-z9fx`): this line read
+    "returns `1`" for four months. It was true when written
+    (`7e2abe75ce4`, body `:= 1`) and was invalidated by
+    `a754f12ab36`, "Genuine sharpening: 9 noqa-exempted placeholders
+    → content-bearing values", which changed the body to satisfy the
+    `one_def` vacuity detector and left the docstring alone. No
+    number moves: the sole consumer `wenzlNormalization` multiplies
+    this by `wenzlSchurElement`, an honestly-declared `0 * (…)`
+    placeholder, so the product is `0` whatever `hookDim` returns. -/
 def hookDim {n : ℕ} (_lam : Partition n) : ℕ := n.factorial
 
 /-- Sum of contents over cells of λ: `n(λ) = Σ (i-1) λ_i`.

@@ -117,18 +117,43 @@ def dim_irrep(n: int, lam: tuple[int, ...]) -> int:
 
 
 def find_q0(doc) -> tuple[str, str]:
-    """(q0_string, where_it_came_from) — the file's own pin when it states one."""
-    stack = [doc]
+    """(q0_string, where_it_came_from) — ALWAYS the pin table; the file's own
+    field is read only to report a disagreement.
+
+    FIXED 2026-09-04 (bean qou-9ugp).  This used to RETURN the file's own `q0`
+    when it stated one, and fall back to the pin table otherwise.  That made the
+    producer a FIXED POINT ON ITS OWN STALE INPUT: the witness records a q0, the
+    producer reads it back, recomputes the weights at it, and writes it out
+    again — so an anchor move can never propagate, no matter how often this runs.
+    It is the same self-certification shape AGENTS.md records for the
+    anchor-defining witness, one file over.
+
+    Measured at the time of the fix: the 2026-08-22 re-derivation of the muon
+    anchor to the CODATA-2022 lepton ratio had not reached ANY of the three
+    file-field targets, all three of which still held the CODATA-2018 value
+    `1.109978595554180575…` — one stale number perpetuated across three files.
+    None held proton, so there was no legitimate per-file pin being preserved.
+
+    The file's claim is still read, because a disagreement is worth seeing; it
+    just no longer wins.
+    """
+    stack, stated = [doc], None
     while stack:
         node = stack.pop()
         if isinstance(node, dict):
             for k, v in node.items():
-                if k in ("q_0", "q0", "q_0_50dps") and isinstance(v, (str, float)):
-                    return str(v), f"file field `{k}`"
+                if stated is None and k in ("q_0", "q0", "q_0_50dps") \
+                        and isinstance(v, (str, float)):
+                    stated = (k, str(v))
                 stack.append(v)
         elif isinstance(node, list):
             stack.extend(node[:20])
-    return MUON_Q0, "muon default (file states none)"
+    if stated is None:
+        return MUON_Q0, "pin table (file states none)"
+    k, v = stated
+    if v[:30] == str(MUON_Q0)[:30]:
+        return MUON_Q0, f"pin table (file field `{k}` agrees)"
+    return MUON_Q0, (f"pin table — OVERRIDING stale file field `{k}` = {v[:24]}…")
 
 
 def rewrite(doc, q):
@@ -215,6 +240,24 @@ def main() -> int:
             continue
         print(f"  OK     {name:<42} {count:4d} weights, n={ns}, q0 from {origin}")
         if not args.check:
+            # Write back the q0 ACTUALLY COMPUTED WITH (bean qou-9ugp,
+            # 2026-09-04).  Until this line the producer recomputed every
+            # weight at the pin table's value and then left the file's own
+            # stale `q0` field untouched -- so after the find_q0 fix above the
+            # witness would have claimed a pin it did not compute at, which is
+            # worse than the fixed point it replaced.
+            def _set_q0(node):
+                if isinstance(node, dict):
+                    for k in list(node):
+                        if k in ("q_0", "q0", "q_0_50dps") and isinstance(
+                                node[k], (str, float)):
+                            node[k] = q0_str
+                        else:
+                            _set_q0(node[k])
+                elif isinstance(node, list):
+                    for v in node:
+                        _set_q0(v)
+            _set_q0(doc)
             doc["markov_convention"] = "D"
             doc["markov_parameter_symbolic"] = "q**3/(q**2 + 1)"
             doc["scriptFile"] = f"computations/{Path(__file__).name}"
@@ -225,8 +268,31 @@ def main() -> int:
             from qou_substrate.witness import WitnessBuilder as _WB
             import os as _os  # noqa: E402 -- provenance stamp
             doc.setdefault("scriptFile", _os.path.basename(__file__))
+            # q0_anchor was False -- "no q0 in this producer's cone".  That is
+            # false and always was: every value this producer writes is a Wenzl
+            # weight y_lambda(q0), a function of the pin, and the fix above
+            # moved them by 3.18e-10.  The stem is declared `ideal_muon` in the
+            # manifest so this resolves the MUON anchor, per the owner ruling of
+            # 2026-08-24 that this producer is muon by name.
+            # Drop the PREVIOUS run's anchor fields before stamping. The
+            # builder guards on `if "q0Anchor" not in payload`, writing anchor
+            # AND value only inside it (bean qou-ftuv), so a doc that already
+            # carries a stale `q0Anchor` silently ignores everything passed
+            # here -- which is how these five sat at `independent` with a null
+            # q0Value while computing at the muon pin.
+            for _k in ("q0Anchor", "q0AnchorReason", "q0Value", "q0Values"):
+                doc.pop(_k, None)
             _WB.stamp_staleness_metadata(
-                doc, script_path=__file__, engine=None, q0_anchor=False)
+                doc, script_path=__file__, engine=None,
+                q0_anchor="muon", q0_value=q0_str,
+                q0_anchor_reason=(
+                    "computes Wenzl weights y_lambda(q0) at the MUON pin, taken "
+                    "explicitly from pin_value_for_anchor('muon') rather than "
+                    "through the manifest (owner ruling 2026-08-24). Stamped "
+                    "explicitly because the auto-detector reads the import cone "
+                    "and this producer reaches q0 via q0_stamp, not q_parameter, "
+                    "so it was being stamped 'independent' on a value that is a "
+                    "function of the pin."))
             path.write_text(json.dumps(doc, indent=2) + "\n")
     if args.check:
         print("\n--check: nothing written.")

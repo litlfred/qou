@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T04:21:45.381913+00:00",
-  "commitSha": "78b63de8e6dceb24ae5b31bffcecfd953a7762f0",
+  "computedAt": "2026-09-04T11:09:32.621570+00:00",
+  "commitSha": "71b7f12756fbe48004fc5d633b1713756867530d",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 14,
+      "computed": 17,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "fc536436dd02a83baa03f7ef28b405daff5c97c6",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -43,9 +43,9 @@
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 14,
-    "flagged_script_count": 11,
-    "scripts_scanned": 3743,
+    "total_issues": 17,
+    "flagged_script_count": 12,
+    "scripts_scanned": 3882,
     "rows": [
       {
         "path": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
@@ -126,24 +126,6 @@
         ]
       },
       {
-        "path": "computations/probes/qbeta_5two_sigma3_anchor_test_probe.py",
-        "issue_count": 2,
-        "issues": [
-          {
-            "line": 61,
-            "var": "Q0_PROTON",
-            "literal": "1.1099785827513808075916690956107688798744991218736",
-            "context_snippet": "ero phase, a permanent structural contribution); its\nanchor-smoothness says the swing does not live in its anchor-dependence — it does\nnot exclude the σ3-pair from a many-term closure. NO fit; NO c_k wired; μ never\nfixed"
-          },
-          {
-            "line": 63,
-            "var": "Q0_MUON",
-            "literal": "1.10997859555733471",
-            "context_snippet": "the swing does not live in its anchor-dependence — it does\nnot exclude the σ3-pair from a many-term closure. NO fit; NO c_k wired; μ never\nfixed from QOU data.\n\nRun: python3 -u computations/probes/qbeta_5two_sigma3_ancho"
-          }
-        ]
-      },
-      {
         "path": "computations/probes/qbeta_kashaev_vs_btower_phase_distinction_probe.py",
         "issue_count": 1,
         "issues": [
@@ -164,6 +146,24 @@
             "var": "S_MUON",
             "literal": "0.00968298",
             "context_snippet": ", but the curve is not, so\n      both are reported.\n\nScope (STRICT). This derives nothing about the VALUE of A_ω and wires nothing.\nIt states, in falsifiable form, what an independent route has to reproduce. The\nmeasured"
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_chain_closed_form_probe.py",
+        "issue_count": 2,
+        "issues": [
+          {
+            "line": 107,
+            "var": "T_P",
+            "literal": "1.1457596924573008697",
+            "context_snippet": "proton) chain. Real atoms mix p and n,\nso their interfaces are p-p, p-n and n-n and the recursion needs a\nmulti-state transfer matrix rather than a single ratio. That is not done here.\nWhat IS established for real atoms "
+          },
+          {
+            "line": 109,
+            "var": "T_N",
+            "literal": "0.98774368811580957163",
+            "context_snippet": "so their interfaces are p-p, p-n and n-n and the recursion needs a\nmulti-state transfer matrix rather than a single ratio. That is not done here.\nWhat IS established for real atoms is section 1, `tr_M(free) = t_p^Z t_n^N"
           }
         ]
       },
@@ -194,6 +194,30 @@
             "var": "M_E",
             "literal": "0.51099895069",
             "context_snippet": "g wired, no search run. This does NOT refute conj:binding-qbeta-complex-\nvolume -- it says the conjecture is untested by the compute that appears to test\nit, and that the transport route cannot start from that compute.\n\""
+          }
+        ]
+      },
+      {
+        "path": "computations/qbeta/qbeta_mixed_chain_closed_form_probe.py",
+        "issue_count": 3,
+        "issues": [
+          {
+            "line": 90,
+            "var": "T_P",
+            "literal": "1.1457596924573008697",
+            "context_snippet": "nd the two derivations agree.\n\n*** WHAT IS DERIVED AND WHAT IS NOT ***\n\nDERIVED: the form (chain structure plus Ocneanu multiplicativity over disjoint\nstrand ranges); `t_p`, `t_n` as H_3 traces; `b_pp = z` as an identifi"
+          },
+          {
+            "line": 92,
+            "var": "T_N",
+            "literal": "0.98774368811580957163",
+            "context_snippet": "IS DERIVED AND WHAT IS NOT ***\n\nDERIVED: the form (chain structure plus Ocneanu multiplicativity over disjoint\nstrand ranges); `t_p`, `t_n` as H_3 traces; `b_pp = z` as an identification that\nholds to 4.6e-16 rather than"
+          },
+          {
+            "line": 93,
+            "var": "R_HOMOG",
+            "literal": "0.7019932570132013577923154",
+            "context_snippet": "D: the form (chain structure plus Ocneanu multiplicativity over disjoint\nstrand ranges); `t_p`, `t_n` as H_3 traces; `b_pp = z` as an identification that\nholds to 4.6e-16 rather than being imposed.\n\nNOT YET DERIVED: `b_p"
           }
         ]
       }

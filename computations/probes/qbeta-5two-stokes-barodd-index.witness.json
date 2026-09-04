@@ -1,69 +1,69 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:27:48.906476+00:00",
-  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
+  "computedAt": "2026-09-03T20:59:23.511549+00:00",
+  "commitSha": "ec33acb10b62144583ec9c07c2279fd9f7d80536",
   "assertions": [
     {
       "name": "printed_H_tables_exact",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "18 H±_{j,λ} series (GGM eqs 121-123) reproduced exactly to q^5"
     },
     {
       "name": "index_identity_eq102",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "2·H+₁₀·H−₁₀ = 1−12q+3q²+74q³+90q⁴ (eq 102), and it is the assembled S⁺(0,0) entry"
     },
     {
       "name": "det_W_is_2",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "det W_{−1}(q) = 2 in series (GGM eq 26) and numerically"
     },
     {
       "name": "q0_limits_eq100",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "assembled S⁺(0), S⁻(0) equal the eq-100a/b Stokes-constant products [[1,4,0],[0,1,0],[−3,−9,1]] / [[1,0,3],[−4,1,−3],[0,0,1]]"
     },
     {
       "name": "sl3_and_inversion_series",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "det S± = 1 and S⁺(q)ᵀ·S⁻(q) = 1 (Conjecture 1b) in exact series"
     },
     {
       "name": "inversion_numeric_at_substrate",
-      "computed": "1.14079707085522139925153978347180443372726313914421214267629e-37",
-      "expected": 0.0,
+      "computed": "9.87046746219694868839189850313406155080372348114980757158316e-38",
+      "expected": "0.0",
       "passed": true,
       "tolerance": "1e-30",
       "source": "S⁺ᵀ·S⁻ = 1 numerically at q=1/q₀ with independently-assembled matrices (29a vs 29b)"
     },
     {
       "name": "odd_channel_nonzero",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "‖½(S⁺−S⁻)‖_F > 0.01 at the substrate — the chiral odd channel is live (4₁'s would vanish by amphichirality)"
     },
     {
       "name": "anchor_smooth_honest",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "max |dO_ij/dq| ≪ 3.84e6 — the derived datum is anchor-smooth; it is the odd ingredient, NOT the swing (SRigidityPrune)"
@@ -73,8 +73,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-stokes-barodd-index",
   "scriptFile": "qbeta_5two_stokes_barodd_index_probe.py",
-  "scriptHash": "8e305c47f106",
-  "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
+  "scriptHash": "764282189b67",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -101,57 +101,57 @@
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "substrate_point": {
-      "q_inv_muon": "0.900918273561741048953080383849",
+      "q_inv_muon": "0.900918273492422300050994867878",
       "q_inv_proton": "0.900918283955741492160822882481"
     },
     "S_plus_at_substrate_muon": [
       [
-        "-0.3773210373995987723106052",
-        "-1.578168271260916535265872",
-        "-0.6691952206455486359019877"
+        "-0.3773210616212321338286496",
+        "-1.578168283540234757935831",
+        "-0.6691951995087954727029046"
       ],
       [
-        "0.05583414899964053925789967",
-        "-2.451319164797190027341319",
-        "-1.67451907622378865538631"
+        "0.05583407518187267128202981",
+        "-2.451319285773350526782995",
+        "-1.674519046758982966025783"
       ],
       [
-        "0.007358135669953819691856295",
-        "0.0502768466095823834200417",
-        "1.013049972662880906765552"
+        "0.007358130291154057705103595",
+        "0.05027680686919434048053646",
+        "1.013049961873433551339203"
       ]
     ],
     "S_minus_at_substrate_muon": [
       [
-        "-2.399119274145666400279111",
-        "-0.06888412166252144602345163",
-        "0.02084430392976710465261653"
+        "-2.399119438279616321426184",
+        "-0.06888403705530622262123249",
+        "0.02084428570457810966012208"
       ],
       [
-        "1.56511829859803562850032",
-        "-0.3773210373995987723106052",
-        "0.007358135669953819691856295"
+        "1.565118321666801206596628",
+        "-0.3773210616212321338286496",
+        "0.007358130291154057705103595"
       ],
       [
-        "1.002261806358405888221641",
-        "-0.6691952206455486359019877",
-        "1.013049972662880906765552"
+        "1.002261751276198924785835",
+        "-0.6691951995087954727029046",
+        "1.013049961873433551339203"
       ]
     ],
     "odd_datum_O_muon": [
       [
-        "1.010899118373033813984253",
-        "-0.7546420747991975446212104",
-        "-0.3450197622876578702773021"
+        "1.010899188329192093798767",
+        "-0.7546421232424642676572992",
+        "-0.3450197426066867911815133"
       ],
       [
-        "-0.7546420747991975446212104",
-        "-1.036999063698795627515357",
-        "-0.840938605946871237539083"
+        "-0.7546421232424642676572992",
+        "-1.036999112076059196477173",
+        "-0.8409385885250685118654433"
       ],
       [
-        "-0.4974518353442260342648925",
-        "0.3597360336275655096610147",
+        "-0.4974518104925224335403659",
+        "0.3597360031889949065917205",
         "0.0"
       ]
     ],
@@ -172,13 +172,19 @@
         "0.0"
       ]
     ],
-    "odd_datum_frobenius_norm_muon": "2.106973688841975592771649",
+    "odd_datum_frobenius_norm_muon": "2.106973759676789075150026",
     "rotated_index_at_substrate": {
-      "muon": "-0.3773210373995987723106052",
+      "muon": "-0.3773210616212321338286496",
       "proton": "-0.3773174054751024772917697",
       "note": "bar-EVEN by GGM eq 124 despite 5₂ chirality"
     },
     "anchor_max_slope": "8.191196e+02",
     "verdict": "DERIVED ODD-STOKES DATUM LANDED: both 5₂ Stokes automorphisms S⁺, S⁻ at the substrate point from published integer q-series, with 6 exact gates including the independently-assembled inversion S⁺ᵀ·S⁻ = 1. The odd chirality datum O = ½(S⁺−S⁻) is nonzero (‖O‖_F given) and calibration-free in form — the derived fibre-level odd ingredient for the capstone. It is anchor-smooth (honest: not the swing; SRigidityPrune binds), and the rotated index is bar-EVEN despite chirality (structural). No fit; no c_k wired; auditOnly."
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "the bar-odd Stokes index is evaluated at BOTH pins; the anchor comparison is the subject"
 }
