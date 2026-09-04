@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T08:53:46Z
+updated_at: 2026-09-04T10:44:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6486,3 +6486,51 @@ what `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` predicts. They must not be
 refreshed in place — that would commit a red. They are inputs to this bean's
 re-derivation, and they land green again only when the ladder itself is
 re-derived under D.
+
+
+## 2026-09-04 — the phase term has NO derivation to re-derive (PR #6625)
+
+Follow-on from the bar-parity result. With parity ruled out as a constraint,
+the next lever was the eigenphase `α = (z−1)h/2`. Asked the prior question the
+two-row filter arc never asked: **what derives the form?**
+
+The corpus answers with one citation —
+`q-beta-categorical-precision-ladder.md`: *"α = (z−1)h/2 is the single-wrap
+eigenphase on V_(2,1) (per `prop:q-beta-spectral-bridge`)"*. Read it.
+
+- **It names no eigenphase.** Across that proposition's `.md`, `.lean` and
+  proof block, the strings `eigenphase`, `V_{(2,1)}`, `V_{2,1}`, `(2,1)` and
+  even `phase` occur **zero** times.
+- **What it produces is a ratio coefficient.**
+  `Q_A/Q_B = (1−h/2)/(1−zh/2) = 1 + (z−1)h/2 + O(h²)` — so `(z−1)h/2` is the
+  first-order term of a multiplicative ratio (remainder exactly
+  `z(z−1)h²/4/(1−zh/2)`, the source's own Lean `bridge_first_order_remainder`).
+  The ladder uses it as an **angle**.
+- **Measured, the roles are far apart.** `cos(α−u/2)` vs the source's own
+  `1+α`: **5.354 %** (C) / **4.115 %** (D) at the proton pin. And the `δ`
+  solving `cos(α−δ) = 1+α` is **−0.377** (C) / **−0.326** (D) against the
+  ladder's `u/2 = 0.004259` — off by **88.6× / 76.6×** and opposite in sign.
+  That closes the charitable "cited only for the value" reading.
+- Also: the proposition is **conditional on the Borromean quark conjecture**;
+  its two proved Lean theorems are free-variable `ring`/`field_simp`
+  identities saying nothing about any convention; its analytic step is open.
+
+**CONSEQUENCE FOR THIS BEAN. "Re-derive under D" cannot mean "recompute α at
+`z_D`."** The provenance fails in BOTH conventions — there is no C-frame phase
+awaiting a D-frame twin. **The D work must SUPPLY a phase, not convert one.**
+It also explains the two-row filter's empty result rather than leaving it a
+brute fact: it searched for a `z` inside a form with no derivation behind it.
+
+NOT a new declaration — the arc's standing position (2026-08-31 audit, §Scope)
+is already that α is not derived. This records the **mechanism**, which was
+not: the cited source derives a different object.
+
+**Incidental, flagged not fixed:** `markovZ` in `q-beta-spectral-bridge.lean`
+has body `q³/(q²+1)` (D, migrated 2026-08-26, `2af189af1a`, `qou-cxjq`) while
+its own docstring and the `.md` proposition define z as C. Changes no proved
+theorem (both quantify over free `z`), but the load-bearing definition
+disagrees with itself. Which way to reconcile it depends on the re-derivation.
+
+Probe `computations/qbeta/qbeta_ladder_alpha_provenance_probe.py` (5/5, mpmath
+50 dps + sympy, no float64); audit
+`docs/audits/2026-09-04-cds1-ladder-phase-has-no-derivation.md`. Scope (a).
