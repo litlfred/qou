@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-04T02:53:20Z
+updated_at: 2026-09-04T12:20:58Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -137,3 +137,50 @@ against the date the relevant guard landed.**
 three of them: 5 -> 6 (c2) -> 7 (toroidal) -> 2 (after the sibling drain).
 Two of the seven arrived after this branch was already green. Re-measure the
 gate against the CURRENT head before quoting any before/after.
+
+
+## FIFTH class, 2026-09-04 12:15Z — a wall-clock field the ratchet's vocabulary does not spell
+
+`main` `9a8b09c661` -> `1a31748c96` took the gate NEW 5 -> **NEW 8**. All three
+additions are one defect and none is a precision loss:
+
+    /provenance/elapsed_s            = 0.923    qbeta-binding-law-options
+    /provenance/elapsed_s            = 2.919    qbeta-tower-log-z-and-roast
+    /data/matrix_route_seconds_at_A4 = 1958.9   qbeta-chain-closed-form
+
+TRAP (durable). **The ratchet's wall-clock carve-out matches field names
+EXACTLY, and its whole vocabulary is five strings** —
+`witness_raw_float64_audit.EPHEMERAL_TIMING_FIELDS` = `durationMs`,
+`durationSeconds`, `duration_sec`, `elapsed_sec`, `elapsed_seconds`. A timing
+field under any sixth spelling is read as a payload float. This is the SAME
+class as the `rows[].seconds` case earlier on this branch, one spelling over,
+so treat it as recurring rather than incidental: when a red is a duration,
+check the spelling before checking the arithmetic.
+
+Corroborating, and the reason this is a detector gap rather than a producer
+defect: `computations/witness_regen_classify.py:152` already lists
+`"wall_sec", "elapsed_s", "elapsed_sec", "time_sec"` together as volatile. One
+audit in this corpus recognises the spelling; the ratchet does not.
+
+Fixed at the producer — two renames to `elapsed_sec` (key only, value
+untouched), and `matrix_route_seconds_at_A4` serialized as the string
+`"1958.9"` because it is a RECORDED cost of a prior matrix-route run, not a
+measurement this run made, so no carve-out name would be honest for it.
+
+DECISION DELIBERATELY NOT TAKEN: widening `EPHEMERAL_TIMING_FIELDS` to admit
+`elapsed_s` is the one-line alternative and would silently excuse **14 further
+`elapsed_s` sites** nobody has looked at. Left open; three probes do not settle
+it.
+
+TRAP (environment, unrelated to the ratchet). `qbeta_chain_closed_form_probe.py`
+**crashed** under `PYTHONPATH=computations` alone —
+`ModuleNotFoundError: No module named 'qou_substrate'` — and TRUNCATED its own
+witness (175 lines -> nothing) on the way out. `qou_substrate` is not on PyPI,
+so a bare container is the default; a producer importing it needs
+`tools/qou-substrate/python` on the path too. Mirror image of the `_path_bridge`
+trap (`qou-0e1t`): there `PYTHONPATH` MASKED a defect, here too little of it
+MANUFACTURED one. Restore the witness from git before re-running, or the crash
+looks like a drain.
+
+Branch gate after: NEW 0 / REGRESSED 0 / exit 0. PR #6453 body updated to five
+classes.
