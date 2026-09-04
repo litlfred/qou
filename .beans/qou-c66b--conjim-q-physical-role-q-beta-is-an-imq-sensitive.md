@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T11:45:08Z
+updated_at: 2026-09-04T13:52:46Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -158,3 +158,75 @@ now **follows** from a decay observable instead of being asserted.
 Whether to edit `conj-im-q-physical-role.md` itself — marking candidate (ii)
 closed and narrowing candidate (iii)'s obstacle — is a verdict on the author's
 conjecture, not a currency fix, so it is proposed rather than applied.
+
+
+---
+
+## 2026-09-04 (later) — CANDIDATE (i) TOO, and the corpus decides it
+
+Branch `claude/imq-chirality-parity-2026-09-04`. Probe
+`computations/qbeta/imq_chirality_is_the_bar_involution_probe.py` (5/5), Lean
+`QOU/QBeta/ImQChiralityIsBarInvolution.lean` (lean-direct exit 0, 4 theorems, no
+sorryAx).
+
+### The identification candidate (i) makes is not the corpus's
+
+Candidate (i): *"`arg q` is naturally a **chirality coordinate** … the mass
+formula is invariant under `q ↦ q̄` … consistent with mass being
+chirality-invariant."* So it identifies **chirality flip = complex conjugation**.
+
+The corpus identifies it with the **bar involution `q ↦ q⁻¹`**, in three places:
+
+- `archimedean-image-table-table1-data.md` row 4: *"J_K̄(q) = J_K(q⁻¹) (mirror;
+  matter/antimatter CPT)"*
+- `hq-bi-filtration.md`: *"Bar involution `∗ : q ↦ q⁻¹` … where `K*` is the
+  **mirror knot**"*
+- `knot-indexed-convolution-grid-table2-data.md`, same row
+
+plus `knot-notation-convention.md`, which fixes the physics: the mirror flips
+the writhe sign, and the weak isospin **is** that sign.
+
+### They coincide EXACTLY on the unit circle — and the substrate is not on it
+
+`q̄ = q⁻¹ ⟺ q·q̄ = 1 ⟺ |q|² = 1`, exactly (`conj_eq_inv_iff_modulus_one`).
+Candidate (i) places itself *"near the unit circle"* (Kashaev `q = e^{2πi/N}`)
+and **there it is right**.
+
+Measured at the substrate: `|q₀| = 1.1099785827513808076 ≠ 1`; the corpus's
+mirror is `q₀⁻¹ = 0.9009182839557414922`, a **real** number needing no `Im q`;
+and the two flips sit `0.20906` apart, **18.83 % of `q₀`** — not a near
+coincidence that could be waved away.
+
+**So at the substrate the role candidate (i) proposes for `arg q` is already
+carried, in full, by a real-`q` mechanism the corpus has developed in detail:
+the bar involution's `P_avg`/`P_skew` split — which is `rem:im-q-vs-p-skew`,
+the conjecture's OWN exclusions block.**
+
+### Second leg: granting the identification anyway, it still collapses
+
+Both `Q_β` extensions are (real ≥ 0 modulus) × (real-coefficient rational), so
+Schwarz reflection gives `Q_β(q̄) = conj(Q_β(q))` — verified at residual **0.0**,
+50 dps, 3 points × 2 extensions. Chirality-invariance says `Q_β(q̄) = Q_β(q)`.
+The two pull in opposite directions, so `Q_β` is real, and
+`im_qbeta_zero_iff_e2` forces `Im q = 0`.
+
+🛑 **The premise is carried, not smuggled.** *"`Q_β` is chirality-invariant"* is
+physics — a Q-value is a parity-even energy — so it is an explicit Lean
+hypothesis (`hchiral`) beside the arithmetic one (`hschwarz`), never assumed
+inside a proof. Leg one needs no premise at all: arithmetic plus three
+citations.
+
+### Status of the conjecture after both PRs
+
+| candidate | archimedean status |
+|---|---|
+| (i) chirality | **closed** — the identification holds only on `|q| = 1`; the substrate is 18.8 % off it, and the corpus's own flip is real |
+| (ii) phase coordinate dual to CAL-2 | **closed** on its entire Apollonius circle (PR #6639, merged) |
+| (iii) non-Hermitian / open-system | obstacle **narrowed**: the β channel has its categorical decay observable; `Γ` for W/Z/top/resonances is what is missing |
+
+All three scoped to the **archimedean evaluation**. The **fibre** is untouched
+and is where the Kashaev regime actually lives — candidate (i) may well be right
+there. And this is not a demotion of chirality: it says the chirality content
+the conjecture went looking for in `Im q` is already in the corpus at real `q`,
+as `P_skew`, which `rem:im-q-vs-p-skew` says is *"kept then discarded"* by the
+canonical `P_avg` projection.
