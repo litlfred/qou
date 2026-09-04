@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T12:17:58.770065+00:00",
-  "commitSha": "14af9282277f76221aa324e24ab8bde2f06de65d",
+  "computedAt": "2026-09-04T15:21:12.351067+00:00",
+  "commitSha": "bf8d7e7ce59186576d20218e28bf36c89ae4323f",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     },
     {
       "name": "no_unrecognised_anchor",
-      "computed": 13,
+      "computed": 2,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 121,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "e2847c7a461e",
@@ -38,8 +38,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
@@ -51,10 +52,10 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is an anchor label that maps to no pin, so NO comparison was made — also CI-failing, because 'could not check' is not green, but not a flip and counted apart from one.",
   "data": {
     "counts": {
-      "Q0_OK": 1358,
+      "Q0_OK": 1368,
       "Q0_AMBIGUOUS": 6,
       "Q0_AMBIGUOUS_NO_REASON": 13,
-      "Q0_INDEPENDENT": 120,
+      "Q0_INDEPENDENT": 121,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 29,
       "Q0_COMPARISON_NO_REASON": 0,
@@ -63,7 +64,7 @@
       "Q0_VALUE_MISSING": 14,
       "Q0_AUDIT_EXEMPT": 86,
       "Q0_PARSE_ERROR": 0,
-      "Q0_ANCHOR_UNRECOGNISED": 13,
+      "Q0_ANCHOR_UNRECOGNISED": 2,
       "Q0_FLIP": 1
     },
     "match_prefix_digits": 14,
@@ -9924,6 +9925,10 @@
           "detail": ""
         },
         {
+          "witness": "markov-bond-rule-forces-pairwise.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "markov-normalisation-convention-span-probe.witness.json",
           "detail": ""
         },
@@ -10640,6 +10645,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-bond-factors-derived.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-bring-elliptic-generator.witness.json",
           "detail": ""
         },
@@ -10716,6 +10725,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-chain-closed-form.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-chain-d-bar-parity-gate.witness.json",
           "detail": ""
         },
@@ -10773,6 +10786,10 @@
         },
         {
           "witness": "qbeta-composite4-wenzl-qpochhammer-first-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-computable-observables-vs-row-cap.witness.json",
           "detail": ""
         },
         {
@@ -10896,11 +10913,19 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-eigenphase-carrier-classical-limit.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-eigenphase-character-coordinate.witness.json",
           "detail": ""
         },
         {
           "witness": "qbeta-eigenphase-tower-and-fraction-readings.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-extensivity-is-the-failure.witness.json",
           "detail": ""
         },
         {
@@ -10992,6 +11017,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-l1-ceiling-is-one-point-of-a-family.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-ladder-alpha-form-filter.witness.json",
           "detail": ""
         },
@@ -11032,6 +11061,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-mixed-chain-closed-form.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-modular-double-reciprocity.witness.json",
           "detail": ""
         },
@@ -11065,6 +11098,10 @@
         },
         {
           "witness": "qbeta-nf-counit-gap-order.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-no-regime-of-validity.witness.json",
           "detail": ""
         },
         {
@@ -11145,6 +11182,10 @@
         },
         {
           "witness": "qbeta-singularity-cross-anchor-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-staircase-ew-lives-in-the-tl-kernel.witness.json",
           "detail": ""
         },
         {
@@ -12134,6 +12175,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-kd-monodromy-reading-closed.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-nl84-provenance.witness.json",
           "detail": ""
         },
@@ -12826,55 +12871,11 @@
       ],
       "Q0_ANCHOR_UNRECOGNISED": [
         {
-          "witness": "markov-bond-rule-forces-pairwise.witness.json",
-          "detail": "q0Anchor=True is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-bond-factors-derived.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-chain-closed-form.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-computable-observables-vs-row-cap.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
           "witness": "qbeta-derived-w-overdetermined-test.witness.json",
           "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
         },
         {
-          "witness": "qbeta-eigenphase-carrier-classical-limit.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-extensivity-is-the-failure.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
           "witness": "qbeta-interface-w-deciding-test.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-kd-monodromy-reading-closed.witness.json",
-          "detail": "q0Anchor='none (exact symbolic identities in q)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-l1-ceiling-is-one-point-of-a-family.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-mixed-chain-closed-form.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-no-regime-of-validity.witness.json",
-          "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
-        },
-        {
-          "witness": "qbeta-staircase-ew-lives-in-the-tl-kernel.witness.json",
           "detail": "q0Anchor='proton (experimental pin)' is not a pin this audit can map. Put the token ('muon' / 'proton' / 'ambiguous' / 'independent' / 'comparison') in q0Anchor and the prose in q0AnchorReason."
         }
       ]
