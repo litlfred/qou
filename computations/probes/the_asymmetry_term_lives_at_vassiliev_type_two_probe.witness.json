@@ -1,0 +1,75 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T10:30:58.695702+00:00",
+  "commitSha": "d0d473550aab3e691555029ff097e3fb9cf31f61",
+  "assertions": [
+    {
+      "name": "c_2/c_0 = (N-Z)^2/2 + (5-A)/8 exactly, for every A = 3..10 and every Z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the additive L's type-2 piece is LINEAR in Z — no quadratic term survives the logarithm",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the all-pairs coefficient is C(A/2,2), growing like A^2/8 — further from the 1/A the SEMF needs than the chain's constant 1/2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the volume-like coefficient is more than an order of magnitude below SEMF's",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the asymmetry term is A-independent, so it cannot match SEMF's 1/A at more than one mass number",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "the_asymmetry_term_lives_at_vassiliev_type_two_probe",
+  "scriptFile": "the_asymmetry_term_lives_at_vassiliev_type_two_probe.py",
+  "scriptHash": "b3653f928cc7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.py"
+  },
+  "description": "The (N-Z)^2 asymmetry term lives at Vassiliev type two. For the chain trace written as a product of bond factors, c_2/c_0 = (N-Z)^2/2 + (5-A)/8 exactly, verified symbolically for every A = 3..10 and every Z. The mechanism is that the type-2 coefficient of a product contains sum_{i<j} f_i' f_j', a sum over PAIRS of bonds, quadratic in the bond counts; taking -log turns the product into a sum and removes exactly that term, which is why the resummed L is additive, linear in Z, and has no valley of stability. Read as -alpha c_2/c_0 this gives a volume-like term linear in A and an asymmetry term quadratic in N-Z, both with the SEMF's sign and functional form. Magnitudes are wrong (volume 0.52 vs 15.8 MeV/nucleon) and the asymmetry lacks the 1/A. The all-pairs factor product is also exactly quadratic but with coefficient C(A/2,2), which is worse. Compare qou-xwur, where the partition route gave only log[2T+1]_q. No binding number, no fit, nothing wired. Bean qou-oooq.",
+  "data": {
+    "chain_c2_over_c0_closed_form": "(N-Z)^2/2 + (5-A)/8",
+    "allpairs_quadratic_coefficient": "C(A/2,2)",
+    "volume_like_MeV_per_nucleon": "0.523248",
+    "asymmetry_MeV_per_NZ2": "2.092991"
+  },
+  "caveats": [
+    "Shape result only. No binding number is produced, nothing is fitted or wired, and the sign convention (binding as -c_2 rather than +c_2) is assumed rather than derived: c_2/c_0 is MINIMISED at N = Z.",
+    "The all-pairs case uses the naive factor product, not the true all-pairs trace, which qou-bygw showed is not well defined until a bond ordering is fixed. That ambiguity is untouched here.",
+    "Does not show that the LP/SDP per-type reading of vassiliev-filtration-mass-tower is the correct one. If the framework resums, the logarithm returns and so does the obstruction."
+  ]
+}

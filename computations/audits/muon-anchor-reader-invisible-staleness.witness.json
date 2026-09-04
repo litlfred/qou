@@ -1,0 +1,102 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T09:08:15.469360+00:00",
+  "commitSha": "7296c96e59db42d2fa42a269725f4151300eb242",
+  "assertions": [
+    {
+      "name": "provenance_pairing_beats_stem_pairing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "scriptFile pairs 65 of 86 named readers; filename-stem pairs 31. The one CONFIRMED member of this class (qbeta_ladder_convention_fee_probe -> qbeta-ladder-convention-fee, no '-probe' suffix) is invisible to stem pairing"
+    },
+    {
+      "name": "the_invisible_class_is_non_empty",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "4 witness(es) consume the muon anchor, carry no q0 literal and no q0Anchor/q0Value, and predate fca08de7d2 (2026-08-22): ['computations/lambda-scale-derivation-probes-123.witness.json', 'computations/probes/qbeta-c3-per-block-categorical-probe.witness.json', 'computations/qbeta/qbeta-markov-trace-norm-probe.witness.json', 'computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json']"
+    },
+    {
+      "name": "no_q0_gate_keys_on_anything_these_carry",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the anchor-flip gate reads q0Anchor/q0Value and the value-drift gate reads q0 literals; a witness in this bucket has neither by construction, so both are structurally blind to it -- this is a detector gap, not a drain backlog"
+    },
+    {
+      "name": "the_class_has_a_measured_member_not_only_a_risk_argument",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "qbeta-ladder-convention-fee muon row 7.336484242 -> 7.133936641 ppb (-2.7608 %) reproduced EXACTLY by evaluating the published ladder at anchor A vs anchor C, to every digit its witness carries. Amplification 3.588e8x the anchor's own 0.0769423 ppb shift"
+    },
+    {
+      "name": "the_at_risk_five_split_into_TWO_causes",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "re-run 2026-09-04: 3 anchor-class, 2 convention-class (C -> D symbolic forms). Reading all five as anchor drift would misattribute the larger half"
+    },
+    {
+      "name": "two_committed_witnesses_record_a_green_a_fresh_run_does_not_reproduce",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "['qbeta-markov-trace-norm-probe', 'qbeta-symbolic-tbeta-min-l2'] carry allPassed:true on main; at HEAD both return allPassed:false. NOT asserted a producer defect -- a C-frame assertion failing under D is what decayLadder_zC_threeRow_ne_zero predicts. The remedy is the qou-cds1 re-derivation; REFRESHING these would commit a red"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10131,
+  "computation": "muon-anchor-reader-invisible-staleness",
+  "scriptFile": "muon_anchor_reader_invisible_staleness_audit.py",
+  "scriptHash": "c125832acb94",
+  "scriptCommitSha": "7296c96e59db42d2fa42a269725f4151300eb242",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/muon_anchor_reader_invisible_staleness_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/muon_anchor_reader_invisible_staleness_audit.py"
+  },
+  "description": "Witnesses that CONSUME the muon anchor but RECORD only derived numbers carry no q0 literal or stamp, so neither the anchor-flip gate nor the value-drift gate can see them -- while the 2026-08-22 re-pin moves their numbers by up to percent through residual amplification (measured 3.588e8x on the one confirmed member). Scope-(a); nothing refreshed, nothing wired.",
+  "data": {
+    "producers_reading_anchor": 86,
+    "paired_by_provenance": 65,
+    "paired_by_stem": 31,
+    "visible_to_a_q0_gate": 52,
+    "computed_after_repin": 10,
+    "at_risk": 4,
+    "at_risk_witnesses": [
+      "computations/lambda-scale-derivation-probes-123.witness.json",
+      "computations/probes/qbeta-c3-per-block-categorical-probe.witness.json",
+      "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+      "computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json"
+    ],
+    "rerun_2026_09_04_cause": {
+      "lambda-scale-derivation-probes-123": "anchor",
+      "qbeta-c3-per-block-categorical-probe": "anchor",
+      "fvk-selection": "anchor",
+      "qbeta-symbolic-tbeta-min-l2": "convention",
+      "qbeta-markov-trace-norm-probe": "convention"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "static audit: parses witness JSON and compares strings; performs no arithmetic, so no q0 enters any recorded value"
+}
