@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T04:11:30Z
+updated_at: 2026-09-04T03:05:14Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -242,3 +242,91 @@ work and is not done.
    Suggestive, and precisely the kind of coincidence this corpus has repeatedly
    found to be generic -- do NOT read it as evidence without a genericity check
    of the kind `qou-22vu` ran.
+
+
+
+## TAKEOVER 2026-09-04 + ROUTE 2 RESULT — the genus handle is Borromean-only
+
+Taken over: this bean was `in-progress` with `updated_at` 2026-08-31T04:11:30Z
+(four days, past the 3 h staleness threshold) and its backing work is already on
+`main`. Owner opened a tranche on all three routes and asked for held-literature
+links. PR #6560, branch `claude/standard-panel-qou-derivation-ixuolx`.
+
+### Held literature, measured across BOTH library tiers
+
+The survey above searched `sections/` only, which is blind to `procrsoclondona92`
+(Moffatt & Ricca, *Helicity and the Calugareanu invariant*: 19 OCR pages against a
+1-section stub). Re-measured including `ocr/`: route 1 **10** documents, route 2
+**12**, route 3 **9**. Full ledger with per-document links:
+`docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.
+
+Acquisition gaps, stated as such: Freedman-He 1991 itself (does not touch either
+eq.-43 correction, Komendarczyk's statement being held); a multi-component SLq(2)
+labelling (route 1's real gap). **Route 3's gap is CODE, not acquisition** — all
+nine held papers give integral formulas or geometric interpretations, none gives
+the Magnus expansion of a longitude in the free group.
+
+### ROUTE 2 IS BLOCKED, and the reason inverts the arc's framing
+
+The corpus's only route to a NUMBER for `ac(L_k, L)` — which is an infimum over
+homotopies and not directly computable — is the complement-genus lower bound in
+the sentence after eq. (43). **That sentence is qualified "for borromean links",
+and the corpus drops the qualifier**: `qou-a9li` and `qou-b5yi` both quote the
+genus clause without it, and I repeated the elision from their wording before
+reading the source.
+
+The qualifier is load-bearing. A compact oriented `S ⊆ R³ \ L_j` with `∂S = L_k`
+forces `lk(L_k, L_j) = 0`, since `[L_k] = [∂S] = 0` in `H₁(R³ \ L_j) ≅ Z` and that
+class IS the linking number. So where some `lk ≠ 0` the minimised-over set is
+EMPTY — the estimate is ill-posed off the Brunnian class, not merely weaker.
+
+**Measured: 0 of 30 components** of the derived carrier have all pairwise linking
+vanishing — every isotope (2H, 3H, 3He, 4He, 6Li, 8Be), BOTH crossing-resolution
+branches. Checked in both because `lk` is branch-dependent, unlike `mu = A+1`.
+
+**The inversion:** the handle applies exactly on the Brunnian class, which in this
+arc means **L6a4** — the A=3 CENSUS assignment, the admitted AME-driven fit that
+owner ruling 2026-08-29 retired. Route 2's only computable handle works on the
+carrier that was retired, and not on the derived one.
+
+- Lean: `QOU/Mass/FreedmanHeGenusHandleNeedsVanishingLinking.lean`, lean-direct
+  exit 0, sorry-free; `no_component_is_brunnian` covers the ENDPOINT case a
+  "every vertex has a successor" argument silently misses; two declarations
+  depend on no axioms at all. The homological step is DELIBERATELY not
+  formalised (Seifert surfaces / H₁ of a link complement are not cheaply
+  available in this Mathlib; asserting them as a class would be the
+  axiomatisation-is-not-a-proof pattern).
+- Probe: `computations/probes/fh_genus_handle_requires_brunnian_probe.py`, 4/4.
+  The qualifier check is a LIVE read of the held source, so a re-ingestion that
+  changed the text fails the assertion rather than leaving a remembered reading.
+
+**SCOPE (b) on the HANDLE**, invariant cited (complement homology). Eq. (43) is
+untouched and remains a true lower bound. `ac(L_k, L)` itself is untouched —
+nothing here says it is small or zero. A different lower bound on `ac`, not
+routed through a complement genus, is NOT excluded and is not examined.
+
+### A method error of mine, worth more than the fix
+
+Both probes were emitting witnesses with no `q0Anchor`, so the q0-anchor refill
+ratchet counted them as NEW-unstamped. My #6515 PR body claimed "the new files
+appear nowhere in the gate log" — established by grepping the log for the
+filename. **The ratchet reports a COUNT, not filenames**, and the only line
+naming the file was `skipped: (new file — no HEAD copy to compare)`, which reads
+like a clean bill and is not one.
+
+    without the new files             NEW (not in baseline) : 40
+    with them, no q0Anchor            NEW (not in baseline) : 41
+    with both declaring independent   NEW (not in baseline) : 39   (drains one)
+
+Fixed at the producer in both (`independent` + a reason; a `q0Value` on an
+`independent` witness is a contradiction the audit flags `Q0_FLIP`). No baseline
+touched. **Rule: to test whether your files affect a ratchet, REMOVE them and
+diff the counts.** Grepping a gate log for your own filename cannot detect a gate
+that counts.
+
+### Still open on this bean
+
+Routes 1 and 3, unchanged in status by the above. Route 1 needs the link
+generalisation of the SLq(2) labelling (`mu > 1`); route 3 needs a first `mubar`
+value on the min-span triples `{i, i+2, i+4}`, which needs the Magnus-longitude
+machinery the corpus does not have.
