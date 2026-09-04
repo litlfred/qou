@@ -42,8 +42,42 @@ $h = q - q^{-1}$.
 |---|---|---|---|---|---|---|
 | **A** | matrix-M parabolic | — | — | — | never evaluated | not-a-$z$-trace |
 | **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated — **and measured non-normalized**, see §B-norm |
-| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
-| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525160$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241344268025766630375194816404153$ | $(0.4153958,\,0.2809296,\,0.0227449)$ (7 dp; C excised, not re-emitted) | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
+| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525159582986394589924802630839154509$ | $(0.50540422650393080319,\,0.24729788674803459841,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+
+### §z-dps — the table's $z(q_0)$ are now 50 dps, and the Python was wrong at 17 (2026-09-04, bean `qou-90k2`)
+
+The $z(q_0)$ and convention-D weight columns above were carried at 20 and 7
+significant digits respectively. They are now 50, matching the compute
+precision (`_precision.py` default: 65 dps compute / 50 dps serialization) and
+the L1 target of 1 ppQ. Quoting 7 digits for a production weight in the
+registry that *defines* production was the looser half of the defect.
+
+**The sharper half: [`computations/y_lambda_su_n.py`](../../computations/y_lambda_su_n.py)
+carried `REG_ZD` at 17 digits and its 17th digit was WRONG** — it read
+`...52` **4** where the correct rounding is `...52` **5**. It was not merely
+short. At relative error $1.89\times10^{-17}$ it was *worse than plain
+float64* ($6.69\times10^{-18}$), i.e. a float64 value truncated once more. It
+is the residue of the historical mis-record §Provenance already documents
+("$z_D$ was recorded $\ldots524365$, correct is $\ldots525160$"): the
+document was corrected and the Python was not.
+
+**Why it survived four months.** That module's self-test checks its own
+internal consistency at `1e-25` ($\Sigma y_\lambda f^\lambda = 1$, "production
+IS SU(2) exactly") — but cross-checked against the registry at `1e-15`, and the
+weights at `5e-7`. The one check tying the compute to this document's published
+number was pinned ten orders of magnitude looser than its neighbours, so an
+error of $1.16\times10^{-17}$ passed by a factor of 86. **A constant is only
+load-bearing to the precision of the assertion that reads it.** Those
+tolerances are now `1e-40`, and the self-test's working precision is raised
+from 30 to 60 dps so that `1e-40` is resolvable at all.
+
+The constants are **derived, not transcribed**: $z = q^3/(q^2+1)$ and the exact
+$n = 3$ weights $y_{(3)} = (q^4+1)/(q^2+1)^2$, $y_{(2,1)} = q^2/(q^2+1)^2$,
+$y_{(1^3)} = 0$, evaluated at the 50-digit proton pin, cross-checked against
+`y_lambda_su_n(3, q, 2)` at 60 dps to $3\times10^{-62}$. Convention C's
+$z(q_0)$ is extended for completeness; its weights are left at 7 dp because C
+is excised and re-emitting them would suggest they are live.
 
 ### §B-norm — row B is not merely deprecated, it is **not a probability measure** (measured 2026-09-04, bean `qou-7o7h`)
 

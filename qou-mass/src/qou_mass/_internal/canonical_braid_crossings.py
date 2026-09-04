@@ -252,7 +252,13 @@ def sign_for_ctype(ctype: str) -> int:
     way, because before `averaged_weighted` existed `classify_crossing`
     returned `averaged` for both. Centralising it here makes the projection
     explicit and auditable rather than an omission in four private tables.
-    The representational gap itself stays open under bean `qou-gdtb`.
+    The representational gap itself stays open under bean `qou-fv0s`.
+    (Retargeted 2026-08-30: this line said `qou-gdtb`, which is COMPLETED
+    and correctly so. `qou-gdtb` closed the *pair* form `(gen_idx, ctype)`,
+    which round-trips `d` exactly through `d_for_ctype` — measured at
+    2.66e-16, float64 epsilon. The gap this docstring describes is the
+    *sign* wire, a different encoding, and it is `qou-fv0s`. Pointing a
+    live gap at a closed bean invites reopening a bean that is right.)
     """
     if ctype == "sigma":
         return 1
