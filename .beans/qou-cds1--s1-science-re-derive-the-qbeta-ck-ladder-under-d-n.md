@@ -6625,8 +6625,9 @@ is well developed and current, and I did not know it:
 
 - **step 18** `HolonomySpectrumSignObstruction` — the generator must be elliptic;
 - **step 19** `ImQCannotSupplyEllipticGenerator` /
-  `qbeta_imq_elliptic_generator_refutation_probe.py` — **Im(q) is NOT the
-  source.** `|q|² = x² + y² > 1` for every `y` since `Re q = 1.10998 > 1`, so a
+  `qbeta_imq_elliptic_generator_refutation_probe.py` — **Im(q) is not the source
+  AT THE ARCHIMEDEAN LEVEL. Scoped 2026-09-04, see below; the fibre level is
+  OPEN.** `|q|² = x² + y² > 1` for every `y` since `Re q = 1.10998 > 1`, so a
   purely elliptic generator is impossible outright; forcing `Re[character]` onto
   0.998399 needs `Im(q) = ±0.139956` and leaves `Im[character] = 0.014069`,
   8.40× the entire deviation and 18074σ.
@@ -6637,8 +6638,27 @@ is well developed and current, and I did not know it:
   braid image) in the (2,1) block. Wrong phase: `θ = 2.0204` vs required
   `0.056595`, a factor of **35.7**.
 
-So there was nothing for me to add by "researching the elliptic condition". What
-I did instead was audit the number every candidate is scored against.
+### SCOPE CORRECTION to my own line above (same day, caught on check-in)
+
+I wrote "**Im(q) is NOT the source**" flat. That is **under-scoped**, and main
+landed the reason while this branch sat: `e68347cc12` **retargets
+`conj:im-q-physical-role` to the fibre**, recording that all three candidate
+roles are *"settled at `q_0` and all three stay open on the fibre"*.
+
+The step-19 argument I quoted is archimedean by construction — it reasons from
+`Re q = 1.10998 > 1` at the substrate anchor, so `|q|² > 1` for every `y`. That
+refutes Im(q) **as an observable-level quantity**. It says nothing about the
+fibre, where `Im(q)` is unconstrained (AGENTS.md's Im(q) banner makes exactly
+this split, and I cited that banner two messages before making the error).
+
+So the correct statement is: **Im(q) is refuted as the elliptic source at the
+archimedean level; at the fibre level it is open, and as of `e68347cc12` that is
+where the conjecture now lives.** That also means my "every route I can name is
+closed" summary was too strong — the fibre reading of route 5 is live.
+
+So there was nothing for me to add by "researching the elliptic condition"
+*as an archimedean question*. What I did instead was audit the number every
+candidate is scored against.
 
 ### The target is experimentally anchored — my circularity worry was WRONG
 
