@@ -117,6 +117,46 @@ type-A statement, so the exchange gap is not on its critical path — a route ar
 already exists inside this same arc, and `exists_garnir_length_additive` (#6598) is
 built on it.
 
+## 🛑 Lemma 3.9's conjugation step is FREE — do not build it
+
+3.9's proof opens by choosing `d` with `S_ν = d S_μ d⁻¹`, and the obvious plan is to
+build a block-stabiliser API and prove that conjugacy. **Do not.** Two facts meet:
+
+1. The corpus's Young subgroup is *already* a `MulAction.stabilizer` —
+   `Specht.rowStab t = MulAction.stabilizer (Perm (Fin (nOf μ))) (rowPattern t)`,
+   where `rowPattern t : Fin (nOf μ) → ℕ` sends a label to its row.
+2. Mathlib has the conjugacy in exactly that generality:
+
+       MulAction.stabilizer_smul_eq_stabilizer_map_conj (g : G) (a : α) :
+         stabilizer G (g • a) = Subgroup.map (MulAut.conj g) (stabilizer G a)
+
+They compose with **no glue at all** — verified, `lean`-direct **exit 0**:
+
+```lean
+example {μ : YoungDiagram} (t : Tableau μ) (d : Perm (Fin (nOf μ))) :
+    MulAction.stabilizer (Perm (Fin (nOf μ))) (d • rowPattern t)
+      = (rowStab t).map (MulAut.conj d).toMonoidHom :=
+  MulAction.stabilizer_smul_eq_stabilizer_map_conj d (rowPattern t)
+```
+
+**One catch, and it is why the first attempt reported "unknown constant".**
+`QOU.BraidKnot.Specht`'s import cone does **not** reach
+`Mathlib.GroupTheory.GroupAction.Basic`, so the lemma is invisible from a file that
+imports only the corpus. Add that import; the lemma is there. A missing import
+reads exactly like a missing lemma, and this arc has already spent two tranches on
+that confusion in the other direction.
+
+### So what is 3.9 actually made of
+
+Not the conjugacy. What remains is:
+
+1. **Composition-shaped tableaux.** `Specht.Tableau` is indexed by a `YoungDiagram`;
+   3.9 is stated for a *composition*, whose blocks are not weakly decreasing. Nothing
+   in the corpus has this. **This is the real cost of 3.9.**
+2. **That the row-sorting `d` carries `μ`'s block pattern to `ν`'s** — i.e. supplying
+   the specific `d`, which the Mathlib lemma takes as given.
+3. **The Hecke step**: `m_{st}` expands over `m_{uv}`.
+
 ## Status of the pieces this branch added
 
 All sorry-free, `#print axioms` clean:
