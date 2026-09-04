@@ -57,25 +57,33 @@ The **magnitude** of the transposition step — that multiplying by a transposit
 changes the orbit count by *exactly* one. Its parity is proved
 (`orbitDefect_swap_mul_odd`); the bound `|Δ| ≤ 1` is the gap.
 
-**It reduces to two strictly smaller pieces**, and the merge case is then *derived*
-rather than assumed (see the section before them):
+**It reduced to two pieces, and one of them is now proved.**
 
-* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split, within one cycle. This is
-  the direction Mathlib comes closest to: `Equiv.Perm.IsCycle.swap_mul` already
-  proves that removing a point from a cycle leaves a cycle.
-* **(R)** `sameCycle_swap_mul_of_not_sameCycle` — joining two different cycles puts
-  the two points in one cycle of the product. Elementary; the walk argument is
-  written out at the statement.
+* **(R)** `sameCycle_swap_mul_of_not_sameCycle` — **PROVED.** Joining two different
+  cycles with a transposition puts the two points in one cycle of the product. The
+  walk argument is at the statement; it turned out to need no `a ≠ b` at all.
+* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split, within one cycle. **The
+  one remaining `sorry`.**
 
 `orbitDefect_swap_mul_of_not_sameCycle` (the merge) is **proved from (S) and (R)**,
-using that `swap a b` is an involution. So the two `sorry`s are exactly (S) and (R),
-not the general statement.
+using that `swap a b` is an involution.
 
-So this file does **not** yet discharge the `ClassicalTraceFloor` hypotheses: it
-closes the **free** half outright and reduces the **atom** half from "a tabulated
-count at every `A`" to the two pieces (S) and (R), proving everything else that
-reduction needs — including the merge case itself. That is the honest state; do not cite it as closing the
-cycle-count gap.
+**(S) reduces further, and this is the sharpened target.** `Equiv.Perm.cycleOf` and
+`cycleFactorsFinset` split `σ` into `c = cycleOf σ a` and a disjoint remainder, and
+`orbitDefect_mul_of_disjoint` handles the remainder, so (S) is equivalent to the
+single-cycle statement
+
+    c a cycle,  a ≠ b,  a, b ∈ support c   ⟹   orbitDefect (swap a b * c) + 1 = orbitDefect c
+
+i.e. *a transposition of two points of one cycle splits it into two disjoint cycles
+on the two arcs*. Mathlib proves only the **adjacent** case, `Equiv.Perm.IsCycle.swap_mul`
+(where `b = c a`, so one arc is a single point); the general two-arc split is absent
+and is what a next attempt should build.
+
+So this file does **not** yet discharge the `ClassicalTraceFloor` hypotheses. It
+closes the **free** half outright, proves (R) and the merge, and reduces the **atom**
+half from "a tabulated count at every `A`" to one single-cycle split statement. That
+is the honest state; do not cite it as closing the cycle-count gap.
 
 -- Ref: [manuscript] bean qou-zrx2 follow-up (5); the transposition/cycle-count
 -- step is the classical fact underlying well-definedness of the sign of a
@@ -85,6 +93,18 @@ cycle-count gap.
 namespace QOU.MassTheory
 
 open Equiv Equiv.Perm Finset
+
+/-- If `x` returns to itself after `k` steps, every multiple of `k` fixes it. -/
+private theorem pow_mul_eq_self {α : Type*} {f : Perm α} {x : α} {k : ℕ}
+    (hk : (f ^ k) x = x) : ∀ q, ((f ^ k) ^ q) x = x
+  | 0 => by simp
+  | q + 1 => by rw [pow_succ, Perm.mul_apply, hk, pow_mul_eq_self hk q]
+
+/-- …so iterating from `x` is periodic mod `k`. -/
+private theorem pow_eq_pow_mod {α : Type*} {f : Perm α} {x : α} {k : ℕ}
+    (hk : (f ^ k) x = x) (i : ℕ) : (f ^ i) x = (f ^ (i % k)) x := by
+  conv_lhs => rw [← Nat.mod_add_div i k]
+  rw [pow_add, Perm.mul_apply, pow_mul, pow_mul_eq_self hk]
 
 variable {α : Type*} [Fintype α] [DecidableEq α]
 
@@ -240,26 +260,68 @@ below is *proved* from (S) and (R), because `swap a b` is an involution: applyin
 to `swap a b * σ`, whose `a` and `b` are in one cycle by (R), and using
 `swap a b * (swap a b * σ) = σ`, gives the merge statement directly.
 
-Both (S) and (R) carry `sorry` with `-- Ref:` as the honest "stated, not yet proved"
-marker per the repo's Lean discipline — NOT axiomatised, NOT weakened to something
-provable, and consumed by nothing outside this section.
+(S) carries `sorry` with `-- Ref:` as the honest "stated, not yet proved" marker per
+the repo's Lean discipline — NOT axiomatised, NOT weakened to something provable, and
+consumed by nothing outside this section. (R) is proved.
 -/
 
 /-- **(R)** Joining two different cycles with a transposition puts the two points in
-one cycle of the product.
+one cycle of the product. **Proved.**
 
-Elementary: iterating `τ = swap a b * σ` from `b` agrees with `σ` (since
-`τ x = σ x` whenever `σ x ∉ {a, b}`) until it reaches the `σ`-predecessor `x` of `b`,
-where `τ x = swap a b b = a`. Formalising it needs induction along `b`'s `σ`-cycle
-with `σ^j b ∉ {a, b}` for `0 < j < k`. -/
-theorem sameCycle_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
+Iterating `τ = swap a b * σ` from `a` agrees with `σ` (because `τ x = σ x` whenever
+`σ x ∉ {a, b}`) all the way to the first return `σ^m a = a`, where the swap finally
+fires and sends `a` to `b`. Nothing on `a`'s orbit is `b`, or `a` and `b` would
+already share a cycle; and nothing before step `m` is `a`, by minimality.
+
+Note it needs no `a ≠ b`: at `a = b` the hypothesis is already false, `SameCycle`
+being reflexive. -/
+theorem sameCycle_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α}
     (hnc : ¬ σ.SameCycle a b) :
     (swap a b * σ).SameCycle a b := by
-  -- Ref: [manuscript] bean qou-zrx2 follow-up (5), piece (R).
-  sorry
+  classical
+  -- `a` returns to itself under some positive power; take the least such `m`.
+  have hex : ∃ m, 0 < m ∧ (σ ^ m) a = a := by
+    refine ⟨orderOf σ, orderOf_pos σ, ?_⟩
+    rw [pow_orderOf_eq_one]; rfl
+  obtain ⟨hmpos, hma⟩ := Nat.find_spec hex
+  set m := Nat.find hex with hmdef
+  -- nothing on `a`'s forward orbit is `b`, or `a` and `b` would share a cycle
+  have hne_b : ∀ k : ℕ, (σ ^ k) a ≠ b := fun k hk =>
+    hnc ⟨(k : ℤ), by rw [zpow_natCast]; exact hk⟩
+  -- before the first return, `swap a b * σ` cannot tell itself from `σ`
+  have key : ∀ k, k < m → ((swap a b * σ) ^ k) a = (σ ^ k) a := by
+    intro k
+    induction k with
+    | zero => intro _; simp
+    | succ n ih =>
+        intro hn
+        have hn' : n < m := Nat.lt_of_succ_lt hn
+        have hne_a : (σ ^ (n + 1)) a ≠ a := by
+          intro hcon
+          exact absurd ⟨Nat.succ_pos n, hcon⟩ (Nat.find_min hex hn)
+        have hcomp : (σ ^ (n + 1)) a = σ ((σ ^ n) a) := by
+          rw [pow_succ', Perm.mul_apply]
+        rw [pow_succ', Perm.mul_apply, ih hn', Perm.mul_apply, ← hcomp]
+        exact swap_apply_of_ne_of_ne hne_a (hne_b (n + 1))
+  -- at the return step the swap fires, and sends `a` to `b`
+  refine ⟨(m : ℤ), ?_⟩
+  rw [zpow_natCast]
+  obtain ⟨n, hn⟩ : ∃ n, m = n + 1 := ⟨m - 1, by omega⟩
+  have hcomp : (σ ^ (n + 1)) a = σ ((σ ^ n) a) := by
+    rw [pow_succ', Perm.mul_apply]
+  have hma' : (σ ^ (n + 1)) a = a := by rw [← hn]; exact hma
+  rw [hn, pow_succ', Perm.mul_apply, key n (by omega), Perm.mul_apply, ← hcomp,
+    hma', swap_apply_left]
 
 /-- **(S)** Within one cycle, the transposition splits it and the defect drops.
-The direction Mathlib comes closest to (`Equiv.Perm.IsCycle.swap_mul`). -/
+**The one remaining gap.**
+
+Via `cycleOf`/`cycleFactorsFinset` plus `orbitDefect_mul_of_disjoint` this is
+equivalent to the single-cycle statement: for a cycle `c` with `a ≠ b` both in
+`support c`, `orbitDefect (swap a b * c) + 1 = orbitDefect c` — that a transposition
+of two points of one cycle splits it into two disjoint cycles on the two arcs.
+Mathlib proves only the ADJACENT case `b = c a` (`Equiv.Perm.IsCycle.swap_mul`,
+where one arc is a single point); the general two-arc split is what is missing. -/
 theorem orbitDefect_swap_mul_of_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hc : σ.SameCycle a b) :
     orbitDefect (swap a b * σ) + 1 = orbitDefect σ := by
@@ -275,7 +337,7 @@ above are the whole remaining gap. -/
 theorem orbitDefect_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hnc : ¬ σ.SameCycle a b) :
     orbitDefect (swap a b * σ) = orbitDefect σ + 1 := by
-  have hsc : (swap a b * σ).SameCycle a b := sameCycle_swap_mul_of_not_sameCycle h hnc
+  have hsc : (swap a b * σ).SameCycle a b := sameCycle_swap_mul_of_not_sameCycle hnc
   have hinv : swap a b * (swap a b * σ) = σ := by
     rw [← mul_assoc, swap_mul_self, one_mul]
   have hs := orbitDefect_swap_mul_of_sameCycle (σ := swap a b * σ) h hsc
