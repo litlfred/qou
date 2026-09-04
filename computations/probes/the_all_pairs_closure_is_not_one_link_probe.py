@@ -212,7 +212,7 @@ def main() -> int:
         print(f"  [{'ok ' if ok else 'FAIL'}] {name}")
 
     print(__doc__.split("\n")[0])
-    print(f"\nengine: {E.BITS} bits, q from Q_50_DIGIT_STR; alpha = {float(ALPHA):.6f} MeV")
+    print(f"\nengine: {E.BITS} bits, q from Q_50_DIGIT_STR; alpha = {float(ALPHA):.6f} MeV")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
 
     print("\n" + "=" * 74)
     print("§1  THE CONTROL AND THE EFFECT: chain defect ~ 0, all-pairs c_3 ~ -0.34")
@@ -315,7 +315,7 @@ def main() -> int:
         ok_corpus &= agree
         canon = "p" * ordr.count("p") + "n" * ordr.count("n")
         print(f"    {name:4s} order {ordr}  L = {fmt(L, 15)}   corpus {val}   "
-              f"|diff| {float(abs(L - mpfr(val))):.1e}   canonical? {ordr == canon}")
+              f"|diff| {float(abs(L - mpfr(val))):.1e}   canonical? {ordr == canon}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     check("both published A=3 all-pairs values are reproduced exactly at their own "
           "arrangements", ok_corpus)
 
@@ -326,14 +326,14 @@ def main() -> int:
                                   + bond_word("ppn", 1, 2) + bond_word("ppn", 0, 2)))
     gapa = abs(Lcanon - mpfr(CORPUS["3He"][1]))
     print(f"    3He canonical ppn  L = {fmt(Lcanon, 15)}  vs published pnp "
-          f"{CORPUS['3He'][1]}   arrangement is worth {float(gapa):.6f} in L "
-          f"= {float(gapa * ALPHA):.4f} MeV")
+          f"{CORPUS['3He'][1]}   arrangement is worth {float(gapa):.6f} in L "  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+          f"= {float(gapa * ALPHA):.4f} MeV")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     check("3He's published all-pairs number uses the NON-canonical arrangement pnp, which "
           "moves the far bond from pn to pp and is worth 0.07 in L",
           gapa > mpfr("0.06") and gapa < mpfr("0.08"))
     Lprod = gmpy2.log(free / E.trM(9, E.word("pnn", {0, 1, 2})))
     print(f"    and the production engine word() ordering for 3H: L = {fmt(Lprod, 15)}, "
-          f"differing from the published value by {float(abs(Lprod - mpfr(CORPUS['3H'][1]))):.4f}")
+          f"differing from the published value by {float(abs(Lprod - mpfr(CORPUS['3H'][1]))):.4f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
 
     print("\n" + "=" * 74)
     print("§4  AT A = 4 THE AMBIGUITY IS WORTH 15 % OF HELIUM-4")
@@ -363,8 +363,8 @@ def main() -> int:
     print(f"    distinct L values  : {len({fmt(v, 40) for v in vals})} of 40")
     print(f"    L range            : {fmt(lo, 15)} .. {fmt(hi, 15)}")
     print(f"    SPREAD             : {fmt(spread, 10)}")
-    print(f"    x alpha            : {float(spread * ALPHA):.4f} MeV "
-          f"= {float(100 * spread * ALPHA / B_AME_4HE):.1f} % of B_AME(4He) = {float(B_AME_4HE)}")
+    print(f"    x alpha            : {float(spread * ALPHA):.4f} MeV "  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+          f"= {float(100 * spread * ALPHA / B_AME_4HE):.1f} % of B_AME(4He) = {float(B_AME_4HE)}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     print(f"    sum of pairwise L  : {fmt(sumL, 15)}")
     print(f"    defect range       : {fmt(lo - sumL, 8)} .. {fmt(hi - sumL, 8)}")
     check("at A=4 the bond ordering moves L by more than 0.9, i.e. over 3.7 MeV and more "
@@ -389,9 +389,9 @@ def main() -> int:
         bs2 = bb[0] + bb[1]
         L2[o] = gmpy2.log(E.trM(6, bs2) / E.trM(6, bs2 + bond_word(o, 0, 1)))
         Lc = L2[o] + charge[o] * ct
-        print(f"  {REAL[o][0]:<18}{o:<6}{float(L2[o]):14.9f}{float(ALPHA * L2[o]):10.4f}"
-              f"{float(Lc):12.6f}{float(ALPHA * Lc):10.4f}   {REAL[o][1]}")
-    print(f"  charge term -(e/2)log(1-h) = +{float(ct):.6f} per unit charge: it raises pp and")
+        print(f"  {REAL[o][0]:<18}{o:<6}{float(L2[o]):14.9f}{float(ALPHA * L2[o]):10.4f}"  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+              f"{float(Lc):12.6f}{float(ALPHA * Lc):10.4f}   {REAL[o][1]}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+    print(f"  charge term -(e/2)log(1-h) = +{float(ct):.6f} per unit charge: it raises pp and")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     print(f"  pn and leaves nn alone, so it deepens the inversion rather than repairing it.")
     check("the model ranks nn > pn > pp while reality binds only pn — an inversion needing "
           "no ordering convention, since A=2 has a single bond",
@@ -433,9 +433,9 @@ def main() -> int:
         wb.add_data("A3_distinct_jones_sigma_inv", str(nV_inv))
         wb.add_data("A4_distinct_of_40_sampled", str(len({fmt(v, 40) for v in vals})))
         wb.add_data("A4_ordering_spread_L", fmt(spread, 20))
-        wb.add_data("A4_ordering_spread_MeV", f"{float(spread * ALPHA):.6f}")
+        wb.add_data("A4_ordering_spread_MeV", f"{float(spread * ALPHA):.6f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
         wb.add_data("A4_ordering_spread_pct_of_B_AME_4He",
-                    f"{float(100 * spread * ALPHA / B_AME_4HE):.4f}")
+                    f"{float(100 * spread * ALPHA / B_AME_4HE):.4f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

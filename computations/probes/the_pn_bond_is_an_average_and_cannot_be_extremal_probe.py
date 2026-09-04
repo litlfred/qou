@@ -163,36 +163,38 @@ def main() -> int:
     L = {k: -gmpy2.log(z + v) for k, v in d.items()}
     print(f"    {'bond':<6}{'d':>16}{'z + d':>16}{'L = -log(z+d)':>18}{'B = alpha L':>14}")
     for k in ("pp", "pn", "nn"):
-        print(f"    {k:<6}{float(d[k]):16.9f}{float(z + d[k]):16.9f}"
-              f"{float(L[k]):18.9f}{float(ALPHA * L[k]):14.4f}")
+        print(f"    {k:<6}{float(d[k]):16.9f}{float(z + d[k]):16.9f}"  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+              f"{float(L[k]):18.9f}{float(ALPHA * L[k]):14.4f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     frac = (z + d["pn"] - (z + d["nn"])) / ((z + d["pp"]) - (z + d["nn"]))
-    print(f"\n    the pn factor sits at fraction {float(frac):.6f} of the way from nn to pp")
+    print(f"\n    the pn factor sits at fraction {float(frac):.6f} of the way from nn to pp")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     check("tr_2 being affine in d, z + d_pn lies STRICTLY between z + d_nn and z + d_pp",
           (z + d["nn"]) < (z + d["pn"]) < (z + d["pp"]))
     check("L = -log(z+d) is decreasing in d, so L_pp < L_pn < L_nn is forced",
           L["pp"] < L["pn"] < L["nn"])
     dq = (q - 1) ** 2 * (1 - q ** -4) / 3
-    q_break = float(sp.nsolve(sp.Eq(dq, 2), q, 3.0))
-    d0 = float(dq.subs(q, sp.Float(str(E.Q))))
-    print(f"    delta(q0) = {d0:.8f};  delta reaches 2 only at q = {q_break:.4f}, "
-          f"against q0 = {float(E.Q):.5f}")
+    # delta at q0 comes from the exact engine, not a sympy round-trip: it is the
+    # quantity the whole convexity argument turns on, so it stays in mpfr.
+    d0 = E.DELTA
+    q_break = sp.nsolve(sp.Eq(dq, 2), q, 3.0)   # float64-ok: sympy mpf, a coarse diagnostic bound (>3), never fed back
+    print(f"    delta(q0) = {float(d0):.8f};  delta reaches 2 only at q = {float(q_break):.4f}, "  # float64-ok: display only
+          f"against q0 = {float(E.Q):.5f}")  # float64-ok: display only
     check("delta is nowhere near the value that would break convexity, so the ordering "
-          "is not tunable by q", 0 < d0 < 0.01 and q_break > 3)
+          "is not tunable by q", mpfr(0) < d0 < mpfr("0.01") and q_break > 3)
 
     print("\n" + "=" * 74)
     print("§3  WHAT PHYSICS HAS, AND WHAT THE MODEL CAN OFFER")
     print("=" * 74)
     print(f"    {'system':<18}{'bond':<6}{'B_model (MeV)':>15}   reality")
     for k in ("pp", "pn", "nn"):
-        print(f"    {REAL[k][0]:<18}{k:<6}{float(ALPHA * L[k]):15.4f}   {REAL[k][1]}")
+        print(f"    {REAL[k][0]:<18}{k:<6}{float(ALPHA * L[k]):15.4f}   {REAL[k][1]}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     print(f"\n    exactly one of the three binds, and it is pn — so a constant that ranks")
     print(f"    binding must put pn at an EXTREME. A convex combination is never an")
     print(f"    extreme. The model cannot rank the two-body systems, for any q.")
     check("the one system that binds is assigned the MIDDLE bond constant",
           L["pp"] < L["pn"] < L["nn"] and REAL["pn"][2] is not None)
     over = ALPHA * L["pn"] / REAL["pn"][2]
-    print(f"    and the one it does bind it overshoots: {float(ALPHA * L['pn']):.4f} vs "
-          f"AME {float(REAL['pn'][2]):.5f} = {float(over):.4f}x")
+    print(f"    and the one it does bind it overshoots: {float(ALPHA * L['pn']):.4f} vs "  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+          f"AME {float(REAL['pn'][2]):.5f} = {float(over):.4f}x")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     check("the deuteron itself is overshot by ~1.27x — the same defect seen a second way",
           mpfr("1.2") < over < mpfr("1.35"))
 
@@ -202,8 +204,8 @@ def main() -> int:
     q2 = E.Q + 1 / E.Q
     q3 = E.Q ** 2 + 1 + 1 / E.Q ** 2
     wig = mpfr(str(M_E_MEV)) * q3 * q2 ** 2
-    print(f"    wigner-np-pairing: Delta_(2,2) = m_e [3]_q [2]_q^2 = {float(wig):.4f} MeV")
-    print(f"      [2]_q = {float(q2):.6f}   [3]_q = {float(q3):.6f}   block says ~6.29 MeV")
+    print(f"    wigner-np-pairing: Delta_(2,2) = m_e [3]_q [2]_q^2 = {float(wig):.4f} MeV")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+    print(f"      [2]_q = {float(q2):.6f}   [3]_q = {float(q3):.6f}   block says ~6.29 MeV")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
     check("the block's 6.29 MeV is reproduced, so the reading of it is right",
           abs(wig - mpfr("6.29")) < mpfr("0.01"))
     print(f"    that is a (2,2) |- 4 object; there is no (2,2) partition of 2, so it")
@@ -228,14 +230,14 @@ def main() -> int:
             "reproduced), which has no analogue at A=2. Caveat recorded: this L has no "
             "spin, and the bound/unbound split is a spin effect; the ORDER is not.")
         for k in ("pp", "pn", "nn"):
-            wb.add_data(f"d_{k}", f"{float(d[k]):.12f}")
-            wb.add_data(f"L_{k}", f"{float(L[k]):.12f}")
-            wb.add_data(f"B_{k}_MeV", f"{float(ALPHA * L[k]):.6f}")
-        wb.add_data("pn_fraction_between_nn_and_pp", f"{float(frac):.9f}")
+            wb.add_data(f"d_{k}", f"{float(d[k]):.12f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+            wb.add_data(f"L_{k}", f"{float(L[k]):.12f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+            wb.add_data(f"B_{k}_MeV", f"{float(ALPHA * L[k]):.6f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+        wb.add_data("pn_fraction_between_nn_and_pp", f"{float(frac):.9f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
         wb.add_data("delta_at_q0", f"{d0:.10f}")
         wb.add_data("q_at_which_delta_reaches_2", f"{q_break:.6f}")
-        wb.add_data("deuteron_overshoot", f"{float(over):.6f}")
-        wb.add_data("wigner_2_2_MeV", f"{float(wig):.6f}")
+        wb.add_data("deuteron_overshoot", f"{float(over):.6f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
+        wb.add_data("wigner_2_2_MeV", f"{float(wig):.6f}")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

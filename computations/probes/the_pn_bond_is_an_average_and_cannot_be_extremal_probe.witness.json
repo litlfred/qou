@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:24:15.897984+00:00",
-  "commitSha": "9eb2b7d9594856c8a758c369c095f0cfba0048ff",
+  "computedAt": "2026-09-04T07:09:08.748661+00:00",
+  "commitSha": "70e60d642735e2fa3adc2bd0ea87631453ea6a65",
   "assertions": [
     {
       "name": "d_pn is exactly the stated convex combination of d_pp and d_nn (sympy)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 19,
   "computation": "the_pn_bond_is_an_average_and_cannot_be_extremal_probe",
   "scriptFile": "the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py",
-  "scriptHash": "f053f6dcb2e8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b237960f7b0a",
+  "scriptCommitSha": "f815e6a63f2be20c36302c525de23d8d238c62fa",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
