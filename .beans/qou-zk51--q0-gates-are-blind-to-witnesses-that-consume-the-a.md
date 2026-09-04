@@ -274,3 +274,78 @@ is left standing with this retraction as its counterpart — rewriting a pushed
 commit to tidy a message is worse than an additive correction. The coordination
 comments on #6605 and #6595 do **not** carry it; I checked both rather than
 assuming.
+
+---
+
+## The class is now GATED, not just reported (2026-09-04, after #6606 merged)
+
+The deferred item *"whether the gate should be extended to key on producer
+dataflow rather than on a literal's presence"* is done, as a **ratchet on this
+audit** rather than a change to either live q₀ gate — zero blast radius on the
+`qou-3f7a` / `qou-cds1` drains, which is why it took this shape.
+
+`--strict` gates against `computations/audits/q0-dataflow-unstamped-baseline.json`.
+**Drains only**: `--write-baseline` REFUSES to add an entry and says why.
+
+### The design flaw caught before building, not after
+
+Gating on the **AT-RISK** set — the obvious move — **catches nothing new.**
+At-risk means *"predates the 2026-08-22 re-pin"*, so a witness written today
+has a later `computedAt`, lands in `newer`, and sails through — while being
+**exactly as invisible at the next anchor change**. The date answers *which are
+stale now*; a gate must answer *which could go stale unseen*.
+
+So the ratchet keys on the **structural**, date-independent property:
+
+> an anchor-reader witness carrying **neither a q₀ stamp nor a q₀ literal** —
+> one that no q₀ gate can see.
+
+That disjunction is right because it is exactly *visible to at least one
+existing gate*: anchor-flip reads `q0Anchor`/`q0Value`, value-drift reads q₀
+literals. **Baseline at introduction: 13** (3 at-risk + 10 `newer`).
+
+### Verified to actually fire
+
+A gate that cannot fail is documentation — this repo lost weeks to
+`precision-gates.sh` being prose nobody invoked (`qou-mnrd`, `qou-82ur`):
+
+| case | expected | got |
+|---|---|---|
+| clean baseline, `--strict` | rc 0 | **rc 0**, `NEW 0` |
+| one baseline entry removed (simulates a new unstamped witness) | rc 1 | **rc 1**, names it, points at the producer |
+| `--write-baseline` against a grown set | rc 1 | **rc 1**, *"REFUSING to grow"* |
+
+### Two things the gates told me about my OWN work
+
+1. **This audit's witness must not be committed from a feature branch.**
+   `precision-gates.sh` lists it under *"TREE-MEASURING AUDIT WITNESSES MOVED —
+   DO NOT COMMIT THESE"* (`qou-v0t8`): it counts things about the tree, so it
+   moves whenever main moves, and committing it either walks a drain-only
+   ratchet backwards or acquires a recurring conflict. Only the `.py` and the
+   baseline are committed here. The baseline is a *different* kind of artifact —
+   a drains-only gate input, like `raw-float64-baseline.json`, deliberately
+   committed.
+2. **A new RED (`float64-padding ratchet`) is NOT mine.** It appeared between
+   two gate runs, but attribution was settled by running the padding audit
+   directly: every hit is on `qbeta-markov-trace-norm-probe.witness.json` —
+   one of the two convention-class witnesses belonging to `qou-cds1` — and
+   **zero** on any file of mine. The RED line differed only because main
+   advanced ~130 commits between runs. **A comparison against a run on a
+   different base is not attribution.**
+
+### A self-inflicted loss worth recording
+
+Mid-way I ran `git status --porcelain | grep '^ M' | awk '{print $2}' | xargs
+git checkout --` to revert gate collateral. After a `git stash pop` my own
+`.py` and bean edits were *unstaged*, so the blanket revert **destroyed them**
+— no stash left to recover from; both had to be re-applied by hand. This is the
+exact "revert **by name**, never blanket" rule in AGENTS.md, which I had
+already invoked correctly twice in the same session before breaking it. The
+failure mode is specifically **blanket-reverting after a stash pop**, when your
+own work is unstaged and indistinguishable by status from the collateral.
+
+### A number that moved between measurement and now
+
+Reader count on `main` is **85** (was 86), paired **64** (was 65), AT RISK **3**
+(was 4) — a sibling drained one in the interval. Re-measure rather than quoting
+these; the audit prints them every run.
