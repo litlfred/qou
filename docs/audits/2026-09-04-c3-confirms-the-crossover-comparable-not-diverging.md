@@ -4,6 +4,62 @@
 continue the cancellation? `c₂` was measured there (it does not — it overtakes
 `c₁`). `c₃` is measured here. Beans `qou-brng` / `qou-pdg9`.
 
+## 🛑 NAMING — these `c_k` are NOT the Q_β ladder `c_k`, and not the z-recursion `a_n` either
+
+**`c_k` is the most overloaded glyph in this corpus**, and
+[`ck-dk-canonical-registry.md` §2](../coordination/ck-dk-canonical-registry.md)
+exists to keep its meanings apart. This document, and its two predecessors
+(`2026-09-03-c1-leading-order-vs-uic-flatness.md`,
+`2026-09-04-c2-does-not-continue-the-cancellation.md`), use `c_k` for an object
+that has **no row in that registry**. Read them with this note.
+
+**What these `c_k` are here:** the `ℏ_q`-expansion coefficients of the trace
+difference `Δtr = tr_M(W_free) − tr_M(W_atom)`, at a fixed nucleus. The name
+comes from `c1_leading_coefficient_derived_probe.py` (PR #6492), whose docstring
+defines `c₁ = lim (Δtr − c₀(A))/ℏ_q`. That probe mentions the ladder and the
+registry **zero times**.
+
+**Measured separations — this is not a stylistic quibble:**
+
+| | `c₂` | `c₃` |
+|---|---|---|
+| Q_β precision ladder (registry §3, governed) | `−1` | `−2.0693` |
+| **this document** | **`+29.8965`** | **`+247.98`** |
+
+Different sign, different magnitude, different object.
+
+**They are also NOT the registry's `a_n`** ("ℏ-Taylor coefficients of `Δtr_M`"),
+which is the nearest-looking row and which a reader would reasonably land on.
+That `a_n` satisfies a 3-term recursion
+`a_{n+1} = −3n/(2(n+1))·a_n − (2n−1)/(4(n+1))·a_{n−1}`. Tested against the
+ε-Taylor coefficients here (⁴He: `a₀ = 7/128`, `a₁ = 259/128`,
+`a₂ = 14271/512`, `a₃ = 97389/512`):
+
+    n=1:  predicted a₂ = −1561/1024 = −1.5244   actual = 27.8730   NO
+    n=2:  predicted a₃ = −7265/256  = −28.3789  actual = 190.2129  NO
+
+So it is a **third object**, distinct from both registry entries.
+
+**Why this matters beyond bookkeeping.** The corpus has already renamed one
+colliding family off `c_k` — `cl_k`, the cluster/Ursell coefficients, renamed
+2026-08-07 *"because it sat within ~12 % of the ladder `c_3 = −2` with no signal
+they were unrelated objects"*. And the confusable claim here is not hypothetical:
+the AGENTS.md ladder banner discusses **the non-monotonicity of a `c_k` series**
+(N=4 → N=5) as a fit signature, while this document discusses **the
+non-monotonicity of a `c_k` series** (order 2 → 3) as a convergence property.
+Same glyph, same-sounding claim, unrelated objects.
+
+**Disposition.** Renaming is the probe owner's call (`qou-pdg9`) since the name
+originates in their probe and a rename touches their code, their witness and its
+assertion names — not something to do unilaterally from an audit doc. What is
+done here is to state the separation wherever the symbol is used. A registry row
+for this object, or a rename off `c_k`, is the durable fix.
+
+**My share of this.** I inherited the glyph from #6492, but propagating it into
+three audit documents and two merged PRs without running the registry check is
+mine — AGENTS.md says plainly to *"check registry §2 before asserting a property
+of `a₁`/`Φ₂`/`c_k`-like symbols"*, and I did not, across the whole arc.
+
 ## Measured — `c₃` at A = 4
 
     P=5   d.p=4   c1 = 259/128 (gate PASSED)
