@@ -101,6 +101,52 @@ the corpus sits on the *other* side — `⋈_K` and
 `conj:isospin-from-canonical-bowtie` — which is one more reason the missing
 morphism is the interesting object.
 
+## 3b. The convolution IS defined — and the mismatch is an INDEX mismatch
+
+`⋈_K` is defined, at
+[`def:canonical-braid-interface-composition`](../../content/quantum-observable-universe/mass-theory/canonical-braid-interface-composition.md),
+with the symbol's contract in the notation register
+(`tbl:notation-register-table3-data`, rows 7 and 10):
+
+* `𝓑_K ∈ H_{3A}(q)` is the canonical atomic braid for atom `K = (Z, N)`,
+  `A = Z + N`, in standard `pppnnn` ordering, and it **factorises**
+  `𝓑_K = 𝓑_K^vac · ⋈_K` (vacuum · interface).
+* The interface is the product of the `A − 1` inter-nucleon generators
+  `σ_{3k+2}`, each classified by the flavour pair it bridges, with counts
+  `n_pp = max(0, Z−1)`, `n_nn = max(0, N−1)`, `n_pn = 1` when `Z, N ≥ 1`,
+  summing to `A − 1`. The `(𝔭,𝔫)` entry is `σ − h/2` at `δ = 0`, or the
+  colour-tube-weighted `σ − h(1/2 − δ/4)` canonically.
+* The register records it as the **replacement for `Δ_I^K`**, always
+  `K`-subscripted, with bare `⋈` re-assigned to `⊕` for the inter-block
+  Hopf-link operation.
+
+So the convolution is **multiplication inside `H_{3A}(q)`** by a
+flavour-weighted product of Hecke generators. That pins the mismatch with §2
+precisely, and it is not a mismatch of *formalism* but of *index*:
+
+| | what it is indexed by | what it moves |
+|---|---|---|
+| `⋈_K` | the **atom** `K = (Z,N)`, through `A = Z+N` **strands** | the strand index of `H_{3A}(q)` |
+| quantum torus `T` | the **colour** `N`, via `M = q^N` | the colour index of the tower `J : ℤ → K` |
+
+**The convolution moves strand count; the quantum torus moves colour.** A
+morphism between them is therefore not a change of coordinates — it is a
+statement about how *strand composition* interacts with *colour recursion*.
+
+Two things follow, and the second is a warning:
+
+1. **The classical prototype exists.** Under **connected sum** the coloured
+   Jones multiplies, `J_{K₁ # K₂} = J_{K₁} · J_{K₂}`, so the recurrence ideals
+   interact predictably and a map `A_{K₁} × A_{K₂} → A_{K₁#K₂}` is the natural
+   first target.
+2. **But `⋈_K` is not a connected sum.** The register calls it
+   *"Hopf-link-style"*, and under a genuine link operation the coloured Jones
+   does **not** simply multiply. So the shape here is the known-hard one, not
+   the known-easy one. Anyone starting on this should expect the connected-sum
+   case to work and the Hopf-linked case to be the actual problem — which is
+   also, note, exactly where the corpus puts its physics: `⊕` is the
+   inter-block Hopf-link operation that assembles `Z𝔭 ⊕ N𝔫`.
+
 ## 4. What is genuinely absent
 
 Present in `library/` and absent from `content/`, measured:
