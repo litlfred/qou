@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T06:22:46Z
+updated_at: 2026-09-04T09:12:08Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -72,3 +72,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (hook column CHAIN CLOSED): Σ|eig(M_hook)|/dim ≤ √(B''_j/dim) with B''_j = c²q^{T(1-j)}Σ_{a,b}Σ_± e_j(|μ|), T=2L+4, and B''_j/dim STRICTLY DECREASING in j=b(λ) at A=2 and A=3. Every step derived: (B) Cauchy-Schwarz+Schur (#6573); the closed form via the common twist (#6556); B''_j via |e_j(μ)| ≤ e_j(|μ|), Lean-proved in MagnusHookDecayBound. Tightness 0.06–0.24 (bound 4–16x loose but valid+monotone). STILL INPUT not theorem: the Burau moduli themselves are measured. TWO ERRORS OF MINE CAUGHT BY THE PROBE: (a) tightness column mixed total Σ|eig| with the PER-DIM bound — a units error printing ratios >1 that read as a bound violation; fixed. (b) I asserted the CRUDE bound could not decay — it DOES decay per-dim at both A (the binomial divides back out since dim=C(n-1,j) for a hook); crude vs sharp differ in TIGHTNESS (3x to ~2000x), not monotonicity. #6520's precedent is about RAW monotonicity, a different quantity — do not carry it across.
+
+
+- 2026-09-04 (two-row majorant route: NEGATIVE, scope-(a)). #6525's sector identity DOES carry the positive majorant (Ř symmetric, max|R−Rᵀ|=0.0; tr_λ(X*X) = tr_W_k − tr_W_(k−1) exact to 6.1e-139), and positivity makes dropping the subtracted sector LEGAL: 0 ≤ tr_(n−k,k)(X*X) ≤ tr_W_k(X*X), holds at every k, computed as ‖X|_W_k‖_F² on a C(n,k) block of the fixed 4×4 Ř (no eigenvalues). BUT the bound does NOT decay per dim — bound/dim rises at the last k at BOTH A (A=2: 320.8, 281.4, 560.0; A=3: 4718.6, 4191.2, 3856.1, 5388.2) and slack grows 1.0→10.5 (A=2), 1.0→5.5 (A=3), because the lower sectors accumulate. So positivity makes the drop legal, not affordable; the difference structure #6525 flagged remains the obstacle. Scope-(a): excludes the drop-the-sector route as stated, NOT a two-row bound that keeps the difference (e.g. via the sl₂ lowering intertwiner W_(k−1) ↪ W_k, so the difference is a trace on the cokernel) — untried.
