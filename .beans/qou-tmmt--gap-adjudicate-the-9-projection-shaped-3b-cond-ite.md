@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-09-04T14:12:30Z
+updated_at: 2026-09-04T14:16:58Z
 ---
 
 Found by `bun run scripts/conditional-on-class-hypothesis-audit.ts --projections`
@@ -78,3 +78,72 @@ Open each of the 9 declarations and its bound class; decide whether a field
 carries the block's conclusion. Fix as `prop:explicit-central-idempotent` was
 fixed — re-encode the class as genuine sub-hypotheses so the theorem composes
 them. That is per-block mathematics, not a sweep.
+
+
+---
+
+## ADJUDICATED 2026-09-04: 2 of 9 read, both CONFIRMED item-5 violations
+
+### 1. `cor:knot-factor-borromean-composite` — CONFIRMED
+
+`content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean`
+
+    structure BrunnianDecoupling (k : ℕ) (component_factor : ℝ)
+        (composite_factor : ℝ) : Prop where
+      decouples : composite_factor = component_factor ^ k
+
+    theorem knot_factor_borromean (k : ℕ) (h : ℝ) (composite : ℝ)
+        (decouple : BrunnianDecoupling k (1 - h ^ 2) composite) :
+        composite = (1 - h ^ 2) ^ k :=
+      decouple.decouples
+
+The structure has **exactly one field, and it is the theorem's conclusion**.
+Textbook item 5.
+
+Note the file's own comment defending it: *"it genuinely consumes the
+`BrunnianDecoupling` hypothesis."* True, and beside the point — consuming a
+hypothesis that IS the conclusion is precisely what item 5 forbids. The same
+comment records removing a neighbouring vacuity (`∃ a, a = e`), so the author
+was auditing for vacuity and this shape passed that filter. **Item 5 is not
+visible to a vacuity check.**
+
+### 2. `prop:gb-residue-spectral-sum` — CONFIRMED
+
+    theorem gb_residue_spectral_sum (R) [CommRing R] [LinearOrder R]
+        [s : GBResidueSpectralSum R] :
+        s.mass = |s.descended| + ∑ ℓ : Fin s.levelBound, s.residue ℓ :=
+      s.spectral_decomposition
+
+Field projected directly. And the class's **own docstring already says the
+quiet part**: the graded trace is *"supplied freely by the instance … **That
+is not encoded here** — no field relates this to `tr_M`, to the filtration, or
+to `descended`"*. So the class is documented as asserting nothing structural,
+and the theorem projects one of its fields.
+
+### Bonus finding — a same-FQN duplicate, latent not live
+
+`GBResidueSpectralSum` is declared **twice**, both in `namespace QOU.BraidKnot`:
+
+- `content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean` (block sibling)
+- `content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean` (library)
+
+i.e. two declarations of `QOU.BraidKnot.GBResidueSpectralSum`. This is the
+sibling/library divergence hazard from `qou-e7xv` / PR #6540 §"A cost of this
+sweep", and `lean.ref` resolves **sibling-first by file**, so the sibling wins.
+
+**Compared: the field NAMES and types agree for all seven data fields.** The
+one multi-line field, `spectral_decomposition`, was truncated by the comparison
+and is **NOT** compared — do not read this as "the two are identical". Latent,
+not currently diverged as far as checked.
+
+## Still to adjudicate: 7
+
+    cor:lr-tensor-character-bridge              h.bridge ν β
+    prop:archimedean-functor-uniqueness         hD.uniqueness τ_arch h_cont h_anti h_pent
+    prop:atom-knot-mass-derivation              h.atom_knot_mass_derivation cert T_w
+    prop:hecke-branching-trace-decomposition    h.decomposition lam I beta1 beta2
+    prop:markov-trace-recursive-reducer         ctx.claim_reducer_correct β
+    prop:rho-k-h3a-refinement                   inst.identity data Δ partitions
+    prop:sigma-shell-from-beta-chain-derivation inst.identity data
+
+Hit rate so far is 2/2, but two is not a rate — read each.
