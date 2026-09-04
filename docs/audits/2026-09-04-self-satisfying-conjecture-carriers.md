@@ -335,3 +335,69 @@ instance in the tree (`observations/borromean-quark.lean:120`). The other nine
 have none, so an instance-keyed census is structurally blind to all nine — there
 is nothing for it to match. The two detectors are complementary, and neither
 subsumes the other.
+
+---
+
+# Prior work this sits next to — and the one place we disagree
+
+*Added after merge, on a corpus-grep of `docs/audits/` and `.beans/` for each
+carrier — the step whose omission produced the retraction above.*
+
+The nearest prior work is
+[`2026-08-23-free-prop-field-census.md`](2026-08-23-free-prop-field-census.md)
+(PR #5562, beans `qou-lo1t` / `qou-tsnp`). It **already names
+`BorromeanQuark`** — specifically that its `instance canonical` is declared
+twice, in a chapter sibling and in the library, "the shadow-pair shape again".
+Read it before this file.
+
+## The questions are different, and the difference is mechanical
+
+That census asks: *which carriers have a **free `Prop` field**?* — the
+self-nominating `X : Prop` + `h_X : X` shape. This audit asks: *which carriers
+**satisfy themselves**?*
+
+Neither contains the other:
+
+- `q-beta-spectral-bridge`'s carrier has **no `Prop`-typed field at all**
+  (`Q_beta_A : ℝ`, `Q_beta_B : ℝ`, `forms_agree : Q_beta_A = Q_beta_B`), so the
+  free-`Prop` census cannot see it. It is nonetheless inhabited by `⟨0, 0, rfl⟩`.
+- Conversely a free `Prop` field can sit in a carrier whose *other* fields
+  constrain something external, which the census flags and this audit would not.
+
+Nor is either a duplicate of `qou-hjf4`'s
+[`trivially-inhabiting-instance-census.py`](../../scripts/trivially-inhabiting-instance-census.py),
+which keys on `INSTANCE_HEAD` — an unguarded global `instance` with constant
+data content. Measured above: nine of the ten `BorromeanQuark` classes have no
+instance anywhere, so that census has nothing to match on.
+
+## Where this contradicts the census, and why it is worth saying
+
+The census crosses its 122 free-`Prop` carriers against inhabitation and finds
+**89 with no inhabitant at all**, then reads that as reassuring:
+
+> The 89 are the §3b-tax **honest open state** — nothing inhabits them, so a
+> downstream `[C] → P` can never be *applied*. Weak, but inert.
+
+**For a self-satisfying carrier that reading does not hold.** "Nothing inhabits
+it" is not evidence of an open state when inhabiting it costs one line that any
+reader could write in seconds — it is evidence that nobody bothered. The
+`[C] → P` theorem is not gated by an open problem; it is gated by a fact nobody
+has typed. Every instance in the two evidence files here was written in one
+line, and `T5`/`T7`/`C2` need no axioms at all.
+
+So the census's "weak but inert" verdict is right for a carrier that is merely
+*unproved*, and wrong for one that is *unprovable-to-fail*. Separating those two
+is what the parametrise-don't-field fix is for, and the census's own count
+cannot make the split, because inhabitation-in-the-tree is the wrong probe:
+the question is whether an instance is **available**, not whether one is
+**present**.
+
+## A methodological warning from that same census, which applies here
+
+> a `lean` run killed by a 2-minute command timeout leaves a log with zero
+> errors in it, which reads as success
+
+Both evidence files here were run to completion in the background with the exit
+status captured *after* the process exited (`v_qcod exit=0`, `v_reid exit=0`,
+and the two `#print axioms` batches), not read out of a truncated log. Worth
+stating, because a clean-looking log is exactly what a killed run produces.
