@@ -241,3 +241,54 @@ Audit: `docs/audits/2026-09-04-contact-distribution-complex-rank-and-dimension-s
   `docs/coordination/s5-so3-keystone.md:31,47,51` — no compact / finite-dim
   Sasakian arena can host `W_λ` (`q₀` real > 1, not a root of unity). Scope
   **(a)** against a 7-dim contact route: different construction, must be re-run.
+
+## 2026-09-04 — the hyperbolic volume as a QOU structure (bean `qou-xlw1`)
+
+Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md`.
+
+- **Is the hyperbolic volume "imported, not a QOU structure"?** → **NO, and that
+  claim was MINE and is RETRACTED.** ~180 QOU `.lean` files on this layer;
+  `Archimedean/HyperbolicMetric.lean` builds `dH` on `H³` from path lengths
+  (sorry-free isometry engine); `MathlibExt/IdealTriangulation.lean` (sorry-free)
+  has `IdealTetrahedron`, `volume_eq_lob_sum`, `param_im_pos`, `param_prod = −1`,
+  `SatisfiesEdgeEquations`. **`figure-eight-kashaev-volume.witness.json` is
+  `verdict: CONFIRMED`** — Richardson 2.03017614 vs `2·Cl₂(π/3)`, err 2.93e-4.
+  SnapPy 3.3.2 really runs (`snappy-cusp-seeding.witness.json`, 45 ms).
+- **Route tiers:** L1 poles **T0**; L2 pole↔cusp / L3 cusp-completeness / L5
+  volume conjecture **T3** (class, no instance); L4 Archimedean limit **T1+T2**.
+  Top-level route statement `brings-surface/thurston-relaxation.md:7-11` is a
+  **`prose` block** — programme, not result. Stated for the `Φ_q`-piece **`K_S`
+  only**, never general knots.
+- **🛑 WEAKEST LINK, and it is a TYPE:** `algebraic-geometric-dilog-equivalence.lean:44`
+  has `opaque BlochWignerD : ℝ → ℝ` and `class …(q x : ℝ)`, so the shape parameter
+  is **real** — but the corpus PROVES `D` vanishes on ℝ
+  (`MassTheory/BlochVolumeLegFlatVanishing.lean:111 eq_zero_of_conjAntisymm_ofReal`,
+  sorry-free). Honest instantiation forces `volume = 0`. Not a live contradiction
+  (`opaque`; the theorem is `ℂ → ℝ` and unwired). Fix is a **re-typing** to
+  `Im z > 0`, reusing `IdealTetrahedron.param`. Scope **(a)**.
+- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (`:124`) contains **no cusp and
+  no bijection** — it exhibits `n` roots of `(x;q)_n`. The file's prose is honest;
+  the NAME is what gets cited.
+- **Bring's surface DOES have its hyperbolic structure used** —
+  `Archimedean/EmCouplingBringZeroMode.lean`, sorry-free: (2,4,5) triangle,
+  240 triangles, area `12π`, `χ=−6`, `g=4`, `b₁=8`, `b₁/Area = 2/(3π)`. **But it
+  is ARITHMETIC in geometric clothing** (`gaussBonnetArea` is a `def`; the proofs
+  are `ring`). Three facts assumed in docstrings / absent: (B1) area = angle
+  defect, (B2) the 240, (B3) `B ≅ ℍ²/Γ` — **B3 absent from the whole corpus.**
+  Mathlib's `UpperHalfPlane` is **never imported** by QOU.
+- **The source for B1–B3 IS HELD and is cited for a DIFFERENT section:**
+  `library/pjm-v154-n1-p09-s/sections/sec-001-2-the-universal-cover-of-brings-curve-if-b-b-is.md`
+  (Riera–Rodríguez 1992 §2, pp. 2–8) gives `Γ*` = (2,4,5) triangle group,
+  `φ: Γ*→S₅`, `Γ = ker φ` torsion-free, **`B = Δ/Γ` genus 4** — and `[Γ*:Γ]=120`
+  × 2 triangles = the corpus's unsourced `240`. `references.ts:9012` cites this
+  paper for its **period matrix** only. Held **twice**
+  (`the-period-matrix-of-bring-s-curve-1hik02mwva`, `duplicate_of`) and **absent
+  from `library-duplicate-ledger.json`**. Second Fuchsian route also held:
+  `arxiv-2402.08782v1` (Bring via Hecke group `H₃`).
+- **GENUINELY OPEN on all six paths: the `ℍ²`(Bring) ↔ `H³`(knot complement)
+  link.** `.beans/` = **0** for `Gauss-Bonnet`, `triangle group`, `(2,4,5)`,
+  `systole`, `uniformis`. No agent has ever worked it. Scope **(a)** — path 0 was
+  down.
+- **Smallest honest Lean:** NOT Gauss–Bonnet arithmetic (already T0, re-deriving
+  is the trap). Best target is the **re-typing** above; next is `qou-idvt`'s live
+  T1–T4 Lobachevsky/concavity ladder (in-progress — do not re-scope).

@@ -55,8 +55,8 @@ authoritative** — the corpus is.
    the path most often skipped and the one that most often holds the answer.
 
 ## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
-
-Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`), with the counts and the commands. Moved there 2026-09-03 to stay under the 200-line cap; the traps below stay here because they are what gets skipped.
+Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`),
+with counts and commands. The traps below stay here — they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`
 
@@ -129,6 +129,19 @@ it sorry-free. I had matched the bean on **topic** and cited it on **agreement**
 without reading it. A bean cited in support is a bean you must have read to the
 end; its title tells you the subject, never the verdict.
 
+## TRAP — two ways a `content/` grep lies about coverage (2026-09-04)
+
+**1. Vendored Mathlib sits UNDER `content/`.** `content/quantum-observable-universe/lean/.lake/packages/mathlib/`.
+A `find content` list is 20,472 files; excluding `/.lake/` it is **12,427** — every
+naive `content/` count inflated ~65 %, and `hyperbolic metric` / `uniformizer` /
+`Poincare` return Mathlib docstrings as corpus hits. **Filter `/\.lake/` first.**
+
+**2. `Fuchsian` here is an ODE homonym.** All six `content/` hits are the Fuchsian
+**singular point** of the C1 difference equation (`C1FuchsianExponents.lean`,
+indicial `c₀² + (q−1)c₀ + (q−1) = 0`). **None is a discrete subgroup of `PSL₂(ℝ)`** —
+so the count measures irregular-singularity work, not uniformisation. Same family
+as `sasaki`-the-surname: check what hits ARE before reading a count as coverage.
+
 ## TRAP — grep the claim SHAPE, not only the topic
 
 Four conflations reached durable artifacts in one session (2026-08-15), each
@@ -150,10 +163,8 @@ Criterion `da-arity-conflation` in
 examples and why a machine checker cannot do this.
 
 ## TRAP — `beans create` is not idempotent
-
-Run the exact-title existence check before every create; an unguarded
-re-run once produced 14,688 duplicates. Detail:
-`library-and-staleness-traps.md`.
+Exact-title check before every create; an unguarded re-run made 14,688
+duplicates and corrupted a later corpus-grep. Detail: `library-and-staleness-traps.md`.
 
 ## TRAP — an inherited "X is unavailable" is HALF a measurement
 
@@ -229,7 +240,8 @@ these open, and add a row whenever a sweep settles one.
 ---
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
-- 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
+- 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class, linking-data subclass closed scope-(b) · `resolved-topics.md`.
 - 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
 - 2026-09-04 · `qou-xlw1` contact-distribution rank / dim 7 / `J` on `ker Θ` · **both `ker Θ` ranks are DERIVED (scope-(b) contradiction); no 7-manifold; `J` on `ker Θ` is present in 7 prose sites and in NO Lean** · detail in `resolved-topics.md`. TRAP: the site count (2 vs 9) answers the rank question backwards — count CONSUMERS, not assertions.
-- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.
+- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open**; path 3 held it. See the two-halves TRAP above.
+- 2026-09-04 · `qou-xlw1` hyperbolic volume as a QOU structure · **I claimed it was 'imported, not QOU' and that Mathlib+library held nothing — WRONG on all three.** ~180 QOU .lean files; VC numerically CONFIRMED for 4₁. Weakest link is a TYPE (`BlochWignerD : ℝ → ℝ` vs the corpus's own proof that D vanishes on ℝ). Bring's ℍ²↔H³ link genuinely open, 0 beans. Detail in `resolved-topics.md`.
