@@ -111,7 +111,56 @@ That is the argument for the audit rather than for resolving to be more careful:
 an agent that has just spent a session on backlog hygiene will still drop the
 close. `qou-vtau` is now closed.
 
+## 🛑 CORRECTION — the detector's precision is 2 in 12, not 6 in 10
+
+**I published a false-positive rate of "~4 in 10". Having now read all twelve
+high-priority candidates, it is 10 in 12.** That overstates the tool's precision
+by roughly 3.5x and it is my error, made by estimating from commit subjects
+instead of opening the beans.
+
+| verdict | n | beans |
+|---|---|---|
+| **TRUE positive** — work landed, bean stale | **2** | `qou-vtau`, `qou-w2vy` |
+| arguable | 1 | `qou-c1ln` (open rows have no consumer) |
+| **FALSE positive** | **9** | `qou-rstq`, `qou-lkrd`, `qou-mln9`, `qou-f8lit`, `qou-j3w6`, `qou-hok7`, `qou-54g5`, `qou-qspc`, `qou-9iwt` |
+
+Every one of the nine says it is open, in its own words: *"Closing it does not
+close the sum rule"*; *"What blocks end-to-end verification now is not a proof
+failure"*; *"REOPENED. OPEN next step"*; *"Bean stays open on (1)-(4)"*;
+*"What remains of item 1: ..."*. `qou-9iwt` proposes **three** renames and the
+commit did **one**.
+
+### A FOURTH false-positive class: deliberately parked
+
+`qou-mln9` reads *"**Left `todo` deliberately.** ... #5761 is a draft awaiting an
+owner merge decision — until it lands, main stays validate-RED ... **Closing is
+the author's call.**"* That bean is not stale; it is correctly parked, with the
+reason stated. No commit-message heuristic can tell a parked bean from a
+forgotten one, because the difference is intent and lives in the body.
+
+### What survives, and what does not
+
+**The phenomenon is real and is NOT weakened by this.** It rests on four
+instances established by DIRECT inspection — `git log` on a named file, a
+sibling's `completed` status, my own merge commits — not by this tool:
+`qou-e4eu`, `qou-w2vy`, `qou-1ucq`, `qou-vtau`. Two of those four the tool found;
+`qou-e4eu` it correctly excluded (already `completed`), and `qou-1ucq` I found by
+hand.
+
+**The detector does not do what I named it for.** It is not a staleness list. At
+2-in-12 it is a "beans with related recent activity, worth opening" list — which
+is still worth 12 reads if it prevents one re-derivation, and today it would have
+prevented two. But that is a much smaller claim than the one this bean shipped
+with, and the earlier wording is corrected rather than softened.
+
+**A better detector cannot be built from commit messages.** All four
+false-positive classes — partial completion, verb-governs-another-bean, quoted
+or negated verb, deliberately parked — are semantic and live in the bean body or
+in the author's intent. The check that works is an agent reading the bean, which
+is what produced this table.
+
 ## Next
 
-Read the 12 high-priority candidates and close the ones that are genuinely
-done. Not a sweep — one read each, given the false-positive rate above.
+Done: all 12 read, see the correction above. Two were genuinely stale and
+are closed (`qou-vtau` here; `qou-w2vy` needs its owner). Nothing further is
+queued on this bean.
