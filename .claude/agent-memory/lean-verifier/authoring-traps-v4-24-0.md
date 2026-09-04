@@ -140,3 +140,95 @@ Symptom is `unexpected token '/--'; expected 'lemma'`, or `unexpected token
 docstring must attach to a **declaration**, and `section` is not one, nor is
 another docstring. Demote to `/- … -/` or merge into the real docstring —
 do not delete, the text is usually the only record of why a claim is unproved.
+
+## TRAP — `unknown tactic` is an IMPORT failure, and its second error lies
+
+Measured 2026-09-04 on three content-block siblings in one pass. Each
+produced a PAIR of errors, and the pair is the trap:
+
+```
+he4-channel-active-set.lean:168:20         unknown tactic     -> `ring`
+he4-two-row-dominance.lean:97:3            unknown tactic     -> `linarith`
+hyperelliptic-z5-classification.lean:48:3  unknown tactic     -> `interval_cases`
+```
+
+followed in each case by an `unsolved goals` dump of the *untouched* goal.
+
+A missing **term** import says `unknown identifier` and names the name. A
+missing **tactic** import says `unknown tactic` and names only a column,
+then buries it under the goal state. The goal dump is what you read first
+and it looks like the mathematics failed. It has not — the proof is
+correct and untouched; only the import is absent.
+
+Fix is one line each: `Mathlib.Tactic.Ring`, `Mathlib.Tactic.Linarith`,
+`Mathlib.Tactic.IntervalCases`. All three went to **0 errors and 0
+warnings** with no proof step changed.
+
+Check the import list before reading the goal. `he4-two-row-dominance`
+imported only `QOU.BraidKnot.TwoRowStratum`; `hyperelliptic-z5` only
+`Mathlib.Algebra.Ring.Parity`.
+
+## TRAP — a tactic that closes the goal turns the NEXT tactic into an error
+
+`No goals to be solved` at a `ring`/`rfl` line almost always means the
+preceding tactic already finished. Seen three times in one sweep:
+
+- `rw [...]` then `ring` — `rw` tries `rfl` afterwards
+  (`typed-b3-sub-braid-extraction:216`)
+- `field_simp` then `ring`, twice (`u-coordinate-discharges:82,104`)
+
+Delete the trailing tactic. It is not proof drift in the mathematics, it
+is a Mathlib tactic that got stronger.
+
+## TRAP — `(x : Aut X)` silently loses the group structure
+
+`CategoryTheory.Aut X` is a plain `def` for `X ≅ X`, so a type ascription
+UNFOLDS it and you lose the `Group` instance:
+
+```lean
+(β_ V V : Aut (V ⊗ V)) ^ 2     -- failed to synthesize OfNat (V ⊗ V ≅ V ⊗ V) 1
+show Aut (V ⊗ V) from β_ V V   -- works
+```
+
+Useful once you are there: `(f * g).hom = g.hom ≫ f.hom` and
+`(1 : Aut X).hom = 𝟙 X` are both `rfl` (confirmed by `exact?`), so a
+categorical equation and its group form are interchangeable by
+`congrArg Iso.hom` after `pow_two`.
+
+## TRAP — a sibling cannot import a sibling, and `autoImplicit` hides it
+
+Content-block siblings live outside the Lake globs (`globs = ["QOU",
+"QOU.+"]`), so `bn-mtc-action.lean` cannot import `observable-mtc.lean`
+even though they sit in the same directory. Writing the instance binder
+anyway does not fail with a missing-module error — `autoImplicit`
+auto-binds the class NAME as a variable and you get
+
+    invalid binder annotation, type is not a class instance ?m.5
+
+The fix is to take the needed property as an explicit hypothesis, not to
+chase the import. `set_option autoImplicit false` makes this say what it
+means.
+
+## The shape to check FIRST on any sibling failure: is it a stranded shadow?
+
+Measured across this sweep, the single most common cause is not a broken
+proof — it is that the LIBRARY declaration moved or was rewritten and the
+sibling, which nothing rebuilds, was left on the old shape. Three of them
+were pure duplicates of a complete library theorem and the right fix was
+`git rm`:
+
+- `delta-max-uniform-bound.lean` — `theorem … : sorry := sorry`, i.e.
+  `sorry` in the TYPE, shadowing a proved
+  `QOU.MassEndomorphism.delta_max_uniform_bound`. Both its imports were
+  also dead (`QOU.MassEndomorphism.JetTower` has no source anywhere).
+- `pentagon-uv-commutation.lean` — a verbatim copy of the library theorem
+  under an unreferenced `_mass_theory` suffix, stale in one conjunct
+  because a `: Prop` field had been migrated to carry a real equation.
+- (and `bloch-group-quotient-construction.lean`, earlier in the sweep.)
+
+So before debugging a sibling: find the library declaration its `.ts`
+`ref` names, verify THAT compiles, and check whether the sibling adds
+anything. Resolution is sibling-first **by file**, so a sibling wins even
+when it declares a different name than the ref — which is also how the
+ref in `bn-mtc-action.ts` stayed wrong (`QOU.ObservableMTC.bnAction` for a
+declaration actually named `QOU.bnAction`) without anything noticing.
