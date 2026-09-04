@@ -33,6 +33,12 @@
         "(5, 1)",
         "(6,)"
       ],
+      "x_star": [
+        0.5751722457697739,
+        1.7215817336176697e-41,
+        1.1240716574969445e-42,
+        1.7732554460021216e-42
+      ],
       "y0_star": 0.06426714876225478,
       "y_star": [
         1.6695684443133247e-41,
@@ -48,6 +54,12 @@
       "primal_obj": 0.03696468028280623,
       "dual_obj": 0.03696468028280623,
       "duality_gap": 1.3648726237804572e-42,
+      "x_star_str": [
+        "5.751722457697738999999999999999999999999798866818153e-1",
+        "1.721581733617669796265425452094127365113392183317032e-41",
+        "1.124071657496944508387204539745407074468882237849456e-42",
+        "1.773255446002121470741389695372571201780342827349220e-42"
+      ],
       "y0_star_str": "0.06426714876225477999999999999999999999999873754894",
       "y_star_str": [
         "1.6695684443133246520057470220380547277413955735802e-41",
@@ -58,16 +70,19 @@
       "primal_obj_str": "0.036964680282806226819182134794242000000000638745812",
       "dual_obj_str": "0.036964680282806226819182134794241999999999273873189",
       "duality_gap_str": "1.3648726237804572539615079798909998955723596902437e-42",
+      "residual_primal_str": "-3.493353871508254908865702163651794240895139033286e-47",
+      "residual_dual_str": "1.3649075574534076203961197119623260251022752833964e-42",
+      "gap_recomputed_str": "1.364872623914692537847031054940689507159866332006e-42",
       "backend": "clarabel-mpfr",
       "precision_bits": 167
     },
     "note": "Full real SDP needs Phase B color-flavor constraints (LR branching H_{3A} \u2283 (H_3)^Z\u00d7(H_3)^N); this is the bar-fold symmetry-reduced bounded baseline. Partial character tables cannot close the fold (conjugates absent) \u2014 see conjugates_all_present."
   },
   "q0AnchorReason": "inherited: no q0 arithmetic in this producer; all chi inputs (NUCLEI[*]['chi']) are q0-evaluated witnesses declaring q0Anchor='proton'",
-  "scriptHash": "8e36dcdfcea9",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
-  "commitSha": "735a7a141c70d667d169309bcf29766723b5b6df",
-  "computedAt": "2026-08-30T08:01:06.116868+00:00",
+  "scriptHash": "1b2967f558dd",
+  "scriptCommitSha": "a64db763f237a2d693e12319b086ae029ca19775",
+  "commitSha": "2d6b72bd3e0bf65e4c35ba26dc77eb7ad19166f1",
+  "computedAt": "2026-09-04T12:54:01.786183+00:00",
   "durationMs": 0,
   "q0Anchor": "proton"
 }
