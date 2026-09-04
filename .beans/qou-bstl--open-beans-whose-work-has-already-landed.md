@@ -164,3 +164,60 @@ is what produced this table.
 Done: all 12 read, see the correction above. Two were genuinely stale and
 are closed (`qou-vtau` here; `qou-w2vy` needs its owner). Nothing further is
 queued on this bean.
+
+
+## A THIRD pathology — duplicates — and a detector for it that DOES NOT WORK
+
+Reported as a measured negative. I built a second heuristic this session and it
+failed in both directions; shipping it would have been worse than not having it.
+
+### The pathology is real
+
+`qou-3v8h` (2026-08-26, 158 lines) and `qou-eu0r` (2026-08-30, 70 lines) are
+**the same defect filed twice, four days apart**: `authorNotes` silently dropped
+on `prose` / `table` / `equation` / `diagram`. The later, thinner one does not
+know what the earlier one records — that a fix **exists on a folio-assistant
+branch** (`affcec4`, suite green) and has not landed on that repo's `main`. An
+agent who picked `qou-eu0r` would reimplement a fix that exists, which commit
+`8dfba1fa820` explicitly warns against.
+
+`qou-3v8h` itself is **exemplary** and is correctly left open: *"NOT closing: the
+defect is fixed on a branch, not in the product. Closing on 'someone has a fix
+somewhere' is the failure mode this corpus keeps paying for."*
+
+### The detector fails on precision AND recall
+
+Title-token Jaccard over open beans, threshold 0.45:
+
+  * **It MISSED the one pair I had found by reading.** `qou-3v8h` /
+    `qou-eu0r` score **0.375** — below threshold — because one says
+    *"authorNotes is silently dropped on ..."* and the other
+    *"Schema silently drops authorNotes on ..."*. Same defect, different verbs.
+  * **Nine of its top hits are TITLE TEMPLATES, not duplicates.** Seven
+    `cj*` *"Conjecture carrier: X (X.lean) — §3b, famous-open"* beans differ
+    only in the declaration (`QCollatz`, `ClassicalRiemannHypothesis`,
+    `SingleVolumeIrrationality`, …); two more are *"Remark interpreting
+    [madison2000]"* vs *"[gauthier2019]"*. Boilerplate dominates the token set.
+  * **A 1.00 title match was still a FALSE POSITIVE.** `qou-r3vt` and
+    `qou-ty08` have byte-identical titles — *"PROVE(lean):
+    instance:archimedean_agreement"* — and are **different Lean files**:
+    `.../protonExample/archimedean_agreement.lean` vs
+    `.../HabiroResidueSumEquivalence/archimedean_agreement.lean`. The only
+    distinguishing field is the path, which the title omits.
+
+Of three pairs verified by reading: **one likely genuine** (`qou-ii3w`, a 9-line
+stub, vs `qou-csdp`, 85 lines, same audit), **one borderline** (`qou-uea1` /
+`qou-6n93` — the same PDF ingested twice under `…(1).pdf`, but targeting
+different blocks and different sections), **one false positive**.
+
+### Not shipped, deliberately
+
+No `--dupes` mode was added. A detector with poor precision *and* poor recall is
+worse than none: it would be quoted, and it would both mislead and reassure.
+Recorded here so the next agent does not rebuild it.
+
+**Same shape as the completion heuristic above, which is the durable lesson of
+this bean:** what makes two beans the same, or one bean finished, lives in their
+bodies and in their authors' intent. Neither is recoverable from titles or
+commit subjects. The signal that *does* work — `--active` — works precisely
+because it asks only WHEN.
