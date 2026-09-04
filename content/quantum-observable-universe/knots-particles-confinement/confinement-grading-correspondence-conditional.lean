@@ -36,25 +36,31 @@ enough structure to state the conditional theorem. -/
 /-- The Iwahori–Hecke algebra `H_n(R, q)` (opaque carrier; full structure
     in `hecke-algebra-from-braiding.lean`). -/
 -- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (Iwahori–Hecke algebra of B_n)
-axiom HeckeAlgebra (n : ℕ) (q : ℝ) : Type
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a
+-- claim.  `axiom f : T` and `opaque f : T := <witness>` are equally opaque and
+-- equally uninformative, but only the first is recorded as a global axiom and
+-- contaminates `#print axioms` for everything downstream.  No proposition
+-- becomes provable either way -- `opaque` seals the value exactly as `axiom`
+-- did -- so dropping it from the axiom ledger is more accurate, not less.
+opaque HeckeAlgebra (n : ℕ) (q : ℝ) : Type := Unit
 
 /-- Hecke normal form of a closed braid `K` (opaque carrier; full
     definition in `hecke-normal-form.lean`). -/
 -- Ref: [kassel2008] Kassel–Turaev, "Braid Groups," GTM 247, §4 (normal forms in H_n)
-axiom HeckeNormalForm (n : ℕ) (q : ℝ) : Type
+opaque HeckeNormalForm (n : ℕ) (q : ℝ) : Type := Unit
 
 /-- The KLR module attached to a Hecke normal form via Brundan–
     Kleshchev (opaque carrier; full structure conditional on the class). -/
 -- Ref: [brundankleshchev2009] Brundan–Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov–Lauda algebras," Invent. Math. 178
-axiom KLRModule (n : ℕ) : Type
+opaque KLRModule (n : ℕ) : Type := Unit
 
 /-- Top non-zero graded degree of a KLR module (opaque accessor). -/
 -- Ref: [khovanovlauda2009] Khovanov–Lauda, "A diagrammatic approach to categorification of quantum groups I," Represent. Theory 13 (KLR grading)
-axiom KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ
+opaque KLRTopDegree {n : ℕ} (M : KLRModule n) : ℕ := 0
 
 /-- Confinement level `ℓ(K, q)` of a normal form (opaque accessor; def:confinement-level). -/
 -- Ref: [manuscript] def:confinement-level
-axiom confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ
+opaque confinementLevel {n : ℕ} {q : ℝ} (T : HeckeNormalForm n q) : ℕ := 0
 
 /-! ## Conjectural class
 

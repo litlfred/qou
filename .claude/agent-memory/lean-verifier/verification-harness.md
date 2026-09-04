@@ -488,3 +488,40 @@ from two revisions is not sound. With the union both routes compiled exit 0.
 append `example : (1:Nat) = 2 := rfl` to a copy and confirm exit 1. A harness
 that returns 0 on everything is worse than no harness.
 
+## 14. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
+
+§1 says to check the reverse-import cone. It does not say *of what*, and getting that
+wrong produces a check that looks rigorous and measures nothing.
+
+**Measured 2026-09-04, and the cost was 8 red modules on `main`.** A general-field
+tranche retyped `seminormalRep`'s hypothesis `q ^ 2 ≠ 1 → GenericParameter.NotRootOfUnity q`
+across nine modules (commit `e526464c2d`, PR #6486). Consumers *outside* the tranche were
+never enumerated, and eight of them broke: `HoefsmitRepGeneral` (2 sites),
+`SeminormalBlockTrace` (4), `SeminormalBlockEquality` (5), `SeminormalCornerTrace` (2),
+`MarkovAssembly` (1), `MarkovTraceInstance` (4), then `WenzlMarkovLevelR` (2) and
+`WenzlMarkovTraceInstance` (15) on a second pass. A sibling session found them with a
+full-cone rebuild and fixed them (`794c34897d`, `cbf2202f43`).
+
+**The follow-on PR (#6517) DID run a reverse-cone check and it came back nearly empty —
+because three of its six files were BRAND NEW and so had zero importers.** "Exactly one
+consumer outside what was rebuilt" was reported as reassuring. It was an artifact of the
+files being new. The tranche with real consumers was the *earlier* one, and nothing was
+ever run against it.
+
+**The rule: run the reverse cone against every declaration whose SIGNATURE you changed,
+not against the files you touched.** A new file has no consumers by construction; a
+retyped hypothesis on an existing declaration has as many as the corpus has callers. Those
+are opposite ends of the risk scale and the same command answers only one of them.
+
+Two corollaries from the same incident:
+
+- **"Off the general path" does NOT mean unaffected.** The tranche's own bean recorded
+  `HoefsmitRepGeneral ← OFF the general path`; it is a consumer of `seminormalRep` and it
+  broke. Off-path means *this* change does not need it, never that it does not need this.
+- **A count of old-typed declarations is not a defect count.** Tree-wide, 13 files still
+  declare `(hq2 : q ^ 2 ≠ 1)` and most are fine — they never pass `hq2` into the
+  seminormal family. Only a rebuild distinguishes them.
+
+Do not read the incident as an argument against §1's check. It is an argument for aiming
+it: the same session's #6517 check was correctly *executed* and pointed at the wrong set.
+

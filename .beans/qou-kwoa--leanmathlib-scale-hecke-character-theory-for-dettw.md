@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-03T22:30:29Z
+updated_at: 2026-09-04T09:02:28Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -450,3 +450,125 @@ bean's work.  Anyone who wants it must not key on mtime.
 After restoring the olean cache, a lean-direct verification is only as current as the
 dependency oleans it loads.  Rebuild the cone from source before trusting a green on any
 module whose dependencies this branch or a recent merge touched.
+
+
+## 2026-09-04 — the VALUE: two steps landed, and the next one is a NAMED Mathlib gap
+
+Branch claude/p-neq-np-gaps-n8dxxl, PR #6552 (commits d978d1b6df, e6993c2692).
+Sorry-free, [propext, Classical.choice, Quot.sound].
+
+### Corpus-grep re-priced this item DOWNWARD before anything was written
+
+QOU/MathlibExt/WenzlSchurElement.lean (597 lines) ALREADY formalises the concrete Schur
+element s_{lambda,X}(Q) = Q^{n(lambda)} prod_x (1 - X Q^{c(x)})/(1 - Q^{h(x)}) and proves
+sorry-free: schurElement_ne_zero, schurElement_tl_eq_zero_iff (an iff), substrate_avoids_tl_locus.
+The Schur element is NOT the missing piece.  The IDENTITY linking it to the Gram determinant
+is, and SchurElementCriterion is currently a CITED CLASS in
+content/.../information-theory/qou-p-neq-np.md rather than a derived result.
+
+### What landed
+
+QOU/MathlibExt/RegTraceMatrix.lean
+
+  regTraceForm_matrix        regTraceForm K (Matrix i i K) x y = (card i) * (x*y).trace.
+                             The SHARP form; regTraceForm_one_one was only the diagonal.
+                             Short because trace_piDiag (#6517) applies directly: lmul M
+                             acts on each COLUMN independently, so it is literally
+                             block-diagonal with card i identical blocks.  The Pi trace
+                             lemma has now paid for itself twice.
+  regTraceForm_single        tr(E_ij E_kl) = delta_jk delta_il, scaled by d.
+  regTraceGram_stdBasis_eq   the Gram IS (d . 1).submatrix prodComm id.
+  regTraceGram_stdBasis_det  det = sign(prodComm) * d^(d^2).
+  ..._det_ne_zero_iff        vanishes exactly when (d : K) = 0 -- the SHARP form of the
+                             obstruction that 2026-08-30-tw-gram-determinant-measured.md
+                             states as the PREMISE of its scope-(b) exclusion.  It was
+                             asserted there; it is proved now.
+  card_mul_trace_one_eq_finrank_matrix
+                             regression: regTraceForm_one_one (from L_1 = id) and
+                             regTraceForm_matrix (from the column decomposition) share no
+                             argument, so their agreement at (1,1) checks both.
+
+### Cross-check against the probe, and it is not circular
+
+Assembling d^(d^2) over the Wedderburn blocks reproduces the integer constant that
+tw_gram_determinant_probe.py got by factoring EXACT symbolic determinants:
+
+    n=1  dims 1,1        -> 1              probe 1
+    n=2  dims 1,2,1      -> 16             probe 2^4
+    n=3  dims 1,3,2,3,1  -> 6198727824     probe 2^4 . 3^18
+
+The probe did not use the lemma and the lemma did not use the probe.  First time that
+constant has been DERIVED rather than observed.
+
+### THE NEXT STEP IS BLOCKED ON A NAMED MATHLIB GAP — measured, not guessed
+
+The ASSEMBLY (per-block factor -> full constant) needs the Gram of a product form in a
+product basis to be block diagonal, then its determinant.  Mathlib has
+
+    Matrix.det_blockDiagonal   (Determinant/Basic.lean:600)   -- UNIFORM block size only:
+                               (blockDiagonal M).det = prod_k (M k).det,  M : o -> Matrix n n R
+
+and has NO determinant lemma for Matrix.blockDiagonal' (Data/Matrix/Block.lean:566), the
+DEPENDENT/sigma-indexed version.  Searched: every file in Mathlib mentioning blockDiagonal'
+(6 files) intersected with every mention of det -- 3 files, none stating a determinant
+formula for it.  The Wedderburn blocks have DIFFERENT sizes d_lambda, so the uniform lemma
+does not apply.
+
+This is the same SHAPE of gap as trace_piDiag was in #6517: Mathlib had the binary
+trace_prodMap' but not the Pi version; here it has the uniform det_blockDiagonal but not
+the dependent one.
+
+COST WARNING: Mathlib's proof of the uniform det_blockDiagonal is ~60 lines of permutation
+combinatorics (sum over permutations, sign_prodCongrLeft).  The dependent version is HARDER
+-- permutations of Sigma i, m' i that preserve fibres.  This is a real tranche, not a
+one-liner.  Do not start it believing otherwise.
+
+### Still not claimed
+
+Nothing here touches the q-part of the determinant, where the Schur elements live.  This is
+NOT a proof of Geck-Pfeiffer 7.2.6.  Small characteristic and the square root (Q = q^2)
+are both untouched.
+
+
+## 2026-09-04 — the assembly landed, and the blocker I named was not one
+
+PR #6552, commit 7cc1e15899. QOU/MathlibExt/RegTraceGramProduct.lean, 210 lines,
+10 declarations, all sorry-free ([propext, Classical.choice, Quot.sound]).
+
+**CORRECTION to this bean's own prior 'next' line.** I recorded the assembly as
+blocked on a named Mathlib gap: Matrix.det_blockDiagonal is uniform-block-size
+only and there is no det lemma for Matrix.blockDiagonal'. Both halves are true.
+NEITHER IS THE OBSTRUCTION. Matrix.BlockTriangular.det_fintype
+(LinearAlgebra/Matrix/Block.lean:276) already gives
+    M.det = prod over k of (M.toSquareBlock b k).det
+for fibres of arbitrary, DIFFERING size, and a block-diagonal matrix is
+block-triangular for every b. My search was 'det' intersected with
+'blockDiagonal'' — the capability is filed under the weaker hypothesis that
+makes it true, not under the data structure I had in hand. Recorded as a TRAP in
+.claude/agent-memory/corpus-grepper/MEMORY.md ('in an UPSTREAM library, grep the
+statement SHAPE, not the data structure'). The cost estimate that travelled with
+the wrong verdict ('~60 lines of permutation combinatorics') was wrong too.
+
+**What is now proved.** det_eq_prod_of_offDiagonal_eq_zero (the general reusable
+statement); det_blockDiagonal' as an immediate corollary (stated for evidence,
+not use); regTraceForm_pi_single_of_ne/_same; regTraceGram_pi_offDiagonal/
+_diagonal/_det/_det'; regTraceGram_pi_matrix_det; and
+regTraceGram_pi_matrix_det_ne_zero_iff — the product Gram determinant vanishes
+EXACTLY when a block dimension dies in K, so RegTraceGramNondegenerate's
+char-zero hypothesis is not merely sufficient but exactly right.
+
+**The integer constant is DERIVED, not observed.** prod_lambda d^(d^2) over the
+Wedderburn blocks of H_{n+1} gives 1 / 16 / 6198727824 at n = 1,2,3 — exactly
+tw_gram_determinant_probe.py's measured constants, obtained independently by
+factoring exact symbolic determinants. Re-verified in exact integer arithmetic
+this session (hook-length formula, no floats); it also yields an n=4 value the
+probe never computed.
+
+**STILL OPEN, and the scope is unchanged:**
+1. The T_w transport. This is the determinant in the PRODUCT basis; moving to
+   the T_w basis changes it by (det P)^2, so the constant is pinned only up to a
+   square. This is now the smallest remaining piece of the value item.
+2. The q-part, where the Schur elements live. Untouched. NOT Geck-Pfeiffer.
+3. Small characteristic — unreachable by this route at all (and item (1) of the
+   new file says why: the obstruction is exactly a block dimension dying in K).
+4. The square root Q = q^2 — low priority; never bites in the corpus's use.

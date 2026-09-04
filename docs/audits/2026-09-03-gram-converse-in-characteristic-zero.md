@@ -198,6 +198,37 @@ verification is only as current as the dependency oleans it loads.** Rebuild the
 source before trusting a green on any module whose dependencies this branch or a recent merge
 touched.
 
+> **🛑 THE REVERSE-CONE CHECK BELOW WAS AIMED AT THE WRONG TRANCHE, and eight modules
+> went red on `main` because of it (recorded 2026-09-04).** The paragraph that follows is
+> correct about what it did and is reported honestly, but it presents as reassurance a
+> result that was an artifact: three of this PR's six files were **brand new**, so they had
+> zero importers by construction, and "exactly one consumer outside what had been rebuilt"
+> measured that fact rather than any safety.
+>
+> The tranche that actually had consumers was the **earlier** one — #6486's retype of
+> `seminormalRep`'s hypothesis `q ^ 2 ≠ 1 → GenericParameter.NotRootOfUnity q` (commit
+> `e526464c2d`), which covered nine modules and not their consumers outside the tranche.
+> **Eight modules broke on `main`**: `HoefsmitRepGeneral` (2 sites), `SeminormalBlockTrace`
+> (4), `SeminormalBlockEquality` (5), `SeminormalCornerTrace` (2), `MarkovAssembly` (1),
+> `MarkovTraceInstance` (4), and on a second pass `WenzlMarkovLevelR` (2) and
+> `WenzlMarkovTraceInstance` (15). A sibling session found them with a full-cone rebuild and
+> fixed them in `794c34897d` and `cbf2202f43`; both are on `main`.
+>
+> **The rule the incident yields:** run the reverse cone against every declaration whose
+> *signature* changed, not against the files you touched. A new file has no consumers by
+> construction; a retyped hypothesis on an existing declaration has as many as the corpus
+> has callers. Recorded as §13 of the lean-verifier harness memory.
+>
+> One further correction to this corpus's own wording: the tranche bean recorded
+> `HoefsmitRepGeneral ← OFF the general path`. Off-path meant *this change does not need
+> it* — not that it does not need this change. It is a consumer of `seminormalRep`, and it
+> broke.
+>
+> A separate alarm raised at the same time — *"`HeckeSemisimpleGeneral` is red on `main`"* —
+> was **retracted** by its author: it was measured against their own stale cached
+> dependency oleans, the exact trap §1/§11 of that memory records. With the cone rebuilt,
+> this PR's files compile clean on `main`.
+
 **And the reverse-import cone, which the first pass here also skipped.** §1 of that memory
 prescribes checking the modules that *import* what changed, not only the dependencies it
 builds on. Done: of the six files this PR touches, five have importers, and exactly one —

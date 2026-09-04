@@ -267,8 +267,12 @@ structure MarkovTraceCoefficient (R : Type u) where
     … : R` over generic `Field R` fails v4.24 code-gen (see
     `partitionFunctionZ`), so it is declared as an `axiom`. -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
-axiom JonesMarkovCoefficient {R : Type u} [Field R]
-    (q : R) (lam : List ℕ) : R
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
+-- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
+-- first is a global axiom contaminating `#print axioms` downstream.  No
+-- proposition becomes provable either way.
+opaque JonesMarkovCoefficient {R : Type u} [Field R]
+    (q : R) (lam : List ℕ) : R := 0
 
 /-- The Markov-trace convention this recipe implements. -/
 def yLambdaRecipeConvention : MarkovTraceConvention :=

@@ -167,6 +167,50 @@ CORPUS fact (what we hold locally).** The environment half ages slowly and is
 usually right; the local half is cheap to check and is the one that is wrong.
 Enumerate the local surface yourself before repeating either half.
 
+## TRAP — in an UPSTREAM library, grep the statement SHAPE, not the data structure
+
+2026-09-04, `qou-kwoa`. I needed "determinant of a block-diagonal matrix with
+blocks of *differing* sizes", grepped Mathlib for `det` ∩ `blockDiagonal'`, got
+nothing, and wrote into a PR body that this was a **named Mathlib gap** blocking
+the work — with a cost estimate ("~60 lines of permutation combinatorics, and
+the dependent version is harder").
+
+Both greppable facts were TRUE: `Matrix.det_blockDiagonal` really is uniform-size
+only, and there really is no `det_blockDiagonal'`. **The capability was present
+under a different name** — `Matrix.BlockTriangular.det_fintype`
+(`LinearAlgebra/Matrix/Block.lean`) gives `M.det = ∏ k, (M.toSquareBlock b k).det`
+for fibres of arbitrary, differing size, and a block-*diagonal* matrix is
+block-triangular for every `b`. The assembly was 210 lines, not a tranche.
+
+**The shape: I searched for the NAME OF MY DATA STRUCTURE, and the library
+indexes by the HYPOTHESIS THAT MAKES THE THEOREM TRUE.** `blockDiagonal'` is
+how *I* would build the object; `BlockTriangular` is the weakest condition under
+which the conclusion holds, so that is what upstream states it for. Mathlib
+generalises aggressively, so the lemma you want is routinely filed under a
+*weaker* hypothesis than the one you have.
+
+**Do this instead**: grep the *conclusion* (`det.*∏`, `∏.*det`) and enumerate
+the `theorem`/`lemma` heads of the whole plausible file before concluding
+absence — `grep -n '^\(theorem\|lemma\|protected theorem\)' <file>` is one
+command and would have caught this. This is §"grep the claim SHAPE" applied
+outward: same discipline, and an upstream library is where it bites hardest,
+because a missing-capability verdict there turns into a scope decision.
+
+**Independent second instance, SAME DAY, different domain.** Sibling PR #6609
+(`session_01Prc52Z5Sct7AdeXT2TPq6J`) is titled *"the blocker I recorded was one I
+could have read my way past"*: a true caution — *"don't guess the LP's `(A,b,c)`
+packing from a producer"* — had been over-generalised into a prohibition, when
+the packing is stated plainly at `lp_dual_solver.py:995`. *"Reading it took one
+`sed`."*
+
+So the shape is **wider than greps**, and this is the version to carry:
+**a blocker recorded from an INFERENCE rather than from the direct read that
+would settle it.** Mine inferred absence from a name-shaped grep; theirs
+inferred a prohibition from an adjacent caution. Both cost a *scope decision* —
+the expensive kind of wrong, because a phantom blocker silently re-plans the
+work — and both were one command away. Before recording any blocker: name the
+single file or command that would settle it, and run it.
+
 ## STABLE — refutation scoping
 
 - **(a) scope-limited negative** — "this construction, *alone*, does not
@@ -230,5 +274,6 @@ these open, and add a row whenever a sweep settles one.
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
 - 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
+- 2026-09-04 · `qou-kwoa` Gram-determinant assembly · declared a **Mathlib gap** that was not one — see the upstream-shape TRAP above; the lemma existed under `BlockTriangular`.
 - 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
 - 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.

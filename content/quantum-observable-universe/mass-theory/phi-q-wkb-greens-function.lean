@@ -49,7 +49,19 @@ namespace QOU.QPochhammer
     in Mathlib); this opaque stub lets the conjecture statement
     compile. -/
 -- Ref: [manuscript] def:categorical-dirac-operator
-opaque diracLogDet : ℝ → ℝ
+--
+-- **Carried WITH its boundary condition (2026-09-04).** This was
+-- `opaque diracLogDet : ℝ → ℝ` plus `axiom diracLogDet_zero`. Pinning the
+-- value of an opaque function does require an assumption *if the function is
+-- introduced bare* — but it does not have to be introduced bare. Making the
+-- opaque object a member of the SUBTYPE of functions vanishing at 0 gives the
+-- boundary condition by projection, and assumes nothing new: the subtype is
+-- provably inhabited (by `fun _ => 0`), which is exactly the witness `opaque`
+-- requires. Same opacity, one fewer axiom.
+opaque diracLogDetAux : {f : ℝ → ℝ // f 0 = 0} := ⟨fun _ => 0, rfl⟩
+
+/-- The half-log-determinant placeholder itself. -/
+noncomputable def diracLogDet : ℝ → ℝ := diracLogDetAux.1
 
 /-- Opaque placeholder for the next-to-leading-order Faddeev residual,
     i.e. the `ℏ_q⁰` term of `log Φ_n(x; q) - ℏ_q⁻¹ Li₂(x)` as
@@ -57,20 +69,25 @@ opaque diracLogDet : ℝ → ℝ
     a stationary-phase development with uniform error bounds; this
     opaque stub lets the conjecture statement compile. -/
 -- Ref: [manuscript] conj:phi-q-wkb-greens-function
-opaque nextOrderCorrection : ℝ → ℝ → ℕ → ℝ
+opaque nextOrderCorrectionAux :
+    {f : ℝ → ℝ → ℕ → ℝ // ∀ q n, f q 0 n = 0} := ⟨fun _ _ _ => 0, fun _ _ => rfl⟩
 
-/-- Boundary lemma: at `x = 0` the half-log-determinant placeholder
-    is zero. Built into the opaque interface as a separate axiom so
-    the boundary instance below is unconditional. -/
+/-- The next-to-leading-order Faddeev residual itself. -/
+noncomputable def nextOrderCorrection : ℝ → ℝ → ℕ → ℝ := nextOrderCorrectionAux.1
+
+/-- Boundary lemma: at `x = 0` the half-log-determinant placeholder is zero.
+    **Was an axiom; now a projection (2026-09-04)** — see the note on
+    `diracLogDetAux`. Built into the opaque interface exactly as before, but
+    by construction rather than by assumption. -/
 -- Ref: [manuscript] conj:phi-q-wkb-greens-function
-axiom diracLogDet_zero : diracLogDet 0 = 0
+theorem diracLogDet_zero : diracLogDet 0 = 0 := diracLogDetAux.2
 
 /-- Boundary lemma: at `x = 0` the next-order correction is zero.
-    Built into the opaque interface as a separate axiom so the
-    boundary instance below is unconditional. -/
+    **Was an axiom; now a projection (2026-09-04)** — see the note on
+    `diracLogDetAux`. -/
 -- Ref: [manuscript] conj:phi-q-wkb-greens-function
-axiom nextOrderCorrection_zero (q : ℝ) (n : ℕ) :
-    nextOrderCorrection q 0 n = 0
+theorem nextOrderCorrection_zero (q : ℝ) (n : ℕ) :
+    nextOrderCorrection q 0 n = 0 := nextOrderCorrectionAux.2 q n
 
 /-- The next-order Faddeev-WKB conjecture, packaged as a typeclass.
     A concrete instance asserts that, in addition to the leading-
