@@ -42,7 +42,7 @@ $(\mathrm{Re}\,q, \mathrm{Im}\,q)$.
 |---|---|---|---|
 | (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the substrate sits $18.83\,\%$ of $q_0$ away from it | (b) | `qou:QOU.QBeta.conj_eq_inv_iff_modulus_one` |
 | (ii) phase dual to CAL-2 | $\mathrm{Im}\,q = 0$ on the whole admissible set | (b) | `qou:QOU.QBeta.im_qbeta_zero_iff_e2` |
-| (iii) non-Hermitian | premise correct; the framework's decay width is a reciprocal real energy, not an imaginary one | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
+| (iii) non-Hermitian | premise correct; **open** — the framework computes the decay's energy release, not its rate | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
 
 For (i), the corpus's own chirality operation is the **bar involution**
 $q \mapsto q^{-1}$ — the mirror knot, $J_{\bar K}(q) = J_K(q^{-1})$ — and
@@ -51,11 +51,29 @@ $q_0^{-1} \approx 0.9009182840$, a real number carrying no $\mathrm{Im}(q)$,
 so the chirality content sought here is already present at real $q$ as the
 $P_{\mathrm{skew}}$ part of the bar decomposition.
 
-For (iii), $\mathfrak{D}_\beta$ is CAL-2, and a width obtained as
-$\mathfrak{D} = \hbar / \mathfrak{Q}$ with $\mathfrak{Q}$ real is a different
-mechanism from a width obtained as $-2\,\mathrm{Im}\,E$: on a real spectrum
-the second vanishes identically while the first does not. This is scope (a),
-not (b) — it relocates the question rather than excluding $\mathrm{Im}(q)$.
+For (iii), a width obtained as $\mathfrak{D} = \hbar / \mathfrak{Q}$ with
+$\mathfrak{Q}$ real is a different mechanism from a width obtained as
+$-2\,\mathrm{Im}\,E$: on a real spectrum the second vanishes identically while
+the first does not. That much is arithmetic and is scope (a), not (b).
+
+What it does **not** establish is that the framework realises the first
+mechanism. CAL-2 is named the neutron $\beta$-decay width $\mathfrak{D}_\beta$,
+and the corpus relates it to the CAL-2 proxy by
+$\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; but a width and a lifetime are
+reciprocal by definition, so if $\mathfrak{D}_\beta$ is the width then
+$\hbar/\mathfrak{D}_\beta$ is the neutron lifetime, $878.4\;\mathrm{s}$, and not
+an energy. Defining $\mathfrak{D}_\beta := \hbar/\mathfrak{Q}_\beta$ instead is
+dimensionally consistent but gives $8.40 \times 10^{-22}\;\mathrm{s}$, which is
+$24.02$ orders of magnitude from that lifetime. Equivalently the neutron's
+actual width $\Gamma_n = \hbar/\tau_n = 7.49 \times 10^{-19}\;\mathrm{eV}$ sits
+$24.02$ orders below $\mathfrak{Q}_\beta$.
+
+So $\mathfrak{Q}_\beta$ and $\Gamma_n$ are **independent** properties of one
+decay rather than reciprocals: a $Q$-value is fixed by mass differences alone,
+while a width additionally requires the coupling and the phase-space integral.
+The framework reproduces the $Q$-value to $0.17\,\%$ — that result is untouched
+— and supplies no rate. Candidate (iii)'s obstacle therefore stands, and
+$\Gamma_n$ is a width the reciprocal mechanism demonstrably fails to produce.
 
 ## Three candidate physical roles
 
@@ -115,10 +133,10 @@ become non-unitary; eigenvalues become complex. In quantum mechanics,
 non-Hermitian operators arise in **open systems** (decay, dissipation,
 resonance widths).
 
-**Testable (fibre)**. Scope (a) at $q_0$, by the section above. The
-surviving question is sharper than the one below: exhibit a $\Gamma$ that
-the reciprocal mechanism $\mathfrak{D} = \hbar/\mathfrak{Q}$ demonstrably
-**fails** to produce. Superseded archimedean form: do decay widths (Γ for unstable particles — W, Z,
+**Testable**. Open. The exhibit asked for — a $\Gamma$ the reciprocal
+mechanism fails to produce — is the neutron's own, by $24.02$ orders of
+magnitude (see the section above), so this candidate's obstacle is not
+retired. Original form: do decay widths (Γ for unstable particles — W, Z,
 top, resonances) correlate with the Im(q) needed to make Hecke
 representations describe their non-Hermitian dynamics? Most decay
 widths in the Standard Model have categorical interpretations open
@@ -126,11 +144,19 @@ in the QOU framework.
 
 ## Obstacles to a current proof
 
-Each candidate requires an observable the framework does not yet
-provide:
-- (i) needs explicit chirality-sensitive observables (CP violation, parity asymmetry)
-- (ii) needs a second independent CAL-2-like constraint
-- (iii) needs a categorical formula for decay widths $\Gamma$
+Each candidate was stated as requiring an observable the framework does not
+yet provide. Two of those three requirements are met by observables already
+present; the third is not.
+
+- (i) asked for a chirality-sensitive observable. The corpus already carries a
+  chirality operation — the bar involution $q \mapsto q^{-1}$, the mirror knot —
+  and it acts at real $q$.
+- (ii) asked for a second CAL-2-like constraint.
+  $\mathrm{Im}\,\mathfrak{Q}_\beta = 0$ is one, supplied by the CAL-2 proxy
+  itself.
+- (iii) asked for a categorical formula for decay widths $\Gamma$, and **this
+  one stands**. What the framework computes is the decay's $Q$-value; the rate
+  is absent, and the two differ by $24.02$ orders of magnitude on the neutron.
 
 The framework's mass formula explicitly **projects away** Im(q)
 content via $|\cdot|$, so no mass observable can detect Im(q)
