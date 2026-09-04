@@ -1901,6 +1901,36 @@ Pattern (always):
 https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 ```
 
+> **🛑 Keep the URL under 150 characters, or the link arrives BROKEN
+> (measured 2026-09-04, bean `qou-pbql`).** A link destination of **150
+> characters or more** in a PR body comes back wrapped in double backticks —
+> `[label](``https://…``)` — and markdown link destinations do not process
+> backticks, so the destination becomes a literal string and the link is dead
+> in the rendered body. 149 is clean; T149 / T150 / T151 were binary-searched
+> with generator-asserted lengths. It is the **URL** length, not the line
+> length (a 130-char label with a 110-char URL is clean), and it is **not** the
+> author's input: the same body was rewritten twice in plain single-delimiter
+> markdown and came back mangled both times.
+>
+> The pattern above is the problem, because a `claude/<theme>-<utc-ymd>` branch
+> name spends ~43 characters of the budget. **Address a long path by short
+> commit sha instead** — the same bean file is **153** characters branch-form
+> and **116** sha-form:
+>
+> ```
+> https://github.com/litlfred/qou/blob/<short-sha>/<path-to>/<block>.md
+> ```
+>
+> A sha-form link is also more durable: rule 8 rebase-merges every branch, which
+> rewrites the shas a branch-form link resolves through.
+>
+> **Do not "fix" this by shortening the bean's filename or blaming `--`.** The
+> first three instances were all `.beans/…--….md` paths, which made both the
+> dot-directory and the double hyphen look causal; tested in isolation a probe
+> carrying **both** is clean at 98 characters and one carrying **neither** is
+> mangled at 155. Bean filenames are `<id>--<slug>.md` with long slugs, so they
+> simply clear 150 more often than `scripts/foo.py` does.
+
 **When to link siblings (`.ts`, `.lean`, `.tex`):**
 - Only in delivery summaries for **modified** files (see
   `.claude/skills/local/delivery-summary.md`) — list every sibling that
