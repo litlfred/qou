@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T10:28:53Z
-updated_at: 2026-09-04T10:37:23Z
+updated_at: 2026-09-04T12:59:20Z
 ---
 
 MEASURED 2026-09-04 on content/quantum-observable-universe/, all spellings.
@@ -35,3 +35,22 @@ SO THE MISMATCH IS AN INDEX MISMATCH, not a formalism gap:
 A morphism is a statement about how STRAND COMPOSITION interacts with COLOUR RECURSION.
 
 TWO CONSEQUENCES, the second a warning. (1) The classical prototype exists: under CONNECTED SUM the coloured Jones multiplies, J_{K1 # K2} = J_{K1} J_{K2}, so recurrence ideals interact predictably and A_{K1} x A_{K2} -> A_{K1#K2} is the natural first target. (2) bowtie_K is NOT a connected sum - the register calls it 'Hopf-link-style', and under a genuine link operation the coloured Jones does not simply multiply. So this is the known-HARD shape. Expect connected sum to work and the Hopf-linked case to be the problem - which is where the corpus puts its physics, since the inter-block operation assembling Z p + N n is exactly the Hopf link.
+
+CONNECTED-SUM PROBE DONE 2026-09-04, formalize-first, BEFORE any search: content/quantum-observable-universe/lean/QOU/Eightfold/ConnectedSumAnnihilator.lean. lean-direct exit 0, 6 theorems, all sorry-free; shift_mul needs NO axioms at all, the rest [propext, (Classical.choice,) Quot.sound].
+
+RESULT: THE NAIVE MAP DOES NOT EXIST, and this CORRECTS my own framing. I called connected sum 'the known-easy prototype' and proposed A_{K1} x A_{K2} -> A_{K1#K2} as the natural first target. The naive form of that map is now EXCLUDED.
+
+THE MECHANISM, and it is the asymmetry of the two generators on a pointwise product:
+  shift_mul        L(f*g) = (Lf)*(Lg)          - L is FULLY multiplicative, it shifts BOTH factors
+  mulPow_mul_left  M(f*g) = (Mf)*g             - M passes to ONE factor, it is HALF multiplicative
+  mulPow_not_mul_both                          - and applying M to both squares the weight (witness over Q)
+
+So an operator built from L does not see the two towers as a tensor product; it sees their pointwise product, and a relation satisfied by one factor is destroyed by the other.
+
+annihilator_not_monotone: there exist f, g and a first-order P with P in A_f and P NOT in A_{f*g}. Witness f = 1, g = 2^n, P = L - 1; the residual is 2^n, nonzero at EVERY colour (not_annihilates_pow_two), so it is not an edge case at one n. Since J_{K1#K2} = J_{K1}*J_{K2} pointwise, that is exactly 'carry the annihilator across' failing.
+
+NON-VACUITY AND MUTANT CHECKED: the predicate is satisfiable (annihilates_one); it is not trivially true (the same operator fails on 2^n); and the mutant that drops g (f*1) RESTORES annihilation - so the obstruction is caused by the second factor, not by a broken definition.
+
+SCOPE. (b) for the naive map - the containment A_f subset A_{f*g} fails on a first-order operator over Q, invariant exhibited not asserted. At most (a) for the programme: it does NOT exclude a connected-sum construction. The classical route is the HADAMARD PRODUCT / creative-telescoping closure property - the pointwise product of two holonomic sequences is holonomic, with an annihilator of order at most n1*n2. That is a construction on OPERATORS, not a map of ideals, and it RAISES THE ORDER MULTIPLICATIVELY. That is the honest shape of the connected-sum case and the reason it is not the cheap prototype I called it.
+
+CONSEQUENCE FOR THE PROGRAMME: the cheap first target is gone. If the Hopf-linked case (bowtie_K) was expected to be the hard one and connected sum the warm-up, there is no warm-up - both need an order-raising construction, and only connected sum has a classical one to copy.
