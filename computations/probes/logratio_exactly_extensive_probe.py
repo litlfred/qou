@@ -98,6 +98,13 @@ def main() -> int:
     ck = json.loads(CKPT.read_text())
     agg = defaultdict(lambda: defaultdict(lambda: mp.mpf(0)))
     for k, v in ck.items():
+        # A `<A>|<w>|<lam>|partial` key is an IN-FLIGHT ROW CURSOR banked
+        # by the driver's --budget-seconds path, not a completed term: its
+        # value is a dict, and `mp.mpf(dict)` raises. Skip it. This probe
+        # reports only completed partitions, so an in-flight one is simply
+        # not yet part of the sum.
+        if k.endswith("|partial"):
+            continue
         a, w, lam = k.split("|", 2)
         agg[("nn" if a.startswith("n") else "pp",
              int(a.lstrip("n")))][w] += mp.mpf(v)

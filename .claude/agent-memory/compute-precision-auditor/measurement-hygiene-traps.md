@@ -460,3 +460,87 @@ Two generalisations worth more than the instance:
 
 The corrected run: 2/2 controls MOVED, 0/7 subjects moved. Only the second
 number was ever in question, and only the fixed harness could answer it.
+
+---
+
+## TRAP — a new key shape in a shared checkpoint is an API change to every reader of it
+
+**Established 2026-09-04, PR #6581, by breaking two probes with my own change.**
+
+Making `bpp_higher_a_resumable_driver` resumable meant banking an in-flight row
+cursor into the checkpoint it already used for completed terms, under a new key
+suffix `|partial` whose value is a **dict** where every other value is a numeric
+string. I excluded those keys in the driver and stopped there. Two sibling
+probes read the **same file**, and both die:
+
+    TypeError: cannot create mpf from
+      {'next_row': 867, 'acc': '2069.9658...', 'dim': 1638}
+
+Two things generalise:
+
+- **`str.split(sep, maxsplit)` does not raise on an extra field.** The consumers
+  do `a, w, lam = k.split("|", 2)`; the fourth field lands inside `lam`, the
+  unpack succeeds, and the failure surfaces one line later as a type error that
+  names neither the key nor the producer that wrote it. A malformed-key guard
+  written as "the unpack will catch it" catches nothing.
+- **Find the readers before writing the key, not after.** `grep -rln <basename
+  of the state file>` is the whole audit and takes one command. Here it returns
+  three files and the producer is one of them.
+
+A shared checkpoint / cache / bank file is an interface. Adding a key namespace
+to it is a breaking change to every consumer, exactly like adding a field to a
+witness schema.
+
+## TRAP — "has ≥ N points" is not a completeness guard, and a resumable producer is what exposes that
+
+**Same PR, and this is the one that could have published a wrong number.**
+
+`chain_binding_closed_form_probe` aggregates a two-species bank and guarded only
+with `if len(As) < 3: continue`. That admits a state which is not merely
+incomplete but *misleading*:
+
+- **one species banked** — the `continue` skips it silently, and the probe then
+  `KeyError`s at `params["nn"]`. Loud, but for the wrong reason, and only by
+  luck: a probe that happened not to dereference the absent species would have
+  written a witness.
+- **both species banked at DIFFERENT A-sets** — both clear `len(As) >= 3`, the
+  closed form is fitted on unequal ranges, and every pp-vs-nn comparison runs
+  across A-sets that do not correspond. Nothing raises. The witness records a
+  comparison that was never made.
+
+**The point is that resumability turns the second case from a corner into the
+default.** Before `--budget-seconds`, a bank was written by runs that either
+finished a species or contributed nothing; afterwards, a bank mid-drain
+routinely holds pp at `{2,3,4,5}` and nn at `[]` or `{2,3}`. Measured, while
+fixing this: exactly that state.
+
+So when you make a producer resumable, re-read every **consumer's** assumption
+about the states its input can be in. The guard that was adequate against
+"finished or absent" is not adequate against "partial", and the failure is
+silent in exactly the case that matters.
+
+The sibling `logratio_exactly_extensive_probe` had the species half of this from
+a Copilot review; neither had the A-set-agreement half.
+
+## STABLE — the strongest verification of a compute refactor is a stamp-only diff of the production run
+
+Same PR. Two verification modes were written and both passed — `--verify-rowwise`
+(9/9 partitions identical to 40 digits) and `--verify-cache` (140/140 entries
+bit-exact by mpmath's internal `(sign, man, exp, bc)` tuple). Both are worth
+having and neither is the real evidence.
+
+The real evidence is that re-running the **whole** producer under the new code
+path produced a witness whose diff against the committed one is **two lines**,
+both of them the q0 stamp: every `B_tot`, every per-bond and marginal figure,
+byte-identical. A spot-check says the new path agrees on the cases you chose;
+the diff says it reproduces the original production arithmetic.
+
+**Prefer this shape of check whenever a producer is cheap enough to re-run.** It
+needs no tolerance, no sample, and no judgement about which cases were
+representative — and it is the same instrument as the witness-staleness triage,
+pointed at your own change.
+
+Corollary for serialization: `mp.nstr` is lossy, so a cache persisted as decimal
+strings would make a resumed run *disagree* with an uninterrupted one by a few
+ulp — small enough to pass a tolerance check and large enough to break exactly
+this diff. Persist the internal tuple.

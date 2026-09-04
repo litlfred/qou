@@ -68,6 +68,7 @@ value it emits is checked against the committed `B_pp_strong_MeV` on every
 invocation, so a resumed run cannot silently drift.
 """
 
+import hashlib
 import importlib.util
 import json
 import sys
@@ -147,9 +148,280 @@ def chi_for(q, crossings, cols_by_gen, dim, d_weighted):
     return chi
 
 
+# ------------------------------------------------------------- sparse cache
+# THE OTHER HALF OF THE RESTART PROBLEM.  Row-wise chunking (below) makes a
+# partition resumable, but every launch still paid to rebuild the in-memory
+# Hoefsmit cache first.  Measured on this container: 103-122 s per launch, and
+# in a 170 s budget that is 70 % of the window spent re-deriving something the
+# previous launch already had.  Chunking without this fixes the wrong half.
+#
+# The cache is pure a function of (n, q), so it is safe to persist.  Entries
+# are serialized as mpmath's INTERNAL (sign, man, exp, bc) tuple rather than a
+# decimal string: `mp.nstr` is lossy, and a cache that silently rounds would
+# change the numbers a resumed run produces relative to an uninterrupted one.
+# `--verify-cache` asserts the round-trip is bit-exact.
+#
+# Keyed by n, by the q string, AND by the source of the code that BUILDS the
+# matrices, so neither a re-pin nor an edit to the builder can serve a stale
+# cache.  The third component is not decoration: without it the cache is keyed
+# on its inputs and not on its producer, which is exactly the `scriptHash`
+# staleness class -- an edit to `colour_weighting_across_mixed_nuclei_probe`
+# would change every matrix while `(n, q)` stayed put, and a resumed run would
+# silently mix old and new arithmetic in one witness.  Measured occasion: this
+# branch rebased across 55 commits of main while four caches sat on disk.
+#
+# SCOPE, stated rather than implied: this hashes the two files' own text.  It
+# does NOT see IMPORT-CONE drift -- a change inside a module `_cw` calls is
+# invisible here, the same blind spot `witness_import_cone_staleness_audit.py`
+# exists for.  Delete `computations/.sparse-cache/` by hand if you change
+# something deeper in that cone.
+
+SPARSE_CACHE_DIR = _COMP / ".sparse-cache"
+
+
+def _builder_fingerprint() -> str:
+    """12 hex chars over the source of the code that builds the matrices."""
+    h = hashlib.sha256()
+    for f in (_HERE / "colour_weighting_across_mixed_nuclei_probe.py",
+              Path(__file__)):
+        try:
+            h.update(f.read_bytes())
+        except OSError:                     # unreadable -> distinct digest,
+            h.update(b"<unreadable>")       # so we rebuild rather than trust
+    return h.hexdigest()[:12]
+
+
+_BUILDER_FP = _builder_fingerprint()
+
+
+def _mpf_to_j(x):
+    s, m, e, bc = x._mpf_
+    return [s, str(m), e, bc]          # man can exceed JSON's safe int range
+
+
+def _j_to_mpf(t):
+    return mp.make_mpf((t[0], int(t[1]), t[2], t[3]))
+
+
+def _cache_path(n, q):
+    tag = mp.nstr(q, 30).replace(".", "_").replace("-", "m")
+    return SPARSE_CACHE_DIR / f"n{n}-q{tag}-b{_BUILDER_FP}.json"
+
+
+def load_or_build_sparse_cache(q, yt, n, *, use_disk=True):
+    """`_cw.build_sparse_cache`, memoised on disk. Returns (cache, source)."""
+    path = _cache_path(n, q)
+    if use_disk and path.exists():
+        try:
+            raw = json.loads(path.read_text())
+            cache = {}
+            for lam_s, entry in raw["partitions"].items():
+                # cols_by_gen is a LIST indexed by generator, each element a
+                # list of columns, each column a list of (row, mpf) pairs.
+                cols_by_gen = [
+                    [[(k, _j_to_mpf(v)) for k, v in col] for col in cols]
+                    for cols in entry["cols_by_gen"]
+                ]
+                cache[tuple(json.loads(lam_s))] = (cols_by_gen, entry["dim"])
+            return cache, f"disk ({path.name})"
+        except (json.JSONDecodeError, OSError, KeyError, ValueError, TypeError):
+            print("  [cache] unreadable disk cache — rebuilding")
+    cache = _cw.build_sparse_cache(q, yt, n)
+    if use_disk:
+        try:
+            SPARSE_CACHE_DIR.mkdir(exist_ok=True)
+            raw = {"n": n, "q": mp.nstr(q, 50),
+                   "builder_fingerprint": _BUILDER_FP, "partitions": {}}
+            for lam, (cols_by_gen, dim) in cache.items():
+                raw["partitions"][json.dumps(list(lam))] = {
+                    "dim": dim,
+                    "cols_by_gen": [
+                        [[[k, _mpf_to_j(v)] for k, v in col] for col in cols]
+                        for cols in cols_by_gen
+                    ],
+                }
+            tmp = path.with_suffix(".json.tmp")
+            tmp.write_text(json.dumps(raw))
+            tmp.replace(path)
+            # Prune the same (n, q) under a SUPERSEDED fingerprint. Without
+            # this the directory grows by one file per edit to the builder,
+            # and these are large -- the n=15 cache alone is ~10 MB.
+            # The glob deliberately has no "-b" in it, so it also reaps the
+            # pre-fingerprint `n<N>-q<tag>.json` files this key supersedes.
+            for stale in SPARSE_CACHE_DIR.glob(path.name.split("-b")[0] + "*.json"):
+                if stale != path:
+                    stale.unlink(missing_ok=True)
+        except OSError as exc:
+            print(f"  [cache] could not persist ({exc}) — continuing")
+    return cache, "built"
+
+
+def _verify_cache(q, n=6) -> int:
+    """Assert the persisted cache round-trips BIT-EXACTLY, entry by entry."""
+    print("=" * 78)
+    print("  --verify-cache: disk round-trip is bit-exact, not merely close")
+    print("=" * 78)
+    yt = y_lambda_at(n, q)
+    built = _cw.build_sparse_cache(q, yt, n)
+    path = _cache_path(n, q)
+    if path.exists():
+        path.unlink()
+    load_or_build_sparse_cache(q, yt, n)          # writes it
+    loaded, src = load_or_build_sparse_cache(q, yt, n)
+    print(f"  n={n}  partitions={len(built)}  loaded from {src}")
+    bad = n_entries = 0
+    if set(built) != set(loaded):
+        print("  FAIL partition sets differ")
+        return 1
+    for lam in sorted(built):
+        cb, dim = built[lam]
+        cl, dim2 = loaded[lam]
+        ok = dim == dim2 and len(cb) == len(cl)
+        for g in range(len(cb)):
+            for c0, c1 in zip(cb[g], cl[g]):
+                if len(c0) != len(c1):
+                    ok = False
+                    continue
+                for (k0, v0), (k1, v1) in zip(c0, c1):
+                    n_entries += 1
+                    # bit-exact: compare the internal representation, not ==
+                    if k0 != k1 or v0._mpf_ != v1._mpf_:
+                        ok = False
+        bad += not ok
+        print(f"  {'ok  ' if ok else 'FAIL'} lam={lam} dim={dim:>4}")
+    print("")
+    print(f"{n_entries} matrix entries compared by internal representation")
+    print("VERIFIED -- bit-exact" if not bad else f"FAILED on {bad} partition(s)")
+    return 1 if bad else 0
+
+
+# ---------------------------------------------------------------- row-wise
+# WHY A SECOND PATH EXISTS.  `chi_for` above banks a partition only when the
+# whole partition is done.  Measured on this container (PR #6537): session
+# suspension kills the driver every few minutes, the largest A=5 partition
+# (dim 2002) takes ~543 s, and the in-memory cache costs ~103 s to rebuild on
+# every launch.  A run whose alive window is shorter than one partition banks
+# NOTHING, however many times it is restarted -- three consecutive relaunches
+# banked one partition, then only the cheap ones, then zero.
+#
+# THE DECOMPOSITION.  In `_cw.right_multiply`, output row i depends only on
+# input row i:
+#
+#     out[i][j] = d * P[i][j] + sum over (k, v) in cols[j] of P[i][k] * v
+#
+# so the rows of P = prod_g (S_g + d_g I) evolve INDEPENDENTLY, and
+#
+#     chi = trace(P) = sum_i ( e_i^T prod_g (S_g + d_g I) )[i]
+#
+# can be accumulated one row at a time.  Total arithmetic is unchanged --
+# dim rows x ncross crossings x nnz per column, exactly what the full-matrix
+# path does -- but the live state drops from dim^2 to dim (2002 mpf instead of
+# 4,008,004), and the resume point becomes three scalars: the partition, the
+# next row index, and the running sum.
+#
+# EXACTNESS.  The full-matrix path accumulates `chi += P[i][i]` for
+# i = 0..dim-1 in that order; this accumulates the same terms in the same
+# order, so the two agree bit-for-bit rather than to a tolerance.
+# `--verify-rowwise` asserts precisely that against `chi_for`, and is the
+# reason a resumed run can be trusted at all.
+
+PARTIAL_SAVE_EVERY_S = 20.0    # bound checkpoint I/O by TIME, not row count:
+                               # a dim-40 partition and a dim-2002 one then
+                               # cost the same in writes per unit of work.
+
+
+def _row_after_crossings(i, crossings, cols_by_gen, dim, d_weighted, h):
+    """Row i of prod_g (S_g + d_g I), starting from e_i."""
+    zero, one = mp.mpf(0), mp.mpf(1)
+    row = [one if j == i else zero for j in range(dim)]
+    for gen_idx, ctype in crossings:
+        d = d_weighted if ctype == "averaged_weighted" else _cw.d_for_ctype(ctype, h)
+        cols = cols_by_gen[gen_idx]
+        nxt = [None] * dim
+        for j in range(dim):
+            acc = d * row[j]
+            for (k, v) in cols[j]:
+                acc += row[k] * v
+            nxt[j] = acc
+        row = nxt
+    return row
+
+
+def chi_for_rowwise(q, crossings, cols_by_gen, dim, d_weighted,
+                    part_key=None, ck=None, deadline=None):
+    """`chi_for`, accumulated row by row so it can be interrupted and resumed.
+
+    Returns (chi_or_None, done).  `done` False means the deadline expired with
+    progress banked under `part_key`; call again and it continues from there.
+    With no `part_key`/`ck` it is a plain drop-in for `chi_for`.
+    """
+    h = q - mp.mpf(1) / q
+    start, acc = 0, mp.mpf(0)
+    if ck is not None and part_key is not None and part_key in ck:
+        st = ck[part_key]
+        start, acc = int(st["next_row"]), mp.mpf(st["acc"])
+    last_save = time.time()
+    for i in range(start, dim):
+        acc += _row_after_crossings(i, crossings, cols_by_gen, dim,
+                                    d_weighted, h)[i]
+        now = time.time()
+        bankable = ck is not None and part_key is not None
+        if bankable and now - last_save >= PARTIAL_SAVE_EVERY_S:
+            ck[part_key] = {"next_row": i + 1, "acc": mp.nstr(acc, 40),
+                            "dim": dim}
+            save_ckpt(ck)
+            last_save = now
+        if deadline is not None and now >= deadline:
+            if bankable:
+                ck[part_key] = {"next_row": i + 1, "acc": mp.nstr(acc, 40),
+                                "dim": dim}
+                save_ckpt(ck)
+            return None, False
+    if ck is not None and part_key is not None:
+        ck.pop(part_key, None)       # superseded by the completed entry
+    return acc, True
+
+
+def _verify_rowwise(q, d_blind) -> int:
+    """Assert the row-wise path reproduces `chi_for` EXACTLY on real cases."""
+    print("=" * 78)
+    print("  --verify-rowwise: row-wise chi vs the full-matrix chi_for")
+    print("=" * 78)
+    bad = 0
+    for A in (2, 3):
+        words = atom_canonical_crossings(A, 0, include_inter=True)
+        n = max(g for g, _ in words) + 2
+        cache = _cw.build_sparse_cache(q, y_lambda_at(n, q), n)
+        for lam in sorted(cache):
+            cols_by_gen, dim = cache[lam]
+            a = chi_for(q, words, cols_by_gen, dim, d_blind)
+            b, done = chi_for_rowwise(q, words, cols_by_gen, dim, d_blind)
+            same = bool(done) and mp.nstr(a, 40) == mp.nstr(b, 40)
+            bad += (not same)
+            tag = "ok  " if same else "FAIL"
+            print(f"  {tag} A={A} lam={lam} dim={dim:>4}  {mp.nstr(a, 22)}")
+            if not same:
+                print(f"       full-matrix {mp.nstr(a, 40)}")
+                print(f"       row-wise    {mp.nstr(b, 40)}")
+    verdict = ("VERIFIED -- identical on every partition tested" if not bad
+               else f"FAILED on {bad} partition(s)")
+    print("")
+    print(verdict)
+    return 1 if bad else 0
+
+
 def main() -> int:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     fresh = "--fresh" in sys.argv
+    # --budget-seconds N: stop cleanly at N seconds with EVERYTHING banked,
+    # rather than being killed mid-partition and losing the run. Pair it with
+    # --rowwise so the stop point is a row rather than a whole partition.
+    budget = None
+    for a in sys.argv[1:]:
+        if a.startswith("--budget-seconds="):
+            budget = float(a.split("=", 1)[1])
+    rowwise = "--rowwise" in sys.argv or budget is not None
+    no_disk_cache = "--no-disk-cache" in sys.argv
     # --neutron runs the pure-NEUTRON chain (0, A) instead of (A, 0). Its
     # checkpoint keys carry an "n" prefix so the two species never collide and
     # existing proton banks stay valid.
@@ -163,12 +435,22 @@ def main() -> int:
     d_blind = _cw.d_for_ctype("averaged", h)
     ck = load_ckpt(fresh)
 
+    if "--verify-rowwise" in sys.argv:
+        return _verify_rowwise(q, d_blind)
+    if "--verify-cache" in sys.argv:
+        return _verify_cache(q)
+
+    deadline = (time.time() + budget) if budget is not None else None
+
     print("=" * 78)
     print(f"  Resumable B_{label} driver — per-partition checkpointing")
     print("=" * 78)
     print(f"\n  E0 = {mp.nstr(E0, 20)} MeV")
     print(f"  checkpoint: {CKPT.relative_to(_COMP.parent)} "
-          f"({len(ck)} term(s) already banked)\n")
+          f"({sum(1 for k in ck if not k.endswith('|partial'))} term(s) "
+          f"already banked"
+          + (f", {sum(1 for k in ck if k.endswith('|partial'))} partial"
+             if any(k.endswith("|partial") for k in ck) else "") + ")\n")
 
     results = {}
     for A in A_LIST:
@@ -180,10 +462,11 @@ def main() -> int:
               f"{len(words['on'])}/{len(words['off'])} crossings (on/off)")
         t_cache = time.time()
         yt = y_lambda_at(n, q)
-        cache = _cw.build_sparse_cache(q, yt, n)
+        cache, csrc = load_or_build_sparse_cache(q, yt, n,
+                                                 use_disk=not no_disk_cache)
         print(f"        cache: {len(cache)} contributing partition(s), "
               f"dims {sorted(d for _, d in cache.values())}, "
-              f"{time.time() - t_cache:.1f}s")
+              f"{time.time() - t_cache:.1f}s [{csrc}]")
 
         # work model: cost ~ dim^2, used only for the ETA
         units = {lam: cache[lam][1] ** 2 for lam in cache}
@@ -199,7 +482,19 @@ def main() -> int:
                 continue
             cols_by_gen, dim = cache[lam]
             ts = time.time()
-            chi = chi_for(q, words[w], cols_by_gen, dim, d_blind)
+            if rowwise:
+                chi, done = chi_for_rowwise(q, words[w], cols_by_gen, dim,
+                                            d_blind, part_key=key + "|partial",
+                                            ck=ck, deadline=deadline)
+                if not done:
+                    st = ck.get(key + "|partial", {})
+                    print(f"\n  budget reached inside {w} lam={lam} "
+                          f"(row {st.get('next_row', '?')}/{dim}) — banked and "
+                          f"exiting cleanly. Re-run to continue from there.",
+                          flush=True)
+                    return 0
+            else:
+                chi = chi_for(q, words[w], cols_by_gen, dim, d_blind)
             y = mp.mpf(str(yt[lam]))
             ck[key] = mp.nstr(y * chi, 30)
             save_ckpt(ck)
@@ -225,6 +520,8 @@ def main() -> int:
     # invocation's results, which lets a run of `5` alone still report it.
     banked = {}
     for key in ck:
+        if key.endswith("|partial"):
+            continue          # an in-flight row cursor, not a banked term
         a_s, w, lam = key.split("|", 2)
         if bool(a_s.startswith("n")) != neutron:
             continue          # other species' bank -- never mix the two
