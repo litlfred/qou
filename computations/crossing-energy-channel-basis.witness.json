@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T19:13:38.892364+00:00",
-  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
+  "computedAt": "2026-09-04T21:58:47.568329+00:00",
+  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
   "assertions": [
     {
       "name": "n_zero_entries_in_change_of_basis",
@@ -34,11 +34,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 675,
+  "allPassedBasis": "assertions",
+  "durationMs": 544,
+  "durationMsBaseline": "builder-construction",
   "computation": "crossing-energy-channel-basis",
   "scriptFile": "crossing_energy_channel_basis_probe.py",
   "scriptHash": "e79c4b86daea",
-  "scriptCommitSha": "d28dec3a4f00d2e1151f6855e0c11c71f9aafc81",
+  "scriptCommitSha": "cc5c4b3562609d335e6fd9abf871d66d0c53007c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,7 +52,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/crossing_energy_channel_basis_probe.py"
+    ],
+    "reproduce": "python3 -u computations/crossing_energy_channel_basis_probe.py"
   },
   "description": "Change of basis between the Hecke eigenvalue pair {q, -1/q} and the bar-parity pair {cosh L, sinh L} spanning the crossing-energy channels; settles bean qou-yfro.",
   "contentBlock": "obs:crossing-energy-decomposition",
@@ -157,6 +168,6 @@
     "notation-register-table3-data calls h = q - 1/q 'the Hecke-relation discriminant'. The discriminant of sigma^2 - h*sigma - 1 is h^2 + 4 = [2]_q^2, not h; h is the trace. Flagged, not edited here."
   ],
   "q0Anchor": "proton",
-  "q0Value": "1.10997858275138080759166909561",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

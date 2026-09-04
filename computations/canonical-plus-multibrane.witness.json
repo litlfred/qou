@@ -1,0 +1,396 @@
+{
+  "computation": "canonical-plus-multibrane",
+  "description": "Canonical Jones-Markov trace (level 0) PLUS multi-brane \u03a6_q tower (levels 1..N) per prop:categorical-mass-markov's full formula \ud835\udd2a = |tr_M| + \u03a3 \u2016\u03a6_q(z_i)\u2016.  Level 0 uses markov_trace_canonical.tr_M_element (7/7 prop-table values).  Levels 1..N use aggregated V\u0302 (\u03a3_\u03bb w_\u03bb V\u0302_i^\u03bb) with Markov-stabilization jet lift V\u0302^(n) = z^n V\u0302^(0).  Aggregated-BEFORE-\u03a6_q ordering matches the prop's letter (\u03a6_q nonlinearity breaks per-irrep-then-sum).  Proper K\u00e4hler-differential jet lift is open.",
+  "timestamp": "2026-09-04T21:56:18.024509+00:00",
+  "parameters": {
+    "q0": 1.1099785827513808,
+    "E_0_MeV": "0.78233340931000000000000000000000000000000000000003"
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": true,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.005720719532432953351193533255493993908157411610855",
+      "B_MeV": "0.44112420113991332031564514012590608648401901835779",
+      "B_truncation_err_MeV": "0.00000031337972958286181051012045277566714327012271743869",
+      "per_level": [
+        {
+          "level": "1..2 (converged to \u03b5<1.278e-03)",
+          "N_summed": 2,
+          "delta_raw_at_level_1": "0.74069872263218374004429715591421451233582529302729",
+          "sum_scaled": "0.0073123804561516756211884002680059261345894720816301",
+          "per_level_terms_MeV": [
+            "0.0056887979904471235179849739393823336566972830525417",
+            "0.000031921541985829833208559316111660251460128558313268"
+          ],
+          "truncation_next_term_MeV": "0.00000031337972958286181051012045277566714327012271743869",
+          "eps_markov_stab_MeV": "0.00056365586712263042961781478752612534252769215247246",
+          "eps_kahler_proper_MeV": "0.000055847990572924783706334688429195106639898384586704",
+          "within_AME_D": true
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095036174418419449315864642167055957172961901457263"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": true,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0074595790233378399681446449457304228198217142705859",
+      "B_MeV": "0.44286306063081820693259625181614251539568332101752",
+      "B_truncation_err_MeV": "0.00000037900932406445084921066342138759288233415278073035",
+      "per_level": [
+        {
+          "level": "1..2 (converged to \u03b5<1.278e-03)",
+          "N_summed": 2,
+          "delta_raw_at_level_1": "0.96623306335780253090175068109135364293059028507448",
+          "sum_scaled": "0.0095350383028087940116001345433202394548287021187263",
+          "per_level_terms_MeV": [
+            "0.0074209723078771792274454288228744166160424777213428",
+            "0.000038606715460660740699216122856006203779236549243073"
+          ],
+          "truncation_next_term_MeV": "0.00000037900932406445084921066342138759288233415278073035",
+          "eps_markov_stab_MeV": "0.00073528267098139254452493575552017709326543535315167",
+          "eps_kahler_proper_MeV": "0.000072853068818442305186813104741848266140267289735867",
+          "within_AME_D": true
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.094943511559186300692748696888371807831753752566062"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0",
+      "B_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095341028393981500211043078968382296828006391675541"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0056887979904471235179849739393823336566972830525417",
+      "B_MeV": "0.44109227959792749048243658080979442623255888979947",
+      "B_truncation_err_MeV": "0.000021042134348313496447479641556529716329417400640282",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.74069872263218374004429715591421451233582529302729",
+          "scale": 0.009817186454275078,
+          "delta_scaled": "0.0072715774665235273154015086572991617860647223092852"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095037875499712681759676269744061797704038860687459"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.005720719532432953351193533255493993908157411610855",
+      "B_MeV": "0.44112420113991332031564514012590608648401901835779",
+      "B_truncation_err_MeV": "0.00000020657455629329960305432709553538427655322619319138",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.74069872263218374004429715591421451233582529302729",
+          "scale": 0.009817186454275078,
+          "delta_scaled": "0.0072715774665235273154015086572991617860647223092852"
+        },
+        {
+          "level": 2,
+          "delta_raw": "0.42336788004001268922126451570596919362018051607542",
+          "scale": 9.637714987800207e-05,
+          "delta_scaled": "0.000040802989628148305786891610706764348524749772344945"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095036174418419449315864642167055957172961901457263"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0",
+      "B_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095341028393981500211043078968382296828006391675541"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0074209723078771792274454288228744166160424777213428",
+      "B_MeV": "0.44282445391535754619189703569328650919190408446827",
+      "B_truncation_err_MeV": "0.000027449225048891651428235044635565602491079565103765",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.96623306335780253090175068109135364293059028507448",
+          "scale": 0.009817186454275078,
+          "delta_scaled": "0.0094856901412689321614437916108819036982595326884245"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.094945568889671539484522603263311091664603894255629"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "full",
+      "apply_brane_scaling": true,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0074595790233378399681446449457304228198217142705859",
+      "B_MeV": "0.44286306063081820693259625181614251539568332101752",
+      "B_truncation_err_MeV": "0.00000026947416033032728572008055114740074401831414638803",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.96623306335780253090175068109135364293059028507448",
+          "scale": 0.009817186454275078,
+          "delta_scaled": "0.0094856901412689321614437916108819036982595326884245"
+        },
+        {
+          "level": 2,
+          "delta_raw": "0.51203175858934054997605379969001699885897288122645",
+          "scale": 9.637714987800207e-05,
+          "delta_scaled": "0.000049348161539861850156342932438335756569169430301843"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.094943511559186300692748696888371807831753752566062"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0",
+      "B_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095341028393981500211043078968382296828006391675541"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.57947335694839836247920176440910406932636525314659",
+      "B_MeV": "1.0148768385558787294436533712795161619022268598935",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.74069872263218374004429715591421451233582529302729",
+          "scale": 1.0,
+          "delta_scaled": "0.74069872263218374004429715591421451233582529302729"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.06446121413347055324265837176687302663306294008986"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "adjacent",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.91068819393244858885333512193068099008907257750552",
+      "B_MeV": "1.3460916755399289558177867288010930826649341842525",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.74069872263218374004429715591421451233582529302729",
+          "scale": 1.0,
+          "delta_scaled": "0.74069872263218374004429715591421451233582529302729"
+        },
+        {
+          "level": 2,
+          "delta_raw": "0.42336788004001268922126451570596919362018051607542",
+          "scale": 1.0,
+          "delta_scaled": "0.42336788004001268922126451570596919362018051607542"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.046810958908183871318350253542297891053747720100224"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 0,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.0",
+      "B_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.095341028393981500211043078968382296828006391675541"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 1,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "0.75591640664475489039011323898581324703677707741311",
+      "B_MeV": "1.19131988825223525735456484585622533961263868416",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.96623306335780253090175068109135364293059028507448",
+          "scale": 1.0,
+          "delta_scaled": "0.96623306335780253090175068109135364293059028507448"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.05505866173507481626213195446026841532949583674497"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_brane_levels": 2,
+      "pair_mode": "full",
+      "apply_brane_scaling": false,
+      "geometric_closed_form": false,
+      "canonical_contribution_MeV": "0.43540348160748036696445160687041209257586160674693",
+      "tower_contribution_MeV": "1.1564959580169485590775098469572840669259717114678",
+      "B_MeV": "1.5918994396244289260419614538276961595018333182148",
+      "B_truncation_err_MeV": "0.0",
+      "per_level": [
+        {
+          "level": 1,
+          "delta_raw": "0.96623306335780253090175068109135364293059028507448",
+          "scale": 1.0,
+          "delta_scaled": "0.96623306335780253090175068109135364293059028507448"
+        },
+        {
+          "level": 2,
+          "delta_raw": "0.51203175858934054997605379969001699885897288122645",
+          "scale": 1.0,
+          "delta_scaled": "0.51203175858934054997605379969001699885897288122645"
+        }
+      ],
+      "tr_M_atom": 0.5751722439177721,
+      "tr_M_free": 1.1317169043222104,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "delta_m_over_m_pct": "0.033711999296488073329928247076706636498741235009181"
+    }
+  ],
+  "scriptFile": "canonical_plus_multibrane.py",
+  "scriptHash": "cd388c7fe4a5",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "9d0f6c52e969dc03542eac2ff4643700f0dbe590",
+  "engine": "python",
+  "computedAt": "2026-09-04T21:56:18.192346+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:04.354973+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-09-04T22:00:15.318104+00:00",
+  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
   "assertions": [
     {
       "name": "third_diff_small_sameT",
@@ -13,11 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58023,
+  "allPassedBasis": "assertions",
+  "durationMs": 69623,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-imme-quartet",
   "scriptFile": "delta_lambda_imme_quartet.py",
   "scriptHash": "f70b03d2e642",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_imme_quartet.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_imme_quartet.py"
   },
   "description": "A=9 T=3/2 isobaric-quartet (⁹Li/⁹Be/⁹B/⁹C) third-difference test of the IMME degree-2 form of the canonical residual: log_q0 Δ_λ = a + b·T₃ + c·T₃² predicts Δ³ = 6d = 0 (Lean QOU.BraidKnot.DeltaLambdaIMME.imme_third_diff_zero). First falsifiable check of the rank-≤2 isotensor (Askey–Racah) truncation — triplets cannot falsify it (3 points always fit a parabola). Inner members (⁹Be, ⁹B) corrected to their measured T=3/2 IAS (14.3925 / 14.6550 MeV) for the same-T multiplet. Nuclear IMME d for A=9 is ~5–10 keV ≈ 0.002 exponent units, so any large Δ³ here would be framework structure in B_pred, not nuclear. Not wired; near-match tier; no fit.",
   "data": {
@@ -40,45 +50,45 @@
         "atom": "9Li",
         "Z": 3,
         "N": 6,
-        "B_pred": 1.0905599501630134,
+        "B_pred": 1.0905599501629824,
         "B_AME_gs": 45.3414,
         "ias_ex_MeV": 0.0,
         "B_AME_sameT": 45.3414,
-        "log_q0_gs": 35.724587974089886,
-        "log_q0_sameT": 35.724587974089886
+        "log_q0_gs": 35.72458797409016,
+        "log_q0_sameT": 35.72458797409016
       },
       "-0.5": {
         "atom": "9Be",
         "Z": 4,
         "N": 5,
-        "B_pred": 1.2636822585378968,
+        "B_pred": 1.263682258537861,
         "B_AME_gs": 58.1645,
         "ias_ex_MeV": 14.3925,
         "B_AME_sameT": 43.772,
-        "log_q0_gs": 36.69943340323669,
-        "log_q0_sameT": 33.97488963384166
+        "log_q0_gs": 36.69943340323696,
+        "log_q0_sameT": 33.97488963384193
       },
       "0.5": {
         "atom": "9B",
         "Z": 5,
         "N": 4,
-        "B_pred": 1.463479198827764,
+        "B_pred": 1.4634791988277225,
         "B_AME_gs": 56.3145,
         "ias_ex_MeV": 14.655,
         "B_AME_sameT": 41.6595,
-        "log_q0_gs": 34.982846830171965,
-        "log_q0_sameT": 32.094016696858986
+        "log_q0_gs": 34.982846830172235,
+        "log_q0_sameT": 32.094016696859256
       },
       "1.5": {
         "atom": "9C",
         "Z": 6,
         "N": 3,
-        "B_pred": 1.6934413938093513,
+        "B_pred": 1.6934413938093031,
         "B_AME_gs": 39.0366,
         "ias_ex_MeV": 0.0,
         "B_AME_sameT": 39.0366,
-        "log_q0_gs": 30.072026260235422,
-        "log_q0_sameT": 30.072026260235422
+        "log_q0_gs": 30.072026260235692,
+        "log_q0_sameT": 30.072026260235692
       }
     },
     "ground_state": {

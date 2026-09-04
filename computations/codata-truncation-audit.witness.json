@@ -1,24 +1,24 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-08-11T10:11:07.424997+00:00",
+  "computedAt": "2026-09-04T21:58:43.546841+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 30,
-  "truncated_files": 28,
+  "truncated_total": 164,
+  "truncated_files": 126,
   "by_constant": {
-    "m_e": 12,
-    "m_p": 3,
-    "q0": 11,
+    "m_e": 20,
+    "m_p": 7,
+    "q0": 133,
     "m_n": 3,
     "u_MeV": 1
   },
-  "exact_duplicates": 148,
+  "exact_duplicates": 250,
   "findings": [
     {
       "file": "computations/a4_interface_trace_integration_all.py",
-      "line": 30,
+      "line": 33,
       "constant": "m_e",
       "literal": "0.510998950",
       "canonical": "0.51099895069",
@@ -26,7 +26,7 @@
     },
     {
       "file": "computations/alpha/alpha_k_jones_markov_h12.py",
-      "line": 215,
+      "line": 236,
       "constant": "m_e",
       "literal": "0.510998950",
       "canonical": "0.51099895069",
@@ -34,35 +34,179 @@
     },
     {
       "file": "computations/audits/braid_encoding_audit.py",
-      "line": 341,
+      "line": 347,
       "constant": "m_p",
       "literal": "938.272",
       "canonical": "938.27208943",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
-      "file": "computations/audits/hardcoded_literal_audit.py",
-      "line": 292,
+      "file": "computations/audits/codata_2022_downstream_staleness_scan.py",
+      "line": 66,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
+      "file": "computations/audits/hardcoded_literal_audit.py",
+      "line": 293,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
+      "line": 111,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/no_q0_recorded_producer_split.py",
+      "line": 16,
+      "constant": "q0",
+      "literal": "1.1099785827",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/producer_baked_pin_audit.py",
+      "line": 217,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/q0_declaration_bindability_audit.py",
+      "line": 67,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/q0_hardcoded_pin_audit.py",
+      "line": 68,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/q0_literal_label_vs_value_audit.py",
+      "line": 75,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/q0_muon_proton_drain.py",
+      "line": 51,
+      "constant": "q0",
+      "literal": "1.1099785827",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/q0_producer_pin_classifier.py",
+      "line": 163,
+      "constant": "q0",
+      "literal": "1.109978582751",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
+      "line": 402,
+      "constant": "q0",
+      "literal": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
+      "line": 203,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/audits/witness_filename_blindspot_audit.py",
+      "line": 75,
+      "constant": "q0",
+      "literal": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/brng_hbarq2_saturation_genericity_probe.py",
+      "line": 30,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
       "file": "computations/build_markov_trace_assembly_deuteron_chain.py",
       "line": 241,
       "constant": "q0",
       "literal": "1.10997",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/build_markov_trace_assembly_neutron_chain.py",
-      "line": 241,
+      "line": 242,
       "constant": "q0",
       "literal": "1.10997",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/codata_corpus_literal_scan.py",
+      "line": 514,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/codata_corpus_literal_scan.py",
+      "line": 515,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/codata_corpus_literal_scan.py",
+      "line": 521,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/codata_corpus_literal_scan.py",
+      "line": 521,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/codata_corpus_literal_scan.py",
+      "line": 547,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/compute_audit_scan.py",
@@ -89,16 +233,88 @@
       "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
-      "line": 60,
+      "file": "computations/deltalambda/c_knot_tau_transfer_artifact_probe.py",
+      "line": 82,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
+      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
+      "line": 80,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/deltalambda/milnor_a4_deficit_h_form.py",
+      "line": 335,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_a5_a6_recursion_test.py",
+      "line": 166,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_deficit_vs_binding_magnitude_probe.py",
+      "line": 110,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_recursion_capcup_weight_probe.py",
+      "line": 188,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_recursion_forall_A_proof_probe.py",
+      "line": 228,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_recursion_forall_A_reduction_probe.py",
+      "line": 174,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/milnor_recursion_tl_derivation_probe.py",
+      "line": 195,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/deltalambda/mu3_target_frame_robustness_probe.py",
+      "line": 235,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
       "file": "computations/derive_q_values.py",
-      "line": 199,
+      "line": 250,
       "constant": "u_MeV",
       "literal": "931.494",
       "canonical": "931.49410372",
@@ -106,10 +322,18 @@
     },
     {
       "file": "computations/gen_q0_anchor_manifest.py",
-      "line": 27,
+      "line": 68,
       "constant": "q0",
       "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/hecke/h3_gram_degeneracy_is_wedderburn_weight_vanishing.py",
+      "line": 233,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
@@ -122,39 +346,87 @@
     },
     {
       "file": "computations/knot-volumes.py",
-      "line": 155,
+      "line": 170,
       "constant": "q0",
       "literal": "1.10997",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/knot-volumes.py",
+      "line": 285,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/knot-volumes.py",
+      "line": 288,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/markov/markov_identity_symbolic_probe.py",
+      "line": 203,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/markov/peel_anchor_identification_probe.py",
+      "line": 111,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/mass_sweep_bar_sym_h2_coefficient_hunt.py",
-      "line": 89,
+      "line": 108,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/murakami_deformed_vc_q0.py",
-      "line": 49,
+      "file": "computations/mpf_mixed_arithmetic_audit.py",
+      "line": 439,
       "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/mu2_vanishing_is_a_normalisation_identity_probe.py",
+      "line": 166,
+      "constant": "q0",
+      "literal": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/neutrino_mass_volume_exclusion.py",
-      "line": 33,
+      "line": 36,
       "constant": "m_p",
       "literal": "938.272",
       "canonical": "938.27208943",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
+      "file": "computations/ocneanu_param_from_fibre_dimension.py",
+      "line": 61,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
       "file": "computations/per_atom_audit_witnesses.py",
-      "line": 72,
+      "line": 93,
       "constant": "m_e",
       "literal": "0.510998950",
       "canonical": "0.51099895069",
@@ -170,15 +442,215 @@
     },
     {
       "file": "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
-      "line": 169,
+      "line": 225,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
+      "file": "computations/probe_kappa_excess_convention_resolution.py",
+      "line": 72,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probe_kappa_mirror_split_shell_test.py",
+      "line": 116,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probe_kappa_normaliser_index_rule.py",
+      "line": 69,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/alpha_scale_is_outside_the_trace_probe.py",
+      "line": 172,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/alpha_scale_is_outside_the_trace_probe.py",
+      "line": 308,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/aomega_o2_stokes_to_observable_mechanism.py",
+      "line": 70,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/aoperator_a5_crosscheck.py",
+      "line": 411,
+      "constant": "q0",
+      "literal": "1.109978582",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/arc_count_diagnostic_degeneracy_probe.py",
+      "line": 280,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/assembly_shortfall_shape_probe.py",
+      "line": 389,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py",
+      "line": 252,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/bond_marginal_and_neutron_chain_probe.py",
+      "line": 343,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/bpp_a_dependence_bound_probe.py",
+      "line": 338,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/bpp_higher_a_resumable_driver.py",
+      "line": 631,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/bpp_higher_a_sparse_probe.py",
+      "line": 299,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/canonical_markov_weights_h3_are_sl2_dimensions.py",
+      "line": 63,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/chain_binding_closed_form_probe.py",
+      "line": 395,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/coulomb_from_crossing_counts_probe.py",
+      "line": 443,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/count_channel_carrier_locus_probe.py",
+      "line": 207,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/extensive_carrier_scale_inversion_probe.py",
+      "line": 279,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/fibre_functor_dimension_not_categorical_probe.py",
+      "line": 147,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/framework_near_unitary_channel_probe.py",
+      "line": 105,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/framing_spin_orbit_magic_probe.py",
+      "line": 76,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/ground_state_ordering_convention_independence_probe.py",
+      "line": 45,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/gswz_program_convention_immunity_probe.py",
+      "line": 163,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/gswz_program_convention_immunity_probe.py",
+      "line": 187,
+      "constant": "q0",
+      "literal": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
       "file": "computations/probes/he4_nu_sdp_binding_arbiter.py",
-      "line": 17,
+      "line": 25,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
@@ -186,42 +658,362 @@
     },
     {
       "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 208,
+      "line": 228,
       "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "literal": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/isospin_sweep_bond_energy_probe.py",
+      "line": 441,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/keystone_colored_sigma235_wrt.py",
+      "line": 73,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/logratio_exactly_extensive_probe.py",
+      "line": 263,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/logratio_exactly_pairwise_additive_probe.py",
+      "line": 265,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/manybody_sign_by_bond_topology_probe.py",
+      "line": 302,
+      "constant": "q0",
+      "literal": "1.1099785827513808075",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/nf_channel_exact_repair_options_probe.py",
+      "line": 161,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/tower_e0_pole_conditioning_probe.py",
+      "line": 110,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/probes/tower_e0_pole_conditioning_probe.py",
+      "line": 173,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/probes/tower_e0_pole_conditioning_probe.py",
+      "line": 266,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py",
+      "line": 106,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/probes/wenzl_level_family.py",
+      "line": 86,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/q0_provenance_audit.py",
+      "line": 43,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/q_integer_convention_derivation.py",
+      "line": 172,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_bar_parity_twist_probe.py",
+      "line": 78,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_connection_invariant.py",
+      "line": 83,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_connection_matrix.py",
+      "line": 115,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_invariant_structure.py",
+      "line": 87,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_parity_artifact.py",
+      "line": 99,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_pole_divisor.py",
+      "line": 81,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
+      "line": 108,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_stokes_pair_prony.py",
+      "line": 133,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_theta_canonical.py",
+      "line": 88,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/c3_w2_c1_theta_zero_count.py",
+      "line": 90,
+      "constant": "q0",
+      "literal": "1.1099785827513808075916690956",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/ck_qgevrey_slope_probe.py",
+      "line": 77,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/descartes_lambda_shape_upper_half_plane.py",
+      "line": 71,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/molien_jones_markov_general_n_probe.py",
+      "line": 83,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 59,
+      "line": 68,
       "constant": "q0",
       "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_barodd_pole_cusp_phase_probe.py",
+      "line": 74,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561076887987",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/qbeta/qbeta_c3_complex_habiro_cross_anchor_probe.py",
-      "line": 81,
+      "line": 90,
       "constant": "q0",
       "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_complex_singularity_probe.py",
+      "line": 65,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 87,
+      "line": 103,
       "constant": "q0",
       "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_c3_muon_anchor_codata_edition_attribution_probe.py",
+      "line": 164,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_demazure_fund_weights.py",
+      "line": 59,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_kashiwara_step2_n4.py",
+      "line": 56,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
+      "line": 59,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py",
+      "line": 49,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py",
+      "line": 71,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
+      "line": 327,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
+      "line": 350,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py",
+      "line": 242,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hecke_symbolic_seminormal_probe.py",
+      "line": 199,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hecke_symbolic_seminormal_probe.py",
+      "line": 294,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-      "line": 76,
+      "line": 85,
       "constant": "q0",
       "literal": "1.10997858",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
+      "line": 142,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
@@ -229,32 +1021,318 @@
       "line": 233,
       "constant": "q0",
       "literal": "1.10997858",
-      "canonical": "1.10997858275138",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+      "line": 108,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_residue_followup_pslq_periods.py",
+      "line": 43,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_residue_followup_residual_2x.py",
+      "line": 39,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/qbeta_residue_followup_sl6_demazure.py",
+      "line": 46,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/qbeta/xi_classical_limit_probe.py",
+      "line": 120,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/run_jones_markov_atlas_all_atoms.py",
-      "line": 85,
+      "line": 87,
       "constant": "m_e",
       "literal": "0.510998950",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
+      "file": "computations/stamp_joint_tower_witness.py",
+      "line": 53,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/stamp_joint_tower_witness.py",
+      "line": 73,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/stamp_joint_tower_witness.py",
+      "line": 77,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/substrate/witness_constant_staleness.py",
+      "line": 355,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/substrate/witness_constant_staleness.py",
+      "line": 395,
+      "constant": "q0",
+      "literal": "1.10997",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/substrate/witness_constant_staleness.py",
+      "line": 418,
+      "constant": "q0",
+      "literal": "1.10997858275",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
       "file": "computations/sweeps/paper_six_term_isotope_sweep.py",
-      "line": 1326,
+      "line": 1361,
       "constant": "m_n",
       "literal": "939.565",
       "canonical": "939.56542194",
       "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
-      "file": "computations/test_betti_binding.py",
-      "line": 13,
+      "file": "computations/test_q0_migration_tolerance_triage.py",
+      "line": 72,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/test_q0_migration_tolerance_triage.py",
+      "line": 72,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/wedderburn_mass_table_convention_d.py",
+      "line": 69,
       "constant": "m_e",
-      "literal": "0.510998950",
+      "literal": "0.51099895",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/wedderburn_mass_table_z1_20.py",
+      "line": 106,
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "use_instead": "codata_constants.M_E_MEV"
+    },
+    {
+      "file": "computations/witness_raw_float64_audit.py",
+      "line": 718,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 559,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 564,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 573,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 576,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 579,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 584,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 589,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 600,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 604,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 612,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 621,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 635,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 639,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 643,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 687,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 689,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 698,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 764,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 779,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "computations/witness_regen_classify.py",
+      "line": 780,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "use_instead": "q_parameter.Q_MP"
     }
-  ]
+  ],
+  "scriptHash": "e3acff099d97",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

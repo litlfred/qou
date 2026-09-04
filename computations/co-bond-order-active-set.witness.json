@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T06:19:00.452659+00:00",
-  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
+  "computedAt": "2026-09-04T21:58:27.478867+00:00",
+  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
   "assertions": [
     {
       "name": "ab-initio covalent valence (cap=10-Z) -> active-set (O2,N2,CO) = (2,3,2)",
@@ -35,11 +35,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "allPassedBasis": "assertions",
+  "durationMs": 34,
+  "durationMsBaseline": "builder-construction",
   "computation": "co-bond-order-active-set",
   "scriptFile": "co_bond_order_active_set.py",
   "scriptHash": "93db996b65a6",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,9 +53,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

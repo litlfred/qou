@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T23:25:36.725481+00:00",
-  "commitSha": "8cf939a3b463cfbcf7dae6c92d2914ab5d7a06b9",
+  "computedAt": "2026-09-04T21:59:01.835933+00:00",
+  "commitSha": "07b03deb106f1ba4432f483ff999464021e4ae08",
   "assertions": [
     {
       "name": "alexander_computable",
@@ -15,11 +15,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9205,
+  "allPassedBasis": "assertions",
+  "durationMs": 8650,
+  "durationMsBaseline": "builder-construction",
   "computation": "delta-lambda-alexander-phase4",
   "scriptFile": "delta_lambda_alexander_phase4.py",
   "scriptHash": "ce50aa990620",
-  "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
+  "scriptCommitSha": "9633d282d8853f36b305fc75ad95916a47d0c363",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,9 +35,16 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
-  "description": "Phase 4 of the closed-forms-first-principles workplan: tests whether Alexander polynomial (computed from Burau rep) gives a per-knot factor V(K) that captures the N-direction structure missing from Vol_hyp(K) (Phase 3). Tests V(K) \u2208 {|\u0394_K(-1)| (determinant), |\u0394_K(q_0)|, |\u0394_K(q_0^2)|} against the empirical |\u0394_\u03bb*| across D, T, \u00b3He, \u2074He.",
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_alexander_phase4.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_alexander_phase4.py"
+  },
+  "description": "Phase 4 of the closed-forms-first-principles workplan: tests whether Alexander polynomial (computed from Burau rep) gives a per-knot factor V(K) that captures the N-direction structure missing from Vol_hyp(K) (Phase 3). Tests V(K) ∈ {|Δ_K(-1)| (determinant), |Δ_K(q_0)|, |Δ_K(q_0^2)|} against the empirical |Δ_λ*| across D, T, ³He, ⁴He.",
   "parameters": {
     "q0": "1.1099785827513808"
   },
@@ -117,63 +126,63 @@
       }
     },
     "empirical_best_abs_delta": {
-      "D": "22.956407323087852",
-      "T": "366.2845899608697",
-      "3He": "210.943396230587",
-      "4He": "3451.1436864376496"
+      "D": "17.143460122204406",
+      "T": "213.55366477791566",
+      "3He": "122.98561982400474",
+      "4He": "1161.4536207450242"
     },
     "rel_std_per_evaluation": {
       "q0": {
         "ratios": {
-          "D": "0.018560748921773167",
-          "T": "0.0005955819665561806",
-          "3He": "0.0018880928142116318",
-          "4He": "7.270591109825597e-05"
+          "D": "0.013860856121796085",
+          "T": "0.00034724013818680707",
+          "3He": "0.0011008084120691546",
+          "4He": "2.4468567920393035e-05"
         },
-        "mean": "0.005279282403409809",
-        "min": "7.270591109825597e-05",
-        "max": "0.018560748921773167",
-        "max_over_min": "255.2852806794466",
-        "rel_std": "1.4578641589117216"
+        "mean": "0.00383334330999311",
+        "min": "2.4468567920393035e-05",
+        "max": "0.013860856121796085",
+        "max_over_min": "566.4759853086424",
+        "rel_std": "1.5137039483789438"
       },
       "q0_squared": {
         "ratios": {
-          "D": "0.002708976824682249",
-          "T": "3.447688984150848e-05",
-          "3He": "9.86120842752436e-05",
-          "4He": "1.4597560852243204e-06"
+          "D": "0.0020230184763801824",
+          "T": "2.0100944395682012e-05",
+          "3He": "5.749347229372651e-05",
+          "4He": "4.912687342607982e-07"
         },
-        "mean": "0.0007108813887210563",
-        "min": "1.4597560852243204e-06",
-        "max": "0.002708976824682249",
-        "max_over_min": "1855.7736132101554",
-        "rel_std": "1.623519320237147"
+        "mean": "0.000525276040450963",
+        "min": "4.912687342607982e-07",
+        "max": "0.0020230184763801824",
+        "max_over_min": "4117.946727108892",
+        "rel_std": "1.6466854847817978"
       }
     },
     "cross_z_n_consistency": {
       "q0": {
-        "T_over_D_ratio": "0.0320882508063841",
-        "He4_over_He3_ratio": "0.03850759377452222",
-        "consistency": "0.16670330028217317"
+        "T_over_D_ratio": "0.02505185358938794",
+        "He4_over_He3_ratio": "0.02222781698624581",
+        "consistency": "0.11272765079300963"
       },
       "q0_squared": {
-        "T_over_D_ratio": "0.012726904684964395",
-        "He4_over_He3_ratio": "0.014803014214260855",
-        "consistency": "0.14024910732682996"
+        "T_over_D_ratio": "0.009936115082670395",
+        "He4_over_He3_ratio": "0.008544774122372912",
+        "consistency": "0.14002866801775726"
       }
     },
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-empirical-tabulation.witness.json",
-        "sha256": "6293e276ecfe9b05cd10baef5d869adc9640d2ea5ce18a1fe5aaf153ed98d15d",
-        "size_bytes": 32120,
-        "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
-        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
-        "computedAt": "2026-07-05T11:19:13.300674+00:00"
+        "sha256": "44f3dffea28e10e659fce6b7151bcc56a29f75256fc414e6f0d35fc91a98f8ca",
+        "size_bytes": 32133,
+        "commitSha": "8527d1da82901d9c5a9c57c2afb81b07145720d8",
+        "scriptCommitSha": "f32a41cfa8242b4cbc364b48e5be167af23cd017",
+        "computedAt": "2026-08-30T03:56:23.454810+00:00"
       }
     ]
   },
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }
