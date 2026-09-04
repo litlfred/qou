@@ -1,9 +1,13 @@
-# The full-tower ruling has not been applied to the mass/binding surface — where the tower is already collapsed
+# The canonical binding path IS full-tower in n; the NF path is not — and the ruling has been applied to neither
 
 **Date:** 2026-09-04
 **Bean:** `qou-hu1f`
-**Status:** observation + measurement. No claim is closed here; the point is that
-a ruling and a measurement have not been put in the same room.
+**Status:** observation + measurement. No claim is closed here.
+
+**🛑 This file's first revision, pushed and then corrected the same day, claimed
+the canonical binding path is H₃ as well. That is false — measured, it sums over
+all `p(3A)` partitions. The correction and the trap that produced it are in
+§"CORRECTION" below, kept rather than quietly edited away.**
 
 ## The two things
 
@@ -47,30 +51,58 @@ and recent). Re-run directly against `compound_shift_nf.build_atom_nf_mp`:
 ¹⁶O is a case the bean did not test and is the sharpest: a nominal `H₄₈` object
 carried as six numbers. The claim reproduces.
 
-## Correcting the bean's scope while confirming its substance
+## 🛑 CORRECTION, same day, to the central claim of this audit
 
-`qou-tower` calls this "the production chain". Measured, `build_atom_nf_mp` has
-**seven consumers**: five probes, plus `all_nuclides_sdp_admissibility_mp.py`
-(a producer with a committed witness) and `qbeta_level_k_binding_operator_probe`.
-It is **not** the canonical mass path — that is `canonical_mass.py`, per the
-mass-formula guardrail.
+**An earlier revision of this file said the canonical path is H₃ too — "the
+tower is never built". That is FALSE, and it was the more important half of what
+this audit claimed.**
 
-**But the correction does not rescue the tower, because the canonical path is
-H₃-based too, by a different mechanism.** `binding_canonical.py` describes its
-own current path as `tower_binding_full (H_3 tower)` (:37), builds from "the H₃
-building blocks `tr_M³(p)`, `tr_M³(n)`" (:324), and bridges "`tau_p`, `tau_n` via
-the Wenzl bridge at H₃" (:341) — while carrying `n = 3 * (Z + N)` (:528) as the
-nominal strand count.
+`binding_canonical`'s **default** path (`use_transfer=True`) is the fine-Bratteli
+transfer matrix, and it sums the Frobenius pairing over **every partition of
+`3A`**. Measured, not read:
 
-So there are **two distinct routes to H₃**, and they should not be conflated:
+| nucleus | `n = 3A` | `n_partitions` reported | `p(3A)` |
+|---|---|---|---|
+| ²H | 6 | **11** | 11 |
+| ³He | 9 | **30** | 30 |
+| ⁴He | 12 | **77** | 77 |
 
-- **NF route** (`build_atom_nf_mp`): a growing word is *reduced* to 6 dimensions
-  after every crossing. The tower is built and destroyed.
-- **Canonical route** (`binding_canonical`): per-nucleon H₃ traces are
-  *composed*. The tower is never built.
+Exact agreement at every level. **The canonical binding path is a full-tower
+object in the `n` sense**, and satisfies that half of the ruling already.
 
-The bean measures the first. The second is not a reduction at all and is
-untouched by its argument — but it is equally not a full-tower derivation.
+**How the error was made, since it is a reusable trap.** I cited
+`binding_canonical.py:37` (`tower_binding_full (H_3 tower)`), `:324` ("the H₃
+building blocks `tr_M³(p)`, `tr_M³(n)`") and `:341` (the Wenzl bridge at H₃).
+Those lines are real — but **:324 and :341 sit inside the `use_closed_form=True`
+branch**, a non-default alternative retained for a specific caller family. I read
+three grep hits naming H₃ and inferred the default from them without checking
+which branch they were in. A grep hit inside a non-taken branch is not evidence
+about the path that runs.
+
+## What is actually true, restated
+
+There are **two different objects**, and the interesting fact is that they
+disagree in structure:
+
+- **Canonical route** (`binding_canonical`, transfer path) — sums `Σ_{λ ⊢ 3A}
+  y_λ χ^λ` over all `p(3A)` partitions. **Full tower in `n`.**
+- **NF route** (`build_atom_nf_mp`) — reduces to a 6-vector after every
+  crossing, at every `A`. **No tower at all.**
+
+The NF route has seven consumers: five probes, plus
+`all_nuclides_sdp_admissibility_mp.py` (a producer with a committed witness) and
+`qbeta_level_k_binding_operator_probe`. The canonical mass path is not among
+them.
+
+So the live question is **not** "does the mass surface honour the ruling" — in
+the `n` sense the canonical one does. It is narrower and sharper:
+
+**do the two routes agree?** `qou-tower` measured that a genuine full-tower walk
+shows no shell structure, and concluded the degree of freedom is absent from the
+construction. That conclusion was drawn from the NF route's collapse. But the
+canonical route never had that collapse, so the argument does not transfer to it,
+and any probe reasoning from `build_atom_nf_mp` to a statement about *the
+framework's* binding is reasoning about the wrong object.
 
 ## What this does NOT establish
 
