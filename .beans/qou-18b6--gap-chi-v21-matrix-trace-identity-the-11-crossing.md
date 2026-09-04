@@ -1,11 +1,11 @@
 ---
 # qou-18b6
 title: 'GAP: chi_v21_matrix_trace_identity — the 11-crossing Hoefsmit matrix-product trace is stated, not proved'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T04:40:15Z
-updated_at: 2026-09-04T12:42:45Z
+updated_at: 2026-09-04T13:14:27Z
 ---
 
 ## What is open
@@ -86,3 +86,68 @@ lean-direct: **0 errors**, 3 warnings — 2 deliberate deprecation-use warnings
 passing: two `@[deprecated]` attributes missing `(since := ...)`, an unused
 `hq` on `sigma1_v21_param_sq_trace` (an unused hypothesis overstates what the
 statement needs), and three unused simp arguments.
+
+
+---
+
+## RE-DIAGNOSED 2026-09-04 — this bean was wrong about the nature of the gap
+
+**The statement was FALSE, not merely unproved.** This bean said "It is the
+Lean proof that is missing, not the result", and "the claim is exactly the one
+sympy verifies". Both are wrong about *these* definitions.
+
+`hoefsmit_v21_d1` and `hoefsmit_v21_d2` were **transposed**. With
+`sigma_0 = diag(q, -q⁻¹)` the pair failed the braid relation
+`σ₀σ₁σ₀ = σ₁σ₀σ₁`, so it was not a representation of `B_3` and the trace was
+of an object that does not exist. Measured: the file's own matrices give
+`chi_n - chi_p` larger than the closed form by exactly `(q⁴+q²+1)/q²`,
+confirmed at `q = 2`, `3/2` and `1.1099`.
+
+**The closed form was right all along** — expanded at `q = 1+ε` it matches the
+witness's ε-coefficients (`0, -1, 1/2, -5/2, 7/2, -5, 27/4, -35/4`); the
+transposed matrices give `0, -3, 3/2, -23/2, ...`.
+
+Fixed in PR #6662, with `hoefsmit_v21_braid_relation` added as the guard —
+sorry-free, and the cheapest statement that can see a transposition, since
+`b²`, the trace, the determinant and the Hecke quadratic are all **symmetric**
+in `d_1, d_2`.
+
+## What is still open, and it is a DIFFERENT problem
+
+The identity is now true. The remaining gap is **compute size, measured**: the
+proof reaches a fully expanded scalar goal (`simp only` over the definitions
+and `List.foldl_cons`, then `Matrix.mul_fin_two` + `Matrix.trace_fin_two`), and
+`field_simp` then **exhausts 2 000 000 heartbeats** on it. Not a slow machine,
+not a missing lemma — the 11-fold product of 2×2 matrices in `q, q⁻¹, b` is
+simply too large to clear.
+
+**So the route this bean recorded — "linear_combination needs the polynomial
+coefficient, not hand-guessable at degree 11" — is the wrong route.** No
+certificate is needed at all.
+
+## The route that works (verified symbolically, not guessed)
+
+Every index-0 crossing is DIAGONAL:
+
+    σ₀ - (q-q⁻¹)·I   = diag(q⁻¹, -q)            (= σ₀⁻¹)
+    σ₀ - (q-q⁻¹)/2·I = ((q+q⁻¹)/2)·diag(1,-1)
+
+so the seven index-0 factors collapse *before* any expansion:
+
+    beta_p index-0 block = ((q+q⁻¹)/2)  · diag(q⁶, -q⁻⁶)
+    beta_n index-0 block = ((q+q⁻¹)/2)² · diag(q⁵, -q⁻⁵)
+
+one lemma each. What remains is `trace(D · M)` with `D` diagonal and `M` a
+product of only FOUR index-1 factors, i.e. `D₀₀·M₀₀ + D₁₁·M₁₁`. Each index-1
+factor is symmetric with off-diagonal `b`, so only EVEN powers of `b` survive
+in `M₀₀` and `M₁₁`, and `b² = hoefsmit_v21_b_sq q` eliminates the square root
+directly.
+
+Next commit's work.
+
+## Also corrected
+
+The `.md`'s "Not yet formalised" item 2 said the swap was known and that "the
+closed-form rational result is invariant under the swap". That parenthetical is
+false and is what let the defect stand — `b²`, trace and determinant are
+invariant; the result is not.
