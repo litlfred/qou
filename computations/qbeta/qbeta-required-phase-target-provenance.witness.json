@@ -1,0 +1,40 @@
+{
+  "probe": "qbeta_required_phase_target_provenance_probe",
+  "bean": "qou-cds1",
+  "question": "is the branch-3 required eigenphase experimentally anchored, or is it the ladder form's own output?",
+  "answer": "anchored -- the circularity worry is unfounded. But the QUOTED target 0.0565947 is |alpha - u/2| (the form), not arccos(Q_exp/(Q_A(1-u^2))) = 0.0566173 (the experiment); 4.0e-4 apart.",
+  "correct_target_theta": "0.056617300794061032363",
+  "quoted_target_theta": "0.056594699999999997786",
+  "form_theta_convention_C": "0.056594737543306909893",
+  "required_N1_factor": "0.99839766871925518854",
+  "scope": "(a) -- about the provenance of the target, not about any candidate",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "Q_A_MeV": "0.78364582737462121307",
+  "Q_exp_MeV": "0.78233341",
+  "u": "0.0085172345501561421893",
+  "assertions": [
+    {
+      "name": "target_is_experimentally_anchored",
+      "passed": true,
+      "detail": "required = Q_exp/(Q_A*(1-u^2)) uses only the Q_A closed form, the structural c_2 = -1, and CODATA; it reads no z, no alpha and no fitted c_k, so branch 3 has a legitimate criterion to search on. The circularity worry this probe was written to test is UNFOUNDED."
+    },
+    {
+      "name": "quoted_target_is_the_form_not_the_experiment",
+      "passed": true,
+      "detail": "the quoted 0.0565947 matches |alpha - u/2| to 6.634e-7 relative but the experimental arccos(required) only to 0.0003993; the arc is scored against the form's own output where it should be scored against the experimental requirement"
+    },
+    {
+      "name": "correction_is_small_and_changes_no_recorded_verdict",
+      "passed": true,
+      "detail": "the correction is 0.03987 %, far inside the 35.7x by which the one elliptic candidate on record (Delta_L, theta = 2.0204) misses; no recorded verdict moves"
+    },
+    {
+      "name": "convention_C_form_lands_near_the_requirement_D_does_not",
+      "passed": true,
+      "detail": "the C form sits 1.28e-6 from the experimental requirement and the D form 6.02e-4, i.e. ~470x further -- consistent with the ladder having been built in C, and NOT evidence for C, which is excised"
+    }
+  ],
+  "allPassed": true
+}
