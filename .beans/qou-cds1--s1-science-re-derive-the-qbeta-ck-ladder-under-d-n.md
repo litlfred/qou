@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T10:44:24Z
+updated_at: 2026-09-04T12:24:23Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6534,3 +6534,49 @@ disagrees with itself. Which way to reconcile it depends on the re-derivation.
 Probe `computations/qbeta/qbeta_ladder_alpha_provenance_probe.py` (5/5, mpmath
 50 dps + sympy, no float64); audit
 `docs/audits/2026-09-04-cds1-ladder-phase-has-no-derivation.md`. Scope (a).
+
+
+### Correction to the entry above — the route it points at is CLOSED
+
+The entry above ends "the D work must SUPPLY a phase, not convert one" and I
+recommended supplying a Hoefsmit/seminormal eigenphase on `V_(2,1)`, on the
+grounds that the machinery is already there. **That route is excluded**,
+scope-(b), invariant named — by this bean's own child `qou-pdix`. Found by
+corpus-grep after the fact; recorded so nobody re-derives it.
+
+- `qbeta_eigenphase_seminormal_exclusion_probe.py` — every character of
+  `V_(2,1)` lies in `ℤ[q,q⁻¹]` (`b` enters traces only through the rational
+  `b·c`; every word of length 2, 4, 6 — 17 traces, 0 exceptions), while
+  `2cos((z−1)h/2)` is not Laurent. Scalar normalisation does not rescue it:
+  `det ρ(w) = (−1)^L` forces `L` even and `λ = ±1`.
+- `qbeta_braid_image_eigenphase_exclusion_probe.py` — no braid-image transfer
+  matrix carries it in **any** convention, by boundedness. Extended
+  Laurent → algebraic in `qbeta_eigenphase_algebraic_exclusion_probe.py` +
+  sorry-free `QOU.QBeta.BraidImageEigenphaseAlgebraic`.
+- `QOU.QBeta.EigenphaseCarrier.carrier_is_trivial` — the Lean carrier is
+  **proved vacuous**, independent of the citation defect measured above.
+- `qbeta_ladder_required_phase_probe.py` — the convention-parameter class is
+  pruned for D: required window half-width ≈1.09e-5 rad, `z_D` misses by
+  ≈1.19e-2 rad, ~1000×.
+
+**And S1 is smaller than this bean's header says.**
+`QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` (sorry-free): `z` reaches
+the ladder at exactly one place, the N=1 phase, so `c₂ … c₅` are **phase-blind**
+and do not need re-deriving. **The D-frame work is the phase and only the
+phase.** The header's "every ≈−2 value-level fact is C-conditional" still holds
+for the recorded values; what does not hold is that the whole tail needs
+re-derivation.
+
+**Still open**, quoting the seminormal probe's own scope section — these are
+where a supplied phase could come from, and nothing above excludes them:
+
+1. an `M_β` from a **non-scalar** normalisation (divided by a `q`-dependent,
+   non-rational Markov-trace factor);
+2. an `M_β` **outside the braid image** — a general element of `H₃(q)`, or an
+   operator on a larger space restricted to `V_(2,1)`;
+3. the KZ / Kohno–Drinfeld holonomy branch, which the `EigenphaseCarrier`
+   trichotomy leaves as branch (3). **Check `9a8b09c661` on main first** — its
+   subject says the Kohno–Drinfeld route was excluded, and I have not read it.
+
+The provenance finding itself is unaffected: the attribution defect and the
+4–5 % / 88× measurements stand independently of all of this.
