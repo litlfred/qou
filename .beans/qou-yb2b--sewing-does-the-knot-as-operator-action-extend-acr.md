@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:23:16Z
-updated_at: 2026-09-04T09:28:48Z
+updated_at: 2026-09-04T10:29:37Z
 ---
 
 THE OWNER'S ASK, verbatim (2026-09-04): "remember the knots themselves are operators and sewing should be able to extend the not actions to the knot compliment, or show that they degenerate there."
@@ -45,3 +45,7 @@ STEP 1 IS THEREFORE DONE - the question states as:
 ONE CONSEQUENCE, and it reinforces qou-52fu rather than opposing it: the Kauffman-bracket skein module of a complement is a quantization of the SL(2,C) character variety, so this route inherits the same rank-1 ceiling qou-52fu found in the holonomy. It is a route to VOLUME, not to flavour. That is a reason to take the DEGENERATE branch first, not a reason to drop the question.
 
 ALSO RELEVANT, and it complicates the premise: fundamental-knots-operator-basis.md states outright that the six H_3(q) basis operators 'are algebraically distinct from the topological knots sharing their names'. So 'the knots themselves are operators' is a naming correspondence in the corpus, not an identity - the map that exists is braid word -> H_n(q) element, and closure -> knot. Any extension statement has to say which of the two it extends.
+
+OWNER DIRECTION 2026-09-04: 'try both skein and knots.' Both readings are in scope; do not pick one. They are two faces of one correspondence rather than rivals - the KBSM of a complement quantizes the SL(2,C) character variety, which is what the quantum torus quantizes on the peripheral torus. See qou-zhep and docs/audits/2026-09-04-quantum-functions-on-the-knot-complement.md.
+
+ALSO FROM THE OWNER: the Frobenius dual is a QOU axiom, and the operator basis acts on knots via KNOT CONVOLUTION - so the action to extend is the convolution, not an abstract module action. That reframes step 1: the object is bowtie_K, 'a strict depth-0 convolution in the Hecke algebra' (frobenius-su2.md), carried in 44 files.
