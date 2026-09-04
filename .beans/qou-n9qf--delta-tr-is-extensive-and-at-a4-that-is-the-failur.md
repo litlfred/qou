@@ -558,3 +558,21 @@ reachable by larger `N` (`qou-fvzm`), and not in the interface subalgebra
       law at all.
 - [ ] `QOU/Hecke/MarkovTraceProduct.lean`'s `markov_trace_product` is vacuous
       (unchanged; the existing vacuity audits do not catch this pattern).
+
+**2026-09-04 — the arc's terminus.** The multiplicative law is closed
+(`qbeta_no_regime_of_validity_probe.py`: 4.59 decades at the optimum) and the
+replacement is measured: `B = E_0 . log(tr_M(free)/tr_M(atom))`, p5-p95 spread
+**1.225x** vs **1592x** over the 2548 AME nuclides with measured binding
+energies, consuming the SAME derived bond factors. `log` is the unique
+multiplicative-to-additive map, so it is forced rather than chosen.
+
+Knot-dependence of the scale is answered NO on three counts: the atom object is
+not in `rho(B_n)` so there is no writhe (2A+1 averaged letters, `2^(2A+1)` branch
+links); every derived `mu^(3A-1)` rate misses the required -0.0619/nucleon by
+>=23.8x with the right sign, or has the wrong sign; and the scale that would work
+regresses onto `-ln t_p` / `-ln t_n`, i.e. the trace's own output inverted, which
+is a fit and is refused.
+
+Options, pros/cons and six open avenues:
+`docs/audits/2026-09-04-binding-law-options-decision-frame.md`. Carried to `gm4q`
+(claimed), which is where the owner decision sits.
