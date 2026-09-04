@@ -87,9 +87,28 @@ that the witness is stamped, and a pass that treats it as done will skip
 exactly the producers that need fixing. Check the write path first:
 
 ```sh
-grep -l 'WitnessBuilder' <producer>          # manifest route works
-grep -l 'write_text\|json.dump' <producer>   # manifest is inert
+grep -l 'WitnessBuilder' <producer>          # manifest reaches the STAMP
+grep -l 'write_text\|json.dump' <producer>   # manifest reaches the PIN only
 ```
+
+**"Inert" is scoped to the STAMP, and the distinction is load-bearing — do NOT
+read these entries as dead.** There are **two** steering mechanisms and they
+have different reach:
+
+1. **`q_parameter` steers the COMPUTATION by `sys.argv[0]`** — the entry point,
+   whatever the producer's write path. So a hand-rolled producer listed in the
+   manifest **does** evaluate at the pin the entry names.
+2. **`WitnessBuilder.build()` reads the manifest to write the STAMP** — and
+   only a producer that enters `build()` gets one.
+
+So for a hand-rolled producer the entry is inert *for the stamp* and fully live
+*for the pin*. Deleting it would silently change the q₀ the producer computes
+at, which is a far worse defect than the missing stamp it was meant to fix.
+`computations/audits/manifest_inert_entry_audit.py` makes the same point from
+the other side, with the measurement: **"listed but never constructs a
+WitnessBuilder" is 176 producers, and that is NOT a count of inert entries** —
+which is exactly why that audit reports only the deprecated-source and
+missing-source classes as findings.
 
 The manifest entries are left in place — they state the pin correctly — and
 the declaration is added producer-side, the only route that reaches the file.
