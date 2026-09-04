@@ -75,7 +75,11 @@ evaluation, or anywhere else. -/
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
 -- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
-axiom wenzlNormalizationOfShape {R : Type*} [CommRing R] (n : ℕ) (Q X : R) : R
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
+-- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
+-- first is a global axiom contaminating `#print axioms` downstream.  No
+-- proposition becomes provable either way.
+opaque wenzlNormalizationOfShape {R : Type*} [CommRing R] (n : ℕ) (Q X : R) : R := 0
 
 /-- The right-hand side of the telescope: a single geometric ratio
     `((1 − X)/(1 − Q))^n`, with `1 − Q` carried as the unit `u`. -/

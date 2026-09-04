@@ -226,9 +226,42 @@ all escalated questions):
 4. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
 5. Report the merge SHA + URL.
 
-### Phase 5: Post-merge coordination
+### Phase 5: Post-merge verification, then coordination
 
-After merge:
+**Verify the merge replayed every commit — this phase had no check at all
+until 2026-09-04, and the failure it misses is on the record.**
+
+```bash
+scripts/verify-merge-replay.py --branch origin/<branch> --merged <merge-sha>
+```
+
+A rebase-merge can land 7 of 8 commits and still report success through the
+API. PR #5111 did exactly that; it was recovered as #5125, and only because
+someone grepped `main` for the edited content.
+
+**Do NOT verify with `git diff origin/main <merged-head>`.** After a
+rebase-merge the PR's head *becomes* main's tip, so that command compares a
+commit **to itself** and returns empty whether or not anything was dropped —
+strongest-looking evidence, zero information. Whenever the PR is the last thing
+merged (the normal case for this pipeline) it cannot fail. Ten PRs were merged
+on 2026-08-15 under an instruction calling it *"the strongest check"*; bean
+`qou-vtau`. Its mirror image misleads too: diffing main against the **pre-merge**
+branch head shows every sibling PR that landed in between as though it were
+yours.
+
+The script compares **patch-ids** — a hash of each commit's diff, invariant
+under rebase, where shas are not. Run `--selftest` if you want to confirm it can
+still detect a drop; it synthesises one and asserts the patch-id check catches
+what `git diff` misses.
+
+Two behaviours to read correctly rather than "fix":
+- a commit with an **empty diff** has no patch-id and is reported separately,
+  not counted as replayed;
+- a commit whose content **changed** during the rebase (a conflict resolved
+  differently) reports MISSING by design — it did not replay, and the
+  resolution deserves a look.
+
+Then coordinate:
 - Post a brief update on any sibling PRs that were notified in
   Phase 0: "PR #<N> merged; <files> updated on main. Please rebase
   if needed."
@@ -255,6 +288,9 @@ After merge:
   and are **rationed** — so request once, keep working, and read
   `get_reviews` before you merge. Never poll `get_check_runs`: it returns
   `total_count: 0` whether or not a review exists, so it cannot tell you.
+- Do NOT verify a merge with `git diff origin/main <merged-head>` — after a
+  rebase-merge that compares a commit to itself and can never fail. Run
+  `scripts/verify-merge-replay.py` instead (Phase 5).
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.

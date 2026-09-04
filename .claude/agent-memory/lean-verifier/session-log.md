@@ -264,6 +264,14 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   with `hcyc` deleted fails, residual goal `tr (ρ*(y*x)) = tr (x*(ρ*y))` — the
   hypothesis is load-bearing, statement not vacuous. Root `.lake` held 3470 mathlib
   oleans with NO `RESTORED-NO-TRACES` marker; disk 1.9 G free, so no re-restore.
+
+- **2026-09-04 (binding-law extensivity)** — New `QOU/Hecke/BindingExtensivity.lean`,
+  6 decls, lean-direct exit 0, all std-3, no sorryAx. One fix: `pow_le_pow_left`
+  → `gcongr` (authoring-traps). Cold 1m32s wall / **7.0 s user**, warm 4.6 s.
+  Restored from a **leaked `/tmp/tmp.*`** rather than fetching — new STABLE entry
+  in `MEMORY.md`. Third container reading of the two olean trees: per-paper 1236,
+  root 9721.
+
 - 2026-09-04 (branch `claude/standard-model-terms-status-ftoejr`, seven GAP beans):
   root tree was a REAL build (2443 QOU oleans / 2441 traces, no `RESTORED-NO-TRACES`);
   9-root `LEAN_PATH` from `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`.

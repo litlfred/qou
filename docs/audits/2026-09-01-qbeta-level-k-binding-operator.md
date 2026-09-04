@@ -23,7 +23,19 @@
 > **open premise** between them: that the mass trace *is* the categorical trace of
 > the fibre action on `V^{⊗n}`. D is forced **by** the premise that empties the
 > blind sector. Under it there are no states there; under its negation D is not
-> forced and D's weights are the wrong ones. The headline reduces to `qou-n1dj`.
+> forced and D's weights are the wrong ones.
+>
+> **And the premise is NOT open.** `qou-n1dj` is **resolved** — its status is
+> `todo` only because closing a bean is a human action (AGENTS.md §4a), and
+> `qou-cds1` itself already recorded this at line 4285. Verified here:
+> `lem:feynman-eigenbasis-decomposition` **defines** the mass channel as
+> `V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ` — the row cap is **in the index set** —
+> and `FibreDimensionForcesTL.lean` (sorry-free) proves `z·[N]_q = q^N`, so a
+> two-dimensional fibre leaves **no residual trace freedom**.
+> `MassTraceIsFibreCategorical` is a Lean *class* only because no quantum
+> Schur–Weyl development exists in this tree; its content is already asserted by
+> the mass chapter. **So the blind sector is unphysical FULL STOP, and Step 27's
+> headline is false rather than conditional.**
 >
 > **The coincidence dies more cleanly than §"the 0.13 % coincidence" says.**
 > `N_min(λ) = ℓ(λ)`, so the `0.0252506` phase in `(3,2,1)` needs `N ≥ 3` and the
@@ -31,12 +43,25 @@
 > nothing in the corpus motivates — a structural kill rather than a
 > degeneracy-wall argument.
 >
-> **What survives.** `qou-fvzm` says the super-pairwise binding term *requires*
-> `N ≥ 3`, and `(3,2,1)` — carrying both the largest binding character
-> (`−9.598`) and the smaller phase — is an `ℓ = 3` block. So this audit measured
-> **what an `N = 3` extension would carry**. Weaker and different from what it
-> claimed, and the part that stands. The construction (§"the construction"), its
-> validation, and the chain-vs-all-pairs finding are untouched.
+> **🛑 THIRD CORRECTION, same day — the last positive goes too.** The reading
+> *"(3,2,1) is an ℓ = 3 block carrying the largest binding character, so this
+> measures what an `N = 3` extension would carry"* cited **`qou-fvzm`'s REOPENED
+> paragraph**. That bean is **`status: completed`**, and its line 18 closes
+> exactly that paragraph: *"my reopened form … is closed — the route is
+> **UNAVAILABLE**, not merely hard"*, and *"**THE MISSING ADDITIVE TERM IS NOT A
+> HECKE-TRACE OBJECT AT ALL**."* Moving to `N = 3` re-weights channels the mass
+> pipeline already evaluates (`y_(2,1)/y_(3) = q[2]_q[N−1]_q/[N+2]_q` differs at
+> every `q`), so it is a **regression risk, not an opening**. The surviving
+> candidates that bean names are the ones that were never trace objects — the
+> extended-Bloch route (`qou-985x`) and the atomic-braid→nucleus map (`qou-imcd`).
+>
+> **So Steps 27–28 retain no positive claim about the blind sector at all.** What
+> stands from that arc is the construction `Δ_bind = P·(I−1)·N` (validated to
+> `5.4·10⁻¹⁵`, genuinely `H₆`-valued) and the chain-vs-all-pairs structural
+> finding.
+>
+> The construction (§"the construction"), its validation, and the
+> chain-vs-all-pairs finding are untouched.
 
 
 **Artifacts.**

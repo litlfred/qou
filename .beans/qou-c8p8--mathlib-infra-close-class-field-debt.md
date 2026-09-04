@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-09-03T14:53:24Z
+updated_at: 2026-09-04T02:22:39Z
 ---
 
 Epic to close conjectural class fields that are standard math (not manuscript claims). Three axes: LP/SDP duality, parallelogram contour, RSK combinatorics.
@@ -45,3 +45,94 @@ Worth noting the corpus file here is exemplary and should not be "fixed": the ca
 **The tractable Mathlib-infra tier is exhausted.** Of 38 Mathlib-shaped carriers, one (`StandardYoungCount`, `#6491`) was a leaf and is closed; one axiom (Cauchy, `#6491`) was a mis-diagnosis and is proved; one candidate (Coxeter) is a real wiring job owned by a sibling; the rest need mathematics Mathlib does not have. Continuing this line means building argument-principle / pivotal-category / moment-problem theory upstream, which is a project, not a drain.
 
 The `96` Prop-valued fields are the separate and larger surface, and `qou-ar7f` re-scopes them: three of the four in `QOU/Mathlib/HeckeAlgebra.lean` are shadows of a concrete development, and the owner decision there (retire vs re-point) is still open.
+
+
+## 2026-09-03 — the AXIOM tier triaged (the class tier was #6512; this is the other half)
+
+#6512 triaged the 38 Mathlib-shaped uninhabited **classes** and concluded the
+tractable tier was exhausted. It never looked at the **axioms**. Measured now,
+same method (every verdict a grep over `.lake/packages/mathlib/Mathlib`, not an
+inference):
+
+| tier | count |
+|---|---|
+| external literature, cited by design | 10 |
+| conjectural, honestly marked | 2 |
+| SDP / convex duality | 5 |
+| complex analysis (residue / winding) | 1 |
+| **in-corpus, potentially provable** | **1** |
+
+**One axiom closed this session: `seminormalDim_pos`, 20 → 19.** It was a cited
+`axiom` beside `opaque seminormalDim`, whose docstring said *"axiomatised
+pending the Mathlib `StandardYoungTableau` enumeration"*. That enumeration had
+since been built in-repo (`QOU.Mathlib.numStandardYoungTableaux`), along with
+both instances positivity needs — `instFinite` and a sorry-free `Nonempty` via
+the row-superstandard tableau. It closed to `Nat.card_pos`. **The blocker was
+cleared by unrelated later work and nobody re-read the axiom.** No detector in
+the repo can see that: the axiom was well-formed and honestly cited.
+
+**The SDP five are blocked one level LOWER than they state.** They cite
+Goldman–Tucker / Alizadeh–Haeberly–Overton. Mathlib has neither, and it also
+lists **strong conic duality itself** as not-yet-done in its own source
+(`Analysis/Convex/Cone/Basic.lean` TODO). It has Farkas
+(`ProperCone.hyperplane_separation`) and stops there. Closing this tier means
+building conic-program duality first — a real upstream contribution, which is
+directly relevant to this bean's open "should we open an upstream build"
+question. Note the argument principle (#6512's candidate) and conic duality are
+now two independent upstream targets, not one.
+
+**The one lead:** `evenPower_necessary_for_blockPosSemidef`
+(`QOU/BraidKnot/PSDFeasibilityProxy.lean:76`) — the only axiom of the 19 whose
+content is an in-corpus claim about in-corpus objects rather than a citation.
+Not attempted.
+
+Two grep traps recorded, both hit while measuring: `dualCone` returns 0 while
+`innerDualCone` exists (case-sensitivity), and `slater` matches
+`IsLaterCommand` in a linter file (word inside a word). Neither announced
+itself; both were caught only by re-running.
+
+Full table: [`docs/audits/2026-09-03-axiom-tier-triage.md`](../docs/audits/2026-09-03-axiom-tier-triage.md).
+
+
+## 2026-09-04 — RETRACTION: the axiom triage above covers the LIBRARY, not the corpus
+
+The entry immediately above reports "19 axioms" and "0 sorries". Both are
+**library-tree only** — `content/quantum-observable-universe/lean`, the Lake
+tree of one paper. Corpus-wide on `origin/main`:
+
+| | said | actual (3529 files) |
+|---|---|---|
+| `.lean` files | 2552 | **3529** |
+| real `sorry` terms | 0 | **9** — 8 cited, **1 uncited** |
+| `axiom` declarations | 19 | **182** — 118 cited |
+
+Missing: **944 content-block siblings**, and the **UGB / Fred2005** Lake
+trees. Under AGENTS.md §0a a sibling resolves *before* the library, so the
+sibling tree is what a block's `lean.ref` actually reaches — the more
+load-bearing one.
+
+**The Mathlib verdicts are unaffected** (no `℘`, `JucysMurphy`, `Hoefsmit`,
+`windingNumber`, residue theorem, strict complementarity, Goldman–Tucker;
+Farkas present, strong conic duality a TODO in Mathlib's own source). Those
+are facts about Mathlib, not about which tree was walked. **The 163 axioms
+outside the library are untriaged.**
+
+**The scope gap was hiding a live defect**, which is the reason to record
+this rather than just fix the number.
+`mass-theory/delta-max-uniform-bound.lean` carried
+
+    theorem delta_max_uniform_bound : sorry -- Ref: kassel1995 := sorry
+
+with the **type** a `sorry` — the declaration has no statement, so there is
+nothing it could be wrong about. A shadowing stub in the exact §0a STRICT
+sense: `QOU/MassEndomorphism/DeltaMaxUniformBound.lean:93` holds the real
+`|b.delta n| ≤ b.deltaMax`, proved and cited, and the sibling resolved
+first, so `prop:delta-max-uniform-bound` reached `sorry : sorry` instead.
+`conj-canonical-knot-id-sdp` depends on that proposition. Removed;
+`#print axioms` on the library theorem is clean.
+
+Left undone and flagged: the library file is `DeltaMaxUniformBound.lean`
+while the decl is `delta_max_uniform_bound`, so §0a candidate 2 (path) misses
+and resolution falls to candidate 3 (grep). §0a says align a mis-named
+library file — but it carries five declarations, so renaming it for one is
+wrong.

@@ -1,0 +1,138 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T03:04:15.397520+00:00",
+  "commitSha": "91ae09ce56bb8841b0a82628f423ba282dc23367",
+  "assertions": [
+    {
+      "name": "z_log_slope_reproduces_the_audit_802",
+      "computed": "1.00327781137659076440610598356922605351733439929009454924155",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.01",
+      "source": "Ratio, not a difference: the witness tolerance is ABSOLUTE, so a quantity of order 800 must be normalised before it can carry a 1 % tolerance. Re-derived from the ladder inversion rather than quoted: z = 0.4991044802, dz/dq = 401.6017499, slope/value = 804.64465 against the audit's 802.01579 (docs/audits/2026-08-30-cds1-two-row-cap-admissible-set-exhausted.md), agreeing to 0.328 % — the two central differences use different step sizes. Agreement confirms this probe is measuring the same object the 'fine-tuning signature' was measured on."
+    },
+    {
+      "name": "fine_tuning_signature_is_coordinate_dependent",
+      "computed": "1.01092633959558292191643838468998314240664583530406084650283",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.02",
+      "source": "(z'/z)/(P'/P) equals the leading closed form -2/(h*z*tan alpha) to 1.09 % — measured 369.74358, closed form 365.7473. The residual is exactly the dropped 2*alpha*h'/h^2 term in dz/dq; asserted as a ratio because the witness tolerance is absolute. Note the sign: alpha < 0 at every substrate anchor, so the leading minus is what makes the inflation positive. The factor is large because alpha is small, which is forced by the ladder's correction being small, so slope/value in the z coordinate is not a coordinate-invariant measure of fine-tuning and cannot discriminate between candidate phases. Scope-(b) for that claim (it is exact algebra). Does NOT rescue the (z-1)h/2 family, which stays excluded by the opposite-sign slopes recorded in qbeta-ladder-required-phase.witness.json."
+    },
+    {
+      "name": "declared_basket_is_empty_against_the_slope_constraint",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Every form in the corpus's declared value basket {2-h^4, 2-h^2/8, 2, 2-3h^4, chi^(2,1)(B_3), [2]_q} has |P'/P| <= 0.1018 against a required 2.17622, i.e. at least 21.38x too flat; the constant has slope exactly 0. Value alone separates the six by only a factor 17 (0.04%-0.7%), which is why qbeta_d_frame_terminus_probe.py calls it a basket rather than an identification. The log-slope is a second constraint, independent and free (a derivative of the same committed ladder), and it empties the basket. Scope-(a): measures that no DECLARED form passes; does not prove no Laurent polynomial does."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-eigenphase-character-coordinate",
+  "scriptFile": "qbeta_eigenphase_character_coordinate_probe.py",
+  "scriptHash": "c621dede4007",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_eigenphase_character_coordinate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_eigenphase_character_coordinate_probe.py"
+  },
+  "data": {
+    "pin": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "h": "0.209060298795639315430846213129674943859757495263024555381696",
+      "u": "0.00851723455015614218925557360330920296919422161162716337301758",
+      "alpha_required": "-0.0523586835189829612683390201367188553105075795678015941701873",
+      "d_alpha_required_dq": "41.5257662952864529607862853565657262935203810415550707038994",
+      "d_alpha_method": "central difference, +/-1e-4 relative in q"
+    },
+    "z_coordinate": {
+      "z": "0.499104480184784994190898414448076311065995776220039174429022",
+      "dz_dq": "401.601749941354176901869623032535998142570789342327240953702",
+      "log_slope": "804.644650339880579439153309656017433955083622837319377755922",
+      "audit_z": "0.499104480200000000000000000000000000000000000000000000000000",
+      "audit_dz_dq": "400.289675900000000000000000000000000000000000000000000000000"
+    },
+    "character_coordinate": {
+      "P": "1.99725919449026300193101244641365928202184214056081222575995",
+      "dP_dq": "4.34648234454905632274232243378532165689844748517354088337171",
+      "abs_log_slope": "2.17622347491976770895536442890049977575233928091614873417342",
+      "P_window_abs": "0.00000114287563243008777597444810687353346696897294848255380124636",
+      "P_window_rel": "0.000000572221990807643018911121272891709226519288511394870937027007"
+    },
+    "coordinate_inflation": {
+      "measured": "369.743576251766126022911968831417724344887082130698841064046",
+      "closed_form_2_over_h_z_alpha": "365.747297077728313245896063101174405818054873488266208069375"
+    },
+    "declared_basket": [
+      {
+        "form": "2 - h^4",
+        "value": "1.99808976733571170204966342539304009760862150134437987138652",
+        "value_miss_pct": "0.0415856313361810542297723397267261115727031412229925972521202",
+        "abs_log_slope": "0.0331386562642239069487992497896846273763460500410267262336173",
+        "slope_ratio_to_required": "0.0152275980137773543797248805200520162511818991061428154488496"
+      },
+      {
+        "form": "2 - h^2/8",
+        "value": "1.99453672393343475132474758304032646127897325491081173637051",
+        "value_miss_pct": "0.136310327890270385247154740457796175843317368072058739305215",
+        "abs_log_slope": "0.0474727878731436289751977470144709917451332539921149004370630",
+        "slope_ratio_to_required": "0.0218142982190254335432352925032453377376820132521521947790548"
+      },
+      {
+        "form": "2 (identity word)",
+        "value": "2.00000000000000000000000000000000000000000000000000000000000",
+        "value_miss_pct": "0.137228333573224663864612003445013692576916979214999628593946",
+        "abs_log_slope": "0.0",
+        "slope_ratio_to_required": "0.0"
+      },
+      {
+        "form": "2 - 3h^4",
+        "value": "1.99426930200713510614899027617912029282586450403313961415957",
+        "value_miss_pct": "0.149699773137906165039906987709849050435724534761021465431532",
+        "abs_log_slope": "0.0996064221389158763236529366490838757011606851827240472492223",
+        "slope_ratio_to_required": "0.0457703095692358217587074478438278883304077737623199252671587"
+      },
+      {
+        "form": "chi^(2,1)(B_3) = 2-3h^4-h^6",
+        "value": "1.99418581297996408672819936801871670008913958251181483468283",
+        "value_miss_pct": "0.153879953026492300414733522197181494995678573379452527797091",
+        "abs_log_slope": "0.101787392942755101115402843609250259669158742887388480556868",
+        "slope_ratio_to_required": "0.0467724910220940270061051960033118218191886167596114239418623"
+      },
+      {
+        "form": "[2]_q = q + 1/q",
+        "value": "2.01089686670712229975249197809186281588924074848413291676393",
+        "value_miss_pct": "0.682819348359033624077975132278026653782405065612594054972315",
+        "abs_log_slope": "0.0936628072540896198308555808486453276816398340464737720059369",
+        "slope_ratio_to_required": "0.0430391493950513282609603731025372060667362085160627671218750"
+      },
+      {
+        "form": "tr M_4_1 = q^4-2q^2+1-2q^-2+q^-4",
+        "value": "-0.910677350270667723245624754038263478072193579917367653314621",
+        "value_miss_pct": "145.596352881133647936509198435559261370560495095022558896569",
+        "abs_log_slope": "1.73628290011015873633773301387706456892156104914992413377846",
+        "slope_ratio_to_required": "0.797842188598839300279620461595617985855476189707110058148537"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

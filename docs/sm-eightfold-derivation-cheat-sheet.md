@@ -253,6 +253,19 @@ isospin doublet. Blocked behind §4-A and §4-C.
 > availability after a proximity search is not derivation, and the sweep ranged
 > well beyond the hook set `{1,3,5}`. Tier stays `conjectural`.
 >
+> **The stronger ground is the row cap, and it is independent of the fit.**
+> `(3,2,1)` has three rows; Schur–Weyl gives `dim V_λ = 0` when `ℓ(λ) > N`, and
+> the fibre is the `SU_q(2)` fundamental, so `N = 2` and the block carries no
+> states — its Ocneanu weight vanishes identically. That is *why* the
+> conjecture's own `tr_M` ratio cannot reach `1.8208`: the trace is blind to
+> the block by construction. So the two numbers are not competing estimates of
+> one quantity — one is inside the carrier, one outside. Every route from such
+> a block to a physical number is a Markov trace (zeroed by the cap) or a
+> spectrum (no states); subtraction opens no third, since a difference of
+> Markov traces is by linearity a Markov trace. **Deriving `q^(1/5)` would not
+> close the gap** — the reading stays outside the carrier whatever the
+> exponent is.
+>
 > The tractable lever is #4597: the **Milnor triple linking `μ̄₁₂₃`** is the
 > writhe-independent second invariant and separates the two `U(1)`s (Lean,
 > sorry-free). The relative `U(1)` coupling normalisation still inherits the

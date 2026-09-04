@@ -163,13 +163,19 @@ hypothesis; NO instance is provided, and production wires only c_2. -/
     ladder). Opaque so the bridge class is non-vacuous (mirrors #1508's
     opaque `BlochWigner_unit_circle`). -/
 -- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
-axiom precisionLadderCoeff : ℕ → ℝ
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a
+-- claim.  `axiom f : T` and `opaque f : T := <witness>` are equally opaque and
+-- equally uninformative, but only the first is recorded as a global axiom and
+-- contaminates `#print axioms` for everything downstream.  No proposition
+-- becomes provable either way -- `opaque` seals the value exactly as `axiom`
+-- did -- so dropping it from the axiom ledger is more accurate, not less.
+opaque precisionLadderCoeff : ℕ → ℝ := fun _ => 0
 
 /-- Abstract Habiro Taylor coefficient: the exact Taylor coefficient,
     at substrate q₀, of the Habiro tr_M expansion. Opaque (its closed
     form is the open multi-block derivation). -/
 -- Ref: [habiro2000] Corollary 1.2
-axiom habiroTaylorCoeff : ℕ → ℝ
+opaque habiroTaylorCoeff : ℕ → ℝ := fun _ => 0
 
 /-- **§3b-cond bridge class.** Axiomatises the OPEN equivalence between
     the precision-ladder coefficients and the Habiro Taylor

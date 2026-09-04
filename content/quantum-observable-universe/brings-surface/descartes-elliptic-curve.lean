@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 
 /-!
@@ -98,17 +99,53 @@ theorem classical_limit_p : weierstrass_p 1 = 2/3 := by
 /- The golden ratio degeneration: r(q) has factor (s² + s - 1)
     which vanishes at s = 1/φ, i.e. q = 1/φ² = (3 - √5)/2. -/
 -- Ref: [manuscript] §5/descartes-elliptic-curve
-/-- **External axiom (manuscript §5): golden-ratio degeneration of
-    r(q).**  At `q = 1/φ²`, the factor `(s² + s − 1)` vanishes,
-    making `r(q) = 0` (cusp). -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
-axiom golden_ratio_degeneration_axiom :
-    weierstrass_r (1 / ((1 + Real.sqrt 5) / 2) ^ 2) = 0
+/-- **Golden-ratio degeneration of `r(q)`.**  At `q = 1/φ²` the factor
+    `(s² + s − 1)` vanishes, so `r(q) = 0` (cusp).
 
+    **Was an axiom; proved 2026-09-04.**  The `rpow` occurrences are the only
+    real obstacle and they all collapse at this `q`: with `φ² = φ + 1` we have
+    `q = (1/φ)²`, hence `q ^ (1/2) = 1/φ` by `Real.sqrt_sq`,
+    `q ^ (3/2) = q · (1/φ)` by `Real.rpow_add`, and `q ^ (−1/2) = φ` by
+    `Real.rpow_neg`.  What remains is a polynomial identity in `√5` that is
+    *exactly* zero once `√5 ^ n` is reduced for `n = 2 … 6` — both the rational
+    part and the `√5` part cancel, which is the algebraic content of `s − s⁻¹
+    = −1` at the golden section. -/
+-- Ref: [manuscript] §5/descartes-elliptic-curve
 theorem golden_ratio_degeneration :
-    let φ := (1 + Real.sqrt 5) / 2
-    let q_golden := 1 / φ ^ 2
-    weierstrass_r q_golden = 0 :=
-  golden_ratio_degeneration_axiom
+    weierstrass_r (1 / ((1 + Real.sqrt 5) / 2) ^ 2) = 0 := by
+  have h5 : (0:ℝ) ≤ 5 := by norm_num
+  have hs5 : Real.sqrt 5 ^ 2 = 5 := Real.sq_sqrt h5
+  set φ : ℝ := (1 + Real.sqrt 5) / 2 with hφ
+  have hφpos : (0:ℝ) < φ := by rw [hφ]; nlinarith [Real.sqrt_nonneg 5]
+  have hφne : φ ≠ 0 := ne_of_gt hφpos
+  have hφ2 : φ ^ 2 = φ + 1 := by rw [hφ]; nlinarith [hs5]
+  set q : ℝ := 1 / φ ^ 2 with hq
+  have hqpos : (0:ℝ) < q := by rw [hq]; positivity
+  have hqsq : q = (1/φ) ^ 2 := by rw [hq]; field_simp
+  have hsq : q ^ (1/2 : ℝ) = 1 / φ := by
+    rw [← Real.sqrt_eq_rpow, hqsq, Real.sqrt_sq (by positivity)]
+  have h32 : q ^ (3/2 : ℝ) = q * (1/φ) := by
+    rw [show (3/2:ℝ) = 1 + 1/2 by norm_num, Real.rpow_add hqpos, Real.rpow_one, hsq]
+  have hneg : q ^ (-(1/2 : ℝ)) = φ := by
+    rw [Real.rpow_neg hqpos.le, hsq]; field_simp
+  unfold weierstrass_r
+  rw [h32, hsq, hneg, hq]
+  field_simp
+  have p3 : Real.sqrt 5 ^ 3 = 5 * Real.sqrt 5 := by
+    have e : Real.sqrt 5 ^ 3 = Real.sqrt 5 ^ 2 * Real.sqrt 5 := by ring
+    rw [e, hs5]
+  have p4 : Real.sqrt 5 ^ 4 = 25 := by
+    have e : Real.sqrt 5 ^ 4 = (Real.sqrt 5 ^ 2) ^ 2 := by ring
+    rw [e, hs5]; norm_num
+  have p5 : Real.sqrt 5 ^ 5 = 25 * Real.sqrt 5 := by
+    have e : Real.sqrt 5 ^ 5 = (Real.sqrt 5 ^ 2) ^ 2 * Real.sqrt 5 := by ring
+    rw [e, hs5]; norm_num
+  have p6 : Real.sqrt 5 ^ 6 = 125 := by
+    have e : Real.sqrt 5 ^ 6 = (Real.sqrt 5 ^ 2) ^ 3 := by ring
+    rw [e, hs5]; norm_num
+  rw [hφ]
+  ring_nf
+  rw [p3, p4, p5, p6, hs5]
+  ring
 
 end QOU.Archimedean

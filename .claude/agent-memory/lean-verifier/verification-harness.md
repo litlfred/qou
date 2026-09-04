@@ -424,3 +424,82 @@ Provenance: this was re-derived from scratch during a session that never read
 this file — §1 and §2 already state both traps, §2 already naming `QOU/` and
 `SearchPath.findWithExt`. Reading the memory first would have cost a minute and
 saved the re-derivation and the discarded tool. Only this section was actually new.
+
+## 13. The union mirror — when MATHLIB itself is split across the two trees
+
+§2 says a partial overlay shadows the whole namespace, and names `QOU/`. **The
+same rule applies to `Mathlib/`, and that is the case you will actually hit**,
+because the root and per-paper restores are two *different partial builds*.
+
+Measured 2026-09-04 (`MagnusSumAbsEigBound.lean`): root `.lake` had
+`Mathlib/Tactic.olean` and `Mathlib/Data/Real/Sqrt.olean` but **not**
+`Mathlib/Algebra/Order/Chebyshev.olean`; the per-paper tree had Chebyshev but
+**not** `Mathlib.Tactic`. Concatenating the two on `LEAN_PATH` does nothing —
+the first root with a `Mathlib/` dir answers for every `Mathlib.*` module — so
+`lean` reports `object file '…/Chebyshev.olean' … does not exist` naming a path
+in the *root* tree while the file sits in the other one.
+
+**Do not conclude the module is unavailable, and above all do not rewrite the
+proof around it.** A sibling session did exactly that here: it replaced
+`sq_sum_le_card_mul_sum_sq` (Chebyshev) with `sum_mul_sq_le_sq_mul_sq`
+(`Mathlib.Algebra.Order.BigOperators.Ring.Finset`, which happens to live in the
+root tree) and committed a source comment reading *"whose olean is absent from
+the restored set"* plus a commit subject *"route around a missing olean"*
+(`67128df5dd`). Both compile; the comment is false and now permanent. Same class
+as §11's dot-notation misdiagnosis.
+
+**The fix — a hardlink union of every package build dir from both trees:**
+
+    MIR=<scratch>/unionlib; rm -rf "$MIR"; mkdir -p "$MIR"
+    for d in $ROOT/.lake/packages/*/.lake/build/lib/lean $ROOT/.lake/build/lib/lean \
+             $LEANLIB/.lake/packages/*/.lake/build/lib/lean $LEANLIB/.lake/build/lib/lean; do
+      [ -d "$d" ] && cp -aln "$d/." "$MIR/"      # -n: first tree wins, never clobber
+    done
+    env LEAN_PATH="$MIR" lean <file>
+
+`-a -l` = hardlinks: `du` reported 4.5 G while `df` free did not move. Read-only
+use is safe; if you ever write oleans into it, `rm -f` first (§3) or you truncate
+the shared inode. **Precondition: confirm both `lake-manifest.json`s pin the same
+mathlib rev** (here `f897ebcf72cd`, toolchain v4.24.0 both sides) — mixing oleans
+from two revisions is not sound. With the union both routes compiled exit 0.
+
+**Cheap positive control, since a union mirror could in principle mask errors:**
+append `example : (1:Nat) = 2 := rfl` to a copy and confirm exit 1. A harness
+that returns 0 on everything is worse than no harness.
+
+## 14. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
+
+§1 says to check the reverse-import cone. It does not say *of what*, and getting that
+wrong produces a check that looks rigorous and measures nothing.
+
+**Measured 2026-09-04, and the cost was 8 red modules on `main`.** A general-field
+tranche retyped `seminormalRep`'s hypothesis `q ^ 2 ≠ 1 → GenericParameter.NotRootOfUnity q`
+across nine modules (commit `e526464c2d`, PR #6486). Consumers *outside* the tranche were
+never enumerated, and eight of them broke: `HoefsmitRepGeneral` (2 sites),
+`SeminormalBlockTrace` (4), `SeminormalBlockEquality` (5), `SeminormalCornerTrace` (2),
+`MarkovAssembly` (1), `MarkovTraceInstance` (4), then `WenzlMarkovLevelR` (2) and
+`WenzlMarkovTraceInstance` (15) on a second pass. A sibling session found them with a
+full-cone rebuild and fixed them (`794c34897d`, `cbf2202f43`).
+
+**The follow-on PR (#6517) DID run a reverse-cone check and it came back nearly empty —
+because three of its six files were BRAND NEW and so had zero importers.** "Exactly one
+consumer outside what was rebuilt" was reported as reassuring. It was an artifact of the
+files being new. The tranche with real consumers was the *earlier* one, and nothing was
+ever run against it.
+
+**The rule: run the reverse cone against every declaration whose SIGNATURE you changed,
+not against the files you touched.** A new file has no consumers by construction; a
+retyped hypothesis on an existing declaration has as many as the corpus has callers. Those
+are opposite ends of the risk scale and the same command answers only one of them.
+
+Two corollaries from the same incident:
+
+- **"Off the general path" does NOT mean unaffected.** The tranche's own bean recorded
+  `HoefsmitRepGeneral ← OFF the general path`; it is a consumer of `seminormalRep` and it
+  broke. Off-path means *this* change does not need it, never that it does not need this.
+- **A count of old-typed declarations is not a defect count.** Tree-wide, 13 files still
+  declare `(hq2 : q ^ 2 ≠ 1)` and most are fine — they never pass `hq2` into the
+  seminormal family. Only a rebuild distinguishes them.
+
+Do not read the incident as an argument against §1's check. It is an argument for aiming
+it: the same session's #6517 check was correctly *executed* and pointed at the wrong set.

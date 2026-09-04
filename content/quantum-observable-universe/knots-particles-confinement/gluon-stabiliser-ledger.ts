@@ -129,5 +129,24 @@ export default remark({
         "question (which objective the corpus means) still needs an answer, " +
         "but it can no longer rescue the 2-versus-4 split either way.",
     },
+    {
+      kind: "status",
+      date: "2026-09-04",
+      body:
+        "**Prose swept to match.** The closing paragraph asserted *\"the " +
+        "proton takes two gluon crossings and the neutron four, and that " +
+        "difference is what makes the neutron heavier and so feeds " +
+        "$\\mathfrak{Q}_\\beta$\"* for eleven days after that claim had been " +
+        "withdrawn — and the withdrawal was already recorded **in this very " +
+        "block's author notes**, one entry above, on 2026-08-24. The note " +
+        "and the prose disagreed and the prose was the one a reader saw. " +
+        "The neutron block was separately corrected 13 -> 11 crossings on " +
+        "2026-08-29 (`qou-vtlj`, owner-authorised correction 1 of 4), which " +
+        "makes the gluon count 2 for both nucleons. The sentence is now " +
+        "struck with the count stated, and the four-statements tally " +
+        "re-counted from three distinct answers to two ({1, 2, 2, 2}). " +
+        "No number moves: this block emits no witness and computes nothing.",
+      see: "docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md",
+    },
   ],
 });

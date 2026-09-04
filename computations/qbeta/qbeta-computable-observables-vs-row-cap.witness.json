@@ -1,0 +1,175 @@
+{
+  "computation": "qbeta-computable-observables-vs-row-cap",
+  "assertions": [
+    {
+      "name": "sigma_squared_b_coefficient_is_minus_one_over_h",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "sigma^2 = h.sigma + 1 gives b = -1/h < 0 exactly"
+    },
+    {
+      "name": "no_power_k_ge_2_is_in_the_crossing_cone",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "composing crossings leaves the segment between them"
+    },
+    {
+      "name": "every_atom_letter_is_a_convex_combination",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "so the atom operator is a convex combination of signed braid words"
+    },
+    {
+      "name": "binding_operator_projects_outside_the_crossing_cone",
+      "computed": false,
+      "expected": false,
+      "passed": true,
+      "note": "Delta_bind's order-0 shadow is not a positive mixture of crossings"
+    },
+    {
+      "name": "subtraction_is_linear_in_the_markov_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so a computable observable is itself a Markov trace"
+    },
+    {
+      "name": "tall_block_operator_is_nonzero",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tall_block_trace_weight_is_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the tall block contributes exactly nothing to tr_M(Delta_bind)"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "fibre_dimension_N": 2,
+    "trace_convention": "D (SU(2)/Temperley-Lieb)",
+    "atom": "deuteron Z=N=1, A=2, 3A=6 strands"
+  },
+  "data": {
+    "sigma_powers_two_crossing_coords": [
+      {
+        "k": 2,
+        "a": "4.99236925684",
+        "b": "-4.78330895804",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 3,
+        "a": "2.04370620853",
+        "b": "-1.0",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 4,
+        "a": "5.41962708744",
+        "b": "-4.99236925684",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 5,
+        "a": "3.17673506679",
+        "b": "-2.04370620853",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 6,
+        "a": "6.0837562697",
+        "b": "-5.41962708744",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 7,
+        "a": "4.44860697034",
+        "b": "-3.17673506679",
+        "in_cone": false,
+        "is_convex": false
+      },
+      {
+        "k": 8,
+        "a": "7.01378337215",
+        "b": "-6.0837562697",
+        "in_cone": false,
+        "is_convex": false
+      }
+    ],
+    "projection": {
+      "atom": {
+        "c_1": "0.24474637290221",
+        "c_sigma": "0.53930524342288",
+        "a": "1.7100027613742",
+        "b": "-1.1706975179513",
+        "tr_M": "0.57517224391777187083",
+        "in_cone": false,
+        "is_convex": false
+      },
+      "free": {
+        "c_1": "0.48156636627372",
+        "c_sigma": "1.061144495454",
+        "a": "3.3646252091425",
+        "b": "-2.3034807136885",
+        "tr_M": "1.1317169043222100827",
+        "in_cone": false,
+        "is_convex": false
+      }
+    },
+    "delta_bind_projection": {
+      "c_1": "-0.2368199933715",
+      "c_sigma": "-0.52183925203113",
+      "a": "-1.6546224477684",
+      "b": "1.1327831957372",
+      "in_cone": false,
+      "is_convex": false
+    },
+    "traces": {
+      "atom": "0.5751722439177718708265353",
+      "free": "1.131716904322210082731308",
+      "delta": "-0.5565446604044382119047722",
+      "linearity_residual": "2.29589e-41"
+    },
+    "tall_block": {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "dim": 16,
+      "max_abs_operator_entry": "5.12143485442",
+      "ocneanu_weight_abs": "1.105854e-17"
+    }
+  },
+  "context": {
+    "axis": "does a COMPUTABLE observable -- one reached only by subtraction -- escape the Schur-Weyl row cap?",
+    "answer": "No, and the two halves of the question separate. The tower IS richer than crossing mixtures (sigma^2 = h.sigma + 1 puts b = -1/h < 0, so composing two crossings leaves the segment between them) and the binding operator's order-0 shadow is outside the cone -- the owner's needed property holds and is elementary. But a computable observable is a DIFFERENCE OF MARKOV TRACES, tr_M is linear, and every y_lambda with l(lambda) > 2 is zero at N = 2. Subtraction buys nothing against the row cap.",
+    "what_survives": "Reading a SPECTRUM rather than a trace does see the tall blocks -- rho_(3,2,1)(Delta_bind) is nonzero while its trace contribution is exactly zero. That is not a rescue: the block carries no states at N = 2. Every route from a >2-row block to a physical number is either a trace (zeroed) or a spectrum (stateless).",
+    "scope": "Scope-(a). No content block is edited here."
+  },
+  "gitCommit": "86d3eda0af8110a08caae4c4fea3b683c63f6873",
+  "durationMs": 0,
+  "scriptFile": "qbeta_computable_observables_vs_row_cap_probe.py",
+  "scriptHash": "f651737f7d89",
+  "scriptCommitSha": "unknown",
+  "commitSha": "86d3eda0af8110a08caae4c4fea3b683c63f6873",
+  "engine": "mpmath",
+  "computedAt": "2026-09-02T21:09:35.379179+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton (experimental pin)",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

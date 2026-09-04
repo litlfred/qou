@@ -1,10 +1,12 @@
 ---
 # qou-pdix
 title: 'GAP: derive the Q_beta ladder eigenphase alpha (S1 blocker) — carrier is vacuous, exact-bridge route refuted'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
+updated_at: 2026-09-04T03:13:31Z
+
 updated_at: 2026-09-04T06:45:25Z
 ---
 
@@ -1229,6 +1231,328 @@ shape of `α` as a function of `q`, not a generator's spectrum.
 
 **Scope-(b).** Does not show no connection exists, does not derive `α`, does not
 adjudicate a convention, wires nothing.
+
+---
+
+## 2026-09-01 (13) — what the two carrier fields force at the CLASSICAL POINT, and the exclusion of the only D0-satisfying operator
+
+[`qbeta_eigenphase_carrier_classical_limit_probe.py`](../computations/qbeta/qbeta_eigenphase_carrier_classical_limit_probe.py)
+(5/5) ·
+[`QOU/QBeta/EigenphaseCarrierClassicalLimit.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierClassicalLimit.lean)
+(sorry-free).
+
+Entry 6 expands `α` and tests it against a holonomy ansatz. **Nobody had asked
+what the two `TransferMatrixSpectrum` fields force about `M` itself.** They force
+three things, all cheap enough to disqualify a candidate before any construction.
+
+**Falsifier checked first:** `χ^{(2,1)}` on `S₃` is `+2` on `e`, `0` on the three
+transpositions, `−1` on the two 3-cycles — **trace 2 identifies the identity
+class uniquely.** Had it not, everything below collapses to `tr M(1) = 2` alone.
+
+### The three conditions
+
+`α(1) = 0` (its `t¹` coefficient is `z(1) − 1 = −1/2` under **both** conventions),
+so with `det M = 1`:
+
+1. `tr M(1) = 2` and `det M(1) = 1` ⟹ charpoly `(x−1)²` ⟹ **`M(1)` is UNIPOTENT.**
+   *Not* `M(1) = I`: at `q = 1` the algebra is `ℂ[S₃]` whose `(2,1)` block is all
+   of `M₂(ℂ)`, so a nontrivial Jordan block is permitted.
+2. `tr M` has **no `t¹` term** — stationary at the classical point.
+3. its **`t²` coefficient is `−1/4`**, i.e. `d²/dt²(tr M)|₀ = −1/2`.
+
+**1′ — a second, simpler reason route 1 is closed.** If `M` normalises a single
+braid word's image, `M(1)` lies in the `S₃` image — finite group in char 0,
+semisimple by Maschke, hence diagonalisable. Unipotent **and** diagonalisable
+⟹ `M(1) = I`, so the word must degenerate to the **identity permutation**. Needs
+only the classical point; no eigenphase computation.
+
+### ⚠️ The acceptance test's part 1 is CONVENTION-BLIND on the trace
+
+`tr M = 2 − t²/4 + O(t³)` **identically** for `z_C` and `z_D`, because the `t²`
+coefficient of the trace depends only on `α`'s `t¹` coefficient, which is
+`z(1) − 1 = −1/2` for both. They first differ at **`t³`** — `1/4` vs `5/4`.
+
+So "reproduce `α` through `t²`", read on the trace, shows **nothing** about which
+convention a construction belongs to. Discrimination lives at `t³`. (The `α`
+expansions here reproduce entry 6's recorded coefficients — C: `1/4`, `−5/16`;
+D: `5/4` — independently.)
+
+### The exclusion — `Δ_L` fails at ORDER ZERO
+
+Merged today (PR #6413, `qou-cds1` Step 26): `Δ_L = NF(n) − NF(p)` is the
+corpus's **only elliptic** operator, i.e. the only one clearing this bean's
+TIER-0 condition **`D0`** (`det A > 0`, spectrum `±iθ`). Its classical eigenphase
+is **exactly `2π/3`**, because every NF coordinate carries `(q−1)(q+1)` and the
+leading direction is `−(1 + T₁T₀)` with `T₁T₀` the `S₃` three-cycle.
+
+| | |
+|---|---|
+| carrier requires | `tr M(1) = +2` |
+| `Δ_L` gives | `2cos(2π/3) = −1` |
+| gap | exactly `3` — the identity-to-3-cycle character distance |
+
+**Structural, not a near-miss.** `Δ_S` is excluded more simply still: hyperbolic
+at every real `q` (Step 26), so no eigenphase at all.
+
+### Scope
+
+Does **not** derive `α`, does not construct a carrier, does not adjudicate a
+convention. It supplies a three-condition classical-point filter, shows it is
+convention-blind through `t²`, and disqualifies both operators the `qou-cds1`
+arc produced — including the only one that clears `D0`.
+
+### Same day, second pass — how strong is that filter? Measured: a DISQUALIFIER
+
+Condition 1 above is not scale-invariant (it is about the *normalised* `M`). The
+invariant form: with `R := tr²/det`, a carrier needs **`R(1) = 4`**, i.e.
+`disc = 0`, i.e. the underlying operator is **parabolic at `q = 1`**. `Δ_L` gives
+`R(1) = 1`; `Δ_S` has `tr ≡ 0` so `R = 0`.
+
+Writing `A(q) = Σ_b c_b(q)·B_b` in the NF basis, at `q = 1`:
+
+```
+disc A(1) = 4·Q_T − 3(c₃ − c₄)²,   Q_T = ½[(c₁−c₂)² + (c₁−c₅)² + (c₂−c₅)²] ≥ 0
+```
+
+so the **parabolic locus** is
+
+```
+2[(c₁−c₂)² + (c₁−c₅)² + (c₂−c₅)²]  =  3(c₃ − c₄)²
+```
+
+- **`c₀` is absent** — `disc(A + λI) = disc(A)`. And the three transposition
+  coefficients enter **only through their differences**: their class sum
+  contributes `0` to the `(2,1)` block, because `χ^{(2,1)}` vanishes on a
+  transposition.
+- **`Q_T = 0 ⟺ c₁ = c₂ = c₅`, and on the locus that holds ⟺ `c₃ = c₄`.** That
+  stratum is exactly the **centre of `ℂ[S₃]`** — constant on each conjugacy
+  class — which acts as a **scalar** on the irreducible `(2,1)` block (verified:
+  `−b·I`, independent of the transposition weight). So `M(1) = I` exactly there.
+  The centre is the distinguished stratum of the locus.
+
+### ⚠️ Correction to my own recommendation, one entry up
+
+I wrote that the filter "says what to build toward". **It does not.** Condition 1
+is one quadratic equation on the six `c_b(1)`; conditions 2 and 3 constrain the
+first and second derivatives of the `c_b` at `q = 1` — two more equations on
+twelve new parameters. **Cumulative: 3 equations on 18 parameters.**
+
+So the filter **rules candidates out cheaply** — including both operators the
+`qou-cds1` arc produced, and every one of the six NF basis elements except
+`γ = I` — but it does **not** tell a construction what to be. It is a
+disqualifier, not a target. Route 2 ("arbitrary `M`") stays closed as circular
+for exactly this reason: the two `TransferMatrixSpectrum` fields are one
+equation on a four-dimensional matrix space, and the classical-point conditions
+do not repair that.
+
+Probe now 7/7.
+
+### ~~On the `t³` discriminator — a cheap FIRST MILESTONE for branch 3~~ — **SUPERSEDED, same day, by the entry below**
+
+> 🛑 The `ζ(3)` test proposed here targets the MONODROMY reading of branch 3,
+> which the next entry closes by a cheaper argument (trace-invariance). No
+> associator computation is needed. On the surviving OPEN-PATH reading the
+> associator coefficients are not the obstruction either, because nothing
+> forces that holonomy to be algebraic. Left in place, struck through, so the
+> reasoning is legible.
+
+Entry 5 fixes the one contentful target: *"build the KZ/Stokes connection whose
+monodromy is the `H₃(q)` braiding on `V_(2,1)`, and compute its holonomy angle."*
+That is a large construction. The `t³` discriminator suggests a much smaller
+first check, which either kills the branch or licenses the build.
+
+**The observation.** `α = (z−1)h/2` is **algebraic** in `q`, so its Taylor
+coefficients at `q = 1` are **rational at every order** — `α_C = −t/2 + t²/4 −
+5t³/16`, `α_D = −t/2 + 5t²/4 − t³/2`. But a genuine KZ holonomy angle for `B₃`
+carries the **Drinfeld associator**, whose coefficients are multiple zeta values
+— `ζ(2)` at weight 2, `ζ(3)` at weight 3.
+
+**The proposed test.** Compute only the `t³` coefficient of the KZ holonomy angle
+in the `(2,1)` representation. If a nonzero `ζ(3)` survives into it, that
+coefficient is irrational and cannot equal `−5/16` or `−1/2`: **branch 3 closes
+without building the rest of the connection.** If the `ζ(3)` term collapses — and
+it may, since nested commutators can degenerate in a 2-dimensional
+representation — the branch survives and the full build is licensed.
+
+⚠️ **PROPOSAL, NOT A RESULT.** The rational half is established (`α` is algebraic;
+its coefficients are rational). The `ζ(3)`-survival half is **not checked here**
+and must not be quoted as though it were: whether the weight-3 associator term
+contributes to the *eigenphase* of a 2-dimensional rep is exactly the thing the
+computation would decide. Recorded because it makes the branch's first milestone
+small and falsifiable, not because it settles anything.
+
+Distinct from the exclusion already recorded at entry 4, which is about
+`2cos(α)` being transcendental over `ℚ(q,z)` while Hecke characters are
+algebraic. This one is about the **angle's own Taylor coefficients** versus
+associator `ζ`-values — a different comparison, and it bites on branch 3, which
+that exclusion explicitly does not reach.
+
+
+---
+
+## 2026-09-01 (14) — branch 3's MONODROMY reading is CLOSED by trace-invariance; only the open-path reading survives
+
+[`qbeta_kd_monodromy_reading_closed_probe.py`](../computations/qbeta/qbeta_kd_monodromy_reading_closed_probe.py)
+(4/4) ·
+[`QOU/QBeta/MonodromyTraceInvariance.lean`](../content/quantum-observable-universe/lean/QOU/QBeta/MonodromyTraceInvariance.lean)
+(sorry-free).
+
+Entry 5 words branch 3 as a connection *"whose monodromy reproduces the Hecke
+braiding"*, escaping the rationality exclusion *"because a holonomy is
+transcendental."* **That escape fails, in one line:**
+
+> Kohno–Drinfeld gives holonomies **gauge-conjugate** to the braid-image
+> matrices. **Conjugation preserves the trace**, and the carrier condition is
+> **on the trace**.
+
+So such a monodromy's trace is *exactly* some `tr ρ(w)`. Measured symbolically in
+the `(2,1)` block, exactly in `q`:
+
+- **`det ρ(σ) = −1` for all four generators**, so an even-length word has
+  `det = +1` exactly. **The carrier's `M.det = 1` field is automatic and free on
+  the braid image — it was never the obstruction.** Odd-length words have
+  `det = −1` and cannot meet it at all, so the image splits cleanly by parity.
+- **Every word trace lies in `ℤ[q,q⁻¹]`** — the seminormal radical
+  `√(q⁴+q²+1)` cancels identically, as characters must. Ten words checked:
+  `σ₀σ₁ ↦ −1`, `σ₀σ₁⁻¹ ↦ −(q⁴−q²+1)/q²`, `σ₀σ₁σ₁σ₀ ↦ (q⁴+1)/q²`, …
+- **`(σ₀σ₁)³ = I` exactly, for every `q`** — verified as a matrix identity, not
+  just a trace. The full twist generates the **centre of `B₃`**, so the `(2,1)`
+  representation factors through **`B₃/⟨Δ²⟩ ≅ PSL(2,ℤ)`** and the achievable
+  traces are indexed by conjugacy classes there: a countable set of Laurent
+  polynomials.
+
+`2cos((z−1)h/2)` is transcendental over `ℚ(q,z)` (entry 4). A Laurent polynomial
+is not. **Branch 3 as entry 5 words it is CLOSED** — no Drinfeld associator, no
+`ζ(3)`, no construction.
+
+Entry 5's escape clause is the wrong reason, and worth naming: transcendental
+matrix *entries* do not buy a transcendental closed-loop *trace* when the loop is
+required to reproduce the braiding.
+
+### What survives — and it is narrower than entry 5's wording
+
+The **open-path / non-abelian Stokes** reading. An open-path holonomy is not a
+monodromy — not a closed loop, not a braid-group image — so it is not
+trace-pinned; and it is gauge-**dependent**, transforming by the endpoint frames
+rather than by conjugation, which is exactly the hypothesis
+`trace_conj_of_mul_eq_one` needs and does not get. Entry 5 cites *"Yekutieli
+non-abelian Stokes"*, so this **is** the corpus's intended shape; its own wording
+just does not capture it.
+
+**Route table:** routes 1–4 stay closed. Route 5 remains the only live one, but
+its branch-3 content is now the open-path reading **only** — the monodromy half
+is closed.
+
+Scope-(a). Nothing derived, proposed, wired or readmitted; no convention
+adjudicated. No anchor required (exact symbolic identities in `q`).
+
+## 2026-09-04 (session tender-keller, PR #6572) — three corrections to THIS BEAN, and a new two-number target
+
+### A. The carrier is REPAIRED — this bean's central premise is stale
+
+The bean says `TransferMatrixEigenphase`'s two fields encode none of the
+spectrum claim (`-2 <= 2cos <= 2` and `cos(x) = cos(-x)`). That was true when
+written. Commit `913fb1bf18` (2026-09-03, on `main`) replaced them:
+
+    class TransferMatrixEigenphase (q : R) (M : Matrix (Fin 2) (Fin 2) R) : Prop where
+      trace_eq : M.trace = 2 * Real.cos (eigenphase q)
+      det_eq   : M.det = 1
+
+i.e. `TransferMatrixSpectrum` itself, and `q_beta_cos_resummation` now genuinely
+consumes it (`rw [h.trace_eq]`, negative control recorded).
+`carrier_is_trivial` still stands as the record of the SUPERSEDED encoding.
+**The bean's "Also needs doing (small)" item is done.**
+
+### B. Route 3's closure is STRONGER than recorded — not Laurent, algebraic
+
+The bean's argument is "every H_3 character lies in Z[q,q^-1], and cos of a
+non-constant algebraic function is not a Laurent polynomial". The registry
+flags that transcendence step as an unproved docstring assertion. The live
+Lean does not need it: `QOU.QBeta.BraidImageEigenphaseAlgebraic`
+(`coeffs_zero_of_surjective_nonpos`) excludes **any algebraic relation of any
+degree**, by zero-counting.
+
+**But read its hypothesis before citing it.** It requires alpha to be
+SURJECTIVE onto the non-positive reals (`alphaC_surjective_nonpos` /
+`alphaD_neg_surjective_nonpos`). That is a property of the unbounded
+`(z-1)h/2` family. An `arccos`-valued alpha is bounded in `[0, pi]`, fails the
+hypothesis, and **the theorem never engages**. So "it is algebraic, therefore
+excluded" is false; the exclusion is about unboundedness, not algebraicity.
+
+### C. NEW — the "802 fine-tuning signature" is coordinate-dependent
+
+Probe: `computations/qbeta/qbeta_eigenphase_character_coordinate_probe.py`,
+witness `qbeta-eigenphase-character-coordinate.witness.json`, 3/3 assertions.
+
+`docs/audits/2026-08-30-cds1-two-row-cap-admissible-set-exhausted.md` rejects
+the `(z-1)h/2` family because a viable z needs `z = 0.4991044802`,
+`dz/dq = +400.2896759` -- slope/value **802** -- "a fine-tuning signature, not
+a derivation". In the character coordinate `P := tr M = 2 cos alpha` the same
+constraint is `P = 1.997259194490263`, `|P'/P| = 2.176`. Exact algebra:
+
+    (z'/z)/(P'/P) = -2/(h*z*tan alpha) ~ -2/(h*z*alpha)
+
+measured 369.74 vs closed form 365.76 (1.09 %, and that residual IS the dropped
+`2*alpha*h'/h^2` term). **The factor is large because alpha is small**, which
+is forced by the ladder's correction being small. So slope/value in z cannot
+discriminate: every candidate with a small phase carries it. Scope-(b).
+
+**This does NOT rescue the `(z-1)h/2` family** and I am not claiming it does.
+That family stays excluded by the OTHER argument in
+`qbeta-ladder-required-phase.witness.json`: `d(alpha_req)/dq = +41.53` vs
+`d(alpha_C)/dq = -0.455`, opposite signs, curves crossing transversally. A
+derivative sign disagreement is invariant under this reparametrisation. What
+changes is what the exclusion rests on, not the exclusion.
+
+### D. NEW — the derivative empties the declared basket. This is the deliverable.
+
+`qbeta_d_frame_terminus_probe.py` correctly calls its value match "basket
+distance, not isolation" -- six declared forms within 0.7 %. Tested on BOTH
+constraints at the proton pin:
+
+  form                  value miss   |P'/P|   vs required 2.176
+  2 - h^4                  0.042 %   0.0331   65.7x too flat
+  2 - h^2/8                0.136 %   0.0475   45.8x too flat
+  2 (identity word)        0.137 %   0        slope exactly 0
+  2 - 3h^4                 0.150 %   0.0996   21.8x too flat
+  chi^(2,1)(B_3)           0.154 %   0.1018   21.4x too flat
+  [2]_q                    0.683 %   0.0937   23.2x too flat
+  tr M_4_1                 145.6 %   1.7363   1.25x too flat
+
+Value alone separates the six by a factor 17. Log-slope separates the same six
+by one to two orders and **empties the basket**. The only form within 1.25x on
+slope is `tr M_4_1`, whose value is -0.911.
+
+**The entropy objection is about matching ONE number.** The second constraint
+is independent and free -- a derivative of the same committed ladder, no extra
+experimental precision. A derived candidate now has a two-number target:
+
+    P(q0) = 1.997259194490263   (+/- 5.7e-7 relative, from the |c3|<=1 window)
+    |P'/P|(q0) = 2.176          (~4 figures; d(alpha_req)/dq is a central
+                                 difference at +/-1e-4 relative in q)
+
+`2cos` is even, so only `|P'/P|` is branch-independent.
+
+Scope-(a) on the basket: no DECLARED form passes; not a proof that no Laurent
+polynomial does.
+
+### E. Two housekeeping items found by the corpus-grep, NOT actioned here
+
+1. **Bean `qou-xjh4` (created 2026-09-03) is already wrong.** It asserts branch
+   3 is "the only remaining option" and "NOT ATTEMPTED, by anyone". Both false
+   against main: `0ed8fcbc61` closes the constant-residue horn, `4471ee72ce`
+   proves the elliptic-generator requirement, `f65a953dd3` closes Im(q) as the
+   imaginarity source. It also attributes branch 1's exclusion to
+   "transcendence over Q(q,z)" -- the unproved docstring assertion, not the
+   proof that exists. Someone should reconcile it with this bean.
+2. **`qbeta_d_frame_terminus_probe.py:7-14` transfers the MASS channel's
+   two-row cap to the DECAY channel** ("DERIVED, not a ruling ... so z = z_D is
+   FORCED") and calls `qou-n1dj` "resolved". That contradicts
+   `QOU/QBeta/DecayFibreBarParity.lean` (whose sorry-free
+   `threeRow_undetermined_by_decay` shows the cap is *undeterminable* by the
+   decay pairing at any precision), the trace-convention registry, and
+   `qou-n1dj`'s own status (`todo`, "Item 1 is untouched"). The probe's
+   headline verdict inherits the transfer.
 
 
 ## 2026-09-04 — D0 does not need theta, and two of my own readings were wrong

@@ -1964,8 +1964,42 @@ When working on math-affecting code or content, **trace the change to a step in 
 > `m_p = 2·(m_μ·F_Bor − 6·m_e)`, `m_μ = m_e·Vol(4₁)/ℏ_q²`, `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` → **m_p ≈ 938.27, m_n ≈ 939.56 (CODATA)**. The `c_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor` — not on `Vol(𝓑₃)`.
 > **Route every absolute nucleon/atom mass through the single facade [`computations/canonical_mass.py`](computations/canonical_mass.py)** (`proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev`). `mass_vol_density` / `vol_density_borromean` / `linking_weight_family_a` (=λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (scale cancels). Read first: [`docs/canonical-mass-formula-guardrail.md`](docs/canonical-mass-formula-guardrail.md). Why it recurred: this very banner read with `K=𝓑₃` *is* the wrong form — that's the trap the facade closes.
 
-> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature.
+> **⚠ Critical framing — Q_β `c_k` is a TRUNCATION ORDER, not a wire/un-wire gate.** The Q_β precision ladder `Q_β = Q_base·Π(1 + c_k·u^k)` with `u = b·ℏ_q² ≈ 0.00852` is a **convergent series**; `N` is the truncation order chosen by target precision (`N ≥ log₁₀(1/ε)/2.07 − 1`). `c_2 = -1` is **structural** — no fit, no CODATA, no q₀ (see the correction immediately below, which restates two halves of this sentence's earlier wording); `c_k ≥ 3` are q₀-dependent NEAR-MATCHES (e.g. `c_3 = -2 = J_Hopf(q=1)` is 3.47 % from the extracted `c_3` at m_p-pin q₀ — **or 3.35 %, the same gap normalised by the extracted value rather than by `-2`; see below**), with the N=4 → N=5 non-monotonicity as the experimental signature — **but not for the reason long given here: see the correction below.**
 >
+> **🛑 CORRECTION (2026-09-04) — the non-monotonicity is real; its stated
+> REASON is not, and its figures are convention-C.** The clause above cited
+> "the N=4 → N=5 non-monotonicity" on the strength of
+> [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md),
+> which argued that *"a convergent series with exact `c_k` would be
+> monotone."* **That is not a correct general statement.** Partial sums of a
+> convergent series need not have monotonically decreasing residuals unless
+> the terms are sign-definite and decreasing, which is nowhere established
+> for this ladder — so as written the argument does not support its
+> conclusion, even though the conclusion is right.
+>
+> **The sound form is the SIZE MISMATCH.** For an exact series the residual
+> after truncating at `N` tracks the *first omitted* term, so the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
+> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
+> fit signature. Use that, not "monotone".
+>
+> **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
+> `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
+> substrate is on; under **D** the same table prints
+> `+600999.7384 → +601000.3155`, and its hardcoded prose disagreed with its
+> own computed table by six orders of magnitude until fixed (2026-09-04).
+> **What survives the convention change is the STEP, not the baseline:**
+> `+0.575` ppb in C against `+0.577` ppb in D — so the reversal is
+> frame-robust and only the offset moves.
+>
+> **Do not read this ladder as a live N-selection.** Per defect 2 below,
+> `qbeta_ck_cache.py` extracts ONE rung by inverting the target — verified
+> 2026-09-04, it prints `c_4: residual below compute precision (0.00e+00) —
+> ladder converged` and stops, because `Q_next = Q_prev·(1 + (Q_codata/Q_prev
+> − 1)) = Q_codata` identically. `c_4 … c_7` are never computed there. That
+> producer also **refuses to run** under convention D; the analysis script
+> does not, which is how the stale prose survived.
+
 > **🛑 CORRECTION (2026-08-16, owner-authorised; beans `qou-f09n` + `qou-cwin`).** Three claims above needed fixing, one of my own proposed fixes was itself wrong, and the two facts are worth separating.
 >
 > 1. **"`c_2 = -1` is PROVED Taylor-exact" — ONE half is wrong, and it is NOT the half the bean originally named.**
@@ -2032,7 +2066,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -2048,9 +2082,24 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **m_μ is no longer a met goal (2026-05-31 correction).** Before the
   2026-05-28 proton-anchor re-pin, m_μ was the q₀ *anchor* (err ≈ 0).
   Post-re-pin it is a *prediction* (m_e × (m_μ/m_e)_CODATA) and misses
-  the 100× target by **963.6×** (209.8 ppb vs 0.2177 ppb target) per
+  the 100× target by **970.2×** (211.2 ppb vs 0.2177 ppb target) per
   the dashboard. An earlier version of this table listed "4/7 met
   (… m_μ …)"; that was stale (the q0-repin staleness class).
+
+  > **The `963.6× / 209.8 ppb` this line carried until 2026-09-04 was
+  > itself an instance of that same staleness class — one CODATA
+  > edition later.** Those are the **CODATA-2018** figures. The muon
+  > anchor moved to CODATA 2022 on 2026-08-22 (`fca08de7d2`, owner
+  > ruling), which shifts the residual `209.755 → 211.165` ppb and the
+  > miss `963.6 → 970.2×`. Live source, both fields on one row:
+  > `per-observable-100x-status.witness.json`, `rows[]` where
+  > `obs == "m_mu"` — `err_ppb 211.2`, `target_100x_ppb 0.2177`,
+  > `miss_factor 970.2`. **Quote the witness, not this paragraph.**
+  > Drained on `main` at four sites here plus `docs/precision-goals.md`
+  > and two content blocks; the ~17 hits left in `docs/audits/` and
+  > `docs/coordination/` are **dated records of their own analyses and
+  > were deliberately left** — same decision as the `4.66e6` drain
+  > (`qou-3nva`). Beans `qou-silm` (finding) / `qou-m4au` (drain).
 - **m_p dropped from "met" 2026-07-04.** Through 2026-07-04 the count was
   3/7 (m_e, m_p, m_K/m_π), but m_p "met" only because a fitted Habiro
   tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` landed it on CODATA to 0.0004 ppb. That
@@ -2287,7 +2336,7 @@ Do not regress either.
 > `computations/audits/muon_pin_three_values_probe.py` establishes that **three
 > different numbers are all called "the muon q₀"**, diverging at the 13th
 > significant digit — five orders of magnitude above the framework's own 1 ppQ L1
-> target, and inside the ~11.5 ppb μ–p separation the two-pin vocabulary exists to
+> target, and inside the ~11.6 ppb μ–p separation the two-pin vocabulary exists to
 > keep straight. Re-derived independently 2026-08-30 at `mp.dps = 60`, with
 > `Vol(4₁) = 2·Cl₂(π/3) = 2.02988321281930725004240510855`:
 >
@@ -2692,22 +2741,25 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
 | **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
-| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.017 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **970.2×** (211.2 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
 CAL-2.** (CAL-1 = m_e; CAL-2 = 𝔇_β, proxy m_μ/m_e; CAL-3 = 𝔇_π, proxy
 m_π; Q_β = ℏ/𝔇_β is the **CAL-2 proxy**, not CAL-3 — see the decay-width
-cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.5 ppb
+cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.6 ppb
 theory residual lands where least significant (proton-anchor → 9.5σ on
-muon; muon-anchor → ~4000σ on proton).
+muon; muon-anchor → ~1.4e4 σ on proton — that figure read "~4000σ" until
+2026-09-04 and was the CODATA-2018 one, computed against σ(m_p/m_e) = 0.06 ppb;
+at the live 0.017 ppb the same 243.86 ppb miss is 1.4e4 σ, and the two-line rule
+above already carries the tighter σ).
 
 **STRICT rules:**
 
 1. **Every precision / accuracy / prediction artifact** — the L2 100×
    dashboard, `per-observable-100x-status`, accuracy audit docs,
    "N/7 met" counts — **must report m_μ as the proton-anchored
-   prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
+   prediction (970.2×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
    value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
    tautology ("equality by construction"), **not** an accuracy win.
    **The same rule applies at CAL-1, and was not being applied.** `m_e` is
@@ -2844,7 +2896,7 @@ muon; muon-anchor → ~4000σ on proton).
    reads a **muon-q₀** `muon_check.m_mu_pred_MeV` (≈ CODATA, ~0 ppb)
    and scores it as the m_μ *prediction* silently flips m_μ FAIL→MET.
    The committed `per-observable-100x-status.witness.json`
-   (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
+   (m_μ ≈ 105.6583978, 970.2×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
 4. **Migration posture for the 870 muon-q₀ `computations/` witnesses
