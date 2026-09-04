@@ -19,13 +19,21 @@
   predicates that state what the `.md` states.
 
   The previous revision also inlined `CategoricalLinkingOperation`
-  from `mass-theory/categorical-linking-operation.lean`, two of whose
-  five fields are `True` there and which that file closes with a global
-  `instance canonical`.  That copy is **dropped** rather than propagated:
-  the linking input the Higgs mechanism actually consumes is the linking
-  number `lk` of the post-breaking 2-component links, which is what
-  `MassEigenstateCountThree` is stated over.  The source file is outside
-  this sweep and keeps its own defect (GAP bean).
+  from `mass-theory/categorical-linking-operation.lean`.  That copy is
+  **dropped** rather than propagated: the linking input the Higgs
+  mechanism actually consumes is the linking number `lk` of the
+  post-breaking 2-component links, which is what
+  `MassEigenstateCountThree` is stated over.
+
+  (Currency, bean `qou-yt29`, 2026-09-04: this note used to add that the
+  source file has "two of whose five fields are `True` there and which
+  that file closes with a global `instance canonical`".  That is no
+  longer its state, and the count was low besides — all **five**
+  predicates were extensionally `True`, three of them disguised as ring
+  or integer identities.  The source now carries a `LinkingData`
+  substrate, proves Properties 1-2 and the pre-trace half of 3 about the
+  operation itself, states the rest as class fields, and has no
+  instance.)
 
   Standalone-compile note: a content-block `.lean` sibling cannot
   `import` other content-block siblings, so `EWHoefsmitData` and
