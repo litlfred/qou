@@ -70,6 +70,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 sys.path.insert(0, str(_HERE.parent / 'substrate'))
 import mpmath as mp  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Before the `exec_module` below, not after (bean `qou-j6gb`, NO-FLOAT64):
+# this probe never raised working precision at all, so its whole computation
+# ran at mpmath's default 15 dps and every value it published was honestly
+# float64. The call has to precede the sandwich module's own execution too,
+# because that module builds mpf values at ITS module scope — raising dps
+# afterwards leaves those low no matter what this file does.
+set_compute_dps()
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_stokes_sandwich",

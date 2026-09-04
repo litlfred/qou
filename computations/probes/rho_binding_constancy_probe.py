@@ -22,6 +22,14 @@ sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
 
 import mpmath as mp  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Before importing the reducer, not after (bean `qou-j6gb`, NO-FLOAT64): this
+# probe never raised working precision at all, so it ran at mpmath's default
+# 15 dps throughout. The call precedes `wedderburn_jones_markov` because that
+# module builds mpf values at import; raising dps afterwards would leave them
+# low whatever this file then does.
+set_compute_dps()
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
 

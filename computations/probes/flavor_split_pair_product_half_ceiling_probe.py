@@ -33,6 +33,13 @@ sys.path.insert(0, str(HERE.parent / "substrate"))
 
 import mpmath as mp  # noqa: E402 — anchor read-by-name (bean qou-9ugp)
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Module scope, not inside `main()` (bean `qou-j6gb`, NO-FLOAT64): this probe
+# never raised working precision at all, so every mpf it built ran at mpmath's
+# default 15 dps — honestly float64, and invisible to the padding and
+# import-time audits because there was no padding and nothing built too early.
+set_compute_dps()
 
 
 def leading_ratio(q):
