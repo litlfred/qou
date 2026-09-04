@@ -483,20 +483,36 @@ alternating. Live for any `tr_M` consumer, near-invisible to `B`.)
 | `Z²/A^{4/3}` [Coulomb] | −0.044 |
 
 Avenue 2 named the surface term / edge set as "the strongest lead". Wrong by 4×.
-The lead is **`qou-ubsl`** (symmetry energy = isospin/SU(4) Casimir on the
-Wedderburn partition), and it is sharper than "add a symmetry term": the law
-*already has* an `(N−Z)` term and it has the opposite sign, so the target is to
-explain why the isospin Casimir enters against the q-deformation's own splitting
-of `b_pp` and `b_nn` about `z`.
+🛑 **CORRECTED 2026-09-04, same day.** `qou-ubsl` is **completed and closed**,
+and I promoted it off its title without reading its body. It is closed twice
+over, and the first reason is *this arc's own Lean result*: the trace annihilates
+every partition with `ℓ(λ) > 2` (`QOU/Hecke/RowCap.lean`), so the SU(4)-
+distinguishing shapes — which need up to four rows — carry **zero weight**; and
+on the two-row shapes that survive, `C₂^{GL(4)} − C₂^{GL(2)} = 2n`, a constant at
+fixed strand number, so the SU(4) label collapses to the SU(2) isospin the trace
+already carries. Its own text also concedes that the Casimir yields `(N−Z)²`,
+not `(N−Z)²/A` — the `1/A` is Fermi-gas level density, a separate dynamical
+input this framework does not have.
+
+**So the measurement stands and the inference does not.** The residual's
+dominant shape IS the symmetry energy (−0.804). What is *not* true is that this
+points at a live route: the natural algebraic source is structurally forbidden.
+That is worse news than "top lead", not better — the symmetry energy is a named
+gap with **no available route**, and the tractable open item is back to the
+2.656 scale factor (`qou-59j5`).
+
+What survives of the sharpening: the law *already has* an `(N−Z)` term with the
+opposite sign, so any future route must explain that, not merely add a symmetry
+term. But there is currently no route to explain it with.
 
 ### 7.4 Where that leaves the avenues
 
 | # | avenue | status after the roast |
 |---|---|---|
-| 1 | the 2.656 factor | **unchanged, and now the single named open number** — `qou-59j5` |
+| 1 | the 2.656 factor | **the tractable lead** — the single named open number, `qou-59j5` |
 | 2 | surface term / edge set | **demoted** — corr −0.178, and three edge sets agree to 0.6 % |
 | 3 | iron-peak ceiling 3.00 | unchanged |
 | 4 | make the object a braid | unchanged; reason (b) of §3 still survives it |
 | 5 | unbound systems | unchanged |
 | 6 | formalisation | ✅ done |
-| **7** | **symmetry energy, wrong-signed** | **NEW top lead** — `qou-ubsl`, `qou-q7ga` |
+| **7** | **symmetry energy, wrong-signed** | **named gap, NO route** — the residual's dominant shape (−0.804), but the isospin/SU(4) source is closed (`qou-ubsl`, completed). `qou-q7ga` |

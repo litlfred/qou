@@ -61,7 +61,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "|corr| 0.8038 vs 0.1781 -- the decision frame named the surface term / edge set as the strongest lead. Wrong by 4x in correlation. The lead is qou-ubsl (isospin/SU(4) Casimir), not qou-h7mh"
+      "note": "|corr| 0.8038 vs 0.1781 -- the decision frame named the surface term / edge set as the strongest lead. Wrong by 4x in correlation. But the isospin/SU(4) route (qou-ubsl) is a COMPLETED bean, closed by this arc's own row cap -- so this is a named gap with NO route, not a lead. Corrected same day"
     },
     {
       "name": "binding_information_is_gone_from_Delta_tr_by_mass_eleven",
@@ -242,8 +242,8 @@
     ]
   },
   "provenance": {
-    "headSha": "0bd75ea81c2e54628676a6ef0f0d484a6dd65010",
+    "headSha": "183a04e735d34c75932b6b66ebbe0559f18822e6",
     "producer": "computations/qbeta/qbeta_tower_log_z_and_roast_probe.py",
-    "elapsed_s": 2.407
+    "elapsed_s": 2.919
   }
 }

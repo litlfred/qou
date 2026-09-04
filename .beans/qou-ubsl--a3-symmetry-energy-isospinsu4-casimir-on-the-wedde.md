@@ -48,7 +48,13 @@ Objection (i) was already conceded in this bean's own text (the Casimir gives `(
 not `(N−Z)²/A`; the `1/A` is Fermi-gas level density, a separate dynamical input), and
 (iii) — Wigner SU(4) broken by spin-orbit above A ≈ 40 — is untouched and now moot.
 
-## 2026-09-04 — promoted to the top lead, with a number
+## 2026-09-04 — a measurement for the record. NOT a re-opening.
+
+⚠️ This note originally read "promoted to the top lead". **Wrong** — this bean is
+completed, and closed for reasons that remain correct (see above: the `ℓ(λ) > 2`
+annihilation, now also Lean-proved as `QOU/Hecke/RowCap.lean`, and the `2n`
+Casimir collapse). Nothing below re-opens it; the correlation is recorded here
+only because this is where a future reader will look for it.
 
 Correlation of the additive law's residual `B_exp/(E_0.S)` against the three SEMF
 shapes, 2548 measured AME nuclides

@@ -42,7 +42,24 @@ wrong edge set / the wrong observable? Note (c) below says the edge set is not
 the culprit. The live suspect is that `-ln b` is not the per-bond energy.
 
 **(c) The ordering gap barely touches B** -> see `qou-48is`.
-**(d) The missing term is the symmetry energy** -> see `qou-ubsl`.
+**(d) The missing term is the symmetry energy** — measured at -0.804, and
+the route I pointed it at is CLOSED. **CORRECTED 2026-09-04, same day.** `qou-ubsl` is **completed and closed**,
+and I promoted it off its title without reading its body. It is closed twice
+over, and the first reason is *this arc's own Lean result*: the trace annihilates
+every partition with `ℓ(λ) > 2` (`QOU/Hecke/RowCap.lean`), so the SU(4)-
+distinguishing shapes — which need up to four rows — carry **zero weight**; and
+on the two-row shapes that survive, `C₂^{GL(4)} − C₂^{GL(2)} = 2n`, a constant at
+fixed strand number, so the SU(4) label collapses to the SU(2) isospin the trace
+already carries. Its own text also concedes that the Casimir yields `(N−Z)²`,
+not `(N−Z)²/A` — the `1/A` is Fermi-gas level density, a separate dynamical
+input this framework does not have.
+
+**So the measurement stands and the inference does not.** The residual's
+dominant shape IS the symmetry energy (−0.804). What is *not* true is that this
+points at a live route: the natural algebraic source is structurally forbidden.
+That is worse news than "top lead", not better — the symmetry energy is a named
+gap with **no available route**, and the tractable open item is back to the
+2.656 scale factor (`qou-59j5`).
 
 ## Independent corroboration from main — `pn-bond-cannot-be-extremal` (merged 2026-09-04)
 
