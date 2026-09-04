@@ -989,3 +989,65 @@ to spend ten minutes on before writing the headline, not after.
 
 Scope-(a). Gabriel lever unchanged and sound; exact integers; nothing wired; no
 fit; `A_ω` underived.
+
+
+## 2026-09-04 (12) — entries (10) and (11) are BOTH void: the Gabriel route does not apply
+
+Entry (10) said the arrow count was forced to 0 or 1. Entry (11) corrected that
+to `{0,1,2}` with `V` unpinned. **Both are void, and for a reason neither of them
+touched:** they apply Gabriel's theorem to a datum Gabriel's theorem cannot
+describe. `dt_d1b_gabriel_route_void_source_verified_probe.py` (6/6).
+
+**The source, read for the first time.** GGM `arXiv:2012.00062v3` is held in
+this repo (`library/arxiv-2012.00062v3/`). Immediately under eq (96)/(97) it
+says, verbatim:
+
+> "where the non-vanishing off-diagonal entry of `S_{σi,σj}` is the Stokes
+> constant associated to the Borel singularity `ι_{i,j}`. Assembling these
+> off-diagonal entries in a matrix, we obtain the matrix (98)"
+
+So each eq-(98) entry is **one Stokes constant at one Borel singularity** — a
+multiplicity at a single charge. `Ω(ι_{1,2}) = 4` is a degeneracy of four at one
+ray, **not** four distinct objects at four distinct charges. Every arrow-count
+argument in (10) and (11) read it the second way.
+
+**Why that is fatal.** Gabriel's bijection sends positive roots to
+indecomposables with multiplicity **exactly one**, so any finite-representation-
+type quiver has `max_d Ω_d = 1`. The datum has `max |Ω| = 4`. **No finite-type
+quiver carries it, at any rank, with any arrow count.** Scope-**(b)** structural
+exclusion in the AGENTS.md sense — the invariant cited is Gabriel's bijection
+itself, not a failed search.
+
+**What the source gives back (both new — six-path grep returned 0 hits for
+either).**
+
+* **F1.** The index set is **three** σ-indexed perturbative series, so the
+  singularities `ι_{i,j}` run over **six ordered pairs**, not three.
+* **F2.** `S⁺` populates `{(3,1),(3,2),(1,2)}` and `S⁻` populates
+  `{(1,3),(2,3),(2,1)}` — **exactly the two opposite orientations of the same
+  three unordered pairs** `{12,13,23}`. The bar-conjugate ray pair the whole D1
+  programme is chasing is not two arbitrary stability rays: it is the two
+  orientations of a 3-node complete graph. Verified mechanically (C2).
+* **F3.** eq (100), `S^(k)_{σi,σj} = −S^(k)_{σφ(i),σφ(j)}` with `φ = (1 2)`, is
+  stated in the source for the q-series coefficients; it is checked here on the
+  eq-(98) **constants** and holds (C4). `φ` is **sign-reversing**, hence
+  count-breaking — independently agreeing with `QuiverMirrorAutomorphismExcluded`,
+  which requires `Ω(σd) ≠ Ω(d)` of any mirror reading (4,3). Two different
+  routes to the same constraint; the Lean was not an input to this check.
+
+**HYPOTHESIS, labelled, not a result.** `V = 3` (the three σ) with **3 arrows**
+(the three unordered pairs), the two rays being the two orientations. It is only
+a hypothesis because in the KS description the arrows are the **Dirac pairing on
+the charges**, not the set of populated Borel singularities — F2 says which
+singularities are populated, which is evidence about the arrow set, not the
+arrow set. **Disconfirmation test:** compute `⟨γ_i,γ_j⟩` on the 5₂ spectral-curve
+charge lattice; if it is not supported on exactly `{12,13,23}`, H is dead. That
+needs charge-lattice data this probe does not have, and is the honest next rung.
+
+**The lesson, and it is the third of this kind on this object.** (10) was wrong
+about the arithmetic's inputs and I caught it by grepping the bean. (11) was
+wrong about the *premise* and the bean could not catch it — only the source
+could, and the source has been sitting in `library/` the whole time. Corpus-grep
+path 5 exists precisely for this, and I ran paths 0/2/3/6 twice on this object
+without ever running path 5 on the paper the datum is quoted from. **When a
+probe's input is a quoted equation, read the equation.**
