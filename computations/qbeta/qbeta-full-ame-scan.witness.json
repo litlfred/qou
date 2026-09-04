@@ -159,15 +159,16 @@
     "consequence": "Claims resting on the four light atoms are artefacts of where those atoms sit: 'supplies 8-20 % of binding' is false above A ~ 140, and for nearly half the table a missing term would have to be SUBTRACTED.",
     "scope": "Scope-(a). Nothing is refuted about the algebra — the closed form reproduces every measured Delta_tr to 1e-35 with no fitted constant. What is measured is the fit of B = Q_beta . Delta_tr to nature."
   },
-  "gitCommit": "5bccf6857484f1abd2eb548660efb68c5f20f290",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_full_ame_scan_probe.py",
-  "scriptHash": "a68a3f00711e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5bccf6857484f1abd2eb548660efb68c5f20f290",
+  "scriptHash": "dad666528255",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T20:33:01.408417+00:00",
+  "computedAt": "2026-09-04T12:36:06.530403+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }
