@@ -1,0 +1,139 @@
+{
+  "engine": "exact-integer-rank-and-smith-normal-form",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T10:36:12.455836+00:00",
+  "commitSha": "21bf60bc52c4070e82d19761f413952973686915",
+  "assertions": [
+    {
+      "name": "C1_eq98_rank_is_2_not_3",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P1 CONFIRMED. det(eq 98) = 0 and its exact rank over Q is 2. The merged probe's C4 said 'eq (98) is a rank-3 antisymmetric integer matrix' -- that is its SIZE, used as a RANK. Every odd-size antisymmetric matrix is singular (det A = det(-A^T) = (-1)^n det A), so an antisymmetric matrix always has EVEN rank and 'rank 3' was never available"
+    },
+    {
+      "name": "C2_the_real_invariant_is_the_elementary_divisor",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P2 CONFIRMED. A rank-2 antisymmetric integral form is [[0,d],[-d,0]] (+) 0 up to GL(Z), so the elementary divisor d is the complete invariant. d(eq 98) = 1, d(NZ cusp) = 2: inequivalent over Z. This is the discriminator the merged probe should have used"
+    },
+    {
+      "name": "C3_they_are_Q_equivalent",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P3 CONFIRMED. Both forms have rank 2, and over Q a rank-2 antisymmetric form is unique up to equivalence, so they are Q-equivalent and differ only by the integral factor 2. A charge lattice is routinely defined up to normalisation, which is exactly why this is not an exclusion"
+    },
+    {
+      "name": "C4_rescoped_b_to_a_NZ_is_NOT_excluded",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The merged C4 was labelled scope-(b), which AGENTS.md reserves for exclusions resting on a PROVED invariant. The invariant cited was a miscomputed rank, so the (b) label was unearned. Re-scoped to (a): the NZ cusp form is not on the nose the eq-(98) form (integral factor 2, and indexed by (mu,lambda) rather than by the three sigma). The NZ route is NOT excluded -- charge lattices are routinely defined up to normalisation and the two forms agree over Q"
+    },
+    {
+      "name": "C5_only_C4_is_void",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The merged probe's C1, C2, C3, C5 and C7 are measurements and stand unchanged. Only C4 -- which turned the C2+C3 measurements into an exclusion via the bogus rank comparison -- is void. The defect is in one inference, not in the data"
+    },
+    {
+      "name": "C6_d1_vs_d2_is_normalisation_not_obstruction",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The NZ cusp form halves to [[0,1],[-1,0]], which is unimodular, so it is 2 x a unimodular rank-2 form while eq (98) is already unimodular on its support. The elementary divisors differ by an overall factor 2 -- a normalisation convention for the NZ symplectic form, not an obstruction. So even the re-scoped scope-(a) statement ('differs by an integral factor 2') is NOT evidence against the NZ route"
+    },
+    {
+      "name": "C7_the_real_difference_is_the_radical_and_it_is_forced",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eq (98) has a 1-dimensional radical spanned by the axis vector (-3, -3, 4), verified by eq(98) . axis = [0,0,0]. This is FORCED: any 3x3 antisymmetric matrix is the cross-product matrix of its axis vector (Omega_23, -Omega_13, Omega_12), so the radical being built from the Omega entries carries no information and must not be read as numerology. After C6 removes the elementary-divisor gap, THIS is the only surviving structural difference from the NZ cusp form: a rank-3 lattice with a 1-dim radical versus a rank-2 lattice with none. In Seiberg-Witten terms a null direction of the Dirac pairing is a FLAVOUR charge, so the open question for the NZ route is not 'why rank 2' but 'where is the third, null direction'"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "d1b-eq98-rank-correction",
+  "scriptFile": "d1b_eq98_rank_correction_probe.py",
+  "scriptHash": "44740f16e9d2",
+  "scriptCommitSha": "21bf60bc52c4070e82d19761f413952973686915",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_eq98_rank_correction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_eq98_rank_correction_probe.py"
+  },
+  "description": "qou-rutm. CORRECTS A MERGED CLAIM. d1b_52_charge_lattice_sourcing_probe is on main (74a927b6af, PR #6599) and its headline verdict C4 reads 'eq (98) is a rank-3 antisymmetric integer matrix; the NZ datum's antisymmetric content has rank 2, always; scope-(b) exclusion'. eq (98) has rank 2, not 3: I wrote its SIZE (3x3) and used it as a RANK. This was never possible -- every odd-size antisymmetric matrix is singular (det A = det(-A^T) = (-1)^n det A), so an antisymmetric matrix always has EVEN rank. det(eq 98) = 0, rank = 2 exactly. So the comparison put a size against a rank and BOTH objects are rank 2, which makes the NZ cusp block MORE plausible as a carrier rather than less. The real discriminator is the elementary divisor of a rank-2 antisymmetric integral form, complete up to GL(Z): d(eq 98) = 1 against d(NZ cusp) = 2, so they are inequivalent over Z but EQUIVALENT over Q. Verdict re-scoped (b) -> (a) per AGENTS.md, which reserves (b) for exclusions resting on a proved invariant: the NZ cusp form is not on the nose the eq-(98) form, but THE NZ ROUTE IS NOT EXCLUDED -- charge lattices are routinely defined up to normalisation. The merged C1, C2, C3, C5 and C7 are measurements and stand; only C4 is void.",
+  "data": {
+    "merged_claim_corrected": {
+      "probe": "computations/qbeta/d1b_52_charge_lattice_sourcing_probe.py",
+      "assertion": "C4_NZ_route_EXCLUDED_scope_b",
+      "merged_at": "74a927b6af (PR #6599)",
+      "quoted": "eq (98) is a rank-3 antisymmetric integer matrix. The NZ datum's antisymmetric content has rank 2, always.",
+      "defect": "SIZE (3x3) used as RANK; antisymmetric matrices have even rank, so rank 3 was never available"
+    },
+    "measured": {
+      "det_eq98": 0,
+      "rank_eq98": 2,
+      "snf_eq98": [
+        1,
+        1
+      ],
+      "elementary_divisor_eq98": 1,
+      "snf_nz_cusp": [
+        2,
+        2
+      ],
+      "elementary_divisor_nz_cusp": 2,
+      "Z_equivalent": false,
+      "Q_equivalent": true
+    },
+    "rescope": {
+      "was": "scope-(b) structural exclusion",
+      "now": "scope-(a): the NZ cusp form is not on the nose the eq-(98) form (integral factor 2; indexed by (mu,lambda) not the three sigma)",
+      "nz_route_excluded": false,
+      "why_not": "charge lattices are routinely defined up to normalisation, and the two forms are equivalent over Q"
+    },
+    "unaffected": [
+      "C1 GGM defines no charge lattice (0 / 0, measured)",
+      "C2 NZ edge block is exactly zero",
+      "C3 antisymmetric content is the rank-2 cusp block at +-2",
+      "C5 KRSS quivers are symmetric; eq (98) is not",
+      "C7 route 2 exists and the repo has both halves"
+    ],
+    "scope": {
+      "tier": "correction of a merged claim; re-scope (b) -> (a)",
+      "method": "exact determinant, exact rank over Q, Smith normal form over Z",
+      "arithmetic": "exact integers and Fractions; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}

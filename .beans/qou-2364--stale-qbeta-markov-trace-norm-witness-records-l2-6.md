@@ -1,11 +1,11 @@
 ---
 # qou-2364
 title: 'STALE: qbeta-markov-trace-norm witness records L2 6.85e-14 but HEAD''s script gives 3.48e-09 — 50000x, and scriptHash differs'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T07:13:03Z
-updated_at: 2026-09-04T07:43:58Z
+updated_at: 2026-09-04T10:34:14Z
 ---
 
 
@@ -146,3 +146,5 @@ Verified: raw-float64 --strict this witness clean, REGRESSED=0 (the 5 NEW are in
 TWO WIDER FINDINGS worth a follow-up (not fixed here):
 - The SDP witness qbeta-decay-sdp-knot-operator records NO q0Anchor/q0Value — that provenance gap is exactly what let the straddle hide. Should record its pin.
 - Other probes reading q-pinning-50-digit (muon) while consuming proton-pinned inputs would have the same straddle. Worth a sweep.
+
+MERGED 2026-09-04 (PR #6596, rebase-and-merge, main HEAD fdd7442206). Rebased through 147 commits of main; producer re-verified clean (L2 8.08e-18, no float64, proton). Follow-up sweep tracked in a new bean.

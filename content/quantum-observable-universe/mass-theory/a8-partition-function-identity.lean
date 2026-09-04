@@ -42,10 +42,28 @@ work via `Fintype.card`.)
 To make the identity `a_8 = Σ p(n) X^(5-n)` provable by `decide` /
 `rfl`, we define a local `partitionCount n` synonym whose value
 table for `n = 1..5` is `(1, 2, 3, 5, 7)`. The bridge to Mathlib's
-`Fintype.card (Nat.Partition n)` is captured by a `theorem
-partitionCount_eq_fintype_card_partition` (decidable specialisation
-at the five concrete `n` values — they are reflexive identities
-since the `Nat.Partition` enumeration is decidable for small `n`).
+`Fintype.card (Nat.Partition n)` is `partitionCount_eq_fintype_card_partition_small`
+below, which remains an **axiom**.
+
+**Corrected 2026-09-04.** This paragraph used to claim the five values
+"are reflexive identities since the `Nat.Partition` enumeration is
+decidable for small `n`". **That is false as stated, and the boundary
+is sharp: `decide` proves `Fintype.card (Nat.Partition 1) = 1` and
+gets STUCK at `n = 2`** — reduction halts on
+`(partitionCount 2).beq (Fintype.card (Nat.Partition 2))` after
+unfolding two dozen instances including `Nat.instDecidableEqPartition`.
+
+`Decidable` in the typeclass sense is not the same as kernel-reducible.
+The instance exists, so the proposition typechecks as decidable; it
+simply does not evaluate, because `Nat.Partition` is a structure over a
+`Multiset` and the `Fintype` instance is not built from a computable
+enumeration the kernel can unfold.
+
+So closing this axiom is real combinatorial work — an explicit
+`Nat.Partition n ≃ Fin (p n)`, or a `Finset` enumeration with a
+cardinality lemma — not a tactic call. `native_decide` would discharge
+it but adds `Lean.ofReduceBool` to the axiom list, i.e. trades one
+axiom for another, and is banned by AGENTS.md besides.
 
 ## References
 

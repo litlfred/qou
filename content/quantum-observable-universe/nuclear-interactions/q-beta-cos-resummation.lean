@@ -146,9 +146,27 @@ is dischargeable by a matrix built *from `α` itself* (`circularWitness` there).
 What the repair buys is real but bounded: the class now constrains its argument
 instead of asserting nothing, and the theorem below is a genuine implication
 rather than a `ring` identity. What it does **not** buy is any evidence about
-the substrate. Branch 1, `M` in the braid image, is *excluded* — every
-character lies in `ℤ[q,q⁻¹]` while `2cos((z−1)h/2)` is transcendental over
-`ℚ(q,z)`.
+the substrate. Branch 1, `M` in the braid image, is *excluded* — by
+`QOU.QBeta.BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos`,
+sorry-free, which forces every coefficient polynomial of a putative algebraic
+relation to vanish by zero-counting ("a polynomial with infinitely many roots is
+zero"). Its own docstring records that this closes branch 1 in full — character
+case *and* eigenvalue-pair case.
+
+**Cite that, not transcendence — corrected 2026-09-04, hours after #6567.** The
+clause here read *"every character lies in `ℤ[q,q⁻¹]` while `2cos((z−1)h/2)` is
+transcendental over `ℚ(q,z)`"*. That route is an **unproved docstring
+assertion**, flagged as such in `QOU.QBeta.BraidImageEigenphaseExclusion` ("the
+transcendence assertion") and described in
+`QOU.QBeta.PhaseFailsLogFunctionalEquation` as *"correct but needs transcendence
+theory"* — i.e. not formalised. Attributing the exclusion to it cites the one
+argument the corpus has **not** discharged while a sorry-free proof sits beside
+it.
+
+**And read the hypothesis before citing the theorem.** It requires `α` to be
+surjective onto the non-positive reals (`∀ y ≤ 0, ∃ s ≥ 1, α s = y`), which the
+unbounded `(z−1)h/2` family supplies and a bounded `arccos` does not. *"It is
+algebraic, therefore excluded"* is not what it says.
 
 **🛑 CORRECTED 2026-09-04, hours after this file first said otherwise.** The
 paragraph here read *"the only contentful branch is 3 — `M` the holonomy of an

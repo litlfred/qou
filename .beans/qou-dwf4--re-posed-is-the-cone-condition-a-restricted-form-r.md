@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:18:55Z
-updated_at: 2026-09-03T09:13:44Z
+updated_at: 2026-09-04T10:44:38Z
 ---
 
 SUCCESSOR to qou-ahu3 question (b), which was VACUOUS as posed.
@@ -460,3 +460,8 @@ docstring; the field is left standing.
 
 ## 2026-09-03 — 3y is PRIOR ART; self-correction (bean qou-c35w)
 Corpus-grep for 'push the sl2 family into the mass channel' found it proved, sorry-free, general n: TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl / twoRow_share_eq_one_of_wenzl (#5242), WenzlWeightVanishing.level_eq_two_of_conventionD, SchurWeyl/OcneanuWeight (#5575: z_D is the k=2 member of z = q^{2k+1}/(1+..+q^{2k}); C in no member), OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_schurPrincipal (the bridge), WenzlWeightLevelR.wenzlMarkovParam (the family), MarkovTraceInstance. So the 'Ocneanu family z_N' classification in #6370 and the 'derived from the trace' claim in #6440 re-derived Lean prior art from 2026-08-16..24 without credit. What is mine: the framing-ratio per-cell mechanism, the real-exponent (log-derivative) C exclusion, the Toffoli cone algebra, and the H3 class instance + promotion + rfl guard. Credit notes added to markov-z-reconciliation.md, explicit-instance-proof.md, the probe docstring and toffoli-lp-stability.lean; #6370/#6440 to get comments. New: QBetaCanonicalMarkovWeightsDerived.lean proves canonical_y3/y21/0 = HeckeMarkov3.markovWeight0/2/1 at z_D (derived weights), so the default instance no longer rests on a probe.
+
+
+
+## 2026-09-04 — y_eq_self_conjugate DROPPED (owner ruling A)
+The line above ('is a Lean CLASS FIELD — assumed, not proved — so nothing…') is now historical: the field and its projection theorem were removed from wedderburn-weight-canonical.lean on the owner's ruling (branch claude/drop-y-eq-self-conjugate-2026-09-04). Nothing here depended on it.

@@ -17,7 +17,7 @@ export default conjecture({
     "faddeev1995",
     "kashaev1997",
     "murakami-murakami2001",
-    "champanerkar-kofman-mullen2008",
+    "champanerkar2003",
   ],
   tags: [
     "tier:S",

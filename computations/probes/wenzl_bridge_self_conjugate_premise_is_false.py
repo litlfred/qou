@@ -198,10 +198,16 @@ def main() -> int:
     # ---- 0. what the block claims ------------------------------------------
     lean = (blk / "wedderburn-weight-canonical.lean")
     ltxt = lean.read_text() if lean.exists() else ""
-    check("the block asserts y_λ = w̃_λ on κ_λ = 0 as a CLASS FIELD",
-          "y_eq_self_conjugate" in ltxt and "class WedderburnWeightCanonical" in ltxt,
-          "so it is assumed, not proved — nothing in the corpus is *proved* "
-          "wrong by its falsity")
+    # 2026-09-04: the field was DROPPED on the owner's ruling (option A of the
+    # three dispositions).  The check now guards the drop: the class must no
+    # longer carry the field, and the module docstring must record why.
+    field_line = any(l.strip().startswith("y_eq_self_conjugate :") for l in ltxt.splitlines())
+    check("the block NO LONGER carries y_λ = w̃_λ on κ_λ = 0 as a class field "
+          "(dropped 2026-09-04, owner ruling A)",
+          "class WedderburnWeightCanonical" in ltxt and not field_line
+          and "DROPPED" in ltxt and "y_self_conjugate" not in ltxt.split("class WedderburnWeightCanonical",1)[1],
+          "it was a class field until 2026-09-04 — assumed, not proved — so nothing "
+          "in the corpus was ever *proved* wrong by its falsity; now nothing asserts it")
 
     # ---- 1. the stratum is exactly what I test ------------------------------
     found = [lam for n in range(1, 7) for lam in partitions(n) if kappa(lam) == 0]
@@ -302,11 +308,12 @@ def main() -> int:
     print()
     print("  VERDICT.  The premise is false, in both conventions, under every")
     print("  reading tested; at the >2-row κ=0 partitions it is structurally")
-    print("  false (0 = positive) and cannot be repaired by any parameter.  It is")
-    print("  a CLASS FIELD, so nothing proved is invalidated — but the class has")
+    print("  false (0 = positive) and cannot be repaired by any parameter.  It was")
+    print("  a CLASS FIELD, so nothing proved was invalidated — but the class had")
     print("  no inhabitant at the intended values, and the BW/LP scalings, which")
-    print("  are definitional, are untouched.  The disposition is the AUTHOR'S:")
-    print("  restrict the field, drop it, or demote the block to a conjecture.")
+    print("  are definitional, are untouched.  DISPOSITION TAKEN 2026-09-04")
+    print("  (owner ruling, option A): the field and its projection theorem are")
+    print("  DROPPED; `y` stays in the class as data only.")
     return 0 if n_ok == len(CHECKS) else 1
 
 

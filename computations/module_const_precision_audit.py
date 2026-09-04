@@ -189,12 +189,22 @@ def _precision_raised_at(tree: ast.Module) -> int | None:
 
 
 def find_early_constants(source: str, filename: str = "<src>") -> list[dict]:
-    try:
-        tree = ast.parse(source, filename)
-    except SyntaxError:
-        return []
+    # A file that does not parse is "no information", not "no findings".
+    # Returning [] for it converts breakage into silence -- bean qou-brkp
+    # records this gate family reporting clean on two files a remediation had
+    # just made unparseable, which is why nobody noticed for a month.
     if "mpmath" not in source:
         return []
+    try:
+        tree = ast.parse(source, filename)
+    except SyntaxError as e:
+        return [{"file": filename, "line": e.lineno or 0, "tier": "UNPARSEABLE",
+                 "name": None, "literal": None,
+                 "source": f"SyntaxError: {e.msg}"}]
+    except Exception as e:
+        return [{"file": filename, "line": 0, "tier": "UNPARSEABLE",
+                 "name": None, "literal": None,
+                 "source": f"{type(e).__name__}: {e}"}]
 
     raised = _precision_raised_at(tree)
     out: list[dict] = []
@@ -234,11 +244,15 @@ def scan(root: Path) -> list[dict]:
     for p in sorted((root / "computations").rglob("*.py")):
         if "_deprecated" in p.parts:
             continue
+        rel = p.relative_to(root).as_posix()
         try:
             src = p.read_text(encoding="utf-8")
-        except Exception:
+        except Exception as e:
+            out.append({"file": rel, "line": 0, "tier": "UNPARSEABLE",
+                        "name": None, "literal": None,
+                        "source": f"unreadable: {type(e).__name__}: {e}"})
             continue
-        out.extend(find_early_constants(src, p.relative_to(root).as_posix()))
+        out.extend(find_early_constants(src, rel))
     return out
 
 
@@ -316,6 +330,8 @@ def main() -> int:
 
     hits = scan(Path(a.root).resolve())
     lossy = [h for h in hits if h["tier"] == "LOSSY"]
+    # A file the gate could not read is a HOLE IN THE GATE, not a pass.
+    blind = [h for h in hits if h["tier"] == "UNPARSEABLE"]
     risk = [h for h in hits if h["tier"] == "PADDING_RISK"]
     files = {h["file"] for h in hits}
 
@@ -345,7 +361,13 @@ def main() -> int:
         print("\n  --list for the full detail.")
     print("\nFix: call the idempotent `set_compute_dps()` at module scope "
           "above the\nconstants. It is safe alongside the call in main().")
-    return 1 if (a.strict and lossy) else 0
+    if blind:
+        print("\n  BLIND SPOTS — the gate could not process these files, so their")
+        print("  module-const precision is UNKNOWN, not clean (bean qou-brkp):")
+        for h in blind:
+            print(f"    {h['file']}:{h['line']}  {h['source']}")
+
+    return 1 if (a.strict and (lossy or blind)) else 0
 
 
 if __name__ == "__main__":

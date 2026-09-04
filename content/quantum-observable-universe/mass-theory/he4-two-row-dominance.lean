@@ -23,6 +23,7 @@ Downstream propositions take this class as a
 Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
 -/
 
+import Mathlib.Tactic.Linarith
 import QOU.BraidKnot.TwoRowStratum
 
 namespace QOU.BraidKnot.He4TwoRowDominance

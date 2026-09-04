@@ -20,7 +20,7 @@ class was inhabited by `Unit` and zero (bean `qou-z9ws`).
    resolution checks the **sibling first** — so the block already resolves to
    [`mass-theory/wedderburn-weight-canonical.lean`](../../mass-theory/wedderburn-weight-canonical.lean),
    never to this file.
-2. That sibling carries the real formalisation: `Partition`, `WedderburnWeightCanonical.y_self_conjugate`, `WedderburnWeightCanonical.beta_mul_h_eq_neg_C`.
+2. That sibling carries the real formalisation: `Partition`, the two definitional scalings `beta_eq` / `C_eq`, and `WedderburnWeightCanonical.beta_mul_h_eq_neg_C` (the former `y_self_conjugate` was dropped 2026-09-04 on the owner's ruling — its field was refuted).
 3. **Nothing imports this module** and nothing else in `content/` names the
    class (measured 2026-08-31 across every `.lean` in the tree).
 

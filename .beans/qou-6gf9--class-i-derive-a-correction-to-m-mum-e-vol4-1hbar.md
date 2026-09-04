@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-04T03:14:44Z
+updated_at: 2026-09-04T07:45:06Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -226,3 +226,37 @@ and `t/w^4 = 14.977`. Pass or fail, the coefficients are a-priori.
 Nothing here closes it. C removes the corpus's strongest a-priori candidate by
 measurement; D narrows the next shape; E identifies a held source nobody has
 used and shows the obstruction that appears to block it does not reach it.
+
+
+## 2026-09-04 later (PR #6603) — the Sigma(2,3,5) route, first measurement
+
+Probe `computations/mu_p_habiro_basis_order_probe.py`, witness
+`mu-p-habiro-basis-order.witness.json`, 3/3. Source read from
+`library/arxiv-2605.15740v1` (`lovejoy2026`), previously uncited.
+
+**Structural, and it is the durable part.** The Habiro basis
+`(q;q)_n (q^-1;q^-1)_n = prod (1-q^j)(1-q^-j) = prod (2 - q^j - q^-j)` is
+IDENTICALLY the bar-even tower `(-1)^n prod f_j` of MuPCarrierBarParity
+(verified to 8.1e-69 off-anchor). So the bar-even precondition -- which this
+bean and the Lean both carry as an ARGUED assumption from 4_1 amphichirality --
+is **automatic** for any Habiro-ring element in its own basis. That upgrades the
+standing of every conditional exclusion here when the candidate is Habiro.
+
+**Magnitude.** t/|omega_n| passes through small height, minimum n=9 at 0.5770.
+
+**But six CONSECUTIVE orders qualify (n=6..11)**, so the tower is dense near t
+and magnitude agreement is nearly free -- the entropy bound in a new coordinate.
+Recorded as a caution, not a finding. **a_n(Sigma(2,3,5)) is NOT computed**, and
+Habiro coefficients are in Z[q^{+-1}] not Z, so no cheap integrality argument
+exists either. This is about the BASIS, not the manifold.
+
+**No conflict with no_small_height_w_monomial**: omega_n ~ (n!)^2 w^n, so this
+is the non-unit-height escape the Lean leaves open, with (n!)^2 structurally
+determined rather than chosen.
+
+**Regime confirmed**: I(Sigma(2,3,5); 1/q0) = 14.9174984765, converged; diverges
+at q0 > 1. HabiroMagnitudeA3.pochAbs_unbounded (binders: 1 < q, and
+|a_n| >= 1) does not reach the bar-image evaluation.
+
+**Next, and it is the decisive step**: extract a_n(Sigma(2,3,5)) from the series
+and evaluate a_n * omega_n at the pin. Until then nothing here is evidence.

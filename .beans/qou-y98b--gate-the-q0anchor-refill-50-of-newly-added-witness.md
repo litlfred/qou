@@ -285,3 +285,93 @@ scope into a live arc to fix something that is not broken.
 
 Same shape as the `build_s` mask gap two items up, one level deeper: the first
 was a field name I had not listed, this is a value with no field name at all.
+
+
+## MEASURED 2026-09-04 — the warn-only gate FIRES CORRECTLY AND DOES NOT REDUCE THE REFILL
+
+The gate this bean asked for exists. It is the q0Anchor block of
+`scripts/precommit-precision-warn.sh`, landed `0465ce1ec5` at
+2026-09-04T04:15Z. It is warn-only by owner decision (2026-08-25: the
+push-side block was offered and declined).
+
+**It works, and it is not working.** Those are two different claims and both
+were measured.
+
+### The mechanism fires
+
+Tested end-to-end this session: dropped an unstamped
+`computations/zz-hook-probe-delete-me.witness.json` into the tree and fed the
+hook a synthetic `git commit` payload. It printed
+
+    NEW       computations/zz-hook-probe-delete-me.witness.json
+
+in 14 s, exit 0, correct text. So "the warning never reaches anyone" is
+**excluded** for the NEW path — which matters, because the gate's own commit
+message says it was repairing an early exit that had hidden brand-new
+witnesses from the whole hook. That repair holds.
+
+### The rate did not move
+
+Method matches this bean's original measurement — witnesses ADDED between two
+revs, read out of git, not two standing counts.
+
+    window   0465ce1ec5..HEAD   345 commits, 8.4 h
+    added    43
+    stamped  19
+    UNSTAMPED 24  =  55.8%   [95% CI 41.0 - 70.7]
+
+Against this bean's own pre-gate windows (45.5 % / 51.6 % / 59.4 % at 250 /
+100 / 500 commits), 55.8 % sits **inside the band**. The CI is wide enough
+that a modest improvement cannot be excluded; it is not wide enough to admit
+the gate having stopped the refill.
+
+Note the ratchet reports `NEW = 10` for the same period, not 24. Both are
+right and they answer different questions: 10 is "not in
+`q0-anchor-missing-baseline.json`", 24 is "added in this window and currently
+unstamped". The 14-file gap is paths already carried in the baseline — a
+witness deleted and re-added does not read as new to the ratchet.
+
+### It is not a bypass, and it is not a cost
+
+Two candidate causes for "fires but does not work", both excluded by
+measurement rather than by argument:
+
+1. **API commits skip Bash hooks.** A commit made through
+   `mcp__github__push_files` / `create_or_update_file` never invokes a
+   `PreToolUse` Bash hook. Checked the committer of all 24: `Claude
+   <noreply@anthropic.com>` 14, `Carl Leitner <litlfred@gmail.com>` 8, `Claude
+   <ofri@ibiblio.org>` 2 — **zero** `GitHub <noreply@github.com>`. Every one
+   was a local commit, so the hook fired on every one.
+
+   **Do NOT read the 8 under the owner's git identity as the owner.** All 24
+   carry a `Co-Authored-By: Claude` / `Claude-Session:` trailer — **24 agent
+   commits, 0 human ones.** The committer field records whichever identity the
+   container's git was configured with, not who decided to commit. So the
+   population proceeding past this warning is *entirely agent sessions*, which
+   is a different fact from the raw split and points at a different remedy: a
+   gate aimed at agents reaches 100 % of the observed refill, and the 2026-08-25
+   objection that a blocking hook would brick a bare container's commits is
+   weaker than it looks, because the q0 block is pure stdlib JSON with no
+   mpmath/numpy dependency (unlike the raw-float64 ratchet it shares a script
+   with).
+2. **The fix is too expensive to do at commit time.** Classified all 24 by
+   their producer's write path: **20 already call `WitnessBuilder` /
+   `.save()`**, 0 hand-roll `json.dump`, 4 have no producer the glob could
+   locate. So in ~83 % of cases the skipped fix is the one-line
+   `save({"q0Anchor": ..., "q0AnchorReason": ...})` the warning itself prints.
+
+**So the warning is seen and proceeded past.** That is what warn-only means,
+and it is the honest reading: a banner that costs nothing to ignore is
+ignored at roughly the rate it was ignored before it existed.
+
+### Scope
+
+Scope-(a): this measures **this gate over these 345 commits**. It says
+nothing about whether a *blocking* gate would work, and it is not a claim
+that warn-only hooks never work — the raw-float64 half of the same script
+was not measured here.
+
+**The decision of what to do about it is the owner's** — AGENTS.md records
+that warn-only was chosen deliberately and says not to upgrade it to blocking
+without asking again. What is new is that the 2026-08-25 decision was made
+without evidence on whether warn-only works, and now there is some.

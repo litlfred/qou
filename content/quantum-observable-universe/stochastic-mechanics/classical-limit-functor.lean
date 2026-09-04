@@ -1,4 +1,5 @@
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Functor
 import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 
@@ -34,23 +35,30 @@ structure ClassicalLimitFunctor
     (Cq : Type u) [Category.{v} Cq] [MonoidalCategory Cq] [BraidedCategory Cq]
     (C1 : Type u) [Category.{v} C1] [MonoidalCategory C1] [SymmetricCategory C1]
     where
-  /-- The underlying monoidal functor. -/
-  functor : MonoidalFunctor Cq C1
+  /-- The underlying functor, together with its monoidal structure.
+
+      Mathlib replaced the bundled `MonoidalFunctor Cq C1` with a plain
+      functor carrying a `Functor.Monoidal` **typeclass**, so the bundle is
+      split in two here. `functor.toFunctor` and `functor.μIso X Y` become
+      `functor` and `Functor.Monoidal.μIso functor X Y` accordingly. -/
+  functor : Cq ⥤ C1
+  /-- The monoidal structure on `functor`. -/
+  [functorMonoidal : functor.Monoidal]
   /-- Quantum gap collapse: ℏ_q → 0 as q → 1.
       Expressed as: the functor sends the braiding to the symmetric swap. -/
   -- Ref: [manuscript] Chapter 8, Section 5
   braiding_trivializes :
     ∀ (X Y : Cq),
-      functor.toFunctor.map (β_ X Y).hom =
-        functor.μIso X Y |>.hom ≫
-        (β_ (functor.toFunctor.obj X) (functor.toFunctor.obj Y)).hom ≫
-        (functor.μIso Y X).inv
+      functor.map (β_ X Y).hom =
+        (Functor.Monoidal.μIso functor X Y).inv ≫
+        (β_ (functor.obj X) (functor.obj Y)).hom ≫
+        (Functor.Monoidal.μIso functor Y X).hom
   /-- The functor is exact (preserves short exact sequences).
       Stated abstractly as a Prop field; the full proof requires
       checking preservation of finite limits and colimits. -/
   is_exact : Prop
   /-- The functor is NOT full: quantum information is lost in the limit.
       There exist morphisms in C_1 not in the image of L. -/
-  not_full : ¬ (functor.toFunctor.Full)
+  not_full : ¬ (functor.Full)
 
 end QOU.AlgebraicSubstrate
