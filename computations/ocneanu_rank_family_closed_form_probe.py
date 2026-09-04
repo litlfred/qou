@@ -57,7 +57,9 @@ Q = sp.symbols("q", positive=True)
 
 # docs/coordination/trace-convention-registry.md, at the proton pin.
 Q0_STR = "1.1099785827513808075916690956107688798744991218736"
-REG_ZD_STR = "0.61268803714646524"
+# 50 dps, from y_lambda_su_n.REG_ZD (re-emitted 2026-09-04, bean qou-90k2 --
+# the previous 17-digit literal was wrong in its last digit).
+REG_ZD_STR = "0.61268803714646525159582986394589924802630839154509"
 
 N_MAX = 8
 
@@ -96,8 +98,8 @@ def main() -> int:
     q0 = mp.mpf(Q0_STR)
     z2 = sp.lambdify(Q, zs[2], "mpmath")(q0)
     z3 = sp.lambdify(Q, zs[3], "mpmath")(q0)
-    okReg = mp.fabs(z2 - mp.mpf(REG_ZD_STR)) < mp.mpf("1e-16")
-    print(f"    z_2(q0) = {mp.nstr(z2, 20)}   registry REG_ZD = {REG_ZD_STR}"
+    okReg = mp.fabs(z2 - mp.mpf(REG_ZD_STR)) < mp.mpf("1e-40")
+    print(f"    z_2(q0) = {mp.nstr(z2, 50)}\n    registry REG_ZD = {REG_ZD_STR}"
           f"  -> {'PASS' if okReg else 'FAIL'}")
     print(f"    z_3(q0) = {mp.nstr(z3, 20)}   (the rank-3 / flavour value)")
     fails += 0 if okReg else 1
