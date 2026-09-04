@@ -177,4 +177,40 @@ def BlockMatch.refl (c : Composition n) : BlockMatch c c where
   toEquiv := Equiv.refl _
   size _ := rfl
 
+/-! ### A non-identity matching, and a non-identity conjugator
+
+`BlockMatch.refl` and `youngOfComp_conj_one` only show the hypotheses are
+*satisfiable*; both are identity instances, and a criterion that fired only at the
+identity would be worthless. The composition `(2,2)` settles it: its two equal parts
+admit the swap as a block matching, and the conjugator that swap produces is **not**
+the identity permutation.
+
+`sortPerm_swap22_ne_one` is the load-bearing one — it evaluates the whole
+`blocksFinEquiv` composite that `sortPerm` is built from, so it checks the
+construction computes to something real rather than merely typechecking.
+
+`decide` here is a closed finite computation on `Composition 4` and `Perm (Fin 4)` —
+the sanctioned case in AGENTS.md, and it is proving a falsifiable inequality rather
+than masking a goal. -/
+
+/-- The composition `(2,2)` of `4`. -/
+def comp22 : Composition 4 where
+  blocks := [2, 2]
+  blocks_pos := by decide
+  blocks_sum := by decide
+
+/-- Its two parts are equal, so swapping them preserves sizes: a **non-identity**
+block matching of `comp22` with itself. -/
+def swapMatch : BlockMatch comp22 comp22 where
+  toEquiv := (finCongr (by decide : comp22.length = 2)).trans
+    ((Equiv.swap 0 1).trans (finCongr (by decide : (2 : ℕ) = comp22.length)))
+  size := by decide
+
+theorem swapMatch_ne_refl : swapMatch.toEquiv ≠ Equiv.refl _ := by decide
+
+/-- **The conjugator is genuinely non-trivial.**  `sortPerm` applied to a
+non-identity matching is not the identity permutation, so
+`youngOfComp_conj_of_blockMatch` conjugates by something. -/
+theorem sortPerm_swap22_ne_one : sortPerm swapMatch ≠ 1 := by decide
+
 end QOU.BraidKnot.CompositionYoung
