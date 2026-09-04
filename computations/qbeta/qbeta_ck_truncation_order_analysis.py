@@ -192,10 +192,40 @@ def main() -> int:
                           "term_ppb": float(abs(term) * 1e9),
                           "cumulative_residual_ppb": resid})
     print()
-    print("    NOTE the non-monotonicity: N=4 residual (+0.055 ppb) is BETTER")
-    print("    than N=5 (+0.63 ppb). A convergent series with EXACT c_k would")
-    print("    be monotone. The reversal is the experimental signature that")
-    print("    c_5 (and c_3, c_4) are q₀-dependent NEAR-MATCHES, not exact.")
+    # The two residuals and the first omitted term, READ FROM THE TABLE ABOVE
+    # rather than hardcoded. They were hardcoded as "+0.055" and "+0.63" ppb,
+    # which are CONVENTION-C figures; this script computes in whatever frame
+    # the substrate module is on, and under D the baseline sits ~601,000 ppb
+    # away, so the printed prose disagreed with the printed table by six
+    # orders of magnitude.
+    r4 = next(r["cumulative_residual_ppb"] for r in rung_rows if r["k"] == 4)
+    r5 = next(r["cumulative_residual_ppb"] for r in rung_rows if r["k"] == 5)
+    t5 = next(r["term_ppb"] for r in rung_rows if r["k"] == 5)
+    print(f"    NOTE the non-monotonicity: the N=4 residual ({r4:+.4f} ppb) is")
+    print(f"    CLOSER to the target than N=5 ({r5:+.4f} ppb) -- adding the k=5")
+    print(f"    term moves the total AWAY by {r5 - r4:+.4f} ppb.")
+    print()
+    print("    WHAT THIS DOES AND DOES NOT SHOW. The reversal is evidence that")
+    print("    c_k>=3 are q0-dependent NEAR-MATCHES rather than exact, and that")
+    print("    conclusion stands. The reason once given here -- 'a convergent")
+    print("    series with EXACT c_k would be monotone' -- is NOT a correct")
+    print("    general statement: partial sums of a convergent series need not")
+    print("    have monotonically decreasing residuals unless the terms are")
+    print("    sign-definite and decreasing, which is not established here.")
+    print("    The sound form of the argument is the SIZE MISMATCH: for an")
+    print("    exact series the residual after truncating at N tracks the first")
+    print(f"    OMITTED term, so the N=4 residual should sit near |c_5*u^5| =")
+    print(f"    {t5:.4f} ppb. Convention-C measured it ~10x SMALLER (0.055 vs")
+    print("    0.577) -- an anomalously good landing, which is the fit")
+    print("    signature. Under D the baseline swamps the comparison entirely.")
+    print()
+    print("    FRAME. This ladder is CONVENTION-C-derived (eigenphase")
+    print("    alpha = (z-1)h/2). `qbeta_ck_cache.py` REFUSES to run under D")
+    print("    for that reason; this script does not, and prints D-frame")
+    print("    numbers when the substrate is on D. The STEP is frame-robust")
+    print("    (+0.575 ppb in C, +0.577 in D) -- it is the BASELINE that moves.")
+    print("    Re-deriving the ladder under D is bean `qou-cds1`, and it is")
+    print("    research, not a z-swap.")
     print()
 
     # ── Part D: q₀-stability floor diagnosis ───────────────────

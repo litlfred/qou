@@ -160,5 +160,22 @@ local monodromy, not fitted numerically.
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only
 > *above* that window; at the low body orders a mixed-shift $D_q$ built from
-> derivatives alone remains admissible, and the non-derivative clause is not
-> forced there.
+> derivatives alone remains admissible by the two target properties, and the
+> non-derivative clause is not forced by them there.
+>
+> **The kernel itself forces it.** Read $L_{\mathcal{K}}$ in the same calculus
+> — with $\sigma$ the unit $t$-shift and $x = q^{e}$, or with $\sigma$ the
+> $t$-shift by two on the double cover of the note above — and it is a
+> shift-sum with a zeroth-order term $-(q-1)$ (respectively $-(u^{2}-1)$,
+> $q = u^{2}$). A sum of derivative-like terms annihilates the constant seed
+> $t^{0}$; the kernel sends it to $-(q-1)$ at $e = 0$. So **no derivative-only
+> shift-sum is $L_{\mathcal{K}}$**, in either dictionary, for any $q \neq 1$
+> (`QOU.Mass.C1KernelAsShiftSum`, sorry-free). If this conjecture holds, the
+> prolongation operator has a non-derivative component — the same conclusion
+> as before, now from the shape of the conjectured symbol rather than from the
+> residue or the residual. Under the unit-shift reading the kernel is exactly
+> the admissible class (derivative-like shift $2$, constant-weight shift $1$),
+> with residue $(q-1)^{2}(a_0 - a_1)$ at the second jet, reading the branch
+> value; under the double-cover reading every shift is even and the kernel
+> commutes with the covering monodromy. Which reading is right is the
+> $\sigma \leftrightarrow t$-shift dictionary, and that is wall W2 unchanged.

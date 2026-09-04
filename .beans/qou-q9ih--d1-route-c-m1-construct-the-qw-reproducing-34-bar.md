@@ -859,3 +859,257 @@ valid for reading the grading and **not** automatically valid as D1-b nodes.
 The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
 routes now give the same six numbers (orbit degrees in entry (8), polynomial
 degree here), so neither is a parsing artifact.
+
+── 2026-09-04 (10): 🛑 SUPERSEDED BY (11) — "the arrow count is FORCED" answered the wrong question ──
+
+> **Read entry (11) first.** The Gabriel lever below is sound; the `(rank,
+> spectrum)` pairs it was fed were not. Kept unedited as the record of the
+> error.
+
+── 2026-09-04 (10, as written): the ARROW count is FORCED — 0 or 1, by Gabriel, not by a fit ──
+
+`computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py`, **8/8**.
+Entry (8) closed the node question; entries (8)–(9) left the arrows open and I
+reported having no lead. The lead was a counting argument, not a search.
+
+### The lever
+
+For an **acyclic** quiver with `W = 0`, **Gabriel's theorem**: finite
+representation type ⟺ the underlying graph is a disjoint union of **simply-laced
+Dynkin** diagrams, and then `#indecomposables = #positive roots`. Every ADE
+diagram is a **tree**, so a rank-`V` union with `k` components has exactly
+`V − k` edges.
+
+**So the arrow count is a function of the Dynkin type, and the type is a
+function of `(rank, #positive roots)`.** The rank is the node count — arithmetic,
+from entry (8). The spectrum size the corpus supplies. The pair pins everything.
+
+### The answer
+
+| reading | 4₁ | 5₂ | arrows |
+|---|---|---|---|
+| abelian **is** a node | `V=3, spec 3` → **A₁+A₁+A₁** | `V=4, spec 4` → **A₁⁴** | **0** |
+| abelian is **not** a node | `V=2, spec 3` → **A₂** | `V=3, spec 4` → **A₁+A₂** | **1** |
+
+**All four are UNIQUE** — exactly one ADE type hits each `(rank, spectrum)`
+pair. The arrow count is not chosen, it is read off. And each reading is
+internally consistent across both knots, rather than one knot working and the
+other not.
+
+**The zero-arrow branch independently re-derives M2.** `A₁^V` is precisely the
+potential-free **abelianized** quiver that `AomegaM2BPSCohomology` said already
+realizes the target — reached here from Gabriel rather than from the
+Davison–Meinhardt plethystic log. Two routes, same object.
+
+### What this leaves open — a much smaller question
+
+Not "what are the arrows" but **"is the abelian connection a node?"** — a
+question about a convention the corpus already has an opinion about, not new
+mathematics.
+
+### 🛑 The assumption chain, because the result is conditional on it
+
+- **(A1) `W = 0`** — the corpus's own M2 finding.
+- **(A2) acyclic** — assumed; Gabriel requires it.
+- **(A3) FINITE spectrum** — **load-bearing.** Infinite ⇒ non-Dynkin ⇒ nothing
+  forced.
+- **(A4) simply-laced** — B/C/F/G need valued quivers and are excluded, not
+  overlooked.
+- **(A5) the recorded DT count is the INDECOMPOSABLE count.** If the corpus's
+  `(4,3)` are instead per-ray counts of **one** quiver, the total is ≥ 7 and
+  rank-4 `A₁+A₃` (7 roots, **2 arrows**) becomes the candidate. **That reading
+  is not tested here** and is the first thing to check before building on this.
+
+### Method note
+
+No search against the target. The ADE enumeration is exhaustive per rank
+(2→2 types, 3→3, 4→6, 5→9), exact integer arithmetic, and a target is hit by
+exactly one type or by none — there is nothing to tune. Controls: positive-root
+counts reproduce the ten known values; every generated union has the requested
+rank (so `edges = rank − components` applies); the enumeration is verified
+complete at each rank.
+
+Scope-(a). Nothing wired, nothing fitted, `A_ω` underived.
+
+── 2026-09-04 (11): 🛑 CORRECTING entry (10) — the arrow count is NOT forced ──
+
+Same probe, corrected in place before merge (`8/8`). Entry (10) concluded *"the
+arrow count is FORCED to 0 or 1"*. **It answered a question the corpus did not
+ask.**
+
+### What was wrong
+
+Entry (10) read the target `(4,3)` as **two knots' total spectra** — 4₁ with 3,
+5₂ with 4 — and set `rank = C_irr` per knot from the merged Galois-orbit result.
+**This bean says otherwise, in as many words, at line 36:**
+
+> Target object (post-pruning): **(Q, W, ray+, ray−)** — quiver with potential
+> plus **TWO stability rays, ray-wise DT counts (4,3)**, bar split (7,1).
+
+So `(4,3)` are **ray-wise counts of ONE quiver** — its bar-conjugate ray pair.
+The numerical coincidence that `C(4₁) = 3` and `C(5₂) = 4` is what made the
+misreading available, and I took it.
+
+### Two things break, and the second is the substantive one
+
+1. A stable object has a **definite slope**, so the two rays' stable sets are
+   **disjoint** and the total is `≥ 4 + 3 = 7`, not 3 or 4.
+2. **`rank` is no longer the per-knot node count at all.** The target is ONE
+   quiver spanning the pair, so the merged `C_irr = [trace field : ℚ]` result —
+   which is **per knot** — **does not pin its `V`**. The chain *"rank = node
+   count"* was broken from the start under this reading. That is the real
+   error; the arithmetic was fine.
+
+### The corrected result — a constraint table, not a resolution
+
+`V ≥ 4` (a ray carrying 4 needs it, from the merged per-ray ceiling) and
+total `≥ 7`. If the spectrum is exactly the two rays:
+
+| rank | type | arrows |
+|---|---|---|
+| 4 | `A₁+A₃` | **2** |
+| 5 | `A₁+A₂+A₂` | **2** |
+| 6 | `A₁⁴+A₂` | **1** |
+| 7 | `A₁×7` | **0** |
+
+**The arrow count is `{0,1,2}` depending on `V`, and nothing in the corpus pins
+`V`.** So the arrow question is **still open** — better constrained than before,
+but not resolved.
+
+### How the error happened
+
+Entry (10) listed **(A5)** *"the recorded DT count is the indecomposable
+count"* as an assumption **and named it the first thing to check before building
+on the result.** It was wrong, and checking it took **one grep of this bean**.
+
+**Flagging a weak assumption is not the same as testing it.** The flag made the
+overclaim feel safe to publish; it did not make it true. Where a probe's own
+author can name the assumption most likely to be wrong, that is the assumption
+to spend ten minutes on before writing the headline, not after.
+
+Scope-(a). Gabriel lever unchanged and sound; exact integers; nothing wired; no
+fit; `A_ω` underived.
+
+
+## 2026-09-04 (12) — entries (10) and (11) are BOTH void: the Gabriel route does not apply
+
+Entry (10) said the arrow count was forced to 0 or 1. Entry (11) corrected that
+to `{0,1,2}` with `V` unpinned. **Both are void, and for a reason neither of them
+touched:** they apply Gabriel's theorem to a datum Gabriel's theorem cannot
+describe. `dt_d1b_gabriel_route_void_source_verified_probe.py` (6/6).
+
+**The source, read for the first time.** GGM `arXiv:2012.00062v3` is held in
+this repo (`library/arxiv-2012.00062v3/`). Immediately under eq (96)/(97) it
+says, verbatim:
+
+> "where the non-vanishing off-diagonal entry of `S_{σi,σj}` is the Stokes
+> constant associated to the Borel singularity `ι_{i,j}`. Assembling these
+> off-diagonal entries in a matrix, we obtain the matrix (98)"
+
+So each eq-(98) entry is **one Stokes constant at one Borel singularity** — a
+multiplicity at a single charge. `Ω(ι_{1,2}) = 4` is a degeneracy of four at one
+ray, **not** four distinct objects at four distinct charges. Every arrow-count
+argument in (10) and (11) read it the second way.
+
+**Why that is fatal.** Gabriel's bijection sends positive roots to
+indecomposables with multiplicity **exactly one**, so any finite-representation-
+type quiver has `max_d Ω_d = 1`. The datum has `max |Ω| = 4`. **No finite-type
+quiver carries it, at any rank, with any arrow count.** Scope-**(b)** structural
+exclusion in the AGENTS.md sense — the invariant cited is Gabriel's bijection
+itself, not a failed search.
+
+**What the source gives back (both new — six-path grep returned 0 hits for
+either).**
+
+* **F1.** The index set is **three** σ-indexed perturbative series, so the
+  singularities `ι_{i,j}` run over **six ordered pairs**, not three.
+* **F2.** `S⁺` populates `{(3,1),(3,2),(1,2)}` and `S⁻` populates
+  `{(1,3),(2,3),(2,1)}` — **exactly the two opposite orientations of the same
+  three unordered pairs** `{12,13,23}`. The bar-conjugate ray pair the whole D1
+  programme is chasing is not two arbitrary stability rays: it is the two
+  orientations of a 3-node complete graph. Verified mechanically (C2).
+* **F3.** eq (100), `S^(k)_{σi,σj} = −S^(k)_{σφ(i),σφ(j)}` with `φ = (1 2)`, is
+  stated in the source for the q-series coefficients; it is checked here on the
+  eq-(98) **constants** and holds (C4). `φ` is **sign-reversing**, hence
+  count-breaking — independently agreeing with `QuiverMirrorAutomorphismExcluded`,
+  which requires `Ω(σd) ≠ Ω(d)` of any mirror reading (4,3). Two different
+  routes to the same constraint; the Lean was not an input to this check.
+
+**HYPOTHESIS, labelled, not a result.** `V = 3` (the three σ) with **3 arrows**
+(the three unordered pairs), the two rays being the two orientations. It is only
+a hypothesis because in the KS description the arrows are the **Dirac pairing on
+the charges**, not the set of populated Borel singularities — F2 says which
+singularities are populated, which is evidence about the arrow set, not the
+arrow set. **Disconfirmation test:** compute `⟨γ_i,γ_j⟩` on the 5₂ spectral-curve
+charge lattice; if it is not supported on exactly `{12,13,23}`, H is dead. That
+needs charge-lattice data this probe does not have, and is the honest next rung.
+
+**The lesson, and it is the third of this kind on this object.** (10) was wrong
+about the arithmetic's inputs and I caught it by grepping the bean. (11) was
+wrong about the *premise* and the bean could not catch it — only the source
+could, and the source has been sitting in `library/` the whole time. Corpus-grep
+path 5 exists precisely for this, and I ran paths 0/2/3/6 twice on this object
+without ever running path 5 on the paper the datum is quoted from. **When a
+probe's input is a quoted equation, read the equation.**
+
+**Addendum to (12), same session — the next rung is blocked on DATA, measured.**
+
+The disconfirmation test above wants the Dirac pairing on the 5₂ charge lattice.
+The corpus turns out to carry exactly the right scaffolding and it is **dead**:
+`QOU/Mathlib/WallCrossing.lean` declares `ChargeLattice` (with an antisymmetric
+integral Euler pairing), `CentralCharge`, `BPSState`, `BPSSpectrum`, `Wall` and
+`KSWallCrossing` — and has **0 instances, 0 importers, and 0 mentions anywhere
+else in `content/quantum-observable-universe/`** (grep 2026-09-04, excluding
+`.lake/`). It compiles only because the QOU library is glob-declared. So the
+test is blocked on *data*, not on infrastructure, and that is now a measurement
+rather than my assertion.
+
+**Deliberately NOT instantiated.** Handing `ChargeLattice` the eq-(98) matrix as
+its `euler` field would assert that eq (98) *is* the Dirac pairing — which is
+precisely hypothesis H, and would launder it into Lean. §"Axiomatization is NOT
+a Proof" forbids exactly this move.
+
+**C7 — the next trap, pre-empted, because it is the same shape as the two
+already sprung.** eq (98) is antisymmetric, and an antisymmetric integer matrix
+indexed by three objects looks exactly like a quiver exchange matrix. Reading it
+as one gives arrows straight off `|B|`: **4 + 3 + 3 = 10 arrows on 3 nodes** — a
+*different* answer from H's 3, and just as immediately available. But **both
+readings entail antisymmetry** (the source's CPT / particle-antiparticle sign on
+Stokes constants; `B_ij = −B_ji` by definition), so observing it separates them
+not at all. There are **729** antisymmetric 3×3 integer matrices with entries in
+`[−4,4]`; eq (98) is not distinguished by being one of them. Only the source
+decides, and the source says Stokes constants.
+
+That is now **three** distinct "obvious" readings of one 3×3 matrix, giving
+arrow counts 0/1, `{0,1,2}`, 3 and 10. The object is not underdetermined by
+accident — a small integer matrix admits many structural readings, and the only
+thing that has ever discriminated between them in this arc is the sentence
+printed under the equation in the paper.
+
+**🛑 CORRECTION to the addendum, same session, ~20 minutes later. "0 importers"
+was not a finding and I let it read as one.**
+
+The addendum above reports `WallCrossing.lean` as having "0 instances, 0
+importers, 0 mentions" and lets all three carry equal weight. **The importer
+count is unremarkable.** Measured over the QOU tree on 2026-09-04:
+
+    total QOU modules                 2566
+    never imported anywhere            866   (33.8 %)
+
+A third of the library is unimported. It is a long-tracked class with its own
+detector — [`content/pipeline/lean-orphan-audit.ts`](content/pipeline/lean-orphan-audit.ts),
+beans `qou-orph` / `qou-kljb`, which measured 761 of 1598 (47.6 %) on
+2026-08-07 — and the module compiles regardless, because the QOU library is
+glob-declared (`globs = ["QOU", "QOU.+"]`). Being unimported makes
+`WallCrossing.lean` **ordinary**, not notable, and quoting it alongside the
+other two numbers implied a discovery that a five-minute check deflates.
+
+**What is actually specific, and is the load-bearing half: ZERO INSTANCES of
+`ChargeLattice` and `KSWallCrossing` anywhere in the tree.** That is a different
+and stronger statement — an imported module can have no instances, and an
+unimported one can have instances inside itself — and it is the fact that
+blocks the Dirac-pairing test. Quote the instance count; drop the importer
+count.
+
+Nothing else in (12) or the addendum moves: the Gabriel exclusion, F2, F3 and
+C7 are untouched, and the test is still blocked on data.

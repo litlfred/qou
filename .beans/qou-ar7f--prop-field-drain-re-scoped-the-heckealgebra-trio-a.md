@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T13:45:21Z
-updated_at: 2026-09-03T13:45:58Z
+updated_at: 2026-09-03T21:47:54Z
 ---
 
 Measured 2026-09-03 while draining the `Prop`-valued-field category the cited-not-proved audit added (#6491). The drain is **not** 96 independent reshapes, and `QOU/Mathlib/HeckeAlgebra.lean` — which has four of them, i.e. the Hecke representation theory the mass derivation runs through — is the worked case.
@@ -58,3 +58,42 @@ What is genuinely unproved is that this def agrees with the **actual** Markov tr
 ## Method note
 
 This is the **fifth** "it already exists elsewhere / X is not needed" of the session (after RSK for the branching identity, spectral-sequence theory for the collapse, Goursat for Cauchy, and the SYT count "when it lands"), and the **fourth** namespace collision (`rskBurnsideHolds` ×2, `RSK_substrate_proved`'s prefix, `MarkovTrace`'s 123 false consumers, and now `WedderburnDecomposition`). Both are worth checking first, by reflex, on anything in this corpus that looks blocked or looks like a fresh build.
+
+
+## 2026-09-03 — the 11 HeckeAlgebra Prop fields are NOT part of the defect population
+
+Measured on `origin/main` with `scripts/lean-cited-not-proved-audit.py --kind
+prop-field`, after adding a `consumed` / `unconsumed` discriminator (PR #6543).
+
+I have twice told the author that the 39 self-nominating `Prop` fields were a
+queue, and that 11 of them were blocked on this bean's owner decision. **Both
+halves were wrong.** The corpus splits:
+
+| | count |
+|---|---|
+| `Prop` fields total | 95 |
+| parameterised (legitimate) | 56 |
+| self-nominating | 39 |
+| — **consumed** (a proof term projects the witness) — the defect | **24** |
+| — unconsumed (an open input carried as an input) | 15 |
+
+**All 11 of this bean's `QOU/Mathlib/HeckeAlgebra.lean` fields are
+`unconsumed`.** Nothing projects `markov_axiom`, `blocks_sum_to_one`,
+`bridge_identity`, `hecke_relation`, … into a conclusion. They are the honest
+§3b conjecture-class pattern: an open input declared as an input.
+
+So this bean's decision — retire the shadow trio, or re-point it — stands
+entirely on its own merits (three carriers duplicating a concrete
+`QOU.HeckeAlgebra` development that the real code actually uses). It is **not**
+blocking 11 Prop-field defects, because there are none there. Nothing about the
+Prop-field work waits on this bean, and this bean gains no urgency from it.
+
+The discriminator came from a false positive on
+`QOU/BraidKnot/BringWPlaneMonodromy.lean`, which is exemplary: its
+`is_seifert_gauss_manin : Prop` is a deliberately-abstract geometric
+identification, and the file's theorem derives from the content-bearing
+`unimodular` field via a proved lemma, explicitly not from the witness. Its own
+docstring says so.
+
+Recorded here rather than acted on: no change to the trio, no change to the
+recommendation (still **retire**).

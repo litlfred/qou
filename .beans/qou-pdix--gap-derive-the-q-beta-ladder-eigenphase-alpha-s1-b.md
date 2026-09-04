@@ -1,11 +1,11 @@
 ---
 # qou-pdix
 title: 'GAP: derive the Q_beta ladder eigenphase alpha (S1 blocker) — carrier is vacuous, exact-bridge route refuted'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-08-31T19:43:09Z
+updated_at: 2026-09-04T03:13:31Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1229,3 +1229,112 @@ shape of `α` as a function of `q`, not a generator's spectrum.
 
 **Scope-(b).** Does not show no connection exists, does not derive `α`, does not
 adjudicate a convention, wires nothing.
+
+
+## 2026-09-04 (session tender-keller, PR #6572) — three corrections to THIS BEAN, and a new two-number target
+
+### A. The carrier is REPAIRED — this bean's central premise is stale
+
+The bean says `TransferMatrixEigenphase`'s two fields encode none of the
+spectrum claim (`-2 <= 2cos <= 2` and `cos(x) = cos(-x)`). That was true when
+written. Commit `913fb1bf18` (2026-09-03, on `main`) replaced them:
+
+    class TransferMatrixEigenphase (q : R) (M : Matrix (Fin 2) (Fin 2) R) : Prop where
+      trace_eq : M.trace = 2 * Real.cos (eigenphase q)
+      det_eq   : M.det = 1
+
+i.e. `TransferMatrixSpectrum` itself, and `q_beta_cos_resummation` now genuinely
+consumes it (`rw [h.trace_eq]`, negative control recorded).
+`carrier_is_trivial` still stands as the record of the SUPERSEDED encoding.
+**The bean's "Also needs doing (small)" item is done.**
+
+### B. Route 3's closure is STRONGER than recorded — not Laurent, algebraic
+
+The bean's argument is "every H_3 character lies in Z[q,q^-1], and cos of a
+non-constant algebraic function is not a Laurent polynomial". The registry
+flags that transcendence step as an unproved docstring assertion. The live
+Lean does not need it: `QOU.QBeta.BraidImageEigenphaseAlgebraic`
+(`coeffs_zero_of_surjective_nonpos`) excludes **any algebraic relation of any
+degree**, by zero-counting.
+
+**But read its hypothesis before citing it.** It requires alpha to be
+SURJECTIVE onto the non-positive reals (`alphaC_surjective_nonpos` /
+`alphaD_neg_surjective_nonpos`). That is a property of the unbounded
+`(z-1)h/2` family. An `arccos`-valued alpha is bounded in `[0, pi]`, fails the
+hypothesis, and **the theorem never engages**. So "it is algebraic, therefore
+excluded" is false; the exclusion is about unboundedness, not algebraicity.
+
+### C. NEW — the "802 fine-tuning signature" is coordinate-dependent
+
+Probe: `computations/qbeta/qbeta_eigenphase_character_coordinate_probe.py`,
+witness `qbeta-eigenphase-character-coordinate.witness.json`, 3/3 assertions.
+
+`docs/audits/2026-08-30-cds1-two-row-cap-admissible-set-exhausted.md` rejects
+the `(z-1)h/2` family because a viable z needs `z = 0.4991044802`,
+`dz/dq = +400.2896759` -- slope/value **802** -- "a fine-tuning signature, not
+a derivation". In the character coordinate `P := tr M = 2 cos alpha` the same
+constraint is `P = 1.997259194490263`, `|P'/P| = 2.176`. Exact algebra:
+
+    (z'/z)/(P'/P) = -2/(h*z*tan alpha) ~ -2/(h*z*alpha)
+
+measured 369.74 vs closed form 365.76 (1.09 %, and that residual IS the dropped
+`2*alpha*h'/h^2` term). **The factor is large because alpha is small**, which
+is forced by the ladder's correction being small. So slope/value in z cannot
+discriminate: every candidate with a small phase carries it. Scope-(b).
+
+**This does NOT rescue the `(z-1)h/2` family** and I am not claiming it does.
+That family stays excluded by the OTHER argument in
+`qbeta-ladder-required-phase.witness.json`: `d(alpha_req)/dq = +41.53` vs
+`d(alpha_C)/dq = -0.455`, opposite signs, curves crossing transversally. A
+derivative sign disagreement is invariant under this reparametrisation. What
+changes is what the exclusion rests on, not the exclusion.
+
+### D. NEW — the derivative empties the declared basket. This is the deliverable.
+
+`qbeta_d_frame_terminus_probe.py` correctly calls its value match "basket
+distance, not isolation" -- six declared forms within 0.7 %. Tested on BOTH
+constraints at the proton pin:
+
+  form                  value miss   |P'/P|   vs required 2.176
+  2 - h^4                  0.042 %   0.0331   65.7x too flat
+  2 - h^2/8                0.136 %   0.0475   45.8x too flat
+  2 (identity word)        0.137 %   0        slope exactly 0
+  2 - 3h^4                 0.150 %   0.0996   21.8x too flat
+  chi^(2,1)(B_3)           0.154 %   0.1018   21.4x too flat
+  [2]_q                    0.683 %   0.0937   23.2x too flat
+  tr M_4_1                 145.6 %   1.7363   1.25x too flat
+
+Value alone separates the six by a factor 17. Log-slope separates the same six
+by one to two orders and **empties the basket**. The only form within 1.25x on
+slope is `tr M_4_1`, whose value is -0.911.
+
+**The entropy objection is about matching ONE number.** The second constraint
+is independent and free -- a derivative of the same committed ladder, no extra
+experimental precision. A derived candidate now has a two-number target:
+
+    P(q0) = 1.997259194490263   (+/- 5.7e-7 relative, from the |c3|<=1 window)
+    |P'/P|(q0) = 2.176          (~4 figures; d(alpha_req)/dq is a central
+                                 difference at +/-1e-4 relative in q)
+
+`2cos` is even, so only `|P'/P|` is branch-independent.
+
+Scope-(a) on the basket: no DECLARED form passes; not a proof that no Laurent
+polynomial does.
+
+### E. Two housekeeping items found by the corpus-grep, NOT actioned here
+
+1. **Bean `qou-xjh4` (created 2026-09-03) is already wrong.** It asserts branch
+   3 is "the only remaining option" and "NOT ATTEMPTED, by anyone". Both false
+   against main: `0ed8fcbc61` closes the constant-residue horn, `4471ee72ce`
+   proves the elliptic-generator requirement, `f65a953dd3` closes Im(q) as the
+   imaginarity source. It also attributes branch 1's exclusion to
+   "transcendence over Q(q,z)" -- the unproved docstring assertion, not the
+   proof that exists. Someone should reconcile it with this bean.
+2. **`qbeta_d_frame_terminus_probe.py:7-14` transfers the MASS channel's
+   two-row cap to the DECAY channel** ("DERIVED, not a ruling ... so z = z_D is
+   FORCED") and calls `qou-n1dj` "resolved". That contradicts
+   `QOU/QBeta/DecayFibreBarParity.lean` (whose sorry-free
+   `threeRow_undetermined_by_decay` shows the cap is *undeterminable* by the
+   decay pairing at any precision), the trace-convention registry, and
+   `qou-n1dj`'s own status (`todo`, "Item 1 is untouched"). The probe's
+   headline verdict inherits the transfer.

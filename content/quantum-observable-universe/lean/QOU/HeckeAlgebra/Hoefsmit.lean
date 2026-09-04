@@ -3,6 +3,7 @@ import Mathlib.Combinatorics.Young.SemistandardTableau
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
+import QOU.Mathlib.NumSYTPos
 
 /-!
 # QOU.HeckeAlgebra.Hoefsmit — seminormal representation skeleton
@@ -75,18 +76,37 @@ namespace QOU.HeckeAlgebra.Hoefsmit
 
 open QOU.HeckeAlgebra
 
-/-- The seminormal dimension of the irrep `V_λ` — equal to
-    `f^λ`, the number of standard Young tableaux of shape `λ`.
-    Axiomatised pending the Mathlib `StandardYoungTableau`
-    enumeration. -/
-opaque seminormalDim : ∀ {n : ℕ}, Nat.Partition n → ℕ
+/-- The seminormal dimension of the irrep `V_λ` — equal to `f^λ`, the number of
+    standard Young tableaux of shape `λ`.
 
-/-- The seminormal dimension is positive for non-empty
-    partitions (the trivial Young tableau `T = λ` is always
-    standard, giving `f^λ ≥ 1`). -/
+    **No longer opaque (2026-09-03).** This was `opaque`, with the docstring
+    *"axiomatised pending the Mathlib `StandardYoungTableau` enumeration"*. That
+    enumeration exists: `QOU.Mathlib.numStandardYoungTableaux` counts the
+    in-repo standard-tableau type Mathlib lacks, and `QOU.Mathlib.dimSYT` is
+    exactly `f^λ` for a partition's shape. The stated blocker had been cleared;
+    nobody came back to the definition. -/
+noncomputable def seminormalDim {n : ℕ} (lam : Nat.Partition n) : ℕ :=
+  QOU.Mathlib.dimSYT lam
+
+/-- The seminormal dimension is positive.
+
+    **Was a cited `axiom`; now proved (2026-09-03).** `f^λ = Nat.card` of a type
+    that is `Finite` (injective encoding) and `Nonempty` (the row-superstandard
+    tableau, sorry-free in `QOU/BraidKnot/SytRowSuperstandard.lean`), so
+    `Nat.card_pos` applies.
+
+    The `0 < n` hypothesis is **retained for compatibility but unused**: the
+    empty diagram carries exactly one standard tableau — the empty one — so the
+    count is `1`, and positivity is unconditional. `seminormalDim_pos'` below is
+    the hypothesis-free form. -/
 -- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §4 (f^λ ≥ 1 for nonempty λ; standard Young tableaux)
-axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),
-    0 < seminormalDim lam
+theorem seminormalDim_pos {n : ℕ} (lam : Nat.Partition n) (_hn : 0 < n) :
+    0 < seminormalDim lam :=
+  QOU.Mathlib.dimSYT_pos lam
+
+/-- Positivity of `f^λ` without the unused nonemptiness hypothesis. -/
+theorem seminormalDim_pos' {n : ℕ} (lam : Nat.Partition n) : 0 < seminormalDim lam :=
+  QOU.Mathlib.dimSYT_pos lam
 
 /-- **Hoefsmit seminormal matrix** for generator `σ_i` of
     `H_n(q)` acting on the irrep `V_λ` at parameter `q`.

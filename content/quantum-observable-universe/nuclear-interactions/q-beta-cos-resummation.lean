@@ -146,13 +146,44 @@ is dischargeable by a matrix built *from `α` itself* (`circularWitness` there).
 What the repair buys is real but bounded: the class now constrains its argument
 instead of asserting nothing, and the theorem below is a genuine implication
 rather than a `ring` identity. What it does **not** buy is any evidence about
-the substrate. Per that trichotomy the only contentful branch is 3 — `M` the
-holonomy of an independently-defined connection whose monodromy reproduces the
-Hecke braiding (Kohno–Drinfeld / KZ, the canonical chain's "Yekutieli
-non-abelian Stokes" step) — with branch 1, `M` in the braid image, *excluded*,
-because every character lies in `ℤ[q,q⁻¹]` while `2cos((z−1)h/2)` is
-transcendental over `ℚ(q,z)`. That construction is carried out neither here
-nor there.
+the substrate. Branch 1, `M` in the braid image, is *excluded* — every
+character lies in `ℤ[q,q⁻¹]` while `2cos((z−1)h/2)` is transcendental over
+`ℚ(q,z)`.
+
+**🛑 CORRECTED 2026-09-04, hours after this file first said otherwise.** The
+paragraph here read *"the only contentful branch is 3 — `M` the holonomy of an
+independently-defined connection … (Kohno–Drinfeld / KZ …). That construction is
+carried out neither here nor there."* That is **wrong in exactly the form it
+names**, and it was wrong when written: `QOU.QBeta.HolonomySpectrumSignObstruction`
+landed 2026-08-31 (`4471ee72ce`, 6 theorems, sorry-free) and **excludes any
+holonomy whose generator has real spectrum**, Kohno–Drinfeld included.
+
+The argument reads no residues, which is why it reaches the whole class. A real
+generator eigenvalue `a` gives character `(eᵃ + e⁻ᵃ)/2 = cosh a ≥ 1` for *every*
+real `a`, so a `q`-dependent residue only changes which `a` occurs. The required
+correction factor is `0.998399 < 1` — not merely off, but **on the wrong side of
+1**. At the Kohno–Drinfeld value specifically, matching the braiding
+`P exp(ħt/2)` to the Hecke eigenvalues `{q, −q⁻¹}` forces `ħ = 2 ln q`, and since
+`q₀ > 1` is real that generator is **hyperbolic**: `det A = −(ln q₀)² < 0`, giving
+`(q + q⁻¹)/2 = 1.005448` against a required `0.998399`. The whole obstruction is
+`(x−1)² ≥ 0`; no analysis and no transcendence.
+
+**What survives is narrower, and is owned elsewhere.** Not "find a connection"
+but *"find one whose generator is **elliptic** at real `q`"* — `det A > 0`,
+spectrum `±iθ` with `θ = 0.0565947` — which makes the imaginarity the thing that
+has to be sourced, and the corpus names `conj:im-q-physical-role` as the
+candidate place. That is tier-0 condition **D0** on `qou-pdix`'s D1–D6 acceptance
+test, and the live trackers are `qou-pdix` / `qou-cds1`.
+
+**Scope, stated as the audit states it:** this does *not* prove no connection
+exists, does not derive `α`, and adjudicates no convention. It makes the elliptic
+requirement non-optional.
+
+How the error got here is worth recording, because the mechanism is reusable:
+`EigenphaseCarrierVacuity`'s §3 was written before that obstruction landed and
+was never updated, and this file quoted it as authoritative without checking
+whether its "only remaining option" had since been narrowed. A sibling file is
+not a primary source — the corpus is.
 
 **No instance is declared in this file**, per §3b-tax: an unproved primary
 input is honestly represented by a content-bearing class with no instance, and
