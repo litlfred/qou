@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "60f8cd066c59",
     "ts": "2f0fec85cfb4",
-    "lean": "34bc52817956",
-    "lean_statement": "9eceab6d3cef"
+    "lean": "bd6b90cf243c",
+    "lean_statement": "3044f7537af9"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1195,6 +1195,24 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/feynman-trace-collapse.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-trace-collapse.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "60f8cd066c59",
+          "ts": "2f0fec85cfb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:28:30Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:28:30Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Wall-crossing identification lemma: analytic path integral (line 6) collapses to a finite sum over generic-ring H_n(R,q) summands (line 9), evaluation side stated in-text; matches the mixed-profile bridge section 'Feynman identifications' of the archimedean-listed mass-theory chapter — prior 'fail' was a missing-.lean refusal that never read the .md.",
+        "evidence": "STATEMENT (feynman-trace-collapse.md, 9 lines). Line 1: hypothesis V_phys = varinjlim V^{⊗n} (a colimit, categorical) with the complete eigenbasis of lem:feynman-eigenbasis-decomposition; line 4: ⟨ψ_f|ψ_i⟩ (Hilbert amplitude, physical face); line 6: ∫Dφ e^{iS[φ]/ℏ} (path-integral measure + complex exponential of the action with physical ℏ — the only archimedean/analytic constructs in the statement); line 9: 'collapses to a finite weighted sum over V_λ ⊗ S_λ ... no regularisation is needed because ... semisimplicity of H_n(R, q) at non-root-of-unity q' — explicitly generic ring R, and 'not a root of unity' is a generic hypothesis, not an order hypothesis. ABSENT from the statement: Real.*, numeric q or q_0, MeV, m_e, CODATA, 0<q / q<1, sqrt/log/cos, limits over R. CHAPTER/SECTION REGIME. mass-theory is listed in ARCHIMEDEAN_CHAPTERS (_folio-chapter-profiles.qou.ts:175) but its allowed QRegime set is the full mixed set na/symbolic/generic-R/real-positive/real-gt-1/fixed-q0 (:88-90); the chapter docstring (mass-theory.ts:4-21) splits the chapter into algebraic / geometric / archimedean / physical faces. This block sits in section 'Vertex factorisation: Feynman identifications' (mass-theory.ts:495-509) under the GEOMETRIC FACE banner, whose comment names the chain 'vertex factorisation → Feynman → Kashiwara-Jones → quantum dilogarithm → archimedean realization' (:440-445); the archimedean-realization section is later (:543-544). So the section is the bridge from the algebraic vertex/Markov material to the archimedean face — a mixed-regime section by design. BRANCHES. FAIL-1 (generic chapter hard-codes archimedean unflagged): not applicable — the chapter is archimedean-listed and its profile admits every regime. FAIL-2 (archimedean-chapter statement is a purely algebraic identity belonging upstream): no — the purely algebraic half (semisimplicity ⇒ finitely many summands) IS the upstream lemma feynman-eigenbasis-decomposition, which this block `uses`; what this lemma adds is exactly the identification of the analytic path integral with that finite algebraic sum, which cannot live in a generic-ring chapter. WARN (mixes regimes without flagging the evaluation side): the statement does mix — LHS analytic (line 6), RHS algebraic over H_n(R,q) (line 9) — but the mixing is the lemma's content, and the evaluation side is stated in the text itself: the object 'collapses to' the finite sum and 'no regularisation is needed', i.e. evaluation happens on the algebraic (generic-R) side, with the path integral named as the physical face being identified. That matches the section's declared role ('Feynman identifications'). Hence PASS: statement regime = wall-crossing identification evaluated on the algebraic side, matching a bridge section in a mixed-profile archimedean chapter. OUTSIDE THE STATEMENT: the .ts authorNotes (feynman-trace-collapse.ts:5-17) carry a §7c base-ring note citing `(1 : ℝ)` arithmetic and q→1 ε–δ limits in lean/QOU/FeynmanPathIntegrals.lean and say 'Placed after the wall deliberately'; per AGENTS.md §4d authorNotes do NOT render, so this is author intent only and is not counted as a banner — none is required here (the section placement carries the side). A stricter reader could WARN on the bare physical ℏ and ∫Dφ being unqualified; I judge that over-reading, since the criterion expects a high pass rate and the statement names its algebraic side explicitly. PRIOR ENTRY (2026-07-07, local/qa-agent-drain): 'sibling Lean file is MISSING' — a refusal keyed on `depends_on: [\"lean\"]` for a criterion whose depends_on is [\"md\"]; the .md was not judged. Prior verdict incorrect. SIDE NOTE (not wall-side): no .lean sibling; lean.ref qou:QOU.FeynmanPathIntegrals.trace_collapse is `validation: not_checked` — lean-ref-resolves / proof-status axis, not this criterion. Rigor note (devils-advocate axis, not this criterion): the LHS ∫Dφ is a heuristic object, so 'collapses' is an identification rather than a theorem about a defined measure."
       }
     ],
     "wall-side-proof": [
@@ -2431,6 +2449,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:58:56.381Z",
+  "updated_at": "2026-09-03T20:32:43.214Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

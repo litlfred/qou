@@ -80,13 +80,31 @@ Two things follow, and the second is the actionable one.
 
 1. **Do not spend a session searching for a combinatorial formula** in length,
    cycle type, or descent set. The search is closed by the witness.
-2. **Price the remaining work correctly.** Closing `det(twGram)` at rank ≥ 2 in
+2. **Price the remaining work correctly.** Closing the **value** of
+   `det(twGram)` at rank ≥ 2 in
    Lean means formalising character theory for `H_n(q)` — Mathlib-scale,
    multi-session, and a genuine research formalisation rather than a proof to be
    typed out. Combined with the [characteristic
    bound](2026-08-30-tw-gram-determinant-measured.md) (`det ≠ 0 ⟹ semisimple`
    is one-directional, so the route cannot reach small characteristic even when
    finished), that is the honest state of the bean.
+
+> **🛑 SCOPED 2026-09-03 — this prices the VALUE, and `det ≠ 0` turned out not
+> to need it.** Item 1 and the `S₅` witness are **untouched**: no combinatorial
+> formula for `tr(L_{T_u})` in length, cycle type or descent set exists, and
+> that search stays closed. Item 2 is right about the value and was read as
+> pricing `det(twGram) ≠ 0` itself, which it does not.
+>
+> `QOU.Hecke.TwBasis.twGram_det_ne_zero` proves `det ≠ 0` at **every** rank over
+> any characteristic-zero field, sorry-free, **without evaluating a determinant
+> or touching `tr(L_{T_u})`**. Semisimplicity is proved independently via
+> `heckeWedderburn`, so the Gram implication runs backwards — semisimple ⟹ the
+> regular trace form is nondegenerate ⟹ `det ≠ 0` in every basis — and the
+> missing piece was the converse of the Gram criterion, three short lemmas.
+>
+> So the `S₅` witness does not bear on non-vanishing at all: it closes a route
+> to the value, and non-vanishing does not take that route. Full argument:
+> [`2026-09-03-gram-converse-in-characteristic-zero.md`](2026-09-03-gram-converse-in-characteristic-zero.md).
 
 What is *already* unconditional and does not depend on any of this:
 `isSemisimpleRing_rank_one` (and its substrate corollary over `ℝ`, `q > 0`),

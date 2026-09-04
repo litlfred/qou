@@ -25,24 +25,30 @@ the middle step being cyclicity applied to `ρ·σ_{a+1}` and `σ_a`.
 object — and says the whole thing is governed by how the braid word fails to commute with each
 generator: if `ρ` commuted with every `σ_a`, the trace would vanish identically in every irrep.
 
-**What it does NOT settle — the mechanism is OPEN (measured,
-`magnus_curvature_commutator_identity_probe.py`).** `(★)` says *what* the decay object is; it does
-not say whether the `b(λ)`-decay is a **size** effect (already in `‖[ρ,σ_a]‖`) or a
-**cancellation** in the pairing against `σ_{a+1}`. The probe reports the normalised
-`Σ_a ‖[ρ,σ_a]‖_F / (dim·‖ρ‖_F)` next to `|tr|/dim`, and **the two orders disagree across the two
-sizes measured so far**:
+**What it does NOT give: the decay is CANCELLATION, not size (settled by the conjugate-pair
+control, `magnus_conjugate_pair_cancellation_probe.py`).** `(★)` says *what* the decay object is,
+not why it falls with `b(λ)`. The control is conjugate partitions: `dim λ = dim λ'` **exactly**
+while `b` flips, so a pair is two irreps of identical dimension at very different `b` — the
+dimension confound removed by a theorem rather than by normalisation. Measured at A = 2 and 3
+(exact mpf), ratios being higher-`b` partner ÷ lower-`b`:
 
-* **A = 2** (all 11 shapes): the norm *rises* on high-`b` shapes — 0.93 at `b=1`, then 1.11, 1.39,
-  1.22 at `b = 3, 4` — while `|tr|/dim` falls monotonically. That would mean cancellation, and
-  that no norm bound `|tr| ≤ Σ_a ‖[ρ,σ_a]‖·‖σ_{a+1}‖` can produce the decay.
-* **A = 3** (partial, through `b = 4` of `b_max = 8`): the norm is uniformly smaller and *falls*
-  — 0.76, 0.28, 0.17, 0.087, 0.20, 0.058 — which would suggest the opposite.
+* **9 of 9 pairs: commutator-norm ratio ≥ 1** (1.13–1.31, clustered near 1.25) while the
+  **trace ratio is 0.003–0.27**. Sharpest: `(8,1)` vs `(2,1⁷)`, both dimension 8 —
+  `‖[ρ,σ_a]‖` rises `0.755 → 0.955` while `|tr|/dim` falls `33.65 → 0.115`.
 
-Both cannot be the general story, and the deciding data — the A = 3 high-`b` tail, exactly where
-A = 2 turned upward — is **not yet measured**. So no claim is made here either way. What is
-independently true is that the hook bound (#6520) *did* have to go through the spectrum (`e_j` of
-the Burau moduli) rather than a norm; whether that was forced by cancellation or was merely the
-route taken is part of the same open question.
+So at equal dimension the high-`b` irrep has *larger* commutators and a *far smaller* trace.
+Consequently **no bound of the form `|tr| ≤ Σ_a ‖[ρ,σ_a]‖·‖σ_{a+1}‖` can produce the decay** — it
+runs the wrong way on every pair measured. This is scope-(a): the plain norm route as-is is
+excluded, not every norm-flavoured argument. It also explains why the hook bound (#6520) had to go
+through the *spectrum* (`e_j` of the Burau moduli); that was the route available, not merely the
+route taken, and a general-`λ` bound should be spectral in the same sense.
+
+A raw `b`-scan cannot see this: the normalised norm is **U-shaped** in `b` (falls to a mid-`b`
+minimum, then rises), so a scan truncated before the tail reads as "the norm falls with `b`" and
+inverts the answer. An earlier version of this docstring asserted the conclusion from A = 2 alone,
+was then retracted to "open" on half-measured A = 3 data, and is now restored on the control that
+actually establishes it — see
+`docs/audits/2026-09-04-magnus-b-decay-is-cancellation-not-size.md`.
 
 **Scope.** Sorry-free and unconditional, over any `R`-algebra `A` with an `R`-linear functional
 `tr` satisfying cyclicity `tr (x*y) = tr (y*x)` — the hypothesis is carried explicitly, since a

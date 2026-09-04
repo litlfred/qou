@@ -54,7 +54,21 @@ from q_parameter import vol_4_1_at  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
 # muon-anchored q₀ (the ideal-CAL-2 pin) and proton-anchored q₀ (constants.py pin).
-Q0_MUON = mpf("1.1099785955573347")     # ideal CAL-2 pin (muon ratio)
+# Anchor: taken LIVE from `q_muon_at()` rather than a hardcoded literal
+# (2026-09-04, bean `qou-3f7a`). The literal here was the RETIRED muon pin
+# `1.1099785955573347...`, superseded 2026-08-22 by the CODATA-2022
+# derivation `1.109978595642739...` (owner ruling, commit fca08de7d2).
+#
+# The q0-value drift audit flagged this witness and prescribed "fix by
+# RE-RUNNING THE PRODUCER, never by hand-editing the number". That remedy
+# CANNOT work for a hardcoded literal -- re-running reproduces it faithfully.
+# Measured: this producer was re-run and the audit still flagged it.
+#
+# The layer is UNCHANGED: this still computes at the muon anchor. Whether it
+# should instead be proton is the `q0Anchor: independent` disposition
+# question owned by bean `qou-324i`, and is deliberately not decided here.
+from q_parameter import q_muon_at as _q_muon_at  # noqa: E402
+Q0_MUON = mpf(mp.nstr(_q_muon_at(50), 50))     # ideal CAL-2 pin (muon ratio)
 Q0_PROTON = mpf("1.1099785827513808075916690956107688798744991218736")  # proton pin
 
 

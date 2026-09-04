@@ -206,3 +206,24 @@ trusting a green OR debugging a red. Does NOT invalidate every restore.
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
 
 ⚠ Never treat a number here as a threshold (a stale `~2919 healthy` row once read an evicted 6990 → 2919 tree as healthy).
+
+## TRAP — `lean`-direct exit 0 certifies against the oleans ON DISK, which after a restore are a SNAPSHOT (2026-09-03)
+
+A file that imports a module changed on `main` since the cache was seeded will
+"check" against the OLD olean and pass. Measured: `MarkovIdentificationInstance`
+got exit 0; rebuilding its 96-module QOU cone from current source with `lean -o`
+in dependency order found `main` red in SEVEN modules from two commits
+(`e526464c2d` retyped a hypothesis in nine modules but not their consumers;
+`6164a8ab6e` deleted a lemma on a wrong "zero consumers" grep). Neither was
+visible to a single-file check. Before claiming a cone is untouched:
+`git diff --stat <branch-point>..origin/main -- lean/QOU/<dirs>`; if non-empty,
+rebuild the changed modules and everything downstream (scratchpad script
+`compile_order.sh`: `lean -o <olean> -i <ilean> <src>` per module, warm cache
+makes each 2-8 s; the first is ~100 s). A helper that treats ANY output as
+failure will stop on pre-existing linter warnings (`HeckeCoset`: 76) — filter
+on `error`. Also: a big `git fetch` of a cache branch can fill the session
+quota mid-rebuild and leave a 1.5G `.git/objects/pack/tmp_pack_*` that
+`rm .git/objects/pack/tmp_pack_*` recovers. And the cone can change AGAIN
+between your rebuild and your push: the same session then found the base
+file of its own new module restructured on `main` (a class removed) — re-run
+the diff at check-in time, not once.

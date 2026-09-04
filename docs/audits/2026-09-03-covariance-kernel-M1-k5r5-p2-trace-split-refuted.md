@@ -110,7 +110,7 @@ force them **down toward 0.5**.
 ## Status of `qou-k5r5`
 
 Gap **OPEN**. The route inventory after this PR: the pointwise-Bessel route is refuted (`U/V` grows
-without bound, ~17× short at θ=78, PR #6438); `TV(g″)` as originally posed is ill-posed (no local
+without bound; ~17× short at θ=78 — **corrected to ~5.8×, PR #6528**; `TV(g″)` as originally posed is ill-posed (no local
 density, `c(ρ) = +∞`, PR #6472); P2 is refuted here. **P1 is the remaining exhibited candidate**, and
 the entire residual gap is still one finite-`n` constant.
 

@@ -78,7 +78,15 @@ so a `sorry` would read as "true, not yet proved" about something false.
 * `markov_identification` — clause (ii), **derived** from the branching
   identity taken as a hypothesis.
 
-**Open:** the branching identity itself — the Wenzl-bridge decomposition
+**Open in this file — and closed at convention D one module over (2026-09-03).**
+`QOU.FeynmanPathIntegrals.MarkovIdentificationInstance.markovTrace_branching_of_markovTrace`
+proves `markovTrace_branching` at the data the lemma is about — block count, Ocneanu weights,
+seminormal block traces, `T.tr n x` — for every Markov trace `T` at `z_D = q³/(q²+1)` and every
+`n`, from `QOU.SchurWeyl.MarkovTraceInstance.eq_wtrace_of_markov`; and
+`markov_identification_of_markovTrace` is the lemma at that data. The paragraph below is the
+status of *this* file, which constructs none of those objects and remains correct as written.
+
+**Open (here):** the branching identity itself — the Wenzl-bridge decomposition
 `tr_M = Σ_λ w_λ tr_{S_λ}` of the Jones–Markov trace into Specht-module
 partial traces.  Nothing here constructs `ρₙ`, `H_n(R, q)`, the Specht
 modules, or the quantum dimensions in `w_λ`; they are reals the caller
@@ -117,7 +125,8 @@ partial traces.
 
 **Named, not asserted.** See the module docstring for why neither a
 projection nor a `sorry` is the honest form here, and for what the identity
-would need in order to be derived. -/
+would need in order to be derived. It is *derived* at convention D in
+`MarkovIdentificationInstance.markovTrace_branching_of_markovTrace`. -/
 -- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
 def markovTrace_branching (nPartitions : ℕ)
     (markovWeight spechtPartialTrace : ℕ → ℝ) (markovTrace : ℝ) : Prop :=

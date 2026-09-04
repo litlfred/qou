@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-23T00:39:14Z
-updated_at: 2026-09-01T04:34:29Z
+updated_at: 2026-09-03T04:45:00Z
 ---
 
 Recorded from the #5495 check-in loop, on the third consecutive no-change
@@ -919,3 +919,52 @@ in `4dafadc2b9`. So when a review does arrive here it is worth having, and the
 wording — rationed, intermittent, `get_check_runs` = 0 does not discriminate —
 survives this observation unchanged. What needs updating is
 `copilot-review-arrival.md`'s protocol, which controls for the wrong thing.
+
+
+---
+
+## 2026-09-03 — one more arrival, and a PROTOCOL TRAP the staleness test walks into
+
+Adding a data point rather than a finding: the 2026-09-01 entry above already
+records that a review can arrive and that its findings can be real. This
+corroborates it and sharpens one mechanic.
+
+**#6441** — two `.beans/*.md` files, 138-line diff, nothing else. Copilot
+requested at ~04:17Z via `request_copilot_review`; review **submitted 04:19Z**,
+about **two minutes** later. `state: COMMENTED`, *"🟢 Approval recommended"*,
+**0 comments generated**, review effort *"Lite"*. So the arrival is not merely
+possible, it can be fast — and on the smallest possible diff.
+
+### The trap: a pure rebase makes a current review look stale
+
+`prepare-merge-auto` Phase 1b step 2 says a review whose `commit_id` is an
+earlier commit **is stale and does not count**, and to re-request. That rule is
+right for a review predating new *work* — and **wrong after a pure rebase**,
+which is the repo's standard pre-merge step (rule 8).
+
+Here the review carried `commit_id = 0dfd0f8b6b9`, my **pre-rebase** head; the
+merge candidate was `cae9f0fa3ac`. The commit_id test says stale. But the
+rebase changed only the parent:
+
+    git diff <old-base>...<old-head>   ->  138 lines, 2 files
+    git diff origin/main...HEAD        ->  138 lines, 2 files   BYTE-IDENTICAL
+
+Copilot had reviewed exactly the change being merged. Discarding it and
+re-requesting would have thrown away a valid review to wait on a replacement —
+in a protocol whose whole problem is waiting.
+
+**The right test is the diff against its own base, not the commit_id.** A sha
+comparison cannot distinguish "rebased onto newer main" from "new commits
+pushed", and those are opposite situations. I nearly got this wrong twice: first
+by trusting the commit_id, then by comparing the two commits' **whole trees**,
+which showed 15 files changed and "genuinely stale" — that was main's 17
+intervening commits, not my change.
+
+### What this does NOT establish
+
+Nothing about the arrival *rate*. n is now small but nonzero on the arrival
+side, and this case is the most favourable possible input — a two-file markdown
+diff, reviewed "Lite". It says nothing about whether a large Lean or witness
+diff gets reviewed, which is the case that would actually matter at a merge
+gate. Do not read "Copilot reviewed my beans PR in two minutes" as "Copilot
+reviews."

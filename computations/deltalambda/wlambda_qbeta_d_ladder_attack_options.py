@@ -135,8 +135,16 @@ def main():
     })
 
     ms = (time.monotonic_ns() - t0) // 1_000_000
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp this
+    # one. Ask for the anchor with the same precedence q_parameter uses at
+    # compute time (env var > manifest stem > proton) rather than hardcoding a
+    # pin this run may not have used.
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
     Path(__file__).with_name("qbeta-d-ladder-attack-options.witness.json").write_text(
         json.dumps({
+            "q0Anchor": _q0a,
+            **({"q0Value": _q0v} if _q0v else {}),
             "probe": "qbeta_d_ladder_attack_options",
             "bean": ["qou-cds1", "t7qv"],
             "y_lambda": {"(3)": str(y3), "(2,1)": str(y21), "(1^3)": str(y111)},

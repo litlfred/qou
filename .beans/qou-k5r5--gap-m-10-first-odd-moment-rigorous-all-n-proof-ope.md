@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T11:21:36Z
+updated_at: 2026-09-04T02:33:06Z
 ---
 
 
@@ -634,3 +634,164 @@ docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-envelope-retraction.md
 NEXT unchanged in kind, now with a number: produce a RIGOROUS C <= 2.6681 in
 |m-m_inf| <= C n^{-1/2} against an empirical 0.0580 (Olver/Debye/Airy constant
 tracking, as constant_C_landscape.py has said all along). Gap qou-k5r5 OPEN.
+
+
+2026-09-03 CORRECTION (PR #6528) of the 'pointwise route ~17x short' figure in the
+DECISIVE NEGATIVE entry above. The STRUCTURAL negative is UNAFFECTED and stands: U/V
+grows without bound (42.8, 45.7, 53.9, 70.7, 91.9 at theta=64..512), so no pointwise
+bound however sharp controls V_A uniformly; the oscillatory cancellation is
+load-bearing. That argument never used the arithmetic below.
+THE DEFECT: 'keeping the relative error on V_A under m_inf=0.3002 forces K<0.058 =>
+~17x short' compares a RELATIVE error on V_A against m_inf, an ABSOLUTE margin, and
+drops the conversion. Since sigma_D/sigma_A = sqrt(V_D/V_A), a relative perturbation
+delta_A on V_A moves the MARGIN by sig_ratio_inf*delta_A/2 = 0.3398*delta_A, not by
+delta_A. Admissible relative error is m_inf/0.3398 = 0.8834, not 0.3002 => the merged
+threshold is 2.943x TOO STRICT.
+RECOMPUTED (wlambda_covariance_epic_M1_pointwise_shortfall_recomputed.py, exit 0,
+0.9s, NO float64, reuses #6438's own U_and_V by file path) at theta=78, the largest n
+the exact Fraction table reaches: U/V = 45.5868; relative err on V_A per K = 5.16169
+(the merged probe quotes 5.17 -- the AGREEMENT is the check that this locates the
+exact defect rather than recomputing something else); K_adm = 0.17115 (merged: 0.058);
+K_adm = 0.085574 if V_A and V_D split the budget. Against an O(1) Debye coefficient
+the shortfall is ~5.8x, or ~11.7x split -- NOT ~17x.
+WHY IT MATTERS: '17x short' reads as hopeless, '5.8x short' reads as a gap a sharp
+constant might close. It does NOT revive the route (the structural negative is
+independent) but it should not decide that question by accident.
+NOT SETTLED: 'O(1)' for the Debye/Olver coefficient is an order of magnitude, not a
+pinned constant anywhere in the corpus. Both ~17x and these figures are 'K_adm vs
+O(1)'; only K_adm is measured.
+SAME ERROR CLASS AS TODAY'S OTHER RETRACTION (C<=23.4, PR #6500): a quantity measured
+for one object compared against a threshold belonging to another, conversion dropped.
+V_A, sigma_A, sigma_D/sigma_A and m are four different objects; write the conversion
+down before comparing anything to m_inf.
+BLAST RADIUS: pointwise_bound_insufficiency.py (docstring + printed RESULT -- fixed at
+the producer, it printed ~17x every run); deep_tail_rigorous_majorant.py printed note;
+audit docs deep-tail-rigorous-need-lit-localised, p2-trace-split-refuted,
+weight-bug-retraction-retracted; these two beans. Audit:
+docs/audits/2026-09-03-covariance-kernel-M1-k5r5-pointwise-shortfall-recomputed.md
+Gap qou-k5r5 OPEN; NEXT unchanged: a RIGOROUS C <= 2.6681 from the oscillatory
+cancellation, against an empirical envelope of 0.0580 (46x headroom).
+
+
+2026-09-03 (PR #6528, cont.) THE C_A -> MARGIN CONVERSION, written down for the first
+time in this arc, plus a PER-LEG budget that relocates where the work is.
+CONTEXT: two sites compared a V_A-remainder constant against a MARGIN threshold and
+derived numbers from it (corrected: C<=23.4 in #6500, K<0.058 in #6528). A third,
+_debye_CA_investigation, phrases it that way in its DOCSTRING ('whether a rigorous
+Olver/Debye C_A can land under the target C <= 2.668') but its VERDICT compares the
+true MARGIN constant (~0.087) to 2.668, which is unit-correct, and derives nothing
+from the conflation. PHRASING DEFECT, NOT a third numerical error -- recorded that way
+deliberately; miscounting the errors would be the same sin as the errors. Docstring
+now carries a units-clarification block.
+THE CONVERSION (nothing in the arc had it): C_A bounds |V_A/theta^2 - v_A| <= C_A
+theta^{-1/2}; m = rho_P - sqrt(V_D/V_A). So delta_A = C_A theta^{-1/2}/v_A and
+|Delta m| = (sig_ratio_inf/2) delta_A, giving
+    C_margin,A = (sig_ratio_inf / (2 v_A)) * C_A = 0.41922 * C_A.
+=> the V_A leg alone may spend C_A <= 2.6681/0.41922 = 6.3645, NOT 2.668; the naive
+reading is 2.385x too strict. Measured C_A^emp = 0.00775419 (theta in [80,2560]) =>
+~821x headroom on this leg.
+THE FINDING THAT MATTERS MORE -- PER-LEG BUDGETING. The rho_P leg enters m LINEARLY
+(no conversion factor at all) and is the BIGGER contribution: |rho_P - rho_inf| ~
+0.1329/theta (exponent measured flat at b=1.0: 0.1319 0.1308 0.1332 0.1323 0.1329
+0.1333) against the V_A leg's 0.003251/sqrt(theta). So the 46x headroom on the TOTAL
+margin (#6500) and the ~821x on the V_A leg are consistent -- V_A is the SMALL
+contribution and most of the margin's finite-n deviation is rho_P's. A rigorous C
+should be budgeted PER LEG, not as one number, and the rho_P leg is where the binding
+constraint actually sits. That is a redirection of the remaining work.
+CAVEATS, both real and stated in the probe: (1) DE-POISSONIZATION NOT DONE -- C_A is a
+theta-object, the requirement is at fixed n; the conversion is exact for the SHAPE but
+the theta<->n factor is unpinned, so read ~821x as 'modulo de-poissonization'.
+(2) C_A^emp is measured at rate theta^{-1/2} while the TRUE V_A rate is theta^{-1}
+(exponent 0.93949 here, matching c_1 ~ -0.0678), so |.|sqrt(theta) decreases and the
+sup sits at the window's left end -- conservative, but not established below theta=80
+while the requirement is n>=79.
+CROSS-CHECK: v_A re-extracted independently as 0.81057182513 vs exact 8/pi^2 =
+0.81056946914, rel 2.91e-6.
+Probe: computations/deltalambda/wlambda_covariance_epic_M1_CA_to_margin_conversion.py
+(exit 0, 3.4s, PYTHONPATH-unset-safe, NO float64). Gap qou-k5r5 OPEN; NEXT: budget the
+rigorous C per leg, with rho_P the binding one, via the Toeplitz-determinant route
+(_bulk_kernel_rate_probe: oscillations cancel at the integrated level, not pointwise).
+
+
+2026-09-03 (PR #6528, cont.) TWO CANCELLATIONS IN THE MARGIN -- a constraint on the
+SHAPE of the proof -- and a CORRECTION of the 'rho_P is the binding leg' claim I made
+in this same PR an hour earlier.
+EXACT DECOMPOSITION (a rearrangement, no error term; verified to close to 0.0 at every
+n): m(n)-m_inf = [rho_P(n)-rho_inf] - [sqrt(V_D/V_A)(n)-sig_ratio_inf] =: L_rho - L_sig.
+Exact Fraction covariances over all partitions, n=4..40, NO float64, 10s.
+CORRECTION: I concluded from the POISSONIZED large-theta ingredients that 'rho_P is the
+bigger leg, V_A the small one' and recommended budgeting with rho_P binding. WRONG. That
+compared rho_P's FULL deviation (0.1329/theta) against only the V_A PART of the
+sigma-ratio leg (0.003251/sqrt(theta)) -- V_D was never in the comparison. Measured at
+fixed n exactly, |L_sig| exceeds |L_rho| by 4x to 700x (|L_rho|/|L_sig| = 1.885, 0.152,
+0.127, 0.0222, 0.243, 0.00148, 0.0269 at n=6,12,18,24,30,36,40). The SIGMA-RATIO leg
+dominates and V_D is the binding ingredient -- not rho_P, not V_A. SURVIVING from that
+commit: the conversion C_margin,A = 0.41922 C_A and the ~821x V_A-leg headroom; both are
+correct statements ABOUT THE V_A LEG. The disagreement is NOT the theta-vs-n difference;
+it is an omitted TERM, which no de-poissonization could account for.
+CANCELLATION 1 (between legs): |L_rho - L_sig|/(|L_rho|+|L_sig|) over n>=16 in
+[0.2238, 1.0] -- at worst a 4.5x loss if bounded separately and added.
+CANCELLATION 2 (inside L_sig): linearising sqrt(V_D/V_A) ~ sig_inf(1+(dD-dA)/2) with dX
+the relative deviation of V_X/n^2 (prediction tracks L_sig to a few %, the residual
+being second order), dD and dA carry the SAME SIGN and largely cancel:
+dA/dD = -0.036893/-0.058358 at n=40, difference -0.021465 against |dD|+|dA| = 0.095251.
+Inner cancellation ratio over n>=16 in [0.1079, 0.2258] -- a further 4.4x-9.3x loss.
+CONSEQUENCE, and the point: multiplying the two, a budget that bounds rho_P, V_D and V_A
+separately and adds via the triangle inequality can overshoot by ~an ORDER OF MAGNITUDE,
+against the 46x TOTAL headroom (#6500) -- i.e. most of the room. THE RIGOROUS ARGUMENT
+MUST PRESERVE THESE CANCELLATIONS rather than bound the three ingredients independently.
+That is a constraint on the SHAPE of the proof, not merely on its constants, and it is
+the first such constraint this arc has measured.
+PATTERN, four corrections in one day and all ONE error -- comparing quantities belonging
+to different objects: (1) C<=23.4, V_A's rate as a premise about the margin; (2) ~17x,
+relative error on V_A vs an absolute margin; (3) C_A vs C<=2.668, phrasing only, verdict
+unit-correct; (4) 'rho_P is binding', full deviation vs only part of the other leg. The
+guard already recorded ('V_A, sigma_A, sigma_D/sigma_A and m are four different objects;
+write the conversion down') is NECESSARY BUT NOT SUFFICIENT -- #4 was not a missing
+factor but a missing TERM. STRONGER GUARD: before comparing two quantities, enumerate
+everything that feeds each one and check the lists match.
+Probe: computations/deltalambda/wlambda_covariance_epic_M1_margin_leg_decomposition.py
+Audit: docs/audits/2026-09-03-covariance-kernel-M1-k5r5-margin-leg-cancellation.md
+Gap qou-k5r5 OPEN; NEXT: a rigorous route that keeps the V_D/V_A cancellation intact,
+with V_D the binding ingredient.
+
+
+2026-09-03 (PR #6528, cont.) WHAT TO BOUND, measured. Following the two-cancellation
+finding: bounding the RATIO V_D/V_A as one object (rather than V_D and V_A separately)
+is worth a gain of |dD|/|d_ratio| = 2.61x to 4.85x over n>=16 (exact, not the
+linearisation; (V_D/V_A)_inf = sig_inf^2 = 0.461869183; e.g. n=40: |dA|=0.036893,
+|dD|=0.058358, |d_ratio|=0.022288, gain 2.618x). So the ratio IS the right target -- but
+it recovers only a factor of a few, NOT the full order of magnitude the two cancellations
+are jointly worth. The remainder lives in the LEG-vs-LEG cancellation, which a ratio bound
+does not capture; recovering that needs rho_P and the sigma-ratio handled TOGETHER rather
+than two tight bounds added. Recorded explicitly so the next attempt does not spend its
+effort on the ratio alone and expect the whole factor back.
+
+
+2026-09-04 (#6528, session 125089da): THE NAIVE PER-INGREDIENT BUDGET CLOSES -- retracting my own
+'order of magnitude' claim made hours earlier in the same PR.
+
+MEASURED (_naive_budget_closes_probe.py, exact Fraction covariances, NO float64, exit 0),
+NAIVE(n) = |L_rho| + (sig_inf/2)(|delta_D| + |delta_A|) vs TRUE(n) = |m(n) - m_inf|:
+
+  pointwise LOSS over n>=16      4.141 .. 25.59 (max at n=16, where TRUE is a near-crossing)
+  C_true  = max TRUE  * sqrt(n)  0.0579688  (n=22)
+  C_naive = max NAIVE * sqrt(n)  0.279796   (n=22)
+  envelope loss                  4.8267x
+  headroom remaining             9.5359x    (C_target = m_inf sqrt(79) = 2.66812)
+
+CONSEQUENCE. Preserving the two cancellations (leg-vs-leg 0.2238..1.0; V_D-vs-V_A 0.108..0.226) is
+an OPTIMISATION worth ~5x, NOT a structural requirement on the proof. The triangle inequality alone
+does not exclude the easy per-ingredient route. My earlier 'constraint on the SHAPE of the proof' is
+WITHDRAWN -- it came from multiplying two worst cases that are neither independent nor coincident in
+n, so the product double-counted by ~2x.
+
+WHAT IS STILL OPEN, and it is narrower than this morning: C_naive is a FLOOR (empirical sups over
+n<=40; a rigorous constant must hold for all n). The live question is whether a rigorous
+Debye/Olver-style per-ingredient bound lands within 9.54x of these sups. That is cheaper to answer
+than building a cancellation-preserving proof, and it decides whether the harder proof is needed.
+
+ERROR LEDGER, entry 5 -- and a DIFFERENT class from 1-4. Those compared quantities belonging to
+different objects. This one COMBINED two correct measurements into a composite never measured, and
+the wrong composite changed a recommendation. Guard: a bound composed from other bounds is a
+hypothesis, not a measurement -- measure the composite before quoting it.

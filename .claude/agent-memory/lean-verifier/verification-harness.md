@@ -20,6 +20,21 @@ taking `[Foo …]` as a **hypothesis binder** does not find a file that
 *constructs an instance*. Compute the reverse-import cone from the import
 graph instead of guessing at the syntax of a use.
 
+**A second source of the same false green needs no edit of yours: the RESTORE
+ITSELF is a snapshot** — see §11, which has the full case and the diagnostic
+recipe. So §1's rule extends: rebuild from source not only what you changed, but
+anything the cache predates.
+
+**The cheap content-level test, which §11 does not give:**
+`strings <olean> | grep -c <an identifier the new source introduces>`. A zero is
+proof of staleness that needs no timestamp (§12 on why timestamps lie). Measured
+2026-09-03 on `QOU/SchurWeyl/HeckeWedderburnGeneral.olean` out of
+`lake-cache/qou-v4-24-0`: **zero** occurrences of `NotRootOfUnity` while its
+source defines `heckeWedderburn` with exactly that hypothesis, so a consumer
+built against it reported the *new* code's own hypotheses as unknown
+identifiers. Independent of §11's `KazhdanLusztigClassicalLimit` case — two
+agents, same day, same trap, different files, neither aware of the other.
+
 ## 2. A partial `LEAN_PATH` overlay shadows the WHOLE namespace
 
 The obvious cheap harness — a small dir holding only the rebuilt oleans, first
@@ -397,3 +412,37 @@ remaining seven are `Application type mismatch` / `rewrite failed` / `unsolved
 goals` inside a real-analysis argument — proof-level drift, not name-level.
 Budget accordingly: grep the names, then expect the proof body to still need
 doing.
+
+## 14. TRAP — do NOT key staleness on mtime; `git checkout` sets source mtimes
+
+The obvious way to automate §1 ("rebuild anything whose source is newer than its
+olean") is **wrong on a fresh clone**, and wrong in the expensive direction.
+`git checkout` stamps every source file with the *checkout* time, not the time
+its content last changed, so an mtime comparison flags files that never moved.
+
+Measured 2026-09-03: an mtime pass over `QOU/**` reported "21 stale oleans".
+Only **one** of those was verifiable as stale by content. Worse, the same
+comparison applied to `.lake/packages/mathlib` marks *every* Mathlib source
+stale, so an mtime-driven dependency walker recurses into the whole ~3000-module
+Mathlib import graph and hangs. **Do not quote an mtime-derived stale count and
+do not build a tool on one.** Use content (§1's `strings` test, and §11), or just rebuild
+the cone — §3 puts `QOU.Hecke.Wedderburn`'s 8 modules at ~90 s.
+
+Two further mistakes made while writing that tool, both worth not repeating:
+
+- **Decide staleness AFTER recursing, never before.** A module's own olean can be
+  newer than its own source while being *older* than a transitive dependency's,
+  so an early return skips the stale grandchild and the build silently
+  typechecks against old code — the very false green the tool existed to
+  prevent. Caught only because the tool had a `--selftest` that made a
+  transitive dep stale and asserted a rebuild; it failed on the first run.
+- **Write into a `cp -al` mirror, not the real build tree.** §3 already says
+  this; the reason it matters is that oleans written directly into
+  `.lake/build/lib/lean` carry no `.trace`, so a later `lake build` treats them
+  as stale and evicts the whole restore (MEMORY.md's `lake build` TRAP).
+
+Provenance: this was re-derived from scratch during a session that never read
+this file — §1 and §2 already state both traps, §2 already naming `QOU/` and
+`SearchPath.findWithExt`. Reading the memory first would have cost a minute and
+saved the re-derivation and the discarded tool. Only this section was actually new.
+

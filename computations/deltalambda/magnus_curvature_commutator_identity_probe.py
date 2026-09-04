@@ -58,7 +58,7 @@ def frob(M, dim):
     return mp.sqrt(s)
 
 
-def analyze(A, max_dim=None):
+def analyze(A, max_dim=None, min_b=None):
     q = base.Q0
     n = 3 * A
     Z, N = A // 2, A - A // 2
@@ -68,7 +68,8 @@ def analyze(A, max_dim=None):
     coef = 4 / two_q ** 2
 
     print(f"[comm] A={A} (n={n}); |word|={len(gens)}, ngen={ngen}"
-          + (f"; SKIPPING dim > {max_dim} (cost: O(dim³) mpf matmul)" if max_dim else ""))
+          + (f"; SKIPPING dim > {max_dim} (cost: O(dim³) mpf matmul)" if max_dim else "")
+          + (f"; ONLY b(λ) >= {min_b}" if min_b else ""))
     print(f"[comm] (★) tr_λ(ρ·Ω₂^P) =?= (4/[2]²)·Σ_a tr_λ([ρ,σ_a]·σ_(a+1))   — ALL λ ⊢ n\n")
     print("   λ                b   dim   |tr(ρΩ₂^P)|/dim   |Δ_rel| (★)   termwise worst   Σ‖[ρ,σ_a]‖/(dim‖ρ‖)")
     worst_star, worst_term = mp.mpf(0), mp.mpf(0)
@@ -77,6 +78,8 @@ def analyze(A, max_dim=None):
         _pg, _dim_peek = base.block_structure(lam)
         if max_dim is not None and _dim_peek > max_dim:
             skipped.append((lam, _dim_peek))
+            continue
+        if min_b is not None and sum(lam) - lam[0] < min_b:
             continue
         sig, dim = sigma_dense(lam, q, ngen)
         rho = sig[gens[0]]
@@ -129,12 +132,15 @@ def analyze(A, max_dim=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--A", type=int, nargs="+", default=[2, 3])
+    ap.add_argument("--min-b", type=int, default=None,
+                    help="only irreps with b(λ)=n−λ₁ at or above this — the high-b tail is CHEAP "
+                         "(dim λ = dim λ'), it is merely last in enumeration order")
     ap.add_argument("--max-dim", type=int, default=None,
                     help="skip irreps with dim above this (cost is O(dim³) mpf matmul); "
                          "skipped shapes are reported, and are NOT evidence either way")
     args = ap.parse_args()
     for A in args.A:
-        analyze(A, max_dim=args.max_dim)
+        analyze(A, max_dim=args.max_dim, min_b=args.min_b)
         print()
 
 

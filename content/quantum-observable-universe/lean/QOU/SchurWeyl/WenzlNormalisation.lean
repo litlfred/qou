@@ -47,7 +47,7 @@ theorem colLen_zero_le_addCell {μ : YoungDiagram} {s : ℕ × ℕ} (hs : IsAdda
   · omega
   · have hmem : ((μ.colLen 0 - 1, 0) : ℕ × ℕ) ∈ μ := mem_iff_lt_colLen.mpr (by omega)
     have hmem' : ((μ.colLen 0 - 1, 0) : ℕ × ℕ) ∈ addCell μ s hs :=
-      (mem_addCell _ hs _).mpr (Or.inr hmem)
+      (mem_addCell μ s _ hs).mpr (Or.inr hmem)
     have := mem_iff_lt_colLen.mp hmem'
     omega
 
