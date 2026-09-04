@@ -197,6 +197,68 @@ itself. Whether that changes its verdicts is untested.
 
 ---
 
+## 🛑 Appendix C (2026-09-04): Appendix B's headline was BACKWARDS
+
+Appendix B says *"roughly a third of the axiom surface is genuine citation ...
+the other two-thirds is the framework asserting its own claims"*, off a split of
+54 `[manuscript]` / 64 uncited / 64 external. **That is wrong, and wrong in the
+direction that flatters nothing — it understated how much of the surface is
+real citation.**
+
+Corrected, measured on `origin/main` after the `opaque` conversions:
+
+| | Appendix B said | actual |
+|---|---|---|
+| total axioms | 182 | **163** |
+| `[manuscript]` | 54 | **59** |
+| **uncited** | **64** | **3** |
+| external literature | 64 | **100** |
+
+**So ~61 % of the axiom surface is external-literature citation**, not a third:
+`kassel1995` ×22, `jones1987` ×14, `kock2004` ×8, `bergman1978` ×10,
+`wenzl1988` ×5, `fulton1997` ×3, `fred2005` ×4, `bokutchen2014` ×3,
+`murphy1981`, `hoefsmit1974`, `macdonald1995`, `witten1988`,
+`alizadeh-haeberly-overton-1997`, `dipper-james1986`, `geckpfeiffer2000`,
+`lang2002algebra`, `yekutieli2015`, `kassel2008`.
+
+**And there are 3 uncited axioms, not 64** — `proton_mass_from_substrate_axiom`
+and `neutron_mass_from_substrate_axiom` (the false pair, `qou-4paj`) and
+`QDilogarithm.unique_up_to_shift_axiom`. Everything else carries a `-- Ref:`.
+
+### The bug
+
+`^\s*axiom` under `re.MULTILINE`. **`\s` matches newlines**, so the match could
+begin at a blank line *above* the declaration and `mt.start()` landed ~10 lines
+early. `ref_above()` then scanned its 25-line window from the wrong origin and
+walked straight past the `-- Ref:` sitting immediately above the real `axiom`
+line. Demonstrated on one file, same commit, varying only the pattern:
+
+| pattern | `centralIdempotent_central_axiom` | ref found? |
+|---|---|---|
+| `^\s*axiom` | start-line **275** | **False** |
+| `^[ \t]*axiom` | start-line **285** | **True** |
+
+Ten lines of drift, one silent false negative per cited axiom whose docstring
+happens to be long enough.
+
+### Why it took four passes to catch
+
+This is the fourth measurement error of one family this session — a pattern that
+cannot match the data, returning a confident number. The others: `dualCone`
+(case-sensitive, missed `innerDualCone`); `slater` (matched `IsLaterCommand`, a
+word inside a word); `-- Ref:\s*\[key\]` matched against a string
+`ref_above()` had already stripped `-- Ref:` from; and a greedy `[^\n]*` eating
+the colon before a statement group. **Three of the four returned a confident
+ZERO and were caught only because zero was implausible.** This one returned 64,
+which is not implausible, and survived being written into an audit doc, a bean,
+a PR body and three chat reports before a *different* scan disagreed with it.
+
+The lesson is not "write better regexes". It is that **a plausible number gets
+no scrutiny**, so the check has to be structural: measure the same quantity two
+ways and reconcile, rather than sanity-checking the digits.
+
+---
+
 ## Appendix B (2026-09-04): "cited" does not mean "someone else proved it"
 
 The corpus-wide scan reports **182 axioms, 118 cited**. That phrasing — mine —
