@@ -155,19 +155,18 @@ if _census_path.exists():
 # pin A, superseded 2026-08-22, so the label named a layer the value no longer
 # belonged to.
 #
-# THIS PRODUCER STAYS ON THE MUON LAYER, and that is not a choice made here:
-# `rho_f_categorical_probe` is listed under `ideal_muon` in
-# q0_anchor_manifest.json, and `q_parameter` resolves `Q_50_DIGIT_STR` to the
-# MUON anchor for any producer on that list. So this line now reads the LIVE
-# CODATA-2022 muon derivation rather than the retired frozen literal -- a
-# +0.0769 ppb correction within the same layer, not a layer change.
+# MIGRATED TO PROTON on owner instruction, 2026-09-04. Until this commit the
+# stem was listed `ideal_muon`, so `q_parameter` bound the MUON anchor to
+# `Q_50_DIGIT_STR` here and this line read the live CODATA-2022 muon
+# derivation. The stem is now `physical_proton`, so the same by-name read
+# resolves the proton pin -- an 11.54 ppb move, not the 0.077 ppb of a
+# within-layer refresh.
 #
-# Whether it BELONGS on the muon layer is a separate question and an owner
-# decision (exception E2 of the 2026-08-30 ruling covers the ideal CAL-1/2/3
-# layer; nothing here establishes that this probe is part of it). Moving it
-# would be an 11.54 ppb change and belongs to the `ideal_muon` migration
-# (qou-1c4y), which AGENTS.md says must land its manifest and its witnesses
-# together. Not done unilaterally here.
+# Nothing in this file establishes exception E2 (the ideal CAL-1/2/3 layer),
+# and under the 2026-08-30 ruling the burden is on the exception, so proton is
+# the default this producer falls to. The manifest change and the regenerated
+# witness land in ONE commit, per the AGENTS.md constraint that the
+# `ideal_muon` migration must never be split.
 Q0 = _mp.mpf(Q_50_DIGIT_STR)
 
 
@@ -368,7 +367,14 @@ def main() -> int:
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=False)
+        # q0_anchor was False -- 'this witness carries no q0-dependent field'.
+        # Measured false at the migration (2026-09-04): moving muon -> proton
+        # moves the published `parameters.q_2_q` = [2]_q by 1.21e-9 and the C1
+        # err_pct by 3.1e-7. The error PERCENTAGES are near-invariant because
+        # they are ratios and the scale cancels -- but 'the headline is a ratio'
+        # is not the same claim as 'no field depends on q0', and it is the
+        # second that this flag asserted.
+        witness, script_path=__file__, engine=None)
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False))
     print(f"\n  Witness written: {out}")
     return 0
