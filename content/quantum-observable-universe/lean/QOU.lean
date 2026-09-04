@@ -793,6 +793,8 @@ import QOU.QBeta.TracelessDifferenceEllipticity
 import QOU.QBeta.DiscriminantCurveInQ
 import QOU.QBeta.TraceBlindSector
 import QOU.QBeta.BondDecayRates
+import QOU.QBeta.EigenphaseCarrierClassicalLimit
+import QOU.QBeta.MonodromyTraceInvariance
 import QOU.QBeta.CosineParametrisationUnfalsifiable
 import QOU.QBeta.DecayFunctionalUnification
 import QOU.QBeta.SLeakZeroCrossing
@@ -1412,6 +1414,9 @@ import QOU.Mathlib.StandardYoungCountInstance
 -- blueprint, doc-gen and every dependency walk, though still compiled by the
 -- lakefile glob.  The first two predate this commit (bean qou-kljb).
 import QOU.Hecke.ClosedFormInterfaceFactors
+import QOU.Hecke.RowCap
+import QOU.Hecke.CrossingConvexity
+import QOU.Hecke.BindingExtensivity
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

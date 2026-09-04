@@ -94,3 +94,15 @@ FIRST `(a*b)*c` in goal-traversal order, then rewrites every occurrence of that
 instantiated term. `ρ * (x*y)` does NOT match (first arg is not a `*`), so a
 goal `tr (ρ*(x*y)) - … = tr (ρ*x*y) - …` closes with `← mul_assoc`, not
 `mul_assoc`.
+
+## `pow_le_pow_left` does not exist — and prefer `gcongr` over chasing the name
+
+`unknown identifier 'pow_le_pow_left'` (2026-09-04,
+`QOU/Hecke/BindingExtensivity.lean`). It is `pow_le_pow_left₀`
+(`Mathlib/Algebra/Order/GroupWithZero/Unbundled/Basic.lean:449`). **The fix that
+does not rot is `gcongr`** — it discharged the goal from the hypotheses already
+in context and does not move when a lemma is renamed. Same discriminator as the
+module moves above: grep the mathlib **source** tree.
+
+Bernoulli itself is `one_add_mul_le_pow (H : -2 ≤ a) (n : ℕ) : 1 + n*a ≤ (1+a)^n`
+in `Mathlib.Algebra.Order.Ring.Pow`.
