@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-04T03:20:03Z
+updated_at: 2026-09-04T04:39:52Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -408,3 +408,54 @@ residual and are not examined.
   components qualify.
 - **Route 3** — the min-span family gives `mubar = 0` identically. Residual: the
   `Delta = 2` one-bit triples.
+
+
+
+## 2026-09-04 — the cyclic square BREAKS route 3's premise and does NOT reopen route 3
+
+Answers sibling #6561's second result, which lands the one escape route 3's own
+premise leaves open. Tested rather than assumed either way.
+
+Route 3's argument is **monotone-specific**: each summand touches at most 2
+components, which is what turns `Delta = 0` into separation. #6561 proves
+(sorry-free, `RevisitClassCrossTerm.lean`) that the cyclic square
+`(g_m g_{m+1})^2` is the ONLY non-monotone shape yielding a trace cross term --
+and it spans THREE strands, so it is precisely what could break the premise.
+
+**I guessed local knotting, and was wrong.** `(g_m g_{m+1})^2` closes to `T(3,2)`,
+a knot, so the tempting reading is a knotted summand on one component (Milnor-inert).
+Measured: it spans **3 distinct components in 188 of 694 insertions**. The premise
+genuinely breaks.
+
+**The conclusion survives, for a different reason than it was proved by.** In ALL
+188 spanning cases at least one pairwise linking number among the three components
+is nonzero, so `Delta != 0` and `mubar` is not a genuine integer there anyway. The
+insertion that joins three components is the same one that links them.
+
+`cyclic_square_does_not_reopen_milnor_probe.py`, 4/4: premise-breaks = yes;
+reopening triples = **0 of 188**; insertions tested = 694; integrality violations = 0.
+
+Two method notes, both from getting it wrong first: insertions are SAMPLED ACROSS
+THE WORD, not appended (braid letters do not commute, and the first pass was
+append-only, which would have read stronger than it was); and an earlier draft's
+fourth assertion was VACUOUS -- a counter initialised to 0 and never incremented --
+now a real odd-crossing-sum check, the same bug class as this bean's own earlier
+`lk = -3/2`.
+
+**What this does to the non-monotonicity framing.** #6561 said a trace cross term
+and a hyperbolic carrier "both require a non-monotone word, so they are the same
+discriminating question". The REQUIREMENT is shared; the two CONSEQUENCES are not,
+and both now have verdicts:
+
+  - trace branch   -- #6561 measured: +0.78/+0.71/+1.00/+0.68 MeV against residuals
+                      1.8/7.8/7.0/27.4. Right sign, shrinks with A. Scope-(a) negative.
+  - closure branch -- measured here: does not reopen mubar on that shape.
+
+So it is one hypothesis with two testable consequences, both now tested on the one
+shape that admits them. Do NOT compress that back to "the same question" -- the
+shared requirement is what made it worth testing twice.
+
+SCOPE (a), narrow: one shape, all-positive inserted crossings, sampled positions,
+4 isotopes. NOT a proof that no non-monotone word reopens route 3 (a mixed-sign
+insertion could cancel a linking number and is not covered). The `Delta = 2`
+one-bit triples remain the stated residual. The Lean is UNCHANGED.
