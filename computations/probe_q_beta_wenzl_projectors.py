@@ -3,6 +3,21 @@ from pathlib import Path
 import json
 from mpmath import mp
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This file bound the RETIRED
+# self-certified muon pin A as a literal -- superseded 2026-08-22 by the
+# CODATA-2022 derivation, so the value was ~46 ppb stale AND could not follow
+# the anchor. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR` resolves to
+# the PROTON pin, which the 2026-08-30 owner ruling makes the default.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent / 'substrate',
+              _Path_qp(__file__).resolve().parent.parent / 'computations',
+              _Path_qp(__file__).resolve().parent.parent / 'computations' / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 mp.dps = 200
 
 def main():
@@ -12,7 +27,7 @@ def main():
     from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402 (codata sweep)
 
     Q_PIN = _pb.witness_path("q-pinning-200-digit.witness.json", HERE)
-    q = mp.mpf("1.1099785955573347198997632204832250266562084087801")
+    q = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf("0.51099895000")
     Q_AME = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
