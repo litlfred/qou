@@ -95,6 +95,7 @@ USAGE
 from __future__ import annotations
 
 import argparse
+import functools
 import collections
 import datetime
 import pathlib
@@ -107,7 +108,29 @@ _DONE = re.compile(
     r"^(fix|fixes|fixed|close[sd]?|resolve[sd]?|complete[sd]?|drain|repair)\b"
     r"|\b(CLOSED|RESOLVED|COMPLETE|FIXED|drained|discharged)\b", re.I)
 _ORDER = {"high": 0, "medium": 1, "low": 2}
-_ACTIVE_HOURS = 12  # a bean named by a commit this recently is presumed CLAIMED
+_ACTIVE_HOURS = 12  # a bean named by a commit this recently MAY be claimed — see _landed
+
+
+@functools.lru_cache(maxsize=None)
+def _landed(sha: str) -> bool:
+    """Is this commit already an ancestor of origin/main?
+
+    WHY THIS EXISTS. The `[ACTIVE]` flag was purely AGE-based and told the
+    reader "presume CLAIMED, do not take". Age alone cannot tell a sibling
+    HOLDING a bean from a sibling who FINISHED it, and the two want opposite
+    actions: an in-flight branch should be left alone, while landed work is
+    precisely the bean most worth taking, because closing it is all that is
+    left.
+
+    Measured 2026-09-04: `qou-9iwt` was flagged `[ACTIVE — commit 10h ago;
+    presume CLAIMED, do not take]` on the strength of `1d75dfd31c3`, which was
+    already MERGED TO MAIN. The flag suppressed the one bean whose work was
+    demonstrably done. The session took it anyway and found two further defects
+    the merged commit had not covered — so the flag would have cost that, and
+    would have done it silently.
+    """
+    return subprocess.run(["git", "merge-base", "--is-ancestor", sha, "origin/main"],
+                          capture_output=True).returncode == 0
 
 
 def load_beans(root: pathlib.Path) -> dict:
@@ -130,10 +153,31 @@ def load_beans(root: pathlib.Path) -> dict:
 
 
 def any_commits(since: str) -> dict:
+    """Every commit naming a bean — ALL REFS, not just merged history.
+
+    `--all` is load-bearing and asymmetric with `done_commits` below, which
+    deliberately stays on merged history. The two ask different questions:
+
+      * done_commits — "has this bean's work LANDED?"  Only main can answer
+        that, so an unmerged branch must NOT count.
+      * any_commits  — "is a sibling WORKING on this?"  Only an UNMERGED
+        branch can answer that, and a bare `git log` cannot see one.
+
+    Measured 2026-09-04: a bare `git log` saw 500 commits in the last 12 h and
+    `git log --all` saw 550, of which **50 were not on origin/main**. So the
+    `[ACTIVE]` flag — which exists precisely to say "a live session holds this,
+    do not take it" — was reading a population that BY CONSTRUCTION contains no
+    in-flight work, and every bean it flagged was therefore landed. The flag was
+    not merely imprecise; it could not be right.
+
+    Note for a shallow clone: unfetched remote branches are invisible to `--all`
+    too, so a clean IN FLIGHT bucket is weaker evidence than it looks. Fetch
+    first if the answer matters.
+    """
     """bean id -> [(sha, iso, subject)], ANY commit naming it. For the
     active-ownership signal, which does not care what the commit says."""
     log = subprocess.run(
-        ["git", "log", f"--since={since}", "--format=%H%x01%cI%x01%s"],
+        ["git", "log", "--all", f"--since={since}", "--format=%H%x01%cI%x01%s"],
         capture_output=True, text=True).stdout.splitlines()
     out = collections.defaultdict(list)
     for line in log:
@@ -193,15 +237,25 @@ def main() -> int:
             if age_h < _ACTIVE_HOURS:
                 act.append((age_h, bid, b, newest))
         act.sort()
-        print(f"Open beans with a commit in the last {_ACTIVE_HOURS}h — "
-              f"presume CLAIMED by a live session, do NOT take: {len(act)}\n")
+        inflight = [x for x in act if not _landed(x[3][0])]
+        landed   = [x for x in act if _landed(x[3][0])]
+        print(f"Open beans with a commit in the last {_ACTIVE_HOURS}h: {len(act)}")
+        print(f"  IN FLIGHT (not on origin/main) — presume CLAIMED, do NOT take: {len(inflight)}")
+        print(f"  LANDED (already on origin/main) — NOT claimed; closing may be all "
+              f"that is left: {len(landed)}\n")
+        act = inflight + landed
         for age_h, bid, b, (sha, iso, subj) in act:
-            print(f"  {bid}  ({b['priority']}, {b['status']}, last commit {age_h:.0f}h ago)")
+            state = "IN FLIGHT — do NOT take" if not _landed(sha) else "LANDED — free to take"
+            print(f"  {bid}  ({b['priority']}, {b['status']}, last commit {age_h:.0f}h ago)  [{state}]")
             print(f"    bean : {b['title'][:100]}")
             print(f"    last : {sha[:11]} {subj[:100]}")
-        print("\nThis signal asks only WHEN, never WHAT, so none of the four semantic "
-              "failure\nclasses below apply to it. AGENTS.md permits overlapping only "
-              "open-outcome\nresearch — never work that has one right answer.")
+        print("\nThis signal asks WHEN and WHERE, never WHAT, so none of the four "
+              "semantic\nfailure classes below apply to it. WHERE is load-bearing: age "
+              "alone cannot\ntell a sibling HOLDING a bean from one who FINISHED it, and "
+              "those want opposite\nactions. Measured 2026-09-04 — qou-9iwt was flagged "
+              "CLAIMED on a commit already\nMERGED to main, suppressing the one bean whose "
+              "work was demonstrably done.\nAGENTS.md permits overlapping only open-outcome "
+              "research — never work that has\none right answer.")
         return 0
 
     rows = []
@@ -229,8 +283,8 @@ def main() -> int:
         newest = max((c[1] for c in allc.get(bid, [])), default=None)
         if newest:
             age_h = (now - datetime.datetime.fromisoformat(newest)).total_seconds() / 3600
-            if age_h < _ACTIVE_HOURS:
-                flag += (f"  [ACTIVE — commit {age_h:.0f}h ago; presume CLAIMED, "
+            if age_h < _ACTIVE_HOURS and not _landed(newest[0]):
+                flag += (f"  [IN FLIGHT — commit {age_h:.0f}h ago, not on main; presume CLAIMED, "
                          f"do not take]")
         print(f"  {bid}  ({pri}, last updated {b['updated'][:10]}){flag}")
         print(f"    bean : {b['title'][:100]}")
