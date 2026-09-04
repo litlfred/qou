@@ -585,3 +585,37 @@ Two corollaries from the same incident:
 
 Do not read the incident as an argument against §1's check. It is an argument for aiming
 it: the same session's #6517 check was correctly *executed* and pointed at the wrong set.
+
+
+## 15. An `_`-prefixed binder SUPPRESSES the linter a docstring cites as evidence
+
+Measured 2026-09-04 on `QOU/BraidKnot/MuPTwoTermSum.lean`. Its `sum_signs_forced`
+carries `(_hc31 : |c₃| ≤ 5) (_hc40 : 1/5 ≤ |c₄|)` and the docstring says the
+theorem *"is stronger than its signature … Lean's unused-variable linter confirms
+the proof never touches them."*
+
+**The factual claim is TRUE; the cited evidence does not exist.**
+`linter.unusedVariables` does not fire on a binder whose name starts with `_` —
+the underscore is *precisely* the suppression mechanism. So on the committed
+file the linter is **silent**, and a reader who "checks the linter" as invited
+sees nothing and cannot tell "unused" from "warning suppressed".
+
+Three runs settle it, ~30 s total, all on scratch copies:
+
+- **A — drop the binders entirely** (and fix the two call sites, which pass them
+  positionally): **exit 0**. This is the real proof that they are unused.
+- **B — keep them, remove the `_`**: linter fires on both. Corroborates A.
+- **C — control, unmodified**: silent, exit 0.
+
+Generalisation: **a docstring claiming a hypothesis is unnecessary is checkable,
+so check it — by deleting the hypothesis, never by reading the warnings.** The
+same inversion is available for `set_option maxHeartbeats` (§10) and any other
+"the tooling confirms X" prose: ask what the tooling would print if X were false.
+
+**Companion — sharpness by mutation.** Where a theorem states a round constant,
+compute the *sharp* bound in exact rationals and mutate past it. Here the sharp
+window-wide bounds are `c₃ ≤ 313205/1259712 = 0.2486322` (stated: `1/4`) and
+`c₄ ≤ −0.8156820` (stated: `−4/5`). Mutants `24/100` and `−82/100` both fail at
+the `norm_num` margin step; pristine control passes. That converts "the constant
+is the content" from an assertion into a measurement, and simultaneously reports
+how much slack the stated constant leaves.

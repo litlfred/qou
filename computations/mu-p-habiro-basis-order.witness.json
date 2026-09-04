@@ -1,0 +1,195 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T07:37:48.124240+00:00",
+  "commitSha": "ce63e94de4edc0970c0c21769a06103600eb9951",
+  "assertions": [
+    {
+      "name": "habiro_basis_is_the_bar_even_tower",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "(q;q)_n (q^-1;q^-1)_n = prod (1-q^j)(1-q^-j) = prod (2 - q^j - q^-j) = (-1)^n prod f_j, the bar-even tower of MuPCarrierBarParity. Max |difference| over n <= 8 at the off-anchor point q = 1.37 is 8.1139e-69. Scope-(b), exact algebra: the bar-even precondition — which the corpus ARGUES from 4_1 amphichirality and does not prove — is automatic for any Habiro-ring element expanded in its own basis."
+    },
+    {
+      "name": "six_consecutive_orders_bracket_the_residual",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Orders [6, 7, 8, 9, 10, 11] all have t/|omega_n| in [1/5, 5]; the minimum is n = 9 at 0.5770. Recorded as a CAUTION, not a finding: six consecutive orders qualifying means the tower is dense near t, so magnitude agreement here is nearly free and carries almost no information — the entropy bound in a new coordinate. The informative quantity is a_n(Sigma(2,3,5)), not computed here."
+    },
+    {
+      "name": "sigma235_series_converges_at_bar_image_diverges_above_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "I(Sigma(2,3,5); 1/q0) = 14.917498476497690554, last term 8.308e-19 by n = 399; at q0 > 1 the partial sum reaches -9.18943e+246 after 60 terms. So the evaluation regime this route uses is the convergent one, and HabiroMagnitudeA3.pochAbs_unbounded — stated for 1 < q, and additionally requiring |a_n| >= 1 — does not reach it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "mu-p-habiro-basis-order",
+  "scriptFile": "mu_p_habiro_basis_order_probe.py",
+  "scriptHash": "13c62dd4c885",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mu_p_habiro_basis_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/mu_p_habiro_basis_order_probe.py"
+  },
+  "data": {
+    "pin": {
+      "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+      "bar_image": "0.900918283955741492160822882481093936014741626610554180691118",
+      "w": "0.0108968667071222997524919780918628158892407484841329167639324",
+      "t": "0.000000211164914360000000000000000000000000000000000000000000000000"
+    },
+    "basis_identity_residual_at_q_1p37": "8.11388845462873428128817088463546143549154795353266781786602e-69",
+    "orders": [
+      {
+        "n": 1,
+        "abs_omega": "0.0108968667071222997524919780918628158892407484841329167639324",
+        "required_coefficient": "0.0000193784984285418968590971073913203393044031148612672597218834",
+        "small_height": false
+      },
+      {
+        "n": 2,
+        "abs_omega": "0.000476260728652583451546161557827992049418660191104965835133420",
+        "required_coefficient": "0.000443380908095065433666516286328572761693404337626722583292916",
+        "small_height": false
+      },
+      {
+        "n": 3,
+        "abs_omega": "0.0000470476754043021994093095160594832863534130682816900228290260",
+        "required_coefficient": "0.00448831770210458394365669795648489734371518855638080753549742",
+        "small_height": false
+      },
+      {
+        "n": 4,
+        "abs_omega": "0.00000831497405509948211694674711338350140743494198381897108561548",
+        "required_coefficient": "0.0253957394167086884652219003142621803853087408907861100025738",
+        "small_height": false
+      },
+      {
+        "n": 5,
+        "abs_omega": "0.00000231492354157607436081741069850800191618746302217494770267734",
+        "required_coefficient": "0.0912189584526114147002758120044201138808161949308820238115091",
+        "small_height": false
+      },
+      {
+        "n": 6,
+        "abs_omega": "0.000000937314305505867070960120765412868107773155182992193437766152",
+        "required_coefficient": "0.225287198882593202902683091577086064703197660534838794457703",
+        "small_height": true
+      },
+      {
+        "n": 7,
+        "abs_omega": "0.000000522649480234459101408046860036707897424251555222465197993073",
+        "required_coefficient": "0.404027789839706733182444100437513189081771992270487469702917",
+        "small_height": true
+      },
+      {
+        "n": 8,
+        "abs_omega": "0.000000385807068058373274325093503296068580327070034336736216386013",
+        "required_coefficient": "0.547332933589620977395921814165301183287544554149310174465424",
+        "small_height": true
+      },
+      {
+        "n": 9,
+        "abs_omega": "0.000000365970955964595717997527109851455183184167179785909850415419",
+        "required_coefficient": "0.576999105853712170150517441125644174621095401588478340043813",
+        "small_height": true
+      },
+      {
+        "n": 10,
+        "abs_omega": "0.000000435917378842744215255878714534184170313464591742633925328135",
+        "required_coefficient": "0.484414993778389964095557070989980868986279845207612293753967",
+        "small_height": true
+      },
+      {
+        "n": 11,
+        "abs_omega": "0.000000640118116401516372271272665545218443841752736494923427926130",
+        "required_coefficient": "0.329884296271886881095004443737935245301034830890271014604558",
+        "small_height": true
+      },
+      {
+        "n": 12,
+        "abs_omega": "0.00000114168117767841688308310260227387473727161542817172737296057",
+        "required_coefficient": "0.184959617876331399430698984855114765481149544718210268771065",
+        "small_height": false
+      },
+      {
+        "n": 13,
+        "abs_omega": "0.00000244306651725891867166675142005891401653461158710980424900844",
+        "required_coefficient": "0.0864343696204078948667982480056546306629372955645003628419357",
+        "small_height": false
+      },
+      {
+        "n": 14,
+        "abs_omega": "0.00000620864863990203479760749767781296023697062800036716619431042",
+        "required_coefficient": "0.0340114132088060848904240319436789523314217781436470965337647",
+        "small_height": false
+      },
+      {
+        "n": 15,
+        "abs_omega": "0.0000185779515450016326355240351239924405944514581646502658080751",
+        "required_coefficient": "0.0113664261556766506664326064325300335630010195451488337664098",
+        "small_height": false
+      }
+    ],
+    "bracketing_orders": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "factorial_asymptotic": [
+      {
+        "n": 6,
+        "abs_omega": "0.000000937314305505867070960120765412868107773155182992193437766152",
+        "factorial_estimate": "0.000000867910263427066834368034547765777520419546458273061129547946",
+        "ratio": "1.07996684104730888627779737083632283181527549542512329259348"
+      },
+      {
+        "n": 9,
+        "abs_omega": "0.000000365970955964595717997527109851455183184167179785909850415419",
+        "factorial_estimate": "0.000000285259957158304246779766664789924796385302589763338816632666",
+        "ratio": "1.28293841031989330099704522037292341260462425245151091891110"
+      },
+      {
+        "n": 11,
+        "abs_omega": "0.000000640118116401516372271272665545218443841752736494923427926130",
+        "factorial_estimate": "0.000000409854266204103741122794141955299723062961538572646686745455",
+        "ratio": "1.56181884436636144023939308259054507015447704701360062059077"
+      }
+    ],
+    "sigma235_series": {
+      "value_at_bar_image": "14.9174984764976905538623979799079436431925608447771833745863",
+      "terms_used": 399,
+      "last_term": "0.000000000000000000830758837691757582318182568856465964044998705299313037982258",
+      "diverges_at_q0_gt_1": true,
+      "source": "library/arxiv-2605.15740v1 (lovejoy2026), display after eq. 1.3"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
