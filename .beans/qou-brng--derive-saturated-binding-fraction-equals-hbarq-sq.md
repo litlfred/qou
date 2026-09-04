@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T02:24:00Z
+updated_at: 2026-09-04T02:35:16Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2297,3 +2297,60 @@ second kind. That may be the more useful finding than any one of the closures.
 
 Sites corrected (PR #6553): the probe (×2), the audit doc, corpus-grepper
 `resolved-topics.md`, and this bean.
+
+
+## 2026-09-04 — the Pauli lock's hypothesis, measured: two SU(2)s of different origin, and D9 has no witness
+
+Follows the correction above, which named `separable_interface_degenerate`'s
+equal-scalars hypothesis as the residue without quantifying it. Audit:
+`docs/audits/2026-09-04-pauli-lock-rests-on-an-unexamined-su2-identification.md`.
+
+**What the hypothesis asserts.** `hplus`/`hminus` say the **same two projector
+scalars** serve both SU(2)s. Concretely those are the Hecke spectral projector
+weights of a **single `σ`** (`μ± = y_(2), y_(1,1)`). So one `σ`'s scalars are
+asked to represent two symmetries — and the corpus does **not** treat them as
+one symmetry. Per `docs/duality-tracker.md`: **D9** isospin `SU(2)_I` is a
+flavour swap `u ↔ d` on colour-sheet flavour triples (canonical bowtie); **D10**
+spin `SU(2)_S` is an icosahedral rotation via `S₅ → A₅ ≅ I ⊂ SO(3)`. Different
+constructions; nothing obliges them to share a pair of scalars.
+
+**Can the corpus settle it? The obstruction is ASYMMETRIC.**
+
+- **D9 — no witness.** `class IsospinFromCanonicalBowtie` has **no instance**
+  corpus-wide; the only "instance" in its file is the docstring calling it the
+  conjectural witness. Corroborated by `WignerSU4FromSpinIsospin.lean:4` —
+  *"Once … are formalized"*. Matches the tracker's own **"D9 is the bottleneck"**.
+- **D10 — IS constructed, but builds something else.** `BringFiberAction` has a
+  content-bearing instance `bringFiberAction_icosahedral` — the genuine
+  icosahedral Reeb map `θ_λ = arccos(χ_λ(C₅)/dim_λ)`, `five_distinct_classes`
+  proved from the A₅ character table. But it builds a map **A₅ irrep → rotation**,
+  not projector scalars for the spin channel, and its own scope note leaves the
+  `W_λ = d_q²/D²` Plancherel obligation open.
+
+**A correction I caught before shipping.** My first draft of that audit said
+*"neither is constructed"*. The D10 instance refutes it. Caught by grepping for
+an instance rather than trusting the stub's *"conjectural witness"* docstring —
+which is the same failure mode as the `qou-7zob` miscitation one section above,
+twice in one day. The file is renamed off the wrong claim and records the
+correction rather than hiding it.
+
+**Two staleness findings**, neither fixed (out of scope, worth a follow-up):
+`S5SO3FiberAction.lean`'s class docstring still says *"no global instance is
+provided, so downstream theorems are genuinely conditional on it"* — they are
+not; and both D9/D10 content stubs advertise `lean/QOU/BraidsAndKnots/*.lean`
+files that **do not exist**, so their `lean.ref` resolves only by sibling
+fallback.
+
+**Status change.** The four closures (rank `= n`, `μ̄` selector, linking data,
+`Δ₃,₃` ceiling 9) are untouched and rest on their own arguments. The fifth —
+"the Pauli lock closes the channel asymmetry" — is now: *closes it **provided**
+the two SU(2)s carry the same projector scalars*, an identification between
+constructions of different origin, one without a witness. That is materially
+weaker and should not be listed beside the other four.
+
+**Scope: a scope statement, NOT a refutation.** It does not claim the scalars
+differ — exactly as unestablished as the converse.
+
+**Next.** Not a sixth invariant. A witness for D9 would make the equal-scalars
+question decidable for the first time. Larger than anything in this arc; already
+tracked in `docs/duality-tracker.md`.
