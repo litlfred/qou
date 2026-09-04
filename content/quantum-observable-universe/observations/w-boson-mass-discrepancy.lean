@@ -3,6 +3,7 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.Real.Pi.Bounds
 
 
 /-!
@@ -178,29 +179,49 @@ theorem higgs_w_ratio_exact :
    The predicted δm involves Real.pi in the denominator, which prevents
    direct norm_num evaluation. We bound π ∈ (3.14, 3.15) to reduce
    the comparison to rational arithmetic. -/
-/-- **External axiom (manuscript Ch. 7, §Vertex δq formula):
-    predicted W-boson mass shift agrees with CDF observation within
-    factor of 2** (full proof requires `Real.pi` bounds). -/
--- Ref: [manuscript] Ch. 7, §Vertex δq formula
-axiom forward_backward_agreement_axiom :
-    delta_m_W_predicted < 2 * delta_m_W_observed ∧
-    delta_m_W_observed < 2 * delta_m_W_predicted
+/-- The predicted CDF W-boson mass shift and the observed shift agree to
+    within a factor of two.
 
+    **Was an axiom; proved 2026-09-04.** The old comment said "full proof
+    requires `Real.pi` bounds" — which is true and is the whole proof: the
+    expression is `K / π` for a rational `K`, and the bounds needed are
+    absurdly loose. `π > 3` gives the first conjunct and `π < 4` the second,
+    so `Real.pi_gt_d6` / `Real.pi_lt_d6` are far more than enough. Nothing
+    was missing except the reduction to `K / π`. -/
 -- Ref: [manuscript] Ch. 7, §Vertex δq formula
 theorem forward_backward_agreement :
     delta_m_W_predicted < 2 * delta_m_W_observed ∧
-    delta_m_W_observed < 2 * delta_m_W_predicted :=
-  forward_backward_agreement_axiom
+    delta_m_W_observed < 2 * delta_m_W_predicted := by
+  have hpi : (0:ℝ) < Real.pi := Real.pi_pos
+  have hlo : (3:ℝ) < Real.pi := by linarith [Real.pi_gt_d6]
+  have hhi : Real.pi < 4 := by linarith [Real.pi_lt_d6]
+  simp only [delta_m_W_predicted, delta_m_W_observed, delta_q_W_CDF, delta_q,
+             sensitivity, q₀, q₀_minus_one, kappa, α_W, chi_bring]
+  norm_num
+  rw [show (5499:ℝ) / 50000 * (17 / 500 / (2 * Real.pi)) * (1 / 6) / (55499 / 50000)
+        * (5580139001 / 580139001) * 80357
+      = (5499 * 17 * 5580139001 * 80357 * 50000)
+        / (50000 * 500 * 2 * 6 * 55499 * 580139001) / Real.pi by
+      field_simp]
+  refine ⟨?_, ?_⟩
+  · rw [div_lt_iff₀ hpi]
+    nlinarith [hlo]
+  · rw [← mul_div_assoc, lt_div_iff₀ hpi]
+    nlinarith [hhi]
 
-/-- **External axiom (Jones 1985): W/Z mass ratio bounded in (0, 1).** -/
--- Ref: [jones1985] Jones, "A polynomial invariant for knots via von Neumann algebras," Bull. AMS 12 (1985)
-axiom w_z_ratio_bounds_axiom : 0 < w_z_ratio ∧ w_z_ratio < 1
+/-- The W/Z mass ratio from Markov traces is positive and less than 1.
 
-/-- The W/Z mass ratio from Markov traces is positive and less than 1. -/
+    **Was an axiom credited to [jones1985]; proved 2026-09-04.** Nothing of
+    Jones's is needed for *these bounds*: `w_z_ratio` is a ratio of two
+    Markov traces evaluated at the decimal literal `q₀`, so the statement is
+    closed decidable arithmetic and `norm_num` discharges it. The Jones
+    reference belongs on the *construction* of the Markov trace, which is
+    where `markov_trace` cites it — not on the observation that one
+    particular quotient of it lies in `(0, 1)`. -/
 -- Ref: [jones1985] Jones, "A polynomial invariant for knots via von Neumann algebras," Bull. AMS 12 (1985)
 theorem w_z_ratio_bounds :
-    0 < w_z_ratio ∧ w_z_ratio < 1 :=
-  w_z_ratio_bounds_axiom
+    0 < w_z_ratio ∧ w_z_ratio < 1 := by
+  constructor <;> · unfold w_z_ratio markov_trace qi2 q₀; norm_num
 
 /-- q₀² is in the interval (1.232, 1.233).
     This auxiliary lemma enables the sensitivity proof. -/
