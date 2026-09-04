@@ -450,3 +450,105 @@ reflexive — is invisible to it, as are fields written inside a tactic
 **C2, C3 and C4 are not in `qou-4els`'s six** and are not covered by
 `qou-tsnp`'s twelve (a third shape again: `holds : Prop`). Those three stand as
 first measurements.
+
+---
+
+# 🛑 MAJOR CORRECTION — the headline over-claims, and the corpus had the right rule five days earlier
+
+*Same day. The prior work is [`2026-08-30-the-remainder-is-vacuous-not-open.md`](2026-08-30-the-remainder-is-vacuous-not-open.md)
+(bean `qou-z9ws`), its evidence file
+[`2026-08-30-context-classes-are-inhabited-by-zero.lean`](2026-08-30-context-classes-are-inhabited-by-zero.lean),
+and the tool [`scripts/lean-context-class-inhabitation-probe.py`](../../scripts/lean-context-class-inhabitation-probe.py).*
+
+## What that audit already established
+
+My thesis, stated more sharply and on a larger measured population — **52 of 79**
+context classes inhabited by `Unit` and zero:
+
+> A class inhabited that cheaply constrains nothing. A `[C]` binder on it assumes
+> nothing, and the downstream `[C]`-conditional declaration is therefore not
+> conditional on anything. **Constructing a witness for such a class is not
+> progress — it is the defect.**
+
+It also ships a probe. Mine was hand-built. **This audit is not the first
+statement of its own thesis**, and both round-one and round-two were written
+without citing it.
+
+## And it corrects me on two points — both of which I accept
+
+**1. Inhabitation does not decide it. The discriminator is what the downstream
+declaration *does* with the field.**
+
+> - **derives something from it** → §3b-cond working (`BorromeanQuark`);
+> - **projects it verbatim** → §3b-cond item 5, and if the class is *also*
+>   inhabited by zero, the declaration is conditional on nothing.
+
+**2. "Inhabited ⇒ vacuous" holds only for an *unparameterised* class.** For
+`C x`, a downstream `theorem foo [C x] : P x` quantifies over `x`; exhibiting
+`C x₀` for one `x₀` shows the hypothesis is **satisfiable**, not that it assumes
+nothing. My `C1.triv` inhabits `CrystalGraphRealization ℤ 0` — a *parameterised*
+class — so it shows satisfiability, not vacuity.
+
+## Re-classified under that discriminator — checked against the actual bodies
+
+| | downstream body | verdict |
+|---|---|---|
+| **T1** `orbital_fourier_decomposition` | `rw [inst.decomposition_law, orbital_dim_eq_square]` | **DERIVES — not a defect** |
+| **T2** `orbital_space_normal_bundle_conditional` | `rw [inst.so3_decomposition, QOU.orbital_space_dim]` | **DERIVES — not a defect** |
+| **T6** `neutron_qvalue_symbolic` | closed form by ring algebra from the field equations | **DERIVES — not a defect** |
+| **T8** `shell_eigenvalues_conditional` | `rw [energy_law ×3, chebyshev_recurrence]; ring` | **DERIVES — not a defect** |
+| **T3** `baryon_mass_from_volume` | `:= inst.volume_calibrates_mass q hq` | **PROJECTS — defect stands** |
+| **T10** `q_beta_spectral_conditional` | `:= inst.forms_agree` | **PROJECTS — defect stands** |
+| **T4** reidemeister mirror | existential over its own `V` *and* `m` | **defect — fixed in #6657** |
+| T5, T7, T9 | no `[inst]`-binding theorem found by the search | **not claimed either way** |
+| **C1** | class is *parameterised* | shows **satisfiability**, not vacuity |
+
+The Aug-30 audit names T1 explicitly as *the worked counter-example* — "that is
+§3b-cond working exactly as intended". My table listed it as a defect.
+
+**So the headline "all ten are trivially inhabited, therefore every
+`[BorromeanQuark]`-conditional theorem is unconditional" is wrong.** The
+inhabitation measurements are correct; the inference from them is not. The sharp
+cases are **T3 and T10** — both pure projections — plus **T4**, which was a
+defect of a kind the derives/projects rule does not even reach (its field
+existentially bound *both* the volume and the mass functional, so even a
+derivation would be a derivation from nothing).
+
+## And round two was prior work in full
+
+- **C1** — `qou-4els`, credited above.
+- **C2, C4** — `docs/audits/2026-08-24-undecided-carrier-witnesses.lean` carries
+  `w_crystalGraphRealization := ⟨⟨fun _ => 0, fun _ => rfl⟩⟩` and
+  `w_qIntegerMassFormula`, **the identical witnesses**, from a probe
+  (`scripts/vacuous-prop-carrier-probe.py`).
+- **C3** — stood down: `CanonicalMarkovWeightsH3` was worked on **2026-09-03**
+  with owner approval ("2y", `qou-6u92`), `canonicalInstance` promoted and
+  `explicitInstance` demoted as a deliberate pair, the inhabitant **wired to the
+  Markov-derived n=3 weights** (`qou-c35w`, landed via #6506), and guarded by
+  `delta_tau_M_canonical_resolves_to_canonical`, which is `rfl`-provable *only
+  because* resolution picks those weights. Parametrising it would break that
+  guard by construction. My row "`y3 := 1`, rest `0`" is true of what the class
+  *permits* and materially misleading about what the corpus *does*.
+
+So **none of round two's four was a first measurement**, against my explicit
+claim that three of them were.
+
+## What survives
+
+- **#6644 entirely** — the q-codifferential axiom work is a different subject.
+- **The two `rfl` axioms** in `reidemeister-mass-invariance.lean`
+  (`applyR3 K := K`), and the **T4 parametrisation** — both mine, both uncontested.
+- **`¬ Nonempty QIntegerMassFormula`** — a machine-checked proof. The Aug-24 note
+  asserted "false as written" in prose; the prior probe's uninhabitable seventh is
+  `SeparateLambdaScale_Antipattern` (`is_antipattern : False`), a different
+  declaration.
+- **The name-collision counts** — 10 `BorromeanQuark`, 4 `CrystalGraphRealization`,
+  3 `QIntegerMassFormula`, 2 `CanonicalMarkovWeightsH3`. No prior count found.
+
+## The pattern, which is the durable part
+
+Four re-discoveries in one session — `[IsAMEValue]`, C1, C2/C4, and this whole
+thesis — each found *after* writing the claim rather than before. Three of the
+four were in files a grep had already put in front of me. **A corpus this
+heavily audited should be assumed to hold the finding already; the default
+posture for a "new" vacuity result is to look for whose it is first.**
