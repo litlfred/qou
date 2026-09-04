@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T02:35:16Z
+updated_at: 2026-09-04T03:13:25Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2354,3 +2354,4 @@ differ — exactly as unestablished as the converse.
 **Next.** Not a sixth invariant. A witness for D9 would make the equal-scalars
 question decidable for the first time. Larger than anything in this arc; already
 tracked in `docs/duality-tracker.md`.
+## 2026-09-04 (qou-sorn) — the word-level route dies of the same gap. Formalize-first: the only non-monotone shape carrying a Markov-trace cross term is the cyclic square (g_m g_{m+1})^2 (RevisitClassCrossTerm.lean); measured on 2H–4He with the production binding law it gives ≤1 MeV total and SHRINKS with A (3He 1.00 → 4He 0.68 MeV) against residuals growing 7 → 27 MeV, because it multiplies a product of sub-unit letter traces. Same intensive/extensive gap as the four bond-graph routes. Judgement: the extensive term is not a functional of the single atom word's tr_M.

@@ -94,6 +94,13 @@ Exact companion: `computations/probes/markov_trace_n4_interleaved_cross_term_pro
   `R/α ≈ 1.32` is an order-of-magnitude remark only; matching them would be a fit and is not done.
 - **`n = 4` only.** General `n` remains open; this adds the smallest instance where the product
   formula fails, next to `qou-ls86`'s smallest instance where it holds.
+  **CORRECTED 2026-09-04 (same author):** `n = 4` is *not* the smallest instance. At `n = 3`,
+  content `(2, 2)`, the cyclic square `(g₀ g₁)²` and the Hopf chain `g₀² g₁²` differ by exactly
+  `z² − h z − 1` — the Markov defect with no `z` prefactor; the `n = 4` word above is that
+  three-strand object stabilised once. `qou-ls86`'s `n = 3` identity covered content `(2, 1)`
+  only. Lean: `QOU.MathlibExt.RevisitClass.cyclicSquare_cross_term`,
+  `interleaved_eq_stab_cyclicSquare`; see
+  `docs/audits/2026-09-04-cyclic-triple-word-class-prune-and-probe.md`.
 
 ## Recommendation (judgement, marked as such)
 

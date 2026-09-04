@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:00:48Z
-updated_at: 2026-09-03T14:58:35Z
+updated_at: 2026-09-04T02:32:22Z
 ---
 
 Answers the open question `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`
@@ -225,3 +225,8 @@ recorded corrections were each caught by opening the artifact a summary describe
 rather than the summary. So was this one: the bean's handover quotes the
 producer's *inline comment*, and the producer's *docstring* ninety lines earlier
 contradicts it. The comment is the wrong object.
+
+
+## 2026-09-04 — follow-on landed (qou-kru4, branch claude/monotone-word-trace-factorizes-2026-09-04)
+
+The carrier box this bean closed on has its algebraic half proved: monotone words factorize under the Markov trace (`MonotoneWordTraceFactorizes.lean`), and the production word IS monotone, so its derived closure is a torus-link connected sum (Vol = 0, consistent with owner ruling A) AND its trace carries no n=4 cross term — for one and the same reason. A derived hyperbolic carrier and a derived collective term are now one question: does the substrate emit a non-monotone word? See docs/audits/2026-09-04-monotone-word-trace-factorizes-derived-link-map.md.

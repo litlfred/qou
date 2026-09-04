@@ -1,11 +1,11 @@
 ---
 # qou-6gf9
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-03T11:48:30Z
+updated_at: 2026-09-04T03:14:44Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -111,3 +111,118 @@ to todo: the GAP — a bar-even correction with an a-priori coefficient — is
 unchanged and nobody is on it; the Lean now records exactly which cheap class
 is excluded (single small-height bar-even monomial, any order, any pin in the
 window) so the next attempt starts past it.
+
+
+## 2026-09-04 (session tender-keller, PR #6572) — stale decimals, one route measured and closed, one narrowing proved
+
+### A. THIS BEAN'S DECIMALS ARE PRE-CODATA-2022. Do not quote them.
+
+`t = 2.09754920524e-7` (209.755 ppb, 9.534 sigma) is the CODATA-2018 value.
+`fca08de7d2` (2026-08-22, owner ruling) moved the muon anchor to CODATA 2022:
+
+  quantity        this bean      live
+  t               209.755 ppb    211.165 ppb  (mu-substrate-tension-audit-100dps
+                                               data.residual_ppb_at_canonical_q0)
+  c_6 = t/hbar^6  0.221693       0.223230
+  t/w^3           0.162109       0.163199
+  t/w^4           14.8767        14.9767
+
+**No verdict moves** -- every landed theorem is stated for
+`t in [1.8e-7, 2.4e-7]`, which covers both vintages -- but the decimals in the
+prune list above are stale and get quoted.
+
+### B. Prune 2's PRECEDENT is half-retracted (not the prune itself)
+
+This bean cites #2584's projector-shift disqualification as the precedent for
+its bar-even precondition, via "delta_R9 and delta_V9 are bar-MIXED". Bean
+`qou-j3u0` + `computations/probes/keystone-wlambda-vs-ylambda-projected-shift.witness.json`
+refuted the bar-mixed leg on 2026-08-30: the W-weighted shift is bar-EVEN
+(`delta(q) - delta(1/q) = 4.009e-50` at dps 50). Cause: the original went
+through `ph.trace_weights_n`, a float64 API, where `y_(3,1,1) = 0` exactly
+(>2 rows, SU(2) Schur-Weyl), so one side of the comparison was vacuous.
+
+The magnitude leg SURVIVES: `over_210ppb_factor = 3354404.899`, i.e. 3.35e6x.
+So the exclusion holds and is scope-(a); "the Markov-trace surface is
+exhausted" was scope-(b) resting on the retracted parity leg and is now
+scope-(a). The Lean here is unaffected -- `MuPCarrier.hbarGen_bar` etc. are
+unconditional algebra. It is this bean's PROSE that is stale.
+
+### C. MEASURED AND CLOSED — the 4_1 cyclotomic ladder cannot carry t
+
+The corpus's strongest a-priori candidate is `QOU/BraidKnot/HabiroNewtonLadder.lean`
+(sorry-free): every term of the figure-eight colored-Jones cyclotomic expansion
+is bar-even, all cyclotomic coefficients are 1, and `Lam_1 - lam_0 = w` exactly.
+So it is literally "a bar-even correction whose coefficient is fixed before the
+fact", on the muon's OWN carrier knot. Nobody had ever compared it to t.
+
+Measured, mpmath 60 dps at the proton pin, over all N <= 12:
+
+    P_k(N) = prod_{j=1..k} (q^N + q^-N - q^j - q^-j)     (zero for k >= N)
+
+    smallest nonzero |P_k(N)|:  N=5 k=4 -> 1.1465e-3   = 5430 x t
+                                N=6 k=5 -> 1.2573e-3   = 5954 x t
+                                N=4 k=3 -> 1.7197e-3   = 8144 x t
+    any term inside [1.8e-7, 2.4e-7]?  NO
+
+Structural reason, not a coincidence: each factor is an integer polynomial in
+w with lowest term `(N^2 - j^2)w`, so `P_k(N) ~ M_k w^k` with
+`M_k = k!(2k+1)!/(k+1)!` the minimum over N > k (1260 at k=3, 72576 at k=4).
+`M_k w^k` bottoms out near k=4-5 at ~1e-3 and grows either side. **The ladder's
+magnitude floor sits at order w; t sits at order w^3.** Two orders of w apart.
+
+Scope-(a) on "a single cyclotomic ladder term supplies the residual" -- which
+is the shape actually proposed. A SUM over the ladder is O(1) and is a
+different question.
+
+### D. PROVED — the two-term bar-even sum is sign-forced and pinned
+
+New Lean `QOU/BraidKnot/MuPTwoTermSum.lean` (see PR #6572 for verification).
+`no_bar_even_small_height_monomial` quantifies over ONE exponent pair; a sum
+lies outside it, and no probe/Lean/audit/bean anywhere had tested one. Orders
+3 and 4 are the only pair that can bracket t. Over the whole pin window and the
+whole residual window, `t = c3 w^3 + c4 w^4` with both small-height forces:
+
+  * `sum_signs_forced`  -- `0 < c3` and `c4 < 0`: the tower must ALTERNATE.
+    Neither sign assumed; both are consequences.
+  * `sum_c3_pinned`     -- `1/5 <= c3 <= 1/4`. Width 1/20 against a
+    small-height band of width 48/10: the cubic rung is pinned to ~1 % of its
+    a-priori range.
+  * `sum_c4_bounded`    -- `c4 <= -4/5`, so c4 occupies `[-5, -4/5]`, 44 % of
+    the band rather than all of it.
+
+At the exact pin the feasible set is tighter still: `c4 in [-5, -3.3772317]`,
+`c3 in [1/5, 0.21768309]`. Worked point `(0.2014, -3.5)` reproduces t to
+3.8e-4 relative -- so the family is NOT empty; this is a narrowing, not an
+exclusion. Value: a derived pair now has a sharp prediction to fail without a
+numerical comparison. The entropy bound still forbids MATCHING one.
+
+### E. The library holds an explicit Sigma(2,3,5) Habiro series, UNCITED
+
+`library/arxiv-2605.15740v1` (Lovejoy, Osburn, Storzer, *Bailey pairs, Eichler
+integrals and unified WRT invariants*) gives the unified WRT invariant of the
+Poincare homology sphere in closed form:
+
+    I(Sigma(2,3,5); q) = (1-q)^-1 * sum_{n>=0} q^n (q^{n+1})_{n+1}
+
+It is registered as `lovejoy2026` in `content/schema/references.ts:12904` and
+`grep -rn lovejoy2026` across content/ docs/ computations/ returns **empty** --
+registered at intake, never cited, never used. Its `q^{-1/120}` twist is the
+same one `keystone-colored-sigma235-wrt.witness.json` measured numerically
+(`Psi_LZ/S_JL = q0^{-1/120}` at 70 dps).
+
+**And `HabiroMagnitudeA3.pochAbs_unbounded` does NOT foreclose it.** Check the
+binders: `hq : 1 < q` (this route evaluates at the bar image
+`1/q0 = 0.9009 < 1`, inside the convergence disk) and `ha : forall n, 1 <= |a n|`
+(Habiro coefficients in Z[q^{+-1}] need not satisfy it). The naive reading
+"Habiro is dead at the substrate" would close the one route this bean names,
+and it is wrong.
+
+Not attempted here. Cheapest next measurement: bar-symmetrise `I(Sigma(2,3,5);q)`,
+expand in w about q=1, read `[w^3]` and `[w^4]`, compare to `t/w^3 = 0.163199`
+and `t/w^4 = 14.977`. Pass or fail, the coefficients are a-priori.
+
+### F. GAP status: still OPEN
+
+Nothing here closes it. C removes the corpus's strongest a-priori candidate by
+measurement; D narrows the next shape; E identifies a held source nobody has
+used and shows the obstruction that appears to block it does not reach it.
