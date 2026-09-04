@@ -7,6 +7,7 @@ section_number: null
 pages: 3-5
 source_pdf: s00209-021-02825-4.pdf
 source_sha256: 85ca5ec21f42a988
+doc_brief: "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021 — In 2009, Borcea and Brändén"
 ---
 A major purpose of this paper is to explain a certain conceptual thread in the history of
 polynomial stability theory: that it is often possible to determine general stability information

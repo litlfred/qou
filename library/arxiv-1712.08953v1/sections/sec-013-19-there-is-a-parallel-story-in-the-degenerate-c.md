@@ -7,6 +7,7 @@ section_number: 1.9
 pages: 9-10
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 says simply that the positive and negative crossings are equal; it is natural to denote
 them both by the same “singular” crossing . The relation (T) forces t2 = 1; we

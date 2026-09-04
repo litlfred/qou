@@ -9,5 +9,13 @@
     "chained_examples": [],
     "nodes_starting_a_v0_block": 0,
     "v0_block_examples": []
-  }
+  },
+  "q0Anchor": "independent",
+  "scriptHash": "4d9ee2c3cff0",
+  "scriptCommitSha": "8caad038967825c95d52e35de31aaa02fb281714",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:58:26.479377+00:00",
+  "durationMs": 0,
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Can a v = 0 block (two consecutive odd steps) occur inside D_inf?."
 }

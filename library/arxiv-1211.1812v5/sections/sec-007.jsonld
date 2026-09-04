@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1211.1812v5/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The main result.",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-1211.1812v5/blocks/prose-sec-007",
+    "library/arxiv-1211.1812v5/blocks/lem-sec-007-01",
+    "library/arxiv-1211.1812v5/blocks/lem-sec-007-02",
+    "library/arxiv-1211.1812v5/blocks/thm-sec-007-03"
+  ],
+  "derivedFrom": "library/arxiv-1211.1812v5/manifest",
+  "sourceDocument": "library/arxiv-1211.1812v5/manifest",
+  "provenance": "ingested"
+}

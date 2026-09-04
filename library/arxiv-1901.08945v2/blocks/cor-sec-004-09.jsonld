@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1901.08945v2/blocks/cor-sec-004-09",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "cf. [ C˘ al00, Theorem 2.2.4]",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "text": "cor-sec-004-09.md",
+  "derivedFrom": "library/arxiv-1901.08945v2/sections/sec-004",
+  "sourceDocument": "library/arxiv-1901.08945v2/manifest",
+  "provenance": "ingested"
+}

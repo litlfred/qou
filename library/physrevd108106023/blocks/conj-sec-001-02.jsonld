@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/physrevd108106023/blocks/conj-sec-001-02",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "conj-sec-001-02.md",
+  "derivedFrom": "library/physrevd108106023/sections/sec-001",
+  "sourceDocument": "library/physrevd108106023/manifest",
+  "provenance": "ingested"
+}

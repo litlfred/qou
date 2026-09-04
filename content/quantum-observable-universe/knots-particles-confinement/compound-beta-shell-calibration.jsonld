@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:compound-beta-shell-calibration",
+  "kind": "proposition",
+  "title": "Compound β-decay calibration across magic shells",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-unstable-atom",
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "tags": [
+    "beta-decay",
+    "compound-decay",
+    "shell-closure",
+    "calibration",
+    "knot-operator-transition"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.CompoundBetaShellCalibration",
+  "text": "compound-beta-shell-calibration.md",
+  "leanSource": "compound-beta-shell-calibration.lean",
+  "provenance": "authored"
+}

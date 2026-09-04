@@ -5,7 +5,7 @@
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
 | [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 12 | `qou:QOU.HabiroRing.QZBicompletionElement` |
-| [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 | `qou:QOU.Archimedean.QValueTransition` |
+| [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 | `qou:QOU.Archimedean.QqValue.value` |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 | `qou:QOU.PathIntegrals.SU2Basis` |
 | [def:so3-generators](#def:so3-generators) | $\mathrm{SO}(3)$ generators | Ch 5 | `qou:QOU.PathIntegrals.SO3Generators` |
 | [def:su2-generators](#def:su2-generators) | $\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$ | Ch 6 | `qou:QOU.Su2Generators` |
@@ -332,6 +332,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
+ | [prop:tower-geometric-lower-bound](#prop:tower-geometric-lower-bound) | Brane-tower growth above the containment threshold (GAP-A-3) | Ch 12 | `qou:QOU.Mass.WStd.wStd_geometric_from_three` |
 | [prop:silver-ratio-beta-decay-null](#prop:silver-ratio-beta-decay-null) | **Silver-ratio trace degeneracy**: at $q = 1 \pm \sqrt{2}$, the Hecke generator $\sigma$ has eigenvalues = $1 \pm \sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable | Ch 10 | `qou:QOU.ParticleInteractions.beta_decay_null_iff_h_zero_or_two` |
 | [prop:force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) | $(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots | Ch 14 | `qou:QOU.Archimedean.force_carrier_bring_uniqueness` |
 | [prop:em-coupling-fixed-point](#prop:em-coupling-fixed-point) | $\alpha_{EM}$ as the root of the self-consistent fixed-point cubic $-h^2H\alpha^3 + H\alpha^2 + T\alpha - 1 = 0$ (conditional on the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization) | Ch 14 | `qou:QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root` |
@@ -458,7 +459,7 @@
 | [prop:h3-markov-wenzl-weights](#prop:h3-markov-wenzl-weights) | Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial): $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$, $y_{(1^3)} = 0$ | Ch 12 | `qou:QOU.BraidsAndKnots.h3_markov_wenzl_weights` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 8 | `qou:QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 6 | `qou:QOU.Archimedean.cohomological_embedding` |
-| [prop:color-su3-from-g2](#prop:color-su3-from-g2) | Color $\mathrm{SU}(3)$ from octonionic stabilization | Ch 9 | `qou:QOU.Eightfold.Sym2Gate.sym2_dim_3` |
+| [prop:color-su3-from-g2](#prop:color-su3-from-g2) | Color $\mathrm{SU}(3)$ from octonionic stabilization | Ch 9 | `qou:QOU.Eightfold.Sym2GateFSTrichotomy.gate_forces_complex_of_dim_three` |
 | [prop:color-spacetime-s5-factorization](#prop:color-spacetime-s5-factorization) | Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$ | Ch 7 | `qou:QOU.MassEndomorphism.colorSpacetimeEmbed_injective` |
 | [prop:color-elliptic](#prop:color-elliptic) | Color fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.color_elliptic` |
 | [prop:neutron-prediction-comparison](#prop:neutron-prediction-comparison) | Comparison of predicted and observed stable neutron numbers for $p \leq 103$ | Ch 15 | `qou:QOU.Archimedean.stable_neutron_max_error` |
@@ -1184,7 +1185,6 @@
 | [conj:rho-prefactor-structural](#conj:rho-prefactor-structural) | Structural prefactor rule: $\rho(\mathfrak{H}) = \dim_q(\lambda^*(T_w))$ | Ch 12 | `qou:QOU.BraidKnot.RhoPrefactorStructural` |
 | [conj:q-zero-stokes-region-identification](#conj:q-zero-stokes-region-identification) | Substrate $q_0$ identification via Stokes region of the generating function (over $\mathbb{Z}[q, q^{-1}]$) | Ch 10 | `qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification` |
 | [conj:local-infinitesimal-field](#conj:local-infinitesimal-field) | Substrate parameter as a local infinitesimal field $\varepsilon(x)$ | Ch 25 | `qou:QOU.AppendixSurreals.LocalInfinitesimalField` |
-| [conj:tower-geometric-lower-bound](#conj:tower-geometric-lower-bound) | Super-exponential brane-tower growth (GAP-A-3) | Ch 12 | `qou:QOU.Mass.LevelSelection.TowerGeometricLowerBound` |
 | [conj:surreal-limit-transfer](#conj:surreal-limit-transfer) | Surreal limit transfer: limits as standard-part equalities via an $\omega$-evaluation | Ch 26 | `qou:QOU.AppendixSurreals.SurrealLimitTransfer` |
 | [conj:tannaka-krein-isomorphism](#conj:tannaka-krein-isomorphism) | Tannaka--Krein duality for the substrate | Ch 22 | `qou:QOU.AlgebraicSubstrate.IsTannakaKreinDual` |
 | [conj:q-collatz](#conj:q-collatz) | The $q$-Collatz conjecture: Skein-module crossing resolution | Ch 25 | `qou:QOU.AppendixSurreals.QCollatz` |

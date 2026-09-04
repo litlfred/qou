@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/poincare-proof-outline/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Background theories",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-background-theories.md",
+  "derivedFrom": "library/poincare-proof-outline/manifest",
+  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "provenance": "ingested"
+}

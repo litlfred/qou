@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-three-strand-color-winding-rigidity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:three-strand-color-winding-rigidity",
+  "kind": "proof",
+  "title": "Proof of the color-winding rigidity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-three-strand-color-winding-rigidity"
+  ],
+  "text": "three-strand-color-winding-rigidity-proof.md",
+  "provenance": "authored"
+}

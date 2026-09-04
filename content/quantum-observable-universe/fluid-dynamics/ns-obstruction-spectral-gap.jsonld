@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-obstruction-spectral-gap",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-obstruction-spectral-gap",
+  "kind": "remark",
+  "title": "Algebraic reading: Hecke spectral-gap closure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+    "papers/quantum-observable-universe/blocks/def-crossing-energy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+  "text": "ns-obstruction-spectral-gap.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1404.2541v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Basic notations",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-basic-notations.md",
+  "derivedFrom": "library/arxiv-1404.2541v1/manifest",
+  "sourceDocument": "library/arxiv-1404.2541v1/manifest",
+  "provenance": "ingested"
+}

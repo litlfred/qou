@@ -1,0 +1,137 @@
+{
+  "computation": "ursell-chain-mismatch",
+  "scriptFile": "computations/probes/ursell_chain_mismatch_probe.py",
+  "computedAt": "2026-09-03T12:46:52.182358+00:00",
+  "description": "RETRACTED NOVELTY: the exclusion here duplicates QOU.Mass.UniformBondSimpleGraphExclusion (main c9d47234ce, 2026-08-30, bean qou-edt7), which proves it more generally, and check 4's ratio is the corpus's recorded w(2)/w(1). The arithmetic is correct and is an independent re-derivation by a different route (Ursell counts rather than graph edges). What is this probe's own is check 5: the link between the exclusion and the four MEASURED channel values, which reframes the earlier capstone -- ch3/ch4/ch5 are one identity, ch1 is not.",
+  "measured_b3_over_b2": "950815/1483044",
+  "count_table": [
+    {
+      "A": 2,
+      "pairs": 1,
+      "chain_bonds": 1,
+      "deficit": 0
+    },
+    {
+      "A": 3,
+      "pairs": 3,
+      "chain_bonds": 2,
+      "deficit": 1
+    },
+    {
+      "A": 4,
+      "pairs": 6,
+      "chain_bonds": 3,
+      "deficit": 3
+    },
+    {
+      "A": 5,
+      "pairs": 10,
+      "chain_bonds": 4,
+      "deficit": 6
+    }
+  ],
+  "bond_count_rows": [
+    {
+      "n3": 0,
+      "b3_over_b2": "-3"
+    },
+    {
+      "n3": 1,
+      "b3_over_b2": "-2"
+    },
+    {
+      "n3": 2,
+      "b3_over_b2": "-1"
+    },
+    {
+      "n3": 3,
+      "b3_over_b2": "0"
+    }
+  ],
+  "chain_ratio": "-1",
+  "all_pairs_ratio": "0",
+  "nonuniform_w_over_wd_needed": "5399947/4449132",
+  "channel_distance_from_minus_one": {
+    "ch1 observe-early (SHIPPED)": "8698255/21770174",
+    "ch3 log-ratio": "910837/28331626",
+    "ch4 bar-norm log": "904915/28337548",
+    "ch5 pairwise sum": "477127/23296856"
+  },
+  "assertions": [
+    {
+      "name": "counts_agree_at_two",
+      "passed": true,
+      "detail": "C(2,2)=1 and 2-1=1 -- the deuteron is the one place they agree"
+    },
+    {
+      "name": "pair_deficit_at_three",
+      "passed": true,
+      "detail": "3 pairs vs 2 chain bonds: a deficit of exactly ONE pair, which is the whole of the -b2 below"
+    },
+    {
+      "name": "deficit_widens",
+      "passed": true,
+      "detail": "A=4: 6 vs 3, deficit 3 -- not a small-A accident"
+    },
+    {
+      "name": "chain_ratio_is_minus_one_identically",
+      "passed": true,
+      "detail": "all 5 bond values give exactly -1 -- the bond value cancels, so this carries no physics"
+    },
+    {
+      "name": "chain_row_is_minus_one",
+      "passed": true,
+      "detail": "n(3)=2 reproduces the chain identity from counts alone"
+    },
+    {
+      "name": "all_pairs_row_is_zero",
+      "passed": true,
+      "detail": "n(3)=3 gives exactly 0 -- the all-pairs bond set is the boundary case, and it is still not positive"
+    },
+    {
+      "name": "every_uniform_bond_model_nonpositive",
+      "passed": true,
+      "detail": "b3/b2 = n(3) - 3 <= 0 for every n(3) <= C(3,2) = 3; measured is +0.6411239316 > 0, so NO uniform pairwise-bond model reaches it"
+    },
+    {
+      "name": "nonuniform_escape_is_open",
+      "passed": true,
+      "detail": "w/w_d = 1.213708 (> 1) reproduces the measured value exactly, so non-uniformity is not excluded HERE -- but see check 6: this is the corpus's already-recorded w(2)/w(1), and its single-ratio (Markov-power) mechanism is already REFUTED in qou-edt7"
+    },
+    {
+      "name": "three_additive_channels_sit_at_minus_one",
+      "passed": true,
+      "detail": "ch3/ch4/ch5 all within 0.0321 of -1 (the identity), while ch1 -- the SHIPPED, non-additive channel -- is 0.3995 away and is NOT explained by it"
+    },
+    {
+      "name": "check4_ratio_is_the_recorded_coordination_weight_ratio",
+      "passed": true,
+      "detail": "agree to 3.05e-07 -- the same quantity by two routes (my input is a rounded AME ratio; theirs is not). This is CORROBORATION of a recorded number, NOT a new one; see the retraction above"
+    }
+  ],
+  "allPassed": true,
+  "lean": "QOU.Mass.UrsellChainMismatch",
+  "scope": "(b) on UNIFORM pairwise-bond-additive binding models, invariant named: the bond count on three nodes is capped at C(3,2) = 3 while the Ursell inversion subtracts three pair terms. (a) on everything else.",
+  "caveats": [
+    "PRIORITY: this probe does NOT establish the uniform-bond exclusion. UniformBondSimpleGraphExclusion / b3Uniform_nonpos does, more generally, and landed four days earlier. Cite that.",
+    "The single-ratio (Markov-power) scaling family on the non-uniformity axis is ALREADY REFUTED in qou-edt7 (~44% disagreement between the two available ratios, for every r), so 'non-uniformity is the next direction' understates what is already known about it.",
+    "This EXCLUDES NO CHANNEL and refutes no physics. It reclassifies why three already-measured channels failed; the measurement itself is unchanged.",
+    "ch1, the SHIPPED channel, is NOT explained by this -- it is not bond-additive (trace prefactor exponential in A) and fails for its own reasons. Check 5 measures that separation rather than assuming it.",
+    "NON-UNIFORM bond values are NOT excluded. w/w_d = 1.213708 reproduces the measured value exactly, and that is the surviving direction.",
+    "The cap n(3) <= 3 assumes a SIMPLE pairwise bond set. A carrier with genuine 3-body terms, or with multiplicity on a bond, is outside this argument entirely.",
+    "The channel b3/b2 values are read verbatim from all-channels-b3-sign.witness.json; their own ~8-significant-figure provenance caveat carries over. Check 5 is a distance-from--1 comparison with margins > 1.3, nowhere near that resolution."
+  ],
+  "related": [
+    "probes/all-channels-b3-sign.witness.json",
+    "probes/type-weighted-chain-ratio.witness.json",
+    "probes/brunnian-triple-exhaustion.witness.json"
+  ],
+  "source": "AME2020; all-channels-b3-sign.witness.json",
+  "scriptHash": "d71c8ae94d41",
+  "scriptCommitSha": "f81232991384cf2fd42c4168a6f4e2ee4ac9aaaf",
+  "commitSha": "b244062b19705d1be08448e1edcd204b33d312a8",
+  "engine": "python",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}

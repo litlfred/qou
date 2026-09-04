@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-winding-lattice-norm-form",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:winding-lattice-norm-form",
+  "kind": "proposition",
+  "title": "The winding lattice of a braid-word geodesic: $\\mathrm{Im}\\,\\mathfrak{V}_{4_1}$ is the norm form of $\\mathbb{Z}[\\sqrt3]$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cusp-shape-bar-parity",
+    "papers/quantum-observable-universe/blocks/prop-meridian-holonomy-boost"
+  ],
+  "tags": [
+    "cusp-torus",
+    "geodesic",
+    "winding-lattice",
+    "norm-form",
+    "pell",
+    "bar-parity",
+    "complex-volume",
+    "golden-ratio",
+    "brings-surface"
+  ],
+  "leanRef": "qou:QOU.QBeta.WindingLatticeNormForm.winding_lorentz_form",
+  "text": "winding-lattice-norm-form.md",
+  "provenance": "authored"
+}

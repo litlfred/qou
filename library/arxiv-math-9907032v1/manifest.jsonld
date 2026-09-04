@@ -1,0 +1,45 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9907032v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Combinatorial optimization in geometry",
+  "contains": [
+    "library/arxiv-math-9907032v1/sections/sec-000",
+    "library/arxiv-math-9907032v1/sections/sec-001",
+    "library/arxiv-math-9907032v1/sections/sec-002",
+    "library/arxiv-math-9907032v1/sections/sec-003",
+    "library/arxiv-math-9907032v1/sections/sec-004",
+    "library/arxiv-math-9907032v1/sections/sec-005",
+    "library/arxiv-math-9907032v1/sections/sec-006",
+    "library/arxiv-math-9907032v1/sections/sec-007",
+    "library/arxiv-math-9907032v1/sections/sec-008",
+    "library/arxiv-math-9907032v1/sections/sec-009",
+    "library/arxiv-math-9907032v1/sections/sec-010",
+    "library/arxiv-math-9907032v1/sections/sec-011",
+    "library/arxiv-math-9907032v1/sections/sec-012",
+    "library/arxiv-math-9907032v1/sections/sec-013",
+    "library/arxiv-math-9907032v1/sections/sec-014",
+    "library/arxiv-math-9907032v1/sections/sec-015",
+    "library/arxiv-math-9907032v1/sections/sec-016",
+    "library/arxiv-math-9907032v1/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-9907032v1",
+    "source_file": "9907032v1.pdf",
+    "source_sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
+    "pages": 27,
+    "arxiv": {
+      "id": "math/9907032",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "6 Jul 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

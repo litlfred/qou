@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0905.0591v3/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Twisted Alexander polynomials and the Thurston norm",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-0905.0591v3/blocks/prose-sec-019",
+    "library/arxiv-0905.0591v3/blocks/thm-sec-019-01",
+    "library/arxiv-0905.0591v3/blocks/rem-sec-019-02",
+    "library/arxiv-0905.0591v3/blocks/thm-sec-019-03"
+  ],
+  "derivedFrom": "library/arxiv-0905.0591v3/manifest",
+  "sourceDocument": "library/arxiv-0905.0591v3/manifest",
+  "provenance": "ingested"
+}

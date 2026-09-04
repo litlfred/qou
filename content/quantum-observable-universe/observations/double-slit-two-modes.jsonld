@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-double-slit-two-modes",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:double-slit-two-modes",
+  "kind": "remark",
+  "title": "Two scattering modes and band-width anomalies",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-double-slit-massive-pattern",
+    "papers/quantum-observable-universe/blocks/def-observation",
+    "papers/quantum-observable-universe/blocks/rem-knot-basis-color-content"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-double-slit-massive-pattern",
+  "tags": [
+    "double-slit",
+    "scattering",
+    "band-width",
+    "observation",
+    "anomaly",
+    "color-content"
+  ],
+  "text": "double-slit-two-modes.md",
+  "provenance": "authored"
+}

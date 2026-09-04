@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-hecke-mass-element",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hecke-mass-element",
+  "kind": "definition",
+  "title": "Hecke mass element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "mass",
+    "frobenius-hopf",
+    "fibre-functor",
+    "schur-weyl"
+  ],
+  "leanRef": "qou:QOU.Torsion.HeckeMassElement",
+  "text": "hecke-mass-element.md",
+  "leanSource": "hecke-mass-element.lean",
+  "provenance": "authored"
+}

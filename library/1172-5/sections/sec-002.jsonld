@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-5/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DEHN SURGERYALONGTHE FIGURE-EIGHTKNOT",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "contains": [
+    "library/1172-5/blocks/prose-sec-002",
+    "library/1172-5/blocks/rem-sec-002-01",
+    "library/1172-5/blocks/rem-sec-002-02",
+    "library/1172-5/blocks/rem-sec-002-03"
+  ],
+  "derivedFrom": "library/1172-5/manifest",
+  "sourceDocument": "library/1172-5/manifest",
+  "provenance": "ingested"
+}

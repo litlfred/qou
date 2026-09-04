@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-shadow-price-continuity",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:shadow-price-continuity",
+  "kind": "proposition",
+  "title": "Continuity of shadow prices on the generic locus",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-local-shadow-ordering"
+  ],
+  "tags": [
+    "shadow-price",
+    "continuity",
+    "rational-function",
+    "generic-locus"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.ShadowPriceContinuity",
+  "text": "shadow-price-continuity.md",
+  "leanSource": "shadow-price-continuity.lean",
+  "provenance": "authored"
+}

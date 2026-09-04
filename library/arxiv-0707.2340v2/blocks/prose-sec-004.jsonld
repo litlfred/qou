@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0707.2340v2/blocks/prose-sec-004",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Symmetric Homogenization",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "text": "../sections/sec-004-23-symmetric-homogenization.md",
+  "derivedFrom": "library/arxiv-0707.2340v2/manifest",
+  "sourceDocument": "library/arxiv-0707.2340v2/manifest",
+  "provenance": "ingested"
+}

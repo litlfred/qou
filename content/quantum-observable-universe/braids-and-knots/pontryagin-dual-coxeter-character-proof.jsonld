@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-pontryagin-dual-coxeter-character",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:pontryagin-dual-coxeter-character",
+  "kind": "proof",
+  "title": "Proof of pontryagin dual coxeter character",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-pontryagin-dual-coxeter-character"
+  ],
+  "text": "pontryagin-dual-coxeter-character-proof.md",
+  "provenance": "authored"
+}

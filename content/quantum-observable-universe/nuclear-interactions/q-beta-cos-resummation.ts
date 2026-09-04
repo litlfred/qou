@@ -45,7 +45,13 @@ export default proposition({
     },
     {
       kind: "status",
-      body: "This proposition is **conditional** on\n[`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)'s\nidentification of $\\alpha = (z-1)h/2$ as the single-wrap eigenphase\non $V_{(2,1)}$.  The Lean class\n[`QOU.Interactions.QBetaCosResummation`](q-beta-cos-resummation.lean)\naxiomatises that identification; the cos-resummation theorem then\nfollows from the Markov-cyclicity constraint (1) above by `ring`\non the $\\alpha$ symbolic identity, with the empirical $5.49\\times$\ntightening recorded in the\n[`q-beta-tightening-landscape`](../../computations/q-beta-tightening-landscape.witness.json)\nwitness as numerical evidence.",
+      body: "This proposition is **conditional** on\n[`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)'s\nidentification of $\\alpha = (z-1)h/2$ as the single-wrap eigenphase\non $V_{(2,1)}$.  The Lean class\n[`QOU.Interactions.QBetaCosResummation`](q-beta-cos-resummation.lean)\ncarries that identification as class hypotheses (trace and determinant\nof the $2\times 2$ restriction to $V_{(2,1)}$); the cos-resummation\ntheorem derives from them by rewriting the trace condition, with the\nempirical $5.49\\times$ tightening recorded in the\n[`q-beta-tightening-landscape`](../../computations/q-beta-tightening-landscape.witness.json)\nwitness as numerical evidence.",
+    },
+    {
+      kind: "status",
+      date: "2026-09-03",
+      body:
+        "**Lean carrier restated (bean `qou-eixt`).**  The class previously carried two fields that hold for *every* real ($-2 \\le 2\\cos x \\le 2$ and $\\cos x = \\cos(-x)$), so it asserted nothing and every conditional result under it was unconditional; separately, the theorem's proof never mentioned the instance at all.  Both are fixed: the class now pins $\\operatorname{tr} M = 2\\cos\\alpha$ and $\\det M = 1$ on the $2 \\times 2$ restriction to $V_{(2,1)}$, and the theorem derives from that --- negative control: drop the hypothesis and the goal is unprovable.\n\n**This does not close the gap.**  Per [`EigenphaseCarrierVacuity`](../lean/QOU/QBeta/EigenphaseCarrierVacuity.lean) the obligation is a trichotomy: $M$ in the braid image is *excluded* (characters lie in $\\mathbb{Z}[q,q^{-1}]$, while $2\\cos((z-1)h/2)$ is transcendental over $\\mathbb{Q}(q,z)$); $M$ arbitrary is *circular* (the rotation $\\exp(\\alpha J)$ satisfies both fields, built from $\\alpha$ itself); only $M$ as the holonomy of an independently-defined connection reproducing the Hecke braiding (Kohno--Drinfeld / KZ) is contentful.  The present encoding is the second branch --- a real carrier rather than an empty one, but not yet evidence about the substrate.",
     },
   ],
 });

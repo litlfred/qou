@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "We have q = −1, and U(Λ n,q ) ∼",
+  "pageStart": 32,
+  "pageEnd": 34,
+  "contains": [
+    "library/bn/blocks/prose-sec-021",
+    "library/bn/blocks/cor-sec-021-01"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

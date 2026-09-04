@@ -672,9 +672,18 @@ theorem toffoliDiagonal_eq_markov {q : ℝ} (hq : 0 < q) :
 
     `(G·t)₅ = z² + 2ħz + 3ħ²z² + ħ³z + ħ⁴z²`
 
-    Coefficients `(1, 2, 3, 1, 1)`; no denominators.  Degree 6 is minimal — no
-    polynomial in `(z, ħ)` of total degree ≤ 5 equals it
-    (`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, 13/13).
+    Coefficients `(1, 2, 3, 1, 1)`; no denominators.  **Degree 6 is minimal** —
+    no polynomial in `(z, ħ)` of total degree ≤ 5 equals it — and minimal degree
+    is a genuine invariant of the class.
+
+    ⚠ **The coefficient string is NOT an invariant.**  `z` and `ħ` are
+    algebraically dependent (`markov_hecke_relation` below), so a representative
+    is unique only modulo that relation; the degree-6 representatives form a
+    six-parameter family, and `-1 + 4z² - 3ħz + 4z⁴ + ħ²z⁴` is an equally
+    integral one.  Do not read meaning into `(1, 2, 3, 1, 1)`.  A reproducible
+    choice is the grevlex normal form modulo the relation,
+    `ħ⁵z + 4ħ³z + ħ² - 2ħz + 5z² - 1`, and even that depends on the term order.
+    (`computations/probes/toffoli_cone_in_markov_hecke_parameters.py`, 18/18.)
 
     Both parameters are needed: the minimal polynomial of the constraint over
     `ℚ(z)` has degree 3 and over `ℚ(ħ)` degree 2, so it is a function of
@@ -690,6 +699,246 @@ theorem cone_eq_markov_hecke_polynomial {q : ℝ} (hq : 0 < q) :
   have hq0 : q ≠ 0 := ne_of_gt hq
   have hd : (q ^ 2 + 1) ≠ 0 := by positivity
   unfold coneCoordRow5 coneRow5Numerator toffoliConeCoord markovZ
+  field_simp
+  ring
+
+/-- **The Markov parameter and the Hecke deformation are algebraically
+    dependent**, satisfying the degree-4 irreducible relation
+
+    `ħ³z - ħ²z² + 4ħz - 4z² + 1 = 0`.
+
+    Consequence, and the reason it is stated here: `ℚ[z, ħ]` is *not* a
+    polynomial ring but the coordinate ring of an affine rational curve, so a
+    polynomial representative of any element is unique only modulo this
+    relation.  In particular the coefficient string of
+    `cone_eq_markov_hecke_polynomial` carries no information — the degree-6
+    representatives of that one constraint form a six-parameter family.  What
+    *is* invariant is the minimal degree.
+
+    This is a fact about `H_n(q)` and its Markov trace, not about the
+    `q`-Toffoli. -/
+theorem markov_hecke_relation {q : ℝ} (hq : 0 < q) :
+    toffoliConeCoord q ^ 3 * markovZ q
+        - toffoliConeCoord q ^ 2 * markovZ q ^ 2
+        + 4 * (toffoliConeCoord q * markovZ q)
+        - 4 * markovZ q ^ 2 + 1 = 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold toffoliConeCoord markovZ
+  field_simp
+  ring
+
+/-! ## What the relation says: it is a statement about crossing loop values
+
+`markov_hecke_relation` looks like an obstruction — it is what makes the
+coefficient string above meaningless.  In the vocabulary of
+`prop:markov-z-reconciliation` it is not an obstruction at all.  That block
+defines the **negative-crossing loop value** `z₋ = z - (q - q⁻¹) = z - ħ`,
+forced by the Hecke quadratic relation from the one-sided stabilisation rule,
+and calls `a² = z/z₋` the Ocneanu **framing ratio**.  So `z - ħ`, met here as
+an algebraic accident, is a named object.
+
+Written in those terms the relation factors, via `ħ² + 4 = [2]_q²`, into
+`z₊ z₋ = 1/[2]_q²`: the two crossing loop values multiply to the inverse
+square of the quantum dimension.  Convention C satisfies neither this nor a
+monomial framing ratio
+(`computations/probes/markov_loop_value_product_and_framing_ratio.py`, 13/13). -/
+
+/-- The quantum dimension `[2]_q = q + q⁻¹`. -/
+noncomputable def qDimTwo (q : ℝ) : ℝ := q + 1 / q
+
+/-- The negative-crossing loop value `z₋ = z - ħ`, forced by the Hecke
+    quadratic relation (`prop:markov-z-reconciliation`). -/
+noncomputable def markovZNeg (q : ℝ) : ℝ := markovZ q - toffoliConeCoord q
+
+/-- `[2]_q² - ħ² = 4` — the quantum dimension and the Hecke deformation are a
+    hyperbolic pair. -/
+theorem qDimTwo_sq_sub_hbar_sq {q : ℝ} (hq : 0 < q) :
+    qDimTwo q ^ 2 - toffoliConeCoord q ^ 2 = 4 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  unfold qDimTwo toffoliConeCoord
+  field_simp
+  ring
+
+/-- `z₋ = 1/(q(q²+1))` in convention D — the negative-crossing loop value in
+    closed form. -/
+theorem markovZNeg_eq {q : ℝ} (hq : 0 < q) :
+    markovZNeg q = 1 / (q * (q ^ 2 + 1)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold markovZNeg markovZ toffoliConeCoord
+  field_simp
+  ring
+
+/-- **The two crossing loop values multiply to `1/[2]_q²`** (convention D).
+
+    Equivalently `[2]_q² · z₊ · z₋ = 1`, which is `markov_hecke_relation` in
+    closed form.  Convention C satisfies no such identity: there `z₊z₋` has
+    half-integer and integer powers of `q` mixed in one numerator and does not
+    factor. -/
+theorem markov_loop_value_product {q : ℝ} (hq : 0 < q) :
+    qDimTwo q ^ 2 * (markovZ q * markovZNeg q) = 1 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  rw [markovZNeg_eq hq]
+  unfold qDimTwo markovZ
+  field_simp
+
+/-- **The Ocneanu framing ratio is a monomial in convention D**: `a² = q⁴`,
+    so `a = q²`.  This is a *structural* reason for the convention-D ruling,
+    independent of the empirical one on record (195.8 ppm on `tr_M(β_Bor)`) —
+    no anchor and no measurement enters.  Convention C's framing ratio is
+    `-q^{3/2}/(-q^{3/2} + q³ + q² - q - 1)`, not a monomial. -/
+theorem markov_framing_ratio_eq {q : ℝ} (hq : 0 < q) :
+    markovZ q = q ^ 4 * markovZNeg q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  rw [markovZNeg_eq hq]
+  unfold markovZ
+  field_simp
+
+/-- **`z = q²/[2]_q` in convention D** — the exact analogue of the form
+    `z = 1/[2]_{√q}` that `prop:markov-z-reconciliation` already gives for
+    convention C, which makes the two conventions comparable at a glance. -/
+theorem markovZ_eq_qsq_div_qDimTwo {q : ℝ} (hq : 0 < q) :
+    markovZ q * qDimTwo q = q ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  unfold markovZ qDimTwo
+  field_simp
+
+/-! ## The Ocneanu family `z_N = q^N/[N]_q`, and why convention D is `N = 2`
+
+**Prior art, credited late (2026-09-03).** This family is Wenzl's level-`r` Markov parameter
+in Hecke normalisation: `markovZAt N q = wenzlMarkovParam N (q²) / q`
+(`QOU.SchurWeyl.WenzlWeightLevelR`), and "D is the `N = 2` member" is
+`QOU.QBeta.WenzlWeight.level_eq_two_of_conventionD` (PR #5242) and the `k = 2` remark in
+`QOU.SchurWeyl.OcneanuWeight` (PR #5575).  The theorems below are kept as the per-cell
+*mechanism* (the monomial framing ratio collapsing each numerator) and are not the first
+formalisation of the family.
+
+The monomial framing ratio of `markov_framing_ratio_eq` is not an aesthetic
+fact.  `rem:markov-z-reconciliation` gives the Wedderburn block weights by the
+frame-general Ocneanu formula, a product over the cells of `λ` of
+`(z q^c - z₋ q^{-c})/(q^h - q^{-h})`.  When `a = q^N` — that is, when
+`z = q^{2N} z₋` — every numerator collapses:
+
+`z q^c - z₋ q^{-c} = z₋(q^{2N+c} - q^{-c}) = z₋ q^N (q^{N+c} - q^{-(N+c)})`,
+
+so with `z₋ q^N = 1/[N]_q` the whole product becomes the hook-content formula
+for the `U_q(𝔰𝔩_N)` quantum dimension, `w_λ = dim_q(V_λ)/[N]_q^n`.  Solving
+`a = q^N` for `z` gives the family `z_N = q^N/[N]_q`, and `z₂` is convention D
+on the nose.
+
+Two consequences worth naming.  The exact vanishing `y_(1³) = 0` that the
+corpus records for the production trace is the `𝔰𝔩₂` **row bound** — a
+partition with more than `N` rows has a cell of content `-N`, whose numerator
+factor carries `[0]_q = 0`.  And convention C is in *no* member of this family:
+its framing ratio's logarithmic derivative is not constant, so it is `q^N` for
+no `N` at all, and its weights vanish on no partition.
+
+⚠ **`w_λ` is overloaded in this corpus** (notation register §7aa: the three
+partition-weight families are distinct at `q ≠ 1`).  The weight identified here
+is the **Ocneanu/Markov** one — the `y_λ` of the production trace.  It is *not*
+`wedderburn-weight-canonical`'s `w_λ(q) = dim_q(λ)²/[n]_q!`, which is built
+from the Frame–Robinson–Thrall hook-*length* dimension rather than the
+hook-*content* one; measured at `n = 3` the two differ on every partition, and
+differ already at `q = 1` (`1/6, 2/3, 1/6` against `1/2, 1/4, 0`).
+
+Measurement:
+`computations/probes/ocneanu_weights_are_sl_n_quantum_dimensions.py`, 13/13. -/
+
+/-- The symmetric quantum integer `[m]_q = (q^m - q^{-m})/(q - q^{-1})`. -/
+noncomputable def qIntSym (m : ℕ) (q : ℝ) : ℝ := (q ^ m - (1 / q) ^ m) / (q - 1 / q)
+
+/-- `[2]_q` agrees with the quantum dimension `q + q⁻¹`. -/
+theorem qIntSym_two {q : ℝ} (hq : 0 < q) (h1 : q ≠ 1) :
+    qIntSym 2 q = qDimTwo q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hd : q - 1 / q ≠ 0 := by
+    rw [sub_ne_zero]
+    intro h
+    rw [eq_div_iff hq0] at h
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp hfac with h' | h'
+    · exact h1 (by linarith)
+    · linarith
+  have h2 : q ^ 2 - 1 ≠ 0 := by
+    intro hz
+    have hfac : (q - 1) * (q + 1) = 0 := by nlinarith [hz]
+    rcases mul_eq_zero.mp hfac with h' | h'
+    · exact h1 (by linarith)
+    · linarith
+  unfold qIntSym qDimTwo
+  field_simp
+  ring
+
+/-- The Ocneanu family member with framing ratio `a = q^N`, in the form
+    `z_N = q^{2N}ħ/(q^{2N} - 1)`; equivalently `q^N/[N]_q`. -/
+noncomputable def markovZAt (N : ℕ) (q : ℝ) : ℝ :=
+  q ^ (2 * N) * (q - 1 / q) / (q ^ (2 * N) - 1)
+
+/-- **The defining property of the family: the framing ratio is `q^{2N}`.**
+    `z_N = q^{2N}·(z_N - ħ)`, for every `N` — this is what makes the Ocneanu
+    numerator collapse into quantum integers. -/
+theorem markovZAt_framing {q : ℝ} (N : ℕ) (h : q ^ (2 * N) - 1 ≠ 0) :
+    markovZAt N q = q ^ (2 * N) * (markovZAt N q - (q - 1 / q)) := by
+  unfold markovZAt
+  field_simp
+  ring
+
+/-- **Convention D is the `N = 2` member.**  `z₂ = q⁴ħ/(q⁴-1) = q³/(q²+1)`. -/
+theorem markovZAt_two_eq_markovZ {q : ℝ} (hq : 0 < q) (h1 : q ≠ 1) :
+    markovZAt 2 q = markovZ q := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h2 : q ^ 2 - 1 ≠ 0 := by
+    rw [sub_ne_zero]
+    intro h
+    apply h1
+    nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
+  have hd : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : q ^ 4 - 1 ≠ 0 := by
+    intro h
+    apply h2
+    have : (q ^ 2 - 1) * (q ^ 2 + 1) = 0 := by nlinarith [h]
+    rcases mul_eq_zero.mp this with h' | h'
+    · exact h'
+    · exact absurd h' hd
+  unfold markovZAt markovZ
+  norm_num
+  field_simp
+  ring
+
+/-- **The Ocneanu numerator collapses at framing `a = q^N`.**  Stated at the
+    cell content `c` as a natural-number offset, which is all the `n = 3`
+    weights below need: `z q^c - z₋ q^{-c} = z₋ q^N (q^{N+c} - q^{-(N+c)})`. -/
+theorem ocneanu_numerator_collapse {q z zm : ℝ} (hq : 0 < q) (N c : ℕ)
+    (h : z = q ^ (2 * N) * zm) :
+    z * q ^ c - zm * (1 / q) ^ c
+      = zm * q ^ N * (q ^ (N + c) - (1 / q) ^ (N + c)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  subst h
+  simp only [two_mul, pow_add, div_pow, one_pow]
+  field_simp
+
+/-- **The row bound, formally.**  At a cell of content `-N`, the Ocneanu
+    numerator vanishes identically whenever the framing ratio is `q^N`.
+
+    Since a partition with more than `N` rows always contains such a cell, this
+    is why `w_λ = 0` there — and at `N = 2` it is why the corpus's exact
+    `y_(1³) = 0` holds.  It is also what refutes the Wenzl-bridge premise
+    `y_λ = w̃_λ` on the `κ_λ = 0` stratum: at `(3,1,1)` and `(3,2,1)` the left
+    side is `0` by this lemma while `w̃_λ` is a ratio of positive quantum
+    integers, so the identity asserts `0 = positive` and no parameter can
+    reconcile it
+    (`computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`,
+    10/10). -/
+theorem ocneanu_numerator_vanishes_at_content_neg {q z zm : ℝ} (hq : 0 < q)
+    (N : ℕ) (h : z = q ^ (2 * N) * zm) :
+    z * (1 / q) ^ N - zm * q ^ N = 0 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  subst h
+  simp only [two_mul, pow_add, div_pow, one_pow]
   field_simp
   ring
 

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-symmetric-point-resolution-loss",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:symmetric-point-resolution-loss",
+  "kind": "remark",
+  "title": "The symmetric point loses resolution, not spectrum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-symmetric-point-channel-collapse",
+    "papers/quantum-observable-universe/blocks/prop-physical-units-gap-linear",
+    "papers/quantum-observable-universe/blocks/conj-yang-mills-mass-gap"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-symmetric-point-channel-collapse",
+  "tags": [
+    "symmetric-point",
+    "degeneration",
+    "plancherel",
+    "stratification"
+  ],
+  "text": "symmetric-point-resolution-loss.md",
+  "provenance": "authored"
+}

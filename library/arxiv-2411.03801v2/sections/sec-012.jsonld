@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2411.03801v2/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B. Braid closures",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-2411.03801v2/blocks/prose-sec-012",
+    "library/arxiv-2411.03801v2/blocks/lem-sec-012-01",
+    "library/arxiv-2411.03801v2/blocks/rem-sec-012-02",
+    "library/arxiv-2411.03801v2/blocks/rem-sec-012-03"
+  ],
+  "derivedFrom": "library/arxiv-2411.03801v2/manifest",
+  "sourceDocument": "library/arxiv-2411.03801v2/manifest",
+  "provenance": "ingested"
+}

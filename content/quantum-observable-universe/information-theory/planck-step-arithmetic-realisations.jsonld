@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-planck-step-arithmetic-realisations",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:planck-step-arithmetic-realisations",
+  "kind": "remark",
+  "title": "Finite-field and $p$-adic Planck dynamics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-discrete-planck-step",
+    "papers/quantum-observable-universe/blocks/rem-witt-lift-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-planck-time",
+  "tags": [
+    "planck-time",
+    "finite-field",
+    "p-adic",
+    "witt-vector",
+    "algebraic-dynamics",
+    "information-theory"
+  ],
+  "text": "planck-step-arithmetic-realisations.md",
+  "provenance": "authored"
+}

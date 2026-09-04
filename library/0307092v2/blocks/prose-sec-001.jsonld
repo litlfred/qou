@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0307092v2/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The extended Bloch group",
+  "pageStart": 4,
+  "pageEnd": 8,
+  "text": "../sections/sec-001-2-the-extended-bloch-group.md",
+  "derivedFrom": "library/0307092v2/manifest",
+  "sourceDocument": "library/0307092v2/manifest",
+  "provenance": "ingested"
+}

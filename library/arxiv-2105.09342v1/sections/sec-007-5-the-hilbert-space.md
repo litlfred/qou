@@ -7,6 +7,7 @@ section_number: 5
 pages: 17-18
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
+doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
 Following [1, 15] we give a Hilbert space description of the q-deformed growth process.
 Using the connection between unitary matrix model and free Fermi droplet description, we

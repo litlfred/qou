@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sim-q-double-slit",
+  "@type": [
+    "folio:Simulator"
+  ],
+  "label": "sim:q-double-slit",
+  "kind": "simulator",
+  "title": "q-Deformed Double-Slit Simulator",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q",
+    "papers/quantum-observable-universe/blocks/def-categorical-dirac-operator",
+    "papers/quantum-observable-universe/blocks/def-localized-knot"
+  ],
+  "tags": [
+    "double-slit",
+    "q-deformation",
+    "scattering",
+    "simulation"
+  ],
+  "text": "q-double-slit.md",
+  "provenance": "authored"
+}

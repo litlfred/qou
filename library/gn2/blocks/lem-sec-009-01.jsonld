@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/blocks/lem-sec-009-01",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "General term",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "lem-sec-009-01.md",
+  "derivedFrom": "library/gn2/sections/sec-009",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

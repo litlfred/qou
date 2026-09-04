@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2412.04241v2/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The main theorems",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-2412.04241v2/blocks/prose-sec-007",
+    "library/arxiv-2412.04241v2/blocks/thm-sec-007-01",
+    "library/arxiv-2412.04241v2/blocks/thm-sec-007-02",
+    "library/arxiv-2412.04241v2/blocks/thm-sec-007-03",
+    "library/arxiv-2412.04241v2/blocks/rem-sec-007-04",
+    "library/arxiv-2412.04241v2/blocks/cor-sec-007-05",
+    "library/arxiv-2412.04241v2/blocks/cor-sec-007-06"
+  ],
+  "derivedFrom": "library/arxiv-2412.04241v2/manifest",
+  "sourceDocument": "library/arxiv-2412.04241v2/manifest",
+  "provenance": "ingested"
+}

@@ -129,8 +129,16 @@ def DisjointTensorCell.barTensor (D : DisjointTensorCell) :
     together with the vanishing of the Hochschild HH² obstruction — that
     the abstract field `bar_intertwines` packages.  It is a non-false,
     non-trivial claim that is NOT derivable from the diagonal structure
-    alone, so it is left as an honest `sorry` (no fabricated Hoefsmit
-    matrix compute). -/
+    alone.
+
+    **The body is `D.kappa_commutes p`, not a `sorry` (corrected 2026-09-03).**
+    This docstring said "it is left as an honest `sorry` (no fabricated Hoefsmit
+    matrix compute)"; `#print axioms` reports no `sorryAx`. The claim is carried
+    as a field of `DisjointTensorCell` and this theorem projects it, so the
+    obligation has moved into whoever supplies that structure rather than being
+    discharged. Whether the field is an honest open input or the conclusion under
+    another name is the `proof-no-self-assuming-projection` question, tracked
+    separately (bean `qou-z9ws`); only the prose is corrected here. -/
 theorem kappa_commutes_bar (D : DisjointTensorCell)
     (p : D.Factor × D.Factor) :
     D.barTensor (D.kappa p) = D.kappa (D.barTensor p) :=

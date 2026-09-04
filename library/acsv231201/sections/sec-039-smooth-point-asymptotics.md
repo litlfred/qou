@@ -7,6 +7,7 @@ section_number: null
 pages: 263-271
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 After discussing the overall framework of ACSV in Chapter 7, and the com-
 putational tools needed to carry out the analysis in Chapter 8, we are now

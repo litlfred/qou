@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0411505v2/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Row and column arcs order",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-math-0411505v2/blocks/prose-sec-008",
+    "library/arxiv-math-0411505v2/blocks/cor-sec-008-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0411505v2/manifest",
+  "sourceDocument": "library/arxiv-math-0411505v2/manifest",
+  "provenance": "ingested"
+}

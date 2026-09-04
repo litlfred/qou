@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-x5-z5-automorphism",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:x5-z5-automorphism",
+  "kind": "proof",
+  "title": "Proof of x5 z5 automorphism",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism"
+  ],
+  "text": "x5-z5-automorphism-proof.md",
+  "provenance": "authored"
+}

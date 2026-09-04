@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9805023v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(k+l)(−1)k+lc− α − 1",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-math-9805023v1/blocks/prose-sec-006",
+    "library/arxiv-math-9805023v1/blocks/cor-sec-006-01"
+  ],
+  "derivedFrom": "library/arxiv-math-9805023v1/manifest",
+  "sourceDocument": "library/arxiv-math-9805023v1/manifest",
+  "provenance": "ingested"
+}

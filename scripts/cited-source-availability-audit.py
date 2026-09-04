@@ -1,0 +1,451 @@
+#!/usr/bin/env python3
+"""Which cited sources does this repo actually HOLD?
+
+The corpus-grep checklist's fifth path is "the library" — an item can be open
+in this corpus and settled in a paper we already hold, and that difference is
+what separates deriving a result from re-deriving one. The path only works if
+you can tell which sources are held. Nothing measured that, and the ledger
+that records it had drifted in BOTH directions.
+
+Three populations, joined:
+
+  cited     `cites[]` on authored blocks (read from the generated `.jsonld`
+            graph) plus `-- Ref: [key]` lines in `.lean` files.
+  declared  `content/bib-qa-verifications.json`, the source ledger: each entry
+            says `source.kind` is an `upload` (with a `file` path) or
+            `external` (with a URL).
+  held      what `library/` actually contains.
+
+A key is REACHABLE when a source file for it exists on disk. Everything else
+is reported by WHY it is not, because the four reasons need different fixes:
+
+  ledger-external      declared unavailable. May be true, may be stale — this
+                       script re-checks each one against `library/`.
+  ledger-file-missing  declared an upload whose file is not there.
+  ledger-absent        cited but never triaged at all.
+  recovered            declared not-held, but IS in `library/`. A ledger bug,
+                       and the one class that makes an agent re-derive a result
+                       the repo could have cited.
+
+It also reports the OPPOSITE gap: a source that is held and triaged but that
+no block can cite. Note that the ledger is only ONE side of that join —
+`references.ts` entries carry a `library` block naming the document they are
+held as, and that side is the authoritative one. Reading the ledger alone
+reports 195 uncitable sources where 183 are keyed on the other side.
+
+## What this does NOT claim
+
+**"Not held" is a statement about this repo, never about the literature.** A
+missing source is a thing to obtain or to cite externally; it is not evidence
+against the work that cites it.
+
+**The recovery pass is deliberately conservative and WILL under-report.** It
+matches a DOI or arXiv id against the library's doc-id, and a reference title
+against each document's OWN title (`manifest.jsonld`, else the summary brief)
+at a 0.7 token-overlap threshold with stopwords dropped. A short generic title
+("Quantum Groups") overlaps many documents at 1.0, so a match is offered as a
+CANDIDATE and single-word-content titles are suppressed entirely. Confirming
+one is an agent's call, not this script's — pass `--candidates` to see them.
+
+Naming a *held* document as not-held is the expensive error (it sends an agent
+off to re-derive), so the pass exists at all; naming an *unheld* one as held is
+worse still, so it does not guess.
+
+## Sentinel keys
+
+`manuscript` (AGENTS.md §1: the key to use when no published reference exists)
+and any key naming this folio itself are self-references, not sources. They
+are excluded and counted separately rather than silently dropped.
+
+Usage:
+  scripts/cited-source-availability-audit.py                 # summary
+  scripts/cited-source-availability-audit.py --list <class>  # one class, full
+  scripts/cited-source-availability-audit.py --candidates    # recovery guesses
+  scripts/cited-source-availability-audit.py --json OUT.json
+  scripts/cited-source-availability-audit.py --min-cites 50  # only load-bearing
+
+Exit 0 always: this reports a state, it does not gate. A cited-but-unheld
+source is a research-provenance fact, not a build error.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import subprocess
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+LEDGER = REPO / "content" / "bib-qa-verifications.json"
+LIBRARY = REPO / "library"
+CONTENT = REPO / "content"
+
+# Keys that are the folio talking about itself, not a source it could hold.
+SELF_KEYS = {"manuscript", "leitner2026"}
+
+STOPWORDS = {"the", "of", "and", "a", "an", "with", "in", "on", "for", "to", "its"}
+TITLE_OVERLAP = 0.7
+
+
+def norm_words(s: str) -> set[str]:
+    return {w for w in re.sub(r"[^a-z0-9 ]+", " ", (s or "").lower()).split()
+            if w not in STOPWORDS}
+
+
+def slug(s: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")
+
+
+def cited_keys() -> Counter:
+    """Every bibliography key cited anywhere, with how often."""
+    counts: Counter = Counter()
+    for f in CONTENT.rglob("*.jsonld"):
+        try:
+            doc = json.loads(f.read_text())
+        except Exception:
+            continue
+        for c in doc.get("cites") or []:
+            if isinstance(c, str) and c.startswith("references/"):
+                counts[c.split("/", 1)[1]] += 1
+    # Lean cites in comments, which no graph sees. Note the option order:
+    # `grep -- '-- Ref:'` makes a following `--include` a PATH, not a flag,
+    # which silently searched the wrong files and reported 0 of 6221 lines.
+    r = subprocess.run(
+        ["grep", "-rhoE", "--include=*.lean", "-e", r"-- Ref: \[[^]]+\]", str(CONTENT)],
+        capture_output=True, text=True,
+    )
+    for line in r.stdout.splitlines():
+        if "[" in line:
+            counts[line.split("[", 1)[1].rstrip("]")] += 1
+    return counts
+
+
+def load_ledger() -> tuple[dict, list]:
+    """(bib-key -> entry, entries carrying NO bib key).
+
+    Half the ledger has `id: null` — a held document that has been read and
+    triaged but joined to no `references.ts` entry, so nothing in the corpus
+    can cite it. Keying the whole file on `e["id"]` collapses all of those onto
+    one `None`, which is how they stayed invisible.
+    """
+    if not LEDGER.exists():
+        return {}, []
+    entries = json.loads(LEDGER.read_text()).get("entries", [])
+    keyed = {e["id"]: e for e in entries if isinstance(e.get("id"), str)}
+    unkeyed = [e for e in entries if not isinstance(e.get("id"), str)]
+    # A repeated id is not automatically a defect. The ledger has one row per
+    # FILE, and this library deliberately holds ~19 works more than once (a
+    # preprint beside its published version, or one PDF ingested twice), each
+    # extra copy naming the preferred one in its `duplicate_of` front-matter.
+    # Those copies SHOULD share the primary's key. What is a defect is two
+    # unrelated documents claiming one id — so separate the two rather than
+    # reporting a number that is mostly expected.
+    rows_by_id: dict[str, list] = defaultdict(list)
+    for e in entries:
+        if isinstance(e.get("id"), str):
+            f = (e.get("source") or {}).get("file")
+            rows_by_id[e["id"]].append(
+                Path(f).parent.name if f and (REPO / f).exists() else None)
+    copies, collisions = [], []
+    for key, raw in sorted(rows_by_id.items()):
+        # A row whose file is external or has vanished names no document, so it
+        # cannot collide with anything; and two rows on the SAME document are a
+        # bookkeeping duplicate, not two works fighting over one key.
+        docs = sorted({d for d in raw if d})
+        if len(docs) < 2:
+            continue
+        linked = {d for d in docs if _duplicate_of(d)} | {
+            _duplicate_of(d) for d in docs if _duplicate_of(d)}
+        (copies if linked & set(docs) else collisions).append((key, docs))
+    if copies:
+        print(f"  {len(copies)} bib id(s) shared by several HELD COPIES of one work "
+              f"(expected — `duplicate_of` links them)")
+    if collisions:
+        print(f"  {len(collisions)} bib id(s) claimed by UNRELATED documents — a lookup\n"
+              f"  keyed on id silently keeps one and discards the rest:")
+        for key, docs in collisions[:6]:
+            print(f"    {key:32} {', '.join(d[:26] for d in docs)}")
+    if copies or collisions:
+        print()
+    return keyed, unkeyed
+
+
+_DUP_CACHE: dict[str, str | None] = {}
+
+
+def _duplicate_of(docname: str) -> str | None:
+    """The document this copy defers to, from its section front-matter."""
+    if docname in _DUP_CACHE:
+        return _DUP_CACHE[docname]
+    out = None
+    d = LIBRARY / docname
+    if d.is_dir():
+        for s in sorted(d.glob("sections/*.md"))[:1]:
+            m = re.search(r'^duplicate_of:\s*"?([^"\n]+)"?', s.read_text(), re.M)
+            if m:
+                out = m.group(1).strip()
+    _DUP_CACHE[docname] = out
+    return out
+
+
+def load_refs() -> dict:
+    """Reference metadata, if `bun` can evaluate `references.ts`.
+
+    Optional: without it the recovery pass is skipped and said to be skipped,
+    rather than a clean run being reported as evidence of no recoveries.
+    """
+    script = REPO / "content" / "schema" / "references.ts"
+    if not script.exists():
+        return {}
+    prog = (
+        f'import {{ references }} from "{script}";\n'
+        'console.log(JSON.stringify(references.map((r) => ({'
+        ' id: r.id, title: r.title, DOI: r.DOI, URL: r.URL,'
+        ' libDocId: r.library?.docId, libDir: r.library?.dir }))));\n'
+    )
+    tmp = REPO / ".cited-source-audit.tmp.ts"
+    try:
+        tmp.write_text(prog)
+        r = subprocess.run(["bun", "run", str(tmp)], capture_output=True, text=True, timeout=300)
+        if r.returncode != 0:
+            return {}
+        return {x["id"]: x for x in json.loads(r.stdout)}
+    except Exception:
+        return {}
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def library_index() -> tuple[dict, dict]:
+    """(doc-id slug -> doc-id, doc-id -> its own title)."""
+    by_slug, titles = {}, {}
+    if not LIBRARY.is_dir():
+        return by_slug, titles
+    for p in sorted(LIBRARY.iterdir()):
+        if not p.is_dir():
+            continue
+        by_slug[slug(p.name)] = p.name
+        title = ""
+        mf = p / "manifest.jsonld"
+        if mf.exists():
+            try:
+                title = json.loads(mf.read_text()).get("title") or ""
+            except Exception:
+                pass
+        if not title:
+            sf = p / "summary.json"
+            if sf.exists():
+                try:
+                    title = (json.loads(sf.read_text()).get("brief") or "")[:200]
+                except Exception:
+                    pass
+        titles[p.name] = title
+    return by_slug, titles
+
+
+def recover(key: str, refs: dict, by_slug: dict, titles: dict) -> tuple[str | None, list]:
+    """(confirmed doc-id, candidate matches). Only an id/DOI hit is confirmed."""
+    r = refs.get(key) or {}
+    if r.get("DOI"):
+        c = slug(r["DOI"].split("/", 1)[-1])
+        if c in by_slug:
+            return by_slug[c], []
+    m = re.search(r"arxiv\.org/abs/([\w.\-/]+)", r.get("URL") or "", re.I)
+    if m:
+        for c in (slug("arxiv-" + m.group(1)), slug(m.group(1))):
+            if c in by_slug:
+                return by_slug[c], []
+    tw = norm_words(r.get("title") or "")
+    # A one- or two-word title matches far too much to mean anything.
+    if len(tw) < 3:
+        return None, []
+    cands = []
+    for doc, dt in titles.items():
+        dw = norm_words(dt)
+        if not dw:
+            continue
+        ov = len(tw & dw) / len(tw)
+        if ov >= TITLE_OVERLAP:
+            cands.append((round(ov, 2), doc, dt[:70]))
+    # An exact title match is as good as an id match; anything less is a guess.
+    exact = [c for c in cands if c[0] == 1.0 and norm_words(titles[c[1]]) == tw]
+    if len(exact) == 1:
+        return exact[0][1], []
+    return None, sorted(cands, reverse=True)[:3]
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--list", metavar="CLASS",
+                    choices=["reachable", "recovered", "ledger-external",
+                             "ledger-file-missing", "ledger-absent"])
+    ap.add_argument("--candidates", action="store_true",
+                    help="show unconfirmed title-overlap guesses")
+    ap.add_argument("--min-cites", type=int, default=0)
+    ap.add_argument("--json", metavar="OUT")
+    args = ap.parse_args()
+
+    cited = cited_keys()
+    ledger, unkeyed = load_ledger()
+    refs = load_refs()
+    by_slug, titles = library_index()
+
+    if not cited:
+        print("No citations found. If content/**/*.jsonld is absent, run\n"
+              "  bun run folio-assistant/content/pipeline/gen-block-jsonld.ts\n"
+              "first — an ungenerated graph reads as a corpus that cites nothing.")
+        return 0
+
+    # `references.ts` entries carry a `library` block naming the document they
+    # are held as. That is the authoritative side of the join, so a key held
+    # there is REACHABLE even when the ledger says external or knows nothing —
+    # reading the ledger alone under-reports availability in both directions.
+    lib_of: dict[str, str] = {}
+    for r in refs.values():
+        d = r.get("libDir") or (f"library/{r['libDocId']}" if r.get("libDocId") else None)
+        if d and (REPO / d).is_dir():
+            lib_of[r["id"]] = d
+
+    buckets: dict[str, list] = defaultdict(list)
+    candidates: dict[str, list] = {}
+    self_refs = []
+
+    for key, n in cited.items():
+        if key in SELF_KEYS:
+            self_refs.append((key, n))
+            continue
+        entry = ledger.get(key)
+        src = (entry or {}).get("source") or {}
+        if src.get("kind") == "upload" and (REPO / src.get("file", "")).exists():
+            buckets["reachable"].append((key, n, src["file"]))
+            continue
+        if key in lib_of:
+            buckets["reachable"].append((key, n, lib_of[key] + "  (via references.ts)"))
+            continue
+        doc, cands = (recover(key, refs, by_slug, titles) if refs else (None, []))
+        if doc:
+            buckets["recovered"].append((key, n, f"library/{doc}"))
+            continue
+        if cands:
+            candidates[key] = cands
+        if entry is None:
+            buckets["ledger-absent"].append((key, n, ""))
+        elif src.get("kind") == "external":
+            buckets["ledger-external"].append((key, n, src.get("url") or "(no url)"))
+        else:
+            buckets["ledger-file-missing"].append((key, n, src.get("file", "")))
+
+    total = sum(len(v) for v in buckets.values())
+    print(f"cited bibliography keys: {total} "
+          f"({sum(n for _, n in self_refs)} citations to {len(self_refs)} self-reference "
+          f"key(s) excluded: {', '.join(k for k, _ in self_refs) or '—'})")
+    print(f"library documents: {len(titles)}\n")
+    for name in ("reachable", "recovered", "ledger-external",
+                 "ledger-file-missing", "ledger-absent"):
+        rows = buckets[name]
+        cites = sum(n for _, n, _ in rows)
+        print(f"  {name:20} {len(rows):5} key(s)  {cites:6} citation(s)")
+    if not refs:
+        print("\n  NOTE: `bun` could not evaluate references.ts, so the recovery pass\n"
+              "  did NOT run. `recovered` is 0 because it was not measured.")
+
+    # The other direction: a HELD, TRIADED source that no block can cite.
+    #
+    # THE JOIN HAS TWO SIDES AND ONLY ONE OF THEM IS AUTHORITATIVE. The ledger
+    # carries a bib id per row, and `references.ts` carries a `library` block
+    # per entry naming the document it is held as. Reading only the ledger
+    # reports 195 uncitable sources where 183 of them are keyed perfectly well
+    # on the OTHER side — and `references.ts` is the side AGENTS.md calls
+    # authoritative for bibliographic metadata. A ledger row with `id: null` is
+    # therefore a STALE LEDGER, not an uncitable source, unless `references.ts`
+    # also has nothing for that document.
+    if unkeyed:
+        by_doc = {}
+        for r in refs.values():
+            for k in ("libDocId", "libDir"):
+                v = r.get(k)
+                if v:
+                    by_doc[Path(v).name] = r["id"]
+        stale, orphan = [], []
+        for e in unkeyed:
+            doc = Path((e.get("source") or {}).get("file") or "_").parent.name
+            (stale if by_doc.get(doc) else orphan).append((e, by_doc.get(doc)))
+        if refs:
+            print(f"\n  ledger rows with `id: null`: {len(unkeyed)}")
+            print(f"    keyed in references.ts already — STALE LEDGER: {len(stale)}")
+            print(f"    no bibliography entry anywhere — UNCITABLE:    {len(orphan)}")
+            if orphan:
+                verdicts = Counter((e.get("relevance") or {}).get("verdict", "(untriaged)")
+                                   for e, _ in orphan)
+                for verdict in ("core", "supporting", "tangential", "not-relevant",
+                                "undetermined", "(untriaged)"):
+                    if verdicts.get(verdict):
+                        print(f"      relevance {verdict:14} {verdicts[verdict]:4}")
+                print("      Check `duplicate_of` in the document's section front-matter\n"
+                      "      before minting: a duplicate copy needs the PRIMARY's key,\n"
+                      "      not a second one.")
+        else:
+            print(f"\n  ledger rows with `id: null`: {len(unkeyed)} — CANNOT SPLIT stale\n"
+                  "    from uncitable without references.ts, which `bun` could not read.")
+
+    # "Not held" is 382 keys, and most of them are books and journal papers that
+    # a PDF library was never going to contain. What is actionable is narrower,
+    # so split it by whether the reference itself names a way to get the thing.
+    not_held = [row for name in ("ledger-external", "ledger-file-missing",
+                                 "ledger-absent") for row in buckets[name]]
+    if not_held and refs:
+        groups = {"arXiv preprint": [], "DOI only (journal)": [], "no locator": []}
+        for key, n, _ in not_held:
+            m = refs.get(key, {})
+            if re.search(r"arxiv\.org", m.get("URL") or "", re.I):
+                groups["arXiv preprint"].append((key, n))
+            elif m.get("DOI"):
+                groups["DOI only (journal)"].append((key, n))
+            else:
+                groups["no locator"].append((key, n))
+        print(f"\n  of the {len(not_held)} not-held keys, by how the reference says to "
+              f"reach it:")
+        for label, rows in groups.items():
+            print(f"    {label:22} {len(rows):4} key(s)  {sum(n for _, n in rows):5} citation(s)")
+        top = sorted(groups["arXiv preprint"], key=lambda t: -t[1])[:5]
+        if top:
+            print("    most-cited with an arXiv URL: "
+                  + ", ".join(f"{k} ({n})" for k, n in top))
+
+    if args.list:
+        rows = sorted(buckets[args.list], key=lambda t: -t[1])
+        rows = [r for r in rows if r[1] >= args.min_cites]
+        print(f"\n{args.list} ({len(rows)} shown, most-cited first):")
+        for key, n, where in rows:
+            title = (refs.get(key, {}).get("title") or "")[:58]
+            print(f"  {n:5}  {key:26} {title:60} {where}")
+
+    if args.candidates:
+        print(f"\nunconfirmed title-overlap candidates ({len(candidates)} key(s)) —\n"
+              "AGENT VERDICT REQUIRED; a high score on a short title means nothing:")
+        for key in sorted(candidates, key=lambda k: -cited[k]):
+            print(f"  {cited[key]:5}  {key}  ({(refs.get(key, {}).get('title') or '')[:50]})")
+            for ov, doc, dt in candidates[key]:
+                print(f"           {ov:4}  library/{doc:38} {dt}")
+
+    if args.json:
+        Path(args.json).write_text(json.dumps({
+            "cited_total": total,
+            "held_uncitable": len(unkeyed),
+            "held_uncitable_by_relevance": dict(Counter(
+                (e.get("relevance") or {}).get("verdict", "(untriaged)") for e in unkeyed)),
+            "self_references": dict(self_refs),
+            "recovery_pass_ran": bool(refs),
+            "buckets": {k: [{"id": i, "cites": n, "where": w} for i, n, w in v]
+                        for k, v in buckets.items()},
+            "candidates": candidates,
+        }, indent=1) + "\n")
+        print(f"\nWrote {args.json}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

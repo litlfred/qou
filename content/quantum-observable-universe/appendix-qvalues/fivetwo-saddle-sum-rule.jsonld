@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-fivetwo-saddle-sum-rule",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:fivetwo-saddle-sum-rule",
+  "kind": "proposition",
+  "title": "The $5_2$ saddle sum rule: the dilogarithm trace over the three tetrahedron shapes closes to $-\\pi^2/6 - \\tfrac12\\log^2 t + \\tfrac23(\\arg a - \\pi)^2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fivetwo-trace-field",
+    "papers/quantum-observable-universe/blocks/prop-hyperbolic-knot-shape-fields"
+  ],
+  "cites": [
+    "references/zagier1986",
+    "references/ohtsuki2016"
+  ],
+  "tags": [
+    "five-two",
+    "saddle-sum-rule",
+    "dilogarithm",
+    "five-term-identity",
+    "trace-field",
+    "bar-even"
+  ],
+  "leanRef": "qou:QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule",
+  "text": "fivetwo-saddle-sum-rule.md",
+  "provenance": "authored"
+}

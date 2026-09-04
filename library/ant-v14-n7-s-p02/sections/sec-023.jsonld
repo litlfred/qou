@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p02/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Comparison between equations on integrals and equations on series",
+  "pageStart": 29,
+  "pageEnd": 31,
+  "contains": [
+    "library/ant-v14-n7-s-p02/blocks/prose-sec-023",
+    "library/ant-v14-n7-s-p02/blocks/prop-sec-023-01",
+    "library/ant-v14-n7-s-p02/blocks/cor-sec-023-02",
+    "library/ant-v14-n7-s-p02/blocks/ex-sec-023-03"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p02/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p02/manifest",
+  "provenance": "ingested"
+}

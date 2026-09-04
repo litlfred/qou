@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-bar-involution-table6-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:bar-involution-table6-data",
+  "kind": "table",
+  "title": "Data table 6 from def:bar-involution",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "bar-involution-table6-data.md",
+  "provenance": "authored"
+}

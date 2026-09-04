@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-q-alg-9712055v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The q-Fourier transform of q-distributions. M.A.Olshanetsky",
+  "contains": [
+    "library/arxiv-q-alg-9712055v2/sections/sec-000",
+    "library/arxiv-q-alg-9712055v2/sections/sec-001",
+    "library/arxiv-q-alg-9712055v2/sections/sec-002",
+    "library/arxiv-q-alg-9712055v2/sections/sec-003",
+    "library/arxiv-q-alg-9712055v2/sections/sec-004",
+    "library/arxiv-q-alg-9712055v2/sections/sec-005",
+    "library/arxiv-q-alg-9712055v2/sections/sec-006",
+    "library/arxiv-q-alg-9712055v2/sections/sec-007",
+    "library/arxiv-q-alg-9712055v2/sections/sec-008",
+    "library/arxiv-q-alg-9712055v2/sections/sec-009",
+    "library/arxiv-q-alg-9712055v2/sections/sec-010",
+    "library/arxiv-q-alg-9712055v2/sections/sec-011",
+    "library/arxiv-q-alg-9712055v2/sections/sec-012",
+    "library/arxiv-q-alg-9712055v2/sections/sec-013",
+    "library/arxiv-q-alg-9712055v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9712055v2",
+    "source_file": "9712055v2.pdf",
+    "source_sha256": "eccb15d2c3dc7346a6f116a854aba7cf6a2cfbb5df975cf5d35597cecfa85968",
+    "pages": 18,
+    "arxiv": {
+      "id": "q-alg/9712055",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "12 Jan 1998"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

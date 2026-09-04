@@ -7,6 +7,7 @@ section_number: null
 pages: 56-58
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 [1] J. W. Alexander, Topological invariants of knots and links, Trans. ArneI'. Math. Soc. 30 (2)
 (1928) 275-306.

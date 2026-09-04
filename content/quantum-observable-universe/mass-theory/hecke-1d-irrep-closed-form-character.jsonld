@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-hecke-1d-irrep-closed-form-character",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hecke-1d-irrep-closed-form-character",
+  "kind": "proposition",
+  "title": "Universal closed form for 1-d Hecke irrep characters: $\\chi^{(n)}_q(\\beta) = q^w \\cdot ([2]_q/2)^m$ and $\\chi^{(1^n)}_q(\\beta) = (-q^{-1})^w \\cdot (-[2]_q/2)^m$ for typed braids of any $n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-cos-resummation"
+  ],
+  "cites": [
+    "references/wenzl1988",
+    "references/jones1985"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "1d-irrep",
+    "closed-form",
+    "universal-formula",
+    "writhe",
+    "averaged-crossings",
+    "substrate-derivable",
+    "tau-M-decomposition",
+    "1ppb-roadmap"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.Hecke1dIrrep.hecke_1d_irrep_closed_form_character",
+  "text": "hecke-1d-irrep-closed-form-character.md",
+  "leanSource": "hecke-1d-irrep-closed-form-character.lean",
+  "provenance": "authored"
+}

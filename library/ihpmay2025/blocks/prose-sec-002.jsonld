@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Life in the hyperbolic plane",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-02-life-in-the-hyperbolic-plane.md",
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

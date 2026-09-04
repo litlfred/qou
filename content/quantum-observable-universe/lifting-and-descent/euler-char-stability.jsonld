@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-euler-char-stability",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:euler-char-stability",
+  "kind": "proposition",
+  "title": "Stability of the Euler characteristic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-characteristic-classes"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-euler-char-stability",
+    "papers/quantum-observable-universe/blocks/prf-euler-char-stability-C"
+  ],
+  "tags": [
+    "euler-characteristic",
+    "brane-tower",
+    "frobenius-trace"
+  ],
+  "leanRef": "qou:QOU.Torsion.euler_char_constant",
+  "text": "euler-char-stability.md",
+  "leanSource": "euler-char-stability.lean",
+  "provenance": "authored"
+}

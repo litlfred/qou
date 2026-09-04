@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-tau-assignment-tower-square",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tau-assignment-tower-square",
+  "kind": "proposition",
+  "title": "The $\\tau$-assignment tower square: $H_3 \\hookrightarrow H_4$ compatibility",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/prop-coxeter-parabolic-transversal"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "markov-trace",
+    "monodromy",
+    "tower-inclusion",
+    "hodge-lift"
+  ],
+  "leanRef": "qou:QOU.Machinery.HeckeGeneral.tauAssignment_tower_natural",
+  "text": "tau-assignment-tower-square.md",
+  "provenance": "authored"
+}

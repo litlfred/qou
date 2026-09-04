@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-hoefsmit-is-surreal-construction",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:hoefsmit-is-surreal-construction",
+  "kind": "proof",
+  "title": "Proof of hoefsmit is surreal construction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-is-surreal-construction"
+  ],
+  "text": "hoefsmit-is-surreal-construction-proof.md",
+  "provenance": "authored"
+}

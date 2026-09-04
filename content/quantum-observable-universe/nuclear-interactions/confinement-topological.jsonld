@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-topological",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-topological",
+  "kind": "proposition",
+  "title": "Confinement is topological (LP proof)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-lp"
+  ],
+  "tags": [
+    "confinement",
+    "topological",
+    "linear-programming",
+    "gram-matrix",
+    "negative-eigenvalue",
+    "borromean"
+  ],
+  "leanRef": "qou:QOU.Interactions.gram_indefinite_witness",
+  "text": "confinement-topological.md",
+  "provenance": "authored"
+}

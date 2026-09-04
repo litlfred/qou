@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Structure of Octonions and the Fano Plane",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-007-structure-of-octonions-and-the-fano-plane.md",
+  "derivedFrom": "library/quaternioms/manifest",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/roth-lemma/blocks/lem-sec-000-01",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 1,
+  "pageEnd": 5,
+  "text": "lem-sec-000-01.md",
+  "derivedFrom": "library/roth-lemma/sections/sec-000",
+  "sourceDocument": "library/roth-lemma/manifest",
+  "provenance": "ingested"
+}

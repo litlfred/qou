@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2304.07001v3/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-2304.07001v3/blocks/prose-sec-000",
+    "library/arxiv-2304.07001v3/blocks/conj-sec-000-01",
+    "library/arxiv-2304.07001v3/blocks/thm-sec-000-02",
+    "library/arxiv-2304.07001v3/blocks/cor-sec-000-03",
+    "library/arxiv-2304.07001v3/blocks/cor-sec-000-04",
+    "library/arxiv-2304.07001v3/blocks/cor-sec-000-05"
+  ],
+  "derivedFrom": "library/arxiv-2304.07001v3/manifest",
+  "sourceDocument": "library/arxiv-2304.07001v3/manifest",
+  "provenance": "ingested"
+}

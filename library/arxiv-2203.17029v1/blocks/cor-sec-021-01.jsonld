@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2203.17029v1/blocks/cor-sec-021-01",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 40,
+  "pageEnd": 42,
+  "text": "cor-sec-021-01.md",
+  "derivedFrom": "library/arxiv-2203.17029v1/sections/sec-021",
+  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "provenance": "ingested"
+}

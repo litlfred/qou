@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/022201-1-online/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Online Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann ; Tyler Helmuth",
+  "contains": [
+    "library/022201-1-online/sections/sec-000",
+    "library/022201-1-online/sections/sec-001",
+    "library/022201-1-online/sections/sec-002",
+    "library/022201-1-online/sections/sec-003",
+    "library/022201-1-online/sections/sec-004",
+    "library/022201-1-online/sections/sec-005",
+    "library/022201-1-online/sections/sec-006",
+    "library/022201-1-online/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "022201-1-online",
+    "source_file": "022201_1_online.pdf",
+    "source_sha256": "50331bf18a2bd4d5e3b3dcbbde4da73c4884a60d94e266b3a9fc2ab62ccd716e",
+    "pages": 8,
+    "arxiv": null,
+    "doi": "10.1063/5.0013689",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

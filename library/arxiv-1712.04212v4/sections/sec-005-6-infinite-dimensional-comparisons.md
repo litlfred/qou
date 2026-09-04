@@ -7,6 +7,7 @@ section_number: 6
 pages: 26-30
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
+doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
 ---
 6.1. Relative volume comparisons. In order to prove Theorem 1.4,
 we develop comparison geometry of manifolds with boundary under the

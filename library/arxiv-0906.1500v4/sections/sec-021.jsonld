@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0906.1500v4/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of Theorem 5. We begin by introducing the complexes needed in the proof",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-0906.1500v4/blocks/prose-sec-021",
+    "library/arxiv-0906.1500v4/blocks/lem-sec-021-01"
+  ],
+  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
+  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/s40687-023-00400-3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros",
+  "contains": [
+    "library/s40687-023-00400-3/sections/sec-000",
+    "library/s40687-023-00400-3/sections/sec-001",
+    "library/s40687-023-00400-3/sections/sec-002",
+    "library/s40687-023-00400-3/sections/sec-003",
+    "library/s40687-023-00400-3/sections/sec-004",
+    "library/s40687-023-00400-3/sections/sec-005",
+    "library/s40687-023-00400-3/sections/sec-006",
+    "library/s40687-023-00400-3/sections/sec-007",
+    "library/s40687-023-00400-3/sections/sec-008",
+    "library/s40687-023-00400-3/sections/sec-009",
+    "library/s40687-023-00400-3/sections/sec-010",
+    "library/s40687-023-00400-3/sections/sec-011",
+    "library/s40687-023-00400-3/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "s40687-023-00400-3",
+    "source_file": "s40687-023-00400-3.pdf",
+    "source_sha256": "fd7638a8cf512a9986d02292f111bbbd92ca6c46dddfedef6ece56fc145ca4ee",
+    "pages": 23,
+    "arxiv": null,
+    "doi": "10.1007/s40687-023-00400-3",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

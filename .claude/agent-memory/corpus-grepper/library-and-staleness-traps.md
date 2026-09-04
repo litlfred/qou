@@ -75,16 +75,6 @@ corrupted a later agent's corpus-grep badly enough to nearly land a false
 correction in a PR body (bean `qou-2ryn`). Your searches read `.beans/`;
 that is why this matters to you.
 
-## TRAP — a number can be stale by CONVENTION and by IMPORT-CONE at once
-
-Before citing any measured binding/Gram figure predating **2026-08-09**, check
-convention (C vs the canonical D), the float64 baseline, and import-cone drift
-— the 2026-07-11 ghost-Gram witnesses fail all three. **Separate the algebra
-from the numbers:** factorisation and trace identities survive a convention
-change; every decimal does not. Evidence:
-`library-and-staleness-traps.md`.
-
-
 ## TRAP — a ripgrep FILE CAP is not a result (measured on myself, 2026-08-30)
 
 A scoped SEMF sweep returned `Found 60 files limit: 60`. That line is
@@ -129,3 +119,25 @@ Asked again 2026-08-30 and it costs a full sweep each time. The answer:
 `CrossingCountAffine` excludes only the LINEAR class; the counts reach it
 quadratically (`16·Z(Z-1) = (n₊-n₋)(n₊-n₋-4)`, `CoulombFromCrossingCounts`).
 Keep the two halves of `Z(Z-1)/A^{1/3}` apart — one is open, one is closed.
+
+## Moved from `MEMORY.md` 2026-09-03 (200-line cap)
+
+## STABLE — the library, three tiers
+
+```sh
+grep -in <topic> library/INDEX.md              # 320 one-line briefs, ~14k tokens total
+cat library/<doc-id>/summary.json              # ~300 tokens: worth opening?
+grep -rln <topic> library/<doc-id>/sections/   # the text itself
+```
+
+Full-text fallback: `grep -rln <topic> library/*/sections/`. Do not grep
+straight into that when a line of `INDEX.md` will do. **But see the `ocr/`
+TRAP below — `sections/` is not always the text.**
+
+A section file's YAML front-matter names document, section and page range,
+so a hit is immediately citable. `library/<doc-id>/candidates.json` holds
+that document's extracted theorems and definitions.
+
+Briefs and summaries are **extractive** — assembled from each document's own
+abstract and section titles, nothing model-written — so a brief is only as
+good as the abstract behind it.

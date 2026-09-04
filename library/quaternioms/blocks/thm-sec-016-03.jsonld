@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/thm-sec-016-03",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Polynomial simulation equivalence H ↔ C",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "thm-sec-016-03.md",
+  "derivedFrom": "library/quaternioms/sections/sec-016",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

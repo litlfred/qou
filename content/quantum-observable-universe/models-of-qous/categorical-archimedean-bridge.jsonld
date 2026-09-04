@@ -1,0 +1,39 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-archimedean-bridge",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-archimedean-bridge",
+  "kind": "proposition",
+  "title": "Categorical--geometric correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-spatial-realization-functor",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-archimedean-bridge"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-calabi-yau",
+    "papers/quantum-observable-universe/blocks/ex-ale",
+    "papers/quantum-observable-universe/blocks/ex-brings-surface",
+    "papers/quantum-observable-universe/blocks/ex-cosmological-limits",
+    "papers/quantum-observable-universe/blocks/ex-instanton",
+    "papers/quantum-observable-universe/blocks/ex-irreducible-connection",
+    "papers/quantum-observable-universe/blocks/ex-self-dual-curvature",
+    "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi",
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition",
+    "papers/quantum-observable-universe/blocks/rem-gr-substrate-geometry"
+  ],
+  "tags": [
+    "bridge",
+    "fibre-functor",
+    "contact-geometry"
+  ],
+  "leanRef": "qou:QOU.categorical_archimedean_bridge",
+  "text": "categorical-archimedean-bridge.md",
+  "leanSource": "categorical-archimedean-bridge.lean",
+  "provenance": "authored"
+}

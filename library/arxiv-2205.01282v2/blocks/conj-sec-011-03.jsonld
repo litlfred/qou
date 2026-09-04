@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2205.01282v2/blocks/conj-sec-011-03",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "conj-sec-011-03.md",
+  "derivedFrom": "library/arxiv-2205.01282v2/sections/sec-011",
+  "sourceDocument": "library/arxiv-2205.01282v2/manifest",
+  "provenance": "ingested"
+}

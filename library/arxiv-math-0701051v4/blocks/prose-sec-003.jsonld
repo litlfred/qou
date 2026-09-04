@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0701051v4/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The main result",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-13-the-main-result.md",
+  "derivedFrom": "library/arxiv-math-0701051v4/manifest",
+  "sourceDocument": "library/arxiv-math-0701051v4/manifest",
+  "provenance": "ingested"
+}

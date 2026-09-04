@@ -1,11 +1,11 @@
 ---
 # qou-6sts
 title: 'raw-float64 ratchet is RED on main again: 1 new + 1 regressed (2026-08-31)'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-31T03:49:09Z
-updated_at: 2026-08-31T07:32:06Z
+updated_at: 2026-09-03T11:06:59Z
 ---
 
 MEASURED on `main` `83f5e6482e`, 2026-08-31T03:5xZ, by running
@@ -117,3 +117,29 @@ reading a number and calling it a gate, which is precisely the distinction
 this bean's second trap is about. Recorded here rather than in a bean of its
 own because it belongs to the same family: three ways to believe this ratchet
 is green when it is not, and only one of them involves the corpus at all.
+
+## 2026-09-03 — ratchet GREEN (NEW 0 / REGRESSED 0), exit 0 (session cool-johnson-t1wveh)
+
+Drained at the producers (compute-precision-auditor sub-agent, verified). The
+list had drifted: 174 of the originally-listed witnesses were already drained on
+this branch; the live dirty set was **2 NEW + 3 REGRESSED**, all handled. No
+`--rebaseline`, no baseline additions, no hand-edited numbers; git status
+confirmed no sibling witnesses collaterally written.
+
+| Witness | before -> after | disposition |
+|---|---|---|
+| probes/arc-count-diagnostic-degeneracy | 4 -> 0 | float(Fraction) -> exact rational to mpf, fmt |
+| probes/bpp-higher-a-sparse | 2 -> 0 | per-row wall-clock renamed to reserved `elapsed_sec` |
+| meson-spectrum-predictions | 20 -> 0 | full mpmath rewrite of the Markov-trace path (was float64 numpy) |
+| delta-n2-lp-dual-extraction | 22 -> 0 | float64-seeded mp.mpf(Q0_FLOAT) -> full-precision Q_MP; 7/7 assertions pass |
+| audits/braid-encoding-audit | 91 -> 6 | regression cleared (6 << baseline 89); residual is UPSTREAM float64 |
+
+Commits: 9c8f0ca112, 0f546a2c93, 4228812c59, c80524fc70.
+
+**Honest residual (NOT papered over):** braid-encoding-audit retains 6 float64
+fields it cannot drain downstream — they echo float64 stored in the UPSTREAM
+witnesses `option-b-proton-mass-full-chain.witness.json` and
+`markov-trace-assembly-proton.derivation.json`, plus a hardcoded content-block
+quote. This is the 'float64 input poisons the result' case. Draining to 0 needs
+the upstream producers fixed -> follow-up bean (see below). The sub-agent
+deliberately did NOT stringify the upstream floats to fake a pass.

@@ -202,8 +202,9 @@ _Q0_VALUE_CACHE: dict = {}
 
 
 def _q0_value_for_anchor(anchor: str) -> Optional[str]:
-    """The 50-digit q₀ string for a given anchor (cached). muon ← the committed
-    q-pinning witness; proton ← the package constant.
+    """The 50-digit q₀ string for a given anchor (cached). Both anchors are
+    DERIVED: muon ← ``q_muon_at()``, proton ← the package constant. Neither is
+    read back out of a witness — see the 2026-09-03 note at the end.
 
     REVERTED 2026-08-15, same day, after a red-team pass. I had changed the
     muon branch to DERIVE from ``q_muon_at()``. That was a regression, and the
@@ -258,14 +259,48 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     The LABEL still moves with the value: ``_Q0_PREFIXES`` below carries the
     muon prefix, so it decides what gets stamped ``muon`` and must be updated
     in the same change as the anchor, exactly as this docstring warns.
+
+    **DERIVED 2026-09-03 (bean qou-tekx, stage 3b). Do not re-revert.** The
+    muon branch now derives from ``q_muon_at()``. The 2026-08-15 revert above
+    was right *at the time* and its objection is now void: it said deriving
+    made the STAMP disagree with the COMPUTE (1.1099785955573347 computed vs
+    1.1099785955541805 stamped). Since ``fca08de7d2`` the compute DERIVES too —
+    ``q_parameter``'s ideal branch takes ``q`` from the same ``q_muon_at()`` —
+    so deriving here makes the two AGREE. The paragraph above already says the
+    loop "is now broken"; it was broken on the compute side only, and this
+    read was the half that survived.
+
+    Why it was safe, all measured before the change:
+
+    * ``q_muon_at(70)`` reproduces the committed ``derived_50_digit.q``
+      **byte-identically**, all 70 digits — so no stamped value moves.
+    * ``q0_anchor_consistency_audit.py`` returns **all 13 counters identical**
+      to ``main`` (Q0_OK 1145, Q0_FLIP 1, …). A pure no-op on outcomes.
+    * The read was a genuine self-certification loop: with the witness file
+      absent this returned ``None``, so ``q_pinning_50_digit.py`` — which is
+      what WRITES that witness — silently dropped its own ``q0Value``. It now
+      round-trips from nothing.
+
+    ``_Q0_PREFIXES`` needed no change: it already carried the CODATA-2022 muon
+    prefix ``1.10997859564``.
     """
     if anchor in _Q0_VALUE_CACHE:
         return _Q0_VALUE_CACHE[anchor]
     val: Optional[str] = None
     try:
         if anchor == "muon":
-            p = _repo_root() / "computations" / "q-pinning-50-digit.witness.json"
-            val = json.loads(p.read_text(encoding="utf-8"))["derived_50_digit"]["q"]
+            # DERIVED, not read back (bean qou-tekx stage 3b, 2026-09-03).
+            # See the docstring: the REVERTED-2026-08-15 objection was that
+            # deriving made the STAMP disagree with the COMPUTE. That objection
+            # is void since fca08de7d2 — `q_parameter`'s ideal branch now
+            # DERIVES the compute from the same `q_muon_at()`, so deriving here
+            # makes the two agree rather than diverge. Verified byte-identical
+            # to the value this used to read: q_muon_at(70) reproduces the
+            # committed `derived_50_digit.q` exactly, all 70 digits.
+            import mpmath as _mp  # noqa: PLC0415
+            from qou_substrate.constants import q_muon_at  # noqa: PLC0415
+            with _mp.workdps(90):
+                val = _mp.nstr(q_muon_at(70), 70)
         elif anchor == "proton":
             from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: PLC0415
             val = str(Q_50_DIGIT_STR)
@@ -1611,6 +1646,7 @@ class WitnessBuilder:
         engine: Optional[str] = "python",
         engine_version: Optional[str] = None,
         q0_anchor: Union[str, bool, None] = None,
+        q0_anchor_reason: Optional[str] = None,
         q0_value: Optional[str] = None,
     ) -> dict:
         """Public helper: stamp the WitnessBuilder staleness fields onto
@@ -1653,6 +1689,19 @@ class WitnessBuilder:
         out to be inert is a labelling problem, while a MISSING anchor on a
         witness that does depend on q₀ is the ambiguity the field exists to
         prevent.
+
+        ``q0_anchor_reason`` is the free text that goes with the anchor, and it
+        exists because its absence was being routed into ``q0_anchor``. Until
+        2026-09-03 this helper had no reason slot for a *string* anchor — only
+        the ``False`` branch wrote ``q0AnchorReason`` — so a producer wanting
+        to say *why* had one field to say it in, and **17 of them wrote prose
+        into the token**: ``"proton (experimental pin)"``,
+        ``"muon (convention-free geometric pin) @ CODATA 2022"``. The anchor
+        audit then could not map the label to a pin, so it never checked those
+        witnesses at all and reported each as a flip. The producers were not
+        being careless; the API left them nowhere else to put it.
+
+        Pass the bare token in ``q0_anchor`` and the prose here.
 
         ``engine`` accepts ``None`` meaning **keep whatever the payload already
         declares**, falling back to ``"python"`` when it declares nothing. The
@@ -1766,6 +1815,11 @@ class WitnessBuilder:
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
                 payload["q0Value"] = q0_value
+        # setdefault for the same reason the anchor itself is guarded: a reason
+        # the producer already wrote into the payload is its own declaration
+        # and wins over the one passed a call frame out.
+        if q0_anchor_reason is not None:
+            payload.setdefault("q0AnchorReason", q0_anchor_reason)
         return payload
 
     def is_fresh(self) -> bool:

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0302267v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Soient k un corps de nombres et S un ensemble ﬁni de places ﬁnies de k. Le foncteur",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-math-0302267v2/blocks/prose-sec-009",
+    "library/arxiv-math-0302267v2/blocks/prop-sec-009-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
+  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "provenance": "ingested"
+}

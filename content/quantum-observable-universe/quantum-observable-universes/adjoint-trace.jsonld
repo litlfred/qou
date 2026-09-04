@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-adjoint-trace",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:adjoint-trace",
+  "kind": "remark",
+  "title": "Adjoint trace and the categorical inner product",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-fiber-adjoint-involution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+  "tags": [
+    "adjoint",
+    "trace",
+    "inner-product",
+    "frobenius"
+  ],
+  "text": "adjoint-trace.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/blocks/thm-sec-030-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "text": "thm-sec-030-01.md",
+  "derivedFrom": "library/zhao-standard-2010/sections/sec-030",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

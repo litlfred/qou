@@ -7,6 +7,7 @@ section_number: 2
 pages: 31-32
 source_pdf: 9910147v1.pdf
 source_sha256: 1feefdb019e76ea7
+doc_brief: "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir ∗ — We study the tensor product of principal unitary representa tions of the"
 ---
 pothesis, we obtain that there exists a constant C3, with ∀B, ∀ρ, |Λ BB+R
 AD+1 (m,ρ )Λ

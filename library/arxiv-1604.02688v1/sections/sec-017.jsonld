@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1604.02688v1/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Solid torus",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-1604.02688v1/blocks/prose-sec-017",
+    "library/arxiv-1604.02688v1/blocks/lem-sec-017-01",
+    "library/arxiv-1604.02688v1/blocks/rem-sec-017-02",
+    "library/arxiv-1604.02688v1/blocks/cor-sec-017-03",
+    "library/arxiv-1604.02688v1/blocks/lem-sec-017-04",
+    "library/arxiv-1604.02688v1/blocks/ex-sec-017-05"
+  ],
+  "derivedFrom": "library/arxiv-1604.02688v1/manifest",
+  "sourceDocument": "library/arxiv-1604.02688v1/manifest",
+  "provenance": "ingested"
+}

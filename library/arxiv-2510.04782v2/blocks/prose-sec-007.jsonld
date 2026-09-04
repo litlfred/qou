@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2510.04782v2/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The main result",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "text": "../sections/sec-007-32-the-main-result.md",
+  "derivedFrom": "library/arxiv-2510.04782v2/manifest",
+  "sourceDocument": "library/arxiv-2510.04782v2/manifest",
+  "provenance": "ingested"
+}

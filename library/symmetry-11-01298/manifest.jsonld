@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/symmetry-11-01298/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics",
+  "contains": [
+    "library/symmetry-11-01298/sections/sec-000",
+    "library/symmetry-11-01298/sections/sec-001",
+    "library/symmetry-11-01298/sections/sec-002",
+    "library/symmetry-11-01298/sections/sec-003",
+    "library/symmetry-11-01298/sections/sec-004",
+    "library/symmetry-11-01298/sections/sec-005",
+    "library/symmetry-11-01298/sections/sec-006",
+    "library/symmetry-11-01298/sections/sec-007",
+    "library/symmetry-11-01298/sections/sec-008",
+    "library/symmetry-11-01298/sections/sec-009",
+    "library/symmetry-11-01298/sections/sec-010",
+    "library/symmetry-11-01298/sections/sec-011",
+    "library/symmetry-11-01298/sections/sec-012",
+    "library/symmetry-11-01298/sections/sec-013",
+    "library/symmetry-11-01298/sections/sec-014",
+    "library/symmetry-11-01298/sections/sec-015",
+    "library/symmetry-11-01298/sections/sec-016",
+    "library/symmetry-11-01298/sections/sec-017",
+    "library/symmetry-11-01298/sections/sec-018",
+    "library/symmetry-11-01298/sections/sec-019",
+    "library/symmetry-11-01298/sections/sec-020",
+    "library/symmetry-11-01298/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "symmetry-11-01298",
+    "source_file": "symmetry-11-01298.pdf",
+    "source_sha256": "595648c84501e8a6c184d579dbbab5bb974d107bf2d6c127ed6d93c1a335cff9",
+    "pages": 26,
+    "arxiv": null,
+    "doi": "10.3390/sym11101298",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

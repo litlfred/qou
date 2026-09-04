@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1203.3404v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Ramanujan function Aq(x)",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-1203.3404v1/blocks/prose-sec-002",
+    "library/arxiv-1203.3404v1/blocks/rem-sec-002-01"
+  ],
+  "derivedFrom": "library/arxiv-1203.3404v1/manifest",
+  "sourceDocument": "library/arxiv-1203.3404v1/manifest",
+  "provenance": "ingested"
+}

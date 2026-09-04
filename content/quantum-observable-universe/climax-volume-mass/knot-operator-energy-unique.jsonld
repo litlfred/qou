@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-energy-unique",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-operator-energy-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of the knot operator energy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-operator-energy-exists"
+  ],
+  "tags": [
+    "uniqueness",
+    "knot-operator",
+    "shadow-price"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.KnotOperatorEnergy.shadowPrice_unique",
+  "text": "knot-operator-energy-unique.md",
+  "leanSource": "knot-operator-energy-unique.lean",
+  "provenance": "authored"
+}

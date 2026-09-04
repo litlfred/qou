@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-calculus-up-to-epsilon-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:calculus-up-to-epsilon-table-data",
+  "kind": "table",
+  "title": "Data table from rem:calculus-up-to-epsilon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-calculus-up-to-epsilon"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "calculus-up-to-epsilon-table-data.md",
+  "provenance": "authored"
+}

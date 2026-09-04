@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bn/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Topological preliminaries",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "contains": [
+    "library/bn/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "library/bn/manifest",
+  "sourceDocument": "library/bn/manifest",
+  "provenance": "ingested"
+}

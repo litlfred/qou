@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "A two-parameter family of manifolds",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-2-a-two-parameter-family-of-manifolds.md",
+  "derivedFrom": "library/04procbryden/manifest",
+  "sourceDocument": "library/04procbryden/manifest",
+  "provenance": "ingested"
+}

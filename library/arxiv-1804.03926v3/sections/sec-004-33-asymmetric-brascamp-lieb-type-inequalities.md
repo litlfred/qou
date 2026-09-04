@@ -7,6 +7,7 @@ section_number: 3.3
 pages: 18-20
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 The celebrated Brascamp-Lieb inequality [BL76] states tha t if a measure π on Rd, d ≥ 1, is strictly
 log-concave - that is ϕ = − lnp is convex and Hess (ϕ ) (x) is a positive deﬁnite symmetric matrix for

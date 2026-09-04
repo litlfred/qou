@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/di-cairano-2022-j-phys-commun-6-015002/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the derivation of a nonlinear generalized Langevin equation",
+  "contains": [
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-000",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-001",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-002",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-003",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-004",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-005",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-006",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-007",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-008",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-009",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-010",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-011",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-012",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "di-cairano-2022-j-phys-commun-6-015002",
+    "source_file": "Di_Cairano_2022_J._Phys._Commun._6_015002.pdf",
+    "source_sha256": "f75313b507f971721997956a33bae9227281f588db750c74f9d429406b88c80c",
+    "pages": 12,
+    "arxiv": null,
+    "doi": "10.1088/2399-6528/ac438d",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

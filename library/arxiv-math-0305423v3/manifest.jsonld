@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0305423v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Stein’s Method and Plancherel Measure of the Symmetric Group",
+  "contains": [
+    "library/arxiv-math-0305423v3/sections/sec-000",
+    "library/arxiv-math-0305423v3/sections/sec-001",
+    "library/arxiv-math-0305423v3/sections/sec-002",
+    "library/arxiv-math-0305423v3/sections/sec-003",
+    "library/arxiv-math-0305423v3/sections/sec-004",
+    "library/arxiv-math-0305423v3/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0305423v3",
+    "source_file": "0305423v3.pdf",
+    "source_sha256": "e4554f9084ba49358ac816861a8c2409ea3715666a5fbcccfe659ab8c0009ada",
+    "pages": 19,
+    "arxiv": {
+      "id": "math/0305423",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "11 Nov 2003"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -7,6 +7,7 @@ section_number: null
 pages: 165-171
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 bounded component has the (convergent) inﬁnite series representation
 [xNyN]F(x, y) =−

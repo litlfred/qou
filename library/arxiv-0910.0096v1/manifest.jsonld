@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0910.0096v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Gröbner-Shirshov bases for Coxeter groups I∗",
+  "contains": [
+    "library/arxiv-0910.0096v1/sections/sec-000",
+    "library/arxiv-0910.0096v1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0910.0096v1",
+    "source_file": "0910.0096v1.pdf",
+    "source_sha256": "805a75c337599adc06d940638ec33ea7184ec733a6a13a372a1c4c4653625132",
+    "pages": 21,
+    "arxiv": {
+      "id": "0910.0096",
+      "version": "1",
+      "primary_class": "math.GR",
+      "stamp_date": "1 Oct 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

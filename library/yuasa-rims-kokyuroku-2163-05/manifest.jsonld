@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/yuasa-rims-kokyuroku-2163-05/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links",
+  "contains": [
+    "library/yuasa-rims-kokyuroku-2163-05/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "yuasa-rims-kokyuroku-2163-05",
+    "source_file": "yuasa-rims-kokyuroku-2163-05.pdf",
+    "source_sha256": "fa2a585b45c2185dc336fe7024a1cf892350dc2a57a85c0c12529528ba2361fe",
+    "pages": 11,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

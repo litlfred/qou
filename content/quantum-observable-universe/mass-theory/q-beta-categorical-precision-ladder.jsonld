@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-categorical-precision-ladder",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-beta-categorical-precision-ladder",
+  "kind": "proposition",
+  "title": "$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder",
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/kashiwara1990",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "q-beta",
+    "categorical-derivation",
+    "precision-ladder",
+    "kashiwara-crystal",
+    "hopf-jones",
+    "classical-limit",
+    "KL-decategorification",
+    "1ppb-roadmap",
+    "n-p-mass-split"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.q_beta_categorical_precision_ladder",
+  "text": "q-beta-categorical-precision-ladder.md",
+  "provenance": "authored"
+}

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:00:48Z
-updated_at: 2026-08-31T03:22:30Z
+updated_at: 2026-09-03T14:58:35Z
 ---
 
 Answers the open question `docs/audits/2026-08-25-knot-id-is-an-admitted-fit.md`
@@ -162,3 +162,66 @@ route); the sibling's merged PR (which had already settled what I read as a
 live disagreement); and now the producer's own source (which documents the
 step it does not perform). **A summary that is accurate can still be the wrong
 object.**
+
+
+## 2026-09-03 — the handover target in this bean is MISCALIBRATED; the gate stands on a different test
+
+This bean's closing line — *"For whoever attacks `conj:canonical-knot-id-sdp`:
+aim at the ratio being a pure power of `-q^{1/2}`"* — points the next agent at a
+test that cannot discriminate. I took up that target and found the problem in the
+producer the bean itself cites.
+
+**Two statements in `atom_nf_symbolic_D.py` cannot both be right.** Line 290 says
+*"the ratio should be a pure power of `-q^{1/2}`"*. Line 194, in
+`markov_trace_to_jones`'s own docstring, names the omitted factor as
+`((-1/√q)^{n-1} · (q/(1-q²))^{n-1})`. The second is a **rational function** with a
+`(1-q²)^{n-1}` denominator; the first demands a **monomial**. If the docstring
+names what is omitted, then *"the ratio is not a monomial"* is precisely what a
+**correct** identification would produce — so the recorded verdict ("not a
+monomial, 83 terms over 11, therefore the anchor is not confirmed") does not
+follow from its stated premise.
+
+**The ratio is not opaque.** Factoring the committed `symbolic_ratio`:
+
+    32 · q^1327 · (q+1)^5 · (q^6 − q^5 + 2q^4 − 2q^3 + 2q^2 − 2q + 1)
+
+- `(q+1)^5` carries exponent **n−1 = 5** at the atom's 6 strands — the same
+  exponent the omitted normalisation carries. **Accounted for**, not evidence.
+  (A matching exponent is not a verified convention, and I claim only the former.)
+- the degree-6 factor is **exactly `q^5·J(6₂)`** — the numerator of the very Jones
+  polynomial being compared against, surviving in the **denominator**.
+
+**THE GATE STANDS, on a sharper and convention-independent test.** Polynomial
+division (after `q → t²` clears the half-integer powers) shows `q^5·J(6₂)` does
+**not** divide the ratio's numerator — remainder nonzero, **12 terms**. And that
+divisor is **irreducible over ℚ** and **coprime to both `(q−1)` and `(q+1)`**
+(gcd 1 with each; `P(1) = 1`, `P(−1) = 11`). So **no** normalisation of the shape
+`monomial · (1±q)^k` — the shape every Markov-trace-to-Jones convention takes —
+can supply the missing factor:
+
+    tr ≠ N · J(6₂)   for every N of that shape.
+
+That is strictly stronger than "the ratio is not a monomial", and unlike it, it
+cannot be dismissed as an artifact of the omitted normalisation. **So C9 stands,
+and this bean's verdict survives — but its stated reason does not, and its
+handover target should not be attacked as written.**
+
+**Corrected handover.** Do not aim at the ratio being a monomial. The live
+discriminator is **divisibility**: whether the Hecke trace is a multiple of
+`q^5·J(6₂)` at all. It is not, and being coprime to the normalisation factors,
+nothing about framing or convention will change that.
+
+Probe: `computations/probes/r5full_anchor_gate_divisibility_probe.py` + witness,
+4/4. Reads the committed `atom-nf-symbolic-D.witness.json`; exact sympy
+throughout, no numeric evaluation anywhere, no `q₀` substitution.
+
+**Scope (a), on the EVIDENCE and not on the knot.** This does not show D's atom
+link is not `6₂` by some other route. It shows the *Hecke-level* identification
+fails in a way no framing or normalisation convention can repair — which is what
+the gate needed and did not previously have.
+
+**This is a fourth instance of this bean's own closing pattern.** Its three
+recorded corrections were each caught by opening the artifact a summary describes
+rather than the summary. So was this one: the bean's handover quotes the
+producer's *inline comment*, and the producer's *docstring* ninety lines earlier
+contradicts it. The comment is the wrong object.

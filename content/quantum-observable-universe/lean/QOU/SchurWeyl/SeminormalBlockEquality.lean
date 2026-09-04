@@ -162,7 +162,7 @@ theorem compress_mul (c : ℕ × ℕ) (hc : IsCornerCell μ c)
 
 /-- **Step 2, first half.**  The compression of the big seminormal representation, along the
 inclusion, IS the small seminormal representation — for every element, not just the generators. -/
-theorem compress_seminormalRep_heckeIncl {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem compress_seminormalRep_heckeIncl {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (hN : μ.cells.card = m + 2) (c : ℕ × ℕ) (hc : IsCornerCell μ c)
     (hNs : (eraseCorner μ c hc).cells.card = m + 1) (y : Hecke ℝ q q⁻¹ m) :
     compress c hc (seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1006.1099v3/blocks/thm-sec-014-03",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Perutz",
+  "pageStart": 17,
+  "pageEnd": 19,
+  "text": "thm-sec-014-03.md",
+  "derivedFrom": "library/arxiv-1006.1099v3/sections/sec-014",
+  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "provenance": "ingested"
+}

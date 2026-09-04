@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 25-29
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 domination from Deﬁnition 2.14 in §2.5. It turns out that for strongly Rayleigh
 measures, stochastic domination is intim ately connected with central notions in

@@ -1,0 +1,77 @@
+{
+  "q0Anchor": "proton",
+  "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
+  "schema": "witness/v1",
+  "name": "logratio-exactly-extensive",
+  "description": "The log-ratio channel L = log(S_off/S_on) is exactly linear in the bond count with slope -log f, verified to 1e-30 on both pure chains at A=2..5; and the mechanism is that the free-trace growth g cancels from the ratio.",
+  "beans": [
+    "qou-brng",
+    "qou-gcmn",
+    "qou-23dn"
+  ],
+  "scope": "(b) for the shape (exact linearity, Lean-backed); (a) on magnitude, which is NOT addressed",
+  "q0_anchor": "physical_proton",
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "lean": [
+    "QOU.MassTheory.MarginalRatio.logRatio_linear_in_bonds",
+    "QOU.MassTheory.MarginalRatio.logRatio_independent_of_growth"
+  ],
+  "data": {
+    "E0_MeV": "4.185981363294475896945062",
+    "z_D": "0.612688037146465251595829863946",
+    "species": {
+      "pp": {
+        "f_bond_factor": "0.612688037146465251595829863946",
+        "g_free_trace_growth": "1.14575969245730086968908159577",
+        "slope_MeV_per_bond": "2.05070969238143368563095783489",
+        "worst_relative_deviation_from_linear": "2.412238415e-30",
+        "L_measured": {
+          "2": "0.489899384255134851406550167495",
+          "3": "0.979798768510269702813100334988",
+          "4": "1.46969815276540455421965050248",
+          "5": "1.95959753702053940562620066998"
+        }
+      },
+      "nn": {
+        "f_bond_factor": "0.403627738350825936164983650816",
+        "g_free_trace_growth": "0.987743688115809571634020165502",
+        "slope_MeV_per_bond": "3.79778293514235332912382598485",
+        "worst_relative_deviation_from_linear": "9.151438935e-31",
+        "L_measured": {
+          "2": "0.907262265533212900670175287386",
+          "3": "1.81452453106642580134035057477",
+          "4": "2.72178679659963870201052586216",
+          "5": "3.62904906213285160268070114955"
+        }
+      }
+    },
+    "slope_pp_matches_independent_chain_bond": true,
+    "log_ratio_independent_of_g": true,
+    "magnitude_addressed_here": false
+  },
+  "assertions": [
+    {
+      "name": "log-ratio is exactly linear in bonds on both species",
+      "passed": true,
+      "detail": "worst relative deviation: pp 2.412e-30, nn 9.151e-31 \u2014 exact at compute precision. Lean: QOU.MassTheory.MarginalRatio.logRatio_linear_in_bonds."
+    },
+    {
+      "name": "the slope reproduces the independently-computed chain bond",
+      "passed": true,
+      "detail": "bpp_a_dependence_bound_probe computed -alpha*ln z from the convention-D z directly; this derives the same number as the slope of a measured log-ratio. Two routes, one value."
+    },
+    {
+      "name": "L is independent of g \u2014 recomputing with g scaled 1.7x agrees to <1e-30 (not exactly; see note)",
+      "passed": true,
+      "detail": "Lean: QOU.MassTheory.MarginalRatio.logRatio_independent_of_growth. This is the mechanism behind the corpus's assertion that the extensive invariant is the log-ratio, which had been stated without a derivation."
+    },
+    {
+      "name": "the magnitude gap is stated, attributed, and NOT claimed to be addressed here",
+      "passed": true,
+      "detail": "Scope (a) on magnitude. The -63 % figure and the many-body signs are the t7qv arc's measurements (commits c1491ec174, 2bbb6115c5), cited not re-derived."
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

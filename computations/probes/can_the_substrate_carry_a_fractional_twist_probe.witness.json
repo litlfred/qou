@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-02T21:14:26.993384+00:00",
-  "commitSha": "de5c18f5882ad02d08b3e2b1e7b34fedd8a52cbb",
+  "computedAt": "2026-09-03T04:44:50.586855+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "A1_coxeter_is_an_nth_root_of_the_full_twist",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 104,
+  "durationMs": 9,
   "computation": "can_the_substrate_carry_a_fractional_twist_probe",
   "scriptFile": "can_the_substrate_carry_a_fractional_twist_probe.py",
-  "scriptHash": "7e2fc080e8a7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ed03717188f3",
+  "scriptCommitSha": "4e9d5e6cebda20f29b60b251f853248e62a3230a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -230,5 +233,7 @@
     "THIS SHOWS THE TWIST EXISTS, NOT THAT THE CONSTRUCTION USES IT. The Coxeter element is an n-th root of the full twist and its block magnitudes are fractional powers of q from n=5. Nothing here attaches it to a bond, recomputes a binding energy, or exhibits any reason the physical bond SHOULD carry c_n rather than any other element. The hull exit needs a framing scalar; this demonstrates the substrate contains operators supplying fractional ones.",
     "The n <= 12 enumeration is exhaustive over partitions but is a CUTOFF. Larger n supply further rationals with larger denominators, so 'not in the set' for the nuclear target is a statement about n <= 12, not a theorem. The substantive point survives the cutoff: the set is rational at every n while the nuclear target is a measured ratio of two shallow binding energies.",
     "The nuclear target inherits qou-m896's least certain input, the np 1S0 virtual state at ~66 keV. That is why A6 is phrased as the shift REQUIRED (to 105.9 keV, 60%) rather than as a bare mismatch — the conclusion is robust precisely because the needed shift is far outside the uncertainty on that number."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

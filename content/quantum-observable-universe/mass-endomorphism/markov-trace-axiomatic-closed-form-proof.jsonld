@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-markov-trace-axiomatic-closed-form",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:markov-trace-axiomatic-closed-form",
+  "kind": "proof",
+  "title": "Proof of markov trace axiomatic closed form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form"
+  ],
+  "text": "markov-trace-axiomatic-closed-form-proof.md",
+  "provenance": "authored"
+}

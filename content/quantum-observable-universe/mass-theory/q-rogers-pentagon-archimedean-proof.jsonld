@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-rogers-pentagon-archimedean",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-rogers-pentagon-archimedean",
+  "kind": "proof",
+  "title": "Proof of q rogers pentagon archimedean",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-rogers-pentagon-archimedean"
+  ],
+  "text": "q-rogers-pentagon-archimedean-proof.md",
+  "provenance": "authored"
+}

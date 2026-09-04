@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-per-block-hopf-jones-absorption-pattern",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:per-block-hopf-jones-absorption-pattern",
+  "kind": "remark",
+  "title": "Leading-order $\\varepsilon^1$ pattern in the per-Wedderburn-block character differences: $V_{(3)}, V_{(1,1,1)}$ absorb the **full** Hopf-Jones value $-2$; $V_{(2,1)}$ absorbs **half** ($-1$). Dimension-scaled Hopf absorption.",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-chi-per-irrep-cyclotomic-closed-forms",
+  "cites": [
+    "references/jones1985",
+    "references/wenzl1988",
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "per-wedderburn-block",
+    "hopf-jones",
+    "leading-order",
+    "kashiwara-jones-alternation"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.dimension_scaled_absorption_pattern",
+  "text": "per-block-hopf-jones-absorption-pattern.md",
+  "leanSource": "per-block-hopf-jones-absorption-pattern.lean",
+  "provenance": "authored"
+}

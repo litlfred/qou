@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-boltzmann-constant",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:boltzmann-constant",
+  "kind": "proof",
+  "title": "Proof of boltzmann constant",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-boltzmann-constant"
+  ],
+  "text": "boltzmann-constant-proof.md",
+  "provenance": "authored"
+}

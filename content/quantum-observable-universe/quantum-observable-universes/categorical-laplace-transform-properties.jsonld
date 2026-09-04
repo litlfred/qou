@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-laplace-transform-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-laplace-transform-properties",
+  "kind": "remark",
+  "title": "Base-ring independence of the categorical Laplace transform",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-laplace"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-laplace",
+  "tags": [
+    "hopf-algebra",
+    "grouplike",
+    "monoidal-functor",
+    "laplace"
+  ],
+  "text": "categorical-laplace-transform-properties.md",
+  "provenance": "authored"
+}

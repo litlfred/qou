@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0906.1500v4/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof for one variable. We cut the manifold M along S = Sϕ and obtain the",
+  "pageStart": 21,
+  "pageEnd": 22,
+  "contains": [
+    "library/arxiv-0906.1500v4/blocks/prose-sec-028",
+    "library/arxiv-0906.1500v4/blocks/lem-sec-028-01",
+    "library/arxiv-0906.1500v4/blocks/rem-sec-028-02"
+  ],
+  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
+  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "provenance": "ingested"
+}

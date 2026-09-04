@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sec-surreal-appendix-intro",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:surreal-appendix-intro",
+  "kind": "prose",
+  "title": "Motivation: a surreal-number ambient for QOU",
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986",
+    "references/ehrlich2012"
+  ],
+  "tags": [
+    "surreal-numbers",
+    "appendix",
+    "motivation",
+    "infinitesimal",
+    "nonstandard-analysis"
+  ],
+  "text": "surreal-appendix-intro.md",
+  "provenance": "authored"
+}

@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 9-14
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
+doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
 ---
 To prove bounds such as (1.1), one obtains an upper bound for EeλSn , and then applies Markov’s
 inequality, choosing λ optimally. Underlying the bounds on EeλSn are corresponding bounds for

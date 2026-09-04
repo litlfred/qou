@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-q-local-system",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:q-local-system",
+  "kind": "definition",
+  "title": "$q$-Local system",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-dq-squared",
+    "papers/quantum-observable-universe/blocks/rem-kummer-filtration-obstruction"
+  ],
+  "tags": [
+    "geometric-langlands",
+    "local-system",
+    "q-deformation"
+  ],
+  "leanRef": "qou:QOU.QLocalSystem",
+  "text": "q-local-system.md",
+  "leanSource": "q-local-system.lean",
+  "provenance": "authored"
+}

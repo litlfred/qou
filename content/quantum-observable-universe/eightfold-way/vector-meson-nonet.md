@@ -1,10 +1,10 @@
 The pseudoscalar octet of [the meson-octet
 proposition](#prop:meson-octet-decomposition) is one of two nonets with
-identical $\mathrm{SU}(3)$ content.  The other is the vector nonet $1^-$ ---
+identical $\mathrm{SU}(3)_{\mathrm{f}}$ content.  The other is the vector nonet $1^-$ ---
 $\rho$, $K^*$, $\omega$, $\phi$ --- obtained from the same
 $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$ with the
 quark spins aligned rather than anti-aligned.  **The two nonets mix their
-octet and singlet almost oppositely, and no $\mathrm{SU}(3)$-symmetric
+octet and singlet almost oppositely, and no $\mathrm{SU}(3)_{\mathrm{f}}$-symmetric
 statement distinguishes them.**  That makes the mixing the first
 eightfold-way quantity whose derivation would carry information.
 
@@ -30,7 +30,7 @@ PDG central values are comparators, and nothing here is fitted.
 This is also why Gell-Mann--Okubo appears to *fail* on the vector nonet.
 Applied to the physical states, the relation deviates by $\approx 6\%$ for the
 pseudoscalar $\eta$ but by $\approx 32\%$ for the physical $\omega$.  The
-discrepancy is not a failure of $\mathrm{SU}(3)$: it is that the physical
+discrepancy is not a failure of $\mathrm{SU}(3)_{\mathrm{f}}$: it is that the physical
 $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 
 ## Why this target is different

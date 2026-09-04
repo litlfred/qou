@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-joint-tower-sdp-confinement",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:joint-tower-sdp-confinement",
+  "kind": "proposition",
+  "title": "Joint mass-tower confinement SDP at $q_0$ with GB-filtration + jet-order tracking",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation"
+  ],
+  "tags": [
+    "sdp",
+    "confinement",
+    "joint-tower",
+    "gb-filtration",
+    "jet-order",
+    "design-spec",
+    "wedderburn",
+    "cross-level-consistency"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.joint_tower_sdp_confinement",
+  "text": "joint-tower-sdp-confinement.md",
+  "leanSource": "joint-tower-sdp-confinement.lean",
+  "provenance": "authored"
+}

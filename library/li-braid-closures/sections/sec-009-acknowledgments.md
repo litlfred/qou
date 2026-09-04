@@ -7,6 +7,7 @@ section_number: null
 pages: 15-16
 source_pdf: Li-braid-closures.pdf
 source_sha256: f7410e7be5bc187e
+doc_brief: "Knot polynomials on braid closures Eddy Li — We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3."
 ---
 The author expresses his gratitude towards Kenta Suzuki for his teaching and guidance
 throughout the research period. The author also extends his appreciation to the MIT

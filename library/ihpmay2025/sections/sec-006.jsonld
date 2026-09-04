@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A characterization of convex cocompactness in terms of quasi-isometries",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-006",
+    "library/ihpmay2025/blocks/lem-sec-006-01",
+    "library/ihpmay2025/blocks/prop-sec-006-02",
+    "library/ihpmay2025/blocks/thm-sec-006-03"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-cmb-boundary-datum",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:cmb-boundary-datum",
+  "kind": "definition",
+  "title": "CMB as boundary datum of a big bang state",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-aeon"
+  ],
+  "tags": [
+    "cmb",
+    "boundary-datum",
+    "jet-horizon",
+    "big-bang-state",
+    "aeon",
+    "degree-one"
+  ],
+  "leanRef": "qou:QOU.CMBBoundaryDatum",
+  "text": "cmb-boundary-datum.md",
+  "leanSource": "cmb-boundary-datum.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-figure-eight-reeb-rotation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:figure-eight-reeb-rotation",
+  "kind": "proposition",
+  "title": "The figure-eight knot operator acts unitarily on $V_{(2,1)}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-binding-amplitude",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988c",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "figure-eight",
+    "4_1",
+    "reeb-flow",
+    "unitary",
+    "knot-operator",
+    "volume-conjecture",
+    "lepton-channel-rotation"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.figure_eight_unitary_on_standard",
+  "text": "figure-eight-reeb-rotation.md",
+  "leanSource": "figure-eight-reeb-rotation.lean",
+  "provenance": "authored"
+}

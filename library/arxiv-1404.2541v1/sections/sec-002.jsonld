@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1404.2541v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Two q-exponential functions",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-1404.2541v1/blocks/prose-sec-002",
+    "library/arxiv-1404.2541v1/blocks/lem-sec-002-01",
+    "library/arxiv-1404.2541v1/blocks/cor-sec-002-02"
+  ],
+  "derivedFrom": "library/arxiv-1404.2541v1/manifest",
+  "sourceDocument": "library/arxiv-1404.2541v1/manifest",
+  "provenance": "ingested"
+}

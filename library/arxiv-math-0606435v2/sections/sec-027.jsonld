@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Jones polynomial 19",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-027",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-027-01",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-027-02",
+    "library/arxiv-math-0606435v2/blocks/lem-sec-027-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

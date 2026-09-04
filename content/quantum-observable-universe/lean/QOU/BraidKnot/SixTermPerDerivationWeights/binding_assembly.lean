@@ -1,47 +1,44 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Fintype.Fin
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly
+# `QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly` — intentionally empty; unreachable and superseded
 
-**Canonical declaration** for content block
-[`prop:six-term-per-derivation-weights`](../../../quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.md): *Per-derivation weights for the six-term mass formula*.
+This module held `BindingAssemblyContext` (four data fields — `Z`, `N`,
+`atomic_mass`, `term_weights` — plus `claim_six_term_recovery`) and a `def
+binding_assembly` whose body was that claim field: the self-assuming
+projection of AGENTS.md §3b-cond item 5.  Both are removed (2026-09-03).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+**It was also unreachable.**  The block
+[`prop:six-term-per-derivation-weights`](../../../../mass-theory/six-term-per-derivation-weights.md)
+refs `qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly`, and
+`resolveCanonicalLean` — the resolver the QA sweep uses — takes the direct
+module path first when that file declares the named decl.
+[`QOU/BraidKnot/SixTermPerDerivationWeights.lean`](../SixTermPerDerivationWeights.lean)
+does declare `binding_assembly`, so the ref resolves **there**, never here.
+Measured with the resolver itself rather than inferred from §0a.
+
+That is the mirror image of the sibling-shadowing case §0a warns about: there
+a trivial *sibling* hides a real library declaration; here a **library module
+path** hides a file in its own subdirectory.  Both leave a declaration that
+looks load-bearing and is read by nothing.
+
+The two declarations also **shared a fully-qualified name** —
+`QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly` was declared in
+both files, in the same namespace.  No module imports either, so the clash
+never surfaced; anything importing both would have failed to elaborate.
+
+Measured across every `.lean` in `content/` on 2026-09-03: nothing names
+`BindingAssemblyContext`, nothing imports either module, and `QOU.lean` does
+not aggregate them.  Zero consumers.
+
+**The claim now lives at the path the ref resolves to**, as a named
+proposition over caller-supplied data carrying the manuscript's actual
+five-term assembly — rather than as an `opaque … : Float` constant, which is
+what that path held until 2026-09-03.
+
+The file is kept rather than deleted so the resolver's later candidates still
+find a real path, per the convention used for the fifteen shells drained
+under this bean in #6276.
+
+Bean `qou-z9ws`.
 -/
-
-namespace QOU.BraidKnot.SixTermPerDerivationWeights
-
-
-/-- Abstract context for the `binding_assembly` claim — manuscript-named
-    typed fields below; the atomic mass recovery formula from the six-
-    term decomposition is captured as `claim_six_term_recovery`. -/
-class BindingAssemblyContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- The atomic mass `𝓜(Z, N)`. -/
-  atomic_mass : ℝ
-  /-- The six per-derivation weighted contributions (one per spectral-
-      sequence term). -/
-  term_weights : Fin 6 → ℝ
-  /-- Manuscript claim — atomic-mass recovery: the atomic mass is the
-      sum of the six per-derivation weighted contributions. -/
-  claim_six_term_recovery :
-    atomic_mass = (Finset.univ.sum (fun i : Fin 6 => term_weights i))
-
-/-- **Proposition statement** (from manuscript):
-
-The atomic mass $\mathcal{M}(Z, N)$ is recovered from the
-[unified six-term decomposition](#thm:six-term-mass-formula-complete)
-by
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
-def binding_assembly [ctx : BindingAssemblyContext] :
-    ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) :=
-  ctx.claim_six_term_recovery
-
-end QOU.BraidKnot.SixTermPerDerivationWeights

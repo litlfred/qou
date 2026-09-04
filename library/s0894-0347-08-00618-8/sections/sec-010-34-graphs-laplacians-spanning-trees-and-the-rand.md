@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 18-20
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 Let G =( V,E ) be a graph with vertex set V =[ n]a n de d g es e tE. Associate to
 each edge e ∈ E av a r i a b l ewe.I f e connects i and j let Ae be the n × n positive

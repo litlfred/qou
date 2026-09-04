@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-substrate-self-duality-physical",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:substrate-self-duality-physical",
+  "kind": "remark",
+  "title": "Physical interpretation of substrate self-duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-substrate-self-duality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-substrate-self-duality",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "self-duality",
+    "frobenius",
+    "dualizing-complex"
+  ],
+  "text": "substrate-self-duality-physical.md",
+  "provenance": "authored"
+}

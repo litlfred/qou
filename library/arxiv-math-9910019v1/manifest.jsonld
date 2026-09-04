@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9910019v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Symmetrized random permutations",
+  "contains": [
+    "library/arxiv-math-9910019v1/sections/sec-000",
+    "library/arxiv-math-9910019v1/sections/sec-001",
+    "library/arxiv-math-9910019v1/sections/sec-002",
+    "library/arxiv-math-9910019v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-9910019v1",
+    "source_file": "9910019v1.pdf",
+    "source_sha256": "07dd7ab7068b1482af34a6f41e56f9ed1e9c55de89e9b46b624e6099ac253f33",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/9910019",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "5 Oct 1999"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Amplitudes",
+  "pageStart": 43,
+  "pageEnd": 46,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-013",
+    "library/agt-v7-n2-p13-s/blocks/thm-sec-013-01",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-013-02",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-013-03",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-013-04",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-013-05",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-013-06"
+  ],
+  "derivedFrom": "library/agt-v7-n2-p13-s/manifest",
+  "sourceDocument": "library/agt-v7-n2-p13-s/manifest",
+  "provenance": "ingested"
+}

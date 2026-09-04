@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-nucleon-hecke-element",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:nucleon-hecke-element",
+  "kind": "definition",
+  "title": "Nucleon Hecke element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-crossing-operator"
+  ],
+  "tags": [
+    "nucleon",
+    "proton",
+    "neutron",
+    "hecke-algebra",
+    "normal-form",
+    "borromean",
+    "typed-crossing"
+  ],
+  "leanRef": "qou:QOU.Braiding.NucleonHeckeElement",
+  "text": "nucleon-hecke-element.md",
+  "leanSource": "nucleon-hecke-element.lean",
+  "provenance": "authored"
+}

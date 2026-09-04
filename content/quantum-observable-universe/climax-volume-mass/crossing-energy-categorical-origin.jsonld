@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-crossing-energy-categorical-origin",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:crossing-energy-categorical-origin",
+  "kind": "remark",
+  "title": "Crossing weights are Hecke eigenvalues, not postulates",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction",
+    "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+    "papers/quantum-observable-universe/blocks/rem-r-matrix-braiding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "crossing",
+    "energy",
+    "hecke",
+    "eigenvalue",
+    "r-matrix"
+  ],
+  "text": "crossing-energy-categorical-origin.md",
+  "provenance": "authored"
+}

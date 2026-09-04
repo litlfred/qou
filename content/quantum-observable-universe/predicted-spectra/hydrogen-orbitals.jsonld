@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hydrogen-orbitals",
+  "kind": "remark",
+  "title": "Hydrogen orbitals: the spinning trefoil around the Borromean anchor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-hydrogen-knot-structure",
+    "papers/quantum-observable-universe/blocks/conj-hydrogen-shell-writhe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hydrogen-shell-writhe",
+  "tags": [
+    "hydrogen",
+    "orbital",
+    "shell",
+    "subshell",
+    "trefoil",
+    "writhe",
+    "borromean",
+    "electron-cloud"
+  ],
+  "text": "hydrogen-orbitals.md",
+  "provenance": "authored"
+}

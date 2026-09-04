@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2411.03801v2/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Proof of the main theorem",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "text": "../sections/sec-008-4-proof-of-the-main-theorem.md",
+  "derivedFrom": "library/arxiv-2411.03801v2/manifest",
+  "sourceDocument": "library/arxiv-2411.03801v2/manifest",
+  "provenance": "ingested"
+}

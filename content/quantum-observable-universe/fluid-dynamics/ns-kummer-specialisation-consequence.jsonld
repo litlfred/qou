@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-ns-kummer-specialisation-consequence",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ns-kummer-specialisation-consequence",
+  "kind": "remark",
+  "title": "Consequence for NS regularity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation",
+  "tags": [
+    "kummer",
+    "obstruction",
+    "navier-stokes",
+    "blowup"
+  ],
+  "text": "ns-kummer-specialisation-consequence.md",
+  "provenance": "authored"
+}

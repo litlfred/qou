@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/alg-gb-filtration",
+  "@type": [
+    "folio:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:gb-filtration",
+  "kind": "algorithm",
+  "title": "Gröbner–Shirshov filtration / $E_2$ collapse",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gb-spectral-sequence"
+  ],
+  "tags": [
+    "mba",
+    "step-7",
+    "gb-filtration",
+    "spectral-sequence",
+    "length-grading",
+    "canonical-chain"
+  ],
+  "text": "mba-step07-gb-filtration.md",
+  "provenance": "authored"
+}

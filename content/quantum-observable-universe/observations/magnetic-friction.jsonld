@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-magnetic-friction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:magnetic-friction",
+  "kind": "remark",
+  "title": "Non-monotonic magnetic friction from collective rotor dynamics",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf",
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "friction",
+    "lattice",
+    "observation"
+  ],
+  "text": "magnetic-friction.md",
+  "provenance": "authored"
+}

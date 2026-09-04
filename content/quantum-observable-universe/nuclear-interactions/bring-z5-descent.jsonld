@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bring-z5-descent",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bring-z5-descent",
+  "kind": "remark",
+  "title": "Descent of $\\mathbb{Z}_5 \\subset S_5$ from Bring to $\\mathcal{X}_5$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism",
+  "cites": [
+    "references/edge1978"
+  ],
+  "tags": [
+    "descent",
+    "sylow",
+    "bring",
+    "z5",
+    "hyperelliptic"
+  ],
+  "text": "bring-z5-descent.md",
+  "provenance": "authored"
+}

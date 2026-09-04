@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/bsmf-2002-130-3-457-0/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Convergence of hyperideal polyhedra",
+  "pageStart": 25,
+  "pageEnd": 32,
+  "contains": [
+    "library/bsmf-2002-130-3-457-0/blocks/prose-sec-006",
+    "library/bsmf-2002-130-3-457-0/blocks/prop-sec-006-01",
+    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-006-02",
+    "library/bsmf-2002-130-3-457-0/blocks/lem-sec-006-03",
+    "library/bsmf-2002-130-3-457-0/blocks/cor-sec-006-04"
+  ],
+  "derivedFrom": "library/bsmf-2002-130-3-457-0/manifest",
+  "sourceDocument": "library/bsmf-2002-130-3-457-0/manifest",
+  "provenance": "ingested"
+}

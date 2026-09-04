@@ -1,0 +1,2433 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T21:17:16.017962+00:00",
+  "commitSha": "dce2f5e66420ba337e4d531b48b0d4496de0a2c0",
+  "assertions": [
+    {
+      "name": "three_row_weights_vanish_identically_at_n_6_9_12",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sympy simplify of y_lambda_at(n)[λ] for every ℓ(λ) ≥ 3 at n = 6, 9, 12; non-vanishing: {6: [], 9: [], 12: []}. This is what lets the series sum run over two-row partitions only."
+    },
+    {
+      "name": "series_order_zero_reproduces_the_derived_floor_c0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "[ε⁰] of Δtr(1+ε) vs 2^-A - 2^(1-2A) as exact Fractions, all six cases. An independent re-derivation of ClassicalTraceFloor by the seminormal series rather than by cycle counting."
+    },
+    {
+      "name": "series_order_one_equals_the_six_recorded_rationals_exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "[ε¹] of Δtr(1+ε) (= c1, since ε = ℏ_q + O(ℏ_q²)) vs the Richardson-measured rationals in PairwiseChainLeadingOrder.lean, Fraction equality: pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128"
+    },
+    {
+      "name": "permutation_formula_equals_exact_series_c1_for_all_six",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c1 = 2^-n Σ_ℓ w_ℓ 2^c(σ^(ℓ)) over the free word minus the same over the atom word, w = +1 (σ), -1 (σ^-1), 0 (averaged), vs Part A's exact [ε¹]; Fraction equality in all six cases. This is the derivation [★], tested — a pure permutation count with no Hecke evaluation."
+    },
+    {
+      "name": "exact_fraction_pipeline_matches_transfer_kernel_at_q_8_over_7",
+      "computed": "6.98768e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Δtr at q = 8/7: exact Fraction via the asymmetric seminormal gauge + symbolic y_λ, vs tr_m_atom_zn(q=mpf(8)/7) at 50 dps, D/T/3He/4He. Ties the series pipeline to the witness path the six measurements came from."
+    },
+    {
+      "name": "colour_weight_first_enters_at_order_eps4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "tr_M(atom) with the colour-weighted vs colour-blind p-n factor, deuteron: coefficients ε⁰..ε³ identical, ε⁴ differs by 1/6. δ = (q-1)²(1-q⁻⁴)/3 is O(ε³) and enters through h·δ = O(ε⁴), so c₁ (and c₂, c₃) are colour-blind."
+    },
+    {
+      "name": "closed_form_equals_permutation_count_for_every_ZN_with_A_2_to_20",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c1(Z,N) = (21Z+16N)(2^(-A-1) - 2^(-2A)) - 4(I_pp - I_nn) 2^(-2A), I_pp = max(Z-1,0), I_nn = max(N-1,0), vs [★](free) - [★](atom) for all 228 (Z,N) with A = 2..20, Fraction equality. The 21 and 16 are the nucleon letter census 4·#σ - #σ⁻¹ (proton 6/3, neutron 5/4); the ±4 are the pp/nn interface letters."
+    },
+    {
+      "name": "closed_form_reproduces_the_six_recorded_rationals",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pp: 19/8, pn: 37/16, nn: 9/4, T: 163/64, 3He: 85/32, 4He: 259/128"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 381201,
+  "computation": "c1-leading-coefficient-derived-probe",
+  "scriptFile": "c1_leading_coefficient_derived_probe.py",
+  "scriptHash": "69de90009f3a",
+  "scriptCommitSha": "1e10637070a8b3199ad23fd25b03beb97a3b6c18",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/c1_leading_coefficient_derived_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/c1_leading_coefficient_derived_probe.py"
+  },
+  "description": "The leading hbar_q coefficient c1 of tr_M(W_free) - tr_M(W_atom): computed EXACTLY as a power series in eps = q - 1 through the validated exact-Fraction seminormal pipeline (no Richardson), then DERIVED as a permutation count 2^-n sum_letters w_l 2^c(sigma with letter l deleted), w = +1/-1/0 for sigma/sigma^-1/averaged, by the same Schur-Weyl route that derived c0. The two agree exactly on all six recorded cases, and the derivation runs to A = 20.",
+  "data": {
+    "series": [
+      {
+        "case": "pp",
+        "Z": 2,
+        "N": 0,
+        "A": 2,
+        "n_strands": 6,
+        "series_precision": 6,
+        "precision_after_pipeline": 5,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_eq_c0": true,
+        "c1_exact": "19/8",
+        "c1_recorded": "19/8",
+        "c1_eq_recorded": true,
+        "c2_exact": "357/32"
+      },
+      {
+        "case": "pn",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "series_precision": 6,
+        "precision_after_pipeline": 5,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_eq_c0": true,
+        "c1_exact": "37/16",
+        "c1_recorded": "37/16",
+        "c1_eq_recorded": true,
+        "c2_exact": "403/32"
+      },
+      {
+        "case": "nn",
+        "Z": 0,
+        "N": 2,
+        "A": 2,
+        "n_strands": 6,
+        "series_precision": 6,
+        "precision_after_pipeline": 5,
+        "a0": "1/8",
+        "c0_derived": "1/8",
+        "a0_eq_c0": true,
+        "c1_exact": "9/4",
+        "c1_recorded": "9/4",
+        "c1_eq_recorded": true,
+        "c2_exact": "217/16"
+      },
+      {
+        "case": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "series_precision": 5,
+        "precision_after_pipeline": 4,
+        "a0": "3/32",
+        "c0_derived": "3/32",
+        "a0_eq_c0": true,
+        "c1_exact": "163/64",
+        "c1_recorded": "163/64",
+        "c1_eq_recorded": true,
+        "c2_exact": "3285/128"
+      },
+      {
+        "case": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "series_precision": 5,
+        "precision_after_pipeline": 4,
+        "a0": "3/32",
+        "c0_derived": "3/32",
+        "a0_eq_c0": true,
+        "c1_exact": "85/32",
+        "c1_recorded": "85/32",
+        "c1_eq_recorded": true,
+        "c2_exact": "3451/128"
+      },
+      {
+        "case": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "series_precision": 3,
+        "precision_after_pipeline": 2,
+        "a0": "7/128",
+        "c0_derived": "7/128",
+        "a0_eq_c0": true,
+        "c1_exact": "259/128",
+        "c1_recorded": "259/128",
+        "c1_eq_recorded": true,
+        "c2_exact": null
+      }
+    ],
+    "permutation_formula": [
+      {
+        "case": "pp",
+        "A": 2,
+        "star_free": "21/4",
+        "star_atom": "23/8",
+        "c1_star": "19/8",
+        "c1_series": "19/8",
+        "equal": true,
+        "c_free": 4,
+        "c_atom": 3,
+        "letters_free": {
+          "sigma": 12,
+          "sigma_inv": 6,
+          "averaged": 4,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 13,
+          "sigma_inv": 6,
+          "averaged": 4,
+          "averaged_weighted": 0
+        }
+      },
+      {
+        "case": "pn",
+        "A": 2,
+        "star_free": "37/8",
+        "star_atom": "37/16",
+        "c1_star": "37/16",
+        "c1_series": "37/16",
+        "equal": true,
+        "c_free": 4,
+        "c_atom": 3,
+        "letters_free": {
+          "sigma": 11,
+          "sigma_inv": 7,
+          "averaged": 4,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 11,
+          "sigma_inv": 7,
+          "averaged": 4,
+          "averaged_weighted": 1
+        }
+      },
+      {
+        "case": "nn",
+        "A": 2,
+        "star_free": "4",
+        "star_atom": "7/4",
+        "c1_star": "9/4",
+        "c1_series": "9/4",
+        "equal": true,
+        "c_free": 4,
+        "c_atom": 3,
+        "letters_free": {
+          "sigma": 10,
+          "sigma_inv": 8,
+          "averaged": 4,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 10,
+          "sigma_inv": 9,
+          "averaged": 4,
+          "averaged_weighted": 0
+        }
+      },
+      {
+        "case": "T",
+        "A": 3,
+        "star_free": "53/16",
+        "star_atom": "49/64",
+        "c1_star": "163/64",
+        "c1_series": "163/64",
+        "equal": true,
+        "c_free": 6,
+        "c_atom": 4,
+        "letters_free": {
+          "sigma": 16,
+          "sigma_inv": 11,
+          "averaged": 6,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 16,
+          "sigma_inv": 12,
+          "averaged": 6,
+          "averaged_weighted": 1
+        }
+      },
+      {
+        "case": "3He",
+        "A": 3,
+        "star_free": "29/8",
+        "star_atom": "31/32",
+        "c1_star": "85/32",
+        "c1_series": "85/32",
+        "equal": true,
+        "c_free": 6,
+        "c_atom": 4,
+        "letters_free": {
+          "sigma": 17,
+          "sigma_inv": 10,
+          "averaged": 6,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 18,
+          "sigma_inv": 10,
+          "averaged": 6,
+          "averaged_weighted": 1
+        }
+      },
+      {
+        "case": "4He",
+        "A": 4,
+        "star_free": "37/16",
+        "star_atom": "37/128",
+        "c1_star": "259/128",
+        "c1_series": "259/128",
+        "equal": true,
+        "c_free": 8,
+        "c_atom": 5,
+        "letters_free": {
+          "sigma": 22,
+          "sigma_inv": 14,
+          "averaged": 8,
+          "averaged_weighted": 0
+        },
+        "letters_atom": {
+          "sigma": 23,
+          "sigma_inv": 15,
+          "averaged": 8,
+          "averaged_weighted": 1
+        }
+      }
+    ],
+    "transfer_kernel_crosscheck": [
+      {
+        "case": "D",
+        "exact_fraction": "24346000967886130643505215953238154773717678037/30446953611828080609548663379720100706854633472",
+        "exact_mpf": "0.799620260150695593710055630294",
+        "transfer_kernel": "0.799620260150695593710055630294",
+        "rel_diff": "5.014e-51"
+      },
+      {
+        "case": "T",
+        "exact_fraction": "2712602441663019197906487116219976804595997161970249075915108859/1738482768362532963830648965923822113278035488105839009615314944",
+        "exact_mpf": "1.56032748269228116448010648238",
+        "transfer_kernel": "1.56032748269228116448010648238",
+        "rel_diff": "1.713e-51"
+      },
+      {
+        "case": "3He",
+        "exact_fraction": "19908905708410539124470779518534367033485727132537058132719872550811/13012462454248061860298752320986563534970168845079082864106658594816",
+        "exact_mpf": "1.52998756218589951164987947673",
+        "transfer_kernel": "1.52998756218589951164987947673",
+        "rel_diff": "6.988e-51"
+      },
+      {
+        "case": "4He",
+        "exact_fraction": "1754336377768619976697393284242243487560348785828367674169281276062596890042181727381/742995244748771281813927997374457747384697975380454314274284601659464867894244933632",
+        "exact_mpf": "2.36116770621030436466784641643",
+        "transfer_kernel": "2.36116770621030436466784641643",
+        "rel_diff": "6.792e-51"
+      }
+    ],
+    "colour_order": {
+      "eps0_to_eps3_identical": true,
+      "eps4_difference": "1/6"
+    },
+    "c1_table_A2_to_A20": [
+      {
+        "Z": 0,
+        "N": 2,
+        "A": 2,
+        "c1": "9/4",
+        "closed_form": "9/4",
+        "equal": true,
+        "c1_times_2^(3A)": "144"
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "c1": "37/16",
+        "closed_form": "37/16",
+        "equal": true,
+        "c1_times_2^(3A)": "148"
+      },
+      {
+        "Z": 2,
+        "N": 0,
+        "A": 2,
+        "c1": "19/8",
+        "closed_form": "19/8",
+        "equal": true,
+        "c1_times_2^(3A)": "152"
+      },
+      {
+        "Z": 0,
+        "N": 3,
+        "A": 3,
+        "c1": "19/8",
+        "closed_form": "19/8",
+        "equal": true,
+        "c1_times_2^(3A)": "1216"
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "c1": "163/64",
+        "closed_form": "163/64",
+        "equal": true,
+        "c1_times_2^(3A)": "1304"
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "c1": "85/32",
+        "closed_form": "85/32",
+        "equal": true,
+        "c1_times_2^(3A)": "1360"
+      },
+      {
+        "Z": 3,
+        "N": 0,
+        "A": 3,
+        "c1": "181/64",
+        "closed_form": "181/64",
+        "equal": true,
+        "c1_times_2^(3A)": "1448"
+      },
+      {
+        "Z": 0,
+        "N": 4,
+        "A": 4,
+        "c1": "115/64",
+        "closed_form": "115/64",
+        "equal": true,
+        "c1_times_2^(3A)": "7360"
+      },
+      {
+        "Z": 1,
+        "N": 3,
+        "A": 4,
+        "c1": "491/256",
+        "closed_form": "491/256",
+        "equal": true,
+        "c1_times_2^(3A)": "7856"
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "c1": "259/128",
+        "closed_form": "259/128",
+        "equal": true,
+        "c1_times_2^(3A)": "8288"
+      },
+      {
+        "Z": 3,
+        "N": 1,
+        "A": 4,
+        "c1": "545/256",
+        "closed_form": "545/256",
+        "equal": true,
+        "c1_times_2^(3A)": "8720"
+      },
+      {
+        "Z": 4,
+        "N": 0,
+        "A": 4,
+        "c1": "9/4",
+        "closed_form": "9/4",
+        "equal": true,
+        "c1_times_2^(3A)": "9216"
+      },
+      {
+        "Z": 0,
+        "N": 5,
+        "A": 5,
+        "c1": "19/16",
+        "closed_form": "19/16",
+        "equal": true,
+        "c1_times_2^(3A)": "38912"
+      },
+      {
+        "Z": 1,
+        "N": 4,
+        "A": 5,
+        "c1": "1287/1024",
+        "closed_form": "1287/1024",
+        "equal": true,
+        "c1_times_2^(3A)": "41184"
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "A": 5,
+        "c1": "677/512",
+        "closed_form": "677/512",
+        "equal": true,
+        "c1_times_2^(3A)": "43328"
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "c1": "1421/1024",
+        "closed_form": "1421/1024",
+        "equal": true,
+        "c1_times_2^(3A)": "45472"
+      },
+      {
+        "Z": 4,
+        "N": 1,
+        "A": 5,
+        "c1": "93/64",
+        "closed_form": "93/64",
+        "equal": true,
+        "c1_times_2^(3A)": "47616"
+      },
+      {
+        "Z": 5,
+        "N": 0,
+        "A": 5,
+        "c1": "1559/1024",
+        "closed_form": "1559/1024",
+        "equal": true,
+        "c1_times_2^(3A)": "49888"
+      },
+      {
+        "Z": 0,
+        "N": 6,
+        "A": 6,
+        "c1": "749/1024",
+        "closed_form": "749/1024",
+        "equal": true,
+        "c1_times_2^(3A)": "191744"
+      },
+      {
+        "Z": 1,
+        "N": 5,
+        "A": 6,
+        "c1": "3147/4096",
+        "closed_form": "3147/4096",
+        "equal": true,
+        "c1_times_2^(3A)": "201408"
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "A": 6,
+        "c1": "1647/2048",
+        "closed_form": "1647/2048",
+        "equal": true,
+        "c1_times_2^(3A)": "210816"
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "c1": "3441/4096",
+        "closed_form": "3441/4096",
+        "equal": true,
+        "c1_times_2^(3A)": "220224"
+      },
+      {
+        "Z": 4,
+        "N": 2,
+        "A": 6,
+        "c1": "897/1024",
+        "closed_form": "897/1024",
+        "equal": true,
+        "c1_times_2^(3A)": "229632"
+      },
+      {
+        "Z": 5,
+        "N": 1,
+        "A": 6,
+        "c1": "3735/4096",
+        "closed_form": "3735/4096",
+        "equal": true,
+        "c1_times_2^(3A)": "239040"
+      },
+      {
+        "Z": 6,
+        "N": 0,
+        "A": 6,
+        "c1": "1943/2048",
+        "closed_form": "1943/2048",
+        "equal": true,
+        "c1_times_2^(3A)": "248704"
+      },
+      {
+        "Z": 0,
+        "N": 7,
+        "A": 7,
+        "c1": "885/2048",
+        "closed_form": "885/2048",
+        "equal": true,
+        "c1_times_2^(3A)": "906240"
+      },
+      {
+        "Z": 1,
+        "N": 6,
+        "A": 7,
+        "c1": "7391/16384",
+        "closed_form": "7391/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "946048"
+      },
+      {
+        "Z": 2,
+        "N": 5,
+        "A": 7,
+        "c1": "3849/8192",
+        "closed_form": "3849/8192",
+        "equal": true,
+        "c1_times_2^(3A)": "985344"
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "c1": "8005/16384",
+        "closed_form": "8005/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "1024640"
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "c1": "1039/2048",
+        "closed_form": "1039/2048",
+        "equal": true,
+        "c1_times_2^(3A)": "1063936"
+      },
+      {
+        "Z": 5,
+        "N": 2,
+        "A": 7,
+        "c1": "8619/16384",
+        "closed_form": "8619/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "1103232"
+      },
+      {
+        "Z": 6,
+        "N": 1,
+        "A": 7,
+        "c1": "4463/8192",
+        "closed_form": "4463/8192",
+        "equal": true,
+        "c1_times_2^(3A)": "1142528"
+      },
+      {
+        "Z": 7,
+        "N": 0,
+        "A": 7,
+        "c1": "9237/16384",
+        "closed_form": "9237/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "1182336"
+      },
+      {
+        "Z": 0,
+        "N": 8,
+        "A": 8,
+        "c1": "4071/16384",
+        "closed_form": "4071/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "4168704"
+      },
+      {
+        "Z": 1,
+        "N": 7,
+        "A": 8,
+        "c1": "16915/65536",
+        "closed_form": "16915/65536",
+        "equal": true,
+        "c1_times_2^(3A)": "4330240"
+      },
+      {
+        "Z": 2,
+        "N": 6,
+        "A": 8,
+        "c1": "8771/32768",
+        "closed_form": "8771/32768",
+        "equal": true,
+        "c1_times_2^(3A)": "4490752"
+      },
+      {
+        "Z": 3,
+        "N": 5,
+        "A": 8,
+        "c1": "18169/65536",
+        "closed_form": "18169/65536",
+        "equal": true,
+        "c1_times_2^(3A)": "4651264"
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "c1": "4699/16384",
+        "closed_form": "4699/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "4811776"
+      },
+      {
+        "Z": 5,
+        "N": 3,
+        "A": 8,
+        "c1": "19423/65536",
+        "closed_form": "19423/65536",
+        "equal": true,
+        "c1_times_2^(3A)": "4972288"
+      },
+      {
+        "Z": 6,
+        "N": 2,
+        "A": 8,
+        "c1": "10025/32768",
+        "closed_form": "10025/32768",
+        "equal": true,
+        "c1_times_2^(3A)": "5132800"
+      },
+      {
+        "Z": 7,
+        "N": 1,
+        "A": 8,
+        "c1": "20677/65536",
+        "closed_form": "20677/65536",
+        "equal": true,
+        "c1_times_2^(3A)": "5293312"
+      },
+      {
+        "Z": 8,
+        "N": 0,
+        "A": 8,
+        "c1": "5327/16384",
+        "closed_form": "5327/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "5454848"
+      },
+      {
+        "Z": 0,
+        "N": 9,
+        "A": 9,
+        "c1": "2297/16384",
+        "closed_form": "2297/16384",
+        "equal": true,
+        "c1_times_2^(3A)": "18817024"
+      },
+      {
+        "Z": 1,
+        "N": 8,
+        "A": 9,
+        "c1": "38023/262144",
+        "closed_form": "38023/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "19467776"
+      },
+      {
+        "Z": 2,
+        "N": 7,
+        "A": 9,
+        "c1": "19645/131072",
+        "closed_form": "19645/131072",
+        "equal": true,
+        "c1_times_2^(3A)": "20116480"
+      },
+      {
+        "Z": 3,
+        "N": 6,
+        "A": 9,
+        "c1": "40557/262144",
+        "closed_form": "40557/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "20765184"
+      },
+      {
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "c1": "1307/8192",
+        "closed_form": "1307/8192",
+        "equal": true,
+        "c1_times_2^(3A)": "21413888"
+      },
+      {
+        "Z": 5,
+        "N": 4,
+        "A": 9,
+        "c1": "43091/262144",
+        "closed_form": "43091/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "22062592"
+      },
+      {
+        "Z": 6,
+        "N": 3,
+        "A": 9,
+        "c1": "22179/131072",
+        "closed_form": "22179/131072",
+        "equal": true,
+        "c1_times_2^(3A)": "22711296"
+      },
+      {
+        "Z": 7,
+        "N": 2,
+        "A": 9,
+        "c1": "45625/262144",
+        "closed_form": "45625/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "23360000"
+      },
+      {
+        "Z": 8,
+        "N": 1,
+        "A": 9,
+        "c1": "11723/65536",
+        "closed_form": "11723/65536",
+        "equal": true,
+        "c1_times_2^(3A)": "24008704"
+      },
+      {
+        "Z": 9,
+        "N": 0,
+        "A": 9,
+        "c1": "48163/262144",
+        "closed_form": "48163/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "24659456"
+      },
+      {
+        "Z": 0,
+        "N": 10,
+        "A": 10,
+        "c1": "20449/262144",
+        "closed_form": "20449/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "83759104"
+      },
+      {
+        "Z": 1,
+        "N": 9,
+        "A": 10,
+        "c1": "84347/1048576",
+        "closed_form": "84347/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "86371328"
+      },
+      {
+        "Z": 2,
+        "N": 8,
+        "A": 10,
+        "c1": "43447/524288",
+        "closed_form": "43447/524288",
+        "equal": true,
+        "c1_times_2^(3A)": "88979456"
+      },
+      {
+        "Z": 3,
+        "N": 7,
+        "A": 10,
+        "c1": "89441/1048576",
+        "closed_form": "89441/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "91587584"
+      },
+      {
+        "Z": 4,
+        "N": 6,
+        "A": 10,
+        "c1": "22997/262144",
+        "closed_form": "22997/262144",
+        "equal": true,
+        "c1_times_2^(3A)": "94195712"
+      },
+      {
+        "Z": 5,
+        "N": 5,
+        "A": 10,
+        "c1": "94535/1048576",
+        "closed_form": "94535/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "96803840"
+      },
+      {
+        "Z": 6,
+        "N": 4,
+        "A": 10,
+        "c1": "48541/524288",
+        "closed_form": "48541/524288",
+        "equal": true,
+        "c1_times_2^(3A)": "99411968"
+      },
+      {
+        "Z": 7,
+        "N": 3,
+        "A": 10,
+        "c1": "99629/1048576",
+        "closed_form": "99629/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "102020096"
+      },
+      {
+        "Z": 8,
+        "N": 2,
+        "A": 10,
+        "c1": "3193/32768",
+        "closed_form": "3193/32768",
+        "equal": true,
+        "c1_times_2^(3A)": "104628224"
+      },
+      {
+        "Z": 9,
+        "N": 1,
+        "A": 10,
+        "c1": "104723/1048576",
+        "closed_form": "104723/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "107236352"
+      },
+      {
+        "Z": 10,
+        "N": 0,
+        "A": 10,
+        "c1": "53637/524288",
+        "closed_form": "53637/524288",
+        "equal": true,
+        "c1_times_2^(3A)": "109848576"
+      },
+      {
+        "Z": 0,
+        "N": 11,
+        "A": 11,
+        "c1": "22511/524288",
+        "closed_form": "22511/524288",
+        "equal": true,
+        "c1_times_2^(3A)": "368820224"
+      },
+      {
+        "Z": 1,
+        "N": 10,
+        "A": 11,
+        "c1": "185199/4194304",
+        "closed_form": "185199/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "379287552"
+      },
+      {
+        "Z": 2,
+        "N": 9,
+        "A": 11,
+        "c1": "95153/2097152",
+        "closed_form": "95153/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "389746688"
+      },
+      {
+        "Z": 3,
+        "N": 8,
+        "A": 11,
+        "c1": "195413/4194304",
+        "closed_form": "195413/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "400205824"
+      },
+      {
+        "Z": 4,
+        "N": 7,
+        "A": 11,
+        "c1": "25065/524288",
+        "closed_form": "25065/524288",
+        "equal": true,
+        "c1_times_2^(3A)": "410664960"
+      },
+      {
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "c1": "205627/4194304",
+        "closed_form": "205627/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "421124096"
+      },
+      {
+        "Z": 6,
+        "N": 5,
+        "A": 11,
+        "c1": "105367/2097152",
+        "closed_form": "105367/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "431583232"
+      },
+      {
+        "Z": 7,
+        "N": 4,
+        "A": 11,
+        "c1": "215841/4194304",
+        "closed_form": "215841/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "442042368"
+      },
+      {
+        "Z": 8,
+        "N": 3,
+        "A": 11,
+        "c1": "55237/1048576",
+        "closed_form": "55237/1048576",
+        "equal": true,
+        "c1_times_2^(3A)": "452501504"
+      },
+      {
+        "Z": 9,
+        "N": 2,
+        "A": 11,
+        "c1": "226055/4194304",
+        "closed_form": "226055/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "462960640"
+      },
+      {
+        "Z": 10,
+        "N": 1,
+        "A": 11,
+        "c1": "115581/2097152",
+        "closed_form": "115581/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "473419776"
+      },
+      {
+        "Z": 11,
+        "N": 0,
+        "A": 11,
+        "c1": "236273/4194304",
+        "closed_form": "236273/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "483887104"
+      },
+      {
+        "Z": 0,
+        "N": 12,
+        "A": 12,
+        "c1": "98267/4194304",
+        "closed_form": "98267/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "1610006528"
+      },
+      {
+        "Z": 1,
+        "N": 11,
+        "A": 12,
+        "c1": "403299/16777216",
+        "closed_form": "403299/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "1651912704"
+      },
+      {
+        "Z": 2,
+        "N": 10,
+        "A": 12,
+        "c1": "206763/8388608",
+        "closed_form": "206763/8388608",
+        "equal": true,
+        "c1_times_2^(3A)": "1693802496"
+      },
+      {
+        "Z": 3,
+        "N": 9,
+        "A": 12,
+        "c1": "423753/16777216",
+        "closed_form": "423753/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "1735692288"
+      },
+      {
+        "Z": 4,
+        "N": 8,
+        "A": 12,
+        "c1": "108495/4194304",
+        "closed_form": "108495/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "1777582080"
+      },
+      {
+        "Z": 5,
+        "N": 7,
+        "A": 12,
+        "c1": "444207/16777216",
+        "closed_form": "444207/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "1819471872"
+      },
+      {
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "c1": "227217/8388608",
+        "closed_form": "227217/8388608",
+        "equal": true,
+        "c1_times_2^(3A)": "1861361664"
+      },
+      {
+        "Z": 7,
+        "N": 5,
+        "A": 12,
+        "c1": "464661/16777216",
+        "closed_form": "464661/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "1903251456"
+      },
+      {
+        "Z": 8,
+        "N": 4,
+        "A": 12,
+        "c1": "59361/2097152",
+        "closed_form": "59361/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "1945141248"
+      },
+      {
+        "Z": 9,
+        "N": 3,
+        "A": 12,
+        "c1": "485115/16777216",
+        "closed_form": "485115/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "1987031040"
+      },
+      {
+        "Z": 10,
+        "N": 2,
+        "A": 12,
+        "c1": "247671/8388608",
+        "closed_form": "247671/8388608",
+        "equal": true,
+        "c1_times_2^(3A)": "2028920832"
+      },
+      {
+        "Z": 11,
+        "N": 1,
+        "A": 12,
+        "c1": "505569/16777216",
+        "closed_form": "505569/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "2070810624"
+      },
+      {
+        "Z": 12,
+        "N": 0,
+        "A": 12,
+        "c1": "64475/2097152",
+        "closed_form": "64475/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "2112716800"
+      },
+      {
+        "Z": 0,
+        "N": 13,
+        "A": 13,
+        "c1": "26619/2097152",
+        "closed_form": "26619/2097152",
+        "equal": true,
+        "c1_times_2^(3A)": "6978011136"
+      },
+      {
+        "Z": 1,
+        "N": 12,
+        "A": 13,
+        "c1": "872279/67108864",
+        "closed_form": "872279/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "7145709568"
+      },
+      {
+        "Z": 2,
+        "N": 11,
+        "A": 13,
+        "c1": "446373/33554432",
+        "closed_form": "446373/33554432",
+        "equal": true,
+        "c1_times_2^(3A)": "7313375232"
+      },
+      {
+        "Z": 3,
+        "N": 10,
+        "A": 13,
+        "c1": "913213/67108864",
+        "closed_form": "913213/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "7481040896"
+      },
+      {
+        "Z": 4,
+        "N": 9,
+        "A": 13,
+        "c1": "58355/4194304",
+        "closed_form": "58355/4194304",
+        "equal": true,
+        "c1_times_2^(3A)": "7648706560"
+      },
+      {
+        "Z": 5,
+        "N": 8,
+        "A": 13,
+        "c1": "954147/67108864",
+        "closed_form": "954147/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "7816372224"
+      },
+      {
+        "Z": 6,
+        "N": 7,
+        "A": 13,
+        "c1": "487307/33554432",
+        "closed_form": "487307/33554432",
+        "equal": true,
+        "c1_times_2^(3A)": "7984037888"
+      },
+      {
+        "Z": 7,
+        "N": 6,
+        "A": 13,
+        "c1": "995081/67108864",
+        "closed_form": "995081/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "8151703552"
+      },
+      {
+        "Z": 8,
+        "N": 5,
+        "A": 13,
+        "c1": "253887/16777216",
+        "closed_form": "253887/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "8319369216"
+      },
+      {
+        "Z": 9,
+        "N": 4,
+        "A": 13,
+        "c1": "1036015/67108864",
+        "closed_form": "1036015/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "8487034880"
+      },
+      {
+        "Z": 10,
+        "N": 3,
+        "A": 13,
+        "c1": "528241/33554432",
+        "closed_form": "528241/33554432",
+        "equal": true,
+        "c1_times_2^(3A)": "8654700544"
+      },
+      {
+        "Z": 11,
+        "N": 2,
+        "A": 13,
+        "c1": "1076949/67108864",
+        "closed_form": "1076949/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "8822366208"
+      },
+      {
+        "Z": 12,
+        "N": 1,
+        "A": 13,
+        "c1": "137177/8388608",
+        "closed_form": "137177/8388608",
+        "equal": true,
+        "c1_times_2^(3A)": "8990031872"
+      },
+      {
+        "Z": 13,
+        "N": 0,
+        "A": 13,
+        "c1": "1117887/67108864",
+        "closed_form": "1117887/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "9157730304"
+      },
+      {
+        "Z": 0,
+        "N": 14,
+        "A": 14,
+        "c1": "458709/67108864",
+        "closed_form": "458709/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "30061953024"
+      },
+      {
+        "Z": 1,
+        "N": 13,
+        "A": 14,
+        "c1": "1875787/268435456",
+        "closed_form": "1875787/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "30732894208"
+      },
+      {
+        "Z": 2,
+        "N": 12,
+        "A": 14,
+        "c1": "958367/134217728",
+        "closed_form": "958367/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "31403769856"
+      },
+      {
+        "Z": 3,
+        "N": 11,
+        "A": 14,
+        "c1": "1957681/268435456",
+        "closed_form": "1957681/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "32074645504"
+      },
+      {
+        "Z": 4,
+        "N": 10,
+        "A": 14,
+        "c1": "499657/67108864",
+        "closed_form": "499657/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "32745521152"
+      },
+      {
+        "Z": 5,
+        "N": 9,
+        "A": 14,
+        "c1": "2039575/268435456",
+        "closed_form": "2039575/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "33416396800"
+      },
+      {
+        "Z": 6,
+        "N": 8,
+        "A": 14,
+        "c1": "1040261/134217728",
+        "closed_form": "1040261/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "34087272448"
+      },
+      {
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "c1": "2121469/268435456",
+        "closed_form": "2121469/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "34758148096"
+      },
+      {
+        "Z": 8,
+        "N": 6,
+        "A": 14,
+        "c1": "135151/16777216",
+        "closed_form": "135151/16777216",
+        "equal": true,
+        "c1_times_2^(3A)": "35429023744"
+      },
+      {
+        "Z": 9,
+        "N": 5,
+        "A": 14,
+        "c1": "2203363/268435456",
+        "closed_form": "2203363/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "36099899392"
+      },
+      {
+        "Z": 10,
+        "N": 4,
+        "A": 14,
+        "c1": "1122155/134217728",
+        "closed_form": "1122155/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "36770775040"
+      },
+      {
+        "Z": 11,
+        "N": 3,
+        "A": 14,
+        "c1": "2285257/268435456",
+        "closed_form": "2285257/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "37441650688"
+      },
+      {
+        "Z": 12,
+        "N": 2,
+        "A": 14,
+        "c1": "581551/67108864",
+        "closed_form": "581551/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "38112526336"
+      },
+      {
+        "Z": 13,
+        "N": 1,
+        "A": 14,
+        "c1": "2367151/268435456",
+        "closed_form": "2367151/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "38783401984"
+      },
+      {
+        "Z": 14,
+        "N": 0,
+        "A": 14,
+        "c1": "1204051/134217728",
+        "closed_form": "1204051/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "39454343168"
+      },
+      {
+        "Z": 0,
+        "N": 15,
+        "A": 15,
+        "c1": "491497/134217728",
+        "closed_form": "491497/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "128842989568"
+      },
+      {
+        "Z": 1,
+        "N": 14,
+        "A": 15,
+        "c1": "4013887/1073741824",
+        "closed_form": "4013887/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "131527049216"
+      },
+      {
+        "Z": 2,
+        "N": 13,
+        "A": 15,
+        "c1": "2047897/536870912",
+        "closed_form": "2047897/536870912",
+        "equal": true,
+        "c1_times_2^(3A)": "134210977792"
+      },
+      {
+        "Z": 3,
+        "N": 12,
+        "A": 15,
+        "c1": "4177701/1073741824",
+        "closed_form": "4177701/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "136894906368"
+      },
+      {
+        "Z": 4,
+        "N": 11,
+        "A": 15,
+        "c1": "532451/134217728",
+        "closed_form": "532451/134217728",
+        "equal": true,
+        "c1_times_2^(3A)": "139578834944"
+      },
+      {
+        "Z": 5,
+        "N": 10,
+        "A": 15,
+        "c1": "4341515/1073741824",
+        "closed_form": "4341515/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "142262763520"
+      },
+      {
+        "Z": 6,
+        "N": 9,
+        "A": 15,
+        "c1": "2211711/536870912",
+        "closed_form": "2211711/536870912",
+        "equal": true,
+        "c1_times_2^(3A)": "144946692096"
+      },
+      {
+        "Z": 7,
+        "N": 8,
+        "A": 15,
+        "c1": "4505329/1073741824",
+        "closed_form": "4505329/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "147630620672"
+      },
+      {
+        "Z": 8,
+        "N": 7,
+        "A": 15,
+        "c1": "1146809/268435456",
+        "closed_form": "1146809/268435456",
+        "equal": true,
+        "c1_times_2^(3A)": "150314549248"
+      },
+      {
+        "Z": 9,
+        "N": 6,
+        "A": 15,
+        "c1": "4669143/1073741824",
+        "closed_form": "4669143/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "152998477824"
+      },
+      {
+        "Z": 10,
+        "N": 5,
+        "A": 15,
+        "c1": "2375525/536870912",
+        "closed_form": "2375525/536870912",
+        "equal": true,
+        "c1_times_2^(3A)": "155682406400"
+      },
+      {
+        "Z": 11,
+        "N": 4,
+        "A": 15,
+        "c1": "4832957/1073741824",
+        "closed_form": "4832957/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "158366334976"
+      },
+      {
+        "Z": 12,
+        "N": 3,
+        "A": 15,
+        "c1": "307179/67108864",
+        "closed_form": "307179/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "161050263552"
+      },
+      {
+        "Z": 13,
+        "N": 2,
+        "A": 15,
+        "c1": "4996771/1073741824",
+        "closed_form": "4996771/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "163734192128"
+      },
+      {
+        "Z": 14,
+        "N": 1,
+        "A": 15,
+        "c1": "2539339/536870912",
+        "closed_form": "2539339/536870912",
+        "equal": true,
+        "c1_times_2^(3A)": "166418120704"
+      },
+      {
+        "Z": 15,
+        "N": 0,
+        "A": 15,
+        "c1": "5160589/1073741824",
+        "closed_form": "5160589/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "169102180352"
+      },
+      {
+        "Z": 0,
+        "N": 16,
+        "A": 16,
+        "c1": "2097103/1073741824",
+        "closed_form": "2097103/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "549742968832"
+      },
+      {
+        "Z": 1,
+        "N": 15,
+        "A": 16,
+        "c1": "8552243/4294967296",
+        "closed_form": "8552243/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "560479797248"
+      },
+      {
+        "Z": 2,
+        "N": 14,
+        "A": 16,
+        "c1": "4358035/2147483648",
+        "closed_form": "4358035/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "571216363520"
+      },
+      {
+        "Z": 3,
+        "N": 13,
+        "A": 16,
+        "c1": "8879897/4294967296",
+        "closed_form": "8879897/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "581952929792"
+      },
+      {
+        "Z": 4,
+        "N": 12,
+        "A": 16,
+        "c1": "2260931/1073741824",
+        "closed_form": "2260931/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "592689496064"
+      },
+      {
+        "Z": 5,
+        "N": 11,
+        "A": 16,
+        "c1": "9207551/4294967296",
+        "closed_form": "9207551/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "603426062336"
+      },
+      {
+        "Z": 6,
+        "N": 10,
+        "A": 16,
+        "c1": "4685689/2147483648",
+        "closed_form": "4685689/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "614162628608"
+      },
+      {
+        "Z": 7,
+        "N": 9,
+        "A": 16,
+        "c1": "9535205/4294967296",
+        "closed_form": "9535205/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "624899194880"
+      },
+      {
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "c1": "1212379/536870912",
+        "closed_form": "1212379/536870912",
+        "equal": true,
+        "c1_times_2^(3A)": "635635761152"
+      },
+      {
+        "Z": 9,
+        "N": 7,
+        "A": 16,
+        "c1": "9862859/4294967296",
+        "closed_form": "9862859/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "646372327424"
+      },
+      {
+        "Z": 10,
+        "N": 6,
+        "A": 16,
+        "c1": "5013343/2147483648",
+        "closed_form": "5013343/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "657108893696"
+      },
+      {
+        "Z": 11,
+        "N": 5,
+        "A": 16,
+        "c1": "10190513/4294967296",
+        "closed_form": "10190513/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "667845459968"
+      },
+      {
+        "Z": 12,
+        "N": 4,
+        "A": 16,
+        "c1": "2588585/1073741824",
+        "closed_form": "2588585/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "678582026240"
+      },
+      {
+        "Z": 13,
+        "N": 3,
+        "A": 16,
+        "c1": "10518167/4294967296",
+        "closed_form": "10518167/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "689318592512"
+      },
+      {
+        "Z": 14,
+        "N": 2,
+        "A": 16,
+        "c1": "5340997/2147483648",
+        "closed_form": "5340997/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "700055158784"
+      },
+      {
+        "Z": 15,
+        "N": 1,
+        "A": 16,
+        "c1": "10845821/4294967296",
+        "closed_form": "10845821/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "710791725056"
+      },
+      {
+        "Z": 16,
+        "N": 0,
+        "A": 16,
+        "c1": "2752413/1073741824",
+        "closed_form": "2752413/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "721528553472"
+      },
+      {
+        "Z": 0,
+        "N": 17,
+        "A": 17,
+        "c1": "1114099/1073741824",
+        "closed_form": "1114099/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "2336434946048"
+      },
+      {
+        "Z": 1,
+        "N": 16,
+        "A": 17,
+        "c1": "18153255/17179869184",
+        "closed_form": "18153255/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2379383439360"
+      },
+      {
+        "Z": 2,
+        "N": 15,
+        "A": 17,
+        "c1": "9240461/8589934592",
+        "closed_form": "9240461/8589934592",
+        "equal": true,
+        "c1_times_2^(3A)": "2422331408384"
+      },
+      {
+        "Z": 3,
+        "N": 14,
+        "A": 17,
+        "c1": "18808589/17179869184",
+        "closed_form": "18808589/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2465279377408"
+      },
+      {
+        "Z": 4,
+        "N": 13,
+        "A": 17,
+        "c1": "74751/67108864",
+        "closed_form": "74751/67108864",
+        "equal": true,
+        "c1_times_2^(3A)": "2508227346432"
+      },
+      {
+        "Z": 5,
+        "N": 12,
+        "A": 17,
+        "c1": "19463923/17179869184",
+        "closed_form": "19463923/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2551175315456"
+      },
+      {
+        "Z": 6,
+        "N": 11,
+        "A": 17,
+        "c1": "9895795/8589934592",
+        "closed_form": "9895795/8589934592",
+        "equal": true,
+        "c1_times_2^(3A)": "2594123284480"
+      },
+      {
+        "Z": 7,
+        "N": 10,
+        "A": 17,
+        "c1": "20119257/17179869184",
+        "closed_form": "20119257/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2637071253504"
+      },
+      {
+        "Z": 8,
+        "N": 9,
+        "A": 17,
+        "c1": "5111731/4294967296",
+        "closed_form": "5111731/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "2680019222528"
+      },
+      {
+        "Z": 9,
+        "N": 8,
+        "A": 17,
+        "c1": "20774591/17179869184",
+        "closed_form": "20774591/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2722967191552"
+      },
+      {
+        "Z": 10,
+        "N": 7,
+        "A": 17,
+        "c1": "10551129/8589934592",
+        "closed_form": "10551129/8589934592",
+        "equal": true,
+        "c1_times_2^(3A)": "2765915160576"
+      },
+      {
+        "Z": 11,
+        "N": 6,
+        "A": 17,
+        "c1": "21429925/17179869184",
+        "closed_form": "21429925/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2808863129600"
+      },
+      {
+        "Z": 12,
+        "N": 5,
+        "A": 17,
+        "c1": "2719699/2147483648",
+        "closed_form": "2719699/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "2851811098624"
+      },
+      {
+        "Z": 13,
+        "N": 4,
+        "A": 17,
+        "c1": "22085259/17179869184",
+        "closed_form": "22085259/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2894759067648"
+      },
+      {
+        "Z": 14,
+        "N": 3,
+        "A": 17,
+        "c1": "11206463/8589934592",
+        "closed_form": "11206463/8589934592",
+        "equal": true,
+        "c1_times_2^(3A)": "2937707036672"
+      },
+      {
+        "Z": 15,
+        "N": 2,
+        "A": 17,
+        "c1": "22740593/17179869184",
+        "closed_form": "22740593/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "2980655005696"
+      },
+      {
+        "Z": 16,
+        "N": 1,
+        "A": 17,
+        "c1": "5767065/4294967296",
+        "closed_form": "5767065/4294967296",
+        "equal": true,
+        "c1_times_2^(3A)": "3023602974720"
+      },
+      {
+        "Z": 17,
+        "N": 0,
+        "A": 17,
+        "c1": "23395931/17179869184",
+        "closed_form": "23395931/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "3066551468032"
+      },
+      {
+        "Z": 0,
+        "N": 18,
+        "A": 18,
+        "c1": "9437129/17179869184",
+        "closed_form": "9437129/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "9895546978304"
+      },
+      {
+        "Z": 1,
+        "N": 17,
+        "A": 18,
+        "c1": "38403867/68719476736",
+        "closed_form": "38403867/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "10067343310848"
+      },
+      {
+        "Z": 2,
+        "N": 16,
+        "A": 18,
+        "c1": "19529607/34359738368",
+        "closed_form": "19529607/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "10239138594816"
+      },
+      {
+        "Z": 3,
+        "N": 15,
+        "A": 18,
+        "c1": "39714561/68719476736",
+        "closed_form": "39714561/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "10410933878784"
+      },
+      {
+        "Z": 4,
+        "N": 14,
+        "A": 18,
+        "c1": "10092477/17179869184",
+        "closed_form": "10092477/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "10582729162752"
+      },
+      {
+        "Z": 5,
+        "N": 13,
+        "A": 18,
+        "c1": "41025255/68719476736",
+        "closed_form": "41025255/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "10754524446720"
+      },
+      {
+        "Z": 6,
+        "N": 12,
+        "A": 18,
+        "c1": "20840301/34359738368",
+        "closed_form": "20840301/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "10926319730688"
+      },
+      {
+        "Z": 7,
+        "N": 11,
+        "A": 18,
+        "c1": "42335949/68719476736",
+        "closed_form": "42335949/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "11098115014656"
+      },
+      {
+        "Z": 8,
+        "N": 10,
+        "A": 18,
+        "c1": "671739/1073741824",
+        "closed_form": "671739/1073741824",
+        "equal": true,
+        "c1_times_2^(3A)": "11269910298624"
+      },
+      {
+        "Z": 9,
+        "N": 9,
+        "A": 18,
+        "c1": "43646643/68719476736",
+        "closed_form": "43646643/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "11441705582592"
+      },
+      {
+        "Z": 10,
+        "N": 8,
+        "A": 18,
+        "c1": "22150995/34359738368",
+        "closed_form": "22150995/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "11613500866560"
+      },
+      {
+        "Z": 11,
+        "N": 7,
+        "A": 18,
+        "c1": "44957337/68719476736",
+        "closed_form": "44957337/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "11785296150528"
+      },
+      {
+        "Z": 12,
+        "N": 6,
+        "A": 18,
+        "c1": "11403171/17179869184",
+        "closed_form": "11403171/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "11957091434496"
+      },
+      {
+        "Z": 13,
+        "N": 5,
+        "A": 18,
+        "c1": "46268031/68719476736",
+        "closed_form": "46268031/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "12128886718464"
+      },
+      {
+        "Z": 14,
+        "N": 4,
+        "A": 18,
+        "c1": "23461689/34359738368",
+        "closed_form": "23461689/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "12300682002432"
+      },
+      {
+        "Z": 15,
+        "N": 3,
+        "A": 18,
+        "c1": "47578725/68719476736",
+        "closed_form": "47578725/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "12472477286400"
+      },
+      {
+        "Z": 16,
+        "N": 2,
+        "A": 18,
+        "c1": "6029259/8589934592",
+        "closed_form": "6029259/8589934592",
+        "equal": true,
+        "c1_times_2^(3A)": "12644272570368"
+      },
+      {
+        "Z": 17,
+        "N": 1,
+        "A": 18,
+        "c1": "48889419/68719476736",
+        "closed_form": "48889419/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "12816067854336"
+      },
+      {
+        "Z": 18,
+        "N": 0,
+        "A": 18,
+        "c1": "24772385/34359738368",
+        "closed_form": "24772385/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "12987864186880"
+      },
+      {
+        "Z": 0,
+        "N": 19,
+        "A": 19,
+        "c1": "9961443/34359738368",
+        "closed_form": "9961443/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "41781320220672"
+      },
+      {
+        "Z": 1,
+        "N": 18,
+        "A": 19,
+        "c1": "81002255/274877906944",
+        "closed_form": "81002255/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "42468510269440"
+      },
+      {
+        "Z": 2,
+        "N": 17,
+        "A": 19,
+        "c1": "41156481/137438953472",
+        "closed_form": "41156481/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "43155698221056"
+      },
+      {
+        "Z": 3,
+        "N": 16,
+        "A": 19,
+        "c1": "83623669/274877906944",
+        "closed_form": "83623669/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "43842886172672"
+      },
+      {
+        "Z": 4,
+        "N": 15,
+        "A": 19,
+        "c1": "10616797/34359738368",
+        "closed_form": "10616797/34359738368",
+        "equal": true,
+        "c1_times_2^(3A)": "44530074124288"
+      },
+      {
+        "Z": 5,
+        "N": 14,
+        "A": 19,
+        "c1": "86245083/274877906944",
+        "closed_form": "86245083/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "45217262075904"
+      },
+      {
+        "Z": 6,
+        "N": 13,
+        "A": 19,
+        "c1": "43777895/137438953472",
+        "closed_form": "43777895/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "45904450027520"
+      },
+      {
+        "Z": 7,
+        "N": 12,
+        "A": 19,
+        "c1": "88866497/274877906944",
+        "closed_form": "88866497/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "46591637979136"
+      },
+      {
+        "Z": 8,
+        "N": 11,
+        "A": 19,
+        "c1": "22544301/68719476736",
+        "closed_form": "22544301/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "47278825930752"
+      },
+      {
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "c1": "91487911/274877906944",
+        "closed_form": "91487911/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "47966013882368"
+      },
+      {
+        "Z": 10,
+        "N": 9,
+        "A": 19,
+        "c1": "46399309/137438953472",
+        "closed_form": "46399309/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "48653201833984"
+      },
+      {
+        "Z": 11,
+        "N": 8,
+        "A": 19,
+        "c1": "94109325/274877906944",
+        "closed_form": "94109325/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "49340389785600"
+      },
+      {
+        "Z": 12,
+        "N": 7,
+        "A": 19,
+        "c1": "745469/2147483648",
+        "closed_form": "745469/2147483648",
+        "equal": true,
+        "c1_times_2^(3A)": "50027577737216"
+      },
+      {
+        "Z": 13,
+        "N": 6,
+        "A": 19,
+        "c1": "96730739/274877906944",
+        "closed_form": "96730739/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "50714765688832"
+      },
+      {
+        "Z": 14,
+        "N": 5,
+        "A": 19,
+        "c1": "49020723/137438953472",
+        "closed_form": "49020723/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "51401953640448"
+      },
+      {
+        "Z": 15,
+        "N": 4,
+        "A": 19,
+        "c1": "99352153/274877906944",
+        "closed_form": "99352153/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "52089141592064"
+      },
+      {
+        "Z": 16,
+        "N": 3,
+        "A": 19,
+        "c1": "25165715/68719476736",
+        "closed_form": "25165715/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "52776329543680"
+      },
+      {
+        "Z": 17,
+        "N": 2,
+        "A": 19,
+        "c1": "101973567/274877906944",
+        "closed_form": "101973567/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "53463517495296"
+      },
+      {
+        "Z": 18,
+        "N": 1,
+        "A": 19,
+        "c1": "51642137/137438953472",
+        "closed_form": "51642137/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "54150705446912"
+      },
+      {
+        "Z": 19,
+        "N": 0,
+        "A": 19,
+        "c1": "104594985/274877906944",
+        "closed_form": "104594985/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "54837895495680"
+      },
+      {
+        "Z": 0,
+        "N": 20,
+        "A": 20,
+        "c1": "41942979/274877906944",
+        "closed_form": "41942979/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "175921604591616"
+      },
+      {
+        "Z": 1,
+        "N": 19,
+        "A": 20,
+        "c1": "170393347/1099511627776",
+        "closed_form": "170393347/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "178670374223872"
+      },
+      {
+        "Z": 2,
+        "N": 18,
+        "A": 20,
+        "c1": "86507387/549755813888",
+        "closed_form": "86507387/549755813888",
+        "equal": true,
+        "c1_times_2^(3A)": "181419139661824"
+      },
+      {
+        "Z": 3,
+        "N": 17,
+        "A": 20,
+        "c1": "175636201/1099511627776",
+        "closed_form": "175636201/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "184167905099776"
+      },
+      {
+        "Z": 4,
+        "N": 16,
+        "A": 20,
+        "c1": "44564407/274877906944",
+        "closed_form": "44564407/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "186916670537728"
+      },
+      {
+        "Z": 5,
+        "N": 15,
+        "A": 20,
+        "c1": "180879055/1099511627776",
+        "closed_form": "180879055/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "189665435975680"
+      },
+      {
+        "Z": 6,
+        "N": 14,
+        "A": 20,
+        "c1": "91750241/549755813888",
+        "closed_form": "91750241/549755813888",
+        "equal": true,
+        "c1_times_2^(3A)": "192414201413632"
+      },
+      {
+        "Z": 7,
+        "N": 13,
+        "A": 20,
+        "c1": "186121909/1099511627776",
+        "closed_form": "186121909/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "195162966851584"
+      },
+      {
+        "Z": 8,
+        "N": 12,
+        "A": 20,
+        "c1": "23592917/137438953472",
+        "closed_form": "23592917/137438953472",
+        "equal": true,
+        "c1_times_2^(3A)": "197911732289536"
+      },
+      {
+        "Z": 9,
+        "N": 11,
+        "A": 20,
+        "c1": "191364763/1099511627776",
+        "closed_form": "191364763/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "200660497727488"
+      },
+      {
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "c1": "96993095/549755813888",
+        "closed_form": "96993095/549755813888",
+        "equal": true,
+        "c1_times_2^(3A)": "203409263165440"
+      },
+      {
+        "Z": 11,
+        "N": 9,
+        "A": 20,
+        "c1": "196607617/1099511627776",
+        "closed_form": "196607617/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "206158028603392"
+      },
+      {
+        "Z": 12,
+        "N": 8,
+        "A": 20,
+        "c1": "49807261/274877906944",
+        "closed_form": "49807261/274877906944",
+        "equal": true,
+        "c1_times_2^(3A)": "208906794041344"
+      },
+      {
+        "Z": 13,
+        "N": 7,
+        "A": 20,
+        "c1": "201850471/1099511627776",
+        "closed_form": "201850471/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "211655559479296"
+      },
+      {
+        "Z": 14,
+        "N": 6,
+        "A": 20,
+        "c1": "102235949/549755813888",
+        "closed_form": "102235949/549755813888",
+        "equal": true,
+        "c1_times_2^(3A)": "214404324917248"
+      },
+      {
+        "Z": 15,
+        "N": 5,
+        "A": 20,
+        "c1": "207093325/1099511627776",
+        "closed_form": "207093325/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "217153090355200"
+      },
+      {
+        "Z": 16,
+        "N": 4,
+        "A": 20,
+        "c1": "3276793/17179869184",
+        "closed_form": "3276793/17179869184",
+        "equal": true,
+        "c1_times_2^(3A)": "219901855793152"
+      },
+      {
+        "Z": 17,
+        "N": 3,
+        "A": 20,
+        "c1": "212336179/1099511627776",
+        "closed_form": "212336179/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "222650621231104"
+      },
+      {
+        "Z": 18,
+        "N": 2,
+        "A": 20,
+        "c1": "107478803/549755813888",
+        "closed_form": "107478803/549755813888",
+        "equal": true,
+        "c1_times_2^(3A)": "225399386669056"
+      },
+      {
+        "Z": 19,
+        "N": 1,
+        "A": 20,
+        "c1": "217579033/1099511627776",
+        "closed_form": "217579033/1099511627776",
+        "equal": true,
+        "c1_times_2^(3A)": "228148152107008"
+      },
+      {
+        "Z": 20,
+        "N": 0,
+        "A": 20,
+        "c1": "13762529/68719476736",
+        "closed_form": "13762529/68719476736",
+        "equal": true,
+        "c1_times_2^(3A)": "230896921739264"
+      }
+    ],
+    "derivation": {
+      "1_first_order_generator": "σ = s + ε(1 + Y) + O(ε²) with sY = -Ys, forced by σ² = hσ + 1, h = 2ε + O(ε²), s² = 1.",
+      "2_Y_is_trace_invisible": "Tr(Y·P) = 0 for every permutation P: Y lives on the (e12,e21) sector of one adjacent pair, is traceless there with opposite off-diagonal entries, and the global spin flip commutes with every permutation, so the two sectors cancel.",
+      "3_normaliser_cancels": "K' = 2 N_down, Tr(K' P) = n 2^c(P); (1+q²)^-n = 2^-n(1 - nε + …). The two n·2^c terms cancel.",
+      "4_letter_scalars": "L_ℓ' = (1 + d_ℓ'(0))·1 with d'(0) = 0, -2, -1, -1 for σ, σ⁻¹, averaged, averaged_weighted; δ = O(ε³) is invisible.",
+      "result": "d tr_M/dε|₀ = 2^-n Σ_ℓ w_ℓ 2^c(σ^(ℓ)), w = +1, -1, 0, 0; c1 = free - atom.",
+      "hypotheses_not_proved_here": "quantum Schur-Weyl (tr_M = Tr(K ρ)/Z with K = diag(1,q²)^⊗n) — the same input ClassicalTraceFloor carries as a hypothesis; the rest is finite algebra."
+    },
+    "verdict": "c1 is DERIVED: the leading hbar_q coefficient of the trace difference is a signed sum over the word's non-averaged letters of 2^(c(σ with that letter deleted) - n), exactly like the floor c0 is 2^(c-n). Checked three ways — exact series, the permutation count, and the six Richardson measurements — all equal as Fractions. The six Lean definitions in PairwiseChainLeadingOrder.lean can become theorems conditional on Schur-Weyl."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2002.07369v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Groebner-Shirshov bases for the Coxeter groups of the types G2, F4, E6, E7 and E8",
+  "contains": [
+    "library/arxiv-2002.07369v2/sections/sec-000",
+    "library/arxiv-2002.07369v2/sections/sec-001",
+    "library/arxiv-2002.07369v2/sections/sec-002",
+    "library/arxiv-2002.07369v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2002.07369v2",
+    "source_file": "2002.07369v2.pdf",
+    "source_sha256": "6b8b1e509553b90c447faef596b288c25d7044c6851f157db9f2049b5b7d5c87",
+    "pages": 14,
+    "arxiv": {
+      "id": "2002.07369",
+      "version": "2",
+      "primary_class": "math.GR",
+      "stamp_date": "15 Mar 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

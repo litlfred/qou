@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-crossing-energy-trefoil",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:crossing-energy-trefoil",
+  "kind": "example",
+  "title": "Crossing energy and binding in the trefoil",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/ex-topological-mass-trefoil"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "crossing-energy",
+    "trefoil",
+    "example"
+  ],
+  "text": "crossing-energy-trefoil.md",
+  "provenance": "authored"
+}

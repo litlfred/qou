@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-swampland-emergent-coupling",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:swampland-emergent-coupling",
+  "kind": "remark",
+  "title": "Swampland correspondence: the electromagnetic coupling and the Emergence Proposal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio",
+  "cites": [
+    "references/heidenreich2018",
+    "references/ooguri-vafa2007"
+  ],
+  "tags": [
+    "swampland",
+    "emergence-proposal",
+    "fine-structure-constant",
+    "classical-limit",
+    "external-program"
+  ],
+  "text": "swampland-emergent-coupling.md",
+  "provenance": "authored"
+}

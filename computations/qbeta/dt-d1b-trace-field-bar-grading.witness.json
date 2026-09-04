@@ -1,0 +1,215 @@
+{
+  "engine": "sympy-exact-sturm",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T15:03:24.701898+00:00",
+  "commitSha": "cc56d3191dd554a6afac90f72324691cd85b9c77",
+  "assertions": [
+    {
+      "name": "C4_the_exact_Sturm_real_root_count_DISCRIMINATES",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "hand-built cases [('x**2 + 1', 0), ('x**2 - 1', 2), ('x**3 - 2', 1), ('x**4 - 1', 2)] match the known answers; this is exact root COUNTING (Sturm sequences), not a numerical root-find, so no float64 enters and a borderline field cannot be miscounted"
+    },
+    {
+      "name": "C1_the_embedding_count_CLOSES",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "r_1 + 2*r_2 = deg for every field — a real embedding plus a conjugate pair account for every embedding, with none left over"
+    },
+    {
+      "name": "C2_the_degree_REPRODUCES_the_companion_probe_s_C_irr",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the companion probe got C_irr by summing Galois-ORBIT degrees off the Magma fixtures; this reads the minimal polynomial's DEGREE. Two routes, same six numbers — so neither is a parsing artifact"
+    },
+    {
+      "name": "C3_every_minimal_polynomial_is_IRREDUCIBLE_over_Q",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "otherwise 'the trace field' is not a field and counting its embeddings would be meaningless"
+    },
+    {
+      "name": "FIVE_of_six_trace_fields_are_TOTALLY_IMAGINARY",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "totally imaginary ['4_1', 'm135', 's000', 't00000', 'v0000']; the only field with a real embedding is ['5_2']. So on this sample the mirror acts FREELY on the node set almost everywhere, and 5_2 is the exception"
+    },
+    {
+      "name": "5_2_s_fixed_node_is_FORCED_BY_PARITY_not_a_coincidence",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "5_2 is the only odd-degree field (3), and no involution acts freely on a set of odd size — so a mirror-fixed node is unavoidable there, while 4_1's two nodes can be freely swapped. This is parity, not a property of the particular polynomial"
+    },
+    {
+      "name": "RECORDED_NEGATIVE_this_is_NOT_an_escape_from_the_mirror_exclusion",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "I first read the fixed point as evading QuiverMirrorAutomorphismExcluded, on the theory that it excludes a FREELY acting mirror. Reading the theorem first: its hypothesis is hσ : ∀ e, Ω (σ e) = Ω e — count-invariance, which says nothing about freeness. A σ with fixed points can satisfy it and is excluded identically. The parity fact survives; the consequence I nearly drew from it does not"
+    },
+    {
+      "name": "WHAT_THIS_IS_an_INPUT_to_the_arrow_question",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the measured (r_1, r_2) is the bar grading any bar-graded quiver on these nodes must reproduce. It does not produce arrows, a potential, or A_omega, and no construction is proposed here"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 61,
+  "computation": "dt-d1b-trace-field-bar-grading",
+  "scriptFile": "dt_d1b_trace_field_bar_grading_probe.py",
+  "scriptHash": "1f3f2ac992d2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_trace_field_bar_grading_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_trace_field_bar_grading_probe.py"
+  },
+  "description": "qou-q9ih D1-b, arrow question. The companion probe closed the NODE count as arithmetic (single Galois orbit, C_irr = [trace field : Q]). Arrows in a bar-graded quiver need the bar grading of the node set, and the single-orbit result says where to read it: nodes are the embeddings of the trace field, complex conjugation acts on them, and a rep is self-conjugate exactly when its embedding is real. So the grading is r_1 mirror-FIXED nodes plus r_2 swapped pairs. Measured exactly by Sturm sequences: five of six trace fields are TOTALLY IMAGINARY; 5_2 is the only one with a real embedding and cannot avoid one, because its trace field has ODD degree and no involution acts freely on an odd-size set. RECORDED NEGATIVE: I first read this as an escape from QuiverMirrorAutomorphismExcluded -- that the theorem excludes a freely-acting mirror and a fixed point evades it. Reading the theorem shows that is WRONG: its hypothesis is count-invariance (Omega(sigma e) = Omega e), which says nothing about freeness, so a fixed point is no escape. The parity fact stands; the consequence does not. What this gives is the measured (r_1, r_2) any bar-graded construction must reproduce -- an INPUT to the arrow question, not an answer. Scope-(a); four of six are census manifolds, valid for the grading and not automatically valid as D1-b nodes. Nothing wired; no fit; A_omega underived.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "trace_fields": {
+      "4_1": {
+        "poly": "x**2 - x + 1",
+        "degree": 2,
+        "real_embeddings": 0,
+        "conjugate_pairs": 1,
+        "irreducible": true,
+        "totally_imaginary": true,
+        "closes": true,
+        "companion_C_irr": 2
+      },
+      "5_2": {
+        "poly": "x**3 + 2*x**2 + 3*x + 1",
+        "degree": 3,
+        "real_embeddings": 1,
+        "conjugate_pairs": 1,
+        "irreducible": true,
+        "totally_imaginary": false,
+        "closes": true,
+        "companion_C_irr": 3
+      },
+      "m135": {
+        "poly": "x**8 + 4*x**6 + 22*x**4 + 4*x**2 + 1",
+        "degree": 8,
+        "real_embeddings": 0,
+        "conjugate_pairs": 4,
+        "irreducible": true,
+        "totally_imaginary": true,
+        "closes": true,
+        "companion_C_irr": 8
+      },
+      "s000": {
+        "poly": "x**6 - 4*x**5 + 2*x**4 + 6*x**3 - 3*x**2 - x + 2",
+        "degree": 6,
+        "real_embeddings": 0,
+        "conjugate_pairs": 3,
+        "irreducible": true,
+        "totally_imaginary": true,
+        "closes": true,
+        "companion_C_irr": 6
+      },
+      "t00000": {
+        "poly": "x**8 - 4*x**7 - 2*x**6 + 14*x**5 + 14*x**4 - 7*x**3 - 13*x**2 - x + 5",
+        "degree": 8,
+        "real_embeddings": 0,
+        "conjugate_pairs": 4,
+        "irreducible": true,
+        "totally_imaginary": true,
+        "closes": true,
+        "companion_C_irr": 8
+      },
+      "v0000": {
+        "poly": "x**8 - Rational(11,4)*x**6 + Rational(41,16)*x**4 - Rational(11,16)*x**2 + Rational(1,8)",
+        "degree": 8,
+        "real_embeddings": 0,
+        "conjugate_pairs": 4,
+        "irreducible": true,
+        "totally_imaginary": true,
+        "closes": true,
+        "companion_C_irr": 8
+      }
+    },
+    "bar_grading": {
+      "4_1": {
+        "fixed_nodes": 0,
+        "swapped_pairs": 1,
+        "nodes": 2
+      },
+      "5_2": {
+        "fixed_nodes": 1,
+        "swapped_pairs": 1,
+        "nodes": 3
+      },
+      "m135": {
+        "fixed_nodes": 0,
+        "swapped_pairs": 4,
+        "nodes": 8
+      },
+      "s000": {
+        "fixed_nodes": 0,
+        "swapped_pairs": 3,
+        "nodes": 6
+      },
+      "t00000": {
+        "fixed_nodes": 0,
+        "swapped_pairs": 4,
+        "nodes": 8
+      },
+      "v0000": {
+        "fixed_nodes": 0,
+        "swapped_pairs": 4,
+        "nodes": 8
+      }
+    },
+    "recorded_negative": {
+      "claim_i_nearly_made": "a mirror with a fixed point escapes QuiverMirrorAutomorphismExcluded because that theorem excludes a freely-acting mirror",
+      "why_it_is_wrong": "the theorem's hypothesis is count-invariance (hσ : ∀ e, Ω (σ e) = Ω e), not freeness; a σ with fixed points satisfies it just as well and is excluded on the same terms",
+      "how_it_was_caught": "read the Lean statement before writing the claim"
+    },
+    "scope": {
+      "tier": "scope-(a)",
+      "arithmetic": "exact — Sturm real-root COUNTING on rational minimal polynomials; no root-finding, no floats anywhere",
+      "census_caveat": "m135/s000/t00000/v0000 are census manifolds, not knots in S^3 — valid for reading the grading, not automatically valid as D1-b nodes",
+      "sample": "the ptolemy DB is firewalled, so six is the offline maximum",
+      "derives_arrows": false,
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

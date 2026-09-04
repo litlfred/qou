@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0907.4143v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars1",
+  "contains": [
+    "library/arxiv-0907.4143v1/sections/sec-000",
+    "library/arxiv-0907.4143v1/sections/sec-001",
+    "library/arxiv-0907.4143v1/sections/sec-002",
+    "library/arxiv-0907.4143v1/sections/sec-003",
+    "library/arxiv-0907.4143v1/sections/sec-004",
+    "library/arxiv-0907.4143v1/sections/sec-005",
+    "library/arxiv-0907.4143v1/sections/sec-006",
+    "library/arxiv-0907.4143v1/sections/sec-007",
+    "library/arxiv-0907.4143v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0907.4143v1",
+    "source_file": "0907.4143v1.pdf",
+    "source_sha256": "a2090d1e574b27dbd479637a4057c31e4a46e23696fbb431c9a30d31e5db87dd",
+    "pages": 14,
+    "arxiv": {
+      "id": "0907.4143",
+      "version": "1",
+      "primary_class": "astro-ph.SR",
+      "stamp_date": "23 Jul 2009"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

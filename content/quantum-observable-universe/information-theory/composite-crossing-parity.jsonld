@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-composite-crossing-parity",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:composite-crossing-parity",
+  "kind": "proposition",
+  "title": "Sublimation from shell-filling representation theory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-borromean-quark",
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues",
+    "papers/quantum-observable-universe/blocks/prop-noble-gas-characterization"
+  ],
+  "tags": [
+    "sublimation",
+    "shell-structure",
+    "young-diagram",
+    "hecke-representation",
+    "phase-transition",
+    "magic-numbers"
+  ],
+  "leanRef": "qou:QOU.Information.crossing_parity_eq_Z",
+  "text": "composite-crossing-parity.md",
+  "leanSource": "composite-crossing-parity.lean",
+  "provenance": "authored"
+}

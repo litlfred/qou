@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1102.3530v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion",
+  "contains": [
+    "library/arxiv-1102.3530v1/sections/sec-000",
+    "library/arxiv-1102.3530v1/sections/sec-001",
+    "library/arxiv-1102.3530v1/sections/sec-002",
+    "library/arxiv-1102.3530v1/sections/sec-003",
+    "library/arxiv-1102.3530v1/sections/sec-004",
+    "library/arxiv-1102.3530v1/sections/sec-005",
+    "library/arxiv-1102.3530v1/sections/sec-006",
+    "library/arxiv-1102.3530v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1102.3530v1",
+    "source_file": "1102.3530v1.pdf",
+    "source_sha256": "ad3edab19f3dc404915e597e65b720cb8c9ca2e3bf1b684e2cd9c1571ad3a774",
+    "pages": 35,
+    "arxiv": {
+      "id": "1102.3530",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "17 Feb 2011"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

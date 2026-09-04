@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-per-nucleon-shift-additive-linearity-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:per-nucleon-shift-additive-linearity-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:per-nucleon-shift-additive-linearity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-per-nucleon-shift-additive-linearity"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "per-nucleon-shift-additive-linearity-table2-data.md",
+  "provenance": "authored"
+}

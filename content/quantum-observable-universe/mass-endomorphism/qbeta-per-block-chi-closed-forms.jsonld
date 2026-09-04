@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-per-block-chi-closed-forms",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qbeta-per-block-chi-closed-forms",
+  "kind": "proposition",
+  "title": "Per-block character closed forms for $\\chi_\\lambda(\\Delta_{T_\\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form"
+  ],
+  "cites": [
+    "references/hoefsmit1974"
+  ],
+  "tags": [
+    "qbeta",
+    "per-block",
+    "pre-archimedean",
+    "wedderburn",
+    "antipode",
+    "closed-form"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.chi_block_antipode_pairing",
+  "text": "qbeta-per-block-chi-closed-forms.md",
+  "leanSource": "qbeta-per-block-chi-closed-forms.lean",
+  "provenance": "authored"
+}

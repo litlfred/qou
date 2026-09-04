@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-double-slit-massive-pattern",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:double-slit-massive-pattern",
+  "kind": "proposition",
+  "title": "Massive-particle interference pattern",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-double-slit-q-phase",
+    "papers/quantum-observable-universe/blocks/rem-q-laplacian-expansion",
+    "papers/quantum-observable-universe/blocks/def-q-hodge-star"
+  ],
+  "cites": [
+    "references/bach2013"
+  ],
+  "tags": [
+    "double-slit",
+    "interference",
+    "massive-particle",
+    "q-laplacian"
+  ],
+  "leanRef": "qou:QOU.Experimental.double_slit_massive_pattern",
+  "text": "double-slit-massive-pattern.md",
+  "leanSource": "double-slit-massive-pattern.lean",
+  "provenance": "authored"
+}

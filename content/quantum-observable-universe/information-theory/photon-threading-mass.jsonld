@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-photon-threading-mass",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:photon-threading-mass",
+  "kind": "proposition",
+  "title": "Mass as photon threading cost",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
+  ],
+  "tags": [
+    "mass",
+    "photon",
+    "groebner-shirshov",
+    "hecke",
+    "braid",
+    "yekutieli",
+    "speed-of-light"
+  ],
+  "leanRef": "qou:QOU.Information.photon_threading_mass",
+  "text": "photon-threading-mass.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-full-pole-structure-mass-trace",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:full-pole-structure-mass-trace",
+  "kind": "proof",
+  "title": "Proof of full pole structure mass trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace"
+  ],
+  "text": "full-pole-structure-mass-trace-proof.md",
+  "provenance": "authored"
+}

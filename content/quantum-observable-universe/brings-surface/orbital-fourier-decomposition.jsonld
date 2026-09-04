@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-orbital-fourier-decomposition",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:orbital-fourier-decomposition",
+  "kind": "conjecture",
+  "title": "Quantum numbers from Fourier decomposition of normal-bundle sections",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-orbital-space-normal-bundle"
+  ],
+  "tags": [
+    "orbital",
+    "fourier",
+    "normal-bundle",
+    "quantum-numbers",
+    "spherical-harmonic",
+    "laplacian",
+    "trefoil"
+  ],
+  "leanRef": "qou:QOU.orbital_fourier_decomposition",
+  "text": "orbital-fourier-decomposition.md",
+  "leanSource": "orbital-fourier-decomposition.lean",
+  "provenance": "authored"
+}

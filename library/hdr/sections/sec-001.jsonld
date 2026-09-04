@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/hdr/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Blocks",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "contains": [
+    "library/hdr/blocks/prose-sec-001",
+    "library/hdr/blocks/ex-sec-001-01"
+  ],
+  "derivedFrom": "library/hdr/manifest",
+  "sourceDocument": "library/hdr/manifest",
+  "provenance": "ingested"
+}

@@ -7,6 +7,7 @@ section_number: 7
 pages: 30-35
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
+doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
 ---
 7.1. Critical scale orders. We ﬁrst state the following assertion con-
 cerning the critical scale order of sequences of hemispheres (cf. Propo-

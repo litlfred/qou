@@ -1,0 +1,31 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "download-1",
+ "source_sha256": "bbb001c909958e8a",
+ "brief": "Central and Lp-concentration of 1-Lipschitz maps into R-trees — In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees.",
+ "extended": "**Central and Lp-concentration of 1-Lipschitz maps into R-trees**\n\n*By Kei FUNANO*\n\n24 pp, 2 sections.\n\n**Abstract.** In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.\n\n**Outline.** 2.3 Center of mass of a measure on a CAT(0)-sp; References",
+ "tokens": {
+  "brief": 44,
+  "extended": 104
+ },
+ "sections": [
+  {
+   "id": "sec-000-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
+   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
+   "pages": "7-23"
+  },
+  {
+   "id": "sec-001-references",
+   "title": "References",
+   "pages": "23-24"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

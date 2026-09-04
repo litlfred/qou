@@ -7,6 +7,7 @@ section_number: null
 pages: 399-403
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 The utility of any mathematical theory is ultimately determined by the breadth
 of problems it can solve. In this chapter we illustrate the techniques of ACSV

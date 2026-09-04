@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2208.13692v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Vertices and Face-Centres",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-2208.13692v1/blocks/prose-sec-007",
+    "library/arxiv-2208.13692v1/blocks/prop-sec-007-01",
+    "library/arxiv-2208.13692v1/blocks/prop-sec-007-02"
+  ],
+  "derivedFrom": "library/arxiv-2208.13692v1/manifest",
+  "sourceDocument": "library/arxiv-2208.13692v1/manifest",
+  "provenance": "ingested"
+}

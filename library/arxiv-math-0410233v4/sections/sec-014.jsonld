@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0410233v4/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Selecting local deformations",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-math-0410233v4/blocks/prose-sec-014",
+    "library/arxiv-math-0410233v4/blocks/lem-sec-014-01",
+    "library/arxiv-math-0410233v4/blocks/lem-sec-014-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0410233v4/manifest",
+  "sourceDocument": "library/arxiv-math-0410233v4/manifest",
+  "provenance": "ingested"
+}

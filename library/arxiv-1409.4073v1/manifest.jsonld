@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1409.4073v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI",
+  "contains": [
+    "library/arxiv-1409.4073v1/sections/sec-000",
+    "library/arxiv-1409.4073v1/sections/sec-001",
+    "library/arxiv-1409.4073v1/sections/sec-002",
+    "library/arxiv-1409.4073v1/sections/sec-003",
+    "library/arxiv-1409.4073v1/sections/sec-004",
+    "library/arxiv-1409.4073v1/sections/sec-005",
+    "library/arxiv-1409.4073v1/sections/sec-006",
+    "library/arxiv-1409.4073v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1409.4073v1",
+    "source_file": "1409.4073v1.pdf",
+    "source_sha256": "b40be7f0022f70a14a4de02e4185d276129c7d0ba93b066bdcb8b56d6110350e",
+    "pages": 35,
+    "arxiv": {
+      "id": "1409.4073",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "14 Sep 2014"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/04procbryden/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Some computations of Ohtsuki series",
+  "contains": [
+    "library/04procbryden/sections/sec-000",
+    "library/04procbryden/sections/sec-001",
+    "library/04procbryden/sections/sec-002",
+    "library/04procbryden/sections/sec-003",
+    "library/04procbryden/sections/sec-004",
+    "library/04procbryden/sections/sec-005",
+    "library/04procbryden/sections/sec-006",
+    "library/04procbryden/sections/sec-007",
+    "library/04procbryden/sections/sec-008",
+    "library/04procbryden/sections/sec-009",
+    "library/04procbryden/sections/sec-010",
+    "library/04procbryden/sections/sec-011",
+    "library/04procbryden/sections/sec-012",
+    "library/04procbryden/sections/sec-013",
+    "library/04procbryden/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "04procbryden",
+    "source_file": "04procbryden.pdf",
+    "source_sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
+    "pages": 18,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

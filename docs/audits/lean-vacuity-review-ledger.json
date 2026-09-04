@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-30T14:38:20Z",
+  "updated_at": "2026-09-03T13:20:15Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -500,12 +500,17 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 61,
-      "verdict": "genuine",
+      "verdict": "legit",
       "file_sha": "a344b0db0438",
-      "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "construct-witness-or-drop-pseudo-theorem",
-      "evidence": "Self-assuming projection. The structure `JetProlongationQOU` carries field `prolonged` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `JetProlongationQOU` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `prolonged` is outside CONCLUSION_FIELD."
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-02"
+      },
+      "reviewed_at": "2026-09-03T03:55:32.898180Z",
+      "disposition": "accessor-for-a-defining-or-disclosed-field",
+      "evidence": "JetProlongationQOU DEFINES an object -- a jet prolongation of a C QOU: base, instanton connection, prolonged universe, prolonged connection, plus two coherence conditions. `dim_preserved` is one of its defining conditions, so the accessor is Mathlib's `Group.mul_assoc := Group.mul_assoc` idiom (class (a) in scripts/vacuity-carrier-shape-triage.py's taxonomy). Measured: `prolonged` and `base` are INDEPENDENT fields, so nothing forces their `n` to agree except `dim_preserved` -- there is no derivation available from the other fields, and none is expected of a defining axiom. What WAS wrong is the label: it read \"Corollary\", which tells a reader the statement follows from something when it IS the something. Docstring corrected in this commit; the term is unchanged. Verdict changed from genuine to legit."
     },
     "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean::topological_mass_decomposition::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1238,16 +1243,16 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 76,
-      "verdict": "genuine",
+      "verdict": "legit",
       "file_sha": "0bbbaba6a665",
-      "disposition": "drop-redundant-projection",
-      "evidence": "RE-VERIFIED 2026-08-30 (prior verdict 2026-08-21, file sha had moved). Declaration byte-identical against the recorded revision. Verdict unchanged.",
-      "reviewed_at": "2026-08-30T04:30:08Z",
+      "disposition": "accessor-for-a-defining-or-disclosed-field",
+      "evidence": "BondExtensiveBinding is a STRUCTURE taken as an explicit argument, and the file already states plainly that its `extensive` field is the arc's open input: \"the field `extensive` is the arc's open hypothesis ... this class carries it so downstream facts are verified conditional on it, never asserting it holds\", and that this theorem is \"just `h.extensive`, exposed as a named consumer\". That is the honest conditional shape, not the item-5 defect. The file also carries three REAL theorems over it -- coordination_degree, bond_count, coordination_handshake are Mathlib SimpleGraph facts -- and binding_nonneg IS a derivation (from epsilon_nonneg, extensive and choose >= 0). Verdict changed from genuine to legit on evidence; no code change.",
+      "reviewed_at": "2026-09-03T03:55:32.898180Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
+        "agent_date": "2026-09-02"
       }
     },
     "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
@@ -1290,14 +1295,15 @@
       "line": 124,
       "verdict": "genuine",
       "file_sha": "b82832dd0098",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "RE-VERIFIED 2026-08-30 by reading the declaration (recorded file sha not reproducible from this clone's history; cause undetermined). Verdict unchanged and now corroborated IN-TREE rather than by my reading: this is the LIVE carrier, and `QOU/QBeta/EigenphaseCarrierVacuity.lean` proves both of its fields hold for an arbitrary real -- `-2 <= 2*cos x <= 2` and `cos x = cos (-x)` are true of every `x : R`, so neither field constrains `eigenphase q`. The field docstring claiming it 'binds the eigenphase definition to a real numerical content' is therefore false as written, which is exactly what `proof-claims-unencoded` names.",
-      "reviewed_at": "2026-08-30T04:30:08Z",
+      "disposition": "restated",
+      "evidence": "RE-VERIFIED 2026-08-30 by reading the declaration (recorded file sha not reproducible from this clone's history; cause undetermined). Verdict unchanged and now corroborated IN-TREE rather than by my reading: this is the LIVE carrier, and `QOU/QBeta/EigenphaseCarrierVacuity.lean` proves both of its fields hold for an arbitrary real -- `-2 <= 2*cos x <= 2` and `cos x = cos (-x)` are true of every `x : R`, so neither field constrains `eigenphase q`. The field docstring claiming it 'binds the eigenphase definition to a real numerical content' is therefore false as written, which is exactly what `proof-claims-unencoded` names. RESOLVED 2026-09-03 (bean `qou-eixt`). The recorded disposition `restate-to-derive-or-demote` is discharged by RESTATING, adopting EigenphaseCarrierVacuity's own \u00a72 `TransferMatrixSpectrum` shape rather than inventing a parallel one: the class now takes the 2x2 restriction `M` and pins `M.trace = 2*cos(eigenphase q)` and `M.det = 1`, with NO instance declared in the content block. Criterion count 6 -> 5; the survivor at this key's sibling (EigenphaseCarrierVacuity:70) is the demonstration copy and stays. A SECOND defect was found in the same file that this criterion cannot see, because it lived in the PROOF rather than the carrier: `q_beta_cos_resummation` was `exists x, x = A and x = A` closed by `ring` with the instance binder UNUSED, so the result was unconditional twice over. It now rewrites `trace_eq`; negative control (same statement, binder dropped) FAILS as required, residual goal `formA * M.trace * (1/2) = formA * cos (eigenphase q)`. Added `cos_resummation_contracts` (|tr M / 2| <= 1, false for arbitrary M) and `symChar_unique`; removed `cos_taylor_quadratic_coeff`, which stated `X - X = 0` and had no consumers. All lean-direct exit 0, `#print axioms` = [propext, Classical.choice, Quot.sound] on all four. SCOPE, and it is the important part: this is branch 2 of EigenphaseCarrierVacuity \u00a73's trichotomy -- `M` arbitrary, circularly dischargeable by its `circularWitness` (the rotation exp(alpha*J), built from alpha itself). So the repair buys a carrier that constrains its argument and a theorem that is a genuine implication, and buys NO evidence about the substrate. Branch 1 (`M` in the braid image) is excluded on transcendence grounds; branch 3 (KZ / Kohno-Drinfeld holonomy) remains where a derivation of alpha must live and remains uncarried out.",
+      "reviewed_at": "2026-09-03T13:20:15Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
+        "agent_model": "claude-opus-5",
+        "agent_date": "2026-09-03"
       }
     },
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean::mobius_frobenius_kernel::proof-docstring-sorry-mismatch": {
@@ -1765,15 +1771,15 @@
       "line": 46,
       "verdict": "advisory",
       "file_sha": "7c13175c5986",
-      "disposition": "cite-as-axiom-or-prove",
-      "evidence": "Declared Mathlib gap, and NOT provable in current Mathlib: the file documents the blocker in detail -- Mathlib has Cauchy-Goursat only for AXIS-ALIGNED rectangles, an affine pullback of a generic parallelogram is R-linear and so does not preserve complex differentiability, and Mathlib lacks both integrals over triangles and Goursat for simplices. So the axiom stands until that API lands. IMPORTANT: this axiom was UNSOUND until 2026-08-24 -- it quantified over every `f : C -> C` with no differentiability hypothesis despite its name and comment promising one, and `False` was derivable. Repaired on this branch by adding `hf : Differentiable C f`; regression probe at docs/audits/2026-08-24-parallelogram-axioms-inconsistent.lean. The repair is SOUND but not SHARP -- entire is stronger than Cauchy needs -- which the docstring records.",
-      "reviewed_at": "2026-08-24T10:52:56.000Z",
+      "disposition": "cited",
+      "evidence": "Declared Mathlib gap, and NOT provable in current Mathlib: the file documents the blocker in detail -- Mathlib has Cauchy-Goursat only for AXIS-ALIGNED rectangles, an affine pullback of a generic parallelogram is R-linear and so does not preserve complex differentiability, and Mathlib lacks both integrals over triangles and Goursat for simplices. So the axiom stands until that API lands. IMPORTANT: this axiom was UNSOUND until 2026-08-24 -- it quantified over every `f : C -> C` with no differentiability hypothesis despite its name and comment promising one, and `False` was derivable. Repaired on this branch by adding `hf : Differentiable C f`; regression probe at docs/audits/2026-08-24-parallelogram-axioms-inconsistent.lean. The repair is SOUND but not SHARP -- entire is stronger than Cauchy needs -- which the docstring records. RESOLVED 2026-09-03: the recorded disposition `cite-as-axiom-or-prove` is discharged by CITING. `-- Ref: [ahlfors1979]` added directly above the axiom (Ch. 4 \u00a71 for Cauchy's theorem on a rectangle/polygon; Ch. 4 \u00a75 for the residue theorem), and `ahlfors1979` registered in content/schema/references.ts. The detector's `uncited-axiom` pattern reads a 10-line window above the axiom line, which the existing MATHLIB GAP / SOUNDNESS FIX prose overshot, so the citation had to sit immediately above the declaration rather than in that prose. Criterion count 2 -> 0. The axioms themselves are UNCHANGED -- the Mathlib gap is still a gap and the 2026-08-24 soundness repair is still what makes them safe; only the citation was missing.",
+      "reviewed_at": "2026-09-03T12:59:17Z",
       "reviewer": {
-        "agent_date": "2026-08-24",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
+        "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-5",
+        "agent_date": "2026-09-03"
       }
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/ParallelogramContour.lean::parallelogramIntegral_inv_sub_eq_two_pi_i::proof-no-provable-axiom": {
@@ -1782,15 +1788,15 @@
       "line": 78,
       "verdict": "advisory",
       "file_sha": "7c13175c5986",
-      "disposition": "cite-as-axiom-or-prove",
-      "evidence": "Declared Mathlib gap, blocker documented (needs the residue theorem for parallelograms, which needs the Cauchy-Goursat gap above, plus homotopy invariance for polygonal paths). IMPORTANT: this axiom was UNSOUND until 2026-08-24, and inconsistent BY ITSELF, without the other one: every term of `parallelogramIntegral` carries a literal omega factor, so at the DEGENERATE parallelogram w1 = w2 = 0 the left side is identically 0, giving 0 = 2*pi*i. It was also false for `w` outside the parallelogram, where the true value is 0, and the sign depends on orientation. Repaired by adding `horient : 0 < (w2 / w1).im` (which also rules out degeneracy and fixes the sign) plus strict interiority in period coordinates.",
-      "reviewed_at": "2026-08-24T10:52:56.000Z",
+      "disposition": "cited",
+      "evidence": "Declared Mathlib gap, blocker documented (needs the residue theorem for parallelograms, which needs the Cauchy-Goursat gap above, plus homotopy invariance for polygonal paths). IMPORTANT: this axiom was UNSOUND until 2026-08-24, and inconsistent BY ITSELF, without the other one: every term of `parallelogramIntegral` carries a literal omega factor, so at the DEGENERATE parallelogram w1 = w2 = 0 the left side is identically 0, giving 0 = 2*pi*i. It was also false for `w` outside the parallelogram, where the true value is 0, and the sign depends on orientation. Repaired by adding `horient : 0 < (w2 / w1).im` (which also rules out degeneracy and fixes the sign) plus strict interiority in period coordinates. RESOLVED 2026-09-03: the recorded disposition `cite-as-axiom-or-prove` is discharged by CITING. `-- Ref: [ahlfors1979]` added directly above the axiom (Ch. 4 \u00a71 for Cauchy's theorem on a rectangle/polygon; Ch. 4 \u00a75 for the residue theorem), and `ahlfors1979` registered in content/schema/references.ts. The detector's `uncited-axiom` pattern reads a 10-line window above the axiom line, which the existing MATHLIB GAP / SOUNDNESS FIX prose overshot, so the citation had to sit immediately above the declaration rather than in that prose. Criterion count 2 -> 0. The axioms themselves are UNCHANGED -- the Mathlib gap is still a gap and the 2026-08-24 soundness repair is still what makes them safe; only the citation was missing.",
+      "reviewed_at": "2026-09-03T12:59:17Z",
       "reviewer": {
-        "agent_date": "2026-08-24",
-        "agent_model": "claude-opus-5",
-        "agent_skill": "local/lean-proof-vacuity-audit",
+        "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
-        "kind": "agent"
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_model": "claude-opus-5",
+        "agent_date": "2026-09-03"
       }
     },
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean::atomic_nf_witness::proof-no-self-assuming-projection": {

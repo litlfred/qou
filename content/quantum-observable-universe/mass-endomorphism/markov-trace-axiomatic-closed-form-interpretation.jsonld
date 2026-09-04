@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-trace-axiomatic-closed-form-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-trace-axiomatic-closed-form-interpretation",
+  "kind": "remark",
+  "title": "Methodology generalisation and the categorical-mass anchor interpretation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+    "papers/quantum-observable-universe/blocks/prop-atomic-mass-gb-nf",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-antipode-polynomial-symmetry",
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/def-markov-axiom-recursive-ascent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-trace-axiomatic-closed-form",
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "axiomatic-reduction",
+    "categorical-mass-anchor",
+    "proton"
+  ],
+  "text": "markov-trace-axiomatic-closed-form-interpretation.md",
+  "provenance": "authored"
+}

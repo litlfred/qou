@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1002.4860v2",
+ "source_sha256": "a2cfe924f7a9f5a0",
+ "brief": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum.",
+ "extended": "**A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL**\n\n*SAMSON BLACK*\n\n8 pp, 9 sections.\n\n**Abstract.** We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools ar e the Markov trace formulas for the HOMFLY-PT polynomial and Young’s semi-nor mal repre- sentations of the Iwahori-Hecke algebras of type A.\n\n**Outline.** 2.2 Iwahori-Hecke algebra; 1 Introduction; 2.1 Braid group; 2 Semi-normal representations of Hecke algebra; 2.3 Seminormal representations; 2.5 Sign sequences and hook partitions; 3 Construction; 4 Example; References",
+ "tokens": {
+  "brief": 42,
+  "extended": 153
+ },
+ "sections": [
+  {
+   "id": "sec-000-22-iwahori-hecke-algebra",
+   "title": "Iwahori-Hecke algebra",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-21-braid-group",
+   "title": "Braid group",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-2-semi-normal-representations-of-hecke-algebras",
+   "title": "Semi-normal representations of Hecke algebras",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-23-seminormal-representations",
+   "title": "Seminormal representations",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-25-sign-sequences-and-hook-partitions",
+   "title": "Sign sequences and hook partitions",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-006-3-construction",
+   "title": "Construction",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-007-4-example",
+   "title": "Example",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "7-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

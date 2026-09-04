@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2507.13873v1/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Concluding remarks",
+  "pageStart": 21,
+  "pageEnd": 24,
+  "text": "../sections/sec-007-concluding-remarks.md",
+  "derivedFrom": "library/arxiv-2507.13873v1/manifest",
+  "sourceDocument": "library/arxiv-2507.13873v1/manifest",
+  "provenance": "ingested"
+}

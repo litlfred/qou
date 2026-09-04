@@ -324,9 +324,84 @@ Concretely:
 
 Five subagents are defined under [`.claude/agents/`](.claude/agents/), each
 carrying `memory: project` in its frontmatter. That gives the agent its own
-directory under `.claude/agent-memory/<agent-name>/`; the first 200 lines (or
-25 KB) of that directory's `MEMORY.md` are injected into the subagent's system
-prompt when it starts, and it reads and writes the directory as it works.
+directory under `.claude/agent-memory/<agent-name>/`, which it reads and writes
+as it works.
+
+> **🛑 THE INJECTION DOES NOT HAPPEN IN THIS ENVIRONMENT — measured
+> 2026-09-03.** This paragraph used to state, as fact, that *"the first 200
+> lines (or 25 KB) of that directory's `MEMORY.md` are injected into the
+> subagent's system prompt when it starts."* **For subagents launched via the
+> Agent tool in a Claude Code remote session, nothing is injected — not a
+> truncated 200 lines, none of it.**
+>
+> Measured by asking two agents, independently, what their own system prompt
+> contained: `lean-verifier` and `corpus-grepper` both reported **zero**
+> `MEMORY.md` content. Objective corroboration, checkable without trusting a
+> self-report: **four "see memory" / "see the memory entry" cross-references in
+> three agent definitions are dangling pointers** — they reference content that
+> never arrives. The frontmatter is correct (`memory: project` on all five) and
+> the files exist, so this is a harness behaviour, not a misconfiguration; it
+> may well work in the desktop or CLI harness, and this is a statement about
+> **this** environment only.
+>
+> **Consequence for the 200-line cap.** The cap is now a *convention*, not a
+> live constraint — nothing is being truncated because nothing is being sent.
+> Keep files under it anyway (it bounds what an agent must read), but do not
+> treat "under 200" as evidence an agent has the content.
+>
+> **The repair, and 🛑 it is UNVERIFIED — do not assume it works.** Each
+> agent definition now opens with a `## FIRST ACTION — read your memory; it is
+> NOT injected here` section telling the agent to `Read` its own `MEMORY.md`
+> first, and to open its report with a compliance line naming the files read,
+> `MEMORY.md`'s line count and its last commit sha — so a reader can tell a
+> memory-informed run from a memory-less one instead of taking it on trust.
+> **A report without that line should be presumed to have run without memory.**
+>
+> **But a third agent, launched AFTER that edit, did not receive it** — it
+> quoted its own prompt going straight from the preceding bullet to `## What
+> you do`, with no `## FIRST ACTION` section, while the section was plainly on
+> disk. So agent definitions appear to be **snapshotted** (committed `HEAD`, or
+> cached at session start), and an uncommitted edit to one does not reach a
+> subagent in the same session. The fix may take effect once committed and a
+> fresh session starts; that has **not** been demonstrated.
+>
+> **🛑 AND I WAS WRONG ABOUT THE CARRIER — corrected the same hour.** This
+> paragraph first said *"this AGENTS.md note is the load-bearing carrier … it
+> provably arrives in subagent prompts in full"*. It does arrive in full, but
+> **the version that arrives is snapshotted at session start**: a
+> `convention-auditor` launched minutes after this very edit was committed
+> still received the *pre-edit* text, uncaveated. So a mid-session edit to
+> `AGENTS.md` reaches no subagent either — **the same failure as the agent
+> definitions, through a different file.**
+>
+> Three causes remain consistent with that single observation and it does not
+> separate them: session-start snapshotting, a cached/differently-rooted copy,
+> or an edit at a path other than the one `CLAUDE.md` `@`-includes. Snapshotting
+> is the leading candidate only because definitions failed the same way.
+> **The discriminator is a genuinely new top-level session**, not another
+> subagent.
+>
+> **The practical rule, which holds whatever the cause:** nothing you write to
+> `AGENTS.md` or to an agent definition reaches a subagent **in the session you
+> write it**. If a subagent must know something you learned this session, **put
+> it in that subagent's prompt** — that is the only channel demonstrated to
+> work today. Everything here is for *later* sessions.
+>
+> So if you are a subagent reading this in a later session: **read
+> `.claude/agent-memory/<your-name>/MEMORY.md` yourself before you start**,
+> whatever your own definition does or does not say.
+>
+> **A figure to not repeat.** The first version of the agent-definition block
+> quoted "2,520 lines across 16 files" — that is the *whole tree across all
+> five agents*. Per agent it is **195–419 lines** for `MEMORY.md` and 412–657
+> for the directory, i.e. ~3-7k tokens: cheap. Quoting the tree total in each
+> agent's own file overstates its burden ~6× and invites exactly the wrong
+> trade-off (skipping the read). Caught by the consuming agent, not by me.
+>
+> Tracked in bean `qou-rpgi`.
+>
+> **So "maintaining them is part of the work" below still holds** — the files
+> are read, just deliberately rather than automatically.
 
 | agent | owns |
 |---|---|
@@ -358,7 +433,8 @@ in the same PR. When a session re-measures a BASELINE, update the entry with
 the fresh number and date. A memory file that only accretes becomes the thing
 it exists to prevent.
 
-Two mechanical notes. `MEMORY.md` is the injected entry point, so keep it
+Two mechanical notes. `MEMORY.md` is the entry point an agent reads first
+(**not** injected — see the block above), so keep it
 under 200 lines — split detail into sibling files the agent reads on demand
 (`compute-precision-auditor/producer-health.md` is the worked example). And
 `memory: project` writes under `.claude/agent-memory/`, which is **committed**;
@@ -1229,10 +1305,22 @@ the pipeline render where available
 (`bun run folio-assistant/content/pipeline/render-latex.ts …` after
 [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
 **and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
-`\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
-`\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
-list-parser hijack); align-family environments (`aligned`, `align`) fenced as
-` ```tex `, not inline `$$`.
+`\bigl`-`\bigr`/`\begin`-`\end`; no line starting with `+`/`-`/`*` inside `$$…$$`
+(markdown list-parser hijack); align-family environments (`aligned`, `align`)
+fenced as ` ```tex `, not inline `$$`.
+
+> **`\operatorname{}` is NOT a violation — the old rule was stale (corrected
+> 2026-09-03, bean `qou-iars`).** This battery read *"no `\operatorname{}`
+> (KaTeX rejects → use `\mathrm{}`)"*. Measured: the viewer loads **KaTeX
+> 0.16.11** (`folio-assistant/{viewer,ui}/index.html`, CDN), and KaTeX has
+> supported `\operatorname` since **v0.10.0 (2019)** — so the deployed renderer
+> does not reject it, and pdflatex (amsmath) never did. `\operatorname{Re}`,
+> `\operatorname{Im}`, `\operatorname{ord}`, `\operatorname{Area}`,
+> `\operatorname{Vol}` are the *semantically correct* markup for operators
+> (correct spacing), and blanket-rewriting them to `\mathrm{}` is a downgrade.
+> Do **not** flag or sweep `\operatorname`. (If a KaTeX downgrade below 0.10
+> ever happened it would resurface, but that is a version regression to fix at
+> the CDN pin, not a content rule.)
 
 > **Fencing an align-family env is only HALF the rule — the other half
 > is build-fatal (2026-08-16).** `aligned`/`gathered`/`split`/`cases`/
@@ -1276,9 +1364,11 @@ a sandbox), run the grep battery + expository pass by hand and **state
 explicitly in the commit/PR that the change was not machine-validated** — never
 report a math edit as render-checked when only CI (which may be billing-flaky)
 would have caught it. History: added 2026-06-30 after a mass-derivation survey
-rewrite shipped with `\operatorname` (KaTeX-breaking), a `B`-vs-`𝔪` mislabel, a
-wrong `dim_q = [n]_q`, and a `λ` notation collision — none machine-caught
-because the pipeline was unavailable and the agent skipped the manual battery.
+rewrite shipped with `\operatorname` (believed KaTeX-breaking at the time; that
+belief was itself stale — KaTeX has supported it since v0.10, see the correction
+above), a `B`-vs-`𝔪` mislabel, a wrong `dim_q = [n]_q`, and a `λ` notation
+collision — the latter three none machine-caught because the pipeline was
+unavailable and the agent skipped the manual battery.
 
 ## CI billing failures — distinguish from real failures (STRICT)
 
@@ -1329,6 +1419,40 @@ Before any agent declares an item "open", "Open Math X", "TODO",
 an audit doc, content block, Lean comment, or PR description — or
 asserts as fact in chat that an item is open/unresolved in the
 corpus — run the **corpus-grep checklist**:
+
+0. **`corpus_search` (MCP) — run this FIRST, because every path below
+   shares one blind spot.** Paths 1-6 are greps, and a grep finds prior
+   work only if it used *your* words. Prior work written in different
+   words is not an edge case here; it is the case that actually costs a
+   session, because the grep comes back empty and reads as a clean bill.
+
+   The knowledge graph is the structure that survives a change of
+   vocabulary: a block that never says "Temperley-Lieb" but `uses` one
+   that does is one hop from the query, and `corpus_search` seeds
+   lexically then expands structurally across the authored corpus and
+   the ingested library at once.
+
+   ```
+   corpus_search  query: "<topic>"        # 1 hop, both directions
+   corpus_search  query: "<topic>", direction: "in"   # what depends on it
+   ```
+
+   Read three things in its answer. **`why`** says whether a hit MATCHED
+   or was REACHED, and by which edge — a `~` prefix means the edge ran
+   backwards, so that node depends on the seed rather than the reverse.
+   **`seedsByProvenance`** splits authored from ingested, and the shape
+   that matters is many ingested hits with no authored ones: that means
+   *cite it*, not *derive it*, which is the distinction path 5 exists to
+   draw. **`emptyRoots`** names a directory that exists but holds no
+   graph nodes — a corpus whose `.jsonld` siblings have never been
+   generated answers every query with a silence indistinguishable from
+   "nobody has done this". If it is non-empty, generate them
+   (`gen-block-jsonld` / `gen-library-jsonld`) before reading any absence
+   as an absence.
+
+   It does **not** replace the paths below — it seeds on labels, titles,
+   kinds and tags (add `searchText: true` for companion prose), so a
+   topic named only inside a proof body is still a grep's job.
 
 1. `grep -rln <topic> docs/audits/` — owner-authorised resolutions
    typically land as audit docs; the originating source file's
@@ -1385,19 +1509,39 @@ corpus — run the **corpus-grep checklist**:
    An item can be open *in this corpus* and settled in a paper we
    already hold; that is a citation, not a derivation, but it changes
    what "open" means and it is the difference between deriving a result
-   and re-deriving one. **542** document directories, holding **10,922**
+   and re-deriving one. **576** document directories, holding **11,528**
    section files, are searchable this way (this read *"332 documents /
-   7,313 sections"* until 2026-08-30 — low by 62 %, not merely old).
+   7,313 sections"* until 2026-08-30 — low by 62 % — and *"542 / 10,922"*
+   until 2026-09-03; the library grows, so **re-count, do not quote**).
 
    **Say which count you mean, or the next reader will "correct" you.**
    Three numbers describe this library and they are all different:
-   `ls -d library/*/ | wc -l` gives **542** *directories* (what the grep
-   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **518**
+   `ls -d library/*/ | wc -l` gives **576** *directories* (what the grep
+   above actually walks); `grep -c '^| \[' library/INDEX.md` gives **552**
    *index rows*, because the 23 known duplicate copies deliberately get no
-   row of their own; and `summarize-library.py` prints that 518 as
-   "documents". A grep-coverage claim wants the 542; a "how many distinct
-   works do we hold" claim wants the 518. Quoting one against the other
+   row of their own; and `summarize-library.py` prints that 552 as
+   "documents". A grep-coverage claim wants the 576; a "how many distinct
+   works do we hold" claim wants the 552. Quoting one against the other
    reads as staleness when it is a category difference.
+
+   **🛑 And the duplicates do NOT always explain the gap — INDEX.md goes
+   STALE, silently (found 2026-09-03).** On that date the index carried
+   **519** rows against 576 directories, and only **23** of the 57 missing
+   were marked `duplicate_of`. The other **33 were real documents with real
+   sections that simply had no row** — invisible to this tier, which is the
+   one the checklist tells you to read FIRST. They were not marginal: the
+   volume conjecture (`0803219`), the oriented skein category
+   (`arxiv-1712.08953v1`), affine-Hecke Plancherel (`arxiv-1110.6212v2`),
+   knot polynomials on braid closures (`li-braid-closures`) and q-deformed
+   Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
+   matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
+
+   **So check the arithmetic before trusting tier 1**: `directories −
+   index rows` should equal the duplicate count, and when it does not the
+   index is behind. The producer fixes it deterministically and offline —
+   `python3 scripts/summarize-library.py --apply` (extractive, no model, no
+   network; agent-written summaries are preserved). A clean tier-1 scan is
+   evidence about the index, not about the library.
 
    **🛑 FOURTH TIER — `ocr/`, and the `sections/` grep above is BLIND to it
    (added 2026-08-30).** Some documents were ingested with their text in
@@ -1408,7 +1552,7 @@ corpus — run the **corpus-grep checklist**:
    grep -rln <topic> library/*/ocr/     # the tier the three above miss
    ```
 
-   Measured, not estimated: **25 of 542** directories carry an `ocr/`; ten
+   Measured, not estimated: **25 of 576** directories carry an `ocr/`; ten
    of the eleven single-`sections/`-file directories hold **under 15 %** of
    their OCR bytes in `sections/`, six of them under 3 %. The worked case is
    the one that exposed it — `library/procrsoclondona92/` is **Moffatt &
@@ -1456,7 +1600,10 @@ corpus — run the **corpus-grep checklist**:
    i.e. through exactly the two statuses this note says to read.
 
 Only after **all six** grep paths return empty (modulo the
-originating file itself) may you declare the item open. The source
+originating file itself) may you declare the item open. Step 0 is not a
+seventh gate — it is the step that most often stops you needing the other
+six, and an empty result from it is not by itself a licence to declare
+anything, because a graph that was never generated is silently empty. The source
 file's `## Status`, `Open math`, or `Phase 3 open` notes are
 **not authoritative**: the corpus is the source of truth.
 
@@ -2562,15 +2709,14 @@ muon; muon-anchor → ~4000σ on proton).
      DEFAULT for all new compute and all production code**, not merely
      "for precision/prediction".
    - **`computations/` layer** historically carries **muon-q₀**
-     witnesses. **🛑 The anchor value in this bullet is SUPERSEDED:**
-     `…/q-pinning-50-digit.witness.json` held `1.10997859555733471…`
-     (−11.5 ppb) when the counts below were measured, and since
-     `fca08de7d29` (2026-08-28) it holds the CODATA-2022 derivation
-     `1.109978595642739…`. The **counts are still the counts** — they
-     describe witnesses computed under the old anchor, which is exactly
-     the population the migration is about — but do not read the literal
-     as the live anchor. It fed ~72 producers / **870** witnesses — the
-     canonical 3-CAL (muon) derivation witnesses.
+     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
+     **`1.1099785956427390466817…`** (−11.6 ppb) — see the 🛑 correction
+     below; this read `1.10997859555733471…` until 2026-08-30 and that
+     value has been **retired since 2026-08-22**. The **counts below are
+     still the counts**: they describe witnesses computed under the OLD
+     anchor, which is exactly the population the migration is about — do
+     not read them as counts of the live value. It fed ~72 producers /
+     **870** witnesses — the canonical 3-CAL (muon) derivation witnesses.
      (Re-measured 2026-08-15 and again 2026-08-16 over the 2941 tracked
      `computations/*.witness.json`: **870** carry the muon fingerprint —
      **801 muon-only** and **69 also carrying the proton pin**. The
@@ -2594,7 +2740,73 @@ muon; muon-anchor → ~4000σ on proton).
      > | match on | counts | at 2026-08-16 | at 2026-08-26 |
      > |---|---|---|---|
      > | `1.109978595` (10 digits) | **all three** | **871** | **477** |
-     > | `1.1099785955573347` (full) | **the then-canonical pin only** | 468 | 149 |
+     > | `1.1099785955573347` (full) | ~~the canonical pin only~~ **the RETIRED pin — see below** | 468 | 149 |
+     >
+     > 🛑 **The second row's label is now WRONG, and the table is missing its
+     > largest population (corrected 2026-08-30; found by bean `qou-silm`,
+     > which did the diagnosis and deliberately did not edit this file —
+     > the CODATA-2018 row below is the one part it does not carry).** On an
+     > owner ruling — *"2022 CODATA better than 2018. A → CODATA 2022"* —
+     > commit **`fca08de7d2` (2026-08-22)** re-derived the anchor witness, so
+     > *(A sibling correction on `main` dated this **2026-08-28**. That is the
+     > `computedAt` of a LATER regeneration, `83bab99730`; the VALUE changed on
+     > 2026-08-22, verified with `git log -- <file>`. Bean `qou-silm` made and
+     > corrected the same slip. Do not revert the date — reading a `computedAt`
+     > stamp as the date a value changed is the same error class as reading a
+     > `scriptCommitSha` as provenance.)*
+     > `1.1099785955573347…` has been the **retired** pin for eight days and
+     > the live canonical value is **`1.1099785956427390466817…`**. The row
+     > above tells you to count the retired literal *while calling it
+     > canonical*, which inverts its own warning: an agent following it counts
+     > a dead value and reports it as the live one.
+     >
+     > **Re-measured 2026-08-30 with the recorded method** (`git ls-tree` on
+     > `origin/main`, 3237 tracked `computations/*.witness.json`):
+     >
+     > | match on | is | count |
+     > |---|---|---|
+     > | `1.109978595` (10 digits) | all muon spellings | **403** |
+     > | `1.1099785955541805` | **CODATA 2018** | **257** |
+     > | `1.1099785956427390` | **CODATA 2022 — the LIVE canonical anchor** | **96** |
+     > | `1.1099785955573347` | the **retired** self-certified pin | **40** |
+     > | 10-digit hit, no full muon literal | unaccounted spellings | 17 |
+     >
+     > **That 40 is a count of FILES CONTAINING THE STRING, not of stale
+     > pins — do not read it as 40 stale witnesses.** Bean `qou-silm`
+     > independently reports *"exactly one witness"* still on the old pin, and
+     > **both are right about different questions**: of the 40, only **4**
+     > carry the literal in a `q0Value`/`q` *field*, and only **one**
+     > (`hadron-knot-table.witness.json`) as the top-level `q0Value`. The
+     > other three are payload data — a `scan[]` point, a cross-anchor
+     > `residual_evaluations/muon_q0`, an `across_q[]` array — i.e.
+     > deliberate multi-q records, not stale pins; the remaining 36 carry it
+     > in prose, `description` or provenance. This is the same
+     > string-match-vs-semantics gap the row above it warns about, one level
+     > down, and it is why every row here names its method.
+     >
+     > **CODATA 2018 is 64 % of the muon population and the two-row table
+     > cannot see it at all** — it is neither "the canonical pin" nor
+     > distinguishable from the rest under a 10-digit match. That is the
+     > sharper defect here: the old table's two rows do not partition what
+     > they are counting, so *both* readings under-describe the tree. Quote
+     > four rows, or say which single literal you matched.
+     >
+     > **The shift itself is small; do not confuse it with the μ–p tension.**
+     > retired → live is **0.0769 ppb**, and it moves μ–p from 11.5371 to
+     > **11.6141 ppb**. The witness drain for it is *already scoped* under
+     > bean **`qou-3f7a`** /
+     > [`2026-08-29-q0-muon-anchor-repin-drain.md`](docs/audits/2026-08-29-q0-muon-anchor-repin-drain.md)
+     > (83 `Q0_FLIP` + 165 NEW drift sites, all at that same −0.0769 ppb) —
+     > **do not duplicate it.** That audit cites this document nine times and
+     > never flags that this passage is itself stale, which is why the
+     > correction lands here rather than there.
+     >
+     > **This does NOT weaken rule 1 of the sweep constraints** ("NEVER re-pin
+     > an anchor-defining witness"). That rule binds *agents*; the owner
+     > re-pinned it deliberately, by ruling, having established that the old
+     > value was **self-certifying** — `q_pinning_50_digit` is listed
+     > `ideal_muon`, so `q_parameter` rebound `q_at` for that very producer and
+     > it wrote back the value it had just read.
      >
      > The **870** above is the ten-digit reading and is correct. Measured
      > with the same script at both ends (`git ls-tree` on each revision,

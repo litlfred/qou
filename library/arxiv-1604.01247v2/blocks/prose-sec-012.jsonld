@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1604.01247v2/blocks/prose-sec-012",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Tentative conclusion",
+  "pageStart": 32,
+  "pageEnd": 37,
+  "text": "../sections/sec-012-7-tentative-conclusion.md",
+  "derivedFrom": "library/arxiv-1604.01247v2/manifest",
+  "sourceDocument": "library/arxiv-1604.01247v2/manifest",
+  "provenance": "ingested"
+}

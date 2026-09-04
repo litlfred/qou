@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:quantum-universe",
+  "kind": "definition",
+  "title": "Quantum Universe",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-rigid-monoidal-category"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
+  ],
+  "tags": [
+    "category-theory",
+    "quantum"
+  ],
+  "leanRef": "qou:QOU.QuantumUniverse",
+  "text": "quantum-universe.md",
+  "leanSource": "quantum-universe.lean",
+  "provenance": "authored"
+}

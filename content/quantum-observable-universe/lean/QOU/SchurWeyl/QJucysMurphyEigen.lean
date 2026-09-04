@@ -41,7 +41,7 @@ parameters of a size-`2` orbit by the `q^{2·content}` of their own cells makes 
 
 This is exactly the off-diagonal of `S · D · S` on that orbit, so it is what keeps the conjugate
 of a diagonal matrix diagonal — the inductive step of Ram's Theorem 4.1. -/
-theorem seminormalParam_weighted_cancel (q : ℝ) (hq : q ≠ 0) {d : ℤ}
+theorem seminormalParam_weighted_cancel {K : Type*} [Field K] (q : K) (hq : q ≠ 0) {d : ℤ}
     (hd : q ^ (2 * d) ≠ 1) (c : ℤ) :
     seminormalParam q d * q ^ (2 * c) + seminormalParam q (-d) * q ^ (2 * (c + d)) = 0 := by
   have hx0 : q ^ (2 * d) ≠ 0 := zpow_ne_zero _ hq
@@ -58,10 +58,10 @@ theorem seminormalParam_weighted_cancel (q : ℝ) (hq : q ≠ 0) {d : ℤ}
   have hxi1 : 1 - x⁻¹ ≠ 0 := by
     intro h
     apply hx1
-    have hx : x⁻¹ = 1 := by linarith [h]
+    have hx : x⁻¹ = 1 := by linear_combination -h
     have := congrArg (fun t => x * t) hx
     simp only [mul_inv_cancel₀ hx0, mul_one] at this
-    linarith [this]
+    linear_combination this
   -- the bracket vanishes: (1 - x⁻¹)⁻¹ = -x·(1 - x)⁻¹
   have hbr : (1 - x⁻¹)⁻¹ + x * (1 - x)⁻¹ = 0 := by
     have hxi : (1 - x⁻¹) = (x - 1) * x⁻¹ := by field_simp
@@ -75,19 +75,19 @@ theorem seminormalParam_weighted_cancel (q : ℝ) (hq : q ≠ 0) {d : ℤ}
 generator acts by the scalar `a(±1)` (`q` resp. `-q⁻¹`), and its square is `q^{2d}` — exactly the
 factor by which `q^{2·content}` changes when the content moves by `d`.  This is the inadmissible
 branch of the inductive step. -/
-theorem seminormalParam_sq_of_one (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+theorem seminormalParam_sq_of_one {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) :
     seminormalParam q 1 ^ 2 = q ^ (2 * (1 : ℤ)) := by
-  rw [seminormalParam_one q hq hq2]
+  rw [seminormalParam_one q hq (QOU.SchurWeyl.GenericParameter.sq_ne_one hq2)]
   norm_num [← zpow_natCast]
 
-theorem seminormalParam_sq_of_neg_one (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+theorem seminormalParam_sq_of_neg_one {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) :
     seminormalParam q (-1) ^ 2 = q ^ (2 * (-1 : ℤ)) := by
-  rw [seminormalParam_neg_one q hq hq2]
+  rw [seminormalParam_neg_one q hq (QOU.SchurWeyl.GenericParameter.sq_ne_one hq2)]
   rw [show (2 * (-1 : ℤ)) = -2 by ring, zpow_neg]
   field_simp
 
 /-- The inadmissible branch in one statement: for `d = ±1`, `a(d)² · q^{2c} = q^{2(c+d)}`. -/
-theorem seminormalParam_sq_mul (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {d : ℤ}
+theorem seminormalParam_sq_mul {K : Type*} [Field K] (q : K) (hq : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {d : ℤ}
     (hd : d = 1 ∨ d = -1) (c : ℤ) :
     seminormalParam q d ^ 2 * q ^ (2 * c) = q ^ (2 * (c + d)) := by
   have hcd : q ^ (2 * (c + d)) = q ^ (2 * c) * q ^ (2 * d) := by
@@ -111,7 +111,7 @@ So one identity governs the whole step — which is why the induction closes.
 
 open SeminormalRep in
 /-- **Off-diagonal entry of the step vanishes.** -/
-theorem jmStep_offDiag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd : q ^ (2 * d) ≠ 1) (c : ℤ) :
+theorem jmStep_offDiag {K : Type*} [Field K] (q : K) (hq : q ≠ 0) {d : ℤ} (hd : q ^ (2 * d) ≠ 1) (c : ℤ) :
     offDiag q d * q ^ (2 * c) * seminormalParam q d
       + seminormalParam q (-d) * q ^ (2 * (c + d)) * offDiag q d = 0 := by
   have hcancel := seminormalParam_weighted_cancel q hq hd c
@@ -120,7 +120,7 @@ theorem jmStep_offDiag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd : q ^ (2 * d) ≠ 
 open SeminormalRep in
 /-- **Diagonal entry of the step is the shifted content.**  `a(d)²q^{2c}` plus the
 off-diagonal round trip equals `q^{2(c+d)}` exactly. -/
-theorem jmStep_diag (q : ℝ) (hq : q ≠ 0) {d : ℤ} (hd0 : d ≠ 0) (hd : q ^ (2 * d) ≠ 1)
+theorem jmStep_diag {K : Type*} [Field K] (q : K) (hq : q ≠ 0) {d : ℤ} (hd0 : d ≠ 0) (hd : q ^ (2 * d) ≠ 1)
     (c : ℤ) :
     seminormalParam q d ^ 2 * q ^ (2 * c)
         + offDiag q (-d) * offDiag q d * q ^ (2 * (c + d))
@@ -143,22 +143,22 @@ variable {μ : YoungDiagram}
 
 /-- **The `q`-JM eigenvalue matrix at value `v`**: diagonal, with `q^{2·content}` read off the
 cell holding `v` in each tableau. -/
-noncomputable def jmDiagVal (q : ℝ) (v : ℕ) :
-    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+noncomputable def jmDiagVal {K : Type*} [Field K] (q : K) (v : ℕ) :
+    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K :=
   Matrix.diagonal (fun T => q ^ (2 * cellContent (cellOf T v)))
 
-@[simp] theorem jmDiagVal_diag (q : ℝ) (v : ℕ) (T : StandardYoungTableau μ) :
+@[simp] theorem jmDiagVal_diag {K : Type*} [Field K] (q : K) (v : ℕ) (T : StandardYoungTableau μ) :
     jmDiagVal (μ := μ) q v T T = q ^ (2 * cellContent (cellOf T v)) := by
   simp [jmDiagVal]
 
-theorem jmDiagVal_of_ne (q : ℝ) (v : ℕ) {T' T : StandardYoungTableau μ} (h : T' ≠ T) :
+theorem jmDiagVal_of_ne {K : Type*} [Field K] (q : K) (v : ℕ) {T' T : StandardYoungTableau μ} (h : T' ≠ T) :
     jmDiagVal (μ := μ) q v T' T = 0 := by
   simp [jmDiagVal, Matrix.diagonal_apply_ne _ h]
 
 /-- **Base case.**  Value `1` sits at `(0,0)` in every standard tableau
 (`TableauCells.cellOf_one`), whose content is `0`, so the eigenvalue matrix is the identity —
 matching `ρ(L₀) = ρ(1) = 1`. -/
-theorem jmDiagVal_one (q : ℝ) (hcard : 0 < μ.cells.card) :
+theorem jmDiagVal_one {K : Type*} [Field K] (q : K) (hcard : 0 < μ.cells.card) :
     jmDiagVal (μ := μ) q 1 = 1 := by
   unfold jmDiagVal
   rw [← Matrix.diagonal_one]
@@ -179,7 +179,7 @@ theorem cellContent_succ (T : StandardYoungTableau μ) (k : ℕ) :
 
 Every entry reduces to `Seminormal.jmStep_diag` / `jmStep_offDiag` (size-`2` orbits) or
 `Seminormal.seminormalParam_sq_mul` (size-`1` orbits). -/
-theorem genMat_conj_jmDiagVal (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem genMat_conj_jmDiagVal {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
     (k : ℕ) (hk : 1 ≤ k) (hkn : k + 1 ≤ μ.cells.card) :
     genMat q k hk hkn * jmDiagVal q k * genMat q k hk hkn = jmDiagVal q (k + 1) := by
   classical
@@ -188,12 +188,12 @@ theorem genMat_conj_jmDiagVal (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
   ext T' T
   set d := axialDist T k with hd
   have hd0 : d ≠ 0 := axialDist_ne_zero T hkI hkI'
-  have hdq : q ^ (2 * d) ≠ 1 := zpow_ne_one hq0 hq2 (by omega)
+  have hdq : q ^ (2 * d) ≠ 1 := zpow_ne_one hq2 (by omega)
   have hc : cellContent (cellOf T (k + 1)) = cellContent (cellOf T k) + d :=
     cellContent_succ T k
   -- collapse the inner product: the middle factor is diagonal
   have hAD : ∀ U, (genMat q k hk hkn * jmDiagVal q k :
-        Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) T' U
+        Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) T' U
       = genMat q k hk hkn T' U * q ^ (2 * cellContent (cellOf U k)) := by
     intro U
     rw [Matrix.mul_apply, Finset.sum_eq_single U]
@@ -272,25 +272,25 @@ value `k+1`.
 
 Induction on `k`: the base is `L₀ = 1` with value `1` at the corner (`jmDiagVal_one`), and the
 step is the conjugation identity `genMat_conj_jmDiagVal`, since `L_{k+1} = σ_k L_k σ_k`. -/
-theorem seminormalRep_qJM (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem seminormalRep_qJM {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) :
     ∀ k : ℕ, k ≤ n →
-      seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k) = jmDiagVal q (k + 1)
+      seminormalRep q hq0 hq2 n hN (qJM K q q⁻¹ n k) = jmDiagVal q (k + 1)
   | 0, _ => by
       rw [qJM_zero, map_one, jmDiagVal_one q (by omega)]
   | (k + 1), hk => by
       have hkn : k < n := by omega
-      rw [qJM_succ ℝ q q⁻¹ n hkn, map_mul, map_mul,
+      rw [qJM_succ K q q⁻¹ n hkn, map_mul, map_mul,
         seminormalRep_σ, seminormalRep_qJM q hq0 hq2 n hN k (by omega)]
       show genMat q (k + 1) _ _ * jmDiagVal q (k + 1) * genMat q (k + 1) _ _ = _
       rw [genMat_conj_jmDiagVal q hq0 hq2 (k + 1) (by omega) (by omega)]
 
 /-- The inverse eigenvalue matrix: diagonal with `q^{-2·content}`. -/
-noncomputable def jmDiagValInv (q : ℝ) (v : ℕ) :
-    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ :=
+noncomputable def jmDiagValInv {K : Type*} [Field K] (q : K) (v : ℕ) :
+    Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K :=
   Matrix.diagonal (fun T => q ^ (-(2 * cellContent (cellOf T v))))
 
-theorem jmDiagVal_mul_inv (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
+theorem jmDiagVal_mul_inv {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (v : ℕ) :
     jmDiagVal (μ := μ) q v * jmDiagValInv q v = 1 := by
   rw [jmDiagVal, jmDiagValInv, Matrix.diagonal_mul_diagonal, ← Matrix.diagonal_one]
   congr 1
@@ -298,7 +298,7 @@ theorem jmDiagVal_mul_inv (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
   rw [← zpow_add₀ hq0]
   simp
 
-theorem jmDiagValInv_mul (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
+theorem jmDiagValInv_mul {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (v : ℕ) :
     jmDiagValInv (μ := μ) q v * jmDiagVal q v = 1 := by
   rw [jmDiagVal, jmDiagValInv, Matrix.diagonal_mul_diagonal, ← Matrix.diagonal_one]
   congr 1
@@ -309,19 +309,19 @@ theorem jmDiagValInv_mul (q : ℝ) (hq0 : q ≠ 0) (v : ℕ) :
 /-- **The inverse Murphy element acts by the inverse eigenvalue.**  Derived from the two-sided
 inverse `qJM · qJMInv = 1 = qJMInv · qJM` plus uniqueness of inverses, so it needs no second
 induction. -/
-theorem seminormalRep_qJMInv (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem seminormalRep_qJMInv {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) (k : ℕ) (hk : k ≤ n) :
-    seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) = jmDiagValInv q (k + 1) := by
+    seminormalRep q hq0 hq2 n hN (qJMInv K q q⁻¹ n k) = jmDiagValInv q (k + 1) := by
   have hqi : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
-  have h2 := congrArg (seminormalRep q hq0 hq2 n hN) (qJMInv_mul_qJM ℝ q q⁻¹ n hqi k hk)
+  have h2 := congrArg (seminormalRep q hq0 hq2 n hN) (qJMInv_mul_qJM K q q⁻¹ n hqi k hk)
   rw [map_mul, map_one, seminormalRep_qJM q hq0 hq2 n hN k hk] at h2
   -- `X · D = 1` and `D · D⁻¹ = 1` give `X = D⁻¹`
-  calc seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k)
-      = seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) * 1 := by rw [mul_one]
-    _ = seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k)
+  calc seminormalRep q hq0 hq2 n hN (qJMInv K q q⁻¹ n k)
+      = seminormalRep q hq0 hq2 n hN (qJMInv K q q⁻¹ n k) * 1 := by rw [mul_one]
+    _ = seminormalRep q hq0 hq2 n hN (qJMInv K q q⁻¹ n k)
           * (jmDiagVal q (k + 1) * jmDiagValInv q (k + 1)) := by
         rw [jmDiagVal_mul_inv q hq0]
-    _ = (seminormalRep q hq0 hq2 n hN (qJMInv ℝ q q⁻¹ n k) * jmDiagVal q (k + 1))
+    _ = (seminormalRep q hq0 hq2 n hN (qJMInv K q q⁻¹ n k) * jmDiagVal q (k + 1))
           * jmDiagValInv q (k + 1) := by rw [mul_assoc]
     _ = jmDiagValInv q (k + 1) := by rw [h2, one_mul]
 
@@ -363,15 +363,15 @@ theorem sum_cellOf_range {M : Type*} [AddCommMonoid M] (T : StandardYoungTableau
 contributes `q^{2c} + q^{−2c}` at the cell holding the value `k+1`; summing over `k = 0,…,n` sweeps
 every cell of `μ` once (`sum_cellOf_range`), so the resulting diagonal is *constant* — i.e. a
 scalar matrix, with the scalar `Σ_{c∈μ} (q^{2c} + q^{−2c})`. -/
-theorem seminormalRep_barSymJMSum (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ)
+theorem seminormalRep_barSymJMSum {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) (n : ℕ)
     (hN : μ.cells.card = n + 1) :
-    seminormalRep q hq0 hq2 n hN (barSymJMSum ℝ q q⁻¹ n)
+    seminormalRep q hq0 hq2 n hN (barSymJMSum K q q⁻¹ n)
       = (∑ c ∈ μ.cells, (q ^ (2 * cellContent c) + q ^ (-(2 * cellContent c))))
-          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) ℝ) := by
+          • (1 : Matrix (StandardYoungTableau μ) (StandardYoungTableau μ) K) := by
   classical
   rw [barSymJMSum, map_sum]
   have hterm : ∀ k ∈ Finset.range (n + 1),
-      seminormalRep q hq0 hq2 n hN (qJM ℝ q q⁻¹ n k + qJMInv ℝ q q⁻¹ n k)
+      seminormalRep q hq0 hq2 n hN (qJM K q q⁻¹ n k + qJMInv K q q⁻¹ n k)
         = Matrix.diagonal (fun T : StandardYoungTableau μ =>
             q ^ (2 * cellContent (cellOf T (k + 1)))
               + q ^ (-(2 * cellContent (cellOf T (k + 1))))) := by
@@ -413,17 +413,17 @@ cell once, so the diagonal is constant).
 the `sorry`'d version asked for: negative `q` is admitted here.
 
 Refs: [ram1997] Theorem 4.1; [hoefsmit1974]; [murphy1992]. -/
-theorem barSymJMSum_block_eigenvalue_of_pos {N : ℕ} (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem barSymJMSum_block_eigenvalue_of_pos {N : ℕ} {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0) (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q)
     (hNpos : 0 < N) (lam : Partition N) :
-    ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
-      ρ (barSymJMSum ℝ q q⁻¹ (N - 1))
-        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
+    ∃ ρ : Hecke K q q⁻¹ (N - 1) →ₐ[K] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) K,
+      ρ (barSymJMSum K q q⁻¹ (N - 1))
+        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) K) := by
   have hcard : (shape lam).cells.card = (N - 1) + 1 := by
     rw [card_shape]; omega
   refine ⟨SeminormalRep.seminormalRepFin q hq0 hq2 lam (N - 1) hcard, ?_⟩
   rw [SeminormalRep.seminormalRepFin]
-  show (Matrix.reindexAlgEquiv ℝ ℝ (Fintype.equivFin (SYT lam)))
-      (SeminormalRep.seminormalRep q hq0 hq2 (N - 1) hcard (barSymJMSum ℝ q q⁻¹ (N - 1))) = _
+  show (Matrix.reindexAlgEquiv K K (Fintype.equivFin (SYT lam)))
+      (SeminormalRep.seminormalRep q hq0 hq2 (N - 1) hcard (barSymJMSum K q q⁻¹ (N - 1))) = _
   rw [SeminormalRep.seminormalRep_barSymJMSum q hq0 hq2 (N - 1) hcard, map_smul, map_one,
     cellContentCoshSum]
 
@@ -434,13 +434,20 @@ partition's `cellContentCoshSum` is the empty sum `0`.  Since `d_λ ≥ 1` alway
 (`instNonemptyStandardYoungTableau`), the matrix algebra is nontrivial and `2 · 1 ≠ 0`.
 
 So the `0 < N` hypothesis on `barSymJMSum_block_eigenvalue_of_pos` is not an artefact of the proof
-route: the statement without it is refutable.  The mismatch is a **normalisation** one — `Θ` counts
+route: the statement without it is refutable.
+
+**`(2 : K) ≠ 0` is a real hypothesis, not bookkeeping.**  Over `ℝ` the contradiction was
+`1 + 1 = 0` in the block algebra, closed by `simp` on a diagonal entry.  In characteristic
+two that equation *holds*, so this statement is **false** there and the refutation needs the
+characteristic assumption.  It is the one place in the general-field tranche (bean
+`qou-j377`) where the migration is not a pure retyping.  The mismatch is a **normalisation** one — `Θ` counts
 `k = 0,…,n` (that is `n+1 = N` Murphy elements, one per cell, correct for `N ≥ 1`), and at `N = 0`
 the `ℕ`-truncated `N - 1 = 0` makes the range one term long against zero cells. -/
-theorem barSymJMSum_block_eigenvalue_zero_false (q : ℝ) (lam : Partition 0) :
-    ¬ ∃ ρ : Hecke ℝ q q⁻¹ (0 - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
-      ρ (barSymJMSum ℝ q q⁻¹ (0 - 1))
-        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
+theorem barSymJMSum_block_eigenvalue_zero_false {K : Type*} [Field K]
+    (h2 : (2 : K) ≠ 0) (q : K) (lam : Partition 0) :
+    ¬ ∃ ρ : Hecke K q q⁻¹ (0 - 1) →ₐ[K] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) K,
+      ρ (barSymJMSum K q q⁻¹ (0 - 1))
+        = cellContentCoshSum lam q • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) K) := by
   rintro ⟨ρ, hρ⟩
   have hd : 0 < dLambda lam := by
     show 0 < Fintype.card (SYT lam)
@@ -448,9 +455,10 @@ theorem barSymJMSum_block_eigenvalue_zero_false (q : ℝ) (lam : Partition 0) :
   have hzero : cellContentCoshSum lam q = 0 := by
     rw [cellContentCoshSum,
       show (shape lam).cells = ∅ from Finset.card_eq_zero.mp (card_shape lam), Finset.sum_empty]
-  have h0 : barSymJMSum ℝ q q⁻¹ (0 - 1) = 1 + 1 := barSymJMSum_zero_eq ℝ q q⁻¹
+  have h0 : barSymJMSum K q q⁻¹ (0 - 1) = 1 + 1 := barSymJMSum_zero_eq K q q⁻¹
   rw [h0, map_add, map_one, hzero, zero_smul] at hρ
   have hentry := congrFun (congrFun hρ ⟨0, hd⟩) ⟨0, hd⟩
   simp [Matrix.add_apply] at hentry
+  exact h2 (by linear_combination hentry)
 
 end QOU.SchurWeyl

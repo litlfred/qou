@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-eigenvalue-product-expansion",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:eigenvalue-product-expansion",
+  "kind": "proposition",
+  "title": "Eigenvalue product expansion of the nuclear braid Markov trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-universal-braid-branching"
+  ],
+  "tags": [
+    "eigenvalue-product",
+    "markov-trace",
+    "symmetric-channel",
+    "isospin",
+    "crossing-number",
+    "q-integer"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.eigenvalue_product_expansion",
+  "text": "eigenvalue-product-expansion.md",
+  "leanSource": "eigenvalue-product-expansion.lean",
+  "provenance": "authored"
+}

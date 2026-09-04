@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cuspshapes/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Exceptional fillings",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "contains": [
+    "library/cuspshapes/blocks/prose-sec-006",
+    "library/cuspshapes/blocks/prop-sec-006-01",
+    "library/cuspshapes/blocks/rem-sec-006-02"
+  ],
+  "derivedFrom": "library/cuspshapes/manifest",
+  "sourceDocument": "library/cuspshapes/manifest",
+  "provenance": "ingested"
+}

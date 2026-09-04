@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2111.04763v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Borel resummation and Stokes constants",
+  "pageStart": 27,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-2111.04763v2/blocks/prose-sec-009",
+    "library/arxiv-2111.04763v2/blocks/conj-sec-009-01",
+    "library/arxiv-2111.04763v2/blocks/conj-sec-009-02",
+    "library/arxiv-2111.04763v2/blocks/rem-sec-009-03"
+  ],
+  "derivedFrom": "library/arxiv-2111.04763v2/manifest",
+  "sourceDocument": "library/arxiv-2111.04763v2/manifest",
+  "provenance": "ingested"
+}

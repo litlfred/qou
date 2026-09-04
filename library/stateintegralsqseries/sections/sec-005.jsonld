@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/stateintegralsqseries/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A residue computation",
+  "pageStart": 6,
+  "pageEnd": 10,
+  "contains": [
+    "library/stateintegralsqseries/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "library/stateintegralsqseries/manifest",
+  "sourceDocument": "library/stateintegralsqseries/manifest",
+  "provenance": "ingested"
+}

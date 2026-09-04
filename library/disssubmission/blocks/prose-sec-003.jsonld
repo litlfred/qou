@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/disssubmission/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 14,
+  "pageEnd": 17,
+  "text": "../sections/sec-003-6-introduction.md",
+  "derivedFrom": "library/disssubmission/manifest",
+  "sourceDocument": "library/disssubmission/manifest",
+  "provenance": "ingested"
+}

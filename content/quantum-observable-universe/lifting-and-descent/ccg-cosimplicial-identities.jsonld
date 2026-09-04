@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-ccg-cosimplicial-identities",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:ccg-cosimplicial-identities",
+  "kind": "definition",
+  "title": "Cosimplicial identities for the jet/descent face and degeneracy maps",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-descent"
+  ],
+  "tags": [
+    "cosimplicial",
+    "face",
+    "degeneracy",
+    "ascent",
+    "descent",
+    "retraction"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.ccg_cosimplicial_identities",
+  "text": "ccg-cosimplicial-identities.md",
+  "leanSource": "ccg-cosimplicial-identities.lean",
+  "provenance": "authored"
+}

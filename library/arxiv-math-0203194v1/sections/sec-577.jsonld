@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-577",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "TOTARO’S THEOREM. 235",
+  "pageStart": 239,
+  "pageEnd": 240,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-577",
+    "library/arxiv-math-0203194v1/blocks/thm-sec-577-01",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-577-02"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

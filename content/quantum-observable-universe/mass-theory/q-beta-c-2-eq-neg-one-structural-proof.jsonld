@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-beta-c-2-eq-neg-one-structural",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-beta-c-2-eq-neg-one-structural",
+  "kind": "proof",
+  "title": "Proof of q beta c 2 eq neg one structural",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-2-eq-neg-one-structural"
+  ],
+  "text": "q-beta-c-2-eq-neg-one-structural-proof.md",
+  "provenance": "authored"
+}

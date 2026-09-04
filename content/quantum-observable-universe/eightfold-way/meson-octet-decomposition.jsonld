@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-meson-octet-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:meson-octet-decomposition",
+  "kind": "proposition",
+  "title": "The meson octet via $\\mathbf{3} \\otimes \\bar{\\mathbf{3}}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/rem-flavor-charge-assignments"
+  ],
+  "leanRef": "qou:QOU.Eightfold.MesonOctet.meson_octet_at_three",
+  "text": "meson-octet-decomposition.md",
+  "leanSource": "meson-octet-decomposition.lean",
+  "provenance": "authored"
+}

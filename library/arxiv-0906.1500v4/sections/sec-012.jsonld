@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0906.1500v4/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Assumption on SL2(C)-representations. It is required for an SL 2(C)-representation",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-0906.1500v4/blocks/prose-sec-012",
+    "library/arxiv-0906.1500v4/blocks/rem-sec-012-01",
+    "library/arxiv-0906.1500v4/blocks/ex-sec-012-02",
+    "library/arxiv-0906.1500v4/blocks/rem-sec-012-03"
+  ],
+  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
+  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "provenance": "ingested"
+}

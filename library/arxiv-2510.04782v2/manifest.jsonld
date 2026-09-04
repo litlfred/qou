@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2510.04782v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "q-Hodge complexes over the Habiro ring",
+  "contains": [
+    "library/arxiv-2510.04782v2/sections/sec-000",
+    "library/arxiv-2510.04782v2/sections/sec-001",
+    "library/arxiv-2510.04782v2/sections/sec-002",
+    "library/arxiv-2510.04782v2/sections/sec-003",
+    "library/arxiv-2510.04782v2/sections/sec-004",
+    "library/arxiv-2510.04782v2/sections/sec-005",
+    "library/arxiv-2510.04782v2/sections/sec-006",
+    "library/arxiv-2510.04782v2/sections/sec-007",
+    "library/arxiv-2510.04782v2/sections/sec-008",
+    "library/arxiv-2510.04782v2/sections/sec-009",
+    "library/arxiv-2510.04782v2/sections/sec-010",
+    "library/arxiv-2510.04782v2/sections/sec-011",
+    "library/arxiv-2510.04782v2/sections/sec-012",
+    "library/arxiv-2510.04782v2/sections/sec-013",
+    "library/arxiv-2510.04782v2/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2510.04782v2",
+    "source_file": "2510.04782v2.pdf",
+    "source_sha256": "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b",
+    "pages": 82,
+    "arxiv": {
+      "id": "2510.04782",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "8 Oct 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

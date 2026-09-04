@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-left-dual",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-left-dual",
+  "kind": "remark",
+  "title": "Left dual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-exact-pairing"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal",
+    "duality"
+  ],
+  "defines": [
+    "left-dual"
+  ],
+  "text": "glossary-left-dual.md",
+  "provenance": "authored"
+}

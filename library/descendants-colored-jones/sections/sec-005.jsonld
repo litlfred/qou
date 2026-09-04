@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/descendants-colored-jones/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The colored Jones polynomials at roots of unity",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/descendants-colored-jones/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "library/descendants-colored-jones/manifest",
+  "sourceDocument": "library/descendants-colored-jones/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/topologicalinvariance3dindex/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The 3D index of Dimofte-Gaiotto-Gukov",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "../sections/sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov.md",
+  "derivedFrom": "library/topologicalinvariance3dindex/manifest",
+  "sourceDocument": "library/topologicalinvariance3dindex/manifest",
+  "provenance": "ingested"
+}

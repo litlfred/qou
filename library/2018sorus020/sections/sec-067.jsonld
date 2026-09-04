@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-067",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The split case",
+  "pageStart": 91,
+  "pageEnd": 92,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-067",
+    "library/2018sorus020/blocks/thm-sec-067-01"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

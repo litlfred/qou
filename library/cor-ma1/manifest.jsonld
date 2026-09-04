@@ -1,0 +1,44 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cor-ma1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+  "contains": [
+    "library/cor-ma1/sections/sec-000",
+    "library/cor-ma1/sections/sec-001",
+    "library/cor-ma1/sections/sec-002",
+    "library/cor-ma1/sections/sec-003",
+    "library/cor-ma1/sections/sec-004",
+    "library/cor-ma1/sections/sec-005",
+    "library/cor-ma1/sections/sec-006",
+    "library/cor-ma1/sections/sec-007",
+    "library/cor-ma1/sections/sec-008",
+    "library/cor-ma1/sections/sec-009",
+    "library/cor-ma1/sections/sec-010",
+    "library/cor-ma1/sections/sec-011",
+    "library/cor-ma1/sections/sec-012",
+    "library/cor-ma1/sections/sec-013",
+    "library/cor-ma1/sections/sec-014",
+    "library/cor-ma1/sections/sec-015",
+    "library/cor-ma1/sections/sec-016",
+    "library/cor-ma1/sections/sec-017",
+    "library/cor-ma1/sections/sec-018",
+    "library/cor-ma1/sections/sec-019",
+    "library/cor-ma1/sections/sec-020",
+    "library/cor-ma1/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "cor-ma1",
+    "source_file": "cor-ma1.pdf",
+    "source_sha256": "d90c91dcd82bfcab19801d10649fe8a95f11d017378a5d37abcf7fd31f26dddc",
+    "pages": 26,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

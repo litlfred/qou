@@ -142,7 +142,21 @@ if _census_path.exists():
                 "rho_handpick":    r.get("rho_handpick"),
             }
 
-Q0 = _mp.mpf("1.1099785955573347")   # substrate parameter (MUON layer)
+# Anchor: taken LIVE from `q_muon_at()` rather than a hardcoded literal
+# (2026-09-04, bean `qou-3f7a`). The literal here was the RETIRED muon pin
+# `1.1099785955573347...`, superseded 2026-08-22 by the CODATA-2022
+# derivation `1.109978595642739...` (owner ruling, commit fca08de7d2).
+#
+# The q0-value drift audit flagged this witness and prescribed "fix by
+# RE-RUNNING THE PRODUCER, never by hand-editing the number". That remedy
+# CANNOT work for a hardcoded literal -- re-running reproduces it faithfully.
+# Measured: this producer was re-run and the audit still flagged it.
+#
+# The layer is UNCHANGED: this still computes at the muon anchor. Whether it
+# should instead be proton is the `q0Anchor: independent` disposition
+# question owned by bean `qou-324i`, and is deliberately not decided here.
+from q_parameter import q_muon_at as _q_muon_at  # noqa: E402
+Q0 = _mp.mpf(_mp.nstr(_q_muon_at(50), 50))   # substrate parameter (MUON layer)
 
 
 def q_integer(n: int, q=Q0):

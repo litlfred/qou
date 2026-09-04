@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1102.3530v1/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Representation",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "text": "../sections/sec-003-41-representation.md",
+  "derivedFrom": "library/arxiv-1102.3530v1/manifest",
+  "sourceDocument": "library/arxiv-1102.3530v1/manifest",
+  "provenance": "ingested"
+}

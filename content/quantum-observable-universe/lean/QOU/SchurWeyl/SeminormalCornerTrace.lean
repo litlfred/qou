@@ -81,7 +81,7 @@ theorem axialDist_insertMax_top {m : ℕ} (hN : μ.cells.card = m + 2)
 /-- **The block trace as a sum over corners.**  Splitting the diagonal sum by the cell carrying the
 top entry replaces `SYT μ` by `Σ_{c corner} SYT (μ ∖ c)`; on each block the matrix is the downstairs
 one and the Hoefsmit parameter is evaluated at `c(c) − c(r_S)`. -/
-theorem trace_heckeIncl_mul_lastGen_corner {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem trace_heckeIncl_mul_lastGen_corner {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     {m : ℕ} (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
     ((seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
         * genMat q (m + 1) (by omega) (by omega)).trace

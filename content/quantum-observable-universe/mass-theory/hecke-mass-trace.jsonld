@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-hecke-mass-trace",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hecke-mass-trace",
+  "kind": "proposition",
+  "title": "Mass via the Markov trace of the Hecke mass element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-mass-element",
+    "papers/quantum-observable-universe/blocks/thm-topological-mass"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "mass",
+    "markov-trace",
+    "fibre-functor",
+    "topological-decomposition"
+  ],
+  "leanRef": "qou:QOU.Braiding.hecke_mass_trace",
+  "text": "hecke-mass-trace.md",
+  "leanSource": "hecke-mass-trace.lean",
+  "provenance": "authored"
+}

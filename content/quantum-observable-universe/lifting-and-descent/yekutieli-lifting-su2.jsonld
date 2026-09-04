@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-yekutieli-lifting-su2",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:yekutieli-lifting-su2",
+  "kind": "example",
+  "title": "Categorical lifting for $\\mathrm{SU}(2)$: perpetual obstruction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+    "papers/quantum-observable-universe/blocks/ex-quantum-characteristic-classes-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting",
+  "tags": [
+    "su2",
+    "yekutieli",
+    "lifting",
+    "brane-tower"
+  ],
+  "text": "yekutieli-lifting-su2.md",
+  "provenance": "authored"
+}

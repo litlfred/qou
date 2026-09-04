@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9803007v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
+  "contains": [
+    "library/arxiv-hep-th-9803007v2/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9803007v2",
+    "source_file": "9803007v2.pdf",
+    "source_sha256": "75f6484941ecbca0b8a455cbc48410ccd290d7be3cc5d27c67ccd13e69f92de9",
+    "pages": 4,
+    "arxiv": {
+      "id": "hep-th/9803007",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "17 Jun 1998"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

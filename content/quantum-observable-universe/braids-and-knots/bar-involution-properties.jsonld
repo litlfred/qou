@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bar-involution-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bar-involution-properties",
+  "kind": "remark",
+  "title": "Bar-involution: the $P_{\\mathrm{avg}}$ / $P_{\\mathrm{skew}}$ canonical projections and the QOU bar-type classification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bar-involution",
+    "papers/quantum-observable-universe/blocks/prop-c5-involution-leibniz-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-silver-ratio-beta-decay-null",
+    "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/prop-chirality-residue-mass-term"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-bar-involution",
+  "tags": [
+    "lean-infrastructure",
+    "bar-invariance",
+    "categorical-action",
+    "notation",
+    "classification"
+  ],
+  "text": "bar-involution-properties.md",
+  "provenance": "authored"
+}

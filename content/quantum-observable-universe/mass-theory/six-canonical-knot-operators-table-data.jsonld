@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-six-canonical-knot-operators-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:six-canonical-knot-operators-table-data",
+  "kind": "table",
+  "title": "Data table from prop:six-canonical-knot-operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "six-canonical-knot-operators-table-data.md",
+  "provenance": "authored"
+}

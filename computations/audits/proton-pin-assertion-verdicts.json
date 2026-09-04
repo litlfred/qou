@@ -81,34 +81,34 @@
     }
   },
   "reachability": {
-    "measured_at": "2026-08-30",
+    "measured_at": "2026-09-03",
     "criterion": [
-      "q-pinning-50-digit.witness.json",
+      "derived_50_digit  (the field a direct value-read subscripts)",
       "q_muon_at",
       "_q0_value_for_anchor",
-      "load_q_50dps"
+      "load_q_50dps",
+      "matched against source with comments and docstrings REMOVED"
     ],
     "A_measurable": [
+      "frakV_askey_wilson_recurrence_tie_probe",
       "hadron_knot_table",
+      "he4_binding_k_stage2_probe",
+      "he4_stage2_ranking_seminormal_xcheck",
+      "lambda_scale_substrate_probe",
+      "qbeta_decay_sdp_extended_ck",
+      "qbeta_fsc_g_pattern_comparison",
       "qbeta_hoefsmit_tbeta_matrix_build_probe",
+      "qbeta_physics",
+      "qbeta_symbolic_sdp_strict_complementarity",
       "rho_f_categorical_probe"
     ],
     "B_refused": [
       "atomic_tr_m_mpfr_50dps",
       "cross_check_trM_1ppb",
-      "cross_check_trM_cw_seminormal_leg",
-      "frakV_askey_wilson_recurrence_tie_probe",
-      "he4_binding_k_stage2_probe",
-      "he4_stage2_ranking_seminormal_xcheck",
-      "lambda_scale_substrate_probe",
       "q0_anchor_consistency_audit",
       "q1_mass_gap_probe",
       "q_pinning_50_digit",
-      "qbeta_decay_sdp_extended_ck",
-      "qbeta_fsc_g_pattern_comparison",
-      "qbeta_jacobi_anger_tower_general",
-      "qbeta_physics",
-      "qbeta_symbolic_sdp_strict_complementarity"
+      "qbeta_jacobi_anger_tower_general"
     ],
     "no_live_producer": [
       "alpha_high_precision"
@@ -139,6 +139,8 @@
         }
       ],
       "caution": "These two are NOT unmeasured group-A holds and must not be counted as such. They are manifest entries whose producers were deliberately excised, with the manifest not updated in the same commit."
-    }
+    },
+    "tranche_note": "UPDATED 2026-09-03 (bean qou-aj91). Two changes moved these lists, and they are different in kind -- do not conflate them.\n(1) ROUTING. Nine producers were routed through q_parameter, so QOU_Q0_ANCHOR now reaches them. All nine stay listed ideal_muon except cross_check_trM_cw_seminormal_leg, which moved to physical_proton because its reference witness is proton-stamped. q_parameter derives the muon anchor from q_muon_at(70), byte-identical to 70 digits with what the direct reads returned, so routing moved no number.\n(2) DETECTOR FIX. env_override_reaches() had keyed on the witness FILENAME, which cannot tell reading a file from mentioning it: it matched routing comments, add_upstream() provenance edges, and a witness string describing history, and so reported all nine routed producers as still bypassed. It now keys on derived_50_digit -- the field a value-read always subscripts -- over comment- and docstring-stripped source. Verified 15/15 against the 9 routed and the 6 exclusions before adoption.\nSo A 3 -> 11 and B 15 -> 6, and part of that movement is producers being fixed while part is the detector stopping lying about them.",
+    "B_is_now_exclusions_only": "All 6 remaining B entries are PRINCIPLED exclusions, not backlog: q_pinning_50_digit defines the anchor; q0_anchor_consistency_audit is the flip detector and needs both pins; cross_check_trM_1ppb's own source requires muon; atomic_tr_m_mpfr_50dps is dual-layer and asserts BOTH pins; qbeta_jacobi_anger_tower_general deliberately compares both (anchors = {'proton': q_at(), 'muon': q_muon_at()}); q1_mass_gap_probe validates two_q and plancherel_weights_n3 from the SAME witness, values derived at its own q0, so routing q0 away while keeping those comparisons would manufacture a straddle. Nothing is left in B by accident."
   }
 }

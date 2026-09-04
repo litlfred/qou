@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-confinement-categorical",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:confinement-categorical",
+  "kind": "proposition",
+  "title": "Confinement = spectral-sequence collapse (only Wedderburn-central observables survive)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-unified-curvature-rank-mass-formula"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.confinement_categorical",
+  "text": "confinement-categorical.md",
+  "leanSource": "confinement-categorical.lean",
+  "provenance": "authored"
+}

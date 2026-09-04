@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Poisson summation formula",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-006",
+    "library/ki6c/blocks/prop-sec-006-01",
+    "library/ki6c/blocks/rem-sec-006-02",
+    "library/ki6c/blocks/rem-sec-006-03"
+  ],
+  "derivedFrom": "library/ki6c/manifest",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

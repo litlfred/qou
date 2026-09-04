@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-448",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(S,s ), restricted to S). Notice",
+  "pageStart": 166,
+  "pageEnd": 168,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-448",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-448-01",
+    "library/arxiv-math-0203194v1/blocks/rem-sec-448-02",
+    "library/arxiv-math-0203194v1/blocks/rem-sec-448-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

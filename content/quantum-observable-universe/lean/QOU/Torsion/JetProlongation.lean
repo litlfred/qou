@@ -56,8 +56,27 @@ structure JetProlongationQOU where
   connection_unique : prolongedInst.parallelAdjointSections →
     inst.parallelAdjointSections
 
-/-- **Corollary (ℂ jet prolongation).**
-    LaTeX: `\label{cor:jet-prolongation-C}` -/
+/-- **ℂ jet prolongation preserves CR dimension.**
+    LaTeX: `\label{cor:jet-prolongation-C}`
+
+    **Definitional, not derived — accessor for a defining field (2026-09-02).**
+    This was labelled *"Corollary"*, which oversells it: `prolonged` and `base`
+    are independent `CQuantumObservableUniverse` fields of
+    `JetProlongationQOU`, so nothing forces their `n` to agree **except**
+    `dim_preserved`, which this returns verbatim. There is no derivation here
+    and none is possible from the other fields.
+
+    That is not a defect. `JetProlongationQOU` *defines* an object — a jet
+    prolongation of a ℂ QOU — and `dim_preserved` is one of its defining
+    conditions, so this is Mathlib's `Group.mul_assoc := Group.mul_assoc`
+    idiom: an accessor exposing an axiom of the definition under a readable
+    name. Compare `QOU.Mass.CoordinationBinding.binding_eq_bond_energy`, the
+    same shape, whose docstring already says *"just `h.extensive`, exposed as
+    a named consumer"*.
+
+    What was wrong was only the word. A reader who sees "Corollary" expects
+    the statement to follow from something; here it *is* the something. Bean
+    `qou-z9ws`. -/
 theorem jet_prolongation_C (jp : JetProlongationQOU) :
     jp.prolonged.n = jp.base.n :=
   jp.dim_preserved

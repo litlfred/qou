@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/helicity03mmj/blocks/ex-sec-001-02",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "ex-sec-001-02.md",
+  "derivedFrom": "library/helicity03mmj/sections/sec-001",
+  "sourceDocument": "library/helicity03mmj/manifest",
+  "provenance": "ingested"
+}

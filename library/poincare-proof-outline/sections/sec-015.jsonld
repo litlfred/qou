@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/poincare-proof-outline/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some consequences of line uniqueness",
+  "pageStart": 30,
+  "pageEnd": 31,
+  "contains": [
+    "library/poincare-proof-outline/blocks/prose-sec-015"
+  ],
+  "derivedFrom": "library/poincare-proof-outline/manifest",
+  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "provenance": "ingested"
+}

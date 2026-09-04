@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0403224v1/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "(s−1)(t−1)(1−N)",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "../sections/sec-003-2-s1t11n.md",
+  "derivedFrom": "library/arxiv-math-0403224v1/manifest",
+  "sourceDocument": "library/arxiv-math-0403224v1/manifest",
+  "provenance": "ingested"
+}

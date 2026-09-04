@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bring-embeddable-knots",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bring-embeddable-knots",
+  "kind": "remark",
+  "title": "Bring-embeddable knots: genus-bounded table and per-knot witness targets for the depth correspondence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-exhaustiveness",
+    "papers/quantum-observable-universe/blocks/prop-explicit-central-idempotent"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-knot-exhaustiveness",
+  "cites": [
+    "references/thurston1978"
+  ],
+  "tags": [
+    "bring-embeddable",
+    "genus-bound",
+    "torus-knot-generators",
+    "principled-atlas",
+    "falsifiability-targets",
+    "graded-mikusinski"
+  ],
+  "text": "bring-embeddable-knots.md",
+  "provenance": "authored"
+}

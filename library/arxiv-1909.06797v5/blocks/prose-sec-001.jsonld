@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Review 1 : Droplet description of unitary matrix models",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-2-review-1-droplet-description-of-unitary-matrix.md",
+  "derivedFrom": "library/arxiv-1909.06797v5/manifest",
+  "sourceDocument": "library/arxiv-1909.06797v5/manifest",
+  "provenance": "ingested"
+}

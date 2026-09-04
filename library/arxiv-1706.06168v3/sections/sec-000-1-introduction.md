@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 In 1914, P´ olya and Schur [ PS14] characterized the set of diagonal linear operators on polynomials which
 preserve real-rootedness. Since this seminal paper, much work h as been done in extending this character-

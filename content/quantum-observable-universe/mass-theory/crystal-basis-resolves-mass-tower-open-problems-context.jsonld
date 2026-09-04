@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-crystal-basis-resolves-mass-tower-open-problems-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:crystal-basis-resolves-mass-tower-open-problems-context",
+  "kind": "remark",
+  "title": "The three crystal reductions and the transverse fourth problem",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-crystal-basis-resolves-mass-tower-open-problems"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-crystal-basis-resolves-mass-tower-open-problems",
+  "tags": [
+    "kashiwara-crystal",
+    "demazure",
+    "kazhdan-lusztig",
+    "mass-tower"
+  ],
+  "text": "crystal-basis-resolves-mass-tower-open-problems-context.md",
+  "provenance": "authored"
+}

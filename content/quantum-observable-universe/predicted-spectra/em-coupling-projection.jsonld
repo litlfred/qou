@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:em-coupling-projection",
+  "kind": "proposition",
+  "title": "Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness"
+  ],
+  "tags": [
+    "electromagnetic",
+    "fine-structure-constant",
+    "coupling",
+    "braiding",
+    "q-integer",
+    "crossing",
+    "involution",
+    "fibre-functor",
+    "chern-simons",
+    "descent-decomposition",
+    "exceptional-divisor"
+  ],
+  "leanRef": "qou:QOU.Archimedean.isEmCoupling_iff",
+  "text": "em-coupling-projection.md",
+  "provenance": "authored"
+}

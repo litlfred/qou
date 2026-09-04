@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/gn2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/gn2/blocks/prose-sec-006",
+    "library/gn2/blocks/lem-sec-006-01",
+    "library/gn2/blocks/lem-sec-006-02",
+    "library/gn2/blocks/lem-sec-006-03"
+  ],
+  "derivedFrom": "library/gn2/manifest",
+  "sourceDocument": "library/gn2/manifest",
+  "provenance": "ingested"
+}

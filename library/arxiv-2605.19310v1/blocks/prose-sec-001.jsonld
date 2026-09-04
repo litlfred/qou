@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.19310v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "MARK LEWKO",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "../sections/sec-001-4-mark-lewko.md",
+  "derivedFrom": "library/arxiv-2605.19310v1/manifest",
+  "sourceDocument": "library/arxiv-2605.19310v1/manifest",
+  "provenance": "ingested"
+}

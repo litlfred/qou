@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-archimedean-stpart",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:archimedean-stpart",
+  "kind": "conjecture",
+  "title": "Archimedean QOU is the standard-part of surreal QOU",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-classical-limit-stpart"
+  ],
+  "cites": [
+    "references/robinson1966",
+    "references/ehrlich2012"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "archimedean",
+    "categorical",
+    "standard-part",
+    "QOU-axioms",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.ArchimedeanIsStandardPart",
+  "text": "archimedean-stpart.md",
+  "provenance": "authored"
+}

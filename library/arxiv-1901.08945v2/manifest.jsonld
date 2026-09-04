@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1901.08945v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES",
+  "contains": [
+    "library/arxiv-1901.08945v2/sections/sec-000",
+    "library/arxiv-1901.08945v2/sections/sec-001",
+    "library/arxiv-1901.08945v2/sections/sec-002",
+    "library/arxiv-1901.08945v2/sections/sec-003",
+    "library/arxiv-1901.08945v2/sections/sec-004",
+    "library/arxiv-1901.08945v2/sections/sec-005",
+    "library/arxiv-1901.08945v2/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1901.08945v2",
+    "source_file": "1901.08945v2.pdf",
+    "source_sha256": "df222d76e597057fb4de115627fe041939fe30d8acaff7bbd4a68aa9a1789617",
+    "pages": 28,
+    "arxiv": {
+      "id": "1901.08945",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "19 Feb 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

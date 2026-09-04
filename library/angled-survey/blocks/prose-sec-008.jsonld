@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/blocks/prose-sec-008",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgements. The proof of Theorem 1.2 was developed while",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "../sections/sec-008-14-acknowledgements-the-proof-of-theorem-12-was.md",
+  "derivedFrom": "library/angled-survey/manifest",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

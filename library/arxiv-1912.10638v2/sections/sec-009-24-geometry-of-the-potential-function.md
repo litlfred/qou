@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 16-32
 source_pdf: 1912.10638v2.pdf
 source_sha256: 612e44871d91d2e2
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by"
 ---
 To understand the critical values of the potential functions, we need to ﬁnd a concrete triangulation of
 the link complement associated to the potential function. The triangulation is the one appeared in [21].

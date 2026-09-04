@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ppn356556735-0036/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups",
+  "contains": [
+    "library/ppn356556735-0036/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "ppn356556735-0036",
+    "source_file": "PPN356556735_0036.pdf",
+    "source_sha256": "a41a1773c81cc8575f5da82ffd136913b81f41920fddb0158b04942da435d4d5",
+    "pages": 38,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

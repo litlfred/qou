@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-8
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
+doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
 ---
 In the present paper, we consider a concentration of measure problem
 on manifolds with boundary. We study concentration phenomena of

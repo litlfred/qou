@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1205.4617v1/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Discussion and Conclusion",
+  "pageStart": 11,
+  "pageEnd": 14,
+  "text": "../sections/sec-002-4-discussion-and-conclusion.md",
+  "derivedFrom": "library/arxiv-1205.4617v1/manifest",
+  "sourceDocument": "library/arxiv-1205.4617v1/manifest",
+  "provenance": "ingested"
+}

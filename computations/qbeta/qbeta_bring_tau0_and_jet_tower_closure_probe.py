@@ -118,10 +118,10 @@ ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate")]
 import _path_bridge  # noqa: E402, F401
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 40
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 J_TAU0 = Fraction(-25, 2)
 J_5TAU0 = Fraction(-5 * 29 ** 3, 32)
 
@@ -354,7 +354,7 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_value=mp.nstr(Q0, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")
     print(f"\n  witness -> {out.relative_to(ROOT)}")

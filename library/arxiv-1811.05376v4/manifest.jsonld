@@ -1,0 +1,42 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1811.05376v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
+  "contains": [
+    "library/arxiv-1811.05376v4/sections/sec-000",
+    "library/arxiv-1811.05376v4/sections/sec-001",
+    "library/arxiv-1811.05376v4/sections/sec-002",
+    "library/arxiv-1811.05376v4/sections/sec-003",
+    "library/arxiv-1811.05376v4/sections/sec-004",
+    "library/arxiv-1811.05376v4/sections/sec-005",
+    "library/arxiv-1811.05376v4/sections/sec-006",
+    "library/arxiv-1811.05376v4/sections/sec-007",
+    "library/arxiv-1811.05376v4/sections/sec-008",
+    "library/arxiv-1811.05376v4/sections/sec-009",
+    "library/arxiv-1811.05376v4/sections/sec-010",
+    "library/arxiv-1811.05376v4/sections/sec-011",
+    "library/arxiv-1811.05376v4/sections/sec-012",
+    "library/arxiv-1811.05376v4/sections/sec-013",
+    "library/arxiv-1811.05376v4/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1811.05376v4",
+    "source_file": "1811.05376v4.pdf",
+    "source_sha256": "a486709d0a78d19cd46ec104c801b2f58f346fcab6265408a65684440770f30c",
+    "pages": 40,
+    "arxiv": {
+      "id": "1811.05376",
+      "version": "4",
+      "primary_class": "math.DG",
+      "stamp_date": "23 Oct 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

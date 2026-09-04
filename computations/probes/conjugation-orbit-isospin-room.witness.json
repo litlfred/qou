@@ -1,0 +1,103 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T02:34:03.775739+00:00",
+  "commitSha": "f0dab71510ba0eff62e044355f0e8e3573584988",
+  "assertions": [
+    {
+      "name": "pair_layer_has_one_orbit_hence_constant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "pair_layer_matches_PairIsospinAssignment",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "six_strand_layer_not_forced_constant",
+      "computed": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "h6_block_count_is_eleven",
+      "computed": "11",
+      "expected": "11",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "conjugation-orbit-isospin-room",
+  "scriptFile": "conjugation_orbit_isospin_room_probe.py",
+  "scriptHash": "337e78f5dfa0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/conjugation_orbit_isospin_room_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/conjugation_orbit_isospin_room_probe.py"
+  },
+  "description": "Charge-conjugation orbit structure on H_n blocks, measuring how many independent values a C-invariant total-isospin label may take at the pair layer (n=2) versus the forced six-strand two-nucleon layer (n=6). Marks the limit of the n=2 impossibility proof. Audit-only; exact combinatorics; no fit.",
+  "tier": "exploratory (scope boundary of a corpus proof)",
+  "result": {
+    "preregistered_reading": {
+      "orbits_eq_1": "C-invariant T constant; C alone closes the layer",
+      "orbits_ge_2": "C alone does not close the layer; the n=2 proof is special",
+      "fixed_before_counting": true
+    },
+    "layers": {
+      "2": {
+        "layer": "pair layer H_2",
+        "n_blocks": 2,
+        "n_C_orbits": 1,
+        "n_self_conjugate": 0,
+        "self_conjugate_blocks": [],
+        "orbits": [
+          "(2,) <-> (1, 1)"
+        ],
+        "C_invariant_label_is_constant": true,
+        "independent_T_values_available": 1
+      },
+      "6": {
+        "layer": "two-nucleon layer H_6",
+        "n_blocks": 11,
+        "n_C_orbits": 6,
+        "n_self_conjugate": 1,
+        "self_conjugate_blocks": [
+          "(3, 2, 1)"
+        ],
+        "orbits": [
+          "(6,) <-> (1, 1, 1, 1, 1, 1)",
+          "(5, 1) <-> (2, 1, 1, 1, 1)",
+          "(4, 2) <-> (2, 2, 1, 1)",
+          "(4, 1, 1) <-> (3, 1, 1, 1)",
+          "(3, 3) <-> (2, 2, 2)",
+          "(3, 2, 1)"
+        ],
+        "C_invariant_label_is_constant": false,
+        "independent_T_values_available": 6
+      }
+    },
+    "verdict": "The pair-layer impossibility does NOT extend. At n=2 there are 2 blocks in 1 C-orbit, so a C-invariant T is CONSTANT — which is exactly PairIsospinAssignment's result, and C alone closes that layer. At n=6 (the forced six-strand two-nucleon carrier) there are 11 blocks in 6 C-orbits (1 self-conjugate: (3, 2, 1)), so a C-invariant T has 6 independent values available and is NOT forced constant. CONSEQUENCE: the n=2 proof is special to the two-block case and must NOT be quoted as closing the six-strand channel layer. What binds at six strands is the separate crossing-budget bound (R <= s^2 = 9 vs nature's 33.7), not charge conjugation. Two layers, two different obstructions — neither subsumes the other."
+  },
+  "auditOnly": true
+}

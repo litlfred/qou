@@ -7,6 +7,7 @@ section_number: 4
 pages: 21-28
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach indimension"
 ---
 We state in this section some concentration inequalities related to Stein kernels in dimension one. Due
 to the use of covariance identities stated in Section 2, the proofs indeed heavily rely on dimension one.

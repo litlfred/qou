@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-027",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Ending Lamination Theorem",
+  "pageStart": 37,
+  "pageEnd": 37,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-027",
+    "library/ihpmay2025/blocks/thm-sec-027-01"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

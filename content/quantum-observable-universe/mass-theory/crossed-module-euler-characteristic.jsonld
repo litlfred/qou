@@ -1,0 +1,14 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-crossed-module-euler-characteristic",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crossed-module-euler-characteristic",
+  "kind": "proposition",
+  "title": "Hecke crossed module h² trace equals $\\dim(V) \\cdot \\chi(\\Sigma_4)$",
+  "leanRef": "qou:QOU.BraidKnot.CrossedModuleEulerCharacteristic.crossed_module_euler_characteristic",
+  "text": "crossed-module-euler-characteristic.md",
+  "provenance": "authored"
+}

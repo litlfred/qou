@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-bring-cone-tetraplectic-structure",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:bring-cone-tetraplectic-structure",
+  "kind": "definition",
+  "title": "Tetraplectic structure on the affine cone $C(\\mathcal{B})$ over Bring's curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface"
+  ],
+  "cites": [
+    "references/foth2002"
+  ],
+  "tags": [
+    "tetraplectic",
+    "bring-cone",
+    "s5-symmetry",
+    "invariant-volume-form",
+    "young-diagram",
+    "archimedean-universe"
+  ],
+  "leanRef": "qou:QOU.Tetraplectic.BringCone",
+  "sorryFree": true,
+  "text": "bring-cone-tetraplectic-structure.md",
+  "provenance": "authored"
+}

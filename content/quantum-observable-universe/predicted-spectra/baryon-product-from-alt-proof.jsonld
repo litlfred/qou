@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-baryon-product-from-alt",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:baryon-product-from-alt",
+  "kind": "proof",
+  "title": "Proof of baryon product from alt",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-baryon-product-from-alt"
+  ],
+  "text": "baryon-product-from-alt-proof.md",
+  "provenance": "authored"
+}

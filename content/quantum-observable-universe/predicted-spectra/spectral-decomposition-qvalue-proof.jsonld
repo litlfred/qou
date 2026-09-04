@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-spectral-decomposition-qvalue",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:spectral-decomposition-qvalue",
+  "kind": "proof",
+  "title": "Proof of spectral decomposition qvalue",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue"
+  ],
+  "text": "spectral-decomposition-qvalue-proof.md",
+  "provenance": "authored"
+}

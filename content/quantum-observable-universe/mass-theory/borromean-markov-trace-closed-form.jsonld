@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-borromean-markov-trace-closed-form",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borromean-markov-trace-closed-form",
+  "kind": "proposition",
+  "title": "Borromean Markov trace $\\mathrm{tr}_M(\\beta_{\\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/murasugi1996"
+  ],
+  "tags": [
+    "borromean",
+    "markov-trace",
+    "jones-polynomial",
+    "closed-form",
+    "h-expansion",
+    "topological-invariant",
+    "linking-weight"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.borromean_markov_trace_closed_form",
+  "text": "borromean-markov-trace-closed-form.md",
+  "provenance": "authored"
+}

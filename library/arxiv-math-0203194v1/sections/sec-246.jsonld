@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0203194v1/sections/sec-246",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A geometric point s of S is a point with value in some complete",
+  "pageStart": 118,
+  "pageEnd": 121,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-246",
+    "library/arxiv-math-0203194v1/blocks/rem-sec-246-01",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-246-02",
+    "library/arxiv-math-0203194v1/blocks/ex-sec-246-03",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-246-04",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-246-05"
+  ],
+  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
+  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "provenance": "ingested"
+}

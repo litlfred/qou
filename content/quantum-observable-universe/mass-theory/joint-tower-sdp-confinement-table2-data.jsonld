@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-joint-tower-sdp-confinement-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:joint-tower-sdp-confinement-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:joint-tower-sdp-confinement",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-joint-tower-sdp-confinement"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "joint-tower-sdp-confinement-table2-data.md",
+  "provenance": "authored"
+}

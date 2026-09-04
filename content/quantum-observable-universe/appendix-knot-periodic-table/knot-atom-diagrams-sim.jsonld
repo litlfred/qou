@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/sim-knot-atom-diagrams",
+  "@type": [
+    "folio:Simulator"
+  ],
+  "label": "sim:knot-atom-diagrams",
+  "kind": "simulator",
+  "title": "Knot Diagrams of Light Atoms ($Z \\leq 4$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-knot-atom-diagrams"
+  ],
+  "tags": [
+    "knot-diagram",
+    "trefoil",
+    "hopf-link",
+    "sub-link",
+    "atom",
+    "interactive",
+    "borromean"
+  ],
+  "text": "knot-atom-diagrams-sim.md",
+  "provenance": "authored"
+}

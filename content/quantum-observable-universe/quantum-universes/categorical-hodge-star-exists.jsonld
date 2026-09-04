@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-hodge-star-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-hodge-star-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical Hodge star",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-hodge-star",
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-hodge-star-exists"
+  ],
+  "tags": [
+    "existence",
+    "hodge-star"
+  ],
+  "leanRef": "qou:QOU.CategoricalHodgeStar.exists",
+  "text": "categorical-hodge-star-exists.md",
+  "leanSource": "categorical-hodge-star-exists.lean",
+  "provenance": "authored"
+}

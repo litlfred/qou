@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-molecular-bond-binding-from-trefoil-insertion",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:molecular-bond-binding-from-trefoil-insertion",
+  "kind": "proposition",
+  "title": "Molecular bond binding energy from inverse-trefoil insertion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confined-knot-binding"
+  ],
+  "cites": [
+    "references/adams1985hyperbolic"
+  ],
+  "tags": [
+    "binding-mechanism",
+    "molecular-bond",
+    "covalent-bond",
+    "inverse-trefoil",
+    "hartree-energy",
+    "wedderburn"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.bondEnergy",
+  "text": "molecular-bond-binding-from-trefoil-insertion.md",
+  "leanSource": "molecular-bond-binding-from-trefoil-insertion.lean",
+  "provenance": "authored"
+}

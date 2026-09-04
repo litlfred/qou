@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.6268v2/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Feynman diagrams and higher loops",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-1202.6268v2/blocks/prose-sec-030",
+    "library/arxiv-1202.6268v2/blocks/ex-sec-030-01"
+  ],
+  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
+  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "provenance": "ingested"
+}

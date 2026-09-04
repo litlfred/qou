@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-depth-stratified-frobenius-reciprocity",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:depth-stratified-frobenius-reciprocity",
+  "kind": "conjecture",
+  "title": "Frobenius-reciprocity ideal restriction at low curvature-rank",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-lr-tensor-character-bridge",
+    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing"
+  ],
+  "cites": [
+    "references/frobenius1898",
+    "references/macdonald1995",
+    "references/lewin1981"
+  ],
+  "tags": [
+    "tier:S",
+    "frobenius-reciprocity",
+    "curvature-rank",
+    "knot-ideal",
+    "chirality-channel",
+    "binding-energy",
+    "research-open",
+    "drum-shape"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity",
+  "text": "depth-stratified-frobenius-reciprocity.md",
+  "provenance": "authored"
+}

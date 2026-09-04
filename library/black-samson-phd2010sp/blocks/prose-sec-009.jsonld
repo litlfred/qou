@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/black-samson-phd2010sp/blocks/prose-sec-009",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Temperley-Lieb Algebra",
+  "pageStart": 22,
+  "pageEnd": 30,
+  "text": "../sections/sec-009-113-the-temperley-lieb-algebra.md",
+  "derivedFrom": "library/black-samson-phd2010sp/manifest",
+  "sourceDocument": "library/black-samson-phd2010sp/manifest",
+  "provenance": "ingested"
+}

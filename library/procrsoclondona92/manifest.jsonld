@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/procrsoclondona92/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Helicity and the Calugareanu invariant",
+  "contains": [
+    "library/procrsoclondona92/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "procrsoclondona92",
+    "source_file": "procrsoclondona92.pdf",
+    "source_sha256": "3d48c956e2e5408d54eef125666685f56fa1decfbe8365f1efc6544cf5d7b554",
+    "pages": 19,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

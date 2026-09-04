@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/cor-sec-016-04",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "Complexity and fault-tolerance transfer",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "cor-sec-016-04.md",
+  "derivedFrom": "library/quaternioms/sections/sec-016",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

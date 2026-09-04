@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-9212088v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Random matrix theory and spectral sum rules for the Dirac operator in QCD1",
+  "contains": [
+    "library/arxiv-hep-th-9212088v1/sections/sec-000",
+    "library/arxiv-hep-th-9212088v1/sections/sec-001",
+    "library/arxiv-hep-th-9212088v1/sections/sec-002",
+    "library/arxiv-hep-th-9212088v1/sections/sec-003",
+    "library/arxiv-hep-th-9212088v1/sections/sec-004",
+    "library/arxiv-hep-th-9212088v1/sections/sec-005",
+    "library/arxiv-hep-th-9212088v1/sections/sec-006",
+    "library/arxiv-hep-th-9212088v1/sections/sec-007",
+    "library/arxiv-hep-th-9212088v1/sections/sec-008",
+    "library/arxiv-hep-th-9212088v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-9212088v1",
+    "source_file": "9212088v1.pdf",
+    "source_sha256": "ecb2c02ec6fe11bdd92808d4ddfdd5122f5e33e3e328cdb15ddd1ddbdc83129c",
+    "pages": 18,
+    "arxiv": {
+      "id": "hep-th/9212088",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "14 Dec 1992"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

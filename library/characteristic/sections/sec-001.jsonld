@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/characteristic/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The conjecture. Recall that every a\u000ene subvariety V in \u0001",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/characteristic/blocks/prose-sec-001",
+    "library/characteristic/blocks/conj-sec-001-01",
+    "library/characteristic/blocks/cor-sec-001-02",
+    "library/characteristic/blocks/rem-sec-001-03",
+    "library/characteristic/blocks/prop-sec-001-04",
+    "library/characteristic/blocks/rem-sec-001-05",
+    "library/characteristic/blocks/rem-sec-001-06",
+    "library/characteristic/blocks/rem-sec-001-07"
+  ],
+  "derivedFrom": "library/characteristic/manifest",
+  "sourceDocument": "library/characteristic/manifest",
+  "provenance": "ingested"
+}

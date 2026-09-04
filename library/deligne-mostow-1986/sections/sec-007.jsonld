@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "P.DELIGNEANDG.D.MOSTOW",
+  "pageStart": 17,
+  "pageEnd": 18,
+  "contains": [
+    "library/deligne-mostow-1986/blocks/prose-sec-007",
+    "library/deligne-mostow-1986/blocks/cor-sec-007-01",
+    "library/deligne-mostow-1986/blocks/rem-sec-007-02"
+  ],
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

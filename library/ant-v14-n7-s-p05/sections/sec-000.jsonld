@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ant-v14-n7-s-p05/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Duality and Euler characteristics",
+  "pageStart": 4,
+  "pageEnd": 9,
+  "contains": [
+    "library/ant-v14-n7-s-p05/blocks/prose-sec-000",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-000-01",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-000-02",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-000-03",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-000-04",
+    "library/ant-v14-n7-s-p05/blocks/rem-sec-000-05",
+    "library/ant-v14-n7-s-p05/blocks/lem-sec-000-06"
+  ],
+  "derivedFrom": "library/ant-v14-n7-s-p05/manifest",
+  "sourceDocument": "library/ant-v14-n7-s-p05/manifest",
+  "provenance": "ingested"
+}

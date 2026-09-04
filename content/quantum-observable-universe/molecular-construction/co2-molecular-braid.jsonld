@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-co2-molecular-braid",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:co2-molecular-braid",
+  "kind": "definition",
+  "title": "Carbon dioxide $CO_2$ as a molecular braid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-co-molecular-braid"
+  ],
+  "tags": [
+    "carbon-dioxide",
+    "CO2",
+    "double-bond",
+    "linear",
+    "triatomic",
+    "molecular-braid"
+  ],
+  "leanRef": "qou:QOU.Molecular.CO2Braid",
+  "text": "co2-molecular-braid.md",
+  "leanSource": "co2-molecular-braid.lean",
+  "provenance": "authored"
+}

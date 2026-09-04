@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1202.6268v2/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Neumann-Zagier matrices",
+  "pageStart": 12,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-1202.6268v2/blocks/prose-sec-014",
+    "library/arxiv-1202.6268v2/blocks/rem-sec-014-01"
+  ],
+  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
+  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "provenance": "ingested"
+}

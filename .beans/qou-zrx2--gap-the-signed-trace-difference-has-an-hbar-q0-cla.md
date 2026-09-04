@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-08-31T10:15:23Z
+updated_at: 2026-09-03T20:46:56Z
 ---
 
 
@@ -104,15 +104,33 @@ is the assumption that the trace difference belongs to that category.
 
 ## Follow-ups worth opening
 
-1. **Is the floor derivable?** `1/8 = 2⁻³` at `n_strands = 6`, `7/128 = 7·2⁻⁷` at
-   `n_strands = 12`. Both dyadic. If the floor has a closed form in `n` it can be
-   subtracted exactly, leaving a clean `ℏ_q¹` deformation observable that pairs
-   with convention A — which would repair the construction rather than only
-   diagnosing it. This is the highest-value next step.
-2. **Fix the registry entry.** `E_0_CONVENTIONS["B_q_value_absorbed"]`'s operator
-   class should record `ℏ_q⁰ + ℏ_q¹`, not `ℏ_q²`, and the "≈ 102×" warning
-   recomputed from the corrected index.
-3. **Adjudicate the two producers** — but only after (1) and (2).
+> **🛑 (1) and (2) below are DONE and were left reading as open — corrected
+> 2026-09-04.** Both landed on 2026-08-31, three days before anyone re-read
+> this list, and their staleness is not cosmetic: it is why a later agent (me)
+> read the registry entry as uncorrected and nearly appended a second, weaker
+> correction to it. A follow-up list that outlives its follow-ups is a source
+> of exactly the "declared open, already closed" error this bean now carries a
+> retraction for. Items kept in place with their resolutions, not deleted.
+
+1. ~~**Is the floor derivable?**~~ **DONE 2026-08-31** — see §"the floor is
+   DERIVED, and the arithmetic core is in Lean" above. `c₀(A) = 2^−A − 2^(1−2A)`
+   from Schur–Weyl at `q = 1` plus a cycle count, exact for every `A`, verified
+   `A = 2..20`; `QOU/MassTheory/ClassicalTraceFloor.lean` is sorry-free. The
+   follow-on this item anticipated also holds: subtracting the floor leaves
+   `Δtr − c₀(A)`, a pure `ℏ_q¹` observable that pairs with convention **A**.
+   *(Original text: `1/8 = 2⁻³` at `n_strands = 6`, `7/128 = 7·2⁻⁷` at
+   `n_strands = 12`, both dyadic; a closed form in `n` would let it be
+   subtracted exactly. Note the closed form turned out to be in `A`, not `n`.)*
+2. ~~**Fix the registry entry.**~~ **DONE 2026-08-31** — both halves.
+   `E_0_CONVENTIONS["B_q_value_absorbed"]`'s `operator_class` carries a
+   `⚠ CORRECTED 2026-08-31` block recording `ℏ_q⁰ + ℏ_q¹` with the closed form,
+   the derivation and the 22.46 % / 4.88 % classical shares; and `validity`
+   carries `⚠ THE ≈102× WARNING CANNOT BE RECOMPUTED AS STATED`, which is the
+   stronger, correct disposition — `1/ℏ_q² = 101.862` is arithmetically right
+   but its premise (that this operator class is `ℏ_q²`) is measured false.
+3. **Adjudicate the two producers** — was gated on (1) and (2); **that gate is
+   now lifted**. Status not checked here, so this is "unblocked", not "open":
+   confirm before working it.
 
 ---
 
@@ -404,3 +422,157 @@ than a binding gap, so it was taken last and left open per the owner's redirect
 to the binding primary goal.
 
 It stays as the one remaining computational input other than Schur–Weyl.
+
+
+## 2026-09-03 — cross-reference (session on qou-pdg9)
+
+Follow-up "c1 is measured, not derived" is now closed elsewhere: bean `qou-pdg9`
+derives `c1 = 2^{-n} Σ_ℓ w_ℓ 2^{c(σ^{(ℓ)})}` (free − atom) by the same Schur–Weyl
+route as the floor, obtains all six values EXACTLY by series arithmetic (no
+Richardson), and finds the closed form
+`c1(Z,N) = (21Z+16N)(2^{-A-1} − 2^{-2A}) − 4(I_pp − I_nn)2^{-2A}`. Lean:
+`QOU/MassTheory/LeadingOrderTraceCoefficient.lean`. Follow-up (5) here — the
+permutation-half formalisation (orbit count under a deleted transposition) —
+is still open and is now needed for BOTH c0 and c1.
+
+## Classical-floor closed form: one mechanism tested and REFUTED (2026-09-03)
+
+Scope (a) — this construction, alone, does not reproduce the floors. It does
+NOT exclude a dyadic origin; see what survives below.
+
+**The hypothesis.** Under convention D, z = q³/(q²+1), so **z(q=1) = 1/2
+exactly**. That makes a dyadic classical floor the EXPECTED shape rather than a
+coincidence, and the measured values decompose suggestively:
+
+    deuteron   1/8   = 2⁻² − 2⁻³
+    ⁴He        7/128 = 2⁻⁴ − 2⁻⁷
+
+If the q=1 Markov trace on a braid closing to a c-component link were
+z^(n−c), the floor would be 2^-(n−c_free) − 2^-(n−c_atom).
+
+**Refuted by measurement.** Using the corpus's own accessor —
+`TR.atom_braid_word_3A(Z, N, include_inter=False)` is the free word, the
+keyword I initially missed — the underlying permutations are:
+
+    atom      n    c_free  c_atom   predicted   measured
+    deuteron  6    6       5        1/2         1/8
+    ⁴He       12   12      11       1/2         7/128
+    |word|         22/23 (D), 44/47 (⁴He)
+
+c_free = n both times, i.e. **the free word's underlying permutation is the
+IDENTITY** — it closes to the n-component unlink, which is the right topology
+for non-interacting nucleons. c_atom = n−1: one inter-nucleon crossing merges
+exactly two components. Both are sensible, and neither yields the floor.
+
+**What this rules out:** that the classical limit is the naive cycle-count
+trace z^(n−c). It is not — the words carry 22-47 generators with signs and
+multiplicities, and at q=1 the Hecke algebra degenerates to C[S_n] but the
+Markov trace of a general element is not z^(n−c) unless the element is a
+positive permutation braid.
+
+**What survives, and is worth the next attempt:** z(1) = 1/2 is exact, so the
+floor being dyadic is structural rather than numerical, and the exponents (3
+for A=2, 7 for A=4) satisfy 2A−1. A closed form should exist; it just is not
+this one. The next thing I would test is the q=1 trace computed through the
+actual transfer/seminormal path rather than a cycle-count shortcut — i.e.
+evaluate TR.tr_m_atom_multi_q at q → 1 for both include_inter values and read
+the limit, instead of predicting it.
+
+I am recording this as a refuted mechanism rather than leaving it untried-
+looking, because the guess is the obvious one and the next agent will make it.
+
+## RETRACTED (2026-09-03): the "cycle-count trace REFUTED" section above is WRONG, and so was the probe I built on it
+
+Retracting three things I wrote earlier today, in one place. The mechanism I
+recorded as refuted is the corpus's own **derived** mechanism; the closed form
+I reported as newly found was already derived, exactly, for every `A`; and the
+probe I committed to carry it (`classical_floor_dyadic_closed_form_probe.py`)
+has been deleted as a weaker duplicate.
+
+### 1. The cycle counts I refuted it with were wrong
+
+I wrote `c_free = n` (the free word's permutation is the identity) and
+`c_atom = n - 1`. Re-measured directly, at the 50-dps `q` the accessor demands:
+
+    include_inter=False  len=22  perm=[1,0,2,4,3,5]  cycles=4 = 2A
+    include_inter=True   len=23  perm=[1,0,3,4,2,5]  cycles=3 = A+1
+
+for the deuteron (`n = 6`). So `c_free = 4`, not 6. My recorded permutation is
+the identity and the real one is `(0 1)(3 4)` — consistent with having applied
+at most one swap of the word's 22 letters, though I cannot now reconstruct
+which line did it.
+
+**I had the discriminator in hand and did not apply it.** My own Richardson
+measurement gave `tr_M(W_free)(q->1) = 1/4`. Under the very formula I was
+testing, `tr_M = 2^(c-n)`, that *forces* `c_free = 4` on `n = 6`. A count of 6
+predicts `2^0 = 1`. The two halves of my own probe contradicted each other and
+I published the disagreement as a refutation of the formula rather than as a
+bug in the count.
+
+With the right counts the formula reproduces the floor exactly:
+`2^(2A-3A) - 2^((A+1)-3A) = 2^-A - 2^(1-2A)`, which is `1/8` at `A=2` and
+`7/128` at `A=4` — the measured values.
+
+### 2a. And it was in THIS FILE, twice, above where I wrote it
+
+Sharper than the missed grep, and the part worth carrying: **the bean I was
+appending to already contained the answer.** Two sections above my "no closed
+form" text, in the same file:
+
+- `## 2026-08-31 (later) — the floor has a CLOSED FORM, confirmed as a
+  prediction` — the identical formula `c0(A) = 2^-A - 2^(1-2A)`, read off at
+  A = 2,3,4 and **tested** at A = 5 on two isobars.
+- `## 2026-08-31 (later still) — the floor is DERIVED, and the arithmetic core
+  is in Lean` — the Schur-Weyl step verbatim, the probe, and the sorry-free
+  Lean file.
+
+I read the file with `tail -60` and wrote from there. Path 6 of the corpus-grep
+checklist is "grep the beans"; the failure mode it does not warn about is
+appending to a long bean without reading it, where the paths are not merely
+un-walked but the destination itself is the source you skipped.
+
+### 2b. Follow-up (2) in this bean is already DONE and still reads as open
+
+While checking: this bean's follow-up list says *"Fix the registry entry.
+`E_0_CONVENTIONS["B_q_value_absorbed"]`'s operator class should record
+hbar_q^0 + hbar_q^1, not hbar_q^2"*. That landed on 2026-08-31 — the entry
+carries a `⚠ CORRECTED 2026-08-31` block with the corrected index, the closed
+form, the derivation and the 22.46% / 4.88% shares. Not re-opening it here;
+recording that the follow-up list is one item staler than it looks, which is
+part of why I read the entry as uncorrected.
+
+### 2. The closed form was not open — it was DERIVED, three days earlier
+
+`computations/probes/classical_floor_derivation_probe.py` (2026-08-31, 5
+assertions, all passing — I re-ran it) derives `c0(A) = 2^-A - 2^(1-2A)` from
+Schur-Weyl at `q = 1` plus the cycle count, verified `A = 2..20`, i.e. well
+past where the trace itself is computable. `QOU/MassTheory/ClassicalTraceFloor.lean`
+is sorry-free. `derivation_chain.E_0_CONVENTIONS["B_q_value_absorbed"]` already
+carries the correction, the same closed form, and the same 22.46% / 4.88%
+classical shares.
+
+My probe's docstring asserted "no closed form was identified". That is the
+failure the corpus-grep checklist exists to prevent, and I skipped it: the
+result was in `computations/probes/` under an obvious name, in a Lean file, and
+in the very `derivation_chain.py` entry I was about to "correct".
+
+Its one apparently-new content — the per-leg split `tr_M(W_free)(q->1) = z^A`,
+`tr_M(W_atom)(q->1) = z^(2A-1)` with `z_D(1) = 1/2` — is the derivation probe's
+step 3 restated. `2^(2A-3A) = 2^-A` and `2^((A+1)-3A) = 2^-(2A-1)` are the same
+two numbers with a derived exponent instead of a fitted one. And the derivation
+attributes the 2 to `dim C^2` via Schur-Weyl, not to `z_D(1) = 1/2`; those
+coincide in value here and my attribution has no derivation behind it.
+
+### 3. What was NOT wrong
+
+The Richardson measurements themselves reproduce: `1/4, 1/8` (D), `1/16, 1/128`
+(4He), and the A=3 prediction `1/8, 1/32` held. They agree with the derived
+values. Only the mechanism claim and the novelty claim were wrong.
+
+### 4. Also reverted
+
+The edit I had staged to `derivation_chain.py` — it would have appended a
+second, numerics-only correction above the existing derived one, and claimed
+A=3 was "predicted before it was measured" as though new. The head sentence it
+was going to remove ("carries the ℏ_q^2 scaling") is superseded-text retained
+above its own correction, which is this corpus's house style, not a defect.

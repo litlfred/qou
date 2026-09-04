@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-12
 source_pdf: 1-s2.0-S002212362200012X-main.pdf
 source_sha256: 6fc7d28c8d40bf42
+doc_brief: "www.elsevier.com/locate/jfa — 13 sections: Log concavity and concentration of; Introduction; A lower bound on the entropy"
 ---
 We construct a stochastic process driven by a Brownian motion, which we refer to as 
 stochastic localization. A somewhat similar process was originally used in [6]t o establish 

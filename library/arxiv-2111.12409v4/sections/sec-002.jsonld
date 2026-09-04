@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2111.12409v4/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Results in this paper",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-2111.12409v4/blocks/prose-sec-002",
+    "library/arxiv-2111.12409v4/blocks/thm-sec-002-01",
+    "library/arxiv-2111.12409v4/blocks/thm-sec-002-02",
+    "library/arxiv-2111.12409v4/blocks/thm-sec-002-03"
+  ],
+  "derivedFrom": "library/arxiv-2111.12409v4/manifest",
+  "sourceDocument": "library/arxiv-2111.12409v4/manifest",
+  "provenance": "ingested"
+}

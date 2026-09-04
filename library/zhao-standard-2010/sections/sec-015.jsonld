@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/zhao-standard-2010/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some conjectures of FDS and RDS",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "contains": [
+    "library/zhao-standard-2010/blocks/prose-sec-015",
+    "library/zhao-standard-2010/blocks/conj-sec-015-01"
+  ],
+  "derivedFrom": "library/zhao-standard-2010/manifest",
+  "sourceDocument": "library/zhao-standard-2010/manifest",
+  "provenance": "ingested"
+}

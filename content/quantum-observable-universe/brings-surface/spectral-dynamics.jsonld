@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-spectral-dynamics",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:spectral-dynamics",
+  "kind": "remark",
+  "title": "Spectral dynamics and the $\\mathrm{Sp}(1)$ action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/ex-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/rem-q-harmonic-physical"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents",
+  "text": "spectral-dynamics.md",
+  "provenance": "authored"
+}

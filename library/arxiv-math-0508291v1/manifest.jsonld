@@ -1,0 +1,47 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0508291v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Stein’s Method and Random Character Ratios",
+  "contains": [
+    "library/arxiv-math-0508291v1/sections/sec-000",
+    "library/arxiv-math-0508291v1/sections/sec-001",
+    "library/arxiv-math-0508291v1/sections/sec-002",
+    "library/arxiv-math-0508291v1/sections/sec-003",
+    "library/arxiv-math-0508291v1/sections/sec-004",
+    "library/arxiv-math-0508291v1/sections/sec-005",
+    "library/arxiv-math-0508291v1/sections/sec-006",
+    "library/arxiv-math-0508291v1/sections/sec-007",
+    "library/arxiv-math-0508291v1/sections/sec-008",
+    "library/arxiv-math-0508291v1/sections/sec-009",
+    "library/arxiv-math-0508291v1/sections/sec-010",
+    "library/arxiv-math-0508291v1/sections/sec-011",
+    "library/arxiv-math-0508291v1/sections/sec-012",
+    "library/arxiv-math-0508291v1/sections/sec-013",
+    "library/arxiv-math-0508291v1/sections/sec-014",
+    "library/arxiv-math-0508291v1/sections/sec-015",
+    "library/arxiv-math-0508291v1/sections/sec-016",
+    "library/arxiv-math-0508291v1/sections/sec-017",
+    "library/arxiv-math-0508291v1/sections/sec-018",
+    "library/arxiv-math-0508291v1/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0508291v1",
+    "source_file": "0508291v1.pdf",
+    "source_sha256": "d2d541426aaec7427cd52ca09445c2bab7d1521cb56f8e55a969aa1d2d1cfce8",
+    "pages": 52,
+    "arxiv": {
+      "id": "math/0508291",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "16 Aug 2005"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

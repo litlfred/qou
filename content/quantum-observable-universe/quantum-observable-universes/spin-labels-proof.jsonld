@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-spin-labels",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:spin-labels",
+  "kind": "proof",
+  "title": "Proof of spin labels",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-spin-labels"
+  ],
+  "text": "spin-labels-proof.md",
+  "provenance": "authored"
+}

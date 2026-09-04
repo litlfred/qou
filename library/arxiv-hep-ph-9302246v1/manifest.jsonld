@@ -1,0 +1,61 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-ph-9302246v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-9302246v1",
+  "contains": [
+    "library/arxiv-hep-ph-9302246v1/sections/sec-000",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-001",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-002",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-003",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-004",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-005",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-006",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-007",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-008",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-009",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-010",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-011",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-012",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-013",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-014",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-015",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-016",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-017",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-018",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-019",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-020",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-021",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-022",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-023",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-024",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-025",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-026",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-027",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-028",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-029",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-030",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-031",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-032",
+    "library/arxiv-hep-ph-9302246v1/sections/sec-033"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-ph-9302246v1",
+    "source_file": "9302246v1.pdf",
+    "source_sha256": "2d352297255be8de72594e79b5c2e828ec8636b3517794b4dcfc197715425401",
+    "pages": 44,
+    "arxiv": {
+      "id": "hep-ph/9302246",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "11 Feb 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

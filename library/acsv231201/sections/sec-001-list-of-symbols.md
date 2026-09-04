@@ -7,6 +7,7 @@ section_number: null
 pages: 15-21
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 r generic multi-index for multivariate array, page 3
 z generic element ofCd, page 4

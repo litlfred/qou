@@ -107,5 +107,13 @@
       0
     ],
     "C_k_ge_1_branches_never_admit_a_further_odd_preimage": true
-  }
+  },
+  "q0Anchor": "independent",
+  "scriptHash": "6ae2853d72ba",
+  "scriptCommitSha": "8caad038967825c95d52e35de31aaa02fb281714",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:58:24.318184+00:00",
+  "durationMs": 0,
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Structure of the q-Collatz backward tree at a primitive cube root of unity."
 }

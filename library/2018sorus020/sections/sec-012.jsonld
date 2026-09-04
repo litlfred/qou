@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "After right-multiplying byA−1B and taking the trace, one obtains Tr(AB)−",
+  "pageStart": 19,
+  "pageEnd": 21,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-012",
+    "library/2018sorus020/blocks/thm-sec-012-01",
+    "library/2018sorus020/blocks/prop-sec-012-02",
+    "library/2018sorus020/blocks/prop-sec-012-03"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

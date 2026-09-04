@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-5/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "AN OPTIMISTICLIMIT",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/1172-5/blocks/prose-sec-001",
+    "library/1172-5/blocks/rem-sec-001-01",
+    "library/1172-5/blocks/rem-sec-001-02",
+    "library/1172-5/blocks/rem-sec-001-03",
+    "library/1172-5/blocks/rem-sec-001-04"
+  ],
+  "derivedFrom": "library/1172-5/manifest",
+  "sourceDocument": "library/1172-5/manifest",
+  "provenance": "ingested"
+}

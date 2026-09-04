@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 15-17
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 matrix A over C and S ⊆ [n], denote byA[S] the principal submatrix ofA with rows
 and columns indexed by S and let A⟨S⟩=d e t (A[S′]) be the principal minor of A

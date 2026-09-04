@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-01T04:22:56.939169+00:00",
-  "commitSha": "ae777020c1515c082b6cb4d0b187708b6bbdc62a",
+  "computedAt": "2026-09-03T04:59:53.137610+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_plancherel_is_not_a_markov_trace",
@@ -54,7 +54,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 43,
   "computation": "which_functional_the_substrate_extremises_probe",
   "scriptFile": "which_functional_the_substrate_extremises_probe.py",
   "scriptHash": "96f06b3ebe25",
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -123,5 +126,7 @@
     "RETIRING THE METALLIC LADDER IS A RE-SCOPING, NOT A REFUTATION. The silver coincidence T(sigma) = (h/2) T(gamma) at every n, and the Lean silver_lp_coincidence it generalises, remain true theorems about the Plancherel functional. What is established here is that the substrate's own dynamics cannot be posed over that functional, so the ladder is not available as a physical mechanism. If a future construction finds a legitimate role for the Plancherel weighting, the metallic results come back with it.",
     "CORRECTION AGAINST AN EARLIER DRAFT OF THIS PROBE. A first pass detected gap-opening with abs(gap) > 1e-9 and reported a knife-edge radius of 3e-8; those were NEGATIVE gaps, which are structurally impossible since aggregation is a relaxation — i.e. solver noise, not signal. All measurements here are sign-aware with a relative threshold, zero spurious negatives are observed, and the boundary claim rests on the linear scaling of the gap over six decades rather than on any radius.",
     "The Markov multiplicativity leg is asserted from h3a_frobenius_gram_offdiagonal_probe (max rel err 1.1e-8 over the same 36 pairs), not re-run here; only the Plancherel side is recomputed. The two use the same build_seminormal_matrices routine and the same basis pairs, so the comparison is like-for-like."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

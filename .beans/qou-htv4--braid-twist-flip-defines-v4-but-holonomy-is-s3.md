@@ -1,7 +1,7 @@
 ---
 # qou-htv4
 title: 'def:braid-twist-flip encodes V4 (commuting involutions) but the trefoil holonomy is S3 — Lean twist_flip_comm is the root error'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-29T15:05:00Z
@@ -128,3 +128,33 @@ ratio model) canonical?
   Action A stands as a valid-but-maybe-non-canonical S₃ realization.
 - **Blast radius:** rho-s3, r-matrix-braiding-structure, braid-group-action,
   braid-twist-flip (.lean+.md), su2-generators — the trefoil-holonomy cluster.
+
+## 2026-09-03 — item 3 RESOLVED: owner chose Action B; implemented across the cluster (PR #6436)
+
+Owner ruling: **Action B canonical.** Investigating B confirmed a further defect
+in its own source: `braid-group-action §(ii)` defined σ₁ (invert both ratios) and
+σ₂ (exchange ratios) as the S₃ generators, but those two operations COMMUTE →
+V₄, contradicting the S₃ claim. The genuine group there is the **D₃ on the three
+cubic branches** (α = order-3 rotation / ζ-scaling; β = order-2 reflection /
+conjugate-pair swap), matching `def:su2-generators` exactly.
+
+Implemented B consistently:
+- `braid-twist-flip.lean` + `lean/QOU/BraidTwistFlip.lean`: S₃ ≅ D₃ on the THREE
+  branches (Fin 3 / 3-tuple), not four resolvents with one fixed. twist/flip are
+  the two D₃ reflections; `rotation := σ₁σ₂` proved order-3
+  (`rotation_pow_three` + `rotation_ne_id`); `twist_rotation_dihedral`
+  (σ₁ α σ₁ = α⁻¹) exhibits D₃. Dropped the Fin-4 `w4_fixed` artifact.
+- `braid-twist-flip.md`: 3-branch S₃ narrative; resolvents carry the conjugate
+  pairs (w₁,w₄),(w₂,w₃) + ratios η₁,η₂; reflection swaps pairs, rotation cycles
+  branches. `.ts`: tags klein-four → s3/dihedral; uses += def:su2-generators.
+- `rho-s3-holonomy-exposition.md`: rewritten to rotation(α)+reflection(β) on the
+  branches, time-like (w₂,w₃) / space-like w₁, dihedral βαβ⁻¹=α⁻¹.
+- `braid-group-action.md §(ii)`: corrected the V₄ sentence — σ₁,σ₂ are two
+  reflections whose product σ₁σ₂=α is the order-3 rotation.
+
+Lean verification: lean-direct (cache restore) in progress; gate before merge.
+Render-QA on the 3 .md clean (balanced $, no align/operatorname, cross-refs
+resolve). Sidecars refreshed via qa-sweep if pipeline available.
+
+This closes qou-htv4 item 3. Items 1 (α overload) and 2 (sidecars) landed
+earlier (#6030).

@@ -1,109 +1,147 @@
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
+import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic
 
 /-!
 # QOU.ParticleInteractions.atomic_nf_witness
 
 **Canonical declaration** for content block
-[`prop:atomic-nf-witness`](../../../quantum-observable-universe/particle-interactions/atomic-nf-witness.md): *Atomic braid normal form witness*.
+[`prop:atomic-nf-witness`](../../../nuclear-interactions/atomic-nf-witness.md):
+*Atomic braid normal form witness*.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+## 2026-09-03 — a five-way conjunction carried as one field
+
+`AtomicNfWitnessContext` carried thirteen data fields and, as
+`atomic_nf_witness_field`, the theorem's **entire conclusion verbatim** — all
+five sub-claims of the `.md` conjoined — and `atomic_nf_witness` returned it.
+AGENTS.md §3b-cond item 5, and the largest carrier in this drain.
+
+The field's own docstring was candid: *"External theorem / missing input:
+atomic NF certificate facts."*  It is right that these are inputs.  What made
+it a defect is that the *inputs were fields*, so the instance chose
+`Phi_1`, `pi_star`, `F_Pauli`, `trAlt`, `net` and the rest, and then asserted
+the five claims about its own choices — a `ctx : AtomicNfWitnessContext R`
+argument constrains nothing a caller brought.
+
+**Two decorative fields.**  `Braid : Type` and `W_max : ℕ → ℕ` appear in no
+sub-claim.  `W_max` is the word-count cap for the `A > 9` stripping regime,
+which is exactly the half of claim 4 that is **not** encoded (only
+`a ≤ 9 → NF_no_strip a` is) — so the field that would have carried the
+missing case was present and unused, which reads as coverage rather than as
+the gap it is.
+
+## Disposition: name it, assert nothing (AGENTS.md §1a, disposition 3)
+
+`atomic_nf_witness` is a **`Prop`-valued definition over caller-supplied
+data**, so the five sub-claims constrain the caller's construction.  Two
+consequences are **derived** from it rather than assumed:
+
+* `fPauli_nonneg` — `F_Pauli = |tr_alt/net|` forces `0 ≤ F_Pauli`.  A Pauli
+  character magnitude cannot be negative, and now it is a theorem instead of
+  a property nobody checked.
+* `groundState_value_unique` — sub-claim 1 says `π*` is a *global* minimum of
+  `Φ₁`, so any two minimisers agree in value.  This is the content of "global
+  minimum" as opposed to "a minimum found by descent", and it is what makes
+  the exact/steepest-descent distinction in the `.md` meaningful.
+
+## What is unencoded, and one part that cannot be
+
+Claims 1–4 are named but unproved: nothing here constructs `H_{A+Z}(q)`, the
+atomic braid, `Φ₁`, the Gröbner–Shirshov reduction, or the Diamond-Lemma
+convergence argument claim 3 cites. The `A > 9` stripping branch of claim 4
+is absent entirely, as above.
+
+**Claim 5 is not a mathematical statement.** *"Certificates (JSON) are
+committed to the repository for each computed atom"* is a fact about this
+repository, not about `H_{A+Z}(q)`; it is unencodable in Lean by nature, not
+by missing infrastructure. Saying so is the honest disposition — it should
+never appear as a conjunct that some future instance is expected to
+discharge.
 
 ## Base ring (§7c)
 
-The nucleon/electron indices, mass numbers and word caps are `ℕ`. The scalars
-are Hecke-trace quantities -- the `Φ₁` cost, and the certificate's
-`tr_alt(q_0)`, `net(q_0)` and `F_Pauli = |tr_alt / net|`. They are compared,
-divided and taken in absolute value, which needs an ordered field, but nothing
-archimedean; so the scalars are a generic `R` and the substrate certificate is
-the instantiation `R := ℝ`.
+The nucleon/electron indices and mass numbers are `ℕ`. The scalars are
+Hecke-trace quantities — the `Φ₁` cost, and the certificate's `tr_alt(q₀)`,
+`net(q₀)` and `F_Pauli = |tr_alt / net|`. They are compared, divided and
+taken in absolute value, which needs an ordered field but nothing
+archimedean; so they stay a generic `R` and the substrate certificate is the
+instantiation `R := ℝ`.
+
+Bean `qou-z9ws`.
+
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
 -/
 
 namespace QOU.ParticleInteractions
 
 variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 
-/-- Abstract context for the `atomic_nf_witness` claim —
-    manuscript-themed typed fields below; sub-claims encode the
-    five steps of the atomic braid construction (nucleon ordering /
-    electron placement / GB convergence / NF accumulation /
-    certificate output). -/
-class AtomicNfWitnessContext (R : Type*) [Field R] [LinearOrder R]
-    [IsStrictOrderedRing R] where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- The mass number `A = Z + N`. -/
-  A : ℕ
-  A_eq : A = Z + N
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- `Φ₁` cost of an ordering (indexed by nucleon-permutation index). -/
-  Phi_1 : ℕ → R
-  /-- Ground-state ordering index `π*` that minimises `Φ₁`. -/
-  pi_star : ℕ
-  /-- `Φ₁` cost as a function of electron position (greedy step). -/
-  Phi_1_electron : ℕ → R
-  /-- The greedy-chosen electron position `e*`. -/
-  electron_pos_star : ℕ
-  /-- Predicate: GB reduction at construction step `k` converges. -/
-  gb_converges : ℕ → Prop
-  /-- Word-count cap `W_max(A)` for mid-construction stripping. -/
-  W_max : ℕ → ℕ
-  /-- Predicate: NF element accumulated without stripping at mass `A`. -/
-  NF_no_strip : ℕ → Prop
-  /-- The `F_Pauli` value recorded in the witness certificate. -/
-  F_Pauli : R
-  /-- The `tr_alt(q_0)` and `net(q_0)` values from the certificate. -/
-  trAlt : R
-  net : R
-  /-- External theorem / missing input: atomic NF certificate facts. -/
-  atomic_nf_witness_field : (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
-    (∀ p : ℕ, Phi_1_electron electron_pos_star ≤
-                Phi_1_electron p) ∧
-    (∀ k : ℕ, gb_converges k) ∧
-    (∀ a : ℕ, a ≤ 9 → NF_no_strip a) ∧
-    F_Pauli = |trAlt / net|
+/-- **The claim of `prop:atomic-nf-witness`**, as a proposition over
+caller-supplied data — sub-claims 1–4 of the `.md`:
 
-/-- **Proposition statement** (from manuscript):
+1. `π*` globally minimises the nucleon-ordering cost `Φ₁`;
+2. `e*` minimises `Φ₁` over electron positions (the greedy step);
+3. the Gröbner–Shirshov reduction converges at every construction step;
+4. the NF element accumulates without stripping for `A ≤ 9`;
+   and the certificate records `F_Pauli = |tr_alt/net|`.
 
-For each atom $(Z, N)$ with $Z = 1$--$20$, the atomic braid
-construction produces an element of $H_{A+Z}(q)$ that is verified
-to be in Gröbner--Shirshov normal form.  Specifically:*
+**Named, not asserted.**  Claim 5 of the `.md` is deliberately absent — see
+the module docstring: it is a statement about this repository, not about
+`H_{A+Z}(q)`. -/
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
+def atomic_nf_witness
+    (Phi_1 Phi_1_electron : ℕ → R) (pi_star electron_pos_star : ℕ)
+    (gb_converges NF_no_strip : ℕ → Prop)
+    (F_Pauli trAlt net : R) : Prop :=
+  (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
+  (∀ p : ℕ, Phi_1_electron electron_pos_star ≤ Phi_1_electron p) ∧
+  (∀ k : ℕ, gb_converges k) ∧
+  (∀ a : ℕ, a ≤ 9 → NF_no_strip a) ∧
+  F_Pauli = |trAlt / net|
 
-1. *The ground-state nucleon ordering is the global minimum of
-   $\Phi_1$ over all $\binom{A}{Z}$ permutations (exact for
-   $\binom{A}{Z} \leq 50000$, steepest descent otherwise).*
+/-- **The Pauli character is non-negative** — derived.
 
-2. *Each electron is inserted at the position minimizing $\Phi_1$
-   (greedy, verified to produce ep pairs adjacent to protons).*
+`F_Pauli = |tr_alt/net|` is an absolute value, so `0 ≤ F_Pauli`. Recorded
+because it is a property of the certificate that nothing previously checked:
+with `F_Pauli` a class field, an instance could have supplied a negative one
+and satisfied the carrier only by also choosing `trAlt`/`net` to match. -/
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
+theorem fPauli_nonneg
+    {Phi_1 Phi_1_electron : ℕ → R} {pi_star electron_pos_star : ℕ}
+    {gb_converges NF_no_strip : ℕ → Prop} {F_Pauli trAlt net : R}
+    (h : atomic_nf_witness Phi_1 Phi_1_electron pi_star electron_pos_star
+          gb_converges NF_no_strip F_Pauli trAlt net) :
+    0 ≤ F_Pauli := by
+  rw [h.2.2.2.2]
+  exact abs_nonneg _
 
-3. *At each construction step (adding strand $k$ with crossings
-   to all previous strands $0, \ldots, k-1$): the
-   Gröbner--Shirshov reduction is run to convergence
-   ([inductive reduction](#prop\:inductive-gb-reduction)).  Convergence
-   is guaranteed by the Diamond Lemma (the three rewriting rules
-   satisfy all overlap ambiguities).*
+omit [IsStrictOrderedRing R] in
+/-- **The ground-state cost is well defined** — derived.
 
-4. *The final NF element is accumulated without mid-construction
-   stripping for $A \leq 9$ (exact).  For $A > 9$, the element is
-   stripped at controlled thresholds (200k--500k words) and the
-   stripped contributions are accumulated into the Pauli character
-   $F_{\mathrm{Pauli}} = |\mathrm{tr}_{\mathrm{alt}}/\mathrm{net}|$.*
+Sub-claim 1 says `π*` is a *global* minimum of `Φ₁`, so any other global
+minimiser has the same cost. This is what "global minimum" asserts over and
+above "a minimum reached by steepest descent", and it is the distinction the
+`.md` draws between the exact regime (`C(A,Z) ≤ 50000`) and the descent
+fallback. -/
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/atomic-nf-witness.md
+theorem groundState_value_unique
+    {Phi_1 Phi_1_electron : ℕ → R} {pi_star electron_pos_star : ℕ}
+    {gb_converges NF_no_strip : ℕ → Prop} {F_Pauli trAlt net : R}
+    (h : atomic_nf_witness Phi_1 Phi_1_electron pi_star electron_pos_star
+          gb_converges NF_no_strip F_Pauli trAlt net)
+    (pi' : ℕ) (hmin : ∀ π : ℕ, Phi_1 pi' ≤ Phi_1 π) :
+    Phi_1 pi_star = Phi_1 pi' :=
+  le_antisymm (h.1 pi') (hmin pi_star)
 
-5. *Certificates (JSON) are committed to the repository for each
-   computed atom.  Each certificate records: $F_{\mathrm{Pauli}}$,
-   $\mathrm{tr}_{\mathrm{alt}}(q_0)$, $\mathrm{net}(q_0)$,
-   computation time, word count, and engine version.
--/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-theorem atomic_nf_witness (ctx : AtomicNfWitnessContext R) :
-    (∀ π : ℕ, ctx.Phi_1 ctx.pi_star ≤ ctx.Phi_1 π) ∧
-    (∀ p : ℕ, ctx.Phi_1_electron ctx.electron_pos_star ≤
-                ctx.Phi_1_electron p) ∧
-    (∀ k : ℕ, ctx.gb_converges k) ∧
-    (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
-    ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
-  ctx.atomic_nf_witness_field
+/-- **The claim is refutable at freely-chosen data**, which is why it is named
+rather than carried as a `sorry`.
+
+At `tr_alt = 0`, `net = 1` the certificate conjunct reads `F_Pauli = 0`, so
+`F_Pauli = 1` fails. -/
+theorem not_atomic_nf_witness_of_free_data :
+    ¬ atomic_nf_witness (R := ℝ) (fun _ => 0) (fun _ => 0) 0 0
+        (fun _ => True) (fun _ => True) 1 0 1 := by
+  rintro ⟨-, -, -, -, h⟩
+  norm_num at h
 
 end QOU.ParticleInteractions

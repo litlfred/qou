@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-antineutrino-knot",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:antineutrino-knot",
+  "kind": "definition",
+  "title": "Antineutrino as mirror unknot $T_{1,0}^{\\sigma}$",
+  "tags": [
+    "antineutrino",
+    "unknot",
+    "mirror",
+    "antiparticle",
+    "lepton",
+    "fermion",
+    "beta-decay"
+  ],
+  "leanRef": "qou:QOU.Archimedean.Antineutrino",
+  "text": "antineutrino-knot.md",
+  "leanSource": "antineutrino-knot.lean",
+  "provenance": "authored"
+}

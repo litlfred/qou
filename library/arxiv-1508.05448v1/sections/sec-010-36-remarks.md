@@ -7,6 +7,7 @@ section_number: 3.6
 pages: 55-59
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
 By generalizing this method introduced by Chatterjee and Ledoux, we are able to
 show concentration of measure of the empirical spectral distribution not only for

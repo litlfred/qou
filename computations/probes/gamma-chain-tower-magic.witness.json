@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T14:50:46.685283+00:00",
-  "commitSha": "c4a1b36ac846b9879a480fafcbb737f39d966954",
+  "computedAt": "2026-09-03T04:47:17.494402+00:00",
+  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
   "assertions": [
     {
       "name": "no_tower",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 26,
   "computation": "gamma-chain-tower-magic",
   "scriptFile": "gamma_chain_tower_magic_probe.py",
-  "scriptHash": "3ea031d6a9a1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "98b693bb8215",
+  "scriptCommitSha": "0b92fa9dbc550be5db4a6e1da73b25efed6707d0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -138,5 +138,7 @@
   },
   "caveats": [
     "The He-4 collapse was flagged as a candidate magic signal and is RETRACTED here by its own control. 'Is the global minimum magic?' returns True and is empty, because 2 is both the smallest even number and the first magic one -- any monotone-in-even-Z quantity says yes."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

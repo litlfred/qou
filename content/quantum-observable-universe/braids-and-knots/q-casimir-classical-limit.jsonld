@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-casimir-classical-limit",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-casimir-classical-limit",
+  "kind": "proposition",
+  "title": "Classical limit $q \\to 1$ of the $q$-Casimir eigenvalue",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-casimir"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/lusztig1993"
+  ],
+  "tags": [
+    "casimir",
+    "quantum-group",
+    "su-q-2",
+    "classical-limit",
+    "archimedean"
+  ],
+  "leanRef": "qou:QOU.QCasimirEigenvalue_classical_limit",
+  "text": "q-casimir-classical-limit.md",
+  "leanSource": "q-casimir-classical-limit.lean",
+  "provenance": "authored"
+}

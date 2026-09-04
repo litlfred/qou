@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/blocks/prop-sec-006-01",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "see [20]",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "prop-sec-006-01.md",
+  "derivedFrom": "library/ki6c/sections/sec-006",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

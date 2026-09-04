@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-31T19:29:49.805348+00:00",
-  "commitSha": "34de2b8ea04a28d221578fa1446d084401e819a1",
+  "computedAt": "2026-09-03T04:49:26.703592+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "dpn_equals_minus_h_times_2_minus_delta_over_4",
@@ -50,7 +50,7 @@
   "computation": "qc-convexity-boundary",
   "scriptFile": "qc_is_the_convexity_boundary_probe.py",
   "scriptHash": "f3b887eb468b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "aec4a5da440265835f31f3fb23bab6136521ae9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,8 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -92,5 +94,7 @@
     "RETRACTION: k_versus_selected_operator_probe called q_c 'an unexplained structural constant'. It is explained — the root of delta = 2, the convexity boundary of the colour-weighted p-n average. Only two narrower claims survive: q_c is algebraic of degree exactly 6, and the corpus does not record it.",
     "This is a boundary of the PN_CONVENTION = 'bring_color_weighted' scheme specifically. Under 'strict_averaged' the offset is -h/2 with no delta, the weights are 1/2 and 1/2 at every q, and no such boundary exists. So q_c is a property of the colour weighting, not of the Hecke algebra.",
     "No physical claim. Nothing here says q_c is meaningful beyond the algebra, and no physical quantity enters the computation."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v3-n1-p17-p/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Skein-theoretical derivation of some formulas of Habiro",
+  "contains": [
+    "library/agt-v3-n1-p17-p/sections/sec-000",
+    "library/agt-v3-n1-p17-p/sections/sec-001",
+    "library/agt-v3-n1-p17-p/sections/sec-002",
+    "library/agt-v3-n1-p17-p/sections/sec-003",
+    "library/agt-v3-n1-p17-p/sections/sec-004",
+    "library/agt-v3-n1-p17-p/sections/sec-005",
+    "library/agt-v3-n1-p17-p/sections/sec-006",
+    "library/agt-v3-n1-p17-p/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "agt-v3-n1-p17-p",
+    "source_file": "agt-v3-n1-p17-p.pdf",
+    "source_sha256": "df196f0a732ad6b9381a6cd7a1030bc7454984b1e818e265f17264f2536d9bc1",
+    "pages": 20,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

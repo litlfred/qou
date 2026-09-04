@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-algebraic-geometric-dilog-equivalence",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:algebraic-geometric-dilog-equivalence",
+  "kind": "conjecture",
+  "title": "Algebraic-geometric dilogarithm equivalence: $\\Phi_n(x; q)$ poles map to ideal-tetrahedron cusps",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-dilogarithm-archimedean-limit",
+    "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume",
+    "papers/quantum-observable-universe/blocks/prop-phi-b-unitary-bar-odd"
+  ],
+  "cites": [
+    "references/kashaev1997",
+    "references/murakami-murakami2001",
+    "references/neumann-zagier1985",
+    "references/thurston1978",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "q-pochhammer",
+    "dilogarithm",
+    "bloch-wigner",
+    "kashaev",
+    "phi-q",
+    "algebraic-geometric",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.QPochhammer.algebraic_geometric_equivalence",
+  "text": "algebraic-geometric-dilog-equivalence.md",
+  "leanSource": "algebraic-geometric-dilog-equivalence.lean",
+  "provenance": "authored"
+}

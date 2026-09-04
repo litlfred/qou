@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 13-14
 source_pdf: 0911.3569v1.pdf
 source_sha256: 4e7c15c9724fb453
+doc_brief: "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS — Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting"
 ---
 stable polynomial of degree at most m: say f(x) = c(x−ξ1)··· (x−ξn) in which
 c⁄= 0,n≤m, and ξi⁄∈ H for all i∈ [n]. Then the polynomial F0∈ C[x] deﬁned by

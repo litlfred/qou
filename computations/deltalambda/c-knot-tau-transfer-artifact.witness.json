@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T07:17:15.994243+00:00",
-  "commitSha": "ae835e0863ad0325eccfb59d6308d111381eeb3c",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T11:12:52.275060+00:00",
+  "commitSha": "deab6af1fc26e72bddf68132fe5d0939467d53d7",
   "assertions": [
     {
       "name": "m_e_cancels_exactly",
@@ -39,8 +39,8 @@
   "durationMs": 0,
   "computation": "c-knot-tau-transfer-artifact",
   "scriptFile": "c_knot_tau_transfer_artifact_probe.py",
-  "scriptHash": "16c83a2c7989",
-  "scriptCommitSha": "6dee82ece14bbc4bbbfdbf1049d3dda0ceba931c",
+  "scriptHash": "e419dea6b5d4",
+  "scriptCommitSha": "3c1794bb77e45f994442675c68e2a9504af71c5d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,10 +50,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -94,5 +95,7 @@
   },
   "audit_only": true,
   "tier": "fibre→archimedean τ-transfer decomposition; derive-then-check; scope-(a); artifact-vs-real verdict; nothing wired; no fit.",
-  "auditOnly": true
+  "q0Anchor": "independent",
+  "auditOnly": true,
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Is the deuteron `C_knot = 5.853` a REAL missing many-body magnitude, or a master-formula."
 }

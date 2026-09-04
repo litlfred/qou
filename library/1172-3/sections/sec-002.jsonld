@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-3/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "RESULTS",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "contains": [
+    "library/1172-3/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "library/1172-3/manifest",
+  "sourceDocument": "library/1172-3/manifest",
+  "provenance": "ingested"
+}

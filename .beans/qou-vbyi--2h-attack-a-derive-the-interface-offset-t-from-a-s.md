@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-08-31T04:07:18Z
+updated_at: 2026-09-03T14:55:26Z
 parent: qou-9ot5
 ---
 
@@ -67,3 +67,15 @@ S-wave. The bean currently runs the two together.
 Scope (b) for the exclusion, invariant cited (commutativity + a common factor).
 The physics input -- both channels S-wave -- is quoted from qou-kj4v, not derived
 here; it is standard.
+
+## 2026-09-03 — route 1 (non-separable (S,L) TENSOR coupling) PRUNED as a fix for the sign defect, scope-(b)
+
+The 'live shape' left open above — a non-separable spin-space coupling, the 3S1-3D1 tensor force — cannot fix either A=2 defect. Two invariants, formalized (QOU.QBeta.TensorCouplingSinglet, PR on branch claude/two-nucleon-sign-defect-2026-09-03; exact-sympy companion computations/probes/tensor_coupling_singlet_check_probe.py 13/13):
+
+(A) The tensor operator S12(n) = 3(s1.n)(s2.n) - s1.s2 acts as the SCALAR 3(1-|n|^2) on the spin singlet |ud>-|du>, for EVERY n — the singlet is an eigenvector of both s1.s2 (=-3) and (s1.n)(s2.n) (=-|n|^2). So no coupling built from them has an off-diagonal element out of S=0 (at J=0, S=0 has no L=2 partner). pp/nn are pure S=0 by Pauli in S-wave => UNTOUCHED by any tensor coupling, any strength, any direction. The sign defect cannot be reached by this route.
+
+(B) Where the coupling does act (the triplet), 2x2 interlacing: the coupled ground level is STRICTLY below the uncoupled 3S1 level whenever t != 0 (lowerEigen_lt_left_of_ne). Tensor mixing binds the deuteron HARDER; it is already 27.3% over-bound. Wrong direction.
+
+Verdict: route 1 is a dead end for both defects. Not excluded: unbinding as such (the writhe-normalised sigma^{-2k} class unbinds at 6-9x magnitude), the binding law itself, or the pp/nn bond/carrier assignment. The sign is now boxed from every interface-side direction (scalar, separable factor, non-separable coupling); the surviving directions are all outside the interface value. Audit: docs/audits/2026-09-03-tensor-coupling-cannot-unbind-singlet.md. qou-7nwg's T-projector route is complementary and already proved to bind (mu_sum_eq_one).
+
+## CORRECTION 2026-09-03: the 'pp/nn bond/carrier assignment' listed as a survivor in the previous append is NOT open — production bonds are single species-keyed crossings (single_crossing_binds) and species-keyed interfaces are refuted (content_keyed_interface_refuted, 2026-08-09). With the tensor route closed (#6488) and the stacked class closed on ordering (route 3), no in-algebra sign direction remains. Sector status = eight-closures §6: structural change needed.

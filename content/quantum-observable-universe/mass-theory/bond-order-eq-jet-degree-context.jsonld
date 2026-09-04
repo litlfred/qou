@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-bond-order-eq-jet-degree-context",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:bond-order-eq-jet-degree-context",
+  "kind": "remark",
+  "title": "Obligation-(C) identification, cluster exhaustiveness, and physical framing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-bond-order-eq-jet-degree",
+  "tags": [
+    "jet-filtration",
+    "grobner-shirshov",
+    "body-order",
+    "binding"
+  ],
+  "text": "bond-order-eq-jet-degree-context.md",
+  "provenance": "authored"
+}

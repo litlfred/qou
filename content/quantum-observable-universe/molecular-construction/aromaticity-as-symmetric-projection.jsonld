@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-aromaticity-as-symmetric-projection",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:aromaticity-as-symmetric-projection",
+  "kind": "remark",
+  "title": "Aromaticity, stability, and why breaking a ring releases a lot",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-assembly-projector",
+    "papers/quantum-observable-universe/blocks/prop-ring-closure-barrier",
+    "papers/quantum-observable-universe/blocks/def-threading-link"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-assembly-projector-exists",
+  "tags": [
+    "aromaticity",
+    "stability",
+    "binding-energy",
+    "resonance",
+    "irreducibility",
+    "ring-closure"
+  ],
+  "text": "aromaticity-as-symmetric-projection.md",
+  "provenance": "authored"
+}

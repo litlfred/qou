@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-qns-unit-layers",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:qns-unit-layers",
+  "kind": "definition",
+  "title": "Unit layers of the $q$-NS classical limit: substrate (vanishing $\\nu_q$) and physical ($c_q$-rescaled, $\\nu_{\\mathrm{phys}} = 1/(2q)$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-q-ns-wellposedness"
+  ],
+  "tags": [
+    "navier-stokes",
+    "classical-limit",
+    "unit-convention",
+    "fluid-dynamics",
+    "millennium-problem"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.qns_unit_layers",
+  "text": "qns-unit-layers.md",
+  "leanSource": "qns-unit-layers.lean",
+  "provenance": "authored"
+}

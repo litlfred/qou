@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.04212v4/blocks/prose-sec-003",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Dirichlet eigenvalues",
+  "pageStart": 19,
+  "pageEnd": 22,
+  "text": "../sections/sec-003-4-dirichlet-eigenvalues.md",
+  "derivedFrom": "library/arxiv-1712.04212v4/manifest",
+  "sourceDocument": "library/arxiv-1712.04212v4/manifest",
+  "provenance": "ingested"
+}

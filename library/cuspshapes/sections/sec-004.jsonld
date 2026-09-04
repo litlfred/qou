@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/cuspshapes/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Pinched handlebodies",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/cuspshapes/blocks/prose-sec-004",
+    "library/cuspshapes/blocks/lem-sec-004-01",
+    "library/cuspshapes/blocks/lem-sec-004-02"
+  ],
+  "derivedFrom": "library/cuspshapes/manifest",
+  "sourceDocument": "library/cuspshapes/manifest",
+  "provenance": "ingested"
+}

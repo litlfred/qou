@@ -41,9 +41,95 @@ $h = q - q^{-1}$.
 | id | name | $z$ | $z(q_0)$ | $(y_{(3)},\,y_{(2,1)},\,y_{(1^3)})$ at $q_0$ | $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ | forcing status |
 |---|---|---|---|---|---|---|
 | **A** | matrix-M parabolic | — | — | — | never evaluated | not-a-$z$-trace |
-| **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated |
-| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
-| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525160$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+| **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated — **and measured non-normalized**, see §B-norm |
+| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241344268025766630375194816404153$ | $(0.4153958,\,0.2809296,\,0.0227449)$ (7 dp; C excised, not re-emitted) | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
+| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525159582986394589924802630839154509$ | $(0.50540422650393080319,\,0.24729788674803459841,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+
+### §z-dps — the table's $z(q_0)$ are now 50 dps, and the Python was wrong at 17 (2026-09-04, bean `qou-90k2`)
+
+The $z(q_0)$ and convention-D weight columns above were carried at 20 and 7
+significant digits respectively. They are now 50, matching the compute
+precision (`_precision.py` default: 65 dps compute / 50 dps serialization) and
+the L1 target of 1 ppQ. Quoting 7 digits for a production weight in the
+registry that *defines* production was the looser half of the defect.
+
+**The sharper half: [`computations/y_lambda_su_n.py`](../../computations/y_lambda_su_n.py)
+carried `REG_ZD` at 17 digits and its 17th digit was WRONG** — it read
+`...52` **4** where the correct rounding is `...52` **5**. It was not merely
+short. At relative error $1.89\times10^{-17}$ it was *worse than plain
+float64* ($6.69\times10^{-18}$), i.e. a float64 value truncated once more. It
+is the residue of the historical mis-record §Provenance already documents
+("$z_D$ was recorded $\ldots524365$, correct is $\ldots525160$"): the
+document was corrected and the Python was not.
+
+**Why it survived four months.** That module's self-test checks its own
+internal consistency at `1e-25` ($\Sigma y_\lambda f^\lambda = 1$, "production
+IS SU(2) exactly") — but cross-checked against the registry at `1e-15`, and the
+weights at `5e-7`. The one check tying the compute to this document's published
+number was pinned ten orders of magnitude looser than its neighbours, so an
+error of $1.16\times10^{-17}$ passed by a factor of 86. **A constant is only
+load-bearing to the precision of the assertion that reads it.** Those
+tolerances are now `1e-40`, and the self-test's working precision is raised
+from 30 to 60 dps so that `1e-40` is resolvable at all.
+
+The constants are **derived, not transcribed**: $z = q^3/(q^2+1)$ and the exact
+$n = 3$ weights $y_{(3)} = (q^4+1)/(q^2+1)^2$, $y_{(2,1)} = q^2/(q^2+1)^2$,
+$y_{(1^3)} = 0$, evaluated at the 50-digit proton pin, cross-checked against
+`y_lambda_su_n(3, q, 2)` at 60 dps to $3\times10^{-62}$. Convention C's
+$z(q_0)$ is extended for completeness; its weights are left at 7 dp because C
+is excised and re-emitting them would suggest they are live.
+
+### §B-norm — row B is not merely deprecated, it is **not a probability measure** (measured 2026-09-04, bean `qou-7o7h`)
+
+Row B's status said "never evaluated / deprecated", which reads as an
+administrative choice. It is also a mathematical fact, and the fact has a live
+consequence for figures already in the corpus.
+
+$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ and in the
+*asymmetric* $q$-integer convention. It is **not** one in the **balanced**
+convention $[k] = (q^k - q^{-k})/(q - q^{-1})$ — the convention this corpus's
+`make_qdim` / `dim_q` family actually uses. Measured at the proton $q_0$,
+`mp.dps = 60`:
+
+| $n$ | $A$ | shapes | $c_n = \sum_\lambda d_q^2/[n]_q!$ |
+|---|---|---|---|
+| 6 | 2 | 11 | $0.99107952363735010$ |
+| 9 | 3 | 30 | $1.11092313495739800$ |
+| 12 | 4 | 77 | $1.51713321376785900$ |
+
+It grows with $n$, and simple $q^{\pm 2n(\lambda)}$ / $q^{\pm(n(\lambda)-n(\lambda'))}$
+prefactors do not close it.
+
+**Why this is a cross-atom artifact.** $w_{\text{textbook}} = c_n \cdot
+w_{\text{self-normalized}}$ **exactly** (deviation $< 10^{-40}$), and the
+depth-stratified binding functional $B = \sum_k \alpha_k(\Phi_k^{\text{free}} -
+\Phi_k^{\text{atom}})$ is *linear* in the weights — so $B$ scales by exactly
+$c_n$. Within one atom the factor cancels from any ratio. **Across** atoms it
+does not, because $n = 3A$ differs. Any metric that compares atoms — the
+max/min "variance" the FR-pullback probes are scored on — is distorted.
+
+**Measured consequence.** The FR family's published baseline variance
+$1.82\times$ is $1.5307\times$ inflated by this alone; the self-normalized
+figure is $1.19\times$. Scaling the self-normalized per-atom ratios by $c_n$
+reproduces the recorded textbook run to $5.5\times10^{-5}$ relative (that
+residual is the 4-significant-figure rounding of the recorded ratios).
+
+> **Do not quote the shortcut.** It is tempting to note that
+> $1.8217/1.1901 = 1.5307$ equals $c_{12}/c_6 = 1.5308$ and call *that* the
+> mechanism. The identity is real but **conditional** — it holds only while the
+> argmax atom is the largest-$c_n$ one and the argmin the smallest, under both
+> normalizations. Quote the scaling law instead.
+
+**Which producers are on which side:** `fr_pullback_k3_test.py` uses the
+textbook form (so its $1.82\times$ / $1.5015\times$ figures carry the
+distortion); `fr_pullback_borromean_h3a_test.py` was migrated to
+self-normalized on 2026-09-03. **Figures from the two are not comparable.**
+This says nothing about which normalization is physically right — only that
+they differ by a known, $n$-dependent factor and the corpus contains both.
+
+Producer [`probe_plancherel_convention_gap.py`](../../computations/probe_plancherel_convention_gap.py)
+(3/3 assertions), audit
+[`2026-09-04-plancherel-convention-gap.md`](../audits/2026-09-04-plancherel-convention-gap.md).
 
 > **Precision re-record, 2026-08-09 (bean `qou-wgta` item 12).** Every value in
 > the JSON twin had been computed from `meta.q0.value = "1.1099785827513808"`,

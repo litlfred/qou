@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:58:45.389955+00:00",
-  "commitSha": "e98eec61b0a03ebbfeffcabaeab8bda7fc4a34f9",
+  "computedAt": "2026-09-03T04:21:45.381913+00:00",
+  "commitSha": "78b63de8e6dceb24ae5b31bffcecfd953a7762f0",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "d6e7ef2b0adc",
-  "scriptCommitSha": "4f32aa8b5c316ecebbe6cfa6fd8ef20c43a09547",
+  "scriptCommitSha": "fc536436dd02a83baa03f7ef28b405daff5c97c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -45,7 +45,7 @@
   "data": {
     "total_issues": 14,
     "flagged_script_count": 11,
-    "scripts_scanned": 3460,
+    "scripts_scanned": 3743,
     "rows": [
       {
         "path": "computations/deltalambda/ka_additive_cluster_derivation_probe.py",
@@ -172,7 +172,7 @@
         "issue_count": 1,
         "issues": [
           {
-            "line": 549,
+            "line": 559,
             "var": "T_CONSENSUS_49",
             "literal": "0.0445860283330804029291040528152801211016800484547",
             "context_snippet": "every z ----------\n    # PRECISION PROVENANCE.  The .md block RENDERS 10 digits\n    # (+0.0445860283), but that is the rendering, not the record.  Four\n    # independent witnesses agree on this quantity to 49 digits:\n   "

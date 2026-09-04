@@ -1,0 +1,45 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0309214v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "The colored Jones function is q-holonomic",
+  "contains": [
+    "library/0309214v3/sections/sec-000",
+    "library/0309214v3/sections/sec-001",
+    "library/0309214v3/sections/sec-002",
+    "library/0309214v3/sections/sec-003",
+    "library/0309214v3/sections/sec-004",
+    "library/0309214v3/sections/sec-005",
+    "library/0309214v3/sections/sec-006",
+    "library/0309214v3/sections/sec-007",
+    "library/0309214v3/sections/sec-008",
+    "library/0309214v3/sections/sec-009",
+    "library/0309214v3/sections/sec-010",
+    "library/0309214v3/sections/sec-011",
+    "library/0309214v3/sections/sec-012",
+    "library/0309214v3/sections/sec-013",
+    "library/0309214v3/sections/sec-014",
+    "library/0309214v3/sections/sec-015",
+    "library/0309214v3/sections/sec-016",
+    "library/0309214v3/sections/sec-017",
+    "library/0309214v3/sections/sec-018",
+    "library/0309214v3/sections/sec-019",
+    "library/0309214v3/sections/sec-020",
+    "library/0309214v3/sections/sec-021",
+    "library/0309214v3/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0309214v3",
+    "source_file": "0309214v3.pdf",
+    "source_sha256": "53967ef30b0aedb90fc8384886e3c0754e908ca9a1edf06aaadb3501b72318c5",
+    "pages": 41,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

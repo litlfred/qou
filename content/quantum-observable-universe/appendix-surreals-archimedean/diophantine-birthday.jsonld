@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-diophantine-birthday",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:diophantine-birthday",
+  "kind": "conjecture",
+  "title": "Algebraic vs transcendental numbers are separated by birthday trajectory",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form"
+  ],
+  "cites": [
+    "references/conway1976",
+    "references/gonshor1986",
+    "references/ehrlich2012"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "birthday",
+    "diophantine",
+    "liouville",
+    "roth",
+    "algebraic",
+    "transcendental",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.DiophantineBirthday",
+  "text": "diophantine-birthday.md",
+  "provenance": "authored"
+}

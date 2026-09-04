@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-baryon-octet-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:baryon-octet-decomposition",
+  "kind": "proposition",
+  "title": "The baryon octet and the degeneracy of its weight diagram",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-u-spin-coleman-glashow"
+  ],
+  "cites": [
+    "references/gellmann1962",
+    "references/jimbo1986"
+  ],
+  "leanRef": "qou:QOU.Eightfold.OctetWeightDegeneracy.weight_function_cannot_separate_lambda_sigma0",
+  "text": "baryon-octet-decomposition.md",
+  "provenance": "authored"
+}

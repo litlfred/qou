@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-3
 source_pdf: 1912.10638v2.pdf
 source_sha256: 612e44871d91d2e2
+doc_brief: "Asymptotics of some quantum invariants of the Whitehead chains Ka Ho WONG — In this paper, we study the asymptotics of the colored Jones polynomials of the Whitehead chains with one belt colored by"
 ---
 In this subsection, we brieﬂy discuss our approach to study the volume conjecture. A standard way to
 prove volume conjecture involves three steps. Roughly speaking, ﬁrst of all, given the explicit formula of

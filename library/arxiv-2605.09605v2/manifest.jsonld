@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2605.09605v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Cocycle Actions on Hidden Quantum Markov Models:",
+  "contains": [
+    "library/arxiv-2605.09605v2/sections/sec-000",
+    "library/arxiv-2605.09605v2/sections/sec-001",
+    "library/arxiv-2605.09605v2/sections/sec-002",
+    "library/arxiv-2605.09605v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2605.09605v2",
+    "source_file": "2605.09605v2.pdf",
+    "source_sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
+    "pages": 17,
+    "arxiv": {
+      "id": "2605.09605",
+      "version": "2",
+      "primary_class": "math-ph",
+      "stamp_date": "26 May 2026"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

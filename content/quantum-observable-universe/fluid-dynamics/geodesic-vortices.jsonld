@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-geodesic-vortices",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:geodesic-vortices",
+  "kind": "remark",
+  "title": "Geodesic vortices: variational characterisation and stability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-geometric-drag",
+    "papers/quantum-observable-universe/blocks/rem-madelung-fluid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-mass-identity",
+  "tags": [
+    "vortex",
+    "geodesic",
+    "variational",
+    "stability",
+    "morse-index"
+  ],
+  "text": "geodesic-vortices.md",
+  "provenance": "authored"
+}

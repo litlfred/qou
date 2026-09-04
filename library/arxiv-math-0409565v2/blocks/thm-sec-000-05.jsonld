@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0409565v2/blocks/thm-sec-000-05",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Buchberger",
+  "pageStart": 1,
+  "pageEnd": 10,
+  "text": "thm-sec-000-05.md",
+  "derivedFrom": "library/arxiv-math-0409565v2/sections/sec-000",
+  "sourceDocument": "library/arxiv-math-0409565v2/manifest",
+  "provenance": "ingested"
+}

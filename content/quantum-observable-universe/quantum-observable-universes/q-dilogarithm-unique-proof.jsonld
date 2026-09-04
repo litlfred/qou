@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-dilogarithm-unique",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-dilogarithm-unique",
+  "kind": "proof",
+  "title": "Proof of uniqueness of the $q$-dilogarithm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-dilogarithm-unique"
+  ],
+  "text": "q-dilogarithm-unique-proof.md",
+  "provenance": "authored"
+}

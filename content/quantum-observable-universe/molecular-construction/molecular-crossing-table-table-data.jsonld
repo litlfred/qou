@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-molecular-crossing-table-table-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:molecular-crossing-table-table-data",
+  "kind": "table",
+  "title": "Data table from rem:molecular-crossing-table",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-molecular-crossing-table"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "molecular-crossing-table-table-data.md",
+  "provenance": "authored"
+}

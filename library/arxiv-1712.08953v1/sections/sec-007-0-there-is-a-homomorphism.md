@@ -7,6 +7,7 @@ section_number: 0
 pages: 4-5
 source_pdf: 1712.08953v1.pdf
 source_sha256: 005e0b1ad63c173e
+doc_brief: "REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY — The oriented skein category OS(z, t ) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an orien ted link, in the"
 ---
 ır :Hr→ EndOS (z,t)(↑r) (1.3)
 sending the generator for Hr that corresponds to the ith basic transposition to the

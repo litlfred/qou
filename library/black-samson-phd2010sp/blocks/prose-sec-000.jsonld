@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/black-samson-phd2010sp/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Acknowledgments",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-000-acknowledgments.md",
+  "derivedFrom": "library/black-samson-phd2010sp/manifest",
+  "sourceDocument": "library/black-samson-phd2010sp/manifest",
+  "provenance": "ingested"
+}

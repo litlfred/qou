@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-h2-covalent-channel-interference",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:h2-covalent-channel-interference",
+  "kind": "remark",
+  "title": "Covalent channel eigenvalue ratio and optimal strand ordering",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-h2-molecular-braid",
+  "tags": [
+    "hydrogen",
+    "H2",
+    "covalent-channel",
+    "eigenvalue-ratio",
+    "strand-ordering"
+  ],
+  "text": "h2-covalent-channel-interference.md",
+  "provenance": "authored"
+}

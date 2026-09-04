@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-infinitesimal-frobenius",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:infinitesimal-frobenius",
+  "kind": "conjecture",
+  "title": "Infinitesimal Frobenius pairing: $\\int_A \\circ \\mu = \\mathrm{id} + O(\\varepsilon)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-archimedean-stpart"
+  ],
+  "cites": [
+    "references/robinson1966"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "frobenius",
+    "infinitesimal",
+    "axiom-relaxation",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.AppendixSurreals.InfinitesimalFrobenius",
+  "text": "infinitesimal-frobenius.md",
+  "provenance": "authored"
+}

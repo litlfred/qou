@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1205.4617v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "SU(5) Gauge Symmetry",
+  "pageStart": 3,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-2-su5-gauge-symmetry.md",
+  "derivedFrom": "library/arxiv-1205.4617v1/manifest",
+  "sourceDocument": "library/arxiv-1205.4617v1/manifest",
+  "provenance": "ingested"
+}

@@ -233,3 +233,629 @@ list puts `3_1__*` first, exactly where the truncation cut. (2) A bare
 `except: pass` around `find_field` turned `SageNotAvailable` into a printed
 `None`, i.e. a tool refusal reported as a measured absence. Same shape as the
 detector-blindness class this corpus catalogues.
+
+── 2026-09-03: D1-a RUN. The datum underdetermines, and the trefoil cuts NOTHING ──
+
+`computations/qbeta/dt_d1a_small_quiver_two_ray_scan_probe.py`, **6/6**.
+
+### Result 0 (formalize-first, and it is the D1-e deliverable — a DELETION)
+
+D1-a's filter reads "(4,3) **+ bar split (7,1)**", i.e. four constraints. **It is
+two.** `AomegaM2BPSCohomology` defines
+
+    barEven := dimBPSplus + dimBPSminus     (4 + 3 = 7)
+    barOdd  := dimBPSplus - dimBPSminus     (4 - 3 = 1)
+
+so `(7,1)` is the sum and difference of `(4,3)` — **zero independent
+information**, and `bar_split_seven_one` is `by decide` on those definitions.
+Filtering on `(7,1)` after `(4,3)` is a **no-op**. D1-e asked that each theorem
+"delete a concrete slice of the D1-a enumeration"; this deletes half the
+apparent target before the scan runs. The 2026-08-22 assessment's "2-integer
+target is weak" was right, and the target is weaker than the bean's own phrasing.
+
+### Result 1 — the scan
+
+74 acyclic quivers, V ∈ {2,3,4}, arrow multiplicities 0..1; real roots (Tits
+form `q(d)=1`) in a box; slope-graded King stability with exact `Fraction`
+slopes; a RAY is a slope value, so one `θ` offers several rays.
+
+    filter A  admits a ray pair with counts (4,3)      64 of 74
+    filter B  admits a ray triple with (2,3,4)         64 of 74
+    cut by the trefoil's third point                    0  (exactly zero)
+
+**64 of 74 hit. The datum underdetermines `(Q,W)`** — the bean's own prediction,
+now measured rather than expected.
+
+### 🛑 Result 2 — this REFUTES my own claim, and that is the useful part
+
+On merging PR #6391 I wrote that D1-a was "now better posed — a 3-element linear
+family rather than two integers, which is a materially stronger filter". **It is
+not stronger. It is exactly as strong: the cut is 0.** Every quiver reaching
+`{3,4}` also reaches `{2,3,4}`, because count 2 is available at some ray of
+nearly any quiver.
+
+The reason is structural and the probe asserts it: **all 10 misses are quivers
+too small to reach 4 stables at any ray.** So the filter is a **SIZE** condition
+— "has ≥ 4 stable objects at some ray" — not a structural one. A size condition
+cannot discriminate `(Q,W)`, and adding more integers of the same kind never
+will. So the third knot's value is where PR #6391 put it (killing the
+triangulation reading of R1), **not** in strengthening this scan.
+
+### 🛑 An artifact of mine that nearly read as a strong negative
+
+The first version required `θ·d = 0` for every counted root — King's numerical
+condition at slope **zero**. That forces every counted object onto ONE slope, so
+a per-ray count can essentially never exceed 1, and the scan returned **0 hits
+for both filters**. "No small quiver reproduces the datum" would have been a
+publishable bounded negative; it was an instrument error. Caught only because
+the bean **predicts many hits**, and a result contradicting the corpus's own
+expectation is a reason to audit the instrument before believing it. Recorded in
+the probe docstring.
+
+### Scope
+
+Scope-(a). `W = 0` throughout (a potential can only cut further, so a miss here
+does not exclude a quiver once `W` is added); real roots only (imaginary roots
+carry moduli); stability is a numerical proxy for King in both directions, so
+the counts are **not certified DT invariants**. Both filters use the *same*
+counting function, which is what makes the **cut** meaningful even where the
+absolute counts are not. No `(Q,W)` proposed, nothing wired, no fit — hits are
+labeled CANDIDATES only, per this bean's anti-laundering instruction.
+
+### Where this leaves D1-a
+
+**Done, and negative in the way the assessment predicted.** The remaining D1
+entries are unaffected: D1-c is still the only route whose success would be a
+derivation, and it is still under-specified. Nothing here derives `A_ω`.
+
+── 2026-09-03 (2): D1-c's stated VERTEX ASSIGNMENT is excluded ──
+
+`computations/qbeta/dt_d1c_hecke_block_vertex_bound_probe.py`, **6/6**.
+
+D1-c is the only D1 route whose success would be a **derivation**, and the
+2026-08-22 assessment called its two inputs under-specified: the exact `(7,1)`
+bar-split target, and the blocks→spectrum "natural pairing" dictionary.
+
+**Half that blocker was already gone.** The D1-a probe's Result 0 shows `(7,1)`
+is `(plus+minus, plus−minus)` — arithmetic on `(4,3)`. There is no separate
+bar-split target to specify; D1-c must hit `(4,3)`, full stop.
+
+**The other half does not need specifying either, because the vertex assignment
+is excluded before any dictionary is chosen.**
+
+### The measured bound
+
+Over every acyclic quiver on `V` vertices, the largest number of stable objects
+sharing ONE ray (slope) is exactly `V`, never more:
+
+    V   quivers   max per-ray   exceeds V?
+    2      3           2          no
+    3     27           3          no
+    4    729           4          no
+
+and for `V = 3` it is **not** a box artifact — growing the enumeration box grows
+the root system without lifting the cap:
+
+    DMAX  TMAX   max #roots   max per-ray
+      3     3        18            3
+      4     4        24            3
+      5     4        30            3
+
+Likely mechanism, offered as the reason and **not proved here**: at a fixed
+slope the θ-semistables form an abelian category whose simples are the
+θ-stables, and its rank is bounded by the rank of K-theory, which is `V`.
+
+### The consequence
+
+`H₃(q)` has exactly **three** Wedderburn blocks — `(3)` dim 1, `(2,1)` dim 2,
+`(1³)` dim 1 — so one vertex per block gives `V = 3`, ceiling 3, while the datum
+needs a ray carrying **4** (5₂). **Under that reading D1-c cannot produce
+`(4,3)` whatever the blocks→spectrum dictionary turns out to be.**
+
+**🛑 But which reading?** The bean does not say, and the two differ:
+
+    one vertex per block   V = 3   (blocks (3), (2,1), (1³))    EXCLUDED
+    dimension-weighted     V = 4   (dims 1 + 2 + 1)             clears it
+
+"Vertices from Wedderburn blocks" reads most naturally as one per block, which
+is excluded — but `H₃` has total dimension 4, so the weighted reading survives.
+**The exclusion is of the natural reading, not of every reading**, and the probe
+reports both counts rather than picking one. Worth noting that **both** escapes
+land on `V = 4`: the dimension-weighted reading, and the blocks-plus-abelian
+repair below. Suggestive; not evidence.
+
+This is the same bound D1-e anticipated ("`V ≥ 4` … near-trivial pigeonhole").
+**What is new is not the bound but where it lands**: the bean lists D1-e and
+D1-c as separate entries, so nobody had pointed the one at the other. D1-c's own
+vertex count violates it.
+
+### A structurally-motivated repair — PROPOSED here, TESTED below, and it FAILS
+
+> **Superseded by the 2026-09-03 (3) entry at the end of this bean.** The
+> repair clears the vertex bound and then fails D1-c's *own* bar-ray
+> stipulation. Do not re-run this test; read that entry.
+
+The corpus's own decomposition is `total = irreducible + abelian` with
+abelian = 1: 4₁ = 2+1, 5₂ = 3+1, 3₁ = 1+1. So the natural vertex set is not the
+three blocks alone but **the three blocks together with the abelian
+connection** — `V = 4`, clearing the bound exactly. That reconciliation comes
+from the corpus's arithmetic rather than from choosing 4 to fit, which is why it
+is worth recording. Nothing here tests whether such a quiver reproduces `(4,3)`
+at two rays, and one that did would still be a labeled CANDIDATE.
+
+### Scope, and what is NOT closed
+
+Only the stated **vertex assignment** is excluded — not D1-c the route. `W = 0`
+throughout (a potential can only cut further). The bound is **measured**, not
+proved, over the stated ranges with the numerical King proxy. A `V = 5`
+extension was attempted and **timed out** (exit 124); it was not load-bearing —
+`V = 2,3,4` carry the result. Nothing derives `A_ω`.
+
+── 2026-09-03 (3): the V=4 repair CLEARS the bound and FAILS the bar-ray stipulation ──
+
+`computations/qbeta/dt_d1c_v4_blocks_plus_abelian_bar_ray_probe.py`, **6/6**.
+
+The previous entry proposed the repair — vertices = the three `H₃` blocks
+**together with the abelian connection**, `V = 4`, from the corpus's own
+`total = irreducible + abelian`. Tested.
+
+**Not the vacuous version.** "Does some V=4 quiver hit (4,3)" is already YES
+(D1-a: 64/74). The content is D1-c's own structure, stipulated in two places:
+vertices are `H₃` blocks, so **bar acts on them as partition conjugation**
+`(3) ↔ (1³)` fixing `(2,1)` and the abelian vertex — `σ = (0 2)`, and *not a
+free choice*, since `bar χ^(3)(Δ) = χ^(1³)(Δ)` is exact and convention-free
+(entry 15 of `qou-cds1`, on main) — and "**rays from the bar involution on
+stability**", so the two rays are `θ` and `σ·θ`.
+
+### The dichotomy
+
+    bar-symmetric quivers on the 4 vertices                        128
+      admit (4,3) on SIGMA-RELATED rays (theta, sigma.theta)         0
+      admit (4,3) on ARBITRARY two rays                            128
+      achievable per-ray counts overall                      [1,2,3,4]
+
+**Every one of the 128 reaches the target somewhere; not one reaches it on a
+bar-related ray pair.** `σ` is a symmetry of the quiver, so it carries the
+stable spectrum at `θ` onto the spectrum at `σ·θ` and the counts are forced
+**equal** — while the datum needs `4 ≠ 3`.
+
+So the repair **clears the counting bound and fails the structure**. Reaching
+`(4,3)` requires giving up either (a) bar-symmetry of the quiver — but then `σ`
+is not an automorphism and "the bar involution on stability" has no compatible
+action to be — or (b) bar-relatedness of the rays, which is D1-c's own wording.
+
+### This is the MEASURED form of a theorem the bean already has
+
+`QuiverMirrorAutomorphismExcluded` (sorry-free) proves any count-invariant
+mirror implementation forces amphichirality, so `(4,3)` is unreachable. **What
+is new is not the statement but that it is checked on the specific vertex set
+the repair proposes** — the repair was designed to clear a *different* bound
+(the vertex count) and does, so it was not obvious the same obstruction would
+survive. It does.
+
+### A second structural fact, measured in passing
+
+Only **25 of 128** bar-symmetric quivers are acyclic, and **none of those 25**
+carries an arrow between the two conjugate blocks. Reason, immediate once seen:
+`σ`-invariance sends `0 → 2` to `2 → 0`, a 2-cycle. **Bar-symmetry forbids
+arrows between conjugate Wedderburn blocks in any acyclic quiver** — a
+bar-symmetric acyclic model can never couple `(3)` to `(1³)` directly.
+
+### Scope
+
+Scope-(a). `W = 0` (a potential can only cut further). What is closed is the
+**blocks-plus-abelian repair under D1-c's own bar-ray stipulation** — not D1-c
+the route, and not every `(Q,W)`. The per-ray equality is **measured** here; the
+cited Lean theorem proves the general statement. Nothing derives `A_ω`.
+
+── 2026-09-03 (4): ledger status after the D1 tranche — no LIVE route is derivation-tier ──
+
+The three entries above (D1-a, the D1-c vertex bound, the V=4 repair) settle
+enough of the 2026-08-15 attack-options ledger that it should be read with
+outcomes attached. Restating it so the next agent does not re-run a finished
+scan or re-enter a blocked route:
+
+| entry | tier | status after this tranche |
+|---|---|---|
+| **D1-e** formalize-first | prunes | **delivered, and it was a deletion.** `(7,1)` is `plus±minus` on `(4,3)`, so the target is 2 constraints, not 4. Filtering on it is a no-op. |
+| **D1-a** small-quiver scan | candidate generator | **done. Predicted outcome confirmed:** 64/74 quivers meet the target — the datum underdetermines `(Q,W)`. The trefoil's third point cuts **exactly 0**. Do not re-run for more integers of the same kind. |
+| **D1-c** Hecke/Bring extraction | **the only derivation-tier route** | **blocked at its own entry test, both readings.** `V=3` (one vertex per block) is under the measured per-ray ceiling `V`; `V=4` (blocks + abelian) clears the ceiling and then fails the bar-ray stipulation, because a `σ` that is a quiver automorphism forces the two ray counts **equal** while the datum needs `4 ≠ 3`. |
+| **D1-b** Jacobi from character-variety / NZ | candidate-plus (import) | **untouched. Now the highest-value live route** by default, not by result. |
+| **D1-d** exponential networks | import | untouched. Still lowest priority per unit cost. |
+| **D1-f** wait-on-lit | passive | untouched — and item **(4)** ("a categorification of the 3d-index from Hecke/Soergel data") is now the *named* unblocker for D1-c rather than a nice-to-have. |
+
+**The consequence, stated plainly: after this tranche no live D1 route is
+derivation-tier.** D1-b and D1-d both terminate in a labeled CANDIDATE or a
+certified import; the ledger itself says D1-c was the only one whose success
+would be a derivation. So M3 does not have a live path, and the arc should say
+so rather than presenting D1-b's progress as progress toward a derivation.
+
+### What would reopen D1-c — and what would NOT
+
+D1-c is **blocked, not refuted**. The block is scope-(a) plus one mechanism:
+
+- **Scope-(a) part.** The per-ray ceiling `V` is *measured* over `V ∈ {2,3,4}`
+  with `W = 0`, real roots, and a numerical King proxy. A potential can only
+  cut further, so this never excludes a `(Q,W)` once `W` is added.
+- **Mechanism part.** The `V=4` failure is *not* an enumeration artifact and
+  does not depend on the arrow-multiplicity cap the scan used: if `σ` is an
+  automorphism of the quiver it carries the `θ`-stable spectrum bijectively
+  onto the `σ·θ` spectrum, so the counts are equal for **any** multiplicity and
+  any `W` that is itself `σ`-invariant. That is the landed
+  `QuiverMirrorAutomorphismExcluded`, measured here on the specific vertex set.
+
+So the following would **not** reopen it, and should not be attempted as though
+they might: a larger arrow multiplicity at `V=4`; a `V=5` blocks-plus-abelian
+variant; a different `θ` with the same `σ`-symmetric quiver. All three leave the
+automorphism argument intact.
+
+What **would** reopen it is exactly one thing: **the mirror acting as something
+other than a quiver automorphism or a ray relation** — e.g. a `σ` realised as a
+derived autoequivalence that is not induced by a vertex permutation, or a
+non-`σ`-invariant `W` breaking the symmetry the counts inherit. Nothing in the
+corpus supplies either, which is why D1-f (4) is the live dependency.
+
+### Scope of this entry
+
+This is bookkeeping over the three entries above; it measures nothing new. No
+route is declared refuted, nothing is wired, and `A_ω` remains underived. The
+"no live derivation-tier route" statement is a claim about **this ledger's**
+entries, not about the framework.
+
+── 2026-09-03 (5): D1-b entry test — the NZ datum's SNF is a function of N alone ──
+
+`computations/qbeta/dt_d1b_nz_gluing_invariant_entry_probe.py`, **10/10**
+(PR #6509). Formalize-first, run BEFORE the multi-session NZ → Q dictionary
+assembly the ledger calls for, and it asks the prior question: **can that
+datum carry the information at all?**
+
+### The measurement
+
+The natural first-order invariant of an integer gluing datum is the Smith
+normal form of `A | B` — its class under integral row/column equivalence
+`GL(ℤ) × GL(ℤ)`. Across 16 knots spanning `N = 2..13` tetrahedra:
+
+    SNF(A|B) = (1)^N + (2) + (0)      for EVERY knot.
+
+| N | knots | distinct SNFs |
+|---|---|---|
+| 2 | 3₁, 4₁ | 1 |
+| 3 | 5₁, 5₂, 8₁₉ | 1 |
+| 4 | 6₁, 7₁, 7₂ | 1 |
+| 5 | 6₂, 7₃, 8₂₀, 9₄₂, 10₁₃₉ | 1 |
+| 6 | 6₃, 7₄ | 1 |
+| 13 | 8₁₈ | 1 |
+
+A function of the tetrahedron count alone. The invariant carries **no
+knot-theoretic information**.
+
+### The consequence for D1-b
+
+D1-b's node count must separate 4₁ (3 connections) from 5₂ (4). The SNF
+separates nothing beyond `N`, so **no `GL(ℤ)×GL(ℤ)`-invariant function of the
+NZ gluing matrix can supply it.** The dictionary must read the matrix in a
+**fixed polarization** — its actual entries — not any basis-independent
+invariant of it.
+
+### It does NOT rest on the non-hyperbolic 3₁
+
+The tempting instance is the `N = 2` collision: 3₁ and 4₁ share an SNF but
+have certified `C = 2` and `3`. **3₁ is not hyperbolic** (`contains flat
+tetrahedra`), so a geometric dictionary may legitimately be undefined there —
+that instance *corroborates* and is reported with the caveat attached. What
+*establishes* the claim is the `N = 5` group: five **pairwise non-isometric
+hyperbolic** knots, one SNF, distinctness by `is_isometric_to` rather than by
+comparing volumes.
+
+### Neither input was re-derived
+
+Both already existed and the corpus-grep found them first:
+
+- node counts ← `dt_crossknot_connection_count_certified_probe.py`;
+- the NZ datum ← **cross-checked against** `one_loop_torsion.py::nz_pair`,
+  the corpus's own extractor, rather than replacing it. SnapPy's rectangular
+  form and `nz_pair` agree **exactly** as `(A,B) = (a,−b)` on every row of
+  every knot up to `N = 13`, and the SNF is invariant under that convention
+  flip (both are controls C5/C6).
+
+### Two re-scopings of D1-b the grep surfaced, recorded so they are not redone
+
+- **`W` is NOT needed.** The M2 plethystic-log result
+  (`aomega_m2_bps_cohomology.py` / `AomegaM2BPSCohomology`, lean-direct exit
+  0) gives `dim BPS_d = |Ω_d|`, so a potential-free abelianized quiver already
+  realizes `{3,4}`. **D1-b as written asks for "arrows AND potential" — the
+  potential half asks for an object the corpus records as unnecessary.**
+  Scope-(a), conditional on the imported eq-(98) datum.
+- **The `(7,1)` half of D1-b's target is a no-op** on `(4,3)` — the 2026-09-03
+  (1) Result 0 applies to D1-b exactly as it did to D1-a.
+
+And the live constraint carries over unchanged: `QuiverMirrorAutomorphismExcluded`
+(sorry-free) — the mirror must act on the stability **ray**, never as a quiver
+automorphism.
+
+### Literature gap to plan around
+
+**ACCERV, *BPS quivers and spectra*** — the triangulation-to-BPS-quiver
+precedent — is **NOT held** in `library/`; it appears only in other papers'
+reference lists. DGG (`arxiv-1108.4389`, `arxiv-1112.5179`), KS
+(`arxiv-0811.2435`) and Davison–Meinhardt (`arxiv-1601.02479`) **are** held.
+So the dictionary assembly needs an outbound fetch, not a corpus read.
+
+### A methodology finding from running the checklist (PR #6510)
+
+Path 5's tier 1 — `library/INDEX.md` — was **missing 33 real documents**, and
+AGENTS.md explained the directories-minus-rows gap by the duplicate copies, so
+the shortfall read as accounted for. Among the 33: the volume conjecture, the
+oriented skein category, affine-Hecke Plancherel, knot polynomials on braid
+closures, and q-deformed Plancherel growth. Regenerated with
+`scripts/summarize-library.py --apply`; AGENTS.md corrected with the
+arithmetic check that detects it. **A clean tier-1 scan is evidence about the
+index, not about the library.**
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, a strictly finer equivalence than
+`GL × GL`, so a polarization-dependent construction is **NOT** excluded —
+**D1-b is constrained at its entry, not refuted.** Certified `C` exists only
+for 3₁, 4₁, 5₂ (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled). Exact integer arithmetic throughout; volumes printed for
+orientation and never computed with. Nothing is wired, nothing is fitted, and
+`A_ω` remains underived.
+
+── 2026-09-03 (6): D1-b part 2 — the pincer closes, and the needle is threadable ──
+
+`computations/qbeta/dt_d1b_nz_triangulation_invariance_pincer_probe.py`,
+**7/7** (same PR #6509). Part 1 concluded the dictionary must be
+polarization-dependent and deliberately left that open. This closes it.
+
+### The bracket
+
+| | |
+|---|---|
+| **too coarse** | the basis-independent invariant (part 1) is constant across all knots at fixed `N` |
+| **too fine** | the RAW polarization datum is not a manifold invariant at all — retriangulating ONE manifold moves `(N, SNF(P), det P, rank P)` for `P = A_edge·B_edgeᵀ` |
+
+The node count **is** a manifold invariant, so the dictionary must be
+**strictly finer than the Smith normal form, yet triangulation-invariant.**
+
+### The constructive half — that class is non-empty
+
+The corpus already holds a verified member: the **Dimofte–Garoufalidis 1-loop
+invariant `τ`** (`computations/one_loop_torsion.py`). Measured here it is
+triangulation-invariant (spread `0.0` / `1.4e-40` at 40 dps) and it
+**separates all five N=5 knots the SNF collided**, smallest pairwise gap
+`0.555`:
+
+    6_2  2.2165899308911189066      9_42    8.9879137538564859187
+    7_3  2.7717413902489047800      10_139  6.7715656780558894839
+    8_20 5.9288297060394782874
+
+**So D1-b is LOCATED, not excluded** — the dictionary lives among the
+triangulation-invariant functionals of the NZ datum.
+
+### 🛑 Why NO `τ → C` map is proposed — a hard data limit, not caution
+
+`τ` is a complex number, not an integer count; separating is not counting.
+Sharper: **this corpus cannot test any such map.** Certified `C` exists for
+exactly three knots (the snappy wheel's Magma fixtures; the ptolemy DB is
+firewalled) and `τ` is **undefined on 3₁** because it is not hyperbolic. That
+leaves **two** usable `(τ, C)` points, and any two-parameter family fits two
+points exactly — a map fitted here would be **unfalsifiable by construction**.
+
+**What would unblock the search is DATA, not cleverness:** more certified
+connection counts, i.e. the ptolemy database or magma. That is now the
+concrete dependency for D1-b, and it belongs beside D1-f's watch items.
+
+### One thing I got wrong and fixed before it landed
+
+The part-2 docstring first said "**eleven** distinct values" for 6₂.
+`randomize()` walks a random move sequence, and the next run gave **nine**. A
+stochastic count written as a fixed one is exactly the staleness pattern this
+corpus keeps paying for. The docstring now says the count is stochastic,
+points at the witness for the run's own figures, and notes that only the
+qualitative fact — that it moves at all — is load-bearing; the assertion tests
+`> 1`.
+
+### Scope
+
+Scope-(a). DGG acts by `Sp(2N,ℤ)`, strictly finer than `GL × GL`. Three
+controls, including one (`C3′`) that exists because the invariance claim would
+otherwise be vacuous — an invariance test passes trivially when nothing was
+varied — and one (`C1′`) checking `τ(4₁) = √3/2` against DG's own worked
+example, because the module records that **three** 1-loop implementations
+existed here and disagreed. mpmath at 40 dps; no float64. Nothing wired,
+nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (7): 🛑 CORRECTING entry (6) — six usable points offline, not two ──
+
+Entry (6) above stated D1-b's blocker as *"DATA, not cleverness — the ptolemy
+database or magma"*, on the ground that only **two** usable `(τ, C)` points
+exist. **That is wrong and the error was mine.** It is corrected in the probe
+(`dt_d1b_nz_triangulation_invariance_pincer_probe.py`, now **9/9**), and entry
+(6)'s blocker sentence should be read as superseded by this one.
+
+**How the error happened**, because the mechanism generalises: I inherited
+*"the ptolemy DB is firewalled; only 4₁/5₂/3₁ ship fixtures"* from the corpus
+and **never enumerated the directory**. Half of it was true and half was not,
+and I carried both.
+
+- **True, and re-verified this session:** `ptolemy.unhyperbolic.org` returns
+  **403 on CONNECT** — by `curl` and by snappy's own `retrieve_solutions()`
+  for 6₁.
+- **False:** the wheel ships sl2 Magma fixtures for **seven** manifolds, not
+  three. **Six** are 1-cusped, hyperbolic, and carry both a defined `τ` and a
+  certified irreducible count:
+
+| manifold | N | irreducible | \|τ\| |
+|---|---|---|---|
+| 4₁ | 2 | 2 | 0.86602540378443864676 |
+| 5₂ | 3 | 3 | 1.1611627381339100731 |
+| m135 | 4 | 8 | 11.31370849898476039 |
+| s000 | 6 | 6 | 14.276474167114481671 |
+| t00000 | 8 | 8 | 29.22901156226534965 |
+| v0000 | 7 | 8 | 20.893884161273003105 |
+
+Six points against a two-parameter family leaves **four degrees of freedom**,
+so a candidate relation **is** testable offline. The blocker was overstated 3×.
+
+### What does NOT change
+
+**Still no `τ → C` map is proposed.** Six points make a candidate *testable*;
+they do not make *fishing* legitimate. Searching a functional form across six
+points and reporting the winner is the numerology this repo forbids. So the
+corrected statement of D1-b's need is **a hypothesis stated before looking**,
+not more data — and the probe's closing assertion now says that instead of
+naming the ptolemy DB.
+
+### Three caveats, recorded rather than papered over
+
+1. `m135`, `s000`, `t00000`, `v0000` are **census manifolds, not knots in
+   S³**. Valid for testing whether a relation exists; **not** automatically
+   valid as D1-b nodes, since D1-b's setup is about knots (both 3-braids).
+2. The **abelian `(L−1)` convention** is established for knots in S³ and does
+   **not** carry over to a census manifold, so the common currency across all
+   six is the **irreducible** count, which is what the table reports.
+3. **`irreducible = N` fails.** It holds for four of six and breaks at `m135`
+   (4, 8) and `v0000` (7, 8) — worth stating because it is exactly what one
+   would assume from the 4₁/5₂ pair alone, where the two coincide.
+
+### 🛑 A trap found while excluding 3₁
+
+**`one_loop` does not guard against non-hyperbolic input.** Called on 3₁ it
+returns `0.5` **without raising**, although `solution_type()` is
+`contains flat tetrahedra` and DG's `τ` needs a genuine hyperbolic structure.
+**A returned value is not evidence of hyperbolicity.** The probe therefore
+excludes by an explicit `solution_type()` test, never by trusting an
+exception — and any other consumer of `one_loop` should do the same.
+
+── 2026-09-03 (8): the node count is ARITHMETIC — a single trace-field degree — and my prediction was WRONG ──
+
+`computations/qbeta/dt_d1b_connection_count_galois_orbit_hypothesis_probe.py`,
+**7/7**. Entry (7) concluded D1-b needs **a hypothesis stated before looking**,
+not more data. This is that hypothesis, stated in the docstring before the
+measurement, with a prediction recorded so it could be refuted.
+
+### The hypothesis
+
+> **H.** The irreducible boundary-parabolic PSL(2,ℂ) representations of a
+> 1-cusped hyperbolic manifold form a **single Galois orbit** — the conjugates
+> of the geometric representation — so `C_irr = [trace field : ℚ]`.
+
+It came from noticing where the certified counts actually originate: the
+certified probe sums **Galois-orbit degrees**, and those degrees are degrees of
+the number fields the representations are defined over.
+
+### H HOLDS, 6/6
+
+| manifold | inhabited classes | orbits | degree | `C_irr` |
+|---|---|---|---|---|
+| 4₁ | 1 | 1 | 2 | 2 |
+| 5₂ | 1 | 1 | 3 | 3 |
+| m135 | 1 (of 8) | 1 | 8 | 8 |
+| s000 | 1 (of 2) | 1 | 6 | 6 |
+| t00000 | 1 (of 2) | 1 | 8 | 8 |
+| v0000 | 1 (of 4) | 1 | 8 | 8 |
+
+4₁ and 5₂ are **not** independent evidence — they are what suggested H. The
+four census manifolds are, and all four are single-orbit.
+
+### 🛑 My prediction was WRONG, and the way it was wrong is the useful part
+
+I predicted **H fails at m135**, reasoning that m135 carries **eight
+obstruction classes**, that an obstruction class is an `H²(M,∂M;ℤ/2)` invariant
+the Galois action cannot move a rep across, and that eight inhabited classes
+therefore cannot be one orbit.
+
+The reasoning about Galois and obstruction classes is fine. **The premise was
+not: m135 has eight classes and only ONE is inhabited — seven are empty.** I
+read "8 classes" as "8 classes with solutions in them". Same wrong-denominator
+error as three others today.
+
+It was caught by control **C3**, which exists precisely to stop "one orbit"
+being an artifact of dropping empty classes — and which therefore had to
+*count* the empties: `{m135: 7, v0000: 3, rest: 1}`. A probe without that
+control would have reported H holds and left the reason invisible.
+
+### The consequence for D1-b — this REDIRECTS the route
+
+**The node count does not come from the NZ gluing datum at all.** It is a field
+degree. So the two earlier D1-b probes bracketed the wrong object: entry (5)
+showed the NZ SNF is too coarse and entry (6) that the raw polarization datum
+is too fine, and both are correct — but the count they were bracketing toward
+is supplied by **arithmetic that does not involve the gluing datum**.
+
+That **closes D1-b's node question positively** and leaves the **arrow**
+question open. A dictionary still has to produce arrows and (if wanted) a
+potential; nothing here touches that.
+
+### Scope, and what would break H
+
+Scope-(a). Six fixtures, four census manifolds not knots in S³ — valid for
+testing H, **not** automatically valid as D1-b nodes. Irreducible counts only;
+the abelian `(L−1)` convention does not carry to a census manifold. The
+ptolemy DB stays firewalled, so this sample **cannot be enlarged offline**.
+
+**H is almost certainly classical** in some form — the corpus-grep found
+nothing, but that is a statement about this corpus, not the literature. And H
+should be expected to **fail** for a manifold whose character variety carries
+extra components beyond the geometric one; this sample is small and uniformly
+well-behaved. Do not treat 6/6 as a theorem.
+
+Nothing wired, nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (9): the bar grading of the node set, and a wrong consequence I caught by reading the Lean ──
+
+`computations/qbeta/dt_d1b_trace_field_bar_grading_probe.py`, **8/8**, same PR
+as entry (8). Entry (8) closed the **node** question and left the **arrow**
+question open. Arrows in a bar-graded quiver need the bar grading *of the node
+set*, and the single-orbit result says exactly where to read it: the nodes are
+the embeddings of the trace field, complex conjugation acts on them, and a
+representation is self-conjugate **iff its embedding is real**.
+
+| manifold | deg | `r₁` fixed | `r₂` pairs |
+|---|---|---|---|
+| 4₁ | 2 | **0** | 1 |
+| 5₂ | 3 | **1** | 1 |
+| m135 | 8 | 0 | 4 |
+| s000 | 6 | 0 | 3 |
+| t00000 | 8 | 0 | 4 |
+| v0000 | 8 | 0 | 4 |
+
+**Five of six trace fields are totally imaginary.** 5₂ is the only one with a
+real embedding — and it **cannot avoid one**: its trace field has **odd
+degree**, and no involution acts freely on a set of odd size. So a mirror-fixed
+node is *forced* for 5₂ and absent for 4₁, by parity rather than by any
+property of the particular polynomial.
+
+### 🛑 The consequence I nearly drew, and why it is wrong
+
+I read this as an **escape** from `QuiverMirrorAutomorphismExcluded` — the
+theory being that the theorem excludes a *freely acting* mirror, so a mirror
+with a fixed point is a different object and 5₂ slips past it.
+
+**I read the theorem before writing that down, and it does not say that.** Its
+hypothesis is
+
+```
+hσ : ∀ e, Ω (σ e) = Ω e
+```
+
+— **count-invariance**, which says nothing about freeness. A `σ` with fixed
+points can satisfy it perfectly well and is excluded on identical terms. **The
+parity fact survives; the consequence does not.** Recorded rather than dropped
+because it reads plausible and would have propagated into the arrow work.
+
+### What this actually is
+
+An **input** to the arrow question: the measured `(r₁, r₂)` is the bar grading
+any bar-graded quiver on these nodes has to reproduce. It does not produce
+arrows, a potential, or `A_ω`, and no construction is proposed.
+
+### Scope
+
+Scope-(a). Exact throughout — Sturm real-root **counting** on rational minimal
+polynomials, no root-finding and no floats. Four of six are census manifolds,
+valid for reading the grading and **not** automatically valid as D1-b nodes.
+The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
+routes now give the same six numbers (orbit degrees in entry (8), polynomial
+degree here), so neither is a parsing artifact.

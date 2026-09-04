@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-level-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-level-properties",
+  "kind": "remark",
+  "title": "$q$-dependence, magic gaps, and the KLR grading of the confinement filtration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-confinement-level"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-confinement-level",
+  "tags": [
+    "confinement",
+    "filtration",
+    "q-dependence",
+    "magic-numbers",
+    "klr",
+    "brundan-kleshchev"
+  ],
+  "text": "confinement-level-properties.md",
+  "provenance": "authored"
+}

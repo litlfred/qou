@@ -7,6 +7,7 @@ section_number: 4
 pages: 8-10
 source_pdf: 1804.10084v1.pdf
 source_sha256: 716da9708f06d930
+doc_brief: "Concentration of Lipschitz Functions of Negatively Dependent Variables — We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy"
 ---
 Let us discuss brieﬂy the notion of negative regression and how it re lates to other notions of negative
 dependence. It is fair to say that most known examples that satisf y negative association or nega-

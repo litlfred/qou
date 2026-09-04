@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-classical-limit-topology-free",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:classical-limit-topology-free",
+  "kind": "remark",
+  "title": "Topology-free surreal reformulation of the $q\\to1$ limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-classical-limit-functor",
+  "tags": [
+    "classical-limit",
+    "surreal",
+    "standard-part",
+    "q-to-1",
+    "topology-free"
+  ],
+  "text": "classical-limit-topology-free.md",
+  "provenance": "authored"
+}

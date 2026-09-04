@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-descent-condition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:descent-condition",
+  "kind": "proposition",
+  "title": "Descent condition --- twisted $2$-cocycle",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-yekutieli-triple",
+    "papers/quantum-observable-universe/blocks/rem-distributional-connection",
+    "papers/quantum-observable-universe/blocks/prop-yekutieli-lifting"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-descent-condition"
+  ],
+  "tags": [
+    "descent",
+    "cocycle",
+    "twisted",
+    "yekutieli"
+  ],
+  "leanRef": "qou:QOU.Torsion.descent_condition",
+  "text": "descent-condition.md",
+  "leanSource": "descent-condition.lean",
+  "provenance": "authored"
+}

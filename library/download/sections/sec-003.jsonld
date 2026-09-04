@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/download/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Large deviations above the mean",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "contains": [
+    "library/download/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "library/download/manifest",
+  "sourceDocument": "library/download/manifest",
+  "provenance": "ingested"
+}

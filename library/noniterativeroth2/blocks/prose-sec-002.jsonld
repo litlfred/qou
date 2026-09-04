@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/noniterativeroth2/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Notation",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "text": "../sections/sec-002-2-notation.md",
+  "derivedFrom": "library/noniterativeroth2/manifest",
+  "sourceDocument": "library/noniterativeroth2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-categorical-irreducible",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:categorical-irreducible",
+  "kind": "lemma",
+  "title": "Irreducibility from observability",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-irreducible"
+  ],
+  "tags": [
+    "irreducibility",
+    "instanton"
+  ],
+  "leanRef": "qou:QOU.categorical_irreducible",
+  "text": "categorical-irreducible.md",
+  "leanSource": "categorical-irreducible.lean",
+  "provenance": "authored"
+}

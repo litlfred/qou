@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-archimedean-remainder-exponential-decay",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:archimedean-remainder-exponential-decay",
+  "kind": "conjecture",
+  "title": "Exponential decay of the archimedean brane-tower truncation remainder",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-neutron-qvalue-symbolic"
+  ],
+  "cites": [
+    "references/jones1985"
+  ],
+  "tags": [
+    "tier:primary-conjecture",
+    "q-beta",
+    "brane-tower",
+    "truncation-remainder",
+    "exponential-decay",
+    "archimedean",
+    "beta-decay"
+  ],
+  "leanRef": "qou:QOU.Interactions.ArchimedeanRemainderExponentialDecay",
+  "text": "archimedean-remainder-exponential-decay.md",
+  "leanSource": "archimedean-remainder-exponential-decay.lean",
+  "provenance": "authored"
+}

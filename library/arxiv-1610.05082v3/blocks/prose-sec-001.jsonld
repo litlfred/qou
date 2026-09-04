@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1610.05082v3/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction and statement of results",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-001-1-introduction-and-statement-of-results.md",
+  "derivedFrom": "library/arxiv-1610.05082v3/manifest",
+  "sourceDocument": "library/arxiv-1610.05082v3/manifest",
+  "provenance": "ingested"
+}

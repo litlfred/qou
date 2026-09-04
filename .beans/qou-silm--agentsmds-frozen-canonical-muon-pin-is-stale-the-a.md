@@ -1,11 +1,11 @@
 ---
 # qou-silm
 title: AGENTS.md's frozen canonical muon pin is stale — the anchor moved to CODATA-2022 on 2026-08-28
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T01:17:44Z
-updated_at: 2026-08-30T02:36:55Z
+updated_at: 2026-08-30T09:12:30Z
 ---
 
 Found while diagnosing a declaration/content mismatch under `qou-5wng`. NOT a
@@ -126,3 +126,70 @@ replaced it, and its three-values table still lists the live anchor
 (`…56427390…`) as merely "lepton tower, CODATA 2022". No risk analysis is needed
 — the change was ruled, the corpus is consistent with it (measured: 3206
 witnesses, no genuine Q0_FLIPs), and the word "frozen" is simply out of date.
+
+
+## CLOSED 2026-08-30 — AGENTS.md updated; the one remaining item is done
+
+This bean's closing section named the documentation gap as all that remained and
+said no risk analysis was needed, the ruling being explicit. That edit has now
+landed in `AGENTS.md` §"Two q₀ live in the repo":
+
+- the anchor line now reads `1.1099785956427390466817…`, with the retired value
+  named as retired and dated to `fca08de7d2` (2026-08-22);
+- the three-values table's second row is relabelled **RETIRED**, since it was
+  instructing readers to count a dead literal *while calling it canonical*.
+
+**Two things this bean did not have, added with the edit.**
+
+**1. The CODATA-2018 population, which is the largest and which no artifact
+counts.** Re-measured with the recorded method (`git ls-tree` on `origin/main`,
+3237 tracked `computations/*.witness.json`):
+
+| match | is | count |
+|---|---|---|
+| `1.109978595` (10 digits) | all muon spellings | 403 |
+| `1.1099785955541805` | **CODATA 2018** | **257** |
+| `1.1099785956427390` | CODATA 2022 — the live anchor | 96 |
+| `1.1099785955573347` | the retired pin | 40 |
+| 10-digit hit, no full literal | unaccounted | 17 |
+
+CODATA-2018 is **64 %** of the muon population and the old two-row table cannot
+see it under either row — so both of its readings under-describe the tree. The
+sibling drain audit (`qou-3f7a`) does not carry it either; it works with A and C
+only.
+
+**2. Your "exactly one witness" and my 40 are both right.** I measured 40 files
+containing the retired literal and checked before writing either number down. Of
+those 40, only **4** carry it in a `q0Value`/`q` *field*, and only **one** —
+`hadron-knot-table.witness.json` — as the top-level `q0Value`, which is your
+figure exactly. The other three are payload data (a `scan[]` point, a
+cross-anchor `residual_evaluations/muon_q0`, an `across_q[]` array): deliberate
+multi-q records, not stale pins. The remaining 36 carry it in prose,
+`description` or provenance. Recorded in the table's footnote so the two numbers
+cannot be read as contradicting each other.
+
+**Not duplicated:** the witness drain for the −0.0769 ppb shift stays with
+`qou-3f7a` (83 `Q0_FLIP` + 165 NEW drift sites). Nothing here touches it.
+
+
+## 2026-09-03 (session tender-keller, PR #6476) — finding added, bean not taken
+
+While authoring rem:mu-p-residual-two-readings from the LIVE witnesses, the
+same retired-value class turned up in three more places the CODATA-2022
+migration (fca08de7d2, 2026-08-28) did not reach, all still quoting the
+pre-migration figures:
+
+- content/.../observations/epistemic-status-of-calibrations.md — 11.5 ppb,
+  '0.06 ppb' for m_p/m_e (live: 0.017 ppb, qou_substrate.constants.
+  MASS_RATIO_P_E_ERR), 'roughly 4000 sigma' (live arithmetic ≈ 1.4e4 sigma),
+  and a muon-pin literal 1.1099785955573347... that is the RETIRED value A.
+- content/.../appendix-standard-model/sm-params-lepton-masses.md — 963.6x
+  (live per-observable-100x-status.witness.json: miss_factor 970.2,
+  err_ppb 211.2).
+- AGENTS.md q0-anchor STRICT rule 1 — '963.6x' (same).
+
+Live values the new block uses: mu-substrate-tension-audit-100dps.witness.json
+delta_q0_ppb = -11.6118, residual_ppb_at_canonical_q0 = 211.1649. Not edited
+here (outside the PR's scope and inside this bean's); the new block's
+authorNotes records the disagreement so the two do not read as a contradiction
+without explanation.

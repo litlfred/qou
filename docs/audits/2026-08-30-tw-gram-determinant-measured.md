@@ -80,8 +80,37 @@ Practical consequences:
   one, and would be an incorrect hypothesis set on its own.
 * For the substrate case — `K = ℝ`, `q > 1` — the constant costs nothing, and
   `isSemisimpleRing_rank_one_of_pos` is already in that shape.
-* An agent hoping to get the *converse* (semisimple ⟹ det ≠ 0, i.e. a clean
-  criterion) should stop: it is false, and the counterexample is above.
+* An agent hoping to get a **characteristic-free** converse (semisimple ⟹
+  det ≠ 0, i.e. a clean criterion over any field) should stop: it is false, and
+  the counterexample is above.
+
+  > **🛑 SCOPED 2026-09-03 — the converse IS true in characteristic zero, and
+  > is now proved.** This bullet read *"an agent hoping to get the converse
+  > should stop: it is false"*, unqualified. The **counterexample above stands
+  > and is unamended** — it is at characteristic 2, and nothing here weakens
+  > it. But the unqualified sentence closes a route this very audit leaves open
+  > two paragraphs up (*"any general Lean theorem along this route must carry a
+  > characteristic hypothesis"*, and *"it is not a claim that the determinant
+  > route fails in characteristic 0"*).
+  >
+  > `QOU.Hecke.TwBasis.twGram_det_ne_zero` proves `det (twGram K (q^2) n) ≠ 0`
+  > over any `[Field K] [CharZero K]` with `q` not a root of unity, at **every**
+  > `n`, sorry-free — i.e. exactly the characteristic-carrying theorem this
+  > audit predicted. It runs the implication backwards: semisimplicity comes
+  > from `heckeWedderburn`, which owes the Gram determinant nothing, and the
+  > converse Gram criterion turns that into `det ≠ 0`. See
+  > [`2026-09-03-gram-converse-in-characteristic-zero.md`](2026-09-03-gram-converse-in-characteristic-zero.md).
+  >
+  > Recorded because this is the AGENTS.md over-narrowing failure in miniature:
+  > the measurement was right, the scope sentence was one clause short, and that
+  > clause was the one a later agent would act on.
+  >
+  > Independent corroboration, worth noting since it runs the other way: this
+  > audit derives the obstruction as *"`M_d(K)`'s regular trace form is
+  > degenerate exactly when `char K ∣ d`"*, and the new Lean's
+  > `regTraceForm_one_one` gives `B(1,1) = finrank K A`, which for `M_d(K)` is
+  > `d²`. For prime `p`, `p ∣ d²` iff `p ∣ d`. The two agree, by completely
+  > different arguments.
 
 ## Scope note on the negative
 
@@ -94,7 +123,18 @@ characteristic 0, where it remains the live route and is the content of
 
 ## What is still open
 
-`det(twGram)` at rank ≥ 2 **in Lean**. Knowing the value does not supply the
+> **🛑 UPDATED 2026-09-03 — non-vanishing is CLOSED; the VALUE is what remains.**
+> This section's title claim, *"`det(twGram)` at rank ≥ 2 in Lean"*, is now
+> ambiguous and half-done. `det ≠ 0` is proved at every rank in characteristic
+> zero (`twGram_det_ne_zero`, above). The paragraph below is still exactly right
+> about the **value** — `[T_u T_w : T_w]` still has no closed form in the corpus,
+> and the `S₅` witness of
+> [`2026-09-02-tw-regular-trace-not-combinatorial.md`](2026-09-02-tw-regular-trace-not-combinatorial.md)
+> still closes the combinatorial search for one. It is only wrong that
+> non-vanishing waits on it: it does not, because it does not go through
+> `tr(L_{T_u})` at all.
+
+`det(twGram)`'s **value** at rank ≥ 2 **in Lean**. Knowing the value does not supply the
 proof: the Gram entries are `tr(L_{T_v T_w})`, and the general diagonal
 structure constant `[T_u T_w : T_w]` still has no closed form in the corpus. The
 generator case is proved (`trace_lmul_σ`, `two_mul_trace_lmul_σ`) and does not

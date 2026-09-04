@@ -46,6 +46,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from a4_brunnian_deficit_closed_form import band_comm, band_word_to_sigma, A01, A12, A23  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
 I2 = sp.eye(2)
@@ -176,6 +181,19 @@ def main():
     )
 
     out = {
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin. q0 enters through "
+            "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+            "anchor (1.1099785827513808075...) because this stem is not "
+            "listed under ideal_muon; proton is the standing default for "
+            "compute per the 2026-08-07 owner directive. The stem IS "
+            "declared physical_proton in "
+            "computations/q0_anchor_manifest.json, and that declaration "
+            "cannot stamp this witness: the manifest is read inside "
+            "WitnessBuilder.build(), and this producer hand-rolls its "
+            "witness and never enters build(). Hence the declaration "
+            "here, which is the only route that reaches the file."),
         "computation": "milnor-recursion-capcup-weight",
         "scriptFile": "milnor_recursion_capcup_weight_probe.py",
         "engine": "python-sympy-exact",
@@ -189,6 +207,21 @@ def main():
         ),
         "results": res,
     }
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
+    # this one. Ask for the anchor with the same precedence q_parameter
+    # uses at compute time (env var > manifest stem > proton) rather than
+    # hardcoding a pin this run may not have used.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python")
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
+    out["q0Anchor"] = _q0a
+    if _q0v:
+        out["q0Value"] = _q0v
     (HERE / "milnor-recursion-capcup-weight.witness.json").write_text(json.dumps(out, indent=1) + "\n")
     print(json.dumps(res, indent=1))
     print("wrote milnor-recursion-capcup-weight.witness.json")

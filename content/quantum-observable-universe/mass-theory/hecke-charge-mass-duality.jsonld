@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-charge-mass-duality",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-charge-mass-duality",
+  "kind": "remark",
+  "title": "Charge--mass duality via the Frobenius pairing",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-crossing-energy",
+    "papers/quantum-observable-universe/blocks/prop-hecke-mass-trace",
+    "papers/quantum-observable-universe/blocks/def-frobenius-pairing"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hecke-mass-trace",
+  "tags": [
+    "hecke-algebra",
+    "charge",
+    "mass",
+    "duality",
+    "frobenius-pairing",
+    "vertex-operator"
+  ],
+  "text": "hecke-charge-mass-duality.md",
+  "provenance": "authored"
+}

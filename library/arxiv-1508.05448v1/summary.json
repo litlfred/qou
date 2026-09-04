@@ -1,0 +1,135 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1508.05448v1",
+ "source_sha256": "57d2c717d8ec74d0",
+ "brief": "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract",
+ "extended": "**Concentration of Measure Techniques and Applications**\n\n*Meg Walters*\n\n134 pp, 23 sections.\n\n**Outline.** Biographical Sketch; Acknowledgments; Abstract; Contributors and Funding Sources; List of Figures; 1 Introduction; 2.4 The Euler-Maclaurin Formula; 3.1 Background for First Result; 3.3 Main Result; 3.5 An Additional Application: The Length of t; 3.6 Remarks; 4.1 Mixed Matrix Moments; 4.2 The Expected Overlap Functions; 4.3 Formulas for the Overlap Functions; 4.7 Summary and Outlook; 5 Mallows Random Permutations; 5.2 The Mallows Measure; 5.3 Fisher-Yates Algorithm",
+ "tokens": {
+  "brief": 28,
+  "extended": 144
+ },
+ "sections": [
+  {
+   "id": "sec-000-biographical-sketch",
+   "title": "Biographical Sketch",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-abstract",
+   "title": "Abstract",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-contributors-and-funding-sources",
+   "title": "Contributors and Funding Sources",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-004-list-of-figures",
+   "title": "List of Figures",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-005-1-introduction",
+   "title": "Introduction",
+   "pages": "10-34"
+  },
+  {
+   "id": "sec-006-24-the-euler-maclaurin-formula",
+   "title": "The Euler-Maclaurin Formula",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-007-31-background-for-first-result",
+   "title": "Background for First Result",
+   "pages": "36-41"
+  },
+  {
+   "id": "sec-008-33-main-result",
+   "title": "Main Result",
+   "pages": "41-47"
+  },
+  {
+   "id": "sec-009-35-an-additional-application-the-length-of-the-l",
+   "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+   "pages": "47-55"
+  },
+  {
+   "id": "sec-010-36-remarks",
+   "title": "Remarks",
+   "pages": "55-59"
+  },
+  {
+   "id": "sec-011-41-mixed-matrix-moments",
+   "title": "Mixed Matrix Moments",
+   "pages": "59-65"
+  },
+  {
+   "id": "sec-012-42-the-expected-overlap-functions",
+   "title": "The Expected Overlap Functions",
+   "pages": "65-67"
+  },
+  {
+   "id": "sec-013-43-formulas-for-the-overlap-functions",
+   "title": "Formulas for the Overlap Functions",
+   "pages": "67-93"
+  },
+  {
+   "id": "sec-014-47-summary-and-outlook",
+   "title": "Summary and Outlook",
+   "pages": "93-96"
+  },
+  {
+   "id": "sec-015-5-mallows-random-permutations",
+   "title": "Mallows Random Permutations",
+   "pages": "96-104"
+  },
+  {
+   "id": "sec-016-52-the-mallows-measure",
+   "title": "The Mallows Measure",
+   "pages": "104-105"
+  },
+  {
+   "id": "sec-017-53-fisher-yates-algorithm",
+   "title": "Fisher-Yates Algorithm",
+   "pages": "105-110"
+  },
+  {
+   "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+   "title": "Length of the Longest Increasing Subsequence",
+   "pages": "110-112"
+  },
+  {
+   "id": "sec-019-55-patience-sorting",
+   "title": "Patience Sorting",
+   "pages": "112-115"
+  },
+  {
+   "id": "sec-020-56-four-square-problem",
+   "title": "Four Square Problem",
+   "pages": "115-122"
+  },
+  {
+   "id": "sec-021-57-conclusion-and-outlook",
+   "title": "Conclusion and Outlook",
+   "pages": "122-127"
+  },
+  {
+   "id": "sec-022-bibliography",
+   "title": "Bibliography",
+   "pages": "127-134"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

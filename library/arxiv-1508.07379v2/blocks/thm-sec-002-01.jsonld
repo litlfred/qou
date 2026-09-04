@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1508.07379v2/blocks/thm-sec-002-01",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "General Penrose identity",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "thm-sec-002-01.md",
+  "derivedFrom": "library/arxiv-1508.07379v2/sections/sec-002",
+  "sourceDocument": "library/arxiv-1508.07379v2/manifest",
+  "provenance": "ingested"
+}

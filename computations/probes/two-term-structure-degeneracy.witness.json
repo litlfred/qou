@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T11:24:14.607074+00:00",
-  "commitSha": "13ede8b3ca7bd8ee65ebec337018a0e9607ebd98",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:59:40.239742+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "cap_k_ge_2_contributes_nothing_to_b3",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "two-term-structure-degeneracy",
   "scriptFile": "two_term_structure_degeneracy_probe.py",
   "scriptHash": "793e545236b1",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "3e8ad01c3082d3ac885a3d2a444050ee25654735",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,10 +38,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -165,5 +167,7 @@
       "what_replaces_the_target": "a TWO-number fingerprint (b3/b2, b4/b2) hit with ZERO free parameters, replacing the single ratio a 9.4% convention band made nearly unfalsifiable",
       "derives_a_magnitude": false
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

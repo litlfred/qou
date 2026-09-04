@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-rate-calculus-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-rate-calculus-interpretation",
+  "kind": "remark",
+  "title": "Interpretation: the squeeze mechanism behind the millennium bounds",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+  "tags": [
+    "surreal",
+    "rate-calculus",
+    "squeeze",
+    "millennium-problem",
+    "classical-limit"
+  ],
+  "text": "surreal-rate-calculus-interpretation.md",
+  "provenance": "authored"
+}

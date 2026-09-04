@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-mass-tower-coefficient-stratification-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:mass-tower-coefficient-stratification-table2-data",
+  "kind": "table",
+  "title": "Data table 2 from prop:mass-tower-coefficient-stratification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-mass-tower-coefficient-stratification"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "mass-tower-coefficient-stratification-table2-data.md",
+  "provenance": "authored"
+}

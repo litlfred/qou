@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-p4-universality-argument",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:p4-universality-argument",
+  "kind": "remark",
+  "title": "Brane-tower argument for the critical exponent's dependence on $\\chi(A)$ alone",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-universality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-universality",
+  "tags": [
+    "universality",
+    "critical-exponent",
+    "euler-characteristic",
+    "interpretation"
+  ],
+  "text": "p4-universality-argument.md",
+  "provenance": "authored"
+}

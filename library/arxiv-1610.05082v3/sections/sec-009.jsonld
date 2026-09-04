@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1610.05082v3/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Weighted dependency graphs",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-1610.05082v3/blocks/prose-sec-009",
+    "library/arxiv-1610.05082v3/blocks/prop-sec-009-01",
+    "library/arxiv-1610.05082v3/blocks/thm-sec-009-02"
+  ],
+  "derivedFrom": "library/arxiv-1610.05082v3/manifest",
+  "sourceDocument": "library/arxiv-1610.05082v3/manifest",
+  "provenance": "ingested"
+}

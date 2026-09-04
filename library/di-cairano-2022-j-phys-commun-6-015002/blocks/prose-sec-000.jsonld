@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "text": "../sections/sec-000-1-introduction.md",
+  "derivedFrom": "library/di-cairano-2022-j-phys-commun-6-015002/manifest",
+  "sourceDocument": "library/di-cairano-2022-j-phys-commun-6-015002/manifest",
+  "provenance": "ingested"
+}

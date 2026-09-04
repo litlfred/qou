@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/angled-survey/blocks/prop-sec-012-03",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "prop-sec-012-03.md",
+  "derivedFrom": "library/angled-survey/sections/sec-012",
+  "sourceDocument": "library/angled-survey/manifest",
+  "provenance": "ingested"
+}

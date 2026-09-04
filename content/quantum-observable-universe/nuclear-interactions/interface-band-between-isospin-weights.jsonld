@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-interface-band-between-isospin-weights",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:interface-band-between-isospin-weights",
+  "kind": "proposition",
+  "title": "The admissible interface band $[z-h,\\,z]$ lies strictly between $\\mu_-$ and $\\mu_+$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-isospin-singlet-binds-more"
+  ],
+  "tags": [
+    "isospin",
+    "interface",
+    "impossibility",
+    "convention-d",
+    "deuteron",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.QBeta.GramSignature.band_strictly_between",
+  "text": "interface-band-between-isospin-weights.md",
+  "provenance": "authored"
+}

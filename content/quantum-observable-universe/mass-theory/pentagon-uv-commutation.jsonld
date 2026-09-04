@@ -1,0 +1,34 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-pentagon-uv-commutation",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:pentagon-uv-commutation",
+  "kind": "proposition",
+  "title": "Pentagon identity at adjacent jet levels: $\\widehat U \\widehat V = q\\,\\widehat V \\widehat U$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-bloch-group",
+    "papers/quantum-observable-universe/blocks/lem-vhat-pair-commutation-trace",
+    "papers/quantum-observable-universe/blocks/prop-jet-tower-convergence",
+    "papers/quantum-observable-universe/blocks/prop-descended-level-zero"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/faddeev1994",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "pentagon",
+    "quantum-dilogarithm",
+    "quantum-torus",
+    "hecke-algebra",
+    "jet-tower",
+    "brane-tower"
+  ],
+  "leanRef": "qou:QOU.QuantumBloch.pentagon_uv_commutation",
+  "text": "pentagon-uv-commutation.md",
+  "leanSource": "pentagon-uv-commutation.lean",
+  "provenance": "authored"
+}

@@ -7,6 +7,7 @@ section_number: 3.5
 pages: 20-21
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — W e introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polyno mials that amount"
 ---
 process is one of the main models considered in the area of Probability Theory
 known as Interacting Particle Systems. The idea is that particles mo ve in continuous

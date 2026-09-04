@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-quantum-entropy",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:quantum-entropy",
+  "kind": "definition",
+  "title": "Quantum entropy as a non-abelian surface integral",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/def-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/def-yekutieli-triple"
+  ],
+  "cites": [
+    "references/yekutieli2015"
+  ],
+  "tags": [
+    "entropy",
+    "statistical-mechanics",
+    "non-abelian-stokes",
+    "surface-integral",
+    "operational-entropy",
+    "yekutieli"
+  ],
+  "leanRef": "qou:QOU.Information.quantumEntropy",
+  "text": "quantum-entropy.md",
+  "leanSource": "quantum-entropy.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-descended",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-cat-descended",
+  "kind": "lemma",
+  "title": "Descended term equals the base-level mass",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-eigenspace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-descended"
+  ],
+  "tags": [
+    "descent",
+    "categorical-trace",
+    "ascent-embedding",
+    "mass"
+  ],
+  "leanRef": "qou:QOU.TopologicalMass.cat_descended_is_base_mass",
+  "text": "topological-mass-cat-descended.md",
+  "provenance": "authored"
+}

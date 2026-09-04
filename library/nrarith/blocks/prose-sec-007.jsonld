@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/nrarith/blocks/prose-sec-007",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The following theorem is from [NR1]. Our formulation here is stronger, but the",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "text": "../sections/sec-007-24-the-following-theorem-is-from-nr1-our-formula.md",
+  "derivedFrom": "library/nrarith/manifest",
+  "sourceDocument": "library/nrarith/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/candetgl/blocks/prose-sec-010",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Examples",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-010-c-examples.md",
+  "derivedFrom": "library/candetgl/manifest",
+  "sourceDocument": "library/candetgl/manifest",
+  "provenance": "ingested"
+}

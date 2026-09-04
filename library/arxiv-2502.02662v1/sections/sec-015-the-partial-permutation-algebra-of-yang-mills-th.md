@@ -7,6 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 We have shown that the correlators of chiral Yang-Mills theory may be written as a sum
 over Hurwitz theory correlators of all degrees with insertions specified by operators in the

@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-half-life-as-q-probe",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:half-life-as-q-probe",
+  "kind": "remark",
+  "title": "Beta-decay half-lives as precision probes of local $q$-variation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hadron-q-self-correction",
+  "tags": [
+    "half-life",
+    "substrate-parameter",
+    "experimental",
+    "neutron-star",
+    "heavy-ion",
+    "magnetic-field",
+    "sensitivity"
+  ],
+  "text": "half-life-as-q-probe.md",
+  "provenance": "authored"
+}

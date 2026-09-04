@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-yang-mills-surreal-bound",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:yang-mills-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal bound for Yang--Mills: the mass gap $\\Delta_q \\asymp \\varepsilon^3$ is the Yang--Mills statement",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+    "papers/quantum-observable-universe/blocks/rem-calculus-up-to-epsilon",
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form",
+    "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse",
+  "cites": [
+    "references/conway1976"
+  ],
+  "tags": [
+    "yang-mills",
+    "mass-gap",
+    "millennium-problem",
+    "surreal",
+    "squeeze",
+    "confinement",
+    "classical-limit"
+  ],
+  "text": "yang-mills-surreal-bound.md",
+  "provenance": "authored"
+}

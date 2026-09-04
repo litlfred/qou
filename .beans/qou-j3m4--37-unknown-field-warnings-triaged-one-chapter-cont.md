@@ -3,8 +3,9 @@
 title: '37 unknown-field warnings triaged: one chapter contradiction, five lost author notes'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-15T14:46:15Z
-updated_at: 2026-08-15T14:46:15Z
+updated_at: 2026-09-03T04:49:12Z
 ---
 
 `folio-assistant` #113 made `run-validate` warn when a block declares a key no
@@ -132,3 +133,27 @@ That also makes the remaining ten `chapter:` declarations worth a second look
 rather than dismissing them as merely redundant: any of them could be
 pre-restructure too, and agreeing with today's manifest is not the same as
 having been maintained.
+
+
+
+## 2026-09-03 — re-measured, incidentally (PR #6460)
+
+Not worked; measured while validating an unrelated content edit, and recorded
+per the BASELINE discipline rather than left to be quoted as current.
+
+`bun run scripts/run-validate.ts content/quantum-observable-universe` at
+`origin/main` 2cf6afcbf85: **exit 0, 14 issues, of which 10 are unknown-field
+warnings** (down from 37) and **4 are lost author notes** (down from 5):
+
+    q-beta-form-a-n1-symbolic-table-data
+    fine-structure-data
+    tm-interaction-completeness
+    millennium-bounds-via-surreals-intro
+
+So the drain has run and has not finished. Note the four are not the same four
+as before -- `q-beta-form-a-n1-symbolic-table-data` is on this list and was not
+called out in the original triage -- so the remaining set needs re-triaging
+against the current tree rather than picking up from the old list.
+
+Reproduce: `bun run scripts/run-validate.ts content/quantum-observable-universe`,
+then `grep 'Unknown field'`. Cheap, seconds, no producer involved.

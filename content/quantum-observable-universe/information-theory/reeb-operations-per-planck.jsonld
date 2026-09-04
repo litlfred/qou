@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:reeb-operations-per-planck",
+  "kind": "proposition",
+  "title": "Discrete iterations per Reeb circuit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-planck-time",
+    "papers/quantum-observable-universe/blocks/rem-discrete-planck-step"
+  ],
+  "tags": [
+    "planck-time",
+    "reeb-flow",
+    "julia-set",
+    "discrete-time",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.Information.reeb_operations_per_planck",
+  "text": "reeb-operations-per-planck.md",
+  "provenance": "authored"
+}

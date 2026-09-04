@@ -7,6 +7,7 @@ section_number: 2
 pages: 9-10
 source_pdf: 0803219.pdf
 source_sha256: 8e37e11b8c8953c8
+doc_brief: "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations."
 ---
 In this paper we use another normalization CS( M ) := − 2π 2 cs(M ) so that
 Vol(M ) + √ − 1 CS(M ) can be regarded as a complexiﬁcation of the volume

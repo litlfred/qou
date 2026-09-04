@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-operational-entropy-properties",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:operational-entropy-properties",
+  "kind": "remark",
+  "title": "Hausdorff dimension, self-consistency, and regimes of $\\eta_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-operational-entropy",
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+    "papers/quantum-observable-universe/blocks/def-planck-time",
+    "papers/quantum-observable-universe/blocks/rem-julia-set-reeb",
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration",
+    "papers/quantum-observable-universe/blocks/rem-operational-entropy-self-consistency"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-operational-entropy",
+  "tags": [
+    "information-theory",
+    "metric-entropy",
+    "julia-set",
+    "hausdorff-dimension",
+    "manning-mccluskey",
+    "golden-ratio"
+  ],
+  "text": "operational-entropy-properties.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,37 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-transcendental-accounting",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:transcendental-accounting",
+  "kind": "remark",
+  "title": "Transcendental-accounting ledger: every period in the paper, indexed by Goncharov depth",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-chirality-period-pairing",
+    "papers/quantum-observable-universe/blocks/rem-bring-embeddable-knots",
+    "papers/quantum-observable-universe/blocks/prop-vol-through-tau"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-algebraic-core-survives",
+  "cites": [
+    "references/kontsevich1995",
+    "references/zagier1986",
+    "references/bloch2000",
+    "references/suslin1991",
+    "references/thurston1978",
+    "references/neumann-zagier1985",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "transcendental-accounting",
+    "goncharov-period-filtration",
+    "wall-crossing",
+    "post-archimedean",
+    "q-rational-structure",
+    "S5-galois-orbit",
+    "ledger"
+  ],
+  "text": "transcendental-accounting.md",
+  "provenance": "authored"
+}

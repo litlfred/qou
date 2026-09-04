@@ -1,0 +1,53 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-0206161v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+  "contains": [
+    "library/arxiv-hep-th-0206161v1/sections/sec-000",
+    "library/arxiv-hep-th-0206161v1/sections/sec-001",
+    "library/arxiv-hep-th-0206161v1/sections/sec-002",
+    "library/arxiv-hep-th-0206161v1/sections/sec-003",
+    "library/arxiv-hep-th-0206161v1/sections/sec-004",
+    "library/arxiv-hep-th-0206161v1/sections/sec-005",
+    "library/arxiv-hep-th-0206161v1/sections/sec-006",
+    "library/arxiv-hep-th-0206161v1/sections/sec-007",
+    "library/arxiv-hep-th-0206161v1/sections/sec-008",
+    "library/arxiv-hep-th-0206161v1/sections/sec-009",
+    "library/arxiv-hep-th-0206161v1/sections/sec-010",
+    "library/arxiv-hep-th-0206161v1/sections/sec-011",
+    "library/arxiv-hep-th-0206161v1/sections/sec-012",
+    "library/arxiv-hep-th-0206161v1/sections/sec-013",
+    "library/arxiv-hep-th-0206161v1/sections/sec-014",
+    "library/arxiv-hep-th-0206161v1/sections/sec-015",
+    "library/arxiv-hep-th-0206161v1/sections/sec-016",
+    "library/arxiv-hep-th-0206161v1/sections/sec-017",
+    "library/arxiv-hep-th-0206161v1/sections/sec-018",
+    "library/arxiv-hep-th-0206161v1/sections/sec-019",
+    "library/arxiv-hep-th-0206161v1/sections/sec-020",
+    "library/arxiv-hep-th-0206161v1/sections/sec-021",
+    "library/arxiv-hep-th-0206161v1/sections/sec-022",
+    "library/arxiv-hep-th-0206161v1/sections/sec-023",
+    "library/arxiv-hep-th-0206161v1/sections/sec-024",
+    "library/arxiv-hep-th-0206161v1/sections/sec-025"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-hep-th-0206161v1",
+    "source_file": "0206161v1.pdf",
+    "source_sha256": "9530c40215baa02defa98405a7655179d0ceac797ffaf78521b3b6513d554b6d",
+    "pages": 31,
+    "arxiv": {
+      "id": "hep-th/0206161",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "18 Jun 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/blocks/cor-sec-005-01",
+  "@type": [
+    "folio:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "title": "a. 12",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "cor-sec-005-01.md",
+  "derivedFrom": "library/deligne-mostow-1986/sections/sec-005",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

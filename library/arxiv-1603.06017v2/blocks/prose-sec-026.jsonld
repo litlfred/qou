@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-026",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Commands",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "text": "../sections/sec-026-7-commands.md",
+  "derivedFrom": "library/arxiv-1603.06017v2/manifest",
+  "sourceDocument": "library/arxiv-1603.06017v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-filling-rule-aufbau-hund",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-filling-rule-aufbau-hund",
+  "kind": "remark",
+  "title": "Aufbau and Hund rules from the $\\Phi_1$ minimisation",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-filling-rule",
+  "tags": [
+    "aufbau",
+    "hund",
+    "shell-filling",
+    "electron-configuration"
+  ],
+  "text": "shell-filling-rule-aufbau-hund.md",
+  "provenance": "authored"
+}

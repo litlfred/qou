@@ -1347,6 +1347,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5",
+          "lean": "3e6187094402",
+          "lean_statement": "af905a4c5894"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T16:08:29.196Z",
+        "reviewed_sha": "3da61470fb14188c7f87cd4b525a88bd81ba7612",
+        "severity": "critical",
+        "evidence": "AtomicNfWitnessContext carried FOURTEEN data fields (Z, N, A, Braid, Phi_1, pi_star, Phi_1_electron, electron_pos_star, gb_converges, W_max, NF_no_strip, F_Pauli, trAlt, net) and, as atomic_nf_witness_field, the theorems ENTIRE conclusion verbatim - all five sub-claims of the .md conjoined - which atomic_nf_witness returned. AGENTS.md 3b-cond item 5, and the largest carrier in this drain. The fields own docstring was candid (\"External theorem / missing input\") and correct that these are inputs; the defect is that the inputs were FIELDS, so the instance chose Phi_1, pi_star, F_Pauli, trAlt, net and the rest and then asserted five claims about its own choices. Two fields, Braid : Type and W_max : N -> N, appear in no sub-claim; W_max is the word cap for the A > 9 stripping regime, which is exactly the half of claim 4 NOT encoded, so the field that would carry the missing case was present and unused.",
+        "notes": "Repaired to 1a disposition 3 over parameters. Two consequences derived rather than assumed: fPauli_nonneg (F_Pauli = |tr_alt/net| forces 0 <= F_Pauli - a Pauli character magnitude cannot be negative, and nothing previously checked it) and groundState_value_unique (sub-claim 1 says pi_star is a GLOBAL minimum, so any two minimisers agree in value - the content of \"global minimum\" as against \"a minimum found by descent\", which is the distinction the .md draws between the exact regime and the steepest-descent fallback). Verdict stays critical: claims 1-4 are named but unproved - nothing constructs H_(A+Z)(q), the atomic braid, Phi_1, the GS reduction or the Diamond-Lemma convergence claim 3 cites, and the A > 9 stripping branch is absent. Recorded in-file: claim 5 (\"Certificates (JSON) are committed to the repository\") is NOT a mathematical statement - it is a fact about this repository, unencodable in Lean by nature rather than by missing infrastructure, and it should never appear as a conjunct a future instance is expected to discharge. Verified lean-direct exit 0. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1362,6 +1381,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94d6eb5ac788",
+          "ts": "029501d4ecb5",
+          "lean": "3e6187094402",
+          "lean_statement": "af905a4c5894"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T16:08:28.678Z",
+        "reviewed_sha": "3da61470fb14188c7f87cd4b525a88bd81ba7612",
+        "notes": "Repaired on this branch. AtomicNfWitnessContext is deleted; atomic_nf_witness is a Prop-valued def over parameters and nothing projects a field. Two consequences are derived (fPauli_nonneg, groundState_value_unique). Verified lean-direct exit 0, warning-free, sorry-free. Bean qou-z9ws."
       }
     ],
     "proof-no-trivial-true": [
@@ -2487,6 +2523,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:49:33.864Z",
+  "updated_at": "2026-09-03T16:08:29.196Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,71 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0607416v6",
+ "source_sha256": "0705075947ce4a3d",
+ "brief": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having",
+ "extended": "**PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES**\n\n*JULIUS BORCEA AND PETTER BRÄNDÉN*\n\n23 pp, 10 sections.\n\n**Abstract.** W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having t he zero set inside a prescribed region Ω ⊆ C for arbitrary closed circular domains Ω (i.e., images of the closed unit disk under a M¨ obius transformation) and t heir boundaries. This provides a natural framework for dealing with several l ong-standing fun- damental problems, which we solve in a uniﬁed way. In particu lar, for Ω = R our results settle open questions that go back to Laguerre an d P´ olya-Schur.\n\n**Outline.** 1 Introduction; 2 Main Results; 2.1 Hyperbolicity and Stability Preservers; 2.2 Preservers of Polynomials with Zeros in a ; 3 Proofs of the Main Results; 3.1 Hyperbolic and Stable Polynomials; 3.2 The Transcendental Characterization; 3.3 Closed Circular Domains and Their Boundari; 4 Open Problems; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 253
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-main-results",
+   "title": "Main Results",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-hyperbolicity-and-stability-preservers",
+   "title": "Hyperbolicity and Stability Preservers",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo",
+   "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-3-proofs-of-the-main-results",
+   "title": "Proofs of the Main Results",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-31-hyperbolic-and-stable-polynomials",
+   "title": "Hyperbolic and Stable Polynomials",
+   "pages": "9-16"
+  },
+  {
+   "id": "sec-006-32-the-transcendental-characterization",
+   "title": "The Transcendental Characterization",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-007-33-closed-circular-domains-and-their-boundaries",
+   "title": "Closed Circular Domains and Their Boundaries",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-008-4-open-problems",
+   "title": "Open Problems",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "21-23"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

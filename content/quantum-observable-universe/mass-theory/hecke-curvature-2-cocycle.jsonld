@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-hecke-curvature-2-cocycle",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:hecke-curvature-2-cocycle",
+  "kind": "definition",
+  "title": "Hecke curvature 2-cocycle $F$",
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "hecke",
+    "curvature",
+    "2-cocycle",
+    "hochschild",
+    "yang-baxter",
+    "gb-filtration"
+  ],
+  "leanRef": "qou:QOU.WedderburnMass.heckeResidue",
+  "text": "hecke-curvature-2-cocycle.md",
+  "leanSource": "hecke-curvature-2-cocycle.lean",
+  "provenance": "authored"
+}

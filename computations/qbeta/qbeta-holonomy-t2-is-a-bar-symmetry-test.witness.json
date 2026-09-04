@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T12:38:03.430282+00:00",
-  "commitSha": "6bd3f6ddf1dc5cbacef89896653edca58d80e0dc",
+  "computedAt": "2026-09-03T04:59:58.639808+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "alpha_t2_coeff_is_quarter_plus_zprime_C",
@@ -76,7 +76,7 @@
   "computation": "qbeta-holonomy-t2-is-a-bar-symmetry-test",
   "scriptFile": "qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py",
   "scriptHash": "f65d468a3a8f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "3dc081e6d2933eecb76173a6865474bdec544dcc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -91,7 +91,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -186,5 +186,7 @@
       }
     },
     "verdict": "DEFLATION. The t^2 tension recorded in qou-pdix entry (6) is not an independent objection to convention D — it is bar-evenness restated. Acceptance-test part 1 is therefore not a test of route 5; parts 2 and 3 (the -1/4 of Re(log-gap) with the discarded i*pi, and a value below 1) remain the real test."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

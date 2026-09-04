@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-9806163v1/blocks/prose-sec-019",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "The Weight Formula",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-019-5-the-weight-formula.md",
+  "derivedFrom": "library/arxiv-math-9806163v1/manifest",
+  "sourceDocument": "library/arxiv-math-9806163v1/manifest",
+  "provenance": "ingested"
+}

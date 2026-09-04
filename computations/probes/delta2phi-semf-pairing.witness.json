@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:23:00.298969+00:00",
-  "commitSha": "29836bc864da14c1fe76da64f2803ed5e14315b3",
+  "computedAt": "2026-09-03T06:00:49.616410+00:00",
+  "commitSha": "106b228b78b00676d525e0e7452b5dea77c1bc6f",
   "assertions": [
     {
       "name": "sign_pattern_is_pure_parity",
@@ -33,8 +33,8 @@
   "durationMs": 3,
   "computation": "delta2phi-semf-pairing",
   "scriptFile": "delta2phi_semf_pairing_probe.py",
-  "scriptHash": "b552385b677d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2759acd60249",
+  "scriptCommitSha": "8c42cea67f0f38277de1882034344112f29713d3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -99,5 +98,7 @@
       "29": "0.7825125",
       "30": "0.6174625"
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Is delta^2 Phi the SEMF pairing term? Sign yes (vacuously); magnitude NO."
 }

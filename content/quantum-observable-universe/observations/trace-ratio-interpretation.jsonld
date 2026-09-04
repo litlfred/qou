@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-trace-ratio-interpretation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trace-ratio-interpretation",
+  "kind": "remark",
+  "title": "Trace ratio computational results and the half-life formula",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-trace-ratio-observable"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-trace-ratio-observable",
+  "tags": [
+    "markov-trace",
+    "half-life",
+    "matrix-element",
+    "interpretation"
+  ],
+  "text": "trace-ratio-interpretation.md",
+  "provenance": "authored"
+}

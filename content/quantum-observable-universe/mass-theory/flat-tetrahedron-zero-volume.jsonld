@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-flat-tetrahedron-zero-volume",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:flat-tetrahedron-zero-volume",
+  "kind": "theorem",
+  "title": "A flat ideal tetrahedron has zero volume: $D(x) = 0$ for every real $x$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-thurston-volume-additivity"
+  ],
+  "cites": [
+    "references/thurston1978",
+    "references/milnor1982",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "hyperbolic-volume",
+    "ideal-tetrahedron",
+    "bloch-wigner",
+    "dilogarithm",
+    "degenerate"
+  ],
+  "leanRef": "qou:QOU.Knot.FlatTet.BlochWigner_lob_ofReal",
+  "text": "flat-tetrahedron-zero-volume.md",
+  "provenance": "authored"
+}

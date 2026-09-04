@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1610.05082v3/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cluster expansions and bounds on joint cumulants",
+  "pageStart": 8,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1610.05082v3/blocks/prose-sec-010",
+    "library/arxiv-1610.05082v3/blocks/rem-sec-010-01",
+    "library/arxiv-1610.05082v3/blocks/rem-sec-010-02",
+    "library/arxiv-1610.05082v3/blocks/lem-sec-010-03",
+    "library/arxiv-1610.05082v3/blocks/prop-sec-010-04",
+    "library/arxiv-1610.05082v3/blocks/lem-sec-010-05",
+    "library/arxiv-1610.05082v3/blocks/prop-sec-010-06"
+  ],
+  "derivedFrom": "library/arxiv-1610.05082v3/manifest",
+  "sourceDocument": "library/arxiv-1610.05082v3/manifest",
+  "provenance": "ingested"
+}

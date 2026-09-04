@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-trivial-knot-photon-interpretation-table4-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:trivial-knot-photon-interpretation-table4-data",
+  "kind": "table",
+  "title": "Table 4 from rem:trivial-knot-photon-interpretation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-trivial-knot-photon-interpretation"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "trivial-knot-photon-interpretation-table4-data.md",
+  "provenance": "authored"
+}

@@ -57,7 +57,13 @@ the probe to a Lean statement, so future sharpened conjectures can
 reference it.
 
 -- Ref: [jones1985] Jones polynomial via Hecke (Bull. AMS 12)
--- Ref: [murakami1996] Kauffman bracket = Hecke Markov trace
+-- Ref: [jones1987] Kauffman bracket = Hecke Markov trace
+--   (repointed from the dead key `murakami1996`, 2026-09-03: the line's own
+--    content is the Hecke/Markov-trace construction of the link polynomial,
+--    which is what [jones1987] is. The 1996 Murakami work the original key
+--    named could not be identified in `references.ts` or in `library/`,
+--    including the `ocr/` tier — so this is an INFERRED repoint from the
+--    surrounding text, not a recovered citation.)
 -- Ref: [kauffman1987] Kauffman bracket / Skein relation
 -/
 

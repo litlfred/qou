@@ -1,0 +1,39 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1909.06797v5/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "contains": [
+    "library/arxiv-1909.06797v5/sections/sec-000",
+    "library/arxiv-1909.06797v5/sections/sec-001",
+    "library/arxiv-1909.06797v5/sections/sec-002",
+    "library/arxiv-1909.06797v5/sections/sec-003",
+    "library/arxiv-1909.06797v5/sections/sec-004",
+    "library/arxiv-1909.06797v5/sections/sec-005",
+    "library/arxiv-1909.06797v5/sections/sec-006",
+    "library/arxiv-1909.06797v5/sections/sec-007",
+    "library/arxiv-1909.06797v5/sections/sec-008",
+    "library/arxiv-1909.06797v5/sections/sec-009",
+    "library/arxiv-1909.06797v5/sections/sec-010",
+    "library/arxiv-1909.06797v5/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-1909.06797v5",
+    "source_file": "1909.06797v5.pdf",
+    "source_sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+    "pages": 34,
+    "arxiv": {
+      "id": "1909.06797",
+      "version": "5",
+      "primary_class": "hep-th",
+      "stamp_date": "14 Apr 2021"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

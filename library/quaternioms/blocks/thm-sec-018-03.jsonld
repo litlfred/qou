@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/quaternioms/blocks/thm-sec-018-03",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "First-order cancellation of associator terms",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "thm-sec-018-03.md",
+  "derivedFrom": "library/quaternioms/sections/sec-018",
+  "sourceDocument": "library/quaternioms/manifest",
+  "provenance": "ingested"
+}

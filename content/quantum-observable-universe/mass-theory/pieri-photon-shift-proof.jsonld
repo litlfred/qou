@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-pieri-photon-shift",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:pieri-photon-shift",
+  "kind": "proof",
+  "title": "Proof of pieri photon shift",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-pieri-photon-shift"
+  ],
+  "text": "pieri-photon-shift-proof.md",
+  "provenance": "authored"
+}

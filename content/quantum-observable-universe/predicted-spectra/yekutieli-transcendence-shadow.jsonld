@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-yekutieli-transcendence-shadow",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:yekutieli-transcendence-shadow",
+  "kind": "remark",
+  "title": "Algebraic independence as the transcendence shadow of non-vanishing obstructions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "yekutieli",
+    "obstruction",
+    "cosimplicial",
+    "transcendence",
+    "brane-tower",
+    "algebraic-independence"
+  ],
+  "text": "yekutieli-transcendence-shadow.md",
+  "provenance": "authored"
+}

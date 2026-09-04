@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-exp-entire",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-exp-entire",
+  "kind": "proposition",
+  "title": "The $q$-exponential is entire",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-braiding-eigenvalue-extraction"
+  ],
+  "tags": [
+    "q-exponential",
+    "wick-rotation",
+    "summability",
+    "categorical"
+  ],
+  "leanRef": "qou:QOU.QExp.qExpTerm_summable",
+  "text": "q-exp-entire.md",
+  "provenance": "authored"
+}

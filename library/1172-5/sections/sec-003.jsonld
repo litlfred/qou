@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1172-5/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "VOLUME CONJECTUREFOR CLOSEDTHREE-MANIFOLDS",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "contains": [
+    "library/1172-5/blocks/prose-sec-003",
+    "library/1172-5/blocks/rem-sec-003-01",
+    "library/1172-5/blocks/rem-sec-003-02",
+    "library/1172-5/blocks/rem-sec-003-03"
+  ],
+  "derivedFrom": "library/1172-5/manifest",
+  "sourceDocument": "library/1172-5/manifest",
+  "provenance": "ingested"
+}

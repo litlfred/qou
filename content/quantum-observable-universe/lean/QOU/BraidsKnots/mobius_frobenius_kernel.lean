@@ -74,8 +74,15 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
     The proof requires the reduction of the `q`-Hodge star to the
     classical Hodge star and of the Frobenius pairing `∫_A ∘ μ` to
     the `SU(2)` Killing form at `q = 1`, neither of which is yet
-    formalised; the body is a `sorry` carrying the manuscript
-    citation per AGENTS.md §1. -/
+    formalised.
+
+    **The body is `ctx.classical_limit s t hst`, not a `sorry` (corrected
+    2026-09-03).** This docstring said "the body is a `sorry` carrying the
+    manuscript citation"; `#print axioms` reports no `sorryAx`. The limit is a
+    field of the context class and this theorem projects it, so the obligation
+    sits with whoever instantiates that class. Whether the field is an honest
+    open input or the conclusion renamed is tracked as a separate projection
+    question (bean `qou-z9ws`); only the prose is corrected here. -/
 -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
 theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     [ctx : MobiusFrobeniusKernelContext E] (s t : ℝ)

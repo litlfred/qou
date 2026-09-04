@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0310279v5/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Construction of the tabs",
+  "pageStart": 46,
+  "pageEnd": 52,
+  "contains": [
+    "library/0310279v5/blocks/prose-sec-019",
+    "library/0310279v5/blocks/lem-sec-019-01",
+    "library/0310279v5/blocks/rem-sec-019-02",
+    "library/0310279v5/blocks/rem-sec-019-03",
+    "library/0310279v5/blocks/rem-sec-019-04",
+    "library/0310279v5/blocks/rem-sec-019-05"
+  ],
+  "derivedFrom": "library/0310279v5/manifest",
+  "sourceDocument": "library/0310279v5/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-jones-markov-trace-stabilisation",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jones-markov-trace-stabilisation",
+  "kind": "remark",
+  "title": "Negative stabilisation and the Jones normalisation parameter",
+  "interprets": "papers/quantum-observable-universe/blocks/thm-jones-markov-trace",
+  "tags": [
+    "markov-trace",
+    "jones-polynomial",
+    "stabilisation",
+    "writhe"
+  ],
+  "text": "jones-markov-trace-stabilisation.md",
+  "provenance": "authored"
+}

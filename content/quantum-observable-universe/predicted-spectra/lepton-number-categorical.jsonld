@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-lepton-number-categorical",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:lepton-number-categorical",
+  "kind": "definition",
+  "title": "Categorical Lepton Number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein"
+  ],
+  "tags": [
+    "lepton-number",
+    "skein-relation",
+    "smoothing",
+    "conservation-law",
+    "categorical",
+    "weak-force"
+  ],
+  "leanRef": "qou:QOU.Archimedean.LeptonNumber",
+  "text": "lepton-number-categorical.md",
+  "leanSource": "lepton-number-categorical.lean",
+  "provenance": "authored"
+}

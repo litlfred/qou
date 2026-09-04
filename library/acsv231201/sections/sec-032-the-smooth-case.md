@@ -7,6 +7,7 @@ section_number: null
 pages: 200-224
 source_pdf: ACSV231201.pdf
 source_sha256: 1a664d0bf666041e
+doc_brief: "Analytic Combinatorics in Several Variables — 85 sections: Preface to the second edition; List of Symbols; Introduction"
 ---
 We now generalize the above argument to any rational function whose singular
 varietyV is a complex manifold. The square-free part ˜Q of the polynomial Q

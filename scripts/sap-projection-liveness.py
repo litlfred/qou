@@ -85,6 +85,36 @@ _PROJ = re.compile(
 )
 _EXACT = re.compile(r"by\s+exact\s+[\w'.]+\.[\w'₀-₉]+[\w' ]*")
 
+# The head identifier of the matched `X.field …`, so it can be checked against
+# the declaration's binders.
+_HEAD = re.compile(r"(?:by\s+exact\s+)?([A-Za-z_][\w'.₀-₉]*)\.[A-Za-z_]")
+
+# Binder NAMES: `(a b : T)`, `{α : Type*}`, `[ctx : C R]`.
+_BINDER_NAME = re.compile(r"[({\[]\s*([^:()\[\]{}]+?)\s*:")
+# Instance-binder CLASS heads, named and anonymous: `[C R]`, `[inst : C R]`.
+# A genuine projection may go through the class name rather than a binder name.
+_INST_HEAD = re.compile(r"\[\s*(?:[\w'₀-₉]+\s*:\s*)?([A-Z][\w'.₀-₉]*)")
+# File-level `variable` binders, which `body_of` never sees.
+_VARIABLE = re.compile(r"^\s*variable\b(.*)$", re.M)
+
+
+def _bound_names(body: str, whole_file: str) -> set[str]:
+    """Every identifier a `head.field` body could legitimately be projecting.
+
+    Binder names and instance-class heads from the declaration's own signature,
+    plus file-level `variable` binders (which `body_of`, starting at the decl
+    header, cannot see).
+    """
+    sig = body.split(":=", 1)[0]
+    scopes = [sig] + [m.group(1) for m in _VARIABLE.finditer(whole_file)]
+    names: set[str] = set()
+    for scope in scopes:
+        for m in _BINDER_NAME.finditer(scope):
+            names.update(m.group(1).split())
+        for m in _INST_HEAD.finditer(scope):
+            names.add(m.group(1).split(".")[0])
+    return names
+
 _NEXT_DECL = re.compile(
     r"\n(?=(?:/--|/-!|@\[|theorem |lemma |def |noncomputable |class "
     r"|structure |instance |example |end ))"
@@ -115,6 +145,17 @@ def classify(path: str, decl: str) -> str:
         return "GONE"
     tail = " ".join((body.split(":=", 1)[1] if ":=" in body else "").split())
     if _PROJ.search(":= " + tail) or (tail and _EXACT.fullmatch(tail)):
+        # `X.field arg` is a projection only when `X` is something the caller
+        # or the signature bound. A QUALIFIED CONSTANT has the same shape and
+        # is not a projection at all: `:= Function.Surjective descentMap` is a
+        # `Prop` naming a claim over a caller-supplied map — the opposite of
+        # the defect. Without this the parser reports a disposition-3 repair as
+        # still-defective, and the carrier lookup downstream then fails with a
+        # nonsense `class CommSemiring not found`.
+        m = _HEAD.search(tail)
+        head = m.group(1).split(".")[0] if m else None
+        if head is not None and head not in _bound_names(body, p.read_text(errors="replace")):
+            return "not-a-bare-projection"
         return "PROJECTION"
     return "not-a-bare-projection"
 

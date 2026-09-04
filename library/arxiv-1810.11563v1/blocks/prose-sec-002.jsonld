@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-002",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Volume of CP(N)",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-002-3-volume-of-cpn.md",
+  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
+  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "provenance": "ingested"
+}

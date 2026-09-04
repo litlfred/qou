@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-surreal-bounds-graded-mikusinski",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:surreal-bounds-graded-mikusinski",
+  "kind": "remark",
+  "title": "Surreal-bound family as graded-Mikusiński std-collapse instances",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-gb-depth-period-correspondence",
+    "papers/quantum-observable-universe/blocks/rem-bsd-surreal-bound",
+    "papers/quantum-observable-universe/blocks/rem-rh-surreal-bound",
+    "papers/quantum-observable-universe/blocks/rem-p-vs-np-surreal-bound"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+  "cites": [
+    "references/zagier1986",
+    "references/bloch2000"
+  ],
+  "tags": [
+    "graded-mikusinski",
+    "surreal-bounds",
+    "millennium-problems",
+    "std-collapse",
+    "depth-filtration",
+    "unification",
+    "interpretation"
+  ],
+  "text": "surreal-bounds-graded-mikusinski.md",
+  "provenance": "authored"
+}

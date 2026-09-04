@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-helium-hopf-diagram",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:helium-hopf-diagram",
+  "kind": "remark",
+  "title": "Helium: two trefoils forming a closed Hopf link",
+  "interprets": "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+  "tags": [
+    "helium",
+    "hopf-link",
+    "trefoil",
+    "diagram"
+  ],
+  "text": "helium-hopf-diagram.md",
+  "provenance": "authored"
+}

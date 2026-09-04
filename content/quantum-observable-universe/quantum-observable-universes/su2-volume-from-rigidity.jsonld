@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/ex-su2-volume-from-rigidity",
+  "@type": [
+    "folio:Example",
+    "doco:Section"
+  ],
+  "label": "ex:su2-volume-from-rigidity",
+  "kind": "example",
+  "title": "$\\mathrm{SU}(2)$ volume form from the lemma",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-volume-from-rigidity",
+    "papers/quantum-observable-universe/blocks/ex-qou-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-volume-from-rigidity",
+  "tags": [
+    "su2",
+    "volume"
+  ],
+  "text": "su2-volume-from-rigidity.md",
+  "provenance": "authored"
+}

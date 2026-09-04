@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0809.4303v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Exact vortex solutions in an extended Skyrme-Faddeev model L. A. Ferreira 1 Instituto de F ´ ısica de São Carlos; IFSC/USP; Universidade de São Paulo - USP",
+  "contains": [
+    "library/arxiv-0809.4303v2/sections/sec-000",
+    "library/arxiv-0809.4303v2/sections/sec-001",
+    "library/arxiv-0809.4303v2/sections/sec-002",
+    "library/arxiv-0809.4303v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0809.4303v2",
+    "source_file": "0809.4303v2.pdf",
+    "source_sha256": "21e28259b9c8542ffcc6146e9d27ae9e76098a4ee0db4110d0d17d6e9d61ca2f",
+    "pages": 12,
+    "arxiv": {
+      "id": "0809.4303",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "5 May 2009"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

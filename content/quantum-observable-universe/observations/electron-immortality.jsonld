@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-electron-immortality",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:electron-immortality",
+  "kind": "remark",
+  "title": "Electrons are immortal: no beta decay for elementary trefoils",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-cosmological-chirality-flip",
+    "papers/quantum-observable-universe/blocks/rem-cmb-q-torsion"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-antiparticle-crossing-reversal",
+  "tags": [
+    "electron",
+    "stability",
+    "immortality",
+    "beta-decay",
+    "radiation",
+    "CMB",
+    "aeon",
+    "trefoil"
+  ],
+  "text": "electron-immortality.md",
+  "provenance": "authored"
+}

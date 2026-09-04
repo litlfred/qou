@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-operations-per-planck-physical",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-operations-per-planck-physical",
+  "kind": "remark",
+  "title": "Physical meaning of the Reeb operation count at $q = q_0$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+    "papers/quantum-observable-universe/blocks/prop-local-substrate-q"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-reeb-operations-per-planck",
+  "tags": [
+    "reeb",
+    "planck-time",
+    "substrate"
+  ],
+  "text": "reeb-operations-per-planck-physical.md",
+  "provenance": "authored"
+}

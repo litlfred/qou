@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/tbl-frobenius-s-classification-table2-data",
+  "@type": [
+    "folio:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:frobenius-s-classification-table2-data",
+  "kind": "table",
+  "title": "Table 2 from prop:frobenius-s-classification",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-s-classification"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "frobenius-s-classification-table2-data.md",
+  "provenance": "authored"
+}

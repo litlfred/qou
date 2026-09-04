@@ -1,0 +1,32 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0603217v3/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "A version of the volume conjecture",
+  "contains": [
+    "library/arxiv-math-0603217v3/sections/sec-000",
+    "library/arxiv-math-0603217v3/sections/sec-001",
+    "library/arxiv-math-0603217v3/sections/sec-002",
+    "library/arxiv-math-0603217v3/sections/sec-003",
+    "library/arxiv-math-0603217v3/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-0603217v3",
+    "source_file": "0603217v3.pdf",
+    "source_sha256": "d7375d4fee00dd9895ab8bab2ee23a9f69b74698ce303abd84def586a4fd3baf",
+    "pages": 5,
+    "arxiv": {
+      "id": "math/0603217",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "15 Apr 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

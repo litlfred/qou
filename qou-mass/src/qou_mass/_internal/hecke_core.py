@@ -136,6 +136,11 @@ from pyhecke.atom import (  # noqa: E402
     build_atom_nf, vertex_volume, nucleon_gen_chains,
     atom_gen_chains, atom_V_full, _chain_V_full,
     atom_per_generator_volumes, build_nucleon_nf,
+    # The mpf twin was reachable only as `pyhecke.atom.build_nucleon_nf_mp`
+    # until 2026-09-03, so a `computations/` caller that wanted the
+    # float64-free route had to reach past this re-export surface -- which
+    # is the whole point of the surface. Added while draining qou-63lc.
+    build_nucleon_nf_mp,
 )
 
 

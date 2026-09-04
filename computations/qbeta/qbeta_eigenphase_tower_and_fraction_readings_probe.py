@@ -103,11 +103,11 @@ sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
 import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp, partitions_of  # noqa: E402
-from hecke_core import build_nucleon_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HB = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))
@@ -116,8 +116,10 @@ Z_C = mp.sqrt(Q0) / (1 + Q0)
 Z_D = Q0 ** 3 / (Q0 ** 2 + 1)
 TH_REQ = mp.fabs((Z_C - 1) * H / 2 - U / 2)
 WORDS = [[], [0], [1], [0, 1], [1, 0], [0, 1, 0]]
-DL = [mp.mpf(str(a)) - mp.mpf(str(b)) for a, b in
-      zip(build_nucleon_nf(list("udd")), build_nucleon_nf(list("uud")))]
+# mpf builder, not `mp.mpf(str(build_nucleon_nf(...)))`: the float64 builder
+# would put a 1e-16 floor under a difference of two nearly-equal vectors.
+DL = [a - b for a, b in zip(build_nucleon_nf_mp(list("udd"), mp.mp.dps),
+                            build_nucleon_nf_mp(list("uud"), mp.mp.dps))]
 
 
 def blockmat(shape):
@@ -306,7 +308,7 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_value=mp.nstr(Q0, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")

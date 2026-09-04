@@ -1,0 +1,36 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2111.12409v4/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1",
+  "contains": [
+    "library/arxiv-2111.12409v4/sections/sec-000",
+    "library/arxiv-2111.12409v4/sections/sec-001",
+    "library/arxiv-2111.12409v4/sections/sec-002",
+    "library/arxiv-2111.12409v4/sections/sec-003",
+    "library/arxiv-2111.12409v4/sections/sec-004",
+    "library/arxiv-2111.12409v4/sections/sec-005",
+    "library/arxiv-2111.12409v4/sections/sec-006",
+    "library/arxiv-2111.12409v4/sections/sec-007",
+    "library/arxiv-2111.12409v4/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2111.12409v4",
+    "source_file": "2111.12409v4.pdf",
+    "source_sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
+    "pages": 21,
+    "arxiv": {
+      "id": "2111.12409",
+      "version": "4",
+      "primary_class": "math.NT",
+      "stamp_date": "13 May 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

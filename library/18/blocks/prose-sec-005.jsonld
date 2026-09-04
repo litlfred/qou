@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/18/blocks/prose-sec-005",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Another coordinate system",
+  "pageStart": 4,
+  "pageEnd": 5,
+  "text": "../sections/sec-005-2-another-coordinate-system.md",
+  "derivedFrom": "library/18/manifest",
+  "sourceDocument": "library/18/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-lepton-meson-torus-knot-dictionary",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:lepton-meson-torus-knot-dictionary",
+  "kind": "proof",
+  "title": "Proof of lepton meson torus knot dictionary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-lepton-meson-torus-knot-dictionary"
+  ],
+  "text": "lepton-meson-torus-knot-dictionary-proof.md",
+  "provenance": "authored"
+}

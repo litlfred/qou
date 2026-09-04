@@ -1,11 +1,11 @@
 ---
 # qou-g7z6
 title: Drain the mass-endomorphism sidecar backlog (126/126 stale)
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T12:04:07Z
-updated_at: 2026-08-29T12:04:08Z
+updated_at: 2026-09-03T04:20:00Z
 ---
 
 Surfaced while verifying #6016, not caused by it.
@@ -146,3 +146,46 @@ genuine one-voice findings for whoever drains that axis.
   resolved, the detangler bucket cannot be drained by any number of sweeps,
   and its count is not a meaningful backlog signal. Worth its own bean if
   anyone takes the detangler axis.
+
+
+---
+
+## 2026-09-03 — CLAIM RELEASED. Mechanical half done; agent half unclaimed.
+
+Returning this to `todo`. It has sat `in-progress` under my claim since
+2026-08-29 with no commit against it for five days, which under the
+stalled-claim policy makes it a takeover candidate — but it reads to a sibling
+as active work, so the honest move is to release it rather than let someone
+route around a claim nobody is working.
+
+**Done, landed on `main` in #6021:**
+
+- Scoped: 3,130 stale criterion-occurrences over 98 criteria — **36.9 %
+  automated / 63.1 % agent-reviewed**, 0 unresolved.
+- Ran the mechanical `qa-sweep`: total stale+missing **5,854 -> 4,967**, of
+  which the real movement is **-1,742** masked by a **+855** detangler
+  artefact. 1,015 criteria newly evaluated, 129 sidecars, 5 genuine new
+  `voice-author-notes-pollution` failures.
+
+**Re-measured today on `d502ed06ce9`, and it has drifted back:**
+
+    stale=3339  missing=1853  total=5192     (I left it at 3114/1853/4967)
+    blocks: 126 PART, 0 fresh                 (unchanged)
+
+**+225 in five days, ~45/day.** So the mechanical sweep is not a one-time fix
+for this chapter either; it erodes at roughly the rate of ordinary editing.
+
+**What remains, and the one thing to settle first:**
+
+1. **The agent 63 %** — ~1,975 judgements over 39 criteria. A budget, not a
+   task, and one chapter of ~36.
+2. **🛑 Do not start (1) until `qou-grph` is settled.** An unknown slice of that
+   63 % is graph-invalidated and **cannot be reported fresh no matter how many
+   judgements are spent on it** — `qa-staleness.ts` never computes the `graph`
+   hash, so nine criteria are permanently stale by construction (re-verified on
+   folio-assistant `origin/main` 2026-08-31: still zero occurrences). Spending
+   ~2,000 judgements against a bucket with a structurally unclearable slice is
+   the expensive form of the mistake `qou-grph` documents.
+
+Unclaimed as of 2026-09-03. Whoever takes it should re-measure rather than
+quote the figures above — they moved 4.5 % in five days.

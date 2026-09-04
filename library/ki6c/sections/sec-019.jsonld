@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ki6c/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Calculation of the critical value",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "contains": [
+    "library/ki6c/blocks/prose-sec-019",
+    "library/ki6c/blocks/lem-sec-019-01"
+  ],
+  "derivedFrom": "library/ki6c/manifest",
+  "sourceDocument": "library/ki6c/manifest",
+  "provenance": "ingested"
+}

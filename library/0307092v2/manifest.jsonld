@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/0307092v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Extended Bloch group and the Cheeger-Chern-Simons class",
+  "contains": [
+    "library/0307092v2/sections/sec-000",
+    "library/0307092v2/sections/sec-001",
+    "library/0307092v2/sections/sec-002",
+    "library/0307092v2/sections/sec-003",
+    "library/0307092v2/sections/sec-004",
+    "library/0307092v2/sections/sec-005",
+    "library/0307092v2/sections/sec-006",
+    "library/0307092v2/sections/sec-007",
+    "library/0307092v2/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "0307092v2",
+    "source_file": "0307092v2.pdf",
+    "source_sha256": "de2f7ddec49b2ce6ccafd5a9a0be350972ffcf2014a6a3601a6d650df0018650",
+    "pages": 62,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

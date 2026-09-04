@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-deformation-weight-lattice",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-deformation-weight-lattice",
+  "kind": "remark",
+  "title": "The $q$-deformation and the invariance of the root datum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands",
+  "leanRef": "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartan_fixed_while_qSerre_moves",
+  "text": "q-deformation-weight-lattice.md",
+  "provenance": "authored"
+}

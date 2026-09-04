@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-compound-beta-shell-calibration-key-distinction",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:compound-beta-shell-calibration-key-distinction",
+  "kind": "remark",
+  "title": "Magic-crossing Q-value measures the difference of shell operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-compound-beta-shell-calibration",
+  "tags": [
+    "beta-decay",
+    "compound-decay",
+    "shell-closure",
+    "knot-operator-transition"
+  ],
+  "text": "compound-beta-shell-calibration-key-distinction.md",
+  "provenance": "authored"
+}

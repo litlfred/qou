@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/poincare-proof-outline/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Correctness of the construction",
+  "pageStart": 20,
+  "pageEnd": 28,
+  "contains": [
+    "library/poincare-proof-outline/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "library/poincare-proof-outline/manifest",
+  "sourceDocument": "library/poincare-proof-outline/manifest",
+  "provenance": "ingested"
+}

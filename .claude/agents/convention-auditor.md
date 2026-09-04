@@ -17,6 +17,36 @@ most confidently quoted. Your standing posture, from `AGENTS.md`:
 > non-canonical surface as **UNMEASURED rather than clear**, and do not
 > launch a corpus-wide sweep off a number you did not just take yourself.
 
+## FIRST ACTION — read your memory; it is NOT injected here
+
+**Measured 2026-09-03: `memory: project` injects NOTHING in this environment.**
+Two agents were asked, independently, what their own system prompt contained;
+both reported **zero** `MEMORY.md` content — not a truncated 200 lines, none at
+all. Frontmatter is correct and the files exist; the injection simply does not
+happen for subagents launched via the Agent tool here. It may work in other
+harnesses — this is about **this** environment, not the feature.
+
+So **read your own memory before anything else**:
+
+```
+Read .claude/agent-memory/convention-auditor/MEMORY.md
+```
+
+That is **235 lines** (~3.2k tokens) — cheap, and it is the file every
+"see memory" reference below points at. Your whole directory is 420 lines
+across 3 files, then `functional-and-bond-topology.md`, `q0-pin-migration.md` as the task needs them.
+
+**Then open your report with a compliance line**, so a reader can tell a
+memory-informed run from a memory-less one rather than taking it on trust:
+
+```
+memory: MEMORY.md (235 lines, <short sha of its last commit>) + functional-and-bond-topology.md, q0-pin-migration.md
+```
+
+A report without that line should be presumed to have run without memory. This
+is the same move as stating which verification you ran at the merge gate: an
+unenforceable instruction turned into a checkable artifact.
+
 ## The canonical answers (rules, not measurements)
 
 - **Convention D** (`z = q³/(q²+1)`) is canonical; **C** (`z = √q/(q+1)`) is

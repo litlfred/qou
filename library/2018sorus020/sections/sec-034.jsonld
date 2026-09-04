@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/2018sorus020/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Second deﬁnition : the Euler isomorphism",
+  "pageStart": 44,
+  "pageEnd": 45,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-034",
+    "library/2018sorus020/blocks/thm-sec-034-01",
+    "library/2018sorus020/blocks/lem-sec-034-02",
+    "library/2018sorus020/blocks/rem-sec-034-03"
+  ],
+  "derivedFrom": "library/2018sorus020/manifest",
+  "sourceDocument": "library/2018sorus020/manifest",
+  "provenance": "ingested"
+}

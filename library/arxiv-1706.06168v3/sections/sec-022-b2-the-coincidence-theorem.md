@@ -7,6 +7,7 @@ section_number: null
 pages: 35-36
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 The Grace-Walsh-Szeg˝ o coincidence theorem has strong ties to Grace’s theorem, and most books and surveys
 on the subject state the two results side by side. Some books (e.g., [RS02]) even go so far as to demonstrate

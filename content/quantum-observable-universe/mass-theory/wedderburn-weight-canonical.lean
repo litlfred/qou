@@ -21,10 +21,43 @@ closed form [wenzl1988]; on the self-conjugate stratum
   y_λ = tilde w_λ                         (Wenzl-bridge, κ_λ = 0)
 
 Off the self-conjugate stratum, `y_λ` and `tilde w_λ` are genuinely
-distinct weight families — the in-repo witness
-`computations/probe-wedderburn-weight-scheme.witness.json`
-records `|y_λ / tilde w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
-n ∈ {2, 3}.
+distinct weight families.
+
+**⚠ CORRECTED 2026-09-02, twice over.**
+
+First, the citation.  This paragraph previously cited
+`computations/probe-wedderburn-weight-scheme.witness.json` for
+`|y_λ / tilde w_λ|` ratios "from ≈0.14 to ≈2.54 at q₀".  That file does
+not exist and `git log --all` shows it never existed in tracked history,
+so it was the only evidence offered for a claim nothing backed.
+
+Second, and more seriously, `y_eq_self_conjugate` below is **FALSE at the
+intended values**.  Measured at every κ = 0 partition with n ≤ 6, in the
+production convention D *and* in the excised convention C, the identity
+holds only at the trivial `λ = (1)`:
+
+    λ          y^D(q₀)      y^C(q₀)      tilde w(q₀)
+    (1)        1.00000000   1.00000000   1.00000000
+    (2,1)      0.24729789   0.28092963   0.66067377
+    (2,2)      0.06115624   0.06947330   0.16604895
+    (3,1,1)    0            0.01676661   0.29466896
+    (3,2,1)    0            0.00731845   0.35863564
+
+`(2,2)` and `(3,2,1)` are exactly the two partitions the cited script
+`bw_wenzl_shadow_equivalence.py` is said to have verified.  The last two
+rows are a **structural** exclusion: convention D is the `𝔰𝔩₂` point of
+the Ocneanu family, so `y_λ = 0` once λ has more than two rows (a cell of
+content -2 kills the numerator —
+`QOU.Information.ocneanu_numerator_vanishes_at_content_neg`), while
+`tilde w_λ > 0` as a ratio of positive quantum integers.  The identity
+asserts `0 = positive`; no parameter reconciles it.
+
+The field is left standing rather than weakened, because restricting it
+to make the class inhabitable is the author's call, not a mechanical fix.
+Note that `beta_mul_h_eq_neg_C` below does **not** read the `y` field, so
+the BW/LP scalings are unaffected.  Measurement:
+`computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`
+(10/10).
 
 The BW/LP scaling ratio — verified symbolically in
 `computations/_deprecated/bw_wenzl_shadow_equivalence.py`

@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1304.2705v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Some auxiliary power series",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1304.2705v1/blocks/prose-sec-006",
+    "library/arxiv-1304.2705v1/blocks/lem-sec-006-01"
+  ],
+  "derivedFrom": "library/arxiv-1304.2705v1/manifest",
+  "sourceDocument": "library/arxiv-1304.2705v1/manifest",
+  "provenance": "ingested"
+}

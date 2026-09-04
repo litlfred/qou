@@ -7,6 +7,7 @@ section_number: null
 pages: 16-20
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1"
 ---
 In this section, we develop a few direct applications of Proposition 5.4 to the behavior of em-
 pirical distribution functions Fn(x) at a ﬁxed point. Such functionals are linear, that is, of the

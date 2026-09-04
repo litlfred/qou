@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-q-ext-deriv-exists",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-q-ext-deriv-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical $q$-exterior derivative",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-ext-deriv"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-q-ext-deriv-exists"
+  ],
+  "tags": [
+    "existence",
+    "q-ext-deriv",
+    "q-deformed"
+  ],
+  "leanRef": "qou:QOU.CategoricalQExtDeriv.exists",
+  "text": "categorical-q-ext-deriv-exists.md",
+  "leanSource": "categorical-q-ext-deriv-exists.lean",
+  "provenance": "authored"
+}

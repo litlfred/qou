@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-gravity-spectral-prefactor",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:gravity-spectral-prefactor",
+  "kind": "proof",
+  "title": "Proof of gravity spectral prefactor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-gravity-spectral-prefactor"
+  ],
+  "text": "gravity-spectral-prefactor-proof.md",
+  "provenance": "authored"
+}

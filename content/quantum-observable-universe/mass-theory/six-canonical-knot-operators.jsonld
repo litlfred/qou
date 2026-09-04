@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-six-canonical-knot-operators",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:six-canonical-knot-operators",
+  "kind": "proposition",
+  "title": "Six canonical knot operators as Reeb-flow trajectories ($S_3$ realisation)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-reeb-flow-on-color-coords",
+    "papers/quantum-observable-universe/blocks/rem-rho-s3-holonomy-exposition",
+    "papers/quantum-observable-universe/blocks/prop-vertex-is-exceptional-divisor"
+  ],
+  "tags": [
+    "knot-operator",
+    "reeb-flow",
+    "s3-galois",
+    "braid-group",
+    "garside-element",
+    "color-sectors"
+  ],
+  "leanRef": "qou:QOU.CategoricalReeb.boundary_perm_realises_S3",
+  "text": "six-canonical-knot-operators.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-021",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Wrapping",
+  "pageStart": 64,
+  "pageEnd": 68,
+  "text": "../sections/sec-021-72-wrapping.md",
+  "derivedFrom": "library/arxiv-1109.3255v2/manifest",
+  "sourceDocument": "library/arxiv-1109.3255v2/manifest",
+  "provenance": "ingested"
+}

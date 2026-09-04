@@ -7,6 +7,7 @@ section_number: 1.2
 pages: 3-8
 source_pdf: 1110.6212v2.pdf
 source_sha256: 1923b6a0bfdc810f
+doc_brief: "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗ — This paper has two main purposes."
 ---
 Let q0, q1, . . . , qn ∈ C× be such that qi = qj whenever si and sj are conjugate in WQ. We call
 the sequence ( qi) a parameter system. By [3, IV, §5, No.5, Prop 5] the product

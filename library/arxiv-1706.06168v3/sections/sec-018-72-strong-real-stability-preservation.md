@@ -7,6 +7,7 @@ section_number: 7.2
 pages: 24-26
 source_pdf: 1706.06168v3.pdf
 source_sha256: ab3383a95f369922
+doc_brief: "A Representation Theoretic Explanation of the Borcea-Brändén Characterization — In 2009, Borcea and Br¨ and´ en characterized all linear oper ators on multivariate polynomials which preserve the"
 ---
 We state and prove our strong real stability preservation charac terization here, and then derive the Borcea-
 Br¨ and´ en characterization as a corollary. The proof here takes a bit more work than in the complex case,

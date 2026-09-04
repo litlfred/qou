@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/afst-2007-6-16-3-665-0/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The ﬁrst",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/afst-2007-6-16-3-665-0/blocks/prose-sec-006",
+    "library/afst-2007-6-16-3-665-0/blocks/rem-sec-006-01",
+    "library/afst-2007-6-16-3-665-0/blocks/cor-sec-006-02",
+    "library/afst-2007-6-16-3-665-0/blocks/cor-sec-006-03",
+    "library/afst-2007-6-16-3-665-0/blocks/def-sec-006-04"
+  ],
+  "derivedFrom": "library/afst-2007-6-16-3-665-0/manifest",
+  "sourceDocument": "library/afst-2007-6-16-3-665-0/manifest",
+  "provenance": "ingested"
+}

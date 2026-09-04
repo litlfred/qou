@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2410.14661v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Poisson summation formula",
+  "pageStart": 15,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-2410.14661v1/blocks/prose-sec-007",
+    "library/arxiv-2410.14661v1/blocks/lem-sec-007-01",
+    "library/arxiv-2410.14661v1/blocks/prop-sec-007-02",
+    "library/arxiv-2410.14661v1/blocks/lem-sec-007-03",
+    "library/arxiv-2410.14661v1/blocks/prop-sec-007-04"
+  ],
+  "derivedFrom": "library/arxiv-2410.14661v1/manifest",
+  "sourceDocument": "library/arxiv-2410.14661v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,15 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ising/blocks/prop-sec-014-03",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 18,
+  "pageEnd": 20,
+  "text": "prop-sec-014-03.md",
+  "derivedFrom": "library/ising/sections/sec-014",
+  "sourceDocument": "library/ising/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-prolonged-periods-fixed-depth",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:prolonged-periods-fixed-depth",
+  "kind": "proposition",
+  "title": "A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-binding-genfun-qdifference",
+    "papers/quantum-observable-universe/blocks/prop-mi-sw-abelianisation"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-prolonged-periods-fixed-depth"
+  ],
+  "leanRef": "qou:QOU.Mass.prolongation_fixed_depth_recurrence",
+  "text": "prolonged-periods-fixed-depth.md",
+  "leanSource": "prolonged-periods-fixed-depth.lean",
+  "provenance": "authored"
+}

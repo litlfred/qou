@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2312.00624v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Classical and quantum A-polynomials",
+  "pageStart": 4,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-2312.00624v1/blocks/prose-sec-002",
+    "library/arxiv-2312.00624v1/blocks/rem-sec-002-01",
+    "library/arxiv-2312.00624v1/blocks/ex-sec-002-02",
+    "library/arxiv-2312.00624v1/blocks/ex-sec-002-03"
+  ],
+  "derivedFrom": "library/arxiv-2312.00624v1/manifest",
+  "sourceDocument": "library/arxiv-2312.00624v1/manifest",
+  "provenance": "ingested"
+}

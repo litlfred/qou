@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:exceptional-divisor",
+  "kind": "definition",
+  "title": "Exceptional divisor at $p$",
+  "tags": [
+    "exceptional-divisor",
+    "blow-up"
+  ],
+  "leanRef": "qou:QOU.ExceptionalDivisor",
+  "text": "exceptional-divisor.md",
+  "leanSource": "exceptional-divisor.lean",
+  "provenance": "authored"
+}

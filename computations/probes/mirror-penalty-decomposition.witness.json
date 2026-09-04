@@ -1,0 +1,129 @@
+{
+  "engine": "python+mpmath(exact at the production floor)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T17:43:52.423017+00:00",
+  "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+  "assertions": [
+    {
+      "name": "residual_witness_is_a_single_run",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "one computedAt/commitSha/scriptHash — both A=3 members regenerated together, so 'not regenerated together' is refuted"
+    },
+    {
+      "name": "decomposition_reproduces_recorded_penalties",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "penalty = experiment - model, to the witness's own 3-decimal rounding"
+    },
+    {
+      "name": "decomposition_matches_deviation_difference",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "the 10A-5 baseline cancels identically — that half of the proposition holds"
+    },
+    {
+      "name": "dominance_flips_between_A3_and_A7",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "A=3 is experiment-dominated (95%), A=7 is model-dominated (77%)"
+    },
+    {
+      "name": "model_mirror_asymmetry_is_sign_backwards_at_both",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "B_pred has the proton-rich member MORE bound; experiment has it LESS (Coulomb). Expected — B_pred carries no EM term — but sized here."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "mirror-penalty-decomposition",
+  "scriptFile": "mirror_penalty_decomposition_probe.py",
+  "scriptHash": "b4aa7b5dc62d",
+  "scriptCommitSha": "303db476d988cf30443ba50358204e8545871e9b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mirror_penalty_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mirror_penalty_decomposition_probe.py"
+  },
+  "description": "Exact decomposition of the mirror proton-excess penalty into an experimental and a model half. Shows the penalty is not one quantity across A: experiment-dominated at A=3, model-dominated at A=7, with the model's asymmetry sign-backwards at both.",
+  "source_witness": "computations/delta-lambda-canonical-residual.witness.json",
+  "source_provenance": {
+    "computedAt": "2026-08-24T17:43:52.248912+00:00",
+    "commitSha": "d587b446c4a907c32b0ce7c8858ef84fd09b0df6",
+    "scriptHash": "a95bac7baf8c",
+    "q0Anchor": "proton"
+  },
+  "identity": "penalty = log_q[B_AME(pr)/B_AME(mir)] - log_q[B_pred(pr)/B_pred(mir)]",
+  "pairs": [
+    {
+      "A": 3,
+      "pair": "3He / T",
+      "proton_rich": "3He",
+      "mirror": "T",
+      "experimental_asymmetry_logq": "-0.9043605056881075141250639330175473045731807804106683845472622107840634",
+      "model_asymmetry_logq": "0.04704672492024809808183332120949055042622316108707443844744683520214165",
+      "penalty_logq": "-0.9514072306083556122068972542270378549994039414977428229947090459862051",
+      "penalty_from_witness_deviations": "-0.951",
+      "recorded_penalty": "-0.951",
+      "experimental_mirror_energy_MeV": "-0.7637548799999999999999999999999999999999999999999999999999999999999999",
+      "dominated_by": "experiment",
+      "dominant_share_pct": "95.05503811546974002543563449119765820766136222243156441812009445783137",
+      "model_sign_matches_experiment": false,
+      "abs_model_over_abs_exp": "0.05202209143847044278268283454586048550930395031870693186661307161303068"
+    },
+    {
+      "A": 7,
+      "pair": "7Be / 7Li",
+      "proton_rich": "7Be",
+      "mirror": "7Li",
+      "experimental_asymmetry_logq": "-0.4101916227052327824809610003639637250352225655014500205654585908516068",
+      "model_asymmetry_logq": "1.358987658817350416774874936784732540462175782734807419770600412492318",
+      "penalty_logq": "-1.769179281522583199255835937148696265497398348236257440336059003343925",
+      "penalty_from_witness_deviations": "-1.769",
+      "recorded_penalty": "-1.770",
+      "experimental_mirror_energy_MeV": "-1.6442398",
+      "dominated_by": "model",
+      "dominant_share_pct": "76.81458137175247192754081786609742513104968697822009312099693442924687",
+      "model_sign_matches_experiment": false,
+      "abs_model_over_abs_exp": "3.313055614970300361022972387688929109263253874254023310464801413626232"
+    }
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "q_parameter.Q, the canonical experimental pin; matches the source witness's q0Anchor",
+  "context": {
+    "bean": "qou-zf9n",
+    "block": "prop:mirror-baseline-cancellation",
+    "scope": "(a) scope-limited: about the canonical B_pred at these two pairs. Does NOT claim no model can get the mirror asymmetry right, and does not bear on the A=3 mirror-split mechanism of docs/audits/2026-07-13-mirror-split-one-third-mechanism-probe.md, which targets the EM-active channel and records the derived Coulomb/strong ratio tanh(ln q_0) ~ 0.10396 (def:coulomb-charge).",
+    "why_no_EM_sign": "B_pred(Z,N) = E_0*(tr_M(W_free) - tr_M(W_atom)) is a pure Markov-trace quantity with no electromagnetic term, so its mirror asymmetry is purely topological. The sign result is expected; the SIZE is the finding.",
+    "strengthens": "the existing 'magnitude is NOT a single derivable number' verdict — the two penalties are not the same physical quantity, so one derivation should not be expected to produce both."
+  }
+}

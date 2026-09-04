@@ -7,6 +7,7 @@ section_number: null
 pages: 28-30
 source_pdf: Download.pdf
 source_sha256: ca9639465b08d34c
+doc_brief: "Concentration of empirical distribution functions with applications to non-i.i.d. models — 11 sections: Introduction; Empirical Poincaré inequalities; Proof of Theorem 1.1"
 ---
 [1] Ball, K. (1988). Logarithmically concave functions and sections of convex sets in Rn. Studia Math.
 88 69–84. MR0932007

@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-photonic-hall",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:photonic-hall",
+  "kind": "remark",
+  "title": "Photonic quantum Hall effect and $q$-deformed braiding",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-fermion-boson-decomposition",
+  "tags": [
+    "quantum-hall",
+    "photon",
+    "observation"
+  ],
+  "text": "photonic-hall.md",
+  "provenance": "authored"
+}

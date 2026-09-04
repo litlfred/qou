@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Semiadequacy 7",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-010",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-010-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

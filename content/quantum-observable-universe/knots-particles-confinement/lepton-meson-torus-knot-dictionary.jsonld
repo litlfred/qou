@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-lepton-meson-torus-knot-dictionary",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:lepton-meson-torus-knot-dictionary",
+  "kind": "proposition",
+  "title": "Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-meson"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "lepton",
+    "meson",
+    "torus-knot",
+    "hecke-algebra",
+    "dictionary"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.lepton_meson_crossing_match",
+  "text": "lepton-meson-torus-knot-dictionary.md",
+  "leanSource": "lepton-meson-torus-knot-dictionary.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2404.19155v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site",
+  "contains": [
+    "library/arxiv-2404.19155v2/sections/sec-000",
+    "library/arxiv-2404.19155v2/sections/sec-001",
+    "library/arxiv-2404.19155v2/sections/sec-002",
+    "library/arxiv-2404.19155v2/sections/sec-003",
+    "library/arxiv-2404.19155v2/sections/sec-004",
+    "library/arxiv-2404.19155v2/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2404.19155v2",
+    "source_file": "2404.19155v2.pdf",
+    "source_sha256": "45b9ed90006536b3c3ed2678f246941eac8deb7ca9ab740a7b67f3c9b54c7458",
+    "pages": 21,
+    "arxiv": {
+      "id": "2404.19155",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "15 May 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

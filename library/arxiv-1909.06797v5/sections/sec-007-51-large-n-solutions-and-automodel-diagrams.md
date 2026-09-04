@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 16-18
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 All possible large N solutions of (5.9) were discussed in [7] and it was observed that (5.9) ad-
 mits two possible solutions. However, here we look at the problem more carefully keeping the

@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 9-11
 source_pdf: Black_Samson_phd2010sp.pdf
 source_sha256: c16799b0bd54ff29
+doc_brief: "REPRESENTATIONS OF HECKE — 19 sections: Acknowledgments; INTRODUCTION 1; SCHUR-WEYL DUALITY AND QUOTIENTS O"
 ---
 The Alexander polynomial has a history dating back to the early days of algebraic topology.
 The original definition ([1]) came from analyzing the group of deck transformations on the infinite

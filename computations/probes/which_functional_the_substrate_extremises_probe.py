@@ -160,7 +160,7 @@ from scipy.optimize import linprog  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from pyhecke.gram import _hm_mp, gram_matrix_mp  # noqa: E402
 from pyhecke.wedderburn import partitions_of, q_dimension  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -174,7 +174,7 @@ NAMES = ["gamma", "s0", "s1", "L+", "L-", "e-"]
 
 
 def substrate():
-    q = mp.mpf(str(Q0))
+    q = q_at(mp.mp.dps)
     h = q - 1 / q
     z = q ** 3 / (q ** 2 + 1)
     gram = np.array([[float(x) for x in row] for row in gram_matrix_mp(30, q=q)])
@@ -302,7 +302,7 @@ def main() -> int:
             tot += w6[i] * float(np.trace(mtx))
         return tot
 
-    tP_num = [float(sp.N(x.subs(qs, sp.Float(str(Q0), 30)), 30)) for x in tP]
+    tP_num = [float(sp.N(x.subs(qs, sp.Float(q_at(mp.mp.dps), 30)), 30)) for x in tP]
     bad, worst, factors = 0, 0.0, {}
     for i, wi in enumerate(NF):
         for j, wj in enumerate(NF):

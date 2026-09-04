@@ -1,0 +1,51 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2211.12836v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION",
+  "contains": [
+    "library/arxiv-2211.12836v2/sections/sec-000",
+    "library/arxiv-2211.12836v2/sections/sec-001",
+    "library/arxiv-2211.12836v2/sections/sec-002",
+    "library/arxiv-2211.12836v2/sections/sec-003",
+    "library/arxiv-2211.12836v2/sections/sec-004",
+    "library/arxiv-2211.12836v2/sections/sec-005",
+    "library/arxiv-2211.12836v2/sections/sec-006",
+    "library/arxiv-2211.12836v2/sections/sec-007",
+    "library/arxiv-2211.12836v2/sections/sec-008",
+    "library/arxiv-2211.12836v2/sections/sec-009",
+    "library/arxiv-2211.12836v2/sections/sec-010",
+    "library/arxiv-2211.12836v2/sections/sec-011",
+    "library/arxiv-2211.12836v2/sections/sec-012",
+    "library/arxiv-2211.12836v2/sections/sec-013",
+    "library/arxiv-2211.12836v2/sections/sec-014",
+    "library/arxiv-2211.12836v2/sections/sec-015",
+    "library/arxiv-2211.12836v2/sections/sec-016",
+    "library/arxiv-2211.12836v2/sections/sec-017",
+    "library/arxiv-2211.12836v2/sections/sec-018",
+    "library/arxiv-2211.12836v2/sections/sec-019",
+    "library/arxiv-2211.12836v2/sections/sec-020",
+    "library/arxiv-2211.12836v2/sections/sec-021",
+    "library/arxiv-2211.12836v2/sections/sec-022",
+    "library/arxiv-2211.12836v2/sections/sec-023"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2211.12836v2",
+    "source_file": "2211.12836v2.pdf",
+    "source_sha256": "4ffbb8b21f8b175d26656de27bd686c6c544330f5a9daf63e6ad631e57e5f362",
+    "pages": 68,
+    "arxiv": {
+      "id": "2211.12836",
+      "version": "2",
+      "primary_class": "math.PR",
+      "stamp_date": "12 May 2023"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

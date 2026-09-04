@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/deligne-mostow-1986/blocks/prose-sec-000",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "P. DELIGNE AND G. D. MOSTOW",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "../sections/sec-000-6-p-deligne-and-g-d-mostow.md",
+  "derivedFrom": "library/deligne-mostow-1986/manifest",
+  "sourceDocument": "library/deligne-mostow-1986/manifest",
+  "provenance": "ingested"
+}

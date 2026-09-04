@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/def-levi-form-defect",
+  "@type": [
+    "folio:Definition",
+    "doco:Section"
+  ],
+  "label": "def:levi-form-defect",
+  "kind": "definition",
+  "title": "Matter as Frobenius failure via the Levi form",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate"
+  ],
+  "tags": [
+    "levi-form",
+    "frobenius-failure",
+    "matter",
+    "defect"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.LeviFormDefect",
+  "text": "levi-form-defect.md",
+  "leanSource": "levi-form-defect.lean",
+  "provenance": "authored"
+}

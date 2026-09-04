@@ -149,6 +149,13 @@ def main() -> int:
     ck = json.loads(CKPT.read_text())
     agg = defaultdict(lambda: defaultdict(lambda: mp.mpf(0)))
     for k, v in ck.items():
+        # A `<A>|<w>|<lam>|partial` key is an IN-FLIGHT ROW CURSOR banked
+        # by the driver's --budget-seconds path, not a completed term: its
+        # value is a dict, and `mp.mpf(dict)` raises. Skip it. This probe
+        # reports only completed partitions, so an in-flight one is simply
+        # not yet part of the sum.
+        if k.endswith("|partial"):
+            continue
         a, w, lam = k.split("|", 2)
         sp = "nn" if a.startswith("n") else "pp"
         agg[(sp, int(a.lstrip("n")))][w] += mp.mpf(v)
@@ -160,10 +167,31 @@ def main() -> int:
     print(f"  z_D = q^3/(q^2+1) = {mp.nstr(z_D, 22)}\n")
 
     params, closed_ok, ratio_ok = {}, [], []
+    # The same guard the sibling logratio probe carries (Copilot review there).
+    # Without it, two failure modes both write or crash silently:
+    #   * ONE species only -> `continue` skips it, then params["nn"] KeyErrors;
+    #   * BOTH species but DIFFERENT A-sets (the driver is resumable, so a bank
+    #     mid-run routinely has pp at A={2,3,4,5} and nn at A={2,3,4}) -> both
+    #     pass `len(As) >= 3` and the probe fits its closed form on unequal
+    #     ranges, reporting a comparison it never made.
+    # Refuse on either, rather than report on a partial checkpoint.
+    A_BY_SP = {sp: sorted(A for s, A in agg if s == sp) for sp in ("pp", "nn")}
+    _missing = [sp for sp in ("pp", "nn") if len(A_BY_SP[sp]) < 3]
+    if _missing:
+        print(f"  checkpoint has fewer than 3 A-points for species {_missing} "
+              f"(have {A_BY_SP}). Run "
+              f"bpp_higher_a_resumable_driver 2 3 4 5 (pp) and again with "
+              f"--neutron (nn) to completion first. REFUSING to report on a "
+              f"partial checkpoint.")
+        return 1
+    if A_BY_SP["pp"] != A_BY_SP["nn"]:
+        print(f"  checkpoint species disagree on the A-set: "
+              f"pp={A_BY_SP['pp']} nn={A_BY_SP['nn']}. The pp-vs-nn "
+              f"comparisons below would be across different A ranges. "
+              f"REFUSING; finish both species first.")
+        return 1
     for sp in ("pp", "nn"):
-        As = sorted(A for s, A in agg if s == sp)
-        if len(As) < 3:
-            continue
+        As = A_BY_SP[sp]
         off = [agg[(sp, A)]["off"] for A in As]
         on = [agg[(sp, A)]["on"] for A in As]
         f = on[0] / off[0]
@@ -360,6 +388,19 @@ def main() -> int:
           "Neither is measured. Computing A=6 falsifies or confirms both.")
 
     payload = {
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin. q0 enters through "
+            "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+            "anchor (1.1099785827513808075...) because this stem is not "
+            "listed under ideal_muon; proton is the standing default for "
+            "compute per the 2026-08-07 owner directive. The stem IS "
+            "declared physical_proton in "
+            "computations/q0_anchor_manifest.json, and that declaration "
+            "cannot stamp this witness: the manifest is read inside "
+            "WitnessBuilder.build(), and this producer hand-rolls its "
+            "witness and never enters build(). Hence the declaration "
+            "here, which is the only route that reaches the file."),
         "schema": "witness/v1",
         "name": "chain-binding-closed-form",
         "description": (
@@ -408,6 +449,15 @@ def main() -> int:
         "checks_total": len(checks),
     }
     out = _COMP / "chain-binding-closed-form.witness.json"
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
+    # this one. Ask for the anchor with the same precedence q_parameter
+    # uses at compute time (env var > manifest stem > proton) rather than
+    # hardcoding a pin this run may not have used.
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
+    payload["q0Anchor"] = _q0a
+    if _q0v:
+        payload["q0Value"] = _q0v
     out.write_text(json.dumps(payload, indent=2) + "\n")
 
     print("\n" + "=" * 78)

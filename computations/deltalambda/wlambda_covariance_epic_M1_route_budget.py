@@ -227,6 +227,8 @@ def main():
 
     ms = (time.monotonic_ns() - t0) // 1_000_000
     (here / "m1-route-budget.witness.json").write_text(json.dumps({
+        "q0Anchor": "independent",
+        "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1>0: does the telescoping route's BUDGET close? Synthesis, no sampling.",
         "probe": "m1_route_budget",
         "bean": ["qou-t6hc", "qou-k5r5"],
         "inputs": {"infl": nstr(infl, 10), "w_same": nstr(w_same, 10),

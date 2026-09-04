@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/conj-shell-space-is-self-square",
+  "@type": [
+    "folio:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:shell-space-is-self-square",
+  "kind": "conjecture",
+  "title": "The shell state space is the self-square of the angular object",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-capacity-self-square",
+    "papers/quantum-observable-universe/blocks/conj-orbital-space-normal-bundle"
+  ],
+  "tags": [
+    "shell-capacity",
+    "self-square",
+    "q-clebsch-gordan",
+    "coproduct",
+    "no-second-su2",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Molecular.ShellSpaceIsSelfSquare",
+  "text": "shell-space-is-self-square.md",
+  "leanSource": "shell-space-is-self-square.lean",
+  "provenance": "authored"
+}

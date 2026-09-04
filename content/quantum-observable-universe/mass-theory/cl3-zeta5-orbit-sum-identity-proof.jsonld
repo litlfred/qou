@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-cl3-zeta5-orbit-sum-identity",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:cl3-zeta5-orbit-sum-identity",
+  "kind": "proof",
+  "title": "Proof of cl3 zeta5 orbit sum identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-cl3-zeta5-orbit-sum-identity"
+  ],
+  "text": "cl3-zeta5-orbit-sum-identity-proof.md",
+  "provenance": "authored"
+}

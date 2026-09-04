@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-31T21:33:14.777561+00:00",
-  "commitSha": "e284e262f79ba2fc079f5a32d70b7c092087cd98",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:49:05.079672+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_beta_decoding_is_exact",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 17,
   "computation": "nucleon_chain_sets_the_transition_probe",
   "scriptFile": "nucleon_chain_sets_the_transition_probe.py",
   "scriptHash": "411a88ab010f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "51429a1445dc1d380381354f7c33ea0a84c1d213",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,8 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -135,5 +137,7 @@
     "NO BETA VALUES ARE PROPOSED, and none should be read out of this. The parametrisation is a re-description that reproduces the existing chains exactly; the box sweep measures what the transition WOULD be at other crossing-branch assignments, in order to establish whether h(q_0) is reachable at all. Which branches the nucleons actually carry is a physical question the chains already answer, and choosing betas to place a transition at q_0 would be exactly the census-fitting this probe series documents elsewhere.",
     "CORRECTION against my own first pass, which located transitions with a single-root bisection over h in [0.02, 3]. That returns garbage where the margin has zero or two roots — it reported h* = 2.0009 for a chain with no root in range at all. Every transition here scans for sign changes on a geometric grid first and bisects only inside a bracketed one. The proton and neutron each have a single crossing, so their values were never affected.",
     "The box sweep is a 6x6x6 grid, so 'spans 0.046 to 0.649' and '15 of 195 below' are grid statistics, not certified extrema of the continuous family. They are sufficient for the claim actually made — that h(q_0) lies strictly between attainable transitions — since specific grid points fall on either side of it."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

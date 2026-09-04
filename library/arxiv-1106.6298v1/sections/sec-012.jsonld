@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1106.6298v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On cyclotomic polynomials",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1106.6298v1/blocks/prose-sec-012",
+    "library/arxiv-1106.6298v1/blocks/ex-sec-012-01",
+    "library/arxiv-1106.6298v1/blocks/thm-sec-012-02",
+    "library/arxiv-1106.6298v1/blocks/ex-sec-012-03"
+  ],
+  "derivedFrom": "library/arxiv-1106.6298v1/manifest",
+  "sourceDocument": "library/arxiv-1106.6298v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-markov-trace-gibbs-free-energy",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:markov-trace-gibbs-free-energy",
+  "kind": "remark",
+  "title": "Binding as a free-energy difference: the Markov trace in the partition-function slot",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-mass-markov",
+  "cites": [
+    "references/jones1987",
+    "references/orellana1998"
+  ],
+  "tags": [
+    "markov-trace",
+    "gibbs-state",
+    "free-energy",
+    "information",
+    "channel-entropy"
+  ],
+  "text": "markov-trace-gibbs-free-energy.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/sigma12-065/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Two sextics",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-001-2-two-sextics.md",
+  "derivedFrom": "library/sigma12-065/manifest",
+  "sourceDocument": "library/sigma12-065/manifest",
+  "provenance": "ingested"
+}

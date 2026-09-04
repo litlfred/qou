@@ -79,11 +79,11 @@ sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
 import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
-from hecke_core import build_nucleon_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 WORDS = [[], [0], [1], [0, 1], [1, 0], [0, 1, 0]]
 H = Q0 - 1 / Q0
 
@@ -124,7 +124,9 @@ def traceless(M):
 
 
 def nf(w):
-    return [mp.mpf(str(x)) for x in build_nucleon_nf(list(w))]
+    # mpf builder: `mp.mpf(str(build_nucleon_nf(...)))` reads a float64 as
+    # exact at this file's dps.
+    return build_nucleon_nf_mp(list(w), mp.mp.dps)
 
 
 def _head_sha() -> str:
@@ -317,7 +319,7 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="mpmath",
-            q0_anchor="proton (experimental pin)", q0_value=mp.nstr(Q0, 30))
+            q0_anchor="proton", q0_value=mp.nstr(Q0, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")
     print(f"\n  witness -> {out_p.relative_to(ROOT)}")

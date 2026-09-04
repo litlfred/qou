@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/ihpmay2025/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A digression on hyperbolic spaces",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "contains": [
+    "library/ihpmay2025/blocks/prose-sec-008",
+    "library/ihpmay2025/blocks/lem-sec-008-01",
+    "library/ihpmay2025/blocks/cor-sec-008-02",
+    "library/ihpmay2025/blocks/rem-sec-008-03",
+    "library/ihpmay2025/blocks/thm-sec-008-04",
+    "library/ihpmay2025/blocks/lem-sec-008-05"
+  ],
+  "derivedFrom": "library/ihpmay2025/manifest",
+  "sourceDocument": "library/ihpmay2025/manifest",
+  "provenance": "ingested"
+}

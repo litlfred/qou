@@ -1,0 +1,35 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-0805.1447v2/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Braid ordering and the geometry of closed braid",
+  "contains": [
+    "library/arxiv-0805.1447v2/sections/sec-000",
+    "library/arxiv-0805.1447v2/sections/sec-001",
+    "library/arxiv-0805.1447v2/sections/sec-002",
+    "library/arxiv-0805.1447v2/sections/sec-003",
+    "library/arxiv-0805.1447v2/sections/sec-004",
+    "library/arxiv-0805.1447v2/sections/sec-005",
+    "library/arxiv-0805.1447v2/sections/sec-006",
+    "library/arxiv-0805.1447v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-0805.1447v2",
+    "source_file": "0805.1447v2.pdf",
+    "source_sha256": "b7ee20b0a7f5f3da02f7c5c82a1b49f8036b4a9abe215c8c7597e3d16c97f4f6",
+    "pages": 21,
+    "arxiv": {
+      "id": "0805.1447",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "22 Oct 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

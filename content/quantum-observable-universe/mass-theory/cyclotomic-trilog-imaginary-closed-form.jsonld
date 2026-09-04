@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-cyclotomic-trilog-imaginary-closed-form",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cyclotomic-trilog-imaginary-closed-form",
+  "kind": "proposition",
+  "title": "Trilogarithm imaginary part at $\\zeta_n$: closed form $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-bring-trilog-imaginary-tate-rational"
+  ],
+  "cites": [
+    "references/bloch2000",
+    "references/zagier1986"
+  ],
+  "tags": [
+    "kummer-reflection",
+    "trilogarithm",
+    "cyclotomic",
+    "tate-rational",
+    "closed-form",
+    "depth-3",
+    "graded-mikusinski",
+    "theorem-level"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds",
+  "text": "cyclotomic-trilog-imaginary-closed-form.md",
+  "provenance": "authored"
+}

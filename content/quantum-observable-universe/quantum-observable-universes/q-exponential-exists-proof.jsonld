@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-exponential-exists",
+  "@type": [
+    "folio:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-exponential-exists",
+  "kind": "proof",
+  "title": "Proof of existence of the $q$-exponential grouplike",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-exponential-exists"
+  ],
+  "text": "q-exponential-exists-proof.md",
+  "provenance": "authored"
+}

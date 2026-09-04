@@ -1,0 +1,30 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-frakD-energy-decomposition",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:frakD-energy-decomposition",
+  "kind": "proposition",
+  "title": "Bar-parity energy decomposition: retained ($\\cosh$) $\\oplus$ emitted ($\\sinh$, the $\\mathfrak{D}$ channel)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-deuteron-fusion-frame"
+  ],
+  "cites": [
+    "references/neumann-zagier1985",
+    "references/jones1987"
+  ],
+  "tags": [
+    "bar-parity",
+    "decay-width",
+    "complex-volume",
+    "binding",
+    "retained-emitted",
+    "involution-projection"
+  ],
+  "leanRef": "qou:QOU.MassTheory.FrakD.even_add_odd",
+  "text": "frakD-energy-decomposition.md",
+  "leanSource": "frakD-energy-decomposition.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-symmetric-monoidal-category",
+  "@type": [
+    "folio:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-symmetric-monoidal-category",
+  "kind": "remark",
+  "title": "Symmetric monoidal category",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-glossary-braided-monoidal-category"
+  ],
+  "tags": [
+    "glossary",
+    "category-theory",
+    "monoidal"
+  ],
+  "defines": [
+    "symmetric-monoidal-category"
+  ],
+  "text": "glossary-symmetric-monoidal-category.md",
+  "provenance": "authored"
+}

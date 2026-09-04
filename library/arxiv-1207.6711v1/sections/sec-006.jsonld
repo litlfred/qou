@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Face pairing permutations",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-006",
+    "library/arxiv-1207.6711v1/blocks/thm-sec-006-01"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

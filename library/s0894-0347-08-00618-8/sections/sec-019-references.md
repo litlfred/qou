@@ -7,6 +7,7 @@ section_number: null
 pages: 45-47
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY — 20 sections: Introduction; A plethora of negative dependence ; Negative dependence concepts"
 ---
 [1] M. Aissen, I. J. Schoenberg, A. Whitney, On the generating functions of totally positive
 sequences I,J .A n a l y s eM a t h .2 (1952), 93–103. MR0053174 (14:732d)

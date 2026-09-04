@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1404.0331v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Plan of the paper",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-1404.0331v1/blocks/prose-sec-005",
+    "library/arxiv-1404.0331v1/blocks/thm-sec-005-01"
+  ],
+  "derivedFrom": "library/arxiv-1404.0331v1/manifest",
+  "sourceDocument": "library/arxiv-1404.0331v1/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Morton-Williams-Franks bound",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-034",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-034-01",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-034-02",
+    "library/arxiv-math-0606435v2/blocks/cor-sec-034-03"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2203.17029v1/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Residues",
+  "pageStart": 42,
+  "pageEnd": 44,
+  "contains": [
+    "library/arxiv-2203.17029v1/blocks/prose-sec-022",
+    "library/arxiv-2203.17029v1/blocks/lem-sec-022-01",
+    "library/arxiv-2203.17029v1/blocks/lem-sec-022-02"
+  ],
+  "derivedFrom": "library/arxiv-2203.17029v1/manifest",
+  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "provenance": "ingested"
+}

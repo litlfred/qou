@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/thm-geometry-of-incompleteness",
+  "@type": [
+    "folio:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:geometry-of-incompleteness",
+  "kind": "theorem",
+  "title": "The geometry of incompleteness: a Turing-complete QOU has a nonempty horizon",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-p-vs-np-boundary"
+  ],
+  "tags": [
+    "incompleteness",
+    "physical-intractability",
+    "jet-horizon",
+    "godel",
+    "turing-complete",
+    "degree-zero",
+    "information-theory"
+  ],
+  "leanRef": "qou:QOU.Information.geometry_of_incompleteness",
+  "text": "geometry-of-incompleteness.md",
+  "provenance": "authored"
+}

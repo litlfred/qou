@@ -1,0 +1,29 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-he4-channel-active-set",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:he4-channel-active-set",
+  "kind": "proposition",
+  "title": "$^4\\mathrm{He}$ operator-selection LP: primal $\\mathrm{T} \\oplus p$, active set $\\{\\mathrm{D} \\oplus \\mathrm{D},\\,{}^3\\mathrm{He} \\oplus n\\}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp"
+  ],
+  "tags": [
+    "he4",
+    "doubly-magic",
+    "operator-selection-lp",
+    "shadow-price",
+    "active-set",
+    "compositional-channels",
+    "f1-fingerprint",
+    "deuteron-pairing",
+    "verified-empirically"
+  ],
+  "leanRef": "qou:QOU.BraidKnot.He4ChannelActiveSet.HasHe4ChannelActiveSet",
+  "text": "he4-channel-active-set.md",
+  "leanSource": "he4-channel-active-set.lean",
+  "provenance": "authored"
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T11:05:15.449625+00:00",
-  "commitSha": "2db1f77d763292ecc40e8f59fce358f64f690b49",
+  "computedAt": "2026-09-03T05:00:00.858144+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "delta_beta_is_scalar_h_over_2",
@@ -148,7 +148,7 @@
   "computation": "qbeta-mbeta-v21-spectrum-under-d",
   "scriptFile": "qbeta_mbeta_v21_spectrum_under_d.py",
   "scriptHash": "ff705de8ff65",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "7aaa54a59acc1cbcd253c4f287e390e0165c2ddf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -163,7 +163,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -315,5 +315,7 @@
       "ladder_alpha_C_at_q0": "-0.0523361202682288387988645268899"
     },
     "verdict": "DERIVED. Delta_beta = (h/2)I has spectrum {h/2, h/2}: a repeated real eigenvalue, no eigenphase. All four named transfer matrices fail det = 1. The spectrum claim of prop:q-beta-cos-resummation is not a property of any matrix the corpus defines. Scope-(b) for the four named matrices, invariant = determinant."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

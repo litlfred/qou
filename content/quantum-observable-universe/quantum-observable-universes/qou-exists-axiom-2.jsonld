@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/lem-qou-exists-axiom-2",
+  "@type": [
+    "folio:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:qou-exists-axiom-2",
+  "kind": "lemma",
+  "title": "Axiom 2 — observability via Peter--Weyl decomposition",
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-qou-exists-axiom-2"
+  ],
+  "cites": [
+    "references/woronowicz1988"
+  ],
+  "tags": [
+    "peter-weyl",
+    "observability",
+    "adjoint-action",
+    "compact-quantum-group"
+  ],
+  "leanRef": "qou:QOU.QuantumObservableUniverse.exists_axiom_2_observability",
+  "text": "qou-exists-axiom-2.md",
+  "leanSource": "qou-exists-axiom-2.lean",
+  "provenance": "authored"
+}

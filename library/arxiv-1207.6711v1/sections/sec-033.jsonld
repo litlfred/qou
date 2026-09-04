@@ -1,0 +1,21 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1207.6711v1/sections/sec-033",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "From shape assignments to cocycles",
+  "pageStart": 39,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-1207.6711v1/blocks/prose-sec-033",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-033-01",
+    "library/arxiv-1207.6711v1/blocks/lem-sec-033-02",
+    "library/arxiv-1207.6711v1/blocks/prop-sec-033-03",
+    "library/arxiv-1207.6711v1/blocks/thm-sec-033-04",
+    "library/arxiv-1207.6711v1/blocks/rem-sec-033-05"
+  ],
+  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
+  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "provenance": "ingested"
+}

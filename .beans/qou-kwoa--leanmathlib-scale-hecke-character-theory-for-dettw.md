@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-02T22:29:28Z
+updated_at: 2026-09-03T22:30:29Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -178,3 +178,275 @@ shell expand backticks as command substitution. Backticked identifiers were
 executed ("proof_wanted: command not found") and their text was DELETED from
 the bean, silently truncating the rest of the append. Pass long bodies through
 a file, or single-quote the argument.
+
+## 2026-09-03 — the CARRIER item is now CLOSED (qou-img9 / PR follow-on)
+
+One of this bean's three remaining items is done. QOU/SchurWeyl/HeckeCarrierEquiv.lean:
+
+  isSemisimpleRing_iwahoriHecke : 1 < Q -> IsSemisimpleRing (QOU.Hecke.IwahoriHecke R Q n)
+
+at EVERY rank, sorry-free. That is the T_w / twGram carrier, which this bean recorded as
+NOT reached by HeckeSemisimpleGeneral.
+
+Mechanism: the two RingQuot relations differ in exactly one clause (the quadratic); braid
+and far-commutation are verbatim identical on the same FreeAlgebra. A generator rescaling
+sigma |-> c . T moves the quadratic under c(Q-1) = q - qi and c^2 Q = q qi, satisfied
+identically by Q = q^2, c = q^-1 at qi = q^-1. Upgraded to an AlgEquiv of carriers, which
+is what transports IsSemisimpleRing.
+
+### Remaining items on this bean, now TWO not three
+
+* GENERAL FIELD. Everything is over R, inherited from heckeWedderburn (SW-7), which is an
+  R-only construction. carrierEquiv itself is over a CommRing and skeinIwahoriEquiv over
+  any Field, so the restriction is upstream, not here.
+* det(twGram) AT RANK >= 2 ITSELF. Still Mathlib-scale, still open, and still worth doing
+  for the DETERMINANT VALUE — but no longer for the semisimplicity conclusion, which now
+  has two independent routes to it. tr(L_{T_u}) is not combinatorial (refuted with an S_5
+  witness, #6417); the closed form is Geck-Pfeiffer.
+
+### Note for whoever reads twGram next
+
+isSemisimpleRing_rank_one (#6134) proves semisimplicity of IwahoriHecke at n = 1 over ANY
+field with 1 + q != 0, via the determinant. isSemisimpleRing_iwahoriHecke proves it at
+EVERY n over R with Q > 1, via Wedderburn. Neither subsumes the other: one is general in
+the field, the other general in the rank.
+
+
+## 2026-09-03 — the "blocked upstream" item is characterised, and it is not an accident
+
+This bean's general-field item read *"blocked upstream — `heckeWedderburn` is
+`ℝ`-only"*.  True, and it says nothing about **why**, so it reads as an accident
+of statement that a `variable {K : Type*} [Field K]` would fix.  It is not.
+
+Measured on `heckeWedderburn`'s **103-module in-repo import cone**: `Real.sqrt`
+does not occur in it at all (so the seminormal form needs no square roots), and
+**exactly two** modules use anything `Real.*` in code — both only the `Real.log`
+family, both in the single idiom
+`zpow_ne_one : q ≠ 0 → q² ≠ 1 → ∀ m ≠ 0, qᵐ ≠ 1`.
+
+**Over `ℝ` that two-line hypothesis IS "q is not a root of unity"** (its own
+docstring says it is sharp: `qᵐ = 1 ⇒ |q| = 1 ⇒ q = ±1 ⇒ q² = 1`).  Over a
+general field it is not — a primitive cube root of unity satisfies both.
+
+So the general-field statement needs the **classical criterion carried as a
+hypothesis**, which is what `QOU/SchurWeyl/GenericParameter.lean` now supplies
+(sorry-free): `NotRootOfUnity`, `pow_left_injective`, `zpow_ne_one`,
+`poly_eq_zero_of_eval_pow`, and `ofSqNeOne` — the bridge proving the `ℝ` form
+implies it, so generalising the cone strengthens no hypothesis.
+
+**Remaining cost, measured: 13 files, 248 occurrences of `ℝ`.**  A tranche, not
+an idle-pass step.  Tracked with the rest of the general-field work on
+`qou-j377`, whose own headline ("`q` generic, not a root of unity") turns out to
+name exactly this; that bean's blocker list was stale — it cited SW-5 and SW-3,
+both of which have landed.
+
+
+## 2026-09-03 — NON-VANISHING IS DONE. The remaining scope is the VALUE only.
+
+Landed on claude/p-neq-np-gaps-n8dxxl, PR #6517 (commits c6986748f3, 6154eac0e7,
+3b39d577a9). All sorry-free, [propext, Classical.choice, Quot.sound].
+
+    twGram_det_ne_zero {K} [Field K] [CharZero K] (q : K)
+        (hq0 : q != 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : N) :
+      (twGram K (q ^ 2) n).det != 0
+
+at EVERY n. No determinant is evaluated anywhere in the proof.
+
+### The bean's framing was right and its route was not the only one
+
+This bean says the deliverable is det != 0 for n >= 2 and lists what is supplied so it
+is not re-derived: the basis, the multiplication table, the generator trace, the
+rank-one case, the target VALUES at n=1,2,3, and the symbolic characters from qou-avt2.
+Every one of those is aimed at COMPUTING the determinant, because Geck-Pfeiffer 7.2.6
+is how one normally gets non-vanishing.
+
+None of it was needed. Semisimplicity is proved independently via heckeWedderburn
+(#6437, #6486, and Part 1 of #6517), which owes the Gram determinant nothing, so the
+implication can be run BACKWARDS: semisimple => regular trace form nondegenerate =>
+det != 0 in every basis. The missing piece was the converse of the Gram criterion,
+which is three short lemmas.
+
+### What was actually written
+
+QOU/MathlibExt/RegTraceGramNondegenerate.lean
+
+  regTraceForm_mul_assoc   B(xy,z) = B(x,yz). This is what makes the form's radical a
+                           TWO-SIDED ideal rather than merely a subspace. Left-closure
+                           needs it TOGETHER WITH regTraceForm_comm, because the form
+                           is associative only in that one shape.
+  regTraceRadical          the radical as a TwoSidedIdeal.
+  ..._of_isSimpleRing      the key step: on a simple ring the radical is bot or top,
+                           and top would put 1 in it, giving B(1,1) = 0.
+  regTraceForm_one_one     B(1,1) = finrank K A, since L_1 = id.
+  ..._matrix               the block. Matrix i i K is simple for nonempty i. EMPTY i is
+                           handled separately: it is the zero ring and is NOT simple
+                           (simplicity requires Nontrivial), but its form is
+                           nondegenerate because 0 is its only element.
+  regTraceForm_pi / _pi    reassembly over a finite product. A product of matrix
+                           algebras is NOT simple, so block verdicts are SUMMED, not
+                           transported.
+  ..._algEquiv / _congr    transport along an AlgEquiv.
+
+QOU/MathlibExt/TracePi.lean — a pure Mathlib gap, no algebra structure in it.
+
+  trace_piDiag             trace (sum_i f_i) = sum_i trace f_i. Mathlib has ONLY the
+                           binary case (LinearMap.trace_prodMap' for M x N).
+
+QOU/Hecke/TwGramDetNonzero.lean — composes skeinIwahoriEquiv with heckeWedderburn.
+
+### Cross-checked against the one rank computed by hand
+
+twGram_det_ne_zero_rank_one_agrees. twGram_det_rank_one evaluates the four
+Markov-trace entries directly and gives det = (1+Q)^2; at Q = q^2 its non-vanishing is
+q^4 != 1, which is exactly what NotRootOfUnity q supplies. Same conclusion, same
+hypothesis, two entirely different routes. Kept as a regression.
+
+### The characteristic hypothesis is load-bearing here, not inherited noise
+
+On Matrix (Fin d) (Fin d) K the regular trace is d * the ordinary matrix trace (left
+multiplication acts on d copies of the column space), so the form degenerates EXACTLY
+when d = 0 in K. At char p | d_lambda the Gram determinant of a genuinely semisimple
+algebra really does vanish. The [CharZero K] carried down from #6486 is spent here.
+
+### STILL OPEN — do not close this bean on the above
+
+1. THE VALUE. det(Gram) = prod_lambda (Schur_lambda)^(f^lambda) is untouched, and it
+   is still the book-length development this bean was split out to carry. Everything
+   the bean lists as supplied (qou-avt2's symbolic characters especially) is still the
+   right material for it. A consumer needing the Schur-element product gets nothing
+   from #6517.
+
+2. THE SQUARE ROOT. The statement is at Q = q^2, the same caveat as
+   isSemisimpleRing_iwahoriHecke_sq (qou-j377) and for the same reason:
+   skeinIwahoriEquiv relates the skein algebra at q to the Iwahori carrier at q^2, and
+   a general field need not contain a root. Removing it needs BASE CHANGE of
+   IwahoriHecke along a field extension. Note the hypothesis would survive that move
+   for free -- NotRootOfUnity Q => NotRootOfUnity q when q^2 = Q, since q^m = 1
+   implies Q^m = 1 -- so the missing piece is only the algebra's scalar extension.
+   Over R with Q > 0, or any field where Q is a square, twGram_det_ne_zero_of_sq
+   already gives the statement at Q.
+
+Build note for whoever picks this up: Mathlib.RingTheory.SimpleRing.Matrix and two of
+its deps are NOT in the lake-cache/qou-v4-24-0 restore. Build them lean-direct INTO the
+mathlib build tree (7 s for all three). A scratch LEAN_PATH directory does NOT work --
+Lean commits to the first path root containing Mathlib/, so a partial scratch tree
+silently shadows the entire real one.
+
+
+## 2026-09-03 21:58 — item 3 (the square root) PRICED. The ideal-quotient route is CLOSED.
+
+Measured against Mathlib at lake-cache/qou-v4-24-0, not estimated. Recording because
+"needs base change of IwahoriHecke" is not actionable on its own, and the obvious way to
+do it does not work.
+
+### What exists
+
+  LinearMap.trace_baseChange              Mathlib/LinearAlgebra/Trace.lean:336
+  RingQuot.ringQuotEquivIdealQuotient     Mathlib/Algebra/RingQuot.lean:505
+  quotIdealMapEquivTensorQuot             Mathlib/RingTheory/TensorProduct/Quotient.lean:42
+
+That reads like a complete chain: IwahoriHecke is a RingQuot, turn it into an ideal
+quotient, base-change the ideal quotient, base-change the trace. It is not.
+
+### Why it is closed
+
+ringQuotEquivIdealQuotient sits inside `section CommRing` with `variable [CommRing B]`
+(RingQuot.lean:470). IwahoriHecke K Q n is RingQuot (HeckeRel K q n) on
+FreeAlgebra K (Fin n), which is NONCOMMUTATIVE for n >= 2 -- and n >= 2 is the entire
+content of this bean. So the bridge does not apply, and neither does
+quotIdealMapEquivTensorQuot downstream of it: Mathlib's `Ideal B = Submodule B B` is a
+LEFT ideal, and the whole ideal-quotient machinery is commutative-only here.
+
+Nor is there a free-algebra base change to start from. Searched: every file mentioning
+FreeAlgebra intersected with every file mentioning TensorProduct or baseChange gives one
+hit, Mathlib/LinearAlgebra/TensorAlgebra/Basic.lean, and that is FreeAlgebra being USED to
+define TensorAlgebra -- not a scalar-extension lemma. There is no
+`L (x)_K FreeAlgebra K X = FreeAlgebra L X` in Mathlib.
+
+### The route that IS open, and it is cheaper than it looks
+
+Do the base change on RingQuot directly via the UNIVERSAL PROPERTY, never touching ideals.
+The corpus already has both halves of that property for this algebra:
+
+  QOU.SchurWeyl.iwahoriLift        HeckeCarrierEquiv.lean:104  -- generators -> AlgHom out
+  QOU.SchurWeyl.iwahori_hom_ext    HeckeCarrierEquiv.lean:130  -- two AlgHoms agreeing on
+                                                                  generators are equal
+
+They are the same tools carrierEquiv / skeinIwahoriEquiv are built from, so the pattern is
+already worked in this file. Build AlgHoms both ways between L (x)_K IwahoriHecke K Q n and
+IwahoriHecke L Q n and kill the composites with iwahori_hom_ext.
+
+Four pieces, in dependency order:
+
+  1. L (x)_K H_K as an L-algebra whose `1 (x) sigma_i` satisfy HeckeRel L Q n. Needs
+     Algebra.TensorProduct.lift for the map OUT of the tensor.
+  2. The two AlgHoms and the round trips (iwahori_hom_ext both ways).
+  3. Basis compatibility: basisTwOfField L Q n corresponds to 1 (x) basisTwOfField K Q n.
+     Probably the fiddliest piece -- Module.Basis.baseChange exists but tying it to the
+     T_w indexing is work.
+  4. Gram compatibility: twGram L Q n = (twGram K Q n).map (algebraMap K L), then
+     det commutes with a ring hom and algebraMap of a field is injective.
+
+The hypothesis needs nothing: NotRootOfUnity Q => NotRootOfUnity q when q^2 = Q, since
+q^m = 1 forces Q^m = 1. So this buys the statement at a general Iwahori parameter Q, over
+any characteristic-zero field, with no square root assumed.
+
+### Recommendation (my judgement, not a finding)
+
+LOW priority relative to the value (item 1). It never bites in the corpus's own use: the
+substrate q0 ~ 1.11 is real and positive, so a square root always exists, and over any
+algebraically closed field every Q is a square. It is a mathematical tidying of a
+statement that is already sharp where the framework stands. Worth doing if someone wants
+the clean general-field theorem; not worth pre-empting the Schur-element work for.
+
+
+## 2026-09-03 22:20 — RE-VERIFIED against a purged tree, and two harness traps
+
+Ran an adversarial re-check of the whole PR (nothing had changed on it: no reviews, no
+comments, no check runs, zero drift across 137 main commits).  Everything holds, and the
+verification is now stronger than it was -- but only because a false-green mechanism turned
+up in the process.
+
+RESULT: all six touched modules exit 0, twelve declarations
+[propext, Classical.choice, Quot.sound], against a tree with the stale dependency oleans
+DELETED and rebuilt from source.  Trust that pass, not the earlier file-by-file one.
+
+### Trap 1 — LEAN_PATH shadowing applies to QOU/, not just Mathlib/
+
+Lean commits to the FIRST LEAN_PATH root containing the module's top-level directory and
+does NOT fall through.  So /tmp/qoubuild + qb.sh is sound only while the ENTIRE cone lives
+in the scratch dir.  Reproduced deliberately: after emptying it, five of six modules failed
+naming dependencies that were sitting in .lake/build the whole time.
+
+### Trap 2 — the restored olean cache goes stale, and "skip if present" then FALSE-GREENS
+
+lake-cache/qou-<toolchain> is a snapshot.  A module whose source changed since has an olean
+that is present, loadable and WRONG.  Proved by CONTENT, not timestamps:
+
+    strings .lake/build/lib/lean/QOU/SchurWeyl/HeckeWedderburnGeneral.olean \
+      | grep -c NotRootOfUnity        ->  0
+
+while the source defines heckeWedderburn with exactly that hypothesis.  The cache still held
+the pre-#6486 R-only signature, and a builder that skipped on existence typechecked new code
+against it, reporting the new code's own hypotheses as unknown identifiers.
+
+### CAVEAT ON MY OWN MEASUREMENT — do not quote "21 stale oleans"
+
+A first pass counted 21 by comparing mtimes.  `git checkout` sets source mtimes to checkout
+time, so an mtime comparison over a fresh clone flags files whose content never changed.
+Established BY CONTENT: exactly one file, HeckeWedderburnGeneral.  The rest of the group is
+consistent with the general-field tranche landing after the snapshot but was not verified
+one by one.
+
+That same unsoundness killed a helper script I started writing to automate this: an
+mtime-driven dependency walker treats every Mathlib source as stale and walks the whole
+import graph.  Its own --selftest caught a SECOND bug first (deciding staleness BEFORE
+recursing, so a stale grandchild is invisible -- the exact trap the script existed to
+prevent).  Script DROPPED rather than shipped half-working; it is build tooling, not this
+bean's work.  Anyone who wants it must not key on mtime.
+
+### The rule that survives all of the above
+
+After restoring the olean cache, a lean-direct verification is only as current as the
+dependency oleans it loads.  Rebuild the cone from source before trusting a green on any
+module whose dependencies this branch or a recent merge touched.

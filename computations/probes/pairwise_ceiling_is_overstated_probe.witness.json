@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-01T04:29:44.047907+00:00",
-  "commitSha": "c02a72d83f8175edf1a3cc915a952c48b64904d7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T04:49:08.407282+00:00",
+  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
   "assertions": [
     {
       "name": "A1_bond_constants_agree_two_routes",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "pairwise_ceiling_is_overstated_probe",
   "scriptFile": "pairwise_ceiling_is_overstated_probe.py",
   "scriptHash": "184604bfb500",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "64e55a8a01a4883cef45edabb0ab3267b1514dad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,7 +62,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -121,5 +124,7 @@
     "TWO CONVENTIONS ARE MIXED HERE AND THAT IS NOT YET RESOLVED. alpha is the sibling probe's normalisation taken as-is, while the L values are this arc's Markov traces WITHOUT their -(e/2) log(1-h) charge term. The -log(z+d) cores agree to 1e-13, but the charge term is not cross-checked and is the one real convention difference between the two arcs. No number here is quotable as a prediction until that is reconciled; what survives the caveat is the DIRECTION of the correction, since lowering a ceiling can only move isotopes from inside it to above it.",
     "THE SATURATION FACTOR IS MEASURED AT A = 3 ONLY, for a single far-bond configuration per nucleus. The A=3 numbers in A3 use the directly measured all-pairs traces and so do not depend on it, but any extension to A >= 4 would be extrapolating a factor from two data points. The 4He and 6Li figures are deliberately not carried here for that reason.",
     "This CHANGES a sibling's published conclusion rather than confirming it, on a branch that arc has not seen. It is offered as a flag for qou-brng to check, not as a settled overturn — the convention mixing above is exactly the kind of thing that could account for a 5-10% shift, which is the size of the effect that moves 3H and 3He across the line."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

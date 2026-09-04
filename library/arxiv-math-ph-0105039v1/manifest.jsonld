@@ -1,0 +1,45 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-ph-0105039v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
+  "contains": [
+    "library/arxiv-math-ph-0105039v1/sections/sec-000",
+    "library/arxiv-math-ph-0105039v1/sections/sec-001",
+    "library/arxiv-math-ph-0105039v1/sections/sec-002",
+    "library/arxiv-math-ph-0105039v1/sections/sec-003",
+    "library/arxiv-math-ph-0105039v1/sections/sec-004",
+    "library/arxiv-math-ph-0105039v1/sections/sec-005",
+    "library/arxiv-math-ph-0105039v1/sections/sec-006",
+    "library/arxiv-math-ph-0105039v1/sections/sec-007",
+    "library/arxiv-math-ph-0105039v1/sections/sec-008",
+    "library/arxiv-math-ph-0105039v1/sections/sec-009",
+    "library/arxiv-math-ph-0105039v1/sections/sec-010",
+    "library/arxiv-math-ph-0105039v1/sections/sec-011",
+    "library/arxiv-math-ph-0105039v1/sections/sec-012",
+    "library/arxiv-math-ph-0105039v1/sections/sec-013",
+    "library/arxiv-math-ph-0105039v1/sections/sec-014",
+    "library/arxiv-math-ph-0105039v1/sections/sec-015",
+    "library/arxiv-math-ph-0105039v1/sections/sec-016",
+    "library/arxiv-math-ph-0105039v1/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-math-ph-0105039v1",
+    "source_file": "0105039v1.pdf",
+    "source_sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
+    "pages": 31,
+    "arxiv": {
+      "id": "math-ph/0105039",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "28 May 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

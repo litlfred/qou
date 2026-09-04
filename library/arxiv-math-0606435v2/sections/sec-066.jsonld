@@ -1,0 +1,17 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-math-0606435v2/sections/sec-066",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mahler measures 59",
+  "pageStart": 59,
+  "pageEnd": 60,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-066",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-066-01"
+  ],
+  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
+  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "provenance": "ingested"
+}

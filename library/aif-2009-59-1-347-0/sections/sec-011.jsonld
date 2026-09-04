@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The divergent q-Euler series",
+  "pageStart": 29,
+  "pageEnd": 31,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-011",
+    "library/aif-2009-59-1-347-0/blocks/thm-sec-011-01",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-011-02",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-011-03"
+  ],
+  "derivedFrom": "library/aif-2009-59-1-347-0/manifest",
+  "sourceDocument": "library/aif-2009-59-1-347-0/manifest",
+  "provenance": "ingested"
+}

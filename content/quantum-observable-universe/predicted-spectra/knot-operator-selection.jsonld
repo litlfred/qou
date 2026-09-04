@@ -1,0 +1,27 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "papers/quantum-observable-universe/blocks/prop-knot-operator-selection",
+  "@type": [
+    "folio:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:knot-operator-selection",
+  "kind": "proposition",
+  "title": "Knot operator selection via Frobenius dual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-rj-canonical-inner-product"
+  ],
+  "tags": [
+    "knot-operator",
+    "pair-production",
+    "frobenius-dual",
+    "operator-selection",
+    "hecke-algebra",
+    "categorical-action",
+    "rigid-duality",
+    "multi-channel"
+  ],
+  "leanRef": "qou:QOU.Archimedean.knot_operator_selection",
+  "text": "knot-operator-selection.md",
+  "provenance": "authored"
+}

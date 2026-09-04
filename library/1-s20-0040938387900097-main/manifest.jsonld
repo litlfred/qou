@@ -1,0 +1,23 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/1-s20-0040938387900097-main/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "State models and the Jones polynomial",
+  "contains": [
+    "library/1-s20-0040938387900097-main/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "1-s20-0040938387900097-main",
+    "source_file": "1-s2.0-0040938387900097-main.pdf",
+    "source_sha256": "dae76f3434834382d426c0bfd0b0e4f78255a837e2bf3193888a2ab054701a2e",
+    "pages": 13,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

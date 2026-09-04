@@ -1,0 +1,41 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/agt-v7-n2-p13-s/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "Quantum hyperbolic geometry",
+  "contains": [
+    "library/agt-v7-n2-p13-s/sections/sec-000",
+    "library/agt-v7-n2-p13-s/sections/sec-001",
+    "library/agt-v7-n2-p13-s/sections/sec-002",
+    "library/agt-v7-n2-p13-s/sections/sec-003",
+    "library/agt-v7-n2-p13-s/sections/sec-004",
+    "library/agt-v7-n2-p13-s/sections/sec-005",
+    "library/agt-v7-n2-p13-s/sections/sec-006",
+    "library/agt-v7-n2-p13-s/sections/sec-007",
+    "library/agt-v7-n2-p13-s/sections/sec-008",
+    "library/agt-v7-n2-p13-s/sections/sec-009",
+    "library/agt-v7-n2-p13-s/sections/sec-010",
+    "library/agt-v7-n2-p13-s/sections/sec-011",
+    "library/agt-v7-n2-p13-s/sections/sec-012",
+    "library/agt-v7-n2-p13-s/sections/sec-013",
+    "library/agt-v7-n2-p13-s/sections/sec-014",
+    "library/agt-v7-n2-p13-s/sections/sec-015",
+    "library/agt-v7-n2-p13-s/sections/sec-016",
+    "library/agt-v7-n2-p13-s/sections/sec-017",
+    "library/agt-v7-n2-p13-s/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "agt-v7-n2-p13-s",
+    "source_file": "agt-v7-n2-p13-s.pdf",
+    "source_sha256": "affd571adbaac3fcbabcbfd349ad8731638f75bd9f5c29e4f49d8162d191512f",
+    "pages": 73,
+    "arxiv": null,
+    "doi": "10.2140/agt.2007.7.845",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

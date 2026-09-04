@@ -1,0 +1,20 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-1712.04887v3/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Chern Classes for algebraic K-theory",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-1712.04887v3/blocks/prose-sec-008",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-008-01",
+    "library/arxiv-1712.04887v3/blocks/thm-sec-008-02",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-008-03",
+    "library/arxiv-1712.04887v3/blocks/lem-sec-008-04"
+  ],
+  "derivedFrom": "library/arxiv-1712.04887v3/manifest",
+  "sourceDocument": "library/arxiv-1712.04887v3/manifest",
+  "provenance": "ingested"
+}

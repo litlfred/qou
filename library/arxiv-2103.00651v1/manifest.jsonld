@@ -1,0 +1,31 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-2103.00651v1/manifest",
+  "@type": [
+    "folio:SourceDocument"
+  ],
+  "title": "On Concentration Inequalities for Vector-Valued Lipschit z Functions Dimitrios Katselis katselis@illinois.edu",
+  "contains": [
+    "library/arxiv-2103.00651v1/sections/sec-000",
+    "library/arxiv-2103.00651v1/sections/sec-001",
+    "library/arxiv-2103.00651v1/sections/sec-002",
+    "library/arxiv-2103.00651v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2103.00651v1",
+    "source_file": "2103.00651v1.pdf",
+    "source_sha256": "c5505d3e4891168ebe4b1af35e678043473268ac95640eb4df131a6c2f13b40d",
+    "pages": 9,
+    "arxiv": {
+      "id": "2103.00651",
+      "version": "1",
+      "primary_class": "math.PR",
+      "stamp_date": "28 Feb 2021"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

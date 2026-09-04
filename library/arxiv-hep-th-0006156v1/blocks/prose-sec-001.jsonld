@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-001",
+  "@type": [
+    "folio:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-001-introduction.md",
+  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
+  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "provenance": "ingested"
+}
