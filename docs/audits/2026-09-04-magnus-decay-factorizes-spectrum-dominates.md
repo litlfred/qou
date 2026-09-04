@@ -124,8 +124,8 @@ fixing each generator). **Measured, not assumed:** the seminormal generator matr
 
 verified to `7.6e-141` on every λ ⊢ 6 (worst case), with `X*` assembled term by term
 (`(ρ·[σ_a,σ_{a+1}])* = −[σ_a,σ_{a+1}]·ρ*`). The quantity is **positive** (it is `Σσ_i²`), so there
-is no cancellation inside it to fight, and it decays at controlled dimension (4/4 pairs at A=2,
-ratios 0.0073–0.271).
+is no cancellation inside it to fight, and it decays at controlled dimension: **4/4 pairs at A=2**
+(ratios 0.0073–0.271) and **5/5 at A=3** (9.2e-5, 0.0021, 0.0041, 0.0167, 0.0322 — max 0.032).
 
 **Why this closes the loop.** The arc's two reductions — hooks to the reduced Burau (#6464) and
 two-rows to R-matrix weight sectors (#6525) — are **character identities, valid for any algebra
@@ -135,6 +135,5 @@ the general-λ bound becomes a positive trace of the same type as the quantity i
 down, with the cancellation problem removed.
 
 **Limits.** The symmetry and the identity are exact algebra facts, checked on all 11 shapes at
-n=6; the *decay* of `tr_λ(X*X)` is measured on 4 conjugate pairs at A=2 (A=3 confirmation in the
-PR). No closed form or bound for `tr_λ(X*X)` is derived here — "the handles apply" is a statement
+n=6; the *decay* of `tr_λ(X*X)` is measured on 9 conjugate pairs (4 at A=2, 5 at A=3, dim ≤ 48). No closed form or bound for `tr_λ(X*X)` is derived here — "the handles apply" is a statement
 about applicability, not a completed derivation. Scope-(a).
