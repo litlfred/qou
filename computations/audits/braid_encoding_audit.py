@@ -439,11 +439,15 @@ def cross_check_tr_M() -> dict:
             "term1_atomic_total") is None,
         "phase_1_6_closed_form": ob_at_q0.get("proton"),
         "markov_trace_assembly_chain": chain_value,
-        # markov-trace-axiomatic-closed-form.md, migrated to convention D
-        # (z = q^3/(q^2+1)) at the proton pin. The prior 1.63315 here was the
-        # convention-C / muon-pin value and disagreed with this audit's own
-        # upstream (phase_1_6_closed_form) by 15%.
-        "axiomatic_content_block": 1.88432,
+        # markov-trace-axiomatic-closed-form.md line 29 quotes
+        #   tr_M(σ_1^7 σ_2^4)(q_0) ≈ 1.88432  (convention D, proton pin).
+        # The prior 1.63315 here was the convention-C / muon-pin value and
+        # disagreed with this audit's own upstream (phase_1_6_closed_form) by
+        # 15%. Carried as the content block's VERBATIM 6-sig-fig string — this
+        # is a `\approx` quote, not a truncation of a stored full-precision
+        # value, so padding it out with fmt() would fabricate digits the source
+        # does not carry (qou-btqh; see draining-raw-float64 decision procedure).
+        "axiomatic_content_block": "1.88432",
     }
     out["neutron"] = {
         "strategy_3_tr_M": _s3("n"),
@@ -584,9 +588,26 @@ def main() -> int:
     # disagree far outside either one's stated tolerance, and the disagreement
     # has been sitting in this witness unremarked.
     _p = xc.get("proton", {})
-    _ob = _p.get("phase_1_6_closed_form")
-    _ax = _p.get("axiomatic_content_block")
-    _ch = _p.get("markov_trace_assembly_chain")
+    # Upstream tr_M values now arrive as full-precision STRINGS (the producers
+    # were drained to carry mpmath.mpf end to end -- qou-btqh), and
+    # axiomatic_content_block is the content block's verbatim 6-sig-fig string.
+    # Convert to mpf for the comparison arithmetic and serialize each `computed`
+    # via fmt, so this audit's own assertions are exact-arithmetic, not float64.
+    _ob_raw = _p.get("phase_1_6_closed_form")
+    _ax_raw = _p.get("axiomatic_content_block")
+    _ch_raw = _p.get("markov_trace_assembly_chain")
+
+    def _to_mpf(x):
+        if x is None:
+            return None
+        try:
+            return mp.mpf(str(x))
+        except (TypeError, ValueError):
+            return None
+
+    _ob = _to_mpf(_ob_raw)
+    _ax = _to_mpf(_ax_raw)
+    _ch = _to_mpf(_ch_raw)
 
     # (1) The hardcoded content-block value must track the live upstream.
     #     This is the check whose ABSENCE let the block sit at the
@@ -594,11 +615,11 @@ def main() -> int:
     #     eye -- see the comment on `axiomatic_content_block` above. Tolerance
     #     is 1e-5 relative: the block carries 6 significant figures, so it
     #     cannot track the upstream more tightly than that.
-    if _ob is not None and isinstance(_ax, (int, float)):
+    if _ob is not None and _ax is not None:
         w.add_assertion(
             "axiomatic content block tracks the phase-1.6 closed form",
-            computed=abs(_ax - _ob) / abs(_ob), expected=0.0, tolerance=1e-5,
-            source=f"axiomatic_content_block={_ax}, phase_1_6_closed_form={_ob}; "
+            computed=fmt(abs(_ax - _ob) / abs(_ob)), expected=0.0, tolerance=1e-5,
+            source=f"axiomatic_content_block={_ax_raw}, phase_1_6_closed_form={_ob_raw}; "
                    "the content block quotes 6 sig figs")
 
     # (2) The two INDEPENDENT derivations of tr_M(p, q_0) must agree.
@@ -613,9 +634,9 @@ def main() -> int:
     if _ob is not None and _ch is not None:
         w.add_assertion(
             "the two independent tr_M(p,q0) derivations agree",
-            computed=abs(_ch - _ob) / abs(_ob), expected=0.0, tolerance=1e-3,
-            source=f"markov_trace_assembly_chain={_ch} (Wenzl-bridge, its own "
-                   f"target_tolerance=1e-9) vs phase_1_6_closed_form={_ob} "
+            computed=fmt(abs(_ch - _ob) / abs(_ob)), expected=0.0, tolerance=1e-3,
+            source=f"markov_trace_assembly_chain={_ch_raw} (Wenzl-bridge, its own "
+                   f"target_tolerance=1e-9) vs phase_1_6_closed_form={_ob_raw} "
                    "(option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6")
 
     # (3) Records the deleted Strategy-3 upstream as absent, and FAILS if it

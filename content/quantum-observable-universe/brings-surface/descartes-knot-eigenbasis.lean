@@ -1,5 +1,8 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Data.Matrix.Basic
+import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 
 
@@ -71,9 +74,35 @@ both channels `≈ -2.0623447988`, verified at 50 decimal digits — the pair
 So exhibiting two non-zero values does **not** establish that the two summands
 are distinguished, which is what "both summands are detected" needs. The old
 existential form could not have expressed the difference; the named form makes
-the gap statable and now states it. Separating the channels requires the
-values attached to their summands — that is what `trSummand` is for, and the
-per-summand character values for general `n` remain upstream.
+the gap statable and now states it.
+
+## …but the characters DO separate, and that negative is narrow
+
+The sentence that stood here said "the per-summand character values for
+general `n` remain upstream". **That was wrong**, and the corpus-grep
+checklist is what caught it: `chi_lambda_braid` / `chi_lambdas_braid` in
+`tools/hecke-engine/src/seminormal.rs` compute `χ^λ(β)` for general `n` and
+general `λ` by Hoefsmit seminormal form, with MPFR variants, a Geck–Pfeiffer
+canonical-basis expansion beside them, and about twenty entry points reachable
+from Python via `pyhecke_native`. "Not in this Lean file" had been reported as
+"upstream and open".
+
+With that machinery the follow-up question is a measurement, not a research
+problem, and it comes out the other way: **at `q*` itself the two characters
+separate**, on every braid word tried. The two `n = 3` representations are
+written down below (`rhoMixedSigma1`, `rhoMixedSigma2`), `charMixedSigma` is
+their trace rather than an asserted number, and `sigma_separates_n3_channels`
+proves `σ₁` alone separates the summands at every Descartes `q`.
+
+So `jones_channels_not_separating` is a fact about the particular *pair of
+Jones values* those two theorems name — not about the framework's ability to
+separate summands. Bean `qou-qhs3`;
+`computations/descartes_n3_channel_separation_probe.py`.
+
+What genuinely remains is constructing `DescartesMarkovTrace.trSummand` from
+those Hoefsmit values instead of leaving it free data, for general `n`. That
+is a formalisation of the seminormal representation — `n = 3` is done here —
+and not a further open question about the mathematics.
 
 ## References
 
@@ -440,6 +469,241 @@ theorem jones_channels_not_separating :
   have hne : q ≠ 1 := by intro h; rw [h] at hhi; norm_num at hhi
   refine ⟨⟨q, hpos, hne, -6, rfl, 2, rfl⟩, ?_⟩
   exact (jonesSymmetric_eq_jonesMixed_iff _).mpr hroot
+
+/-! ### The characters do separate, where the Jones pair does not
+
+`jones_channels_not_separating` above is a negative about the *particular
+pair of Jones values* `descartes_n3_both_detected` names. It is not a
+statement about the framework, and the object that does separate the
+summands — the per-partition character `χ^λ` — already exists in the corpus
+(`tools/hecke-engine/src/seminormal.rs`, Hoefsmit seminormal form, general
+`n` and `λ`; MPFR variants alongside).
+
+On the single generator `σ₁`, at `n = 3` with the two `≤ 2`-row partitions
+of 3, those characters are
+
+    χ^[3](σ₁)   = q          (symmetric, spin 3/2, dim 1)
+    χ^[2,1](σ₁) = q − q⁻¹    (mixed symmetry, spin 1/2, dim 2)
+
+so their difference is `q⁻¹`, which never vanishes. Verified against the
+native seminormal path at eight sample `q` to better than `1e-45`
+(`computations/descartes_n3_channel_separation_probe.py`), including at the
+`q*` of `jones_channels_not_separating` itself.
+-/
+
+/-! #### The two representations, written down
+
+The characters below are **traces of matrices**, not asserted values. An
+earlier version of this section defined `charSymmetricSigma := q` and
+`charMixedSigma := q − q⁻¹` outright and proved they differ — true, and with
+the right numbers, but it derived nothing about representations, which is the
+defect class this whole file is being repaired for.
+
+`λ = [3]` is one-dimensional and sends every generator to `q`.
+
+`λ = [2,1]` is two-dimensional, with basis the two standard Young tableaux
+of that shape. In the Hoefsmit seminormal basis `σ₁` is diagonal — `1` and
+`2` share a row in one tableau and a column in the other, giving the
+eigenvalues `q` and `−q⁻¹` — while `σ₂` mixes them:
+
+    ρ(σ₁) = [ q , 0 ; 0 , −q⁻¹ ]
+    ρ(σ₂) = [ −1/(q+q³) , b ; b , q³/(1+q²) ]
+
+with `b = √(1 + q² + q⁴)/(1 + q²)`.
+
+Both matrices were read off `pyhecke_native.seminormal_matrices_mpfr` and
+the closed forms verified against it at nine sample `q` to better than
+`1e-40`, before any of this was written
+(`computations/descartes_n3_channel_separation_probe.py`).
+
+**These forms are regular at `q = 1`** — `ρ(σ₂)` becomes
+`[ −1/2 , √3/2 ; √3/2 , 1/2 ]` and both traces vanish, which is the standard
+two-dimensional representation of `S₃` where a transposition has trace `0`.
+The native path returns `NaN` there because it divides by `q − q⁻¹`; that is
+a removable singularity in the implementation, **not** a pole of the
+representation. An earlier note in this arc said otherwise and was wrong.
+-/
+
+/-- The off-diagonal Hoefsmit entry `√(1 + q² + q⁴)/(1 + q²)` of `ρ_[2,1](σ₂)`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def hoefsmitOffDiag (q : ℝ) : ℝ :=
+  Real.sqrt (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2)
+
+/-- `1 + q² > 0`, so it is safe as a denominator. -/
+theorem one_add_sq_pos (q : ℝ) : (0 : ℝ) < 1 + q ^ 2 := by positivity
+
+/-- The radicand of `hoefsmitOffDiag` is non-negative, so the square root is
+    honest and `hoefsmitOffDiag q ^ 2` recovers it. -/
+theorem hoefsmitOffDiag_sq (q : ℝ) :
+    hoefsmitOffDiag q ^ 2 = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+  have hrad : (0 : ℝ) ≤ 1 + q ^ 2 + q ^ 4 := by positivity
+  unfold hoefsmitOffDiag
+  rw [div_pow, Real.sq_sqrt hrad]
+
+/-- `ρ_[2,1](σ₁)` in the Hoefsmit seminormal basis: diagonal, eigenvalues `q`
+    and `−q⁻¹`. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def rhoMixedSigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![q, 0], ![0, -q⁻¹]]
+
+/-- `ρ_[2,1](σ₂)` in the Hoefsmit seminormal basis. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def rhoMixedSigma2 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  Matrix.of ![![-(q + q ^ 3)⁻¹, hoefsmitOffDiag q],
+              ![hoefsmitOffDiag q, q ^ 3 / (1 + q ^ 2)]]
+
+/-- Character of the symmetric (spin-3/2) summand `λ = [3]` on `σ₁` at
+    `n = 3`. The representation is one-dimensional and sends each generator
+    to `q`, so the character is its `1 × 1` trace. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charSymmetricSigma (D : DescartesData) : ℝ :=
+  Matrix.trace (Matrix.of ![![D.q]] : Matrix (Fin 1) (Fin 1) ℝ)
+
+/-- Character of the mixed-symmetry (spin-1/2) summand `λ = [2,1]` on `σ₁` at
+    `n = 3` — **the trace of `ρ_[2,1](σ₁)`**, not an asserted value. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def charMixedSigma (D : DescartesData) : ℝ :=
+  Matrix.trace (rhoMixedSigma1 D.q)
+
+/-- The symmetric character evaluates to `q`. -/
+theorem charSymmetricSigma_eq (D : DescartesData) : charSymmetricSigma D = D.q := by
+  simp [charSymmetricSigma, Matrix.trace_fin_one]
+
+/-- The mixed character evaluates to `q − q⁻¹` — derived from the matrix. -/
+theorem charMixedSigma_eq (D : DescartesData) : charMixedSigma D = D.q - D.q⁻¹ := by
+  simp [charMixedSigma, rhoMixedSigma1, Matrix.trace_fin_two]
+  ring
+
+/-- **The two `n = 3` channel characters differ by exactly `q⁻¹`.** -/
+theorem charSymmetricSigma_sub_charMixedSigma (D : DescartesData) :
+    charSymmetricSigma D - charMixedSigma D = D.q⁻¹ := by
+  rw [charSymmetricSigma_eq, charMixedSigma_eq]; ring
+
+/-! #### These matrices really are a Hecke representation
+
+Two matrices with the right traces would prove nothing — the point of writing
+them down is that they satisfy the defining relations, which is what makes
+`charMixedSigma` a *character* rather than a number.
+
+Both relations were checked numerically against the same nine sample `q`
+before being stated (`descartes_n3_channel_separation_probe.py`).
+-/
+
+/-- `ρ_[2,1](σ₂)` has the same trace as `ρ_[2,1](σ₁)`, namely `q − q⁻¹`.
+
+    Forced: `σ₁` and `σ₂` are conjugate in the braid group, and conjugate
+    elements have equal character. Here it falls out of the closed forms. -/
+theorem trace_rhoMixedSigma2 (q : ℝ) (hq : q ≠ 0) :
+    Matrix.trace (rhoMixedSigma2 q) = q - q⁻¹ := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have h2 : q + q ^ 3 ≠ 0 := by
+    have : q + q ^ 3 = q * (1 + q ^ 2) := by ring
+    rw [this]; exact mul_ne_zero hq h1
+  simp only [rhoMixedSigma2, Matrix.trace_fin_two, Matrix.of_apply,
+    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
+  field_simp
+  ring
+
+/-- **The determinant of `ρ_[2,1](σ₂)` is `−1`** — the product of the two
+    Hecke eigenvalues `q · (−q⁻¹)`. -/
+theorem det_rhoMixedSigma2 (q : ℝ) (hq : q ≠ 0) :
+    Matrix.det (rhoMixedSigma2 q) = -1 := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have h2 : q + q ^ 3 ≠ 0 := by
+    have : q + q ^ 3 = q * (1 + q ^ 2) := by ring
+    rw [this]; exact mul_ne_zero hq h1
+  have hb := hoefsmitOffDiag_sq q
+  simp only [rhoMixedSigma2, Matrix.det_fin_two, Matrix.of_apply,
+    Matrix.cons_val', Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.empty_val', Matrix.cons_val_fin_one, Matrix.head_fin_const]
+  have : hoefsmitOffDiag q * hoefsmitOffDiag q = hoefsmitOffDiag q ^ 2 := by ring
+  rw [this, hb]
+  field_simp
+  ring
+
+/-- **The Hecke quadratic relation for `ρ_[2,1](σ₁)`**:
+    `σ² = (q − q⁻¹)·σ + 1`, equivalently `(σ − q)(σ + q⁻¹) = 0`. -/
+theorem rhoMixedSigma1_hecke (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma1 q * rhoMixedSigma1 q
+      = (q - q⁻¹) • rhoMixedSigma1 q + 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma1, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply] <;>
+    field_simp <;> ring
+
+/-- **The Hecke quadratic relation for `ρ_[2,1](σ₂)`**. -/
+theorem rhoMixedSigma2_hecke (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma2 q * rhoMixedSigma2 q
+      = (q - q⁻¹) • rhoMixedSigma2 q + 1 := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  have hbb : hoefsmitOffDiag q * hoefsmitOffDiag q
+      = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+    rw [← hb]; ring
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply,
+      hbb] <;>
+    field_simp
+  -- `field_simp` re-normalises `b * b` back to `b ^ 2` after `hbb` has fired,
+  -- so the square is substituted HERE, once the goal is polynomial.
+  -- `linear_combination … * hb` looks like the natural move and fails: it
+  -- finishes with `ring1`, which cannot clear the `(1 + q²)⁻¹` that `hb`'s
+  -- right-hand side carries.  Rewriting first and then clearing denominators
+  -- with the `1 + q² ≠ 0` in context does work.  The off-diagonal goals have
+  -- no `b ^ 2` and close by `ring`.
+  -- `first | ring | (rw [hb]; …)` does NOT work here; the two passes are
+  -- separated deliberately.
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-- **The braid relation** `ρ(σ₁)ρ(σ₂)ρ(σ₁) = ρ(σ₂)ρ(σ₁)ρ(σ₂)`.
+
+    Together with the two quadratic relations above, this is what makes the
+    pair a representation of `H_3(q)` rather than two matrices that happen to
+    have the right traces — and hence what makes `charMixedSigma` a
+    *character*. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem rhoMixed_braid (q : ℝ) (hq : q ≠ 0) :
+    rhoMixedSigma1 q * rhoMixedSigma2 q * rhoMixedSigma1 q
+      = rhoMixedSigma2 q * rhoMixedSigma1 q * rhoMixedSigma2 q := by
+  have h1 : (1 : ℝ) + q ^ 2 ≠ 0 := (one_add_sq_pos q).ne'
+  have hb := hoefsmitOffDiag_sq q
+  have hbb : hoefsmitOffDiag q * hoefsmitOffDiag q
+      = (1 + q ^ 2 + q ^ 4) / (1 + q ^ 2) ^ 2 := by
+    rw [← hb]; ring
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [rhoMixedSigma1, rhoMixedSigma2, Matrix.mul_apply, Fin.sum_univ_two,
+      hbb] <;>
+    field_simp
+  -- Same shape as `rhoMixedSigma2_hecke` above; see the note there.
+  -- `first | ring | (rw [hb]; …)` does NOT work here; the two passes are
+  -- separated deliberately.
+  all_goals (try ring)
+  all_goals (rw [hb]; field_simp; ring)
+
+/-- **`σ₁` separates the two `n = 3` summands, in every Descartes universe.**
+
+    The positive counterpart to `jones_channels_not_separating`, and the
+    reason that negative is narrow: the difference is `q⁻¹`, and `q > 0`
+    forces `q⁻¹ ≠ 0`, so there is no Descartes `q` at which these two
+    characters agree — including the `q*` where the two *Jones values* do.
+
+    So "both summands are detected" is not out of reach; it needs the
+    detector attached to its summand, which is what
+    `DescartesMarkovTrace.trSummand` is for. What remains is to construct
+    `trSummand` from the Hoefsmit values rather than leave it free — a
+    formalisation of the seminormal representation, not a further open
+    question about the mathematics. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem sigma_separates_n3_channels (D : DescartesData) :
+    charSymmetricSigma D ≠ charMixedSigma D := by
+  intro h
+  have hgap : charSymmetricSigma D - charMixedSigma D = 0 := by rw [h]; ring
+  rw [charSymmetricSigma_sub_charMixedSigma] at hgap
+  exact (inv_pos.mpr D.q_pos).ne' hgap
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke

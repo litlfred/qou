@@ -1,11 +1,11 @@
 ---
 # qou-q0rf
-title: 'The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix'
+title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
 status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T04:40:00Z
-updated_at: 2026-09-03T04:40:00Z
+updated_at: 2026-09-04T06:44:37Z
 ---
 
 `scripts/precision-gates.sh` has a **blocking** gate red on `main`. Nothing
@@ -72,3 +72,85 @@ drain is the third of three. Whoever takes it should know:
 Up from the 1 I left. Not characterised here — the two flips I understood in
 #6017 were a mislabelled producer and a compute-bound re-run, and 18 will not
 be one story. Do not assume it is the same defect eighteen times.
+
+
+---
+
+## Within-session replacement measured 1:1, and one arrival has a mechanism this bean does not record (2026-09-04)
+
+Measured on `claude/resumable-compute-chunking-2026-09-04` while draining four
+witnesses that were blocked on a compute rather than on anyone's attention:
+
+    NEW (not in baseline)     14  ->  14
+    drained since baseline    86  ->  90
+    unstamped (live scope)  1605  -> 1601
+
+**Four out, four in — net zero on NEW**, inside one session. That is this
+bean's thesis at a shorter timescale than the ~29/day arrival rate it records.
+
+The four that arrived did so **via a rebase across 55 commits of main**, not
+spontaneously in my tree — stating the mechanism because \"four arrived while I
+worked\" would otherwise read as a stronger claim than was measured:
+
+    probe-plancherel-convention-gap          ABSENT pre-rebase
+    probes/c1-mirror-asymmetry-sign-probe    ABSENT pre-rebase
+    probes/conjugation-orbit-isospin-room    ABSENT pre-rebase
+    chi-neutron-h3                           PRESENT pre-rebase  <-- different
+
+**The fourth is the one worth reading, and it is a new mechanism.**
+`chi-neutron-h3` was already in my tree **stamped**; the rebase brought a
+version with the stamp **removed**. `9c2058f0bd` — a commit whose own message
+is *\"drain(qou-3f7a): q0 drift NEW 10 -> 5\"* — stripped `q0Anchor` and
+`q0Value` from it. **A drain of one q0 gate refilled another.**
+
+Net on the anchor gate from that commit is **+2** (3 stamps added, 1 stripped),
+so this is not a systematic defect in that drain — but it is a refill source
+this bean's model does not have. Its arrival-rate data is *new witnesses
+landing unstamped*; this is *an existing stamp being removed*. Full evidence
+and the reason it is a genuine regression (the producer reads `Q_MP`, so
+`proton` was correct and nothing replaced it) is recorded on `qou-3f7a`.
+
+Consequence for this bean's conclusion: unchanged, and if anything sharpened.
+A backlog that can be refilled by its own drains is even less amenable to
+being drained than one refilled only by new arrivals.
+
+
+---
+
+## 🛑 CORRECTIONS to my section above, and a verified all-clear on the hook (2026-09-04)
+
+**The arrival-rate check WORKS — verified by reproduction, not by reading.**
+Stripped `q0Anchor` from a stamped witness, staged it, fed
+`scripts/precommit-precision-warn.sh` the JSON payload the harness sends:
+**14 s, exit 0**, and it printed
+`REGRESSED computations/full-twist-delta-n2-verification.witness.json`.
+No gap. (My first attempt ran the hook **without stdin**, where it blocks
+forever on `cat`; it reached 643 s and I was one step from filing "the hook
+exceeds its own 130 s timeout so the q0 block never runs" — a measurement of my
+own invocation, not of the hook.)
+
+**"A drain of one q0 gate refilled another" is the wrong story.** Retracted in
+full on `qou-3f7a`. `9c2058f0bd` re-ran a **bare producer** that emits no
+provenance; the `q0Anchor: proton` it erased was hand-added downstream by
+`a4d9906659` and was **wrong** — the cache is symbolic in q. So this is not a
+new refill mechanism; it is the bare-producer class AGENTS.md already names.
+
+**And my "12 strip events in 130 commits" was 4x too high.** That scan matched
+diff LINES (`-"q0Anchor"` with no `+`), so it counted **JSON key reordering** as
+stripping: `c29e0752bb` "stripped" nine anchors that are present before AND
+after. Measured at the VALUE level (parse both revisions, compare the field):
+
+    VALUE-LEVEL strips, 0465ce1ec5..HEAD (130 commits):  3
+      6c5bb855a9  probes/arc-count-diagnostic-degeneracy   (repaired)
+      6c5bb855a9  probes/bpp-higher-a-sparse               (repaired)
+      9c2058f0bd  chi-neutron-h3                           (bare producer)
+
+An earlier awk version of the same scan said **2**, because it reset the
+filename before evaluating its print condition and could emit at most one hit
+per commit. Three passes, three numbers; only the value-level one is quotable.
+
+**Consequence for this bean:** the arrival-rate half is genuinely closed and
+verified. The live regression rate is ~1 per 130 commits, and that one is a
+producer defect rather than a committer error — so **do not upgrade the hook to
+blocking on the strength of it.** The remaining work is the backlog, which this
+bean already says not to drain.

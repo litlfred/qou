@@ -5,7 +5,7 @@
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
 | [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 12 | `qou:QOU.HabiroRing.QZBicompletionElement` |
-| [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 | `qou:QOU.Archimedean.QValueTransition` |
+| [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 | `qou:QOU.Archimedean.QqValue.value` |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 | `qou:QOU.PathIntegrals.SU2Basis` |
 | [def:so3-generators](#def:so3-generators) | $\mathrm{SO}(3)$ generators | Ch 5 | `qou:QOU.PathIntegrals.SO3Generators` |
 | [def:su2-generators](#def:su2-generators) | $\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$ | Ch 6 | `qou:QOU.Su2Generators` |

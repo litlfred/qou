@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-08-23T18:52:44Z
+updated_at: 2026-09-03T21:53:48Z
 ---
 
 
@@ -198,3 +198,70 @@ verdict, so wiring it seeds a large `needs-agent` batch and turns the gate red
 That is a sequencing call for the owner, not something to land quietly — so it
 is recorded here rather than done. `scripts/free-prop-field-audit.py` is the
 interim: it measures the class without gating anyone.
+
+
+## 2026-09-03 — the population is 24, and the defect is an INVERTED IMPLICATION
+
+This bean opened on `class C where holds : Prop` — a carrier that names a
+proposition without asserting it. Measured corpus-wide on `origin/main` (2552
+files) with `scripts/lean-cited-not-proved-audit.py --kind prop-field`, the
+shape is broader than `holds`, and narrower than the raw `Prop`-field count.
+
+| | count |
+|---|---|
+| `Prop`-typed fields | 95 |
+| parameterised (a `Prop` used as a *component* of another field's statement) | 56 — legitimate |
+| self-nominating (a companion field's type IS the `Prop` field) | 39 |
+| — **consumed**: a proof term projects the witness | **24 — the defect** |
+| — unconsumed: an open input carried as an input | 15 — honest §3b |
+
+**The sharper statement of the defect.** The recurring encoding is
+
+```lean
+X      : Prop        -- antecedent, named but not stated
+h_X    : X           -- ...and its witness, supplied by the class
+impl_t : X -> Q
+theorem t [ctx] : Q := ctx.impl_t ctx.h_X
+```
+
+which is **inhabitation-equivalent to a single field `: Q`** (take `X := True`).
+So the antecedent is free and a docstring reading *"X forces Q"* is, in the
+Lean, *"Q"*. **The convention inverts the implication it was written to
+express.** `qou_ns_in_qou.lean` is the clean illustration: its docstring says
+"observability forces chi(A) != 0", `descartesQOU` literally sets
+`observability := True`, and steps 2-3 of the same chain ARE genuine
+implications between content-bearing data.
+
+**A mechanical collapse is NOT the fix.** It changes nothing logically, so a
+bulk pass would be AGENTS.md §1a audit-dodging. It is not detector-destroying
+(`lean-self-assuming-audit.py` has a class-field mode that catches the collapsed
+shape — 11 corpus-wide, over 8 files disjoint from these), so it is defensible
+as a *legibility* fix, but it must never be reported as progress on derivation.
+
+**What actually closes one: a proved upstream lemma to build on.** That is what
+made `tm_eigenspace_decomp` tractable (PR #6543) — the splitting it had been
+assuming is `JetChain.decomposition`, proved in `JetProlongation`, so the class
+was left carrying only the two genuinely-open inputs, as equations in its own
+data.
+
+Checked and REJECTED as targets, so the next agent does not re-open them:
+`NonAbelianStokes` (its own docstring says the carrier is self-certifying and
+genuine models await a Mathlib Lie-valued-forms library that #6512 established
+does not exist); `MassGap` (`impl_witness` already forces a content-bearing
+`YangMillsMassGap`, so collapsing is logically identical); `qou_ns_in_qou`
+(scrupulously scoped under an owner directive — reported, not reshaped).
+
+**The sharpest instance, and it is not fixable here.**
+`QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean` carries `bloch_suslin : Prop`
+and `garoufalidis_le : Prop` with witnesses fed straight into the conclusion —
+two named literature results laundered through opaque `Prop`s — and its
+conclusion's predicate `b1_holds : Nat -> Nat -> Prop` is itself
+instance-chosen, so the theorem is fully vacuous. Neither result is in Mathlib
+nor derivable from the corpus.
+
+Both discriminators were found by a FALSE POSITIVE on a file opened intending to
+fix it (`noble_gas_characterization.lean`, then `BringWPlaneMonodromy.lean`) —
+in each case the detector's own output would have damaged a correct file, and
+only reading the file stopped it.
+
+Full write-up: [`docs/audits/2026-09-03-prop-field-implication-inversion.md`](../docs/audits/2026-09-03-prop-field-implication-inversion.md).

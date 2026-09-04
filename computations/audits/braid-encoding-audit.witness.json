@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T10:57:47.859127+00:00",
-  "commitSha": "0f546a2c93c887cdcd0c14ef26410c48aa758d8c",
+  "computedAt": "2026-09-04T02:57:31.334885+00:00",
+  "commitSha": "8772a849efb4861f76f881c41a069254dc3de4e4",
   "assertions": [
     {
       "name": "axiomatic content block tracks the phase-1.6 closed form",
-      "computed": 2.827254259977437e-07,
+      "computed": "0.000000282725426464440269230873954761375214299470049669676097105759",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-05",
-      "source": "axiomatic_content_block=1.88432, phase_1_6_closed_form=1.884319467254976; the content block quotes 6 sig figs"
+      "source": "axiomatic_content_block=1.88432, phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517; the content block quotes 6 sig figs"
     },
     {
       "name": "the two independent tr_M(p,q0) derivations agree",
-      "computed": 0.3919504031201187,
+      "computed": "0.391950403120118374031270257948565341308020587204415601736087",
       "expected": 0.0,
       "passed": false,
       "tolerance": "0.001",
-      "source": "markov_trace_assembly_chain=1.1457596924573008 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.884319467254976 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
+      "source": "markov_trace_assembly_chain=1.14575969245730086968908159577411930594372806194352738498820 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
     },
     {
       "name": "the retired Strategy-3 mass table has not returned",
@@ -33,8 +33,8 @@
   "durationMs": 7,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "3a132fbd22b6",
-  "scriptCommitSha": "89f1137463e5ca45bde90cf49fe0473c3585e003",
+  "scriptHash": "65d8ceded1f4",
+  "scriptCommitSha": "c56548fd6ca9a15cebd831ddda0aa5ca666e94f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1203,9 +1203,9 @@
       "proton": {
         "strategy_3_tr_M": null,
         "strategy_3_tr_M_missing": true,
-        "phase_1_6_closed_form": 1.884319467254976,
-        "markov_trace_assembly_chain": 1.1457596924573008,
-        "axiomatic_content_block": 1.88432
+        "phase_1_6_closed_form": "1.88431946725497502509029472310815626347249744177191389544517",
+        "markov_trace_assembly_chain": "1.14575969245730086968908159577411930594372806194352738498820",
+        "axiomatic_content_block": "1.88432"
       },
       "neutron": {
         "strategy_3_tr_M": null,
@@ -1215,7 +1215,7 @@
       },
       "electron": {
         "strategy_3_tr_M": "(not in Strategy-3 mass table — uses bare nucleon braids only)",
-        "phase_1_6_closed_form": 0.8485266070590096
+        "phase_1_6_closed_form": "0.848526607059009556201749746812107080366428963274248507457824"
       }
     },
     "structural_finding": {
@@ -1247,11 +1247,11 @@
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",
-        "sha256": "038a795166096658b5879765294a855377741dc9b1545ab1bf2447a4497fe67b",
-        "size_bytes": 16655,
-        "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
-        "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
-        "computedAt": "2026-08-30T09:23:04.774402+00:00"
+        "sha256": "0ff461995c2c963f7436a071acf706f1df0359897bc94ba4ebae09722555e769",
+        "size_bytes": 17370,
+        "commitSha": "8772a849efb4861f76f881c41a069254dc3de4e4",
+        "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+        "computedAt": "2026-09-04T02:56:58.560640+00:00"
       }
     ]
   },

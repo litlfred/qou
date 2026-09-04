@@ -1,50 +1,90 @@
-import Mathlib.Tactic
+import QOU.LiftingDescent.JetProlongation
 
 /-!
 # QOU.LiftingDescent.tm_eigenspace_decomp
 
 **Canonical declaration** for content block
-[`lem:topological-mass-eigenspace-decomp`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.md): *Eigenspace decomposition of the mass integrand (descent involution)*.
+[`lem:topological-mass-eigenspace-decomp`](../../../mass-endomorphism/topological-mass-eigenspace-decomp.md):
+*Eigenspace decomposition of the mass integrand (descent involution)*.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+The manuscript lemma says: the mass-identity integrand
+`α = (∇_A q, L ∧ F⁺)` splits under the descent involution `τ̂ₙ` into a
+descended and a transient part, those two parts are Killing-orthogonal,
+and the multiplicative-integral norm is additive over Killing-orthogonal
+sums — whence `‖MI(α)‖ = ‖MI(α_desc)‖ + ‖MI(α_trans)‖`.
+
+**What is proved here versus what is assumed.** The *splitting* is not
+assumed: it is `QOU.LiftingDescent.JetChain.decomposition`, proved in
+`JetProlongation` from the retraction identity. What the context class
+carries is the two genuinely-open inputs — Killing-orthogonality of the
+two eigenspaces at the integrand, and the additivity law for `MI` over
+Killing-orthogonal sums. Neither is a bare `Prop`: each is an equation
+in the class's own data, so no instance can discharge it with `trivial`,
+and the conclusion is *derived* from them rather than carried as a field
+(AGENTS.md §3b-cond item 5).
+
+This replaces an earlier encoding in which `killing_orthogonal` and
+`mi_additive` were opaque `Prop` fields with companion witnesses and the
+conclusion was a third field projected out — a shape under which an
+instance could take both hypotheses to be `True` and still be forced to
+supply the conclusion outright.
 -/
+
+universe u v
 
 namespace QOU.LiftingDescent
 
+open QOU.LiftingDescent.JetChain in
+/-- Context for the `tm_eigenspace_decomp` claim: a jet-chain level, a
+Killing form and a multiplicative-integral norm on that level, the mass
+integrand, and the two manuscript hypotheses relating them. -/
+class TmEigenspaceDecompContext
+    (R : Type u) [CommRing R]
+    (EndAlg : ℕ → Type v)
+    [∀ n, AddCommGroup (EndAlg n)] [∀ n, Module R (EndAlg n)]
+    [JetChain R EndAlg] where
+  /-- The brane-tower level at which the decomposition is taken. -/
+  level : ℕ
+  /-- The Killing form on the level-`level + 1` endomorphism algebra. -/
+  killing : EndAlg (level + 1) → EndAlg (level + 1) → R
+  /-- The multiplicative-integral norm functional `x ↦ ‖MI(x)‖`. -/
+  MI : EndAlg (level + 1) → ℝ
+  /-- The mass-identity integrand `α = (∇_A q, L ∧ F⁺)`. -/
+  alpha : EndAlg (level + 1)
+  /-- **Killing-form orthogonality** of `𝒜^desc` and `𝒜^trans` at the
+  integrand: the descended and transient parts of `α` pair to zero. -/
+  killing_orthogonal :
+    killing (descendedPart (R := R) (EndAlg := EndAlg) level alpha)
+            (transientPart (R := R) (EndAlg := EndAlg) level alpha) = 0
+  /-- **Multiplicative-integral additivity** over Killing-orthogonal
+  sums: `MI` is additive on any pair that pairs to zero. -/
+  mi_additive :
+    ∀ x y : EndAlg (level + 1), killing x y = 0 → MI (x + y) = MI x + MI y
 
-/-- Abstract context for the `tm_eigenspace_decomp` claim — manuscript-named
-    typed fields below. -/
-class TmEigenspaceDecompContext where
-  /-- Multiplicative-integral norm `‖MI(α)‖`. -/
-  MI_alpha : ℝ
-  /-- Descended-component norm `‖MI(α_desc)‖`. -/
-  MI_desc : ℝ
-  /-- Transient-component norm `‖MI(α_trans)‖`. -/
-  MI_trans : ℝ
-  /-- Killing-form orthogonality -/
-  killing_orthogonal : Prop
-  /-- Multiplicative-integral additivity -/
-  mi_additive : Prop
-  /-- Witness for Killing-form orthogonality -/
-  h_killing_orthogonal : killing_orthogonal
-  /-- Witness for Multiplicative-integral additivity -/
-  h_mi_additive : mi_additive
-  /-- These two properties imply the norm additivity -/
-  additivity_of_orthogonal : killing_orthogonal → mi_additive → MI_alpha = MI_desc + MI_trans
+open QOU.LiftingDescent.JetChain in
+/-- **Lemma** (manuscript `lem:topological-mass-eigenspace-decomp`).
 
-/-- **Lemma statement** (from manuscript):
+Let `α` be the integrand of the mass identity for a vortex `ϱ` and let
+`τ̂ₙ` be the descent involution. Killing-form orthogonality of
+`𝒜_{n+1}^desc ⊕ 𝒜_{n+1}^trans` together with multiplicative-integral
+additivity over orthogonal direct sums gives
 
-Let $\alpha = (\nabla_A q, L \wedge F^+)$ be the integrand of the
-mass identity for a vortex $\varrho$, and let $\hat{\tau}_n$ be the
-descent involution.  The Killing-form orthogonality of
-$\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-together with multiplicative-integral additivity over orthogonal
-direct sums gives
+    ‖MI(α)‖ = ‖MI(α_desc)‖ + ‖MI(α_trans)‖.
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
-theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] :
-    ctx.MI_alpha = ctx.MI_desc + ctx.MI_trans :=
-  ctx.additivity_of_orthogonal ctx.h_killing_orthogonal ctx.h_mi_additive
+The proof rewrites `α` by the *proved* jet-chain decomposition and then
+applies the additivity law at the orthogonality hypothesis. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts
+theorem tm_eigenspace_decomp
+    {R : Type u} [CommRing R]
+    {EndAlg : ℕ → Type v}
+    [∀ n, AddCommGroup (EndAlg n)] [∀ n, Module R (EndAlg n)]
+    [JetChain R EndAlg]
+    [ctx : TmEigenspaceDecompContext R EndAlg] :
+    ctx.MI ctx.alpha =
+      ctx.MI (descendedPart (R := R) (EndAlg := EndAlg) ctx.level ctx.alpha) +
+      ctx.MI (transientPart (R := R) (EndAlg := EndAlg) ctx.level ctx.alpha) := by
+  conv_lhs =>
+    rw [JetChain.decomposition (R := R) (EndAlg := EndAlg) ctx.level ctx.alpha]
+  exact ctx.mi_additive _ _ ctx.killing_orthogonal
 
 end QOU.LiftingDescent
