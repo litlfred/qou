@@ -86,6 +86,17 @@ that forces them out. The general-sum form is `sumOp_residual_even_part_dead`.
 
 ## What this does and does not say
 
+> **Measured the same day (`qou-o2n6`,
+> [`2026-09-03-door-v-residual-scope.md`](2026-09-03-door-v-residual-scope.md)):
+> the residual gap below is real.** The corpus's Door-v residual is *asymptotic*,
+> and the full-alternation hypothesis of `twoOp_residual_kills_residue` is
+> **unsatisfiable** by the GGM carrier at any `q < 2`
+> (`QOU.Mass.GGMAlternationOnset.ggm_full_alternation_impossible_of_lt_two`).
+> The exclusivity survives level by level above the window
+> (`twoOp_residual_from_level_kills_residue_beyond`); at the proton `q₀` residue
+> and residual **coexist at jet levels 2 … 7 at least**. Read "mutually
+> exclusive" in this document as "mutually exclusive above the window".
+
 - `D_q` is **not constructed**; W1 stays a wall. The class is narrowed by a
   second, independent argument.
 - Shifts `≥ 3` remain unpruned, as before; a shift-4 term reaches `t^{+2}` from
