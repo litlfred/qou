@@ -54,23 +54,27 @@ a transposition. `orbitCount σ = card α − orbitDefect σ` recovers the count
 ## 🛑 What is NOT proved here, stated plainly
 
 The **magnitude** of the transposition step — that multiplying by a transposition
-changes the orbit count by *exactly* one, decreasing it iff the two points lie in
-different cycles — is `orbitDefect_swap_mul_of_not_sameCycle` below, and it carries
-a `sorry`. Its parity is proved (`orbitDefect_swap_mul_odd`); what is missing is the
-bound `|Δ| ≤ 1`, which needs the cycle-merge/split analysis Mathlib does not have.
+changes the orbit count by *exactly* one. Its parity is proved
+(`orbitDefect_swap_mul_odd`); the bound `|Δ| ≤ 1` is the gap.
 
-**Where the missing lemma reduces to.** Splitting `σ` into `cycleOf σ a`,
-`cycleOf σ b` and the rest — pairwise disjoint, so `orbitDefect_mul_of_disjoint`
-applies — the general statement collapses to the two-cycle join: *the product of a
-transposition with two disjoint cycles it connects is a single cycle*. Mathlib has
-the **split** direction (`Equiv.Perm.IsCycle.swap_mul`: removing a point from a
-cycle leaves a cycle) but not the merge, and no orbit-count API to state it
-against. That join is the whole remaining gap.
+**It reduces to two strictly smaller pieces**, and the merge case is then *derived*
+rather than assumed (see the section before them):
+
+* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split, within one cycle. This is
+  the direction Mathlib comes closest to: `Equiv.Perm.IsCycle.swap_mul` already
+  proves that removing a point from a cycle leaves a cycle.
+* **(R)** `sameCycle_swap_mul_of_not_sameCycle` — joining two different cycles puts
+  the two points in one cycle of the product. Elementary; the walk argument is
+  written out at the statement.
+
+`orbitDefect_swap_mul_of_not_sameCycle` (the merge) is **proved from (S) and (R)**,
+using that `swap a b` is an involution. So the two `sorry`s are exactly (S) and (R),
+not the general statement.
 
 So this file does **not** yet discharge the `ClassicalTraceFloor` hypotheses: it
 closes the **free** half outright and reduces the **atom** half from "a tabulated
-count at every `A`" to "one classical lemma", proving everything else that
-reduction needs. That is the honest state; do not cite it as closing the
+count at every `A`" to the two pieces (S) and (R), proving everything else that
+reduction needs — including the merge case itself. That is the honest state; do not cite it as closing the
 cycle-count gap.
 
 -- Ref: [manuscript] bean qou-zrx2 follow-up (5); the transposition/cycle-count
@@ -215,30 +219,67 @@ theorem orbitDefect_swap_mul_odd {σ : Perm α} {a b : α} (h : a ≠ b) :
     rw [ho.neg_one_pow, ho'.neg_one_pow] at hs
     exact (by decide : (-1 : ℤˣ) ≠ 1) hs
 
-/-- **THE GAP.** When `a` and `b` lie in different cycles of `σ`, those two orbits
-merge and the defect rises by exactly one.
+/-! ### The transposition step: what remains, and how far it reduces
 
-Parity is proved (`orbitDefect_swap_mul_odd`); the missing ingredient is the bound
-`|Δ| ≤ 1`, i.e. the cycle merge/split analysis. Mathlib has `SameCycle` and its
-equivalence, `cycleType`, and `Disjoint.cycleType_mul`, but no lemma relating
-`cycleType (swap a b * σ)` to `cycleType σ`, and no orbit-count API to state one
-against.
+`orbitDefect_swap_mul_odd` gives the **parity** of the step. The **magnitude**
+`|Δ| ≤ 1` is the gap, and it splits into exactly two pieces, both smaller than the
+statement they replace:
 
-Stated with `sorry` as the honest "stated, not yet proved" marker per the repo's
-Lean discipline — NOT axiomatised, NOT weakened to something provable, and NOT
-consumed by anything in this file. -/
-theorem orbitDefect_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
+* **(S) the split**, `orbitDefect_swap_mul_of_sameCycle` — within one cycle, the
+  transposition splits it and the defect drops. This is the direction Mathlib comes
+  closest to: `Equiv.Perm.IsCycle.swap_mul` already proves that removing a point
+  from a cycle leaves a cycle.
+* **(R) reachability**, `sameCycle_swap_mul_of_not_sameCycle` — joining two
+  *different* cycles puts `a` and `b` in the *same* cycle of the product. Elementary,
+  and the argument is short: iterating `swap a b * σ` from `b` follows `σ`'s cycle
+  (`τ x = σ x` whenever `σ x ∉ {a, b}`) until it reaches `b`'s predecessor `x` with
+  `σ x = b`, where `τ x = swap a b b = a`. So `a` is reached from `b`.
+
+**The merge case is then derived, not assumed** — `orbitDefect_swap_mul_of_not_sameCycle`
+below is *proved* from (S) and (R), because `swap a b` is an involution: applying (S)
+to `swap a b * σ`, whose `a` and `b` are in one cycle by (R), and using
+`swap a b * (swap a b * σ) = σ`, gives the merge statement directly.
+
+Both (S) and (R) carry `sorry` with `-- Ref:` as the honest "stated, not yet proved"
+marker per the repo's Lean discipline — NOT axiomatised, NOT weakened to something
+provable, and consumed by nothing outside this section.
+-/
+
+/-- **(R)** Joining two different cycles with a transposition puts the two points in
+one cycle of the product.
+
+Elementary: iterating `τ = swap a b * σ` from `b` agrees with `σ` (since
+`τ x = σ x` whenever `σ x ∉ {a, b}`) until it reaches the `σ`-predecessor `x` of `b`,
+where `τ x = swap a b b = a`. Formalising it needs induction along `b`'s `σ`-cycle
+with `σ^j b ∉ {a, b}` for `0 < j < k`. -/
+theorem sameCycle_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hnc : ¬ σ.SameCycle a b) :
-    orbitDefect (swap a b * σ) = orbitDefect σ + 1 := by
-  -- Ref: [manuscript] bean qou-zrx2 follow-up (5). The classical transposition /
-  -- cycle-count step underlying well-definedness of the sign of a permutation.
+    (swap a b * σ).SameCycle a b := by
+  -- Ref: [manuscript] bean qou-zrx2 follow-up (5), piece (R).
   sorry
 
-/-- Its mirror: within one cycle, the transposition splits it and the defect drops. -/
+/-- **(S)** Within one cycle, the transposition splits it and the defect drops.
+The direction Mathlib comes closest to (`Equiv.Perm.IsCycle.swap_mul`). -/
 theorem orbitDefect_swap_mul_of_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
     (hc : σ.SameCycle a b) :
     orbitDefect (swap a b * σ) + 1 = orbitDefect σ := by
-  -- Ref: [manuscript] bean qou-zrx2 follow-up (5). Same classical step.
+  -- Ref: [manuscript] bean qou-zrx2 follow-up (5), piece (S).
   sorry
+
+/-- **The merge case, DERIVED from (S) and (R).** When `a` and `b` lie in different
+cycles of `σ`, those two orbits merge and the defect rises by exactly one.
+
+No `sorry` of its own: `swap a b` is an involution, so `swap a b * σ` has `a` and `b`
+in one cycle by (R), and applying (S) to it returns `σ`. This is why the two pieces
+above are the whole remaining gap. -/
+theorem orbitDefect_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
+    (hnc : ¬ σ.SameCycle a b) :
+    orbitDefect (swap a b * σ) = orbitDefect σ + 1 := by
+  have hsc : (swap a b * σ).SameCycle a b := sameCycle_swap_mul_of_not_sameCycle h hnc
+  have hinv : swap a b * (swap a b * σ) = σ := by
+    rw [← mul_assoc, swap_mul_self, one_mul]
+  have hs := orbitDefect_swap_mul_of_sameCycle (σ := swap a b * σ) h hsc
+  rw [hinv] at hs
+  omega
 
 end QOU.MassTheory
