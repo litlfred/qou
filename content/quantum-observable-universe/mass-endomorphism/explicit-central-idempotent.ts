@@ -51,11 +51,14 @@ export default proposition({
         "`exact hi.idempotent lam h` -- a bare projection, which is the " +
         "self-assuming shape item 5 names. The defect is PRE-EXISTING (the " +
         "class and the projection both predate this work); what was mine " +
-        "was asserting compliance without checking item 5. Fixing it means " +
-        "re-encoding the class as the genuine sub-hypotheses of the " +
-        "Lagrange-interpolation argument -- the JM diagonal action and the " +
-        "interpolation step -- so the theorem COMPOSES them; that is real " +
-        "mathematical work and is left open. Item 4, which this note was " +
+        "was asserting compliance without checking item 5. **FIXED the same day.** " +
+        "The class now carries the interpolation inputs -- an index type of " +
+        "standard tableaux, a projector per tableau, and the three properties " +
+        "`proj_idem`, `proj_orth` and `centralIdempotent_eq_sum` -- and the " +
+        "theorem DERIVES idempotency: expand the square, kill the " +
+        "off-diagonal terms by orthogonality, collapse the diagonal by " +
+        "idempotency of each projector. No field carries the conclusion, so " +
+        "item 5 is satisfied and the --item5 evidence mode confirms it. Item 4, which this note was " +
         "originally about, IS closed.** " +
         "Item 2 was already met -- the Lean theorem " +
         "`explicit_central_idempotent_via_murphy` carries its conjectural " +
