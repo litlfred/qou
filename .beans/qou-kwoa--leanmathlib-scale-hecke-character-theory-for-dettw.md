@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T02:47:06Z
+updated_at: 2026-09-04T09:02:28Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -528,3 +528,47 @@ one-liner.  Do not start it believing otherwise.
 Nothing here touches the q-part of the determinant, where the Schur elements live.  This is
 NOT a proof of Geck-Pfeiffer 7.2.6.  Small characteristic and the square root (Q = q^2)
 are both untouched.
+
+
+## 2026-09-04 — the assembly landed, and the blocker I named was not one
+
+PR #6552, commit 7cc1e15899. QOU/MathlibExt/RegTraceGramProduct.lean, 210 lines,
+10 declarations, all sorry-free ([propext, Classical.choice, Quot.sound]).
+
+**CORRECTION to this bean's own prior 'next' line.** I recorded the assembly as
+blocked on a named Mathlib gap: Matrix.det_blockDiagonal is uniform-block-size
+only and there is no det lemma for Matrix.blockDiagonal'. Both halves are true.
+NEITHER IS THE OBSTRUCTION. Matrix.BlockTriangular.det_fintype
+(LinearAlgebra/Matrix/Block.lean:276) already gives
+    M.det = prod over k of (M.toSquareBlock b k).det
+for fibres of arbitrary, DIFFERING size, and a block-diagonal matrix is
+block-triangular for every b. My search was 'det' intersected with
+'blockDiagonal'' — the capability is filed under the weaker hypothesis that
+makes it true, not under the data structure I had in hand. Recorded as a TRAP in
+.claude/agent-memory/corpus-grepper/MEMORY.md ('in an UPSTREAM library, grep the
+statement SHAPE, not the data structure'). The cost estimate that travelled with
+the wrong verdict ('~60 lines of permutation combinatorics') was wrong too.
+
+**What is now proved.** det_eq_prod_of_offDiagonal_eq_zero (the general reusable
+statement); det_blockDiagonal' as an immediate corollary (stated for evidence,
+not use); regTraceForm_pi_single_of_ne/_same; regTraceGram_pi_offDiagonal/
+_diagonal/_det/_det'; regTraceGram_pi_matrix_det; and
+regTraceGram_pi_matrix_det_ne_zero_iff — the product Gram determinant vanishes
+EXACTLY when a block dimension dies in K, so RegTraceGramNondegenerate's
+char-zero hypothesis is not merely sufficient but exactly right.
+
+**The integer constant is DERIVED, not observed.** prod_lambda d^(d^2) over the
+Wedderburn blocks of H_{n+1} gives 1 / 16 / 6198727824 at n = 1,2,3 — exactly
+tw_gram_determinant_probe.py's measured constants, obtained independently by
+factoring exact symbolic determinants. Re-verified in exact integer arithmetic
+this session (hook-length formula, no floats); it also yields an n=4 value the
+probe never computed.
+
+**STILL OPEN, and the scope is unchanged:**
+1. The T_w transport. This is the determinant in the PRODUCT basis; moving to
+   the T_w basis changes it by (det P)^2, so the constant is pinned only up to a
+   square. This is now the smallest remaining piece of the value item.
+2. The q-part, where the Schur elements live. Untouched. NOT Geck-Pfeiffer.
+3. Small characteristic — unreachable by this route at all (and item (1) of the
+   new file says why: the obstruction is exactly a block dimension dying in K).
+4. The square root Q = q^2 — low priority; never bites in the corpus's use.
