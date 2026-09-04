@@ -100,3 +100,35 @@ deliberately not done here.
 Both still need checking against what the citing block claims. The bean's
 standing warning holds for these two: repointing a citation at a different paper
 is worse than a broken link.
+
+### Audited the six — they hold, and one of them made the hard call correctly
+
+The claim "the six were resolved correctly" above was checked rather than
+assumed: each entry's `issued` year was compared against the year its own key
+asserts. Five match. **One does not, and it is the interesting one.**
+
+`kashaev-tirkkonen2014` carries **`issued: 2003`**, and its own note says why:
+
+> Cited in q-geometric-langlands/modular-s-transform-q-q-tilde for the Volume
+> Conjecture. The citing key says 2014, but the sole Kashaev–Tirkkonen paper is
+> the torus-knot VC proof: Zap. Nauchn. Sem. POMI 269 (2000) 262–268, English
+> transl. J. Math. Sci. 115 (2003) 2033–2036. **Key year is wrong; entry carries
+> the true year.**
+
+That is precisely the judgement this bean exists to demand. The lazy resolution
+was available and cheap — mint an entry dated 2014 so the key stops failing — and
+it would have put a fabricated year behind a real citation. Instead the agent
+found the actual work, entered its true year, and recorded the mismatch. Do not
+"correct" the entry's year to match the key.
+
+**Latent, and deliberately not fixed here: the KEY is now a misnomer.**
+`kashaev-tirkkonen2014` names a work published 2000 (Russian) / 2003 (English
+translation). Anyone reading the citation without opening the entry will date it
+thirteen years late. Renaming the key would touch the citing block and any
+`\cite{}`; the note prevents the misreading for anyone who looks, so this is
+recorded rather than swept — consistent with this bean's own standing rule that a
+citation's *identity* is not something to change casually.
+
+The other five (`feigin-hashizume2009`, `dimofte-gaiotto-gukov2014`,
+`terashima-yamazaki2011`, `macdonald1971`, `lusztig1989`) match their key years
+and carry distinct titles from their near-misses.
