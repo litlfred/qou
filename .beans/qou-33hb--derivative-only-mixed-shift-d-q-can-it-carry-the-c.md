@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T03:31:01Z
-updated_at: 2026-09-04T08:29:20Z
+updated_at: 2026-09-04T10:42:56Z
 ---
 
 
@@ -32,3 +32,7 @@ Waiting on: owner merge permission for #6582.
 
 
 Merged as PR #6582 (rebase-merge, main b16d5da1db, 2026-09-04). Follow-on: the dictionary/parity question (which t-shift σ is) opened as its own bean.
+
+
+
+## CORRECTION (2026-09-04, level-reading bean): #6582 read σ as a t-shift; the conjecture's x = q^m is the body order = jet level. The theorems stand; the sentence 'if the conjecture holds D_q has a non-derivative component' is re-derived on the correct axis in the level-reading tranche (derivative-like shift-2 ⇒ level-1 residue vanishes).
