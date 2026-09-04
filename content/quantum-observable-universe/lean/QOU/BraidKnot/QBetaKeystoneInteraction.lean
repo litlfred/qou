@@ -12,8 +12,30 @@ MISSES the proton anchor by the full ~2.4 % cross-anchor swing, so c_3 remains t
 derivation. See docs/audits/2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md.
 -/
 
-/-- The exact continuum volume of the figure-eight knot 4_1.
-    Defined via the Bloch-Wigner dilogarithm. -/
+/-- A 16-significant-digit DECIMAL TRUNCATION of the figure-eight volume.
+
+    The docstring here read "The exact continuum volume of the figure-eight knot
+    4_1. Defined via the Bloch-Wigner dilogarithm." Both clauses were false, and
+    in the direction that matters: this is a hardcoded literal, and nothing in
+    this file evaluates a dilogarithm. Measured against the corpus's exact
+    carrier `QOU.Knot.FigureEightVolume.VOL_4_1 = 2 * Cl_2 (π/3)`:
+
+        this def   2.029883212819307
+        exact      2.0298832128193072500424051085490…
+        difference 2.500424051085490e-16   (1.232e-16 relative)
+
+    So `Vol_4_1 ≠ QOU.Knot.FigureEightVolume.VOL_4_1` — the same defect bean
+    `qou-f8lit` records for `Encounter/MostowRigidity.figureEight`, which was
+    repaired by pointing at the exact carrier instead.
+
+    It is NOT repaired the same way here, deliberately. This declaration has
+    **zero consumers**: `c_3_keystone_structure` takes `V_4_1` as a parameter and
+    never reads it, and the one module importing this file
+    (`QOU.BraidKnot.QBetaCategoricalAction`) does not reference it either. Making
+    it exact would add a dependency to a file whose CORRECTIVE NOTE above states
+    its whole content is hardcoded literals with no mathematical content, and
+    would move no number anywhere. Use `QOU.Knot.FigureEightVolume.VOL_4_1` if
+    you need the volume; do not cite this. -/
 noncomputable def Vol_4_1 : ℝ := 2.029883212819307
 
 /-- The topological substrate deformation parameter `u`. -/
