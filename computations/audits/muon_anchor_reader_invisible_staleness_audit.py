@@ -64,6 +64,24 @@ volatile keys masked, tree restored by name afterwards. All five moved:
     qbeta-markov-trace-norm-probe        allPassed true -> FALSE;
                                          L2 residue 6.85e-14 -> 3.48e-9
 
+## One of the five is FIXED here; the other four are deliberately not
+
+`fvk-selection` was the sharpest and is resolved in the same PR. Its producer
+declared `q0_anchor=False` -- stamping `q0Anchor: "independent"` -- above a
+comment reading "no q0 in this producer's cone", while line 92 of the SAME file
+reads the muon anchor's `q0Value` and line 93 carries the proton pin, and the
+`pins_preasymptotic` loop consumes both. A FALSE `independent` is worse than an
+absent stamp: `q0_anchor_is_declared` treats it as settled, so no q0 gate ever
+revisits it. Corrected to `comparison` (the E1 exception) WITH a `q0Values`
+mapping, because the stamp alone traded one gate red for another -- measured,
+`Q0_ANCHOR_MISSING` 1603 -> 1602 but `Q0_COMPARISON_NO_VALUES` 0 -> 1. With the
+mapping the audit VERIFIES both legs against their canonical pins:
+`Q0_COMPARISON` 5 -> 6, `Q0_ANCHOR_MISSING` 1603 -> 1602, nothing else moves.
+
+The other four are left alone on purpose (see below): two are stale greens that
+belong to the `qou-cds1` re-derivation, and refreshing the anchor-class two
+would walk into the `qou-3f7a` tranche, which is another session's live work.
+
 ## Three things this deliberately does NOT claim
 
 1. **The two convention-class producers are NOT asserted broken.** A C-frame
