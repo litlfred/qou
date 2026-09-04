@@ -192,3 +192,34 @@ Stated as the owner's call; none of this is done on the branch.
 My recommendation, as judgement: (C) now (it is two lines and removes two
 false "this decl is the claim" edges), (B) as its own bean, (D) only after
 the owner reads row 2, because it changes what the chapter claims.
+
+## Correction 2 (same day, after the merge): option C is withdrawn as stated
+
+Rows 4 and 5 above were classified by declaration *kind* ("a statement
+block whose ref names a `def`") and I recommended repointing both. Read in
+full, neither is an aiming error:
+
+- **`skein-mass-from-linking`** — `def skein_mass_from_linking … : Prop` is
+  a **deliberate named-statement carrier**: the module docstring says
+  *"Named, not asserted"* and explains why neither a projection nor a
+  `sorry` is the honest form (the `qou-z9ws` self-assuming-projection
+  drain). The only theorems in the file are the torus-knot specialisation
+  *derived from* that named hypothesis and a standing counterexample over
+  free data. Repointing the ref at `skein_mass_torus_constituents` would
+  misdescribe the lemma. **Correct status: stated, not proved** — a
+  `has_sorry`-equivalent that no `sorry`-keyed detector will ever see. No
+  change.
+- **`hadron-half-life`** — `def hadron_half_life (d) := d.halfLife` is a
+  *"top-level alias matching the manifest declaration"*, i.e. it exists so
+  the ref resolves. There is **no theorem in the file that states the
+  proposition's formula** $\Gamma_\beta = |\mathcal{W}(q)|^2\mu_0/(2\pi^3)
+  \cdot [2]_q\cdot|\mathcal{M}_q|^2\cdot f(Q)$; the Lean carries
+  `halfLife = ln 2 / qPrefactor q` with `qPrefactor q = (q+q^{-1})(q-q^{-1})^5`,
+  its positivity, and an unrelated `mass_splitting`. Repointing at
+  `hadron_half_life_pos` would swap one non-claim for another. **Correct
+  status: the $q$-shape is formalised, the proposition is not.** Recorded
+  as an author note on the block and as a GAP bean.
+
+So the cheap fix I recommended does not exist. What remains from the list
+is (B) for `content-scaling-correspondence` and the new half-life gap,
+both opened as GAP beans; (D) still waits on the owner reading row 2.
