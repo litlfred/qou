@@ -1,11 +1,11 @@
 ---
 # qou-1ucq
 title: 'The 73x/122x tr_M contradiction is RESOLVED; the residue is six narrative chains describing a route nobody takes'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T16:49:44Z
-updated_at: 2026-09-04T07:55:00Z
+updated_at: 2026-09-04T08:20:00Z
 ---
 
 Found 2026-08-30 while scoping the six documents of `qou-rm57`. This is a
@@ -403,3 +403,71 @@ colour-weighted**, so **5 of the 23 lie OUTSIDE rho(B_6)**, not 0 -- and the
 deuteron carries a colour-weighted letter that neither A=1 word has. The p and
 n breakdowns the documents state (6+3+2 and 5+4+2) are both CORRECT as
 measured; only the noun was wrong. The deuteron's was wrong in substance too.
+
+
+## CLOSED 2026-09-04 — the last item is repaired, and it was 4 defects not 2
+
+The section above said the two flagged proton premise errors were "the ONLY
+thing still open". They are repaired, and **two more of the same kind were
+found in the neutron chain that nobody had flagged.**
+
+### The rule, derived rather than patched
+
+The atomic element is `T_w = prod_j (sigma + d_j . 1)` with
+`d_j in {0, -h, -h/2}`, `h = q - q^-1`. A 1-dimensional rep sends
+`sigma -> e`, so each letter contributes `(e + d_j)`:
+
+    trivial (3),  e = q      :  q,  q^-1,  and  q - h/2 = (q + q^-1)/2 =: A
+    sign (1,1,1), e = -q^-1  : -q^-1, -q,  and  -A
+
+so with `n0` sigma, `n-` sigma^-1, `na` averaged and `L` letters total:
+
+    chi^(3)     = q^(n0 - n-) . A^na
+    chi^(1,1,1) = (-1)^L . q^(n- - n0) . A^na
+
+**The averaged letter contributing the ARITHMETIC MEAN of the two
+sigma-eigenvalues is exactly what "weight-1 average over crossing sign"
+means.** That is the internal check that this is derived and not fitted.
+
+### The four defects
+
+    proton  chi^(3)      doc q^6     correct  q^3 A^2     HIGH BY 35.277 %
+    proton  chi^(1,1,1)  doc q^-6    correct -q^-3 A^2    172.33 %, AND WRONG SIGN
+    neutron chi^(3)      doc q       correct  q A^2       LOW BY 1.0808 %
+    neutron chi^(1,1,1)  doc -q^-1   correct -q^-1 A^2    LOW BY 1.0808 %
+
+**The neutron pair is new.** Its sigma-exponent is right BY COINCIDENCE -- the
+document's `3-2` and the true `5-4` are both 1 -- while the 2 AVERAGED letters
+are dropped entirely. A right exponent reached from wrong counts is not a right
+answer, and it is exactly the near-miss that survives a flagging pass: the
+proton's error is 35 % and shouts, the neutron's is 1.08 % and does not.
+
+The proton sign flip is the substantive one. `L = 11` is odd, so the sign rep
+is NEGATIVE; a purely-positive-word premise cannot see that at all.
+
+### Verification
+
+Every closed form checked against the production kernel
+`chi_all_lambda_reduced_block(word, 3, q=q0)` at 80 dps: relative agreement
+<= 4.3e-81, the arithmetic floor. Compositions measured from
+`atom_braid_word_3A`, not read off any document. No `target_value` moves; four
+`output_value` fields do, which is the point.
+
+The guard `computations/audits/derivation_chain_crossing_claim_audit.py` needed
+a fix of its own: repairing a step keeps its old premise on the record, and the
+retained paragraph read as a live claim, so the audit FAILED ON THE REPAIR. Now
+exempts a "SUPERSEDED PREMISE" / "used to assume" marker alongside "previously
+read" -- all three necessarily quote the wording they retract. Re-verified
+against the TRUE pre-fix files (from the merge-base, in an isolated copy, not a
+`git stash` which only reaches HEAD): still exits 1 naming all 5. The exemption
+did not weaken detection.
+
+### Two corrections of my own, both caught before anything shipped
+
+  * I first reported the neutron as ALSO claiming `q^6`/`q^-6` with 66.67 % /
+    158.7 % errors. That was a hardcoded line in MY probe, not the document.
+    The document says `q` / `-q^-1` and is off by 1.0808 %.
+  * An `EXIT=0` I printed after a pipe was `tail`'s status, not the audit's --
+    the audit was failing at that moment. Read `PIPESTATUS`, or redirect.
+
+Nothing remains open on this bean.
