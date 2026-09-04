@@ -56,13 +56,30 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+
+# `q_parameter` lives in computations/substrate/ (bean qou-9ugp); the anchor
+# must be read from it so the witness resolves its stamp. Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 import sympy as sp
 
 mp.mp.dps = 60
 
 # proton pin (package layer); muon pin for the second anchor.
-Q0_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
-Q0_MUON = mp.mpf("1.10997859555733471")   # muon-anchored computations/ value
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
+Q0_MUON = q_muon_at(50)
 
 # Exact Ohtsuki κ-ladder (4₁ saddle-fluctuation invariants) — transseries probe
 # (#3606/#3628 + C6 derivation). odd n carry √3, even n rational.
@@ -343,6 +360,15 @@ def main() -> int:
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=None)
+        # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+        # pins deliberately, so no anchor list can classify it and it was going
+        # out unstamped. The reason string is kept ASCII on purpose: this
+        # witness is written with json.dump, whose ensure_ascii=True turns any
+        # non-ASCII into a \\uXXXX escape and collapses the shape guard.
+        witness.update(q0_comparison(
+            muon=Q0_MUON, proton=Q0_PROTON,
+            reason='evaluates the phi_b 2-loop b-dictionary at both pins and reports each under its own key; both pins are read on purpose',
+        ))
         json.dump(witness, f, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

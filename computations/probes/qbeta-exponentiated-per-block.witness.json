@@ -1,10 +1,10 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "mpmath 1.4.1; sympy 1.14.0",
-  "computedAt": "2026-08-29T08:56:23.353280+00:00",
+  "computedAt": "2026-09-03T23:46:10.144824+00:00",
   "computation": "qbeta-exponentiated-per-block",
   "scriptFile": "qbeta_exponentiated_per_block_probe.py",
-  "commitSha": "5ea6338121bebd9da568a2998279807aac19ad58",
+  "commitSha": "d15ca14cbb8d6b280ae602f1581bdb606fc784da",
   "description": "PROBE 6a (U1, PR #1585 queue item 2, never previously run): seeds the Q_beta scaling map as F = exp(N*Sum_lambda g_lambda(u_L)) with the per-Wedderburn-block Delta tr_M closed forms (paper closed forms, PR #1764; leading eps-coefficients -2/-1/-2), even-in-hbar projection onto the integer u_L = b*hbar_q^2 ladder (C13 bridge change of variable), UNIFORM weights, scale fixed ONLY by the proved c_2 = -1. Reads off c_3, c_4 symbolically (constants over b) and numerically at both q0 anchors (proton-pinned from qou_substrate.constants; muon canonical). Records the anchor-stability diagnostic and two structural collapses: uniform-weight exp(Sum per-block) = exp(total), and exp-vs-linear seeding share c_3 when the seed starts at u_L^2. NOT a fit; no scan; no wiring.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -94,15 +94,15 @@
       },
       "muon": {
         "c_2": "-1.0",
-        "c_3": "-3.249424513892296690582484302489991177245",
-        "c_4": "-7.753950458181502599310693248268342544634"
+        "c_3": "-3.249424513883756829469758452451235455095",
+        "c_4": "-7.753950458138117938277491208735600853168"
       }
     },
     "anchors": {
       "proton_q0": "1.1099785827513808075916690956107688798744991218736",
-      "muon_q0": "1.1099785955573347198997632204832250266562084087802",
+      "muon_q0": "1.109978595642739046681795129380001752700065561029",
       "b_proton": "0.86758406696525115565116289153605239570497937739431",
-      "b_muon": "0.86758406730714238749179779530277068827007617830461"
+      "b_muon": "0.86758406730942249814116364145909374893054870502011"
     },
     "empirical_c3": {
       "proton": "-2.06934257711516783787971951725",
@@ -113,7 +113,7 @@
       "muon": "0.6084761952"
     },
     "anchor_stability": {
-      "predicted_c3_cross_anchor_swing": "3.940727414e-10",
+      "predicted_c3_cross_anchor_swing": "3.967008564e-10",
       "empirical_c3_cross_anchor_swing": "0.02375365467",
       "prediction_is_anchor_constant": true,
       "note": "b(q0) differs only at ~1e-8 relative between the two pins, so any c_k = rational/b^m prediction is anchor-constant to ~1e-8 \u2014 it cannot track the 2.38% empirical swing (the C13 diagnostic, reproduced here for the exponentiated seed)."
@@ -158,14 +158,19 @@
   "verdict": {
     "overall": "NEGATIVE",
     "predicted_c3_proton": "-3.24942451517280631740610577663",
-    "predicted_c3_muon": "-3.24942451389229669058248430249",
+    "predicted_c3_muon": "-3.24942451388375682946975845245",
     "anchor_constant": true,
-    "summary": "Exponentiated per-block seeding (U1) gives c_3 \u2248 -3.2494245 at both anchors \u2014 anchor-constant (swing 3.9e-10 vs empirical 2.38%) and 57.0% (proton) / 60.8% (muon) from the empirical c_3 \u2014 exactly the C13 failure mode. Two structural collapses make this unsurprising: (i) uniform weights collapse exp(\u03a3_\u03bb g_\u03bb) to exp(g_total); (ii) with the ladder-convention seed starting at u_L\u00b2, the exponentiated and linear seedings share c_3 identically \u2014 exponentiation only moves c_4 (by +\u00bd). Scope-limited refutation (a): the exponentiated per-block \u0394tr_M seeding, ALONE and with uniform weights, does not reproduce c_3; it does not exclude per-block data inside a non-linear or non-uniform closure (which would need a derived, not fitted, weight rule). Extends C13: 'linear / bar-even' \u2192 'linear, bar-even, AND exponentiated-uniform' \u0394tr_M-seeded f all refuted."
+    "summary": "Exponentiated per-block seeding (U1) gives c_3 \u2248 -3.2494245 at both anchors \u2014 anchor-constant (swing 4.0e-10 vs empirical 2.38%) and 57.0% (proton) / 60.8% (muon) from the empirical c_3 \u2014 exactly the C13 failure mode. Two structural collapses make this unsurprising: (i) uniform weights collapse exp(\u03a3_\u03bb g_\u03bb) to exp(g_total); (ii) with the ladder-convention seed starting at u_L\u00b2, the exponentiated and linear seedings share c_3 identically \u2014 exponentiation only moves c_4 (by +\u00bd). Scope-limited refutation (a): the exponentiated per-block \u0394tr_M seeding, ALONE and with uniform weights, does not reproduce c_3; it does not exclude per-block data inside a non-linear or non-uniform closure (which would need a derived, not fitted, weight rule). Extends C13: 'linear / bar-even' \u2192 'linear, bar-even, AND exponentiated-uniform' \u0394tr_M-seeded f all refuted."
   },
   "allPassed": true,
-  "scriptHash": "f0191a26a905",
-  "scriptCommitSha": "119885a4c61eef38636020200895924142ee5621",
+  "scriptHash": "5407d3287284",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "comparison",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "compares the exponentiated per-block c_3 against the empirical target at BOTH pins; both pins are read on purpose and each has its own target"
 }

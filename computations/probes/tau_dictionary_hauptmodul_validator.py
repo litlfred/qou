@@ -85,6 +85,8 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 del _sys, _Path, _bridge
 
 from mpmath import mp, mpc, mpf, exp, log, pi, kleinj  # noqa: E402
@@ -93,10 +95,14 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # ── the two q₀ pins (AGENTS.md §q₀ anchor convention) ──────────────────────
-# muon pin: computations/q-pinning-50-digit.witness.json (canonical 3-CAL)
-Q0_MUON = "1.10997859555733471989976322048322502665620840878015368660798114614493"
-# proton pin: tools/qou-substrate qou_substrate.constants.Q_50_DIGIT_STR
-Q0_PROTON = "1.1099785827513808075916690956107688798744991218736"
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+Q0_MUON = mp.nstr(q_muon_at(50), 50, strip_zeros=False)
+Q0_PROTON = Q_50_DIGIT_STR
 
 # ── gate constants (exact side: BringHauptmodulGate.lean) ──────────────────
 T5_TARGET = -10          # t₅(τ₀) = −10 exactly (rational root of the sextic)
@@ -387,7 +393,13 @@ def main():
                "single expected verdict (REF-tau0 PASS; C1n ill-defined; C1, "
                f"S1-S3 FAIL). Mismatches: {verdict_mismatches or 'none'}.",
     )
-    wb.save()
+    # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+    # pins deliberately, so no anchor list can classify it and it was going
+    # out unstamped. Carries the values actually computed with.
+    wb.save(q0_comparison(
+        muon=Q0_MUON, proton=Q0_PROTON,
+        reason='validates the tau-dictionary hauptmodul gate at BOTH pins; both pins are read on purpose and each is reported under its own key',
+    ))
 
     # Enforce AFTER the witness exists, so a failure is recorded rather than
     # only raised. Exit status is unchanged from the old bare asserts.
