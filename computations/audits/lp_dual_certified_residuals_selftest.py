@@ -123,6 +123,48 @@ def main() -> int:
         if not ok:
             failures.append(f"degenerate input not rejected: {name}")
 
+    # ---- 4. Are the PRODUCER-SIDE THRESHOLDS falsifiable? ---------------
+    # qou-sof3 replaced a vacuous `lp_strong_duality` assertion (tolerance
+    # 1e-6 against a ~4e-44 quantity) in
+    # `computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py`.
+    # Shipping two REPLACEMENTS without showing they can go red would repeat
+    # the defect, so both thresholds are exercised in both directions here.
+    print("[4] producer thresholds (qou-sof3) must fail on bad input:")
+
+    # (a) certified-gap tolerance = 100 x cancellation floor
+    max_x, prec_bits = mp.mpf("265025.0136012168"), 167
+    floor = max_x * mp.mpf(10) ** (-mp.mpf(prec_bits) * mp.log10(2))
+    tol = 100 * floor
+    for label, val, want_pass in (
+        ("observed 2.21e-45", mp.mpf("2.21176397031290088864e-45"), True),
+        ("10x tolerance", 10 * tol, False),
+        ("1.01x tolerance", mp.mpf("1.01") * tol, False),
+    ):
+        got = val <= tol
+        ok = got == want_pass
+        print(f"    gap {label:22s} -> {'pass' if got else 'FAIL'}"
+              f"  (expected {'pass' if want_pass else 'FAIL'})  "
+              f"{'OK' if ok else 'THRESHOLD BLIND'}")
+        if not ok:
+            failures.append(f"gap threshold not falsifiable: {label}")
+
+    # (b) strict-complementarity separation, threshold 25 decades
+    for label, on, off, want_pass in (
+        ("observed 46.6 dec", mp.mpf(1), mp.mpf("2.7248533796e-47"), True),
+        ("degenerate 8.6 dec", mp.mpf(1), mp.mpf("2.7248533796e-9"), False),
+        ("just under, 24 dec", mp.mpf(1), mp.mpf(10) ** (-24), False),
+        ("just over, 26 dec", mp.mpf(1), mp.mpf(10) ** (-26), True),
+    ):
+        sep = mp.log10(on) - mp.log10(off)
+        got = sep >= 25
+        ok = got == want_pass
+        print(f"    sep {label:22s} = {float(sep):5.1f} -> "
+              f"{'pass' if got else 'FAIL'}  (expected "
+              f"{'pass' if want_pass else 'FAIL'})  "
+              f"{'OK' if ok else 'THRESHOLD BLIND'}")
+        if not ok:
+            failures.append(f"separation threshold not falsifiable: {label}")
+
     print()
     if failures:
         print("FAIL:")
