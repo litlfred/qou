@@ -78,4 +78,65 @@ theorem strong_duality
     apply Finset.sum_congr rfl; intro i _; ring
   linarith
 
+
+/-- **Duality-gap decomposition.** An unconditional identity: the primal-dual
+    gap is exactly the sum of the primal complementary-slackness residuals
+    `(c_j - (Aᵀy)_j) · x_j` and the dual ones `y_i · ((Ax)_i - b_i)`.
+
+    No feasibility hypothesis is needed — this is algebra, and that is the
+    point. A solver reports a `duality_gap` scalar; this identity lets a
+    consumer *recompute* that gap from the emitted `x`, `y`, `A`, `b`, `c`
+    alone, so the reported number becomes checkable rather than trusted.
+    `weak_duality` above says the gap is non-negative under feasibility;
+    this says *where it lives*. -/
+theorem duality_gap_decomposition
+    (A : Fin m → Fin n → ℝ) (b : Fin m → ℝ) (c : Fin n → ℝ)
+    (x : Fin n → ℝ) (y : Fin m → ℝ) :
+    (∑ j, c j * x j) - (∑ i, b i * y i)
+      = (∑ j, (c j - ∑ i, y i * A i j) * x j)
+        + (∑ i, y i * ((∑ j, A i j * x j) - b i)) := by
+  have hswap : (∑ j : Fin n, (∑ i : Fin m, y i * A i j) * x j)
+             = (∑ i : Fin m, y i * (∑ j : Fin n, A i j * x j)) := by
+    simp_rw [Finset.mul_sum]
+    rw [Finset.sum_comm]
+    apply Finset.sum_congr rfl; intro j _
+    rw [Finset.sum_mul]
+    apply Finset.sum_congr rfl; intro i _; ring
+  have hp : (∑ j : Fin n, (c j - ∑ i : Fin m, y i * A i j) * x j)
+          = (∑ j : Fin n, c j * x j)
+            - (∑ j : Fin n, (∑ i : Fin m, y i * A i j) * x j) := by
+    rw [← Finset.sum_sub_distrib]
+    apply Finset.sum_congr rfl; intro j _; ring
+  have hd : (∑ i : Fin m, y i * ((∑ j : Fin n, A i j * x j) - b i))
+          = (∑ i : Fin m, y i * (∑ j : Fin n, A i j * x j))
+            - (∑ i : Fin m, b i * y i) := by
+    rw [← Finset.sum_sub_distrib]
+    apply Finset.sum_congr rfl; intro i _; ring
+  rw [hp, hd, hswap]
+  ring
+
+/-- **Certified gap bound.** If every primal slack residual and every dual
+    slack residual is at most `ε ≥ 0` in the (signed) sense below, the gap is
+    at most `(n + m) · ε`.
+
+    This is the form a numerical consumer can discharge: it bounds the true
+    gap by quantities it computes itself from the emitted certificate, with
+    no appeal to the solver's own `duality_gap` field. -/
+theorem duality_gap_le_of_residual_bounds
+    (A : Fin m → Fin n → ℝ) (b : Fin m → ℝ) (c : Fin n → ℝ)
+    (x : Fin n → ℝ) (y : Fin m → ℝ) (ε : ℝ)
+    (hp : ∀ j, (c j - ∑ i, y i * A i j) * x j ≤ ε)
+    (hd : ∀ i, y i * ((∑ j, A i j * x j) - b i) ≤ ε) :
+    (∑ j, c j * x j) - (∑ i, b i * y i) ≤ (n : ℝ) * ε + (m : ℝ) * ε := by
+  rw [duality_gap_decomposition A b c x y]
+  have h1 : (∑ j : Fin n, (c j - ∑ i : Fin m, y i * A i j) * x j) ≤ (n : ℝ) * ε := by
+    calc (∑ j : Fin n, (c j - ∑ i : Fin m, y i * A i j) * x j)
+        ≤ ∑ _j : Fin n, ε := Finset.sum_le_sum fun j _ => hp j
+      _ = (n : ℝ) * ε := by simp [Finset.sum_const, mul_comm]
+  have h2 : (∑ i : Fin m, y i * ((∑ j : Fin n, A i j * x j) - b i)) ≤ (m : ℝ) * ε := by
+    calc (∑ i : Fin m, y i * ((∑ j : Fin n, A i j * x j) - b i))
+        ≤ ∑ _i : Fin m, ε := Finset.sum_le_sum fun i _ => hd i
+      _ = (m : ℝ) * ε := by simp [Finset.sum_const, mul_comm]
+  linarith
+
 end QOU.Mathlib.LPDuality
