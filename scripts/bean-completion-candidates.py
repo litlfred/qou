@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Open beans that a later commit says were finished.
+"""Open beans with recent related activity — worth OPENING, not a staleness list.
+
+MEASURED PRECISION 2 IN 12. Read the caveat block below before quoting this.
 
 WHY THIS EXISTS
 ---------------
@@ -42,12 +44,24 @@ small.** Measured on the 12 high-priority candidates in the first run, at least
     whose whole point is that the closure was an artifact, and the bean was
     REOPENED by that very commit. A regex over a subject cannot see scare quotes.
 
-**Reading the BODIES raises the rate further.** The ~4-in-10 above is what is
-visible from subjects alone. Of the first four high-priority candidates whose
-beans were actually opened and read, THREE were genuinely open and said so in
-their own text ("Bean stays open on (1)-(4)"; "REOPENED. OPEN next step: ...").
-n = 4 is small, but it points one way: treat the print-out as a list of beans
-worth OPENING, and expect most of them to survive the read.
+  * **DELIBERATELY PARKED.** `qou-mln9` reads "Left `todo` deliberately ...
+    Closing is the author's call." Not stale -- correctly parked, reason stated.
+    No commit-message heuristic can tell a parked bean from a forgotten one,
+    because the difference is intent and lives in the body.
+
+**MEASURED PRECISION: 2 in 12, on the full high-priority list.** An earlier
+version of this docstring said "~4 in 10 false positives" -- estimated from
+subjects. Reading all twelve bodies gives TEN false positives: only `qou-vtau`
+and `qou-w2vy` were genuinely stale, with `qou-c1ln` arguable.
+
+So this is NOT a staleness list. It is a "beans with related recent activity,
+worth opening" list. That is still worth twelve reads if it prevents one
+re-derivation -- on the day it was written it would have prevented two -- but it
+is a much smaller claim than the one this script shipped with.
+
+**A better detector cannot be built from commit messages.** All four
+false-positive classes are semantic and live in the bean body or the author's
+intent. The check that works is an agent reading the bean.
 
 **Do not bulk-close from this output.** It is a read queue: it tells you which
 beans are worth opening, and the reading is still yours.
@@ -154,9 +168,11 @@ def main() -> int:
         print(f"  {bid}  ({pri}, last updated {b['updated'][:10]}){flag}")
         print(f"    bean : {b['title'][:100]}")
         print(f"    later: {sha[:11]} {iso[:10]} {subj[:100]}")
-    print("\nCANDIDATES, NOT VERDICTS. From SUBJECTS alone the false-positive rate is "
-          "~4 in 10; reading four\nof the bodies, THREE were still genuinely open. "
-          "Three structural causes, all unfixable by regex:")
+    print("\nCANDIDATES, NOT VERDICTS. MEASURED PRECISION 2 IN 12 on the full "
+          "high-priority list\n(all twelve bodies read): only qou-vtau and qou-w2vy "
+          "were genuinely stale.\nThis is a 'worth OPENING' list, NOT a staleness "
+          "list. Four structural causes,\nall unfixable by regex because they are "
+          "semantic:")
     print("  1. partial completion  -- 'ITEM 4 CLOSED', 'item 3 fully closed; the "
           "remaining item is ...'")
     print("  2. the verb governs a DIFFERENT bean named in the same subject "
@@ -164,6 +180,8 @@ def main() -> int:
     print("  3. the verb is QUOTED or NEGATED and the commit REOPENED the bean -- "
           "e.g. qou-hok7's\n     \"deuteron-wall 'resummation closed' is a "
           "wrong-transform artifact\"")
+    print("  4. the bean is DELIBERATELY PARKED and says so -- e.g. qou-mln9's "
+          "'Left todo\n     deliberately ... Closing is the author's call.'")
     print("\nOpen each one and read it. Do NOT bulk-close from this output.")
     return 0
 
