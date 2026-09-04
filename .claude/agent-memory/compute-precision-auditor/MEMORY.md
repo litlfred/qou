@@ -206,43 +206,22 @@ one bound atom of nineteen. Do not expect the table to finish.
 One line per audit: what you gated, what the gates returned, any entry above
 you confirmed or corrected. Keep under ~200 lines — prune the log, never the
 TRAPs.
-- 2026-09-01 — bean `t7qv`: split `measurement-hygiene-traps.md` out. Six traps,
-  each one a claim I had to withdraw. **`abs(x) > tol` on a sign-proven
-  quantity** caught structurally-impossible negative gaps (solver noise) and
-  produced a knife-edge that did not exist — assert the sign, and treat any
-  sign violation as your noise floor announcing itself. **Single-root bisection**
-  on a margin with no root in range returned a meaningless `2.0009`; scan for
-  brackets first. **An unverified linear solve** gave a plausible weak-transition
-  operator with residual `1.3e-1` (transposed matrix); print the residual beside
-  every solve. **Assertion thresholds written from prose** rather than from the
-  printed value failed three probes whose measurements were fine. **A container
-  reset silently moved the checkout to another branch** — same probe, different
-  `pyhecke`, `0.477` became `0.679`, and I nearly filed two fabricated defects;
-  the tell is `ModuleNotFoundError: mpmath`, so run `git branch --show-current`
-  first. **`--depth=1` poisons `merge-base`**, which then returns empty and makes
-  `git log -1 $(...)` silently report HEAD; ancestry counts read `7`/`33685`
-  against a true `119`/`1343`. Also: the stored f64 `y_lambda` tables set a
-  `~1e-8` agreement floor on anything routed through `load_cost` — quote seven
-  digits there, not fourteen, while single-route quantities reach `1e-13`/`1e-16`.
-  **Exact at both endpoints is not exact in between** — a `p-n` writhe exponent
-  was settled by two independent routes agreeing on `+delta/2` (an interpolation
-  from `e_pp=+1`/`e_nn=-1`, and my own operator identity), against production's
-  `-delta/2`. Both were wrong by `217x`: the averaged-exponent and per-diagram
-  forms agree *exactly* at the two endpoints and nowhere else, so the only two
-  bonds anyone had checked could not detect it, and an interpolation anchored on
-  them reproduces itself while looking like a derivation. Test at an interior
-  point, and before averaging a parameter that sits in an exponent, check whether
-  the physics sums or multiplies — `f(mean(x)) = mean(f(x))` only for affine `f`.
+- 2026-09-01 — bean `t7qv`: split `measurement-hygiene-traps.md` out. **Read that
+  file** — six traps, each a claim I had to withdraw: `abs(x) > tol` on a sign-proven
+  quantity; single-root bisection with no bracket; an unverified linear solve
+  (residual `1.3e-1`); assertion thresholds written from prose; a container reset that
+  silently moved the checkout to another branch; `--depth=1` poisoning `merge-base`.
+  Two operational facts worth carrying inline, because they change what you compute:
+  **the stored f64 `y_lambda` tables set a `~1e-8` floor on anything through
+  `load_cost`** (quote seven digits there, not fourteen), and **atom bonds do not
+  commute** — insertion order is worth `11 %` at `A=3` and `38-40 %` at `A=4`, so take
+  the order from `atom_gen_chains` (interleaved) and quote it with any trace.
   **BEFORE OPTIMISING ANY HECKE TRACE:** convention D zeroes every partition with
-  `>=3` rows at *every* strand count (`N=2` specialisation, not just `y_alt=0` at
-  `n=3`). `n=6` is 4 nonzero blocks of 11, `n=9` is 5 of 30, `n=12` is **7 of
-  77** — largest dim `297`, built in `0.04 s`. `A=4` was believed to need `H_12`
-  and be unreachable; it is under a second. Weights: `y_(n-k,k) = [n-2k+1]_q / Z`
-  normalised by `sum(y*dim)=1` at `q=q0` — exact against `load_cost` at `n=9`.
-  Reach: `A=5` comfortable (2002), `A=6` sparse (13260), `A=7` out (90440); the
-  largest block is *not* at the largest `k`. Also: **atom bonds do not commute** —
-  insertion order is worth `11 %` at `A=3` and `38-40 %` at `A=4`, so take the
-  order from `atom_gen_chains` (interleaved) and quote it with any trace.
+  `>=3` rows at *every* strand count. `n=12` is **7 nonzero blocks of 77**, largest dim
+  `297`, built in `0.04 s` — `A=4` was believed to need `H_12` and be unreachable; it
+  is under a second. `A=5` comfortable (2002), `A=6` sparse (13260), `A=7` out.
+  Weights `y_(n-k,k) = [n-2k+1]_q / Z`, `sum(y*dim)=1` at `q0`; exact against
+  `load_cost` at `n=9`. Full derivation and cross-checks in the detail file.
 
 - 2026-09-03 (qou-pdg9): exact leading-order coefficients by running the
   duck-typed `Fraction` seminormal pipeline over power series; three traps
@@ -270,3 +249,52 @@ TRAPs.
     `close_321_weinberg_gap.py` — witness declares `engine: sympy`,
     `compute_dps: 70`, carries **127** raw-f64 fields, `det_product:
     -0.9999999999999998`.
+- 2026-09-04 — `computations/deltalambda/` q₀ re-pin tranche (qou-9ugp), 23 units.
+  Gate family run in full: **EXIT 1, 11 blocking reds, ALL pre-existing** — raw-float64
+  ratchet NEW 3 / REGRESSED 3 and every one has **0 commits on this branch**; only 4
+  `deltalambda` lines in a 435-line log, none a file I changed. `deltalambda` anchor
+  stamps `None` 125 → 105, `proton` 67 → 83, `comparison` 0 → 3, `ambiguous` 0 → 2,
+  false `independent` 24 → 23. LP-dual validator: 6 missing-dual witnesses corpus-wide,
+  **none** in this directory. Six carry-forwards, the first two new TRAPs:
+  * **TRAP — "38 producers carry a literal" was 23.** A `grep -F` on the retired pin
+    matches the HISTORICAL NOTE a previous drain leaves behind: 13 of the 38 were
+    already fixed and carry the literal only in a comment saying so. Classify by AST
+    (comment / docstring / live line) before sizing a tranche. Conversely the same
+    grep MISSES a 17-digit transcription (`1.1099785955573347`) — the pin forks at the
+    19th digit into three tails, `…4711748…` (he4, 7.3e-18 apart) vs `…4719899…`.
+  * **TRAP — `wrap_legacy(...).save()` does NOT stamp `q0Anchor`.** `build()` writes it
+    only when the pin is POSITIVELY declared: a `q0_anchor_manifest.json` entry, the
+    env var, or **q0 evidence in the payload**. Importing `q_parameter` is not enough
+    for this shape. Record `context.q0` AND list the stem, or the witness stays
+    `Q0_ANCHOR_MISSING` after a correct migration.
+  * **A false `independent` is the signature defect of a hardcoded pin.**
+    `c_knot_tau_transfer_artifact` declared `q0Anchor: independent` citing an AST
+    import-cone walk that found no `q_parameter` — true of the imports, false of the
+    computation, because the pin was typed in. 5 of its 6 published quantities move
+    (h, 1/h, μ₀ at 1.11e-7; E_rot, τ-ratio at 3.06e-9); only `C_knot` is genuinely
+    q₀-free. An import-cone detector is blind precisely to the producer that freezes
+    its pin — the two defects select for each other.
+  * **Migrating the CODE does not migrate the WITNESS PROSE.** After the 2026-08-29
+    drain, 7 committed witnesses here published `q0_convention: "muon-canonical"`
+    beside `q0Anchor: "proton"`, and 5 carried `q0AnchorReason: "producer declared
+    q0-independent (q0_anchor=False)"` beside `proton` — the arg was removed, the
+    string outlived it, because a preserved top-level key is not re-derived.
+  * **`fmt()` on a low-dps value MANUFACTURES digits — the mirror of float64.**
+    `mu3_anchor_consistency` runs at `set_compute_dps(40)`; `fmt` renders at
+    `OUTPUT_DPS=60`, so `fmt(rel_q*1e9)` invented 20 digits and diverged from truth at
+    digit 33. Also `mp.nstr(Q_PROTON, 50)` of a 40-dps mpf padded ten digits into the
+    anchor field. Recompute in `mp.workdps` **from the canonical STRINGS**; verify the
+    rendering is stable across two working precisions (60 dps was NOT: `…666793612`
+    vs `…667054978` at 80/120).
+  * **Run the HEAD producer before attributing ANY move.** Two cases here.
+    `deltalambda-bareven-b4-magnitude`: 25 of 31 diffs reproduce at HEAD, including a
+    verdict flipping "rho3=6.0 (+58%)" → "rho3=2.466 (−35.3%)"; the pin was 4 fields at
+    2.4e-10. `he4-binding-k-fingerprint-stage1`: the whole top-10 ranking, a 2.91×
+    target and a 1.4% `cp_trace` all reproduce at HEAD — a **stale consumer** of
+    `canonical-tr-m-via-chi-cache` whose sibling reading the same field was current.
+    Pin sensitivity there is **4.02**, not the 1.2e6 a 1.4%-is-the-pin reading implies.
+  * **Two agents on one checkout: use `git commit -- <paths>`, never `add` then
+    `commit`.** A sibling's `git commit` swept my staged files into its own message
+    while I lost the race for `.git/index.lock`. The pathspec form never leaves
+    anything in the shared index. Also: a sibling's untracked-file cleanup deleted my
+    `_headcopy_*.py` mid-run and the producer died at `file_content_hash()`.
