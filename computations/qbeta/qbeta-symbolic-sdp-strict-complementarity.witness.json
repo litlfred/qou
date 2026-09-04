@@ -1,16 +1,24 @@
 {
   "engine": "lp+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T07:53:05.033014+00:00",
-  "commitSha": "100f218a7c6838e088bf504c68f613bebb18df27",
+  "computedAt": "2026-09-04T09:19:45.153391+00:00",
+  "commitSha": "3e50501eaa9326403bac1bc5da938ca06799ed3c",
   "assertions": [
     {
-      "name": "lp_strong_duality",
-      "computed": "3.9503384011652088520421794652107763270571587802294e-44",
+      "name": "lp_duality_gap_certified",
+      "computed": "2.21176397031290088864352629321e-45",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-6",
-      "source": "operator-selection LP strong duality |primal - dual|"
+      "tolerance": "1.4166990072900729933e-43",
+      "source": "|gap_recomputed - solver duality_gap|; gap_recomputed from QOU.Mathlib.LPDuality.duality_gap_decomposition applied to the published x*/y*. Tolerance = 100 x the cancellation floor max|x*|*10^(-prec_bits*log10 2), derived not fitted."
+    },
+    {
+      "name": "strict_complementarity_dual_separation",
+      "computed": "46.564656861512461309",
+      "expected": "25",
+      "passed": true,
+      "tolerance": "1e9",
+      "source": "log10(min active y*) - log10(max inactive y*), in decades. Strict complementarity needs the inactive duals AT the arithmetic floor; 25 decades is half the ~50-digit working precision, below which they have left it and the LP is degenerate. The FAILING direction is below 25 -- the one-sided tolerance keeps a large separation passing."
     },
     {
       "name": "selector_direction_S_independent",
@@ -22,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 40,
+  "durationMs": 50,
   "computation": "qbeta-symbolic-sdp-strict-complementarity",
   "scriptFile": "qbeta_symbolic_sdp_strict_complementarity.py",
-  "scriptHash": "47ac818d3cc7",
-  "scriptCommitSha": "c8db5cf3193cf0f481e08a15b9a13e0abf49ec15",
+  "scriptHash": "79a6c288b7b6",
+  "scriptCommitSha": "62c44e826001f72495d86b57b7f1c2dfc261c884",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -133,6 +141,9 @@
     "primal_obj_str": "3.9236357001094877985864428332117651675847334372542e-44",
     "dual_obj_str": "-2.6702701055721053455736631999011159472425342975215e-46",
     "duality_gap_str": "3.9503384011652088520421794652107763270571587802294e-44",
+    "residual_primal_str": "-1.6531481823424920933246394862010663972041792191711e-42",
+    "residual_dual_str": "1.6904398023838312809564177545599671750500057576457e-42",
+    "gap_recomputed_str": "3.7291620041339187631778268358900777845826538474584e-44",
     "direction_scale_invariant": false,
     "direction_max_diff_across_scales": "1151423.0810244827293889393832875650949296392099891",
     "frobenius_gram_eigenvalues": [
@@ -151,7 +162,9 @@
     "S_cancels_from_ck_directions": false,
     "S_cancels_from_Qbeta_scale_via_Q_A_to_0p17pct": true,
     "S_cancels_from_Qbeta_subppb_normalisation": false,
-    "verdict": "NEGATIVE. The SDP selector direction was not scale-invariant in this configuration; S does not cleanly cancel. Reported as a negative result — no CODATA-Q_β fit attempted."
+    "verdict": "NEGATIVE. The SDP selector direction was not scale-invariant in this configuration; S does not cleanly cancel. Reported as a negative result — no CODATA-Q_β fit attempted.",
+    "duality_gap_cancellation_floor": "1.4166990072900729933e-45",
+    "dual_separation_decades": "46.564656861512461309"
   },
   "q0Anchor": "muon",
   "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"

@@ -209,7 +209,9 @@ at small `n`, where the index falls out of range.
 
 ## TRAP — `git checkout -- computations/` (what the gate PRINTS) eats your source edits
 
-`precision-gates.sh` says, of the four regenerated contended audit witnesses:
+`precision-gates.sh` says, of the regenerated contended audit witnesses (**six**
+on 2026-09-04, not four — the count moves, so name the files the run prints
+rather than assuming a fixed set):
 *"DO NOT COMMIT THESE. Revert them: `git checkout -- computations/`"*. That
 command is **path-scoped**, and essentially every probe and producer in this
 repo lives under `computations/`. Run it verbatim and it discards every
