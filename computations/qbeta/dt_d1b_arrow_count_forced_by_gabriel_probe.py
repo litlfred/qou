@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """dt_d1b_arrow_count_forced_by_gabriel_probe.py — qou-q9ih D1-b, the arrows.
 
+🛑🛑 SUPERSEDED AT THE PREMISE, not at the answer. Read
+`dt_d1b_gabriel_route_void_source_verified_probe.py` FIRST. Checked against the
+source (GGM arXiv:2012.00062v3, held in this repo) for the first time, each
+eq-(98) entry is ONE Stokes constant at ONE Borel singularity — a multiplicity
+at a single charge. Gabriel's bijection gives every positive root multiplicity
+exactly one, so a finite-type quiver has max Ω = 1; this datum has max |Ω| = 4.
+**No finite-type quiver carries it at any rank with any arrow count**, so BOTH
+answers below are void. The enumeration is still correct; it is applied to a
+datum outside Gabriel's hypotheses. Kept, unedited below this banner, because
+the two-step failure is the record.
+
 🛑 THIS PROBE CORRECTS ITS OWN FIRST VERSION. An earlier draft concluded
 "the arrow count is FORCED to 0 or 1". **That answered the wrong question**, and
 the file name is left as-is only so the correction is findable from the commit

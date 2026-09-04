@@ -1,0 +1,186 @@
+{
+  "engine": "exact-integer-source-verification",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T04:00:45.274528+00:00",
+  "commitSha": "e986e0983ed9deb60e75f3722fef64219932e746",
+  "assertions": [
+    {
+      "name": "C1_source_matrices_reproduce",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eq (96),(97) rebuilt from the eq-(98) entries reproduce the typed S±(0) and satisfy the eq-(17) inversion relation. This is the control on the arithmetic below -- if it failed, nothing else in this probe would be about the source"
+    },
+    {
+      "name": "C2_ray_pair_is_the_two_orientations_of_K3",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P2 CONFIRMED. S+ and S- populate exactly the two opposite orientations of the SAME three unordered pairs {12,13,23}. The bar-conjugate ray pair is not two arbitrary stability rays -- it is the two orientations of a 3-node complete graph. Not previously recorded in this corpus"
+    },
+    {
+      "name": "C3_finite_type_EXCLUDED_max_omega_is_4",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P3 CONFIRMED, and this is the result. The source says each eq-(98) entry is ONE Stokes constant at ONE Borel singularity iota_{i,j} -- a multiplicity at a single charge, not a count of distinct objects. Gabriel's bijection gives every positive root multiplicity exactly one, so a finite-type quiver has max Omega = 1. The datum has max |Omega| = 4. Scope-(b) structural exclusion: the cited invariant is Gabriel's bijection itself"
+    },
+    {
+      "name": "C4_eq100_mirror_holds_and_is_count_breaking",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P1 CONFIRMED. The source states eq (100) for the q-series coefficients S^(k); it is checked here on the eq-(98) constants and holds. phi = (1 2) is sign-reversing, hence count-breaking -- exactly what the Lean QuiverMirrorAutomorphismExcluded requires of any mirror implementation that reads (4,3). The source's own symmetry and the corpus's proved exclusion agree independently"
+    },
+    {
+      "name": "C5_both_sibling_answers_are_void_same_reason",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Neither sibling answer is arithmetically wrong; both apply Gabriel's theorem to a datum outside its hypotheses. The error was never in the enumeration -- it was in never checking the premise against the source, which is one grep of a paper this repo already holds"
+    },
+    {
+      "name": "C6_hypothesis_is_labelled_not_claimed",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "H: V=3 with 3 arrows (the three unordered pairs), rays = the two orientations. Recorded as a CANDIDATE with its disconfirmation test (compute the Dirac pairing on the 5_2 charge lattice; if it is not supported on {12,13,23}, H is dead). Not claimed, not wired, not a derivation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "dt-d1b-gabriel-route-void-source-verified",
+  "scriptFile": "dt_d1b_gabriel_route_void_source_verified_probe.py",
+  "scriptHash": "5fdf89b86707",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_gabriel_route_void_source_verified_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_gabriel_route_void_source_verified_probe.py"
+  },
+  "description": "qou-q9ih D1-b. This probe VOIDS THE PREMISE of its sibling dt_d1b_arrow_count_forced_by_gabriel_probe, which has now given two different arrow counts ('forced to 0 or 1', then 'in {0,1,2}'). Both presuppose the corpus's (4,3) datum counts INDECOMPOSABLES of a finite-representation-type quiver. Checked against the source for the first time: GGM arXiv:2012.00062v3, held in this repo, says under eq (96)/(97) that each eq-(98) entry is 'the Stokes constant associated to the Borel singularity iota_{i,j}' -- a MULTIPLICITY AT ONE CHARGE. Gabriel's bijection gives every positive root multiplicity exactly one, so any finite-type quiver has max Omega = 1; the datum has max |Omega| = 4. NO finite-type quiver carries it at any rank with any arrow count, so both sibling answers are void -- scope-(b), the cited invariant being Gabriel's bijection itself. What the source gives back: the index set is THREE sigma-series so the singularities run over SIX ordered pairs, and S+ and S- populate exactly the two OPPOSITE ORIENTATIONS of the same three unordered pairs {12,13,23} -- the bar-conjugate ray pair is the two orientations of a 3-node complete graph, not two arbitrary stability rays. Neither that fact nor eq (100) was previously recorded in this corpus. eq (100)'s mirror phi = (1 2) is SIGN-REVERSING, hence count-breaking, agreeing independently with the Lean QuiverMirrorAutomorphismExcluded. The obvious reading V=3 with 3 arrows is recorded as a LABELLED HYPOTHESIS with its disconfirmation test, NOT as a result: KS arrows are the Dirac pairing on charges, not the populated singularities.",
+  "data": {
+    "source": {
+      "paper": "Garoufalidis-Gu-Marino, arXiv:2012.00062v3, 'Peacock patterns and resurgence in complex Chern-Simons theory'",
+      "held_at": "library/arxiv-2012.00062v3/sections/sec-007-2-borel-resummation-and-stokes-automorphisms.md",
+      "quote_under_eq_96_97": "where the non-vanishing off-diagonal entry of S_{sigma_i,sigma_j} is the Stokes constant associated to the Borel singularity iota_{i,j}. Assembling these off-diagonal entries in a matrix, we obtain the matrix (98)",
+      "reading_established": "each eq-(98) entry is ONE Stokes constant at ONE Borel singularity: a multiplicity at a single charge, not a count of distinct objects"
+    },
+    "eq98_matrix": [
+      [
+        0,
+        4,
+        3
+      ],
+      [
+        -4,
+        0,
+        -3
+      ],
+      [
+        -3,
+        3,
+        0
+      ]
+    ],
+    "ray_structure": {
+      "n_sigma": 3,
+      "n_ordered_pairs": 6,
+      "splus_rays_1indexed": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "sminus_rays_1indexed": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "reverse_of_splus_equals_sminus": true,
+      "common_unordered_support": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "gabriel_exclusion": {
+      "max_abs_omega": 4,
+      "finite_type_max_omega": 1,
+      "verdict": "finite representation type EXCLUDED",
+      "scope": "(b) structural -- invariant cited is Gabriel's bijection (positive roots <-> indecomposables, multiplicity one)"
+    },
+    "voided_sibling_answers": {
+      "first_version": "arrows forced to 0 or 1",
+      "corrected_version": "arrows in {0,1,2}, V unpinned"
+    },
+    "hypothesis_H": {
+      "statement": "V = 3 (the three sigma), arrows = the three unordered pairs = 3, the two rays being the two orientations",
+      "tier": "labelled CANDIDATE -- not claimed, not wired",
+      "why_not_a_result": "KS arrows are the Dirac pairing on the charge lattice, not the set of populated Borel singularities",
+      "disconfirmation_test": "compute <gamma_i,gamma_j> on the 5_2 spectral-curve charge lattice; if it is not supported on exactly {12,13,23}, H is dead"
+    },
+    "predictions_recorded_before_measuring": {
+      "P1_eq100_holds_on_eq98": true,
+      "P2_rays_are_orientation_reverses": true,
+      "P3_max_omega_exceeds_one": true
+    },
+    "scope": {
+      "tier": "scope-(b) exclusion + source-verified structural facts",
+      "method": "exact integer algebra on the source's own eq (96)-(98); no search, no fit, no tuning",
+      "arithmetic": "exact integers throughout; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}
