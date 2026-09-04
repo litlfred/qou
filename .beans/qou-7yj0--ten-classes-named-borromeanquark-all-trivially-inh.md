@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T12:49:40Z
+updated_at: 2026-09-04T13:51:20Z
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -126,3 +126,41 @@ declarations exactly ONE has an instance in the tree
 (observations/borromean-quark.lean:120); the other nine have none, so an
 instance-keyed census cannot see them at all.  Complementary; neither subsumes
 the other.
+
+
+## Prior-work cross-reference (PR #6666) — and a disagreement, not a duplication
+
+Corpus-grepped `docs/audits/` and `.beans/` for EVERY carrier named, after the
+`[IsAMEValue]` retraction showed I had skipped that step.
+
+Nearest prior work: `docs/audits/2026-08-23-free-prop-field-census.md`
+(PR #5562, beans `qou-lo1t` / `qou-tsnp`).  It ALREADY NAMES `BorromeanQuark` —
+`instance canonical` declared twice, sibling and library, "the shadow-pair
+shape again".
+
+**Different questions, mechanically.**  That census: which carriers have a FREE
+`Prop` FIELD.  This audit: which carriers SATISFY THEMSELVES.  Neither
+contains the other — `q-beta-spectral-bridge`'s carrier has no `Prop`-typed
+field at all yet `⟨0, 0, rfl⟩` inhabits it; and a free `Prop` field can live in
+a carrier whose other fields constrain something external.
+
+**Where they disagree.**  The census finds 89 free-`Prop` carriers with no
+inhabitant and reads that as the "§3b-tax honest open state — nothing inhabits
+them, so a downstream `[C] → P` can never be applied.  Weak, but inert."  For a
+SELF-SATISFYING carrier that is wrong: "nothing inhabits it" is not evidence of
+an open state when inhabiting costs one line.  The theorem is gated by a fact
+nobody typed, not by an open problem.  Inhabitation-IN-THE-TREE is the wrong
+probe; the question is whether an instance is AVAILABLE.
+
+Carried over from the same census, applied to my own evidence: a `lean` run
+killed by a 2-minute timeout leaves a zero-error log that reads as success.
+Every check here was run to completion in the background with the exit status
+captured AFTER the process exited.
+
+## Merged
+
+#6644 (q-codifferential 13 axioms -> 0) and #6657 (the carrier audit) both
+merged by rebase after a fresh-fetch mergeability check, a semantic-conflict
+check (main touched NONE of the changed files across 132 / 92 commits), and a
+re-run of `lean`-direct on both changed `.lean` files at their branch tips
+(both exit 0).
