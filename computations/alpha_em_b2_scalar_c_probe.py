@@ -77,9 +77,14 @@ def _q0() -> "mp.mpf":
             Q_50_DIGIT_STR)
         return (mp.mpf(Q_50_DIGIT_STR),
                 "qou_substrate.constants.Q_50_DIGIT_STR (package pin, 50 dps)")
-    except Exception:
-        # Fallback: canonical muon-q₀ value used by the computations/ layer.
-        return mp.mpf("1.10997859555733471"), "muon-q₀ literal (computations/ layer)"
+    except Exception as e:
+        # No fallback (bean qou-4bef, 2026-09-03): the muon literal this returned was
+        # RETIRED 2026-08-22/28, and a silent switch of anchor is a layer straddle.
+        raise RuntimeError(
+            "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+            "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+            "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+            "Install it: pip install -e tools/qou-substrate.") from e
 
 
 def _q_int(k: int, q: "mp.mpf") -> "mp.mpf":

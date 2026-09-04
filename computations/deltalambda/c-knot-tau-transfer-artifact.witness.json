@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T11:12:52.275060+00:00",
-  "commitSha": "deab6af1fc26e72bddf68132fe5d0939467d53d7",
+  "computedAt": "2026-09-04T00:44:56.568945+00:00",
+  "commitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "assertions": [
     {
       "name": "m_e_cancels_exactly",
@@ -39,8 +39,8 @@
   "durationMs": 0,
   "computation": "c-knot-tau-transfer-artifact",
   "scriptFile": "c_knot_tau_transfer_artifact_probe.py",
-  "scriptHash": "e419dea6b5d4",
-  "scriptCommitSha": "3c1794bb77e45f994442675c68e2a9504af71c5d",
+  "scriptHash": "1ee21313f982",
+  "scriptCommitSha": "15870814e53915f7de951b2fc64122bc4c8140c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -74,7 +75,7 @@
     "tier2_E2": "2.2237605",
     "closes_B_AME_to_pct": "-0.0362"
   },
-  "mu0_MeV_DERIVED": "1.6295104",
+  "mu0_MeV_DERIVED": "1.6295106",
   "C_knot": "5.85287",
   "tau_transfer_decomposition": {
     "tier0_ratio_numeric_E_rot_over_B_A": "5.3135591",
@@ -95,7 +96,8 @@
   },
   "audit_only": true,
   "tier": "fibre→archimedean τ-transfer decomposition; derive-then-check; scope-(a); artifact-vs-real verdict; nothing wired; no fit.",
-  "q0Anchor": "independent",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true,
-  "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Is the deuteron `C_knot = 5.853` a REAL missing many-body magnitude, or a master-formula."
+  "q0AnchorReason": "Every published number here is a function of q0: h = q0 - 1/q0, hbar_q = 1 - 1/q0, v = sqrt(q0), and C_knot is described by this producer's own docstring as a PURE q0-GEOMETRY RATIO. It previously declared q0Anchor 'independent' on an AST import-cone walk that found no q_parameter reference -- true of the imports, false of the computation, because the pin was a hardcoded literal the walk cannot see (bean qou-9ugp). Now reads Q_50_DIGIT_STR by name; proton per the 2026-08-15/2026-08-30 owner directive."
 }

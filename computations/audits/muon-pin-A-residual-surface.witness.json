@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T05:29:26.024125+00:00",
-  "commitSha": "ed440a4ca2e58b62b3f25b2c7d35c163ebf59b5d",
+  "computedAt": "2026-09-04T03:58:20.484899+00:00",
+  "commitSha": "831980f1ce680380252f341dbe8a9363b6a5e8ec",
   "assertions": [
     {
       "name": "the anchor-defining witness is on CODATA 2022, not the retired frozen pin",
@@ -30,19 +30,19 @@
     },
     {
       "name": "most A-carrying witnesses are quoting it, not computed at it",
-      "computed": "38",
-      "expected": "38",
+      "computed": "26",
+      "expected": "26",
       "passed": true,
       "tolerance": "0",
       "source": "a grep for the literal over-counts the migration surface ~10x"
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "muon-pin-A-residual-surface",
   "scriptFile": "muon_pin_A_residual_surface_audit.py",
   "scriptHash": "a8e136688a4c",
-  "scriptCommitSha": "3350ecb944ba1374c9b8632e141555281bd35f15",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,7 +56,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -69,8 +70,8 @@
     "C_prefix_codata_2022_canonical": "1.109978595642739"
   },
   "data": {
-    "tracked_witnesses_scanned": 3686,
-    "carrying_A_literal": 42,
+    "tracked_witnesses_scanned": 3718,
+    "carrying_A_literal": 30,
     "computed_at_A": [
       "computations/hadron-knot-table.witness.json",
       "qou-mass/src/qou_mass/data/_deprecated/ame-2020-binding-energies.witness.json",
@@ -83,6 +84,7 @@
     "quoting_A_not_computed_at_A": [
       "computations/_deprecated/alpha-high-precision.witness.json",
       "computations/a3-magnitude-berezinian-crossterm.witness.json",
+      "computations/alpha-scale-is-outside-the-trace.witness.json",
       "computations/audits/consumer-control-arm-audit.witness.json",
       "computations/audits/fitted-labelled-canonical-audit.witness.json",
       "computations/audits/hardcoded-q0-literal-families.witness.json",
@@ -91,33 +93,20 @@
       "computations/cal4-disguise-hunt.witness.json",
       "computations/casimir-xi-2-dig-deeper.witness.json",
       "computations/chirality-avg-content.witness.json",
-      "computations/deltalambda/convention-systematic-audit.witness.json",
-      "computations/deltalambda/he4-binding-k-stage2.witness.json",
-      "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json",
+      "computations/extensive-carrier-scale-inversion-probe.witness.json",
       "computations/joint-tower-sdp-rust.witness.json",
       "computations/markov-identity-symbolic.witness.json",
-      "computations/mu-p-pin-sensitivity-map.witness.json",
       "computations/peel-anchor-identification.witness.json",
-      "computations/per-irrep-pole-neutron-h3.witness.json",
-      "computations/probes/eunit-g2-derivation.witness.json",
-      "computations/probes/eunit-magnus-order2.witness.json",
       "computations/probes/ksel2id-sw-identification.witness.json",
       "computations/probes/ksel2id-u1-promotion.witness.json",
       "computations/probes/qbeta-borromean-cyclotomic.witness.json",
       "computations/probes/qbeta-ck-basis-constrained-pslq.witness.json",
       "computations/probes/qbeta-ck-qholonomic-recurrence-test.witness.json",
-      "computations/probes/qbeta-exponentiated-per-block.witness.json",
       "computations/probes/qbeta-habiro-integrality-kill-test.witness.json",
-      "computations/probes/rho-f-categorical-probe.witness.json",
-      "computations/probes/saddle-offset-zero-location.witness.json",
       "computations/probes/tau-dictionary-fricke-spin-probe.witness.json",
-      "computations/probes/tau-dictionary-hauptmodul-validator.witness.json",
       "computations/q0-value-drift-audit.witness.json",
-      "computations/qbeta/qbeta-argu-phase-branch-selection.witness.json",
       "computations/qbeta/qbeta-c3-imq-ratio-and-entropy.witness.json",
       "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
-      "computations/qbeta/qbeta-meridian-holonomy-anchor-swing.witness.json",
-      "computations/rho-binding-constancy.witness.json",
       "computations/toffoli-lp-stability.witness.json"
     ],
     "anchor_defining_witness_holds": "C",

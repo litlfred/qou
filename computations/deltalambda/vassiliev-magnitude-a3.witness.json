@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T04:25:06.501712+00:00",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "computedAt": "2026-09-04T01:06:53.158221+00:00",
+  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
   "assertions": [
     {
       "name": "leading_weight_is_three_quarters_h4",
@@ -51,8 +51,8 @@
   "durationMs": 0,
   "computation": "vassiliev-magnitude-a3",
   "scriptFile": "vassiliev_magnitude_a3_probe.py",
-  "scriptHash": "793de687f617",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "6e5ce74d3b8c",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -67,7 +67,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -99,7 +99,7 @@
     "distinct_angle": "A=3 beyond-Hecke MAGNITUDE (weight<=Hecke bound); siblings own the exact-order mu-bar_A coefficient (#4480) and the A=4 magnitude (#4472)",
     "no_fit": true
   },
-  "auditOnly": true,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "auditOnly": true
 }

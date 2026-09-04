@@ -4,6 +4,46 @@ One line-block per session: what was verified, by what method, and any
 `MEMORY.md` entry confirmed or corrected. Moved out of `MEMORY.md` 2026-09-03 so
 the injected file stays under 200 lines. Newest first.
 
+- 2026-09-04 (post-merge re-verification, branch `claude/standard-model-terms-status-ftoejr`
+  at HEAD `219672e496`; 8 files, all blobs == HEAD): **8/8 lean-direct EXIT 0, zero
+  diagnostics**; 94 `#print axioms` lines, all std-3 or "no axioms", **no `sorryAx`**.
+  Container had a REAL build tree, not a restore (2441 `.trace` beside 2442 QOU
+  oleans, no `RESTORED-NO-TRACES`), so no cache restore was needed — but
+  `QOU/AlphaEM/FormLadderAnchorDominance.olean` was **Aug 24 against a Sep 3
+  source**, the textbook §1/§11 false-green setup for its new consumer
+  `…Checks.lean`. Handled by the harness §3 route: `cp -al` mirror of the root
+  build tree (0 bytes), `rm -f` + rebuild all **13** transitive QOU cone modules
+  from current source, then verify. Real tree unchanged (2442 → 2442) and repo
+  clean — the mirror never wrote through a shared inode. Merge-breakage check:
+  the merge touched 32 `.lean`, **none** in the 13-module cone and none of the 8;
+  `lakefile.toml`/`lean-toolchain` untouched; reverse cone of the genericised
+  `FormLadderAnchorDominance` is exactly **one** importer (its own new `Checks`),
+  so main could not have added a broken consumer. Shallow graft still live —
+  `git log -- <file>` returns `c9c12648e4 2026-08-31` for nearly every file, so
+  olean-vs-source dating from git remains undecidable; rebuild instead.
+  Substance: all four new/rewritten carriers are content-bearing with NO instance
+  (`WeinbergAngleCategorical` 7 real Prop fields, `ChernSimonsCorrectionConjecture`
+  3, `CategoricalHiggsMechanism` 4 + a `[WeinbergAngleCategorical]` binder = the
+  §3b-tax dependent-conjecture edge); the §3b-cond consequences derive rather than
+  project. Noted, not defects: `QOU.BraidsAndKnots.{EWHoefsmitData,
+  WeinbergAngleCategorical}` are declared **twice** — a self-labelled "FAITHFUL
+  inlined copy" in `categorical-higgs-mechanism.lean`, fields byte-identical,
+  docstrings differ — harmless only because chapter-dir `.lean` sit outside the
+  `srcDir="."` + `globs=["QOU","QOU.+"]` library and are never imported together;
+  and `Checks.refCodata` has no consumer and its literal is absent from the
+  witness its docstring names (present only under `computations/_deprecated/`),
+  though the residuals it would imply reproduce to ~8 sig figs. All 6 chapter-dir
+  sidecars FRESH (`source_hashes.lean` == `sha256(file)[:12]`). New TRAP recorded:
+  docstring prose reads as code to line-oriented matchers (`grep -cw sorry`
+  matches `sorry-free`; a decl regex matched `below` and `instance` out of prose).
+  **Measured refinement to harness §1**: the stale olean was genuinely stale —
+  `#check @…no_anchor_blind_affine_correction_closes_gap` gave `(P M s c : ℝ)`
+  against the tree vs `{R} [CommRing R] [IsDomain R] (P M s c : R)` against a
+  fresh build — yet `Checks.lean` exits 0 against BOTH, because a generalisation
+  specialises back at `R = ℝ`. So a consumer's green is no evidence of cone
+  currency when the dependency change was a generalisation, and `grep -c -a
+  <declName>` cannot see it either (the name is in both oleans). Use `#check`.
+
 - 2026-09-03 (skeptic pass, `qou-cds2`, `QOU/Interactions/GramQuotientDetD.lean`
   as committed `338d40f57c`, blob `566da678`): could NOT refute. Mirror currency
   re-checked (`grep -c -a gramRadicalD` = 2 in the mirror's parent olean vs 0 in
@@ -231,3 +271,19 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   Restored from a **leaked `/tmp/tmp.*`** rather than fetching — new STABLE entry
   in `MEMORY.md`. Third container reading of the two olean trees: per-paper 1236,
   root 9721.
+
+- 2026-09-04 (branch `claude/standard-model-terms-status-ftoejr`, seven GAP beans):
+  root tree was a REAL build (2443 QOU oleans / 2441 traces, no `RESTORED-NO-TRACES`);
+  9-root `LEAN_PATH` from `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`.
+  Fixed `qou-yt29` (`categorical-linking-operation.lean`, a40e260b58): vacuous
+  **5/5** not 2/5 — see harness §12 on extensional `True`. Now `LinkingData`
+  substrate, Properties 1-2 + pre-trace 3 proved about `lk`/`preLk`, rest as class
+  fields, no instance, plus an in-file falsifier. lean-direct 3.9 s, 13 decls,
+  no `sorryAx`; qa-sweep 0/0/0. Docstring currency fix in the Higgs file (c32e7e393e).
+  Verdict `qou-ibck`: **no closed form** for `Σ_λ 1/dim_q λ` — measured contrast,
+  `Σ f^λ` = involutions and `Σ (f^λ)²` = n! both close exactly, the reciprocal
+  gives 1, 2, 5/2, 19/6, 46/15, 473/144, … with no pattern; Mathlib has
+  `YoungDiagram`/`Nat.Partition` but **zero** `hookLength`, so even a general
+  *definition* (≠ closed form) is blocked on formalising hook lengths. Other five
+  carriers audited by harness §12; all honest, two real side-findings (harness §13,
+  and the `BringHyperbolicDecomposition` identical-field bridge).

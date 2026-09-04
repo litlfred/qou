@@ -71,7 +71,10 @@ def q0_mp() -> mp.mpf:
         return mp.mpf(Q_MP)
     except Exception:
         # documented proton pin, 50-dps literal (constants.py::Q_50_DIGIT_STR head)
-        return mp.mpf("1.1099785827513808")
+        # q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a 17-digit
+        # hardcoded PROTON literal in a RETURN -- right value, wrong
+        # mechanism, and a shape an assignment-keyed scan does not match.
+        return mp.mpf(Q_50_DIGIT_STR)
 
 
 def det_gate(m: mp.mpf) -> mp.mpf:

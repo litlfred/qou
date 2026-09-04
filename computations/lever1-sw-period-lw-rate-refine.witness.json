@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:12:32.955653+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T04:17:23.382941+00:00",
+  "commitSha": "250654bfcf2a0bada4b09d1feb48f55133ad54bb",
   "assertions": [
     {
       "name": "fork_resolved_naive_rate_overshoots",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "lever1-sw-period-lw-rate-refine",
   "scriptFile": "lever1_sw_period_lw_rate_refine.py",
-  "scriptHash": "ff9c75d493b2",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "7287cfb0d160",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

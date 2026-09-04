@@ -45,14 +45,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 import qbeta_5two_quantum_volume_probe as qv  # noqa: E402  (saddle machinery)
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 
-Q_MUON = mp.mpf("1.10997859555733471")
-Q_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+# Both anchors read BY NAME (bean qou-9ugp, 2026-09-03). `Q_MUON` was the
+# literal "1.1099785955573…" — the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the live CODATA-2022 lepton-ratio derivation
+# `q_muon_at()` (+0.0769 ppb). `Q_PROTON` was the correct proton 50-digit
+# string re-typed by hand. A hardcoded pin cannot be checked against the name
+# it is bound to, so both are now derived rather than transcribed.
+Q_MUON = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
 # decay-sector zero of N_odd (qbeta_c3_mq0_nk_scan.py, 80.3% muon-ward)
 Q_STAR = mp.mpf("1.10997859303152")
 A_PRIME = mp.mpf("2.37")            # capstone slope target dN_odd/dq at q*
@@ -183,27 +190,27 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("gate_vol_5_2_validates",
-                     computed=abs(abs(vol1) - VOL_5_2), expected=0.0,
-                     tolerance=1e-6,
+                     computed=abs(abs(vol1) - VOL_5_2), expected="0.0",
+                     tolerance="1e-6",
                      source="m=1 NZ saddle reproduces Vol(5₂)=2.82812 (merged witness gate)")
     wb.add_assertion("gate_anchor_slope_O1",
-                     computed=1.0 if g2 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g2))), expected="1.0", tolerance="0.5",
                      source="cross-anchor |d𝔙/dq| = O(1) reproduces the merged "
                             "qbeta-5two-quantum-volume witness")
     wb.add_assertion("no_zero_crossing_of_barodd_B_at_qstar",
-                     computed=1.0 if t1_no_zero else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(t1_no_zero))), expected="1.0", tolerance="0.5",
                      source="B(q) has 0 sign changes (Re and Im) on ±2e-8 grid "
                             "straddling q*, |B(q*)| > 1e-10 — carrier constraint (2) fails")
     wb.add_assertion("smooth_factor_cannot_carry_zero",
-                     computed=1.0 if t2_f_not_smooth else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(t2_f_not_smooth))), expected="1.0", tolerance="0.5",
                      source="placing the zero in f instead needs log-slope > 1e6 "
                             "across the anchor window — violates 'smooth O(1)'")
     wb.add_assertion("writhe_D_odd_nonvanishing_at_qstar",
-                     computed=abs(D_star_w2), expected=0.21, tolerance=0.05,
+                     computed=abs(D_star_w2), expected="0.21", tolerance="0.05",
                      source="capstone D_odd(q*) = ½(q*²−q*⁻²) ≈ 0.21 (writhe-2, "
                             "pre-#3892 6₂-braid era) — constraint-(2) failure")
     wb.add_assertion("corrected_writhe4_D_odd_nonvanishing_at_qstar",
-                     computed=abs(D_star_w4), expected=0.42, tolerance=0.05,
+                     computed=abs(D_star_w4), expected="0.42", tolerance="0.05",
                      source="corrected 5₂ (braid [1,1,1,2,-1,2], writhe 4, #3892): "
                             "½(q*⁴−q*⁻⁴) ≈ 0.42 — same constraint-(2) failure")
     ok = all(a.passed for a in wb.assertions)
@@ -230,7 +237,11 @@ def main() -> int:
                  "functionals stay open."
                  if (ok and verdict_fail) else
                  "INCONCLUSIVE — unexpected zero structure or gate failure; inspect."))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q_MUON, proton=Q_PROTON,
+        reason="cross-anchor gate G2 measures |d𝔙/dq| between the two pins; both "
+               "are read on purpose and the anchor window ±2e-8 around q* is the "
+               "subject of the falsification test"))
     print(f"\n  assertions passed: {ok}")
     print("  witness -> computations/probes/qbeta-5two-capstone-carrier-falsification.witness.json")
     return 0 if ok else 1

@@ -45,6 +45,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -73,7 +74,13 @@ def _head_sha():
 
 
 def main():
-    Q0 = mp.mpf("1.10997859555733471")            # muon anchor (ζ-side uses 1/q₀)
+    # q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+    # literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+    # superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+    # no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+    # on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
+    # `qou_substrate.constants`, so the witness resolves its anchor stamp.
+    Q0 = mp.mpf(Q_50_DIGIT_STR)   # zeta-side uses 1/q0
     # q-grid inside the convergence disk |q|<1: 1/q₀ and a few real interior points.
     qs = [1 / Q0, mp.mpf("0.85"), mp.mpf("0.7"), mp.mpf("0.55"), mp.mpf("0.4")]
     colors = [1, 2, 3, 4]

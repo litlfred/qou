@@ -1,7 +1,7 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-24T10:51:49Z",
+  "computedAt": "2026-09-04T03:24:58.950044+00:00",
   "computation": "delta-lambda-binding-full-evaluation",
   "scriptFile": "delta_lambda_binding_full_evaluation.py",
   "description": "Full numerical evaluation of the \u0394_\u03bb binding formula B(K) = m_e \u00d7 |\u03a3 y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb prime}}) \u00b7 f^\u03bb| for D, T, \u00b3He, \u2074He. Zero free parameters. All factors: y_\u03bb (Wenzl), \u03c7^\u03bb (Hoefsmit+interface), sgn (Macdonald), f^\u03bb (hook-length).",
@@ -20,31 +20,31 @@
       "A": 3,
       "Z": 1,
       "N": 2,
-      "sum": -2.475140289713602,
-      "B_pred_MeV": 1.2647940908541933,
+      "sum": -2.475140289653874,
+      "B_pred_MeV": 1.2647940908236723,
       "B_AME_MeV": 8.4818,
-      "err_MeV": -7.217005909145806,
-      "err_pct": -85.08814059687573
+      "err_MeV": -7.2170059091763274,
+      "err_pct": -85.08814059723558
     },
     "3He": {
       "A": 3,
       "Z": 2,
       "N": 1,
-      "sum": -3.0789912094959777,
-      "B_pred_MeV": 1.5733612772361787,
+      "sum": -3.0789912094012637,
+      "B_pred_MeV": 1.5733612771877798,
       "B_AME_MeV": 7.71804,
-      "err_MeV": -6.144678722763821,
-      "err_pct": -79.61449698063007
+      "err_MeV": -6.144678722812221,
+      "err_pct": -79.61449698125716
     },
     "4He": {
       "A": 4,
       "Z": 2,
       "N": 2,
-      "sum": -0.19093779375635747,
-      "B_pred_MeV": 0.0975690122565623,
+      "sum": -0.19093779392334528,
+      "B_pred_MeV": 0.0975690123418929,
       "B_AME_MeV": 28.29567,
-      "err_MeV": -28.198100987743437,
-      "err_pct": -99.65518041362313
+      "err_MeV": -28.19810098765811,
+      "err_pct": -99.65518041332156
     }
   },
   "assertions": [
@@ -65,5 +65,11 @@
       "passed": true
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "6da619aed511",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -74,6 +74,23 @@ import mpmath as mp  # noqa: E402
 
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 
+# The MUON leg read BY NAME (bean qou-9ugp, 2026-09-04). It was the literal
+# 1.1099785955573347..., the RETIRED self-certified pin A -- retired 2026-08-22
+# when the muon anchor was re-derived to the CODATA-2022 lepton ratio. This is a
+# DELIBERATE two-pin comparison, so the fix is the live MUON value, not proton:
+# swapping in the proton pin would delete the comparison this probe exists for.
+# The stale leg understated the mu-p separation by 0.67% (11.5371 vs 11.6141
+# ppb) -- the fourth instance of that class found in this drain.
+import sys as _sys_qm  # noqa: E402
+from pathlib import Path as _Path_qm  # noqa: E402
+for _p_qm in (_Path_qm(__file__).resolve().parent,
+              _Path_qm(__file__).resolve().parent.parent,
+              _Path_qm(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qm) not in _sys_qm.path:
+        _sys_qm.path.insert(0, str(_p_qm))
+from q_parameter import q_muon_at as _q_muon_at  # noqa: E402
+Q_MUON_LIVE_STR = str(_q_muon_at(50))
+
 mp.mp.dps = 50
 
 FAILURES: list[str] = []
@@ -86,7 +103,7 @@ def check(cond: bool, msg: str) -> None:
 
 # The two documented substrate pins.
 Q_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
-Q_MUON = mp.mpf("1.10997859555733471")
+Q_MUON = mp.mpf(Q_MUON_LIVE_STR)
 # The value the content block states.
 Q_STAR_BLOCK = mp.mpf("1.10997859303152")
 

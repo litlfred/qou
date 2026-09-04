@@ -64,8 +64,20 @@ sys.path[:0] = [str(COMP), str(COMP / "substrate")]
 import closed_form_tau_M as C  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 # ---- derived substrate constants (0-fit) -----------------------------------
-Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))
 Z_MK = C.markov_z(Q0)

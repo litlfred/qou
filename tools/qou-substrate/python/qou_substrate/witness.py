@@ -198,6 +198,36 @@ def q0_comparison(*, muon, proton, reason: str, dps: int = 52) -> dict:
     }
 
 
+def apply_q0_comparison(payload: dict, *, muon, proton, reason: str,
+                        dps: int = 52) -> dict:
+    """Stamp ``payload`` as a cross-anchor ``comparison``, IN PLACE.
+
+    Use this, not ``payload.update(q0_comparison(...))``, whenever the payload
+    has already been through ``stamp_staleness_metadata`` — which is every
+    producer that writes its own witness with ``json.dump`` rather than
+    ``wb.save()``.
+
+    WHY IT EXISTS. ``q0_comparison`` returns a dict and so can only ADD keys.
+    ``stamp_staleness_metadata`` runs first and writes a bare ``q0Value``; the
+    subsequent ``update()`` adds ``q0Values`` beside it and leaves the bare one
+    behind. The result is a witness labelled ``comparison`` that also names one
+    pin, which is exactly the ``Q0_FLIP`` the label exists to avoid — the
+    producer looks migrated and the audit says otherwise.
+
+    Measured 2026-09-04 (bean qou-9ugp): three witnesses reached this state in
+    one commit, from a call site whose author had read the "Deliberately emits
+    NO bare ``q0Value``" line above and taken it as a property of the payload
+    rather than of the returned dict. The docstring was right and the call site
+    was still wrong, so the fix belongs here rather than in the prose.
+
+    Returns ``payload`` for chaining.
+    """
+    payload.pop("q0Value", None)
+    payload.update(q0_comparison(muon=muon, proton=proton,
+                                 reason=reason, dps=dps))
+    return payload
+
+
 _Q0_VALUE_CACHE: dict = {}
 
 

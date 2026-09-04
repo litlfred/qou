@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:24:44.286277+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-03T23:12:29.697683+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "theta_degeneration_identities_hold",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "elliptic-r-theta-single-tau",
   "scriptFile": "elliptic_r_theta_single_tau_probe.py",
-  "scriptHash": "bec35681e878",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "6c88634dd148",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -52,8 +52,8 @@
       "identities_hold": true
     },
     "fig8_carrier": {
-      "q0_muon": "1.10997859556",
-      "trM_4_1(q0)": "-0.91067733",
+      "q0_muon": "1.10997858275",
+      "trM_4_1(q0)": "-0.91067735",
       "theta(q0)_deg": "117.08673",
       "amphichiral_deg": "120",
       "delta_theta_deg": "-2.91327",
@@ -82,5 +82,7 @@
       ],
       "verdict": "hypothesis STRUCTURALLY MOTIVATED (θ=q-heat-kernel, tier degeneration, elliptic-freedom of the Faddeev ratio) but NOT YET FALSIFIABLE with current data; the derived θ-quotient form is the next formalize-first target, NOT a numerical fit."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

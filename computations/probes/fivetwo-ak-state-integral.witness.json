@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T19:02:09.951240+00:00",
-  "commitSha": "25d41d418caa620033ffa0d5e528e688e6d7216b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-03T23:17:08.861390+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "phi_quasi_periodicity",
-      "computed": 5.423045924157175e-41,
+      "computed": 5.347498919704711e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-25",
@@ -22,7 +22,7 @@
     },
     {
       "name": "I00_phase_matches_ggm_factorization",
-      "computed": 1.1745506134584272e-32,
+      "computed": 1.1745506142181496e-32,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-20",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "fivetwo-ak-state-integral",
   "scriptFile": "fivetwo_ak_state_integral.py",
-  "scriptHash": "773908cd07a7",
-  "scriptCommitSha": "25d41d418caa620033ffa0d5e528e688e6d7216b",
+  "scriptHash": "49885a72f647",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/fivetwo_ak_state_integral.py"
+    ],
+    "reproduce": "python3 -u computations/probes/fivetwo_ak_state_integral.py"
   },
   "description": "Bean qou-3xug: literature reproduction of the Fantini–Wheeler (arXiv:2410.20973) Andersen–Kashaev state integral I_{0,0} for 5₂, Neumann–Zagier data (A,B)=(2,3), the (m,ℓ)=(0,0) member of the I_{m,ℓ} family (FW eq (13)). Faddeev Φ(z;τ) via the eq-(12) product form; contour quadrature on J_{0,τ}. Gates: G1 Φ quasi-periodicity; G2 contour-tilt (ε) independence (Cauchy homotopy); G3 phase match against the corpus's independent GGM/Peacock H-series factorization of the same state integral (Im(I_FW/Z_GGM)→0). Median-Borel linkage: the corpus median-Borel resummation of Φ_{5₂} targets F=h₁·e^{−V/2πτ} with h₁=H⁺₁, one of the H-series G3 matches. NOT a QOU c3 derivation; no fit; nothing wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -67,16 +78,16 @@
       "endpoint_integrand": "6.90654e-36"
     },
     "I00_at_substrate": {
-      "tau": "(0.0 + 0.0166063432408098j)",
-      "beta": "0.0166063432408098",
-      "value": "(-0.000004668492793377822071628265 + 0.000008002206111617683229500318j)",
-      "endpoint_integrand": "2.0737e-1509"
+      "tau": "(0.0 + 0.0166063414046205j)",
+      "beta": "0.0166063414046205",
+      "value": "(-0.000004668510219834663772139168 + 0.000008002180860360936869830815j)",
+      "endpoint_integrand": "2.07355e-1509"
     },
     "g3_ratio_table": [
       {
         "tau_im": "0.6",
         "ratio_re": "0.55858681518285",
-        "ratio_im_over_abs": "5.264e-39"
+        "ratio_im_over_abs": "5.297e-39"
       },
       {
         "tau_im": "0.85",
@@ -95,7 +106,7 @@
       }
     ],
     "crosscheck_delta": {
-      "g1_phi_quasiperiodicity_relerr": "5.42305e-41",
+      "g1_phi_quasiperiodicity_relerr": "5.3475e-71",
       "g2_eps_independence_spread": "3.1811504278560277e-23",
       "g3_phase_residual_im_over_abs": "1.17455e-32",
       "interpretation": "G3 phase residual → 0 confirms I_{0,0}^{FW} equals the corpus GGM H-series state integral up to a real τ-dependent Jacobian; that Jacobian's closed form + the exact ℤ[q^±] Stokes prefactor of FW Thm 1.4 are the bean-filed GAPs."
@@ -107,5 +118,7 @@
       "exact ℤ[q^±] Stokes-constant prefactor of FW Thm 1.4 linking I_{0,0} to the median-Borel resummation of Φ_{5₂}"
     ],
     "discipline": "literature reproduction of Fantini–Wheeler; NOT a QOU c3 derivation; no fit; nothing wired"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

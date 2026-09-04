@@ -64,8 +64,31 @@ mp.dps = 60
 try:
     from q_parameter import Q as q0, Q_INV as qi, HA
 except Exception:
-    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-    qi = 1 / q0
+    # HARD REFUSAL, replacing a silent fallback (bean qou-9ugp, 2026-09-04).
+    # This `except` bound the RETIRED self-certified muon pin A
+    # (1.1099785955573347...), superseded 2026-08-22 -- while this stem is
+    # listed `physical_proton` in q0_anchor_manifest.json. So in any
+    # environment where `q_at()` raises, this computed at a retired MUON
+    # value under a PROTON label and said nothing. Seven files shared the shape.
+    #
+    # SCOPED BY MEASUREMENT, 2026-09-04. My first version of this note said "any
+    # container without the substrate package". That is WRONG and too broad: with
+    # `qou_substrate` blocked outright the script dies EARLIER, at
+    # `witness_base`'s own `from qou_substrate.witness import *`, so the fallback
+    # was unreachable in the total-absence case. The reachable case is a PARTIAL
+    # failure -- the package imports but `q_at()` raises (an older package, a
+    # broken anchor, a manifest miss). Verified by monkeypatching `q_at` to raise:
+    # the refusal below fires, and did not fire under a whole-package block.
+    #
+    # Refusing follows the nine dead-fallbacks converted in the alpha_EM
+    # re-pin: a wrong number that looks right is worse than no number, and
+    # the guard explains itself on stdout because a stderr-only harness
+    # would not see it.
+    raise SystemExit(
+        "REFUSING to run: `q_parameter` is unavailable, and the fallback here\n"
+        "was the RETIRED muon pin 1.1099785955573347... under a `physical_proton`\n"
+        "manifest label. Install qou-substrate and re-run; see bean qou-9ugp."
+    )
     HA = q0 - qi
 
 z = q0**3 / (q0**2 + 1)

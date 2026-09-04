@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:22:45.567749+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:00:51.038098+00:00",
+  "commitSha": "c360e0a180af341006867c7461edf0279c5837af",
   "assertions": [
     {
       "name": "sym_M1a_per_crossing_split_theta",
@@ -114,11 +114,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 22,
   "computation": "eunit-g2-derivation",
   "scriptFile": "eunit_g2_derivation_probe.py",
-  "scriptHash": "c8ab7c957f0d",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "30121105c508",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -133,7 +133,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -145,7 +145,7 @@
   "auditOnly": "docs/audits/2026-07-25-eunit-g2-derivation-attempt.md",
   "parameters": {
     "q0_env_pin": "1.1099785827513808075916690956107688798744991218736",
-    "q0_muon_canonical": "1.10997859555733471"
+    "q0_muon_canonical": "1.1099785956427390466817951293800017527000655610290"
   },
   "data": {
     "symbolic": {
@@ -214,11 +214,17 @@
       "h3_over_r": "1.056078"
     },
     "pin_robustness": {
-      "g2_shift_between_pins": "4.4204e-7"
+      "g2_shift_between_pins": "4.4499e-7"
     }
   },
   "caveats": [
     "NO FIT: the five mechanism-1 candidates are pre-registered structural shapes (per-crossing / coherent / incoherent x counit-weight h/2 vs naive weight h); none was tuned. The verdicts are constraint statements, scope-(a) unless an invariant is cited. g2 remains NEAR-MATCH tier, underived; nothing here is wired to production.",
     "Citations: Blanes-Casas-Oteo-Ros, Phys. Rep. 470 (2009) 151-238, Thm 1 eq (32) + eqs (43)/(45) [library/phys-rep09/phys-rep09.pdf]; Broda, math-ph/0012035v3 [library/]. q-rotor lineage (index-verified, abstracts only): Raychev-Roussev-Smirnov, J. Phys. G 16 (1990) L137-L141; Bonatsos-Daskaloyannis, Prog. Part. Nucl. Phys. 43 (1999) 537, nucl-th/9909003 — NOTE their q is typically a PHASE (unit-circle) for rotational-spectra fits; QOU's q0 is real. Comparison is lineage, not equivalence."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "measures the order-2 g2 coefficient at BOTH the environment (proton) pin and the muon pin, and reports the shift between them as pin_robustness; both pins are read on purpose and each is reported under its own key"
 }

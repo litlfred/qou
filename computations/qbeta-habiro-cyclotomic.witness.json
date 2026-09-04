@@ -154,7 +154,7 @@
         "name": "J_Hopf \u2212 \u210f_q\u00b2(q)",
         "form": "-2 - (q - 1)**2/q**2",
         "rational_in_q": true,
-        "value_at_q0": "-2.0098171885",
+        "value_at_q0": "-2.0098171865",
         "err_pct": "2.8765"
       }
     ],
@@ -177,11 +177,13 @@
     "lean_z_analog": "QOU.MassEndomorphism.ZHabiroCauchy",
     "alpha_em_precedent": "PR #1511 ([2]_q\u00b7(1\u2212h\u00b2\u03b1))"
   },
-  "scriptHash": "7cf68405e606",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
-  "computedAt": "2026-07-18T17:47:01.309644+00:00",
+  "scriptHash": "1bde52c3e1a1",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
+  "computedAt": "2026-09-03T23:22:31.456635+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_habiro_cyclotomic_probe.py"
 }

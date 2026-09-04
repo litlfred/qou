@@ -243,7 +243,7 @@ def main() -> int:
             "axis": "Delta_lambda Track-A gate — the per-pair [1^4] bond magnitude m",
             "no_fit": True,
             "no_ame_inversion": True,
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
         },
     }
     wb = WitnessBuilder.wrap_legacy(

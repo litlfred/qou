@@ -1,11 +1,11 @@
 ---
 # qou-dnm1
 title: 'Third flavour grade (charm C / strangeness S) — resolve D-bar0 = K0 collision (qou-20sx child, from #4625). (n,T3) grades only by generation+weak-sign, so D-bar0{c-bar,u}={-5,+3} collides with K0{d-bar,s}={+3,-5} as a multiset. Needs a flavour Cartan (S,C) beyond isospin — the FLAVOUR SU(3)/SU(4) eightfold-way (DISTINCT from the excluded COLOUR SU(3) #4564; flavour is a global symmetry). Attack options: (1) extend GMN Y_f=B+S+C, derive S/C as higher Milnor/linking knot charges extending Y=B=mu-bar_123 #4597; (2) a third knot grading orthogonal to (n,T3); (3) flavour SU(3) weight lattice from Bring/icosahedral geometry (qou-d7h1 on #4600); (4) S/C as a q-graded/bar-grade flavour index. Owned partly by #4600 SU(3)/eightfold scope.'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-02T20:13:54Z
-updated_at: 2026-08-25T18:06:33Z
+updated_at: 2026-09-03T15:40:10Z
 parent: qou-20sx
 ---
 
@@ -63,3 +63,9 @@ qou-mesont3 reached this independently and recommended the same; that note
 never reached this bean or the SM cheat sheet. Re-verified at source here,
 not taken from that bean.
 Audit: docs/audits/2026-08-25-4c-no-third-flavour-grade-is-missing.md
+
+2026-09-03 (qou-bsu0): premise void per own body; superseded by qou-qneo (m_s/m_c per-term bean, gated on qou-qpj9). Closure left to the owner.
+
+Scrapped 2026-09-03 on owner decision (session qou-ggdk): premise void — orderedContent_injective (by decide) shows no third flavour grade is missing; superseded by qou-qneo (m_s/m_c per-term bean, gated on qou-qpj9).
+
+Closed 2026-09-03 on owner authorisation (session qou-ggdk, PR #6519): premise void (orderedContent_injective); superseded by qou-qneo.

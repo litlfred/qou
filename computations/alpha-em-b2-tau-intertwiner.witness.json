@@ -1,40 +1,40 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:39.513867+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T16:25:47.376461+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "grams_diagonal_schur_unique",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "both contravariant forms diagonal + 1-dim nullspace (Schur)"
     },
     {
       "name": "markov_not_proportional_hodge",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "diagonal ratio non-constant (spread > 1e-6) — no single c under q->1"
     },
     {
       "name": "nonprop_is_q_deformation",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "spread -> 0 as q -> 1 with a consistent leading power (q-deformation certified)"
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 18,
   "computation": "alpha-em-b2-tau-intertwiner",
   "scriptFile": "alpha_em_b2_tau_intertwiner_probe.py",
-  "scriptHash": "46a0cb8ffece",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "75b1099d6482",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -101,5 +101,7 @@
     },
     "inv_8pi": "0.039788735772973833942",
     "verdict": "SUB-PIECE (ii) IS ESSENTIAL, NOT COSMETIC — the binding constraint QUANTIFIED: the Markov Gram (Hecke-invariant, q₀) and the Hodge Gram (S₅-invariant, q→1) are BOTH diagonal in the shared seminormal basis (Schur-unique, off-diag < 1e-20) but their diagonal ratio rᵢ = ['1.0', '0.996501', '0.992962', '0.989398'] is NOT constant (spread 0.0106), so the Markov Gram is NOT proportional to the Hodge Gram under the naive q→1 identity — a SINGLE scalar c does not exist for τ=(q→1). The spread vanishes as q→1 with leading power ≈ 1.93 (certified q-deformation origin), so the open τ-functor must compensate exactly the q-deformation of the contravariant form — THAT is the content of (ii), now localised. This SHARPENS the assessment: the |c| obstacle is not the period-matrix det/tr ~20% normalization choice (#4206, a symptom) — it is that without the specific τ there is no c at all. The forms' tableau-wise ratio spans a 1.1% band; |c| stays τ-gated. A well-defined |c| therefore REQUIRES closing the τ=P categorical identification (or route C: an intrinsic τ-invariant ratio). Nothing wired; 1/(8π) phase-4; scope-(a)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

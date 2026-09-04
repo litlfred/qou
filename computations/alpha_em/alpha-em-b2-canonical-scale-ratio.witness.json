@@ -3,12 +3,12 @@
   "description": "Normalization-independent restatement attempt for the B2 tau-scale '25 = deg(5-isogeny)^2' observation. OUTCOME (iii): the gauge group has three scales (Markov, Hodge, intertwiner s^2), so two canonical pins cannot make the ratio convention-free; the surviving conditional restatement is theta_5 = frac(log_5(c*8pi)) = 0 under the 5-power-grading hypothesis H5, whose Markov leg fails for the declared intrinsic pins (y_lambda, Wedderburn w_lambda, cellular anchor \u2014 mutually inequivalent mod 5^Z; trace pins are module-scale-blind). Exact matching condition for a future tau-derivation stated. Hodge canonical pin blocked on absent Riera-Rodriguez Z + non-CM periods. Observation stays open/double-gated; nothing wired; 1/(8pi) phase-4.",
   "auditOnly": "docs/audits/2026-07-25-alpha-em-b2-canonical-scale-ratio.md",
   "tier": "numerical-certified structure rows (50 dps); the theta_5 restatement is CONDITIONAL (hypothesis H5); K4 rows are scope-(a) per-pin negatives",
-  "computedAt": "2026-08-29T12:17:03.528795+00:00",
-  "commitSha": "4d0d954cd5511af5593d40b07308b40620aa6d1e",
+  "computedAt": "2026-09-03T16:17:37.903490+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "alpha_em_b2_canonical_scale_ratio_probe.py",
-  "scriptHash": "8c8085ebdf73",
+  "scriptHash": "00dcd99d3caa",
   "precisionMetadata": {
     "compute_dps": 60,
     "target_dps": 50,
@@ -145,7 +145,7 @@
     "ruling": "2026-07-19: the per-loop identification is not derived-proved \u2014 respected; nothing asserted",
     "scope_guard": "no fit; no TauRhoHodgeLift instance; nothing wired; 1/(8pi) phase-4; conditional language throughout"
   },
-  "scriptCommitSha": "4d0d954cd5511af5593d40b07308b40620aa6d1e",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,286 +1,249 @@
 /-
-  Categorical Higgs mechanism — skeleton.
+  Categorical Higgs mechanism — conjecture carrier.
 
   Companion: categorical-higgs-mechanism.md
   Path: content/quantum-observable-universe/mass-theory/
 
-  Skeleton for the categorical formulation of the Higgs mechanism:
-  Goldstone-eating ↔ topological linking of closed-braid
-  representatives.  Currently a structural sketch; the four open
-  inputs (linking operation Lk_R, Weinberg angle, U4, mass formula)
-  are encoded as class hypotheses.
+  The categorical formulation of the Higgs mechanism: Goldstone-eating
+  ↔ topological linking of closed-braid representatives.  The open
+  inputs are encoded as content-bearing class hypotheses (AGENTS.md
+  §3b-tax); the class has **no instance**.
+
+  History (bean `qou-08zf`, 2026-09-03).  Until this revision the file
+  carried `MassEigenstateCountThree := True`, `CategoricalMassFormula :=
+  True`, a "faithful inlined copy" of `WeinbergAngleCategorical` whose
+  four fields were all `True` with a global `instance` closing them by
+  `trivial`, and a `mkSkeleton` helper that built a
+  `CategoricalHiggsMechanism` out of those trivial instances — i.e. the
+  conjecture was inhabited for free.  All of that is replaced by
+  predicates that state what the `.md` states.
+
+  The previous revision also inlined `CategoricalLinkingOperation`
+  from `mass-theory/categorical-linking-operation.lean`.  That copy is
+  **dropped** rather than propagated: the linking input the Higgs
+  mechanism actually consumes is the linking number `lk` of the
+  post-breaking 2-component links, which is what
+  `MassEigenstateCountThree` is stated over.
+
+  (Currency, bean `qou-yt29`, 2026-09-04: this note used to add that the
+  source file has "two of whose five fields are `True` there and which
+  that file closes with a global `instance canonical`".  That is no
+  longer its state, and the count was low besides — all **five**
+  predicates were extensionally `True`, three of them disguised as ring
+  or integer identities.  The source now carries a `LinkingData`
+  substrate, proves Properties 1-2 and the pre-trace half of 3 about the
+  operation itself, states the rest as class fields, and has no
+  instance.)
 
   Standalone-compile note: a content-block `.lean` sibling cannot
-  `import` the other content-block siblings it depends on (they live
-  outside the Lake library tree).  The two upstream classes —
-  `CategoricalLinkingOperation` (source:
-  `mass-theory/categorical-linking-operation.lean`) and
-  `WeinbergAngleCategorical` (source:
-  `particle-interactions/weinberg-angle-categorical.lean`) — are
-  therefore reproduced here as FAITHFUL inlined copies (same fields,
-  same proofs; the `canonical` instances are renamed
-  `linkingOperationCanonical` / `weinbergAngleCanonical` to avoid a
-  same-namespace name clash).  This preserves the genuine dependency
-  structure rather than substituting trivial placeholder fields.
+  `import` other content-block siblings, so `EWHoefsmitData` and
+  `WeinbergAngleCategorical` are reproduced below as a FAITHFUL inlined
+  copy of `nuclear-interactions/weinberg-angle-categorical.lean` (same
+  fields, same docstrings, same absence of an instance).
 
   Refs:
-    [peskin1995] Peskin & Schroeder, "Introduction to Quantum
-       Field Theory," Westview 1995, Ch 20 (Higgs mechanism).
-    [kassel1995] Kassel, "Quantum Groups," Springer 1995, §XIV
-       (ribbon-category braiding) — inlined linking-operation proofs.
+    [kassel1995] Kassel, "Quantum Groups," Springer 1995, §XIV.
+    [jones1987] Jones, Ann. Math. 126 (1987) — the Markov trace.
     docs/audits/2026-05-05-path-alpha-bring-refinement.md
 -/
 
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Data.Fintype.Card
+import Mathlib.Tactic.DeriveFintype
 
 namespace QOU.BraidsAndKnots
 
--- The two upstream classes `CategoricalLinkingOperation` and
--- `WeinbergAngleCategorical` are reproduced below as FAITHFUL inlined
--- copies (full fields, same proofs), not opaque markers — the
--- canonical declarations live in the sibling files
---   canonical decl: QOU.BraidsAndKnots.CategoricalLinkingOperation
---     (content/.../mass-theory/categorical-linking-operation.lean)
---   canonical decl: QOU.BraidsAndKnots.WeinbergAngleCategorical
---     (content/.../particle-interactions/weinberg-angle-categorical.lean)
--- which are not part of the cached QOU Lake library.
--- Ref: [manuscript] conj:categorical-linking-operation,
---      conj:hoefsmit-ew-cell-content
-
-/--
-  Predicate: `q : R` is a root of unity in `R` (used to state
-  the generic-q hypothesis as `¬ IsRootOfUnityH q`).
--/
+/-- Predicate: `q : R` is a root of unity in `R` (used to state the
+    generic-`q` hypothesis as `¬ IsRootOfUnityH q`). -/
 def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
   ∃ n : ℕ, n > 0 ∧ q ^ n = 1
 
-/-- Predicate: the EW broken-generator count equals 3 (delegated to
-    `conj:electroweak-mass-eigenstate-count`).  No standalone class
-    is authored for this; encoded as a simple proposition. Honest
-    open-input placeholder of this conjecture skeleton (§3b-tax
-    conjecture-block carve-out): its full categorical statement is
-    the subject of the named conjecture. -/
-def MassEigenstateCountThree {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
+/-! ## The electroweak boson set and the two linking predicates -/
 
-/-- Predicate: m_X = Markov-trace(e_X · β · e_X) · E_× · μ_0
-    via the Hoefsmit projector e_X.  Encoded as a proposition
-    pending discharge once the boson↔Hoefsmit mapping is fixed
-    by `conj:hoefsmit-ew-cell-content`. -/
-def CategoricalMassFormula {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
+/-- The four electroweak gauge bosons of the `.md`: pre-breaking each is
+    a 1-component knot; post-breaking three of them fuse with a Goldstone
+    boson into a 2-component link and the photon survives as a knot. -/
+inductive EWBoson
+  | Wplus
+  | Wminus
+  | Z
+  | photon
+  deriving DecidableEq, Fintype
 
-/- ===================================================================
-   FAITHFUL inlined copy of `CategoricalLinkingOperation`
-   (source: mass-theory/categorical-linking-operation.lean).
-   Three of the five properties carry genuine proofs (linearity via
-   ring distributivity, k=0 reduction via `pow_zero`, bar-involution
-   via `neg_neg`); the remaining two are honest open-input markers
-   per the source file's §"Proof of Property 3/4".
-   =================================================================== -/
+/-- **Three broken generators, as a linking statement** (`.md` §2–3).
+    Given the linking number `lk` of each post-breaking boson's
+    closed-braid representative with its eaten Goldstone component,
+    exactly three bosons carry `lk = 1` (the broken-generator
+    multiplicity) and the photon carries `lk = 0` (unbroken, still a
+    1-component knot).  Content-bearing: false for most `lk`. -/
+def MassEigenstateCountThree (lk : EWBoson → ℤ) : Prop :=
+  (Finset.univ.filter fun b => lk b = 1).card = 3 ∧ lk EWBoson.photon = 0
 
-/-- R-linearity of `Lk_R` in each factor — the substrate-side
-    bilinearity input lifted by the categorical proof. -/
-def LkLinear {R : Type*} [CommRing R] (_q : R) : Prop :=
-  ∀ a b c : R, a * (b + c) = a * b + a * c ∧ (b + c) * a = b * a + c * a
+/-- **The categorical mass formula** (`.md` §4): the mass of each
+    post-breaking boson `X` is the Markov trace of its new 2-component
+    link `β X`, sandwiched by the appropriate Hoefsmit projector `e X`,
+    up to the overall scale `scale` (the crossing energy `E_×·μ₀`,
+    which this block does not derive):
 
-/-- Sorry-free: ring distributivity gives `Lk_R` bilinearity. -/
-theorem categorical_linking_linearity_holds
-    {R : Type*} [CommRing R] (q : R) : LkLinear q := by
-  -- Ref: [kassel1995] §XIV (R-linear rigid monoidal axioms)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
-  intro a b c
-  exact ⟨mul_add a b c, add_mul b c a⟩
+        m_X = scale · tr_M(e_X · β_X · e_X). -/
+def CategoricalMassFormula {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    (trM : A →ₗ[R] R) (e β : EWBoson → A) (scale : R) (m : EWBoson → R) : Prop :=
+  ∀ X, m X = scale * trM (e X * β X * e X)
 
-/-- Reduction at `k = 0`: substrate-side integer-power identity. -/
-def LkReductionAtZero {R : Type*} [CommRing R] (q : R) : Prop :=
-  q ^ (0 : ℕ) = 1
+/-- **The three linked bosons are exactly the non-photons.**  A genuine
+    (if small) consequence of `MassEigenstateCountThree`: the filter
+    `{b | lk b = 1}` has three elements and omits the photon, and there
+    are four bosons, so it is `univ \ {photon}`. -/
+theorem linked_iff_ne_photon (lk : EWBoson → ℤ) (h : MassEigenstateCountThree lk) :
+    ∀ b, lk b = 1 ↔ b ≠ EWBoson.photon := by
+  obtain ⟨hcard, hγ⟩ := h
+  have hsub : (Finset.univ.filter fun b => lk b = 1) ⊆ Finset.univ.erase EWBoson.photon := by
+    intro b hb
+    rw [Finset.mem_filter] at hb
+    rw [Finset.mem_erase]
+    refine ⟨?_, Finset.mem_univ _⟩
+    rintro rfl
+    rw [hγ] at hb
+    exact zero_ne_one hb.2
+  have hcard' : (Finset.univ.erase EWBoson.photon).card = 3 := by decide
+  have heq : (Finset.univ.filter fun b => lk b = 1) = Finset.univ.erase EWBoson.photon :=
+    Finset.eq_of_subset_of_card_le hsub (by rw [hcard, hcard'])
+  intro b
+  constructor
+  · intro hb
+    rintro rfl
+    rw [hγ] at hb
+    exact zero_ne_one hb
+  · intro hb
+    have hmem : b ∈ Finset.univ.erase EWBoson.photon :=
+      Finset.mem_erase.mpr ⟨hb, Finset.mem_univ _⟩
+    rw [← heq, Finset.mem_filter] at hmem
+    exact hmem.2
 
-/-- Sorry-free: `pow_zero` discharges the k=0 reduction input. -/
-theorem categorical_linking_reduction_at_zero_holds
-    {R : Type*} [CommRing R] (q : R) : LkReductionAtZero q := by
-  -- Ref: [kassel1995] §X (rigid monoidal categories, dual morphisms)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
-  exact pow_zero q
+/-! ## FAITHFUL inlined copy of `EWHoefsmitData` / `WeinbergAngleCategorical`
+   (source: nuclear-interactions/weinberg-angle-categorical.lean).
+   Same fields, same docstrings; no instance there, none here. -/
 
-/-- Multiplicative-in-`k` structure. Proved at the pre-trace level
-    (integer-power group law of `c_{A,A}`); the post-trace upgrade
-    needs a substrate-specific commutation identity that remains
-    open — honest open-input marker. -/
-def LkMultiplicative {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
+/-- **The Hecke-eigenvalue data of the electroweak triplet at `n = 6`**
+    (inlined copy — see the source file for the full docstring). -/
+structure EWHoefsmitData (R : Type*) [CommRing R] (A : Type*) [Ring A] [Algebra R A] where
+  /-- The Markov trace `tr_M : A → R` (an `R`-linear functional). -/
+  trM : A →ₗ[R] R
+  /-- Hoefsmit idempotent `e_W⁺` — symmetric channel of the `W` slot. -/
+  eW : A
+  /-- Hoefsmit idempotent `e_B⁺` — symmetric channel of the pre-EWSB `B` slot. -/
+  eB : A
+  /-- Braid generator `σ₁` (the `W` slot carries `σ₁⁴`). -/
+  σ₁ : A
+  /-- Braid generator `σ₅` (the `H`/pre-mixing `B` slot carries `σ₅⁸`). -/
+  σ₅ : A
 
-theorem categorical_linking_multiplicativity_pretrace_holds
-    {R : Type*} [CommRing R] (q : R) : LkMultiplicative q := by
-  -- Ref: [kassel1995] §X (integer-power group law in monoidal categories)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
-  trivial
+namespace EWHoefsmitData
 
-/-- Trace-cut symmetry. Conditional on Markov-trace cyclicity +
-    braiding inversion (substrate-specific axioms); honest open-input
-    marker at this interface layer. -/
-def LkTraceCutSymmetric {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 
-theorem categorical_linking_trace_cut_symmetry_holds
-    {R : Type*} [CommRing R] (q : R) : LkTraceCutSymmetric q := by
-  -- Ref: [manuscript] prop:frobenius-gram-matrix (Markov-trace cyclicity)
-  -- Ref: [kassel1995] §XIV (ribbon-category braiding inversion)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
-  trivial
+/-- `tr_M(e_W⁺ · σ₁⁴)` — the `W`-slot trace scalar. -/
+def trW (d : EWHoefsmitData R A) : R := d.trM (d.eW * d.σ₁ ^ 4)
 
-/-- Bar-involution compatibility — the integer-index involutivity
-    `∀ k : ℤ, -(-k) = k`, the substrate-side input lifted through the
-    full categorical bar involution `ι(c^k) = c^{-k}`. -/
-def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_q : R) : Prop :=
-  ∀ k : ℤ, -(-k) = k
+/-- `tr_M(e_B⁺ · σ₅⁸)` — the pre-EWSB `B`-slot trace scalar. -/
+def trB (d : EWHoefsmitData R A) : R := d.trM (d.eB * d.σ₅ ^ 8)
 
-/-- Sorry-free: `neg_neg` discharges integer-index involutivity. -/
-theorem categorical_linking_bar_involution_holds
-    {R : Type*} [CommRing R] (q : R) : LkBarInvolutionCompatible q := by
-  -- Ref: [kassel1995] §XIV (Hecke antipode ι(σ_i) = σ_i^{-1})
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 5"
-  intro k
-  exact neg_neg k
+end EWHoefsmitData
 
-/--
-  A `CategoricalLinkingOperation R q` instance asserts the five
-  properties of the categorical linking operation on the substrate
-  algebra at parameter `q : R`.  Faithful inline of the sibling
-  `conj:categorical-linking-operation`.
--/
-class CategoricalLinkingOperation
-    (R : Type*) [CommRing R] (q : R) where
-  /-- R-linearity in each factor separately. -/
-  linearity : LkLinear q
-  /-- Reduction at k = 0 to Frobenius-trace scalar multiplication. -/
-  reductionAtZero : LkReductionAtZero q
-  /-- Multiplicative-in-k structure. -/
-  multiplicativeInK : LkMultiplicative q
-  /-- Trace-cut symmetry. -/
-  traceCutSymmetric : LkTraceCutSymmetric q
-  /-- Bar-involution compatibility. -/
-  barCompatible : LkBarInvolutionCompatible q
-
-/-- Canonical instance — each field discharged by the corresponding
-    named theorem above (renamed from the source's `canonical` to
-    avoid a same-namespace clash with the Weinberg instance). -/
--- Ref: [manuscript] conj:categorical-linking-operation
-instance linkingOperationCanonical {R : Type*} [CommRing R] (q : R) :
-    CategoricalLinkingOperation R q where
-  linearity := categorical_linking_linearity_holds q
-  reductionAtZero := categorical_linking_reduction_at_zero_holds q
-  multiplicativeInK := categorical_linking_multiplicativity_pretrace_holds q
-  traceCutSymmetric := categorical_linking_trace_cut_symmetry_holds q
-  barCompatible := categorical_linking_bar_involution_holds q
-
-/- ===================================================================
-   FAITHFUL inlined copy of `WeinbergAngleCategorical`
-   (source: particle-interactions/weinberg-angle-categorical.lean).
-   All four hypotheses are honest open-input markers; the
-   simple-multiplicity reading fails numerically and the corrected
-   reading is gated on the Higgs-vev automorphism (see .md).
-   =================================================================== -/
-
-/-- The categorical-linking operation `Lk_R` is discharged. -/
-def LkDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
-
-/-- The Hoefsmit cell-content identification of the EW triplet is
-    discharged (subject of `conj:hoefsmit-ew-cell-content`). -/
-def HoefsmitDischarged {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
-
-/-- The Higgs vev induces a well-defined automorphism of the Hoefsmit
-    projector decomposition; restriction to (W³, B) is the θ_W
-    rotation. -/
-def HiggsVEVAutomorphism {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
-
-/-- The corrected (non-uniform multiplicity + linking) Markov-trace
-    ratio matches CODATA `sin²θ_W`. -/
-def WeinbergAngleNumerical {R : Type*} [CommRing R] (_q : R) : Prop :=
-  True
-
-/--
-  A `WeinbergAngleCategorical R q` instance asserts the structural
-  inputs to the θ_W categorical proposal.  Faithful inline of the
-  sibling `conj:weinberg-angle-categorical`.
--/
+/-- **Conjecture carrier (primary, content-bearing, NO instance)** —
+    inlined copy of `conj:weinberg-angle-categorical`'s class; the
+    identification `cot θ_W · tr_M(e_B⁺σ₅⁸) = tr_M(e_W⁺σ₁⁴)` over genuine
+    Hecke data.  Tower status: ORDER-ZERO-ONLY (single ratio at `n = 6`). -/
+-- Ref: [manuscript] conj:weinberg-angle-categorical
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
 class WeinbergAngleCategorical
-    (R : Type*) [CommRing R] (q : R) where
-  /-- Categorical linking operation discharged. -/
-  lk_discharged : LkDischarged q
-  /-- Hoefsmit cell-content identification discharged. -/
-  hoefsmit_discharged : HoefsmitDischarged q
-  /-- Higgs-vev induces well-defined Hoefsmit-decomposition
-      automorphism (the θ_W rotation in the (W³, B) subspace). -/
-  vev_automorphism : HiggsVEVAutomorphism q
-  /-- Numerical verification against CODATA `sin²θ_W`. -/
-  numerical : WeinbergAngleNumerical q
+    (R : Type*) [Field R] (q : R)
+    (A : Type*) [Ring A] [Algebra R A]
+    (d : EWHoefsmitData R A) (cotW : R) : Prop where
+  /-- Markov-trace cyclicity `tr_M(ab) = tr_M(ba)`. -/
+  trM_cyclic : ∀ a b : A, d.trM (a * b) = d.trM (b * a)
+  /-- Hoefsmit cell content: `e_W⁺` is a projector. -/
+  eW_idem : d.eW * d.eW = d.eW
+  /-- Hoefsmit cell content: `e_B⁺` is a projector. -/
+  eB_idem : d.eB * d.eB = d.eB
+  /-- Hecke relation `σ₁² = (q − q⁻¹) σ₁ + 1`. -/
+  hecke_σ₁ : d.σ₁ ^ 2 = algebraMap R A (q - q⁻¹) * d.σ₁ + 1
+  /-- Hecke relation `σ₅² = (q − q⁻¹) σ₅ + 1`. -/
+  hecke_σ₅ : d.σ₅ ^ 2 = algebraMap R A (q - q⁻¹) * d.σ₅ + 1
+  /-- The `B`-slot scalar is non-zero, so the ratio is defined. -/
+  trB_ne_zero : d.trB ≠ 0
+  /-- **The identification — the conjecture's claim.** -/
+  cot_identification : cotW * d.trB = d.trW
 
-/-- Skeleton instance (renamed from source `canonical` to avoid a
-    same-namespace clash).  The minimal Lean witness that an inhabitant
-    exists, sufficient to discharge the §3b-cond hypothesis for
-    downstream blocks consuming `[WeinbergAngleCategorical R q]`. -/
--- Ref: [manuscript] weinberg-angle-categorical.md §"Status"
-instance weinbergAngleCanonical {R : Type*} [CommRing R] (q : R) :
-    WeinbergAngleCategorical R q where
-  lk_discharged := trivial
-  hoefsmit_discharged := trivial
-  vev_automorphism := trivial
-  numerical := trivial
+/-! ## The categorical Higgs-mechanism conjecture -/
 
-/- ===================================================================
-   The categorical Higgs-mechanism conjecture skeleton.
-   =================================================================== -/
+/-- **Conjecture carrier (dependent on `WeinbergAngleCategorical`; NO
+    instance).**  `CategoricalHiggsMechanism R q A d cotW lk e β scale m`
+    packages the inputs the `.md` names, each as a genuine constraint:
 
-/--
-  A `CategoricalHiggsMechanism R q` instance encodes the four
-  open inputs needed to lift the categorical Higgs claim from a
-  skeleton sketch to a derived proposition.
+    * `[WeinbergAngleCategorical R q A d cotW]` — the upstream conjecture,
+      taken as an explicit instance binder: that binder **is** the
+      dependency edge (§3b-tax), so this carrier is classified *dependent*
+      by the vacuity audit's conjecture graph, matching the block's
+      `uses: ["conj:weinberg-angle-categorical"]`;
+    * `q_generic` — the substrate parameter is not a root of unity;
+    * `mass_eigenstate_count` — three bosons fuse with a Goldstone into a
+      2-component link with `lk = 1`; the photon does not;
+    * `mass_formula` — each mass is the Hoefsmit-projected Markov trace of
+      its post-breaking link;
+    * `photon_massless` — the unbroken photon's link is trivial, so its
+      mass vanishes: the Markov trace of the surviving 1-component knot
+      sandwiched by its projector is `0` in the mass channel.
 
-  The `linkingOperation` and `weinbergAngleCategorical` fields
-  reference the (inlined) authored classes, so the Higgs-mechanism
-  class encodes concrete instance dependencies, not vacuous
-  placeholders.
--/
+    **Tower status (owner ruling 2026-09-03): ORDER-ZERO-ONLY** — one
+    Hoefsmit projection per boson at fixed `n`; the full `H_n(q)` tower
+    is not used.
+
+    No instance: constructing the Goldstone-eating linking and the
+    post-breaking Markov traces from the substrate is the open content
+    of `conj:categorical-higgs-mechanism` (Steps A–D of the `.md`). -/
+-- Ref: [manuscript] conj:categorical-higgs-mechanism
+-- Ref: [kassel1995] §XIV (ribbon-category braiding; linking of closed braids)
 class CategoricalHiggsMechanism
-    (R : Type*) [CommRing R] (q : R)
-    where
-  /-- Generic-q hypothesis: `q` is NOT a root of unity in `R`. -/
+    (R : Type*) [Field R] (q : R)
+    (A : Type*) [Ring A] [Algebra R A]
+    (d : EWHoefsmitData R A) (cotW : R)
+    [WeinbergAngleCategorical R q A d cotW]
+    (lk : EWBoson → ℤ) (e β : EWBoson → A) (scale : R) (m : EWBoson → R) : Prop where
+  /-- Generic-`q` hypothesis: `q` is NOT a root of unity in `R`. -/
   q_generic : ¬ IsRootOfUnityH q
-  /-- Categorical linking operation — instance of
-      `CategoricalLinkingOperation R q` (3 of 5 properties proved at
-      categorical level; 2 substrate-specific open). -/
-  linkingOperation : CategoricalLinkingOperation R q
-  /-- Categorical derivation of Weinberg angle θ_W — instance
-      of `WeinbergAngleCategorical R q` (simple-uniform reading
-      falsified at 64% rel deviation; corrected reading gated on the
-      Higgs-vev automorphism). -/
-  weinbergAngleCategorical : WeinbergAngleCategorical R q
-  /-- Three broken generators (from `conj:electroweak-mass-
-      eigenstate-count` — no standalone class authored). -/
-  mass_eigenstate_count : MassEigenstateCountThree q
-  /-- Mass formula via Hoefsmit-projector Markov trace. -/
-  mass_formula : CategoricalMassFormula q
+  /-- Three broken generators: three `lk = 1` links, photon unlinked. -/
+  mass_eigenstate_count : MassEigenstateCountThree lk
+  /-- Mass = Hoefsmit-projected Markov trace of the post-breaking link. -/
+  mass_formula : CategoricalMassFormula d.trM e β scale m
+  /-- The unbroken photon is massless. -/
+  photon_massless : m EWBoson.photon = 0
 
-/-- **Skeleton instance.**  Requires the upstream
-    `q_generic` hypothesis as a parameter (cannot be discharged for
-    a free `q : R` without external input).  Defers to the inlined
-    skeleton instances of `CategoricalLinkingOperation` and
-    `WeinbergAngleCategorical`; the two `True`-predicate fields close
-    by `trivial`.  Note: this is a `def`-style helper, not an
-    `instance`, because Lean cannot synthesise `q_generic` for a free
-    `q`.  Callers with a witness `hq : ¬ IsRootOfUnityH q` build the
-    instance via `mkSkeleton hq`. -/
--- Ref: [manuscript] conj:categorical-higgs-mechanism §"Skeleton"
-def mkSkeleton {R : Type*} [CommRing R] (q : R)
-    (hq : ¬ IsRootOfUnityH q) : CategoricalHiggsMechanism R q where
-  q_generic := hq
-  linkingOperation := inferInstance
-  weinbergAngleCategorical := inferInstance
-  mass_eigenstate_count := trivial
-  mass_formula := trivial
+/-- **Conditional consequence (§3b-cond).**  *If* the categorical Higgs
+    mechanism holds, then the photon's Hoefsmit-projected Markov trace
+    vanishes whenever the scale is non-zero — derived from `mass_formula`
+    and `photon_massless`, not read off a field. -/
+theorem photon_projected_trace_eq_zero
+    {R : Type*} [Field R] {q : R} {A : Type*} [Ring A] [Algebra R A]
+    {d : EWHoefsmitData R A} {cotW : R} [WeinbergAngleCategorical R q A d cotW]
+    {lk : EWBoson → ℤ} {e β : EWBoson → A} {scale : R} {m : EWBoson → R}
+    [inst : CategoricalHiggsMechanism R q A d cotW lk e β scale m]
+    (hscale : scale ≠ 0) :
+    d.trM (e EWBoson.photon * β EWBoson.photon * e EWBoson.photon) = 0 := by
+  have h := inst.mass_formula EWBoson.photon
+  rw [inst.photon_massless] at h
+  rcases mul_eq_zero.mp h.symm with h0 | h0
+  · exact absurd h0 hscale
+  · exact h0
+
+/-- **Conditional consequence (§3b-cond).**  *If* the categorical Higgs
+    mechanism holds, the linked bosons are exactly `W⁺, W⁻, Z`. -/
+theorem linked_iff_ne_photon_of_higgs
+    {R : Type*} [Field R] {q : R} {A : Type*} [Ring A] [Algebra R A]
+    {d : EWHoefsmitData R A} {cotW : R} [WeinbergAngleCategorical R q A d cotW]
+    {lk : EWBoson → ℤ} {e β : EWBoson → A} {scale : R} {m : EWBoson → R}
+    [inst : CategoricalHiggsMechanism R q A d cotW lk e β scale m] :
+    ∀ b, lk b = 1 ↔ b ≠ EWBoson.photon :=
+  linked_iff_ne_photon lk inst.mass_eigenstate_count
 
 end QOU.BraidsAndKnots
