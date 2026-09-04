@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T02:25:34Z
+updated_at: 2026-09-04T02:36:07Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -63,3 +63,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (REFINES the #6548 reading): the decay FACTORIZES exactly, |tr|/dim = κ · Σ|eig|/dim with κ = |Σeig|/Σ|eig| (phase) and Σ|eig| (magnitude), M_λ = ρ_λ(ρ)·ρ_λ(Ω₂^P). On 9 conjugate pairs (dim controlled): Σ|eig| ratio falls in 9/9 (0.005–0.37) and DOMINATES in 9/9; κ falls in 8/9 and RISES in 1 ((3,3)→(2,2,2), 0.604→0.837). Product reproduces #6548's trace ratios independently (0.732×0.00469 = 0.00343). ⇒ the decay is chiefly a COLLAPSE OF THE OUTPUT SPECTRUM, not phase cancellation in the trace — correcting the inference I drew from #6548 (whose stated finding, that the INPUT-norm route is excluded, is untouched). Cancellation happens in the ASSEMBLY of Ω₂^P from the σ's, not in the final trace, which is why term-by-term input bounds fail. CONSTRUCTIVE: an absolute-value spectral bound on M_λ (Σ|eig|, or dim × spectral radius) IS viable and is the route to the general-λ statement.
+
+
+- 2026-09-04 (CONSTRUCTIVE TARGET identified): majorant ladder |tr| ≤ Σ|eig| ≤ Σσ ≤ √dim·‖M‖_F (and Σ|eig| ≤ dim·ϱ) — EVERY rung decays in EVERY conjugate pair (max ratios A=2: 0.267/0.371/0.423/0.521/0.534; A=3: 0.093/0.106/0.133/0.179/0.122). So the b-info survives to the FROBENIUS norm of the assembled M_λ. AND that majorant is itself a positive trace: seminormal generators are EXACTLY symmetric (max|σ−σᵀ| = 0.0), so under word-reversal * , ‖M_λ‖_F² = tr_λ(X*X) with X = ρ·Ω₂^P — verified 7.6e-141 on all 11 shapes at n=6, POSITIVE, decaying 9/9 pairs (A=3 down to 9.2e-5). ⇒ the general-λ bound is a POSITIVE trace of an algebra element, so the #6464 Burau and #6525 R-matrix-sector handles (character identities, valid for ANY algebra element) apply to it verbatim, with no cancellation to fight. NOT yet derived: a closed form/bound for tr_λ(X*X).
