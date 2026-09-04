@@ -690,3 +690,87 @@ a physics question — worth its own bean now that ca40 confirms the shape from
 two atoms rather than one, and it is NOT something this bean should absorb.
 
 One atom left. fe56's committed values are `tr_M = 5.04e30`, `B = 1.198e9 MeV`.
+
+
+## 2026-09-04 — RUN COMPLETE (19/19). The witness is regenerated, and it is RED.
+
+fe56 finished in 16559.66s (4.6 h). Witness written.
+
+    OLD (committed)   allPassed False   23 assertions   6 failing
+    NEW               allPassed False   16 assertions   4 failing
+                      allPassedBasis: failed-assertions
+
+The four failures are `LP_stable(ne20|si28|ca40|fe56)`. **c14 and o16 now
+pass** where they failed before — the braid fix resolved two of the six
+stability failures and none regressed.
+
+### Against AME2020 — the honest table
+
+    atom        AME2020          OLD B            NEW B
+    deuterium     2.225         2.2213          -7.2711
+    tritium       8.482        -2.5843          -7.7421
+    he3           7.718        -3.3606          -7.4562
+    he4          28.296         0.7183          -6.8286
+    li6          31.994         5.0443          -3.0650
+    li7          39.245         5.5081          -7.5553
+    be9          58.165         3.9779          -0.0519
+    b11          76.205         3.3058           4.4420
+    c12          92.162         5.8438          13.9337
+    c14         105.285        34.0217          35.1751
+    n14         104.659        17.5136          22.0780
+    o16         127.619        27.6581          73.7681
+    ne20        160.645       132.5960         414.1787
+    si28        236.537      2916.0999       16578.7282
+    ca40        342.052      514735.3763    8167487.7945
+    fe56        492.254   1197694903.3434  36220960188.4542
+
+**The old table matched AME2020 at deuterium (2.2213 vs 2.2247, 0.17%) and the
+new one does not** — it flips sign to -7.2711. That is the single worst
+outcome in this table and it must not be buried.
+
+Everywhere else the old table was ALREADY badly wrong: sign errors at tritium
+and he3, an order of magnitude low through li6..o16, and absurd magnitudes
+from ne20 up (1.2e9 MeV at fe56 against 492). Neither version reproduces
+nuclear binding energies. The new one is not a regression from a working
+model; it is a different set of wrong numbers, closer at c14/n14 and further
+at deuterium and high A.
+
+### What the deuterium shift is NOT
+
+It is not the `atom_markov_trace` rescaling (bean `qou-8w8v`). At A=2 the
+running product never exceeds 1e80, so `log_norm` is 0 on BOTH paths — and
+`atom_markov_trace` parity between them is verified to ~1e-49 at A=2,3,4 in
+`tests/test_unified_correction_rust_parity.py`. The rescaling cannot be the
+cause at deuterium.
+
+### What it might be — NOT established
+
+The committed witness predates: the 1907-commit merge of main, the 50-dps
+compute floor (`qou-zbws`), several NO-FLOAT64 excisions, convention D, and
+the braid fix itself. Attributing the deuterium shift to any ONE of those is
+not supported by anything measured here. It needs a bisect over those changes,
+running `binding_energy(1, 1)` at each — cheap now (118 s per point) where it
+was impossible before.
+
+- [ ] Bisect the deuterium shift (+2.2213 -> -7.2711) across the merge, the
+      dps floor, and the braid fix. This is the highest-value follow-up on
+      this bean: deuterium is the one atom where this producer ever agreed
+      with experiment, and losing that agreement is the strongest available
+      evidence about which change was wrong — or about whether the agreement
+      was a coincidence of the earlier defect.
+
+### Also: 391 raw float64 fields
+
+The producer's own gate warned on write:
+
+    raw-float64: 391 raw float64 field(s) would enter the witness —
+    .data.atoms[0].nf.γ, ... .tr_M, .net
+
+`compute_atom` rounds to float via `round(float(v), 12)` before serialising.
+Under NO FLOAT64 EVER that is a defect in this producer, not a cosmetic one —
+it is the same class as the phase3-triton fields already fixed. Not addressed
+here; the run had to complete first.
+
+- [ ] Excise the 391 raw float64 fields from `hadron_knot_table`'s witness
+      path, then regenerate. 4.6 h per regeneration, so batch it with the
+      deuterium bisect rather than running the table twice.
