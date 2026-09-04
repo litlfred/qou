@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T13:52:46Z
+updated_at: 2026-09-04T20:56:04Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -230,3 +230,70 @@ there. And this is not a demotion of chirality: it says the chirality content
 the conjecture went looking for in `Im q` is already in the corpus at real `q`,
 as `P_skew`, which `rem:im-q-vs-p-skew` says is *"kept then discarded"* by the
 canonical `P_avg` projection.
+
+
+---
+
+## 2026-09-04 (third) — CANDIDATE (iii): the stated obstacle is not the live one
+
+Branch `claude/imq-decay-width-mechanism-2026-09-04`. Probe
+`computations/qbeta/imq_decay_width_mechanism_probe.py` (5/5), Lean
+`QOU/QBeta/ImQDecayWidthMechanism.lean` (lean-direct exit 0, 6 theorems, no
+sorryAx).
+
+### Its premise is correct, and I verified it rather than assuming it
+
+The Hecke generator satisfies `(σ − q)(σ + q⁻¹) = 0`, spectrum `{q, −q⁻¹}`, and
+`Im(−q⁻¹) = y/(x²+y²)` vanishes **exactly** where `y` does — no extra locus. So
+`Im q ≠ 0` really is precisely the non-Hermitian deformation (iii) describes.
+
+### The stated obstacle — *"needs a categorical formula for Γ"* — is wrong
+
+`docs/canonical-derivation-cheat-sheet.md` lines 134 and 490: **`𝔇_β`, the
+neutron β-decay width, IS CAL-2** — one of the three calibration inputs — with
+`Q_β = ℏ/𝔇_β` and the closed form `m_e|q₀²−2q₀−1|(q₀+1)/(2q₀³)` in real `q₀`.
+The decay sector is not a gap; it is a calibration, and it is real.
+
+### Two mechanisms, and the framework uses the other one
+
+| | width from | needs |
+|---|---|---|
+| **A** framework's | `𝔇 = ℏ/Q`, the **reciprocal** of a real energy | nothing complex |
+| **B** candidate (iii)'s | `E = E₀ − iΓ/2`, the **imaginary part** | complex `q` |
+
+On a real spectrum **B gives `Γ = 0` identically while A gives a nonzero
+width**, and the framework sits in exactly that configuration: `Q_β =
+0.783645827374621213` MeV at `Im q₀ = 0`, so `𝔇_β = 8.39935509011e-22 ≠ 0`.
+They are not two descriptions of one thing.
+
+### 🛑 Scope (a), and the Lean says so
+
+`imaginary_mechanism_does_produce_a_width` is in the file deliberately:
+mechanism B works fine when `Im E ≠ 0`. **Nothing here excludes `Im q` from
+encoding a resonance width.** The burden is *relocated*: to keep (iii) alive one
+must exhibit a `Γ` — W, Z, top, or a hadronic resonance — that mechanism A
+demonstrably **fails** to produce. Sharper than the conjecture's own question,
+and **left open**.
+
+Second place the burden is owed: `AGENTS.md` §7b item 3 gives the corpus another
+real-`q` account of exactly those states — unstable intermediaries as **Demazure
+sub-crystals**, *"without ad-hoc decay machinery"*. Not verified numerically.
+
+### 🛑 A units question in the corpus's own naming — reported, not resolved
+
+`𝔇_β` is called a **width** (energy) while `Q_β = ℏ/𝔇_β ≈ 0.784 MeV` is also an
+energy; `ℏ/(energy)` is a **time**. Both cannot hold. Either `𝔇_β` is a lifetime
+and "width" is loose, or an `ℏ`-convention is implicit. It does not affect the
+argument, which needs only that the two are reciprocal and `Q_β` real — but it
+is the author's naming, so it is flagged and left alone. **Author's call.**
+
+### All three candidates, after three PRs
+
+| candidate | archimedean status | scope |
+|---|---|---|
+| (i) chirality | **closed** | (b) |
+| (ii) phase dual to CAL-2 | **closed** on its whole Apollonius circle | (b) |
+| (iii) non-Hermitian | **narrowed** — premise right, obstacle misidentified, burden relocated | (a) |
+
+All three scoped to the **archimedean evaluation**. The **fibre** is untouched
+throughout and is where the Kashaev regime lives.
