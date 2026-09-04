@@ -71,3 +71,16 @@ cannot do both. Detail on `qou-0c19`.
 
 Still not a derivation, and the scale is still unpinned (`E_0` is CAL-1;
 `qou-59j5`'s normaliser family spans 1.33x).
+
+## 2026-09-04 (third) — the deficit is a COUNTING statement
+
+`qbeta_layout_conflict_probe.py` (5/5) + `QOU/Hecke/LayoutConflict.lean`.
+Exhaustively, no ordering of the `3A` strands makes the nucleon triples
+contiguous AND the three colour-matched interface couplings single generators;
+under contiguity the maximum is `A-1` of `3(A-1)` — one third. Proved for general
+`A`: two disjoint intervals touch at one boundary.
+
+So the missing factor of 3 and the interface shortfall are the SAME 3. That
+sharpens the gap but does not close it: it says the colour tube is unrealisable
+in this construction family, not what a realisable one would be worth. The energy
+scale is untouched — `E_0` is CAL-1, the normaliser family spans 1.33x.

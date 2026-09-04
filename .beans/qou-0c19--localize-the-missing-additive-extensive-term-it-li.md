@@ -138,3 +138,43 @@ demands are **incompatible on one strand ordering**:
 
 That is sharper than the previous probe's "distance 3 apart", and it is a
 construction question with a definite answer rather than an open assumption.
+
+## 2026-09-04 (third) — SETTLED: no strand ordering carries the colour tube
+
+`computations/qbeta/qbeta_layout_conflict_probe.py` (5/5), exhaustive — not
+sampled — over all `(3A)!` orderings, plus
+`content/quantum-observable-universe/lean/QOU/Hecke/LayoutConflict.lean` for
+general `A`.
+
+    A   strands   contiguous   tube-realising   BOTH   max matched under (1)
+    2      6           72            48           0      1 of 3 needed
+    3      9         1296            48           0      2 of 6 needed
+
+**Zero at both sizes**, and each demand is individually satisfiable, so the
+conflict is genuine rather than an impossible demand. Under contiguity the
+maximum is exactly `A-1` colour-matched single-generator couplings against the
+`3(A-1)` a tube needs — **exactly one third**.
+
+**The reason, proved for every `A`:** two disjoint intervals on a line touch at
+one boundary, so a contiguous layout admits at most ONE single-generator coupling
+per interface (`adjacent_pair_unique`,
+`contiguous_layout_cannot_carry_a_colour_tube`). And in the canonical `3k` layout
+that one boundary is `(3k+2, 3k+3)` — **colour 2 of `k` to colour 0 of `k+1`,
+colour-MISMATCHED** (`canonical_boundary_is_the_top_of_the_lower_block`). The one
+available matched coupling needs a colour permutation inside the nucleons, which
+`atom_braid_word_3A` does not do.
+
+**The tube-realising orderings are exactly the colour-blocked ones** — at `A=3`
+the search returns `(0,3,6,1,4,7,2,5,8)`, i.e. strand `(k,c)` at position
+`c.A + k`, predicted before the search and failing contiguity completely.
+
+**So this bean's conjecture is not wrong — it is unrealisable in this
+construction family.** Two escape routes, named and not taken: drop contiguity
+(intra-nucleon crossings become conjugated braids), or drop single-generator
+couplings (in which case the disjoint-support factorisation no longer applies
+and `b -> b^3` is not exact). Both are larger constructions.
+
+**And the deficit is now one statement:** the canonical layout realises one third
+of a colour-complete interface, and the missing scale factor against the peak
+`B/A` is 3.0075. Same 3 — a restatement, not a derivation. `E_0` is still CAL-1
+and `qou-59j5`'s normaliser family still spans 1.33x.
