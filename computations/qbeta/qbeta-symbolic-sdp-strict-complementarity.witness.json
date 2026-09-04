@@ -1,8 +1,8 @@
 {
   "engine": "lp+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T07:53:05.033014+00:00",
-  "commitSha": "100f218a7c6838e088bf504c68f613bebb18df27",
+  "computedAt": "2026-09-04T09:11:01.851862+00:00",
+  "commitSha": "b7215086abb27ee6b785ac8d523b4e0118508fc0",
   "assertions": [
     {
       "name": "lp_strong_duality",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 40,
+  "durationMs": 48,
   "computation": "qbeta-symbolic-sdp-strict-complementarity",
   "scriptFile": "qbeta_symbolic_sdp_strict_complementarity.py",
   "scriptHash": "47ac818d3cc7",
-  "scriptCommitSha": "c8db5cf3193cf0f481e08a15b9a13e0abf49ec15",
+  "scriptCommitSha": "62c44e826001f72495d86b57b7f1c2dfc261c884",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -133,6 +133,9 @@
     "primal_obj_str": "3.9236357001094877985864428332117651675847334372542e-44",
     "dual_obj_str": "-2.6702701055721053455736631999011159472425342975215e-46",
     "duality_gap_str": "3.9503384011652088520421794652107763270571587802294e-44",
+    "residual_primal_str": "-1.6531481823424920933246394862010663972041792191711e-42",
+    "residual_dual_str": "1.6904398023838312809564177545599671750500057576457e-42",
+    "gap_recomputed_str": "3.7291620041339187631778268358900777845826538474584e-44",
     "direction_scale_invariant": false,
     "direction_max_diff_across_scales": "1151423.0810244827293889393832875650949296392099891",
     "frobenius_gram_eigenvalues": [
