@@ -119,6 +119,24 @@ def proof_is_bare_projection(block: str) -> bool | None:
     return "." in head and head[0].isalpha()
 
 
+def class_has_refutation(cls: str, path: str) -> bool:
+    """Is there a companion `theorem … : ¬ C …` in the same file?
+
+    A parametrised carrier with a proved refutation is a GATE, not a defect:
+    `_forward` extracts the bound and `_reject` shows the class is uninhabitable
+    when the bound fails, so the projection is the gate's intended API.  Four of
+    the nine "drain" entries are this shape.
+
+    Searched over the WHOLE signature block.  A first version looked one line
+    past the `theorem` keyword and returned NONE for all nine -- including
+    `mass_anchor_stable_reject`, whose `¬ MassAnchorStableGateClass` is on the
+    THIRD line.  That zero was caught only because the file had been read first."""
+    src = pathlib.Path(path).read_text(errors="replace")
+    pat = re.compile(rf"¬\s*\(?\s*{re.escape(cls.split('.')[-1])}\b")
+    return any(kw in ("theorem", "lemma") and pat.search(sig)
+               for kw, sig in _decl_blocks(src))
+
+
 def class_is_inhabited(cls: str, root: pathlib.Path) -> bool:
     """Does any `instance` in the tree declare `cls` in its signature?"""
     if cls in _INHAB_CACHE:
@@ -162,6 +180,8 @@ def main() -> int:
                "class": cls}
         if cls:
             rec["class_inhabited"] = class_is_inhabited(cls, pathlib.Path("content"))
+        if cls:
+            rec["class_refuted"] = class_has_refutation(cls, path)
         nxt = re.search(rf"^[ \t]*{DECL}[ \t]+", s[m.end():], re.M)
         blk = s[m.start(): m.end() + (nxt.start() if nxt else 4000)]
         rec["bare_projection"] = proof_is_bare_projection(blk)
@@ -200,10 +220,14 @@ def main() -> int:
     #                         ordinary Mathlib idiom (Aug-09: legit/advisory)
     #   bare + uninhabited -> honest open state AND a restatement: the disclosure
     #   derives            -> not a projection at all, whatever the inhabitation
-    drain = [r for r in bare if r.get("class_inhabited") is False]
+    drain = [r for r in bare if r.get("class_inhabited") is False
+             and not r.get("class_refuted")]
+    gates = [r for r in bare if r.get("class_inhabited") is False
+             and r.get("class_refuted")]
     legit = [r for r in bare if r.get("class_inhabited") is True]
     print(f"\n  bare AND uninhabited : {len(drain):3d}  <-- THE DRAIN QUEUE")
     print(f"  bare but inhabited   : {len(legit):3d}      bundle is built; Aug-09 legit/advisory")
+    print(f"  bare, has refutation : {len(gates):3d}      a working GATE, not a defect")
     print("\n  --- THE DRAIN QUEUE ---")
     for r in sorted(drain, key=lambda r: r["path"]):
         print(f"    {r['decl']:42s} {str(r['class']):32s} {r['path'].split('/')[-1]}")
