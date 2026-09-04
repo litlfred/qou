@@ -78,6 +78,19 @@ dlad.ORD = ORD
 
 import qbeta_borel_conformal_pade_probe as conf  # noqa: E402  (merged #3713 core)
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A -- retired 2026-08-22 for the CODATA-2022 derivation.
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30 (proton is the default;
+# neither the E1 explicit-comparison nor the E2 ideal-CAL exception applies).
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 mp.mp.dps = 60
 GATE_TOL = mp.mpf("0.15")          # pre-registered estimator-consistency gate
 R3 = sp.sqrt(3)
@@ -185,7 +198,7 @@ def main() -> int:
     # ---------------- ARM 1: fixed-base class mismatch --------------------
     print("\n  [ARM 1] fixed-base Jackson q-Borel — class mismatch (structural):")
     arm1 = {}
-    q0sub = mp.mpf("1.10997859555733471")
+    q0sub = mp.mpf(Q_50_DIGIT_STR)
     for tag, Q, s in [("substrate q0", q0sub, mp.mpf(1)),
                       ("Q=2", mp.mpf(2), mp.mpf(1)),
                       ("Q=3", mp.mpf(3), mp.mpf("0.5")),
@@ -316,7 +329,7 @@ def main() -> int:
     print("\n  [ARM 4] Borel–Leroy back-transform self-check at the meridian + A2:")
     s_bt = s_star if s_star is not None else mp.mpf("0.2")
     arm4 = {}
-    for tag, qv in [("muon-q0", mp.mpf("1.10997859555733471")), ("q_star(A2)", QSTAR)]:
+    for tag, qv in [("proton-q0", mp.mpf(Q_50_DIGIT_STR)), ("q_star(A2)", QSTAR)]:
         u0 = u_of_q(qv)
         direct = mp.fsum(d[k] * u0**k for k in range(1, KMAX + 1))
         bg = leroy(d, KMAX, s_bt, gamma=True)
@@ -332,9 +345,12 @@ def main() -> int:
               f"back={mp.nstr(back, 12)}  rel diff={mp.nstr(rel, 3)}")
     self_check = all(mp.mpf(arm4[t]["rel_diff"]) < mp.mpf("1e-15") for t in arm4)
     dstar = mp.mpf(arm4["q_star(A2)"]["direct_partial"])
-    dmu = mp.mpf(arm4["muon-q0"]["direct_partial"])
+    # key follows the tag renamed at the ARM-4 loop above: that row is now
+    # computed at the PROTON pin, so calling it "muon-q0" would be the very
+    # label-vs-value defect this bean drains.
+    dq0 = mp.mpf(arm4["proton-q0"]["direct_partial"])
     print(f"    self-check (back == direct to <1e-15): {self_check}")
-    print(f"    A2: D smooth through q* — D(ũ(q*))={mp.nstr(dstar, 8)} ≈ D(ũ(μ))={mp.nstr(dmu, 8)}")
+    print(f"    A2: D smooth through q* — D(ũ(q*))={mp.nstr(dstar, 8)} ≈ D(ũ(q₀))={mp.nstr(dq0, 8)}")
     print("      (the S=0 zero at q* is NOT a zero of D: the sign structure lives in the")
     print("       h·D → S bridge — measured bridge datum, ord17 witness — consistent with")
     print("       KC21's smooth-zero, ladder-inversion-amplified reading)")

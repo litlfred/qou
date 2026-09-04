@@ -47,12 +47,20 @@ Search for the strict $Q_\beta$ residual extension via categorical multi-block p
 > whole `c_k` ladder — *"the ladder must be RE-DERIVED under D, and that is not
 > a z-swap"* — with a number attached.
 >
-> **Three figures are on record for one quantity, and convention alone does not
-> reconcile them.** This entry says −0.0005 ppm; the witness it cites said
-> −0.0257 ppm (51× apart, and that predates any convention question); current
-> code in convention C gives −0.1871 ppm. CODATA 2018 → 2022 on `M_N`/`M_P`
-> accounts for only ~0.22 ppm on `Q_AME`, so something further in the probe's
-> cone has also moved. Do not quote any of the three as current.
+> **The 51× gap IS explained — and this entry's own figure is reproducible from
+> nothing (resolved later the same day).** A 216-combination sweep over the q₀
+> pin, `m_e`, the `Q_AME` source, the convention, the `ℏ_q` definition and three
+> coefficient variants reproduces the **committed witness uniquely, to 4.2e-9**,
+> at: retired pin A, `m_e = 0.51099895000`, a **hardcoded** `Q_AME = 0.78233341`,
+> **convention C**, balanced brackets. That recipe names the two things that have
+> since changed — the producer now *computes* `Q_AME` (0.78233356) instead of
+> hardcoding it (worth the 51×), and convention D became canonical (worth
+> ~2760×). Neither is the pin.
+>
+> **This entry's −0.0005 ppm is matched by none of the 216.** The closest is
+> **+0.0046 ppm**, ten times its own magnitude away. How that number arose is
+> not established; what is measured is that the witness reproduces exactly and
+> the prose does not.
 >
 > **Scope (a), not (b).** This says the expression at the canonical convention
 > does not reproduce Q_β to the claimed precision. It does **not** exclude the

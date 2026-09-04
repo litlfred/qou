@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T04:26:48Z
-updated_at: 2026-09-04T04:27:25Z
+updated_at: 2026-09-04T06:28:44Z
 ---
 
 ## The claim
@@ -80,3 +80,71 @@ NOT fixed, and deliberately: the ledger prose still claims the exact match. It
 gets a dated correction pointing here rather than a rewrite -- the C-frame result
 is a real historical measurement and AGENTS.md says to re-scope such findings,
 never to delete them.
+
+
+## RESOLVED 2026-09-04 — the 51x gap is explained, and the ledger figure is reproducible from NOTHING
+
+The earlier entry said "the residual C-vs-ledger gap is NOT explained here". It is
+now, by a 216-combination sweep over every free input: the q0 pin (retired A /
+CODATA-2022 muon / proton), `m_e` (0.51099895000 / 0.51099895069), the `Q_AME`
+source (hardcoded 0.78233341 / hardcoded 0.78233356 / computed from CODATA), the
+Markov convention (C / D), the `hbar_q` definition ((q-1)/q vs q-1/q) and three
+coefficient variants (-2-1.5W4 / -2-W4 / -2+1.5W4).
+
+**The committed witness reproduces UNIQUELY, to 4.2e-9:**
+
+    A / me18 / Q_AME hardcoded 0.78233341 / convention C / hbar=(q-1)/q / -2-1.5W4
+      -> eps = -0.025722396 ppm     (witness records -0.0257224)
+
+That recipe names exactly what has since changed:
+
+1. **`Q_AME` was HARDCODED at 0.78233341.** The producer now COMPUTES it as
+   `M_N - M_P - m_e = 0.78233356` from `codata_constants`. A 1.9e-7 relative
+   shift, which against a residual of order 0.03 ppm is the whole 51x.
+2. **Convention C.** Canonical is D since 2026-08-09, worth ~2760x.
+
+So the three-way discrepancy was never one mystery: it is two independent,
+identifiable changes, and the pin is not among them.
+
+**The ledger's -0.0005 ppm is reproduced by none of the 216.** Closest is
+**+0.0046 ppm** — ten times the quoted figure's own magnitude away, and that
+combination differs from the witness's recipe only by using the proton pin. No
+self-consistent parameterisation lands on -0.0005.
+
+I do not know how that number arose and am not guessing. What is measured: the
+witness is exactly reproducible and the prose is not, and the prose disagrees
+with the witness it cites by 0.0252 ppm.
+
+## The Lean carrier was a tautology with a false docstring — FIXED and verified
+
+`QOU/BraidKnot/QBetaWenzlDecomposition.lean` carried
+
+    theorem q_beta_c3_wenzl_decomposition_exact {q : ℝ} :
+      q_beta_c3_wenzl_coefficient q = -2 - (3/2 : ℝ) * wenzlAltWeight 4 q := by
+      rfl
+
+`def X := E` then `theorem X = E := rfl` — banned by AGENTS.md §"Strict Lean
+Discipline" rule 5, and doubly misleading because its docstring said it "formally
+asserts" the full `Q_beta` ansatz, which no part of that file models. The
+`q_beta_c3_wenzl_coefficient` docstring separately asserted the -0.0005 ppm
+figure as fact.
+
+Replaced with a statement that can fail:
+
+    theorem q_beta_c3_wenzl_coefficient_ne_neg_two {q : ℝ}
+        (hW : wenzlAltWeight 4 q ≠ 0) :
+        q_beta_c3_wenzl_coefficient q ≠ -2
+
+`lean`-direct **exit 0, no diagnostics**; `#print axioms` reports
+`[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**. The module has
+**zero importers**, so blast radius is nil. Both docstrings now carry the
+measurement and its convention.
+
+## Note for whoever re-runs the sweep
+
+The Lean `qInteger` uses HALF-powers,
+`(q^(k/2) - q^(-k/2)) / (q^(1/2) - q^(-1/2))`, while the Python probe and this
+sweep use `(q^n - q^(-n)) / (q - 1/q)`. Those are different brackets (the Lean
+one is the Python one at `sqrt q`). Not the cause of anything above — the sweep
+reproduces the witness with the Python convention — but do not assume the two
+`W_4` agree when carrying a number between them.
