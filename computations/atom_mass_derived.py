@@ -467,13 +467,64 @@ def main():
     w.add_parameter("proton_tr_M", str(PROTON_TR))
     w.add_parameter("neutron_tr_M", str(NEUTRON_TR))
 
-    for r in results:
+    # ---- THE TEN `M(<element>)` ASSERTIONS HERE WERE TAUTOLOGIES ---------
+    #
+    # They read
+    #
+    #     computed  = M_derived,  expected = M_observed,
+    #     tolerance = max(abs(r.delta_MeV) * 2, 50)
+    #
+    # and `delta_MeV` IS the deviation `M_derived - M_observed`. So the check
+    # was `|dev| <= 2*|dev|` -- true for every input, unconditionally. Not a
+    # loose tolerance: an assertion mathematically incapable of failing. All
+    # ten passed, and `allPassed: true` rested entirely on them, while seven
+    # atoms compute a mass of zero or NEGATIVE against expected values of
+    # thousands of MeV (bean `qou-tol0`).
+    #
+    # 🛑 THE BEAN'S CHARACTERISATION IS A COINCIDENCE, NOT THE RULE, and
+    #    fixing what it describes would be the wrong fix. It reads "in every
+    #    row the tolerance is twice the expected value". Twice the *expected*
+    #    and twice the *deviation* agree only because these computed values
+    #    are ~0, which makes deviation ~ expected. Checked: M(Helium) carried
+    #    tolerance 7695.22 = 2*|-3847.6| (the deviation), where 2*3728.4 =
+    #    7456.8 (the expected) is a different number. The code's rule is a
+    #    tautology for ANY data; "2x expected" would merely be very loose.
+    #
+    # WHAT REPLACES THEM. This script's own banner says the combination law
+    # is wrong and the output must not be trusted, so an assertion claiming
+    # agreement with AME2020 was never the right shape. The falsifiable claim
+    # the script actually establishes is the NEGATIVE: the multiplicative law
+    # `M = tr_M(atom NF) * E_0` does not reproduce atomic masses beyond
+    # hydrogen. If it ever started to, this assertion goes red and someone
+    # revisits the banner -- which is exactly the signal that was missing.
+    #
+    # The per-element numbers are NOT lost: every one is already carried in
+    # `results` below (M_derived_MeV, M_observed_MeV, delta_MeV, delta_pct).
+    # They move from unfalsifiable assertions to honest data.
+    _beyond_h = [r for r in results if r.Z >= 2 and r.M_observed_MeV != 0]
+    if _beyond_h:
+        _best_rel = min(abs(r.delta_MeV) / abs(r.M_observed_MeV)
+                        for r in _beyond_h)
+        _best_el = min(_beyond_h,
+                       key=lambda r: abs(r.delta_MeV) / abs(r.M_observed_MeV))
+        w.add_data("best_relative_error_beyond_hydrogen", _best_rel)
+        w.add_data("best_relative_error_element", _best_el.element)
+        w.add_data("n_atoms_with_nonpositive_derived_mass",
+                   sum(1 for r in results if r.M_derived_MeV <= 0))
         w.add_assertion(
-            f"M({r.element})",
-            computed=round(r.M_derived_MeV, 1),
-            expected=round(r.M_observed_MeV, 1),
-            tolerance=max(abs(r.delta_MeV) * 2, 50),
-            unit="MeV", source="AME2020",
+            "multiplicative_law_refuted_beyond_hydrogen",
+            # Boolean form: an EMPTY-style failure is representable. The same
+            # pattern reports `passed: false` elsewhere in this corpus
+            # (`selector_direction_S_independent`), so it is demonstrably
+            # capable of going red rather than merely believed to be.
+            computed=bool(_best_rel > 0.5),
+            expected=True,
+            tolerance=0,
+            source="min over Z>=2 of |M_derived - M_AME| / |M_AME| exceeds "
+                   "50%. Asserts the NEGATIVE this script establishes (its "
+                   "own header: the multiplicative combination law is wrong). "
+                   "Goes RED if any atom beyond hydrogen ever lands within "
+                   "50%, which would mean the header needs revisiting.",
         )
 
     w.add_data("results", [asdict(r) for r in results])

@@ -1,11 +1,11 @@
 ---
 # qou-tol0
-title: 'Nine assertions pass with a computed mass of zero or negative — tolerance >= |expected| makes them unfalsifiable'
-status: todo
+title: Nine assertions pass with a computed mass of zero or negative — tolerance >= |expected| makes them unfalsifiable
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T03:30:00Z
-updated_at: 2026-08-22T03:30:00Z
+updated_at: 2026-09-04T10:49:59Z
 ---
 
 `computations/atom-mass-derived.witness.json` reports `allPassed: true` over
