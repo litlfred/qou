@@ -25,6 +25,7 @@ Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
 
 import Mathlib.Tactic.Linarith
 import QOU.BraidKnot.TwoRowStratum
+import Mathlib.Tactic.Linarith
 
 namespace QOU.BraidKnot.He4TwoRowDominance
 
