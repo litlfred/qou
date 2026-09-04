@@ -1,10 +1,10 @@
 ---
 # qou-3ral
 title: 'Every witness guard sits on ONE of WitnessBuilder''s two write paths: save(extra) validates nothing, and 124 producers use only that route'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-09-04T21:23:12Z
-updated_at: 2026-09-04T21:23:12Z
+updated_at: 2026-09-04T22:40:00Z
 ---
 
 
@@ -106,3 +106,85 @@ that bypasses the helper entirely. Checked before writing this.
 red-on-arrival (which is `qou-z23u`'s thesis for why it gets skipped), the
 tolerance drain stays structurally undoable, and both classes keep refilling at
 a rate that rises with adoption.
+
+
+## UPDATE 2026-09-04 22:40 — the drain merged, a guard landed, and it is TWO paths short
+
+Three things changed within the hour, and one of them corrects this bean.
+
+### 1. #6654 merged, and it ANSWERED the design question rather than deferring it
+
+This bean recorded that #6654 *"states outright that whether to add a write-time
+guard is a real design question"* and left it. It merged, and it **added the
+guard**: `_warn_unmappable_anchor` + `Q0_ANCHOR_VOCABULARY` in `witness.py`. The
+decision it reached is **warn, never raise**, for a reason worth preserving —
+stamping happens *after* the compute, several producers run tens of minutes and
+one past fifty, so discarding a run to correct a label is the worse trade. It
+cites the owner's 2026-08-25 decision against a blocking pre-commit hook as the
+same question already settled once.
+
+**So the design question is closed and it is not mine to re-open.** What follows
+applies their decision; it does not revisit it.
+
+### 2. Their drain worked: off-vocabulary witnesses 14 → 3
+
+Re-measured on `main` at `6a9c2c44fb9` with the same command:
+
+| token | before | now |
+|---|---:|---:|
+| `proton (experimental pin)` | 12 | **2** |
+| `not-applicable` | 1 | **1** |
+| `none (exact symbolic identities in q)` | 1 | **0** |
+
+The `+540 %` / `+51 %` growth figures above are the state *before* this drain and
+should be read as historical, not current.
+
+### 3. 🛑 CORRECTION TO THIS BEAN: there are THREE write paths, not two
+
+The title and the whole argument above say **two**. Measured while checking
+whether the new guard reaches the remaining offenders — it does not, and finding
+out why turned up a route this bean did not know about:
+
+| # | route | guarded? |
+|---|---|---|
+| 1 | `stamp_staleness_metadata(payload, q0_anchor=…)` | **yes** — `_warn_unmappable_anchor`, added by #6654 |
+| 2 | `save(extra)` with `q0Anchor` in `extra` | no |
+| 3 | **`wrap_legacy(name, payload)`** with `q0Anchor` in `payload` | no |
+
+Route 3 carries the payload's keys into `_extra_top_level` and out through
+`build()`, touching neither of the other two. Measured on `main`: **152
+producers call `wrap_legacy`, and 22 of them set `q0Anchor` in the payload.**
+
+**The one live off-vocabulary producer travels route 3.**
+`codata_corpus_literal_scan.py` sets `"q0Anchor": "not-applicable"` at line 816
+and calls `.save()` with **no** `extra` at line 898 — so neither the guard that
+exists nor the `save(extra)` fix alone would ever have warned about it. I found
+this by checking a claim I was about to make, having assumed it used route 2.
+
+### What this branch does now
+
+Both remaining routes get the same warn-only call, deliberately reusing
+`_warn_unmappable_anchor` rather than writing a second policy:
+
+- `save(extra)` — checks `extra` only, so a producer that stamps *and* passes
+  `extra` warns exactly once (`stamp_staleness_metadata` warns only when
+  `"q0Anchor" not in payload`, so its own guard is already skipped in that case).
+- `wrap_legacy` — checks `payload` at entry, where `script_path` is in scope.
+
+**Verified, 9 cases across both routes**, in a scratchpad harness driving the real
+`WitnessBuilder` end to end (`build()`, the ephemeral-diff preserve logic, the
+file write):
+
+    save(extra)   bad-prose / bad-other -> WARN     good-comp / good-indep -> silent
+                  no-extra / unrelated-key -> silent
+    wrap_legacy   bad -> WARN            good / absent -> silent
+
+In every case the token is written to disk **unchanged** — the guards warn, they
+do not mutate, matching #6654's decision exactly.
+
+### Still true, and still the point
+
+The taxonomy row stands and is strengthened: the count in it should read **three
+entry points**, not two. `#6693` still holds
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, so the row is still
+offered rather than added.
