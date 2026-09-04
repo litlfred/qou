@@ -335,3 +335,262 @@ instance in the tree (`observations/borromean-quark.lean:120`). The other nine
 have none, so an instance-keyed census is structurally blind to all nine — there
 is nothing for it to match. The two detectors are complementary, and neither
 subsumes the other.
+
+---
+
+# Prior work this sits next to — and the one place we disagree
+
+*Added after merge, on a corpus-grep of `docs/audits/` and `.beans/` for each
+carrier — the step whose omission produced the retraction above.*
+
+The nearest prior work is
+[`2026-08-23-free-prop-field-census.md`](2026-08-23-free-prop-field-census.md)
+(PR #5562, beans `qou-lo1t` / `qou-tsnp`). It **already names
+`BorromeanQuark`** — specifically that its `instance canonical` is declared
+twice, in a chapter sibling and in the library, "the shadow-pair shape again".
+Read it before this file.
+
+## The questions are different, and the difference is mechanical
+
+That census asks: *which carriers have a **free `Prop` field**?* — the
+self-nominating `X : Prop` + `h_X : X` shape. This audit asks: *which carriers
+**satisfy themselves**?*
+
+Neither contains the other:
+
+- `q-beta-spectral-bridge`'s carrier has **no `Prop`-typed field at all**
+  (`Q_beta_A : ℝ`, `Q_beta_B : ℝ`, `forms_agree : Q_beta_A = Q_beta_B`), so the
+  free-`Prop` census cannot see it. It is nonetheless inhabited by `⟨0, 0, rfl⟩`.
+- Conversely a free `Prop` field can sit in a carrier whose *other* fields
+  constrain something external, which the census flags and this audit would not.
+
+Nor is either a duplicate of `qou-hjf4`'s
+[`trivially-inhabiting-instance-census.py`](../../scripts/trivially-inhabiting-instance-census.py),
+which keys on `INSTANCE_HEAD` — an unguarded global `instance` with constant
+data content. Measured above: nine of the ten `BorromeanQuark` classes have no
+instance anywhere, so that census has nothing to match on.
+
+## Where this contradicts the census, and why it is worth saying
+
+The census crosses its 122 free-`Prop` carriers against inhabitation and finds
+**89 with no inhabitant at all**, then reads that as reassuring:
+
+> The 89 are the §3b-tax **honest open state** — nothing inhabits them, so a
+> downstream `[C] → P` can never be *applied*. Weak, but inert.
+
+**For a self-satisfying carrier that reading does not hold.** "Nothing inhabits
+it" is not evidence of an open state when inhabiting it costs one line that any
+reader could write in seconds — it is evidence that nobody bothered. The
+`[C] → P` theorem is not gated by an open problem; it is gated by a fact nobody
+has typed. Every instance in the two evidence files here was written in one
+line, and `T5`/`T7`/`C2` need no axioms at all.
+
+So the census's "weak but inert" verdict is right for a carrier that is merely
+*unproved*, and wrong for one that is *unprovable-to-fail*. Separating those two
+is what the parametrise-don't-field fix is for, and the census's own count
+cannot make the split, because inhabitation-in-the-tree is the wrong probe:
+the question is whether an instance is **available**, not whether one is
+**present**.
+
+## A methodological warning from that same census, which applies here
+
+> a `lean` run killed by a 2-minute command timeout leaves a log with zero
+> errors in it, which reads as success
+
+Both evidence files here were run to completion in the background with the exit
+status captured *after* the process exited (`v_qcod exit=0`, `v_reid exit=0`,
+and the two `#print axioms` batches), not read out of a truncated log. Worth
+stating, because a clean-looking log is exactly what a killed run produces.
+
+## C1 was a re-discovery — credit where it belongs, and what survives it
+
+Reading `qou-4els` (completed 2026-08-24) rather than only seeing it in a grep
+hit list: its table names the C1 vacuity in the same words I re-derived a week
+and a half later.
+
+| decl | what discharged the conjecture |
+|---|---|
+| `CrystalGraphRealization.canonical` | `CrystalNode := PUnit`, `raising _ _ := none` → `crystal_realises` is `none = none` |
+
+That is exactly `C1.triv`. **The mechanism was known; I re-measured it without
+citing it, in the round-two commit and PR comment.** This is the second
+re-discovery in one session, and the first (`[IsAMEValue]`) was the more costly
+one, so the pattern rather than either instance is the thing to record: seeing a
+bean in a grep hit list is not reading it.
+
+**What `qou-4els` fixed, verified still in place on `main`:** all six of its
+`canonical`s are `def`, not `instance` — `CrystalGraphRealization`,
+`KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`,
+`RootOfUnityMTCTruncation`, `CemeteryGroupEmergence`, `GSOrderMatch`. That is
+real: `[CrystalGraphRealization R q]` in a theorem no longer resolves silently.
+
+**What it does not fix, and this is the surviving finding.** Demoting the
+instance removes the *automatic* resolution; it does not make the carrier
+constrain anything. The class is still satisfied by
+
+```lean
+instance : CrystalGraphRealization ℤ 0 :=
+  ⟨PUnit, PUnit, id, fun _ _ => none, fun _ _ => none, fun _ _ => rfl⟩
+```
+
+— one line, and `C1.triv` in the round-two evidence file is that line. So the
+conditional theorems downstream are gated by **nobody having typed it**, not by
+mathematics. That is the *available*-versus-*present* distinction drawn against
+the free-`Prop` census above, applied now to a fix that was already made:
+demotion moves a carrier from "inhabited" to "inhabitable", which is a smaller
+step than it reads as.
+
+`qou-09mr` reaches the same structural point from a different file, and adds a
+detector caveat worth carrying: `checkNoVacuousInstanceData` requires a
+degenerate *value* (`0`, `True`, `PUnit.unit`), so **definitional laundering** —
+data that is a real non-degenerate function still chosen to make the claim
+reflexive — is invisible to it, as are fields written inside a tactic
+`exact { … }` rather than a `where`. Filed upstream as `folio-assistant-ilbh`.
+
+**C2, C3 and C4 are not in `qou-4els`'s six** and are not covered by
+`qou-tsnp`'s twelve (a third shape again: `holds : Prop`). Those three stand as
+first measurements.
+
+---
+
+# 🛑 MAJOR CORRECTION — the headline over-claims, and the corpus had the right rule five days earlier
+
+*Same day. The prior work is [`2026-08-30-the-remainder-is-vacuous-not-open.md`](2026-08-30-the-remainder-is-vacuous-not-open.md)
+(bean `qou-z9ws`), its evidence file
+[`2026-08-30-context-classes-are-inhabited-by-zero.lean`](2026-08-30-context-classes-are-inhabited-by-zero.lean),
+and the tool [`scripts/lean-context-class-inhabitation-probe.py`](../../scripts/lean-context-class-inhabitation-probe.py).*
+
+## What that audit already established
+
+My thesis, stated more sharply and on a larger measured population — **52 of 79**
+context classes inhabited by `Unit` and zero:
+
+> A class inhabited that cheaply constrains nothing. A `[C]` binder on it assumes
+> nothing, and the downstream `[C]`-conditional declaration is therefore not
+> conditional on anything. **Constructing a witness for such a class is not
+> progress — it is the defect.**
+
+It also ships a probe. Mine was hand-built. **This audit is not the first
+statement of its own thesis**, and both round-one and round-two were written
+without citing it.
+
+## And it corrects me on two points — both of which I accept
+
+**1. Inhabitation does not decide it. The discriminator is what the downstream
+declaration *does* with the field.**
+
+> - **derives something from it** → §3b-cond working (`BorromeanQuark`);
+> - **projects it verbatim** → §3b-cond item 5, and if the class is *also*
+>   inhabited by zero, the declaration is conditional on nothing.
+
+**2. "Inhabited ⇒ vacuous" holds only for an *unparameterised* class.** For
+`C x`, a downstream `theorem foo [C x] : P x` quantifies over `x`; exhibiting
+`C x₀` for one `x₀` shows the hypothesis is **satisfiable**, not that it assumes
+nothing. My `C1.triv` inhabits `CrystalGraphRealization ℤ 0` — a *parameterised*
+class — so it shows satisfiability, not vacuity.
+
+## Re-classified under that discriminator — checked against the actual bodies
+
+| | downstream body | verdict |
+|---|---|---|
+| **T1** `orbital_fourier_decomposition` | `rw [inst.decomposition_law, orbital_dim_eq_square]` | **DERIVES — not a defect** |
+| **T2** `orbital_space_normal_bundle_conditional` | `rw [inst.so3_decomposition, QOU.orbital_space_dim]` | **DERIVES — not a defect** |
+| **T6** `neutron_qvalue_symbolic` | closed form by ring algebra from the field equations | **DERIVES — not a defect** |
+| **T8** `shell_eigenvalues_conditional` | `rw [energy_law ×3, chebyshev_recurrence]; ring` | **DERIVES — not a defect** |
+| **T3** `baryon_mass_from_volume` | `:= inst.volume_calibrates_mass q hq` | **PROJECTS — defect stands** |
+| **T10** `q_beta_spectral_conditional` | `:= inst.forms_agree` | **PROJECTS — defect stands** |
+| **T4** reidemeister mirror | existential over its own `V` *and* `m` | **defect — fixed in #6657** |
+| T5, T7, T9 | no `[inst]`-binding theorem found by the search | **not claimed either way** |
+| **C1** | class is *parameterised* | shows **satisfiability**, not vacuity |
+
+The Aug-30 audit names T1 explicitly as *the worked counter-example* — "that is
+§3b-cond working exactly as intended". My table listed it as a defect.
+
+**So the headline "all ten are trivially inhabited, therefore every
+`[BorromeanQuark]`-conditional theorem is unconditional" is wrong.** The
+inhabitation measurements are correct; the inference from them is not. The sharp
+cases are **T3 and T10** — both pure projections — plus **T4**, which was a
+defect of a kind the derives/projects rule does not even reach (its field
+existentially bound *both* the volume and the mass functional, so even a
+derivation would be a derivation from nothing).
+
+## And round two was prior work in full
+
+- **C1** — `qou-4els`, credited above.
+- **C2, C4** — `docs/audits/2026-08-24-undecided-carrier-witnesses.lean` carries
+  `w_crystalGraphRealization := ⟨⟨fun _ => 0, fun _ => rfl⟩⟩` and
+  `w_qIntegerMassFormula`, **the identical witnesses**, from a probe
+  (`scripts/vacuous-prop-carrier-probe.py`).
+- **C3** — stood down: `CanonicalMarkovWeightsH3` was worked on **2026-09-03**
+  with owner approval ("2y", `qou-6u92`), `canonicalInstance` promoted and
+  `explicitInstance` demoted as a deliberate pair, the inhabitant **wired to the
+  Markov-derived n=3 weights** (`qou-c35w`, landed via #6506), and guarded by
+  `delta_tau_M_canonical_resolves_to_canonical`, which is `rfl`-provable *only
+  because* resolution picks those weights. Parametrising it would break that
+  guard by construction. My row "`y3 := 1`, rest `0`" is true of what the class
+  *permits* and materially misleading about what the corpus *does*.
+
+So **none of round two's four was a first measurement**, against my explicit
+claim that three of them were.
+
+## What survives
+
+- **#6644 entirely** — the q-codifferential axiom work is a different subject.
+- **The two `rfl` axioms** in `reidemeister-mass-invariance.lean`
+  (`applyR3 K := K`), and the **T4 parametrisation** — both mine, both uncontested.
+- **`¬ Nonempty QIntegerMassFormula`** — a machine-checked proof. The Aug-24 note
+  asserted "false as written" in prose; the prior probe's uninhabitable seventh is
+  `SeparateLambdaScale_Antipattern` (`is_antipattern : False`), a different
+  declaration.
+- **The name-collision counts** — 10 `BorromeanQuark`, 4 `CrystalGraphRealization`,
+  3 `QIntegerMassFormula`, 2 `CanonicalMarkovWeightsH3`. No prior count found.
+
+## The pattern, which is the durable part
+
+Four re-discoveries in one session — `[IsAMEValue]`, C1, C2/C4, and this whole
+thesis — each found *after* writing the claim rather than before. Three of the
+four were in files a grep had already put in front of me. **A corpus this
+heavily audited should be assumed to hold the finding already; the default
+posture for a "new" vacuity result is to look for whose it is first.**
+
+---
+
+# Three independent routes to one discriminator (added at check-in)
+
+While this correction was being written, a sibling session landed
+[`b5a10c6a28`](https://github.com/litlfred/qou/commit/b5a10c6a28) on `main`
+— *"a fourth carrier-vacuity shape — an unconsumed `holds : Prop` field"* — and
+reached the same self-correction from a third direction:
+
+> **A Prop-TYPED FIELD IS NOT VACUOUS ON ITS OWN, and my first rule
+> over-reported 101 carriers by assuming it was.** Declaring an abstract
+> predicate and then CONSUMING it in a sibling is the correct §3b-cond pattern.
+
+Its worked counter-example is `QOU.Torsion.BraneBoundaryContext`, whose five
+`Prop` fields are all consumed by `boundary_active` and
+`impl_brane_boundary_structure` — so that carrier states a real implication and
+the detector must stay silent on it. Its criterion is **UNCONSUMED**: a
+`Prop`-typed field whose name appears in no other field's type in the same
+carrier. `101 → 42` on that narrowing.
+
+So three audits, three probes, three different shapes measured — and one rule
+underneath:
+
+| audit | shape measured | discriminator |
+|---|---|---|
+| `qou-z9ws` (2026-08-30) | context class inhabited by `Unit`/zero | downstream **derives** vs **projects** |
+| `b5a10c6a28` (2026-09-04) | a bare `Prop`-typed field | the field is **consumed** by a sibling field |
+| this one | the class satisfies itself | (adopted: the two above) |
+
+**The convergence is the result, not any one count.** Each route began by
+flagging on *shape* and each had to narrow to *use* — over-reporting first, in
+the same direction, by roughly the same factor. A carrier's syntax does not
+decide whether it asserts anything; what the rest of the file does with the
+field does. Anyone building the next detector in this family should start from
+the narrowed rule rather than re-deriving it, and should expect the first
+version to over-report.
+
+Note also that `b5a10c6a28`'s 42 and `qou-tsnp`'s 12 are **different
+denominators** — corpus-wide unconsumed `Prop`-typed fields versus the
+`holds : Prop` conjecture-sibling carriers specifically — and should not be
+compared as though one supersedes the other.
