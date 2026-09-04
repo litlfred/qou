@@ -1,11 +1,11 @@
 ---
 # qou-v1cp
 title: 'HAZARD: tr_m_atom_zn is silently wrong below eta ~ 1e-10 -- flavour degeneracy'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-31T16:52:45Z
-updated_at: 2026-08-31T16:52:45Z
+updated_at: 2026-09-04T07:20:00Z
 ---
 
 
@@ -146,3 +146,84 @@ The `1e-12` cache tolerance at lines 54-61 is **not** the culprit, despite
 matching the cached-accessor shape AGENTS.md warns about. At eta ~ 1e-11 the
 caller's q is ~1 + 2e-11, which is ~0.11 away from the witness's recorded q0 —
 eight orders of magnitude outside the gate. The cache is missed, not hit.
+
+
+## CAUSE FOUND AND FIXED — 2026-09-04
+
+**The classifier in `chi_monotone_transfer.word_to_mpfr` used an ABSOLUTE
+tolerance on a quantity whose own scale goes to zero.**
+
+`word_to_mpfr` re-lifts each crossing's float `d` to full dps by matching it
+against the four recognised templates
+
+    0                       sigma
+    -h                      sigma inverse
+    -h/2                    averaged
+    -h*(1/2 - delta/4)      color-weighted p-n, one per live delta convention
+
+with `h = q - 1/q = 2*sinh(eta)`. Every template but the first is proportional
+to `h`. The classifier tested them **in a fixed order against `_TOL = 1e-9`,
+absolute**, so once `|h| < _TOL` every template lay within `_TOL` of every
+crossing and the FIRST test won for the whole word:
+
+    if abs(df) < _TOL:            # <-- always true once |h| < _TOL
+        d_mp = mp.mpf(0)
+
+Every `d` in the word was lifted to exactly 0, so the pp / pn / nn words became
+numerically identical after lifting. No raise, no warning — exactly the
+signature this bean recorded.
+
+### The failure is STAGED, which is why the threshold looked like one number
+
+The two nonzero templates cross `_TOL` at different eta, so the corruption
+arrives in two steps. Measured at 90 dps, distinct lifted `d` for the pp word:
+
+    eta       h = 2 sinh(eta)   #distinct d   tr_M(pp) - tr_M(nn)
+    2e-9      4.0e-9                 3         2.25e-9
+    1.2e-9    2.4e-9                 3         1.35e-9
+    9e-10     1.8e-9                 2         6.75e-10     <- -h/2 lost
+    5.1e-10   1.02e-9                2         3.825e-10
+    4.9e-10   9.8e-10                1         0.0          <- -h lost too
+    1e-10     2.0e-10                1         0.0
+
+The 3 -> 2 transition lands where `h/2` crosses 1e-9 and the 2 -> 1 transition
+where `h` does. The intermediate stage is worse than the total one: the answer
+is wrong but still flavour-dependent, so it does not announce itself.
+
+### Fix
+
+`word_to_mpfr` now picks the **nearest** template rather than the first one
+within `_TOL`, via a new `_d_templates(q, h)` helper. Nearest-match is
+scale-free. The accept/reject set is unchanged — it still raises exactly when
+no template lies within `_TOL` — so genuine convention drift still fails loudly
+(the documented purpose of `_TOL`, bean `qou-j320`).
+
+### Verification
+
+- **Production is byte-identical.** D / T / 3He / 4He `tr_M_atom` and
+  `tr_M_free` at the default pin, 30 significant digits, diffed pre- and
+  post-fix: empty. Expected — at q0 the templates are separated by ~7.5e-5,
+  four orders above `_TOL`, so nearest-match and first-within-tolerance agree.
+- **The flavour split is now linear over ten decades**, `tr_M(pp) - tr_M(nn) =
+  1.125*eta` from eta = 1e-9 down to eta = 1e-20, where it was exactly 0 below
+  the threshold before.
+- **Regression guard:**
+  `computations/audits/word_to_mpfr_template_scale_audit.py`. Verified it
+  FAILS on the pre-fix classifier (exit 1, 11 findings, catching the partial
+  stage at 5e-10 as well as the total collapse) and passes after. A guard that
+  was never shown to fail is not a guard.
+
+### What this does NOT cover
+
+- The **color-weighted** template sits only `h*delta/4 ~ (2/3)*eta^4` from
+  `-h/2`, so those two are still merged by an absolute `_TOL = 1e-9` for
+  `eta < ~3.5e-3`. Production q0 has `eta ~ 0.104` and a separation of
+  ~7.5e-5, so it is unaffected, but any small-eta study of the color split
+  specifically needs a tighter `_TOL`. Not fixed here; separate concern.
+- `qou-h3qk` — the q-blind `_H3_TRANSITION_CACHE` — is a real, separate defect
+  and was **tested for a causal link to this one and cleared**: with the cache
+  explicitly emptied between the pp and nn calls the collapse reproduces
+  identically. Still open on its own bean.
+- `tr_m_atom_via_transfer.py:194` computes `abs(tF) - abs(tA)` rather than
+  `abs(tF - tA)`. Runs at production q0, not on the eta-sweep path. Unrelated
+  to this hazard; still open.
