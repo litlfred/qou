@@ -342,6 +342,18 @@ measurement rather than by argument:
    <noreply@anthropic.com>` 14, `Carl Leitner <litlfred@gmail.com>` 8, `Claude
    <ofri@ibiblio.org>` 2 — **zero** `GitHub <noreply@github.com>`. Every one
    was a local commit, so the hook fired on every one.
+
+   **Do NOT read the 8 under the owner's git identity as the owner.** All 24
+   carry a `Co-Authored-By: Claude` / `Claude-Session:` trailer — **24 agent
+   commits, 0 human ones.** The committer field records whichever identity the
+   container's git was configured with, not who decided to commit. So the
+   population proceeding past this warning is *entirely agent sessions*, which
+   is a different fact from the raw split and points at a different remedy: a
+   gate aimed at agents reaches 100 % of the observed refill, and the 2026-08-25
+   objection that a blocking hook would brick a bare container's commits is
+   weaker than it looks, because the q0 block is pure stdlib JSON with no
+   mpmath/numpy dependency (unlike the raw-float64 ratchet it shares a script
+   with).
 2. **The fix is too expensive to do at commit time.** Classified all 24 by
    their producer's write path: **20 already call `WitnessBuilder` /
    `.save()`**, 0 hand-roll `json.dump`, 4 have no producer the glob could
