@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-04T13:34:10Z
+updated_at: 2026-09-04T14:26:47Z
 ---
 
 ## The finding
@@ -173,3 +173,47 @@ nothing. Until they land, their two witnesses keep the old prose label and the
 gate reads `Q0_ANCHOR_UNRECOGNISED: 2` rather than 0. Their PRODUCERS are already
 fixed, so this is a provenance lag, not a correctness gap, and it closes on the
 next successful run by anyone.
+
+
+### 🛑 The real blocker is SESSION IDLE, not the compute budget (measured 2026-09-04)
+
+Second attempt at the two long producers: relaunched **serially** at ~13:31 with a
+9000 s budget. At the 14:20 check-in: **zero python3 processes**, `slow.done`
+empty (so even the `echo EXIT=` never ran -- the wrapper itself was killed), and
+`qbeta_derived_w_overdetermined_test_probe.log` last written **13:33:46**, having
+reached 337 bytes.
+
+The session had turns until ~13:35 and was then idle until the 14:20 check-in.
+**The process died at the start of that idle gap.** Disk was not the cause (7.0 G
+free, 82 %), and neither was the budget -- it had used ~2 min of 9000 s.
+
+**So in this remote environment a detached background compute does not survive
+session idle.** `nohup` is not enough; the container is reclaimed and takes the
+process with it. This matters for AGENTS.md's long-compute logging discipline,
+which reads as though `python3 -u ... | tee log &` and checking back later is a
+working pattern. It is -- but only while the session keeps taking turns. A
+producer needing more wall time than the session stays active is not runnable
+this way, however generous the `timeout`.
+
+Third attempt is under `setsid` (own session/process group) to test whether that
+survives; **unverified** -- do not record it as a fix until an idle gap is
+observed to pass.
+
+**A misreading to not repeat.** `interface_w`'s log mtime (13:15) is OLDER than
+`derived_w`'s (13:33), which looks like the serial loop running out of order. It
+is not: 13:15 is the STALE log from the first concurrent attempt, still
+untruncated because that producer runs second and was never reached. Check
+whether a log was truncated before reading its mtime as evidence of ordering.
+
+### Landing at 12 of 14
+
+The two witnesses are NOT regenerated and are not being chased further. Cost/
+benefit: their producers are already fixed and pushed, so this is a **provenance
+label on two files** -- any successful run by anyone closes it. Against that,
+finishing them needs ~75-90 min of continuous session liveness (6 candidate rows;
+the concurrent attempt did 2 rows in 50 min under contention). Spending that on
+labels is poor value, and hand-editing a witness to close the gap is forbidden.
+
+Consequence, stated so nobody reads the gate as unfixed: `q0_anchor_consistency_audit`
+will report **Q0_ANCHOR_UNRECOGNISED: 2** rather than 0, and both are
+`qbeta_derived_w_overdetermined_test` and `qbeta_interface_w_deciding_test`.
