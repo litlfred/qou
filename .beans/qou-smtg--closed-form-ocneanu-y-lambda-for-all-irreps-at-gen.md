@@ -1,11 +1,11 @@
 ---
 # qou-smtg
 title: Closed-form Ocneanu y_lambda for ALL irreps at general z (and at z_D)
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T17:43:03Z
-updated_at: 2026-08-16T12:56:32Z
+updated_at: 2026-09-03T14:57:31Z
 ---
 
 
@@ -165,3 +165,12 @@ Steps 1, 3 and 4 are untouched by #5217:
 
 The "close condition" is therefore **not** met. Do not close this bean on the
 strength of #5217.
+
+
+
+## CLOSED 2026-09-03 — every step of the close condition is met by the SchurWeyl tranche (PR #5575 and successors), not by this bean
+- Step 1 (closed form, general n, general z): QOU/SchurWeyl/OcneanuWeight.lean — W_lam(q,z) = prod_cells [q^{2i}(q^2-1-qz) + q^{2j+1}z] / prod (q^{2h}-1), sorry-free, generic Field.
+- Step 2: WenzlWeightVanishing (PR #5217), as recorded above.
+- Step 3 (two-row specialisation = [n-2k+1]_q/[2]_q^n): OcneanuWeightBranching.schurPrincipal_twoRow gives schurPrincipal 2 Q (twoRow m k) = Q^k(1+Q+...+Q^{m-k}), and OcneanuWeightWenzl.ocneanuWeight_conventionD_eq_schurPrincipal gives W = schurPrincipal/(q^2+1)^{|mu|}; together that is the shipped root, so the symbolic witness (now convention D, producer regenerate_y_lambda_symbolic_convention_d.py) is CONFIRMED.
+- Step 4 (tr(x sigma)=z tr(x) at n>=4): EXCEEDED — proved for every n at z_D in MarkovConventionD.markov_conventionD; normalisation, cyclicity and tower-consistency in MarkovTraceInstance; uniqueness in MarkovTraceUnique. eq_wtrace_of_markov: every Markov trace at z_D is the Ocneanu-weighted seminormal trace.
+Only general-z Markov remains open (ocneanu_markov_corner_reduction.py tests it through n=6); that is not this bean's close condition. Found while triaging after qou-c35w.
