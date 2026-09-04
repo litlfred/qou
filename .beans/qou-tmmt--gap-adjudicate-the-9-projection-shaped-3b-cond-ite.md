@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-09-04T14:20:29Z
+updated_at: 2026-09-04T14:41:50Z
 ---
 
 Found by `bun run scripts/conditional-on-class-hypothesis-audit.ts --projections`
@@ -208,3 +208,57 @@ mathematics — eight separate derivations, not a sweep, and several are
 substantial (the LR bridge and the branching decomposition are real theorems).
 
 **Do not "fix" any of them by deleting the theorem or weakening the statement.**
+
+
+---
+
+## Cross-check against the sibling finding `qou-7yj0` (already merged to main)
+
+`qou-7yj0` (branch `claude/q407-self-assuming-projections-2026-08-21`, landed)
+measures a **different** defect: a carrier whose constraining fields relate only
+its OWN data fields is **trivially inhabited**, so "conditional on `[C]`" is
+decorative. Their test: replicate the class, build an instance from nothing,
+`lean`-direct.
+
+**The two defects are independent, and the block sets are DISJOINT.**
+
+- theirs: is the class *inhabitable for free* → the theorem is unconditional
+- mine: is the class field *the theorem's conclusion* → the theorem is a
+  projection
+
+Their named population (`BorromeanQuark` ×10, `TrefoilElectronMassConj`,
+`HypMinimizerUnique`, `CrystalGraphRealization`, `QIntegerMassFormula`,
+`CanonicalMarkovWeightsH3`, `CoGroundStateSelection`, `IsOcneanuWeightSystem`,
+`CarlemanDeterminacyStieltjes`, `QouObstructionReductionContext`) shares **zero**
+classes with my eight. Not a duplicate finding, and not a re-derivation.
+
+### Applying their test to mine — 2 of 8 are BOTH
+
+Evidence: `docs/audits/2026-09-04-item5-carriers-inhabitability.lean`,
+`lean`-direct **exit 0**.
+
+| class | trivially inhabited? |
+|---|---|
+| `GBResidueSpectralSum` | **YES** — `descended := 0`, `levelBound := 0`, `mass := 0`, decomposition by `simp` |
+| `MarkovTraceRecursiveReducerContext` | **YES** — `Braid := Unit`, everything trivial |
+| `BrunnianDecoupling` | **NO** (negative control) |
+
+So `prop:gb-residue-spectral-sum` and `prop:markov-trace-recursive-reducer`
+carry **both** defects at once: the class costs nothing to satisfy AND its field
+is the conclusion. Those theorems prove their conclusions from nothing at all.
+That is strictly worse than either defect alone and neither audit alone reports
+it.
+
+### The control is what makes this a measurement
+
+`BrunnianDecoupling` takes its subject as **parameters** — which is exactly the
+parametrised form `qou-7yj0`'s bean recommends as the FIX — and
+`¬ BrunnianDecoupling 2 (3:ℝ) 5` is **proved** in the evidence file. So the
+method discriminates rather than accepting everything, and `BrunnianDecoupling`
+is a live counterexample to any assumption that the two defects travel
+together: it is item-5-violating and correctly parametrised at once.
+
+**Consequence for whoever fixes either:** applying `qou-7yj0`'s parametrisation
+fix does NOT close item 5, and re-encoding for item 5 does NOT make a carrier
+refutable. Both passes are needed, and each should check the other's criterion
+on the blocks it touches.
