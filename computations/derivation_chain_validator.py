@@ -405,10 +405,6 @@ def audit_witness_trust(chains_dir: Path) -> dict:
                 data = json.load(f)
         except (json.JSONDecodeError, OSError):
             continue
-        # Some witnesses are top-level JSON arrays (e.g. iterative-knot-builder),
-        # not objects; tolerate them. Prefer scriptFile from the first dict
-        # element (preserves metadata); otherwise fall back to the name-based
-        # guess in _is_in_set.
         # `scriptFile` is only ONE of the spellings a witness uses to name its
         # producer -- `producer` and `computation.script` are equally common,
         # and the whole chi-at-q0 family (8 witnesses) declares `producer`.
@@ -417,13 +413,14 @@ def audit_witness_trust(chains_dir: Path) -> dict:
         # had done nothing. `witness_producer_executes_audit.producer_of` knows
         # every spelling and the categorizer already uses it; use the same one
         # here so the two tools cannot disagree about who produced what.
-        if isinstance(data, dict):
-            script_file = _producer_of(data)
-        elif isinstance(data, list):
-            first = next((item for item in data if isinstance(item, dict)), None)
-            script_file = _producer_of(first) if first else None
-        else:
-            script_file = None
+        #
+        # A witness root must be a JSON object. The old bare-array tolerance
+        # (the `iterative-knot-builder` special case) is retired: that producer
+        # now emits a proper envelope (qou-2ht2), and a corpus-wide scan finds
+        # zero bare-array roots. A non-object root now yields `script_file =
+        # None` -> the computational-only bucket, surfacing the shape defect
+        # rather than silently tolerating it.
+        script_file = _producer_of(data) if isinstance(data, dict) else None
         # A prose provenance value ("(legacy -- no matching producer found ...)")
         # names no script; treat it as absent rather than as a basename.
         if script_file and _is_prose(script_file):

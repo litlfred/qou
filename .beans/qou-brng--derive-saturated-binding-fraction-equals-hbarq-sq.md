@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T06:18:06Z
+updated_at: 2026-09-04T10:28:53Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2399,3 +2399,5 @@ distinction; the six-strand layer can label it but cannot reach the **magnitude*
 different routes — `C`-orbit structure of Wedderburn blocks vs the projector-scalar
 hypothesis of an interface theorem. Recorded as two arguments rather than merged
 into one claim, because they remain independent.
+
+## 2026-09-04 later (qou-rp9i) — under #6611's log law the cyclic-triple reorder IS extensive (per-bond constants), so 'not a functional of tr_M' from earlier today is too strong as stated; but the class over-shoots 3–8× with the retracted +N−Z asymmetry sign. Word-level route: closed for this class under both laws.

@@ -1901,6 +1901,36 @@ Pattern (always):
 https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 ```
 
+> **🛑 Keep the URL under 150 characters, or the link arrives BROKEN
+> (measured 2026-09-04, bean `qou-pbql`).** A link destination of **150
+> characters or more** in a PR body comes back wrapped in double backticks —
+> `[label](``https://…``)` — and markdown link destinations do not process
+> backticks, so the destination becomes a literal string and the link is dead
+> in the rendered body. 149 is clean; T149 / T150 / T151 were binary-searched
+> with generator-asserted lengths. It is the **URL** length, not the line
+> length (a 130-char label with a 110-char URL is clean), and it is **not** the
+> author's input: the same body was rewritten twice in plain single-delimiter
+> markdown and came back mangled both times.
+>
+> The pattern above is the problem, because a `claude/<theme>-<utc-ymd>` branch
+> name spends ~43 characters of the budget. **Address a long path by short
+> commit sha instead** — the same bean file is **153** characters branch-form
+> and **116** sha-form:
+>
+> ```
+> https://github.com/litlfred/qou/blob/<short-sha>/<path-to>/<block>.md
+> ```
+>
+> A sha-form link is also more durable: rule 8 rebase-merges every branch, which
+> rewrites the shas a branch-form link resolves through.
+>
+> **Do not "fix" this by shortening the bean's filename or blaming `--`.** The
+> first three instances were all `.beans/…--….md` paths, which made both the
+> dot-directory and the double hyphen look causal; tested in isolation a probe
+> carrying **both** is clean at 98 characters and one carrying **neither** is
+> mangled at 155. Bean filenames are `<id>--<slug>.md` with long slugs, so they
+> simply clear 150 more often than `scripts/foo.py` does.
+
 **When to link siblings (`.ts`, `.lean`, `.tex`):**
 - Only in delivery summaries for **modified** files (see
   `.claude/skills/local/delivery-summary.md`) — list every sibling that
@@ -4564,18 +4594,21 @@ and **SEED the cache branch afterwards**. Full slug/seed rules:
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
-trap 'rm -f "$TGZ"' EXIT INT TERM   # ~1.6G scratch tarball; NOTHING else reaps it
+trap 'rm -f "$TGZ"' EXIT INT TERM   # ~2.4G scratch tarball; NOTHING else reaps it
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
-  && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
-     | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+  && C=$(git rev-parse FETCH_HEAD) \
+  && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
+     | while read -r p; do git show "$C:$p"; done > "$TGZ" \
   && tar xzf "$TGZ" -C "$ROOT" \
-  && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
-  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3; lean-direct ONLY, see below"
+  && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
+  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
 
 # 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
 # `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
-# ~1.6G, and until 2026-08-28 nothing deleted it — not the recipe, not a reaper.
+# ~2.4G (27 parts, 2,514,511,602 B — measured 2026-09-04; it was ~1.6G/18 parts
+# before the 2026-08-31 reseed added own-package oleans), and until 2026-08-28
+# nothing deleted it — not the recipe, not a reaper.
 # Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
 # disk thirteen days later and was a direct contributor to this container
 # reaching **92K free**, at which point the Bash harness cannot write its own
@@ -4583,10 +4616,30 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 # Note the disk reads deceptively: `df` shows 252G nominal at 100% with only 38G
 # used, because the real limit is a per-session quota near 38G.
 
-# 🛑 A RESTORED tree has oleans but NO .trace files, so Lake treats every one as
-# stale: a later `lake build` rebuilds them from source AND EVICTS THE RESTORE.
-# Measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB Fred2005` at
-# the root against a tree restored exactly as above: root mathlib oleans
+# 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
+# flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
+# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was reseeded 2026-08-31
+# and carries 100.0% PAIRED trace coverage — 6170 of 6172 oleans have their own
+# .trace sibling (the 2 exceptions are QOU own-package oleans). Measured by
+# stream-listing the 27 parts; the seeders have refused a sub-90% seed since
+# 2026-08-07. So the unconditional `touch` the recipe used to do now asserts
+# something false in the BLOCKING direction, which is why the line above runs
+# scripts/lake-restore-trace-check.sh instead: it sets the marker from the
+# measurement, and cannot go stale the way the assertion did.
+#
+# Count PAIRED traces, never total ones — a Lake tree carries many traces
+# belonging to no olean (cache.trace, lake.trace, *.c.o.export.trace); the naive
+# ratio read 192% on a 13-olean tree.
+#
+# WHAT THAT DOES NOT MEAN. Traces are NECESSARY for Lake to accept a restored
+# olean; they are NOT shown to be sufficient. A trace records input hashes, so
+# Lake can still rebuild if the tree it hashes differs. The eviction below was
+# real and is NOT retracted — only its premise has changed, and whether a
+# `lake build` on a traced restore still evicts is UNTESTED (testing it costs a
+# real build and risks the cache). Keep preferring lean-direct.
+#
+# The eviction, measured 2026-08-15 (bean qou-r13s) running `lake build QOU UGB
+# Fred2005` at the root against an UNTRACED restore: root mathlib oleans
 # 6990 -> 334, and of the 536 oleans written in ten minutes, 520 were
 # mathlib/aesop/batteries and ZERO were QOU/UGB/Fred2005. It is silent — the
 # output reads as ordinary build progress. Verify with lean-direct instead
