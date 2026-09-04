@@ -30,8 +30,12 @@ The probe measures what those are, in the `(2,1)` block and exactly in `q`:
   `B₃/⟨Δ²⟩ ≅ PSL(2,ℤ)` and the achievable traces are indexed by conjugacy
   classes there — a countable set of Laurent polynomials.
 
-Since `2 cos((z−1)h/2)` is transcendental over `ℚ(q,z)` (that bean's entry 4),
-the trace field is impossible. **Branch 3 as worded is closed**, with no Drinfeld
+Since no algebraic relation can hold — `BraidImageEigenphaseAlgebraic.`
+`coeffs_zero_of_surjective_nonpos`, sorry-free, by zero-counting — the trace
+field is impossible.  (This read *"since `2 cos((z−1)h/2)` is transcendental
+over `ℚ(q,z)` (that bean's entry 4)"* until 2026-09-04; that route is the
+unproved docstring assertion `BraidImageEigenphaseExclusion` flags, not the
+proof that exists.  The conclusion is unchanged — only its warrant.) **Branch 3 as worded is closed**, with no Drinfeld
 associator and no `ζ(3)` computation — superseding the `ζ(3)` milestone proposed
 earlier the same day, which targeted exactly this reading.
 
