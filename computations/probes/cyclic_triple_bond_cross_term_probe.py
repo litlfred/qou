@@ -41,6 +41,12 @@ A second variant — the bond alternating with nucleon (k+1)'s FIRST two intra
 crossings at 3k+3 — is measured numerically only (the trailing letters at
 3k+3 put it outside the Lean statement); it is reported, not derived.
 
+LAW SUPERSEDED THE SAME DAY (2026-09-04, qou-rp9i): the MeV conversion below
+uses `B = Q_beta·(tr_free − tr_atom)`, which #6611 refutes at every scale; the
+surviving law is `B = E_0·ln(tr_free/tr_atom)`. The trace-level checks here are
+law-independent; the MeV column is superseded by
+`cyclic_triple_under_log_law_probe.py` (same closed forms, log law, 20/20).
+
 Nothing here is wired or fitted. One cyclic triple per bond is the minimal
 member of the class; making every bond cyclic is reported as a total, not as
 a model. Arithmetic: mpmath 50 dps throughout; kernel results are decimal

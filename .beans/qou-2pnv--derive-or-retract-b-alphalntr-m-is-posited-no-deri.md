@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:53:53Z
-updated_at: 2026-08-25T19:38:42Z
+updated_at: 2026-09-04T10:28:53Z
 parent: qou-9ot5
 ---
 
@@ -60,3 +60,6 @@ extensive quantity", not the specific bond energies.
 
 Not marking complete: the derive half is done, the SCALE is not.
 `docs/audits/2026-09-04-binding-law-options-decision-frame.md`.
+
+
+## 2026-09-04 (qou-rp9i) — two surfaces created today after #6611's branch and before its merge stated B = Q_β·Δtr: docs/audits/2026-09-04-cyclic-triple-word-class-prune-and-probe.md and computations/probes/cyclic_triple_bond_cross_term_probe.py. Both now carry superseded-law notes pointing at 2026-09-04-cyclic-triple-under-log-law.md. The wider sweep remains unscoped.
