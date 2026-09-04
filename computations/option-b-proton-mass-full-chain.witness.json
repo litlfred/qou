@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T09:23:04.774402+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-04T02:56:58.560640+00:00",
+  "commitSha": "8772a849efb4861f76f881c41a069254dc3de4e4",
   "assertions": [
     {
       "name": "tr_M_proton_is_rational_in_sqrt_q",
@@ -26,18 +26,18 @@
     },
     {
       "name": "tr_M_proton_at_q0_matches_content_block",
-      "computed": 0.2511694672549758,
+      "computed": "0.000000532745024974909705276891843736527502558228086104554828688144",
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": "0.001"
     }
   ],
-  "allPassed": false,
-  "durationMs": 28,
+  "allPassed": true,
+  "durationMs": 43,
   "computation": "option-b-proton-mass-full-chain",
   "scriptFile": "option_b_proton_mass_full_chain.py",
-  "scriptHash": "9fae6e87b424",
-  "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+  "scriptHash": "7af3af5f339c",
+  "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -63,9 +63,9 @@
   "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "M_E_MEV_codata": "0.51099895069",
-    "M_P_MEV_codata": "938.27208943",
+    "q_0": "1.10997858275138080759166909561076887987449912187360000000000",
+    "M_E_MEV_codata": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_MEV_codata": "938.2720894299999999999999999999999999999999999999994592249096324098442",
     "electron_word": "σ_1^3",
     "proton_word": "σ_1^7 · σ_2^4"
   },
@@ -395,10 +395,10 @@
         "output": {
           "tr_M_proton_symbolic": "(q**22 + 2*q**18 - 2*q**16 + 3*q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 3*q**6 - 3*q**4 + 2*q**2 - 1)/(q**11 + 2*q**9 + q**7)",
           "tr_M_electron_symbolic": "(q**6 + q**2 - 1)/(q**3 + q)",
-          "tr_M_proton_at_q0": 1.884319467254976,
-          "tr_M_electron_at_q0": 0.8485266070590096,
-          "ratio_tr_M_p_over_e": 2.2206957938372973,
-          "codata_m_p_over_m_e": "1836.15267343124",
+          "tr_M_proton_at_q0": "1.88431946725497502509029472310815626347249744177191389544517",
+          "tr_M_electron_at_q0": "0.848526607059009556201749746812107080366428963274248507457824",
+          "ratio_tr_M_p_over_e": "2.22069579383729655025050204852816916671751289831585955075095",
+          "codata_m_p_over_m_e": "1836.152673431236317280978642081602588349142819254501160322856296009831",
           "note": "The ratio tr_M(p)/tr_M(e) at q_0 is NOT m_p/m_e by itself — the mass-formula assembly (Terms 2-6 of mass-formula-6term-mpfr-50dps.witness.json) maps the trace to mass.  This phase emits the rational-in-q anchors from which any future mass-formula assembly should derive m_p; the placeholder literals in M_HECKE_PIPELINE_AT_Q0 are NOT consumed."
         },
         "jet_order": 0,
@@ -411,14 +411,14 @@
       "proton": "(q**22 + 2*q**18 - 2*q**16 + 3*q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 3*q**6 - 3*q**4 + 2*q**2 - 1)/(q**11 + 2*q**9 + q**7)"
     },
     "tr_M_at_q0": {
-      "electron": 0.8485266070590096,
-      "proton": 1.884319467254976,
-      "ratio_p_over_e": 2.2206957938372973
+      "electron": "0.848526607059009556201749746812107080366428963274248507457824",
+      "proton": "1.88431946725497502509029472310815626347249744177191389544517",
+      "ratio_p_over_e": "2.22069579383729655025050204852816916671751289831585955075095"
     },
     "codata_reference": {
-      "m_p_over_m_e": "1836.15267343124",
-      "m_p_MeV": "938.27208943",
-      "m_e_MeV": "0.51099895069"
+      "m_p_over_m_e": "1836.152673431236317280978642081602588349142819254501160322856296009831",
+      "m_p_MeV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
+      "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
     },
     "lean_uniqueness_ref": {
       "nucleus": "proton",
