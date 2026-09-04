@@ -46,6 +46,15 @@ Hence `--verify` takes `--probe-imports` / `--probe-names` so the probe can be
 made in scope for the audit under test, and its report says plainly when it
 cannot establish scope.
 
+**RUN THE CONTROL FIRST.** Establish that a PARSEABLE probe carrying the thing
+the audit looks for IS reported, and only then break it. Measured cost of the
+other order, on `scripts/convention-c-producer-audit.py` (the file with the most
+candidate sites, 6): a probe with a convention-C binding `z = mp.sqrt(q)/(q+1)`
+was not named when broken -- which looks like a finding -- and was equally not
+named when it parsed, so the audit had simply never had it in scope. Two full
+runs of a >2-minute audit bought nothing. A SILENT verdict means something only
+once its own control is green.
+
 THIS SCRIPT MUST NOT HAVE THE DEFECT IT LOOKS FOR. A file it cannot parse is
 reported as `self-unparseable`, never skipped; `--selftest` fails unless it
 detects a known-positive fixture, so a future narrowing cannot report a clean
