@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-04T12:20:58Z
+updated_at: 2026-09-04T20:57:56Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -184,3 +184,43 @@ looks like a drain.
 
 Branch gate after: NEW 0 / REGRESSED 0 / exit 0. PR #6453 body updated to five
 classes.
+
+
+## 2026-09-04 20:50Z — main NEW 8 -> NEW 9 + REGRESSED 1; two more, both in existing classes
+
+Head `1a31748c96` -> `46a986c804`. Branch back to NEW 0 / REGRESSED 0 / exit 0.
+
+**Class 5, FOURTH site.** `qbeta-strand-multiplicity` `/provenance/elapsed_s
+= 0.815` (`qbeta_strand_multiplicity_probe.py:316`). Four `elapsed_s` sites in
+two days -- treat this as RECURRING, not incidental. When a red's value is a
+duration, check the SPELLING before the arithmetic. Still fixed by renaming to
+`elapsed_sec`, NOT by widening `EPHEMERAL_TIMING_FIELDS`; ~14 unexamined
+`elapsed_s` sites remain and that decision is still open.
+
+**Class 4 + class 3 TOGETHER, and this is the new lesson.**
+`qbeta-ck-basis-constrained-pslq` 17 -> 18 is a one-character revert:
+
+    bc8131bd58~1  18
+    bc8131bd58    17   <- #5910 "drain: 1232 declared tolerances in 499 witnesses"
+    origin/main   18
+
+reverted by `9350fe0df4`, a merge of main into
+`claude/q-riemann-hypothesis-gaps-zgxd8m` carrying a pre-drain copy -- the
+same shape as the arc-count/bpp revert already in this bean.
+
+TRAP (the part that is NEW). **"Re-run to restore a reverted drain" is only
+valid when the sibling fixed the PRODUCER.** For arc-count/bpp it did.
+Here it did not: I re-ran and the float CAME BACK, because #5910 edited the
+ARTIFACT (`normalize_assertion_tolerance.py --apply`) while the producer
+hard-codes `"tolerance": 1e-8` in a hand-built dict and `json.dump`s it. So
+the discriminator before re-running is: **did the drain commit touch the
+producer, or only the witness?** `git show <drain> --stat` answers it.
+
+Fixed at the producer with the guard's own string
+(`_tolerance_literal(1e-8) -> '1e-08'`, verified). The 17 baselined floats are
+`log10` digit counts in the entropy budget -- untouched, still baselined, NOT
+silenced; only the regression above the baseline is closed.
+
+Spun out as its own bean: **`qou-9tqx`** -- the drain holds for 489/499, but
+**26 of 33** producers with a float-literal tolerance hand-build, so each
+undoes it on re-run. Ten already reverted, two fixed here, eight open.
