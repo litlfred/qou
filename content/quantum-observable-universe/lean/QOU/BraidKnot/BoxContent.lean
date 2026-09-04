@@ -5,16 +5,21 @@ import QOU.MathlibExt.YoungDiagramCells
 /-!
 # QOU.BraidKnot.BoxContent — box content, and what it is NOT
 
-Carrier for `prop:content-scaling-correspondence`
-(`mass-theory/content-scaling-correspondence.md`).
+Former carrier for `prop:content-scaling-correspondence`
+(`mass-theory/content-scaling-correspondence.md`), and the record of why that
+block was re-worded.
 
-The block's mathematical sentence reads: *"by q-Schur–Weyl duality
-`V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ`, the content `c = j − i` of a box at position `(i,j)`
-equals the magnetic quantum number `m_j` of the corresponding `SU_q(2)` weight
-space."* Until 2026-09-04 this file held only the definition `boxContent`, so
-the block's `lean.ref` resolved while the proposition itself had no Lean
+Until 2026-09-04 the block's mathematical sentence read: *"by q-Schur–Weyl
+duality `V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ`, the content `c = j − i` of a box at position
+`(i,j)` equals the magnetic quantum number `m_j` of the corresponding `SU_q(2)`
+weight space"*, and this file held only the definition `boxContent`, so the
+block's `lean.ref` resolved while the proposition itself had no Lean
 (bean `qou-59x9`, audit
-`docs/audits/2026-09-04-lean-ref-resolution-count-mass-theory.md`).
+`docs/audits/2026-09-04-lean-ref-resolution-count-mass-theory.md`). The
+theorems below refute that sentence; on the owner's go (bean `qou-kpx7`) the
+block now states the true fact — content is the `q`-Jucys–Murphy eigenvalue
+exponent, `QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM` — and its `lean.ref`
+names that theorem. The scaling table moved to `rem:content-scaling-dictionary`.
 
 **Formalised here: the sentence is false in its literal reading**, and the
 obstruction is structural, not numerical. For `SU(2)` the shapes are two-row,

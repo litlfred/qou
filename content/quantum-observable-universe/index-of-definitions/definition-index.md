@@ -480,7 +480,7 @@
 | [prop:confinement-universality](#prop:confinement-universality) | Confinement universality: nucleon NF independent of photon polarization | Ch 8 | `qou:QOU.Interactions.confinementUniversality` |
 | [prop:horizon-conformal-invariance](#prop:horizon-conformal-invariance) | Conformal invariance at the jet horizon | Ch 20 | `qou:QOU.horizon_conformal_invariance` |
 | [prop:topological-decomposition-mass](#prop:topological-decomposition-mass) | Conjectural Topological Decomposition of Mass | Ch 7 | `qou:QOU.TopologicalMass.TopologicalDecompositionMass` |
-| [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Content $c = m_j$ by Schur--Weyl: box content determines BW scaling | Ch 12 | `qou:QOU.BraidKnot.BoxContent.boxContent` |
+| [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Box content is the $q$-Jucys--Murphy eigenvalue exponent | Ch 12 | `qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM` |
 | [prop:lepton-continuant-recurrence](#prop:lepton-continuant-recurrence) | Continuant recurrence for the lepton tower $T_{2,n}$ | Ch 14 | `qou:QOU.Archimedean.lepton_continuant_recurrence` |
 | [prop:shadow-price-continuity](#prop:shadow-price-continuity) | Continuity of shadow prices on the generic locus | Ch 11 | `qou:QOU.BraidKnot.ShadowPriceContinuity` |
 | [prop:rigid-monoidal-structural-gap-invariance](#prop:rigid-monoidal-structural-gap-invariance) | Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category | Ch 12 | `qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance` |
