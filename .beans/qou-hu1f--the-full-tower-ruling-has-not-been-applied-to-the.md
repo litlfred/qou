@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:02:11Z
+updated_at: 2026-09-04T21:06:22Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -99,3 +99,50 @@ is not evidence about the path that does.**
   honour the ruling" — it is **do the two routes agree**, and any probe that
   reasons from `build_atom_nf_mp` to a claim about *the framework's* binding is
   reasoning about the wrong object.
+
+
+## The agreement test: RAN, and it is NOT yet interpretable — the two routes trace DIFFERENT WORDS
+
+Compared the NF route's Markov trace (`Σ_i nf[i]·TR_M[i]`, with
+`TR_M = [1, z, z, z², z², h·z²+z]` from `compound_shift_nf.tr_m_weights_mp`)
+against the canonical `tr_M_atom` (`Σ_{λ⊢3A} y_λ χ^λ`, all `p(3A)` partitions).
+mpmath end to end at 50 dps, proton pin both sides:
+
+| nucleus | A | NF trace (6-dim) | canonical tr_M_atom | rel diff |
+|---|---|---|---|---|
+| 1H  | 1 | 1.14633769063500507 | 1.14575969245730087 | **5.0e-4** |
+| 2H  | 2 | 0.404361815683575801 | 0.575172243917771871 | 0.297 |
+| 3He | 3 | 0.687073324770033545 | 0.40376703685142817 | 0.702 |
+| 3H  | 3 | 0.853070865421924793 | 0.229310102104556507 | 2.72 |
+| 4He | 4 | 1.58467953221993593 | 0.160974145442407382 | **8.84** |
+
+**🛑 Do NOT read this as "the H_3 reduction is unfaithful".** Checked before
+believing it, and the comparison is not apples-to-apples: `tr_m_atom_zn`'s
+docstring says **"Canonical color-weighted p-n convention"**, and
+`compound_shift_nf.py` contains **zero** references to `m_pp` / `m_pn` / `m_nn`
+or colour at all. The two routes therefore build different words, and colour
+weighting enters exactly on the **interfaces**, which exist only for `A >= 2`
+and grow as `O(A²)` — which is also the shape of the divergence. So the growth
+with A is consistent with the convention difference alone and is not evidence
+about the tower.
+
+This is the same trap `qou-82mc` records against itself ("I nearly compared the
+corpus mu3/mu4 signs against Ursell b3/b4 as if they were the same family").
+
+### The one convention-independent number, and it is the interesting one
+
+**At A=1 there are no interfaces**, so colour weighting cannot apply and both
+sides trace the same 3-strand word in the same algebra — `n = 3`, so `H_{3A}` IS
+`H_3` and the "collapse" is not a collapse. They should agree to the arithmetic,
+~1e-50. They differ by **5.0e-4**, about 46 orders above the floor.
+
+That residual is small, real, and unexplained. It is the cheap, well-posed
+question this comparison actually produced, and it is worth more than the big
+numbers beside it.
+
+### What the test needs before it can answer the original question
+
+Run the NF route with the canonical colour convention (or the canonical with
+colour off, `m_pp=m_pn=m_nn` neutralised in whatever sense makes the words
+identical), so that the only difference left is the H_3 reduction. Until then
+the A>=2 rows measure the convention, not the tower.
