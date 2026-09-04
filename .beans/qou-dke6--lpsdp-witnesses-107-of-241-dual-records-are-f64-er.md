@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T08:14:33Z
-updated_at: 2026-09-04T11:07:14Z
+updated_at: 2026-09-04T12:20:10Z
 ---
 
 Found while wiring `qou-fr4d` (certified LP duality residuals). NOT caused by
@@ -136,3 +136,49 @@ required LP-dual field?"** If it were, 84 records would become checkable by
 two independent mechanisms that currently cannot see them. That is an owner
 decision about the shared contract in AGENTS.md, not something to change
 unilaterally, and it is the honest successor to this bean.
+
+
+## 🛑 SECOND CORRECTION — this bean's own headline is inflated by a double-count
+
+"107 of 241 (44%)" and the "105 undeclared" figure in the correction above are
+both wrong, by the same defect: **54 of the 241 five-key matches are WRAPPERS,
+not records.**
+
+Producers hoist `primal_obj` / `dual_obj` / `duality_gap` / `active_set` /
+`y0_star` / `y_star` onto a parent dict alongside a nested key holding the real
+record. Counting both double-counts the solve -- and because the hoisted copy
+omits `x_star`, it also manufactures a phantom "record with no primal vector".
+
+Worked case: `pn-alpha-lp-dual.witness.json` reported 41 records WITH `x_star`
+and 41 WITHOUT. They are **the same 41 solves**; the x* is one level down on
+`.lp_dual`. That producer has **zero** genuinely x*-less solves.
+
+Corrected figures (leaf records only):
+
+|  | before | after |
+|---|---:|---:|
+| five-key matches | 241 | 241 |
+| of which WRAPPERS | — | **54** |
+| genuine leaf records | 241 | **187** |
+| undeclared backend | 105 | **56** |
+| no `x_star` | 84 | **36** |
+| inferred f64-era | 9 | **8** (7 deprecated + 1 live) |
+
+**The conclusion is unchanged and slightly stronger: one live f64-era record,
+already fixed. No sweep.**
+
+## The x_star successor question is SMALLER than stated, and is not a contract question
+
+The correction above proposed asking the owner whether `x_star` should join
+the LP-dual required-field list, on the strength of "84 records blind to the
+certified-residual check". The real figure is **44 across all leaf records,
+and 27 of those are a SINGLE producer** --
+`sigma-f-electron-shell-chain`, whose `.data.sigma_f_chain[i].dual` blocks
+carry `y0_star`/`y_star`/`active_set` and no primal vector at all. The
+remaining 17 are one record each.
+
+**A contract change is the wrong instrument for that shape.** One producer is.
+Withdrawing the owner question: it was raised on an inflated number, and the
+honest form is a small fix to `sigma_f_electron_shell_chain` to serialize the
+primal it already computes -- if it does. That is worth checking before
+anything else here.
