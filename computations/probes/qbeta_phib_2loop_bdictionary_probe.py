@@ -66,7 +66,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
-from qou_substrate.witness import q0_comparison  # noqa: E402
+from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 import sympy as sp
 
 mp.mp.dps = 60
@@ -365,10 +365,10 @@ def main() -> int:
         # out unstamped. The reason string is kept ASCII on purpose: this
         # witness is written with json.dump, whose ensure_ascii=True turns any
         # non-ASCII into a \\uXXXX escape and collapses the shape guard.
-        witness.update(q0_comparison(
+        apply_q0_comparison(witness,
             muon=Q0_MUON, proton=Q0_PROTON,
             reason='evaluates the phi_b 2-loop b-dictionary at both pins and reports each under its own key; both pins are read on purpose',
-        ))
+        )
         json.dump(witness, f, indent=2)
     print("\nwitness ->", out)
     return 0 if all_passed else 1

@@ -185,13 +185,13 @@ def main():
         # it -- and a re-run of an unstamped producer DELETES the
         # scriptFile a downstream pass had added. This producer reads BOTH pins on purpose
         # (it was wrongly declared q0-independent until 2026-09-03, bean qou-4bef).
-        from qou_substrate.witness import WitnessBuilder as _WB, q0_comparison
+        from qou_substrate.witness import WitnessBuilder as _WB, apply_q0_comparison
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
-        witness.update(q0_comparison(
+        apply_q0_comparison(witness,
             muon=ANCHORS["muon"], proton=ANCHORS["proton"],
             reason="per-loop-measure integer forcedness measured at both pins on purpose; "
-                   "the proton (default) leg carries the verdict"))
+                   "the proton (default) leg carries the verdict")
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor="comparison")
         json.dump(witness, f, indent=2)

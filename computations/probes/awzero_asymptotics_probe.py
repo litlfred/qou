@@ -93,7 +93,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
-from qou_substrate.witness import q0_comparison  # noqa: E402
+from qou_substrate.witness import apply_q0_comparison  # noqa: E402
 
 # Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
 # muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
@@ -701,10 +701,10 @@ def main() -> None:
     # out unstamped. The reason string is kept ASCII on purpose: this
     # witness is written with json.dump, whose ensure_ascii=True turns any
     # non-ASCII into a \\uXXXX escape and collapses the shape guard.
-    witness.update(q0_comparison(
+    apply_q0_comparison(witness,
         muon=Q_MUON, proton=Q_PROTON,
         reason='measures the A-W zero asymptotics over a w-ladder that includes BOTH substrate pins; the mu-vs-p spread is one of the reported quantities',
-    ))
+    )
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n✓ Witness: {WITNESS.name}  (5 assertion blocks, all passed)")
 

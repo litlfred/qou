@@ -322,7 +322,8 @@ except Exception:
 # whose stated subject is the pin swing cannot be pin-independent
 # (bean qou-9ugp).
 import os as _os  # noqa: E402 -- provenance stamp
-from qou_substrate.witness import WitnessBuilder as _WB, q0_comparison as _q0cmp
+from qou_substrate.witness import (WitnessBuilder as _WB,
+                                   apply_q0_comparison)
 witness.setdefault("scriptFile", _os.path.basename(__file__))
 _reason = (
     "Axis (b) of this red-team audit IS the q0 pin swing: rho_grad3 and mu3 are "
@@ -336,9 +337,9 @@ assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_a
 # writes q0Anchor/q0Value when q0Anchor is absent, so declaring `comparison`
 # first stops it also resolving a single-anchor q0Value that would contradict
 # the q0Values pair.
-witness.update(_q0cmp(muon=mp.nstr(Q0_MUON, 50, strip_zeros=False),
+apply_q0_comparison(witness,muon=mp.nstr(Q0_MUON, 50, strip_zeros=False),
                       proton=mp.nstr(Q0_PROTON, 50, strip_zeros=False),
-                      reason=_reason))
+                      reason=_reason)
 _WB.stamp_staleness_metadata(
     witness, script_path=__file__, engine=None, q0_anchor=None)
 out.write_text(json.dumps(witness, indent=2) + "\n")
