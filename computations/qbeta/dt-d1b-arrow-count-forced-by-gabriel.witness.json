@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-ade-enumeration",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:42:47.626908+00:00",
-  "commitSha": "fd914dfdecbc22f95c6398130869e791744d3c84",
+  "computedAt": "2026-09-04T06:25:05.643341+00:00",
+  "commitSha": "04a7aa7bce612c516248d3f225212ebf9bc806cc",
   "assertions": [
     {
       "name": "C1_positive_root_COUNTS_match_the_known_values",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 8,
   "computation": "dt-d1b-arrow-count-forced-by-gabriel",
   "scriptFile": "dt_d1b_arrow_count_forced_by_gabriel_probe.py",
-  "scriptHash": "bdaac83be147",
-  "scriptCommitSha": "fd914dfdecbc22f95c6398130869e791744d3c84",
+  "scriptHash": "a0835d8acbbc",
+  "scriptCommitSha": "d3b234d148f825aee2a1e6e85dab9a093e029315",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
