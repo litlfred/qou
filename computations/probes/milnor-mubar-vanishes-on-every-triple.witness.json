@@ -1,0 +1,301 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T11:05:10.639739+00:00",
+  "commitSha": "f83f2b57a66ee961065bfe515df7fa4a27b220fc",
+  "assertions": [
+    {
+      "name": "CONTROL_borromean_mubar_is_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "THE POSITIVE CONTROL, and the assertion the vanishing below depends on. Borromean rings through the same code path: mubar_123 = +/-1 as it must be. If this ever fails, every zero in this witness is uninterpretable."
+    },
+    {
+      "name": "CONTROL_borromean_pairwise_linking_all_vanish",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "Brunnian-ness of the control, so its delta = 0 and its mubar is a genuine integer rather than a residue -- the case the invariant is sharpest in."
+    },
+    {
+      "name": "CONTROL_hopf_link_shape",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "second control: mu = 2 and lk = 1 for the closure of s1^2, so the component and linking machinery is right on a case with nonzero linking."
+    },
+    {
+      "name": "triples_of_the_carrier_with_NONZERO_mubar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "THE RESULT. Every triple, all three indeterminacy classes, both branches, 7 isotopes -- 606 triples in total. Includes the Delta = 2 residual, which is what qou-768r left open."
+    },
+    {
+      "name": "delta_2_triples_examined",
+      "computed": "256",
+      "expected": "256",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the residual's own population, recorded so the SIZE of the null result is visible in the witness: a vanishing over zero Delta = 2 triples would close nothing."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "milnor-mubar-vanishes-on-every-triple",
+  "scriptFile": "milnor_mubar_vanishes_on_every_triple_probe.py",
+  "scriptHash": "233c1bcac7ff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py"
+  },
+  "description": "EXPLORATORY. Closes qou-768r route 3's stated Delta = 2 residual by DIRECT COMPUTATION: mubar vanishes on EVERY triple of the derived carrier, in both crossing-resolution branches, across 7 isotopes and all three indeterminacy classes. Uses Milnor's ORIGINAL definition -- the degree-2 Magnus coefficient of the k-th longitude -- which for a braid closure is read straight off the word and needs NO Seifert surface. That corrects two of my own claims from this session: that no held work supplies the Magnus route (Mellor-Melvin does), and then that Seifert surfaces for the torus-knot components were the obstacle (they are one route, not the route). The BORROMEAN RINGS are computed by the same code path and asserted NONZERO as a positive control -- without it an all-zero result is indistinguishable from a broken implementation. Scope (a) on the carrier as given; the Borromean control is itself a counterexample to any reading that Milnor invariants vanish generally. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "what_was_open": {
+      "route_3_closed": "Delta = 0 (min-span) triples, by a STRUCTURAL argument: no shared summand => split sublink => mubar = 0",
+      "the_residual": "Delta = 2 triples -- touching a linked pair, one bit of mubar surviving. No mubar VALUE had ever been computed in this corpus.",
+      "correction_1": "my literature ledger and qou-768r both said no held work supplies the Magnus-longitude route. Mellor-Melvin (library/0110001v3/) gives the general mod-delta formula. The OTHER held source (arxiv-1101.3374v1) really is restricted to vanishing pairwise linking, which is why the claim read plausible.",
+      "correction_2": "having found that, I named SEIFERT SURFACES as the obstacle -- the components are (2,odd)-torus knots so their surfaces are not discs. Also wrong, and the more useful error: Milnor's original longitude definition needs no surface, and a braid closure hands the longitude over directly."
+    },
+    "positive_controls": {
+      "why": "a null result is worth exactly as much as its calibration, and an all-zero first run is when a bug is most likely",
+      "borromean_rings": {
+        "braid": "(s1 s2^-1)^3 in B_3",
+        "components_mu": 3,
+        "all_pairwise_lk_zero": true,
+        "delta": 0,
+        "eps_01_lam2": -1,
+        "eps_12_lam0": -1,
+        "eps_20_lam1": 0,
+        "reading": "textbook mubar_123 = +/-1; detected, so a genuine nonzero is visible"
+      },
+      "hopf_link": {
+        "braid": "s1^2 in B_2",
+        "components_mu": 2,
+        "lk": 1
+      }
+    },
+    "measured_on_the_carrier": {
+      "rows": [
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "sigma",
+          "components_mu": 3,
+          "triples": 1,
+          "delta_0": 0,
+          "delta_1": 1,
+          "delta_2": 0,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "sigma^-1",
+          "components_mu": 3,
+          "triples": 1,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 1,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "sigma",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 2,
+          "delta_2": 2,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "sigma^-1",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "sigma",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 3,
+          "delta_2": 1,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "sigma^-1",
+          "components_mu": 4,
+          "triples": 4,
+          "delta_0": 0,
+          "delta_1": 0,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "sigma",
+          "components_mu": 5,
+          "triples": 10,
+          "delta_0": 1,
+          "delta_1": 5,
+          "delta_2": 4,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "sigma^-1",
+          "components_mu": 5,
+          "triples": 10,
+          "delta_0": 1,
+          "delta_1": 0,
+          "delta_2": 9,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "sigma",
+          "components_mu": 7,
+          "triples": 35,
+          "delta_0": 10,
+          "delta_1": 13,
+          "delta_2": 12,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "sigma^-1",
+          "components_mu": 7,
+          "triples": 35,
+          "delta_0": 10,
+          "delta_1": 0,
+          "delta_2": 25,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "sigma",
+          "components_mu": 9,
+          "triples": 84,
+          "delta_0": 35,
+          "delta_1": 25,
+          "delta_2": 24,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "sigma^-1",
+          "components_mu": 9,
+          "triples": 84,
+          "delta_0": 35,
+          "delta_1": 0,
+          "delta_2": 49,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "10B",
+          "A": 10,
+          "branch": "sigma",
+          "components_mu": 11,
+          "triples": 165,
+          "delta_0": 84,
+          "delta_1": 41,
+          "delta_2": 40,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "10B",
+          "A": 10,
+          "branch": "sigma^-1",
+          "components_mu": 11,
+          "triples": 165,
+          "delta_0": 84,
+          "delta_1": 0,
+          "delta_2": 81,
+          "delta_other": 0,
+          "nonzero_mubar": 0
+        }
+      ],
+      "totals_by_delta": {
+        "0": 260,
+        "1": 90,
+        "2": 256,
+        "other": 0
+      },
+      "total_triples": 606
+    },
+    "convention": {
+      "over_strand": "sigma_i sends the strand at position i OVER the one at i+1 (Artin: x_i -> x_i x_{i+1} x_i^-1)",
+      "why_it_is_safe": "the Borromean control runs under the SAME convention, so a convention flip surfaces as a failed control rather than as silent zeros",
+      "branches": "both resolutions of the 2A+1 superposition letters are computed; lk is branch-dependent, so the Delta classes differ per branch"
+    },
+    "what_this_does_NOT_establish": {
+      "milnor_in_general": "NOT that Milnor invariants vanish generally -- the Borromean control in this file is a counterexample",
+      "longer_invariants": "length > 3 Milnor invariants are NOT examined",
+      "route_2": "untouched; blocked for an unrelated reason (Borromean-only genus handle)",
+      "scope": "(a), on the carrier as given at these isotopes in these two branches"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are permutation cycles, integer linking numbers and degree-2 Magnus coefficients of braid-closure longitudes. No substrate pin is evaluated on any path, so no q0Value exists."
+}
