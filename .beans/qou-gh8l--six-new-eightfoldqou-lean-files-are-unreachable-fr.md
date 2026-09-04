@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:36:45Z
-updated_at: 2026-09-04T09:36:45Z
+updated_at: 2026-09-04T12:16:52Z
 ---
 
 MEASURED 2026-09-04 on branch claude/lean-prove-assertions-2026-09-04. QOU.lean carries 848 imports and NONE of this PR's six new files: ContactDistributionRank, SelfDualityDegree, CalculusDimensionObstruction, CoveringDegreeRamification, HyperbolicVolumeFormType, CommutativeImageDegeneration. Confirmed by grep on QOU.lean.
@@ -15,3 +15,9 @@ WHY IT MATTERS. A standalone library .lean with no .ts/.md sibling has no <block
 NOT A DEFECT OF THIS PR SPECIFICALLY - it is the existing pattern; all five pre-existing files on this branch are in the same state, which is why the sixth matches them rather than being wired in unilaterally. Wiring one in without the others would be inconsistent, and wiring all six in cannot be verified here (the tree carries .lake/RESTORED-NO-TRACES; lake build would evict the restored oleans, bean qou-r13s).
 
 WHAT TO DO, and it is a judgement call for the author: (a) add all six imports to QOU.lean in one commit, on a machine that can run lake build QOU to confirm the root still elaborates - cheap there, unverifiable here; (b) leave them standalone and rely on the lean-direct gate, which is what the corpus does today; (c) decide the Eightfold tree should have its own root module. DEFAULT if nothing is done: they stay as they are, verified by hand, exactly like every other file in this tree.
+
+CORRECTION 2026-09-04: it is SIX files, not 'six/seven'. The seventh, mass-theory/algebraic-geometric-dilog-equivalence.lean, is a CONTENT-BLOCK SIBLING - it lives outside the lean/ Lake root, is resolved through its block's lean.ref, and is not a Lake module at all. It cannot be imported into QOU.lean and was never a candidate.
+
+MEASURED, and it changes the risk assessment: all six are MATHLIB-ONLY LEAVES. grep '^import QOU' over all six returns NOTHING. Imports are Nat.Choose.Basic / Tactic.Linarith / Tactic.NormNum (four of them), Algebra.Ring.Defs + RingTheory.Ideal.Span + Mathlib.Tactic (CommutativeImageDegeneration), GroupTheory.Perm.Sign + Perm.Cycle.Type (CoveringDegreeRamification). With no intra-QOU dependency, adding six import lines CANNOT create a cycle, CANNOT impose an ordering constraint, and CANNOT change the elaboration of anything already in QOU.lean.
+
+So the mathematical risk is gone and only a VERIFICATION risk remains, and it is an artifact of this container rather than of the change: the tree carries .lake/RESTORED-NO-TRACES, so lake build would evict the restore (qou-r13s: 6990 -> 334 mathlib oleans in ten minutes, silently). Full analysis with options: docs/audits/2026-09-04-two-decisions-bdpo-gh8l.md.

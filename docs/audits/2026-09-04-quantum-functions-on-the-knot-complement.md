@@ -147,6 +147,78 @@ Two things follow, and the second is a warning:
    also, note, exactly where the corpus puts its physics: `⊕` is the
    inter-block Hopf-link operation that assembles `Z𝔭 ⊕ N𝔫`.
 
+## 3c. "Depth 0" is NOT order zero — and the confusion is mine
+
+**Owner question:** *"why only order 0? should be on tower"*, against my quoting
+`⋈_K` as *"a strict depth-0 convolution in the Hecke algebra"*.
+
+**The quote is accurate and my framing of it was wrong.** "Depth" in this corpus
+is **iterated-integral / transcendence depth**, not tower order.
+`def:hq-bi-filtration` defines it explicitly: `G^(0)` contains `exp_q` and
+scalars; `G^(n)` adjoins the grouplikes `log_q, Li_2^q, …, Li_n^q`, compatible
+with the realisation via `τ_arch(G^(n)) ⊆ 𝒫_n`. The **Hecke tower level is the
+other axis** — the vertical `K`-axis, refined by the partition cell
+`λ_K ⊢ n_K`. The bi-filtration is precisely a *two*-axis object and I collapsed
+it onto one.
+
+**So there is no order-0 restriction to lift.** `⋈_K` is on the full tower in
+both senses of the 2026-09-03 ruling:
+
+* **All `n` of the Hecke tower** — `𝓑_K ∈ H_{3A}(q)` with `A = Z + N` ranging
+  over atoms, the interface being a product of `A − 1` generators, so it exists
+  at every level rather than at a fixed one.
+* **All orders in `q`** — the interface factor `σ − h(1/2 − δ/4)` is exact in
+  `q`, not a truncation.
+
+Depth 0 says only that the convolution **emits no polylogarithms**: its output is
+an element of `H_6(q)`, algebraic. That is exactness, not truncation.
+
+### But the instinct lands one axis over, and it explains §2
+
+Read the grid's own depth column
+(`tbl:knot-indexed-convolution-grid-table1-data`):
+
+| operation | depth `n` | output |
+|---|---|---|
+| Markov trace `tr_M` | 0 | Laurent in `q` — algebraic `𝒫_0` |
+| Hoefsmit pairing | 0 | `y_λ(q) ∈ ℤ[q^±]` |
+| **EW interface knot `⋈_K`** | **0** | element of `H_6(q)` |
+| Higgs-vev `Lk_R^(1)`, categorical linking `Lk_R^(k)` | 0 | `End_R(A)` |
+| `q`-shuffle convolution `*_q` | **preserves `n`** | `ℋ_q^(n₁+n₂, K·K')` |
+| **Volume functor `Vol`** | **2** | `𝒫_2 / 𝒫_1` (real) |
+| Chern–Simons | **3** | `𝒫_3 / 𝒫_2` (Tate-twisted) |
+| Trilog at `ζ_5` orbit | **3** | weight-3 cyclotomic period |
+
+**The entire convolution layer sits at depth 0; volume sits at depth 2.**
+Nothing at depth 0 can produce a volume, because depth 0 is by construction the
+polylogarithm-free stratum. So the disconnection measured in §2 — 44 files on
+one side, 9 on the other, zero overlap — is **not an oversight. It is a depth
+gap**, and it was predictable from the grid.
+
+That sharpens the missing morphism rather than dissolving it: a map from the
+convolution layer to the quantum-torus layer must **cross depth**, `0 → 2`. And
+the grid's own context block already names this as the open target — it says the
+grid *"predicts compositions between depths, and identifies open falsifiability
+targets"*. The one composition law it records, `*_q`, **preserves** `n`; so
+depth-raising is exactly what is not yet in the corpus.
+
+### Two defects found while checking this
+
+1. **`def:ew-interface-knot` is a dangling reference.** The grid's `⋈_K` row
+   cites it as the defining block; no `.ts` in `content/` declares that label.
+   The only interface definition that exists is
+   `def:canonical-braid-interface-composition`, and it is stated over
+   `H_{3A}(q)` while the grid row says `B_6` / `H_6(q)` — the electroweak
+   instance. Whether these are two objects or one at `A = 2` is not settled
+   here.
+2. **This is the fifth vocabulary collision I have made in this session** —
+   after the Mathlib/`library` hyperbolic claim, "the volume form is not a QOU
+   structure", R1's word-count, and R4's `content/`-only Przytycki grep. Same
+   shape every time: a term is read in the vocabulary I arrived with rather than
+   the one the corpus defines it in. The standing rule from R4 covers absence
+   claims; this one was not an absence claim, so it needs its own: **before
+   reasoning from a technical term, read the block that defines it.**
+
 ## 4. What is genuinely absent
 
 Present in `library/` and absent from `content/`, measured:

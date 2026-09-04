@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:05:59Z
-updated_at: 2026-09-04T09:06:46Z
+updated_at: 2026-09-04T12:16:53Z
 ---
 
 OPEN, for the author. Now that BlochWignerD is typed UpperHalfPlane -> R (qou-rj44), the opaque can be discharged as
@@ -23,3 +23,19 @@ WHAT IT RISKS. Nothing computational - no witness, no number, no producer touche
 DEFAULT IF NOTHING IS DONE. The opaque stays; the class is correctly typed and honestly open, and the file's docstring already records the option. Nothing breaks.
 
 ALSO STALE. The opaque's docstring justification ('until Mathlib provides a complete formalisation of the classical dilogarithm') is stale on the Lobachevsky route - the corpus supplied one itself. Corrected in the module docstring on this branch.
+
+MEASURED 2026-09-04 - the substitution was APPLIED to a scratch copy and COMPILED, not reasoned about.
+
+  lean-direct on the whole file with the import + def:  EXIT 0, 16 s
+  all 12 declarations still elaborate:                  yes
+  #print axioms algebraic_geometric_equivalence:        [propext, Classical.choice, Quot.sound]
+  #print axioms ...asymptotic_volume:                   [propext, Classical.choice, Quot.sound]
+  axiom delta vs the opaque version:                    NONE, byte-identical
+
+So the two plausible objections - 'it will not compile' and 'it will drag in axiom debt' - are both FALSE, measured. The exact edit tested:
+  import QOU.Archimedean.BlochWignerLobachevsky
+  noncomputable def BlochWignerD (z : UpperHalfPlane) : R := QOU.Archimedean.BlochWigner_lob (z : C)
+
+WHAT REMAINS IS A MATHEMATICAL QUESTION, ONE WORD: is the D of conj:algebraic-geometric-dilog-equivalence the REAL Lobachevsky volume, or the DEFORMED COMPLEX volume of the bar-odd leg (conj:binding-qbeta-complex-volume)? If real: discharge, and the conjecture becomes falsifiable at no cost. If complex or unsure: leave it opaque - a vague-but-safe assertion beats a sharp-and-wrong one, and this file has already been wrong once in exactly that direction (the R -> R typing).
+
+Full analysis: docs/audits/2026-09-04-two-decisions-bdpo-gh8l.md.
