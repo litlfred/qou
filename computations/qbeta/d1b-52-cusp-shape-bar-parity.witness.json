@@ -1,0 +1,186 @@
+{
+  "engine": "exact-cubic-and-polynomial-remainder-arithmetic",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T20:59:45.645468+00:00",
+  "commitSha": "f1c58515e8e8c4b4510c6fdad3d72dfbb44e5135",
+  "assertions": [
+    {
+      "name": "C1_two_of_three_shapes_coincide",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P1 CONFIRMED. 5_2 has 3 ideal tetrahedra and two of them carry the SAME shape: |z1 - z3| = 0.0 at 300-bit precision, while |z1 - z2| = 0.868837. So the shape multiset is (A, B, A), not three distinct values"
+    },
+    {
+      "name": "C2_two_distinct_cubics_found_not_fitted",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P2 CONFIRMED. Exhaustive search over monic integer cubics with |coef| <= 3 finds exactly one vanishing at each shape, and they differ: A = [(-1, 3, -2, 1)], B = [(-1, 1, -2, 1)]. Neither shape is a root of unity. The polynomials are FOUND by search and then verified symbolically below -- nothing is fitted"
+    },
+    {
+      "name": "C3_same_field_disc_minus_23_signature_1_1",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P3 CONFIRMED. disc(A) = -23 and disc(B) = -23, both -23, with signature (r1,r2) = (1, 1) and (1, 1). So the two cubics generate the SAME cubic field, of discriminant -23, by two different generators. The (1,1) signature independently reproduces what dt_d1b_trace_field_bar_grading_probe measured for 5_2 by exact Sturm counting -- a different computation reaching the same invariant"
+    },
+    {
+      "name": "C4_bar_coordinates_exact_mod_cubic",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The inverse and both bar coordinates verified as EXACT polynomial identities modulo each cubic, using Fraction remainder arithmetic in Q[z] rather than numerical comparison. A: z^-1 = z^2-2z+3, barEven = z^2-z+3, barOdd = -z^2+3z-3. B: z^-1 = (z-1)^2, barEven = z^2-z+1, barOdd = -z^2+3z-1. These are the statements the Lean file proves"
+    },
+    {
+      "name": "C5_phi6_reappears_as_an_identity_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The B-shape's bar-even coordinate is z^2 - z + 1 = Phi_6(z), the sixth cyclotomic polynomial whose VANISHING defines the 4_1 cusp shape. For 4_1 Phi_6 is zero; for 5_2's B-shape it is the bar-even coordinate. This is an IDENTITY, two lines from z^-1 = (z-1)^2 and proved as such in the Lean. Whether the reappearance means anything across the two knots is NOT claimed and NOT investigated -- reading significance into an algebraic coincidence is the failure mode this arc keeps hitting"
+    },
+    {
+      "name": "C6_barEven_not_rational_the_4_1_story_does_not_transcribe",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P4 CONFIRMED, and this is the substantive finding. Both cubics are monic with no integer root (rational roots: A [], B []), hence irreducible over Q, so each 5_2 shape has degree 3 and its barEven lies in the cubic field of discriminant -23. For 4_1, barEven(omega) = 1 is RATIONAL, which is exactly what lets the bar-even coordinate be the anchor-stable -Vol(4_1) part. So the 4_1 bar-parity story does NOT transcribe to 5_2 -- a NEGATIVE result"
+    },
+    {
+      "name": "C7_two_equal_one_different_is_NOT_a_link",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "GUARD, not a result. The 5_2 shape multiset is (A,B,A) -- two equal, one different -- and the radical of eq (98) is (a,a,c) -- also two equal, one different. These must NOT be linked: the index sets are different (three tetrahedra versus three saddles sigma), no map between them is given anywhere in the corpus or the source, and the equal pair even sits at different positions ({1,3} against {1,2}). Matching shape is not matching structure. Recorded explicitly because this convergence is tempting enough to be mistaken for a finding"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 30,
+  "computation": "d1b-52-cusp-shape-bar-parity",
+  "scriptFile": "d1b_52_cusp_shape_bar_parity_probe.py",
+  "scriptHash": "6ef0ca15f593",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_52_cusp_shape_bar_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_52_cusp_shape_bar_parity_probe.py"
+  },
+  "description": "qou-rutm. The measurement side of QOU/QBeta/FiveTwoCuspShapeBarParity.lean, the 5_2 analogue of the corpus's CuspShapeBarParity (which does 4_1: both tetrahedra at omega with Phi_6(omega) = 0, barEven = 1, barOdd^2 = -3). Establishes: 5_2 has THREE ideal tetrahedra of which TWO SHARE A SHAPE (z1 = z3 != z2, exact at 300 bits); neither is a root of unity and both are CUBIC with DIFFERENT minimal polynomials, A (z1=z3) = z^3-2z^2+3z-1 and B (z2) = z^3-2z^2+z-1, found by exhaustive integer search; both have discriminant -23 and signature (1,1) so both generate the SAME cubic field by different generators, and that (1,1) independently reproduces the 5_2 signature measured by exact Sturm counting in dt_d1b_trace_field_bar_grading_probe. The bar coordinates are verified as EXACT identities modulo each cubic via Q[z] remainder arithmetic: A has z^-1 = z^2-2z+3, barEven = z^2-z+3, barOdd = -z^2+3z-3; B has z^-1 = (z-1)^2, barEven = z^2-z+1, barOdd = -z^2+3z-1. The B-shape's barEven IS Phi_6(z), the polynomial whose VANISHING defines the 4_1 cusp shape -- recorded as an IDENTITY, with no claim that the reappearance means anything. THE SUBSTANTIVE RESULT IS A NEGATIVE: both cubics are irreducible over Q, so neither 5_2 shape has rational barEven, whereas 4_1's barEven = 1 is rational and that is what makes it the anchor-stable -Vol(4_1) part. The 4_1 bar-parity story does NOT transcribe to 5_2. Also carries an explicit GUARD: the (A,B,A) shape pattern and eq (98)'s (a,a,c) radical are both two-equal-one-different and must NOT be linked -- different index sets, no map, different positions.",
+  "data": {
+    "shapes": {
+      "n_tetrahedra": 3,
+      "z1_eq_z3": true,
+      "gap_z1_z3": "0.0",
+      "gap_z1_z2": "0.868837",
+      "multiset": "(A, B, A)"
+    },
+    "minimal_polynomials": {
+      "A_z1_eq_z3": "z^3 - 2z^2 + 3z - 1",
+      "B_z2": "z^3 - 2z^2 + z - 1",
+      "found_by": "exhaustive monic integer search, |coef| <= 3",
+      "hits_A": [
+        [
+          -1,
+          3,
+          -2,
+          1
+        ]
+      ],
+      "hits_B": [
+        [
+          -1,
+          1,
+          -2,
+          1
+        ]
+      ]
+    },
+    "field": {
+      "disc_A": -23,
+      "disc_B": -23,
+      "signature_A": [
+        1,
+        1
+      ],
+      "signature_B": [
+        1,
+        1
+      ],
+      "same_field": true,
+      "cross_check": "signature (1,1) independently reproduces dt_d1b_trace_field_bar_grading_probe's Sturm count for 5_2"
+    },
+    "bar_coordinates": {
+      "A": {
+        "inv": "z^2 - 2z + 3",
+        "barEven": "z^2 - z + 3",
+        "barOdd": "-z^2 + 3z - 3"
+      },
+      "B": {
+        "inv": "(z - 1)^2",
+        "barEven": "z^2 - z + 1",
+        "barOdd": "-z^2 + 3z - 1"
+      },
+      "verified_by": "exact Q[z] remainder arithmetic modulo each cubic",
+      "checks": {
+        "A": {
+          "inv_ok": true,
+          "barEven_ok": true,
+          "barOdd_ok": true
+        },
+        "B": {
+          "inv_ok": true,
+          "barEven_ok": true,
+          "barOdd_ok": true
+        }
+      }
+    },
+    "phi6_reappearance": {
+      "statement": "barEven(z_B) = z^2 - z + 1 = Phi_6(z)",
+      "tier": "IDENTITY, two lines from z^-1 = (z-1)^2",
+      "not_claimed": "that the reappearance of Phi_6 across 4_1 and 5_2 means anything; not investigated here"
+    },
+    "contrast_with_4_1": {
+      "4_1": "barEven(omega) = 1, RATIONAL -- the anchor-stable -Vol(4_1) part",
+      "5_2": "neither shape has rational barEven; both cubics irreducible over Q",
+      "rational_roots_A": [],
+      "rational_roots_B": [],
+      "verdict": "the 4_1 bar-parity story does NOT transcribe -- a NEGATIVE"
+    },
+    "guard_not_a_link": {
+      "tempting": "shapes (A,B,A) and eq-(98) radical (a,a,c) are both two-equal-one-different",
+      "why_not": "different index sets (tetrahedra vs saddles sigma), no map given anywhere, equal pair at different positions ({1,3} vs {1,2}). Matching shape is not matching structure"
+    },
+    "scope": {
+      "tier": "measurement + one negative (C6) + one guard (C7)",
+      "method": "300-bit shapes to LOCATE the cubics; every claim then verified by exact integer / Fraction arithmetic",
+      "arithmetic": "exact where it matters; mpmath only to find and to report",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}
