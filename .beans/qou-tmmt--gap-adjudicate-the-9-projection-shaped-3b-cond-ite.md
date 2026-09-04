@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-09-04T14:16:58Z
+updated_at: 2026-09-04T14:20:29Z
 ---
 
 Found by `bun run scripts/conditional-on-class-hypothesis-audit.ts --projections`
@@ -147,3 +147,64 @@ not currently diverged as far as checked.
     prop:sigma-shell-from-beta-chain-derivation inst.identity data
 
 Hit rate so far is 2/2, but two is not a rate — read each.
+
+
+---
+
+## ALL 9 ADJUDICATED 2026-09-04 — 8 CONFIRMED item-5 violations, 1 legitimate
+
+| block | class.field | verdict |
+|---|---|---|
+| `cor:knot-factor-borromean-composite` | `BrunnianDecoupling.decouples` | **VIOLATION** |
+| `cor:lr-tensor-character-bridge` | `LRTensorCharacterBridge.bridge` | **VIOLATION** |
+| `prop:atom-knot-mass-derivation` | `AtomKnotMassDerivationConjecture.atom_knot_mass_derivation` | **VIOLATION** |
+| `prop:gb-residue-spectral-sum` | `GBResidueSpectralSum.spectral_decomposition` | **VIOLATION** |
+| `prop:hecke-branching-trace-decomposition` | `HeckeBranchingTraceDecomposition.decomposition` | **VIOLATION** |
+| `prop:markov-trace-recursive-reducer` | `MarkovTraceRecursiveReducerContext.claim_reducer_correct` | **VIOLATION** |
+| `prop:rho-k-h3a-refinement` | `RhoKH3ARefinement.identity` | **VIOLATION** |
+| `prop:sigma-shell-from-beta-chain-derivation` | `SigmaShellFromBetaChainDerivation.identity` | **VIOLATION** |
+| `prop:archimedean-functor-uniqueness` | `BlochSuslinUniqueness.uniqueness` | legitimate |
+
+In every violation the field's type is the block's conclusion, universally
+quantified over the theorem's own parameters, and the proof instantiates it.
+**Two classes say so in their own docstrings** — `LRTensorCharacterBridge.bridge`
+is annotated *"claim of `cor:lr-tensor-character-bridge`"* and
+`HeckeBranchingTraceDecomposition.decomposition` *"claim of
+`prop:hecke-branching-trace-decomposition`"*. The authors named the field after
+the claim it assumes.
+
+### The one that is legitimate, and why — this is the discriminator
+
+`BlochSuslinUniqueness` carries `d_pentagon`, `d_continuous`, `d_antisymmetric`
+(genuine properties of `D`) and
+
+    uniqueness : ∀ φ, Continuous φ → (∀ x ≠ 0,1, φ x⁻¹ = -φ x) →
+                 PentagonCoherent φ → ∃ c, ∀ x, φ x = c * D x
+
+— the Bloch–Suslin rigidity theorem, a substantial general claim. The block's
+theorem applies it as `hD.uniqueness τ_arch h_cont h_anti h_pent`, **discharging
+three non-trivial hypotheses** about `τ_arch` that are the theorem's own
+assumptions. That is composition.
+
+**So the discriminator is not "is the field universally quantified" — every
+violation above is too.** It is: *does the theorem DISCHARGE hypotheses of the
+field, or merely INSTANTIATE its parameters?*
+
+### Limitation of the shape filter, measured
+
+`--projections` classified `prop:archimedean-functor-uniqueness` as
+`PROJECTION`, because its arguments `τ_arch h_cont h_anti h_pent` are all
+binders of the theorem. The heuristic cannot tell a binder that is a
+**hypothesis being discharged** from one that is a **parameter being
+instantiated**. So the PROJECTION/composition split is a presentation aid, not
+a verdict — as the mode's own header says. 1 false positive in 9.
+
+## Next step per block
+
+Each confirmed one needs the same treatment as `prop:explicit-central-idempotent`
+(fixed earlier on this branch): re-encode the class as the genuine
+sub-hypotheses of its argument, so the theorem composes them. That is per-block
+mathematics — eight separate derivations, not a sweep, and several are
+substantial (the LR bridge and the branching decomposition are real theorems).
+
+**Do not "fix" any of them by deleting the theorem or weakening the statement.**
