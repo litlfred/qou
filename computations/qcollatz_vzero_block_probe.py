@@ -42,6 +42,11 @@ import sys, json
 from collections import deque
 from pathlib import Path  # witness path must be FILE-relative, not cwd-relative
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 TWO = {1: 1, 0: 1}
 THREE = {2: 1, 1: 1, 0: 1}
 ONE = {0: 1}
@@ -238,6 +243,12 @@ if __name__ == '__main__':
     }
     with open(Path(__file__).with_name('qcollatz_vzero_block_probe.witness.json'), 'w') as f:
         w["q0Anchor"] = "independent"
+        # P30: add the staleness provenance (scriptHash / commitSha /
+        # engine) that a hand-rolled dump cannot get from build().
+        # The q0Anchor lines just below own the anchor decision and run
+        # after this, so their value stands.
+        _WitnessBuilder.stamp_staleness_metadata(
+            w, script_path=__file__, engine="python")
         w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Can a v = 0 block (two consecutive odd steps) occur inside D_inf?."
         json.dump(w, f, indent=2)
     print("wrote qcollatz_vzero_block_probe.witness.json")

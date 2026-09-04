@@ -80,7 +80,7 @@ theorem eq_twoRow_of_rowLen_two_eq_zero (ν : YoungDiagram) (h2 : ν.rowLen 2 = 
 theorem rowLen_two_pos_addCell {ν : YoungDiagram} {s : ℕ × ℕ} (hs : IsAddableCell ν s)
     (h : 0 < ν.rowLen 2) : 0 < (addCell ν s hs).rowLen 2 := by
   rw [← YoungDiagram.mem_iff_lt_rowLen] at h ⊢
-  exact (mem_addCell s hs (2, 0)).mpr (Or.inr h)
+  exact (mem_addCell ν s (2, 0) hs).mpr (Or.inr h)
 
 theorem corner_identity_of_three_rows (q : ℝ) (hq21 : q ^ 2 + 1 ≠ 0)
     (ν : YoungDiagram) (h : 0 < ν.rowLen 2) (r : ℕ × ℕ) :
@@ -176,7 +176,7 @@ theorem ocneanuWeight_corner_identity (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1
 namespace SeminormalRep
 
 /-- **The Markov condition for the Ocneanu weight at convention D, at every `n`.** -/
-theorem markov_conventionD (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem markov_conventionD (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) {m : ℕ} (y : Hecke ℝ q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1

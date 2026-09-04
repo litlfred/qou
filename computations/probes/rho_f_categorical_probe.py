@@ -169,6 +169,26 @@ if _census_path.exists():
 # `ideal_muon` migration must never be split.
 Q0 = _mp.mpf(Q_50_DIGIT_STR)
 
+# MERGE NOTE 2026-09-04. `origin/main` changed this same block in the opposite
+# direction: it moved the read from the retired literal to `q_muon_at()`, i.e.
+# it REFRESHED WITHIN the muon layer and wrote "Whether it should instead be
+# proton is the `q0Anchor: independent` disposition question owned by bean
+# `qou-324i`, and is deliberately not decided here."
+#
+# That deferral is superseded, not overruled on a judgement call: the owner
+# ruling of 2026-08-30 makes proton the DEFAULT and puts the burden on the
+# exception -- "it should be proton unless it is an explicit comparison /
+# discussion on CAL 123 math ideal or so". This producer is neither (E1: it
+# makes no proton-vs-muon comparison; E2: it is not about the calibration
+# triple as mathematics), and "it has always been muon" is explicitly not a
+# reason. So `qou-324i`'s question is answered for this stem.
+#
+# The sibling's finding is kept and is the reason this reads by NAME rather
+# than by literal: the q0-value drift audit prescribes "fix by RE-RUNNING THE
+# PRODUCER, never by hand-editing the number", and that remedy CANNOT work
+# against a hardcoded literal -- a re-run reproduces it faithfully. Measured
+# there: re-running left the audit still flagging it.
+
 
 def q_integer(n: int, q=Q0):
     """[n]_q = (q^n - q^{-n}) / (q - q^{-1})."""

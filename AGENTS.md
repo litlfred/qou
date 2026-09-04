@@ -1305,10 +1305,22 @@ the pipeline render where available
 (`bun run folio-assistant/content/pipeline/render-latex.ts …` after
 [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
 **and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
-`\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
-`\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
-list-parser hijack); align-family environments (`aligned`, `align`) fenced as
-` ```tex `, not inline `$$`.
+`\bigl`-`\bigr`/`\begin`-`\end`; no line starting with `+`/`-`/`*` inside `$$…$$`
+(markdown list-parser hijack); align-family environments (`aligned`, `align`)
+fenced as ` ```tex `, not inline `$$`.
+
+> **`\operatorname{}` is NOT a violation — the old rule was stale (corrected
+> 2026-09-03, bean `qou-iars`).** This battery read *"no `\operatorname{}`
+> (KaTeX rejects → use `\mathrm{}`)"*. Measured: the viewer loads **KaTeX
+> 0.16.11** (`folio-assistant/{viewer,ui}/index.html`, CDN), and KaTeX has
+> supported `\operatorname` since **v0.10.0 (2019)** — so the deployed renderer
+> does not reject it, and pdflatex (amsmath) never did. `\operatorname{Re}`,
+> `\operatorname{Im}`, `\operatorname{ord}`, `\operatorname{Area}`,
+> `\operatorname{Vol}` are the *semantically correct* markup for operators
+> (correct spacing), and blanket-rewriting them to `\mathrm{}` is a downgrade.
+> Do **not** flag or sweep `\operatorname`. (If a KaTeX downgrade below 0.10
+> ever happened it would resurface, but that is a version regression to fix at
+> the CDN pin, not a content rule.)
 
 > **Fencing an align-family env is only HALF the rule — the other half
 > is build-fatal (2026-08-16).** `aligned`/`gathered`/`split`/`cases`/
@@ -1352,9 +1364,11 @@ a sandbox), run the grep battery + expository pass by hand and **state
 explicitly in the commit/PR that the change was not machine-validated** — never
 report a math edit as render-checked when only CI (which may be billing-flaky)
 would have caught it. History: added 2026-06-30 after a mass-derivation survey
-rewrite shipped with `\operatorname` (KaTeX-breaking), a `B`-vs-`𝔪` mislabel, a
-wrong `dim_q = [n]_q`, and a `λ` notation collision — none machine-caught
-because the pipeline was unavailable and the agent skipped the manual battery.
+rewrite shipped with `\operatorname` (believed KaTeX-breaking at the time; that
+belief was itself stale — KaTeX has supported it since v0.10, see the correction
+above), a `B`-vs-`𝔪` mislabel, a wrong `dim_q = [n]_q`, and a `λ` notation
+collision — the latter three none machine-caught because the pipeline was
+unavailable and the agent skipped the manual battery.
 
 ## CI billing failures — distinguish from real failures (STRICT)
 

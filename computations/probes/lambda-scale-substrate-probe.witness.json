@@ -1,25 +1,25 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T05:01:08.736567+00:00",
-  "commitSha": "f0b20345dde32c7416302e1cb4609e26426ef851",
+  "computedAt": "2026-09-04T02:57:39.261221+00:00",
+  "commitSha": "9c2058f0bdb7c7ce82beca83fb1fcf986728db07",
   "assertions": [
     {
       "name": "probe_1_proton_within_10ppm",
-      "computed": 5.616582447242396,
-      "expected": 0.0,
+      "computed": "5.61658244724239606",
+      "expected": "0",
       "passed": true,
-      "tolerance": 10.0,
+      "tolerance": "10",
       "unit": "ppm",
       "source": "5/2 − h²·G vs λ_p_target"
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "lambda-scale-substrate-probe",
   "scriptFile": "lambda_scale_substrate_probe.py",
-  "scriptHash": "8654a7dd02fa",
-  "scriptCommitSha": "8aec79dd98c57c580c47b5d422384da6d3e5aece",
+  "scriptHash": "d62b185a5850",
+  "scriptCommitSha": "86b82415d12fa6fd05dfc4ecf10275598529f4c7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,7 +56,7 @@
       "lambda_p_target": "2.45995279126013643291016",
       "5/2 - h²·G": "2.459966607787804869530325",
       "diff_absolute": "1.38165276684366e-5",
-      "diff_ppm": 5.616582447242396
+      "diff_ppm": "5.61658244724239606"
     },
     "probe_2_neutron_common_form": {
       "lambda_n_target": "2.463343637673293454432773",
@@ -79,7 +79,7 @@
     "probe_3b_geometric_series": {
       "form": "5/2 − G·h²/(1−h²)  (geometric series)",
       "value": "2.458136931371730557085199",
-      "diff_ppm": -738.1685920385825
+      "diff_ppm": "-738.16859203858245121"
     },
     "probe_4_generation_sigma": {
       "hypothesis": "λ_Σ = 7/2 − h²·G (2nd-generation prediction)",
@@ -90,8 +90,8 @@
       "mass_predicted_MeV": "1319.6961",
       "mass_sigma_plus_codata_MeV": "1189.37",
       "mass_sigma_0_codata_MeV": "1192.642",
-      "ratio_pred_to_sigma_plus": 1.1095757396044592,
-      "ratio_pred_to_sigma_0": 1.1065316309616429,
+      "ratio_pred_to_sigma_plus": "1.1095757396044591541",
+      "ratio_pred_to_sigma_0": "1.1065316309616427931",
       "interpretation": "If p(n)/2 generation hypothesis holds with p(5) = 7, λ_Σ_pred = 7/2 − h²·G = ~3.46. Observed Σ baryon λ values: Σ+ → 3.1183, Σ⁰ → 3.1269, Λ → 2.9251. Pattern fits IF λ_Σ is in the range 3.1 to 3.5; observed ~3.12 (Σ+), so prediction 3.46 is off by ~10%. Likely the generation hypothesis needs refinement OR Σ has additional Skein contribution."
     },
     "probe_5_alternative_rationals": {
@@ -99,33 +99,33 @@
       "matches_within_100ppm": [
         {
           "leading": "5/2",
-          "value": 2.5,
+          "value": "2.5",
           "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": 5.616582447242396
+          "diff_p_ppm": "5.61658244724239606"
         },
         {
           "leading": "10/4",
-          "value": 2.5,
+          "value": "2.5",
           "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": 5.616582447242396
+          "diff_p_ppm": "5.61658244724239606"
         },
         {
           "leading": "15/6",
-          "value": 2.5,
+          "value": "2.5",
           "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": 5.616582447242396
+          "diff_p_ppm": "5.61658244724239606"
         },
         {
           "leading": "20/8",
-          "value": 2.5,
+          "value": "2.5",
           "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": 5.616582447242396
+          "diff_p_ppm": "5.61658244724239606"
         },
         {
           "leading": "25/10",
-          "value": 2.5,
+          "value": "2.5",
           "test_with_h2G": "2.45996660779",
-          "diff_p_ppm": 5.616582447242396
+          "diff_p_ppm": "5.61658244724239606"
         }
       ]
     },
@@ -133,7 +133,7 @@
       "Vol_B3_literature": "7.327724753417752120436828",
       "8G_catalan": "7.327724753417752120436828",
       "difference": "0.0",
-      "rel_diff_ppm": 0.0,
+      "rel_diff_ppm": "0.0",
       "note": "If Vol(B_3) = 8G exactly, the formula `λ = 5/2 − h²·G` becomes `λ = 5/2 − h²·Vol(B_3)/8`. The numerical values differ at the 7th decimal — likely the literature value's precision floor, not a structural difference. SnapPy high-precision computation would clarify."
     },
     "probe_7_muon_sanity": {

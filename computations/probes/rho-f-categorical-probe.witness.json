@@ -1,7 +1,7 @@
 {
   "computation": "rho-f-categorical-probe",
   "description": "W-1 categorical ρ_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1×C2 combined) against the empirical true_ρ from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives ³He at −0.14% (vs C0 integer at −2.97%).",
-  "computedAt": "2026-09-04T01:57:43.973144+00:00",
+  "computedAt": "2026-09-04T03:44:43.067218+00:00",
   "parameters": {
     "q_0": "1.10997858275138080759166909561076887987449912187360000000000",
     "q_0_anchor": "muon (ideal 3-CAL) — matches the -muon peel read above",
@@ -104,9 +104,9 @@
   ],
   "note": "C3 reduces ³He error from −2.97% to −0.14% with zero AME input.  However C3 worsens ³H (−2.0% vs C0 +0.15%).  The residual ³H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md.",
   "scriptFile": "rho_f_categorical_probe.py",
-  "scriptHash": "2c9b4a2fb9de",
-  "scriptCommitSha": "12a9a94a90d83223ace764ab9f2dcc1f63d75848",
-  "commitSha": "2a0f146718f5fc5c78c2c8b0b06eab99d2a7afb3",
+  "scriptHash": "add0421e71a6",
+  "scriptCommitSha": "579b8778f60b5c219b5922758b2ad9255d53269e",
+  "commitSha": "1143138b1e04f54bdb4b3ee70d9f09eb5d63bdfb",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

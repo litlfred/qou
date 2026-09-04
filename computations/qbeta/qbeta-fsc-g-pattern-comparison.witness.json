@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:50:38.487978+00:00",
-  "commitSha": "d5c27c8fd973c7a40ff41e384c262cc732464f5d",
+  "computedAt": "2026-09-04T02:52:35.996359+00:00",
+  "commitSha": "9c2058f0bdb7c7ce82beca83fb1fcf986728db07",
   "assertions": [
     {
       "name": "polynomial_factor_not_cyclotomic",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 9,
   "computation": "qbeta-fsc-g-pattern-comparison",
   "scriptFile": "qbeta_fsc_g_pattern_comparison.py",
-  "scriptHash": "eb40b035faf8",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "4f1f4f31ad31",
+  "scriptCommitSha": "dadb5f09ccd183a221cfd07cbd42cac3f1bbc323",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -46,11 +46,11 @@
     "q_0": "1.10997859564273904668179512938",
     "Q_beta_over_m_e": "1.53098829057010406676301036222",
     "Form_A_over_m_e": "1.53355658105089021520115209453",
-    "Form_A_miss_pct": 0.16775376380114426,
+    "Form_A_miss_pct": "0.167753763801144253596047698109",
     "polynomial_factor": "q^2 - 2q - 1",
     "polynomial_roots": "1 ± √2 (silver ratio)",
-    "root_plus_abs": 2.414213562373095,
-    "root_minus_abs": 0.41421356237309503,
+    "root_plus_abs": "2.41421356237309504880168872421",
+    "root_minus_abs": "0.41421356237309504880168872421",
     "are_roots_of_unity": false,
     "conclusion": "Q_β admits NO clean cyclotomic / q-integer closed form. Its categorical source produces an irrational discriminant (q = 1 ± √2), distinct from FSC's cyclotomic torus knots and G's q-rational pole structure. The c_k precision-ladder IS the natural framework; no FSC-style derivation shortcut is available.",
     "upstream_witness_hashes": [

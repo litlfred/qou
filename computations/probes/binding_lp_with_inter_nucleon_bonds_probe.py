@@ -151,7 +151,7 @@ from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from pyhecke.atom import D_PN, atom_gen_chains, nucleon_gen_chains  # noqa: E402
 from pyhecke.gram import _hm_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -160,7 +160,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 30
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 HF = float(_H)
 DPN = float(D_PN)

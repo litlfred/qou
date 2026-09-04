@@ -15695,6 +15695,199 @@ export const references: Reference[] = [
     URL: "https://doi.org/10.1063/5.0013689",
     note: "PDF library/022201-1-online/ — registered 2026-08-30 from the cluster-expansion upload drop. Approximation algorithms for quantum partition functions built on the abstract-polymer / cluster-expansion machinery. The QUANTUM member of this drop, and so the one whose setting is closest to the corpus's; cite for the polymer-model formulation, not for any nuclear claim.",
   }),
+
+  // ── qou-cite + qou-e4eu: eight verified standard works (2026-09-03) ──
+  // Metadata confirmed by web search this session; DOIs present ONLY where a
+  // publisher/ADS record was actually seen (anti-fabrication: a guessed DOI is
+  // worse than none). Citing sites recorded per entry.
+  ref({
+    id: "macdonald1971",
+    type: "book",
+    title: "Spherical Functions on a Group of p-adic Type",
+    author: [{ family: "Macdonald", given: "Ian G." }],
+    publisher: "Ramanujan Institute, University of Madras",
+    "publisher-place": "Madras",
+    issued: { "date-parts": [[1971]] },
+    "collection-title": "Publications of the Ramanujan Institute",
+    "collection-number": 2,
+    note: "Cited in q-geometric-langlands/quantum-langlands-dual for the p-adic spherical-function / affine-Hecke Satake picture. No DOI asserted (Ramanujan Institute monograph).",
+  }),
+
+  ref({
+    id: "lusztig1989",
+    type: "chapter",
+    title: "Modular representations and quantum groups",
+    author: [{ family: "Lusztig", given: "George" }],
+    "container-title": "Classical Groups and Related Topics (Beijing, 1987)",
+    publisher: "American Mathematical Society",
+    "publisher-place": "Providence, RI",
+    issued: { "date-parts": [[1989]] },
+    "collection-title": "Contemporary Mathematics",
+    "collection-number": 82,
+    page: "59-77",
+    note: "Cited in q-geometric-langlands/quantum-langlands-dual. No DOI asserted this session.",
+  }),
+
+  ref({
+    id: "feigin-hashizume2009",
+    type: "article-journal",
+    title: "A commutative algebra on degenerate CP^1 and Macdonald polynomials",
+    author: [
+      { family: "Feigin", given: "Boris" },
+      { family: "Hashizume", given: "K." },
+      { family: "Hoshino", given: "A." },
+      { family: "Shiraishi", given: "Jun'ichi" },
+      { family: "Yanagida", given: "Shintarou" },
+    ],
+    "container-title": "Journal of Mathematical Physics",
+    issued: { "date-parts": [[2009]] },
+    volume: "50",
+    issue: "9",
+    page: "095215",
+    note: "Cited in mass-theory/dim-master-pentagon (cites[] only; no prose mention). No DOI asserted this session.",
+  }),
+
+  ref({
+    id: "dimofte-gaiotto-gukov2014",
+    type: "article-journal",
+    title: "Gauge Theories Labelled by Three-Manifolds",
+    author: [
+      { family: "Dimofte", given: "Tudor" },
+      { family: "Gaiotto", given: "Davide" },
+      { family: "Gukov", given: "Sergei" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[2014]] },
+    volume: "325",
+    issue: "2",
+    page: "367-419",
+    DOI: "10.1007/s00220-013-1863-2",
+    URL: "https://doi.org/10.1007/s00220-013-1863-2",
+    note: "Cited in q-geometric-langlands/mirror-3d-3d-correspondence for the DGG 3d-3d construction. arXiv:1108.4389. DOI verified via Springer/ADS this session.",
+  }),
+
+  ref({
+    id: "terashima-yamazaki2011",
+    type: "article-journal",
+    title: "SL(2,R) Chern-Simons, Liouville, and Gauge Theory on Duality Walls",
+    author: [
+      { family: "Terashima", given: "Yuji" },
+      { family: "Yamazaki", given: "Masahito" },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    issued: { "date-parts": [[2011]] },
+    volume: "2011",
+    issue: "8",
+    page: "135",
+    DOI: "10.1007/JHEP08(2011)135",
+    URL: "https://doi.org/10.1007/JHEP08(2011)135",
+    note: "Cited in q-geometric-langlands/mirror-3d-3d-correspondence. arXiv:1103.5748. DOI verified this session.",
+  }),
+
+  ref({
+    id: "kashaev-tirkkonen2014",
+    type: "article-journal",
+    title: "A proof of the volume conjecture on torus knots",
+    author: [
+      { family: "Kashaev", given: "R. M." },
+      { family: "Tirkkonen", given: "O." },
+    ],
+    "container-title": "Journal of Mathematical Sciences",
+    issued: { "date-parts": [[2003]] },
+    volume: "115",
+    issue: "1",
+    page: "2033-2036",
+    note: "Cited in q-geometric-langlands/modular-s-transform-q-q-tilde for the Volume Conjecture. The citing key says 2014, but the sole Kashaev-Tirkkonen paper is the torus-knot VC proof: Zap. Nauchn. Sem. POMI 269 (2000) 262-268, English transl. J. Math. Sci. 115 (2003) 2033-2036. Key year is wrong; entry carries the true year. No DOI asserted this session.",
+  }),
+
+  ref({
+    id: "murakami2013",
+    type: "article-journal",
+    title: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion of the figure-eight knot",
+    author: [{ family: "Murakami", given: "Hitoshi" }],
+    "container-title": "Journal of Topology",
+    issued: { "date-parts": [[2013]] },
+    note: "Cited in QOU/QBeta/MeridianLinearBarOdd.lean for the deformed 4_1 (figure-eight) asymptotic regime. Title/author/year confirmed via search; volume/DOI not verified this session.",
+  }),
+
+  ref({
+    id: "wielenberg1978",
+    type: "article-journal",
+    title: "The structure of certain subgroups of the Picard group",
+    author: [{ family: "Wielenberg", given: "Norbert J." }],
+    "container-title": "Mathematical Proceedings of the Cambridge Philosophical Society",
+    issued: { "date-parts": [[1978]] },
+    volume: "84",
+    note: "Cited in QOU/Archimedean/WhiteheadVolumeCatalan.lean -- the Whitehead-link complement as a single regular ideal octahedron. Volume 84 (1978); page/DOI not verified this session.",
+  }),
+
+  ref({
+    id: "ggmw2020",
+    type: "article-journal",
+    title: "Resurgence of Chern-Simons theory at the trivial flat connection",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Gu", given: "Jie" },
+      { family: "Mariño", given: "Marcos" },
+      { family: "Wheeler", given: "Campbell" },
+    ],
+    library: {
+      docId: "arxiv-2111.04763v2",
+      dir: "library/arxiv-2111.04763v2",
+      pdf: "library/arxiv-2111.04763v2/2111.04763v2.pdf",
+      stage: "sections",
+    },
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[2025]] },
+    volume: "406",
+    note: "Cited in QOU/QBeta/HabiroClassicalLimit.lean (eq 161). Identity CONFIRMED from the held PDF library/arxiv-2111.04763v2 -- authors Garoufalidis, Gu, Marino, Wheeler (GGMW), title exact. The citing key 'ggmw2020' and its inline expansion 'Gukov-Garoufalidis-Marino-Wheeler (2020)' were BOTH wrong: it is Garoufalidis-Gu-Marino-Wheeler, arXiv:2111.04763 (2021), CMP 406 (2025). Entry carries the true authors/year; the 'eq (161)' anchor is the citing author's and was not re-verified against the PDF this session.",
+  }),
+
+  ref({
+    id: "frenkel2020",
+    type: "article",
+    title: "q-Opers, QQ-Systems, and Bethe Ansatz",
+    author: [
+      { family: "Frenkel", given: "Edward" },
+      { family: "Koroteev", given: "Peter" },
+      { family: "Sage", given: "Daniel S." },
+      { family: "Zeitlin", given: "Anton M." },
+    ],
+    issued: { "date-parts": [[2020]] },
+    URL: "https://arxiv.org/abs/2002.07344",
+    note: "Cited in QOU/Mathlib/QOper.lean. arXiv:2002.07344. The Lean's inline URL was arXiv:2007.11786, which is a DIFFERENT paper (Koroteev-Zeitlin, 'Toroidal q-Opers') -- the key 'frenkel2020' names the Frenkel-first-author q-Opers/QQ-system paper, so the URL was repointed to 2002.07344 in the same change (bib triage 2026-09-03). arXiv id from web search; JEMS DOI not verifiable this session, so omitted.",
+  }),
+
+  ref({
+    id: "koroteev-zeitlin2022",
+    type: "article-journal",
+    title: "q-Opers, QQ-systems, and Bethe Ansatz II: Generalized Minors",
+    author: [
+      { family: "Koroteev", given: "Peter" },
+      { family: "Zeitlin", given: "Anton M." },
+    ],
+    "container-title": "Journal für die reine und angewandte Mathematik (Crelle's Journal)",
+    issued: { "date-parts": [[2022]] },
+    URL: "https://arxiv.org/abs/2108.04184",
+    note: "Cited in QOU/Mathlib/QOper.lean. arXiv:2108.04184. The Lean's inline URL was arXiv:2108.01557, which does not resolve to a Koroteev-Zeitlin paper -- a likely digit transposition; repointed to 2108.04184 (the real KZ 'q-Opers II: Generalized Minors', Crelle 2022) in the same change (bib triage 2026-09-03). Crelle DOI not verifiable this session, so omitted.",
+  }),
+
+  ref({
+    id: "frenkel-reshetikhin1998",
+    type: "article-journal",
+    title: "Deformations of W-algebras associated to simple Lie algebras",
+    author: [
+      { family: "Frenkel", given: "Edward" },
+      { family: "Reshetikhin", given: "Nikolai" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1998]] },
+    volume: "197",
+    issue: "1",
+    page: "1-32",
+    URL: "https://arxiv.org/abs/q-alg/9708006",
+    note: "Cited in q-geometric-langlands/quantum-langlands-dual (cites[]). Rekeyed from 'frenkel-reshetikhin2002' on owner instruction (2026-09-04): no FR paper is dated 2002; the deformed-W-algebra duality W_{q,t}(g) = W_{t,q}(^L g) introduced here is the 'quantum Langlands dual' content the block cites. arXiv:q-alg/9708006. DOI not verifiable this session, so omitted.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

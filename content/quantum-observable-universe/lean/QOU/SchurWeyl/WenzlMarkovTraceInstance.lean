@@ -90,7 +90,7 @@ open QOU.Mathlib QOU.SchurWeyl.TableauCells QOU.SchurWeyl.Seminormal QOU.SchurWe
 `wtrace` is the `w = ocneanuWeight q z_D` case; the level-`r` trace below is the
 `w = wenzlWeight r (q²)` case.  Keeping `w` free isolates exactly which of the four
 `MarkovTraceFamily` axioms depend on the weight (three) and which does not (cyclicity). -/
-noncomputable def wtraceW (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ) (n : ℕ) :
+noncomputable def wtraceW (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ) (n : ℕ) :
     Hecke ℝ q q⁻¹ n →ₗ[ℝ] ℝ where
   toFun x := ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
     w ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace
@@ -101,14 +101,14 @@ noncomputable def wtraceW (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : You
     simp only [map_smul, Matrix.trace_smul, smul_eq_mul, RingHom.id_apply, Finset.mul_sum]
     exact Finset.sum_congr rfl fun ν _ => by ring
 
-theorem wtraceW_apply (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ) (n : ℕ)
+theorem wtraceW_apply (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ) (n : ℕ)
     (x : Hecke ℝ q q⁻¹ n) :
     wtraceW q hq0 hq2 w n x = ∑ ν : {ν : YoungDiagram // ν.cells.card = n + 1},
       w ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace := rfl
 
 /-- **Cyclicity needs no property of `w` at all** — `seminormalRep` is an `AlgHom`, so this is
 `Matrix.trace_mul_comm` blockwise. -/
-theorem wtraceW_cyclic (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ) (n : ℕ)
+theorem wtraceW_cyclic (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ) (n : ℕ)
     (x y : Hecke ℝ q q⁻¹ n) :
     wtraceW q hq0 hq2 w n (x * y) = wtraceW q hq0 hq2 w n (y * x) := by
   rw [wtraceW_apply, wtraceW_apply]
@@ -116,7 +116,7 @@ theorem wtraceW_cyclic (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungD
   rw [map_mul, map_mul, Matrix.trace_mul_comm]
 
 /-- Normalisation of the weight gives `tr(1) = 1`. -/
-theorem wtraceW_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ)
+theorem wtraceW_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ)
     (hnorm : ∀ n : ℕ, (∑ ν : {ν : YoungDiagram // ν.cells.card = n},
       (numStandardYoungTableaux ν.1 : ℝ) * w ν.1) = 1) (n : ℕ) :
     wtraceW q hq0 hq2 w n 1 = 1 := by
@@ -135,7 +135,7 @@ theorem wtraceW_one (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiag
 The representation-theoretic half — corner decomposition of the diagonal sum,
 `compress_seminormalRep_heckeIncl`, the corner↔addable reindexing — is weight-agnostic; the weight
 enters only in the last line, as `hbranch`. -/
-theorem wtraceW_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ)
+theorem wtraceW_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ)
     (hbranch : ∀ ν : YoungDiagram,
       (∑ s : {s : ℕ × ℕ // IsAddableCell ν s}, w (addCellOrSelf ν s.1)) = w ν)
     (m : ℕ) (y : Hecke ℝ q q⁻¹ m) :
@@ -181,7 +181,7 @@ theorem wtraceW_incl (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDia
 
 /-- The Markov condition, in the `genMat` form the corner assembly produces, gives the
 `MarkovTraceFamily` Markov axiom. -/
-theorem wtraceW_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungDiagram → ℝ) (z : ℝ)
+theorem wtraceW_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (w : YoungDiagram → ℝ) (z : ℝ)
     (hmarkov : ∀ (m : ℕ) (y : Hecke ℝ q q⁻¹ m),
       (∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
           w L.1 * ((seminormalRep q hq0 hq2 (m + 1) L.2 (heckeIncl ℝ q q⁻¹ m y))
@@ -197,7 +197,7 @@ theorem wtraceW_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (w : YoungD
   rw [map_mul, seminormalRep_last q hq0 hq2 L.2]
 
 /-- **Any weight with normalisation, branching and the Markov condition is a Markov trace.** -/
-noncomputable def markovTraceOfWeight (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+noncomputable def markovTraceOfWeight (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (w : YoungDiagram → ℝ) (z : ℝ)
     (hnorm : ∀ n : ℕ, (∑ ν : {ν : YoungDiagram // ν.cells.card = n},
       (numStandardYoungTableaux ν.1 : ℝ) * w ν.1) = 1)
@@ -224,7 +224,7 @@ noncomputable def markovTraceOfWeight (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠
 exactly the three theorems #5662 generalised: `sum_dim_wenzlWeight_eq_one`,
 `sum_addable_wenzlWeight_all`, `markov_wenzlWeight`.  Nothing else is needed, and in particular no
 level-specific argument appears — the level enters only through those three. -/
-noncomputable def wenzlMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+noncomputable def wenzlMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) :
     HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))) :=
   markovTraceOfWeight q hq0 hq2 (wenzlWeight r (q ^ 2)) _
@@ -234,7 +234,7 @@ noncomputable def wenzlMarkovTrace (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
       (levelBracket_ne_zero_of_gen hgen hr) (ne_one_of_gen hgen) ν)
     (fun _ y => markov_wenzlWeight q hq0 hq2 hgen hr y)
 
-theorem wenzlMarkovTrace_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem wenzlMarkovTrace_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) :
     (wenzlMarkovTrace q hq0 hq2 hgen hr).tr = wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) := rfl
 
@@ -246,7 +246,7 @@ theorem wenzlMarkovTrace_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
 
 The uniqueness argument is `markovTrace_unique`, unchanged and level-free; what makes the statement
 available at level `r` is `wenzlMarkovTrace`, the instance. -/
-theorem eq_wenzlWtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem eq_wenzlWtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0)
     (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))))
     (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
@@ -257,7 +257,7 @@ theorem eq_wenzlWtrace_of_markov (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
 `MarkovTraceInstance` — pointwise, on every `H_n(q)`.  A generalisation that does not contain its
 own special case is a different object wearing the same name; this is the evidence that this one
 does. -/
-theorem wenzlMarkovTrace_two_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq21 : q ^ 2 + 1 ≠ 0)
+theorem wenzlMarkovTrace_two_tr (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (hq21 : q ^ 2 + 1 ≠ 0)
     (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
     wtraceW q hq0 hq2 (wenzlWeight 2 (q ^ 2)) n x = wtrace q hq0 hq2 n x := by
   rw [wtraceW_apply, wtrace_apply]
@@ -277,7 +277,7 @@ This is the composition the two uniqueness statements admit: `param_eq` reads th
 trace, and `level_unique_of_markovParameter` reads the level off the parameter.  Neither alone says
 this.  In particular the level is not extra bookkeeping attached to the trace; it is **recoverable
 from one value of it**. -/
-theorem level_unique_of_wenzlMarkovTrace_eq (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem level_unique_of_wenzlMarkovTrace_eq (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r s : ℕ} (hr : r ≠ 0) (hs : s ≠ 0)
     (h : SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) 1
           (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0))
@@ -307,13 +307,13 @@ trace exists there for every `r ≥ 1`.
 Reading this the other way is the caution: it does not say the general-`Q` statements are stronger
 than they look.  Over `ℂ`, or over a cyclotomic field, `hgen` is a real hypothesis and the level-`r`
 weight genuinely fails without it.  What is vacuous is the *specialisation to `ℝ`*. -/
-theorem realGen_of_sq_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+theorem realGen_of_sq_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) :
     ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1 := by
   intro k hk h
   have hQ0 : (0 : ℝ) < q ^ 2 := by positivity
   have hlog : (k : ℝ) * Real.log (q ^ 2) = 0 := by
     rw [← Real.log_zpow, h, Real.log_one]
-  have hlQ : Real.log (q ^ 2) ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hQ0 hq2
+  have hlQ : Real.log (q ^ 2) ≠ 0 := Real.log_ne_zero_of_pos_of_ne_one hQ0 (GenericParameter.sq_ne_one hq2)
   have hk0 : (k : ℝ) = 0 := by
     rcases mul_eq_zero.mp hlog with h1 | h2
     · exact h1
@@ -323,7 +323,7 @@ theorem realGen_of_sq_ne_one {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
 /-- **Uniqueness at every level, over `ℝ`, with no genericity hypothesis.**
 
 `eq_wenzlWtrace_of_markov` with `hgen` discharged by `realGen_of_sq_ne_one`. -/
-theorem SeminormalRep.eq_wenzlWtrace_of_markov_real (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem SeminormalRep.eq_wenzlWtrace_of_markov_real (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     {r : ℕ} (hr : r ≠ 0)
     (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ ((q ^ 2) ^ r / (q * levelBracket r (q ^ 2))))
     (n : ℕ) (x : Hecke ℝ q q⁻¹ n) :
@@ -335,7 +335,7 @@ and needing only `q ≠ 0` and `q² ≠ 1`.
 
 The two traces already differ at the *single* element `σ₀ ∈ H_1(q)`.  So the level is not merely
 determined by the whole functional: one evaluation separates every pair of levels. -/
-theorem wtraceW_ne_of_level_ne (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {r s : ℕ}
+theorem wtraceW_ne_of_level_ne (q : ℝ) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) {r s : ℕ}
     (hr : r ≠ 0) (hs : s ≠ 0) (hrs : r ≠ s) :
     SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight r (q ^ 2)) 1 (Hecke.σ ℝ q q⁻¹ 1 (Fin.last 0))
       ≠ SeminormalRep.wtraceW q hq0 hq2 (wenzlWeight s (q ^ 2)) 1

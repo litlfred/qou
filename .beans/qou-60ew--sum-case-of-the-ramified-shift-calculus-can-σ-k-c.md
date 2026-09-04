@@ -1,10 +1,10 @@
 ---
 # qou-60ew
 title: 'Sum case of the ramified shift calculus: can Σ_k c_k σ^k revive the residue slot by cancellation, and what odd-shift forces on the rank-2 A(q,x)'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-09-03T10:34:05Z
-updated_at: 2026-09-03T10:53:47Z
+updated_at: 2026-09-03T11:48:16Z
 ---
 
 
@@ -41,3 +41,5 @@ what is termwise zero" was WRONG. Measured exactly (Lean sorry-free, probe
 
 Honest gap: a residual weaker than full alternation at every level (asymptotic,
 or on a sub-tower) is not covered. Shifts >= 3 still unpruned. D_q not built.
+
+CLOSED 2026-09-03: merged in #6498 (1a4292faf7). Follow-up on the residual hypothesis is its own bean.

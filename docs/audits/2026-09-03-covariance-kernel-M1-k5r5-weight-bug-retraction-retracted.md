@@ -79,7 +79,7 @@ canonical weight; **both conclusions are robust**, the numbers moving only in th
 
 | probe | quantity | before (buggy) | after (canonical) | conclusion |
 |---|---|---|---|---|
-| `…_pointwise_bound_insufficiency` | `U/V` at θ=78 | 45.65 | **45.59** | unchanged — pointwise route needs `K < 0.058` vs an `O(1)` Debye coefficient, ~17× short |
+| `…_pointwise_bound_insufficiency` | `U/V` at θ=78 | 45.65 | **45.59** | unchanged — pointwise route needs ~~`K < 0.058` … ~17× short~~ **`K < 0.17115`, ~5.8× short (PR #6528)** |
 | `…_deep_tail_rigorous_majorant` | far-tail share, θ=100 / 256 / 640 | 1.7 / 1.6 / 1.1 ×10⁻³⁸·V_A | **1.79 / 1.62 / 10.7** ×10⁻³⁸·V_A | unchanged — far tail rigorously negligible |
 
 Those two survive because their claims are structural (a growing ratio; a super-exponentially small

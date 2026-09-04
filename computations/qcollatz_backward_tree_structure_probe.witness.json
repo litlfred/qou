@@ -1,8 +1,6 @@
 {
   "schema": "qou-probe/v0",
   "description": "Backward-tree structure of the q-Collatz map at a primitive cube root of unity: order of w+1, the closed form for the coupled (P(w), P'(w)) recursion, and the norm 1+6k+12k^2 of the odd-preimage branches. Supplies the arithmetic inputs to the unit obstruction proved in collatz_block_descent.lean. Exact Z and Z[w] arithmetic. Exploratory research probe (NOT canonical production).",
-  "q0Anchor": "independent",
-  "q0AnchorReason": "q-Collatz orbit combinatorics on D_inf. The variable q here is the Laurent variable of D_inf, NOT the substrate modulus q_0: the arithmetic is exact over Z and Z[w], and the import cone is stdlib only (json, sys, collections), so no substrate constant is reachable.",
   "result": {
     "A_order_of_w_plus_1": 6,
     "A_odd_preimage_positions_on_main_chain": [
@@ -111,5 +109,11 @@
     "C_k_ge_1_branches_never_admit_a_further_odd_preimage": true
   },
   "q0Anchor": "independent",
+  "scriptHash": "6ae2853d72ba",
+  "scriptCommitSha": "8caad038967825c95d52e35de31aaa02fb281714",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:58:24.318184+00:00",
+  "durationMs": 0,
   "q0AnchorReason": "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Structure of the q-Collatz backward tree at a primitive cube root of unity."
 }

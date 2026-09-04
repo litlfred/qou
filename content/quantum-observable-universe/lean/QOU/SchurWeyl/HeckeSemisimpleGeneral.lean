@@ -28,13 +28,23 @@ sorry-free, no cited class, no instance assumed.
 ## Why this was worth checking for before building anything
 
 `qou-kwoa` was opened to formalise Geck–Pfeiffer character theory, because the
-`det (twGram) ≠ 0` route needs `tr(L_{T_u})` for general `u` and that is
-Mathlib-scale.  It is: see
-`docs/audits/2026-09-02-tw-regular-trace-not-combinatorial.md`.  But the
-*conclusion* that route was chasing does not need it — the Wedderburn split
-reaches the same place by counting, and had been sitting in the corpus
-unconsumed.  A corpus-grep before construction turned a multi-session
-formalisation into this file.
+`det (twGram) ≠ 0` route was believed to need `tr(L_{T_u})` for general `u`, and
+*that* is Mathlib-scale — see
+`docs/audits/2026-09-02-tw-regular-trace-not-combinatorial.md`, whose `S₅`
+witness closes the combinatorial search for it.  But the *conclusion* that route
+was chasing does not need it — the Wedderburn split reaches the same place by
+counting, and had been sitting in the corpus unconsumed.  A corpus-grep before
+construction turned a multi-session formalisation into this file.
+
+**And the belief itself was too strong.**  `det (twGram) ≠ 0` does not need
+`tr(L_{T_u})` either.  Once this file supplies semisimplicity, the Gram
+implication runs *backwards* — semisimple ⟹ the regular trace form is
+nondegenerate ⟹ `det ≠ 0` in every basis — which is
+`QOU.Hecke.TwBasis.twGram_det_ne_zero`, proved at every rank in characteristic
+zero without evaluating a determinant.  Only the determinant's **value** still
+needs the character theory.  So the corpus-grep saved a session here and then a
+second one downstream; recorded because the same reasoning was available both
+times and was applied only once.
 
 ## Scope — what this does and does not say
 

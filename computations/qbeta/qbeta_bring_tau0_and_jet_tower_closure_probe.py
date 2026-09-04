@@ -118,10 +118,10 @@ ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate")]
 import _path_bridge  # noqa: E402, F401
 
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 40
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 J_TAU0 = Fraction(-25, 2)
 J_5TAU0 = Fraction(-5 * 29 ** 3, 32)
 

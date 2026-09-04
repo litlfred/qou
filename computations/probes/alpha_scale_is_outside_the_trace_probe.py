@@ -301,6 +301,17 @@ def main() -> int:
           f"scale from below by what the trace cannot supply.")
 
     payload = {
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin. q0 enters through "
+            "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+            "anchor (1.1099785827513808075...) because this stem is not "
+            "listed under ideal_muon; proton is the standing default for "
+            "compute per the 2026-08-07 owner directive. A manifest entry "
+            "would be inert here -- the manifest is read inside "
+            "WitnessBuilder.build(), and this producer hand-rolls its "
+            "witness and never enters build() -- so the declaration is "
+            "made producer-side, the only route that reaches the file."),
         "schema": "witness/v1",
         "name": "alpha-scale-is-outside-the-trace",
         "description": (

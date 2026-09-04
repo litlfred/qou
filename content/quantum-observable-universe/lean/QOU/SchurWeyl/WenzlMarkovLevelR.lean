@@ -48,7 +48,7 @@ the `w`-weighted trace of `y` over those of size `m + 1`, with
 `hgen` — `Q` is not a root of unity — is the single genericity hypothesis the whole level-`r` chain
 runs on; `hq2` is what `seminormalRep` itself needs, and is implied by `hgen` but has to be named
 because it appears in the statement. -/
-theorem markov_wenzlWeight (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem markov_wenzlWeight (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {r : ℕ} (hr : r ≠ 0) {m : ℕ}
     (y : Hecke ℝ q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
@@ -66,7 +66,7 @@ theorem markov_wenzlWeight (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
 `z_2 = (q²)²/(q·[2]_{q²}) = q³/(q²+1) = z_D` and `wenzlWeight 2 (q²) = ocneanuWeight q z_D`, so
 `markov_wenzlWeight` at `r = 2` reproduces `MarkovConventionD.markov_conventionD` on the nose — the
 general-level theorem specialises back to what #5575 proved, rather than merely resembling it. -/
-theorem markov_wenzlWeight_two (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem markov_wenzlWeight_two (q : ℝ) (hq : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (hgen : ∀ k : ℤ, k ≠ 0 → ((q ^ 2 : ℝ)) ^ k ≠ 1) {m : ℕ} (y : Hecke ℝ q q⁻¹ m) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = m + 2},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1

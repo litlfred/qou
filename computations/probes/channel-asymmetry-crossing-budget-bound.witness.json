@@ -1,0 +1,88 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15 + mpmath 1.3.0",
+  "computedAt": "2026-09-04T02:17:22.965147+00:00",
+  "commitSha": "b304e380b2d08c280128c9d4575e865bf9240b69",
+  "assertions": [
+    {
+      "name": "budget_is_s_squared",
+      "computed": "9",
+      "expected": "9",
+      "passed": true
+    },
+    {
+      "name": "ceiling_matches_reported_delta33_ceiling",
+      "computed": "9",
+      "expected": "9",
+      "passed": true
+    },
+    {
+      "name": "nature_exceeds_budget",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "required_layout_contradicts_forced",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "channel-asymmetry-crossing-budget-bound",
+  "scriptFile": "channel_asymmetry_crossing_budget_bound_probe.py",
+  "scriptHash": "504a55eee4a8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/channel_asymmetry_crossing_budget_bound_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/channel_asymmetry_crossing_budget_bound_probe.py"
+  },
+  "description": "Class bound on the two-nucleon channel asymmetry: the crossing budget c = s^2 = 9 forced by the 3-strand layout caps R <= 9 against nature's 33.7, lifting the per-operator ceiling-9 to the whole single-block-exchange braid class. Audit-only; conditional on cited H1/H2; no fit.",
+  "tier": "exploratory (class bound; scope-(b) given H1+H2)",
+  "result": {
+    "hypotheses_cited_not_derived": {
+      "H1": "log|lambda| = k*log q, k integer, |k| <= c(w), extremes attained (block_transposition_lift_probe; k integral to 1.8e-22 at 90 dps)",
+      "H2": "s = 3 strands per nucleon is FORCED (StrandLayoutForcesChain / qou-gwr9)"
+    },
+    "budget": {
+      "strands_per_nucleon_s": 3,
+      "inter_nucleon_crossings_c": 9,
+      "identification": "c = s^2 = Delta_{3,3}, the block transposition",
+      "k_min_nondegenerate": 1,
+      "R_max_achievable": 9
+    },
+    "comparison": {
+      "B_3S1_T0_MeV": "2.224566",
+      "B_1S0_T1_MeV": "0.066",
+      "R_nature": "33.705545",
+      "excluded": true,
+      "margin_factor": "3.7451"
+    },
+    "inversion": {
+      "crossings_required": 34,
+      "strands_per_nucleon_required": 6,
+      "contradicts_forced_layout": true
+    },
+    "verdict": "CAPPED. With s=3 strands per nucleon (H2, forced), a single two-nucleon block exchange has c=9 inter-nucleon crossings (=s^2, which IS Delta_{3,3}). By H1 the channel log-moduli are k*log q with |k|<=c, so the achievable asymmetry is R<=9. Nature needs R=33.7055, so the single-block-exchange braid class is EXCLUDED (scope-(b), given H1+H2). Reaching R_nature would need c>=34 inter-nucleon crossings, i.e. s>=6 strands per nucleon, contradicting the forced s=3. This EXPLAINS the ceiling 9 reported for Delta_{3,3}: 9 is s^2, not a property of that one operator. Does NOT exclude repeated exchanges (Delta^m, c=9m; the minimal carrier is m=1 by the 2026-08-29 owner ruling) or non-braid carriers. Does NOT close the binding gap."
+  },
+  "auditOnly": true
+}
