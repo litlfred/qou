@@ -9,6 +9,56 @@ and should be confirmed on first use.
 
 ---
 
+> **⚠ This file is 498 lines and only the first ~200 are injected.** Entries
+> appended at the bottom are effectively invisible to the agent that needs them,
+> so the 2026-09-04 additions were placed here rather than at the end. The file
+> wants splitting into sibling on-demand files (`AGENTS.md` §subagent memory);
+> until it is, put anything operationally load-bearing ABOVE this line's
+> neighbours, not below.
+
+## TRAP — count oleans at the ROOT `.lake`, not the paper subproject's
+
+`content/quantum-observable-universe/lean/.lake` has its own `packages/` tree and
+its own oleans, and it is **not** the one the restore fills. Measured 2026-09-04
+right after a successful restore: subproject **1236** oleans, root **9721** — and
+a `Mathlib/Data/Real/Basic.olean` probe under the subproject came back MISS while
+the root had it. Reading the subproject count led me to conclude the cache was
+thin and nearly to re-fetch 1.6 GB that was already on disk. The restore recipe's
+`-C "$ROOT"` is right; the *verification* of it must use the same root.
+
+## STABLE — a leaked `/tmp/tmp.*` from a previous session may BE the cache
+
+The 1.6 GB temp-file leak recorded above has an upside worth checking before any
+fetch: it is the assembled `lake-oleans.tgz`, complete and valid. Measured
+2026-09-04 on `/tmp/tmp.1qCCxhNguJ` (dated 2026-08-16): `tar tzf` listed 11 786
+entries, `tar xzf -C "$ROOT"` succeeded, and the tree went to 9721 oleans with
+`Mathlib.Tactic` present. Saved the whole fetch.
+
+Check it, then extract it, then **still reap it** — the disk-full trap above is
+unchanged. Two numbers to take first, because 5.14 GB does not always fit:
+`gzip -dc "$f" | wc -c` for the uncompressed size (~2 min, no disk), and
+`df -h /`. Net growth on 2026-09-04 was only ~400 MB because most entries already
+existed, but budget for the full figure.
+
+## TRAP — `pow_le_pow_left` does not exist in this Mathlib
+
+`unknown identifier 'pow_le_pow_left'` on v4.24.0-pinned mathlib (2026-09-04,
+`QOU/Hecke/BindingExtensivity.lean`). It is `pow_le_pow_left₀`
+(`Mathlib/Algebra/Order/GroupWithZero/Unbundled/Basic.lean:449`). **Prefer
+`gcongr`** — it discharged the goal from the hypotheses already in context and
+does not move when a lemma is renamed. Same class as the `Data.Matrix.Notation`
+/ `Data.Matrix.Kronecker` module moves above: a v4.24.0 rename, not a cache gap.
+The discriminator is the same — grep the mathlib **source** tree for the name.
+
+## BASELINE — `QOU/Hecke/BindingExtensivity.lean` (2026-09-04)
+
+`lean`-direct exit 0. First run **1m32s wall / 7.0s user** (cold page cache — the
+`user`-time discriminator above, behaving exactly as recorded); second run
+**4.6s wall / 4.6s user**. Six declarations, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`. Imports only
+`Mathlib.Algebra.Order.Ring.Pow` + `Mathlib.Tactic`. Re-measure; do not quote.
+
+
 ## TRAP — the LEAN_PATH answer is in this file, under the CACHE heading
 
 If `lean` reports `unknown module prefix 'Mathlib'` **while listing the

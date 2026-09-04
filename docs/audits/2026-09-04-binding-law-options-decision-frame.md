@@ -5,6 +5,7 @@
 "binding energy scales exponentially to physically absurd values instead of
 saturating"), `qou-bmz8` (ℓ¹ ceiling / deciding test), `qou-fvzm` (row cap)
 **Producers:** `computations/qbeta/qbeta_binding_law_options_probe.py` (10/10),
+`content/quantum-observable-universe/lean/QOU/Hecke/BindingExtensivity.lean` (6 decls, sorry-free),
 `qbeta_no_regime_of_validity_probe.py` (5/5), `qbeta_full_ame_scan_probe.py` (6/6),
 `qbeta_bond_factors_derived_probe.py` (7/7)
 **Status:** a *framed decision*. It changes no content block, no Lean file and no
@@ -314,14 +315,24 @@ throughout: the numbers below are targets a future derivation is checked
    positive-energy contribution from the same algebra, or accepting the domain
    restriction explicitly.
 
-6. **Formalisation.** Two statements are Lean-provable now and pin the argument
-   above independently of any table:
-   - `Δtr/A` is **unbounded** (since `t_p > 1`), so no constant scale can make
-     `s·Δtr` be `Θ(A)`;
-   - `log(tr_free/tr_atom)/A` is **bounded** between `min` and `max` of the three
-     bond energies.
+6. **Formalisation — ✅ done, `QOU/Hecke/BindingExtensivity.lean`.** Both
+   statements are proved, sorry-free, on `[propext, Classical.choice,
+   Quot.sound]`:
+   - `exists_pow_gt_linear` — for `1 < t`, `s > 0` and **any** `C`, some `n` has
+     `C·n < s·t^n`. No constant scale makes an exponential linear, which is the
+     refutation of §1.2 in its entirety.
+   - `linear_le_bondSum` / `bondSum_le_linear` — the bond sum is pinned between
+     two lines through the origin in `A−1`, for every `(Z,N)`. That is what
+     extensive means, and it is §2.
+   - `additive_is_linear_multiplicative_is_not` combines them: the two laws are
+     not competing fits of one shape, they are different shapes, and only one of
+     them can be a binding energy.
 
-   Together these are the whole of §1.2 and §2, with no data in them.
+   Everything is proved for an arbitrary base and arbitrary bond energies, so no
+   substrate constant enters. What is **measurement and explicitly not proved**
+   there: `t_p = 1.1458 > 1` and the three bond energies being positive. Those
+   are the theorems' hypotheses, established at 30 dps by the probe. Verified
+   `lean`-direct, exit 0 in 4.6 s.
 
 ---
 
@@ -345,6 +356,12 @@ python3 computations/qbeta/qbeta_no_regime_of_validity_probe.py   #  5/5
 python3 computations/qbeta/qbeta_full_ame_scan_probe.py           #  6/6
 python3 computations/qbeta/qbeta_bond_factors_derived_probe.py    #  7/7
 python3 scripts/probe-float64-guard.py --diff <files>             # clean
+
+# Lean, lean-direct against the restored root cache (never `lake build` on a
+# restored tree -- it evicts the cache; see .claude/skills/local/lean-environment-setup.md)
+export PATH="$HOME/.elan/bin:$PATH"
+export LEAN_PATH=$(for d in .lake/packages/*/.lake/build/lib/lean; do printf "%s:" "$(realpath $d)"; done)
+cd content/quantum-observable-universe/lean && lean QOU/Hecke/BindingExtensivity.lean   # exit 0
 ```
 
 Witness: `computations/qbeta/qbeta-binding-law-options.witness.json`.
