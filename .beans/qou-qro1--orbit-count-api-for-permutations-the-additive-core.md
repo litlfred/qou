@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T02:38:34Z
-updated_at: 2026-09-04T06:36:58Z
+updated_at: 2026-09-04T10:16:15Z
 ---
 
 Owner-directed (2026-09-04), successor to qou-zrx2 follow-up (5). ClassicalTraceFloor and LeadingOrderTraceCoefficient take c(sigma_free)=2A and c(sigma_atom)=A+1 as stated hypotheses because Mathlib has no orbit-count API and no transposition-step lemma. QOU/MassTheory/OrbitCount.lean supplies the API: orbitDefect = #support - card cycleType (additive, unlike the count), proved additive over disjoint products and over lists; orbitDefect_swap = 1; sign = (-1)^orbitDefect, so the transposition step's PARITY is proved free. The FREE half of ClassicalTraceFloor's hypotheses is now closed outright (orbitCount_prod_of_disjoint_unit_defect: A disjoint blocks of defect 1 on 3A strands leave 2A orbits). REMAINING: the magnitude |Delta| <= 1 of the transposition step, which reduces via cycleOf splitting to the two-cycle JOIN -- Mathlib has the split direction (IsCycle.swap_mul) but not the merge. Carried as two sorry + -- Ref: [manuscript] per the state-and-queue disposition; consumed by nothing.
@@ -51,3 +51,21 @@ count by +-1 leaves the bookkeeping of WHICH sign each letter of the canonical
 word takes -- whether its two strands already lay in one orbit. That is a fact
 about the specific word, not about permutations, and it is not in this file.
 Do not cite OrbitCount.lean as verifying c(sigma_atom) = A + 1.
+
+
+FOLLOW-UP TARGET, sharpened 2026-09-04 while checking the PR against main
+(158 commits later; ClassicalTraceFloor.lean still present and unchanged in
+shape). Its atom-count hypothesis is phrased
+
+    hmerge : cFree = cAtom + (A - 1)
+
+i.e. 'each of the A-1 interfaces merges one pair'. That is LITERALLY A-1
+applications of orbitDefect_swap_mul_of_not_sameCycle, the merge lemma this
+bean proved. So the word-specific accounting that OrbitCount.lean deliberately
+does NOT do is now a concrete induction over the A-1 interface letters, with
+the per-letter step already in hand; what has to be supplied per letter is the
+side condition -- that the letter's two strands were NOT already in one orbit
+(¬ SameCycle), which is the hypothesis the merge lemma takes.
+
+That is a statement about the canonical word, not about permutations, and it
+belongs in a fresh bean rather than reopening this one. Not claimed here.
