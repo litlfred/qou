@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T09:18:41Z
+updated_at: 2026-09-04T09:24:51Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -78,3 +78,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (CORRECTION to my own two-row entry above): I framed the two-row route as a NEGATIVE. Too pessimistic — RETRACTED. The two-row REDUCTION holds and IS monotone: tr_(n−k,k)(X*X) = ‖X|_W_k‖_F² − ‖X|_W_(k−1)‖_F², two Frobenius norms on C(n,k) blocks of the fixed 4×4 Ř (no seminormal construction, no eigenvalues), exact to 6.1e-139 and STRICTLY DECREASING per dim in k at both A (A=2: 320.78, 103.15, 53.56; A=3: 4718.6, 2793.1, 1498.6, 981.2). The negative is NARROW and only about the lossy shortcut (S): dropping tr_W_(k−1) is legal by positivity but too lossy (slack 1.0→10.5), so the difference must be KEPT — which costs nothing since it is exactly computable. NET: the positive majorant reduces BOTH columns to small n-independent objects, monotone per dim in b(λ) — hooks to the reduced Burau, two-rows to a sector Frobenius difference.
+
+
+- 2026-09-04 (GLOBAL b-ordering: pointwise REFUTED, envelope HOLDS). Prior evidence for the b-decay was conjugate-pair only (#6556), which cannot see a violation between non-conjugate shapes. Tested directly over all λ up to a dim cap: (a) POINTWISE monotonicity is FALSE — 2 real inversions at A=3, hook (3,1^6) at b=6 per-dim 14.32 sitting BELOW OTHER shapes (2,2,2,2,1) 31.56 and (2,2,2,1,1,1) 24.97 at b=7. So a general bound in b ALONE cannot exist; hooks decay faster than handle-less shapes at comparable b. (b) The ENVELOPE max_{b(λ)=b} per-dim IS strictly decreasing at BOTH A — A=2: 320.78 > 174.18 > 53.56 > 19.74; A=3: 4718.6 > 3478.3 > 1498.6 > 981.2 > 211.6 > 31.6 — and the envelope is what a decay BOUND actually needs. So the arc's target survives in envelope form, not as pointwise monotonicity. Endpoint note: trivial/sign are EXACT zeros (Ω₂^P vanishes on 1-dim reps) and are excluded — including them makes 0 < anything read as an inversion, which is how my first run produced 9 spurious ones. Caveat: 17 of 30 shapes at A=3 exceed the dim cap and are unmeasured (named in the output); a found inversion refutes regardless, but the envelope claim is over the measured subset.
