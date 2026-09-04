@@ -360,7 +360,18 @@ def main():
                 "computed": float(c3_cache_delta),
                 "expected": 0.0,
                 "passed": bool(c3_cache_delta < mp.mpf("1e-8")),
-                "tolerance": 1e-8,
+                # String, not the float literal. This probe hand-builds its
+                # assertion dicts and `json.dump`s them (it imports
+                # WitnessBuilder only for the provenance stamp), so it never
+                # constructs an `Assertion` and
+                # `qou_substrate.witness._tolerance_literal` — which converts a
+                # declared tolerance to its literal at `Assertion.to_dict` —
+                # never runs. "1e-08" is exactly what that helper returns for
+                # this value, so a later migration to `add_assertion` is a
+                # no-op on the artifact. `stage1_entropy_verdict_is_blocked`
+                # below keeps its `0.0`: the helper returns None for an
+                # integral-valued float and the ratchet excuses it by design.
+                "tolerance": "1e-08",
                 "source": ("same chain + same Q_codata + same q0 as "
                            "qbeta-ck-cache.witness.json (cache prints Q_codata "
                            "rounded to 0.78233341)"),
