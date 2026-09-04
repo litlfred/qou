@@ -279,3 +279,46 @@ This is the mirror of the §3b-cond violations (a conditional result stated
 unconditionally), and **neither direction is visible to `#print axioms`** —
 both proofs are clean. Only reading the signature against the statement catches
 either.
+
+## TRAP — ANY `… in` modifier goes ABOVE the docstring, never between it and the declaration
+
+Third instance this sweep, once each for `set_option … in`, `open … in`, and
+`omit … in`. All three produce the same shape of parse error naming whatever
+token follows:
+
+```
+error: unexpected token 'omit'; expected 'lemma'
+error: unexpected token '/--'; expected 'lemma'
+```
+
+Correct:
+
+```lean
+omit [CommRing R] in
+/-- docstring -/
+theorem foo …
+```
+
+The second spelling of the error is the one that misleads — `unexpected token
+'/--'` reads as a broken docstring, and the actual defect is a modifier placed
+after it. Same root cause when a docstring is left orphaned by a deleted
+declaration; check what precedes the docstring, not just the docstring.
+
+## TRAP — `opaque x : T` ASSERTS `Nonempty T`, and that may be the conjecture
+
+`failed to synthesize Inhabited (GroupLikeDepth q 2)` on an
+`opaque Li2_zeta_6 (q : R) : GroupLikeDepth q 2` is not a request for an
+instance. An `opaque` constant of type `T` may only be introduced once `T` is
+known non-empty, so declaring one **asserts inhabitedness globally**.
+
+Measured 2026-09-04 in `gb-depth-period-correspondence`: the type's
+non-emptiness is *exactly* the `sharpness` field of the file's own conjecture
+class (`∀ n ≥ 1, Nonempty (GroupLikeDepth q n)`, traced in its docstring to
+Borel's theorem). Supplying an `Inhabited` instance to satisfy the elaborator
+would have made the file compile by assuming, unconditionally and outside the
+class, the very thing every theorem in it is conditional on.
+
+Before adding `Inhabited` to silence this: check whether the type's
+inhabitedness is a conjectural claim somewhere in the same file. If it is, take
+the element as a parameter and derive existence from the class instead. Note an
+`opaque` FUNCTION into the type does the same thing as a constant.
