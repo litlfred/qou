@@ -1,11 +1,11 @@
 ---
 # qou-wnhk
 title: 'Depth-1 stratum is never instantiated: prove H_q^(1,K) is empty via the K-theory rosetta, or find it'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-04T13:59:16Z
-updated_at: 2026-09-04T14:11:44Z
+updated_at: 2026-09-04T21:48:10Z
 ---
 
 MEASURED 2026-09-04. The +2 mechanism EXISTS - def:hq-bi-filtration's compatibility table states the q-shuffle is depth-ADDITIVE: H_q^(n1,K1) *_q H_q^(n2,K2) subset of + H_q^(n1+n2,K'). Exactly one of its five listed operations moves depth and it is the product (coproduct splits; bar involution, Markov trace and braid action all preserve). I had reported the opposite and it was wrong.
@@ -35,3 +35,9 @@ THIS UPGRADES THE BEAN FROM 'PROVE THE EXCLUSION' TO 'BUILD THE OBJECT'. Constru
 THE MECHANISM IS VISIBLE IN THE TARGET FUNCTION. Bloch-Wigner is D(z) = Im Li_2(z) + arg(1-z) log|z|; the SECOND TERM is literally a product of two depth-1 objects landing in depth 2 - the shuffle-square, already formalised in the corpus as QOU.Knot.KummerRadial.kummer (and stated at mass-theory/kummer-bloch-wigner-identity.md).
 
 INDEPENDENT CORROBORATION that depth 1 is thin on the knot axis: conj:two-filtration-bridge's d_II(lambda) is 2 (self-conjugate) / 3 (chiral pair) / min(depth_GB, 2*ceil(n/2)) otherwise - never 1 except at the trivial cell lambda=(1).
+
+CLOSED 2026-09-04 BY qou-ox7v. The route this bean proposed - build H_q^(1,K), then shuffle-square it into depth 2 = volume - is structurally excluded. The shuffle-square lands in the DECOMPOSABLE part of weight 2, and K_3^ind (= Bloch-Wigner = the volume) is by definition weight 2 MODULO products of lower K-groups. Squaring produces exactly the summand the target excludes. Proved in QOU/Eightfold/IndecomposableQuotientPrune.lean (4 theorems, sorry-free).
+
+WHAT SURVIVES OF THIS BEAN: the observation that the depth-1 stratum H_q^(1,K) is never instantiated while its ingredients are all supplied and theorem-grade (log_q, K_1(F) = F^x, field Q(z_K)) remains TRUE and may still be worth building for its own sake - it is the decomposable side of weight 2, which is a real object. What is dead is using it to reach the VOLUME by multiplication.
+
+The route ranking moves to route A (qou-jopk), the coproduct 2=2+0 split, which the prune explicitly does not touch.
