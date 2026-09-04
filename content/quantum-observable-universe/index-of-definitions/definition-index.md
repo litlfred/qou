@@ -411,7 +411,7 @@
 | [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ | Ch 12 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
 | [prop:borromean-markov-trace-closed-form](#prop:borromean-markov-trace-closed-form) | Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$ | Ch 12 | `qou:QOU.BraidsAndKnots.borromean_markov_trace_closed_form` |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 12 | `qou:QOU.MassTheory.qGaussianObstructionAtQ0` |
-| [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 | `qou:QOU.ObservableMTC.bnAction` |
+| [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 | `qou:QOU.bnAction` |
 | [prop:braid-action-tensor](#prop:braid-action-tensor) | Braid-group action on tensor powers | Ch 5 | `qou:QOU.Braiding.braid_action_tensor` |
 | [prop:markov-branching-three-term](#prop:markov-branching-three-term) | Branching coherence of the Markov trace reduces to $[m+2]_q + [m]_q = [2]_q\,[m+1]_q$ | Ch 12 | `qou:QOU.QBeta.TemperleyLiebTower.markov_branching_general` |
 | [prop:brane-tower-q-laplacian-decay](#prop:brane-tower-q-laplacian-decay) | Brane-tower convergence: q-Laplacian exponential decay drives the $\hbar_q^{2n}$ tail bound | Ch 15 | `qou:QOU.Observations.brane_tower_q_laplacian_decay` |
