@@ -75,14 +75,14 @@
     "conclusion": "B = Q_beta . Delta_tr has no regime of validity in A. Agreement at any particular A is a coincidence of the calibration.",
     "scope": "Scope-(a). Nothing touches the ALGEBRA — Delta_tr(Z,N) is closed-form, derived with zero fitted constants, and reproduces every measured value to 1e-35. What is refuted is the ansatz that binding is a constant times it. Whether some OTHER functional of the same operator works is untouched."
   },
-  "gitCommit": "3cfaa344ac2e62a6a203f0b60de21c0d5e3dc53b",
+  "gitCommit": "15ec6203fb3fc80b1d2c020045abca01fc3e9a28",
   "durationMs": 0,
   "scriptFile": "qbeta_no_regime_of_validity_probe.py",
   "scriptHash": "04338c8f4d24",
-  "scriptCommitSha": "3cfaa344ac2e62a6a203f0b60de21c0d5e3dc53b",
-  "commitSha": "3cfaa344ac2e62a6a203f0b60de21c0d5e3dc53b",
+  "scriptCommitSha": "e0ed5c52e4185c3df7df67bf980fa9aedd37943e",
+  "commitSha": "15ec6203fb3fc80b1d2c020045abca01fc3e9a28",
   "engine": "mpmath",
-  "computedAt": "2026-09-04T02:01:43.412224+00:00",
+  "computedAt": "2026-09-04T09:10:13.489512+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton (experimental pin)",
   "q0Value": "1.10997858275138080759166909561"
