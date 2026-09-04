@@ -26,8 +26,16 @@ comes from ONE generator `g`, so it touches only the components containing stran
 `g` and `g+1`.
 
 A summand joining two components links them. Contrapositively, a triple with
-`Delta = 0` shares no summand between any two of its members -- so its sublink is a
-3-component UNLINK, and every Milnor invariant vanishes on it.
+`Delta = 0` shares no summand between any two of its members -- so its sublink is SPLIT, and
+every Milnor invariant of length >= 2 vanishes on a split link.
+
+CORRECTED 2026-09-04: this said UNLINK, which over-claimed. Sharing no summand gives
+SPLITNESS, not unknotted components -- and the components are NOT unknots. A sibling's
+measurement (docstring of atom_closure_milnor_indeterminacy_probe.py, landed on main
+while this branch was open) finds every multi-strand component is a (2, odd)-torus
+KNOT by exact-integer Kauffman bracket. The conclusion is unaffected (splitness
+suffices; local knotting changes no Milnor invariant) but the cited invariant was
+wrong.
 
     the condition that makes mubar DEFINED is the condition that makes it ZERO
 
@@ -48,8 +56,8 @@ checks in both branches -- this measurement does not depend on how the
 Companion Lean: QOU/Mass/MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean
 (lean-direct exit 0, sorry-free; `separated_of_delta_zero` depends on NO axioms).
 
-SCOPE (b) on the MIN-SPAN FAMILY, invariant cited: Milnor invariants vanish on an
-unlink, plus the connected-sum decomposition of a monotone braid closure. It does
+SCOPE (b) on the MIN-SPAN FAMILY, invariant cited: Milnor invariants of length >= 2
+vanish on a SPLIT link, plus the connected-sum decomposition of a monotone braid closure. It does
 NOT refute route 3 in general -- on a genuinely Brunnian carrier like L6a4 the
 summand hypothesis fails and `mubar_123 = 1`. It does NOT touch the `Delta = 2`
 triples, which touch a linked pair and retain one bit; those are the residual and
@@ -223,7 +231,8 @@ def main() -> int:
         computed=str(joining_generators), expected="0", tolerance="0", unit="generators",
         source=("THE RESULT. Summed over all min-span triples of all 8 isotopes "
                 "(A = 4..16). Not one, so every such triple is separated and its "
-                "sublink is an unlink."),
+                "sublink is SPLIT (not an unlink -- the components are (2,odd)-torus "
+                "knots; splitness is what the vanishing needs)."),
     )
     b.add_assertion(
         name="component_count_law_mu_equals_A_plus_1",

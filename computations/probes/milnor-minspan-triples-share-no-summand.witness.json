@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T03:14:45.622265+00:00",
-  "commitSha": "ebf996069e874c4ec3d62c266036907174dd0b68",
+  "computedAt": "2026-09-04T10:28:21.057512+00:00",
+  "commitSha": "47266e1e8f0de10920c62e4ad30a8e57592170d1",
   "assertions": [
     {
       "name": "every_generator_touches_at_most_two_components",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": "0",
       "unit": "generators",
-      "source": "THE RESULT. Summed over all min-span triples of all 8 isotopes (A = 4..16). Not one, so every such triple is separated and its sublink is an unlink."
+      "source": "THE RESULT. Summed over all min-span triples of all 8 isotopes (A = 4..16). Not one, so every such triple is separated and its sublink is SPLIT (not an unlink -- the components are (2,odd)-torus knots; splitness is what the vanishing needs)."
     },
     {
       "name": "component_count_law_mu_equals_A_plus_1",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "milnor-minspan-triples-share-no-summand",
   "scriptFile": "milnor_minspan_triples_share_no_summand_probe.py",
-  "scriptHash": "568460fbce3e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "92c3acdda02e",
+  "scriptCommitSha": "a838519f2e87486cd10f81091a99ddfd7a606bbd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

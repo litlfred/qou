@@ -11,7 +11,9 @@ WHAT THIS TESTS, and why it needed testing. The route-3 result
 that is TRUE ONLY FOR MONOTONE WORDS: a monotone closure is a connected sum
 `#_g T(2, e_g)`, so each summand comes from one generator and touches AT MOST 2
 components. A shared summand links, so `Delta = 0` -- the condition for `mubar` to
-be a genuine integer -- forces separation, hence an unlink, hence `mubar = 0`.
+be a genuine integer -- forces separation, hence a SPLIT sublink, hence `mubar = 0`.
+(Split, not unlink: the components are (2, odd)-torus knots. Splitness is what the
+vanishing needs; local knotting changes no Milnor invariant.)
 
 Sibling #6561 proved (sorry-free, `QOU/MathlibExt/RevisitClassCrossTerm.lean`) that
 the cyclic square `(g_m g_{m+1})^2` -- three adjacent strands cyclically braided --

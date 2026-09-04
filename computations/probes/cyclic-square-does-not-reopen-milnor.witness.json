@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T04:30:12.379977+00:00",
-  "commitSha": "89edb3cd704b1e0b3ed9c5d4e85c0e08cc2a90cf",
+  "computedAt": "2026-09-04T10:28:21.631022+00:00",
+  "commitSha": "47266e1e8f0de10920c62e4ad30a8e57592170d1",
   "assertions": [
     {
       "name": "cyclic_square_DOES_break_the_at_most_two_components_premise",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "cyclic-square-does-not-reopen-milnor",
   "scriptFile": "cyclic_square_does_not_reopen_milnor_probe.py",
-  "scriptHash": "e89398d35603",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ca4800160218",
+  "scriptCommitSha": "c040c6640c62e36610bcdbb3aafb1f91370a241d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
