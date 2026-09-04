@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T20:49:10Z
+updated_at: 2026-09-04T02:24:00Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2249,3 +2249,51 @@ detail in `resolved-topics.md`), since its own entry ended by handing over the
 gate that this closes.
 ## 2026-09-03 — a NON-bond-graph structural source for the extensive term exists in the trace (qou-kru4)
 The bond-graph routes are closed from every direction above. Separately: the Markov trace is NOT bond-multiplicative at n=4 — the interleaved word s0 s1 s0 s2 s1 carries the exact cross term z(z^2-hz-1) = z * (conv-D Markov defect), negative (extra binding), confirmed two independent ways. This is a WORD-CLASS effect (bonds re-crossing after a neighbour bond), not a bond-graph count, so none of the bond-graph exclusions apply to it. It is a candidate source, not a closure: the production word is sequential (no number moves) and which word class a nucleus is remains qou-5vhf. See qou-ls86's 2026-09-03 entry and docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.
+
+
+## 2026-09-04 — CORRECTION: spin is NOT the residue, and I cited a bean for the opposite of what it says
+
+Retracts the last line of the 2026-09-03 section above. **The linking-matrix
+result is untouched** — `lk` IS `I₃`, both channels at `I₃ = 0`, achievable
+asymmetry exactly 1. What was wrong was its *"still open"* list, which ended:
+
+> anything carrying **spin**, which is what actually separates the channels
+
+**Why that is wrong.** The channels do differ in `S` (1 vs 0), so it is not
+false as physics — it is false as a statement about the *search*, which is what
+it was being used for. In the S-wave Pauli **locks** spin to isospin: space
+symmetric ⇒ spin and isospin symmetry opposite, so `S=1 ⟺ T=0` and `S=0 ⟺ T=1`.
+A Pauli-consistent interface carries a projector in each SU(2) with the roles
+exchanged, and the same two scalars multiply to the same number —
+`QOU.QBeta.InterfaceScalar.separable_interface_degenerate`
+(`InterfaceScalar.lean:628`, sorry-free).
+
+**The sharper half, which I had missed.** That carrier's own docstring: *"The
+conclusion holds for **every** `fSpace`, so no choice of space index rescues a
+separable interface."* So neither a spin factor nor a space factor escapes while
+the interface is separable. And the one surviving shape `qou-vbyi` names — the
+non-separable `(S,L)` tensor coupling — is closed by
+`TensorCouplingCannotUnbindSinglet` (#6488), which landed the same day I wrote
+the error.
+
+**The citation error, which is the part worth keeping.** I credited bean
+`qou-7zob` as *"reaching the same wall from the flavour side"*. It does not: its
+body **refutes** the spin route, stating the Pauli lock in as many words. I
+matched it on topic and cited it on agreement without reading it, and that
+citation shipped in five merged artifacts (#6461). Recorded as a TRAP in
+`.claude/agent-memory/corpus-grepper/MEMORY.md`: a title tells you the subject,
+never the verdict.
+
+**WHERE THE RESIDUE ACTUALLY IS.** `separable_interface_degenerate` *assumes*
+`fSpin s1 = fIso t1` and `fSpin s0 = fIso t0` — that the **same two projector
+scalars** serve both SU(2)s. Hypothesis, not derivation. A framework giving the
+two SU(2)s different scalars breaks the lock and the degeneracy with it. Nothing
+in the corpus shows they must be equal; nothing shows they may differ.
+
+And note the *shape* of that question: it is about **how the interface is
+constructed**, not about which quantum number is attached to it. All four routes
+this arc has closed — trace subtraction, `μ̄`, linking data, spin — were of the
+second kind. That may be the more useful finding than any one of the closures.
+
+Sites corrected (PR #6553): the probe (×2), the audit doc, corpus-grepper
+`resolved-topics.md`, and this bean.
