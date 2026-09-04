@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-09-03T23:14:09Z
+updated_at: 2026-09-04T02:22:39Z
 ---
 
 Epic to close conjectural class fields that are standard math (not manuscript claims). Three axes: LP/SDP duality, parallelogram contour, RSK combinatorics.
@@ -92,3 +92,47 @@ Two grep traps recorded, both hit while measuring: `dualCone` returns 0 while
 itself; both were caught only by re-running.
 
 Full table: [`docs/audits/2026-09-03-axiom-tier-triage.md`](../docs/audits/2026-09-03-axiom-tier-triage.md).
+
+
+## 2026-09-04 — RETRACTION: the axiom triage above covers the LIBRARY, not the corpus
+
+The entry immediately above reports "19 axioms" and "0 sorries". Both are
+**library-tree only** — `content/quantum-observable-universe/lean`, the Lake
+tree of one paper. Corpus-wide on `origin/main`:
+
+| | said | actual (3529 files) |
+|---|---|---|
+| `.lean` files | 2552 | **3529** |
+| real `sorry` terms | 0 | **9** — 8 cited, **1 uncited** |
+| `axiom` declarations | 19 | **182** — 118 cited |
+
+Missing: **944 content-block siblings**, and the **UGB / Fred2005** Lake
+trees. Under AGENTS.md §0a a sibling resolves *before* the library, so the
+sibling tree is what a block's `lean.ref` actually reaches — the more
+load-bearing one.
+
+**The Mathlib verdicts are unaffected** (no `℘`, `JucysMurphy`, `Hoefsmit`,
+`windingNumber`, residue theorem, strict complementarity, Goldman–Tucker;
+Farkas present, strong conic duality a TODO in Mathlib's own source). Those
+are facts about Mathlib, not about which tree was walked. **The 163 axioms
+outside the library are untriaged.**
+
+**The scope gap was hiding a live defect**, which is the reason to record
+this rather than just fix the number.
+`mass-theory/delta-max-uniform-bound.lean` carried
+
+    theorem delta_max_uniform_bound : sorry -- Ref: kassel1995 := sorry
+
+with the **type** a `sorry` — the declaration has no statement, so there is
+nothing it could be wrong about. A shadowing stub in the exact §0a STRICT
+sense: `QOU/MassEndomorphism/DeltaMaxUniformBound.lean:93` holds the real
+`|b.delta n| ≤ b.deltaMax`, proved and cited, and the sibling resolved
+first, so `prop:delta-max-uniform-bound` reached `sorry : sorry` instead.
+`conj-canonical-knot-id-sdp` depends on that proposition. Removed;
+`#print axioms` on the library theorem is clean.
+
+Left undone and flagged: the library file is `DeltaMaxUniformBound.lean`
+while the decl is `delta_max_uniform_bound`, so §0a candidate 2 (path) misses
+and resolution falls to candidate 3 (grep). §0a says align a mis-named
+library file — but it carries five declarations, so renaming it for one is
+wrong.

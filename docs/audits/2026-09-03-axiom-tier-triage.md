@@ -1,12 +1,48 @@
 # The 19 remaining `axiom` declarations — what each is blocked on
 
+> ## 🛑 SCOPE CORRECTION (2026-09-04) — this document covers the LIBRARY tree, not the corpus
+>
+> Everything below is measured over
+> `content/quantum-observable-universe/lean` — the Lake **library** tree of one
+> paper. That is **not** the Lean corpus, and the two lines this document
+> opened with were both wrong for the corpus:
+>
+> | | this doc said | corpus (`origin/main`, 3529 files) |
+> |---|---|---|
+> | real `sorry` terms | **0** | **9** — 8 cited, **1 uncited** |
+> | `axiom` declarations | **19** | **182** — 118 cited |
+>
+> What was missing: **944 content-block siblings** (beside their `.ts`/`.md`,
+> outside the Lake globs) and the **UGB / Fred2005** Lake trees. Under
+> AGENTS.md §0a a sibling resolves *before* the library, so those are the
+> declarations a block's `lean.ref` actually points at — the more load-bearing
+> tree, not the marginal one.
+>
+> **The per-axiom table below is still correct for what it covers**, and the
+> Mathlib verdicts (no `℘`, no `JucysMurphy`, no `Hoefsmit`, no
+> `windingNumber`, no residue theorem, no strict complementarity or
+> Goldman–Tucker; Farkas present, strong conic duality a TODO in Mathlib's own
+> source) are unaffected — they are facts about Mathlib, not about which of
+> our trees was walked. Read the table as *"the 19 library axioms"*, and do
+> not quote the totals.
+>
+> The 163 axioms outside the library tree are **untriaged**. A first look says
+> they are mostly the same character — `frobenius-antipode-lean-stub.lean`,
+> `q-casimir-exists.lean`, `descartes-elliptic-curve.lean` — but that is an
+> impression from filenames, not a measurement, and it should not be repeated
+> as one.
+>
+> Found while crossing this work against a sibling's compile sweep on #6540.
+> `scripts/lean-cited-not-proved-audit.py` now walks `content/` entire.
+
+
 **Measured 2026-09-03 on the working tree at `48ef71f476`**, with
 `scripts/lean-cited-not-proved-audit.py --kind axiom` (2553 `.lean` files).
 Every Mathlib verdict below is a **grep over `.lake/packages/mathlib/Mathlib`**,
 not an inference. Companion to the class-carrier triage in PR #6512, which
 covered the 38 Mathlib-shaped *uninhabited classes* and never looked at axioms.
 
-`sorry` terms in the corpus: **0**.
+`sorry` terms in the **library tree**: **0**. Corpus-wide: **9** (see the scope correction above).
 
 ## Summary
 
