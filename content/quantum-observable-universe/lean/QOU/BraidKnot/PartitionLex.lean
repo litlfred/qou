@@ -127,6 +127,81 @@ theorem lexGt_of_partitionDom_of_ne {μ ν : YoungDiagram}
     have hne_r : μ.rowLen (Nat.find hex) ≠ ν.rowLen (Nat.find hex) := Nat.find_spec hex
     omega
 
+/-! ## The column-length criterion — the engine for the Garnir step
+
+The Garnir composition moves one shape to another by changing the *multiset of
+parts*, so the natural thing to reach for is a sorting argument: sort the new
+composition, compare the two descending lists entrywise.  That is avoidable.
+
+A `YoungDiagram` is determined by either its row lengths or its **column** lengths,
+and the two are exchanged by the single characterisation
+
+    (s, j) ∈ μ   ↔   j < μ.rowLen s   ↔   s < μ.colLen j
+
+so a statement about *how many parts exceed a threshold* — which is exactly what the
+Garnir count says — is a statement about `colLen`, and it converts to a statement
+about `rowLen` with no list, no sort, and no permutation reasoning.
+
+`lexGt_of_colLen` is that conversion.  Its hypotheses are what the Garnir counting
+argument delivers verbatim: the number of parts above `k` goes **up by at least one**,
+and the count above every larger threshold is **unchanged**.
+-/
+
+/-- Two naturals with the same strict lower sets are equal. -/
+theorem eq_of_lt_iff {a b : ℕ} (h : ∀ j, j < a ↔ j < b) : a = b := by
+  rcases Nat.lt_trichotomy a b with hab | hab | hab
+  · exact absurd ((h a).mpr hab) (Nat.lt_irrefl a)
+  · exact hab
+  · exact absurd ((h b).mp hab) (Nat.lt_irrefl b)
+
+/-- Row length is pinned by the column lengths, threshold by threshold. -/
+theorem rowLen_eq_of_colLen_iff {μ ν : YoungDiagram} {s : ℕ}
+    (h : ∀ j, s < μ.colLen j ↔ s < ν.colLen j) : μ.rowLen s = ν.rowLen s := by
+  refine eq_of_lt_iff fun j => ?_
+  rw [← YoungDiagram.mem_iff_lt_rowLen, ← YoungDiagram.mem_iff_lt_rowLen,
+    YoungDiagram.mem_iff_lt_colLen, YoungDiagram.mem_iff_lt_colLen]
+  exact h j
+
+/-- **The column-length criterion for a lex step.**
+
+If `ν` has strictly more parts exceeding `k` than `μ` does, and exactly as many
+parts exceeding every larger threshold, then `ν >ₗ μ` — with the witness named:
+`μ.colLen k`, the number of parts of `μ` above `k`.
+
+This is the shape of every Garnir step.  Naming the witness rather than leaving it
+existential is what the probe measured: it is **not** the Garnir row `i`.  At
+`λ = (2,2,2)` with node `(i,j) = (1,0)` the new shape is `(3,2,1)`, which first
+differs from `λ` at row `0`, because the merged part overtakes the rows above `i`
+that tie with `λᵢ`.  `μ.colLen k` gets that right; `i` does not.
+
+The proof needs no sorting.  Below the witness both diagrams contain every column
+`j ≤ k` (their column lengths there are at least `μ.colLen k`, which exceeds the row
+index) and agree above `k` by hypothesis, so the rows match.  At the witness the
+hypothesis at `k` separates them: `ν` still has column `k`, `μ` does not. -/
+theorem lexGt_of_colLen {μ ν : YoungDiagram} {k : ℕ}
+    (hgt : ∀ m, k < m → μ.colLen m = ν.colLen m)
+    (hk : μ.colLen k < ν.colLen k) : ν >ₗ μ := by
+  refine ⟨μ.colLen k, fun s hs => ?_, ?_⟩
+  · -- below the witness the two diagrams have the same rows
+    refine (rowLen_eq_of_colLen_iff (μ := ν) (ν := μ) fun j => ?_).symm ▸ rfl
+    rcases Nat.lt_or_ge k j with hj | hj
+    · rw [hgt j hj]
+    · -- `j ≤ k`: both column lengths already exceed the row index `s`
+      constructor
+      · intro _
+        exact lt_of_lt_of_le hs (YoungDiagram.colLen_anti μ j k hj)
+      · intro _
+        exact lt_of_lt_of_le (hs.trans hk) (YoungDiagram.colLen_anti ν j k hj)
+  · -- at the witness, column `k` is present in `ν` and absent from `μ`
+    have hμ : μ.rowLen (μ.colLen k) ≤ k := by
+      by_contra hcon
+      push_neg at hcon
+      have : (μ.colLen k, k) ∈ μ := YoungDiagram.mem_iff_lt_rowLen.mpr hcon
+      exact Nat.lt_irrefl _ (YoungDiagram.mem_iff_lt_colLen.mp this)
+    have hν : k < ν.rowLen (μ.colLen k) :=
+      YoungDiagram.mem_iff_lt_rowLen.mp (YoungDiagram.mem_iff_lt_colLen.mpr hk)
+    exact lt_of_le_of_lt hμ hν
+
 /-! ## The two orders are genuinely different
 
 Everything above would be consistent with lex and dominance agreeing, in which case
@@ -171,6 +246,60 @@ theorem dom_fails_lex_holds : (nu411 >ₗ lam33) ∧ ¬ partitionDom nu411 lam33
     have h := hdom 2
     simp only [Finset.sum_range_succ, Finset.sum_range_zero, rowLen_lam33_zero,
       rowLen_lam33_one, rowLen_nu411_zero, rowLen_nu411_one] at h
+    omega
+
+/-! ### The engine is not vacuous — it derives the instance above
+
+`lexGt_of_colLen` would be useless if its hypotheses were hard to meet.  They are
+met by the very pair that separates the two orders, and re-deriving
+`dom_fails_lex_holds.1` through the engine rather than by hand is the check that the
+criterion is usable on a real Garnir step.
+
+At the threshold `k = 3`: `(3,3)` has no part exceeding `3`, while `(4,1,1)` has one.
+Above `3` neither has any.  So the criterion fires with witness `lam33.colLen 3 = 0`
+— which is indeed where the two shapes first differ.
+-/
+
+theorem colLen_lam33_three : lam33.colLen 3 = 0 := by
+  by_contra hcon
+  have h0 : 0 < lam33.colLen 3 := Nat.pos_of_ne_zero hcon
+  have : (3 : ℕ) < lam33.rowLen 0 :=
+    YoungDiagram.mem_iff_lt_rowLen.mp (YoungDiagram.mem_iff_lt_colLen.mpr h0)
+  rw [rowLen_lam33_zero] at this
+  omega
+
+theorem colLen_lam33_of_three_lt {m : ℕ} (hm : 3 < m) : lam33.colLen m = 0 :=
+  Nat.le_zero.mp (colLen_lam33_three ▸ YoungDiagram.colLen_anti lam33 3 m hm.le)
+
+theorem colLen_nu411_three : nu411.colLen 3 = 1 := by
+  have hpos : 0 < nu411.colLen 3 :=
+    YoungDiagram.mem_iff_lt_colLen.mp
+      (YoungDiagram.mem_iff_lt_rowLen.mpr (by rw [rowLen_nu411_zero]; omega))
+  have hlt : ¬ (1 < nu411.colLen 3) := by
+    intro h1
+    have : (3 : ℕ) < nu411.rowLen 1 :=
+      YoungDiagram.mem_iff_lt_rowLen.mp (YoungDiagram.mem_iff_lt_colLen.mpr h1)
+    rw [rowLen_nu411_one] at this
+    omega
+  omega
+
+theorem colLen_nu411_of_three_lt {m : ℕ} (hm : 3 < m) : nu411.colLen m = 0 := by
+  by_contra hcon
+  have h0 : 0 < nu411.colLen m := Nat.pos_of_ne_zero hcon
+  have : m < nu411.rowLen 0 :=
+    YoungDiagram.mem_iff_lt_rowLen.mp (YoungDiagram.mem_iff_lt_colLen.mpr h0)
+  rw [rowLen_nu411_zero] at this
+  omega
+
+/-- **Non-vacuity: the column criterion derives the separating instance.**
+
+Same conclusion as `dom_fails_lex_holds.1`, obtained through `lexGt_of_colLen`
+instead of by exhibiting the witness by hand.  So the engine fires on the shape of
+step the Garnir relation produces, rather than being a criterion nothing satisfies. -/
+theorem lexGt_nu411_lam33_via_colLen : nu411 >ₗ lam33 := by
+  refine lexGt_of_colLen (k := 3) (fun m hm => ?_) ?_
+  · rw [colLen_lam33_of_three_lt hm, colLen_nu411_of_three_lt hm]
+  · rw [colLen_lam33_three, colLen_nu411_three]
     omega
 
 /-- The dominance bridge is therefore **strictly** one-directional. -/
