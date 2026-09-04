@@ -157,3 +157,54 @@ artifact. A fourth sweep scoped by **the argument's own steps** — take the
 claim chain end to end and ask, at each arrow, *what would have to be true* —
 would have found R1 immediately and R2 by construction. That is the sweep to
 run first next time, and the other three afterwards.
+
+---
+
+## R4 — and I under-scoped a fourth time, one message after praising the fix for it
+
+Immediately after `qou-yb2b`'s degenerate branch landed, I reported that the
+premise it rests on — *"the invariant on the exceptional divisor is free of
+rank 1"* — was **"a real citation-and-statement gap"** because *"the corpus has
+nothing on Przytycki or `K_q(S³)`"*. That was measured on `content/` and
+`docs/` only. Corpus-grep **path 5** says otherwise:
+
+| term | `library/` directories |
+|---|---|
+| `Przytycki` | **15** |
+| `character variety` | **35** |
+| `skein module of` | 10 |
+| `Kauffman bracket skein module` | 4 |
+| `Bullock` | **3** |
+
+And one of them is precisely on point: **`library/gn2`** — Gelca & Nagasato,
+*"Some results about the Kauffman bracket skein module of the twist knot
+exterior"* — the KBSM of a knot **exterior**, which is the object the extension
+question needs. `Bullock` is the author of the theorem I quoted from memory
+(KBSM as a quantization of the SL(2,ℂ) character variety) and is held in three
+directories.
+
+**What is genuinely absent is the registration, not the material.**
+`content/schema/references.ts` has **zero** entries matching `przytycki` or
+`bullock`. So this is the citation inventory's own class — *held, unregistered*
+— of which it found `library/0803219` as one instance; here are two more, on the
+question this PR is actually about. There is already an open bean to add a
+reference for `gn2.pdf`.
+
+**Two cautions before anyone treats `gn2` as the answer.** Its extracted
+`sections/` carry **no** `free` / `rank` / `basis` statement at all — a grep
+returns nothing — so this is the *"held ≠ held in full"* trap from the citation
+inventory, one document over: the PDF is on disk, the structural claims did not
+survive extraction. And a twist-knot **exterior** is not `S³`; the rank-1 case
+the degeneration theorem needs is the *simply-connected* one, and the only held
+section pairing "skein module" with a 3-sphere is `arxiv-2111.06645v3`,
+unexamined here.
+
+Beaned as `qou-40kk`.
+
+**Fourth instance in one session**, after (i) the Mathlib/`library` hyperbolic
+claim the owner corrected, (ii) "the hyperbolic volume form is not a QOU
+structure", and (iii) R1 above. All four are the same shape: **measure a
+narrower surface than the claim, then state the claim at full width.** The
+per-instance fixes are not working; what would work is a standing rule —
+*before writing "the corpus has no X", run path 5 and path 6, and say which
+paths were run.*
