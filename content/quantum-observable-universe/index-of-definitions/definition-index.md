@@ -77,7 +77,7 @@
 | [def:categorical-q-reeb-flow](#def:categorical-q-reeb-flow) | Categorical q-Reeb flow | Ch 4 | `qou:QOU.CategoricalQReebFlow` |
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 | `qou:QOU.CategoricalReeb` |
 | [def:categorical-reeb-derivation](#def:categorical-reeb-derivation) | Categorical Reeb derivation | Ch 2 | `qou:QOU.AlgebraicSubstrate.CategoricalReebDerivation` |
-| [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 12 | `qou:QOU.Torsion.CategoricalTransferMatrix` |
+| [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 12 | `qou:QOU.CategoricalTransferMatrix` |
 | [def:cemetery-group](#def:cemetery-group) | Cemetery group (subcategory annihilated by $\tau$) | Ch 8 | `qou:QOU.BraidKnot.CemeteryGroup` |
 | [def:chebyshev-torus-coefficients](#def:chebyshev-torus-coefficients) | Chebyshev crossing coefficients of $T_{2,n}$ | Ch 14 | `qou:QOU.Archimedean.chebyshevTorusCoefficients` |
 | [def:classical-riemann-zeta](#def:classical-riemann-zeta) | Classical Riemann zeta function as adelic limit | Ch 19 | `qou:QOU.AlgebraicSubstrate.ClassicalRiemannZeta` |
