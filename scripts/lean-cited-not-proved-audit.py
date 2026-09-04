@@ -31,6 +31,42 @@ import argparse, json, re, subprocess, sys
 from pathlib import Path
 
 LEAN_ROOT = "content/quantum-observable-universe/lean"
+# The Lake LIBRARY tree above is NOT the whole Lean corpus.  Content-block
+# SIBLINGS live beside their `.ts`/`.md` under `content/<paper>/<chapter>/`,
+# outside the Lake globs -- and under the AGENTS.md 0a resolution order a
+# sibling resolves BEFORE the library, so those are the declarations a content
+# block's `lean.ref` actually points at.
+#
+# Scanning only the library silently under-reported this corpus.  Measured on
+# origin/main 2026-09-04: 944 sibling files carrying 8 real `sorry` terms and
+# 148 `axiom` declarations, against 0 and 19 in the library.  Every "corpus-wide"
+# figure this script produced before that date was library-only -- including a
+# "0 sorries" claim that was wrong for the corpus and right only for the tree
+# it happened to walk.
+CONTENT_ROOT = "content"
+
+
+def scan_paths(rev, root):
+    """Every `.lean` file in the corpus: the Lake library AND the siblings."""
+    if rev:
+        listing = subprocess.run(
+            ["git", "ls-tree", "-r", "--name-only", rev, CONTENT_ROOT],
+            capture_output=True, text=True).stdout.split()
+        return sorted(f for f in listing if f.endswith(".lean"))
+    return sorted(
+        str(p.relative_to(root))
+        for p in (root / CONTENT_ROOT).rglob("*.lean")
+        if ".lake" not in p.parts)
+
+
+def is_sibling(rel: str) -> bool:
+    """A content-block sibling: under `content/`, but not in a Lake tree."""
+    return "/lean/" not in rel
+
+
+def display(rel: str) -> str:
+    """Library files keep their `QOU/...` path; siblings keep enough to locate."""
+    return rel[len(LEAN_ROOT) + 1:] if rel.startswith(LEAN_ROOT + "/") else rel
 
 
 def strip_comments(src: str) -> str:
@@ -492,22 +528,7 @@ def main() -> int:
 
     root = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"],
                                capture_output=True, text=True).stdout.strip())
-    if a.rev:
-        listing = subprocess.run(
-            ["git", "ls-tree", "-r", "--name-only", a.rev, LEAN_ROOT],
-            capture_output=True, text=True).stdout.split()
-        files = [f for f in listing if f.endswith(".lean")]
-    else:
-        # EXCLUDE `.lake/` -- the working-tree walk otherwise descends into
-        # `.lake/packages/mathlib` and counts MATHLIB'S OWN declarations as
-        # corpus findings, while the `--rev` path (git ls-tree, tracked files
-        # only) silently does not.  Measured: 10566 files vs 2552, and 216
-        # "axioms" vs a true 19 -- 197 of them Mathlib's.  The two modes must
-        # answer the same question or a working-tree run cannot be compared
-        # against a committed witness.
-        files = [str(p.relative_to(root))
-                 for p in (root / LEAN_ROOT).rglob("*.lean")
-                 if ".lake" not in p.parts]
+    files = scan_paths(a.rev, root)
 
     sorries, axioms, prose_hits = [], [], 0
     uninhabited_out: list = []
@@ -526,14 +547,14 @@ def main() -> int:
             li = code.count("\n", 0, m.start())
             kind, name = decl_before(code, m.start())
             sorries.append({
-                "file": rel[len(LEAN_ROOT) + 1:], "line": li + 1,
+                "file": display(rel), "line": li + 1,
                 "decl_kind": kind, "decl": name,
                 "ref": ref_above(raw_lines, li),
             })
         for m in AXIOM.finditer(code):
             li = code.count("\n", 0, m.start())
             axioms.append({
-                "file": rel[len(LEAN_ROOT) + 1:], "line": li + 1,
+                "file": display(rel), "line": li + 1,
                 "axiom": m.group(1), "ref": ref_above(raw_lines, li),
             })
 
@@ -562,9 +583,9 @@ def main() -> int:
             if raw is None:
                 continue
             code = strip_comments(raw)
-            all_code[rel[len(LEAN_ROOT) + 1:]] = code
+            all_code[display(rel)] = code
             for m in CLASS_DECL.finditer(code):
-                classes.append({"file": rel[len(LEAN_ROOT) + 1:],
+                classes.append({"file": display(rel),
                                 "line": code.count("\n", 0, m.start()) + 1,
                                 "class": m.group(1)})
         index = build_provider_index(all_code)
@@ -602,7 +623,7 @@ def main() -> int:
         # PASS 2 -- classify, resolving `consumed` against the corpus set.
         for rel, code in sources.items():
             for e in prop_valued_fields(code, projected):
-                e["file"] = rel[len(LEAN_ROOT) + 1:]
+                e["file"] = display(rel)
                 pf.append(e)
         selfnom = [e for e in pf if e["shape"] == "self_nominating"]
         param = [e for e in pf if e["shape"] == "parameterised"]
