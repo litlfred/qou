@@ -203,3 +203,73 @@ The general lesson is the one this document already argues, now with a second
 instance: **a bucket count is evidence about the detector and the tree
 together.** Quoting a committed witness across a merge attributes upstream
 movement to your own change, in whichever direction happens to flatter it.
+
+---
+
+## Update 2026-09-04 (2) — the item-5 evidence mode, and it caught one of mine
+
+`--item5` on `scripts/conditional-on-class-hypothesis-audit.ts` prints, for each
+member of `binds_cone_class`: the class it binds, that class's field types, and
+the theorem's conclusion. **It computes no verdict.** Whether a field is a
+genuine sub-hypothesis or the conclusion in disguise is not decidable by regex,
+and this document's own header records four narrowings of a name-shaped test
+that each overstated what it found. The bucket is nine blocks — small enough to
+adjudicate every member by hand, which is the point.
+
+Two parser bugs had to be fixed before the output was worth reading: the class
+body must be taken as the **indented block** following the declaration line (a
+lookahead regex silently returned zero fields for all nine), and the conclusion
+is what follows the **last top-level `:`** in the signature. Both first cuts
+printed empty and would have read as "nothing to see".
+
+### Adjudication, all nine
+
+| block | binds | verdict |
+|---|---|---|
+| `prop:explicit-central-idempotent` | `ExplicitCentralIdempotentConjecture` | **ITEM-5 VIOLATION** |
+| `prop:proton-mass-substrate-identity` | `ProtonBorromeanAssembly` | borderline |
+| `prop:residue-at-root` | `ResidueAtRoot` | different defect — **no Prop fields at all** |
+| `prop:deuteron-binding-dressing-proton-net` | `BorromeanQuark` | legitimate |
+| `prop:vol-through-tau` | `VolumeConjecture` | legitimate |
+| `thm:aomega-fourone-dt-count` | `StokesDTBPSBridge` | legitimate |
+| `prop:crystal-r-matrix-sub-lemma` | `CrystalGraphRealization` | legitimate |
+| `prop:operator-valued-combiner-convergence` | `CrystalGraphRealization` | legitimate |
+| `thm:confinement-grading-correspondence-conditional` | `CrystalGraphRealization` | legitimate |
+
+**The violation is unambiguous, and it is in a block this same PR touched.**
+`ExplicitCentralIdempotentConjecture` has exactly one field —
+
+```
+idempotent : ∀ {n : ℕ} (lam : List ℕ) (_h : lam.sum = n),
+  centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
+```
+
+— and the block's conclusion is that statement at one instance, discharged by
+`exact hi.idempotent lam h`. A bare projection: the class carries the
+conclusion, so the conditional theorem proves nothing modulo the class. The
+defect is **pre-existing** — both the class and the projection predate this
+work — but the `authorNote` added earlier the same day asserted "§3b-cond is
+now satisfied on all five items", and that claim was mine and is wrong. Item 4
+*is* closed; item 5 never was, and I did not check it. Corrected in place.
+
+Fixing it properly means re-encoding the class as the genuine sub-hypotheses of
+the Murphy–Lagrange argument — the JM diagonal action, and the interpolation
+step — so the theorem composes them rather than projecting. That is real
+mathematics and is left open.
+
+The two non-legitimate non-violations are worth separating rather than folding
+in: `ProtonBorromeanAssembly` carries `assembly : protonMass = multiplicity *
+(mMu * fBor - bindingCount * mE)` and the theorem substitutes two constant
+fields and normalises, so the class carries the block's claim in a lightly
+different form — borderline, not a projection. `ResidueAtRoot` has **only data
+fields** (`target`, `project`) and no `Prop` field at all, so it asserts
+nothing; that is `proof-no-empty-prop-carrier`, a different criterion, and not
+what this pass is measuring.
+
+### What this settles about the bucket
+
+`binds_cone_class` is an **upper bound**, exactly as the script's header already
+says of `binds_no_carrier`. Both ends of the split over-count in their own
+direction, and the corrected count of blocks that satisfy items 2 **and** 5 is
+at most 8 of 9 — with one further borderline and one different-criterion flag
+inside that 8.
