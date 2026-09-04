@@ -3,10 +3,10 @@
 **Question asked:** do `c₂`, `c₃` continue the cancellation that takes the strongly
 A-dependent leading order to a flat sum by `k = 11`?
 
-**Answer, at A = 2 and A = 3: no, and the reason is sharper than "no".** The
-second-order coefficient does not damp the A-dependence — it *grows* with A, fast
-enough that by A = 3 the second-order term **equals** the first at the physical
-`ℏ_q`. Beans `qou-brng` / `qou-pdg9`.
+**Answer for `c₂`, at A = 2, 3 and 4: no — and the reason is sharper than
+"no".** The second-order term does not damp the A-dependence; weighted by the
+physical `ℏ_q` it *overtakes* the first, passing equality at A = 3 and reaching
+**1.46×** at A = 4. `c₃` is not measured. Beans `qou-brng` / `qou-pdg9`.
 
 ## Measured
 
@@ -33,8 +33,10 @@ identical to both the committed value and the closed form, which is the check
 that the raised precision did not perturb anything else.
 
 `c₁` was already known to be flat-then-decaying across A (2.31 at A = 2, 2.02 at
-A = 4, 0.84 at A = 6). **`c₂` does the opposite**: ~11–13.6 at A = 2, ~25.7–27.0
-at A = 3 — roughly doubling in one step.
+A = 4, 0.84 at A = 6). **`c₂` does not follow it down**: ~11–13.6 at A = 2,
+~25.7–27.0 at A = 3, **29.9 at A = 4**. It roughly doubles from A = 2 to A = 3,
+then largely flattens (+10.9 %) — so the divergence between the two orders comes
+from `c₁`'s decay, not from continued growth in `c₂`. See §What that means.
 
 ## What that means
 
@@ -101,8 +103,6 @@ being carried over from the source's own claim.
 - **`c₂` is measured at A = 2, 3, 4 only.** Nothing here constrains A ≥ 5, and
   A = 6 is out of reach by this route (`n = 3A = 18` strands against ⁴He's 12,
   and ⁴He at `P = 4` already takes 264 s).
-- **A = 6 is far out of reach by this route.** ⁶Li is `n = 3A = 18` strands
-  against ⁴He's 12; the ⁴He case is already the slow one at `P = 3`.
 - **This does not contradict #6427's flatness result.** That measured the summed
   `unified_iterative_correction` at matched truncation and found the *total*
   flat. This measures individual coefficients of a different expansion. A
@@ -111,12 +111,19 @@ being carried over from the source's own claim.
 
 ## Provenance of the numbers
 
-The five `c₂` values are not new compute. Re-running `main`'s probe unchanged
-reproduced **8 assertions, all passed**, and left the committed witness
-untouched (`[unchanged — kept on-disk commitSha for staleness]`), so the `c₁`
-column here is byte-identical to what `main` already records and the `c₂` column
-is what that same run prints. What is new is only the `ℏ_q`-weighting and the
-reading of it.
+**Five of the six `c₂` values are not new compute; the ⁴He one is.** Re-running
+`main`'s probe unchanged reproduced **8 assertions, all passed**, and left the
+committed witness untouched (`[unchanged — kept on-disk commitSha for
+staleness]`) — so the `c₁` column is byte-identical to what `main` already
+records, and the A = 2 and A = 3 `c₂` values are what that same run prints.
+
+**The ⁴He `c₂` is genuinely new**: it required a second run at `P = 4`, since the
+committed precision returns `None` there. It is stated separately above rather
+than folded into the same provenance claim, because "re-ran an existing probe"
+and "raised its precision to get a value it does not normally produce" are
+different acts and only the first is reproducible by running `main` as-is. Its
+`c₁` agreeing with the committed `259/128` is what licenses putting the two on
+one line.
 
 ## What would settle the rest
 
