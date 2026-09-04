@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T07:39:02Z
+updated_at: 2026-09-04T08:21:55Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -256,3 +256,37 @@ another agent's audit script is not a primary source.
 Remaining 4: spin-involution-lp-dual-invariance 22 (`qou-0xrn`),
 townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
 categorical-transfer-matrix 3 (`qou-xdwp`).
+
+
+## 2026-09-04, final — 38 → 1
+
+Only `spin-involution-lp-dual-invariance` (22, `qou-0xrn`) left; that is the
+author's judgement call and stays untouched.
+
+`categorical-transfer-matrix`, `vertex-algebra-jet-relations` and
+`townsend-biot-savart-strain` all repaired, and each carried something larger
+than its compile error.
+
+**FOUR bare axioms across the sweep, wrong four different ways:**
+`ope_is_skein` EMPTY (record construction); `transfer_matrix_level_independence`
+FALSE (refutation now proved — a free `vertex_volume` field means two matrices
+can share a base and carry any two values); `markov_level_compatible` provable
+by `rfl` AND describing a different claim than its statement; and
+`kappa_squared_tends_to_zero_axiom` **not an axiom at all** — a `theorem` with a
+real filter proof, under a docstring announcing it as pending Mathlib
+infrastructure.
+
+`#print axioms` sees none of these. It reports what a proof term depends on, not
+whether the statement is empty, false, docstring-mismatched, or already proved
+under a misleading name.
+
+**Two `lean.ref`s pointed at the wrong declaration.**
+`categorical-transfer-matrix` named `QOU.Torsion.CategoricalTransferMatrix` —
+live library code (a spectral mass-gap object with consumers in
+`MassGapKeystone`/`MassGapFrontier`), not the braiding object its `.md`
+describes. `vertex-algebra-jet-relations` named `euler_level_stable`, which was
+a `norm_num` arithmetic identity; that WAS the block's formalisation.
+
+`townsend`'s 7 errors were all Mathlib API drift (`Tendsto.pow` → `𝓝 (0^2)`,
+rpow-vs-natural-power, `Pi.div`, an implicit `τ` passed explicitly) — the
+opposite of what its docstring claimed.

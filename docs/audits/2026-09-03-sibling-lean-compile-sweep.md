@@ -490,3 +490,72 @@ bean `qou-e7xv`.
 | 7 | `fluid-dynamics/townsend-biot-savart-strain` |
 | 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
 | 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`) |
+
+---
+
+## Update 2026-09-04, final pass — 38 → 1
+
+**37 of the 38 at 0 errors.** The one remaining is
+`mass-theory/spin-involution-lp-dual-invariance` (22 errors, bean `qou-0xrn`) —
+a judgement call already put to the author and deliberately not patched.
+
+Three more repaired, and each turned up something larger than its compile
+error. Together with `vertex-operator` they make a family worth naming.
+
+### FOUR bare axioms in the sweep, and each was wrong in a different way
+
+| declaration | what it actually was |
+|---|---|
+| `QOU.ope_is_skein` (`vertex-operator`) | **Empty.** Provable by `⟨⟨Y₁, Y₂, q, -q_inv_param⟩, rfl, rfl, rfl, rfl⟩` — `OPE` carries the eigenvalues as *fields*, so exhibiting one is record construction. Heavyweight in `#print axioms`, and bought nothing. |
+| `QOU.transfer_matrix_level_independence` (`categorical-transfer-matrix`) | **False.** Asserted `T₁.base = T₂.base → T₁.vertex_volume = T₂.vertex_volume` with `vertex_volume` a free field. `level_independence_false_as_stated` proves the refutation. A false axiom is available to prove anything downstream. |
+| `markov_level_compatible` (`vertex-algebra-jet-relations`) | **Provable by `rfl`, and its docstring described a different claim.** Statement: `levelHecke hp n level = levelHecke hp n (level+1)`, where `levelHecke` discards its level. The docstring claimed `tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w)` — neither `tr_M` nor `ℓ_n` appears, and the bound `w` was never used. |
+| `kappa_squared_tends_to_zero_axiom` (`townsend-biot-savart-strain`) | **Not an axiom at all.** Already a `theorem`, with a real filter proof in its body, under a docstring announcing it as "auto-extracted … pending Mathlib infrastructure". A reader auditing axioms would have counted it as one on the name; a reader trusting the docstring would not have tried to fix it. |
+
+The through-line: **`#print axioms` sees none of this.** It reports what a proof
+term *depends on*, and says nothing about whether the statement is empty, false,
+mismatched with its docstring, or already proved under a misleading name. Only
+reading the statement against the `.md` catches any of the four.
+
+### And a fifth shape: the block's `lean.ref` pointing at the wrong thing
+
+- `categorical-transfer-matrix` referenced
+  `qou:QOU.Torsion.CategoricalTransferMatrix` — **live library code**, a
+  spectral mass-gap object (`eigenvalues : ℕ → ℝ`, `gapValue`) with consumers in
+  `MassGapKeystone` and `MassGapFrontier`. This block's `.md` describes an
+  equivalence class of braiding operations, i.e. the *sibling's*
+  `QOU.CategoricalTransferMatrix`. Two different objects sharing a base name
+  across namespaces; the ref picked the one that does not match the prose.
+- `vertex-algebra-jet-relations` referenced `euler_level_stable`, which was
+  `theorem euler_level_stable (_n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num`.
+  That arithmetic identity *was* the block's formalisation. Now stated over a
+  named `eulerChar` so it is false if `eulerChar` is wrong or level-sensitive.
+
+### `townsend-biot-savart-strain`: 7 errors, all Mathlib API drift
+
+Worth recording because the docstring said the opposite ("pending Mathlib
+infrastructure"). The four mismatches: `Tendsto.pow` landing in `𝓝 (0^2)`;
+`tendsto_log_mul_rpow_nhdsGT_zero` stated with an **rpow** while the proof tried
+`rw [Real.rpow_natCast]` inside a `filter_upwards` where the exponent was
+already a natural power; `Tendsto.div` producing `Pi.div` rather than a
+pointwise lambda; and `Metric.tendsto_nhdsWithin_nhds` leaving `τ` **implicit**
+in its conclusion. Plus a `field_simp` that closes its goal, making the
+following `ring` report `No goals to be solved` — the fourth instance of that
+shape in this sweep.
+
+### `vertex-algebra-jet-relations`: the migration boundary INSIDE one file
+
+`levelHecke` is defined at the top of the same file and gained `(hs : 0 < strands)`
+when `UGB.GrobnerShirshov.heckeRewritingSystem` gained `(hn : 0 < n)`. Its three
+call sites, fifty lines below, were not updated. The usual stranding, with no
+cross-file boundary to make it visible.
+
+### Final standing
+
+| errors | file |
+|---|---|
+| 22 | `mass-theory/spin-involution-lp-dual-invariance` (bean `qou-0xrn` — author's call) |
+
+Everything else compiles. Note the caveat recorded in the previous section
+stands: 4 of the 38 repaired files carry **real** sibling/library name
+collisions that repairing has made silent rather than loud, and choosing which
+declaration is canonical is a per-block judgement, not a compile fix.
