@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:52:37.000951+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T23:06:58.319024+00:00",
+  "commitSha": "b62a4b9d00edd97916ae10612766ef97a6d5b92e",
   "assertions": [
     {
       "name": "no_large_d_non_rectangular_beats_rectangular",
@@ -14,11 +14,13 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 16,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 20,
+  "durationMsBaseline": "builder-construction",
   "computation": "probe-4c-li6-large-d-scan",
   "scriptFile": "probe_4c_li6_large_d_scan.py",
   "scriptHash": "8ff0edcf5a98",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +28,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_4c_li6_large_d_scan.py"
+    ],
+    "reproduce": "python3 -u computations/probe_4c_li6_large_d_scan.py"
   },
   "description": "Extends Probe (4b) to ⁶Li non-rectangular shapes with d_λ in [150k, 1M]. Tests whether any near-rectangular shape with a small defect (extra row or partial-rectangle tail) beats the (A,A,A) rectangle's −96.52 min_eig.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -46,10 +56,10 @@
           3
         ],
         "dim": 875160,
-        "min_eig": -110.31374606144291,
-        "max_eig": 108.82098384276587,
-        "build_s": 51.29365825653076,
-        "eig_s": 38.44461703300476,
+        "min_eig": -110.31374606149217,
+        "max_eig": 108.82098384275761,
+        "build_s": 93.61795711517334,
+        "eig_s": 131.03958749771118,
         "beats_rectangular": true
       },
       {
@@ -61,10 +71,10 @@
           3
         ],
         "dim": 875160,
-        "min_eig": -109.819957725161,
-        "max_eig": 113.55445028327499,
-        "build_s": 49.94113516807556,
-        "eig_s": 38.82807183265686,
+        "min_eig": -109.81995772517831,
+        "max_eig": 113.55445028327375,
+        "build_s": 94.81360054016113,
+        "eig_s": 108.93482708930969,
         "beats_rectangular": true
       },
       {
@@ -78,10 +88,10 @@
           2
         ],
         "dim": 364650,
-        "min_eig": -116.72027089204867,
-        "max_eig": 113.7958677414137,
-        "build_s": 21.482094764709473,
-        "eig_s": 10.10447907447815,
+        "min_eig": -116.72027089205656,
+        "max_eig": 113.79586774139835,
+        "build_s": 36.30749845504761,
+        "eig_s": 23.800089597702026,
         "beats_rectangular": true
       },
       {
@@ -91,10 +101,10 @@
           4
         ],
         "dim": 259896,
-        "min_eig": -80.6795866560517,
-        "max_eig": 84.02366972595472,
-        "build_s": 14.412892818450928,
-        "eig_s": 10.343623876571655,
+        "min_eig": -80.6795866560509,
+        "max_eig": 84.02366972593913,
+        "build_s": 25.084086656570435,
+        "eig_s": 24.57523536682129,
         "beats_rectangular": false
       }
     ],

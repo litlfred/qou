@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T20:20:25.206352+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T22:57:58.742901+00:00",
+  "commitSha": "b62a4b9d00edd97916ae10612766ef97a6d5b92e",
   "assertions": [
     {
       "name": "no_non_rectangular_beats_rectangular_at_a6",
@@ -14,11 +14,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "allPassedBasis": "assertions",
+  "durationMs": 20,
+  "durationMsBaseline": "builder-construction",
   "computation": "probe-4b-li6-non-rectangular-scan",
   "scriptFile": "probe_4b_li6_non_rectangular_scan.py",
-  "scriptHash": "1197e5231e0a",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "042f6254f68f",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +28,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_4b_li6_non_rectangular_scan.py"
+    ],
+    "reproduce": "python3 -u computations/probe_4b_li6_non_rectangular_scan.py"
   },
   "description": "Scans a curated set of non-rectangular ⁶Li partitions and tests whether any has min_eig more negative than the rectangular pair's −96.52. Strengthens or falsifies the rectangular-form conjecture at A=6 with a finite cheap scan.",
   "contentBlock": "conj:atom-braid-exterior-algebra",
@@ -43,10 +54,10 @@
           9
         ],
         "dim": 4862,
-        "min_eig": -60.48762805369589,
-        "max_eig": 78.45257354131634,
-        "build_s": 0.4004237651824951,
-        "eig_s": 0.17086434364318848,
+        "min_eig": -60.49154844617742,
+        "max_eig": 78.45792714630375,
+        "build_s": 0.43077778816223145,
+        "eig_s": 0.2698960304260254,
         "beats_rectangular": false
       },
       {
@@ -62,10 +73,10 @@
           2
         ],
         "dim": 4862,
-        "min_eig": -78.70300634880222,
-        "max_eig": 74.82919463427965,
-        "build_s": 0.4004549980163574,
-        "eig_s": 0.1974043846130371,
+        "min_eig": -78.70032974741864,
+        "max_eig": 74.82691494469643,
+        "build_s": 0.43018579483032227,
+        "eig_s": 0.26496434211730957,
         "beats_rectangular": false
       },
       {
@@ -74,10 +85,10 @@
           8
         ],
         "dim": 11934,
-        "min_eig": -64.65133677370808,
-        "max_eig": 75.02770422052666,
-        "build_s": 0.9204111099243164,
-        "eig_s": 0.48077940940856934,
+        "min_eig": -64.65537263381042,
+        "max_eig": 75.03279557592816,
+        "build_s": 0.9914994239807129,
+        "eig_s": 0.67431640625,
         "beats_rectangular": false
       },
       {
@@ -86,10 +97,10 @@
           7
         ],
         "dim": 13260,
-        "min_eig": -59.37266529703405,
-        "max_eig": 68.08367639056985,
-        "build_s": 1.0521483421325684,
-        "eig_s": 0.45076489448547363,
+        "min_eig": -59.37649494618009,
+        "max_eig": 68.08825141997458,
+        "build_s": 1.1078035831451416,
+        "eig_s": 0.7838163375854492,
         "beats_rectangular": false
       },
       {
@@ -98,10 +109,10 @@
           6
         ],
         "dim": 9996,
-        "min_eig": -53.27572884895665,
-        "max_eig": 59.03402029828035,
-        "build_s": 0.7683918476104736,
-        "eig_s": 0.2959403991699219,
+        "min_eig": -53.278920236346174,
+        "max_eig": 59.03800800788601,
+        "build_s": 0.862584114074707,
+        "eig_s": 0.47305774688720703,
         "beats_rectangular": false
       },
       {
@@ -111,10 +122,10 @@
           1
         ],
         "dim": 22848,
-        "min_eig": -50.45080577714219,
-        "max_eig": 52.24078896322868,
-        "build_s": 1.7710175514221191,
-        "eig_s": 1.0805017948150635,
+        "min_eig": -50.45348962422573,
+        "max_eig": 52.24410806513501,
+        "build_s": 1.9805939197540283,
+        "eig_s": 1.7516157627105713,
         "beats_rectangular": false
       },
       {
@@ -124,10 +135,10 @@
           2
         ],
         "dim": 29172,
-        "min_eig": -52.30922140519555,
-        "max_eig": 53.05472823739235,
-        "build_s": 2.2553257942199707,
-        "eig_s": 1.6057560443878174,
+        "min_eig": -52.311778504165375,
+        "max_eig": 53.057892491578514,
+        "build_s": 2.471482515335083,
+        "eig_s": 2.478740930557251,
         "beats_rectangular": false
       },
       {
@@ -138,10 +149,10 @@
           1
         ],
         "dim": 29835,
-        "min_eig": -53.374605239889334,
-        "max_eig": 53.93905064213072,
-        "build_s": 2.3858602046966553,
-        "eig_s": 1.7902271747589111,
+        "min_eig": -53.37711759854274,
+        "max_eig": 53.94204333927019,
+        "build_s": 2.5363500118255615,
+        "eig_s": 2.6938910484313965,
         "beats_rectangular": false
       },
       {
@@ -150,10 +161,10 @@
           2
         ],
         "dim": 135,
-        "min_eig": -13.890474726410153,
-        "max_eig": 17.56994129434454,
-        "build_s": 0.020681142807006836,
-        "eig_s": 0.05904889106750488,
+        "min_eig": -13.890953242289637,
+        "max_eig": 17.571041192934224,
+        "build_s": 0.020877361297607422,
+        "eig_s": 0.08792519569396973,
         "beats_rectangular": false
       },
       {
@@ -162,10 +173,10 @@
           3
         ],
         "dim": 663,
-        "min_eig": -24.929912308670545,
-        "max_eig": 28.44626337622911,
-        "build_s": 0.059906721115112305,
-        "eig_s": 0.06179094314575195,
+        "min_eig": -24.930971754594697,
+        "max_eig": 28.447961151131246,
+        "build_s": 0.06040692329406738,
+        "eig_s": 0.10506343841552734,
         "beats_rectangular": false
       },
       {
@@ -174,10 +185,10 @@
           4
         ],
         "dim": 2244,
-        "min_eig": -35.65104267324319,
-        "max_eig": 38.62495425356223,
-        "build_s": 0.1710340976715088,
-        "eig_s": 0.09407806396484375,
+        "min_eig": -35.652618450399295,
+        "max_eig": 38.62743271230432,
+        "build_s": 0.18575525283813477,
+        "eig_s": 0.1538841724395752,
         "beats_rectangular": false
       },
       {
@@ -187,10 +198,10 @@
           1
         ],
         "dim": 136,
-        "min_eig": -14.823739945670187,
-        "max_eig": 18.379402457773416,
-        "build_s": 0.01375889778137207,
-        "eig_s": 0.033478736877441406,
+        "min_eig": -14.824206180175977,
+        "max_eig": 18.38047014181493,
+        "build_s": 0.01811361312866211,
+        "eig_s": 0.07384014129638672,
         "beats_rectangular": false
       },
       {
@@ -200,10 +211,10 @@
           2
         ],
         "dim": 136136,
-        "min_eig": -88.95455660033761,
-        "max_eig": 92.55850730123838,
-        "build_s": 11.147210359573364,
-        "eig_s": 5.691107988357544,
+        "min_eig": -88.95985358811829,
+        "max_eig": 92.56452941039835,
+        "build_s": 12.41304326057434,
+        "eig_s": 9.19549298286438,
         "beats_rectangular": false
       },
       {
@@ -213,10 +224,10 @@
           3
         ],
         "dim": 56100,
-        "min_eig": -62.438493457162096,
-        "max_eig": 63.58116059313649,
-        "build_s": 4.409866809844971,
-        "eig_s": 2.9181225299835205,
+        "min_eig": -62.44193181320823,
+        "max_eig": 63.58513933876785,
+        "build_s": 4.954824209213257,
+        "eig_s": 4.403228044509888,
         "beats_rectangular": false
       },
       {
@@ -227,10 +238,10 @@
           2
         ],
         "dim": 58344,
-        "min_eig": -64.77104880244674,
-        "max_eig": 64.75890036815723,
-        "build_s": 4.654920816421509,
-        "eig_s": 2.8130321502685547,
+        "min_eig": -64.77444270406495,
+        "max_eig": 64.76251685130406,
+        "build_s": 5.0666680335998535,
+        "eig_s": 4.3818347454071045,
         "beats_rectangular": false
       },
       {
@@ -240,14 +251,20 @@
           1
         ],
         "dim": 53040,
-        "min_eig": -59.859903967688865,
-        "max_eig": 62.27917335057157,
-        "build_s": 4.079206705093384,
-        "eig_s": 2.5466411113739014,
+        "min_eig": -59.8634745085504,
+        "max_eig": 62.28329348890488,
+        "build_s": 4.4316675662994385,
+        "eig_s": 4.291115999221802,
         "beats_rectangular": false
       }
     ],
-    "benchmark_rectangular_min_eig": -96.52
+    "benchmark_rectangular_min_eig": -96.52,
+    "lean_uniqueness_ref": {
+      "nucleus": "⁶Li",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   },
   "caveats": [
     "Scan covers 16 of p(18)=385 partitions. Skipped shapes with d_λ > 30,000 (too slow for Lanczos at >60s each). Cannot strictly confirm rectangular is THE dominant; only that no scanned non-rectangular beats it."
