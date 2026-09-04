@@ -1,13 +1,13 @@
 ---
 # qou-gzgi
 title: 'Markov trace branching: close markovTrace_branching field'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - lean
 created_at: 2026-08-24T06:35:58Z
-updated_at: 2026-09-03T22:18:46Z
+updated_at: 2026-09-04T03:07:50Z
 parent: qou-c8p8
 ---
 
@@ -27,3 +27,8 @@ PR body said 'the import cone was not touched by the intervening commits'. FALSE
 
 ## re-targeted at the qou-z9ws Prop (2026-09-03 21:5xZ)
 main's b34a9c689b removed the class under PR #6526. Rebased; the instance is now the theorem markovTrace_branching_of_markovTrace (Prop proved at the Markov-trace data) + markov_identification_of_markovTrace. Compiles against main's base file, 0 errors, sorry-free, axioms propext/choice/Quot.sound. Sidecar regenerated; validate exit 0.
+
+
+
+## LANDED 2026-09-04 03:3xZ — merged as 4bf65b8794 (PR #6579, reopened from #6526 to dodge the GraphQL draft-toggle quota)
+markovTrace_branching_of_markovTrace + markov_identification_of_markovTrace in QOU/FeynmanPathIntegrals/MarkovIdentificationInstance.lean prove the branching identity main's base file lists as Open, at convention D, for every Markov trace at z_D and every n. Also landed: ten main-red consumers of e526464c2d / 6164a8ab6e repaired (see qou-j377, qou-jlam). Still open, NOT this bean: the identity at arbitrary z (MarkovConventionD docstring); the y_eq_self_conjugate field decision (owner's pick, item 1 of the 2026-09-03 question).
