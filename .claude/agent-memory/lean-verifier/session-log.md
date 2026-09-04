@@ -253,3 +253,18 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   std-3; `/-!` before `import` is rejected; `omit [inst] in` precedes the docstring;
   `WedderburnRankDegeneracy` red on main 6 days behind a false green → PR #6097 and
   `verification-harness.md`.
+- 2026-09-04 (branch `claude/standard-model-terms-status-ftoejr`, seven GAP beans):
+  root tree was a REAL build (2443 QOU oleans / 2441 traces, no `RESTORED-NO-TRACES`);
+  9-root `LEAN_PATH` from `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`.
+  Fixed `qou-yt29` (`categorical-linking-operation.lean`, a40e260b58): vacuous
+  **5/5** not 2/5 — see harness §12 on extensional `True`. Now `LinkingData`
+  substrate, Properties 1-2 + pre-trace 3 proved about `lk`/`preLk`, rest as class
+  fields, no instance, plus an in-file falsifier. lean-direct 3.9 s, 13 decls,
+  no `sorryAx`; qa-sweep 0/0/0. Docstring currency fix in the Higgs file (c32e7e393e).
+  Verdict `qou-ibck`: **no closed form** for `Σ_λ 1/dim_q λ` — measured contrast,
+  `Σ f^λ` = involutions and `Σ (f^λ)²` = n! both close exactly, the reciprocal
+  gives 1, 2, 5/2, 19/6, 46/15, 473/144, … with no pattern; Mathlib has
+  `YoungDiagram`/`Nat.Partition` but **zero** `hookLength`, so even a general
+  *definition* (≠ closed form) is blocked on formalising hook lengths. Other five
+  carriers audited by harness §12; all honest, two real side-findings (harness §13,
+  and the `BringHyperbolicDecomposition` identical-field bridge).

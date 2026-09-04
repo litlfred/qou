@@ -314,3 +314,65 @@ import `QOU/Archimedean/BorromeanVolumeCatalan` (source 2026-08-30, olean
 2026-07-02) — one commit touched it in the window, and `git diff` showed **zero**
 changes to any `vol_B3` / `catalan_G` line, so those greens stand. Measure the
 specific declarations; do not assume either way.
+
+## 12. Auditing a conjecture carrier: four checks, all cheap (measured 2026-09-04, seven GAP beans)
+
+"Content-bearing class with no instance" is the honest representation of an open
+conjecture (§3b-tax) — but *asserting* a carrier is content-bearing is not a
+measurement. Four tests, each a scratch `example` against a copy of the file
+(`cp` the content-block sibling, append, `lean` it — plain `lean`, not `-o`, so
+the root restriction of §10 does not apply):
+
+1. **Trivial-inhabitation.** `example : C := ⟨⟨0, rfl⟩⟩`. If it compiles the
+   carrier is vacuous. `BringZeroModeBlochClass` FAILS this (good): its field
+   constrains a `noncomputable opaque` function, so it is neither provable nor
+   refutable — **undecidable, not unfalsifiable**; the two are different verdicts.
+2. **Falsifier.** Prove `¬ (field holds for <explicit data>)`. This is the
+   *positive* demonstration that a field constrains, and it belongs IN the file:
+   `postTraceMultiplicative_fails` (A = ℚ×ℚ, trace `(x,y) ↦ x+y`, non-scalar
+   braiding `c = (2,3)`; sides are `(2,2)` vs `(2,3)`) plus a `no_global_instance`
+   corollary is what turns "we removed the global instance" into "the global
+   instance asserted something false".
+3. **Satisfied-by-choosing-the-output?** `example (structural hyps) : C … (chosenOut)
+   := ⟨h1, h2, rfl⟩`. This separates two very different carriers that read alike:
+   - **definitional in a free output parameter** — `WeinbergAngleCategorical`
+     (choose `cotW := trW/trB`) and `ChernSimonsCorrectionConjecture` (choose
+     `alphaInv := alphaEmInvChernSimons …`) both compile. A downstream `[C]`
+     binder then assumes only "the named parameter is that ratio", NOT the
+     physical identification — correct under the comparison-boundary ruling, and
+     easy for a later agent to over-cite.
+   - **constrains its input data** — `CategoricalHiggsMechanism` is
+     unsatisfiable for EVERY `m` once `scale ≠ 0` and the photon's projected
+     trace is non-zero. Strictly stronger.
+4. **Instance search across the tree**, not just the file:
+   `grep -rn "instance.*<C>\|: *<C>.*:=\|<C>.*where"`. It found
+   `bring_hyperbolic_decomposition : BringZeroModeBlochClass where … := hD.bw_sum_realised`
+   in a *different* chapter — a `theorem` (so it does not auto-fire) whose two
+   classes carry the **identical** field, i.e. a renaming sold as a decomposition.
+
+**Extensional `True` is invisible to a `:= True` grep.** Bean `qou-yt29` scoped
+`categorical-linking-operation.lean` at 2 vacuous fields of 5; it was 5 of 5.
+The other three were `∀ a b c : R, a*(b+c)=a*b+a*c` (ring distributivity),
+`q ^ (0:ℕ) = 1` (`pow_zero`) and `∀ k : ℤ, -(-k) = k` (`neg_neg` — the body does
+not mention `q` at all), each under a docstring claiming a categorical property
+of `Lk_R`. **Test the BODY for dependence on the parameters**; a predicate whose
+body ignores its own arguments is `True` however it is spelled.
+
+## 13. TRAP — two declarations of ONE fully-qualified name; importing both is build-fatal
+
+`QOU.Archimedean.BlochWigner_unit_circle` exists twice, same namespace, two
+modules: `BlochWignerUnitCircle.lean:67` `noncomputable opaque … (_θ : ℝ) : ℝ`
+(sealed, no content) and `BlochWignerMathlibFiller.lean:60` `noncomputable def
+… (θ : ℝ) : ℝ := Cl_2 θ` (the real Clausen body). Measured:
+
+    error: import QOU.Archimedean.BlochWignerMathlibFiller failed, environment
+    already contains 'QOU.Archimedean.BlochWigner_unit_circle' from
+    QOU.Archimedean.BlochWignerUnitCircle
+
+`QOU/Archimedean.lean` hides this by keeping the filler import **commented out**
+(line 36) — so the collision is invisible to anything that only builds the
+library root. Consequence beyond the build: a class field over that name is
+**undecidable** under one import and **provable** under the other (`2/(3π) ≈
+0.212` is in the range of `Cl₂`, so IVT). Same syntax, opposite epistemic status,
+selected by an import. `markovZ` class of defect. Resolve any such name to the
+module it came from before reasoning about its content.
