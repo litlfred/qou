@@ -343,6 +343,38 @@ derive it"* case: closing it would require an upload (Boyer–Galicki
 *Sasakian Geometry*; Dragomir–Tomassini for the pseudohermitian/Webster package;
 Bryant on `G₂` structures).
 
+> **🛑 Do NOT generalise this absence to the neighbouring layer — I did, and it
+> was wrong (added 2026-09-04, after the owner corrected me).**  The finding
+> above is scoped to the **contact / CR / Sasakian / `G₂`-homogeneous**
+> vocabulary and is correct there: re-measured across spellings, `Sasakian` 0,
+> `nearly Kähler` 0, `nearly-Kahler` 0, `Wolf space` 0, `3-Sasakian` 0,
+> `CR structure` 0, `CR manifold` 0, `quaternion-Kähler` 0, in `sections/` and
+> `ocr/` alike (`Sasaki` returns 5, all surnames in bibliographies).
+>
+> **The adjacent hyperbolic-volume layer is the opposite of absent.**  Section-file
+> hits: dilogarithm **849**, Kashaev **548**, volume conjecture **381**, Thurston
+> **321**, gluing equation **215**, ideal tetrahedra **178**, Bloch–Wigner
+> **135**, Neumann–Zagier **96**, Lobachevsky **46**; plus `ocr/` — dilogarithm
+> 30, Kashaev 21, Thurston 19.  And Mathlib carries
+> `Analysis/Complex/UpperHalfPlane/{Metric,Basic,Manifold,MoebiusAction}` — the
+> hyperbolic metric on `ℍ²` and the Möbius action — plus the whole
+> `NumberTheory/ModularForms/` tree.  What Mathlib lacks is a *dilogarithm* and a
+> 3-dimensional hyperbolic-manifold API, not hyperbolic geometry as such.
+>
+> I generalised the CR-layer absence into "the hyperbolic volume form is not a
+> QOU structure — it's imported", which is an **impossibility claim I never
+> measured**, and which contradicts what the corpus itself asserts in
+> `brings-surface/thurston-relaxation.md` — that the `q`-Pochhammer poles and the
+> ideal vertices are in bijection and that the SDP and the gluing solver are
+> *"different evaluations of one categorical object"*.  Retracted at
+> `QOU/Eightfold/HyperbolicVolumeFormType.lean`; the route is being mapped
+> separately.
+>
+> **The mechanical lesson, since this is the third instance this session:** one
+> spelling of one name moves a count sevenfold — `Bloch-Wigner` (hyphen) returns
+> 135, `Bloch–Wigner` (en-dash) returns 19.  A library count is evidence about
+> the string you typed, never about the subject.
+
 **Caveat on `Sasaki` as a bare string.** 5 `library/*/sections/` files match
 `sasaki` case-insensitively; they are surname matches in bibliographies (e.g.
 `library/arxiv-hep-th-9408113v2/sections/sec-004-6-anatol-n-kirillov.md`), not

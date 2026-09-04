@@ -75,15 +75,32 @@ Each time, a `3` that is a *degree* has been read as a `3` that is a *rank*.
 
 ## Consequences for the framework, stated plainly
 
-**1. `Vol(K)` is an input, and that is correct rather than a defect.**  It is
-computed by SnapPy (`knot-volumes-verification.md`) and enters `q₀` alongside
-CODATA `m_μ/m_e` (`local-substrate-q-proof.md:14`).  By **Mostow rigidity** the
-complete hyperbolic metric on a finite-volume 3-manifold is unique up to
-isometry, so `Vol(K)` is a *topological invariant of the knot* — there is no
-metric to choose and no volume form to derive.  The corpus already leans on
-exactly this: *"Mostow rigidity (geometric confinement) makes the resulting
-topology — and hence the mass — discrete"*
+**1. `Vol(K)` is currently an *input*, which is a fact about the corpus's present
+state and NOT a claim that it must stay one.**  It is computed by SnapPy
+(`knot-volumes-verification.md`) and enters `q₀` alongside CODATA `m_μ/m_e`
+(`local-substrate-q-proof.md:14`).  By **Mostow rigidity** the complete
+hyperbolic metric on a finite-volume 3-manifold is unique up to isometry, so
+`Vol(K)` is a *topological invariant of the knot* — there is no metric to
+*choose*.  The corpus leans on exactly this: *"Mostow rigidity (geometric
+confinement) makes the resulting topology — and hence the mass — discrete"*
 (`approach-to-exceptional-divisor.md`).
+
+> **🛑 An earlier draft of this file said the hyperbolic volume form "is not a
+> QOU structure — it is imported", and that is RETRACTED.**  Rigidity means the
+> metric is not *chosen*; it does not mean the volume is not *derivable*.  The
+> corpus in fact asserts the opposite of what I wrote:
+> `brings-surface/thurston-relaxation.md` states that the `q`-Pochhammer poles
+> are in bijection with the ideal vertices of the tetrahedral triangulation, that
+> Newton iteration on Thurston's gluing equations seeded by those poles converges
+> to the shape parameters realising the complete hyperbolic structure, and that
+> *"the same algebraic-residue data feeds both the SDP and the gluing solver;
+> they are different **evaluations of one categorical object**"*
+> (`conj:algebraic-geometric-dilog-equivalence`).  The volume-conjecture leg
+> points the same way: the Kashaev invariant / coloured Jones is a categorical
+> object the framework already computes, and its root-of-unity asymptotics *are*
+> `Vol(S³∖K)`.  Whether those links are proved, conjectured or merely asserted is
+> a separate question and is being measured — but "not a QOU structure" was an
+> impossibility claim I never established, against a route the corpus names.
 
 **2. It is not a fourth calibration.**  `Vol(4₁) = 2·Cl₂(π/3)` is a closed form,
 known exactly; SnapPy verifies it numerically rather than supplying it.  Its
@@ -112,8 +129,26 @@ above as arithmetic.
 **Not proved, and asserted nowhere below:**
 
 * that `S³` admits no complete finite-volume hyperbolic metric.  Cited standard
-  hyperbolic geometry (`π₁` of such a manifold is infinite); Mathlib has no
-  hyperbolic-manifold API and `library/` holds no source on it.
+  hyperbolic geometry (`π₁` of such a manifold is infinite).
+
+  > **🛑 The provenance note attached to this used to read "Mathlib has no
+  > hyperbolic-manifold API and `library/` holds no source on it".  BOTH HALVES
+  > ARE FALSE, measured.**  Mathlib carries
+  > `Analysis/Complex/UpperHalfPlane/{Metric,Basic,Manifold,MoebiusAction,Topology}`
+  > — the hyperbolic metric on `ℍ²` and the Möbius action — plus the whole
+  > `NumberTheory/ModularForms/` tree; what it lacks is a *dilogarithm* and a
+  > 3-dimensional hyperbolic-manifold API.  And `library/` is saturated with this
+  > material: section-file hits are dilogarithm **849**, Kashaev **548**, volume
+  > conjecture **381**, Thurston **321**, gluing equation **215**, ideal
+  > tetrahedra **178**, Bloch–Wigner **135**, Neumann–Zagier **96**, Lobachevsky
+  > **46**.
+  >
+  > The error was a change-of-vocabulary blind spot of exactly the kind this
+  > corpus keeps recording: the search that produced "holds nothing" used the
+  > **contact/CR** vocabulary (`Sasakian`, `CR manifold`, `7-manifold`), while
+  > this layer is covered under the **knot-theory / dilogarithm** vocabulary.
+  > Note also `Bloch-Wigner` (hyphen) returns 135 and `Bloch–Wigner` (en-dash)
+  > returns 19 — one spelling of one name changes the count sevenfold.
 * Mostow rigidity, or that `Vol(4₁) = 2·Cl₂(π/3)`.  Both cited.
 * that the corpus's `S³_Reeb` and `S³ ∖ K` are the manifolds the corpus intends
   — the three-way `S³` ambiguity is unresolved and is the author's.
