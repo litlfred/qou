@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-26T21:41:57Z
-updated_at: 2026-08-26T21:42:37Z
+updated_at: 2026-09-04T09:25:00Z
 ---
 
 Proposed on [#5857](https://github.com/litlfred/qou/pull/5857) by the sibling
@@ -70,3 +70,77 @@ Coordinate with the sibling before building: `lean-borrowed-name-audit.py` on
 kernel pass (`scripts/lean/audit-driver.sh`, single-pass since #5856) already
 resolves constants by declaration rather than by string, which is what
 distinguishes the overloaded `hookDim` / `wenzlSchurElement` names.
+
+
+## Measured 2026-09-04 — one real defect found; the DETECTOR is a negative
+
+### The real defect, and it has a MECHANISM
+
+`hookDim` in `mass-theory/y-lambda-closed-form-wenzl-bridge.lean:109` —
+docstring said **"Concrete model: returns `1`"**, body is **`n.factorial`**.
+
+The git history of that one line settles how:
+
+    7e2abe75ce4  2026-05-09  def hookDim … : ℕ := 1              doc CORRECT
+    62c6091353e  2026-05-09  def hookDim … : ℕ := 1  -- noqa: one_def
+    a754f12ab36  2026-05-09  def hookDim … : ℕ := n.factorial    doc NOT updated
+
+`a754f12ab36` is *"Genuine sharpening: 9 noqa-exempted placeholders →
+content-bearing values via structural fields"*. **A pass whose purpose was to
+satisfy the `one_def` vacuity detector invalidated the docstring's declared
+placeholder value and left it standing for four months.** That is a
+generalisable mechanism, not a one-off: sharpening a placeholder body to
+silence a detector makes its "concrete model returns X" note false.
+
+**Scope — no number moves, and saying otherwise would be wrong.** The sole
+consumer `wenzlNormalization` is
+`Σ_λ (hookDim λ) * wenzlSchurElement λ Q X`, and `wenzlSchurElement` is an
+**honestly-declared** placeholder — doc and body both say
+`0 * (Q + X + lam.parts.length)`. The product is `0` whatever `hookDim`
+returns. This is a documentation defect in a file whose numeric output is
+identically zero by declaration; it is NOT the `schurElement` class, which was
+a wrong exponent inside a live computation.
+
+Docstring corrected in place, naming the numerator, the discarded `_lam`, the
+real implementation in `y-lambda-recipe-from-partition.lean`, and the
+invalidating commit.
+
+### The detector: 1 true positive in 8. Reported as a negative.
+
+Built to the bean's own prescription — fire only on an UNCONDITIONAL literal
+value claim the body does not compute; no prose understanding. First pass: 124
+candidates. Four gates (exclude vendored `.lake/packages`; stop body extraction
+at the next docstring; reject conditional claims carrying "if/when/unless/
+otherwise"; normalise `·`→`*`) cut it to **8**. All eight read:
+
+  * **1 TRUE** — `hookDim`, above.
+  * **7 FALSE**, in three classes:
+    - **doc states the formula, body implements it** — `writhe`
+      (`ε_1 + ⋯ + ε_k` vs a `foldl` over signs), `Hn`
+      (`Σ_i x i * z^{ℓ(i)}` vs `∑ i, x i * z ^ lengthFn i`),
+      `massSqQuadrupled` (`4 m²` vs `4*a + 4*b*Y + c*(…)`, which IS 4m²
+      expanded). The bean names this as the hard case; it is.
+    - **doc states an INTERMEDIATE value, not the return** — NEW, not
+      anticipated here. `borromeanColorSum_trivTrace` reads *"Each
+      half-Borromean evaluates to `1` … so the sum is `3`"* with body `3`.
+      The docstring is **entirely correct** and even shows the arithmetic;
+      the matcher grabbed `1` and compared it to the return.
+    - **parser leakage** — `QChar` matched a type signature, not a body;
+      `proton_topological` / `neutron_topological` leaked into the next
+      declaration.
+
+**Recommendation: do not ship this detector.** At 1-in-8 it would be quoted,
+and its false positives are *correct documentation* — flagging `writhe` and
+`borromeanColorSum_trivTrace` trains a reader to distrust docstrings that are
+right. The bean's caution ("noisy in both directions") is now measured rather
+than predicted.
+
+### The honest form, for reference
+
+Two declarations in the same file show what a correct placeholder note looks
+like, and neither trips any detector because there is nothing to trip:
+`wenzlSchurElement` (*"Content-bearing placeholder `0 · (…)`: … evaluating to 0
+by `zero_mul`"*, body exactly that) and `nLambda` (*"Content-bearing via `n`
+(the partition's size)"*, body `:= n`). The convention works when it is
+maintained; `hookDim` is what happens when a later pass edits the body without
+it.
