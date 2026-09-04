@@ -41,9 +41,61 @@ $h = q - q^{-1}$.
 | id | name | $z$ | $z(q_0)$ | $(y_{(3)},\,y_{(2,1)},\,y_{(1^3)})$ at $q_0$ | $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ | forcing status |
 |---|---|---|---|---|---|---|
 | **A** | matrix-M parabolic | — | — | — | never evaluated | not-a-$z$-trace |
-| **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated |
+| **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated — **and measured non-normalized**, see §B-norm |
 | **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
 | **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525160$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+
+### §B-norm — row B is not merely deprecated, it is **not a probability measure** (measured 2026-09-04, bean `qou-7o7h`)
+
+Row B's status said "never evaluated / deprecated", which reads as an
+administrative choice. It is also a mathematical fact, and the fact has a live
+consequence for figures already in the corpus.
+
+$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ and in the
+*asymmetric* $q$-integer convention. It is **not** one in the **balanced**
+convention $[k] = (q^k - q^{-k})/(q - q^{-1})$ — the convention this corpus's
+`make_qdim` / `dim_q` family actually uses. Measured at the proton $q_0$,
+`mp.dps = 60`:
+
+| $n$ | $A$ | shapes | $c_n = \sum_\lambda d_q^2/[n]_q!$ |
+|---|---|---|---|
+| 6 | 2 | 11 | $0.99107952363735010$ |
+| 9 | 3 | 30 | $1.11092313495739800$ |
+| 12 | 4 | 77 | $1.51713321376785900$ |
+
+It grows with $n$, and simple $q^{\pm 2n(\lambda)}$ / $q^{\pm(n(\lambda)-n(\lambda'))}$
+prefactors do not close it.
+
+**Why this is a cross-atom artifact.** $w_{\text{textbook}} = c_n \cdot
+w_{\text{self-normalized}}$ **exactly** (deviation $< 10^{-40}$), and the
+depth-stratified binding functional $B = \sum_k \alpha_k(\Phi_k^{\text{free}} -
+\Phi_k^{\text{atom}})$ is *linear* in the weights — so $B$ scales by exactly
+$c_n$. Within one atom the factor cancels from any ratio. **Across** atoms it
+does not, because $n = 3A$ differs. Any metric that compares atoms — the
+max/min "variance" the FR-pullback probes are scored on — is distorted.
+
+**Measured consequence.** The FR family's published baseline variance
+$1.82\times$ is $1.5307\times$ inflated by this alone; the self-normalized
+figure is $1.19\times$. Scaling the self-normalized per-atom ratios by $c_n$
+reproduces the recorded textbook run to $5.5\times10^{-5}$ relative (that
+residual is the 4-significant-figure rounding of the recorded ratios).
+
+> **Do not quote the shortcut.** It is tempting to note that
+> $1.8217/1.1901 = 1.5307$ equals $c_{12}/c_6 = 1.5308$ and call *that* the
+> mechanism. The identity is real but **conditional** — it holds only while the
+> argmax atom is the largest-$c_n$ one and the argmin the smallest, under both
+> normalizations. Quote the scaling law instead.
+
+**Which producers are on which side:** `fr_pullback_k3_test.py` uses the
+textbook form (so its $1.82\times$ / $1.5015\times$ figures carry the
+distortion); `fr_pullback_borromean_h3a_test.py` was migrated to
+self-normalized on 2026-09-03. **Figures from the two are not comparable.**
+This says nothing about which normalization is physically right — only that
+they differ by a known, $n$-dependent factor and the corpus contains both.
+
+Producer [`probe_plancherel_convention_gap.py`](../../computations/probe_plancherel_convention_gap.py)
+(3/3 assertions), audit
+[`2026-09-04-plancherel-convention-gap.md`](../audits/2026-09-04-plancherel-convention-gap.md).
 
 > **Precision re-record, 2026-08-09 (bean `qou-wgta` item 12).** Every value in
 > the JSON twin had been computed from `meta.q0.value = "1.1099785827513808"`,

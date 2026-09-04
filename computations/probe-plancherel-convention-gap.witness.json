@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-04T02:29:12.148714+00:00",
+  "commitSha": "1c13fbe0671e37418f7eb2176d9b75f062ed5c15",
+  "assertions": [
+    {
+      "name": "selfnormalized_is_a_measure",
+      "computed": "7.77876909732642713393008006722515530073781521090145891637640e-62",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "Sum_lambda dim_q^2/Sum_mu dim_q^2 = 1 for every n in the atom set — true by construction, checked numerically"
+    },
+    {
+      "name": "textbook_equals_c_n_times_selfnormalized",
+      "computed": "1.94469227433160678348252001680628882518445380272536472909410e-62",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "source": "w_textbook(lambda) = c_n * w_selfnorm(lambda) exactly, every lambda, every n — the identity the cross-atom distortion follows from"
+    },
+    {
+      "name": "scaling_law_reproduces_recorded_textbook_run",
+      "computed": "0.0000551772155611394317168698123674754292358692911544470503761200",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0.001",
+      "source": "self-normalized per-atom ratios scaled by c_n reproduce the INDEPENDENTLY RECORDED textbook-normalized cross-atom max/min (1.8217); tolerance 1e-3 because the recorded ratios carry only 4 significant figures"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "probe-plancherel-convention-gap",
+  "scriptFile": "probe_plancherel_convention_gap.py",
+  "scriptHash": "242171a92070",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_plancherel_convention_gap.py"
+    ],
+    "reproduce": "python3 -u computations/probe_plancherel_convention_gap.py"
+  },
+  "description": "The balanced-convention q-Plancherel normalization gap (bean qou-7o7h). dim_q^2/[n]_q! is NOT a probability measure in the balanced q-integer convention: c_n = Sum dim_q^2/[n]_q! runs 0.991 / 1.111 / 1.517 at n = 6/9/12 and GROWS with n. Because w_textbook = c_n * w_selfnormalized exactly and the binding functional is linear in the weights, B scales by c_n; the factor cancels within one atom but NOT across atoms, since n = 3A differs. So any cross-atom metric — the max/min variance the FR-pullback probes are scored on — is distorted. Measured: the published 1.82x baseline is ~53% inflated by this alone; the self-normalized figure is 1.19x, and the scaling law reproduces the textbook run to 5.5e-5 (that residual being the 4-sig-fig rounding of the recorded ratios). Says nothing about which normalization is physically right — only that the two differ by a known n-dependent factor and the corpus contains both.",
+  "auditOnly": "docs/audits/2026-09-04-plancherel-convention-gap.md",
+  "data": {
+    "c_n": {
+      "6": "0.991079523637350140711333719064",
+      "9": "1.11092313495739793519940970273",
+      "12": "1.51713321376785876032235615304"
+    },
+    "atom_to_n": {
+      "D": 6,
+      "T": 9,
+      "3He": 9,
+      "4He": 12
+    },
+    "reconstruction": {
+      "inputs_are_recorded_not_computed": true,
+      "selfnorm_ratios_recorded": {
+        "D": "0.2753",
+        "T": "0.2980",
+        "3He": "0.3094",
+        "4He": "0.3276"
+      },
+      "textbook_maxmin_recorded": "1.8217",
+      "selfnorm_maxmin_recorded": "1.1901",
+      "textbook_ratios_predicted": {
+        "D": "0.2728441928573625",
+        "T": "0.3310550942173046",
+        "3He": "0.3437196179558189",
+        "4He": "0.4970128408303505"
+      },
+      "predicted_textbook_maxmin": "1.821599483666412",
+      "relative_deviation": "5.5177216e-5",
+      "inflation_factor": "1.5307117049"
+    },
+    "ratio_identity_shortcut": {
+      "observation": "textbook/selfnorm maxmin = 1.5307 equals c_12/c_6 = 1.5308",
+      "status": "TRUE BUT CONDITIONAL — do not quote as the mechanism",
+      "condition": "holds only while the argmax atom is the largest-c_n atom and the argmin atom the smallest, under BOTH normalizations",
+      "argmax_atom": "4He",
+      "argmin_atom": "D",
+      "condition_holds_here": true,
+      "quote_instead": "w_textbook = c_n * w_selfnormalized, and the functional is linear in the weights"
+    }
+  },
+  "caveats": [
+    "The reconstruction's inputs (per-atom self-normalized ratios, recorded textbook max/min) are READ FROM a prior run of fr_pullback_borromean_h3a_test, not recomputed here — that would need the ~25-minute H_12 character leg. The scaling law itself (assertion 2) is computed from scratch and is what carries the finding; the reconstruction is a consistency check on top of it.",
+    "Those recorded ratios come from a run at the RETIRED muon-era pin A, while c_n here is computed at the current proton pin. The 11.5 ppb pin difference is ~7 orders below the effect being measured (a 53% inflation), so it cannot affect the conclusion — but the reconstruction is therefore a cross-pin comparison and its 5.5e-5 residual should not be read as a precision claim."
+  ]
+}
