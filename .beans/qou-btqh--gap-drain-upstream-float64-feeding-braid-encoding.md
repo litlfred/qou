@@ -1,11 +1,11 @@
 ---
 # qou-btqh
 title: 'GAP: drain upstream float64 feeding braid-encoding-audit cross-check (option_b_proton_mass_full_chain + markov-trace-assembly)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T11:07:00Z
-updated_at: 2026-09-03T11:07:25Z
+updated_at: 2026-09-04T02:41:01Z
 ---
 
 Split off from qou-6sts (raw-float64 ratchet drain, 2026-09-03). The
