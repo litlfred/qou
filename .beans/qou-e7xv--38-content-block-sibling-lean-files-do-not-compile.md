@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T04:17:36Z
+updated_at: 2026-09-04T04:48:08Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -176,3 +176,29 @@ a hand-counted intermediate list (15 entries read as 16), which propagated
 through the later subtractions. Re-measured after merging origin/main (151
 commits) and re-running all 40 originally-failing paths lean-direct. The
 per-file list is unaffected — it always had 11 rows.
+
+
+## 2026-09-04, later — 38 → 8
+
+30 of the 38 at 0 errors. Four more this pass: `descent-cocycle-deviation` (a
+dropped structure parameter — `TwistedTwoCocycle R M`, not `… M`),
+`lagrange-resolvent-transform` (**a completed proof**, not a repaired reference:
+the `k = 4` case never held, because the enumerated ζ-power table was sized
+against the products `k·j ≤ 16` while `ring_nf` produces exponents to 32;
+replaced by a general conditional reduction lemma), and
+`chi-v21-hoefsmit-matrix-derivation` (a forward reference, then a tactic script
+whose failure was masked by a heartbeat timeout — now `sorry` + `-- Ref:`,
+bean `qou-18b6`).
+
+Two more traps for the list:
+- **Raise `maxHeartbeats` before believing a timeout.** At 4 000 000 the
+  chi-v21 declaration elaborates in 28 s and reports a real `rw` failure. A
+  timeout makes a broken proof indistinguishable from a slow machine.
+- **A forward reference reports `Unknown identifier`**, same as a missing
+  declaration. Check the same file before concluding the name is gone.
+
+Remaining 8: spin-involution-lp-dual-invariance 22 (`qou-0xrn`),
+townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
+categorical-transfer-matrix (`qou-xdwp`) / gb-depth-period-correspondence /
+categorical-q-ext-deriv-unique 3, braid-action-tensor (`qou-8qby`) 2,
+vertex-operator (`qou-xdwp`) 1.

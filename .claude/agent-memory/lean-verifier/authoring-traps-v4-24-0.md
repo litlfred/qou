@@ -232,3 +232,50 @@ anything. Resolution is sibling-first **by file**, so a sibling wins even
 when it declares a different name than the ref — which is also how the
 ref in `bn-mtc-action.ts` stayed wrong (`QOU.ObservableMTC.bnAction` for a
 declaration actually named `QOU.bnAction`) without anything noticing.
+
+## TRAP — raise `maxHeartbeats` BEFORE believing a `whnf` timeout
+
+`(deterministic) timeout at whnf, maximum number of heartbeats (200000)` reads
+as "the proof is fine, this machine is slow". Measured 2026-09-04 on
+`chi_v21_matrix_trace_identity`: at 4 000 000 heartbeats the declaration
+elaborates in **28 seconds** and reports the actual failure, which was a `rw`
+that never applied because `ring_nf` had already normalised its pattern away.
+The tactic script had never proved the theorem at any budget.
+
+So a timeout makes a **broken** proof indistinguishable from a **slow** one, and
+the cheap test settles it. Do this before concluding anything about a timeout,
+and certainly before recording one as an environment limitation.
+
+## TRAP — a forward reference reports `Unknown identifier`
+
+Lean is order-sensitive, so a declaration used above its own definition says
+`Unknown identifier X` — the same message as a name that was renamed or deleted.
+Same file, 2026-09-04: `hoefsmit_v21_b_sq_rational` was declared at the end and
+consumed at line 247. Grep the file itself before grepping the tree or the
+oleans for a rename.
+
+## TRAP — an enumerated reduction table is sized against the wrong quantity
+
+`lagrange-resolvent-transform` carried seven lemmas reducing `ζ^5 … ζ^16`,
+justified as "the products k·j for k,j ∈ {0,…,4} range over {0,…,16}". True of
+the products; irrelevant to the proof, because `ring_nf` multiplies in a further
+`ζ^4` and exponents reach 32. The `k = 4` case had never been proved.
+
+Prefer a general conditional simp lemma — `ζ^n = ζ^(n-5)` given `5 ≤ n` — which
+terminates (exponent decreases, side condition fails below 5) and cannot go
+stale when a normaliser changes. Size a table against what the *normaliser*
+produces, not against the inputs.
+
+## TRAP — an UNUSED hypothesis is a correctness defect, not a lint nit
+
+Three files in one sweep carried an instance or hypothesis binder their proof
+never consumed. The linter calls it "unused variable"; what it actually does is
+**overstate the dependency** — an unconditionally true fact reads as conditional
+on whatever the binder names. `dominant_subbraid_consistency` had
+`[hd : DominantSubBraidAtEps6]` on a closure fact independent of it;
+`sigma1_v21_param_sq_trace` had `hq : q ≠ 0` on a polynomial identity.
+
+This is the mirror of the §3b-cond violations (a conditional result stated
+unconditionally), and **neither direction is visible to `#print axioms`** —
+both proofs are clean. Only reading the signature against the statement catches
+either.

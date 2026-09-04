@@ -282,3 +282,79 @@ file repaired here (`QOU/KnotTheory`, `QOU/BraidKnot/TwoRowStratum`,
 `QOU/QuantumBloch/pentagon_uv_commutation` are all untouched by it), and every
 one of the 40 originally-failing paths was re-run lean-direct after the merge —
 which is where the 11 above comes from.
+
+
+---
+
+## Update 2026-09-04, later — 38 → 8
+
+**30 of the 38 are at 0 errors; 8 remain.** Re-measured by re-running all 40
+originally-failing paths lean-direct after merging `origin/main`.
+
+Four more repaired, adding two cause classes and one honest non-repair:
+
+| file | cause |
+|---|---|
+| `lifting-and-descent/descent-cocycle-deviation` | **A structure parameter was dropped.** `TwistedTwoCocycle` sits under `variable (R : Type*) [GroupWithZero R]`, so its real arity is `TwistedTwoCocycle R M`. The sibling passed one argument, putting the base manifold in the coefficient ring's slot, and so demanded `GroupWithZero M`. (Also: `twisted_cocycle_unobstructed` takes `R` **explicitly**, inherited from the `variable` form.) |
+| `braids-and-knots/lagrange-resolvent-transform` | **A genuinely unfinished proof**, not a stale reference — see below. |
+| `mass-endomorphism/chi-v21-hoefsmit-matrix-derivation` | **A forward reference, then a proof that could not be seen to fail** — see below. Ends at `sorry` + `-- Ref:`, bean `qou-18b6`. |
+
+### `lagrange-resolvent-transform`: a comment true about the wrong quantity
+
+`lagrange_resolvent_diagonal_action` (the DFT diagonalises the C₅ action on
+Bring's surface, `σ(w_k) = ζ^{-k} w_k`) failed on the `k = 4` case. Seven
+hand-enumerated reduction lemmas covered `ζ^5 … ζ^16`, justified as *"the
+products k·j for k,j ∈ {0,…,4} range over {0,…,16}"* — correct about the
+products, and irrelevant to what the proof sees: `ring_nf` multiplies in the
+`ζ^4` standing for `ζ⁻¹`, so exponents reach `4·4 + 4·4 = 32`. The surviving
+goal wanted `ζ^20, ζ^24, ζ^28, ζ^32`.
+
+Replaced with one conditional simp lemma, `ζ_pow_reduce (n) (h : 5 ≤ n) :
+ζ^n = ζ^(n-5)`, which terminates (exponent strictly decreases; side condition
+fails below 5) and reduces any concrete power. **This is a completed proof, not
+a repaired reference** — the theorem now holds for all five `k`, where before it
+held for four and the file did not compile.
+
+Generalisable: an enumerated reduction table is sized against the *inputs*; what
+needs covering is what the *normaliser* produces from them.
+
+### `chi-v21-hoefsmit`: raise the heartbeat budget before believing a timeout
+
+Two defects, the second hidden by the first.
+
+`hoefsmit_v21_b_sq_rational` was declared at the end of the file and consumed at
+line 247 → `Unknown identifier`. **A forward reference and a missing declaration
+are indistinguishable from that error text.**
+
+With that fixed the error was `(deterministic) timeout at whnf, maximum number
+of heartbeats (200000)`. That reads as "proof present, machine too slow". It is
+not: at 4 000 000 heartbeats the declaration elaborates in **28 s** and reports
+the real failure — `rw [h_sqrt]` finds no `√(hoefsmit_v21_b_sq q) ^ 2`, because
+`ring_nf` had already normalised the square away. The tactic script never proved
+the theorem.
+
+Disposition: `sorry` + `-- Ref:` (§Zero-sorry default, state-and-queue), with
+the partial progress recorded in the docstring and bean `qou-18b6` — the goal
+reduces to a polynomial identity in `q, b` modulo `b² = (q⁴+q²+1)/(q²+1)²`, and
+the tractable route is the Tier-2 `sigma1_v21_gen` restatement the file's own
+`@[deprecated]` notice already names.
+
+### Recurring across the whole sweep: the unused instance binder
+
+Three files carried a hypothesis their proof never consumed
+(`dominant_subbraid_consistency`, `sigma1_v21_param_sq_trace`, and the
+now-`sorry`'d one's neighbours). This is not a lint nit — an unused hypothesis
+**overstates the dependency**, making an unconditional fact read as conditional.
+It is the mirror of the §3b-cond violations elsewhere in this sweep, and neither
+direction is visible to `#print axioms`.
+
+### The 8 that remain
+
+| errors | file |
+|---|---|
+| 22 | `mass-theory/spin-involution-lp-dual-invariance` (bean `qou-0xrn`) |
+| 7 | `fluid-dynamics/townsend-biot-savart-strain` (real-analysis proof drift) |
+| 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
+| 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
+| 2 | `braids-and-knots/braid-action-tensor` (bean `qou-8qby`) |
+| 1 | `mass-theory/vertex-operator` (bean `qou-xdwp`) |
