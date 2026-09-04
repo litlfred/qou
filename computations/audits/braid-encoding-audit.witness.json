@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:57:31.334885+00:00",
-  "commitSha": "8772a849efb4861f76f881c41a069254dc3de4e4",
+  "computedAt": "2026-09-04T20:44:44.971472+00:00",
+  "commitSha": "5c68c769b4531e3c6a68f7a03d5ad803b5340fb8",
   "assertions": [
     {
       "name": "axiomatic content block tracks the phase-1.6 closed form",
       "computed": "0.000000282725426464440269230873954761375214299470049669676097105759",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-05",
+      "tolerance": "1e-5",
       "source": "axiomatic_content_block=1.88432, phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517; the content block quotes 6 sig figs"
     },
     {
       "name": "the two independent tr_M(p,q0) derivations agree",
       "computed": "0.391950403120118374031270257948565341308020587204415601736087",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": false,
-      "tolerance": "0.001",
+      "tolerance": "1e-3",
       "source": "markov_trace_assembly_chain=1.14575969245730086968908159577411930594372806194352738498820 (Wenzl-bridge, its own target_tolerance=1e-9) vs phase_1_6_closed_form=1.88431946725497502509029472310815626347249744177191389544517 (option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6"
     },
     {
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "65d8ceded1f4",
-  "scriptCommitSha": "c56548fd6ca9a15cebd831ddda0aa5ca666e94f7",
+  "scriptHash": "2ce6b1d07dce",
+  "scriptCommitSha": "7ae3a4ee754544da495b8a5630d8870adaef90ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [

@@ -618,7 +618,8 @@ def main() -> int:
     if _ob is not None and _ax is not None:
         w.add_assertion(
             "axiomatic content block tracks the phase-1.6 closed form",
-            computed=fmt(abs(_ax - _ob) / abs(_ob)), expected=0.0, tolerance=1e-5,
+            computed=fmt(abs(_ax - _ob) / abs(_ob)), expected="0.0",
+            tolerance="1e-5",
             source=f"axiomatic_content_block={_ax_raw}, phase_1_6_closed_form={_ob_raw}; "
                    "the content block quotes 6 sig figs")
 
@@ -634,7 +635,8 @@ def main() -> int:
     if _ob is not None and _ch is not None:
         w.add_assertion(
             "the two independent tr_M(p,q0) derivations agree",
-            computed=fmt(abs(_ch - _ob) / abs(_ob)), expected=0.0, tolerance=1e-3,
+            computed=fmt(abs(_ch - _ob) / abs(_ob)), expected="0.0",
+            tolerance="1e-3",
             source=f"markov_trace_assembly_chain={_ch_raw} (Wenzl-bridge, its own "
                    f"target_tolerance=1e-9) vs phase_1_6_closed_form={_ob_raw} "
                    "(option-b full chain). EXPECTED TO FAIL -- see bean qou-soj6")
