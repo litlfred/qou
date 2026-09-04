@@ -1,0 +1,122 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-04T02:39:47.671238+00:00",
+  "commitSha": "627bc94fd332e8f8971c07b379bc46b060614ace",
+  "assertions": [
+    {
+      "name": "reproduces_committed_k3_figures",
+      "computed": "0.000000000000000267985540567976932908575232187840115857301437337833974105440",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-12",
+      "source": "unpatched sweep vs the three committed per-knot max/min in fr-pullback-k3-test.witness.json — establishes that the patched run differs only by the normalization"
+    },
+    {
+      "name": "scaling_law_holds_on_fr_weights",
+      "computed": "3.52375825364253295867372243461948840847734921583157619662383e-60",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-30",
+      "source": "per-atom, per-knot: ratio_selfnorm = ratio_textbook/c_n. The audit verified this for UNIFORM weights; this tests it on the FR-redistributed weights, where the stratum total S_k carries the normalization and the within-stratum redistribution is scale-free"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11745,
+  "computation": "probe-k3-selfnormalized-recheck",
+  "scriptFile": "probe_k3_selfnormalized_recheck.py",
+  "scriptHash": "0ec6bb46430c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_k3_selfnormalized_recheck.py"
+    ],
+    "reproduce": "python3 -u computations/probe_k3_selfnormalized_recheck.py"
+  },
+  "description": "Re-runs fr_pullback_k3_test under the CORRECTED (self-normalized) q-Plancherel measure, closing the question the 2026-09-04 convention-gap audit left open. Self-normalizing is exactly the substitution [n]_q! -> c_n*[n]_q!, so this patches the k3 module's qfac and re-runs its own functions unmodified -- same braid words, same upstream chi witnesses, same functional. Checks three things: that the unpatched run reproduces the committed figures; that the scaling law (ratio scales by c_n) holds on the FR weights and not merely the uniform ones; and whether the knot RANKING and the PARTIAL-support verdict survive. Note the k3 test computes chi in float64 (q_f64 = float(Q0)); that ~1e-16 defect is separate, far below the ~53% normalization effect, and is NOT addressed here.",
+  "auditOnly": "docs/audits/2026-09-04-plancherel-convention-gap.md",
+  "data": {
+    "c_n": {
+      "6": "0.991079523637350470425661347874",
+      "9": "1.11092313495739871662400069152",
+      "12": "1.51713321376786005529770467557"
+    },
+    "per_knot": {
+      "4_1": {
+        "max_over_min_textbook": "1.50146673070105707105716146707888197742745089115416150954712",
+        "max_over_min_selfnormalized": "1.24252965262940716310390393844802970457626282963866713985906",
+        "ratios_textbook": {
+          "D": "0.364095497396845244261592505384577973563882937976861572564287",
+          "T": "0.328461183980107836548858296673878780383797272829688779765211",
+          "3He": "0.348130636702824664660979992836365660592462108828973948703426",
+          "4He": "0.493173540072810933987450597250157525115328354238442855179827"
+        },
+        "ratios_selfnormalized": {
+          "D": "0.367372636315380841224856107187270821344941027005934178171543",
+          "T": "0.295665085769145989251631550026448902895626967499734267947018",
+          "3He": "0.313370588610682460859983240685002762203555664029612725361603",
+          "4He": "0.325069371362581295303426217428873763758138001301186969676499"
+        }
+      },
+      "5_2": {
+        "max_over_min_textbook": "1.53942255442162148619637196454117806354039989056368714042803",
+        "max_over_min_selfnormalized": "1.29113233629229771657059728572778418713958841980103821242763",
+        "ratios_textbook": {
+          "D": "0.371023567933643434524244204272795653307910679669317748760570",
+          "T": "0.322111512410047040810386045515500565901920715475451428424162",
+          "3He": "0.343884518610416283933470023166675574030446089733723754029360",
+          "4He": "0.495865727242886445407751861083100731759551490648547586602319"
+        },
+        "ratios_selfnormalized": {
+          "D": "0.374363064804279039736798813394989230401032122877618156085570",
+          "T": "0.289949414387161230535898914344843568280635081199185584223922",
+          "3He": "0.309548435701272387815901618957570476664218460260033124119211",
+          "4He": "0.326843893959307892970398360932045346981469890644912401919446"
+        }
+      },
+      "6_1": {
+        "max_over_min_textbook": "1.60403288447846342985761963577220343559238526746644208777190",
+        "max_over_min_selfnormalized": "1.04784743529503138214377222192008601701437251973066270611308",
+        "ratios_textbook": {
+          "D": "0.312096988242647227854417648196609035213560830407134824520521",
+          "T": "0.352094862879266450547260491038459913546747308393210732254798",
+          "3He": "0.359378006841348172207422950160873932724126556855271664310523",
+          "4He": "0.500613832287894520132736854436133944073606717149988275491342"
+        },
+        "ratios_selfnormalized": {
+          "D": "0.314906100670129249005178064926419488015947978696564355594717",
+          "T": "0.316938995867403966272709264585170610092598571447482303500517",
+          "3He": "0.323494934557402543952965033328005461105552455401536676492364",
+          "4He": "0.329973549945953896814766245293566704288494335064223692071897"
+        }
+      }
+    },
+    "ranking": {
+      "textbook": [
+        "4_1",
+        "5_2",
+        "6_1"
+      ],
+      "selfnormalized": [
+        "6_1",
+        "4_1",
+        "5_2"
+      ],
+      "survives": false
+    }
+  }
+}
