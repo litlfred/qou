@@ -70,6 +70,53 @@ representatives. The corpus has `youngSubgroup` for a *tableau's* row stabiliser
 all has **not** been checked here and should be corpus-grepped before any of it is
 written.
 
+## Lemma 3.9's inputs — the corpus-grep, run
+
+Flagged above as "not checked". Now checked, and the first vocabulary tried was the
+wrong one: `D_mu`, "distinguished coset representative" and `cosetRep` return
+nothing. The infrastructure is there under **"minimal-length coset representative"**,
+in [`QOU/Machinery/CoxeterParabolicCoset.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/CoxeterParabolicCoset.lean),
+**sorry-free** (0 code sorries, comments stripped):
+
+| declaration | content | conditional? |
+|---|---|---|
+| `parabolic cs J` | the parabolic subgroup `W_J` | no |
+| `SameCosetJ` + refl/symm/trans | the coset relation | no |
+| `IsMinRep` | minimal-length coset representative — **this is `D_μ`** | no |
+| `exists_minRep` | every coset has one | **no — unconditional** |
+| `minRep_not_isRightDescent` | a minimal rep has no `J`-descent | no |
+| `length_minRep_mul_wordProd` | the lifting lemma `ℓ(u · π p) = ℓ(u) + |p|` | **yes — on `RightExchangeProp`** |
+
+That file states the exchange property (Bjorner–Brenti Thm 1.4.3) as an explicit
+hypothesis rather than an axiom or a `sorry`, on the ground that Mathlib lacks it.
+
+### That "upstream Mathlib gap" is REAL, re-checked today
+
+Given how much of this arc turned out to rest on stale notes, it was worth
+re-measuring rather than trusting. Enumerating the Lean environment directly (the
+`lean-lsp` MCP server is `CONNECT_TIMEOUT`, and the restored olean cache carries no
+Coxeter `.ilean`, so neither `leansearch` nor an index grep can answer it):
+
+    import Mathlib.GroupTheory.Coxeter.Inversion + .Length
+    run_cmd  -- every constant whose name contains "Coxeter" and exch/delet/isreduced
+
+returns **`IsReduced` machinery only — zero hits on "exch" and zero on "delet"**. So
+the gap is current, not stale, and `length_minRep_mul_wordProd` is rightly
+conditional. **Do not go looking for `CoxeterSystem.exchange`; it is not there.**
+
+### But type A does not need it
+
+The generic lifting lemma is blocked; the **type-A** length-additivity criterion is
+not. `QOU.Hecke.LengthAdditive.length_mul_eq_add_iff` (#6444, merged `a2edbcffb7`,
+sorry-free) gives, for `Perm (Fin (n+1))`,
+
+    ℓ(u·v) = ℓ(u) + ℓ(v)   ↔   invSet v ⊆ invSet (u·v)
+
+**unconditionally**, by inversion sets rather than by exchange. The Murphy basis is a
+type-A statement, so the exchange gap is not on its critical path — a route around it
+already exists inside this same arc, and `exists_garnir_length_additive` (#6598) is
+built on it.
+
 ## Status of the pieces this branch added
 
 All sorry-free, `#print axioms` clean:
