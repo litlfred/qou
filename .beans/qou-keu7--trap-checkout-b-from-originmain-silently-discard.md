@@ -54,3 +54,39 @@ declined. Do not upgrade it without asking. And it covers `.beans/` only:
 same checkout. Beans are singled out because they are the case that has actually
 cost this repo, and because a lost bean is silent in a way lost code is not — a
 missing source file breaks a build.
+
+### Follow-up the same session — the first matcher had a false positive
+
+Re-reading the guard's own diff adversarially turned up a defect in it. The
+matcher was a **substring** test, so a command that merely *quotes* the
+invocation fired it. Measured:
+
+    git commit -m 'docs: explains git checkout -b claude/foo origin/main and why'
+    -> WARNED
+
+and the commit documenting this very guard is exactly such a message. **A guard
+that cries on the commit describing it is noise, and noise is what gets guards
+ignored** — which would have reproduced this bean's own root failure (a check
+that exists and is not heeded) by a different route.
+
+Fixed by matching at a **command position**: split the string on separators
+(`;`, `&&`, `||`, `|`, backtick, `$(`) and require the fragment to *begin* with
+`git checkout|switch`. A quoted mention sits mid-fragment and is skipped. A base
+ref that does not resolve now exits early too, so a prose placeholder like
+`origin/<default>` cannot reach the git layer.
+
+**The matcher is now covered by `--selftest`**, which previously exercised only
+the diff logic. Nine rows: four true positives (`-b`, `-B`, `switch -C`, and a
+compound `git fetch … && git checkout -b …`) and five that must stay silent
+(no explicit base; the quoted-in-a-commit-message case; a `grep` for the string;
+an `echo` of it; a plain `git commit`). A new class whose selftest does not cover
+it is the trap this session kept finding elsewhere.
+
+### Clarification: git DOES protect uncommitted work
+
+While testing, `git checkout` **refused** to switch branches because the guard
+script had uncommitted edits. That is the boundary of this trap and is worth
+stating plainly: git blocks a checkout that would overwrite *uncommitted*
+changes. The silent loss happens only for work that is **committed on the branch
+and absent from the target** — which is why it is invisible, and why `git status`
+is clean afterwards.
