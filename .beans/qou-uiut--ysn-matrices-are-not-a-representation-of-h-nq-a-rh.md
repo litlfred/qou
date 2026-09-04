@@ -774,3 +774,58 @@ here; the run had to complete first.
 - [ ] Excise the 391 raw float64 fields from `hadron_knot_table`'s witness
       path, then regenerate. 4.6 h per regeneration, so batch it with the
       deuterium bisect rather than running the table twice.
+
+
+## 2026-09-04 — BISECT: neither the braid fix nor the dps floor moved deuterium
+
+`binding_energy(1, 1)`, fresh interpreter per point, each suspect toggled in
+the working tree and restored (tree verified CLEAN afterwards):
+
+    baseline (current HEAD)      -7.271102124876744   dps=50
+    braid fix REVERTED           -7.271102124876744   dps=50
+    50-dps floor DISABLED        -7.271102124876695   dps=15
+    BOTH reverted                -7.271102124876695   dps=15
+
+The braid revert changed **nothing** — identical to 16 digits. The dps floor
+moves only the 16th digit. So the deuterium shift from +2.2213 to -7.2711 is
+NOT attributable to either, and both are exonerated.
+
+### Why the braid revert was inert — and this matters for the whole arc
+
+The Rust kernel takes the PARTITION and builds its own seminormal matrices
+inside Rust. It never calls `_build_ysn_matrices`. Demonstrated directly, with
+the braid fix reverted, on partition (3,1,1):
+
+    use_rust=True :  -0.00246686714893002309   (Rust, unaffected)
+    use_rust=False:   0.184698628503780171     (Python, uses the broken a_rho)
+
+**So the braid fix has no effect on anything routed through Rust**, which
+since `qou-sv7h` is the default for `atom_character_raw` and
+`unified_iterative_correction` — i.e. for `binding_energy`.
+
+### What this does and does not change about the braid fix
+
+It does NOT make the fix unnecessary. The Python matrices were genuinely not a
+representation, and every consumer NOT routed to Rust was getting wrong
+numbers:
+
+    _crossing_M22 / _chain_M22        the hardcoded (2,2) H_4(q) path
+    sdp_cross_channel.chi_at_q        the q-sweep
+    _contrib_single_partition         jet / conjugate-pair paths
+    every use_rust=False fallback     including any session without the wheel
+
+It DOES mean I have been implying too much. I described the regenerated
+witness as showing "the braid fix resolved two of the six stability failures".
+That is not established: c14 and o16 flipping to stable comes from
+`check_frobenius(build_atom_nf(...))`, and the numbers in the witness came
+from Rust, which was always correct. The honest statement is that the witness
+changed for OTHER reasons — the 1907-commit merge, convention D, the
+`atom_markov_trace` rescaling removal (`qou-8w8v`) — and the braid fix is not
+demonstrably among them.
+
+- [ ] The deuterium shift is still unexplained. Two suspects are eliminated;
+      the remaining candidates are the merge of main, convention D, and the
+      rescaling removal. The rescaling one is testable cheaply at A=2 only if
+      `log_norm != 0` there, and it is 0 — so that leaves the merge and
+      convention D, which need an actual git bisect rather than an in-tree
+      toggle.
