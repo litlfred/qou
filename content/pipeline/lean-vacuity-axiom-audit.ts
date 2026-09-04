@@ -1998,6 +1998,78 @@ function detectTrueClassField(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
+/** A field typed with the **universe** `Prop` and consumed by nothing:
+ * `holds : Prop`, standing alone. This is the fourth shape in the
+ * carrier-vacuity family, and all three existing detectors structurally miss
+ * it — `proof-no-empty-prop-carrier` requires **zero** fields and returns early
+ * on one; `true-class-field` tests for a literal `True` (it catches the
+ * *defaulted* `Prop := True`, not the bare universe); and `tautological-field`
+ * is deliberately narrow to bounded-function shapes, which `Prop` is not.
+ *
+ * A field of type `Prop` asks the instance to supply *a proposition of its
+ * choosing*, so an unconsumed one leaves the carrier satisfied by `⟨True⟩` and
+ * every `[C]`-conditional downstream result unconditional. §3b-tax: *"Class
+ * fields must carry the conjecture's **content** … never a bare `True` or an
+ * empty body."* An unconsumed universe-typed field is an empty body wearing a
+ * field name.
+ *
+ * **A `Prop`-typed field is NOT vacuous on its own, and the naive rule
+ * over-reports 6x.** Declaring an abstract predicate as a field and then
+ * *consuming* it in a sibling is the correct §3b-cond pattern. Worked
+ * counter-example: `QOU.Torsion.BraneBoundaryContext`, whose five `Prop` fields
+ * are all consumed — `boundary_active : brane_boundary_regular` asserts one and
+ * `impl_brane_boundary_structure : brane_boundary_regular → Codim_at_least_2 ∧
+ * ExceptionalKernel ∧ InvolutionSymmetric ∧ ChiralityInterface` relates the
+ * rest. That carrier states a real implication and must stay silent. Firing on
+ * *any* `Prop` field reported **101** carriers; firing only on **unconsumed**
+ * ones isolates the genuine shape.
+ *
+ * So the criterion is: a `Prop`-typed field whose name appears in **no other
+ * field's type** in the same carrier — nothing asserts it, nothing implies from
+ * it, so it has no role. Honest fix: encode the property as the field's type,
+ * consume it in a sibling field, or demote per §3b-tax.
+ *
+ * Exemplars — all three dualities of the spin/isospin cluster:
+ * `IsospinFromCanonicalBowtie` (D9), `SpinFromSo3Fiber` (D10) and
+ * `WignerSu4FromSpinIsospin` (D11) each declare exactly `holds : Prop` and
+ * nothing else, while their `.md` siblings state real content (D9's is a
+ * mass-split formula quoted at 305 ppm). The material for a contentful class
+ * exists and simply is not in the Lean. */
+const PROP_UNIVERSE_TYPE = /^Prop$/;
+function detectPropUniverseField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  const clean = (s: string) =>
+    s.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+  const universeFields = fields.filter((f) =>
+    PROP_UNIVERSE_TYPE.test(clean(f.type)),
+  );
+  if (universeFields.length === 0) return undefined;
+  // A universe-typed field earns its place if a SIBLING field's type mentions
+  // it — asserting it, or relating it in an implication. Only unconsumed ones
+  // are decoration.
+  const unconsumed = universeFields.filter((f) => {
+    const word = new RegExp(`(^|[^\\w.])${f.name}([^\\w]|$)`);
+    return !fields.some((g) => g.name !== f.name && word.test(clean(g.type)));
+  });
+  if (unconsumed.length === 0) return undefined;
+  const names = unconsumed.map((f) => f.name).join(", ");
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "prop-universe-field", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `unconsumed universe-typed field(s) \`: Prop\` (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "prop-universe-field", false);
+  h.detail =
+    `field(s) typed with the universe \`Prop\` rather than a proposition, and ` +
+    `consumed by no sibling field (${names}) — the instance chooses the ` +
+    `proposition, so \`⟨True⟩\` inhabits the carrier and any ` +
+    `[${d.name}]-conditional result is unconditional. Encode the real property ` +
+    `as the field type, consume it in a sibling, or demote per §3b-tax`;
+  return h;
+}
+
 /** A class/structure field whose Prop is a **tautology about the subject** —
  * neither empty (`proof-no-empty-prop-carrier`) nor literally `: True`
  * (`true-class-field`), but provable for an *arbitrary* substitution of the
@@ -2601,6 +2673,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectEmptyPropCarrier(d, doc));
     push(detectClaimsUnencoded(d, doc));
     push(detectTrueClassField(d, doc + "\n" + rawSpan));
+    push(detectPropUniverseField(d, doc + "\n" + rawSpan));
     push(detectTautologicalField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);

@@ -26,4 +26,29 @@ The `J_k` diagonal action that the interpolation argument rests on is itself est
 
 ## Scope of the Lean carrier
 
-The class encodes cross-check 2 only. Cross-checks 1, 3 and 4 appear in the statement above and in the proposition's docstring but are **not** fields of the class, so a future instance would discharge idempotency alone. That is a deliberate under-encoding — the downstream theorem needs only idempotency — and it means the class is a faithful carrier for what is *consumed*, not for the full conjecture as stated here. Extending it is the natural next step once any of the other three acquires a downstream consumer.
+The class carries the **interpolation-theoretic inputs**, not the cross-checks
+themselves: an index type $\mathrm{Tab}(\lambda)$ of standard tableaux, a
+projector $\pi_T$ for each, and three properties —
+
+- $\pi_T^2 = \pi_T$ (Lagrange interpolation at a simple joint eigenvalue),
+- $\pi_T \pi_{T'} = 0$ for $T \neq T'$ (distinct tableaux carry distinct joint
+  eigenvalue tuples),
+- $e_\lambda = \sum_T \pi_T$.
+
+Cross-check 2 is then **derived**: $e_\lambda^2 = \sum_T \sum_{T'} \pi_T
+\pi_{T'} = \sum_T \pi_T^2 = \sum_T \pi_T = e_\lambda$.
+
+**This replaces an earlier encoding that violated AGENTS.md §3b-cond item 5.**
+Until 2026-09-04 the class had a single field whose type *was*
+[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)'s
+conclusion, discharged by a bare projection `exact hi.idempotent lam h` — so
+the "conditional theorem" proved nothing modulo the class. Caught by the
+`--item5` mode of `scripts/conditional-on-class-hypothesis-audit.ts`; the fix
+was to axiomatise what interpolation actually supplies and let the theorem
+compose it.
+
+Cross-checks 1, 3 and 4 (sum-to-identity, self-adjointness, bar-pairing) are
+stated above but are still not encoded — they have no downstream consumer yet.
+Orthogonality is now encoded, at the projector level, because idempotency needs
+it. Per §3b-tax **no instance of the class exists**, which is the correct
+representation of an unproved primary conjecture.

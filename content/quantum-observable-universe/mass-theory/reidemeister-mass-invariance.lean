@@ -5,6 +5,7 @@
 -- Generic: any QOU, not specific to χ = -6.
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 noncomputable section
 
@@ -85,13 +86,24 @@ theorem writhe_R1_changes (K : KnotDiagram) (sign : Int) (h : sign = 1 ∨ sign 
 -- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace
 axiom bareMass : KnotDiagram → R_q
 
+/-- **R-III invariance is not a conjecture — it holds for every function.**
+    `applyR3 K := K`, so `f (applyR3 K) = f K` is `rfl` whatever `f` is.  This
+    was two separate axioms (`bareMass_R3_invariant`, `bindingEnergy_R3_invariant`);
+    both were provable all along, and are now the single theorem below.  Nothing
+    about mass or binding energy is used. -/
+theorem invariant_under_R3 {γ : Type*} (f : KnotDiagram → γ) (K : KnotDiagram) :
+    f (applyR3 K) = f K := rfl
+
 /-- Bare mass is a knot invariant. -/
 -- Ref: [manuscript] Ch. 4 (bare mass invariant under R-I)
 axiom bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
 -- Ref: [manuscript] Ch. 4 (bare mass invariant under R-II)
 axiom bareMass_R2_invariant : ∀ K, bareMass (applyR2 K) = bareMass K
--- Ref: [manuscript] Ch. 4 (bare mass invariant under R-III)
-axiom bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K
+
+/-- Bare mass is invariant under R-III — a corollary of `invariant_under_R3`,
+    formerly `axiom bareMass_R3_invariant`. -/
+theorem bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K :=
+  invariant_under_R3 bareMass
 
 /-- Binding energy depends on the embedding (writhe-sensitive).
     It is a regular isotopy invariant but not a knot invariant. -/
@@ -101,8 +113,12 @@ axiom bindingEnergy : KnotDiagram → R_q
 /-- Binding energy is invariant under R-II and R-III. -/
 -- Ref: [manuscript] Ch. 4 (binding energy invariant under R-II)
 axiom bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
--- Ref: [manuscript] Ch. 4 (binding energy invariant under R-III)
-axiom bindingEnergy_R3_invariant : ∀ K, bindingEnergy (applyR3 K) = bindingEnergy K
+
+/-- Binding energy is invariant under R-III — a corollary of
+    `invariant_under_R3`, formerly `axiom bindingEnergy_R3_invariant`. -/
+theorem bindingEnergy_R3_invariant :
+    ∀ K, bindingEnergy (applyR3 K) = bindingEnergy K :=
+  invariant_under_R3 bindingEnergy
 
 /-- Binding energy changes under R-I (shell transition). -/
 -- Ref: [manuscript] Ch. 4 (binding energy changes under R-I / shell transition)
@@ -149,37 +165,82 @@ below mirrors that class name so the §3b-cond audit
 conditional-on-class structure; downstream consumers should import the
 canonical class from the sibling stub file instead. -/
 
-/-- Local mirror of `conj:borromean-quark`'s axiomatised class.  The
-    canonical declaration (with the full mass functional + realisation
-    fields) lives in `borromean-quark.lean`; this mirror states the same
-    volume-calibration *shape* so the §3b-cond banner audit recognises
-    the conditional-on-class structure without a cross-module import. -/
-class BorromeanQuark : Prop where
+/-- The hyperbolic volume of the Borromean complement, `Vol(S³ ∖ B₃)`.
+    Declared locally so the carrier below can pin the mass functional to a
+    NAMED constant without a cross-module import (the canonical declaration is
+    `QOU.Archimedean.borromean_volume`). -/
+def borromeanVolume : ℝ := 7.32772
+
+/-- Local mirror of `conj:borromean-quark`'s axiomatised class, **parametrised
+    on the mass functional**.
+
+    ## Why the parameter, and what it fixes
+
+    This mirror previously read
+
+    ```lean
+    class BorromeanQuark : Prop where
+      volume_calibrates_mass :
+        ∃ (V : ℝ) (m : ℝ → ℝ), 0 < V ∧ ∀ q : ℝ, q > 1 → m q = V / (1 - 1 / q) ^ 2
+    ```
+
+    and its docstring claimed *"an instance must exhibit such a calibrated
+    functional — not merely assert `True`."*  **That claim was false.**  Both
+    `V` and `m` were existentially bound, with `m` defined from `V` by the very
+    equation being asserted, so
+
+    ```lean
+    instance : BorromeanQuark := ⟨⟨1, fun q => 1 / (1 - 1/q)^2, one_pos, fun _ _ => rfl⟩⟩
+    ```
+
+    typechecks.  The carrier constrained nothing, and the downstream
+    `[BorromeanQuark]`-conditional theorem was therefore unconditional.
+
+    The rule the old form broke: **a carrier whose constraining fields relate
+    only its own bound data is a definition of a structure, not a statement of
+    a conjecture.**  A conjecture is a claim about objects fixed elsewhere.  So
+    `bareMass` is a *parameter* here, and the class says something about a
+    functional it was handed — see `not_borromeanQuark_const_zero`, which
+    refutes it at a specific functional.  The old form admitted no such
+    refutation at all.
+
+    Measured across the corpus in
+    `docs/audits/2026-09-04-self-satisfying-conjecture-carriers.md`: ten classes
+    named `BorromeanQuark`, no two with the same fields, **all ten trivially
+    inhabited**. -/
+class BorromeanQuark (bareMass : ℝ → ℝ) : Prop where
   /-- Conjecture content (mirrors `borromean_quark.volume_calibrates_mass`):
-      the baryon bare-mass functional `m : ℝ → ℝ` is calibrated by the
-      Borromean hyperbolic volume `V`, i.e. at every `q > 1` it equals
-      `V / (1 − 1/q)²`.  An instance must exhibit such a calibrated
-      functional — not merely assert `True`. -/
+      the baryon bare-mass functional is calibrated by the Borromean hyperbolic
+      volume, i.e. at every `q > 1` it equals `borromeanVolume / (1 − 1/q)²`. -/
   volume_calibrates_mass :
-    ∃ (V : ℝ) (m : ℝ → ℝ), 0 < V ∧ ∀ q : ℝ, q > 1 → m q = V / (1 - 1 / q) ^ 2
+    ∀ q : ℝ, q > 1 → bareMass q = borromeanVolume / (1 - 1 / q) ^ 2
+
+/-- **The carrier is refutable**, which is the whole point of the parameter:
+    the constantly-zero functional is not volume-calibrated.  The previous
+    existential form admitted no refutation, because it quantified over the
+    functional it was constraining. -/
+theorem not_borromeanQuark_const_zero : ¬ BorromeanQuark (fun _ => 0) := by
+  intro h
+  have h2 := h.volume_calibrates_mass 2 (by norm_num)
+  norm_num [borromeanVolume] at h2
 
 /-- **Conditional consequence of `BorromeanQuark`** (per CLAUDE.md §3b-cond):
-    the volume-calibrated bare-mass functional is strictly positive on the
-    physical regime `q > 1`.  This derives a genuine conclusion from the
-    class hypothesis (positivity of `V / (1 − 1/q)²` for `V > 0`, `q > 1`),
-    rather than asserting `True` — so it is a non-degenerate conditional
-    result, not a self-assuming projection.
+    a volume-calibrated bare-mass functional is strictly positive on the
+    physical regime `q > 1`.
+
+    Now genuinely conditional.  In the previous form the hypothesis was
+    derivable, so this theorem — presented as a §3b-cond conditional result —
+    held unconditionally.
 
     Named in the Mathlib `_of_` conditional-lemma style (§3b-cond): the
     conclusion (calibrated mass positive) `_of_` the hypothesis
-    (`BorromeanQuark`, carried as the load-bearing `[·]` instance binder
-    the §3b-cond banner audit keys on). -/
-theorem calibrated_mass_pos_of_borromeanQuark
-    [inst : BorromeanQuark] :
-    ∃ m : ℝ → ℝ, ∀ q : ℝ, q > 1 → 0 < m q := by
-  obtain ⟨V, m, hV, hcal⟩ := inst.volume_calibrates_mass
-  refine ⟨m, fun q hq => ?_⟩
-  rw [hcal q hq]
+    (`BorromeanQuark`, carried as the load-bearing `[·]` instance binder the
+    §3b-cond banner audit keys on). -/
+theorem calibrated_mass_pos_of_borromeanQuark (bareMass : ℝ → ℝ)
+    [inst : BorromeanQuark bareMass] (q : ℝ) (hq : q > 1) :
+    0 < bareMass q := by
+  rw [inst.volume_calibrates_mass q hq]
   have hq0 : (0 : ℝ) < q := lt_trans one_pos hq
   have h1 : (0 : ℝ) < 1 - 1 / q := sub_pos.mpr ((div_lt_one hq0).mpr hq)
+  have hV : (0 : ℝ) < borromeanVolume := by norm_num [borromeanVolume]
   exact div_pos hV (pow_pos h1 2)

@@ -78,3 +78,63 @@ Corrected in the same PR: the audit §4 paragraph (struck through, with what the
 source actually says) and the content block's claim. Probe:
 `computations/probes/arc_count_diagnostic_degeneracy_probe.py` (6/6, exact
 rational arithmetic, no float64).
+
+## 2026-09-04 — the colour tube now has a NUMBER, and a structural obstruction
+
+`qbeta_strand_multiplicity_probe.py` (7/7). Three crossings on three independent
+strand pairs give `-ln b -> 3(-ln b)` exactly (if `tr_M` factorises over disjoint
+supports), and the additive law's coefficient becomes `8.77274 MeV/nucleon`
+against a measured peak `B/A` of `8.79456` at `A = 62` — **0.25 %**. The required
+factor is 3.0075 and the strand count is 3.
+
+So this bean's conjecture, if true, closes the extensive-term magnitude gap
+(`qou-ib3g`) with no free parameter.
+
+**Two obstructions, both new here:**
+
+1. **The existing `m_pp`/`m_pn`/`m_nn` parameter is NOT it.** It repeats the same
+   letter on the same generator, giving `X^3` in a 2-dim subalgebra: factors
+   0.335 / 0.984 / 1.709, and `b > 1` (negative bond energy) at `m = 2`.
+2. **The 3A layout cannot express a colour tube.** Nucleon `k` holds strands
+   `3k, 3k+1, 3k+2`, so colour-matched pairs across an interface are distance 3
+   apart; reaching them needs a braid, not the single `sigma_{3k+2}` emitted.
+
+The decidable next step is (a): **does `tr_M` factorise over disjoint supports?**
+That is checkable without building the tube, and it is what the `b -> b^3` claim
+rests on entirely.
+
+## 2026-09-04 (later) — assumption (a) DISCHARGED: `tr_M` does factorise. The obstruction is now a LAYOUT CONFLICT.
+
+`computations/qbeta/qbeta_disjoint_support_factorisation_probe.py` (7/7), at
+40 dps through `build_seminormal_matrices_mp` (the exact-precision builder, not
+the float64 `chi_lambda_of_word` kernel).
+
+**The result.** With `W = s0 s1 s0` on block `{0,1}` and `W' = s3 s4 s3` on
+`{3,4}` — generators REPEATED inside each block, blocks separated by
+`|1-3| = 2` — `tr(W.W') = tr(W).tr(W')` with relative difference **0.0** at the
+working precision, and the same for all three physical bond letters. So
+`b -> b^3` under a colour tube is **exact, not approximate**, and the additive
+law's coefficient becomes `8.77274 MeV/nucleon` against a measured peak
+`B/A = 8.79456` at `A = 62` — 0.25 %.
+
+**Methodological trap worth keeping.** My first control was "adjacent supports
+must NOT factorise". It is worthless: `tr(s0.s1) = tr(s0)tr(s1)` to 2.6e-40,
+because a word using each generator ONCE in INCREASING order is collapsed one
+generator at a time by the Markov property, adjacency irrelevant. A real control
+needs a REPEATED generator, where `sigma^2 = h.sigma + 1` bites:
+`tr(s0^2) = 1.12809` vs `z^2 = 0.37539`, and `tr(s0s1s0) = 0.69117` vs
+`z^3 = 0.22999`. Both fail, as they must. Reading the first as a positive would
+have been an overclaim.
+
+**Where the obstruction moved.** A colour-BLOCKED layout realises the hypothesis
+— colour `c` of nucleon `k` at strand `c.A + k` gives blocks `{0..A-2}`,
+`{A..2A-2}`, `{2A..3A-2}`, disjoint and separated by one unused generator each.
+So the trace cooperates and a layout exists. What blocks it is that the two
+demands are **incompatible on one strand ordering**:
+
+  * intra-nucleon structure (3 `g0` + 3 `g1`, quarks, gluons) wants a nucleon's
+    three strands ADJACENT — `atom_braid_word_3A`'s `base_g0 = 3k`;
+  * colour-blocked inter-nucleon coupling wants them `A` APART.
+
+That is sharper than the previous probe's "distance 3 apart", and it is a
+construction question with a definite answer rather than an open assumption.
