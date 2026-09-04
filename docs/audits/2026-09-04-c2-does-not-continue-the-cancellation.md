@@ -20,9 +20,17 @@ get these):
     nn      2   2.2500   13.5625   0.22293   0.13315    0.597
     T       3   2.5469   25.6641   0.25235   0.25195    0.998
     3He     3   2.6562   26.9609   0.26319   0.26468    1.006
+    4He     4   2.0234   29.8965   0.20049   0.29350    1.464
 
 at `ℏ_q = 1 − 1/q₀ = 0.099081716044258508` (proton pin, `q₀ = 1.1099785827513808`).
-Exact values: `c₂ = 357/32, 403/32, 217/16, 3285/128, 3451/128`.
+Exact values: `c₂ = 357/32, 403/32, 217/16, 3285/128, 3451/128, 15307/512`.
+
+**The ⁴He row is a second run, at raised precision.** At the committed
+`P_OF["4He"] = 3` the probe reports `c₂ = None` — `d.p` does not exceed 2 after
+the seminormal quotients, so `a₂` is unavailable. Re-run at `P = 4`: `d.p = 3`,
+`a₂ = 14271/512`, `c₂ = 15307/512`, 264 s. The `c₁` it returns is `259/128`,
+identical to both the committed value and the closed form, which is the check
+that the raised precision did not perturb anything else.
 
 `c₁` was already known to be flat-then-decaying across A (2.31 at A = 2, 2.02 at
 A = 4, 0.84 at A = 6). **`c₂` does the opposite**: ~11–13.6 at A = 2, ~25.7–27.0
@@ -30,15 +38,33 @@ at A = 3 — roughly doubling in one step.
 
 ## What that means
 
-**The ratio column is the finding.** At A = 2 the `ℏ²` term is about half the
-`ℏ¹` term, which is what an expansion should look like. At A = 3 it is
-**1.00** — the two orders contribute equally. Two independent cases at A = 3
-(different Z,N) agree on that to **0.8 %**, so it is a signal, not scatter.
+**The ratio column is the finding, and it is monotone through 1:**
 
-An expansion whose second term has caught the first is not ordering anything.
+    A = 2   0.465, 0.540, 0.597     second order is about half the first
+    A = 3   0.998, 1.006            the two orders are EQUAL
+    A = 4   1.464                   second order EXCEEDS the first by half
+
+At A = 2 this looks like an expansion should. At A = 3 the two orders contribute
+equally — two independent cases (different Z,N) agreeing to **0.8 %**, so it is
+signal, not scatter. **At A = 4 the second-order term is 1.46× the first.**
+
+An expansion whose second term has overtaken the first is not ordering anything.
 So the honest reading is not "the cancellation continues at second order" nor
-"it stops" — it is that **by A = 3 the `ℏ_q` expansion has lost the property
-that makes `c₁` the leading behaviour at all.**
+"it stops" — it is that **the `ℏ_q` expansion crosses over between A = 3 and
+A = 4 and stops being an expansion**, and `c₁` is not the leading behaviour
+beyond that point.
+
+**What drives the crossing is `c₁`, not `c₂` — worth stating because it is the
+opposite of the obvious reading.** From A = 3 to A = 4:
+
+    c1:  2.6562 -> 2.0234   -23.8 %
+    c2: 26.9609 -> 29.8965  +10.9 %
+
+`c₂`'s growth has largely flattened by A = 4; the ratio rises because **`c₁` is
+falling**. That is the same decay already recorded for `c₁` (2.31 at A = 2, 2.02
+at A = 4, 0.84 at A = 6). So the crossover is not "the second order blows up" —
+it is that the *first* order decays away while the second does not follow it
+down. Anyone reading the ratio column alone would get the mechanism backwards.
 
 This is consistent with, and independently corroborates, the convergence defect
 recorded in PR #6427: `|uic|` at ⁴He runs 1.52 → 2.15 → 3.71 → 5.67 → 8.20 across
@@ -67,13 +93,14 @@ being carried over from the source's own claim.
 
 - **`c₃` is not measured.** Nothing here says anything about third order. The
   question asked about `c₂` *and* `c₃`; only `c₂` is answered.
-- **A = 4 is CONFIRMED unavailable at the committed precision.** The run
-  completed: ⁴He reports `c₁ = 259/128` (matching the recorded value) and
-  **`c₂ = None`** — `P_OF["4He"] = 3` does not leave `d.p > 2` after the
-  seminormal quotients, exactly as the guard anticipates. So the trend rests on
-  **two A values**, which is the same weakness that sank the
-  `E ≈ 5.4 × C(A,2)` target on #6427; flagged here rather than after the fact.
-  A raised-precision ⁴He run is in flight (see §What would settle it).
+- **A = 4 is now in hand — the trend is three A values, not two.** An earlier
+  revision of this document flagged two points as a thin trend (the weakness
+  that sank the `E ≈ 5.4 × C(A,2)` target on #6427). That caveat is **retired**:
+  the raised-precision run landed and A = 4 is measured. It is a stronger
+  result than the caveat feared, since it is the point that crosses 1.
+- **`c₂` is measured at A = 2, 3, 4 only.** Nothing here constrains A ≥ 5, and
+  A = 6 is out of reach by this route (`n = 3A = 18` strands against ⁴He's 12,
+  and ⁴He at `P = 4` already takes 264 s).
 - **A = 6 is far out of reach by this route.** ⁶Li is `n = 3A = 18` strands
   against ⁴He's 12; the ⁴He case is already the slow one at `P = 3`.
 - **This does not contradict #6427's flatness result.** That measured the summed
@@ -91,12 +118,18 @@ column here is byte-identical to what `main` already records and the `c₂` colu
 is what that same run prints. What is new is only the `ℏ_q`-weighting and the
 reading of it.
 
-## What would settle it
+## What would settle the rest
 
-The clean discriminator is `c₂` at **A = 4** — one more point, and the first that
-could show the ratio exceeding 1. It needs `P_OF["4He"]` raised until `d.p > 2`
-survives: a precision cost on the already-slowest case (⁴He took ~230 s of the
-300 s run at `P = 3`), not a new derivation.
+**A = 4 is done** (above). What remains open:
+
+- **`c₃`.** The question asked about `c₂` *and* `c₃`; only `c₂` is answered. If
+  the crossover reading is right, `c₃·ℏ³` at A = 4 should be comparable to the
+  other two rather than small. That is the direct test, and it needs `P = 5` at
+  ⁴He — the same lever, one notch further.
+- **Whether `P_OF["4He"] = 3` should be raised on `main`.** It is committed at
+  the value that yields `c₁` and stops. Raising it to 4 costs 264 s and makes
+  `c₂` available at A = 4 permanently. **Not changed here** — that is the
+  probe-owner's call (`qou-pdg9`), and this branch touches no code.
 
 **A note on running it, because it cost a run here.** `/tmp` contained a stale
 `inspect.py` from a prior session, which shadows the stdlib module and makes
