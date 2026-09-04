@@ -401,3 +401,52 @@ Both evidence files here were run to completion in the background with the exit
 status captured *after* the process exited (`v_qcod exit=0`, `v_reid exit=0`,
 and the two `#print axioms` batches), not read out of a truncated log. Worth
 stating, because a clean-looking log is exactly what a killed run produces.
+
+## C1 was a re-discovery — credit where it belongs, and what survives it
+
+Reading `qou-4els` (completed 2026-08-24) rather than only seeing it in a grep
+hit list: its table names the C1 vacuity in the same words I re-derived a week
+and a half later.
+
+| decl | what discharged the conjecture |
+|---|---|
+| `CrystalGraphRealization.canonical` | `CrystalNode := PUnit`, `raising _ _ := none` → `crystal_realises` is `none = none` |
+
+That is exactly `C1.triv`. **The mechanism was known; I re-measured it without
+citing it, in the round-two commit and PR comment.** This is the second
+re-discovery in one session, and the first (`[IsAMEValue]`) was the more costly
+one, so the pattern rather than either instance is the thing to record: seeing a
+bean in a grep hit list is not reading it.
+
+**What `qou-4els` fixed, verified still in place on `main`:** all six of its
+`canonical`s are `def`, not `instance` — `CrystalGraphRealization`,
+`KazhdanLusztigClassicalLimit`, `SymmetricCrystalPairProduction`,
+`RootOfUnityMTCTruncation`, `CemeteryGroupEmergence`, `GSOrderMatch`. That is
+real: `[CrystalGraphRealization R q]` in a theorem no longer resolves silently.
+
+**What it does not fix, and this is the surviving finding.** Demoting the
+instance removes the *automatic* resolution; it does not make the carrier
+constrain anything. The class is still satisfied by
+
+```lean
+instance : CrystalGraphRealization ℤ 0 :=
+  ⟨PUnit, PUnit, id, fun _ _ => none, fun _ _ => none, fun _ _ => rfl⟩
+```
+
+— one line, and `C1.triv` in the round-two evidence file is that line. So the
+conditional theorems downstream are gated by **nobody having typed it**, not by
+mathematics. That is the *available*-versus-*present* distinction drawn against
+the free-`Prop` census above, applied now to a fix that was already made:
+demotion moves a carrier from "inhabited" to "inhabitable", which is a smaller
+step than it reads as.
+
+`qou-09mr` reaches the same structural point from a different file, and adds a
+detector caveat worth carrying: `checkNoVacuousInstanceData` requires a
+degenerate *value* (`0`, `True`, `PUnit.unit`), so **definitional laundering** —
+data that is a real non-degenerate function still chosen to make the claim
+reflexive — is invisible to it, as are fields written inside a tactic
+`exact { … }` rather than a `where`. Filed upstream as `folio-assistant-ilbh`.
+
+**C2, C3 and C4 are not in `qou-4els`'s six** and are not covered by
+`qou-tsnp`'s twelve (a third shape again: `holds : Prop`). Those three stand as
+first measurements.
