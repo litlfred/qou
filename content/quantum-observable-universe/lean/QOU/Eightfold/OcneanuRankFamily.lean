@@ -85,12 +85,17 @@ makes the cap automatic.
 
 **Not proved, and asserted nowhere below:**
 
-* that `markovParam N` **is** the Markov parameter of the `SU(N)` trace.  That is
-  the hook-content principal-specialisation identity, verified symbolically in
-  `sympy` against the corpus producer for `N = 1 … 6` and cited here; Mathlib has
-  no hook-content or principal-specialisation API to state it against.  Every
-  declaration below is about the closed form, and none upgrades to a claim about
-  Hecke weights.
+* that `markovParam N` **is** the Markov parameter of the `SU(N)` trace **for
+  general `n`**.  The `n = 2` instance — which is where the Markov parameter is
+  *defined*, `z = tr_M(σ)` on the two blocks of `H_2(q)` — is now **proved
+  sorry-free** in `QOU.Eightfold.HookContentMarkovParam.hookContent_markovParam`,
+  from the hook-content product over the four cells, for every `N ≥ 1`.  The
+  general hook-content principal-specialisation identity for arbitrary `λ`
+  remains verified symbolically in `sympy` against the corpus producer for
+  `N = 1 … 6`, and is cited rather than proved.  (This bullet previously said the
+  whole identity was uncited-and-unproved because "Mathlib has no hook-content
+  API to state it against".  That turned out not to be an obstruction: the `n = 2`
+  instance needs no such API — only `[m]_q` and one algebraic identity.)
 * that a rank-3 trace **exists** on the substrate's `H_n(q)` as a second
   structure compatible with axioms 1–4.  Nothing here constructs one.  This file
   says what its parameter would have to be — `z_3 = q⁵/(q⁴+q²+1)`,

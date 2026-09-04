@@ -147,3 +147,42 @@ date*. This is the entry type that saves the most work.
     `sections/` is 437 B). Habegger–Masbaum 2000, Bar-Natan 1995, Birman–Lin
     1993, Meilhan–Yasuhara 2012, Milnor 1954/1957 are in `references.ts` and
     **NOT ingested** (INDEX.md 0 hits). No held source treats a 6-component link.
+
+## 2026-09-04 — where the knot-complement ambient `S³` comes from (bean `qou-fxou`)
+
+- **Is the Alexander–Markov ambient `S³` the same object as the gauge group
+  `SU(2) ≅ S³`?** → **THREE objects share the glyph; the recorded corpus
+  contradiction is a conflation, not a disagreement.** Audit:
+  `docs/audits/2026-09-04-where-the-ambient-s3-comes-from.md`.
+  - `S³_AM` — Alexander/Markov ambient: a **bare classical input**.
+    `thm:jones-markov-trace` is pure `H_n(ℂ,q)` and names no 3-manifold; `S³` is
+    a *hypothesis of the imported theorems*. Not the gauge group.
+  - `S³_Reeb` — `def:reeb-bundle`, the link of the exceptional divisor, a circle
+    bundle over `𝒮_p ≅ ℂP¹`. **Is** `SU(2)` structurally (Hopf = coset
+    `SU(2)→SU(2)/U(1)`). The 2026-06-28 audit §(i) is right *about this one*.
+  - `M_S` — `rem:brings-qou-4tuple` item 1, the unit circle bundle in `T*S` over
+    Bring's **genus-4** surface. Carries `Θ` (Liouville restricted) hence the
+    volume form — and is **provably NOT `S³`**: `b₁ = 8` vs `0`,
+    `QOU/Eightfold/CircleBundleBettiObstruction.lean` (11 decls, lean-direct
+    exit 0), scope-**(b)**, invariant = first Betti number via Gysin.
+- **Does the corpus have a natural degree-3 volume form?** → **YES, prose-tier.**
+  `Θ ∧ dΘ` named "the contact volume form" in
+  `braids-and-knots/bar-involution-geometric-kac-sunada.md:1`,
+  `stochastic-mechanics/bar-involution-table2-data.md:11`,
+  `mass-theory/reeb-bundle.md:7`; `Θ ∧ (dΘ)ⁿ` is the measure of the q-YM-Levi
+  action (`information-theory/gravitational-constant-properties.md:22`).
+  **Zero Lean, zero `definition` block** — do not cite it as formalised.
+- **The `sp₁ = Im ℍ` / tetraplectic route** → **already closed in the corpus**:
+  `rem:tetraplectic-su2-gauge-reading` says in as many words that the triad is
+  *the adjoint, not a 3-dim fundamental*; `quaternion-so3-motivation.md:13-18`
+  says `Im ℍ` carries the `SO(3)` **rotation** rep. Real Frobenius–Schur type ⇒
+  `Sym2GateFSTrichotomy.real_triple_fails_gate`. Fourth independent sighting of
+  one invariant.
+
+### TRAP added the same day — a bare-string grep declared a corpus-wide absence
+
+The 2026-09-04 predecessor audit asserted *"`Sp(1)` appears in `library/` only,
+never in `content/`"*. It is in **5** `content/` files. The grep used the bare
+string `Sp(1)`; every occurrence is written `\mathrm{Sp}(1)`. One unknown
+spelling ⇒ a confident corpus-wide absence claim. **When a topic-grep returns
+zero, grep the LaTeX spelling too before writing "absent".**
