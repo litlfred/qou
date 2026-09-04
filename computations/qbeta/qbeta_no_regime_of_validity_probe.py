@@ -169,7 +169,7 @@ def main() -> int:
         shifts.append({"N_over_Z": str(nz), "growth_per_proton": mp.nstr(c, 8),
                        "dZ_per_decade": mp.nstr(dz, 6),
                        "dA_per_decade": mp.nstr(dz * (1 + nz), 6)})
-        print(f"  N/Z={float(nz):.1f}  c = {mp.nstr(c,8)} /proton   "
+        print(f"  N/Z={mp.nstr(nz,2)}  c = {mp.nstr(c,8)} /proton   "
               f"10x scale moves Z* by {mp.nstr(dz,5)}  (dA ~ {mp.nstr(dz*(1+nz),5)})")
     ok &= chk("crossover_moves_tens_of_mass_units_per_decade",
               all(mp.mpf(s["dA_per_decade"]) > 20 for s in shifts), True,
