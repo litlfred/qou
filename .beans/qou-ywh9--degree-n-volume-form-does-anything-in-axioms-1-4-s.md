@@ -1,11 +1,11 @@
 ---
 # qou-ywh9
 title: 'Degree-N volume form: does anything in axioms 1-4 supply degree 3?'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-09-04T02:10:09Z
-updated_at: 2026-09-04T02:10:09Z
+updated_at: 2026-09-04T02:45:39Z
 parent: qou-8lxd
 ---
 
@@ -50,3 +50,5 @@ constructive half at 3-forms in dim 7; qou-ko4g's note that G2/SO(4) is absent).
 Two corpus defects found on the way, framed in the audit, not fixed here:
 the ambient-S3 contradiction (rem:markov-trace-ambient-s3 vs the 2026-06-28
 audit), and W overloaded (rank-2 Hodge plane vs 3-dim eightfold object).
+
+**CLOSED 2026-09-04.** `CategoricalCoordinateForced.lean` (10 decls, sorry-free, arbitrary `CommRing`) discharges "the categorical structure forces R[i]": Cayley-Hamilton at rank 2 with `det` normalised by the volume form turns (tr=0, det=1) into f^2 = -1. No square root assumed. Also settles the CRT defect (C[i]/(i^2+1) is not C). Front B's separate finding -- c_1(Ad(A)) is defined by deferral to a tau landing in R-Mod, where every Chern class is trivially zero -- retires the c_1 lead on two independent grounds; see the PR #6546 comment.
