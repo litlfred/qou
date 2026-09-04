@@ -1,0 +1,212 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T03:14:45.622265+00:00",
+  "commitSha": "ebf996069e874c4ec3d62c266036907174dd0b68",
+  "assertions": [
+    {
+      "name": "every_generator_touches_at_most_two_components",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "components",
+      "source": "THE CONNECTED-SUM PREMISE, measured rather than assumed. A summand reaching three components would break the argument at its first step."
+    },
+    {
+      "name": "generators_joining_two_members_of_a_min_span_triple",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "generators",
+      "source": "THE RESULT. Summed over all min-span triples of all 8 isotopes (A = 4..16). Not one, so every such triple is separated and its sublink is an unlink."
+    },
+    {
+      "name": "component_count_law_mu_equals_A_plus_1",
+      "computed": "8",
+      "expected": "8",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "isotopes",
+      "source": "cross-check against the recorded law, computed here from the permutation independently of the sibling probe. If this failed the path structure the argument rests on would have changed."
+    },
+    {
+      "name": "min_span_family_size_equals_A_minus_3",
+      "computed": "8",
+      "expected": "8",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "isotopes",
+      "source": "the count that made this family the only saturation-compatible candidate. Verified here so the family being excluded is the same one qou-768r named."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "milnor-minspan-triples-share-no-summand",
+  "scriptFile": "milnor_minspan_triples_share_no_summand_probe.py",
+  "scriptHash": "568460fbce3e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_minspan_triples_share_no_summand_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_minspan_triples_share_no_summand_probe.py"
+  },
+  "description": "EXPLORATORY. Route 3 of qou-768r wanted a first Milnor mubar value on the min-span triples {i, i+2, i+4} -- the only named subfamily whose count (A-3, per-component multiplicity <= 3) survives CoordinationSaturation. This shows the computation is unnecessary: mubar VANISHES there, and the reason is its own defining condition. A monotone braid closure is a connected sum of (2,k) torus links, so each summand comes from one generator and touches at most 2 components (MEASURED, max 2 across 8 isotopes). A shared summand links two components, so a Delta = 0 triple -- the condition for mubar to be a genuine integer -- shares NO summand, its sublink is a 3-component UNLINK, and every Milnor invariant vanishes on it. Measured: 0 generators join two members of any min-span triple, across A = 4..16. BRANCH-INDEPENDENT: which components a generator touches is fixed by the permutation, and a superposition letter projects to the same transposition as its sigma branch. Scope (b) on the min-span family; does NOT refute route 3 in general (on a Brunnian carrier like L6a4 the summand hypothesis fails and mubar_123 = 1) and does NOT touch the Delta = 2 one-bit triples. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "the_mechanism": {
+      "monotone_closure": "one contiguous run per generator => the closure is a connected sum of (2,k) torus links #_g T(2, e_g), verified 32/32 in SnapPy (docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md)",
+      "summand_reach": "each summand is one generator's run, so it touches only the components containing strands g and g+1",
+      "the_step": "a shared summand LINKS two components; contrapositively a Delta = 0 triple shares no summand, so its sublink is a 3-component UNLINK and every Milnor invariant vanishes",
+      "the_punchline": "the condition that makes mubar DEFINED (Delta = 0) is the condition that makes it ZERO",
+      "lean": "QOU/Mass/MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean, `separated_of_delta_zero` -- sorry-free, depends on NO axioms"
+    },
+    "measured_per_isotope": {
+      "rows": [
+        {
+          "isotope": "4He",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "strands": 12,
+          "components_mu": 5,
+          "mu_equals_A_plus_1": true,
+          "generators": 11,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 1,
+          "expected_A_minus_3": 1,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "6Li",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "strands": 18,
+          "components_mu": 7,
+          "mu_equals_A_plus_1": true,
+          "generators": 17,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 3,
+          "expected_A_minus_3": 3,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "8Be",
+          "Z": 4,
+          "N": 4,
+          "A": 8,
+          "strands": 24,
+          "components_mu": 9,
+          "mu_equals_A_plus_1": true,
+          "generators": 23,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 5,
+          "expected_A_minus_3": 5,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "10B",
+          "Z": 5,
+          "N": 5,
+          "A": 10,
+          "strands": 30,
+          "components_mu": 11,
+          "mu_equals_A_plus_1": true,
+          "generators": 29,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 7,
+          "expected_A_minus_3": 7,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "12C",
+          "Z": 6,
+          "N": 6,
+          "A": 12,
+          "strands": 36,
+          "components_mu": 13,
+          "mu_equals_A_plus_1": true,
+          "generators": 35,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 9,
+          "expected_A_minus_3": 9,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "16O",
+          "Z": 8,
+          "N": 8,
+          "A": 16,
+          "strands": 48,
+          "components_mu": 17,
+          "mu_equals_A_plus_1": true,
+          "generators": 47,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 13,
+          "expected_A_minus_3": 13,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "11B",
+          "Z": 5,
+          "N": 6,
+          "A": 11,
+          "strands": 33,
+          "components_mu": 12,
+          "mu_equals_A_plus_1": true,
+          "generators": 32,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 8,
+          "expected_A_minus_3": 8,
+          "generators_joining_two_members_of_a_triple": 0
+        },
+        {
+          "isotope": "11C",
+          "Z": 6,
+          "N": 5,
+          "A": 11,
+          "strands": 33,
+          "components_mu": 12,
+          "mu_equals_A_plus_1": true,
+          "generators": 32,
+          "max_components_touched_by_one_generator": 2,
+          "min_span_triples": 8,
+          "expected_A_minus_3": 8,
+          "generators_joining_two_members_of_a_triple": 0
+        }
+      ]
+    },
+    "why_branch_independent": {
+      "claim": "this measurement does not depend on how the 2^(2A+1) superposition letters resolve to crossing signs",
+      "reason": "which components a generator touches is fixed by the induced PERMUTATION, and a superposition letter c*sigma_g + d*1 projects to the same transposition (g, g+1) as its sigma branch",
+      "contrast": "lk IS branch-dependent, which is why the sibling probe fh_genus_handle_requires_brunnian checks both branches. This one is a single measurement, not a sampling."
+    },
+    "what_this_does_NOT_establish": {
+      "route_3_in_general": "NOT refuted. On a genuinely Brunnian carrier the summand hypothesis fails -- L6a4 has mubar_123 = 1",
+      "delta_2_triples": "NOT examined. Triples touching a linked pair have Delta = 2 and retain ONE BIT; they are the residual",
+      "the_carrier_itself": "untouched -- this is about which invariants of it can be nonzero, not about whether it is the right carrier",
+      "scope": "(b) on the min-span family, invariant cited"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are the permutation cycles of the canonical atom braid word and integer generator/component incidence counts. No substrate pin is evaluated on any path, so no q0Value exists."
+}
