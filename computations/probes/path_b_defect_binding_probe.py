@@ -126,14 +126,25 @@ TR_M = {
     "4He": mp.mpf("0.16097414544240738182587344098071685392360735413342"),
 }
 
-# CODATA atomic masses (MeV)
+# CODATA atomic masses (MeV).
+#
+# `mp.mpf("...")`, not bare float literals. These are EXACT decimals as
+# authored, and a bare literal makes each the nearest double instead — which
+# then serializes at the raised dps as its full binary expansion
+# (1876.123929999999973006197251379489898681640625…), i.e. fake precision the
+# float64-padding ratchet counts. The `"n"` entry was already carried as mpf
+# from the registry; the other five were floats, so the dict was mixed.
+#
+# NOT swapped for the registry's `M_D_MEV_VALIDATION` etc.: those are NUCLEAR
+# masses (m_D = 1875.61294500) while these are ATOMIC (nucleus + electron), so
+# the substitution would look like a tidy-up and silently change the physics.
 M_AME = {
-    "p":   938.78308711,
+    "p":   mp.mpf("938.78308711"),
     "n":   _M_N_MEV_MP,
-    "D":   1876.12393,
-    "T":   2809.43215,
-    "3He": 2809.41347,
-    "4He": 3728.40133,
+    "D":   mp.mpf("1876.12393"),
+    "T":   mp.mpf("2809.43215"),
+    "3He": mp.mpf("2809.41347"),
+    "4He": mp.mpf("3728.40133"),
 }
 
 

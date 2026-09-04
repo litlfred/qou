@@ -169,14 +169,15 @@
     "opens": "(i) the registry's 9-figure c_3 literals exceed what the CAL inputs support by ~8 figures; (ii) the corpus muon c_3 is on a superseded CODATA edition, as are the 336 files carrying the 17-digit ancestor q in this channel. Both are re-pin work sequenced behind PR #5500 and qou-1c4y; NOT done here.",
     "scope": "Scope-(a), convention C only -- the frame the corpus values were extracted in. No convention adjudicated, no c_k value changed, no constant re-pinned."
   },
-  "gitCommit": "6a7e5f6ac5b3d8fd787ff2aa37e37983c91044c8",
+  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
   "durationMs": 0,
   "scriptFile": "qbeta_c3_muon_anchor_codata_edition_attribution_probe.py",
-  "scriptHash": "b762224bd451",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6a7e5f6ac5b3d8fd787ff2aa37e37983c91044c8",
-  "computedAt": "2026-08-31T18:23:47.500783+00:00",
+  "scriptHash": "7649b69ad624",
+  "scriptCommitSha": "636c1541c0f0c980125232760388498d6bfe0b18",
+  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "computedAt": "2026-09-03T15:49:04.806129+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "both: proton q_at() + muon q_muon_at() @ CODATA 2022",
-  "q0Value": "1.10997859564273904668179512938"
+  "q0Anchor": "ambiguous",
+  "q0Value": "1.10997859564273904668179512938",
+  "q0AnchorReason": "reads BOTH pins on purpose: proton q_at() + muon q_muon_at() @ CODATA 2022"
 }

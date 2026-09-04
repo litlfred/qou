@@ -727,3 +727,135 @@ returns `0.5` **without raising**, although `solution_type()` is
 **A returned value is not evidence of hyperbolicity.** The probe therefore
 excludes by an explicit `solution_type()` test, never by trusting an
 exception — and any other consumer of `one_loop` should do the same.
+
+── 2026-09-03 (8): the node count is ARITHMETIC — a single trace-field degree — and my prediction was WRONG ──
+
+`computations/qbeta/dt_d1b_connection_count_galois_orbit_hypothesis_probe.py`,
+**7/7**. Entry (7) concluded D1-b needs **a hypothesis stated before looking**,
+not more data. This is that hypothesis, stated in the docstring before the
+measurement, with a prediction recorded so it could be refuted.
+
+### The hypothesis
+
+> **H.** The irreducible boundary-parabolic PSL(2,ℂ) representations of a
+> 1-cusped hyperbolic manifold form a **single Galois orbit** — the conjugates
+> of the geometric representation — so `C_irr = [trace field : ℚ]`.
+
+It came from noticing where the certified counts actually originate: the
+certified probe sums **Galois-orbit degrees**, and those degrees are degrees of
+the number fields the representations are defined over.
+
+### H HOLDS, 6/6
+
+| manifold | inhabited classes | orbits | degree | `C_irr` |
+|---|---|---|---|---|
+| 4₁ | 1 | 1 | 2 | 2 |
+| 5₂ | 1 | 1 | 3 | 3 |
+| m135 | 1 (of 8) | 1 | 8 | 8 |
+| s000 | 1 (of 2) | 1 | 6 | 6 |
+| t00000 | 1 (of 2) | 1 | 8 | 8 |
+| v0000 | 1 (of 4) | 1 | 8 | 8 |
+
+4₁ and 5₂ are **not** independent evidence — they are what suggested H. The
+four census manifolds are, and all four are single-orbit.
+
+### 🛑 My prediction was WRONG, and the way it was wrong is the useful part
+
+I predicted **H fails at m135**, reasoning that m135 carries **eight
+obstruction classes**, that an obstruction class is an `H²(M,∂M;ℤ/2)` invariant
+the Galois action cannot move a rep across, and that eight inhabited classes
+therefore cannot be one orbit.
+
+The reasoning about Galois and obstruction classes is fine. **The premise was
+not: m135 has eight classes and only ONE is inhabited — seven are empty.** I
+read "8 classes" as "8 classes with solutions in them". Same wrong-denominator
+error as three others today.
+
+It was caught by control **C3**, which exists precisely to stop "one orbit"
+being an artifact of dropping empty classes — and which therefore had to
+*count* the empties: `{m135: 7, v0000: 3, rest: 1}`. A probe without that
+control would have reported H holds and left the reason invisible.
+
+### The consequence for D1-b — this REDIRECTS the route
+
+**The node count does not come from the NZ gluing datum at all.** It is a field
+degree. So the two earlier D1-b probes bracketed the wrong object: entry (5)
+showed the NZ SNF is too coarse and entry (6) that the raw polarization datum
+is too fine, and both are correct — but the count they were bracketing toward
+is supplied by **arithmetic that does not involve the gluing datum**.
+
+That **closes D1-b's node question positively** and leaves the **arrow**
+question open. A dictionary still has to produce arrows and (if wanted) a
+potential; nothing here touches that.
+
+### Scope, and what would break H
+
+Scope-(a). Six fixtures, four census manifolds not knots in S³ — valid for
+testing H, **not** automatically valid as D1-b nodes. Irreducible counts only;
+the abelian `(L−1)` convention does not carry to a census manifold. The
+ptolemy DB stays firewalled, so this sample **cannot be enlarged offline**.
+
+**H is almost certainly classical** in some form — the corpus-grep found
+nothing, but that is a statement about this corpus, not the literature. And H
+should be expected to **fail** for a manifold whose character variety carries
+extra components beyond the geometric one; this sample is small and uniformly
+well-behaved. Do not treat 6/6 as a theorem.
+
+Nothing wired, nothing fitted, `A_ω` underived.
+
+── 2026-09-03 (9): the bar grading of the node set, and a wrong consequence I caught by reading the Lean ──
+
+`computations/qbeta/dt_d1b_trace_field_bar_grading_probe.py`, **8/8**, same PR
+as entry (8). Entry (8) closed the **node** question and left the **arrow**
+question open. Arrows in a bar-graded quiver need the bar grading *of the node
+set*, and the single-orbit result says exactly where to read it: the nodes are
+the embeddings of the trace field, complex conjugation acts on them, and a
+representation is self-conjugate **iff its embedding is real**.
+
+| manifold | deg | `r₁` fixed | `r₂` pairs |
+|---|---|---|---|
+| 4₁ | 2 | **0** | 1 |
+| 5₂ | 3 | **1** | 1 |
+| m135 | 8 | 0 | 4 |
+| s000 | 6 | 0 | 3 |
+| t00000 | 8 | 0 | 4 |
+| v0000 | 8 | 0 | 4 |
+
+**Five of six trace fields are totally imaginary.** 5₂ is the only one with a
+real embedding — and it **cannot avoid one**: its trace field has **odd
+degree**, and no involution acts freely on a set of odd size. So a mirror-fixed
+node is *forced* for 5₂ and absent for 4₁, by parity rather than by any
+property of the particular polynomial.
+
+### 🛑 The consequence I nearly drew, and why it is wrong
+
+I read this as an **escape** from `QuiverMirrorAutomorphismExcluded` — the
+theory being that the theorem excludes a *freely acting* mirror, so a mirror
+with a fixed point is a different object and 5₂ slips past it.
+
+**I read the theorem before writing that down, and it does not say that.** Its
+hypothesis is
+
+```
+hσ : ∀ e, Ω (σ e) = Ω e
+```
+
+— **count-invariance**, which says nothing about freeness. A `σ` with fixed
+points can satisfy it perfectly well and is excluded on identical terms. **The
+parity fact survives; the consequence does not.** Recorded rather than dropped
+because it reads plausible and would have propagated into the arrow work.
+
+### What this actually is
+
+An **input** to the arrow question: the measured `(r₁, r₂)` is the bar grading
+any bar-graded quiver on these nodes has to reproduce. It does not produce
+arrows, a potential, or `A_ω`, and no construction is proposed.
+
+### Scope
+
+Scope-(a). Exact throughout — Sturm real-root **counting** on rational minimal
+polynomials, no root-finding and no floats. Four of six are census manifolds,
+valid for reading the grading and **not** automatically valid as D1-b nodes.
+The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
+routes now give the same six numbers (orbit degrees in entry (8), polynomial
+degree here), so neither is a parsing artifact.

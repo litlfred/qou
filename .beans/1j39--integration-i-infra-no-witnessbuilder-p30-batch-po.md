@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-21T21:41:08Z
-updated_at: 2026-08-29T00:40:21Z
+updated_at: 2026-09-03T20:28:32Z
 ---
 
 ## DUPLICATE of `cmiy` — DEFERRED (dedup 2026-06-28)
@@ -408,3 +408,17 @@ owner:
 
 None of the remaining eight is blocked on `1j39` infrastructure. The
 `stamp_q0` mechanism is done for everything it can reach.
+
+
+## 2026-09-03 — this bean's worked example is DONE; see `cmiy` for the fresh measurement
+
+The four producers named above as the measured never-stamps instance are all
+**ported and stamped** now (`scriptHash`, `commitSha`, `engine`, `q0Anchor`
+present on each witness). Do not re-do them.
+
+The canonical bean `cmiy` carries the 2026-09-03 re-measurement: **347** witnesses
+with missing provenance, of which only **23 (7 %)** are hand-rolled and need the
+port — **255 (73 %)** are ordinary staleness that self-heals on the next run. The
+"~133 scripts" figure in this bean's header is superseded.
+
+Still a duplicate; still awaiting owner close (resolve is human-only).

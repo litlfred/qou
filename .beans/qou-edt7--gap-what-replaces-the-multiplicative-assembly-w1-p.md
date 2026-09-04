@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T03:16:24Z
-updated_at: 2026-09-03T12:43:22Z
+updated_at: 2026-09-03T14:58:34Z
 parent: qou-mhj9
 ---
 
@@ -1007,3 +1007,57 @@ concrete step and it is cheap.
 Recorded as a scope note in the header of
 `QOU/Mass/MarkovBondRuleForcesPairwise.lean`, so a reader arriving from
 `qou-v7ro` does not read that file as contradicted.
+
+
+## 2026-09-03 — the positive half is WALLED, and my own "search over words" was the wrong shape
+
+**Retracting my own stated next step**, before spending a tranche on it. Last
+entry I wrote that the open half is *"a search over words: is there a
+non-factorising word whose deficit rises with `A`?"* That search **cannot close
+the gap whatever it returns**, and the reason is already proved.
+
+`qou-1xne` / [`2026-08-29-w3-closeability.md`](../docs/audits/2026-08-29-w3-closeability.md):
+**`w_3` is a required boundary condition of a rank-2 problem, and the corpus
+supplies exactly one boundary condition** (n=2, the deuteron bond). Every attempt
+to derive it fails on **counting**, not precision — so no amount of further
+carrier data helps. Four routes examined:
+
+| route | verdict |
+|---|---|
+| R1 the period `a_D^(3)` | **determined** — and a *different object* from `w_3`; the gap is the weight, not the period |
+| R2 the SL₂ depth-2 recurrence | **circular** (consumes `a_D^(3)`), refuted past n=5 |
+| **R3 a third anchor at A > 3** | **none exists under any reading of the tower** |
+| R4 the magic form as the n=4 term | determines `w_3` — **negative**, predicting unbound tritium |
+
+Plus a sorry-free scope-(b) exclusion:
+`QOU.Mass.BindingScalarKernelParityExclusion.no_scalar_kernel_on_carrier` — the
+q-Borel-normalised carrier is pure isoclinic of Newton slope `1/2`, every rank-1
+q-difference module has integer slope, so **no scalar `R(q,x)` acts on the
+carrier at any depth**.
+
+**Why this kills the word search specifically.** A word with a rising deficit
+would be *another candidate weight*, not an anchor. R3 says the tower supplies no
+second boundary condition, so a rank-2 recursion stays underdetermined however
+many carriers are screened. Producing one and wiring it would be a **fit**, which
+the Δ_λ gate forbids.
+
+**How this composes with the bond-rule result above.** They are two halves of one
+wall, and neither alone says it:
+- `MarkovBondRuleForcesPairwise`: the carrier **must break the bond rule** — no
+  function of the atom-word trace can work.
+- `qou-1xne`: even a bond-rule-breaking carrier **does not supply the missing
+  boundary condition**.
+
+So the open problem is not *"find a carrier"*. It is *"find a second boundary
+condition"*, and it must come from **outside** the tower — which is the same
+thing as deriving `w_3`, i.e. the gate itself.
+
+**HONEST STATUS: walled.** Not refuted — scope **(a)** on everything except the
+two cited Lean invariants. Nothing here says a second boundary condition cannot
+exist; it says the corpus has none and that the tower does not contain one, so
+the next real move is an ingredient from outside it, not another search inside.
+
+**Judgement, marked as such:** I would leave this walled rather than open a
+carrier-screening tranche. The counting argument makes such a tranche unable to
+close by construction, and its most likely output is a plausible-looking weight
+that would then need labelling as a fit.

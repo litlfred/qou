@@ -5,20 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T14:52:35Z
-
-updated_at: 2026-09-03T12:53:11Z
-
-updated_at: 2026-09-03T08:59:54Z
-
-updated_at: 2026-09-03T08:28:10Z
-
-updated_at: 2026-09-03T04:27:36Z
-
-updated_at: 2026-09-03T02:58:23Z
-
-updated_at: 2026-09-03T04:57:24Z
-updated_at: 2026-09-03T04:39:05Z
+updated_at: 2026-09-03T20:49:10Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2150,3 +2137,113 @@ probe, witness description/caveats rewritten to lead with the priority note, and
 a new check 6 verifying my ratio against the recorded 60-digit value so the
 duplication is an explicit corroboration rather than an implicit collision.
 Nothing deleted.
+
+## 2026-09-03 — the mu-bar route is RETIRED as stated: wrong mu-bar (type error)
+
+`docs/audits/2026-09-03-two-mubars-selector-vs-magnitude.md`.
+
+After the rank bound closed trace-subtraction, this arc named 'mu-bar_123, the
+sorry-free triple-linking object' as the non-trace route. That names the WRONG
+object, and SecondCrossingInvariant.lean says so in a section titled 'two mu-bars
+in the corpus (do not conflate)'. Caught by reading the carriers before building
+the probe.
+
+  topological mu-bar_123   {0, +-1}          a SELECTOR (baryon vs meson)
+  mubarMeasured A          (3/4)(-2)^(A-3)   a MAGNITUDE — the Markov-trace
+                           = 3/4, -3/2, 3, -6  deficit coefficient (Lean examples)
+
+The binding asymmetry is a real ratio (~33.7). A {0,+-1} invariant cannot supply
+it — the same integer-type wall as the Delta_{3,3} ceiling of 9. The one with the
+right type is DEFINED as a Markov-trace deficit, and
+cyclic_trace_kills_iterCommTower (MassTheory) already proves a cyclic trace cannot
+reach it.
+
+CONVERGENCE: that theorem and this arc's rank bound (ocneanuFamily_finrank_le) are
+two independent proofs, no shared machinery, that the Markov trace cannot deliver
+the object. Neither was derived with the other in view.
+
+RETIRED: 'mu-bar_123 carries the asymmetry'. SURVIVES (weaker, honest): mu-bar_123
+as the coefficient SELECTING which magnitude applies, magnitude from elsewhere.
+UNTOUCHED: rank-bound scope — still (a), still excludes only the Markov family.
+No new compute; every value cited from a verified carrier.
+
+
+## 2026-09-03 — B done, A closed (negative): rank = n PROVED; mu-bar_123 is channel-blind
+
+**B — rank = n, both halves now in Lean** (`OcneanuWeight.lean`, 8944047236). The n
+HOOKS (n-k,1^k) are linearly independent, via a triangular evaluation: hook k
+vanishes at leg root z_m iff m <= k, and THE LEG ROOTS ARE THE OCNEANU FAMILY
+z_i = q^i/[i]_q. The row cap and the rank are one phenomenon. Verified
+symbolically at n=4,5,6 first (vanishing pattern, nonzero cyclotomic
+determinant, z_i identity), then formalised: linearIndependent_of_triangular
+(generic, strong induction), armFactor/legFactor/legRoot, two vanishing lemmas,
+hooks_linearIndependent. All sorry-free, lean-direct. HONEST SCOPE: genericity
+conditions on q (distinct leg roots, arm roots off leg roots, q^2 != 1) are
+HYPOTHESES not proved; hookNum == ocneanuNumPoly(hook diagram) is NOT proved
+(YoungDiagram.cells plumbing). So: 'n explicit hook numerators are
+independent', conditional on genericity.
+
+**A — closed, negative, no probe needed.** mu-bar_123 is typed on SINGLE
+objects (B : S -> Q) and applied only to single hadrons (confined triple,
+Borromean rings, 2-tube meson, baryon/vacuum). Both isospin channels are
+two-baryon states; mu-bar_123 = +-1 on every baryon => +-1 on BOTH channels
+=> CHANNEL-BLIND. Cannot select T=0 from T=1; the channels differ by the
+EXCHANGE (Delta_3,3), not by what each nucleon is. The 'selector survives'
+weak form is retired too. Honest residue: an exchange-sensitive invariant of
+the six-strand two-nucleon link, which the corpus does not carry. A bounded
+grep for mu-bar_123 + isospin timed out; not cited as evidence.
+
+
+## 2026-09-03 — the linking-data class is closed: lk IS I₃, and both channels sit at I₃ = 0
+
+Closes the residue this arc named the same day ("an invariant of the six-strand
+two-nucleon link that is sensitive to the exchange"), **for the linking-data
+class specifically**. Probe:
+`computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py` (exact
+integer arithmetic, no witness, asserts are the gate).
+
+**The composition.** Two facts the corpus already holds, neither applied to the
+two-nucleon link by its own carrier:
+
+- **(F1)** `inter_nucleon_linked_channel.py` derives the inter-nucleon arc as the
+  minimal non-Brunnian 2-component link `T(2,2k)` — `pp → lk +1`, `nn → lk −1`,
+  `pn → lk 0` — stating "NO numeric is tuned"; `u1_hypercharge_assignment.py:336`
+  names the same datum *"I_3 = writhe/2-of-inter-nucleon-arc"*. Since
+  `lk(T(2,2k)) = k = writhe/2`, **the inter-nucleon linking number IS I₃**.
+- **(F2)** Milnor indeterminacy — already the scope-(b) exclusion of the Milnor
+  route for ⁴He (`2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`).
+
+**Result (scope b).** The ³S₁ (T=0) and ¹S₀ (T=1) np channels have the same
+flavour content, so `I₃ = 0` in both, so their linking matrices are **identical
+on all 15 pairs** — verified under both the single-arc and all-nine-pairs
+readings, so the verdict does not rest on that modelling choice. Every function
+of the linking data is therefore equal on the two channels: achievable asymmetry
+**exactly 1**, against **33.7055** required. Not a bound a better choice inside
+the class might beat; the two inputs are one matrix.
+
+**By-product.** The Milnor tower is DEAD across the interface at `I₃ = ±1`
+(pp, nn: `ℤ/1 = 0`) and ALIVE only at `I₃ = 0` (np: `ℤ/0 = ℤ`) — where **both**
+channels sit. Surviving is precisely what does not help.
+
+**So do NOT propose a higher-`μ̄` or linking-integral route for the T=0/T=1
+split** — including the Evans–Berger nth-order linking integrals the sweep found
+in `library/1992evansberger/ocr/` (they are inside this closed class).
+
+**NOT excluded:** an invariant reading the braid word beyond its linking data
+(the `Δ₃,₃` spectrum is such an object, capped at 9 by the separate
+integer-exponent argument); a non-Milnor super-pairwise object; anything
+carrying **spin**, which is what actually separates the channels.
+
+**Convergence, with its limit stated.** `qou-7zob` reaches the same wall from the
+flavour side (*"NO map from strand position to orbital angular momentum anywhere
+in the corpus"*), and `t7qv`'s `det T = −1` caps the ratio at 1. This supplies a
+*reason* those ratios are 1 rather than merely small. It is corroboration, **not**
+a fourth independent measurement — these routes share the (F1) assignment.
+
+**Correction made in-flight:** the probe's first draft labelled the deuteron's eV
+digits as keV and printed the shortfall as 33705x, a clean factor of 1000, which
+the `> 1` assert passed. The assert now pins 33.7055 to four decimals.
+
+Also: corpus-grepper memory updated (`MEMORY.md` trimmed 202 → 200 lines,
+detail in `resolved-topics.md`), since its own entry ended by handing over the
+gate that this closes.
