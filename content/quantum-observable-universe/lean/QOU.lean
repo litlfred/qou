@@ -374,6 +374,7 @@ import QOU.SchurWeyl.HeckeWedderburnGeneral
 import QOU.SchurWeyl.HeckeSemisimpleGeneral
 import QOU.SchurWeyl.HeckeSemisimpleReal
 import QOU.SchurWeyl.HeckeCarrierEquiv
+import QOU.SchurWeyl.HeckeCarrierSemisimple
 import QOU.SchurWeyl.HeckeCarrierSemisimpleReal
 import QOU.SchurWeyl.GenericParameter
 import QOU.SchurWeyl.GenericParameterReal
