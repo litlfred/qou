@@ -1,8 +1,8 @@
 {
   "engine": "sympy-symbolic",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T23:31:39.094701+00:00",
-  "commitSha": "5df4a3762d110d61783238d0d7f6a8ae4db842a7",
+  "computedAt": "2026-09-04T22:41:43.086173+00:00",
+  "commitSha": "9f778bb3a1ca4dd966a24024c41432d2e6160ec4",
   "assertions": [
     {
       "name": "atom_element_and_atlas_knot_do_not_share_a_markov_trace",
@@ -24,11 +24,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 34,
+  "durationMsBaseline": "builder-construction",
   "computation": "atom-vs-atlas-markov-trace",
   "scriptFile": "atom_vs_atlas_markov_trace_probe.py",
   "scriptHash": "08aa58be82e0",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ae7465bd5ee98b9011af2b7f6645272b279c9420",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +45,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

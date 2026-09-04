@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T17:27:25.701059+00:00",
-  "commitSha": "bce6339d4bac03d4a484378355c4d3ae9f70c80b",
+  "computedAt": "2026-09-04T22:41:43.900997+00:00",
+  "commitSha": "9f778bb3a1ca4dd966a24024c41432d2e6160ec4",
   "assertions": [
     {
       "name": "word_factors_strictly_at_every_block_wall",
@@ -60,11 +60,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "allPassedBasis": "assertions",
+  "durationMs": 11,
+  "durationMsBaseline": "builder-construction",
   "computation": "atom-word-is-a-connected-sum",
   "scriptFile": "atom_word_is_a_connected_sum_probe.py",
   "scriptHash": "f8ac931f9a7a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bb65c46d9f110889c4d27aa97e33eec95946158d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

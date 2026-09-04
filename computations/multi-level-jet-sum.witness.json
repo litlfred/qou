@@ -1,7 +1,7 @@
 {
   "computation": "multi-level-jet-sum",
   "description": "Multi-level jet sum of mass tower \u2014 CURRENT IMPL is a single-level flat sum with all-pairs quadratic term (matching rem:mass-endomorphism-jet-tower's single-level form).  A genuine multi-level version requires jet-lifted V\u0302 at each level n; per-level lift not yet implemented.  This module is a stub that documents the interface and provides the single-level flat sum for callers migrating from tower_binding_full.",
-  "timestamp": "2026-08-16T12:59:48.639965+00:00",
+  "timestamp": "2026-09-04T22:41:45.261887+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "z_markov_sq": 0.3753866308623884,
@@ -15,8 +15,8 @@
       "N": 1,
       "A": 2,
       "B_AME_MeV": 2.22452,
-      "B_pred_MeV": "-0.056377577846738",
-      "delta_m_over_m_pct": "0.121547768687886"
+      "B_pred_MeV": -0.05642230436149914,
+      "delta_m_over_m_pct": 0.12155015213908638
     },
     {
       "atom": "T",
@@ -24,8 +24,8 @@
       "N": 2,
       "A": 3,
       "B_AME_MeV": 8.481821,
-      "B_pred_MeV": "-0.0950301647161145",
-      "delta_m_over_m_pct": "0.304703765618299"
+      "B_pred_MeV": -0.09508539263837858,
+      "delta_m_over_m_pct": 0.3047057276618927
     },
     {
       "atom": "3He",
@@ -33,8 +33,8 @@
       "N": 1,
       "A": 3,
       "B_AME_MeV": 7.71804,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "4He",
@@ -42,8 +42,8 @@
       "N": 2,
       "A": 4,
       "B_AME_MeV": 28.295674,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "6Li",
@@ -51,8 +51,8 @@
       "N": 3,
       "A": 6,
       "B_AME_MeV": 32.0,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "9Be",
@@ -60,8 +60,8 @@
       "N": 5,
       "A": 9,
       "B_AME_MeV": 58.165,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "10B",
@@ -69,8 +69,8 @@
       "N": 5,
       "A": 10,
       "B_AME_MeV": 64.75,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "12C",
@@ -78,8 +78,8 @@
       "N": 6,
       "A": 12,
       "B_AME_MeV": 92.161728,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "14N",
@@ -87,8 +87,8 @@
       "N": 7,
       "A": 14,
       "B_AME_MeV": 104.659,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     },
     {
       "atom": "16O",
@@ -96,8 +96,17 @@
       "N": 8,
       "A": 16,
       "B_AME_MeV": 127.619,
-      "B_pred_MeV": "nan",
-      "delta_m_over_m_pct": "nan"
+      "B_pred_MeV": NaN,
+      "delta_m_over_m_pct": NaN
     }
-  ]
+  ],
+  "scriptFile": "multi_level_jet_sum.py",
+  "scriptHash": "cb39158c38bc",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "9f778bb3a1ca4dd966a24024c41432d2e6160ec4",
+  "engine": "python",
+  "computedAt": "2026-09-04T22:41:45.479248+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
