@@ -976,3 +976,62 @@ dismissing the other number.
 Per #5775, `gram-norm-binding-probe.witness.json` is ratchet-NEUTRAL (248
 against a 248 baseline, REGRESSED 0), not a drain. It was never in this bean's
 five and is not counted here.
+
+
+## 2026-09-04 — the wiring is done and the drain is at ZERO
+
+### The bean's headline defect is already fixed
+
+`mpf_import_time_dps_audit.py` IS in `scripts/precision-gates.sh`'s `GATES`
+array now (line 73), alongside `never_raises_dps_audit.py` (line 74). The
+argument that "an audit outside that array is an audit nobody runs" stands;
+it simply no longer applies to these two.
+
+### It proved its worth within hours
+
+While draining, the ratchet flagged a NEW offender — and it was mine.
+Excising float64 from `phase3_triton_binding_convention_b.py` replaced
+`AME_2020_BINDING_MEV`'s float literals with `mp.mpf("...")` at module scope,
+where mpmath's default is 15 dps. Those decimals carried ~15 digits, barely
+better than the float64 they replaced: the NO-FLOAT64 fix was very nearly
+cosmetic, and nothing but this gate would have said so. Fixed at the source.
+
+### Drain: 11 files / 63 constructions -> 0 / 0
+
+    set_compute_dps() at module scope, before any mpf is built:
+
+      2 -> 0   computations/derive_e_0_lp_dual_h3.py
+      3 -> 0   computations/garside-irrep-qvalues.py
+      2 -> 0   computations/hecke/hecke_engine.py
+      4 -> 0   computations/probes/pn_pair_two_sector_split.py
+      6 -> 0   computations/probes/tower_walk_magic_replication_probe.py
+      1 -> 0   computations/shell_closure_phi8_correlation_test.py
+      5 -> 0   computations/verify_c_color_swap.py
+      3 -> 0   computations/audits/term5_aK_audit.py
+      3 -> 0   computations/deltalambda/magnus_sign_row_truncation_probe.py
+     31 -> 0   computations/deltalambda/magnus_tr_decay_perpair_cluster_probe.py
+      3 -> 0   computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py
+
+Three of them (the two `deltalambda/` probes and the `qbeta/` one) only put
+their OWN directory on `sys.path`, so they could not reach `_path_bridge` in
+`computations/`. Those got a parent-directory insert before the bridge import.
+Verified by replicating the exact inserted path logic outside the modules:
+`_path_bridge` and `_precision` both resolve, and `set_compute_dps()` takes
+dps from 50 to 70. The modules themselves were NOT imported to test this —
+several run work at import.
+
+Rebaselined to 0/0. Suite 206 passed.
+
+### Owed, not done
+
+The audit's own warning applies: "Expect published values to MOVE: unlike the
+import-time audit, this producer really was low." These eleven now compute at
+70 dps where they computed at 15, so **their witnesses are stale and need
+regenerating** — not attempted here, because the nuclide-table regeneration
+(bean `qou-uiut`) is running in this checkout and two producers must not run
+at once.
+
+- [ ] Regenerate the witnesses of the eleven drained files. Several already
+      appear in the `qou-zbws` dps-floor queue
+      (`docs/audits/2026-09-03-dps-floor-regeneration-queue.md`); merge the two
+      lists rather than running anything twice.

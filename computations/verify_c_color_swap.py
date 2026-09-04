@@ -46,6 +46,14 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical substrate q0, 5
 from witness_base import WitnessBuilder  # noqa: E402
 
 import mpmath as mp  # noqa: E402
+
+# Raise the compute precision before any mpmath value is built. Without this
+# the file computes at mpmath's default 15 dps -- ~17 digits, i.e. float64 --
+# while presenting mpf values. NO FLOAT64 EVER; drained under bean `qou-j6gb`,
+# whose audit says to fix it AT THE SOURCE with the idempotent call rather
+# than baselining the file to silence the gate.
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 # Precision is centralized: importing witness_base/qou_substrate applies the
 # repo-default compute/serialization dps (recorded in the witness
 # precisionMetadata) — do not override mp.mp.dps here.

@@ -62,6 +62,14 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
+
+# Raise the compute precision before any mpmath value is built. Without this
+# the file computes at mpmath's default 15 dps -- ~17 digits, i.e. float64 --
+# while presenting mpf values. NO FLOAT64 EVER; drained under bean `qou-j6gb`,
+# whose audit says to fix it AT THE SOURCE with the idempotent call rather
+# than baselining the file to silence the gate.
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 import sympy as sp  # noqa: E402
 
 from _habiro_coefficient_extract import (  # noqa: E402

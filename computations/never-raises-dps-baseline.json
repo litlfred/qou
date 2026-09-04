@@ -3,19 +3,7 @@
   "enforced_rule": "AGENTS.md: NO-FLOAT64. A producer that never raises dps emits honestly-float64 numbers, which the padding and raw-float64 scans cannot see.",
   "why_runnable_only": "mp.dps is GLOBAL, so an imported helper inherits its caller's precision and is not a defect. Only files with a __main__ guard are counted.",
   "drain_owner": "bean qou-j6gb",
-  "files_count": 11,
-  "constructions_count": 63,
-  "files": {
-    "computations/audits/term5_aK_audit.py": 3,
-    "computations/deltalambda/magnus_sign_row_truncation_probe.py": 3,
-    "computations/deltalambda/magnus_tr_decay_perpair_cluster_probe.py": 31,
-    "computations/derive_e_0_lp_dual_h3.py": 2,
-    "computations/garside-irrep-qvalues.py": 3,
-    "computations/hecke/hecke_engine.py": 2,
-    "computations/probes/pn_pair_two_sector_split.py": 4,
-    "computations/probes/tower_walk_magic_replication_probe.py": 6,
-    "computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py": 3,
-    "computations/shell_closure_phi8_correlation_test.py": 1,
-    "computations/verify_c_color_swap.py": 5
-  }
+  "files_count": 0,
+  "constructions_count": 0,
+  "files": {}
 }

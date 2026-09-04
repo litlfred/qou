@@ -81,6 +81,12 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+
+# Raise the compute precision before any mpmath value is built. Without this
+# the file computes at mpmath's default 15 dps -- ~17 digits, i.e. float64 --
+# while presenting mpf values. NO FLOAT64 EVER; drained under bean `qou-j6gb`.
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 del _sys, _Path, _bridge
 
 import sys

@@ -55,6 +55,19 @@ import time
 sys.path.insert(0, os.path.dirname(__file__))
 
 import mpmath as mp  # noqa: E402
+
+# Raise the compute precision before any mpmath value is built. Without this
+# the file computes at mpmath's default 15 dps -- ~17 digits, i.e. float64 --
+# while presenting mpf values. NO FLOAT64 EVER; drained under bean `qou-j6gb`.
+# `_path_bridge` lives in `computations/`, which this file's own
+# `sys.path.insert(0, dirname(__file__))` does not put on the path -- hence
+# the extra parent insert before importing it.
+import os as _os_dps, sys as _sys_dps  # noqa: E402
+_sys_dps.path.insert(0, _os_dps.path.dirname(_os_dps.path.dirname(
+    _os_dps.path.abspath(__file__))))
+import _path_bridge as _bridge_dps  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 import he4_magnus_omega2_sign_sparse_probe as base  # noqa: E402
 
 
