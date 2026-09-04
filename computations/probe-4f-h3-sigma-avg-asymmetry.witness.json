@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T00:36:35.692843+00:00",
-  "commitSha": "22e1e6f8f62a667f3195dc9ce42c550c79712c5a",
+  "computedAt": "2026-09-04T23:13:49.296359+00:00",
+  "commitSha": "4986f2bc8d05390805b00f075b7f04440dcdb61b",
   "assertions": [
     {
       "name": "sigma_avg_partially_drives_asymmetry",
@@ -10,20 +10,38 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "max |Δ_canonical − Δ_variant| / |Δ_canonical| across variants = 1.2271; threshold 0.3"
+      "source": "max |Δ_canonical − Δ_variant| / |Δ_canonical| across variants = 1.3186; threshold 0.3"
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "allPassedBasis": "assertions",
+  "durationMs": 21,
+  "durationMsBaseline": "builder-construction",
   "computation": "probe-4f-h3-sigma-avg-asymmetry",
   "scriptFile": "probe_4f_h3_sigma_avg_asymmetry.py",
-  "scriptHash": "b01958ca4052",
-  "scriptCommitSha": "22e1e6f8f62a667f3195dc9ce42c550c79712c5a",
+  "scriptHash": "a2086d673d7e",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_4f_h3_sigma_avg_asymmetry.py"
+    ],
+    "reproduce": "python3 -u computations/probe_4f_h3_sigma_avg_asymmetry.py"
   },
   "description": "Tests Hypothesis H3 (σ_avg carries the transpose-pair asymmetry) at the critical pair (3,3,3,3,2,2,2) ↔ (7,7,4) by replacing σ_avg crossings with σ, σ⁻¹, or identity, and measuring how the asymmetry changes.",
   "contentBlock": "conj:psd-trace-orthogonality",
@@ -46,9 +64,9 @@
           4
         ],
         "variant": "canonical",
-        "tall_min_eig": -116.71463081646728,
-        "wide_min_eig": -95.98799662595296,
-        "asymmetry": 20.726634190514318,
+        "tall_min_eig": -116.72027089205685,
+        "wide_min_eig": -95.99351363553123,
+        "asymmetry": 20.726757256525616,
         "n_avg_replaced": 0
       },
       "[3, 3, 3, 3, 2, 2, 2]_pos": {
@@ -67,10 +85,10 @@
           4
         ],
         "variant": "pos",
-        "tall_min_eig": -253.19255553033312,
-        "wide_min_eig": -219.1691233583351,
-        "asymmetry": 34.023432171998024,
-        "n_avg_replaced": 13
+        "tall_min_eig": -232.95066977710906,
+        "wide_min_eig": -200.39496630202345,
+        "asymmetry": 32.55570347508561,
+        "n_avg_replaced": 12
       },
       "[3, 3, 3, 3, 2, 2, 2]_neg": {
         "tall_shape": [
@@ -88,10 +106,10 @@
           4
         ],
         "variant": "neg",
-        "tall_min_eig": -53.141541927023816,
-        "wide_min_eig": -39.55940954292555,
-        "asymmetry": 13.582132384098266,
-        "n_avg_replaced": 13
+        "tall_min_eig": -54.12176554833476,
+        "wide_min_eig": -41.91613720151829,
+        "asymmetry": 12.205628346816468,
+        "n_avg_replaced": 12
       },
       "[3, 3, 3, 3, 2, 2, 2]_id": {
         "tall_shape": [
@@ -109,10 +127,10 @@
           4
         ],
         "variant": "id",
-        "tall_min_eig": -72.29588737883327,
-        "wide_min_eig": -77.00376525781944,
-        "asymmetry": -4.707877878986167,
-        "n_avg_replaced": 13
+        "tall_min_eig": -55.559856734926896,
+        "wide_min_eig": -62.16241641194748,
+        "asymmetry": -6.6025596770205865,
+        "n_avg_replaced": 12
       }
     }
   }
