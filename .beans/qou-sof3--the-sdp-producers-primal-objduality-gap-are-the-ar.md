@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:11:29Z
-updated_at: 2026-09-04T09:28:19Z
+updated_at: 2026-09-04T10:34:05Z
 ---
 
 Found by the FIRST real application of the certified-residual check
@@ -183,3 +183,54 @@ without seeing how much it moves. Do not build a gate on it.
 **The one actionable item left:** sweep `borromean-axial-coupling` at two
 precisions and see whether its objective moves. That is a single producer
 re-run and it either confirms a live floor-valued objective or clears it.
+
+
+## The one actionable item is CONFIRMED — `borromean-axial-coupling` was floor-valued
+
+Swept it, as the previous entry proposed. Decisive:
+
+    committed   primal_obj = 3.814822595553291e-16
+    re-run      primal_obj = 3.5733110840282835e-44
+
+A **28-order move**. The objective tracks the arithmetic floor, so it is
+floor-valued -- a TRUE POSITIVE for the ranking, and the only live one outside
+`_deprecated/`.
+
+**Mechanism, which is `qou-dke6` exactly.** The producer already asks for
+`backend="clarabel"` (line 128). The committed witness was written when the
+MPFR binary was absent and the call fell through to scipy f64, before the
+strict-raise guard existed. Nothing in the file said so, because the producer
+cherry-picked `float(lp.primal_obj)` and dropped `backend` / `precision_bits`
+entirely -- it is one of the 105 unattributable records.
+
+**The certificate barely moved; only the objective did.** `x_star[0]` went
+-265025.00781985413 -> -265025.00781985425, ~14 digits stable. That is the
+cancellation signature: x* is fine, the objective is the artifact. **`g_A` did
+not move at all** -- the physics conclusion is untouched.
+
+## And a SECOND vacuous assertion, worse than the first
+
+`lp_active_set_nonempty` read
+
+    computed = float(len(active_set)),  expected = 1.0,  tolerance = 10.0
+
+An EMPTY active set gives |0 - 1| = 1 <= 10 and **passes**. The assertion could
+not detect the one condition it is named for. Its own comment claimed the
+opposite ("passes for any non-empty active set"), which is presumably why it
+survived review: the name and the comment agreed with each other, and both
+disagreed with the tolerance.
+
+Fixed to `computed=bool(len(active_set) >= 1), expected=True, tolerance=0`.
+That pattern is demonstrably falsifiable in-corpus -- the SDP producer's
+`selector_direction_S_independent` uses it and reports `passed=False`.
+
+`lp_duality_gap_zero` (tolerance 1e-10 against a 1e-44 floor, passed on both
+sides of the 28-order move) replaced by the certified form, tolerance derived
+from the cancellation floor: computed 2.0157e-45 against 1.4167e-43.
+
+## Generalisation worth noting
+
+Two producers examined, two pairs of vacuous LP assertions found. That is not
+a sample anyone should extrapolate from, but it does suggest the pattern
+"assert a floor-valued quantity against a fixed absolute tolerance" is not
+isolated. The 54 LP/SDP witnesses of `qou-dke6` are the population to check.

@@ -55,3 +55,19 @@ i.e. the absence of evidence against, not evidence for.
 
 Direct successor to `qou-0c19` (the colour-tube localisation), which this makes
 quantitative: the colour tube would supply exactly 3, and the gap is 3.0075.
+
+## 2026-09-04 (later) — the colour tube's trace assumption is DISCHARGED
+
+`qbeta_disjoint_support_factorisation_probe.py` (7/7): `tr_M` factorises over
+disjoint non-adjacent generator blocks EXACTLY (rel. diff 0.0 at 40 dps), for
+non-trivial words with generators repeated inside each block. So the `b -> b^3`
+step is exact and the factor is exactly 3, not approximately.
+
+The previous probe listed two undischarged assumptions. **(a) is now
+discharged.** (b) is sharpened from "the couplings are distance 3 apart" to a
+LAYOUT CONFLICT: intra-nucleon crossings want a nucleon's three strands adjacent,
+colour-blocked inter-nucleon coupling wants them `A` apart, and one ordering
+cannot do both. Detail on `qou-0c19`.
+
+Still not a derivation, and the scale is still unpinned (`E_0` is CAL-1;
+`qou-59j5`'s normaliser family spans 1.33x).
