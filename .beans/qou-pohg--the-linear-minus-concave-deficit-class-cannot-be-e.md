@@ -1,11 +1,11 @@
 ---
 # qou-pohg
 title: 'The linear-minus-concave-deficit class cannot be excluded by three points: it is convexity restated'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:12Z
-updated_at: 2026-09-04T10:54:14Z
+updated_at: 2026-09-04T10:59:28Z
 ---
 
 ## Result
@@ -72,3 +72,29 @@ structure**, and they all still stand. Do not read this as reopening them.
 
 `qou-zy94` (the two zero-fit filters and the proposed follow-up), `qou-82mc`
 (the convexity dichotomy), `qou-brng` (linking-vs-self-energy amplitude).
+
+
+## 🛑 CORRECTION to my own "What this does NOT establish" above — extending the grid does NOT make the class testable
+
+The last bullet above reads: *"Three points are three points … extend the grid past
+`A = 4` … is what would change any of this, and this result raises its priority: it
+is now the only thing that can make the class testable at all."*
+
+**That is wrong, and the same one-line argument I had just proved shows why.**
+Nothing in the three-point statement depends on there being three points: the
+slopes of `c·x − f` are `c − s_j` on a grid of **any** size. Formalized as
+`deficitFun_antitone_iff_monotone` and `concaveDeficit_not_excludable_on_any_grid`
+(general `n`, `Fin (n+1)` grid, sorry-free, `lean`-direct exit 0) — the file is now
+13 declarations.
+
+**So no amount of extra data can exclude the class.** It was never testable at any
+`n`, because membership is discrete convexity plus a bounded-slope condition, which
+is what the data itself establishes.
+
+What a fourth point **does** buy is real and unchanged from `qou-82mc` / `qou-zy94`:
+testing **fixed** shapes with more residuals, and locating the convex→concave turn
+that saturation requires and that three interior points provably cannot see. Those
+remain worth doing. They are just not a route to this class.
+
+Recorded rather than edited in place: the wrong recommendation is exactly the kind
+that gets quoted onward, and one of the two is the finding.
