@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-09-03T20:38:20Z
+updated_at: 2026-09-04T02:16:02Z
 ---
 
 ## Summary
@@ -541,3 +541,8 @@ folio-assistant clone; all six source_hashes verified by recomputation,
 not by trusting the sweep. PR #6535.
 
 Nothing open on this arc.
+
+SIDECAR GAP CLOSED AND MERGED 2026-09-04: PR #6535 merged at 032a124642 (rebase).
+Verified on merged main by recomputation, not by trusting qa-sweep — all six
+source_hashes current. The whole qou-dg07 arc is now closed: #6449 (the result)
+and #6535 (its sidecar gap) are both on main. Nothing open.
