@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T00:41:29.845723+00:00",
-  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
+  "computedAt": "2026-09-04T01:06:49.286307+00:00",
+  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
   "assertions": [
     {
       "name": "K4_ppnn_lambda_ss_equals_sqrt5",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 139,
+  "durationMs": 141,
   "computation": "b4-isotope-pole-approach",
   "scriptFile": "b4_isotope_pole_approach_probe.py",
-  "scriptHash": "fbeee468f0a0",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "fb66c479e6a0",
+  "scriptCommitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

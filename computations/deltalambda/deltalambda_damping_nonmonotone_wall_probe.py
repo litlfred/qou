@@ -194,7 +194,8 @@ witness = {
         "together with the q0 A=3 undershoot. It excludes the pure-DAMPING class only; per the "
         "permanence principle [A]_q! remains a valid ingredient — an additive many-body TERM that "
         "re-weights it (sign-changing in A) is NOT excluded and is the remaining open target.",
-        "Fixed canonical q0 (muon-canonical computations layer). Setting q≈1.26 to reach A=3 "
+        "Fixed canonical q0, read from the jet-filtration witness, which carries the PROTON "
+        "pin (label corrected from 'muon-canonical', bean qou-9ugp). Setting q≈1.26 to reach A=3 "
         "with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob.",
     ],
     "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md",

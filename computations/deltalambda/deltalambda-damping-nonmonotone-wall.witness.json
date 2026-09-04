@@ -1,10 +1,10 @@
 {
  "engine": "mpmath",
  "engineVersion": "mpmath 1.4.1",
- "computedAt": "2026-09-04T00:46:18.642703+00:00",
- "commitSha": "a226a55d13cc59c2d4785a15fd4024af95d162e1",
+ "computedAt": "2026-09-04T01:06:48.869230+00:00",
+ "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
  "scriptFile": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
- "scriptHash": "3232766f742b",
+ "scriptHash": "68e0808e7ae5",
  "assertions": [
   {
    "name": "A3_undershoot_no_damping_closes_it",
@@ -70,10 +70,10 @@
  "caveats": [
   "ρ_strong(3), ρ_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as one-sided bounds, never inverted. No fit; nothing wired.",
   "The exclusion is scope-(b) STRUCTURAL, cited invariant = monotone-≤1 action of a damping together with the q0 A=3 undershoot. It excludes the pure-DAMPING class only; per the permanence principle [A]_q! remains a valid ingredient — an additive many-body TERM that re-weights it (sign-changing in A) is NOT excluded and is the remaining open target.",
-  "Fixed canonical q0 (muon-canonical computations layer). Setting q≈1.26 to reach A=3 with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob."
+  "Fixed canonical q0, read from the jet-filtration witness, which carries the PROTON pin (label corrected from 'muon-canonical', bean qou-9ugp). Setting q≈1.26 to reach A=3 with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob."
  ],
  "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md",
- "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+ "scriptCommitSha": "01ba57351bb3d0500c13470cb6f311430a5faea7",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -79,7 +79,8 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 COMP = str(_COMP)
 mp.mp.dps = 60
 
-# muon-canonical q0 (the computations/ layer convention; AGENTS.md q0-convention)
+# q0 label corrected (bean qou-9ugp): the read below resolves the PROTON pin,
+# so the old convention label described one this producer no longer follows.
 # q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
 # "1.10997859555733471" -- the RETIRED self-certified muon pin A, superseded
 # 2026-08-22 (fca08de7d2) by the live CODATA-2022 lepton-ratio derivation.

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T00:42:58.427391+00:00",
-  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
+  "computedAt": "2026-09-04T01:06:51.678338+00:00",
+  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -68,8 +68,8 @@
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "0e84eb2c0dbb",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "6b631eb2f092",
+  "scriptCommitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
