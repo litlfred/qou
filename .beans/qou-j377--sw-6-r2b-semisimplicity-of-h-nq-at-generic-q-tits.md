@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T15:05:35Z
+updated_at: 2026-09-04T02:49:03Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -458,3 +458,8 @@ Recompiling every module downstream of OcneanuWeight (which main touched) found 
 
 ## 2026-09-04 02:5xZ — HeckeSemisimpleGeneral is RED on main (outside #6526's cone; #6517's file)
 Compiled from current source with lean-direct: QOU/SchurWeyl/HeckeSemisimpleGeneral.lean:81:19 'Application type mismatch: q has type K … expected ℝ' — the general-field split (1f991b78ab) left one ℝ-typed application. Its on-disk olean is the pre-split cache (09:17), so HeckeSemisimpleReal then reports isSemisimpleRing_hecke / isSemisimpleRing_hecke_of_one_lt / wenzlCriterion_of_one_lt / semisimple_of_one_lt_unconditional 'already declared' — a stale-olean SYMPTOM, not four real duplicates; and HeckeCarrierSemisimpleReal fails on the missing olean. Not fixed on #6526 (not in its cone; PR #6517 is editing this file). Posted on #6517.
+
+
+
+## 2026-09-04 03:2xZ — RETRACTION of the 02:5xZ entry above: HeckeSemisimpleGeneral is NOT red on main
+The 'HeckeSemisimpleGeneral.lean:81 Application type mismatch' was measured against CACHED oleans of its dependencies (seeded 09-03 09:17Z), several of which e526464c2d had since changed. With every module in its cone that changed on main since the seed rebuilt from source (19 modules, topological order), HeckeSemisimpleGeneral, HeckeSemisimpleReal, HeckeCarrierSemisimple, HeckeCarrierSemisimpleReal and Hecke/TwGramDetNonzero ALL compile with 0 errors on main 45c530378e. The 'four duplicates' symptom was the same staleness. So: the 21:10Z and 02:3xZ entries (the retype and mem_addCell victims) stand — those were rebuilt with their cones; the 02:5xZ entry does not, and is exactly the false-green/false-red trap the lean-verifier memory records. Corrected on #6517 too.
