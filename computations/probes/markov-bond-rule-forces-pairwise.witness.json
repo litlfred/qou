@@ -1,7 +1,7 @@
 {
   "computation": "markov-bond-rule-forces-pairwise",
   "scriptFile": "computations/probes/markov_bond_rule_forces_pairwise_probe.py",
-  "computedAt": "2026-09-04T12:31:53.128431+00:00",
+  "computedAt": "2026-09-04T21:38:01.089665+00:00",
   "contentBlock": "qou-edt7",
   "description": "The bond rule (qou-g8i1, completed: the Markov property applied at an interior GAP, so it covers the BOUND atom word rather than only the disjoint sector) makes the cluster trace a product over its bonds. Any map carrying products to sums then yields a bond functional, whose connected cumulants above order two vanish identically (PairwiseCumulantVanishing). So b3 = 0 is the TRACE's doing, not the assembly's, and qou-edt7's replacement must break the bond rule -- not merely change f or the edge set.",
   "bond_factors": {
@@ -73,8 +73,8 @@
   ],
   "source": "AME2020; bean qou-g8i1 (bond rule); docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md s10a",
   "scriptHash": "f05e99d7080f",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "scriptCommitSha": "7b8ff5ede6d5660f669a4f0a00096fd275f8d2e8",
+  "commitSha": "59947967bd8b29f264768fedfa42e9e6e78538b6",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
