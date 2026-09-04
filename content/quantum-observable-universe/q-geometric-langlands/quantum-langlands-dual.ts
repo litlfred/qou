@@ -15,7 +15,7 @@ export default conjecture({
   cites: [
     "macdonald1971",
     "lusztig1989",
-    "frenkel-reshetikhin2002",
+    "frenkel-reshetikhin1998",
   ],
   tags: [
     "langlands-dual",

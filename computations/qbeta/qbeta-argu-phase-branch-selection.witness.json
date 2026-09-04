@@ -2,19 +2,19 @@
   "schema": "qou-probe/v1",
   "id": "qbeta-argu-phase-branch-selection",
   "description": "arg(u) phase branch-selection is FROZEN on the real substrate ray — the last seat of the c₃ bar-odd anchor-swing is a WALL. u=2·log q₀ is real for q₀≥1 ⇒ arg(u)=0 at both anchors ⇒ Δ(arg u)=0; the leading NZ Im 𝔙 = (√3/2)|u|²·sin(2·arg u) is identically 0 on the real ray (amphichirality, #3654) and its phase-channel anchor-swing is EXACTLY 0, despite a nonzero unbounded-by-#4288 phase-sensitivity √3|u|². Confirms QOU/QBeta/ArgUPhaseBranchSelection.lean. auditOnly; no c_k wired.",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "verdict": "WALL — phase channel supplies exactly zero anchor-swing at real q₀ (scope-(a)); c₃ anchor-dependence is non-categorical (#3636/#3654)",
   "anchors": {
     "muon": {
-      "q0": "1.10997859555733471989976322048",
-      "u_2logq0": "0.208681463713274937712565758286",
+      "q0": "1.10997859564273904668179512938",
+      "u_2logq0": "0.208681463867159574984987538328",
       "u_is_real": true,
       "arg_u": "0.0",
-      "r_barOdd": "0.209060321996",
+      "r_barOdd": "0.20906032215",
       "S_real_ray": "0.0",
-      "S_quarter_turn": "0.037850695293",
-      "S_full_CS_amp": "0.037850695293",
-      "phase_sensitivity_dSdphi_at0": "0.0757013905861"
+      "S_quarter_turn": "0.0378506953491",
+      "S_full_CS_amp": "0.0378506953491",
+      "phase_sensitivity_dSdphi_at0": "0.0757013906981"
     },
     "proton": {
       "q0": "1.10997858275138080759166909561",
@@ -30,7 +30,7 @@
   },
   "delta_arg_u": "0.0",
   "phase_channel_anchor_swing": "0.0",
-  "phase_sensitivity_nonzero": "0.0757013905861",
+  "phase_sensitivity_nonzero": "0.0757013906981",
   "phase_sensitivity_note": "∂S/∂φ|₀ = √3·|u|² ≠ 0 — the phase is a maximal-leverage independent DOF, NOT bounded by #4288's boost-hyperbola magnitude ratio. It is a WALL not because it is bounded, but because Δ(arg u)=0: the real substrate never moves it.",
   "c3_target_swing_frac": "0.0347",
   "magnitude_channel_swing_ppm_ref_4288": "0.221",
@@ -40,5 +40,13 @@
     "C_phase_maximal_leverage": true,
     "D_phase_swing_exactly_zero": true
   },
-  "all_pass": true
+  "all_pass": true,
+  "scriptFile": "qbeta_argu_phase_branch_selection_probe.py",
+  "scriptHash": "0a816ee0796b",
+  "commitSha": "e8fadaea289f291a2286cdf6248e5286078c978f",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:39:05.350667+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

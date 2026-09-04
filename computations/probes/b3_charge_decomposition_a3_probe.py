@@ -90,6 +90,11 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 from _precision import set_compute_dps  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 set_compute_dps()
 
 TRIANGLE_W = _COMP / "binding-triangle-3body-cluster.witness.json"
@@ -315,6 +320,15 @@ def main() -> int:
     }
     dest = _COMP / "b3-charge-decomposition-a3.witness.json"
     with dest.open("w") as fh:
+        # P30: add the staleness provenance (scriptHash / commitSha /
+        # engine) that a hand-rolled dump cannot get from build().
+        _WitnessBuilder.stamp_staleness_metadata(
+            out, script_path=__file__, engine="python",
+            q0_anchor=False,
+            q0_anchor_reason=(
+                "the producer performs no q0-dependent computation "
+                "(zero q_parameter / q_at / Q_50_DIGIT references)"),
+        )
         json.dump(out, fh, indent=1)
         fh.write("\n")
     print(f"\n  wrote {dest.relative_to(_COMP.parent)}")

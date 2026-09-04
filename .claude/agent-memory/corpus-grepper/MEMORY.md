@@ -120,6 +120,15 @@ boundary in `hecke_core_legacy.unified_iterative_correction`; commits
 `da645cf0f32` and `46dcfc62a57` fixed exactly that site the next day. The
 bean was stale and was believed over the code.
 
+**And the sharper version, 2026-09-04: I cited a bean for the OPPOSITE of what
+it says.** I wrote "anything carrying SPIN … (the same wall bean `qou-7zob`
+reaches from the flavour side)" into five merged artifacts. `qou-7zob` does not
+reach that wall — it *refutes* the spin route, in its own body, via the Pauli
+lock (`S=1 ⟺ T=0`), and `InterfaceScalar.separable_interface_degenerate` proves
+it sorry-free. I had matched the bean on **topic** and cited it on **agreement**
+without reading it. A bean cited in support is a bean you must have read to the
+end; its title tells you the subject, never the verdict.
+
 ## TRAP — grep the claim SHAPE, not only the topic
 
 Four conflations reached durable artifacts in one session (2026-08-15), each

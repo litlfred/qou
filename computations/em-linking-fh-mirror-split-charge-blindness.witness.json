@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-02T22:08:18.295417+00:00",
-  "commitSha": "8266e31a0de56868a33a9c492741ac80d289dd0a",
+  "computedAt": "2026-09-03T20:57:58.956371+00:00",
+  "commitSha": "340c20508cea6ebcced7be10417b964850749996",
   "assertions": [
     {
       "name": "corpus_kappa_decline_reproduced",
@@ -54,8 +54,8 @@
   "durationMs": 0,
   "computation": "em-linking-fh-mirror-split-charge-blindness",
   "scriptFile": "em_linking_fh_mirror_split_charge_blindness.py",
-  "scriptHash": "1068214600fe",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "974836a1e1ff",
+  "scriptCommitSha": "0eaf1984d5ec954406ca7f68b05bab48d3653c67",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -156,5 +156,7 @@
       "and_the_framework_defines_no_flux": "`Flux` occurs nowhere in content/quantum-observable-universe/lean/ as a quantity. The grep hits are a photon docstring (KnotRegistry.lean:48), meson colour flux tubes (MesonFluxTubeReduction.lean), and the English idiom \"in flux in Mathlib's CoxeterSystem API\" (Tw.lean:56, Defn.lean:114, Quotient.lean:62,136). Measured, not recalled.",
       "escape_hatches_not_excluded": "a carrier that is NOT vertex-transitive, or an ac that depends on the charge assignment, or an unsaturated bound, all evade this. Each is a further thing to derive, not a thing the sources supply."
     }
-  }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no q0. The mirror-split charge-blindness test compares linking numbers and charge assignments across a mirror pair; both are integer topological data and neither is evaluated at the substrate modulus. Established by import-cone trace (cone=2, no q_parameter / qou_substrate.constants edge) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field."
 }

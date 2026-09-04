@@ -559,3 +559,7 @@ name, an instance-binder class head, or a file-level `variable` (which
   `QOU.LRFusion.DoubleMagicConjecture` (sibling) vs
   `QOU.Interactions.LRFusion.DoubleMagicConjecture` (library), after
   `MassVolumeFactorization`, `binding_assembly` and `ReebBundleComplement`.
+
+
+## 2026-09-03 21:5xZ — landed under PR #6526, which re-targeted; one dangling consumer left on main
+b34a9c689b removed MarkovIdentificationContext while PR #6526 (bean qou-gzgi) was inhabiting it from the proved convention-D Markov trace. Re-targeted the same proof at the new Prop: MarkovIdentificationInstance.markovTrace_branching_of_markovTrace proves markovTrace_branching (#blocks) (Ocneanu weights) (seminormal block traces) (T.tr n x) for every Markov trace at z_D — i.e. the identity this file lists as 'Open' is a theorem at D, one module over. Not fixed here: docs/audits/2026-08-30-context-classes-hand-adjudicated.lean:713 still writes 'instance : MarkovIdentificationContext' and now references a removed class (docs file, not a library module; noting, not repairing).

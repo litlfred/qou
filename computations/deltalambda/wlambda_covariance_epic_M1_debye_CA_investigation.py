@@ -4,7 +4,20 @@ large theta (exact Bessel sums, no partitions), to decide whether a rigorous Olv
 land under the target C <= 2.668 (=> N0 <= 79) -- i.e. whether M_1>0 closes outright.
 
 Gap qou-k5r5, epic qou-x631. The rigorous bound |m(n)-m_inf| <= C n^{-1/2} closes M_1>0 for all n
-if C <= m_inf*sqrt(79) = 2.668 (finite part n<=78 certified). PR #5934 measured the FIXED-n margin
+if C <= m_inf*sqrt(79) = 2.668 (finite part n<=78 certified).
+
+  *** UNITS CLARIFICATION (added 2026-09-03, PR #6528). The first paragraph above reads "whether a
+  *** rigorous Olver/Debye C_A can land under the target C <= 2.668". C_A and C ARE DIFFERENT
+  *** OBJECTS and must not be compared directly: C_A bounds the V_A remainder,
+  *** |V_A/theta^2 - v_A| <= C_A theta^{-1/2}, while C bounds the MARGIN. The conversion is
+  ***     C_margin,A = (sig_ratio_inf / (2 v_A)) * C_A = 0.41922 * C_A,
+  *** so the V_A leg alone may spend C_A <= 2.6681/0.41922 = 6.3645, NOT C_A <= 2.668 -- the naive
+  *** reading is 2.385x too strict. Against the C_A^emp = 0.00775 measured below that is ~821x of
+  *** headroom on this leg (modulo de-poissonization, which nobody has pinned).
+  *** THIS IS A PHRASING DEFECT ONLY: the VERDICT below is unit-correct, comparing the true MARGIN
+  *** constant (~0.087) against 2.668, and no number in this probe is derived from the conflation.
+  *** Two sibling sites made the same comparison and DID derive numbers from it; those are corrected
+  *** in PRs #6500 and #6528. See wlambda_covariance_epic_M1_CA_to_margin_conversion.py. PR #5934 measured the FIXED-n margin
 constant ~0.087 to n=44 (partition-limited). This probe pushes the POISSONIZED linear ingredients to
 theta up to a few thousand (kernel is O(M^2), M~2 sqrt(theta)) and measures:
 

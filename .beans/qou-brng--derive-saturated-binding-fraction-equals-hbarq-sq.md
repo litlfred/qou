@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T20:49:10Z
+updated_at: 2026-09-04T02:35:16Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2249,3 +2249,108 @@ detail in `resolved-topics.md`), since its own entry ended by handing over the
 gate that this closes.
 ## 2026-09-03 — a NON-bond-graph structural source for the extensive term exists in the trace (qou-kru4)
 The bond-graph routes are closed from every direction above. Separately: the Markov trace is NOT bond-multiplicative at n=4 — the interleaved word s0 s1 s0 s2 s1 carries the exact cross term z(z^2-hz-1) = z * (conv-D Markov defect), negative (extra binding), confirmed two independent ways. This is a WORD-CLASS effect (bonds re-crossing after a neighbour bond), not a bond-graph count, so none of the bond-graph exclusions apply to it. It is a candidate source, not a closure: the production word is sequential (no number moves) and which word class a nucleus is remains qou-5vhf. See qou-ls86's 2026-09-03 entry and docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.
+
+
+## 2026-09-04 — CORRECTION: spin is NOT the residue, and I cited a bean for the opposite of what it says
+
+Retracts the last line of the 2026-09-03 section above. **The linking-matrix
+result is untouched** — `lk` IS `I₃`, both channels at `I₃ = 0`, achievable
+asymmetry exactly 1. What was wrong was its *"still open"* list, which ended:
+
+> anything carrying **spin**, which is what actually separates the channels
+
+**Why that is wrong.** The channels do differ in `S` (1 vs 0), so it is not
+false as physics — it is false as a statement about the *search*, which is what
+it was being used for. In the S-wave Pauli **locks** spin to isospin: space
+symmetric ⇒ spin and isospin symmetry opposite, so `S=1 ⟺ T=0` and `S=0 ⟺ T=1`.
+A Pauli-consistent interface carries a projector in each SU(2) with the roles
+exchanged, and the same two scalars multiply to the same number —
+`QOU.QBeta.InterfaceScalar.separable_interface_degenerate`
+(`InterfaceScalar.lean:628`, sorry-free).
+
+**The sharper half, which I had missed.** That carrier's own docstring: *"The
+conclusion holds for **every** `fSpace`, so no choice of space index rescues a
+separable interface."* So neither a spin factor nor a space factor escapes while
+the interface is separable. And the one surviving shape `qou-vbyi` names — the
+non-separable `(S,L)` tensor coupling — is closed by
+`TensorCouplingCannotUnbindSinglet` (#6488), which landed the same day I wrote
+the error.
+
+**The citation error, which is the part worth keeping.** I credited bean
+`qou-7zob` as *"reaching the same wall from the flavour side"*. It does not: its
+body **refutes** the spin route, stating the Pauli lock in as many words. I
+matched it on topic and cited it on agreement without reading it, and that
+citation shipped in five merged artifacts (#6461). Recorded as a TRAP in
+`.claude/agent-memory/corpus-grepper/MEMORY.md`: a title tells you the subject,
+never the verdict.
+
+**WHERE THE RESIDUE ACTUALLY IS.** `separable_interface_degenerate` *assumes*
+`fSpin s1 = fIso t1` and `fSpin s0 = fIso t0` — that the **same two projector
+scalars** serve both SU(2)s. Hypothesis, not derivation. A framework giving the
+two SU(2)s different scalars breaks the lock and the degeneracy with it. Nothing
+in the corpus shows they must be equal; nothing shows they may differ.
+
+And note the *shape* of that question: it is about **how the interface is
+constructed**, not about which quantum number is attached to it. All four routes
+this arc has closed — trace subtraction, `μ̄`, linking data, spin — were of the
+second kind. That may be the more useful finding than any one of the closures.
+
+Sites corrected (PR #6553): the probe (×2), the audit doc, corpus-grepper
+`resolved-topics.md`, and this bean.
+
+
+## 2026-09-04 — the Pauli lock's hypothesis, measured: two SU(2)s of different origin, and D9 has no witness
+
+Follows the correction above, which named `separable_interface_degenerate`'s
+equal-scalars hypothesis as the residue without quantifying it. Audit:
+`docs/audits/2026-09-04-pauli-lock-rests-on-an-unexamined-su2-identification.md`.
+
+**What the hypothesis asserts.** `hplus`/`hminus` say the **same two projector
+scalars** serve both SU(2)s. Concretely those are the Hecke spectral projector
+weights of a **single `σ`** (`μ± = y_(2), y_(1,1)`). So one `σ`'s scalars are
+asked to represent two symmetries — and the corpus does **not** treat them as
+one symmetry. Per `docs/duality-tracker.md`: **D9** isospin `SU(2)_I` is a
+flavour swap `u ↔ d` on colour-sheet flavour triples (canonical bowtie); **D10**
+spin `SU(2)_S` is an icosahedral rotation via `S₅ → A₅ ≅ I ⊂ SO(3)`. Different
+constructions; nothing obliges them to share a pair of scalars.
+
+**Can the corpus settle it? The obstruction is ASYMMETRIC.**
+
+- **D9 — no witness.** `class IsospinFromCanonicalBowtie` has **no instance**
+  corpus-wide; the only "instance" in its file is the docstring calling it the
+  conjectural witness. Corroborated by `WignerSU4FromSpinIsospin.lean:4` —
+  *"Once … are formalized"*. Matches the tracker's own **"D9 is the bottleneck"**.
+- **D10 — IS constructed, but builds something else.** `BringFiberAction` has a
+  content-bearing instance `bringFiberAction_icosahedral` — the genuine
+  icosahedral Reeb map `θ_λ = arccos(χ_λ(C₅)/dim_λ)`, `five_distinct_classes`
+  proved from the A₅ character table. But it builds a map **A₅ irrep → rotation**,
+  not projector scalars for the spin channel, and its own scope note leaves the
+  `W_λ = d_q²/D²` Plancherel obligation open.
+
+**A correction I caught before shipping.** My first draft of that audit said
+*"neither is constructed"*. The D10 instance refutes it. Caught by grepping for
+an instance rather than trusting the stub's *"conjectural witness"* docstring —
+which is the same failure mode as the `qou-7zob` miscitation one section above,
+twice in one day. The file is renamed off the wrong claim and records the
+correction rather than hiding it.
+
+**Two staleness findings**, neither fixed (out of scope, worth a follow-up):
+`S5SO3FiberAction.lean`'s class docstring still says *"no global instance is
+provided, so downstream theorems are genuinely conditional on it"* — they are
+not; and both D9/D10 content stubs advertise `lean/QOU/BraidsAndKnots/*.lean`
+files that **do not exist**, so their `lean.ref` resolves only by sibling
+fallback.
+
+**Status change.** The four closures (rank `= n`, `μ̄` selector, linking data,
+`Δ₃,₃` ceiling 9) are untouched and rest on their own arguments. The fifth —
+"the Pauli lock closes the channel asymmetry" — is now: *closes it **provided**
+the two SU(2)s carry the same projector scalars*, an identification between
+constructions of different origin, one without a witness. That is materially
+weaker and should not be listed beside the other four.
+
+**Scope: a scope statement, NOT a refutation.** It does not claim the scalars
+differ — exactly as unestablished as the converse.
+
+**Next.** Not a sixth invariant. A witness for D9 would make the equal-scalars
+question decidable for the first time. Larger than anything in this arc; already
+tracked in `docs/duality-tracker.md`.

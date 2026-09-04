@@ -1,7 +1,7 @@
 {
   "description": "Door-v bar-parity GUARDRAIL: STRUCTURAL CONFIRMATION that a bar-even (mass/binding, cosh, non-negative-cone) quantity and a bar-odd (Q_beta/decay, sinh, (-1)^m alternating) quantity have OPPOSITE (-1)^m parity and cannot be gauge/transform-related. Verifies the parity relationship on model bar-even/bar-odd corpus objects and exposes check_parity_derivable() to FLAG any future compute that tries to derive a bar-odd observable from a bar-even one by a parity-preserving map. Adds NO new physical number.",
   "computation": "mpmath dps=50; bar-even sector = tensor-square carriers f+^2, f-^2 (real squares, pointwise >= 0) of the C1 kernel; bar-odd sector = growing GGM/eq-49 solution modelled by its (-1)^m sign character. Checks: (i) both squares classify bar-even (no consecutive flip); (ii) GGM classifies bar-odd (genuine flip); (iii) guardrail check_parity_derivable([f+^2,f-^2], GGM) returns violation=True (parity wall fires); (iv) negative control (bar-even target) returns violation=False. Sampled at q in {0.9,1.05,1.10998} to show q-independence. SIGN structure only \u2014 no magnitude, no fit, no data.",
-  "generated": "2026-08-23T09:07:31.151661+00:00",
+  "generated": "2026-09-04T02:58:22.143264+00:00",
   "framing": "structural-confirmation",
   "adds_new_number": false,
   "parameters": {
@@ -63,5 +63,13 @@
     ],
     "lean_backing": "QOU.Mass.DoorVParityNoIdentity \u2014 doorV_parity_no_identity (sorry-free scope-(b) exclusion): no non-negative-cone combination of the bar-even squares equals a sign-alternating bar-odd target. Invariant = non-negativity of a real square (0 <= x^2), the same invariant as the KL-positivity prune.",
     "discipline": "STRUCTURAL CONFIRMATION only. No AME data, no fit, no q0-derived prediction. Verifies the parity relationship holds on model bar-even/bar-odd objects and would flag a parity-preserving bar-even -> bar-odd derivation. scope-(b) exclusion cites a proved invariant (real square >= 0)."
-  }
+  },
+  "scriptHash": "2e60c3f41617",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:58:22.428549+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

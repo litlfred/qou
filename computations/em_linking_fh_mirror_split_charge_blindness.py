@@ -332,7 +332,18 @@ def main() -> int:
         ),
     )
 
-    out = b.save()
+    out = b.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The mirror-split charge-blindness test compares "
+            "linking numbers and charge assignments across a mirror pair; "
+            "both are integer topological data and neither is evaluated "
+            "at the substrate modulus. Established by import-cone trace "
+            "(cone=2, no q_parameter / qou_substrate.constants edge) and "
+            "by computations/audits/producer_baked_pin_audit.py, which "
+            "finds no q0-valued literal in the source. The witness "
+            "carries no q0 field."),
+    })
     print(f"wrote {out}")
     return 0
 
