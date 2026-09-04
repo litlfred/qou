@@ -1,0 +1,100 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T07:20:47.427086+00:00",
+  "commitSha": "24c95ba7f73f7d6a6a46c0c2a72e0e80498e6ab6",
+  "assertions": [
+    {
+      "name": "delta = O(hbar^3), so the pn offset is the exact midpoint to order hbar^2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the obstruction is ORDER TWO, with coefficient exactly -2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "orders 0, 1, 3 and 4 vanish identically",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the first order at which pn sits ABOVE the midpoint is FIVE, coefficient 4/3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the obstruction is NOT uniform across the tower — several graded pieces are positive, so no all-orders convexity theorem exists",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the hbar-expansion reproduces the independently measured 200-bit Delta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the largest positive graded term is below 1e-3 of the leading negative one, so any resummed observable inherits the obstruction unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "the_convexity_obstruction_is_order_two_in_the_tower_probe",
+  "scriptFile": "the_convexity_obstruction_is_order_two_in_the_tower_probe.py",
+  "scriptHash": "3a3e552fe907",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_convexity_obstruction_is_order_two_in_the_tower_probe.py"
+  },
+  "description": "Lifting the pn-midpoint obstruction into the tower. With q = exp(hbar), the hbar-expansion is the Vassiliev/phi_q grading. Delta = L_pn - (L_pp+L_nn)/2 expands as -2 hbar^2 + (4/3) hbar^5 - (59/45) hbar^6 + ..., with orders 0, 1, 3, 4 vanishing. The obstruction is order two; the first order putting pn ABOVE the midpoint is five, and orders 5, 8, 10, 12, 13 are positive, so no all-orders convexity theorem exists and the order-zero result cannot be promoted to one. The series summed at hbar_0 = log(q0) reproduces the independently computed 200-bit Delta to 9 digits. But the largest positive term is 7.6e-4 of the leading negative one, so any resummed observable inherits the obstruction unchanged: the escape is formal, available only to a reading that takes a single graded piece as physical. Bean qou-oooq.",
+  "data": {
+    "delta_coeff_hbar2": "-2",
+    "delta_coeff_hbar5": "4/3",
+    "delta_coeff_hbar6": "-59/45",
+    "delta_coeff_hbar7": "-5/9",
+    "delta_coeff_hbar8": "149/126",
+    "delta_coeff_hbar9": "-7/54",
+    "delta_coeff_hbar10": "1537/3600",
+    "delta_coeff_hbar11": "-14527/9072",
+    "delta_coeff_hbar12": "644251/2993760",
+    "delta_coeff_hbar13": "88051/38880",
+    "delta_coeff_hbar14": "-782092189/495331200",
+    "delta_coeff_hbar15": "-106721/342144",
+    "first_positive_order": "5",
+    "positive_orders": "[5, 8, 10, 12, 13]",
+    "series_sum_at_hbar0": "-0.0217592325078304",
+    "exact_200bit_delta": "-0.021759233",
+    "largest_pos_over_leading_neg": "7.5730e-04"
+  },
+  "caveats": [
+    "Uses the hbar-expansion, which both the phi_q resummation and the Vassiliev filtration are built on; it does NOT distinguish the two gradings, and the bean's question of which tower is meant remains open.",
+    "No claim that any single graded piece is the physical binding observable. Without such a reading the positive orders are unusable, since the resummation is dominated by order two.",
+    "Says nothing about qou-bygw's ordering ambiguity, the valley of stability, or A >= 3; those inherit whatever the bond constants do."
+  ]
+}

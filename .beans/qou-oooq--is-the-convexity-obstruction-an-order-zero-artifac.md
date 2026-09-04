@@ -42,13 +42,62 @@ possible that every graded piece inherits convexity from the element-level
 convex combination, in which case the tower changes nothing and this bean closes
 negative in a day.
 
-- [ ] State precisely which tower: `phi_q` resummation
-      (`phi-q-resums-trace-series`) or the Vassiliev filtration
-      (`vassiliev-filtration-mass-tower`). They are different gradings and the
-      answer may differ.
-- [ ] Compute the order-1 graded observable for the three bond types.
-- [ ] Test whether `pn` can sit ABOVE the midpoint of `pp` and `nn` at any order.
-      That is the whole question; everything else is scaffolding.
-- [ ] If convexity survives at every order, close negative and say so loudly —
-      it would upgrade the obstruction from order-zero to all-orders, which is a
-      stronger result than the escape would have been.
+- [x] **Formulated.** `q = exp(hbar)`; the `hbar`-expansion is the grading both
+      the `phi_q` resummation and the Vassiliev filtration are built on, with
+      `hbar -> 0` the classical point `q = 1`. The order-`k` observable is
+      `[hbar^k] L_X(hbar)`. This does NOT distinguish the two gradings — that
+      part of the question is still open and is now the only formulation item
+      left.
+- [x] Computed to order 15 for all three bond types, exactly (sympy Rational).
+- [x] **YES — and the honest prior in this bean was wrong.**
+      `the_convexity_obstruction_is_order_two_in_the_tower_probe` (7/7):
+
+          Delta(hbar) = L_pn - (L_pp + L_nn)/2
+                      = -2 hbar^2 + (4/3) hbar^5 - (59/45) hbar^6 - (5/9) hbar^7
+                        + (149/126) hbar^8 - ...
+
+      Orders 0, 1, 3, 4 vanish identically. **The obstruction is order two**,
+      coefficient exactly `-2`. The first order putting `pn` ABOVE the midpoint
+      is **five**, and orders 5, 8, 10, 12, 13 are all positive. So ingredient
+      (2) genuinely fails higher up: there is no all-orders convexity theorem
+      and the order-zero result cannot be promoted to one.
+
+      Also worth recording: `delta = (4/3)hbar^3 - (4/3)hbar^4 + (5/3)hbar^5`
+      is `O(hbar^3)`, so the pn letter is the EXACT midpoint through order
+      `hbar^2`. The colour weighting is a third-order effect.
+
+      Validation: summed at `hbar_0 = log(q_0) = 0.104340720`, the series gives
+      `-0.0217592325` against the independently computed 200-bit
+      `-0.021759233`, agreeing to 4.9e-10. Symbolic expansion on one side, exact
+      Markov trace on the other.
+- [x] Not applicable: convexity does NOT survive at every order, so there is no
+      all-orders result to report.
+
+## Where this actually leaves us — the door is unlocked, the room is unproven
+
+The escape is REAL and NUMERICALLY IRRELEVANT, and the second half matters as
+much as the first. At `hbar_0`:
+
+    leading NEG term  k=2 : -2.177e-02
+    largest POS term  k=5 : +1.649e-05
+    ratio                 :  7.6e-4
+
+Any observable that RESUMS the tower is dominated by order two and inherits the
+obstruction unchanged — which is exactly what the 200-bit measurement is, since
+the measurement IS the resummation. The positive orders are reachable only by a
+reading that takes a SINGLE graded piece as the physical observable, and nothing
+in the probe argues for such a reading.
+
+So this bean did not fail and it did not succeed. It converted "the bond model
+is obstructed" into "the bond model is obstructed unless the physical observable
+is a single graded piece at order >= 5", which is a much narrower and much more
+falsifiable claim than we had.
+
+- [ ] **The one question that now matters:** does the framework read binding off
+      a single graded piece, or off the resummation? `phi-q-resums-trace-series`
+      and `vassiliev-filtration-mass-tower` should settle it, and they are the
+      two blocks the formulation item above could not distinguish. If it is the
+      resummation, this whole direction closes negative and `qou-qnqf` (retire
+      `L`) becomes the live option.
+- [ ] If a single graded piece: check whether order 5 also survives
+      `qou-bygw`'s ordering ambiguity, which is untouched by any of this.
