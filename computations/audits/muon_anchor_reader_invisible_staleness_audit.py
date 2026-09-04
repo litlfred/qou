@@ -58,7 +58,17 @@ volatile keys masked, tree restored by name afterwards. All five moved:
     fvk-selection                        ~0.079 ppb on `I_F_lower_bound` (~1x)
 
   CONVENTION-CLASS (NOT the anchor -- convention C -> D reaching the import
-  cone) -- and these two record a GREEN a fresh run does not reproduce:
+  cone) -- and these two record a GREEN a fresh run does not reproduce.
+  This is an IDENTITY, not an inference: the changed slot A_q_symbolic[3] /
+  A_vector_symbolic[3] is literally z squared, and `main` holds z_C^2 --
+    committed  q/(q**2 + 2*q + 1)        = z_C^2, z_C = sqrt(q)/(q+1)
+    fresh      q**6/(q**4 + 2*q**2 + 1)  = z_D^2, z_D = q**3/(q**2+1)
+  both confirmed by sympy simplify to 0. So the convention can be read off the
+  committed witnesses with no re-run at all -- the value-level convention test
+  ("test the ANSWER, not the source"), which no source grep can be fooled out
+  of. Caution for a refresher: in qbeta-markov-trace-norm-probe assertions[3]
+  changes SHAPE (computed and expected both go from 0.0899095006045937 to the
+  boolean True), so a refresh there is not a numeric update:
     qbeta-symbolic-tbeta-min-l2          allPassed true -> FALSE;
                                          `A_q_symbolic` sqrt(q)-form -> q^3/(q^2+1)
     qbeta-markov-trace-norm-probe        allPassed true -> FALSE;

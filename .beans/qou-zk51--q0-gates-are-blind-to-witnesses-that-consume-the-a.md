@@ -192,3 +192,35 @@ the plain one: `q0Value` moved A → C and `fvk`'s numbers moved with it.
 The remaining four are left alone deliberately: two are the `qou-cds1` stale
 greens (refreshing commits a red), and the anchor-class two sit in the
 `qou-3f7a` tranche, which is another session's live work.
+
+---
+
+## The convention-class diagnosis is an IDENTITY, not an inference (2026-09-04)
+
+Prompted by #6605's careful note that they had recorded my "a fresh run returns
+`false`" half *as reported, not as measured*. It does not need to be taken on
+report — **the two witnesses on disk settle it between them**, with no re-run.
+
+The changed slot `A_q_symbolic[3]` / `A_vector_symbolic[3]` is literally `z²`:
+
+| | committed on `main` | fresh run at HEAD |
+|---|---|---|
+| value | `q/(q**2 + 2*q + 1)` | `q**6/(q**4 + 2*q**2 + 1)` |
+| identity | `= z_C²`  (`z_C = √q/(q+1)`, `(q+1)² = q²+2q+1`) | `= z_D²`  (`z_D = q³/(q²+1)`, `(q²+1)² = q⁴+2q²+1`) |
+
+Verified symbolically: `simplify(q/(q**2+2*q+1) − z_C**2) == 0` and
+`simplify(q**6/(q**4+2*q**2+1) − z_D**2) == 0`, both `True`.
+
+So this is not *"a symbolic form changed in a way consistent with C→D"* — the
+slot **is** the Markov parameter squared, and `main` holds `z_C²`. This is the
+value-level convention test AGENTS.md recommends over any source grep ("test the
+ANSWER, not the source"): a value cannot be stale, mislabelled, re-spelled or
+inherited from a stale record and still equal `z_C²` exactly.
+
+**One caution for whoever refreshes these.** In
+`qbeta-markov-trace-norm-probe`, `assertions[3]` changes **shape**, not just
+value: `computed` and `expected` both go from the number `0.0899095006045937`
+to the boolean `True`. That assertion is becoming a different *kind* of check,
+so a refresh is not a numeric update there. The signal I would actually track
+is `constraint_residues_at_q0/L2`, `6.845644678724866e-14 → 3.478181380183418e-09`
+— five orders, and the thing the re-derivation has to recover.
