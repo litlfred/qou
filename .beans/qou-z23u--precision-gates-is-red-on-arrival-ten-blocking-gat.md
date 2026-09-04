@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T15:43:09Z
-updated_at: 2026-09-03T20:39:14Z
+updated_at: 2026-09-04T02:24:50Z
 ---
 
 ## Measured 2026-09-03 on main `26bd234527` — and mostly already owned
@@ -179,3 +179,64 @@ thing that separates correlation from cause.
 `q0-anchor flip` (1, needs compute budget) · `q0-anchor refill` (`qou-fl0a`) ·
 `raw-float64` (3 regressed) · `q0-value drift` (10 NEW, `qou-3f7a`) ·
 `CODATA stale-edition` · `mixed mpf/f64` (1) · `witness scriptFile provenance` (1).
+
+
+## Session 3: mixed mpf/f64 green, raw-float64 regressions drained, q0 unrecognised → 0
+
+**`mixed mpf/f64` — green (1 → 0).** `winner_vs_fusion = abs(best_a[1] -
+fusion_sum)` in `meson_gmor_derivation_probe`, reported at 18 digits against
+`tolerance="1e-30"`. `best_a` is `(name, value, miss_pct)`: `value` is mpf,
+`miss_pct` is a float used only for selection and printing. Taint works on
+NAMES, so one float element taints the tuple and the mpf-only subtraction gets
+flagged. Unpacked into its own name — NOT marked `float64-intentional`, which
+would record a deliberate f64 measurement this is not. Witness byte-identical
+apart from an environment stamp.
+
+**`raw-float64` — the 3 REGRESSED drained to 0.** All three arrived on bulk
+drains that ADDED assertion/payload fields as bare Python floats
+(`computed=float(x)`, `expected=0.1228605135`, `tolerance=1e-8`); each producer
+already imported `fmt`. delta-n2 22→12, braid-encoding 91→89, meson-spectrum
+20→18, all back to baseline.
+
+Three mistakes worth carrying forward:
+- **A regex over source is not a refactor.** `tolerance=<num>` matched
+  `target_tolerance=1e-9` INSIDE AN F-STRING and produced a SyntaxError.
+  Reverted; done by exact line match.
+- **Serializing changes what you can compare to.** The kaon lookup keyed on
+  `r["m_PDG_MeV"] == pdg["K±"]` broke once the payload was formatted — string
+  vs mpf, StopIteration. Now keyed on `pdg_key`. An identity test on a label
+  survives a change of representation; an equality test on a number does not.
+- **`git checkout -- computations/` after a gate run reverts your own source
+  edit** along with the audit witnesses, silently. `qou-hah0` recorded this and
+  I did it anyway. Scope the revert.
+
+**The gate is still red on a DIFFERENT bucket, and all three look legitimate
+rather than defective** — an owner call, not a drain:
+- `arc-count-diagnostic-degeneracy` carries `r2_ame_vs_arc_exact` **beside**
+  `r2_ame_vs_arc_float`; the float is a convenience rendering.
+- `c2-diagonal-insertion-expansion-probe` carries `{"ratio": "372/365",
+  "float": 1.019…}` — the exact rational is right there.
+- `bpp-higher-a-sparse` has `rows[].seconds`, wall-clock timing. The audit's
+  own duration carve-out matches only names containing "dur"/"elapsed" (its
+  comment says so explicitly about `wall_sec`), so `seconds` slips through.
+
+None is widened unilaterally: this codebase requires a carve-out to be
+DECLARED by the producer, not inferred by the auditor.
+
+**q0-anchor `Q0_ANCHOR_UNRECOGNISED` 1 → 0** — `q0_anchor=True` stamped a
+boolean. `False` means "independent", which makes `True` look like its
+complement; it is not, so it fell through to the string path. The producer's own
+comment said "the bond factors ARE evaluated at the proton pin". Fixed at the
+producer AND guarded in `stamp_staleness_metadata`, which now raises on `True`.
+Second API-shape defect in that one function this session, both presenting as
+producer errors.
+
+**`witness scriptFile provenance` — the NOT_A_PRODUCER is NAMED**, which
+`qou-hah0` could not do: `--list NOT_A_PRODUCER` is the flag it was looking
+for. It is `b1-kappa-window-extension.witness.json` →
+`wlambda_covariance_epic_B1_kappa_window_extension.py`, a script that computes
+exactly the right thing and **only prints** — the commit that added the witness
+added no script at all, and `durationMs: 53` on a ~28-min compute confirms it
+was hand-assembled from stdout. Every derived field was verified reproducible
+from `rows` alone (all 8 `windowed_exponents` and the secant, exactly), so the
+script now emits its own witness; confirming run in flight.
