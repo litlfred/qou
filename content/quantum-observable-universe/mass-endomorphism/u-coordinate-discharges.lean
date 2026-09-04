@@ -79,7 +79,8 @@ theorem hecke_root_sum_times_q (q : ℝ) (hq : q ≠ 0) :
     q * (q - q⁻¹) = uCoord q - 1 := by
   unfold uCoord
   field_simp
-  ring
+  -- `field_simp` closes this on its own; the `ring` that used to
+  -- follow reported `No goals to be solved`.
 
 /-! ## Per-block eigenvalue products in u
 
@@ -101,7 +102,8 @@ theorem sigma_eigval_V111_sq_eq_u_inv (q : ℝ) (hq : q ≠ 0) (i : Fin 2) :
     (sigma_eigval_V111 q i)^2 = (uCoord q)⁻¹ := by
   unfold sigma_eigval_V111 uCoord
   field_simp
-  ring
+  -- `field_simp` closes this on its own; the `ring` that used to
+  -- follow reported `No goals to be solved`.
 
 /-! ## Per-block dim_q identity in u (Wedderburn completeness)
 

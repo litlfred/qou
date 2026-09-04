@@ -103,11 +103,11 @@ def beta_n_typed : TypedBraidWord3 :=
 /-- Length of both typed braids is 11. -/
 theorem beta_p_typed_length : beta_p_typed.length = 11 := by
   unfold beta_p_typed
-  simp [List.length_append, List.length_replicate]
+  simp
 
 theorem beta_n_typed_length : beta_n_typed.length = 11 := by
   unfold beta_n_typed
-  simp [List.length_append, List.length_replicate]
+  simp
 
 /-! ## Sub-braid extraction
 
@@ -209,11 +209,14 @@ theorem F3_eps6_leading_eq_jones_hopf_times_b_cubed :
     -- LHS - RHS = 0 ⟹ they're equal.
     ∀ b3 : ℝ, b3 = 3 * Real.sqrt 3 / 8 →
       -2 * b3 = jonesAtOne (closure2 Braid2.σ_sq) * b3 := by
-  intro b3 hb3
-  -- jonesAtOne (closure2 σ_sq) = -2 from the proved chain.
+  intro b3 _hb3
+  -- jonesAtOne (closure2 σ_sq) = -2 from the proved chain.  The rewrite
+  -- closes the goal on its own — both sides become `-2 * b3` — so the
+  -- `ring` that used to follow reported `No goals to be solved`.  The
+  -- value `b3 = 3√3/8` is not needed: the identity holds for every `b3`,
+  -- which is the stronger statement, so the hypothesis is bound as `_hb3`
+  -- rather than deleted (it is what the .md's LHS/RHS are about).
   rw [closure2_jones_at_one_sigma_sq_eq_neg_two]
-  -- Now both sides are -2 · b3.
-  ring
 
 /-! ## Composed Track-C theorem
 
@@ -237,9 +240,13 @@ theorem composed_track_C_c_3_eq_neg_two [DominantSubBraidAtEps6] :
     independently proved (consistency check):
     `closure2 σ_sq = hopfLink` is the closure-theorem side, separate
     from the class's perturbative-expansion residual. -/
-theorem dominant_subbraid_consistency
-    [hd : DominantSubBraidAtEps6] :
+theorem dominant_subbraid_consistency :
     closure2 Braid2.σ_sq = Link.hopfLink :=
+  -- The `[hd : DominantSubBraidAtEps6]` binder this carried was never
+  -- used and is dropped.  That is not tidying: an unused instance binder
+  -- OVERSTATES the dependency, making an unconditional closure fact read
+  -- as conditional on the perturbative-expansion axiom.  The docstring
+  -- above already says the two are separate; the signature now agrees.
   closure2_at_two_crossings_eq_hopf
 
 /-! ## Status

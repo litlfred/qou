@@ -15,13 +15,14 @@ The BW and LP scalings are definitional for every λ:
   C_λ := tilde w_λ · h/2,  h = q - q⁻¹   (LP shadow-price, all λ)
 
 The Markov coefficient `y_λ(q)` is given by Wenzl's hook–content
-closed form [wenzl1988]; on the self-conjugate stratum
-(`κ_λ = Σ c(x) = 0`) it coincides with `tilde w_λ`:
-
-  y_λ = tilde w_λ                         (Wenzl-bridge, κ_λ = 0)
-
-Off the self-conjugate stratum, `y_λ` and `tilde w_λ` are genuinely
-distinct weight families.
+closed form [wenzl1988].  This file **no longer asserts any relation**
+between `y_λ` and `tilde w_λ`: the "Wenzl-bridge identity"
+`y_λ = tilde w_λ` on the self-conjugate stratum (`κ_λ = Σ c(x) = 0`),
+once carried here as a class field, is false at the intended values
+(measurement below) and was **dropped on the owner's ruling,
+2026-09-04** (option A of the three dispositions recorded in the
+narrative block).  `y_λ` and `tilde w_λ` are distinct weight families
+on every stratum; `y` stays in the class only as abstract data.
 
 **⚠ CORRECTED 2026-09-02, twice over.**
 
@@ -31,7 +32,8 @@ First, the citation.  This paragraph previously cited
 not exist and `git log --all` shows it never existed in tracked history,
 so it was the only evidence offered for a claim nothing backed.
 
-Second, and more seriously, `y_eq_self_conjugate` below is **FALSE at the
+Second, and more seriously, the former field `y_eq_self_conjugate` (the
+Wenzl-bridge identity `y_λ = tilde w_λ` on `κ_λ = 0`) is **FALSE at the
 intended values**.  Measured at every κ = 0 partition with n ≤ 6, in the
 production convention D *and* in the excised convention C, the identity
 holds only at the trivial `λ = (1)`:
@@ -52,10 +54,13 @@ content -2 kills the numerator —
 `tilde w_λ > 0` as a ratio of positive quantum integers.  The identity
 asserts `0 = positive`; no parameter reconciles it.
 
-The field is left standing rather than weakened, because restricting it
-to make the class inhabitable is the author's call, not a mechanical fix.
-Note that `beta_mul_h_eq_neg_C` below does **not** read the `y` field, so
-the BW/LP scalings are unaffected.  Measurement:
+**Disposition (owner ruling, 2026-09-04): the field is DROPPED**, together
+with its projection theorem `y_self_conjugate`.  It was left standing
+from 2026-09-02 to 2026-09-04 because the choice between restricting it
+to `λ = (1)`, dropping it, and demoting the block was the author's, not a
+mechanical fix; the author chose to drop.  `beta_mul_h_eq_neg_C` below
+never read the `y` field, so the BW/LP scalings are unaffected, and the
+class is now inhabitable at the honest data.  Measurement:
 `computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py`
 (10/10).
 
@@ -67,9 +72,9 @@ for `λ = (2,2)` and `λ = (3,2,1)` (both self-conjugate) — is
 
 recorded here in its division-free ("R[h]") form `β · h = -C`, which is
 what actually holds in the coefficient ring; dividing recovers the ratio
-whenever `C ≠ 0` and `h ≠ 0`.  The companions
-`β / y = -1/2` and `C / y = h/2` hold on the self-conjugate stratum only,
-via `y = w`.
+whenever `C ≠ 0` and `h ≠ 0`.  The former companions
+`β / y = -1/2` and `C / y = h/2` depended on `y = w` and fall with it;
+they are not asserted anywhere.
 
 **Pre-Archimedean stub.**  Base ring (§7c): the previous version typed
 every coefficient to `ℝ`, then to a generic `[Field R]`; neither is
@@ -103,15 +108,14 @@ structure Partition where
 
     An instance asserts:
       • the BW mass coefficient `β_λ = -½ tilde w_λ` (for all λ);
-      • the LP shadow-price `C_λ = tilde w_λ · h/2` (for all λ);
-      • the Markov coefficient `y_λ`, with the **self-conjugate
-        Wenzl-bridge identity** `y_λ = tilde w_λ` whenever `κ_λ = 0`.
+      • the LP shadow-price `C_λ = tilde w_λ · h/2` (for all λ).
 
-    Off the self-conjugate stratum, `y_λ` is given by Wenzl's
-    hook–content closed form [wenzl1988] and is, in general,
-    distinct from `(-1)^κ_λ · tilde w_λ` — see the in-repo witness
-    `probe-wedderburn-weight-scheme.witness.json` for empirical
-    `|y_λ / tilde w_λ|` ratios at `q₀`. -/
+    It carries the Markov coefficient `y_λ` (Wenzl's hook–content closed
+    form [wenzl1988]) as **data only**.  The self-conjugate Wenzl-bridge
+    identity `y_λ = tilde w_λ` on `κ_λ = 0` was a field here until
+    2026-09-04; it is false at the intended values (module docstring) and
+    was dropped on the owner's ruling.  No relation between `y` and `w`
+    is asserted. -/
 class WedderburnWeightCanonical (R : Type u) [CommRing R]
     [Invertible (2 : R)] where
   /-- The Hecke-generator scalar `h = q - q⁻¹` in `R`. -/
@@ -126,25 +130,13 @@ class WedderburnWeightCanonical (R : Type u) [CommRing R]
   /-- LP shadow-price `C_λ = tilde w_λ · h/2`. -/
   C : Partition → R
   /-- Markov coefficient `y_λ(q)` (Wenzl closed form; abstract
-      here, supplied per instance). -/
+      here, supplied per instance).  Data only — no axiom relates it
+      to `w`; see the module docstring for the dropped identity. -/
   y : Partition → R
   /-- BW scaling identity (all λ). -/
   beta_eq : ∀ lam, beta lam = -(⅟(2 : R)) * w lam
   /-- LP shadow-price scaling identity (all λ). -/
   C_eq : ∀ lam, C lam = w lam * (⅟(2 : R) * h)
-  /-- **Wenzl-bridge identity, restricted to self-conjugate λ.**
-      Whenever `κ_λ = 0`, the Markov coefficient agrees with the
-      Wedderburn-block weight: `y_λ = tilde w_λ`. -/
-  y_eq_self_conjugate : ∀ lam, kappa lam = 0 → y lam = w lam
-
-/-- For self-conjugate partitions (κ = 0), the Markov coefficient
-    coincides with the Wedderburn-block weight. -/
-theorem WedderburnWeightCanonical.y_self_conjugate
-    {R : Type u} [CommRing R] [Invertible (2 : R)]
-    [c : WedderburnWeightCanonical R]
-    (lam : Partition) (h_self : c.kappa lam = 0) :
-    c.y lam = c.w lam :=
-  c.y_eq_self_conjugate lam h_self
 
 /-- **Cross-ratio, division-free form**: `β · h = -C` for every `λ`.
 

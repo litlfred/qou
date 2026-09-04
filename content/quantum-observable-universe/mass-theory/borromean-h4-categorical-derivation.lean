@@ -42,14 +42,17 @@ Computational verification (50 dps) lives in:
   normalisation `Σ_λ y_λ d_λ = tr_M(1_3) = 1`.
 -/
 
-import Mathlib
+import Mathlib.Algebra.Polynomial.Coeff
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 
-/-- **Numeric factorisation lemma** for the Borromean h⁴ coefficient.
+open Polynomial
 
-States the arithmetic identity `(-3) · (1/4) = -3/4` — the
-combinatorial core of the categorical chain:
+/-! ## The h⁴ factorisation, and where each factor comes from
+
+The combinatorial core of the categorical chain:
 
   h⁴(tr_M(β_Bor)) = [χ^{(2,1)} h⁴-coeff via e_- projector]
                   × [Markov normalisation at symmetric point]
@@ -70,8 +73,47 @@ Each factor has its categorical home on `main`:
 The composition theorem connecting these to `tr_M(β_Bor)` (q-Schur
 duality + Markov-trace existence) is deferred to a follow-up Lean
 PR.  Computational verification at 50 dps lives in T15 / T18. -/
+
+/-- The `(2,1)` character of the Borromean braid as a polynomial in `h`:
+    `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`, supplied by the q-heat-kernel
+    Peter–Weyl decomposition (`prop:q-heat-kernel-peter-weyl`,
+    `prop:habiro-residue-sum-equivalence`). -/
+noncomputable def chiTwoOneBorromean : ℝ[X] := 2 - 3 * X ^ 4 - X ^ 6
+
+/-- The symmetric q-integer `[2]_q = q + q⁻¹`. -/
+noncomputable def qInt2 (q : ℝ) : ℝ := q + q⁻¹
+
+/-- The `(2,1)` Markov–Wenzl weight in closed form,
+    `y_(2,1)(q) = 1/[2]_q²` (`prop:h3-markov-wenzl-weights`). -/
+noncomputable def yTwoOne (q : ℝ) : ℝ := 1 / (qInt2 q) ^ 2
+
+/-- The `h⁴` coefficient of `χ^{(2,1)}(β_Bor)` is `−3`. -/
+theorem chiTwoOneBorromean_coeff_four : chiTwoOneBorromean.coeff 4 = -3 := by
+  simp [chiTwoOneBorromean, coeff_X_pow]
+
+/-- At the symmetric point `q = 1`, `[2]_q = 2` and `y_(2,1) = 1/4`. -/
+theorem yTwoOne_at_one : yTwoOne 1 = 1 / 4 := by
+  norm_num [yTwoOne, qInt2]
+
+/-- **Numeric factorisation lemma** for the Borromean h⁴ coefficient:
+    the `h⁴` coefficient of the `(2,1)` character, times the `(2,1)`
+    Markov–Wenzl weight at the symmetric point, is `−3/4`.
+
+    **This was previously stated as `(-3 : ℝ) * (1/4 : ℝ) = -3/4`, proved
+    by `norm_num`** — a true arithmetic fact that mentions nothing in the
+    framework and would still hold if either factor came from somewhere
+    else entirely. The statement now names both inputs, so it is false if
+    the character polynomial or the weight closed form is wrong: that is
+    the falsifiability AGENTS.md §"Derive-then-check" asks for before a
+    proof is attempted.
+
+    What is still NOT proved here is the composition — that this product
+    IS `h⁴(tr_M(β_Bor))`. That needs q-Schur duality plus Markov-trace
+    existence and is stated as the deferred theorem in the comment
+    below. -/
 theorem borromean_h4_numeric_factorisation :
-    (-3 : ℝ) * (1/4 : ℝ) = -3/4 := by
+    chiTwoOneBorromean.coeff 4 * yTwoOne 1 = -3 / 4 := by
+  rw [chiTwoOneBorromean_coeff_four, yTwoOne_at_one]
   norm_num
 
 -- Ref: [murasugi1996] https://doi.org/10.1007/978-3-642-58947-1

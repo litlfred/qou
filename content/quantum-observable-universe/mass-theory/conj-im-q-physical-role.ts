@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:im-q-physical-role",
   lean: {
-    ref: "qou:QOU.BraidKnot.ImQPhysicalRole.im_q_observable_pairing",
+    ref: "qou:QOU.BraidKnot.ImQPhysicalRole",
     validation: "not_checked",
   },
   title:
@@ -51,6 +51,34 @@ export default conjecture({
         "P_skew has real content there. Im(q) is a separate modulus-projection-discarded " +
         "degree of freedom, structurally orthogonal to the bar decomposition. The two " +
         "mechanisms must be distinguished.",
+    },
+    {
+      kind: "refined-framing",
+      date: "2026-09-03",
+      body:
+        "**Carrier rewritten: the conjecture now asserts something.** The Lean " +
+        "sibling previously carried this conjecture as `def im_q_observable_pairing " +
+        "(role : ImQCandidateRole) : Prop` returning `True` on all three branches — " +
+        "a content-free carrier, which AGENTS.md \u00a73b-tax bans (`proof-claims-unencoded` " +
+        "/ `true-class-field`), and a `def : Prop` where a `class` is required. It is " +
+        "now the class `QOU.BraidKnot.ImQPhysicalRole obs q`, whose two fields are the " +
+        "genuine hypotheses: the observable is `\u2016F \u00b7\u2016` for a conjugation-equivariant " +
+        "`F`, and at leading order its value at q equals its value at Re q. The payoff " +
+        "`im_q_undetermined` is **derived**, not asserted \u2014 such an observable cannot " +
+        "tell q from a real number. lean-direct exit 0, zero warnings, all seven " +
+        "declarations on the standard three axioms. There is deliberately **no instance** " +
+        "for the QOU mass observable; supplying one is the open work.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-09-03",
+      body:
+        "**Sign vs magnitude \u2014 do not conflate the two results.** " +
+        "`obs_conj_invariance` uses only the first field and is therefore " +
+        "unconditional for any modulus observable: it shows such an observable cannot " +
+        "see the **sign** of Im(q). The conjecture is about the **magnitude** and is " +
+        "carried entirely by the second field. The proved sign-blindness is not " +
+        "evidence for the conjectured magnitude-blindness.",
     },
   ],
   tags: [

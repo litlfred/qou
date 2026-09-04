@@ -1,5 +1,5 @@
 import Mathlib.Data.Complex.Basic
-import Mathlib.Data.Complex.Exponential
+import Mathlib.Analysis.Complex.Exponential
 import Mathlib.Data.Fin.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Fin
@@ -45,25 +45,23 @@ lemma ζ_pow_four_eq_inv : ζ ^ 4 = ζ⁻¹ := by
   have h : ζ ^ 4 * ζ = 1 := by rw [← pow_succ, ζ_pow_five]
   exact mul_right_cancel₀ ζ_ne_zero (h.trans (inv_mul_cancel₀ ζ_ne_zero).symm)
 
-/-- ζ^(5+n) = ζ^n (periodicity from ζ^5 = 1). -/
-private lemma ζ_pow_add_five (n : ℕ) : ζ ^ (5 + n) = ζ ^ n := by
-  rw [pow_add, ζ_pow_five, one_mul]
+/-- **ζ-power reduction.**  `ζ^n = ζ^(n-5)` whenever `5 ≤ n`, from
+    `ζ^5 = 1`.  As a conditional `simp` lemma this terminates: the
+    exponent strictly decreases and the side condition fails once
+    `n < 5`, so `simp` reduces any concrete power to its residue.
 
--- Simp lemmas reducing ζ^n for n ≥ 5 that appear after expanding k·j products.
--- The products k·j for k,j ∈ {0,1,2,3,4} range over {0,...,16}.
-@[simp] private lemma ζ_r5  : ζ ^ 5  = 1     := ζ_pow_five
-@[simp] private lemma ζ_r6  : ζ ^ 6  = ζ ^ 1 := ζ_pow_add_five 1
-@[simp] private lemma ζ_r8  : ζ ^ 8  = ζ ^ 3 := ζ_pow_add_five 3
-@[simp] private lemma ζ_r10 : ζ ^ 10 = 1     := by
-  rw [show (10 : ℕ) = 5 + 5 from rfl, ζ_pow_add_five]; exact ζ_pow_five
-@[simp] private lemma ζ_r12 : ζ ^ 12 = ζ ^ 2 := by
-  rw [show (12 : ℕ) = 5 + 7 from rfl, ζ_pow_add_five,
-      show (7 : ℕ) = 5 + 2 from rfl, ζ_pow_add_five]
-@[simp] private lemma ζ_r15 : ζ ^ 15 = 1     := by
-  rw [show (15 : ℕ) = 5 + 10 from rfl, ζ_pow_add_five]; exact ζ_r10
-@[simp] private lemma ζ_r16 : ζ ^ 16 = ζ ^ 1 := by
-  rw [show (16 : ℕ) = 5 + 11 from rfl, ζ_pow_add_five,
-      show (11 : ℕ) = 5 + 6 from rfl, ζ_pow_add_five]; exact ζ_r6
+    **This replaces a hand-enumerated table** (`ζ^5, ζ^6, ζ^8, ζ^10,
+    ζ^12, ζ^15, ζ^16`) whose comment justified the range as *"the
+    products k·j for k,j ∈ {0,…,4} range over {0,…,16}"*.  That is
+    true of the products and irrelevant to what the proof sees:
+    `ring_nf` multiplies the `ζ^4` coming from `ζ⁻¹` into each term,
+    so exponents reach `4·4 + 4·4 = 32`.  The `k = 4` case failed on
+    `ζ^20, ζ^24, ζ^28, ζ^32`, none of them in the table.  A general
+    lemma cannot go stale the way an enumerated one does. -/
+@[simp] private lemma ζ_pow_reduce (n : ℕ) (h : 5 ≤ n) :
+    ζ ^ n = ζ ^ (n - 5) := by
+  obtain ⟨m, rfl⟩ := Nat.exists_eq_add_of_le h
+  simp [pow_add, ζ_pow_five]
 
 /-- The Lagrange resolvent (DFT) of coordinates on the Bring surface. -/
 noncomputable def lagrangeResolvent (x : Fin 5 → ℂ) (k : Fin 5) : ℂ :=
@@ -81,7 +79,7 @@ theorem lagrange_resolvent_w0_vanishes
     (h_sum : ∑ i, x i = 0) :
     lagrangeResolvent x ⟨0, by omega⟩ = 0 := by
   unfold lagrangeResolvent
-  simp only [Fin.val_mk, Nat.zero_mul, pow_zero, one_mul]
+  simp only [Nat.zero_mul, pow_zero, one_mul]
   rw [h_sum, mul_zero]
 
 /-- Part (2): The cyclic permutation acts diagonally on Lagrange resolvents.
@@ -100,12 +98,10 @@ theorem lagrange_resolvent_diagonal_action
   -- Unfold the resolvent and permutation definitions
   unfold lagrangeResolvent cyclicPerm
   -- Expand sums over Fin 5 to get explicit 5-term expressions
-  simp only [Fin.sum_univ_five, Fin.val_mk]
+  simp only [Fin.sum_univ_five]
   -- Evaluate the modular arithmetic (j+1)%5 for each j = 0,1,2,3,4
   norm_num
   -- Case-split on k ∈ {0,1,2,3,4}, reduce ζ powers mod 5, close by ring
-  fin_cases k <;> simp only [Fin.val_mk] <;> ring_nf <;>
-    simp only [ζ_r5, ζ_r6, ζ_r8, ζ_r10, ζ_r12, ζ_r15, ζ_r16, pow_one, one_mul] <;>
-    ring
+  fin_cases k <;> ring_nf <;> simp <;> ring
 
 end QOU.BringsSurface

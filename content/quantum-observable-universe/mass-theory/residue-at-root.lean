@@ -26,15 +26,15 @@ universe u
     homomorphism into the target ring `ℤ[q]/Φ_n(q)`. -/
 theorem residue_isRingHom_of_residueAtRoot {R : Type u} [CommRing R]
     [r : ResidueAtRoot R] (n : ℕ) :
-    ∃ f : R →+* r.target n, ∀ x : R, ResidueAtRoot.residue n x = f x :=
+    ∃ f : R →+* r.target n, ∀ x : R, residue n x = f x :=
   ⟨r.project n, fun _ => rfl⟩
 
 /-- **Residue of product (conditional corollary).**
     The cyclotomic residue of a product is the product of residues. -/
 theorem residue_of_product {R : Type u} [CommRing R] [ResidueAtRoot R]
     (n : ℕ) (x y : R) :
-    ResidueAtRoot.residue n (x * y) =
-      ResidueAtRoot.residue n x * ResidueAtRoot.residue n y := by
+    residue n (x * y) =
+      residue n x * residue n y := by
   -- Ref: [manuscript] prop:residue-at-root
   exact RingHom.map_mul _ x y
 

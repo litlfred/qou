@@ -58,40 +58,81 @@ noncomputable def levelHecke (hp : HeckeParams) (strands : ℕ) (hs : 0 < strand
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
-    (n m : ℕ) :
-    levelHecke hp strands n = levelHecke hp strands m := by
-  -- both sides reduce to `heckeRewritingSystem strands hp` (q is level-independent)
+    (hs : 0 < strands) (n m : ℕ) :
+    levelHecke hp strands hs n = levelHecke hp strands hs m := by
+  -- Both sides reduce to `heckeRewritingSystem strands hs hp`.
+  --
+  -- `hs` was added to `levelHecke` when `UGB.GrobnerShirshov.heckeRewritingSystem`
+  -- gained `(hn : 0 < n)`, and the three call sites in this file were not
+  -- updated — the migration boundary, inside a single file. `autoImplicit`
+  -- then reported it as an application type mismatch on `n`, three arguments
+  -- downstream of the missing one.
+  --
+  -- **Level-independence here is true BY CONSTRUCTION, not derived**:
+  -- `levelHecke` takes its level as `_level` and discards it. The statement
+  -- records that the definition is level-blind; it is not evidence that the
+  -- Hecke relation *would* be level-independent under a level-sensitive
+  -- construction.
   rfl
 
 -- ═══════════════════════════════════════════════════════════════════
 -- J-3c: Inter-level Markov trace compatibility
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- J-3c: The Markov trace is level-independent on descended elements.
-    tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w) for all w ∈ H^{(n)}(q).
-    This is the knot-coordinate form of Euler characteristic stability:
-    the Jones polynomial of a knot does not depend on brane level. -/
+/-- J-3c, in the form the Lean actually supports.
+
+    The claim this section is *about*: the Markov trace is level-independent
+    on descended elements, `tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w)` for all
+    `w ∈ H^{(n)}(q)` — the knot-coordinate form of Euler characteristic
+    stability, i.e. the Jones polynomial of a knot does not depend on brane
+    level.
+
+    **This was a bare `axiom`, and it is provable — by `rfl`.** Its statement is
+    `levelHecke hp n level = levelHecke hp n (level + 1)`, and `levelHecke`
+    discards its level argument, so both sides are the same term. Assuming it
+    bought nothing, while adding a global axiom to `#print axioms` for every
+    statement downstream.
+
+    **What it does NOT establish is what its docstring claimed.** That text read
+    "the Markov trace is level-independent on descended elements,
+    `tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w)`" — a claim about the Markov trace and
+    the jet embedding. Neither appears in the statement, and the bound
+    `w : AlgElement (HeckeGen n) ℝ` was never used, which is the tell. The real
+    claim needs `tr_M` and `ℓ_n` formalised; it is not in this file and is not
+    proved anywhere by this declaration. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
-    (w : AlgElement (HeckeGen n) ℝ) :
-    -- tr_M at level n+1 of the jet-embedded element equals
-    -- tr_M at level n of the original element.
-    -- Requires the Markov trace and jet embedding formalizations.
-    -- Ref: [jones1987] https://doi.org/10.2307/1971403
-    ∀ (level : ℕ),
-    levelHecke hp n level = levelHecke hp n (level + 1)
+theorem levelHecke_succ_eq {n : ℕ} (hp : HeckeParams) (hn : 0 < n) (level : ℕ) :
+    levelHecke hp n hn level = levelHecke hp n hn (level + 1) := rfl
 
 -- ═══════════════════════════════════════════════════════════════════
 -- JC-3: Euler characteristic stability across levels
 -- ═══════════════════════════════════════════════════════════════════
 
+/-- The Euler characteristic of the level-`n` brane algebra, `χ = 2 - 2g`
+    at genus `g = 4`.
+
+    Stated as a function of the level so that the stability theorem below
+    says something about it. The level is discarded — that is the content
+    being recorded, and writing it out is what makes the theorem falsifiable
+    rather than an arithmetic identity. -/
+def eulerChar (_n : ℕ) : ℤ := 2 - 2 * 4
+
 /-- JC-3: χ(A_n) = χ(A_0) = -6 for all brane levels n.
-    The rigidity trace of the identity is level-invariant. -/
+    The rigidity trace of the identity is level-invariant.
+
+    **Restated 2026-09-04.** This was `theorem euler_level_stable (_n : ℕ) :
+    (2 : ℤ) - 2 * 4 = -6 := by norm_num` — a `norm_num` arithmetic fact that
+    mentions no brane level and would hold if the numbers came from anywhere
+    else, under a docstring about level-invariance. It now names `eulerChar`
+    and states both halves of the claim, so it is false if `eulerChar` is
+    wrong or level-sensitive. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
-theorem euler_level_stable (_n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num
+theorem euler_level_stable (n : ℕ) :
+    eulerChar n = eulerChar 0 ∧ eulerChar n = -6 := by
+  constructor <;> norm_num [eulerChar]
 
 -- ═══════════════════════════════════════════════════════════════════
 -- JC-4: Yekutieli obstruction as transient R-matrix

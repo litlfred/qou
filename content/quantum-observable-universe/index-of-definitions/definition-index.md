@@ -77,7 +77,7 @@
 | [def:categorical-q-reeb-flow](#def:categorical-q-reeb-flow) | Categorical q-Reeb flow | Ch 4 | `qou:QOU.CategoricalQReebFlow` |
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 | `qou:QOU.CategoricalReeb` |
 | [def:categorical-reeb-derivation](#def:categorical-reeb-derivation) | Categorical Reeb derivation | Ch 2 | `qou:QOU.AlgebraicSubstrate.CategoricalReebDerivation` |
-| [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 12 | `qou:QOU.Torsion.CategoricalTransferMatrix` |
+| [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 12 | `qou:QOU.CategoricalTransferMatrix` |
 | [def:cemetery-group](#def:cemetery-group) | Cemetery group (subcategory annihilated by $\tau$) | Ch 8 | `qou:QOU.BraidKnot.CemeteryGroup` |
 | [def:chebyshev-torus-coefficients](#def:chebyshev-torus-coefficients) | Chebyshev crossing coefficients of $T_{2,n}$ | Ch 14 | `qou:QOU.Archimedean.chebyshevTorusCoefficients` |
 | [def:classical-riemann-zeta](#def:classical-riemann-zeta) | Classical Riemann zeta function as adelic limit | Ch 19 | `qou:QOU.AlgebraicSubstrate.ClassicalRiemannZeta` |
@@ -285,7 +285,7 @@
 | [thm:markov-trace-factorization](#thm:markov-trace-factorization) | Exact factorization of the nuclear Markov trace | Ch 12 | `qou:QOU.Archimedean.markov_trace_factorization` |
 | [thm:jones-markov-trace](#thm:jones-markov-trace) | Existence and non-degeneracy of the Markov trace (Jones, 1987) | Ch 5 | `qou:QOU.Braiding.JonesMarkovTrace` |
 | [thm:categorical-reeb-exists](#thm:categorical-reeb-exists) | Existence of the categorical Reeb derivation | Ch 2 | `qou:QOU.categorical_reeb_exists` |
-| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.SubstrateParameter.ofReebDecomposition` |
+| [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `qou:QOU.ArchimedeanSubstrateField.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `qou:QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal) | Far-commuting minimality: three even-twist torus-link generators fit minimally in $B_6$ at $(1,3,5)$, enumerating $\{T(2,4),T(2,6),T(2,8)\}$ | Ch 8 | `qou:QOU.ParticleInteractions.electroweak_triplet_far_commuting_minimal` |
 | [thm:frobenius-antipode-unifies-chirality-and-tower](#thm:frobenius-antipode-unifies-chirality-and-tower) | Frobenius antipode $S\colon \sigma \leftrightarrow \sigma^{-1}$ unifies chirality (Term 5) and neutron-tower closure | Ch 12 | `qou:QOU.BraidKnot.frobenius_antipode_unifies` |
@@ -411,7 +411,7 @@
 | [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ | Ch 12 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
 | [prop:borromean-markov-trace-closed-form](#prop:borromean-markov-trace-closed-form) | Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$ | Ch 12 | `qou:QOU.BraidsAndKnots.borromean_markov_trace_closed_form` |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 12 | `qou:QOU.MassTheory.qGaussianObstructionAtQ0` |
-| [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 | `qou:QOU.ObservableMTC.bnAction` |
+| [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 18 | `qou:QOU.bnAction` |
 | [prop:braid-action-tensor](#prop:braid-action-tensor) | Braid-group action on tensor powers | Ch 5 | `qou:QOU.Braiding.braid_action_tensor` |
 | [prop:markov-branching-three-term](#prop:markov-branching-three-term) | Branching coherence of the Markov trace reduces to $[m+2]_q + [m]_q = [2]_q\,[m+1]_q$ | Ch 12 | `qou:QOU.QBeta.TemperleyLiebTower.markov_branching_general` |
 | [prop:brane-tower-q-laplacian-decay](#prop:brane-tower-q-laplacian-decay) | Brane-tower convergence: q-Laplacian exponential decay drives the $\hbar_q^{2n}$ tail bound | Ch 15 | `qou:QOU.Observations.brane_tower_q_laplacian_decay` |
@@ -1156,7 +1156,7 @@
 | [conj:pachner-pentagon-borromean](#conj:pachner-pentagon-borromean) | Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition | Ch 12 | `qou:QOU.BraidsAndKnots.PachnerPentagonBorromean` |
 | [conj:palindromicity-orbital-type](#conj:palindromicity-orbital-type) | Palindromicity and orbital type | Ch 16 | `qou:QOU.Molecular.PalindromicityOrbitalType` |
 | [conj:p-from-braid-mirror](#conj:p-from-braid-mirror) | Parity $P$ as mirror reflection of the braid diagram (writhe sign flip) | Ch 12 | `qou:QOU.BraidsAndKnots.PFromBraidMirror` |
-| [conj:im-q-physical-role](#conj:im-q-physical-role) | Physical role of $\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation). | Ch 12 | `qou:QOU.BraidKnot.ImQPhysicalRole.im_q_observable_pairing` |
+| [conj:im-q-physical-role](#conj:im-q-physical-role) | Physical role of $\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation). | Ch 12 | `qou:QOU.BraidKnot.ImQPhysicalRole` |
 | [conj:weak-spectral-completeness](#conj:weak-spectral-completeness) | Plancherel completeness for the EW/Higgs $\{T(2,4), T(2,6), T(2,8)\}$ idempotent decomposition | Ch 12 | `qou:QOU.BraidKnot.WeakSpectralCompleteness` |
 | [conj:poincare-lefschetz-borromean](#conj:poincare-lefschetz-borromean) | Poincaré–Lefschetz duality on Borromean complement — cohomology ↔ homology of manifold-with-cusps | Ch 12 | `qou:QOU.BraidsAndKnots.PoincareLefschetzBorromean` |
 | [conj:psd-trace-orthogonality](#conj:psd-trace-orthogonality) | PSD-vs-trace orthogonality of canonical atom-braid Wedderburn blocks. At q₀, the partitions λ ⊢ 3A that dominate the Markov trace `Σ_λ y_λ χ^λ(T_w)` and the partitions that dominate the PSD obstruction `α* = 1/(1 − ε_min)` live in *disjoint shape-class subcategories*: trace-dominant = 1/2-row long-string partitions, PSD-dominant = 3+row multi-step narrow partitions. Empirically supported with 10⁵ magnitude separation at A=4 and 10⁹ at A=6. | Ch 12 | `qou:QOU.BraidKnot.PSDTraceOrthogonality.psd_trace_orthogonality_holds_for_all_atoms` |

@@ -163,36 +163,44 @@ local monodromy, not fitted numerically.
 > derivatives alone remains admissible by the two target properties, and the
 > non-derivative clause is not forced by them there.
 >
-> **The kernel itself forces it.** Read $L_{\mathcal{K}}$ in the same calculus
-> — with $\sigma$ the unit $t$-shift and $x = q^{e}$, or with $\sigma$ the
-> $t$-shift by two on the double cover of the note above — and it is a
-> shift-sum with a zeroth-order term $-(q-1)$ (respectively $-(u^{2}-1)$,
-> $q = u^{2}$). A sum of derivative-like terms annihilates the constant seed
-> $t^{0}$; the kernel sends it to $-(q-1)$ at $e = 0$. So **no derivative-only
-> shift-sum is $L_{\mathcal{K}}$**, in either dictionary, for any $q \neq 1$
-> (`QOU.Mass.C1KernelAsShiftSum`, sorry-free). If this conjecture holds, the
-> prolongation operator has a non-derivative component — the same conclusion
-> as before, now from the shape of the conjectured symbol rather than from the
-> residue or the residual. Under the unit-shift reading the kernel is exactly
-> the admissible class (derivative-like shift $2$, constant-weight shift $1$),
-> with residue $(q-1)^{2}(a_0 - a_1)$ at the second jet, reading the branch
-> value; under the double-cover reading every shift is even and the kernel
-> commutes with the covering monodromy. Which reading is right is the
-> $\sigma \leftrightarrow t$-shift dictionary, and that is wall W2 unchanged.
+> **The kernel is a recurrence across jet levels, and on that axis it forces
+> the non-derivative clause too.** In $L_{\mathcal{K}}$ the variable is
+> $x = q^{m}$ with $m$ the body order, which
+> [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) identifies with
+> the jet degree; so $\sigma$ is the step from one jet level to the next, and
+> $L_{\mathcal{K}}$ is the second-order recurrence that the level-indexed
+> residues $r_{n} = (D_{q}^{n}X)_{t^{-2}}$ of the prolongation tower must
+> satisfy — never $D_{q}$ itself, which is first-order in the level. On a
+> power-series seed $r_{0} = 0$ for every operator, so the residue tower cannot
+> coincide with a carrier whose first term is nonzero (the involution-number
+> carrier has $b_{0} = b_{1} = 1$): the recurrence is demanded from a level on,
+> and a level-$n_{0}$ C1 sequence is fixed by its two values at $n_{0}$ and
+> $n_{0}+1$ — the two base cases of the scope note above. For the admissible
+> two-term operator $r_{1} = c_{2}(-2)\,a_{0}$, the branch value read through
+> the shift-$2$ weight at the residue slot; a derivative-like shift-$2$ term has
+> $c_{2}(-2) = 0$, so $r_{0} = r_{1} = 0$ and a C1 residue tower from level $0$
+> is identically zero. For a derivative-only tower the recurrence from level
+> $2$ is *equivalent* to the index-shifted recurrence
+> $[m+4]_{q}\,s_{m+2} = s_{m+1} + s_{m}$ on the tower's $t^{1}$-coefficients
+> $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
+> each level's constraint reaches one new seed coefficient and none of them
+> reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
+> sorry-free, $q$ not a root of unity).
 >
-> **The residual does not decide it — it kills both.** One might hope the
-> $(-1)^{m}$ residual picks the unit-shift reading, since the double cover has
-> no odd shift to carry it. It does not. A tower whose level-$n$ jet carries
-> the monodromy character $(-1)^{n}\varepsilon$ from some level on is zero from
-> that level on under either reading: on the double cover because a
-> monodromy-commuting operator transports the character unchanged, so two
-> consecutive alternating levels force $2(-1)^{n}\varepsilon\,T^{n+1}X = 0$;
-> under the unit shift because the even part must annihilate both the jet
-> $Y$ and its odd image, and those are the recurrences
-> $(q^{e+2}-1)Y_{e+2} = (q-1)Y_{e}$ and $(q^{e+1}-1)Y_{e+2} = (q-1)Y_{e}$,
-> whose difference is $q^{e+1}(q-1)Y_{e+2} = 0$
-> (`QOU.Mass.C1KernelDictionaryParity`, sorry-free, $q \neq 0, 1$). So if this
-> conjecture holds and the prolongation operator is its symbol, the
-> $(-1)^{m}$ twist is not produced by the prolongation's own iteration; it
-> sits in the seed or in the pairing. An operator whose symbol is
-> $L_{\mathcal{K}}$ but differs from it by lower-order terms is not excluded.
+> Two earlier readings of the same kernel took $\sigma$ to be a shift in the
+> $t$-exponent of a single jet — the unit $t$-shift with $x = q^{e}$, or the
+> $t$-shift by two on the double cover. That is the special case in which the
+> level and the exponent lock, $r_{n} = c^{n}a_{n-2}$ for a constant-weight
+> pure shift-$1$ tower, not the conjecture's reading. What was proved there
+> stands as mathematics about those $t$-operators: neither can be written as a
+> sum of derivative-like terms, because each carries a zeroth-order term
+> $-(q-1)$ that does not annihilate the constant seed
+> (`QOU.Mass.C1KernelAsShiftSum`), and neither can carry the $(-1)^{m}$
+> alternation of the preceding note on a nonzero tower — on the double cover
+> because a monodromy-commuting operator transports the character unchanged,
+> under the unit shift because the even part would have to annihilate both a
+> jet and its odd image, and those two recurrences differ by
+> $q^{e+1}(q-1)Y_{e+2}$ (`QOU.Mass.C1KernelDictionaryParity`). Read on the
+> correct axis those facts say nothing about $D_{q}$, and the
+> "$\sigma \leftrightarrow t$-shift dictionary" they posed as wall W2 is not a
+> question the conjecture asks.

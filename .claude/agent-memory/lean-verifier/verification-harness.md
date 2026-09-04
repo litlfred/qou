@@ -27,7 +27,7 @@ anything the cache predates.
 
 **The cheap content-level test, which §11 does not give:**
 `strings <olean> | grep -c <an identifier the new source introduces>`. A zero is
-proof of staleness that needs no timestamp (§12 on why timestamps lie). Measured
+proof of staleness that needs no timestamp (§16 on why timestamps lie). Measured
 2026-09-03 on `QOU/SchurWeyl/HeckeWedderburnGeneral.olean` out of
 `lake-cache/qou-v4-24-0`: **zero** occurrences of `NotRootOfUnity` while its
 source defines `heckeWedderburn` with exactly that hypothesis, so a consumer
@@ -392,7 +392,89 @@ library root. Consequence beyond the build: a class field over that name is
 selected by an import. `markovZ` class of defect. Resolve any such name to the
 module it came from before reasoning about its content.
 
-## 14. TRAP — do NOT key staleness on mtime; `git checkout` sets source mtimes
+---
+## 14. A QOU-only `LEAN_PATH` mis-reports cross-package siblings as broken
+
+Measured 2026-09-03, sweeping all 908 content-block sibling `.lean` files.
+
+The standard env script builds `LEAN_PATH` from the **QOU** package plus the
+root `.lake/packages/*`. That is right for a QOU library file and **wrong for
+a content-block sibling**, because a sibling may import another paper's
+library. `content/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.lean`
+opens with `import UGB.…`, and the two environments disagree on the *same file
+at the same commit*:
+
+    QOU-only LEAN_PATH  ->  error: unknown module prefix 'UGB'
+    all three packages  ->  exit 0, zero errors
+
+**2 of 14 failures in the first 317 files were this.** Its shape is
+indistinguishable from a real defect — a first-line error naming a module —
+so it inflates any "broken siblings" count unless you triage before quoting.
+Same family as §6(a): check whether the harness could have produced the error
+before calling the code broken.
+
+Fix — include every paper package:
+
+```bash
+for pkg in quantum-observable-universe unital-groebner-bases fred2005-formal-groups; do
+  d="$R/content/$pkg/lean/.lake/build/lib/lean"
+  [ -d "$d" ] && LP="${LP:+$LP:}$d"
+done
+```
+
+The other packages are small (UGB 21 oleans, Fred2005 2), so this costs
+nothing and removes a whole false-positive class.
+
+**And the siblings are unchecked by anything else.** They live outside the
+Lake globs (`globs = ["QOU", "QOU.+"]`, `srcDir = "."` = the `lean/` dir), so
+`lake build QOU` never sees them; CI is `workflow_dispatch`-only. A sibling
+can be broken for months with nothing reporting it — `n-v-bring-action.lean`
+was (8 parse errors, `Σ` used as a binder name, which is `Sigma` notation).
+
+---
+
+## 15. No Mathlib source and no LSP: grep the OLEANS for renamed declarations
+
+Measured 2026-09-03. This container's restore gives `.lake/packages/mathlib/`
+containing **only** `.lake/build` — there is no `Mathlib/` source tree — and
+the `lean-lsp` MCP server does not connect here. So the two obvious ways to
+resolve a Mathlib rename are both unavailable, and the third is not obvious:
+
+```bash
+D=.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions
+grep -rhoa "tendsto_log_mul_rpow[A-Za-z_0-9']*" "$D" | sort -u
+#   tendsto_log_mul_rpow_nhdsGT_zero
+#   tendsto_log_mul_rpow_nhds_zero
+```
+
+**Olean binaries carry declaration names as plain strings.** `grep -a` with a
+prefix of the name you remember, plus `[A-Za-z_0-9']*`, enumerates the live
+spellings in seconds. `grep -rloa` gives the module, which is what you need
+for the import.
+
+**Two limits, both bitten in practice.**
+
+1. **Namespaces are stored as separate components**, so the *qualified* name is
+   NOT contiguous in the file — `grep -oa "Real.tendsto_log_mul_rpow[…]"`
+   returns nothing even when the declaration is there. The grep finds the last
+   component only; confirm the namespace with `#check`.
+2. It found `tendsto_log_mul_rpow_nhdsGT_zero` in a module the file already
+   imported, while the error said `Unknown constant
+   Real.tendsto_log_mul_rpow_nhdsGT_zero`. **The defect was the namespace, not
+   the name** — the lemma is in the ROOT namespace. `#check @<bare name>`
+   settled it. Do not conclude "renamed" from an `Unknown constant` whose last
+   component greps fine.
+
+Same run: `tendsto_id` is `Filter.tendsto_id` and is not exported to root.
+
+**Where this stops helping.** Names are cheap; proofs are not. On
+`townsend-biot-savart-strain.lean` these two fixes took 9 errors to 7, and the
+remaining seven are `Application type mismatch` / `rewrite failed` / `unsolved
+goals` inside a real-analysis argument — proof-level drift, not name-level.
+Budget accordingly: grep the names, then expect the proof body to still need
+doing.
+
+## 16. TRAP — do NOT key staleness on mtime; `git checkout` sets source mtimes
 
 The obvious way to automate §1 ("rebuild anything whose source is newer than its
 olean") is **wrong on a fresh clone**, and wrong in the expensive direction.
@@ -425,7 +507,7 @@ this file — §1 and §2 already state both traps, §2 already naming `QOU/` an
 `SearchPath.findWithExt`. Reading the memory first would have cost a minute and
 saved the re-derivation and the discarded tool. Only this section was actually new.
 
-## 13. The union mirror — when MATHLIB itself is split across the two trees
+## 17. The union mirror — when MATHLIB itself is split across the two trees
 
 §2 says a partial overlay shadows the whole namespace, and names `QOU/`. **The
 same rule applies to `Mathlib/`, and that is the case you will actually hit**,
@@ -467,7 +549,7 @@ from two revisions is not sound. With the union both routes compiled exit 0.
 append `example : (1:Nat) = 2 := rfl` to a copy and confirm exit 1. A harness
 that returns 0 on everything is worse than no harness.
 
-## 14. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
+## 18. TRAP — a reverse-cone check on the files you just WROTE is nearly signal-free
 
 §1 says to check the reverse-import cone. It does not say *of what*, and getting that
 wrong produces a check that looks rigorous and measures nothing.
@@ -503,3 +585,37 @@ Two corollaries from the same incident:
 
 Do not read the incident as an argument against §1's check. It is an argument for aiming
 it: the same session's #6517 check was correctly *executed* and pointed at the wrong set.
+
+
+## 15. An `_`-prefixed binder SUPPRESSES the linter a docstring cites as evidence
+
+Measured 2026-09-04 on `QOU/BraidKnot/MuPTwoTermSum.lean`. Its `sum_signs_forced`
+carries `(_hc31 : |c₃| ≤ 5) (_hc40 : 1/5 ≤ |c₄|)` and the docstring says the
+theorem *"is stronger than its signature … Lean's unused-variable linter confirms
+the proof never touches them."*
+
+**The factual claim is TRUE; the cited evidence does not exist.**
+`linter.unusedVariables` does not fire on a binder whose name starts with `_` —
+the underscore is *precisely* the suppression mechanism. So on the committed
+file the linter is **silent**, and a reader who "checks the linter" as invited
+sees nothing and cannot tell "unused" from "warning suppressed".
+
+Three runs settle it, ~30 s total, all on scratch copies:
+
+- **A — drop the binders entirely** (and fix the two call sites, which pass them
+  positionally): **exit 0**. This is the real proof that they are unused.
+- **B — keep them, remove the `_`**: linter fires on both. Corroborates A.
+- **C — control, unmodified**: silent, exit 0.
+
+Generalisation: **a docstring claiming a hypothesis is unnecessary is checkable,
+so check it — by deleting the hypothesis, never by reading the warnings.** The
+same inversion is available for `set_option maxHeartbeats` (§10) and any other
+"the tooling confirms X" prose: ask what the tooling would print if X were false.
+
+**Companion — sharpness by mutation.** Where a theorem states a round constant,
+compute the *sharp* bound in exact rationals and mutate past it. Here the sharp
+window-wide bounds are `c₃ ≤ 313205/1259712 = 0.2486322` (stated: `1/4`) and
+`c₄ ≤ −0.8156820` (stated: `−4/5`). Mutants `24/100` and `−82/100` both fail at
+the `norm_num` margin step; pristine control passes. That converts "the constant
+is the content" from an assertion into a measurement, and simultaneously reports
+how much slack the stated constant leaves.

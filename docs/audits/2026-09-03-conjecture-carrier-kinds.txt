@@ -1,0 +1,50 @@
+conjecture blocks with a lean.ref that resolves: 172
+  no lean.ref at all:                            5
+  lean.ref resolves to no declaration:           2
+
+  class       140
+  theorem      25
+  def           5
+  field         1
+  structure     1
+
+`def`/`abbrev` carriers whose body asserts only `True`: 0
+
+All `def`/`abbrev` carriers (a class/structure is what §3b-tax asks for):
+  has body  conj:dispersion-suppression-scale
+  has body  conj:lepton-mass-tower-canonical
+  has body  conj:lepton-tower-h-n-plus-1-branching
+  has body  conj:tau-all-orders-bridge
+  has body  conj:two-filtration-bridge
+
+`theorem` carriers: 25, of which the FILE declares no class/structure: 5
+  conj:b1-hyperbolic-rows-theorem
+     content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean  (b1_hyperbolic_rows)
+  conj:c1-ggm-bar-parity-faces
+     content/quantum-observable-universe/lean/QOU/Mass/DoorVParityNoIdentity.lean  (doorV_parity_no_identity)
+  conj:flavor-split-habiro-derivation
+     content/quantum-observable-universe/mass-theory/flavor-split-habiro-derivation.lean  (topological_flavor_split)
+  conj:magic-numbers-from-q
+     content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean  (magic_numbers_from_q)
+  conj:n-v-leading-order-derivation
+     content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean  (n_v_leading_order)
+
+
+lean.ref names a declaration that does not exist:
+(NOT the same as "unbacked" — AGENTS.md §0a resolves a ref to a FILE,
+ sibling first, so the block may still reach a real formalisation under
+ other names. Measured: 2 of 3 do. Check the sibling before concluding.)
+  conj:hoefsmit-scattering-pipeline
+     ref -> QOU.BraidKnot.hoefsmit_scattering_pipeline
+  conj:reidemeister-mass-invariance
+     ref -> QOU.Braiding.reidemeister_mass_invariance
+
+No `lean.ref` at all (not necessarily a defect — a conjecture may
+legitimately have no formalisation yet; it means nothing is claimed):
+  conj:active-set-trace-concentration
+  conj:cyclotomic-boundary-at-keystone
+  conj:qou-motivic-galois-instance
+  conj:tetraplectic-askey-localisation
+  conj:tetraplectic-sw-localisation-bridge
+
+`axiom` carriers (global assumption where a class would be local):

@@ -541,6 +541,7 @@ import QOU.BraidKnot.CentralC2Transport
 import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
+import QOU.BraidKnot.ExplicitCentralIdempotent
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral
