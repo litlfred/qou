@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-08-10T01:49:56Z
+updated_at: 2026-09-04T20:55:30Z
 parent: qou-5p7n
 ---
 
@@ -98,3 +98,31 @@ Sub-clusters worth doing together: `Instanton.lean` (4), `QHookBound.lean` (4), 
 - `content/quantum-observable-universe/quantum-universes/categorical-jet.lean:83` — `categorical_jet_prolongation`
 
 Criterion: `docs/audits/2026-08-09-honest-placeholder-criterion.md`
+
+
+## 1 of 78 drained (2026-09-04) — `q_beta_spectral_conditional`
+
+`nuclear-interactions/q-beta-spectral-bridge.lean` — the disclosure sentence
+this bean prescribes is now on the declaration.  Status left `todo`: 77 remain.
+
+The old docstring was worse than absent — it *defended* the projection:
+"Derived from the class field `forms_agree` — not a `sorry`-projection of an
+unrelated conclusion."  As `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`
+sets out, that answers the wrong objection: the §3b-cond item-5 complaint is not
+that the conclusion is UNRELATED to the field but that it is IDENTICAL to it.
+That audit already adjudicated this declaration `genuine` in the review ledger.
+
+Recorded on the declaration: the class is honest (content-bearing, uninhabited
+— the correct §3b-tax open state); only the wrapper is the defect, and it is a
+DISCLOSURE defect, not a mathematical one.  The file's real content
+(`q_beta_spectral_bridge`, three identities) is unconditional and is what
+should be cited.
+
+NOT done, deliberately: closing the wrapper properly needs the class to relate
+`Q_beta_A`/`Q_beta_B` to the file's `(h, z)` forms so that agreement DERIVES
+something (exact agreement would force `z = 1` via the ratio identity).  That
+changes what the block claims — authorial, left open.
+
+Verified: `lean`-direct **exit 0** with a COMPLETE sentinel written after the
+process exited (not read from a possibly-truncated log), 0 error lines; the one
+warning is a pre-existing unused `hzh` at line 87.
