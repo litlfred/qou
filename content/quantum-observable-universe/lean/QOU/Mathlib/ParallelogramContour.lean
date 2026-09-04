@@ -165,6 +165,11 @@ theorem parallelogramIntegral_eq_zero_of_differentiable (f : ℂ → ℂ) (ω₁
 --
 -- The residue theorem then gives `2πi` with multiplicity one, since a strictly
 -- interior `w` is enclosed exactly once.
+-- Ref: [ahlfors1979] Ahlfors, Complex Analysis, 3rd ed., Ch. 4 §5 (the residue
+--      theorem; a simple pole strictly inside a positively-oriented simple
+--      closed contour contributes 2πi times its residue, here 1). §1 of the
+--      same chapter is what `parallelogramIntegral_eq_zero_of_differentiable`
+--      above now PROVES in-repo, so only this one is still carried.
 axiom parallelogramIntegral_inv_sub_eq_two_pi_i (ω₁ ω₂ z₀ w : ℂ)
     (horient : 0 < (ω₂ / ω₁).im)
     (a b : ℝ) (ha₀ : 0 < a) (ha₁ : a < 1) (hb₀ : 0 < b) (hb₁ : b < 1)

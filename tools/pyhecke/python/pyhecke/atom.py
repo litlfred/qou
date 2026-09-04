@@ -1005,9 +1005,19 @@ def build_nucleon_nf_mp(quarks, dps: int = 50):
     of the anchor are separate properties, and only the mp path has both.
 
     Measured agreement with the float64 builder: max relative difference
-    1.4e-16 (proton) and 6.0e-17 (neutron), i.e. the float path was already
+    5.0e-16 (proton) and 1.1e-15 (neutron), i.e. the float path was already
     correct to its own precision — this twin extends the precision, it does
     not correct a value.
+
+    **Those figures are the RE-MEASUREMENT of 2026-09-03.** This docstring
+    read 1.4e-16 / 6.0e-17, which was true when written and false from
+    2026-08-30, when `build_nucleon_nf` gained the two gluon crossings
+    (bean qou-1qsw) and this twin did not. Measured in that window, every
+    one of the six components disagreed — worst 2288 % on component [3] —
+    while this line still advertised 1.4e-16. A caller who swapped to the
+    twin on the strength of it would have silently reverted the gluon
+    ruling. Re-measure whenever either builder's crossing budget changes;
+    the claim is not self-maintaining.
 
     **What this does not change.** `build_nucleon_nf`, `PROTON_NF` and
     `NEUTRON_NF` are untouched, so no existing consumer moves. This is the
@@ -1031,6 +1041,13 @@ def build_nucleon_nf_mp(quarks, dps: int = 50):
             nf = hm_mp(nf, one, -hv, gen, dps)       # sigma_gen^-1
         else:
             nf = hm_mp(nf, one, -hv / 2, gen, dps)   # (sigma + sigma^-1)/2
+    # Gluon self-coupling, 2 x sigma_0 -- the same term `build_nucleon_nf`
+    # applies. STALE HERE UNTIL 2026-09-03: the float builder gained this on
+    # 2026-08-30 (owner ruling, bean qou-1qsw, crossing budget 9 -> 11) and
+    # this twin was not updated with it, so the "float64-free twin" silently
+    # computed a DIFFERENT braid word.
+    nf = hm_mp(nf, one, zero, 0, dps)        # gluon 1
+    nf = hm_mp(nf, one, zero, 0, dps)        # gluon 2
     return nf
 
 

@@ -142,7 +142,14 @@ def decompose(n):
 
 
 def main():
-    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 40   # ~6 min; 32 is ~12 s
+    # Default is the nmax the COMMITTED witness records as its own, so a bare
+    # `python3 <this>` reproduces the corpus value. It was 40, and check 9
+    # (the N/P peak location) needs >= 46 -- so the default invocation could
+    # not reproduce the committed witness and dropped that check to
+    # "NOT CHECKED", passed 10 -> 9. Same defect as m1-kappa-n-exact (PR
+    # #6473); this producer at least REFUSES honestly instead of reporting a
+    # different quantity under the check's own label.
+    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 46   # ~10 min; 40 is ~6 min, 32 is ~12 s
     t0 = time.monotonic_ns()
     rows, checks = [], []
 
@@ -278,6 +285,16 @@ def main():
 
     ms = (time.monotonic_ns() - t0) // 1_000_000
     out = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The edge-ratio decomposition is combinatorics on "
+            "the Young diagram -- hook lengths, contents and their ratios "
+            "-- and never evaluates at the substrate modulus. Established "
+            "by import-cone trace (cone=2, no q_parameter / "
+            "qou_substrate.constants edge) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no q0 "
+            "field."),
         "probe": "m1_edge_ratio_decomposition",
         "bean": ["qou-t6hc", "qou-k5r5"],
         "nmax": nmax,
@@ -288,6 +305,23 @@ def main():
         "ms": int(ms),
     }
     wit = Path(__file__).with_name("m1-edge-ratio-decomposition.witness.json")
+    # NOTE (#6537 x #6519): the `resolve_q0_anchor` override that #6519's sweep
+    # placed here has been removed for THIS producer, deliberately.
+    #
+    # That helper resolves the manifest pin -- muon, proton, or ambiguous -- and
+    # defaults to proton for any stem not under `ideal_muon`. It has no way to
+    # return `independent`, so on a producer that provably never reads q0 it
+    # manufactures a proton claim, and it did so by ASSIGNING OVER the literal
+    # below, leaving the `q0AnchorReason` ("Reads no q0 ...") next to a `proton`
+    # stamp that contradicts it.
+    #
+    # `independent` here is measured, not asserted, by three checks:
+    #   - import-cone trace: no q_parameter / qou_substrate.constants edge;
+    #   - producer_baked_pin_audit.py: no q0-VALUED literal in the source;
+    #   - q0_pin_flip_test.py: forcing the muon anchor does not move the
+    #     payload (subjects 0/7, on a harness where controls moved 2/2).
+    # The sweep's pattern is right for a producer that READS q0; this one
+    # does not.
     wit.write_text(json.dumps(out, indent=1) + "\n")
     print()
     for c in checks:

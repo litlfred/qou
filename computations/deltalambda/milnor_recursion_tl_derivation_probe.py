@@ -183,6 +183,19 @@ def main():
         "re-derive that step before reporting it.")
 
     out = {"computation": "milnor-recursion-tl-derivation",
+           "q0Anchor": "proton",
+           "q0AnchorReason": (
+               "Evaluates at the PROTON pin. q0 enters through "
+               "q_parameter.Q_50_DIGIT_STR, which resolves to the proton "
+               "anchor (1.1099785827513808075...) because this stem is not "
+               "listed under ideal_muon; proton is the standing default for "
+               "compute per the 2026-08-07 owner directive. The stem IS "
+               "declared physical_proton in "
+               "computations/q0_anchor_manifest.json, and that declaration "
+               "cannot stamp this witness: the manifest is read inside "
+               "WitnessBuilder.build(), and this producer hand-rolls its "
+               "witness and never enters build(). Hence the declaration "
+               "here, which is the only route that reaches the file."),
            "scriptFile": "milnor_recursion_tl_derivation_probe.py",
            "engine": "python-sympy-exact", "free_parameters": 0,
            "description": ("Verifies the spin-½/TL structural mechanism behind the convention-D "
@@ -194,6 +207,15 @@ def main():
                            "contraction); the verified statement is the direct qtr-of-expansion. "
                            "0-fit, exact Q(q), no float64. No Lean instance created."),
            "results": results}
+    # Hand-rolled dump: build() never runs, so the manifest cannot stamp
+    # this one. Ask for the anchor with the same precedence q_parameter
+    # uses at compute time (env var > manifest stem > proton) rather than
+    # hardcoding a pin this run may not have used.
+    from qou_substrate.witness import resolve_q0_anchor as _rq0  # noqa: PLC0415
+    _q0a, _q0v = _rq0(__file__)
+    out["q0Anchor"] = _q0a
+    if _q0v:
+        out["q0Value"] = _q0v
     (HERE / "milnor-recursion-tl-derivation.witness.json").write_text(json.dumps(out, indent=1) + "\n")
     print(json.dumps(results, indent=1))
     print("wrote milnor-recursion-tl-derivation.witness.json")

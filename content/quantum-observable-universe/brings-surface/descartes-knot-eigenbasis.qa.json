@@ -804,7 +804,7 @@
           "in_degree": 1,
           "cone_size": 58,
           "depth": 19,
-          "pagerank": 9e-05,
+          "pagerank": 0.00009,
           "edge_span_max": 3,
           "edge_span_mean": 3,
           "worst_target": ""
@@ -1316,7 +1316,7 @@
           "ts": "42b5583d4d8a"
         },
         "result": "pass",
-        "notes": "Salvage re-verify: trivial \u2203jonesVal\u22600 (witness 1) \u2192 jonesVal<0 via -(q+q\u207b\u00b9), negativity forced by D.q_pos. lean-direct exit 0.",
+        "notes": "Salvage re-verify: trivial ∃jonesVal≠0 (witness 1) → jonesVal<0 via -(q+q⁻¹), negativity forced by D.q_pos. lean-direct exit 0.",
         "reviewed_at": "2026-07-11T22:28:43.000Z",
         "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
         "reviewer": {
@@ -1419,7 +1419,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
@@ -1469,6 +1469,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e00ac938417",
+          "ts": "42b5583d4d8a",
+          "lean": "dd13ad874577",
+          "lean_statement": "2c123290ad60"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-9552",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-04T02:14:16.852Z",
+        "reviewed_sha": "5616584776d055eb32992e6c1d88495a88a17acf",
+        "evidence": "Three detection claims quantified over an index they discarded. `DescartesMarkovTrace.summand_detection` and `DescartesKnotEigenbasis.all_summands_detected` both read `∀ (_ : Fin numSummands), ∃ (val : ℝ), val ≠ 0` — index bound as `_`, value a free real tied to no trace — so each asserted that ℝ has a non-zero element, and `descartes_knot_eigenbasis` discharged it with ⟨1, one_ne_zero⟩. Third: `descartes_n3_both_detected` was `∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0`, again a property of ℝ — the two Jones values, the two channels and n = 3 appeared only in the proof term and the comments.",
+        "notes": "Fixed: `trSummand` component constrained by `tr_eq_sum_summands`, detection stated over it, index occurs in every body. The two Jones values are named (`jonesSymmetric`/`jonesMixed`) and the n=3 theorem stated over them. Also added `schurWeyl_level`, a missing consistency field (the sibling SchurWeylDecomposition carries the analogous n_eq). lean-direct exit 0, sorry-free, no sorryAx."
       }
     ],
     "da-circular": [
@@ -1536,6 +1554,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e00ac938417",
+          "ts": "42b5583d4d8a",
+          "lean": "dd13ad874577",
+          "lean_statement": "2c123290ad60"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-9552",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-04T02:14:17.149Z",
+        "reviewed_sha": "5616584776d055eb32992e6c1d88495a88a17acf",
+        "severity": "major",
+        "evidence": "The .md claims the knot-type eigenbasis of V_phys = colim V^⊗n 'is complete'. Naming the two n=3 channel values makes a counter-fact reachable and it is now Lean-proved: they COINCIDE at q ≈ 0.779544663820934968877573423932 (both ≈ -2.0623447988, verified 50 dps), a q the Descartes condition permits (0 < q, q ≠ 1). See `jonesSymmetric_eq_jonesMixed_iff` (the reduction to q^5 - q^4 + q^3 + q^2 - 1 = 0, proved not asserted), `jones_channels_coincide` (IVT root in [7/10, 4/5]) and `jones_channels_not_separating`. So exhibiting two non-zero channel values does not establish that the two summands are DISTINGUISHED, which is what completeness needs.",
+        "notes": "Scope-(a) per AGENTS: this is a negative about the n=3 pair of Jones values as a separator, not a refutation of eigenbasis completeness — separation may hold via trSummand, whose per-summand character values for general n are upstream and not in this file. Recorded in the module docstring."
       }
     ],
     "da-hidden-dof": [
@@ -1588,7 +1625,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
         "severity": "minor"
       },
@@ -1793,7 +1830,7 @@
         "reviewed_at": "2026-07-07T14:26:55.137947Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:1 \u2014 content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:1 — content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       },
       {
@@ -2481,6 +2518,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-09-04T02:14:17.149Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

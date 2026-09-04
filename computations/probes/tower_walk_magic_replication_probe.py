@@ -131,7 +131,29 @@ from hoefsmit_blocks_direct import extract_blocks_direct          # noqa: E402
 from level_k_binding import standard_young_tableaux, HA           # noqa: E402
 from sympy.utilities.iterables import partitions as sp            # noqa: E402
 from qou_substrate.witness import WitnessBuilder                  # noqa: E402
-from _precision import fmt, mp                                    # noqa: E402
+from _precision import fmt, mp, set_compute_dps                    # noqa: E402
+
+# The aggregation below carries mpf specifically so that summing 77 values does
+# not pile error on top of float64 inputs. That only works above float64: at
+# mpmath's DEFAULT dps of 15 an mpf sum accumulates exactly as a float sum
+# does, so the mpf was a no-op wearing the costume of precision. `_precision`
+# is explicit that importing it does NOT raise dps — the call has to be here.
+set_compute_dps()
+
+# Serialization width for anything descending from `walk_one`. Its return is
+# `float(abs(np.trace(st)))` — float64 by construction, and irreducibly so
+# since the whole walk is numpy. So ~17 significant digits is the honest width
+#
+# MEASURED 2026-09-03, because both numbers here are easy to assume and I got
+# one wrong first time: `mp.dps` on entry was **15**, mpmath's default — so
+# the mpf aggregation above was float64-grade and bought nothing — and `fmt`'s
+# default output width is **60**, not 50. Sixty digits on a float64-sourced
+# value is fake precision by ~43 orders; the float64-padding ratchet counted
+# 22 such fields in this one witness.
+#
+# The two halves pull opposite ways: raising dps fixes the ARITHMETIC and
+# makes the serialization worse. Both are needed.
+F64_DPS = 17
 
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
@@ -261,8 +283,8 @@ def profile(Z, N, verbose=False):
         "magic_Z": Z in MAGIC, "magic_N": N in MAGIC,
         "doubly_magic": (Z in MAGIC) and (N in MAGIC),
         "n_partitions": len(lams),
-        "top_share": fmt(top),
-        "participation": fmt(part),
+        "top_share": fmt(top, dps=F64_DPS),
+        "participation": fmt(part, dps=F64_DPS),
         "_top_share_mp": top,          # popped before the witness is built
         "_participation_mp": part,
         "argmax_partition": list(meta[k][0]),
@@ -324,12 +346,12 @@ def judge_level(A, rows):
         mv = [r["_" + key + "_mp"] for r in mg]
         nv = [r["_" + key + "_mp"] for r in nm]
         v[key] = {
-            "magic": [fmt(x) for x in mv],
-            "non_magic": [fmt(x) for x in nv],
+            "magic": [fmt(x, dps=F64_DPS) for x in mv],
+            "non_magic": [fmt(x, dps=F64_DPS) for x in nv],
             "magic_all_above": bool(min(mv) > max(nv)),
             "magic_all_below": bool(max(mv) < min(nv)),
             "magic_mean_minus_non_magic_mean":
-                fmt(mp.fsum(mv) / len(mv) - mp.fsum(nv) / len(nv)),
+                fmt(mp.fsum(mv) / len(mv) - mp.fsum(nv) / len(nv), dps=F64_DPS),
         }
     # Rank: a deficiency the non-magic configurations lack.
     v["magic_rank_deficient"] = any(r["rank_deficient"] for r in mg)

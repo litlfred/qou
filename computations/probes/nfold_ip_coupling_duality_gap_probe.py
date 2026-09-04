@@ -164,7 +164,7 @@ import numpy as np  # noqa: E402
 from scipy.optimize import linprog  # noqa: E402
 
 from pyhecke.gram import _hm_mp, gram_matrix_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -173,13 +173,20 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 30
-H_Q0 = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
+H_Q0 = float(q_at(mp.mp.dps) - 1 / q_at(mp.mp.dps))
 ZERO_TOL = 1e-9
 
 
-def build(q_str: str):
-    """Gram, Markov cost and both nucleon NF vectors at this `q`."""
-    q = mp.mpf(q_str)
+def build(q_val):
+    """Gram, Markov cost and both nucleon NF vectors at this `q`.
+
+    Accepts an `mpf` or a decimal string.  The anchored call passes the `mpf`
+    from `q_at` directly: routing the substrate `q0` through `str()` would go
+    via the float64 Newton solve and carry a ~1e-17 error into a 30-dps solve.
+    The h-sweep call sites pass a `repr()` of a float64 `q_of_h` on purpose --
+    those points ARE float64, and say so.
+    """
+    q = mp.mpf(q_val)
     h = q - 1 / q
     z = q ** 3 / (q ** 2 + 1)
     gram = np.array([[float(x) for x in row] for row in gram_matrix_mp(30, q=q)])
@@ -272,7 +279,7 @@ def main() -> int:
     assertions = []
     print("t7qv — the atom LP as an n-fold IP; binding as the coupling gap")
 
-    gram0, cost0, vp0, vn0 = build(str(Q0))
+    gram0, cost0, vp0, vn0 = build(q_at(mp.mp.dps))
 
     # ── A1. aggregation is a relaxation, so the sign is structural ────
     print("\n  1. E_bind >= 0 is structural, not fitted")

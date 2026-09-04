@@ -1,11 +1,11 @@
 ---
 # qou-dg07
 title: 'Colour antisymmetry from Milnor mu-bar: located route for eightfold items 4 and 7, gap is one identification'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-09-03T11:01:48Z
+updated_at: 2026-09-04T02:16:02Z
 ---
 
 ## Summary
@@ -532,3 +532,17 @@ behind and holds 62 files of a sibling's uncommitted work.
 STILL OPEN: qa-sweep sidecars for the three blocks are stale by source-hash
 drift and were NOT refreshed — qa-sweep lives in that same shared clone.
 One sweep needed after this lands.
+
+MERGED 2026-09-03 as 0af489b527 (rebase, 11 commits linear on main).
+
+Post-merge: the one known gap is CLOSED. qa-sweep refreshed all three
+sidecars in an isolated worktree at merged main against a fresh
+folio-assistant clone; all six source_hashes verified by recomputation,
+not by trusting the sweep. PR #6535.
+
+Nothing open on this arc.
+
+SIDECAR GAP CLOSED AND MERGED 2026-09-04: PR #6535 merged at 032a124642 (rebase).
+Verified on merged main by recomputation, not by trusting qa-sweep — all six
+source_hashes current. The whole qou-dg07 arc is now closed: #6449 (the result)
+and #6535 (its sidecar gap) are both on main. Nothing open.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T12:56:27Z
+updated_at: 2026-09-03T15:05:35Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -401,3 +401,50 @@ of this tranche.
 
 Verified after rebasing onto main (78 commits): `lean`-direct exit 0 on all 15 modules;
 `#print axioms` unchanged; `check-sidecars` zero action lines.
+
+
+## 2026-09-03 — the arc is closed: the Iwahori carrier is general-field too (PR #6517)
+
+#6486 merged (`c491117b54`) with one `ℝ` named as outstanding —
+`isSemisimpleRing_iwahoriHecke`, the `T_w` / `twGram` carrier, which used `Real.sqrt` to
+name the `q` with `q² = Q`.  Closed:
+
+    isSemisimpleRing_iwahoriHecke_sq {K} [Field K] [CharZero K] (q : K)
+        (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ) :
+      IsSemisimpleRing (QOU.Hecke.IwahoriHecke K (q ^ 2) n)
+
+    isSemisimpleRing_iwahoriHecke_of_sq   -- the same at Q, given Q = q ^ 2
+
+### The finding, which is a narrowing rather than a weakness
+
+**The general statement has to be parameterised by the square root.**
+`skeinIwahoriEquiv` relates the skein algebra at `q` to the Iwahori algebra at `q²`.  Over
+`ℝ` the caller produces its own `q` as `Real.sqrt Q`, because every `Q > 1` is a square.
+A general field cannot — `ℚ` has no `√2` — so the honest general form takes the root as the
+parameter: *"the Iwahori algebra at a square is semisimple"*.
+
+**So the whole residue of the `ℝ` on this arc was the EXISTENCE OF A SQUARE ROOT, never any
+algebra.**  Worth recording because #6486's scope note ("still `ℝ`") invited the reading
+that something mathematical was missing here, and nothing was.
+
+### The `ℝ` theorem now derives from the generic one
+
+It exhibits `Real.sqrt Q`, gets `NotRootOfUnity` from `GenericParameter.ofSqNeOne`, and
+calls `isSemisimpleRing_iwahoriHecke_of_sq`.  The `ℝ`-specific content of that proof is now
+**exactly one step — naming the root** — instead of being tangled with the transport.
+
+### Mechanics
+
+Generic result in a new file per §7c (`QOU/SchurWeyl/HeckeCarrierSemisimple.lean`), leaving
+`HeckeCarrierSemisimpleReal.lean` as the archimedean specialisation.  **No import cycle** —
+verified that `HeckeCarrierEquiv` is not in `HeckeSemisimpleGeneral`'s cone before adding
+the import, rather than assuming it.
+
+`lean`-direct exit 0 on both; axioms `[propext, Classical.choice, Quot.sound]` on all three;
+check-sidecars 0 action lines.
+
+### What is left on qou-j377
+
+Nothing on the semisimplicity arc.  `qou-kwoa`'s last item — `det(twGram)` at rank ≥ 2 — is
+untouched and unaffected: it is still Mathlib-scale and now wanted only for the determinant
+**value**, since #6437 took semisimplicity off its critical path.

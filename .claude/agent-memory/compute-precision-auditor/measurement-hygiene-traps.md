@@ -258,3 +258,205 @@ canonical `1.1099785827513808075...`, rel dev `2.62e-16`, denominator
 but carrying its precision, under a field named `q0_pin_exact_rational`).
 Declaring any of those three `independent` would have written a silent claim —
 exactly what `build()`'s `require_declared` rule exists to prevent.
+
+## TRAP — a q0-anchor manifest entry is INERT for a hand-rolled producer, and the count is not small
+
+Measured 2026-09-03 on the anchor ratchet's 35-witness refill (`qou-y98b`):
+**22 of the 27 proton producers were already declared `physical_proton` in
+`computations/q0_anchor_manifest.json`, and their witnesses were unstamped
+anyway.** 18 of those 22 hand-roll their witness — `json.dumps` +
+`write_text` — and so never enter `WitnessBuilder.build()`, which is where the
+manifest is read.
+
+So: **"the stem is in the manifest" is not evidence the witness is stamped**,
+and a triage pass that treats a manifest entry as done will skip the producers
+that most need fixing. Check how the producer WRITES before believing a
+declaration:
+
+    grep -l 'WitnessBuilder' <producer>     # manifest route works
+    grep -l 'write_text\|json.dump' <producer>   # manifest is inert
+
+The fix for a hand-rolled producer is a producer-side `"q0Anchor"` key in the
+witness dict. Leave the manifest entry in place — it states the pin correctly,
+it is just not what stamps the file.
+
+The ratchet's own header documents this mechanism; what was missing was the
+measurement of how much of the live refill it accounts for. Two-thirds of it.
+
+## TRAP — "a q0 value is in the source" does not mean "a pin is baked in"
+
+`computations/audits/producer_baked_pin_audit.py` decides by VALUE (it parses
+and evaluates literals and `Rational`/`Fraction`/`mpf`/`Decimal` calls), which
+is what closes the import-cone trace's documented blind spot: a pin written as
+`sp.Rational(num, den)` is invisible to a `1.1099785` prefix match.
+
+But a `BAKED_PIN` verdict answers only "is a q0-valued literal present". Two
+of the 27 proton producers flag, and **neither bakes a pin** —
+`alpha_scale_is_outside_the_trace_probe` and
+`extensive_carrier_scale_inversion_probe` carry `1.10997858` inside a
+`Q_50_DIGIT_STR.startswith("1.10997858")` **guard** asserting the proton
+anchor (added by a Copilot review on #6443). Read as a pin, they would have
+been mislabelled — when in fact they self-assert the correct anchor, which is
+stronger evidence than either audit gives.
+
+Read the line before acting on the verdict.
+
+## TRAP — one tolerance cannot serve anchor separations four orders apart
+
+Writing that audit, my first draft used a single 1e-6 relative window. The
+proton/muon gap is 1.16e-8, so the window was ~100x too wide — and it did NOT
+blur the answer, it **silently returned the first candidate**: the retired
+MUON pin was reported `proton` on 21 lines of one file.
+
+There are FOUR anchors, not two — three different numbers are all called "the
+muon q0" (retired self-certified pin; lepton-tower at CODATA 2018; at CODATA
+2022), diverging at the 13th significant digit. The separations:
+
+    proton vs any muon            1.16e-8
+    muon-retired vs -codata2022   7.7e-11
+    muon-retired vs -codata2018   2.8e-12
+
+Hence three windows, and an explicit `ambiguous` verdict when a value matches
+more than one. A pin truncated to 8 significant digits is `1.1099785...`,
+which is a prefix of every anchor and is genuinely unattributable — say so
+rather than assigning it to the nearest.
+
+General form, worth more than the instance: **a tolerance looser than the
+separation it is meant to resolve does not produce an uncertain answer, it
+produces a confident wrong one.**
+
+## BASELINE — baked q0 pins in `computations/`, 2026-09-03
+
+    python3 computations/audits/producer_baked_pin_audit.py --all --quiet
+
+    369 of 4387 files bake a q0 pin
+      196 files  proton
+      174 files  muon-retired      <- retired 2026-08-22
+       46 files  muon-codata2018
+       39 files  muon (vintage unresolvable from the digits present)
+       29 files  ambiguous:truncated
+        7 files  muon-codata2022   <- the LIVE canonical anchor
+
+The `muon-retired` 174 is the **producer-source** surface and is a different
+population from the ~40 witness FILES carrying the same string that AGENTS.md
+records. Re-measure before quoting; run `--selftest` first (exits non-zero if
+the matcher has stopped seeing a pin it provably used to see).
+
+## TRAP — a "before" count taken from the tree your own branch is mutating is not a before count
+
+AGENTS.md already records this for the witness-staleness sweep — *"baseline
+from git (`git show origin/main:<witness>`), never from a tree your own sweep
+writes to"* — and I broke it anyway, on 2026-09-03, in the same session where
+I was quoting that rule.
+
+**What happened.** Counting unstamped witnesses that carry a *near-miss* anchor
+key (`q0_anchor` where the audits read `q0Anchor`), I measured the working
+tree mid-session and got **14**, of which "4 are in this refill". Both numbers
+reached a PR body, an audit doc and a commit message before being re-measured.
+
+Against `origin/main`, a baseline the branch cannot write to: **17** — and this
+branch fixed **11**, not 4. My own already-landed declarations had silently
+removed their witnesses from the population I was counting.
+
+**The tell was in the breakdown, not the total.** I recorded the sub-counts as
+12 `q0_anchor` / 1 `anchor` / **1** `q0_pin`; the true split is 12 / 1 / **4**.
+Three `q0_pin` witnesses were missing because I had already fixed them. A total
+that is merely *low* looks like an honest count; a sub-count that has collapsed
+to 1 is a fingerprint of self-contamination. **Always print the breakdown, and
+look at the small buckets.**
+
+**The rule, stated so it generalises:** any figure describing "the state before
+this work" must be computed from a **revision**, not from a path. Concretely:
+
+```python
+blob = subprocess.run(['git','show',f'origin/main:{path}'], ...).stdout
+```
+
+and enumerate with `git ls-tree -r --name-only origin/main <dir>` rather than
+`Path.rglob`, so the denominator is pinned to the revision too. Report both
+ends (`before` at a named revision, `after` at `HEAD`) — a single number
+without a revision attached cannot be checked by the next reader.
+
+**Cost when it is not caught:** the wrong figure had already reached three
+durable artifacts. Two were editable; the commit message was not.
+
+## TRAP — a producer's ARGUMENT LIST is part of what its committed witness records
+
+Hit **twice in one session** (2026-09-03/04), on two unrelated producers, in
+both cases while re-running only to add a `q0Anchor` stamp. Re-running a
+producer with different arguments than its committed witness was made with does
+not produce a stamped witness — it produces a **different, smaller** witness,
+and the diff reads as a stamp plus "some values moved".
+
+**Case 1 — caught by an assertion.**
+`wlambda_covariance_epic_M1_edge_ratio_decomposition` takes `nmax` and
+**defaults to 40**; its committed witness records **46**. The default run
+failed one assertion (*"needs nmax >= 46, got 40"*) and rewrote the witness
+with a shorter table. The failing assertion is what saved it.
+
+**Case 2 — nothing would have caught it.**
+`bpp_higher_a_resumable_driver` reads
+`A_LIST = [int(x) for x in args] or [5]`. Invoked as `driver.py 5` it computes
+**A=5 only**, while both committed witnesses (`bpp-`/`bnn-higher-a-resumable`)
+record `by_A = {2,3,4,5}`. It would have exited 0, written a valid witness, and
+silently dropped three A values. It sat in my runner across **four launches**
+before I read the arg handling. A downstream consumer would then have failed
+for an unrelated-looking reason: `chain_binding_closed_form_probe` skips a
+species on `if len(As) < 3: continue`.
+
+**The check, before re-running anything:**
+
+```python
+# what was the witness actually built with?
+d = json.load(open(witness))
+d.get("invocation", {}).get("argv")      # often None — do not stop here
+sorted(d.get("data", {}).get("by_A", {}))  # the SHAPE of the payload is the evidence
+```
+
+`invocation.argv` is frequently absent (it was `None` on both of these), so the
+reliable signal is the **payload's own shape** — a range, a table length, an
+`nmax`/`A_LIST`/`depth` field, the set of keys under a per-parameter dict.
+Compare it to what your invocation will produce, *before* you run.
+
+**And add it to the stamp-only gate.** A volatile-field mask compares values
+that exist on both sides; it says nothing about keys that have **disappeared**.
+Check the payload shape explicitly (`by_A == {2,3,4,5}`), or a truncation
+passes as clean.
+
+Related, same session: `qcollatz_vtwo_domain_stable_probe` takes `depth` as
+`sys.argv[1]` defaulting to 14 against a committed 22 — nodes 52→24. Three
+producers, one shape of mistake.
+
+## TRAP — a "restore" that also reverts the thing you are testing WITH
+
+Writing the q0 pin-flip test (`computations/audits/q0_pin_flip_test.py`,
+2026-09-04): the harness patches `computations/q0_anchor_manifest.json` to force
+a stem to the muon anchor, re-runs the producer, diffs, and restores the tree
+between producers because **producers write sibling witnesses**. The restore was
+`git checkout -- computations/`.
+
+The manifest **lives under `computations/`**. So the restore after the first
+producer reverted the pin patch, and every producer after it ran at the
+UNFLIPPED pin — trivially showing "no move". The run reported *"0/7 subjects
+moved, all verdicts hold"*, which was **vacuous**: six of the seven were never
+actually tested.
+
+**What caught it was the second positive control**, which read `no move` where
+it had to move. A single control would not have: the first producer ran under a
+correctly-patched manifest and moved, so `any(control_moved)` was True and the
+run looked verified. The gate is now `all(controls moved)`, not `any`.
+
+Two generalisations worth more than the instance:
+
+1. **A restore step is part of the experiment, not scaffolding around it.** Ask
+   what else lives under the path you are reverting. Anything the harness itself
+   installed — a patched config, an env fixture, a stub — is inside the blast
+   radius of a directory-level `git checkout`.
+2. **Use MORE THAN ONE positive control, and require ALL of them.** One control
+   verifies the harness at one moment; a harness that decays partway through a
+   run (as this one did, after the first iteration) passes a single-control
+   check and fails everything after it silently. This is the same shape as a
+   detector whose first pass is sound and whose later passes are not.
+
+The corrected run: 2/2 controls MOVED, 0/7 subjects moved. Only the second
+number was ever in question, and only the fixed harness could answer it.

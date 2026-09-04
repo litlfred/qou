@@ -1,5 +1,6 @@
 import QOU.SchurWeyl.HeckeCarrierEquiv
 import QOU.SchurWeyl.HeckeSemisimpleReal
+import QOU.SchurWeyl.HeckeCarrierSemisimple
 
 /-!
 # QOU.SchurWeyl.HeckeCarrierSemisimpleReal — the ℝ specialisation of the carrier equivalence
@@ -35,6 +36,9 @@ open QOU.Hecke (IwahoriHecke)
     `twGram` use. -/
 theorem isSemisimpleRing_iwahoriHecke {Q : ℝ} (hQ : 1 < Q) (n : ℕ) :
     IsSemisimpleRing (IwahoriHecke ℝ Q n) := by
+  -- The only `ℝ`-specific step is EXHIBITING the square root; the transport itself is
+  -- generic (`isSemisimpleRing_iwahoriHecke_of_sq`).  See that file's docstring for why the
+  -- general statement has to be parameterised by the root rather than by `Q`.
   have hQ0 : (0 : ℝ) ≤ Q := by linarith
   have hsq : Real.sqrt Q ^ 2 = Q := Real.sq_sqrt hQ0
   have hq1 : 1 < Real.sqrt Q := by
@@ -42,8 +46,7 @@ theorem isSemisimpleRing_iwahoriHecke {Q : ℝ} (hQ : 1 < Q) (n : ℕ) :
       apply Real.sqrt_lt_sqrt (by norm_num) hQ
     simpa using this
   have hqne : Real.sqrt Q ≠ 0 := by positivity
-  have hss := isSemisimpleRing_hecke_of_one_lt hq1 n
-  have := (skeinIwahoriEquiv (Real.sqrt Q) hqne n).toRingEquiv.isSemisimpleRing
-  rwa [hsq] at this
+  refine isSemisimpleRing_iwahoriHecke_of_sq hsq.symm hqne ?_ n
+  exact QOU.SchurWeyl.GenericParameter.ofSqNeOne hqne (by rw [hsq]; linarith)
 
 end QOU.SchurWeyl

@@ -45,10 +45,21 @@ exact-coefficient identity is open.
 **One reading of the positive half is excluded.** The twist inverts *every*
 consecutive-pair sign, $z_mz_{m+1}=-y_my_{m+1}$ with $z_m=(-1)^my_m$, not only
 the alternating ones. It can therefore clear the non-negativity obstruction only
-for a target that alternates at *every* consecutive pair, and the solution of
-$\mathcal{G}$ does not: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
-positive and no sign change occurs. So the twisted sequence acquires flips
-exactly where the untwisted one had none, and the obstruction fires on it too.
+for a target that alternates at *every* consecutive pair, and no solution of
+$\mathcal{G}$ does: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
+positive, and while it is positive a sign flip is always followed by a
+same-sign pair, since $y_{m+2}y_{m+1} = (2-q^{m+1})\,y_{m+1}^2 - y_m y_{m+1} > 0$
+whenever $y_m y_{m+1} < 0$
+(`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, sorry-free over an
+ordered field). The recurrence *is* oscillatory there — its solutions do change
+sign inside the window, which an earlier version of this note denied — but never
+at two consecutive pairs, and that is what the argument needs. So the untwisted
+sequence has same-sign consecutive pairs in that window, the twisted sequence
+acquires flips exactly there, and the obstruction fires on it too. At the
+substrate value the window is $m \le 5$, and the strict alternation of the
+growing solution becomes persistent only later, at an index that depends on the
+initial data ($m \approx 11$–$14$ across six generic choices, measured in
+[`door_v_residual_scope_probe.py`](../../../computations/probes/door_v_residual_scope_probe.py)).
 
 Consequently the residual claim must be read **at the level of modules**, up to
 a gauge transformation over the $q$-difference field — not as the assertion that

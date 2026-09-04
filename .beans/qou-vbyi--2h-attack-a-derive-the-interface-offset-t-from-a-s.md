@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:37:51Z
-updated_at: 2026-09-03T08:45:29Z
+updated_at: 2026-09-03T14:55:26Z
 parent: qou-9ot5
 ---
 
@@ -77,3 +77,5 @@ The 'live shape' left open above — a non-separable spin-space coupling, the 3S
 (B) Where the coupling does act (the triplet), 2x2 interlacing: the coupled ground level is STRICTLY below the uncoupled 3S1 level whenever t != 0 (lowerEigen_lt_left_of_ne). Tensor mixing binds the deuteron HARDER; it is already 27.3% over-bound. Wrong direction.
 
 Verdict: route 1 is a dead end for both defects. Not excluded: unbinding as such (the writhe-normalised sigma^{-2k} class unbinds at 6-9x magnitude), the binding law itself, or the pp/nn bond/carrier assignment. The sign is now boxed from every interface-side direction (scalar, separable factor, non-separable coupling); the surviving directions are all outside the interface value. Audit: docs/audits/2026-09-03-tensor-coupling-cannot-unbind-singlet.md. qou-7nwg's T-projector route is complementary and already proved to bind (mu_sum_eq_one).
+
+## CORRECTION 2026-09-03: the 'pp/nn bond/carrier assignment' listed as a survivor in the previous append is NOT open — production bonds are single species-keyed crossings (single_crossing_binds) and species-keyed interfaces are refuted (content_keyed_interface_refuted, 2026-08-09). With the tensor route closed (#6488) and the stacked class closed on ordering (route 3), no in-algebra sign direction remains. Sector status = eight-closures §6: structural change needed.
