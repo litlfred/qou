@@ -34,6 +34,30 @@ was the recorded blocker — but the real blocker was that a witness would have 
 and would have proved nothing*. See
 `docs/audits/2026-09-04-pauli-lock-rests-on-an-unexamined-su2-identification.md`.
 
+## Prior work — the defect CLASS was known; this fixes one carrier in it
+
+**The `holds : Prop` class is not a new finding, and it would be wrong to read this
+file as reporting one.** Bean `qou-tsnp` states it in the same words —
+*"GAP: 12 conjecture carriers axiomatised as `holds : Prop` assert nothing"* — and
+[`docs/audits/2026-08-23-free-prop-field-census.md`](../../../docs/audits/2026-08-23-free-prop-field-census.md)
+(PR #5562, beans `qou-tsnp` / `qou-lo1t`) is its corpus-wide census, with a
+re-runnable detector at
+[`scripts/free-prop-field-audit.py`](../../../scripts/free-prop-field-audit.py)
+measuring **156 free `: Prop` fields across 105 carriers**. It was named earlier
+still in `2026-06-07-klr-gs-order-formalization-plan.md` and
+`2026-06-24-devils-advocate-wave10.md`.
+
+That census also draws a distinction worth carrying: a free `P : Prop` is **not
+automatically a defect** — it is harmless when another field *pins* it
+(`regular_iff : regular ↔ 0 < x`), and its three buckets are `UNPINNED-EMPTY` /
+`UNPINNED-FAKE-IF` / `PINNED`. D9's old carrier was `UNPINNED-EMPTY`: it had no
+other field, so there was nothing that could pin it.
+
+**What is new here is the repair, not the diagnosis.** `qou-tsnp` records the gap;
+this file closes it for D9, which is the carrier on the two-nucleon channel-asymmetry
+critical path. The rewrite removes the free field entirely rather than pinning it, so
+it does not land in the `PINNED` bucket either — it leaves the census's population.
+
 ## What is encoded below, and what is not
 
 **Encoded — the falsifiable numeric content**, taken from the block's own statement:
