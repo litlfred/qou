@@ -212,6 +212,35 @@ by a machine or by a person.
 They stay standalone, verified by hand exactly like every other file in this
 tree. Nothing breaks today.
 
+> ### Re-measured after a mid-session merge — the marker is STALE, and the reason for C changes
+>
+> `main` landed [`scripts/lake-restore-trace-check.sh`](../../scripts/lake-restore-trace-check.sh)
+> (bean `qou-r13s`) while this brief was being written. It records that the
+> `lake-cache/qou-v4-24-0` archive **was reseeded 2026-08-31 with full trace
+> coverage**, so the old recipe's unconditional `touch .lake/RESTORED-NO-TRACES`
+> "now asserts something false in the blocking direction."
+>
+> **Measured on this tree, report mode:** `oleans: 6173, traced: 6170
+> (100.0%)`, threshold 90 %, exit 0. The marker file is nonetheless present
+> (`.lake/RESTORED-NO-TRACES`, touched 2026-09-03 04:36 by the old recipe). So
+> the blanket "never `lake build`" is resting on a stale assertion, and the
+> eviction hazard that produced it is **not** present here.
+>
+> **This does NOT make `lake build` safe, and the script says so itself:**
+> present traces are *necessary* for Lake to accept a restored olean, not
+> demonstrated *sufficient* — a trace records input hashes, so Lake still
+> rebuilds if the source tree it hashes differs from the one that produced them.
+> **This branch has merged roughly 250 commits from `main` since the restore**,
+> so the source tree has definitely diverged: this is precisely the case where
+> full trace coverage does not protect you.
+>
+> **Net effect on the recommendation: C stands, but for a sharper reason.** Not
+> *"we cannot build at all"* — we could — but *"a build here would hash a source
+> tree ~250 commits ahead of the one the traces were cut against, and would
+> likely rebuild anyway."* The marker should be re-measured rather than trusted,
+> which is what the new script is for; it should **not** be cleared on a tree
+> this diverged.
+
 ## Recommendation (my judgement, not a finding)
 
 **Option C.** The measurement moved me off my earlier "leave it": with zero
