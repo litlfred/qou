@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T02:16:07Z
+updated_at: 2026-09-04T02:25:34Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -60,3 +60,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (mechanism SETTLED, PR pending): the b(λ)-decay is CANCELLATION, not size. Control = conjugate pairs (dim λ = dim λ' exactly, b flips): 9/9 pairs at A=2,3 have commutator-norm ratio ≥ 1 (1.13–1.31, ~1.25) while trace ratio is 0.003–0.27. Sharpest: (8,1) vs (2,1⁷), both dim 8 — norm 0.755→0.955, |tr|/dim 33.65→0.115. So NO bound |tr| ≤ Σ‖[ρ,σ_a]‖·‖σ_(a+1)‖ can produce the decay (scope-(a): plain norm route excluded, not every norm argument); the spectral route the hook bound #6520 takes is the one AVAILABLE, not merely the one taken. The earlier A=2/A=3 'contradiction' was an artifact: the normalised norm is U-SHAPED in b and the A=3 run was truncated inside the falling half. Targeting note: the high-b tail is CHEAP (dim λ = dim λ'), merely last in enumeration order — --min-b 6 --max-dim 50 gets it in ~1 min vs hours.
+
+
+- 2026-09-04 (REFINES the #6548 reading): the decay FACTORIZES exactly, |tr|/dim = κ · Σ|eig|/dim with κ = |Σeig|/Σ|eig| (phase) and Σ|eig| (magnitude), M_λ = ρ_λ(ρ)·ρ_λ(Ω₂^P). On 9 conjugate pairs (dim controlled): Σ|eig| ratio falls in 9/9 (0.005–0.37) and DOMINATES in 9/9; κ falls in 8/9 and RISES in 1 ((3,3)→(2,2,2), 0.604→0.837). Product reproduces #6548's trace ratios independently (0.732×0.00469 = 0.00343). ⇒ the decay is chiefly a COLLAPSE OF THE OUTPUT SPECTRUM, not phase cancellation in the trace — correcting the inference I drew from #6548 (whose stated finding, that the INPUT-norm route is excluded, is untouched). Cancellation happens in the ASSEMBLY of Ω₂^P from the σ's, not in the final trace, which is why term-by-term input bounds fail. CONSTRUCTIVE: an absolute-value spectral bound on M_λ (Σ|eig|, or dim × spectral radius) IS viable and is the route to the general-λ statement.
