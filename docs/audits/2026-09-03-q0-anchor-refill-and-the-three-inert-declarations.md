@@ -228,6 +228,10 @@ like `built 3.21s` formatted into an assertion message reads as a moved value.
   `all_nuclides_sdp_admissibility_mp`, `symbolic_nf_q_degree_magic_probe`,
   `tower_walk_magic_replication_probe`. These are long-computes, not stamping
   problems; all three are declared and will stamp whenever they next run.
+- **Four witnesses are BLOCKED on a compute this environment cannot finish** —
+  `bnn-higher-a-resumable`, `bpp-higher-a-resumable`, `chain-binding-closed-form`
+  and `logratio-exactly-extensive`. Measured, not assumed; see the section
+  below.
 - **`bnn-higher-a-resumable.witness.json` carries the wrong description.**
   The driver interpolates `label` into the filename, the banner and the
   `species` field, but its `description` is a hardcoded string reading
@@ -243,3 +247,54 @@ actually run: `producer_baked_pin_audit.py --selftest` exit 0 (10/10); the
 `--all` sweep completes over 4387 files; every regenerated witness diffed
 stamp-only against `HEAD` under the mask above; `q0_anchor_ratchet.py` and
 `witness_raw_float64_audit.py` re-run and reported on the PR.
+
+
+## The four that did not land, and why the relaunch loop was stopped
+
+Two of the four (`chain_binding_closed_form_probe`,
+`logratio_exactly_extensive_probe`) **refuse by design** until
+`bpp_higher_a_resumable_driver` has banked its checkpoint — announced on
+stdout, exactly the guard behaviour AGENTS.md describes, not a defect. The
+other two are that driver's own output.
+
+The driver is checkpointed per completed partition and resumes cleanly. It was
+relaunched four times. **It cannot finish in this environment**, and the reason
+is the session-suspension cadence rather than the mathematics:
+
+| launch | last write | window | banked |
+|---|---|---|---|
+| 23:03:00 | 23:10:30 | ~7.5 min | 1 `off` partition |
+| 00:00:00 | 00:01:54 | ~1.9 min | A=2,3,4 (the cheap ones) |
+| 00:46:02 | 00:47:40 | ~1.6 min | **nothing** |
+
+The driver dies whenever the session suspends, and the windows have been
+shortening. Two fixed costs decide it:
+
+* the in-memory partition cache is **not** checkpointed and takes a measured
+  **103 s** to rebuild on every launch;
+* only a **completed** partition is banked, and the remaining A=5 `off`
+  partitions run to ~543 s each at dim 2002 (measured on the `on` half).
+
+The last window was **98 s against a 103 s rebuild** — zero seconds reached any
+partition. A process that cannot outlive its own warm-up banks nothing, so
+further relaunching would spend check-ins without moving the count. The loop
+was stopped on that evidence rather than run indefinitely.
+
+**Progress that did land**, and which survives in the checkpoint for whoever
+resumes this on a machine that stays up: A=2, 3 and 4 are complete on both
+halves, and A=5 `on` is complete (8 of 8). What remains is 7 A=5 `off`
+partitions for the `pp` label, then the whole `nn` label, which has nothing
+banked. The checkpoint is gitignored and is scratch, so that progress is local
+to the machine that made it.
+
+**Do not "fix" this by shortening the run.** The runner must pass `2 3 4 5`
+(and `2 3 4 5 --neutron`). The driver reads
+`A_LIST = [int(x) for x in args] or [5]`; both committed witnesses record
+`by_A = {2,3,4,5}`; and `chain_binding_closed_form_probe` needs at least three
+distinct A per species (`if len(As) < 3: continue`). A single-A run would
+regenerate both witnesses with three A values dropped — **a regression wearing
+the shape of a stamp**. That invocation was live in the runner for four
+launches before it was caught, and it is the same class as the
+`nmax=40`-vs-`46` trap recorded above: *a producer's argument list is part of
+what its committed witness records, and re-running without it truncates the
+result silently.*
