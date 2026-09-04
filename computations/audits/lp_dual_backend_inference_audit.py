@@ -29,20 +29,23 @@ reported as AMBIGUOUS rather than forced either way.
    so it records `backend` itself. Do not write an inferred backend into a
    witness.
 
-🛑 AND MOST RECORDS CANNOT BE CLASSIFIED AT ALL. Measured: 84 of the 105
-   undeclared records carry no `x_star`, so there is no scale to normalise the
-   gap against. `x_star` is not in the LP-dual required-field list in AGENTS.md
+🛑 AND SOME RECORDS CANNOT BE CLASSIFIED AT ALL. Measured over LEAF records
+   (see `_has_nested_record`): 44 of 187 carry no `x_star`, so there is no
+   scale to normalise the gap against -- and 27 of those 44 are a single
+   producer, `sigma-f-electron-shell-chain`, whose dual blocks carry
+   `y0_star`/`y_star`/`active_set` and no primal vector at all. `x_star` is not in the LP-dual required-field list in AGENTS.md
    (that names y0_star / y_star / active_set / primal_obj / dual_obj /
    duality_gap), so this is not a contract violation -- but it does mean both
    this audit AND the certified-residual check from `qou-fr4d` are blind to
    them. That is the real structural gap, and it is larger than the f64
    question.
 
-WHAT IT FOUND, which deflates the bean that prompted it. Of 105 undeclared:
-84 unclassifiable (no x_star), 7 unclassifiable (gap exactly 0), 5 inferred
-MPFR, and 9 inferred f64-era -- of which EIGHT are in `computations/
-_deprecated/`. The live f64-era exposure is ONE record,
-`borromean-axial-coupling`, already fixed. There is no sweep to run.
+WHAT IT FOUND, which deflates the bean that prompted it. The live f64-era
+exposure is ONE record, `borromean-axial-coupling`, already fixed. There is no
+sweep to run. Run the script for the current split; do not quote a figure from
+this docstring, which has already been wrong once (it read "84 of the 105"
+before the wrapper filter landed, counting 54 hoisted parent dicts as records
+in their own right).
 
 NO-FLOAT64: all arithmetic is mpmath; float() only inside f-strings.
 
@@ -71,9 +74,33 @@ def _tracked():
     return [f for f in out if f.endswith(".witness.json")]
 
 
+def _has_nested_record(o) -> bool:
+    """True when a DESCENDANT of `o` (not `o` itself) is also an LP record.
+
+    Such a dict is a WRAPPER, not a solve: producers routinely hoist
+    `primal_obj` / `dual_obj` / `duality_gap` / `active_set` / `y0_star` /
+    `y_star` onto a parent alongside a nested key holding the real record.
+    Counting both double-counts the solve AND -- because the hoisted copy
+    omits `x_star` -- manufactures a phantom "record with no primal vector".
+    Measured: 54 of the 241 five-key matches are wrappers, and 41 of them are
+    `pn-alpha-lp-dual.witness.json`'s `.lp_dual_scan_h3[i]`, whose nested
+    `.lp_dual` carries the x* the parent lacks.
+    """
+    def walk(x, top=False):
+        if isinstance(x, dict):
+            if not top and LP_KEYS <= set(x):
+                return True
+            return any(walk(v) for v in x.values())
+        if isinstance(x, list):
+            return any(walk(v) for v in x)
+        return False
+    return walk(o, top=True)
+
+
 def _records(o, p=""):
+    """Yield LEAF LP records only -- wrappers are skipped, not counted."""
     if isinstance(o, dict):
-        if LP_KEYS <= set(o):
+        if LP_KEYS <= set(o) and not _has_nested_record(o):
             yield p, o
         for k, v in o.items():
             yield from _records(v, f"{p}.{k}")
