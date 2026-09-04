@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:06:22Z
+updated_at: 2026-09-04T21:09:29Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -146,3 +146,49 @@ Run the NF route with the canonical colour convention (or the canonical with
 colour off, `m_pp=m_pn=m_nn` neutralised in whatever sense makes the words
 identical), so that the only difference left is the H_3 reduction. Until then
 the A>=2 rows measure the convention, not the tower.
+
+
+## The A=1 residual is STRUCTURAL — not the q pin, and it sits on a documented corpus invariant
+
+Forced both routes onto the identical `q = q_at(55)` (proton,
+`1.109978582751380807591669`):
+
+    NF trace                    1.1463376906350050736
+    canonical (default q)       1.1457596924573008697   rel 5.045e-4
+    canonical (forced same q)   1.1457596924573008697   rel 5.045e-4
+    canonical default vs forced-q                       rel 1.33e-49
+
+**The pin is not the cause** — forcing it moves the canonical value by 1.33e-49,
+i.e. nothing, and the gap is unchanged to every printed digit. At A=1 there are
+no interfaces (so colour cannot apply), `n = 3` (so `H_{3A}` IS `H_3` and there
+is no collapse), and `q` is identical. Same word, same algebra, same anchor,
+**5.045e-4 apart**.
+
+### It is the corpus's own bug-detector, currently failing
+
+[`2026-05-19-trm5-markov-bug.md`](../docs/audits/2026-05-19-trm5-markov-bug.md)
+found a bug by running EXACTLY this comparison: *"the y_λ values ... did NOT
+satisfy `tr_M(b_i) = Σ_λ y_λ·χ_λ(b_i)` for the NF basis element
+`e_- = σ_0·σ_1·σ_0`. Least-squares residual ~0.12 instead of 0."* The fix was
+`TR_M[5]`: `z³` -> `h·z² + z`.
+
+So this identity is a **known, load-bearing consistency invariant** between the
+NF Markov trace and the Frobenius pairing, and it was worth a bug fix once.
+
+**`TR_M[5]` is NOT the current culprit — checked.** That audit's arithmetic is
+convention-C (`z = 0.4993`, giving 0.5514). Re-derived in convention D:
+`h·z² + z = 0.20907·0.375387 + 0.612688 = 0.691173`, and `tr_m_weights_mp`
+returns `0.69116648`. The weight is internally consistent with its own
+derivation, in the live convention.
+
+### The decisive next test, named precisely
+
+Run that audit's own **per-basis-element** check under convention D: for each of
+the six NF basis elements `b_i`, compare `TR_M[i]` against `Σ_λ y_λ χ_λ(b_i)`.
+Whichever element carries the 5.045e-4 localises it to the `TR_M` weights, the
+`y_λ`, or the reduced-block `χ`. A whole-word residual cannot separate those
+three; a per-element one can.
+
+Scope, stated: this says the invariant fails at 5.045e-4 on the A=1 atom word.
+It does NOT say which side is wrong, and it is not yet a defect report against
+either.
