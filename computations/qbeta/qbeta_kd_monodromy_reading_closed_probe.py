@@ -293,7 +293,13 @@ def main() -> int:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine="sympy",
-            q0_anchor="none (exact symbolic identities in q)", q0_value="n/a")
+            q0_anchor="independent",
+            q0_anchor_reason=(
+                "exact symbolic identities in q: every quantity here is a "
+                "Laurent polynomial in the sympy symbol q, and no pin is "
+                "read anywhere in the file or its import cone (stdlib + "
+                "sympy only). No q0Value is recorded because a single "
+                "value would assert the one pin this label denies."))
         # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and
         # `witness_shape_guard` flags a witness that gains \uXXXX escapes.
         json.dump(witness, f, indent=2, ensure_ascii=False)
