@@ -311,9 +311,9 @@ def main() -> int:
     print("  false (0 = positive) and cannot be repaired by any parameter.  It was")
     print("  a CLASS FIELD, so nothing proved was invalidated — but the class had")
     print("  no inhabitant at the intended values, and the BW/LP scalings, which")
-    print("  are definitional, are untouched.  DISPOSITION TAKEN 2026-09-04
-  (owner ruling, option A): the field and its projection theorem are DROPPED;
-  `y` stays in the class as data only.
+    print("  are definitional, are untouched.  DISPOSITION TAKEN 2026-09-04")
+    print("  (owner ruling, option A): the field and its projection theorem are")
+    print("  DROPPED; `y` stays in the class as data only.")
     return 0 if n_ok == len(CHECKS) else 1
 
 
