@@ -1,11 +1,11 @@
 ---
 # qou-e4eu
 title: '19 Lean -- Ref: keys resolve to nothing — 7 of them are not citations at all'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-31T05:06:11Z
-updated_at: 2026-08-31T05:23:55Z
+updated_at: 2026-09-04T02:12:59Z
 ---
 
 `folio-assistant/content/pipeline/validate-references.ts` is the only checker
@@ -277,3 +277,20 @@ No DOIs (JEMS/Crelle not verifiable this session). PR #6496 f2d49f15ba.
   either FR "q-characters ... deformations of W-algebras" (math/9810055, 1999)
   or FR "Deformations of W-algebras" (q-alg/9708006, CMP 197, 1998). Recommend
   rekey to the true year (`...1998`/`...1999`) after owner confirms which.
+
+## 2026-09-04 — FULLY DRAINED (2 -> 0), owner decisions applied
+
+- **murakami1996**: DROPPED. It was one of three `-- Ref:` lines in the
+  JonesPolynomial.lean module docstring (not a sorry citation), and its
+  "Kauffman bracket = Hecke Markov trace" claim is carried by the two lines
+  beside it (`jones1985` + `kauffman1987`). Replaced with an explanatory
+  comment; nothing orphaned.
+- **frenkel-reshetikhin2002**: REKEYED -> `frenkel-reshetikhin1998`
+  ("Deformations of W-algebras associated to simple Lie algebras", CMP 197
+  (1998), arXiv:q-alg/9708006) -- the W-algebra duality that IS the
+  quantum-Langlands-dual content the block cites. Entry added; the one cites[]
+  site updated.
+
+All 19 originally-flagged keys are now resolved: 12 works added/repointed
+across this arc, 7 non-citation `[audit]/[probe]/[bean]` keys rekeyed to
+`[manuscript]` earlier. PR #6496 cf5ecaf51d. Closing.
