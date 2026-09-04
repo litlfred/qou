@@ -1,11 +1,11 @@
 ---
 # qou-e4eu
 title: '19 Lean -- Ref: keys resolve to nothing — 7 of them are not citations at all'
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-31T05:06:11Z
-updated_at: 2026-08-31T05:23:55Z
+updated_at: 2026-09-04T02:12:59Z
 ---
 
 `folio-assistant/content/pipeline/validate-references.ts` is the only checker
@@ -188,3 +188,109 @@ Do not resolve `ggmw2020` from its initialism: the Lean comment expands it as
 "Gukov–Garoufalidis–Mariño–Wheeler (2020)", but GGMW is usually
 Garoufalidis–**Gu**–Mariño–Wheeler, so the comment's own expansion may be wrong.
 `library/` holds four candidate resurgence papers.
+
+## 2026-09-03 — 6 -> 4. Two added, four are NOT clean adds (session cool-johnson-t1wveh)
+
+Added to `references.ts` (verified via web search; arxiv.org still egress-blocked
+but WebSearch resolves it):
+
+- **`murakami2013`** — H. Murakami, "The colored Jones polynomial, the
+  Chern-Simons invariant, and the Reidemeister torsion of the figure-eight
+  knot", *J. Topology* (2013). Matches the Lean's "deformed 4₁ asymptotic".
+  Volume/DOI unverified, so omitted.
+- **`wielenberg1978`** — N. J. Wielenberg, "The structure of certain subgroups
+  of the Picard group", *Math. Proc. Cambridge Philos. Soc.* 84 (1978). Matches
+  WhiteheadVolumeCatalan.lean. Page/DOI unverified, so omitted.
+
+**The remaining four are ambiguous — NOT one-fetch adds — and each needs the
+PDF or the author, so they are recorded here rather than guessed:**
+
+- **`frenkel2020`** — the Lean URL `arXiv:2007.11786` is **"Toroidal q-Opers"
+  by Koroteev & Zeitlin (2020)**, *not a Frenkel paper*. Given `QOper.lean`'s
+  context the intended work is most likely **Frenkel–Koroteev–Sage–Zeitlin,
+  "q-Opers, QQ-Systems, and Bethe Ansatz", arXiv:2002.07344 (2020), JEMS
+  (2024)** — but the key and the URL disagree, so this is a repoint/author call,
+  not an add. Do not resolve from the URL.
+- **`koroteev-zeitlin2022`** — the Lean URL `arXiv:2108.01557` **does not
+  resolve** (no such Koroteev–Zeitlin paper). Closest is **arXiv:2108.04184,
+  "q-Opers, QQ-systems, and Bethe Ansatz II: Generalized Minors" (Crelle
+  2022)** — a plausible digit-typo, unconfirmed. Needs author confirmation of
+  the arXiv id before adding.
+- **`ggmw2020`** — the bean's own warning is confirmed: **GGMW = Garoufalidis–
+  Gu–Mariño–Wheeler**, and their paper is **"Resurgence of Chern-Simons theory
+  at the trivial flat connection", arXiv:2111.04763, CMP 406 (2025)** — a
+  2021/2025 work, *not 2020*, and the initialism the Lean expands
+  ("Gukov–Garoufalidis–Mariño–Wheeler") is wrong. The Lean anchors "eq (161)",
+  which cannot be verified without the PDF. Cross-check against the four
+  resurgence PDFs in `library/` before adding; do not resolve from the
+  initialism.
+- **`murakami1996`** — "Kauffman bracket = Hecke Markov trace" could not be
+  disambiguated confidently: the canonical "Jones = Hecke Markov trace" is
+  Jones 1987; J. Murakami's Kauffman-polynomial / BMW work is 1987/1990, not
+  1996. Needs the author's intended paper.
+
+**Status: 4 errors remain** (was 6), all needing PDF/author input. The four
+key-drift repoints (`schrijver1986theory`, `stanley1999`, `neumann-zagier1985`,
+`ratcliffe`) and `rockafellar1970` / `bjorner-brenti2005` are confirmed landed
+on `main`.
+
+## 2026-09-03 (cont.) — 4 -> 3: ggmw2020 CONFIRMED from library/, added
+
+The library HOLDS the paper: `library/arxiv-2111.04763v2` =
+"Resurgence of Chern-Simons theory at the trivial flat connection",
+**Garoufalidis, Gu, Mariño, Wheeler** — exact GGMW match (the bean's warning
+against the initialism was right; the Lean's "Gukov-…-2020" was wrong on both
+the lead author and the year). Added to `references.ts` with the true authors,
+arXiv:2111.04763 (2021), CMP 406 (2025); the "eq (161)" anchor is preserved in
+the note but was not re-checked against the PDF (equations are not numbered in
+the extracted `sections/`).
+
+**Status: 3 errors remain** — `frenkel2020` (URL points to a Koroteev–Zeitlin
+paper), `koroteev-zeitlin2022` (Lean arXiv id does not resolve), `murakami1996`
+(Kauffman/Hecke, undisambiguated). All three need author input or a
+key/URL repoint, not a lookup.
+
+## 2026-09-03 (cont.) — 3 -> 2: the 2 QOper.lean keys resolved (both had wrong URLs)
+
+Bib-triage sub-agent + web search confirmed both QOper.lean keys point at the
+WRONG arXiv id, and identified the true papers:
+
+- **`frenkel2020`** -> Frenkel-Koroteev-Sage-Zeitlin, "q-Opers, QQ-Systems, and
+  Bethe Ansatz", arXiv:**2002.07344** (2020). The Lean URL was 2007.11786 =
+  "Toroidal q-Opers" (Koroteev-Zeitlin) -- a real but DIFFERENT paper. Entry
+  added; URL repointed 2007.11786 -> 2002.07344.
+- **`koroteev-zeitlin2022`** -> Koroteev-Zeitlin, "q-Opers II: Generalized
+  Minors", arXiv:**2108.04184** (Crelle 2022). The Lean URL 2108.01557 does not
+  resolve (digit transposition). Entry added; URL repointed.
+
+No DOIs (JEMS/Crelle not verifiable this session). PR #6496 f2d49f15ba.
+
+**Status: 2 errors remain**, both genuine owner-decisions, NOT lookups:
+- **`murakami1996`** (JonesPolynomial.lean, "Kauffman bracket = Hecke Markov
+  trace"): no clean 1996 Murakami match. Content is already covered by existing
+  `jones1987` + `kauffman1987`. Recommend either DROP the redundant `-- Ref:`
+  line, or (if a distinct BMW source is wanted) rekey to J. Murakami, Publ.
+  RIMS 24 (**1990**) -- the Kauffman *polynomial* / BMW Markov trace, not the
+  bracket, and 1990 not 1996. Do not fabricate a 1996 entry.
+- **`frenkel-reshetikhin2002`** (quantum-langlands-dual.ts cites[]): no clean FR
+  2002 paper. Likely the q-characters / deformed-W-algebra Langlands piece --
+  either FR "q-characters ... deformations of W-algebras" (math/9810055, 1999)
+  or FR "Deformations of W-algebras" (q-alg/9708006, CMP 197, 1998). Recommend
+  rekey to the true year (`...1998`/`...1999`) after owner confirms which.
+
+## 2026-09-04 — FULLY DRAINED (2 -> 0), owner decisions applied
+
+- **murakami1996**: DROPPED. It was one of three `-- Ref:` lines in the
+  JonesPolynomial.lean module docstring (not a sorry citation), and its
+  "Kauffman bracket = Hecke Markov trace" claim is carried by the two lines
+  beside it (`jones1985` + `kauffman1987`). Replaced with an explanatory
+  comment; nothing orphaned.
+- **frenkel-reshetikhin2002**: REKEYED -> `frenkel-reshetikhin1998`
+  ("Deformations of W-algebras associated to simple Lie algebras", CMP 197
+  (1998), arXiv:q-alg/9708006) -- the W-algebra duality that IS the
+  quantum-Langlands-dual content the block cites. Entry added; the one cites[]
+  site updated.
+
+All 19 originally-flagged keys are now resolved: 12 works added/repointed
+across this arc, 7 non-citation `[audit]/[probe]/[bean]` keys rekeyed to
+`[manuscript]` earlier. PR #6496 cf5ecaf51d. Closing.

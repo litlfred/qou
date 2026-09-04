@@ -63,7 +63,7 @@ The proof is the three steps the bean names: decompose each block trace over cor
 (`trace_heckeIncl_mul_lastGen_corner`), reindex the resulting double sum
 (`sum_corner_eq_sum_addable`), then swap the inner sums so the corner identity applies at
 `r = ` the cell carrying each downstairs tableau's top entry. -/
-theorem markov_of_corner_identity {q z : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) {m : ℕ}
+theorem markov_of_corner_identity {q z : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) {m : ℕ}
     (w : YoungDiagram → ℝ)
     (hcorner : ∀ ν : YoungDiagram, ν.cells.card = m + 1 → ∀ r : ℕ × ℕ, IsCornerCell ν r →
       ∑ s : {s : ℕ × ℕ // IsAddableCell ν s},

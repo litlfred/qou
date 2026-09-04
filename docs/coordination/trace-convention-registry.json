@@ -1,6 +1,6 @@
 {
   "schema": "trace-convention-registry/v1",
-  "updated": "2026-08-30",
+  "updated": "2026-09-04",
   "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
   "bean": "qou-n1dj",
   "meta": {
@@ -79,14 +79,30 @@
       "weights_lambda3": null,
       "weights_at_q0": null,
       "value_at_beta_bor": null,
-      "value_note": "deprecated before any beta_Bor evaluation",
+      "value_note": "deprecated before any beta_Bor evaluation. MEASURED 2026-09-04 (bean qou-7o7h): this form is NOT a probability measure in the BALANCED q-integer convention -- c_n = Sum_lambda dim_q^2/[n]_q! = 0.9910795236 / 1.1109231350 / 1.5171332138 at n = 6/9/12 at the proton q0, growing with n. w_textbook = c_n * w_selfnormalized exactly, so any functional linear in the weights scales by c_n: the factor cancels WITHIN one atom and does NOT across atoms (n = 3A differs). Cross-atom metrics computed with this form are therefore distorted -- the FR-pullback family's published 1.82x baseline variance is 1.5307x inflated relative to the self-normalized 1.19x.",
       "implementations": [
         "computations/mass_at_3A_proper.py::markov_trace_3A"
       ],
       "lean": null,
-      "forcing_status": "deprecated",
+      "forcing_status": "deprecated (and measured non-normalized -- see normalization_gap)",
       "verify": null,
-      "source": "computations/mass_at_3A_proper.py docstring ('Do not use for new binding calculations')"
+      "source": "computations/mass_at_3A_proper.py docstring ('Do not use for new binding calculations')",
+      "normalization_gap": {
+        "c_n": {
+          "6": "0.99107952363735010",
+          "9": "1.11092313495739800",
+          "12": "1.51713321376785900"
+        },
+        "measured_at": "proton pin q0, mp.dps=60, 2026-09-04",
+        "scaling_law": "w_textbook(lambda) = c_n * w_selfnormalized(lambda), exact (dev < 1e-40); hence B scales by c_n",
+        "affects": "cross-atom comparisons only; per-atom ratios are unchanged",
+        "do_not_quote": "the shortcut 'textbook/selfnorm = c_12/c_6' is TRUE here but CONDITIONAL on the argmax/argmin atoms being the extreme-c_n ones under both normalizations -- quote the scaling law",
+        "producer": "computations/probe_plancherel_convention_gap.py",
+        "witness": "computations/probe-plancherel-convention-gap.witness.json",
+        "audit": "docs/audits/2026-09-04-plancherel-convention-gap.md",
+        "bean": "qou-7o7h",
+        "consequence_for_readers": "figures computed under this form are not comparable to self-normalized figures; the corpus contains both. fr_pullback_k3_test.py uses this form; fr_pullback_borromean_h3a_test.py was migrated to self-normalized."
+      }
     },
     {
       "id": "C",

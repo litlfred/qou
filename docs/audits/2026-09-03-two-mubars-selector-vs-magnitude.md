@@ -175,8 +175,12 @@ the np line — where **both** channels sit. Surviving is exactly what does not 
 functions of the pairwise linking data. It does **not** exclude an invariant
 reading the braid word beyond its linking data — the `Δ₃,₃` exchange spectrum is
 such an object, and is capped at `9` by the separate integer-exponent argument —
-nor a non-Milnor super-pairwise object, nor anything carrying **spin**, which is
-what actually separates the channels.
+nor a non-Milnor super-pairwise object.
+
+> **🛑 Correction, 2026-09-04.** This sentence previously ended *"nor anything
+> carrying **spin**, which is what actually separates the channels."* That named
+> as an open route something the corpus has proved is not one; see the next
+> section. The linking-matrix result above is unaffected.
 
 **Convergence, and its limit.** Bean `qou-7zob` records from the flavour side that
 *"a flavour-only interface CANNOT split ³S₁ from ¹S₀ … NO map from strand position
@@ -186,6 +190,58 @@ ratios are `1` rather than merely small: the objects compared are functions of
 `I₃`, and both channels have `I₃ = 0`. That is corroboration rather than a fourth
 independent measurement — these routes share the assignment (F1), so they are not
 structurally independent the way the two proofs in the section above are.
+
+## Correction (2026-09-04): spin is not the residue — Pauli locks it to isospin
+
+The section above ended by naming **spin** as what survives. That is wrong as a
+statement about the search, and the corpus already held the proof. Recorded here
+rather than silently edited, because the arc has now pointed at an already-closed
+door three times and the pattern is the useful part.
+
+**The lock.** In the S-wave the Pauli principle ties spin to isospin: the space
+part is symmetric, so the spin and isospin symmetries must be opposite —
+`S = 1 ⟺ T = 0` and `S = 0 ⟺ T = 1`. A Pauli-consistent interface therefore
+carries a projector in *each* SU(2), with the roles exchanged between the two
+channels, and the same two scalars multiply out to the same number.
+
+That is proved sorry-free in
+[`QOU/QBeta/InterfaceScalar.lean:628`](../../content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean):
+
+```lean
+theorem separable_interface_degenerate
+    (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 * fIso t0 * fSpace ell = fSpin s0 * fIso t1 * fSpace ell
+```
+
+**And the space index does not help either**, which is the sharper half and the
+part I had missed. The carrier's own docstring: *"The conclusion holds for
+**every** `fSpace`, so no choice of space index rescues a separable interface.
+What the tensor force does in the Standard Model is *couple* spin to space; a
+product of a spin function and a space function is precisely what a coupling is
+not."*
+
+**And the coupling is closed too.** The one surviving shape bean `qou-vbyi`
+names — a non-separable `(S, L)` coupling, the ³S₁–³D₁ tensor force — is
+excluded by `QOU.QBeta.TensorCouplingCannotUnbindSinglet` (PR #6488, two
+sorry-free invariants), which landed the same day the error was written.
+
+**Where the residue actually is.** `separable_interface_degenerate` *assumes*
+`fSpin s1 = fIso t1` and `fSpin s0 = fIso t0` — that the **same two projector
+scalars** serve both SU(2)s. That is a hypothesis, not a derivation. A framework
+giving the two SU(2)s **different** scalars breaks the lock and the degeneracy
+with it. Nothing in the corpus establishes that they must be equal, and nothing
+establishes that they may differ.
+
+That is the open question, and its shape is worth noting: it is a question about
+**how the interface is constructed**, not about which quantum number is attached
+to it. Every route this arc has tried — trace subtraction, `μ̄`, linking data,
+spin — has been of the second kind, and all four closed the same way.
+
+**Provenance.** Caught by reading bean `qou-7zob`, which states the Pauli-lock
+argument in as many words, then verified at the Lean rather than cited from the
+bean — per the standing rule that a sibling's bean is not a primary source.
 
 ## What this does NOT claim
 

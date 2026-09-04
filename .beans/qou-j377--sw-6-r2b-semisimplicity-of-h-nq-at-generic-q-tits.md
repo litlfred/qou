@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-04T02:18:34Z
+updated_at: 2026-09-04T02:49:03Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -450,6 +450,20 @@ untouched and unaffected: it is still Mathlib-scale and now wanted only for the 
 **value**, since #6437 took semisimplicity off its critical path.
 
 
+## 2026-09-03 21:10Z — DOWNSTREAM BREAKAGE from e526464c2d, found by a full-cone rebuild for PR #6526 (session ocneanu/markov-identification)
+The retype of seminormalRep's hq2 (q^2 ≠ 1 → GenericParameter.NotRootOfUnity q) covered the nine modules but not their consumers outside the tranche. Measured (lean-direct, dependency order, every QOU module in MarkovIdentificationInstance's cone rebuilt from current source): SIX modules red on main from this commit — HoefsmitRepGeneral (2 sites), SeminormalBlockTrace (4), SeminormalBlockEquality (5), SeminormalCornerTrace (2), MarkovAssembly (1), MarkovTraceInstance (4) — plus MarkovConventionD, which was ALREADY red from qou-jlam's 6164a8ab6e (see that bean). The fix is a mechanical retype of 16 declaration sites (no proof bodies change: the seminormalParam lemmas still accept the old hypothesis via sq_ne_one internally) and is ported on PR #6526. The bean's 'HoefsmitRepGeneral <-- OFF the general path' line reads as if off-path meant unaffected; it is a consumer of seminormalRep and broke.
+
+## 2026-09-04 02:3xZ — two more retype victims outside the first cone (PR #6526, second rebase pass)
+Recompiling every module downstream of OcneanuWeight (which main touched) found WenzlMarkovLevelR (2 decl sites) and WenzlMarkovTraceInstance (15 decl sites + one proof site that needs the OLD form back: Real.log_ne_zero_of_pos_of_ne_one now takes GenericParameter.sq_ne_one hq2). Ported on #6526. Tree-wide, 13 files still declare (hq2 : q ^ 2 ≠ 1); the ones compiled here (OcneanuWeightMarkov3, QBetaCanonicalMarkovWeightsDerived) are fine because they never pass hq2 to the seminormal family — so the old-typed count is not a defect count. Not recompiled: Eightfold/OcneanuTwoThreeNotProportional (8), Mass/QHookDimensionBalanced (6), HeckeWedderburnDataGeneral (2), and 6 singletons — unverified either way.
+
+## 2026-09-04 02:5xZ — HeckeSemisimpleGeneral is RED on main (outside #6526's cone; #6517's file)
+Compiled from current source with lean-direct: QOU/SchurWeyl/HeckeSemisimpleGeneral.lean:81:19 'Application type mismatch: q has type K … expected ℝ' — the general-field split (1f991b78ab) left one ℝ-typed application. Its on-disk olean is the pre-split cache (09:17), so HeckeSemisimpleReal then reports isSemisimpleRing_hecke / isSemisimpleRing_hecke_of_one_lt / wenzlCriterion_of_one_lt / semisimple_of_one_lt_unconditional 'already declared' — a stale-olean SYMPTOM, not four real duplicates; and HeckeCarrierSemisimpleReal fails on the missing olean. Not fixed on #6526 (not in its cone; PR #6517 is editing this file). Posted on #6517.
+
+
+
+## 2026-09-04 03:2xZ — RETRACTION of the 02:5xZ entry above: HeckeSemisimpleGeneral is NOT red on main
+The 'HeckeSemisimpleGeneral.lean:81 Application type mismatch' was measured against CACHED oleans of its dependencies (seeded 09-03 09:17Z), several of which e526464c2d had since changed. With every module in its cone that changed on main since the seed rebuilt from source (19 modules, topological order), HeckeSemisimpleGeneral, HeckeSemisimpleReal, HeckeCarrierSemisimple, HeckeCarrierSemisimpleReal and Hecke/TwGramDetNonzero ALL compile with 0 errors on main 45c530378e. The 'four duplicates' symptom was the same staleness. So: the 21:10Z and 02:3xZ entries (the retype and mem_addCell victims) stand — those were rebuilt with their cones; the 02:5xZ entry does not, and is exactly the false-green/false-red trap the lean-verifier memory records. Corrected on #6517 too.
+
 ## MERGED 2026-09-04 — PR #6517 landed on main as 5241d1b6112202a85f0893eeaa85745396ff5b50.
 
 isSemisimpleRing_iwahoriHecke_sq / _of_sq are on main.  The residue of the R on
@@ -461,3 +475,4 @@ Merged with a merge commit rather than rebase: the branch carried two merges of 
 rebased".  Merge-commit preserves the per-commit structure that AGENTS.md rule 8
 prefers rebase FOR; squash would have destroyed it and is banned without per-PR
 permission anyway.
+
