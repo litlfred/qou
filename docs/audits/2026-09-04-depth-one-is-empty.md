@@ -1,4 +1,4 @@
-# The +2 map exists; depth 1 is empty. And options of attack.
+# The +2 map exists; depth 1 is un-instantiated (not empty). And options of attack.
 
 **2026-09-04, owner question:** *"does quadratic curvature term from frobenius
 pairing provide mapping into order ≤ +2 from current level? we should see these
@@ -66,10 +66,36 @@ The same block's third downstream conjecture,
 | 3 | `K_5^ind` | `Li_3` / Chern–Simons |
 
 `K_1(F) = F^×` is entirely *decomposable*, so its indecomposable part is trivial.
-If the rosetta is right, **depth 1 is empty by construction, not by neglect** —
-and the `n=1` column is missing from the grid because there is nothing to put in
-it. **This is a hypothesis about the corpus's own dictionary, not a theorem**;
-proving or refuting it is option (F) below.
+If the rosetta is right, depth 1 would be empty by construction.
+
+> ### 🛑 REFUTED the same hour, by the rosetta's own table
+>
+> **Depth 1 is not indexed by `K_1^ind`.** `rem:k-theory-period-rosetta`'s
+> dictionary row reads **`1 | log_q | K_1(F) via Bloch logs | Dirichlet
+> regulator`** — plain `K_1(F) = F^×`, *not* the indecomposable part. The `ind`
+> qualifier means "modulo the image of products of lower K-groups", and at
+> `n = 1` there are no lower K-groups to quotient by, so it is vacuous there.
+> My inference applied the general `K_{2n−1}^ind` formula past the point where
+> its qualifier means anything.
+>
+> Worse for the hypothesis: the rosetta's **status** column marks depth 1
+> **"theorem"** — Dirichlet regulator plus Baker–Wüstholz on `log`-linear
+> independence — making it the *most* established row in the table, better
+> supported than depth 2 ("theorem (essentially)") and far better than depth 3
+> ("mostly conjectural").
+>
+> **So depth 1 is populated in principle and empty only in practice.** The
+> grouplike is `log_q`, the K-group is `F^×`, the field of definition for a
+> Bring-embeddable knot is `ℚ(z_K)` — all supplied. What has never been built
+> is the **knot-indexed** stratum `ℋ_q^(1,K)`.
+>
+> This *upgrades* option (B) rather than pruning it: the ingredient exists and
+> is theorem-grade; the missing step is attaching it to a cell. And the target
+> function shows the mechanism explicitly — Bloch–Wigner is
+> `D(z) = Im Li₂(z) + arg(1−z)·log|z|`, whose **second term is literally a
+> product of two depth-1 objects landing in depth 2**, i.e. the shuffle-square
+> the owner asked about. It is formalised in the corpus as
+> `QOU.Knot.KummerRadial.kummer`.
 
 Note the grid's depth-2 entries are already real: figure-eight `4₁` at
 `ℋ_q^(2,K)` is `2·Cl₂(π/3)` — `Vol(4₁)`, marked **confirmed**.
@@ -122,10 +148,36 @@ every route that hoped to square a depth-1 object. A refutation is better still:
 it hands you the missing input and (A)'s harder sibling `1 + 1 = 2` opens.
 *Settles:* whether the +2-by-squaring route exists at all.
 
-**(C) Curvature-rank instead of depth.** Attack on filtration 3, where the
-quadratic object actually lives. The mass formula already sums over `k`, so the
-consumers exist. *Needs:* establishing what `F` does to `⋈_K` specifically.
-*Risk:* it may never touch the volume, which lives on axis 1.
+**(C) ~~Curvature-rank instead of depth.~~ 🛑 DEAD — the filtration itself is
+excluded.** I proposed attacking on filtration 3, where the quadratic object
+lives. Corpus-grep found that path already walked and closed:
+[`2026-08-16-three-gb-filtrations-one-name.md`](2026-08-16-three-gb-filtrations-one-name.md)
+finds **three inequivalent objects all written `J^•`** — a rewrite-count
+(*"not obviously well defined"*), the image of the `ℓ`-th power of the rewrite
+ideal (**provably `⊥` for every `ℓ ≥ 1`**), and the Coxeter-length span (fails
+the dimension count at `n ≤ 3`). Its 2026-08-26 supersession
+([`no-shift-rescues-the-word-partition-bridge`](2026-08-26-no-shift-rescues-the-word-partition-bridge.md),
+bean `qou-wjbd`) excludes the third **for every `n ≥ 2`, with no re-indexing
+repairing it**, concluding *"all three readings of `J^•` are excluded"* and
+*"the citation does no work"*.
+
+So the curvature 2-cocycle `F` has no established filtration to be a cocycle
+**on**. Reviving this route means first repairing `J^•`, which two audits say
+cannot be done by re-indexing.
+
+**And this hits `conj:two-filtration-bridge` too** — the corpus's own statement
+of the owner's question ("*the maps and operators are related to filtration*"),
+conjecturing that iterated-integral depth and partition GB-depth are bridged by
+the central idempotents `e_λ`, with
+`d_II(λ) = 2` (self-conjugate) / `3` (chiral pair) / `min(depth_GB(λ), 2⌈n/2⌉)`.
+That block **flags its own defect in its statement**: the cited stratification
+*"stratifies by the curvature rank of **words** and supplies no
+partition-indexed filtration, so this conjecture **presupposes** the very
+word-to-partition step that is unestablished."* It cannot be used as-is.
+
+Note also `d_II(λ)` is **never 1** except at the trivial cell `λ = (1)` — an
+independent corroboration, from the bridge's own formula, that depth 1 is thin
+on the knot axis.
 
 **(D) Hadamard / creative telescoping** for connected sum — the only surviving
 route after `ConnectedSumAnnihilator.lean` excluded the naive ideal map. Order
@@ -143,10 +195,16 @@ countermeasure to the error class that has produced six corrections today.
 
 ### Recommendation (my judgement, not a finding)
 
-**(B) then (A).** (B) is a single structural question whose answer prunes or
-opens everything else, and it is exactly the formalize-first move the repo
-mandates — establish the invariant before running any search. (A) is the only
-route that works with objects the corpus already has. (E) is the real prize but
-should not start until (B) says whether the cheap bridge exists.
+**(B), and it is now a BUILD rather than a proof.** The refutation above
+changed its character: depth 1 is not structurally empty, it is theorem-grade
+and merely un-instantiated on the knot axis. So (B) is *construct `ℋ_q^(1,K)`*
+— a `log_q`-level object indexed by the cell `λ_K`, over `ℚ(z_K)` — after which
+the shuffle squares it into `ℋ_q^(2,K)` = volume, which is exactly the owner's
+`≤ +2`. Bloch–Wigner's own `arg(1−z)·log|z|` term is the worked instance of
+that square.
+
+**(A) remains the cheap parallel** and needs no new object. **(E) is the real
+prize** and is now the *only* untouched high-ceiling route, since (C) is dead
+and (D) is a template rather than an answer.
 
 **(F) is worth doing regardless** and costs an hour.
