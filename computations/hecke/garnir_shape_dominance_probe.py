@@ -46,6 +46,26 @@ set, hence well-founded with no extra work, whereas dominance is only partial.  
 corpus's `QOU.BraidKnot.SpechtClassification.partitionDom` is DOMINANCE and is
 therefore NOT the order this induction runs on.
 
+WHERE the two lists first differ, and why (measured 1435 / 1435, n = 2..12):
+
+    first-difference index  ==  c := #{ r : lambda_r > lambda_i }
+
+with `sorted(nu)_c >= lambda_i + 1 > lambda_i == lambda_c`.  The reason is a
+counting argument on the parts, and it is what makes the Lean proof tractable --
+it names the witness index instead of leaving it existential:
+
+  * Parts of lambda that are >= lambda_i + 1 are exactly the c parts strictly above
+    lambda_i.  By definition of c, lambda_c == lambda_i.
+  * Parts of nu that are >= lambda_i + 1 are those same c parts, unchanged, PLUS the
+    merged part lambda_i + 1 itself -- and nothing else, since the other two new
+    parts are j <= lambda_{i+1} - 1 <= lambda_i and lambda_{i+1} - j - 1 <=
+    lambda_{i+1} - 1 <= lambda_i, both < lambda_i + 1.
+  * So nu has exactly c + 1 such parts to lambda's c.  Both lists are sorted
+    descending and their first c entries are the same multiset, hence the same
+    list; at index c, lambda has lambda_i while nu still has a part >= lambda_i + 1.
+
+`check_witness_index` below is that claim, tested separately from the order claim.
+
 Index convention: 0-indexed throughout, to match the corpus
 (`QOU.BraidKnot.GarnirTableau.garnirPerm i j h` with `h : (i + 1, j) in mu`), NOT
 Mathas' 1-indexing.  Translating j_Mathas = j + 1, his three replacement parts
@@ -129,6 +149,42 @@ def garnir_nodes(lam):
             yield i, j
 
 
+def first_difference(mu, lam):
+    """The first index at which two partitions differ, or None if equal."""
+    for r in range(max(len(mu), len(lam))):
+        a = mu[r] if r < len(mu) else 0
+        b = lam[r] if r < len(lam) else 0
+        if a != b:
+            return r
+    return None
+
+
+def check_witness_index(n_max):
+    """Is the lex witness always c = #{r : lambda_r > lambda_i}, as claimed above?
+
+    Reported separately from the order claim because it is a strictly stronger
+    statement: it says not merely THAT lex holds but WHERE, which is what a Lean
+    proof has to supply.
+    """
+    total = 0
+    ok = 0
+    bad = []
+    for n in range(2, n_max + 1):
+        for lam in partitions(n):
+            for (i, j) in garnir_nodes(lam):
+                nu = sort_to_partition(garnir_composition(lam, i, j))
+                r = first_difference(nu, lam)
+                c = sum(1 for part in lam if part > lam[i])
+                total += 1
+                nu_r = nu[r] if r is not None and r < len(nu) else 0
+                lam_r = lam[r] if r is not None and r < len(lam) else 0
+                if r == c and nu_r > lam_r and lam_r == lam[i]:
+                    ok += 1
+                else:
+                    bad.append((n, lam, i, j, nu, r, c))
+    return total, ok, bad
+
+
 def main():
     N_MAX = 11
     total = 0
@@ -175,13 +231,24 @@ def main():
         for c in lex_fail[:10]:
             print("   ", c)
 
+    w_total, w_ok, w_bad = check_witness_index(12)
+    print()
+    print(f"Witness-index claim (n = 2..12, {w_total} nodes):")
+    print(f"  first difference is at c = #{{r : lambda_r > lambda_i}}, nu larger there:"
+          f" {w_ok}   fails {len(w_bad)}")
+    if w_bad:
+        print("  first 8 failures (n, lambda, i, j, nu, r, c):")
+        for b in w_bad[:8]:
+            print("   ", b)
+
     # The assertion of this probe is the LEX statement.  The dominance figure is
     # reported, not asserted -- it is expected to fail, and that is the finding.
-    ok = (not lex_fail) and (not malformed) and total > 0
+    ok = (not lex_fail) and (not malformed) and (not w_bad) and total > 0
     print()
     if ok:
-        print("VERDICT: Mathas' lex-strictness HOLDS on the whole sample; "
-              "dominance does NOT and must not be used for this induction.")
+        print("VERDICT: Mathas' lex-strictness HOLDS on the whole sample, with the"
+              " witness at\n         c = #{r : lambda_r > lambda_i}; dominance does"
+              " NOT and must not be used\n         for this induction.")
     else:
         print("VERDICT: the lex statement FAILED -- see cases above.")
     return 0 if ok else 1
