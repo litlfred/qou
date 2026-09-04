@@ -93,6 +93,15 @@ theorem bilin_toMatrix_det_reindex {ι' : Type*} [Fintype ι'] [DecidableEq ι']
     simp [BilinForm.toMatrix_apply, Module.Basis.reindex_apply]
   rw [h, Matrix.det_submatrix_equiv_self]
 
+/-- **A change-of-basis determinant is a unit.**
+
+`b.toMatrix c` and `c.toMatrix b` are mutually inverse, so their determinants multiply to `1`.
+This is what upgrades the square in `bilin_toMatrix_det_basis_change` from "some factor" to "a
+factor that cannot vanish" — without it the transport says nothing about non-vanishing. -/
+theorem isUnit_det_basis_toMatrix (b c : Module.Basis ι K M) : IsUnit (b.toMatrix c).det :=
+  isUnit_of_mul_eq_one _ _ (by
+    rw [← Matrix.det_mul, Module.Basis.toMatrix_mul_toMatrix_flip, Matrix.det_one])
+
 end BasisChange
 
 section AlgEquivTransport
