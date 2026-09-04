@@ -50,6 +50,8 @@ a transposition. `orbitCount σ = card α − orbitDefect σ` recovers the count
 * `sign_eq_neg_one_pow_orbitDefect` — the defect's **parity** is the sign, so
   multiplying by any transposition flips it: `orbitDefect_swap_mul_odd`. Half of the
   ±1 step comes free this way.
+* `sameCycle_swap_mul_iff` — a transposition exactly toggles whether two points share
+  a cycle (the (R)/(R2) pair below).
 
 ## 🛑 What is NOT proved here, stated plainly
 
@@ -57,13 +59,17 @@ The **magnitude** of the transposition step — that multiplying by a transposit
 changes the orbit count by *exactly* one. Its parity is proved
 (`orbitDefect_swap_mul_odd`); the bound `|Δ| ≤ 1` is the gap.
 
-**It reduced to two pieces, and one of them is now proved.**
+**The DYNAMICS are now fully proved; only the COUNTING is left.**
 
 * **(R)** `sameCycle_swap_mul_of_not_sameCycle` — **PROVED.** Joining two different
-  cycles with a transposition puts the two points in one cycle of the product. The
-  walk argument is at the statement; it turned out to need no `a ≠ b` at all.
-* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split, within one cycle. **The
-  one remaining `sorry`.**
+  cycles with a transposition puts the two points in one cycle of the product. It
+  turned out to need no `a ≠ b` at all.
+* **(R2)** `not_sameCycle_swap_mul_of_sameCycle` — **PROVED.** The converse: within
+  one cycle, the transposition separates them.
+* Hence `sameCycle_swap_mul_iff`: a transposition **exactly toggles** whether `a` and
+  `b` share a cycle. Both proofs are the same walk along `σ`'s orbit of `a`.
+* **(S)** `orbitDefect_swap_mul_of_sameCycle` — the split's effect on the *count*.
+  **The one remaining `sorry`.**
 
 `orbitDefect_swap_mul_of_not_sameCycle` (the merge) is **proved from (S) and (R)**,
 using that `swap a b` is an involution.
@@ -81,8 +87,9 @@ on the two arcs*. Mathlib proves only the **adjacent** case, `Equiv.Perm.IsCycle
 and is what a next attempt should build.
 
 So this file does **not** yet discharge the `ClassicalTraceFloor` hypotheses. It
-closes the **free** half outright, proves (R) and the merge, and reduces the **atom**
-half from "a tabulated count at every `A`" to one single-cycle split statement. That
+closes the **free** half outright, proves the merge and the full transposition
+dynamics, and reduces the **atom** half from "a tabulated count at every `A`" to one
+single-cycle counting statement. That
 is the honest state; do not cite it as closing the cycle-count gap.
 
 -- Ref: [manuscript] bean qou-zrx2 follow-up (5); the transposition/cycle-count
@@ -312,6 +319,76 @@ theorem sameCycle_swap_mul_of_not_sameCycle {σ : Perm α} {a b : α}
   have hma' : (σ ^ (n + 1)) a = a := by rw [← hn]; exact hma
   rw [hn, pow_succ', Perm.mul_apply, key n (by omega), Perm.mul_apply, ← hcomp,
     hma', swap_apply_left]
+
+/-- **(R2)** The converse of (R), and the *separation* half of the split: if `a` and
+`b` already share a cycle, the transposition puts them in **different** cycles of the
+product. **Proved**, by the same walk.
+
+Take `k` least positive with `σ^k a ∈ {a, b}`. If `σ^k a = a` then `b` never appears
+on `a`'s orbit, contradicting the hypothesis; so `σ^k a = b`, and then `τ = swap a b * σ`
+follows `σ` up to step `k−1` and closes back to `a` at step `k` — `τ^k a = a`, with the
+whole `τ`-orbit of `a` sitting inside `{σ^j a : j < k}`, which avoids `b`.
+
+This is the arc-separation fact any counting proof of (S) needs. -/
+theorem not_sameCycle_swap_mul_of_sameCycle {σ : Perm α} {a b : α} (h : a ≠ b)
+    (hc : σ.SameCycle a b) :
+    ¬ (swap a b * σ).SameCycle a b := by
+  classical
+  have hex : ∃ k, 0 < k ∧ ((σ ^ k) a = a ∨ (σ ^ k) a = b) := by
+    refine ⟨orderOf σ, orderOf_pos σ, Or.inl ?_⟩
+    rw [pow_orderOf_eq_one]; rfl
+  obtain ⟨hkpos, hk⟩ := Nat.find_spec hex
+  set k := Nat.find hex with hkdef
+  have hmin : ∀ j, 0 < j → j < k → (σ ^ j) a ≠ a ∧ (σ ^ j) a ≠ b := by
+    intro j hj hjk
+    have hnf := Nat.find_min hex hjk
+    push_neg at hnf
+    exact hnf hj
+  -- on `a`'s orbit, only step `k` can reach `a` or `b`
+  have horb : ∀ j, j < k → (σ ^ j) a ≠ b := by
+    intro j hjk
+    rcases Nat.eq_zero_or_pos j with rfl | hj
+    · simpa using h
+    · exact (hmin j hj hjk).2
+  rcases hk with hka | hkb
+  · -- `a` returns before meeting `b`, so they never shared a cycle: contradiction
+    exfalso
+    obtain ⟨i, _, hi⟩ := hc.exists_pow_eq'
+    exact horb (i % k) (Nat.mod_lt _ hkpos) ((pow_eq_pow_mod hka i).symm.trans hi)
+  · -- `τ` follows `σ` to step `k−1`, then closes back to `a`
+    have key : ∀ j, j < k → ((swap a b * σ) ^ j) a = (σ ^ j) a := by
+      intro j
+      induction j with
+      | zero => intro _; simp
+      | succ n ih =>
+          intro hn
+          have hn' : n < k := Nat.lt_of_succ_lt hn
+          have hcomp : (σ ^ (n + 1)) a = σ ((σ ^ n) a) := by
+            rw [pow_succ', Perm.mul_apply]
+          rw [pow_succ', Perm.mul_apply, ih hn', Perm.mul_apply, ← hcomp]
+          exact swap_apply_of_ne_of_ne (hmin _ (Nat.succ_pos n) hn).1
+            (hmin _ (Nat.succ_pos n) hn).2
+    have hclose : ((swap a b * σ) ^ k) a = a := by
+      obtain ⟨n, hn⟩ : ∃ n, k = n + 1 := ⟨k - 1, by omega⟩
+      have hcomp : (σ ^ (n + 1)) a = σ ((σ ^ n) a) := by
+        rw [pow_succ', Perm.mul_apply]
+      have hkb' : (σ ^ (n + 1)) a = b := by rw [← hn]; exact hkb
+      rw [hn, pow_succ', Perm.mul_apply, key n (by omega), Perm.mul_apply, ← hcomp,
+        hkb', swap_apply_right]
+    intro hsc
+    obtain ⟨j, _, hj⟩ := hsc.exists_pow_eq'
+    have : ((swap a b * σ) ^ (j % k)) a = b :=
+      (pow_eq_pow_mod hclose j).symm.trans hj
+    rw [key _ (Nat.mod_lt _ hkpos)] at this
+    exact horb (j % k) (Nat.mod_lt _ hkpos) this
+
+/-- **(R) and (R2) together: a transposition exactly toggles whether the two points
+share a cycle.** The complete dynamical picture at `{a, b}`, and all the dynamical
+input a counting proof of (S) needs — what remains there is the counting itself. -/
+theorem sameCycle_swap_mul_iff {σ : Perm α} {a b : α} (h : a ≠ b) :
+    (swap a b * σ).SameCycle a b ↔ ¬ σ.SameCycle a b :=
+  ⟨fun hτ hσ => not_sameCycle_swap_mul_of_sameCycle h hσ hτ,
+   sameCycle_swap_mul_of_not_sameCycle⟩
 
 /-- **(S)** Within one cycle, the transposition splits it and the defect drops.
 **The one remaining gap.**
