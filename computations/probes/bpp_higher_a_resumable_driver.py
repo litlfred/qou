@@ -68,6 +68,7 @@ value it emits is checked against the committed `B_pp_strong_MeV` on every
 invocation, so a resumed run cannot silently drift.
 """
 
+import hashlib
 import importlib.util
 import json
 import sys
@@ -160,9 +161,37 @@ def chi_for(q, crossings, cols_by_gen, dim, d_weighted):
 # change the numbers a resumed run produces relative to an uninterrupted one.
 # `--verify-cache` asserts the round-trip is bit-exact.
 #
-# Keyed by n and by the q string, so a re-pin cannot serve a stale cache.
+# Keyed by n, by the q string, AND by the source of the code that BUILDS the
+# matrices, so neither a re-pin nor an edit to the builder can serve a stale
+# cache.  The third component is not decoration: without it the cache is keyed
+# on its inputs and not on its producer, which is exactly the `scriptHash`
+# staleness class -- an edit to `colour_weighting_across_mixed_nuclei_probe`
+# would change every matrix while `(n, q)` stayed put, and a resumed run would
+# silently mix old and new arithmetic in one witness.  Measured occasion: this
+# branch rebased across 55 commits of main while four caches sat on disk.
+#
+# SCOPE, stated rather than implied: this hashes the two files' own text.  It
+# does NOT see IMPORT-CONE drift -- a change inside a module `_cw` calls is
+# invisible here, the same blind spot `witness_import_cone_staleness_audit.py`
+# exists for.  Delete `computations/.sparse-cache/` by hand if you change
+# something deeper in that cone.
 
 SPARSE_CACHE_DIR = _COMP / ".sparse-cache"
+
+
+def _builder_fingerprint() -> str:
+    """12 hex chars over the source of the code that builds the matrices."""
+    h = hashlib.sha256()
+    for f in (_HERE / "colour_weighting_across_mixed_nuclei_probe.py",
+              Path(__file__)):
+        try:
+            h.update(f.read_bytes())
+        except OSError:                     # unreadable -> distinct digest,
+            h.update(b"<unreadable>")       # so we rebuild rather than trust
+    return h.hexdigest()[:12]
+
+
+_BUILDER_FP = _builder_fingerprint()
 
 
 def _mpf_to_j(x):
@@ -176,7 +205,7 @@ def _j_to_mpf(t):
 
 def _cache_path(n, q):
     tag = mp.nstr(q, 30).replace(".", "_").replace("-", "m")
-    return SPARSE_CACHE_DIR / f"n{n}-q{tag}.json"
+    return SPARSE_CACHE_DIR / f"n{n}-q{tag}-b{_BUILDER_FP}.json"
 
 
 def load_or_build_sparse_cache(q, yt, n, *, use_disk=True):
@@ -201,7 +230,8 @@ def load_or_build_sparse_cache(q, yt, n, *, use_disk=True):
     if use_disk:
         try:
             SPARSE_CACHE_DIR.mkdir(exist_ok=True)
-            raw = {"n": n, "q": mp.nstr(q, 50), "partitions": {}}
+            raw = {"n": n, "q": mp.nstr(q, 50),
+                   "builder_fingerprint": _BUILDER_FP, "partitions": {}}
             for lam, (cols_by_gen, dim) in cache.items():
                 raw["partitions"][json.dumps(list(lam))] = {
                     "dim": dim,
@@ -213,6 +243,14 @@ def load_or_build_sparse_cache(q, yt, n, *, use_disk=True):
             tmp = path.with_suffix(".json.tmp")
             tmp.write_text(json.dumps(raw))
             tmp.replace(path)
+            # Prune the same (n, q) under a SUPERSEDED fingerprint. Without
+            # this the directory grows by one file per edit to the builder,
+            # and these are large -- the n=15 cache alone is ~10 MB.
+            # The glob deliberately has no "-b" in it, so it also reaps the
+            # pre-fingerprint `n<N>-q<tag>.json` files this key supersedes.
+            for stale in SPARSE_CACHE_DIR.glob(path.name.split("-b")[0] + "*.json"):
+                if stale != path:
+                    stale.unlink(missing_ok=True)
         except OSError as exc:
             print(f"  [cache] could not persist ({exc}) — continuing")
     return cache, "built"
