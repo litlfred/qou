@@ -1,6 +1,5 @@
-import Mathlib.Analysis.MeanInequalities
-import Mathlib.Analysis.SpecialFunctions.Pow.NNRpow
-import Mathlib.Algebra.Order.Chebyshev
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic
 
 /-!
@@ -53,9 +52,12 @@ variable {ι : Type*} [Fintype ι]
 control of `Σ|eig|` itself. -/
 theorem sum_le_sqrt_card_mul_sum_sq (a : ι → ℝ) (ha : ∀ i, 0 ≤ a i) :
     ∑ i, a i ≤ Real.sqrt (Fintype.card ι * ∑ i, (a i) ^ 2) := by
+  -- Cauchy–Schwarz against the all-ones vector. (`sq_sum_le_card_mul_sum_sq` states exactly this,
+  -- but lives in `Mathlib.Algebra.Order.Chebyshev`, whose olean is absent from the restored set;
+  -- `sum_mul_sq_le_sq_mul_sq` is the general form and its module IS present.)
   have hcs : (∑ i, a i) ^ 2 ≤ Fintype.card ι * ∑ i, (a i) ^ 2 := by
-    simpa [Finset.card_univ] using
-      (Finset.sq_sum_le_card_mul_sum_sq (s := (univ : Finset ι)) (f := a))
+    have h := sum_mul_sq_le_sq_mul_sq (univ : Finset ι) (fun _ => (1 : ℝ)) a
+    simpa [Finset.card_univ, mul_comm] using h
   have hnn : 0 ≤ ∑ i, a i := Finset.sum_nonneg fun i _ => ha i
   calc ∑ i, a i = Real.sqrt ((∑ i, a i) ^ 2) := (Real.sqrt_sq hnn).symm
     _ ≤ Real.sqrt (Fintype.card ι * ∑ i, (a i) ^ 2) := Real.sqrt_le_sqrt hcs
