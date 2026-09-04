@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:36.527983+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T16:25:46.168341+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "no_convention_free_single_c",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "single c rescales by lambda/mu under independent Gram normalizations; only degree-0 ratios invariant"
     },
     {
       "name": "intrinsic_scalars_are_q_deformation",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "spectral condition -> 0, geometric-mean -> 1 as q -> 1"
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 22,
   "computation": "alpha-em-b2-invariant-c",
   "scriptFile": "alpha_em_b2_invariant_c_probe.py",
-  "scriptHash": "882e7ad678a3",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "9c6a10b92afd",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -77,5 +77,7 @@
       "ratio_to_inv8pi": "24.9997244717"
     },
     "verdict": "ROUTE C REFUTES ITS OWN PREMISE (honest, useful): |c| CANNOT be made a convention-free single scalar. Because the Markov and Hodge Grams are not proportional (#4216), the invariant content of the pair is the generalized-eigenvalue SPECTRUM rᵢ = ['1.0', '0.996501', '0.992962', '0.989398'] up to overall scale — a dim−1 = 3-parameter object, not one number: under G_M→λG_M, G_H→μG_H a single c rescales by λ/μ (verified), only degree-0 ratios rᵢ/r₀ are invariant. The genuinely intrinsic scalars are the q-deformation SHAPE — spectral condition 0.010716 (≈ 1.47·α_EM, scope-(a), NO identification), coeff of variation 0.0039729 — all → 0 as q→1 (certified deformation). The canonical geometric-mean representative c = 0.99470743 is basis-invariant but scale-covariant, so its magnitude stays τ-gated. CONSEQUENCE for the workplan: convention does not cancel; a well-defined |c| needs the τ=P categorical identification to fix the overall scale, OR the physical c must be redefined as one of the intrinsic scale-invariant scalars (an owner modeling choice, not derivable here). Nothing wired; 1/(8π) phase-4; scope-(a)."
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

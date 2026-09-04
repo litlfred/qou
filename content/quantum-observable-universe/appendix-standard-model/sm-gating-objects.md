@@ -57,16 +57,25 @@ nucleon masses. The mirror front needs an inter-nucleon pair term; this front
 needs an intra-nucleon self-energy. They are different objects that happened to
 share a description.
 
-## A third flavour grade
+## The content-to-braid map
 
 **Gates** the charmed-hadron spectrum, the strange and charm masses, the
 $D$-meson mass, hypercharge on strange states, and thereby the normalisation of
 $\sin^2\theta_W$.
 
-This one is partly derived. The winding together with weak isospin separates all
-six quarks, and that is machine-checked. What remains is a residual collision
-between two neutral mesons of identical graded content, and it is proved that
-the mass is not a function of the grading alone — so the missing grade is a
-genuine third one. It is the flavour Cartan, distinct from the colour
-$\mathrm{SU}(3)$ excluded elsewhere, which reduces this object into the first
-but against a far more concrete target.
+No third flavour grade is missing. The winding together with weak isospin
+separates all six quarks, and that is machine-checked. The residual collision
+between the two neutral mesons $\bar D^0$ and $K^0$ is an artefact of reading
+the graded content as a multiset: as ordered pairs, $(-5, +3)$ and $(+3, -5)$
+are distinct, and the ordering is the quark–antiquark strand orientation — the
+same signed-writhe datum that supplies weak isospin. The map from mesons to
+ordered content is injective (`orderedContent_injective`, decided in the
+formalisation), and the earlier statement that the mass cannot be a function of
+the grading quantifies only over symmetric functions of the *unordered* content;
+it does not constrain a function of the ordered content. So this object does
+not reduce into the first. What remains is a canonical, parameter-free map from
+the ordered content to a hyperbolic braid word at $H_3(q)$ — a geometric
+construction needing neither flavour nor colour $\mathrm{SU}(3)$. Injectivity
+gives a factorisation of the mass through the content, never a derivation of
+the factorising map; a fit through five injectively labelled points is the
+per-state fit the charmonium attack already recorded as worthless.

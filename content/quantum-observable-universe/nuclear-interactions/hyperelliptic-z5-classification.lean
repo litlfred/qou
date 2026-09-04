@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Ring.Parity
+import Mathlib.Tactic.IntervalCases
 
 
 /-!

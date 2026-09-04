@@ -64,13 +64,26 @@ def exactly_representable(v: float) -> bool:
 
 
 def audit_file(p: Path) -> list[dict]:
+    # NEVER return [] on input we could not process. "No findings" and "no
+    # information" are different answers, and returning the first for the
+    # second converts breakage into silence: bean qou-brkp records this gate
+    # family reporting clean on two files a remediation had just made
+    # unparseable, which is why they went unnoticed for a month.
+    rel = p.relative_to(ROOT).as_posix()
     try:
         src = p.read_text(encoding="utf-8")
+    except Exception as e:
+        return [{"file": rel, "line": 0, "class": "unreadable",
+                 "arg": None, "source": f"{type(e).__name__}: {e}", "fix": None}]
+    try:
         tree = ast.parse(src, filename=str(p))
-    except Exception:
-        return []
+    except SyntaxError as e:
+        return [{"file": rel, "line": e.lineno or 0, "class": "unparseable",
+                 "arg": None, "source": f"SyntaxError: {e.msg}", "fix": None}]
+    except Exception as e:
+        return [{"file": rel, "line": 0, "class": "unparseable",
+                 "arg": None, "source": f"{type(e).__name__}: {e}", "fix": None}]
     lines = src.splitlines()
-    rel = p.relative_to(ROOT).as_posix()
     out: list[dict] = []
 
     for n in ast.walk(tree):
@@ -137,6 +150,8 @@ def main() -> int:
     for r in rows:
         by.setdefault(r["class"], []).append(r)
     defects = by.get("DEFECT", [])
+    # A file the gate could not read is a HOLE IN THE GATE, not a pass.
+    blind = by.get("unparseable", []) + by.get("unreadable", [])
 
     print("=" * 74)
     print("mpf(<float>) SOURCE AUDIT — fake precision at the point of authoring")
@@ -144,8 +159,16 @@ def main() -> int:
     for cls, note in (("DEFECT", "literal not exactly a binary64 — precision already lost"),
                       ("benign", "exactly representable — nothing lost"),
                       ("advisory-cast", "explicit float() downcast — review, not a failure"),
-                      ("marked-cast", f"downcast marked `{MARKER}`")):
+                      ("marked-cast", f"downcast marked `{MARKER}`"),
+                      ("unparseable", "FILE DOES NOT PARSE — this gate is blind to it"),
+                      ("unreadable", "FILE COULD NOT BE READ — this gate is blind to it")):
         print(f"  {cls:<15} {len(by.get(cls, [])):>4}   {note}")
+
+    if blind:
+        print("\n  BLIND SPOTS — the gate could not process these files, so their")
+        print("  mpf(<float>) status is UNKNOWN, not clean (bean qou-brkp):")
+        for r in blind:
+            print(f"    {r['file']}:{r['line']}  {r['source']}")
 
     if defects:
         print("\n  DEFECTS — pass the value as a STRING so mpmath parses it at full")
@@ -186,7 +209,7 @@ def main() -> int:
         _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nWrote {out.name}")
-    return 1 if (args.strict and defects) else 0
+    return 1 if (args.strict and (defects or blind)) else 0
 
 
 if __name__ == "__main__":

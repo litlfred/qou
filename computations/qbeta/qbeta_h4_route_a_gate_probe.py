@@ -55,6 +55,19 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A -- retired 2026-08-22 for the CODATA-2022 derivation.
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30 (proton is the default;
+# neither the E1 explicit-comparison nor the E2 ideal-CAL exception applies).
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
 sys.path.insert(0, str(ROOT))
@@ -167,8 +180,8 @@ def ladder_cks(dnet, kc=KC, ns=NS, label=""):
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)
     # sign at the substrate anchor
-    q0n = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-    sgn = int(mp.sign(mp.mpf(str(sp.N(dnet.subs(q, sp.Rational(11099785955573347, 10000000000000000)), 30)))))
+    q0n = mp.mpf(Q_50_DIGIT_STR)
+    sgn = int(mp.sign(mp.mpf(str(sp.N(dnet.subs(q, sp.Rational(Q_50_DIGIT_STR)), 30)))))
     Qb_over_me = sgn * dnet_reg / q
     Rq = Qb_over_me / (QA_over_me * sp.cos(alpha_eff))
     R1 = sp.simplify(Rq.subs(q, 1))
@@ -219,7 +232,7 @@ def main() -> int:
     dnet3 = sp.simplify(net(elem_n3) - net(elem_p3))
 
     d_wit = json.loads((ROOT / "free-neutron-decay.witness.json").read_text())
-    q0 = mp.mpf(str(d_wit.get("q0", "1.1099785955573347198997632204832250266562084087802")))
+    q0 = mp.mpf(str(d_wit.get("q0", Q_50_DIGIT_STR)))
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dn_mine = mp.mpf(str(sp.N(dnet3.subs(q, sp.nsimplify(str(q0))), 30)))
     ok_wit = abs(dn_mine - dn_wit) < mp.mpf("1e-6")

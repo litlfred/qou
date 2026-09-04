@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
@@ -6,16 +7,46 @@ import Mathlib.Tactic
 # Unified knot mass formula
 
 The categorical mass of a vortex ρ with braid T_w ∈ H_n(q) is
-the sum of three pieces:
+(`knot-mass-formula-unified.md`):
 
-  1. Descended: |tr_M(T_w)|
-  2. Brane tower: Σ_i Φ_q(|V̂_i|) + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)
-  3. Frobenius: m_e · tr_M(C_dim_q) = m_e · Σ_{λ⊢n} 1/dim_q(λ)
+  m(ρ) = |tr_M(T_w)|
+         − [ Σ_{i=0}^{n−2} Li₂^q(−|V̂_i|) + z² Σ_{0≤i<j≤n−2} Li₂^q(−|V̂_i V̂_j|) ]
+         + m_e · tr_M(C_{dim_q}^{H_n(q)}),      tr_M(C_{dim_q}) = Σ_{λ⊢n} 1/dim_q(λ)
 
-Each piece is separately derived:
-  - piece 1: prop:categorical-mass-markov
-  - piece 2: prop:mass-endomorphism-tower
-  - piece 3: thm:frobenius-codim-universal (new)
+  1. Descended:  |tr_M(T_w)|                  — prop:categorical-mass-markov
+  2. Brane tower (subtracted): the two Li₂^q sums — prop:mass-endomorphism-tower
+  3. Frobenius co-Casimir: m_e · Σ_λ 1/dim_q(λ) — thm:frobenius-codim-universal
+
+## What changed on 2026-09-03 (bean `qou-08zf`; audit
+`docs/audits/2026-08-27-unified-knot-mass-class-is-unsatisfiable.md`)
+
+* The class fields `descended = |descendedMarkov q braid|` and
+  `tower = braneTower q braid` pointed at stubs that were **identically
+  zero**, so every instance had two of its three terms forced to `0`, and
+  `trivial_vortex_vacuum_mass` (which assumes `descended = 1`) had
+  contradictory hypotheses.  The stubs are gone; the class now carries the
+  Markov-trace value, the resolved-defect magnitudes `|V̂_i|`, the coupling
+  `z` and the symmetric `q`-dilogarithm as **data**, and the tower field
+  states the `.md`'s sum.
+* The sign of the brane tower matched the `.md` (subtracted), not the
+  previous Lean (added) — a `proof-statement-integrity` defect, fixed.
+* `electronMass : ℝ := 0.510998` (a CODATA literal inside a class field)
+  is replaced by the scale parameter `mE` — the mass is an `m_e`-scaled
+  realisation of the dimensionless ratio (AGENTS.md, absolute mass excised),
+  and formal statements carry no empirical input.
+* `frobeniusCoCasimirTrace` was a `match` whose arms held typed-in values
+  read back by `rfl` ("an axiom relocated, not discharged").  It is now the
+  **partition sum** `Σ_λ 1/dim_q(λ)` over the explicit `q`-hook dimensions
+  (`qHookDims`, labelled by partition), and the closed forms are *proved*
+  by evaluating that sum.  For `n ≥ 6` the corpus has no formalised closed
+  form; the class carries the trace as data constrained to the proved sum
+  only for `n ≤ 5` — an honest open field, not a fabricated value
+  (previously `(n : ℝ)` under a docstring that said `0`).
+* The self-certifying `s3_bridge_audit_status : String` is removed.
+
+Tower status (owner ruling 2026-09-03): MIXED — the Frobenius piece is a
+genuine sum over the full partition lattice at fixed `n ≤ 5`; the tower over
+`n` is not taken.
 
 Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `thm:knot-mass-formula-unified`
@@ -23,246 +54,180 @@ LaTeX label: `thm:knot-mass-formula-unified`
 
 namespace QOU.BraidKnot
 
-/-- Pieces of the unified mass formula.  Concrete model: each
-    component returns 0; the genuine constructions live downstream
-    in dedicated files. -/
-def descendedMarkov (q : ℝ) (_braid : Unit) : ℝ := 0 * q
-def braneTower (q : ℝ) (_braid : Unit) : ℝ := 0 * q
-def electronMass : ℝ := 0.510998
+/-- **The `q`-hook dimensions `dim_q(λ)`, `λ ⊢ n`, for `n ∈ {2,3,4,5}`**, as
+    a list in the order of `frobenius-codim-universal.lean`'s
+    `heckeH{n}DimQ` (partitions in reverse-lexicographic order; conjugate
+    partitions share a dimension).  These are the *inputs* of the partition
+    sum, computed there from the `q`-hook-length formula:
 
-/-- **Fallback for n ≥ 6.**  Parks the genuine q-Wedderburn
-    obstruction: for `n ≥ 6` the partition sum `Σ_{λ⊢n} 1/dim_q(λ)`
-    has no Lean closed form yet (the Hecke / Wedderburn-Bratteli
-    recursion route exists structurally but needs constructive
-    Markov-trace existence on `H_n(q)`, currently `sorry`-blocked
-    in `wedderburn-bratteli-recursion.lean`).  Cases n ∈ {2,3,4,5}
-    are closed-form via the partial `def` below.  Concrete model:
-    returns 0 for every n ≥ 6. -/
-def frobeniusCoCasimirTraceFallback (_q : ℝ) (n : ℕ) : ℝ := (n : ℝ)
+      n = 2: (2), (1,1)                                  → 1, 1
+      n = 3: (3), (2,1), (1³)                            → 1, [2]_q, 1
+      n = 4: (4), (3,1), (2,2), (2,1,1), (1⁴)            → 1, [3]_q, [4]_q/[2]_q, [3]_q, 1
+      n = 5: (5), (4,1), (3,2), (3,1,1), (2,2,1), (2,1³), (1⁵)
+                                                         → 1, [4]_q, [5]_q, [4]_q[3]_q/[2]_q, [5]_q, [4]_q, 1
 
-/-- **Frobenius co-Casimir trace** `τ(C_dim_q)` on `H_n(q)`.
+    with `[4]_q/[2]_q = q² + q⁻²` and `[4]_q[3]_q/[2]_q = (q²+q⁻²)·[3]_q`.
+    Empty for every other `n`: the corpus has no formalised list there. -/
+noncomputable def qHookDims (q : ℝ) : ℕ → List ℝ
+  | 2 => [1, 1]
+  | 3 => [1, q + q⁻¹, 1]
+  | 4 => [1, q ^ 2 + 1 + (q ^ 2)⁻¹, q ^ 2 + (q ^ 2)⁻¹, q ^ 2 + 1 + (q ^ 2)⁻¹, 1]
+  | 5 => [1, q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹,
+          q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹,
+          (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹),
+          q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹,
+          q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹, 1]
+  | _ => []
 
-    For `n ∈ {2, 3, 4, 5}` this is the **closed-form partition sum**
-    `Σ_{λ⊢n} 1/dim_q(λ)`, evaluated explicitly:
+/-- **The Frobenius co-Casimir trace `τ(C_{dim_q}) = Σ_{λ⊢n} 1/dim_q(λ)`** on
+    `H_n(q)`, as the partition sum over `qHookDims` — meaningful for
+    `n ∈ {2,3,4,5}` (every consumer below guards on `n ≤ 5`). -/
+noncomputable def partitionInverseDimSum (q : ℝ) (n : ℕ) : ℝ :=
+  ((qHookDims q n).map fun d => 1 / d).sum
 
-      n = 2:  `2`
-      n = 3:  `2 + 1/(q + 1/q)`
-      n = 4:  `2 + 2/(q² + 1 + (q²)⁻¹) + 1/(q² + (q²)⁻¹)`
-      n = 5:  `2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q)`
+/-- `n = 2`: both partitions have `dim_q = 1`, so the sum is `2`. -/
+theorem partitionInverseDimSum_two (q : ℝ) : partitionInverseDimSum q 2 = 2 := by
+  simp [partitionInverseDimSum, qHookDims]
+  norm_num
 
-    These values match the explicit partition-sum theorems
-    `hecke_n2_frobenius_codim`, `hecke_n3_frobenius_codim`,
-    `hecke_n4_frobenius_codim`, `hecke_n5_frobenius_codim` in
-    `frobenius-codim-universal.lean`.
+/-- `n = 3`: `Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q = 2 + 1/(q + q⁻¹)`. -/
+theorem partitionInverseDimSum_three (q : ℝ) :
+    partitionInverseDimSum q 3 = 2 + 1 / (q + q⁻¹) := by
+  simp [partitionInverseDimSum, qHookDims]
+  ring
 
-    For `n ≥ 6` the value is `frobeniusCoCasimirTraceFallback q n`,
-    parking the q-Wedderburn obstruction.
+/-- `n = 4`: `2 + 2/[3]_q + 1/(q² + q⁻²)`. -/
+theorem partitionInverseDimSum_four (q : ℝ) :
+    partitionInverseDimSum q 4
+      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
+  simp [partitionInverseDimSum, qHookDims]
+  ring
 
-    **Closure of S3@n=2,3,4,5 (this PR).**  The previous formulation
-    declared `frobeniusCoCasimirTrace` as `noncomputable opaque`
-    and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to
-    bridge to the explicit values.  Giving the function a partial
-    `def` with `match n` discharges those axioms — they are now
-    **theorems** (closed by `rfl` plus the explicit partition sums).
-    The PR also extended the closure to n=5 (a fresh
-    `frobenius_codim_trace_n5 := rfl` theorem).  Only `n ≥ 6` retains
-    genuine axiomatic content (via `frobeniusCoCasimirTraceFallback`). -/
-noncomputable def frobeniusCoCasimirTrace (q : ℝ) (n : ℕ) : ℝ :=
-  match n with
-  | 2 => 2
-  | 3 => 2 + 1 / (q + 1 / q)
-  | 4 => 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹)
-  | 5 => 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
-           + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
-           + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹))
-  | _ => frobeniusCoCasimirTraceFallback q n
-
-/-- **Unified knot mass formula.**
-
-    m(ρ) = |tr_M(T_w)| + braneTower(T_w) + m_e · tr_M(C_dim_q^{H_n(q)})
-
-    For a trefoil (single nucleon, n = 3):
-      m(ρ) = |tr_M| + braneTower + m_e · (2 + 1/[2]_q)
-
-    For a general n-strand braid:
-      m(ρ) = |tr_M| + braneTower + m_e · Σ_{λ⊢n} 1/dim_q(λ)
-
-    Each piece is derived from a separate structural source;
-    the sum composes into the total categorical mass.
-
-    Ref: [manuscript] §Nuclear Binding and Beta Stability
-    prop:mass-endomorphism-tower, thm:frobenius-codim-universal. -/
-class UnifiedKnotMass where
-  q : ℝ
-  n : ℕ
-  braid : Unit
-  descended : ℝ
-  tower : ℝ
-  frobenius_correction : ℝ
-  total_mass : ℝ
-  unified_identity :
-    total_mass = descended + tower + frobenius_correction
-  descended_is_markov :
-    descended = |descendedMarkov q braid|
-  tower_is_phi_q_sum :
-    tower = braneTower q braid
-  frobenius_is_codim_trace :
-    frobenius_correction = electronMass * frobeniusCoCasimirTrace q n
-
-/-- **Theorem (formerly substrate axiom S3 at n = 3, now discharged).**
-    The Frobenius co-Casimir trace at `n = 3` equals the closed-form
-    partition sum `2 + 1/(q + 1/q) = 2 + 1/[2]_q`.
-
-    Closure: by giving `frobeniusCoCasimirTrace` a partial `def` with
-    `match n`, the n=3 case unfolds by `rfl` to the explicit value.
-    The previous statement was an axiom; it is now a theorem.
-
-    Ref: [manuscript] `prop:partition-sum-proton-residual`,
-    `frobenius-codim-universal.lean::hecke_n3_frobenius_codim`. -/
-theorem frobenius_codim_trace_n3 (q : ℝ) :
-    frobeniusCoCasimirTrace q 3 = 2 + 1 / (q + 1 / q) := rfl
-
-/-- **Theorem (formerly companion axiom S3 at n = 2, now discharged).**
-    The Frobenius co-Casimir trace at `n = 2` equals exactly `2`
-    (every partition of 2 has `dim_q = 1`, saturating the self-dual
-    lower bound).
-
-    Closure: same as S3@n=3 — the partial `def` of
-    `frobeniusCoCasimirTrace` unfolds by `rfl` at `n = 2`.
-
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base);
-    `frobenius-codim-universal.lean::hecke_n2_frobenius_codim`. -/
-theorem frobenius_codim_trace_n2 (q : ℝ) :
-    frobeniusCoCasimirTrace q 2 = 2 := rfl
-
-/-- **Theorem (formerly companion axiom S3 at n = 4, now discharged).**
-    The Frobenius co-Casimir trace at `n = 4` equals
-    `2 + 2/(q² + 1 + (q²)⁻¹) + 1/(q² + (q²)⁻¹)`, the explicit sum
-    over the five partitions of 4 with q-hook dimensions
-    `1, [3]_q, [4]_q/[2]_q = q²+q⁻², [3]_q, 1`.
-
-    Closure: same as S3@n=3, S3@n=2 — partial `def` unfolds by `rfl`.
-
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base);
-    `frobenius-codim-universal.lean::hecke_n4_frobenius_codim`. -/
-theorem frobenius_codim_trace_n4 (q : ℝ) :
-    frobeniusCoCasimirTrace q 4
-      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := rfl
-
-/-- **Theorem (S3 at n = 5, discharged).** The Frobenius co-Casimir
-    trace at `n = 5` equals the explicit partition sum
-    `2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q)`.
-
-    Closure: same as n=2,3,4 — partial `def` of
-    `frobeniusCoCasimirTrace` unfolds at `n = 5` literal.  Cross-
-    validated by `hecke_n5_frobenius_codim` in
-    `frobenius-codim-universal.lean` (Fin 7 enumeration over the
-    seven partitions of 5: (5), (4,1), (3,2), (3,1,1), (2,2,1),
-    (2,1,1,1), (1⁵)).
-
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=5 base);
-    `frobenius-codim-universal.lean::hecke_n5_frobenius_codim`. -/
-theorem frobenius_codim_trace_n5 (q : ℝ) :
-    frobeniusCoCasimirTrace q 5
+/-- `n = 5`: `2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q)`. -/
+theorem partitionInverseDimSum_five (q : ℝ) :
+    partitionInverseDimSum q 5
       = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
           + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
-          + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)) := rfl
+          + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)) := by
+  simp [partitionInverseDimSum, qHookDims]
+  ring
 
-/-- **Bridge audit: tractability frontier (post-closure).**
+/-- **The unified knot mass, as data plus the identities the `.md` states.**
 
-    The substrate axiom **S3 has been fully discharged at
-    `n ∈ {2, 3, 4, 5}`** by giving `frobeniusCoCasimirTrace` a partial
-    `def` with `match n`.  The previous bridge axioms
-    `frobenius_codim_trace_n2`, `frobenius_codim_trace_n3`,
-    `frobenius_codim_trace_n4` are now `rfl` theorems, and
-    `frobenius_codim_trace_n5` is a new `rfl` theorem added in this PR.
-    The explicit partition-sum theorems
-    `hecke_n2_frobenius_codim`, `hecke_n3_frobenius_codim`,
-    `hecke_n4_frobenius_codim`, `hecke_n5_frobenius_codim` in
-    `frobenius-codim-universal.lean` cross-validate the chosen def
-    values.
+    A `UnifiedKnotMass` packages, for one vortex with braid `T_w ∈ H_n(q)`:
+    the substrate `q`, the strand count `n`, the unit scale `mE` (`m_e`,
+    CAL-1 — a parameter, never a literal), the Markov-trace value
+    `markovTrace = tr_M(T_w)`, the Frobenius co-Casimir trace
+    `coCasimirTrace = tr_M(C_{dim_q})`, the brane-tower data (`vhat i =
+    |V̂_i^{full}|` for `i = 0, …, n−2`, the coupling `z`, and the symmetric
+    `q`-dilogarithm `li2q` — archimedean, hence a parameter), and the three
+    terms with the identities relating them:
 
-    The remaining axiomatic content for the partition trace is
-    `frobeniusCoCasimirTraceFallback q n` (for `n ≥ 6`).  Closing
-    that gap requires either:
+      total_mass = descended − tower + frobenius_correction
+      descended  = |tr_M(T_w)|
+      tower      = Σ_i Li₂^q(−|V̂_i|) + z² Σ_{i<j} Li₂^q(−|V̂_i V̂_j|)
+      frobenius_correction = m_e · tr_M(C_{dim_q})
+      tr_M(C_{dim_q}) = Σ_{λ⊢n} 1/dim_q(λ)   whenever n ≤ 5 (proved sums)
 
-      (a) a fresh Fin-enumeration of the `p(n)` partitions of n
-          (p(5) = 7, p(6) = 11, p(7) = 15, p(8) = 22, p(10) = 42 …),
-          each entry computed by the q-hook formula, OR
+    For `n ≥ 6` the co-Casimir trace is genuinely open in Lean (no
+    formalised partition sum); the field `coCasimir_small_n` constrains it
+    only where the corpus has proved it, instead of pinning a fabricated
+    value.  Nothing here forces any term to `0`.
 
-      (b) the **Hecke recursion route**: leverage
-          `wedderburn_bratteli_recursion_holds` plus the existing
-          Markov-trace recursion (`markov_trace_product_recursion`)
-          to express `Σ_{λ⊢n+1} 1/dim_q(λ)` in terms of
-          `Σ_{λ⊢n} 1/dim_q(λ)` via Bratteli content factors.  This
-          route does NOT need Mathlib partitions; only the
-          constructive Markov-trace existence (currently `sorry` in
-          `wedderburn-bratteli-recursion.lean`).
+    Ref: [manuscript] §Nuclear Binding and Beta Stability,
+    prop:mass-endomorphism-tower, thm:frobenius-codim-universal. -/
+structure UnifiedKnotMass where
+  /-- Substrate parameter. -/
+  q : ℝ
+  /-- Strand count of the braid `T_w ∈ H_n(q)`. -/
+  n : ℕ
+  /-- The unit scale `m_e` (CAL-1). -/
+  mE : ℝ
+  /-- The Markov trace `tr_M(T_w)` of the braid. -/
+  markovTrace : ℝ
+  /-- The Frobenius co-Casimir trace `tr_M(C_{dim_q})` on `H_n(q)`. -/
+  coCasimirTrace : ℝ
+  /-- Resolved-defect magnitudes `|V̂_i^{full}|`, `i = 0, …, n−2`. -/
+  vhat : Fin (n - 1) → ℝ
+  /-- The tower coupling `z`. -/
+  z : ℝ
+  /-- The symmetric `q`-dilogarithm `Li₂^q` (archimedean; a parameter). -/
+  li2q : ℝ → ℝ
+  /-- Descended term. -/
+  descended : ℝ
+  /-- Brane-tower term (subtracted). -/
+  tower : ℝ
+  /-- Frobenius co-Casimir correction. -/
+  frobenius_correction : ℝ
+  /-- The total categorical mass. -/
+  total_mass : ℝ
+  /-- `m(ρ) = descended − tower + frobenius`. -/
+  unified_identity : total_mass = descended - tower + frobenius_correction
+  /-- `descended = |tr_M(T_w)|`. -/
+  descended_is_markov : descended = |markovTrace|
+  /-- `tower = Σ_i Li₂^q(−|V̂_i|) + z² Σ_{i<j} Li₂^q(−|V̂_i V̂_j|)`. -/
+  tower_is_li2q_sum :
+    tower = (∑ i, li2q (-(vhat i)))
+      + z ^ 2 * ∑ i, ∑ j, if i < j then li2q (-(vhat i * vhat j)) else 0
+  /-- `frobenius_correction = m_e · tr_M(C_{dim_q})`. -/
+  frobenius_is_codim_trace : frobenius_correction = mE * coCasimirTrace
+  /-- For `n ≤ 5` the co-Casimir trace is the proved partition sum. -/
+  coCasimir_small_n : n ≤ 5 → coCasimirTrace = partitionInverseDimSum q n
 
-    The genuine **q-Wedderburn obstruction** therefore lives in:
-      (i)  proving the constructive Markov trace exists on
-           `H_n(q)` (Hoefsmit seminormal form), and
-      (ii) bundling the partition-sum recursion as a Lean
-           theorem (currently a `sorry`-blocked existence claim).
+/-- **Unified knot mass formula (`n ≤ 5`).**  For every `UnifiedKnotMass`
+    with at most five strands,
 
-    Both are downstream of the bona-fide axioms S1, S2 — they are
-    *open Lean work*, not *open mathematical conjecture*.  S3 is
-    no longer a global axiom; only `frobeniusCoCasimirTraceFallback`
-    remains as a per-`n≥5` opaque. -/
-def s3_bridge_audit_status : String :=
-  "n=2 PROVED (rfl); n=3 PROVED (rfl); n=4 PROVED (rfl); n=5 PROVED (rfl); n≥6 opaque fallback (mechanically extensible by Fin enumeration; or via Bratteli recursion route)"
+      m(ρ) = |tr_M(T_w)| − tower + m_e · Σ_{λ⊢n} 1/dim_q(λ),
 
-/-- Specialisation to single-nucleon (n = 3) trefoil.
-    The Frobenius piece equals m_e · (2 + 1/[2]_q).
+    derived by composing the four identities the structure carries. -/
+-- Ref: [manuscript] thm:knot-mass-formula-unified
+theorem knot_mass_unified_small (U : UnifiedKnotMass) (hn : U.n ≤ 5) :
+    U.total_mass = |U.markovTrace| - U.tower + U.mE * partitionInverseDimSum U.q U.n := by
+  rw [U.unified_identity, U.descended_is_markov, U.frobenius_is_codim_trace,
+    U.coCasimir_small_n hn]
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
-theorem single_nucleon_frobenius_correction
-    (U : UnifiedKnotMass) (_hn : U.n = 3) :
-    ∃ (two_q : ℝ), two_q = U.q + 1 / U.q ∧
-      frobeniusCoCasimirTrace U.q 3 = 2 + 1 / two_q := by
-  refine ⟨U.q + 1 / U.q, rfl, ?_⟩
-  exact frobenius_codim_trace_n3 U.q
+/-- **Unified knot mass formula at `n = 3`** (single nucleon, trefoil):
 
-/-- Specialisation to n = 2: the Frobenius piece is exactly `2`.
-    Two strands → two partitions, both with `dim_q = 1`, so the
-    sum saturates the self-dual lower bound.
+      m(ρ) = |tr_M(T_w)| − tower + m_e · (2 + 1/[2]_q),   [2]_q = q + q⁻¹.
 
-    The conclusion is stated in terms of `U.n` (not the literal
-    `2`) so the hypothesis `hn : U.n = 2` is genuinely used and
-    the lemma applies directly at call sites where one has a
-    `UnifiedKnotMass` with `U.n = 2`.
+    This is the `.md`'s boxed formula with the Frobenius piece evaluated;
+    `lean.ref` target of `thm:knot-mass-formula-unified`. -/
+-- Ref: [manuscript] thm:knot-mass-formula-unified, prop:partition-sum-proton-residual
+theorem knot_mass_unified (U : UnifiedKnotMass) (hn : U.n = 3) :
+    U.total_mass = |U.markovTrace| - U.tower + U.mE * (2 + 1 / (U.q + U.q⁻¹)) := by
+  rw [knot_mass_unified_small U (by omega), hn, partitionInverseDimSum_three]
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
-theorem two_strand_frobenius_correction
-    (U : UnifiedKnotMass) (hn : U.n = 2) :
-    frobeniusCoCasimirTrace U.q U.n = 2 := by
-  rw [hn]
-  exact frobenius_codim_trace_n2 U.q
+/-- Specialisation to `n = 2`: the Frobenius piece is exactly `2 m_e` (both
+    partitions have `dim_q = 1`, saturating the self-dual lower bound). -/
+-- Ref: [manuscript] prop:partition-sum-proton-residual
+theorem two_strand_frobenius_correction (U : UnifiedKnotMass) (hn : U.n = 2) :
+    U.frobenius_correction = U.mE * 2 := by
+  rw [U.frobenius_is_codim_trace, U.coCasimir_small_n (by omega), hn,
+    partitionInverseDimSum_two]
 
-/-- Specialisation to n = 4 (e.g. four-strand Borromean closure).
-    The Frobenius piece equals `2 + 2/[3]_q + 1/(q²+q⁻²)`.
-
-    As with the n = 2 specialisation, the conclusion is stated in
-    terms of `U.n` so the hypothesis `hn : U.n = 4` is genuinely
-    used and the lemma applies at call sites with `U.n = 4`. -/
-theorem four_strand_frobenius_correction
-    (U : UnifiedKnotMass) (hn : U.n = 4) :
-    frobeniusCoCasimirTrace U.q U.n
-      = 2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹) := by
-  rw [hn]
-  exact frobenius_codim_trace_n4 U.q
+/-- Specialisation to `n = 4` (e.g. the four-strand Borromean closure):
+    the Frobenius piece is `m_e · (2 + 2/[3]_q + 1/(q²+q⁻²))`. -/
+-- Ref: [manuscript] prop:partition-sum-proton-residual
+theorem four_strand_frobenius_correction (U : UnifiedKnotMass) (hn : U.n = 4) :
+    U.frobenius_correction
+      = U.mE * (2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹)) := by
+  rw [U.frobenius_is_codim_trace, U.coCasimir_small_n (by omega), hn,
+    partitionInverseDimSum_four]
 
 /-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
 
-    Hypotheses: the descended trace evaluates to 1 (the trace of
-    the identity element of H_n(q)), and the brane tower at the
-    identity contributes 0.  Then the total mass equals the
-    Frobenius co-Casimir correction `m_e · Σ_{λ⊢n} 1/dim_q(λ)` —
-    the "vacuum mass" of the unit object. -/
+    Hypotheses: the Markov trace of the braid is `1` (the trace of the
+    identity element of `H_n(q)`) and the brane tower at the identity
+    contributes `0`.  Then the total mass is `1 + m_e · tr_M(C_{dim_q})` —
+    the "vacuum mass" of the unit object.  The hypotheses are now
+    **satisfiable**: nothing in the structure forces the Markov trace to
+    vanish (previously the class pinned it to `0`, so this theorem's
+    antecedent was `False`). -/
 theorem trivial_vortex_vacuum_mass (U : UnifiedKnotMass)
-    (h_desc : U.descended = 1) (h_tower : U.tower = 0) :
-    U.total_mass = 1 + electronMass * frobeniusCoCasimirTrace U.q U.n := by
-  rw [U.unified_identity, h_desc, h_tower, U.frobenius_is_codim_trace]
-  ring
+    (h_desc : U.markovTrace = 1) (h_tower : U.tower = 0) :
+    U.total_mass = 1 + U.mE * U.coCasimirTrace := by
+  rw [U.unified_identity, U.descended_is_markov, h_desc, h_tower,
+    U.frobenius_is_codim_trace]
+  simp
 
 end QOU.BraidKnot

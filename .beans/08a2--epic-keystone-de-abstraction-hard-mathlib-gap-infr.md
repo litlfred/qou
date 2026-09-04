@@ -8,7 +8,7 @@ tags:
     - keystone-infra
     - lean
 created_at: 2026-06-25T17:06:53Z
-updated_at: 2026-09-03T04:04:20Z
+updated_at: 2026-09-04T07:40:02Z
 ---
 
 Make the still-abstracted keystone §3b classes (post #2791/#2797) genuinely faithful. Corpus-grep (2026-06-25) found QOU already has substantial Lean infra (IwahoriHecke/*, MathlibExt/Q*, BraidKnot/Cl3Zeta5OrbitSum, BringTrilog*, BraidLinkTypes, ζ5/Goncharov), so most work is WIRING keystones to existing infra; only geometric-Langlands / motivic-Galois / Jones-polynomial are genuinely research-grade. Cached Mathlib: YoungDiagram, PresentedGroup, RootsOfUnity+IsPrimitiveRoot, Complex.Circle, Nat.Choose.
@@ -37,3 +37,37 @@ Measured on `origin/main`, `content/quantum-observable-universe/lean/QOU/BraidKn
 **Status of the one remaining field.** Proved, unconditionally and without RSK, on `claude/skew-branching-bijection-2026-08-31` (PR #6363, pending merge): `SkewSYTBranchingBijection.lean` (the skew branching rule, via the erase-max bijection) → `SkewBranchingSum.lean` (the general sum, by one-step induction on `k`, collapsing with `upSum_eq` after reindexing the pairs through `rankExchange`) → `SkewBranchingTwoOne.lean` (`μ = (2,1)`, `f^{(2,1)} = 2`, and the instance). That makes **three consecutive** "Mathlib lacks X, therefore blocked" verdicts in this arc that turned out to be mis-diagnoses rather than infrastructure facts.
 
 So the Tier-2 fill this epic scopes is **complete pending that merge**, and `wsxl` (#3574) is unblocked — marked completed on the same branch.
+
+
+## 2026-09-04 — Tier-2 VERIFIED complete; PR #6363 merged
+
+The body above ends *"complete pending that merge"*. **The merge landed.** All three
+files are on `main`:
+
+- `QOU/Mathlib/SkewSYTBranchingBijection.lean`
+- `QOU/Mathlib/SkewBranchingSum.lean`
+- `QOU/Mathlib/SkewBranchingTwoOne.lean`
+
+and `SkewBranchingTwoOne` supplies the instance at
+`QOU.BraidKnot.YoungTableauStandard.rskIdentitiesContextInstance` (:77).
+
+**Verified by axiom audit, not by grep** — and specifically *not* by the test this
+bean itself warns against. Its own note says a `[RSKIdentitiesContext]`-conditional
+theorem prints clean axioms **even with no instance**, so a clean print on
+`branching_two_one` proves nothing on its own. The load-bearing fact is that the
+**instance exists and is itself clean**:
+
+| declaration | `#print axioms` |
+|---|---|
+| `rskIdentitiesContextInstance` | `[propext, Classical.choice, Quot.sound]` |
+| `branching_two_one_holds` | same |
+| `branching_two_one` | same |
+| `c8_superexp` | same |
+
+`lean`-direct **exit 0**; all three files grep-clean of real `sorry` terms (the
+only matches are backticked prose and the string "sorry-free").
+
+**So `c8_superexp` is now unconditional**, and the Tier-2 fill this epic scopes is
+**closed**. Left `in-progress` because the epic covers further tiers — the
+genuinely research-grade items (geometric-Langlands, motivic-Galois,
+Jones-polynomial) named in the header are untouched by this.

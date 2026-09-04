@@ -49,7 +49,21 @@ ROOT = HERE.parent.parent
 # recomputed, so this probe consumes the SAME numbers the escape Lean was built on.
 JET_WITNESS = HERE / "deltalambda-jet-filtration-magnitude.witness.json"
 jw = json.loads(JET_WITNESS.read_text())
-q0 = mp.mpf(str(jw["data"].get("q0", jw["parameters"].get("q0", "1.10997859555733471"))))
+# The q0 read used to end in a SILENT FALLBACK to the literal
+# "1.10997859555733471" -- the RETIRED self-certified muon pin A (superseded
+# 2026-08-22, fca08de7d2). The upstream witness has carried the PROTON pin
+# since the jet-filtration producer was migrated, so the fallback was dead --
+# but a dead cross-layer fallback is still a fallback: had the upstream ever
+# stopped recording q0, this probe would have silently computed at a retired
+# muon pin while its own witness stamped "proton". A pin that cannot be
+# established is an error, not a default (bean qou-9ugp).
+_q0_raw = jw.get("data", {}).get("q0") or jw.get("parameters", {}).get("q0")
+if not _q0_raw:
+    raise SystemExit(
+        f"q0 not found in {JET_WITNESS.name}: neither data.q0 nor parameters.q0. "
+        "Re-run deltalambda_jet_filtration_magnitude_probe.py first. Refusing to "
+        "fall back to a literal pin.")
+q0 = mp.mpf(str(_q0_raw))
 # strong targets (isospin/Coulomb-corrected; #3986/#3990) — comparison constants only
 RHO3 = mp.mpf("3.8128")     # ρ_strong(3)  (jet-filtration witness)
 RHO4 = mp.mpf("13.0316")    # ρ_strong(4)  (jet-filtration witness)

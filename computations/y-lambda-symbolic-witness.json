@@ -102,15 +102,16 @@
       ]
     }
   },
-  "computedAt": "2026-08-29T08:31:49.542348+00:00",
+  "computedAt": "2026-09-04T02:42:56.366936+00:00",
   "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
   "scriptFile": "computations/regenerate_y_lambda_orphans_conventionD.py",
-  "scriptHash": "7e7013de58aa",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "scriptHash": "b47842e6e2e1",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "commitSha": "e448ce97cc66edf6813ff7100c170e0f94e9b850",
   "engine": "python",
   "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "q0Anchor": "muon",
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+  "q0AnchorReason": "computes Wenzl weights y_lambda(q0) at the MUON pin, taken explicitly from pin_value_for_anchor('muon') rather than through the manifest (owner ruling 2026-08-24). Stamped explicitly because the auto-detector reads the import cone and this producer reaches q0 via q0_stamp, not q_parameter, so it was being stamped 'independent' on a value that is a function of the pin."
 }

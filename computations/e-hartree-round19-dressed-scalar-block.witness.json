@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:18.073445+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-09-04T04:12:23.232394+00:00",
+  "commitSha": "92ad0c0c9c60eb0dd4c9c8c8088182a0b2d27ceb",
   "assertions": [
     {
       "name": "q->1 limit of chi(sigma_1 sigma_3) table = S_4 character column (12)(34)",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 672,
+  "durationMs": 855,
   "computation": "e-hartree-round19-dressed-scalar-block",
   "scriptFile": "e_hartree_round19_dressed_scalar_block.py",
-  "scriptHash": "e893b0b3f77a",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "897a58d45bc6",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,8 +64,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/e_hartree_round19_dressed_scalar_block.py"
+    ],
+    "reproduce": "python3 -u computations/e_hartree_round19_dressed_scalar_block.py"
   },
   "description": "conj:e-hartree-categorical-derivation round 19: closes the two outstanding computational steps of rounds 17-18, exactly.  (R1) The bare molecular-braid characters are the classical Hecke-Coxeter hook-support values chi_{(a,1^{4-a})}(c) = (-1)^{4-a} q^{2a-5} — round-17's numerical table is exact for all q and the (2,2) zero is the hook-support theorem (Ram 1991 q-Murnaghan-Nakayama); the bare product chi_{(3,1)} chi_{(2,1,1)} = -1 exactly, so the R18 hoped-for delta_q-magnitude identification is refuted at the bare level (the bare characters carry channel SUPPORT only).  (R2) Dressing sigma_2 with eigenvalues (q^m, -q^{-m}) is affine (A_m = h[m-1]_q/[2]_q, B_m = (q^m+q^{-m})/[2]_q-normalised), so by character linearity the scalar block ACTIVATES: chi_{(2,2)}(dressed) = h[m-1]_q[4]_q/[2]_q^2 (nonzero for all m >= 2), and at the K-shell power m = 5 equals h([4]_q/[2]_q)^2 = h (dim_q V_{(2,2)})^2 — the Plancherel square of the scalar block's q-dimension, a q-dim-layer quantity surfacing in the Markov layer exactly at m-1 = n = 4.  Restriction values chi(sigma_1 sigma_3) derived by Littlewood-Richardson to H_2 x H_2 (q -> 1 recovers the S_4 (12)(34) column).  The alpha_EM^2 magnitude chain is NOT produced (h^1 x dim_q^2, not h^4/delta^2 delta^2): the conjecture remains OPEN with the gap localised to the archimedean trace-ratio on the activated scalar block.",
   "contentBlock": "conj:e-hartree-categorical-derivation",

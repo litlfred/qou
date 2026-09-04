@@ -24,7 +24,8 @@ Three reads:
        (log I(n) ~ (n/2)(log n − 1) + √n): the operator's spectral rate is
        SUB-exponential per level.
 
-  (S2) q_0 (muon-canonical). m_n(q_0) grows LINEARLY in n with slope → 2·log q_0
+  (S2) q_0 (proton pin, read by name from q_parameter.Q_50_DIGIT_STR).
+       m_n(q_0) grows LINEARLY in n with slope → 2·log q_0
        (the q^{2k} descent scalar contributes 2k·log q_0 at level k). Linear-in-n
        multiplier ⇒ log Z_n ~ quadratic in n ⇒ q-Gevrey (order ~ q_0^{n²/2}),
        strictly faster than every classical Gevrey-s. This reproduces the audit's
@@ -48,8 +49,10 @@ shadow of Borel radius → 0). Step-monotonicity is noisy at small n; the net tr
 robust.
 
 Scope: exact operator, high-precision numeric evaluation; EXPLORATORY; no fit; no
-wiring; binding S(n) only; q_0 is the committed muon-canonical value (computations
-layer). Audit: docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md §6.
+wiring; binding S(n) only; q_0 is `q_parameter.Q_50_DIGIT_STR`, which for this
+stem resolves to the PROTON pin (this line read 'the committed muon-canonical
+value (computations layer)' until 2026-09-04; bean qou-9ugp -- the witness has
+stamped q0Anchor=proton throughout). Audit: docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md §6.
 """
 from __future__ import annotations
 
@@ -146,7 +149,7 @@ def main() -> int:
     lnq0 = mp.log(q0)
     print("=== lever-1 W9: transfer-operator spectral reading — the q^{2k} block is "
           "the DOMINANT q-Gevrey driver ===")
-    print(f"    q_0 = {mp.nstr(q0, 20)} (muon-canonical), dps = {mp.mp.dps}\n")
+    print(f"    q_0 = {mp.nstr(q0, 20)} (proton pin), dps = {mp.mp.dps}\n")
 
     # (S1) q = 1 anchor: Z_n(1) == I(n), multiplier ~ (1/2) log n
     Z1 = numeric_partition_function(mp.mpf(1), NMAX)
@@ -244,8 +247,11 @@ def main() -> int:
         wb = WitnessBuilder("lever1-transfer-operator-spectral-qgevrey", engine="mpmath")
         wb.set_description(
             "Lever-1 W9 (z2bn follow-up): spectral reading of the descent-set transfer "
-            "operator T_k = A_k + q^(2k) B_k (W6) evaluated numerically at the muon-"
-            "canonical q_0. (S1) q=1: Z_n = I(n), per-level log-multiplier ~ (1/2)ln n "
+            "operator T_k = A_k + q^(2k) B_k (W6) evaluated numerically at the PROTON "
+            "q_0 (label corrected 2026-09-04 from 'muon-canonical', bean qou-9ugp: "
+            "q_0 here is q_parameter.Q_50_DIGIT_STR, which for this stem resolves to "
+            "the proton pin, and the witness has stamped q0Anchor=proton throughout). "
+            "(S1) q=1: Z_n = I(n), per-level log-multiplier ~ (1/2)ln n "
             "(Gevrey-1/2). (S2) q_0: multiplier LINEAR in n, tail slope matches "
             "2 ln q_0 within 2% (log Z_n ~ quadratic => q-Gevrey), reproducing the "
             "alien-calculus review's measured class change as a spectral statement. "

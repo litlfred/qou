@@ -67,6 +67,9 @@ sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
+sys.path.insert(0, str(_HERE.parent / 'substrate'))
+import mpmath as mp  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_stokes_sandwich",
@@ -76,12 +79,16 @@ _spec.loader.exec_module(_sw)
 
 ORD = 18
 
-# Canonical (muon) substrate modulus q₀ — from computations/*q-pinning* witnesses.
-Q0 = 1.10997859555733471989976322048322502665620840878015405145269
-HBAR_Q = 1.0 - 1.0 / Q0          # ℏ_q = 1 − q₀⁻¹  (cheat sheet)
+# q₀ read BY NAME (bean qou-9ugp, 2026-09-03) and carried as mpf. It was the
+# bare float64 literal 1.10997859555733471989…405145269 — the RETIRED
+# self-certified muon pin A, superseded 2026-08-22 — and the four derived
+# constants below were a float64 chain built on it. No comparison leg here,
+# so the 2026-08-30 owner ruling puts it on the proton default (11.54 ppb).
+Q0 = mp.mpf(Q_50_DIGIT_STR)
+HBAR_Q = mp.mpf(1) - mp.mpf(1) / Q0   # ℏ_q = 1 − q₀⁻¹  (cheat sheet)
 HBAR_Q2 = HBAR_Q * HBAR_Q
-Q0_MINUS_1 = Q0 - 1.0
-INV_Q0 = 1.0 / Q0
+Q0_MINUS_1 = Q0 - mp.mpf(1)
+INV_Q0 = mp.mpf(1) / Q0
 
 # Bar-odd Q_β correction coefficient (KNOWN near-match, NOT to be fitted here):
 # c_3 = −2 = J_Hopf(q=1), the cross-anchor-swinging near-match (CLAUDE.md).
@@ -199,9 +206,13 @@ def main() -> int:
     print("\n[Q3] c_3-odd hook — offset at the substrate q₀ (expected: "
           "DIVERGES, inaccessible):")
     partials = []
-    s = 0.0
+    # mpf accumulation, not float (bean qou-9ugp). `float(_coeff(o, k))` was an
+    # explicit float computation over 19 terms with growing coefficients. The
+    # conclusion is a DIVERGENCE test and survives either arithmetic, but the
+    # partial sums are reported in the witness and were float64-accurate only.
+    s = mp.mpf(0)
     for k in range(ORD + 1):
-        s += float(_coeff(o, k)) * Q0 ** k
+        s += mp.mpf(str(_coeff(o, k))) * Q0 ** k
         if k in (2, 5, 10, 14, ORD):
             partials.append((k, s))
             print(f"     partial sum o_{k}(q₀) = {s:+.4e}")

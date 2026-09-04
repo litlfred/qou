@@ -1,0 +1,241 @@
+{
+  "engine": "exact-integer-nz-and-source-audit",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T10:32:26.432686+00:00",
+  "commitSha": "d450e549a50753e41a9bad5acbb7c94d43928175",
+  "assertions": [
+    {
+      "name": "C1_GGM_defines_no_charge_lattice",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P1 CONFIRMED. Measured over the sectioned text of arXiv:2012.00062v3: 'charge lattice' 0, 'Dirac pairing' 0, 'symplectic' 2 (both §7, both naming Neumann-Zagier). The sigma are labels for asymptotic series; GGM equips them with no lattice and no pairing, so H as stated is untestable against its own source"
+    },
+    {
+      "name": "C2_NZ_edge_block_is_exactly_zero",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P2 CONFIRMED for BOTH 4_1 (N=2) and 5_2 (N=3). A·B^T is symmetric on the edge rows (the NZ symplectic theorem), so the antisymmetrization vanishes identically. The edge block carries no antisymmetric pairing at all"
+    },
+    {
+      "name": "C3_only_antisymmetric_part_is_rank2_cusp",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P3 CONFIRMED for both knots. The entire nonzero part of J is the (mu, lambda) cusp block carrying +-2, i.e. the NZ 1-cusped relation. It is a rank-2 object about the BOUNDARY TORUS, not a sigma-indexed lattice of saddles"
+    },
+    {
+      "name": "C4_NZ_route_EXCLUDED_scope_b",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The NZ datum contains no rank-3 antisymmetric pairing of any kind -- its antisymmetric content is rank 2 and lives on the cusp -- so it cannot supply an eq-(98)-shaped pairing at any index set. Scope-(b): the cited invariants are the NZ symmetry theorem and the 1-cusped relation, not a search"
+    },
+    {
+      "name": "C5_KRSS_is_the_wrong_symmetry_class",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "arXiv:1707.02991v1 ('BPS states, knots and quivers') is the one held source assigning quivers to knots, and its quivers are SYMMETRIC (5 occurrences of 'symmetric quiver'; the paper defines it as #arrows(i->j) = #arrows(j->i)). eq (98) is ANTIsymmetric, so it is not a KRSS quiver matrix on symmetry alone. Recorded SEPARATELY from the D1 bean's standing 'do not resurrect the refuted KRSS open-sector route (det(K)=5)' -- that is a different claim about a different construction, and the two must not be read as evidence for each other"
+    },
+    {
+      "name": "C6_the_missing_object_named_precisely",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The missing object is a map from the three GGM saddles {sigma_1, sigma_2, sigma_3} to a lattice Gamma carrying an antisymmetric integral pairing. It would have to come from the 3d-3d correspondence (the flavour/charge lattice of T[5_2]), which is not held in the library and is not computable from anything in this repo. Until it exists H is UNSTATED rather than unconfirmed -- 'the Dirac pairing on the charges' does not yet denote anything"
+    },
+    {
+      "name": "C7_CORRECTS_C6_a_second_route_exists_and_is_partly_in_repo",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "CORRECTION of this probe's own C6, made after the colour-cubic audit landed on main. C6 asserted the lattice 'would come from the 3d-3d correspondence' and is 'not computable from anything in this repo'. Both halves are too strong. ROUTE 2, never named: for a spectral curve Sigma the charge lattice is H_1(Sigma, Z) with its INTERSECTION FORM, a canonical antisymmetric integral pairing (standard Seiberg-Witten / Hitchin), which does not route through T[5_2]'s flavour lattice at all. And the machinery is partly present: 3 A-polynomial producers (figure-eight, trefoil, Borromean) plus a rank-3 spectral curve worked in-corpus (the colour cubic -- wrong curve for 5_2, right method). What is genuinely absent is narrower: nothing computes 5_2's A-polynomial specifically, and the live intersection forms are on SEIFERT surfaces rather than on a SPECTRAL curve (different lattice, same construction). NOTE: this assertion originally required ZERO intersection-form files and FAILED at 10 -- my own control caught my own sub-claim, and the correction is STRONGER than its first draft: the repo has BOTH halves of route 2. So the next step is in-repo work, not an ingest. NOT a claim that route 2 succeeds -- whether H_1(Sigma) is the right lattice for the sigma is exactly as open as route 1 was"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "d1b-52-charge-lattice-sourcing",
+  "scriptFile": "d1b_52_charge_lattice_sourcing_probe.py",
+  "scriptHash": "e5dc6fa60c98",
+  "scriptCommitSha": "5c16c52fc7ad7f5a7fd51268c1541f59e642fb28",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_52_charge_lattice_sourcing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_52_charge_lattice_sourcing_probe.py"
+  },
+  "description": "qou-q9ih D1-b. Opens the charge-lattice rung left by dt_d1b_gabriel_route_void_source_verified_probe, which reduced the arrow question to one labelled hypothesis H (V=3, 3 arrows) with one test: compute the Dirac pairing on the 5_2 charge lattice. This probe goes to source that lattice and DOES NOT FIND ONE, by three independent routes, none of them a failed numerical search. R1: the paper that produced the datum, GGM arXiv:2012.00062v3, contains 0 'charge lattice' and 0 'Dirac pairing' -- its 2 'symplectic' are both in section 7 naming Neumann-Zagier -- so H's test has no referent in its own source. R2: taking NZ as the paper's own candidate, the antisymmetrization J = A.B^T - B.A^T of the rect gluing datum is EXACTLY ZERO on the edge block (the NZ symplectic theorem: A.B^T is symmetric), and its entire nonzero content is the rank-2 cusp block carrying +-2 (the 1-cusped relation). Measured for BOTH 4_1 (N=2) and 5_2 (N=3), so structural rather than an N accident. eq (98) is rank 3, so NZ cannot carry an eq-(98)-shaped pairing at any index set -- scope-(b), invariants cited are the NZ symmetry theorem and the cusp relation. R3: arXiv:1707.02991v1, the one held source assigning quivers to knots, uses SYMMETRIC quivers by its own definition, while eq (98) is antisymmetric, so eq (98) is not a KRSS quiver matrix on symmetry alone -- recorded separately from the corpus's standing open-sector det(K)=5 refutation, which is a different claim. What remains is named precisely: a map from the three GGM saddles to a lattice with an antisymmetric integral pairing, which would come from the 3d-3d flavour/charge lattice of T[5_2], not held and not computable here. Until it exists H is UNSTATED, not merely unconfirmed.",
+  "data": {
+    "R1_ggm_source_counts": {
+      "paper": "arXiv:2012.00062v3 (Garoufalidis-Gu-Marino)",
+      "charge_lattice": 0,
+      "dirac_pairing": 0,
+      "symplectic": 2,
+      "note": "the 2 'symplectic' are both in section 7 and both name Neumann-Zagier; nothing defines a lattice on the sigma"
+    },
+    "R2_nz_antisymmetrization": {
+      "4_1": {
+        "N": 2,
+        "rows": 4,
+        "J": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            -2,
+            0
+          ]
+        ],
+        "edge_block_zero": true,
+        "nonzero": [
+          [
+            2,
+            3,
+            2
+          ],
+          [
+            3,
+            2,
+            -2
+          ]
+        ],
+        "abs_values": [
+          2
+        ]
+      },
+      "5_2": {
+        "N": 3,
+        "rows": 5,
+        "J": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            -2,
+            0
+          ]
+        ],
+        "edge_block_zero": true,
+        "nonzero": [
+          [
+            3,
+            4,
+            2
+          ],
+          [
+            4,
+            3,
+            -2
+          ]
+        ],
+        "abs_values": [
+          2
+        ]
+      }
+    },
+    "R2_verdict": {
+      "eq98_rank": 3,
+      "nz_antisymmetric_rank": 2,
+      "edge_block_is_lagrangian": true,
+      "scope": "(b) structural -- NZ symmetry theorem (A.B^T symmetric on edges) plus the 1-cusped relation (= 2)"
+    },
+    "R3_krss_symmetry": {
+      "paper": "arXiv:1707.02991v1 (BPS states, knots and quivers)",
+      "symmetric_quiver_occurrences": 5,
+      "krss_definition": "#arrows(i->j) = #arrows(j->i)",
+      "eq98_is_antisymmetric": true,
+      "verdict": "eq (98) is not a KRSS quiver matrix, on symmetry alone",
+      "do_not_conflate": "the D1 bean's 'refuted KRSS open-sector route (det(K)=5)' is a DIFFERENT claim about a different construction; neither is evidence for the other"
+    },
+    "what_remains": {
+      "missing_object": "a map {sigma_1, sigma_2, sigma_3} -> Gamma, where Gamma is a lattice carrying an antisymmetric integral pairing",
+      "where_it_would_come_from": "the 3d-3d correspondence: the flavour/charge lattice of T[5_2]",
+      "availability": "not held in library/, not computable from this repo",
+      "consequence_for_H": "UNSTATED rather than unconfirmed -- 'the Dirac pairing on the charges' does not yet denote anything"
+    },
+    "predictions_recorded_before_measuring": {
+      "P1_ggm_defines_no_lattice": true,
+      "P2_nz_edge_antisymmetrization_zero": true,
+      "P3_only_cusp_block_nonzero_value_2": true,
+      "note": "P2 and P3 are theory-driven, predicted from the NZ symmetry theorem before being computed, and are stated as predictions rather than as discoveries"
+    },
+    "scope": {
+      "tier": "scope-(b) exclusions (R2) + measured source facts (R1, R3)",
+      "method": "exact integer algebra on snappy's integer gluing equations; phrase counts over the sectioned library text",
+      "arithmetic": "exact integers throughout; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}

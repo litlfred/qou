@@ -3,25 +3,62 @@
   topological linking number.
 
   Companion: categorical-linking-operation.md
-  Path: content/quantum-observable-universe/braids-and-knots/
+  Path: content/quantum-observable-universe/mass-theory/
 
-  Encodes the categorical linking operation as a class with five
-  open hypotheses (linearity, k=0 reduction, multiplicativity,
-  trace-cut symmetry, bar-involution compatibility).  Each is
-  conjectural until discharged; class fields are typed `Prop` so
-  consumers can be extended later when the statements are
-  authored.
+  Content-bearing conjecture carrier (AGENTS.md §3b-tax): the open
+  properties are stated over an explicit substrate `LinkingData`, and
+  the class has **no instance**.
+
+  History (bean `qou-yt29`, 2026-09-04).  Until this revision the file
+  carried five `def Lk… : Prop` "hypothesis predicates" and a global
+  `instance canonical` closing all five, so `conj:categorical-linking-
+  operation` was discharged for free.  Two of the five were literally
+  `:= True`, closed by `trivial`:
+
+      LkMultiplicative      _R_ : Prop := True
+      LkTraceCutSymmetric   _R_ : Prop := True
+
+  The other three were **not** `True` syntactically but were `True`
+  extensionally — each was a ring or integer identity that holds in
+  every `CommRing`, carrying a docstring that claimed a categorical
+  statement about `Lk_R`:
+
+      LkLinear                q := ∀ a b c : R, a*(b+c) = a*b+a*c ∧ …   (distributivity)
+      LkReductionAtZero       q := q ^ (0 : ℕ) = 1                      (`pow_zero`)
+      LkBarInvolutionCompatible q := ∀ k : ℤ, -(-k) = k                 (`neg_neg`; does
+                                                                         not mention `q`)
+
+  So the vacuity was 5/5, not 2/5: the named theorems that "discharged"
+  them proved distributivity, `pow_zero` and `neg_neg`, never a property
+  of a linking operation, and the class they built was inhabited for
+  every `R` and every `q`.
+
+  Now: `LinkingData` carries the substrate (Frobenius trace `τ_R`, the
+  braiding as a unit `c : Aˣ`, the rigid dual, the bar involution);
+  `LinkingData.lk` and `LinkingData.preLk` are the `.md`'s operations;
+  Properties 1 and 2 and the **pre-trace** half of Property 3 are proved
+  about `lk`/`preLk` themselves; the post-trace half of Property 3 and
+  Properties 4 and 5 are the class fields, with no instance.
+  `postTraceMultiplicative_fails` exhibits data violating the first
+  field, so the class is a constraint rather than a filter that
+  everything passes.
 
   Refs:
     [kassel1995quantum] Kassel, "Quantum Groups," Springer 1995,
-       §XIV (ribbon-category braiding).
+       §X (rigid monoidal categories), §XIV (ribbon-category braiding).
     [turaev2010quantum] Turaev, "Quantum Invariants of Knots
        and 3-Manifolds," de Gruyter 2010, §I (closed-braid
        invariants).
+    [jones1987] Jones, Ann. Math. 126 (1987) — the Markov trace.
 -/
 
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Algebra.Prod
 import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Prod
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
@@ -45,114 +82,6 @@ class MarkovTraceCyclic
     (T : Type*) [Mul T] (R : Type*) (tr_M : T → R) : Prop where
   /-- Cyclicity: `tr_M (A * B) = tr_M (B * A)` for all `A B : T`. -/
   tr_cyclic : ∀ A B : T, tr_M (A * B) = tr_M (B * A)
-
-/--
-  Predicate: the categorical linking operation `Lk_R^{(k)}` is
-  R-linear in each factor separately.
-
-  PROVED (path-α-Bring discharge, 2026-05-06): this property
-  follows from the R-bilinearity of composition and tensor
-  product in any R-linear rigid monoidal category, plus the
-  fact that `c_{A,A}^k`, `τ_R`, and `id_A` are fixed morphisms
-  (independent of the input pair `(a, b)`).
-
-  Encoded here as the explicit R-bilinearity property of the
-  coefficient ring `R` — this is the *only* substrate-side
-  input the categorical bilinearity proof lifts. Discharged
-  sorry-free by `categorical_linking_linearity_holds` below
-  via `mul_add` + `add_mul`.
--/
-def LkLinear {R : Type*} [CommRing R] (_q : R) : Prop :=
-  ∀ a b c : R, a * (b + c) = a * b + a * c ∧ (b + c) * a = b * a + c * a
-
-/-- The categorical-physics linearity statement: in any R-linear
-    rigid monoidal category C, the operation
-        Lk_R^(k)(a, b) := (id_A ⊗ τ_R) ∘ (c_{A,A}^k ∘ (a ⊗ b) ⊗ id_A)
-    is R-bilinear (R-linear in each factor separately).
-
-    Structural content (this revision): the predicate is upgraded
-    from `True` to the explicit R-bilinearity property of the
-    coefficient ring, which is the *only* substrate-side input
-    needed to lift the categorical-side bilinearity proof. The
-    ring distributivity laws give it sorry-free. -/
-theorem categorical_linking_linearity_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkLinear q := by
-  -- Ref: [kassel1995] §XIV (R-linear rigid monoidal axioms)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
-  intro a b c
-  refine ⟨?_, ?_⟩
-  · exact mul_add a b c
-  · exact add_mul b c a
-
-/--
-  Predicate: at linking number `k = 0`, the operation reduces to
-  scalar multiplication via the Frobenius trace
-  (`Lk_R^{(0)}(a, b) = τ_R(b) · a^*`).
-
-  PROVED (path-α-Bring discharge, 2026-05-06): this property
-  follows from six generic categorical axioms — integer-power
-  identity `c^0 = id`, unital composition, monoidal-tensor
-  associativity, tensor-functoriality of composition, the unit
-  isomorphism `𝟙 ⊗ A ≅ A`, and R-linearity of τ_R.  None requires
-  the QOU-specific ribbon / Markov-trace structure.
-
-  Encoded as the substrate-side integer-power identity
-  `q^0 = 1` — the *only* substrate-side input that the categorical
-  six-axiom k=0 reduction lifts. Discharged sorry-free by
-  `categorical_linking_reduction_at_zero_holds` below via
-  `pow_zero`.
--/
-def LkReductionAtZero {R : Type*} [CommRing R] (q : R) : Prop :=
-  q ^ (0 : ℕ) = 1
-
-/-- The categorical-physics k=0 reduction statement: in any
-    R-linear rigid braided monoidal category C with Frobenius
-    trace, the operation Lk_R^(0) factorises as
-        Lk_R^(0)(a, b) = τ_R(b) · a^*
-    where a^* is the rigid-dual rank-1 endomorphism.
-
-    Structural content (this revision): the predicate is upgraded
-    from `True` to the integer-power identity `q^0 = 1`, the *only*
-    substrate-side input lifted through the categorical reduction.
-    Discharged by `pow_zero`. -/
-theorem categorical_linking_reduction_at_zero_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkReductionAtZero q := by
-  -- Ref: [kassel1995] §X (rigid monoidal categories,
-  --      coev/eval, dual morphisms)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
-  exact pow_zero q
-
-/--
-  Predicate: the operation is multiplicative in the linking
-  index `k` (additive in the integer index).
-
-  PROVED at the pre-trace level (path-α-Bring discharge,
-  2026-05-06): the pre-trace morphism PreLk_R^(k)(a, b) :=
-  c_{A,A}^k ∘ (a ⊗ b) satisfies
-      PreLk_R^(k_1 + k_2)(a, b) = c_{A,A}^(k_2) ∘ PreLk_R^(k_1)(a, b)
-  by the integer-power group law of c_{A,A} in any monoidal
-  category.
-
-  The post-trace upgrade (Lk_R rather than PreLk_R) requires a
-  substrate-specific commutation identity; that remains open.
--/
-def LkMultiplicative {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
-
-/-- Pre-trace multiplicativity: integer-power group law of
-    c_{A,A} gives c^(k_1+k_2) = c^(k_2) ∘ c^(k_1) in any
-    monoidal category. -/
-theorem categorical_linking_multiplicativity_pretrace_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkMultiplicative q := by
-  -- Ref: [kassel1995] §X (integer-power group law in
-  --      monoidal categories)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
-  -- Direct from the integer-power group law c^(k_1+k_2) =
-  -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
-  trivial
 
 /-- **Two-factor Markov-trace swap (sorry-free, conditional on
     `MarkovTraceCyclic`).** Direct restatement of the class field
@@ -180,9 +109,9 @@ theorem markov_trace_swap
     `C := c^{k_2}` and one extra application of the two-factor swap
     on the inner factors). The Hecke-power group law lifts a
     concrete `c^{k_1} * c^{k_2}` to `c^{k_1 + k_2}`; combined with
-    this rotation, that closes the post-trace multiplicativity step
-    flagged as open in `categorical-linking-operation.md` §"Proof
-    of Property 3". -/
+    this rotation, that is the cyclicity half of the post-trace
+    multiplicativity step flagged as open in
+    `categorical-linking-operation.md` §"Proof of Property 3". -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix
 -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
 theorem markov_trace_cyclic_three_factor
@@ -194,33 +123,6 @@ theorem markov_trace_cyclic_three_factor
   rw [mul_assoc]
   exact hC.tr_cyclic A (B * C)
 
-/--
-  Predicate: cutting the trace via the other factor produces the
-  bar-conjugate with reversed linking sign.
-
-  PROVED conditional on Markov-trace cyclicity + braiding inversion
-  (path-α-Bring discharge, 2026-05-06).  These are substrate-
-  specific axioms (cited from prop:frobenius-gram-matrix +
-  ribbon-category structure), but with them, the trace-cut symmetry
-  follows by direct computation:
-      Lk_R^(k)(a, b) [right-trace] = Lk_R^(-k)(b, a) [left-trace]
-  via strand-swap + cyclicity-induced exponent shift k-1 → -k.
--/
-def LkTraceCutSymmetric {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
-
-/-- Trace-cut symmetry: conditional on Markov-trace cyclicity +
-    braiding inversion. -/
-theorem categorical_linking_trace_cut_symmetry_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkTraceCutSymmetric q := by
-  -- Ref: [manuscript] prop:frobenius-gram-matrix (Markov-trace cyclicity)
-  -- Ref: [kassel1995] §XIV (ribbon-category braiding inversion)
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
-  -- Substrate-specific axioms cited; proof reduces to a strand-swap
-  -- + exponent-shift k-1 → -k via cyclicity.
-  trivial
-
 /-- **Conditional trace-cut substitution lemma (sorry-free).** Under
     `[MarkovTraceCyclic T R tr_M]`, the trace-cut transformation
     underlying property 4 reduces (after strand-swap) to a single
@@ -230,9 +132,7 @@ theorem categorical_linking_trace_cut_symmetry_holds
     exponent shift) requires *additionally* the ribbon-category
     braiding-inversion identity `c⁻¹ = c̄`, which is downstream
     structure not exposed in this Hecke-level lemma. The lemma
-    here records the cyclicity half of the discharge sorry-free;
-    combined with bar-functoriality (next predicate), it closes
-    the post-trace property 4 statement. -/
+    here records the cyclicity half of the discharge sorry-free. -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix
 -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 4"
 theorem trace_cut_cyclicity_step
@@ -242,83 +142,221 @@ theorem trace_cut_cyclicity_step
     tr_M ((a * b) * c) = tr_M (c * (a * b)) :=
   hC.tr_cyclic (a * b) c
 
+/-! ## The substrate the linking operation is defined over -/
+
+/-- **The data the `.md`'s linking operation is built from.**  An
+    `R`-algebra `A` (intended: the Frobenius–Hopf substrate, `H_n(q)`
+    inside `End_R(V^{⊗n})`) together with
+
+    * `tau` — the Frobenius trace `τ_R : A →ₗ[R] R`;
+    * `c` — the braiding `c_{A,A}` as a **unit** of `A`, which is what
+      makes the integer power `c^k` for `k : ℤ` (the linking index)
+      available at all;
+    * `dual` — the rigid dual `a ↦ a^*`, an `R`-linear map;
+    * `bar` — the bar involution `ι` (the Hecke antipode
+      `ι(σ_i) = σ_i^{-1}` at the substrate level).
+
+    The structure only *names* the data; which of its inhabitants are
+    the ribbon-categorical ones is what the conjecture class below
+    asserts. -/
+structure LinkingData (R : Type*) [CommRing R] (A : Type*) [Ring A] [Algebra R A] where
+  /-- The Frobenius trace `τ_R : A →ₗ[R] R`. -/
+  tau : A →ₗ[R] R
+  /-- The braiding `c_{A,A}`, as a unit (so `c ^ (k : ℤ)` exists). -/
+  c : Aˣ
+  /-- The rigid dual `a ↦ a^*`. -/
+  dual : A →ₗ[R] A
+  /-- The bar involution `ι`. -/
+  bar : A → A
+
+namespace LinkingData
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+
+/-- **The pre-trace morphism** `PreLk_R^{(k)}(a, b) := c_{A,A}^k ∘ (a ⊗ b)`
+    of `categorical-linking-operation.md` §"Proof of Property 3". -/
+def preLk (D : LinkingData R A) (k : ℤ) (a b : A) : A := ↑(D.c ^ k) * (a * b)
+
+/-- **The categorical linking operation** `Lk_R^{(k)}(a, b)` of the `.md`:
+    close the second component through the Frobenius trace after linking
+    it to the first by `k` braidings, leaving the first as the free
+    endomorphism `a^*`:
+
+        Lk_R^{(k)}(a, b) = τ_R(c^k · b) · a^*.
+
+    At `k = 0` this is the `.md`'s Property 2 verbatim
+    (`Lk_R^{(0)}(a, b) = τ_R(b) · a^*`) — see `lk_zero`. -/
+def lk (D : LinkingData R A) (k : ℤ) (a b : A) : A := D.tau (↑(D.c ^ k) * b) • D.dual a
+
+end LinkingData
+
+/-! ## Property 1 — bilinearity (PROVED, about `lk` itself)
+
+The previous revision "proved" this as `∀ a b c : R, a*(b+c) = a*b+a*c`,
+i.e. distributivity in the coefficient ring, which holds in every
+`CommRing` and says nothing about any linking operation.  What follows is
+the bilinearity of `lk`, discharged from `LinearMap.map_add` /
+`LinearMap.map_smul` on `tau` and `dual`. -/
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+
+/-- `Lk_R^{(k)}(−, b)` is additive. -/
+-- Ref: [kassel1995quantum] §XIV (R-linear rigid monoidal axioms)
+-- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 1"
+theorem lk_add_left (D : LinkingData R A) (k : ℤ) (a a' b : A) :
+    D.lk k (a + a') b = D.lk k a b + D.lk k a' b := by
+  unfold LinkingData.lk
+  rw [map_add, smul_add]
+
+/-- `Lk_R^{(k)}(−, b)` is `R`-homogeneous. -/
+theorem lk_smul_left (D : LinkingData R A) (k : ℤ) (r : R) (a b : A) :
+    D.lk k (r • a) b = r • D.lk k a b := by
+  unfold LinkingData.lk
+  rw [map_smul, smul_comm]
+
+/-- `Lk_R^{(k)}(a, −)` is additive. -/
+theorem lk_add_right (D : LinkingData R A) (k : ℤ) (a b b' : A) :
+    D.lk k a (b + b') = D.lk k a b + D.lk k a b' := by
+  unfold LinkingData.lk
+  rw [mul_add, map_add, add_smul]
+
+/-- `Lk_R^{(k)}(a, −)` is `R`-homogeneous. -/
+theorem lk_smul_right (D : LinkingData R A) (k : ℤ) (r : R) (a b : A) :
+    D.lk k a (r • b) = r • D.lk k a b := by
+  unfold LinkingData.lk
+  rw [mul_smul_comm, map_smul, smul_assoc]
+
+/-- **Property 1 (`.md`), proved: `Lk_R^{(k)}` is `R`-bilinear.** -/
+theorem lk_bilinear (D : LinkingData R A) (k : ℤ) :
+    (∀ a a' b : A, D.lk k (a + a') b = D.lk k a b + D.lk k a' b) ∧
+    (∀ (r : R) (a b : A), D.lk k (r • a) b = r • D.lk k a b) ∧
+    (∀ a b b' : A, D.lk k a (b + b') = D.lk k a b + D.lk k a b') ∧
+    (∀ (r : R) (a b : A), D.lk k a (r • b) = r • D.lk k a b) :=
+  ⟨lk_add_left D k, lk_smul_left D k, lk_add_right D k, lk_smul_right D k⟩
+
+/-! ## Property 2 — reduction at `k = 0` (PROVED, about `lk` itself) -/
+
+/-- **Property 2 (`.md`), proved:** `Lk_R^{(0)}(a, b) = τ_R(b) · a^*`.
+    The previous revision "proved" this as `q ^ (0 : ℕ) = 1`. -/
+-- Ref: [kassel1995quantum] §X (rigid monoidal categories, coev/eval, duals)
+-- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 2"
+theorem lk_zero (D : LinkingData R A) (a b : A) :
+    D.lk 0 a b = D.tau b • D.dual a := by
+  unfold LinkingData.lk
+  rw [zpow_zero, Units.val_one, one_mul]
+
+/-! ## Property 3 — multiplicativity in the linking index
+
+The **pre-trace** half is proved here from the integer-power group law of
+`c_{A,A}` in `Aˣ`; the **post-trace** half needs a substrate-specific
+commutation identity and is a class field below.  The `.md` lists
+Property 3 under "proved"; that is the pre-trace statement. -/
+
+/-- **Property 3, pre-trace half (PROVED):** additional linkings are
+    pre-composition with `c_{A,A}`,
+    `PreLk^{(k₁+k₂)}(a, b) = c^{k₂} · PreLk^{(k₁)}(a, b)`, by
+    `zpow_add` in the group `Aˣ`. -/
+-- Ref: [kassel1995quantum] §X (integer-power group law in monoidal categories)
+-- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 3"
+theorem preLk_add (D : LinkingData R A) (k₁ k₂ : ℤ) (a b : A) :
+    D.preLk (k₁ + k₂) a b = ↑(D.c ^ k₂) * D.preLk k₁ a b := by
+  unfold LinkingData.preLk
+  rw [add_comm k₁ k₂, zpow_add, Units.val_mul, mul_assoc]
+
+/-! ## The conjecture -/
+
 /--
-  Predicate: bar-involution compatibility on the linking-number
-  index. The full categorical statement is
-  `ι(Lk_R^{(k)}(a, b)) = Lk_R^{(-k)}(ι(a), ι(b))`, the structural
-  identity underlying path-α-Bring's even-twist parity rule
-  (conditional on bar-functoriality of `c` and `τ_R` from
-  [kassel1995quantum] §XIV — categorical analog of the Hecke
-  antipode `ι(σ_i) = σ_i^{-1}`).
+  **Conjecture carrier (primary, content-bearing, NO instance).**
+  `CategoricalLinkingOperation R A D` asserts the three properties of
+  `conj:categorical-linking-operation` that are *not* generic:
 
-  This Lean-level predicate captures the **integer-index
-  involutivity** half of that statement: `∀ k : ℤ, -(-k) = k`,
-  i.e. the integer linking index is its own bar-involute. This
-  is the substrate-side input lifted through the full
-  categorical bar-involution `ι(c^k) = c^{-k}`. Discharged
-  sorry-free by `categorical_linking_bar_involution_holds`
-  below via `neg_neg`.
+  * `postTraceMultiplicative` — Property 3 **after** the trace cut.  The
+    pre-trace statement is `preLk_add` above and is proved; lifting it
+    through `τ_R` needs the substrate commutation identity
+    `τ_R(c^{k₂} · x) = c^{k₂} · τ_R(x)`-in-the-relevant-sense, which the
+    `.md` does not supply.  `postTraceMultiplicative_fails` below
+    exhibits data for which this field is **false**, so it is a genuine
+    constraint.
+  * `traceCutSymmetric` — Property 4: cutting the other component
+    produces the `ι`-conjugate with reversed linking sign.  Conditional
+    on Markov-trace cyclicity (whose half is proved above as
+    `trace_cut_cyclicity_step`) *and* ribbon braiding inversion
+    `ι(c) = c⁻¹`, which is not part of `LinkingData`.
+  * `barCompatible` — Property 5: `ι(Lk^{(k)}(a,b)) = Lk^{(-k)}(ι a, ι b)`,
+    conditional on bar-functoriality of `c` and `τ_R`.
 
-  The *categorical-side* bar-functoriality (`ι(c) = c⁻¹`,
-  `ι(τ_R) = τ_R`) remains the substrate-specific axiom this
-  predicate relies on; that part is not encoded here at the
-  Lean level. Connects to def:ew-interface-knot — Δ_I
-  orientation reversal under ι.
--/
-def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_q : R) : Prop :=
-  ∀ k : ℤ, -(-k) = k
+  Properties 1 and 2 are **not** fields: they are proved unconditionally
+  above (`lk_bilinear`, `lk_zero`), so carrying them as hypotheses would
+  overstate what is open.
 
-/-- Bar-involution compatibility: conditional on bar-functoriality
-    of c (sends c → c^{-1}) and τ_R (ι-stable).
+  **Tower status (owner ruling 2026-09-03): ORDER-ZERO-ONLY.**  The
+  operation is stated at a single fixed substrate `A`; the `H_n(q)` tower
+  is not used.
 
-    Structural content (this revision): the predicate is upgraded
-    from `True` to the integer-level involutivity `∀ k, -(-k) = k`
-    — exactly the shape of bar-functoriality on the integer
-    linking-number index that lifts to the full categorical bar
-    involution `ι(c^k) = c^{-k}`. Discharged by `neg_neg`. -/
-theorem categorical_linking_bar_involution_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkBarInvolutionCompatible q := by
-  -- Ref: [kassel1995] §XIV (Hecke antipode ι(σ_i) = σ_i^{-1})
-  -- Ref: [manuscript] categorical-linking-operation.md §"Proof of Property 5"
-  intro k
-  exact neg_neg k
-
-/--
-  A `CategoricalLinkingOperation R q` instance asserts the five
-  properties of the categorical linking operation on the
-  substrate algebra at parameter `q : R`.  Each is an open
-  categorical-physics input pending discharge.
--/
-class CategoricalLinkingOperation
-    (R : Type*) [CommRing R] (q : R) where
-  /-- R-linearity in each factor separately. -/
-  linearity : LkLinear q
-  /-- Reduction at k = 0 to Frobenius-trace scalar multiplication. -/
-  reductionAtZero : LkReductionAtZero q
-  /-- Multiplicative-in-k structure. -/
-  multiplicativeInK : LkMultiplicative q
-  /-- Trace-cut symmetry. -/
-  traceCutSymmetric : LkTraceCutSymmetric q
-  /-- Bar-involution compatibility. -/
-  barCompatible : LkBarInvolutionCompatible q
-
-/-- **Canonical instance.**  Each of the five hypothesis fields is
-    discharged by the corresponding **named theorem** above
-    (`categorical_linking_linearity_holds`, etc.) rather than a bare
-    `trivial`.  The Props are still defined as `True` at the
-    interface layer, so the named-theorem proofs reduce to `trivial`
-    internally — but routing the instance through the named theorems
-    documents which proof discharges which property.  Faithful in
-    the structural sense even while waiting on the genuine
-    categorical-physics statements per the .md proofs. -/
+  No instance is provided; supplying one asserts the conjecture. -/
 -- Ref: [manuscript] conj:categorical-linking-operation
-instance canonical {R : Type*} [CommRing R] (q : R) :
-    CategoricalLinkingOperation R q where
-  linearity := categorical_linking_linearity_holds q
-  reductionAtZero := categorical_linking_reduction_at_zero_holds q
-  multiplicativeInK := categorical_linking_multiplicativity_pretrace_holds q
-  traceCutSymmetric := categorical_linking_trace_cut_symmetry_holds q
-  barCompatible := categorical_linking_bar_involution_holds q
+-- Ref: [kassel1995quantum] §XIV (ribbon-category braiding, bar-functoriality)
+class CategoricalLinkingOperation
+    (R : Type*) [CommRing R] (A : Type*) [Ring A] [Algebra R A]
+    (D : LinkingData R A) : Prop where
+  /-- Property 3, post-trace: `Lk^{(k₁+k₂)}(a,b) = c^{k₂} · Lk^{(k₁)}(a,b)`. -/
+  postTraceMultiplicative :
+    ∀ (k₁ k₂ : ℤ) (a b : A), D.lk (k₁ + k₂) a b = ↑(D.c ^ k₂) * D.lk k₁ a b
+  /-- Property 4: `Lk^{(k)}(a,b) = ι(Lk^{(-k)}(b,a))`. -/
+  traceCutSymmetric :
+    ∀ (k : ℤ) (a b : A), D.lk k a b = D.bar (D.lk (-k) b a)
+  /-- Property 5: `ι(Lk^{(k)}(a,b)) = Lk^{(-k)}(ι a, ι b)`. -/
+  barCompatible :
+    ∀ (k : ℤ) (a b : A), D.bar (D.lk k a b) = D.lk (-k) (D.bar a) (D.bar b)
+
+/-- **Conditional consequence (§3b-cond).**  *If* the conjecture holds,
+    the trace-cut symmetry and the bar compatibility compose into the
+    self-conjugacy statement `ι(Lk^{(-k)}(b,a)) = Lk^{(-k)}(ι a, ι b)` —
+    derived from two fields, not read off one. -/
+theorem lk_bar_trace_cut_compose
+    {D : LinkingData R A} [inst : CategoricalLinkingOperation R A D]
+    (k : ℤ) (a b : A) :
+    D.bar (D.bar (D.lk (-k) b a)) = D.lk (-k) (D.bar a) (D.bar b) := by
+  rw [← inst.traceCutSymmetric k a b]
+  exact inst.barCompatible k a b
+
+/-! ## The first field is a genuine constraint, not a filter everything passes
+
+A conjecture class earns the label "content-bearing" only if some data
+*fails* it.  Here is such data: `A = ℚ × ℚ` with the sum-of-coordinates
+Frobenius trace and the non-scalar braiding unit `c = (2, 3)`.  Because
+`c` is not a scalar, `τ_R(c^k · b)` is not `c^k` times `τ_R(b)`, and the
+post-trace multiplicativity field is false at `k₁ = 0`, `k₂ = 1`. -/
+
+/-- Counterexample data over `ℚ × ℚ`: trace `(x, y) ↦ x + y`, braiding
+    `c = (2, 3)`, dual and bar the identity. -/
+def counterexampleData : LinkingData ℚ (ℚ × ℚ) where
+  tau := LinearMap.fst ℚ ℚ ℚ + LinearMap.snd ℚ ℚ ℚ
+  c := ⟨(2, 3), (2⁻¹, 3⁻¹), by norm_num [Prod.ext_iff], by norm_num [Prod.ext_iff]⟩
+  dual := LinearMap.id
+  bar := id
+
+/-- **The `postTraceMultiplicative` field is falsifiable** — it fails for
+    `counterexampleData` at `k₁ = 0`, `k₂ = 1`, `a = (1,1)`, `b = (1,0)`:
+    the left side is `(2, 2)` and the right side is `(2, 3)`.  So
+    `CategoricalLinkingOperation` is not satisfied by every
+    `LinkingData`, which is what the removed global `instance canonical`
+    asserted. -/
+theorem postTraceMultiplicative_fails :
+    ¬ (∀ (k₁ k₂ : ℤ) (a b : ℚ × ℚ),
+        counterexampleData.lk (k₁ + k₂) a b
+          = ↑(counterexampleData.c ^ k₂) * counterexampleData.lk k₁ a b) := by
+  intro h
+  have := h 0 1 (1, 1) (1, 0)
+  simp [LinkingData.lk, counterexampleData, Prod.ext_iff] at this
+
+/-- **Corollary: no global instance exists.**  A `CategoricalLinkingOperation`
+    for every `LinkingData` would in particular give one for
+    `counterexampleData`, contradicting `postTraceMultiplicative_fails`. -/
+theorem no_global_instance :
+    ¬ (∀ (R : Type) [CommRing R] (A : Type) [Ring A] [Algebra R A]
+        (D : LinkingData R A), CategoricalLinkingOperation R A D) := by
+  intro h
+  exact postTraceMultiplicative_fails (h ℚ (ℚ × ℚ) counterexampleData).postTraceMultiplicative
 
 end QOU.BraidsAndKnots

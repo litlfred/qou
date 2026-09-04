@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:28:59.079540+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:46:09.794889+00:00",
+  "commitSha": "d15ca14cbb8d6b280ae602f1581bdb606fc784da",
   "assertions": [
     {
       "name": "gate_engine_1cable_jones",
@@ -57,8 +57,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-n3-cable-arbitration",
   "scriptFile": "qbeta_5two_n3_cable_arbitration_probe.py",
-  "scriptHash": "9e67e8115b4c",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "30f87bbe6ea2",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -111,5 +111,11 @@
       "note": "zero-framed definitional J'_3 via the 1e-30-validated cable; supersedes the UNCERTIFIED tower diagnostic at N=3"
     },
     "verdict": "GZ-(7.9) WINS: the definitional TL-cable J'_3(5₂) agrees with GZ and refutes the Masbaum Thm-5.1 p=2 assembly as printed/transcribed — the fault is upstream in that assembly. Unblocks bean qou-3yxn via the GZ/cable route."
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "arbitrates the n=3 cable between the two substrate pins; both pins are read on purpose and each is reported under its own key"
 }

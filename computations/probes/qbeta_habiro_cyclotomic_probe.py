@@ -83,6 +83,15 @@ from pathlib import Path
 
 import sympy as sp
 
+# q0 anchor read BY NAME (bean qou-9ugp); see the MISLABEL note at its use site.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 
 q, u = sp.symbols("q u")
@@ -266,8 +275,14 @@ def main() -> int:
     c3_rows = []
     for name, cand in c3_candidates.items():
         rat = is_rational_in_q(cand)
-        # evaluate at proton q₀ to report the residual (report only — no fit)
-        q0 = sp.Float("1.1099785955573347198997632204832250266562084087802")
+        # evaluate at proton q0 to report the residual (report only -- no fit).
+        # MISLABEL FIXED (bean qou-9ugp, 2026-09-03): the comment said proton and
+        # the literal was 1.1099785955573... -- the RETIRED MUON pin A. So every
+        # candidate was evaluated at a muon q0 and its residual reported against
+        # c3_numeric, which IS the proton-pin c_3 (-2.06934257...). That is a
+        # layer straddle inside one quantity, and c_3 swings ~2.4% between the
+        # pins, so the per-candidate err% was wrong for every q-dependent form.
+        q0 = sp.Float(Q_50_DIGIT_STR)
         val0 = sp.N(cand.subs(q, q0)) if cand.free_symbols else sp.N(cand)
         err = abs(float(val0) - float(c3_numeric)) / abs(float(c3_numeric)) * 100
         print(f"    candidate {name:<20} = {cand}")

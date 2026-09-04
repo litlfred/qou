@@ -227,14 +227,14 @@ def main() -> None:
     # witness whose numbers were fine. `comparison` names its legs, and the
     # anchor audit re-checks each against its canonical pin, so the declaration
     # is verifiable rather than taken on trust (bean qou-1c4y).
-    from qou_substrate.witness import q0_comparison  # noqa: E402
+    from qou_substrate.witness import apply_q0_comparison  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(result, script_path=__file__, engine="mpmath")
-    result.update(q0_comparison(
+    apply_q0_comparison(result,
         muon=Q0_MUON, proton=Q0_PROTON,
         reason=("adjudicates the mu-p substrate tension itself: the same "
                 "deformed-volume construction is evaluated at both pins and "
                 "the ~11.5 ppb gap between them is the measured quantity, so "
-                "each pin is read on purpose and reported under its own key")))
+                "each pin is read on purpose and reported under its own key"))
     result.pop("q0Value", None)
     result["scriptFile"] = _os.path.basename(__file__)
     with open(out, "w") as f:

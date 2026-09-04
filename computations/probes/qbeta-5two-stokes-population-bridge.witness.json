@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T06:46:37.246456+00:00",
-  "commitSha": "5a9bbf3350ffb169964cbea3086145b5e993b821",
+  "computedAt": "2026-09-03T23:21:15.932155+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "assertions": [
     {
       "name": "sigma3_series_real",
@@ -17,7 +17,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "σ-pair amplitude overshoots the Habiro scale by > 1e4 (measured 5.12054e+13) ⇒ n₁ = n₂ = 0 on the real-q ray (derived pruning)"
+      "source": "σ-pair amplitude overshoots the Habiro scale by > 1e4 (measured 5.12056e+13) ⇒ n₁ = n₂ = 0 on the real-q ray (derived pruning)"
     },
     {
       "name": "assembly_scan_completed",
@@ -32,8 +32,8 @@
   "durationMs": 0,
   "computation": "qbeta-5two-stokes-population-bridge",
   "scriptFile": "qbeta_5two_stokes_population_bridge_probe.py",
-  "scriptHash": "917c6678d215",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "b7b7c970455e",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,7 +48,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -60,7 +60,7 @@
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "substrate": {
-      "x0": "-0.104340731856637",
+      "x0": "-0.10434072031952",
       "pin": "muon (matches committed A2 S± + A4.3 constants)"
     },
     "sector_table": {
@@ -74,21 +74,21 @@
         "s3": "4.26463299874008"
       },
       "abs_E": {
-        "s1": "5.907622143e+11",
+        "s1": "5.907639848e+11",
         "s3": "1.0"
       },
       "phi_at_x0": {
-        "s1": "(1.0010924222593195801 + 0.010908961932781205919j)",
-        "s3_plus": "1.0206770114233338483",
-        "s3_minus": "0.98032883815093063119"
+        "s1": "(1.0010924221565001441 + 0.010908960738719239029j)",
+        "s3_plus": "1.0206770090787565506",
+        "s3_minus": "0.98032884027311121949"
       },
       "amplitudes": {
-        "sigma_pair": "3.881066858e+11",
-        "sigma3": "0.4942509375"
+        "sigma_pair": "3.881078489e+11",
+        "sigma3": "0.4942509364"
       }
     },
     "t1_pruning": {
-      "overshoot": "5.1205438e+13",
+      "overshoot": "5.1205591e+13",
       "conclusion": "n1 = n2 = 0 forced on the real-q ray"
     },
     "t3_scan": {
@@ -97,15 +97,15 @@
       "hits": [],
       "near_misses": [],
       "ratio_table": {
-        "sin_mirror_odd|w0": "(0.0 + 0.0157167205006j)",
-        "sin_mirror_odd|w12": "(0.0 + 0.0486558417894j)",
-        "sin_mirror_odd|w32": "(0.0 + 0.466316853674j)",
-        "sin_plus_only|w0": "(0.0 + 0.0154060732758j)",
-        "sin_plus_only|w12": "(0.0 + 0.0476941397459j)",
-        "sin_plus_only|w32": "(0.0 + 0.457099915798j)",
-        "cos_mirror_even_diff|w0": "(0.0 + 8.0940577497j)",
-        "cos_mirror_even_diff|w12": "(0.0 + 25.0575934902j)",
-        "cos_mirror_even_diff|w32": "(0.0 + 240.151597984j)"
+        "sin_mirror_odd|w0": "(0.0 + 0.015716708164j)",
+        "sin_mirror_odd|w12": "(0.0 + 0.0486558062875j)",
+        "sin_mirror_odd|w32": "(0.0 + 0.466316564986j)",
+        "sin_plus_only|w0": "(0.0 + 0.0154060612167j)",
+        "sin_plus_only|w12": "(0.0 + 0.04769410505j)",
+        "sin_plus_only|w32": "(0.0 + 0.457099633815j)",
+        "cos_mirror_even_diff|w0": "(0.0 + 8.0947439435j)",
+        "cos_mirror_even_diff|w12": "(0.0 + 25.0597191952j)",
+        "cos_mirror_even_diff|w32": "(0.0 + 240.171997265j)"
       }
     },
     "verdict": "NO parameter-free assembly matches at 1e-6 (all near-misses recorded). The derived content stands: the σ-pair population is FORCED ZERO on the real-q ray (T1) — O_φ and D_odd are NOT directly bridged by a small-integer σ₃ assembly in the pre-registered family; the bridge needs the trivial-sector/block-level pairing (GK bilinear structure), named as the wall. auditOnly.",
@@ -120,12 +120,14 @@
       },
       {
         "path": "qbeta-5two-stokes-barodd-index.witness.json",
-        "sha256": "8c5deb785ce1348487c92be520651311e4005fa8e4b952b380628278d3696fd6",
-        "size_bytes": 6901,
-        "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
-        "scriptCommitSha": "ee60042ed68d267f33c8dd72c5aa96ecb1953781",
-        "computedAt": "2026-08-29T11:27:48.906476+00:00"
+        "sha256": "8a0310641284e6d09710f01a10a258866b823e241b5d38b026e1b9613b1181fb",
+        "size_bytes": 7221,
+        "commitSha": "ec33acb10b62144583ec9c07c2279fd9f7d80536",
+        "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+        "computedAt": "2026-09-03T20:59:23.511549+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

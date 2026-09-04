@@ -1,0 +1,148 @@
+{
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no q0. Checks 1-3 are exact rational identities over AME2020 binding energies; check 4 evaluates one hand-chosen exponential member. No substrate quantity enters, so neither the convention-C/D question nor the q0 pin can move the payload. The witness carries no q0 field.",
+  "schema": "witness/v1",
+  "computedAt": "2026-09-04T10:52:48.190519+00:00",
+  "description": "The linear-minus-concave-deficit class Phi = c*x - a*psi(x), psi concave -- the class qou-zy94 proposed to exclude -- cannot be excluded by three points, because membership follows from the convexity the same points establish. Shown two ways: exactly, via det3 = 0 for every data-derived psi over an open ray of c; and by an explicit member with INCREASING local exponent, which refutes the proposed monotone-exponent route directly.",
+  "q0_pin": "not applicable -- consumes no framework quantity",
+  "free_parameters": 0,
+  "grid_bond_counts": [
+    "1",
+    "3",
+    "6"
+  ],
+  "phi_MeV": [
+    "1112283/500000",
+    "16199841/2000000",
+    "28295673/1000000"
+  ],
+  "phi_secants": [
+    "1112283/500000",
+    "11750709/4000000",
+    "2692767/400000"
+  ],
+  "grid_is_convex_through_origin": true,
+  "deficit_rows": [
+    {
+      "c": "7",
+      "deficit_concave": true,
+      "deficit_increasing": true,
+      "det3": "0",
+      "deficit_secants": [
+        "2387717/500000",
+        "16249291/4000000",
+        "107233/400000"
+      ]
+    },
+    {
+      "c": "8",
+      "deficit_concave": true,
+      "deficit_increasing": true,
+      "det3": "0",
+      "deficit_secants": [
+        "2887717/500000",
+        "20249291/4000000",
+        "507233/400000"
+      ]
+    },
+    {
+      "c": "10",
+      "deficit_concave": true,
+      "deficit_increasing": true,
+      "det3": "0",
+      "deficit_secants": [
+        "3887717/500000",
+        "28249291/4000000",
+        "1307233/400000"
+      ]
+    },
+    {
+      "c": "1000",
+      "deficit_concave": true,
+      "deficit_increasing": true,
+      "det3": "0",
+      "deficit_secants": [
+        "498887717/500000",
+        "3988249291/4000000",
+        "397307233/400000"
+      ]
+    },
+    {
+      "c": "8414897/1250000",
+      "deficit_concave": true,
+      "deficit_increasing": true,
+      "det3": "0",
+      "deficit_secants": [
+        "11268379/2500000",
+        "75884807/20000000",
+        "1/10000000"
+      ]
+    }
+  ],
+  "exponential_member": {
+    "form": "Phi(x) = c*x - a*(1 - exp(-x/L))",
+    "c": "1.02",
+    "a": "100.0",
+    "L": "100.0",
+    "phi": [
+      "0.024983374916805357391",
+      "0.10455335485081769325",
+      "0.29645335842487095372"
+    ],
+    "phi_secants": [
+      "0.024983374916805357391",
+      "0.039784989967006167931",
+      "0.063966667858017753487"
+    ],
+    "psi_secants": [
+      "0.0099501662508319464261",
+      "0.0098021501003299383207",
+      "0.0095603333214198224651"
+    ],
+    "secant_exponents": [
+      "1.302995541083812",
+      "1.503565785570041"
+    ],
+    "exponent_increases": true
+  },
+  "assertions": [
+    {
+      "name": "the AME grid is convex through the origin (the antecedent of the Lean theorem holds on the corpus's own numbers)",
+      "passed": true
+    },
+    {
+      "name": "for EVERY c above the top secant slope the deficit is concave through the origin AND strictly increasing -- an open ray of witnesses, not a lucky one",
+      "passed": true
+    },
+    {
+      "name": "det3(x, psi, Phi) = 0 EXACTLY for every data-derived psi, so the AggregatorFamilyExclusions filter returns 'consistent' on the class -- its five nonzero determinants are about parameter counting, not about the concave-deficit structure",
+      "passed": true
+    },
+    {
+      "name": "the monotone-exponent hypothesis is FALSE on the class: the member c*x - a*(1 - exp(-x/L)) is convex through the origin with a concave increasing deficit and INCREASING secant exponents",
+      "passed": true
+    },
+    {
+      "name": "CAVEAT ASSERTED: that member carries THREE parameters (c, a, L) on three points, so it is underdetermined and untestable here -- it refutes the monotonicity hypothesis and is NOT evidence that it fits",
+      "passed": true
+    }
+  ],
+  "scope": "(b) for the proposed exclusion route -- the invariant is the slope-negation identity proved in QOU.MassTheory.ConcaveDeficitNonExclusion, not cited. It excludes no aggregator; it excludes a METHOD of excluding aggregators.",
+  "caveats": [
+    "This says nothing about which psi is right. A FIXED shape remains testable by det3, and all five shapes tried in aggregator_family_exclusion_probe.py are still excluded. Do not read this as reopening those.",
+    "The exponential member has three parameters on three points and is therefore UNDERDETERMINED, hence untestable here -- exactly the regime the SEMF caveat in the sibling probe describes. Exhibiting it refutes the monotonicity hypothesis; it is NOT a candidate fit.",
+    "The monotone-exponent hypothesis IS true for psi(x) = x^s, where it was read off. What fails is its generalisation to the class.",
+    "Three points are three points. This is a statement about what this grid can decide; extending it past A = 4 with a DERIVED bond set is what would change it."
+  ],
+  "lean": "QOU/MassTheory/ConcaveDeficitNonExclusion.lean (9 declarations, sorry-free, lean-direct exit 0, #print axioms = [propext, Classical.choice, Quot.sound])",
+  "related": [
+    "probes/aggregator-family-exclusion.witness.json",
+    "probes/aggregator-convexity-divided-difference.witness.json"
+  ],
+  "source": "AME2020 total nuclear binding energies",
+  "scriptHash": "2f9a9d86d0d4",
+  "scriptCommitSha": "unknown",
+  "commitSha": "0e6de6f2dbe3760c92889355390abc46e5390f52",
+  "engine": "python",
+  "durationMs": 0
+}

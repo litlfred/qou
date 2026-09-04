@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-31T21:41:12Z
+updated_at: 2026-09-04T12:27:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6414,3 +6414,204 @@ finding.
 
 Found by a dispatched audit of the Standard-Model work against the full tower;
 verified against `qou-fvzm` directly rather than taken on the agent's word.
+
+## 2026-09-04 — the open bar-parity question is ANSWERED (PR #6605)
+
+This bean named as its own cheapest next step: *is `F` required to be
+bar-even?* Answered symbolically — **it is not required, and it is not
+satisfiable.**
+
+With `Q_A = m_e·|q²−2q−1|(q+1)/(2q³)` and `bar : q ↦ 1/q`:
+
+    bar(Q_A)/Q_A = −q³·(q² + 2q − 1)/(q² − 2q − 1)
+
+- `+1` only at `q = 1`, where `bar` is the identity and the test is vacuous;
+- `−1` at no positive real `q`;
+- **not bar-definite even up to a power of `q`** — stripping `−q³` leaves
+  `(q²+2q−1)/(q²−2q−1)`, a ratio of two distinct irreducible quadratics
+  (roots `−1+√2`, `1+√2`), not a monomial.
+
+The third test is the operative one, because *"bar-definite up to a power of
+`q`"* is this bean's own working notion: it records `bar(z_D) = q⁻⁴·z_D`.
+`z_D` is covariant in that weaker sense; `Q_A` is not covariant in it at all.
+
+`Q_β^exp` is bar-even trivially, so `F` inherits `Q_A`'s non-parity.
+
+**Consequence for this bean's plan: the `u/2` term does NOT need replacing on
+bar-parity grounds.** The "if it is required" branch is closed — there is no
+constraint for a 15 % term to violate, so the projection is not shown
+incomplete by this route. A case for replacing that term must come from
+elsewhere. Scope (a): about this closed form, not about the weak sector.
+
+Probe `computations/qbeta/qbeta_f_bar_parity_requirement_probe.py` (5/5,
+sympy end to end, no floats / no anchor); audit
+`docs/audits/2026-09-04-qbeta-f-bar-parity-requirement.md`.
+
+### Flagged, NOT resolved — for the owner
+
+Four corpus sites call this same object bar-odd (`AGENTS.md:1937`,
+`epistemic-status-of-calibrations.md:3`,
+`three-calibration-discipline-proof.md:36`, and the strongest,
+`interaction-sector-taxonomy.md:20` — "pure odd"). The Lean cited for the
+split, `mass-theory/bar-parity-split.lean`, proves only the GENERIC
+decomposition of an arbitrary `x` under an arbitrary involution; the
+identification of `Q_β` with the odd part lives in its docstring, not in a
+theorem. Two readings survive — the claim is about the channel (then scope the
+prose), or about the observable (then it is refuted). Physics call; recorded,
+not decided, and explicitly NOT a claim that the corpus is inconsistent.
+
+Symbol collision also flagged: that docstring's `F` (abstract Habiro element)
+and this bean's `F = Q_β^exp/Q_A` (numerical correction factor) are two
+objects sharing a glyph in one channel.
+
+
+## Backlog for the re-derivation — two STALE-GREEN witnesses (from #6606, `qou-zk51`)
+
+A sibling flagged these on #6605 and I verified the committed half myself
+(`git show origin/main:<witness>`): both carry the convention-C signature —
+half-integer powers `sqrt(q)`, `q**(15/2)`, `q**(13/2)` — while recording
+`allPassed: true`.
+
+- `computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json`
+  (`A_q_symbolic`: `sqrt(q)`-form → `q**3/(q**2 + 1)` under D)
+- `computations/qbeta/qbeta-markov-trace-norm-probe.witness.json`
+  (same symbolic swap; L2 residue `6.85e-14` → `3.48e-9`)
+
+I confirmed the C-form and the committed green. I did **not** re-run the
+producers, so the sibling's "a fresh run returns `false`" half is
+unverified here — take it as reported, not as measured by me.
+
+**Neither producer is broken.** A C-frame assertion failing under D is exactly
+what `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` predicts. They must not be
+refreshed in place — that would commit a red. They are inputs to this bean's
+re-derivation, and they land green again only when the ladder itself is
+re-derived under D.
+
+
+## 2026-09-04 — the phase term has NO derivation to re-derive (PR #6625)
+
+Follow-on from the bar-parity result. With parity ruled out as a constraint,
+the next lever was the eigenphase `α = (z−1)h/2`. Asked the prior question the
+two-row filter arc never asked: **what derives the form?**
+
+The corpus answers with one citation —
+`q-beta-categorical-precision-ladder.md`: *"α = (z−1)h/2 is the single-wrap
+eigenphase on V_(2,1) (per `prop:q-beta-spectral-bridge`)"*. Read it.
+
+- **It names no eigenphase.** Across that proposition's `.md`, `.lean` and
+  proof block, the strings `eigenphase`, `V_{(2,1)}`, `V_{2,1}`, `(2,1)` and
+  even `phase` occur **zero** times.
+- **What it produces is a ratio coefficient.**
+  `Q_A/Q_B = (1−h/2)/(1−zh/2) = 1 + (z−1)h/2 + O(h²)` — so `(z−1)h/2` is the
+  first-order term of a multiplicative ratio (remainder exactly
+  `z(z−1)h²/4/(1−zh/2)`, the source's own Lean `bridge_first_order_remainder`).
+  The ladder uses it as an **angle**.
+- **Measured, the roles are far apart.** `cos(α−u/2)` vs the source's own
+  `1+α`: **5.354 %** (C) / **4.115 %** (D) at the proton pin. And the `δ`
+  solving `cos(α−δ) = 1+α` is **−0.377** (C) / **−0.326** (D) against the
+  ladder's `u/2 = 0.004259` — off by **88.6× / 76.6×** and opposite in sign.
+  That closes the charitable "cited only for the value" reading.
+- Also: the proposition is **conditional on the Borromean quark conjecture**;
+  its two proved Lean theorems are free-variable `ring`/`field_simp`
+  identities saying nothing about any convention; its analytic step is open.
+
+**CONSEQUENCE FOR THIS BEAN. "Re-derive under D" cannot mean "recompute α at
+`z_D`."** The provenance fails in BOTH conventions — there is no C-frame phase
+awaiting a D-frame twin. **The D work must SUPPLY a phase, not convert one.**
+It also explains the two-row filter's empty result rather than leaving it a
+brute fact: it searched for a `z` inside a form with no derivation behind it.
+
+NOT a new declaration — the arc's standing position (2026-08-31 audit, §Scope)
+is already that α is not derived. This records the **mechanism**, which was
+not: the cited source derives a different object.
+
+**Incidental, flagged not fixed:** `markovZ` in `q-beta-spectral-bridge.lean`
+has body `q³/(q²+1)` (D, migrated 2026-08-26, `2af189af1a`, `qou-cxjq`) while
+its own docstring and the `.md` proposition define z as C. Changes no proved
+theorem (both quantify over free `z`), but the load-bearing definition
+disagrees with itself. Which way to reconcile it depends on the re-derivation.
+
+Probe `computations/qbeta/qbeta_ladder_alpha_provenance_probe.py` (5/5, mpmath
+50 dps + sympy, no float64); audit
+`docs/audits/2026-09-04-cds1-ladder-phase-has-no-derivation.md`. Scope (a).
+
+
+### Correction to the entry above — the route it points at is CLOSED
+
+The entry above ends "the D work must SUPPLY a phase, not convert one" and I
+recommended supplying a Hoefsmit/seminormal eigenphase on `V_(2,1)`, on the
+grounds that the machinery is already there. **That route is excluded**,
+scope-(b), invariant named — by this bean's own child `qou-pdix`. Found by
+corpus-grep after the fact; recorded so nobody re-derives it.
+
+- `qbeta_eigenphase_seminormal_exclusion_probe.py` — every character of
+  `V_(2,1)` lies in `ℤ[q,q⁻¹]` (`b` enters traces only through the rational
+  `b·c`; every word of length 2, 4, 6 — 17 traces, 0 exceptions), while
+  `2cos((z−1)h/2)` is not Laurent. Scalar normalisation does not rescue it:
+  `det ρ(w) = (−1)^L` forces `L` even and `λ = ±1`.
+- `qbeta_braid_image_eigenphase_exclusion_probe.py` — no braid-image transfer
+  matrix carries it in **any** convention, by boundedness. Extended
+  Laurent → algebraic in `qbeta_eigenphase_algebraic_exclusion_probe.py` +
+  sorry-free `QOU.QBeta.BraidImageEigenphaseAlgebraic`.
+- `QOU.QBeta.EigenphaseCarrier.carrier_is_trivial` — the Lean carrier is
+  **proved vacuous**, independent of the citation defect measured above.
+- `qbeta_ladder_required_phase_probe.py` — the convention-parameter class is
+  pruned for D: required window half-width ≈1.09e-5 rad, `z_D` misses by
+  ≈1.19e-2 rad, ~1000×.
+
+**And S1 is smaller than this bean's header says.**
+`QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` (sorry-free): `z` reaches
+the ladder at exactly one place, the N=1 phase, so `c₂ … c₅` are **phase-blind**
+and do not need re-deriving. **The D-frame work is the phase and only the
+phase.** The header's "every ≈−2 value-level fact is C-conditional" still holds
+for the recorded values; what does not hold is that the whole tail needs
+re-derivation.
+
+**Still open**, quoting the seminormal probe's own scope section — these are
+where a supplied phase could come from, and nothing above excludes them:
+
+1. an `M_β` from a **non-scalar** normalisation (divided by a `q`-dependent,
+   non-rational Markov-trace factor);
+2. an `M_β` **outside the braid image** — a general element of `H₃(q)`, or an
+   operator on a larger space restricted to `V_(2,1)`;
+3. the KZ / Kohno–Drinfeld holonomy branch, which the `EigenphaseCarrier`
+   trichotomy leaves as branch (3). **Check `9a8b09c661` on main first** — its
+   subject says the Kohno–Drinfeld route was excluded, and I have not read it.
+
+The provenance finding itself is unaffected: the attribution defect and the
+4–5 % / 88× measurements stand independently of all of this.
+
+
+### Route 3 (KZ / Kohno–Drinfeld) is CLOSED — checked, per the caveat above
+
+The entry above listed it open with "check `9a8b09c661` first". Checked:
+`QOU/QBeta/HolonomySpectrumSignObstruction.lean` (`4471ee72ce`, 2026-08-31,
+6 theorems, sorry-free) **excludes every holonomy whose generator has real
+spectrum**, Kohno–Drinfeld included. Residue-independent — a real eigenvalue `a`
+gives character `cosh a ≥ 1` for every real `a`, and the required factor is
+**0.998399 < 1**. The obstruction is `(x−1)² ≥ 0`.
+
+**Exact cross-check with my probe.** That 0.998399 is what
+`qbeta_ladder_alpha_provenance_probe` computes as `cos(α − u/2)` at C
+(0.9983989452530845), and the surviving condition's angle `θ = 0.0565947` is
+exactly `|α − u/2|` there. Same object from opposite directions — one asking
+what the ladder's factor **is**, the other what could **produce** it.
+
+**Route status after this:**
+
+| route | status |
+|---|---|
+| non-scalar normalisation (÷ a `q`-dependent non-rational Markov-trace factor) | **open** |
+| `M_β` outside the braid image | **open in general**; holonomy sub-case closed for real spectrum |
+| KZ / Kohno–Drinfeld | **CLOSED** |
+
+**The surviving condition is sharp:** a connection whose generator is
+**elliptic** at real `q` — `det A > 0`, spectrum `±iθ`, `θ = 0.0565947`. The
+imaginarity must be **sourced**; the corpus names `conj:im-q-physical-role`, and
+it is Tier-0 condition D0 on `qou-pdix` / this bean.
+
+Pointer, not a result: AGENTS.md's Im(q) banner separates the **observable**
+level (`Im(q₀) = 0`, verified) from the **fibre** level (`Im(q)` unconstrained).
+An elliptic generator at real `q₀` needs its imaginary part from somewhere, and
+the fibre level is the only place the framework leaves for it. Nothing here
+derives such a generator or shows one exists.

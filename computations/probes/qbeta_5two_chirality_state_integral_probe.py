@@ -56,6 +56,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "qbeta"))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from phi_b_evaluator import log_phi_b  # noqa: E402  (corpus-validated Φ_b)
@@ -63,8 +65,14 @@ import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (A2 H_num)
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0 = {"muon": mp.mpf("1.10997859555733471"),
-      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+Q0 = {"muon": q_muon_at(50),
+      "proton": mp.mpf(Q_50_DIGIT_STR)}
 
 
 def z_state_integral(b, B_pow, A_coef, T=mp.mpf(8)):
@@ -220,7 +228,13 @@ def main() -> int:
                  "A2's Stokes datum. Anchor-smooth (honest: not the swing). "
                  "No fit; no c_k wired; auditOnly."
                  if ok else "INCONCLUSIVE — a gate failed; inspect."))
-    wb.save()
+    # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+    # pins deliberately, so no anchor list can classify it and it was going
+    # out unstamped. Carries the values actually computed with.
+    wb.save(q0_comparison(
+        muon=Q0["muon"], proton=Q0["proton"],
+        reason='computes the 5_2 chirality state integral at BOTH pins and reports each under its own key; the mu-vs-p difference is the subject',
+    ))
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-t0:.0f}s total)")
     print("  witness -> computations/probes/qbeta-5two-chirality-state-integral.witness.json")
     return 0 if ok else 1

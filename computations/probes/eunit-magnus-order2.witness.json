@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:22:46.753094+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:00:52.399220+00:00",
+  "commitSha": "c360e0a180af341006867c7461edf0279c5837af",
   "assertions": [
     {
       "name": "sym_S1_h_bar_odd",
@@ -126,11 +126,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 23,
   "computation": "eunit-magnus-order2",
   "scriptFile": "eunit_magnus_order2_probe.py",
-  "scriptHash": "a6ad95274ead",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4285177bd308",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -145,7 +145,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -157,7 +157,7 @@
   "auditOnly": "docs/audits/2026-07-24-eunit-magnus-order2.md",
   "parameters": {
     "q0_env_pin": "1.1099785827513808075916690956107688798744991218736",
-    "q0_muon_canonical": "1.10997859555733471",
+    "q0_muon_canonical": "1.1099785956427390466817951293800017527000655610290",
     "pin_note": "muon-vs-proton q0 differ ~11.5 ppb — immaterial at this audit's 1e-4 relative scale; g2 gap-coefficient shift between pins recorded below"
   },
   "data": {
@@ -236,7 +236,7 @@
         }
       },
       "deuteron_decomposition": {
-        "E_rot_eq_Eeven_times_1_minus_t_residual": "3.6223e-71",
+        "E_rot_eq_Eeven_times_1_minus_t_residual": "7.2445e-71",
         "t_pct": "5.21231",
         "bar_even_gap_pct": "4.40844",
         "g2_gap_measured_equals_gap_over_h2": "1.008652"
@@ -253,11 +253,17 @@
       "B_AME_MeV": "2.2245662"
     },
     "pin_robustness": {
-      "g2_gap_shift_between_pins": "4.4204e-7"
+      "g2_gap_shift_between_pins": "4.4499e-7"
     }
   },
   "caveats": [
     "NEAR-MATCH tier: the bar-even order-2 gap coefficient g2 (g for gap, owner-picked; NOT the Q_beta ladder c_k) ≈ 1.008 is measured forward, NOT derived. Deriving it (octahedral e₂ / surface-curvature term) is the open object. The parity projection E⁺ assumes the corpus mass-side bar-even discipline applies to the rotational tier — a structural assumption, stated, not proved.",
     "Branch convention: log(−q⁻¹) taken on the principal branch (+iπ); the letter of σ⁻¹ is −log σ (path reversal), not the principal log of σ⁻¹. Fibre-level Im is permitted (archimedean Im(q₀)=0 constrains q, not the fibre log)."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "measures the inter-crossing Magnus order-2 term at BOTH the environment (proton) pin and the muon pin, and reports g2_gap_shift_between_pins; both pins are read on purpose and each is reported under its own key"
 }

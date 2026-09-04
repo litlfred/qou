@@ -76,6 +76,25 @@ from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 
 def main() -> int:
     t0 = time.monotonic()
@@ -155,7 +174,7 @@ def main() -> int:
 
     # Substrate evaluation point + leading-order test below.
     print(f"  Substituting numerically at q_0 = 1.10997859556... :")
-    Q0_str = "1.1099785955573347198997632204832250266562084087802"
+    Q0_str = Q_50_DIGIT_STR
     q0_sp = sp.Float(Q0_str, 50)
     u0 = sp.N(u_q.subs(q, q0_sp), 50)
     print(f"    u(q_0) = {u0}")

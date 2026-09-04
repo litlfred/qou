@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:33:48.885737+00:00",
-  "commitSha": "27cbb6e2ec5168729205970a4aba0a9e1973803b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-04T04:33:59.348454+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "sign_flip_structural_and_robust",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-c3-imq-linear-response",
   "scriptFile": "qbeta_c3_imq_linear_response_probe.py",
-  "scriptHash": "4d48af847198",
-  "scriptCommitSha": "f812f287d6e9a8c9b13641629f8613a4c217fa57",
+  "scriptHash": "0ee8e5c5afa9",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_imq_linear_response_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_imq_linear_response_probe.py"
   },
   "description": "Candidate-(iii) linear-response structure for the c₃ bar-odd S decay projection (follow-up to merged #3600). Formalize-first: (1) S is bar-odd under σ:q↦q⁻¹, and q=q₀+iε sends ε↦−ε/q₀² so S(−ε)=−S(ε)+O(ε²) — S∝ε with sign S = sign ε, making the muon>0>proton sign-flip STRUCTURAL, not a fit (numeric witness: Im T(q0+iε) odd + ≈ε·T'(q0)). (2) The linear coefficient ∂S/∂ε is derived up to proxy: geometric (u=2log q, 4√3 log q0/q0) and operator (fig-8 trace T'(q0), #3600) both give small sign-flipped ε at both anchors; |ε| is proxy-dependent. Residue: ε(q₀) itself (=arg(u(q₀))), one open real function, in scope under the opened Subgoal-2 but not fit/wired. Scope-(a); C14; no c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -44,8 +53,8 @@
     "coefficient_cross_check": [
       {
         "anchor": "muon",
-        "coeff_geom": "0.6512682302",
-        "coeff_op": "1.581193685",
+        "coeff_geom": "0.6512682306",
+        "coeff_op": "1.581193686",
         "eps_geom": "0.014867883",
         "eps_op": "0.0061238418",
         "eps_geom_pct": "1.33947",

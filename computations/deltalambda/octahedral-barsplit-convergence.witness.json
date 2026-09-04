@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:05:24.830613+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:19.226915+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "vmvi_bar_odd",
@@ -39,8 +39,8 @@
   "durationMs": 0,
   "computation": "octahedral-barsplit-convergence",
   "scriptFile": "octahedral_barsplit_convergence_probe.py",
-  "scriptHash": "426e2b9b6136",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "fc739116e8b1",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -69,9 +69,9 @@
   "tier": "structural convergence test (bar-parity + exact targets; no fit)",
   "result": {
     "targets_from_4158": {
-      "t_bar_odd_impurity": "0.052123086",
+      "t_bar_odd_impurity": "0.05212308",
       "t_pct": "5.212",
-      "h2_bar_even_gap": "0.043706218",
+      "h2_bar_even_gap": "0.043706209",
       "h2_pct": "4.371",
       "t_plus_h2_pct": "9.5829",
       "deuteron_gap_pct": "9.21"
@@ -99,8 +99,11 @@
     "axis": "Δ_λ binding — μ₀ −9% closure, octahedral route B ↔ Magnus route A convergence",
     "sibling_magnus": "#4158 (audit 2026-07-24-eunit-magnus-order2.md)",
     "builds_on": "PR #4127 FourDilogFirstOrder.lean + 2026-07-19-octahedral-…-tetrahedra.md",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

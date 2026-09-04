@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:47:43.919431+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-09-04T04:38:05.843339+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "v1_complete_recovers_vol_4_1",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 99424,
+  "durationMs": 122201,
   "computation": "qbeta-c3-mq0-nk-scan",
   "scriptFile": "qbeta_c3_mq0_nk_scan.py",
-  "scriptHash": "85eaca17084a",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "5d806303d84c",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -104,13 +104,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "0.3130221956",
+            "u_re": "0.3130221958",
             "u_im": "-6.283185307",
             "abs_u": "6.290977706",
             "arg_u_deg": "-87.147938",
             "bloch_wigner_vol": "-1.94068442",
-            "Im_V_branch": "-73.07812694",
-            "Im_V_nz_leading": "-3.406556756",
+            "Im_V_branch": "-73.07812695",
+            "Im_V_nz_leading": "-3.406556758",
             "winding": "-1.0892204",
             "min_dist_zeta": 1.0
           },
@@ -145,15 +145,15 @@
             "min_dist_zeta": 0.23135364835423577
           },
           "muon": {
-            "u_re": "0.3130221956",
+            "u_re": "0.3130221958",
             "u_im": "-12.56637061",
             "abs_u": "12.57026863",
             "arg_u_deg": "-88.573085",
             "bloch_wigner_vol": "1.94068442",
             "Im_V_branch": "146.156254",
-            "Im_V_nz_leading": "-6.813113512",
+            "Im_V_nz_leading": "-6.813113517",
             "winding": "0.089220432",
-            "min_dist_zeta": 0.23135364444055054
+            "min_dist_zeta": 0.23135364441444944
           },
           "qstar": {
             "u_re": "0.3130221887",
@@ -186,13 +186,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "0.6260443911",
+            "u_re": "0.6260443916",
             "u_im": "-6.283185307",
             "abs_u": "6.314297204",
             "arg_u_deg": "-84.30994",
-            "bloch_wigner_vol": "-1.608631011",
-            "Im_V_branch": "-86.78312443",
-            "Im_V_nz_leading": "-6.813113512",
+            "bloch_wigner_vol": "-1.60863101",
+            "Im_V_branch": "-86.78312445",
+            "Im_V_nz_leading": "-6.813113517",
             "winding": "-1.1997222",
             "min_dist_zeta": 1.0
           },
@@ -227,15 +227,15 @@
             "min_dist_zeta": 0.18550160205421404
           },
           "muon": {
-            "u_re": "0.6260443911",
+            "u_re": "0.6260443916",
             "u_im": "-12.56637061",
             "abs_u": "12.58195541",
             "arg_u_deg": "-87.147938",
-            "bloch_wigner_vol": "1.608631011",
+            "bloch_wigner_vol": "1.60863101",
             "Im_V_branch": "173.5662491",
-            "Im_V_nz_leading": "-13.62622702",
+            "Im_V_nz_leading": "-13.62622703",
             "winding": "0.19972223",
-            "min_dist_zeta": 0.1855015904360871
+            "min_dist_zeta": 0.18550159035860367
           },
           "qstar": {
             "u_re": "0.6260443775",
@@ -268,13 +268,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "6.260443911",
+            "u_re": "6.260443916",
             "u_im": "-6.283185307",
-            "abs_u": "8.869699858",
+            "abs_u": "8.869699861",
             "arg_u_deg": "-45.103876",
-            "bloch_wigner_vol": "-2.860968213e-73",
-            "Im_V_branch": "4.227774556",
-            "Im_V_nz_leading": "-68.13113512",
+            "bloch_wigner_vol": "-2.859584647e-73",
+            "Im_V_branch": "4.227774738",
+            "Im_V_nz_leading": "-68.13113517",
             "winding": "-1.5",
             "min_dist_zeta": 1.0
           },
@@ -309,13 +309,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "6.260443911",
+            "u_re": "6.260443916",
             "u_im": "-12.56637061",
             "abs_u": "14.03947394",
             "arg_u_deg": "-63.51796",
-            "bloch_wigner_vol": "-1.138035406e-72",
-            "Im_V_branch": "-367.8475441",
-            "Im_V_nz_leading": "-136.2622702",
+            "bloch_wigner_vol": "-1.13803505e-72",
+            "Im_V_branch": "-367.8475439",
+            "Im_V_nz_leading": "-136.2622703",
             "winding": "-3.5",
             "min_dist_zeta": 1.0
           },
@@ -350,13 +350,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "12.52088782",
+            "u_re": "12.52088783",
             "u_im": "-6.283185307",
-            "abs_u": "14.00896318",
+            "abs_u": "14.00896319",
             "arg_u_deg": "-26.648243",
-            "bloch_wigner_vol": "-2.739683254e-73",
-            "Im_V_branch": "373.6581998",
-            "Im_V_nz_leading": "-136.2622702",
+            "bloch_wigner_vol": "-2.739679703e-73",
+            "Im_V_branch": "373.6582005",
+            "Im_V_nz_leading": "-136.2622703",
             "winding": "-1.5",
             "min_dist_zeta": 1.0
           },
@@ -391,13 +391,13 @@
             "min_dist_zeta": 1.0
           },
           "muon": {
-            "u_re": "12.52088782",
+            "u_re": "12.52088783",
             "u_im": "-12.56637061",
             "abs_u": "17.73939972",
             "arg_u_deg": "-45.103876",
-            "bloch_wigner_vol": "5.840232346e-73",
-            "Im_V_branch": "1.582881678",
-            "Im_V_nz_leading": "-272.5245405",
+            "bloch_wigner_vol": "-5.479359411e-73",
+            "Im_V_branch": "1.582882404",
+            "Im_V_nz_leading": "-272.5245407",
             "winding": "-3.5",
             "min_dist_zeta": 1.0
           },

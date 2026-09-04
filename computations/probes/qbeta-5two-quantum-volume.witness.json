@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:27:50.623258+00:00",
-  "commitSha": "2a9af135f96b8b2a894307b939fbe17f5eed0452",
+  "computedAt": "2026-09-03T20:57:29.177603+00:00",
+  "commitSha": "ec33acb10b62144583ec9c07c2279fd9f7d80536",
   "assertions": [
     {
       "name": "vol_5_2_validates",
       "computed": "4.947704352032725880255725006372517052445014682389514313366308978014736e-50",
-      "expected": 0.0,
+      "expected": "0.0",
       "passed": true,
-      "tolerance": "1e-06",
+      "tolerance": "1e-6",
       "source": "Im V_M at the m=1 geometric saddle = Vol(5₂) = 2.82812 (Hikami eq 4.12 / SnapPy) — validates the NZ saddle"
     },
     {
       "name": "five_two_chiral_re_nonzero",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1.0",
       "passed": true,
       "tolerance": "0.5",
       "source": "Re 𝔙(5₂) ≠ 0 (chiral, CS≠0) — the bar-odd/CS home 4₁ (amphichiral, CS=0) structurally lacks"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 23,
   "computation": "qbeta-5two-quantum-volume",
   "scriptFile": "qbeta_5two_quantum_volume_probe.py",
-  "scriptHash": "2182fad80eae",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "637b8ad61e64",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -56,12 +56,18 @@
     "re_V_cs_partner": "1.9106738240353776497",
     "cs_over_pi2": "0.193591733406",
     "anchor_swings": {
-      "vol": "5.31909096097e-10",
-      "im_V": "5.65365876028e-9",
-      "re_V": "1.8868254327e-8",
+      "vol": "5.35456458899e-10",
+      "im_V": "5.69136364304e-9",
+      "re_V": "1.89940888225e-8",
       "max_d_dq": "1.473397e+00"
     },
     "swing_target": "N_odd=S·u³ needs d/dq ~ 3.84e6 (the 1/u³-amplified smooth-numerator slope); a classical/quantum invariant smooth in q₀ gives O(1)–O(10) slope.",
     "verdict": "5₂ QUANTUM VOLUME COMPUTED + Vol VALIDATED (2.82812). The anchor-dependent 𝔙_q(5₂) has max |d𝔙/dq| = 1.473e+00 — ANCHOR-SMOOTH (O(1) slope), ~6 orders below the 3.84e6 the S-swing needs. 5₂ is chiral (Re 𝔙 ≠ 0), so it IS the nonzero bar-odd/CS home 4₁ lacks, and being anchor-dependent it is not excluded by the prune — but its smooth q₀-dependence still cannot supply the 2e6-amplified swing; the swing remains the 1/u³ inversion of a smooth numerator (BarOddLadderShape), pinned by experimental Q_β. No c_k; no fit; scope-(a)."
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "the cross-anchor quantum-volume slope |d𝔙/dq| between the two pins is the measured quantity"
 }

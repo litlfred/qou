@@ -92,7 +92,7 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
-# ---- fixed canonical substrate (muon-canonical computations layer) ----
+# ---- fixed canonical substrate (PROTON pin; label corrected, bean qou-9ugp) ----
 # q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
 # 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
 # muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen

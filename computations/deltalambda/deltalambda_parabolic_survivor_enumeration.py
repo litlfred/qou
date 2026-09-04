@@ -52,12 +52,23 @@ from mpmath import mpf, nstr  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 
 # Experimental / Physical-Observations pin (proton). AGENTS.md §q0-anchor:
 # "ALL AGENTS AND ALL PRODUCTION CODE DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR."
-Q0 = mpf("1.1099785827513808")
-
+Q0 = mpf(Q_50_DIGIT_STR)
 RHO_STRONG_3 = mpf("3.8128")
 RHO_STRONG_4 = mpf("13.0316")
 DET_CAP = {2: 1, 3: 3, 4: 6}          # C(A,2)

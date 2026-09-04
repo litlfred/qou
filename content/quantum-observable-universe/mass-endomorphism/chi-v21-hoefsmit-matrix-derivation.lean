@@ -58,6 +58,21 @@ noncomputable def hoefsmit_v21_d2 (q : ℝ) : ℝ := -q⁻¹ / (q^2 + 1)
 noncomputable def hoefsmit_v21_b_sq (q : ℝ) : ℝ :=
   hoefsmit_v21_d1 q * hoefsmit_v21_d2 q + 1
 
+/-- The b² expression as a rational function of q (= polynomial in
+    u = q² over (u + 1)²).
+
+    **Moved up from the end of the file.** `chi_v21_matrix_trace_identity`
+    below consumes it, and Lean is order-sensitive: declared after its
+    consumer, it produced `Unknown identifier hoefsmit_v21_b_sq_rational`
+    at the use site — a forward reference, not a missing declaration, and
+    the two are indistinguishable from the error text alone. -/
+theorem hoefsmit_v21_b_sq_rational (q : ℝ) (hq : q ≠ 0) :
+    hoefsmit_v21_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 := by
+  unfold hoefsmit_v21_b_sq hoefsmit_v21_d1 hoefsmit_v21_d2
+  have h : (q^2 + 1 : ℝ) ≠ 0 := by positivity
+  field_simp
+  ring
+
 /-! ## Trace and determinant identities
 
 For any Hecke generator's 2×2 matrix M satisfying the Hecke
@@ -167,14 +182,14 @@ open Matrix in
     off-diagonal as `Real.sqrt (hoefsmit_v21_b_sq q)` without an explicit
     `0 ≤ hoefsmit_v21_b_sq q` hypothesis. Use `sigma1_v21_gen` in new
     code with an explicit square-root witness. -/
-@[deprecated "Migrate to the generic `sigma1_v21_gen d1 d2 b` with an explicit `b² = hoefsmit_v21_b_sq q` hypothesis (Tier 2), or a future archimedean shim carrying `0 ≤ hoefsmit_v21_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to the generic `sigma1_v21_gen d1 d2 b` with an explicit `b² = hoefsmit_v21_b_sq q` hypothesis (Tier 2), or a future archimedean shim carrying `0 ≤ hoefsmit_v21_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-06-01")]
 noncomputable def sigma1_v21_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q);
      Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q]
 
 /-- Backward-compatibility alias — `sigma1_v21` is the legacy form.
     Phase 2 migrates this file's downstream uses to `sigma1_v21_gen`. -/
-@[deprecated "Use `sigma1_v21_legacy` explicitly (Phase 1), or migrate to `sigma1_v21_gen` (Phase 2)."]
+@[deprecated "Use `sigma1_v21_legacy` explicitly (Phase 1), or migrate to `sigma1_v21_gen` (Phase 2)." (since := "2026-06-01")]
 noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   sigma1_v21_legacy q
 
@@ -235,30 +250,51 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
     + `sympy.cancel` + `sympy.factor` in the probe; the bit-exact
     closed form recorded in `per-wedderburn-block-ck.witness.json`.
 
-    Full Lean proof would require evaluating the 11-matrix-product
-    trace symbolically (Hoefsmit 2×2 matrices with `Real.sqrt` in
-    the off-diagonal entries) — substantial but tractable as a
-    follow-up. Marked as conditional on the empirical witness. -/
+    **STATED, NOT PROVED** (AGENTS.md §"Zero-sorry default",
+    state-and-queue). This is the piece the file's §Status already
+    declares deferred, and the tactic script that stood here did not
+    prove it — it merely could not be seen to fail, because it hit the
+    200 000-heartbeat `whnf` timeout first. Raised to 4 000 000 it
+    completes elaboration in 28 s and reports the real failure:
+
+        rewrite failed: Did not find an occurrence of the pattern
+          √(hoefsmit_v21_b_sq q) ^ 2
+
+    i.e. `ring_nf` had already normalised the square away, so the
+    `rw [h_sqrt]` step never applied.
+
+    **How far the proof does get**, recorded so the next attempt does
+    not start from nothing. With `b := √(hoefsmit_v21_b_sq q)` set
+    before unfolding, `simp only [List.foldl, Matrix.trace_fin_two]`
+    followed by `field_simp` reduces the goal to a polynomial identity
+    in `q` and `b` modulo the single quadratic relation
+
+        b² = (q⁴ + q² + 1) / (q² + 1)²
+
+    (`hoefsmit_v21_b_sq_rational`). What is missing is the elimination
+    step: `nlinarith` does not close it, and `linear_combination`
+    needs the polynomial coefficient of that relation, which is not
+    guessable by hand at degree 11. The tractable route is the one the
+    `@[deprecated]` notice on `sigma1_v21_legacy` already names —
+    restate over `sigma1_v21_gen d1 d2 b` with `b² = d1·d2 + 1` as an
+    explicit hypothesis (Tier 2), so the identity becomes a polynomial
+    one in a free `b` and the relation can be applied by `ring`-level
+    rewriting rather than by search.
+
+    Tracked as bean `qou-18b6`. Do NOT close this by weakening the
+    statement or by assuming it as a class field — the claim is exactly
+    the one sympy verifies. -/
+-- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
+-- Ref: [manuscript] empirical sympy verification in
+--   computations/probe_per_wedderburn_block_ck.py
+--   (q_character_on_braid_word + sympy.cancel + sympy.factor);
+--   closed form recorded in per-wedderburn-block-ck.witness.json
 theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
     chi_v21_on_word q beta_n_word_v21
       - chi_v21_on_word q beta_p_word_v21
       = chi_V21_difference_factored q := by
-  have h_b_sq : 0 ≤ hoefsmit_v21_b_sq q := by
-    rw [hoefsmit_v21_b_sq_rational _ hq]
-    positivity
-  have h_sqrt : (Real.sqrt (hoefsmit_v21_b_sq q))^2 = hoefsmit_v21_b_sq q := Real.sq_sqrt h_b_sq
-  unfold chi_v21_on_word beta_n_word_v21 beta_p_word_v21
-  unfold crossing_to_matrix sigma1_v21 sigma1_v21_legacy sigma0_v21
-  simp only [List.foldl, Matrix.sub_apply, Matrix.add_apply, Matrix.smul_apply,
-    Matrix.one_apply, Matrix.mul_apply, Matrix.trace, Fin.sum_univ_succ, Fin.sum_univ_zero,
-    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.empty_val',
-    ite_true, ite_false, eq_mpr_eq_cast, cast_eq]
-  ring_nf
-  rw [h_sqrt]
-  unfold hoefsmit_v21_b_sq hoefsmit_v21_d1 hoefsmit_v21_d2 chi_V21_difference_factored
-  have h_denom : (q^2 + 1) ≠ 0 := by positivity
-  field_simp
-  ring
+  -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation; bean `qou-18b6`
+  sorry
 
 /-! ## u = q² coordinate: sqrt-free trace identity
 
@@ -285,11 +321,14 @@ noncomputable def sigma1_v21_param (q : ℝ) (b_arg : ℝ) :
 
 /-- σ_1 squared: diagonal entries involve b_arg², off-diagonal
     involves b_arg·(d_1 + d_2). -/
-theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) (hq : q ≠ 0) :
+-- `hq : q ≠ 0` dropped (2026-09-04): it was never consumed, and an unused
+-- hypothesis overstates what the statement needs — the trace identity is a
+-- polynomial one, true for every `q`.
+theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) :
     Matrix.trace (sigma1_v21_param q b_arg * sigma1_v21_param q b_arg)
       = (hoefsmit_v21_d1 q)^2 + (hoefsmit_v21_d2 q)^2 + 2 * b_arg^2 := by
   unfold sigma1_v21_param
-  simp [Matrix.trace, Matrix.mul_apply, Fin.sum_univ_succ, Fin.sum_univ_zero]
+  simp
   ring
 
 -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"u-coordinate"
@@ -309,14 +348,6 @@ theorem chi_v21_closed_form_u_coord (q : ℝ) :
   unfold chi_V21_difference_factored
   rfl
 
-/-- The b² expression as a rational function of q (= polynomial in
-    u = q² over (u + 1)²). -/
-theorem hoefsmit_v21_b_sq_rational (q : ℝ) (hq : q ≠ 0) :
-    hoefsmit_v21_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 := by
-  unfold hoefsmit_v21_b_sq hoefsmit_v21_d1 hoefsmit_v21_d2
-  have h : (q^2 + 1 : ℝ) ≠ 0 := by positivity
-  field_simp
-  ring
 
 /-! ## Status
 

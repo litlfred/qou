@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:53:01.344438+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T16:20:58.439445+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "alpha_em_prefers_proton_anchor",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": "1",
+      "expected": "1",
       "passed": true,
       "tolerance": "0.5",
       "source": "q_alpha within 0.245 ppb of proton pin vs 11.8 ppb of muon pin"
     },
     {
       "name": "proton_delta_sub_ppb",
-      "computed": 0.2447287476903626,
-      "expected": 0.0,
+      "computed": "0.24472874732248980802",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1.0,
+      "tolerance": "1",
       "source": "|q_proton - q_alpha| = 0.245 ppb < 1 ppb"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "alpha-em-anchor-preference",
   "scriptFile": "alpha_em_anchor_preference_probe.py",
-  "scriptHash": "075858bd8ca9",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "1955d46c27dc",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -54,19 +54,25 @@
   "data": {
     "q_alpha": "1.10997858247973713954661009259",
     "anchor_deltas_ppb": {
-      "proton": 0.2447287476903626,
-      "muon": 11.781846764319999,
-      "mu_p_gap": 11.537118013806172
+      "proton": "0.24472874732248980802",
+      "muon": "11.858789092784570035",
+      "mu_p_gap": "11.614060342619785788"
     },
     "alpha_inv_residual_ppb": {
-      "proton": 1.6723270482102428,
-      "muon": 80.50996334188073
+      "proton": "1.6723270456964245288",
+      "muon": "81.035740382392584513"
     },
     "interpretation": {
       "prefers": "proton",
-      "factor": 48.14247151391756,
-      "q0_sensitivity": 6.833390323921153,
+      "factor": "48.456869993935462488",
+      "q0_sensitivity": "6.8333903239211523668",
       "note": "alpha_EM (EM sector) agrees with proton pin to sub-ppb; muon is the outlier (mu-p tension)"
     }
-  }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "anchor-preference cross-check: which documented pin the alpha_EM-exact q0 agrees with; both pins are read on purpose and each is reported under its own key"
 }

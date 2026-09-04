@@ -45,6 +45,8 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 import qbeta_5two_n3_cable_arbitration_probe as c3  # noqa: E402  (TL engine)
@@ -56,8 +58,14 @@ set_compute_dps()
 BRAID_5_2 = [1, 1, 1, 2, -1, 2]
 BRAID_4_1 = [1, -2, 1, -2]
 BRAID_TREF = [1, 1, 1]
-Q_MUON = mp.mpf("1.10997859555733471")
-Q_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+# Both pins read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). The
+# muon leg was the literal 1.1099785955573... -- the RETIRED self-certified
+# pin A, superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. A
+# mu-vs-p comparison whose muon leg is a retired literal compares live proton
+# against yesterday's muon, which is the failure it exists to measure.
+# Exception E1 of the 2026-08-30 ruling: both pins are read here on purpose.
+Q_MUON = q_muon_at(50)
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
 Q_STAR = mp.mpf("1.10997859303152")
 
 
@@ -286,7 +294,13 @@ def main() -> int:
                  "categorical carrier search continues to genuine limit "
                  "objects. auditOnly."
                  if ok else "A gate failed — inspect before any claim."))
-    wb.save()
+    # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+    # pins deliberately, so no anchor list can classify it and it was going
+    # out unstamped. Carries the values actually computed with.
+    wb.save(q0_comparison(
+        muon=Q_MUON, proton=Q_PROTON,
+        reason='compares the higher-cable q* location against BOTH substrate pins; both pins are read on purpose and each is reported under its own key',
+    ))
     print(f"\n  assertions passed: {ok}   ({time.monotonic()-t0:.0f}s)")
     print("  witness -> computations/probes/qbeta-5two-higher-cable-qstar.witness.json")
     return 0 if ok else 1

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:27:12.493485+00:00",
-  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
+  "computedAt": "2026-09-03T16:17:43.326316+00:00",
+  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
   "assertions": [
     {
       "name": "n=2 singlet multiplicity = 1 (EM uniqueness, cor:gauge-coupling-uniqueness)",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "alpha-k-four-strand-singlet-selection",
   "scriptFile": "alpha_k_four_strand_singlet_selection.py",
-  "scriptHash": "983650c4cff7",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "5356c8c719cf",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,9 +55,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_k_four_strand_singlet_selection.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_k_four_strand_singlet_selection.py"
   },
   "description": "alpha_{basis-knot} per-force selection scoping: the even-strand singlet ladder dim Hom(1, A^{(x) n}) = 0 (n odd) / Catalan(n/2) (n even) for the SU_q(2) fundamental at generic q (exact integer Clebsch-Gordan walk; pre-archimedean).  n=2 gives the UNIQUE EM coupling slot (matches thm:em-spectral-completeness / cor:gauge-coupling-uniqueness, the trivial/unknot channel V_- ~ 1); n=4 gives exactly TWO independent scalar-coupling slots — the same count as the remaining knot-mediated short-range forces (strong T_{2,9}, weak T_{3,5}) in the established role table (prop:cohomological-embedding consequence 3).  The forced TL Gram matrix [[d^2,d],[d,d^2]] (d=[2]_q) on the n=4 slot space has eigenvalues d(d+/-1) on the symmetric/antisymmetric (bar-odd) combinations.  Tier: structural observation / selection-rule candidate; coupling VALUES not derived (gated on conj:e-hartree-categorical-derivation); nothing compared to measured alpha_s/alpha_W (anti-fishing).",
   "contentBlock": "thm:em-spectral-completeness",

@@ -100,11 +100,20 @@ window, then `c₃` is positive and `c₄` is negative.
 
 **It is stronger than its signature.** Only `1/5 ≤ |c₃|` and `|c₄| ≤ 5` are
 used — `_hc31` and `_hc40` are carried so the three theorems in this file take
-the same hypotheses and compose without plumbing, and Lean's unused-variable
-linter confirms the proof never touches them. So the alternation holds for a
-quartic coefficient of *arbitrarily small* height and for a cubic coefficient of
-*arbitrarily large* height; small-heightness is needed only as a floor on `|c₃|`
-and a ceiling on `|c₄|`. Do not read the extra binders as required. -/
+the same hypotheses and compose without plumbing. **The check that establishes
+this is deleting both binders and fixing the two positional call sites: the
+proof closes unchanged.** Do *not* reach for the unused-variable linter here;
+`linter.unusedVariables` does not fire on a binder prefixed with `_`, so its
+silence on this signature is the underscore doing its job and says nothing
+either way. (An earlier version of this docstring cited that silence as the
+evidence. The claim was true and the evidence was not: a reviewer who checked
+it as invited would have seen nothing and been unable to tell "unused" from
+"warning suppressed". Caught by an independent verification pass.)
+
+So the alternation holds for a quartic coefficient of *arbitrarily small*
+height and for a cubic coefficient of *arbitrarily large* height;
+small-heightness is needed only as a floor on `|c₃|` and a ceiling on `|c₄|`.
+Do not read the extra binders as required. -/
 theorem sum_signs_forced (q c₃ c₄ t : ℝ)
     (hq0 : (11099 : ℝ) / 10000 ≤ q) (hq1 : q ≤ (111 : ℝ) / 100)
     (hc30 : (1 : ℝ) / 5 ≤ |c₃|) (_hc31 : |c₃| ≤ 5)
@@ -167,8 +176,13 @@ rung is the sharp one: `[1/5, 1/4]` is `1 %` of the small-height band. -/
 /-- **The cubic rung is pinned to `[1/5, 1/4]`.** The lower bound is the
 small-height hypothesis once the sign is known; the upper bound is
 `c₃·w³ = t − c₄·w⁴ ≤ 24/10⁸ + 5·(11/1000)⁴`, against `w³ ≥ (108/10000)³`. The
-margin is genuine but thin — `313205/10¹²` against `314928/10¹²`, `0.55 %` — so
-it is exact rational arithmetic, not a decimal estimate. -/
+margin is genuine but thin — `313205/10¹²` against `314928/10¹²`, `0.5471 %` —
+so it is exact rational arithmetic, not a decimal estimate.
+
+**`1/4` is content, not slack.** The sharp window-wide bound is
+`313205/1259712 = 0.2486322`, so `1/4` leaves `0.00137`; a mutation to `24/100`
+fails to close. Stated because a reader cannot otherwise tell a chosen round
+number from a forced one. -/
 theorem sum_c3_pinned (q c₃ c₄ t : ℝ)
     (hq0 : (11099 : ℝ) / 10000 ≤ q) (hq1 : q ≤ (111 : ℝ) / 100)
     (hc30 : (1 : ℝ) / 5 ≤ |c₃|) (hc31 : |c₃| ≤ 5)
@@ -208,7 +222,10 @@ theorem sum_c3_pinned (q c₃ c₄ t : ℝ)
 /-- **The quartic rung satisfies `c₄ ≤ −4/5`.** From
 `c₄·w⁴ = t − c₃·w³ ≤ 24/10⁸ − (1/5)·(108/10000)³ = −11942.4/10¹²` against
 `w⁴ ≤ (11/1000)⁴`. So the small-height band available to `c₄` is `[−5, −4/5]`,
-not `[−5, −1/5] ∪ [1/5, 5]`. -/
+not `[−5, −1/5] ∪ [1/5, 5]`. Margin `0.0956 %`.
+
+**`−4/5` is content, not slack.** The sharp window-wide bound is `−0.8156820`,
+so `−4/5` leaves `0.01568`; a mutation to `−82/100` fails to close. -/
 theorem sum_c4_bounded (q c₃ c₄ t : ℝ)
     (hq0 : (11099 : ℝ) / 10000 ≤ q) (hq1 : q ≤ (111 : ℝ) / 100)
     (hc30 : (1 : ℝ) / 5 ≤ |c₃|) (hc31 : |c₃| ≤ 5)
