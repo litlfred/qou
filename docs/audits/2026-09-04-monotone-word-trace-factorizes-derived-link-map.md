@@ -62,7 +62,11 @@ one of which is the bond letter `z − h/2`.**
    Markov trace.** The per-bond product form the production trace implements is exact *because*
    the word is monotone (`tr_affineWord`), and would fail for the same letters in a non-ascending
    order (`content_reorder_defect`). `qou-ls86`'s `n = 3` identity is the smallest instance of the
-   first fact; `qou-kru4` is the smallest instance of the second.
+   first fact; ~~`qou-kru4` is the smallest instance of the second~~ **corrected the same day:**
+   the smallest instance of the second is `n = 3`, content `(2, 2)` — the cyclic square
+   `(g₀ g₁)²` against the Hopf chain, cross term exactly `z² − hz − 1`
+   (`RevisitClass.cyclicSquare_cross_term`); `qou-kru4`'s `n = 4` word is that object
+   stabilised once.
 
 2. **The two open questions were one question.** The `n = 4` cross term — the only non-bond-graph
    structural source found for the collective term after `qou-brng` closed the bond-graph routes

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-09-03T15:14:31Z
+updated_at: 2026-09-04T03:13:26Z
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -276,3 +276,6 @@ Independently confirmed in the 16-dim spin-1/2 rep (same closed form; the n=3 id
 SO the multi-bond source this bean closed at n=3 is OPEN at n=4 for interleaved word classes, with an exact nonzero cross term of the RIGHT SIGN (interleaved trace smaller => extra binding; R>0 on the well-bound regime). At the proton pin: 0.895 nats per interleaving vs R/alpha ~ 1.32/nucleon — order-of-magnitude remark only, NOT a fit.
 
 Scope (a), positive existence, narrow: production atom_braid_word_3A is sequential, so the production bare-product trace stays exact and no number moves. Whether a nucleus IS an interleaved word class = the carrier blocker (qou-5vhf). Lean: QOU.MathlibExt.MarkovTraceInterleavedCrossTerm over the MarkovTrace structure. Probe: markov_trace_n4_interleaved_cross_term_probe.py 11/11. Audit: docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.
+
+
+## 2026-09-04 (qou-sorn) — general-n answer sharpened, then measured. Smallest failing instance is n=3 content (2,2) (cyclic square vs Hopf chain, cross = z²−hz−1); production words are monotone so the product formula is exact for them (MonotoneWordTraceFactorizes). The one cross-term-bearing class, put into the production words at every bond, is worth ≤1 MeV and shrinks with A — not the collective term R. See qou-sorn.
