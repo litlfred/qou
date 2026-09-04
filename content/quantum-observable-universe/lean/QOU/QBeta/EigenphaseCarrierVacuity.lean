@@ -173,6 +173,17 @@ gives a three-way split with only one contentful branch:
 1. **`M` in the braid image** — *excluded*.  Every character lies in
    `ℤ[q,q⁻¹] ⊂ ℚ(q,z)`, and `2cos((z−1)h/2)` is transcendental over `ℚ(q,z)`,
    so no such `M` exists as a functional identity.
+   **🛑 The reason given here is the WRONG ONE — added 2026-09-04.**  The
+   exclusion is real, but transcendence over `ℚ(q,z)` is an *unproved* docstring
+   assertion: `BraidImageEigenphaseExclusion` calls it "the transcendence
+   assertion", and `PhaseFailsLogFunctionalEquation` records it as "correct but
+   needs transcendence theory".  What actually closes branch 1 is
+   `BraidImageEigenphaseAlgebraic.coeffs_zero_of_surjective_nonpos` — sorry-free,
+   by zero-counting, and per its own docstring closing the character case *and*
+   the eigenvalue-pair case.  Cite that.  Note its hypothesis: `α` surjective
+   onto the non-positive reals, which the unbounded `(z−1)h/2` family supplies
+   and a bounded `arccos` does not — "algebraic, therefore excluded" is not the
+   statement.
 2. **`M` arbitrary** — *circular*.  `rotationOfPhase` below satisfies the
    obligation for any `α` whatsoever, so it says nothing about the substrate.
 3. **`M` an exponential/holonomy of an independently-defined connection whose
