@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-09-04T22:06:22Z
+updated_at: 2026-09-04T22:12:28Z
 parent: qou-5p7n
 ---
 
@@ -199,3 +199,52 @@ first took the FIRST bracket binder, so six entries were attributed to
 The column remains a heuristic ("last binder not on a hand-kept ambient list")
 and is a pointer to read, not a verdict — `descent_surjective` is the known
 residual, reporting whichever ambient class is not yet on the list.
+
+
+## The real drain queue is 9, not 78 — and my own inhabitation column was the wrong axis too
+
+`scripts/pqmw-queue-recheck.py` now tests the **proof term** directly, which is
+what "bare projection" actually means. Four independent narrowings:
+
+    78  entries in the bean
+    -28  no longer resolve (file or declaration gone)
+    ---
+    50  live
+    -24  DERIVE -- compose or use fields; not projections at all
+    ---
+    26  bare projections
+    -12  class is INHABITED -- the bundle is built, so the accessor is the
+         ordinary Mathlib idiom (Aug-09 `legit` / `advisory`)
+    - 5  carrier heuristic returned no class -- needs a read, not excluded
+    ---
+     9  bare projection AND uninhabited class  <-- THE DRAIN QUEUE
+
+**The case that proves the inhabitation column was the wrong axis:**
+`q_bkm_criterion` is uninhabited (so my previous triage put it in the queue)
+**and is not a projection at all** — it composes TWO fields into an iff,
+`⟨ctx.bkm_necessity, ctx.bkm_continuation⟩`. **AGENTS.md §3b-cond names that
+file as the verified exemplar of the pattern working correctly.** Had I drained
+the 21 uninhabited as I said I would last turn, that would have been the first
+entry.
+
+So neither "still resolves" nor "class uninhabited" decides it. The
+discriminator is the 2026-08-30 one — **derives vs projects** — and it has to
+be read off the proof term.
+
+**THE DRAIN QUEUE (9):**
+
+    matrixChain_eq_buildChains_axiom        MatrixChainEqBuildChains      TMCorrespondence.lean
+    dressed_mass_from_substrate_split       DressedMassSubstrateSplit     DressedMassFromSubstrateSplit.lean
+    sdp_lp_projection                       ScalarLPProjection            ConfinementSDP.lean
+    categorical_dq_squared_nonvanishing     HasDqSquaredNonvanishing      Instanton.lean
+    mass_anchor_stable_forward              MassAnchorStableGateClass     mass-side-kernel-formalize-first-gates.lean
+    mass_direction_sanity_forward           MassDirectionSanityGateClass  mass-side-kernel-formalize-first-gates.lean
+    qbeta_direction_sanity_magnitude_match  DirectionSanityGateClass      q-beta-direction-sanity-gate.lean
+    qbeta_g_simple_pole_at_u_substrate      RadiusOfConvergenceGateClass  q-beta-radius-of-convergence-gate.lean
+    opening_eq_holonomy_of_conj             H2SAngleS3HolonomyConjecture  h2s-angle-s3-braid-holonomy.lean
+
+Plus **5 needing a carrier read** (`categorical_jet_prolongation`,
+`jet_prolongation_C`, `kernelIncl_exact`, `matter_locus_nonempty`,
+`topological_mass_decomposition`) where the heuristic found no class binder.
+
+Read each declaration and its class before writing. Still.
