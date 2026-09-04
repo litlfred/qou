@@ -194,3 +194,55 @@ matcher indexes **2,538 more library declarations** than the existing audit's
 and its namespace resolution tracks `namespace`/`end` nesting rather than
 concatenating every `namespace` line — the defect that script documents in
 itself. Whether that changes its verdicts is untested.
+
+---
+
+## Appendix B (2026-09-04): "cited" does not mean "someone else proved it"
+
+The corpus-wide scan reports **182 axioms, 118 cited**. That phrasing — mine —
+invites the reading *"118 are other people's theorems"*. **It is wrong**, and
+the distinction is the whole answer to "what is only cited and not Lean-proved".
+
+Splitting the 182 by the **key** in their `-- Ref:`:
+
+| citation | siblings | library (3 papers) | total | what it means |
+|---|---:|---:|---:|---|
+| **`[manuscript]`** | 51 | 3 | **54** | the framework citing **its own prose** |
+| **uncited** | 46 | 18 | **64** | no reference at all |
+| external literature | 51 | 13 | **64** | someone else's published theorem |
+| | 148 | 34 | **182** | |
+
+The external 64 break down as `kassel1995` 14, `jones1987` 10, `kock2004` 5,
+`kassel2008` 6, `bokutchen2014` 3, `bergman1978` 3, `yekutieli2015` 2,
+`wenzl1988` 2, `hoefsmit1974` 2, and singletons (`dipper-james1986`,
+`fulton1997`, `geckpfeiffer2000`, `todd2001`, `brundankleshchev2009`,
+`khovanovlauda2009`, `alizadeh-haeberly-overton-1997`, `bokut2005`).
+
+**So roughly a third of the axiom surface is genuine citation.** The other
+two-thirds is the framework asserting its own claims — 54 pointing at the
+manuscript, 64 pointing at nothing. A `[manuscript]` reference is a pointer to
+prose *in this repository*; it transfers no proof obligation to any external
+result, and an axiom carrying one is not "cited, not proved" in the sense a
+reader would assume. It is simply not proved.
+
+This does **not** make the 54 dishonest — §3b explicitly sanctions axiomatising
+a conjectural input, and a `[manuscript]` ref is the correct way to say *"this
+is our claim, stated there"*. What it does mean is that **the count of axioms
+whose content lives in the literature is 64, not 118**, and the phrase "118
+cited" should never be quoted as the former.
+
+The 46 uncited **sibling** axioms are a separate matter: AGENTS.md §1 requires a
+`-- Ref:` on every `sorry`, and the corpus applies the same convention to
+axioms (88 of 182 carry one). Those 46 — among them
+`proton_mass_from_substrate_axiom`, `neutron_mass_from_substrate_axiom`,
+`QCasimir.exists_axiom` — carry no reference of either kind. Not triaged here;
+named so the next pass has a list.
+
+### Method note
+
+The first version of this survey reported **0** `[manuscript]` axioms and "102
+cited, no key". That was a bug in the survey, not a fact about the corpus: it
+matched `-- Ref:\s*\[([^\]]+)\]` against a string `ref_above()` had *already*
+stripped `-- Ref:` from, so no key could ever match. Same shape as the
+`dualCone` / `IsLaterCommand` traps recorded above — a pattern that does not
+match the data's actual form, returning a confident zero.
