@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-03T21:09:49Z
+updated_at: 2026-09-04T02:33:06Z
 ---
 
 
@@ -766,3 +766,32 @@ are jointly worth. The remainder lives in the LEG-vs-LEG cancellation, which a r
 does not capture; recovering that needs rho_P and the sigma-ratio handled TOGETHER rather
 than two tight bounds added. Recorded explicitly so the next attempt does not spend its
 effort on the ratio alone and expect the whole factor back.
+
+
+2026-09-04 (#6528, session 125089da): THE NAIVE PER-INGREDIENT BUDGET CLOSES -- retracting my own
+'order of magnitude' claim made hours earlier in the same PR.
+
+MEASURED (_naive_budget_closes_probe.py, exact Fraction covariances, NO float64, exit 0),
+NAIVE(n) = |L_rho| + (sig_inf/2)(|delta_D| + |delta_A|) vs TRUE(n) = |m(n) - m_inf|:
+
+  pointwise LOSS over n>=16      4.141 .. 25.59 (max at n=16, where TRUE is a near-crossing)
+  C_true  = max TRUE  * sqrt(n)  0.0579688  (n=22)
+  C_naive = max NAIVE * sqrt(n)  0.279796   (n=22)
+  envelope loss                  4.8267x
+  headroom remaining             9.5359x    (C_target = m_inf sqrt(79) = 2.66812)
+
+CONSEQUENCE. Preserving the two cancellations (leg-vs-leg 0.2238..1.0; V_D-vs-V_A 0.108..0.226) is
+an OPTIMISATION worth ~5x, NOT a structural requirement on the proof. The triangle inequality alone
+does not exclude the easy per-ingredient route. My earlier 'constraint on the SHAPE of the proof' is
+WITHDRAWN -- it came from multiplying two worst cases that are neither independent nor coincident in
+n, so the product double-counted by ~2x.
+
+WHAT IS STILL OPEN, and it is narrower than this morning: C_naive is a FLOOR (empirical sups over
+n<=40; a rigorous constant must hold for all n). The live question is whether a rigorous
+Debye/Olver-style per-ingredient bound lands within 9.54x of these sups. That is cheaper to answer
+than building a cancellation-preserving proof, and it decides whether the harder proof is needed.
+
+ERROR LEDGER, entry 5 -- and a DIFFERENT class from 1-4. Those compared quantities belonging to
+different objects. This one COMBINED two correct measurements into a composite never measured, and
+the wrong composite changed a recommendation. Guard: a bound composed from other bounds is a
+hypothesis, not a measurement -- measure the composite before quoting it.
