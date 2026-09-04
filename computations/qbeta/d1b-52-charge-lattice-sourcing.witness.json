@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-nz-and-source-audit",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T09:58:19.714293+00:00",
-  "commitSha": "09a1c2507b682df7730f4463cfeb568e363afcca",
+  "computedAt": "2026-09-04T10:32:26.432686+00:00",
+  "commitSha": "d450e549a50753e41a9bad5acbb7c94d43928175",
   "assertions": [
     {
       "name": "C1_GGM_defines_no_charge_lattice",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 24,
   "computation": "d1b-52-charge-lattice-sourcing",
   "scriptFile": "d1b_52_charge_lattice_sourcing_probe.py",
-  "scriptHash": "172b501405f8",
-  "scriptCommitSha": "6943b00588c8739ee85a5ef0325ede9640c90b2f",
+  "scriptHash": "e5dc6fa60c98",
+  "scriptCommitSha": "5c16c52fc7ad7f5a7fd51268c1541f59e642fb28",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
