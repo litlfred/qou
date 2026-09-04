@@ -303,6 +303,23 @@ def selftest() -> int:
         if g != want:
             bad += 1
         print(f"  [{ok}] {field}: shape={g} expected={want}")
+    # The CROSS-FILE path: the same carrier, with no consumer in its own file,
+    # is `unconsumed` file-locally and `consumed` once the corpus set carries
+    # the witness.  Neither answer is reachable from the other source alone.
+    _xf = """class F where
+  claim : Prop
+  h_claim : claim
+  impl : claim -> Q
+"""
+    for projected, want in ((None, False), ({"h_claim"}, True)):
+        got = {e["field"]: e.get("consumed")
+               for e in prop_valued_fields(strip_comments(_xf), projected)}
+        g = got.get("claim", "<missing>")
+        ok = "ok " if g == want else "FAIL"
+        if g != want:
+            bad += 1
+        label = "corpus" if projected else "file-local"
+        print(f"  [{ok}] claim ({label}): consumed={g} expected={want}")
     for src, field, want in CONSUMED_SELFTEST:
         got = {e["field"]: e.get("consumed") for e in prop_valued_fields(strip_comments(src))}
         g = got.get(field, "<missing>")
@@ -320,6 +337,10 @@ def selftest() -> int:
     print("selftest FAILED" if bad else "selftest passed")
     return 1 if bad else 0
 
+
+# A dotted projection `ctx.foo` / `self.foo_holds` -- how a witness is USED.
+# Field DECLARATIONS are `name : type` and never dotted, so this cannot match one.
+PROJECTION = re.compile(r"\.\s*([A-Za-z_][A-Za-z0-9_']*)")
 
 # A field whose TYPE is literally `Prop`: the instance chooses the proposition.
 PROP_FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*Prop[ \t]*$", re.M)
@@ -339,7 +360,7 @@ def carrier_blocks(code: str):
 FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*([^\n]*)$", re.M)
 
 
-def prop_valued_fields(code: str):
+def prop_valued_fields(code: str, projected: set | None = None):
     """Fields declared `name : Prop`, SPLIT by whether the carrier proves them directly.
 
     Two shapes wear the same syntax and they are not the same defect.  Conflating
@@ -420,16 +441,31 @@ def prop_valued_fields(code: str):
             }
             if shape == "self_nominating":
                 # A witness is CONSUMED when some proof term projects it
-                # (`ctx.h_foo`, `self.foo_holds`, ...).  Search the WHOLE file,
-                # not the region outside the carrier: `carrier_blocks` runs a
-                # block to EOF when nothing follows it, which excluded the very
-                # theorem that consumes the witness (measured on
-                # B1TorusKnotRowsTheorem.lean, which reported False against a
-                # true True).  A dotted projection cannot occur in a field
-                # DECLARATION -- those are `name : type` -- so the whole-file
-                # search introduces no false positive.
-                used = any(re.search(r"\.\s*" + re.escape(w) + r"\b", code)
-                           for w in witnesses.get(f, []))
+                # (`ctx.h_foo`, `self.foo_holds`, ...).
+                #
+                # Search the WHOLE file, not the region outside the carrier:
+                # `carrier_blocks` runs a block to EOF when nothing follows it,
+                # which excluded the very theorem that consumes the witness
+                # (measured on B1TorusKnotRowsTheorem.lean, which reported
+                # False against a true True).  A dotted projection cannot occur
+                # in a field DECLARATION -- those are `name : type` -- so the
+                # whole-file search introduces no false positive.
+                #
+                # And prefer `projected`, the CORPUS-WIDE set of dotted names,
+                # when the caller supplies it: a class declared in one file can
+                # be consumed from another, and a file-local search reports
+                # that as `unconsumed`, i.e. UNDER-counts the defect.  Measured
+                # 2026-09-04 on all 15 unconsumed witnesses: none is projected
+                # anywhere in the corpus, so the file-local answer happened to
+                # be right -- but it was right by luck, not by construction.
+                # Prompted by a sibling agent on #6540, whose own count moved
+                # four times and never because a number looked wrong.
+                wits = witnesses.get(f, [])
+                if projected is not None:
+                    used = any(w in projected for w in wits)
+                else:
+                    used = any(re.search(r"\.\s*" + re.escape(w) + r"\b", code)
+                               for w in wits)
                 entry["witnesses"] = witnesses.get(f, [])
                 entry["consumed"] = used
             out.append(entry)
@@ -552,11 +588,20 @@ def main() -> int:
 
     if a.kind in ("prop-field", "all"):
         pf = []
+        # PASS 1 -- every dotted projection anywhere in the corpus.  A class
+        # declared in one file can be consumed from another, and a file-local
+        # search reports that as `unconsumed`, i.e. UNDER-counts the defect.
+        sources = {}
+        projected: set = set()
         for rel in sorted(files):
             raw = git_show(a.rev, rel) if a.rev else (root / rel).read_text(errors="replace")
             if raw is None:
                 continue
-            for e in prop_valued_fields(strip_comments(raw)):
+            sources[rel] = strip_comments(raw)
+            projected.update(PROJECTION.findall(sources[rel]))
+        # PASS 2 -- classify, resolving `consumed` against the corpus set.
+        for rel, code in sources.items():
+            for e in prop_valued_fields(code, projected):
                 e["file"] = rel[len(LEAN_ROOT) + 1:]
                 pf.append(e)
         selfnom = [e for e in pf if e["shape"] == "self_nominating"]
