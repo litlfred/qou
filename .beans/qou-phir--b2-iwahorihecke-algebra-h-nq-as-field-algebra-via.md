@@ -1225,3 +1225,65 @@ the CONSEQUENCE — that the two branches collapse to q times the pair, with the
 (q-1) and the 1 combining exactly — is not, and is the step a sum over a Young
 subgroup is reorganised by. It holds over any CommRing: nothing divides by 2,
 which the naive 'sum equals its own reindexing' argument would need.
+
+## RETRACTED: PR #6626 and its follow-on were DUPLICATES (2026-09-04)
+
+**Both `ParabolicSum.lean` and an unpushed `ParabolicEigen.lean` re-derived results
+that have been on `main` since 2026-08-30.** Removed; #6626 closed.
+
+What is already there, in `QOU/BraidKnot/HeckeMurphy.lean`, sorry-free (0 code
+sorries; the 5 grep hits are the WORD in docstrings, a miscount a previous agent
+already made and corrected in that same file's prose):
+
+| I wrote | already on main | model |
+|---|---|---|
+| `rsFun_add_rsFun` | `σ_mul_Tw_pair` | mine free-module, theirs the algebra |
+| `mul_simple_ne` | `mul_sw_ne` | — |
+| `mul_simple_mul_simple` | `mul_sw_sw` | — |
+| `Rs_parabolicSum` | `σ_mul_murphySum` | same `Finset.sum_involution` proof, line for line |
+| `Rs_parabolicSum_subgroup` | `σ_mul_murphySum_subgroup` | — |
+| — | `murphySum_mul_σ{,_subgroup}` | right action, which I did not even have |
+| — | `HeckeMurphyYoung.σ_mul_murphySum_young` | the GENUINE `x_λ` on a tableau's row stabiliser |
+
+Theirs is strictly stronger: stated in `IwahoriHecke K q n` rather than in the free
+module `W →₀ R`, both-sided, and connected to an actual Young subgroup. The only
+thing mine had that theirs does not is generality in the Coxeter system — which
+nothing in the corpus consumes.
+
+**Root cause: a STALE DOCSTRING, and my second miss of the same kind in one session.**
+`HeckeCellular.lean`'s §"Toward the Murphy basis" said the pairing argument "is the
+open work". It was superseded by `5f38f5286b` **the same day it was written**
+(`a4e94c8b11`, both 2026-08-30) and never updated. I read it and built on it.
+
+The corpus-grep checklist would have caught this — grepping `x_lambda|parabolicSum`
+in `content/**/*.lean` is path 2 — and I DID run that grep. It returned
+`HeckeCellular.parabolicSym` and I stopped there, because that was the file I had
+already read and it matched the story I had. **A grep that confirms your prior is
+where the checklist fails; the hit to chase is the one you did not expect.**
+`murphySum` was one file away and I never searched for it under any name.
+
+The `HeckeCellular` docstring is now corrected in place, pointing at `HeckeMurphy`,
+so the next agent does not repeat this.
+
+## WHERE THE ARC ACTUALLY STANDS
+
+The length half of Mathas 3.13 (#6444, #6527, #6557, #6598) is **not** wasted — it is
+input to the step that IS open. `HeckeMurphyYoung.lean` §9 names it exactly:
+
+> spanning reduces to straightening alone ... **Lemma 3.14** straightens row-standard
+> pairs to standard ones, moving up in dominance ... **the corpus has no row-standard
+> tableau type.** That gap is the whole of step 3.
+
+Steps 1 and 2 of spanning are done (`basisTwOfField`;
+`span_murphySum_one_conjugates_eq_top`). `basisOfSpanning` /
+`murphyBasisOfSpanning` take spanning as an explicit hypothesis, correctly labelled
+"conditional-proved ≠ premise-established".
+
+**Next, in order:**
+1. A row-standard tableau **type** (`IsRowStandard` exists in `GarnirTableau.lean` as
+   a predicate; the family Mathas indexes by needs the subtype + its `Fintype`).
+2. The straightening step, using `exists_garnir_length_additive` (#6598): at a descent
+   node the Garnir permutation's inversions sit inside `d(t)`'s, so
+   `ℓ(g·d(t)) = ℓ(g) + ℓ(d(t))`, hence `T_g · T_{d(t)} = T_{g d(t)}` — which is the
+   multiplicativity straightening runs on.
+3. Dominance monotonicity, then discharge `basisOfSpanning`'s hypothesis.
