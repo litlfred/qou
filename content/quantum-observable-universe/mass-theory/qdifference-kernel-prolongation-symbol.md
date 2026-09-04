@@ -179,3 +179,20 @@ local monodromy, not fitted numerically.
 > value; under the double-cover reading every shift is even and the kernel
 > commutes with the covering monodromy. Which reading is right is the
 > $\sigma \leftrightarrow t$-shift dictionary, and that is wall W2 unchanged.
+>
+> **The residual does not decide it — it kills both.** One might hope the
+> $(-1)^{m}$ residual picks the unit-shift reading, since the double cover has
+> no odd shift to carry it. It does not. A tower whose level-$n$ jet carries
+> the monodromy character $(-1)^{n}\varepsilon$ from some level on is zero from
+> that level on under either reading: on the double cover because a
+> monodromy-commuting operator transports the character unchanged, so two
+> consecutive alternating levels force $2(-1)^{n}\varepsilon\,T^{n+1}X = 0$;
+> under the unit shift because the even part must annihilate both the jet
+> $Y$ and its odd image, and those are the recurrences
+> $(q^{e+2}-1)Y_{e+2} = (q-1)Y_{e}$ and $(q^{e+1}-1)Y_{e+2} = (q-1)Y_{e}$,
+> whose difference is $q^{e+1}(q-1)Y_{e+2} = 0$
+> (`QOU.Mass.C1KernelDictionaryParity`, sorry-free, $q \neq 0, 1$). So if this
+> conjecture holds and the prolongation operator is its symbol, the
+> $(-1)^{m}$ twist is not produced by the prolongation's own iteration; it
+> sits in the seed or in the pairing. An operator whose symbol is
+> $L_{\mathcal{K}}$ but differs from it by lower-order terms is not excluded.
