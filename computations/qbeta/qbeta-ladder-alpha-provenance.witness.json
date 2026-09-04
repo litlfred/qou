@@ -1,0 +1,67 @@
+{
+  "probe": "qbeta_ladder_alpha_provenance_probe",
+  "bean": "qou-cds1",
+  "question": "does prop:q-beta-spectral-bridge derive the ladder phase alpha = (z-1)h/2, as the precision-ladder block claims?",
+  "answer": "no -- it produces (z-1)h/2 as the first-order coefficient of a multiplicative form-ratio, names no eigenphase and no V_(2,1), and its factor differs from the ladder's by 4-5 % with no small delta reconciling them",
+  "scope": "(a) -- about the cited attribution, not about whether any phase term is derivable",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "h": "0.20906029879563931543",
+  "u": "0.0085172345501561421893",
+  "conventions": {
+    "C": {
+      "z": "0.49932033418369445241",
+      "alpha": "-0.052336120268228838799",
+      "ladder_factor_cos_alpha_minus_u_over_2": "0.99839894525308449934",
+      "bridge_factor_one_plus_alpha": "0.9476638797317711612",
+      "relative_difference": "0.053536983530145204079",
+      "delta_reconciling_the_two": "-0.37729492465551590985",
+      "delta_over_u_half": "88.595640388604573822"
+    },
+    "D": {
+      "z": "0.6126880371464652516",
+      "alpha": "-0.040485777340642764919",
+      "ladder_factor_cos_alpha_minus_u_over_2": "0.998999136574409781",
+      "bridge_factor_one_plus_alpha": "0.95951422265935723508",
+      "relative_difference": "0.041150941781370880738",
+      "delta_reconciling_the_two": "-0.32600967704349027647",
+      "delta_over_u_half": "76.552941010063813394"
+    }
+  },
+  "cited_source_term_counts": {
+    "eigenphase": 0,
+    "V_{(2,1)}": 0,
+    "V_{2,1}": 0,
+    "(2,1)": 0,
+    "phase": 0
+  },
+  "assertions": [
+    {
+      "name": "cited_source_names_no_eigenphase",
+      "passed": true,
+      "detail": "the ladder attributes alpha to 'the single-wrap eigenphase on V_(2,1) per prop:q-beta-spectral-bridge'; that source contains zero occurrences of any of ['eigenphase', 'V_{(2,1)}', 'V_{2,1}', '(2,1)', 'phase']"
+    },
+    {
+      "name": "bridge_gives_a_ratio_coefficient_not_an_angle",
+      "passed": true,
+      "detail": "(z-1)h/2 is the first-order term of the multiplicative ratio Q_A/Q_B = (1-h/2)/(1-zh/2); the O(h^2) remainder is exactly z(z-1)h^2/4/(1-zh/2), matching the source's own Lean (bridge_first_order_remainder). It is a ratio coefficient."
+    },
+    {
+      "name": "ladder_factor_differs_from_bridge_factor",
+      "passed": true,
+      "detail": "cos(alpha - u/2) and the source's own (1 + alpha) differ by 5.354 % (C) and 4.115 % (D) at the substrate anchor -- in a ladder whose later rungs chase ppb"
+    },
+    {
+      "name": "no_small_delta_reconciles_the_two_roles",
+      "passed": true,
+      "detail": "the delta solving cos(alpha-delta) = 1+alpha is -0.37729492 (C) / -0.32600968 (D) against the ladder's u/2 = 0.0042586173: off by 88.6x / 76.55x and opposite in sign, so the two roles are not reconciled by any small correction"
+    },
+    {
+      "name": "lean_body_and_its_own_doc_disagree_on_convention",
+      "passed": true,
+      "detail": "markovZ's body was migrated to D on 2026-08-26 (qou-cxjq) while its own docstring and the .md proposition still define z as convention C -- a live doc-vs-body divergence at the load-bearing definition"
+    }
+  ],
+  "allPassed": true
+}

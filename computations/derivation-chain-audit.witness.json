@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T11:09:24.285803+00:00",
-  "commitSha": "71b7f12756fbe48004fc5d633b1713756867530d",
+  "computedAt": "2026-09-04T13:40:40.569799+00:00",
+  "commitSha": "ed918c9fd92d2fd9255c3652a9cef953b61ce128",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -643,11 +643,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "ae8a199838f7",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "3bb00f5477af",
+  "scriptCommitSha": "d89535efddb76fb4f4bdd584938eeafa787960c7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -3059,6 +3059,7 @@
         "markov-stab-trace-axis-probe.witness.json",
         "meson-gmor-derivation-probe.witness.json",
         "milnor-minspan-triples-share-no-summand.witness.json",
+        "milnor-mubar-vanishes-on-every-triple.witness.json",
         "mirror-parity-linear-trace-probe.witness.json",
         "mn-dpn-xq-cross-anchor-probe.witness.json",
         "mn-wrapper-categorical-analysis-probe.witness.json",
@@ -4260,6 +4261,7 @@
         "mpf-mixed-arithmetic-audit.witness.json",
         "mu-lambda-content-casimir.witness.json",
         "mu-p-cyclotomic-ladder-magnitude.witness.json",
+        "mu-p-habiro-basis-order.witness.json",
         "mu-p-pin-sensitivity-map.witness.json",
         "mu-substrate-tension-audit-100dps.witness.json",
         "mu-wenzl-closure-probe.witness.json",
@@ -4901,6 +4903,7 @@
         "c3_w2_inf_formal_solution.witness.json",
         "cauchymul-order-cancellation-witness.witness.json",
         "d1b-52-charge-lattice-sourcing.witness.json",
+        "d1b-eq98-rank-correction.witness.json",
         "dt-crossknot-connection-count-certified.witness.json",
         "dt-crossknot-sixone-connection-count.witness.json",
         "dt-crossknot-snappy-slope-hardening.witness.json",
@@ -5152,6 +5155,7 @@
         "qbeta-holonomy-spectrum-sign-obstruction.witness.json",
         "qbeta-holonomy-t2-is-a-bar-symmetry-test.witness.json",
         "qbeta-imq-elliptic-generator-refutation.witness.json",
+        "qbeta-imq-reality-locus.witness.json",
         "qbeta-interface-w-deciding-test.witness.json",
         "qbeta-jacobi-anger-tower-general.witness.json",
         "qbeta-kashaev-habiro-chain-beta.witness.json",

@@ -78,3 +78,27 @@ Corrected in the same PR: the audit §4 paragraph (struck through, with what the
 source actually says) and the content block's claim. Probe:
 `computations/probes/arc_count_diagnostic_degeneracy_probe.py` (6/6, exact
 rational arithmetic, no float64).
+
+## 2026-09-04 — the colour tube now has a NUMBER, and a structural obstruction
+
+`qbeta_strand_multiplicity_probe.py` (7/7). Three crossings on three independent
+strand pairs give `-ln b -> 3(-ln b)` exactly (if `tr_M` factorises over disjoint
+supports), and the additive law's coefficient becomes `8.77274 MeV/nucleon`
+against a measured peak `B/A` of `8.79456` at `A = 62` — **0.25 %**. The required
+factor is 3.0075 and the strand count is 3.
+
+So this bean's conjecture, if true, closes the extensive-term magnitude gap
+(`qou-ib3g`) with no free parameter.
+
+**Two obstructions, both new here:**
+
+1. **The existing `m_pp`/`m_pn`/`m_nn` parameter is NOT it.** It repeats the same
+   letter on the same generator, giving `X^3` in a 2-dim subalgebra: factors
+   0.335 / 0.984 / 1.709, and `b > 1` (negative bond energy) at `m = 2`.
+2. **The 3A layout cannot express a colour tube.** Nucleon `k` holds strands
+   `3k, 3k+1, 3k+2`, so colour-matched pairs across an interface are distance 3
+   apart; reaching them needs a braid, not the single `sigma_{3k+2}` emitted.
+
+The decidable next step is (a): **does `tr_M` factorise over disjoint supports?**
+That is checkable without building the tube, and it is what the `b -> b^3` claim
+rests on entirely.
