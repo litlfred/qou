@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T09:02:28Z
+updated_at: 2026-09-04T10:45:46Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -572,3 +572,53 @@ probe never computed.
 3. Small characteristic — unreachable by this route at all (and item (1) of the
    new file says why: the obstruction is exactly a block dimension dying in K).
 4. The square root Q = q^2 — low priority; never bites in the corpus's use.
+
+
+## 2026-09-04 (later) — the T_w transport landed; the square class is now exact
+
+PR #6617, commits b9577649e6 + cf132314f0. Two files, seven declarations, all
+sorry-free at [propext, Classical.choice, Quot.sound].
+
+**The payoff.** twGram_det_eq_sq_mul_prod: the LEFT side is literally
+(twGram K (q^2) n).det, and it equals P.det^2 * prod_lambda +/- d_lambda^(d_lambda^2)
+with IsUnit P.det, where d_lambda = card of the standard Young tableaux of shape
+lambda. So the integer constant #6552 derived is now attached to the corpus's
+ACTUAL object, not just to a product basis.
+
+**The general transport** (QOU/MathlibExt/RegTraceGramBasisChange.lean):
+bilin_toMatrix_det_basis_change (the square), bilin_toMatrix_det_reindex
+(relabelling moves nothing — this is what lets a sigma-indexed product basis be
+compared with a permutation-indexed T_w basis at all), isUnit_det_basis_toMatrix,
+regTraceGram_toMatrix_map (an ALGEBRA equivalence contributes NO factor, since
+the regular trace form is an algebra invariant — so the Wedderburn isomorphism
+is free and the only square comes from the change of basis within the algebra),
+and the composition.
+
+**Two corrections to my own work, both caught by re-reading the prose against
+the Lean.** (1) I wrote 'this gets the same non-vanishing as a corollary' over an
+existential that carried nothing about P.det being nonzero — the corollary did
+NOT follow. Fixed by STRENGTHENING the statement to include IsUnit P.det, not by
+softening the prose. (2) I claimed each block factor 'is nonzero in
+characteristic zero'; true, but not proved here (needs 0 < d_lambda, i.e. every
+shape admits a standard tableau). It is now an explicit hypothesis on
+twGram_det_ne_zero_of_blocks.
+
+**Cross-check.** twGram_det_ne_zero_of_blocks reaches non-vanishing THROUGH the
+determinant; TwGramDetNonzero reaches it via semisimplicity without computing a
+determinant at all. Independent, neither derived from the other.
+
+**STILL OPEN, and the shape of what remains has changed:**
+1. det P is NOT evaluated. Note this is NOT merely 'not done yet' — a Gram
+   determinant is an invariant only UP TO SQUARES OF UNITS, because congruence
+   G -> P^T G P is the transformation law of a bilinear form. So no theorem of
+   this shape can pin the integer on the nose. What IS true, and is now proved,
+   is that prod d_lambda^(d_lambda^2) is exactly the SQUARE CLASS of det(twGram).
+   Pinning a representative would need det P for the specific Wedderburn matrix.
+2. The q-part, where the Schur elements live. Untouched, and now clearly the
+   large remaining item. WenzlSchurElement.lean already has the concrete Schur
+   element with non-vanishing proved; the missing piece is the IDENTITY linking
+   it to the Gram determinant, and SchurElementCriterion is still a CITED CLASS.
+3. 0 < d_lambda — small, separate, would discharge the corollary's hypothesis.
+4. Small characteristic — unreachable by this route; #6552's
+   regTraceGram_pi_matrix_det_ne_zero_iff says exactly why.
+5. The square root Q = q^2 — low priority, never bites.
