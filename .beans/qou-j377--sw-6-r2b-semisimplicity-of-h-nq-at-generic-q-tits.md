@@ -1,11 +1,11 @@
 ---
 # qou-j377
 title: 'SW-6 (=R2b): semisimplicity of H_n(q) at generic q (Tits deformation / ρ_λ separate points)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-09-03T15:05:35Z
+updated_at: 2026-09-04T02:18:34Z
 parent: qou-59vq
 blocked_by:
     - qou-u86i
@@ -448,3 +448,16 @@ check-sidecars 0 action lines.
 Nothing on the semisimplicity arc.  `qou-kwoa`'s last item — `det(twGram)` at rank ≥ 2 — is
 untouched and unaffected: it is still Mathlib-scale and now wanted only for the determinant
 **value**, since #6437 took semisimplicity off its critical path.
+
+
+## MERGED 2026-09-04 — PR #6517 landed on main as 5241d1b6112202a85f0893eeaa85745396ff5b50.
+
+isSemisimpleRing_iwahoriHecke_sq / _of_sq are on main.  The residue of the R on
+this arc was the EXISTENCE of a square root, never any algebra; the R theorem now
+derives from the generic one and its R-specific content is one step, naming the root.
+
+Merged with a merge commit rather than rebase: the branch carried two merges of main
+(brought in twice to stay current), so GitHub returned 405 "This branch can't be
+rebased".  Merge-commit preserves the per-commit structure that AGENTS.md rule 8
+prefers rebase FOR; squash would have destroyed it and is banned without per-PR
+permission anyway.
