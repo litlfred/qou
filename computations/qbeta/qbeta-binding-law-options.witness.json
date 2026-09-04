@@ -6,7 +6,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "b_pp = z = 0.6127 > b_nn = 0.4036, so a p-p bond carries less log-weight than n-n -- the sign Coulomb repulsion would give, here with no Coulomb term anywhere in the construction"
+      "note": "b_pp = z = 0.6127 > b_nn = 0.4036, so a p-p bond carries less log-weight than n-n. The ALGEBRAIC fact stands; reading it as 'the sign Coulomb would give' is RETRACTED 2026-09-04 (qou-q7ga) -- aggregated over the table the splitting has the WRONG sign. See qbeta_tower_log_z_and_roast_probe.py"
     },
     {
       "name": "additive_law_shrinks_the_robust_spread_by_over_a_thousandfold",
@@ -223,8 +223,8 @@
     }
   },
   "provenance": {
-    "headSha": "e0ed5c52e4185c3df7df67bf980fa9aedd37943e",
+    "headSha": "711eabfc8fd5edc39526979796a3b08b149ca16e",
     "producer": "computations/qbeta/qbeta_binding_law_options_probe.py",
-    "elapsed_s": 0.902
+    "elapsed_s": 0.609
   }
 }

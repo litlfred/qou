@@ -8,9 +8,17 @@ saturating"), `qou-bmz8` (ℓ¹ ceiling / deciding test), `qou-fvzm` (row cap)
 `content/quantum-observable-universe/lean/QOU/Hecke/BindingExtensivity.lean` (6 decls, sorry-free),
 `qbeta_no_regime_of_validity_probe.py` (5/5), `qbeta_full_ame_scan_probe.py` (6/6),
 `qbeta_bond_factors_derived_probe.py` (7/7)
-**Status:** a *framed decision*. It changes no content block, no Lean file and no
-published claim. What it does is put a refutation and its replacement in front of
-the owner together, because the second is what makes the first actionable.
+**Status:** ✅ **DECIDED 2026-09-04.** Owner ruling: **Option B, with the Option C
+framing, and the 2.656 factor stated as open.** The retraction sweep across every
+surface stating `B = Q_β·Δtr` is tracked at `qou-2pnv` and has not yet run.
+
+> **🛑 One claim in this note is RETRACTED, and a second is demoted — see §7,
+> added after the ruling.** The p-p/n-n bond asymmetry was read as "the sign
+> Coulomb repulsion would give ... a prediction, not a fit". True as algebra,
+> **wrong as evidence**: aggregated it pushes the wrong way, and layout-free bond
+> counting beats every isospin-resolved variant. And the "strongest lead" named
+> in avenue 2 is wrong by 4× in correlation — the dominant missing term is the
+> **symmetry energy**, not the surface term.
 
 ---
 
@@ -135,9 +143,9 @@ mechanism: the difference is exponential, the ratio's log is linear.
   *same* derived `b_pp`, `b_pn`, `b_nn`. Nothing was added and nothing was fitted.
 - **Linear in `Z` and `N` — it is the SEMF volume term**, with per-bond energies
   derived from the substrate.
-- **The p-p bond binds less than n-n** (`−ln b_pp = 0.490 < 0.907 = −ln b_nn`) —
-  the sign Coulomb repulsion would give, in a construction containing no Coulomb
-  term. That is a prediction, not a fit.
+- ~~**The p-p bond binds less than n-n**, the sign Coulomb repulsion would give —
+  a prediction, not a fit.~~ 🛑 **RETRACTED 2026-09-04, §7.** The inequality is
+  real; reading it as evidence is not.
 - **It is already implemented**: `computations/binding_log_free_energy.py`, bean
   `lkpl`, completed 2026-06-23. Adoption is a *wiring* change. Its docstring
   quoted 0.57–2.36× on a small validation set; this is the first full-table scan,
@@ -284,7 +292,8 @@ throughout: the numbers below are targets a future derivation is checked
    that reproduces `E_0 = 4.186` and is right — which would mean the residual
    2.656 belongs to the bond factors, not the scale.
 
-2. **The missing surface term — the strongest lead.** The canonical atom wires an
+2. **The missing surface term.** ⚠️ **Demoted 2026-09-04 (§7): correlation
+   −0.178, against −0.804 for the symmetry energy. Not the strongest lead.** The canonical atom wires an
    `A−1` **chain**: a 1-D edge set with coordination 2. Real nuclei are 3-D with
    saturating coordination, and `A^{2/3}` is exactly what a chain lacks. This is
    the "edge-set / fractional-occupancy" question already named at
@@ -365,3 +374,129 @@ cd content/quantum-observable-universe/lean && lean QOU/Hecke/BindingExtensivity
 ```
 
 Witness: `computations/qbeta/qbeta-binding-law-options.witness.json`.
+
+---
+
+## 7. Post-ruling: the tower question, and the roast
+
+Added 2026-09-04 after the owner adopted Option B. Producer:
+`computations/qbeta/qbeta_tower_log_z_and_roast_probe.py` (9/9), witness
+`qbeta-tower-log-z-and-roast.witness.json`. Bean `qou-q7ga`.
+
+### 7.1 Option B *is* the tower's own additive counter — the answer is `log_z`
+
+The tower is defined by the Markov relation `tr_{n+1}(x·σ_n) = z·tr_n(x)`:
+adding a strand multiplies the trace by exactly one `z`. So the natural additive
+invariant is the **Markov weight**
+
+```
+ν(x) := log_z tr_M(x),        ν(x·σ_n) = ν(x) + 1
+```
+
+and Option B is precisely its **archimedean realization at `q = q₀`**:
+
+```
+B = E_0·|ln z|·[ ν(atom) − ν(free) ]          E_0·|ln z| = 2.0507 MeV
+```
+
+The measured Markov weights of the three bonds are `1`, `1.3816`, `1.8519`, and
+the first is **exactly 1** because `b_pp = z` is a derived identity — a
+proton-proton bond *is* one Markov reduction, on the nose.
+
+### 7.2 Order 0 is `q → 1`, and there every factor collapses to `z`
+
+Verified symbolically: **all five closed-form factors equal exactly `1/2` at
+`q = 1`** — `t_p`, `t_n`, `b_pp`, `b_pn`, `b_nn`, and `z(1) = 1/2`. The Hecke
+algebra degenerates to `ℂ[S_n]` and `ν` becomes an exact integer **bond count**:
+
+```
+B = E_0·ln2·(A − 1)                                        [order 0]
+```
+
+Expanding in `e = q − 1` gives the deformation, with a clean pattern:
+
+| factor | expansion | first-order |
+|---|---|---:|
+| `b_pp` | `1/2 + e + O(e²)` | **+1** |
+| `b_pn` | `1/2 + 0·e + O(e²)` | **0** |
+| `b_nn` | `1/2 − e + O(e²)` | **−1** |
+
+The p-n interface has **no first-order term** and the like-species bonds split
+symmetrically about `z`. In bond energies `−ln b = ln2 ∓ 2e`, so
+
+```
+B = E_0·[ ln2·(A − 1) + 2(q₀−1)·(N − Z) ] + O(e²)          [order 1]
+```
+
+a volume term plus an asymmetry linear in `N − Z`, good to 0.6–3.4 % against the
+exact bond energies. **So yes: there is a `log_q` form naturally there, it is
+`log_z`, its order-0 realization is bond counting, and the deformation is a
+series in `q − 1` whose first term is the isospin splitting.**
+
+**And Option C is the same object through a saturating map.** Exactly,
+`Δtr/tr_free = 1 − e^{−S}` with `S` Option B's bond sum. That gap is `7.7e−4` by
+**A = 11**, `1.5e−12` by A = 40, and below machine precision by A ≈ 100. So above
+A ≈ 11, **`Δtr` does not merely mis-scale the binding energy — it does not
+contain it**; what is left is the free factor `t_p^Z t_n^N`. That is the reason
+no scale works, stated more sharply than §1.2 managed.
+
+### 7.3 The roast — three results against the law
+
+**(a) The asymmetry has the wrong sign.** Derived `κ = +2e = +0.2200`. Scanning
+`κ` in `B ~ ln2(A−1) + κ(N−Z)` over 2548 measured nuclides puts the optimum at
+**`κ ≈ −0.15`**. Adding the derived term makes the spread *worse*.
+
+**(b) The bond count is the entire content.** Scale-free comparators:
+
+| edge set | p25–p75 | p5–p95 | full |
+|---|---:|---:|---:|
+| segregated `p…p n…n` (`atom_braid_word_3A`) | 1.0953 | 1.2250 | 10.18 |
+| alternating `p n p n …` (`build_atom_nf_exact`) | 1.0972 | 1.2323 | 10.40 |
+| all-pairs, renormalised to `A−1` | 1.0958 | 1.2262 | 9.92 |
+| **bond COUNT only, layout-free** | **1.0843** | **1.1809** | **8.17** |
+
+The three edge sets agree to 0.6 %, and all three lose to counting. **The
+q-deformation's contribution to the binding law is net-negative.** What Option B
+earns is *"the algebra produces an extensive quantity"* — which Option A did not
+— and, on this corpus, not the specific bond energies.
+
+*Two things this does not refute:* the closed form (the `q=1` collapse and
+`b_pp = z` are exact identities of it), and the possibility that the deformation
+is right but read through the wrong observable. It does refute the edge set as
+the culprit — see (c).
+
+**(c) So the ordering gap `qou-48is` barely touches `B`.** `tr_M` moves 20–36 %
+across orderings of the same `(Z,N)` — that bean's measurement stands — but the
+three edge sets above land within 0.6 %, and the first-order asymmetry
+coefficient is **exactly `N − Z` for all three**. The layout moves `tr_M`; it
+does not move `B`. (Worth recording separately: the two canonical producers
+genuinely disagree — `atom_braid_word_3A` is segregated, `build_atom_nf_exact`
+alternating. Live for any `tr_M` consumer, near-invisible to `B`.)
+
+**(d) The missing term is the symmetry energy.** Correlation of the residual
+`B_exp/(E_0·S)` against the SEMF shapes:
+
+| shape | correlation |
+|---|---:|
+| `(N−Z)²/A²` [asymmetry] | **−0.804** |
+| `A^{−1/3}` [surface] | −0.178 |
+| `Z²/A^{4/3}` [Coulomb] | −0.044 |
+
+Avenue 2 named the surface term / edge set as "the strongest lead". Wrong by 4×.
+The lead is **`qou-ubsl`** (symmetry energy = isospin/SU(4) Casimir on the
+Wedderburn partition), and it is sharper than "add a symmetry term": the law
+*already has* an `(N−Z)` term and it has the opposite sign, so the target is to
+explain why the isospin Casimir enters against the q-deformation's own splitting
+of `b_pp` and `b_nn` about `z`.
+
+### 7.4 Where that leaves the avenues
+
+| # | avenue | status after the roast |
+|---|---|---|
+| 1 | the 2.656 factor | **unchanged, and now the single named open number** — `qou-59j5` |
+| 2 | surface term / edge set | **demoted** — corr −0.178, and three edge sets agree to 0.6 % |
+| 3 | iron-peak ceiling 3.00 | unchanged |
+| 4 | make the object a braid | unchanged; reason (b) of §3 still survives it |
+| 5 | unbound systems | unchanged |
+| 6 | formalisation | ✅ done |
+| **7** | **symmetry energy, wrong-signed** | **NEW top lead** — `qou-ubsl`, `qou-q7ga` |

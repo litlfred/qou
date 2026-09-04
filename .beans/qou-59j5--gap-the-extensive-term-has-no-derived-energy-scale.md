@@ -211,3 +211,20 @@ with two components at `0.49956`. The prose predates that file's own 2026-08-23
 unchanged (21.8× rather than 65×). The `negative_finding` **string emitted into
 the witness** still carries the stale `≈ 0.124` — flagged in the docstring for
 whoever next runs that script, since fixing it requires a clarabel-MPFR run.
+
+## 2026-09-04 — the number, from the full table
+
+With the additive law adopted as the working assumption, this gap is now ONE
+dimensionless factor. Over 2548 measured AME nuclides the best single scale for
+`B = scale . log(tr_free/tr_atom)` is **11.119 MeV**; the derived
+`E_0 = m_e/(q0(q0-1)) = 4.18598 MeV` is **2.656x** below it
+(`qbeta_binding_law_options_probe.py`).
+
+Recorded as a target for a future derivation to be checked AGAINST, never a
+criterion to search on. Two companions in the same category, also recorded not
+searched: `E_0.|ln z| = 2.0507 MeV` is the per-p-p-bond energy in Markov-weight
+units, and the residual ceiling sits at 3.00-3.01 across the iron peak with 4He
+alone above at 3.259.
+
+This is the surviving half of `qou-2pnv` (derive-or-retract): the DERIVE half
+landed 2026-09-04, the SCALE did not.

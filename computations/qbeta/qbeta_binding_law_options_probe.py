@@ -238,8 +238,10 @@ def main() -> int:
     ok &= chk("proton_bonds_bind_less_than_neutron_bonds",
               -mp.log(B_PP) < -mp.log(B_NN), True,
               "b_pp = z = 0.6127 > b_nn = 0.4036, so a p-p bond carries less "
-              "log-weight than n-n -- the sign Coulomb repulsion would give, "
-              "here with no Coulomb term anywhere in the construction")
+              "log-weight than n-n. The ALGEBRAIC fact stands; reading it as "
+              "'the sign Coulomb would give' is RETRACTED 2026-09-04 "
+              "(qou-q7ga) -- aggregated over the table the splitting has the "
+              "WRONG sign. See qbeta_tower_log_z_and_roast_probe.py")
 
     print("\n" + "=" * 78)
     print("1./2. THE TWO LAWS, SIDE BY SIDE")
