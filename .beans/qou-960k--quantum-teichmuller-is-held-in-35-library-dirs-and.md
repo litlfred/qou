@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T10:28:54Z
-updated_at: 2026-09-04T10:29:37Z
+updated_at: 2026-09-04T23:16:55Z
 ---
 
 MEASURED 2026-09-04. Held-but-unused, the largest such body found this session:
@@ -25,3 +25,24 @@ WHY IT MATTERS RATHER THAN BEING TRIVIA: bean qou-52fu (completed 2026-08-04, ep
 NOT A CLAIM THAT THE ROUTE WORKS. qou-52fu proposes it; nothing here evaluates it. This bean records only that the sources are held and unused, so the next agent does not conclude from a content/ grep that the material is absent - which is the mistake made four times in this session.
 
 SCOPE OF THE MEASUREMENT: library/*/sections/ only. NOT searched: library/*/ocr/ (25 dirs carry one and a sections-grep is blind to them) or the PDFs themselves. corpus_search (path 0) unavailable for a fourth session.
+
+
+## CORRECTION 2026-09-04 (bean qou-g1m8) -- the count stands, the INFERENCE does not
+
+This bean reads its own measurement as "35 held sources for the rank-2 route".
+Re-measured, that is wrong: the 35 "quantum Teichmuller" dirs are the RANK-1
+PGL(2,C) quantisation the corpus ALREADY uses (Baseilhac-Benedetti, state
+integrals, Faddeev dilogarithm) -- not rank-2 material.
+
+Fock-Goncharov, measured at library/*/sections/ (case-insensitive, hyphen or
+space): 4 dirs -- arxiv-1204.4824v2, arxiv-1207.6711v1, arxiv-2304.12545v1,
+hyperbolicandneumann. Of those, ONE is on-point: arxiv-1207.6711v1 =
+Garoufalidis-Thurston-Zickert, "Gluing equations for PGL(n,C)-representations of
+3-manifolds", with 109 occurrences of PGL(n, C). The other three mention it once
+each.
+
+So: ONE substantive held source for the rank-2 route, not 35.
+
+The bean's own caution -- "so the next agent does not conclude from a content/
+grep that the material is absent" -- was right and is untouched. What needed
+correcting is the opposite over-read, which the bean's framing invites.
