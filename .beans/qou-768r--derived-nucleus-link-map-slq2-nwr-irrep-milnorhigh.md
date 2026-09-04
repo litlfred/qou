@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-04T03:05:14Z
+updated_at: 2026-09-04T03:20:03Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -330,3 +330,81 @@ Routes 1 and 3, unchanged in status by the above. Route 1 needs the link
 generalisation of the SLq(2) labelling (`mu > 1`); route 3 needs a first `mubar`
 value on the min-span triples `{i, i+2, i+4}`, which needs the Magnus-longitude
 machinery the corpus does not have.
+
+
+
+## ROUTE 3 RESULT 2026-09-04 — the min-span triples are DEFINED exactly where they VANISH
+
+This bean's route-3 hand-off says: *"No `mubar` value has been computed -- this is
+combinatorics of which triples are defined, not of what they equal. Computing one
+needs the Magnus expansion of a longitude in the free group, which is real work and
+is not done."*
+
+**The computation is unnecessary.** On this carrier every `Delta = 0` triple has
+`mubar = 0`, and the reason is its own defining condition.
+
+### The mechanism, in one step
+
+A monotone braid closure -- one contiguous run per generator, which the canonical
+atom word satisfies -- is a connected sum `#_g T(2, e_g)` (verified 32/32 in
+SnapPy, 2026-08-25 audit). Each summand is ONE generator's run, so it touches only
+the components holding strands `g` and `g+1`. A shared summand **links** two
+components. Contrapositively a triple with `Delta = gcd(lk) = 0` -- exactly the
+condition for `mubar` to be a genuine integer -- shares **no** summand, so its
+sublink is a 3-component **unlink** and every Milnor invariant vanishes on it.
+
+    the condition that makes mubar DEFINED is the condition that makes it ZERO
+
+### Measured, 4/4
+
+  every generator touches at most                       2 components  (the premise)
+  generators joining two members of a min-span triple    0            (the result)
+  mu = A + 1                                             8 of 8 isotopes
+  min-span family size = A - 3                           8 of 8 isotopes
+
+**Branch-independent**, which is the strongest thing about it: which components a
+generator touches is fixed by the induced PERMUTATION, and a superposition letter
+`c*sigma_g + d*1` projects to the same transposition as its `sigma` branch. So
+unlike `lk` this is ONE measurement, not a sampling over `2^(2A+1)` resolutions.
+
+### Lean
+
+`QOU/Mass/MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean`, lean-direct exit 0,
+sorry-free. `separated_of_delta_zero` -- the whole content -- depends on **no
+axioms at all**, and needs no path structure, no minimality and no
+`Delta`-arithmetic: it is the contrapositive of "a shared summand links", so it is
+as general as the connected-sum decomposition itself. `chainCarrier` +
+`chainCarrier_joins_consecutive` exhibit a configuration satisfying every
+hypothesis whose `joins` is inhabited, so the separation result cannot be read as
+describing an empty relation.
+
+Deliberately NOT formalised: `mubar` itself, the connected-sum decomposition, and
+"Milnor invariants vanish on an unlink" -- none cheaply available in this Mathlib,
+and a class asserting them would be the axiomatisation-is-not-a-proof pattern.
+
+### Convergence with sibling PR #6561 (`qou-kru4`)
+
+#6561 proves from the ALGEBRA that a monotone word's Markov trace factorises over
+generators, so `tr_M` cannot carry a `mubar` or an `ac`-type cross-component
+quantity. Route 3 here proves from the TOPOLOGY that there is no `mubar` to carry.
+**Both trace back to monotonicity.** So non-monotonicity is the single
+discriminating question for the in-algebra cross term (#6513), a hyperbolic
+carrier, and a nonvanishing Milnor invariant alike -- three frontiers, one
+hypothesis.
+
+### SCOPE (b) on the min-span family, invariant cited
+
+Does **not** refute route 3 in general: on a genuinely Brunnian carrier like L6a4
+the summand hypothesis fails and `mubar_123 = 1`. Does **not** touch the
+`Delta = 2` triples, which touch a linked pair and retain ONE BIT -- those are the
+residual and are not examined.
+
+### Where all three routes now stand
+
+- **Route 1** — capped at even A (`SLq2LabelParity.lean`, on main). Open question
+  is a LINK generalisation (`mu > 1`) of the SLq(2) labelling; the framework half
+  is finished, and this is the one route with a genuine acquisition gap.
+- **Route 2** — BLOCKED. The complement-genus handle is Borromean-only; 0 of 30
+  components qualify.
+- **Route 3** — the min-span family gives `mubar = 0` identically. Residual: the
+  `Delta = 2` one-bit triples.
