@@ -63,6 +63,18 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 DPS = 60  # 50 working + 10 guard
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+# Measured before this fix: TOL was mpf('9.9999999999999998e-46'), not 1e-45
+# -- 1.59e-17 relative, ~16 digits kept. Nothing DEPENDED on the missing
+# digits (TOL only gates `abs(...) < TOL` assertions, which cannot change at
+# that resolution), but the binding was genuinely at dps=15 and the ratchet is
+# right to flag it. Unlike this file, `main()` raising dps is too late.
+mp.mp.dps = DPS
+
 TOL = mp.mpf("1e-45")
 HEINE_TERMS = 300  # ratio e^{-arccosh(chi)} ~ 0.38 => far below 1e-45
 
