@@ -1,5 +1,5 @@
 {
-  "description": "conj:im-q-physical-role candidate (i) assigns chirality to arg q. The corpus assigns it to the bar involution q -> 1/q (three citations), and the two operations coincide EXACTLY on |q| = 1 and nowhere else. The substrate has |q_0| = 1.10998, so at the substrate the corpus's chirality flip is 1/q_0 = 0.900830 -- a REAL number needing no Im q. Second leg: granting candidate (i)'s identification anyway, Schwarz reflection plus a parity-even Q_beta forces Im q = 0 via the merged im_qbeta_zero_iff theorems.",
+  "description": "conj:im-q-physical-role candidate (i) assigns chirality to arg q. The corpus assigns it to the bar involution q -> 1/q (three citations), and the two operations coincide EXACTLY on |q| = 1 and nowhere else. The substrate has |q_0| = 1.10998, so at the substrate the corpus's chirality flip is 1/q_0 = 0.9009182840 -- a REAL number needing no Im q. Second leg: granting candidate (i)'s identification anyway, Schwarz reflection plus a parity-even Q_beta forces Im q = 0 via the merged im_qbeta_zero_iff theorems.",
   "engine": "sympy (exact) + mpmath 50 dps; no float64",
   "q0Anchor": "proton",
   "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute; this is neither a proton-vs-muon comparison nor an ideal-CAL statement",
