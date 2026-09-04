@@ -139,3 +139,58 @@ cleared by unrelated later work, and no one re-read the axiom. **That failure
 mode is invisible to every detector in the repo**, because the axiom is
 perfectly well-formed and honestly cited — which is why the fix here is a
 triage document rather than a checker.
+
+---
+
+## Appendix (2026-09-04): the sibling-tree sweep, and an honest negative
+
+After correcting the scope above, I swept the 944 content-block siblings for
+the shape that had been hiding there.
+
+**Declarations whose *type* is `sorry`: exactly 1 corpus-wide** — the
+`delta-max-uniform-bound` stub, already removed. I had implied there might be
+more; there are not. That is an honest negative, and it is the useful kind: the
+defect was singular, not the tip of anything.
+
+**Siblings degenerate on a name the library also declares (`: True` / `: sorry`):
+also exactly 1**, the same file. So the §0a shadowing-stub surface is otherwise
+clean.
+
+### What was already known, and found by checking rather than re-deriving
+
+The broader population — a sibling and a library file declaring the same
+fully-qualified name — is **already tracked** by
+[`scripts/lean-sibling-library-divergence-audit.py`](../../scripts/lean-sibling-library-divergence-audit.py),
+written 2026-09-03. Its motivating incident is worse than mine:
+`conj:b1-hyperbolic-rows-theorem` was repaired in the library on 2026-08-08, the
+sibling kept the pre-repair version, and **a `False` was still derivable from it
+on 2026-09-03** — reproduced, not inferred. Do not re-derive this; read that
+script.
+
+### One discrepancy I could NOT resolve, flagged rather than reported as a finding
+
+Running both instruments on `origin/main`:
+
+| | existing audit | this measurement |
+|---|---|---|
+| library declarations indexed | 38,571 | **41,109** |
+| result | **393 pairs** (1 divergent-axiom + 200 divergent + 192 duplicate) | **377 distinct FQNs** |
+
+It is tempting to read 41,109-indexed-but-377-found against
+38,571-indexed-but-393-found as evidence that the existing audit *invents* pairs
+— which would invert its own documented error direction ("a wrong concatenated
+namespace is very unlikely to collide with a real one, so the error direction is
+MISSED pairs … read the counts as a **lower bound**").
+
+**That reading is not supported, because the two numbers count different
+things.** 393 is a count of *pairs*; one fully-qualified name appearing in a
+sibling and in three library files is three pairs and one name. 377 is a count
+of *distinct names*. They are not comparable, and no conclusion about over- or
+under-counting follows from them.
+
+What *is* established and worth passing on: this measurement's declaration
+matcher indexes **2,538 more library declarations** than the existing audit's
+(it admits `inductive`, `opaque`, `axiom`, and `partial`-modified declarations),
+and its namespace resolution tracks `namespace`/`end` nesting rather than
+concatenating every `namespace` line — the defect that script documents in
+itself. Whether that changes its verdicts is untested.
