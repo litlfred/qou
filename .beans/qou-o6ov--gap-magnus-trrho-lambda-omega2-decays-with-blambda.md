@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T02:36:07Z
+updated_at: 2026-09-04T02:41:50Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -66,3 +66,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (CONSTRUCTIVE TARGET identified): majorant ladder |tr| ≤ Σ|eig| ≤ Σσ ≤ √dim·‖M‖_F (and Σ|eig| ≤ dim·ϱ) — EVERY rung decays in EVERY conjugate pair (max ratios A=2: 0.267/0.371/0.423/0.521/0.534; A=3: 0.093/0.106/0.133/0.179/0.122). So the b-info survives to the FROBENIUS norm of the assembled M_λ. AND that majorant is itself a positive trace: seminormal generators are EXACTLY symmetric (max|σ−σᵀ| = 0.0), so under word-reversal * , ‖M_λ‖_F² = tr_λ(X*X) with X = ρ·Ω₂^P — verified 7.6e-141 on all 11 shapes at n=6, POSITIVE, decaying 9/9 pairs (A=3 down to 9.2e-5). ⇒ the general-λ bound is a POSITIVE trace of an algebra element, so the #6464 Burau and #6525 R-matrix-sector handles (character identities, valid for ANY algebra element) apply to it verbatim, with no cancellation to fight. NOT yet derived: a closed form/bound for tr_λ(X*X).
+
+
+- 2026-09-04 (DERIVED, not just applicable): reduced-Burau closed form for the POSITIVE majorant on the hook column. X*X = -c²Σ_{a,b}[σ_a,σ_(a+1)]·(ρ*ρ)·[σ_b,σ_(b+1)] expands into 4(ngen-1)² words ALL of length T=2L+4, so #6464's twist q^{len(1-j)} is COMMON and factors out: tr_hook(X*X) = -c²q^{T(1-j)}Σ_{a,b}Σ_± ± e_j(eig in reduced Burau). Verified every hook at A=2 AND A=3, worst 2.1e-138, positive throughout. Uses only (n-1)×(n-1) matrices (5x5, 8x8) vs dim_λ² up to 70/216. FIRST derived closed form for the BOUND rather than the quantity. Not done: two-row column (would go via #6525 sectors, same argument, not run); and a closed form is not yet a bound — no monotonicity in j derived from it.
