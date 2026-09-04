@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-09-04T21:00:24Z
+updated_at: 2026-09-04T22:06:22Z
 parent: qou-5p7n
 ---
 
@@ -165,3 +165,37 @@ was not done.
 likely still to carry the defect, since neither the file nor the surrounding
 line count has moved since the snapshot. Read the declaration and its class
 before writing anything.
+
+
+## Triage column added (2026-09-04) — 15 of the 50 live entries are NOT defects
+
+`scripts/pqmw-queue-recheck.py` now also asks, per surviving entry, whether the
+class it projects has an instance anywhere in `content/`:
+
+    of the 50 that still resolve:
+      class INHABITED  : 15   necessary-not-sufficient; needs a human read
+      class uninhabited: 21   honest open state -> the disclosure shape
+      no carrier binder: 14   only ambient Mathlib classes, or none
+
+**Why the column exists — the `QHookBound.lean` sub-cluster this bean says to
+"do together" is four different verdicts.** Two of its four no longer resolve.
+The other two project `QIntRatioBoundSmall` and `QFactRatioBound`, which have
+**three** and **four** `nlinarith`-proved instances respectively for the
+concrete `m`/`k` the file uses — the ordinary bundle-plus-accessor idiom with
+the bundle actually built. Draining that cluster as a batch would have written
+a "derives nothing" disclosure onto two proved bundles.
+
+**Inhabited is necessary, not sufficient** — per
+`docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`, a
+reflexive-diagonal or trivial-index instance inhabits without saying anything.
+So the 15 mean *read before writing*, never *legit*. **Uninhabited is the
+decisive direction**: honest §3b-tax open state, and the projection is the
+disclosure shape. Start there — the 21.
+
+**Two errors of my own, both caught by an implausible value rather than by
+reading the code**, and both now guarded in the script: the carrier column
+first took the FIRST bracket binder, so six entries were attributed to
+`CommRing` / `CategoryTheory.Category`; and the capture could end on a `.`.
+The column remains a heuristic ("last binder not on a hand-kept ambient list")
+and is a pointer to read, not a verdict — `descent_surjective` is the known
+residual, reporting whichever ambient class is not yet on the list.
