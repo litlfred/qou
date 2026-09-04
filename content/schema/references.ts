@@ -15871,6 +15871,23 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/2108.04184",
     note: "Cited in QOU/Mathlib/QOper.lean. arXiv:2108.04184. The Lean's inline URL was arXiv:2108.01557, which does not resolve to a Koroteev-Zeitlin paper -- a likely digit transposition; repointed to 2108.04184 (the real KZ 'q-Opers II: Generalized Minors', Crelle 2022) in the same change (bib triage 2026-09-03). Crelle DOI not verifiable this session, so omitted.",
   }),
+
+  ref({
+    id: "frenkel-reshetikhin1998",
+    type: "article-journal",
+    title: "Deformations of W-algebras associated to simple Lie algebras",
+    author: [
+      { family: "Frenkel", given: "Edward" },
+      { family: "Reshetikhin", given: "Nikolai" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1998]] },
+    volume: "197",
+    issue: "1",
+    page: "1-32",
+    URL: "https://arxiv.org/abs/q-alg/9708006",
+    note: "Cited in q-geometric-langlands/quantum-langlands-dual (cites[]). Rekeyed from 'frenkel-reshetikhin2002' on owner instruction (2026-09-04): no FR paper is dated 2002; the deformed-W-algebra duality W_{q,t}(g) = W_{t,q}(^L g) introduced here is the 'quantum Langlands dual' content the block cites. arXiv:q-alg/9708006. DOI not verifiable this session, so omitted.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
