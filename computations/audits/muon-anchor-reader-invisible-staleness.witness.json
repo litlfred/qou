@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T08:23:31.902098+00:00",
-  "commitSha": "f91d321646bffd60f1b6e118eb95ff14a748e2ac",
+  "computedAt": "2026-09-04T08:51:04.355373+00:00",
+  "commitSha": "2e5cba248abcc890b178ce06c8720d02c1eda5dd",
   "assertions": [
     {
       "name": "provenance_pairing_beats_stem_pairing",
@@ -16,7 +16,7 @@
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "5 witness(es) consume the muon anchor, carry no q0 literal and no q0Anchor/q0Value, and predate fca08de7d2 (2026-08-22): ['computations/lambda-scale-derivation-probes-123.witness.json', 'computations/probes/fvk-selection.witness.json', 'computations/probes/qbeta-c3-per-block-categorical-probe.witness.json', 'computations/qbeta/qbeta-markov-trace-norm-probe.witness.json', 'computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json']"
+      "source": "4 witness(es) consume the muon anchor, carry no q0 literal and no q0Anchor/q0Value, and predate fca08de7d2 (2026-08-22): ['computations/lambda-scale-derivation-probes-123.witness.json', 'computations/probes/qbeta-c3-per-block-categorical-probe.witness.json', 'computations/qbeta/qbeta-markov-trace-norm-probe.witness.json', 'computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json']"
     },
     {
       "name": "no_q0_gate_keys_on_anything_these_carry",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8960,
+  "durationMs": 9422,
   "computation": "muon-anchor-reader-invisible-staleness",
   "scriptFile": "muon_anchor_reader_invisible_staleness_audit.py",
-  "scriptHash": "a0dad18cd52d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6579d4235c2f",
+  "scriptCommitSha": "2e5cba248abcc890b178ce06c8720d02c1eda5dd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,12 +80,11 @@
     "producers_reading_anchor": 86,
     "paired_by_provenance": 65,
     "paired_by_stem": 31,
-    "visible_to_a_q0_gate": 51,
+    "visible_to_a_q0_gate": 52,
     "computed_after_repin": 10,
-    "at_risk": 5,
+    "at_risk": 4,
     "at_risk_witnesses": [
       "computations/lambda-scale-derivation-probes-123.witness.json",
-      "computations/probes/fvk-selection.witness.json",
       "computations/probes/qbeta-c3-per-block-categorical-probe.witness.json",
       "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
       "computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json"

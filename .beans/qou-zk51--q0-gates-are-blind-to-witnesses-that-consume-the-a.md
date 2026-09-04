@@ -122,3 +122,73 @@ Reading all five as anchor drift would misattribute the larger half.
 
 Found while closing a loose end in PR #6606 (`qou-99qc`), where I had written
 *"it is upstream; I do not assert which upstream."* It was measurable.
+
+---
+
+## `fvk-selection` RESOLVED (same PR) — the declaration was false, and the obvious fix traded one red for another
+
+The "still open" item above — *"whether `fvk-selection`'s `independent`
+declaration or its q₀ sensitivity is the wrong one"* — is settled, and it took
+one read: **the contradiction is inside a single file.**
+
+    line  92   Q0_MUON_STR   = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+    line  93   Q0_PROTON_STR = "1.1099785827513808..."
+    line 634   for name, qs in (("muon", Q0_MUON_STR), ("proton", Q0_PROTON_STR)):
+    line 636       q0 = mpf(qs);  r = q0 ** mpf("0.25")      # -> moments -> Jacobi
+    line 764   # ... no q0 in this producer's cone; stamp provenance only.
+    line 769   _WB.stamp_staleness_metadata(..., q0_anchor=False)
+
+`q0 ** 0.25` feeds the balanced moments, the qd-Jacobi recurrence and every
+`I_F_lower_bound` / `lambda_min_N` the witness reports. The producer consumes
+q₀ at two pins; the comment and the declaration are both **false**.
+
+**Why a false `independent` is worse than an absent stamp.**
+`q0_anchor_is_declared` treats it as **settled**, so no q₀ gate ever revisits
+it — while the anchor-flip gate (reads `q0Anchor`/`q0Value`) and the
+value-drift gate (reads q₀ literals) are *both* structurally blind to a witness
+recording only derived numbers. The declaration closed the one door that was
+left.
+
+Corrected to **`comparison`** — the E1 exception in AGENTS.md §"q₀ anchor
+convention", since evaluating at both pins is the producer's purpose.
+
+### The fix I nearly shipped was half a fix
+
+Stamping `comparison` alone is **not** an improvement. Measured on the live
+gate:
+
+| counter | main | stamp only | stamp + `q0Values` |
+|---|---|---|---|
+| `Q0_COMPARISON` | 5 | 5 | **6** |
+| `Q0_COMPARISON_NO_VALUES` | 0 | **1** | **0** |
+| `Q0_ANCHOR_MISSING` | 1603 | 1602 | **1602** |
+
+`q0_anchor_consistency_audit` counts a comparison stamped without a `q0Values`
+mapping as **`Q0_COMPARISON_NO_VALUES` — "the claim is unchecked"**. So the
+stamp on its own trades `ANCHOR_MISSING` for a new red. With
+`q0Values = {"muon": …, "proton": …}` the audit **verifies each leg against its
+canonical pin** — which is the point: as its own source says, *"`independent`
+is an assertion about an import cone; `comparison` names pins, and each named
+pin either matches its canonical value or does not."* It is the one label the
+audit can check rather than take on trust.
+
+Nothing else in the 13 counters moves.
+
+### A prediction of mine that was wrong, recorded
+
+I expected the sharper finding to be that `fvk` reads **`q0Value`** (the
+witness's own provenance self-stamp) rather than `derived_50_digit.q` (what
+`_q0_value_for_anchor` reads), and that AGENTS.md's drain table shows those two
+disagreeing — `derived_50_digit.q` at C, `q0Value` stale at **A**. **Measured:
+they are identical today**, both at C. `48c84692679` (2026-08-29, *"repair two
+anchor/value pairs the merge split across sides"*) fixed it. So AGENTS.md's
+table describing `q0Value` as stale is itself out of date, and the story here is
+the plain one: `q0Value` moved A → C and `fvk`'s numbers moved with it.
+
+### Effect on this bean's own numbers
+
+    AT RISK  5 -> 4        visible to a q0 gate  51 -> 52
+
+The remaining four are left alone deliberately: two are the `qou-cds1` stale
+greens (refreshing commits a red), and the anchor-class two sit in the
+`qou-3f7a` tranche, which is another session's live work.
