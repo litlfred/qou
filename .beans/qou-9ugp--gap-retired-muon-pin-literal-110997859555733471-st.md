@@ -7,7 +7,7 @@ priority: normal
 tags:
     - sm-26
 created_at: 2026-09-03T16:32:23Z
-updated_at: 2026-09-04T00:38:34Z
+updated_at: 2026-09-04T01:04:21Z
 ---
 
 Measured 2026-09-03 (session qou-ggdk) after the alpha-cluster tranche (PR #6519, commits 577367a41b f3bafde098 9218877589). Method: grep -rlF '1.10997859555733471' computations --include=*.py. The literal is the self-certified muon pin A, retired 2026-08-22/28 (fca08de7d2, 83bab99730); the live muon anchor is q_muon_at() over the CODATA-2022 lepton ratio (…56427390…) and the proton default is Q_50_DIGIT_STR. These producers are UNSTAMPED, so q0_anchor_consistency_audit files them under Q0_ANCHOR_MISSING and the corpus-wide drain qou-3f7a (which keys on stamps) cannot see them. Recipe that worked on the 14 alpha producers, in three shapes: (A) dead fallback 'q_at(50) if the substrate imports else the literal' → hard refusal, import q_at from q_parameter (NOT qou_substrate.constants, or the witness gets no stamp), declare the stem under physical_proton; (B) explicit proton-vs-muon comparison (E1) → both pins by name, mpf residuals via _precision.fmt, assertion booleans as strings, wb.save(q0_comparison(muon=…, proton=…, reason=…)); (C) muon-only with no comparison purpose → proton default (2026-08-30 rule), stamp proton. Per-producer: run, diff the witness with volatile keys masked, expect proton legs unchanged past the 9th digit and muon legs shifted by the −0.0769 ppb pin migration; precision-gates.sh --changed must show zero NEW-dirty and only drained entries. Never re-pin an anchor-DEFINING witness (q-pinning-50-digit). Land manifest + witnesses together (constraint 4). Scope by subdirectory (deltalambda/, qbeta/, …) — a tranche per directory keeps each PR reviewable.
@@ -156,3 +156,64 @@ measurement — re-run the discovery yourself before writing "complete".
 The 38 proton-baking producers are a WEAKER defect than the 14: the value is
 correct, only the method is wrong (hardcoded rather than read by name). They
 do not go stale when the muon anchor moves. Priority order is the 14 first.
+
+
+## probes/ VERIFIED COMPLETE (2026-09-04) — by BOTH detectors, 0 and 0
+
+35 producers landed. The completion claim now rests on a measurement rather
+than on a file list, and on both detectors rather than one:
+
+    AST live-code scan (retired pin as an AST constant, not a comment):  0
+    producer_baked_pin_audit --quiet, muon-retired lines by VALUE:       0
+
+The four the first sweep missed:
+
+- `aomega_6y1p_swing_reframe_not_tractable` -- both pins as 15-DIGIT
+  TRUNCATIONS, and this probe's ENTIRE output is their difference (the mu-p
+  tension), so the truncation landed on the reported quantity itself. Measured
+  understatement: 11.5372 ppb reported against a true 11.6141 ppb, 0.67% low.
+  Grep-invisible: no `1.10997` string survives in the source at all.
+- `difference_knot_binding_probe` -- retired pin, sole anchor. Witness stays at
+  HEAD: needs `snappy`, absent in this container, and fails identically at HEAD.
+- `rho_f_categorical_probe` -- retired pin labelled "(MUON layer)". See the
+  correction below; this one did NOT go to proton.
+- `su4_1111_markov_trace_probe` -- retired pin as an ANCHOR-NAMING fixture, so
+  `_anchor_of` could not have recognised the LIVE muon anchor as muon. Payload
+  moved 0 fields, so the fix is provably behaviour-neutral apart from the
+  classification it exists to perform. NOTE: this producer RUNS here
+  (allPassed=True), against the AGENTS.md line listing it as one of two
+  genuinely broken producers -- that line is either stale or the scipy-sparse
+  crash is conditional.
+
+## 🛑 CORRECTION 2: `Q_50_DIGIT_STR` IS ANCHOR-RESOLVED PER PRODUCER
+
+This is the most consequential thing found this tranche and it corrects my own
+d15ca14cbb note. `Q_50_DIGIT_STR` is NOT a proton constant. `q_parameter` reads
+the manifest at import and, for any producer whose stem is in `ideal_muon`,
+binds the MUON anchor to that same name.
+
+So "read the anchor by name" does NOT mean "use proton". For the 19 producers
+on `ideal_muon` it means the opposite, and the manifest is entirely
+load-bearing for them -- the exact opposite of the "inert" finding, which holds
+only for producers NOT on that list.
+
+Consequence, caught only because the witness diff showed a muon value where I
+had written a proton comment: `rho_f_categorical_probe` is on `ideal_muon`, so
+patching it to `Q_50_DIGIT_STR` moved it from the RETIRED muon literal to the
+LIVE CODATA-2022 muon derivation (+0.0769 ppb, same layer) -- not to proton at
+11.54 ppb as my first comment claimed. Comment corrected in the file.
+
+Audited the rest on that basis: NONE of the other 34 probes are listed
+`ideal_muon`, so they are all correctly on proton.
+
+RULE FOR THE REMAINING TRANCHES: check `ideal_muon` membership BEFORE writing
+what a by-name patch does. The same edit means different things for a listed
+and an unlisted producer, and only the witness diff distinguishes them.
+
+## Open owner question (not taken unilaterally)
+
+Whether `rho_f_categorical_probe` belongs on the muon layer at all. Exception
+E2 of the 2026-08-30 ruling covers the ideal CAL-1/2/3 layer; nothing examined
+here establishes that this probe is part of it. Moving it is an 11.54 ppb
+change and belongs to the `ideal_muon` migration (qou-1c4y), which AGENTS.md
+requires to land its manifest and witnesses together.
