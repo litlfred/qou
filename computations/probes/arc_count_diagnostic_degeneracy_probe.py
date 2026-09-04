@@ -312,7 +312,12 @@ def main() -> int:
             "r2_ame_vs_arc_exact": str(ceiling),
             "r2_ame_vs_arc": fmt(_fr_to_mpf(ceiling)),
             "n_nuclei_ame": len(keys),
-            "regressor_race": {k: fmt(_fr_to_mpf(v)) for k, v in vals.items()},
+            # str(), not fmt(): these are exact `Fraction`s, and the
+            # DEGENERACY is the finding — three regressors, one R2. Three
+            # identical rationals state the tie exactly; three truncated
+            # decimals ask the reader to trust the truncation. Matches
+            # `r2_ame_vs_arc_exact` above, which is str() on the same object.
+            "regressor_race": {k: str(v) for k, v in vals.items()},
             "shallow_clone_caveat": (
                 "This clone is shallow; only 2 commits touching the cited "
                 "witness are in the fetched window and both carry 0.2653. An "
