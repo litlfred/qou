@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-21T14:57:30.413005+00:00",
-  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
+  "computedAt": "2026-09-04T22:56:40.077088+00:00",
+  "commitSha": "86e8a32a0b62585a79bfd785b7ade8993268a793",
   "assertions": [
     {
       "name": "n_syt_eq_16",
@@ -67,11 +67,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 127,
+  "allPassedBasis": "assertions",
+  "durationMs": 159,
+  "durationMsBaseline": "builder-construction",
   "computation": "path-b-evacuation",
   "scriptFile": "path_b_evacuation.py",
   "scriptHash": "e26e5059536e",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -83,8 +85,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/path_b_evacuation.py"
+    ],
+    "reproduce": "python3 -u computations/path_b_evacuation.py"
   },
   "description": "Path B: Schützenberger evacuation bar-pairing of 16 SYT of (3,2,1).  Implements forward JDT slide and evacuation involution e(T).  Pairs all 16 SYT into 8 bar-pairs, verifies structural properties (involution, zero-sum content), and links bar-pairs to eigenvalue pairs of M_(3,2,1) at q=q_0.  Identifies which bar-pair carries the max+/2nd-max+ EW channel.",
   "contentBlock": "conj:weinberg-angle-categorical",
