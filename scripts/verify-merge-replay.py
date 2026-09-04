@@ -62,14 +62,23 @@ def git(*args: str, check: bool = False) -> str:
 
 
 def patch_id(sha: str) -> str | None:
-    """Rebase-invariant hash of a commit's diff; None for an empty diff."""
-    diff = git("diff-tree", "-p", "--no-commit-id", sha)
+    """Rebase-invariant hash of a commit's diff; None for an empty diff.
+
+    BYTES, not text. A diff is not guaranteed to be UTF-8 -- this corpus holds
+    commits whose diffs are not, and decoding one raises UnicodeDecodeError and
+    takes the whole audit down. Found by running this check retroactively over
+    ~30 merged branches, where exactly that happened. `git patch-id` wants bytes
+    anyway, so there is nothing to decode until the hash comes back.
+    """
+    diff = subprocess.run(
+        ["git", "diff-tree", "-p", "--no-commit-id", sha], capture_output=True
+    ).stdout
     if not diff.strip():
         return None
     out = subprocess.run(
-        ["git", "patch-id", "--stable"], input=diff, capture_output=True, text=True
+        ["git", "patch-id", "--stable"], input=diff, capture_output=True
     ).stdout.split()
-    return out[0] if out else None
+    return out[0].decode("ascii") if out else None
 
 
 def commits(rev_range: str) -> list[str]:
