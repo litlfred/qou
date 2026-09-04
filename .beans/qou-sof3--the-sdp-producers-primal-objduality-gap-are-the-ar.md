@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T09:11:29Z
-updated_at: 2026-09-04T09:22:49Z
+updated_at: 2026-09-04T09:28:19Z
 ---
 
 Found by the FIRST real application of the certified-residual check
@@ -131,3 +131,55 @@ This producer: 2.65e5 / 3.92e-44 = 6.8e48 against a 0.9-threshold of 10^45.2
 whose optimum is legitimately tiny would also trip it. Run it across the 54
 LP/SDP witnesses (see `qou-dke6` for that population) before believing any
 count it reports.
+
+
+## Item 2 ATTEMPTED and it is a NEGATIVE — the static criterion does not decide
+
+`computations/audits/lp_floor_valued_objective_audit.py` implements the
+proposed criterion
+
+    cancellation_decades = log10(max|x*|) - log10(|primal_obj|)
+    available_decades    = prec_bits * log10(2)
+    flag when cancellation > FRACTION * available
+
+and measures that it **cannot separate floor-valued objectives from
+legitimately small ones**. Two independent reasons, both measured over the
+146 scorable LP/SDP dual records on `main`:
+
+**1. The threshold is a cliff.** Same data, varying only the fraction:
+
+    fraction   0.80  0.90  0.95  0.96  0.98  1.00  1.05
+    flagged      74    62    62    62     7     7     3
+
+55 records sit in a narrow band at ratio ~0.97, so any count between 0.90 and
+0.96 is an artifact of where the threshold was placed. **The "62" I would have
+reported is not a measurement.** Only ratio > 1 is threshold-free (it means the
+objective is below what the arithmetic can resolve at all) and that gives 7.
+
+**2. It misses its own confirmed positive — the decisive failure.**
+`qbeta-symbolic-sdp-strict-complementarity` was PROVED floor-valued by sweeping
+`prec_bits` (3.9e-44 at 167 -> 3.8e-100 at 400 -> 3.8e-196 at 800). It scores
+ratio **0.97 and ranks 59 of 146** — inside the cluster, and below the
+threshold-free cut. A criterion that cannot rank its one known positive above
+55 unknowns is not separating anything.
+
+**Why, structurally.** A legitimately tiny optimum and a floor-valued one are
+*identical* in the published numbers. The only discriminator is whether the
+objective MOVES when `prec_bits` changes, which requires re-running the
+producer — deliberately not done in an audit, since producers rewrite sibling
+witnesses.
+
+**What the 7 threshold-free survivors are.** All are f64-era (no
+`precision_bits`, available 16.0 decades) and **6 of the 7 live in
+`computations/_deprecated/`**. The single live one is
+`computations/borromean-axial-coupling.witness.json` at ratio 1.31 — the
+strongest candidate in the corpus and the only one worth a sweep.
+
+**Disposition.** The script is kept as a RANKING and as the record of this
+negative, not as a detector. It prints the sensitivity sweep and its own
+calibration rank on every run, so a future reader cannot quote a flag count
+without seeing how much it moves. Do not build a gate on it.
+
+**The one actionable item left:** sweep `borromean-axial-coupling` at two
+precisions and see whether its objective moves. That is a single producer
+re-run and it either confirms a live floor-valued objective or clears it.
