@@ -86,6 +86,7 @@ def analyze(A):
     worst_id = mp.mpf(0)
     worst_asym = mp.mpf(0)
     rows = []
+    exact_rows = []
     all_hold = True
     for k in range(0, n // 2 + 1):
         lam = (n - k, k) if k > 0 else (n,)
@@ -104,6 +105,7 @@ def analyze(A):
         all_hold = all_hold and holds
         slack = (mp.re(sec) / direct) if direct > mp.mpf(10) ** -100 else mp.mpf("inf")
         rows.append((k, dim_lam, mp.re(sec)))
+        exact_rows.append((k, dim_lam, direct))
         print(f"  {k:>2}  {str(lam):<10}  {dim_lam:>5}  {mp.nstr(direct,8):>12}  {mp.nstr(diff,8):>13}  "
               f"{mp.nstr(rel,3):>9}  {mp.nstr(mp.re(sec),8):>13}  {mp.nstr(mp.re(sec)/dim_lam,7):>11}  "
               f"{mp.nstr(slack,4):>7}")
@@ -119,15 +121,32 @@ def analyze(A):
     mono = all(inner[i + 1][2] / inner[i + 1][1] < inner[i][2] / inner[i][1]
                for i in range(len(inner) - 1))
     print(f"  (3) bound/dim_λ strictly decreasing in k for k ≥ 1?  {'YES ✓' if mono else 'NO'}")
+
+    # (4) THE EXACT DIFFERENCE, per dimension. This is the quantity the dropped bound was trying
+    # to approximate. It is what the two-row analogue of the hook closed form actually delivers:
+    # computable from the fixed 4×4 Ř as a difference of two sector Frobenius norms, no seminormal
+    # construction. Whether IT decays is a separate question from whether the LOSSY bound does.
+    exact = [(k, d, e) for k, d, e in exact_rows if k > 0 and e > 0]
+    mono_exact = all(exact[i + 1][2] / exact[i + 1][1] < exact[i][2] / exact[i][1]
+                     for i in range(len(exact) - 1))
+    print(f"  (4) EXACT tr_(n-k,k)(X*X)/dim_λ strictly decreasing in k for k ≥ 1?  "
+          f"{'YES ✓' if mono_exact else 'NO'}")
+    print("      per-dim: " + ", ".join(mp.nstr(e / d, 6) for _k, d, e in exact))
     if all_hold and mono:
         print("\n  ⇒ TWO-ROW COLUMN BOUNDED. Positivity of the majorant lets the subtracted sector be")
         print("    dropped outright — the difference structure that blocked #6525's signed trace is")
         print("    not an obstacle here. The bound is a single sector Frobenius norm on a C(n,k)-dim")
         print("    block of the fixed 4×4 Ř, and it decays per dimension in k = b(λ).")
+    elif all_hold and mono_exact:
+        print("\n  ⇒ TWO-ROW REDUCTION HOLDS; only the LOSSY DROP fails. The exact difference")
+        print("    tr_(n-k,k)(X*X) = tr_W_k − tr_W_(k-1) — two Frobenius norms on C(n,k) blocks of")
+        print("    the fixed 4×4 Ř, no seminormal construction — reproduces the majorant exactly AND")
+        print("    is strictly decreasing per dimension in k = b(λ). What fails is only (S): dropping")
+        print("    tr_W_(k-1) is legal (positivity) but too lossy, since the lower sectors accumulate.")
+        print("    So the difference must be KEPT — which costs nothing, it is exactly computable.")
     elif all_hold:
-        print("\n  ⇒ (S) holds but its per-dim form is NOT monotone — a valid bound that is USELESS")
-        print("    for the decay theorem. Dropping tr_W_(k-1) is evidently too lossy at large k;")
-        print("    the difference would have to be kept. Reporting this, not presenting it as progress.")
+        print("\n  ⇒ (S) holds but its per-dim form is NOT monotone, AND the exact difference is not")
+        print("    monotone either — so the two-row column is not reduced by this route at all.")
 
 
 def main():

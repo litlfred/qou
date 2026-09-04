@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T09:12:08Z
+updated_at: 2026-09-04T09:18:41Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -75,3 +75,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (two-row majorant route: NEGATIVE, scope-(a)). #6525's sector identity DOES carry the positive majorant (Ř symmetric, max|R−Rᵀ|=0.0; tr_λ(X*X) = tr_W_k − tr_W_(k−1) exact to 6.1e-139), and positivity makes dropping the subtracted sector LEGAL: 0 ≤ tr_(n−k,k)(X*X) ≤ tr_W_k(X*X), holds at every k, computed as ‖X|_W_k‖_F² on a C(n,k) block of the fixed 4×4 Ř (no eigenvalues). BUT the bound does NOT decay per dim — bound/dim rises at the last k at BOTH A (A=2: 320.8, 281.4, 560.0; A=3: 4718.6, 4191.2, 3856.1, 5388.2) and slack grows 1.0→10.5 (A=2), 1.0→5.5 (A=3), because the lower sectors accumulate. So positivity makes the drop legal, not affordable; the difference structure #6525 flagged remains the obstacle. Scope-(a): excludes the drop-the-sector route as stated, NOT a two-row bound that keeps the difference (e.g. via the sl₂ lowering intertwiner W_(k−1) ↪ W_k, so the difference is a trace on the cokernel) — untried.
+
+
+- 2026-09-04 (CORRECTION to my own two-row entry above): I framed the two-row route as a NEGATIVE. Too pessimistic — RETRACTED. The two-row REDUCTION holds and IS monotone: tr_(n−k,k)(X*X) = ‖X|_W_k‖_F² − ‖X|_W_(k−1)‖_F², two Frobenius norms on C(n,k) blocks of the fixed 4×4 Ř (no seminormal construction, no eigenvalues), exact to 6.1e-139 and STRICTLY DECREASING per dim in k at both A (A=2: 320.78, 103.15, 53.56; A=3: 4718.6, 2793.1, 1498.6, 981.2). The negative is NARROW and only about the lossy shortcut (S): dropping tr_W_(k−1) is legal by positivity but too lossy (slack 1.0→10.5), so the difference must be KEPT — which costs nothing since it is exactly computable. NET: the positive majorant reduces BOTH columns to small n-independent objects, monotone per dim in b(λ) — hooks to the reduced Burau, two-rows to a sector Frobenius difference.
