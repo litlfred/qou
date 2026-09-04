@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-27T00:36:53.148473+00:00",
-  "commitSha": "214244c175b46c9eb60342e5cc27f8b2a4e1cac8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-04T04:33:58.438577+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "real_boost_imV_nonzero_positive",
@@ -42,7 +42,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": "0.5",
-      "source": "Δ Im 𝔙₄₁(real) = -1.043e-9 ≪ |S gap| = 0.04914"
+      "source": "Δ Im 𝔙₄₁(real) = -1.049e-9 ≪ |S gap| = 0.04914"
     },
     {
       "name": "no_candidate_found",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "qbeta-c3-geometry-derived-argument",
   "scriptFile": "qbeta_c3_geometry_derived_argument_probe.py",
-  "scriptHash": "92e0edb1ea6d",
-  "scriptCommitSha": "a33bf64bf60bbe0fb8176778061ae98c1bfa3e51",
+  "scriptHash": "ba640bf547c0",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -68,9 +68,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_geometry_derived_argument_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_geometry_derived_argument_probe.py"
   },
   "description": "Geometry-side one-shot for c₃ bar-odd S, CORRECTED to the figure-eight NZ leading form Im 𝔙₄₁ = (√3/4)(Re²u − Im²u) (a₂ = i√3/4, cusp modulus τ=−i√3; QOU.Knot.FigureEightComplexVolume.imV₄₁, #4372) — supersedes the WRONG √3·Re·Im form this probe previously carried (third such probe; the other two fixed in #4372). Vol_exact from the validated gluing Newton solver (vol_of_m), UNCHANGED. Corrected consequence: the REAL boost u=ln q₀ gives Im 𝔙₄₁=(√3/4)(ln q₀)²>0 (NONZERO; ~0.49×S(muon), muon-sign-correct) — the prior 'real m are silent' reasoning was a wrong-form artefact. The named complex phase-e^{iπ/4} set now lands on the null DIAGONAL (Im 𝔙₄₁≈0). Clean scope-(a) negative on the zero-parameter both-anchor gate: real boost is muon-sign+ballpark but nearly constant across anchors (cannot sign-flip); the flip needs the boost→spin complex part crossing the diagonal — the OPEN u(q₀). Agrees with the sibling qbeta_geometric_boost_udeform_probe.py. Scope-(a); C14; no c_k wired; no SDeformedVolumeChannel instance; u(q₀) open; no fit; dps=70 matches witness meta.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -87,8 +96,8 @@
     },
     "real_boost_readout": {
       "muon": {
-        "u_ln_q0": "0.104340731857",
-        "imV41": "0.00471420422981",
+        "u_ln_q0": "0.104340731934",
+        "imV41": "0.00471420423676",
         "S": "0.00968298",
         "imV41_over_S": "0.48685469"
       },
@@ -99,13 +108,13 @@
         "imV41_over_S": "-0.11946983"
       }
     },
-    "delta_imV41_across_anchors_real_boost": "-1.0425138e-9",
+    "delta_imV41_across_anchors_real_boost": "-1.0494665e-9",
     "complex_phase_pi4_readouts": [
       {
         "argument": "u=t·e^{iπ/4}",
         "ImV_leading_muon": "6.12691260217e-74",
         "ImV_leading_proton": "6.12691260217e-74",
-        "Vol_exact_muon": "2.02752372029",
+        "Vol_exact_muon": "2.02752372028",
         "Vol_exact_proton": "2.02752372081",
         "relerr_S_max": 1.0,
         "candidate": false
@@ -114,14 +123,14 @@
         "argument": "u=2t·e^{iπ/4}",
         "ImV_leading_muon": "2.45076504087e-73",
         "ImV_leading_proton": "2.45076504087e-73",
-        "Vol_exact_muon": "2.02041637275",
+        "Vol_exact_muon": "2.02041637273",
         "Vol_exact_proton": "2.02041637485",
         "relerr_S_max": 1.0,
         "candidate": false
       },
       {
         "argument": "u=ℏ_q²·e^{iπ/4}",
-        "ImV_leading_muon": "4.78665047045e-76",
+        "ImV_leading_muon": "7.17997570567e-76",
         "ImV_leading_proton": "2.39332523522e-76",
         "Vol_exact_muon": "2.02986234636",
         "Vol_exact_proton": "2.02986234637",
@@ -130,18 +139,18 @@
       },
       {
         "argument": "u=b² (=i·t/2π)",
-        "ImV_leading_muon": "-0.000119412188124",
+        "ImV_leading_muon": "-0.0001194121883",
         "ImV_leading_proton": "-0.000119412161717",
         "Vol_exact_muon": "2.02982350638",
         "Vol_exact_proton": "2.0298235064",
-        "relerr_S_max": 1.0123321733726571,
+        "relerr_S_max": 1.012332173390845,
         "candidate": false
       },
       {
         "argument": "u=2πb²·e^{iπ/4}",
         "ImV_leading_muon": "-6.12691260217e-74",
         "ImV_leading_proton": "-6.12691260217e-74",
-        "Vol_exact_muon": "2.02752742761",
+        "Vol_exact_muon": "2.0275274276",
         "Vol_exact_proton": "2.02752742813",
         "relerr_S_max": 1.0,
         "candidate": false

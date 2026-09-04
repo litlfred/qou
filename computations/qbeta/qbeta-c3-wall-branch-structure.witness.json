@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:46:13.771543+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T04:38:06.723382+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "sign_flip_is_pi_over_2_crossing",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "qbeta-c3-wall-branch-structure",
   "scriptFile": "qbeta_c3_wall_branch_structure_probe.py",
-  "scriptHash": "70cb3aac11c7",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4d47861c0b12",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -78,8 +78,8 @@
     "phase_inversion": [
       {
         "anchor": "muon",
-        "HA": "0.209060322",
-        "amp": "0.03785069529",
+        "HA": "0.2090603222",
+        "amp": "0.03785069535",
         "sin_2arg": "0.2558204",
         "arg_u_deg": "82.588898",
         "sin_gt_1": false
@@ -94,7 +94,7 @@
       }
     ],
     "wall_reduced": {
-      "arg_u_muon_deg": 82.58889844128556,
+      "arg_u_muon_deg": 82.58889845250688,
       "arg_u_proton_deg": 135.0,
       "straddle_pi_over_2": true,
       "residue": "single phase function arg(u(q0)) + q* where arg u = pi/2 (S zero-crossing)"
