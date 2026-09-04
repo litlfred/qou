@@ -204,23 +204,47 @@ elan / cache hosts are network-restricted.
 > # Derive the cache branch from the pinned toolchain — do NOT hard-code the slug
 > # (works from any subdir; CRLF-safe):
 > ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+> trap 'rm -f "$TGZ"' EXIT INT TERM   # ~2.4G scratch; NOTHING else reaps it
 > SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
 > BR="lake-cache/qou-$SLUG"
 > git fetch --depth=1 origin "$BR" \
->   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
->      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
+>   && C=$(git rev-parse FETCH_HEAD) \
+>   && git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
+>      | while read -r p; do git show "$C:$p"; done > "$TGZ" \
 >   && tar xzf "$TGZ" -C "$ROOT" \
->   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
+>   && bash "$ROOT/scripts/lake-restore-trace-check.sh" "$ROOT" \
 >   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
 >
-> **🛑 The `touch` is load-bearing, not decoration — read the next paragraph
-> before running `lake build` anywhere near this tree.** A restored tarball
-> carries oleans but **no `.trace` files**, so Lake considers every one of them
-> stale: a subsequent `lake build` rebuilds them from source and **evicts the
-> restore as it goes**. Measured 2026-08-15 (bean `qou-r13s`), running
-> `lake build QOU UGB Fred2005` from the root against a tree restored exactly
-> as above:
+> **🛑 MEASURE the traces — do not assume them in either direction.** This
+> paragraph used to state flatly that *"a restored tarball carries oleans but
+> **no `.trace` files**"* and to `touch .lake/RESTORED-NO-TRACES`
+> unconditionally on that basis. **That was true when written and is now false
+> for this branch.** Measured 2026-09-04 by stream-listing all 27 parts of
+> `lake-cache/qou-v4-24-0` (reseeded 2026-08-31): **100.0 % paired trace
+> coverage — 6170 of 6172 oleans carry their own `.trace` sibling**, the two
+> exceptions being QOU own-package oleans. Both seeders have refused a sub-90 %
+> seed since 2026-08-07, so this is the expected state, not an accident.
+>
+> An unconditional `touch` therefore now asserts something **false in the
+> blocking direction**: it tells every agent never to `lake build` on a tree
+> whose traces are in fact present.
+> [`scripts/lake-restore-trace-check.sh`](../../../scripts/lake-restore-trace-check.sh)
+> replaces it — it counts **paired** traces (a Lake tree carries many traces
+> belonging to no olean, and the naive total ratio read *192 %* on a 13-olean
+> tree) and sets or clears the marker from that number, so it cannot go stale
+> the way the assertion did.
+>
+> **What that does NOT license.** Traces are **necessary** for Lake to accept a
+> restored olean; they are **not shown here to be sufficient**. A trace records
+> input hashes, so Lake can still rebuild if the tree it hashes differs. **The
+> eviction below is real and is NOT retracted** — only its premise has moved,
+> and whether a `lake build` on a *traced* restore still evicts is **untested**
+> (testing it costs a real build and risks the cache it would test). Keep
+> preferring `lean`-direct.
+>
+> The eviction, measured 2026-08-15 (bean `qou-r13s`) running
+> `lake build QOU UGB Fred2005` from the root against an **untraced** restore:
 >
 > | | before | during (10 min) | after kill |
 > |---|---|---|---|
@@ -230,10 +254,11 @@ elan / cache hosts are network-restricted.
 >
 > Ten minutes, zero paper-library progress, cache destroyed, and **silently** —
 > the output reads as ordinary build progress, so a generous `timeout` will
-> happily burn the whole window producing nothing. Recovery is another 1.6 GB
+> happily burn the whole window producing nothing. Recovery is another 2.4 GB
 > fetch + extract.
 >
-> So on a restored tree: **verify with `lean`-direct, never `lake build`**
+> So on a restored tree: **verify with `lean`-direct, and treat `lake build` at
+> the root as the risky path**
 > (§"VERIFY a single file with lean-direct" below; it is the sanctioned gate
 > per AGENTS.md §"QA is agent-owned", not a fallback — 2.4 s vs 50 minutes of
 > nothing). Check the marker before any build step:
@@ -285,7 +310,7 @@ elan / cache hosts are network-restricted.
 > ```bash
 > ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
 > git fetch --depth=1 origin lake-cache/qou-v4-24-0-repthy-wedderburn
-> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"
+> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"; rm -f "$T"
 > ```
 >
 > This saves the ~5-min from-source rebuild of those 11 modules. (If a future
@@ -328,7 +353,7 @@ elan / cache hosts are network-restricted.
 > C=$(git rev-parse FETCH_HEAD)   # pin ONCE -- FETCH_HEAD is mutable
 > git ls-tree --name-only "$C" | grep '^addon-oleans\.tgz\.part' | sort \
 >   | while read -r p; do git show "$C:$p"; done > "$T"
-> tar xzf "$T" -C "$ROOT"
+> tar xzf "$T" -C "$ROOT"; rm -f "$T"
 > ```
 >
 > Saves ~65 min: `BlockMap31` 941 s/5.5 GB, `BlockMap211` 916 s/6.5 GB,
