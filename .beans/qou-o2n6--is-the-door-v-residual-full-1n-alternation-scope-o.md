@@ -1,10 +1,10 @@
 ---
 # qou-o2n6
 title: Is the Door-v residual full (-1)^n alternation? Scope of twoOp_residual_kills_residue against conj:c1-ggm-bar-parity-faces
-status: in-progress
+status: completed
 type: task
 created_at: 2026-09-03T11:48:16Z
-updated_at: 2026-09-03T20:39:52Z
+updated_at: 2026-09-04T03:34:18Z
 ---
 
 
@@ -26,3 +26,5 @@ RESULT (2026-09-03, PR #6523). Answer: NO. Measured + proved:
   excluded. Odd shift still required everywhere.
 Open: jet level n = GGM index m is the conjecture's identification (not
 checked); scalar-sign residual vs eigenfunction hypothesis is a modelling gap.
+
+CLOSED 2026-09-04: merged in #6523 (ed4bf7a4ff). Follow-up: qou-33hb (derivative-only D_q vs the C1 kernel).

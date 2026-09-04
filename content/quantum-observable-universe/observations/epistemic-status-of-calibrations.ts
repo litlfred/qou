@@ -20,7 +20,47 @@ export default remark({
     "open-derivation",
     "substrate-parameter",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/mu_substrate_tension_audit_100dps.py",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/mu-substrate-tension-audit-100dps.witness.json",
+      "computations/per-observable-100x-status.witness.json",
+    ],
+    status: "verified",
+  },
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-09-04",
+      body:
+        "**Figure currency (supersedes the `~964×` in the 2026-06-16 note below, and the pre-CODATA-2022 literals this block carried until today).** " +
+        "Every numeral in the prose is now either a `:val[…]` directive or traced to a live witness field:\n\n" +
+        "- The muon-pin $q_0$ in the two-layer table and the $q_0 \\approx 1.10998$ in §CAL-2 are `:val[q_0]`, which reads " +
+        "`derived_50_digit.q` of `computations/q-pinning-50-digit.witness.json` — the anchor-DEFINING witness that " +
+        "`qou_substrate.witness._q0_value_for_anchor(\"muon\")` resolves. The literal previously written there, " +
+        "`1.1099785955573347…`, is the pin **retired** by `fca08de7d2` (2026-08-22, owner ruling \"CODATA 2022 for muon\"); " +
+        "the live value is `1.1099785956427390466817…`. Recorded on bean `qou-silm`.\n" +
+        "- The CAL-2 ratio is `:val[m_mu_over_e]` ← `calibration_inputs.m_mu_over_e_str` = `206.7682827` (CODATA 2022). " +
+        "The prose said `206.7682830`, which is CODATA 2018.\n" +
+        "- $\\mu$–$p$ tension `11.5 → 11.6` ppb ← `data.leg_separation.substrate_tension_ppb = -11.6118085259` of " +
+        "`mu-substrate-tension-audit-100dps.witness.json` (sign is proton-pin minus muon-pin; the prose quotes the magnitude).\n" +
+        "- $\\sigma(m_p/m_e)$ `0.06 → 0.017` ppb ← `qou_substrate.constants.MASS_RATIO_P_E_ERR = 3.2e-8` on `1836.152673426`, " +
+        "i.e. `1.743e-11`; the witness states it as prose in `calibration_inputs.m_p_over_e_source` (\"CODATA 2022 (0.017 ppb)\"). " +
+        "`0.06 ppb` is the CODATA-2018 figure.\n" +
+        "- Muon-anchored proton miss `roughly 4000σ → ≈ 1.4e4 σ` ← `deuteron-from-scratch-ledger.witness.json` " +
+        "`data.S2_nucleons.muon_anchor.err_m_p_ppb = -243.863` over that same `0.01743` ppb.\n" +
+        "- The muon ratio's `22` ppb is unchanged and correct (`MASS_RATIO_MU_E_ERR = 4.6e-6` on `206.7682827` = `2.225e-8`), " +
+        "as is the `9.5σ` (`211.16 / 22.25`). Note the L2 dashboard's `sigma_exp_ppb = 21.77` is the σ on the **mass** " +
+        "$m_\\mu$, which gives `9.70σ`; the ratio σ is the right denominator for a residual on the ratio relation. " +
+        "Different denominators, not a stale figure — do not \"reconcile\" them.\n\n" +
+        "The `:val[…]` pinning is the durable half: the two figures that now read from the anchor witness cannot go stale " +
+        "again. The ppb figures remain literals because no purpose-named scalar field carries them " +
+        "(`substrate_tension_ppb` is signed; the `0.017 ppb` and the miss factor exist only as prose or as an " +
+        "array-indexed dashboard row). Producer-side fix filed as bean `qou-m4au`.",
+      see: "https://github.com/litlfred/qou/blob/claude/tender-keller-nvldp3/content/quantum-observable-universe/observations/mu-p-residual-two-readings.md",
+    },
     {
       kind: "status",
       date: "2026-06-16",

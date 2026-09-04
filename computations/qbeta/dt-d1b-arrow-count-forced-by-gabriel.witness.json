@@ -1,0 +1,293 @@
+{
+  "engine": "exact-integer-ade-enumeration",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T06:25:05.643341+00:00",
+  "commitSha": "04a7aa7bce612c516248d3f225212ebf9bc806cc",
+  "assertions": [
+    {
+      "name": "C1_positive_root_COUNTS_match_the_known_values",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "A1..A5, D4, D5, E6, E7, E8 all reproduce (10 checked); the generator is not inventing its own root systems"
+    },
+    {
+      "name": "C2_every_generated_union_has_the_RANK_it_was_asked_for",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "so 'edges = rank - components' is applicable; ADE diagrams are trees, which is what makes the arrow count a function of the type alone"
+    },
+    {
+      "name": "C3_the_enumeration_is_EXHAUSTIVE_at_each_rank",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "rank->#types {2: 2, 3: 3, 4: 6, 5: 9}: rank 2 gives A1+A1, A2; rank 3 gives A1^3, A1+A2, A3; rank 4 adds A2+A2, A1+A3, A4, D4. A target is therefore hit by exactly one type or by none — there is nothing to choose"
+    },
+    {
+      "name": "every_reading_gives_a_UNIQUE_Dynkin_type",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "all four (rank, spectrum) pairs are hit by exactly one ADE type. The arrow count is not chosen — it is read off"
+    },
+    {
+      "name": "the_TWO_KNOT_reading_is_unique_but_answers_the_WRONG_QUESTION",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "abelian-is-a-node -> {'4_1': 0, '5_2': 0}, abelian-is-not -> {'4_1': 1, '5_2': 1}: both unique. Kept because the calculation is correct, LABELLED because the corpus's target is not two knots' totals"
+    },
+    {
+      "name": "CORRECTED_the_arrow_count_is_NOT_FORCED",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "with total = 7 the arrow count is [0, 1, 2] across ranks 4-7: rank 4 = A1+A3 (2 arrows); rank 5 = A1+A2+A2 (2 arrows); rank 6 = A1+A1+A1+A1+A2 (1 arrows); rank 7 = A1+A1+A1+A1+A1+A1+A1 (0 arrows). V must be pinned first, and nothing in the corpus pins it"
+    },
+    {
+      "name": "and_the_MERGED_node_result_does_NOT_pin_V",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "C_irr = [trace field : Q] is a PER-KNOT count; the target is ONE quiver spanning the bar-conjugate ray pair, so its V is a different quantity. The chain 'rank = node count' was broken from the start under the corpus's reading — that is the substantive half of the error, not the arithmetic"
+    },
+    {
+      "name": "HOW_THE_ERROR_HAPPENED_and_it_was_flagged_by_its_own_author",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the first version listed (A5) 'the recorded DT count is the indecomposable count' as an assumption AND named it the first thing to check before building on the result. It was wrong, and checking it took one grep of the bean. Flagging a weak assumption is not the same as testing it"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "dt-d1b-arrow-count-forced-by-gabriel",
+  "scriptFile": "dt_d1b_arrow_count_forced_by_gabriel_probe.py",
+  "scriptHash": "a0835d8acbbc",
+  "scriptCommitSha": "d3b234d148f825aee2a1e6e85dab9a093e029315",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py"
+  },
+  "description": "qou-q9ih D1-b, the arrow question -- and this probe CORRECTS ITS OWN FIRST VERSION, which concluded 'the arrow count is FORCED to 0 or 1'. That answered the wrong question. The Gabriel lever is sound and is kept: for an acyclic quiver with W=0, finite type <=> simply-laced Dynkin, #indecomposables = #positive roots, and every ADE diagram is a TREE so a rank-V union with k components has V-k edges. What was wrong is which (rank, spectrum) pairs it was fed. The first version read the target (4,3) as TWO KNOTS' total spectra with rank = the per-knot C_irr. The bean says otherwise in as many words: 'Target object: (Q, W, ray+, ray-) -- quiver with potential plus TWO stability rays, ray-wise DT counts (4,3)'. So (4,3) are ray-wise counts of ONE quiver, and the coincidence C(4_1)=3, C(5_2)=4 is what made the misreading available. Two things break: stable objects have a definite slope so the ray sets are DISJOINT and the total is >= 7; and rank is no longer the per-knot node count at all, so the merged C_irr result does not pin V. Corrected result: V >= 4 and total >= 7, and if the spectrum is exactly the two rays then arrows = 2 at ranks 4-5, 1 at rank 6, 0 at rank 7. THE ARROW COUNT IS NOT FORCED -- V must be pinned first and nothing in the corpus pins it. A constraint table, not a resolution. The two-knot reading is still computed and still unique, labelled as the answer to a question the corpus did not ask. Exact integers; no floats. Scope-(a); nothing wired; no fit.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "ade_table": {
+      "2": [
+        {
+          "type": "A1+A1",
+          "positive_roots": 2,
+          "components": 2,
+          "edges": 0
+        },
+        {
+          "type": "A2",
+          "positive_roots": 3,
+          "components": 1,
+          "edges": 1
+        }
+      ],
+      "3": [
+        {
+          "type": "A1+A1+A1",
+          "positive_roots": 3,
+          "components": 3,
+          "edges": 0
+        },
+        {
+          "type": "A1+A2",
+          "positive_roots": 4,
+          "components": 2,
+          "edges": 1
+        },
+        {
+          "type": "A3",
+          "positive_roots": 6,
+          "components": 1,
+          "edges": 2
+        }
+      ],
+      "4": [
+        {
+          "type": "A1+A1+A1+A1",
+          "positive_roots": 4,
+          "components": 4,
+          "edges": 0
+        },
+        {
+          "type": "A1+A1+A2",
+          "positive_roots": 5,
+          "components": 3,
+          "edges": 1
+        },
+        {
+          "type": "A2+A2",
+          "positive_roots": 6,
+          "components": 2,
+          "edges": 2
+        },
+        {
+          "type": "A1+A3",
+          "positive_roots": 7,
+          "components": 2,
+          "edges": 2
+        },
+        {
+          "type": "A4",
+          "positive_roots": 10,
+          "components": 1,
+          "edges": 3
+        },
+        {
+          "type": "D4",
+          "positive_roots": 12,
+          "components": 1,
+          "edges": 3
+        }
+      ],
+      "5": [
+        {
+          "type": "A1+A1+A1+A1+A1",
+          "positive_roots": 5,
+          "components": 5,
+          "edges": 0
+        },
+        {
+          "type": "A1+A1+A1+A2",
+          "positive_roots": 6,
+          "components": 4,
+          "edges": 1
+        },
+        {
+          "type": "A1+A2+A2",
+          "positive_roots": 7,
+          "components": 3,
+          "edges": 2
+        },
+        {
+          "type": "A1+A1+A3",
+          "positive_roots": 8,
+          "components": 3,
+          "edges": 2
+        },
+        {
+          "type": "A2+A3",
+          "positive_roots": 9,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A1+A4",
+          "positive_roots": 11,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A1+D4",
+          "positive_roots": 13,
+          "components": 2,
+          "edges": 3
+        },
+        {
+          "type": "A5",
+          "positive_roots": 15,
+          "components": 1,
+          "edges": 4
+        },
+        {
+          "type": "D5",
+          "positive_roots": 20,
+          "components": 1,
+          "edges": 4
+        }
+      ]
+    },
+    "solutions": {
+      "abelian_IS_a_node": {
+        "4_1": {
+          "nodes": 3,
+          "spectrum": 3,
+          "solutions": [
+            "A1+A1+A1"
+          ],
+          "unique": true,
+          "arrows": 0
+        },
+        "5_2": {
+          "nodes": 4,
+          "spectrum": 4,
+          "solutions": [
+            "A1+A1+A1+A1"
+          ],
+          "unique": true,
+          "arrows": 0
+        }
+      },
+      "abelian_is_NOT_a_node": {
+        "4_1": {
+          "nodes": 2,
+          "spectrum": 3,
+          "solutions": [
+            "A2"
+          ],
+          "unique": true,
+          "arrows": 1
+        },
+        "5_2": {
+          "nodes": 3,
+          "spectrum": 4,
+          "solutions": [
+            "A1+A2"
+          ],
+          "unique": true,
+          "arrows": 1
+        }
+      }
+    },
+    "assumption_chain": {
+      "A1_W_zero": "the corpus's M2 finding (AomegaM2BPSCohomology, lean-direct exit 0)",
+      "A2_acyclic": "ASSUMED; Gabriel requires it",
+      "A3_finite_spectrum": "LOAD-BEARING; an infinite spectrum means non-Dynkin and nothing is forced",
+      "A4_simply_laced": "Gabriel covers quivers; B/C/F/G need valued quivers and are excluded, not overlooked",
+      "A5_DT_count_is_indecomposable_count": "if the corpus's (4,3) are per-ray counts of one quiver instead, the total is >=7 and A1+A3 becomes the candidate"
+    },
+    "scope": {
+      "tier": "scope-(a), conditional on the assumption chain",
+      "method": "exhaustive ADE enumeration + exact positive-root counts; no search against the target, no fit",
+      "arithmetic": "exact integers throughout; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

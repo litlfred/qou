@@ -173,6 +173,24 @@ of work with wall elapsed + ETA. A silent end with 0-byte output inside the
 expected window means it crashed — re-launch with stricter logging, do not
 silently abandon. Report bottlenecks in the end-of-task summary.
 
+## TRAP — `git checkout -- computations/` (what the gate PRINTS) eats your source edits
+
+`precision-gates.sh` says, of the four regenerated contended audit witnesses:
+*"DO NOT COMMIT THESE. Revert them: `git checkout -- computations/`"*. That
+command is **path-scoped**, and essentially every probe and producer in this
+repo lives under `computations/`. Run it verbatim and it discards every
+uncommitted edit in the tree.
+
+Measured 2026-09-04: an unstaged supersession banner on
+`computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py` was silently
+destroyed by following the instruction as printed. Untracked files survive (not
+in the index), so the loss falls **only** on tracked files you edited — and
+`git status` afterwards looks clean, so nothing flags it.
+
+Revert only what the gate named: `git checkout -- computations/witness-*-audit.witness.json`.
+Or commit source edits BEFORE running the gates; a clean index going in is the
+cheapest protection.
+
 ## BASELINE — re-measure, do not quote
 
 Everything here is a *method*, not an answer.
