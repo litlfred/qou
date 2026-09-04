@@ -80,3 +80,61 @@ conjugate pairs the **magnitude** factor `Σ|eig|` falls in all 9 and dominates 
 collapse of the output operator's spectrum, not phase cancellation in the trace — correcting the
 reading I drew from #6548, whose own finding (the input-norm route is excluded) is untouched. An
 absolute-value spectral bound on `M_λ` is the viable route to the general-λ statement.
+
+---
+
+# Addendum — the majorant ladder, and the bound is itself a positive trace
+
+Two follow-on measurements on the same branch, both dimension-controlled by conjugate pairs.
+
+## 1. How far up the majorant ladder does the b-decay survive?
+
+`Σ|eig|` decays (above), but it is *the quantity*, not a bound. A theorem needs a **computable
+majorant** that both dominates `|tr|` and still decays. The classical ladder:
+
+```
+|tr M| ≤ Σ|eig_i(M)| ≤ Σσ_i(M) ≤ √dim·‖M‖_F        and       Σ|eig_i| ≤ dim·ϱ(M)
+```
+
+each rung cheaper to bound analytically and progressively weaker. Measured (high-b ÷ low-b at
+equal dimension), the **maximum** ratio over all pairs — so a rung "decays" only if every pair does:
+
+| rung | A=2 max ratio | A=3 max ratio | pairs decaying |
+|---|---|---|---|
+| `\|tr\|` | 0.267 | 0.0926 | 4/4, 5/5 |
+| `Σ\|eig\|` | 0.371 | 0.106 | 4/4, 5/5 |
+| `Σσ` | 0.423 | 0.133 | 4/4, 5/5 |
+| `√dim·‖M‖_F` | 0.521 | 0.179 | 4/4, 5/5 |
+| `dim·ϱ` | 0.534 | 0.122 | 4/4, 5/5 |
+
+**Every rung decays, in every pair.** The b-information survives all the way to the **Frobenius
+norm of the assembled `M_λ`** — an elementary sum of squared entries, requiring no eigenvalues.
+That is what a general-λ theorem can target.
+
+## 2. That majorant is itself a trace of an algebra element — and a positive one
+
+`‖M‖_F² = tr(MᵀM)` trivially; the content is whether `Mᵀ` is again the image of an *algebra*
+element. The Hecke algebra carries the word-reversal anti-involution `*` (an anti-automorphism
+fixing each generator). **Measured, not assumed:** the seminormal generator matrices are
+**exactly symmetric** (`max|σ − σᵀ| = 0.0`), so `ρ_λ(X)ᵀ = ρ_λ(X*)` and therefore
+
+```
+‖M_λ‖_F²  =  tr_λ(X* X),        X = ρ·Ω₂^P
+```
+
+verified to `7.6e-141` on every λ ⊢ 6 (worst case), with `X*` assembled term by term
+(`(ρ·[σ_a,σ_{a+1}])* = −[σ_a,σ_{a+1}]·ρ*`). The quantity is **positive** (it is `Σσ_i²`), so there
+is no cancellation inside it to fight, and it decays at controlled dimension (4/4 pairs at A=2,
+ratios 0.0073–0.271).
+
+**Why this closes the loop.** The arc's two reductions — hooks to the reduced Burau (#6464) and
+two-rows to R-matrix weight sectors (#6525) — are **character identities, valid for any algebra
+element**. That is exactly why they carried `Ω₂^P` (#6445) and could not carry the germ
+(#6432/#6434). `X*X` is an algebra element, so those same handles apply to the majorant verbatim:
+the general-λ bound becomes a positive trace of the same type as the quantity it bounds, one rung
+down, with the cancellation problem removed.
+
+**Limits.** The symmetry and the identity are exact algebra facts, checked on all 11 shapes at
+n=6; the *decay* of `tr_λ(X*X)` is measured on 4 conjugate pairs at A=2 (A=3 confirmation in the
+PR). No closed form or bound for `tr_λ(X*X)` is derived here — "the handles apply" is a statement
+about applicability, not a completed derivation. Scope-(a).
