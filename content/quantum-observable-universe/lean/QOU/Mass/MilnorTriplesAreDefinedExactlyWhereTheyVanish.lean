@@ -30,8 +30,20 @@ A = 2, 4, 6, 8, 10.
 
 A summand joining two components makes them linked. Contrapositively, components
 with `lk = 0` share **no summand** — so a triple with `Δ = 0` is *separated*: no
-summand of the connected sum touches two of its members. Its sublink is then a
-3-component **unlink**, on which every Milnor invariant vanishes.
+summand of the connected sum touches two of its members. Its sublink is then
+**split** — three components separated by the connected-sum spheres — and every
+Milnor invariant of length ≥ 2 vanishes on a split link.
+
+**CORRECTED 2026-09-04: this said "unlink", which over-claimed.** Sharing no summand
+gives *splitness*, not triviality of the components, and I never measured the latter.
+A sibling's docstring on `atom_closure_milnor_indeterminacy_probe.py` (landed on main
+while this branch was open) measures the components by exact-integer Kauffman bracket
+and finds every multi-strand one is a `(2, odd)`-torus **knot** — `T(2,7)` throughout
+the `σ` branch, a `T(2,5)`/`T(2,3)` mix on `σ⁻¹`, for A = 2, 3, 4, 6. Only the single
+1-strand component is unknotted. **The conclusion is unaffected** — splitness is
+already enough, and local knotting changes no Milnor invariant — but the invariant
+being cited was the wrong one, and a wrong citation is worth fixing even when the
+verdict survives.
 
 `separated_of_delta_zero` is that step, and it is the whole content. It needs no
 path structure and no minimality — only that a shared summand implies nonzero
@@ -48,13 +60,13 @@ puts "defined" and "zero" on the same condition. Nor does it touch the `Δ = 2`
 triples, which touch a linked pair and retain one bit; those are **not** covered
 here and are the residual.
 
-SCOPE — **scope-(b)** on the min-span family, invariant cited: Milnor invariants
-vanish on an unlink, together with the connected-sum decomposition of a monotone
-braid closure. It excludes *this family as a source of a binding term*. It does not
+SCOPE — **scope-(b)** on the min-span family, invariant cited: Milnor invariants of
+length ≥ 2 vanish on a **split** link, together with the connected-sum decomposition
+of a monotone braid closure. It excludes *this family as a source of a binding term*. It does not
 refute route 3 in general, and it does not touch the `Δ = 2` one-bit triples.
 
 **Deliberately not formalised.** Milnor's `μ̄` itself, the connected-sum
-decomposition, and "invariants vanish on an unlink". None is cheaply available in
+decomposition, and "invariants vanish on a split link". None is cheaply available in
 this Mathlib, and asserting them as a `class` would be the
 axiomatisation-is-not-a-proof pattern. They are carried as the *stated* topological
 reason; what is machine-checked is the combinatorial step that converts the
@@ -89,8 +101,9 @@ structure Summands where
 integer — `Δ = gcd(lk_ij, lk_jk, lk_ki) = 0`, i.e. all three pairwise linking
 numbers vanish — shares **no** summand between any two of its members.
 
-Its sublink is therefore a 3-component unlink, and every Milnor invariant vanishes
-on it. So on this carrier the condition that makes `μ̄` *defined* is the condition
+Its sublink is therefore **split**, and every Milnor invariant of length ≥ 2 vanishes
+on a split link — whatever the individual components are knotted as (measured: they
+are `(2, odd)`-torus knots, not unknots; local knotting changes no Milnor invariant). So on this carrier the condition that makes `μ̄` *defined* is the condition
 that makes it *zero*.
 
 Needs no path structure, no minimality, and no `Δ`-arithmetic: it is exactly the
