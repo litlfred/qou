@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1040,
-    "total_fields": 34107,
+    "dirty_witnesses": 1042,
+    "total_fields": 34100,
     "lp_dual_carved_out_fields": 394,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -37,7 +37,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 43,
+    "ephemeral_duration_carved_out_fields": 42,
     "ephemeral_duration_carved_out_by_file": {
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
       "computations/per-irrep-pole-atom-crystal.witness.json": 6,
@@ -53,7 +53,6 @@
       "computations/deltalambda/he4-binding-k-stage2.witness.json": 1,
       "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json": 1,
       "computations/option-e-probe1-derive-1plusq-over-2.witness.json": 1,
-      "computations/probes/bpp-higher-a-sparse.witness.json": 1,
       "computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json": 1,
       "computations/probes/qbeta-nz-even-series-fourone.witness.json": 1,
       "computations/probes/qbeta-sdeformed-leading-bound.witness.json": 1,
@@ -85,16 +84,16 @@
     "f64_integrator_declared_tier": "float64-integrator",
     "baseline_files": 1096,
     "baseline_fields": 35358,
-    "new_not_baselined": 0,
+    "new_not_baselined": 5,
     "regressed": 0,
-    "drained_files": 177
+    "drained_files": 180
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "5c392d98ea02f78a841b1afbccc503f733b918a8",
+  "commitSha": "0c9a5064451d8fb79a92f3ea2ab1496e1bc1905c",
   "engine": "python",
-  "computedAt": "2026-09-03T11:09:04.069325+00:00",
+  "computedAt": "2026-09-04T03:49:41.888246+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
