@@ -112,3 +112,52 @@ bridge proposition is wrong (it is a bridge between two forms, and as such
 untouched here), and **not** a statement about the ladder's numerical
 performance. No invariant is offered that would forbid a phase term, so nothing
 here is a structural exclusion.
+
+## Which routes to "supply a phase" are already closed
+
+Added after the fact. The section above says the D work must *supply* a phase
+and stops there, which invites the reader to reach for the obvious candidate —
+an eigenphase of a braid word on `V_(2,1)`, since the machinery is right there
+and `hoefsmitB` already lives in that representation. **That candidate is
+excluded**, scope-(b), with the invariant named, and a reader sent down it
+would waste the pass. The closures, so the next agent inherits them:
+
+- **No braid word on `V_(2,1)` supplies the phase** —
+  [`qbeta_eigenphase_seminormal_exclusion_probe.py`](../../computations/qbeta/qbeta_eigenphase_seminormal_exclusion_probe.py)
+  (bean `qou-pdix`). Every character of that representation lies in
+  `ℤ[q, q⁻¹]` (`b` enters traces only through the rational `b·c`, so the square
+  root never survives; verified on every word of length 2, 4, 6 — 17 traces, 0
+  exceptions), while `2cos((z−1)h/2)` is not Laurent. Scalar normalisation does
+  not rescue it: `det ρ(w) = (−1)^L` forces `L` even and `λ = ±1`, leaving the
+  trace Laurent either way.
+- **No braid-image transfer matrix carries it in *any* convention** —
+  [`qbeta_braid_image_eigenphase_exclusion_probe.py`](../../computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py),
+  by boundedness, never reading `z`'s formula. Extended from Laurent to
+  algebraic in
+  [`qbeta_eigenphase_algebraic_exclusion_probe.py`](../../computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py)
+  and its sorry-free Lean twin `QOU.QBeta.BraidImageEigenphaseAlgebraic`.
+- **The Lean carrier is proved vacuous** —
+  `QOU.QBeta.EigenphaseCarrier.carrier_is_trivial`. So the identification was
+  never carried in Lean either, which is consistent with, and independent of,
+  the citation defect measured above.
+- **The convention-parameter class is pruned for D** —
+  `qbeta_ladder_required_phase_probe.py`: the required phase sits in a window of
+  half-width ≈ 1.09e-5 rad and `z_D` misses by ≈ 1.19e-2 rad, ~1000× the window.
+- **The tail does not need re-deriving.**
+  `QOU.BraidKnot.Q_beta_categorical_ofPhase_tail_common` (sorry-free): `z`
+  reaches the ladder at exactly one place, the N=1 phase, so `c₂ … c₅` are
+  phase-blind.
+
+That last point is worth stating plainly, because it shrinks S1: **the D-frame
+work is the phase and only the phase.**
+
+What those exclusions explicitly leave open — quoting the seminormal probe's own
+scope — is an `M_β` built from a **non-scalar** normalisation (divided by a
+`q`-dependent, non-rational Markov-trace factor), or an `M_β` **outside the
+braid image** (a general element of `H₃(q)`, or an operator on a larger space
+restricted to `V_(2,1)`). Those are where a supplied phase could still come
+from, and they are not excluded by anything above.
+
+This does not change the finding of this audit — the attribution defect and the
+4–5 % / 88× measurements stand independently — but it changes what the finding
+should send someone to do next.
