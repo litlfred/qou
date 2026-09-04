@@ -284,8 +284,29 @@ def audit_module(mod: str) -> list[dict]:
     p = _resolve(mod)
     if p is None:
         return []
-    src = p.read_text(encoding="utf-8")
-    tree = ast.parse(src, filename=str(p))
+    # This parse was UNGUARDED, and it is the operative site: a cone module
+    # that does not parse aborted the whole certificate with a traceback,
+    # losing every other finding in the run. That is louder than the silence
+    # bean qou-brkp is about -- and it is still wrong, because one broken file
+    # took the entire gate out. Report it as a finding and carry on; main()
+    # exits non-zero on it, so nothing is quietly downgraded.
+    try:
+        src = p.read_text(encoding="utf-8")
+    except Exception as e:
+        return [{"module": mod, "file": str(p), "line": 0, "kind": "unreadable", "class": "UNPARSEABLE",
+                 "source": f"{type(e).__name__}: {e}", "witness_backed": False,
+                 "literal": None}]
+    try:
+        tree = ast.parse(src, filename=str(p))
+    except SyntaxError as e:
+        return [{"module": mod, "file": str(p), "line": e.lineno or 0,
+                 "kind": "unparseable", "class": "UNPARSEABLE",
+                 "source": f"SyntaxError: {e.msg}",
+                 "witness_backed": False, "literal": None}]
+    except Exception as e:
+        return [{"module": mod, "file": str(p), "line": 0, "kind": "unparseable", "class": "UNPARSEABLE",
+                 "source": f"{type(e).__name__}: {e}", "witness_backed": False,
+                 "literal": None}]
     lines = src.splitlines()
     witness_backed = _reads_witness(tree)
     findings: list[dict] = []
@@ -459,6 +480,10 @@ def main() -> int:
     all_findings: list[dict] = []
     for m in mods:
         all_findings.extend(audit_module(m))
+    # Files the certificate could not process: a COVERAGE GAP by this file's
+    # own definition, so it must never pass quietly (bean qou-brkp).
+    blind = [f for f in all_findings
+             if f.get("kind") in ("unparseable", "unreadable")]
 
     untraceable = [f for f in all_findings if f["class"] == "UNTRACEABLE"]
     derived = [f for f in all_findings if f["class"] in ("unit_conversion", "structural_float")]
@@ -549,7 +574,14 @@ def main() -> int:
     if args.json:
         print(json.dumps(witness, indent=2))
 
-    return 1 if (args.strict and (untraceable or unresolved)) else 0
+    if blind:
+        print("\n  ⚠ BLIND SPOTS — the certificate could not process these cone")
+        print("  modules, so their free-parameter status is UNKNOWN, not clean")
+        print("  (bean qou-brkp):")
+        for f in blind:
+            print(f"    {f['file']}:{f['line']}  {f['source']}")
+
+    return 1 if (args.strict and (untraceable or unresolved or blind)) else 0
 
 
 if __name__ == "__main__":
