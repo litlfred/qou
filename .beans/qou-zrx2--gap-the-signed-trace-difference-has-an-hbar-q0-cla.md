@@ -104,15 +104,33 @@ is the assumption that the trace difference belongs to that category.
 
 ## Follow-ups worth opening
 
-1. **Is the floor derivable?** `1/8 = 2⁻³` at `n_strands = 6`, `7/128 = 7·2⁻⁷` at
-   `n_strands = 12`. Both dyadic. If the floor has a closed form in `n` it can be
-   subtracted exactly, leaving a clean `ℏ_q¹` deformation observable that pairs
-   with convention A — which would repair the construction rather than only
-   diagnosing it. This is the highest-value next step.
-2. **Fix the registry entry.** `E_0_CONVENTIONS["B_q_value_absorbed"]`'s operator
-   class should record `ℏ_q⁰ + ℏ_q¹`, not `ℏ_q²`, and the "≈ 102×" warning
-   recomputed from the corrected index.
-3. **Adjudicate the two producers** — but only after (1) and (2).
+> **🛑 (1) and (2) below are DONE and were left reading as open — corrected
+> 2026-09-04.** Both landed on 2026-08-31, three days before anyone re-read
+> this list, and their staleness is not cosmetic: it is why a later agent (me)
+> read the registry entry as uncorrected and nearly appended a second, weaker
+> correction to it. A follow-up list that outlives its follow-ups is a source
+> of exactly the "declared open, already closed" error this bean now carries a
+> retraction for. Items kept in place with their resolutions, not deleted.
+
+1. ~~**Is the floor derivable?**~~ **DONE 2026-08-31** — see §"the floor is
+   DERIVED, and the arithmetic core is in Lean" above. `c₀(A) = 2^−A − 2^(1−2A)`
+   from Schur–Weyl at `q = 1` plus a cycle count, exact for every `A`, verified
+   `A = 2..20`; `QOU/MassTheory/ClassicalTraceFloor.lean` is sorry-free. The
+   follow-on this item anticipated also holds: subtracting the floor leaves
+   `Δtr − c₀(A)`, a pure `ℏ_q¹` observable that pairs with convention **A**.
+   *(Original text: `1/8 = 2⁻³` at `n_strands = 6`, `7/128 = 7·2⁻⁷` at
+   `n_strands = 12`, both dyadic; a closed form in `n` would let it be
+   subtracted exactly. Note the closed form turned out to be in `A`, not `n`.)*
+2. ~~**Fix the registry entry.**~~ **DONE 2026-08-31** — both halves.
+   `E_0_CONVENTIONS["B_q_value_absorbed"]`'s `operator_class` carries a
+   `⚠ CORRECTED 2026-08-31` block recording `ℏ_q⁰ + ℏ_q¹` with the closed form,
+   the derivation and the 22.46 % / 4.88 % classical shares; and `validity`
+   carries `⚠ THE ≈102× WARNING CANNOT BE RECOMPUTED AS STATED`, which is the
+   stronger, correct disposition — `1/ℏ_q² = 101.862` is arithmetically right
+   but its premise (that this operator class is `ℏ_q²`) is measured false.
+3. **Adjudicate the two producers** — was gated on (1) and (2); **that gate is
+   now lifted**. Status not checked here, so this is "unblocked", not "open":
+   confirm before working it.
 
 ---
 
