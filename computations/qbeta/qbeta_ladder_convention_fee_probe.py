@@ -188,7 +188,35 @@ def main() -> int:
 
     ok = all(p for _, p in A)
     print(f"\n  {sum(p for _, p in A)}/{len(A)} checks passed")
-    out = wb.save()
+    # q0 STAMP (bean qou-zk51, draining the q0-dataflow ratchet). This producer
+    # reads BOTH pins -- the proton pin via Q_50_DIGIT_STR (line ~108) and the
+    # muon pin straight out of q-pinning-50-digit.witness.json (line ~109) --
+    # so the honest declaration is "comparison", the E1 exception in AGENTS.md
+    # §"q0 anchor convention", not a single pin and not independence.
+    #
+    # Until this stamp it carried NO q0Anchor, NO q0Value and no q0 literal
+    # anywhere, so neither q0 gate could see it: the anchor-flip gate reads the
+    # stamp pair and the value-drift gate reads q0 literals. That is exactly the
+    # blind spot measured on this very witness -- the 2026-08-22 muon re-pin
+    # moved its muon row 7.336484242 -> 7.133936641 ppb (-2.7608 %), amplified
+    # 3.588e8x off a 0.0769423 ppb shift, and nothing flagged it.
+    #
+    # q0Values is what makes the "comparison" claim CHECKABLE rather than taken
+    # on trust: q0_anchor_consistency_audit verifies each named leg against its
+    # canonical pin, and a comparison stamped WITHOUT it counts as
+    # Q0_COMPARISON_NO_VALUES ("the claim is unchecked"). Measured on
+    # fvk_selection_probe: the stamp alone traded Q0_ANCHOR_MISSING for that
+    # counter, i.e. one gate red for another.
+    out = wb.save({
+        "q0Anchor": "comparison",
+        "q0AnchorReason": (
+            "deliberate two-pin comparison: the ladder is evaluated at the "
+            "canonical proton pin (the AS PUBLISHED row and the two convention "
+            "rows) and at the muon pin read from q-pinning-50-digit.witness.json "
+            "(the MUON pin row), to price the pin choice against the residual. "
+            "Stamped 2026-09-04 draining the q0-dataflow ratchet -- bean qou-zk51"),
+        "q0Values": {"proton": Q_50_DIGIT_STR, "muon": mp.nstr(q_mu, 50)},
+    })
     print(f"  witness: {out}")
     return 0 if ok else 1
 

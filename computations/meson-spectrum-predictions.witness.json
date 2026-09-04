@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T10:54:06.584227+00:00",
-  "commitSha": "9c8f0ca112fdb640771bcc677f0e7e457bccd464",
+  "computedAt": "2026-09-04T20:44:48.773446+00:00",
+  "commitSha": "5c68c769b4531e3c6a68f7a03d5ad803b5340fb8",
   "assertions": [
     {
       "name": "one_dim_block_characters_scale_as_q_pow_n",
       "computed": 10,
       "expected": 10,
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "0",
       "source": "For each meson row, χ_(3) scales by q^n and χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings — the Hoefsmit eigenvalue structure the mass ratios are read off, checked to 1e-40 relative in exact mpmath arithmetic."
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 26,
   "computation": "meson-spectrum-predictions",
   "scriptFile": "meson_spectrum_predictions.py",
-  "scriptHash": "0cba39548626",
-  "scriptCommitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "scriptHash": "4112655ec41a",
+  "scriptCommitSha": "af5aecfe38ac9dc17e29c284d2d86940a72af08b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -47,6 +47,7 @@
     "results": [
       {
         "name": "π (base)",
+        "pdg_key": "π±",
         "crossings": 6,
         "n_extra": 0,
         "tr_M": "0.687099647362414422985473238777856278406185673425848703383102",
@@ -56,6 +57,7 @@
       },
       {
         "name": "K (ūs)",
+        "pdg_key": "K±",
         "crossings": 8,
         "n_extra": 2,
         "tr_M": "0.917245469374198665139765429613442159326114281262713581683069",
@@ -65,6 +67,7 @@
       },
       {
         "name": "η-like (s̄s-ūu)",
+        "pdg_key": "η",
         "crossings": 10,
         "n_extra": 4,
         "tr_M": "1.18748061314596264610711583007920492408802557658177293619661",
@@ -74,6 +77,7 @@
       },
       {
         "name": "10+2 crossings",
+        "pdg_key": null,
         "crossings": 12,
         "n_extra": 6,
         "tr_M": "1.50961603222421114333427196814588415096820559866964423676622",
@@ -83,6 +87,7 @@
       },
       {
         "name": "14 crossings",
+        "pdg_key": "D±",
         "crossings": 14,
         "n_extra": 8,
         "tr_M": "1.89773104441088944814113345678795955244868599213379949900028",

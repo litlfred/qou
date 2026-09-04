@@ -55,3 +55,32 @@ i.e. the absence of evidence against, not evidence for.
 
 Direct successor to `qou-0c19` (the colour-tube localisation), which this makes
 quantitative: the colour tube would supply exactly 3, and the gap is 3.0075.
+
+## 2026-09-04 (later) — the colour tube's trace assumption is DISCHARGED
+
+`qbeta_disjoint_support_factorisation_probe.py` (7/7): `tr_M` factorises over
+disjoint non-adjacent generator blocks EXACTLY (rel. diff 0.0 at 40 dps), for
+non-trivial words with generators repeated inside each block. So the `b -> b^3`
+step is exact and the factor is exactly 3, not approximately.
+
+The previous probe listed two undischarged assumptions. **(a) is now
+discharged.** (b) is sharpened from "the couplings are distance 3 apart" to a
+LAYOUT CONFLICT: intra-nucleon crossings want a nucleon's three strands adjacent,
+colour-blocked inter-nucleon coupling wants them `A` apart, and one ordering
+cannot do both. Detail on `qou-0c19`.
+
+Still not a derivation, and the scale is still unpinned (`E_0` is CAL-1;
+`qou-59j5`'s normaliser family spans 1.33x).
+
+## 2026-09-04 (third) — the deficit is a COUNTING statement
+
+`qbeta_layout_conflict_probe.py` (5/5) + `QOU/Hecke/LayoutConflict.lean`.
+Exhaustively, no ordering of the `3A` strands makes the nucleon triples
+contiguous AND the three colour-matched interface couplings single generators;
+under contiguity the maximum is `A-1` of `3(A-1)` — one third. Proved for general
+`A`: two disjoint intervals touch at one boundary.
+
+So the missing factor of 3 and the interface shortfall are the SAME 3. That
+sharpens the gap but does not close it: it says the colour tube is unrealisable
+in this construction family, not what a realisable one would be worth. The energy
+scale is untouched — `E_0` is CAL-1, the normaliser family spans 1.33x.

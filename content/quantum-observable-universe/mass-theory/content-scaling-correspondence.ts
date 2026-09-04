@@ -1,11 +1,12 @@
 import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:content-scaling-correspondence",
-  title: "Content $c = m_j$ by Schur--Weyl: box content determines BW scaling",
-  lean: { ref: "qou:QOU.BraidKnot.BoxContent.boxContent", validation: "not_checked" },
+  title: "Box content is the $q$-Jucys--Murphy eigenvalue exponent",
+  lean: { ref: "qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM", validation: "not_checked" },
   uses: ["prop:knot-eigenbasis-complete", "rem:hecke-algebra-from-braiding"],
+  cites: ["jimbo1986", "ram1997"],
   authorNotes: [
-    { kind: "status", date: "2026-09-04", body: "The mathematical sentence — content $c = j - i$ equals the magnetic quantum number $m_j$ of the corresponding $\\mathrm{SU}_q(2)$ weight space — is **refuted in its literal reading** by sorry-free Lean in the carrier `lean/QOU/BraidKnot/BoxContent.lean` (bean `qou-59x9`): for a two-row shape $(a,b)$ the cell count $a+b$ never equals the weight count $a-b+1$ (`twoRow_card_cells_ne_card_weights`), and for $a+b \\geq 3$ the cell $(0,a-1)$ has a content outside the weight set of $V_{(a,b)}$ under any box-to-weight assignment (`top_content_not_weight`); $(2,0)$ is the only shape where every content is a weight. What holds is that contents are the $q$-Jucys–Murphy eigenvalues (`QOU.SchurWeyl.QJucysMurphyEigen`), a total-spin datum. The scaling table is a physics dictionary, not a theorem. `lean.ref` still names the definition `boxContent`; re-wording the proposition (content = JM eigenvalue; table to a follow-on remark) is the owner's call and is not done here." },
+    { kind: "status", date: "2026-09-04", body: "Re-worded (bean `qou-kpx7`, on the owner's go after PR #6600). Until 2026-09-04 the statement read *content $c = j - i$ equals the magnetic quantum number $m_j$ of the corresponding $\\mathrm{SU}_q(2)$ weight space* and `lean.ref` named the definition `boxContent`. That sentence is refuted, sorry-free, in `lean/QOU/BraidKnot/BoxContent.lean` (`twoRow_card_cells_ne_card_weights`, `top_content_not_weight`: for a two-row shape the box count never equals the weight count, and for three or more boxes a content lies outside the weight set under any assignment; $(2,0)$ is the only shape where every content is a weight). The statement now carried is the true one, `QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM` (Ram 1997 Thm 4.1 for this construction): the $q$-Jucys–Murphy element acts on the seminormal basis by $q^{2\\cdot\\mathrm{content}}$. The BW scaling table that used to sit in this block is a physics dictionary, not a theorem, and moved to `rem:content-scaling-dictionary`." },
   ],
   tags: ["schur-weyl", "content", "magnetic-quantum-number", "scaling", "braid-graph"],
 });

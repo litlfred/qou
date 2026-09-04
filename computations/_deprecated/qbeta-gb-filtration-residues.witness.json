@@ -25,8 +25,8 @@
     "level_2_contrib_MeV": 0.1173185580,
     "Q_beta_predicted_MeV": 0.9409041092,
     "Q_beta_codata_MeV":    0.78233341,
-    "rel_error_pct": +20.27,
-    "ppm_error":     +202689
+    "rel_error_pct": 20.27,
+    "ppm_error":     202689
   },
   "verdict": "GB_FILTRATION_DECOMPOSITION_PROVIDES_FINITE_ALGEBRAIC_SUBSTITUTE_FOR_PHI_Q_BUT_DOES_NOT_CLOSE_Q_BETA",
   "interpretation": "The user's idea — algebraic residues via GB filtration instead of divergent Φ_q — is structurally correct and gives a finite computation at every level. However, the simple sum-over-levels of (tr_M_n − tr_M_p) × E_0_LO overshoots Q_β by 20%. Possible remedies: (a) use the canonical Jones-Markov normalization (z-weights via pyhecke) instead of bare W_λ; (b) take only the SUB-LEADING piece (level 1 alone gives 0.65 MeV — too high; level 2 alone gives 0.12 MeV — too low); (c) per-level Φ_q saturates at large arguments — replace bare per-level sum with an asymmetric weighting that mimics the saturation Φ_q(z→1) = ∞.",

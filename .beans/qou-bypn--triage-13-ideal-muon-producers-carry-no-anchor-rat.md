@@ -3,8 +3,9 @@
 title: 'TRIAGE: 13 ideal_muon producers carry no anchor rationale in their own source'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-25T19:40:03Z
-updated_at: 2026-08-25T19:40:03Z
+updated_at: 2026-09-04T14:00:52Z
 ---
 
 Split out of `qou-1c4y` (the tracked muon->proton migration) after re-measuring
@@ -88,3 +89,41 @@ For each of the 13: either a one-line in-source note saying why the muon pin is
 required (and, for group B, a `q_parameter` route so the declaration is real),
 or removal from `ideal_muon` with the witness regenerated at proton. Not a
 sweep — `ideal_muon` entries are numerical decisions one at a time.
+
+
+---
+
+## UPDATE 2026-09-04 — group A's "each needs a decision" is superseded for at least one member
+
+This bean is dated 2026-08-25. The owner's ruling of **2026-08-30** (recorded
+in AGENTS.md §q₀ anchor convention, reaffirming the 2026-08-15 directive for
+the `qou-p77d` tranche) post-dates it and supplies exactly the decision rule
+group A was waiting for:
+
+> *"it should be proton unless it is an explicit comparison / discussion on
+> CAL 123 math ideal or so."*
+
+with two named exceptions — **(E1)** the producer's *purpose* is measuring the
+proton-vs-muon difference, **(E2)** it is *about* the ideal CAL-1/2/3 layer as
+mathematics — and the burden explicitly on the exception: *"'it is in the
+`ideal_muon` list' is NOT a reason — that list is what is being migrated."*
+
+So group A's five are no longer "a decision each" in the sense this bean meant.
+They are: name E1 or E2, or they are proton.
+
+**Worked for one of the five, `computations/hadron_knot_table.py`:** neither
+exception can be named. The docstring names no pin, no comparison and no CAL
+layer — it computes *"mass formulas and Q-value predictions"*, observable
+evaluation — and its witness's `q0AnchorReason` is **`None`**. Under the ruling
+it is a **proton** producer.
+
+What blocks acting on it is cost, not the decision: constraint 4 requires the
+manifest change and the re-pinned witness to land together, and this producer
+is the corpus's one that cannot finish (`qou-i7ju`, `qou-r4w5`). The other four
+of group A are not known to have that problem and should be cheaper to settle
+the same way.
+
+The ~11.5 ppb this bean cites as the cost of removing a stem is still right and
+is still the reason not to sweep — but it is now the *size* of a change the
+ruling has already authorised for the non-exception cases, rather than a reason
+to hold each one for the author.

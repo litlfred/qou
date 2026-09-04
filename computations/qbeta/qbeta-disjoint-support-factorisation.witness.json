@@ -1,0 +1,100 @@
+{
+  "computation": "qbeta-disjoint-support-factorisation",
+  "assertions": [
+    {
+      "name": "trace_is_normalised_to_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "tr_M(1) = 1 at n = 4 and 6"
+    },
+    {
+      "name": "adjacent_single_letters_factorise_too_so_that_control_is_worthless",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a word using each generator ONCE in INCREASING order is collapsed one generator at a time by the Markov property, adjacency or not. Reading this as a positive result would have been an overclaim"
+    },
+    {
+      "name": "a_REPEATED_generator_does_break_multiplicativity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the test below has teeth: the quadratic relation sigma^2 = h.sigma + 1 bites exactly where a generator repeats"
+    },
+    {
+      "name": "braid_words_on_disjoint_nonadjacent_blocks_factorise_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "exact to the working precision, with generators repeated INSIDE each block -- so this is not the Markov property in disguise"
+    },
+    {
+      "name": "all_three_physical_bond_letters_factorise_too",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "the_two_layout_demands_are_incompatible",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a nucleon's three strands cannot be simultaneously adjacent (for the intra-nucleon crossings) and A apart (for colour-blocked inter-nucleon coupling). The colour tube is blocked by the strand ORDERING, not by the trace -- the trace cooperates exactly"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "z": "0.6126880371464652516",
+    "engine": "build_seminormal_matrices_mp (exact-precision, NOT the float64 chi_lambda_of_word kernel)"
+  },
+  "data": {
+    "control_adjacent_single_letters": {
+      "tr_s0_s1": "0.375386630862388384",
+      "product": "0.375386630862388384",
+      "note": "factorises anyway — the Markov property, not a control"
+    },
+    "control_repeated_generator": {
+      "tr_s0_squared": "1.1280887441143537856",
+      "z_squared": "0.375386630862388384",
+      "tr_s0s1s0": "0.69116647835844452615",
+      "z_cubed": "0.22999489803410145346"
+    },
+    "block_factorisation": {
+      "tr_W": "0.69116647835844452615",
+      "tr_WWp": "0.47771110080641416552",
+      "product": "0.47771110080641416552",
+      "rel_diff": "0.0"
+    },
+    "bond_letters": {
+      "pp": {
+        "tr_V": "0.69116647835844452615",
+        "tr_VVp": "0.47771110080641416552",
+        "product": "0.47771110080641416552",
+        "rel_diff": "0.0"
+      },
+      "nn": {
+        "tr_V": "0.36956860635762307233",
+        "tr_VVp": "0.13658095480511575676",
+        "product": "0.13658095480511575676",
+        "rel_diff": "0.0"
+      },
+      "pn": {
+        "tr_V": "0.51382013006277486578",
+        "tr_VVp": "0.2640111260577268794",
+        "product": "0.2640111260577268794",
+        "rel_diff": "2.2958874e-41"
+      }
+    },
+    "tripled_coefficient_MeV": "8.7727389412763",
+    "peak_B_over_A_MeV": "8.794555",
+    "peak_A": 62
+  },
+  "provenance": {
+    "headSha": "85564cd245b935f8e03c83ccf2bda86043dcd0ac",
+    "producer": "computations/qbeta/qbeta_disjoint_support_factorisation_probe.py",
+    "elapsed_s": 0.247
+  }
+}

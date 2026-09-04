@@ -110,15 +110,16 @@
     "open_for_owner": "The normaliser route and the binding law give 1.2309 and 0.2253 MeV/nucleon for what both are presented as — the framework's extensive energy per nucleon. They are different objects with different scales, so this need not be an error, but they cannot both be the prediction.",
     "scope": "Scope-(a). Nothing refuted, no content block edited."
   },
-  "gitCommit": "5f0750964baad278377b3df7a942d2583fdcc84a",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_extensivity_is_the_failure_probe.py",
-  "scriptHash": "638c2e7e3625",
-  "scriptCommitSha": "unknown",
-  "commitSha": "5f0750964baad278377b3df7a942d2583fdcc84a",
+  "scriptHash": "f44e257c50c0",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T10:38:19.203883+00:00",
+  "computedAt": "2026-09-04T12:36:06.149176+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

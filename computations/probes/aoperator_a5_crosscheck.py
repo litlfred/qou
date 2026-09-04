@@ -409,13 +409,25 @@ def main() -> int:
     # changed.  Deriving it keeps `q0Anchor` and `q0Value` consistent by
     # construction.  Prefixes match `q0_anchor_consistency_audit._EXPECTED_PREFIX`.
     _PINS = {"muon": "1.109978595", "proton": "1.109978582"}
+    # Fallback is `ambiguous`, which is the taxonomy's OWN word for "neither
+    # pin" -- not the literal "unrecognised", which is a verdict NAME the audit
+    # emits and not a token it accepts. It has never fired (this witness reads
+    # `proton`), so this is a latent refill source rather than a live defect:
+    # had it fired it would have written an unmappable label, the audit could
+    # not have checked the witness at all, and it would have joined the
+    # `Q0_ANCHOR_UNRECOGNISED` count that bean qou-eggf is about.
     _q0_anchor = next((a for a, pre in _PINS.items() if q_str.startswith(pre)),
-                      "unrecognised")
+                      "ambiguous")
+    _q0_reason = "" if _q0_anchor != "ambiguous" else (
+        f"q0 = {q_str[:18]}... matches neither canonical pin prefix "
+        f"({', '.join(sorted(_PINS.values()))}); the manifest classification "
+        "for this producer resolved to a modulus this probe cannot name")
 
     witness = {
         "scriptFile": _script_rel,
         "scriptHash": _script_hash,
         "q0Anchor": _q0_anchor,
+        **({"q0AnchorReason": _q0_reason} if _q0_reason else {}),
         "q0Value": q_str,
         "engine": "numpy/scipy float64 (combiner + diag ρ_ξ); mpmath 50 dps "
                   "(ν-alignment + fine-Bratteli transfer reference)",

@@ -326,7 +326,14 @@ def main() -> int:
     # P30: stamp WitnessBuilder provenance so the staleness machinery can track
     # this witness. q0_anchor: the bond factors ARE evaluated at the proton pin.
     WitnessBuilder.stamp_staleness_metadata(
-        witness, script_path=__file__, engine="python", q0_anchor=True)
+        witness, script_path=__file__, engine="python", q0_anchor="proton",
+        q0_anchor_reason=(
+            "alpha = E0 = m_e/(q0(q0-1)) is read at the experimental pin via "
+            "q_at(); the bond factors are evaluated there. It is an overall "
+            "scale and cancels from every vanishing claim, so the anchor is "
+            "declared for provenance rather than because a number moves with "
+            "it."),
+        q0_value=mp.nstr(q0, 30))
 
     out = _HERE / "markov-bond-rule-forces-pairwise.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")

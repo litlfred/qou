@@ -43,11 +43,17 @@ It is fixed, not fitted.  The concrete `(2,1)` matrix `S1` was built by hand in
 ## Scope
 
 This is infrastructure for the general-`λ` seminormal representation
-(`hoefsmit_seminormal_rep`, still a `-- Ref:`-cited `sorry`).  It supplies the parameter
-function of steps (i)–(ii) of that construction.  Step (iii) — the generic size-`6`
-`S₃`-orbit braid identity — is proved in
-[`Orbit6Braid.lean`](Orbit6Braid.lean) (`genA_genB_braid`), which consumes this
-parameter.  What remains of bean `qou-gjg6` is the orbit enumeration and block assembly.
+`hoefsmit_seminormal_rep`, which is **proved** — sorry-free, for every `λ ⊢ N` at any real
+`q ≠ 0` that is not a root of unity — in
+[`HoefsmitRepGeneral.lean`](HoefsmitRepGeneral.lean), off
+`SeminormalRep.seminormalRepFin`.  It supplies the parameter function of steps (i)–(ii) of
+that construction.  Step (iii) — the generic size-`6` `S₃`-orbit braid identity — is proved
+in [`Orbit6Braid.lean`](Orbit6Braid.lean) (`genA_genB_braid`), which consumes this parameter.
+
+**This paragraph said "still a `-- Ref:`-cited `sorry`" until 2026-09-04.**  It was the
+second of two places carrying that stale description (the other being the status block of
+[`HoefsmitRep.lean`](HoefsmitRep.lean), which contradicted its own closing section).  Bean
+`qou-t5ve`.
 
 Refs:
 - [hoefsmit1974] Hoefsmit, PhD thesis (UBC 1974) — the seminormal form.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T09:28:36Z
+updated_at: 2026-09-04T14:11:32Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -84,3 +84,39 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (second-statistic search: ALL candidates DEAD). Given pointwise b-monotonicity is refuted, tested whether some other single statistic orders tr_λ(X*X)/dim_λ. Candidates: b(λ), ℓ(λ), n(λ)=Σ(i−1)λ_i (the corpus's own Δ_λ grading), n(λ'), n(λ)−n(λ'), b+ℓ, and dim_λ as a NULL CONTROL. Result at A=2 and A=3: NONE is strictly decreasing. Inversions/ties (A=2 | A=3): b 0/7 | 2/8; ℓ 4/7 | 3/8; n(λ) 2/2 | 1/1; n(λ') 32/2 | 53/1; n(λ)−n(λ') 2/2 | 1/0; b+ℓ 2/2 | 1/2; dim_λ 17/8 | 25/7. Two things worth keeping: (i) the NULL CONTROL FAILS HARD (dim_λ 17 and 25 inversions), so the decay is NOT a dimension artifact — it is about λ's shape; (ii) n(λ) and n(λ)−n(λ') are the closest (1–2 inversions) but do NOT order it, so they must not be quoted as the grading. NOTE b(λ) shows 0 inversions at A=2 and fails only on TIES there — the A=3 inversions are what refute it, which is why one size was not enough. NET: the per-dim majorant is not a function of any of these alone; what survives is the ENVELOPE form. 17 of 30 shapes at A=3 unmeasured (dim cap, named in output).
+
+## 2026-09-04 — q-content statistic probe (#6669): ONE blocking pair, not a dead class
+
+Three findings.
+
+1. PREMISE REFUTED BY ITS OWN CONTROL. I built #6669 on the observation that all
+   seven of #6587's dead statistics are q-INDEPENDENT while the ordered quantity is
+   a normalized character of an element of H_n(q). The q-independent control
+   n(λ')−n(λ) matches the best q-content statistic exactly at A=3 (1 inversion, 0
+   ties, 55 pairs). q-independence was not the defect.
+
+2. ONE BLOCKING PAIR. Five of seventeen statistics tested come within one inversion
+   at A=3 and ALL FIVE fail on the same pair: (7,1,1) [hook, j=2, dim 28, per-dim
+   3478.285] vs (7,2) [two-row, k=2, dim 27, per-dim 2793.099]. None fails elsewhere.
+   b(λ) fails on a different pair ((3,1⁶) vs the two b=7 shapes) plus 8 ties.
+   ⇒ ACTIONABLE: the blocking pair is hook-vs-two-row at b=2, and BOTH columns have
+   derived closed forms already (#6556 reduced Burau; #6587 sector difference). The
+   obstruction is analytically accessible, not merely measured.
+
+3. THE q-CANDIDATE IS NOT INDEPENDENT EVIDENCE. P₁−P₋₁ = 2Σsinh(2c·lnq) has leading
+   term 4·lnq·(n(λ')−n(λ)). Tested: at A=3 the two induce IDENTICAL orderings (0
+   disagreements) so the q-result corroborates nothing; at A=2 they differ on one
+   pair so they are not the same statistic.
+
+CORRECTION TO MY OWN CHARACTERISATION of #6587 (not to its numbers — it re-runs and
+reproduces exactly, and its verdict is right). 'All 7 candidates dead' is true as
+'none is a strict orderer' and misleading as 'none is close': three miss by one pair.
+The dim_λ null control still fails hard (25/7), so the shape-not-dimension conclusion
+stands.
+
+NEXT: settle (7,1,1) vs (7,2) from the two closed forms rather than by measurement —
+do the hook Burau form and the two-row sector difference cross at b=2?
+
+Limits: A=2/A=3, dim cap 50 skips 17 of 28 shapes at n=9 (not run, not evidence).
+X*X is NOT central, so the JM/content structure is a reason to look, not a derivation.
+scope-(a). Nothing wired.

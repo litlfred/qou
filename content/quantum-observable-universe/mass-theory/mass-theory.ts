@@ -1138,6 +1138,7 @@ export default chapter({
         "frobenius-limits-substrate-cost",
         "knot-mass-formula-unified",
         "content-scaling-correspondence",
+        "content-scaling-dictionary",
       ],
     }),
 

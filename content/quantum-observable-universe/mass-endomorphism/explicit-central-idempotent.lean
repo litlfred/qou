@@ -50,7 +50,7 @@ variable {q : R}
                           `star (e_λ) = e_{λ'}`
     -/
 theorem explicit_central_idempotent_via_murphy
-    {n : ℕ} (lam : List ℕ) (h : lam.sum = n)
+    {n : ℕ} (lam : List ℕ) (_h : lam.sum = n)
     [hi : ExplicitCentralIdempotentConjecture q] :
     centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q := by
   -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
@@ -60,12 +60,15 @@ theorem explicit_central_idempotent_via_murphy
   -- prop:jucys-murphy-central-elements-qou block establishing
   -- diagonal action of J_k on the Hoefsmit seminormal basis with
   -- eigenvalue c_T(k; q).
-  -- Ref: [manuscript] §prop:explicit-central-idempotent — the
-  -- four cross-checks (sum-to-identity, orthogonality,
-  -- self-adjointness, bar-pairing) follow from Lagrange
-  -- interpolation in commuting variables (J_1, ..., J_n).
-  -- CONJECTURE: The four cross-checks follow from Lagrange interpolation in commuting variables.
-  exact hi.idempotent lam h
+  -- Ref: [manuscript] §conj:explicit-central-idempotent — the three class
+  -- fields are what Lagrange interpolation in the commuting (J_1, ..., J_n)
+  -- supplies; the idempotency below is DERIVED from them, not assumed.
+  classical
+  rw [hi.centralIdempotent_eq_sum lam, Finset.sum_mul_sum]
+  refine Finset.sum_congr rfl (fun T _ => ?_)
+  rw [Finset.sum_eq_single T (fun T' _ hne => hi.proj_orth lam T T' (Ne.symm hne))
+        (fun hT => absurd (Finset.mem_univ T) hT)]
+  exact hi.proj_idem lam T
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
@@ -92,6 +95,6 @@ theorem explicit_central_idempotent_two_two
   -- idempotency is the finite Lagrange computation witnessed in
   -- conj:bring-figure-eight-depth-2-witness. `centralIdempotent` is `opaque`,
   -- so this is asserted from the cited construction, not computed.
-  explicit_central_idempotent_via_murphy [2, 2] rfl
+  explicit_central_idempotent_via_murphy (n := 4) [2, 2] rfl
 
 end QOU.BraidKnot.ExplicitCentralIdempotent

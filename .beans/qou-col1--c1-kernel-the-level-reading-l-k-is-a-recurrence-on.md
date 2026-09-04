@@ -1,11 +1,11 @@
 ---
 # qou-col1
 title: 'C1 kernel: the LEVEL reading — L_K is a recurrence on the residue sequence across jet levels, not a t-shift operator; re-scope #6582/#6610'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:55Z
-updated_at: 2026-09-04T10:55:52Z
+updated_at: 2026-09-04T12:28:29Z
 ---
 
 ## Correction of my own axis (2026-09-04)
@@ -35,3 +35,7 @@ Probe measurement (Jackson + q-d/dz): κ = −1 (balanced) / −1/q (geometric);
 Re-scoped: both #6582/#6610 scope paragraphs on the conjecture block rewritten; audit doc with contamination list; corrections appended to qou-33hb / qou-w0tx. Withdrawn as statements about D_q: "the (−1)^m twist is not produced by D_q's iteration", "W2 = which t-shift σ is". Survives: the derivative-only exclusion (from level 0). New open: solve the shifted-C1 constraint on (c₁, c₂, X) — that IS the symbol identification on the level axis.
 
 Waiting on: owner merge permission for #6628.
+
+
+
+## Merged as #6628 (rebase, 2026-09-04). Follow-up: test C1-on-the-residue-tower against the ACTUAL Σ seed (next bean).

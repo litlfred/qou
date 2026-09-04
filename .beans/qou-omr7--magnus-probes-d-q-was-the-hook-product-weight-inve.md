@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:40:28Z
-updated_at: 2026-09-03T14:56:20Z
+updated_at: 2026-09-04T14:11:20Z
 ---
 
 ## The defect (PR #6442)
@@ -157,3 +157,72 @@ Neither remaining witness is a correctness risk: both are stale-but-correctly-
 excluded by the fixed audit (hence 0/0), and the source fix is verified
 independently of them — reciprocal exact and verdict byte-identical on the two
 that DID regenerate, plus agreement with pyhecke's independent implementation.
+
+## 2026-09-04 — he4-sparse COMPLETE, and "2 of 4 witnesses remain" was miscounted
+
+`he4_magnus_omega2_sign_sparse_probe` ran to completion for the first time.
+77/77 partitions at H₁₂, proton pin. PR #6670.
+
+    P_total(A=4) = -57.8031140268901789536480073022687094580855069850233004411658
+    sign = -1        per-partition 26+ / 49-
+    P_control (rho = I) = 0.0  -> vanishes
+    sign-vs-A:  A2 = -1  A3 = -1  A4 = -1   -> no flip
+
+**Verdict: NO MOVE.** The "negative at A=2, flips positive at A>=3" reading fails
+at the alpha as well as the triton. A constant-sign Magnus carrier is the working
+hypothesis through the light nuclei. scope-(a): a dimensionless SIGN datum, NOT a
+MeV (Delta_lambda gate open), NOT a physical binding-sign convention.
+
+**The margin is thin and that is part of the finding.** -57.8 is a small residual
+of much larger cancelling contributions -- partitions reach +/-1349, split 26+/49-,
+and the running total crossed zero TWICE in the last four blocks (+11.60 -> -3.60
+-> -153.74 -> -57.80). Exact at 60 dps, so the sign is determined rather than
+noisy; what is fragile is treating -57.8 as a robust margin. It is ~4% of one
+large contribution and is sensitive to the model, not to arithmetic.
+
+### THE COUNT IN THIS BEAN WAS WRONG
+
+This bean has said "2 of 4 witnesses remain [to be regenerated]". That counted two
+different situations as one, and I repeated the error all session -- calling this
+"the last of the four to REGENERATE" and predicting its y_lambda would be exact
+reciprocals of committed values.
+
+**`he4-magnus-omega2-sign.witness.json` has never existed on main.** There was
+nothing to regenerate. The probe had simply never run to completion (~9h). It
+already carries the corrected `(d_q^2)/[n]_q!` weight from #6442 at lines 136-139,
+so it was born right rather than fixed.
+
+Correct statement: of the four Magnus probes #6442 touched, **three had witnesses
+that needed regenerating** (two done in #6442, triton in #6533) and **one had no
+witness at all**, which is now produced. Not "2 of 4 remain".
+
+### Why it took four attempts, and what actually worked
+
+Worker restarts land ~hourly and kill the compute. One dim-5632+ partition takes
+~55 min, so runs 2 and 3 each banked **zero** in a full hour, dying just short.
+
+Run 4 changed three things and finished:
+- `--skip-gate` (gates 1 and 2 had PASSED twice on this code against the
+  committed triton -- so skipping was evidenced, not assumed);
+- `--workers 4` (4 cores, 4 partitions left: one ~60 min wall, not four
+  sequential);
+- launching at the **start** of a restart window.
+
+Three landed together at ~58-60 min. The fourth, `(5,3,2,1,1)` at **dim 7700**,
+is the single largest block in the n=12 problem and took **108 min** -- it looked
+like a stall and was not (one worker R at 98.6% with climbing CPU, three S and
+finished). `setsid` did NOT protect the run; the kill is a container-level reap,
+not a process-group signal.
+
+**The per-partition JSONL checkpoint is the whole reason four attempts were
+survivable.** Each relaunch resumed instead of restarting, and it correctly
+refused to resume when the parameter stamp would not have matched.
+
+### Method notes worth keeping
+
+- `pgrep -af he4_magnus` without `| grep -v "bash -c"` matches your own diagnostic
+  shell. It reported a dead run as alive three separate times this session.
+- Judge liveness by CPU time (`ps -o time,%cpu`), never by log mtime: 30-55 min of
+  silence per partition is normal at these dimensions.
+- Gate 2 reproduces the COMMITTED triton to 3.03e-60 by a separate sparse route --
+  two independent confirmations of the #6442 weight fix.

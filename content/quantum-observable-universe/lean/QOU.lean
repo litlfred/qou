@@ -1418,6 +1418,7 @@ import QOU.Hecke.ClosedFormInterfaceFactors
 import QOU.Hecke.RowCap
 import QOU.Hecke.CrossingConvexity
 import QOU.Hecke.BindingExtensivity
+import QOU.Hecke.LayoutConflict
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

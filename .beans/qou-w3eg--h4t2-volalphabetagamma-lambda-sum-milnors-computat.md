@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-04T10:34:33Z
+updated_at: 2026-09-04T13:27:37Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -512,3 +512,16 @@ STILL OPEN (the genuine multi-session core):
 - Step 1 closure: Λ analytic on (0,π). Blocked on antiderivative-of-analytic — Mathlib has AnalyticOnNhd.deriv (forward) but NO converse. Alt route: Λ θ = Im cLiTwoExt(e^{iθ}) needs cLiTwo analyticity extended from ball(1/2,1/2) to the upper unit circle.
 - Step 2: base integral analytic in (α,β) (differentiation under the integral).
 - Step 3: Mathlib identity theorem (AnalyticOnNhd.eqOn) to glue acute->whole simplex.
+
+## Step-1 closure confirmed multi-session (2026-09-04, grep of main @480d030f937)
+
+Step 1a (Λ' analytic on (0,π)) is LANDED on main (PR #6621, LobachevskyDerivativeAnalytic.lean). The CLOSURE — Λ itself analytic — is confirmed a genuine Mathlib-gap keystone, not a bounded win. Grepped Mathlib v4.24.0 + corpus:
+- NO primitive/antiderivative-of-analytic lemma in Mathlib/Analysis (only the forward AnalyticOnNhd.deriv).
+- NO Clausen/polylog/dilog analyticity in Mathlib (only Integrals/LogTrigonometric.lean, unrelated).
+- NO Cl_2 analyticity in the corpus.
+
+So the two routes both require a real build:
+(a) antiderivative-of-analytic: theorem analyticOnNhd_of_deriv_analyticOnNhd — needs the FormalMultilinearSeries termwise antiderivative + radius preservation + HasFPowerSeriesOnBall for the primitive, ~100+ lines. Broadly reusable Mathlib infra (this is the right keystone), but multi-session and error-prone without a live LSP.
+(b) Λ θ = Im cLiTwoExt(e^{iθ}): needs cLiTwo analyticity extended from ball(1/2,1/2) (all the corpus proves) to a nbhd of the upper unit circle (θ∈(0,π), e^{iθ}≠1, avoids the [1,∞) cut).
+
+Recommend (a) when a session with a live LSP picks this up: it closes step 1 AND is reusable. Steps 2 (base integral analytic in angles) and 3 (identity theorem) remain after.
