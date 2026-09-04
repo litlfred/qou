@@ -186,3 +186,58 @@ never in `content/`"*. It is in **5** `content/` files. The grep used the bare
 string `Sp(1)`; every occurrence is written `\mathrm{Sp}(1)`. One unknown
 spelling ⇒ a confident corpus-wide absence claim. **When a topic-grep returns
 zero, grep the LaTeX spelling too before writing "absent".**
+
+## 2026-09-04 — the `ker Θ` rank contradiction, dim 7, and `J` on the contact distribution (bean `qou-xlw1`)
+
+Audit: `docs/audits/2026-09-04-contact-distribution-complex-rank-and-dimension-seven.md`.
+
+- **Is `H = ker Θ` rank 2 (`dim M_S = 3`) or rank 4 (`dim M = 5`)?** → **BOTH are
+  DERIVED, from opposite halves; the outlier is the assumption one manifold
+  carries both.** Scope-**(b)**, invariant = hypersurface-type parametrisation
+  `dim = 2n+1`, `rank_ℝ H = 2n` (`ContactDistributionRank.realRank_succ`).
+  - **TRAP — the site count answers this the WRONG way.** rank-4 is 2 sites
+    (`archimedean-realisations.md:3`, `brings-qou-axiom-map.md:10`) against 9 at
+    dim 3, so it reads as two typos. It is not: rank-4 is the **hypothesis of the
+    whole archimedean chain** — no `Λ^±` splitting at rank 2, so no `F_A^+`, so
+    the archimedean substrate parameter `q(p) = 1 + |⟨L_Θ,F_A^+⟩|` is ill-formed
+    (17 `content/*.md` consume `F_A^+`). The Lean already gates on it:
+    `models-of-qous/instanton.lean:85-100` and `self-dual-curvature.lean:38,47`
+    take `cr.n = 2` / `dim_ℝ H = 4` as an **explicit hypothesis**;
+    `CRManifoldData` (`CRRealisation.lean:27-56`) pins `n` nowhere.
+  - `brings-qou-4tuple.md` carries both halves 19 lines apart (line 12 dim 3;
+    line 31 the `F_A^+` formula). Also in that block: it says covering **degree
+    3** while `brings-is-qou-verification.md:15` + `Elaboration.lean:151` say
+    **4**, and Riemann–Hurwitz (`g=4`, `R=14`) gives 4.
+  - `brings-qou-axiom-map.md:10` misquotes its own citation: `S_p ≅ ℂ²` where
+    item 3 (`brings-qou-4tuple.md:18`, `c-quantum-universe.md:7`) says `ℙ¹(ℂ)`.
+- **Any 7-dimensional object?** → **NO manifold anywhere.** `7-manifold` /
+  `seven-manifold` / `4n+3` / `quaternionic contact` = 0 on all six paths. Three
+  independent *pointers*: `form_stabilizer_genericity_su3_routes.py:21` (generic
+  3-forms live in dim 7; only corpus `S^7` outside Mathlib), bean `qou-8p1g`
+  ("go to `m ≥ 2`, real dim ≥ 8" — but its `Sp(3)/Sp(1)³` candidate is CLOSED,
+  `quaternionic_flag_su3_exclusion.py`), and `qou-uq5x` (`S⁶ = G₂/SU(3)`).
+  **Present and easy to miss: an SU(3)-Sasaki–Einstein `S⁵`**, built June 2026,
+  living **only in `docs/audits/2026-06-16-s5so3-*`** — a `content/`-only grep
+  misses it.
+- **Does anything give `ker Θ` a complex structure?** → **YES, 7 prose sites, and
+  the corpus explicitly identifies that `J` with the categorical `i`**
+  (`q-deformed-commutator.md:1`, `linearisation-convention.md:1`,
+  `heisenberg-commutator.md:1`, `substrate-radial-coordinate.md:7`,
+  `i-as-braiding-orientation.md:4`, `commutative-crossing-energy.md:25`,
+  `instanton.lean:87`). **No Lean carries it** — every `J` is a bare scalar
+  (`J : K` / `J : R` / `J : ℝ`); `J² = −Id` is docstring-only. The identification
+  `J_CR ↔ i·id_V` typechecks **only at rank 4**, so §3 is §1 from the other side.
+  The one Lean `J² = −id` is `OctonionComplexStructure.Le_sq_eq_neg_id` on
+  `Im 𝕆` — unconnected to `ker Θ`.
+- **Path 5 (library, all four tiers incl. `ocr/`) is EMPTY for the entire CR /
+  contact / Sasakian layer:** `Sasakian` 0, `CR manifold` 0, `pseudoconvex` 1,
+  `7-manifold` 0, `quaternionic contact` 0 — while 34 `content/` files say "CR
+  manifold". Nothing held to cite; closing it needs an upload (Boyer–Galicki;
+  Dragomir–Tomassini; Bryant). **Bare `sasaki` matches 5 section files — all
+  surnames in bibliographies.** Grep `Sasakian`, not `Sasaki`.
+- **Path 6 EMPTY** for `Levi distribution` / `ker Θ` / `contact distribution` /
+  `Levi form` / `CR complex structure`. No bean has ever worked this.
+- **Live constraint on the step AFTER the rank question:**
+  `docs/coordination/s5-so3-keystone.md:31,47,51` — no compact / finite-dim
+  Sasakian arena can host `W_λ` (`q₀` real > 1, not a root of unity). Scope
+  **(a)** against a 7-dim contact route: different construction, must be re-run.
