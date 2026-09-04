@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-09-04T22:16:53Z
+updated_at: 2026-09-04T22:20:41Z
 parent: qou-5p7n
 ---
 
@@ -291,3 +291,45 @@ nine — including `mass_anchor_stable_reject`, whose `¬ MassAnchorStableGateCl
 sits on the THIRD line, and which I had read with my own eyes two minutes
 earlier. Caught instantly *because* the file had been read first. The whole-block
 search is now in the script with that note attached.
+
+
+## Final: the queue is **4**. `sdp_lp_projection` has a CONSTRUCTOR.
+
+`ScalarLPProjection` has no `instance`, so the inhabitation column flagged it —
+but `ConfinementSDP.lean` proves an introduction rule:
+
+```lean
+theorem scalarLPProjection_of_strongDuality (n : ℕ) …
+    (hSlater : slaterStrict n) [HasConfinementSDPStrongDuality n hSlater]
+    (h : bindingMultiplicity n = 1) : ScalarLPProjection n h :=
+  ⟨HasConfinementSDPStrongDuality.strong_duality hSlater⟩
+```
+
+The carrier **follows from strong duality** (cited to Boyd–Vandenberghe
+§5.2.3/§5.3) rather than being assumed, so its accessor is not a defect. That is
+a **fifth** exculpating shape, and the positive twin of the refutation column:
+`class_is_inhabited` only looks at `instance` declarations and cannot see an
+introduction rule written as a plain `theorem`.
+
+**THE QUEUE (4)** — no instance, no refutation, no constructor:
+
+    matrixChain_eq_buildChains_axiom     MatrixChainEqBuildChains      TMCorrespondence.lean
+    dressed_mass_from_substrate_split    DressedMassSubstrateSplit     DressedMassFromSubstrateSplit.lean
+    categorical_dq_squared_nonvanishing  HasDqSquaredNonvanishing      Instanton.lean
+    opening_eq_holonomy_of_conj          H2SAngleS3HolonomyConjecture  h2s-angle-s3-braid-holonomy.lean
+
+Full narrowing, every step measured and re-runnable:
+
+    78  in the bean
+    -28  no longer resolve
+    -24  derive, not projections
+    -12  bare, class inhabited (bundle built)
+    - 4  bare, class refutable (a working gate)
+    - 1  bare, class has a constructor (derived upstream)
+    - 5  carrier unidentified by the heuristic; excluded on uncertainty
+    ---
+     4  THE QUEUE
+
+**Five exculpating shapes, all found by reading rather than by scanning**, and
+each one added a column the previous pass did not have. That is the shape of
+this bean: it is a *candidate* list, and its 78 was never a count of defects.
