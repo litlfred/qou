@@ -1,0 +1,119 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T20:47:53.917157+00:00",
+  "commitSha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+  "assertions": [
+    {
+      "name": "monotone_closures_give_NO_nonzero_mubar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "over 1879 triples from 238 random monotone words. This is what makes the carrier's vanishing GENERIC rather than special."
+    },
+    {
+      "name": "CONTROL_non_monotone_closures_DO_give_nonzero_mubar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "27 nonzero over 1456 triples. The second positive control: without it, the monotone zero would be indistinguishable from a scanner that never reports nonzero."
+    },
+    {
+      "name": "monotone_triples_scanned",
+      "computed": "1879",
+      "expected": "1879",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the size of the null result, recorded so it is visible in the witness: a vanishing over few triples would establish nothing."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "milnor-vanishing-is-generic-for-monotone",
+  "scriptFile": "milnor_vanishing_is_generic_for_monotone_probe.py",
+  "scriptHash": "90b84b23c6db",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_vanishing_is_generic_for_monotone_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_vanishing_is_generic_for_monotone_probe.py"
+  },
+  "description": "EXPLORATORY. Genericity check on my own merged result (#6634): mubar vanishes on all 606 triples of the derived carrier -- but is that special to the carrier? MEASURED: no. Random MONOTONE braid closures give 0 nonzero mubar over 1879 triples; random NON-MONOTONE ones give 27 over 1456. So the vanishing is a structural consequence of MONOTONICITY and says nothing about the framework's carrier CHOICE -- any monotone word would have given it. #6634's conclusion (route 3's Delta = 2 residual is closed) is UNAFFECTED; what changes is that the closure carries no information about whether the carrier is the right object. The non-monotone arm doubles as a second positive control: it proves the scan detects nonzero mubar in the RANDOM regime, not only on the hand-picked Borromean example. Independently corroborates the monotonicity root that #6561 reached from the algebra and #6560 from the topology. Scope (a): a sampling result over one random-word regime, not a theorem. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "what_is_being_checked": {
+      "the_merged_claim": "#6634 / 046296ff06: mubar = 0 on all 606 triples of the derived carrier, 7 isotopes, both branches, all Delta classes",
+      "the_referee_question": "special to THIS carrier, or generic? AGENTS.md names this explicitly -- a coincidence is not evidence without a genericity check of the kind qou-22vu ran, and that applies to a VANISHING as much as to a near-match",
+      "why_it_matters": "if generic, the vanishing says nothing about the carrier CHOICE, which is what the carrier-derivation arc is about"
+    },
+    "measured": {
+      "monotone": {
+        "words": 238,
+        "triples": 1879,
+        "nonzero_mubar": 0
+      },
+      "non_monotone": {
+        "words": 220,
+        "triples": 1456,
+        "nonzero_mubar": 27
+      }
+    },
+    "the_honest_reading_of_6634": {
+      "not": "'the derived carrier has vanishing Milnor triples, which is a fact about the carrier'",
+      "but": "'the framework's word is monotone, and monotone closures have vanishing Milnor triples'",
+      "unaffected": "route 3's Delta = 2 residual is closed either way -- the residual does not care WHY mubar vanishes",
+      "what_changes": "the closure carries no information about whether the carrier is the right object"
+    },
+    "second_positive_control": {
+      "why_the_non_monotone_arm_is_here": "a monotone zero beside a non-monotone zero would be evidence the scanner is broken; a monotone zero beside a non-monotone NONZERO is a dichotomy",
+      "detects_nonzero_in_the_random_regime": true,
+      "note": "the first controls -- Borromean and Hopf -- live in the reused module milnor_mubar_vanishes_on_every_triple_probe.py and are what make these numbers interpretable"
+    },
+    "corroborates_the_monotonicity_root": {
+      "6561_algebra": "a monotone word's Markov trace factorises over generators",
+      "6560_topology": "a monotone closure's Delta = 0 triples are split",
+      "this_probe": "the same root a third way, on RANDOM words rather than the canonical one, and now with a rate"
+    },
+    "sampling_regime": {
+      "seed": 20260904,
+      "trials_per_arm": 300,
+      "strands": [
+        4,
+        9
+      ],
+      "monotone_run_exponent": [
+        1,
+        4
+      ],
+      "non_monotone_length": [
+        6,
+        20
+      ],
+      "caveat": "the non-monotone RATE is a property of this sampler, not of any physically meaningful family"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are randomly generated braid words and their closures' permutation cycles, integer linking numbers and degree-2 Magnus coefficients. No substrate pin is evaluated on any path."
+}
