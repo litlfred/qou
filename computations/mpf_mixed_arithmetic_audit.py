@@ -382,13 +382,28 @@ def gram_float_names(tree: ast.Module) -> set[str]:
     return out
 
 
+def _blind(rel: str, line: int, cls: str, detail: str) -> list[dict]:
+    """A file this gate could not process. NEVER return [] for it — "no
+    findings" and "no information" are different answers, and conflating them
+    converts breakage into silence (bean qou-brkp: this gate family reported
+    clean on two files a remediation had just made unparseable)."""
+    return [{"file": rel, "line": line, "class": cls, "kind": cls,
+             "detail": detail, "source": detail}]
+
+
 def audit_file(p: Path, registry: dict[str, str]) -> list[dict]:
+    rel = p.relative_to(ROOT).as_posix()
     try:
         src = p.read_text(encoding="utf-8")
+    except Exception as e:
+        return _blind(rel, 0, "unreadable", f"{type(e).__name__}: {e}")
+    try:
         tree = ast.parse(src, filename=str(p))
-    except Exception:
-        return []
-    t = Tainter(registry, p.relative_to(ROOT).as_posix(), src.splitlines(),
+    except SyntaxError as e:
+        return _blind(rel, e.lineno or 0, "unparseable", f"SyntaxError: {e.msg}")
+    except Exception as e:
+        return _blind(rel, 0, "unparseable", f"{type(e).__name__}: {e}")
+    t = Tainter(registry, rel, src.splitlines(),
                 gram_float_names(tree))
     t.visit_body(tree.body)
     return t.rows
@@ -495,6 +510,7 @@ def main() -> int:
     rows, registry = scan()
     cands = [r for r in rows if r["class"] == "CANDIDATE"]
     marked = [r for r in rows if r["class"] == "marked"]
+    blind = [r for r in rows if r["class"] in ("unparseable", "unreadable")]
     by_file: dict[str, int] = {}
     for r in cands:
         by_file[r["file"]] = by_file.get(r["file"], 0) + 1
@@ -514,6 +530,13 @@ def main() -> int:
           f"{sum(1 for v in registry.values() if v == MPF)} -> mpf)")
     print(f"  baseline           : {base}")
     print(f"  OVER baseline      : {max(0, len(cands) - base)}")
+    print(f"  BLIND (unparseable): {len(blind)}")
+
+    if blind:
+        print("\n  BLIND SPOTS — the gate could not process these files, so their")
+        print("  mixed-arithmetic status is UNKNOWN, not clean (bean qou-brkp):")
+        for r in blind:
+            print(f"    {r['file']}:{r['line']}  {r['detail']}")
 
     if by_file:
         print("\n  worst files:")
@@ -560,7 +583,7 @@ def main() -> int:
         _prov_payload, script_path=__file__, engine=None, q0_anchor=False)
     out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
     print(f"\nWrote {out.name}")
-    return 1 if (args.strict and len(cands) > base) else 0
+    return 1 if (args.strict and (len(cands) > base or blind)) else 0
 
 
 if __name__ == "__main__":

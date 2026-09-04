@@ -106,10 +106,18 @@ def find_noop_dps(source: str, filename: str = "<src>") -> list[dict]:
     context name, which is the conservative direction: this gate would rather
     miss one than cry wolf on a correct file.
     """
+    # NEVER return [] on a file that does not parse: "no findings" and "no
+    # information" are different answers, and reporting the first for the
+    # second is how bean qou-brkp's two broken producers passed this gate
+    # family clean for a month.
     try:
         tree = ast.parse(source, filename)
-    except SyntaxError:
-        return []
+    except SyntaxError as e:
+        return [{"file": filename, "line": e.lineno or 0, "kind": "unparseable",
+                 "name": None, "source": f"SyntaxError: {e.msg}"}]
+    except Exception as e:
+        return [{"file": filename, "line": 0, "kind": "unparseable",
+                 "name": None, "source": f"{type(e).__name__}: {e}"}]
 
     module_aliases: set[str] = set()
     context_names: set[str] = set()
@@ -238,6 +246,7 @@ def main() -> int:
 
     hits = scan_repo(Path(a.root).resolve())
     gated = [h for h in hits if h["gated"]]
+    blind = [h for h in hits if h.get("kind") == "unparseable"]
     ungated = [h for h in hits if not h["gated"]]
 
     def show(hs):
@@ -260,6 +269,12 @@ def main() -> int:
         show(ungated)
         print("\nNot a build failure, but not harmless either: these still run "
               "at 15 digits.")
+    if blind:
+        print("\n  BLIND SPOTS — the gate could not parse these files, so their")
+        print("  mp.dps status is UNKNOWN, not clean (bean qou-brkp):")
+        for h in blind:
+            print(f"    {h['file']}:{h['line']}  {h['source']}")
+
     return 1 if (a.strict and gated) else 0
 
 
