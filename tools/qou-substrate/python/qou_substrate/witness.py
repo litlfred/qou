@@ -1646,6 +1646,7 @@ class WitnessBuilder:
         engine: Optional[str] = "python",
         engine_version: Optional[str] = None,
         q0_anchor: Union[str, bool, None] = None,
+        q0_anchor_reason: Optional[str] = None,
         q0_value: Optional[str] = None,
     ) -> dict:
         """Public helper: stamp the WitnessBuilder staleness fields onto
@@ -1688,6 +1689,19 @@ class WitnessBuilder:
         out to be inert is a labelling problem, while a MISSING anchor on a
         witness that does depend on q₀ is the ambiguity the field exists to
         prevent.
+
+        ``q0_anchor_reason`` is the free text that goes with the anchor, and it
+        exists because its absence was being routed into ``q0_anchor``. Until
+        2026-09-03 this helper had no reason slot for a *string* anchor — only
+        the ``False`` branch wrote ``q0AnchorReason`` — so a producer wanting
+        to say *why* had one field to say it in, and **17 of them wrote prose
+        into the token**: ``"proton (experimental pin)"``,
+        ``"muon (convention-free geometric pin) @ CODATA 2022"``. The anchor
+        audit then could not map the label to a pin, so it never checked those
+        witnesses at all and reported each as a flip. The producers were not
+        being careless; the API left them nowhere else to put it.
+
+        Pass the bare token in ``q0_anchor`` and the prose here.
 
         ``engine`` accepts ``None`` meaning **keep whatever the payload already
         declares**, falling back to ``"python"`` when it declares nothing. The
@@ -1801,6 +1815,11 @@ class WitnessBuilder:
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
                 payload["q0Value"] = q0_value
+        # setdefault for the same reason the anchor itself is guarded: a reason
+        # the producer already wrote into the payload is its own declaration
+        # and wins over the one passed a call frame out.
+        if q0_anchor_reason is not None:
+            payload.setdefault("q0AnchorReason", q0_anchor_reason)
         return payload
 
     def is_fresh(self) -> bool:

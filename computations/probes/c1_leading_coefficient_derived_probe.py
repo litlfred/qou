@@ -334,8 +334,15 @@ def tr_M_fraction(Z: int, N: int, include_inter: bool, qv: F) -> F:
     tot = F(0)
     qs = sp.Rational(qv.numerator, qv.denominator)
     for lam in two_row_partitions(n):
-        yv = sp.nsimplify(sp.together(y[tuple(lam)]).subs(Q_SYM, qs))
-        yv = F(int(yv.p), int(yv.q))
+        # `sp.nsimplify` does NOT always return a Rational here: at q = 3/2 (and
+        # other points) `together(...).subs(...)` stays an unevaluated `Mul` with
+        # a `Pow(..., -1)` factor, and `.p` then raises AttributeError. Latent
+        # bug in the merged version (bean qou-i719): the two points that probe
+        # used, 8/7 and 11/10, happened to reduce. `cancel` reduces a rational
+        # function at a rational point to a Rational in every case, and the
+        # `as_numer_denom` route below never depends on auto-simplification.
+        num, den = sp.cancel(sp.together(y[tuple(lam)]).subs(Q_SYM, qs)).as_numer_denom()
+        yv = F(int(num), int(den))
         tot += yv * chi_at(lam, facs, qv)
     return tot
 

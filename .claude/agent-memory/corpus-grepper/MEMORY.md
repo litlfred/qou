@@ -99,7 +99,12 @@ Read `status` and the **whole body**, not the title:
 - a **`completed`** bean is the one that bites — the answer may be a single
   sentence in the body with no artifact anywhere else;
 - a **`scrapped`** bean usually names the bean that superseded it, which is
-  how you find the live carrier.
+  how you find the live carrier;
+- and when you are **appending** to a bean, read the whole file before you
+  write — the destination is the source you are skipping. 2026-09-03
+  (`qou-zrx2`): I wrote "no closed form was identified" two sections below
+  "the floor has a CLOSED FORM" and "the floor is DERIVED", having read the
+  bean with `tail -60`.
 
 Worked case (added 2026-08-26 after a PR re-derived two held results): the
 trail ran `qou-8pl3` → `qou-8p1i` (scrapped) → `qou-dwsh` (completed,
@@ -173,11 +178,35 @@ factor.
 Found an over-claimed (b)? Re-scope to (a). Do not delete the finding — the
 numerical result stands, only the scope was wrong.
 
+## TRAP — your own two halves disagreeing is a BUG, not a refutation
+
+Testing `tr_M|_(q=1) = 2^(c-n)` for the classical binding floor I got
+`c_free = 6` from a cycle count and `tr_M(W_free) = 1/4` from Richardson —
+and `1/4 = 2^(c-6)` forces `c = 4`. I published that disagreement as a
+refutation of the formula rather than a bug in the count (it was the count:
+the permutation is `(0 1)(3 4)`, 4 cycles). The mechanism was the corpus's
+own **derived** one, in a probe, a sorry-free Lean file, and the bean I was
+appending to. Check a refutation against every other number **in your own
+probe** before you write it down. `qou-zrx2`.
+
+**Second instance, three days apart, a different session** (`qou-brng`,
+`0be7d66fad`): a Lean exclusion re-proved that `qou-edt7` had landed four
+days earlier and proved more generally, plus a "surviving escape" ratio that
+was the corpus's own `w(2)/w(1)` with the obvious mechanism already refuted
+there. Their generalisation is the one to carry: **a "next direction" line in
+a bean or PR body is a novelty claim and needs the checklist exactly as much
+as an "open" declaration does** — and run it BEFORE merging, not after.
+
 ## Resolved topics — where the answer actually lives
 
-A lookup table, not a thing to carry: consulted when a specific topic
-comes up. Moved to `resolved-topics.md` — read it before declaring any of
+A lookup table, consulted when a specific topic
+comes up. In `resolved-topics.md` — read it before declaring any of
 these open, and add a row whenever a sweep settles one.
+
+- **Exchange-sensitive NON-trace invariant of the six-strand two-nucleon link
+  for the T=0/T=1 ratio 33.7055?** → `resolved-topics.md` (2026-09-03). Open as
+  a *class*; the **linking-data subclass is closed** scope-(b) (`lk` IS `I₃`,
+  both channels at `I₃ = 0`); the exchange OPERATOR is closed three times over.
 
 ## BASELINE — re-measure, do not quote
 
@@ -191,5 +220,6 @@ these open, and add a row whenever a sweep settles one.
 ---
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
-- 2026-08-30 · `qou-brng` linking-vs-self-energy · **partially covered / target moved** · found on paths 1, 3, 4, 6; the citable source on path 5 was reachable only via `ocr/`.
+- 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class; **linking-data subclass closed same day** · detail in `resolved-topics.md`.
 - 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
+- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.

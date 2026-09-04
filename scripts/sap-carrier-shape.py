@@ -451,11 +451,23 @@ def main() -> int:
     fd, tmp = tempfile.mkstemp(prefix="sap-live-", suffix=".json")
     os.close(fd)
     try:
-        subprocess.run(
+        # `capture_output=True, check=True` raised a CalledProcessError whose
+        # message names the command and NOTHING the child printed, so a
+        # liveness failure surfaced as an exit code with the traceback that
+        # explains it discarded. Relay both streams before failing (Copilot,
+        # PR #6422). This is the whole reason a script gets called "flaky":
+        # the output that would identify the fault is captured and dropped.
+        proc = subprocess.run(
             [sys.executable, str(ROOT / "scripts/sap-projection-liveness.py"),
              "--json", tmp],
-            capture_output=True, check=True,
+            capture_output=True, text=True,
         )
+        if proc.returncode != 0:
+            sys.stderr.write(proc.stdout or "")
+            sys.stderr.write(proc.stderr or "")
+            raise SystemExit(
+                f"sap-projection-liveness.py exited {proc.returncode} "
+                f"(its output is above)")
         rows = json.loads(Path(tmp).read_text())
     finally:
         Path(tmp).unlink(missing_ok=True)

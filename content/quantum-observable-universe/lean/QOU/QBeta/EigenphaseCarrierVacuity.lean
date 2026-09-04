@@ -41,6 +41,33 @@ instance**, which per §3b-tax is how a genuinely open input is represented.
 the cos-resummation is false — only that its Lean hypothesis is empty, so the
 result is unconditional rather than conditional, and the physical content the
 docstring describes is not carried anywhere.  Scope-(a).
+
+**UPDATE 2026-09-03 (bean `qou-eixt`) — the live carrier has been repaired; this
+file is now the RECORD, not a live indictment.**
+`content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`
+has adopted §2's `TransferMatrixSpectrum` shape: its `TransferMatrixEigenphase`
+now takes the `2×2` restriction `M` and pins `M.trace = 2 cos(eigenphase q)`,
+`M.det = 1`, with no instance declared there. Its `q_beta_cos_resummation` was
+also repaired — separately from the carrier, and this file did not catch that
+one: the theorem's proof was `refine ⟨…, rfl, ?_⟩; ring` on `∃ x, x = A ∧ x = A`
+and never mentioned the instance, so the result was unconditional *twice over*,
+once through the empty carrier and once through a proof that ignored it. It now
+rewrites `trace_eq`, and the negative control (same statement, binder dropped)
+fails as it must.
+
+**§1's reproduction is kept deliberately** and is the reason this file still
+appears in the vacuity audit under `proof-claims-unencoded`: it is the
+demonstration copy, and a file whose purpose is to exhibit a defect is not
+itself the defect (ledger verdict `legit`,
+`deliberate-reproduction-for-demonstration`). Do not "fix" it — deleting it
+would delete the proof that the superseded encoding was empty.
+
+**§3 is unaffected and is still the operative finding.** The repair above is
+branch 2 of that trichotomy — `M` arbitrary, circularly dischargeable by
+`circularWitness` — so it buys a carrier that constrains its argument and a
+theorem that is a genuine implication, and buys **no** evidence about the
+substrate. Branch 3 (KZ / Kohno–Drinfeld holonomy) remains where a derivation
+of `α` must live, and remains uncarried out.
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.Complex.Exponential

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-17T00:44:48Z
-updated_at: 2026-08-18T16:09:37Z
+updated_at: 2026-09-03T15:14:31Z
 ---
 
 Opened working the many-body R term at owner direction ('go on many body').
@@ -262,3 +262,17 @@ mpmath they are unchanged (9.733%, 1.2197, 110.1%, 17.44%, ~1.207 collapse), so
 those conclusions stand.
 
 Probes now mpmath/sympy end-to-end; precision-gates.sh --changed green.
+
+## 2026-09-03 — the general-n question is ANSWERED at n=4: the product formula FAILS (qou-kru4)
+
+The 2026-08-18 correction left 'general n OPEN' and named s0 s1 s0 s2 s1 as the untested word. Exact algebra from the Ocneanu axioms alone (tr 1=1, Markov, cyclicity, Hecke, braid):
+
+    tr(s0 s1 s0 s2 s1) = z(z^2 + h z + h^2 z^2)
+    tr(s0^2 s1^2 s2)   = z(h z + 1)^2
+    difference         = z(z^2 - h z - 1)      != 0
+
+Independently confirmed in the 16-dim spin-1/2 rep (same closed form; the n=3 identity reproduces as exactly 0 there). At conv D: = -q^3(q^2-q+1)(q^2+q+1)/(q^2+1)^3 < 0. The factor z^2-hz-1 is the conv-D Markov defect (qou-19jc) = -(q^4+q^2+1)/q^2 * y_(2,1) (qou-xzrj).
+
+SO the multi-bond source this bean closed at n=3 is OPEN at n=4 for interleaved word classes, with an exact nonzero cross term of the RIGHT SIGN (interleaved trace smaller => extra binding; R>0 on the well-bound regime). At the proton pin: 0.895 nats per interleaving vs R/alpha ~ 1.32/nucleon — order-of-magnitude remark only, NOT a fit.
+
+Scope (a), positive existence, narrow: production atom_braid_word_3A is sequential, so the production bare-product trace stays exact and no number moves. Whether a nucleus IS an interleaved word class = the carrier blocker (qou-5vhf). Lean: QOU.MathlibExt.MarkovTraceInterleavedCrossTerm over the MarkovTrace structure. Probe: markov_trace_n4_interleaved_cross_term_probe.py 11/11. Audit: docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.

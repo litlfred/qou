@@ -253,6 +253,17 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   std-3; `/-!` before `import` is rejected; `omit [inst] in` precedes the docstring;
   `WedderburnRankDegeneracy` red on main 6 days behind a false green → PR #6097 and
   `verification-harness.md`.
+- 2026-09-03 (magnus-o6ov-commutator): `QOU/MassTheory/MagnusCurvatureCommutator.lean`,
+  self-contained (Mathlib only). As authored EXIT 1 — 3× `ring_nf made no progress`,
+  all of them `ring` on a NONCOMMUTATIVE `[Ring A]` (see the new authoring TRAP).
+  Fixed with explicit `mul_assoc` in the `rw` chain: −8/+2 lines, all four
+  statements byte-identical. Final EXIT 0 (warm 3.8 s; cold 4m20s wall / 8.6 s user
+  — page cache, not a rebuild). `#print axioms`: std-3, no `sorryAx`.
+  `Mathlib.LinearAlgebra.Trace` is UNUSED (file carries cyclicity as a hypothesis);
+  compiles EXIT 0 without it — reported, not removed. Mutation test: same statement
+  with `hcyc` deleted fails, residual goal `tr (ρ*(y*x)) = tr (x*(ρ*y))` — the
+  hypothesis is load-bearing, statement not vacuous. Root `.lake` held 3470 mathlib
+  oleans with NO `RESTORED-NO-TRACES` marker; disk 1.9 G free, so no re-restore.
 - 2026-09-04 (branch `claude/standard-model-terms-status-ftoejr`, seven GAP beans):
   root tree was a REAL build (2443 QOU oleans / 2441 traces, no `RESTORED-NO-TRACES`);
   9-root `LEAN_PATH` from `.lake/packages/*/.lake/build/lib/lean` + `.lake/build/lib/lean`.

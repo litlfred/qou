@@ -1,7 +1,7 @@
 {
   "computation": "carrier-crossing-quantisation",
   "scriptFile": "probes/carrier_crossing_quantisation_probe.py",
-  "computedAt": "2026-08-31T04:28:03.130787+00:00",
+  "computedAt": "2026-09-03T18:36:44.848284+00:00",
   "contentBlock": "qou-brng",
   "description": "The count channel's multiplicity is half the carrier's crossing count, so with the owner-ruled Hopf pair carrier (c2 = 2) the ratio b3/b2 = c3/2 - 3 lives on a lattice. The measured 0.6411239316 falls in a gap: the nearest integer carrier assignment misses by 16.98%. All four carrier rules the corpus derives give b3/b2 <= 0. Exact rational arithmetic, no free parameters.",
   "measured": {
@@ -148,5 +148,7 @@
     "probes/pair-locality-shortfall.witness.json",
     "probes/count-channel-carrier-locus.witness.json"
   ],
-  "source": "AME2020 total nuclear binding energies; integer crossing counts"
+  "source": "AME2020 total nuclear binding energies; integer crossing counts",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-08-08T17:40:00Z
+updated_at: 2026-09-03T20:58:53Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -436,3 +436,48 @@ every query this session — likely firewalled — so these need fetching by han
 * `qou-idvt` T2 — the same statement from the ideal-tetrahedron side
 * `qou-7y3g` — consumer; `Vol(4₁)=2·V_tet` stays numerical until this lands
 * `qou-krvm` (iv) — consumer, via H5
+
+── UNBLOCK 2026-09-03: the source the bean wanted IS in the library ──
+
+The bean's 'what I actually want first' — Milnor Ch.7 full text for the
+obtuse-triangle sign convention, thought firewalled — is HELD:
+`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-004-18-john-milnor.md`
+(pp. 10-12), found via corpus-grep path 5. Milnor's *Hyperbolic geometry: the
+first 150 years*, Lemma 2 = exactly our target: ideal 3-simplex with dihedral
+angles α,β,γ at a vertex, α+β+γ=π, volume = Ji(α)+Ji(β)+Ji(γ) (Ji = our Lob).
+The base integral is set up in the Beltrami upper-half-space model with
+dx dy dz/z³ (matches the corpus's hypVolume), projected to the inscribed
+triangle in the unit disk — i.e. exactly the HyperbolicVolumeFubini → orthoscheme
+chain the corpus already formalized (acute).
+
+**The obtuse handling, verbatim (sec-004 line 66-68):** 'If all three angles are
+acute, then barycentrically subdividing from the origin, we obtain six right
+triangles... (The case of an obtuse angle can be handled by *a similar argument,
+or by analytic continuation*.)' So Milnor gives TWO routes, and does not spell
+out a signed-subdivision sign convention — the 'similar argument' is left to the
+reader; the clean route is **analytic continuation**.
+
+**LANDED this session (PR #6045, merged e711d1fb1):** the analytic prerequisites
+for the obtuse case, in QOU/Archimedean/IdealTetObtuseReduction.lean, sorry-free:
+- at_most_one_obtuse; third_angle_acute_of_obtuse (γ≥π/2 ⟹ α+β≤π/2);
+- lob_sum_eq_reflected: Λ(α)+Λ(β)+Λ(γ) = Λ(α)+Λ(β) − Λ(α+β), all-acute-args when
+  γ obtuse (via IdealTetrahedronConcavity.Lob_pi_sub, which is Milnor's own
+  π-periodic+odd fact, sec-004 lines 19-23).
+
+**Recommended route for the remaining Lean = ANALYTIC CONTINUATION, not signed
+geometry.** Both sides are functions of (α,β) on the open simplex {α>0,β>0,
+α+β<π}. The Λ-sum side Λ(α)+Λ(β)+Λ(π−α−β) is real-analytic there (Lob = Cl₂(2·)/2,
+Cl₂ real-analytic on (0,2π) — the corpus has hasDerivAt_Cl_2_series +
+tendstoLocallyUniformlyOn as the analyticity input). The acute region
+{α,β<π/2, α+β>π/2} is a nonempty open subset where hypVolume_chimney_inscribedTriangle
+already proves equality with the base integral. If the base-integral side is shown
+real-analytic in (α,β) (differentiation under the integral — the genuinely hard
+Mathlib step, but bounded and standard), the identity theorem for real-analytic
+functions (Mathlib AnalyticOn / eqOn) extends the equality to the whole simplex,
+obtuse included — no signed-subdivision geometry, no sign convention needed.
+
+So the remaining open piece is precisely: (i) Lob real-analytic on (0,π);
+(ii) the base integral real-analytic in the two angle parameters; (iii) glue via
+the identity theorem. (i) is short; (ii) is the multi-session core; (iii) is
+mechanical. The signed-subdivision route is NOT needed and should not be attempted
+— Milnor himself offers analytic continuation as the alternative.
