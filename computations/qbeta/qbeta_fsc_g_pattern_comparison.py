@@ -146,8 +146,11 @@ def main() -> None:
     Form_A_over_me = abs(poly_factor) * (q + 1) / (2 * q**3)
     print(f"  Form A/m_e at q_0 = {mp.nstr(Form_A_over_me, 15)}")
     print(f"  Target Q_β/m_e   = {mp.nstr(target, 15)}")
-    miss_pct = float((Form_A_over_me - target) / target * 100)
-    print(f"  Miss = {miss_pct:.4f}% (Form A leading)")
+    # mpf, not float: this is computed from Form_A_over_me and target, both mpf.
+    # The float() cast that stood here put a float64 straight into the witness
+    # (raw-float64 baseline). Display still goes through mp.nstr.
+    miss_pct = (Form_A_over_me - target) / target * 100
+    print(f"  Miss = {mp.nstr(miss_pct, 6)}% (Form A leading)")
     print()
     print(f"  Polynomial factor: (q² - 2q - 1)")
     print(f"  Roots: q = 1 ± √2 ≈ 2.4142, -0.4142")
@@ -155,15 +158,19 @@ def main() -> None:
     # Concrete non-cyclotomic check: compute the roots and verify
     # neither sits on the unit circle (root-of-unity necessary condition
     # is |z| = 1; both roots have |1+√2| ≈ 2.414 and |1-√2| ≈ 0.414).
+    # Keep the roots as mpf. `_is_root_of_unity` takes a Python complex, so the
+    # float() cast is confined to that call -- it is a decision at tol=1e-9,
+    # where float64 is ample. What must NOT be float is the value that reaches
+    # the witness: abs(root_*) below was a float64 in the raw-float64 baseline.
     sqrt2 = mp.sqrt(2)
-    root_plus = float(1 + sqrt2)
-    root_minus = float(1 - sqrt2)
-    root_plus_is_rou = _is_root_of_unity(complex(root_plus, 0))
-    root_minus_is_rou = _is_root_of_unity(complex(root_minus, 0))
+    root_plus = 1 + sqrt2
+    root_minus = 1 - sqrt2
+    root_plus_is_rou = _is_root_of_unity(complex(float(root_plus), 0))
+    root_minus_is_rou = _is_root_of_unity(complex(float(root_minus), 0))
     factor_is_cyclotomic = root_plus_is_rou and root_minus_is_rou
 
-    print(f"  |1+√2| = {abs(root_plus):.6f}, |1−√2| = {abs(root_minus):.6f}")
-    print(f"  Either on unit circle? +√2: {abs(root_plus) == 1.0}, −√2: {abs(root_minus) == 1.0}")
+    print(f"  |1+√2| = {mp.nstr(abs(root_plus), 8)}, |1−√2| = {mp.nstr(abs(root_minus), 8)}")
+    print(f"  Either on unit circle? +√2: {abs(root_plus) == 1}, −√2: {abs(root_minus) == 1}")
     print(f"  Root-of-unity check: +√2 → {root_plus_is_rou}, −√2 → {root_minus_is_rou}")
     print(f"  → polynomial factor is cyclotomic? {factor_is_cyclotomic}")
     print(f"  This 'silver-ratio' factor lives OUTSIDE the cyclotomic")
@@ -203,11 +210,11 @@ def main() -> None:
     w.add_data("q_0", mp.nstr(q, 30))
     w.add_data("Q_beta_over_m_e", mp.nstr(target, 30))
     w.add_data("Form_A_over_m_e", mp.nstr(Form_A_over_me, 30))
-    w.add_data("Form_A_miss_pct", miss_pct)
+    w.add_data("Form_A_miss_pct", mp.nstr(miss_pct, 30))
     w.add_data("polynomial_factor", "q^2 - 2q - 1")
     w.add_data("polynomial_roots", "1 ± √2 (silver ratio)")
-    w.add_data("root_plus_abs", abs(root_plus))
-    w.add_data("root_minus_abs", abs(root_minus))
+    w.add_data("root_plus_abs", mp.nstr(abs(root_plus), 30))
+    w.add_data("root_minus_abs", mp.nstr(abs(root_minus), 30))
     w.add_data("are_roots_of_unity", factor_is_cyclotomic)
     w.add_data("conclusion", (
         "Q_β admits NO clean cyclotomic / q-integer closed form. "
