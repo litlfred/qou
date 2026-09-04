@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T12:24:23Z
+updated_at: 2026-09-04T12:27:24Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6580,3 +6580,38 @@ where a supplied phase could come from, and nothing above excludes them:
 
 The provenance finding itself is unaffected: the attribution defect and the
 4–5 % / 88× measurements stand independently of all of this.
+
+
+### Route 3 (KZ / Kohno–Drinfeld) is CLOSED — checked, per the caveat above
+
+The entry above listed it open with "check `9a8b09c661` first". Checked:
+`QOU/QBeta/HolonomySpectrumSignObstruction.lean` (`4471ee72ce`, 2026-08-31,
+6 theorems, sorry-free) **excludes every holonomy whose generator has real
+spectrum**, Kohno–Drinfeld included. Residue-independent — a real eigenvalue `a`
+gives character `cosh a ≥ 1` for every real `a`, and the required factor is
+**0.998399 < 1**. The obstruction is `(x−1)² ≥ 0`.
+
+**Exact cross-check with my probe.** That 0.998399 is what
+`qbeta_ladder_alpha_provenance_probe` computes as `cos(α − u/2)` at C
+(0.9983989452530845), and the surviving condition's angle `θ = 0.0565947` is
+exactly `|α − u/2|` there. Same object from opposite directions — one asking
+what the ladder's factor **is**, the other what could **produce** it.
+
+**Route status after this:**
+
+| route | status |
+|---|---|
+| non-scalar normalisation (÷ a `q`-dependent non-rational Markov-trace factor) | **open** |
+| `M_β` outside the braid image | **open in general**; holonomy sub-case closed for real spectrum |
+| KZ / Kohno–Drinfeld | **CLOSED** |
+
+**The surviving condition is sharp:** a connection whose generator is
+**elliptic** at real `q` — `det A > 0`, spectrum `±iθ`, `θ = 0.0565947`. The
+imaginarity must be **sourced**; the corpus names `conj:im-q-physical-role`, and
+it is Tier-0 condition D0 on `qou-pdix` / this bean.
+
+Pointer, not a result: AGENTS.md's Im(q) banner separates the **observable**
+level (`Im(q₀) = 0`, verified) from the **fibre** level (`Im(q)` unconstrained).
+An elliptic generator at real `q₀` needs its imaginary part from somewhere, and
+the fibre level is the only place the framework leaves for it. Nothing here
+derives such a generator or shows one exists.
