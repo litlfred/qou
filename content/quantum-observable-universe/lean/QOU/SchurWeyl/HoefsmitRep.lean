@@ -43,12 +43,20 @@ universal property `Hecke.lift` (bean SW-1) and the Specht dimension `dLambda λ
   reduces to the `(2,1)` lemmas.  `seminormalRep22_nonScalar` is a concrete witness of the general
   non-degeneracy statement.
 
-* **General `λ` seminormal representation — GAP (honestly stated `sorry`).**
-  `hoefsmit_seminormal_rep` states the *existence* of a `d_λ`-dimensional seminormal representation
-  that is **non-scalar** for `d_λ ≥ 2` (ruling out the trivial `q·1` matrix rep — so the statement
-  is non-vacuous and captures the *interesting* representation).  The general construction (the
-  seminormal matrices indexed by SYT via axial distances, and the proof of the braid relation in
-  full generality) is Hoefsmit's theorem; it is left as a cited `sorry` — see the `-- GAP:` note.
+* **General `λ` seminormal representation — PROVED, and it lives elsewhere.**
+  `hoefsmit_seminormal_rep` is in `QOU.SchurWeyl.HoefsmitRepGeneral`, sorry-free, for every
+  `λ ⊢ N` at any real `q ≠ 0` that is not a root of unity.  It is built from
+  `SeminormalRep.seminormalRepFin` — the actual SYT-indexed axial-distance construction — not
+  assumed.  It could not stay in this file: that proof consumes `SeminormalRep`, which imports
+  `TableauCells`, which imports *this* file, so stating it here and proving it there would be
+  circular.  See the closing section for the full note.
+
+  **This bullet said "GAP (honestly stated `sorry`)" until 2026-09-04**, contradicting the closing
+  section of this same file, which had already recorded the proof and the move.  Whoever reads only
+  the status block at the top — which is what a status block is for — was told the central result of
+  the file is an open gap when it is a theorem.  Recorded rather than quietly corrected, because
+  the file is otherwise scrupulous about saying "sorry-free" and this is the one place the prose
+  lagged the code.  Bean `qou-t5ve`.
 
 Refs:
 - [hoefsmit1974] P. N. Hoefsmit, *Representations of Hecke algebras of finite groups with BN-pairs
@@ -376,8 +384,6 @@ theorem seminormalRep22_nonScalar (hq : q ≠ 0) :
   exact S1_ne_scalar q hq s
 
 end Seminormal22
-
-/-! ## General `λ` seminormal representation — GAP -/
 
 /-! ## General `λ` seminormal representation — PROVED, and it moved
 

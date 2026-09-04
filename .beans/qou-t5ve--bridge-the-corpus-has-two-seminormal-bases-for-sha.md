@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T06:26:14Z
-updated_at: 2026-09-04T06:27:01Z
+updated_at: 2026-09-04T10:41:57Z
 ---
 
 ## What was found, and how
@@ -65,3 +65,50 @@ exactly what the general-`n` `trSummand` work would do.
 `trSummand` for general `n`. `HoefsmitRep.lean` has `cellContent`,
 `axialDistance` and the `(2,1)`/`(2,2)` cases; it carries 21 sorries and does
 not yet give the general-`n` seminormal construction. Not started here.
+
+
+## 2026-09-04 — CORRECTION to this bean's own closing section
+
+The "Still open" section above said: *"`HoefsmitRep.lean` … carries 21 sorries
+and does not yet give the general-`n` seminormal construction."* **Both halves
+are wrong**, and the same two claims went into PR #6589's body and my report.
+
+**"21 sorries" was a raw `grep -c "sorry"`** — a count of the *word*, which
+appears ~15 times as "sorry-free" plus a few times describing a `sorry` that
+was removed. Real `sorry` terms, comments and docstrings stripped: **0**. The
+compiler agrees: `lean`-direct reports 0 `declaration uses 'sorry'`.
+
+That is precisely the word-count-vs-semantics error this same session had
+already flagged once, in the q₀-anchor note — *"a count of FILES CONTAINING
+THE STRING, not of stale pins"*. I wrote the warning and then made the error.
+
+**"does not yet give the general-`n` construction" is also wrong.**
+`hoefsmit_seminormal_rep` is **proved**, sorry-free, in
+`QOU/SchurWeyl/HoefsmitRepGeneral.lean`: for every `λ ⊢ N` at any real `q ≠ 0`
+that is not a root of unity, built from `SeminormalRep.seminormalRepFin` — the
+actual SYT-indexed axial-distance construction. `QOU/SchurWeyl/` holds **73
+files**; the general machinery (`SeminormalRep`, `SeminormalParam`,
+`TableauCells`, `SytSwapTransport`, `Orbit6Braid`, …) is extensively built.
+
+## The defect this uncovered, and it is a real one
+
+`HoefsmitRep.lean` stated **both**, about the same theorem:
+
+* line 46, in the "What is delivered here (honest status)" block:
+  *"General `λ` seminormal representation — GAP (honestly stated `sorry`)"*;
+* line 382, its closing section: *"PROVED, and it moved."*
+
+A reader who reads the status block — which is what a status block is for — is
+told the file's central result is an open gap when it is a theorem. Fixed here,
+with the correction recorded in place rather than quietly overwritten.
+
+A second file carried the same stale line: `SeminormalParam.lean` §Scope,
+*"(`hoefsmit_seminormal_rep`, still a `-- Ref:`-cited `sorry`)"*. Also fixed.
+Checked the other seven files naming the theorem — none of them repeats it.
+
+## What is actually left for `trSummand`
+
+Much smaller than I said. `hoefsmit_seminormal_rep` gives the representation as
+an **existential**; wiring `DescartesMarkovTrace.trSummand` needs the character
+as a *function* — `Matrix.trace (seminormalRepFin … )` — plus
+`tr_eq_sum_summands`. Tracked in the new sibling bean.
