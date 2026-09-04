@@ -212,7 +212,26 @@ def main() -> int:
                 "normalisation can contribute the missing factor."),
     )
 
-    out = b.save()
+    # `independent`, added 2026-09-04 after this omission was caught on a
+    # SIBLING probe. This file works entirely in the polynomial ring ℚ[q] —
+    # sympy factorisation, division and gcd on a symbolic `q` — and never
+    # substitutes a numerical pin, so there is no `q0Value` and recording one
+    # would be a contradiction.
+    #
+    # It was missing when this probe merged (#6515), and the PR body's claim
+    # that "the new files appear nowhere in the gate log" was too weak to catch
+    # it: the q0-anchor refill ratchet reports a COUNT, not filenames, so the
+    # only line naming this file was a `skipped:` notice. The reliable check is
+    # to A/B the gate with the files removed and diff the counts.
+    out = b.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "reads no q0. Works entirely in Q[q]: sympy factorisation, "
+            "polynomial division after q -> t^2, gcd and irreducibility over Q "
+            "on a symbolic q. No numerical substitution occurs on any path, so "
+            "no q0Value exists."
+        ),
+    })
     print(f"wrote {out}")
     return 0
 
