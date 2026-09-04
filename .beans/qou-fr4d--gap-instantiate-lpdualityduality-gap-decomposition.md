@@ -1,11 +1,11 @@
 ---
 # qou-fr4d
 title: 'GAP: instantiate LPDuality.duality_gap_decomposition against emitted LP duals'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T07:51:51Z
-updated_at: 2026-09-04T07:52:34Z
+updated_at: 2026-09-04T08:01:20Z
 ---
 
 ## What exists
