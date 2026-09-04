@@ -425,7 +425,15 @@ def main() -> int:
         },
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_binding_law_options_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       # `elapsed_sec`, not `elapsed_s`: the raw-float64 ratchet
+                       # excuses a wall-clock duration only by EXACT field name
+                       # (`witness_raw_float64_audit.EPHEMERAL_TIMING_FIELDS` =
+                       # durationMs / durationSeconds / duration_sec /
+                       # elapsed_sec / elapsed_seconds). `elapsed_s` is the same
+                       # quantity under a spelling that vocabulary does not
+                       # carry, so it read as a payload float and took the gate
+                       # red. No value changes; only the key.
+                       "elapsed_sec": round(time.monotonic() - t0, 3)},
     }
     out = HERE / "qbeta-binding-law-options.witness.json"
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
