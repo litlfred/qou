@@ -249,3 +249,45 @@ presentation, not a value.
       regenerated the committed witness still carries the 25 raw-float64
       fields the corpus's own gate warns about — the code is fixed, the
       artifact is not.
+
+## 2026-09-04 — measured the vendored qou-mass mirror's drift
+
+Ran the mirror's own suite after merging origin/main (290 commits):
+
+    PYTHONPATH=qou-mass/src python3 -m pytest qou-mass/tests -q
+    7 failed, 13 passed
+
+Not caused by anything on this branch. `qou-mass/src/qou_mass/_internal/
+hecke_core.py` states outright that it imports nothing from
+`hecke_core_legacy`, and the failing values come from the mirror's own
+Decimal tables, so the braid fix, the Rust routing and the NO-FLOAT64 work
+cannot reach them. Pre-existing drift between the mirror and the values the
+computations layer now produces.
+
+The seven, with the actual deltas — the spread is the useful part:
+
+    test_proton_mass       938.7830883780143   vs 938.27185264      Δ 5.1e-01
+    test_neutron_mass      939.5658930679812   vs 939.56518467      Δ 7.1e-04
+    test_muon_mass         105.65839781134181  vs 105.65837565      Δ 2.2e-05
+    test_deuteron_binding  2.248820797901309   vs 2.2488207948647   Δ 3.0e-09
+    test_compute_tr_M_4he  0.16097414544240737 vs 0.16097419322912  Δ 4.8e-08
+    test_compute_tr_M_prot 1.1457596924573008  vs 1.1457597822878   Δ 9.0e-08
+    test_4he_binding       method is 'L3-α-cluster:n_α=1,pairs=0(magic-A-derived)',
+                           test asserts 'L1' in method
+
+Six are numeric-tolerance failures, one is a METHOD-STRING failure and that
+last one is the informative one: 4He is now answered by an L3 α-cluster route
+where the test still expects an L1 route. That is a change of derivation, not
+a change of digits, so it will not be fixed by loosening a tolerance.
+
+The numeric six do not share a scale — 5e-01 down to 3e-09, seven orders of
+magnitude. A single upstream precision change would not produce that spread;
+these look like several independent drifts (the proton at 5e-01 is a
+different-quantity-sized gap, not a rounding one).
+
+Disposition unchanged and now measured rather than assumed: do NOT hand-patch
+the mirror's expected values. Hand-editing seven constants to match today's
+output would convert a real signal — six drifts and one changed derivation —
+into a green suite that asserts nothing. The mirror should be regenerated from
+its source, or the tests should be pointed at the computations layer.
+
