@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:39:50.872689+00:00",
-  "commitSha": "a8f7fe3b88a4fb5f1dab53c25028cdb3e79c2fd1",
+  "computedAt": "2026-09-04T03:19:48.855540+00:00",
+  "commitSha": "ebdbb2f54489e845249c366616f1f18e0c6235a5",
   "assertions": [
     {
       "name": "all_kappa_n_exceed_kappa",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "b1-kappa-window-extension",
   "scriptFile": "wlambda_covariance_epic_B1_kappa_window_extension.py",
-  "scriptHash": "94f5e1474d89",
-  "scriptCommitSha": "d194a9c74803fd7268a88460c6cad828ad7920b8",
+  "scriptHash": "226dc4538ef0",
+  "scriptCommitSha": "ebdbb2f54489e845249c366616f1f18e0c6235a5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,7 +79,8 @@
   "description": "B1 / gap qou-k5r5 Track B: exact kappa_n over an extended n window by direct Plancherel summation, Fraction throughout, compared against kappa = 128/(225 pi^2) at 60 dps.",
   "parameters": {
     "n_min": 68,
-    "n_max": 78
+    "n_max": 78,
+    "elapsed_sec": 1983.6
   },
   "data": {
     "kappa": "0.057640495583196598865851428",
@@ -100,7 +101,7 @@
         "kappa_n": "0.05892300158712856333048759",
         "kappa_n_minus_kappa": "0.00128250600393",
         "sign": "+",
-        "ms": 86896
+        "ms": 89799
       },
       {
         "n": 70,
@@ -109,7 +110,7 @@
         "kappa_n": "0.05891506868450117973881566",
         "kappa_n_minus_kappa": "0.0012745731013",
         "sign": "+",
-        "ms": 100497
+        "ms": 104569
       },
       {
         "n": 71,
@@ -118,7 +119,7 @@
         "kappa_n": "0.05890753413671497386404414",
         "kappa_n_minus_kappa": "0.00126703855352",
         "sign": "+",
-        "ms": 118154
+        "ms": 116625
       },
       {
         "n": 72,
@@ -127,7 +128,7 @@
         "kappa_n": "0.05890031370574370604136583",
         "kappa_n_minus_kappa": "0.00125981812255",
         "sign": "+",
-        "ms": 136510
+        "ms": 136263
       },
       {
         "n": 73,
@@ -136,7 +137,7 @@
         "kappa_n": "0.05889328160245180251671404",
         "kappa_n_minus_kappa": "0.00125278601926",
         "sign": "+",
-        "ms": 158879
+        "ms": 164733
       },
       {
         "n": 74,
@@ -145,7 +146,7 @@
         "kappa_n": "0.05888630172937965648230813",
         "kappa_n_minus_kappa": "0.00124580614618",
         "sign": "+",
-        "ms": 181397
+        "ms": 197330
       },
       {
         "n": 75,
@@ -154,7 +155,7 @@
         "kappa_n": "0.05887925697883025358591502",
         "kappa_n_minus_kappa": "0.00123876139563",
         "sign": "+",
-        "ms": 212044
+        "ms": 226677
       },
       {
         "n": 76,
@@ -163,7 +164,7 @@
         "kappa_n": "0.05887207091284959132745069",
         "kappa_n_minus_kappa": "0.00123157532965",
         "sign": "+",
-        "ms": 244090
+        "ms": 264384
       },
       {
         "n": 77,
@@ -172,7 +173,7 @@
         "kappa_n": "0.05886471853370614279190331",
         "kappa_n_minus_kappa": "0.00122422295051",
         "sign": "+",
-        "ms": 281549
+        "ms": 285747
       },
       {
         "n": 78,
@@ -181,7 +182,7 @@
         "kappa_n": "0.05885722550346492813334825",
         "kappa_n_minus_kappa": "0.00121672992027",
         "sign": "+",
-        "ms": 324169
+        "ms": 322508
       }
     ],
     "local_exponent_min_near": 72,
