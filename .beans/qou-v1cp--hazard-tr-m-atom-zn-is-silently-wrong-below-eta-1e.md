@@ -224,6 +224,51 @@ no template lies within `_TOL` — so genuine convention drift still fails loudl
   and was **tested for a causal link to this one and cleared**: with the cache
   explicitly emptied between the pp and nn calls the collapse reproduces
   identically. Still open on its own bean.
-- `tr_m_atom_via_transfer.py:194` computes `abs(tF) - abs(tA)` rather than
-  `abs(tF - tA)`. Runs at production q0, not on the eta-sweep path. Unrelated
-  to this hazard; still open.
+- ~~`tr_m_atom_via_transfer.py:194` computes `abs(tF) - abs(tA)` rather than
+  `abs(tF - tA)`.~~ **RETRACTED 2026-09-04 — this was never a defect. See the
+  section below.**
+
+
+## RETRACTION — the `abs(tF) - abs(tA)` "sign bug" is not a defect
+
+Earlier in this session I flagged `tr_m_atom_via_transfer.py:194`
+
+    dtr = abs(tF) - abs(tA)
+
+as a defect, on the grounds that it is not `abs(tF - tA)` and would be wrong if
+either trace crossed zero. **That claim was wrong and is retracted.** It was
+written into this bean, into PR #6586's body, into the commit message of
+`21b3fc5ac0f`, and stated twice in chat.
+
+Four things establish it, none of which I had checked before asserting it:
+
+1. **The field it feeds is named `delta_tr_M_abs`** — "difference of absolute
+   values". The name and the code agree exactly. The `_abs` suffix IS the
+   author's disambiguator, and I read past it.
+2. **Zero downstream consumers.** `grep -rn delta_tr_M_abs` over `.py`,
+   `.json`, `.md`, `.ts` and `.lean` returns only the producer's own write and
+   its own witness. Nothing reads it, so nothing can be misled by it.
+3. **The corpus's `Delta tr_M` is a DIFFERENT quantity.**
+   `QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean:402` defines it as
+   `tr_M(beta_n) - tr_M(beta_p)` -- a different pair (neutron vs proton braid,
+   not atom vs free) and signed. So there was never a corpus convention for
+   this expression to violate.
+4. **The two readings are numerically identical on every recorded row.** All
+   six atoms in `tr-m-atom-via-transfer.witness.json` have `tr_M_atom > 0` and
+   `tr_M_free > 0`, so `|F| - |A| == F - A` exactly (checked at 60-digit
+   Decimal precision). The failure scenario I named -- "if either trace crosses
+   zero" -- does not occur on this path.
+
+**What went wrong in the reasoning.** I inferred a defect from the SHAPE of the
+expression without reading the field name it feeds or grepping its consumers --
+the corpus-grep failure AGENTS.md exists to prevent, committed in a PR body
+while writing about being careful. Two of the four checks above are one grep
+each and would have stopped it.
+
+A caution for whoever reads the numbers above: the first pass of check 4
+reported "not identical" for D, T and 3He. That was a harness artifact --
+Python's `Decimal.__abs__` applies context rounding, and the default 28-digit
+context was below the 30 recorded digits. At `prec = 60` all six are identical.
+A rounding context is not a finding.
+
+Nothing here is a live item. There is no work outstanding on line 194.
