@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-04T04:39:52Z
+updated_at: 2026-09-04T07:33:12Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -459,3 +459,41 @@ SCOPE (a), narrow: one shape, all-positive inserted crossings, sampled positions
 4 isotopes. NOT a proof that no non-monotone word reopens route 3 (a mixed-sign
 insertion could cancel a linking number and is not covered). The `Delta = 2`
 one-bit triples remain the stated residual. The Lean is UNCHANGED.
+
+
+
+## 2026-09-04 — LINKS, and a correction to my own held-literature counts
+
+Owner asked for links. Building the list exposed two errors in the counts I put in
+this bean, the ledger and PR #6560 — both mine, both one cause: I reported
+**keyword hits on files** and called them **held sources on a topic**.
+
+**Files vs works.** Four hits are `duplicate_of` copies of another hit (verified
+from section front-matter): `0808.1533v1` of `v3`; `0901.1612v1` of `deturck-…`;
+`symmetry-11-01298` of `1910.09966v1`; `s10052-023-11923-y-a` of `2306.13098v2`.
+
+**The patterns were far too wide.** Route 2's was `asymptotic crossing|Freedman`,
+and "Freedman" matches any bibliography containing a person of that name.
+
+                      reported   contains core term        distinct works
+    route 1 SLq(2)       10       2  (`SLq(2)`)                  2 core + 6 milieu
+    route 2 Freedman-He  12       4  (`asymptotic crossing`)     3
+    route 3 Milnor        9       6  (`Milnor|triple linking`)   5 core + 2 adjacent
+
+So route 2's "12 held documents" is **three works**. **Do not quote 10 / 12 / 9.**
+
+**No verdict changes.** Every result rests on core-tier sources; the correction is
+about how much surrounding literature exists, not about what the primary source
+says. What changes is what "held" is worth as a claim.
+
+**Four held sources have NO resolvable external link** — `khesin2003`,
+`moffatt-ricca-helicity`, `mellor-melvin2003`, `evans-berger1992` carry neither
+`DOI` nor `URL` in `references.ts`, and no arXiv/DOI stamp appears anywhere in
+their held text (checked in BOTH tiers). **Two are core route-2 sources** (Khesin;
+Moffatt & Ricca). No identifier is invented. Worth a bibliography pass — not done.
+
+Also: `arxiv-2106.01332v4` is held but **not registered** in `references.ts`.
+
+Per-work links (arXiv/DOI + held-copy path + the exact section:line for the two
+load-bearing citations) are in the §Links section of
+`docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.
