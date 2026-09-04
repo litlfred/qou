@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T12:27:24Z
+updated_at: 2026-09-04T21:00:09Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -6615,3 +6615,54 @@ level (`Im(q₀) = 0`, verified) from the **fibre** level (`Im(q)` unconstrained
 An elliptic generator at real `q₀` needs its imaginary part from somewhere, and
 the fibre level is the only place the framework leaves for it. Nothing here
 derives such a generator or shows one exists.
+
+
+## 2026-09-04 — my elliptic-generator recommendation was ALREADY REFUTED (PR #6688)
+
+I recommended, twice, pursuing the elliptic-generator condition via
+`conj:im-q-physical-role`. **Corpus-grep on starting: that is refuted.** The arc
+is well developed and current, and I did not know it:
+
+- **step 18** `HolonomySpectrumSignObstruction` — the generator must be elliptic;
+- **step 19** `ImQCannotSupplyEllipticGenerator` /
+  `qbeta_imq_elliptic_generator_refutation_probe.py` — **Im(q) is NOT the
+  source.** `|q|² = x² + y² > 1` for every `y` since `Re q = 1.10998 > 1`, so a
+  purely elliptic generator is impossible outright; forcing `Re[character]` onto
+  0.998399 needs `Im(q) = ±0.139956` and leaves `Im[character] = 0.014069`,
+  8.40× the entire deviation and 18074σ.
+- `qbeta_bring_elliptic_generator_probe.py` — Bring's elliptic curve passes D0
+  *in principle* but hands the ladder no phase;
+- `qbeta_decay_operator_elliptic_spectrum_probe.py` — **an elliptic generator
+  DOES exist in the corpus**: `Δ_L = NF(n) − NF(p)`, an algebra element (not a
+  braid image) in the (2,1) block. Wrong phase: `θ = 2.0204` vs required
+  `0.056595`, a factor of **35.7**.
+
+So there was nothing for me to add by "researching the elliptic condition". What
+I did instead was audit the number every candidate is scored against.
+
+### The target is experimentally anchored — my circularity worry was WRONG
+
+I expected `0.0565947` to be the ladder's own `cos(α − u/2)` output, which given
+#6625 would make every branch-3 candidate scored against a fit. It is not:
+
+    required = Q_exp / (Q_A·(1 − u²)) = 0.99839766871925519
+
+uses only the `Q_A` closed form, the structural `c_2 = −1`, and CODATA — no `z`,
+no `α`, no fitted `c_k`. **Branch 3 has a legitimate criterion.** Recorded as a
+refuted worry, not dropped.
+
+### The defect that IS there
+
+`arccos(required) = 0.0566173`. The **quoted** target `0.0565947` is `|α − u/2|`
+— the form's own phase — matching it to `6.6e-7` while matching the experimental
+value only to `4.0e-4`.
+
+**Correct branch-3 target: `θ_required = 0.0566173`, not `0.0565947`.**
+
+Changes no verdict on record (0.0399 % against `Δ_L`'s 35.7× miss). Matters only
+for a candidate landing inside 4e-4 — which is the regime in which a branch-3
+result would be *declared*, so it should be right before then.
+
+Convention note, so it is not misread: the C form sits 1.28e-6 from the
+requirement, the D form 6.02e-4, ~470× further. Consistent with the ladder having
+been **built** in C; **not** evidence for C, which is excised.
