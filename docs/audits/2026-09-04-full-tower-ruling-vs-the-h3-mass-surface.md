@@ -131,3 +131,75 @@ order-zero rendering and the ruling is satisfied in substance. If it does not,
 the two routes disagree and that gap is the real finding. `qou-tower`'s walk
 measured *distributional* quantities (top-block share, participation,
 argmax partition) against magic numbers — it never compared a binding energy.
+
+
+---
+
+# Follow-up, same day: the two routes localised — and each sits on a schedule the corpus has already excluded
+
+Probe: [`nucleon_word_route_divergence_probe.py`](../../computations/probes/nucleon_word_route_divergence_probe.py), **6/6**.
+
+## The trace machinery is clean
+
+`tr_M(b_i) = Σ_λ y_λ χ_λ(b_i)` holds on **all six** NF basis elements at `n = 3`,
+worst residual `5.39e-16` — the float64 floor of the characters used. This is the
+same invariant whose failure
+[`2026-05-19-trm5-markov-bug.md`](2026-05-19-trm5-markov-bug.md) used to catch a
+real bug (`TR_M[5]`: `z³` → `h·z² + z`). It is not failing now.
+
+So the A=1 disagreement is **not** in `TR_M`, `y_λ`, or `χ`. By elimination it is
+the word — and it is.
+
+## Two differences, both in closed form
+
+    canonical:  11 letters/nucleon + (A-1) interfaces        LINEAR CHAIN
+    NF:         11 letters/nucleon + C(A,2) interfaces + Z   COMPLETE GRAPH
+
+Both reproduce every measured length across 9 configurations to A = 6. The
+`C(A,2)` is read from the code (`for prev in range(k)` runs over every previous
+nucleon); the `A-1` is confirmed against `atom_braid_word_3A`'s own accounting of
+`2A + 1` non-braid letters as *"two per nucleon … plus one per interface"*.
+
+The extra `Z` is a trailing `for _ in range(Z)` loop at the end of
+`build_atom_nf_mp` — one letter per **proton**, and the only letter in that
+function carrying no comment. At A=1 there are no interfaces, so it alone accounts
+for the 5.045e-4.
+
+## Why the schedules matter
+
+AGENTS.md records a proved, sorry-free Lean exclusion for **each** of them as a
+coordination law for the extensive binding term:
+
+| schedule | route | excluded by |
+|---|---|---|
+| complete graph `C(A,2)` | NF | `QOU.Mass.CoordinationSaturation` — `B/A = ε(A−1)/2` is unbounded, no plateau; observed saturation forces bounded degree |
+| linear chain `A−1` | canonical | `QOU.MassTheory.ChainBondOrderDependence.orderIndependent_iff` — arrangement-invariant iff `L_pp = L_pn = L_nn`, and a nucleus has no arrangement |
+
+The two routes are therefore **not** "one right, one wrong". They are the two
+shapes the extensive-term arc has separately proved cannot carry the binding law.
+They coincide only for `A ≤ 2`; `A ≥ 3` is where they must disagree.
+
+## What this does NOT establish
+
+- **No defect is identified in either builder**, and nothing here says which word
+  is the nucleon. That is a convention judgement about what the nucleon braid
+  *is*.
+- Those Lean results exclude these graphs **as coordination laws for the
+  extensive term**. They do not by themselves forbid a word builder from using
+  such a schedule for another purpose, and whether either builder *claims* to be
+  a coordination law is **not** established. Inferring it would be the
+  set-level-to-truth-value slide recorded as `da-arity-conflation`.
+- The `A ≥ 2` trace comparisons remain **uninterpretable** on their own: the
+  canonical route is colour-weighted and `compound_shift_nf` has no colour at
+  all, so those rows also measure the convention difference. Only `A = 1` is
+  clean.
+
+## A method note worth more than the result
+
+The first version of this localisation said the two routes apply *"the same
+eleven letters in a different order"*, from a **hand transcription** of the NF
+builder that I had explicitly flagged as the weak link. Recording the letters
+from the running code instead (wrapping the module-level `hm_mp`) showed 12
+letters, not 11, and unequal multisets. The multiset match that made the wrong
+reading convincing was an artifact of the miscount. The probe records the word
+from execution for exactly this reason.
