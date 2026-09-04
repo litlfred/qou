@@ -552,3 +552,45 @@ thesis — each found *after* writing the claim rather than before. Three of the
 four were in files a grep had already put in front of me. **A corpus this
 heavily audited should be assumed to hold the finding already; the default
 posture for a "new" vacuity result is to look for whose it is first.**
+
+---
+
+# Three independent routes to one discriminator (added at check-in)
+
+While this correction was being written, a sibling session landed
+[`b5a10c6a28`](https://github.com/litlfred/qou/commit/b5a10c6a28) on `main`
+— *"a fourth carrier-vacuity shape — an unconsumed `holds : Prop` field"* — and
+reached the same self-correction from a third direction:
+
+> **A Prop-TYPED FIELD IS NOT VACUOUS ON ITS OWN, and my first rule
+> over-reported 101 carriers by assuming it was.** Declaring an abstract
+> predicate and then CONSUMING it in a sibling is the correct §3b-cond pattern.
+
+Its worked counter-example is `QOU.Torsion.BraneBoundaryContext`, whose five
+`Prop` fields are all consumed by `boundary_active` and
+`impl_brane_boundary_structure` — so that carrier states a real implication and
+the detector must stay silent on it. Its criterion is **UNCONSUMED**: a
+`Prop`-typed field whose name appears in no other field's type in the same
+carrier. `101 → 42` on that narrowing.
+
+So three audits, three probes, three different shapes measured — and one rule
+underneath:
+
+| audit | shape measured | discriminator |
+|---|---|---|
+| `qou-z9ws` (2026-08-30) | context class inhabited by `Unit`/zero | downstream **derives** vs **projects** |
+| `b5a10c6a28` (2026-09-04) | a bare `Prop`-typed field | the field is **consumed** by a sibling field |
+| this one | the class satisfies itself | (adopted: the two above) |
+
+**The convergence is the result, not any one count.** Each route began by
+flagging on *shape* and each had to narrow to *use* — over-reporting first, in
+the same direction, by roughly the same factor. A carrier's syntax does not
+decide whether it asserts anything; what the rest of the file does with the
+field does. Anyone building the next detector in this family should start from
+the narrowed rule rather than re-deriving it, and should expect the first
+version to over-report.
+
+Note also that `b5a10c6a28`'s 42 and `qou-tsnp`'s 12 are **different
+denominators** — corpus-wide unconsumed `Prop`-typed fields versus the
+`holds : Prop` conjecture-sibling carriers specifically — and should not be
+compared as though one supersedes the other.
