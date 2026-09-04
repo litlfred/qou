@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T12:43:30Z
+updated_at: 2026-09-04T12:49:40Z
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -87,3 +87,42 @@ the constraint relates two EXTERNAL functions through it, so it is neither
 clearly free nor clearly constraining.  Not guessed at.
 
 **Still not done:** applying the fixes.  Measurement only so far.
+
+
+## RETRACTION (same day) — the `[IsAMEValue]` recommendation was wrong
+
+I recommended porting the `[IsAMEValue Z N B_AME]` binder into
+mass-theory/q-integer-mass-formula.lean, calling it "a one-binder fix" and the
+gated form "the correct form already in the tree".  Retracted in the audit doc,
+on PR #6657 and here.
+
+**Why it is wrong.**  The gated form is laundered one level up.  `IsAMEValue`
+is documented as carrying "the two physical invariants every real entry
+satisfies" and has a THIRD field, `fits_bound`, whose own docstring reads
+"Trivialized bound hypothesis to close sorry" and which asserts the 1 %
+agreement outright.  So `fits_AME_conditional` there reduces to
+`∀ …, [claim] → [claim]`, and `canonical` discharges `fits_AME` by projecting
+it (`f_magic := fun _ => 0` makes the two sides definitionally equal).  Porting
+the binder trades a vacuous-because-unsatisfiable statement for a
+`claim → claim` one WITH a model available.
+
+**New recommendation: touch neither file.**  Author's call, already framed on
+bean `qou-hjf4`.
+
+**How I missed it** — ran none of the six corpus-grep paths for
+`QIntegerMassFormula`.  Paths 1 (`docs/audits/`) and 6 (`.beans/`) each hold
+the answer alone: `qou-hjf4`, and Finding B of
+docs/audits/2026-08-24-faithful-instance-family.md, which carries the same
+two-file comparison I rebuilt and states the conclusion I contradicted.
+
+**What survives.**  `¬ Nonempty QIntegerMassFormula` is a machine-checked proof
+of what that note asserted in prose; a proof is stronger and re-runnable.
+
+**Not a duplicate of qou-hjf4**, mechanically: that census
+(scripts/trivially-inhabiting-instance-census.py) keys on `INSTANCE_HEAD` — an
+unguarded global `instance` with constant data content.  This is about the
+CLASS and needs no instance.  Measured: of the ten `class BorromeanQuark`
+declarations exactly ONE has an instance in the tree
+(observations/borromean-quark.lean:120); the other nine have none, so an
+instance-keyed census cannot see them at all.  Complementary; neither subsumes
+the other.
