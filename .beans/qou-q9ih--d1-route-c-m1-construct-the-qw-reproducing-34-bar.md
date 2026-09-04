@@ -859,3 +859,68 @@ valid for reading the grading and **not** automatically valid as D1-b nodes.
 The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
 routes now give the same six numbers (orbit degrees in entry (8), polynomial
 degree here), so neither is a parsing artifact.
+
+── 2026-09-04 (10): the ARROW count is FORCED — 0 or 1, by Gabriel, not by a fit ──
+
+`computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py`, **8/8**.
+Entry (8) closed the node question; entries (8)–(9) left the arrows open and I
+reported having no lead. The lead was a counting argument, not a search.
+
+### The lever
+
+For an **acyclic** quiver with `W = 0`, **Gabriel's theorem**: finite
+representation type ⟺ the underlying graph is a disjoint union of **simply-laced
+Dynkin** diagrams, and then `#indecomposables = #positive roots`. Every ADE
+diagram is a **tree**, so a rank-`V` union with `k` components has exactly
+`V − k` edges.
+
+**So the arrow count is a function of the Dynkin type, and the type is a
+function of `(rank, #positive roots)`.** The rank is the node count — arithmetic,
+from entry (8). The spectrum size the corpus supplies. The pair pins everything.
+
+### The answer
+
+| reading | 4₁ | 5₂ | arrows |
+|---|---|---|---|
+| abelian **is** a node | `V=3, spec 3` → **A₁+A₁+A₁** | `V=4, spec 4` → **A₁⁴** | **0** |
+| abelian is **not** a node | `V=2, spec 3` → **A₂** | `V=3, spec 4` → **A₁+A₂** | **1** |
+
+**All four are UNIQUE** — exactly one ADE type hits each `(rank, spectrum)`
+pair. The arrow count is not chosen, it is read off. And each reading is
+internally consistent across both knots, rather than one knot working and the
+other not.
+
+**The zero-arrow branch independently re-derives M2.** `A₁^V` is precisely the
+potential-free **abelianized** quiver that `AomegaM2BPSCohomology` said already
+realizes the target — reached here from Gabriel rather than from the
+Davison–Meinhardt plethystic log. Two routes, same object.
+
+### What this leaves open — a much smaller question
+
+Not "what are the arrows" but **"is the abelian connection a node?"** — a
+question about a convention the corpus already has an opinion about, not new
+mathematics.
+
+### 🛑 The assumption chain, because the result is conditional on it
+
+- **(A1) `W = 0`** — the corpus's own M2 finding.
+- **(A2) acyclic** — assumed; Gabriel requires it.
+- **(A3) FINITE spectrum** — **load-bearing.** Infinite ⇒ non-Dynkin ⇒ nothing
+  forced.
+- **(A4) simply-laced** — B/C/F/G need valued quivers and are excluded, not
+  overlooked.
+- **(A5) the recorded DT count is the INDECOMPOSABLE count.** If the corpus's
+  `(4,3)` are instead per-ray counts of **one** quiver, the total is ≥ 7 and
+  rank-4 `A₁+A₃` (7 roots, **2 arrows**) becomes the candidate. **That reading
+  is not tested here** and is the first thing to check before building on this.
+
+### Method note
+
+No search against the target. The ADE enumeration is exhaustive per rank
+(2→2 types, 3→3, 4→6, 5→9), exact integer arithmetic, and a target is hit by
+exactly one type or by none — there is nothing to tune. Controls: positive-root
+counts reproduce the ten known values; every generated union has the requested
+rank (so `edges = rank − components` applies); the enumeration is verified
+complete at each rank.
+
+Scope-(a). Nothing wired, nothing fitted, `A_ω` underived.
