@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T08:14:33Z
-updated_at: 2026-09-04T12:48:18Z
+updated_at: 2026-09-04T13:47:48Z
 ---
 
 Found while wiring `qou-fr4d` (certified LP duality residuals). NOT caused by
@@ -228,3 +228,48 @@ question:
 
 Successor work, if anyone wants it, is a per-producer serialization fix on the
 `nucleus-real-sdp-*` family. That is small, local, and needs no ruling.
+
+
+## FOURTH CORRECTION: "gap != 0 implies a solve happened" is FALSE
+
+The split recorded above -- 29 closed-form / 15 real-solve -- used
+`duality_gap == 0` as the discriminator. **That heuristic is wrong on 6 of the
+9 remaining hits**, and the audit now resolves each against the PRODUCER
+SOURCE instead of guessing from the number:
+
+| producer | solver call | verdict |
+|---|---|---|
+| `delta_n2_placeholder_audit` | **none** | no primal exists |
+| `deuteron_delta_i_audit` | **none** | no primal exists |
+| `compound_binding_via_differences` | **none** | no primal exists |
+| `confinement-operator-selection` | **none** | no primal exists |
+| `gap_a1_binding_k_sdp_feasibility` | **SDP** | primal is the MATRIX `X_star` |
+| `binding-lp-delta-audit` | — | witness has no `scriptFile` |
+| `habiro_correction_shadow_price_test` | LP | **fixable** |
+| `he3_pairknot_composite_lp_probe` | LP | **fixable** |
+| `nucleus_operator_selection_sdp` | LP | **fixable** |
+
+**Genuinely fixable: 3, not 9.** Four producers build dual-shaped records
+without calling a solver at all -- their non-zero gap comes from elsewhere --
+and one is a real SDP, where a *vector* `x_star` is correctly absent because
+the primal is a matrix.
+
+A second scope bug in the same report: it was scoped to UNDECLARED-backend
+records, which hid `habiro_correction_shadow_price_test` (it declares one) and
+made the fixable count read 2. The no-primal question is independent of
+whether a backend was declared; the report now covers all leaf records.
+
+## Running total of this bean's corrections
+
+Every headline in it has now been corrected at least once, all by my own
+re-measurement:
+
+    "107 of 241 f64-era/unattributable"  -> 1 live record
+    "105 undeclared"                     -> 56  (54 wrappers)
+    "84 blind to the residual check"     -> 44  -> 15 -> 3
+    "should x_star be required?"         -> No, withdrawn
+
+The direction is consistent and worth noting for whoever reads this next:
+**every correction made the problem smaller.** A detector written before its
+subject is understood over-flags, and this bean is four instances of that in a
+row.
