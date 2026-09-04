@@ -1,11 +1,11 @@
 ---
 # qou-8qby
 title: 'GAP: braid-action-tensor.lean has 2 unproved diagram chases after Mathlib drift (was 5 errors)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T22:26:44Z
-updated_at: 2026-09-03T22:27:27Z
+updated_at: 2026-09-04T05:06:42Z
 ---
 
 ## State

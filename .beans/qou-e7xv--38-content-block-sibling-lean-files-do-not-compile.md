@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T04:48:08Z
+updated_at: 2026-09-04T05:07:56Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -202,3 +202,17 @@ townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
 categorical-transfer-matrix (`qou-xdwp`) / gb-depth-period-correspondence /
 categorical-q-ext-deriv-unique 3, braid-action-tensor (`qou-8qby`) 2,
 vertex-operator (`qou-xdwp`) 1.
+
+
+## 2026-09-04, third pass — 38 → 6
+
+`vertex-operator` (a §7c straddle: `ReebBundle` is ℝ-indexed, this file is over
+`R_q`; bundle now a type parameter — plus `axiom ope_is_skein` converted to a
+theorem whose proof is record construction, so assuming it bought nothing) and
+`braid-action-tensor` (both failures were `≫` right-association; `slice_lhs`
+re-brackets — `qou-8qby` closed).
+
+Remaining 6: spin-involution-lp-dual-invariance 22 (`qou-0xrn`),
+townsend-biot-savart-strain 7, vertex-algebra-jet-relations 4,
+categorical-transfer-matrix (`qou-xdwp`) / gb-depth-period-correspondence /
+categorical-q-ext-deriv-unique 3.

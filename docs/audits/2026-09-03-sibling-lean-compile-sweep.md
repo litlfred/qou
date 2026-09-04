@@ -358,3 +358,51 @@ direction is visible to `#print axioms`.
 | 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
 | 2 | `braids-and-knots/braid-action-tensor` (bean `qou-8qby`) |
 | 1 | `mass-theory/vertex-operator` (bean `qou-xdwp`) |
+
+
+## Update 2026-09-04, third pass — 38 → 6
+
+**32 of the 38 at 0 errors.** Two more, both cases where the compile error was
+again not the whole story:
+
+`mass-theory/vertex-operator` — `Function expected at ReebBundle`. Unreachable
+(sibling cannot import sibling) **and type-wrong**: `def:reeb-bundle` is
+`structure ReebBundle (q : ℝ)` — archimedean, `q > 1`, `Real.exp` holonomy, its
+own header saying "NOT part of the formal proof chain" — while this file is over
+`R_q = ℤ[q, q⁻¹]`. Applying an ℝ-indexed structure to a Laurent polynomial is
+the §7c straddle, and `autoImplicit` turned it into a metavariable rather than a
+type error. `VertexOperator`/`OPE` now take the base space as a type parameter
+`B`; an archimedean consumer instantiates `B := ReebBundle q₀` after τ.
+
+The same file carried `axiom ope_is_skein`, whose `q` was auto-bound because the
+real binder had been commented out. Now a theorem — and its proof is
+`⟨⟨Y₁, Y₂, q, -q_inv_param⟩, rfl, rfl, rfl, rfl⟩`, **because `OPE` carries the
+eigenvalues as fields**. So the axiom was simultaneously heavyweight in
+`#print axioms` for every downstream statement and empty in content. What it
+establishes is that such an OPE exists; what it does not is that the Hecke pair
+is *forced* — that needs `OPE` to carry the generator's action and derive the
+eigenvalues, and until then `q` and `-q⁻¹` are put in by hand.
+
+`braids-and-knots/braid-action-tensor` — both errors were
+`rewrite failed: Did not find an occurrence of the pattern` on patterns that
+**are** present, just not as syntactic subterms: `≫` is right-associated, so
+`α ≫ (V◁β ≫ (V◁β⁻¹ ≫ α⁻¹))` has no adjacent whisker pair, and `hex`'s RHS is the
+first three factors of a goal that parses as `X ≫ (Y ≫ (Z ≫ α⁻¹))`.
+`slice_lhs 2 3` and `slice_lhs 1 3` re-bracket first — the tool §5's tactic
+table already names for diagram work. `yang_baxter_braiding`, which the file
+exists for, now typechecks. Bean `qou-8qby` closed.
+
+**Same error text, opposite diagnosis, worth keeping straight:** in
+`chi-v21-hoefsmit` the missing pattern was genuinely gone (`ring_nf` had
+normalised it away) and the proof was unfinishable as written; here it is
+present and only mis-bracketed. Check whether the subterm exists modulo
+associativity before concluding a proof is wrong.
+
+### The 6 that remain
+
+| errors | file |
+|---|---|
+| 22 | `mass-theory/spin-involution-lp-dual-invariance` (bean `qou-0xrn`) |
+| 7 | `fluid-dynamics/townsend-biot-savart-strain` |
+| 4 | `climax-volume-mass/vertex-algebra-jet-relations` |
+| 3 | `mass-theory/categorical-transfer-matrix` (bean `qou-xdwp`), `mass-theory/gb-depth-period-correspondence`, `quantum-observable-universes/categorical-q-ext-deriv-unique` |
