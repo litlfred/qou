@@ -116,3 +116,97 @@ is a substantially better rung than "acquire a paper", and it is work I can do.
 **NOT claimed:** that route 2 succeeds. Whether `H₁(Σ)` is the right lattice for
 the σ is exactly as open as route 1 was. Only the *availability* claim is
 corrected.
+
+## 2026-09-04 🛑 CORRECTION TO MERGED WORK — "eq (98) is rank 3" is impossible
+
+The first pass merged as **#6599 / `74a927b6af`**, and its headline verdict **C4
+is void**. Found while starting the next rung, by asking what rank the target
+lattice could have.
+
+**What merged:**
+
+> "eq (98) is a rank-3 antisymmetric integer matrix. The NZ datum's
+> antisymmetric content has rank 2, always. ⇒ scope-(b) exclusion."
+
+**eq (98) has rank 2.** I wrote its **size** (3×3) and then used it as a **rank**
+in a rank comparison. And rank 3 was never available, for a reason that takes one
+line: `det A = det(−Aᵀ) = (−1)ⁿ det A`, so an odd-size antisymmetric matrix is
+singular — **an antisymmetric matrix always has even rank**. Measured:
+`det(eq 98) = 0`, exact rank over ℚ = **2**.
+
+So the comparison put a *size* against a *rank*, and **both objects are rank 2** —
+which makes the NZ cusp block **more** plausible as a carrier, not less. The one
+invariant I used to exclude it is the one on which the two agree.
+
+**What actually discriminates them.** A rank-2 antisymmetric integral form is
+`[[0,d],[−d,0]] ⊕ 0` up to `GL(ℤ)`, so the elementary divisor `d` is the complete
+invariant. By Smith normal form:
+
+| form | SNF | `d` |
+|---|---|---|
+| eq (98) | `[1, 1]` | **1** |
+| NZ cusp | `[2, 2]` | **2** |
+
+**Inequivalent over ℤ, equivalent over ℚ.**
+
+**Re-scoped (b) → (a).** AGENTS.md reserves scope-(b) for exclusions resting on a
+*proved invariant*; the invariant cited was a miscomputed rank, so the label was
+unearned. The defensible statement is scope-(a): *the NZ cusp form is not on the
+nose the eq-(98) form — integral factor 2, and indexed by (μ,λ) rather than by
+the three σ.*
+
+**🛑 THE NZ ROUTE IS NOT EXCLUDED.** Charge lattices are routinely defined only
+up to normalisation, and the two forms agree over ℚ. Anyone reading the merged C4
+as "NZ is dead" is reading a defect.
+
+**Unaffected, because they are measurements rather than inferences:** C1 (GGM
+defines no lattice, 0/0), C2 (NZ edge block exactly zero), C3 (antisymmetric
+content is the rank-2 cusp at ±2), C5 (KRSS quivers symmetric), C7 (route 2
+exists, repo has both halves). Only C4 is void.
+
+Probe: `computations/qbeta/d1b_eq98_rank_correction_probe.py` (5/5). The merged
+probe now carries a void banner at the top of its docstring.
+
+**The pattern, fifth instance today and the worst of them.** Every previous one
+was caught by a control or a grep before it reached anyone. This one **merged**.
+The common shape: a quantity read at the wrong type — a Stokes constant read as
+an object count, an antisymmetry read as evidence, a population read as a
+singular fact, and now a matrix size read as a rank. Cheapest guard for this
+class: when a number enters an argument as an invariant, **compute it** rather
+than reading it off the shape of the object.
+
+**Follow-through, same session: the `d=1` vs `d=2` gap is NOT an obstruction
+either, and the real difference is a radical.**
+
+The correction above offered `d(eq 98) = 1` vs `d(NZ cusp) = 2` as the surviving
+scope-(a) statement. Measured, that too dissolves:
+
+* `NZ cusp / 2 = [[0,1],[−1,0]]`, **integral and unimodular**. So the NZ cusp
+  form is `2 ×` a unimodular rank-2 form and eq (98) is already unimodular on its
+  support. They differ by an **overall factor 2** — a normalisation convention
+  for the NZ symplectic form, not a lattice-theoretic obstruction.
+
+So **even the re-scoped (a) statement is not evidence against the NZ route.**
+Three successive verdicts on this comparison have now each been weaker than the
+last: scope-(b) exclusion → scope-(a) "not on the nose" → **no obstruction from
+the form at all**.
+
+**What genuinely survives is one thing, and it is new.** eq (98) has a
+**1-dimensional radical**, spanned by the axis vector `(Ω₂₃, −Ω₁₃, Ω₁₂) =
+(−3,−3,4)`; verified `eq(98)·axis = 0`. The NZ cusp form has none. So the
+difference is not rank and not the divisor — it is that eq (98) lives on a
+**rank-3 lattice with a null direction** while the NZ cusp form lives on a
+**rank-2 lattice without one**.
+
+**Guard, because this corpus invites exactly this mistake:** the radical being
+built from the `Ω` entries is **forced**, not a coincidence. Any 3×3
+antisymmetric matrix is the cross-product matrix of its axis vector, so
+`(−3,−3,4)` carries no information beyond the entries themselves. **Read no
+numerology into it.**
+
+**Where that leaves the rung.** In Seiberg–Witten terms a null direction of the
+Dirac pairing is a **flavour** charge. So the open question for the NZ route is
+no longer "why rank 2" — it is **"where is the third, null direction"**. That is
+a sharper and more answerable question than the one this bean opened with.
+
+Probe: `d1b_eq98_rank_correction_probe.py`, now 7/7.

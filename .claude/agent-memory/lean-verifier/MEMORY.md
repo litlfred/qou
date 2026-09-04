@@ -105,6 +105,17 @@ cache (it was, 2026-09-04). Run the restore **serially** — the global
 partial restore is normal: 2970 of Mathlib's 6996 modules, so outside that cone
 `object file … does not exist` is a gap, not a defect. Detail in the sibling.
 
+## TRAP — `/tmp/lean-v4.24.0` IS the toolchain; "reclaiming" it bricks Lean
+
+`~/.elan` is only **13 MB**: both `~/.elan/toolchains/lean-v4.24.0` and
+`…/leanprover--lean4---v4.24.0` are **symlinks to `/tmp/lean-v4.24.0`** (2.5 G),
+wired by the SessionStart `setup-elan-symlinks.sh`. So the top `du` entry under
+`/tmp` is load-bearing and `rm`-ing it destroys the environment. Measured
+2026-09-04 while triaging a container at **1013 M free / 98 %**, one step from
+writing "3.2 G recoverable" into a report. Only the **697 M
+`/tmp/lean-v4.24.0-linux.zip`** is genuinely reclaimable. `readlink -f
+~/.elan/toolchains/*` before proposing any `/tmp` cleanup.
+
 ## TRAP — the restore's temp tarball is ~1.6G and nothing reaps it
 
 One leaked `/tmp/tmp.*` survived thirteen days and drove the container to

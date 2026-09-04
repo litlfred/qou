@@ -1,5 +1,20 @@
 # The leading order is strongly A-dependent; by k = 11 the A-dependence is gone
 
+> **🛑 NAMING CORRECTION (added 2026-09-04).** The `c_k` in this document are
+> **NOT** the Q_β precision-ladder `c_k` that
+> [`ck-dk-canonical-registry.md` §2](../coordination/ck-dk-canonical-registry.md)
+> governs, and not that registry's `a_n` either. They are the `ℏ_q`-expansion
+> coefficients of `Δtr = tr_M(W_free) − tr_M(W_atom)` — a **third object with no
+> registry row**. The separation is not subtle: ladder `c₂ = −1`, `c₃ = −2.0693`;
+> here `c₂ = +29.90`, `c₃ = +247.98`. The registry's `a_n` is excluded by its own
+> 3-term recursion (predicts `a₂ = −1.52` against an actual `27.87`). This
+> matters because the ladder's headline claim is about **the non-monotonicity of
+> a `c_k` series**, and so is this document's — same glyph, same-sounding claim,
+> unrelated objects. Full working:
+> [`2026-09-04-c3-confirms-the-crossover-comparable-not-diverging.md`](2026-09-04-c3-confirms-the-crossover-comparable-not-diverging.md).
+> The glyph came from PR #6492's probe; not checking the registry before
+> propagating it across three documents is mine.
+
 **Cross-check between two independently-derived results, verified against landed
 code rather than against a PR comment.** Beans `qou-brng` / `qou-pdg9`.
 

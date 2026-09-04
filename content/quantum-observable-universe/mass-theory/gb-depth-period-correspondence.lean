@@ -78,34 +78,84 @@ class GBDepthPeriodCorrespondence (q : R) where
   sharpness :
     ∀ n : ℕ, n ≥ 1 → Nonempty (GroupLikeDepth q n)
 
-/-- **Conditional theorem (downstream of the keystone).** The
-    figure-8 instance of B1 — the depth-2 row — is verified
-    numerically in `conj:bring-figure-eight-depth-2-witness`. The
-    conditional Lean theorem: assuming the keystone class, the
-    depth-2 grouplike `Li_2^q(ζ_6)` archimedean-realizes to a
-    period in `P_2`. -/
--- Declare the specific grouplikes as opaque constants
-opaque Li2_zeta_6 (q : R) : GroupLikeDepth q 2
-opaque Li3_zeta_5 (q : R) : GroupLikeDepth q 3
+/-! ## Consequences, all conditional on the keystone class
 
+### Why the depth-`n` grouplikes are PARAMETERS, not `opaque` constants
+
+This section used to open with
+
+    opaque Li2_zeta_6  (q : R) : GroupLikeDepth q 2
+    opaque Li3_zeta_5  (q : R) : GroupLikeDepth q 3
+    opaque volume_grouplike (q : R) (M : Hyperbolic3Manifold) : GroupLikeDepth q 2
+
+which Lean rejected with `failed to synthesize Inhabited (GroupLikeDepth q 2)`
+— an `opaque` constant of type `T` may only be introduced once `T` is known to
+be non-empty.
+
+The error is pointing at a real defect, not asking for an `Inhabited` instance.
+**`Nonempty (GroupLikeDepth q n)` is precisely the `sharpness` field of
+`GBDepthPeriodCorrespondence`** — the conjectural half of the keystone, the one
+whose provenance the class docstring traces to Borel's theorem on
+`K_{2n-1}^ind(F) ⊗ ℚ`. Declaring those constants globally would have asserted
+it *unconditionally*, outside the class, which is the laundering
+AGENTS.md §"Axiomatization is NOT a Proof" forbids: supplying an `Inhabited`
+instance to satisfy the elaborator would have made the file compile by assuming
+the thing the file is conditional on.
+
+So the grouplike is taken as an argument. `sharpness` is what produces one, and
+`depth_period_nonempty` below is the honest form of what the three constants
+were reaching for. The names `Li_2^q(ζ_6)`, `Li_3^q(ζ_5)` were in any case
+aspirational: the constants were `opaque` with no characterising property, so
+nothing distinguished them from an arbitrary element of the type. -/
+
+/-- **Conditional (downstream of the keystone).** Under the keystone class, a
+    depth-2 grouplike — e.g. the figure-8 row's `Li_2^q(ζ_6)`, verified
+    numerically in `conj:bring-figure-eight-depth-2-witness` — archimedean-
+    realizes to a period in `P_2`. -/
+-- Ref: [manuscript] prop:gb-depth-period-correspondence
 def figure_eight_depth_2_under_keystone
-    {q : R} [h : GBDepthPeriodCorrespondence q] : GoncharovPeriodFiltration 2 :=
-  -- Ref: [manuscript] prop:gb-depth-period-correspondence
-  h.inclusion 2 (Li2_zeta_6 q)
-
-def bring_trilog_zeta5_depth_3_under_keystone
-    {q : R} [h : GBDepthPeriodCorrespondence q] : GoncharovPeriodFiltration 3 :=
-  -- Ref: [manuscript] prop:gb-depth-period-correspondence
-  h.inclusion 3 (Li3_zeta_5 q)
-
--- For the Volume Conjecture, represent a hyperbolic 3-manifold
-opaque Hyperbolic3Manifold : Type
-opaque volume_grouplike (q : R) (M : Hyperbolic3Manifold) : GroupLikeDepth q 2
-
-def volume_conjecture_under_keystone
-    {q : R} [h : GBDepthPeriodCorrespondence q] (M : Hyperbolic3Manifold) :
+    {q : R} [h : GBDepthPeriodCorrespondence q] (g : GroupLikeDepth q 2) :
     GoncharovPeriodFiltration 2 :=
-  -- Ref: [manuscript] prop:gb-depth-period-correspondence
-  h.inclusion 2 (volume_grouplike q M)
+  h.inclusion 2 g
+
+/-- **Conditional (downstream of the keystone).** Same at depth 3, for the
+    Bring trilogarithm row `Li_3^q(ζ_5)`. -/
+-- Ref: [manuscript] prop:gb-depth-period-correspondence
+def bring_trilog_zeta5_depth_3_under_keystone
+    {q : R} [h : GBDepthPeriodCorrespondence q] (g : GroupLikeDepth q 3) :
+    GoncharovPeriodFiltration 3 :=
+  h.inclusion 3 g
+
+/-- A hyperbolic 3-manifold. Placeholder. -/
+opaque Hyperbolic3Manifold : Type
+
+/-- **Conditional (downstream of the keystone).** Given the volume grouplike of
+    a hyperbolic 3-manifold at depth 2, its archimedean realization is a period
+    in `P_2` — the Volume-Conjecture-shaped consequence.
+
+    `vg` is a hypothesis rather than an `opaque` constant for the same reason as
+    above: an `opaque` function INTO `GroupLikeDepth q 2` asserts that type is
+    inhabited just as a constant does. -/
+-- Ref: [manuscript] prop:gb-depth-period-correspondence
+def volume_conjecture_under_keystone
+    {q : R} [h : GBDepthPeriodCorrespondence q]
+    (vg : Hyperbolic3Manifold → GroupLikeDepth q 2) (M : Hyperbolic3Manifold) :
+    GoncharovPeriodFiltration 2 :=
+  h.inclusion 2 (vg M)
+
+omit [CommRing R] in
+/-- **Conditional (downstream of the keystone).** At every depth `n ≥ 1` the
+    weight-`n` Goncharov period filtration is non-empty.
+
+    This is the content the three deleted `opaque` constants were standing in
+    for, and it is *derived*: `sharpness` gives a grouplike at depth `n`,
+    `inclusion` carries it into `P_n`. Conditional on the class, as it must be —
+    which is exactly what the constants were not. -/
+-- Ref: [manuscript] prop:gb-depth-period-correspondence, §sharpness
+-- Ref: [manuscript] rem:k-theory-period-rosetta (Borel, `K_{2n-1}^ind(F) ⊗ ℚ`)
+theorem depth_period_nonempty
+    {q : R} [h : GBDepthPeriodCorrespondence q] {n : ℕ} (hn : n ≥ 1) :
+    Nonempty (GoncharovPeriodFiltration n) :=
+  (h.sharpness n hn).map (h.inclusion n)
 
 end QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence

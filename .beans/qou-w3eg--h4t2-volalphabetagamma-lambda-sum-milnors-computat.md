@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-04T02:23:05Z
+updated_at: 2026-09-04T10:34:33Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -499,3 +499,16 @@ Neither route to step 1 is a bounded one-turn win; both are genuine Mathlib-gap 
 Corpus DOES have (usable inputs, not the assembly): hasDerivAt_Lob, hasDerivAt_neg_log_two_sin, deriv_deriv_Lob (LobachevskyDerivative.lean); Cl_2 defn+boundary+continuous_Cl_2 (ClausenFunctionMathlibFiller.lean); cLiTwo + local reflection via identity theorem (ComplexDilogBridge.lean, sorry-free, qou-gkco).
 
 Conclusion: step 1 is genuinely multi-session, matching the plan's 'short but needs Cl₂ analyticity' note — the 'short' was optimistic. Recommend either (a) build the antiderivative-of-analytic Mathlib filler as a standalone reusable lemma first, or (b) extend cLiTwo analyticity to the upper unit circle. Step 2 (base integral analytic in (α,β)) remains the multi-session core regardless.
+
+## Step 1a LANDED — Λ' analytic on (0,π) (2026-09-04, session lean-qa-backlog)
+
+New file QOU/Archimedean/LobachevskyDerivativeAnalytic.lean, lean-direct exit 0, all decls [propext, Classical.choice, Quot.sound]:
+- analyticAt_real_sin / analyticAt_real_cos — real sin/cos analytic (Mathlib has ℂ side + AnalyticAt.re_ofReal; no ℝ-side lemma existed).
+- analyticAt_neg_log_two_sin — Λ'(t) = -log(2 sin t) analytic on (0,π); AnalyticOnNhd form too.
+
+Corrects the prior step-1 cost measurement: Mathlib DOES carry Real.analyticAt_log (0<x) and analyticWithinAt_rexp in Complex/Analytic.lean (the earlier Log/-dir grep missed them), and AnalyticAt.re_ofReal is the sin/cos bridge. So Λ' analytic was a one-file win, not multi-session.
+
+STILL OPEN (the genuine multi-session core):
+- Step 1 closure: Λ analytic on (0,π). Blocked on antiderivative-of-analytic — Mathlib has AnalyticOnNhd.deriv (forward) but NO converse. Alt route: Λ θ = Im cLiTwoExt(e^{iθ}) needs cLiTwo analyticity extended from ball(1/2,1/2) to the upper unit circle.
+- Step 2: base integral analytic in (α,β) (differentiation under the integral).
+- Step 3: Mathlib identity theorem (AnalyticOnNhd.eqOn) to glue acute->whole simplex.

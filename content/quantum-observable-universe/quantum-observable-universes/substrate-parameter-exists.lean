@@ -5,7 +5,7 @@ import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Real.Irrational
+import Mathlib.RingTheory.Real.Irrational
 
 
 /-!
@@ -87,12 +87,11 @@ universe u
     arise from the Reeb flow parameterisation.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
-noncomputable def SubstrateParameter.ofConstant
-    (M : Type*) (q₀ : ℝ) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+noncomputable def ArchimedeanSubstrateField.ofConstant
+    (M : Type*) (q₀ : ℝ) (hq_ge : 1 ≤ q₀)
     (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1) :
-    SubstrateParameter M :=
+    ArchimedeanSubstrateField M :=
   { field := fun _ => q₀
-    field_pos := fun _ => hq_pos
     field_ge_one := fun _ => hq_ge
     not_root_of_unity := fun _ k hk => hq_root k hk }
 
@@ -222,7 +221,7 @@ structure CategoricalReeb (C : Type u) [Category.{v} C]
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-noncomputable def SubstrateParameter.ofReebDecomposition
+noncomputable def ArchimedeanSubstrateField.ofReebDecomposition
     {C : Type*} [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] [Preadditive C]
     (M : Type*) (wd : WeightDecomposition C)
@@ -234,7 +233,7 @@ noncomputable def SubstrateParameter.ofReebDecomposition
     -- forms, ensuring `d_q = q⁻¹ d + ℏ_q · π_V ∘ d` is well-typed.
     -- (A `/-- … -/` docstring is not legal between binders; only `--` is.)
     (wd_reeb_compat : wd.forms = reeb.forms) :
-    SubstrateParameter M :=
+    ArchimedeanSubstrateField M :=
   -- Step 1: Build the interpolated differential at q₀.
   -- This uses the Reeb data (d, π_V from wd/reeb) to define d_q.
   let _interp := InterpolatedDifferential.mk' q₀ hq_pos
@@ -247,7 +246,6 @@ noncomputable def SubstrateParameter.ofReebDecomposition
   -- this q₀ produces a valid deformation; the field axioms (positivity,
   -- lower bound, no roots of unity) are inherited from q₀.
   { field := fun _ => q₀
-    field_pos := fun _ => hq_pos
     field_ge_one := fun _ => hq_ge
     not_root_of_unity := fun _ k hk => hq_root k hk }
 

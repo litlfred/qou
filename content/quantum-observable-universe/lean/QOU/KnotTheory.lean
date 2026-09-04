@@ -65,6 +65,43 @@ structure BraidWord where
 def BraidWord.crossingCount (β : BraidWord) : ℕ :=
   β.letters.length
 
+/-- The integer value of a crossing sign: `+1` for `σ_i`, `-1` for
+    `σ_i^{-1}`. -/
+def CrossingSign.value : CrossingSign → ℤ
+  | .positive => 1
+  | .negative => -1
+
+/-- The signed value of a braid letter `σ_i^ε`, i.e. its exponent `ε`. -/
+def BraidLetter.signValue (l : BraidLetter) : ℤ := l.sign.value
+
+/-- **Writhe** of a braid word: the exponent sum
+    `w(β) = Σ_j ε_j` over its letters `σ_{i_j}^{ε_j}`.
+
+    This is the writhe of the Markov closure diagram, and is the
+    `O(n)` computation this file's header promises alongside
+    `crossingCount`.  Unlike the crossing count it is signed, so it
+    is not a knot invariant on its own — it changes under Markov
+    stabilisation — but it is exactly the framing correction that
+    turns the Ocneanu trace into a link invariant. -/
+def BraidWord.writhe (β : BraidWord) : ℤ :=
+  (β.letters.map BraidLetter.signValue).sum
+
+/-- `|w(β)| ≤ c(β)`: the writhe is bounded by the crossing count,
+    with equality iff every letter has the same sign.  Each summand
+    contributes `±1`. -/
+theorem BraidWord.abs_writhe_le_crossingCount (β : BraidWord) :
+    β.writhe.natAbs ≤ β.crossingCount := by
+  unfold BraidWord.writhe BraidWord.crossingCount
+  induction β.letters with
+  | nil => simp
+  | cons l ls ih =>
+    simp only [List.map_cons, List.sum_cons, List.length_cons]
+    refine le_trans (Int.natAbs_add_le _ _) ?_
+    have hl : l.signValue.natAbs = 1 := by
+      cases hs : l.sign <;>
+        simp [BraidLetter.signValue, CrossingSign.value, hs]
+    omega
+
 /-! ## Hyperbolic Volume -/
 
 /-- Hyperbolic volume of a knot complement, with error bound. -/
@@ -124,6 +161,31 @@ def borromeanRings : BraidWord where
      ⟨0, .positive⟩, ⟨1, .negative⟩,
      ⟨0, .positive⟩, ⟨1, .negative⟩]
   components := 3
+
+/-! ### Writhe of the standard braid words
+
+Concrete values, so `BraidWord.writhe` is pinned by computation rather
+than only by its definition. -/
+
+/-- The unknot has writhe `0` (empty word). -/
+theorem writhe_unknot : unknot.writhe = 0 := by decide
+
+/-- The trefoil `σ_0^3` has writhe `+3` — all three crossings positive,
+    so the bound `|w| ≤ c` of `abs_writhe_le_crossingCount` is tight. -/
+theorem writhe_trefoil : trefoil.writhe = 3 := by decide
+
+/-- The figure-eight `(σ_0 σ_1^{-1})^2` has writhe `0`: the alternating
+    word cancels, so writhe does **not** separate it from the unknot —
+    the crossing count does. -/
+theorem writhe_figureEight : figureEight.writhe = 0 := by decide
+
+/-- The Hopf link `σ_0^2` has writhe `+2`. -/
+theorem writhe_hopfLink : hopfLink.writhe = 2 := by decide
+
+/-- The Borromean rings `(σ_0 σ_1^{-1})^3` have writhe `0`, matching
+    `QOU.StandardModel.WritheMarkovInvariance.writhe_borromean` on the
+    `List ℤ` encoding of the same word. -/
+theorem writhe_borromeanRings : borromeanRings.writhe = 0 := by decide
 
 /-! ## Hyperbolic Volumes of Standard Knots -/
 

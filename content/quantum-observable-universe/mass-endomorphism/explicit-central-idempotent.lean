@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Star.Basic
-import Mathlib.RingTheory.Idempotents
+import QOU.BraidKnot.ExplicitCentralIdempotent
 
 
 /-!
@@ -18,55 +17,22 @@ the corresponding box.
 
 The Lagrange-interpolation formula then constructs `e_λ` as a sum
 over standard Young tableaux of products of Lagrange projectors.
+
+`SYT`, `qContent`, `centralIdempotent` and the open conjecture class
+`ExplicitCentralIdempotentConjecture` now live in the library module
+`QOU.BraidKnot.ExplicitCentralIdempotent`, imported above. They were
+declared here until 2026-09-04; they moved so that
+`conj:explicit-central-idempotent` — the block that *states* the
+conjecture — can name the same class this block *consumes*. A sibling
+`.lean` cannot import another sibling, so leaving the class here would
+have forced two independent declarations of one class (bean
+`qou-1bua`).
 -/
 
 namespace QOU.BraidKnot.ExplicitCentralIdempotent
 
 variable {R : Type*} [CommRing R]
 variable {q : R}
-
-/-- A standard Young tableau of shape `λ`: a filling of the Young
-    diagram of `λ` with `1, ..., n` such that rows and columns
-    increase. Placeholder for Mathlib's eventual SYT API. -/
-opaque SYT (lam : List ℕ) : Type
-
-/-- The q-content of a box at position `(i, j)` in a Young diagram:
-    `c(i, j; q) = q^(2(j - i))`.
-
-    This is the integer (signed) power, so for boxes below the main
-    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`, i.e.
-    `q ^ (n : ℤ)` must be total.
-
-    §7c: that is supplied by carrying `q` as a **unit** `q : Rˣ` of a bare
-    `CommRing R` — `Rˣ` is a group, so `zpow` is total there — rather than by
-    strengthening the base ring to a `GroupWithZero`/`Field`. The generic
-    Hecke ground ring `ℤ[q, q⁻¹]` is exactly this situation: `q` is a unit and
-    the ring is not a field.
-
-    Per Gemini PR #634 review: previous `(2 * (j - i)).toNat` was
-    mathematically incorrect — it forced `q^0 = 1` for all boxes
-    below the diagonal, which contradicts the standard q-content
-    definition (Hoefsmit, prop:hoefsmit-seminormal-form). -/
-def qContent {R : Type*} [CommRing R] (i j : ℤ) (q : Rˣ) : R :=
-  ((q ^ (2 * (j - i)) : Rˣ) : R)
-
-/-- Murphy–Lagrange formula for the central primitive idempotent
-    `e_λ ∈ Z(H_n(q))`. Placeholder element-of-the-algebra constant.
-
-    Per Gemini PR #634 review: previous `: Type` signature was a
-    type-mismatch — `centralIdempotent` is an *element* of the
-    algebra carrier, not a type. The full Lean formalisation
-    binds it to `H.carrier` for an `IwahoriHeckeAlgebra` `H`; this
-    placeholder fixes the signature to return a value in the
-    underlying ring `R`, allowing element-level identities
-    (orthogonality, self-adjointness, bar-pairing) to typecheck. -/
-noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
-    (lam : List ℕ) (q : R) : R
-
-/-- **CONJECTURE (OPEN).** The four cross-checks follow from Lagrange interpolation in commuting variables. -/
-class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) : Prop where
-  /-- The explicit idempotency holds. -/
-  idempotent : ∀ {n : ℕ} (lam : List ℕ) (_h : lam.sum = n), centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
 
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central
     primitive idempotent `e_λ` for partition `λ ⊢ n` is given by
@@ -105,8 +71,22 @@ theorem explicit_central_idempotent_via_murphy
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
     `conj:bring-figure-eight-depth-2-witness`. The `e_{(2,2)}`
     formula is concrete and finite (sum over 2 SYTs × product
-    over 4 boxes × Lagrange factor). -/
-example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdempotent [2, 2] q :=
+    over 4 boxes × Lagrange factor).
+
+    **Conditional, exactly as its parent is** (AGENTS.md §3b-cond
+    item 2). This was previously an `example` with no binders, which
+    stated the `(2,2)` idempotency *unconditionally* while proving it
+    from `explicit_central_idempotent_via_murphy` — a conditional
+    theorem. Lean refused it (`failed to synthesize
+    ExplicitCentralIdempotentConjecture q`), which is the elaborator
+    catching precisely the smuggling this repo's §3b-cond rules
+    forbid: a specialisation does not discharge the hypothesis its
+    general form carries. Naming it also makes it citable, which an
+    anonymous `example` was not. -/
+theorem explicit_central_idempotent_two_two
+    [ExplicitCentralIdempotentConjecture q] :
+    centralIdempotent [2, 2] q * centralIdempotent [2, 2] q
+      = centralIdempotent [2, 2] q :=
   -- Ref: [manuscript] §prop:explicit-central-idempotent — concrete (2,2)
   -- instance of `explicit_central_idempotent_via_murphy`; the e_{(2,2)}
   -- idempotency is the finite Lagrange computation witnessed in

@@ -92,6 +92,36 @@ The other four are left alone on purpose (see below): two are stale greens that
 belong to the `qou-cds1` re-derivation, and refreshing the anchor-class two
 would walk into the `qou-3f7a` tranche, which is another session's live work.
 
+## The RATCHET (`--strict`), and why it is NOT keyed on the date
+
+Reporting this class once does not stop it recurring, so `--strict` gates it
+against `q0-dataflow-unstamped-baseline.json`. **Drains only**;
+`--write-baseline` REFUSES to add an entry and says so.
+
+The gated set is **not** the AT-RISK set. Keying on "predates the 2026-08-22
+re-pin" would catch **nothing new**: a witness written today has a later
+`computedAt`, lands in the `newer` bucket and sails through -- while being
+exactly as invisible at the NEXT anchor change. The date answers *which are
+stale now*; a gate has to answer *which could go stale unseen*. So the ratchet
+keys on the structural property -- **an anchor-reader witness carrying neither
+a q0 stamp nor a q0 literal**, i.e. one that no q0 gate can see -- which is
+date-independent. Baseline at introduction: 13.
+
+"Stamp or literal" is the right disjunction because it is exactly *visible to
+at least one existing gate*: the anchor-flip gate reads `q0Anchor`/`q0Value`,
+the value-drift gate reads q0 literals anywhere in the file.
+
+Verified to actually fire, because a gate that cannot fail is documentation
+(this repo lost weeks to `precision-gates.sh` being prose nobody invoked):
+clean baseline -> rc 0; one entry removed from the baseline -> rc **1**, the
+witness named, pointing at the producer; `--write-baseline` against a grown
+set -> rc **1**, refusing.
+
+The fix for a NEW entry is always at the producer -- declare the pin at the
+stamp site. `fvk_selection_probe` is the worked example, including the trap
+that stamping `comparison` without a `q0Values` mapping trades one gate red
+for another.
+
 ## Three things this deliberately does NOT claim
 
 1. **The two convention-class producers are NOT asserted broken.** A C-frame
@@ -138,6 +168,7 @@ import q0_witness_read_dataflow_audit as DF  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 ANCHOR_WITNESS = "q-pinning-50-digit.witness.json"
+BASELINE = pathlib.Path(__file__).resolve().parent / "q0-dataflow-unstamped-baseline.json"
 REPIN = datetime.datetime(2026, 8, 22, tzinfo=datetime.timezone.utc)
 REPIN_COMMIT = "fca08de7d2"
 
@@ -173,7 +204,17 @@ def _first(body: dict, *keys):
     return None
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    import argparse
+    ap = argparse.ArgumentParser(description="q0 dataflow staleness audit + ratchet")
+    ap.add_argument("--strict", action="store_true",
+                    help="exit 1 on any UNSTAMPED anchor-reader witness absent from "
+                         "the baseline. Drains only -- the baseline never grows.")
+    ap.add_argument("--write-baseline", action="store_true",
+                    help="seed/reduce the baseline from the current tree. Refuses to "
+                         "ADD entries; use it to record a drain, never to silence one.")
+    args = ap.parse_args(argv)
+
     w = WitnessBuilder("muon-anchor-reader-invisible-staleness", engine="python")
     w.set_description(
         "Witnesses that CONSUME the muon anchor but RECORD only derived "
@@ -294,6 +335,48 @@ def main() -> int:
           f"predicts. The remedy is the qou-cds1 re-derivation; REFRESHING "
           f"these would commit a red", w)
 
+    # ---- the RATCHET -------------------------------------------------------
+    # Gate on the STRUCTURAL property (no q0 stamp and no q0 literal, so no q0
+    # gate can see it), NOT on the at-risk date window. Keying on "predates the
+    # 2026-08-22 re-pin" would catch nothing new: a witness written today has a
+    # later computedAt, lands in `newer`, and sails through -- while being
+    # exactly as invisible at the NEXT anchor change. The date answers "which
+    # are stale now"; the gate has to answer "which could go stale unseen".
+    unstamped = sorted(at_risk + newer)
+    try:
+        base = set(json.loads(BASELINE.read_text())["unstamped"])
+    except (OSError, json.JSONDecodeError, KeyError):
+        base = set()
+
+    new_entries = [u for u in unstamped if u not in base]
+    drained = sorted(base - set(unstamped))
+
+    print(f"\n  RATCHET: unstamped {len(unstamped)}  baseline {len(base)}  "
+          f"NEW {len(new_entries)}  drained {len(drained)}")
+    for u in new_entries:
+        print(f"      NEW  {u}")
+    for d in drained:
+        print(f"      drained (baseline may shrink)  {d}")
+    w.add_data("ratchet_unstamped", len(unstamped))
+    w.add_data("ratchet_new", len(new_entries))
+    w.add_data("ratchet_drained", len(drained))
+
+    if args.write_baseline:
+        added = [u for u in unstamped if u not in base]
+        if added and base:
+            print(f"\n  REFUSING to grow the baseline by {len(added)} entry(ies).")
+            print("     Baselines drain, never grow (AGENTS.md). Stamp the producer")
+            print("     instead -- see fvk_selection_probe for the worked fix.")
+            return 1
+        BASELINE.write_text(json.dumps(
+            {"_schema": "q0-dataflow-unstamped-baseline/v1",
+             "_note": ("Anchor-reader witnesses carrying neither a q0 stamp nor a q0 "
+                       "literal, so no q0 gate can see them. DRAINS ONLY. To remove an "
+                       "entry, stamp its producer (q0_anchor=... at the stamp site) and "
+                       "re-run with --write-baseline."),
+             "unstamped": unstamped}, indent=2) + "\n")
+        print(f"\n  baseline written: {len(unstamped)} entries")
+
     # Declare q0-independence EXPLICITLY rather than leaving the witness
     # unstamped. Left silent, this audit's own witness would land in the very
     # bucket it measures -- no q0Anchor, no q0Value -- and would then be
@@ -305,6 +388,13 @@ def main() -> int:
             "q0AnchorReason":
                 "static audit: parses witness JSON and compares strings; "
                 "performs no arithmetic, so no q0 enters any recorded value"})
+    if args.strict and new_entries:
+        FAILED.append(f"ratchet: {len(new_entries)} NEW unstamped anchor-reader witness(es)")
+        print("\n  STRICT: a producer that reads the q0 anchor emitted a witness")
+        print("     carrying no q0 stamp and no q0 literal. Neither q0 gate can see")
+        print("     it, so an anchor change moves its numbers silently. Fix AT THE")
+        print("     PRODUCER: declare the pin at the stamp site. Do NOT add it here.")
+
     print(f"\n=== {'ALL PASS' if not FAILED else 'FAILURES: ' + ', '.join(FAILED)} ===")
     return 1 if FAILED else 0
 
