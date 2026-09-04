@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T07:09:12.134843+00:00",
+  "commitSha": "70e60d642735e2fa3adc2bd0ea87631453ea6a65",
+  "assertions": [
+    {
+      "name": "two-strand trace of a single sigma is the Markov z = q^3/(q^2+1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "tr_M(atom) = prod_i tr_2(p_i(sigma)) for A = 2, 3, 4 below 1e-55",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L_pp, L_nn, L_pn = -log(z + d) reproduce the arc's 200-bit H_6 values",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "Jones of the closure is the product of the torus-link Jones over the chain",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "L_pp + L_nn = 2 log[2]_q — the pp and nn bond constants are not independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the chain delivers 31 % of 4He's AME binding (so 69 % is missing by theorem)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the offset that would close 4He is d = -2.43 h, OUTSIDE the algebra's range d/h in [-1, 0] — no interface offset, fractional twist included, can close the gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "the_canonical_mass_trace_factorises_over_the_chain_probe",
+  "scriptFile": "the_canonical_mass_trace_factorises_over_the_chain_probe.py",
+  "scriptHash": "02e15dcca015",
+  "scriptCommitSha": "8fcdf463f641e17158a9e4f8d917a3dd7e22bcbf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py"
+  },
+  "description": "The Markov trace (convention D, 200-bit) of the full 3A-strand canonical atom word equals the product over generators of two-strand traces of the per-generator Hecke polynomials, to ~1e-59 at A = 2, 3, 4; Jones factorises over the chain on both branches. Reason: the closure is a linear connected sum (chain form), and multiplicative invariants are multiplicative under connected sum. Interface factors are z + d, so the arc's bond constants are -log(z + d) to 60 digits and the canonical L is exactly a sum over interfaces: the canonical closure carries no many-body binding by theorem. The arc's cumulants belong to the all-pairs bond model, which is not a chain.",
+  "data": {
+    "z_two_strand": "6.126880371464652515958298639458992480263e-1",
+    "L_pp_from_two_strand": "4.8989938425513485140655016749462194823043396786058e-1",
+    "L_nn_from_two_strand": "9.0726226553321290067017528738691153644541109117659e-1",
+    "L_pn_from_two_strand": "6.7682159238634338966311878404365178434961219856897e-1",
+    "worst_rel_diff_full_vs_product": "3.962e-59"
+  },
+  "caveats": [
+    "Checked at A <= 4 (n <= 12) in CI budget; the identity is a theorem for every A given the chain form, which the chain probe verified through A = 12. A = 6 is the same computation on a longer run.",
+    "Says nothing about which non-composite closure would carry many-body binding, or whether one exists in the framework. It says the canonical chain cannot, and why."
+  ]
+}
