@@ -159,7 +159,7 @@ import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -168,7 +168,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 LQ = float(mp.log(_Q))
 NMAX = 12
 B_DEUT = mp.mpf("2.224566")

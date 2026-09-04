@@ -1,8 +1,8 @@
-*Let $w_\lambda^{(n)}(q) := \dim_q^2(\lambda) / [n]_q!$ be the q-deformed Wedderburn weight ([Wedderburn weight canonical form](#prop:wedderburn-weight-canonical)). We define a topological space $\Omega_q$ and pushforward maps*
+*Let $w_\lambda^{(n)}(q) := \dim_q^2(\lambda) / [n]_q!$ be the q-deformed Wedderburn weight ([Wedderburn weight canonical form](#prop:wedderburn-weight-canonical)). We define a topological space $\mathcal{K}_q$ (the $q$-deformed Kerov limit-shape space) and pushforward maps*
 
 $$
   \iota_n \colon \{\lambda \vdash n\}
-    \;\longrightarrow\; \Omega_q,
+    \;\longrightarrow\; \mathcal{K}_q,
   \qquad
   n \in \mathbb{N},
 $$

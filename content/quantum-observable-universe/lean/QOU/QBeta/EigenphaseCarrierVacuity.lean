@@ -41,6 +41,33 @@ instance**, which per §3b-tax is how a genuinely open input is represented.
 the cos-resummation is false — only that its Lean hypothesis is empty, so the
 result is unconditional rather than conditional, and the physical content the
 docstring describes is not carried anywhere.  Scope-(a).
+
+**UPDATE 2026-09-03 (bean `qou-eixt`) — the live carrier has been repaired; this
+file is now the RECORD, not a live indictment.**
+`content/quantum-observable-universe/nuclear-interactions/q-beta-cos-resummation.lean`
+has adopted §2's `TransferMatrixSpectrum` shape: its `TransferMatrixEigenphase`
+now takes the `2×2` restriction `M` and pins `M.trace = 2 cos(eigenphase q)`,
+`M.det = 1`, with no instance declared there. Its `q_beta_cos_resummation` was
+also repaired — separately from the carrier, and this file did not catch that
+one: the theorem's proof was `refine ⟨…, rfl, ?_⟩; ring` on `∃ x, x = A ∧ x = A`
+and never mentioned the instance, so the result was unconditional *twice over*,
+once through the empty carrier and once through a proof that ignored it. It now
+rewrites `trace_eq`, and the negative control (same statement, binder dropped)
+fails as it must.
+
+**§1's reproduction is kept deliberately** and is the reason this file still
+appears in the vacuity audit under `proof-claims-unencoded`: it is the
+demonstration copy, and a file whose purpose is to exhibit a defect is not
+itself the defect (ledger verdict `legit`,
+`deliberate-reproduction-for-demonstration`). Do not "fix" it — deleting it
+would delete the proof that the superseded encoding was empty.
+
+**§3 is unaffected and is still the operative finding.** The repair above is
+branch 2 of that trichotomy — `M` arbitrary, circularly dischargeable by
+`circularWitness` — so it buys a carrier that constrains its argument and a
+theorem that is a genuine implication, and buys **no** evidence about the
+substrate. Branch 3 (KZ / Kohno–Drinfeld holonomy) remains where a derivation
+of `α` must live, and remains uncarried out.
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.Complex.Exponential
@@ -157,7 +184,41 @@ gives a three-way split with only one contentful branch:
 Branch 3 is the Kohno–Drinfeld / KZ picture, and the corpus's canonical chain
 already invokes exactly that shape ("Yekutieli non-abelian Stokes").  This file
 does **not** carry out that construction; it establishes that it is the only
-place a derivation of `α` can live. -/
+place a derivation of `α` can live.
+
+**🛑 §3 IS SUPERSEDED IN ITS KOHNO–DRINFELD FORM — added 2026-09-04 (bean
+`qou-xjh4`).**  The paragraph above is the text as written, kept because the
+trichotomy's *structure* still stands and branches 1 and 2 are unaffected.  What
+is no longer true is "branch 3 is the only place a derivation can live" read as
+an endorsement of the Kohno–Drinfeld route: `QOU.QBeta.HolonomySpectrumSignObstruction`
+(2026-08-31, `4471ee72ce`, 6 theorems, sorry-free, beans `qou-pdix` / `qou-cds1`)
+**excludes every holonomy whose generator has real spectrum, Kohno–Drinfeld
+included.**
+
+The step is residue-independent, which is why it reaches the whole class rather
+than one candidate: a real generator eigenvalue `a` gives character
+`(eᵃ + e⁻ᵃ)/2 = cosh a ≥ 1` for *every* real `a`, so a `q`-dependent residue only
+changes which `a` occurs.  The required correction factor is `0.998399` — below
+1, hence unreachable.  At the Kohno–Drinfeld value itself, matching the braiding
+`P exp(ħt/2)` to the Hecke eigenvalues `{q, −q⁻¹}` forces `ħ = 2 ln q`; `q₀ > 1`
+is real, so that generator is **hyperbolic** (`det A = −(ln q₀)² < 0`) and gives
+`1.005448` against the required `0.998399`.  The whole obstruction is
+`(x−1)² ≥ 0`.
+
+**Surviving ask, materially narrower:** not "find a connection" but "find one
+whose generator is **elliptic** at real `q`" — `det A > 0`, spectrum `±iθ`,
+`θ = 0.0565947` — so the imaginarity has to be sourced, and the corpus names
+`conj:im-q-physical-role` as the candidate.  Recorded as tier-0 condition **D0**
+on `qou-pdix`'s D1–D6 acceptance test.
+
+Two things this does **not** say, matching the audit's own scope: it does not
+show that no connection exists, and it does not derive `α`.
+
+Recorded here because this file is cited as the authority on the trichotomy —
+`nuclear-interactions/q-beta-cos-resummation.lean` quoted §3 on 2026-09-04 and
+propagated "branch 3 is where a derivation must live" into three further places
+before the obstruction was noticed.  A file that others cite has to carry its own
+supersessions. -/
 
 /-- The rotation `exp(αJ)`, `J² = −I`, written out. -/
 noncomputable def rotationOfPhase (a : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=

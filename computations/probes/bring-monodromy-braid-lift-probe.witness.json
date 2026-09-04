@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Braid lifts of the six local monodromies of the Bring colour cubic, from S_3 to B_3. Closes the braid-level half of F5 in colour_sign_line_pure_braid_probe: the monodromy image's pure part is nontrivial, so the image is not confined to the S_3 quotient. Does NOT compute mu-bar of the resulting closures.",
+  "computation": {
+    "script": "computations/probes/bring_monodromy_braid_lift_probe.py",
+    "arithmetic": "mpmath mpc at 50 dps for the root tracking; exact integers for the braid words and permutations. No float64; no float() anywhere."
+  },
+  "parameters": {
+    "dps": 50,
+    "n_circle": 4000,
+    "n_segment": 1500,
+    "base_point": "2 + 0.5i",
+    "branch_point_min_separation": "0.117242314729",
+    "loop_radius": "0.0390807715763"
+  },
+  "guards": {
+    "max_adjacent_swaps_in_one_step": 1,
+    "guard_satisfied": true,
+    "cycle_type_matches_continuation_tracking": true,
+    "every_loop_is_a_half_twist": true,
+    "base_point_off_real_axis": "required: with real z the cubic has real coefficients, so two roots are complex conjugates with IDENTICAL real parts and the real-order reading is degenerate along the whole segment",
+    "min_real_gap_at_crossing": "2.5535117e-7",
+    "why": "a step that changes the real-order by more than one adjacent transposition means a crossing was missed and the recorded word would be wrong"
+  },
+  "loops": [
+    {
+      "proximity_permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "-0.97481553297803860307",
+        "im": "-0.22301272758464377094"
+      },
+      "braid_word_raw_length": 5,
+      "braid_word_reduced": [
+        -1
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    },
+    {
+      "proximity_permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "-0.97481553297803860307",
+        "im": "0.22301272758464377094"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        2,
+        -1,
+        -2
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    },
+    {
+      "proximity_permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "0.10582958618826802099",
+        "im": "-0.93713893783890343691"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        2,
+        -1,
+        -2
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    },
+    {
+      "proximity_permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "0.10582958618826802099",
+        "im": "0.93713893783890343691"
+      },
+      "braid_word_raw_length": 1,
+      "braid_word_reduced": [
+        -1
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    },
+    {
+      "proximity_permutation": [
+        1,
+        0,
+        2
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "0.11898594678977058208",
+        "im": "-1.053640742712109145"
+      },
+      "braid_word_raw_length": 5,
+      "braid_word_reduced": [
+        2,
+        1,
+        -2,
+        -1,
+        -2
+      ],
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    },
+    {
+      "proximity_permutation": [
+        2,
+        1,
+        0
+      ],
+      "cycle_type_matches_proximity": true,
+      "is_half_twist": true,
+      "branch_point": {
+        "re": "0.11898594678977058208",
+        "im": "1.053640742712109145"
+      },
+      "braid_word_raw_length": 3,
+      "braid_word_reduced": [
+        -1,
+        -2,
+        1
+      ],
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "is_pure": false,
+      "exponent_sum": -1
+    }
+  ],
+  "pure_products_of_two_loops": [
+    {
+      "loops": [
+        0,
+        3
+      ],
+      "word_length": 2,
+      "nontrivial_in_B3": true
+    },
+    {
+      "loops": [
+        0,
+        4
+      ],
+      "word_length": 6,
+      "nontrivial_in_B3": true
+    },
+    {
+      "loops": [
+        1,
+        2
+      ],
+      "word_length": 4,
+      "nontrivial_in_B3": true
+    },
+    {
+      "loops": [
+        1,
+        5
+      ],
+      "word_length": 6,
+      "nontrivial_in_B3": true
+    },
+    {
+      "loops": [
+        2,
+        5
+      ],
+      "word_length": 6,
+      "nontrivial_in_B3": true
+    },
+    {
+      "loops": [
+        3,
+        4
+      ],
+      "word_length": 6,
+      "nontrivial_in_B3": true
+    }
+  ],
+  "summary": {
+    "image_pure_part_nontrivial": true,
+    "n_pure_products_tested": 6,
+    "n_nontrivial": 6,
+    "closes": "the braid-level half of F5 — the image is not confined to the S_3 quotient",
+    "residual": "whether any pure braid in the image has a closure with mu-bar != 0. Until that is settled the vacuous-agreement escape of F5 is narrowed but not closed: a nontrivial pure braid can still have mu-bar = 0.",
+    "does_not_touch": [
+      "the F4 separation, which is unconditional on B_3",
+      "statement B and the Brunnian isotype exclusion"
+    ]
+  },
+  "scriptHash": "d0cfcd3305cf",
+  "scriptCommitSha": "unknown",
+  "commitSha": "aa849ceb9b4ef6029882977395b3b50ab67e1ca8",
+  "engine": "python",
+  "computedAt": "2026-09-03T04:38:27.168139+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "bring_monodromy_braid_lift_probe.py"
+}

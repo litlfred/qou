@@ -134,6 +134,7 @@
     "bw_chirality_isotopes",
     "bwhk_st_matrix_corroboration",
     "c1_chi_magnitude_vs_r_star",
+    "c1_leading_coefficient_derived_probe",
     "c3_w2_bar_parity_twist_probe",
     "c3_w2_c1_connection_invariant",
     "c3_w2_c1_connection_matrix",
@@ -253,8 +254,11 @@
     "deuteron_from_scratch_ledger",
     "deuteron_tower_fusion_frame_probe",
     "dt_d1a_small_quiver_two_ray_scan_probe",
+    "dt_d1b_arrow_count_forced_by_gabriel_probe",
+    "dt_d1b_connection_count_galois_orbit_hypothesis_probe",
     "dt_d1b_nz_gluing_invariant_entry_probe",
     "dt_d1b_nz_triangulation_invariance_pincer_probe",
+    "dt_d1b_trace_field_bar_grading_probe",
     "dt_d1c_hecke_block_vertex_bound_probe",
     "dt_d1c_v4_blocks_plus_abelian_bar_ray_probe",
     "dt_third_knot_trefoil_count_probe",
@@ -267,8 +271,10 @@
     "e_hartree_round23_normalization",
     "e_hartree_round24_molecular_reuse",
     "em_coupling_projection_probe",
+    "em_linking_fh_mirror_split_charge_blindness",
     "em_linking_invariant_probe",
     "em_linking_reachability_law_sensitivity_probe",
+    "em_linking_upper_bound_precision_budget",
     "emitted_particle_tracker",
     "entanglement_orders",
     "eps_ratio_convention_asymmetry_probe",
@@ -676,6 +682,7 @@
     "qbeta_decay_counit_hypothesis_probe",
     "qbeta_decay_fibre_bar_parity_derivation_probe",
     "qbeta_delta_bar_parity_probe",
+    "qbeta_delta_candidate_census_probe",
     "qbeta_delta_element_fork_pricing_probe",
     "qbeta_delta_net_four_values_probe",
     "qbeta_delta_tr_bar_decomposition_probe",
@@ -893,5 +900,5 @@
     "tau_dictionary_hauptmodul_validator"
   ],
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
+  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides."
 }

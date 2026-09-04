@@ -1195,6 +1195,24 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/content-scaling-correspondence.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.md:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "4c9921db8e74",
+          "ts": "ea780da47a7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:33:25Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:33:25Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Statement pairs a generic-ring invariant (box content c = j-i, integer SU_q(2) weight, md:1-4) with q-free physical scaling functions of (Z,N,A) (md:8-17) inside the explicitly PHYSICAL-FACE section of an archimedean chapter, so the regime matches its section and no q-evaluation side is left ambiguous.",
+        "evidence": "REGIME: mass-theory is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/content/pipeline/_folio-chapter-profiles.qou.ts:175) with mixed profile {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90); chapter docstring mass-theory.ts:4-21 declares Algebraic/Geometric/Archimedean/Physical faces. The block sits in section 'Parity classification, atomic atlas, and discrepancy resolution' (mass-theory.ts:1111-1125, block at :1123), introduced by the comment '// ═══ PHYSICAL FACE ═══ Parity classification, six-term formula, mass predictions.' (:1108-1109). So the expected regime is archimedean/physical. TOKENS IN STATEMENT (the whole .md is the statement; no Proof section): md:1-4 q-Schur-Weyl duality, box content c=j-i, magnetic quantum number m_j of an SU_q(2) weight space — formal q, integer-valued, generic-ring/categorical, no order hypothesis on q, no numeric q; md:6 'BW scaling function' (Bethe-Weizsacker, physical); md:8-14 table of real scaling functions with fractional exponents Z(Z-1)/A^{1/3}, N(N-1)/A^{1/3}, A^{2/3}, ±1/√A, Z^{4/3}/A^{1/3}, T^p(T+1)^p/A^p — archimedean (rpow/sqrt over ℝ) but functions of nucleon counts Z,N,A,T only, q-free; md:16-17 'nucleon pairs at spin projection c in the nuclear ground state' — physical. No Real.*, no numeric q_0, no MeV, no m_e/CODATA, no `0<q`/`q<1`. TOKENS OUTSIDE STATEMENT: none (no proof body; .ts has no wall: field). BRANCHES: not FAIL — the chapter is archimedean, so hard-coded archimedean constructs are in-regime, and the statement is not a purely algebraic identity belonging upstream (the Schur-Weyl/content clause is a premise; the claim is the physical scaling dictionary). Not WARN — the two regimes are cleanly partitioned: the q-bearing side (md:1-4) carries integer data with no evaluation of q anywhere, and the real-valued side (md:8-17) contains no q at all, so there is no 'which side is q evaluated on' ambiguity to flag; the archimedean side is explicitly labelled physical (BW, Z/N/A, nuclear ground state). PASS branch 'matches its chapter regime' applies. Out-of-scope remark (not scored here): the c=0 row 'A^{2/3} or ±1/√A' (md:12) and the unfixed exponent p (md:14) are a statement-tightness / anti-fit concern for clarity-stmt-tight or the canonical-watcher, not a wall-side defect. PRIOR ENTRY: the 2026-07-07 fail (reviewed_sha 6b830a632a, md hash 2935e0f3f444, now 4c9921db8e74) cites only 'sibling Lean file is MISSING'; the criterion is automated:false with depends_on:['md'] and the registry text (qa-criteria-registry.ts:379-411) tests the narrative statement's regime, not Lean sibling presence, so the prior verdict did not apply the criterion. LEAN SIDE NOTE (not scored): no .lean sibling; .ts lean.ref 'qou:QOU.BraidKnot.BoxContent.boxContent' (content-scaling-correspondence.ts:5, validation:'not_checked') resolves to library file content/quantum-observable-universe/lean/QOU/BraidKnot/BoxContent.lean, where the declaration is `def boxContent (x : Cell) : ℤ` (:14) inside `namespace QOU.BraidKnot` (:3) — i.e. the fully-qualified decl name is QOU.BraidKnot.boxContent, so the ref's extra 'BoxContent.' segment is the module path, not part of the decl name (resolves by module path / grep fallback, not by exact decl name). Also note the ref points at a `def` of box content, not at a theorem asserting the scaling correspondence, so it backs only the md:1-4 premise."
       }
     ],
     "wall-side-proof": [

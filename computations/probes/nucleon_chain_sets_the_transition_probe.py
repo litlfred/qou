@@ -134,7 +134,7 @@ import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 
 from pyhecke.gram import _hm_mp, gram_matrix_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -143,7 +143,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 25
-H_Q0 = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
+H_Q0 = float(q_at(mp.mp.dps) - 1 / q_at(mp.mp.dps))
 B_P = (0.0, 0.5, 0.5)
 B_N = (0.5, 0.5, 1.0)
 # transitions from the dual-support bisection, previous probe

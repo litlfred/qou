@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-03T10:30:36Z
+updated_at: 2026-09-04T02:41:50Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -48,3 +48,24 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-03 (Lean, PR #6480): `MagnusGaugeCurvatureHookColumn.lean` — `curvatureSum` + `trace_mul_curvature_eq_sum_word_traces` (unconditional linearity: curvature trace = signed sum of word-traces of length L+2) + `trace_mul_curvature_eq_of_word_traces` (conditional closed form with a SINGLE common twist c — the L+2 trap made structural). lean-verifier: lean-direct EXIT 0, zero diagnostics, as authored; both thms `#print axioms` = [propext, Classical.choice, Quot.sound], no sorryAx. Generic CommRing/Algebra, no ℝ. Premise (per-word hook identity, 139 digits) stated as hypothesis, not proved.
+
+
+- 2026-09-03 (decay bound, PR #6520): bounded the #6464 hook closed form in j=b(λ). CRUDE spectral-radius bound holds but is a binomial hump (peaks j=2/4 at A=2/3, loose 10–10³) — because r ≈ q^L (r/q^L = 1.006, 1.10): the twist q^{(L+2)(1−j)} EXACTLY cancels the dominant Burau eigenvalue, d ≈ q⁻², so only the subdominant spectrum can decay. SHARP bound |e_j(μ)| ≤ e_j(|μ|): B'_j = T_j·Σ_a[e_j(|μ⁺|)+e_j(|μ⁻|)] HOLDS and B'_j/C(n−1,j) is STRICTLY DECREASING for all j at BOTH A (tightness 0.23/0.13). Burau moduli fall off geometrically (≈0.71–0.77/step). Monotonicity is MEASURED on the real moduli, not a theorem for arbitrary spectra. Lean lemmas (MagnusHookDecayBound.lean: abs_esymm_le_esymm_abs + 2 corollaries) written; verification pending.
+
+
+- 2026-09-03 (Lean verified, PR #6520): MagnusHookDecayBound.lean — abs_esymm_le_esymm_abs, abs_sum_esymm_sub_le, abs_mul_sum_esymm_sub_le — lean-direct EXIT 0, zero diagnostics after dropping an unused [DecidableEq ι] binder (strictly more general); all three #print axioms = [propext, Classical.choice, Quot.sound], no sorryAx. Binders [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] are exactly what Finset.abs_prod takes in v4.24.0.
+
+
+- 2026-09-03 (two-row handle): the two-row column of Ω₂^P is carried EXACTLY by the up-spin sectors of the 2-dim R-matrix — tr_(n−k,k)(g) = tr_W_k(g) − tr_W_(k−1)(g), W_k = k-up-spin sector (dim C(n,k)), verified PLAIN and with ρΩ₂^P at A=2,3 to ~1e-139 (magnus_two_row_weight_sector_probe.py). Two-row analogue of the hooks' reduced-Burau handle (#6464); exists because Ω₂^P is an algebra element (#6445) — the germ failed this by 6.5% (#6432). Per-dim two-row decay monotone in k=b(λ) at both A (A=3: 33.6, 8.67, 4.00, 1.70). Next: a decay BOUND for two-rows must respect the difference structure — a per-sector triangle inequality does not decay in k.
+
+
+- 2026-09-04 (mechanism SETTLED, PR pending): the b(λ)-decay is CANCELLATION, not size. Control = conjugate pairs (dim λ = dim λ' exactly, b flips): 9/9 pairs at A=2,3 have commutator-norm ratio ≥ 1 (1.13–1.31, ~1.25) while trace ratio is 0.003–0.27. Sharpest: (8,1) vs (2,1⁷), both dim 8 — norm 0.755→0.955, |tr|/dim 33.65→0.115. So NO bound |tr| ≤ Σ‖[ρ,σ_a]‖·‖σ_(a+1)‖ can produce the decay (scope-(a): plain norm route excluded, not every norm argument); the spectral route the hook bound #6520 takes is the one AVAILABLE, not merely the one taken. The earlier A=2/A=3 'contradiction' was an artifact: the normalised norm is U-SHAPED in b and the A=3 run was truncated inside the falling half. Targeting note: the high-b tail is CHEAP (dim λ = dim λ'), merely last in enumeration order — --min-b 6 --max-dim 50 gets it in ~1 min vs hours.
+
+
+- 2026-09-04 (REFINES the #6548 reading): the decay FACTORIZES exactly, |tr|/dim = κ · Σ|eig|/dim with κ = |Σeig|/Σ|eig| (phase) and Σ|eig| (magnitude), M_λ = ρ_λ(ρ)·ρ_λ(Ω₂^P). On 9 conjugate pairs (dim controlled): Σ|eig| ratio falls in 9/9 (0.005–0.37) and DOMINATES in 9/9; κ falls in 8/9 and RISES in 1 ((3,3)→(2,2,2), 0.604→0.837). Product reproduces #6548's trace ratios independently (0.732×0.00469 = 0.00343). ⇒ the decay is chiefly a COLLAPSE OF THE OUTPUT SPECTRUM, not phase cancellation in the trace — correcting the inference I drew from #6548 (whose stated finding, that the INPUT-norm route is excluded, is untouched). Cancellation happens in the ASSEMBLY of Ω₂^P from the σ's, not in the final trace, which is why term-by-term input bounds fail. CONSTRUCTIVE: an absolute-value spectral bound on M_λ (Σ|eig|, or dim × spectral radius) IS viable and is the route to the general-λ statement.
+
+
+- 2026-09-04 (CONSTRUCTIVE TARGET identified): majorant ladder |tr| ≤ Σ|eig| ≤ Σσ ≤ √dim·‖M‖_F (and Σ|eig| ≤ dim·ϱ) — EVERY rung decays in EVERY conjugate pair (max ratios A=2: 0.267/0.371/0.423/0.521/0.534; A=3: 0.093/0.106/0.133/0.179/0.122). So the b-info survives to the FROBENIUS norm of the assembled M_λ. AND that majorant is itself a positive trace: seminormal generators are EXACTLY symmetric (max|σ−σᵀ| = 0.0), so under word-reversal * , ‖M_λ‖_F² = tr_λ(X*X) with X = ρ·Ω₂^P — verified 7.6e-141 on all 11 shapes at n=6, POSITIVE, decaying 9/9 pairs (A=3 down to 9.2e-5). ⇒ the general-λ bound is a POSITIVE trace of an algebra element, so the #6464 Burau and #6525 R-matrix-sector handles (character identities, valid for ANY algebra element) apply to it verbatim, with no cancellation to fight. NOT yet derived: a closed form/bound for tr_λ(X*X).
+
+
+- 2026-09-04 (DERIVED, not just applicable): reduced-Burau closed form for the POSITIVE majorant on the hook column. X*X = -c²Σ_{a,b}[σ_a,σ_(a+1)]·(ρ*ρ)·[σ_b,σ_(b+1)] expands into 4(ngen-1)² words ALL of length T=2L+4, so #6464's twist q^{len(1-j)} is COMMON and factors out: tr_hook(X*X) = -c²q^{T(1-j)}Σ_{a,b}Σ_± ± e_j(eig in reduced Burau). Verified every hook at A=2 AND A=3, worst 2.1e-138, positive throughout. Uses only (n-1)×(n-1) matrices (5x5, 8x8) vs dim_λ² up to 70/216. FIRST derived closed form for the BOUND rather than the quantity. Not done: two-row column (would go via #6525 sectors, same argument, not run); and a closed form is not yet a bound — no monotonicity in j derived from it.

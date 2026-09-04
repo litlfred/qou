@@ -60,7 +60,14 @@ cd "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || exit 0
 # Relevance: staged, plus already-committed-but-unpushed is NOT this hook's
 # business -- the commit at hand is. `git commit -a` stages at commit time, so
 # consider unstaged tracked changes too.
-relevant="$( { git diff --cached --name-only; git diff --name-only; } 2>/dev/null \
+# `git ls-files --others` is load-bearing, not belt-and-braces: a BRAND-NEW
+# witness that has not been `git add`ed yet appears in NEITHER `git diff` nor
+# `git diff --cached`, so without it this early exit fires and the hook never
+# examines the one case it most wants to see. Measured 2026-09-03 while adding
+# the q0-anchor ratchet below: the new-file test case produced no warning at
+# all, and the cause was here rather than in the new code.
+relevant="$( { git diff --cached --name-only; git diff --name-only; \
+               git ls-files --others --exclude-standard; } 2>/dev/null \
   | grep -E '(\.witness\.json$|^computations/.*\.py$)' | sort -u )"
 [ -z "$relevant" ] && exit 0
 
@@ -140,5 +147,89 @@ case "$rc" in
     fi
     ;;
 esac
+
+# ── q0 ANCHOR RATCHET (added 2026-09-03) ──────────────────────────────────────
+#
+# AGENTS.md: "Say which pin you used. Any new witness must record its q0 so a
+# later reader can tell which layer it belongs to." Nothing enforced it, and the
+# refill ratchet went NEW 0 -> 147 in the five days after it was last drained to
+# zero (measured 2026-09-03 on d502ed06ce9; ~29/day, still arriving).
+#
+# WHY THIS IS A RATCHET, NOT AN AUDIT. 1,663 witnesses on main carry no
+# q0Anchor. Warning whenever a commit touches one of those would fire on a
+# pre-existing condition the committer did not cause -- which this file's own
+# comments already identify as how a warning gets learned as noise. So it speaks
+# ONLY on:
+#
+#   NEW       a witness not present in HEAD, committed without a q0Anchor
+#   REGRESSED a witness that HAD one in HEAD and does not now
+#
+# Measured against the live refill: ALL 150 of the currently-flagged witnesses
+# did not exist at a788e78ce2b, i.e. every one is a NEW-file case this catches.
+# (A first pass at that measurement reported 0 of 150 -- `git log --format=A` is
+# an invalid pretty format, it failed on every file, and stderr was discarded.
+# A command that fails silently on every input returns a clean, plausible,
+# completely wrong answer. The check below shells out to nothing.)
+#
+# COST: pure stdlib JSON over the handful of witnesses in the commit. No corpus
+# walk, no producer run, no witness written -- so nothing to snapshot/restore.
+# Warn-only and exit 0, exactly as above; do not upgrade to blocking.
+
+q0_relevant="$( { git diff --cached --name-only; git diff --name-only; \
+                  git ls-files --others --exclude-standard; } 2>/dev/null \
+  | grep -E '\.witness\.json$' | sort -u )"
+
+if [ -n "$q0_relevant" ] && command -v python3 >/dev/null 2>&1; then
+  q0_out="$(printf '%s\n' "$q0_relevant" | python3 -c '
+import json, subprocess, sys
+
+def anchored(text):
+    try:
+        return bool(json.loads(text).get("q0Anchor"))
+    except Exception:
+        return None          # unparseable -> say nothing, not this hook is job
+
+new, regressed = [], []
+for path in (l.strip() for l in sys.stdin if l.strip()):
+    try:
+        cur = anchored(open(path, encoding="utf-8").read())
+    except OSError:
+        continue             # deleted in this commit
+    if cur is not False:
+        continue             # has one, or unparseable
+    head = subprocess.run(["git", "show", f"HEAD:{path}"],
+                          capture_output=True, text=True)
+    if head.returncode != 0:
+        new.append(path)                     # not in HEAD at all
+    elif anchored(head.stdout) is True:
+        regressed.append(path)               # had one, lost it
+
+for label, group in (("NEW", new), ("REGRESSED", regressed)):
+    for p in group[:10]:
+        print(f"  {label:9s} {p}")
+    if len(group) > 10:
+        print(f"  {label:9s} ... and {len(group) - 10} more")
+' 2>/dev/null)"
+
+  if [ -n "$q0_out" ]; then
+    echo "=============================================================="
+    echo "precision-warn: WITNESS COMMITTED WITHOUT A q0Anchor."
+    echo "=============================================================="
+    printf '%s\n' "$q0_out"
+    echo
+    echo "  Declare the pin at the PRODUCER, in the save call:"
+    echo "      w.save({\"q0Anchor\": \"proton\", \"q0Value\": mp.nstr(Q, 50)})"
+    echo "  or, for a computation with no substrate pin at all:"
+    echo "      w.save({\"q0Anchor\": \"independent\", \"q0AnchorReason\": \"...\"})"
+    echo
+    echo "  \"independent\" is producer-declared only and needs a REASON."
+    echo "  Do NOT stamp \"proton\" to silence this -- that asserts a pin the"
+    echo "  computation may not have, which is the failure q0Anchor exists to"
+    echo "  prevent. Do NOT add the file to q0-anchor-missing-baseline.json."
+    echo
+    echo "  This is a WARNING; your commit is proceeding."
+    echo "=============================================================="
+  fi
+fi
 
 exit 0

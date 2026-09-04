@@ -1,10 +1,11 @@
 ---
 # qou-xhih
 title: 'Front 1: lift the six Bring-fibre local monodromies from S3 to B3 and compute the subgroup (PR #6449 F5 residual, qou-dg07)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-03T04:37:53Z
-updated_at: 2026-09-03T04:37:53Z
+updated_at: 2026-09-03T16:15:23Z
 parent: qou-icj2
 ---
 
@@ -34,3 +35,5 @@ Lean `QOU/Eightfold/BorromeanBraidPure.lean` (sorry-free, lean-direct exit 0). R
   six-sheeted cover; two copies of the cubic give `B₃×B₃`, which excludes the
   block-swap exchange braid.
 - **Untouched:** statement B's premise (Alt³ occupancy still an input); μ̄.
+
+Completed 2026-09-03: PR #6458 rebase-merged to main at bf97976176.

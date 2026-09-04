@@ -5,8 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-03T04:57:24Z
-updated_at: 2026-09-03T04:39:05Z
+updated_at: 2026-09-04T03:13:25Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -870,6 +869,133 @@ L2 headline **unchanged**: 1/5 scoreable, 0/5 unconditional. No number improved.
 is now the point: every excluded route is a *scalar read off one block*, and two
 of them were the same scalar.
 
+
+## 2026-09-03 — the extensive term MEASURED at four nuclei, and the ceiling reached
+
+PR #6427. The corrected binding path (Rust LP-accumulator kernel + the
+braid-satisfying seminormal family) runs end to end for the first time. Writing
+B_true = B_pred + E(A):
+
+    atom       A  B_pred (MeV)   AME2020     E = AME-B_pred   E/C(A,2)
+    deuterium  2  -7.271102125   +2.224566    9.496           9.496
+    tritium    3  -7.742121347   +8.481796   16.224           5.408
+    he3        3  -7.456199506   +7.718041   15.174           5.058
+    he4        4  -6.828594293  +28.295662   35.124           5.854
+
+THE PREDICTION IS FLAT WHERE BINDING IS EXTENSIVE. Prediction spread 12.5% of its
+mean against an AME range of 12.7x; |pred| vs AME r = -0.731. 4He is sharpest:
+LOWEST |pred| at the HIGHEST binding. Neither a sign flip nor a constant rescale
+repairs it (ratios run 3.269 .. 0.241, spanning 13.6x) -- nothing multiplicative
+fixes a quantity that is flat where the target is extensive.
+
+This is the FIRST DIRECT MEASUREMENT of this bean's missing term. Prior work
+inferred it from six failed closures; this exhibits it, at four nuclei.
+
+TARGET, and its weakness stated. Excluding the deuteron (owner-ruled special),
+E/C(A,2) = 5.408, 5.058, 5.854 -- spread 14.6%, against E/A 58% and E/(A-1) 45%.
+So E ~= 5.4 MeV x C(A,2) for A >= 3. BUT: two distinct A values, and the
+within-A noise floor is 6.7% (tritium vs he3 at the same A), so the signal is only
+2.2x noise. A TARGET, not a determination.
+
+TENSION WITH THE PROVED CAP, flagged not smoothed. An E scaling AS C(A,2) is
+pairwise-shaped, while this bean's framing says super-pairwise and
+exchangeDet_pow_two_le_four proves rho_A <= C(A,2). Three readings: two-point
+artefact; E SATURATES the cap (<= permits proportional-to); or super-pairwise
+growth visible only above A~5.
+
+DISCRIMINATOR NOT MEASURED. 6Li (C(A,2)=15 vs 4He's 6) is where the forms
+diverge. THREE attempts, all killed, each earlier than the last (~900s / 326s /
+124s). Cause undetermined -- dmesg unavailable, OOM neither confirmed nor
+excluded. A=2..4 complete reliably (942/1568/1496/2425s) including across long
+idles, so this is specific to A=6.
+
+CEILING: the corrected binding path reaches A=4 in this container, not A=6.
+
+TWO ROUTES TO SETTLE IT, neither attempted:
+  1. A=6 on a machine that holds the process. Nothing about the computation is
+     known to be wrong; it is scheduling.
+  2. A=4 and A=6 both at reduced k_exact -- not comparable to the k=11 points,
+     but comparable to EACH OTHER, so E(6)/E(4) discriminates cheaply. A
+     different measurement needing its own gate.
+
+## 2026-09-03 — RETRACTION of the `E ≈ 5.4 × C(A,2)` target above, and what replaced it
+
+**The target in the previous entry is WITHDRAWN. Do not carry it forward.** It
+is mostly an artefact of the arithmetic, not a finding about the framework.
+
+The mechanism: `E := AME − B_pred`, and the entry immediately above establishes
+that `B_pred ≈ −7.3 MeV` is **near-constant** across nuclei. So
+`E ≈ AME + 7.3`, and `E/C(A,2) ≈ (AME + 7.3)/C(A,2)` — a statement about
+**AME2020 plus an offset**, with almost no framework content in it. Measured:
+
+    nucleus   A    AME     E/C(A,2)   (AME+7.3)/C(A,2)
+    ²H        2    2.225     9.496          9.525
+    ³H        3    8.482     5.408          5.261
+    ³He       3    7.718     5.058          5.006
+    ⁴He       4   28.296     5.854          5.933
+
+The last two columns agree to **~1 %**. And `AME/C(A,2)` is not constant — it
+is 2.225, 2.827, **4.716**, 2.133, 1.869, 1.396 for ²H/³H/⁴He/⁶Li/⁷Li/¹²C: it
+**peaks at ⁴He and falls steeply**. The near-constancy was a three-point
+coincidence in the region where the AME curve happens to turn over; ⁶Li breaks
+it on AME grounds alone (≈2.62 with the offset), before the framework is
+consulted.
+
+The `E/C(A,2)` figure therefore does **not** bear on the pairwise-cap tension
+flagged in the previous entry — that tension is withdrawn along with the
+figure, not resolved.
+
+### What the retraction bought: a better experiment
+
+The informative measurement is **`B_pred` itself as a function of `A`**, with
+no experimental normalisation anywhere in it — so nothing about AME can
+contaminate it. Run as a **paired** comparison of ⁴He and ⁶Li at *matched*
+truncation `k_exact`, which also sidesteps the A=6 wall (three full
+`binding_energy` attempts at ⁶Li were killed at ~900 s / 326 s / 124 s):
+
+    k_exact   ⁴He (A=4)      ⁶Li (A=6)      ratio li6/he4
+      5      -0.375110164   -0.539212954       1.4375
+      6      -0.838749076   -0.992757495       1.1836
+      7      -1.515118319   -1.414063111       0.9333
+      8      -2.153722974   -2.183158129       1.0137
+      9      -3.711581534   -3.404340982       0.9172
+     10      -5.669659692   -5.467686217       0.9644
+
+`A` grows 1.5×; `C(A,2)` grows 2.5×; the accumulator ratio sits in
+**0.917 … 1.014 for k ≥ 7** (mean 0.957). **The flatness extends to A = 6** —
+`B_pred` carries essentially no `A`-dependence over a range where binding grows
+by 3.5×. That is the finding the withdrawn target was obscuring, and it is the
+direct measurement this bean's missing extensive term needs.
+
+Scope: this is a scope-(a) statement about the current `unified_iterative_correction`
+path at truncations k = 5…10 — not a structural exclusion of any ingredient.
+Audit: `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`; PR #6427.
+
+
+### k = 11 (production truncation) — both legs, added 2026-09-03
+
+The ladder above was extended to the production truncation. Both legs completed:
+
+    he4   A=4  k=11   uic = -8.201558468      1104 s
+    li6   A=6  k=11   uic = -7.794544740      1269 s
+                            ratio li6/he4 = 0.9504
+
+So the k >= 7 ratios are 0.933, 1.014, 0.917, 0.964, **0.950** — mean **0.956**,
+spread ±5 %, no trend in k, while `A` grows 1.5x and `C(A,2)` grows 2.5x.
+**k = 11 was the one rung that is not a reduced-cost proxy, and it behaves like
+the rest.** The flatness is not a truncation artefact.
+
+(The 6Li leg took two attempts: the first died to a worker-process restart at
+~1919 s, an environment event, NOT the A=6 compute ceiling the three earlier
+full-`binding_energy` kills established. The driver is resumable, so only that
+one cell was recomputed.)
+
+**A separate defect surfaced by the same run, worth its own attention:** 4He's
+|uic| runs 1.52 -> 2.15 -> 3.71 -> 5.67 -> 8.20 across k = 7..11 with the
+increments still GROWING (0.64, 1.56, 1.96, 2.53). **The accumulator is not
+converged at the production truncation.** The absolute B_pred values in the
+four-nucleus table are therefore truncation-limited; the matched-k ratio is not,
+which is why the flatness claim rests on the ratio and not on the values.
 
 ## 2026-09-01 — two exclusions, both against invariants rather than fits (PR #6414)
 
@@ -1805,8 +1931,427 @@ exactly as much as an "open" declaration does.**
 one identity, ch1 at 0.3995 because it is not bond-additive. That reframes my own
 capstone and is not in `qou-edt7`.
 
+CEILING: the corrected binding path reaches A=4 in this container, not A=6.
+
+TWO ROUTES TO SETTLE IT, neither attempted:
+  1. A=6 on a machine that holds the process. Nothing about the computation is
+     known to be wrong; it is scheduling.
+  2. A=4 and A=6 both at reduced k_exact -- not comparable to the k=11 points,
+     but comparable to EACH OTHER, so E(6)/E(4) discriminates cheaply. A
+     different measurement needing its own gate.
+
+## 2026-09-03 — RETRACTION of the `E ≈ 5.4 × C(A,2)` target above, and what replaced it
+
+**The target in the previous entry is WITHDRAWN. Do not carry it forward.** It
+is mostly an artefact of the arithmetic, not a finding about the framework.
+
+The mechanism: `E := AME − B_pred`, and the entry immediately above establishes
+that `B_pred ≈ −7.3 MeV` is **near-constant** across nuclei. So
+`E ≈ AME + 7.3`, and `E/C(A,2) ≈ (AME + 7.3)/C(A,2)` — a statement about
+**AME2020 plus an offset**, with almost no framework content in it. Measured:
+
+    nucleus   A    AME     E/C(A,2)   (AME+7.3)/C(A,2)
+    ²H        2    2.225     9.496          9.525
+    ³H        3    8.482     5.408          5.261
+    ³He       3    7.718     5.058          5.006
+    ⁴He       4   28.296     5.854          5.933
+
+The last two columns agree to **~1 %**. And `AME/C(A,2)` is not constant — it
+is 2.225, 2.827, **4.716**, 2.133, 1.869, 1.396 for ²H/³H/⁴He/⁶Li/⁷Li/¹²C: it
+**peaks at ⁴He and falls steeply**. The near-constancy was a three-point
+coincidence in the region where the AME curve happens to turn over; ⁶Li breaks
+it on AME grounds alone (≈2.62 with the offset), before the framework is
+consulted.
+
+The `E/C(A,2)` figure therefore does **not** bear on the pairwise-cap tension
+flagged in the previous entry — that tension is withdrawn along with the
+figure, not resolved.
+
+### What the retraction bought: a better experiment
+
+The informative measurement is **`B_pred` itself as a function of `A`**, with
+no experimental normalisation anywhere in it — so nothing about AME can
+contaminate it. Run as a **paired** comparison of ⁴He and ⁶Li at *matched*
+truncation `k_exact`, which also sidesteps the A=6 wall (three full
+`binding_energy` attempts at ⁶Li were killed at ~900 s / 326 s / 124 s):
+
+    k_exact   ⁴He (A=4)      ⁶Li (A=6)      ratio li6/he4
+      5      -0.375110164   -0.539212954       1.4375
+      6      -0.838749076   -0.992757495       1.1836
+      7      -1.515118319   -1.414063111       0.9333
+      8      -2.153722974   -2.183158129       1.0137
+      9      -3.711581534   -3.404340982       0.9172
+     10      -5.669659692   -5.467686217       0.9644
+
+`A` grows 1.5×; `C(A,2)` grows 2.5×; the accumulator ratio sits in
+**0.917 … 1.014 for k ≥ 7** (mean 0.957). **The flatness extends to A = 6** —
+`B_pred` carries essentially no `A`-dependence over a range where binding grows
+by 3.5×. That is the finding the withdrawn target was obscuring, and it is the
+direct measurement this bean's missing extensive term needs.
+
+Scope: this is a scope-(a) statement about the current `unified_iterative_correction`
+path at truncations k = 5…10 — not a structural exclusion of any ingredient.
+Audit: `docs/audits/2026-09-02-binding-energy-first-corrected-value.md`; PR #6427.
+
+
+### k = 11 (production truncation) — both legs, added 2026-09-03
+
+The ladder above was extended to the production truncation. Both legs completed:
+
+    he4   A=4  k=11   uic = -8.201558468      1104 s
+    li6   A=6  k=11   uic = -7.794544740      1269 s
+                            ratio li6/he4 = 0.9504
+
+So the k >= 7 ratios are 0.933, 1.014, 0.917, 0.964, **0.950** — mean **0.956**,
+spread ±5 %, no trend in k, while `A` grows 1.5x and `C(A,2)` grows 2.5x.
+**k = 11 was the one rung that is not a reduced-cost proxy, and it behaves like
+the rest.** The flatness is not a truncation artefact.
+
+(The 6Li leg took two attempts: the first died to a worker-process restart at
+~1919 s, an environment event, NOT the A=6 compute ceiling the three earlier
+full-`binding_energy` kills established. The driver is resumable, so only that
+one cell was recomputed.)
+
+**A separate defect surfaced by the same run, worth its own attention:** 4He's
+|uic| runs 1.52 -> 2.15 -> 3.71 -> 5.67 -> 8.20 across k = 7..11 with the
+increments still GROWING (0.64, 1.56, 1.96, 2.53). **The accumulator is not
+converged at the production truncation.** The absolute B_pred values in the
+four-nucleus table are therefore truncation-limited; the matched-k ratio is not,
+which is why the flatness claim rests on the ratio and not on the values.
+
+
+### LOCALISED 2026-09-03 — the A-dependence dies in the y_λ-weighted SUM
+
+`computations/probes/where_the_a_dependence_is_lost_probe.py`, 6/6. Three layers
+instrumented separately.
+
+**L1 chain — A-dependence is fed in, correctly.** `_step_chain_generic` appends
+one inter-nucleon crossing per previous nucleon: he4 50 crossings / 6 inter,
+li6 81 / 15 — exactly `C(4,2)` and `C(6,2)`. The coordination count IS present
+in the input.
+
+**L2 per-partition trace — it SURVIVES.** Same partition, both nuclei, final
+`ln|tr|` at 50 dps: partition (3,1) gives -1.29903 vs +0.09426 (differ in SIGN);
+(5,1) gives +0.58294 vs +0.13563.
+
+**L3 the weighted sum — it is GONE, and Pass 2's gate is NOT the cause.** The
+natural hypothesis (the complementary-slackness gate selects a
+nucleus-independent subset) is refuted:
+
+    k   he4 raw     li6 raw     RAW ratio   he4 gated   li6 gated  GATED   tight
+    5   -0.736660   -0.923253     1.2533    -0.375110   -0.539213  1.4375  5->10
+    7   -2.471104   -2.855260     1.1555    -1.515118   -1.414063  0.9333 18->22
+    9   -6.691821   -7.266773     1.0859    -3.711582   -3.404341  0.9172 42->48
+
+The RAW pre-gate sum is ALREADY flat, and gets flatter with k (1.253 -> 1.156 ->
+1.086) while C(A,2) grows 2.5x. The gate is A-aware (tight 5->10, 18->22,
+42->48) and roughly neutral on the ratio.
+
+**So the cancellation is in the y_λ-weighted telescoped sum over partitions** —
+downstream of the trace, upstream of Pass 2. A fix has to look there; the chain
+builder, the `g % n_gens` generator wrapping, and the gate are all exonerated.
+
+Scope-(a): localises the symptom at k = 5,7,9 in this one path. Does NOT
+identify the cancellation mechanism and excludes no ingredient.
+
+**Relation to the sibling sign work above (`manybody_sign_by_bond_topology_probe`):
+complementary, not conflicting.** That probe builds its object from
+`atom_canonical_crossings` bond topology; this path builds chains from
+`_step_chain_generic`. Different constructions, checked — no shared call. Their
+object IS A-dependent (positive A=3, negative A=4); this one is not. Do not read
+either as confirming the other.
+
+
+### 2026-09-03 — E₀-conditionality flagged by a sibling; it splits this arc's results in two
+
+Sibling #6443 (merged `4b83e4cf53`) warned on #6427 that "N× short" figures in
+the extensive lane are E₀-conditional — `derivation_chain.E_0_CONVENTIONS` spans
+**5.35x** between conventions A and B. Checked at the source; the warning is live
+for part of the arc and inert for the rest.
+
+`binding_energy` = `unified_iterative_correction` (m_e scale) +
+`sdp_cross_channel_contribution` + `binding_from_frobenius_pairing`, and term 3
+is literally `E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))`.
+
+**E₀-CONDITIONAL — do not quote as convention-free:** the four-nucleus `B_pred`
+table, every `|pred|/AME` ratio, and the "target varies 12.7x, prediction varies
+12.5 %" comparison. E₀ multiplies ONLY term 3, whose share differs per nucleus,
+so even a spread-of-ratios is not invariant under a convention change.
+
+**NOT affected:** the paired `k_exact` ladder (the 0.9504 flatness) — it measured
+`unified_iterative_correction` ALONE, which carries `M_E_MEV` not E₀, and it is a
+ratio at matched truncation so scale cancels a second time independently. Also
+unaffected: the layer-1/2/3 localisation, all of which sits inside `uic`.
+
+So the two load-bearing results survive and the headline table does not. Stated
+plainly because the strongest-sounding table was the one carrying the unmarked
+dependence.
+
+**Still open:** the per-term decomposition. Existence of the E₀ exposure is
+established FROM THE SOURCE; its magnitude is unmeasured (a run was launched and
+had produced no output at time of writing).
+
+
+### 2026-09-03 — the term-3 decomposition, all four nuclei
+
+    atom  A    B_pred      term3    terms1+2      AME  | E_0x5.351  hbq^2x11.783 | flip
+    2H    2  -7.271102   1.876634  -9.147736   2.2246  |   +0.8941      +12.9646  | x   4.87
+    3H    3  -7.742121   0.221623  -7.963744   8.4818  |   -6.7778       -5.3524  | x  35.93
+    3He   3  -7.456200   0.006659  -7.462858   7.7180  |   -7.4272       -7.3844  | x1120.8
+    4He   4  -6.828594   1.372964  -8.201558  28.2957  |   -0.8548       +7.9761  | x   5.97
+
+`flip` = the E_0 multiple at which B_pred crosses zero. Registered ceiling is
+hbar_q^2*m_N at x11.783. **Two of four flip under some registered convention**,
+and 4He is the alpha, not an owner-ruled special case. Scoping: E_0-conditional
+at A=2 and A=4; robust at A=3, both isobars.
+
+**TERM 2 IS ZERO.** terms1+2 at 4He = -8.201558468 matches the independently
+measured uic(4He,k=11) to 1.5e-10 (the rounding limit of the recorded B_pred).
+`sdp_cross_channel_contribution` contributes nothing at 4He; `binding_energy`
+advertises three terms in its docstring and delivers two.
+
+**THE 12.5% FLATNESS FIGURE IS PARTLY MANUFACTURED.** terms1+2 spread 20.56%
+against B_pred's 12.47% -- term 3 is largest exactly where terms1+2 are most
+negative (2H 1.877/-9.148, 4He 1.373/-8.202 vs 3He 0.0067/-7.463), so it
+OFFSETS their variation and the flatter number is the total. **The accumulator
+varies 20.6%, not 12.5%.**
+
+The 0.9504 paired result is untouched, structurally: it measured uic ALONE at
+matched truncation, term 3 not in it. uic varies 20.6% across 2H-4He and 5%
+between 4He and 6Li -- both true, of different comparisons. Against AME's 12.7x
+range, 20.6% is still flat in the sense the argument needs.
+
+Term 3 spans **282x**, non-monotonic in A, unrelated to AME. Sharpest case: 3H
+vs 3He differ **33-fold** in term 3 at identical mass number while their totals
+differ 3.8% -- terms1+2 absorb nearly the whole swing. That is a far larger
+within-A variation than the 6.7% noise floor quoted earlier in this arc, in the
+one term characterised as the scale-exposed outlier rather than as scatter. No
+explanation offered and none guessed.
+
+Method note worth keeping: three successive readings of the sign question were
+each overturned by the next nucleus. Four points did not support any of the
+first three conclusions drawn from them.
+
 Corrections pushed: retraction banners on `UrsellChainMismatch.lean` and the
 probe, witness description/caveats rewritten to lead with the priority note, and
 a new check 6 verifying my ratio against the recorded 60-digit value so the
 duplication is an explicit corroboration rather than an implicit collision.
 Nothing deleted.
+
+## 2026-09-03 — the mu-bar route is RETIRED as stated: wrong mu-bar (type error)
+
+`docs/audits/2026-09-03-two-mubars-selector-vs-magnitude.md`.
+
+After the rank bound closed trace-subtraction, this arc named 'mu-bar_123, the
+sorry-free triple-linking object' as the non-trace route. That names the WRONG
+object, and SecondCrossingInvariant.lean says so in a section titled 'two mu-bars
+in the corpus (do not conflate)'. Caught by reading the carriers before building
+the probe.
+
+  topological mu-bar_123   {0, +-1}          a SELECTOR (baryon vs meson)
+  mubarMeasured A          (3/4)(-2)^(A-3)   a MAGNITUDE — the Markov-trace
+                           = 3/4, -3/2, 3, -6  deficit coefficient (Lean examples)
+
+The binding asymmetry is a real ratio (~33.7). A {0,+-1} invariant cannot supply
+it — the same integer-type wall as the Delta_{3,3} ceiling of 9. The one with the
+right type is DEFINED as a Markov-trace deficit, and
+cyclic_trace_kills_iterCommTower (MassTheory) already proves a cyclic trace cannot
+reach it.
+
+CONVERGENCE: that theorem and this arc's rank bound (ocneanuFamily_finrank_le) are
+two independent proofs, no shared machinery, that the Markov trace cannot deliver
+the object. Neither was derived with the other in view.
+
+RETIRED: 'mu-bar_123 carries the asymmetry'. SURVIVES (weaker, honest): mu-bar_123
+as the coefficient SELECTING which magnitude applies, magnitude from elsewhere.
+UNTOUCHED: rank-bound scope — still (a), still excludes only the Markov family.
+No new compute; every value cited from a verified carrier.
+
+
+## 2026-09-03 — B done, A closed (negative): rank = n PROVED; mu-bar_123 is channel-blind
+
+**B — rank = n, both halves now in Lean** (`OcneanuWeight.lean`, 8944047236). The n
+HOOKS (n-k,1^k) are linearly independent, via a triangular evaluation: hook k
+vanishes at leg root z_m iff m <= k, and THE LEG ROOTS ARE THE OCNEANU FAMILY
+z_i = q^i/[i]_q. The row cap and the rank are one phenomenon. Verified
+symbolically at n=4,5,6 first (vanishing pattern, nonzero cyclotomic
+determinant, z_i identity), then formalised: linearIndependent_of_triangular
+(generic, strong induction), armFactor/legFactor/legRoot, two vanishing lemmas,
+hooks_linearIndependent. All sorry-free, lean-direct. HONEST SCOPE: genericity
+conditions on q (distinct leg roots, arm roots off leg roots, q^2 != 1) are
+HYPOTHESES not proved; hookNum == ocneanuNumPoly(hook diagram) is NOT proved
+(YoungDiagram.cells plumbing). So: 'n explicit hook numerators are
+independent', conditional on genericity.
+
+**A — closed, negative, no probe needed.** mu-bar_123 is typed on SINGLE
+objects (B : S -> Q) and applied only to single hadrons (confined triple,
+Borromean rings, 2-tube meson, baryon/vacuum). Both isospin channels are
+two-baryon states; mu-bar_123 = +-1 on every baryon => +-1 on BOTH channels
+=> CHANNEL-BLIND. Cannot select T=0 from T=1; the channels differ by the
+EXCHANGE (Delta_3,3), not by what each nucleon is. The 'selector survives'
+weak form is retired too. Honest residue: an exchange-sensitive invariant of
+the six-strand two-nucleon link, which the corpus does not carry. A bounded
+grep for mu-bar_123 + isospin timed out; not cited as evidence.
+
+
+## 2026-09-03 — the linking-data class is closed: lk IS I₃, and both channels sit at I₃ = 0
+
+Closes the residue this arc named the same day ("an invariant of the six-strand
+two-nucleon link that is sensitive to the exchange"), **for the linking-data
+class specifically**. Probe:
+`computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py` (exact
+integer arithmetic, no witness, asserts are the gate).
+
+**The composition.** Two facts the corpus already holds, neither applied to the
+two-nucleon link by its own carrier:
+
+- **(F1)** `inter_nucleon_linked_channel.py` derives the inter-nucleon arc as the
+  minimal non-Brunnian 2-component link `T(2,2k)` — `pp → lk +1`, `nn → lk −1`,
+  `pn → lk 0` — stating "NO numeric is tuned"; `u1_hypercharge_assignment.py:336`
+  names the same datum *"I_3 = writhe/2-of-inter-nucleon-arc"*. Since
+  `lk(T(2,2k)) = k = writhe/2`, **the inter-nucleon linking number IS I₃**.
+- **(F2)** Milnor indeterminacy — already the scope-(b) exclusion of the Milnor
+  route for ⁴He (`2026-08-29-gap2-he4-milnor-indeterminacy-exclusion.md`).
+
+**Result (scope b).** The ³S₁ (T=0) and ¹S₀ (T=1) np channels have the same
+flavour content, so `I₃ = 0` in both, so their linking matrices are **identical
+on all 15 pairs** — verified under both the single-arc and all-nine-pairs
+readings, so the verdict does not rest on that modelling choice. Every function
+of the linking data is therefore equal on the two channels: achievable asymmetry
+**exactly 1**, against **33.7055** required. Not a bound a better choice inside
+the class might beat; the two inputs are one matrix.
+
+**By-product.** The Milnor tower is DEAD across the interface at `I₃ = ±1`
+(pp, nn: `ℤ/1 = 0`) and ALIVE only at `I₃ = 0` (np: `ℤ/0 = ℤ`) — where **both**
+channels sit. Surviving is precisely what does not help.
+
+**So do NOT propose a higher-`μ̄` or linking-integral route for the T=0/T=1
+split** — including the Evans–Berger nth-order linking integrals the sweep found
+in `library/1992evansberger/ocr/` (they are inside this closed class).
+
+**NOT excluded:** an invariant reading the braid word beyond its linking data
+(the `Δ₃,₃` spectrum is such an object, capped at 9 by the separate
+integer-exponent argument); a non-Milnor super-pairwise object; anything
+carrying **spin**, which is what actually separates the channels.
+
+**Convergence, with its limit stated.** `qou-7zob` reaches the same wall from the
+flavour side (*"NO map from strand position to orbital angular momentum anywhere
+in the corpus"*), and `t7qv`'s `det T = −1` caps the ratio at 1. This supplies a
+*reason* those ratios are 1 rather than merely small. It is corroboration, **not**
+a fourth independent measurement — these routes share the (F1) assignment.
+
+**Correction made in-flight:** the probe's first draft labelled the deuteron's eV
+digits as keV and printed the shortfall as 33705x, a clean factor of 1000, which
+the `> 1` assert passed. The assert now pins 33.7055 to four decimals.
+
+Also: corpus-grepper memory updated (`MEMORY.md` trimmed 202 → 200 lines,
+detail in `resolved-topics.md`), since its own entry ended by handing over the
+gate that this closes.
+## 2026-09-03 — a NON-bond-graph structural source for the extensive term exists in the trace (qou-kru4)
+The bond-graph routes are closed from every direction above. Separately: the Markov trace is NOT bond-multiplicative at n=4 — the interleaved word s0 s1 s0 s2 s1 carries the exact cross term z(z^2-hz-1) = z * (conv-D Markov defect), negative (extra binding), confirmed two independent ways. This is a WORD-CLASS effect (bonds re-crossing after a neighbour bond), not a bond-graph count, so none of the bond-graph exclusions apply to it. It is a candidate source, not a closure: the production word is sequential (no number moves) and which word class a nucleus is remains qou-5vhf. See qou-ls86's 2026-09-03 entry and docs/audits/2026-09-03-markov-trace-not-bond-multiplicative-n4.md.
+
+
+## 2026-09-04 — CORRECTION: spin is NOT the residue, and I cited a bean for the opposite of what it says
+
+Retracts the last line of the 2026-09-03 section above. **The linking-matrix
+result is untouched** — `lk` IS `I₃`, both channels at `I₃ = 0`, achievable
+asymmetry exactly 1. What was wrong was its *"still open"* list, which ended:
+
+> anything carrying **spin**, which is what actually separates the channels
+
+**Why that is wrong.** The channels do differ in `S` (1 vs 0), so it is not
+false as physics — it is false as a statement about the *search*, which is what
+it was being used for. In the S-wave Pauli **locks** spin to isospin: space
+symmetric ⇒ spin and isospin symmetry opposite, so `S=1 ⟺ T=0` and `S=0 ⟺ T=1`.
+A Pauli-consistent interface carries a projector in each SU(2) with the roles
+exchanged, and the same two scalars multiply to the same number —
+`QOU.QBeta.InterfaceScalar.separable_interface_degenerate`
+(`InterfaceScalar.lean:628`, sorry-free).
+
+**The sharper half, which I had missed.** That carrier's own docstring: *"The
+conclusion holds for **every** `fSpace`, so no choice of space index rescues a
+separable interface."* So neither a spin factor nor a space factor escapes while
+the interface is separable. And the one surviving shape `qou-vbyi` names — the
+non-separable `(S,L)` tensor coupling — is closed by
+`TensorCouplingCannotUnbindSinglet` (#6488), which landed the same day I wrote
+the error.
+
+**The citation error, which is the part worth keeping.** I credited bean
+`qou-7zob` as *"reaching the same wall from the flavour side"*. It does not: its
+body **refutes** the spin route, stating the Pauli lock in as many words. I
+matched it on topic and cited it on agreement without reading it, and that
+citation shipped in five merged artifacts (#6461). Recorded as a TRAP in
+`.claude/agent-memory/corpus-grepper/MEMORY.md`: a title tells you the subject,
+never the verdict.
+
+**WHERE THE RESIDUE ACTUALLY IS.** `separable_interface_degenerate` *assumes*
+`fSpin s1 = fIso t1` and `fSpin s0 = fIso t0` — that the **same two projector
+scalars** serve both SU(2)s. Hypothesis, not derivation. A framework giving the
+two SU(2)s different scalars breaks the lock and the degeneracy with it. Nothing
+in the corpus shows they must be equal; nothing shows they may differ.
+
+And note the *shape* of that question: it is about **how the interface is
+constructed**, not about which quantum number is attached to it. All four routes
+this arc has closed — trace subtraction, `μ̄`, linking data, spin — were of the
+second kind. That may be the more useful finding than any one of the closures.
+
+Sites corrected (PR #6553): the probe (×2), the audit doc, corpus-grepper
+`resolved-topics.md`, and this bean.
+
+
+## 2026-09-04 — the Pauli lock's hypothesis, measured: two SU(2)s of different origin, and D9 has no witness
+
+Follows the correction above, which named `separable_interface_degenerate`'s
+equal-scalars hypothesis as the residue without quantifying it. Audit:
+`docs/audits/2026-09-04-pauli-lock-rests-on-an-unexamined-su2-identification.md`.
+
+**What the hypothesis asserts.** `hplus`/`hminus` say the **same two projector
+scalars** serve both SU(2)s. Concretely those are the Hecke spectral projector
+weights of a **single `σ`** (`μ± = y_(2), y_(1,1)`). So one `σ`'s scalars are
+asked to represent two symmetries — and the corpus does **not** treat them as
+one symmetry. Per `docs/duality-tracker.md`: **D9** isospin `SU(2)_I` is a
+flavour swap `u ↔ d` on colour-sheet flavour triples (canonical bowtie); **D10**
+spin `SU(2)_S` is an icosahedral rotation via `S₅ → A₅ ≅ I ⊂ SO(3)`. Different
+constructions; nothing obliges them to share a pair of scalars.
+
+**Can the corpus settle it? The obstruction is ASYMMETRIC.**
+
+- **D9 — no witness.** `class IsospinFromCanonicalBowtie` has **no instance**
+  corpus-wide; the only "instance" in its file is the docstring calling it the
+  conjectural witness. Corroborated by `WignerSU4FromSpinIsospin.lean:4` —
+  *"Once … are formalized"*. Matches the tracker's own **"D9 is the bottleneck"**.
+- **D10 — IS constructed, but builds something else.** `BringFiberAction` has a
+  content-bearing instance `bringFiberAction_icosahedral` — the genuine
+  icosahedral Reeb map `θ_λ = arccos(χ_λ(C₅)/dim_λ)`, `five_distinct_classes`
+  proved from the A₅ character table. But it builds a map **A₅ irrep → rotation**,
+  not projector scalars for the spin channel, and its own scope note leaves the
+  `W_λ = d_q²/D²` Plancherel obligation open.
+
+**A correction I caught before shipping.** My first draft of that audit said
+*"neither is constructed"*. The D10 instance refutes it. Caught by grepping for
+an instance rather than trusting the stub's *"conjectural witness"* docstring —
+which is the same failure mode as the `qou-7zob` miscitation one section above,
+twice in one day. The file is renamed off the wrong claim and records the
+correction rather than hiding it.
+
+**Two staleness findings**, neither fixed (out of scope, worth a follow-up):
+`S5SO3FiberAction.lean`'s class docstring still says *"no global instance is
+provided, so downstream theorems are genuinely conditional on it"* — they are
+not; and both D9/D10 content stubs advertise `lean/QOU/BraidsAndKnots/*.lean`
+files that **do not exist**, so their `lean.ref` resolves only by sibling
+fallback.
+
+**Status change.** The four closures (rank `= n`, `μ̄` selector, linking data,
+`Δ₃,₃` ceiling 9) are untouched and rest on their own arguments. The fifth —
+"the Pauli lock closes the channel asymmetry" — is now: *closes it **provided**
+the two SU(2)s carry the same projector scalars*, an identification between
+constructions of different origin, one without a witness. That is materially
+weaker and should not be listed beside the other four.
+
+**Scope: a scope statement, NOT a refutation.** It does not claim the scalars
+differ — exactly as unestablished as the converse.
+
+**Next.** Not a sixth invariant. A witness for D9 would make the equal-scalars
+question decidable for the first time. Larger than anything in this arc; already
+tracked in `docs/duality-tracker.md`.
+## 2026-09-04 (qou-sorn) — the word-level route dies of the same gap. Formalize-first: the only non-monotone shape carrying a Markov-trace cross term is the cyclic square (g_m g_{m+1})^2 (RevisitClassCrossTerm.lean); measured on 2H–4He with the production binding law it gives ≤1 MeV total and SHRINKS with A (3He 1.00 → 4He 0.68 MeV) against residuals growing 7 → 27 MeV, because it multiplies a product of sub-unit letter traces. Same intensive/extensive gap as the four bond-graph routes. Judgement: the extensive term is not a functional of the single atom word's tr_M.

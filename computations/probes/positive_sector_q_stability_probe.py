@@ -124,7 +124,7 @@ import numpy as np  # noqa: E402
 from scipy.optimize import linprog  # noqa: E402
 
 from pyhecke.gram import NF_NAMES, _hm_mp, gram_matrix_mp  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -134,7 +134,7 @@ except Exception:  # pragma: no cover
 
 mp.mp.dps = 40
 CORE = {"σ₁", "L₊", "L₋"}
-Q0_STR = mp.nstr(mp.mpf(str(Q0)), 20)
+Q0_STR = mp.nstr(q_at(mp.mp.dps), 20)
 #: The metallic ladder `delta_n = (n + sqrt(n^2+4))/2` is exactly where the
 #: Hecke scalar `h = q - 1/q` crosses the integer `n`
 #: (`computations/metallic_q_illustration.py`). `delta_1` is the golden ratio,

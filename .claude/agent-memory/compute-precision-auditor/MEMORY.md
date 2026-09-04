@@ -150,6 +150,14 @@ And **baseline from git** (`git show origin/main:<witness>`), never from a
 tree your own sweep writes to — a contaminated baseline produced a 73%
 figure of which two of three spot-checked verdicts were false.
 
+**And a MOVED verdict is usually the harness, not the arithmetic.** Measured
+over 99 producers in two sweeps (`qou-y98b`, #6454/#6493): five distinct causes
+of a false mover — an unlisted field name, a timing formatted into PROSE (no
+field-name mask reaches it), a CLI argument the witness itself records, a
+CWD-relative write that strays the witness to the repo root, and one genuinely
+stale consumer. **Zero were environment drift.** Full worked cases:
+`measurement-hygiene-traps.md`.
+
 ## STABLE — long-compute logging discipline
 
 Any background Python expected to run > 5 min (mass table beyond ⁴He,
@@ -198,6 +206,24 @@ worth anything once it reproduces the first.
 **Its generator indices are 1-BASED**; `tr_m_atomic_mpfr`'s are 0-based. Mixing
 them is SILENT at `n >= 4` (it just evaluates a different word) and only panics
 at small `n`, where the index falls out of range.
+
+## TRAP — `git checkout -- computations/` (what the gate PRINTS) eats your source edits
+
+`precision-gates.sh` says, of the four regenerated contended audit witnesses:
+*"DO NOT COMMIT THESE. Revert them: `git checkout -- computations/`"*. That
+command is **path-scoped**, and essentially every probe and producer in this
+repo lives under `computations/`. Run it verbatim and it discards every
+uncommitted edit in the tree.
+
+Measured 2026-09-04: an unstaged supersession banner on
+`computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py` was silently
+destroyed by following the instruction as printed. Untracked files survive (not
+in the index), so the loss falls **only** on tracked files you edited — and
+`git status` afterwards looks clean, so nothing flags it.
+
+Revert only what the gate named: `git checkout -- computations/witness-*-audit.witness.json`.
+Or commit source edits BEFORE running the gates; a clean index going in is the
+cheapest protection.
 
 ## BASELINE — re-measure, do not quote
 
@@ -274,3 +300,28 @@ TRAPs.
   duck-typed `Fraction` seminormal pipeline over power series; three traps
   (valuation, constant allocation, `reject_float64_q` vs short decimals) —
   see `exact-series-route.md`.
+- 2026-09-04 (qou-btqh): drained the braid-encoding-audit float64 ECHO CHAIN,
+  6→0 (option-b 8→0 too, both baseline entries REMOVED). Three lessons worth
+  keeping. (1) **Fixing the source clears pass-through echoes automatically,
+  but audit-COMPUTED fields do not** — `braid_encoding_audit` reads upstream
+  tr_M and also *computes* two relative-error assertions from them; once the
+  upstream became strings those assertions must parse to mpf, compute in exact
+  arithmetic and fmt the `computed` (add_assertion takes str; `passed` coerces
+  with float()). The bean said "6 echoes can't be fixed in the audit" — true
+  for the 4 pass-throughs, false for the 2 computed assertions + 1 literal.
+  (2) **`option_b` fed the float64 alias `q_parameter.Q` to a lambdified
+  trace, then `float()`-cast** — DOUBLE float64-poisoning; fix is
+  `set_compute_dps()` + `mpf(Q_50_DIGIT_STR)` fed in, mpf out, fmt. Confirmed
+  clean in import-time-dps because `set_compute_dps()` sits at module scope
+  ABOVE the `Q0_MPF` constant (the pattern that gate demands). (3) **A content
+  block `\approx 1.88432` (6 sig figs) → carry the VERBATIM string "1.88432",
+  never fmt-pad to 60** (draining-raw-float64 READ row, confirmed against a
+  real `\approx` quote). The hand-maintained `markov-trace-assembly-proton.derivation.json`
+  target_value was carried verbatim from its exact-source witness
+  (`atomic-tr-m-mpfr-50dps-proton`), `float(new_str)==old_f64`. Also: also
+  corrected a stale option_b assertion comparing the D value against the
+  retired C reference 1.63315 (failed by 0.25) → 1.88432, now passes. Family
+  reds are the documented inherited-main set; the 2 NEW raw-float64 files
+  (probe-toroidal-legendre-weinberg-gate, c2-diagonal-insertion) and the 1 NEW
+  import-time-dps (probe_toroidal_reeb_deformation.py) are all unmodified
+  pre-existing backlog, not mine.

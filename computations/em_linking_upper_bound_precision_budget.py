@@ -251,7 +251,18 @@ def main() -> int:
                 "rescue the route."),
     )
 
-    out = b.save()
+    out = b.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The precision budget is arithmetic on the "
+            "declared dps and the bound's own term magnitudes; it does "
+            "not evaluate the bound at the substrate modulus. Established "
+            "by import-cone trace (cone=2, no q_parameter / "
+            "qou_substrate.constants edge) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no "
+            "q0 field."),
+    })
     print(f"wrote {out}")
     return 0
 

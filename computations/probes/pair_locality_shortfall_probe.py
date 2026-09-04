@@ -59,6 +59,11 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 
+try:  # P30 provenance stamp; optional so a bare container still runs
+    from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
+except ImportError:  # pragma: no cover
+    from witness_base import WitnessBuilder as _WitnessBuilder
+
 set_compute_dps()
 
 # AME2020 total nuclear binding, MeV -- the same literals as
@@ -178,6 +183,15 @@ def main():
         print(f"    [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
     witness = {
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no q0. The shortfall is a difference of AME2020 binding "
+            "energies against a pairwise-additive model built from the same "
+            "data; no substrate quantity enters. Established by import-cone "
+            "trace (cone=1, no q0 import) and by "
+            "computations/audits/producer_baked_pin_audit.py, which finds "
+            "no q0-valued literal in the source. The witness carries no q0 "
+            "field."),
         "schema": "witness/v1",
         "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "description": (
@@ -240,6 +254,29 @@ def main():
         "source": "AME2020 total nuclear binding energies",
     }
     out = _HERE / "pair-locality-shortfall.witness.json"
+    # NOTE (#6537 x #6519): the `resolve_q0_anchor` override that #6519's sweep
+    # placed here has been removed for THIS producer, deliberately.
+    #
+    # That helper resolves the manifest pin -- muon, proton, or ambiguous -- and
+    # defaults to proton for any stem not under `ideal_muon`. It has no way to
+    # return `independent`, so on a producer that provably never reads q0 it
+    # manufactures a proton claim, and it did so by ASSIGNING OVER the literal
+    # below, leaving the `q0AnchorReason` ("Reads no q0 ...") next to a `proton`
+    # stamp that contradicts it.
+    #
+    # `independent` here is measured, not asserted, by three checks:
+    #   - import-cone trace: no q_parameter / qou_substrate.constants edge;
+    #   - producer_baked_pin_audit.py: no q0-VALUED literal in the source;
+    #   - q0_pin_flip_test.py: forcing the muon anchor does not move the
+    #     payload (subjects 0/7, on a harness where controls moved 2/2).
+    # The sweep's pattern is right for a producer that READS q0; this one
+    # does not.
+    # P30: add the staleness provenance (scriptHash / commitSha /
+    # engine) that a hand-rolled dump cannot get from build().
+    # The q0Anchor lines just below own the anchor decision and run
+    # after this, so their value stands.
+    _WitnessBuilder.stamp_staleness_metadata(
+        witness, script_path=__file__, engine="python")
     out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(_COMP.parent)}")
     return 0 if ok else 1

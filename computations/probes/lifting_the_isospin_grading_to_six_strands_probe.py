@@ -119,7 +119,7 @@ import numpy as np  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -128,7 +128,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 LQ = float(mp.log(_Q))
 WORD = [3, 2, 1, 4, 3, 2, 5, 4, 3]      # block swap {0,1,2} <-> {3,4,5}
 R_QCD = 2

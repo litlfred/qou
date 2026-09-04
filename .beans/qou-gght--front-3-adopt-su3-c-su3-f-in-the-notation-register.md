@@ -1,10 +1,11 @@
 ---
 # qou-gght
 title: 'Front 3: adopt SU(3)_c / SU(3)_f in the notation register and sweep the eightfold chapter'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-03T04:37:53Z
-updated_at: 2026-09-03T04:37:53Z
+updated_at: 2026-09-03T16:15:24Z
 parent: qou-icj2
 ---
 
@@ -97,3 +98,5 @@ repoint in `color-su3-from-g2.ts`, plus `docs/sm-eightfold-derivation-cheat-shee
 and `.beans/qou-8fl1--*.md`) landed at 04:55Z, after my sweep of that block; I re-ran
 `qa-sweep` on `color-su3-from-g2.md` so its sidecar ts-hash matches the live `.ts`.
 Any further `.ts` edit there re-stales it.
+
+Completed 2026-09-03: PR #6458 rebase-merged to main at bf97976176.

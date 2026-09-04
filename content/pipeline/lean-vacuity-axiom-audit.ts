@@ -1021,9 +1021,41 @@ const DOC_CLAIMS_SORRY =
  * Checked on the SAME sentence as the match, not the whole doc block — a file
  * may legitimately say "sorry-free" about one declaration and claim a `sorry`
  * for another in the next paragraph.
+ *
+ * The second line is ATTRIBUTION TO SUPERSEDED TEXT, added 2026-09-03. This
+ * corpus's house style, when a docstring is corrected, is to QUOTE the wording
+ * it replaced — "the paragraph that stood here said …", "Until 2026-08-08 this
+ * docstring said …", "the previous wording called this …". The quoted sentence
+ * still contains a present-tense `sorry` claim, so without these the detector
+ * fires on the correction itself and keeps firing forever.
+ *
+ * Measured on `main` b8d883189d: of the 5 findings then live, **4** were this
+ * shape and only 1 (`shell_filling_rule`) was anything else. Note `previously`
+ * was already here but `previous` was not, so "the previous wording" slipped
+ * through on a suffix.
+ *
+ * The risk is over-suppression — a real claim in a sentence that happens to
+ * mention an old one. `--selftest-docstring-sorry` guards it: the eight genuine
+ * claims drained in PR #6471 must all still fire.
  */
 const SORRY_MENTION_IS_HISTORICAL =
   /sorry-free|no\s+longer|previously|formerly|used\s+to|was\s+`?sorry`?|removed|not\s+a\s+`?sorry`?|no\s+`?sorry`?|instead\s+of|rather\s+than|modulo/i;
+
+/**
+ * Attribution to text this docstring has replaced — see the note above.
+ * Kept separate from `SORRY_MENTION_IS_HISTORICAL` so the two can be measured
+ * apart; `docstringSorryIsHistorical` is the only consumer of both.
+ */
+const SORRY_MENTION_QUOTES_SUPERSEDED =
+  /previous\s+(?:wording|version|revision|encoding|paragraph|sentence|docstring)|(?:stood|read)\s+here|(?:docstring|wording|sentence|paragraph|header|note)\s+(?:said|read|called|claimed)|earlier\s+revision|until\s+\d{4}-\d{2}-\d{2}/i;
+
+/** A `sorry` mention that does not assert this body is currently a `sorry`. */
+function docstringSorryIsHistorical(sentence: string): boolean {
+  return (
+    SORRY_MENTION_IS_HISTORICAL.test(sentence) ||
+    SORRY_MENTION_QUOTES_SUPERSEDED.test(sentence)
+  );
+}
 
 /**
  * Wording that attributes the `sorry` to some OTHER declaration rather than to
@@ -1057,7 +1089,7 @@ function detectDocstringSorryMismatch(
   // Find a sentence that claims a `sorry` in the present tense.
   const sentences = doc.split(/(?<=[.!?])\s+|\n{2,}/);
   const claim = sentences.find(
-    (s) => DOC_CLAIMS_SORRY.test(s) && !SORRY_MENTION_IS_HISTORICAL.test(s),
+    (s) => DOC_CLAIMS_SORRY.test(s) && !docstringSorryIsHistorical(s),
   );
   if (!claim) return undefined;
 
@@ -2893,6 +2925,78 @@ function writeSidecars(
 
 // ── Main ────────────────────────────────────────────────────────────
 
+/**
+ * Guard for `docstringSorryIsHistorical`, added with the superseded-text
+ * patterns on 2026-09-03.
+ *
+ * The risk of those patterns is OVER-suppression: a sentence that mentions old
+ * wording *and* makes a live claim would go silent. So the fixtures are the
+ * eight genuine mismatches drained in PR #6471 (which must all still fire) and
+ * the four attribution-to-superseded-text sentences that were firing on `main`
+ * b8d883189d and must not (three of them predate that PR; one is its own
+ * correction). Every fixture is real text from the corpus, not invented.
+ */
+function selftestDocstringSorry(): number {
+  const suppress: Array<[string, string]> = [
+    ["identityB_general",
+     '**Corrected 2026-08-23.** The sentence that stood here said "the only ' +
+     "residual inputs are the bricks' own honest `sorry`s\"."],
+    ["nucleon_ordering_factorization",
+     "**Honest `sorry` — and now actually one.** Until 2026-08-08 this docstring " +
+     "said \"honest `sorry`\" while the body read `exact ctx.factorization_ident`."],
+    ["whitehead_volume_conjecture",
+     '⚠ The previous wording called this "the one honest `sorry` here".'],
+    ["confinement_categorical",
+     'The paragraph that stood here said the body was "an honest `sorry` + ' +
+     '`-- Ref:`", that "no class field posits this conclusion".'],
+  ];
+  const mustFire: Array<[string, string]> = [
+    ["kappa_commutes_bar",
+     "It is a non-false, non-trivial claim that is NOT derivable from the diagonal " +
+     "structure alone, so it is left as an honest `sorry`."],
+    ["mobius_frobenius_kernel",
+     "neither of which is yet formalised; the body is a `sorry` carrying the " +
+     "manuscript citation per AGENTS.md §1."],
+    ["markovTrace_branching",
+     "that cannot be added as a simple class field, so the body is `sorry` with " +
+     "the manuscript citation."],
+    ["four_term_pair_nucleon",
+     "Honest `sorry`: the polarization-independence is proved as a mechanism."],
+    ["descended_trace_is_base_trace",
+     "Needs the descent / Frobenius-trace infrastructure (not formalised); body is `sorry`."],
+    ["base_mass_is_norm_of_base_trace",
+     "the base level (not formalised); body is `sorry`."],
+    ["ConfinementSDP",
+     "The conic-duality step itself is not in Mathlib, so it is discharged by " +
+     "`sorry` here — the hypothesis is the genuine analytic input."],
+    ["confinement_categorical (pre-fix)",
+     "neither of which is in Mathlib. The body is therefore an honest `sorry` + `-- Ref:`."],
+  ];
+  const fires = (s: string) =>
+    DOC_CLAIMS_SORRY.test(s) && !docstringSorryIsHistorical(s);
+
+  let bad = 0;
+  for (const [name, s] of suppress) {
+    if (fires(s)) {
+      console.log(`SELFTEST FAIL: still fires on superseded-text quote: ${name}`);
+      bad++;
+    }
+  }
+  for (const [name, s] of mustFire) {
+    if (!fires(s)) {
+      console.log(`SELFTEST FAIL: genuine claim no longer fires (over-suppressed): ${name}`);
+      bad++;
+    }
+  }
+  if (bad === 0) {
+    console.log(
+      "selftest ok: 4 attribution-to-superseded-text sentences suppressed, " +
+      "8 genuine sorry-claims still flagged",
+    );
+  }
+  return bad === 0 ? 0 : 1;
+}
+
 function main() {
   const argv = process.argv.slice(2);
   const roots: string[] = [];
@@ -2922,7 +3026,10 @@ function main() {
   let checkLedger: string | undefined;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--json") {
+    if (a === "--selftest-docstring-sorry") {
+      process.exit(selftestDocstringSorry());
+    }
+    else if (a === "--json") {
       jsonOut = argv[++i];
       jsonExplicit = true;
     }
@@ -2961,6 +3068,7 @@ function main() {
           "  --review-ledger F    seed/refresh the agent-verdict ledger\n" +
           "  --check-ledger F     fail unless every candidate has a fresh verdict\n" +
           "  --fail-on A,B        exit non-zero on these categories\n" +
+          "  --selftest-docstring-sorry  guard for the superseded-text patterns\n" +
           "  --quiet\n",
       );
       process.exit(2);

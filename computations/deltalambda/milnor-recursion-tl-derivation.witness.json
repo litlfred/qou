@@ -1,7 +1,9 @@
 {
  "computation": "milnor-recursion-tl-derivation",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
  "scriptFile": "milnor_recursion_tl_derivation_probe.py",
- "engine": "python-sympy-exact",
+ "engine": "python",
  "free_parameters": 0,
  "description": "Verifies the spin-\u00bd/TL structural mechanism behind the convention-D deficit recursion D_{A+1}=-h^2(h^2+2)D_A: the operator expansion rho(w_{A+1})=1+q^2h e_A-hq^-2 We_AW^-1-h^2 We_AW^-1 e_A holds as matrices, and taking qtr of its four terms directly reproduces the recursion (C3/C4). NOTE: an earlier 'single conditional-expectation identity' formulation of C3 was RETRACTED (it used the wrong contraction); the verified statement is the direct qtr-of-expansion. 0-fit, exact Q(q), no float64. No Lean instance created.",
  "results": {
@@ -25,5 +27,11 @@
   },
   "all_verified": true,
   "verdict": "TL MECHANISM CONFIRMED: spin-\u00bd = convention D (C0); the operator expansion (C2) rho(w_{A+1}) = 1 + q^2 h e_A - h q^-2 We_AW^-1 - h^2 We_AW^-1 e_A holds as matrices, isolating the SOLE w_A-dependent term with coefficient exactly -h^2; and taking qtr of that expansion reproduces D_{A+1} = -h^2(h^2+2) D_A (C3/C4). The per-term qtr reductions are recorded (t_e, t_WeW, t_WeWe vs qtr(W_0)). The -h^2(h^2+2) factor is thus DERIVED at the operator level in the spin-1/2 rep; the remaining \u2200A step is a Brunnian argument that the per-term reductions hold for all A (verified here at A=3, and the recursion itself at A=3..6). Replaces the weight-system bridge with a concrete TL computation."
- }
+ },
+ "scriptHash": "090ffe46802b",
+ "scriptCommitSha": "084327192d32848e3125f3bc7cef903af6f5cf84",
+ "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+ "computedAt": "2026-09-04T02:58:21.765103+00:00",
+ "durationMs": 0,
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

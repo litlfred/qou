@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "011fd415c481",
     "ts": "5ced91f158a8",
-    "lean": "6015600812a9",
+    "lean": "b0b4f2939e13",
     "lean_statement": "266fa1d49664"
   },
   "criteria": {
@@ -1216,6 +1216,25 @@
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction",
         "severity": "minor",
         "evidence": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction"
+      },
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8",
+          "lean": "b0b4f2939e13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:39:56Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:39:56Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Archimedean physical-rate statement (ln 2, dimensional scale mu_0, |.|^2, Q^5 phase space) in the explicitly archimedean predicted-spectra chapter, with the evaluation side fixed by 'Let (C, A, tau) be the Descartes universe' and a section-7c authorNote on the .ts; regime matches chapter, so PASS.",
+        "evidence": "REGIME: predicted-spectra is listed in the archimedean chapter set at folio-assistant/content/pipeline/_folio-chapter-profiles.qou.ts:180 and its allowed q-regimes include real-positive/real-gt-1/fixed-q0 (same file :109-111); the chapter manifest content/quantum-observable-universe/predicted-spectra/predicted-spectra.ts:4-8,17-20 describes it as 'Predicted Particle Spectra ... comparisons to CODATA ... Part III Physical Realization'; the registry description (qa-criteria-registry.ts:386-387) names 'numeric predicted-spectra blocks' among the explicitly-archimedean class. Peer verdicts on this criterion in the chapter: 22 pass / 2 n/a / 2 fail, and both fails (this block and q-value-transition) are Lean-compile refusals, not statement findings. STATEMENT TOKENS (hadron-half-life.md, statement = lines 3-21): :4 'Descartes universe (C, A, tau)' (the archimedean tuple, AGENTS.md section 7), 'beta-decay half-life' (a time); :7-9 t_{1/2} = ln 2 / Gamma_beta (Real.log, physical rate); :13 |W(q)|^2 (modulus -> ordered/normed field), mu_0 'dimensional scale', 2 pi^3 (real transcendental constant); :15 [2]_q = q + q^{-1} (algebraic, generic-ring); :17 |M_q|^2 (modulus); :19 f(Q) proportional to Q^5, 'Sargent phase-space integral' in the Q-value (energy, integral); :21 tr_Markov((sigma_1 sigma_2)^5) in H_3(q) and T_{3,5} (algebraic inputs), 'dimensional scale mu_0', 'f(Q) proportional to Q^5'. Outside the statement: :1 'substrate parameter q', 'half-life', 'beta decay', 'q-deformed transition amplitude'. No numeric q value, no MeV literal, no CODATA/PDG literal appears anywhere in the .md (consistent with the 7aa rule that q = 1.1097 not appear outside intro/Ch 7). BRANCHES: FAIL-1 (generic chapter hard-coding archimedean constructs) does not apply because the chapter is archimedean. FAIL-2 (archimedean-chapter statement that is a purely algebraic identity belonging upstream) does not apply: the statement is a Fermi-golden-rule-shaped decay-rate formula with ln 2, a dimensional scale, moduli and a phase-space integral, none of which is generic-ring; the algebraic ingredients ([2]_q, the H_3(q) Markov trace, the trace ratio) are consumed as inputs by cross-reference (:21 links to def:beta-decay-skein, prop:trace-ratio-observable, rem:building-block-knots) rather than asserted as identities here. WARN (mixes regimes without flagging the side) does not apply: the statement opens by fixing the archimedean side explicitly ('Let (C, A, tau) be the Descartes universe with substrate parameter q', :4) and closes by naming the dimensional scale it is evaluated against (:21), and the .ts carries an authorNotes entry (hadron-half-life.ts:5) 'Lean sibling: archimedean specialisation over R (AGENTS.md section 7c). Underlying combinatorial content stays generic to any commutative ring'; the Lean header (hadron-half-life.lean:21-24) likewise declares Ground ring R. So the statement matches its chapter regime and is explicitly specialised -> PASS. SIDE NOTE (not scored, md-only criterion): the prior 2026-07-07 entry recorded 'linarith failed' at hadron-half-life.lean:74 as a Lean-build refusal; the .lean hash has since changed (6015600812a9 -> b0b4f2939e13) and at the reviewed sha line 74 is a docstring, with the q_integer_2_gt_two proof now using nlinarith at :72 -- whether it compiles today is a separate lean-build finding that was not checked here. The .md hash also changed since that entry (3715492f6d98 -> 011fd415c481)."
       }
     ],
     "wall-side-proof": [
@@ -2477,6 +2496,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:03:19.705Z",
+  "updated_at": "2026-09-03T20:42:27.099Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

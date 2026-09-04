@@ -5,6 +5,8 @@ import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.LinearAlgebra.Span.Basic
 import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.Algebra.Polynomial.Eval.SMul
+import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
 /-!
 # QOU.SchurWeyl.OcneanuWeight — the Ocneanu/Markov weight at general `n`
@@ -363,5 +365,138 @@ theorem ocneanuFamily_finrank_le {R : Type*} [Field R] (q : R) (n : ℕ) (hn : 0
   exact (finrank_span_eval_le
     (fun mu : {x // x ∈ S} => ocneanuNumPoly q (mu : YoungDiagram)) (n - 1) hd).trans_eq
     (Nat.sub_add_cancel hn)
+
+/-! ### The lower bound: the `n` hooks are linearly independent, so `rank = n`
+
+`ocneanuFamily_finrank_le` gives `rank ≤ n`. This section supplies `≥ n` by exhibiting `n`
+members of the family that are linearly independent — the **hook** diagrams `(n−k, 1^k)`,
+`k = 0..n−1`. Each hook has one diagonal cell, `n−k−1` arm cells and `k` leg cells, so its
+numerator is `(q²−1)·∏ arm_j·∏ leg_i`, a product of `n−1` linear factors with **known roots**.
+
+The mechanism is that **the leg roots are the Ocneanu family itself**: the `i`-th leg factor
+vanishes at `z_i = q^{2i}(q²−1)/(q(q^{2i}−1)) = q^i/[i]_q`. So hook `k` vanishes at `z_m` exactly
+when `m ≤ k` — which is the row cap, read as *"a diagram with `k+1` rows is invisible at every
+level `≤ k`"* — and evaluating hooks `0..n−1` at `z_1..z_n` gives a triangular system with nonzero
+diagonal. The row cap and the rank are one phenomenon.
+
+The genericity conditions on `q` (leg roots distinct; arm roots off the leg roots; `q² ≠ 1`)
+are **stated as hypotheses**, not proved: they hold when `q` is not a root of unity of small
+order, and `hooks_linearIndependent` is exactly as conditional as they are. Measured exactly
+over `ℚ(q)` at `n = 2..6` in `markov_trace_family_rank_probe.py`; the leg-root/Ocneanu
+identification was verified there symbolically before this was written.
+
+`hookNum` is the hook numerator written out directly. Its identification with
+`ocneanuNumPoly q μ` for the hook diagram `μ` is **not** proved here — it requires computing
+`YoungDiagram.cells` of a specific shape and is a separate plumbing step. -/
+
+open Polynomial in
+/-- **Triangular independence** (generic). If functionals `φ m` satisfy `φ m (f k) = 0` for
+`m < k` and `φ m (f m) ≠ 0`, then `f` is linearly independent: apply `φ 0` to a vanishing
+combination to isolate `c 0`, then `φ 1`, and so on. -/
+theorem linearIndependent_of_triangular {R V : Type*} [Field R] [AddCommGroup V] [Module R V]
+    {n : ℕ} (f : Fin n → V) (φ : Fin n → (V →ₗ[R] R))
+    (hlt : ∀ m k : Fin n, m < k → φ m (f k) = 0)
+    (hdiag : ∀ m : Fin n, φ m (f m) ≠ 0) :
+    LinearIndependent R f := by
+  rw [Fintype.linearIndependent_iff]
+  intro g hg
+  suffices H : ∀ N : ℕ, ∀ i : Fin n, (i : ℕ) = N → g i = 0 from fun i => H i i rfl
+  intro N
+  induction N using Nat.strong_induction_on with
+  | _ N ih =>
+    intro i hi
+    have h1 : φ i (∑ k, g k • f k) = 0 := by rw [hg, map_zero]
+    rw [map_sum] at h1
+    simp only [map_smul, smul_eq_mul] at h1
+    have hsplit : ∀ k : Fin n, k ≠ i → g k * φ i (f k) = 0 := by
+      intro k hk
+      rcases lt_or_gt_of_ne hk with hki | hik
+      · have : g k = 0 := ih k (by rw [← hi]; exact hki) k rfl
+        rw [this, zero_mul]
+      · rw [hlt i k hik, mul_zero]
+    rw [Finset.sum_eq_single i (fun k _ hk => hsplit k hk)
+      (fun h => absurd (Finset.mem_univ i) h)] at h1
+    exact (mul_eq_zero.mp h1).resolve_right (hdiag i)
+
+open Polynomial in
+/-- Arm cell `(0,j)`, `j ≥ 1`: numerator factor `(q²−1) + q(q^{2j}−1)·z`. -/
+noncomputable def armFactor {R : Type*} [Field R] (q : R) (j : ℕ) : R[X] :=
+  C (q ^ 2 - 1) + C (q * (q ^ (2 * j) - 1)) * X
+
+open Polynomial in
+/-- Leg cell `(i,0)`, `i ≥ 1`: numerator factor `q^{2i}(q²−1) − q(q^{2i}−1)·z`. -/
+noncomputable def legFactor {R : Type*} [Field R] (q : R) (i : ℕ) : R[X] :=
+  C (q ^ (2 * i) * (q ^ 2 - 1)) - C (q * (q ^ (2 * i) - 1)) * X
+
+/-- The root of the `i`-th leg factor, `z_i = q^{2i}(q²−1)/(q(q^{2i}−1))` — which is the Ocneanu
+family parameter `q^i/[i]_q`. -/
+noncomputable def legRoot {R : Type*} [Field R] (q : R) (i : ℕ) : R :=
+  q ^ (2 * i) * (q ^ 2 - 1) / (q * (q ^ (2 * i) - 1))
+
+open Polynomial in
+theorem legFactor_eval_legRoot {R : Type*} [Field R] (q : R) (i : ℕ)
+    (hden : q * (q ^ (2 * i) - 1) ≠ 0) :
+    (legFactor q i).eval (legRoot q i) = 0 := by
+  have hq : q ≠ 0 := left_ne_zero_of_mul hden
+  have hq2 : q ^ (2 * i) - 1 ≠ 0 := right_ne_zero_of_mul hden
+  simp only [legFactor, legRoot, eval_sub, eval_mul, eval_C, eval_X]
+  field_simp
+  ring
+
+open Polynomial in
+/-- Numerator of the hook `(n−k, 1^k)`: one diagonal cell (constant), `n−k−1` arm cells, `k`
+leg cells. -/
+noncomputable def hookNum {R : Type*} [Field R] (q : R) (n k : ℕ) : R[X] :=
+  C (q ^ 2 - 1) * (∏ j ∈ Finset.Icc 1 (n - k - 1), armFactor q j)
+    * (∏ i ∈ Finset.Icc 1 k, legFactor q i)
+
+open Polynomial in
+/-- Hook `(n−k,1^k)` vanishes at leg root `z_m` for `1 ≤ m ≤ k`: the `m`-th leg factor is in the
+product. This is the row cap in polynomial form. -/
+theorem hookNum_eval_legRoot_eq_zero {R : Type*} [Field R] (q : R) (n k m : ℕ)
+    (hm1 : 1 ≤ m) (hmk : m ≤ k) (hden : q * (q ^ (2 * m) - 1) ≠ 0) :
+    (hookNum q n k).eval (legRoot q m) = 0 := by
+  simp only [hookNum, eval_mul, eval_prod]
+  have hmem : m ∈ Finset.Icc 1 k := Finset.mem_Icc.mpr ⟨hm1, hmk⟩
+  rw [Finset.prod_eq_zero hmem (legFactor_eval_legRoot q m hden)]
+  simp
+
+open Polynomial in
+/-- Hook `(n−k,1^k)` is NONZERO at leg root `z_m` when `k < m`: no leg factor `i ≤ k` is the
+`m`-th, and no arm factor vanishes there. The `≠ 0` hypotheses are the genericity conditions on
+`q`. -/
+theorem hookNum_eval_legRoot_ne_zero {R : Type*} [Field R] (q : R) (n k m : ℕ) (hkm : k < m)
+    (hq21 : q ^ 2 - 1 ≠ 0)
+    (harm : ∀ j, (armFactor q j).eval (legRoot q m) ≠ 0)
+    (hleg : ∀ i, i ≠ m → (legFactor q i).eval (legRoot q m) ≠ 0) :
+    (hookNum q n k).eval (legRoot q m) ≠ 0 := by
+  simp only [hookNum, eval_mul, eval_prod, eval_C]
+  refine mul_ne_zero (mul_ne_zero hq21 ?_) ?_
+  · exact Finset.prod_ne_zero_iff.mpr fun j _ => harm j
+  · refine Finset.prod_ne_zero_iff.mpr fun i hi => hleg i ?_
+    exact ne_of_lt (lt_of_le_of_lt (Finset.mem_Icc.mp hi).2 hkm)
+
+open Polynomial in
+/-- **The `n` hooks are linearly independent** — the `≥ n` half of `rank = n`.
+
+Functional `m` is evaluation at `z_{m+1}`; hook `k` vanishes there iff `m+1 ≤ k` iff `m < k`,
+and hook `m` is nonzero there. Uniform in `m` — the last hook needs no special case. -/
+theorem hooks_linearIndependent {R : Type*} [Field R] (q : R) (n : ℕ)
+    (hq21 : q ^ 2 - 1 ≠ 0)
+    (hden : ∀ m, 1 ≤ m → m ≤ n → q * (q ^ (2 * m) - 1) ≠ 0)
+    (harm : ∀ j m, 1 ≤ m → m ≤ n → (armFactor q j).eval (legRoot q m) ≠ 0)
+    (hleg : ∀ i m, 1 ≤ m → m ≤ n → i ≠ m → (legFactor q i).eval (legRoot q m) ≠ 0) :
+    LinearIndependent R (fun k : Fin n => hookNum q n (k : ℕ)) := by
+  refine linearIndependent_of_triangular _ (fun m : Fin n => Polynomial.leval (legRoot q (m + 1)))
+    ?_ ?_
+  · intro m k hmk
+    simp only [Polynomial.leval_apply]
+    exact hookNum_eval_legRoot_eq_zero q n k (m + 1) (Nat.succ_pos _)
+      (Nat.succ_le_of_lt hmk) (hden _ (Nat.succ_pos _) (Nat.succ_le_of_lt m.isLt))
+  · intro m
+    simp only [Polynomial.leval_apply]
+    exact hookNum_eval_legRoot_ne_zero q n m (m + 1) (Nat.lt_succ_self _) hq21
+      (fun j => harm j _ (Nat.succ_pos _) (Nat.succ_le_of_lt m.isLt))
+      (fun i hi => hleg i _ (Nat.succ_pos _) (Nat.succ_le_of_lt m.isLt) hi)
 
 end QOU.SchurWeyl

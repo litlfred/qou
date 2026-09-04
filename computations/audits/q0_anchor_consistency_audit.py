@@ -11,6 +11,9 @@ bug (bean tnjb) where a value drifts to the wrong anchor.
 Verdicts:
   Q0_OK              anchor ∈ {muon,proton} and q0Value matches that anchor's pin
   Q0_FLIP            anchor and q0Value disagree  ← CI-FAILING (the flip)
+  Q0_ANCHOR_UNRECOGNISED
+                     q0Anchor is a string this audit cannot map to a pin, so no
+                     comparison was attempted  ← CI-FAILING, but NOT a flip
   Q0_AMBIGUOUS       anchor == "ambiguous" WITH a q0AnchorReason naming what
                      is undetermined
   Q0_AMBIGUOUS_NO_REASON
@@ -237,7 +240,28 @@ def classify(path: Path) -> tuple[str, str]:
             )
         return "Q0_COMPARISON", ""
     if anchor not in ("muon", "proton"):
-        return "Q0_FLIP", f"unknown anchor {anchor!r}"
+        # NOT a flip, and calling it one is a category error with a measurable
+        # cost. `Q0_FLIP` means "anchor and q0Value disagree" — a checked
+        # contradiction. Here the label could not be mapped to a pin at all, so
+        # nothing was compared: the value may agree with its anchor perfectly.
+        #
+        # Measured on main 2026-09-03: 18 Q0_FLIP, of which **17** were this
+        # branch — witnesses writing prose into the token field, e.g.
+        # 'proton (experimental pin)' or
+        # 'both: proton q_at() + muon q_muon_at() @ CODATA 2022'. Reported as
+        # eighteen flip-flop bugs where there is ONE, which is how a gate that
+        # is red on arrival gets skipped.
+        #
+        # Still CI-FAILING, and deliberately: an unmappable label means the
+        # audit COULD NOT CHECK that witness, and "could not check" is never
+        # rendered as green. It is a separate line so the two are legible —
+        # this one is fixed at the producer by putting the token in `q0Anchor`
+        # and the prose in `q0AnchorReason`, which is what that field is for.
+        return "Q0_ANCHOR_UNRECOGNISED", (
+            f"q0Anchor={anchor!r} is not a pin this audit can map. Put the "
+            f"token ('muon' / 'proton' / 'ambiguous' / 'independent' / "
+            f"'comparison') in q0Anchor and the prose in q0AnchorReason."
+        )
     value = body.get("q0Value")
     if not value:
         return "Q0_VALUE_MISSING", f"anchor={anchor}"
@@ -256,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--strict", action="store_true",
-        help="Exit 1 if any Q0_FLIP witnesses are found (CI gate).",
+        help="Exit 1 on any Q0_FLIP or Q0_ANCHOR_UNRECOGNISED witness (CI gate).",
     )
     args = parser.parse_args(argv)
 
@@ -288,9 +312,11 @@ def main(argv: list[str] | None = None) -> int:
              "Q0_INDEPENDENT_NO_REASON", "Q0_COMPARISON",
              "Q0_COMPARISON_NO_REASON", "Q0_COMPARISON_NO_VALUES",
              "Q0_ANCHOR_MISSING",
-             "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR", "Q0_FLIP"]
+             "Q0_VALUE_MISSING", "Q0_AUDIT_EXEMPT", "Q0_PARSE_ERROR",
+             "Q0_ANCHOR_UNRECOGNISED", "Q0_FLIP"]
     n = {k: len(by_verdict.get(k, [])) for k in order}
     n_flip = n["Q0_FLIP"]
+    n_unrec = n["Q0_ANCHOR_UNRECOGNISED"]
 
     print("=" * 70)
     print("q₀-anchor consistency audit — muon/proton flip detector")
@@ -303,6 +329,16 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  - {r['witness']}: {r['detail']}")
         if n_flip > 25:
             print(f"  ... (+ {n_flip - 25} more)")
+    if n_unrec:
+        # Separate heading on purpose: these were reported as flips until
+        # 2026-09-03, which inflated the headline 1 -> 18 and buried the one
+        # real disagreement among seventeen naming defects.
+        print("\n⚠ Q0_ANCHOR_UNRECOGNISED (label unmappable — NOT a flip; the "
+              "audit could not check these):")
+        for r in by_verdict["Q0_ANCHOR_UNRECOGNISED"][:25]:
+            print(f"  - {r['witness']}: {r['detail']}")
+        if n_unrec > 25:
+            print(f"  ... (+ {n_unrec - 25} more)")
 
     builder = (
         WitnessBuilder("q0-anchor-consistency-audit", engine="python")
@@ -313,7 +349,10 @@ def main(argv: list[str] | None = None) -> int:
             "PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ "
             "at all — a positive, producer-declared statement, distinct from "
             "Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from "
-            "Q0_ANCHOR_MISSING (nothing recorded)."
+            "Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is "
+            "an anchor label that maps to no pin, so NO comparison was made — "
+            "also CI-failing, because 'could not check' is not green, but not "
+            "a flip and counted apart from one."
         )
     )
     builder.add_data("counts", n)
@@ -323,10 +362,20 @@ def main(argv: list[str] | None = None) -> int:
         "no_q0_flip", computed=n_flip, expected=0, tolerance=0,
         source="every witness's q0Value must match its q0Anchor's canonical pin",
     )
+    builder.add_assertion(
+        "no_unrecognised_anchor", computed=n_unrec, expected=0, tolerance=0,
+        source="every q0Anchor must be a token this audit can map to a pin, "
+               "so that the value CAN be checked against it",
+    )
     builder.save()
 
-    if args.strict and n_flip:
-        print(f"\nFAIL (--strict): {n_flip} Q0_FLIP witness(es).")
+    if args.strict and (n_flip or n_unrec):
+        parts = []
+        if n_flip:
+            parts.append(f"{n_flip} Q0_FLIP")
+        if n_unrec:
+            parts.append(f"{n_unrec} Q0_ANCHOR_UNRECOGNISED")
+        print(f"\nFAIL (--strict): {' + '.join(parts)} witness(es).")
         return 1
     return 0
 

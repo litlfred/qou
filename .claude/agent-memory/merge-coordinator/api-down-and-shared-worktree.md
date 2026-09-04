@@ -86,6 +86,24 @@ git merge-base --is-ancestor FETCH_HEAD HEAD # PROVE fast-forward before pushing
 git push origin HEAD:refs/heads/main         # the merge
 ```
 
+**Before any of this, verify the merge is actually clean — and not with the
+check everyone reaches for.** `git merge-tree <base> <ours> <theirs> |
+grep -c '^<<<<<<<'` **MEASURES NOTHING**: the old three-argument form emits no
+line-start conflict markers, so that grep returns 0 whether or not the merge
+conflicts. Use
+
+```sh
+git merge-tree --write-tree HEAD origin/main   # read the EXIT CODE: 0 clean
+```
+
+The API is a second false comfort: `mergeable_state: clean` can be computed
+against a stale base (16 commits back, in the recorded case), and `unknown`
+only means GitHub is recomputing — neither is evidence either way. Established
+by the `qou-4dq1` / `qou-0hu2` arc, which reported a branch conflict-free twice
+before catching it, with a real conflict hiding behind both signals. Added here
+2026-09-04 from `qou-phir`, where it lived only in beans and I ran the useless
+form myself before the sibling's own commit message caught it.
+
 Two properties make this safe and faithful:
 
 - **Push the branch first, then the *same SHA* to `main`.** The PR head SHA

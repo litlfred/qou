@@ -138,7 +138,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 
 from nucleus_real_sdp import load_cost  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -147,7 +147,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 LQ = mp.log(_Q)
 LW = mp.log(1 - _H)

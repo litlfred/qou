@@ -1,11 +1,11 @@
 ---
 # qou-dg07
 title: 'Colour antisymmetry from Milnor mu-bar: located route for eightfold items 4 and 7, gap is one identification'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T10:11:14Z
-updated_at: 2026-08-29T15:53:37Z
+updated_at: 2026-09-04T02:16:02Z
 ---
 
 ## Summary
@@ -399,3 +399,150 @@ exhibited.
 **Lesson (§8.4):** §8.1 was stated against an invariant and survived a change
 to the quantity a direct argument would have keyed on; §8.2 was stated against
 three quoted numbers and died with them. Same block, same hour.
+
+
+## §7.4 ANSWERED (2026-09-03) — isomorphic, not the same section
+
+PR #6449, branch claude/colour-sign-line-canonical-2026-09-03.
+
+The 2026-08-30 Brunnian isotype-exclusion note (a sibling, Opus 4.8) built
+on this bean's §4/§7.4, narrowed statement B to ONE surviving premise, and
+identified that premise as §7.4's own question. So the parked item became
+load-bearing while nobody was on it.
+
+**Answer: the two sign lines are isomorphic as S_3-representations, and the
+identification of their SECTIONS is not canonical.** Separating invariant:
+ker(B_3 -> S_3) = P_3, the pure braid group. The monodromy sign character
+factors through S_3, hence is constant on pure-braid closures; mu-bar is
+not. Exact — permutations + reduced free-group words, no float, no anchor.
+
+  F2  Borromean = closure of (sigma_1 sigma_2^-1)^3, in B_3 (the SAME braid
+      group as the colour monodromy), and PURE.
+  F3  nontrivial as a braid, via the faithful Artin rep B_3 -> Aut(F_3).
+  F4  it and the trivial braid share an S_3 image but their closures are
+      separated by mu-bar (+/-1 vs 0, cited).
+
+**CORRECTS MY OWN §7.4.** I wrote 'the two routes are one route with two
+derivations of its key step, not independent evidence'. Withdrawn — the
+group claim stands, the identification claim was an over-read.
+
+**F5, the arity check, is part of the result not a footnote.** Sign
+character is a function of a LOOP, mu-bar of a LINK; the comparison is
+legitimate only after pulling both back to B_3. Unconditional there.
+NOT established: that THIS fibration's monodromy image realises a
+witnessing pair — the local monodromies are recorded as PERMUTATIONS, not
+braid lifts. If the image's pure part carried only mu-bar = 0 the two would
+agree vacuously.
+
+**Does not touch** statement B or the Brunnian exclusion — they run on the
+Milnor side alone — nor B-i.
+
+**Corpus defect flagged, not repaired:** binding-knots-visual-inventory
+states 4 braid words and 3 close to the wrong component count (Hopf -> 1
+not 2; trefoil -> 2 not 1; Borromean -> 2 not 3). Only figure-eight is
+right; Vol = 8G is exactly right. No producer consumes them. The fix needs
+a 0- vs 1-indexing convention choice = author call.
+
+
+## F5 braid half CLOSED (2026-09-03) — image not confined to the S_3 quotient
+
+Second probe on PR #6449: bring_monodromy_braid_lift_probe.py. Lifted the
+six local monodromies from S_3 to B_3 by tracking the three colour tubes'
+motion in C at 50 dps and reading crossings off the real-order projection.
+
+All six loops are HALF-TWISTS of exponent sum -1 — the theory prediction
+for a simple branch point, so a check not a restatement. 6 of 15 pairwise
+products land in P_3 and all 6 are NONTRIVIAL as braids (Artin, faithful).
+So the monodromy image is not confined to the S_3 quotient.
+
+TWO DEFECTS IN MY OWN FIRST VERSION, caught pre-push:
+ 1. the docstring promised a consistency guard the code never ran; now
+    implemented against independent continuation-tracking (cycle type
+    matches on all six — literal equality is NOT expected, the two
+    readings label strands differently);
+ 2. base point was on the real axis, where the cubic has real coefficients
+    so two roots are conjugates with IDENTICAL real parts -> the
+    real-order projection is degenerate and recorded phantom crossings
+    (min gap 0.0). Moved to 2 + i/2; gap now 2.55e-7, guard asserts > 0.
+    The first version's words were superseded, not re-run.
+
+STILL OPEN: whether any pure braid in the image has a closure with
+mu-bar != 0. A nontrivial pure braid can still have mu-bar = 0, so the
+vacuous-agreement escape is NARROWED, not closed. Milnor computation, not
+a braid one.
+
+## §10.2 CLOSED (2026-09-03) — the monodromy image is all of B_3
+
+Probe: computations/probes/colour_mu_bar_monodromy_probe.py
+Witness: computations/probes/colour-mu-bar-monodromy-probe.witness.json
+Audit: docs/audits/2026-08-29-colour-antisymmetry-from-milnor-mu-bar.md §11
+
+The six local monodromies lift to only FOUR distinct braid words, two of
+which generate: sigma_1 = g0^-1, sigma_2^-1 = g0^-1 g1 g0 (g0 = sigma_1^-1,
+g1 = sigma_1^-1 sigma_2^-1 sigma_1). The image contains both Artin
+generators and is a subgroup of B_3, hence EQUALS B_3; its pure part is all
+of P_3. So (sigma_1 sigma_2^-1)^3 is in the image — built from the loop
+lifts, Brunnian, mu-bar_123 = -1 — against 0 for the identity, also in the
+image, both pure hence both sign character +1. F5's vacuous-agreement
+escape is CLOSED, on mu-bar itself.
+
+The sampling route says the opposite and is wrong: 6/6 pure pairwise
+products have indeterminacy 1; a radius-5 Cayley ball (14,801 words) has
+100 Brunnian pure elements, all mu-bar = 0. The Borromean braid needs 12
+generator-letters. A negative from a finite sample bounds the sample.
+
+Two self-caught defects (§11.3): mu-bar written as a SUM of its three
+cyclic readings (they are EQUAL; Borromean returned -3 vs +-1), then cyclic
+agreement enforced unconditionally (it holds only mod the indeterminacy).
+Neither reached a witness or doc. Corpus already had the right form in
+gap2_he4_borromean_mu_bar.py.
+
+Still open elsewhere in this arc (unchanged): binding-knots-visual-inventory
+braid words (3 of 4 close to the wrong component count — needs an indexing
+convention choice); rem:holonomy-trefoil 'isomorphism' -> 'surjection';
+rem:brings-qou-4tuple 'degree 4'.
+
+## Three author calls resolved (2026-09-03) — all three approved and fixed on #6449
+
+A. binding-knots-visual-inventory braid words: Hopf s0s1 in B3 -> s0^2 in B2;
+   trefoil s0s1s0 in B3 -> s0^3 in B2; Borromean s0s1s2s0s1s2 in B4 ->
+   (s0 s1^-1)^3 in B3. Figure-eight was already correct. All crossing counts
+   PRESERVED (2/3/6), so 3*E_x(q) and Vol = 8G are untouched.
+   CORRECTION to my own framing: I twice called this an indexing-convention
+   question. It was not — the block is consistently 0-indexed and the words
+   were simply wrong. Do not re-park this as a decision.
+
+B. rem:holonomy-trefoil: 'isomorphism' was false and the block refuted itself
+   ((H1H2)^3 = id vs (sigma_1 sigma_2)^3 = the full twist generating the
+   infinite cyclic centre of B_3). SPLIT rather than word-swapped: the braid
+   half ('monodromy group = trefoil-knot group') is now PROVED by this PR's
+   image-is-B_3 result and was previously only asserted; the SU(2) half is a
+   surjection onto a proper quotient. .ts gains a computation: block pointing
+   at colour_mu_bar_monodromy_probe.
+
+C. rem:brings-qou-4tuple: 'degree 4' -> 'degree 3'. It contradicted 'the S_3
+   permutation of the three sheets' in the same sentence; Riemann-Hurwitz with
+   six simple branch points gives g=1 at d=3 (matching bring_cubic_monodromy
+   _probe A5) and g=0 at d=4. chi(S) = -6 is the state bundle, untouched.
+
+Audit §12. Pipeline validate clean ('Valid — 9 issues', none in these blocks),
+run in an ISOLATED worktree because the shared folio-assistant clone is 338
+behind and holds 62 files of a sibling's uncommitted work.
+
+STILL OPEN: qa-sweep sidecars for the three blocks are stale by source-hash
+drift and were NOT refreshed — qa-sweep lives in that same shared clone.
+One sweep needed after this lands.
+
+MERGED 2026-09-03 as 0af489b527 (rebase, 11 commits linear on main).
+
+Post-merge: the one known gap is CLOSED. qa-sweep refreshed all three
+sidecars in an isolated worktree at merged main against a fresh
+folio-assistant clone; all six source_hashes verified by recomputation,
+not by trusting the sweep. PR #6535.
+
+Nothing open on this arc.
+
+SIDECAR GAP CLOSED AND MERGED 2026-09-04: PR #6535 merged at 032a124642 (rebase).
+Verified on merged main by recomputation, not by trusting qa-sweep — all six
+source_hashes current. The whole qou-dg07 arc is now closed: #6449 (the result)
+and #6535 (its sidecar gap) are both on main. Nothing open.

@@ -129,8 +129,8 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 
-from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from pyhecke.constants import pn_interface_offset  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -139,7 +139,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 _Z = _Q ** 3 / (_Q ** 2 + 1)
 LQ = mp.log(_Q)
@@ -208,6 +208,20 @@ def main() -> int:
                     ("e_max", e_max), ("1", mp.mpf(1)), ("2", mp.mpf(2))):
         cc = (1 - _H) ** (ev / 2)
         uu = -mp.log(cc)
+        # `e_max` is the OPEN endpoint: u = -log c = e_max/2 * -log(1-h) = LQ
+        # exactly, by the definition of e_max two blocks up. So `ratio_at_u`'s
+        # `u < LQ` is a strict comparison on an exact tie and `LQ - u` in its
+        # denominator IS the round-off -- the verdict and the ratio are both
+        # decided by noise at any precision. Under the laundered q_0 this row
+        # printed `False / T=1 BINDS`; with `q_at` it printed `True` and a
+        # ratio of 4.8e40. Neither meant anything. The window is [0, e_max),
+        # so the endpoint is excluded by definition, and that is what is now
+        # printed. The assertion below never read this row.
+        if lbl == "e_max":
+            tab[lbl] = (float(cc), False)
+            print(f"     {lbl:>8s} {float(cc):17.10f} {'boundary':>11s} "
+                  f"{'excluded':>12s}")
+            continue
         r = ratio_at_u(uu)
         tab[lbl] = (float(cc), r is not None)
         print(f"     {lbl:>8s} {float(cc):17.10f} {str(r is not None):>11s} "
@@ -262,7 +276,10 @@ def main() -> int:
              "1/q": 1 / _Q, "q-1": _Q - 1, "1-h": 1 - _H, "(1-h)^2": (1 - _H) ** 2,
              "q/(q+1)": _Q / (_Q + 1), "1/(q+1)": 1 / (_Q + 1), "log q": LQ,
              "-log(1-h)": -LW, "sqrt(1-h)": mp.sqrt(1 - _H), "h/(1-h)": _H / (1 - _H),
-             "1-h^2": 1 - _H ** 2, "z+h": _Z + _H, "D_PN": abs(mp.mpf(str(D_PN))),
+             "1-h^2": 1 - _H ** 2, "z+h": _Z + _H,
+             # not `mp.mpf(str(D_PN))`: that module constant is built from
+             # the float64 `pyhecke.gram.q0` and carries 2.0e-16.
+             "D_PN": abs(pn_interface_offset(q_at(mp.mp.dps))),
              "1-h/2": 1 - _H / 2, "q-h": _Q - _H, "2z-h": 2 * _Z - _H,
              "5h/4": 5 * _H / 4}
     scan = sorted(((abs(float(v - e_star)) / float(e_star), k, float(v))

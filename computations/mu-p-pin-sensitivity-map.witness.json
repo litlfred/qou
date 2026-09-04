@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "witness": {
     "id": "mu-p-pin-sensitivity-map",
-    "scriptHash": "b231de8cca2a",
+    "scriptHash": "f7a82298ed75",
     "scriptCommitSha": "8d91dbe8f0d55ef7067c94c93906f8296c4d910b",
     "producer": "computations/mu_p_pin_sensitivity_map.py",
     "description": "Relative pin-sensitivity S(O)=dlogO/dlogq of the canonical mass chain. Localizes the 11.5 ppb μ–p tension in the absolute muon anchor ℏ_q²; F_Bor/W_λ/mass-ratios are pin-robust."
@@ -34,7 +34,7 @@
         },
         {
           "observable": "m_mu  [ABS anchor]",
-          "value": "105.65839781134181577",
+          "value": "105.65839781134181393",
           "S_dlogO_dlogq": "-18.18535891230049",
           "exact_S": "-18.18535891230049"
         },
@@ -58,19 +58,19 @@
         },
         {
           "observable": "m_p   [ABS]",
-          "value": "938.27208942732426373",
+          "value": "938.27208942732424736",
           "S_dlogO_dlogq": "-20.99698540389891",
           "exact_S": null
         },
         {
           "observable": "m_n   [ABS]",
-          "value": "939.56589309159686536",
+          "value": "939.56589309159684897",
           "S_dlogO_dlogq": "-20.9702506715856",
           "exact_S": null
         },
         {
           "observable": "Q_beta",
-          "value": "0.7828047135826016217",
+          "value": "0.78280471358260160805",
           "S_dlogO_dlogq": "-2.614871852723307",
           "exact_S": null
         },
@@ -107,19 +107,19 @@
       ]
     },
     "muon_pin": {
-      "q0": "1.1099785955573347",
+      "q0": "1.1099785956427390467",
       "rows": [
         {
           "observable": "hbar_q = (q-1)/q",
-          "value": "0.09908172643825894293",
-          "S_dlogO_dlogq": "9.092678397394828",
-          "exact_S": "9.092678397394828"
+          "value": "0.099081726507577699949",
+          "S_dlogO_dlogq": "9.09267839033387",
+          "exact_S": "9.09267839033387"
         },
         {
           "observable": "hbar_q^2",
-          "value": "0.009817188513985981193",
-          "S_dlogO_dlogq": "18.18535679478966",
-          "exact_S": "18.18535679478966"
+          "value": "0.0098171885277224254378",
+          "S_dlogO_dlogq": "18.18535678066774",
+          "exact_S": "18.18535678066774"
         },
         {
           "observable": "Vol(4_1) [const]",
@@ -129,84 +129,84 @@
         },
         {
           "observable": "m_mu  [ABS anchor]",
-          "value": "105.65837564351300016",
-          "S_dlogO_dlogq": "-18.18535679478966",
-          "exact_S": "-18.18535679478966"
+          "value": "105.65837549567328006",
+          "S_dlogO_dlogq": "-18.18535678066774",
+          "exact_S": "-18.18535678066774"
         },
         {
           "observable": "F_Bor [ratio]",
-          "value": "4.4691385978267587957",
-          "S_dlogO_dlogq": "-2.675293670860136",
+          "value": "4.469138596906816353",
+          "S_dlogO_dlogq": "-2.675293670707581",
           "exact_S": null
         },
         {
           "observable": "|tr_M(B_Bor)|",
-          "value": "0.99856216319741255675",
-          "S_dlogO_dlogq": "-0.05549873548720992",
+          "value": "0.99856216319314849422",
+          "S_dlogO_dlogq": "-0.0554987356115464",
           "exact_S": null
         },
         {
           "observable": "[3]_q!",
-          "value": "6.1205793047628035494",
-          "S_dlogO_dlogq": "0.3802050646270735",
+          "value": "6.1205793049418541566",
+          "S_dlogO_dlogq": "0.3802050649039655",
           "exact_S": null
         },
         {
           "observable": "m_p   [ABS]",
-          "value": "938.2718621359253061",
-          "S_dlogO_dlogq": "-20.99698328255075",
+          "value": "938.27186062009365933",
+          "S_dlogO_dlogq": "-20.99698326840324",
           "exact_S": null
         },
         {
           "observable": "m_n   [ABS]",
-          "value": "939.56566577658218892",
-          "S_dlogO_dlogq": "-20.97024854716439",
+          "value": "939.56566426059304624",
+          "S_dlogO_dlogq": "-20.97024853299639",
           "exact_S": null
         },
         {
           "observable": "Q_beta",
-          "value": "0.7828046899668828077",
-          "S_dlogO_dlogq": "-2.614871866979177",
+          "value": "0.7828046898093869123",
+          "S_dlogO_dlogq": "-2.614871867074251",
           "exact_S": null
         },
         {
           "observable": "W_lambda(mark=5)",
-          "value": "0.21052052667656267965",
-          "S_dlogO_dlogq": "0.1851523449794848",
+          "value": "0.21052052667956176645",
+          "S_dlogO_dlogq": "0.1851523450728772",
           "exact_S": null
         },
         {
           "observable": "W_lambda(mark=2)",
-          "value": "0.031236301494509175466",
-          "S_dlogO_dlogq": "-1.24566428028975",
+          "value": "0.031236301491515353379",
+          "S_dlogO_dlogq": "-1.245664281208424",
           "exact_S": null
         },
         {
           "observable": "m_p/m_mu [RATIO]",
-          "value": "8.8802412153449704242",
-          "S_dlogO_dlogq": "-2.811626487761091",
+          "value": "8.8802412134238802113",
+          "S_dlogO_dlogq": "-2.8116264877355",
           "exact_S": null
         },
         {
           "observable": "m_n/m_p [RATIO]",
-          "value": "1.0013789219232383337",
-          "S_dlogO_dlogq": "0.02673473538635576",
+          "value": "1.0013789219252982032",
+          "S_dlogO_dlogq": "0.02673473540685027",
           "exact_S": null
         },
         {
           "observable": "m_mu/m_e [RATIO]",
-          "value": "206.76828298931511123",
-          "S_dlogO_dlogq": "-18.18535679478966",
+          "value": "206.7682827",
+          "S_dlogO_dlogq": "-18.18535678066774",
           "exact_S": null
         }
       ]
     }
   },
-  "scriptHash": "b231de8cca2a",
+  "scriptHash": "f7a82298ed75",
   "scriptCommitSha": "8d91dbe8f0d55ef7067c94c93906f8296c4d910b",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "commitSha": "e8fadaea289f291a2286cdf6248e5286078c978f",
   "engine": "python",
-  "computedAt": "2026-08-29T07:33:31.900565+00:00",
+  "computedAt": "2026-09-04T02:44:26.838395+00:00",
   "durationMs": 0,
   "q0Anchor": "ambiguous",
   "scriptFile": "mu_p_pin_sensitivity_map.py"

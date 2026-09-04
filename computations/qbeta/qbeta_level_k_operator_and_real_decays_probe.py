@@ -108,12 +108,12 @@ sys.path[:0] = [str(HERE), str(HERE.parent), str(HERE.parent / "substrate"),
 import _path_bridge  # noqa: E402, F401
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
-from hecke_core import build_nucleon_nf  # noqa: E402
+from hecke_core import build_nucleon_nf_mp  # noqa: E402
 from pyhecke.gram import NF_NAMES, build_atom_nf  # noqa: E402
-from q_parameter import Q  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 mp.mp.dps = 30
-Q0 = mp.mpf(str(Q))
+Q0 = q_at(mp.mp.dps)
 H = Q0 - 1 / Q0
 HB = (Q0 - 1) / Q0
 B_SUB = mp.sqrt((H ** 2 + 3) / (H ** 2 + 4))
@@ -169,9 +169,20 @@ def main() -> int:
     print(" Step 25: real decays, the level-k question, and the phase")
     print("=" * 78)
 
-    V = {nm: [mp.mpf(str(x)) for x in build_atom_nf(Z, N)] for nm, Z, N in ATOMS}
-    V["proton"] = [mp.mpf(str(x)) for x in build_nucleon_nf(list("uud"))]
-    V["neutron"] = [mp.mpf(str(x)) for x in build_nucleon_nf(list("udd"))]
+    # `build_atom_nf` returns float64 and has no correct mpf twin --
+    # `build_atom_nf_exact` is Fraction arithmetic at the rational model
+    # q = 111/100, 1.93e-5 off the substrate q_0, i.e. float-free and far
+    # worse. `mp.mpf(x)` on a float is exact w.r.t. THAT float and makes no
+    # wider claim; `mp.mpf(str(x))` at this file's dps would read a
+    # 15-digit value as a 30-digit one. The atom rows carry a ~1e-16 floor.
+    V = {nm: [mp.mpf(x) for x in build_atom_nf(Z, N)] for nm, Z, N in ATOMS}
+    # `build_nucleon_nf` returns a list of Python FLOATS, so
+    # `mp.mpf(str(x))` would read a float64 as exact at this file's dps.
+    # `build_nucleon_nf_mp` is the same braid word in mpf -- and it was
+    # STALE by the 2026-08-30 gluon term until it was fixed on this branch;
+    # do not swap to it on a docstring's word without re-measuring.
+    V["proton"] = build_nucleon_nf_mp(list("uud"), mp.mp.dps)
+    V["neutron"] = build_nucleon_nf_mp(list("udd"), mp.mp.dps)
 
     lens = {nm: len(v) for nm, v in V.items()}
     print(f"\n[1] NF-vector length for every species: {sorted(set(lens.values()))}")

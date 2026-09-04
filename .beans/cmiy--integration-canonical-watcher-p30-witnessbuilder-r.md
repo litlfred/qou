@@ -3,8 +3,9 @@
 title: 'Integration: canonical watcher - P30 WitnessBuilder rollup'
 status: todo
 type: task
+priority: normal
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-07-03T00:45:00Z
+updated_at: 2026-09-03T20:28:32Z
 ---
 
 ## Canonical bean for the P30 WitnessBuilder rollup (dedup 2026-06-28)
@@ -511,3 +512,90 @@ Session arc: mechanical batches + auto-stamper + native wheel + in-place stamper
 per-producer map + rust-producer archaeology; q0 parameterized (q0Anchor/q0Value on
 every witness), backfilled on 573, flip-detector CI-gated. Discussion CLOSED — do not
 revisit the floor of 3; each has a documented reason + resolution path.
+
+
+## 2026-09-03 — RE-MEASURED: the port is **23 producers, not ~133**, and the duplicate's worked example is already done
+
+Fresh measurement against `main` `95d9b62368`. **Quote these with the command, not the old figures.**
+
+**Command:** parse `computations/audits/witness-provenance-audit.witness.json`
+for entries with a non-empty `missing_fields`, resolve each witness to its
+producer (via the witness's own `scriptFile`, else a name heuristic), and
+classify the producer as WitnessBuilder-routed iff it both mentions
+`WitnessBuilder` and calls one of `.build(` / `.save(` / `stamp_staleness_metadata`.
+
+```
+TOTAL witnesses with missing provenance      347
+
+by missing-field pattern
+  250  commitSha, engine, scriptFile
+   49  commitSha
+   28  scriptFile
+   18  commitSha, scriptFile
+    1  engine
+    1  HAND-AUTHORED by design (its own provenance field says no producer was run)
+
+by producer route — the discriminator qou-1j39 names
+  255  producer USES WitnessBuilder  -> STALE; a re-run stamps it
+   23  producer is HAND-ROLLED       -> re-running NEVER stamps it
+   69  producer not located          -> MY RESOLVER'S LIMIT, not a finding
+```
+
+**This contradicts the framing the duplicate bean `qou-1j39` carries.** It
+presents the hand-rolled class as the scope and cites "~133 scripts". Measured,
+the hand-rolled class is **23 (7 %)**; **255 (73 %)** are ordinary staleness that
+self-heals on the next producer run, needing no port at all.
+
+**Honest bound:** 23 is a **lower** bound. The 69 unlocated are witnesses that
+exist on disk (only **1** audit-named witness is missing from disk) but whose
+producer my name heuristic could not find — some of those may be hand-rolled too.
+Classifier spot-checked against source on 3 of the 23
+(`milnor_a4_deficit_h_form`, `aggregator_convexity_divided_difference_probe`,
+`qcollatz_cycle_census`): all three genuinely hand-roll `json.dump`/`json.dumps`
+with no `WitnessBuilder` anywhere.
+
+**`qou-1j39`'s worked example is stale and should not be re-done.** It names four
+producers as the measured instance of the never-stamps class. All four now carry
+`WitnessBuilder`, and all four witnesses are **stamped** (`scriptHash`,
+`commitSha`, `engine`, `q0Anchor` all present):
+`birkhoff-barodd-pythagoras-bridge`, `deuteron-interface-handle-curvature`,
+`yekutieli-trefoil-surface2form-discretization`, `a3-branching-asymmetry-vs-required`.
+
+**The 23:**
+
+```
+computations/deltalambda/milnor_a4_deficit_h_form.py
+computations/deltalambda/milnor_a5_a6_recursion_test.py
+computations/deltalambda/milnor_recursion_capcup_weight_probe.py
+computations/deltalambda/milnor_recursion_forall_A_proof_probe.py
+computations/deltalambda/milnor_recursion_forall_A_reduction_probe.py
+computations/deltalambda/milnor_recursion_tl_derivation_probe.py
+computations/doorv_barparity_guardrail.py
+computations/hh1_h5_dim.py
+computations/probes/aggregator_convexity_divided_difference_probe.py
+computations/probes/aggregator_family_exclusion_probe.py
+computations/probes/aomega_m2_bps_cohomology.py
+computations/probes/b3_charge_decomposition_a3_probe.py
+computations/probes/pair_locality_shortfall_probe.py
+computations/qcollatz_backward_tree_structure_probe.py
+computations/qcollatz_block_structure_probe.py
+computations/qcollatz_cycle_census.py
+computations/qcollatz_divergence_probe.py
+computations/qcollatz_height_criterion_coverage.py
+computations/qcollatz_vtwo_domain_stable_probe.py
+computations/qcollatz_vzero_block_probe.py
+computations/qou_mass_canonical_wiring_example.py
+computations/sigma_f_electron_shell_chain.py
+computations/witness_staleness_triage.py
+```
+
+**Deliberately NOT ported in this pass.** The deferral reason (high collision
+with the active compute-PR storm) still holds — the storm is live, and **6 of
+the 23 are `deltalambda/milnor_*`, which is `qou-v7ro`'s active area**. A
+23-file sweep through `computations/` mid-storm is the collision the deferral
+exists to avoid. But the scope is now small enough that the deferral is worth
+**re-deciding** rather than renewed by default, which is the point of this entry.
+
+**Judgement, marked as such:** I would port the **17 non-`milnor_*`** files as one
+commit when the storm quiets, and leave the 6 `milnor_*` to whoever owns
+`qou-v7ro`. That splits cleanly along ownership and keeps the diff reviewable.

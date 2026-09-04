@@ -4,7 +4,7 @@
   "title": "Meridian-holonomy q\u2080\u21a6u deformation MAGNITUDE is anchor-smooth (exact boost-hyperbola amplification bound; true anchor comparison)",
   "description": "Scope-(a) NEGATIVE: the meridian-holonomy deformation magnitude channel produces an O(ppm) anchor swing (\u03c1\u22489.6=O(10)), ~1.5e5\u00d7 too smooth for the 3.47% c\u2083 swing; reaching the needed amplification would require q\u2080 within ~3e-7 of 1 (compact locus), but the substrate is ~0.11 away. Ties to Lean sensitivity_sq / barOdd_sq_le_of_amplification. No fit; nothing inverts Q_\u03b2/CODATA; no c_k wired.",
   "producer": "computations/qbeta/qbeta_meridian_holonomy_anchor_swing_probe.py",
-  "scriptCommitSha": "f421aafb3e355fde0a7337ab2b9dd7ccf52f87d9",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "consumes": [
     "computations/q-pinning-50-digit.witness.json (muon q\u2080)",
     "tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR (proton q\u2080)",
@@ -15,17 +15,17 @@
     "QOU.QBeta.MeridianHolonomyAnchorCarrier.barOdd_sq_le_of_amplification",
     "QOU.QBeta.MeridianHolonomyAnchorCarrier.amplification_le_of_barOdd_sq_ge"
   ],
-  "anchor_spacing_rel": "1.153711789e-8",
+  "anchor_spacing_rel": "1.161406021e-8",
   "c3_swing_reference": "0.0347",
   "per_anchor": {
     "muon": {
-      "q0": "1.10997859555733471989976322048",
-      "barOdd": "0.209060321995593678981863",
-      "barEven": "2.01089686911907576081766",
-      "u_2lnq": "0.208681463713274937712566",
+      "q0": "1.10997859564273904668179512938",
+      "barOdd": "0.2090603221503167466308",
+      "barEven": "2.01089686913516134673279",
+      "u_2lnq": "0.208681463867159574984988",
       "u_vs_barOdd_rel": "0.0018122",
-      "rho_u_magnitude_sensitivity": "9.61873994033865028",
-      "rho_S_channel_2rho": "19.2374798806773006",
+      "rho_u_magnitude_sensitivity": "9.61873993329687712",
+      "rho_S_channel_2rho": "19.2374798665937542",
       "sensitivity_sq_residual": "9.95682e-60"
     },
     "proton": {
@@ -45,20 +45,20 @@
       "computed": "9.95682e-60",
       "expected": 0.0,
       "passed": true,
-      "tolerance": "1e-40",
+      "tolerance": 1e-40,
       "source": "(barEven/barOdd)\u00b2 = 1 + 4/barOdd\u00b2 at both q\u2080 anchors \u2014 the boost-hyperbola identity, probe\u2194Lean MeridianHolonomyAnchorCarrier.sensitivity_sq tie"
     },
     {
       "name": "deformation_magnitude_swing_is_ppm",
-      "computed": "2.2114312e-7",
+      "computed": "2.2261794e-7",
       "expected": "< 1e-5 (O(ppm)); \u2248 2\u00b7\u03c1_u\u00b7(\u0394q\u2080/q\u2080)",
       "passed": true,
-      "tolerance": "1e-05",
-      "source": "\u0394(u\u00b2)/u\u00b2 across the muon\u2194proton q\u2080 anchors, coordinate FIXED (u=2 ln q). Leading-order 2\u00b7\u03c1_u\u00b7(\u0394q\u2080/q\u2080)=2.2194507e-7; barOdd-shape swing=1.1097254e-7; cross-check A1 \u03c9 home swing=4.5581062e-6"
+      "tolerance": 1e-05,
+      "source": "\u0394(u\u00b2)/u\u00b2 across the muon\u2194proton q\u2080 anchors, coordinate FIXED (u=2 ln q). Leading-order 2\u00b7\u03c1_u\u00b7(\u0394q\u2080/q\u2080)=2.2342525e-7; barOdd-shape swing=1.1171263e-7; cross-check A1 \u03c9 home swing=4.5581062e-6"
     },
     {
       "name": "c3_swing_over_deformation_magnitude_swing_gt_1e4",
-      "computed": "156911.96",
+      "computed": "155872.43",
       "expected": "> 1e4",
       "passed": true,
       "tolerance": 10000.0,
@@ -66,7 +66,7 @@
     },
     {
       "name": "substrate_far_from_compact_locus",
-      "computed": "\u03c1_req=3.00768e+6, barOdd_max_for_req=6.64964e-7, barOdd_actual=0.20906, orders_too_far=5.49747",
+      "computed": "\u03c1_req=2.98776e+6, barOdd_max_for_req=6.69398e-7, barOdd_actual=0.20906, orders_too_far=5.49459",
       "expected": "\u03c1_req \u2265 1e6 AND orders_too_far \u2265 5",
       "passed": true,
       "tolerance": null,
@@ -75,5 +75,13 @@
   ],
   "assertions_passed": 4,
   "assertions_total": 4,
-  "verdict": "scope-(a) NEGATIVE \u2014 meridian-holonomy deformation MAGNITUDE anchor-smooth; swing lives in the near-singular / non-perturbative phase arg(u); bounds both this route and #4283's in-block maps."
+  "verdict": "scope-(a) NEGATIVE \u2014 meridian-holonomy deformation MAGNITUDE anchor-smooth; swing lives in the near-singular / non-perturbative phase arg(u); bounds both this route and #4283's in-block maps.",
+  "scriptFile": "qbeta_meridian_holonomy_anchor_swing_probe.py",
+  "scriptHash": "c1000f5ad689",
+  "commitSha": "e8fadaea289f291a2286cdf6248e5286078c978f",
+  "engine": "python",
+  "computedAt": "2026-09-04T02:39:05.829609+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

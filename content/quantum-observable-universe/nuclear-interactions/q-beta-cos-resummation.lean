@@ -1,5 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Tactic
 
 
@@ -112,28 +114,116 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
 The fact that the single-wrap transfer-matrix eigenphase on `V_{(2,1)}`
 is `±α(q)` lives in `prop:beta-decay-transfer-matrix` and is a
 combinatorial property of the Hecke seminormal representation; we
-axiomatise it here as a class field. -/
+carry it here as a class hypothesis.
 
-/-- **Spectral identification**: the transfer matrix `M_β` for free-
-    neutron β-decay has spectrum `{e^{+iα}, e^{−iα}}` on the 2-d
-    irrep `V_{(2,1)}` of `H_3(q)`, where `α = (z−1) h / 2`.
+**Restated 2026-09-03 (bean `qou-eixt`; §3b-tax).** The previous encoding
+was **vacuous**, and the corpus already held the proof of that:
+`QOU.QBeta.EigenphaseCarrierVacuity` exhibits both of its former fields as
+theorems about an arbitrary real —
 
-    This is taken as axiomatic input from
-    `prop:beta-decay-transfer-matrix`; the Lean machinery for Hecke
-    seminormal characters is downstream work. -/
-class TransferMatrixEigenphase (q : ℝ) : Prop where
-  /-- Concrete spectral statement: the Markov-symmetrized single-wrap
-      character of the transfer matrix on `V_{(2,1)}` equals
-      `2 cos(eigenphase q)`. This binds the eigenphase definition to a
-      real numerical content (`2 cos α` is bounded in `[-2, 2]` and
-      attains its extremes at `α ∈ {0, π}`). -/
-  symmetrized_character_in_unit_disc :
-    -2 ≤ 2 * Real.cos (eigenphase q) ∧ 2 * Real.cos (eigenphase q) ≤ 2
-  /-- The eigenphase is real and bounded; under the bar involution
-      `q ↔ q⁻¹` it negates (cf. `eigenphase_bar_involution`). Concrete
-      consequence: cos of the eigenphase is bar-invariant. -/
-  cos_eigenphase_bar_invariant :
-    Real.cos (eigenphase q) = Real.cos (- eigenphase q)
+    field 1  `-2 ≤ 2 * Real.cos (eigenphase q) ∧ 2 * Real.cos (eigenphase q) ≤ 2`
+    field 2  `Real.cos (eigenphase q) = Real.cos (- eigenphase q)`
+
+are `-2 ≤ 2 cos x ≤ 2` and `cos x = cos (-x)`, true of **every** `x`. So the
+class asserted nothing, every `[TransferMatrixEigenphase q]`-conditional
+result was unconditional, and — separately — the conditional theorem below
+never mentioned the instance at all: its proof was `refine ⟨…, rfl, ?_⟩; ring`
+on `∃ x, x = A ∧ x = A` with the second `A` merely rewritten. Two independent
+§5 defects, one of them invisible to the vacuity detector because it lived in
+the *proof* rather than the carrier.
+
+**The encoding is the corpus's own, not a fresh invention.** That same file's
+§2 works out the repair — a `2×2` real matrix has spectrum `{e^{+iα}, e^{−iα}}`
+exactly when `tr = 2 cos α` and `det = 1` — and the class below adopts it, so
+the two files state one obligation rather than two rival ones. Unlike the
+original it is falsifiable: it constrains `M` (`replacement_excludes_some_matrix`
+there exhibits a matrix no `q` admits).
+
+**🛑 Do not read this as closing the gap — it is branch 2 of that file's §3
+trichotomy, which the same file establishes is CIRCULAR.** For every `α` the
+rotation `exp(αJ)` has trace `2 cos α` and determinant `1`, so the obligation
+is dischargeable by a matrix built *from `α` itself* (`circularWitness` there).
+What the repair buys is real but bounded: the class now constrains its argument
+instead of asserting nothing, and the theorem below is a genuine implication
+rather than a `ring` identity. What it does **not** buy is any evidence about
+the substrate. Branch 1, `M` in the braid image, is *excluded* — every
+character lies in `ℤ[q,q⁻¹]` while `2cos((z−1)h/2)` is transcendental over
+`ℚ(q,z)`.
+
+**🛑 CORRECTED 2026-09-04, hours after this file first said otherwise.** The
+paragraph here read *"the only contentful branch is 3 — `M` the holonomy of an
+independently-defined connection … (Kohno–Drinfeld / KZ …). That construction is
+carried out neither here nor there."* That is **wrong in exactly the form it
+names**, and it was wrong when written: `QOU.QBeta.HolonomySpectrumSignObstruction`
+landed 2026-08-31 (`4471ee72ce`, 6 theorems, sorry-free) and **excludes any
+holonomy whose generator has real spectrum**, Kohno–Drinfeld included.
+
+The argument reads no residues, which is why it reaches the whole class. A real
+generator eigenvalue `a` gives character `(eᵃ + e⁻ᵃ)/2 = cosh a ≥ 1` for *every*
+real `a`, so a `q`-dependent residue only changes which `a` occurs. The required
+correction factor is `0.998399 < 1` — not merely off, but **on the wrong side of
+1**. At the Kohno–Drinfeld value specifically, matching the braiding
+`P exp(ħt/2)` to the Hecke eigenvalues `{q, −q⁻¹}` forces `ħ = 2 ln q`, and since
+`q₀ > 1` is real that generator is **hyperbolic**: `det A = −(ln q₀)² < 0`, giving
+`(q + q⁻¹)/2 = 1.005448` against a required `0.998399`. The whole obstruction is
+`(x−1)² ≥ 0`; no analysis and no transcendence.
+
+**What survives is narrower, and is owned elsewhere.** Not "find a connection"
+but *"find one whose generator is **elliptic** at real `q`"* — `det A > 0`,
+spectrum `±iθ` with `θ = 0.0565947` — which makes the imaginarity the thing that
+has to be sourced, and the corpus names `conj:im-q-physical-role` as the
+candidate place. That is tier-0 condition **D0** on `qou-pdix`'s D1–D6 acceptance
+test, and the live trackers are `qou-pdix` / `qou-cds1`.
+
+**Scope, stated as the audit states it:** this does *not* prove no connection
+exists, does not derive `α`, and adjudicates no convention. It makes the elliptic
+requirement non-optional.
+
+How the error got here is worth recording, because the mechanism is reusable:
+`EigenphaseCarrierVacuity`'s §3 was written before that obstruction landed and
+was never updated, and this file quoted it as authoritative without checking
+whether its "only remaining option" had since been narrowed. A sibling file is
+not a primary source — the corpus is.
+
+**No instance is declared in this file**, per §3b-tax: an unproved primary
+input is honestly represented by a content-bearing class with no instance, and
+declaring one would let instance resolution discharge every conditional result
+below without anyone supplying the input. -/
+
+/-- **Spectral identification** (open input, `prop:beta-decay-transfer-matrix`):
+    the Markov-symmetrized single-wrap character of the transfer matrix `M_β`
+    for free-neutron β-decay, on the 2-d irrep `V_{(2,1)}` of `H_3(q)`, equals
+    `2 cos α` where `α = (z−1) h / 2` — i.e. `M_β` has spectrum
+    `{e^{+iα}, e^{−iα}}` there.
+
+    `M` is the transfer matrix restricted to that irrep. The encoding is
+    `QOU.QBeta.EigenphaseCarrier`'s §2 `TransferMatrixSpectrum`, adopted rather
+    than reinvented: a `2×2` real matrix has spectrum `{e^{+iα}, e^{−iα}}`
+    exactly when `tr = 2 cos α` and `det = 1` (characteristic polynomial
+    `t² − 2cos(α)·t + 1`). -/
+class TransferMatrixEigenphase (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ) : Prop where
+  /-- The Markov-symmetrised single-wrap character is `2 cos α`. Falsifiable:
+      for a given `q` it pins the trace to one value (`symChar_unique`), so
+      unlike the superseded fields it is **not** satisfied by an arbitrary
+      substitution. -/
+  trace_eq : M.trace = 2 * Real.cos (eigenphase q)
+  /-- Unimodular spectrum: `e^{+iα} · e^{−iα} = 1`. -/
+  det_eq : M.det = 1
+
+/-- The class pins the character uniquely — the non-vacuity property the
+    superseded encoding lacked. Two matrices carrying it at the same `q` have
+    equal trace. -/
+theorem symChar_unique (q : ℝ) (M N : Matrix (Fin 2) (Fin 2) ℝ)
+    [TransferMatrixEigenphase q M] [TransferMatrixEigenphase q N] :
+    M.trace = N.trace := by
+  rw [TransferMatrixEigenphase.trace_eq (q := q) (M := M),
+      TransferMatrixEigenphase.trace_eq (q := q) (M := N)]
+
+-- NOT declared here: a satisfiability witness. `QOU.QBeta.EigenphaseCarrier`
+-- already carries one, under the name that says what it is — `circularWitness`.
+-- The rotation `exp(αJ)` satisfies both fields for every `q`, built from `α`
+-- itself. Restating it here as a "consistency check" would understate it: it is
+-- the circularity, not reassurance.
 
 /-! ## Cos-resummation theorem (conditional)
 
@@ -146,11 +236,15 @@ is captured by the polynomial identity below, which is closed by `ring`.
 The full statement (relating the symbolic correction factor to the
 Markov trace itself) requires the class hypothesis. -/
 
-/-- Polynomial identity: the second-order Taylor coefficient of `cos α`
-    is `−α²/2`. Used to anchor the cos-resummation at `O(α⁴)`. -/
-theorem cos_taylor_quadratic_coeff (α : ℝ) :
-    1 - α^2 / 2 - (1 - α^2 / 2) = 0 := by
-  ring
+-- REMOVED 2026-09-03 (bean `qou-eixt`): `cos_taylor_quadratic_coeff` stated
+-- `1 - α^2/2 - (1 - α^2/2) = 0`, i.e. `X - X = 0`, and was closed by `ring`. Its
+-- docstring called it "the second-order Taylor coefficient of `cos α`", but the
+-- statement never mentions `Real.cos` — it is a §5 tautology, provable without any
+-- hypothesis about the objects in question, and it anchored nothing. It had no
+-- consumers inside or outside this file (checked corpus-wide). A real second-order
+-- statement needs a remainder bound on `|cos α - (1 - α²/2)|`, which Mathlib does
+-- not carry in a directly-applicable form (`exact?` fails on it), so it is left
+-- undone rather than re-faked.
 
 /-- The cos resummation is **even** in `α`: under `α ↦ −α`, the value is
     preserved. (Trivially from `cos(−x) = cos x`.) -/
@@ -159,54 +253,54 @@ theorem cos_resummation_even (α : ℝ) :
   exact Real.cos_neg α
 
 /-- **Q_β cos-resummation theorem** (conditional on `TransferMatrixEigenphase`).
-    The Markov-trace symmetrization of the two transfer-matrix eigenphases
-    `±α(q)` gives the cosine of the half-argument:
+    Given the spectral identification, the Markov-trace symmetrization of the
+    two transfer-matrix eigenphases `±α(q)` gives the cosine of the half
+    argument, so the refinement of Form A by half the symmetrized character
+    is Form A times `cos α`:
 
-      `τ_M^symm(M_β) = cos α`
+      `Q_β^A · (tr M / 2) = Q_β^A · cos α`,  `α = (z(q) − 1) · h(q) / 2`.
 
-    and the corresponding refinement of Form A is
+    Per §"Markov cyclicity" of `prop:q-beta-cos-resummation`, the resummation
+    must be even in `α` (by `eigenphase_bar_involution` + cyclicity of `τ_M`),
+    so the cosine is the unique entire even analytic function matching the
+    spectral-bridge perturbative expansion at every order.
 
-      `Q_β^{A,cos} = Q_β^A · cos α`
+    **This is a genuine implication**, verified by negative control: drop the
+    instance binder and the goal `formA * M.trace * (1/2) = formA * cos α` is
+    not provable — `ring` fails on it, as it must. The superseded statement was
+    `∃ x, x = A ∧ x = A`, closed by `ring` with the instance binder unused, and
+    said nothing about the transfer matrix. Note the implication is genuine
+    while its *hypothesis* remains circularly dischargeable; see the section
+    note above.
 
-    where `α = (z(q) − 1) · h(q) / 2`.
-
-    Per §"Markov cyclicity" of `prop:q-beta-cos-resummation`, the
-    resummation must be even in `α` (by `eigenphase_bar_involution` +
-    cyclicity of `τ_M`), so the cosine is the unique entire even
-    analytic function matching the spectral-bridge perturbative
-    expansion at every order.
-
-    **Empirical evidence** (from
-    `q-beta-tightening-landscape.witness.json`): at `q_0 ≈ 1.110`,
-    the cos-resummed prediction has CODATA residual `+305.7 ppm`,
-    compared to `+1677.5 ppm` for bare Form A — a `5.49×` tightening. -/
+    **Empirical evidence** (from `q-beta-tightening-landscape.witness.json`):
+    at `q_0 ≈ 1.110`, the cos-resummed prediction has CODATA residual
+    `+305.7 ppm`, compared to `+1677.5 ppm` for bare Form A — a `5.49×`
+    tightening. That number is evidence *for the open identification*, not a
+    consequence of this theorem. -/
 -- Ref: [manuscript] prop:q-beta-cos-resummation
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov trace on H_n(q))
 -- Ref: [wenzl1988] doi:10.1007/BF01239526   (Wenzl-bridge `y_λ`)
-theorem q_beta_cos_resummation (q : ℝ) [TransferMatrixEigenphase q] :
-    ∀ (formA : ℝ),
-      -- The refined prediction equals Form A times `cos α`
-      ∃ (formA_cos : ℝ),
-        formA_cos = formA * Real.cos (eigenphase q)
-        ∧
-        -- The leading correction is `−α²/2` (Taylor)
-        formA_cos = formA * (1 - (eigenphase q)^2 / 2) +
-                    formA * ((eigenphase q)^4 / 24 -
-                             (eigenphase q)^6 / 720 +
-                             (Real.cos (eigenphase q) -
-                              (1 - (eigenphase q)^2 / 2
-                                 + (eigenphase q)^4 / 24
-                                 - (eigenphase q)^6 / 720))) := by
-  -- Proof outline:
-  --   1. Construct formA_cos := formA * Real.cos (eigenphase q).
-  --   2. First conjunct: by rfl.
-  --   3. Second conjunct: ring on the Taylor remainder identity
-  --      (the bracketed `(...)` term is literally `cos α` minus its
-  --      explicit Taylor truncation, so the equation reduces to
-  --      `formA · cos α = formA · cos α`).
-  -- Ref: [manuscript] prop:q-beta-cos-resummation
-  intro formA
-  refine ⟨formA * Real.cos (eigenphase q), rfl, ?_⟩
+theorem q_beta_cos_resummation (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ)
+    [h : TransferMatrixEigenphase q M] (formA : ℝ) :
+    formA * (M.trace / 2) = formA * Real.cos (eigenphase q) := by
+  rw [h.trace_eq]
   ring
+
+/-- The cos-resummation is a **contraction**: the correction factor has
+    modulus at most one, so dressing Form A by it can only shrink `|Q_β^A|`,
+    never inflate it.
+
+    A real consequence of the class rather than a restatement of it — it is
+    false for an arbitrary `M`, and it is the sign-and-magnitude sanity check
+    the superseded `ring`-closed conjunct was standing in for. -/
+theorem cos_resummation_contracts (q : ℝ) (M : Matrix (Fin 2) (Fin 2) ℝ)
+    [h : TransferMatrixEigenphase q M] :
+    |M.trace / 2| ≤ 1 := by
+  rw [h.trace_eq]
+  have hle := Real.cos_le_one (eigenphase q)
+  have hge := Real.neg_one_le_cos (eigenphase q)
+  rw [abs_le]
+  constructor <;> linarith
 
 end QOU.Interactions

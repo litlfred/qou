@@ -1,22 +1,35 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.Archimedean.QValueTransition
+# QOU.Archimedean.QValueTransition — the mass-difference FORM of the `Q`-value
 
-**Canonical declaration** for content block at
+Carrier for the **mass-difference form** stated in content block
 [`quantum-observable-universe/predicted-spectra/q-value-transition.ts`](quantum-observable-universe/predicted-spectra/q-value-transition.ts).
 
-Formalises the manuscript **definition** of the `Q`-value of a `β⁻`
-transition as the neutral-atomic mass difference
-`Q = M(Z,N) − M(Z+1,N−1)`, with `M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N)`
-(§7c: archimedean over `ℝ` — physical masses; counts carried as `ℤ`).
+This is NOT the block's primary definition. The primary definition —
+the `𝒬_q`-value as a categorical **action** difference,
+`𝒬_q = 𝔖_q(parent) − 𝔖_q(daughter) − 𝔖_q(e) − 𝔖_q(ν̄)` — is
+`QOU.Archimedean.QqValue.value` in the block's sibling file
+`predicted-spectra/q-value-transition.lean`, and the block's `lean.ref`
+names that declaration.
+
+What this file carries is the archimedean realisation in which the
+transition is evaluated as a neutral-atomic mass difference,
+`Q = M(Z,N) − M(Z+1,N−1)` with
+`M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N)`, together with the one
+arithmetic fact about it (`q_mass_difference`): expanding the masses
+leaves the `n − p − e` gap plus the change in binding. The identification
+of this form with the action difference is a realisation step, not a
+theorem of this file; nothing here relates `Q` to `QqValue.value`.
+(§7c: archimedean over `ℝ` — physical masses; counts carried as `ℤ`.)
 -/
 
 namespace QOU.Archimedean
 
-/-- Data for a `β⁻`-decay `Q`-value.
+/-- Data for the mass-difference form of a `β⁻`-decay `Q`-value.
 
-    A `definition` carrier: the nucleon/electron masses, the binding energy
+    A carrier for the realised form, not the primary definition (see the
+    module header): the nucleon/electron masses, the binding energy
     `B(Z,N)`, the neutral-atomic mass `M(Z,N)` pinned to its formula, and the
     `Q`-value pinned to the parent–daughter mass difference. -/
 structure QValueTransition where

@@ -228,7 +228,7 @@ reduction's identity for a single `V_λ`, with its hypothesis discharged rather 
 
 /-- **The image of the tower inclusion preserves the blocks.**  For every `y ∈ H_m(q)`, the
 seminormal matrix of `ι y ∈ H_{m+1}(q)` is block-preserving for the top entry. -/
-theorem seminormalRep_heckeIncl_mem_blockSubalgebra {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem seminormalRep_heckeIncl_mem_blockSubalgebra {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
     seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y)
       ∈ blockSubalgebra (μ := μ) (m + 2) := by
@@ -259,7 +259,7 @@ For every `y ∈ H_m(q)`, with `σ_{m+1}` the last generator of `H_{m+2}(q)`:
 This is `χ^λ(x·σ_n) = ∑_T x_{TT} · a(c(λ/μ) − c_T(n))` — the identity the corner reduction of the
 Markov condition rests on — with the hypothesis now discharged for genuine elements of the
 subalgebra rather than assumed of a matrix. -/
-theorem trace_heckeIncl_mul_lastGen {q : ℝ} (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1)
+theorem trace_heckeIncl_mul_lastGen {q : ℝ} (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q)
     (m : ℕ) (hN : μ.cells.card = m + 2) (y : Hecke ℝ q q⁻¹ m) :
     ((seminormalRep q hq0 hq2 (m + 1) hN (heckeIncl ℝ q q⁻¹ m y))
         * genMat q (m + 1) (by omega) (by omega)).trace

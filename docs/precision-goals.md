@@ -35,7 +35,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **MET — 6/6 production atoms, re-certified 2026-08-30 after a silent regression.** First certified 2026-07-13; it then **broke during the convention-D migration window and stayed broken, undetected, until 2026-08-29** — two independent q₀ **pin straddles** (the numerical χ cache proton-pinned against muon `y_λ`; the Habiro witness proton-pinned, which made the cross-check `SystemExit` before it could report). Repaired in PRs #6091 / #6100; the `onepb` gate, which had been reading first a key no entry carries and then the informational color-blind legs, was re-pointed at the color-weighted `exact_method_rel_delta` (PR #6100) with **no tolerance widened**. Live: `computations/cross-check-trM-1ppb.witness.json` (produced by `computations/cross_check_trM_1ppb.py`) records `n_atoms_certified_1ppQ_exact_methods = 6` — **6/6** (`peel_vs_chi` — proton 8.6e-50, neutron 6.1e-50, deuteron 1.2e-49, tritium 8.7e-50, ³He 7.4e-50, ⁴He 6.2e-50) — and `computations/onepb-status-dashboard.witness.json` reads `allPassed = True` (current, no longer stale). Record + lesson: [`audits/2026-08-29-l1-regression-peel-chi-convention-split.md`](audits/2026-08-29-l1-regression-peel-chi-convention-split.md). ⚠ **A green L1 boolean is only as good as the field it gates on** — verify the gated quantity, not the flag. Historical detail below. **CERTIFIED (2026-07-13) — 6/6 production atoms** (p, n, D, T, ³He, ⁴He). `cross_check_trM_1ppb.py` reports `allPassed=True` (`all_atoms_within_1ppQ`, `character_engine_matches_closed_form`); worst closed-form χ-anchor \|Δ\| = **5.6e-50** (proton 9.3e-50, neutron 3.3e-50), no float64 in the hot path. The last gap (⁴He, H₁₂) closed by building `pyhecke-native` from source. See [`audits/2026-07-13-l1-4he-certification-complete.md`](audits/2026-07-13-l1-4he-certification-complete.md). **Supersedes** the 2026-06-17 gap ([`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md)): the float64-limited `markov_peel` witness and the Habiro-divergence were replaced by the mpf / native-Rust path. *(The aggregate `onepb-status-dashboard.witness.json` was stale at that date; it is CURRENT as of the 2026-08-30 re-certification and reads `allPassed = True`.)* |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **1/5 scoreable meet** — **`m_K/m_π` alone**, the only genuine prediction to meet. (Corrected 2026-08-18: this read "2/7 meet — one calibration anchor (m_e) + m_K/m_π". `m_e` is the CAL-1 **input** that fixes the MeV unit — error *defined* zero, not measured — so it is not scoreable, on the same grounds the dashboard already excludes `m_p`. Quote `beats_100x_scoreable`/`scoreable_total`.) `m_K/m_π` meets (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat RESOLVED 2026-08-09, owner directive; LANDED IN CODE 2026-08-22, PR #5467 — for 13 days this ruling lived only in this sentence, and every producer, the dashboard, the tracker and the content block kept shipping the truncation** — the EM factor is now the **full series** `1 + log(1+ℏ_q)`, not the two-term truncation `(3q²−1)/(2q²)`. The truncation scored better (46.80 vs 102.86 ppb on the ratio², i.e. 23.40 vs 51.43 ppb on the ratio) but was not converging on anything: 3 terms gives 107.00 ppb and 4 terms 102.53 ppb, so the series converges to ~102.9 and the 2-term stop lands closer only because under-counting the EM term partially cancels the model's own positive residual. A truncation chosen because it matches is a fit. **It still MEETS L2**: σ_exp(m_K/m_π) = 26364.6 ppb ⇒ target 263.6 ppb, and the full series sits at 51.43 ppb — 5.13× margin (was 11.27×). So the caveat is retired at no cost to the scorecard, and `qou-v6oz`'s question ("why is `(3q²−1)/(2q²)` the physical object?") is **dissolved rather than answered** — it is not the physical object, it was where the series happened to be stopped; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 4 scoreable **miss** — live `miss_factor` from `per-observable-100x-status.witness.json`: m_μ **970.2×**, m_n **176.7×**, Q_β **164.0×**, Δ_pn **151.7×**. *(Corrected 2026-09-01 against that witness, which the previous text contradicted twice. It said “the other **5** miss” and listed **m_p** among them — but m_p is a CAL-2 anchor round-trip the same witness marks `beats_100x_experimental: null` / “NOT SCORED”, on exactly the grounds the 2026-08-18 correction used to drop m_e. With both calibration inputs excluded, `scoreable_total = 5` and `beats_100x_scoreable = 1`, so the misses number **4**, not 5. And m_n read ~416× against a live 176.7× — the witness was regenerated after this line was written. Quote the witness, not this sentence.)*. The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_scoreable=1`, `scoreable_total=5`; the legacy `beats_100x_count=2` counts the two calibration inputs and is not an accuracy result). |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **1/5 scoreable meet** — **`m_K/m_π` alone**, the only genuine prediction to meet. (Corrected 2026-08-18: this read "2/7 meet — one calibration anchor (m_e) + m_K/m_π". `m_e` is the CAL-1 **input** that fixes the MeV unit — error *defined* zero, not measured — so it is not scoreable, on the same grounds the dashboard already excludes `m_p`. Quote `beats_100x_scoreable`/`scoreable_total`.) `m_K/m_π` meets (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat RESOLVED 2026-08-09, owner directive; LANDED IN CODE 2026-08-22, PR #5467 — for 13 days this ruling lived only in this sentence, and every producer, the dashboard, the tracker and the content block kept shipping the truncation** — the EM factor is now the **full series** `1 + log(1+ℏ_q)`, not the two-term truncation `(3q²−1)/(2q²)`. The truncation scored better (46.80 vs 102.86 ppb on the ratio², i.e. 23.40 vs 51.43 ppb on the ratio) but was not converging on anything: 3 terms gives 107.00 ppb and 4 terms 102.53 ppb, so the series converges to ~102.9 and the 2-term stop lands closer only because under-counting the EM term partially cancels the model's own positive residual. A truncation chosen because it matches is a fit. **It still MEETS L2**: σ_exp(m_K/m_π) = 26364.6 ppb ⇒ target 263.6 ppb, and the full series sits at 51.43 ppb — 5.13× margin (was 11.27×). So the caveat is retired at no cost to the scorecard, and `qou-v6oz`'s question ("why is `(3q²−1)/(2q²)` the physical object?") is **dissolved rather than answered** — it is not the physical object, it was where the series happened to be stopped; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 4 scoreable **miss** — live `miss_factor` from `per-observable-100x-status.witness.json`: **m_μ 970.2×, m_n 176.7×, Q_β 164.0×, Δ_pn 151.7×**. (This clause read "the other 5 miss (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×)" until 2026-09-04. Three defects, not one: **m_μ 964 → 970.2** is the CODATA-2018→2022 muon re-pin of 2026-08-22 (`fca08de7d2`); **m_n 416 → 176.7** and **Δ_pn 159 → 151.7** had simply never been re-read from the witness; and **m_p does not belong in this list at all** — the dashboard marks it `is_anchor_roundtrip`, `miss_factor: "N/A (anchor round-trip)"`, so counting it as a sixth missing observable contradicts this same sentence's `scoreable_total = 5`. The ~437× is the 2026-07-04 de-fitted round-trip figure and is history, not a live score. Bean `qou-m4au`.) The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_scoreable=1`, `scoreable_total=5`; the legacy `beats_100x_count=2` counts the two calibration inputs and is not an accuracy result). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -46,7 +46,7 @@ the framework's working precision discipline.
 > from CAL-1/2/3" is a target on the **framework's own theory residual**,
 > not on the absolute prediction error. This resolves an earlier
 > mis-framing ("1 ppQ on a prediction is unreachable because q₀ is only
-> known to 0.06 ppb"). The two error sources are separate and must not
+> known to 0.017 ppb"). The two error sources are separate and must not
 > be conflated.
 
 **Error decomposition.** Every prediction `O` carries two independent
@@ -63,18 +63,27 @@ error terms:
 | Term | Owner | Improves by | Current scale |
 |------|-------|-------------|---------------|
 | **σ_theory(O, N)** — the formula's own residual at brane-tower / derivation order `N` | **us** (derivation) | adding *proved* higher-order terms | m_p: 242 ppb (μ-p floor); m_avg: 2.89 % bare → 819 ppm spectral |
-| **σ_CAL(O)** — propagated CAL experimental error | external labs | CODATA / PDG re-measurement | q₀: **0.06 ppb** (CODATA m_p); m_e: 0.29 ppb; m_π: ~30 ppb |
+| **σ_CAL(O)** — propagated CAL experimental error | external labs | CODATA / PDG re-measurement | q₀: **0.017 ppb** (CODATA m_p); m_e: 0.29 ppb; m_π: ~30 ppb |
 
 **The 1 ppQ goal = drive `σ_theory(O, N) ≤ 1 ppQ`**, so every prediction
 is **CAL-limited, not theory-limited**. Once there, `σ_total ≈ σ_CAL`,
 and the prediction sharpens automatically as the three calibration
 measurements improve — no framework change required.
 
-### Accepted: q₀ is known to 0.06 ppb (CODATA-limited, not a framework ceiling)
+### Accepted: q₀ is known to 0.017 ppb (CODATA-limited, not a framework ceiling)
 
-q₀ is pinned from the CODATA m_p/m_e ratio (0.06 ppb, the most precise
-available — see [`substrate-anchor-alternatives.md`](../content/quantum-observable-universe/observations/substrate-anchor-alternatives.md)).
-Its 0.06 ppb uncertainty is **inherited from that one measurement**, and
+> **The `0.06 ppb` this section carried until 2026-09-04 was the CODATA-2018
+> figure**, and it appeared six times in this file including in the heading
+> above. Live: `qou_substrate.constants.MASS_RATIO_P_E_ERR = 3.2e-8` on
+> `m_p/m_e = 1836.152673426` ⇒ **1.743e-11 = 0.017 ppb**, which is what
+> `q-pinning-50-digit.witness.json` records in
+> `calibration_inputs.m_p_over_e_source` ("CODATA 2022 (0.017 ppb)") and
+> `physical_anchoring_bound.limited_by`. AGENTS.md was corrected on
+> 2026-08-21; this file was not. Bean `qou-m4au`.
+
+q₀ is pinned from the CODATA m_p/m_e ratio (0.017 ppb, the most precise
+available — see [`epistemic-status-of-calibrations.md`](../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)).
+Its 0.017 ppb uncertainty is **inherited from that one measurement**, and
 **improves one-for-one as CODATA improves m_p/m_e**. It is *not* a limit
 of the framework. (If the QOU substrate picture is correct, the highest
 leverage experimental program is tightening the three CALs — m_e, the
@@ -225,7 +234,7 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 |---|---|---:|---:|---:|---|
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
 | ~~m_p~~ (absolute) | ~~CAL-2 numerical anchor~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; the ratio `m_p/m_e` remains the CAL-2 pin, a calibration *input*, not a scored prediction) |
-| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) — ratio, retained |
+| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 211 ppb | **misses ~970×** (9.5σ μ-p tension) — ratio, retained |
 | Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) — decay Q-value, retained |
 | ~~m_n~~ (absolute) | ~~prediction (Path C)~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; content lives in `Δ_pn` below + the m_e scale) |
 | Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** — splitting, retained |
@@ -421,7 +430,7 @@ substrate-derivation of q₀**, four of the five L2 misses are gated on the
 - **μ–p pin-sensitivity map** — `PinRobustnessOfRatios.lean` (sorry-free, #3847):
   the μ–p tension lives entirely in the absolute anchor `ℏ_q⁻²`; every **ratio**
   observable (W_λ, m_p/m_μ, m_n/m_p, the McKay keystone) has `ν_ℏ = 0` and is
-  structurally blind to the 11.5 ppb split. The geometric W_λ/Lawrence–Rozansky
+  structurally blind to the 11.6 ppb split. The geometric W_λ/Lawrence–Rozansky
   realisation is separately refuted (D=2 collapse) and structurally excluded
   (self-duality `S⁴=1`). ⇒ finishing any ratio/geometric-W_λ route will **not**
   move m_p/m_μ; only an anchor-free absolute q₀ can.
@@ -442,8 +451,8 @@ without a proved invariant**. Two facts cut against it:
 
 * **The residual is a framework quantity, not a measurement one.** The 1248 ppb
   Q_β prediction error is the **c₃ truncation**. Under the proton pin, q₀'s
-  *measurement* uncertainty contributes `≈ 0.06 ppb × 2.60 ≈ 0.16 ppb` to Q_β —
-  **four orders below** the residual. No proved invariant excludes a categorical
+  *measurement* uncertainty contributes `≈ 0.017 ppb × 2.60 ≈ 0.045 ppb` to Q_β —
+  **more than four orders below** the residual. No proved invariant excludes a categorical
   derivation of c₃ from improving it.
 * **A better measurement makes the L2 target *harder*, not easier.** The target
   is `σ_exp/100`, so tightening `σ_exp` tightens the target proportionally.

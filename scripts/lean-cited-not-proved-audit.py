@@ -31,6 +31,42 @@ import argparse, json, re, subprocess, sys
 from pathlib import Path
 
 LEAN_ROOT = "content/quantum-observable-universe/lean"
+# The Lake LIBRARY tree above is NOT the whole Lean corpus.  Content-block
+# SIBLINGS live beside their `.ts`/`.md` under `content/<paper>/<chapter>/`,
+# outside the Lake globs -- and under the AGENTS.md 0a resolution order a
+# sibling resolves BEFORE the library, so those are the declarations a content
+# block's `lean.ref` actually points at.
+#
+# Scanning only the library silently under-reported this corpus.  Measured on
+# origin/main 2026-09-04: 944 sibling files carrying 8 real `sorry` terms and
+# 148 `axiom` declarations, against 0 and 19 in the library.  Every "corpus-wide"
+# figure this script produced before that date was library-only -- including a
+# "0 sorries" claim that was wrong for the corpus and right only for the tree
+# it happened to walk.
+CONTENT_ROOT = "content"
+
+
+def scan_paths(rev, root):
+    """Every `.lean` file in the corpus: the Lake library AND the siblings."""
+    if rev:
+        listing = subprocess.run(
+            ["git", "ls-tree", "-r", "--name-only", rev, CONTENT_ROOT],
+            capture_output=True, text=True).stdout.split()
+        return sorted(f for f in listing if f.endswith(".lean"))
+    return sorted(
+        str(p.relative_to(root))
+        for p in (root / CONTENT_ROOT).rglob("*.lean")
+        if ".lake" not in p.parts)
+
+
+def is_sibling(rel: str) -> bool:
+    """A content-block sibling: under `content/`, but not in a Lake tree."""
+    return "/lean/" not in rel
+
+
+def display(rel: str) -> str:
+    """Library files keep their `QOU/...` path; siblings keep enough to locate."""
+    return rel[len(LEAN_ROOT) + 1:] if rel.startswith(LEAN_ROOT + "/") else rel
 
 
 def strip_comments(src: str) -> str:
@@ -236,8 +272,97 @@ SELFTEST = [
 ]
 
 
+PROP_SELFTEST = [
+    # (source, field, expected shape) — the two shapes that wear the same syntax
+    ("class StandardYoungCount (n : Nat) where\n"
+     "  dim : Nat -> Nat\n"
+     "  squares_sum_factorial : Prop\n"
+     "  squares_sum_holds : squares_sum_factorial\n",
+     "squares_sum_factorial", "self_nominating"),
+    ("class AtomLike where\n"
+     "  stable : Prop\n"
+     "  IsFullOfCurls : Prop\n"
+     "  IsNobleGas : Prop\n"
+     "  claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)\n",
+     "IsNobleGas", "parameterised"),
+    # `stable` appears only as an ANTECEDENT, so it is parameterised too
+    ("class AtomLike where\n"
+     "  stable : Prop\n"
+     "  IsFullOfCurls : Prop\n"
+     "  IsNobleGas : Prop\n"
+     "  claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)\n",
+     "stable", "parameterised"),
+]
+
+
+
+# A self-nominating witness is a defect only when a proof term PROJECTS it.
+# Case 1 is the `B1TorusKnotRowsTheorem` shape -- two named literature results
+# carried as opaque `Prop`s and fed straight into the conclusion.  Case 2 is the
+# `BringWPlaneMonodromy` shape -- an open geometric identification carried as an
+# input, with the file's theorem deriving from a DIFFERENT, content-bearing
+# field.  Case 3 pins the scoping bug these cases were written to catch: the
+# consuming theorem sits AFTER the carrier, and an earlier version searched only
+# the text outside the carrier block, which runs to EOF when nothing follows it.
+CONSUMED_SELFTEST = [
+    ("""class C where
+  bloch_suslin : Prop
+  h_bloch_suslin : bloch_suslin
+  concl : bloch_suslin -> P
+
+theorem t [ctx : C] : P := ctx.concl ctx.h_bloch_suslin
+""", "bloch_suslin", True),
+    ("""class D where
+  M : Matrix (Fin 2) (Fin 2) Real
+  unimodular : M.det = 1
+  is_seifert : Prop
+  seifert_holds : is_seifert
+
+theorem u [self : D] : self.M * self.M = self.M.trace * self.M - 1 :=
+  unimodular_two_recurrence self.M self.unimodular
+""", "is_seifert", False),
+    ("""class E where
+  claim : Prop
+  h_claim : claim
+  impl : claim -> Q
+
+theorem v [ctx : E] : Q := ctx.impl ctx.h_claim
+""", "claim", True),
+]
+
 def selftest() -> int:
     bad = 0
+    for src, field, want in PROP_SELFTEST:
+        got = {e["field"]: e["shape"] for e in prop_valued_fields(strip_comments(src))}
+        g = got.get(field, "<missing>")
+        ok = "ok " if g == want else "FAIL"
+        if g != want:
+            bad += 1
+        print(f"  [{ok}] {field}: shape={g} expected={want}")
+    # The CROSS-FILE path: the same carrier, with no consumer in its own file,
+    # is `unconsumed` file-locally and `consumed` once the corpus set carries
+    # the witness.  Neither answer is reachable from the other source alone.
+    _xf = """class F where
+  claim : Prop
+  h_claim : claim
+  impl : claim -> Q
+"""
+    for projected, want in ((None, False), ({"h_claim"}, True)):
+        got = {e["field"]: e.get("consumed")
+               for e in prop_valued_fields(strip_comments(_xf), projected)}
+        g = got.get("claim", "<missing>")
+        ok = "ok " if g == want else "FAIL"
+        if g != want:
+            bad += 1
+        label = "corpus" if projected else "file-local"
+        print(f"  [{ok}] claim ({label}): consumed={g} expected={want}")
+    for src, field, want in CONSUMED_SELFTEST:
+        got = {e["field"]: e.get("consumed") for e in prop_valued_fields(strip_comments(src))}
+        g = got.get(field, "<missing>")
+        ok = "ok " if g == want else "FAIL"
+        if g != want:
+            bad += 1
+        print(f"  [{ok}] {field}: consumed={g} expected={want}")
     for src, cls, want in SELFTEST:
         idx = build_provider_index({"t.lean": strip_comments(src)})
         got = bool(idx.get(cls.split(".")[-1]))
@@ -249,42 +374,137 @@ def selftest() -> int:
     return 1 if bad else 0
 
 
+# A dotted projection `ctx.foo` / `self.foo_holds` -- how a witness is USED.
+# Field DECLARATIONS are `name : type` and never dotted, so this cannot match one.
+PROJECTION = re.compile(r"\.\s*([A-Za-z_][A-Za-z0-9_']*)")
+
 # A field whose TYPE is literally `Prop`: the instance chooses the proposition.
 PROP_FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*Prop[ \t]*$", re.M)
 CARRIER = re.compile(r"^[ \t]*(?:@\[[^\]]*\]\s*)*(?:private\s+|protected\s+)?(class|structure)\s+([A-Za-z0-9_'.]+)", re.M)
 
 
-def prop_valued_fields(code: str):
-    """Fields declared `name : Prop` inside a class or structure.
+def carrier_blocks(code: str):
+    """Split the file into (carrier name, kind, start, end) blocks by indentation."""
+    out = []
+    for m in CARRIER.finditer(code):
+        nxt = CARRIER.search(code, m.end())
+        out.append((m.group(2), m.group(1), m.start(),
+                    nxt.start() if nxt else len(code)))
+    return out
 
-    This is a strictly worse defect than an uninhabited carrier, and the two are
-    independent.  A field typed `Prop` is a *variable*: the instance supplies the
-    proposition AND its proof, so
+
+FIELD = re.compile(r"^([ \t]+)([a-zA-Z_][A-Za-z0-9_']*)[ \t]*:[ \t]*([^\n]*)$", re.M)
+
+
+def prop_valued_fields(code: str, projected: set | None = None):
+    """Fields declared `name : Prop`, SPLIT by whether the carrier proves them directly.
+
+    Two shapes wear the same syntax and they are not the same defect.  Conflating
+    them inflates the count, which this scan did until a false positive on
+    `QOU/Archimedean/noble_gas_characterization.lean` exposed it.
+
+    **self_nominating** — the defect.  A companion field's type is the `Prop`
+    field itself::
 
         squares_sum_factorial : Prop
         squares_sum_holds : squares_sum_factorial
 
-    is discharged by `squares_sum_factorial := True; squares_sum_holds := trivial`.
-    The carrier constrains nothing, and unlike a bare `True` field (which
-    AGENTS.md §3b-tax's `proof-claims-unencoded` already flags) it does not even
-    say WHICH nothing — a reader cannot tell what was meant to be asserted.
+    An instance supplies both the proposition and its proof, so
+    `:= True; := trivial` discharges it and the carrier constrains nothing.
+    Worse than a bare `True` field (which `AGENTS.md` §3b-tax's
+    `proof-claims-unencoded` flags) because it does not even say WHICH nothing.
 
-    AGENTS.md's stated remedy is a parameter-quantified statement in the shape of
-    the claim, so the honest form of the example above is
+    **parameterised** — legitimate, and NOT a defect.  The `Prop` field is an
+    abstract predicate used as a *component* of some other field's statement::
 
-        squares_sum : ∑ lam, (dim lam) ^ 2 = n !
+        IsNobleGas : Prop
+        IsFullOfCurls : Prop
+        claim_noble_iff_curls : stable -> (IsNobleGas <-> IsFullOfCurls)
+
+    Here the content is the relation, and the predicates are parameters of it —
+    the same move as taking `(P : alpha -> Prop)` as an argument.  An instance
+    choosing `True` for both satisfies a *weaker instance*, not a vacuous class:
+    the iff still has to hold for whatever it chose.
+
+    The discriminator is therefore whether the carrier proves the field
+    DIRECTLY, not whether the field is typed `Prop`.
+
+    **And a self-nominating field is a defect only if something PROJECTS it.**
+    Third refinement, from a false positive on
+    `QOU/BraidKnot/BringWPlaneMonodromy.lean`::
+
+        is_seifert_gauss_manin : Prop
+        seifert_holds : is_seifert_gauss_manin
+
+    is self-nominating by the rule above, yet the file is exemplary: the
+    proposition is a genuinely-open *geometric identification* deliberately left
+    abstract, and the file's one theorem derives from the `unimodular` field via
+    a proved lemma, explicitly NOT from `seifert_holds`.  That is the honest
+    `AGENTS.md` §3b conjecture-class pattern — an open input carried as an
+    input.
+
+    Contrast `QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean`, where
+    `h_bloch_suslin` and `h_garoufalidis_le` are fed straight into
+    `b1_from_tate_rationality` to produce the theorem's conclusion.  There the
+    witnesses ARE the proof, and two named literature results (Bloch-Suslin,
+    Garoufalidis-Le) are laundered through opaque `Prop`s.
+
+    So `consumed` marks the ones where a proof term in the same file mentions
+    the witness field; `unconsumed` marks a carried open input.  Only
+    `consumed` is actionable.
     """
     out = []
-    for m in PROP_FIELD.finditer(code):
-        owner = None
-        for c in CARRIER.finditer(code, 0, m.start()):
-            owner = c
-        out.append({
-            "line": code.count("\n", 0, m.start()) + 1,
-            "field": m.group(2),
-            "carrier": owner.group(2) if owner else "<none>",
-            "carrier_kind": owner.group(1) if owner else "<none>",
-        })
+    for name, kind, lo, hi in carrier_blocks(code):
+        block = code[lo:hi]
+        fields = [(m.group(2), m.group(3).strip(), m.start())
+                  for m in FIELD.finditer(block)]
+        prop_names = {f for f, ty, _ in fields if ty == "Prop"}
+        # a field whose ENTIRE type is another field's name proves it directly
+        proved_directly = {ty for f, ty, _ in fields if ty in prop_names}
+        # witness field(s) for each self-nominating Prop field
+        witnesses = {}
+        for f, ty, _ in fields:
+            if ty in prop_names:
+                witnesses.setdefault(ty, []).append(f)
+        for f, ty, off in fields:
+            if ty != "Prop":
+                continue
+            shape = "self_nominating" if f in proved_directly else "parameterised"
+            entry = {
+                "line": code.count("\n", 0, lo + off) + 1,
+                "field": f, "carrier": name, "carrier_kind": kind,
+                "shape": shape,
+            }
+            if shape == "self_nominating":
+                # A witness is CONSUMED when some proof term projects it
+                # (`ctx.h_foo`, `self.foo_holds`, ...).
+                #
+                # Search the WHOLE file, not the region outside the carrier:
+                # `carrier_blocks` runs a block to EOF when nothing follows it,
+                # which excluded the very theorem that consumes the witness
+                # (measured on B1TorusKnotRowsTheorem.lean, which reported
+                # False against a true True).  A dotted projection cannot occur
+                # in a field DECLARATION -- those are `name : type` -- so the
+                # whole-file search introduces no false positive.
+                #
+                # And prefer `projected`, the CORPUS-WIDE set of dotted names,
+                # when the caller supplies it: a class declared in one file can
+                # be consumed from another, and a file-local search reports
+                # that as `unconsumed`, i.e. UNDER-counts the defect.  Measured
+                # 2026-09-04 on all 15 unconsumed witnesses: none is projected
+                # anywhere in the corpus, so the file-local answer happened to
+                # be right -- but it was right by luck, not by construction.
+                # Prompted by a sibling agent on #6540, whose own count moved
+                # four times and never because a number looked wrong.
+                wits = witnesses.get(f, [])
+                if projected is not None:
+                    used = any(w in projected for w in wits)
+                else:
+                    used = any(re.search(r"\.\s*" + re.escape(w) + r"\b", code)
+                               for w in wits)
+                entry["witnesses"] = witnesses.get(f, [])
+                entry["consumed"] = used
+            out.append(entry)
     return out
 
 
@@ -308,13 +528,7 @@ def main() -> int:
 
     root = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"],
                                capture_output=True, text=True).stdout.strip())
-    if a.rev:
-        listing = subprocess.run(
-            ["git", "ls-tree", "-r", "--name-only", a.rev, LEAN_ROOT],
-            capture_output=True, text=True).stdout.split()
-        files = [f for f in listing if f.endswith(".lean")]
-    else:
-        files = [str(p.relative_to(root)) for p in (root / LEAN_ROOT).rglob("*.lean")]
+    files = scan_paths(a.rev, root)
 
     sorries, axioms, prose_hits = [], [], 0
     uninhabited_out: list = []
@@ -333,14 +547,14 @@ def main() -> int:
             li = code.count("\n", 0, m.start())
             kind, name = decl_before(code, m.start())
             sorries.append({
-                "file": rel[len(LEAN_ROOT) + 1:], "line": li + 1,
+                "file": display(rel), "line": li + 1,
                 "decl_kind": kind, "decl": name,
                 "ref": ref_above(raw_lines, li),
             })
         for m in AXIOM.finditer(code):
             li = code.count("\n", 0, m.start())
             axioms.append({
-                "file": rel[len(LEAN_ROOT) + 1:], "line": li + 1,
+                "file": display(rel), "line": li + 1,
                 "axiom": m.group(1), "ref": ref_above(raw_lines, li),
             })
 
@@ -369,9 +583,9 @@ def main() -> int:
             if raw is None:
                 continue
             code = strip_comments(raw)
-            all_code[rel[len(LEAN_ROOT) + 1:]] = code
+            all_code[display(rel)] = code
             for m in CLASS_DECL.finditer(code):
-                classes.append({"file": rel[len(LEAN_ROOT) + 1:],
+                classes.append({"file": display(rel),
                                 "line": code.count("\n", 0, m.start()) + 1,
                                 "class": m.group(1)})
         index = build_provider_index(all_code)
@@ -395,21 +609,33 @@ def main() -> int:
 
     if a.kind in ("prop-field", "all"):
         pf = []
+        # PASS 1 -- every dotted projection anywhere in the corpus.  A class
+        # declared in one file can be consumed from another, and a file-local
+        # search reports that as `unconsumed`, i.e. UNDER-counts the defect.
+        sources = {}
+        projected: set = set()
         for rel in sorted(files):
             raw = git_show(a.rev, rel) if a.rev else (root / rel).read_text(errors="replace")
             if raw is None:
                 continue
-            for e in prop_valued_fields(strip_comments(raw)):
-                e["file"] = rel[len(LEAN_ROOT) + 1:]
+            sources[rel] = strip_comments(raw)
+            projected.update(PROJECTION.findall(sources[rel]))
+        # PASS 2 -- classify, resolving `consumed` against the corpus set.
+        for rel, code in sources.items():
+            for e in prop_valued_fields(code, projected):
+                e["file"] = display(rel)
                 pf.append(e)
-        carriers = {e["carrier"] for e in pf}
-        print(f"\nPROP-VALUED FIELDS: {len(pf)} across {len({e['file'] for e in pf})} files, "
-              f"in {len(carriers)} carriers")
-        print("  A field typed `Prop` is a VARIABLE: the instance supplies both the")
-        print("  proposition and its proof, so the carrier constrains nothing — and unlike")
-        print("  a bare `True` field it does not even say which nothing.")
-        for e in pf:
-            print(f"  {e['file']}:{e['line']}  {e['carrier_kind']} {e['carrier']} . {e['field']}")
+        selfnom = [e for e in pf if e["shape"] == "self_nominating"]
+        param = [e for e in pf if e["shape"] == "parameterised"]
+        print(f"\nPROP-VALUED FIELDS: {len(pf)} total — and they are TWO shapes, not one")
+        print(f"  self_nominating {len(selfnom):3d}  the DEFECT: a companion field proves it")
+        print(f"                            directly, so the instance picks the claim AND")
+        print(f"                            proves it. `:= True; := trivial` discharges it.")
+        print(f"  parameterised   {len(param):3d}  NOT a defect: an abstract predicate used as a")
+        print(f"                            COMPONENT of another field's statement. The content")
+        print(f"                            is the relation; the predicate is its parameter.")
+        for e in selfnom:
+            print(f"  DEFECT {e['file']}:{e['line']}  {e['carrier_kind']} {e['carrier']} . {e['field']}")
         prop_fields_out.extend(pf)
 
     if a.json:
