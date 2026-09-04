@@ -48,6 +48,20 @@ them rebuilt lean-direct 2026-08-29). **Look at both.** An orchestrator-supplied
 `LEAN_PATH.txt` may carry RELATIVE `.lake/packages/…` entries — valid only with
 cwd = repo root; absolutise them (cwd resets between calls).
 
+## TRAP — MATHLIB oleans split across the two trees; "object file does not exist" ≠ absent
+
+Generalises §2/§6(a) from `QOU/` to **`Mathlib/`**. 2026-09-04: root held
+`Mathlib/{Tactic,Data/Real/Sqrt}.olean` but NOT `Algebra/Order/Chebyshev.olean`;
+the per-paper tree held Chebyshev but not `Mathlib.Tactic`. Both roots contain a
+`Mathlib/` dir, so the **first one on `LEAN_PATH` resolves every `Mathlib.*`
+module** and the rest are reported missing. A sibling agent read that error as
+*"this Mathlib module is absent from the restored set"*, rewrote a working proof
+to route around it, and wrote the false claim into a **source comment and a
+commit message** (`67128df5dd`) — the §11 mistake, one library over.
+**Fix: `cp -aln` a hardlink UNION mirror of every `.lake/build/lib/lean` from
+both trees** (harness §13) — ~0 disk, and both proof routes then compile.
+Check the manifests agree on the mathlib rev first; here both were `f897ebcf72cd`.
+
 ## STABLE — workspace shape
 
 - Single **root** Lake workspace (`/lakefile.toml`, `/lean-toolchain`); packages
@@ -200,7 +214,8 @@ trusting a green OR debugging a red. Does NOT invalidate every restore.
 
 | what | command | last seen | when |
 |---|---|---|---|
-| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **6990** (3407 on the 2026-08-29 seed) | 2026-09-03 |
+| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3470** (6990 on 2026-09-03; 3407 on the 2026-08-29 seed) | 2026-09-04 |
+| per-paper mathlib oleans (the OTHER half — always check both) | `find content/quantum-observable-universe/lean/.lake/packages -name '*.olean' \| wc -l` | **2846**; union mirror 5733 | 2026-09-04 |
 | cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
 | lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
