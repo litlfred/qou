@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-source-verification",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T04:00:45.274528+00:00",
-  "commitSha": "e986e0983ed9deb60e75f3722fef64219932e746",
+  "computedAt": "2026-09-04T04:12:09.861014+00:00",
+  "commitSha": "d3b234d148f825aee2a1e6e85dab9a093e029315",
   "assertions": [
     {
       "name": "C1_source_matrices_reproduce",
@@ -51,14 +51,22 @@
       "passed": true,
       "tolerance": "exact",
       "source": "H: V=3 with 3 arrows (the three unordered pairs), rays = the two orientations. Recorded as a CANDIDATE with its disconfirmation test (compute the Dirac pairing on the 5_2 charge lattice; if it is not supported on {12,13,23}, H is dead). Not claimed, not wired, not a derivation"
+    },
+    {
+      "name": "C7_antisymmetry_discriminates_nothing",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Pre-empting the next available misreading, which is the same shape as the two already made. eq (98) IS antisymmetric, and an antisymmetric integer matrix indexed by three objects looks exactly like a quiver exchange matrix -- reading it as one gives arrows 4+3+3 = 10 on 3 nodes, a DIFFERENT answer from H's 3. But BOTH readings entail antisymmetry (CPT sign on Stokes constants vs B_ij = -B_ji by definition), so observing it separates them not at all; there are 729 antisymmetric 3x3 integer matrices with entries in [-4,4] and eq (98) is not distinguished by being one of them. The source says Stokes constants; that is the only thing deciding it here"
     }
   ],
   "allPassed": true,
   "durationMs": 4,
   "computation": "dt-d1b-gabriel-route-void-source-verified",
   "scriptFile": "dt_d1b_gabriel_route_void_source_verified_probe.py",
-  "scriptHash": "5fdf89b86707",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6ee86f165487",
+  "scriptCommitSha": "d3b234d148f825aee2a1e6e85dab9a093e029315",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -173,6 +181,15 @@
       "P1_eq100_holds_on_eq98": true,
       "P2_rays_are_orientation_reverses": true,
       "P3_max_omega_exceeds_one": true
+    },
+    "wall_crossing_scaffolding_is_orphaned": {
+      "module": "content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean",
+      "carries": "ChargeLattice (antisymmetric integral Euler pairing), CentralCharge, BPSState, BPSSpectrum, Wall, KSWallCrossing",
+      "instances_of_ChargeLattice": 0,
+      "instances_of_KSWallCrossing": 0,
+      "importers": 0,
+      "mentions_anywhere_else_in_the_paper_tree": 0,
+      "note": "measured 2026-09-04 by grep over content/quantum-observable-universe/ excluding .lake/. The module compiles only because the QOU library is glob-declared. It is exactly the structure the D1-b Dirac-pairing test would need, and it has never been instantiated -- so the test is blocked on DATA, not on scaffolding. Deliberately NOT instantiated here: giving it eq (98) as its euler field would assert that eq (98) IS the Dirac pairing, which is precisely hypothesis H and would launder it into Lean"
     },
     "scope": {
       "tier": "scope-(b) exclusion + source-verified structural facts",

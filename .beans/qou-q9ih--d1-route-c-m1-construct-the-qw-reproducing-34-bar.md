@@ -1051,3 +1051,37 @@ could, and the source has been sitting in `library/` the whole time. Corpus-grep
 path 5 exists precisely for this, and I ran paths 0/2/3/6 twice on this object
 without ever running path 5 on the paper the datum is quoted from. **When a
 probe's input is a quoted equation, read the equation.**
+
+**Addendum to (12), same session — the next rung is blocked on DATA, measured.**
+
+The disconfirmation test above wants the Dirac pairing on the 5₂ charge lattice.
+The corpus turns out to carry exactly the right scaffolding and it is **dead**:
+`QOU/Mathlib/WallCrossing.lean` declares `ChargeLattice` (with an antisymmetric
+integral Euler pairing), `CentralCharge`, `BPSState`, `BPSSpectrum`, `Wall` and
+`KSWallCrossing` — and has **0 instances, 0 importers, and 0 mentions anywhere
+else in `content/quantum-observable-universe/`** (grep 2026-09-04, excluding
+`.lake/`). It compiles only because the QOU library is glob-declared. So the
+test is blocked on *data*, not on infrastructure, and that is now a measurement
+rather than my assertion.
+
+**Deliberately NOT instantiated.** Handing `ChargeLattice` the eq-(98) matrix as
+its `euler` field would assert that eq (98) *is* the Dirac pairing — which is
+precisely hypothesis H, and would launder it into Lean. §"Axiomatization is NOT
+a Proof" forbids exactly this move.
+
+**C7 — the next trap, pre-empted, because it is the same shape as the two
+already sprung.** eq (98) is antisymmetric, and an antisymmetric integer matrix
+indexed by three objects looks exactly like a quiver exchange matrix. Reading it
+as one gives arrows straight off `|B|`: **4 + 3 + 3 = 10 arrows on 3 nodes** — a
+*different* answer from H's 3, and just as immediately available. But **both
+readings entail antisymmetry** (the source's CPT / particle-antiparticle sign on
+Stokes constants; `B_ij = −B_ji` by definition), so observing it separates them
+not at all. There are **729** antisymmetric 3×3 integer matrices with entries in
+`[−4,4]`; eq (98) is not distinguished by being one of them. Only the source
+decides, and the source says Stokes constants.
+
+That is now **three** distinct "obvious" readings of one 3×3 matrix, giving
+arrow counts 0/1, `{0,1,2}`, 3 and 10. The object is not underdetermined by
+accident — a small integer matrix admits many structural readings, and the only
+thing that has ever discriminated between them in this arc is the sentence
+printed under the equation in the paper.

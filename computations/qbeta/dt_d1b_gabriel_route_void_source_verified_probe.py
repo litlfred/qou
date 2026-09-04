@@ -275,6 +275,39 @@ def main() -> int:
                    "charge lattice; if it is not supported on {12,13,23}, H is "
                    "dead). Not claimed, not wired, not a derivation"))
 
+    # -- C7: antisymmetry discriminates NOTHING (the next trap, pre-empted). --
+    antisym = all(DT[i][j] == -DT[j][i] for i in range(3) for j in range(3))
+    # How many antisymmetric 3x3 integer matrices with entries in [-4,4] are
+    # there? Three free upper-triangular entries, 9 choices each.
+    population = 9 ** 3
+    c7 = (antisym and population > 1)
+    print("\n  ── C7: the antisymmetry of eq (98) is NOT evidence for H ──")
+    print(f"     eq (98) is antisymmetric: {antisym}")
+    print("     TWO readings both ENTAIL antisymmetry, so observing it")
+    print("     discriminates neither:")
+    print("       R_source  Ω(ι_ij) = −Ω(ι_ji) — the CPT / particle-antiparticle")
+    print("                 sign on Stokes constants.  This is what the paper says.")
+    print("       R_pairing B_ij = −B_ji — an exchange matrix, by definition.")
+    print("     And they give DIFFERENT arrow counts off the same matrix:")
+    print("       R_pairing reads arrows straight off |B|: 4 + 3 + 3 = 10 on 3 nodes")
+    print("       H (from F2, populated singularities):    3 on 3 nodes")
+    print(f"     Antisymmetric 3x3 integer matrices with entries in [-4,4]: "
+          f"{population}.")
+    print("     eq (98) is one of them and is not distinguished by being one, so")
+    print("     'it looks like an exchange matrix' has no evidential weight at all.")
+    checks.append((c7, "C7_antisymmetry_discriminates_nothing",
+                   "Pre-empting the next available misreading, which is the same "
+                   "shape as the two already made. eq (98) IS antisymmetric, and "
+                   "an antisymmetric integer matrix indexed by three objects "
+                   "looks exactly like a quiver exchange matrix -- reading it as "
+                   "one gives arrows 4+3+3 = 10 on 3 nodes, a DIFFERENT answer "
+                   "from H's 3. But BOTH readings entail antisymmetry (CPT sign "
+                   "on Stokes constants vs B_ij = -B_ji by definition), so "
+                   f"observing it separates them not at all; there are {population} "
+                   "antisymmetric 3x3 integer matrices with entries in [-4,4] and "
+                   "eq (98) is not distinguished by being one of them. The source "
+                   "says Stokes constants; that is the only thing deciding it here"))
+
     # ---------------- witness ------------------------------------------------
     wb = WitnessBuilder("dt-d1b-gabriel-route-void-source-verified",
                         engine="exact-integer-source-verification")
@@ -345,6 +378,25 @@ def main() -> int:
         "P1_eq100_holds_on_eq98": eq100_ok,
         "P2_rays_are_orientation_reverses": reversed_plus == minus_set,
         "P3_max_omega_exceeds_one": max_abs > 1,
+    })
+    wb.add_data("wall_crossing_scaffolding_is_orphaned", {
+        "module": "content/quantum-observable-universe/lean/QOU/Mathlib/"
+                  "WallCrossing.lean",
+        "carries": "ChargeLattice (antisymmetric integral Euler pairing), "
+                   "CentralCharge, BPSState, BPSSpectrum, Wall, KSWallCrossing",
+        "instances_of_ChargeLattice": 0,
+        "instances_of_KSWallCrossing": 0,
+        "importers": 0,
+        "mentions_anywhere_else_in_the_paper_tree": 0,
+        "note": "measured 2026-09-04 by grep over content/quantum-observable-"
+                "universe/ excluding .lake/. The module compiles only because "
+                "the QOU library is glob-declared. It is exactly the structure "
+                "the D1-b Dirac-pairing test would need, and it has never been "
+                "instantiated -- so the test is blocked on DATA, not on "
+                "scaffolding. Deliberately NOT instantiated here: giving it eq "
+                "(98) as its euler field would assert that eq (98) IS the Dirac "
+                "pairing, which is precisely hypothesis H and would launder it "
+                "into Lean",
     })
     wb.add_data("scope", {
         "tier": "scope-(b) exclusion + source-verified structural facts",
