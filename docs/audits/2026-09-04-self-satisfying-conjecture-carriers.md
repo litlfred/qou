@@ -174,3 +174,89 @@ The remaining six axioms in that file are the genuine R-I/R-II invariance
 claims and the two data declarations. It is a `conjecture` block, where an
 axiom carrier is the sanctioned form (§3b), so those are **not** defects — only
 the two `rfl`-provable ones were.
+
+---
+
+# Round two: the rest of the "conditional on" population
+
+*Added the same day, after the section above named these as unmeasured. Evidence:
+[`2026-09-04-conjecture-carriers-round-two.lean`](2026-09-04-conjecture-carriers-round-two.lean)
+— `lean`-direct **exit 0**.*
+
+The picture is more interesting than "all vacuous", and the difference is the
+useful part: **the corpus already contains the correct pattern.** Five of these
+carriers are well-formed. The defect is confined to the ones whose subject is a
+*field*.
+
+## Well-formed — the subject is a parameter, or entirely external
+
+| carrier | why it is fine |
+|---|---|
+| `HypMinimizerUnique : Prop` (`lean/QOU/Archimedean/HyperbolicGeodesic.lean:109`) | one field, quantified entirely over external `IsHypMinimizer` / `upperH`. No data of its own at all — the ideal shape. |
+| `CarlemanDeterminacyStieltjes : Prop` (`lean/QOU/MathlibExt/FrechetShohat.lean:232`) | same: `∀ M, … → CarlemanCondition M → StieltjesDeterminate M`, all external. |
+| `IsOcneanuWeightSystem (Q z : R) (r : ℕ) (y : YoungDiagram → R) : Prop` | every subject is a **parameter**; the fields constrain them against the external `schurPrincipal`. |
+| `CoGroundStateSelection (ctx : CoLpDualBindingContext R) : Prop` | constrains `ctx.Phi_1_k`, and `ctx` is a parameter. |
+| `TrefoilElectronMassConj (T) (rho) (m_e_cat) : Prop` | subjects are parameters; the field pins `categoricalMassMeV rho m_e_cat T` to the external `m_e_MeV_codata`. |
+
+`TrefoilElectronMassConj` is worth reading in full, because its own docstring
+records that **this exact defect was already found and fixed there**: the trefoil's
+strand and crossing counts *"were previously free fields of the conjecture class
+beside equations naming their values, which is why they are stated here instead."*
+So the fix proposed above is not a novel suggestion — it is the repo's own better
+practice, applied to the carriers that have not had it applied yet.
+
+`CrystalGraphRealization (n : ℕ) (q : ℝ)` in
+`knots-particles-confinement/confinement-grading-correspondence-conditional.lean:76`
+is a middle case: `klr_lift` is a field, but the constraint relates the two
+*external* functions `confinementLevel` and `KLRTopDegree` through it, so it is
+not free. Not measured either way; left as such.
+
+## Self-satisfying — the subject is a field
+
+All four verified by instance, `lean`-direct exit 0.
+
+| # | carrier | inhabited by |
+|---|---|---|
+| C1 | `CrystalGraphRealization (R) (q)` — `lean/QOU/BraidKnot/CrystalGraphRealization.lean:45`, **and** an identical copy at `mass-theory/crystal-r-matrix-sub-lemma.lean:60` | `raising := fun _ _ => none`. The field's docstring calls it *"the conjecture itself … plays the role of `sorry`"*; it does not. |
+| C2 | `CrystalGraphRealization : Prop` — `mass-theory/transfer-matrix-level-independence.lean:120` | `highest_weight : ∃ raise : ℕ → ℤ, ∀ i, raise i = 0` → `fun _ => 0`. **Depends on no axioms at all**; the field is a theorem of arithmetic. |
+| C3 | `CanonicalMarkovWeightsH3` — `lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean:1075`, identical copy at `mass-endomorphism/qbeta-per-block-chi-closed-forms.lean:399` | `y3 := 1`, `y21 = y111 := 0`. |
+| C4 | `QIntegerMassFormula : Prop` — `mass-theory/wigner-coefficient-derivation.lean:70` | `∃ r ≥ 0, ∃ value, value = r * m_e` — `value` is existentially bound and constrained only by the equation defining it, so the field reduces to `True`. |
+
+## The opposite defect: one carrier that is UNINHABITABLE
+
+`QIntegerMassFormula` at `mass-theory/q-integer-mass-formula.lean:150` cannot be
+instantiated, so **every `[QIntegerMassFormula]`-conditional theorem in that file
+is vacuously true**. Proved: `C5.not_inhabited : ¬ Nonempty QIntegerMassFormula`.
+
+The reason is quantifier scope, not physics. `fits_AME` reads
+
+```lean
+∀ (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ),
+  ∃ δ : ℝ, |δ| ≤ tolerance ∧ B_AME = (1 + δ) * binding_energy_bw q m_e Z N …
+```
+
+with `B_AME` ranging over **every real**, while `{(1+δ)·X : |δ| ≤ tolerance}` is a
+bounded interval around the single fixed `X`. Take `B_AME = 0`: since
+`tolerance ≤ 1/100 < 1`, `1 + δ > 0`, so `X = 0`. Take `B_AME = 1`: it now demands
+`1 = 0`. The argument holds for **any** `binding_energy_bw`.
+
+The sibling copy at `lean/QOU/Interactions/QIntegerMassFormula.lean:178` is the
+*same class with the same field name* and carries `[IsAMEValue Z N B_AME]`, which
+is exactly the restriction the other one is missing. So the fix is a one-binder
+change, and the correct form is already in the tree.
+
+## Name collisions
+
+These are distinct classes sharing a name, in the root namespace or in namespaces
+that do not disambiguate them at a reading glance — the `markovZ` overload defect
+recorded in `AGENTS.md`, one level up:
+
+    BorromeanQuark              10 declarations, no two with the same fields
+    CrystalGraphRealization      4 (two identical, one Prop-only vacuous, one parametrised)
+    QIntegerMassFormula          3 (one vacuous, one uninhabitable, one correct)
+    CanonicalMarkovWeightsH3     2 (identical)
+
+`QIntegerMassFormula` is the sharpest: three classes, one name, and the three are
+**vacuous**, **uninhabitable**, and **correct** respectively. A reader who meets
+"conditional on `[QIntegerMassFormula]`" cannot tell which they have without
+resolving the declaration.
