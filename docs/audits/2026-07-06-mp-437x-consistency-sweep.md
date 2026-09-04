@@ -1,5 +1,36 @@
 # m_p ~437× de-fit — corpus-wide consistency sweep (2026-07-06)
 
+> **🛑 CURRENCY (2026-09-03): the count this sweep ENFORCED is itself now
+> superseded. Do not use this document as the authority on the L2 count.**
+>
+> This sweep aligned the corpus to **2/7** (m_e, m_K/m_π), which was
+> correct on 2026-07-06. Two later audits moved it twice:
+>
+> - **2026-08-18** — `beats_100x_count = 2` counts **calibration inputs**
+>   alongside predictions. `m_e` is the CAL-1 input that *defines* the MeV
+>   unit, so its `err_ppb` is zero by construction, not by measurement —
+>   the same ground `m_p` was already excluded on. Separating inputs from
+>   predictions gives **1 of 5 scoreable**, and it is `m_K/m_π`. Quote
+>   `beats_100x_scoreable` / `scoreable_total`, never bare
+>   `beats_100x_count`.
+>   ([audit](2026-08-18-mass-binding-accuracy-what-is-closeable.md))
+> - **2026-08-22** — even that 1 is inflated: `m_K/m_π`'s sub-100× result
+>   is manufactured by an EM correction whose truncation order beats the
+>   untruncated series (chosen against the data) and whose `α_em` input is
+>   conditional on an open Lean `sorry`. The **unconditional
+>   parameter-free** count is **0/5**.
+>   ([red-team](2026-08-22-mK-mpi-l2-red-team.md))
+>
+> **State it as "1/5 scoreable — and that 1 is truncation-fitted +
+> α_em-`sorry`-conditional ⇒ 0/5 unconditional".** The
+> `observable-sector-tracker.md` was already updated to the 1/5 framing;
+> the fourteen documents this sweep corrected to "2/7" were **not**
+> re-swept, so expect stale 2/7 wording in them.
+>
+> The sweep's *method and hit table below remain valid* as the record of
+> what the 2026-07-04 de-fit ruling touched — only the count it propagated
+> has moved.
+
 **Date:** 2026-07-06
 **Bean:** `mo5p`
 **Branch:** `claude/cheat-sheet-derivation-gaps-0ykco4` (PR #3440)

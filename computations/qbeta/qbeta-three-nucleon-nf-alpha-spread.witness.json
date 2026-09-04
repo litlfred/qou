@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+pyhecke",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T05:00:15.743652+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "computedAt": "2026-09-03T16:50:28.064577+00:00",
+  "commitSha": "65ef104c9fd87ac424a83f90b6f335e11dd39fe4",
   "assertions": [
     {
       "name": "three_builders_give_three_distinct_alphas",
@@ -63,7 +63,7 @@
   "durationMs": 0,
   "computation": "qbeta-three-nucleon-nf-alpha-spread",
   "scriptFile": "qbeta_three_nucleon_nf_alpha_spread_probe.py",
-  "scriptHash": "ba2e812168a1",
+  "scriptHash": "7ad3c1f839c0",
   "scriptCommitSha": "8dcff9fff7f4bde9ca4ee313fab4917932547558",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -79,7 +79,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
   "invocation": {
     "argv": [
@@ -91,7 +91,7 @@
   "contentBlock": "prop:q-beta-cos-resummation",
   "parameters": {
     "q0_anchor": "proton (physical_proton pin)",
-    "required_N1_factor": "0.99839767000000001484494305259431712329387664794922"
+    "required_N1_factor": "0.99839767"
   },
   "data": {
     "assertions_passed": 9,

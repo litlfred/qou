@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T13:41:46Z
-updated_at: 2026-09-03T16:17:46Z
+updated_at: 2026-09-03T21:20:50Z
 ---
 
 Full measurement: docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md
@@ -492,3 +492,70 @@ conjecture itself, lifted to a callable theorem") — the `BondExtensiveBinding`
 over-flag class. Ledger says `genuine` (2026-08-09); re-adjudication to
 `legit` is a judgement call left to the owner, not taken unilaterally.
 (After `MassVolumeFactorization` and `binding_assembly`, that is 3.)
+
+
+## 2026-09-03 — the sibling tree, and the triage reaches zero in both trees
+
+PR #6539 on `claude/sap-sibling-tree-2026-09-03`, following #6422 (merged,
+thirteen library repairs). Four sibling defects; all four repaired.
+
+**`scripts/sap-carrier-shape.py`: library DEFECT 0 / ACCESSOR 14, siblings
+DEFECT 0 / ACCESSOR 11, unresolved 0 in each.**
+
+| file | what it actually was |
+|---|---|
+| `lifting-and-descent/descent-lemma.lean` | conclusion carried as a `structure` field; also `→ₗ[R]` where the `.md` says **algebra** homomorphism, and neither the `G_q`-intertwining nor the QOU-preservation claim encoded at all |
+| `braids-and-knots/knot-eigenbasis-complete.lean` | `summands_detected` bound `μ` and **never used it** — the flagged projection was the smaller half |
+| `brings-surface/levi-form-defect.lean` | the matter locus was **named but never defined**; `Sing(λ)` existed only as a word in a theorem name |
+| `observations/diagrammatic-double-magic-lr-fusion.lean` | `SelfConjugate` was a **free predicate field** — an instance could take `fun _ => True` and discharge all three self-conjugacy hypotheses with `trivial` |
+
+### The pattern this tranche adds to the arc
+
+The four library batches were about *bodies* — `:= ctx.field`. Three of these
+four are about **types**: a hypothesis whose subject the instance gets to
+choose, or a bound variable that never occurs in the body. Both read as real
+constraints and are satisfied by anything. `mu_free_detection_vacuous` (in
+knot-eigenbasis) is now a machine-checked demonstration of the first shape, so
+a later "simplification" back to it fails against a standing counterexample.
+
+Two were repaired by finding a **real derivation** rather than by naming the
+claim over parameters:
+
+* `nu_selfConjugate` — added LR conjugation symmetry `c^ν_{λμ} = c^{ν'}_{λ'μ'}`
+  (a theorem of LR theory, not conjecture content) to the data class, **removed**
+  `nuZN_selfConj` from the conjecture, and proved it. The conjecture assumes one
+  thing fewer than before. This is the §3b-cond item-5 remedy the ledger itself
+  prescribes, so it is not a re-adjudication of the prior `genuine` verdict —
+  though that verdict's evidence names the **wrong field** (`SelfConjugate`, a
+  predicate former, rather than `nuZN_selfConj`).
+* `knot_eigenbasis_complete` — added a per-block trace component tied to the
+  trace by `tr_eq_sum_blocks`, which makes `tr_ne_zero_of_single_block` and
+  `single_summand_detected` follow. Those replace the two deleted re-exports
+  rather than merely deleting them.
+
+### A seventh parser bug — and this one INVENTS findings
+
+`sap-projection-liveness.py`'s `_PROJ` matches `:= X.field arg`, which is the
+shape of a projection *and* of an ordinary qualified constant. So
+`:= Function.Surjective descentMap` — the disposition-3 repair this drain
+produces — reported as `PROJECTION`, and the carrier lookup then printed the
+nonsense `class CommSemiring not found`.
+
+The six bugs in `sap-carrier-shape.py` all mis-*classified* live rows. This one
+manufactures a finding, which is how a drain gets told to re-fix something
+already fixed. Fixed by requiring the head identifier to be bound — a binder
+name, an instance-binder class head, or a file-level `variable` (which
+`body_of`, starting at the decl header, cannot see). Exactly one row moved.
+
+### Left open
+
+* `qou-9552` — `DescartesKnotEigenbasis.all_summands_detected` has the same
+  defect in a worse form: the summand index is bound as `_` and the detected
+  value is a free `∃ jonesVal : ℝ, jonesVal ≠ 0` tied to no trace, so the field
+  asserts that `ℝ` has a non-zero element. Its own docstring discloses the gap.
+* Copilot's third review comment on #6422 was never read — `get_review_comments`
+  returned `API rate limit already exceeded` on five attempts.
+* Fourth same-name-different-namespace duplication found:
+  `QOU.LRFusion.DoubleMagicConjecture` (sibling) vs
+  `QOU.Interactions.LRFusion.DoubleMagicConjecture` (library), after
+  `MassVolumeFactorization`, `binding_assembly` and `ReebBundleComplement`.

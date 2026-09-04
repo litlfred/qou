@@ -1,0 +1,127 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-06T22:49:26.068025+00:00",
+  "commitSha": "c2ff21f88beb3332ec9a6260bc1bf5097570a48a",
+  "assertions": [
+    {
+      "name": "closed_form_P2_sympy_exact (W = T(2,4))",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "PR #1125 binomial pattern, re-verified: sum C(2+j,2j)/2 h^{2j} = (q^5+q^-5)/(2[2]_q)"
+    },
+    {
+      "name": "closed_form_P3_sympy_exact (Z = T(2,6))",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "PR #1125 binomial pattern, re-verified: sum C(3+j,2j)/2 h^{2j} = (q^7+q^-7)/(2[2]_q)"
+    },
+    {
+      "name": "bracket_cancellation_P2_over_P3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "sympy-exact: P_2/P_3 = (q^5+q^-5)/(q^7+q^-7); [2]_q cancels"
+    },
+    {
+      "name": "trace_ratio_equals_cosh_ratio_at_q0",
+      "computed": "0.89083566914636632171080090353849935614363521",
+      "expected": "0.89083566914636632171080090353849935614363521",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "P_2/P_3 at q_0 vs cosh(5 eta_0)/cosh(7 eta_0); eta_0 = ln q_0"
+    },
+    {
+      "name": "xcheck_Q_9/2 legenq_vs_heine",
+      "computed": "0.88728166658966193231114749124394906131195603",
+      "expected": "0.88728166658966193231114749124394906131195603",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "three independent representations (legenq type=3 / Heine Fourier / Laplace DLMF 14.12.4)"
+    },
+    {
+      "name": "xcheck_Q_9/2 legenq_vs_laplace",
+      "computed": "0.88728166658966193231114749124394906131195603",
+      "expected": "0.88728166658966193231114749124394906131195603",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "three independent representations (legenq type=3 / Heine Fourier / Laplace DLMF 14.12.4)"
+    },
+    {
+      "name": "xcheck_Q_13/2 legenq_vs_heine",
+      "computed": "0.628395710983330134472866332784016043745225656",
+      "expected": "0.628395710983330134472866332784016043745225656",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "three independent representations (legenq type=3 / Heine Fourier / Laplace DLMF 14.12.4)"
+    },
+    {
+      "name": "xcheck_Q_13/2 legenq_vs_laplace",
+      "computed": "0.628395710983330134472866332784016043745225656",
+      "expected": "0.628395710983330134472866332784016043745225656",
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "three independent representations (legenq type=3 / Heine Fourier / Laplace DLMF 14.12.4)"
+    },
+    {
+      "name": "monotonicity_invariant_Q92_gt_Q132",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "Q_nu(x) strictly decreasing in nu for x>1 (DLMF 14.12.4 integrand base > 1)"
+    },
+    {
+      "name": "gate_exclusion_q_ratio_gt_1_targets_lt_1",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "same-index bare replacement structurally excluded: Q-ratio > 1, both targets < 1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 788,
+  "computation": "probe-toroidal-legendre-weinberg-gate",
+  "scriptFile": "probe_toroidal_legendre_weinberg_gate.py",
+  "scriptHash": "aefd10371fa2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Gate 1 (bean c4uz): does the Weinberg cosh-vs-cos +1.1% gap reduce to a toroidal-Legendre Q_{nu-1/2} torus-saddle identity? Derive-first gate — verdict: no-reduction found (gate closed for now). The N=2 trace ratio is EXACT (no saddle-correction series exists), and the same-index replacement Q_{9/2}/Q_{13/2} is structurally excluded by degree-monotonicity of Q_nu (Laplace rep, DLMF 14.12.4): the Q-ratio is > 1 for every eta_0 > 0 while both targets are < 1. Includes the one prescribed observation-tier evaluation (item 3).",
+  "auditOnly": "docs/audits/2026-07-06-toroidal-legendre-gates.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "eta0 = ln q0": "0.104340720319519512315906279973072397053744280829",
+    "cosh_eta0 (argument of Q_{nu-1/2})": "1.0054484333535611498762459890459314079446203742421",
+    "compute_dps": 70,
+    "m_W_GeV (PDG 2022)": "80.379",
+    "m_Z_GeV (PDG 2022)": "91.1876"
+  },
+  "data": {
+    "categorical_cosh_ratio_P_W_over_P_Z": "0.8908356691463663217108009035384993561436352101436",
+    "sm_cos_theta_W_mW_over_mZ": "0.88146853300229417157595988928319201294912904824779",
+    "gap_cosh_vs_sm_rel": "0.0106267391215515694103662458043",
+    "Q_9_2_at_cosh_eta0": "0.88728166658966193231114749124394906131195602964546",
+    "Q_13_2_at_cosh_eta0": "0.62839571098333013447286633278401604374522565590277",
+    "toroidal_legendre_ratio_nu5_over_nu7": "1.4119791893570060275679379782496696204495204242627",
+    "deviation_vs_categorical_cosh_ratio_rel": "0.585005224038704991540913278893",
+    "deviation_vs_sm_cos_theta_W_rel": "0.601848661060860707889549523948",
+    "verdict": "no-reduction found (gate closed for now)",
+    "verdict_scope": "Scope-limited stop, NOT a general refutation of toroidal-Legendre machinery. Excluded (scope (b), invariant cited): the same-index bare replacement Q_{5-1/2}/Q_{7-1/2} for cosh(5 eta_0)/cosh(7 eta_0), by degree-monotonicity of Q_nu at fixed argument > 1. Not excluded: toroidal-Legendre structures at the colored/large-N saddle level (where the Askey two-saddle table actually operates), or index assignments derived from a future colored-level analysis."
+  },
+  "caveats": [
+    "The N=2 trace ratio P_W/P_Z is exact (no asymptotic series), so no steepest-descent correction applies at this level; the 1.1% gap is not addressed by this gate."
+  ]
+}

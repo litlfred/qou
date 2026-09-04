@@ -73,6 +73,28 @@ wall 1m52s). Corollary lemma names, all confirmed in this pin:
 `sympy` is absent by default in this container; `python3 -m pip install --user
 sympy` works through the proxy (got 1.14.0, matching the witness environment).
 
+## TRAP — `ring` on a NONCOMMUTATIVE ring: "ring_nf made no progress"
+
+`ring` needs `CommSemiring`. In a file over `{A} [Ring A] [Algebra R A]` it
+fails on pure *associativity* rearrangements (`ρ * (y * x) = ρ * y * x`) with
+`error: ring_nf made no progress on goal` — a message that reads like a
+tactic-strength problem, not a typeclass one. `congr 1` before it does not
+help; the residual goal is still noncommutative.
+
+Fix, cheapest first: **explicit `mul_assoc` inside the `rw` chain**
+(`rw [← mul_assoc, hcyc (ρ * y) x, mul_assoc]`), which also collapses a
+`have … := by ring; rw [this]; congr 1; ring` block to one line. `noncomm_ring`
+exists (`Mathlib.Tactic.NoncommRing`) for genuine ring-normalisation, but is
+overkill when the only content is reassociation. Measured 2026-09-03,
+`MagnusCurvatureCommutator.lean`: 3 `ring` errors → 8 lines deleted, 2 added,
+EXIT 0, statements untouched.
+
+Direction check for `rw [mul_assoc]` (`(a*b)*c = a*(b*c)`): it fires on the
+FIRST `(a*b)*c` in goal-traversal order, then rewrites every occurrence of that
+instantiated term. `ρ * (x*y)` does NOT match (first arg is not a `*`), so a
+goal `tr (ρ*(x*y)) - … = tr (ρ*x*y) - …` closes with `← mul_assoc`, not
+`mul_assoc`.
+
 ## Lean notation tokens used as binder names — a whole parse-failure class
 
 Measured 2026-09-03 across the 908 content-block siblings. Four of them failed
