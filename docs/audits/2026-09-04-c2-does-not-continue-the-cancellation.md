@@ -67,11 +67,13 @@ being carried over from the source's own claim.
 
 - **`c₃` is not measured.** Nothing here says anything about third order. The
   question asked about `c₂` *and* `c₃`; only `c₂` is answered.
-- **A = 4 is not in hand.** `P_OF["4He"] = 3` and `a₂` is taken only
-  `if d.p > 2`, so `c₂` at ⁴He may not survive the pipeline's precision loss.
-  A run was in flight when this was written. **Two A values is a thin trend** —
-  the same weakness that sank the `E ≈ 5.4 × C(A,2)` target on #6427, and it is
-  flagged here for the same reason rather than after the fact.
+- **A = 4 is CONFIRMED unavailable at the committed precision.** The run
+  completed: ⁴He reports `c₁ = 259/128` (matching the recorded value) and
+  **`c₂ = None`** — `P_OF["4He"] = 3` does not leave `d.p > 2` after the
+  seminormal quotients, exactly as the guard anticipates. So the trend rests on
+  **two A values**, which is the same weakness that sank the
+  `E ≈ 5.4 × C(A,2)` target on #6427; flagged here rather than after the fact.
+  A raised-precision ⁴He run is in flight (see §What would settle it).
 - **A = 6 is far out of reach by this route.** ⁶Li is `n = 3A = 18` strands
   against ⁴He's 12; the ⁴He case is already the slow one at `P = 3`.
 - **This does not contradict #6427's flatness result.** That measured the summed
@@ -80,9 +82,28 @@ being carried over from the source's own claim.
   non-convergent series can still have a flat partial sum; the two facts sit
   together and neither explains the other.
 
+## Provenance of the numbers
+
+The five `c₂` values are not new compute. Re-running `main`'s probe unchanged
+reproduced **8 assertions, all passed**, and left the committed witness
+untouched (`[unchanged — kept on-disk commitSha for staleness]`), so the `c₁`
+column here is byte-identical to what `main` already records and the `c₂` column
+is what that same run prints. What is new is only the `ℏ_q`-weighting and the
+reading of it.
+
 ## What would settle it
 
 The clean discriminator is `c₂` at **A = 4** — one more point, and the first that
-could show the ratio exceeding 1. That needs `P_OF["4He"]` raised until `d.p > 2`
-survives, which is a precision cost on the already-slowest case, not a new
-derivation.
+could show the ratio exceeding 1. It needs `P_OF["4He"]` raised until `d.p > 2`
+survives: a precision cost on the already-slowest case (⁴He took ~230 s of the
+300 s run at `P = 3`), not a new derivation.
+
+**A note on running it, because it cost a run here.** `/tmp` contained a stale
+`inspect.py` from a prior session, which shadows the stdlib module and makes
+`import mpmath` die with `AttributeError: module 'inspect' has no attribute
+'signature'` — nothing to do with this probe. Any script placed in `/tmp` picks
+it up via `sys.path[0]`. It has been renamed to `inspect.py.shadowing-landmine.bak`;
+run from a clean directory regardless. This is the third stdlib/module shadowing
+incident in this session's environment (an earlier one was a stray
+`pyhecke_native` `.so` in the scratchpad), so it is worth checking first when an
+import fails in a way that has no relation to the code being run.
