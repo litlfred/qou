@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T13:56:36Z
+updated_at: 2026-09-04T14:03:53Z
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -196,3 +196,45 @@ chosen to make the claim reflexive) is invisible, as are fields inside a tactic
 transfer-matrix), C3 (`CanonicalMarkovWeightsH3`), C4 (`QIntegerMassFormula :
 Prop`, wigner) — in neither qou-4els's six nor qou-tsnp's twelve (`holds :
 Prop`, a third shape).
+
+
+## MAJOR CORRECTION — the headline over-claims; qou-z9ws had the rule first
+
+`docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md` (bean qou-z9ws,
+2026-08-30) states this thesis more sharply, on 52-of-79 measured context
+classes, with a probe (`scripts/lean-context-class-inhabitation-probe.py`).
+It corrects me twice:
+
+1. **Inhabitation does not decide it.**  Discriminator = what the downstream
+   declaration DOES with the field.  Re-checked bodies: T1, T2, T6, T8 all
+   DERIVE -> §3b-cond working, NOT defects (the Aug-30 audit names T1 as its
+   worked counter-example).  T3 (`:= inst.volume_calibrates_mass`) and T10
+   (`:= inst.forms_agree`) PROJECT -> defects stand.
+2. **"Inhabited => vacuous" only for an UNPARAMETERISED class.**  `C1.triv`
+   inhabits `CrystalGraphRealization ℤ 0`, parameterised -> satisfiability.
+
+So the headline is WRONG.  Measurements right, inference wrong.  Sharp cases:
+T3, T10, and T4 (fixed) — T4's field existentially bound BOTH V and m, a defect
+the derives/projects rule does not reach.
+
+**Round two was prior work in full.**  C1 = qou-4els.  C2/C4 =
+docs/audits/2026-08-24-undecided-carrier-witnesses.lean, IDENTICAL witnesses.
+C3 STOOD DOWN: CanonicalMarkovWeightsH3 worked 2026-09-03 with owner approval
+("2y", qou-6u92), inhabitant wired to Markov-DERIVED n=3 weights (qou-c35w,
+#6506), guarded by `delta_tau_M_canonical_resolves_to_canonical` which is
+rfl-provable only because resolution picks those weights.  Parametrising breaks
+that guard.
+
+**Survives:** #6644 entirely; the two `rfl` axioms + T4 parametrisation;
+`¬ Nonempty QIntegerMassFormula` as a proof (prior probe's seventh is
+`SeparateLambdaScale_Antipattern`, different decl); the name-collision counts.
+
+**PATTERN — the durable part.**  Four re-discoveries in one session
+(`[IsAMEValue]`, C1, C2/C4, the thesis), each found AFTER writing the claim,
+three in files a grep had already surfaced.  A corpus this heavily audited
+should be assumed to hold the finding already.
+
+**Apply-phase: NOT to be done from this bean as written.**  T1/T2/T6/T8 are
+working as intended; C3 is owner-approved and guarded; C2/C4 belong to the
+Aug-24 probe.  What is left is T3 and T10, and both are authorial (they change
+what the paper claims).
