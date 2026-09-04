@@ -2,11 +2,11 @@
  "computation": "he4-binding-k-fingerprint-stage1",
  "description": "A=4 extension of the canonical binding-K search, stage 1 (trace fingerprint), unblocked by the in-sandbox pyhecke-native build. cp = 4 Borromean nucleons at offsets {0,3,6,9}; K over {\u03c33,\u03c36,\u03c39}^{\u00b11} len\u22643; fingerprint vs the certified 77/77 canonical 4He trace. Exact GP q-Laurent + 50-dps evaluation (no float in the eval path). Stage 2 (PSD+LP) remaining. Scope-(a); no fit; nothing wired.",
  "audit_only": true,
- "computedAt": "2026-09-04T01:31:24.043034+00:00",
+ "computedAt": "2026-09-04T03:47:07.779133+00:00",
  "engine": "pyhecke_native(GP)+mpmath",
  "dps": 50,
  "target_canonical_trace": "0.16097414544240738183",
- "cp_trace_no_binding": "0.90540033019518634354",
+ "cp_trace_no_binding": "0.90540033019669769217",
  "n_candidates": 186,
  "L_max": 3,
  "generators": [
@@ -24,7 +24,7 @@
     6,
     -9
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -34,7 +34,7 @@
     -9,
     6
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -44,7 +44,7 @@
     6,
     9
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -54,7 +54,7 @@
     9,
     6
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -64,7 +64,7 @@
     3,
     -9
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -74,7 +74,7 @@
     -3,
     9
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -84,7 +84,7 @@
     9,
     -3
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -94,7 +94,7 @@
     -9,
     3
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -104,7 +104,7 @@
     -3,
     6
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   },
@@ -114,12 +114,12 @@
     6,
     -3
    ],
-   "tr_M": "0.1458983071527361",
+   "tr_M": "0.1458983071606262",
    "abs_delta": "0.015075838",
    "rel_delta": "0.0936538"
   }
  ],
- "verdict": "A=4 STAGE-1 fingerprint (canonical A\u22643 rule, zero new freedom): best plain inter-nucleon K = [3, 6, -9] with tr_M = 0.145898307153 vs canonical target 0.160974145442 (rel \u0394 = 0.09365). Candidates ranked by Markov-trace fingerprint ONLY \u2014 stage 2 (per-block PSD + operator-selection LP) not run (H12 matrices impractical in-sandbox); plain-vs-averaged interface convention flagged. A fingerprint hit is a CANDIDATE for the 4He binding link, not an identification. No AME input; no fit; nothing wired. Scope-(a).",
+ "verdict": "A=4 STAGE-1 fingerprint (canonical A\u22643 rule, zero new freedom): best plain inter-nucleon K = [3, 6, -9] with tr_M = 0.145898307161 vs canonical target 0.160974145442 (rel \u0394 = 0.09365). Candidates ranked by Markov-trace fingerprint ONLY \u2014 stage 2 (per-block PSD + operator-selection LP) not run (H12 matrices impractical in-sandbox); plain-vs-averaged interface convention flagged. A fingerprint hit is a CANDIDATE for the 4He binding link, not an identification. No AME input; no fit; nothing wired. Scope-(a).",
  "scope": "(a) \u2014 stage-1 fingerprint only; stage-2 PSD/LP + convention reconciliation open",
  "assertions": [
   {
@@ -140,7 +140,7 @@
   "q0_y_lambda_upstream": "wenzl-y-lambda-h12.witness.json data.q0 (CODATA-2018 muon derivation)"
  },
  "scriptHash": "343a4abfbd59",
- "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
- "commitSha": "3bb54db0643314a240bd798083583b4c474a79a6",
+ "scriptCommitSha": "56fdff0d2e89ad632bde64f359e3c9ba9e8c1f2f",
+ "commitSha": "cb2197ab70f638c1bbedbf7b6850b0faaa071a10",
  "durationMs": 0
 }

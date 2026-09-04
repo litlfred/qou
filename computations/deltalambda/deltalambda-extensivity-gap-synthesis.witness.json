@@ -11,16 +11,16 @@
    "N": 1,
    "bonds_C_A_2": 1,
    "tree_A_minus_1": 1,
-   "B_base_MeV": 0.3666138140785936,
+   "B_base_MeV": 0.36661385763455323,
    "B_AME_MeV": 2.22452,
-   "err_pct": -83.51941928692061,
-   "mu_ext_target": 6.067747353140145,
+   "err_pct": -83.51941732892699,
+   "mu_ext_target": 6.0677466322547975,
    "dominant_lambda": [
     5,
     1
    ],
-   "dominant_term": -1.2696890759185817,
-   "top3_block_share": 0.9270102587694954
+   "dominant_term": -1.2696889121611088,
+   "top3_block_share": 0.9270102501734588
   },
   "T": {
    "A": 3,
@@ -28,16 +28,16 @@
    "N": 2,
    "bonds_C_A_2": 3,
    "tree_A_minus_1": 2,
-   "B_base_MeV": 1.2647941324365348,
+   "B_base_MeV": 1.2647940908236723,
    "B_AME_MeV": 8.4818,
-   "err_pct": -85.088140106622,
-   "mu_ext_target": 6.706071591003053,
+   "err_pct": -85.08814059723558,
+   "mu_ext_target": 6.706071811638838,
    "dominant_lambda": [
     6,
     3
    ],
-   "dominant_term": -3.7308026472875144,
-   "top3_block_share": 0.9109373908895816
+   "dominant_term": -3.730802227251817,
+   "top3_block_share": 0.9109373882843673
   },
   "3He": {
    "A": 3,
@@ -45,16 +45,16 @@
    "N": 1,
    "bonds_C_A_2": 3,
    "tree_A_minus_1": 2,
-   "B_base_MeV": 1.5733613345103694,
+   "B_base_MeV": 1.5733612771877798,
    "B_AME_MeV": 7.71804,
-   "err_pct": -79.614496238548,
-   "mu_ext_target": 4.905446594314495,
+   "err_pct": -79.61449698125716,
+   "mu_ext_target": 4.905446773035623,
    "dominant_lambda": [
     6,
     3
    ],
-   "dominant_term": -5.894830751937366,
-   "top3_block_share": 0.9113467016509721
+   "dominant_term": -5.894830004641859,
+   "top3_block_share": 0.9113466981320962
   },
   "4He": {
    "A": 4,
@@ -62,23 +62,23 @@
    "N": 2,
    "bonds_C_A_2": 6,
    "tree_A_minus_1": 3,
-   "B_base_MeV": 0.09756895913453323,
+   "B_base_MeV": 0.0975690123418929,
    "B_AME_MeV": 28.29567,
-   "err_pct": -99.6551806013622,
-   "mu_ext_target": 290.00688590911824,
+   "err_pct": -99.65518041332157,
+   "mu_ext_target": 290.00672775951404,
    "dominant_lambda": [
     8,
     4
    ],
-   "dominant_term": 9.938947284912086,
-   "top3_block_share": 0.9075492991695122
+   "dominant_term": 9.938945770245018,
+   "top3_block_share": 0.9075492993240043
   }
  },
  "extensivity_multipliers_target": {
-  "D": 6.067747353140145,
-  "T": 6.706071591003053,
-  "3He": 4.905446594314495,
-  "4He": 290.00688590911824
+  "D": 6.0677466322547975,
+  "T": 6.706071811638838,
+  "3He": 4.905446773035623,
+  "4He": 290.00672775951404
  },
  "open_gap": "GAP-A-3 jet-tower level-selection rule k(A) (derived, not fit)",
  "closed_upstream": {
@@ -97,5 +97,13 @@
    "passed": true
   }
  ],
- "allPassed": false
+ "allPassed": false,
+ "scriptFile": "deltalambda_extensivity_gap_synthesis_probe.py",
+ "scriptHash": "408ac66faf95",
+ "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+ "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+ "computedAt": "2026-09-04T03:24:59.310999+00:00",
+ "durationMs": 0,
+ "q0Anchor": "independent",
+ "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

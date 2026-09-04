@@ -2,24 +2,24 @@
  "computation": "he4-binding-k-averaged-interface",
  "description": "Stage 1.5 of the A=4 binding-K search: the canonical AVERAGED interface operator on the naive {3,6,9} placement, via linearity (8 plain GP words, exact q-Laurent, 50 dps). Captures 77.21% of the canonical 4He trace (rel 22.79%, vs 14.7% plain), so it does NOT beat the plain baseline and the gate fails; the residual is the measured woven color-tube structure. Scope-(a); no fit.",
  "audit_only": true,
- "computedAt": "2026-09-04T01:04:40.818942+00:00",
+ "computedAt": "2026-09-04T03:25:53.515230+00:00",
  "engine": "pyhecke_native(GP)+mpmath",
  "dps": 50,
  "canonical_target": "0.16097414544240738183",
- "tr_M_cp_K_avg": "0.12428612166441133561",
+ "tr_M_cp_K_avg": "0.12428612167091159674",
  "rel_delta": "0.2279125239",
  "plain_best_rel_delta": "0.1469 (stage 1)",
  "per_sign_words": {
-  "(1, 1, 1)": "0.3465708420147384",
-  "(1, 1, -1)": "0.1458983071527361",
-  "(1, -1, 1)": "0.1458731618884463",
-  "(1, -1, -1)": "0.06139458533157892",
-  "(-1, 1, 1)": "0.1458983071527361",
-  "(-1, 1, -1)": "0.06141973059586869",
-  "(-1, -1, 1)": "0.06139458533157892",
-  "(-1, -1, -1)": "0.02583945384760732"
+  "(1, 1, 1)": "0.3465708420277631",
+  "(1, 1, -1)": "0.1458983071606262",
+  "(1, -1, 1)": "0.1458731618963503",
+  "(1, -1, -1)": "0.06139458533592771",
+  "(-1, 1, 1)": "0.1458983071606262",
+  "(-1, 1, -1)": "0.06141973060020364",
+  "(-1, -1, 1)": "0.06139458533592771",
+  "(-1, -1, -1)": "0.02583945384986789"
  },
- "verdict": "Stage 1.5: the averaged 3-bond operator K_avg = \u2297(\u03c3+\u03c3\u207b\u00b9)/2 on the naive inter-nucleon interfaces gives tr_M(cp\u00b7K_avg) = 0.124286121664 vs the canonical 0.160974145442 \u2014 rel \u0394 = 0.2279 (77.21% captured; plain best was 14.7%). The residual 22.79% is the measured woven color-tube structure of the canonical recipe (9 averaged crossings at {1,2,4,5,6,7,10}) beyond the naive {3,6,9} placement. A=4 factorization T \u2248 cp\u00b7K_avg holds to 22.79% \u2014 honest partial identification, and at this residual it does NOT improve on the 14.7% plain-best baseline, which is why the assertion below fails. No AME; no fit; nothing wired. Scope-(a).",
+ "verdict": "Stage 1.5: the averaged 3-bond operator K_avg = \u2297(\u03c3+\u03c3\u207b\u00b9)/2 on the naive inter-nucleon interfaces gives tr_M(cp\u00b7K_avg) = 0.124286121671 vs the canonical 0.160974145442 \u2014 rel \u0394 = 0.2279 (77.21% captured; plain best was 14.7%). The residual 22.79% is the measured woven color-tube structure of the canonical recipe (9 averaged crossings at {1,2,4,5,6,7,10}) beyond the naive {3,6,9} placement. A=4 factorization T \u2248 cp\u00b7K_avg holds to 22.79% \u2014 honest partial identification, and at this residual it does NOT improve on the 14.7% plain-best baseline, which is why the assertion below fails. No AME; no fit; nothing wired. Scope-(a).",
  "scope": "(a) \u2014 averaged 3-bond partial identification; woven-structure residual 3.8% measured",
  "assertions": [
   {
@@ -38,7 +38,7 @@
   "q0_y_lambda_upstream": "wenzl-y-lambda-h12.witness.json data.q0 (CODATA-2018 muon derivation)"
  },
  "scriptHash": "c9b8de0a7be6",
- "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
- "commitSha": "5396a03176cc22695a230ca2a7b5d34427128d12",
+ "scriptCommitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
+ "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
  "durationMs": 0
 }
