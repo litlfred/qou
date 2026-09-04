@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T03:11:25Z
-updated_at: 2026-09-04T03:13:25Z
+updated_at: 2026-09-04T10:28:53Z
 ---
 
 Branch claude/monotone-word-trace-factorizes-2026-09-04 (PR #6561, stacked on the monotone-factorizes tranche). Owner picked the formalize-first non-monotone probe.
@@ -19,3 +19,6 @@ PROBE (computations/probes/cyclic_triple_bond_cross_term_probe.py, 32/32, 50 dps
 Right sign, wrong size, and WRONG DIRECTION IN A: the term is a product of sub-unit letter traces so it shrinks with A while the residual grows — the intensive/extensive gap of qou-brng, at the word level. Under a log law it would read 2–4 nats/bond only because the cyclic trace is driven near zero (fragility, not mechanism; qou-y0mc open).
 
 VERDICT scope-(a) negative for the cyclic-triple class. Recommendation (judgement): the collective term is not a functional of the single atom word's Markov trace. Not probed: the A≥3 cyclic coordination graph (needs a band-generator over/under choice) and the intra-nucleon cyclic square (changes the nucleon, not the bond). Audit: docs/audits/2026-09-04-cyclic-triple-word-class-prune-and-probe.md. Nothing wired or fitted.
+
+
+## 2026-09-04 later — MeV column superseded by #6611 (qou-rp9i). The linear law this bean's numbers use is refuted; under the surviving log law the class is EXTENSIVE (p–p 3.77 / p–n 5.65 / n–n 14.09 MeV per bond) and over-shoots 3–8× with the retracted asymmetry sign. Still scope-(a) negative; the Lean prune and kernel agreement stand. See docs/audits/2026-09-04-cyclic-triple-under-log-law.md.
