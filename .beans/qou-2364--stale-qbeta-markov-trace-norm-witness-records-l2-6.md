@@ -1,11 +1,11 @@
 ---
 # qou-2364
 title: 'STALE: qbeta-markov-trace-norm witness records L2 6.85e-14 but HEAD''s script gives 3.48e-09 — 50000x, and scriptHash differs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T07:13:03Z
-updated_at: 2026-08-30T07:13:20Z
+updated_at: 2026-09-04T07:31:13Z
 ---
 
 
@@ -132,3 +132,5 @@ commit still fetchable from the remote (`git fetch origin <sha>` works;
 `git branch -r --contains` returns nothing). This whole diagnosis depended on
 that object still existing. A witness whose provenance pointer is unreachable
 cannot be audited at all — worth knowing before anyone prunes.
+
+CLAIMED 2026-09-04 (session cool-johnson). Confirmed the staleness AND found the root cause the bean did not name: the producer emits 5 RAW FLOAT64 fields (assertions[1].computed/expected = L2, assertions[2] = Markov, data.max_abs_x_L2_minus_x_M). So the 3.478e-9 residual is computed in float64 and is untrustworthy per NO-FLOAT64 — we do not actually know whether the L2 constraint genuinely fails at 1e-9 or the 50000x 'regression' is float64 noise. Plan: drain the producer to mpf end-to-end, re-run, and let the TRUE exact residual decide. Branch claude/cool-johnson-t1wveh.
