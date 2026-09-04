@@ -1,15 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:02:13.287468+00:00",
-  "commitSha": "eba68cb580eb04437f269096ce0f8017b9dc1554",
+  "computedAt": "2026-09-04T22:26:44.976721+00:00",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "allPassedBasis": "vacuous",
+  "durationMs": 13,
+  "durationMsBaseline": "builder-construction",
   "computation": "jet-knot-invariants",
   "scriptFile": "jet_knot_invariants.py",
   "scriptHash": "7fbecd49553b",
-  "scriptCommitSha": "0d1143c4efea48014be71c4c1b7cf966976c87d4",
+  "scriptCommitSha": "817fd22c889ccbb46a436778702666fe10f8a904",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +26,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

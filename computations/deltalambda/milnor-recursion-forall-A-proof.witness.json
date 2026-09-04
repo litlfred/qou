@@ -35,9 +35,9 @@
   "verdict": "PROVED \u2200A: the recursion D_{A+1}=\u2212h\u00b2(h\u00b2+2)D_A follows by structural induction on the Temperley\u2013Lieb Markov trace. (I) reduces qtr(\u03c1(w_n)) to the single 4th term Q_n (three terms A-independent \u2200n). (R) Q_n=qtr_{n-2}(c\u00b7B) [cap-cup ptr_{\u03bc\u207b\u00b9}(e)=1 + Markov]. (C) coupled recursions for c,B. (P) the pairing qtr((c\u22971)\u03c1\u207b\u00b9)=qtr(\u03c1(B\u22971))=Q_{n-1}. (T) cyclicity gives T4=h\u2074[2]Q_{n-1}. Assembling: Q_n=(1+h\u00b2)\u00b2[2]^n\u2212uh\u00b2[2]Q_{n-1}, and (1+h\u00b2)\u00b2=1+uh\u00b2 exactly, so Q_n=[2]^n(1+uh\u00b2)\u2212uh\u00b2[2]Q_{n-1}; with (I) this is D_n=\u2212h\u00b2(h\u00b2+2)D_{n-1}. Every step is a uniform TL/Markov/cyclicity identity; the inductive step is verified symbolically at n=5 and the direct recursion at A=3\u20136. Base D_3. Exact \u211a(q), zero float64."
  },
  "scriptHash": "62a97c19eb28",
- "scriptCommitSha": "d98c675e77f92d294d2e8a4d1d0477925d210f3e",
- "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
- "computedAt": "2026-09-04T02:55:41.510376+00:00",
+ "scriptCommitSha": "c29e0752bbd18261a6cb22fa238a862278eb7df9",
+ "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
+ "computedAt": "2026-09-04T22:23:41.466965+00:00",
  "durationMs": 0,
  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

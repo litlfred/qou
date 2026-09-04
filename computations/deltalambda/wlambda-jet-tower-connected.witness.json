@@ -4,10 +4,10 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "wlambda_jet_tower_connected_probe.py",
-  "commitSha": "e1d833da5a02c3887ac391be577be47aae754b23",
-  "scriptHash": "b5e3343a0a04",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
+  "scriptHash": "9771db83b87c",
   "description": "Jet-tower lift of the connected standard-channel binding weight: the universal w_std(k)=Sigma W_lam*mult_(2,1) GROWS geometrically (~2.5x/level, unbounded) while normalized a_k converges; the connected (2,1) channel holds a stable ~51% share. The jet tower DOES supply extensive-capable growth; the open piece is the level-selection rule k(A) (GAP-A-3). Exact branching (no fit); positive redirect, not a closure.",
-  "generated": "2026-07-18T09:55:41.888866+00:00",
+  "generated": "2026-09-04T22:26:45.096546+00:00",
   "assertions": [
     {
       "name": "jet_tower_w_std_grows_unbounded",
@@ -81,7 +81,9 @@
     "redirect": "extensive-capable growth IS in the tower; open piece is the level-selection rule k(A) = GAP-A-3 (categorical brane-tower level selection)",
     "scope": "mechanism triage; positive redirect; no fit; no wiring; no closure; does NOT set k(A)"
   },
-  "scriptCommitSha": "969ccb3c75d9a1403014b563cd9c0eb0b91dfd80",
-  "computedAt": "2026-07-18T09:55:42.088964+00:00",
-  "durationMs": 0
+  "scriptCommitSha": "c86e55ec9f547271b135371823248cac0a4b1560",
+  "computedAt": "2026-09-04T22:26:45.445890+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

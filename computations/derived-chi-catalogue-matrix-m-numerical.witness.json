@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:11:02.369630+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-09-04T22:27:22.619287+00:00",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
   "assertions": [
     {
       "name": "numerical_matrix_m_matches_rust_at_substrate_q",
@@ -13,11 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 238,
+  "allPassedBasis": "assertions",
+  "durationMs": 185,
+  "durationMsBaseline": "builder-construction",
   "computation": "derived-chi-catalogue-matrix-m-numerical",
   "scriptFile": "derived_chi_catalogue_matrix_m_numerical.py",
   "scriptHash": "f30db96d251e",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +31,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derived_chi_catalogue_matrix_m_numerical.py"
+    ],
+    "reproduce": "python3 -u computations/derived_chi_catalogue_matrix_m_numerical.py"
   },
   "description": "Phase 1.4 numerical-cache backend for the matrix-M μ_p factorisation. Pre-computes σ matrices at substrate q_0 ONCE per λ, then uses small Rational matrix products on the μ_p-blocks per call. Validates against Rust chi_q_via_gp at q_0 and benchmarks wall time.",
   "data": {
@@ -43,10 +53,10 @@
           6
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.0015094760001375107,
-        "call_secs": 0.0007345700000769284,
-        "rust_secs": 0.0009896659998958057,
-        "call_speedup_vs_rust": 1.3472725537282522,
+        "precompute_secs": 0.0018140809997930774,
+        "call_secs": 0.0008987110004454735,
+        "rust_secs": 0.0012374029993225122,
+        "call_speedup_vs_rust": 1.3768641962868549,
         "match": true
       },
       {
@@ -55,10 +65,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0029919479998170573,
-        "call_secs": 0.010594395999760309,
-        "rust_secs": 0.003257679999933316,
-        "call_speedup_vs_rust": 0.307490865926384,
+        "precompute_secs": 0.0037236070002109045,
+        "call_secs": 0.005921913000747736,
+        "rust_secs": 0.0029779759997836663,
+        "call_speedup_vs_rust": 0.5028739867349705,
         "match": true
       },
       {
@@ -67,10 +77,10 @@
           3
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0017759899997145112,
-        "call_secs": 0.007007070999861753,
-        "rust_secs": 0.004090936000011425,
-        "call_speedup_vs_rust": 0.583829677206373,
+        "precompute_secs": 0.0018320590006624116,
+        "call_secs": 0.005548364999413025,
+        "rust_secs": 0.005330114999196667,
+        "call_speedup_vs_rust": 0.9606640874853318,
         "match": true
       },
       {
@@ -80,10 +90,10 @@
           2
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0015830620000087947,
-        "call_secs": 0.0072523869998804,
-        "rust_secs": 0.003193496999756462,
-        "call_speedup_vs_rust": 0.440337367519015,
+        "precompute_secs": 0.0020488250002017594,
+        "call_secs": 0.005570511000769329,
+        "rust_secs": 0.003069571000196447,
+        "call_speedup_vs_rust": 0.5510393929340623,
         "match": true
       },
       {
@@ -95,10 +105,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0016235219995905936,
-        "call_secs": 0.00852554599987343,
-        "rust_secs": 0.0019844530002046668,
-        "call_speedup_vs_rust": 0.232765502670929,
+        "precompute_secs": 0.0022850049999760813,
+        "call_secs": 0.0062313329999597045,
+        "rust_secs": 0.002309577000232821,
+        "call_speedup_vs_rust": 0.3706393158972175,
         "match": true
       },
       {
@@ -111,16 +121,16 @@
           1
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.0005723989997932222,
-        "call_secs": 0.0005653640000673477,
-        "rust_secs": 0.0010133449995919364,
-        "call_speedup_vs_rust": 1.7923762380894857,
+        "precompute_secs": 0.0006108079996920424,
+        "call_secs": 0.0005584979999184725,
+        "rust_secs": 0.0011981269999523647,
+        "call_speedup_vs_rust": 2.1452664112087474,
         "match": true
       }
     ],
-    "total_precompute_secs": 0.01005639699906169,
-    "total_call_secs": 0.03467933399952017,
-    "total_rust_secs": 0.014529576999393612
+    "total_precompute_secs": 0.012314385000536276,
+    "total_call_secs": 0.02472933100125374,
+    "total_rust_secs": 0.016122768998684478
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

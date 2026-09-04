@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-02T18:27:29.177712+00:00",
-  "commitSha": "b221c98897d1a4e9a6111fbc14ab83a97a179784",
+  "computedAt": "2026-09-04T22:27:03.146355+00:00",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
   "assertions": [
     {
       "name": "python_hoefsmit_matches_rust_chi_q_via_gp",
@@ -41,11 +41,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11946,
+  "allPassedBasis": "assertions",
+  "durationMs": 13489,
+  "durationMsBaseline": "builder-construction",
   "computation": "derived-chi-catalogue-matrix-m-validation",
   "scriptFile": "derived_chi_catalogue_matrix_m.py",
   "scriptHash": "b69c9c107236",
-  "scriptCommitSha": "2ca3c9e40aaa510d04b59a637d1fd284bb471615",
+  "scriptCommitSha": "79c7d104cdcde1070b8dd0a1e595116ead2d4bdd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,9 +57,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derived_chi_catalogue_matrix_m.py"
+    ],
+    "reproduce": "python3 -u computations/derived_chi_catalogue_matrix_m.py"
   },
   "description": "Pure-Python Hoefsmit (natural / asymmetric seminormal form) validation against Rust pyhecke_native chi_q_via_gp. Substrate for Tier 1 matrix-M extraction (audit doc 2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation). Proves the q-rational matrix pipeline computes the same character as the Rust Geck-Pfeiffer engine on a sweep of (n, λ, β) test cases.",
   "data": {
@@ -1611,9 +1622,9 @@
         ]
       ],
       "k_split": 3,
-      "symbolic_secs": 0.15239364199999272,
-      "numerical_secs": 0.008702040000002853,
-      "speedup_factor": 17.512404217854982,
+      "symbolic_secs": 0.1695280410003761,
+      "numerical_secs": 0.007786373000271851,
+      "speedup_factor": 21.77240173241858,
       "consistency": true,
       "chi_symbolic": "0",
       "chi_numerical_qrational_str": "0"

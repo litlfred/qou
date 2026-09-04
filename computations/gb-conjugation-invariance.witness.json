@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-28T18:49:50.880443+00:00",
-  "commitSha": "067a375fb1c358601b5bb61a59d08f90d2245f8c",
+  "computedAt": "2026-09-04T22:27:52.287903+00:00",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
   "assertions": [
     {
       "name": "reducer_forced_cases_all_unity",
@@ -30,11 +30,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "allPassedBasis": "assertions",
+  "durationMs": 22,
+  "durationMsBaseline": "builder-construction",
   "computation": "gb-conjugation-invariance",
   "scriptFile": "gb_conjugation_invariance_probe.py",
   "scriptHash": "2085a2015610",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +46,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gb_conjugation_invariance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/gb_conjugation_invariance_probe.py"
   },
   "description": "GAP-2 closure test (bean qou-wt60): tests the remaining Markov move — CONJUGATION β ↦ γβγ⁻¹ — for the Gröbner–Shirshov coefficient sum S(β)=Σ_w c_w(q), the move left untested when gb_writhe_normalised_readout_probe closed stabilisation (M2). Markov's theorem needs both, so this decides whether the writhe-normalised readout Ŝ=S·(1−h)^{(e−n)/2} is a genuine knot invariant. Conjugation preserves BOTH the exponent sum (e is a homomorphism B_n→ℤ; the γ,γ⁻¹ contributions cancel) and the strand count, so the correction factor is literally unchanged and Ŝ is conjugation-invariant iff the raw S is — the normalisation is orthogonal to this move and can neither rescue nor damage the answer. The question is genuinely open a priori: S is the all-ones functional T_w↦1, which is NOT the Markov trace and not an algebra map (it would force h=0 on the Hecke relation), and there is no a priori reason for it to lie in the span of the irreducible characters that spans the trace space of H_n(q). The negative is guarded: conjugation by the CENTRE Δ²=(σ₁σ₂)³ returns exactly 1, the braid relation S(σ₁σ₂σ₁)=S(σ₂σ₁σ₂) holds, and every forced case (γ=β, γ trivial, σ₁-then-σ₁⁻¹ round trip) returns 1 — so the reducer is sound and the non-invariance is real, not a normal-form bug. Tested 4 base braids (w²=4₁, w³=Borromean, σ₁³ trefoil, σ₁σ₂) × 5 conjugators (σ₁, σ₂, σ₁⁻¹, σ₁σ₂, σ₂σ₁⁻¹), all exact in sympy. VERDICT: NOT conjugation-invariant (8/20 pairs differ) — the readout is a braid-conjugacy-dependent quantity, so it is NOT a knot invariant and cannot become one by any writhe normalisation. No Δ_λ, no c_k, nothing fitted, nothing wired.",
   "contentBlock": "prop:winding-lattice-norm-form",

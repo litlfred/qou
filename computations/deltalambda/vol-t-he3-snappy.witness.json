@@ -15,10 +15,10 @@
       "4He": 9.3133
     },
     "tr_M_per_block": {
-      "D": 0.3883572073592214,
-      "T": 0.10407107962429059,
-      "3He": 0.20657849186184504,
-      "4He": 0.05535842626678311
+      "D": 0.5751722439177718,
+      "T": 0.2293101021045565,
+      "3He": 0.4037670368514282,
+      "4He": 0.16097414544240737
     },
     "binding_links": {
       "D": "L2a1",
@@ -74,11 +74,20 @@
       "vol_ratio_T_over_3He": 1.1308171494762738,
       "equal": false,
       "c_knot_ratio": 1.3500659213803998,
-      "trM_ratio": 0.503784681001016,
-      "radial_pred_ratio_Vol_trM": 0.5696883569193828,
-      "ratio_of_ratios": 2.3698323916622526,
+      "trM_ratio": 0.567926752745134,
+      "radial_pred_ratio_Vol_trM": 0.6422213116505691,
+      "ratio_of_ratios": 2.1021817508836693,
       "anti_correlated": true
     }
   },
-  "verdict": "rho-eq-trM-radial-handle-refuted-every-volume-reading"
+  "verdict": "rho-eq-trM-radial-handle-refuted-every-volume-reading",
+  "scriptFile": "vol_t_he3_snappy_probe.py",
+  "scriptHash": "b1e0d31b9c4a",
+  "scriptCommitSha": "7e9f020fc9c21cf1a3a67eac9ff9fcb7af1b6bd6",
+  "commitSha": "d7e086779f00759a70f141d76670ae10c7772236",
+  "engine": "python",
+  "computedAt": "2026-09-04T22:26:44.034544+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
