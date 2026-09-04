@@ -1,11 +1,11 @@
 ---
 # qou-eqwg
 title: The type-two asymmetry needs two independent scales and the framework has one
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T12:02:09Z
-updated_at: 2026-09-04T12:03:01Z
+updated_at: 2026-09-04T12:23:03Z
 ---
 
 
@@ -48,8 +48,13 @@ It is: does the framework have a SECOND independent scale for the graded terms,
 or does it not? If every graded coefficient is multiplied by the same `alpha`,
 this direction is dead on arithmetic and no amount of `1/A`-hunting rescues it.
 
-- [ ] Establish whether the corpus's graded/LP-SDP reading applies one scale or
-      a per-type scale. `vassiliev-filtration-mass-tower`'s "independent linear
+- [x] **ANSWERED: per-PARTITION, not per-type.** `unified-iterative-correction`
+      assembles `B_lambda = m_e H_q(lambda) u_lambda (ln|tr M_lambda| - ln d_lambda)`,
+      and `prop:mass-coefficient-shadow-price` says each mass-formula coefficient
+      is the shadow price of the corresponding PARTITION's Frobenius positivity
+      constraint. The Vassiliev types index the cost-vector BASIS the LP is posed
+      in; the shadow prices it returns are lambda-indexed. "Independent linear
+      programs" is not "independent units". Superseded: `vassiliev-filtration-mass-tower`'s "independent linear
       programs" phrasing suggests per-type cost vectors, which would supply
       per-type scales — but "independent programs" is not the same as
       "independent units", and this has to be read, not assumed.
@@ -60,3 +65,28 @@ this direction is dead on arithmetic and no amount of `1/A`-hunting rescues it.
       than the coefficient itself.
 - [ ] Either way, do NOT report the type-two result as "SEMF-shaped" without
       this attached. The shapes match and the scales cannot.
+
+
+## Closed negative (2026-09-04)
+
+Audit: `docs/audits/2026-09-04-graded-scales-are-per-partition-not-per-type.md`.
+
+**No per-type scale exists.** The free scales are `H_q(lambda) * u_lambda`,
+indexed by partition, and the sum runs over partitions. So the two-scale escape
+is unavailable and this bean's arithmetic (22x / 55x / 154x) is a closing
+argument rather than an open question.
+
+**And the logarithm removes the term anyway, for the chain.** The assembly
+applies `ln|tr M_lambda|`, and `qou-m3sh` proved the chain's Markov trace is
+exactly the product of scalar two-strand factors (~1e-59). `ln` of a product of
+scalars is exactly additive, so the pair-convolution carrying `(N-Z)^2` cannot
+survive. Verified: the additive `L`'s type-two piece is linear in `Z`.
+
+**Retraction recorded in the audit.** A matrix version of the test appeared to
+reverse this — `[h^2] ln|V|` second differences constant at `3/4` — but used a
+mis-transcribed transfer matrix (`V = 1.128089` at `q_0` where the proved
+single-crossing factor is `z = 0.612688`). Retracted in full. The narrower
+question it should have asked is untested and left open in the audit: the corpus
+multiplies transfer matrices WITHIN a generator and takes a scalar product
+ACROSS generators, so whether non-commutativity inside a generator can carry a
+quadratic is not settled by anything here.
