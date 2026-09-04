@@ -143,4 +143,40 @@ theorem mem_ascending_or_image {S : Finset (Perm (Fin (n + 1)))} {i : Fin n}
     rw [mulSwap_mulSwap]
     omega
 
+/-! ### For a subgroup, closure is free
+
+The `hS` hypothesis above is an assumption about an arbitrary `Finset`.  For the
+case it exists to serve it is not an assumption at all: a Young subgroup
+containing `sᵢ` is closed under right multiplication by `sᵢ` because it is a
+**subgroup**.  So the pairing applies to `x_λ`'s index set with nothing to
+check. -/
+
+/-- A subgroup containing `sᵢ` is closed under `mulSwap i` — by `mul_mem`, and
+nothing else. -/
+theorem mulSwap_mem {H : Subgroup (Perm (Fin (n + 1)))} {i : Fin n}
+    (hi : Equiv.swap i.castSucc i.succ ∈ H) {w : Perm (Fin (n + 1))} (hw : w ∈ H) :
+    mulSwap i w ∈ H := H.mul_mem hw hi
+
+/-- The same, phrased with the simple reflection `s n i` of the Coxeter system,
+which is how a Young subgroup is presented. -/
+theorem mulSwap_mem' {H : Subgroup (Perm (Fin (n + 1)))} {i : Fin n}
+    (hi : QOU.Hecke.SymmetricCoxeter.s n i ∈ H) {w : Perm (Fin (n + 1))} (hw : w ∈ H) :
+    mulSwap i w ∈ H :=
+  mulSwap_mem (by rwa [← QOU.Hecke.Inversions.s_eq_swap]) hw
+
+/-- **The pairing, on a subgroup.**  Every element is length-ascending under
+`mulSwap i` or the image of one that is — with no closure hypothesis, since a
+subgroup containing `sᵢ` supplies it. -/
+theorem mem_ascending_or_image_subgroup {H : Subgroup (Perm (Fin (n + 1)))} {i : Fin n}
+    (hi : Equiv.swap i.castSucc i.succ ∈ H) {w : Perm (Fin (n + 1))} (hw : w ∈ H) :
+    ((permCoxeterSystem n).length (mulSwap i w) = (permCoxeterSystem n).length w + 1)
+      ∨ (∃ v ∈ H, mulSwap i v = w
+          ∧ (permCoxeterSystem n).length (mulSwap i v)
+              = (permCoxeterSystem n).length v + 1) := by
+  rcases length_swap_cases i w with h | h
+  · exact Or.inl h
+  · refine Or.inr ⟨mulSwap i w, mulSwap_mem hi hw, mulSwap_mulSwap i w, ?_⟩
+    rw [mulSwap_mulSwap]
+    omega
+
 end QOU.Hecke.ParabolicPairing
