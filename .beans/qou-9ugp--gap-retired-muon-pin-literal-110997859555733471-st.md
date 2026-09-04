@@ -7,7 +7,7 @@ priority: normal
 tags:
     - sm-26
 created_at: 2026-09-03T16:32:23Z
-updated_at: 2026-09-04T01:04:21Z
+updated_at: 2026-09-04T01:43:56Z
 ---
 
 Measured 2026-09-03 (session qou-ggdk) after the alpha-cluster tranche (PR #6519, commits 577367a41b f3bafde098 9218877589). Method: grep -rlF '1.10997859555733471' computations --include=*.py. The literal is the self-certified muon pin A, retired 2026-08-22/28 (fca08de7d2, 83bab99730); the live muon anchor is q_muon_at() over the CODATA-2022 lepton ratio (…56427390…) and the proton default is Q_50_DIGIT_STR. These producers are UNSTAMPED, so q0_anchor_consistency_audit files them under Q0_ANCHOR_MISSING and the corpus-wide drain qou-3f7a (which keys on stamps) cannot see them. Recipe that worked on the 14 alpha producers, in three shapes: (A) dead fallback 'q_at(50) if the substrate imports else the literal' → hard refusal, import q_at from q_parameter (NOT qou_substrate.constants, or the witness gets no stamp), declare the stem under physical_proton; (B) explicit proton-vs-muon comparison (E1) → both pins by name, mpf residuals via _precision.fmt, assertion booleans as strings, wb.save(q0_comparison(muon=…, proton=…, reason=…)); (C) muon-only with no comparison purpose → proton default (2026-08-30 rule), stamp proton. Per-producer: run, diff the witness with volatile keys masked, expect proton legs unchanged past the 9th digit and muon legs shifted by the −0.0769 ppb pin migration; precision-gates.sh --changed must show zero NEW-dirty and only drained entries. Never re-pin an anchor-DEFINING witness (q-pinning-50-digit). Land manifest + witnesses together (constraint 4). Scope by subdirectory (deltalambda/, qbeta/, …) — a tranche per directory keeps each PR reviewable.
@@ -217,3 +217,32 @@ E2 of the 2026-08-30 ruling covers the ideal CAL-1/2/3 layer; nothing examined
 here establishes that this probe is part of it. Moving it is an 11.54 ppb
 change and belongs to the `ideal_muon` migration (qou-1c4y), which AGENTS.md
 requires to land its manifest and witnesses together.
+
+
+## SCOPE RE-MEASURED 2026-09-04 — 48 live, not 137
+
+The tranche sizes quoted when this bean was opened (probes 44, deltalambda 38,
+qbeta 36, audits 11, substrate 9) were GREP counts, and grep over-counts this
+defect badly: most hits are comments documenting a fix that already landed.
+Measured with an AST walk that excludes comments AND docstrings:
+
+    tranche        grep    LIVE   prose
+    deltalambda      39       0      39     <- COMPLETE
+    qbeta            45      31      14
+    audits           17      11       6
+    substrate        10       6       4
+    probes           26       0      26     <- COMPLETE
+    TOTAL           137      48      89
+
+So the remaining work is 48 producers, not 137. The 89-file gap is entirely
+fix-documentation: a comment that says "this was the retired literal
+1.1099785955573347, now read by name" is a grep hit forever.
+
+deltalambda reads 0 live. Its 39 grep hits are the agent's own fix comments.
+
+WHY THIS MATTERS BEYOND THE NUMBER: I over-counted the probes/ remainder the
+same way earlier today, reporting "13 remain in live code" against a true 3,
+because my first AST pass treated a `#` comment as live (comments never become
+AST constants, so a comment-only file had NO constant carrying the literal and
+fell through to the wrong bucket). Both a raw grep and a careless AST walk
+inflate this surface ~3x. State which measure you used.
