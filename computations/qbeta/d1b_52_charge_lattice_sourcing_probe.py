@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """d1b_52_charge_lattice_sourcing_probe.py — qou-q9ih D1-b, opening the lattice rung.
 
+🛑🛑 C4 BELOW IS VOID. Read `d1b_eq98_rank_correction_probe.py` first.
+C4 says "eq (98) is a rank-3 antisymmetric integer matrix" and excludes the NZ
+route on a rank comparison. **eq (98) has rank 2.** That was its SIZE (3x3) used
+as a RANK, and rank 3 was never available: every odd-size antisymmetric matrix
+is singular, so an antisymmetric matrix always has EVEN rank. Both objects are
+rank 2 — which makes NZ *more* plausible, not less. The real discriminator is
+the elementary divisor: d(eq 98) = 1 vs d(NZ cusp) = 2, inequivalent over Z but
+EQUIVALENT over Q. Verdict re-scoped (b) -> (a): **the NZ route is NOT
+excluded.** C1, C2, C3, C5 and C7 are measurements and stand unchanged.
+
 The sibling probe `dt_d1b_gabriel_route_void_source_verified_probe.py` closed the
 Gabriel route and left ONE labelled hypothesis with ONE disconfirmation test:
 
