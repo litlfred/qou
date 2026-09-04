@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-04T14:12:30Z
-updated_at: 2026-09-04T14:41:50Z
+updated_at: 2026-09-04T15:51:33Z
 ---
 
 Found by `bun run scripts/conditional-on-class-hypothesis-audit.ts --projections`
@@ -262,3 +262,70 @@ together: it is item-5-violating and correctly parametrised at once.
 fix does NOT close item 5, and re-encoding for item 5 does NOT make a carrier
 refutable. Both passes are needed, and each should check the other's criterion
 on the blocks it touches.
+
+
+---
+
+## PRIOR ART — credit, and what actually survives as new (2026-09-04, second pass)
+
+I nearly presented the "discharge vs instantiate" discriminator as mine. **It is
+not.** `qou-z9ws` (2026-08-30, completed) states it as *"derives vs projects"*
+five days earlier, over a **112-entry** population under the existing corpus
+criterion **`proof-no-self-assuming-projection`**, with the ledger's own rule:
+*a projection is the legitimate Mathlib accessor idiom ONLY when something
+builds the bundle.*
+
+And `f744886b3c` on main names the pattern I then repeated:
+
+> Each route flagged on SHAPE and each had to narrow to USE — over-reporting
+> first, in the same direction, by roughly the same factor. Whoever builds the
+> next detector in this family should start from the narrowed rule and expect
+> the first version to over-report.
+
+`--projections` is the **fourth** such route. It flagged on shape, over-reported,
+and narrowed to use (discharge-vs-instantiate) — 1 false positive in 9. That is
+the predicted behaviour, not an independent discovery, and the convergence note
+called it in advance.
+
+## What IS new, measured
+
+**7 of my 8 confirmed blocks are ABSENT from the existing vacuity ledger**
+(`docs/audits/lean-vacuity-review-ledger.json`, 406 KB). Only
+`GBResidueSpectralSum` appears.
+
+Where each class is declared:
+
+| class | library | sibling | in ledger |
+|---|---|---|---|
+| `BrunnianDecoupling` | 0 | 1 | no |
+| `LRTensorCharacterBridge` | 0 | 1 | no |
+| `AtomKnotMassDerivationConjecture` | 0 | 1 | no |
+| `HeckeBranchingTraceDecomposition` | 0 | 1 | no |
+| `RhoKH3ARefinement` | 0 | 1 | no |
+| `SigmaShellFromBetaChainDerivation` | 0 | 1 | no |
+| `GBResidueSpectralSum` | **1** | 1 | **YES** |
+| `MarkovTraceRecursiveReducerContext` | **1** | 0 | no |
+
+**Six of the seven absences are explained by the sibling surface**: the class is
+declared only in a content-block sibling, which sits outside the Lake globs and
+is invisible to library-scoped tooling — the same blind spot `qou-e7xv` / #6540
+documented for *compilation*, now shown to apply to the *vacuity* detectors too.
+The one class with a library twin is the one the ledger has, which is what that
+explanation predicts.
+
+**`MarkovTraceRecursiveReducerContext` breaks it.** Library-only, and still
+absent. The sibling-blindness account covers 6 of 7, not 7 of 7, and I have not
+determined why this one escaped. Do not state the rule without that exception.
+
+## So the honest framing
+
+- the discriminator: **prior art**, `qou-z9ws`, credited;
+- the shape→use narrowing: **predicted** by `f744886b3c`, and I reproduced it;
+- **new**: the `conditional_on_class` bucket is a reachable population the
+  existing detector does not cover, and 6 of the 7 misses are the sibling
+  surface.
+
+The right follow-up is therefore **not** another detector. It is extending the
+existing `proof-no-self-assuming-projection` sweep to content-block siblings —
+one change, covering a whole surface — and separately diagnosing the
+`MarkovTraceRecursiveReducerContext` miss, which that change would not fix.
