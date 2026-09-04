@@ -1,0 +1,335 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-03T15:59:21.590318+00:00",
+  "commitSha": "9c183a6db5b787bb470e9226f68cf1ce9842464e",
+  "assertions": [
+    {
+      "name": "single_crossing_quantum_trace_is_the_convention_D_loop_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Tr(K R)/(1+q^2)^2 at q = 8/7 = 512/791 for both h-placements; z_D = q^3/(q^2+1) = 512/791. Exact Fraction equality."
+    },
+    {
+      "name": "SW_identification_holds_on_all_six_words_for_BOTH_h_placements",
+      "computed": "h_on_e12,h_on_e21",
+      "expected": "h_on_e12,h_on_e21",
+      "passed": true,
+      "source": "tr_M(word) via sum_lambda y_lambda chi^lambda (exact-Fraction seminormal) vs Tr(K rho(word))/(1+q^2)^n (tensor picture), D/T/3He free and atom, as series in eps to every computed order and as exact rationals at q = 8/7. Both h-placements match — and must: each is an H_n(q)-trace with the Markov property and loop value z_D, and the Markov trace with a given loop value is unique (Jones/Ocneanu). The docstring's expectation that only one would pass was wrong; recorded, not hidden."
+    },
+    {
+      "name": "R_matrix_expansion_gives_Y_diag_0_m1_p1_0_and_W_minus_E2121",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "q = 1 + eps exactly; h = q - 1/q = 2 eps + (-1) eps^2 + ... so on the diagonal (e11, e12, e21, e22) the eps-coefficient of R is (1, 0, 2, 1) = 1 + (0, -1, +1, 0) and the eps^2-coefficient is (0, 0, -1, 0). Hence Y = diag(0,-1,+1,0): sY = -Ys by inspection, and Tr(Y P) = 0 for any permutation P by the e12 <-> e21 count symmetry. These are the objects the c2 derivation uses."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 71866,
+  "computation": "tensor-picture-markov-trace-probe",
+  "scriptFile": "tensor_picture_markov_trace_probe.py",
+  "scriptHash": "74dbf4028748",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/tensor_picture_markov_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/tensor_picture_markov_trace_probe.py"
+  },
+  "description": "Checks the Schur-Weyl identification tr_M(word) = Tr(K rho(word))/(1+q^2)^n, K = diag(1,q^2)^(x)n, rho the U_q(sl2) R-matrix representation, against the seminormal Markov trace sum_lambda y_lambda chi^lambda on the actual free and atom words of D, T, 3He: exact power series in eps = q-1 (every computed order) and exact rationals at q = 8/7. Identifies which R-matrix convention is the quantum trace, and makes Y and R'' explicit for the second-order derivation.",
+  "data": {
+    "comparison": [
+      {
+        "case": "D free",
+        "convention": "h_on_e21",
+        "orders_compared": 5,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/4",
+          "37/8",
+          "335/16",
+          "191/4",
+          "12239/32"
+        ],
+        "tensor_coeffs": [
+          "1/4",
+          "37/8",
+          "335/16",
+          "191/4",
+          "12239/32"
+        ],
+        "seminormal_at_8_7": "9851438962087640466666738431413686721/5993235671180979734195276940065112064",
+        "tensor_at_8_7": "9851438962087640466666738431413686721/5993235671180979734195276940065112064"
+      },
+      {
+        "case": "D free",
+        "convention": "h_on_e12",
+        "orders_compared": 5,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/4",
+          "37/8",
+          "335/16",
+          "191/4",
+          "12239/32"
+        ],
+        "tensor_coeffs": [
+          "1/4",
+          "37/8",
+          "335/16",
+          "191/4",
+          "12239/32"
+        ],
+        "seminormal_at_8_7": "9851438962087640466666738431413686721/5993235671180979734195276940065112064",
+        "tensor_at_8_7": "9851438962087640466666738431413686721/5993235671180979734195276940065112064"
+      },
+      {
+        "case": "D atom",
+        "convention": "h_on_e21",
+        "orders_compared": 5,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "37/16",
+          "341/32",
+          "869/32",
+          "4891/24"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "37/16",
+          "341/32",
+          "869/32",
+          "4891/24"
+        ],
+        "seminormal_at_8_7": "25701472808384227553215037694106356922423216171/30446953611828080609548663379720100706854633472",
+        "tensor_at_8_7": "25701472808384227553215037694106356922423216171/30446953611828080609548663379720100706854633472"
+      },
+      {
+        "case": "D atom",
+        "convention": "h_on_e12",
+        "orders_compared": 5,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "37/16",
+          "341/32",
+          "869/32",
+          "4891/24"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "37/16",
+          "341/32",
+          "869/32",
+          "4891/24"
+        ],
+        "seminormal_at_8_7": "25701472808384227553215037694106356922423216171/30446953611828080609548663379720100706854633472",
+        "tensor_at_8_7": "25701472808384227553215037694106356922423216171/30446953611828080609548663379720100706854633472"
+      },
+      {
+        "case": "T free",
+        "convention": "h_on_e21",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "53/16",
+          "921/32"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "53/16",
+          "921/32"
+        ],
+        "seminormal_at_8_7": "251624441668713084397724390504348814102981505832723663/129841519751130369563468236272982183756962780598501376",
+        "tensor_at_8_7": "251624441668713084397724390504348814102981505832723663/129841519751130369563468236272982183756962780598501376"
+      },
+      {
+        "case": "T free",
+        "convention": "h_on_e12",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "53/16",
+          "921/32"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "53/16",
+          "921/32"
+        ],
+        "seminormal_at_8_7": "251624441668713084397724390504348814102981505832723663/129841519751130369563468236272982183756962780598501376",
+        "tensor_at_8_7": "251624441668713084397724390504348814102981505832723663/129841519751130369563468236272982183756962780598501376"
+      },
+      {
+        "case": "T atom",
+        "convention": "h_on_e21",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/32",
+          "49/64",
+          "725/128"
+        ],
+        "tensor_coeffs": [
+          "1/32",
+          "49/64",
+          "725/128"
+        ],
+        "seminormal_at_8_7": "656464377474337102040246214382448260318654125919181058577387013/1738482768362532963830648965923822113278035488105839009615314944",
+        "tensor_at_8_7": "656464377474337102040246214382448260318654125919181058577387013/1738482768362532963830648965923822113278035488105839009615314944"
+      },
+      {
+        "case": "T atom",
+        "convention": "h_on_e12",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/32",
+          "49/64",
+          "725/128"
+        ],
+        "tensor_coeffs": [
+          "1/32",
+          "49/64",
+          "725/128"
+        ],
+        "seminormal_at_8_7": "656464377474337102040246214382448260318654125919181058577387013/1738482768362532963830648965923822113278035488105839009615314944",
+        "tensor_at_8_7": "656464377474337102040246214382448260318654125919181058577387013/1738482768362532963830648965923822113278035488105839009615314944"
+      },
+      {
+        "case": "3He free",
+        "convention": "h_on_e21",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "29/8",
+          "1117/32"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "29/8",
+          "1117/32"
+        ],
+        "seminormal_at_8_7": "3799672698512281298076779487498128915421058984060020062447/1657946365702183688955925908969709504392657745462264070144",
+        "tensor_at_8_7": "3799672698512281298076779487498128915421058984060020062447/1657946365702183688955925908969709504392657745462264070144"
+      },
+      {
+        "case": "3He free",
+        "convention": "h_on_e12",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/8",
+          "29/8",
+          "1117/32"
+        ],
+        "tensor_coeffs": [
+          "1/8",
+          "29/8",
+          "1117/32"
+        ],
+        "seminormal_at_8_7": "3799672698512281298076779487498128915421058984060020062447/1657946365702183688955925908969709504392657745462264070144",
+        "tensor_at_8_7": "3799672698512281298076779487498128915421058984060020062447/1657946365702183688955925908969709504392657745462264070144"
+      },
+      {
+        "case": "3He atom",
+        "convention": "h_on_e21",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/32",
+          "31/32",
+          "1357/128"
+        ],
+        "tensor_coeffs": [
+          "1/32",
+          "31/32",
+          "1357/128"
+        ],
+        "seminormal_at_8_7": "9912986815164570268997865821458854879742718743706708452087338698597/13012462454248061860298752320986563534970168845079082864106658594816",
+        "tensor_at_8_7": "9912986815164570268997865821458854879742718743706708452087338698597/13012462454248061860298752320986563534970168845079082864106658594816"
+      },
+      {
+        "case": "3He atom",
+        "convention": "h_on_e12",
+        "orders_compared": 3,
+        "series_match": true,
+        "rational_q_8_7_match": true,
+        "seminormal_coeffs": [
+          "1/32",
+          "31/32",
+          "1357/128"
+        ],
+        "tensor_coeffs": [
+          "1/32",
+          "31/32",
+          "1357/128"
+        ],
+        "seminormal_at_8_7": "9912986815164570268997865821458854879742718743706708452087338698597/13012462454248061860298752320986563534970168845079082864106658594816",
+        "tensor_at_8_7": "9912986815164570268997865821458854879742718743706708452087338698597/13012462454248061860298752320986563534970168845079082864106658594816"
+      }
+    ],
+    "conventions_passing": [
+      "h_on_e21",
+      "h_on_e12"
+    ],
+    "R_matrix_expansion": {
+      "q_series": [
+        "1",
+        "1",
+        "0"
+      ],
+      "h_series": [
+        "0",
+        "2",
+        "-1"
+      ],
+      "Y_diag_e11_e12_e21_e22": [
+        0,
+        -1,
+        1,
+        0
+      ],
+      "W_diag_e11_e12_e21_e22": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "note": "diagonal entries in the (e11, e12, e21, e22) basis with h placed on e21; the off-diagonal part of R is the swap s and is eps-independent."
+    }
+  }
+}

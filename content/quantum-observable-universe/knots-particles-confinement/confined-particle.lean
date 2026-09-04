@@ -40,15 +40,37 @@ structure ConfinedParticle where
   /-- Coarse strand count `n₀` at level `ℓ`. -/
   coarseStrands : ℕ
 
-/-- Confinement predicate: `confined P q` holds iff the
-    [confinement SDP](#prop:confinement-sdp) at `P` is
-    Slater-strictly feasible at the substrate parameter `q`.
+/-! ### The `confined` predicate was removed 2026-09-02
 
-    **Concrete model**: every particle is confined at every `q`.
-    The genuine SDP-feasibility predicate lives in
-    `particle-interactions/confinement-sdp`; this stub provides a
-    Lean-verifiable surrogate so downstream theorems can close. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-def confined : ConfinedParticle → ℝ → Prop := fun _ _ => True
+This file used to close with
+
+    /-- ... **Concrete model**: every particle is confined at every `q`.
+        The genuine SDP-feasibility predicate lives in
+        `particle-interactions/confinement-sdp`; this stub provides a
+        Lean-verifiable surrogate so downstream theorems can close. -/
+    def confined : ConfinedParticle → ℝ → Prop := fun _ _ => True
+
+The docstring is candid about the value — *"every particle is confined at
+every `q`"* — but its stated **purpose** was false: nothing downstream used
+it. Measured 2026-09-02 across every `.lean` in `content/`, the sole
+application of a `confined P q` is
+[`confinement-phase-stratification.lean`](confinement-phase-stratification.lean),
+which declares its **own** `opaque confined : ConfinedParticleTy → ℝ → Prop`
+— a different declaration on a different type — and content-block siblings do
+not import one another, so it never reached this one.
+
+So this was a `Prop`-valued definition equal to `True`, justified by a
+downstream that did not exist. It is deleted rather than kept as a surrogate.
+
+**The block is unaffected.** `def:confined-particle`'s `lean.ref` is
+`qou:QOU.BraidKnot.ConfinedParticle` — the **structure** above, which is real
+data and is untouched.
+
+**And `opaque` is the right shape for the other one.** An `opaque` predicate
+asserts nothing and *cannot* be unfolded to `True`, so a theorem quantified
+over it stays falsifiable. That is the honest form of "the genuine predicate
+lives elsewhere"; `:= fun _ _ => True` is not.
+
+Bean `qou-z9ws`. -/
 
 end QOU.BraidKnot

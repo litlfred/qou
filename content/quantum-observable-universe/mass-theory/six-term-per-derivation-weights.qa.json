@@ -81,6 +81,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751",
+          "lean": "b53d1baf5e3d",
+          "lean_statement": "89e08507c3df"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T08:54:50.505Z",
+        "reviewed_sha": "68e35b02f1c72013bbe6c050970498b0777f6a27",
+        "severity": "major",
+        "evidence": "Two declarations shared the fully-qualified name QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly, in the same namespace, in two files. The one the lean.ref actually resolves to (measured with resolveCanonicalLean, the resolver the QA sweep uses) was SixTermPerDerivationWeights.lean, holding \"opaque binding_assembly (Z N : Nat) : Float\" - an opaque constant asserting nothing, with a Float standing for a mass in MeV. The other, SixTermPerDerivationWeights/binding_assembly.lean, held BindingAssemblyContext (4 data fields + claim_six_term_recovery) and projected that field (3b-cond item 5) - and was unreachable, since the direct module path wins when it declares the named decl. That is the MIRROR of the 0a sibling-shadowing case: a library module path hiding a file in its own subdirectory. No module imports either; nothing in content/ names BindingAssemblyContext. Zero consumers.",
+        "notes": "Repaired to 1a disposition 3. The reachable declaration now states the manuscripts five-term assembly over real parameters instead of being an opaque Float, and carries two sorry-free results: binding_assembly_eq_zero_of_no_separation (if every per-term value agrees between free and atomic and a_K = 1 then B = 0 - the sanity check the assembly must pass to be a binding energy) and not_binding_assembly_of_free_data. The unreachable projection file is drained to a shell recording the shadowing, kept so later resolver candidates find a real path. Verdict major not critical: the shape is now stated and one consequence derived. Still unencoded: T1 (descended Markov trace), T2/T3 (Phi_q vertex terms), T4 (tau of the dim_q Casimir), T6 (cyclotomic residue sum), a_K, and alpha = m_e*8G are reals the caller supplies - the file says which quantities combine and how, not why they are the ones that appear. Verified lean-direct exit 0. Bean qou-z9ws."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -96,6 +115,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d0b3ffc27928",
+          "ts": "8e413d3b2751",
+          "lean": "b53d1baf5e3d",
+          "lean_statement": "89e08507c3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:claude/sap-bucket-c-2026-09-02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-03T08:54:49.940Z",
+        "reviewed_sha": "68e35b02f1c72013bbe6c050970498b0777f6a27",
+        "notes": "Repaired on this branch. BindingAssemblyContext and its projection are removed; the declaration the ref resolves to is now a Prop-valued def over parameters carrying the manuscripts five-term assembly. Verified lean-direct exit 0 on both files, sorry-free. Bean qou-z9ws."
       }
     ],
     "proof-no-trivial-true": [
@@ -2137,6 +2173,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:49:59.982Z",
+  "updated_at": "2026-09-03T08:54:50.505Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

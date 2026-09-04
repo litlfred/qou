@@ -117,13 +117,34 @@ theorem parallelogramIntegral_eq_zero_of_differentiable (f : ℂ → ℂ) (ω₁
   ring
 
 -- MATHLIB GAP: Bare pole integral
--- Bare pole integral over the boundary of the parallelogram
--- BLOCKED: Proving this requires the argument principle or the residue theorem for parallelograms.
--- While we have `QOU.Mathlib.ArgumentPrinciple` for the disc, extending it to the parallelogram
--- requires the Cauchy-Goursat theorem for parallelograms (which is blocked above) to show that
--- the integral of the holomorphic part `g(z)` vanishes. Furthermore, we would need to continuously
--- deform the parallelogram contour into a small circle around the pole `w`, which requires
--- homotopy invariance of contour integrals (also missing for generic polygonal paths in Mathlib).
+-- Bare pole integral over the boundary of the parallelogram.
+--
+-- GENUINELY BLOCKED, and for a different reason than the theorem above. Measured
+-- against the pinned Mathlib v4.24.0: `windingNumber` occurs NOWHERE, and there is no
+-- residue theorem (the only `residue` hits are p-adic and local-field ring
+-- homomorphisms, an unrelated sense of the word). So both classical routes to this
+-- statement are absent upstream, not merely inconvenient.
+--
+-- THE TWO AXIOMS IN THIS FILE WERE NEVER THE SAME DIFFICULTY, and the shared
+-- "BLOCKED: Goursat is infeasible" reasoning was right about this one and wrong about
+-- the other. Cauchy for an ENTIRE function needs only a primitive, which
+-- `DifferentiableOn.isExactOn_ball` supplies, after which the four edges telescope and
+-- the contour's shape is irrelevant — that is now
+-- `parallelogramIntegral_eq_zero_of_differentiable`, proved above. The integrand here
+-- is `(z - w)⁻¹`, which has a POLE, so no primitive exists on any region containing the
+-- contour and the telescoping argument has nothing to stand on. The difference is the
+-- pole, not the parallelogram.
+--
+-- What the old text got right: contour deformation onto a small circle about `w` needs
+-- homotopy invariance for polygonal paths, which Mathlib lacks. What it got wrong: the
+-- clause "requires the Cauchy-Goursat theorem for parallelograms (which is blocked
+-- above)" — that theorem is no longer blocked and no longer above; it is proved. The
+-- holomorphic-part step it was invoked for is therefore available; it is the deformation
+-- that is not.
+--
+-- The corpus does carry `QOU.Mathlib.ArgumentPrinciple` for the disc, so the honest
+-- statement of the remaining gap is the TRANSFER from disc to parallelogram, and that
+-- transfer is exactly the missing homotopy invariance.
 --
 -- SOUNDNESS FIX 2026-08-24. This axiom was stated WITHOUT hypotheses on `ω₁ ω₂ w`:
 --

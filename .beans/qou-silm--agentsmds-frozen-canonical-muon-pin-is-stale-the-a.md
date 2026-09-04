@@ -170,3 +170,26 @@ cannot be read as contradicting each other.
 
 **Not duplicated:** the witness drain for the −0.0769 ppb shift stays with
 `qou-3f7a` (83 `Q0_FLIP` + 165 NEW drift sites). Nothing here touches it.
+
+
+## 2026-09-03 (session tender-keller, PR #6476) — finding added, bean not taken
+
+While authoring rem:mu-p-residual-two-readings from the LIVE witnesses, the
+same retired-value class turned up in three more places the CODATA-2022
+migration (fca08de7d2, 2026-08-28) did not reach, all still quoting the
+pre-migration figures:
+
+- content/.../observations/epistemic-status-of-calibrations.md — 11.5 ppb,
+  '0.06 ppb' for m_p/m_e (live: 0.017 ppb, qou_substrate.constants.
+  MASS_RATIO_P_E_ERR), 'roughly 4000 sigma' (live arithmetic ≈ 1.4e4 sigma),
+  and a muon-pin literal 1.1099785955573347... that is the RETIRED value A.
+- content/.../appendix-standard-model/sm-params-lepton-masses.md — 963.6x
+  (live per-observable-100x-status.witness.json: miss_factor 970.2,
+  err_ppb 211.2).
+- AGENTS.md q0-anchor STRICT rule 1 — '963.6x' (same).
+
+Live values the new block uses: mu-substrate-tension-audit-100dps.witness.json
+delta_q0_ppb = -11.6118, residual_ppb_at_canonical_q0 = 211.1649. Not edited
+here (outside the PR's scope and inside this bean's); the new block's
+authorNotes records the disagreement so the two do not read as a contradiction
+without explanation.

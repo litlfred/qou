@@ -16,7 +16,7 @@ export default conjecture({
     "shell-transition",
     "crossing-number",
   ],
-  lean: { ref: "qou:QOU.Braiding.stability_pairs_correct",
+  lean: { ref: "qou:QOU.Conjectures.ShellTransitionKnot",
     validation: "not_checked",
   },
   uses: ["conj:orbital-fourier-decomposition"],

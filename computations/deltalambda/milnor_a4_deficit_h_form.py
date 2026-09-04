@@ -309,6 +309,23 @@ def main():
             "All exact sympy over Q(q); ZERO float64. A=3 leg validates the "
             "convention by reproducing tauBorromean exactly before A=4 is touched."),
         "q0_pin_exact_rational": Q0_str,
+        "q0Anchor": "proton",
+        "q0AnchorReason": (
+            "Evaluates at the PROTON pin, but from a rational hardcoded in "
+            "this file rather than from q_parameter: "
+            "sp.Rational(2584370278640139188197914756009, "
+            "2328306436538696289062500000000) = 1.1099785827513805166..., "
+            "which agrees with the canonical proton pin "
+            "1.1099785827513808075... to 16 significant digits and then "
+            "diverges, relative deviation 2.62e-16. The denominator is 2^8 * "
+            "5^40, i.e. a decimal-exact rational built from a ~17-digit "
+            "decimal string, so it is not Fraction(float64) but carries "
+            "float64 precision. That is inside the 1 ppQ (1e-15) L1 target "
+            "and far below this probe's own comparison resolution "
+            "(producer_tauL4 = 1.000145898, 9 digits), so no conclusion here "
+            "depends on it. The field name q0_pin_exact_rational is exact "
+            "about the rational, not about the pin."
+        ),
         "outcome": outcome,
         "outcome_a_means": "D_4 is a clean rational function of h alone (like A=3)",
         "outcome_b_means": "D_4 genuinely depends on s=sqrt(q) (NOT the case here)",

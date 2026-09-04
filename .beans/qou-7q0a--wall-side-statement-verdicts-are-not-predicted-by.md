@@ -1,11 +1,11 @@
 ---
 # qou-7q0a
 title: wall-side-statement verdicts are not predicted by banner presence — 5 live fails need re-adjudication, oldest 2026-07-07
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:42:32Z
-updated_at: 2026-09-03T05:25:00Z
+updated_at: 2026-09-03T10:47:50Z
 ---
 
 MEASURED 2026-09-03 on main d502ed06ce9 (+ this branch).
@@ -84,3 +84,5 @@ THREE THINGS THE AGENTS SURFACED THAT ARE NOT CLOSED HERE:
   3. terminal agent: terminal-resolution.lean:8-21 still says "All four rows match
      CODATA to sub-keV precision", which the .ts caveat of 2026-08-11 retracts.
      Lean-docstring currency, not wall-side; not touched.
+
+2026-09-03 10:5x: MERGED. #6450 -> main 0d79e178f82 (rebase), #6475 -> main c10071d7f73 (rebase). All five wall-side-statement entries now pass on main. Follow-ups live in qou-zmuu.
