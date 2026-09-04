@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "1.14.0",
-  "computedAt": "2026-08-21T16:56:14.574091+00:00",
-  "commitSha": "92f516f0ea3013bced8152290830ea411e02b14b",
+  "computedAt": "2026-09-04T22:35:48.270025+00:00",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "assertions": [
     {
       "name": "1_committed_fails_outer_identity",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
-      "detail": "4/4 committed atoms FAIL p/(u^shift*D) == tr_M(u^2), exact rational evaluation. The witness's own reconstruction_matches checks only the inner a_m -> p(u) expansion and never this."
+      "passed": false,
+      "detail": "0/4 committed atoms FAIL p/(u^shift*D) == tr_M(u^2), exact rational evaluation. The witness's own reconstruction_matches checks only the inner a_m -> p(u) expansion and never this."
     },
     {
       "name": "2_fresh_satisfies_outer_identity",
@@ -20,10 +20,10 @@
     },
     {
       "name": "3_committed_is_convention_C",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
-      "detail": "4/4 committed denominators carry (u^2+1) = 1+q, the z_C denominator. Witness dated 2026-07-18; gram.py records convention D as canonical since 2026-08-15."
+      "passed": false,
+      "detail": "0/4 committed denominators carry (u^2+1) = 1+q, the z_C denominator. Witness dated 2026-07-18; gram.py records convention D as canonical since 2026-08-15."
     },
     {
       "name": "4_fresh_is_convention_D",
@@ -41,18 +41,20 @@
     },
     {
       "name": "6_landed_law_is_the_C_frame_one",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
-      "detail": "4/4 committed denominators match the landed D(u) law's prefactor and u-exponent exactly. Since the law's EMPIRICAL_D_U table is by its own comment 'extracted from habiro-coefficients-extended.witness.json', an exact match on the FITTED exponent 18Z+21N+1 is circular and carries no evidential weight."
+      "passed": false,
+      "detail": "0/4 committed denominators match the landed D(u) law's prefactor and u-exponent exactly. Since the law's EMPIRICAL_D_U table is by its own comment 'extracted from habiro-coefficients-extended.witness.json', an exact match on the FITTED exponent 18Z+21N+1 is circular and carries no evidential weight."
     }
   ],
-  "allPassed": true,
-  "durationMs": 106312,
+  "allPassed": false,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 98378,
+  "durationMsBaseline": "caller",
   "computation": "habiro-witness-convention-adjudication",
   "scriptFile": "habiro_witness_convention_adjudication_probe.py",
   "scriptHash": "16a03304d0ef",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "12b2230cb60d1446c9c0a9153b4142758364bec1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,7 +68,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/habiro/habiro_witness_convention_adjudication_probe.py"
+    ],
+    "reproduce": "python3 -u computations/habiro/habiro_witness_convention_adjudication_probe.py"
   },
   "description": "Adjudicates the two Habiro witnesses. The committed habiro-coefficients-extended.witness.json FAILS the outer identity p/(u^shift*D) == tr_M(u^2) on every atom -- a check its own reconstruction_matches never made -- and carries the z_C denominator (1+q)^(3A-1), making it a convention-C object predating the 2026-08-15 owner ruling. The freshly computed values satisfy the outer identity and carry the z_D denominator (1+q^2)^(3A-1). The landed D(u) closed form is likewise C-frame and its u-exponent is FITTED to the disputed witness, so 'the fresh values break the law' restates 'the fresh values are not convention C'. RETRACTS the regeneration block recorded in bean qou-iayk.",
   "computation_method": "Symbolic sympy over the formal variable u (q = u^2). The outer identity is checked by EXACT evaluation at small rationals via fractions.Fraction / sympy.Rational -- no float64 anywhere.",
@@ -83,13 +92,13 @@
         "N": 1,
         "A": 2,
         "committed": {
-          "denom_factored": "32*u**40*(u**2 + 1)**5",
+          "denom_factored": "192*u**46*(u**4 + 1)**5",
           "shift": 0,
-          "deg_p_u": 90,
-          "cyclotomic_base": "u^2+1  (= 1+q,   denominator of z_C = q^(1/2)/(q+1))",
+          "deg_p_u": 108,
+          "cyclotomic_base": "u^4+1  (= 1+q^2, denominator of z_D = q^3/(q^2+1))",
           "inner_reconstruction_ok": true,
-          "outer_identity_ok": false,
-          "outer_identity_detail": "u=2: lhs=-30513449928357319311220447/879609302220800 != rhs=399576701684732528268771959299/22126184969271246848"
+          "outer_identity_ok": true,
+          "outer_identity_detail": "exact agreement at u in ['2', '3', '3/2', '5/3']"
         },
         "fresh": {
           "denom_factored": "192*u**46*(u**4 + 1)**5",
@@ -111,13 +120,13 @@
         "N": 2,
         "A": 3,
         "committed": {
-          "denom_factored": "128*u**61*(u**2 + 1)**8",
+          "denom_factored": "768*u**66*(u**4 + 1)**8",
           "shift": 0,
-          "deg_p_u": 138,
-          "cyclotomic_base": "u^2+1  (= 1+q,   denominator of z_C = q^(1/2)/(q+1))",
+          "deg_p_u": 152,
+          "cyclotomic_base": "u^4+1  (= 1+q^2, denominator of z_D = q^3/(q^2+1))",
           "inner_reconstruction_ok": true,
-          "outer_identity_ok": false,
-          "outer_identity_detail": "u=2: lhs=3287461833392893050112986152828823279283/184467440737095516160000 != rhs=25945248626264992130366875519219571099693/1577667084063022551572414464"
+          "outer_identity_ok": true,
+          "outer_identity_detail": "exact agreement at u in ['2', '3', '3/2', '5/3']"
         },
         "fresh": {
           "denom_factored": "768*u**66*(u**4 + 1)**8",
@@ -139,13 +148,13 @@
         "N": 1,
         "A": 3,
         "committed": {
-          "denom_factored": "128*u**58*(u**2 + 1)**8",
+          "denom_factored": "768*u**58*(u**4 + 1)**8",
           "shift": 0,
-          "deg_p_u": 132,
-          "cyclotomic_base": "u^2+1  (= 1+q,   denominator of z_C = q^(1/2)/(q+1))",
+          "deg_p_u": 152,
+          "cyclotomic_base": "u^4+1  (= 1+q^2, denominator of z_D = q^3/(q^2+1))",
           "inner_reconstruction_ok": true,
-          "outer_identity_ok": false,
-          "outer_identity_detail": "u=2: lhs=-9813773044209545061083365362848879453/4611686018427387904000 != rhs=7527452228108407330571870057283824154000077/1781038231618021552361046016"
+          "outer_identity_ok": true,
+          "outer_identity_detail": "exact agreement at u in ['2', '3', '3/2', '5/3']"
         },
         "fresh": {
           "denom_factored": "768*u**58*(u**4 + 1)**8",
@@ -167,13 +176,13 @@
         "N": 2,
         "A": 4,
         "committed": {
-          "denom_factored": "512*u**79*(u**2 + 1)**11",
+          "denom_factored": "3072*u**78*(u**4 + 1)**11",
           "shift": 0,
-          "deg_p_u": 180,
-          "cyclotomic_base": "u^2+1  (= 1+q,   denominator of z_C = q^(1/2)/(q+1))",
+          "deg_p_u": 196,
+          "cyclotomic_base": "u^4+1  (= 1+q^2, denominator of z_D = q^3/(q^2+1))",
           "inner_reconstruction_ok": true,
-          "outer_identity_ok": false,
-          "outer_identity_detail": "u=2: lhs=1057317491144656657041385036457876067903569936761817/967140655691703339764940800000 != rhs=488771289109590523741604905743744931451064020429326339/126993668243482702575620460734578688"
+          "outer_identity_ok": true,
+          "outer_identity_detail": "exact agreement at u in ['2', '3', '3/2', '5/3']"
         },
         "fresh": {
           "denom_factored": "3072*u**78*(u**4 + 1)**11",
@@ -202,7 +211,7 @@
     ],
     "owner_ruling": "2026-08-15 R1 -- convention D canonical",
     "gram_py": "tools/pyhecke/python/pyhecke/gram.py:15 -- 'TRACE CONVENTION D (z = q^3/(q^2+1)) since 2026-08-15'",
-    "committed_witness_computedAt": "2026-07-18T23:59:54.817581+00:00",
+    "committed_witness_computedAt": "2026-09-04T22:34:07.130002+00:00",
     "law_is_fitted": "d_u_closed_form_proof.py EMPIRICAL_D_U is by its own comment 'extracted from habiro-coefficients-extended.witness.json'; 18Z+21N+1 reproduces it on all six atoms because it was fitted to it, and the module states the u^shift residual is 'the only piece this script does NOT close'."
   }
 }

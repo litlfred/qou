@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T17:44:50.270758+00:00",
-  "commitSha": "23619918613b6d5885212f46594c9b4a1e057226",
+  "computedAt": "2026-09-04T22:37:24.964598+00:00",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "assertions": [
     {
       "name": "bruhat_count_n=2",
@@ -151,11 +151,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 54850,
+  "allPassedBasis": "assertions",
+  "durationMs": 54759,
+  "durationMsBaseline": "builder-construction",
   "computation": "kazhdan-lusztig-canonical-basis",
   "scriptFile": "kazhdan_lusztig.py",
   "scriptHash": "e18dd312256e",
-  "scriptCommitSha": "fda363a5525b91e056935535d0b89ad399bfa67a",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -164,11 +166,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.4",
+    "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/kazhdan_lusztig.py"
+    ],
+    "reproduce": "python3 -u computations/kazhdan_lusztig.py"
   },
   "description": "Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 6.  Closed form at n ≤ 3 (dihedral / Brenti §5.1); full K-L 1979 §1.1 recursion at n ∈ {4, 5, 6}.  Validates Bruhat-order cardinality, T→C→T round-trip, bar-invariance of C_{w_0} coefficient sum, and two literature cross-checks (P_{e, 3412} = 1+q and P_{e, 4231 in S_5} = 1+q).",
   "data": {

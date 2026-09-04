@@ -1,0 +1,160 @@
+{
+  "computation": "hecke-division-instrumented",
+  "description": "Instrumented Gr\u00f6bner--Shirshov division in H_n(q) with step-by-step energy logging",
+  "timestamp": "2026-09-04T22:35:49.079993+00:00",
+  "engine": "custom (hecke_division.py)",
+  "parameters": {
+    "q": 1.11
+  },
+  "groebner_basis": [
+    "\u03c3_i\u00b2 - (q-q\u207b\u00b9)\u03c3_i - 1  (Hecke, energy-changing)",
+    "\u03c3_i\u03c3_{i+1}\u03c3_i - \u03c3_{i+1}\u03c3_i\u03c3_{i+1}  (Yang-Baxter, energy-preserving)",
+    "\u03c3_i\u03c3_j - \u03c3_j\u03c3_i for |i-j|\u22652  (far commutativity, energy-preserving)"
+  ],
+  "symbolic_q_form": {
+    "engine": "sympy",
+    "q_symbol": "q (sp.Symbol('q'))",
+    "h_symbol_definition": "h = q - 1/q",
+    "pattern": "sympy-symbolic-Hecke-NF-with-q_val-evaluation",
+    "note": "Hecke normal-form expressions are symbolic in q (sp.Symbol). The witness below is evaluated at q = q_val (passed as parameter); the same symbolic NF can be re-evaluated at any q."
+  },
+  "results": [
+    {
+      "nucleus": "2H",
+      "p": 1,
+      "n": 1,
+      "n_terms": 6,
+      "max_word_length": 3,
+      "trace": 0.48008307133528677,
+      "summary": {
+        "total_steps": 27,
+        "hecke_steps": 21,
+        "yang_baxter_steps": 6,
+        "far_comm_steps": 0,
+        "total_energy_change": 1.0127111613038409,
+        "hecke_energy_change": 1.0127111613038409,
+        "energy_per_hecke_step": 0.04822434101446861
+      },
+      "tr_L0": -4.246434461980283,
+      "delta_energy": 0.0,
+      "word_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 2,
+        "3": 1
+      }
+    },
+    {
+      "nucleus": "3H",
+      "p": 1,
+      "n": 2,
+      "n_terms": 6,
+      "max_word_length": 3,
+      "trace": 0.43566862141221363,
+      "summary": {
+        "total_steps": 33,
+        "hecke_steps": 26,
+        "yang_baxter_steps": 7,
+        "far_comm_steps": 0,
+        "total_energy_change": 1.2432786996403091,
+        "hecke_energy_change": 1.2432786996403091,
+        "energy_per_hecke_step": 0.04781841152462728
+      },
+      "tr_L0": -0.22335211566884086,
+      "delta_energy": -0.0012478311741699333,
+      "word_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 2,
+        "3": 1
+      }
+    },
+    {
+      "nucleus": "3He",
+      "p": 2,
+      "n": 1,
+      "n_terms": 6,
+      "max_word_length": 3,
+      "trace": 0.5643169133492044,
+      "summary": {
+        "total_steps": 34,
+        "hecke_steps": 26,
+        "yang_baxter_steps": 8,
+        "far_comm_steps": 0,
+        "total_energy_change": 1.2420308684661392,
+        "hecke_energy_change": 1.2420308684661392,
+        "energy_per_hecke_step": 0.04777041801792843
+      },
+      "tr_L0": 0.12437565251761538,
+      "delta_energy": 4.179102030632542e-05,
+      "word_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 2,
+        "3": 1
+      }
+    },
+    {
+      "nucleus": "4He",
+      "p": 2,
+      "n": 2,
+      "n_terms": 8,
+      "max_word_length": 4,
+      "trace": 0.24108897105639815,
+      "summary": {
+        "total_steps": 40,
+        "hecke_steps": 31,
+        "yang_baxter_steps": 9,
+        "far_comm_steps": 0,
+        "total_energy_change": 1.4938951521233386,
+        "hecke_energy_change": 1.4938951521233386,
+        "energy_per_hecke_step": 0.04819016619752705
+      },
+      "tr_L0": -2.4827656500347994,
+      "delta_energy": 0.04101217269627333,
+      "word_histogram": {
+        "0": 1,
+        "1": 3,
+        "2": 2,
+        "3": 1,
+        "4": 1
+      }
+    },
+    {
+      "nucleus": "6Li",
+      "p": 3,
+      "n": 3,
+      "n_terms": 48,
+      "max_word_length": 6,
+      "trace": 0.14449767775878966,
+      "summary": {
+        "total_steps": 76,
+        "hecke_steps": 62,
+        "yang_baxter_steps": 14,
+        "far_comm_steps": 0,
+        "total_energy_change": 2.680364136909651,
+        "hecke_energy_change": 2.680364136909651,
+        "energy_per_hecke_step": 0.04323167962757502
+      },
+      "tr_L0": -1.1621461687576344,
+      "delta_energy": 0.19671424685210726,
+      "word_histogram": {
+        "0": 1,
+        "1": 5,
+        "2": 11,
+        "3": 14,
+        "4": 11,
+        "5": 5,
+        "6": 1
+      }
+    }
+  ],
+  "scriptFile": "hecke_division.py",
+  "scriptHash": "f8f6c1a4b0bc",
+  "scriptCommitSha": "e6520255d6dc623eaa41ba09b585d0cfd8908ff1",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
+  "computedAt": "2026-09-04T22:35:49.245364+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

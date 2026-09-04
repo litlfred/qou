@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:46.857329+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-09-04T22:32:52.628486+00:00",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "assertions": [
     {
       "name": "symmetric-block lone/bond ratio = q² exactly",
@@ -20,11 +20,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "allPassedBasis": "assertions",
+  "durationMs": 32,
+  "durationMsBaseline": "builder-construction",
   "computation": "h2o-angle-q2-symmetric-block",
   "scriptFile": "h2o_angle_q2_symmetric_block.py",
-  "scriptHash": "9d676027113f",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "165d678e84a4",
+  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/h2o_angle_q2_symmetric_block.py"
+    ],
+    "reproduce": "python3 -u computations/h2o_angle_q2_symmetric_block.py"
   },
   "description": "H₂O lone/bond weight ratio = q² DERIVED from the symmetric Wedderburn block. The C₂ᵥ assembly projector (S₂ H-exchange stabiliser, rem:h2o-c2v-from-projector) selects the symmetric (trivial) rep of the local H₃(q), on which σ↦q so bond σ↦q and lone e⁻=σ₀σ₁σ₀↦q³, giving lone/bond = q² EXACTLY (verified across all 3 blocks: sym→q², alt→q⁻², std→0). Feeding r=q² into the trace-weighted VSEPR (n=1) gives θ=104.72° (obs 104.5°). PROMOTES the earlier kernel-conditional q² near-match to a kernel-independent derived ratio; only the 0.22° residual carries the VSEPR-kernel/geometry approximation. No fit.",
   "contentBlock": "prop:h2o-bond-angle-shift",
@@ -49,24 +59,24 @@
     "block_ratios": {
       "sym V(3)": {
         "dim": 1,
-        "sigma_trace": 1.109978582751381,
-        "e_minus_trace": 1.3675518369513862,
-        "lone_over_bond": 1.2320524541667646
+        "sigma_trace": 1.1099785827513808,
+        "e_minus_trace": 1.3675518369513853,
+        "lone_over_bond": 1.232052454166764
       },
       "std V(2,1)": {
         "dim": 2,
-        "sigma_trace": 0.20906029879563925,
-        "e_minus_trace": 1.1102230246251565e-16,
-        "lone_over_bond": 5.310539739113366e-16
+        "sigma_trace": 0.2090602987956393,
+        "e_minus_trace": 3.1694876775893493e-71,
+        "lone_over_bond": 1.516063880061507e-70
       },
       "alt V(1,1,1)": {
         "dim": 1,
-        "sigma_trace": -0.9009182839557418,
-        "e_minus_trace": -0.7312337075494344,
-        "lone_over_bond": 0.8116537543657586
+        "sigma_trace": -0.9009182839557415,
+        "e_minus_trace": -0.7312337075494336,
+        "lone_over_bond": 0.811653754365758
       }
     },
-    "sym_block_ratio": 1.2320524541667646,
+    "sym_block_ratio": 1.232052454166764,
     "sym_ratio_equals_q2_exact": true,
     "theta_at_r_eq_q2_deg": 104.71946018960544,
     "observed_deg": 104.5,

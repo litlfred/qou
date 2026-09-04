@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-28T14:17:55.326744+00:00",
-  "commitSha": "3b68b0397bc22c0149b28632b0a704018a827ff3",
+  "computedAt": "2026-09-04T22:29:22.004686+00:00",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "assertions": [
     {
       "name": "normalised_readout_stabilisation_invariant",
@@ -24,11 +24,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 22,
+  "durationMsBaseline": "builder-construction",
   "computation": "gb-writhe-normalised-readout",
   "scriptFile": "gb_writhe_normalised_readout_probe.py",
   "scriptHash": "f3a331bca74e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +40,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gb_writhe_normalised_readout_probe.py"
+    ],
+    "reproduce": "python3 -u computations/gb_writhe_normalised_readout_probe.py"
   },
   "description": "GAP-2 [G3] follow-up (bean qou-rbfr): closes the normalisation gap left open by gb_winding_parity_wire_probe.py, which found the GS coefficient sum S(β)=Σ_w c_w(q) carries the winding parity but is FRAMED (S↦S under positive stabilisation, S↦(1−h)S under negative) and said a general braid 'needs writhe-normalisation first' without saying by what. DERIVED, not chosen: seeking a monomial correction A^e·B^n makes Markov-stabilisation invariance equivalent to A*B=1 and A=(1−h)B, and those force A²=1−h (Lean QOU.QBeta.WritheNormalisation.writhe_factor_sq, sorry-free, generic CommRing), i.e. Ŝ(β)=S(β)·(1−h)^{(e−n)/2} with base AND exponent both derived; writhe_factor_unique_up_to_sign leaves no tuning freedom. Tested as Ŝ²=S²·(1−h)^{e−n} to avoid half-integer powers. MEASURED: [N1] Ŝ² is invariant under BOTH stabilisations on four nonzero-writhe braids (trefoil σ₁³, σ₁²σ₂, σ₁σ₂⁻¹σ₁, σ₁⁻³) where the unnormalised S is not — exactly where [G3]'s caveat bites; [N2] on the canonical family wⁿ=(σ₁σ₂⁻¹)ⁿ the exponent sum is 0 and the strand count 3 for every n, so the correction is a single constant (1−h)^(−3) and the [G2] (−1)ⁿ parity readout SURVIVES normalisation — it was not a framing artifact, which is why [G3]'s escape clause held; [N3] at h=1 the correction base vanishes and no monomial normalisation exists (Lean no_normalisation_at_h_eq_one; only NECESSITY claimed — h≠1 is not sufficient, existence also needs 1−h to be a square). SCOPE: this is stabilisation-invariance, NOT a knot invariant — the Markov conjugation move is untouched — and the full winding class (m,ℓ) is still not delivered. Nothing wired to production.",
   "contentBlock": "prop:winding-lattice-norm-form",

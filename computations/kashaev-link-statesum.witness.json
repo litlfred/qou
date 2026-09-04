@@ -40,32 +40,37 @@
   "fig8_validation": {
     "3": {
       "state_sum_abs": 13.0,
-      "kashaev_4_1": 13.000000000000002,
+      "kashaev_4_1": 13.0,
       "match": true
     },
     "5": {
       "state_sum_abs": 50.472135954999565,
-      "kashaev_4_1": 50.47213595499959,
+      "kashaev_4_1": 50.47213595499958,
       "match": true
     },
     "7": {
       "state_sum_abs": 151.2790295458975,
-      "kashaev_4_1": 151.27902954589774,
+      "kashaev_4_1": 151.27902954589777,
       "match": true
     },
     "11": {
       "state_sum_abs": 1030.2085790178446,
-      "kashaev_4_1": 1030.208579017843,
+      "kashaev_4_1": 1030.2085790178428,
       "match": true
     }
   },
   "validated": true,
   "limitation": "odd PRIME N only (Fermat-inverse face solve); composite N needs a Z_N linear solver",
-  "timestamp": "2026-08-01T23:11:25+00:00",
+  "timestamp": "2026-09-04T22:36:29+00:00",
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "kashaev_link_statesum.py",
-  "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
-  "computedAt": "2026-08-01T23:11:25+00:00",
-  "auditOnly": true
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
+  "computedAt": "2026-09-04T22:36:29.159862+00:00",
+  "auditOnly": true,
+  "scriptHash": "3395d20d2ffc",
+  "scriptCommitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

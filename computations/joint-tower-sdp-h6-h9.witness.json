@@ -1,6 +1,6 @@
 {
   "computation": "joint-tower-sdp-h6-h9",
-  "computedAt": "2026-08-24T14:21:29.282659+00:00",
+  "computedAt": "2026-09-04T22:36:21.448379+00:00",
   "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
@@ -7540,8 +7540,8 @@
     ]
   },
   "scriptHash": "0982905d9b7d",
-  "scriptCommitSha": "7f9474204b81a19d3044c75259238003c8c47037",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

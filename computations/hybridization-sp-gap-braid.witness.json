@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:51:08.743271+00:00",
-  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
+  "computedAt": "2026-09-04T22:35:49.758299+00:00",
+  "commitSha": "b4fc317c48557bd880c7703ec59ea928c7f44d96",
   "assertions": [
     {
       "name": "s-electron trefoil is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
@@ -20,11 +20,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 12,
+  "durationMsBaseline": "builder-construction",
   "computation": "hybridization-sp-gap-braid",
   "scriptFile": "hybridization_sp_gap_braid.py",
-  "scriptHash": "e9a206159c00",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "7cad6fd9bc43",
+  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hybridization_sp_gap_braid.py"
+    ],
+    "reproduce": "python3 -u computations/hybridization_sp_gap_braid.py"
   },
   "description": "Shell-braid derivation of the sp³↔pure-p bond-angle base flip. (A) palindromicity-orbital-type: s (ℓ=0) is palindromic/self-dual ⇒ symmetric-block (trivial) character; the s trefoil e⁻=σ₀σ₁σ₀ is a palindrome; p is chiral ⇒ standard block. s,p sit in different Wedderburn blocks; hybridisation mixes them at the s–p promotion gap. (B) electron-shell-braid-capacity: ns Hopf-links the (n−1) inner shells ⇒ Δ(n) ∝ (n−1) = central-atom size; integer ⇒ DISCRETE flip; window closes at n=2→3. (C) group-16 O 104.5°→S/Se/Te ~90° flat confirms. Derives the mechanism + direction + discreteness; the exact Δ-vs-bonding numbers (atomic Φ₁ penetration model) remain open.",
   "contentBlock": "prop:symmetric-block-domain-weight",
@@ -47,7 +57,7 @@
   "data": {
     "s_word_palindrome_self_dual": true,
     "p_word_palindrome": false,
-    "s_on_symmetric_block_q3": 1.3675518369513862,
+    "s_on_symmetric_block_q3": 1.3675518369513853,
     "penetration_flip_by_shell": {
       "n2": {
         "inner_shells": 1,
