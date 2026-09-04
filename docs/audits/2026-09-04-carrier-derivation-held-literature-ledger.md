@@ -92,15 +92,60 @@ carried from a bean:
    `qou-0hdx` called "the Freedman–He template" is Khesin Thm 3.6, the **single knotted
    torus** bound, misapplied. That is why `qou-0hdx` is scrapped.
 
-**The computable handle.** The same paragraph bounds `ac(L_k, L)` below by *"a smallest
-genus among surfaces in `ℝ³ ∖ {L₁ ∪ … ∪ L̂_k ∪ … ∪ L_n}` with a single boundary component"*
-— verified at line 217. That is a **real complement constraint** (settled in `qou-a9li` /
-`qou-b5yi`), so `ac` is a positive quantity, not an infimum that collapses to zero.
+**🛑 The "computable handle" paragraph that stood here was WRONG, in the direction that
+mattered, and is corrected below the rule. Do not restore it.** It read:
 
-**Why the derived carrier makes this easier than Borromean.** The earlier bound
-`1 ≤ ac(L_k, L) ≤ 3.285` was obtained for L6a4 via `μ̄₁₂₃ = 1 ≠ 0`. On the derived carrier,
-consecutive components have `lk = ±2 ≠ 0` (measured above), so `genus ≥ 1` follows directly
-from linking rather than through a Milnor invariant.
+> *"The same paragraph bounds `ac(L_k, L)` below by 'a smallest genus among surfaces in
+> `ℝ³ ∖ {L₁ ∪ … ∪ L̂_k ∪ … ∪ L_n}` with a single boundary component' — verified at line 217.
+> That is a **real complement constraint**, so `ac` is a positive quantity, not an infimum
+> that collapses to zero. **Why the derived carrier makes this easier than Borromean.** The
+> earlier bound `1 ≤ ac(L_k, L) ≤ 3.285` was obtained for L6a4 via `μ̄₁₂₃ = 1 ≠ 0`. On the
+> derived carrier, consecutive components have `lk = ±2 ≠ 0`, so `genus ≥ 1` follows
+> directly from linking rather than through a Milnor invariant."*
+
+---
+
+**What the source actually says**, read this session at
+[`sec-001-energy-bound.md:216-217`](../../library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md):
+
+> *"the asymptotic crossing numbers `ac(Lk, L)` **for borromean links** can be estimated
+> below by a smallest genus among surfaces in `ℝ³ ∖ {L₁ ∪ … ∪ L̂_k ∪ … ∪ L_n}` with a single
+> boundary component"*
+
+**The qualifier is load-bearing, and the corpus drops it.** `qou-a9li` and `qou-b5yi`, both
+`completed` 2026-09-02, quote the genus clause without *"for borromean links"*; the
+paragraph above took its wording from them rather than from the source, and then drew the
+**opposite** conclusion from the one the qualifier supports.
+
+**Why it must be there.** A compact oriented surface `S ⊆ ℝ³ ∖ L_j` with `∂S = L_k` forces
+`lk(L_k, L_j) = 0`, since `[L_k] = [∂S] = 0` in `H₁(ℝ³ ∖ L_j) ≅ ℤ` and that class *is* the
+linking number. So where some `lk ≠ 0` the surfaces being minimised over **do not exist**:
+off the Brunnian class the estimate is **ill-posed** — an infimum over ∅ — rather than
+merely weaker. Nonzero linking does not make the handle easier; it removes it.
+
+**Measured on the derived carrier** —
+[`fh_genus_handle_requires_brunnian_probe.py`](../../computations/probes/fh_genus_handle_requires_brunnian_probe.py),
+4/4, both crossing-resolution branches: **0 of 30** components have all their pairwise
+linking numbers vanishing. Not one, on any isotope, in either branch.
+
+**The inversion this produces.** The genus handle applies exactly on the Brunnian class,
+which in this arc means **L6a4** — the A = 3 *census* assignment, i.e. the admitted
+AME-driven fit that owner ruling 2026-08-29 retired. The only carrier route 2's computable
+handle works on is the one that was retired as a fit; on the derived carrier it does not
+apply at all.
+
+Formalised in
+[`QOU/Mass/FreedmanHeGenusHandleNeedsVanishingLinking.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/FreedmanHeGenusHandleNeedsVanishingLinking.lean)
+(lean-direct exit 0, sorry-free; two declarations depend on no axioms at all). The
+homological step is **deliberately not** formalised — Seifert surfaces and `H₁` of a link
+complement are not cheaply available in this Mathlib, and asserting them as a class would be
+the axiomatisation-is-not-a-proof pattern.
+
+**Scope — (b) on the HANDLE**, invariant cited (complement homology). Eq. (43) is untouched
+and remains a true lower bound, and `ac(L_k, L)` itself is untouched: nothing here says it
+is small or zero, only that this particular route to a number for it is unavailable here. A
+different lower bound on `ac`, not routed through a complement genus, is not excluded and is
+not examined.
 
 **Note on `v1` vs `v3`.** `arxiv-0808.1533v1` carries **no `INDEX.md` row** and is marked
 `duplicate_of`; `arxiv-0808.1533v3` (*On the third order helicity of magnetic fields on
@@ -167,3 +212,38 @@ stalled-claim policy; the bean is re-claimed with a note rather than duplicated.
 wired. The one substantive claim is the framing correction at the top — that the carrier is
 derived while the census lookup was the fit — and it rests on two merged audits plus this
 session's own 70/70 re-run, not on a bean.
+
+## Corrections made to this document after it was first committed
+
+Recorded rather than silently edited, because both errors were mine and both are
+instructive.
+
+1. **The route-2 "computable handle" paragraph was backwards** (corrected above, with the
+   superseded text quoted so a reader who saw the first version can tell what changed). I
+   took the genus clause from two beans that had dropped its *"for borromean links"*
+   qualifier, in a session whose own PR body warns against treating a bean as a primary
+   source. Reading the sentence itself took one command.
+
+2. **The verification claim on the sibling PR #6515 was too weak, and this document
+   inherited the method.** That PR body said *"the new files appear nowhere in the gate
+   log"*, established by grepping the log for the filename. The q0-anchor refill ratchet
+   reports a **count, not filenames**, and the only line naming the file was a
+   `skipped: (new file — no HEAD copy to compare)` notice — which reads like a clean bill
+   and is not one. Measured properly, by A/B-ing `precision-gates.sh --changed` with the
+   files removed:
+
+   | tree | `NEW (not in baseline)` |
+   |---|--:|
+   | without the new files | 40 |
+   | with them, no `q0Anchor` declared | **41** |
+   | with both probes declaring `independent` | **39** |
+
+   So the files *were* implicated, and the fix at the producer drains one pre-existing
+   entry as well. Both probes genuinely read no `q₀` — this one works in integer linking
+   numbers and a text search, `r5full` entirely in `ℚ[q]` — so `independent` with a reason
+   is the honest declaration; a stamped `q0Value` would be flagged `Q0_FLIP`. No baseline
+   was touched.
+
+   **The generalisable rule:** to check whether your files affect a ratchet, remove them and
+   diff the counts. Grepping a gate log for your own filename cannot detect a gate that
+   counts.
