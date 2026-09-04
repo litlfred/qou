@@ -26,15 +26,42 @@ import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
 
 # Module-level cache keyed by:
-# (ab0, ab1, ab2, shape_in, c_in) -> dict of (shape_out, c_out) -> amplitude
+# (q, dps, ab0, ab1, ab2, shape_in, c_in) -> {(shape_out, c_out): amplitude}
+#
+# `q` AND the working precision are both part of the key (bean `qou-h3qk`).
+# They were both absent until 2026-09-04 while the body computes with `q`
+# (`hq = q - qi`; `D(delta) = hq / (1 - q**(-2*delta))`), so two calls sharing
+# an (ab, shape, c) key at different `q` returned whichever `q` arrived first —
+# silently, with no raise and no warning. Demonstrated on a cold cache: a call
+# at q = 1.9 following one at q = 1.11 returned the q = 1.11 amplitudes and
+# differed from q = 1.9 computed on a fresh cache.
+#
+# The ab tuples are themselves functions of `q`, so most `q` pairs miss the
+# cache correctly and the hazard needs two `q` reaching equal ab — but this is
+# a MODULE-level dict that lives for the whole interpreter and is shared by
+# unrelated callers, so "usually misses" is not a guarantee anyone can rely on.
+#
+# `q` is keyed by its exact 50-digit decimal, not by the mpf object: an mpf
+# carries the precision it was CREATED at, so two mpf equal in value can be
+# distinct objects, and `mp.nstr` gives a stable, hashable identity. `mp.mp.dps`
+# joins it because a block computed at 50 dps and reused at 90 is the same
+# class of silent staleness one level down.
 _H3_TRANSITION_CACHE = {}
+
+
+def _q_key(q):
+    """Stable hashable identity for `q` + the ambient working precision."""
+    return (mp.nstr(q, 50), mp.mp.dps)
+
 
 def get_h3_transitions(ab0, ab1, ab2, q, qi, shape_in, c_in, Dc):
     """
     Compute and cache the 3-step fine-Bratteli transitions for a single nucleon (3 generators).
-    The nucleon type is effectively defined by the alpha/beta tuples (ab0, ab1, ab2).
+    The nucleon type is effectively defined by the alpha/beta tuples (ab0, ab1, ab2)
+    TOGETHER WITH `q`, which the body below uses via `hq` and `D` — see the
+    cache comment above for why leaving `q` out of the key was a live defect.
     """
-    key = (ab0, ab1, ab2, shape_in, c_in)
+    key = (_q_key(q), ab0, ab1, ab2, shape_in, c_in)
     if key in _H3_TRANSITION_CACHE:
         return _H3_TRANSITION_CACHE[key]
 
