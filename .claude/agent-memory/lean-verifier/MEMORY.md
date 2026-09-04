@@ -264,6 +264,19 @@ Any red is then classified — **mechanical port** (retype / argument order /
 rename already made elsewhere) vs **real**: fix the first, bean the second
 with the exact error, never weaken a statement to get green.
 
+## TRAP — grep `.beans/` BEFORE opening a bean for a red list (2026-09-04)
+
+The sibling pass of `qou-n9j7` found 41 red content-block `.lean` files and I
+opened an umbrella bean (`qou-isps`) listing 35 of them as "real drift, not
+touched". Bean `qou-e7xv` — a different session, PR #6540 and follow-ups —
+had ALREADY swept the same 38 files to 1 (`qou-0xrn` the survivor) and landed
+the repairs on `main` while my pass was running; my seven "mechanical fixes"
+collided with theirs on rebase and were dropped for `main`'s versions. Corpus-
+grep path 6 (`grep -rl <file stem> .beans/`) would have shown it in one
+command. A red list is a *claim about the corpus*; it goes through the
+checklist like any other, and a rebuild result older than the last `main`
+merge is not a current claim.
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
