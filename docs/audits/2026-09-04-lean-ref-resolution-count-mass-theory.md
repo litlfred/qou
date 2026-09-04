@@ -223,3 +223,35 @@ full, neither is an aiming error:
 So the cheap fix I recommended does not exist. What remains from the list
 is (B) for `content-scaling-correspondence` and the new half-life gap,
 both opened as GAP beans; (D) still waits on the owner reading row 2.
+
+## Result on row 1 (`content-scaling-correspondence`, bean `qou-59x9`, same day)
+
+Option (B) was attempted and produced a **refutation, not a theorem.** The
+block's mathematical sentence — *content `c = j − i` equals the magnetic
+quantum number `m_j` of the corresponding `SU_q(2)` weight space* — is false
+in its literal reading, and the obstruction is structural (scope (b), proved
+sorry-free in `lean/QOU/BraidKnot/BoxContent.lean`, `lean`-direct exit 0):
+
+| theorem | statement |
+|---|---|
+| `twoRow_card_cells_ne_card_weights` | for every two-row shape `(a,b)`, `a + b ≠ (a − b) + 1` — no bijection box ↔ weight space exists, so "the corresponding weight space" of a box names nothing |
+| `top_content_not_weight` | for `b ≤ a`, `3 ≤ a + b`, the cell `(0, a−1)` has content `a − 1` with `2(a−1) > a − b`: not a weight of `V_{(a,b)}` under **any** assignment |
+| `single_box_content_not_weight` | `(1,0)`: content `0` vs weights `±1/2` (parity) |
+| `column_content_not_weight` | `(1,1)`: content `−1` vs the single weight `0` (range) |
+| `row_two_contents_are_weights` | `(2,0)` is the one shape where every content is a weight |
+
+What is true and already in the corpus: contents are the `q`-Jucys–Murphy
+eigenvalues (`QOU.SchurWeyl.QJucysMurphyEigen.SeminormalRep.jmDiagVal` has
+`q^{2·content}` on its diagonal) — a total-spin-increment datum along the
+sub-tower, not a weight. The sentence conflates the Casimir label `j` with
+the projection `m`. The consumer `crystal-isospin-degeneracy-proof` uses only
+`c(·)` as a cell statistic and content *differences*, so it is untouched.
+
+Landed: the five theorems above plus a `rfl` bridge from `boxContent` to the
+canonical `YoungDiagramCells.content`; a dated status author note on the
+block. **Not landed, and deliberately:** the `.md` is unchanged and
+`lean.ref` still names `boxContent` — a proposition's ref must not be aimed
+at its own refutation, and re-wording the claim (content = JM eigenvalue;
+the scaling table to a follow-on remark, since it is a physics dictionary
+rather than a theorem) changes what the chapter asserts and is the owner's
+call. That decision is framed in the PR body for this branch.
