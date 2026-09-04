@@ -1,0 +1,159 @@
+{
+  "engine": "exact-integer-axis-vector-and-involution",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T12:26:16.898467+00:00",
+  "commitSha": "de12130617d6dcefdaaa6a99fc7b9593e0f99106",
+  "assertions": [
+    {
+      "name": "C1_eq100_forces_a_equals_b",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P1 CONFIRMED, twice. Algebraically, imposing eq (100) (S_ij = -S_{phi(i)phi(j)}, phi = (1 2)) entrywise on the general antisymmetric M(a,b,c) leaves (1,2) unconstrained and gives a = b from BOTH (1,3) and (2,3). Exhaustively, all 81 triples in the box |entries| <= 4 have a == b, and the count is exactly (2*4+1)^2 = 81, i.e. the full (a,a,c) family with a and c each free"
+    },
+    {
+      "name": "C2_radical_is_always_mirror_symmetric",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P2 CONFIRMED. phi = (1 2) acts on Z^3 with a 2-dimensional +1 eigenspace {(x,x,z)} and a 1-dimensional -1 eigenspace {(x,-x,0)}. Since eq (100) forces the axis vector to the form (a,a,c), it lies in the +1 (mirror-symmetric) eigenspace for every admissible M. The null direction of the pairing is fixed by the bar involution, always"
+    },
+    {
+      "name": "C3_never_anti_fixed_except_zero",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "P3 CONFIRMED. The only eq-(100) axis vector lying in phi's -1 eigenspace is [(0, 0, 0)], the zero vector: (a,a,c) is anti-fixed only when a = c = 0, i.e. only for M = 0. So for any NONZERO Stokes matrix obeying eq (100) the null direction is mirror-symmetric and never anti-symmetric"
+    },
+    {
+      "name": "C4_eq98_instantiates_it",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "eq (98) obeys eq (100), and its axis vector (-3, -3, 4) has the forced shape (a,a,c): Omega_23 = -Omega_13 = -3 is the constrained pair and Omega_12 = 4 is the free entry. It annihilates eq (98) (verified) and is phi-fixed. So the specific value (-3,-3,4) is one forced relation plus one free number -- not three independent facts"
+    },
+    {
+      "name": "C5_precise_NZ_requirement_plus_labelled_observation",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "The NZ requirement is now precise: embed the rank-2 (mu,lambda) cusp form in a rank-3 lattice whose adjoined third direction is (i) null for the pairing and (ii) fixed by the bar involution. LABELLED OBSERVATION, not a claim: the earlier rung proved the NZ edge block is exactly zero (Lagrangian), so (i) is abundantly satisfied there, but whether any edge direction satisfies (ii) is UNTESTED. It is an observation rather than evidence because a matching NECESSARY condition is not evidence -- the exact failure shape that has misfired repeatedly on this object. Disconfirmation: exhibit the bar involution on the NZ edge lattice and check for a fixed null direction; if there is none, (ii) is the real obstruction"
+    },
+    {
+      "name": "C6_CORRECTED_bar_parity_on_cusp_data_DOES_exist",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "CORRECTION of a claim I made minutes earlier in this same probe. An earlier run of this grep pair returned ZERO for the second count and I wrote 'no bar involution is defined on the NZ lattice anywhere in this corpus'. Re-run correctly: 449 files mention 'bar involution' and 35 of them touch gluing / Neumann / tetrahedra. A FALSE NEGATIVE from my own detector, believed because it agreed with the shape of the previous finding (R1). What is actually there: QOU/QBeta/CuspShapeBarParity.lean carries barEven/barOdd on the CUSP SHAPE and states that the sqrt(-3) driving the Neumann-Zagier deformation CVol(u) = Vol - (tau/4)u^2 + ... IS barOdd(omega), with BarParityZeta4Swap.lean as the carrier. So bar parity DOES act on NZ-adjacent geometric data. Two caveats keep it from closing (ii): it is 4_1 and not 5_2, and it acts on the cusp SHAPE (a scalar) rather than on a lattice DIRECTION. The machinery is far closer than my retracted claim said, and the 5_2 analogue is the concrete next object"
+    },
+    {
+      "name": "C7_near_miss_isometric_to_mirror_is_vacuous",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "Recorded as a guard, not a result. snappy reports Manifold('5_2').is_isometric_to(reverse_orientation()) = True with identical volume, which LOOKS like 5_2 admitting a mirror self-map and would hand C5 its involution for free. It is not a fact about 5_2: mirroring S^3 gives an orientation-reversing homeomorphism of ANY knot complement onto its mirror's, so the call returns True for every knot and has no discriminating power. Same shape as this session's other misreads -- a true statement with no power, mistaken for evidence -- and it was caught before publication rather than after"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "d1b-null-direction-is-mirror-symmetric",
+  "scriptFile": "d1b_null_direction_is_mirror_symmetric_probe.py",
+  "scriptHash": "1e60842680ec",
+  "scriptCommitSha": "de12130617d6dcefdaaa6a99fc7b9593e0f99106",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_null_direction_is_mirror_symmetric_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_null_direction_is_mirror_symmetric_probe.py"
+  },
+  "description": "qou-rutm. ANSWERS the question the previous rung (#6643, merged) left as the only thing standing after rank and elementary divisor both dissolved: eq (98) has a 1-dimensional radical and the NZ cusp form has none, so WHERE IS THE THIRD, NULL DIRECTION? It is the MIRROR-SYMMETRIC direction, and GGM eq (100) FORCES it there. Derivation: every 3x3 antisymmetric matrix is the cross-product matrix of an axis vector (a,b,c) which spans its radical; imposing eq (100) (S_ij = -S_{phi(i)phi(j)}, phi = (1 2)) entrywise leaves (1,2) free and yields a = b from both (1,3) and (2,3). Since phi acts on Z^3 with +1 eigenspace {(x,x,z)} and -1 eigenspace {(x,-x,0)}, the radical (a,a,c) is mirror-symmetric for every admissible M and anti-symmetric only for M = 0. Confirmed exhaustively over the box |entries| <= 4: all 81 solutions have a = b, exactly the (a,a,c) family. eq (98) instantiates it with (-3,-3,4), i.e. ONE forced relation (Omega_23 = -Omega_13) plus ONE free number (Omega_12 = 4), not three independent facts. This does NOT contradict the previous rung's guard that the radical is built from the Omega entries by antisymmetry alone: that is about 3x3 matrices in general, this is a second and independent constraint from eq (100) about THIS datum. Consequence: the NZ route must embed its rank-2 (mu,lambda) cusp form in a rank-3 lattice whose adjoined direction is both null and bar-fixed -- a concrete object, not a gap.",
+  "data": {
+    "derivation": {
+      "general_form": "M(a,b,c) = [[0,c,-b],[-c,0,a],[b,-a,0]]; radical = span{(a,b,c)}",
+      "eq100": "S_ij = -S_{phi(i)phi(j)}, phi = (1 2)",
+      "entrywise": {
+        "(1,2)": "c = -(-c), automatic",
+        "(1,3)": "-b = -a  =>  a = b",
+        "(2,3)": "a = -(-b)  =>  a = b"
+      },
+      "conclusion": "eq (100) forces a = b; c free"
+    },
+    "involution_eigenspaces": {
+      "phi": "(1 2) acting on Z^3",
+      "plus_one": "{(x,x,z)}, dimension 2 -- the mirror-symmetric directions",
+      "minus_one": "{(x,-x,0)}, dimension 1",
+      "radical_is_always_in": "+1",
+      "in_minus_one_only_when": "M = 0"
+    },
+    "exhaustive_check": {
+      "box": 4,
+      "solutions": 81,
+      "expected_family_size": 81,
+      "all_have_a_eq_b": true,
+      "anti_fixed_solutions": [
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "eq98_instance": {
+      "axis": [
+        -3,
+        -3,
+        4
+      ],
+      "obeys_eq100": true,
+      "forced_relation": "Omega_23 = -Omega_13 = -3",
+      "free_entry": "Omega_12 = 4",
+      "annihilates": [
+        0,
+        0,
+        0
+      ],
+      "phi_fixed": true
+    },
+    "nz_requirement": {
+      "must_embed": "the rank-2 (mu,lambda) cusp form into a rank-3 lattice",
+      "adjoined_direction_must_be": [
+        "null for the pairing",
+        "fixed by the bar involution"
+      ],
+      "observation_not_claim": "the NZ edge block is exactly zero (Lagrangian), so (i) is abundantly satisfied there; whether any edge direction satisfies (ii) is UNTESTED",
+      "why_only_an_observation": "a matching NECESSARY condition is not evidence -- the failure shape that has misfired repeatedly on this object",
+      "disconfirmation": "exhibit the bar involution on the NZ edge lattice and check for a fixed null direction; if none, (ii) is the NZ route's real obstruction"
+    },
+    "scope": {
+      "tier": "derivation (C1-C4) + one labelled observation (C5)",
+      "method": "entrywise algebra plus exhaustive integer search",
+      "arithmetic": "exact integers and Fractions; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}
