@@ -73,6 +73,26 @@ bean_delta() {  # $1 = base ref
   echo "───────────────────────────────────────────────────────────────────────"
 }
 
+# --- the matcher, as a pure function of the command string -------------------
+# Prints the base ref of a REAL branch-creation invocation, or nothing.
+#
+# MATCH AT A COMMAND POSITION, not anywhere in the string. A substring test fires
+# on a command that merely QUOTES the invocation — measured: `git commit -m
+# 'docs: explains git checkout -b claude/foo origin/main'` warned, and the commit
+# documenting THIS GUARD is exactly such a message. A guard that cries on the
+# commit describing it is noise, and noise is what gets guards ignored.
+#
+# So: split on command separators, then require the fragment to BEGIN with
+# `git checkout|switch`. A quoted mention sits mid-fragment and is skipped.
+base_ref() {
+  printf '%s\n' "$1" \
+    | sed -E 's/(\|\||&&|[;|]|`|\$\()/\n/g' \
+    | sed -E 's/^[[:space:]]+//' \
+    | grep -E '^git[[:space:]]+(checkout[[:space:]]+-[bB]|switch[[:space:]]+-[cC])[[:space:]]' \
+    | grep -oE '(checkout[[:space:]]+-[bB]|switch[[:space:]]+-[cC])[[:space:]]+[^[:space:]]+[[:space:]]+[^[:space:]]+' \
+    | head -1 | awk '{print $NF}'
+}
+
 # --- selftest ----------------------------------------------------------------
 if [ "${1:-}" = "--selftest" ]; then
   echo "SELFTEST — does it fire on a real bean loss, and stay quiet otherwise?"
@@ -99,17 +119,38 @@ if [ "${1:-}" = "--selftest" ]; then
   # a nonexistent base must not error
   noisy=$(cd "$tmp" && bean_delta refs/heads/does-not-exist)
   [ -z "$noisy" ] && echo "  unknown base is silent   -> YES" || { echo "  unknown base is silent   -> NO"; ok=0; }
+  # --- the MATCHER, which bean_delta tests do not touch ---------------------
+  # Each row: expected base ("-" = must not fire) then the command string.
+  echo
+  echo "  matcher (expected | got):"
+  while IFS='|' read -r want cmd; do
+    [ -n "$want" ] || continue
+    got=$(base_ref "$cmd"); got=${got:--}
+    if [ "$got" = "$want" ]; then mark="  ok"; else mark="FAIL"; ok=0; fi
+    printf "    %s  %-12s %-12s %s\n" "$mark" "$want" "$got" "$(echo "$cmd" | cut -c1-58)"
+  done <<'ROWS'
+origin/main|git checkout -B claude/foo origin/main
+origin/main|git checkout -b claude/foo origin/main
+origin/main|git switch -C claude/foo origin/main
+origin/main|git fetch -q origin main && git checkout -b claude/foo origin/main
+-|git checkout -b claude/foo
+-|git commit -m 'docs: explains git checkout -b claude/foo origin/main and why'
+-|grep -rn "git checkout -b claude/x origin/main" docs/
+-|echo "run git switch -c claude/y origin/main first"
+-|git commit -m x
+ROWS
+
   echo
   [ "$ok" = 1 ] && { echo "  PASS"; exit 0; }
   echo "  FAIL — do not trust this guard."; exit 1
 fi
 
-# --- hook path ---------------------------------------------------------------
+# --- hook path ----------------------------------------------------------------
 CMD="${*:-}"
 
-# Only speak for a branch CREATION that names an explicit base.
+# Cheap pre-filter before any git work.
 case "$CMD" in
-  *"checkout -b "*|*"checkout -B "*|*"switch -c "*|*"switch -C "*) ;;
+  *"checkout -b"*|*"checkout -B"*|*"switch -c"*|*"switch -C"*) ;;
   *) exit 0 ;;
 esac
 
@@ -117,12 +158,12 @@ ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$ROOT" || exit 0
 [ -d .beans ] || exit 0
 
-# Extract the base ref: the token AFTER the new branch name. No base ⇒ branches
-# from HEAD ⇒ nothing can be lost.
-BASE=$(printf '%s\n' "$CMD" \
-  | grep -oE '(checkout -[bB]|switch -[cC])[[:space:]]+[^[:space:]]+[[:space:]]+[^[:space:]]+' \
-  | head -1 | awk '{print $NF}')
+BASE=$(base_ref "$CMD")
 [ -n "$BASE" ] || exit 0
+
+# A ref that does not resolve is not a base we can reason about (a placeholder
+# like `origin/<default>` in prose, or a trailing quote from a mention).
+git rev-parse --verify --quiet "$BASE" >/dev/null 2>&1 || exit 0
 
 bean_delta "$BASE"
 exit 0
