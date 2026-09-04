@@ -266,3 +266,28 @@ TRAPs.
   duck-typed `Fraction` seminormal pipeline over power series; three traps
   (valuation, constant allocation, `reject_float64_q` vs short decimals) —
   see `exact-series-route.md`.
+- 2026-09-04 (qou-btqh): drained the braid-encoding-audit float64 ECHO CHAIN,
+  6→0 (option-b 8→0 too, both baseline entries REMOVED). Three lessons worth
+  keeping. (1) **Fixing the source clears pass-through echoes automatically,
+  but audit-COMPUTED fields do not** — `braid_encoding_audit` reads upstream
+  tr_M and also *computes* two relative-error assertions from them; once the
+  upstream became strings those assertions must parse to mpf, compute in exact
+  arithmetic and fmt the `computed` (add_assertion takes str; `passed` coerces
+  with float()). The bean said "6 echoes can't be fixed in the audit" — true
+  for the 4 pass-throughs, false for the 2 computed assertions + 1 literal.
+  (2) **`option_b` fed the float64 alias `q_parameter.Q` to a lambdified
+  trace, then `float()`-cast** — DOUBLE float64-poisoning; fix is
+  `set_compute_dps()` + `mpf(Q_50_DIGIT_STR)` fed in, mpf out, fmt. Confirmed
+  clean in import-time-dps because `set_compute_dps()` sits at module scope
+  ABOVE the `Q0_MPF` constant (the pattern that gate demands). (3) **A content
+  block `\approx 1.88432` (6 sig figs) → carry the VERBATIM string "1.88432",
+  never fmt-pad to 60** (draining-raw-float64 READ row, confirmed against a
+  real `\approx` quote). The hand-maintained `markov-trace-assembly-proton.derivation.json`
+  target_value was carried verbatim from its exact-source witness
+  (`atomic-tr-m-mpfr-50dps-proton`), `float(new_str)==old_f64`. Also: also
+  corrected a stale option_b assertion comparing the D value against the
+  retired C reference 1.63315 (failed by 0.25) → 1.88432, now passes. Family
+  reds are the documented inherited-main set; the 2 NEW raw-float64 files
+  (probe-toroidal-legendre-weinberg-gate, c2-diagonal-insertion) and the 1 NEW
+  import-time-dps (probe_toroidal_reeb_deformation.py) are all unmodified
+  pre-existing backlog, not mine.
