@@ -105,8 +105,22 @@ theorem explicit_central_idempotent_via_murphy
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
     `conj:bring-figure-eight-depth-2-witness`. The `e_{(2,2)}`
     formula is concrete and finite (sum over 2 SYTs × product
-    over 4 boxes × Lagrange factor). -/
-example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdempotent [2, 2] q :=
+    over 4 boxes × Lagrange factor).
+
+    **Conditional, exactly as its parent is** (AGENTS.md §3b-cond
+    item 2). This was previously an `example` with no binders, which
+    stated the `(2,2)` idempotency *unconditionally* while proving it
+    from `explicit_central_idempotent_via_murphy` — a conditional
+    theorem. Lean refused it (`failed to synthesize
+    ExplicitCentralIdempotentConjecture q`), which is the elaborator
+    catching precisely the smuggling this repo's §3b-cond rules
+    forbid: a specialisation does not discharge the hypothesis its
+    general form carries. Naming it also makes it citable, which an
+    anonymous `example` was not. -/
+theorem explicit_central_idempotent_two_two
+    [ExplicitCentralIdempotentConjecture q] :
+    centralIdempotent [2, 2] q * centralIdempotent [2, 2] q
+      = centralIdempotent [2, 2] q :=
   -- Ref: [manuscript] §prop:explicit-central-idempotent — concrete (2,2)
   -- instance of `explicit_central_idempotent_via_murphy`; the e_{(2,2)}
   -- idempotency is the finite Lagrange computation witnessed in
