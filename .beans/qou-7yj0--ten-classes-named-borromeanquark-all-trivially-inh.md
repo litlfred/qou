@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T12:32:32Z
-updated_at: 2026-09-04T12:33:02Z
+updated_at: 2026-09-04T12:43:30Z
 ---
 
 Measured 2026-09-04, compiler-verified.  Full write-up:
@@ -46,3 +46,44 @@ the field types, run `lean`-direct.
 **Do not quote the 874/1450 shape scan as the finding.**  It counts carriers
 whose Prop fields mention their own data, which is what an ordinary algebraic
 structure looks like; the large majority are correct.
+
+
+## Round two (same day) — the other nine carriers, measured
+
+Evidence `docs/audits/2026-09-04-conjecture-carriers-round-two.lean`,
+`lean`-direct exit 0.  Not "all vacuous"; the split is the finding.
+
+**Five are WELL-FORMED** — subject is a parameter or entirely external:
+`HypMinimizerUnique`, `CarlemanDeterminacyStieltjes`, `IsOcneanuWeightSystem`,
+`CoGroundStateSelection`, `TrefoilElectronMassConj`.  The last one's own
+docstring records that this exact defect was already found and fixed there
+(strand/crossing counts "were previously free fields of the conjecture class
+beside equations naming their values").  So the proposed fix is the repo's own
+better practice, not a new idea.
+
+**Four more are SELF-SATISFYING**, each verified by instance:
+`CrystalGraphRealization (R) (q)` (`raising := fun _ _ => none`; two identical
+copies), `CrystalGraphRealization : Prop` (**no axioms at all**),
+`CanonicalMarkovWeightsH3` (two copies), `QIntegerMassFormula : Prop` in
+wigner-coefficient-derivation.
+
+**One is the OPPOSITE defect and is proved so.**  `QIntegerMassFormula` at
+mass-theory/q-integer-mass-formula.lean:150 is UNINHABITABLE
+(`¬ Nonempty QIntegerMassFormula`), so its conditional theorems are vacuously
+true.  Quantifier scope, not physics: `fits_AME` ranges over EVERY real
+`B_AME`, while `{(1+δ)X : |δ| ≤ t}` is a bounded interval around one fixed `X`.
+The sibling at lean/QOU/Interactions/QIntegerMassFormula.lean:178 carries the
+missing `[IsAMEValue Z N B_AME]` binder — a one-binder fix, correct form
+already in the tree.
+
+**Name collisions** (the `markovZ` defect one level up): 10 `BorromeanQuark`,
+4 `CrystalGraphRealization`, 3 `QIntegerMassFormula`, 2
+`CanonicalMarkovWeightsH3`.  The three `QIntegerMassFormula` are respectively
+vacuous, uninhabitable and correct.
+
+**Left unmeasured on purpose:** `CrystalGraphRealization (n) (q)` in
+confinement-grading-correspondence-conditional.lean — `klr_lift` is a field but
+the constraint relates two EXTERNAL functions through it, so it is neither
+clearly free nor clearly constraining.  Not guessed at.
+
+**Still not done:** applying the fixes.  Measurement only so far.
