@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T02:41:50Z
+updated_at: 2026-09-04T06:22:46Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -69,3 +69,6 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (DERIVED, not just applicable): reduced-Burau closed form for the POSITIVE majorant on the hook column. X*X = -c²Σ_{a,b}[σ_a,σ_(a+1)]·(ρ*ρ)·[σ_b,σ_(b+1)] expands into 4(ngen-1)² words ALL of length T=2L+4, so #6464's twist q^{len(1-j)} is COMMON and factors out: tr_hook(X*X) = -c²q^{T(1-j)}Σ_{a,b}Σ_± ± e_j(eig in reduced Burau). Verified every hook at A=2 AND A=3, worst 2.1e-138, positive throughout. Uses only (n-1)×(n-1) matrices (5x5, 8x8) vs dim_λ² up to 70/216. FIRST derived closed form for the BOUND rather than the quantity. Not done: two-row column (would go via #6525 sectors, same argument, not run); and a closed form is not yet a bound — no monotonicity in j derived from it.
+
+
+- 2026-09-04 (hook column CHAIN CLOSED): Σ|eig(M_hook)|/dim ≤ √(B''_j/dim) with B''_j = c²q^{T(1-j)}Σ_{a,b}Σ_± e_j(|μ|), T=2L+4, and B''_j/dim STRICTLY DECREASING in j=b(λ) at A=2 and A=3. Every step derived: (B) Cauchy-Schwarz+Schur (#6573); the closed form via the common twist (#6556); B''_j via |e_j(μ)| ≤ e_j(|μ|), Lean-proved in MagnusHookDecayBound. Tightness 0.06–0.24 (bound 4–16x loose but valid+monotone). STILL INPUT not theorem: the Burau moduli themselves are measured. TWO ERRORS OF MINE CAUGHT BY THE PROBE: (a) tightness column mixed total Σ|eig| with the PER-DIM bound — a units error printing ratios >1 that read as a bound violation; fixed. (b) I asserted the CRUDE bound could not decay — it DOES decay per-dim at both A (the binomial divides back out since dim=C(n-1,j) for a hook); crude vs sharp differ in TIGHTNESS (3x to ~2000x), not monotonicity. #6520's precedent is about RAW monotonicity, a different quantity — do not carry it across.
