@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Star.Basic
 import Mathlib.RingTheory.Idempotents
+import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
 # Central primitive idempotents `e_λ` — carrier and open conjecture
@@ -75,18 +76,46 @@ noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
 
 /-- **CONJECTURE (OPEN)** — `conj:explicit-central-idempotent`.
 
-    The four Murphy–Lagrange cross-checks (sum-to-identity,
-    orthogonality, self-adjointness, bar-pairing) follow from Lagrange
-    interpolation in the commuting Jucys–Murphy elements
-    `J_1, …, J_n`.
+    The Murphy–Lagrange element `e_λ` decomposes as a sum, over the standard
+    Young tableaux of shape `λ`, of **pairwise-orthogonal idempotents** — the
+    per-tableau Lagrange projectors
 
-    The field states the one of the four that downstream Lean actually
-    consumes — idempotency of `e_λ` at every partition of every `n`.
-    It is quantified over `lam` and `n`, so it is a claim about the
-    whole Murphy–Lagrange construction and not about one partition. -/
-class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) : Prop where
-  /-- The explicit idempotency holds. -/
-  idempotent : ∀ {n : ℕ} (lam : List ℕ) (_h : lam.sum = n),
-    centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
+        π_T = ∏_k ∏_{□ ≠ T(k)} (J_k - c(□;q)) / (c(T(k);q) - c(□;q))
+
+    onto the joint `(c(T(1);q), …, c(T(n);q))`-eigenspace of the commuting
+    Jucys–Murphy elements.
+
+    **This is the interpolation-theoretic INPUT, not the conclusion.** Earlier
+    this class had a single field whose type was
+    `centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q`
+    — the downstream theorem's conclusion verbatim — and that theorem
+    discharged it by `exact hi.idempotent lam h`, a bare projection. AGENTS.md
+    §3b-cond **item 5** forbids exactly that: a class must axiomatise the
+    hypotheses and the theorem must *derive* its conclusion from them. Caught
+    2026-09-04 by the `--item5` mode of
+    `scripts/conditional-on-class-hypothesis-audit.ts`.
+
+    The three fields below are what Lagrange interpolation in commuting
+    variables actually supplies, and idempotency, orthogonality and
+    sum-to-identity are all consequences of them rather than restatements.
+    `explicit_central_idempotent_via_murphy` now composes them. -/
+class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) where
+  /-- The standard Young tableaux of shape `λ`, as an index type. -/
+  Tab : List ℕ → Type
+  /-- Finitely many of them, so the decomposition is a finite sum. -/
+  [fintypeTab : ∀ lam, Fintype (Tab lam)]
+  /-- The Lagrange projector attached to one tableau. -/
+  proj : ∀ lam, Tab lam → R
+  /-- Each projector is idempotent — Lagrange interpolation at a simple
+      joint eigenvalue. -/
+  proj_idem : ∀ lam (T : Tab lam), proj lam T * proj lam T = proj lam T
+  /-- Distinct tableaux carry distinct joint eigenvalue tuples, so their
+      projectors are orthogonal. -/
+  proj_orth : ∀ lam (T T' : Tab lam), T ≠ T' → proj lam T * proj lam T' = 0
+  /-- `e_λ` is the sum of the per-tableau projectors. -/
+  centralIdempotent_eq_sum : ∀ lam,
+    centralIdempotent lam q = ∑ T : Tab lam, proj lam T
+
+attribute [instance] ExplicitCentralIdempotentConjecture.fintypeTab
 
 end QOU.BraidKnot.ExplicitCentralIdempotent
