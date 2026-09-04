@@ -53,7 +53,11 @@ structure AtomicBraid where
     measured mass; this is what keeps the recovery claim below refutation-
     free rather than trivially false). -/
 -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form (CODATA masses)
-axiom physMass : AtomicBraid → ℝ
+-- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a claim.
+-- `axiom f : T` and `opaque f : T := <witness>` are equally opaque, but only the
+-- first is a global axiom contaminating `#print axioms` downstream.  No
+-- proposition becomes provable either way.
+opaque physMass : AtomicBraid → ℝ := fun _ => 0
 
 /-- Pairwise sum `Σ_{i<j} f (vᵢ) (vⱼ)` of a binary functional over a list of
     per-generator volumes. -/
