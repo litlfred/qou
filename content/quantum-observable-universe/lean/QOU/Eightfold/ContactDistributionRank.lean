@@ -216,4 +216,65 @@ theorem degree_three_but_rank_one {n : ℕ} (h : contactDim n = 3) :
     volumeFormDegree n = 3 ∧ distributionComplexRank n ≠ 3 :=
   ⟨by rw [volumeFormDegree_eq_contactDim]; exact h, dim_three_not_complex_rank_three h⟩
 
+section ThreeSasakian
+
+/-! ## The 3-Sasakian rung, and a second pair of "different threes"
+
+The corpus carries a **Bring-cone 3-Sasakian structure**, which it itself calls
+*"degenerate quaternionic-contact"*
+([`bring-cone-reeb-quaternionic-twist.md:4`](../../../brings-surface/bring-cone-reeb-quaternionic-twist.md)) —
+`4n + 3` at `n = 0`.  Since `dim M = 7` is `4n + 3` at `n = 1`, it is worth
+saying exactly how far that is from what the eightfold needs, and exactly which
+distribution the question is about.  Both are one line of arithmetic, and the
+second is a trap of the same shape as `degree_three_but_rank_one`.
+-/
+
+/-- The dimension of a 3-Sasakian manifold: `4n + 3`. -/
+def threeSasakianDim (n : ℕ) : ℕ := 4 * n + 3
+
+/-- **A 3-Sasakian manifold is contact, with Sasakian parameter `2n + 1`.**
+Each of its three Sasakian structures has a contact form whose distribution has
+complex rank `2n + 1`. -/
+theorem threeSasakianDim_eq_contactDim (n : ℕ) :
+    threeSasakianDim n = contactDim (2 * n + 1) := by
+  simp only [threeSasakianDim, contactDim]; omega
+
+/-- So the **Sasakian** complex rank of a 3-Sasakian manifold is `2n + 1`, and it
+is `3` exactly at `n = 1`, i.e. exactly in dimension 7. -/
+theorem threeSasakian_complexRank_three_iff {n : ℕ} :
+    distributionComplexRank (2 * n + 1) = 3 ↔ threeSasakianDim n = 7 := by
+  simp only [distributionComplexRank, threeSasakianDim]
+  omega
+
+/-- **The corpus's own case is `n = 0`, hence dimension 3, hence complex rank 1.**
+The gap between what it has and what the eightfold needs is exactly one step in
+`n`. -/
+theorem bring_cone_degenerate_case :
+    threeSasakianDim 0 = 3 ∧ distributionComplexRank (2 * 0 + 1) = 1 := by
+  refine ⟨rfl, rfl⟩
+
+/-- The **quaternionic-contact** distribution of a 3-Sasakian manifold — the
+common kernel of all three contact forms — has real rank `4n`. -/
+def quaternionicContactRealRank (n : ℕ) : ℕ := 4 * n
+
+/-- …hence complex rank `2n`. -/
+def quaternionicContactComplexRank (n : ℕ) : ℕ := 2 * n
+
+/-- **The second pair of different threes.**  In dimension 7 the *Sasakian*
+distribution has complex rank `3` — what the eightfold needs — while the
+*quaternionic-contact* distribution has complex rank `2`.  They are distributions
+of different rank on the same manifold, and only one of them answers the
+question. -/
+theorem dim_seven_two_distributions :
+    distributionComplexRank (2 * 1 + 1) = 3 ∧ quaternionicContactComplexRank 1 = 2 := by
+  refine ⟨rfl, rfl⟩
+
+/-- The quaternionic-contact distribution never has complex rank 3, at any `n` —
+its complex rank is even. -/
+theorem quaternionicContact_never_rank_three (n : ℕ) :
+    quaternionicContactComplexRank n ≠ 3 := by
+  simp only [quaternionicContactComplexRank]; omega
+
+end ThreeSasakian
+
 end QOU.Eightfold.ContactDistributionRank
