@@ -860,7 +860,13 @@ The ptolemy DB stays firewalled, so six is the offline maximum. Two independent
 routes now give the same six numbers (orbit degrees in entry (8), polynomial
 degree here), so neither is a parsing artifact.
 
-── 2026-09-04 (10): the ARROW count is FORCED — 0 or 1, by Gabriel, not by a fit ──
+── 2026-09-04 (10): 🛑 SUPERSEDED BY (11) — "the arrow count is FORCED" answered the wrong question ──
+
+> **Read entry (11) first.** The Gabriel lever below is sound; the `(rank,
+> spectrum)` pairs it was fed were not. Kept unedited as the record of the
+> error.
+
+── 2026-09-04 (10, as written): the ARROW count is FORCED — 0 or 1, by Gabriel, not by a fit ──
 
 `computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py`, **8/8**.
 Entry (8) closed the node question; entries (8)–(9) left the arrows open and I
@@ -924,3 +930,62 @@ rank (so `edges = rank − components` applies); the enumeration is verified
 complete at each rank.
 
 Scope-(a). Nothing wired, nothing fitted, `A_ω` underived.
+
+── 2026-09-04 (11): 🛑 CORRECTING entry (10) — the arrow count is NOT forced ──
+
+Same probe, corrected in place before merge (`8/8`). Entry (10) concluded *"the
+arrow count is FORCED to 0 or 1"*. **It answered a question the corpus did not
+ask.**
+
+### What was wrong
+
+Entry (10) read the target `(4,3)` as **two knots' total spectra** — 4₁ with 3,
+5₂ with 4 — and set `rank = C_irr` per knot from the merged Galois-orbit result.
+**This bean says otherwise, in as many words, at line 36:**
+
+> Target object (post-pruning): **(Q, W, ray+, ray−)** — quiver with potential
+> plus **TWO stability rays, ray-wise DT counts (4,3)**, bar split (7,1).
+
+So `(4,3)` are **ray-wise counts of ONE quiver** — its bar-conjugate ray pair.
+The numerical coincidence that `C(4₁) = 3` and `C(5₂) = 4` is what made the
+misreading available, and I took it.
+
+### Two things break, and the second is the substantive one
+
+1. A stable object has a **definite slope**, so the two rays' stable sets are
+   **disjoint** and the total is `≥ 4 + 3 = 7`, not 3 or 4.
+2. **`rank` is no longer the per-knot node count at all.** The target is ONE
+   quiver spanning the pair, so the merged `C_irr = [trace field : ℚ]` result —
+   which is **per knot** — **does not pin its `V`**. The chain *"rank = node
+   count"* was broken from the start under this reading. That is the real
+   error; the arithmetic was fine.
+
+### The corrected result — a constraint table, not a resolution
+
+`V ≥ 4` (a ray carrying 4 needs it, from the merged per-ray ceiling) and
+total `≥ 7`. If the spectrum is exactly the two rays:
+
+| rank | type | arrows |
+|---|---|---|
+| 4 | `A₁+A₃` | **2** |
+| 5 | `A₁+A₂+A₂` | **2** |
+| 6 | `A₁⁴+A₂` | **1** |
+| 7 | `A₁×7` | **0** |
+
+**The arrow count is `{0,1,2}` depending on `V`, and nothing in the corpus pins
+`V`.** So the arrow question is **still open** — better constrained than before,
+but not resolved.
+
+### How the error happened
+
+Entry (10) listed **(A5)** *"the recorded DT count is the indecomposable
+count"* as an assumption **and named it the first thing to check before building
+on the result.** It was wrong, and checking it took **one grep of this bean**.
+
+**Flagging a weak assumption is not the same as testing it.** The flag made the
+overclaim feel safe to publish; it did not make it true. Where a probe's own
+author can name the assumption most likely to be wrong, that is the assumption
+to spend ten minutes on before writing the headline, not after.
+
+Scope-(a). Gabriel lever unchanged and sound; exact integers; nothing wired; no
+fit; `A_ω` underived.

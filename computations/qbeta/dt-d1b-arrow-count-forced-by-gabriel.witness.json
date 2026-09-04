@@ -1,8 +1,8 @@
 {
   "engine": "exact-integer-ade-enumeration",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:29:50.078727+00:00",
-  "commitSha": "507c849b630cb4ec5867b0330e6fbfc10c461ff7",
+  "computedAt": "2026-09-04T02:42:47.626908+00:00",
+  "commitSha": "fd914dfdecbc22f95c6398130869e791744d3c84",
   "assertions": [
     {
       "name": "C1_positive_root_COUNTS_match_the_known_values",
@@ -37,44 +37,44 @@
       "source": "all four (rank, spectrum) pairs are hit by exactly one ADE type. The arrow count is not chosen — it is read off"
     },
     {
-      "name": "if_the_abelian_connection_IS_a_node_there_are_ZERO_arrows",
+      "name": "the_TWO_KNOT_reading_is_unique_but_answers_the_WRONG_QUESTION",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "4_1 -> A1+A1+A1 and 5_2 -> A1+A1+A1+A1, arrows {'4_1': 0, '5_2': 0}. This is exactly the potential-free ABELIANIZED quiver the corpus's M2 result said already realizes the target — reached here from Gabriel rather than from the plethystic log, which is an independent route to the same object"
+      "source": "abelian-is-a-node -> {'4_1': 0, '5_2': 0}, abelian-is-not -> {'4_1': 1, '5_2': 1}: both unique. Kept because the calculation is correct, LABELLED because the corpus's target is not two knots' totals"
     },
     {
-      "name": "if_it_is_NOT_a_node_there_is_EXACTLY_ONE_arrow",
+      "name": "CORRECTED_the_arrow_count_is_NOT_FORCED",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "4_1 -> A2 and 5_2 -> A1+A2, arrows {'4_1': 1, '5_2': 1}. Both knots land on one arrow, so the two readings are each internally consistent across the two knots rather than one working and one not"
+      "source": "with total = 7 the arrow count is [0, 1, 2] across ranks 4-7: rank 4 = A1+A3 (2 arrows); rank 5 = A1+A2+A2 (2 arrows); rank 6 = A1+A1+A1+A1+A2 (1 arrows); rank 7 = A1+A1+A1+A1+A1+A1+A1 (0 arrows). V must be pinned first, and nothing in the corpus pins it"
     },
     {
-      "name": "SO_THE_ARROW_QUESTION_IS_ANSWERED_conditionally",
+      "name": "and_the_MERGED_node_result_does_NOT_pin_V",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "the arrow count is FORCED to 0 or 1 by (rank, spectrum) alone, and which of the two depends only on whether the abelian connection is a node. That is a much smaller open question than 'what are the arrows', and it is a question about a CONVENTION the corpus already has an opinion about, not about new mathematics"
+      "source": "C_irr = [trace field : Q] is a PER-KNOT count; the target is ONE quiver spanning the bar-conjugate ray pair, so its V is a different quantity. The chain 'rank = node count' was broken from the start under the corpus's reading — that is the substantive half of the error, not the arithmetic"
     },
     {
-      "name": "WHAT_WOULD_BREAK_THIS",
+      "name": "HOW_THE_ERROR_HAPPENED_and_it_was_flagged_by_its_own_author",
       "computed": "PASS",
       "expected": "PASS",
       "passed": true,
       "tolerance": "exact",
-      "source": "(A3) finiteness is load-bearing: an infinite BPS spectrum means non-Dynkin and nothing is forced. (A2) acyclicity is assumed. (A5) the recorded DT count must be the indecomposable count rather than a per-ray count — if the corpus's (4,3) are counts at two rays of ONE quiver, the total is >= 7 and rank 4 A1+A3 (7 roots, 2 arrows) becomes the candidate instead. That reading is NOT tested here"
+      "source": "the first version listed (A5) 'the recorded DT count is the indecomposable count' as an assumption AND named it the first thing to check before building on the result. It was wrong, and checking it took one grep of the bean. Flagging a weak assumption is not the same as testing it"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "dt-d1b-arrow-count-forced-by-gabriel",
   "scriptFile": "dt_d1b_arrow_count_forced_by_gabriel_probe.py",
-  "scriptHash": "9579dc0dea6d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bdaac83be147",
+  "scriptCommitSha": "fd914dfdecbc22f95c6398130869e791744d3c84",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +97,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/dt_d1b_arrow_count_forced_by_gabriel_probe.py"
   },
-  "description": "qou-q9ih D1-b, the arrow question. Answered by a counting argument rather than by searching quivers against the target (the fit D1-a showed cuts nothing). For an acyclic quiver with W=0, Gabriel's theorem says finite representation type <=> simply-laced Dynkin, and then #indecomposables = #positive roots. Every ADE diagram is a TREE, so a rank-V union with k components has exactly V-k edges: the arrow count is determined by the Dynkin type, and the type by (rank, #positive roots). The rank is the node count, which the companion probe made arithmetic; the corpus supplies the spectrum size. Exhaustive ADE enumeration at ranks 2-5, exact integer arithmetic. Both node readings are carried, since the corpus does not settle whether the abelian connection is a node. CONDITIONAL on a stated chain: W=0 (the corpus's M2 finding), acyclicity, FINITE spectrum (the load-bearing one), simply-lacedness, and that the recorded DT count is the indecomposable count. If the spectrum is infinite, Gabriel does not bite and nothing here is forced. Scope-(a); nothing wired; no fit.",
+  "description": "qou-q9ih D1-b, the arrow question -- and this probe CORRECTS ITS OWN FIRST VERSION, which concluded 'the arrow count is FORCED to 0 or 1'. That answered the wrong question. The Gabriel lever is sound and is kept: for an acyclic quiver with W=0, finite type <=> simply-laced Dynkin, #indecomposables = #positive roots, and every ADE diagram is a TREE so a rank-V union with k components has V-k edges. What was wrong is which (rank, spectrum) pairs it was fed. The first version read the target (4,3) as TWO KNOTS' total spectra with rank = the per-knot C_irr. The bean says otherwise in as many words: 'Target object: (Q, W, ray+, ray-) -- quiver with potential plus TWO stability rays, ray-wise DT counts (4,3)'. So (4,3) are ray-wise counts of ONE quiver, and the coincidence C(4_1)=3, C(5_2)=4 is what made the misreading available. Two things break: stable objects have a definite slope so the ray sets are DISJOINT and the total is >= 7; and rank is no longer the per-knot node count at all, so the merged C_irr result does not pin V. Corrected result: V >= 4 and total >= 7, and if the spectrum is exactly the two rays then arrows = 2 at ranks 4-5, 1 at rank 6, 0 at rank 7. THE ARROW COUNT IS NOT FORCED -- V must be pinned first and nothing in the corpus pins it. A constraint table, not a resolution. The two-knot reading is still computed and still unique, labelled as the answer to a question the corpus did not ask. Exact integers; no floats. Scope-(a); nothing wired; no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "ade_table": {
