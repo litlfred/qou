@@ -34,21 +34,53 @@ The intuitive reading of the ruling — take the same fibre and go to higher `n`
 is blocked by results already in the corpus, and understanding why redirects the
 whole option space.
 
-- **Wenzl levels are alternatives, not stages.** One fibre occupies one level
-  (`su5-hypercharge-n3-gate`). Higher `n` does not stack representations onto
-  the ones you had.
-- **`dim V = 2` is invariant along the single-fibre tower.** The obstruction to a
-  three-dimensional flavour object does not dissolve at large `n`.
-- **The vanishing lemma says exactly which blocks exist:**
-  `s_λ = 0 ⟺ ℓ(λ) > r` (`QOU.QBeta.WenzlWeight.schurPrincipal_eq_zero_iff`,
-  sorry-free). For a rank-2 fibre, every partition with more than two rows has
-  **zero** multiplicity.
+- **Wenzl levels are alternatives, not stages.** The block
+  `rem:su5-hypercharge-n3-gate` *argues* this — it is a `remark` with no `.lean`
+  sibling, so it proves nothing itself. Its argument has two inputs: the
+  sorry-free `ocneanu_param_eq_of_fibre_qdim` (a fibre of quantum dimension
+  `[N]_q` forces `z·[N]_q = q^N`, generic `[CommRing R] [IsDomain R]`, general
+  `N`), plus the observation that production carries a single `z`. One fibre
+  occupies one level; the framework does not pass *through* `r = 3` on its way
+  to `r = 5`.
+- **`dim V = 2` is an INPUT, not a theorem, and the row cap it induces is the
+  obstruction.** It is re-sourced to axiom 5 under the *iso* reading, by
+  `exteriorSquareDim_eq_one_iff` (`VolumeConstraintForcesFibreTwo.lean`,
+  sorry-free) — and that file records that the *weak* reading forces only
+  `N ≥ 2`, exhibiting `N = 3` surviving it. The obstruction itself is
+  `weyl_dim_alt_eq_zero_iff` (`RowCapObstruction.lean`, sorry-free). Higher `n`
+  does not relax it.
+- **The >2-row blocks carry zero WEIGHT, and the restriction is an identity.**
+  `TwoRowCapDerived.lean` (sorry-free) proves `traceSum_eq_twoRow_of_wenzl` —
+  restricting `Σ_μ y_μ χ_μ` to `ℓ(μ) ≤ 2` is an identity for **arbitrary** `χ`,
+  at every `n` — together with `bindingSum_eq_twoRow_of_wenzl` (arbitrary `Δ`,
+  every `A`), `threeRowPart_eq_zero_of_wenzl` (the residual share is `0`, not
+  "small") and `twoRow_share_eq_one_of_wenzl`. Non-vacuity is proved too
+  (`exists_three_row_diagram`, `two_one_survives_filter`), so the filter is
+  neither empty nor everything.
 
-That last point has a consequence worth stating plainly, because it disposes of
-one natural reading of the ruling: **"carry the complete Frobenius pairing over
-all partitions" is, for a rank-2 fibre, already satisfied.** The partitions not
-being summed carry zero weight. Summing over them adds nothing. Whatever force
-the ruling has, it is not there.
+That last point disposes of one natural reading of the ruling: **"carry the
+complete Frobenius pairing over all partitions" is, for a rank-2 fibre, already
+satisfied — as a proved identity, at every `n`, for arbitrary summands.** The
+partitions not being summed carry zero weight. Summing over them adds nothing.
+Whatever force the ruling has, it is not there.
+
+**One conditionality, carried deliberately.** The bridge from that hook-content
+formula to the *actual* Markov weight is Wenzl 1988 (Invent. Math. 92, 349–383),
+held in the corpus as `class IsOcneanuWeightSystem` with **zero instances**.
+That is a citation, not a gap — but `TwoRowCapDerived`'s own header warns that an
+axiom-clean `#print axioms` does **not** certify the identification, and the
+paper it cites is **not ingested in `library/`**, so it cannot be checked from
+the corpus. One independent corroboration exists inside the corpus:
+`moment_and_schur_routes_agree_of_wenzl` reaches the same three-row zero at
+`n = 3` via the Markov moment equations without Wenzl.
+
+A note on what NOT to cite here. An earlier draft of this paper routed the
+argument through `schurPrincipal_eq_zero_iff` and called it a statement about
+**multiplicity**. It is not — it is `s_λ(1, Q, …, Q^{r−1}) = 0 ⟺ r < ℓ(λ)`, a
+statement about the *weight*. The object-level general-`n` split is **not
+formalised anywhere**: `RowCapObstruction`'s header says it is proved at `n = 3`
+only, the general identity being Worpitzky's. The weight route above is both
+correct and stronger.
 
 **The picture that survives is different and more interesting: you do not climb
 the tower, you choose a different fibre.** `qou-lxh5` sets this out as a proved
@@ -128,22 +160,43 @@ the best ratio on the table.
 ### Option C — Attack 4-A: a second fundamental object, or relax axiom 5
 
 **What it means.** PR #6458 established that a fibre functor changes dimensions,
-not fusion rules, so re-fibring cannot supply the missing flavour object. The
-eightfold needs a category with `Λ³W ≠ 0`, and axiom 5 (`Λ²V ≅ 𝟙`) forbids it for
-the fundamental. Either add a second fundamental object that is not a summand of
-`V^{⊗n}`, or relax axiom 5.
+not fusion rules (Bichon 2003), so re-fibring cannot supply the missing flavour
+object — the invariant is Clebsch–Gordan parity of `Rep(SL_q(2))`, preserved by
+every monoidal functor, and the carriers are sorry-free
+(`FibreFunctorDimensionNotCategorical.lean`, 12 declarations). The eightfold
+needs a category with `Λ³W ≠ 0`. The disjunction is stated verbatim in that
+audit: *either a different fundamental object* (not a summand of `V^{⊗n}`) *or a
+category not generated by one object satisfying axiom 5*. Bean `qou-dwsh`
+(completed 2026-08-03) reached the same specification independently, by a
+different route.
 
-**What it costs.** The largest item here by an order of magnitude. It is a change
-to the framework's definition, with a blast radius across every result that
-depends on axiom 5.
+**What it costs — and this is the part an earlier draft of this paper got
+wrong.** Axiom 5 as *written* in `def:quantum-observable-universe` says
+**"non-degenerate epimorphism"**, not "iso". Only the **iso** reading forces
+`N = 2`; the epi reading admits `N = 3`, and `weak_volume_reading_admits_three`
+(sorry-free) exhibits it. So "relax axiom 5" may not be an axiom change at all —
+it may be a **reading selection between two documented alternatives** on an
+ambiguous phrase. `VolumeConstraintForcesFibreTwo.lean` calls the choice *"an
+editorial question this file cannot settle"*.
 
-**What it risks.** Everything downstream of axiom 5 needs re-verification. A
-relaxed axiom may admit objects that break results currently proved.
+**What it risks — split the blast radius, because the two halves differ by
+everything.** On the **formal** side it is currently **zero**: the formalised
+axiom-5 condition is two free fields that `volumeForm := 0` inhabits, so, in that
+file's own words, *"the formalised condition (v) constrains nothing whatever."*
+Nothing depends on it because there is nothing to depend on. On the **prose**
+side the radius is real and **unmeasured** — every argument in the paper that
+leans on the iso reading would need re-reading.
 
 **What it commits to.** Unblocks rows 12–14 (nine of the twenty-six parameters,
-counting CKM and PMNS entries) and is the only route that does. **This is an
-owner-level question about the definition of the framework, not an agent
-decision.**
+counting CKM and PMNS entries) and is the only route that does.
+
+**Still an owner decision — but for a different reason than the earlier draft
+gave.** That draft said an agent must not start C *because it changes an axiom*.
+If it is a reading selection, that reasoning does not hold. What survives is
+better: it is an **editorial question about the author's intent** in a definition
+the author wrote, and the formal side gives no evidence either way because it
+constrains nothing. That is squarely yours, and it may be considerably cheaper
+than the earlier pricing implied.
 
 ### Option D — Systematic Habiro re-posing
 
@@ -154,6 +207,15 @@ already says the first question is known to fail and the second is the right one
 
 **What it costs.** Moderate and spread thin — a re-framing of fourteen bean
 bodies plus the probes that follow from them.
+
+**Better motivated than an earlier draft argued.** That draft called the Habiro
+route "one of the two non-order-zero attacks", which both overstates and
+understates it. It is not an attack, it is a **vocabulary** — and the corpus
+already reaches for it independently in **three** rows: inside α_EM
+(`[2]_q(1 − h²α)` is fibre-level, `qou-rgiz`), as the named tower-form of the
+neutrino masses (the Habiro tail of the unknot, `qou-qydm`) and of θ_QCD (the
+bar involution is fibre-level, `tqcp`). Three separate terms reaching for the
+same vocabulary unprompted is the argument for applying it uniformly.
 
 **What it risks.** It addresses "all orders in q" and **not** "all n". Presenting
 it as satisfying the ruling would overstate it.
@@ -193,14 +255,82 @@ finding:
    is independent of A, so it can run in parallel.
 4. **D is cheap but should not be sold as satisfying the ruling.** It closes the
    "all orders in q" half only. Worth doing as hygiene, not as an answer.
-5. **C should not be started by an agent.** It changes an axiom.
+5. **C should not be started by an agent — but not for the reason I first
+   gave.** I wrote "it changes an axiom". Measured, it may not: axiom 5 says
+   *non-degenerate epimorphism*, and only the iso reading forces `N = 2`, so C
+   may be a **reading selection** whose formal blast radius is currently zero
+   (the formalised condition is inhabited by `volumeForm := 0` and constrains
+   nothing). What survives is a better reason and a cheaper option: it is an
+   **editorial question about your own intent** in a definition you wrote, on
+   which the formalisation offers no evidence either way. That is yours to
+   settle, and settling it may be much less work than the first pricing
+   suggested.
 
 **What would change this recommendation.** If `qou-lxh5` turns out to require the
 flavour object it is meant to probe — i.e. if the r = 3 fibre cannot be
 constructed without assuming what C would supply — then A collapses into C and
 the ordering above is wrong. I have not established that it does not.
 
-## 6. What this paper does not claim
+## 6. A prior full-tower attempt exists — cite it, do not re-derive it
+
+**`qou-tower`** (PR #6333, in-progress, ~630 lines) is the only place the corpus
+has actually **carried the tower intact and measured**. It is the nuclear /
+magic-number arc, not the SM, so it does not close any of the fourteen — but four
+of its findings bear directly on the options above.
+
+1. **It ran the full `H_{3A}` tower walk exhaustively at A = 2, 3, 4** — a real
+   `d_λ × d_λ` matrix per `λ ⊢ 3A`, **no per-step Gröbner–Shirshov reduction**,
+   generators at true strand positions, every `Z ∈ 0..A`. Result: **no
+   separation** on top-block share, participation ratio, rank or argmax.
+2. **It ran the symbolic q-degree grading at A = 2..20**, exact over ℚ, reaching
+   Z = 2, 8, 20. Result: `interleaved` at every level, every observable.
+3. **It retracted its own headline on owner correction.** *"The `H_{3A}`
+   structure is destroyed as it is built"* is **wrong**: the GS reduction
+   *digests* entanglement into coefficients, and the surviving q-degree grading
+   **is** the many-body decomposition. This is the corpus's own worked example of
+   mistaking a collapsed **evaluation** for a collapsed **object** — which is
+   precisely the error this paper is trying not to make about the tower.
+4. **It retracted a compute wall, and the retracted number is the one not to
+   repeat.** *"A = 4 is the end of the road; A = 5 needs 686 GB"* was `max_λ d_λ²`
+   — a property of the chosen representation, not of the problem. The symbolic
+   normal form is **6 coefficients for any nucleus at any A**; only the
+   polynomial degree grows. **Any full-tower option priced on compute should use
+   this, not the 686 GB.**
+
+It also logs **eight control failures**, mostly parity artifacts and
+input-presented-as-output. Option A's near-miss paragraph above is understated
+relative to that record.
+
+**Option E has already executed.** The annotation pass is `qou-bsu0`, done
+2026-09-03: fourteen beans, every one carrying a tower-status line. It is not a
+proposal on this table; it is the current state.
+
+## 7. Two claims this paper previously made that were wrong
+
+Recorded rather than silently fixed, because both were load-bearing and both
+came from inheriting a sentence rather than checking it.
+
+- **"`su5-hypercharge-n3-gate` *proves* levels are alternatives."** It is a
+  `remark` with no `.lean` sibling; it *argues* from one sorry-free lemma plus a
+  codebase observation. The block already carries a 2026-08-25 `authorNotes`
+  caveat recording that **its own first merged version over-claimed in exactly
+  this direction** and was retracted for restating a conditional's hypothesis as
+  fact. Writing "proves" would have been the third pass of the same error on the
+  same block.
+- **"`dim V = 2` is invariant along the single-fibre tower."** Not a corpus
+  result. The phrase occurs in exactly three files and they are **one chain** —
+  §10 of the 2026-09-03 status audit, the chip-away ledger quoting it, and this
+  paper quoting that. It is also near-vacuous as stated: `V` is fixed by
+  construction and `n` is the tower index. The load-bearing facts are the row-cap
+  obstruction and the alternatives-not-stages argument, not an invariance.
+
+A third, smaller: §10 of the status audit places the Habiro route and the Magnus
+hook-slice among "the attacks in §§2–7". Neither is discussed in §§2–7 — "Habiro"
+appears in that document only inside §10 itself. The Magnus hook-slice
+(`qou-o6ov`) is on the Δ_λ / binding arc and is **not** one of the twenty-six
+parameters at all.
+
+## 8. What this paper does not claim
 
 It does not claim the tower reading is *wrong*, only that one natural reading of
 it (sum over all partitions) is already satisfied and another (climb to higher
