@@ -204,7 +204,17 @@ def _closure(entries: list[str], limit: int = 600) -> tuple[list[str], list[str]
         seen.add(m)
         try:
             tree = ast.parse(p.read_text(encoding="utf-8"), filename=str(p))
-        except SyntaxError:
+        except SyntaxError as e:
+            # Same COVERAGE GAP as an unresolved import, reached by a
+            # different failure: a module that does not parse is one this
+            # certificate could not audit, and dropping it silently is exactly
+            # the vacuous green this function's docstring forbids. Routed into
+            # `unresolved` so it flows through the existing gap reporting
+            # rather than vanishing. (bean qou-brkp)
+            unresolved.add(f"{m} [UNPARSEABLE: {e.msg} at line {e.lineno}]")
+            continue
+        except Exception as e:
+            unresolved.add(f"{m} [UNREADABLE: {type(e).__name__}: {e}]")
             continue
         for nxt in _named_imports(tree):
             if nxt not in seen and nxt not in _EXTERNAL:
