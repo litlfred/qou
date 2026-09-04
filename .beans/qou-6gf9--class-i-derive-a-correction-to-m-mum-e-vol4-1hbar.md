@@ -1,11 +1,11 @@
 ---
 # qou-6gf9
 title: 'Class I: derive a correction to m_mu/m_e = Vol(4_1)/hbar_q^2 (the 11.5 ppb mu-p residual)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-03T11:48:30Z
+updated_at: 2026-09-04T02:31:13Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
