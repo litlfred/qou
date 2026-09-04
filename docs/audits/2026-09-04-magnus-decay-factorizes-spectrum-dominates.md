@@ -137,3 +137,34 @@ down, with the cancellation problem removed.
 **Limits.** The symmetry and the identity are exact algebra facts, checked on all 11 shapes at
 n=6; the *decay* of `tr_λ(X*X)` is measured on 9 conjugate pairs (4 at A=2, 5 at A=3, dim ≤ 48). No closed form or bound for `tr_λ(X*X)` is derived here — "the handles apply" is a statement
 about applicability, not a completed derivation. Scope-(a).
+
+## 3. Cashing it in: a DERIVED reduced-Burau closed form for the hook majorant
+
+"The handles apply" is applicability. Here it is applied. With `c = 4/[2]_q²` and `Y = ρ*ρ`,
+
+```
+X* X = −c² · Σ_{a,b} [σ_a,σ_{a+1}] · Y · [σ_b,σ_{b+1}]
+```
+
+expands into `4(ngen−1)²` words which — the step that makes this work — **all have the same length**
+`T = 2 + 2L + 2 = 2L+4` (`ρ*` has the same length as `ρ`). So #6464's word-length twist
+`q^{len·(1−j)}` is **common to every term** and factors out. On a hook `(k,1ⁿ⁻ᵏ) = Λʲ(V)`, `j = n−k`:
+
+```
+tr_hook(X* X) = −c² · q^{(2L+4)(1−j)} · Σ_{a,b} [ e_j(μ(A⁺YB⁺)) − e_j(μ(A⁺YB⁻))
+                                                 − e_j(μ(A⁻YB⁺)) + e_j(μ(A⁻YB⁻)) ]
+```
+
+`A⁺ = σ_aσ_{a+1}`, `A⁻ = σ_{a+1}σ_a` (likewise `B` at `b`), `μ(·)` the eigenvalues in the `(n−1)`-dim
+reduced Burau. **Verified on every hook at A = 2 and A = 3**, worst `|Δ_rel| = 2.1e-138`, and
+positive throughout as `X*X` requires.
+
+It uses only `(n−1)×(n−1)` matrices — 5×5 at A=2, 8×8 at A=3 — against `dim_λ×dim_λ` (to 70 on the
+hook column, 216 in general) for the direct route, and is uniform in `j`. **This is the first
+derived closed form for the majorant rather than for the quantity**: the handle that #6464 gave the
+quantity now gives the bound.
+
+**Still not done:** this is the hook column only. The two-row column would go through the R-matrix
+weight sectors (#6525) by the same argument — `X*X` is an algebra element, so those sectors carry
+it — but that is not run here. And a closed form is not yet a *bound*: no monotonicity in `j` is
+derived from this expression, only verified numerically upstream.
