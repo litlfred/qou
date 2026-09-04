@@ -4,7 +4,10 @@ Entry types: **STABLE** (trust it) · **TRAP** (durable failure mode) ·
 **BASELINE** (a number — re-measure, never quote from here).
 
 Seeded 2026-08-29 from `AGENTS.md` + the skill (which governs where they
-disagree). Only the first 200 lines are injected; detail is in sibling files:
+disagree). **NOTHING here is injected** — measured, and your definition's FIRST
+ACTION section says so: you must `Read` this file yourself. The ~200-line cap is
+therefore a courtesy bound on what you must read, not a truncation point.
+Detail lives in sibling files, read on demand:
 
 - `verification-harness.md` — false greens, partial overlays, exit-139, cone triage, FQN guards
 - `authoring-traps-v4-24-0.md` — module moves, lexer tokens, the small-determinant recipe
@@ -24,9 +27,12 @@ does not discriminate (6990 present at the moment the import failed).
 
 ## TRAP — the clone is SHALLOW: git cannot date a source against its olean, and presence ≠ currency
 
-`git log -- <file>` bottoms out at the shallow-boundary merge (`b831ff34c3`,
-2026-08-29, which shows *every* file as "new file"), so "olean dated Jul 2,
-source committed Aug 29" is undecidable from git. Do not argue freshness from it.
+`git log -- <file>` bottoms out at the shallow graft, which shows *nearly every*
+file as last-touched by one commit (`b831ff34c3` 2026-08-29; `c9c12648e4`
+2026-08-31 as of 2026-09-04). So "olean dated Jul 2, source committed Aug 29" is
+undecidable from git — do not argue freshness from it; rebuild the cone instead.
+`git diff <merge>^1 <merge> -- '*.lean'` DOES work and is the way to scope what a
+merge actually changed.
 
 **Presence is not currency either.** 2026-09-03: `QOU/Interactions/
 GramMatrixH3Symbolic.olean` was present (55 MB, mtime Jul 2) and held ZERO of
@@ -134,6 +140,13 @@ criteria, it is not a staleness detector; compare `source_hashes.lean` to
    six days). Rebuild each changed module from source, then its reverse-import
    cone computed from the import graph — a grep for `[Foo …]` binders misses
    files that *construct* an instance.
+   **A GENERALISATION never trips this, so passing proves nothing about
+   currency** (2026-09-04): the tree's olean had `(P M s c : ℝ)` while the source
+   had `{R} [CommRing R] [IsDomain R] (P M s c : R)`, and the new consumer
+   compiled clean against BOTH — at `R = ℝ` the generic decl specialises to the
+   old one. Diagnose currency with `#check @<decl>` against each olean (a
+   `grep -c -a <name>` cannot see it: the NAME is in both), never from the
+   consumer's exit code.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
    each olean before rebuilding it (else you truncate the shared inode).
@@ -185,27 +198,46 @@ directory (→ `.Ring.Finset`); `Finset.sum_powerset_card` does not exist (→
 mathlib **source** tree before diagnosing the cache. `₊`/`₋` are notation
 tokens under `Mathlib.Tactic`; rename such binders.
 
-## TRAP — docstring figures inherit the probe's hardcoded constants → `verification-harness.md` §9
+## TRAP — a docstring figure is sourced from somewhere; check it → harness §9
 
-A new file quoted CODATA-**2018** residual figures (`t = 2.0975e-7`, from
-`R_exp = 206.7682830` in its cited probe) while `constants.py` serves CODATA 2022
-(211.2 ppb); the Lean window covered both — only the prose was stale on arrival.
-Diff the probe's literal against `constants.py`; §9 has the inhabitation check.
+A file quoted CODATA-**2018** figures (`t = 2.0975e-7`) from its cited probe's
+hardcoded `R_exp` while `constants.py` serves CODATA 2022 — Lean untouched, prose
+stale on arrival. 2026-09-04, same class: `Checks.refCodata = 137.035999084` is
+absent from the witness its docstring names (only under `computations/_deprecated/`)
+and has **no consumer**. Diff the literal against the named source; §9 also has
+the inhabitation check for a `structure … : Prop` sold as content-bearing.
 
-## TRAP — restored oleans are a SNAPSHOT of the seed commit → `verification-harness.md` §11
+## TRAP — an olean is a SNAPSHOT; source newer than olean ⇒ not your checkout → harness §11
 
-Imports resolve out of oleans built at the cache branch's **seed** commit, so a
-file whose cone moved since is checked against old declarations — silently, error
-pointing at your call site. `ls -l <olean>` vs `git log -1 -- <source>` before
-trusting a green OR debugging a red. Does NOT invalidate every restore.
+Imports resolve out of oleans built at some earlier commit (a cache-branch seed,
+or just an older build), so a file whose cone moved since is checked against old
+declarations — silently, error pointing at your call site. `ls -l <olean>` vs the
+source mtime before trusting a green OR debugging a red (git cannot date it —
+shallow graft, TRAP above). Rebuild the cone; it is cheap (13 modules, 178 s).
+Worked 2026-09-04: `AlphaEM/FormLadderAnchorDominance.olean` Aug 24 against a
+Sep 3 source, with its brand-new consumer `…Checks.lean` about to be "verified"
+against it. Does NOT invalidate every restore.
+
+## TRAP — DOCSTRING PROSE reads as code to any line-oriented matcher (2026-09-04)
+
+This corpus writes long docstrings that *quote* Lean syntax, so both halves of a
+"count the `sorry`s + probe every decl" task were wrong first time.
+**`grep -cw sorry` counts `sorry-free`** (`-` is a non-word char): raw totals
+over 8 files were `sorry`=1, `axiom`=2 — **all 4 hits prose, code-level 0**.
+And a `^\s*(def|theorem|class|…)\s+(\w+)` decl regex ate `theorem below does
+not…` → `below` and `class instance (the conjecture)` → `instance`, whose
+`#print axioms` lines errored and one of which swallowed a real probe line by
+cascading into `unexpected token '#print'`. **Print matching LINES, never a bare
+count; strip comments before a decl scan, or reconcile emitted names vs output.**
 
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
 |---|---|---|---|
-| root mathlib oleans, healthy tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **6990** (3407 on the 2026-08-29 seed) | 2026-09-03 |
-| cold vs warm `lean`-direct, one Mathlib file | `time lean <file>` | 1m52s cold / 4.7 s warm; `user` 29 s / 4 s | 2026-09-03 |
-| lean-direct rebuild of the H3-Gram cone (cold) | `lean -o … QOU/{Shared/DetFin,Machinery/MarkovTraceOnHecke,Machinery/HeckeH3GramNondegeneracy,Interactions/GramMatrixH3Symbolic}.lean` | 330 / 245 / 69 / 207 s | 2026-09-03 |
+| mathlib oleans, root tree | `find .lake/packages/mathlib -name '*.olean' \| wc -l` | **3470** (6990 on 2026-09-03; 3407 on the 2026-08-29 seed) — swings widely, never a threshold | 2026-09-04 |
+| QOU oleans, root vs per-paper | `find <tree> -path '*QOU*' -name '*.olean' \| wc -l` | root **2442** w/ 2441 `.trace` = a REAL build tree (no `RESTORED-NO-TRACES`); per-paper **833**. Root was the complete one | 2026-09-04 |
+| cone rebuild into a `cp -al` mirror | `lean -o "$MIRROR/QOU/…" "$LEANLIB/QOU/….lean"` | 13 modules / 178 s (48 s cold first, 78 s `Mass.QIntegerBarParity`, rest 2–11 s). H3-Gram cone 2026-09-03: 330/245/69/207 s | 2026-09-04 |
+| target file, lean-direct, warm | `lean <file>` | 1.6–5.6 s (8 chapter+library files). One Mathlib file cold 1m52s / warm 4.7 s; `user` 29 s / 4 s | 2026-09-04 |
 | whole-library build state | `lake build QOU` | red on pre-existing failures — **not** the gate | 2026-08 |
 
 ⚠ Never treat a number here as a threshold (a stale `~2919 healthy` row once read an evicted 6990 → 2919 tree as healthy).

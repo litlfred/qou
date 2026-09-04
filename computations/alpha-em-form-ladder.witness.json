@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T10:42:13.809969+00:00",
-  "commitSha": "5e0b1213b4182caf3ed7503283cf5c4fadefa94e",
+  "computedAt": "2026-09-04T00:44:24.256402+00:00",
+  "commitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
   "assertions": [
     {
       "name": "alpha_em_not_at_100x_target",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "alpha-em-form-ladder",
   "scriptFile": "alpha_em_form_ladder_probe.py",
-  "scriptHash": "6e8638ccab2e",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "487f170f5bfc",
+  "scriptCommitSha": "f44d3bf79fa2e971e858e99483235d152ec9a0f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,6 +73,12 @@
         "additive_resid_ppb": "-4259.0241405410041263",
         "q0": "1.1099785827513808075916690956107688798744991218736"
       }
+    },
+    "codata_reference": {
+      "alpha_inv": "137.035999084000000000000000000000000000000000000000000000000",
+      "sigma_ppb": "0.150000000000000000000000000000000000000000000000000000000000",
+      "vintage": "CODATA-2018 (Cs recoil)",
+      "note": "the live table carries 137.035999177; this producer scores against the 2018 value on purpose, and bumping it alone would desynchronise the recorded residuals"
     },
     "integers_provenance": {
       "g": "4 = genus of Bring's surface (structural)",

@@ -48,8 +48,20 @@ regenerated 2026-09-03 (owner authorisation, bean `qou-4bef`); the retired pin `
 value 137.036010116763 is history only.  See the module docstring. -/
 def predMuon : ℝ := 137.036010188814  -- noqa: P31 - RECORDED witness output, not CODATA
 
-/-- The reference value the witness scores against (CODATA-2018 Cs-recoil).  It
-must track `alpha-em-form-ladder.witness.json`, not the live table. -/
+/-- The reference value the witness scores against (CODATA-2018 Cs-recoil).
+
+CORRECTED 2026-09-04.  This docstring said the value "must track
+`alpha-em-form-ladder.witness.json`" — and that witness did not contain it.
+`137.035999084` appears nowhere in it; the only in-tree witnesses carrying it
+are under `computations/_deprecated/`.  The real source is the producer,
+`computations/alpha_em_form_ladder_probe.py::CODATA_ALPHA_INV`, and the witness
+published `proton_ppb` / `muon_ppb` while recording no value for them to be
+residuals FROM.  The producer now emits `data.codata_reference`, so the
+original sentence is true as of that regeneration.
+
+Not the live table: `137.035999177` is CODATA-2022, and bumping this alone
+would desynchronise it from the recorded residuals.  Nothing consumes this
+declaration; it is here as a recorded provenance row. -/
 def refCodata : ℝ := 137.035999084  -- noqa: P31
 
 /-- Recorded proton-anchored residual, in ppb (regenerated 2026-09-03 from the

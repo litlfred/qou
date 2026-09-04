@@ -1,81 +1,80 @@
 {
-  "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T04:17:51.895747+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
-  "scriptFile": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
-  "scriptHash": "2d5c290703a3",
-  "assertions": [
-    {
-      "name": "A3_undershoot_no_damping_closes_it",
-      "computed": "True",
-      "expected": "True",
-      "passed": true,
-      "source": "ρ_grad(3)(q0)=[3]_q0=3.34203103692 < ρ_strong(3)=3.8128; ∀ d∈[0,1]: d·[3]_q0 ≤ [3]_q0 < ρ_strong(3). A damping ONLY decreases ρ(3) — it cannot close an anchor that already UNDERSHOOTS. (needed D(3)=1.14086313319 > 1: amplify)"
-    },
-    {
-      "name": "A4_overshoot_at_q0",
-      "computed": "True",
-      "expected": "True",
-      "passed": true,
-      "source": "ρ_grad(4)(q0)=[3]_q0·[4]_q0=15.7395721354 > ρ_strong(4)=13.0316; at the same substrate the A=4 ratio OVERshoots (needed D(4)=0.827951350131 < 1: damp). So damping is the RIGHT sign for A=4, the WRONG sign for A=3."
-    },
-    {
-      "name": "residual_sign_change_A3_pos_A4_neg",
-      "computed": "True",
-      "expected": "True",
-      "passed": true,
-      "source": "r(3)=ρ_strong(3)−ρ_grad(3)=0.470768963082 > 0 (graded undershoots A=3) while r(4)=ρ_strong(4)−ρ_grad(4)=-2.70797213541 < 0 (graded overshoots A=4): the required correction is + at A=3, − at A=4. A multiplicative damping D(A)≤1 supplies a NON-positive correction at every A ⇒ cannot realise a sign change. Damping is WALLED."
-    },
-    {
-      "name": "sign_change_robust_to_raw_ame",
-      "computed": "True",
-      "expected": "True",
-      "passed": true,
-      "source": "with RAW AME ratios B(3H)/B(2H)=3.81384892086, B(4He)/B(2H)=12.7230215827: r_raw(3)=0.471817883945 > 0 and r_raw(4)=-3.01655055268 < 0 — same sign pattern. The wall does NOT depend on the isospin/Coulomb correction (anchors are bounds only)."
-    },
-    {
-      "name": "rational_window_brackets_both_anchors",
-      "computed": "True",
-      "expected": "True",
-      "passed": true,
-      "source": "[3]_1.11=3.3421 < ρ_strong(3)=3.8128 (undershoot upper-endpoint) and [3][4]_1.109=15.7021531024 > ρ_strong(4)=13.0316 (overshoot lower-endpoint): the Lean rational window [1.109,1.11] certifies both."
-    }
-  ],
-  "allPassed": true,
-  "description": "Δ_λ magnitude: the A-dependent DAMPING route is WALLED. At the fixed canonical substrate q0 the residual ρ_strong−ρ_grad changes sign between A=3 (+, graded undershoots) and A=4 (−, graded overshoots), so the required correction is non-monotone in A and CANNOT be a multiplicative damping D(A)≤1 (parabolic/skew quotient OR Demazure sub-crystal alike). Companion to Lean QOU.MassTheory.DampingNonMonotoneWall (sorry-free). Robust to raw-vs-corrected AME anchors. scope-(b) structural exclusion of the damping class; nothing wired.",
-  "parameters": {
-    "q0": "1.1099785827513808076",
-    "rho_strong3": "3.8128",
-    "rho_strong4": "13.0316"
+ "engine": "mpmath",
+ "engineVersion": "mpmath 1.4.1",
+ "computedAt": "2026-09-04T00:46:18.642703+00:00",
+ "commitSha": "a226a55d13cc59c2d4785a15fd4024af95d162e1",
+ "scriptFile": "computations/deltalambda/deltalambda_damping_nonmonotone_wall_probe.py",
+ "scriptHash": "3232766f742b",
+ "assertions": [
+  {
+   "name": "A3_undershoot_no_damping_closes_it",
+   "computed": "True",
+   "expected": "True",
+   "passed": true,
+   "source": "ρ_grad(3)(q0)=[3]_q0=3.34203103692 < ρ_strong(3)=3.8128; ∀ d∈[0,1]: d·[3]_q0 ≤ [3]_q0 < ρ_strong(3). A damping ONLY decreases ρ(3) — it cannot close an anchor that already UNDERSHOOTS. (needed D(3)=1.14086313319 > 1: amplify)"
   },
-  "data": {
-    "q0": "1.1099785827513808076",
-    "qbr3_q0": "3.34203103692",
-    "qbr4_q0": "4.70958287387",
-    "rho_grad3_q0": "3.34203103692",
-    "rho_grad4_q0": "15.7395721354",
-    "rho_strong3": "3.8128",
-    "rho_strong4": "13.0316",
-    "residual_A3": "0.470768963082",
-    "residual_A4": "-2.70797213541",
-    "needed_D3_amplify": "1.14086313319",
-    "needed_D4_damp": "0.827951350131",
-    "rho_strong3_raw_ame": "3.8138489",
-    "rho_strong4_raw_ame": "12.723022"
+  {
+   "name": "A4_overshoot_at_q0",
+   "computed": "True",
+   "expected": "True",
+   "passed": true,
+   "source": "ρ_grad(4)(q0)=[3]_q0·[4]_q0=15.7395721354 > ρ_strong(4)=13.0316; at the same substrate the A=4 ratio OVERshoots (needed D(4)=0.827951350131 < 1: damp). So damping is the RIGHT sign for A=4, the WRONG sign for A=3."
   },
-  "precisionMetadata": {
-    "dps": 60
+  {
+   "name": "residual_sign_change_A3_pos_A4_neg",
+   "computed": "True",
+   "expected": "True",
+   "passed": true,
+   "source": "r(3)=ρ_strong(3)−ρ_grad(3)=0.470768963082 > 0 (graded undershoots A=3) while r(4)=ρ_strong(4)−ρ_grad(4)=-2.70797213541 < 0 (graded overshoots A=4): the required correction is + at A=3, − at A=4. A multiplicative damping D(A)≤1 supplies a NON-positive correction at every A ⇒ cannot realise a sign change. Damping is WALLED."
   },
-  "caveats": [
-    "ρ_strong(3), ρ_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as one-sided bounds, never inverted. No fit; nothing wired.",
-    "The exclusion is scope-(b) STRUCTURAL, cited invariant = monotone-≤1 action of a damping together with the q0 A=3 undershoot. It excludes the pure-DAMPING class only; per the permanence principle [A]_q! remains a valid ingredient — an additive many-body TERM that re-weights it (sign-changing in A) is NOT excluded and is the remaining open target.",
-    "Fixed canonical q0 (muon-canonical computations layer). Setting q≈1.26 to reach A=3 with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob."
-  ],
-  "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "durationMs": 0,
-  "q0Anchor": "proton",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  {
+   "name": "sign_change_robust_to_raw_ame",
+   "computed": "True",
+   "expected": "True",
+   "passed": true,
+   "source": "with RAW AME ratios B(3H)/B(2H)=3.81384892086, B(4He)/B(2H)=12.7230215827: r_raw(3)=0.471817883945 > 0 and r_raw(4)=-3.01655055268 < 0 — same sign pattern. The wall does NOT depend on the isospin/Coulomb correction (anchors are bounds only)."
+  },
+  {
+   "name": "rational_window_brackets_both_anchors",
+   "computed": "True",
+   "expected": "True",
+   "passed": true,
+   "source": "[3]_1.11=3.3421 < ρ_strong(3)=3.8128 (undershoot upper-endpoint) and [3][4]_1.109=15.7021531024 > ρ_strong(4)=13.0316 (overshoot lower-endpoint): the Lean rational window [1.109,1.11] certifies both."
+  }
+ ],
+ "allPassed": true,
+ "description": "Δ_λ magnitude: the A-dependent DAMPING route is WALLED. At the fixed canonical substrate q0 the residual ρ_strong−ρ_grad changes sign between A=3 (+, graded undershoots) and A=4 (−, graded overshoots), so the required correction is non-monotone in A and CANNOT be a multiplicative damping D(A)≤1 (parabolic/skew quotient OR Demazure sub-crystal alike). Companion to Lean QOU.MassTheory.DampingNonMonotoneWall (sorry-free). Robust to raw-vs-corrected AME anchors. scope-(b) structural exclusion of the damping class; nothing wired.",
+ "parameters": {
+  "q0": "1.1099785827513808076",
+  "rho_strong3": "3.8128",
+  "rho_strong4": "13.0316"
+ },
+ "data": {
+  "q0": "1.1099785827513808076",
+  "qbr3_q0": "3.34203103692",
+  "qbr4_q0": "4.70958287387",
+  "rho_grad3_q0": "3.34203103692",
+  "rho_grad4_q0": "15.7395721354",
+  "rho_strong3": "3.8128",
+  "rho_strong4": "13.0316",
+  "residual_A3": "0.470768963082",
+  "residual_A4": "-2.70797213541",
+  "needed_D3_amplify": "1.14086313319",
+  "needed_D4_damp": "0.827951350131",
+  "rho_strong3_raw_ame": "3.8138489",
+  "rho_strong4_raw_ame": "12.723022"
+ },
+ "precisionMetadata": {
+  "dps": 60
+ },
+ "caveats": [
+  "ρ_strong(3), ρ_strong(4) are DERIVED-ELSEWHERE comparison targets (jet-filtration witness / #3986/#3990); consumed as one-sided bounds, never inverted. No fit; nothing wired.",
+  "The exclusion is scope-(b) STRUCTURAL, cited invariant = monotone-≤1 action of a damping together with the q0 A=3 undershoot. It excludes the pure-DAMPING class only; per the permanence principle [A]_q! remains a valid ingredient — an additive many-body TERM that re-weights it (sign-changing in A) is NOT excluded and is the remaining open target.",
+  "Fixed canonical q0 (muon-canonical computations layer). Setting q≈1.26 to reach A=3 with free q is NOT admissible: q0 is pinned by the 3 calibrations, not a free knob."
+ ],
+ "auditOnly": "docs/audits/2026-07-26-deltalambda-A-dependent-damping.md",
+ "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+ "durationMs": 0,
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

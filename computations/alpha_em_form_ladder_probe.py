@@ -156,6 +156,20 @@ def main() -> int:
     print("  => highest-VALUE 1-ppq target, but LONG-HORIZON conjectural, not near-term.")
 
     wb.add_data("ladder", data)
+    # The reference the residuals below are scored against. It was NOT in the
+    # witness (found 2026-09-04): the witness published `proton_ppb` /
+    # `muon_ppb` while recording no value for them to be residuals FROM, so a
+    # reader could not reproduce either number from the witness alone. Its own
+    # consumer's docstring meanwhile claimed to "track the witness" for a value
+    # the witness never held. Recording it here is what makes that claim true.
+    wb.add_data("codata_reference", {
+        "alpha_inv": fmt(CODATA_ALPHA_INV),
+        "sigma_ppb": fmt(SIGMA_PPB),
+        "vintage": "CODATA-2018 (Cs recoil)",
+        "note": "the live table carries 137.035999177; this producer scores "
+                "against the 2018 value on purpose, and bumping it alone would "
+                "desynchronise the recorded residuals",
+    })
     wb.add_data("integers_provenance", {
         "g": "4 = genus of Bring's surface (structural)",
         "9_10": "crossing numbers of T(2,9),T(3,5) (prop:force-carrier-bring-uniqueness)",
