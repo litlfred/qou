@@ -178,9 +178,15 @@ N = 5
 
 
 def q0_val():
-    if q_at is not None:
-        return q_at(50)
-    return mp.mpf("1.10997859555733471989976322048322502665620840878")
+    """Proton pin, 50 dps, read BY NAME. No fallback: a missing substrate is an error,
+    not a silent switch to a retired literal (bean qou-4bef, 2026-09-03)."""
+    if q_at is None:
+        raise RuntimeError(
+            "qou_substrate unavailable: refusing to fall back to a hardcoded q0 literal. "
+            "The muon literal this producer used to carry was RETIRED 2026-08-22/28; "
+            "read the anchor by name (owner ruling 2026-09-03, bean qou-4bef). "
+            "Install it: pip install -e tools/qou-substrate.")
+    return q_at(50)
 
 
 # ---------------------------------------------------------------- helpers

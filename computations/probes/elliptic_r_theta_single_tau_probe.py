@@ -34,12 +34,21 @@ sys.path.insert(0, str(HERE))
 import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
 
 # q₀ muon-canonical (constants.py Q0_STR). The proton re-pin differs by ~11.5 ppb.
-Q0_MUON = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-03). It was the
+# literal 1.1099785955573... -- the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the CODATA-2022 lepton-ratio derivation. There is
+# no comparison leg here, so the 2026-08-30 owner ruling puts this producer
+# on the PROTON default; the pin moves 11.54 ppb. `q_parameter`, not
+# `qou_substrate.constants`, so the witness resolves its anchor stamp.
+# The NAME Q0_MUON is kept so its call sites stay legible; it now holds the
+# proton pin, which is what this producer computes at.
+Q0_MUON = mp.mpf(Q_50_DIGIT_STR)
 
 # c₃ empirical values (cited; convention spread is itself part of the story).
 C3_Q1_SHADOW = mp.mpf("-2")           # q=1 canonical shadow J_Hopf(1) = -2 (KC10/KC20)

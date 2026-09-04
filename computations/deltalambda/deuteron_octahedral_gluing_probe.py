@@ -58,7 +58,19 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
-Q0_STR = "1.10997859555733471"   # muon-canonical (computations/ layer)
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was the literal
+# "1.10997859555733471" -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 (fca08de7d2) by the live CODATA-2022 lepton-ratio derivation.
+# A frozen literal cannot follow the anchor when it moves, and this producer
+# was UNSTAMPED, so the anchor audit filed it Q0_ANCHOR_MISSING rather than
+# Q0_FLIP -- invisible to the corpus-wide drain, which keys on stamps.
+# It resolves the PROTON pin per the owner directive of 2026-08-15, sharpened
+# 2026-08-30: proton unless the producer is (E1) an explicit mu-vs-p
+# comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
+# -- it is a sole-anchor probe that happened to be muon-named.
+from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+
+Q0_STR = _Q0_RESOLVED
 
 
 def snappy_facts() -> dict:
@@ -177,7 +189,8 @@ def main() -> int:
             "sibling_borromean_front": "beans qou-h8yc (W9) / qou-099h (B3) — Borromean (hyperbolic) "
                                        "angle-structure/normal-surface; distinct manifold, shared "
                                        "gluing machinery",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+            "q0": Q0_STR,   # record the pin used, so a reader need not infer it
             "snappy": "3.3.2" if have_snappy else "absent",
             "no_fit": True,
         },
@@ -194,6 +207,27 @@ def main() -> int:
     if have_snappy:
         wb.add_assertion("deuteron_is_torus_knot_vol_zero",
                          computed=str(abs(facts["volume"]) < 1e-9), expected="True")
+    else:
+        # REFUSE rather than silently drop it (bean qou-9ugp, 2026-09-04).
+        #
+        # Without this branch, a snappy-less run wrote a witness carrying TWO
+        # assertions instead of three and `allPassed: True` -- so a consumer
+        # reading `allPassed` could not tell that a check had gone missing. The
+        # check that vanishes is `deuteron_is_torus_knot_vol_zero`, i.e. the
+        # Vol = 0 verification underpinning owner ruling A of 2026-08-29 ("the
+        # deuteron knot is the canonical braid closure ... NOT a hyperbolic-volume
+        # term"). Losing that silently is worse than not writing at all.
+        #
+        # snappy is absent by default in a fresh container, so this WILL fire;
+        # `pip install snappy` restores the full run. Refusing-by-design follows
+        # `low_isotope_mass_table` and `qbeta_braid_nf_sdp_offset_probe`; the
+        # reason goes to stdout because a stderr-only harness would not see it.
+        print("REFUSING to write: snappy is absent, so the Vol=0 assertion "
+              "`deuteron_is_torus_knot_vol_zero` cannot be evaluated. Writing "
+              "anyway would emit a 2-assertion witness with allPassed=True, "
+              "hiding the loss of the check that supports owner ruling A "
+              "(2026-08-29). Install snappy and re-run.")
+        return 2
     out = wb.save(extra={"auditOnly": True})
 
     print("=== Deuteron octahedral gluing setup (trefoil T(2,3), σ₁³) ===")

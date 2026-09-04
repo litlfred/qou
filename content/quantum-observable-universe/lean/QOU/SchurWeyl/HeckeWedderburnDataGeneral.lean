@@ -52,11 +52,22 @@ noncomputable def blockFinReindex (n : ℕ) :
     Matrix.reindexAlgEquiv ℝ ℝ (Fintype.equivFin (StandardYoungTableau
       (QOU.Mathlib.partitionShape lam)))
 
-/-- The Wedderburn isomorphism in `HeckeWedderburnData`'s indexing. -/
+/-- The Wedderburn isomorphism in `HeckeWedderburnData`'s indexing.
+
+`hq2` stays in the `q ^ 2 ≠ 1` form rather than being retyped to
+`GenericParameter.NotRootOfUnity`: this file is `ℝ`-typed throughout, where the two are
+equivalent (`GenericParameter.ofSqNeOne`), and `q ^ 2 ≠ 1` is what an `ℝ` caller naturally
+has.  The conversion happens at the call, exactly as in `HeckeSemisimpleReal`.
+
+(The file carries a **pre-existing** §7c flag — `ℝ` in the types with no archimedean
+construct anywhere, measured 0 before and after this edit.  Generalising it is real work and
+is deliberately NOT done here: this is a main-red fix and widening it would bury the
+one-line repair.) -/
 noncomputable def heckeWedderburnFin (q : ℝ) (hq0 : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (n : ℕ) :
     Hecke ℝ q q⁻¹ n ≃ₐ[ℝ]
       (∀ lam : Partition (n + 1), Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) :=
-  (heckeWedderburn q hq0 hq2 n).trans (blockFinReindex n)
+  (heckeWedderburn q hq0 (QOU.SchurWeyl.GenericParameter.ofSqNeOne hq0 hq2) n).trans
+    (blockFinReindex n)
 
 /-- **`HeckeWedderburnData` for `H_{n+1}(q)`, at every `n`.**
 

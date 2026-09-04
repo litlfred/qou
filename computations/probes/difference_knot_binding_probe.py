@@ -87,9 +87,23 @@ CENSUS_BINDING_VOL = {"D": 0.0, "T": 8.2863168, "3He": 7.3277248}
 # extra digits here — but a 17-digit literal silently losing one is the shape
 # this file should not model. Idempotent alongside main()'s call.
 set_compute_dps()
+# q0 read BY NAME from `q_parameter` (bean qou-9ugp, 2026-09-04). Idempotent.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Substrate h = q − q⁻¹ at q₀; the crossing-sign classifier thresholds.
-_Q0 = mp.mpf("1.1099785955573347")
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). It was the literal
+# 1.1099785955573347 -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22. No comparison leg here, so the 2026-08-30 owner ruling puts it
+# on the PROTON default (11.54 ppb). The comment two lines up already noted
+# that a 17-digit literal is the shape this file should not model; it was
+# modelling it.
+_Q0 = mp.mpf(Q_50_DIGIT_STR)
 _H = float(_Q0 - 1 / _Q0)            # ≈ 0.2091
 
 

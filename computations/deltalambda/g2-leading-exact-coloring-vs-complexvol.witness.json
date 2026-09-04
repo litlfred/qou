@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:02:21.248928+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T00:41:17.616183+00:00",
+  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
   "assertions": [
     {
       "name": "coloring_exact_minus_h2",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "g2-leading-exact-coloring-vs-complexvol",
   "scriptFile": "g2_leading_exact_coloring_vs_complexvol_probe.py",
-  "scriptHash": "0a9886079a60",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "7d98946ce09f",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -85,8 +85,11 @@
     "calibrates": "#4319 (NZBarEvenVolumeFace nzReVolume=g₂ schematic)",
     "lean": "QOU/MassTheory/TrefoilColoringBarEven.lean (c+1=-(m-1/m)^2, exact)",
     "r_home": "#4315 pinched-limit octahedral e₂ (shapes→e₂ nonlinearity)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "experimental/proton pin, read by name from q_parameter.Q_50_DIGIT_STR (bean qou-9ugp)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "no_fit": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "auditOnly": true
 }

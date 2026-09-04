@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T19:49:01.511303+00:00",
-  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
+  "computedAt": "2026-09-04T03:47:09.548255+00:00",
+  "commitSha": "cb2197ab70f638c1bbedbf7b6850b0faaa071a10",
   "assertions": [
     {
       "name": "defect_structure_fixes_sign_all_isotopes",
@@ -22,7 +22,7 @@
   "computation": "rho-k-counit-defect-form",
   "scriptFile": "rho_k_counit_defect_form.py",
   "scriptHash": "da5ddb08fedb",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/rho_k_counit_defect_form.py"
+    ],
+    "reproduce": "python3 -u computations/rho_k_counit_defect_form.py"
   },
   "description": "Counit defect ε(β_K)−ε(β_K^vac) across D/T/³He/⁴He + deuteron per-block weight sweep. The defect structure fixes the binding sign (all negative); no standard weight closes the magnitude. audit_only, parameter-free, no fit.",
   "audit_only": true,
@@ -46,40 +54,40 @@
     "per_isotope": [
       {
         "atom": "D",
-        "counit_defect_sum_dchi": "-30.2941518507",
+        "counit_defect_sum_dchi": "-30.2941543142",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "6.95893",
-        "trM_defect_sum_y_dchi": "-0.556544581253",
+        "trM_defect_sum_y_dchi": "-0.556544660404",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.127845",
         "target_minus_B_over_me": "-4.353277041"
       },
       {
         "atom": "T",
-        "counit_defect_sum_dchi": "-709.6674003",
+        "counit_defect_sum_dchi": "-709.667399638",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "42.755",
-        "trM_defect_sum_y_dchi": "-0.888536095279",
+        "trM_defect_sum_y_dchi": "-0.888536126834",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.0535312",
         "target_minus_B_over_me": "-16.59846853"
       },
       {
         "atom": "3He",
-        "counit_defect_sum_dchi": "-819.960117887",
+        "counit_defect_sum_dchi": "-819.960129459",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "54.2882",
-        "trM_defect_sum_y_dchi": "-0.892908519298",
+        "trM_defect_sum_y_dchi": "-0.892908574858",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.059118",
         "target_minus_B_over_me": "-15.10382749"
       },
       {
         "atom": "4He",
-        "counit_defect_sum_dchi": "-28487.622731",
+        "counit_defect_sum_dchi": "-28487.6227537",
         "counit_defect_sign_negative": true,
         "counit_defect_abs_ratio": "514.465",
-        "trM_defect_sum_y_dchi": "-1.11980898473",
+        "trM_defect_sum_y_dchi": "-1.11980900689",
         "trM_defect_sign_negative": true,
         "trM_defect_abs_ratio": "0.0202229",
         "target_minus_B_over_me": "-55.37324482"
@@ -87,25 +95,25 @@
     ],
     "deuteron_weight_sweep": {
       "counit Δ=1/y (Σ dχ)": {
-        "value": "-30.29415185",
+        "value": "-30.29415431",
         "sign_negative": true,
         "abs_miss": "25.9409",
         "within_tol": false
       },
       "trM Δ=1 (Σ y dχ)": {
-        "value": "-0.5565445813",
+        "value": "-0.5565446604",
         "sign_negative": true,
         "abs_miss": "3.79673",
         "within_tol": false
       },
       "coCasimir Δ=1/dim_q (Σ y dχ/dim_q)": {
-        "value": "-0.07602118051",
+        "value": "-0.07602120319",
         "sign_negative": true,
         "abs_miss": "4.27726",
         "within_tol": false
       },
       "OptionE Δ=sgn·f^λ (Σ y·sgn·f dχ)": {
-        "value": "-1.93617756",
+        "value": "-1.936177646",
         "sign_negative": true,
         "abs_miss": "2.4171",
         "within_tol": false

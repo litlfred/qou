@@ -45,10 +45,29 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This held the RETIRED
+# self-certified pin A as a literal -- retired 2026-08-22 for the CODATA-2022
+# derivation, so the value was stale AND could not follow the anchor.
+#
+# MIGRATED TO PROTON on the owner ruling of 2026-08-30: proton is the default,
+# and the burden is on the exception. Neither exception applies here -- this
+# probe makes no explicit proton-vs-muon comparison (E1), and it is not about
+# the CAL-1/2/3 triple as mathematics (E2). "It has always been muon" is
+# expressly not a reason. This stem is not in `ideal_muon`, so `Q_50_DIGIT_STR`
+# resolves to the proton pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent,
+              _Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 Z0 = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)
 PISQ6 = mp.pi ** 2 / 6
-Q0 = mp.mpf("1.10997859555733471")            # muon-canonical (computations layer)
+Q0 = mp.mpf(Q_50_DIGIT_STR)            # muon-canonical (computations layer)
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 PHI_GOLDEN = (1 + mp.sqrt(5)) / 2

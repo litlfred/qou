@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-08-31T04:11:30Z
+updated_at: 2026-09-04T07:33:12Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -242,3 +242,258 @@ work and is not done.
    Suggestive, and precisely the kind of coincidence this corpus has repeatedly
    found to be generic -- do NOT read it as evidence without a genericity check
    of the kind `qou-22vu` ran.
+
+
+
+## TAKEOVER 2026-09-04 + ROUTE 2 RESULT — the genus handle is Borromean-only
+
+Taken over: this bean was `in-progress` with `updated_at` 2026-08-31T04:11:30Z
+(four days, past the 3 h staleness threshold) and its backing work is already on
+`main`. Owner opened a tranche on all three routes and asked for held-literature
+links. PR #6560, branch `claude/standard-panel-qou-derivation-ixuolx`.
+
+### Held literature, measured across BOTH library tiers
+
+The survey above searched `sections/` only, which is blind to `procrsoclondona92`
+(Moffatt & Ricca, *Helicity and the Calugareanu invariant*: 19 OCR pages against a
+1-section stub). Re-measured including `ocr/`: route 1 **10** documents, route 2
+**12**, route 3 **9**. Full ledger with per-document links:
+`docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.
+
+Acquisition gaps, stated as such: Freedman-He 1991 itself (does not touch either
+eq.-43 correction, Komendarczyk's statement being held); a multi-component SLq(2)
+labelling (route 1's real gap). **Route 3's gap is CODE, not acquisition** — all
+nine held papers give integral formulas or geometric interpretations, none gives
+the Magnus expansion of a longitude in the free group.
+
+### ROUTE 2 IS BLOCKED, and the reason inverts the arc's framing
+
+The corpus's only route to a NUMBER for `ac(L_k, L)` — which is an infimum over
+homotopies and not directly computable — is the complement-genus lower bound in
+the sentence after eq. (43). **That sentence is qualified "for borromean links",
+and the corpus drops the qualifier**: `qou-a9li` and `qou-b5yi` both quote the
+genus clause without it, and I repeated the elision from their wording before
+reading the source.
+
+The qualifier is load-bearing. A compact oriented `S ⊆ R³ \ L_j` with `∂S = L_k`
+forces `lk(L_k, L_j) = 0`, since `[L_k] = [∂S] = 0` in `H₁(R³ \ L_j) ≅ Z` and that
+class IS the linking number. So where some `lk ≠ 0` the minimised-over set is
+EMPTY — the estimate is ill-posed off the Brunnian class, not merely weaker.
+
+**Measured: 0 of 30 components** of the derived carrier have all pairwise linking
+vanishing — every isotope (2H, 3H, 3He, 4He, 6Li, 8Be), BOTH crossing-resolution
+branches. Checked in both because `lk` is branch-dependent, unlike `mu = A+1`.
+
+**The inversion:** the handle applies exactly on the Brunnian class, which in this
+arc means **L6a4** — the A=3 CENSUS assignment, the admitted AME-driven fit that
+owner ruling 2026-08-29 retired. Route 2's only computable handle works on the
+carrier that was retired, and not on the derived one.
+
+- Lean: `QOU/Mass/FreedmanHeGenusHandleNeedsVanishingLinking.lean`, lean-direct
+  exit 0, sorry-free; `no_component_is_brunnian` covers the ENDPOINT case a
+  "every vertex has a successor" argument silently misses; two declarations
+  depend on no axioms at all. The homological step is DELIBERATELY not
+  formalised (Seifert surfaces / H₁ of a link complement are not cheaply
+  available in this Mathlib; asserting them as a class would be the
+  axiomatisation-is-not-a-proof pattern).
+- Probe: `computations/probes/fh_genus_handle_requires_brunnian_probe.py`, 4/4.
+  The qualifier check is a LIVE read of the held source, so a re-ingestion that
+  changed the text fails the assertion rather than leaving a remembered reading.
+
+**SCOPE (b) on the HANDLE**, invariant cited (complement homology). Eq. (43) is
+untouched and remains a true lower bound. `ac(L_k, L)` itself is untouched —
+nothing here says it is small or zero. A different lower bound on `ac`, not
+routed through a complement genus, is NOT excluded and is not examined.
+
+### A method error of mine, worth more than the fix
+
+Both probes were emitting witnesses with no `q0Anchor`, so the q0-anchor refill
+ratchet counted them as NEW-unstamped. My #6515 PR body claimed "the new files
+appear nowhere in the gate log" — established by grepping the log for the
+filename. **The ratchet reports a COUNT, not filenames**, and the only line
+naming the file was `skipped: (new file — no HEAD copy to compare)`, which reads
+like a clean bill and is not one.
+
+    without the new files             NEW (not in baseline) : 40
+    with them, no q0Anchor            NEW (not in baseline) : 41
+    with both declaring independent   NEW (not in baseline) : 39   (drains one)
+
+Fixed at the producer in both (`independent` + a reason; a `q0Value` on an
+`independent` witness is a contradiction the audit flags `Q0_FLIP`). No baseline
+touched. **Rule: to test whether your files affect a ratchet, REMOVE them and
+diff the counts.** Grepping a gate log for your own filename cannot detect a gate
+that counts.
+
+### Still open on this bean
+
+Routes 1 and 3, unchanged in status by the above. Route 1 needs the link
+generalisation of the SLq(2) labelling (`mu > 1`); route 3 needs a first `mubar`
+value on the min-span triples `{i, i+2, i+4}`, which needs the Magnus-longitude
+machinery the corpus does not have.
+
+
+
+## ROUTE 3 RESULT 2026-09-04 — the min-span triples are DEFINED exactly where they VANISH
+
+This bean's route-3 hand-off says: *"No `mubar` value has been computed -- this is
+combinatorics of which triples are defined, not of what they equal. Computing one
+needs the Magnus expansion of a longitude in the free group, which is real work and
+is not done."*
+
+**The computation is unnecessary.** On this carrier every `Delta = 0` triple has
+`mubar = 0`, and the reason is its own defining condition.
+
+### The mechanism, in one step
+
+A monotone braid closure -- one contiguous run per generator, which the canonical
+atom word satisfies -- is a connected sum `#_g T(2, e_g)` (verified 32/32 in
+SnapPy, 2026-08-25 audit). Each summand is ONE generator's run, so it touches only
+the components holding strands `g` and `g+1`. A shared summand **links** two
+components. Contrapositively a triple with `Delta = gcd(lk) = 0` -- exactly the
+condition for `mubar` to be a genuine integer -- shares **no** summand, so its
+sublink is a 3-component **unlink** and every Milnor invariant vanishes on it.
+
+    the condition that makes mubar DEFINED is the condition that makes it ZERO
+
+### Measured, 4/4
+
+  every generator touches at most                       2 components  (the premise)
+  generators joining two members of a min-span triple    0            (the result)
+  mu = A + 1                                             8 of 8 isotopes
+  min-span family size = A - 3                           8 of 8 isotopes
+
+**Branch-independent**, which is the strongest thing about it: which components a
+generator touches is fixed by the induced PERMUTATION, and a superposition letter
+`c*sigma_g + d*1` projects to the same transposition as its `sigma` branch. So
+unlike `lk` this is ONE measurement, not a sampling over `2^(2A+1)` resolutions.
+
+### Lean
+
+`QOU/Mass/MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean`, lean-direct exit 0,
+sorry-free. `separated_of_delta_zero` -- the whole content -- depends on **no
+axioms at all**, and needs no path structure, no minimality and no
+`Delta`-arithmetic: it is the contrapositive of "a shared summand links", so it is
+as general as the connected-sum decomposition itself. `chainCarrier` +
+`chainCarrier_joins_consecutive` exhibit a configuration satisfying every
+hypothesis whose `joins` is inhabited, so the separation result cannot be read as
+describing an empty relation.
+
+Deliberately NOT formalised: `mubar` itself, the connected-sum decomposition, and
+"Milnor invariants vanish on an unlink" -- none cheaply available in this Mathlib,
+and a class asserting them would be the axiomatisation-is-not-a-proof pattern.
+
+### Convergence with sibling PR #6561 (`qou-kru4`)
+
+#6561 proves from the ALGEBRA that a monotone word's Markov trace factorises over
+generators, so `tr_M` cannot carry a `mubar` or an `ac`-type cross-component
+quantity. Route 3 here proves from the TOPOLOGY that there is no `mubar` to carry.
+**Both trace back to monotonicity.** So non-monotonicity is the single
+discriminating question for the in-algebra cross term (#6513), a hyperbolic
+carrier, and a nonvanishing Milnor invariant alike -- three frontiers, one
+hypothesis.
+
+### SCOPE (b) on the min-span family, invariant cited
+
+Does **not** refute route 3 in general: on a genuinely Brunnian carrier like L6a4
+the summand hypothesis fails and `mubar_123 = 1`. Does **not** touch the
+`Delta = 2` triples, which touch a linked pair and retain ONE BIT -- those are the
+residual and are not examined.
+
+### Where all three routes now stand
+
+- **Route 1** — capped at even A (`SLq2LabelParity.lean`, on main). Open question
+  is a LINK generalisation (`mu > 1`) of the SLq(2) labelling; the framework half
+  is finished, and this is the one route with a genuine acquisition gap.
+- **Route 2** — BLOCKED. The complement-genus handle is Borromean-only; 0 of 30
+  components qualify.
+- **Route 3** — the min-span family gives `mubar = 0` identically. Residual: the
+  `Delta = 2` one-bit triples.
+
+
+
+## 2026-09-04 — the cyclic square BREAKS route 3's premise and does NOT reopen route 3
+
+Answers sibling #6561's second result, which lands the one escape route 3's own
+premise leaves open. Tested rather than assumed either way.
+
+Route 3's argument is **monotone-specific**: each summand touches at most 2
+components, which is what turns `Delta = 0` into separation. #6561 proves
+(sorry-free, `RevisitClassCrossTerm.lean`) that the cyclic square
+`(g_m g_{m+1})^2` is the ONLY non-monotone shape yielding a trace cross term --
+and it spans THREE strands, so it is precisely what could break the premise.
+
+**I guessed local knotting, and was wrong.** `(g_m g_{m+1})^2` closes to `T(3,2)`,
+a knot, so the tempting reading is a knotted summand on one component (Milnor-inert).
+Measured: it spans **3 distinct components in 188 of 694 insertions**. The premise
+genuinely breaks.
+
+**The conclusion survives, for a different reason than it was proved by.** In ALL
+188 spanning cases at least one pairwise linking number among the three components
+is nonzero, so `Delta != 0` and `mubar` is not a genuine integer there anyway. The
+insertion that joins three components is the same one that links them.
+
+`cyclic_square_does_not_reopen_milnor_probe.py`, 4/4: premise-breaks = yes;
+reopening triples = **0 of 188**; insertions tested = 694; integrality violations = 0.
+
+Two method notes, both from getting it wrong first: insertions are SAMPLED ACROSS
+THE WORD, not appended (braid letters do not commute, and the first pass was
+append-only, which would have read stronger than it was); and an earlier draft's
+fourth assertion was VACUOUS -- a counter initialised to 0 and never incremented --
+now a real odd-crossing-sum check, the same bug class as this bean's own earlier
+`lk = -3/2`.
+
+**What this does to the non-monotonicity framing.** #6561 said a trace cross term
+and a hyperbolic carrier "both require a non-monotone word, so they are the same
+discriminating question". The REQUIREMENT is shared; the two CONSEQUENCES are not,
+and both now have verdicts:
+
+  - trace branch   -- #6561 measured: +0.78/+0.71/+1.00/+0.68 MeV against residuals
+                      1.8/7.8/7.0/27.4. Right sign, shrinks with A. Scope-(a) negative.
+  - closure branch -- measured here: does not reopen mubar on that shape.
+
+So it is one hypothesis with two testable consequences, both now tested on the one
+shape that admits them. Do NOT compress that back to "the same question" -- the
+shared requirement is what made it worth testing twice.
+
+SCOPE (a), narrow: one shape, all-positive inserted crossings, sampled positions,
+4 isotopes. NOT a proof that no non-monotone word reopens route 3 (a mixed-sign
+insertion could cancel a linking number and is not covered). The `Delta = 2`
+one-bit triples remain the stated residual. The Lean is UNCHANGED.
+
+
+
+## 2026-09-04 — LINKS, and a correction to my own held-literature counts
+
+Owner asked for links. Building the list exposed two errors in the counts I put in
+this bean, the ledger and PR #6560 — both mine, both one cause: I reported
+**keyword hits on files** and called them **held sources on a topic**.
+
+**Files vs works.** Four hits are `duplicate_of` copies of another hit (verified
+from section front-matter): `0808.1533v1` of `v3`; `0901.1612v1` of `deturck-…`;
+`symmetry-11-01298` of `1910.09966v1`; `s10052-023-11923-y-a` of `2306.13098v2`.
+
+**The patterns were far too wide.** Route 2's was `asymptotic crossing|Freedman`,
+and "Freedman" matches any bibliography containing a person of that name.
+
+                      reported   contains core term        distinct works
+    route 1 SLq(2)       10       2  (`SLq(2)`)                  2 core + 6 milieu
+    route 2 Freedman-He  12       4  (`asymptotic crossing`)     3
+    route 3 Milnor        9       6  (`Milnor|triple linking`)   5 core + 2 adjacent
+
+So route 2's "12 held documents" is **three works**. **Do not quote 10 / 12 / 9.**
+
+**No verdict changes.** Every result rests on core-tier sources; the correction is
+about how much surrounding literature exists, not about what the primary source
+says. What changes is what "held" is worth as a claim.
+
+**Four held sources have NO resolvable external link** — `khesin2003`,
+`moffatt-ricca-helicity`, `mellor-melvin2003`, `evans-berger1992` carry neither
+`DOI` nor `URL` in `references.ts`, and no arXiv/DOI stamp appears anywhere in
+their held text (checked in BOTH tiers). **Two are core route-2 sources** (Khesin;
+Moffatt & Ricca). No identifier is invented. Worth a bibliography pass — not done.
+
+Also: `arxiv-2106.01332v4` is held but **not registered** in `references.ts`.
+
+Per-work links (arXiv/DOI + held-copy path + the exact section:line for the two
+load-bearing citations) are in the §Links section of
+`docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.

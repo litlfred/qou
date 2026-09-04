@@ -89,7 +89,8 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from substrate.witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
@@ -111,7 +112,13 @@ set_compute_dps()
 # muon-canonical pin (computations/ layer canonical, q-pinning-50-digit witness);
 # Q_50_DIGIT_STR resolves to the environment's anchor (proton in package-layer envs).
 # Both are computed below; they differ by ~11.5 ppb — immaterial at this audit's 1e-4 scale.
-Q0_MUON_STR = "1.10997859555733471"
+# Muon leg read BY NAME (bean qou-9ugp, 2026-09-03). It was the 17-dp literal
+# 1.10997859555733471 -- the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 when that anchor was re-derived to the CODATA-2022 lepton ratio
+# (+0.0769 ppb). This probe is an explicit env-vs-muon COMPARISON, so it needs
+# both legs (exception E1 of the 2026-08-30 ruling); a comparison whose muon
+# leg is a retired literal is comparing live-proton against yesterday's muon.
+Q0_MUON_STR = mp.nstr(q_muon_at(50), 50, strip_zeros=False)
 
 
 # ----------------------------------------------------------------------------- symbolic
@@ -381,7 +388,15 @@ def main() -> int:
         wb.add_assertion(f"fwd_{name}", computed=str(bool(flag)), expected="True")
     wb.add_assertion("pin_robust_g2_gap_shift_below_1e6",
                      computed=str(bool(pin_delta_g2gap < mp.mpf("1e-6"))), expected="True")
-    out = wb.save()
+    # Explicit `comparison` stamp (bean qou-9ugp): this producer reads BOTH
+    # pins deliberately, so it belongs to neither anchor list. The stamp
+    # carries the values ACTUALLY COMPUTED WITH, so the audit re-checks each
+    # leg against its canonical pin instead of tautologically re-reading it.
+    out = wb.save(q0_comparison(
+        muon=mp.mpf(Q0_MUON_STR),
+        proton=mp.mpf(Q_50_DIGIT_STR),
+        reason='measures the inter-crossing Magnus order-2 term at BOTH the environment (proton) pin and the muon pin, and reports g2_gap_shift_between_pins; both pins are read on purpose and each is reported under its own key',
+    ))
 
     print("=== E_unit Magnus order-2 (NA-Stokes route A; complementary to #4127 route B) ===")
     print("symbolic:", sym)

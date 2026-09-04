@@ -3,12 +3,12 @@
   "description": "The \u03a6_b odd b-dictionary at the substrate: bar-parity = the \u221a3-grading of the 4\u2081 cusp trace field \u211a(\u221a3); the bar-odd b-dictionary is the closed-form \u03ba_odd subladder {\u03ba_1,\u03ba_3,\u03ba_5,\u03ba_7}; trace-field compatibility with F1's exact D-ladder d_k=a_k+b_k\u221a3 (G2 parity + q-Gevrey band); leading rung = corpus i\u00b7t\u00b7\u03ba_1. scope-(a); d\u2194\u03ba bridge open.",
   "audit_only": true,
   "tier": "symbolic-exact + numerical (trace-field / growth-order)",
-  "computedAt": "2026-07-18T14:10:12.378541+00:00",
-  "commitSha": "4070524fd0cc9d99120065b78d009b353cde7d64",
+  "computedAt": "2026-09-04T03:34:13.091038+00:00",
+  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
   "engine": "sympy+mpmath",
-  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "engineVersion": "sympy 1.14.0, mpmath 1.4.1",
   "scriptFile": "qbeta_phib_2loop_bdictionary_probe.py",
-  "scriptHash": "e53a9731fc46",
+  "scriptHash": "b656c0fc4209",
   "assertions": [
     {
       "name": "kappa_ladder_parity_is_sqrt3_grading",
@@ -59,5 +59,13 @@
     "qgevrey_reference": "#3861 odd D-ladder single order ~0.07-0.09 (k=31)",
     "finite_b_rung1": "i\u00b7t\u00b7\u03ba_1 in qbeta_c3_phib_saddle_state_integral_probe.py",
     "open_bridge": "d\u2194\u03ba normalization = meridian\u2194Q_\u03b2 map (conj:algebraic-geometric-dilog-equivalence)"
-  }
+  },
+  "scriptCommitSha": "d192dc7371c685b23be4141cb4791b7ee9ea0882",
+  "durationMs": 0,
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "evaluates the phi_b 2-loop b-dictionary at both pins and reports each under its own key; both pins are read on purpose"
 }

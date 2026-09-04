@@ -125,12 +125,15 @@ from codata_constants import (  # noqa: E402
 # ---------------------------------------------------------------------------
 # Proton-pinned q0: canonical package layer (qou-substrate constants).
 sys.path.insert(0, str(COMP.parent / "tools" / "qou-substrate" / "python"))
-from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402  # q_parameter (bean qou-9ugp): the anchor stamp resolves through it, qou_substrate.constants does not
 
 Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
-# Muon-anchor q0: computations-layer canonical (q-pinning-50-digit witness).
-Q0_MUON = mp.mpf(
-    "1.10997859555733471989976322048322502665620840878015368660798114614493")
+# Muon-anchor q₀ read BY NAME (bean qou-9ugp, 2026-09-03). This was the literal
+# 1.1099785955573…14493 — the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 by the live CODATA-2022 lepton-ratio derivation q_muon_at()
+# (+0.0769 ppb). Q0_PROTON above is already read by name; this leg was not, so
+# the μ-vs-p comparison was live-proton against a retired muon.
+Q0_MUON = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
 
 SIGMA_R = mp.mpf("6e-7")  # AME neutron Q-value relative error (precision-floor witness)
 

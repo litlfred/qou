@@ -3,12 +3,12 @@
   "description": "The 5\u2082 order-3 bar-odd Habiro tail T_odd=\u03a3_{n=1}^3 (C_n(q0)\u2212C_n(1/q0))f_n(q0) \u2248 +0.019 (O(10\u207b\u00b2)) is order-of-magnitude consistent with the corpus bar-odd anchors S_muon/S_proton; 4\u2081 (order-2) gives exactly 0. Consistency, NOT identification (sign convention-dependent; strip \u03c6_odd 5\u00d7 smaller). scope-(a).",
   "audit_only": true,
   "tier": "numerical consistency (order-of-magnitude)",
-  "computedAt": "2026-08-23T09:30:33.499737+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:24:50.936674+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_5two_order3_barodd_tail_probe.py",
-  "scriptHash": "97c454d200ee",
+  "scriptHash": "86fe6321bc9a",
   "assertions": [
     {
       "name": "f_n_bar_even",
@@ -28,13 +28,13 @@
   ],
   "allPassed": true,
   "result": {
-    "T_odd": "0.01916053432",
-    "T_leading_n1": "0.0139433098726",
+    "T_odd": "0.0191605261065",
+    "T_leading_n1": "0.0139433051778",
     "per_term": {
       "0": "0.0",
-      "1": "0.01394330987",
-      "2": "0.003519316247",
-      "3": "0.001697908201"
+      "1": "0.01394330518",
+      "2": "0.003519314196",
+      "3": "0.001697906733"
     },
     "anchors": {
       "S_muon": "0.00968298",
@@ -51,5 +51,9 @@
       "qbeta_5two_leading_odd_datum_probe (n=1 only)",
       "qbeta_g3_5two_barodd_substrate (intrinsic strip, open)"
     ]
-  }
+  },
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

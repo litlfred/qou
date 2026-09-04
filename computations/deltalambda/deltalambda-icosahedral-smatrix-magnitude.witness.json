@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:01:14.644020+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T03:11:31.754532+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "assertions": [
     {
       "name": "preflight_det_closed_forms_verified",
@@ -44,8 +44,8 @@
   "durationMs": 5,
   "computation": "deltalambda-icosahedral-smatrix-magnitude",
   "scriptFile": "deltalambda_icosahedral_smatrix_magnitude_probe.py",
-  "scriptHash": "7af66aeef746",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "4ac3fd5f7415",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,7 +60,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [

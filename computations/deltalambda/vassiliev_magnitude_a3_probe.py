@@ -53,7 +53,7 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 70
 
-# q0 (muon-canonical computations layer); forward inputs never inverted
+# q0 (PROTON pin; label corrected, bean qou-9ugp); forward inputs never inverted
 # q0 RESOLVED, not frozen (2026-08-29, bean qou-1c4y). This was the literal
 # 1.10997859555733471..., the SUPERSEDED muon pin A -- it stopped being the
 # muon anchor when PR #5500 re-derived that anchor to CODATA-2022. A frozen

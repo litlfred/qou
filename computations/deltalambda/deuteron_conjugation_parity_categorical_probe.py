@@ -76,8 +76,18 @@ def hooks(p):
 def main() -> int:
     # Source q₀ from the SAME pinning the character caches were computed at (its `q_str`), so q₀ and
     # χ^λ(q₀) can never drift apart — the identities below (I2: χ^{λ'}(q)=χ^λ(q⁻¹)) hold only when q₀
-    # matches the cache exactly. (NOT qou_substrate.q_at / Q_50_DIGIT_STR: those are a different pin —
-    # ~11.7 ppb muon↔proton — and would break consistency with these caches.)
+    # matches the cache exactly.
+    #
+    # CORRECTED 2026-09-04 (bean qou-9ugp). This comment read: "(NOT
+    # qou_substrate.q_at / Q_50_DIGIT_STR: those are a different pin — ~11.7 ppb
+    # muon↔proton — and would break consistency with these caches.)" That is
+    # false, and it was load-bearing: it told every later reader the producer
+    # must not be migrated. Measured — the cache's own `q_str` is
+    # 1.1099785827513808075916690956107688798744991218736, byte-identical to
+    # `q_parameter.Q_50_DIGIT_STR` for this stem. The cache IS at the proton pin;
+    # there is no muon↔proton gap here to preserve. Sourcing q₀ from the cache
+    # remains right (it couples q₀ to the χ it is used with) — only the stated
+    # reason was wrong.
     _q0cache = json.load(open(_COMP / 'chi-deuteron-free-h6-at-q0-50dps.witness.json'))
     q0 = mp.mpf(_q0cache['q_str'])
     qi = 1 / q0
@@ -177,7 +187,7 @@ def main() -> int:
             "lean": "QOU/MassTheory/ConjugationParitySplit.lean (selfConj_barEven_zero_deuteron)",
             "caches": "chi-deuteron-free-h6-at-{q0,qinv}-50dps.witness.json",
             "correction": "supersedes the earlier sign-dropped draft (self-conjugate channel reversed)",
-            "q0_convention": "muon-canonical (computations/ layer)",
+            "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
             "no_fit": True,
         },
     }

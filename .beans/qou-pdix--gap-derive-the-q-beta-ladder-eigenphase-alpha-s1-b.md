@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-09-04T03:13:31Z
+updated_at: 2026-09-04T10:44:01Z
 ---
 
 Parent: qou-cds1 (tranche S1). **This is the S1 blocker.** The c_k tail is
@@ -1551,3 +1551,134 @@ polynomial does.
    decay pairing at any precision), the trace-convention registry, and
    `qou-n1dj`'s own status (`todo`, "Item 1 is untouched"). The probe's
    headline verdict inherits the transfer.
+
+
+## 2026-09-04 — D0 does not need theta, and two of my own readings were wrong
+
+Arrived here on the author's instruction to "re-derive c_3 under convention D",
+ran the corpus-grep first, and it stopped two errors before they landed. Both are
+recorded because the second is the more instructive.
+
+### ERROR 1 (withdrawn): "the D0 target is C-frame; it should be 0.0447444"
+
+Verified from scratch at 40 dps, not taking this bean's labels on trust:
+
+    C  z=sqrt(q)/(q+1)   alpha_N1 = -0.05659473754   cos = 0.9983989453
+    D  z=q^3/(q^2+1)     alpha_N1 = -0.04474439462   cos = 0.9989991366
+
+This bean's TIER-0 `theta = 0.0565947` is `|alpha_N1|` in convention **C** to 7
+significant figures, which looked like a C-frame number sitting in the tier-0
+gate of a convention-D bean — the exact class the `qou-9ugp` drain has been
+clearing all session.
+
+**It is not.** `docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`
+labels `-0.04474439` explicitly as **"D, naive `z`-swap (banned)"**. My proposed
+correction would have installed a BANNED value in the acceptance test. The
+corpus's live D candidate is the **bar-odd derived** `-0.05567095` (that audit
+§2), which is within 1.7 % of the C figure this bean quotes — so quoting the C
+value here is at worst imprecise, not a frame error. **Withdrawn.**
+
+### ERROR 2 (corrected): I computed the banned object and did not recognise it
+
+Earlier in the same session I reconstructed a `c_3` and got **-974.07 / -974.12**,
+reported it as "not the canonical c_3" and moved on. That was true and far too
+weak. It is the **naive z-swap**, which that audit's calibration table records at
+**-974.43** — a named object this corpus has explicitly banned, and the reason
+AGENTS.md says "this is NOT a z-swap". Getting -974 was not an artefact of my
+reconstruction; it was me performing the banned substitution.
+
+### What actually survives — D0 needs no target value
+
+The elementary obstruction reproduces exactly:
+
+    ln q0                    = 0.10434072032
+    det A (Kohno-Drinfeld)   = -(ln q0)^2 = -0.0108869859168     (bean: -0.010887)
+    cosh(ln q0) = (q+1/q)/2  = 1.00544843335                     (bean:  1.005448)
+    cosh(ln q0) - 1 == (q-1)^2/(2q)   verified to 9e-42
+
+And it generalises off the single target. This bean argues D0 against C's
+`0.998399`. It does not need it:
+
+    C, as recorded             cos = 0.998398945114   < 1
+    D, naive z-swap (banned)   cos = 0.998999136781   < 1
+    D, bar-odd derived         cos = 0.998450772846   < 1
+
+`cos(theta) < 1` for **every** `theta != 0`, and `cosh(a) >= 1` for **every**
+real `a`. So the real-spectrum exclusion holds for any nonzero real eigenphase,
+in any convention, whatever the D value turns out to be.
+
+**Consequence, and it is the useful part:** D0 is applicable NOW. It does not
+wait on the D eigenphase being derived. A candidate generator can be screened on
+`det A > 0` alone — the question is only whether the construction supplies
+imaginarity at real `q`, never what `theta` equals. Restating D0 that way removes
+its one dependence on an unsettled number.
+
+**Scope (b) for the exclusion** (`(x-1)^2 >= 0` is a proved invariant, quantified
+over all real `a`), **scope (a) for everything else**. Derives no `alpha`,
+adjudicates no convention, wires nothing.
+
+
+## 2026-09-04 (2) — Route A's "impossible" is OBSERVABLE-level, and D0 only bites at real q
+
+Following the author's instruction to chip at where the imaginarity comes from.
+Read `ImQCannotSupplyEllipticGenerator.lean` first; it closes routes A and B and
+leaves the conjecture's **chirality** role untouched. That is the gap examined here.
+
+### The two closed routes share a hypothesis, and it is an evaluation point
+
+`abs_sq_gt_one {x y} (hx : 1 < x) : 1 < x² + y²` and everything built on it carry
+`1 < Re q`. Candidate (i) — chirality — lives in the Kashaev regime, `q` on or near
+the **unit circle**, where that hypothesis simply fails:
+
+    arg q = 0.05659474 :  Re q = 0.998398945114   1 < Re q ?  False   |q| = 1
+    arg q = 0.04474439 :  Re q = 0.998999136781   1 < Re q ?  False   |q| = 1
+    arg q = 0.05567095 :  Re q = 0.998450772846   1 < Re q ?  False   |q| = 1
+
+So the Route-A exclusion does not reach candidate (i). It is not wrong; its
+hypothesis is the substrate's **archimedean evaluation point**, and the record
+reads "impossible, since Re q = 1.10998 > 1" without that scope. `qou-cds1` draws
+exactly this distinction 5,000 lines earlier for the complex-volume route —
+"cannot supply the D-frame correction **at the observable level** AT ALL ... must
+first close a FIBRE-level construction" — and the elliptic-generator entry does
+not carry it.
+
+### At |q| = 1 the generator is elliptic BY CONSTRUCTION
+
+`ln q = iθ` exactly, so spectrum `±iθ` and `det A = +θ² > 0`:
+
+    C, as recorded       cos θ = 0.998398945114   det A = +0.0032029646
+    D, naive (banned)    cos θ = 0.998999136781   det A = +0.0020020604
+    D, bar-odd derived   cos θ = 0.998450772846   det A = +0.0030992547
+
+and the character `(q + 1/q)/2 = cos θ` reproduces **any** sub-unit target
+exactly. **That last point is a tautology, not evidence** — θ was chosen as
+`arccos(target)`. What it establishes is only that the modulus-1 locus is
+precisely the set where the generator is elliptic *and* the character sub-unit,
+so no tuning is required there.
+
+### Consequence, and it sharpens my own D0 entry above
+
+The frontier as recorded — *"find one whose generator is ELLIPTIC at real q"* —
+asks for something the proved argument forbids. Ellipticity is free off the real
+axis and impossible on it. **So D0, which I argued above is applicable without
+knowing θ, is a screen against REAL-q constructions specifically**; off the real
+axis it excludes nothing. That is a real limit on the criterion I proposed, and
+it belongs beside it.
+
+The open problem is therefore not "supply imaginarity" — candidate (i) supplies
+it and passes D0 identically — but **the bridge**: a fibre-level connection at
+`|q| = 1` whose archimedean evaluation sits at `|q₀| = 1.10998`, an 11.0 % gap in
+modulus. That is the fibre-vs-observable structure AGENTS.md already names, and
+it is where this route's remaining content is.
+
+### Also filed: `qou-c66b`
+
+Chipping at the conjecture directly turned up that its stated obstacle — *"no
+mass observable can detect Im(q)"*, candidate (iii) *"needs a categorical formula
+for decay widths Γ"* — overlooks `Q_β`, whose formula modulus-projects **one of
+three factors**, making it Im(q)-sensitive with `∂Im(Q_β)/∂Im(q) ≈ 3.418` while
+the mass shape is invariant to the last digit. Requiring `Im Q_β = 0` then forces
+`Im q = 0` from a decay observable. Caveat there is load-bearing: the complex
+extension of `Q_β` is mine, not the corpus's.
+
+Scope (a) throughout — no `α` derived, no construction proposed, nothing wired.

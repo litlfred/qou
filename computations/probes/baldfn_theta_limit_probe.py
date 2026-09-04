@@ -85,6 +85,11 @@ import sympy as sp
 from mpmath import mp, mpf, matrix, lu_solve, log as mlog, sqrt as msqrt, nstr
 
 HERE = Path(__file__).resolve().parent
+import sys as _sys_qp  # noqa: E402
+_sys_qp.path.insert(0, str(Path(__file__).resolve().parent.parent))
+_sys_qp.path.insert(0, str(Path(__file__).resolve().parent.parent / 'substrate'))
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 WITNESS = HERE / "baldfn-theta-limit.witness.json"
 T0 = time.time()
 
@@ -674,8 +679,13 @@ def block_b6(R):
 
 # ------------------------------------------------------------------------ B7
 
-Q_MUON = "1.10997859555733471"      # computations/ layer canonical q0 (muon pin)
-Q_PROTON = "1.10997858275138081"    # proton pin (package layer), 17 dp like Q_MUON
+# q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
+# 17-dp literal 1.1099785955573… — the RETIRED self-certified muon pin A,
+# superseded 2026-08-22 by the live CODATA-2022 lepton-ratio derivation
+# q_muon_at() (+0.0769 ppb); the proton leg was a 17-dp transcription of
+# Q_50_DIGIT_STR. Both now carry the full 50 digits and cannot go stale.
+Q_MUON = mp.nstr(q_muon_at(50), 50, strip_zeros=False)    # ideal CAL-2 (muon) pin
+Q_PROTON = Q_50_DIGIT_STR                                 # experimental (proton) pin
 # Was "1.10997861", commented "proton-pinned spot value" — but that literal is
 # +24.5 ppb from the proton pin, i.e. 2.1x the ~11.5 ppb mu-p substrate tension
 # this very probe measures. A muon-vs-proton comparison run against it was
@@ -844,6 +854,14 @@ def main() -> int:
         "auditOnly": "docs/audits/2026-08-01-balanced-theta-limit.md",
         "bean": "qou-r4ya",
         "allPassed": True,
+        # Both pins are READ (Q_MUON / Q_PROTON in B7); the stamp site used to
+        # declare q0_anchor=False, i.e. `q0Anchor: "independent"` -- a false
+        # claim of layer-freedom on a producer that reads q0 twice (bean
+        # qou-9ugp). Declared `comparison` instead, with both values.
+        **q0_comparison(
+            muon=Q_MUON, proton=Q_PROTON,
+            reason="B7 evaluates the balanced theta limit at BOTH pins; the "
+                   "mu-p comparison is the subject"),
         "precisionMetadata": {"per_rung_dps": {c[0]: c[7] for c in RUNGS},
                               "zero_finding_dps": "log10(1/w)·(n_max+4)² + 120"},
         "data": results,
@@ -851,12 +869,12 @@ def main() -> int:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
-    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    # scriptFile a downstream pass had added. q0 IS read (both pins); the payload declares `comparison`.
     import os as _os  # noqa: E402 -- provenance stamp
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=False)
+        witness, script_path=__file__, engine=None, q0_anchor=None)   # payload declares `comparison`
     WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n✓ Witness: {WITNESS.name}  (8 assertion blocks, all passed)")
     return 0

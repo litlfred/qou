@@ -131,6 +131,7 @@ def main() -> None:
     sys.path.insert(0, str(Path(__file__).resolve().parents[3]
                            / "tools" / "qou-substrate" / "python"))
     from qou_substrate.witness import WitnessBuilder
+    from qou_substrate.constants import Q_50_DIGIT_STR
 
     print("=" * 78)
     print("Q_β Markov-trace inner product replacement of L2")
@@ -207,10 +208,15 @@ def main() -> None:
     # silently OOM-exits.  Numerical inverse at q_0 (50-dps) preserves
     # the SHAPE × S structural answer at the anchor; full symbolic
     # inverse is deferred to a follow-up commit.
-    q_0_str = json.load(open(
-        _pb.witness_path("q-pinning-50-digit.witness.json", here),
-        encoding="utf-8",
-    ))["derived_50_digit"]["q"]
+    # Proton pin (owner directive 2026-08-07: all compute defaults to the
+    # experimental/proton anchor). The upstream SDP witness
+    # (qbeta-decay-sdp-knot-operator) supplies S and the L2 coords computed at
+    # the PROTON q_0. This probe formerly read q_0 from
+    # q-pinning-50-digit.witness.json (q0Anchor: muon); evaluating A(q) and the
+    # constraint at the muon q_0 against proton-pinned coords was a layer
+    # straddle that inflated the L2 residual to 3.5e-9 (> 1e-9 tol) — the
+    # stale-witness "regression" of qou-2364. Aligning both to proton.
+    q_0_str = Q_50_DIGIT_STR
     q_0 = sp.Float(q_0_str, 50)
     print(f"  Evaluating G(q_0) and A(q_0) at q_0 = {sp.N(q_0, 12)} (50-dps numeric)…")
     G_num = G.subs(q, q_0).evalf(50)
@@ -292,18 +298,23 @@ def main() -> None:
     # (Symbolic constraint A^T x_M = S identity is dischargeable but
     # G.inv() is too heavy symbolically; the numerical constraint
     # residue at q_0 is asserted below as the validating check.)
+    # NO-FLOAT64 (qou-2364): err_L2/err_M are 50-dps sympy Floats; the former
+    # `float(...)` downcast was the whole of this witness's raw-float64 count.
+    # Serialize the full-precision string — `passed` still coerces with float()
+    # for the tolerance comparison (WitnessBuilder.add_assertion contract). The
+    # residual is a genuine 50-dps quantity, not float64 noise.
     wb.add_assertion(
         name="L2-constraint-at-q0",
-        computed=float(err_L2),
-        expected=0.0,
-        tolerance=1e-9,
+        computed=str(err_L2),
+        expected="0",
+        tolerance="1e-9",
         source="A^T x_L2 (witness) reproduces S at q_0",
     )
     wb.add_assertion(
         name="Markov-constraint-at-q0",
-        computed=float(err_M),
-        expected=0.0,
-        tolerance=1e-9,
+        computed=str(err_M),
+        expected="0",
+        tolerance="1e-9",
         source="A^T x_M (computed) reproduces S at q_0",
     )
     wb.add_assertion(
@@ -314,12 +325,12 @@ def main() -> None:
         # name and the `source` both state the checkable claim: the shapes
         # DIFFER, i.e. the max is non-zero. That can fail; recording a number
         # against itself cannot. The magnitude is kept as data below.
-        computed=bool(float(max_diff) > 0.0),
+        computed=bool(max_diff > 0),
         expected=True,
         tolerance=None,
         source="max |x_L2 - x_M| across 6 channels (non-zero is expected)",
     )
-    wb.add_data("max_abs_x_L2_minus_x_M", float(max_diff))
+    wb.add_data("max_abs_x_L2_minus_x_M", str(max_diff))
     wb.add_data(
         "gram_matrix_diagonal",
         [str(sp.simplify(G[i, i])) for i in range(6)],
@@ -341,7 +352,7 @@ def main() -> None:
         "constraint_residues_at_q0",
         {"L2": str(err_L2), "Markov": str(err_M)},
     )
-    out_path = wb.save()
+    out_path = wb.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"  Witness: {out_path.name}")
 
 

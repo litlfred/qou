@@ -232,7 +232,7 @@ def main() -> int:
     }
 
     result = {
-        "substrate": {"q0": mp.nstr(Q0, 40), "source": "muon-canonical jet-filtration witness"},
+        "substrate": {"q0": mp.nstr(Q0, 40), "source": "jet-filtration witness (deltalambda-jet-filtration-magnitude), q0Anchor=proton. Label corrected 2026-09-04 from 'muon-canonical' (bean qou-9ugp): the upstream resolves to the proton pin 1.1099785827513808..., so this witness named a layer it does not evaluate at while stamping q0Anchor=proton one field away."},
         "c3_cluster_prediction_MeV": mp.nstr(C3_CLUSTER, 6),
         "corrected_rho_strong": corr,
         "raw_rho_strong": raw,

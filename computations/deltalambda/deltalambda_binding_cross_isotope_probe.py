@@ -51,7 +51,18 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
@@ -93,7 +104,15 @@ def main():
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(40)))
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
-        q0 = mp.mpf("1.1099785827513808076")
+        q0 = mp.mpf(Q_50_DIGIT_STR)
+    # `q_at` is anchor-resolved per producer; this stem is not in `ideal_muon`,
+    # so q0 is the proton pin. Assert it rather than assume it — a later manifest
+    # move would otherwise silently change every dim_q below (owner directive
+    # 2026-08-07: production compute defaults to the experimental/proton anchor).
+    # Compare against `Q_50_DIGIT_STR`, not `qou_substrate.constants.Q`: the
+    # latter is a Python `float` (17 digits), so it cannot witness a 40-dps pin.
+    assert mp.almosteq(q0, mp.mpf(Q_50_DIGIT_STR), rel_eps=mp.mpf("1e-30")), (
+        f"expected the proton pin, got q0={mp.nstr(q0, 25)}")
 
     def qint(k):
         return (q0 ** k - q0 ** (-k)) / (q0 - 1 / q0)
@@ -122,7 +141,7 @@ def main():
             chi = mp.mpf(e["chi_lambda"])
             y = mp.mpf(str(yd[lam]))
             sgn = (-1) ** (n_lambda(lam) % 2)
-            Bq += y * chi * sgn * dim_q(lam, Q0_PROTON) ** 2
+            Bq += y * chi * sgn * dim_q(lam) ** 2
             Bc += y * chi * sgn * dim_ordinary(lam) ** 2
         rows.append({"iso": iso, "n": n, "npart": len(bp),
                      "ratio_dimq2": float(Bq / tgt), "ratio_dim2": float(Bc / tgt),

@@ -3,12 +3,12 @@
   "description": "The Hitchin/WZW monodromy (Laszlo\u2013Pauly\u2013Sorger) is the right object type for \u03c4=tr B and confirms A\u2085=level-8, but its root-of-unity monodromy is unitary/elliptic (|tr|\u22642) while \u03c4=2.6424>2 is hyperbolic \u2014 the archimedean-continuation wall. Structural analogy (ii), not a derivation. scope-(a)+(b).",
   "audit_only": true,
   "tier": "structural assessment (scope-(a) mismatch + scope-(b) exclusion)",
-  "computedAt": "2026-08-23T09:40:18.235009+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-03T23:24:51.253677+00:00",
+  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
   "engine": "mpmath",
-  "engineVersion": "1.4.1",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "tau_binding_hitchin_wzw_wall_probe.py",
-  "scriptHash": "2f651d37b6b2",
+  "scriptHash": "a866558f588f",
   "assertions": [
     {
       "name": "lps_element_neq_tau_binding",
@@ -28,8 +28,8 @@
   ],
   "allPassed": true,
   "result": {
-    "tau_binding_q0": "2.642386313",
-    "lps_sigma_real_q0": "2.032809349",
+    "tau_binding_q0": "2.642386309",
+    "lps_sigma_real_q0": "2.032809342",
     "l8_A5_trace": "1.0",
     "verdict": "CLASSIFICATION (ii) structural analogy needing a bridge \u2014 NOT a derivation. The Hitchin/WZW monodromy (Laszlo\u2013Pauly\u2013Sorger) supplies exactly the right OBJECT TYPE for \u03c4=tr B (SL\u2082 det-1 bar-even WZW/Hecke trace, Prop 5.1 = [2]\u00b2\u2212[2]) and confirms the keystone's A\u2085 as the finite level-8 SU(2) monodromy image (Prop 5.3). But it does NOT bridge to \u03c4_binding=2.6424: (a) the specific element \u03c3\u2081\u207b\u00b9\u03c3\u2082 at real q0 = 2.033 \u2260 2.6424 (distinct [2]_q-rationals); (b) at every root of unity the monodromy is UNITARY \u21d2 elliptic |tr|\u22642 (l=8 A\u2085 gives 1.0), so no literal WZW element carries the hyperbolic \u03c4>2 (cited invariant: WRT unitarity). This is the SAME archimedean-continuation wall the corpus already names (fibre root-of-unity unitary vs observable real-q hyperbolic; keystone \u00a7Frontier bwS0_eq_hecke). The Hitchin paper makes the wall vivid (A\u2085 = level-8 finite monodromy; binding \u03c4 = its hyperbolic continuation) but leaves the owner-gated keystone continuation as the sole route. Not passed off as a closure. No fit; no c_k wired."
   },
@@ -38,5 +38,9 @@
     "paper": "Laszlo\u2013Pauly\u2013Sorger, On the monodromy of the Hitchin connection (library/monodromyhitchiny/MonodromyHitchinY.pdf)",
     "corpus": "BindingTauAnchorClosure.lean (\u03c4 closed form); s5-so3 keystone (bwS0_eq_hecke, archimedean continuation, owner-gated)",
     "correction": "\u03c4 is NOT an open number \u2014 it has a Lean-proved closed form; only its GEOMETRIC derivation is open"
-  }
+  },
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

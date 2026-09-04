@@ -88,4 +88,9 @@ GRAPH is not where the error lives.
 The bond COUNT is doing all the work that works (layout-free `(A-1)` scores
 p5-p95 1.1809, better than any isospin-resolved variant), which is consistent
 with `qou-zryq` — the inter-nucleon block encodes a count, not a coordination
-graph. Top lead is now `qou-ubsl`.
+graph.
+
+(Corrected same day: I wrote "top lead is now `qou-ubsl`" — that bean is
+**completed and closed**, the SU(4) reading structurally forbidden by the
+`ℓ(λ) ≤ 2` row cap. The demotion of coordination geometry stands on its own
+measurement; the re-promotion it pointed at does not.)

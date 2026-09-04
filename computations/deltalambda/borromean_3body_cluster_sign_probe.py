@@ -74,13 +74,25 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent
 sys.path.insert(0, str(COMP))
 
 # ── derived substrate (0 params) ──────────────────────────────────────────────
-Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale (MeV)
 H = Q0 - 1 / Q0
@@ -255,12 +267,29 @@ def main() -> int:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
-    # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+    # scriptFile a downstream pass had added.
+    #
+    # CORRECTED 2026-09-04 (bean qou-9ugp). This read "no q0 in this producer's
+    # cone; stamp provenance only" and passed `q0_anchor=False`, which makes the
+    # builder write `q0Anchor: "independent"` with the reason "no q0-dependent
+    # field in this witness". That is FALSE: this witness's own `parameters`
+    # carry q0 = 1.1099785827513808..., h = q0 - 1/q0, z = q0**3/(q0**2 + 1)
+    # (convention D) and E0_MeV -- four fields that all move with the pin.
+    #
+    # It was invisible until now for the `qou-ftuv` reason:
+    # `stamp_staleness_metadata` writes `q0Anchor` only inside
+    # `if "q0Anchor" not in payload`, and the committed witness already carried a
+    # `proton` key from an earlier pass. The stale key was masking the producer's
+    # own declaration; re-running is what exposed it. Sixth false independence
+    # declaration found in this drain.
     import os as _os  # noqa: E402 -- provenance stamp
     from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
+    for _k in ("q0Anchor", "q0AnchorReason", "q0Value", "q0Values"):
+        witness.pop(_k, None)          # do not inherit a stale stamp (qou-ftuv)
     _WB.stamp_staleness_metadata(
-        witness, script_path=__file__, engine=None, q0_anchor=False)
+        witness, script_path=__file__, engine=None,
+        q0_anchor="proton", q0_value=str(witness["parameters"]["q0"]))
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nwitness -> {out.relative_to(COMP.parent)}")
     return 0

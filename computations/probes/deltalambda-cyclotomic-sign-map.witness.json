@@ -3,12 +3,12 @@
   "description": "Tests whether the Masbaum cyclotomic coefficient mixed-sign supplies the \u0394_\u03bb row-grading sign (-1)^{n(\u03bb)}. Identity sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)} confirmed; cyclotomic sign is per-integer-n while \u0394_\u03bb sign is per-partition \u2014 index-matching wall. scope-(a): needs GS-filtration refinement (qou-my68). No fit; no c_k.",
   "audit_only": true,
   "tier": "symbolic-exact (partition combinatorics)",
-  "computedAt": "2026-07-19T00:23:06.753887+00:00",
-  "commitSha": "a41c33d32bcbf864eb84c8d0857883cf1b19d9cc",
+  "computedAt": "2026-09-03T23:06:42.599849+00:00",
+  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
   "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "engineVersion": "sympy 1.14.0",
   "scriptFile": "deltalambda_cyclotomic_sign_map_probe.py",
-  "scriptHash": "33304affeead",
+  "scriptHash": "aef5afb430fa",
   "assertions": [
     {
       "name": "chirality_sign_eq_row_grading",
@@ -87,5 +87,9 @@
       "qou-my68"
     ],
     "relatedPrune": "Option-E PROBE-4 KL-positivity (PartitionOf5.deltaSign_mixed); Nakayama refutation (deltalambda-grho-nakayama-morphism)"
-  }
+  },
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

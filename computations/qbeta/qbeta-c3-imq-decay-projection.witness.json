@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T00:20:24.342638+00:00",
-  "commitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-04T04:33:58.883949+00:00",
+  "commitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
   "assertions": [
     {
       "name": "imq_small_and_sign_flipped",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-c3-imq-decay-projection",
   "scriptFile": "qbeta_c3_imq_decay_projection_probe.py",
-  "scriptHash": "32cde8535f15",
-  "scriptCommitSha": "492354eda1e971bd1764ddc3b045b79c03b50cc2",
+  "scriptHash": "7a81da1c5796",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +30,23 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_imq_decay_projection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_imq_decay_projection_probe.py"
   },
   "description": "Tests conj:im-q-physical-role candidate (iii) (Im(q) = non-Hermitian / decay-width Γ parameter) against the c₃ bar-odd S = Q_β/E₀, the decay observable it predicted. Non-fitting inversion: S as the first-order response of Im 𝔙 to Im(q)=ε, with the derived meridian map u=2 log q (#3579) and leading NZ Im 𝔙 ≈ (√3/2)|u|²sin(2 arg u). Required ε: muon +1.3%, proton −5.5% of Re q — small-ish and SIGN-FLIPPED. Real q₀ differ ~1e-8, so ε is an independent DOF; the sign-flip (impossible for real q) is the candidate-(iii) signature. Does NOT close the wall (the q₀↦ε map = arg(u(q₀)) stays open, now read as the decay projection). No conflict with Im q₀=0 (that is the bar-even mass eval; S is ∂/∂Im q). Magnitude u-map-dependent; sign-flip robust. Scope-(a); C14; no fit; no c_k wired; conjecture stays a conjecture.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
     "epsilon_required": {
       "muon": {
-        "eps": "0.01486788323",
+        "eps": "0.01486788322",
         "pct_of_re_q": "1.33947",
         "S": "0.00968298"
       },

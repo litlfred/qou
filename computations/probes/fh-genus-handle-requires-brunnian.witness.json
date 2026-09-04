@@ -1,0 +1,206 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T02:55:14.286191+00:00",
+  "commitSha": "6a22e17a4e8abdfd31e1d9f72dd4ad8de5d08b58",
+  "assertions": [
+    {
+      "name": "source_sentence_carries_the_borromean_qualifier",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "live read of the held text, so a re-ingestion that changed the sentence would fail this rather than leave the probe resting on a remembered reading"
+    },
+    {
+      "name": "components_of_the_derived_carrier_satisfying_the_handles_hypothesis",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "components",
+      "source": "THE RESULT. Summed over 6 isotopes x 2 branches = 64 components. Not one has all its pairwise linking numbers vanishing, so the Borromean hypothesis fails everywhere."
+    },
+    {
+      "name": "result_holds_in_both_crossing_resolution_branches",
+      "computed": "12",
+      "expected": "12",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "rows",
+      "source": "lk is branch-DEPENDENT (unlike the component count), so a figure read off one branch would not be a statement about the carrier. Checked in both."
+    },
+    {
+      "name": "every_isotope_has_exactly_A_linked_pairs",
+      "computed": "12",
+      "expected": "12",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "rows",
+      "source": "cross-check that the carrier really is the measured path: mu - 1 = A linked consecutive pairs. If this ever fails the shape assumption behind the Lean's PathLinking has changed and the result needs re-deriving."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "fh-genus-handle-requires-brunnian",
+  "scriptFile": "fh_genus_handle_requires_brunnian_probe.py",
+  "scriptHash": "b6997996f1ca",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/fh_genus_handle_requires_brunnian_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/fh_genus_handle_requires_brunnian_probe.py"
+  },
+  "description": "EXPLORATORY. The Freedman-He complement-genus lower bound on ac(L_k, L) is stated in Komendarczyk (arXiv:0808.1533v1, sec-001-energy-bound.md:216-217) FOR BORROMEAN LINKS -- a qualifier the corpus drops (qou-a9li, qou-b5yi) and which this tranche's own earlier literature ledger dropped before drawing the OPPOSITE conclusion. It is load-bearing: a surface in the complement bounding L_k forces lk(L_k, L_j) = 0 by complement homology, so off the Brunnian class the infimum is over an EMPTY set and the estimate is ill-posed, not merely weaker. Measured on the derived carrier (the canonical atom-word closure): ZERO of its components have all-vanishing pairwise linking, on every isotope and in BOTH crossing-resolution branches. So the handle applies at no component here -- while the one carrier where it does apply is the Borromean L6a4, the census assignment retired as a fit by the 2026-08-29 owner ruling. Scope (b) on the HANDLE, with the invariant cited; eq. (43) and ac(L_k, L) themselves are untouched. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "the_dropped_qualifier": {
+      "source": "library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:216-217",
+      "sentence_as_held": "asymptotic crossing numbers ac( Lk, L) for borromean links can be estimated below",
+      "corpus_records_that_drop_it": [
+        "qou-a9li",
+        "qou-b5yi",
+        "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md (this tranche, corrected)"
+      ],
+      "why_it_is_load_bearing": "a compact oriented S in R^3 \\ L_j with dS = L_k forces lk(L_k,L_j) = 0, since [L_k] = [dS] = 0 in H_1(R^3 \\ L_j) = Z and that class IS the linking number. Where some lk != 0 the minimised-over set is EMPTY."
+    },
+    "measured_on_the_derived_carrier": {
+      "carrier": "closure of the canonical atom braid word; a connected sum of (2,k) torus links, verified 32/32 in SnapPy (docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md)",
+      "rows": [
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "sigma",
+          "components_mu": 3,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 2
+        },
+        {
+          "isotope": "2H",
+          "A": 2,
+          "branch": "sigma^-1",
+          "components_mu": 3,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 2
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "sigma",
+          "components_mu": 4,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 3
+        },
+        {
+          "isotope": "3H",
+          "A": 3,
+          "branch": "sigma^-1",
+          "components_mu": 4,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 3
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "sigma",
+          "components_mu": 4,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 3
+        },
+        {
+          "isotope": "3He",
+          "A": 3,
+          "branch": "sigma^-1",
+          "components_mu": 4,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 3
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "sigma",
+          "components_mu": 5,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 4
+        },
+        {
+          "isotope": "4He",
+          "A": 4,
+          "branch": "sigma^-1",
+          "components_mu": 5,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 4
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "sigma",
+          "components_mu": 7,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 6
+        },
+        {
+          "isotope": "6Li",
+          "A": 6,
+          "branch": "sigma^-1",
+          "components_mu": 7,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 6
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "sigma",
+          "components_mu": 9,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 8
+        },
+        {
+          "isotope": "8Be",
+          "A": 8,
+          "branch": "sigma^-1",
+          "components_mu": 9,
+          "components_with_all_linking_zero": 0,
+          "linked_pairs": 8
+        }
+      ],
+      "totals": {
+        "components": 64,
+        "components_with_all_linking_zero": 0
+      },
+      "reading": "not one component anywhere satisfies the handle's hypothesis, and this holds in both branches -- so it is not an artifact of how the superposition letters were resolved"
+    },
+    "the_inversion": {
+      "handle_applies_to": "Borromean links -- in this arc, L6a4 (the A=3 carrier)",
+      "L6a4_provenance": "the CENSUS assignment, admitted AME-driven (jsj_verification.py), retired by owner ruling 2026-08-29",
+      "handle_applies_to_derived_carrier": false,
+      "consequence": "the only carrier on which route 2's computable handle works is the one that was retired as a fit; on the derived carrier it does not apply at all"
+    },
+    "what_this_does_NOT_establish": {
+      "eq_43": "untouched -- it remains a true lower bound",
+      "ac_itself": "untouched -- nothing here says ac(L_k, L) is small or zero, only that the complement-genus handle on it is unavailable here",
+      "other_handles": "a different lower bound on ac, not routed through a complement genus, is not excluded and is not examined",
+      "scope": "(b) on the handle, invariant cited (complement homology)"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0 anywhere. Inputs are integer linking numbers of the canonical atom-word closure (permutation and crossing-sign arithmetic, exact integers) and a literal text search of library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md. No substrate pin is evaluated on any path, so no q0Value exists."
+}

@@ -54,15 +54,23 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
-from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 CODATA_ALPHA_INV = mp.mpf("137.035999084")
 SIGMA_PPB = mp.mpf("0.15")
+# Both anchors are read BY NAME from the substrate (owner authorisation 2026-09-03,
+# bean qou-4bef). Until then this file hardcoded the RETIRED muon pin A
+# (1.10997859555733471, the self-certified value retired 2026-08-22/28) and a
+# 19-figure truncation of the proton string; the muon residual it published
+# (80.51 ppb) is therefore superseded by the value at the live CODATA-2022
+# derivation (~81.04 ppb). The proton pin is the 2026-08-07 default; the muon
+# leg is a DELIBERATE comparison (the mu-p substrate tension), stamped as such.
 ANCHORS = {
-    "muon": mp.mpf("1.10997859555733471"),
-    "proton": mp.mpf("1.109978582751380808"),
+    "muon": q_muon_at(50),               # ideal CAL-2 pin: live CODATA-2022 muon derivation
+    "proton": mp.mpf(Q_50_DIGIT_STR),   # experimental default (proton, 50-digit string)
 }
 
 
@@ -71,7 +79,9 @@ def qb(n, q):
 
 
 def ppb(v):
-    return float((v - CODATA_ALPHA_INV) / CODATA_ALPHA_INV * 1e9)
+    """Residual against CODATA in parts per billion, carried as ``mpf``
+    (no float64 anywhere on the value path; bean qou-4bef)."""
+    return (v - CODATA_ALPHA_INV) / CODATA_ALPHA_INV * mp.mpf(10) ** 9
 
 
 def forms(q):
@@ -110,21 +120,22 @@ def main() -> int:
     )
     wb.set_content_block("prop:em-coupling-bring-zero-mode")
 
-    print(f"\n  CODATA 1/α = {mp.nstr(CODATA_ALPHA_INV, 15)}   σ_α = {float(SIGMA_PPB)} ppb")
+    print(f"\n  CODATA 1/α = {mp.nstr(CODATA_ALPHA_INV, 15)}   σ_α = {mp.nstr(SIGMA_PPB, 3)} ppb")
     print(f"  integers: g=4 (Bring genus); [9],[10] = cross# of T(2,9),T(3,5) [structural]\n")
 
     data = {}
     for name, q in ANCHORS.items():
         f = forms(q)
-        print(f"  --- q0 = {name} ({float(q):.12f}) ---")
+        print(f"  --- q0 = {name} ({mp.nstr(q, 14)}) ---")
         print(f"    tree q[9][10]          = {mp.nstr(f['tree'],13)}")
-        print(f"    + zero-mode 2/(3π)     = {mp.nstr(f['additive'],13)}   resid = {ppb(f['additive']):+.1f} ppb")
-        print(f"    + αH first order       = {mp.nstr(f['plus_oalpha'],13)}   resid = {ppb(f['plus_oalpha']):+.1f} ppb")
-        print(f"    fixed-point (α²H+αT=1) = {mp.nstr(f['fixed_point'],13)}   resid = {ppb(f['fixed_point']):+.1f} ppb")
-        print(f"      best form vs σ_α: {abs(ppb(f['fixed_point']))/float(SIGMA_PPB):.0f}× experimental σ\n")
+        print(f"    + zero-mode 2/(3π)     = {mp.nstr(f['additive'],13)}   resid = {mp.nstr(ppb(f['additive']), 5)} ppb")
+        print(f"    + αH first order       = {mp.nstr(f['plus_oalpha'],13)}   resid = {mp.nstr(ppb(f['plus_oalpha']), 5)} ppb")
+        print(f"    fixed-point (α²H+αT=1) = {mp.nstr(f['fixed_point'],13)}   resid = {mp.nstr(ppb(f['fixed_point']), 5)} ppb")
+        print(f"      best form vs σ_α: {mp.nstr(abs(ppb(f['fixed_point'])) / SIGMA_PPB, 3)}× experimental σ\n")
         data[name] = {k: mp.nstr(v, 15) for k, v in f.items()}
-        data[name]["fixed_point_resid_ppb"] = ppb(f["fixed_point"])
-        data[name]["additive_resid_ppb"] = ppb(f["additive"])
+        data[name]["fixed_point_resid_ppb"] = fmt(ppb(f["fixed_point"]), 20)
+        data[name]["additive_resid_ppb"] = fmt(ppb(f["additive"]), 20)
+        data[name]["q0"] = fmt(q, 50)
 
     fp_muon = ppb(forms(ANCHORS["muon"])["fixed_point"])
     fp_proton = ppb(forms(ANCHORS["proton"])["fixed_point"])
@@ -132,47 +143,70 @@ def main() -> int:
     print("  HONEST STATUS:")
     print("  (A) CONJECTURAL — conditional on 3 unproved classes (ArchimedeanLimit,")
     print("      BlochSuslinUniqueness, BringZeroModeBlochClass). Not a proved derivation.")
-    print(f"  (B) ANCHOR-DEPENDENT — fixed-point resid {fp_proton:+.1f} ppb (proton) vs "
-          f"{fp_muon:+.1f} ppb (muon).")
+    print(f"  (B) ANCHOR-DEPENDENT — fixed-point resid {mp.nstr(fp_proton, 5)} ppb (proton) vs "
+          f"{mp.nstr(fp_muon, 5)} ppb (muon, live CODATA-2022 derivation).")
     print(f"  (C) NOT AT TARGET — this probe's quadratic form at the PROTON default is "
-          f"{abs(fp_proton):.2f} ppb")
-    print(f"      = {abs(fp_proton)/float(SIGMA_PPB):.0f}× σ_α, and "
-          f"{abs(fp_proton)/(float(SIGMA_PPB)/100):.0f}× the L2 100× criterion "
-          f"(σ_α/100 = {float(SIGMA_PPB)/100:.4f} ppb).")
+          f"{mp.nstr(abs(fp_proton), 4)} ppb")
+    print(f"      = {mp.nstr(abs(fp_proton) / SIGMA_PPB, 3)}× σ_α, and "
+          f"{mp.nstr(abs(fp_proton) / (SIGMA_PPB / 100), 4)}× the L2 100× criterion "
+          f"(σ_α/100 = {mp.nstr(SIGMA_PPB / 100, 3)} ppb).")
     print("      Those are DIFFERENT multiples — 'N σ' is not 'N × the 100× target' (qou-ydmy).")
     print("      SUPERSEDED on the best number: the +Schwinger cubic reaches 0.313 ppb")
     print("      (~2.1 σ_α, ~209× the criterion) — see alpha_em_schwinger_ladder_probe.py.")
     print("  => highest-VALUE 1-ppq target, but LONG-HORIZON conjectural, not near-term.")
 
     wb.add_data("ladder", data)
+    # The reference the residuals below are scored against. It was NOT in the
+    # witness (found 2026-09-04): the witness published `proton_ppb` /
+    # `muon_ppb` while recording no value for them to be residuals FROM, so a
+    # reader could not reproduce either number from the witness alone. Its own
+    # consumer's docstring meanwhile claimed to "track the witness" for a value
+    # the witness never held. Recording it here is what makes that claim true.
+    wb.add_data("codata_reference", {
+        "alpha_inv": fmt(CODATA_ALPHA_INV),
+        "sigma_ppb": fmt(SIGMA_PPB),
+        "vintage": "CODATA-2018 (Cs recoil)",
+        "note": "the live table carries 137.035999177; this producer scores "
+                "against the 2018 value on purpose, and bumping it alone would "
+                "desynchronise the recorded residuals",
+    })
     wb.add_data("integers_provenance", {
         "g": "4 = genus of Bring's surface (structural)",
         "9_10": "crossing numbers of T(2,9),T(3,5) (prop:force-carrier-bring-uniqueness)",
         "zero_mode": "2g/(4pi(g-1)) = dim H^1/Area (Hodge/Gauss-Bonnet) = 2/(3pi)"})
     wb.add_data("honest_status", {
         "conjectural": "3 unproved classes; conditional-class != established",
-        "anchor_dependent": {"proton_ppb": fp_proton, "muon_ppb": fp_muon},
-        "not_at_target": f"best ~{abs(fp_muon):.0f} ppb muon = ~{abs(fp_muon)/float(SIGMA_PPB):.0f}x sigma_a",
+        "anchor_dependent": {"proton_ppb": fmt(fp_proton, 20), "muon_ppb": fmt(fp_muon, 20)},
+        "not_at_target": (f"proton (default) quadratic {mp.nstr(abs(fp_proton), 4)} ppb = "
+                          f"~{mp.nstr(abs(fp_proton) / SIGMA_PPB, 3)}x sigma_a = "
+                          f"~{mp.nstr(abs(fp_proton) / (SIGMA_PPB / 100), 4)}x the L2 100x criterion; "
+                          f"muon (ideal CAL-2, live CODATA-2022 derivation) {mp.nstr(abs(fp_muon), 4)} ppb. "
+                          f"Superseded on the best number by the +Schwinger cubic (0.313 ppb, proton)."),
         "verdict": "highest-value but long-horizon conjectural close, not near-term"})
     # Scored at the PROTON pin: the 2026-08-07 owner directive makes the
     # experimental anchor the default for all compute.  The L2 100x criterion is
     # sigma_exp/100 = 0.0015 ppb -- NOT 10*sigma (1.5 ppb) and NOT 15 ppb, both
     # of which this assertion previously conflated (bean qou-ydmy).
-    target_100x = float(SIGMA_PPB) / 100.0
+    target_100x = SIGMA_PPB / 100
     wb.add_assertion("alpha_em_not_at_100x_target",
-                     computed=float(abs(fp_proton) > target_100x), expected=1.0, tolerance=0.5,
-                     source=(f"proton-anchored quadratic residual {abs(fp_proton):.2f} ppb "
-                             f"exceeds the L2 100x target sigma_a/100 = {target_100x:.4f} ppb "
-                             f"by ~{abs(fp_proton)/target_100x:.0f}x. The cubic (+Schwinger) form "
+                     computed=("1" if abs(fp_proton) > target_100x else "0"), expected="1", tolerance="0.5",
+                     source=(f"proton-anchored quadratic residual {mp.nstr(abs(fp_proton), 4)} ppb "
+                             f"exceeds the L2 100x target sigma_a/100 = {mp.nstr(target_100x, 3)} ppb "
+                             f"by ~{mp.nstr(abs(fp_proton) / target_100x, 4)}x. The cubic (+Schwinger) form "
                              f"reaches 0.313 ppb, still ~209x short -- see "
                              f"alpha_em_schwinger_ladder_probe.py, which supersedes this probe's "
                              f"best number."))
     wb.add_assertion("alpha_em_anchor_dependent",
-                     computed=float(abs(fp_muon - fp_proton) > 10.0), expected=1.0, tolerance=0.5,
-                     source=(f"quadratic fixed-point residual is {abs(fp_proton):.2f} ppb at the "
-                             f"proton (default) pin vs {abs(fp_muon):.1f} ppb at the muon pin -- "
+                     computed=("1" if abs(fp_muon - fp_proton) > 10.0 else "0"), expected="1", tolerance="0.5",
+                     source=(f"quadratic fixed-point residual is {mp.nstr(abs(fp_proton), 4)} ppb at the "
+                             f"proton (default) pin vs {mp.nstr(abs(fp_muon), 4)} ppb at the muon pin "
+                             f"(live CODATA-2022 derivation; the retired pin A gave 80.51) -- "
                              f"the mu-p substrate tension, not an intrinsic scale"))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=ANCHORS["muon"], proton=ANCHORS["proton"],
+        reason=("anchor-dependence ladder: both pins are read on purpose and each is "
+                "reported under its own key; the proton (default) leg is the scored one, "
+                "the muon leg measures the mu-p substrate tension on 1/alpha")))
 
     print("\n  RESULT: ladder computed (standalone; no fitted coefficient)")
     return 0

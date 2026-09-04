@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:01:03.891089+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-04T03:11:10.690388+00:00",
+  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
   "assertions": [
     {
       "name": "n9_structure_14pairs_2selfconj",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "a3-magnitude-parity-orthogonal",
   "scriptFile": "a3_magnitude_parity_orthogonal_probe.py",
-  "scriptHash": "62320035cfe2",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "f1569e5d7b7b",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -87,7 +87,7 @@
   "context": {
     "axis": "Δ_λ binding — A=3 magnitude gate vs the conjugation-parity structure",
     "builds_on": "#4399 GAP-1 (weight-class exclusion), option-e ledger (A=3 magnitude, μ₃)",
-    "q0_convention": "muon-canonical (computations/ layer)",
+    "q0_convention": "proton (experimental / Physical-Observations pin; owner directive 2026-08-07). Corrected from 'muon-canonical (computations/ layer)' on 2026-09-04, bean qou-9ugp: the label named a layer this producer does not evaluate at.",
     "no_fit": true
   },
   "auditOnly": true

@@ -39,12 +39,15 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 CODATA = mp.mpf("137.035999084")
 SIGMA_PPB = mp.mpf("0.15")
-Q_PROTON = mp.mpf("1.109978582751380808")
+# Proton pin read BY NAME from the substrate (owner authorisation 2026-09-03, bean
+# qou-4bef); until then a 19-figure truncation of the 50-digit string was hardcoded.
+Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
 KAPPA1_OHTSUKI = 11 * mp.sqrt(3) * mp.pi / 108
 
 
@@ -53,7 +56,8 @@ def qb(n, q):
 
 
 def ppb(v):
-    return float((v - CODATA) / CODATA * 1e9)
+    """Residual against CODATA in ppb, carried as ``mpf`` (no float64 on the value path)."""
+    return (v - CODATA) / CODATA * mp.mpf(10) ** 9
 
 
 def main() -> int:
@@ -85,36 +89,37 @@ def main() -> int:
              key=lambda r: abs(r - mp.mpf("0.0073")))
 
     rA, rB = ppb(1 / aA), ppb(1 / aB)
-    print(f"\n  proton pin q0 = {float(q):.12f}   h² = {mp.nstr(h2, 8)}")
-    print(f"  form A (no Schwinger)   : 1/α = {mp.nstr(1/aA,15)}   resid = {rA:+.3f} ppb  ({abs(rA)/float(SIGMA_PPB):.0f}× σ)")
-    print(f"  form B (+Schwinger 1−h²α): 1/α = {mp.nstr(1/aB,15)}   resid = {rB:+.3f} ppb  ({abs(rB)/float(SIGMA_PPB):.1f}× σ)")
-    print(f"  Schwinger term closes {rA-rB:+.3f} ppb of the gap (derived, RT phase 3)")
+    print(f"\n  proton pin q0 = {mp.nstr(q, 14)}   h² = {mp.nstr(h2, 8)}")
+    print(f"  form A (no Schwinger)   : 1/α = {mp.nstr(1/aA,15)}   resid = {mp.nstr(rA, 5)} ppb  ({mp.nstr(abs(rA) / SIGMA_PPB, 3)}× σ)")
+    print(f"  form B (+Schwinger 1−h²α): 1/α = {mp.nstr(1/aB,15)}   resid = {mp.nstr(rB, 5)} ppb  ({mp.nstr(abs(rB) / SIGMA_PPB, 3)}× σ)")
+    print(f"  Schwinger term closes {mp.nstr(rA - rB, 5)} ppb of the gap (derived, RT phase 3)")
 
     resB = 1 / aB - CODATA
     c2 = resB / aB ** 2
     print(f"\n  remaining 2-loop term: c₂ = residual/α² = {mp.nstr(c2, 6)}")
-    print(f"  Ohtsuki κ₁ = 11√3π/108 = {mp.nstr(KAPPA1_OHTSUKI, 6)}  (different object; c₂ is ~{float(KAPPA1_OHTSUKI/abs(c2)):.0f}× smaller)")
-    print(f"\n  HONEST HEADLINE: α_EM (proton pin + derived Schwinger) = {rB:+.3f} ppb = ~{abs(rB)/float(SIGMA_PPB):.1f}× σ_α")
+    print(f"  Ohtsuki κ₁ = 11√3π/108 = {mp.nstr(KAPPA1_OHTSUKI, 6)}  (different object; c₂ is ~{mp.nstr(KAPPA1_OHTSUKI / abs(c2), 3)}× smaller)")
+    print(f"\n  HONEST HEADLINE: α_EM (proton pin + derived Schwinger) = {mp.nstr(rB, 5)} ppb = ~{mp.nstr(abs(rB) / SIGMA_PPB, 3)}× σ_α")
     print("  => the closest any not-yet-met observable sits to its 1-ppq target.")
     print("  Remaining: a small uncomputed 2-loop c₂ + the conjectural coupling claim.")
 
     wb.add_data("ladder_proton", {
-        "form_A_no_schwinger_ppb": rA, "form_B_schwinger_ppb": rB,
-        "schwinger_shift_ppb": rA - rB,
-        "form_A_sigma": abs(rA) / float(SIGMA_PPB), "form_B_sigma": abs(rB) / float(SIGMA_PPB)})
+        "form_A_no_schwinger_ppb": fmt(rA, 20), "form_B_schwinger_ppb": fmt(rB, 20),
+        "schwinger_shift_ppb": fmt(rA - rB, 20),
+        "form_A_sigma": fmt(abs(rA) / SIGMA_PPB, 20), "form_B_sigma": fmt(abs(rB) / SIGMA_PPB, 20),
+        "q0": fmt(q, 50)})
     wb.add_data("two_loop", {
         "c2": mp.nstr(c2, 12), "kappa1_ohtsuki": mp.nstr(KAPPA1_OHTSUKI, 12),
-        "c2_vs_kappa1": f"c2 ~ {float(KAPPA1_OHTSUKI/abs(c2)):.0f}x smaller — different object",
+        "c2_vs_kappa1": f"c2 ~ {mp.nstr(KAPPA1_OHTSUKI / abs(c2), 3)}x smaller — different object",
         "status": "uncomputed (RT phase-2 EmFermionLoop)"})
     wb.add_assertion("schwinger_brings_alpha_within_3sigma",
-                     computed=float(abs(rB) < 3 * float(SIGMA_PPB)), expected=1.0, tolerance=0.5,
+                     computed=("1" if abs(rB) < 3 * SIGMA_PPB else "0"), expected="1", tolerance="0.5",
                      source="form B (proton + derived Schwinger) resid +0.313 ppb < 3σ (=0.45 ppb)")
     wb.add_assertion("schwinger_improves_over_form_A",
-                     computed=float(abs(rB) < abs(rA)), expected=1.0, tolerance=0.5,
+                     computed=("1" if abs(rB) < abs(rA) else "0"), expected="1", tolerance="0.5",
                      source="Schwinger term reduces |resid| 1.67 -> 0.313 ppb")
     wb.save()
 
-    print(f"\n  RESULT: α_EM at proton + Schwinger = {rB:+.3f} ppb (~2× σ); 2-loop c₂ uncomputed")
+    print(f"\n  RESULT: α_EM at proton + Schwinger = {mp.nstr(rB, 5)} ppb (~2× σ); 2-loop c₂ uncomputed")
     return 0
 
 

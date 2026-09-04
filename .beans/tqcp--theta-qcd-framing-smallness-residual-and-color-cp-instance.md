@@ -1,11 +1,15 @@
 ---
 # tqcp
 title: 'GAP: θ_QCD framing route — <10⁻¹⁰ smallness residual + ColorSectorCPEven instance (needs SU(3) 3×3 writhe cancellation)'
-status: open
+status: todo
 type: task
 priority: normal
+tags:
+    - sm-26
 created_at: 2026-08-02T00:00:00Z
-updated_at: 2026-08-02T00:00:00Z
+updated_at: 2026-09-03T08:31:55Z
+blocked_by:
+    - qou-ni4b
 ---
 
 Framing-phase route to the strong-CP angle θ_QCD
@@ -34,3 +38,12 @@ TWO OPEN PIECES (this bean):
 Next honest step: derive the SU(3) colour-singlet projection and check whether
 it forces the summed writhe over the three tubes to zero (⟹ instance of the
 class ⟹ θ∈{0,π}). Gated on the open SU(3) sector.
+
+## 🔥 Roast (2026-09-03, qou-bsu0)
+
+(i) Needs an instance of `ColorSectorCPEven` — a colour-singlet writhe cancellation over the 9 = 3×3 tubes, since one T(2,9) gluon knot has writhe 9 — after which θ ∈ {0, π} follows (`framingPhase_eq_pm_one`, `ThetaQcdFramingCp.lean`, sorry-free); and, separately, the smallness |θ| < 10⁻¹⁰, which {0, π} does not address.
+(ii) Excluded: nothing beyond the discrete ceiling; no route to smallness is even proposed anywhere in the corpus.
+(iii) Trap: supplying `instance : ColorSectorCPEven` by fiat (anti-laundering); reading θ = 0 at real q₀ (`cpEven_qpow_iff` forces n = 0) as a solution of strong CP — it is the hypothesis restated; an axion-like field added by hand.
+(iv) Next: derive the SU(3) colour-singlet projection and check whether it forces the summed writhe to zero (`qou-ni4b`). Not near-term.
+(v) Forecast: one algebraic step done, no foothold on smallness; the hardest open problem in this sector.
+Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — the framing phase q^{w·c} is a per-crossing datum; the bar involution is fibre-level (Habiro), so CP-evenness is naturally a bar-parity statement about the full colour-sector Markov trace over all partitions — not formulated.

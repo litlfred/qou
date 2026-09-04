@@ -55,6 +55,18 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 
+# q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a hardcoded PROTON
+# literal -- the right VALUE by the wrong MECHANISM: it cannot follow the
+# anchor, and it is invisible to the retired-pin drain because it never
+# matched. Spellings across this family ran 13 to 60 digits for one pin.
+import sys as _sys_qp  # noqa: E402
+from pathlib import Path as _Path_qp  # noqa: E402
+for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
+              _Path_qp(__file__).resolve().parent.parent / 'substrate'):
+    if str(_p_qp) not in _sys_qp.path:
+        _sys_qp.path.insert(0, str(_p_qp))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
 for _p in (os.path.join(_ROOT, "computations"),
@@ -96,7 +108,7 @@ def main():
         q0 = mp.mpf(str(q_at(30)))
         q0src = "qou_substrate.q_at(30)"
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
-        q0 = mp.mpf("1.1099785827513808076")
+        q0 = mp.mpf(Q_50_DIGIT_STR)
         q0src = "fallback (q_at proton pin, hardcoded high-precision)"
 
     me = mp.mpf(M_E_MEV)

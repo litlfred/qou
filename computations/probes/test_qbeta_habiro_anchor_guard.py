@@ -37,7 +37,9 @@ from qbeta_habiro_residual_probe import (  # noqa: E402
 )
 
 PIN = HERE.parents[1] / "computations" / "q-pinning-50-digit.witness.json"
-PROTON_50 = "1.1099785827513808075916690956107688798744991218736"
+# Read BY NAME (bean qou-9ugp): a hand-typed pin fixture cannot follow an anchor
+# move, which is the failure this whole guard exists to catch.
+from q_parameter import Q_50_DIGIT_STR as PROTON_50  # noqa: E402
 
 
 def _pin():
@@ -81,11 +83,25 @@ def test_the_message_formats(capsys):
     `rel` is an mpf and `f"{rel:.3e}"` throws; the first version did exactly
     that, so the straddle surfaced as a formatting crash rather than a reason.
     """
+    import mpmath as mp
+
     d = _pin()
     d["derived_50_digit"]["q"] = PROTON_50
     with pytest.raises(SystemExit) as e:
         _assert_anchor_matches_value(d)
-    assert "1.154e-08" in str(e.value)
+
+    # The expected distance is DERIVED from the two anchors, not typed (bean
+    # qou-9ugp, 2026-09-03). It was the literal "1.154e-08", the mu-p gap
+    # against the RETIRED self-certified muon pin A; when that anchor was
+    # re-derived to the CODATA-2022 lepton ratio on 2026-08-22 the real gap
+    # became 1.161e-08 and this assertion started failing on main. A test that
+    # hardcodes a gap between two moving anchors is the same stale-literal
+    # defect the guard itself exists to catch.
+    with mp.workdps(60):
+        muon = mp.mpf(_pin()["derived_50_digit"]["q"])
+        expected = f"{abs(mp.mpf(PROTON_50) - muon) / muon:.3e}"
+    assert expected in str(e.value), f"expected {expected} in {e.value}"
+    assert "e-" in expected, "the distance must format as scientific notation"
     assert "qou-m9xp" in str(e.value)
 
 
@@ -111,11 +127,20 @@ def test_the_probe_is_declared_proton_and_uses_it():
 
 
 def test_the_muon_pin_is_rejected_now():
-    """The exact value this probe used to compute at, before the ruling."""
+    """The muon LAYER this probe used to compute at, before the ruling.
+
+    The fixture is READ BY NAME (bean qou-9ugp, 2026-09-03). It was the literal
+    1.1099785955573…01536866079 — the RETIRED self-certified muon pin A, which
+    stopped being the muon anchor on 2026-08-22 when that anchor was re-derived
+    to the CODATA-2022 lepton ratio. A guard that rejects only yesterday's muon
+    value is not a guard against the muon LAYER, so the fixture now follows the
+    live anchor: whatever `q_muon_at()` returns must be refused here.
+    """
     import mpmath as mp
     import pytest as _pt
+    from q_parameter import q_muon_at
 
-    muon = mp.mpf("1.1099785955573347198997632204832250266562084087801536866079")
+    muon = mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False))
     with _pt.raises(SystemExit, match="ANCHOR STRADDLE"):
         _assert_uses_proton_pin(muon)
 

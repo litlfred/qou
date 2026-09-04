@@ -1,7 +1,7 @@
 ---
 # qou-j377
 title: 'SW-6 (=R2b): semisimplicity of H_n(q) at generic q (Tits deformation / ρ_λ separate points)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
@@ -463,3 +463,16 @@ Compiled from current source with lean-direct: QOU/SchurWeyl/HeckeSemisimpleGene
 
 ## 2026-09-04 03:2xZ — RETRACTION of the 02:5xZ entry above: HeckeSemisimpleGeneral is NOT red on main
 The 'HeckeSemisimpleGeneral.lean:81 Application type mismatch' was measured against CACHED oleans of its dependencies (seeded 09-03 09:17Z), several of which e526464c2d had since changed. With every module in its cone that changed on main since the seed rebuilt from source (19 modules, topological order), HeckeSemisimpleGeneral, HeckeSemisimpleReal, HeckeCarrierSemisimple, HeckeCarrierSemisimpleReal and Hecke/TwGramDetNonzero ALL compile with 0 errors on main 45c530378e. The 'four duplicates' symptom was the same staleness. So: the 21:10Z and 02:3xZ entries (the retype and mem_addCell victims) stand — those were rebuilt with their cones; the 02:5xZ entry does not, and is exactly the false-green/false-red trap the lean-verifier memory records. Corrected on #6517 too.
+
+## MERGED 2026-09-04 — PR #6517 landed on main as 5241d1b6112202a85f0893eeaa85745396ff5b50.
+
+isSemisimpleRing_iwahoriHecke_sq / _of_sq are on main.  The residue of the R on
+this arc was the EXISTENCE of a square root, never any algebra; the R theorem now
+derives from the generic one and its R-specific content is one step, naming the root.
+
+Merged with a merge commit rather than rebase: the branch carried two merges of main
+(brought in twice to stay current), so GitHub returned 405 "This branch can't be
+rebased".  Merge-commit preserves the per-commit structure that AGENTS.md rule 8
+prefers rebase FOR; squash would have destroyed it and is banned without per-PR
+permission anyway.
+

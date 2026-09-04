@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/deltalambda_kappa_interface_residual_simplex_probe.py",
   "description": "\u0394_\u03bb frustration weight \u03ba: the #4316 bond\u2212frustration model (M(A)=s(edges\u2212\u03ba\u00b7triangles), s>0) is REFUTED at the deuteron \u2014 the DERIVED third point M(2)=0 (graded self-reference) forces its edge coefficient s=0, so \u03ba=t/s is ill-posed and the fitted \u03ba=2.385 is an A=3,4-only artefact. The exact 0-parameter simplex (Mayer) decomposition over the derived C(A,k) basis gives \u03bc\u2082(edge)=0, \u03bc\u2083(triangle)=+0.4708, \u03bc\u2084(tetra)=\u22124.591 \u2014 a PURE \u22653-body residual, tetrahedron-dominant-negative, matching the \u03c1_F full-binding Mayer b\u2084/b\u2082=4.16 dominance. VERDICT: WALL for \u03ba + redirect; derivation target is \u03bc\u2084 (4-body \u03b1-cluster residual), reachable via \u03c1_F cluster integrals (pyhecke_native present) but requiring the residual cluster-integral compute. Anti-fit STRICT: \u03ba=2.385 labelled a FIT; \u03bc\u2082=0 is the AME-independent derived fact; nothing wired.",
-  "scriptHash": "6ea3c7467714",
+  "scriptHash": "30f18af382b6",
   "results": {
     "substrate": {
       "q0": "1.109978582751380807591669095610768879874"
@@ -64,13 +64,12 @@
       "anti_fit": "\u03ba=2.385 explicitly labelled a FIT (A=3,4-only, refuted at A=2). \u03bc\u2082,\u03bc\u2083,\u03bc\u2084 are the SAME AME residuals in the derived simplex basis; \u03bc\u2082=0 is the derived, AME-independent fact. Nothing wired."
     }
   },
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
   "scriptFile": "deltalambda_kappa_interface_residual_simplex_probe.py",
-  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
+  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
   "engine": "python",
-  "computedAt": "2026-08-29T04:24:30.936901+00:00",
+  "computedAt": "2026-09-04T01:06:54.354341+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

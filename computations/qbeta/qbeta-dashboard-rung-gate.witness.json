@@ -1,0 +1,101 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T10:31:01.903464+00:00",
+  "commitSha": "0bdaff9309d04ae0542234d6d5f6e7d0e7391079",
+  "assertions": [
+    {
+      "name": "cache_has_exactly_one_derived_rung",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "derived rungs [2], cal-anchored [3]. The dashboard stops at the first non-derived rung, so it reports k=2 -- there is no deeper DERIVED rung to report"
+    },
+    {
+      "name": "producer_states_the_gate_as_anti_circularity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "per_observable_100x_status.py: “deepest cumulative DERIVED rung only; cal-anchored rungs are cached for downstream reuse but NEVER counted toward a 100×/1× pass (that would be circular). Keying off `tier` means a future agent who proves a higher c_k Taylor-exact”"
+    },
+    {
+      "name": "producer_breaks_at_first_cal_anchored_rung",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "the loop carries an explicit `break` at the first non-derived rung, so cal-anchored rungs are cached but never scored"
+    },
+    {
+      "name": "dashboard_row_is_the_derived_rung_figure",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Q_beta row: err_ppb='1279.', miss_factor='164.0'"
+    },
+    {
+      "name": "err_ppb_is_stored_as_a_string_not_a_number",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "err_ppb is str '1279.'. A `isinstance(v, float)` scan over this witness returns NO value in [1000, 2000] and so reads as 'the figure is gone'. Match on the string"
+    },
+    {
+      "name": "both_figures_reproduce_their_stated_miss_factors",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "derived-rung 164.0x vs full-ladder 4.836x against the 7.797 ppb L2 target. Both arithmetics are correct; only the first is parameter-free"
+    },
+    {
+      "name": "correcting_agents_md_would_have_been_laundering",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "AGENTS.md's 1279 ppb / 164.0x is the DERIVED-rung figure and is correct as written. Replacing it with 37.7 ppb / 4.8x would report a ladder containing rungs extracted from CODATA Q_beta as a parameter-free accuracy result -- the move AGENTS.md forbids at CAL-1 and CAL-2, one tier down. Left unedited deliberately"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "qbeta-dashboard-rung-gate",
+  "scriptFile": "qbeta_dashboard_rung_gate_is_not_a_truncation_probe.py",
+  "scriptHash": "7f9d7b51fe0c",
+  "scriptCommitSha": "8268cd5d1623703016eb84391f4bf9a5e0e3fb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_dashboard_rung_gate_is_not_a_truncation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_dashboard_rung_gate_is_not_a_truncation_probe.py"
+  },
+  "description": "The L2 dashboard's Q_beta figure (1279 ppb / 164x) is the deepest DERIVED c_k rung, gated deliberately against cal-anchored rungs to avoid circularity -- not a truncation artefact. Refutes the reading in bean qou-99qc that it should be 'corrected' to the full-ladder 37.7 ppb, which would count rungs extracted from the CODATA Q_beta being predicted. Scope-(a); nothing wired.",
+  "data": {
+    "ck_cache_tiers": [
+      "k=2:derived",
+      "k=3:cal-anchored"
+    ],
+    "cache_has_exactly_one_derived_rung": true,
+    "producer_states_the_gate_as_anti_circularity": true,
+    "producer_breaks_at_first_cal_anchored_rung": true,
+    "dashboard_row_is_the_derived_rung_figure": true,
+    "err_ppb_is_stored_as_a_string_not_a_number": true,
+    "both_figures_reproduce_their_stated_miss_factors": true,
+    "correcting_agents_md_would_have_been_laundering": true
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

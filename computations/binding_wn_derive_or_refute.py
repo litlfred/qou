@@ -28,10 +28,31 @@ set_compute_dps()
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 try:
-    from q_parameter import Q_MP as Q0  # muon-canonical q₀ (computations layer)
+    # `Q_MP` is the PROTON pin (measured 2026-09-04: 1.1099785827513808...).
+    # This comment read '# muon-canonical q₀ (computations layer)' until then
+    # -- the same mislabel class drained across nine deltalambda witnesses
+    # earlier in bean qou-9ugp: a label naming a layer the value is not in.
+    from q_parameter import Q_MP as Q0
     q = mp.mpf(str(Q0))
 except Exception:
-    q = mp.mpf("1.10997859555733471")
+    # HARD REFUSAL, replacing a silent fallback (bean qou-9ugp, 2026-09-04).
+    # This `except` bound the RETIRED self-certified muon pin A
+    # (1.1099785955573347...), superseded 2026-08-22 by the CODATA-2022
+    # derivation. The `try` above reads the live anchor by name, so the two
+    # branches silently disagreed by ~46 ppb and only the fallback said nothing.
+    #
+    # Scoped by measurement: blocking `qou_substrate` outright kills these
+    # scripts EARLIER, at `witness_base`'s own import, so the fallback was
+    # unreachable in the total-absence case. The reachable case is a PARTIAL
+    # failure -- the package imports but the q0 read raises. Refusing follows
+    # the nine dead fallbacks converted in the alpha_EM re-pin; the reason goes
+    # to stdout because a stderr-only harness would not see it.
+    raise SystemExit(
+        "REFUSING to run: the q0 read from `q_parameter` failed, and the "
+        "fallback here was\nthe RETIRED muon pin 1.1099785955573347..., "
+        "superseded 2026-08-22.\nInstall qou-substrate and re-run; see bean "
+        "qou-9ugp."
+    )
 
 
 def qint(k):

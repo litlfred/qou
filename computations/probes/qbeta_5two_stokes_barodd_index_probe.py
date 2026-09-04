@@ -70,11 +70,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 mp.mp.dps = 60
-Q0 = {"muon": mp.mpf("1.10997859555733471"),
-      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
+# q₀ anchors read BY NAME (bean qou-9ugp, 2026-09-03). The muon leg was the
+# literal 1.1099785955573… — the RETIRED self-certified muon pin A, superseded
+# 2026-08-22 by the live CODATA-2022 lepton-ratio derivation q_muon_at()
+# (+0.0769 ppb); the proton leg was the 50-digit string re-typed by hand. A
+# hardcoded pin cannot be checked against the name it is bound to.
+Q0 = {"muon": mp.mpf(mp.nstr(q_muon_at(50), 50, strip_zeros=False)),
+      "proton": mp.mpf(Q_50_DIGIT_STR)}
 
 qs = sp.symbols("q")
 ORD = 6            # series gates to O(q^6)
@@ -396,32 +402,32 @@ def main() -> int:
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
     wb.add_assertion("printed_H_tables_exact",
-                     computed=1.0 if g1 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g1))), expected="1.0", tolerance="0.5",
                      source="18 H±_{j,λ} series (GGM eqs 121-123) reproduced exactly to q^5")
     wb.add_assertion("index_identity_eq102",
-                     computed=1.0 if (g2 and g4c) else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool((g2 and g4c)))), expected="1.0", tolerance="0.5",
                      source="2·H+₁₀·H−₁₀ = 1−12q+3q²+74q³+90q⁴ (eq 102), and it is "
                             "the assembled S⁺(0,0) entry")
     wb.add_assertion("det_W_is_2",
-                     computed=1.0 if (g3a and g3b) else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool((g3a and g3b)))), expected="1.0", tolerance="0.5",
                      source="det W_{−1}(q) = 2 in series (GGM eq 26) and numerically")
     wb.add_assertion("q0_limits_eq100",
-                     computed=1.0 if (g4a and g4b) else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool((g4a and g4b)))), expected="1.0", tolerance="0.5",
                      source="assembled S⁺(0), S⁻(0) equal the eq-100a/b Stokes-constant "
                             "products [[1,4,0],[0,1,0],[−3,−9,1]] / [[1,0,3],[−4,1,−3],[0,0,1]]")
     wb.add_assertion("sl3_and_inversion_series",
-                     computed=1.0 if (g5a and g5b) else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool((g5a and g5b)))), expected="1.0", tolerance="0.5",
                      source="det S± = 1 and S⁺(q)ᵀ·S⁻(q) = 1 (Conjecture 1b) in exact series")
     wb.add_assertion("inversion_numeric_at_substrate",
-                     computed=inv_res, expected=0.0, tolerance=1e-30,
+                     computed=inv_res, expected="0.0", tolerance="1e-30",
                      source="S⁺ᵀ·S⁻ = 1 numerically at q=1/q₀ with independently-"
                             "assembled matrices (29a vs 29b)")
     wb.add_assertion("odd_channel_nonzero",
-                     computed=1.0 if g7 else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(g7))), expected="1.0", tolerance="0.5",
                      source="‖½(S⁺−S⁻)‖_F > 0.01 at the substrate — the chiral odd "
                             "channel is live (4₁'s would vanish by amphichirality)")
     wb.add_assertion("anchor_smooth_honest",
-                     computed=1.0 if honest_smooth else 0.0, expected=1.0, tolerance=0.5,
+                     computed=str(int(bool(honest_smooth))), expected="1.0", tolerance="0.5",
                      source="max |dO_ij/dq| ≪ 3.84e6 — the derived datum is anchor-smooth; "
                             "it is the odd ingredient, NOT the swing (SRigidityPrune)")
     ok = all(a.passed for a in wb.assertions)
@@ -454,7 +460,9 @@ def main() -> int:
                  "and the rotated index is bar-EVEN despite chirality "
                  "(structural). No fit; no c_k wired; auditOnly."
                  if (ok and ok_gates) else "INCONCLUSIVE — a gate failed; inspect."))
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q0["muon"], proton=Q0["proton"],
+        reason="the bar-odd Stokes index is evaluated at BOTH pins; the anchor comparison is the subject"))
     print(f"\n  assertions passed: {ok}")
     print("  witness -> computations/probes/qbeta-5two-stokes-barodd-index.witness.json")
     return 0 if ok else 1
