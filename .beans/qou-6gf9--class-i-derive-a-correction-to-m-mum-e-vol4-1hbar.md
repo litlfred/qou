@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-09-04T07:45:06Z
+updated_at: 2026-09-04T13:05:40Z
 ---
 
 Attack the Class I mu-p residual on the **muon carrier** `m_mu/m_e = Vol(4_1)/hbar_q^2`
@@ -260,3 +260,45 @@ at q0 > 1. HabiroMagnitudeA3.pochAbs_unbounded (binders: 1 < q, and
 
 **Next, and it is the decisive step**: extract a_n(Sigma(2,3,5)) from the series
 and evaluate a_n * omega_n at the pin. Until then nothing here is evidence.
+
+
+## 2026-09-04 later (PR #6663) — the Sigma(2,3,5) route: CLOSED in this coordinate
+
+Probe `computations/mu_p_sigma235_ohtsuki_resolution_probe.py`, witness
+`mu-p-sigma235-ohtsuki-resolution.witness.json`, 3/3.
+
+**The coefficients, exact, and a free check.** Taylor-expanding the
+`lovejoy2026` series at q=1 over the rationals gives integers
+1, -6, 45, -464, 6224, -102816, 2015237, -45679349, 1175123730, ...
+`lambda_1 = -6` reproduces Ohtsuki's `lambda_1 = 6*lambda_Casson` with
+`lambda_Casson(Sigma(2,3,5)) = -1` -- so the transcription and the extraction
+are both verified against a known invariant, not merely self-consistent.
+
+**Factorially divergent.** `|lambda_(n+1)/lambda_n|` is LINEAR in n
+(7.5, 10.3, 13.4, 16.5, 19.6, 22.7, 25.7, 28.8, 31.8, 34.9 ~ 3n).
+
+**The finding.** At `x0 = q0-1 = 0.10998` the terms turn over at n=2 with least
+term **0.5443**. An asymptotic series cannot resolve below its least term, so
+the intrinsic resolution of this object at the substrate is 0.5443 against
+`t = 2.1116e-7` -- a factor **2.58e6**. NO truncation supplies t.
+
+**This EXPLAINS the previous entry's caution rather than repeating it.** The
+basis omega_n does pass through t's magnitude at six consecutive orders; the
+manifold's own coefficients grow factorially, so the products never land there.
+
+**Scope-(b)** for the class (every truncation of the Taylor/Ohtsuki expansion at
+q0). **Scope-(a)** for the route: does NOT exclude a Borel/median resummation
+(the standard way below a least term -- resurgence sources are held), evaluation
+at a root of unity where the Habiro element is actually defined
+(`I(M;zeta) = Z_zeta(M)`), a different Brieskorn sphere, or the exact
+Habiro-basis coefficients `a_n(q) in Z[q^{+-1}]` (not computed here; the q=1
+Taylor coefficients are a coarser object).
+
+## GAP status after this: OPEN, and now with NO named surviving route
+
+The bean named exactly one route with a-priori coefficients. That route is
+closed in the coordinate it was named in. What remains un-foreclosed is a
+strictly harder ask -- a resummation, or a root-of-unity evaluation -- and
+neither is a small next step. An honest reading is that the cheap end of this
+GAP is exhausted, and the next attempt should be scoped as research rather than
+as a measurement.
